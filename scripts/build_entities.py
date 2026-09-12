@@ -504,6 +504,13 @@ def apply_curated(entity: dict[str, Any], row: dict[str, Any], prov: dict[str, A
     for field in ("religion", "ethnicity", "language"):
         if row.get(field):
             entity[field] = row[field]
+            # The same rule the adapters keep: the year describes the figure,
+            # so it is written with it. The provenance block already states one
+            # per country -- India's 2011, China's 2020 -- and it was reaching
+            # the population and the sex ratio while the compositions beside
+            # them went out undated.
+            if prov.get("year"):
+                entity[f"{field}_year"] = prov["year"]
             if prov.get("note"):
                 entity[f"{field}_note"] = prov["note"]
     for field in ("religion", "ethnicity"):
@@ -529,6 +536,17 @@ def value_fields(row: dict[str, Any]) -> set[str]:
     return {k for k in VALUE_FIELDS if k in row and not is_gap(row[k])}
 
 
+# What a composition carries beside itself: when it was counted, what it counts,
+# and how the source qualifies it. All three describe the figure, so all three
+# go with it when it is replaced -- see merge_adapter.
+SATELLITES = ("_year", "_basis", "_note")
+# The fields those describe. Wider than ROLLUP_FIELDS, which is about what can
+# be summed: ancestry and India's scheduled groups are never summed and are
+# still figures somebody measured in some year.
+DESCRIBED_FIELDS = ("religion", "language", "ethnicity", "ancestry",
+                    "scheduled_groups")
+
+
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     """Adapter values override seeds; gap markers never overwrite real values.
 
@@ -541,6 +559,16 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     Only a source whose every field is being replaced is dropped. The ACS is
     cited for "ethnicity/language/population" at once, and a row that replaces
     religion has nothing to say about those.
+
+    The year, the basis and the note go the same way, and for the same reason.
+    California's curated seed carried the 2011-2022 ACS as a placeholder and
+    stamped 2022 on it; the live ACS row then replaced the figure, said nothing
+    about a year, and the 2022 stayed -- describing numbers it had never seen,
+    on three states out of fifty-two, which was enough for the country's sum to
+    inherit it and read as dated. It happened to be the right year, which is
+    exactly what made it worth removing: nothing on the record distinguished it
+    from a wrong one. A row that replaces a figure owns what describes it, and
+    what the row does not say is not carried over from what it displaced.
     """
     replaced = {key for key, value in row.items()
                 if key in VALUE_FIELDS and not is_gap(value)}
@@ -560,6 +588,17 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
         if is_gap(value) and not is_gap(entity.get(key)):
             continue
         entity[key] = value
+    # After the copy, not before it: a satellite the row does supply has just
+    # overwritten the old one in place, and popping first would have moved it
+    # to the end of the record. build.json is a digest of the written files, so
+    # a key order that churns invalidates every reader's cache for no change in
+    # the figures.
+    for field in DESCRIBED_FIELDS:
+        if is_gap(row.get(field)) or field not in row:
+            continue
+        for suffix in SATELLITES:
+            if f"{field}{suffix}" not in row:
+                entity.pop(f"{field}{suffix}", None)
 
 
 # ---------------------------------------------------------------------------

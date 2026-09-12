@@ -1,43 +1,50 @@
-pakistan: Bureau of Statistics, Census 2023 Table 9
-  Khyber Pakhtunkhwa
-    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-  Punjab
-    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 36 districts add up to the province
-  Sindh
-    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-  Balochistan
-    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 34 districts add up to the province
-  Islamabad Capital Territory
-    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's religions sum to its own printed total
-    and the 1 districts add up to the province
-  Azad Jammu and Kashmir
-  Gilgit-Baltistan
-  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  Azad Jammu and Kashmir, from the territory's own yearbook
-    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
-    Table 15.24 named on page 15 with no rows under it: the contents, not the table
-    Table 15.24 on page 209: 10 districts
-    all 7 columns sum to the printed AJ&K row
-    Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
-  11 records declaring what is not published, rather than leaving the field empty
-  wrote data/processed/pakistan_district.json (313 kB)
-  138 districts and 7 provinces
+abs: 2021 Census, LGA
+  1227 dataflows in the ABS catalogue
+  dataflows containing G14: C21_G14_CED, C21_G14_LGA, C21_G14_POA, C21_G14_RA, C21_G14_SA2, C21_G14_SAL, C21_G14_SED, C21_G14_SUA, C21_G14_UCL
+  dataflows containing G08: C21_G08_CED, C21_G08_LGA, C21_G08_POA, C21_G08_RA, C21_G08_SA2, C21_G08_SAL, C21_G08_SED, C21_G08_SUA, C21_G08_UCL
+  dataflows containing G13: C21_G13_CED, C21_G13_LGA, C21_G13_POA, C21_G13_RA, C21_G13_SA2, C21_G13_SAL, C21_G13_SED, C21_G13_SUA, C21_G13_UCL
+  religion: dataflow ABS,C21_G14_LGA,1.0.0
+  ancestry: dataflow ABS,C21_G08_LGA,1.0.0
+  language: dataflow ABS,C21_G13_LGA,1.0.0
+  religion rows 57630, ancestry rows 111870, language rows 394935
+  dimensions seen: ['RELP', 'SEXP', 'REGION', 'REGION_TYPE', 'STATE', 'TIME_PERIOD']
+  using region='STATE' religion='RELP' ancestry='ANCP' language='LANP'
+  restricted SEXP='Persons' so the sexes are not counted twice
+  outermost level chosen by code tree for 9 regions
+  outermost level chosen by suffix (nothing summed to the total) for 9 regions
+  ! suffix (nothing summed to the total): ANCP for region 3; published total 10312367.0
+            '_T'    10,312,367  Total
+          '2101'     3,919,773  English
+          '1101'     3,449,202  Australian
+          '2201'     1,135,841  Irish
+            '_O'     1,130,020  Other
+          '2102'     1,053,998  Scottish
+            '_N'       708,346  Not stated
+          '2306'       619,387  German
+          '1102'       411,829  Australian Aboriginal
+          '6101'       320,107  Chinese
+          '3103'       305,062  Italian
+          '7106'       187,203  Indian
+          '2303'       161,615  Dutch
+          '5201'       147,692  Filipino
+          '1202'       134,443  New Zealander
+          '1201'       130,017  Maori
+          '1504'        70,454  Samoan
+          '9215'        70,453  South African
+          '2103'        69,332  Welsh
+          '5107'        67,692  Vietnamese
+          '2305'        66,233  French
+          '3307'        65,633  Polish
+          '3205'        65,360  Greek
+          '3106'        51,316  Spanish
+          '6902'        50,740  Korean
+          '3104'        44,202  Maltese
+          '3308'        35,140  Russian
+          '3204'        33,502  Croatian
+  restricted SEXP='Persons' so the sexes are not counted twice
+  restricted ENGLP='Total' so its categories are not summed
+  outermost level chosen by code tree less a duplicated parent for 9 regions
+  population from the religion table's own total for 9 of 9 regions; they sum to 25,422,828
+  sanity: largest religion category is 47.6% of the sample region's total across 8 categories
+  wrote data/processed/australia_state.json (71 kB)
+  9 records

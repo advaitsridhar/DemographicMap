@@ -50,7 +50,7 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, RAW, gap, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, RAW, dated, gap, log, measure, record, shares, write_json,
 )
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -268,18 +268,21 @@ def build(workbook: Any) -> dict[str, list[dict[str, Any]]]:
                          f"{sorted(set(units) ^ set(REGIONS))}")
     src = [{"field": "population/ethnicity", "name": SOURCE, "url": PAGE, "license": LICENCE}]
     for shape, groups in merged(counts).items():
+        rows = bars(shape, groups)
         out["admin1"].append(record(
             region_id(shape), shape, level="admin1", parent="KAZ", country="KAZ",
             population=measure(groups["Всего"], year=YEAR, source=SOURCE),
-            ethnicity=bars(shape, groups), ethnicity_note=f"{SOURCE}. {NOTE}", sources=src,
+            ethnicity=rows, ethnicity_year=dated(rows, YEAR),
+            ethnicity_note=f"{SOURCE}. {NOTE}", sources=src,
         ))
     for column, (shape, region) in CITY_SHAPES.items():
+        rows = bars(shape, counts[column])
         out["admin2"].append(record(
             f"{region_id(region)}-{column.lstrip('г.').lower()}", shape, level="admin2",
             parent=region_id(region), parent_name=region, country="KAZ",
             population=measure(counts[column]["Всего"], year=YEAR, source=SOURCE),
-            ethnicity=bars(shape, counts[column]), ethnicity_note=f"{SOURCE}. {NOTE}",
-            sources=src,
+            ethnicity=rows, ethnicity_year=dated(rows, YEAR),
+            ethnicity_note=f"{SOURCE}. {NOTE}", sources=src,
         ))
     for column, region in REGIONS.items():
         if column in CITY_SHEETS:
@@ -294,12 +297,13 @@ def build(workbook: Any) -> dict[str, list[dict[str, Any]]]:
                              f"region's {counts[column]['Всего']:,}")
         for district in districts:
             aliases = [transliterate(bare(district))] + RENAMED.get(district, [])
+            rows = bars(district, dcounts[district])
             out["admin2"].append(record(
                 f"{region_id(region)}-{transliterate(bare(district)).lower().replace(' ', '-')}",
                 district, level="admin2", parent=region_id(region), parent_name=region,
                 country="KAZ", aliases=aliases,
                 population=measure(dcounts[district].get("Всего"), year=YEAR, source=SOURCE),
-                ethnicity=bars(district, dcounts[district]),
+                ethnicity=rows, ethnicity_year=dated(rows, YEAR),
                 ethnicity_note=f"{SOURCE}. {NOTE}", sources=src,
             ))
     return out

@@ -1096,6 +1096,7 @@ def build_record(name: str, counts: collections.Counter, *, level: str,
                        "postponed, so these remain the most recent official figures."),
         religion_year=2011,
         scheduled_groups=shares(scheduled_counts, total=population) or gap(NOT_AVAILABLE),
+        scheduled_groups_year=2011,
         scheduled_groups_note=(
             "Scheduled Caste and Scheduled Tribe shares (Census 2011). These are "
             "constitutional-schedule classifications used for reservation policy, "

@@ -47,7 +47,8 @@ import re
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record, shares,
+    write_json,
 )
 import sys
 from pathlib import Path
@@ -284,6 +285,7 @@ def build() -> list[dict[str, Any]]:
         fields: dict[str, Any] = {}
         for field in SHEETS:
             fields[field] = bars(field, by_key[field][key])
+            fields[f"{field}_year"] = dated(fields[field], YEAR)
             fields[f"{field}_note"] = NOTES[field]
         county_id = f"HRV-{slugify(county)}"
         shapes = []

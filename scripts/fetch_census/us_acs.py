@@ -35,8 +35,8 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, gap, http_get, http_json, log,
-    measure, record, shares, write_json,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, dated, gap, http_get, http_json,
+    log, measure, record, shares, write_json,
 )
 
 BASE = "https://api.census.gov/data/{year}/acs/acs5"
@@ -145,6 +145,8 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
         name = row["NAME"]
         state_name = name.split(",")[-1].strip() if level == "county" and "," in name else None
 
+        race_rows = shares(counts, total=total)
+        lang_rows = shares(lcounts, total=as_float(lrow.get(LANGUAGE_TOTAL)))
         out.append(record(
             f"USA-{gid}",
             name,
@@ -157,10 +159,12 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
             median_age=measure(median, unit="years", year=year, source=src) if median else gap(NOT_AVAILABLE),
             sex_ratio=(measure(round(ratio * 10), unit="males_per_1000_females",
                                year=year, source=src) if ratio else gap(NOT_AVAILABLE)),
-            ethnicity=shares(counts, total=total) or gap(NOT_AVAILABLE),
+            ethnicity=race_rows or gap(NOT_AVAILABLE),
+            ethnicity_year=dated(race_rows, year),
             ethnicity_note=("US Census race and Hispanic-origin categories (ACS table B03002). "
                             "Not comparable with other countries' ethnicity classifications."),
-            language=shares(lcounts, total=as_float(lrow.get(LANGUAGE_TOTAL))) or gap(NOT_AVAILABLE),
+            language=lang_rows or gap(NOT_AVAILABLE),
+            language_year=dated(lang_rows, year),
             language_note="Language spoken at home, population 5 years and over (ACS table C16001).",
             religion=gap(NOT_COLLECTED, CENSUS_BARRED + " Any figures shown come "
                          "instead from the 2020 U.S. Religion Census (ASARB), which "
@@ -179,6 +183,7 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
 # Checked in under data/raw/us/: there is no API for this study, and the US
 # census is barred from asking the question, so without the workbook the build
 # cannot re-derive religion for a single county.
+RELIGION_YEAR = 2020            # the year the study counted, not the year it was published
 RELIGION_FILE = RAW / "us" / "2020_USRC_Group_Detail.xlsx"
 
 RELIGION_CITATION = (
@@ -471,6 +476,11 @@ def attach_religion(records: list[dict[str, Any]], path: Path, level: str) -> No
         if not groups or not pop:
             rec["religion"] = gap(NOT_COLLECTED, CENSUS_BARRED + " " +
                                   UNMATCHED_REASONS.get(gid[:2], UNMATCHED_DEFAULT))
+            # The stamp goes with the value it described. These records are
+            # written here and never carry one, so this only ever states the
+            # rule -- but an area the study does not reach must not keep a date
+            # from an area it does.
+            rec.pop("religion_year", None)
             continue
         matched += 1
         counts = to_traditions(groups)
@@ -482,6 +492,7 @@ def attach_religion(records: list[dict[str, Any]], path: Path, level: str) -> No
         if remainder > 0:
             counts[REMAINDER] = remainder
         rec["religion"] = shares(counts, total=pop)
+        rec["religion_year"] = RELIGION_YEAR
         rec["religion_basis"] = "adherents"
         rec["religion_note"] = (
             "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious "

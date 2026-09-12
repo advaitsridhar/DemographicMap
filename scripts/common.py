@@ -56,6 +56,25 @@ def is_gap(value: Any) -> bool:
     return value is None or (isinstance(value, dict) and value.get("status") in GAP_STATUSES)
 
 
+def dated(value: Any, year: int | None) -> int | None:
+    """``year``, where there is a figure for it to describe.
+
+    An adapter reads one census or one survey round, so the year is a constant
+    it already knows; what it must not do is print that constant beside a gap.
+    Two things go wrong when it does. A panel reading "not available -- 2021"
+    claims a measurement nobody took. And the stamp outlives the value:
+    ``merge_adapter`` lets a gap fall through to whatever the record already
+    held, so a year travelling beside that gap would land on another source's
+    figures and date them wrongly -- Thailand's fault, one level down.
+
+    Returning None rather than omitting the key is what makes this one
+    expression at the call site: ``record()`` drops a None field, so
+    ``fields[f"{field}_year"] = dated(fields[field], YEAR)`` says the whole
+    rule in a line.
+    """
+    return year if isinstance(value, list) and value else None
+
+
 def measure(value: Any, *, year: Any = None, source: str | None = None, unit: str | None = None,
             **extra: Any) -> dict[str, Any] | None:
     """A value carrying its provenance.  Returns ``None`` when value is None."""

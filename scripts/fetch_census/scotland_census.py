@@ -48,7 +48,8 @@ import csv
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, RAW, gap, leaves, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, RAW, dated, gap, leaves, log, measure, record, shares,
+    write_json,
 )
 
 HERE = RAW / "scotland"
@@ -145,6 +146,7 @@ def main() -> int:
                     f"against a published {total:,}; the columns chosen are wrong")
             rows = shares(counts, total=total)
             fields[field] = rows or gap(NOT_AVAILABLE)
+            fields[f"{field}_year"] = dated(rows, YEAR)
             fields[f"{field}_note"] = (
                 f"{SOURCE}. England and Wales are read from the 2021 census, so a "
                 f"comparison across the border spans ten years."

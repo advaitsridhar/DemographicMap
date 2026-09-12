@@ -62,7 +62,8 @@ import argparse
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_json, log, measure, record, shares,
+    write_json,
 )
 
 BASE = "https://ws.cso.ie/public/api.restful"
@@ -274,6 +275,7 @@ def main() -> int:
             if field == "religion" and total:
                 population = int(total)
             entry[field] = shares(counts, total=total) or gap(NOT_AVAILABLE)
+            entry[f"{field}_year"] = dated(entry[field], YEAR)
             entry[f"{field}_note"] = note(field)
 
         # A name shared by two areas cannot identify either. Only Athlone is,

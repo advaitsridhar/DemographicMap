@@ -64,6 +64,16 @@
         "count": 8979
       },
       {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 4808
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 5067
+      },
+      {
         "group": "Orthodox Christian",
         "pct": 0.1,
         "count": 2750
@@ -72,16 +82,6 @@
         "group": "Other religions",
         "pct": 0.1,
         "count": 2621
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.1,
-        "count": 5067
-      },
-      {
-        "group": "Buddhism",
-        "pct": 0.1,
-        "count": 4808
       }
     ],
     "language": [
@@ -101,6 +101,11 @@
         "count": 19899
       },
       {
+        "group": "Chinese (incl. Mandarin, Cantonese)",
+        "pct": 0.2,
+        "count": 10373
+      },
+      {
         "group": "German or other West Germanic",
         "pct": 0.2,
         "count": 9704
@@ -111,9 +116,9 @@
         "count": 9993
       },
       {
-        "group": "Chinese (incl. Mandarin, Cantonese)",
+        "group": "Other Asian and Pacific Island",
         "pct": 0.2,
-        "count": 10373
+        "count": 8604
       },
       {
         "group": "Vietnamese",
@@ -121,14 +126,19 @@
         "count": 7771
       },
       {
-        "group": "Other Asian and Pacific Island",
-        "pct": 0.2,
-        "count": 8604
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 6181
       },
       {
         "group": "French, Haitian, or Cajun",
         "pct": 0.1,
         "count": 7036
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 7026
       },
       {
         "group": "Russian, Polish, or other Slavic",
@@ -139,16 +149,6 @@
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 3854
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.1,
-        "count": 6181
-      },
-      {
-        "group": "Other and unspecified",
-        "pct": 0.1,
-        "count": 7026
       }
     ],
     "ethnicity": [
@@ -212,8 +212,11 @@
       "fips_state": "01",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -334,14 +337,14 @@
         "count": 5506
       },
       {
-        "group": "Other Indo-European",
-        "pct": 0.5,
-        "count": 3194
-      },
-      {
         "group": "Korean",
         "pct": 0.5,
         "count": 3494
+      },
+      {
+        "group": "Other Indo-European",
+        "pct": 0.5,
+        "count": 3194
       },
       {
         "group": "French, Haitian, or Cajun",
@@ -430,8 +433,11 @@
       "fips_state": "02",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -500,24 +506,24 @@
         "count": 28340
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.3,
-        "count": 20486
-      },
-      {
         "group": "Buddhism",
         "pct": 0.3,
         "count": 17948
       },
       {
-        "group": "Other religions",
-        "pct": 0.2,
-        "count": 10822
+        "group": "Orthodox Christian",
+        "pct": 0.3,
+        "count": 20486
       },
       {
         "group": "Judaism",
         "pct": 0.2,
         "count": 17215
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 10822
       },
       {
         "group": "Other Christian",
@@ -567,6 +573,11 @@
         "count": 25913
       },
       {
+        "group": "Arabic",
+        "pct": 0.3,
+        "count": 23371
+      },
+      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.3,
         "count": 18724
@@ -580,11 +591,6 @@
         "group": "Vietnamese",
         "pct": 0.3,
         "count": 22276
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.3,
-        "count": 23371
       },
       {
         "group": "Korean",
@@ -653,8 +659,11 @@
       "fips_state": "04",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -718,19 +727,19 @@
         "count": 6765
       },
       {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 1921
-      },
-      {
         "group": "Buddhism",
         "pct": 0.1,
         "count": 2878
       },
       {
-        "group": "Orthodox Christian",
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1921
+      },
+      {
+        "group": "Hinduism",
         "pct": 0.0,
-        "count": 1413
+        "count": 1210
       },
       {
         "group": "Judaism",
@@ -738,14 +747,14 @@
         "count": 1086
       },
       {
+        "group": "Orthodox Christian",
+        "pct": 0.0,
+        "count": 1413
+      },
+      {
         "group": "Other Christian",
         "pct": 0.0,
         "count": 65
-      },
-      {
-        "group": "Hinduism",
-        "pct": 0.0,
-        "count": 1210
       }
     ],
     "language": [
@@ -770,14 +779,14 @@
         "count": 10491
       },
       {
-        "group": "German or other West Germanic",
-        "pct": 0.2,
-        "count": 5387
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.2,
         "count": 4856
+      },
+      {
+        "group": "German or other West Germanic",
+        "pct": 0.2,
+        "count": 5387
       },
       {
         "group": "Vietnamese",
@@ -785,14 +794,14 @@
         "count": 4533
       },
       {
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 1958
+      },
+      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.1,
         "count": 3663
-      },
-      {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.1,
-        "count": 1813
       },
       {
         "group": "Korean",
@@ -800,19 +809,19 @@
         "count": 2057
       },
       {
-        "group": "Tagalog (incl. Filipino)",
-        "pct": 0.1,
-        "count": 3154
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.1,
-        "count": 1958
-      },
-      {
         "group": "Other and unspecified",
         "pct": 0.1,
         "count": 2872
+      },
+      {
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.1,
+        "count": 1813
+      },
+      {
+        "group": "Tagalog (incl. Filipino)",
+        "pct": 0.1,
+        "count": 3154
       }
     ],
     "ethnicity": [
@@ -876,8 +885,11 @@
       "fips_state": "05",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -931,14 +943,14 @@
         "count": 756507
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 1.3,
-        "count": 498028
-      },
-      {
         "group": "Islam",
         "pct": 1.3,
         "count": 504056
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.3,
+        "count": 498028
       },
       {
         "group": "Buddhism",
@@ -946,14 +958,14 @@
         "count": 311273
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.6,
-        "count": 221189
-      },
-      {
         "group": "Hinduism",
         "pct": 0.6,
         "count": 238702
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.6,
+        "count": 221189
       },
       {
         "group": "Judaism",
@@ -1099,8 +1111,11 @@
       "fips_state": "06",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -1164,9 +1179,9 @@
         "count": 27189
       },
       {
-        "group": "Orthodox Christian",
+        "group": "Hinduism",
         "pct": 0.3,
-        "count": 15570
+        "count": 19601
       },
       {
         "group": "Judaism",
@@ -1174,9 +1189,9 @@
         "count": 15023
       },
       {
-        "group": "Hinduism",
+        "group": "Orthodox Christian",
         "pct": 0.3,
-        "count": 19601
+        "count": 15570
       },
       {
         "group": "Islam",
@@ -1221,6 +1236,11 @@
         "count": 35187
       },
       {
+        "group": "Chinese (incl. Mandarin, Cantonese)",
+        "pct": 0.5,
+        "count": 24721
+      },
+      {
         "group": "German or other West Germanic",
         "pct": 0.5,
         "count": 25075
@@ -1229,11 +1249,6 @@
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.5,
         "count": 28989
-      },
-      {
-        "group": "Chinese (incl. Mandarin, Cantonese)",
-        "pct": 0.5,
-        "count": 24721
       },
       {
         "group": "French, Haitian, or Cajun",
@@ -1246,14 +1261,14 @@
         "count": 19808
       },
       {
-        "group": "Korean",
-        "pct": 0.3,
-        "count": 14043
-      },
-      {
         "group": "Arabic",
         "pct": 0.3,
         "count": 14008
+      },
+      {
+        "group": "Korean",
+        "pct": 0.3,
+        "count": 14043
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -1322,8 +1337,11 @@
       "fips_state": "08",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -1397,14 +1415,14 @@
         "count": 15946
       },
       {
-        "group": "Hinduism",
-        "pct": 0.2,
-        "count": 8939
-      },
-      {
         "group": "Buddhism",
         "pct": 0.2,
         "count": 7195
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 8939
       },
       {
         "group": "Other religions",
@@ -1469,14 +1487,14 @@
         "count": 6575
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.2,
-        "count": 8089
-      },
-      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.2,
         "count": 8353
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.2,
+        "count": 8089
       }
     ],
     "ethnicity": [
@@ -1540,8 +1558,11 @@
       "fips_state": "09",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -1610,14 +1631,14 @@
         "count": 5634
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.3,
-        "count": 2573
-      },
-      {
         "group": "Judaism",
         "pct": 0.3,
         "count": 3000
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.3,
+        "count": 2573
       },
       {
         "group": "Other religions",
@@ -1652,14 +1673,14 @@
         "count": 14389
       },
       {
-        "group": "French, Haitian, or Cajun",
-        "pct": 0.9,
-        "count": 8457
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.9,
         "count": 8252
+      },
+      {
+        "group": "French, Haitian, or Cajun",
+        "pct": 0.9,
+        "count": 8457
       },
       {
         "group": "Other and unspecified",
@@ -1677,6 +1698,11 @@
         "count": 5227
       },
       {
+        "group": "Arabic",
+        "pct": 0.3,
+        "count": 2765
+      },
+      {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.3,
         "count": 2734
@@ -1685,11 +1711,6 @@
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.3,
         "count": 2837
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.3,
-        "count": 2765
       },
       {
         "group": "Korean",
@@ -1763,8 +1784,11 @@
       "fips_state": "10",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -1890,19 +1914,14 @@
         "count": 5091
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.6,
-        "count": 3522
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.6,
         "count": 3741
       },
       {
-        "group": "German or other West Germanic",
-        "pct": 0.4,
-        "count": 2373
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.6,
+        "count": 3522
       },
       {
         "group": "Arabic",
@@ -1910,19 +1929,24 @@
         "count": 2202
       },
       {
+        "group": "German or other West Germanic",
+        "pct": 0.4,
+        "count": 2373
+      },
+      {
         "group": "Korean",
         "pct": 0.3,
         "count": 1926
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.2,
-        "count": 1209
-      },
-      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.2,
         "count": 1250
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.2,
+        "count": 1209
       }
     ],
     "ethnicity": [
@@ -1986,8 +2010,11 @@
       "fips_state": "11",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -2056,14 +2083,14 @@
         "count": 108841
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.3,
-        "count": 62978
-      },
-      {
         "group": "Hinduism",
         "pct": 0.3,
         "count": 63939
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.3,
+        "count": 62978
       },
       {
         "group": "Buddhism",
@@ -2113,14 +2140,14 @@
         "count": 94225
       },
       {
-        "group": "German or other West Germanic",
-        "pct": 0.4,
-        "count": 80397
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.4,
         "count": 76455
+      },
+      {
+        "group": "German or other West Germanic",
+        "pct": 0.4,
+        "count": 80397
       },
       {
         "group": "Other and unspecified",
@@ -2128,9 +2155,9 @@
         "count": 81568
       },
       {
-        "group": "Vietnamese",
+        "group": "Arabic",
         "pct": 0.3,
-        "count": 69570
+        "count": 70511
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -2138,9 +2165,9 @@
         "count": 70430
       },
       {
-        "group": "Arabic",
+        "group": "Vietnamese",
         "pct": 0.3,
-        "count": 70511
+        "count": 69570
       },
       {
         "group": "Korean",
@@ -2209,8 +2236,11 @@
       "fips_state": "12",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -2284,14 +2314,14 @@
         "count": 35510
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.2,
-        "count": 17146
-      },
-      {
         "group": "Buddhism",
         "pct": 0.2,
         "count": 16442
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.2,
+        "count": 17146
       },
       {
         "group": "Other religions",
@@ -2326,14 +2356,14 @@
         "count": 83126
       },
       {
-        "group": "French, Haitian, or Cajun",
-        "pct": 0.6,
-        "count": 58914
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.6,
         "count": 56041
+      },
+      {
+        "group": "French, Haitian, or Cajun",
+        "pct": 0.6,
+        "count": 58914
       },
       {
         "group": "Vietnamese",
@@ -2427,8 +2457,11 @@
       "fips_state": "13",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -2497,24 +2530,24 @@
         "count": 3853
       },
       {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 1015
-      },
-      {
         "group": "Judaism",
         "pct": 0.1,
         "count": 797
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.0,
-        "count": 593
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1015
       },
       {
         "group": "Islam",
         "pct": 0.0,
         "count": 145
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.0,
+        "count": 593
       }
     ],
     "language": [
@@ -2645,8 +2678,11 @@
       "fips_state": "15",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -2705,24 +2741,14 @@
         "count": 16840
       },
       {
-        "group": "Orthodox Christian",
+        "group": "Buddhism",
         "pct": 0.1,
-        "count": 1061
-      },
-      {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 1604
+        "count": 1140
       },
       {
         "group": "Hinduism",
         "pct": 0.1,
         "count": 1247
-      },
-      {
-        "group": "Buddhism",
-        "pct": 0.1,
-        "count": 1140
       },
       {
         "group": "Islam",
@@ -2733,6 +2759,16 @@
         "group": "Judaism",
         "pct": 0.1,
         "count": 1080
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 1061
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1604
       },
       {
         "group": "Other Christian",
@@ -2777,9 +2813,9 @@
         "count": 5658
       },
       {
-        "group": "French, Haitian, or Cajun",
+        "group": "Arabic",
         "pct": 0.2,
-        "count": 3233
+        "count": 3166
       },
       {
         "group": "Chinese (incl. Mandarin, Cantonese)",
@@ -2787,9 +2823,9 @@
         "count": 4177
       },
       {
-        "group": "Arabic",
+        "group": "French, Haitian, or Cajun",
         "pct": 0.2,
-        "count": 3166
+        "count": 3233
       },
       {
         "group": "Korean",
@@ -2797,14 +2833,14 @@
         "count": 1519
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.1,
-        "count": 1913
-      },
-      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 1709
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.1,
+        "count": 1913
       }
     ],
     "ethnicity": [
@@ -2868,8 +2904,11 @@
       "fips_state": "16",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -2938,14 +2977,14 @@
         "count": 61428
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.4,
-        "count": 56888
-      },
-      {
         "group": "Hinduism",
         "pct": 0.4,
         "count": 46928
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.4,
+        "count": 56888
       },
       {
         "group": "Buddhism",
@@ -2975,14 +3014,14 @@
         "count": 1634951
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 2.5,
-        "count": 296204
-      },
-      {
         "group": "Other Indo-European",
         "pct": 2.5,
         "count": 301817
+      },
+      {
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 2.5,
+        "count": 296204
       },
       {
         "group": "Chinese (incl. Mandarin, Cantonese)",
@@ -3091,8 +3130,11 @@
       "fips_state": "17",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -3146,14 +3188,14 @@
         "count": 45952
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 0.6,
-        "count": 41552
-      },
-      {
         "group": "Islam",
         "pct": 0.6,
         "count": 41400
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.6,
+        "count": 41552
       },
       {
         "group": "Orthodox Christian",
@@ -3166,9 +3208,9 @@
         "count": 11559
       },
       {
-        "group": "Other religions",
+        "group": "Buddhism",
         "pct": 0.1,
-        "count": 4311
+        "count": 4379
       },
       {
         "group": "Hinduism",
@@ -3176,9 +3218,9 @@
         "count": 6360
       },
       {
-        "group": "Buddhism",
+        "group": "Other religions",
         "pct": 0.1,
-        "count": 4379
+        "count": 4311
       },
       {
         "group": "Other Christian",
@@ -3203,14 +3245,14 @@
         "count": 65556
       },
       {
-        "group": "Other Indo-European",
-        "pct": 0.7,
-        "count": 47240
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.7,
         "count": 46594
+      },
+      {
+        "group": "Other Indo-European",
+        "pct": 0.7,
+        "count": 47240
       },
       {
         "group": "Chinese (incl. Mandarin, Cantonese)",
@@ -3243,14 +3285,14 @@
         "count": 7490
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.1,
-        "count": 7520
-      },
-      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 9508
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.1,
+        "count": 7520
       }
     ],
     "ethnicity": [
@@ -3314,8 +3356,11 @@
       "fips_state": "18",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -3379,6 +3424,21 @@
         "count": 15552
       },
       {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 1908
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 4031
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 3326
+      },
+      {
         "group": "Orthodox Christian",
         "pct": 0.1,
         "count": 3216
@@ -3387,21 +3447,6 @@
         "group": "Other religions",
         "pct": 0.1,
         "count": 3286
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.1,
-        "count": 3326
-      },
-      {
-        "group": "Hinduism",
-        "pct": 0.1,
-        "count": 4031
-      },
-      {
-        "group": "Buddhism",
-        "pct": 0.1,
-        "count": 1908
       },
       {
         "group": "Other Christian",
@@ -3441,24 +3486,24 @@
         "count": 15957
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.4,
-        "count": 12580
-      },
-      {
         "group": "Arabic",
         "pct": 0.4,
         "count": 11113
       },
       {
-        "group": "French, Haitian, or Cajun",
-        "pct": 0.3,
-        "count": 9087
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.4,
+        "count": 12580
       },
       {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.3,
         "count": 9748
+      },
+      {
+        "group": "French, Haitian, or Cajun",
+        "pct": 0.3,
+        "count": 9087
       },
       {
         "group": "Vietnamese",
@@ -3537,8 +3582,11 @@
       "fips_state": "19",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -3597,24 +3645,14 @@
         "count": 18970
       },
       {
-        "group": "Judaism",
-        "pct": 0.2,
-        "count": 6772
-      },
-      {
         "group": "Hinduism",
         "pct": 0.2,
         "count": 6962
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.1,
-        "count": 3339
-      },
-      {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 2659
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 6772
       },
       {
         "group": "Buddhism",
@@ -3625,6 +3663,16 @@
         "group": "Islam",
         "pct": 0.1,
         "count": 3615
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 3339
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 2659
       },
       {
         "group": "Other Christian",
@@ -3654,14 +3702,19 @@
         "count": 17754
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.5,
+        "count": 13188
+      },
+      {
         "group": "Vietnamese",
         "pct": 0.5,
         "count": 13100
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.5,
-        "count": 13188
+        "group": "Chinese (incl. Mandarin, Cantonese)",
+        "pct": 0.4,
+        "count": 11385
       },
       {
         "group": "German or other West Germanic",
@@ -3669,9 +3722,9 @@
         "count": 11882
       },
       {
-        "group": "Chinese (incl. Mandarin, Cantonese)",
-        "pct": 0.4,
-        "count": 11385
+        "group": "Arabic",
+        "pct": 0.2,
+        "count": 6553
       },
       {
         "group": "French, Haitian, or Cajun",
@@ -3684,19 +3737,14 @@
         "count": 4155
       },
       {
-        "group": "Arabic",
-        "pct": 0.2,
-        "count": 6553
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 3157
       },
       {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.1,
         "count": 3411
-      },
-      {
-        "group": "Korean",
-        "pct": 0.1,
-        "count": 3157
       }
     ],
     "ethnicity": [
@@ -3760,8 +3808,11 @@
       "fips_state": "20",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -3825,14 +3876,9 @@
         "count": 17957
       },
       {
-        "group": "Orthodox Christian",
+        "group": "Buddhism",
         "pct": 0.1,
-        "count": 3797
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.1,
-        "count": 4320
+        "count": 2751
       },
       {
         "group": "Hinduism",
@@ -3840,19 +3886,24 @@
         "count": 6245
       },
       {
-        "group": "Buddhism",
+        "group": "Judaism",
         "pct": 0.1,
-        "count": 2751
+        "count": 4320
       },
       {
-        "group": "Other religions",
-        "pct": 0.0,
-        "count": 1737
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 3797
       },
       {
         "group": "Other Christian",
         "pct": 0.0,
         "count": 160
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.0,
+        "count": 1737
       }
     ],
     "language": [
@@ -3872,14 +3923,14 @@
         "count": 21710
       },
       {
-        "group": "Other Indo-European",
-        "pct": 0.5,
-        "count": 21989
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.5,
         "count": 21183
+      },
+      {
+        "group": "Other Indo-European",
+        "pct": 0.5,
+        "count": 21989
       },
       {
         "group": "Other and unspecified",
@@ -3897,14 +3948,14 @@
         "count": 11083
       },
       {
-        "group": "Chinese (incl. Mandarin, Cantonese)",
-        "pct": 0.2,
-        "count": 8094
-      },
-      {
         "group": "Arabic",
         "pct": 0.2,
         "count": 8660
+      },
+      {
+        "group": "Chinese (incl. Mandarin, Cantonese)",
+        "pct": 0.2,
+        "count": 8094
       },
       {
         "group": "Korean",
@@ -3912,14 +3963,14 @@
         "count": 3642
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.1,
-        "count": 4399
-      },
-      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 4563
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.1,
+        "count": 4399
       }
     ],
     "ethnicity": [
@@ -3983,8 +4034,11 @@
       "fips_state": "21",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -4053,6 +4107,16 @@
         "count": 7575
       },
       {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 6220
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 6375
+      },
+      {
         "group": "Orthodox Christian",
         "pct": 0.1,
         "count": 2530
@@ -4061,16 +4125,6 @@
         "group": "Other religions",
         "pct": 0.1,
         "count": 4258
-      },
-      {
-        "group": "Hinduism",
-        "pct": 0.1,
-        "count": 6375
-      },
-      {
-        "group": "Buddhism",
-        "pct": 0.1,
-        "count": 6220
       }
     ],
     "language": [
@@ -4120,24 +4174,24 @@
         "count": 5040
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.1,
-        "count": 3680
-      },
-      {
         "group": "Korean",
         "pct": 0.1,
         "count": 2410
       },
       {
-        "group": "Tagalog (incl. Filipino)",
-        "pct": 0.1,
-        "count": 5152
-      },
-      {
         "group": "Other and unspecified",
         "pct": 0.1,
         "count": 6309
+      },
+      {
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.1,
+        "count": 3680
+      },
+      {
+        "group": "Tagalog (incl. Filipino)",
+        "pct": 0.1,
+        "count": 5152
       }
     ],
     "ethnicity": [
@@ -4201,8 +4255,11 @@
       "fips_state": "22",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -4271,14 +4328,14 @@
         "count": 4364
       },
       {
-        "group": "Judaism",
-        "pct": 0.2,
-        "count": 3244
-      },
-      {
         "group": "Buddhism",
         "pct": 0.2,
         "count": 2333
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 3244
       },
       {
         "group": "Orthodox Christian",
@@ -4333,19 +4390,19 @@
         "count": 3300
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.2,
-        "count": 3070
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.2,
         "count": 2735
       },
       {
-        "group": "Vietnamese",
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.2,
+        "count": 3070
+      },
+      {
+        "group": "Arabic",
         "pct": 0.1,
-        "count": 948
+        "count": 1859
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -4353,9 +4410,9 @@
         "count": 1460
       },
       {
-        "group": "Arabic",
+        "group": "Vietnamese",
         "pct": 0.1,
-        "count": 1859
+        "count": 948
       },
       {
         "group": "Korean",
@@ -4424,8 +4481,11 @@
       "fips_state": "23",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -4494,14 +4554,14 @@
         "count": 43411
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.6,
-        "count": 34394
-      },
-      {
         "group": "Hinduism",
         "pct": 0.6,
         "count": 38267
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.6,
+        "count": 34394
       },
       {
         "group": "Buddhism",
@@ -4536,14 +4596,14 @@
         "count": 136826
       },
       {
-        "group": "French, Haitian, or Cajun",
-        "pct": 1.2,
-        "count": 71457
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 1.2,
         "count": 71876
+      },
+      {
+        "group": "French, Haitian, or Cajun",
+        "pct": 1.2,
+        "count": 71457
       },
       {
         "group": "Other Asian and Pacific Island",
@@ -4551,14 +4611,14 @@
         "count": 56588
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.6,
-        "count": 33850
-      },
-      {
         "group": "Korean",
         "pct": 0.6,
         "count": 36327
+      },
+      {
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.6,
+        "count": 33850
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -4566,14 +4626,14 @@
         "count": 32452
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.4,
-        "count": 21451
-      },
-      {
         "group": "Arabic",
         "pct": 0.4,
         "count": 21425
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.4,
+        "count": 21451
       },
       {
         "group": "German or other West Germanic",
@@ -4642,8 +4702,11 @@
       "fips_state": "24",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -4712,9 +4775,9 @@
         "count": 45302
       },
       {
-        "group": "Other religions",
+        "group": "Buddhism",
         "pct": 0.4,
-        "count": 29206
+        "count": 29986
       },
       {
         "group": "Latter-day Saints",
@@ -4722,9 +4785,9 @@
         "count": 28040
       },
       {
-        "group": "Buddhism",
+        "group": "Other religions",
         "pct": 0.4,
-        "count": 29986
+        "count": 29206
       },
       {
         "group": "Hinduism",
@@ -4865,8 +4928,11 @@
       "fips_state": "25",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -4925,9 +4991,9 @@
         "count": 69130
       },
       {
-        "group": "Orthodox Christian",
+        "group": "Judaism",
         "pct": 0.4,
-        "count": 44786
+        "count": 39895
       },
       {
         "group": "Latter-day Saints",
@@ -4935,9 +5001,9 @@
         "count": 45074
       },
       {
-        "group": "Judaism",
+        "group": "Orthodox Christian",
         "pct": 0.4,
-        "count": 39895
+        "count": 44786
       },
       {
         "group": "Hinduism",
@@ -4945,14 +5011,14 @@
         "count": 24030
       },
       {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 7333
-      },
-      {
         "group": "Buddhism",
         "pct": 0.1,
         "count": 11751
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 7333
       },
       {
         "group": "Other Christian",
@@ -4972,14 +5038,14 @@
         "count": 274677
       },
       {
-        "group": "Other Indo-European",
-        "pct": 1.7,
-        "count": 161374
-      },
-      {
         "group": "Arabic",
         "pct": 1.7,
         "count": 161723
+      },
+      {
+        "group": "Other Indo-European",
+        "pct": 1.7,
+        "count": 161374
       },
       {
         "group": "Other Asian and Pacific Island",
@@ -4987,24 +5053,24 @@
         "count": 68333
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.6,
-        "count": 54395
-      },
-      {
         "group": "Other and unspecified",
         "pct": 0.6,
         "count": 60755
       },
       {
-        "group": "German or other West Germanic",
-        "pct": 0.5,
-        "count": 44277
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.6,
+        "count": 54395
       },
       {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.5,
         "count": 47174
+      },
+      {
+        "group": "German or other West Germanic",
+        "pct": 0.5,
+        "count": 44277
       },
       {
         "group": "French, Haitian, or Cajun",
@@ -5017,14 +5083,14 @@
         "count": 16691
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.2,
-        "count": 15412
-      },
-      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.2,
         "count": 15746
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.2,
+        "count": 15412
       }
     ],
     "ethnicity": [
@@ -5088,8 +5154,11 @@
       "fips_state": "26",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -5158,6 +5227,16 @@
         "count": 23175
       },
       {
+        "group": "Buddhism",
+        "pct": 0.2,
+        "count": 11801
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 9224
+      },
+      {
         "group": "Orthodox Christian",
         "pct": 0.2,
         "count": 12721
@@ -5166,16 +5245,6 @@
         "group": "Other religions",
         "pct": 0.2,
         "count": 9729
-      },
-      {
-        "group": "Hinduism",
-        "pct": 0.2,
-        "count": 9224
-      },
-      {
-        "group": "Buddhism",
-        "pct": 0.2,
-        "count": 11801
       },
       {
         "group": "Other Christian",
@@ -5215,14 +5284,14 @@
         "count": 24926
       },
       {
-        "group": "German or other West Germanic",
-        "pct": 0.4,
-        "count": 21299
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.4,
         "count": 22847
+      },
+      {
+        "group": "German or other West Germanic",
+        "pct": 0.4,
+        "count": 21299
       },
       {
         "group": "Vietnamese",
@@ -5230,14 +5299,14 @@
         "count": 22459
       },
       {
-        "group": "French, Haitian, or Cajun",
-        "pct": 0.3,
-        "count": 18687
-      },
-      {
         "group": "Arabic",
         "pct": 0.3,
         "count": 14474
+      },
+      {
+        "group": "French, Haitian, or Cajun",
+        "pct": 0.3,
+        "count": 18687
       },
       {
         "group": "Korean",
@@ -5311,8 +5380,11 @@
       "fips_state": "27",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -5361,14 +5433,14 @@
         "count": 99663
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.7,
-        "count": 21649
-      },
-      {
         "group": "Jehovah's Witnesses",
         "pct": 0.7,
         "count": 20760
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.7,
+        "count": 21649
       },
       {
         "group": "Hinduism",
@@ -5381,6 +5453,16 @@
         "count": 3106
       },
       {
+        "group": "Buddhism",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0,
+        "count": 870
+      },
+      {
         "group": "Orthodox Christian",
         "pct": 0.0,
         "count": 893
@@ -5389,16 +5471,6 @@
         "group": "Other religions",
         "pct": 0.0,
         "count": 1051
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.0,
-        "count": 870
-      },
-      {
-        "group": "Buddhism",
-        "pct": 0.0,
-        "count": 34
       }
     ],
     "language": [
@@ -5428,6 +5500,16 @@
         "count": 5734
       },
       {
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 2771
+      },
+      {
+        "group": "Chinese (incl. Mandarin, Cantonese)",
+        "pct": 0.1,
+        "count": 3819
+      },
+      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.1,
         "count": 4057
@@ -5438,9 +5520,9 @@
         "count": 3220
       },
       {
-        "group": "Chinese (incl. Mandarin, Cantonese)",
+        "group": "Other Asian and Pacific Island",
         "pct": 0.1,
-        "count": 3819
+        "count": 3430
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -5448,24 +5530,14 @@
         "count": 2519
       },
       {
-        "group": "Other Asian and Pacific Island",
-        "pct": 0.1,
-        "count": 3430
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.1,
-        "count": 2771
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 1040
       },
       {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.0,
         "count": 1088
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 1040
       }
     ],
     "ethnicity": [
@@ -5529,8 +5601,11 @@
       "fips_state": "28",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -5599,14 +5674,14 @@
         "count": 18796
       },
       {
-        "group": "Hinduism",
-        "pct": 0.2,
-        "count": 9271
-      },
-      {
         "group": "Buddhism",
         "pct": 0.2,
         "count": 12536
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.2,
+        "count": 9271
       },
       {
         "group": "Orthodox Christian",
@@ -5651,11 +5726,6 @@
         "count": 27598
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.4,
-        "count": 25035
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.4,
         "count": 21756
@@ -5666,6 +5736,16 @@
         "count": 20892
       },
       {
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.4,
+        "count": 25035
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.2,
+        "count": 12952
+      },
+      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.2,
         "count": 13829
@@ -5674,11 +5754,6 @@
         "group": "Vietnamese",
         "pct": 0.2,
         "count": 13046
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.2,
-        "count": 12952
       },
       {
         "group": "Korean",
@@ -5752,8 +5827,11 @@
       "fips_state": "29",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -5817,14 +5895,14 @@
         "count": 2032
       },
       {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 1107
-      },
-      {
         "group": "Orthodox Christian",
         "pct": 0.1,
         "count": 949
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1107
       },
       {
         "group": "Hinduism",
@@ -5869,19 +5947,14 @@
         "count": 2891
       },
       {
-        "group": "French, Haitian, or Cajun",
-        "pct": 0.2,
-        "count": 1970
-      },
-      {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.2,
-        "count": 2027
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.2,
         "count": 1659
+      },
+      {
+        "group": "French, Haitian, or Cajun",
+        "pct": 0.2,
+        "count": 1970
       },
       {
         "group": "Other Asian and Pacific Island",
@@ -5889,9 +5962,9 @@
         "count": 1915
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.1,
-        "count": 667
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.2,
+        "count": 2027
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -5899,14 +5972,19 @@
         "count": 1309
       },
       {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 277
+        "group": "Vietnamese",
+        "pct": 0.1,
+        "count": 667
       },
       {
         "group": "Arabic",
         "pct": 0.0,
         "count": 422
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 277
       }
     ],
     "ethnicity": [
@@ -5970,8 +6048,11 @@
       "fips_state": "30",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -6040,16 +6121,6 @@
         "count": 3830
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.1,
-        "count": 1848
-      },
-      {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 1397
-      },
-      {
         "group": "Buddhism",
         "pct": 0.1,
         "count": 2385
@@ -6058,6 +6129,16 @@
         "group": "Islam",
         "pct": 0.1,
         "count": 2402
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 1848
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1397
       }
     ],
     "language": [
@@ -6092,6 +6173,16 @@
         "count": 6905
       },
       {
+        "group": "Arabic",
+        "pct": 0.3,
+        "count": 6079
+      },
+      {
+        "group": "Chinese (incl. Mandarin, Cantonese)",
+        "pct": 0.3,
+        "count": 4764
+      },
+      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.3,
         "count": 5288
@@ -6105,16 +6196,6 @@
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.3,
         "count": 5686
-      },
-      {
-        "group": "Chinese (incl. Mandarin, Cantonese)",
-        "pct": 0.3,
-        "count": 4764
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.3,
-        "count": 6079
       },
       {
         "group": "Korean",
@@ -6188,8 +6269,11 @@
       "fips_state": "31",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -6258,11 +6342,6 @@
         "count": 13973
       },
       {
-        "group": "Judaism",
-        "pct": 0.2,
-        "count": 6821
-      },
-      {
         "group": "Hinduism",
         "pct": 0.2,
         "count": 5824
@@ -6271,6 +6350,11 @@
         "group": "Islam",
         "pct": 0.2,
         "count": 7400
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 6821
       },
       {
         "group": "Other religions",
@@ -6295,14 +6379,14 @@
         "count": 85632
       },
       {
-        "group": "Other Indo-European",
-        "pct": 1.2,
-        "count": 35990
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 1.2,
         "count": 34003
+      },
+      {
+        "group": "Other Indo-European",
+        "pct": 1.2,
+        "count": 35990
       },
       {
         "group": "Other Asian and Pacific Island",
@@ -6406,8 +6490,11 @@
       "fips_state": "32",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -6456,14 +6543,14 @@
         "count": 123822
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.6,
-        "count": 8872
-      },
-      {
         "group": "Jehovah's Witnesses",
         "pct": 0.6,
         "count": 8010
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.6,
+        "count": 8872
       },
       {
         "group": "Orthodox Christian",
@@ -6471,14 +6558,14 @@
         "count": 4871
       },
       {
-        "group": "Other religions",
-        "pct": 0.3,
-        "count": 3736
-      },
-      {
         "group": "Judaism",
         "pct": 0.3,
         "count": 3512
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.3,
+        "count": 3736
       },
       {
         "group": "Islam",
@@ -6518,11 +6605,6 @@
         "count": 7860
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.4,
-        "count": 5412
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.4,
         "count": 5104
@@ -6533,19 +6615,24 @@
         "count": 5060
       },
       {
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.4,
+        "count": 5412
+      },
+      {
         "group": "German or other West Germanic",
         "pct": 0.3,
         "count": 3964
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.2,
-        "count": 2064
-      },
-      {
         "group": "Arabic",
         "pct": 0.2,
         "count": 2258
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.2,
+        "count": 2064
       },
       {
         "group": "Korean",
@@ -6619,8 +6706,11 @@
       "fips_state": "33",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -6684,14 +6774,14 @@
         "count": 123300
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.8,
-        "count": 78416
-      },
-      {
         "group": "Jehovah's Witnesses",
         "pct": 0.8,
         "count": 72400
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.8,
+        "count": 78416
       },
       {
         "group": "Latter-day Saints",
@@ -6751,6 +6841,11 @@
         "count": 94205
       },
       {
+        "group": "Arabic",
+        "pct": 0.9,
+        "count": 79111
+      },
+      {
         "group": "Korean",
         "pct": 0.9,
         "count": 77377
@@ -6759,11 +6854,6 @@
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.9,
         "count": 79369
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.9,
-        "count": 79111
       },
       {
         "group": "German or other West Germanic",
@@ -6837,8 +6927,11 @@
       "fips_state": "34",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -6897,14 +6990,14 @@
         "count": 25890
       },
       {
-        "group": "Hinduism",
-        "pct": 0.7,
-        "count": 14351
-      },
-      {
         "group": "Buddhism",
         "pct": 0.7,
         "count": 15575
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.7,
+        "count": 14351
       },
       {
         "group": "Islam",
@@ -6912,14 +7005,14 @@
         "count": 12046
       },
       {
-        "group": "Other religions",
-        "pct": 0.2,
-        "count": 4877
-      },
-      {
         "group": "Judaism",
         "pct": 0.2,
         "count": 3698
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 4877
       },
       {
         "group": "Orthodox Christian",
@@ -6964,19 +7057,14 @@
         "count": 5215
       },
       {
-        "group": "French, Haitian, or Cajun",
-        "pct": 0.2,
-        "count": 3636
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.2,
         "count": 4203
       },
       {
-        "group": "Vietnamese",
+        "group": "French, Haitian, or Cajun",
         "pct": 0.2,
-        "count": 4872
+        "count": 3636
       },
       {
         "group": "Other Asian and Pacific Island",
@@ -6984,9 +7072,14 @@
         "count": 4883
       },
       {
-        "group": "Russian, Polish, or other Slavic",
+        "group": "Vietnamese",
+        "pct": 0.2,
+        "count": 4872
+      },
+      {
+        "group": "Arabic",
         "pct": 0.1,
-        "count": 2747
+        "count": 2548
       },
       {
         "group": "Korean",
@@ -6994,9 +7087,9 @@
         "count": 1896
       },
       {
-        "group": "Arabic",
+        "group": "Russian, Polish, or other Slavic",
         "pct": 0.1,
-        "count": 2548
+        "count": 2747
       }
     ],
     "ethnicity": [
@@ -7060,8 +7153,11 @@
       "fips_state": "35",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -7135,14 +7231,14 @@
         "count": 108532
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.4,
-        "count": 83293
-      },
-      {
         "group": "Buddhism",
         "pct": 0.4,
         "count": 76280
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.4,
+        "count": 83293
       },
       {
         "group": "Other religions",
@@ -7283,8 +7379,11 @@
       "fips_state": "36",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -7348,19 +7447,19 @@
         "count": 89083
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.2,
-        "count": 20920
-      },
-      {
         "group": "Judaism",
         "pct": 0.2,
         "count": 16567
       },
       {
-        "group": "Other religions",
+        "group": "Orthodox Christian",
+        "pct": 0.2,
+        "count": 20920
+      },
+      {
+        "group": "Buddhism",
         "pct": 0.1,
-        "count": 13245
+        "count": 14886
       },
       {
         "group": "Hinduism",
@@ -7368,9 +7467,9 @@
         "count": 14892
       },
       {
-        "group": "Buddhism",
+        "group": "Other religions",
         "pct": 0.1,
-        "count": 14886
+        "count": 13245
       }
     ],
     "language": [
@@ -7395,19 +7494,24 @@
         "count": 82015
       },
       {
-        "group": "French, Haitian, or Cajun",
-        "pct": 0.4,
-        "count": 38024
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.4,
         "count": 38296
       },
       {
+        "group": "French, Haitian, or Cajun",
+        "pct": 0.4,
+        "count": 38024
+      },
+      {
         "group": "Other and unspecified",
         "pct": 0.4,
         "count": 39928
+      },
+      {
+        "group": "Arabic",
+        "pct": 0.3,
+        "count": 30931
       },
       {
         "group": "German or other West Germanic",
@@ -7423,11 +7527,6 @@
         "group": "Vietnamese",
         "pct": 0.3,
         "count": 24822
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.3,
-        "count": 30931
       },
       {
         "group": "Korean",
@@ -7501,8 +7600,11 @@
       "fips_state": "37",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -7561,19 +7663,19 @@
         "count": 2818
       },
       {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 530
-      },
-      {
         "group": "Islam",
         "pct": 0.1,
         "count": 540
       },
       {
-        "group": "Orthodox Christian",
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 530
+      },
+      {
+        "group": "Buddhism",
         "pct": 0.0,
-        "count": 365
+        "count": 17
       },
       {
         "group": "Judaism",
@@ -7581,9 +7683,9 @@
         "count": 68
       },
       {
-        "group": "Buddhism",
+        "group": "Orthodox Christian",
         "pct": 0.0,
-        "count": 17
+        "count": 365
       }
     ],
     "language": [
@@ -7613,6 +7715,11 @@
         "count": 5542
       },
       {
+        "group": "Arabic",
+        "pct": 0.3,
+        "count": 2163
+      },
+      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.3,
         "count": 2493
@@ -7628,24 +7735,19 @@
         "count": 2114
       },
       {
-        "group": "Arabic",
-        "pct": 0.3,
-        "count": 2163
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.2,
         "count": 1771
       },
       {
-        "group": "Korean",
-        "pct": 0.1,
-        "count": 1079
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.1,
         "count": 1060
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 1079
       },
       {
         "group": "Vietnamese",
@@ -7714,8 +7816,11 @@
       "fips_state": "38",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -7774,14 +7879,14 @@
         "count": 79018
       },
       {
-        "group": "Latter-day Saints",
-        "pct": 0.5,
-        "count": 62623
-      },
-      {
         "group": "Judaism",
         "pct": 0.5,
         "count": 56052
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.5,
+        "count": 62623
       },
       {
         "group": "Orthodox Christian",
@@ -7794,14 +7899,14 @@
         "count": 29065
       },
       {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 7687
-      },
-      {
         "group": "Buddhism",
         "pct": 0.1,
         "count": 14510
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 7687
       },
       {
         "group": "Other Christian",
@@ -7841,9 +7946,9 @@
         "count": 57201
       },
       {
-        "group": "Russian, Polish, or other Slavic",
+        "group": "Arabic",
         "pct": 0.4,
-        "count": 47081
+        "count": 45552
       },
       {
         "group": "Chinese (incl. Mandarin, Cantonese)",
@@ -7851,9 +7956,9 @@
         "count": 47571
       },
       {
-        "group": "Arabic",
+        "group": "Russian, Polish, or other Slavic",
         "pct": 0.4,
-        "count": 45552
+        "count": 47081
       },
       {
         "group": "French, Haitian, or Cajun",
@@ -7866,14 +7971,14 @@
         "count": 9656
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.1,
-        "count": 11681
-      },
-      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 13018
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.1,
+        "count": 11681
       }
     ],
     "ethnicity": [
@@ -7937,8 +8042,11 @@
       "fips_state": "39",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -8002,6 +8110,21 @@
         "count": 15290
       },
       {
+        "group": "Buddhism",
+        "pct": 0.1,
+        "count": 5865
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1,
+        "count": 5930
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 3396
+      },
+      {
         "group": "Orthodox Christian",
         "pct": 0.1,
         "count": 3111
@@ -8010,21 +8133,6 @@
         "group": "Other religions",
         "pct": 0.1,
         "count": 5867
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.1,
-        "count": 3396
-      },
-      {
-        "group": "Hinduism",
-        "pct": 0.1,
-        "count": 5930
-      },
-      {
-        "group": "Buddhism",
-        "pct": 0.1,
-        "count": 5865
       },
       {
         "group": "Other Christian",
@@ -8064,14 +8172,14 @@
         "count": 16727
       },
       {
-        "group": "German or other West Germanic",
-        "pct": 0.3,
-        "count": 10224
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.3,
         "count": 10076
+      },
+      {
+        "group": "German or other West Germanic",
+        "pct": 0.3,
+        "count": 10224
       },
       {
         "group": "Arabic",
@@ -8084,14 +8192,14 @@
         "count": 5276
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.1,
-        "count": 4440
-      },
-      {
         "group": "Korean",
         "pct": 0.1,
         "count": 3576
+      },
+      {
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.1,
+        "count": 4440
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -8116,14 +8224,14 @@
         "count": 318993
       },
       {
-        "group": "Black or African American (non-Hispanic)",
-        "pct": 7.0,
-        "count": 277702
-      },
-      {
         "group": "American Indian and Alaska Native (non-Hispanic)",
         "pct": 7.0,
         "count": 277945
+      },
+      {
+        "group": "Black or African American (non-Hispanic)",
+        "pct": 7.0,
+        "count": 277702
       },
       {
         "group": "Asian (non-Hispanic)",
@@ -8160,8 +8268,11 @@
       "fips_state": "40",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -8230,6 +8341,11 @@
         "count": 12641
       },
       {
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 10083
+      },
+      {
         "group": "Orthodox Christian",
         "pct": 0.2,
         "count": 8914
@@ -8238,11 +8354,6 @@
         "group": "Other religions",
         "pct": 0.2,
         "count": 10273
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.2,
-        "count": 10083
       },
       {
         "group": "Islam",
@@ -8272,14 +8383,14 @@
         "count": 39387
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.8,
-        "count": 33151
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.8,
         "count": 30986
+      },
+      {
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.8,
+        "count": 33151
       },
       {
         "group": "Vietnamese",
@@ -8378,8 +8489,11 @@
       "fips_state": "41",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -8448,24 +8562,24 @@
         "count": 68201
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.4,
-        "count": 50117
-      },
-      {
         "group": "Latter-day Saints",
         "pct": 0.4,
         "count": 52290
       },
       {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 8548
+        "group": "Orthodox Christian",
+        "pct": 0.4,
+        "count": 50117
       },
       {
         "group": "Buddhism",
         "pct": 0.1,
         "count": 18792
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 8548
       },
       {
         "group": "Other Christian",
@@ -8500,14 +8614,14 @@
         "count": 94107
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.7,
-        "count": 86863
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.7,
         "count": 84835
+      },
+      {
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.7,
+        "count": 86863
       },
       {
         "group": "Other and unspecified",
@@ -8520,14 +8634,14 @@
         "count": 54924
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.3,
-        "count": 35343
-      },
-      {
         "group": "Arabic",
         "pct": 0.3,
         "count": 40409
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.3,
+        "count": 35343
       },
       {
         "group": "Korean",
@@ -8601,8 +8715,11 @@
       "fips_state": "42",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -8651,14 +8768,14 @@
         "count": 85676
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.7,
-        "count": 7653
-      },
-      {
         "group": "Judaism",
         "pct": 0.7,
         "count": 7475
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.7,
+        "count": 7653
       },
       {
         "group": "Jehovah's Witnesses",
@@ -8671,11 +8788,6 @@
         "count": 4259
       },
       {
-        "group": "Other religions",
-        "pct": 0.2,
-        "count": 1679
-      },
-      {
         "group": "Buddhism",
         "pct": 0.2,
         "count": 2075
@@ -8684,6 +8796,11 @@
         "group": "Islam",
         "pct": 0.2,
         "count": 2599
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 1679
       },
       {
         "group": "Hinduism",
@@ -8748,14 +8865,14 @@
         "count": 1307
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.1,
-        "count": 820
-      },
-      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 1536
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.1,
+        "count": 820
       }
     ],
     "ethnicity": [
@@ -8819,8 +8936,11 @@
       "fips_state": "44",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -8889,16 +9009,6 @@
         "count": 8383
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.1,
-        "count": 7462
-      },
-      {
-        "group": "Judaism",
-        "pct": 0.1,
-        "count": 6364
-      },
-      {
         "group": "Buddhism",
         "pct": 0.1,
         "count": 4139
@@ -8907,6 +9017,16 @@
         "group": "Islam",
         "pct": 0.1,
         "count": 6677
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.1,
+        "count": 6364
+      },
+      {
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 7462
       }
     ],
     "language": [
@@ -8931,19 +9051,14 @@
         "count": 14908
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.3,
-        "count": 15651
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.3,
         "count": 15022
       },
       {
-        "group": "French, Haitian, or Cajun",
-        "pct": 0.2,
-        "count": 11574
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.3,
+        "count": 15651
       },
       {
         "group": "Chinese (incl. Mandarin, Cantonese)",
@@ -8951,14 +9066,9 @@
         "count": 10983
       },
       {
-        "group": "Vietnamese",
+        "group": "French, Haitian, or Cajun",
         "pct": 0.2,
-        "count": 7887
-      },
-      {
-        "group": "Tagalog (incl. Filipino)",
-        "pct": 0.2,
-        "count": 8786
+        "count": 11574
       },
       {
         "group": "Other and unspecified",
@@ -8966,14 +9076,24 @@
         "count": 10814
       },
       {
-        "group": "Korean",
-        "pct": 0.1,
-        "count": 4573
+        "group": "Tagalog (incl. Filipino)",
+        "pct": 0.2,
+        "count": 8786
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.2,
+        "count": 7887
       },
       {
         "group": "Arabic",
         "pct": 0.1,
         "count": 4768
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 4573
       }
     ],
     "ethnicity": [
@@ -9037,8 +9157,11 @@
       "fips_state": "45",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -9102,19 +9225,19 @@
         "count": 2134
       },
       {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 1045
-      },
-      {
         "group": "Islam",
         "pct": 0.1,
         "count": 535
       },
       {
-        "group": "Judaism",
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 1045
+      },
+      {
+        "group": "Buddhism",
         "pct": 0.0,
-        "count": 103
+        "count": 17
       },
       {
         "group": "Hinduism",
@@ -9122,9 +9245,9 @@
         "count": 177
       },
       {
-        "group": "Buddhism",
+        "group": "Judaism",
         "pct": 0.0,
-        "count": 17
+        "count": 103
       }
     ],
     "language": [
@@ -9169,6 +9292,16 @@
         "count": 1250
       },
       {
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 994
+      },
+      {
+        "group": "Chinese (incl. Mandarin, Cantonese)",
+        "pct": 0.1,
+        "count": 787
+      },
+      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.1,
         "count": 946
@@ -9179,19 +9312,9 @@
         "count": 469
       },
       {
-        "group": "Chinese (incl. Mandarin, Cantonese)",
-        "pct": 0.1,
-        "count": 787
-      },
-      {
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 566
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.1,
-        "count": 994
       }
     ],
     "ethnicity": [
@@ -9255,8 +9378,11 @@
       "fips_state": "46",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -9325,24 +9451,24 @@
         "count": 25022
       },
       {
-        "group": "Judaism",
-        "pct": 0.2,
-        "count": 14560
-      },
-      {
         "group": "Hinduism",
         "pct": 0.2,
         "count": 16131
       },
       {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 4996
+        "group": "Judaism",
+        "pct": 0.2,
+        "count": 14560
       },
       {
         "group": "Buddhism",
         "pct": 0.1,
         "count": 5688
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 4996
       }
     ],
     "language": [
@@ -9362,14 +9488,14 @@
         "count": 42494
       },
       {
-        "group": "Other Asian and Pacific Island",
-        "pct": 0.5,
-        "count": 29651
-      },
-      {
         "group": "Arabic",
         "pct": 0.5,
         "count": 32042
+      },
+      {
+        "group": "Other Asian and Pacific Island",
+        "pct": 0.5,
+        "count": 29651
       },
       {
         "group": "Other and unspecified",
@@ -9382,6 +9508,11 @@
         "count": 17000
       },
       {
+        "group": "Chinese (incl. Mandarin, Cantonese)",
+        "pct": 0.2,
+        "count": 14840
+      },
+      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.2,
         "count": 14143
@@ -9390,11 +9521,6 @@
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.2,
         "count": 11153
-      },
-      {
-        "group": "Chinese (incl. Mandarin, Cantonese)",
-        "pct": 0.2,
-        "count": 14840
       },
       {
         "group": "Vietnamese",
@@ -9473,8 +9599,11 @@
       "fips_state": "47",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -9528,14 +9657,14 @@
         "count": 362037
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 1.1,
-        "count": 317698
-      },
-      {
         "group": "Islam",
         "pct": 1.1,
         "count": 313209
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.1,
+        "count": 317698
       },
       {
         "group": "Hinduism",
@@ -9543,9 +9672,9 @@
         "count": 112153
       },
       {
-        "group": "Orthodox Christian",
+        "group": "Buddhism",
         "pct": 0.2,
-        "count": 54968
+        "count": 60882
       },
       {
         "group": "Judaism",
@@ -9553,9 +9682,9 @@
         "count": 57161
       },
       {
-        "group": "Buddhism",
+        "group": "Orthodox Christian",
         "pct": 0.2,
-        "count": 60882
+        "count": 54968
       },
       {
         "group": "Other religions",
@@ -9620,14 +9749,14 @@
         "count": 86800
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.2,
-        "count": 59500
-      },
-      {
         "group": "Korean",
         "pct": 0.2,
         "count": 66818
+      },
+      {
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.2,
+        "count": 59500
       }
     ],
     "ethnicity": [
@@ -9691,8 +9820,11 @@
       "fips_state": "48",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -9766,9 +9898,9 @@
         "count": 4993
       },
       {
-        "group": "Other religions",
+        "group": "Hinduism",
         "pct": 0.1,
-        "count": 2284
+        "count": 4584
       },
       {
         "group": "Judaism",
@@ -9776,9 +9908,9 @@
         "count": 2480
       },
       {
-        "group": "Hinduism",
+        "group": "Other religions",
         "pct": 0.1,
-        "count": 4584
+        "count": 2284
       }
     ],
     "language": [
@@ -9833,6 +9965,11 @@
         "count": 8231
       },
       {
+        "group": "Arabic",
+        "pct": 0.2,
+        "count": 5206
+      },
+      {
         "group": "Korean",
         "pct": 0.2,
         "count": 5263
@@ -9841,11 +9978,6 @@
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.2,
         "count": 6735
-      },
-      {
-        "group": "Arabic",
-        "pct": 0.2,
-        "count": 5206
       }
     ],
     "ethnicity": [
@@ -9909,8 +10041,11 @@
       "fips_state": "49",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -9974,14 +10109,14 @@
         "count": 3768
       },
       {
-        "group": "Other religions",
-        "pct": 0.5,
-        "count": 2996
-      },
-      {
         "group": "Buddhism",
         "pct": 0.5,
         "count": 3288
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.5,
+        "count": 2996
       },
       {
         "group": "Judaism",
@@ -10046,14 +10181,14 @@
         "count": 2047
       },
       {
+        "group": "Arabic",
+        "pct": 0.1,
+        "count": 341
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 426
-      },
-      {
-        "group": "Vietnamese",
-        "pct": 0.1,
-        "count": 543
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -10061,9 +10196,9 @@
         "count": 637
       },
       {
-        "group": "Arabic",
+        "group": "Vietnamese",
         "pct": 0.1,
-        "count": 341
+        "count": 543
       }
     ],
     "ethnicity": [
@@ -10127,8 +10262,11 @@
       "fips_state": "50",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -10192,24 +10330,24 @@
         "count": 57744
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.4,
-        "count": 33816
-      },
-      {
         "group": "Hinduism",
         "pct": 0.4,
         "count": 35926
       },
       {
-        "group": "Judaism",
-        "pct": 0.3,
-        "count": 27251
+        "group": "Orthodox Christian",
+        "pct": 0.4,
+        "count": 33816
       },
       {
         "group": "Buddhism",
         "pct": 0.3,
         "count": 22697
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.3,
+        "count": 27251
       },
       {
         "group": "Other religions",
@@ -10249,9 +10387,9 @@
         "count": 83691
       },
       {
-        "group": "Korean",
+        "group": "Arabic",
         "pct": 0.7,
-        "count": 56747
+        "count": 59293
       },
       {
         "group": "Chinese (incl. Mandarin, Cantonese)",
@@ -10259,19 +10397,19 @@
         "count": 58872
       },
       {
-        "group": "Arabic",
+        "group": "Korean",
         "pct": 0.7,
-        "count": 59293
-      },
-      {
-        "group": "Vietnamese",
-        "pct": 0.6,
-        "count": 52098
+        "count": 56747
       },
       {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.6,
         "count": 47045
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.6,
+        "count": 52098
       },
       {
         "group": "French, Haitian, or Cajun",
@@ -10350,8 +10488,11 @@
       "fips_state": "51",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -10405,14 +10546,14 @@
         "count": 289479
       },
       {
-        "group": "Jehovah's Witnesses",
-        "pct": 1.0,
-        "count": 79842
-      },
-      {
         "group": "Buddhism",
         "pct": 1.0,
         "count": 73387
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0,
+        "count": 79842
       },
       {
         "group": "Islam",
@@ -10420,24 +10561,24 @@
         "count": 27391
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.3,
-        "count": 26748
-      },
-      {
         "group": "Hinduism",
         "pct": 0.3,
         "count": 19408
       },
       {
-        "group": "Other religions",
-        "pct": 0.2,
-        "count": 14241
+        "group": "Orthodox Christian",
+        "pct": 0.3,
+        "count": 26748
       },
       {
         "group": "Judaism",
         "pct": 0.2,
         "count": 18588
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2,
+        "count": 14241
       },
       {
         "group": "Other Christian",
@@ -10573,8 +10714,11 @@
       "fips_state": "53",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -10633,19 +10777,19 @@
         "count": 8916
       },
       {
-        "group": "Orthodox Christian",
-        "pct": 0.1,
-        "count": 1973
-      },
-      {
         "group": "Judaism",
         "pct": 0.1,
         "count": 1894
       },
       {
-        "group": "Other religions",
+        "group": "Orthodox Christian",
+        "pct": 0.1,
+        "count": 1973
+      },
+      {
+        "group": "Buddhism",
         "pct": 0.0,
-        "count": 766
+        "count": 650
       },
       {
         "group": "Islam",
@@ -10653,9 +10797,9 @@
         "count": 849
       },
       {
-        "group": "Buddhism",
+        "group": "Other religions",
         "pct": 0.0,
-        "count": 650
+        "count": 766
       }
     ],
     "language": [
@@ -10675,24 +10819,14 @@
         "count": 6024
       },
       {
-        "group": "German or other West Germanic",
-        "pct": 0.2,
-        "count": 2827
-      },
-      {
         "group": "Arabic",
         "pct": 0.2,
         "count": 3226
       },
       {
-        "group": "French, Haitian, or Cajun",
-        "pct": 0.1,
-        "count": 2092
-      },
-      {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.1,
-        "count": 1080
+        "group": "German or other West Germanic",
+        "pct": 0.2,
+        "count": 2827
       },
       {
         "group": "Chinese (incl. Mandarin, Cantonese)",
@@ -10700,14 +10834,9 @@
         "count": 2289
       },
       {
-        "group": "Vietnamese",
+        "group": "French, Haitian, or Cajun",
         "pct": 0.1,
-        "count": 1142
-      },
-      {
-        "group": "Tagalog (incl. Filipino)",
-        "pct": 0.1,
-        "count": 1258
+        "count": 2092
       },
       {
         "group": "Other Asian and Pacific Island",
@@ -10718,6 +10847,21 @@
         "group": "Other and unspecified",
         "pct": 0.1,
         "count": 1830
+      },
+      {
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.1,
+        "count": 1080
+      },
+      {
+        "group": "Tagalog (incl. Filipino)",
+        "pct": 0.1,
+        "count": 1258
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.1,
+        "count": 1142
       },
       {
         "group": "Korean",
@@ -10786,8 +10930,11 @@
       "fips_state": "54",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -10851,9 +10998,9 @@
         "count": 27125
       },
       {
-        "group": "Orthodox Christian",
+        "group": "Buddhism",
         "pct": 0.2,
-        "count": 10575
+        "count": 13281
       },
       {
         "group": "Judaism",
@@ -10861,19 +11008,19 @@
         "count": 10976
       },
       {
-        "group": "Buddhism",
+        "group": "Orthodox Christian",
         "pct": 0.2,
-        "count": 13281
-      },
-      {
-        "group": "Other religions",
-        "pct": 0.1,
-        "count": 7973
+        "count": 10575
       },
       {
         "group": "Hinduism",
         "pct": 0.1,
         "count": 7912
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1,
+        "count": 7973
       },
       {
         "group": "Other Christian",
@@ -10908,11 +11055,6 @@
         "count": 37422
       },
       {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.3,
-        "count": 18498
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.3,
         "count": 17916
@@ -10923,9 +11065,9 @@
         "count": 14373
       },
       {
-        "group": "French, Haitian, or Cajun",
-        "pct": 0.2,
-        "count": 8629
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.3,
+        "count": 18498
       },
       {
         "group": "Arabic",
@@ -10933,19 +11075,24 @@
         "count": 8730
       },
       {
+        "group": "French, Haitian, or Cajun",
+        "pct": 0.2,
+        "count": 8629
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 3302
       },
       {
-        "group": "Vietnamese",
-        "pct": 0.1,
-        "count": 4461
-      },
-      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 6849
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.1,
+        "count": 4461
       }
     ],
     "ethnicity": [
@@ -11009,8 +11156,11 @@
       "fips_state": "55",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -11079,14 +11229,14 @@
         "count": 599
       },
       {
-        "group": "Islam",
-        "pct": 0.0,
-        "count": 226
-      },
-      {
         "group": "Buddhism",
         "pct": 0.0,
         "count": 100
+      },
+      {
+        "group": "Islam",
+        "pct": 0.0,
+        "count": 226
       }
     ],
     "language": [
@@ -11116,14 +11266,14 @@
         "count": 1556
       },
       {
+        "group": "Chinese (incl. Mandarin, Cantonese)",
+        "pct": 0.2,
+        "count": 940
+      },
+      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.2,
         "count": 976
-      },
-      {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.2,
-        "count": 1183
       },
       {
         "group": "Other Indo-European",
@@ -11131,14 +11281,9 @@
         "count": 1192
       },
       {
-        "group": "Chinese (incl. Mandarin, Cantonese)",
+        "group": "Russian, Polish, or other Slavic",
         "pct": 0.2,
-        "count": 940
-      },
-      {
-        "group": "Vietnamese",
-        "pct": 0.1,
-        "count": 315
+        "count": 1183
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -11146,14 +11291,19 @@
         "count": 623
       },
       {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 182
+        "group": "Vietnamese",
+        "pct": 0.1,
+        "count": 315
       },
       {
         "group": "Arabic",
         "pct": 0.0,
         "count": 77
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0,
+        "count": 182
       }
     ],
     "ethnicity": [
@@ -11178,14 +11328,14 @@
         "count": 10782
       },
       {
-        "group": "Black or African American (non-Hispanic)",
-        "pct": 0.8,
-        "count": 4488
-      },
-      {
         "group": "Asian (non-Hispanic)",
         "pct": 0.8,
         "count": 4551
+      },
+      {
+        "group": "Black or African American (non-Hispanic)",
+        "pct": 0.8,
+        "count": 4488
       },
       {
         "group": "Some other race (non-Hispanic)",
@@ -11217,8 +11367,11 @@
       "fips_state": "56",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
   },
@@ -11271,24 +11424,9 @@
         "count": 1625
       },
       {
-        "group": "German or other West Germanic",
+        "group": "Arabic",
         "pct": 0.0,
-        "count": 353
-      },
-      {
-        "group": "Russian, Polish, or other Slavic",
-        "pct": 0.0,
-        "count": 39
-      },
-      {
-        "group": "Other Indo-European",
-        "pct": 0.0,
-        "count": 1181
-      },
-      {
-        "group": "Korean",
-        "pct": 0.0,
-        "count": 51
+        "count": 409
       },
       {
         "group": "Chinese (incl. Mandarin, Cantonese)",
@@ -11296,14 +11434,14 @@
         "count": 1167
       },
       {
-        "group": "Vietnamese",
+        "group": "German or other West Germanic",
         "pct": 0.0,
-        "count": 41
+        "count": 353
       },
       {
-        "group": "Tagalog (incl. Filipino)",
+        "group": "Korean",
         "pct": 0.0,
-        "count": 16
+        "count": 51
       },
       {
         "group": "Other Asian and Pacific Island",
@@ -11311,14 +11449,29 @@
         "count": 59
       },
       {
-        "group": "Arabic",
+        "group": "Other Indo-European",
         "pct": 0.0,
-        "count": 409
+        "count": 1181
       },
       {
         "group": "Other and unspecified",
         "pct": 0.0,
         "count": 162
+      },
+      {
+        "group": "Russian, Polish, or other Slavic",
+        "pct": 0.0,
+        "count": 39
+      },
+      {
+        "group": "Tagalog (incl. Filipino)",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.0,
+        "count": 41
       }
     ],
     "ethnicity": [
@@ -11333,14 +11486,14 @@
         "count": 27190
       },
       {
-        "group": "Black or African American (non-Hispanic)",
-        "pct": 0.1,
-        "count": 4043
-      },
-      {
         "group": "Asian (non-Hispanic)",
         "pct": 0.1,
         "count": 2526
+      },
+      {
+        "group": "Black or African American (non-Hispanic)",
+        "pct": 0.1,
+        "count": 4043
       },
       {
         "group": "Some other race (non-Hispanic)",
@@ -11376,7 +11529,9 @@
       "fips_state": "72",
       "fips_county": null
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
+    "language_year": 2022,
     "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
   }
 ]

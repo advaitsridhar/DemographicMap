@@ -58,14 +58,14 @@
         "count": 3051
       },
       {
-        "group": "Indigenous traditions",
-        "pct": 0.1,
-        "count": 873
-      },
-      {
         "group": "Does not know",
         "pct": 0.1,
         "count": 911
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.1,
+        "count": 873
       }
     ],
     "language": {
@@ -109,7 +109,9 @@
     "codes": {
       "ibge": "11"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -222,7 +224,9 @@
     "codes": {
       "ibge": "12"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -274,14 +278,14 @@
         "count": 12160
       },
       {
-        "group": "Umbanda and Candomblé",
-        "pct": 0.3,
-        "count": 10472
-      },
-      {
         "group": "Indigenous traditions",
         "pct": 0.3,
         "count": 11164
+      },
+      {
+        "group": "Umbanda and Candomblé",
+        "pct": 0.3,
+        "count": 10472
       },
       {
         "group": "Not stated",
@@ -335,7 +339,9 @@
     "codes": {
       "ibge": "13"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -392,14 +398,14 @@
         "count": 3245
       },
       {
-        "group": "Umbanda and Candomblé",
-        "pct": 0.3,
-        "count": 1551
-      },
-      {
         "group": "Not stated",
         "pct": 0.3,
         "count": 1748
+      },
+      {
+        "group": "Umbanda and Candomblé",
+        "pct": 0.3,
+        "count": 1551
       },
       {
         "group": "Does not know",
@@ -448,7 +454,9 @@
     "codes": {
       "ibge": "14"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -510,14 +518,14 @@
         "count": 6919
       },
       {
-        "group": "Indigenous traditions",
-        "pct": 0.0,
-        "count": 2621
-      },
-      {
         "group": "Does not know",
         "pct": 0.0,
         "count": 2018
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 2621
       }
     ],
     "language": {
@@ -561,7 +569,9 @@
     "codes": {
       "ibge": "15"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -608,6 +618,11 @@
         "count": 19487
       },
       {
+        "group": "Does not know",
+        "pct": 0.5,
+        "count": 2739
+      },
+      {
         "group": "Spiritism",
         "pct": 0.5,
         "count": 3087
@@ -616,11 +631,6 @@
         "group": "Umbanda and Candomblé",
         "pct": 0.5,
         "count": 2881
-      },
-      {
-        "group": "Does not know",
-        "pct": 0.5,
-        "count": 2739
       },
       {
         "group": "Indigenous traditions",
@@ -674,7 +684,9 @@
     "codes": {
       "ibge": "16"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -731,14 +743,14 @@
         "count": 4151
       },
       {
-        "group": "Umbanda and Candomblé",
-        "pct": 0.1,
-        "count": 1762
-      },
-      {
         "group": "Not stated",
         "pct": 0.1,
         "count": 1292
+      },
+      {
+        "group": "Umbanda and Candomblé",
+        "pct": 0.1,
+        "count": 1762
       },
       {
         "group": "Does not know",
@@ -787,7 +799,9 @@
     "codes": {
       "ibge": "17"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -839,14 +853,14 @@
         "count": 19508
       },
       {
-        "group": "Spiritism",
-        "pct": 0.2,
-        "count": 11011
-      },
-      {
         "group": "Not stated",
         "pct": 0.2,
         "count": 9119
+      },
+      {
+        "group": "Spiritism",
+        "pct": 0.2,
+        "count": 11011
       },
       {
         "group": "Indigenous traditions",
@@ -900,7 +914,9 @@
     "codes": {
       "ibge": "21"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -962,14 +978,14 @@
         "count": 2075
       },
       {
-        "group": "Indigenous traditions",
-        "pct": 0.0,
-        "count": 121
-      },
-      {
         "group": "Does not know",
         "pct": 0.0,
         "count": 294
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 121
       }
     ],
     "language": {
@@ -1013,7 +1029,9 @@
     "codes": {
       "ibge": "22"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -1075,14 +1093,14 @@
         "count": 6572
       },
       {
-        "group": "Indigenous traditions",
-        "pct": 0.0,
-        "count": 2113
-      },
-      {
         "group": "Does not know",
         "pct": 0.0,
         "count": 3018
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 2113
       }
     ],
     "language": {
@@ -1126,7 +1144,9 @@
     "codes": {
       "ibge": "23"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -1188,14 +1208,14 @@
         "count": 2492
       },
       {
-        "group": "Indigenous traditions",
-        "pct": 0.0,
-        "count": 456
-      },
-      {
         "group": "Does not know",
         "pct": 0.0,
         "count": 563
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 456
       }
     ],
     "language": {
@@ -1239,7 +1259,9 @@
     "codes": {
       "ibge": "24"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -1352,7 +1374,9 @@
     "codes": {
       "ibge": "25"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -1465,7 +1489,9 @@
     "codes": {
       "ibge": "26"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -1578,7 +1604,9 @@
     "codes": {
       "ibge": "27"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -1640,14 +1668,14 @@
         "count": 2519
       },
       {
-        "group": "Indigenous traditions",
-        "pct": 0.0,
-        "count": 142
-      },
-      {
         "group": "Does not know",
         "pct": 0.0,
         "count": 457
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 142
       }
     ],
     "language": {
@@ -1691,7 +1719,9 @@
     "codes": {
       "ibge": "28"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -1804,7 +1834,9 @@
     "codes": {
       "ibge": "29"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -1866,14 +1898,14 @@
         "count": 15317
       },
       {
-        "group": "Indigenous traditions",
-        "pct": 0.0,
-        "count": 3548
-      },
-      {
         "group": "Does not know",
         "pct": 0.0,
         "count": 5806
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 3548
       }
     ],
     "language": {
@@ -1917,7 +1949,9 @@
     "codes": {
       "ibge": "31"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -1979,14 +2013,14 @@
         "count": 3253
       },
       {
-        "group": "Indigenous traditions",
-        "pct": 0.0,
-        "count": 1035
-      },
-      {
         "group": "Does not know",
         "pct": 0.0,
         "count": 1096
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 1035
       }
     ],
     "language": {
@@ -2030,7 +2064,9 @@
     "codes": {
       "ibge": "32"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -2143,7 +2179,9 @@
     "codes": {
       "ibge": "33"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -2205,14 +2243,14 @@
         "count": 50781
       },
       {
-        "group": "Indigenous traditions",
-        "pct": 0.0,
-        "count": 10423
-      },
-      {
         "group": "Does not know",
         "pct": 0.0,
         "count": 18530
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 10423
       }
     ],
     "language": {
@@ -2256,7 +2294,9 @@
     "codes": {
       "ibge": "35"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -2369,7 +2409,9 @@
     "codes": {
       "ibge": "41"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -2431,14 +2473,14 @@
         "count": 4002
       },
       {
-        "group": "Indigenous traditions",
-        "pct": 0.0,
-        "count": 2214
-      },
-      {
         "group": "Does not know",
         "pct": 0.0,
         "count": 3186
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 2214
       }
     ],
     "language": {
@@ -2482,7 +2524,9 @@
     "codes": {
       "ibge": "42"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -2539,14 +2583,14 @@
         "count": 274787
       },
       {
-        "group": "Indigenous traditions",
-        "pct": 0.0,
-        "count": 3221
-      },
-      {
         "group": "Does not know",
         "pct": 0.0,
         "count": 3523
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 3221
       },
       {
         "group": "Not stated",
@@ -2595,7 +2639,9 @@
     "codes": {
       "ibge": "43"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -2708,7 +2754,9 @@
     "codes": {
       "ibge": "50"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -2760,14 +2808,14 @@
         "count": 33685
       },
       {
-        "group": "Umbanda and Candomblé",
-        "pct": 0.4,
-        "count": 13093
-      },
-      {
         "group": "Indigenous traditions",
         "pct": 0.4,
         "count": 10835
+      },
+      {
+        "group": "Umbanda and Candomblé",
+        "pct": 0.4,
+        "count": 13093
       },
       {
         "group": "Not stated",
@@ -2821,7 +2869,9 @@
     "codes": {
       "ibge": "51"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -2883,14 +2933,14 @@
         "count": 5463
       },
       {
-        "group": "Indigenous traditions",
-        "pct": 0.0,
-        "count": 658
-      },
-      {
         "group": "Does not know",
         "pct": 0.0,
         "count": 2406
+      },
+      {
+        "group": "Indigenous traditions",
+        "pct": 0.0,
+        "count": 658
       }
     ],
     "language": {
@@ -2934,7 +2984,9 @@
     "codes": {
       "ibge": "52"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   },
   {
@@ -3047,7 +3099,9 @@
     "codes": {
       "ibge": "53"
     },
+    "ethnicity_year": 2022,
     "ethnicity_note": "IBGE 'cor ou raça' is self-declared skin colour (branca, preta, parda, amarela, indígena) and is not equivalent to ethnicity classifications used elsewhere in this dataset. The labels are shown in English; 'Pardo' keeps Brazil's own term rather than becoming 'Mixed', which is a different question asked elsewhere.",
+    "religion_year": 2022,
     "religion_note": "Religion was asked of persons aged 10 and over (IBGE table 9537); shares are of that universe, not of all residents."
   }
 ]

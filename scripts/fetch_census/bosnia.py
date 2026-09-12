@@ -49,7 +49,8 @@ import io
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, measure, record, shares,
+    write_json,
 )
 
 OUT = {"admin1": "bosnia_entity.json", "admin2": "bosnia_canton.json"}
@@ -204,6 +205,7 @@ def build(tables: dict[str, dict[str, dict[str, Any]]]) -> dict[str, list[dict[s
             raise SystemExit(f"bosnia: territory {native!r} (level {level}) is not one "
                              f"this adapter knows; add it to ENTITIES or CANTONS")
         fields = {field: bars(field, unit) for field, unit in units.items()}
+        fields.update({f"{field}_year": dated(fields[field], YEAR) for field in units})
         fields.update({f"{field}_note": f"{SOURCE}. {NOTES[field]}" for field in units})
         total = next(iter(units.values()))["total"]
         english = next(iter(units.values()))["english"]

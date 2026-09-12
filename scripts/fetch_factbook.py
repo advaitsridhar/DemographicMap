@@ -32,6 +32,7 @@ from common import (  # noqa: E402
     NOT_COLLECTED,
     PROCESSED,
     RAW,
+    dated,
     gap,
     http_get,
     log,
@@ -223,10 +224,23 @@ def parse_age_structure(profile: dict[str, Any]) -> dict[str, Any] | None:
     return out or None
 
 
-def parse_languages(profile: dict[str, Any]) -> list[dict[str, Any]] | None:
+def languages_text(profile: dict[str, Any]) -> str | None:
+    """The Languages field, wherever this profile keeps it.
+
+    Its own function because the year is read off the same string the shares
+    are: the Factbook writes "... (2021 est.)" on Languages exactly as it does
+    on Religions and Ethnic groups, both of which were already dated from it.
+    Languages was the only one of the three going out undated, for no reason
+    but that its text never left the parser.
+    """
     raw = text_at(profile, "People and Society", "Languages", "Languages")
     if raw is None:
         raw = text_at(profile, "People and Society", "Languages")
+    return raw
+
+
+def parse_languages(profile: dict[str, Any]) -> list[dict[str, Any]] | None:
+    raw = languages_text(profile)
     comp = parse_composition(raw)
     if comp:
         return comp
@@ -404,6 +418,9 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
         return gap(NOT_AVAILABLE, "No composition published by the Factbook for this entity.")
 
     languages = parse_languages(profile)
+    language_text = languages_text(profile)
+    religion = composition("religion", religion_text)
+    ethnicity = composition("ethnicity", ethnic_text)
 
     return {
         "id": iso3 or f"GEC-{gec.upper()}",
@@ -434,11 +451,16 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
         "urban_population_pct": measure(
             parse_number(text_at(profile, "People and Society", "Urbanization", "urban population")),
             unit="percent", source=src),
-        "religion": composition("religion", religion_text),
-        "religion_year": parse_year(religion_text),
+        # dated(), not parse_year() alone: the text can carry a year and still
+        # produce no composition -- a country whose policy marks the question
+        # not_collected, or one the Factbook answers in free prose -- and a
+        # year printed beside that gap claims a measurement nobody took.
+        "religion": religion,
+        "religion_year": dated(religion, parse_year(religion_text)),
         "language": languages or gap(NOT_AVAILABLE),
-        "ethnicity": composition("ethnicity", ethnic_text),
-        "ethnicity_year": parse_year(ethnic_text),
+        "language_year": dated(languages, parse_year(language_text)),
+        "ethnicity": ethnicity,
+        "ethnicity_year": dated(ethnicity, parse_year(ethnic_text)),
         "sources": [{
             "field": "*",
             "name": "CIA World Factbook",

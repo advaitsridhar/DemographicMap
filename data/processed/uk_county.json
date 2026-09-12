@@ -113,14 +113,14 @@
         "count": 240
       },
       {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.3,
-        "count": 270
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.3,
         "count": 284
+      },
+      {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.3,
+        "count": 270
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -128,14 +128,14 @@
         "count": 217
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.2,
-        "count": 143
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.2,
         "count": 173
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.2,
+        "count": 143
       },
       {
         "group": "White: Irish",
@@ -179,7 +179,9 @@
     "codes": {
       "ons_code": "E06000001"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -306,14 +308,14 @@
         "count": 669
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 0.5,
-        "count": 650
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.5,
         "count": 671
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.5,
+        "count": 650
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -362,7 +364,9 @@
     "codes": {
       "ons_code": "E06000002"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -464,14 +468,19 @@
         "count": 208
       },
       {
+        "group": "Asian, Asian British or Asian Welsh: Other Asian",
+        "pct": 0.2,
+        "count": 336
+      },
+      {
         "group": "Asian, Asian British or Asian Welsh: Pakistani",
         "pct": 0.2,
         "count": 283
       },
       {
-        "group": "Asian, Asian British or Asian Welsh: Other Asian",
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.2,
-        "count": 336
+        "count": 240
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
@@ -484,19 +493,14 @@
         "count": 270
       },
       {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.2,
-        "count": 240
+        "count": 211
       },
       {
         "group": "Other ethnic group: Arab",
         "pct": 0.2,
         "count": 321
-      },
-      {
-        "group": "Other ethnic group: Any other ethnic group",
-        "pct": 0.2,
-        "count": 211
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -545,7 +549,9 @@
     "codes": {
       "ons_code": "E06000003"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -672,14 +678,14 @@
         "count": 725
       },
       {
-        "group": "White: Irish",
-        "pct": 0.3,
-        "count": 528
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.3,
         "count": 558
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.3,
+        "count": 528
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
@@ -728,7 +734,9 @@
     "codes": {
       "ons_code": "E06000004"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -780,14 +788,14 @@
         "count": 453
       },
       {
-        "group": "Sikh",
-        "pct": 0.4,
-        "count": 443
-      },
-      {
         "group": "Other religion",
         "pct": 0.4,
         "count": 404
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.4,
+        "count": 443
       },
       {
         "group": "Buddhist",
@@ -865,14 +873,14 @@
         "count": 374
       },
       {
-        "group": "White: Irish",
-        "pct": 0.3,
-        "count": 342
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.3,
         "count": 329
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.3,
+        "count": 342
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Pakistani",
@@ -911,7 +919,9 @@
     "codes": {
       "ons_code": "E06000005"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -1008,6 +1018,11 @@
         "count": 460
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.4,
+        "count": 458
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Asian",
         "pct": 0.4,
         "count": 461
@@ -1016,11 +1031,6 @@
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
         "pct": 0.4,
         "count": 530
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.4,
-        "count": 458
       },
       {
         "group": "Other ethnic group: Any other ethnic group",
@@ -1094,7 +1104,9 @@
     "codes": {
       "ons_code": "E06000006"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -1221,14 +1233,14 @@
         "count": 1075
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.4,
-        "count": 785
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.4,
         "count": 753
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.4,
+        "count": 785
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
@@ -1277,7 +1289,9 @@
     "codes": {
       "ons_code": "E06000007"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -1460,7 +1474,9 @@
     "codes": {
       "ons_code": "E06000008"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -1607,14 +1623,14 @@
         "count": 408
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.2,
-        "count": 236
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.2,
         "count": 216
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.2,
+        "count": 236
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
@@ -1643,7 +1659,9 @@
     "codes": {
       "ons_code": "E06000009"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -1795,14 +1813,14 @@
         "count": 541
       },
       {
-        "group": "White: Irish",
-        "pct": 0.2,
-        "count": 455
-      },
-      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.2,
         "count": 451
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.2,
+        "count": 455
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
@@ -1826,7 +1844,9 @@
     "codes": {
       "ons_code": "E06000010"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -1928,14 +1948,14 @@
         "count": 1092
       },
       {
-        "group": "White: Irish",
-        "pct": 0.3,
-        "count": 1063
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.3,
         "count": 908
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.3,
+        "count": 1063
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -1953,6 +1973,11 @@
         "count": 617
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.2,
+        "count": 851
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
         "pct": 0.2,
         "count": 547
@@ -1963,24 +1988,19 @@
         "count": 707
       },
       {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.2,
-        "count": 851
-      },
-      {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
         "pct": 0.1,
         "count": 173
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 324
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 368
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 324
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -2009,7 +2029,9 @@
     "codes": {
       "ons_code": "E06000011"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -2121,14 +2143,14 @@
         "count": 543
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.3,
-        "count": 502
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 432
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.3,
+        "count": 502
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -2151,14 +2173,14 @@
         "count": 377
       },
       {
-        "group": "White: Irish",
-        "pct": 0.2,
-        "count": 320
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.2,
         "count": 366
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.2,
+        "count": 320
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
@@ -2192,7 +2214,9 @@
     "codes": {
       "ons_code": "E06000012"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -2344,6 +2368,11 @@
         "count": 85
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 224
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 168
@@ -2352,11 +2381,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 226
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 224
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
@@ -2375,7 +2399,9 @@
     "codes": {
       "ons_code": "E06000013"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -2558,7 +2584,9 @@
     "codes": {
       "ons_code": "E06000014"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -2710,14 +2738,14 @@
         "count": 924
       },
       {
-        "group": "White: Roma",
-        "pct": 0.4,
-        "count": 1163
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.4,
         "count": 1032
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.4,
+        "count": 1163
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -2741,7 +2769,9 @@
     "codes": {
       "ons_code": "E06000015"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -2924,7 +2954,9 @@
     "codes": {
       "ons_code": "E06000016"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -3086,14 +3118,14 @@
         "count": 19
       },
       {
-        "group": "White: Roma",
-        "pct": 0.0,
-        "count": 18
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.0,
         "count": 13
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.0,
+        "count": 18
       }
     ],
     "sources": [
@@ -3107,7 +3139,9 @@
     "codes": {
       "ons_code": "E06000017"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -3290,7 +3324,9 @@
     "codes": {
       "ons_code": "E06000018"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -3392,24 +3428,24 @@
         "count": 689
       },
       {
-        "group": "White: Irish",
-        "pct": 0.4,
-        "count": 727
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.4,
         "count": 795
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.3,
-        "count": 473
+        "group": "White: Irish",
+        "pct": 0.4,
+        "count": 727
       },
       {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 538
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.3,
+        "count": 473
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -3442,14 +3478,14 @@
         "count": 280
       },
       {
-        "group": "White: Roma",
-        "pct": 0.1,
-        "count": 161
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 224
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.1,
+        "count": 161
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -3473,7 +3509,9 @@
     "codes": {
       "ons_code": "E06000019"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -3605,14 +3643,14 @@
         "count": 748
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 0.4,
-        "count": 676
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.4,
         "count": 770
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.4,
+        "count": 676
       },
       {
         "group": "White: Irish",
@@ -3630,6 +3668,11 @@
         "count": 207
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 242
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 203
@@ -3638,11 +3681,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 187
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 242
       }
     ],
     "sources": [
@@ -3656,7 +3694,9 @@
     "codes": {
       "ons_code": "E06000020"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -3798,14 +3838,14 @@
         "count": 920
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 0.4,
-        "count": 1020
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.4,
         "count": 1017
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.4,
+        "count": 1020
       },
       {
         "group": "Other ethnic group: Arab",
@@ -3839,7 +3879,9 @@
     "codes": {
       "ons_code": "E06000021"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -4022,7 +4064,9 @@
     "codes": {
       "ons_code": "E06000022"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -4205,7 +4249,9 @@
     "codes": {
       "ons_code": "E06000023"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -4362,6 +4408,11 @@
         "count": 155
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 247
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 187
@@ -4370,11 +4421,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 169
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 247
       }
     ],
     "sources": [
@@ -4388,7 +4434,9 @@
     "codes": {
       "ons_code": "E06000024"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -4571,7 +4619,9 @@
     "codes": {
       "ons_code": "E06000025"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -4683,14 +4733,14 @@
         "count": 1403
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.5,
-        "count": 1349
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.5,
         "count": 1339
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.5,
+        "count": 1349
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
@@ -4754,7 +4804,9 @@
     "codes": {
       "ons_code": "E06000026"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -4861,14 +4913,14 @@
         "count": 527
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.4,
-        "count": 581
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.4,
         "count": 536
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.4,
+        "count": 581
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -4906,14 +4958,14 @@
         "count": 135
       },
       {
-        "group": "White: Roma",
-        "pct": 0.1,
-        "count": 78
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 136
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.1,
+        "count": 78
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
@@ -4937,7 +4989,9 @@
     "codes": {
       "ons_code": "E06000027"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -4994,14 +5048,14 @@
         "count": 1700
       },
       {
-        "group": "Sikh",
-        "pct": 0.6,
-        "count": 1448
-      },
-      {
         "group": "Other religion",
         "pct": 0.6,
         "count": 1514
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.6,
+        "count": 1448
       },
       {
         "group": "Jewish",
@@ -5049,14 +5103,14 @@
         "count": 2025
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.8,
-        "count": 1972
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.8,
         "count": 1778
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.8,
+        "count": 1972
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Asian",
@@ -5099,14 +5153,14 @@
         "count": 537
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 177
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 344
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 177
       }
     ],
     "sources": [
@@ -5120,7 +5174,9 @@
     "codes": {
       "ons_code": "E06000030"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -5232,6 +5288,11 @@
         "count": 5023
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.9,
+        "count": 1979
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Asian",
         "pct": 0.9,
         "count": 2021
@@ -5240,11 +5301,6 @@
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
         "pct": 0.9,
         "count": 1990
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.9,
-        "count": 1979
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
@@ -5272,14 +5328,14 @@
         "count": 1177
       },
       {
-        "group": "White: Roma",
-        "pct": 0.4,
-        "count": 938
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.4,
         "count": 897
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.4,
+        "count": 938
       },
       {
         "group": "White: Gypsy or Irish Traveller",
@@ -5303,7 +5359,9 @@
     "codes": {
       "ons_code": "E06000031"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -5440,14 +5498,14 @@
         "count": 2745
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 1.1,
-        "count": 2429
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 1.1,
         "count": 2437
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 1.1,
+        "count": 2429
       },
       {
         "group": "Other ethnic group: Arab",
@@ -5486,7 +5544,9 @@
     "codes": {
       "ons_code": "E06000032"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -5603,24 +5663,24 @@
         "count": 1580
       },
       {
-        "group": "White: Irish",
-        "pct": 0.9,
-        "count": 1569
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.9,
         "count": 1634
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.8,
-        "count": 1527
+        "group": "White: Irish",
+        "pct": 0.9,
+        "count": 1569
       },
       {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.8,
         "count": 1401
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.8,
+        "count": 1527
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -5669,7 +5729,9 @@
     "codes": {
       "ons_code": "E06000033"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -5826,6 +5888,11 @@
         "count": 993
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.2,
+        "count": 369
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.2,
         "count": 428
@@ -5834,11 +5901,6 @@
         "group": "White: Roma",
         "pct": 0.2,
         "count": 322
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.2,
-        "count": 369
       }
     ],
     "sources": [
@@ -5852,7 +5914,9 @@
     "codes": {
       "ons_code": "E06000034"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -6014,14 +6078,14 @@
         "count": 749
       },
       {
-        "group": "White: Roma",
-        "pct": 0.2,
-        "count": 469
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.2,
         "count": 452
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.2,
+        "count": 469
       }
     ],
     "sources": [
@@ -6035,7 +6099,9 @@
     "codes": {
       "ons_code": "E06000035"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -6152,14 +6218,14 @@
         "count": 947
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.8,
-        "count": 970
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.8,
         "count": 971
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.8,
+        "count": 970
       },
       {
         "group": "White: Irish",
@@ -6218,7 +6284,9 @@
     "codes": {
       "ons_code": "E06000036"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -6401,7 +6469,9 @@
     "codes": {
       "ons_code": "E06000037"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -6458,14 +6528,14 @@
         "count": 2887
       },
       {
-        "group": "Sikh",
-        "pct": 0.7,
-        "count": 1194
-      },
-      {
         "group": "Other religion",
         "pct": 0.7,
         "count": 1241
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.7,
+        "count": 1194
       },
       {
         "group": "Jewish",
@@ -6528,14 +6598,14 @@
         "count": 2694
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 1.2,
-        "count": 2117
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 1.2,
         "count": 2041
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 1.2,
+        "count": 2117
       },
       {
         "group": "White: Irish",
@@ -6584,7 +6654,9 @@
     "codes": {
       "ons_code": "E06000038"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -6767,7 +6839,9 @@
     "codes": {
       "ons_code": "E06000039"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -6950,7 +7024,9 @@
     "codes": {
       "ons_code": "E06000040"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -7133,7 +7209,9 @@
     "codes": {
       "ons_code": "E06000041"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -7316,7 +7394,9 @@
     "codes": {
       "ons_code": "E06000042"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -7408,14 +7488,14 @@
         "count": 5580
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 1.5,
-        "count": 4198
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 1.5,
         "count": 4286
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 1.5,
+        "count": 4198
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Other Asian",
@@ -7499,7 +7579,9 @@
     "codes": {
       "ons_code": "E06000043"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -7616,14 +7698,14 @@
         "count": 2116
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.7,
-        "count": 1540
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.7,
         "count": 1527
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.7,
+        "count": 1540
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
@@ -7641,14 +7723,14 @@
         "count": 950
       },
       {
-        "group": "White: Irish",
-        "pct": 0.5,
-        "count": 1066
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.5,
         "count": 1007
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.5,
+        "count": 1066
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
@@ -7682,7 +7764,9 @@
     "codes": {
       "ons_code": "E06000044"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -7804,14 +7888,14 @@
         "count": 2444
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.9,
-        "count": 2173
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.9,
         "count": 2157
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.9,
+        "count": 2173
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -7865,7 +7949,9 @@
     "codes": {
       "ons_code": "E06000045"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -8017,14 +8103,14 @@
         "count": 207
       },
       {
-        "group": "White: Roma",
-        "pct": 0.1,
-        "count": 75
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 88
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.1,
+        "count": 75
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
@@ -8048,7 +8134,9 @@
     "codes": {
       "ons_code": "E06000046"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -8165,6 +8253,11 @@
         "count": 1202
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.2,
+        "count": 1167
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
         "pct": 0.2,
         "count": 914
@@ -8175,14 +8268,9 @@
         "count": 906
       },
       {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.2,
-        "count": 1167
-      },
-      {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.2,
-        "count": 798
+        "count": 1248
       },
       {
         "group": "Other ethnic group: Arab",
@@ -8190,9 +8278,9 @@
         "count": 825
       },
       {
-        "group": "Other ethnic group: Any other ethnic group",
+        "group": "White: Gypsy or Irish Traveller",
         "pct": 0.2,
-        "count": 1248
+        "count": 798
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -8231,7 +8319,9 @@
     "codes": {
       "ons_code": "E06000047"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -8333,14 +8423,14 @@
         "count": 2473
       },
       {
-        "group": "White: Irish",
-        "pct": 0.6,
-        "count": 2559
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.6,
         "count": 2508
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.6,
+        "count": 2559
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
@@ -8414,7 +8504,9 @@
     "codes": {
       "ons_code": "E06000049"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -8536,6 +8628,11 @@
         "count": 1564
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.3,
+        "count": 1245
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
         "pct": 0.3,
         "count": 904
@@ -8544,11 +8641,6 @@
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
         "pct": 0.3,
         "count": 1181
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.3,
-        "count": 1245
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -8597,7 +8689,9 @@
     "codes": {
       "ons_code": "E06000050"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -8709,14 +8803,14 @@
         "count": 1121
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.3,
-        "count": 1126
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 1076
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.3,
+        "count": 1126
       },
       {
         "group": "Other ethnic group: Any other ethnic group",
@@ -8754,14 +8848,14 @@
         "count": 400
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 349
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 386
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 349
       },
       {
         "group": "White: Roma",
@@ -8780,7 +8874,9 @@
     "codes": {
       "ons_code": "E06000051"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -8887,14 +8983,14 @@
         "count": 1663
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.3,
-        "count": 1693
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 1996
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.3,
+        "count": 1693
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -8927,6 +9023,11 @@
         "count": 302
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 298
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 717
@@ -8935,11 +9036,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 289
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 298
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Pakistani",
@@ -8963,7 +9059,9 @@
     "codes": {
       "ons_code": "E06000052"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -9120,17 +9218,17 @@
         "count": 0
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.0,
+        "count": 0
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.0,
         "count": 1
       },
       {
         "group": "White: Roma",
-        "pct": 0.0,
-        "count": 0
-      },
-      {
-        "group": "Other ethnic group: Arab",
         "pct": 0.0,
         "count": 0
       }
@@ -9146,7 +9244,9 @@
     "codes": {
       "ons_code": "E06000053"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -9253,6 +9353,11 @@
         "count": 2912
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.5,
+        "count": 2366
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Asian",
         "pct": 0.5,
         "count": 2703
@@ -9261,11 +9366,6 @@
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
         "pct": 0.5,
         "count": 2479
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.5,
-        "count": 2366
       },
       {
         "group": "White: Irish",
@@ -9303,6 +9403,11 @@
         "count": 396
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 637
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 711
@@ -9311,11 +9416,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 260
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 637
       }
     ],
     "sources": [
@@ -9329,7 +9429,9 @@
     "codes": {
       "ons_code": "E06000054"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -9486,14 +9588,14 @@
         "count": 756
       },
       {
-        "group": "White: Roma",
-        "pct": 0.3,
-        "count": 483
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.3,
         "count": 557
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.3,
+        "count": 483
       },
       {
         "group": "White: Gypsy or Irish Traveller",
@@ -9512,7 +9614,9 @@
     "codes": {
       "ons_code": "E06000055"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -9564,14 +9668,14 @@
         "count": 3035
       },
       {
-        "group": "Sikh",
-        "pct": 0.5,
-        "count": 1399
-      },
-      {
         "group": "Other religion",
         "pct": 0.5,
         "count": 1362
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.5,
+        "count": 1399
       },
       {
         "group": "Buddhist",
@@ -9695,7 +9799,9 @@
     "codes": {
       "ons_code": "E06000056"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -9842,14 +9948,14 @@
         "count": 456
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 176
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 268
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 176
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
@@ -9878,7 +9984,9 @@
     "codes": {
       "ons_code": "E06000057"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -9980,14 +10088,14 @@
         "count": 4437
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.8,
-        "count": 3213
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.8,
         "count": 3381
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.8,
+        "count": 3213
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: African",
@@ -10061,7 +10169,9 @@
     "codes": {
       "ons_code": "E06000058"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -10163,14 +10273,14 @@
         "count": 1635
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.3,
-        "count": 1011
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 1189
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.3,
+        "count": 1011
       },
       {
         "group": "Other ethnic group: Any other ethnic group",
@@ -10244,7 +10354,9 @@
     "codes": {
       "ons_code": "E06000059"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -10427,7 +10539,9 @@
     "codes": {
       "ons_code": "E06000060"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -10479,14 +10593,14 @@
         "count": 9971
       },
       {
-        "group": "Sikh",
-        "pct": 0.5,
-        "count": 3578
-      },
-      {
         "group": "Other religion",
         "pct": 0.5,
         "count": 4306
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.5,
+        "count": 3578
       },
       {
         "group": "Buddhist",
@@ -10534,14 +10648,14 @@
         "count": 6120
       },
       {
-        "group": "White: Irish",
-        "pct": 0.8,
-        "count": 6462
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.8,
         "count": 6643
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.8,
+        "count": 6462
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -10559,14 +10673,14 @@
         "count": 4365
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.6,
-        "count": 4646
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.6,
         "count": 4885
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.6,
+        "count": 4646
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Pakistani",
@@ -10589,14 +10703,14 @@
         "count": 2145
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 705
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 1023
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 705
       }
     ],
     "sources": [
@@ -10613,7 +10727,9 @@
         "E06000062"
       ]
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -10755,14 +10871,14 @@
         "count": 1123
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 0.4,
-        "count": 1242
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.4,
         "count": 1326
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.4,
+        "count": 1242
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -10796,7 +10912,9 @@
     "codes": {
       "ons_code": "E08000001"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -10858,14 +10976,14 @@
         "count": 508
       },
       {
-        "group": "Sikh",
-        "pct": 0.3,
-        "count": 575
-      },
-      {
         "group": "Other religion",
         "pct": 0.3,
         "count": 649
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 575
       }
     ],
     "language": {
@@ -10979,7 +11097,9 @@
     "codes": {
       "ons_code": "E08000002"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -11041,14 +11161,14 @@
         "count": 2632
       },
       {
-        "group": "Sikh",
-        "pct": 0.5,
-        "count": 2718
-      },
-      {
         "group": "Other religion",
         "pct": 0.5,
         "count": 2736
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.5,
+        "count": 2718
       }
     ],
     "language": {
@@ -11162,7 +11282,9 @@
     "codes": {
       "ons_code": "E08000003"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -11304,14 +11426,14 @@
         "count": 876
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 0.4,
-        "count": 1043
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.4,
         "count": 900
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.4,
+        "count": 1043
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -11319,14 +11441,14 @@
         "count": 819
       },
       {
-        "group": "White: Roma",
-        "pct": 0.2,
-        "count": 549
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.2,
         "count": 521
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.2,
+        "count": 549
       },
       {
         "group": "White: Gypsy or Irish Traveller",
@@ -11345,7 +11467,9 @@
     "codes": {
       "ons_code": "E08000004"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -11482,14 +11606,14 @@
         "count": 1011
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 0.5,
-        "count": 1210
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.5,
         "count": 1035
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.5,
+        "count": 1210
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -11528,7 +11652,9 @@
     "codes": {
       "ons_code": "E08000005"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -11665,14 +11791,14 @@
         "count": 2098
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.7,
-        "count": 1844
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.7,
         "count": 1963
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.7,
+        "count": 1844
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
@@ -11711,7 +11837,9 @@
     "codes": {
       "ons_code": "E08000006"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -11894,7 +12022,9 @@
     "codes": {
       "ons_code": "E08000007"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -12031,14 +12161,14 @@
         "count": 1251
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 0.4,
-        "count": 859
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.4,
         "count": 906
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.4,
+        "count": 859
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
@@ -12077,7 +12207,9 @@
     "codes": {
       "ons_code": "E08000008"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -12260,7 +12392,9 @@
     "codes": {
       "ons_code": "E08000009"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -12387,6 +12521,11 @@
         "count": 1353
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.3,
+        "count": 1027
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
         "pct": 0.3,
         "count": 885
@@ -12395,11 +12534,6 @@
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
         "pct": 0.3,
         "count": 1148
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.3,
-        "count": 1027
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
@@ -12443,7 +12577,9 @@
     "codes": {
       "ons_code": "E08000010"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -12560,6 +12696,11 @@
         "count": 630
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.4,
+        "count": 688
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Asian",
         "pct": 0.4,
         "count": 577
@@ -12568,11 +12709,6 @@
         "group": "Mixed or Multiple ethnic groups: White and Black African",
         "pct": 0.4,
         "count": 653
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.4,
-        "count": 688
       },
       {
         "group": "Other ethnic group: Any other ethnic group",
@@ -12626,7 +12762,9 @@
     "codes": {
       "ons_code": "E08000011"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -12809,7 +12947,9 @@
     "codes": {
       "ons_code": "E08000012"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -12926,6 +13066,11 @@
         "count": 558
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.3,
+        "count": 491
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Asian",
         "pct": 0.3,
         "count": 597
@@ -12934,11 +13079,6 @@
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
         "pct": 0.3,
         "count": 466
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.3,
-        "count": 491
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
@@ -12992,7 +13132,9 @@
     "codes": {
       "ons_code": "E08000013"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -13109,14 +13251,14 @@
         "count": 1006
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.4,
-        "count": 1225
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.4,
         "count": 1117
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.4,
+        "count": 1225
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
@@ -13175,7 +13317,9 @@
     "codes": {
       "ons_code": "E08000014"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -13358,7 +13502,9 @@
     "codes": {
       "ons_code": "E08000015"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -13480,6 +13626,11 @@
         "count": 368
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.2,
+        "count": 540
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Asian",
         "pct": 0.2,
         "count": 605
@@ -13488,11 +13639,6 @@
         "group": "Mixed or Multiple ethnic groups: White and Black African",
         "pct": 0.2,
         "count": 394
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.2,
-        "count": 540
       },
       {
         "group": "White: Irish",
@@ -13510,6 +13656,11 @@
         "count": 241
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 215
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 229
@@ -13518,11 +13669,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 314
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 215
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -13541,7 +13687,9 @@
     "codes": {
       "ons_code": "E08000016"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -13673,14 +13821,14 @@
         "count": 885
       },
       {
-        "group": "White: Irish",
-        "pct": 0.3,
-        "count": 999
-      },
-      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.3,
         "count": 856
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.3,
+        "count": 999
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
@@ -13724,7 +13872,9 @@
     "codes": {
       "ons_code": "E08000017"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -13856,14 +14006,14 @@
         "count": 788
       },
       {
-        "group": "White: Roma",
-        "pct": 0.3,
-        "count": 699
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.3,
         "count": 778
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.3,
+        "count": 699
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
@@ -13907,7 +14057,9 @@
     "codes": {
       "ons_code": "E08000018"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -14090,7 +14242,9 @@
     "codes": {
       "ons_code": "E08000019"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -14273,7 +14427,9 @@
     "codes": {
       "ons_code": "E08000021"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -14390,14 +14546,14 @@
         "count": 1013
       },
       {
-        "group": "White: Irish",
-        "pct": 0.4,
-        "count": 797
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.4,
         "count": 854
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.4,
+        "count": 797
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Pakistani",
@@ -14405,14 +14561,14 @@
         "count": 528
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 0.3,
-        "count": 663
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 702
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.3,
+        "count": 663
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
@@ -14456,7 +14612,9 @@
     "codes": {
       "ons_code": "E08000022"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -14639,7 +14797,9 @@
     "codes": {
       "ons_code": "E08000023"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -14686,14 +14846,14 @@
         "count": 4846
       },
       {
-        "group": "Sikh",
-        "pct": 0.3,
-        "count": 915
-      },
-      {
         "group": "Other religion",
         "pct": 0.3,
         "count": 835
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 915
       },
       {
         "group": "Buddhist",
@@ -14766,6 +14926,11 @@
         "count": 685
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.2,
+        "count": 634
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
         "pct": 0.2,
         "count": 536
@@ -14776,19 +14941,14 @@
         "count": 438
       },
       {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "group": "Other ethnic group: Arab",
         "pct": 0.2,
-        "count": 634
+        "count": 417
       },
       {
         "group": "White: Irish",
         "pct": 0.2,
         "count": 511
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.2,
-        "count": 417
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
@@ -14822,7 +14982,9 @@
     "codes": {
       "ons_code": "E08000024"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -14969,14 +15131,14 @@
         "count": 12487
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 1.1,
-        "count": 13130
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 1.1,
         "count": 12276
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 1.1,
+        "count": 13130
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
@@ -15005,7 +15167,9 @@
     "codes": {
       "ons_code": "E08000025"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -15188,7 +15352,9 @@
     "codes": {
       "ons_code": "E08000026"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -15371,7 +15537,9 @@
     "codes": {
       "ons_code": "E08000027"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -15554,7 +15722,9 @@
     "codes": {
       "ons_code": "E08000028"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -15737,7 +15907,9 @@
     "codes": {
       "ons_code": "E08000029"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -15920,7 +16092,9 @@
     "codes": {
       "ons_code": "E08000030"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -16062,14 +16236,14 @@
         "count": 939
       },
       {
-        "group": "White: Irish",
-        "pct": 0.4,
-        "count": 1170
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.4,
         "count": 966
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.4,
+        "count": 1170
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -16103,7 +16277,9 @@
     "codes": {
       "ons_code": "E08000031"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -16286,7 +16462,9 @@
     "codes": {
       "ons_code": "E08000032"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -16469,7 +16647,9 @@
     "codes": {
       "ons_code": "E08000033"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -16652,7 +16832,9 @@
     "codes": {
       "ons_code": "E08000034"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -16835,7 +17017,9 @@
     "codes": {
       "ons_code": "E08000035"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -17018,7 +17202,9 @@
     "codes": {
       "ons_code": "E08000036"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -17150,14 +17336,14 @@
         "count": 710
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 0.3,
-        "count": 547
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 590
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.3,
+        "count": 547
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -17201,7 +17387,9 @@
     "codes": {
       "ons_code": "E08000037"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -17384,7 +17572,9 @@
     "codes": {
       "ons_code": "E09000001"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -17516,14 +17706,14 @@
         "count": 2974
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 1.1,
-        "count": 2376
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 1.1,
         "count": 2420
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 1.1,
+        "count": 2376
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Asian",
@@ -17567,7 +17757,9 @@
     "codes": {
       "ons_code": "E09000002"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -17750,7 +17942,9 @@
     "codes": {
       "ons_code": "E09000003"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -17872,14 +18066,14 @@
         "count": 3230
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 1.0,
-        "count": 2489
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 1.0,
         "count": 2346
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 1.0,
+        "count": 2489
       },
       {
         "group": "White: Irish",
@@ -17933,7 +18127,9 @@
     "codes": {
       "ons_code": "E09000004"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -18116,7 +18312,9 @@
     "codes": {
       "ons_code": "E09000005"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -18299,7 +18497,9 @@
     "codes": {
       "ons_code": "E09000006"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -18482,7 +18682,9 @@
     "codes": {
       "ons_code": "E09000007"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -18665,7 +18867,9 @@
     "codes": {
       "ons_code": "E09000008"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -18848,7 +19052,9 @@
     "codes": {
       "ons_code": "E09000009"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -19031,7 +19237,9 @@
     "codes": {
       "ons_code": "E09000010"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -19214,7 +19422,9 @@
     "codes": {
       "ons_code": "E09000011"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -19397,7 +19607,9 @@
     "codes": {
       "ons_code": "E09000012"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -19580,7 +19792,9 @@
     "codes": {
       "ons_code": "E09000013"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -19763,7 +19977,9 @@
     "codes": {
       "ons_code": "E09000014"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -19946,7 +20162,9 @@
     "codes": {
       "ons_code": "E09000015"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -20129,7 +20347,9 @@
     "codes": {
       "ons_code": "E09000016"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -20312,7 +20532,9 @@
     "codes": {
       "ons_code": "E09000017"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -20495,7 +20717,9 @@
     "codes": {
       "ons_code": "E09000018"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -20678,7 +20902,9 @@
     "codes": {
       "ons_code": "E09000019"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -20861,7 +21087,9 @@
     "codes": {
       "ons_code": "E09000020"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -21044,7 +21272,9 @@
     "codes": {
       "ons_code": "E09000021"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -21227,7 +21457,9 @@
     "codes": {
       "ons_code": "E09000022"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -21410,7 +21642,9 @@
     "codes": {
       "ons_code": "E09000023"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -21593,7 +21827,9 @@
     "codes": {
       "ons_code": "E09000024"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -21776,7 +22012,9 @@
     "codes": {
       "ons_code": "E09000025"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -21823,14 +22061,14 @@
         "count": 34372
       },
       {
-        "group": "Sikh",
-        "pct": 5.7,
-        "count": 17622
-      },
-      {
         "group": "Not answered",
         "pct": 5.7,
         "count": 17675
+      },
+      {
+        "group": "Sikh",
+        "pct": 5.7,
+        "count": 17622
       },
       {
         "group": "Jewish",
@@ -21959,7 +22197,9 @@
     "codes": {
       "ons_code": "E09000026"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -22142,7 +22382,9 @@
     "codes": {
       "ons_code": "E09000027"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -22325,7 +22567,9 @@
     "codes": {
       "ons_code": "E09000028"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -22447,14 +22691,14 @@
         "count": 3450
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 1.5,
-        "count": 3068
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 1.5,
         "count": 3049
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 1.5,
+        "count": 3068
       },
       {
         "group": "White: Irish",
@@ -22508,7 +22752,9 @@
     "codes": {
       "ons_code": "E09000029"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -22691,7 +22937,9 @@
     "codes": {
       "ons_code": "E09000030"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -22874,7 +23122,9 @@
     "codes": {
       "ons_code": "E09000031"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -23057,7 +23307,9 @@
     "codes": {
       "ons_code": "E09000032"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -23240,7 +23492,9 @@
     "codes": {
       "ons_code": "E09000033"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -23392,14 +23646,14 @@
         "count": 1805
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.3,
-        "count": 1719
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.3,
         "count": 1855
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.3,
+        "count": 1719
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
@@ -23423,7 +23677,9 @@
     "codes": {
       "ons_code": "E10000003"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -23520,14 +23776,14 @@
         "count": 1488
       },
       {
-        "group": "White: Irish",
-        "pct": 0.3,
-        "count": 1669
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.3,
         "count": 1254
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.3,
+        "count": 1669
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -23545,14 +23801,14 @@
         "count": 866
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.2,
-        "count": 796
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.2,
         "count": 1129
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.2,
+        "count": 796
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -23570,14 +23826,14 @@
         "count": 590
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 368
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 461
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 368
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
@@ -23606,7 +23862,9 @@
     "codes": {
       "ons_code": "E10000006"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -23758,14 +24016,14 @@
         "count": 588
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 406
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 401
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 406
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -23789,7 +24047,9 @@
     "codes": {
       "ons_code": "E10000007"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -23972,7 +24232,9 @@
     "codes": {
       "ons_code": "E10000008"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -24119,14 +24381,14 @@
         "count": 1104
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.2,
-        "count": 871
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.2,
         "count": 1244
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.2,
+        "count": 871
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Pakistani",
@@ -24155,7 +24417,9 @@
     "codes": {
       "ons_code": "E10000011"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -24257,14 +24521,14 @@
         "count": 13745
       },
       {
-        "group": "White: Irish",
-        "pct": 0.8,
-        "count": 11861
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.8,
         "count": 12052
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.8,
+        "count": 11861
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Asian",
@@ -24338,7 +24602,9 @@
     "codes": {
       "ons_code": "E10000012"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -24495,6 +24761,11 @@
         "count": 1212
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 865
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 965
@@ -24503,11 +24774,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 714
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 865
       }
     ],
     "sources": [
@@ -24521,7 +24787,9 @@
     "codes": {
       "ons_code": "E10000013"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -24683,14 +24951,14 @@
         "count": 2042
       },
       {
-        "group": "White: Roma",
-        "pct": 0.1,
-        "count": 1035
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 1661
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.1,
+        "count": 1035
       }
     ],
     "sources": [
@@ -24704,7 +24972,9 @@
     "codes": {
       "ons_code": "E10000014"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -24826,14 +25096,14 @@
         "count": 13990
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 1.1,
-        "count": 12639
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 1.1,
         "count": 12793
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 1.1,
+        "count": 12639
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
@@ -24887,7 +25157,9 @@
     "codes": {
       "ons_code": "E10000015"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -25004,14 +25276,14 @@
         "count": 10850
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.6,
-        "count": 9151
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.6,
         "count": 9981
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.6,
+        "count": 9151
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -25070,7 +25342,9 @@
     "codes": {
       "ons_code": "E10000016"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -25182,14 +25456,14 @@
         "count": 6274
       },
       {
-        "group": "White: Irish",
-        "pct": 0.5,
-        "count": 6677
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.5,
         "count": 5797
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.5,
+        "count": 6677
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -25253,7 +25527,9 @@
     "codes": {
       "ons_code": "E10000017"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -25436,7 +25712,9 @@
     "codes": {
       "ons_code": "E10000018"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -25593,6 +25871,11 @@
         "count": 516
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 819
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 958
@@ -25601,11 +25884,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 691
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 819
       }
     ],
     "sources": [
@@ -25619,7 +25897,9 @@
     "codes": {
       "ons_code": "E10000019"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -25726,14 +26006,14 @@
         "count": 5100
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.5,
-        "count": 4389
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.5,
         "count": 4281
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.5,
+        "count": 4389
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -25802,7 +26082,9 @@
     "codes": {
       "ons_code": "E10000020"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -25899,14 +26181,14 @@
         "count": 2495
       },
       {
-        "group": "White: Irish",
-        "pct": 0.4,
-        "count": 2681
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.4,
         "count": 2281
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.4,
+        "count": 2681
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -25959,6 +26241,11 @@
         "count": 429
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 562
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 550
@@ -25967,11 +26254,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 347
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 562
       }
     ],
     "sources": [
@@ -25985,7 +26267,9 @@
     "codes": {
       "ons_code": "E10000023"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -26037,14 +26321,14 @@
         "count": 5139
       },
       {
-        "group": "Sikh",
-        "pct": 0.5,
-        "count": 4037
-      },
-      {
         "group": "Other religion",
         "pct": 0.5,
         "count": 3748
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.5,
+        "count": 4037
       },
       {
         "group": "Buddhist",
@@ -26107,14 +26391,14 @@
         "count": 4388
       },
       {
-        "group": "White: Irish",
-        "pct": 0.5,
-        "count": 4019
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.5,
         "count": 4484
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.5,
+        "count": 4019
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
@@ -26168,7 +26452,9 @@
     "codes": {
       "ons_code": "E10000024"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -26351,7 +26637,9 @@
     "codes": {
       "ons_code": "E10000025"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -26473,14 +26761,14 @@
         "count": 1658
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.3,
-        "count": 1561
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 1913
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.3,
+        "count": 1561
       },
       {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
@@ -26508,6 +26796,11 @@
         "count": 321
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 377
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 809
@@ -26516,11 +26809,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 507
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 377
       }
     ],
     "sources": [
@@ -26534,7 +26822,9 @@
     "codes": {
       "ons_code": "E10000027"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -26691,6 +26981,11 @@
         "count": 1307
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 829
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 610
@@ -26699,11 +26994,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 569
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 829
       }
     ],
     "sources": [
@@ -26717,7 +27007,9 @@
     "codes": {
       "ons_code": "E10000028"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -26874,6 +27166,11 @@
         "count": 1200
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 782
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 905
@@ -26882,11 +27179,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 987
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 782
       }
     ],
     "sources": [
@@ -26900,7 +27192,9 @@
     "codes": {
       "ons_code": "E10000029"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -27007,14 +27301,14 @@
         "count": 15909
       },
       {
-        "group": "White: Irish",
-        "pct": 1.2,
-        "count": 14111
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 1.2,
         "count": 14988
+      },
+      {
+        "group": "White: Irish",
+        "pct": 1.2,
+        "count": 14111
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: African",
@@ -27083,7 +27377,9 @@
     "codes": {
       "ons_code": "E10000030"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -27180,14 +27476,14 @@
         "count": 6160
       },
       {
-        "group": "White: Irish",
-        "pct": 0.9,
-        "count": 5540
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.9,
         "count": 5449
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.9,
+        "count": 5540
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: African",
@@ -27240,6 +27536,11 @@
         "count": 601
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.1,
+        "count": 780
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
         "count": 388
@@ -27248,11 +27549,6 @@
         "group": "White: Roma",
         "pct": 0.1,
         "count": 651
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.1,
-        "count": 780
       }
     ],
     "sources": [
@@ -27266,7 +27562,9 @@
     "codes": {
       "ons_code": "E10000031"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -27378,14 +27676,14 @@
         "count": 7070
       },
       {
-        "group": "White: Irish",
-        "pct": 0.8,
-        "count": 6761
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.8,
         "count": 6811
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.8,
+        "count": 6761
       },
       {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
@@ -27449,7 +27747,9 @@
     "codes": {
       "ons_code": "E10000032"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -27496,14 +27796,14 @@
         "count": 10881
       },
       {
-        "group": "Sikh",
-        "pct": 0.4,
-        "count": 2310
-      },
-      {
         "group": "Other religion",
         "pct": 0.4,
         "count": 2659
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.4,
+        "count": 2310
       },
       {
         "group": "Buddhist",
@@ -27611,14 +27911,14 @@
         "count": 593
       },
       {
-        "group": "White: Roma",
-        "pct": 0.1,
-        "count": 410
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 557
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.1,
+        "count": 410
       }
     ],
     "sources": [
@@ -27632,7 +27932,9 @@
     "codes": {
       "ons_code": "E10000034"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -27724,14 +28026,14 @@
         "count": 381
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.3,
-        "count": 191
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 173
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.3,
+        "count": 191
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -27769,9 +28071,9 @@
         "count": 78
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
+        "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.1,
-        "count": 54
+        "count": 102
       },
       {
         "group": "Other ethnic group: Arab",
@@ -27779,9 +28081,9 @@
         "count": 58
       },
       {
-        "group": "Other ethnic group: Any other ethnic group",
+        "group": "White: Gypsy or Irish Traveller",
         "pct": 0.1,
-        "count": 102
+        "count": 54
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Pakistani",
@@ -27815,7 +28117,9 @@
     "codes": {
       "ons_code": "W06000001"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -27932,14 +28236,14 @@
         "count": 373
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.3,
-        "count": 371
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 345
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.3,
+        "count": 371
       },
       {
         "group": "Other ethnic group: Arab",
@@ -27998,7 +28302,9 @@
     "codes": {
       "ons_code": "W06000002"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -28125,14 +28431,14 @@
         "count": 195
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 0.2,
-        "count": 189
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.2,
         "count": 282
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.2,
+        "count": 189
       },
       {
         "group": "Other ethnic group: Any other ethnic group",
@@ -28150,14 +28456,14 @@
         "count": 60
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 104
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 116
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 104
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
@@ -28181,7 +28487,9 @@
     "codes": {
       "ons_code": "W06000003"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -28313,14 +28621,14 @@
         "count": 179
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black African",
-        "pct": 0.2,
-        "count": 162
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.2,
         "count": 227
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black African",
+        "pct": 0.2,
+        "count": 162
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -28328,14 +28636,14 @@
         "count": 115
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 62
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 119
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 62
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
@@ -28364,7 +28672,9 @@
     "codes": {
       "ons_code": "W06000004"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -28481,6 +28791,11 @@
         "count": 374
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.2,
+        "count": 369
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Black African",
         "pct": 0.2,
         "count": 240
@@ -28489,11 +28804,6 @@
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
         "pct": 0.2,
         "count": 331
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.2,
-        "count": 369
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -28511,14 +28821,14 @@
         "count": 174
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 123
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 92
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 123
       },
       {
         "group": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
@@ -28547,7 +28857,9 @@
     "codes": {
       "ons_code": "W06000005"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -28654,6 +28966,11 @@
         "count": 544
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.3,
+        "count": 338
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Asian",
         "pct": 0.3,
         "count": 446
@@ -28667,11 +28984,6 @@
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
         "pct": 0.3,
         "count": 382
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.3,
-        "count": 338
       },
       {
         "group": "White: Irish",
@@ -28730,7 +29042,9 @@
     "codes": {
       "ons_code": "W06000006"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -28837,14 +29151,14 @@
         "count": 252
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.4,
-        "count": 292
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.4,
         "count": 257
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.4,
+        "count": 292
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Other Asian",
@@ -28913,7 +29227,9 @@
     "codes": {
       "ons_code": "W06000008"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -29015,14 +29331,14 @@
         "count": 472
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.3,
-        "count": 400
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 317
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.3,
+        "count": 400
       },
       {
         "group": "Other ethnic group: Any other ethnic group",
@@ -29096,7 +29412,9 @@
     "codes": {
       "ons_code": "W06000009"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -29208,17 +29526,12 @@
         "count": 379
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.2,
-        "count": 437
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.2,
         "count": 429
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
         "pct": 0.2,
         "count": 437
       },
@@ -29226,6 +29539,11 @@
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.2,
         "count": 450
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.2,
+        "count": 437
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -29279,7 +29597,9 @@
     "codes": {
       "ons_code": "W06000010"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -29401,14 +29721,14 @@
         "count": 1578
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.5,
-        "count": 1285
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.5,
         "count": 1180
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.5,
+        "count": 1285
       },
       {
         "group": "White: Irish",
@@ -29462,7 +29782,9 @@
     "codes": {
       "ons_code": "W06000011"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -29619,14 +29941,14 @@
         "count": 211
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 170
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 105
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 170
       },
       {
         "group": "White: Roma",
@@ -29645,7 +29967,9 @@
     "codes": {
       "ons_code": "W06000012"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -29752,14 +30076,14 @@
         "count": 491
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.3,
-        "count": 487
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 393
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.3,
+        "count": 487
       },
       {
         "group": "White: Irish",
@@ -29828,7 +30152,9 @@
     "codes": {
       "ons_code": "W06000013"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -29930,14 +30256,14 @@
         "count": 829
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.6,
-        "count": 734
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.6,
         "count": 771
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.6,
+        "count": 734
       },
       {
         "group": "White: Irish",
@@ -30011,7 +30337,9 @@
     "codes": {
       "ons_code": "W06000014"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -30194,7 +30522,9 @@
     "codes": {
       "ons_code": "W06000015"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -30301,6 +30631,11 @@
         "count": 749
       },
       {
+        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+        "pct": 0.3,
+        "count": 601
+      },
+      {
         "group": "Mixed or Multiple ethnic groups: White and Asian",
         "pct": 0.3,
         "count": 709
@@ -30309,11 +30644,6 @@
         "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
         "pct": 0.3,
         "count": 635
-      },
-      {
-        "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-        "pct": 0.3,
-        "count": 601
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Pakistani",
@@ -30326,14 +30656,14 @@
         "count": 524
       },
       {
-        "group": "White: Irish",
-        "pct": 0.2,
-        "count": 516
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.2,
         "count": 560
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.2,
+        "count": 516
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -30377,7 +30707,9 @@
     "codes": {
       "ons_code": "W06000016"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -30494,14 +30826,14 @@
         "count": 433
       },
       {
-        "group": "White: Irish",
-        "pct": 0.2,
-        "count": 389
-      },
-      {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.2,
         "count": 292
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.2,
+        "count": 389
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Pakistani",
@@ -30534,6 +30866,11 @@
         "count": 61
       },
       {
+        "group": "Other ethnic group: Arab",
+        "pct": 0.0,
+        "count": 87
+      },
+      {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.0,
         "count": 38
@@ -30542,11 +30879,6 @@
         "group": "White: Roma",
         "pct": 0.0,
         "count": 46
-      },
-      {
-        "group": "Other ethnic group: Arab",
-        "pct": 0.0,
-        "count": 87
       }
     ],
     "sources": [
@@ -30560,7 +30892,9 @@
     "codes": {
       "ons_code": "W06000018"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -30667,24 +31001,24 @@
         "count": 140
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.2,
-        "count": 138
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.2,
         "count": 143
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
         "pct": 0.2,
-        "count": 133
+        "count": 138
       },
       {
         "group": "Other ethnic group: Any other ethnic group",
         "pct": 0.2,
         "count": 104
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.2,
+        "count": 133
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Pakistani",
@@ -30702,14 +31036,14 @@
         "count": 69
       },
       {
-        "group": "White: Irish",
-        "pct": 0.1,
-        "count": 92
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 38
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.1,
+        "count": 92
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -30743,7 +31077,9 @@
     "codes": {
       "ons_code": "W06000019"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -30845,24 +31181,24 @@
         "count": 254
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.3,
-        "count": 264
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 262
       },
       {
-        "group": "White: Irish",
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
         "pct": 0.3,
-        "count": 296
+        "count": 264
       },
       {
         "group": "White: Gypsy or Irish Traveller",
         "pct": 0.3,
         "count": 265
+      },
+      {
+        "group": "White: Irish",
+        "pct": 0.3,
+        "count": 296
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Chinese",
@@ -30905,14 +31241,14 @@
         "count": 41
       },
       {
-        "group": "White: Roma",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.0,
         "count": 46
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.0,
+        "count": 31
       }
     ],
     "sources": [
@@ -30926,7 +31262,9 @@
     "codes": {
       "ons_code": "W06000020"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -31038,14 +31376,14 @@
         "count": 317
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.3,
-        "count": 261
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.3,
         "count": 295
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.3,
+        "count": 261
       },
       {
         "group": "Other ethnic group: Any other ethnic group",
@@ -31109,7 +31447,9 @@
     "codes": {
       "ons_code": "W06000021"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -31231,14 +31571,14 @@
         "count": 1528
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Asian",
-        "pct": 0.7,
-        "count": 1188
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.7,
         "count": 1095
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Asian",
+        "pct": 0.7,
+        "count": 1188
       },
       {
         "group": "Other ethnic group: Arab",
@@ -31292,7 +31632,9 @@
     "codes": {
       "ons_code": "W06000022"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -31394,14 +31736,14 @@
         "count": 373
       },
       {
-        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "pct": 0.2,
-        "count": 295
-      },
-      {
         "group": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "pct": 0.2,
         "count": 320
+      },
+      {
+        "group": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+        "pct": 0.2,
+        "count": 295
       },
       {
         "group": "Other ethnic group: Any other ethnic group",
@@ -31439,14 +31781,14 @@
         "count": 147
       },
       {
-        "group": "White: Gypsy or Irish Traveller",
-        "pct": 0.1,
-        "count": 105
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.1,
         "count": 100
+      },
+      {
+        "group": "White: Gypsy or Irish Traveller",
+        "pct": 0.1,
+        "count": 105
       },
       {
         "group": "Asian, Asian British or Asian Welsh: Pakistani",
@@ -31475,7 +31817,9 @@
     "codes": {
       "ons_code": "W06000023"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   },
   {
@@ -31637,14 +31981,14 @@
         "count": 19
       },
       {
-        "group": "White: Roma",
-        "pct": 0.0,
-        "count": 26
-      },
-      {
         "group": "Other ethnic group: Arab",
         "pct": 0.0,
         "count": 17
+      },
+      {
+        "group": "White: Roma",
+        "pct": 0.0,
+        "count": 26
       }
     ],
     "sources": [
@@ -31658,7 +32002,9 @@
     "codes": {
       "ons_code": "W06000024"
     },
+    "ethnicity_year": 2021,
     "ethnicity_note": "ONS 2021 ethnic group classification (TS021), England and Wales.",
+    "religion_year": 2021,
     "religion_note": "ONS 2021 religion question (TS030) is voluntary; 'Not answered' is reported as its own category rather than excluded."
   }
 ]

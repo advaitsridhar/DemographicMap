@@ -68,14 +68,39 @@
         "count": 97
       },
       {
-        "group": "Jehovah's Witnesses",
+        "group": "Bosniak (written as religion)",
         "pct": 0.0,
-        "count": 10
+        "count": 6
+      },
+      {
+        "group": "Bosnian (written as religion)",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Christian",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Croat (written as religion)",
+        "pct": 0.0,
+        "count": 7
       },
       {
         "group": "Greek Catholic",
         "pct": 0.0,
         "count": 1
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Other",
+        "pct": 0.0,
+        "count": 39
       },
       {
         "group": "Protestant",
@@ -86,31 +111,6 @@
         "group": "Romani (written as religion)",
         "pct": 0.0,
         "count": 13
-      },
-      {
-        "group": "Christian",
-        "pct": 0.0,
-        "count": 14
-      },
-      {
-        "group": "Bosniak (written as religion)",
-        "pct": 0.0,
-        "count": 6
-      },
-      {
-        "group": "Croat (written as religion)",
-        "pct": 0.0,
-        "count": 7
-      },
-      {
-        "group": "Bosnian (written as religion)",
-        "pct": 0.0,
-        "count": 2
-      },
-      {
-        "group": "Other",
-        "pct": 0.0,
-        "count": 39
       }
     ],
     "language": [
@@ -135,14 +135,14 @@
         "count": 668
       },
       {
-        "group": "Romani",
-        "pct": 0.3,
-        "count": 238
-      },
-      {
         "group": "Other",
         "pct": 0.3,
         "count": 214
+      },
+      {
+        "group": "Romani",
+        "pct": 0.3,
+        "count": 238
       },
       {
         "group": "Unknown",
@@ -155,34 +155,9 @@
         "count": 61
       },
       {
-        "group": "Bosnian-Croatian-Serbian",
-        "pct": 0.0,
-        "count": 10
-      },
-      {
-        "group": "Turkish",
-        "pct": 0.0,
-        "count": 4
-      },
-      {
-        "group": "Croato-Serbian",
-        "pct": 0.0,
-        "count": 20
-      },
-      {
         "group": "Bosniak",
         "pct": 0.0,
         "count": 12
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 1
-      },
-      {
-        "group": "Bosnian-Serbian-Croatian",
-        "pct": 0.0,
-        "count": 6
       },
       {
         "group": "Bosnian-Croatian",
@@ -190,14 +165,39 @@
         "count": 1
       },
       {
+        "group": "Bosnian-Croatian-Serbian",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
         "group": "Bosnian-Herzegovinian",
         "pct": 0.0,
         "count": 5
       },
       {
+        "group": "Bosnian-Serbian-Croatian",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
         "group": "German",
         "pct": 0.0,
         "count": 21
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 1
       }
     ],
     "ethnicity": [
@@ -217,14 +217,14 @@
         "count": 17252
       },
       {
-        "group": "Romani",
-        "pct": 0.6,
-        "count": 490
-      },
-      {
         "group": "Not declared",
         "pct": 0.6,
         "count": 522
+      },
+      {
+        "group": "Romani",
+        "pct": 0.6,
+        "count": 490
       },
       {
         "group": "Bosnian",
@@ -242,19 +242,14 @@
         "count": 201
       },
       {
-        "group": "Bosnian and Herzegovinian",
-        "pct": 0.1,
-        "count": 50
-      },
-      {
         "group": "Albanian",
         "pct": 0.1,
         "count": 105
       },
       {
-        "group": "Yugoslav",
+        "group": "Bosnian and Herzegovinian",
         "pct": 0.1,
-        "count": 67
+        "count": 50
       },
       {
         "group": "Orthodox (written as ethnicity)",
@@ -267,9 +262,14 @@
         "count": 100
       },
       {
-        "group": "Ukrainian",
+        "group": "Yugoslav",
+        "pct": 0.1,
+        "count": 67
+      },
+      {
+        "group": "Macedonian",
         "pct": 0.0,
-        "count": 1
+        "count": 25
       },
       {
         "group": "Montenegrin",
@@ -277,19 +277,19 @@
         "count": 31
       },
       {
-        "group": "Turkish",
-        "pct": 0.0,
-        "count": 3
-      },
-      {
         "group": "Slovene",
         "pct": 0.0,
         "count": 9
       },
       {
-        "group": "Macedonian",
+        "group": "Turkish",
         "pct": 0.0,
-        "count": 25
+        "count": 3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 1
       }
     ],
     "sources": [
@@ -305,6 +305,9 @@
       "Brcko District",
       "BRČKO DISTRICT OF BOSNIA AND HERZEGOVINA"
     ],
+    "ethnicity_year": 2013,
+    "religion_year": 2013,
+    "language_year": 2013,
     "ethnicity_note": "Agency for Statistics of Bosnia and Herzegovina, Census of Population, Households and Dwellings 2013, Book 2 (ethnicity, religion, mother tongue). As printed by the bureau; 'Orthodox' given as an ethnicity is kept and marked.",
     "religion_note": "Agency for Statistics of Bosnia and Herzegovina, Census of Population, Households and Dwellings 2013, Book 2 (ethnicity, religion, mother tongue). 'Islam' is the bureau's 'Islamska' and 'Muslimanska' columns summed: both are Islam and the map cannot list a group beside its parent. Ethnonyms given as a religion are kept and marked.",
     "language_note": "Agency for Statistics of Bosnia and Herzegovina, Census of Population, Households and Dwellings 2013, Book 2 (ethnicity, religion, mother tongue). Mother tongue as printed by the bureau."
@@ -378,19 +381,39 @@
         "count": 1930
       },
       {
-        "group": "Serbian (written as religion)",
+        "group": "Adventist",
         "pct": 0.0,
-        "count": 465
+        "count": 35
       },
       {
-        "group": "Jehovah's Witnesses",
+        "group": "Bosniak (written as religion)",
         "pct": 0.0,
-        "count": 844
+        "count": 302
+      },
+      {
+        "group": "Bosnian (written as religion)",
+        "pct": 0.0,
+        "count": 142
+      },
+      {
+        "group": "Christian",
+        "pct": 0.0,
+        "count": 241
+      },
+      {
+        "group": "Croat (written as religion)",
+        "pct": 0.0,
+        "count": 231
       },
       {
         "group": "Greek Catholic",
         "pct": 0.0,
         "count": 26
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.0,
+        "count": 844
       },
       {
         "group": "Protestant",
@@ -403,29 +426,9 @@
         "count": 392
       },
       {
-        "group": "Christian",
+        "group": "Serbian (written as religion)",
         "pct": 0.0,
-        "count": 241
-      },
-      {
-        "group": "Bosniak (written as religion)",
-        "pct": 0.0,
-        "count": 302
-      },
-      {
-        "group": "Croat (written as religion)",
-        "pct": 0.0,
-        "count": 231
-      },
-      {
-        "group": "Adventist",
-        "pct": 0.0,
-        "count": 35
-      },
-      {
-        "group": "Bosnian (written as religion)",
-        "pct": 0.0,
-        "count": 142
+        "count": 465
       }
     ],
     "language": [
@@ -480,24 +483,9 @@
         "count": 1222
       },
       {
-        "group": "Croato-Serbian",
-        "pct": 0.0,
-        "count": 789
-      },
-      {
         "group": "Bosniak",
         "pct": 0.0,
         "count": 876
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 54
-      },
-      {
-        "group": "Bosnian-Serbian-Croatian",
-        "pct": 0.0,
-        "count": 857
       },
       {
         "group": "Bosnian-Croatian",
@@ -510,9 +498,24 @@
         "count": 596
       },
       {
+        "group": "Bosnian-Serbian-Croatian",
+        "pct": 0.0,
+        "count": 857
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.0,
+        "count": 789
+      },
+      {
         "group": "German",
         "pct": 0.0,
         "count": 440
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.0,
+        "count": 54
       }
     ],
     "ethnicity": [
@@ -542,9 +545,9 @@
         "count": 18344
       },
       {
-        "group": "Romani",
+        "group": "Bosnian and Herzegovinian",
         "pct": 0.5,
-        "count": 10036
+        "count": 11160
       },
       {
         "group": "Muslim",
@@ -552,9 +555,9 @@
         "count": 10222
       },
       {
-        "group": "Bosnian and Herzegovinian",
+        "group": "Romani",
         "pct": 0.5,
-        "count": 11160
+        "count": 10036
       },
       {
         "group": "Other",
@@ -572,14 +575,9 @@
         "count": 2404
       },
       {
-        "group": "Yugoslav",
+        "group": "Macedonian",
         "pct": 0.0,
-        "count": 881
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 0.0,
-        "count": 78
+        "count": 301
       },
       {
         "group": "Montenegrin",
@@ -587,9 +585,9 @@
         "count": 696
       },
       {
-        "group": "Turkish",
+        "group": "Orthodox (written as ethnicity)",
         "pct": 0.0,
-        "count": 1097
+        "count": 191
       },
       {
         "group": "Slovene",
@@ -597,14 +595,19 @@
         "count": 398
       },
       {
-        "group": "Orthodox (written as ethnicity)",
+        "group": "Turkish",
         "pct": 0.0,
-        "count": 191
+        "count": 1097
       },
       {
-        "group": "Macedonian",
+        "group": "Ukrainian",
         "pct": 0.0,
-        "count": 301
+        "count": 78
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.0,
+        "count": 881
       }
     ],
     "sources": [
@@ -619,6 +622,9 @@
     "aliases": [
       "FEDERATION OF BOSNIA AND HERZEGOVINA"
     ],
+    "ethnicity_year": 2013,
+    "religion_year": 2013,
+    "language_year": 2013,
     "ethnicity_note": "Agency for Statistics of Bosnia and Herzegovina, Census of Population, Households and Dwellings 2013, Book 2 (ethnicity, religion, mother tongue). As printed by the bureau; 'Orthodox' given as an ethnicity is kept and marked.",
     "religion_note": "Agency for Statistics of Bosnia and Herzegovina, Census of Population, Households and Dwellings 2013, Book 2 (ethnicity, religion, mother tongue). 'Islam' is the bureau's 'Islamska' and 'Muslimanska' columns summed: both are Islam and the map cannot list a group beside its parent. Ethnonyms given as a religion are kept and marked.",
     "language_note": "Agency for Statistics of Bosnia and Herzegovina, Census of Population, Households and Dwellings 2013, Book 2 (ethnicity, religion, mother tongue). Mother tongue as printed by the bureau."
@@ -682,9 +688,9 @@
         "count": 2199
       },
       {
-        "group": "Roman Catholic",
+        "group": "Agnostic",
         "pct": 0.1,
-        "count": 1066
+        "count": 1288
       },
       {
         "group": "Greek Catholic",
@@ -692,14 +698,39 @@
         "count": 955
       },
       {
-        "group": "Agnostic",
-        "pct": 0.1,
-        "count": 1288
-      },
-      {
         "group": "Other",
         "pct": 0.1,
         "count": 901
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.1,
+        "count": 1066
+      },
+      {
+        "group": "Adventist",
+        "pct": 0.0,
+        "count": 158
+      },
+      {
+        "group": "Bosniak (written as religion)",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Bosnian (written as religion)",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Christian",
+        "pct": 0.0,
+        "count": 312
+      },
+      {
+        "group": "Croat (written as religion)",
+        "pct": 0.0,
+        "count": 37
       },
       {
         "group": "Jehovah's Witnesses",
@@ -715,31 +746,6 @@
         "group": "Romani (written as religion)",
         "pct": 0.0,
         "count": 207
-      },
-      {
-        "group": "Christian",
-        "pct": 0.0,
-        "count": 312
-      },
-      {
-        "group": "Bosniak (written as religion)",
-        "pct": 0.0,
-        "count": 103
-      },
-      {
-        "group": "Croat (written as religion)",
-        "pct": 0.0,
-        "count": 37
-      },
-      {
-        "group": "Adventist",
-        "pct": 0.0,
-        "count": 158
-      },
-      {
-        "group": "Bosnian (written as religion)",
-        "pct": 0.0,
-        "count": 10
       }
     ],
     "language": [
@@ -789,29 +795,9 @@
         "count": 144
       },
       {
-        "group": "Bosnian-Croatian-Serbian",
-        "pct": 0.0,
-        "count": 31
-      },
-      {
-        "group": "Turkish",
-        "pct": 0.0,
-        "count": 7
-      },
-      {
-        "group": "Croato-Serbian",
-        "pct": 0.0,
-        "count": 386
-      },
-      {
         "group": "Bosniak",
         "pct": 0.0,
         "count": 279
-      },
-      {
-        "group": "Bosnian-Serbian-Croatian",
-        "pct": 0.0,
-        "count": 27
       },
       {
         "group": "Bosnian-Croatian",
@@ -819,14 +805,34 @@
         "count": 8
       },
       {
+        "group": "Bosnian-Croatian-Serbian",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
         "group": "Bosnian-Herzegovinian",
         "pct": 0.0,
         "count": 35
       },
       {
+        "group": "Bosnian-Serbian-Croatian",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Croato-Serbian",
+        "pct": 0.0,
+        "count": 386
+      },
+      {
         "group": "German",
         "pct": 0.0,
         "count": 171
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 7
       }
     ],
     "ethnicity": [
@@ -876,6 +882,11 @@
         "count": 1249
       },
       {
+        "group": "Montenegrin",
+        "pct": 0.1,
+        "count": 1156
+      },
+      {
         "group": "Muslim",
         "pct": 0.1,
         "count": 1730
@@ -886,9 +897,9 @@
         "count": 1622
       },
       {
-        "group": "Montenegrin",
-        "pct": 0.1,
-        "count": 1156
+        "group": "Albanian",
+        "pct": 0.0,
+        "count": 150
       },
       {
         "group": "Bosnian and Herzegovinian",
@@ -896,19 +907,9 @@
         "count": 196
       },
       {
-        "group": "Albanian",
+        "group": "Macedonian",
         "pct": 0.0,
-        "count": 150
-      },
-      {
-        "group": "Turkish",
-        "pct": 0.0,
-        "count": 8
-      },
-      {
-        "group": "Slovene",
-        "pct": 0.0,
-        "count": 530
+        "count": 412
       },
       {
         "group": "Orthodox (written as ethnicity)",
@@ -916,9 +917,14 @@
         "count": 583
       },
       {
-        "group": "Macedonian",
+        "group": "Slovene",
         "pct": 0.0,
-        "count": 412
+        "count": 530
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.0,
+        "count": 8
       }
     ],
     "sources": [
@@ -933,6 +939,9 @@
     "aliases": [
       "REPUBLIKA SRPSKA"
     ],
+    "ethnicity_year": 2013,
+    "religion_year": 2013,
+    "language_year": 2013,
     "ethnicity_note": "Agency for Statistics of Bosnia and Herzegovina, Census of Population, Households and Dwellings 2013, Book 2 (ethnicity, religion, mother tongue). As printed by the bureau; 'Orthodox' given as an ethnicity is kept and marked.",
     "religion_note": "Agency for Statistics of Bosnia and Herzegovina, Census of Population, Households and Dwellings 2013, Book 2 (ethnicity, religion, mother tongue). 'Islam' is the bureau's 'Islamska' and 'Muslimanska' columns summed: both are Islam and the map cannot list a group beside its parent. Ethnonyms given as a religion are kept and marked.",
     "language_note": "Agency for Statistics of Bosnia and Herzegovina, Census of Population, Households and Dwellings 2013, Book 2 (ethnicity, religion, mother tongue). Mother tongue as printed by the bureau."

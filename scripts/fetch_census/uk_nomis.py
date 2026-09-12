@@ -32,10 +32,11 @@ import argparse
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, http_json, leaves, log, measure, record,
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_json, leaves, log, measure, record,
     shares, write_json,
 )
 
+YEAR = 2021        # England and Wales; Scotland ran 2022 and has its own adapter
 BASE = "https://www.nomisweb.co.uk/api/v01/dataset"
 DATASETS = {
     "ethnicity": ("NM_2041_1", "TS021 Ethnic group", "c2021_eth_20"),
@@ -257,7 +258,7 @@ def main() -> int:
         tables[field] = reconcile(fetch_table(dataset, cell, geography))
 
     codes = sorted(set().union(*(set(t) for t in tables.values())) if tables else set())
-    src = "ONS Census 2021 (England and Wales) via Nomis"
+    src = f"ONS Census {YEAR} (England and Wales) via Nomis"
     records: list[dict[str, Any]] = []
     for code in codes:
         eth = tables["ethnicity"].get(code, {})
@@ -265,16 +266,20 @@ def main() -> int:
         name = eth.get("name") or rel.get("name") or code
         total = eth.get("total") or rel.get("total")
         merged = MERGED_AUTHORITIES.get(code)
+        eth_rows = shares(eth.get("counts", {}), total=eth.get("total"))
+        rel_rows = shares(rel.get("counts", {}), total=rel.get("total"))
         records.append(record(
             f"GBR-{code}", name, level="admin2", parent="GBR",
             # A merged row is not a published unit, so it does not claim a
             # single ONS code -- it names the codes it was added up from.
             codes={"ons_codes": list(merged[1])} if merged else {"ons_code": code},
-            population=measure(int(total), year=2021, source=src) if total else gap(NOT_AVAILABLE),
-            ethnicity=shares(eth.get("counts", {}), total=eth.get("total")) or gap(NOT_AVAILABLE),
-            ethnicity_note="ONS 2021 ethnic group classification (TS021), England and Wales.",
-            religion=shares(rel.get("counts", {}), total=rel.get("total")) or gap(NOT_AVAILABLE),
-            religion_note=("ONS 2021 religion question (TS030) is voluntary; 'Not answered' is "
+            population=measure(int(total), year=YEAR, source=src) if total else gap(NOT_AVAILABLE),
+            ethnicity=eth_rows or gap(NOT_AVAILABLE),
+            ethnicity_year=dated(eth_rows, YEAR),
+            ethnicity_note=f"ONS {YEAR} ethnic group classification (TS021), England and Wales.",
+            religion=rel_rows or gap(NOT_AVAILABLE),
+            religion_year=dated(rel_rows, YEAR),
+            religion_note=(f"ONS {YEAR} religion question (TS030) is voluntary; 'Not answered' is "
                            "reported as its own category rather than excluded."),
             sources=[{"field": "ethnicity/religion", "name": src,
                       "url": f"{BASE}/{DATASETS['ethnicity'][0]}.data.json",

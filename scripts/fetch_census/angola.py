@@ -44,7 +44,9 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_get, log, record, shares, write_json
+from ._shared import (
+    NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, record, shares, write_json,
+)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_pdf import PAGE_BREAK, laid_out  # noqa: E402
@@ -244,6 +246,7 @@ def build(text: str) -> list[dict[str, Any]]:
         fields: dict[str, Any] = {}
         for field in TABLES:
             fields[field] = bars(field, shape, per_shape[field][shape])
+            fields[f"{field}_year"] = dated(fields[field], YEAR)
             note = f"{SOURCE}. A census count of the {UNIVERSE}. {NOTES[field]}"
             if shape in MERGED_NOTE:
                 note += f" This shape is {MERGED_NOTE[shape]}."

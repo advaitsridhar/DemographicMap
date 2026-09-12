@@ -64,7 +64,8 @@ from typing import Any
 import openpyxl
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, RAW, gap, leaves, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, PROCESSED, RAW, dated, gap, leaves, log, measure, record, shares,
+    write_json,
 )
 
 HERE = RAW / "northern_ireland"
@@ -174,7 +175,9 @@ def main() -> int:
                 # people. Population comes from one named table rather than
                 # whichever field happened to be read last.
                 population = int(total)
-            fields[field] = shares(counts, total=total) or gap(NOT_AVAILABLE)
+            rows = shares(counts, total=total)
+            fields[field] = rows or gap(NOT_AVAILABLE)
+            fields[f"{field}_year"] = dated(rows, YEAR)
             fields[f"{field}_note"] = note(field, universe, filename)
 
         records.append(record(

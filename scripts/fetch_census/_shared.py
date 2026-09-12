@@ -10,7 +10,7 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from common import (  # noqa: F401,E402
-    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, download, gap, http_get,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, dated, download, gap, http_get,
     http_json, log, measure, read_json, write_json,
 )
 
@@ -24,7 +24,15 @@ def shares(counts: dict[str, float], *, total: float | None = None,
     out = [{"group": k, "pct": round(100.0 * v / total, 1), "count": int(v)}
            for k, v in counts.items() if v is not None]
     out = [row for row in out if row["pct"] >= min_pct]
-    out.sort(key=lambda r: r["pct"], reverse=True)
+    # Name breaks a tie, the same rule roll_up_field keeps and for the same
+    # reason: build.json is a digest of the written files, so an order that
+    # churns invalidates every reader's cache for no change in the figures.
+    # Sorting on the share alone left the order to whatever the source
+    # happened to iterate in, and one ABS run reordered the language list of
+    # 539 of Australia's 565 local government areas -- Vietnamese, Afrikaans
+    # and Korean all on 0.1% swapping places, not one group, share or count
+    # different. A re-run should say nothing when nothing has changed.
+    out.sort(key=lambda r: (-r["pct"], r["group"]))
     return out
 
 
