@@ -103,7 +103,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
-| Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts — the boundary file's district names do not all sit on the right polygons. |
+| Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts. The census measured all 77; the boundary file is what fails, drawing 75 shapes whose names do not all sit on the right ground, and the 9 shapes that therefore carry nothing each say so and name the province total that holds their people. |
 | India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 734 of 735 district shapes carry figures. 637 are the census's own rows; 97 are shapes the census never enumerated and which carry their predecessor's shares as a stated estimate, with no head count, so nobody is counted twice. 75 more are districts that have since lost territory, and keep their 2011 figure under a caveat saying how much ground they have left. The one shape without figures is not a district at all. Telangana and Ladakh have state figures summed from the ten and two districts the census did enumerate, and Andhra Pradesh and Jammu and Kashmir carry the residual rather than the undivided state. |
 
 ### New Zealand: the geography that already fitted
@@ -282,6 +282,27 @@ territory, which is the one failure this project treats as worse than a gap.
 The check is not Nepal-specific: any country whose boundary names might have
 drifted can be run through it, and the aliases come from the adapter itself so
 there is one list of spellings rather than two that can disagree.
+
+**And the reader is told.** For a long time this table existed only here and in
+an `UNJOINABLE` dict in the adapter, so the nine affected shapes rendered blank
+with nothing on them — which reads as an adapter nobody ran, a different claim
+from "the census measured this and the boundary file cannot take it".
+`SHAPE_GAPS` in `build_entities.py` now carries a sentence onto each of those
+shapes naming whose ground the polygon actually is and which province total
+holds those people. It sits beside `ADAPTER_GAPS` and answers a different
+question: `ADAPTER_GAPS` says a country has no adapter, `SHAPE_GAPS` says the
+adapter ran and this one polygon still cannot be given what it found.
+
+It is keyed by the boundary file's own spelling rather than the district's
+name, which is what reaches *both* polygons called `Bara`. That is the point:
+an ambiguous name is exactly what makes a data join unsafe, and exactly what
+makes keying the reason that way safe, because the reason is true of both.
+
+`check_shape_gaps` holds the table to its promise in both directions on every
+build: an entry naming a shape nobody draws is stale and the boundary file has
+moved on, and an entry whose shape ended up carrying a composition means
+figures are landing somewhere this table says they must not. Either stops the
+build rather than being written out.
 
 **Provinces changed their names, and the boundary file did not.** CGAZ still
 calls Koshi "Province 1" and Madhesh "Province 2", names dropped when the
@@ -1459,10 +1480,25 @@ again.
 * **`mics.unicef.org` was not asked**, and does not need to be: this
   repository has already recorded it as blocking non-browser clients, and the
   GB government serves the same reports itself.
-* **The Pamir Times article** (`pamirtimes.net`, December 2023) that circulates
-  household counts by language for GB cites GB-MICS 2017 for them. A regional
-  news outlet is not a source this project cites; what it points at is, and
-  what it points at is the survey above.
+* **The Pamir Times article** (`pamirtimes.net`, 23 December 2023,
+  "Treading the Sacred Linguistic Landscape of Gilgit-Baltistan") that
+  circulates household counts by language for GB cites GB-MICS 2017 for them.
+  This was first refused here on the principle that a regional news outlet is
+  not a source this project cites, only what it points at -- **and the owner
+  overruled that, twice. It is now wired**, and is where Gilgit-Baltistan's
+  mother tongue on this map comes from. What it gives is three household
+  counts (Balti "over 74,000", Shina 70,000, Burushaski 33,512) and three
+  percentages (Khowar 3%, Wakhi 2%, other languages 4%), with no total; the
+  total of 195,068 households is recovered by division, since the three
+  percentages account for 9% and therefore the three counts for 91%. Three
+  caveats ride on the figure and all three are in its note: these are
+  **households, not persons**, which is what `language_basis` records and what
+  keeps them out of Pakistan's national mother tongue; the article is an
+  estimate at two removes, scaling a survey on census population; and **Balti
+  leads Shina by 4,000 households on figures rounded to the thousand**, which
+  is inside the source's own precision even though it decides which colour
+  Gilgit-Baltistan takes on the dominant-group map. Other accounts of the
+  territory call Shina the larger.
 * **Wikipedia carries no table to transcribe.** `wiki_census.py` exists for
   exactly this case -- a census table that reaches this project only as an
   encyclopaedia's copy of it -- and the article does not have one. "Gilgit-
