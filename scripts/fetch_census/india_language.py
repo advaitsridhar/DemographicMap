@@ -55,7 +55,7 @@ from .india_census import (
     CATALOG, CREATED_AFTER_2011, DISTRICT_ALIASES, NEW_DISTRICT_ALIASES,
     SPLIT_STATES, STATE_ALIASES, STATE_IN_2011, SUBDIVIDED_SINCE_2011,
     created_reason, inherited_note, lost_territory, lost_territory_reason,
-    split_note, subdivided_reason, without_counts,
+    split_note, subdivided_inherited_note, subdivided_reason, without_counts,
 )
 
 WORKBOOKS = RAW / "india" / "c16"
@@ -396,28 +396,49 @@ def build(units: dict[tuple[str, str], dict[str, Any]], level: str
             measured[(states.get(state_code, "").casefold(), key)] = unit["counts"]
             continue
         if not is_state and key in SUBDIVIDED_SINCE_2011:
-            # One census row, several present-day districts. Splitting a language
-            # composition across successors would be an estimate wearing the
-            # clothes of a measurement, so each successor gets the reason instead.
+            # One census row, several present-day districts, and each of them
+            # carries the undivided district's mother tongues as a stated
+            # estimate -- the same treatment, for the same reason, that the
+            # post-2011 districts below get from their predecessor. These are
+            # post-2011 districts too; the only thing that ever set them apart
+            # is that they kept the old district's name.
             #
-            # Religion and population carry the same reason rather than the
-            # bare gap `record` would default them to. This file and
-            # india_census.py both emit a record for these successors under the
-            # same id, and merging lets a gap overwrite a gap: a default
-            # `not_available` with no note landing on top of india_census's
-            # explained one is how East Jaintia Hills came to show an
-            # unexplained blank for religion beside a fully explained blank for
-            # language.
+            # Shares only. The speaker counts belong to the row the census
+            # measured, and repeating them on each successor would count the
+            # same people two or six times over.
+            #
+            # The counts are registered in `measured` first, and before the
+            # branch rather than after it, because the districts carved out of
+            # a subdivided district need them: leaving it until afterwards is
+            # what left Jangaon, Jayashankar, Mahabubabad and Mulugu -- all
+            # four cut out of Warangal -- with no predecessor to inherit from
+            # and a blank panel each.
+            measured[(states.get(state_code, "").casefold(), key)] = unit["counts"]
             reason = subdivided_reason(raw_name)
+            groups = without_counts(composition(unit["counts"]))
             for successor in SUBDIVIDED_SINCE_2011[key]:
+                estimate = subdivided_inherited_note(raw_name, successor)
                 out.append(record(
                     f"IND-D{district_code}-{successor}", successor,
                     level="admin2", parent="IND",
                     parent_name=states.get(state_code),
-                    population=gap(NOT_AVAILABLE, reason),
-                    religion=gap(NOT_AVAILABLE, reason),
-                    language=gap(NOT_AVAILABLE, reason),
-                    sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
+                    # Population and religion carry a sentence rather than the
+                    # bare gap `record` would default them to. This file and
+                    # india_census.py both emit a record for these successors
+                    # under the same id, and merging lets a gap overwrite a
+                    # gap: a default `not_available` with no note landing on
+                    # top of india_census's explained one is how East Jaintia
+                    # Hills came to show an unexplained blank for religion
+                    # beside a fully explained blank for language.
+                    population=gap(NOT_AVAILABLE, estimate),
+                    religion=gap(NOT_AVAILABLE, estimate),
+                    language=groups or gap(NOT_AVAILABLE, reason),
+                    language_note=estimate if groups else None,
+                    language_year=2011 if groups else None,
+                    sources=[{"field": "language", "name": SOURCE,
+                              "url": CATALOG, "year": 2011,
+                              "license": "Government of India open data "
+                                         "(GODL-India)"}],
                 ))
             continue
 
@@ -481,11 +502,23 @@ def new_districts(measured: dict[tuple[str, str], dict[str, float]]
             entity_id = (f"IND-NEW-{state.replace(' ', '-')}"
                          f"-{name.replace(' ', '-')}")
             if any(part is None for part in parts):
+                # The reason goes on religion and population too, not just on
+                # language. `record` would default those to bare gaps, and a
+                # bare gap does overwrite another gap -- india_census.py writes
+                # an explained one under this same id and this file merges
+                # later, so the explanation would be silently replaced by a
+                # blank. That is how Jangaon, Jayashankar, Mahabubabad and
+                # Mulugu came to show an empty panel with nothing saying why,
+                # which is the one thing a gap on this map may not do. It is
+                # the same trap the branches above already guard against.
+                reason = created_reason(name, year, predecessors)
                 out.append(record(
                     entity_id, name, level="admin2", parent="IND",
                     parent_name=state, aliases=[alias] if alias else None,
-                    language=gap(NOT_AVAILABLE,
-                                 created_reason(name, year, predecessors)),
+                    population=gap(NOT_AVAILABLE, reason),
+                    religion=gap(NOT_AVAILABLE, reason),
+                    language=gap(NOT_AVAILABLE, reason),
+                    sex_ratio=gap(NOT_AVAILABLE, reason),
                     sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
                 ))
                 continue
@@ -494,11 +527,21 @@ def new_districts(measured: dict[tuple[str, str], dict[str, float]]
                 for label, count in part.items():
                     whole[label] = whole.get(label, 0) + count
             groups = without_counts(composition(whole))
+            estimate = inherited_note(name, year, predecessors)
             out.append(record(
                 entity_id, name, level="admin2", parent="IND",
                 parent_name=state, aliases=[alias] if alias else None,
+                # Population and religion carry the sentence rather than the
+                # bare gap `record` would default them to. india_census.py
+                # emits a record under this same id and this file merges after
+                # it, and a bare gap does overwrite an explained one: its
+                # religion is a value and survives, but its population is a gap
+                # with a reason, and that reason would be rubbed out on the way
+                # through. Same trap as the branch above, one level up.
+                population=gap(NOT_AVAILABLE, estimate),
+                religion=gap(NOT_AVAILABLE, estimate),
                 language=groups or gap(NOT_AVAILABLE),
-                language_note=inherited_note(name, year, predecessors),
+                language_note=estimate,
                 language_year=2011,
                 sources=[{"field": "language", "name": SOURCE, "url": CATALOG,
                           "year": 2011,

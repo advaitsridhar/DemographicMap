@@ -13,6 +13,8 @@ arithmetic against the census's own district list on every run. So each way it
 can be wrong gets a test that proves the run stops.
 """
 
+import json
+import pathlib
 import collections
 import io
 import unittest
@@ -107,6 +109,73 @@ def shrink_refusal(lost, table=TABLE, rows=ROWS):
     return ""
 
 
+class NoGapIsSilent(unittest.TestCase):
+    """Every empty field on an Indian record says why it is empty.
+
+    india_census.py and india_language.py both write a record under the same
+    id, and merging lets a gap overwrite a gap: whichever file runs last
+    decides. So a bare `not_available` written by one lands on the other's
+    explained one, and the panel goes blank with nothing saying why. That is
+    the one thing a gap on this map may not do -- a blank reads as "nobody has
+    run the adapter yet", which is a different claim entirely.
+
+    It has now happened twice: to East Jaintia Hills' religion, and to
+    Jangaon, Jayashankar, Mahabubabad and Mulugu, the four districts carved
+    out of Warangal -- whose own name survives on no shape, so there was no
+    predecessor to inherit from and the fallback branch wrote the bare gaps.
+    Checked over the built files rather than over one branch of one function,
+    because the fault is in how two files combine.
+    """
+
+    FIELDS = ("population", "religion", "language", "sex_ratio",
+              "scheduled_groups", "ethnicity")
+
+    def records(self, name=None):
+        """The built records, not the processed ones.
+
+        Which matters: `record` defaults every field an adapter does not fill
+        to a bare gap, so india_language_district.json carries 724 bare
+        religion gaps that are perfectly fine -- india_census supplies a real
+        value for each and a gap never overwrites a value. Only a gap that
+        survives the merge is one a reader will ever see.
+        """
+        here = pathlib.Path(__file__).resolve().parent.parent
+        path = here / "site" / "data" / "admin2" / "IND.json"
+        if not path.exists():
+            raise unittest.SkipTest("site/data has not been built")
+        blob = json.loads(path.read_text())
+        for row in (blob["entities"] if isinstance(blob, dict) else blob):
+            if name is None or row.get("name") == name:
+                yield row
+
+    def test_no_district_carries_a_gap_with_no_reason(self):
+        silent = sorted(f"{row.get('name')} {field}"
+                        for row in self.records()
+                        for field in self.FIELDS
+                        if isinstance(row.get(field), dict)
+                        and row[field].get("status")
+                        and not row[field].get("note"))
+        self.assertEqual([], silent[:20],
+                         "a gap must say why it is empty, because a bare one "
+                         "reads as an adapter nobody ran")
+
+    def test_the_six_fragments_of_warangal(self):
+        # Named, because these are the ones the bug was found on. Warangal's
+        # own name survives on no shape and its census row was registered only
+        # after the branch that skips past it, so the four districts carved out
+        # of it found no predecessor and the fallback wrote bare gaps. All six
+        # fragments now carry undivided Warangal's shares and say so.
+        for name in ("Jangaon", "Jayashankar", "Mahabubabad", "Mulugu",
+                     "Warangal (R)", "Warangal (U)"):
+            rows = list(self.records(name))
+            with self.subTest(district=name):
+                self.assertTrue(rows, f"{name} is not in the built file")
+                row = rows[0]
+                self.assertIsInstance(row["religion"], list,
+                                      f"{name} inherits Warangal's shares")
+                self.assertIn("Warangal", row.get("religion_note") or "")
+
+
 class NewDistricts(unittest.TestCase):
     def test_a_district_the_census_never_had_inherits_its_predecessor(self):
         # The owner asked for the parent's composition on these rather than a
@@ -123,14 +192,34 @@ class NewDistricts(unittest.TestCase):
         self.assertEqual([(g["group"], g["pct"]) for g in both["Palghar"]["religion"]],
                          [(g["group"], g["pct"]) for g in both["Thane"]["religion"]])
 
+    def test_a_district_carved_out_of_a_subdivided_one_inherits_it_too(self):
+        # Jangaon came out of Warangal, which was itself split six ways. The
+        # census row for undivided Warangal exists and is exactly as good a
+        # predecessor as Thane is for Palghar -- but it used to be registered
+        # only *after* the subdivided branch had already skipped past it, so
+        # Jangaon, Jayashankar, Mahabubabad and Mulugu found nothing to
+        # inherit and showed four blank panels in Telangana.
+        both = emitted()
+        got = both["Jangaon"]
+        self.assertIsInstance(got["religion"], list)
+        self.assertEqual([(g["group"], g["pct"]) for g in got["religion"]],
+                         [(g["group"], g["pct"])
+                          for g in both["Warangal (R)"]["religion"]])
+        self.assertIn("created in 2016 out of Warangal", got["religion_note"])
+
     def test_a_predecessor_the_census_did_not_measure_still_gets_the_gap(self):
-        # Jangaon came out of Warangal, which was split six ways and has no
-        # row in this fixture, so there is nothing to inherit and the gap and
-        # its reason stand.
-        got = emitted()["Jangaon"]
+        # The fallback still stands where there is genuinely nothing to
+        # inherit. It is hard to reach through `districts` now -- every row the
+        # census has goes into `measured`, subdivided ones included -- so it is
+        # reached the way the signature allows, with no measurements at all.
+        with mock.patch.dict(india_census.CREATED_AFTER_2011, TABLE, clear=True):
+            got = {r["name"]: r for r in india_census.new_districts()}["Jangaon"]
         self.assertNotIsInstance(got["religion"], list)
-        self.assertIn("Warangal has itself since been subdivided",
-                      got["religion"]["note"])
+        self.assertIn("did not exist at the 2011 census", got["religion"]["note"])
+        for field in ("population", "religion", "language"):
+            with self.subTest(field=field):
+                self.assertTrue(got[field].get("note"),
+                                "a gap with no reason is the bug this guards")
 
     def test_no_head_count_travels_with_the_shares(self):
         # The whole point of carrying shares and not counts: Thane's people
@@ -248,24 +337,58 @@ class Subdivided(unittest.TestCase):
         self.assertIn("East Jaintia Hills", got)
         self.assertIn("West Jaintia Hills", got)
 
-    def test_every_field_carries_the_reason_not_just_religion(self):
+    def test_a_successor_inherits_the_undivided_districts_shares(self):
+        # These are post-2011 districts like any other, and the owner asked for
+        # the predecessor's composition on those rather than a hole. The only
+        # thing that ever set East Jaintia Hills apart from Palghar is that it
+        # kept its predecessor's name, which is not a fact about the data.
+        both = emitted()
+        got = both["East Jaintia Hills"]
+        self.assertIsInstance(got["religion"], list)
+        # The undivided row's own arithmetic: 271,596 Christians of 395,124.
+        christian = next(g for g in got["religion"] if g["group"] == "Christian")
+        self.assertAlmostEqual(100 * 271596 / 395124, christian["pct"], places=1)
+        # Both successors get the same shares, because both are fragments of
+        # the one row and nothing in it distinguishes them.
+        self.assertEqual([(g["group"], g["pct"]) for g in got["religion"]],
+                         [(g["group"], g["pct"])
+                          for g in both["West Jaintia Hills"]["religion"]])
+        self.assertTrue(got["religion_note"].startswith("Estimated, not measured."))
+        self.assertIn("undivided Jaintia Hills", got["religion_note"])
+
+    def test_no_head_count_travels_to_a_successor(self):
+        # Six successors each showing the undivided district's population would
+        # be the same people counted six times. Shares travel; counts do not.
+        got = emitted()["East Jaintia Hills"]
+        self.assertNotIsInstance(got["population"], list)
+        self.assertIn("state total carries the count", got["population"]["note"])
+        for group in got["religion"]:
+            self.assertNotIn("count", group)
+
+    def test_every_field_says_something_not_just_religion(self):
         # india_language.py emits a record for these successors under the same
         # id, and a gap with no note overwrites a gap that has one. Whichever
-        # file runs last, the shape has to keep the explanation.
+        # file runs last, every field has to keep its sentence -- the ones
+        # carrying a value on their `_note`, the ones carrying a gap inside it.
         got = emitted()["East Jaintia Hills"]
-        for field in ("population", "religion", "language"):
+        for field in ("population", "religion", "language", "scheduled_groups"):
             with self.subTest(field=field):
-                self.assertIn("undivided Jaintia Hills", got[field]["note"])
+                note = (got.get(f"{field}_note") if isinstance(got[field], list)
+                        else got[field].get("note"))
+                self.assertIn("undivided Jaintia Hills", note or "")
 
     def test_both_adapters_write_the_same_reason(self):
         units = {("17", "299"): {"name": "Jaintia Hills",
                                  "counts": {"Khasi": 376245, "Bengali": 2068}},
                  ("17", "000"): {"name": "MEGHALAYA", "counts": {"Khasi": 1431344}}}
         rows = {r["name"]: r for r in india_language.build(units, "district")}
-        for field in ("religion", "language"):
+        got = rows["East Jaintia Hills"]
+        want = india_census.subdivided_inherited_note("Jaintia Hills",
+                                                      "East Jaintia Hills")
+        for field in ("population", "religion"):
             with self.subTest(field=field):
-                self.assertEqual(india_census.subdivided_reason("Jaintia Hills"),
-                                 rows["East Jaintia Hills"][field]["note"])
+                self.assertEqual(want, got[field]["note"])
+        self.assertEqual(want, got["language_note"])
 
 
 # The C-01 Appendix as probe_xlsx prints it: a title row, the header, a row of

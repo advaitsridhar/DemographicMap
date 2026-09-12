@@ -794,6 +794,35 @@ def subdivided_reason(undivided: str) -> str:
             f"measurement.")
 
 
+def subdivided_inherited_note(undivided: str, successor: str) -> str:
+    """That this successor's shares are the undivided district's, and what that
+    costs.
+
+    The same estimate ``inherited_note`` describes, for the successors whose
+    predecessor left no shape of its own. Warangal (R), Warangal (U), Karbi
+    Anglong East and West, East and West Jaintia Hills are districts created
+    after 2011 out of a district the census did enumerate -- the only thing
+    separating them from the ninety-one in CREATED_AFTER_2011 is that they kept
+    the predecessor's name. That is a naming accident, not a data distinction,
+    and withholding the parent's shares from Warangal (R) while carrying them
+    to Jangaon, which was cut from the same district in the same year, would
+    have been incoherent.
+
+    Shares travel, counts do not, for the reason ``inherited_note`` gives: a
+    proportion survives being applied to a part and a head count does not.
+    """
+    return (f"Estimated, not measured. The 2011 census reported this ground as "
+            f"part of the undivided {undivided} district, which has since been "
+            f"subdivided; {successor} has never been enumerated separately, and "
+            f"India's next census -- due in 2021 -- has not been held. The "
+            f"shares shown are undivided {undivided}'s own 2011 shares, which "
+            f"assumes this successor resembles the district it was cut out of. "
+            f"No population or head count is shown: the census counted these "
+            f"people once, for the undivided district, and repeating that "
+            f"figure on each successor would count them several times over. "
+            f"The state total carries the count.")
+
+
 def created_reason(name: str, year: int, predecessors: tuple[str, ...]) -> str:
     """Why a district created after the census carries no figure, and where its
     people were counted instead.
@@ -979,8 +1008,16 @@ def inherited_note(name: str, year: int, predecessors: tuple[str, ...]) -> str:
              if len(predecessors) > 1 else f"{listed}'s own 2011 shares, ")
     note += ("which assumes this district resembles the ground it was cut out "
              "of. No population or head count is shown: the census counted "
-             f"those people as part of {listed}, where the count is carried, "
-             "and repeating it here would count them twice.")
+             f"those people as part of {listed}, ")
+    # Where the predecessor has itself been subdivided, no shape on this map
+    # bears its name and none of its successors carries its count either, so
+    # "where the count is carried" would send the reader to a figure that is
+    # not there. The state total is where it actually is.
+    orphaned = [p for p in predecessors if p.casefold() in SUBDIVIDED_SINCE_2011]
+    note += ("whose own count is carried by the state total rather than by any "
+             "district on this map, "
+             if orphaned else "where the count is carried, ")
+    note += "and repeating it here would count them twice."
     return note
 
 
@@ -993,6 +1030,50 @@ def without_counts(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     measured for.
     """
     return [{k: v for k, v in row.items() if k != "count"} for row in rows]
+
+
+def inherited_fields(whole: collections.Counter, estimate: str,
+                     fallback: str) -> dict[str, Any]:
+    """The fields a shape carries when it inherits a measured district's shares.
+
+    Shared by the two kinds of shape that do so -- a district created out of a
+    predecessor that kept its name, and a successor of one that did not -- so
+    that the two cannot drift apart in what they carry or in which fields the
+    reason lands on. Every field carries a sentence: a bare gap left on one of
+    them is a gap india_language.py's own bare gap can overwrite, and then the
+    shape goes back to saying nothing.
+    """
+    fields: dict[str, Any] = {
+        "population": gap(NOT_AVAILABLE, fallback),
+        "religion": gap(NOT_AVAILABLE, fallback),
+        "language": gap(NOT_AVAILABLE, fallback),
+    }
+    total = whole["Population"]
+    religion = without_counts(shares(
+        {label: whole[col] for col, label in RELIGION_COLUMNS.items()
+         if whole[col]}, total=total))
+    scheduled = without_counts(shares(
+        {label: whole[col] for col, label in SCHEDULED_COLUMNS.items()
+         if whole[col]}, total=total))
+    males, females = whole["Male"], whole["Female"]
+    if religion:
+        fields["religion"] = religion
+        fields["religion_note"] = estimate
+        fields["religion_year"] = 2011
+        fields["religion_estimated"] = True
+    if scheduled:
+        fields["scheduled_groups"] = scheduled
+        fields["scheduled_groups_note"] = estimate
+    if males:
+        # A ratio, not a count: it describes the people rather than counting
+        # them, so carrying it doubles nobody.
+        fields["sex_ratio"] = measure(
+            round(1000.0 * females / males),
+            unit="females_per_1000_males", year=2011, source=SOURCE)
+        fields["sex_ratio_note"] = estimate
+    if religion:
+        fields["population"] = gap(NOT_AVAILABLE, estimate)
+    return fields
 
 
 def new_districts(measured: dict[tuple[str, str], collections.Counter]
@@ -1023,34 +1104,13 @@ def new_districts(measured: dict[tuple[str, str], collections.Counter]
                 "language": gap(NOT_AVAILABLE, reason),
             }
             if all(part is not None for part in parts):
+                # Summing the counters is what weights a district cut from two
+                # predecessors by the people each actually had.
                 whole: collections.Counter = collections.Counter()
                 for part in parts:
                     whole.update(part)
-                total = whole["Population"]
-                estimate = inherited_note(name, year, predecessors)
-                religion = without_counts(shares(
-                    {label: whole[col] for col, label in RELIGION_COLUMNS.items()
-                     if whole[col]}, total=total))
-                scheduled = without_counts(shares(
-                    {label: whole[col] for col, label in SCHEDULED_COLUMNS.items()
-                     if whole[col]}, total=total))
-                males, females = whole["Male"], whole["Female"]
-                if religion:
-                    fields["religion"] = religion
-                    fields["religion_note"] = estimate
-                    fields["religion_year"] = 2011
-                    fields["religion_estimated"] = True
-                if scheduled:
-                    fields["scheduled_groups"] = scheduled
-                    fields["scheduled_groups_note"] = estimate
-                if males:
-                    # A ratio, not a count: it describes the people rather than
-                    # counting them, so carrying it doubles nobody.
-                    fields["sex_ratio"] = measure(
-                        round(1000.0 * females / males),
-                        unit="females_per_1000_males", year=2011, source=SOURCE)
-                    fields["sex_ratio_note"] = estimate
-                fields["population"] = gap(NOT_AVAILABLE, estimate)
+                fields = inherited_fields(
+                    whole, inherited_note(name, year, predecessors), reason)
             out.append(record(
                 f"IND-NEW-{state.replace(' ', '-')}-{name.replace(' ', '-')}",
                 name, level="admin2", parent="IND",
@@ -1067,6 +1127,10 @@ def new_districts(measured: dict[tuple[str, str], collections.Counter]
             population=gap(NOT_AVAILABLE, reason),
             religion=gap(NOT_AVAILABLE, reason),
             language=gap(NOT_AVAILABLE, reason),
+            # Every field, not just the three a reader looks at first: this
+            # shape is not a district, and a blank sex ratio beside three
+            # explained blanks reads as an adapter that stopped halfway.
+            sex_ratio=gap(NOT_AVAILABLE, reason),
             ethnicity=gap(NOT_COLLECTED, "India does not collect ethnicity."),
             sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
         ))
@@ -1141,27 +1205,38 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
         parent_name = STATE_ALIASES.get(
             state.lower(), state.title().replace(" And ", " and ").replace(" Of ", " of "))
 
+        # Kept so the districts carved out of this one can inherit its shares.
+        # This has to happen before the subdivided branch below, not after it:
+        # a subdivided district is exactly the kind of predecessor a post-2011
+        # district is most likely to have, and registering it afterwards meant
+        # undivided Warangal never reached this table at all. Jangaon,
+        # Jayashankar, Mahabubabad and Mulugu were each cut out of it, found no
+        # predecessor to inherit from, and fell through to the branch that
+        # emits a bare gap -- four blank panels in Telangana, for no better
+        # reason than the order of two statements.
+        measured[(state.casefold(), key)] = counts
+
         if key in SUBDIVIDED_SINCE_2011:
-            # One census row, several present-day districts: emit the gap, not a guess.
-            # Every field the census would have filled carries the reason, not
-            # just religion: a bare gap left on population or language is one
-            # that india_language.py's own bare gap can overwrite, and then the
-            # shape goes back to saying nothing.
+            # One census row, several present-day districts, none of which the
+            # census measured. They carry the undivided district's shares as a
+            # stated estimate, exactly as a post-2011 district carries its
+            # predecessor's: these *are* post-2011 districts, and the only
+            # thing that ever separated them was that they kept the old name.
+            # Splitting the count between them would be a guess; carrying the
+            # proportions is the same assumption made everywhere else in this
+            # file, said out loud in the note.
             reason = subdivided_reason(name)
             for successor in SUBDIVIDED_SINCE_2011[key]:
+                fields = inherited_fields(
+                    counts, subdivided_inherited_note(name, successor), reason)
                 out.append(record(
                     f"IND-D{code}-{successor}", successor, level="admin2", parent="IND",
-                    population=gap(NOT_AVAILABLE, reason),
-                    religion=gap(NOT_AVAILABLE, reason),
-                    language=gap(NOT_AVAILABLE, reason),
                     ethnicity=gap(NOT_COLLECTED,
                                   "India does not collect ethnicity."),
                     sources=[{"field": "note", "name": SOURCE, "url": CATALOG}],
+                    **fields,
                 ))
             continue
-
-        # Kept so the districts carved out of this one can inherit its shares.
-        measured[(state.casefold(), key)] = counts
         record_ = build_record(
             DISTRICT_ALIASES.get(key, name), counts,
             level="admin2", parent="IND", entity_id=f"IND-D{code}",
