@@ -256,6 +256,10 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Tajik", "Balochi", "Ossetian", "Talysh", "Luri", "Gilaki",
         "Mazanderani", "Zaza", "Pamiri", "Farsi", "Pushto", "Baluchi",
         "Iranian Persian", "Afghan Persian or Dari", "Afghan Persian",
+        # Gilgit-Baltistan's Pamiri language, in the Wakhan corridor and upper
+        # Hunza. "Pamiri" above is the cover term; Wakhi is the one this
+        # project meets by name.
+        "Wakhi",
     ),
     "Baltic languages": ("Lithuanian", "Latvian", "Latgalian"),
     "Celtic languages": (
@@ -1158,8 +1162,9 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         # Karnali's Khas, which Jumla and Kalikot report beside Nepali
         # rather than as another word for it.
         "Khash",
-        # Pakistan and the Dardic north.
-        "Lahnda", "Shina", "Pashai",
+        # Pakistan and the Dardic north. Khowar sits beside Shina: both are
+        # Dardic, and Gilgit-Baltistan reports them together.
+        "Lahnda", "Shina", "Pashai", "Khowar",
     ),
     "Nilo-Saharan languages": ("Songhai", "Zarma", "Kanuri", "Fur", "Gula"),
     "Gur languages": ("Gurma", "Bwamu", "Lobi", "Dagara",

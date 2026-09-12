@@ -790,6 +790,103 @@ def gb_religion() -> dict[str, Any]:
     }
 
 
+# Gilgit-Baltistan's mother tongue, on the owner's instruction, from the one
+# published account of it.
+#
+# The official routes are shut and stay shut: Table 11 does not exist for this
+# territory at any path the Bureau uses, GB At a Glance 2025 carries district
+# tables from the same census and the word "tongue" on no page, and Pakistan's
+# own mother-tongue question names nine languages and an "Other" -- Shina,
+# Balti and Burushaski, which is to say nearly all of Gilgit-Baltistan, all
+# fall in the Other. A census figure here would not name one of its languages.
+#
+# So this is a newspaper's account of a survey, and the note leads with that.
+# What the article gives is three household counts (Balti "over 74,000", Shina
+# 70,000, Burushaski 33,512) and three percentages (Khowar 3%, Wakhi 2%, other
+# languages including Domaki, Gojri and Urdu 4%). It gives no total, so the
+# total is recovered here: the three percentages account for 9%, which makes
+# the three counts 91%, and 177,512 / 0.91 is 195,068 households. That single
+# division is the only arithmetic done to the article's figures, and it is
+# stated because a derived denominator is exactly the kind of step that should
+# not be silent.
+#
+# Three things a reader has to be told, and the note tells them:
+#
+# *Households, not people.* Every other mother-tongue figure on this map counts
+# persons. Household sizes in Gilgit-Baltistan vary by district -- Diamer's are
+# markedly larger than Hunza's -- so this is not the same measurement, and
+# `language_basis` says so, which is also what keeps it out of Pakistan's
+# national language roll-up, exactly as GB's religion is kept out.
+#
+# *An estimate, twice over.* The article works from GB-MICS 2017, a survey of
+# respondents, scaled on 2017 census population by its author.
+#
+# *Balti leads Shina by four thousand households, on figures the article itself
+# rounds.* That is inside its own precision, and most other accounts call Shina
+# the territory's largest language. The owner's instruction was to publish the
+# article's figures as they stand, so Balti leads here and Gilgit-Baltistan
+# takes Balti's colour on the dominant-group map; the note says plainly that
+# the top two cannot be separated by this source.
+GB_TONGUES: dict[str, float] = {
+    # 74,000 / 195,068. Carries the residual, being the least precise figure
+    # the article gives ("over 74,000"), so the six shares sum to 100 exactly
+    # without any other one being nudged.
+    "Balti": 37.93,
+    "Shina": 35.89,      # 70,000 / 195,068
+    "Burushaski": 17.18,  # 33,512 / 195,068
+    "Khowar": 3.0,
+    "Wakhi": 2.0,
+    "Other languages": 4.0,
+}
+GB_TONGUE_SOURCE = ("Pamir Times, 'Treading the Sacred Linguistic Landscape "
+                    "of Gilgit-Baltistan', 23 December 2023, reporting "
+                    "Gilgit-Baltistan MICS 2017 household data")
+GB_TONGUE_URL = ("https://pamirtimes.net/2023/12/23/"
+                 "treading-the-sacred-linguistic-landscape-of-gilgit-baltistan/")
+GB_TONGUE_YEAR = 2017
+GB_TONGUE_NOTE = (
+    "Not a census, and not a count of people. Pakistan's Bureau of Statistics "
+    "publishes no mother-tongue table for Gilgit-Baltistan, and the census's "
+    "own question would not help if it did: it names nine languages and an "
+    "'Other', and Shina, Balti and Burushaski all fall in the Other. These "
+    "shares are households, from a December 2023 Pamir Times article working "
+    "from the Gilgit-Baltistan MICS 2017 survey and scaling it on 2017 census "
+    "population -- an estimate at two removes, and households rather than "
+    "persons, which is why it is not added into Pakistan's national figure. "
+    "The article gives three household counts and three percentages but no "
+    "total; the total of 195,068 households is derived here by division. "
+    "Balti and Shina cannot be separated by this source: it puts them 4,000 "
+    "households apart on figures it rounds to the thousand, and other "
+    "accounts of the territory call Shina the larger. The territory-wide "
+    "figure also hides a sharp geography -- Balti dominates Skardu, Ghanche, "
+    "Kharmang and Shigar, Shina dominates Astore, Diamer, Ghizer and Gilgit, "
+    "and Burushaski Hunza and Nagar -- and no district table is published, so "
+    "none of the ten districts carries this figure.")
+
+
+def gb_language() -> dict[str, Any]:
+    """The mother-tongue fields for Gilgit-Baltistan's territory row.
+
+    Fields rather than a record, for the reason ``gb_religion`` gives: one id,
+    one record, one place that decides.
+    """
+    total = round(sum(GB_TONGUES.values()), 2)
+    if total != 100.0:
+        raise SystemExit(
+            f"pakistan: the Gilgit-Baltistan language shares sum to {total}, "
+            f"not 100. Three of these six are derived from a household count "
+            f"divided by a total the source does not print, so an arithmetic "
+            f"slip here would look exactly like a reading of the article")
+    return {
+        "language": [{"group": name, "pct": pct}
+                     for name, pct in sorted(GB_TONGUES.items(),
+                                             key=lambda kv: -kv[1])],
+        "language_year": GB_TONGUE_YEAR,
+        "language_note": GB_TONGUE_NOTE,
+        "language_basis": "language of the household",
+    }
+
+
 def ajk_records(found: dict[str, dict[str, int]],
                 whole: dict[str, int]) -> list[dict[str, Any]]:
     """Azad Jammu and Kashmir, and the one second-level shape drawn for it.
@@ -846,23 +943,34 @@ def declared_gaps(absent: dict[str, list[tuple[str, str]]]) -> list[dict[str, An
         province, alias, inside = TERRITORIES[slug]
         source = [{"field": "note", "name": SOURCE, "url": URL,
                    "license": LICENCE}]
-        # Gilgit-Baltistan is the one territory with a religion figure from
-        # somewhere other than the census, so its territory row carries that
-        # and the districts below it keep the gap: the estimate is for the
-        # whole and its districts differ sharply from the average.
-        territory = dict(source=list(source))
+        # Gilgit-Baltistan is the one territory with figures from somewhere
+        # other than the census -- religion from PILDAT, mother tongue from a
+        # newspaper's account of GB-MICS -- so its territory row carries those
+        # and the districts below it keep the gap: both estimates are for the
+        # whole, and its districts differ sharply from either average.
+        #
+        # Both fields start as the declared gap and are replaced only where
+        # there is something to replace them with. They are built into one
+        # dict rather than passed to `record` separately because `**fields`
+        # and an explicit keyword for the same field is a TypeError, and the
+        # gap is what that keyword used to be.
+        fields: dict[str, Any] = {
+            "religion": gap(NOT_AVAILABLE, TERRITORY_GAP),
+            "language": gap(NOT_AVAILABLE, TERRITORY_GAP),
+        }
         if slug == "gb":
-            territory["fields"] = gb_religion()
-            territory["source"] = list(source) + [
+            fields.update(gb_religion())
+            fields.update(gb_language())
+            source = list(source) + [
                 {"field": "religion", "name": GB_SOURCE, "url": GB_URL,
-                 "year": GB_YEAR}]
-        fields = territory.get("fields") or {
-            "religion": gap(NOT_AVAILABLE, TERRITORY_GAP)}
+                 "year": GB_YEAR},
+                {"field": "language", "name": GB_TONGUE_SOURCE,
+                 "url": GB_TONGUE_URL, "year": GB_TONGUE_YEAR},
+            ]
         out.append(record(
             f"PAK-{slug}", province, level="admin1", parent="PAK",
             aliases=list(alias),
-            language=gap(NOT_AVAILABLE, TERRITORY_GAP),
-            sources=territory["source"], **fields))
+            sources=list(source), **fields))
         for name in inside:
             out.append(record(
                 f"PAK-{slug}-{name.lower().replace(' ', '-')}", name,
