@@ -82,20 +82,11 @@ ADAPTER_FILES = [
     # language half coming from the U.S. Census Bureau's tables of the 2017
     # round, which named nine tongues and left Chitral 93.1% "Other".
     "pakistan_district.json",
-    # bhutan_gewog.json is NOT here yet, and deliberately. The adapter is
-    # written and reads Tsirang exactly -- 12 gewogs, 2 towns, 22,376 people,
-    # its printed total to the person -- but the twenty reports vary in
-    # layout: Bumthang prints Figure 2.1 beside Table 2.1 and the chart's
-    # y-axis sits at the same baselines as the gewog rows, and clipping to
-    # the header's span was not enough to recover its Total row. Registering
-    # it now would publish one dzongkhag's gewogs and call Bhutan done.
-    #
-    # The better architecture, when it is picked up: read the *national*
-    # report once for all twenty dzongkhag totals and hold each dzongkhag
-    # report to its own row there, instead of depending on finding a printed
-    # Total inside twenty differently-laid-out documents. Bhutan's three
-    # composition fields are already declared not_collected in common.py,
-    # which is correct independently of this and does not wait for it.
+    # Population only: Bhutan's census does not ask religion, language or
+    # ethnicity, and those three are declared not_collected in common.py.
+    # This fills 205 gewogs that carried nothing at all, and Thimphu, which
+    # carried nothing because geoBoundaries spells it "Thimpu".
+    "bhutan_gewog.json",
     "bangladesh_district.json",
     "south_africa_province.json",
     "philippines_province.json", "ethiopia_region.json",

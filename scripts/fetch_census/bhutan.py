@@ -106,12 +106,59 @@ DZONGKHAG_ALIASES: dict[str, tuple[str, ...]] = {
     "Lhuentse": ("Lhuntse",),
 }
 
-# The census's own total, from the national report, and the control every
-# dzongkhag read here is held to collectively.
-NATIONAL = 727_145
+# Bhutan's two published totals, and they are both real. The national report:
+# "Bhutan's total population is 735,553 ... It includes 8,408
+# non-Bhutanese/tourists found in hotels and those on the move on census
+# reference day. The analyses in this Report are based on 727,145 persons
+# since no detailed information was collected from the 8,408."
+NATIONAL_FOUND = 735_553      # everyone found in Bhutan on the day
+NATIONAL_ANALYSED = 727_145   # what the report's own tables are built on
 
-HEADER = ("Gewog/Town", "Male", "Female", "Total")
+# The twenty dzongkhag reports do not sum to either, and that is a
+# disagreement between NSB's own publications rather than a misread here.
+# Their Table 2.1 figures agree with the national report's Table 2.1 exactly
+# for Bumthang, Chhukha, Dagana, Gasa, Haa, Monggar and Pema Gatshel, and
+# differ for others -- Paro 43,362 against 46,316, Punakha 27,360 against
+# 28,740, Lhuentse 14,240 against 14,437. Each dzongkhag report reconciles
+# internally, gewog by gewog, to the total printed in it.
+#
+# So the per-dzongkhag reconciliation is the hard check and this one is
+# reported rather than enforced: every dzongkhag is required to be read and
+# to add up to its own printed total, which is what would catch one read
+# twice or not at all. A bound here would either be loose enough to miss
+# Gasa's 3,952 or tight enough to refuse this known disagreement.
+NATIONAL = NATIONAL_ANALYSED
+
+# The header is two stacked rows -- "Gewog/Town | Persons" over
+# "Male | Female | Total" -- and whether they land on one baseline or two is
+# a fact about the individual file. Bumthang and Tsirang put them on one;
+# Dagana puts them on two, and requiring all four words together read no rows
+# at all there. So the distinctive word opens the header and the right edge is
+# taken from the "Total" on that line or the next.
+HEADER_KEY = "Gewog/Town"
+HEADER_EDGE = "Total"
+
+# There is no right clip, and there was: the header word "Total" is centred
+# over its column while the values are set flush right, so they end past it.
+# Dagana's "Total" ends at x=229 and the 575 beneath it does not, so clipping
+# there cost every Dagana row its third figure -- the whole table, reported as
+# "no gewog rows read". Widening the allowance only moved the guess.
+#
+# What actually separates a row from the prose beside it is not geometry but
+# shape: a row is three consecutive figures with a name in front. The left
+# edge still holds, because prose to the *left* of the table would otherwise
+# supply that name; to the right it can only add trailing words, and the run
+# rule ignores those.
+COLUMN = float("inf")   # replaced below by a measured width
 SECTIONS = {"Urban", "Rural"}
+
+# The row that closes the table, and there are two spellings of it. Tsirang
+# writes "Total"; Bumthang writes "Both Areas", meaning urban and rural
+# together. That one word is what the first three attempts at this file were
+# actually failing on -- the reader looked for "Total", never found it in
+# Bumthang, and reported "no printed Total row" while its gewogs were read
+# correctly the whole time. Both are the same row and both close the table.
+CLOSERS = {"Total", "Both Areas"}
 NUMBER = re.compile(r"^[\d,]+$")
 
 # A town row ends in the word Town or Thromde. Bhutan's four thromdes --
@@ -121,10 +168,15 @@ NUMBER = re.compile(r"^[\d,]+$")
 TOWN = re.compile(r"\b(Town|Thromde)$")
 
 POPULATION_NOTE = (
-    "2017 Population and Housing Census, the whole resident population "
-    "'irrespective of their nationality' as the report puts it. Bhutan's "
-    "census does not ask religion, language or ethnicity, so those three are "
-    "declared rather than left empty.")
+    "2017 Population and Housing Census, from the dzongkhag's own report, "
+    "counting everyone found there 'irrespective of their nationality' as the "
+    "report puts it. Bhutan's census does not ask religion, language or "
+    "ethnicity, so those three are declared rather than left empty. Note that "
+    "the dzongkhag reports and the national report do not agree everywhere: "
+    "the twenty come to 720,837 against the 727,145 the national report "
+    "analyses, itself 8,408 short of the 735,553 found in the country once "
+    "non-Bhutanese in hotels are counted. The figure here is the dzongkhag's "
+    "own, which its gewogs add up to exactly.")
 GEWOG_NOTE = (
     " This is the gewog's own count. Towns and thromdes are enumerated beside "
     "the gewogs rather than inside them and the boundary file draws none of "
@@ -158,8 +210,8 @@ def words_by_row(blob: bytes, tolerance: float = 2.0):
             yield [sorted(cells) for _top, cells in rows]
 
 
-def table(blob: bytes, dzongkhag: str
-          ) -> tuple[dict[str, int], dict[str, int], int]:
+def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
+         ) -> tuple[dict[str, int], dict[str, int], int]:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
 
     Two things bound the read, and the first attempt had only one of them.
@@ -174,7 +226,37 @@ def table(blob: bytes, dzongkhag: str
     read three gewogs and then lost the table's own Total row to an axis
     label, which the "no printed Total" refusal caught.
 
-    **The table is bounded by its pages**, not only by its printed Total.
+    **The figures do not always end the row, and the column is wider than its
+    own header.** Dagana prints "Drukjeygang Town 250 325 575 Bhutan." on one
+    baseline, the last word belonging to the prose beside the table; and its
+    header word "Total" ends at x=229 while the figures beneath it do not.
+    Clipping at the header word and requiring the figures to end the row cost
+    Dagana every one of its rows.
+
+    **A row's label can wrap around its own figures.** Chhukha prints
+    "Phuentshogling" on the line above the figures for Phuentsholing Thromde
+    and the word "Thromde" on the line *below* them. So the row arrives called
+    "Phuentshogling" -- which is also a gewog further down the same table.
+
+    That is why rows are classified by the **section** they sit under, Urban
+    or Rural, and never by what their name ends in. Classified by suffix, the
+    thromde was filed as a gewog and then overwritten by the real gewog of
+    that name: 27,658 people, the second city of Bhutan, gone without a trace
+    into a dict key. A duplicate name inside one section now stops the run
+    rather than keeping whichever arrived second.
+
+    **The header is two stacked rows, on one baseline or two.** "Gewog/Town |
+    Persons" sits over "Male | Female | Total"; Bumthang and Tsirang put them
+    on a single baseline and Dagana on two. Requiring all four words together
+    read no rows at all from Dagana, so the distinctive word opens the header
+    and the right edge comes from the "Total" on that line or the next.
+
+    **The closing row has two spellings.** Tsirang writes "Total"; Bumthang
+    writes "Both Areas", meaning urban and rural together. Looking only for
+    "Total" is what made this file fail on Bumthang while its gewogs were
+    being read correctly all along -- ``CLOSERS`` holds both.
+
+    **The table is bounded by its pages**, not only by its closing row.
     Bounding it by the Total alone let the reader run off the end of Table 2.1
     and through the rest of the document -- Tsirang came back with 885 gewogs
     holding 1.2 million people against a printed 22,376, which the
@@ -191,30 +273,126 @@ def table(blob: bytes, dzongkhag: str
     printed = 0
     edge: float | None = None
     margin: float | None = None
+    waited = 0
     reading = False
+    section = ""
+    # A label that wrapped onto its own line, waiting for the figures beneath
+    # it. Chhukha prints "Tsimasham\nTown" and "Phuentsholing\nThromde", and
+    # a row whose name wraps arrives here as three figures and no name.
+    # Dropping those cost Chhukha 29,793 people -- almost all of them
+    # Phuentsholing, the second city of Bhutan.
+    pending: list[str] = []
 
     for rows in words_by_row(blob):
         if printed:
             break
-        found_here = False
+        found_here = edge is not None and margin is None
         for cells in rows:
             texts = [t for _a, _b, t in cells]
-            if edge is None:
-                if all(word in texts for word in HEADER):
-                    edge = min(x0 for x0, _x1, t in cells if t == HEADER[0])
-                    margin = max(x1 for _x0, x1, t in cells if t == HEADER[-1])
-                    reading = True
-                    found_here = True
+            if margin is None:
+                if strict:
+                    # All four header words on one baseline. This is how
+                    # Tsirang, Bumthang and Chhukha print it, and it is tried
+                    # first because it cannot mistake a data row for a header.
+                    if (HEADER_KEY in texts and HEADER_EDGE in texts
+                            and "Male" in texts and "Female" in texts):
+                        edge = min(x0 for x0, _x1, t in cells
+                                   if t == HEADER_KEY)
+                        margin = max(x1 for _x0, x1, t in cells
+                                     if t == HEADER_EDGE)
+                        # One column's width past the header word, measured
+                        # from the header itself: the words are centred over
+                        # their columns and the figures are flush right, so
+                        # they end past the word. Dagana needed this; taking
+                        # the header word's own edge cost it every row, and
+                        # removing the clip entirely let the prose beside the
+                        # table into the row names.
+                        before = [x1 for _x0, x1, t in cells if t == "Female"]
+                        if before:
+                            margin += max(0.0, margin - max(before))
+                        reading = found_here = True
+                        if debug:
+                            log(f"    [debug] strict header at x={edge:.0f}"
+                                f"..{margin:.0f}: {texts}")
+                    elif debug and HEADER_KEY in texts:
+                        log(f"    [debug] saw {HEADER_KEY} but not all four: "
+                            f"{texts}")
+                    continue
+                # Relaxed: the two header rows landed on different baselines,
+                # which is how Dagana prints it. Only reached when the strict
+                # pass read nothing at all from this document.
+                if edge is None:
+                    if HEADER_KEY in texts:
+                        edge = min(x0 for x0, _x1, t in cells
+                                   if t == HEADER_KEY)
+                        found_here = True
+                    continue
+                if HEADER_EDGE in texts:
+                    margin = max(x1 for _x0, x1, t in cells
+                                 if t == HEADER_EDGE)
+                else:
+                    margin = float("inf")
+                reading = found_here = True
                 continue
             inside = [(x0, x1, t) for x0, x1, t in cells
-                      if x0 >= edge - 3.0 and x1 <= margin + 6.0]
+                      if x0 >= edge - 3.0 and x1 <= margin + COLUMN]
+            if debug and cells:
+                log(f"    [debug] row {[t for _a,_b,t in cells][:9]} "
+                    f"-> in span {[t for _a,_b,t in inside][:9]}")
             words = [t for _a, _b, t in inside]
-            if not words or (len(words) == 1 and words[0] in SECTIONS):
+            if not words:
                 continue
-            figures = [t for t in words if NUMBER.match(t)]
-            if len(figures) != 3 or words[-3:] != figures:
+            if words[0] in SECTIONS:
+                # By the first word, not by the line being only that word.
+                # With no right clip, Bumthang's chart prints its y-axis on
+                # the same baselines as the table and "Urban" arrives as
+                # "Urban 50"; requiring a lone word lost the section, and
+                # every town in the dzongkhag was filed as a gewog.
+                #
+                # Figures on a section line are its own subtotal or a chart's
+                # axis, and are dropped either way: adding an Urban subtotal
+                # to the towns under it would count them twice.
+                section = words[0]
+                pending = []          # a section heading labels nothing
                 continue
-            name = " ".join(words[:-3]).strip()
+            # The first run of three consecutive figures, with the name
+            # before it. Anything after is narrative that shares the baseline
+            # -- Dagana prints "Drukjeygang Town 250 325 575 Bhutan." on one
+            # line, the last word belonging to the column of prose beside the
+            # table. Requiring the figures to *end* the row dropped it.
+            # From index 0 only when a label is already waiting: Chhukha's
+            # Phuentsholing row is three figures and nothing else, its name
+            # having wrapped onto the line above. Without a pending label a
+            # row must carry its own name, or a stray trio of numbers in the
+            # prose would become a gewog.
+            first = 0 if pending else 1
+            at = next((i for i in range(first, max(first + 1, len(words) - 2))
+                       if all(NUMBER.match(w) for w in words[i:i + 3])), None)
+            figures = list(words[at:at + 3]) if at is not None else []
+            if len(figures) != 3:
+                # Text inside the table's own span carrying no figures is a
+                # label whose row is still to come. Remembered rather than
+                # dropped; anything outside the span is prose and never
+                # reaches here.
+                # A wrapped label is one or two words. Anything longer is
+                # the prose beside the table, and letting it accumulate put
+                # "2005 and 2017.The population of Trashi" in front of
+                # Ramjar's name and "Trashi Yangtse Dzongkhag ranks" in front
+                # of the closing row -- which then read as a gewog and
+                # doubled the dzongkhag.
+                # A short line replaces the pending label; a long one is the
+                # prose beside the table and leaves it alone. Dagana prints
+                # "Lhamoi Dzingkha", then a line of narrative, then the town's
+                # figures, then the word "Town" -- clearing on the narrative
+                # lost the row and its 1,961 people.
+                if words and not figures and len(words) <= 2:
+                    pending = list(words)
+                continue
+            # The pending label is used only by a row that has no name of
+            # its own. Otherwise a stray one-word line above the table gets
+            # glued on -- Dagana read "Population Gozhi" for Gozhi.
+            name = " ".join(words[:at] if at else pending).strip()
+            pending = []
             if not name or NUMBER.match(name):
                 continue
             try:
@@ -222,34 +400,131 @@ def table(blob: bytes, dzongkhag: str
             except ValueError:
                 continue
             found_here = True
-            if name == "Total":
+            if name in CLOSERS:
                 printed = total
                 break
-            if TOWN.search(name):
-                towns[name] = total
-            else:
-                gewogs[name] = total
+            if name in SECTIONS:
+                section = name
+                continue
+            # Classified by the section it is under, never by its name. The
+            # name is not reliable: Chhukha prints "Phuentshogling" above the
+            # figures for Phuentsholing Thromde and the word "Thromde" on the
+            # line *below* them, so the row arrives called "Phuentshogling" --
+            # which is also the name of a gewog further down the same table.
+            # Keyed by name and classified by suffix, the thromde landed in
+            # `gewogs` and was then overwritten by the gewog: 27,658 people,
+            # the second city of Bhutan, gone without a trace.
+            # A town by its name or by the section it sits under, because
+            # neither alone is enough. Bumthang's two-column page emits both
+            # section labels before any row, so the section is "Rural" by the
+            # time "Bumthang Town" arrives; and Chhukha's Phuentsholing loses
+            # the word "Thromde" to a line break, so only the section knows it
+            # is urban. Each covers the other's blind spot.
+            into = towns if (TOWN.search(name) or section == "Urban") \
+                else gewogs
+            if name in into:
+                raise SystemExit(
+                    f"bhutan: {dzongkhag}: two rows of Table 2.1 are both "
+                    f"called {name!r} in the same section. One would silently "
+                    f"replace the other, which is how Phuentsholing went "
+                    f"missing; refusing rather than keeping whichever came "
+                    f"second")
+            into[name] = total
         # A page that carried none of this table's rows ends it. Table 2.1
         # runs to one page in the small dzongkhags and two in the large ones,
         # and nothing later in the report is it.
+        #
+        # Unless nothing has been read at all, in which case the header that
+        # opened was not this table's. Dagana's contents page carries a line
+        # reading exactly "Gewog/Town Male Female Total"; locking onto the
+        # first match and stopping meant the reader spent the whole document
+        # on the LIST OF FIGURES and never reached page 13, where the table
+        # actually is. A header that leads nowhere is abandoned and the search
+        # resumes rather than ending the read.
         if reading and not found_here:
-            break
+            if gewogs or towns:
+                break
+            edge = margin = None
+            waited = 0
+            reading = False
+            section = ""
+            pending = []
 
+    return gewogs, towns, printed
+
+
+# Every report states its own total in prose: "The total population of X
+# Dzongkhag as of 30 May 2017 was 17,820 persons". That sentence is the
+# fallback when the table's closing row cannot be found, and it is a genuinely
+# independent control -- it is written by the office, not computed here, and
+# it sits outside the table the rows come from.
+STATED = re.compile(
+    r"total\s+population\s+of\s+\S+.{0,80}?\b(?:is|was)\s+([\d,]+)\s*persons",
+    re.I | re.S)
+
+
+def stated_total(blob: bytes) -> int:
+    """The dzongkhag total as the report's own narrative gives it."""
+    import pdfplumber
+
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        for page in pdf.pages[:30]:
+            text = " ".join((page.extract_text() or "").split())
+            found = STATED.search(text)
+            if found:
+                return int(found.group(1).replace(",", ""))
+    return 0
+
+
+def table(blob: bytes, dzongkhag: str, debug: bool = False
+          ) -> tuple[dict[str, int], dict[str, int], int]:
+    """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
+
+    Two passes, and the order matters. The strict one wants all four header
+    words on a single baseline; it cannot mistake a data row for a header, and
+    it is how most of the twenty print it. Only when that reads nothing at all
+    is the relaxed pass tried, which takes the header's second row from a
+    following line -- Dagana's layout, and loose enough that letting it run
+    first cost Bumthang its whole table.
+    """
+    gewogs, towns, printed = scan(blob, True, dzongkhag, debug)
+    counted = sum(gewogs.values()) + sum(towns.values())
+    if not gewogs or not printed or counted != printed:
+        # The strict pass either found no header or found one and did not
+        # reconcile. Either way the relaxed pass is worth asking, and only a
+        # result that reconciles is allowed to replace one that does not.
+        loose = scan(blob, False, dzongkhag, debug)
+        if loose[0] and loose[2] and \
+                sum(loose[0].values()) + sum(loose[1].values()) == loose[2]:
+            gewogs, towns, printed = loose
     if not gewogs:
         raise SystemExit(f"bhutan: {dzongkhag}: no gewog rows read from "
                          f"Table 2.1")
     if not printed:
+        # The closing row is spelt "Total" in some reports and "Both Areas" in
+        # others, and Trashi Yangtse prints neither where this reader can see
+        # it. The narrative's own sentence stands in -- it is the office's
+        # figure, not one computed here, and the rows are still held to it.
+        printed = stated_total(blob)
+        if printed:
+            log(f"    {dzongkhag}: no closing row; held to the "
+                f"{printed:,} its own text states")
+    if not printed:
         raise SystemExit(
-            f"bhutan: {dzongkhag}: Table 2.1 has no printed Total row, which "
-            f"is the only thing that says these {len(gewogs)} gewogs are all "
-            f"of them")
+            f"bhutan: {dzongkhag}: Table 2.1 has no closing row and the "
+            f"report states no total in its text either, so nothing says "
+            f"these {len(gewogs)} gewogs are all of them")
     counted = sum(gewogs.values()) + sum(towns.values())
     if counted != printed:
         raise SystemExit(
             f"bhutan: {dzongkhag}: {len(gewogs)} gewogs and {len(towns)} "
             f"towns hold {counted:,} against the {printed:,} printed beside "
             f"them -- {printed - counted:+,}. A gewog this reader never "
-            f"noticed is a hole, and every other check here passes over it")
+            f"noticed is a hole, and every other check here passes over it."
+            f"\n      gewogs: " + ", ".join(f"{k} {v:,}"
+                                            for k, v in sorted(gewogs.items()))
+            + f"\n      towns: " + ", ".join(f"{k} {v:,}"
+                                             for k, v in sorted(towns.items())))
     return gewogs, towns, printed
 
 
@@ -270,6 +545,8 @@ def main() -> int:
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default=None)
+    ap.add_argument("--debug", action="store_true",
+                    help="print what the reader sees, for one dzongkhag")
     ap.add_argument("--only", default="",
                     help="one dzongkhag, for working out a layout")
     args = ap.parse_args()
@@ -289,7 +566,7 @@ def main() -> int:
         except Exception as err:                        # noqa: BLE001
             absent.append(f"{dzongkhag}: {type(err).__name__} {str(err)[:60]}")
             continue
-        gewogs, towns, printed = table(blob, dzongkhag)
+        gewogs, towns, printed = table(blob, dzongkhag, args.debug)
         national += printed
         urban_total += sum(towns.values())
         log(f"  {dzongkhag}: {len(gewogs)} gewogs, {len(towns)} town(s), "
@@ -329,16 +606,13 @@ def main() -> int:
             f"bhutan: {len(absent)} of {len(wanted)} dzongkhag reports were "
             f"not read; refusing to write a partial Bhutan")
 
-    if not args.only and national != NATIONAL:
-        raise SystemExit(
-            f"bhutan: the twenty dzongkhags hold {national:,} against the "
-            f"{NATIONAL:,} the national report prints -- "
-            f"{NATIONAL - national:+,}. Each dzongkhag reconciled to its own "
-            f"printed total, so this is a whole dzongkhag read twice or not "
-            f"at all, which no per-file check can see")
     if not args.only:
-        log(f"  the twenty dzongkhags come to {national:,}, the national "
-            f"report's own figure")
+        log(f"  the twenty dzongkhags come to {national:,}, against the "
+            f"{NATIONAL_ANALYSED:,} the national report analyses and the "
+            f"{NATIONAL_FOUND:,} it says were found -- "
+            f"{national - NATIONAL_ANALYSED:+,} on the first. The two "
+            f"publications disagree for some dzongkhags; each report here "
+            f"reconciles to its own printed total.")
 
     out = args.out or PROCESSED / "bhutan_gewog.json"
     write_json(out, records)

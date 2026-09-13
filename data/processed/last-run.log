@@ -1,2 +1,24 @@
-page: https://dataspace.princeton.edu/handle/88435/dsp011g05ff395
-  unreachable: HTTPError: HTTP Error 401: Unauthorized
+bhutan: National Statistics Bureau, PHCB 2017 Table 2.1
+  Bumthang: 4 gewogs, 2 town(s), 17,820 people
+  Chhukha: 11 gewogs, 5 town(s), 68,966 people
+  Dagana: 14 gewogs, 5 town(s), 24,965 people
+  Gasa: 4 gewogs, 2 town(s), 3,952 people
+  Haa: 6 gewogs, 2 town(s), 13,655 people
+  Lhuentse: 8 gewogs, 2 town(s), 14,240 people
+  Monggar: 17 gewogs, 6 town(s), 37,150 people
+  Paro: 10 gewogs, 2 town(s), 43,362 people
+  Pema Gatshel: 11 gewogs, 8 town(s), 23,632 people
+  Punakha: 11 gewogs, 2 town(s), 27,360 people
+  Samdrup Jongkhar: 11 gewogs, 3 town(s), 35,079 people
+  Samtse: 15 gewogs, 3 town(s), 62,590 people
+  Sarpang: 12 gewogs, 2 town(s), 46,004 people
+  Thimphu: 8 gewogs, 2 town(s), 138,736 people
+  Trashi Yangtse: 8 gewogs, 2 town(s), 17,300 people
+  Trashigang: 15 gewogs, 6 town(s), 43,741 people
+  Trongsa: 5 gewogs, 2 town(s), 19,960 people
+  Tsirang: 12 gewogs, 2 town(s), 22,376 people
+  Wangdue Phodrang: 15 gewogs, 3 town(s), 42,186 people
+  Zhemgang: 8 gewogs, 3 town(s), 17,763 people
+  the twenty dzongkhags come to 720,837, against the 727,145 the national report analyses and the 735,553 it says were found -- -6,308 on the first. The two publications disagree for some dzongkhags; each report here reconciles to its own printed total.
+  wrote data/processed/bhutan_gewog.json (482 kB)
+  20 dzongkhags and 205 gewogs, 273,174 people in towns with no shape
