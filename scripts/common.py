@@ -92,7 +92,7 @@ def measure(value: Any, *, year: Any = None, source: str | None = None, unit: st
 
 
 # ---------------------------------------------------------------------------
-# Collection policy: which states do not gather a field AT ALL.
+# Collection policy: which states do not publish a composition for a field.
 #
 # This is the project's central editorial claim, so it lives in one place and is
 # asserted only from a citable reason -- never inferred from an empty API
@@ -104,7 +104,7 @@ def measure(value: Any, *, year: Any = None, source: str | None = None, unit: st
 # told the reader the exact opposite of the truth.
 # ---------------------------------------------------------------------------
 
-NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
+NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # Bhutan's census does not ask any of the three, which is a different
     # fact from not publishing them. Measured rather than assumed: the 2017
     # national report runs 288 pages and the words religion, ethnic, Hindu,
@@ -156,23 +156,59 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
     # (P1-P33) has none, and the Bureau's own district-level indicator
     # workbook runs to 42 topic sheets without one.
     #
-    # So the 64 zilas' empty language field was reading as "the adapter has
-    # not been run", which is the opposite of the truth: the question was
-    # never put. Religion, which the same census does ask, is on the map from
-    # the same workbook.
+    # That was read as "the question was never put", and this entry said so
+    # with status not_collected. **It is too strong, and the census project
+    # itself is what disproves it.** The Bureau's *Report on Socio-Economic
+    # and Demographic Survey 2023* -- June 2024, ISBN 978-984-475-268-9, 553
+    # pages, one of the five national reports published under the Population
+    # and Housing Census 2021 Project -- is the long-questionnaire survey run
+    # after the census on a sample of 301,000 households, and its Module 4
+    # collects mother tongue by name, beside religion and ethnic population.
+    # So Bangladesh does gather the answer; what it does not do is publish a
+    # composition of it.
+    #
+    # Table 3.6, *Population by Mother Tongue and Second Language, Division
+    # and Location*, has exactly two mother-tongue columns -- Bangla and
+    # Others -- for the eight divisions. (The shares themselves are in
+    # docs/SOURCES.md, not here: a declaration explains an absence and never
+    # states a share, which is the rule the Maldives' "100% Islam" was written
+    # down to prevent.) Across all 553 pages no mother tongue but Bangla is
+    # ever named: a sweep for Chakma,
+    # Marma, Santal, Garo, Tripura, Mro, Rakhain, Manipuri, Urdu, Bishnupriya,
+    # Tanchangya, Khasi, Hajong, Munda, Oraon, Rohingya, Bawm, Khumi, Chak,
+    # Pankho, Lushai, Koch, Dalu and Rajbanshi returns zero pages.
+    #
+    # A named group against a residual is not a composition -- drawn as two
+    # slices it would read as a survey that found two languages -- and the
+    # report publishes nothing below the division anyway, so no zila has a
+    # mother-tongue figure from either round. The gap therefore stands, but
+    # it is `not_available` and not `not_collected`: the question is asked,
+    # and the honest reason names what the answer was and why it cannot be a
+    # chart. Religion, which the same census asks at zila level, is on the
+    # map from the Bureau's own workbook.
     "BGD": {
-        "language": "Bangladesh's census does not ask language or mother tongue. "
-                    "The 2022 questionnaire has 35 questions -- 15 in the household "
+        "language": {
+            "status": NOT_AVAILABLE,
+            "note": "Bangladesh's census does not ask language. The 2022 "
+                    "questionnaire has 35 questions -- 15 in the household "
                     "module and 20 in the individual module, which the National "
                     "Report (Volume I) lists as age, sex, marital status, religion, "
                     "disability, education, working status, training, mobile phone "
                     "and internet use, banking inclusion and ethnic population -- "
-                    "and none of them is language. The report's 520 pages carry no "
-                    "language table and its 33 district tables none, and the "
-                    "Bureau's own district-level indicator workbook has 42 topic "
-                    "sheets and none. What the census asks about a minority's "
-                    "identity is ethnic group, under the Khudra Nri-goshthi "
-                    "Sangskritik Pratisthan Ain 2010.",
+                    "and none of them is language. The census project's own "
+                    "long-questionnaire sample survey does ask it: the Report on "
+                    "Socio-Economic and Demographic Survey 2023 (BBS, June 2024, "
+                    "553 pages) collects mother tongue in Module 4 and publishes "
+                    "Table 3.6, Population by Mother Tongue and Second Language, "
+                    "Division and Location. That table has two mother-tongue "
+                    "columns for the eight divisions, Bangla and Others, and no "
+                    "mother tongue but Bangla is named anywhere in its 553 pages. "
+                    "A named group against a residual is not a composition, and "
+                    "the survey publishes nothing below the division, so no zila "
+                    "has a mother-tongue figure from either round. What the census asks "
+                    "about a minority's identity is ethnic group, under the Khudra "
+                    "Nri-goshthi Sangskritik Pratisthan Ain 2010.",
+        },
     },
     "ESP": {
         "ethnicity": "Spain's census records nationality and birthplace, not ethnicity.",
@@ -383,30 +419,72 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
 }
 
 
-def collection_policy(iso3: str | None, field: str) -> str | None:
-    """The documented reason a country does not collect ``field``, or None."""
+def _policy_entry(iso3: str | None, field: str) -> dict[str, str] | None:
+    """One policy declaration, in its long form.
+
+    An entry is written as a plain string when the country does not gather the
+    field at all, which is the ordinary case and stays the ordinary spelling.
+    It may instead be a mapping carrying its own ``status``, for the case the
+    string form cannot say: a country that *does* gather the answer and
+    publishes it in a shape this map cannot draw. Bangladesh's mother tongue
+    is the one of those -- asked in the census project's sample survey,
+    published as Bangla against a residual at the division and nowhere below
+    it -- and calling that ``not_collected`` would state the opposite of what
+    the Bureau did.
+    """
     if not iso3:
         return None
-    return NOT_COLLECTED_POLICY.get(iso3.upper(), {}).get(field)
+    declared = NOT_COLLECTED_POLICY.get(iso3.upper(), {}).get(field)
+    if declared is None:
+        return None
+    if isinstance(declared, str):
+        return {"status": NOT_COLLECTED, "note": declared}
+    return {"status": declared["status"], "note": declared["note"]}
+
+
+def collection_policy(iso3: str | None, field: str) -> str | None:
+    """The documented reason a country does not publish ``field``, or None."""
+    entry = _policy_entry(iso3, field)
+    return entry["note"] if entry else None
+
+
+def collection_status(iso3: str | None, field: str) -> str | None:
+    """The gap status the policy declares for ``field``, or None."""
+    entry = _policy_entry(iso3, field)
+    return entry["status"] if entry else None
+
+
+def collection_gap(iso3: str | None, field: str) -> dict[str, Any] | None:
+    """The policy's declaration as a ready-made gap marker, or None.
+
+    Adapters take the whole marker from here rather than pairing a status of
+    their own with the central reason: the country row and its districts
+    disagreeing about whether the question was asked is exactly the drift this
+    table exists to prevent, and a status is half of that claim.
+    """
+    entry = _policy_entry(iso3, field)
+    return gap(entry["status"], entry["note"]) if entry else None
 
 
 def apply_collection_policy(record: dict[str, Any], iso3: str | None,
                             fields: Iterable[str] = ("religion", "ethnicity", "language"),
                             ) -> list[str]:
-    """Mark fields the country never collects, in place.
+    """Mark fields the country does not publish a composition for, in place.
 
     Only replaces a ``not_available`` marker: a real value from a subnational
     source always wins (a country can decline to ask nationally while a region
-    publishes its own figures), and a more specific gap is left alone.
+    publishes its own figures), and a more specific gap is left alone. A bare
+    ``not_available`` is replaced even when the policy's own status is
+    ``not_available`` too, because what is being added is the reason.
     """
     applied: list[str] = []
     for field in fields:
-        reason = collection_policy(iso3, field)
-        if not reason:
+        entry = _policy_entry(iso3, field)
+        if not entry:
             continue
         current = record.get(field)
         if isinstance(current, dict) and current.get("status") == NOT_AVAILABLE:
-            record[field] = gap(NOT_COLLECTED, reason)
+            record[field] = gap(entry["status"], entry["note"])
             applied.append(field)
     return applied
 

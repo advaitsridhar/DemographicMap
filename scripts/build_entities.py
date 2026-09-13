@@ -2707,7 +2707,8 @@ def main() -> int:
     if policy_hits:
         total = sum(policy_hits.values())
         top = sorted(policy_hits.items(), key=lambda kv: -kv[1])[:8]
-        log(f"  collection policy marked {total} subnational fields as not_collected: "
+        log(f"  collection policy marked {total} subnational fields with a "
+            f"declared gap and its reason: "
             + ", ".join(f"{k} {v}" for k, v in top))
 
     # -- sum parents from children -------------------------------------------

@@ -423,21 +423,52 @@ class GilgitBaltistanReadsItsOwnSurvey(ReadingWithAPage, unittest.TestCase):
         self.assertEqual(survey["language"][0]["group"], "Shina")
 
 
-class BangladeshSaysTheQuestionWasNeverPut(unittest.TestCase):
-    """A census that does not ask is not a fetch that has not been run.
+class BangladeshSaysWhatWasAskedAndWhatWasPublished(unittest.TestCase):
+    """The question *was* put -- and the answer still is not a composition.
 
-    Measured from the census's own National Report, which describes the
-    questionnaire it was collected on, rather than from the workbook's missing
-    column.
+    This class used to be called ``BangladeshSaysTheQuestionWasNeverPut`` and
+    asserted exactly that, on the strength of the census questionnaire: 35
+    questions, none of them language. The census's own project disproves the
+    stronger half of it. The *Report on Socio-Economic and Demographic Survey
+    2023* -- the long-questionnaire survey run after the census, published by
+    the same Bureau as one of the five national reports of the Population and
+    Housing Census 2021 Project -- collects mother tongue in Module 4 and
+    publishes it in Table 3.6.
+
+    So the invariant asserted here is the narrower, true one: the census does
+    not ask; the survey does; what the survey publishes is a named group
+    against a residual at the division and nothing below it; and therefore the
+    field is a gap with a *reason*, marked ``not_available`` rather than
+    ``not_collected``, because the map must not claim the Bureau never asked.
     """
 
     def setUp(self):
-        from common import collection_policy
+        from common import collection_policy, collection_status
         self.reason = collection_policy("BGD", "language")
+        self.status = collection_status("BGD", "language")
 
     def test_the_reason_is_the_questionnaire_and_not_an_empty_file(self):
         self.assertTrue(self.reason)
         self.assertIn("35 questions", self.reason)
+
+    def test_the_reason_names_the_survey_that_does_ask(self):
+        # The half the old reason got wrong. Without this sentence the map
+        # tells the reader Bangladesh never collects mother tongue, on the
+        # very eight divisions for which the Bureau has published a table.
+        self.assertIn("Socio-Economic and Demographic Survey 2023", self.reason)
+        self.assertIn("Module 4", self.reason)
+        self.assertIn("Table 3.6", self.reason)
+
+    def test_the_reason_says_why_the_published_answer_cannot_be_drawn(self):
+        # Two columns, one of them a residual, at a level two above the zila.
+        self.assertIn("Bangla and Others", self.reason)
+        self.assertIn("not a composition", self.reason)
+        self.assertIn("nothing below the division", self.reason)
+
+    def test_the_status_is_not_collected_no_longer(self):
+        from common import NOT_AVAILABLE, NOT_COLLECTED
+        self.assertEqual(self.status, NOT_AVAILABLE)
+        self.assertNotEqual(self.status, NOT_COLLECTED)
 
     def test_religion_is_not_declared_with_it(self):
         # The same census asks religion and it is on the map from the same
@@ -446,8 +477,26 @@ class BangladeshSaysTheQuestionWasNeverPut(unittest.TestCase):
         self.assertIsNone(collection_policy("BGD", "religion"))
 
     def test_the_adapter_writes_the_declaration_rather_than_a_bare_gap(self):
+        # The whole marker, status included: a zila saying "never asked" while
+        # the country says "asked and not published this way" is the drift the
+        # central table exists to prevent.
         from scripts.fetch_census import bangladesh
-        self.assertEqual(bangladesh.LANGUAGE, self.reason)
+        self.assertEqual(bangladesh.LANGUAGE["note"], self.reason)
+        self.assertEqual(bangladesh.LANGUAGE["status"], self.status)
+
+    def test_no_zila_is_left_claiming_the_question_was_never_put(self):
+        import json
+        from common import NOT_COLLECTED, PROCESSED
+        path = PROCESSED / "bangladesh_district.json"
+        if not path.exists():  # pragma: no cover - built output may be absent
+            self.skipTest("bangladesh_district.json has not been built")
+        rows = json.loads(path.read_text())
+        self.assertEqual(len(rows), 64)
+        for row in rows:
+            language = row["language"]
+            self.assertNotEqual(language.get("status"), NOT_COLLECTED, row["name"])
+            self.assertIn("Socio-Economic and Demographic Survey 2023",
+                          language.get("note", ""), row["name"])
 
 
 if __name__ == "__main__":

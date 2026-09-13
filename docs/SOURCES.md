@@ -2730,7 +2730,7 @@ to Bogura — and geoBoundaries still carries the older forms, with plain
 transliteration variants for three more. Declared rather than derived:
 "Nawabganj" and "Chapainababganj" share no word.
 
-#### Bangladesh's language: the question was never put
+#### Bangladesh's language: the question was put, and the answer has two columns
 
 All 64 zilas carried an empty `language`, with no note on it at all — which on
 this map reads as an adapter nobody has run. It is not that. Measured, in this
@@ -2768,16 +2768,99 @@ disability and work to *Ethnic Population by Sex and District* and *Ethnic
 Population by Category, Sex and Division* without one, and the office's own
 district workbook has 42 topic sheets and none.
 
-So Bangladesh's language is `not_collected`, in `NOT_COLLECTED_POLICY`, with
-that reason attached — the country and its 64 zilas from one place, so they
-cannot drift apart. **Religion is not declared with it**: the same census asks
-religion, and it is on the map from the same workbook. What Bangladesh asks
-about a minority's identity is ethnic group, under the *Khudra Nri-goshthi
-Sangskritik Pratisthan Ain, 2010*, and that stays `not_available` rather than
-`not_collected`: the census does collect it, publishes a count of the ethnic
-population by district and a breakdown by category only by division, and a
-count of "the ethnic population" against everyone else is not a composition
-by ethnic group.
+All of that is true, and the conclusion first drawn from it — that the
+question was never put, `not_collected` — was **too strong**. The census is
+not the whole of what the Bureau asked.
+
+##### The survey that does ask it
+
+The *Report on Socio-Economic and Demographic Survey 2023* (BBS, Statistics
+and Informatics Division, Ministry of Planning, June 2024, ISBN
+978-984-475-268-9, **553 pages**, Bangla and English on facing columns) is the
+**long-questionnaire survey run after the census** — "formerly known as a
+Sample Census" — and is published as one of the **five national reports of the
+Population and Housing Census 2021 Project**. Fieldwork ran 21 May to 22 June
+2023. Two-stage cluster sample: EAs drawn from the Census 2022 EA frame, then
+25 households per EA, 86 EAs per stratum across **140 strata** — each of the
+64 districts split rural/urban, plus 12 city corporations, `(64×2) + 12 = 140`.
+
+Its **Module 4 collects mother tongue by name**, beside religion and ethnic
+population. So Bangladesh does gather the answer, and a map saying otherwise
+is wrong — most visibly on the eight divisions, the exact shapes for which a
+mother-tongue table exists.
+
+**What it publishes still cannot be drawn.** Table 3.6, *Population by Mother
+Tongue and Second Language, Division and Location*, has exactly two
+mother-tongue columns:
+
+| division | Bangla | Others |
+| --- | ---: | ---: |
+| National | 99.17 | 0.83 |
+| Barishal | 99.99 | 0.01 |
+| Chattogram | 97.11 | **2.89** |
+| Dhaka | 99.76 | 0.24 |
+| Khulna | 100.00 | 0.00 |
+| Mymensingh | 99.29 | 0.71 |
+| Rajshahi | 99.36 | 0.64 |
+| Rangpur | 99.86 | 0.14 |
+| Sylhet | 98.96 | 1.04 |
+
+"Others" is a residual and nothing else: **no mother tongue but Bangla is
+named anywhere in the report**. All 553 pages were swept for Chakma, Marma,
+Santal, Garo, Tripura, Mro, Rakhain, Manipuri, Urdu, Bishnupriya, Tanchangya,
+Khasi, Hajong, Munda, Oraon, Rohingya, Bawm, Khumi, Chak, Pankho, Lushai,
+Koch, Dalu and Rajbanshi — **zero pages match**. (The only other language the
+report names at all is English, and it names it as a *second* language, an
+ability rather than a composition.)
+
+A named group against a residual is not a composition: drawn as two slices it
+would read as a survey that found two languages. And there is nothing below
+the division to draw in any case — the report's list of tables says
+**Division 66 times and District not once**, although the survey is stratified
+on the districts and its own precision table (Table 1.1) quotes a *District
+Estimate* margin of error beside the divisional ones. The design supports
+district figures; this report publishes none.
+
+##### So the gap stands, and its reason changed
+
+Bangladesh's language is a gap at every level, and it is **`not_available`,
+not `not_collected`** — declared once in `NOT_COLLECTED_POLICY` so the country
+row and its 64 zilas cannot drift apart. The status matters: `not_collected`
+means the state never gathers the field, and Bangladesh does. The honest
+reason names the census questionnaire that omits it, the survey that asks it,
+and the two-column shape of what was published.
+
+That is the same shape of fact as Bangladesh's ethnicity, and is now marked
+the same way. The central declaration carries no percentages, by the rule that
+**a declaration explains an absence and never states a share** — the rule the
+Maldives' tempting "100% Islam" was written down to prevent. The figures live
+in this document instead.
+
+**Religion is not declared with it**: the same census asks religion, and it is
+on the map from the same workbook, at zila level. What Bangladesh asks about a
+minority's identity is ethnic group, under the *Khudra Nri-goshthi Sangskritik
+Pratisthan Ain, 2010*, and that stays `not_available` too: the census does
+collect it, publishes a count of the ethnic population by district and a
+breakdown by category only by division, and a count of "the ethnic population"
+against everyone else is not a composition by ethnic group.
+
+##### What the survey report does *not* settle
+
+Measured, so the next reader does not re-open it hoping:
+
+* **Religion** — Table 3.2, *Population by Religion, Division and Location*:
+  Muslim, Hindu, Christian, Buddhist, Others, for the eight divisions. The map
+  already carries the same five groups for all **64 zilas** from the 2022
+  census itself, as exact counts rather than sample shares. The survey table
+  is coarser and weaker, and is not read.
+* **Ethnicity** — Table 3.4, *Ethnic Population by Sex, Division and
+  Location*, is **not** each division's ethnic share. Its division column sums
+  to exactly 100.00 (0.08 + 61.15 + 2.38 + 1.92 + 3.91 + 18.37 + 5.28 + 6.91):
+  it is the distribution of the country's ethnic population *across*
+  divisions, and carries no category breakdown at all. It is a different table
+  from the National Report's *Ethnic Population by Category, Sex and
+  Division*, which remains the open route to a real Bangladeshi ethnicity
+  composition and is **not** in this report.
 
 #### …and the count it does publish now reaches the reader
 

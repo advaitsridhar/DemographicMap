@@ -217,11 +217,47 @@ class CollectionPolicyPropagation(unittest.TestCase):
         self.assertEqual(common.apply_collection_policy(entity, None), [])
 
     def test_every_policy_entry_carries_a_reason(self):
+        # Either spelling: a plain string is the ordinary "never gathered at
+        # all" declaration, a mapping is one that names its own status.
         for iso3, fields in common.NOT_COLLECTED_POLICY.items():
             self.assertRegex(iso3, r"^[A-Z]{3}$")
-            for field, reason in fields.items():
+            for field, declared in fields.items():
                 self.assertIn(field, ("religion", "ethnicity", "language"))
+                reason = common.collection_policy(iso3, field)
+                status = common.collection_status(iso3, field)
                 self.assertGreater(len(reason), 30, f"{iso3}/{field} reason is too thin")
+                self.assertIn(status, common.GAP_STATUSES, f"{iso3}/{field}")
+                if isinstance(declared, str):
+                    self.assertEqual(status, common.NOT_COLLECTED)
+
+    def test_a_declared_status_is_the_one_propagated(self):
+        # The long form exists so a country that does gather a field, but
+        # publishes it in a shape this map cannot draw, is not marked as
+        # never having asked. Bangladesh's mother tongue is that case.
+        self.assertEqual(common.collection_status("BGD", "language"),
+                         common.NOT_AVAILABLE)
+        entity = {"language": common.gap(common.NOT_AVAILABLE)}
+        self.assertEqual(common.apply_collection_policy(entity, "BGD"),
+                         ["language"])
+        self.assertEqual(entity["language"]["status"], common.NOT_AVAILABLE)
+        self.assertIn("Socio-Economic and Demographic Survey 2023",
+                      entity["language"]["note"])
+
+    def test_the_short_form_still_means_not_collected(self):
+        # Every other entry in the table is a plain string and must keep
+        # behaving exactly as it did.
+        self.assertEqual(common.collection_status("BTN", "language"),
+                         common.NOT_COLLECTED)
+        entity = {"language": common.gap(common.NOT_AVAILABLE)}
+        common.apply_collection_policy(entity, "BTN")
+        self.assertEqual(entity["language"]["status"], common.NOT_COLLECTED)
+
+    def test_collection_gap_is_the_whole_marker(self):
+        for iso3, field in (("BGD", "language"), ("BTN", "religion")):
+            marker = common.collection_gap(iso3, field)
+            self.assertEqual(marker["status"], common.collection_status(iso3, field))
+            self.assertEqual(marker["note"], common.collection_policy(iso3, field))
+        self.assertIsNone(common.collection_gap("BRA", "religion"))
 
     def test_no_declaration_carries_a_figure(self):
         """A declaration explains an absence; it never states a share.
@@ -234,8 +270,12 @@ class CollectionPolicyPropagation(unittest.TestCase):
         """
         import re as _re
         for iso3, fields in common.NOT_COLLECTED_POLICY.items():
-            for field, reason in fields.items():
+            for field in fields:
                 where = f"{iso3}/{field}"
+                # Through the accessor, so the rule covers both spellings of
+                # an entry -- a plain string and the mapping that names its
+                # own status. Reading the raw value skipped the long form.
+                reason = common.collection_policy(iso3, field)
                 self.assertNotIn("%", reason, where)
                 self.assertIsNone(
                     _re.search(r"\b\d+(?:\.\d+)?\s*per\s?cent\b", reason, _re.I),
