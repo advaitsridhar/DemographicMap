@@ -120,9 +120,17 @@ def ca_issuers(cert: dict) -> tuple[str, ...]:
 def fetch_der(url: str) -> bytes:
     """One certificate from an AIA URL, as DER, whatever the server wrapped it in.
 
-    Authorities publish these as DER (.crt, .cer) and occasionally as PEM, and
-    a few wrap a chain in PKCS#7, which this does not unpack -- it says so
-    instead of guessing.
+    Authorities publish these as DER (.crt, .cer), occasionally as PEM, and
+    some wrap the certificate in PKCS#7 -- a ``.p7c`` whose bytes also begin
+    0x30, so it passes for DER and then fails several frames later with
+    "Error decoding PEM-encoded file", which says nothing about what was
+    actually downloaded. www.ubos.org's issuer is one of these, and that error
+    was all the Uganda census reports said for themselves.
+
+    A PKCS#7 bundle is unwrapped here rather than rejected, and the first
+    certificate in it is taken. Unwrapping decides nothing about trust: the
+    certificate is still believed only if the handshake can chain it to a root
+    the system already has.
     """
     with urllib.request.urlopen(url, timeout=TIMEOUT) as resp:
         blob = resp.read()
@@ -130,7 +138,27 @@ def fetch_der(url: str) -> bytes:
         return ssl.PEM_cert_to_DER_cert(blob.decode("ascii", "replace"))
     if blob[:1] != b"\x30":
         raise ValueError(f"not a DER or PEM certificate ({len(blob)} bytes)")
+    try:
+        decode(blob)
+    except ssl.SSLError:
+        return first_of_pkcs7(blob)
     return blob
+
+
+def first_of_pkcs7(blob: bytes) -> bytes:
+    """The first certificate of a PKCS#7 bundle, as DER."""
+    try:
+        from cryptography.hazmat.primitives.serialization import Encoding, pkcs7
+    except ImportError as exc:                    # pragma: no cover - env
+        raise ValueError(
+            "the AIA URL served something that is neither a certificate nor "
+            "PEM, and cryptography is not installed to try it as PKCS#7"
+        ) from exc
+    certs = pkcs7.load_der_pkcs7_certificates(blob)
+    if not certs:
+        raise ValueError(f"PKCS#7 bundle with no certificates in it "
+                         f"({len(blob)} bytes)")
+    return certs[0].public_bytes(Encoding.DER)
 
 
 def completed_context(host: str, port: int = 443) -> tuple[ssl.SSLContext, list[str]]:

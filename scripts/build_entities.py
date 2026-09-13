@@ -82,6 +82,20 @@ ADAPTER_FILES = [
     # language half coming from the U.S. Census Bureau's tables of the 2017
     # round, which named nine tongues and left Chitral 93.1% "Other".
     "pakistan_district.json",
+    # bhutan_gewog.json is NOT here yet, and deliberately. The adapter is
+    # written and reads Tsirang exactly -- 12 gewogs, 2 towns, 22,376 people,
+    # its printed total to the person -- but the twenty reports vary in
+    # layout: Bumthang prints Figure 2.1 beside Table 2.1 and the chart's
+    # y-axis sits at the same baselines as the gewog rows, and clipping to
+    # the header's span was not enough to recover its Total row. Registering
+    # it now would publish one dzongkhag's gewogs and call Bhutan done.
+    #
+    # The better architecture, when it is picked up: read the *national*
+    # report once for all twenty dzongkhag totals and hold each dzongkhag
+    # report to its own row there, instead of depending on finding a printed
+    # Total inside twenty differently-laid-out documents. Bhutan's three
+    # composition fields are already declared not_collected in common.py,
+    # which is correct independently of this and does not wait for it.
     "bangladesh_district.json",
     "south_africa_province.json",
     "philippines_province.json", "ethiopia_region.json",
@@ -251,61 +265,22 @@ ADAPTER_GAPS: dict[str, str] = {
 #
 # Every entry here is required to be a shape that really does end up empty; a
 # stale one fails the build. See check_shape_gaps below.
-SHAPE_GAPS: dict[str, dict[str, str]] = {
-    # geoBoundaries CGAZ draws 75 shapes for Nepal's 77 districts: it uses
-    # "Bara" and "Saptari" twice each, omits Parsa and Siraha, and through
-    # Karnali and Lumbini the labels are shifted along by one. This is not a
-    # judgement -- it is the output of scripts/verify_shapes.py, which checks
-    # every district's Wikidata P625 reference point against the polygon
-    # bearing its name. 64 of the 77 land inside their own, 2 just outside,
-    # and the 11 behind these 7 labels are somewhere else entirely.
-    #
-    # The census measured all 77. Nothing here is missing data: it is data
-    # with nowhere trustworthy to put it, and Nepal's seven provinces carry
-    # every one of these people.
-    "NPL": {
-        "Bara": "Two of geoBoundaries' shapes are named Bara, and one of them "
-                "is Parsa. Nepal's 2021 census measured both districts, but "
-                "nothing distinguishes the two polygons, so putting either "
-                "district's figures on either shape would be a coin toss "
-                "presented as a measurement. Both districts' people are "
-                "counted in the Madhesh province total.",
-        "Saptari": "Two of geoBoundaries' shapes are named Saptari, and one of "
-                   "them is Siraha. Nepal's 2021 census measured both "
-                   "districts, but nothing distinguishes the two polygons, so "
-                   "putting either district's figures on either shape would be "
-                   "a coin toss presented as a measurement. Both districts' "
-                   "people are counted in the Madhesh province total.",
-        "Jajarkot": "This polygon is Dailekh's ground, not Jajarkot's -- "
-                    "Jajarkot's own lies inside the shape named Rukum West. "
-                    "Through Karnali the boundary file's labels are shifted "
-                    "along by one, so the 2021 census figures for either "
-                    "district would land on the other's territory. Both are "
-                    "counted in the Karnali province total.",
-        "Rukum_W": "This polygon is Jajarkot's ground, not Rukum West's. "
-                   "Through Karnali the boundary file's labels are shifted "
-                   "along by one, so the 2021 census figures for either "
-                   "district would land on the other's territory. Both are "
-                   "counted in the Karnali province total.",
-        "Rukum_E": "This polygon is Rukum West's ground; the district called "
-                   "Rukum East is about 20 km away, inside the shape named "
-                   "Rolpa. The 2021 census measured Rukum East, and there is "
-                   "no polygon here to put it on. Its people are counted in "
-                   "the Lumbini province total.",
-        "Nawalapur": "This polygon is Rupandehi's ground. Nepal split "
-                     "Nawalparasi in two in 2017 along the Bardaghat Susta "
-                     "road, and the boundary file did not follow: no shape "
-                     "bears Rupandehi's name, and no shape contains Parasi at "
-                     "all. The 2021 census measured all three districts; the "
-                     "Lumbini province total carries them.",
-        "Nawalparasi": "This polygon is Nawalpur's ground. Nepal split "
-                       "Nawalparasi in two in 2017 along the Bardaghat Susta "
-                       "road, and the boundary file still draws the undivided "
-                       "district under its old name. The 2021 census measured "
-                       "Nawalpur and Parasi separately; the Gandaki and "
-                       "Lumbini province totals carry them.",
-    },
-}
+# Per-shape gap reasons, keyed by the boundary file's own spelling of the
+# shape's name -- which is what reaches both polygons when a country's
+# boundary file uses one name twice.
+#
+# Nepal's seven entries used to live here, covering nine shapes, and they are
+# gone because the shapes are no longer empty: geoBoundaries draws Nepal's
+# pre-2015 districts correctly and only *labels* them wrongly, so the nine are
+# bound by shape id in scripts/fetch_census/nepal.py instead. Five of those
+# seven reasons also said things that were not true -- that nothing
+# distinguished the two polygons called "Bara", that Rukum East lay inside the
+# shape named Rolpa, that Parsi's ground was inside no polygon at all. The
+# last two were artefacts of bad Wikidata reference points (Parasi's P625 is
+# in India), read as facts about the boundary file. A gap that says why it is
+# a gap is worth having; a gap that says why, wrongly, is worse than a silent
+# one, because it stops anyone looking again.
+SHAPE_GAPS: dict[str, dict[str, str]] = {}
 
 EUROSTAT_HINT = ("Eurostat NUTS population and median age: "
                  "python -m scripts.fetch_census.eurostat --level nuts3")
@@ -520,6 +495,85 @@ def load_curated() -> tuple[dict[str, list[dict[str, Any]]], dict[str, Any]]:
     for row in payload.get("rows", []):
         rows[row["country"]].append(row)
     return rows, payload.get("_provenance", {})
+
+
+# ---------------------------------------------------------------------------
+# What a country's "other" holds
+# ---------------------------------------------------------------------------
+#
+# The country panel's figures come from the Factbook, which prints one line per
+# field and no note at all. Where a country's residual is large -- Vanuatu's
+# "indigenous languages" is 82.6% of everybody, Bahrain's "other" religion a
+# quarter of the country -- the question the reader has is what is inside it,
+# and the Factbook's line cannot answer it.
+#
+# Two kinds of answer go in data/curated/admin0_detail.json. A row with
+# ``groups`` replaces the field with a census's own division of it, which is
+# always the better answer and is used wherever such a table exists. A row with
+# only a ``note`` says what the bucket holds and why it is not divided, which
+# is what is left when the census published one number and no break-up of it.
+# Neither invents a split.
+#
+# This is the admin-0 counterpart of data/curated/admin1_seed.json, and it is a
+# curated file for the same reason that one is: an adapter cannot reach admin0.
+# Adapter output lands on admin1 and admin2 shapes; the country record is the
+# Factbook profile plus whatever its children roll up into it, and there is no
+# third door.
+
+
+def load_country_detail() -> dict[str, list[dict[str, Any]]]:
+    """ISO3 -> the curated admin-0 rows for it."""
+    payload = read_json(ROOT / "data" / "curated" / "admin0_detail.json", {})
+    rows: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in payload.get("rows", []):
+        rows[row["country"]].append(row)
+    return rows
+
+
+def apply_country_detail(admin0: list[dict[str, Any]],
+                         rows: dict[str, list[dict[str, Any]]]) -> None:
+    """Attach the curated notes and compositions to the country records.
+
+    Runs after the roll-ups, so a curated row is the last word on the field it
+    names. That order is the point: a note about a Factbook residual would be
+    left standing beside a figure summed from the country's own divisions if
+    the roll-up ran afterwards, describing a column that is no longer there.
+
+    Every row must find its country and must name a field that exists, and a
+    row that does not stops the build. A curated file whose keys have drifted
+    fails silently otherwise -- the note simply never appears, which looks
+    exactly like a country that was never given one.
+    """
+    by_id = {entity["id"]: entity for entity in admin0}
+    applied = 0
+    for iso3, country_rows in sorted(rows.items()):
+        entity = by_id.get(iso3)
+        if entity is None:
+            raise SystemExit(
+                f"admin0_detail: no country record with id {iso3!r}. The "
+                f"curated rows for it would go nowhere and nothing would say "
+                f"so.")
+        for row in country_rows:
+            field = row["field"]
+            if field not in ("religion", "language", "ethnicity"):
+                raise SystemExit(
+                    f"admin0_detail: {iso3} names field {field!r}, which is "
+                    f"not one of the three compositions.")
+            if row.get("groups"):
+                entity[field] = row["groups"]
+                if row.get("year"):
+                    entity[f"{field}_year"] = row["year"]
+                if row.get("basis"):
+                    entity[f"{field}_basis"] = row["basis"]
+            entity[f"{field}_note"] = row["note"]
+            if row.get("source"):
+                entity.setdefault("sources", []).append(
+                    {"field": field, "name": row["source"],
+                     "url": row.get("url"), "year": row.get("year"),
+                     "license": row.get("license", "See docs/SOURCES.md")})
+            applied += 1
+    log(f"  admin0 detail: {applied} curated rows on "
+        f"{len(rows)} countries")
 
 
 def primary_country_profiles(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
@@ -2084,6 +2138,7 @@ def main() -> int:
     cities = read_json(PROCESSED / "cities.json", {"by_country": {}, "by_admin1": {}})
     adapters = load_adapters()
     curated_rows, provenance = load_curated()
+    country_detail = load_country_detail()
 
     # -- admin 0 -------------------------------------------------------------
     admin0: list[dict[str, Any]] = []
@@ -2225,6 +2280,14 @@ def main() -> int:
         a2: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for entity in admin2_by_country.get(iso3, []):
             a2[norm(entity["name"])].append(entity)
+        # Both levels, because a binding names a polygon and does not care
+        # which order the boundary file draws it at.
+        by_shape: dict[str, dict[str, Any]] = {
+            entity["id"]: entity
+            for entity in (*admin1_by_country.get(iso3, []),
+                           *admin2_by_country.get(iso3, []))
+            if entity.get("id")}
+        claimed: set[int] = set()
         hit = miss = ambiguous = outside = collided = declared = 0
         matched: list[tuple[dict[str, Any], dict[str, Any], str]] = []
         deferred: list[tuple[dict[str, Any], dict[str, Any]]] = []
@@ -2262,6 +2325,56 @@ def main() -> int:
                    # one rescue that lets a correct match survive a parent named
                    # historically rather than currently.
                    "point": row_point(row)}
+            # A row that names the shape it belongs on is put there, and no
+            # name is consulted. This is the escape hatch for a boundary file
+            # whose geometry is right and whose *labels* are wrong: Nepal's
+            # CGAZ ADM2 draws the 75 pre-2015 districts correctly and uses two
+            # of their names twice, omits four, and puts two post-split names
+            # on pre-split polygons. No alias can fix that -- the keys collide
+            # with real district names elsewhere in the same country -- and no
+            # name-keyed pass can tell two polygons called "Bara" apart.
+            #
+            # Deliberately narrow. The id must exist in the country being
+            # joined and must not already be spoken for, and a row asking for
+            # an id that is not drawn stops the run rather than falling back
+            # to a name: a stale id is a real mistake and the fallback would
+            # hide it behind a match that looks ordinary. This is the strongest
+            # claim an adapter can make about a shape, so it is the one that
+            # has to be checked hardest.
+            if row.get("match_by") == "shape_id":
+                wanted = row.get("shape_id")
+                entity = by_shape.get(wanted)
+                if entity is None:
+                    raise SystemExit(
+                        f"{iso3}: {row.get('name')!r} asks for shape "
+                        f"{wanted!r}, which this country does not draw. A "
+                        f"binding is a claim about a specific polygon, so a "
+                        f"stale one is a mistake rather than a near miss")
+                if id(entity) in claimed:
+                    raise SystemExit(
+                        f"{iso3}: shape {wanted!r} is claimed by "
+                        f"{row.get('name')!r} and by another row. Two rows on "
+                        f"one shape is how one district quietly wears "
+                        f"another's figures")
+                claimed.add(id(entity))
+                # The binding carries the name as well as the figures, and it
+                # has to. A shape labelled "Nawalapur" wearing Rupandehi's
+                # 1,121,957 people is exactly the mis-match this project ranks
+                # below a gap: the label says one district, the figures are
+                # another's, and nothing on screen would say so. The boundary
+                # file's own label is kept as an alias, so a reader who
+                # searches the name printed on the shape still finds it.
+                # The label goes onto the ROW, not onto the entity:
+                # merge_adapter copies the row's aliases over the shape's, so
+                # an alias added here would be overwritten a moment later and
+                # the boundary file's own spelling would become unsearchable.
+                label = entity.get("name")
+                wanted_name = row.get("name")
+                if wanted_name and label and label != wanted_name:
+                    entity["name"] = wanted_name
+                    row["aliases"] = [*(row.get("aliases") or []), label]
+                matched.append((row, entity, "shape_id"))
+                continue
             if row.get("level") == "admin1":
                 entity, how = match_name(
                     key, settle(a1_by_key, [key["name"], *key["aliases"]]))
@@ -2426,6 +2539,9 @@ def main() -> int:
     # carry into its country -- and so the country's note counts the divisions
     # as they finally stand rather than as they arrived.
     roll_up_countries(admin0, admin1_by_country)
+
+    # Last, so a curated country row is the last word on the field it names.
+    apply_country_detail(admin0, country_detail)
 
     # -- write ---------------------------------------------------------------
     out = args.out

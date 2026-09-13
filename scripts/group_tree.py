@@ -560,6 +560,31 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
     "Indigenous languages of the Americas": (
         "Indigenous languages, n.i.e.", "Indigenous languages, n.o.s.",
         "Aboriginal languages, n.o.s.",
+        # The ACS's remainder after Navajo, which is the only Native language
+        # its detailed table names on its own. It covers the Indigenous
+        # languages of this continent and nothing else, so it sits here for
+        # the same reason Canada's n.i.e. does -- and in the Bethel Census
+        # Area it is 56% of everyone over five, all of it Central Alaskan
+        # Yup'ik.
+        "Other Native languages of North America",
+    ),
+    # The ACS's two geographic bands for the African languages it does not
+    # name. Neither is a family: the Bureau sorts African languages into
+    # Afro-Asiatic and then two regions, so the Western band is Niger-Congo
+    # plus whatever Songhai it catches, and the Central/Eastern/Southern band
+    # is mostly Bantu but also holds the Nilotic languages of the upper Nile,
+    # Dinka and Nuer among them.
+    #
+    # Filed under Niger-Congo rather than under Bantu, which is where the
+    # compound rule put the second of them on the strength of the word
+    # Swahili: Bantu is the tighter claim and it is the one that is wrong
+    # about Dinka. Niger-Congo is where nearly everyone in both bands is, and
+    # the residual drawer -- where "Other African languages" sits, for
+    # spanning Afro-Asiatic too -- would throw away the one thing these
+    # labels do say.
+    "Niger-Congo languages": (
+        "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "Swahili or other languages of Central, Eastern, and Southern Africa",
     ),
     # Bands a Pacific census writes for the island languages it does not
     # name. Every language they cover is Oceanic.
@@ -726,7 +751,7 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
     ),
     "Nilotic peoples": (
         "Luo", "Kalenjin", "Maasai", "Turkana", "Samburu", "Dinka", "Nuer",
-        "Shilluk", "Acholi", "Langi", "Iteso", "Karamojong", "Lugbara",
+        "Shilluk", "Acholi", "Langi", "Iteso", "Karamojong",
         "Alur", "Bari", "Pokot", "Nandi", "Kipsigis",
     ),
     "Horn of Africa peoples": (
@@ -1018,6 +1043,10 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     # where they are from.
     "Foreign", "foreign", "foreign population", "non-Gambian",
     "foreign/other ethnic group",
+    # Uganda's census asks one question and takes two kinds of answer: a
+    # Ugandan names an ethnic group, a non-Ugandan names a country. Neither
+    # of these two rows is an ethnic group.
+    "Non-Ugandan nationals", "Other Ugandans",
     # A religion written into the ethnicity question. The mirror of
     # "Scheduled Castes" in the religion tree: an answer to a different
     # question, kept and kept apart.
@@ -1344,6 +1373,14 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Tetela", "Shi", "Poke", "Budu", "Mbosi", "Kanyok",
         # Gabon and the Republic of the Congo.
         "Mbete", "Nzebi", "Kota", "Kalonji", "Yaka",
+        # Uganda's 2014 census names sixty-six ethnic groups and most of them
+        # are Bantu of the south and west. The Ba- here is the class prefix on
+        # a root the tree does not otherwise carry -- Nkore, Toro, Ruli, Gungu
+        # -- so the prefix rule cannot reach them and they are listed as the
+        # census spells them.
+        "Banyankore", "Batoro", "Bahororo", "Baruli", "Bagungu", "Bagwe",
+        "Bakenyi", "Banyabindi", "Banyabutumbi", "Banyaruguru", "Basongora",
+        "Batagwenda", "Batuku", "Babwisi", "Banyara", "Barundi",
         # The Democratic Republic of the Congo's own list of tribes, which
         # runs to a hundred names and is Bantu almost all the way down; the
         # Ubangian and Central Sudanic peoples of its north-east are filed
@@ -1410,7 +1447,13 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
                          "Bezanozano", "Vezo"),
     "Nilotic peoples": ("Teso", "Luo",
                         # Uganda's Nilotic peoples beside its Bantu ones.
-                        "Adhola", "Japhadhola", "Kumam", "Sabiny", "Sabini"),
+                        "Adhola", "Japhadhola", "Kumam", "Sabiny", "Sabini",
+                        # The rest of the Nilotic names on the 2014 census's
+                        # own list: the Luo of the east and north-west, and
+                        # the Ateker of Karamoja, whose sections the census
+                        # counts one by one.
+                        "Jopadhola", "Jonam", "Ethur", "Kakwa", "Kuku",
+                        "Jie", "Dodoth", "Ngikutio"),
     "Mongolic and Siberian peoples": (
         "Khalkha",
         # Mongolia's own aimags, and the peoples of the Russian far east
@@ -1431,6 +1474,14 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Congo's north-east.
         "Dii", "Biu-Mandara", "Mayogo", "Mba", "Mbandja", "Mono",
         "Lendu", "Logo", "Mamvu", "Mangbetu",
+        # The Central Sudanic peoples of the West Nile, who are the same
+        # cluster as Lendu, Logo and Mamvu above and live on the other side
+        # of the same border. Lugbara moved here from the Nilotic node with
+        # them: Lugbara is Central Sudanic, not Nilotic, and leaving it where
+        # it was would have coloured one corner of Uganda in two hues for a
+        # difference that is not there.
+        "Lugbara", "Madi", "Aringa", "Aliba", "Kebu (Okebu)", "Mvuba",
+        "Gimara",
         # The forest peoples, whom a census names by the cover term.
         "Pygmy", "Autochtones",
     ),

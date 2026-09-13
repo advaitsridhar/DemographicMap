@@ -105,6 +105,22 @@ def measure(value: Any, *, year: Any = None, source: str | None = None, unit: st
 # ---------------------------------------------------------------------------
 
 NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
+    # Bhutan's census does not ask any of the three, which is a different
+    # fact from not publishing them. Measured rather than assumed: the 2017
+    # national report runs 288 pages and the words religion, ethnic, Hindu,
+    # Buddhist, Nepali and mother tongue appear on none of them except two
+    # describing the census's own publicity. The 2005 round is the same, and
+    # its own list of what it collected stops at housing.
+    #
+    # The Factbook's religion vector for Bhutan is not from either census --
+    # PHCB 2005 has no religion table at all -- and the State Department's
+    # religious freedom report attributes the same split to Pew. So there is
+    # no Bhutanese figure of any kind to prefer to it.
+    "BTN": {
+        "religion": "Bhutan's census does not ask religion. The 2017 round published 288 pages of national tables and 20 dzongkhag volumes on education, fertility, mortality, disability, labour, migration and housing, and asked nothing about it; the 2005 round did not either.",
+        "language": "Bhutan's census does not ask language or mother tongue.",
+        "ethnicity": "Bhutan's census does not ask ethnicity. It does publish citizenship -- Bhutanese against non-Bhutanese, down to gewog -- which is not the same question and is not used as a proxy for it here: citizenship is the contested variable in Bhutan, the 1985 Citizenship Act being how much of the Lhotshampa population lost its legal standing before leaving.",
+    },
     "FRA": {
         "ethnicity": "France does not collect ethnicity; statistiques ethniques are barred by law (Loi Informatique et Libertes 1978, Conseil constitutionnel 2007).",
         "religion": "France does not collect religion in its census for the same reason.",

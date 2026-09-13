@@ -823,7 +823,7 @@ GB_NOTE = (
     "overwhelmingly Twelver, Ghanche the centre of the Noorbakhshia order -- "
     "and the same paper's 'Faith Map of Gilgit-Baltistan' gives an area-wise "
     "breakdown, so each of the ten districts carries its own figure rather "
-    "than this average.")
+    "than an average.")
 
 
 # Gilgit-Baltistan's religion by district, on the owner's instruction.
@@ -988,27 +988,46 @@ def gb_district_religion(name: str) -> dict[str, Any]:
     }
 
 
-def gb_religion() -> dict[str, Any]:
+def gb_religion(counts: dict[str, int]) -> dict[str, Any]:
     """The religion fields for Gilgit-Baltistan's territory row.
 
     Returned as fields rather than as a record of its own, because
     ``declared_gaps`` already writes a record under this id and two records
     for one id is how a value gets quietly replaced by the gap that was meant
     to stand in for it. One id, one record, one place that decides.
+
+    ``counts`` is the census population of each district, where this run read
+    it, and it decides which of two figures this row carries. With the
+    populations, the row is the ten districts weighted by them, and the
+    territory then agrees with the map drawn beneath it. Without them there is
+    nothing to weight by, and the row falls back to the paper's own
+    territory-wide estimate, which is where it stood before the populations
+    were read.
     """
-    total = round(sum(GB_SECTS.values()), 2)
+    for label, shares in (("territory-wide", GB_SECTS),
+                          *((f"{name}'s", s) for name, s
+                            in GB_DISTRICT_SECTS.items())):
+        total = round(sum(shares.values()), 2)
+        if total != 100.0:
+            raise SystemExit(
+                f"pakistan: Gilgit-Baltistan's {label} sect shares sum to "
+                f"{total}, not 100. A composition that does not partition its "
+                f"population is not one, and these are declared rather than "
+                f"read, so a wrong figure would be a typo nothing else catches")
+    weighted = gb_weighted(counts)
+    shares = weighted or GB_SECTS
+    total = round(sum(shares.values()), 2)
     if total != 100.0:
         raise SystemExit(
-            f"pakistan: the Gilgit-Baltistan sect shares sum to {total}, not "
-            f"100. A composition that does not partition its population is "
-            f"not one, and this one is declared rather than read, so a wrong "
-            f"figure here would be a typo nothing else could catch")
+            f"pakistan: Gilgit-Baltistan's published sect shares sum to "
+            f"{total}, not 100, after weighting. The rounding that makes the "
+            f"four add up has failed, which no other check here would see")
     return {
         "religion": [{"group": name, "pct": pct}
-                     for name, pct in sorted(GB_SECTS.items(),
+                     for name, pct in sorted(shares.items(),
                                              key=lambda kv: -kv[1])],
         "religion_year": GB_YEAR,
-        "religion_note": GB_NOTE,
+        "religion_note": GB_NOTE + gb_disagreement(weighted),
         "religion_basis": "sectarian affiliation",
     }
 
@@ -1110,6 +1129,316 @@ def gb_language() -> dict[str, Any]:
     }
 
 
+# Gilgit-Baltistan's population, from the territory's own government, where
+# the Bureau's census tables stop.
+#
+# Until now this territory wore a 2011 Wikidata figure of 1,155,755 and its
+# ten districts wore nothing at all. The 2023 census counted them: 1,709,049,
+# a third more than the figure on the map. The Bureau publishes no table for
+# Gilgit-Baltistan at any path -- Table 9 and Table 11 both answer 404 under
+# every name the four provinces and Islamabad are filed under -- but the
+# census's own district counts are printed by the territory's Planning &
+# Development Department, and reading them there is the whole of this.
+#
+# *Gilgit-Baltistan at a Glance 2025* is the eighth edition of the Statistical
+# & Research Cell's annual compilation. Its page 3 carries "District Wise
+# Population and Area of GB": area, the 2017 and 2023 census counts, the
+# intercensal growth rate, a 2026 projection and a density, for the ten
+# districts and for the territory, over a source line naming the Pakistan
+# Bureau of Statistics. So the figures are the census's and the booklet is
+# where they are printed, which is the same standing the AJ&K yearbook's
+# religion table has above.
+#
+# Wikipedia's "Gilgit-Baltistan" article transcribes this same table, figure
+# for figure, and is not what is read. The territory's own publication is
+# preferred for the reason wiki_census.py exists to state: an encyclopaedia's
+# copy is worth reading when the office's own is unreachable, and here it is
+# not. The article's copy is also harder to read correctly -- its division
+# column is merged across rows, so four of its ten districts arrive with the
+# division's name in the district's cell.
+#
+# **Two columns in that row must never be confused, and no figure tells them
+# apart.** The 2023 census count and the 2026 projection sit side by side;
+# publishing the projection as a census would be invisible, which is the
+# failure this module exists to refuse. So the column is not taken by
+# position. The growth rate the table prints is recomputed here from the two
+# census counts compounded over the six years between the rounds, and a row
+# whose printed rate does not come back stops the run. Reading the projection
+# as the count, or the 2017 column as the 2023 one, breaks that arithmetic in
+# the first row it is tried on; reading them right reproduces all eleven rows
+# to within 0.006 of a percentage point.
+#
+# And the ten districts add up to the territory row printed beneath them, to
+# the person -- the same control the AJ&K table is held to, and for the same
+# reason: a district this reader never noticed would otherwise cost its people
+# silently.
+GB_BOOK = ("https://www.pnd.gog.pk/storage/downloads/"
+           "AiRIlDEcscWPC1s58oXIgpjlVAS7jd-metaR0IgQVQgR2xhbmNlIDIwMjUuMS5wZGY=-.pdf")
+GB_POP_TABLE = re.compile(r"District\s*Wise\s*Population\s*and\s*Area\s*of\s*GB",
+                          re.I)
+# The territory's own row, which the booklet labels with the initials it uses
+# throughout rather than with the territory's name.
+GB_POP_WHOLE = "GB"
+# The row, left to right. Only 2023 is published from it: 2026 is a projection
+# rather than a count, and the other three describe the row rather than being
+# it. They are read anyway, because a row of the wrong width is a row this
+# reader has misread and counting the cells is what catches that.
+GB_POP_COLUMNS = ("Area", "2017", "2023", "Growth rate", "2026", "Density")
+GB_POP_COUNT = GB_POP_COLUMNS.index("2023")
+GB_POP_EARLIER = GB_POP_COLUMNS.index("2017")
+GB_POP_RATE = GB_POP_COLUMNS.index("Growth rate")
+# Census to census. Being wrong about this span would show up as every row
+# failing the check below rather than as a figure nobody questioned.
+GB_POP_SPAN = 2023 - 2017
+# Percentage points. The booklet prints its rate to two decimals and the worst
+# of the eleven rows comes back 0.006 away, so this is a wide margin around a
+# check that either holds everywhere or fails everywhere.
+GB_POP_SLACK = 0.05
+GB_POP_YEAR = 2023
+GB_POP_SOURCE = ("Pakistan Bureau of Statistics, 7th Population and Housing "
+                 "Census 2023, District Wise Population and Area of GB, as "
+                 "printed in Gilgit-Baltistan at a Glance 2025 (Statistical & "
+                 "Research Cell, Planning & Development Department, "
+                 "Government of Gilgit-Baltistan)")
+GB_POP_LICENCE = ("Government of Gilgit-Baltistan, Planning & Development "
+                  "Department")
+GB_POP_NOTE = (
+    "The 7th Population and Housing Census 2023, read from the territory's "
+    "own government rather than from the Bureau of Statistics: Gilgit-"
+    "Baltistan is enumerated apart from the census proper -- its people are "
+    "outside the 241.5 million Pakistan reports -- and the Bureau publishes "
+    "no census table for it at any path, so this count is taken from "
+    "Gilgit-Baltistan at a Glance 2025, which prints it over a source line "
+    "naming the Bureau. The same table carries a 2026 projection beside the "
+    "census column; this is the count and not the projection. {control}")
+GB_WHOLE_CONTROL = (
+    "The ten districts add up to this figure to the person, which is the one "
+    "control the table supplies on itself.")
+GB_PART_CONTROL = (
+    "This district and the other nine add up to the territory's own printed "
+    "row to the person, which is the one control the table supplies on "
+    "itself.")
+# What the field says when the booklet cannot be read, which is not what an
+# empty field says. Named rather than generic: a reader should be able to tell
+# "the office publishes nothing" from "the fetch has not been run".
+GB_POP_GAP = (
+    "The 7th Population and Housing Census 2023 counted Gilgit-Baltistan, and "
+    "the Bureau of Statistics publishes no table of the count: Table 9 and "
+    "Table 11 answer 404 for this territory under every name the four "
+    "provinces and Islamabad are filed under. The route that does publish it "
+    "is the territory's own Planning & Development Department, whose "
+    "Gilgit-Baltistan at a Glance 2025 prints the census's district counts, "
+    "and this run could not read that booklet. The question was asked and "
+    "answered; what is missing is a copy of the answer this run could open.")
+
+
+PERCENTAGE = re.compile(r"^\d+(?:\.\d+)?%$")
+
+
+def gb_cells(cells: list[Cell]) -> tuple[str, list[str]]:
+    """One booklet row as its label and the cells printed after it.
+
+    The same rejoining ``printed`` does, for the same reason and against the
+    same measurement: this table splits a figure across words too, and more
+    freely than the Bureau's does -- Ghanche's 156,697 arrives as ``156,``,
+    ``6``, ``9``, ``7`` and Shigar's density 22 as ``2`` and ``2``. The gap
+    inside every one of those is 0 points and the gap between two columns is
+    never less than 12, so ``GAP`` separates them here as it does there.
+
+    The growth rate is a cell like any other and is kept as printed, because
+    it is the thing the counts are checked against rather than a figure to
+    publish. A word arriving after the figures have started means this is not
+    a row of this table -- the header's ``Sq.KM 2017 2023 (%) 2026`` is the
+    case -- and the row is refused rather than half-read.
+    """
+    label: list[str] = []
+    out: list[list] = []                  # [right edge, text]
+    for x0, x1, text in cells:
+        if PERCENTAGE.match(text):
+            out.append([x1, text])
+            continue
+        if not NUMBER.match(text):
+            if out:
+                return "", []
+            label.append(text)
+            continue
+        if out and NUMBER.match(out[-1][1]) and x0 - out[-1][0] <= GAP:
+            out[-1][0] = x1
+            out[-1][1] += text.replace(",", "")
+        else:
+            out.append([x1, text.replace(",", "")])
+    return " ".join(label), [text for _right, text in out]
+
+
+def gb_grown(earlier: int, later: int) -> float:
+    """The annual rate that takes one census count to the next, as a percent.
+
+    Stated rather than fitted: this is compound growth over the years between
+    the two rounds, which is what the booklet's own column turns out to be.
+    """
+    return ((later / earlier) ** (1.0 / GB_POP_SPAN) - 1.0) * 100.0
+
+
+def gb_population(blob: bytes) -> dict[str, int]:
+    """The 2023 census count for each district and for the territory.
+
+    Keyed by the booklet's own spellings, which are the ten names this file
+    already declares for Gilgit-Baltistan, plus ``GB`` for the territory row.
+
+    Raises ``LookupError`` when the booklet carries no such table -- it is
+    reissued annually and a table that has moved or gone leaves the territory
+    where it was, declared -- and refuses outright when the table is there and
+    does not read, which is a different failure and must not be the same one.
+    """
+    wanted = set(TERRITORIES["gb"][2]) | {GB_POP_WHOLE}
+    for number, rows in enumerate(words_by_row(blob), start=1):
+        page = [(" ".join(t for _a, _b, t in cells), cells) for cells in rows]
+        if not any(GB_POP_TABLE.search(line) for line, _cells in page):
+            continue
+        found: dict[str, int] = {}
+        for _line, cells in page:
+            name, printed_cells = gb_cells(cells)
+            if name not in wanted or len(printed_cells) != len(GB_POP_COLUMNS):
+                continue
+            rate = printed_cells[GB_POP_RATE]
+            # The shape of the row, not its contents: exactly one cell is a
+            # percentage and it is the fourth. A row of six cells that does
+            # not sit that way is not a row of this table, and the name check
+            # below is what refuses if one of the ten was in it.
+            if not PERCENTAGE.match(rate) or not all(
+                    cell.isdigit() for index, cell in enumerate(printed_cells)
+                    if index != GB_POP_RATE):
+                continue
+            earlier = int(printed_cells[GB_POP_EARLIER])
+            later = int(printed_cells[GB_POP_COUNT])
+            # The check that says which column is which. A 2026 projection
+            # read as a census, or the 2017 column read as the 2023 one, is
+            # invisible in the figure and fails here.
+            drift = abs(gb_grown(earlier, later) - float(rate.rstrip("%")))
+            if drift > GB_POP_SLACK:
+                raise SystemExit(
+                    f"pakistan: Gilgit-Baltistan's {name} grows from "
+                    f"{earlier:,} to {later:,} at {gb_grown(earlier, later):.2f}% "
+                    f"a year over {GB_POP_SPAN} years, against the {rate} the "
+                    f"booklet prints beside them. Either these are not the two "
+                    f"census columns -- the projection sits beside them -- or "
+                    f"the table has changed shape")
+            found[name] = later
+        whole = found.pop(GB_POP_WHOLE, None)
+        if whole is None or sorted(found) != sorted(TERRITORIES["gb"][2]):
+            raise SystemExit(
+                f"pakistan: page {number} of Gilgit-Baltistan at a Glance "
+                f"carries the district population table and this run read "
+                f"{sorted(found)} from it"
+                + ("" if whole else " and no territory row")
+                + f", where the map draws {sorted(TERRITORIES['gb'][2])}")
+        summed = sum(found.values())
+        if summed != whole:
+            raise SystemExit(
+                f"pakistan: Gilgit-Baltistan's ten districts sum to "
+                f"{summed:,} against the {whole:,} printed for the territory "
+                f"beneath them. The table disagrees with itself, or a row was "
+                f"read from the wrong column")
+        log(f"    {len(found)} districts on page {number}, summing to the "
+            f"territory's own printed {whole:,}")
+        found[GB_POP_WHOLE] = whole
+        return found
+    raise LookupError("no page carries 'District Wise Population and Area of GB'")
+
+
+def gb_weighted(counts: dict[str, int]) -> dict[str, float]:
+    """The ten district sect figures, weighted by their census populations.
+
+    This is what the territory row publishes, and the populations are what
+    made it possible: before they were read there was no way to add the ten
+    districts up, so the territory carried PILDAT's separate territory-wide
+    estimate instead and the two were never compared.
+
+    They do not agree. The same paper's area-wise map and its territory-wide
+    figure describe different populations, most sharply on the Ismaili share.
+    The weighted one is published because it is the only one of the two that
+    is consistent with what this map shows underneath it -- a territory whose
+    own districts do not add up to it is a contradiction a reader can see and
+    cannot resolve. ``GB_DISAGREEMENT`` says the other figure exists and what
+    it is, so choosing between them is visible rather than silent.
+
+    Empty when any district's population is missing, because a partial
+    weighting is the dangerous kind of wrong: it would quietly reweight the
+    territory onto whichever districts happened to be read.
+
+    Largest-remainder rounding, so the four published shares sum to 100.0
+    exactly rather than to 99.9 through four independent roundings.
+    """
+    whole = counts.get(GB_POP_WHOLE)
+    if not whole:
+        return {}
+    people = {name: counts.get(name) for name in GB_DISTRICT_SECTS}
+    if not all(people.values()):
+        return {}
+    counted = sum(people.values())
+    if counted != whole:
+        raise SystemExit(
+            f"pakistan: Gilgit-Baltistan's ten districts hold {counted:,} "
+            f"people against the {whole:,} printed for the territory. The "
+            f"sect shares are weighted by these, so a territory row that is "
+            f"not the sum of its districts would publish a composition of a "
+            f"population that does not exist")
+    exact: dict[str, float] = {}
+    for name, sects in GB_DISTRICT_SECTS.items():
+        for sect, pct in sects.items():
+            exact[sect] = exact.get(sect, 0.0) + people[name] * pct / 100.0
+    shares = {sect: 100.0 * value / whole for sect, value in exact.items()}
+    floors = {sect: round(value, 1) for sect, value in shares.items()}
+    short = round(100.0 - sum(floors.values()), 1)
+    if short:
+        biggest = max(floors, key=lambda k: floors[k])
+        floors[biggest] = round(floors[biggest] + short, 1)
+    return floors
+
+
+def gb_disagreement(weighted: dict[str, float]) -> str:
+    """The territory-wide figure that is not published, named where it is due.
+
+    PILDAT gives both, in one paper, and they differ by eight and a half
+    points on the Ismaili share. Publishing one and saying nothing about the
+    other would hide a disagreement inside the source rather than a
+    disagreement between sources, which is the harder kind for a reader to
+    find on their own.
+    """
+    if not weighted:
+        return ""
+    said = ", ".join(f"{sect} {pct}%" for sect, pct
+                     in sorted(GB_SECTS.items(), key=lambda kv: -kv[1]))
+    return (" This row is the ten districts' own figures weighted by their "
+            "2023 census populations, which is why it agrees with what is "
+            "drawn beneath it. The same paper also gives a territory-wide "
+            "estimate -- " + said + " -- and the two do not describe the same "
+            "population: they are eight and a half points apart on the "
+            "Ismaili share. Neither has been adjusted to the other. The "
+            "weighted figure is the one published because a territory whose "
+            "districts do not add up to it is a contradiction a reader can "
+            "see and cannot resolve; the likeliest reading of the gap is that "
+            "the faith map's flat 100% for Hunza and Ghizer leaves no room "
+            "for the Ismaili minorities the same page's prose puts in Skardu.")
+
+
+def gb_population_fields(name: str, counts: dict[str, int],
+                         control: str) -> dict[str, Any]:
+    """The population field for one Gilgit-Baltistan row, or a stated gap.
+
+    A gap and never a bare one: ``record`` defaults an unfilled field to a gap
+    with nothing in it, which on the map reads as a fetch nobody has run, and
+    that is a different claim from the one this territory has to make.
+    """
+    count = counts.get(name)
+    if count is None:
+        return {"population": gap(NOT_AVAILABLE, GB_POP_GAP)}
+    return {
+        "population": measure(count, year=GB_POP_YEAR, source=GB_POP_SOURCE),
+        "population_note": GB_POP_NOTE.format(control=control),
+    }
+
+
 def ajk_records(found: dict[str, dict[str, int]],
                 whole: dict[str, int]) -> list[dict[str, Any]]:
     """Azad Jammu and Kashmir, and the one second-level shape drawn for it.
@@ -1146,7 +1475,8 @@ def ajk_records(found: dict[str, dict[str, int]],
     ]
 
 
-def declared_gaps(absent: dict[str, list[tuple[str, str]]]) -> list[dict[str, Any]]:
+def declared_gaps(absent: dict[str, list[tuple[str, str]]],
+                  counts: dict[str, int] | None = None) -> list[dict[str, Any]]:
     """Records for the territories the census tables do not reach.
 
     Written from the run's own failed lookups rather than from a list kept
@@ -1160,6 +1490,7 @@ def declared_gaps(absent: dict[str, list[tuple[str, str]]]) -> list[dict[str, An
     into the note.
     """
     out: list[dict[str, Any]] = []
+    counts = counts or {}
     for slug, _line in absent[APART]:
         if slug not in TERRITORIES:
             continue
@@ -1182,27 +1513,43 @@ def declared_gaps(absent: dict[str, list[tuple[str, str]]]) -> list[dict[str, An
             "language": gap(NOT_AVAILABLE, TERRITORY_GAP),
         }
         if slug == "gb":
-            fields.update(gb_religion())
+            fields.update(gb_religion(counts))
             fields.update(gb_language())
+            fields.update(gb_population_fields(GB_POP_WHOLE, counts,
+                                               GB_WHOLE_CONTROL))
             source = list(source) + [
                 {"field": "religion", "name": GB_SOURCE, "url": GB_URL,
                  "year": GB_YEAR},
                 {"field": "language", "name": GB_TONGUE_SOURCE,
                  "url": GB_TONGUE_URL, "year": GB_TONGUE_YEAR},
             ]
+            if GB_POP_WHOLE in counts:
+                source = list(source) + [
+                    {"field": "population", "name": GB_POP_SOURCE,
+                     "url": GB_BOOK, "license": GB_POP_LICENCE,
+                     "year": GB_POP_YEAR}]
         out.append(record(
             f"PAK-{slug}", province, level="admin1", parent="PAK",
             aliases=list(alias),
             sources=list(source), **fields))
         for name in inside:
-            # Gilgit-Baltistan's ten have a sect figure of their own; Azad
-            # Kashmir's one shape does not, and keeps the declared gap.
+            # Gilgit-Baltistan's ten have a sect figure of their own and, now,
+            # the census count of the people those shares divide; Azad
+            # Kashmir's one shape has neither, and keeps the declared gap.
             fields = gb_district_religion(name) if slug == "gb" else {}
             district_source = list(source)
             if fields:
                 district_source += [
                     {"field": "religion", "name": GB_SOURCE, "url": GB_URL,
                      "year": GB_YEAR}]
+            if slug == "gb":
+                fields.update(gb_population_fields(name, counts,
+                                                   GB_PART_CONTROL))
+                if name in counts:
+                    district_source += [
+                        {"field": "population", "name": GB_POP_SOURCE,
+                         "url": GB_BOOK, "license": GB_POP_LICENCE,
+                         "year": GB_POP_YEAR}]
             out.append(record(
                 f"PAK-{slug}-{name.lower().replace(' ', '-')}", name,
                 level="admin2", parent="PAK", parent_name=province,
@@ -1577,7 +1924,31 @@ def main() -> int:
                 absent[APART] = [(slug, line) for slug, line in absent[APART]
                                  if slug != "ajk"]
 
-    records.extend(declared_gaps(absent))
+    # Gilgit-Baltistan, from the territory's own P&DD, where the Bureau's
+    # series stops. Only when it does stop, for the reason Azad Kashmir's
+    # block gives: a census table for this territory would be the same office
+    # reading the same question as the four provinces, and would win without a
+    # rule needing to be written for it.
+    counts: dict[str, int] = {}
+    if any(slug == "gb" for slug, _line in absent[APART]):
+        log("  Gilgit-Baltistan, from the territory's own At a Glance")
+        try:
+            blob, url = fetch((GB_BOOK,))
+        except LookupError as err:
+            log(f"    NOT READ -- {err}")
+        else:
+            log(f"    {len(blob):,} bytes from {url}")
+            try:
+                counts = gb_population(blob)
+            except LookupError as err:
+                # The booklet is reissued every year. A table that is no
+                # longer in it leaves the territory's population declared
+                # rather than stopping the run -- which is where it was before
+                # this route existed. A table that is there and does not read
+                # refuses instead, and that is gb_population's decision.
+                log(f"    NOT READ -- {err}")
+
+    records.extend(declared_gaps(absent, counts))
     out = args.out or PROCESSED / "pakistan_district.json"
     write_json(out, records)
     provinces = sum(1 for r in records if r["level"] == "admin1")

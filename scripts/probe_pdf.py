@@ -26,7 +26,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from common import log  # noqa: E402
+from common import http_get, log  # noqa: E402
 
 PAGE_BREAK = "\f"
 
@@ -92,7 +92,23 @@ def laid_out(blob: bytes, tolerance: float = 2.0,
     return "\n".join(out)
 
 
-def fetch_blob(url: str) -> bytes:
+def fetch_blob(url: str, aia: bool = False) -> bytes:
+    """The PDF's bytes.
+
+    ``aia`` is for an office whose server sends its leaf certificate and omits
+    the intermediate above it, which urllib reports as *unable to get local
+    issuer certificate*. www.ubos.org is one of these. The repair is the one
+    scripts/probe_tls.py documents -- fetch the missing link out of the
+    certificate's own Authority Information Access extension and verify against
+    it plus the public roots -- and it is never a way to skip the check.
+    """
+    if aia:
+        blob = http_get(url, binary=True, aia=True, timeout=180,
+                        headers={"Accept": "application/pdf,*/*"})
+        assert isinstance(blob, bytes)
+        log(f"  {len(blob):,} bytes")
+        return blob
+
     import urllib.request
 
     req = urllib.request.Request(url, headers={
@@ -130,7 +146,7 @@ def tables_of(blob: bytes, numbers: list[int]) -> dict[int, list[list[list[str]]
 
 
 def fetch_text(url: str, layout: bool = False,
-               boxes: bool = False) -> str:
+               boxes: bool = False, aia: bool = False) -> str:
     """A remote PDF as text, page by page, without keeping the file.
 
     The machine that can reach a statistical office is not the machine that
@@ -142,7 +158,7 @@ def fetch_text(url: str, layout: bool = False,
     import io
     from pypdf import PdfReader
 
-    blob = fetch_blob(url)
+    blob = fetch_blob(url, aia=aia)
     if layout:
         return laid_out(blob, boxes=boxes)
     reader = PdfReader(io.BytesIO(blob))
@@ -196,6 +212,11 @@ def main() -> int:
     ap.add_argument("text", type=Path, nargs="?",
                     help="output of pdftotext -layout")
     ap.add_argument("--url", help="fetch and read a PDF instead of a local file")
+    ap.add_argument("--aia", action="store_true",
+                    help="supply the intermediate certificate a server omits, "
+                         "for a host that fails with 'unable to get local "
+                         "issuer certificate' (www.ubos.org). Verification "
+                         "stays on -- see scripts/probe_tls.py")
     ap.add_argument("--boxes", action="store_true",
                     help="with --layout, print each word's x span")
     ap.add_argument("--layout", action="store_true",
@@ -223,7 +244,8 @@ def main() -> int:
     if args.url and args.tables:
         log(f"probe_pdf: {args.url}")
         numbers = [int(n) for n in re.split(r"[,\s]+", args.pages) if n.strip()]
-        for number, tables in tables_of(fetch_blob(args.url), numbers).items():
+        for number, tables in tables_of(fetch_blob(args.url, aia=args.aia),
+                                        numbers).items():
             log(f"\n--- page {number}: {len(tables)} table(s) " + "-" * 40)
             for i, table in enumerate(tables):
                 log(f"  table {i + 1}: {len(table)} rows x {max(len(r) for r in table)} cols")
@@ -232,7 +254,8 @@ def main() -> int:
         return 0
     if args.url:
         log(f"probe_pdf: {args.url}")
-        text = fetch_text(args.url, layout=args.layout, boxes=args.boxes)
+        text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
+                          aia=args.aia)
     elif args.text:
         text = args.text.read_text(encoding="utf-8", errors="replace")
     else:

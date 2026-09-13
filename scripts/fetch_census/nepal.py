@@ -145,44 +145,95 @@ DISTRICT_ALIASES: dict[str, tuple[str, ...]] = {
     # Wikidata's spellings, which the shape check resolves through this table.
     "Sindhupalchok": ("Sindhupalchowk",),
     "Terhathum": ("Tehrathum",),
-    "Rukum East": ("Rukum_E", "Rukum (East)", "Eastern Rukum"),
+    # The census's own names for the halves. "Rukum_E" and "Nawalparasi" are
+    # deliberately NOT here: those are boundary-file labels, and each sits on
+    # the *undivided* district rather than on the half it names -- see
+    # SHAPE_BOUND. Aliasing a half to them put 56,786 people's composition on
+    # a polygon holding 223,526, and 386,868 on one holding 764,947, which
+    # only UNJOINABLE was hiding.
+    "Rukum East": ("Rukum (East)", "Eastern Rukum"),
     "Rukum West": ("Rukum_W", "Rukum (West)", "Western Rukum"),
     "Nawalpur": ("Nawalparasi (Bardaghat Susta East)",),
-    "Parasi": ("Nawalparasi (Bardaghat Susta West)", "Nawalparasi",
-               "Nawalparasi West"),
+    "Parasi": ("Nawalparasi (Bardaghat Susta West)",),
 }
 
-# Districts whose figures are deliberately not joined to a boundary shape.
+# Nepal's districts bound to a boundary shape by that shape's id.
 #
-# Not a judgement call: this is the output of scripts/verify_shapes.py, which
-# checks every district's independent reference point -- Wikidata's P625 --
-# against the polygon bearing its name. Of Nepal's 77 districts, 64 have their
-# point inside their own polygon and 2 more fall just outside it (Lalitpur by
-# 1.6 km, Myagdi by 2.6 km, both into a neighbour whose own point is elsewhere,
-# which says more about a town-hall coordinate than about the boundary). The 11
-# below are somewhere else entirely.
+# geoBoundaries CGAZ draws Nepal's pre-2015 **75-district** map, and draws it
+# correctly: 75 polygons tiling the country, no overlaps, the right count in
+# every province but Lumbini, which is short the two halves of the two
+# post-2015 splits. The geometry was never the problem. The *name column* is:
+# two labels are used twice, four districts' names appear nowhere, and two
+# post-split names sit on pre-split polygons.
 #
-#     python scripts/verify_shapes.py --country NPL \
-#         --points data/processed/nepal_wikidata_points.json \
-#         --name-contains District --alias-module scripts.fetch_census.nepal
+# These nine shapes were identified twice over, independently, and neither
+# method uses the broken names:
 #
-# geoBoundaries CGAZ carries 75 shapes for 77 districts, two names twice, and
-# in Karnali the labels are shifted along by one. Joining any of these by name
-# would put one district's population on another's ground, and nothing on
-# screen would say so.
-UNJOINABLE = {
-    "Bara": "two shapes bear this name, and one of them is Parsa",
-    "Parsa": "no shape bears this name; Parsa's ground is inside one named Bara",
-    "Saptari": "two shapes bear this name, and one of them is Siraha",
-    "Siraha": "no shape bears this name; Siraha's ground is inside one named Saptari",
-    "Dailekh": "no shape bears this name; Dailekh's ground is inside one named Jajarkot",
-    "Jajarkot": "the shape named Jajarkot is Dailekh's ground; Jajarkot's own is inside one named Rukum West",
-    "Rukum East": "the shape named Rukum East is 20 km away; this district's ground is inside one named Rolpa",
-    "Rukum West": "the shape named Rukum West is Jajarkot's ground; this district's is inside one named Rukum East",
-    "Rupandehi": "no shape bears this name; Rupandehi's ground is inside one named Nawalapur",
-    "Nawalpur": "no shape bears this name; Nawalpur's ground is inside one named Nawalparasi",
-    "Parasi": "no shape contains this district at all",
+#   * which Wikidata reference points fall *inside* each polygon -- the same
+#     file, data/processed/nepal_wikidata_points.json, that verify_shapes.py
+#     already uses, but read the other way round. It holds 113 municipality
+#     points besides the 77 district ones, so a polygon is identified by the
+#     handful of its own municipalities inside it, not by one town hall.
+#   * polygon adjacency, which needs no reference point at all. Bara borders
+#     Rautahat and Makwanpur and Parsa borders neither; Parsa borders
+#     Chitawan and Bara does not.
+#
+# The arithmetic is the check: these nine hold 5,415,919 people, the 66
+# districts already joined hold 23,748,659, and the two come to 29,164,578 --
+# the census's own national total, to the person. Nothing is left over and
+# nothing is counted twice.
+#
+# **Keyed by shape id and not by name, because name is exactly what is broken
+# here.** Three of these -- Dailekh, Jajarkot, Rupandehi -- could be written as
+# boundary-name aliases, and must not be: those keys are real district names
+# elsewhere in this table, and a loose enough alias would poison the ordinary
+# join for the districts that are labelled correctly.
+#
+# Two entries name two districts. Those polygons are the undivided district
+# from before the 2017 split, and the two halves are exactly the shape and
+# nothing else -- so their counts are summed onto it, which is what this
+# project already does for Chitral, Karachi, Angola's Icolo e Bengo and
+# Kazakhstan's Abai. A partial sum is refused rather than published.
+SHAPE_BOUND: dict[str, tuple[str, ...]] = {
+    # Madhesh: the two polygons both labelled "Bara", and the two both
+    # labelled "Saptari".
+    "79688334B75970147852459": ("Bara",),
+    "79688334B59716070388160": ("Parsa",),
+    "79688334B4946100078623": ("Siraha",),
+    "79688334B89786345808010": ("Saptari",),
+    # Karnali, where the labels are shifted along by one.
+    "79688334B23259783147235": ("Dailekh",),      # labelled "Jajarkot"
+    "79688334B34133508701345": ("Jajarkot",),     # labelled "Rukum_W"
+    # Lumbini, where the label is shifted and two polygons predate a split.
+    "79688334B17767934844471": ("Rupandehi",),    # labelled "Nawalapur"
+    "79688334B6316349348825": ("Rukum East", "Rukum West"),    # "Rukum_E"
+    "79688334B71878033214617": ("Nawalpur", "Parasi"),         # "Nawalparasi"
 }
+
+# What each bound shape is labelled in the boundary file, for the note that
+# says so on the record. A reader who looks up the shape will find the other
+# name on it, and an unexplained disagreement is its own kind of error.
+SHAPE_LABELS: dict[str, str] = {
+    "79688334B75970147852459": "Bara",
+    "79688334B59716070388160": "Bara",
+    "79688334B4946100078623": "Saptari",
+    "79688334B89786345808010": "Saptari",
+    "79688334B23259783147235": "Jajarkot",
+    "79688334B34133508701345": "Rukum_W",
+    "79688334B17767934844471": "Nawalapur",
+    "79688334B6316349348825": "Rukum_E",
+    "79688334B71878033214617": "Nawalparasi",
+}
+
+BOUND_NOTE = (
+    "Bound to this boundary shape by the shape's own id rather than by its "
+    "name. geoBoundaries draws Nepal's pre-2015 75-district map correctly but "
+    "labels it wrongly -- this polygon is labelled \"{label}\" -- so the "
+    "district was identified instead by which of the census's reference "
+    "points fall inside the polygon and by which districts it borders. {what}")
+BOUND_ONE = "The shape is this district and nothing else."
+BOUND_SUM = ("The shape is the undivided district from before the 2017 split, "
+             "and {parts} are exactly it, so their counts are summed here.")
 
 # The report uses two table shapes, and which one a page is in is decided by
 # the row that opens each area rather than by the annex title. The title is
@@ -556,7 +607,6 @@ def build(lines: list[str], *, min_pct: float = MIN_PCT
 
     provinces: list[dict[str, Any]] = []
     districts: list[dict[str, Any]] = []
-    withheld: list[str] = []
 
     for province in PROVINCES:
         fields = fields_for(parsed, province, min_pct)
@@ -572,11 +622,11 @@ def build(lines: list[str], *, min_pct: float = MIN_PCT
             **fields,
         ))
 
+    bound = {name for names in SHAPE_BOUND.values() for name in names}
     for province, names in DISTRICTS.items():
         for district in names:
-            if district in UNJOINABLE:
-                withheld.append(district)
-                continue
+            if district in bound:
+                continue          # emitted below, keyed by shape id
             fields = fields_for(parsed, district, min_pct)
             if not fields:
                 log(f"  ! no annex data for district {district}")
@@ -592,9 +642,7 @@ def build(lines: list[str], *, min_pct: float = MIN_PCT
                           "name": SOURCE, "license": LICENSE}],
                 **fields,
             ))
-    if withheld:
-        log(f"  withheld {len(withheld)} district(s) with no trustworthy shape: "
-            f"{', '.join(sorted(withheld))}")
+    districts.extend(bound_records(parsed, min_pct))
     return provinces, districts
 
 
@@ -626,6 +674,77 @@ def population_of(parsed: dict[str, dict[str, dict[str, int]]], area: str):
         if total:
             return measure(int(total), year=YEAR, source=SOURCE)
     return gap(NOT_AVAILABLE)
+
+
+def bound_records(parsed: dict[str, dict[str, dict[str, int]]],
+                  min_pct: float) -> list[dict[str, Any]]:
+    """The nine districts whose shape is named wrongly, keyed by shape id.
+
+    Summed where a shape is an undivided district and the census counts its
+    two halves. The counts are added before they are composed, not the shares
+    after: adding shares would need a weighting, and the counts are right
+    there. ``_total`` adds with the rest, which is what makes the sum its own
+    check -- ``compose`` divides by it, and a half that failed to arrive would
+    leave the parts summing to more than the whole.
+
+    A partial sum is refused. Publishing one half of an undivided district's
+    ground as though it were all of it is the mis-match this project ranks
+    below a gap: every share would still add to 100 and nothing on screen
+    would say the population was half what it should be.
+    """
+    out: list[dict[str, Any]] = []
+    where = {district: province
+             for province, names in DISTRICTS.items() for district in names}
+    for shape_id, parts in SHAPE_BOUND.items():
+        counts: dict[str, dict[str, int]] = {}
+        for field in FIELDS:
+            merged: dict[str, int] = {}
+            for district in parts:
+                got = parsed[field].get(district)
+                if not got:
+                    merged = {}
+                    break
+                for group, value in got.items():
+                    merged[group] = merged.get(group, 0) + int(value)
+            if merged:
+                counts[field] = merged
+        missing = [d for d in parts if not any(parsed[f].get(d) for f in FIELDS)]
+        if missing:
+            raise SystemExit(
+                f"nepal: shape {shape_id} is {' + '.join(parts)} and the "
+                f"report has nothing for {', '.join(missing)}. A partial sum "
+                f"would put part of this ground's people on all of it")
+        fields: dict[str, Any] = {}
+        for field, merged in counts.items():
+            composition = compose(merged, min_pct=min_pct)
+            if not composition:
+                continue
+            fields[field] = composition
+            fields[f"{field}_year"] = YEAR
+            note = FIELD_NOTES.get(field) or ""
+            fields[f"{field}_note"] = (note + " " if note else "") + \
+                BOUND_NOTE.format(
+                    label=SHAPE_LABELS[shape_id],
+                    what=BOUND_ONE if len(parts) == 1 else BOUND_SUM.format(
+                        parts=" and ".join(parts)))
+        total = sum(counts[field]["_total"] for field in list(counts)[:1])
+        province = where[parts[0]]
+        name = parts[0] if len(parts) == 1 else " and ".join(parts)
+        out.append(record(
+            f"NPL-{province}-{parts[0].lower().replace(' ', '-')}",
+            name, level="admin2", parent=f"NPL-{province}", country="NPL",
+            aliases=list(DISTRICT_ALIASES.get(parts[0], ())),
+            parent_name=province, parent_aliases=list(PROVINCES[province]),
+            shape_id=shape_id, match_by="shape_id",
+            population=measure(int(total), year=YEAR, source=SOURCE)
+            if total else gap(NOT_AVAILABLE),
+            sources=[{"field": "caste/ethnicity, language, religion",
+                      "name": SOURCE, "license": LICENSE}],
+            **fields,
+        ))
+        log(f"  {name} -> shape {shape_id} "
+            f"(labelled {SHAPE_LABELS[shape_id]!r}), {total:,} people")
+    return out
 
 
 def main() -> int:
