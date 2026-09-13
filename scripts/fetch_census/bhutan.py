@@ -336,8 +336,22 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
         # A page that carried none of this table's rows ends it. Table 2.1
         # runs to one page in the small dzongkhags and two in the large ones,
         # and nothing later in the report is it.
+        #
+        # Unless nothing has been read at all, in which case the header that
+        # opened was not this table's. Dagana's contents page carries a line
+        # reading exactly "Gewog/Town Male Female Total"; locking onto the
+        # first match and stopping meant the reader spent the whole document
+        # on the LIST OF FIGURES and never reached page 13, where the table
+        # actually is. A header that leads nowhere is abandoned and the search
+        # resumes rather than ending the read.
         if reading and not found_here:
-            break
+            if gewogs or towns:
+                break
+            edge = margin = None
+            waited = 0
+            reading = False
+            section = ""
+            pending = []
 
     return gewogs, towns, printed
 
