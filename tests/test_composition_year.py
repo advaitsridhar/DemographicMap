@@ -103,15 +103,20 @@ class NoStampWithoutAFigure(unittest.TestCase):
     """
 
     def test_every_stamp_has_a_composition_under_it(self):
+        """Every file, admin0.json included.
+
+        It used to be excused here. The excuse was real -- the committed file
+        predated the ``dated()`` guard in fetch_factbook and carried 16 stamps
+        with nothing under them -- and it is spent: the adapter has since been
+        re-run and the file carries none. AWAITING_AN_ADAPTER_RUN still lists
+        it, because it is still behind on the *other* check below (144 of its
+        compositions have no year, the Factbook printing none), and those are
+        different faults. Skipping a file for one because it is behind on the
+        other is how a guard rots: the very next fetch_factbook change would
+        have had nothing watching it.
+        """
         offenders = []
         for path in processed_files():
-            # fetch_factbook guards these now; the committed file predates the
-            # guard and carries 16 of them. It is the one file here that cannot
-            # be refreshed as part of the change that fixed it -- today's
-            # mirror has moved on, and re-running it would drop 36 countries'
-            # compositions to free text for reasons this change is not about.
-            if path.name in AWAITING_AN_ADAPTER_RUN:
-                continue
             for row in rows(path):
                 if not isinstance(row, dict):
                     continue

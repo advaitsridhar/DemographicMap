@@ -68,60 +68,17 @@
     },
     "religion": {
       "status": "not_collected",
-      "note": "Afghanistan has never completed a population census: the 1979 count was abandoned partway and none has been held since, so no census question on religion exists; the NSIA publishes estimates only."
+      "note": "Afghanistan has never completed a population census: the 1979 count was abandoned partway and none has been held since, so no census question on religion exists. No survey stands in for it either -- the CSO/NSIA household series (NRVA 2011-12, ALCS 2013-14 and 2016-17) publishes its questionnaire and asks nothing about religion. The NSIA publishes population estimates only."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Afghan Persian or Dari",
-        "pct": 77.0
-      },
-      {
-        "group": "Pashto",
-        "pct": 48.0
-      },
-      {
-        "group": "Uzbeki",
-        "pct": 11.0
-      },
-      {
-        "group": "English",
-        "pct": 6.0
-      },
-      {
-        "group": "Turkmani",
-        "pct": 3.0
-      },
-      {
-        "group": "Urdu",
-        "pct": 3.0
-      },
-      {
-        "group": "Pashaie",
-        "pct": 1.0
-      },
-      {
-        "group": "Nuristani",
-        "pct": 1.0
-      },
-      {
-        "group": "Arabic",
-        "pct": 1.0
-      },
-      {
-        "group": "Balochi",
-        "pct": 1.0
-      },
-      {
-        "group": "other",
-        "pct": 1.0,
-        "bound": "<"
-      }
-    ],
-    "language_year": 2020,
+    "language": {
+      "status": "not_collected",
+      "note": "Afghanistan has never completed a population census, so no census question on language exists. The CSO/NSIA household series does not ask mother tongue: the ALCS questionnaire carries no language question, and the NRVA 2011-12 report mentions language only to say which languages the report itself is printed in. The NSIA publishes population estimates only."
+    },
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
-      "note": "Afghanistan has never completed a population census, so no census question on ethnicity exists; the NSIA publishes estimates only."
+      "note": "Afghanistan has never completed a population census, so no census question on ethnicity exists; the census restarted in 2013 excluded ethnicity and language deliberately. The CSO/NSIA household series (NRVA 2011-12, ALCS 2013-14 and 2016-17) does not ask it either. The NSIA publishes population estimates only."
     },
     "ethnicity_year": null,
     "sources": [
@@ -432,38 +389,10 @@
       "note": "Algeria's census does not ask religion; censuses on a religious, linguistic or ethnic basis are barred to preserve national unity. The 2022 RGPH form has no such question."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Arabic",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "French",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Tamazight",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Shawiya",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Mzab",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Tuareg )",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Algeria's census has not asked language since 1966, on a division set that matches no current boundary; the 2022 RGPH form has no such question."
+    },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -1154,7 +1083,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -1441,17 +1371,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "indigenous (Quechua",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Guarani",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Mapudungun)",
+        "group": "indigenous",
         "pct": null,
         "pct_status": "not_available"
       }
@@ -1804,7 +1724,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -2122,29 +2043,11 @@
       "note": "Austria's register-based census carries no religion; the last religion question was in the 2001 census."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "German",
-        "pct": 88.6
-      },
-      {
-        "group": "Turkish",
-        "pct": 2.3
-      },
-      {
-        "group": "Serbian",
-        "pct": 2.2
-      },
-      {
-        "group": "Croatian",
-        "pct": 1.6
-      },
-      {
-        "group": "other",
-        "pct": 5.3
-      }
-    ],
-    "language_year": 2001,
+    "language": {
+      "status": "not_collected",
+      "note": "Austria's register-based census carries no language; the last Umgangssprache question was in 2001."
+    },
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "Austria's census has been register-based since 2011 (Registerzählung) and records citizenship and country of birth; no register holds ethnicity."
@@ -2470,7 +2373,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -2738,12 +2642,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "Bajan (English-based creole language",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "widely spoken in informal settings)",
+        "group": "Bajan",
         "pct": null,
         "pct_status": "not_available"
       }
@@ -2992,21 +2891,10 @@
       "note": "Belgium's census is compiled from registers and has never carried religion."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Dutch",
-        "pct": 60.0
-      },
-      {
-        "group": "French",
-        "pct": 40.0
-      },
-      {
-        "group": "German",
-        "pct": 1.0,
-        "bound": "<"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Belgium's language census was abolished by the law of 24 July 1961 after the 1947 count; the register-based census records none."
+    },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -3614,25 +3502,11 @@
       "note": "Bhutan's census does not ask religion. The 2017 round published 288 pages of national tables and 20 dzongkhag volumes on education, fertility, mortality, disability, labour, migration and housing, and asked nothing about it; the 2005 round did not either."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Sharchopkha",
-        "pct": 28.0
-      },
-      {
-        "group": "Dzongkha",
-        "pct": 24.0
-      },
-      {
-        "group": "Lhotshamkha",
-        "pct": 22.0
-      },
-      {
-        "group": "other",
-        "pct": 26.0
-      }
-    ],
-    "language_year": 2005,
+    "language": {
+      "status": "not_collected",
+      "note": "Bhutan's census does not ask language or mother tongue."
+    },
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "Bhutan's census does not ask ethnicity. It does publish citizenship -- Bhutanese against non-Bhutanese, down to gewog -- which is not the same question and is not used as a proxy for it here: citizenship is the contested variable in Bhutan, the 1985 Citizenship Act being how much of the Lhotshampa population lost its legal standing before leaving."
@@ -4194,7 +4068,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -4349,43 +4224,10 @@
       }
     ],
     "religion_year": 2022,
-    "language": [
-      {
-        "group": "Portuguese",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "less common languages include Spanish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "German",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Italian",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Japanese",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "and many minor Amerindian languages",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Brazil's census does not ask language of the population; the 2022 census asks which indigenous languages an indigenous person speaks, which is not a composition."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -4464,7 +4306,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -5392,12 +5235,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "English (official",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "least spoken)",
+        "group": "English",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -6950,17 +6788,7 @@
     "religion_year": null,
     "language": [
       {
-        "group": "Standard Chinese or Mandarin (official",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Putonghua",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "based on the Beijing dialect)",
+        "group": "Standard Chinese or Mandarin",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -7216,7 +7044,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -7437,21 +7266,11 @@
       "note": "Colombia's census does not ask religion; DANE publishes no religious statistics. The 2018 census asked ethnic self-recognition, which is on the map."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Spanish",
-        "pct": 98.9
-      },
-      {
-        "group": "indigenous",
-        "pct": 1.0
-      },
-      {
-        "group": "Portuguese",
-        "pct": 0.1
-      }
-    ],
-    "language_year": 2023,
+    "language": {
+      "status": "not_collected",
+      "note": "Colombia's 2018 census has no language question for the population; it asks only whether a person who is indigenous speaks their native language, which is not a composition."
+    },
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Mestizo and White",
@@ -7579,12 +7398,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "Shikomoro (official",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "similar to Swahili)",
+        "group": "Shikomoro",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -7993,7 +7807,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -10858,12 +10673,7 @@
     "religion_year": 2015,
     "language": [
       {
-        "group": "English (official",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "used for government business)",
+        "group": "English",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -12142,7 +11952,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -13195,16 +13006,10 @@
       "note": "Greece's census has not asked religion since 1951; the 2021 census records citizenship and country of birth."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Greek",
-        "pct": 99.0
-      },
-      {
-        "group": "other",
-        "pct": 1.0
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Greece's census has not asked mother tongue since 1951."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -14173,12 +13978,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "Portuguese (official",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "largely used as a second or third language)",
+        "group": "Portuguese",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -14354,12 +14154,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "Indian languages (including Caribbean Hindustani",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "a dialect of Hindi)",
+        "group": "Indian languages",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -14573,7 +14368,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -15232,33 +15028,10 @@
       }
     ],
     "religion_year": 2024,
-    "language": [
-      {
-        "group": "Icelandic",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Polish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Nordic languages",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "German",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Iceland's register-based census carries no language."
+    },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -15591,12 +15364,7 @@
     "religion_year": 2022,
     "language": [
       {
-        "group": "Bahasa Indonesia (official",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "modified form of Malay)",
+        "group": "Bahasa Indonesia",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -15814,43 +15582,10 @@
       }
     ],
     "religion_year": 2020,
-    "language": [
-      {
-        "group": "Persian Farsi",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Azeri and other Turkic dialects",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Kurdish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Gilaki and Mazandarani",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Luri",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Balochi",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Arabic",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Iran's census does not ask language."
+    },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -15987,18 +15722,10 @@
       }
     ],
     "religion_year": 2015,
-    "language": [
-      {
-        "group": "Arabic",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Kurdish",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Iraq's 2024 census deliberately excluded language from the questionnaire with ethnicity."
+    },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -16121,17 +15848,10 @@
       }
     ],
     "religion_year": 2022,
-    "language": [
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Irish",
-        "pct": 37.7
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Ireland's census asks which foreign languages a person speaks and whether they can speak Irish. Neither is a breakdown of the population by language: the first excludes English speakers, the second counts an ability."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -16807,7 +16527,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -16927,13 +16648,10 @@
       "note": "Japan's census does not ask religion. The one official religion statistic counts adherents as religious bodies report them -- 175.1 million against 123.8 million people, and from 0.5 to 3.2 times a prefecture's population depending on where the corporations are registered."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Japanese",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Japan's census does not ask language; it records nationality instead. The only mother-tongue tables e-Stat holds count schoolchildren who need help with Japanese."
+    },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -19083,27 +18801,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "Tamazight (Nafusi",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Ghadamis",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Suknah",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Awjilah",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Tamasheq)",
+        "group": "Tamazight",
         "pct": null,
         "pct_status": "not_available"
       }
@@ -20215,32 +19913,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "Chinese (Cantonese",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Mandarin",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Hokkien",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Hakka",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Hainan",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Foochow)",
+        "group": "Chinese",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -20261,6 +19934,11 @@
       },
       {
         "group": "Panjabi",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "Thai",
         "pct": null,
         "pct_status": "not_available"
       }
@@ -20367,36 +20045,18 @@
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
     "religion": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: Sunni Muslim (official)"
+      "status": "not_collected",
+      "note": "The Maldives census does not ask religion. The only question on its form about who a person is asks nationality -- Maldivian or foreigner -- and no output of the 2022 round, across some sixty published tables, is a religion table. The constitution requires a citizen to be Muslim; that is the law, not a count, and no census figure for it exists."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Dhivehi (official",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "closely related to Sinhala",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "script derived from Arabic)",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "The Maldives census does not ask language. It asks literacy in mother tongue and literacy in English -- Census 2022 tables ED1, ED2, ED16 and ED3-ED4 -- which count an ability and never record which language the mother tongue is. Dhivehi being near-universal is not a figure the census published."
+    },
     "language_year": null,
     "ethnicity": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: homogeneous mixture of Sinhalese, Dravidian, Arab, Australasian, and African resulting from historical changes in regional hegemony over marine trade routes"
+      "status": "not_collected",
+      "note": "The Maldives census does not ask ethnicity. Nationality, Maldivian or foreigner, is the only question of that kind on the form and the only such breakdown in the published tables."
     },
     "ethnicity_year": null,
     "sources": [
@@ -22204,27 +21864,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "Tachelhit",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Tarifit)",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "French (often the language of business",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "government",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "and diplomacy)",
+        "group": "French",
         "pct": null,
         "pct_status": "not_available"
       }
@@ -22797,7 +22437,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -23149,18 +22790,10 @@
       }
     ],
     "religion_year": 2019,
-    "language": [
-      {
-        "group": "Dutch",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Frisian",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "The Netherlands has had no questionnaire census since 1971 and no register records language."
+    },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -24341,13 +23974,10 @@
       "note": "North Korea's only modern census, 2008, asked no religion question, and the state publishes no other figures."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Korean",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "North Korea's 2008 census asked no language question."
+    },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -24811,7 +24441,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -25399,37 +25030,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "Buglere",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Kuna",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Embera",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Wounaan",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Naso",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "and Bri Bri)",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "also known as Guari Guari and Colon Creole)",
+        "group": "Panamanian English Creole",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -25445,6 +25046,16 @@
       },
       {
         "group": "Arabic",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "French Creole",
+        "pct": null,
+        "pct_status": "not_available"
+      },
+      {
+        "group": "other",
         "pct": null,
         "pct_status": "not_available"
       }
@@ -25658,7 +25269,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -26557,12 +26169,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "Mirandese (official",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "but locally used)",
+        "group": "Mirandese",
         "pct": null,
         "pct_status": "not_available"
       }
@@ -28717,13 +28324,10 @@
       "note": "Saudi Arabia's 2022 census asks citizenship (Saudi or non-Saudi, and country of citizenship) and not religion; there are no official religious statistics at any level."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Arabic",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Saudi Arabia's 2022 census does not ask language."
+    },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -29959,41 +29563,11 @@
       "note": "Slovenia's register-based census carries no religion; last asked in 2002."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Slovene",
-        "pct": 87.7
-      },
-      {
-        "group": "Croatian",
-        "pct": 2.8
-      },
-      {
-        "group": "Serbo-Croatian",
-        "pct": 1.8
-      },
-      {
-        "group": "Bosnian",
-        "pct": 1.6
-      },
-      {
-        "group": "Serbian",
-        "pct": 1.6
-      },
-      {
-        "group": "Hungarian",
-        "pct": 0.4
-      },
-      {
-        "group": "Italian",
-        "pct": 0.2
-      },
-      {
-        "group": "other or unspecified",
-        "pct": 3.9
-      }
-    ],
-    "language_year": 2002,
+    "language": {
+      "status": "not_collected",
+      "note": "Slovenia's register-based census carries no mother tongue; last asked in 2002."
+    },
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "Slovenia's census has been register-based since 2011; ethnic affiliation was last asked in 2002."
@@ -30512,7 +30086,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -30968,7 +30543,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -31377,12 +30953,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "Sranang Tongo (Surinamese",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "sometimes called Taki-Taki",
+        "group": "Sranang Tongo",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -31593,13 +31164,10 @@
       "note": "Sweden's census is compiled from registers, and no register records religion; the state kept none after the Church of Sweden separated in 2000."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Swedish",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Sweden's census is compiled from registers, and no register records mother tongue."
+    },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -32310,22 +31878,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "English (official",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "primary language of commerce",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "administration",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "and higher education)",
+        "group": "English",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -33203,12 +32756,7 @@
     "religion_year": 2020,
     "language": [
       {
-        "group": "French (official",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "language of commerce)",
+        "group": "French",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -33218,7 +32766,7 @@
         "pct_status": "not_available"
       },
       {
-        "group": "Kabye  and Dagomba",
+        "group": "Kabye and Dagomba",
         "pct": null,
         "pct_status": "not_available"
       }
@@ -33799,12 +33347,7 @@
     "religion_year": null,
     "language": [
       {
-        "group": "Arabic (official",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "one of the languages of commerce)",
+        "group": "Arabic",
         "pct": null,
         "pct_status": "not_available"
       },
@@ -33937,23 +33480,10 @@
       "note": "Turkey does not publish religion. Its statistical database lists 92 subjects and none is religion; population figures come from an address-based register."
     },
     "religion_year": null,
-    "language": [
-      {
-        "group": "Turkish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Kurdish",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "other minority languages",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Turkey has not collected mother tongue since the 1965 census."
+    },
     "language_year": null,
     "ethnicity": {
       "status": "not_collected",
@@ -35389,12 +34919,7 @@
     "religion_year": 2023,
     "language": [
       {
-        "group": "Spanish (official",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Rioplatense is the most widely spoken dialect)",
+        "group": "Spanish",
         "pct": null,
         "pct_status": "not_available"
       }
@@ -36243,7 +35768,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -36674,7 +36200,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -36738,7 +36265,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -36921,7 +36449,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
@@ -36985,7 +36514,8 @@
     },
     "religion_year": null,
     "language": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No composition published by the Factbook for this entity."
     },
     "language_year": null,
     "ethnicity": {
