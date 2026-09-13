@@ -560,6 +560,31 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
     "Indigenous languages of the Americas": (
         "Indigenous languages, n.i.e.", "Indigenous languages, n.o.s.",
         "Aboriginal languages, n.o.s.",
+        # The ACS's remainder after Navajo, which is the only Native language
+        # its detailed table names on its own. It covers the Indigenous
+        # languages of this continent and nothing else, so it sits here for
+        # the same reason Canada's n.i.e. does -- and in the Bethel Census
+        # Area it is 56% of everyone over five, all of it Central Alaskan
+        # Yup'ik.
+        "Other Native languages of North America",
+    ),
+    # The ACS's two geographic bands for the African languages it does not
+    # name. Neither is a family: the Bureau sorts African languages into
+    # Afro-Asiatic and then two regions, so the Western band is Niger-Congo
+    # plus whatever Songhai it catches, and the Central/Eastern/Southern band
+    # is mostly Bantu but also holds the Nilotic languages of the upper Nile,
+    # Dinka and Nuer among them.
+    #
+    # Filed under Niger-Congo rather than under Bantu, which is where the
+    # compound rule put the second of them on the strength of the word
+    # Swahili: Bantu is the tighter claim and it is the one that is wrong
+    # about Dinka. Niger-Congo is where nearly everyone in both bands is, and
+    # the residual drawer -- where "Other African languages" sits, for
+    # spanning Afro-Asiatic too -- would throw away the one thing these
+    # labels do say.
+    "Niger-Congo languages": (
+        "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "Swahili or other languages of Central, Eastern, and Southern Africa",
     ),
     # Bands a Pacific census writes for the island languages it does not
     # name. Every language they cover is Oceanic.

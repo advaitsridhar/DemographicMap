@@ -57,6 +57,10 @@ RACE_LINES = {
 }
 RACE_TOTAL = "B03002_001E"
 
+# The name C16001 gives the column that is not any of the twelve it names, and
+# the name kept for what is left of it after RESIDUAL_DETAIL below is read.
+RESIDUAL = "Other and unspecified"
+
 LANGUAGE_LINES = {
     "C16001_002E": "English only",
     "C16001_003E": "Spanish",
@@ -70,9 +74,44 @@ LANGUAGE_LINES = {
     "C16001_027E": "Tagalog (incl. Filipino)",
     "C16001_030E": "Other Asian and Pacific Island",
     "C16001_033E": "Arabic",
-    "C16001_036E": "Other and unspecified",
+    "C16001_036E": RESIDUAL,
 }
 LANGUAGE_TOTAL = "C16001_001E"
+
+# C16001's residual, and the seven lines of B16001 that make it up.
+#
+# C16001 is the *collapsed* language table: 13 categories, one of which is a
+# word meaning "none of the twelve above". B16001 is the same survey's detailed
+# table -- 42 languages, published for every county in the 5-year estimates --
+# and the census itself says which of its lines roll into which of C16001's.
+# Seven roll into this one, and nothing else does, so substituting them for it
+# is reading the census's own break-up of its own residual rather than
+# estimating anything.
+#
+# It is not a small thing outside the cities. In the Bethel Census Area of
+# Alaska the residual was 56.6% of everyone over five -- the largest single
+# figure on the shape was a word for "not asked about" -- and what it holds is
+# Central Alaskan Yup'ik, which B16001 counts under "Other Native languages of
+# North America".
+#
+# The labels are the table's own, minus a trailing " languages" where it has
+# one, which is the shortening the C16001 labels above already use ("Other
+# Asian and Pacific Island" is C16001's "Other Asian and Pacific Island
+# languages"). B16001_126's label is left as C16001's "Other and unspecified"
+# rather than becoming "Other and unspecified languages", because that exact
+# string is a tier-1 node of the group tree and a group of the same name would
+# be its own parent.
+RESIDUAL_LINE = "C16001_036E"
+RESIDUAL_DETAIL = {
+    "B16001_108E": "Hebrew",
+    "B16001_111E": "Amharic, Somali, or other Afro-Asiatic",
+    "B16001_114E": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+    "B16001_117E": "Swahili or other languages of Central, Eastern, and "
+                   "Southern Africa",
+    "B16001_120E": "Navajo",
+    "B16001_123E": "Other Native languages of North America",
+    "B16001_126E": RESIDUAL,
+}
 
 PROFILE_LINES = {"DP05_0018E": "median_age", "DP05_0004E": "sex_ratio_m_per_100f"}
 
@@ -115,12 +154,53 @@ def geoid(row: dict[str, str], level: str) -> str:
     return row["state"] + (row.get("county", "") if level == "county" else "")
 
 
+def with_detail(counts: dict[str, float], detail: dict[str, float] | None,
+                name: str) -> dict[str, float]:
+    """C16001's twelve named categories, with its residual replaced by B16001's
+    seven.
+
+    The invariant is checked rather than trusted, the way India's C-01 Appendix
+    substitution checks its own: the parts must come to the whole they replace,
+    to the person. C16001 is a collapsed view of B16001 and the two are
+    produced from one set of estimates, so they agree exactly or one of these
+    line numbers is not the line this file thinks it is -- and a line number
+    that has quietly moved would otherwise land as a plausible wrong figure on
+    three thousand counties.
+
+    A geography B16001 does not answer for at all stops the run for the same
+    reason. Every county has this table in the 5-year estimates; a missing row
+    means the request or the year is wrong, not that the county has no
+    languages.
+    """
+    if detail is None:
+        raise SystemExit(
+            f"us_acs: {name} has a C16001 row and no B16001 row. Every "
+            f"geography in the 5-year estimates has both; a missing one means "
+            f"the request or the year is wrong. Nothing is being emitted.")
+    bucket = counts.get(RESIDUAL, 0.0)
+    named = sum(detail.values())
+    if named != bucket:
+        raise SystemExit(
+            f"us_acs: {name}: B16001's seven lines inside C16001's "
+            f"'{RESIDUAL}' come to {named:,.0f} against the {bucket:,.0f} "
+            f"C16001 prints for the column itself. They are the same survey's "
+            f"figures for the same people, so they agree or a line number "
+            f"here is wrong. Nothing is being emitted.")
+    out = {label: value for label, value in counts.items() if label != RESIDUAL}
+    out.update({label: value for label, value in detail.items() if value})
+    return out
+
+
 def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
     geo = "county:*" if level == "county" else "state:*"
     src = f"U.S. Census Bureau, ACS {year} 5-year estimates"
 
     race = query(year, [RACE_TOTAL, *RACE_LINES], geo, key)
     lang = {geoid(r, level): r for r in query(year, [LANGUAGE_TOTAL, *LANGUAGE_LINES], geo, key)}
+    # A second request rather than one: C16001 and B16001 are different tables
+    # and the API takes one table's variables at a time well and both at once
+    # badly. The join is on the geoid, which both return.
+    fine = {geoid(r, level): r for r in query(year, list(RESIDUAL_DETAIL), geo, key)}
     prof = {geoid(r, level): r
             for r in query(year, list(PROFILE_LINES), geo, key, base=BASE_PROFILE)}
 
@@ -145,8 +225,17 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
         name = row["NAME"]
         state_name = name.split(",")[-1].strip() if level == "county" and "," in name else None
 
+        # A suppressed detail cell reads as zero here on purpose: it then fails
+        # the sum against C16001's own column and with_detail says which
+        # county, rather than being quietly dropped out of a total.
+        drow = fine.get(gid)
+        dcounts = (None if drow is None else
+                   {label: (as_float(drow.get(code)) or 0.0)
+                    for code, label in RESIDUAL_DETAIL.items()})
+
         race_rows = shares(counts, total=total)
-        lang_rows = shares(lcounts, total=as_float(lrow.get(LANGUAGE_TOTAL)))
+        lang_rows = shares(with_detail(lcounts, dcounts, name) if lrow else lcounts,
+                           total=as_float(lrow.get(LANGUAGE_TOTAL)))
         out.append(record(
             f"USA-{gid}",
             name,
@@ -165,7 +254,16 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
                             "Not comparable with other countries' ethnicity classifications."),
             language=lang_rows or gap(NOT_AVAILABLE),
             language_year=dated(lang_rows, year),
-            language_note="Language spoken at home, population 5 years and over (ACS table C16001).",
+            language_note=(
+                "Language spoken at home, population 5 years and over (ACS "
+                "table C16001), with C16001's own 'Other and unspecified' "
+                "column replaced by the seven lines of the detailed table "
+                "B16001 that make it up -- Hebrew, the Afro-Asiatic, West "
+                "African and Central/Eastern/Southern African groupings, "
+                "Navajo, other Native languages of North America, and what is "
+                "still unspecified after those. Both tables are the same "
+                "survey's, and the parts are checked against the column they "
+                "replace before either is used."),
             religion=gap(NOT_COLLECTED, CENSUS_BARRED + " Any figures shown come "
                          "instead from the 2020 U.S. Religion Census (ASARB), which "
                          "counts adherents reported by religious bodies rather than "
