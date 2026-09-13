@@ -308,7 +308,16 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
             words = [t for _a, _b, t in inside]
             if not words:
                 continue
-            if len(words) == 1 and words[0] in SECTIONS:
+            if words[0] in SECTIONS:
+                # By the first word, not by the line being only that word.
+                # With no right clip, Bumthang's chart prints its y-axis on
+                # the same baselines as the table and "Urban" arrives as
+                # "Urban 50"; requiring a lone word lost the section, and
+                # every town in the dzongkhag was filed as a gewog.
+                #
+                # Figures on a section line are its own subtotal or a chart's
+                # axis, and are dropped either way: adding an Urban subtotal
+                # to the towns under it would count them twice.
                 section = words[0]
                 pending = []          # a section heading labels nothing
                 continue
