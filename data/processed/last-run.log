@@ -1,6 +1,53 @@
-us_acs: ACS 2022 5-year, level=county
-  wrote data/processed/us_county.json (16080 kB)
-  3222 county records
-  county: 161,009,516 vs whole-country row 161,009,516 (0.0000% apart, 3141 areas)
-  175 bodies defaulted to Protestant; largest: Non-denominational Christian Churches 21,095,641, Southern Baptist Convention 17,649,040, United Methodist Church 8,018,629, Evangelical Lutheran Church in America 3,139,413, Assemblies of God 3,094,547
-  religion attached to 3132 of 3222 records
+probe_pdf: https://www.ubos.org/wp-content/uploads/publications/03_20182014_National_Census_Main_Report.pdf
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  2,049,840 bytes
+  105 pages
+probe_pdf: 105 pages, 3 mention ['Baganda']
+=== front matter ===
+
+
+=== pages mentioning ['Baganda'] (first 5) ===
+
+--- page 31 ----------------------------------------------------
+constitute 88.7 percent of non-Ugandan population as shown in Appendix Table A8.
+4.2.2 Ethnicity of Ugandans
+Ethnicity is the state of belonging to a social group with comm on culture, tradition and
+language. Ugandans are classified by ethnic groups as listed in  the Constitution of the
+Republic of Uganda. The Baganda are the majority accounting for close to 17 percent of the
+population followed by the Banyankole with about 10 percent as shown in table 4.3. Detailed
+population by ethnicity is presented in Appendix Table A8.
+Table 4.3:  Percentage distribution of the population by Ethnicity, 2014
+ Ethnic Group
+      ...
+Number (Millions) Percentage
+Number
+Percentage
+(Millions)
+Baganda 4.13 17.7 5.56 16.5
+Banyankore 2.33 10.0 3.22
+9.6
+Basoga 2.07 8.9 2.96 8.8
+Bakiga 1.68 7.2 2.39 7.1
+
+--- page 82 ----------------------------------------------------
+   Baamba 20,923 21,636 32,987 9,572 42,559
+   Babukusu 18,484 18,633 33,146 3,971 37,117
+   Babwisi 48,435 52,677 79,376 21,736 101,112
+   Bafumbira 345,771 367,460 625,872 87,359 713,231
+   Baganda 2,688,700 2,866,619 3,268,588 2,286,731 5,555,319
+   Bagisu 805,808 841,096 1,351,587 295,317 1,646,904
+   Bagungu 41,538 42,448 69,251 14,735 83,986
+   Bagwe 50,493 49,391 94,117 5,767 99,884
+   Bagwere 302,969 318,181 528,604 92,546 621,150
+
+--- page 104 ----------------------------------------------------
+Baamba Baruli Kumam Tanzania Seventh-Day Adventist Sweet Potatoes Passion fruit
+Babukusu Barundi Lango Rwanda Orthodox G/nuts
+Babwisi Basamia Lendu Burundi Pentecostal/ Born Again/ Evangelical Sorghum
+10 Usual head of hh - Absent Bafumbira Basoga Lugbara South Sudan Baha’i Millets
+11 Usual head of hh - Present Baganda Basongora Madi Dem. Rep. Of Congo Baptist Sim Sim Vanilla
+12 Spouse Bagisu Batagwenda Mening Somalia Jews Banana (Beer) Tea
+13 Biological Son Bagungu Batoro Mvuba Other Africa Presbyterian Irish Potatoes Wheat
+14 Biological Daughter Bagwe Batuku Napore United Kingdom Mammon Soya Beans Barley
+15 Step son Bagwere Batwa Ngikutio Other Europe Hindus Rice Spinach
