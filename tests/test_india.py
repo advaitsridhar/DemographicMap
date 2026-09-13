@@ -1083,3 +1083,45 @@ class RealDistrictsAreUntouched(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class OtherReligionsSaysWhatItIs(unittest.TestCase):
+    """The largest group on a shape must not be the word "other".
+
+    Arunachal Pradesh's districts were up to 71% "Other religions and
+    persuasions" -- one bucket, larger than every named religion put together,
+    saying only that these people are not Hindu, Muslim, Christian, Sikh,
+    Buddhist or Jain. The C-01 Appendix says what is in it, for the states; the
+    districts get their state's split scaled to their own total.
+    """
+
+    def records(self, level="admin2"):
+        here = pathlib.Path(__file__).resolve().parent.parent
+        path = here / "site" / "data" / level / "IND.json"
+        if not path.exists():
+            raise unittest.SkipTest("site/data has not been built")
+        blob = json.loads(path.read_text())
+        return {row["name"]: row for row in
+                (blob["entities"] if isinstance(blob, dict) else blob)}
+
+    def test_upper_subansiri_names_its_largest_religion(self):
+        row = self.records()["Upper Subansiri"]
+        top = max(row["religion"], key=lambda g: g["pct"])
+        self.assertIn("Doni Polo", top["group"])
+        self.assertGreater(top["pct"], 50.0)
+
+    def test_the_split_says_it_is_the_states(self):
+        note = self.records()["Upper Subansiri"]["religion_note"]
+        self.assertIn("is Arunachal Pradesh's", note)
+        self.assertIn("estimate", note)
+
+    def test_no_indian_unit_is_mostly_an_unexplained_other(self):
+        # A residual may be large -- "Not stated" legitimately is, in places --
+        # but not the plurality of a shape whose census did name what is in it.
+        for level in ("admin1", "admin2"):
+            for name, row in self.records(level).items():
+                if not isinstance(row.get("religion"), list):
+                    continue
+                top = max(row["religion"], key=lambda g: g["pct"])
+                with self.subTest(level=level, unit=name):
+                    self.assertNotIn("Other religions", top["group"])

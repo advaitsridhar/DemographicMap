@@ -1033,7 +1033,8 @@ def without_counts(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def inherited_fields(whole: collections.Counter, estimate: str,
-                     fallback: str) -> dict[str, Any]:
+                     fallback: str,
+                     detail: dict[str, Any] | None = None) -> dict[str, Any]:
     """The fields a shape carries when it inherits a measured district's shares.
 
     Shared by the two kinds of shape that do so -- a district created out of a
@@ -1049,9 +1050,19 @@ def inherited_fields(whole: collections.Counter, estimate: str,
         "language": gap(NOT_AVAILABLE, fallback),
     }
     total = whole["Population"]
-    religion = without_counts(shares(
-        {label: whole[col] for col, label in RELIGION_COLUMNS.items()
-         if whole[col]}, total=total))
+    # A district inheriting its predecessor's shares inherits the predecessor's
+    # "Other religions" bucket with them, and in Arunachal Pradesh that bucket
+    # is most of the district. Splitting it here too is what stops the nine
+    # districts created out of Arunachal's after 2011 -- Kamle, Shi Yomi,
+    # Leparada, Siang and the rest -- from being the only Indian shapes left
+    # whose largest group is the word "other".
+    if detail and detail["counts"] and whole["Others_Religions"]:
+        religion = without_counts(religion_with_detail(
+            whole, district_detail(detail, whole["Others_Religions"])))
+    else:
+        religion = without_counts(shares(
+            {label: whole[col] for col, label in RELIGION_COLUMNS.items()
+             if whole[col]}, total=total))
     scheduled = without_counts(shares(
         {label: whole[col] for col, label in SCHEDULED_COLUMNS.items()
          if whole[col]}, total=total))
@@ -1059,6 +1070,16 @@ def inherited_fields(whole: collections.Counter, estimate: str,
     if religion:
         fields["religion"] = religion
         fields["religion_note"] = estimate
+        if detail and detail["counts"] and whole["Others_Religions"]:
+            # Two estimates ride on this composition rather than one, and a
+            # reader owed the first is owed the second: the shares are the
+            # predecessor's, and the split inside "Other religions" is the
+            # state's on top of that.
+            fields["religion_note"] += (
+                " The religions shown inside 'Other religions and persuasions'"
+                " are a further estimate: the census published no break-up of"
+                " that bucket below state level, so the split is the state's,"
+                " applied to the predecessor's total.")
         fields["religion_year"] = 2011
         fields["religion_estimated"] = True
     if scheduled:
@@ -1077,7 +1098,9 @@ def inherited_fields(whole: collections.Counter, estimate: str,
 
 
 def new_districts(measured: dict[tuple[str, str], collections.Counter]
-                  | None = None) -> list[dict[str, Any]]:
+                  | None = None,
+                  detail: dict[str, dict[str, Any]] | None = None
+                  ) -> list[dict[str, Any]]:
     """One record per post-2011 district, and one per artefact shape.
 
     The census enumerated none of these. Where the district they were cut out
@@ -1109,8 +1132,12 @@ def new_districts(measured: dict[tuple[str, str], collections.Counter]
                 whole: collections.Counter = collections.Counter()
                 for part in parts:
                     whole.update(part)
+                # Keyed on the 2011 state, which is what the Appendix is
+                # published against: Arunachal Pradesh's new districts inherit
+                # Arunachal Pradesh's break-up.
                 fields = inherited_fields(
-                    whole, inherited_note(name, year, predecessors), reason)
+                    whole, inherited_note(name, year, predecessors), reason,
+                    (detail or {}).get(state_key(state_2011)))
             out.append(record(
                 f"IND-NEW-{state.replace(' ', '-')}-{name.replace(' ', '-')}",
                 name, level="admin2", parent="IND",
@@ -1185,8 +1212,14 @@ def build_record(name: str, counts: collections.Counter, *, level: str,
     )
 
 
-def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
+def districts(rows: list[dict[str, str]],
+              appendix: dict[str, dict[str, Any]] | None = None
+              ) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
+    # The Appendix is a state-level table, so a district's break-up is its
+    # state's scaled down. See district_detail for what that assumes.
+    detail = {state_key(unit["name"]): unit
+              for code, unit in (appendix or {}).items() if code != "00"}
     numeric = list(RELIGION_COLUMNS) + list(SCHEDULED_COLUMNS) + ["Population", "Male", "Female"]
     check_lost_territory(rows)
     shrunken = lost_territory()
@@ -1228,7 +1261,8 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
             reason = subdivided_reason(name)
             for successor in SUBDIVIDED_SINCE_2011[key]:
                 fields = inherited_fields(
-                    counts, subdivided_inherited_note(name, successor), reason)
+                    counts, subdivided_inherited_note(name, successor), reason,
+                    detail.get(state_key(state)))
                 out.append(record(
                     f"IND-D{code}-{successor}", successor, level="admin2", parent="IND",
                     ethnicity=gap(NOT_COLLECTED,
@@ -1243,6 +1277,31 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
             codes={"census2011_district": code, "state_name": state})
         # District names repeat across states; the state is what disambiguates.
         record_["parent_name"] = parent_name
+        # "Other religions and persuasions" is the largest group on some of
+        # these shapes -- 71% of Upper Subansiri -- and C-01 alone cannot say
+        # what is in it. The Appendix can, for the state; this puts the state's
+        # split inside the district's own total and says that is what it did.
+        unit = detail.get(state_key(state))
+        bucket = counts["Others_Religions"]
+        if unit and unit["counts"] and bucket and isinstance(record_["religion"], list):
+            scaled = district_detail(unit, bucket)
+            if scaled["counts"]:
+                record_["religion"] = religion_with_detail(counts, scaled)
+                record_["religion_note"] = (
+                    record_.get("religion_note", "") + " "
+                    + district_residual_note(
+                        unit["name"].replace("State - ", "").title(),
+                        named_residual(scaled["counts"], bucket,
+                                       counts["Population"]),
+                        bucket, counts["Population"])).strip()
+                record_["religion_estimated"] = True
+                record_["sources"].append(
+                    {"field": "religion", "name": APPENDIX_SOURCE,
+                     "url": APPENDIX_URL, "year": 2011,
+                     "license": "Government of India open data (GODL-India)",
+                     "note": "Published for India and the states only; the "
+                             "split inside this district's residual is its "
+                             "state's, scaled to the district's own total."})
         # A district that has since been carved up keeps its figure and says
         # so. The shape is a fragment of the ground this row measured, which
         # is a fact about the figure rather than a reason to withhold it: the
@@ -1264,7 +1323,7 @@ def districts(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
     # it did measure carry that district's shares as a stated estimate, the
     # rest carry the gap and its reason.
     check_new_districts(rows)
-    out.extend(new_districts(measured))
+    out.extend(new_districts(measured, detail))
     return out
 
 
@@ -1609,6 +1668,62 @@ def religion_with_detail(counts: collections.Counter, unit: dict[str, Any]
     return shares(religion_counts, total=population)
 
 
+def district_detail(unit: dict[str, Any], bucket: int) -> dict[str, Any]:
+    """The state's break-up of "Other religions", scaled to one district's share
+    of it.
+
+    The Appendix is published for India and the states and nothing finer: its
+    district column reads zero on every row. So a district that is 71 per cent
+    "Other religions" -- Upper Subansiri is -- had no way to say what those
+    people are, and the largest single group on that shape was a word meaning
+    "not one of the seven named above".
+
+    This gives it one, by assuming the inside of the bucket looks the same
+    across a state's districts even though its size plainly does not. That
+    assumption is real and it is the weak point: Arunachal Pradesh's Donyi-Polo
+    are not spread evenly over its districts any more than its Christians are.
+    What makes it worth making anyway is that the alternative is not a better
+    figure, it is no figure -- and the shape of the error is known and stated,
+    which is the condition this project puts on an estimate.
+
+    The district's own bucket total is never touched. Only its inside is
+    described, so the eight columns still partition the district exactly and
+    the district still sums to the population the census enumerated there.
+
+    Largest-remainder rounding, so the scaled parts add back to the bucket to
+    the person. Plain rounding loses or gains a handful and
+    ``religion_with_detail`` refuses the run over it -- correctly, since that
+    check is the thing standing between this and a silent miscount.
+    """
+    whole = unit["bucket"]
+    if whole <= 0 or bucket <= 0:
+        return {**unit, "bucket": bucket, "counts": {}}
+    exact = {label: value * bucket / whole for label, value in unit["counts"].items()}
+    scaled = {label: int(value) for label, value in exact.items()}
+    short = bucket - sum(scaled.values())
+    # The biggest fractional parts get the spare people, one each.
+    for label in sorted(exact, key=lambda k: -(exact[k] - scaled[k]))[:max(short, 0)]:
+        scaled[label] += 1
+    return {**unit, "bucket": bucket, "counts": scaled}
+
+
+def district_residual_note(state: str, kept: dict[str, int], bucket: int,
+                           population: int) -> str:
+    """That the split inside this district's residual is the state's, not its
+    own."""
+    named = ", ".join(label for label in kept if label != ORP_REMAINDER)
+    return (
+        f"The census counted {bucket:,} people here under 'Other religions and "
+        f"persuasions', {100.0 * bucket / population:.1f}% of the district, and "
+        f"published no break-up of it below state level -- the C-01 Appendix's "
+        f"district column is zero on every row. The split shown inside it "
+        f"({named}) is {state}'s, applied to this district's own total: an "
+        f"estimate, and one that assumes these religions are mixed through the "
+        f"state in the proportions the state reports, which is the part of it "
+        f"most likely to be wrong. The total itself is the census's and is not "
+        f"an estimate.")
+
+
 def residual_note(kept: dict[str, int], counts: collections.Counter,
                   bucket: int, population: int) -> str:
     """What the reader needs to know about a share that came from the Appendix.
@@ -1646,15 +1761,48 @@ def residual_note(kept: dict[str, int], counts: collections.Counter,
     return note
 
 
-def load_appendix(url: str = APPENDIX_URL) -> bytes:
-    """The Appendix workbook, over a connection that is fully verified.
+APPENDIX_LOCAL = RAW / "india" / "c01" / APPENDIX_FILE
 
-    censusindia.gov.in serves its leaf certificate without the intermediate
-    above it, which urllib reports as *unable to get local issuer certificate*.
-    ``aia=True`` fetches that intermediate from the certificate's own Authority
-    Information Access extension and verifies against it plus the public roots;
-    nothing is skipped. See scripts/probe_tls.py.
+
+def appendix_or_none(args: Any) -> dict[str, dict[str, Any]] | None:
+    """The Appendix if it can be had, None with a line in the log if it cannot.
+
+    Unreachable costs the detail and not the figures, so the run goes on with
+    C-01's residual whole. A file that disagrees with the census is a different
+    thing and is not caught here: that raises, because a table that does not
+    add up should stop a run rather than quietly narrow it.
     """
+    if getattr(args, "no_appendix", False):
+        return None
+    try:
+        blob = load_appendix(args.appendix_url)
+    except Exception as err:                        # noqa: BLE001 - reported
+        log(f"  C-01 Appendix unreachable ({type(err).__name__}: {err}); the "
+            f"break-up of 'Other religions and persuasions' is not in this run "
+            f"and the residual stays whole")
+        return None
+    return read_appendix(blob)
+
+
+def load_appendix(url: str = APPENDIX_URL) -> bytes:
+    """The Appendix workbook, from the repository if it is here and the network
+    if it is not.
+
+    Checked in for the same reason the C-16 workbooks are: there is no API to
+    fetch it from, the catalogue's link is a download button behind a path that
+    has moved once already, and the build sandbox cannot reach the host at all.
+    A file that every run needs and only some runs can reach belongs in git.
+
+    Over the network, censusindia.gov.in serves its leaf certificate without
+    the intermediate above it, which urllib reports as *unable to get local
+    issuer certificate*. ``aia=True`` fetches that intermediate from the
+    certificate's own Authority Information Access extension and verifies
+    against it plus the public roots; nothing is skipped. See
+    scripts/probe_tls.py.
+    """
+    if APPENDIX_LOCAL.exists():
+        log(f"  C-01 Appendix: {APPENDIX_LOCAL}")
+        return APPENDIX_LOCAL.read_bytes()
     blob = http_get(url, binary=True, timeout=300, aia=True)
     assert isinstance(blob, bytes)
     return blob
@@ -1978,7 +2126,11 @@ def main() -> int:
         rows = load_csv(args.csv_url)
         validate(rows)
         if args.level != "state":
-            records = districts(rows)
+            # The Appendix is a state table, but its break-up is the only
+            # account anyone publishes of what is inside "Other religions and
+            # persuasions", and that bucket is the largest group on some
+            # districts. Scaled down rather than left out; see district_detail.
+            records = districts(rows, appendix_or_none(args))
         else:
             # Only at state level, because that is the only level the Appendix
             # is published at. Asking for it while building districts would
