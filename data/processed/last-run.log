@@ -1,80 +1,212 @@
-pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11
-  Khyber Pakhtunkhwa
-    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-    Table 11: 3,436,846 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-    and its 32 districts are Table 9's districts
-  Punjab
-    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 36 districts add up to the province
-    Table 11: 3,538,413 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 36 districts add up to the province
-    and its 36 districts are Table 9's districts
-  Sindh
-    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-    Table 11: 3,230,815 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-    and its 24 districts are Table 9's districts
-  Balochistan
-    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 34 districts add up to the province
-    Table 11: 3,596,501 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 34 districts add up to the province
-    and its 34 districts are Table 9's districts
-  Islamabad Capital Territory
-    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's religions sum to its own printed total
-    and the 1 districts add up to the province
-    Table 11: 45,805 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's mother tongues sum to its own printed total
-    and the 1 districts add up to the province
-    and its 1 districts are Table 9's districts
-  Azad Jammu and Kashmir
-  Gilgit-Baltistan
-  6 districts say what their Other language holds, and 1 what their Other religion does
-  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  Azad Jammu and Kashmir, from the territory's own yearbook
-    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
-    Table 15.24 named on page 15 with no rows under it: the contents, not the table
-    Table 15.24 on page 209: 10 districts
-    all 7 columns sum to the printed AJ&K row
-    Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
-    Table 15.33 named on page 16 with no heading row under it: the contents, not the table
-    Table 15.33 on page 213: 10 districts, 8 languages
-    Mirpur: Table 15.33 sums to 97%, rescaled to 100 across its own languages
-    AJ&K languages: Pahari-Pothwari 68.8%, Gojri 18.6%, Kashmiri 4.6%, Punjabi 3.6%, Dogri 3.1%, Other languages 1.0%, Shina 0.2%, Kundal Shahi 0.1%
-  Gilgit-Baltistan, from the territory's own At a Glance
-    2,369,329 bytes from https://www.pnd.gog.pk/storage/downloads/AiRIlDEcscWPC1s58oXIgpjlVAS7jd-metaR0IgQVQgR2xhbmNlIDIwMjUuMS5wZGY=-.pdf
-    10 districts on page 3, summing to the territory's own printed 1,709,049
-  Gilgit-Baltistan's language, from the territory's own MICS
-    22,827,802 bytes from https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf
-pakistan: Table SR.3.1 is on page 6 of the GB MICS report and nothing on that page dates it. A survey published under the wrong year is a figure that looks current and is not
+
+===== page: 'Gewogs of Bhutan', 34,240 bytes of wikitext
+  2 table(s)
+--- table 1: 108 rows ---
+  Dzongkhag | Gewog
+  Bumthang frameless|center|200px | Chhoekhor (1) ཆོས་འཁོར་
+  Chhume (2) ཆུ་མིག་
+  Tang (3) སྟང་
+  Ura (4) ཨུ་ར་
+  Chhukha frameless|center|200px | Bjachho བྱག་ཕྱོགས་
+  Bongo སྦོང་སྒོར་
+  Chapcha སྐྱབས་ཆ་
+  Darla དར་ལ་
+  Dungna གདུང་ན་
+  Geling དགེ་གླིང་
+  Getana གད་སྟག་ན་
+  Lokchina ལོག་ཅི་ན་
+  Metakha སྨད་བཏབ་ཁ་
+  Phuentsholing ཕུན་ཚོགས་གླིང་
+  Sampheling བསམ་འཕེལ་གླིང་
+  Dagana frameless|center|200px | Dorona རྡོ་རོ་ན་
+  Drujegang འབྲུག་རྗེས་སྒང་
+  Gesarling གེ་སར་གླིང་
+  Goshi སྒོ་བཞི་
+  Kana བཀར་ན་
+  Karmaling ཀརྨ་གླིང་
+  Khebisa ཁེ་སྦིས་ས་
+  Lajab ལ་རྒྱབ་
+  Lhamoi Zingkha ལྷ་མོའི་རྫིང་ཁ་
+  Nichula ནི་ཅུ་ལ་
+  Trashiding བཀྲིས་ལྡིང་
+  Tsangkha གཙང་ཁ་
+  Tsendagang བཙན་མདའ་སྒང་
+  Tseza བརྩེ་ཟ་
+  Gasa frameless|center|200px | Khamaed ཁ་སྨད་
+  Khatoe ཁ་སྟོད་
+  Laya ལ་ཡ་
+  Lunana ལུང་ནག་ན་
+  Haa frameless|center|200px | Bji སྦྱིས་
+  Gakiling དགའ་སྐྱིད་གླིང་
+  Katsho སྐར་ཚོགས་
+  Samar ས་དམར་
+  Sangbay གསང་སྦས་
+  Uesu དབུས་སུ་
+  Lhuentse frameless|center|200px | Gangzur སྒང་ཟུར་
+  Khoma མཁོ་མ་
+  Jarey རྒྱ་རས་
+  Kurtoed ཀུར་སྟོད་
+  Menbi སྨན་སྦིས་
+  Metsho སྨད་མཚོ་
+  Minjay སྨིན་རྒྱས་
+  Tsenkhar སཙན་མཁར་
+  Mongar frameless|center|200px | Balam བ་ལམ་
+  Chali ཅ་གླིང་
+  Chaskhar ལྕགས་ས་མཁར་
+  Drametse དགྲ་མེད་རྩེ་
+  Drepong འབྲེས་སྤུངས་
+  Gongdue དགོངས་འདུས་
+  Jurmey འགྱུར་མེད་
+  Kengkhar སྐྱེངས་མཁར་
+  Mongar མོང་སྒར་
+  Narang ན་རང་
+  Ngatshang སྔ་ཚང་
+  Saling ས་གླིང་
+  Shermuhoong ཤེར་མུ་ཧཱུྃ་
+  Silambi སི་ལམ་སྦི་
+  Thangrong ཐང་རོང་
+  Tsakaling ཙ་ཀ་གླིང་
+  Tsamang རྩ་མང་
+  Paro frameless|center|200px | Dokar རྡོ་དཀར་
+  Dopshari རྡོབ་ཤར་རི་
+  Doteng རྡོ་སྟེང་
+  Hungrel ཧཱུྃ་རལ་
+  Lamgong ལམ་གོང་
+  Lungnyi ལུང་གཉིས་
+  Naja ན་རྒྱ་
+  Shapa ཤར་པ་
+  Tsento བཙན་ཏོ་
+  Wangchang ཝང་ལྕང་
+  Pema Gatshel frameless|center|200px | Chimoong ཕྱི་མུང་
+  Chokhorling ཆོས་འཁོར་གླིང་
+  Chongshing ལྕོང་ཤིང་
+  Dechheling བདེ་ཆེན་གླིང་
+  Dungmaed གདུང་སྨད་
+  Khar མཁར་
+  Nanong ན་ནོང་
+  Norbugang ནོར་བུ་སྒང་
+  Shumar ཤུ་མར་
+  Yurung ཡུ་རུང་
+  Zobel བཟོ་སྦལ་
+  Punakha frameless|center|200px | Barp བརཔ་
+  Chhubug ཆུ་སྦུག་
+  Dzomi འཅོམས་མི་
+  Goenshari དགོམ་ཤ་རི་
+  Guma གུ་མ་
+  Kabisa དཀར་སྦི་ས་
+  Lingmukha གླིང་མུ་ཁ་
+  Shenga Bjemi ཤེལ་རྔ་_སྦྱེ་མི་
+  Talog རྟ་ལོག་
+  Toepisa སཏོད་པའི་ས་
+  Toewang སྟོད་ཝང་
+  Samdrup Jongkhar frameless|center|200px | Dewathang དབེ་བ་ཐང་
+  Gomdar སྒམ་དར་
+  Langchenphu གླང་ཅན་ཕུ་
+  Lauri ལའུ་རི་
+  Martshala མར་ཚྭ་ལ་
+  Orong ཨོ་རོང་
+  Pemathang པདྨ་ཐང་
+  Phuntshothang ཕུན་ཚོགས་ཐང་
+  Samrang བསམ་རང་
+  Serthi གསེར་ཐིག་
+  Wangphu ཝང་ཕུག་
+--- table 2: 99 rows ---
+  Dzongkhag | Gewog
+  Samtse frameless|center|200px | Dungtoe གདུང་སྟོད་
+  Dophoogchen རྡོ་ཕུག་ཅན་
+  Duenchukha བདུམ་ཅུ་ཁ་
+  Namgaychhoeling རྣམ་རྒྱས་ཆོས་གླིང་
+  Norbugang ནོར་བུ་སྒང་
+  Norgaygang ནོར་རྒྱས་སྒང་
+  Pemaling པདྨ་གླིང་
+  Phuentshogpelri ཕུན་ཚོགས་དབལ་རི་
+  Samtse བསམ་རྩེ་
+  Sangngagchhoeling གསང་སྔགས་ཆོས་གླིང་
+  Tading རྟ་སྡིང་
+  Tashicholing བཀྲིས་ཙོས་གླིང་
+  Tendruk བསྟང་འབྲུག
+  Ugentse ཨྱོན་རྩེ་
+  Yoeseltse འོད་གསལ་རྩེ་
+  Sarpang frameless|center|200px | Chhuzagang ཆུ་འཛག་སྒང་
+  Chhudzom ཆུ་འཛོམས་
+  Dekiling བདེ་སྐྱིད་གླིང་
+  Gakiling དགའ་སྐྱིད་གླིང་
+  Gelephu དགེ་ལེགས་ཕུ་
+  Jigmechholing འཇིགས་མེད་ཆོས་གླིང་
+  Samtenling བསམ་གཏན་གླིང་
+  Senggey སེ་ངྒེ་
+  Sherzhong གསེར་གཞོང་
+  Shompangkha ཤོམ་སྤང་ཁ་
+  Tareythang རྟ་རས་ཐང་
+  Umling ཨུམ་གླིང་
+  Thimphu frameless|center|200px | Chang ལྕང་
+  Darkala དར་དཀར་ལ་
+  Genye དགེ་བསྙེན་
+  Kawang ཀ་ཝང་
+  Lingzhi གླིང་གཞི་
+  Mewang སྨད་ཝང་
+  Naro ན་རོ་
+  Soe སྲོས་
+  Trashigang frameless|center|200px | Bartsham བར་མཚམས་
+  Bidung སྦིས་གདུང་
+  Kanglung བཀང་ལུང་
+  Kangpar རྐང་པར་
+  Khaling ཁ་གླིང་
+  Lumang ཀླུ་མང་
+  Merag མེ་རག་
+  Phongmed ཕོངས་མེད་
+  Radi ར་དི་
+  Sagteng སག་སྟེང་
+  Samkhar བསམ་མཁར་
+  Shongphoog ཤོང་ཕུག་
+  Thrimshing ཁྲིམས་ཤིང་
+  Uzorong ཨུ་མཛོ་རོང་
+  Yangnyer ཡངས་ཉེར་
+  Trashi Yangtse frameless|center|200px | Bumdeling བུམ་སྡེ་གླིང་
+  Jamkhar འཇམ་མཁར་
+  Khamdang ཁམས་དྭངས་
+  Ramjar རམ་སྦྱར་
+  Toetsho སྟོད་མཚོ་
+  Tomzhang སྟོང་མི་གཞང་ས་
+  Yalang ཡ་ལང་
+  Yangtse གཡང་རྩེ་
+  Trongsa frameless|center|200px | Dragteng བྲག་སྟེང་
+  Korphoog སྐོར་ཕུག་
+  Langthil གླང་མཐིལ་
+  Nubi ནུ་སྦིས་
+  Tangsibji སྟང་སི་སྦྱིས་
+  Tsirang frameless|center|200px | Barshong བར་གཤོང་
+  Dunglegang དུང་ལ་སྒང་
+  Gosarling སྒོ་གསར་གླིང་
+  Kikhorthang དཀྱིལ་འཁོར་ཐང་
+  Mendrelgang མནྜལ་སྒང་
+  Patshaling པ་ཚ་གླིང་
+  Phuntenchu སྤུང་རྟེན་ཆུ་
+  Rangthangling རང་ཐང་གླིང་
+  Semjong སེམས་ལྗོངས་
+  Sergithang གསེར་གྱི་ཐང་
+  Tsholingkhar མཚོ་གླིང་མཁར་
+  Tsirangtoe རྩི་རང་སྟོད་
+  Wangdue Phodrang frameless|center|200px | Athang ཨ་ཐང་
+  Bjendag སྦྱེད་ནག་
+  Darkar དར་དཀར་
+  Dangchu དྭངས་ཆུ་
+  Gangteng སྒང་སྟེང་
+  Gasetsho Gom དགའ་སེང་ཚོ་གོངམ་
+  Gasetsho Wom དགའ་སེང་ཆོ་འོགམ་
+  Kazhi ཀ་གཞི་
+  Nahi ན་ཧི་
+  Nyisho ཉི་ཤོག་
+  Phangyul ཕངས་ཡུལ་
+  Phobji ཕོབ་སྦྱིས་
+  Ruepisa རུས་སྦིས་ས་
+  Sephu སྲས་ཕུག་
+  Thedtsho ཐེད་ཚོ་
+  Zhemgang frameless|center|200px | Bardo བར་རྡོ་
+  Bjoka འབྱོག་ཀ།
+  Goshing སྒོ་ཤིང་།
+  Nangkor ནང་སྐོར།
+  Ngangla ངང་ལ།
+  Phangkhar ཕང་མཁར།
+  Shingkhar ཤིང་མཁར།
+  Trong ཀྲོང་།
