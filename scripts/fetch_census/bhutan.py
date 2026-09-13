@@ -405,6 +405,29 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
     return gewogs, towns, printed
 
 
+# Every report states its own total in prose: "The total population of X
+# Dzongkhag as of 30 May 2017 was 17,820 persons". That sentence is the
+# fallback when the table's closing row cannot be found, and it is a genuinely
+# independent control -- it is written by the office, not computed here, and
+# it sits outside the table the rows come from.
+STATED = re.compile(
+    r"total\s+population\s+of\s+\S+.{0,80}?\b(?:is|was)\s+([\d,]+)\s*persons",
+    re.I | re.S)
+
+
+def stated_total(blob: bytes) -> int:
+    """The dzongkhag total as the report's own narrative gives it."""
+    import pdfplumber
+
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        for page in pdf.pages[:30]:
+            text = " ".join((page.extract_text() or "").split())
+            found = STATED.search(text)
+            if found:
+                return int(found.group(1).replace(",", ""))
+    return 0
+
+
 def table(blob: bytes, dzongkhag: str, debug: bool = False
           ) -> tuple[dict[str, int], dict[str, int], int]:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
@@ -430,10 +453,19 @@ def table(blob: bytes, dzongkhag: str, debug: bool = False
         raise SystemExit(f"bhutan: {dzongkhag}: no gewog rows read from "
                          f"Table 2.1")
     if not printed:
+        # The closing row is spelt "Total" in some reports and "Both Areas" in
+        # others, and Trashi Yangtse prints neither where this reader can see
+        # it. The narrative's own sentence stands in -- it is the office's
+        # figure, not one computed here, and the rows are still held to it.
+        printed = stated_total(blob)
+        if printed:
+            log(f"    {dzongkhag}: no closing row; held to the "
+                f"{printed:,} its own text states")
+    if not printed:
         raise SystemExit(
-            f"bhutan: {dzongkhag}: Table 2.1 has no printed Total row, which "
-            f"is the only thing that says these {len(gewogs)} gewogs are all "
-            f"of them")
+            f"bhutan: {dzongkhag}: Table 2.1 has no closing row and the "
+            f"report states no total in its text either, so nothing says "
+            f"these {len(gewogs)} gewogs are all of them")
     counted = sum(gewogs.values()) + sum(towns.values())
     if counted != printed:
         raise SystemExit(
