@@ -173,8 +173,8 @@ def words_by_row(blob: bytes, tolerance: float = 2.0):
             yield [sorted(cells) for _top, cells in rows]
 
 
-def table(blob: bytes, dzongkhag: str
-          ) -> tuple[dict[str, int], dict[str, int], int]:
+def scan(blob: bytes, strict: bool, dzongkhag: str = ""
+         ) -> tuple[dict[str, int], dict[str, int], int]:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
 
     Two things bound the read, and the first attempt had only one of them.
@@ -246,32 +246,33 @@ def table(blob: bytes, dzongkhag: str
         for cells in rows:
             texts = [t for _a, _b, t in cells]
             if margin is None:
+                if strict:
+                    # All four header words on one baseline. This is how
+                    # Tsirang, Bumthang and Chhukha print it, and it is tried
+                    # first because it cannot mistake a data row for a header.
+                    if (HEADER_KEY in texts and HEADER_EDGE in texts
+                            and "Male" in texts and "Female" in texts):
+                        edge = min(x0 for x0, _x1, t in cells
+                                   if t == HEADER_KEY)
+                        margin = max(x1 for _x0, x1, t in cells
+                                     if t == HEADER_EDGE)
+                        reading = found_here = True
+                    continue
+                # Relaxed: the two header rows landed on different baselines,
+                # which is how Dagana prints it. Only reached when the strict
+                # pass read nothing at all from this document.
                 if edge is None:
                     if HEADER_KEY in texts:
                         edge = min(x0 for x0, _x1, t in cells
                                    if t == HEADER_KEY)
-                        waited = 0
                         found_here = True
-                        if HEADER_EDGE in texts:
-                            margin = max(x1 for _x0, x1, t in cells
-                                         if t == HEADER_EDGE)
-                            reading = True
                     continue
-                # The header opened on an earlier line and its second row is
-                # still to come. Give it two lines, then give up on the right
-                # edge rather than on the table: clipping is what keeps a
-                # chart printed beside the table out, and a table with no
-                # chart beside it does not need it.
                 if HEADER_EDGE in texts:
                     margin = max(x1 for _x0, x1, t in cells
                                  if t == HEADER_EDGE)
                 else:
-                    waited += 1
-                    if waited < 2:
-                        continue
                     margin = float("inf")
-                reading = True
-                found_here = True
+                reading = found_here = True
                 continue
             inside = [(x0, x1, t) for x0, x1, t in cells
                       if x0 >= edge - 3.0 and x1 <= margin + 6.0]
@@ -329,6 +330,30 @@ def table(blob: bytes, dzongkhag: str
         if reading and not found_here:
             break
 
+    return gewogs, towns, printed
+
+
+def table(blob: bytes, dzongkhag: str
+          ) -> tuple[dict[str, int], dict[str, int], int]:
+    """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
+
+    Two passes, and the order matters. The strict one wants all four header
+    words on a single baseline; it cannot mistake a data row for a header, and
+    it is how most of the twenty print it. Only when that reads nothing at all
+    is the relaxed pass tried, which takes the header's second row from a
+    following line -- Dagana's layout, and loose enough that letting it run
+    first cost Bumthang its whole table.
+    """
+    gewogs, towns, printed = scan(blob, True, dzongkhag)
+    counted = sum(gewogs.values()) + sum(towns.values())
+    if not gewogs or not printed or counted != printed:
+        # The strict pass either found no header or found one and did not
+        # reconcile. Either way the relaxed pass is worth asking, and only a
+        # result that reconciles is allowed to replace one that does not.
+        loose = scan(blob, False, dzongkhag)
+        if loose[0] and loose[2] and \
+                sum(loose[0].values()) + sum(loose[1].values()) == loose[2]:
+            gewogs, towns, printed = loose
     if not gewogs:
         raise SystemExit(f"bhutan: {dzongkhag}: no gewog rows read from "
                          f"Table 2.1")
