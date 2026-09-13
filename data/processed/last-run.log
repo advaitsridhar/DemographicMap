@@ -59,6 +59,7 @@ pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11
     and its 1 districts are Table 9's districts
   Azad Jammu and Kashmir
   Gilgit-Baltistan
+  6 districts say what their Other language holds, and 1 what their Other religion does
   NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
   NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
   Azad Jammu and Kashmir, from the territory's own yearbook
@@ -68,5 +69,5 @@ pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11
     all 7 columns sum to the printed AJ&K row
     Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
   11 records declaring what is not published, rather than leaving the field empty
-  wrote data/processed/pakistan_district.json (614 kB)
+  wrote data/processed/pakistan_district.json (616 kB)
   138 districts and 7 provinces
