@@ -136,11 +136,6 @@
         "count": 7036
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.1,
-        "count": 7026
-      },
-      {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.1,
         "count": 4128
@@ -149,6 +144,41 @@
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 3854
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 516
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 242
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 131
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 520
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 1583
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 1936
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 2098
       }
     ],
     "ethnicity": [
@@ -215,7 +245,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -312,9 +342,9 @@
         "count": 578448
       },
       {
-        "group": "Other and unspecified",
-        "pct": 4.1,
-        "count": 28129
+        "group": "Other Native languages of North America",
+        "pct": 3.8,
+        "count": 26194
       },
       {
         "group": "Spanish",
@@ -367,9 +397,39 @@
         "count": 1520
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 394
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 785
+      },
+      {
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 788
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 419
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 159
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 133
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 45
       }
     ],
     "ethnicity": [
@@ -436,7 +496,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -543,9 +603,9 @@
         "count": 1355303
       },
       {
-        "group": "Other and unspecified",
-        "pct": 2.0,
-        "count": 137525
+        "group": "Navajo",
+        "pct": 1.2,
+        "count": 79956
       },
       {
         "group": "Other Indo-European",
@@ -561,6 +621,11 @@
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.5,
         "count": 33133
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.4,
+        "count": 26033
       },
       {
         "group": "Russian, Polish, or other Slavic",
@@ -593,9 +658,34 @@
         "count": 22276
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.2,
+        "count": 11306
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 10112
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 3743
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 9105
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 4857
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 2525
       }
     ],
     "ethnicity": [
@@ -662,7 +752,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -809,11 +899,6 @@
         "count": 2057
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.1,
-        "count": 2872
-      },
-      {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.1,
         "count": 1813
@@ -822,6 +907,41 @@
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 3154
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 125
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 181
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 382
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 501
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 428
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 1249
       }
     ],
     "ethnicity": [
@@ -888,7 +1008,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -1035,11 +1155,6 @@
         "count": 204651
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.6,
-        "count": 209402
-      },
-      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.4,
         "count": 134920
@@ -1048,6 +1163,41 @@
         "group": "German or other West Germanic",
         "pct": 0.3,
         "count": 118844
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.2,
+        "count": 64039
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.1,
+        "count": 44474
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 38582
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 37524
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 921
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 6457
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 17405
       }
     ],
     "ethnicity": [
@@ -1114,7 +1264,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -1226,11 +1376,6 @@
         "count": 49072
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.7,
-        "count": 38279
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.6,
         "count": 35187
@@ -1261,6 +1406,11 @@
         "count": 19808
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.3,
+        "count": 17428
+      },
+      {
         "group": "Arabic",
         "pct": 0.3,
         "count": 14008
@@ -1274,6 +1424,36 @@
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.2,
         "count": 8724
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 4227
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 4178
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 7240
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 2014
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 1686
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 1506
       }
     ],
     "ethnicity": [
@@ -1340,7 +1520,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -1467,11 +1647,6 @@
         "count": 29463
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.7,
-        "count": 23320
-      },
-      {
         "group": "Arabic",
         "pct": 0.4,
         "count": 12223
@@ -1487,6 +1662,11 @@
         "count": 6575
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.2,
+        "count": 7707
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.2,
         "count": 8353
@@ -1495,6 +1675,36 @@
         "group": "Vietnamese",
         "pct": 0.2,
         "count": 8089
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.2,
+        "count": 8061
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.1,
+        "count": 2320
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 2936
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 1372
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 907
       }
     ],
     "ethnicity": [
@@ -1561,7 +1771,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -1683,11 +1893,6 @@
         "count": 8457
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.8,
-        "count": 7557
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.7,
         "count": 6817
@@ -1696,6 +1901,11 @@
         "group": "German or other West Germanic",
         "pct": 0.6,
         "count": 5227
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.4,
+        "count": 3472
       },
       {
         "group": "Arabic",
@@ -1718,9 +1928,34 @@
         "count": 1729
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.2,
+        "count": 1581
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.2,
+        "count": 1849
+      },
+      {
         "group": "Vietnamese",
         "pct": 0.2,
         "count": 1683
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 410
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 176
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 69
       }
     ],
     "ethnicity": [
@@ -1787,7 +2022,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -1894,11 +2129,6 @@
         "count": 57647
       },
       {
-        "group": "Other and unspecified",
-        "pct": 1.9,
-        "count": 11686
-      },
-      {
         "group": "Other Indo-European",
         "pct": 1.7,
         "count": 10670
@@ -1907,6 +2137,11 @@
         "group": "French, Haitian, or Cajun",
         "pct": 1.4,
         "count": 9061
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 1.1,
+        "count": 6951
       },
       {
         "group": "Chinese (incl. Mandarin, Cantonese)",
@@ -1939,6 +2174,16 @@
         "count": 1926
       },
       {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.3,
+        "count": 2189
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.2,
+        "count": 1013
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.2,
         "count": 1250
@@ -1947,6 +2192,21 @@
         "group": "Vietnamese",
         "pct": 0.2,
         "count": 1209
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.1,
+        "count": 700
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 798
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 35
       }
     ],
     "ethnicity": [
@@ -2013,7 +2273,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -2150,11 +2410,6 @@
         "count": 80397
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.4,
-        "count": 81568
-      },
-      {
         "group": "Arabic",
         "pct": 0.3,
         "count": 70511
@@ -2170,9 +2425,44 @@
         "count": 69570
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.2,
+        "count": 36219
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.1,
+        "count": 21442
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 17768
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 11299
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 4831
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 231
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 1613
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 5933
       }
     ],
     "ethnicity": [
@@ -2239,7 +2529,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -2346,11 +2636,6 @@
         "count": 153567
       },
       {
-        "group": "Other and unspecified",
-        "pct": 1.0,
-        "count": 96138
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.8,
         "count": 83126
@@ -2376,6 +2661,11 @@
         "count": 50008
       },
       {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.4,
+        "count": 40172
+      },
+      {
         "group": "German or other West Germanic",
         "pct": 0.3,
         "count": 29550
@@ -2386,14 +2676,44 @@
         "count": 30147
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.2,
+        "count": 25206
+      },
+      {
         "group": "Arabic",
         "pct": 0.2,
         "count": 20651
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 11492
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 13753
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 15068
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 4514
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 956
       }
     ],
     "ethnicity": [
@@ -2460,7 +2780,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -2583,8 +2903,8 @@
       },
       {
         "group": "Other and unspecified",
-        "pct": 1.1,
-        "count": 15130
+        "pct": 1.0,
+        "count": 13796
       },
       {
         "group": "Vietnamese",
@@ -2615,6 +2935,36 @@
         "group": "Arabic",
         "pct": 0.1,
         "count": 689
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 72
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 489
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 203
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 301
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 263
       }
     ],
     "ethnicity": [
@@ -2681,7 +3031,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -2808,11 +3158,6 @@
         "count": 5897
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.3,
-        "count": 5658
-      },
-      {
         "group": "Arabic",
         "pct": 0.2,
         "count": 3166
@@ -2833,6 +3178,16 @@
         "count": 1519
       },
       {
+        "group": "Other Native languages of North America",
+        "pct": 0.1,
+        "count": 1751
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 1569
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 1709
@@ -2841,6 +3196,31 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 1913
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 646
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 265
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 357
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 865
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 205
       }
     ],
     "ethnicity": [
@@ -2907,7 +3287,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -3044,11 +3424,6 @@
         "count": 69061
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.6,
-        "count": 67834
-      },
-      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.4,
         "count": 42258
@@ -3064,9 +3439,44 @@
         "count": 41039
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.2,
+        "count": 21028
+      },
+      {
         "group": "Vietnamese",
         "pct": 0.2,
         "count": 23942
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.2,
+        "count": 27103
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 8174
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 4953
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 980
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 5477
       }
     ],
     "ethnicity": [
@@ -3133,7 +3543,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -3260,11 +3670,6 @@
         "count": 25036
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.4,
-        "count": 24280
-      },
-      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.3,
         "count": 19033
@@ -3280,9 +3685,19 @@
         "count": 12902
       },
       {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.2,
+        "count": 11215
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 7490
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 5693
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -3293,6 +3708,31 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 7520
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 3174
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 571
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 623
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 2992
       }
     ],
     "ethnicity": [
@@ -3359,7 +3799,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -3481,11 +3921,6 @@
         "count": 16312
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.5,
-        "count": 15957
-      },
-      {
         "group": "Arabic",
         "pct": 0.4,
         "count": 11113
@@ -3511,6 +3946,16 @@
         "count": 8460
       },
       {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.2,
+        "count": 7009
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 3598
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 3217
@@ -3519,6 +3964,31 @@
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 3586
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 2966
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 237
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 1260
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 846
       }
     ],
     "ethnicity": [
@@ -3585,7 +4055,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -3702,11 +4172,6 @@
         "count": 17754
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.5,
-        "count": 13188
-      },
-      {
         "group": "Vietnamese",
         "pct": 0.5,
         "count": 13100
@@ -3732,9 +4197,19 @@
         "count": 5028
       },
       {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.2,
+        "count": 5456
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.2,
         "count": 4155
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 3270
       },
       {
         "group": "Korean",
@@ -3745,6 +4220,31 @@
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.1,
         "count": 3411
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 2112
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 375
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 218
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 688
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 1069
       }
     ],
     "ethnicity": [
@@ -3811,7 +4311,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -3933,11 +4433,6 @@
         "count": 21989
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.4,
-        "count": 16395
-      },
-      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.3,
         "count": 11036
@@ -3958,6 +4453,16 @@
         "count": 8094
       },
       {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.2,
+        "count": 7337
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 3980
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 3642
@@ -3971,6 +4476,31 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 4399
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 2588
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 310
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 322
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 1836
       }
     ],
     "ethnicity": [
@@ -4037,7 +4567,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -4179,11 +4709,6 @@
         "count": 2410
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.1,
-        "count": 6309
-      },
-      {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.1,
         "count": 3680
@@ -4192,6 +4717,41 @@
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 5152
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 973
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 572
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 450
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 1302
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 1071
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 1931
       }
     ],
     "ethnicity": [
@@ -4258,7 +4818,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -4370,14 +4930,14 @@
         "count": 11381
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.6,
-        "count": 7880
-      },
-      {
         "group": "Other Indo-European",
         "pct": 0.5,
         "count": 7031
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.3,
+        "count": 3348
       },
       {
         "group": "German or other West Germanic",
@@ -4400,9 +4960,24 @@
         "count": 3070
       },
       {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.2,
+        "count": 2170
+      },
+      {
         "group": "Arabic",
         "pct": 0.1,
         "count": 1859
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.1,
+        "count": 889
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 748
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -4415,9 +4990,24 @@
         "count": 948
       },
       {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 222
+      },
+      {
         "group": "Korean",
         "pct": 0.0,
         "count": 621
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 481
       }
     ],
     "ethnicity": [
@@ -4484,7 +5074,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -4591,11 +5181,6 @@
         "count": 141749
       },
       {
-        "group": "Other and unspecified",
-        "pct": 2.4,
-        "count": 136826
-      },
-      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 1.2,
         "count": 71876
@@ -4606,9 +5191,19 @@
         "count": 71457
       },
       {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 1.1,
+        "count": 62233
+      },
+      {
         "group": "Other Asian and Pacific Island",
         "pct": 1.0,
         "count": 56588
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.7,
+        "count": 39522
       },
       {
         "group": "Korean",
@@ -4639,6 +5234,26 @@
         "group": "German or other West Germanic",
         "pct": 0.3,
         "count": 19851
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.2,
+        "count": 13729
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.2,
+        "count": 13732
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.1,
+        "count": 6725
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 885
       }
     ],
     "ethnicity": [
@@ -4705,7 +5320,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -4837,11 +5452,6 @@
         "count": 66362
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.9,
-        "count": 62993
-      },
-      {
         "group": "Vietnamese",
         "pct": 0.7,
         "count": 43960
@@ -4862,9 +5472,44 @@
         "count": 17352
       },
       {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.3,
+        "count": 19567
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.2,
+        "count": 10307
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.2,
+        "count": 14648
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.1,
+        "count": 8447
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 9191
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 8166
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 779
       }
     ],
     "ethnicity": [
@@ -4931,7 +5576,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -5053,11 +5698,6 @@
         "count": 68333
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.6,
-        "count": 60755
-      },
-      {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.6,
         "count": 54395
@@ -5071,6 +5711,11 @@
         "group": "German or other West Germanic",
         "pct": 0.5,
         "count": 44277
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.3,
+        "count": 31982
       },
       {
         "group": "French, Haitian, or Cajun",
@@ -5091,6 +5736,36 @@
         "group": "Vietnamese",
         "pct": 0.2,
         "count": 15412
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 5022
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 10250
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 7584
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 3171
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 2735
       }
     ],
     "ethnicity": [
@@ -5157,7 +5832,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -5264,14 +5939,14 @@
         "count": 208102
       },
       {
-        "group": "Other and unspecified",
-        "pct": 2.5,
-        "count": 131446
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 2.3,
         "count": 125733
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 1.7,
+        "count": 92287
       },
       {
         "group": "Other Indo-European",
@@ -5309,14 +5984,44 @@
         "count": 18687
       },
       {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.3,
+        "count": 15013
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.2,
+        "count": 11827
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 4003
       },
       {
+        "group": "Other Native languages of North America",
+        "pct": 0.1,
+        "count": 6064
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 4955
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 7871
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 1074
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 226
       }
     ],
     "ethnicity": [
@@ -5383,7 +6088,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -5490,9 +6195,9 @@
         "count": 8325
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.3,
-        "count": 7553
+        "group": "Other Native languages of North America",
+        "pct": 0.2,
+        "count": 4508
       },
       {
         "group": "Vietnamese",
@@ -5530,14 +6235,39 @@
         "count": 2519
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 262
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 138
+      },
+      {
         "group": "Korean",
         "pct": 0.0,
         "count": 1040
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 992
+      },
+      {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.0,
         "count": 1088
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 705
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 948
       }
     ],
     "ethnicity": [
@@ -5604,7 +6334,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -5731,11 +6461,6 @@
         "count": 21756
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.4,
-        "count": 20892
-      },
-      {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.4,
         "count": 25035
@@ -5756,14 +6481,49 @@
         "count": 13046
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 7080
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 7079
       },
       {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 6541
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 8471
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 3795
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 950
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 633
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 1832
       }
     ],
     "ethnicity": [
@@ -5830,7 +6590,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -5937,9 +6697,9 @@
         "count": 7674
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.7,
-        "count": 7629
+        "group": "Other Native languages of North America",
+        "pct": 0.6,
+        "count": 6445
       },
       {
         "group": "Other Indo-European",
@@ -5967,6 +6727,11 @@
         "count": 2027
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 653
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 1309
@@ -5977,14 +6742,39 @@
         "count": 667
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
         "group": "Arabic",
         "pct": 0.0,
         "count": 422
       },
       {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 119
+      },
+      {
         "group": "Korean",
         "pct": 0.0,
         "count": 277
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 187
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 138
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 83
       }
     ],
     "ethnicity": [
@@ -6051,7 +6841,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -6163,11 +6953,6 @@
         "count": 12547
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.6,
-        "count": 11720
-      },
-      {
         "group": "Vietnamese",
         "pct": 0.4,
         "count": 6905
@@ -6198,14 +6983,49 @@
         "count": 5686
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.2,
+        "count": 4152
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.2,
+        "count": 3803
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 1416
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 1177
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 2589
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 1543
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 140
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 178
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 727
       }
     ],
     "ethnicity": [
@@ -6272,7 +7092,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -6394,9 +7214,9 @@
         "count": 30019
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.9,
-        "count": 25999
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.5,
+        "count": 13563
       },
       {
         "group": "Russian, Polish, or other Slavic",
@@ -6427,6 +7247,36 @@
         "group": "Arabic",
         "pct": 0.2,
         "count": 6889
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.1,
+        "count": 3083
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.1,
+        "count": 2231
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 2968
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 1946
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 1727
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 481
       }
     ],
     "ethnicity": [
@@ -6493,7 +7343,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -6610,11 +7460,6 @@
         "count": 5104
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.4,
-        "count": 5060
-      },
-      {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.4,
         "count": 5412
@@ -6630,6 +7475,11 @@
         "count": 2258
       },
       {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.2,
+        "count": 2198
+      },
+      {
         "group": "Vietnamese",
         "pct": 0.2,
         "count": 2064
@@ -6640,9 +7490,39 @@
         "count": 1593
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 1053
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 1867
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 492
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 393
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 279
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 643
       }
     ],
     "ethnicity": [
@@ -6709,7 +7589,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -6836,11 +7716,6 @@
         "count": 96079
       },
       {
-        "group": "Other and unspecified",
-        "pct": 1.1,
-        "count": 94205
-      },
-      {
         "group": "Arabic",
         "pct": 0.9,
         "count": 79111
@@ -6856,14 +7731,44 @@
         "count": 79369
       },
       {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.5,
+        "count": 41918
+      },
+      {
         "group": "German or other West Germanic",
         "pct": 0.3,
         "count": 29966
       },
       {
+        "group": "Hebrew",
+        "pct": 0.2,
+        "count": 20389
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.2,
+        "count": 18356
+      },
+      {
         "group": "Vietnamese",
         "pct": 0.2,
         "count": 17749
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 5294
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 7269
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 979
       }
     ],
     "ethnicity": [
@@ -6930,7 +7835,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -7037,9 +7942,14 @@
         "count": 507789
       },
       {
-        "group": "Other and unspecified",
-        "pct": 4.9,
-        "count": 98098
+        "group": "Navajo",
+        "pct": 3.1,
+        "count": 62467
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 1.6,
+        "count": 32006
       },
       {
         "group": "Other Indo-European",
@@ -7090,6 +8000,31 @@
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.1,
         "count": 2747
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 1430
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 153
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 220
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 832
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 990
       }
     ],
     "ethnicity": [
@@ -7156,7 +8091,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -7288,11 +8223,6 @@
         "count": 261221
       },
       {
-        "group": "Other and unspecified",
-        "pct": 1.2,
-        "count": 227034
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.9,
         "count": 177857
@@ -7308,14 +8238,49 @@
         "count": 91429
       },
       {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.5,
+        "count": 96737
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.4,
         "count": 78814
       },
       {
+        "group": "Hebrew",
+        "pct": 0.3,
+        "count": 58478
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.2,
+        "count": 38767
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 16919
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 12283
+      },
+      {
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 22091
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 173
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 3677
       }
     ],
     "ethnicity": [
@@ -7382,7 +8347,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -7504,11 +8469,6 @@
         "count": 38024
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.4,
-        "count": 39928
-      },
-      {
         "group": "Arabic",
         "pct": 0.3,
         "count": 30931
@@ -7537,6 +8497,41 @@
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.2,
         "count": 15442
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 7387
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 5336
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 8820
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 13865
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 1760
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 270
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 2490
       }
     ],
     "ethnicity": [
@@ -7603,7 +8598,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -7700,11 +8695,6 @@
         "count": 14418
       },
       {
-        "group": "Other and unspecified",
-        "pct": 1.3,
-        "count": 9234
-      },
-      {
         "group": "German or other West Germanic",
         "pct": 0.8,
         "count": 5589
@@ -7713,6 +8703,11 @@
         "group": "Other Indo-European",
         "pct": 0.8,
         "count": 5542
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.3,
+        "count": 2471
       },
       {
         "group": "Arabic",
@@ -7725,9 +8720,19 @@
         "count": 2493
       },
       {
+        "group": "Other Native languages of North America",
+        "pct": 0.3,
+        "count": 2309
+      },
+      {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.3,
         "count": 2024
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.3,
+        "count": 2160
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -7740,6 +8745,11 @@
         "count": 1771
       },
       {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.2,
+        "count": 1675
+      },
+      {
         "group": "Chinese (incl. Mandarin, Cantonese)",
         "pct": 0.1,
         "count": 1060
@@ -7750,9 +8760,24 @@
         "count": 1079
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 554
+      },
+      {
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 739
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 63
       }
     ],
     "ethnicity": [
@@ -7819,7 +8844,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -7936,11 +8961,6 @@
         "count": 100200
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.7,
-        "count": 77088
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.5,
         "count": 57201
@@ -7961,14 +8981,34 @@
         "count": 47081
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.3,
+        "count": 32566
+      },
+      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.3,
         "count": 31865
       },
       {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.2,
+        "count": 22925
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 9656
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 7829
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 10234
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -7979,6 +9019,21 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 11681
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 2756
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 758
       }
     ],
     "ethnicity": [
@@ -8045,7 +9100,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -8157,11 +9212,6 @@
         "count": 25454
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.6,
-        "count": 21927
-      },
-      {
         "group": "Other Indo-European",
         "pct": 0.4,
         "count": 16716
@@ -8180,6 +9230,11 @@
         "group": "German or other West Germanic",
         "pct": 0.3,
         "count": 10224
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.3,
+        "count": 11885
       },
       {
         "group": "Arabic",
@@ -8202,9 +9257,39 @@
         "count": 4440
       },
       {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 3011
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 4504
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 3269
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 1367
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 665
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 269
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 1461
       }
     ],
     "ethnicity": [
@@ -8271,7 +9356,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -8398,11 +9483,6 @@
         "count": 27447
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.5,
-        "count": 19143
-      },
-      {
         "group": "German or other West Germanic",
         "pct": 0.4,
         "count": 16591
@@ -8423,9 +9503,44 @@
         "count": 12239
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.2,
+        "count": 6247
+      },
+      {
         "group": "Arabic",
         "pct": 0.2,
         "count": 9304
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.1,
+        "count": 2139
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 4930
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 1854
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 342
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 1711
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 1920
       }
     ],
     "ethnicity": [
@@ -8492,7 +9607,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -8624,11 +9739,6 @@
         "count": 86863
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.5,
-        "count": 55484
-      },
-      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.4,
         "count": 54924
@@ -8649,9 +9759,44 @@
         "count": 27226
       },
       {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.2,
+        "count": 20805
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 7551
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 12190
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 9034
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 17035
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 4983
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 144
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 777
       }
     ],
     "ethnicity": [
@@ -8718,7 +9863,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -8840,14 +9985,14 @@
         "count": 6762
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.7,
-        "count": 7005
-      },
-      {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.5,
         "count": 5116
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.4,
+        "count": 4297
       },
       {
         "group": "Arabic",
@@ -8865,6 +10010,16 @@
         "count": 1307
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 1191
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 876
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 1536
@@ -8873,6 +10028,26 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 820
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 212
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 313
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 89
       }
     ],
     "ethnicity": [
@@ -8939,7 +10114,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -9071,11 +10246,6 @@
         "count": 11574
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.2,
-        "count": 10814
-      },
-      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.2,
         "count": 8786
@@ -9094,6 +10264,41 @@
         "group": "Korean",
         "pct": 0.1,
         "count": 4573
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 3313
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 2785
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 1219
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 1011
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 407
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 2071
       }
     ],
     "ethnicity": [
@@ -9160,7 +10365,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -9262,9 +10467,9 @@
         "count": 17994
       },
       {
-        "group": "Other and unspecified",
-        "pct": 1.8,
-        "count": 15209
+        "group": "Other Native languages of North America",
+        "pct": 1.1,
+        "count": 8805
       },
       {
         "group": "German or other West Germanic",
@@ -9277,6 +10482,11 @@
         "count": 3988
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.4,
+        "count": 2916
+      },
+      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.4,
         "count": 3148
@@ -9285,6 +10495,11 @@
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.3,
         "count": 2466
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.3,
+        "count": 2577
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -9312,9 +10527,29 @@
         "count": 469
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 493
+      },
+      {
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 566
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 360
       }
     ],
     "ethnicity": [
@@ -9381,7 +10616,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -9498,11 +10733,6 @@
         "count": 29651
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.4,
-        "count": 24780
-      },
-      {
         "group": "German or other West Germanic",
         "pct": 0.3,
         "count": 17000
@@ -9528,14 +10758,49 @@
         "count": 10526
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 8137
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 7877
       },
       {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 5958
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 8175
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 7721
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 534
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 454
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 1940
       }
     ],
     "ethnicity": [
@@ -9602,7 +10867,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -9724,11 +10989,6 @@
         "count": 183619
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.7,
-        "count": 189091
-      },
-      {
         "group": "Arabic",
         "pct": 0.4,
         "count": 110884
@@ -9749,6 +11009,11 @@
         "count": 86800
       },
       {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.3,
+        "count": 89036
+      },
+      {
         "group": "Korean",
         "pct": 0.2,
         "count": 66818
@@ -9757,6 +11022,36 @@
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.2,
         "count": 59500
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 38055
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 37500
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 7465
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 756
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 4002
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 12277
       }
     ],
     "ethnicity": [
@@ -9823,7 +11118,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -9940,11 +11235,6 @@
         "count": 16185
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.5,
-        "count": 15844
-      },
-      {
         "group": "German or other West Germanic",
         "pct": 0.4,
         "count": 10733
@@ -9975,9 +11265,44 @@
         "count": 5263
       },
       {
+        "group": "Navajo",
+        "pct": 0.2,
+        "count": 6738
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.2,
         "count": 6735
+      },
+      {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 2392
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 1697
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 2737
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 145
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 1235
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 900
       }
     ],
     "ethnicity": [
@@ -10044,7 +11369,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -10176,9 +11501,9 @@
         "count": 1903
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.3,
-        "count": 2047
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 356
       },
       {
         "group": "Arabic",
@@ -10191,6 +11516,16 @@
         "count": 426
       },
       {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 349
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 472
+      },
+      {
         "group": "Tagalog (incl. Filipino)",
         "pct": 0.1,
         "count": 637
@@ -10199,6 +11534,21 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 543
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 554
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 241
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 75
       }
     ],
     "ethnicity": [
@@ -10265,7 +11615,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -10382,11 +11732,6 @@
         "count": 93708
       },
       {
-        "group": "Other and unspecified",
-        "pct": 1.0,
-        "count": 83691
-      },
-      {
         "group": "Arabic",
         "pct": 0.7,
         "count": 59293
@@ -10412,6 +11757,11 @@
         "count": 52098
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.5,
+        "count": 40652
+      },
+      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.5,
         "count": 40233
@@ -10425,6 +11775,36 @@
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.4,
         "count": 29770
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.3,
+        "count": 24500
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 8277
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.1,
+        "count": 7458
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 1971
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 88
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 745
       }
     ],
     "ethnicity": [
@@ -10491,7 +11871,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -10618,11 +11998,6 @@
         "count": 106883
       },
       {
-        "group": "Other and unspecified",
-        "pct": 1.1,
-        "count": 78158
-      },
-      {
         "group": "Vietnamese",
         "pct": 1.0,
         "count": 69154
@@ -10638,6 +12013,11 @@
         "count": 52678
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.5,
+        "count": 39820
+      },
+      {
         "group": "French, Haitian, or Cajun",
         "pct": 0.4,
         "count": 28117
@@ -10651,6 +12031,36 @@
         "group": "Arabic",
         "pct": 0.3,
         "count": 23926
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.2,
+        "count": 14987
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.1,
+        "count": 3773
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.1,
+        "count": 4489
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.1,
+        "count": 6762
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 8066
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 261
       }
     ],
     "ethnicity": [
@@ -10717,7 +12127,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -10844,11 +12254,6 @@
         "count": 2375
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.1,
-        "count": 1830
-      },
-      {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.1,
         "count": 1080
@@ -10864,9 +12269,39 @@
         "count": 1142
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 210
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
         "group": "Korean",
         "pct": 0.0,
         "count": 740
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 109
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 511
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 337
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 644
       }
     ],
     "ethnicity": [
@@ -10933,7 +12368,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -11060,11 +12495,6 @@
         "count": 17916
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.3,
-        "count": 14373
-      },
-      {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.3,
         "count": 18498
@@ -11080,6 +12510,11 @@
         "count": 8629
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.1,
+        "count": 3291
+      },
+      {
         "group": "Korean",
         "pct": 0.1,
         "count": 3302
@@ -11093,6 +12528,36 @@
         "group": "Vietnamese",
         "pct": 0.1,
         "count": 4461
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.1,
+        "count": 3057
+      },
+      {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 876
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 109
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.0,
+        "count": 2691
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 1755
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 2594
       }
     ],
     "ethnicity": [
@@ -11159,7 +12624,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -11256,14 +12721,14 @@
         "count": 1973
       },
       {
-        "group": "Other and unspecified",
-        "pct": 0.4,
-        "count": 2145
-      },
-      {
         "group": "Other Asian and Pacific Island",
         "pct": 0.3,
         "count": 1556
+      },
+      {
+        "group": "Other Native languages of North America",
+        "pct": 0.3,
+        "count": 1450
       },
       {
         "group": "Chinese (incl. Mandarin, Cantonese)",
@@ -11296,14 +12761,44 @@
         "count": 315
       },
       {
+        "group": "Amharic, Somali, or other Afro-Asiatic",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
         "group": "Arabic",
         "pct": 0.0,
         "count": 77
       },
       {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
         "group": "Korean",
         "pct": 0.0,
         "count": 182
+      },
+      {
+        "group": "Navajo",
+        "pct": 0.0,
+        "count": 177
+      },
+      {
+        "group": "Other and unspecified",
+        "pct": 0.0,
+        "count": 265
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 68
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 140
       }
     ],
     "ethnicity": [
@@ -11370,7 +12865,7 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001).",
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used.",
     "religion_year": 2020,
     "religion_basis": "adherents",
     "religion_note": "2020 U.S. Religion Census (ASARB): adherents reported by 372 religious bodies, grouped into traditions and expressed as a share of the 2020 census population. These are counts of people reported by religious bodies, not answers people gave about themselves. The study accounted for about 48.6% of the population nationally, and between 27% and 76% depending on the state; the rest is shown as one category because it mixes people who belong to nothing with members of bodies that did not report, and the study cannot tell them apart. Not comparable with the census religion figures used for other countries."
@@ -11439,6 +12934,11 @@
         "count": 353
       },
       {
+        "group": "Hebrew",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
         "group": "Korean",
         "pct": 0.0,
         "count": 51
@@ -11456,12 +12956,17 @@
       {
         "group": "Other and unspecified",
         "pct": 0.0,
-        "count": 162
+        "count": 65
       },
       {
         "group": "Russian, Polish, or other Slavic",
         "pct": 0.0,
         "count": 39
+      },
+      {
+        "group": "Swahili or other languages of Central, Eastern, and Southern Africa",
+        "pct": 0.0,
+        "count": 20
       },
       {
         "group": "Tagalog (incl. Filipino)",
@@ -11472,6 +12977,11 @@
         "group": "Vietnamese",
         "pct": 0.0,
         "count": 41
+      },
+      {
+        "group": "Yoruba, Twi, Igbo, or other languages of Western Africa",
+        "pct": 0.0,
+        "count": 28
       }
     ],
     "ethnicity": [
@@ -11532,6 +13042,6 @@
     "ethnicity_year": 2022,
     "ethnicity_note": "US Census race and Hispanic-origin categories (ACS table B03002). Not comparable with other countries' ethnicity classifications.",
     "language_year": 2022,
-    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001)."
+    "language_note": "Language spoken at home, population 5 years and over (ACS table C16001), with C16001's own 'Other and unspecified' column replaced by the seven lines of the detailed table B16001 that make it up -- Hebrew, the Afro-Asiatic, West African and Central/Eastern/Southern African groupings, Navajo, other Native languages of North America, and what is still unspecified after those. Both tables are the same survey's, and the parts are checked against the column they replace before either is used."
   }
 ]
