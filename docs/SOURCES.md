@@ -2664,6 +2664,18 @@ be fetched over a connection that verifies:
   the server never sends its intermediate, so no chain can be built. A browser
   papers over this by fetching the issuer the certificate names; urllib does
   not.
+
+  > **This one is now openable, and the repair is the project's own.**
+  > `probe_tls --chain` fetched the intermediate from the certificate's AIA
+  > `caIssuers` extension, then the root above it, and reported **VERIFIED
+  > handshake ok, TLSv1.3**; the census page then answered 200 and linked the
+  > office's own PDFs, which serve 200 to a plain client. That is the same
+  > `aia=True` repair `india_census.py` uses, and it is full verification
+  > rather than a way round it — see `scripts/probe_tls.py`. It is what the
+  > Bangladesh language evidence below is cited from. The workbook itself is
+  > still read from HDX, which works and is the office's own file under a CC0
+  > release; moving a working data path is a separate change from recording
+  > that the host is no longer shut.
 * `bbs.portal.gov.bd` answers with a "Kubernetes Ingress Controller Fake
   Certificate" for `ingress.local`.
 * `file.portal.gov.bd`, `sid.portal.gov.bd` and `portal.gov.bd` time out.
@@ -2729,11 +2741,16 @@ order:
 | the HDX workbook's 42 sheets, listed in full | dwelling, household type, sex, marital status, **religion**, growth and sex ratio, disability, literacy (three sheets, one of them by religion), students, working status, work type, sector, NEET, mobile phone, internet, financial account, mobile banking, **ethnic population**, nationality, returned migrant, and fourteen housing sheets. **No language sheet, and no language column in the 445-column merged sheet.** |
 | `nsds.bbs.gov.bd` (two census pages) | timed out, both |
 | `file.portal.gov.bd` (the National Report) | timed out |
-| `web.archive.org` mirror of `bbs.portal.gov.bd/.../2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf` | **200**, 10.3 MB, *Population and Housing Census 2022, National Report (Volume I)*, 520 pages |
+| `web.archive.org` mirror of `bbs.portal.gov.bd/.../2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf` | **200**, 10,307,919 bytes, *Population and Housing Census 2022, National Report (Volume I)*, 520 pages |
+| `bbs.gov.bd/site/page/47856ad0-…/Population-and-Housing-Census`, with the chain completed from AIA | **200**, and it links the office's own copy of that report |
+| `objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/…/9ce5bd160bb14a1ab1eabe886adddb9a.pdf` | **200**, **10,307,919 bytes**, 520 pages — the same file, first-hand |
+| that file, searched for *tongue* and *Language* | **one page in 520**, and it is the literacy definition ("can read and write at least in one language") |
 | `catalog.ihsn.org`, keyword *bangladesh* | 957 studies, none of them this census |
 
-The archived National Report is what settles it, because it describes the form
-the census was collected on. Section 1.8, *Census Questionnaire*, page 15:
+The National Report is what settles it, because it describes the form the
+census was collected on. It was first read through the Internet Archive and
+then from the office's own store, byte for byte the same file, which is the
+copy cited here. Section 1.8, *Census Questionnaire*, page 15:
 
 > The questionnaire consists of two modules the Household Module and the
 > Individual Module. In the Household Module, there are 15 questions on various
@@ -2743,12 +2760,13 @@ the census was collected on. Section 1.8, *Census Questionnaire*, page 15:
 > internet use, banking inclusion, ethnic population etc. Including all, there
 > are 35 questions in the census questionnaire.
 
-Language is not among them, and nothing downstream contradicts that: the
-report's contents list no language table, its 33 district tables (P1–P33) run
-from household and population through literacy, disability and work to
-*Ethnic Population by Sex and District* and *Ethnic Population by Category,
-Sex and Division* without one, and the office's own district workbook has 42
-topic sheets and none.
+Language is not among them, and nothing downstream contradicts that. The word
+appears on **one of the report's 520 pages**, and that page is the definition
+of literacy rather than a table. Its contents list no language table, its 33
+district tables (P1–P33) run from household and population through literacy,
+disability and work to *Ethnic Population by Sex and District* and *Ethnic
+Population by Category, Sex and Division* without one, and the office's own
+district workbook has 42 topic sheets and none.
 
 So Bangladesh's language is `not_collected`, in `NOT_COLLECTED_POLICY`, with
 that reason attached — the country and its 64 zilas from one place, so they

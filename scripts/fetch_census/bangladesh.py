@@ -13,7 +13,15 @@ that verifies:
 * ``bbs.gov.bd`` has a valid Sectigo certificate that does cover the host, but
   the server never sends its intermediate, so no chain can be built. A browser
   papers over this by fetching the issuer named in the certificate; urllib does
-  not.
+  not -- **and neither did this project when that was written.** It does now:
+  ``http_get(aia=True)`` fetches the missing intermediate from the
+  certificate's own AIA ``caIssuers`` extension and verifies against it plus
+  the public roots, which was measured on the runner as *VERIFIED handshake
+  ok, TLSv1.3*. So this host is open, and the census's own National Report is
+  read from it rather than from a mirror -- see ``NOT_COLLECTED_POLICY``'s
+  Bangladesh entry, which rests on it. The workbook below still comes from
+  HDX, which works; swapping a working data path is a change to make on its
+  own evidence, not a side effect of this note.
 * ``bbs.portal.gov.bd`` answers with a "Kubernetes Ingress Controller Fake
   Certificate" for ``ingress.local``.
 * ``file.portal.gov.bd``, ``sid.portal.gov.bd`` and ``portal.gov.bd`` time out.
