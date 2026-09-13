@@ -154,6 +154,117 @@ def geoid(row: dict[str, str], level: str) -> str:
     return row["state"] + (row.get("county", "") if level == "county" else "")
 
 
+# B16001 answers for states and for nothing smaller. Asked for every county
+# in the 2022 5-year file it returns a row per county with null in all seven
+# columns -- not an error, not a zero: no figure. So a county's own residual is
+# divided nowhere, and the twelve named categories plus one word are the
+# finest the ACS publishes at this level.
+#
+# The state's division is not carried down onto its counties either, which is
+# what India's district detail does for its districts. The reason is that here
+# the assumption fails in exactly the places the question is asked. A state's
+# residual mixes the languages of its reservations with those of its cities:
+# South Dakota's is 58% Native languages and 36% Amharic, Somali and Swahili,
+# the second of those being Sioux Falls. Scaled onto Todd County -- the Rosebud
+# Reservation, and 21.8% residual -- it would put several hundred East African
+# speakers there. That is a mis-matched row, and a mis-matched row is worse
+# than an undivided one.
+#
+# What is left is to say what the column holds. Below RESIDUAL_LOUD it is a
+# rounding line nobody asks about; above it, it is often the largest figure on
+# the shape.
+RESIDUAL_LOUD = 5.0
+
+COUNTY_RESIDUAL_NOTE = (
+    " This column is large here and the ACS does not divide it: its detailed "
+    "language table, B16001, is published for states and larger and answers "
+    "null for every county. The state's own division of the same column is not "
+    "scaled onto counties either, because a state's residual mixes the "
+    "languages of its reservations with those of its cities -- South Dakota's "
+    "is 58% Native languages beside 36% Amharic, Somali and Swahili, and "
+    "carrying that to the Rosebud Reservation would invent East African "
+    "speakers there.")
+
+# What the column holds, in the counties where it is over a tenth of everybody
+# and the answer is not in doubt: every one of them is a reservation or an
+# Alaska Native region, and every other language of any size in the United
+# States has a column of its own above. The languages are named from the
+# communities the county covers; the census names none of them.
+#
+# Keyed by GEOID and checked against the name the API returns for it, because
+# a FIPS code typed from memory onto the wrong county is a mis-match nobody
+# would see -- it would read as an ordinary sentence about an ordinary place.
+RESIDUAL_COUNTIES: dict[str, tuple[str, str]] = {
+    "02050": ("Bethel Census Area, Alaska", "Central Alaskan Yup'ik"),
+    "02158": ("Kusilvak Census Area, Alaska", "Central Alaskan Yup'ik"),
+    "02070": ("Dillingham Census Area, Alaska", "Central Alaskan Yup'ik"),
+    "02164": ("Lake and Peninsula Borough, Alaska",
+              "Central Alaskan Yup'ik and Alutiiq"),
+    "02180": ("Nome Census Area, Alaska",
+              "Inupiaq, Central Alaskan Yup'ik, and the St. Lawrence Island "
+              "Yupik of Gambell and Savoonga"),
+    "02185": ("North Slope Borough, Alaska", "Inupiaq"),
+    "02188": ("Northwest Arctic Borough, Alaska", "Inupiaq"),
+    "04001": ("Apache County, Arizona",
+              "Navajo, with Western Apache in the south of the county"),
+    "04005": ("Coconino County, Arizona", "Navajo and Hopi"),
+    "04017": ("Navajo County, Arizona", "Navajo and Hopi"),
+    "35006": ("Cibola County, New Mexico",
+              "Navajo, and the Western Keres of Acoma and Laguna"),
+    "35031": ("McKinley County, New Mexico", "Navajo and Zuni"),
+    "35045": ("San Juan County, New Mexico", "Navajo"),
+    "35053": ("Socorro County, New Mexico",
+              "Navajo, of the Alamo Navajo Reservation"),
+    "49037": ("San Juan County, Utah", "Navajo"),
+    "30003": ("Big Horn County, Montana", "Crow and Northern Cheyenne"),
+    "46007": ("Bennett County, South Dakota", "Lakota"),
+    "46031": ("Corson County, South Dakota", "Lakota"),
+    "46041": ("Dewey County, South Dakota", "Lakota"),
+    "46095": ("Mellette County, South Dakota", "Lakota"),
+    "46102": ("Oglala Lakota County, South Dakota", "Lakota"),
+    "46121": ("Todd County, South Dakota", "Lakota"),
+    "46137": ("Ziebach County, South Dakota", "Lakota"),
+}
+
+LANGUAGE_NOTE = ("Language spoken at home, population 5 years and over "
+                 "(ACS table C16001).")
+STATE_DETAIL_NOTE = (
+    " C16001's own 'Other and unspecified' column is replaced here by the "
+    "seven lines of the detailed table B16001 that make it up -- Hebrew, the "
+    "Afro-Asiatic, West African and Central/Eastern/Southern African "
+    "groupings, Navajo, other Native languages of North America, and what is "
+    "still unspecified after those. Both tables are the same survey's, and "
+    "the parts are checked against the column they replace before either is "
+    "used.")
+
+
+def residual_note(gid: str, name: str, rows: list[dict[str, Any]]) -> str:
+    """One county's language note: the general one, and what its Other holds.
+
+    Silent on a county whose residual is small -- most of them -- because a
+    paragraph about a 0.3% column on three thousand records is noise, not
+    provenance.
+    """
+    share = next((row["pct"] for row in rows if row["group"] == RESIDUAL), 0.0)
+    if share < RESIDUAL_LOUD:
+        return LANGUAGE_NOTE
+    note = LANGUAGE_NOTE + COUNTY_RESIDUAL_NOTE
+    named = RESIDUAL_COUNTIES.get(gid)
+    if named is None:
+        return note
+    expected, languages = named
+    if name != expected:
+        raise SystemExit(
+            f"us_acs: GEOID {gid} is {name!r} in this year's ACS and this "
+            f"file has it as {expected!r}. The sentence naming what its "
+            f"'{RESIDUAL}' column holds would go on the wrong county, which "
+            f"is not visible from the outside. Nothing is being emitted.")
+    return note + (
+        f" What it holds here is, in the main, {languages} -- named from the "
+        f"community this county covers and not by the census, which pools it "
+        f"with everything else it did not ask about.")
+
+
 def with_detail(counts: dict[str, float], detail: dict[str, float] | None,
                 name: str, raw: dict[str, str] | None = None) -> dict[str, float]:
     """C16001's twelve named categories, with its residual replaced by B16001's
@@ -202,8 +313,11 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
     lang = {geoid(r, level): r for r in query(year, [LANGUAGE_TOTAL, *LANGUAGE_LINES], geo, key)}
     # A second request rather than one: C16001 and B16001 are different tables
     # and the API takes one table's variables at a time well and both at once
-    # badly. The join is on the geoid, which both return.
-    fine = {geoid(r, level): r for r in query(year, list(RESIDUAL_DETAIL), geo, key)}
+    # badly. The join is on the geoid, which both return. Counties are not
+    # asked at all -- see RESIDUAL_COUNTIES above for what B16001 answers for
+    # a county, which is nothing.
+    fine = ({geoid(r, level): r for r in query(year, list(RESIDUAL_DETAIL), geo, key)}
+            if level == "state" else {})
     prof = {geoid(r, level): r
             for r in query(year, list(PROFILE_LINES), geo, key, base=BASE_PROFILE)}
 
@@ -230,15 +344,16 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
 
         # A suppressed detail cell reads as zero here on purpose: it then fails
         # the sum against C16001's own column and with_detail says which
-        # county, rather than being quietly dropped out of a total.
+        # geography, rather than being quietly dropped out of a total.
         drow = fine.get(gid)
         dcounts = (None if drow is None else
                    {label: (as_float(drow.get(code)) or 0.0)
                     for code, label in RESIDUAL_DETAIL.items()})
 
         race_rows = shares(counts, total=total)
-        lang_rows = shares(with_detail(lcounts, dcounts, name, drow) if lrow else lcounts,
-                           total=as_float(lrow.get(LANGUAGE_TOTAL)))
+        divided = (with_detail(lcounts, dcounts, name, drow)
+                   if lrow and level == "state" else lcounts)
+        lang_rows = shares(divided, total=as_float(lrow.get(LANGUAGE_TOTAL)))
         out.append(record(
             f"USA-{gid}",
             name,
@@ -257,16 +372,8 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
                             "Not comparable with other countries' ethnicity classifications."),
             language=lang_rows or gap(NOT_AVAILABLE),
             language_year=dated(lang_rows, year),
-            language_note=(
-                "Language spoken at home, population 5 years and over (ACS "
-                "table C16001), with C16001's own 'Other and unspecified' "
-                "column replaced by the seven lines of the detailed table "
-                "B16001 that make it up -- Hebrew, the Afro-Asiatic, West "
-                "African and Central/Eastern/Southern African groupings, "
-                "Navajo, other Native languages of North America, and what is "
-                "still unspecified after those. Both tables are the same "
-                "survey's, and the parts are checked against the column they "
-                "replace before either is used."),
+            language_note=(LANGUAGE_NOTE + STATE_DETAIL_NOTE if level == "state"
+                           else residual_note(gid, name, lang_rows)),
             religion=gap(NOT_COLLECTED, CENSUS_BARRED + " Any figures shown come "
                          "instead from the 2020 U.S. Religion Census (ASARB), which "
                          "counts adherents reported by religious bodies rather than "
