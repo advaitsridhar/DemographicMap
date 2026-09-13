@@ -1,72 +1,69 @@
-probe_pdf: https://nsia.gov.af:8443/wp-content/uploads/2021/04/Statistical-Year-book-2020.pdf
-  retry 1/4 after 2s :: https://nsia.gov.af:8443/wp-content/uploads/2021/04/Statistical-Year-book-2020.pdf :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nsia.gov.af'. (_ssl.c:1016)>
-  retry 2/4 after 4s :: https://nsia.gov.af:8443/wp-content/uploads/2021/04/Statistical-Year-book-2020.pdf :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nsia.gov.af'. (_ssl.c:1016)>
-  retry 3/4 after 8s :: https://nsia.gov.af:8443/wp-content/uploads/2021/04/Statistical-Year-book-2020.pdf :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nsia.gov.af'. (_ssl.c:1016)>
-  retry 4/4 after 16s :: https://nsia.gov.af:8443/wp-content/uploads/2021/04/Statistical-Year-book-2020.pdf :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nsia.gov.af'. (_ssl.c:1016)>
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1523, in connect
-    self.sock = self._context.wrap_socket(self.sock,
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 517, in wrap_socket
-    return self.sslsocket_class._create(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 1104, in _create
-    self.do_handshake()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 1382, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nsia.gov.af'. (_ssl.c:1016)
+probe_pdf: https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
+  9,083,563 bytes
+  282 pages
+probe_pdf: 283 pages, printing [213]
 
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 386, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nsia.gov.af'. (_ssl.c:1016)>
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
-    blob = fetch_blob(url, aia=aia)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 106, in fetch_blob
-    blob = http_get(url, binary=True, aia=True, timeout=180,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 407, in http_get
-    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 4 retries: https://nsia.gov.af:8443/wp-content/uploads/2021/04/Statistical-Year-book-2020.pdf
+--- page 213 ----------------------------------------------------
+Chapter[79-111] 15[114-124] Azad[215-236] Jammu[238-267] &[270-277] Kashmir[280-314] Statistical[317-356] Year[359-378] Book[381-403] 2023[405-425] Marriages/Languages[447-534] .[559-562]
+Marriages[288-325]
+Table:[80-103] 15.32[105-124] District-wise[145-189] Number[192-221] and[223-236] Percentage[238-278] of[280-287] Marriages[289-326] in[328-335] AJ&K[337-360] (2018[364-384] to[386-393] 2022)[395-414]
+2018[169-186] 2019[249-266] 2020[328-344] 2021[406-423] 2022[485-502]
+District[95-122]
+Nos.[155-171] %[198-207] Nos.[235-250] %[278-286] Nos.[314-329] %[357-365] Nos.[392-408] %[435-443] Nos.[471-486] %[514-522]
+1[106-110] 2[161-165] 3[201-205] 4[241-245] 5[280-284] 6[320-324] 7[359-363] 8[398-402] 9[437-442] 10[475-483] 11[514-522]
+Muzaffarabad[80-127] 5,850[152-171] 15[200-208] 5,920[232-251] 14[279-287] 5,202[311-330] 15[358-366] 5,935[389-408] 5,740[473-494]
+15[436-444] 13[515-524]
+Neelum[80-106] 1,961[152-171] 5[204-208] 1,795[232-251] 4[283-287] 1,868[311-330] 5[362-366] 1,929[389-408] 5[440-444] 1,925[473-494] 4[519-524]
+Jhelum[80-104] Valley[106-128] 862[159-171] 2[204-208] 1,364[232-251] 2,338[311-330] 7[362-366] 2,247[389-408] 2,165[473-494]
+3[283-287] 6[440-444] 5[519-524]
+Bagh[80-98] 3,657[152-171] 10[200-208] 3,814[232-251] 9[283-287] 3,253[311-330] 9[362-366] 3,886[389-408] 10[436-444] 3,738[473-494] 9[519-524]
+Haveli[80-102] 1,350[152-171] 4[204-208] 1,524[232-251] 4[283-287] 1,151[311-330] 3[362-366] 1,535[389-408] 1,501[473-494]
+4[440-444] 3[519-524]
+Poonch[80-105] 5,566[152-171] 14[200-208] 7,185[232-251] 16[279-287] 4,346[311-330] 12[358-366] 5,353[389-408] 4,888[473-494]
+13[436-444] 11[515-524]
+Sudhnoti[80-110] 3,188[152-171] 8[204-208] 3,256[232-251] 7[283-287] 2,626[311-330] 8[362-366] 3,150[389-408] 8[440-444] 3,126[473-494] 7[519-524]
+Kotli[80-97] 6,530[152-171] 17[200-208] 8,694[232-251] 20[279-287] 6,615[311-330] 19[358-366] 6,584[389-408] 6,902[473-494]
+16[436-444] 16[515-524]
+Mirpur[80-104] 5,258[152-171] 14[200-208] 5,431[232-251] 12[279-287] 5,368[311-330] 15[358-366] 5,466[389-408] 13[436-444] 8,602[473-494] 20[515-524]
+Bhimber[80-109] 4,387[152-171] 11[200-208] 4,667[232-251] 11[279-287] 2,219[311-330] 6[362-366] 4,764[389-408] 4,758[473-494]
+12[436-444] 11[515-524]
+Total[80-99] 38,609[148-171] 100[196-208] 43,650[228-251] 100[275-287] 34,986[307-330] 100[353-366] 40,849[385-408] 100[432-444] 43,345[468-494] 100[511-524]
+Source:[80-103] Religious[104-132] Affairs[134-154] Department,[156-193] Muzaffarabad[194-235]
+Graph:[80-107] 15.8[109-123] Number[138-167] of[169-176] Marriages[178-215] in[217-224] AJ&K[226-250] (2018[252-271] to[273-280] 2022)[282-302]
+Nos.[297-314]
+2018[165-186] 2019[195-215] 2020[245-266] 2021[274-294] 2022[324-345]
+Total[81-104] 38,609[160-186] 43,650[190-215] 4334,,695806[240-266] 40,849[269-294] 43,345[313-341] 43,345[443-468]
+40,849[374-399]
+38,609[172-197]
+45,000[109-132]
+34,986[307-332]
+40,000[109-132]
+35,000[109-132]
+30,000[109-132]
+25,000[109-132]
+20,000[109-132]
+15,000[109-132]
+10,000[109-132]
+5,000[113-132]
+0[128-132]
+2018[164-181] 2019[231-248] 2020[298-315] 2021[365-382] 2022[432-449]
+Source:[80-103] AJ&KBoS[104-135] Planning[137-164] &[165-171] Development[173-212] Department,[214-250] Muzaffarabad[252-293]
+Languages[270-308] of[310-317] AJ&K[319-343]
+Table:15.33[80-122] Languages[214-252] Spoken[254-281] in[283-289] AJ&K[291-315]
+%[331-340]
+District[95-122]
+Kashmiri[161-194] Gojri[247-267] Pahari[324-348] Shina[404-424] Others[481-505]
+1[106-110] 2[175-180] 3[255-259] 4[334-338] 5[412-416] 6[491-495]
+Muzaffarabad[80-127] 15[177-186] 35[256-265] 50[331-340] -[413-416] -[492-494]
+Neelum[80-106] 20[177-186] 10[256-265] 63[331-340] 5[412-416] 2[468-472] Kundal[474-498] Shahi[500-519]
+Jhelum[80-104] Valley[106-128] 15[177-186] 35[256-265] 50[331-340] -[413-416] -[492-494]
+Bagh[80-98] 2[182-186] 3[261-265] 95[303-311] Dhundi-Khairali[314-368] -[413-416] -[492-494]
+Haveli[80-102] 5[182-186] 30[256-265] 65[318-327] Chibali[329-353] -[413-416] -[492-494]
+Poonch[80-105] -[183-186] 6[261-265] 94[319-327] Punchi[329-352] -[413-416] -[492-494]
+Sudhnoti[80-110] -[183-186] -[262-265] 95[319-327] Punchi[329-352] -[413-416] 5[491-495]
+Kotli[80-97] -[183-186] 35[256-265] 63[304-312] Pahari[314-335] Pothwari[337-367] -[413-416] 2[491-495]
+Mirpur[80-104] -[183-186] 10[256-265] 85[318-326] Mirpuri[328-354] -[413-416] 2[491-495]
+Bhimber[80-109] -[183-186] 5[261-265] 30[318-326] Mirpuri[328-354] 30[399-408] Dogri[410-429] 35[475-484] Punjabi[486-511]
+Source:[80-103] Kashmir[104-129] Liberation[131-161] Cell,[163-177] Muzaffarabad[179-220]
+Bureau[152-178] of[181-188] Statistics,[191-226] P&DD,[228-257] Azad[259-278] Govt.[281-301] of[304-311] The[314-328] State[330-349] of[351-359] Jammu[361-387] &[390-397] Kashmir,[399-433] Muzaffarabad[435-487] 179[520-534] .[559-562]
+[343 words in 62 rows]
