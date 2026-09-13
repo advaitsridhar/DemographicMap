@@ -228,8 +228,22 @@ RELIGION: dict[str, tuple[str, ...]] = {
     "Taoism": ("Taoist", "Taoism", "Dao", "Daoism"),
     "Confucianism": ("Confucian", "Confucianism"),
     "Shinto": ("Shinto", "Shintoism"),
-    "Zoroastrianism": ("Zoroastrian", "Zoroastrianism", "Parsi", "Parsee"),
-    "Baha'i": ("Baha'i", "Bahai", "Bahá'í", "Baha'i Faith"),
+    # "Parsi/Zorastrian" and "Bahai / Bahais" are the C-01 Appendix's own
+    # spellings, misspelling and all. Without them India's Appendix rows stand
+    # apart from the same religions everywhere else on the map -- two more
+    # entries in the legend, neither of them findable by the name a reader
+    # would type.
+    # The Appendix's own remainder, and the write-in that means "not one of
+    # those". Folded together rather than left as two: both say the same
+    # nothing, and as separate entries the negation kept being read as a
+    # religion -- the tree parented "Non Christians" under Protestantism.
+    "Other religions (not separately named)": (
+        "Other religions (not separately named)", "Non Christians",
+        "Non Christian", "Non-Christians"),
+    "Zoroastrianism": ("Zoroastrian", "Zoroastrianism", "Parsi", "Parsee",
+                       "Parsi/Zorastrian", "Parsi / Zorastrian", "Zorastrian"),
+    "Baha'i": ("Baha'i", "Bahai", "Bahá'í", "Baha'i Faith", "Bahais",
+               "Bahai / Bahais"),
     "Druze": ("Druze", "Druse"),
     "Rastafarian": ("Rastafarian", "Rastafari", "Rasta"),
     "Spiritism and Afro-Brazilian religions": (
@@ -1169,6 +1183,13 @@ def hue(field: str, name: str) -> str | None:
 # them last and says what they are.
 RESIDUAL: frozenset[str] = frozenset({
     "Other religions", "Not stated", "Unaffiliated or not reported",
+    # The C-01 Appendix's own remainder, and one write-in inside it. "Non
+    # Christians" is 1,538 people across five states who answered the religion
+    # question by saying what they are not, which is not a religion and must
+    # not be read as one: the tree's word rules saw "Christians" in it and
+    # filed it under Protestantism, the exact opposite of what it says.
+    "Other religions (not separately named)", "Non Christians",
+    "Non Christian", "Non-Christians",
     "Other languages", "Language not stated",
     "Other ethnicity", "Ethnicity not stated",
     # Labels that weld a real answer to a non-answer. They are deliberately
