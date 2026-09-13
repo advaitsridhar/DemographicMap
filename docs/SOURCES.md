@@ -2779,6 +2779,42 @@ population by district and a breakdown by category only by division, and a
 count of "the ethnic population" against everyone else is not a composition
 by ethnic group.
 
+#### …and the count it does publish now reaches the reader
+
+`not_available` was right; a *bare* `not_available` was not. All 64 zilas
+carried the status with no note at all — on the map, the blank panel that says
+a fetch nobody ran, when what is true is a question asked, answered and
+published at a coarser grain than this map draws.
+
+The adapter now reads the workbook's third relevant sheet, *Ethnic Population
+by Sex* (Table P28), and puts the district's own figure in the reason:
+
+> Census 2022 counts 372,875 of Rangamati's 647,586 people as ethnic
+> population — 57.58% — but does not say which peoples they are. …
+
+Nationally that is **1,650,478 people, 1.00%**, and it is concentrated almost
+entirely in three districts: **Rangamati 57.6%, Khagrachhari 48.9%, Bandarban
+41.2%** — the Chittagong Hill Tracts — against 0.01% in Nilphamari,
+Lakshmipur and Lalmonirhat. None of that was visible before.
+
+The shares are taken against *Population by Sex, Dist & Loca*, the same
+district totals the religion check reconciles to the person. The workbook's
+other population sheet, `Population_District`, differs by a few hundred people
+in places; mixing the two would print a share beside a total it was not taken
+from.
+
+Held to the same standard as a religion: the ethnic total must equal its own
+male plus female column in every district (it does, 64 of 64), and must never
+exceed the district's population — which is how a column read one place left
+announces itself before it reaches a panel as a percentage over 100.
+
+**It is still not drawn as a composition, and must not be.** A single total
+and a residual is not a list of peoples; two slices reading "ethnic
+population" and everyone else would state something the Bureau never said. The
+open route to a real composition is the National Report's *Ethnic Population
+by Category, Sex and Division* — a category breakdown, but only at the eight
+divisions, not the 64 zilas.
+
 ### The United Kingdom: two geographies, because the boundary file draws two
 
 The UK looked like a bug and was two things, neither of them one. Its four

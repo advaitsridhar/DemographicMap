@@ -3835,6 +3835,7 @@ class BangladeshZila(unittest.TestCase):
         "sexed": {"Muslim": (457_588, 479_907), "Hindu": (34_436, 35_045),
                   "Christian": (117, 135), "Buddhist": (2_564, 621),
                   "Other religion": (33, 15)},
+        "ethnic": 1_137, "ethnic_sexed": (555, 582),
     }
 
     def setUp(self):
@@ -7236,3 +7237,73 @@ class Adm2Parents(unittest.TestCase):
     def test_a_valid_polygon_is_handed_back_unchanged(self):
         square = self._square(0, 0, 2, 2)
         self.assertIs(be.whole(square), square)
+
+
+class BangladeshEthnicPopulation(unittest.TestCase):
+    """A question the census asks and publishes one number of.
+
+    Bangladesh counts its ethnic population and prints a total per district --
+    1,650,478 people, 1% of the country, but 57.6% of Rangamati -- and names
+    no people at any level below the nation. That is neither a composition nor
+    an absence, and this map had been calling it an absence: a bare
+    ``not_available`` with no note on all sixty-four zilas, which reads as a
+    fetch nobody ran.
+
+    The figure now goes in the reason instead. What it must never become is a
+    two-slice chart of "ethnic population" and everyone else, which would read
+    as a census that found two ethnicities.
+    """
+
+    BARGUNA = BangladeshZila.BARGUNA
+
+    def setUp(self):
+        from scripts.fetch_census import bangladesh
+        self.bd = bangladesh
+
+    def row(self, **changes):
+        row = {k: (dict(v) if isinstance(v, dict) else v)
+               for k, v in self.BARGUNA.items()}
+        row.update(changes)
+        return row
+
+    def test_the_ethnic_total_must_match_its_own_sexes(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.check([self.row(ethnic_sexed=(555, 999))])
+        self.assertIn("ethnic population totals", str(caught.exception))
+
+    def test_more_ethnic_people_than_people_is_refused(self):
+        # How a column read one place left announces itself, before the figure
+        # reaches a panel as a percentage over 100.
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.check([self.row(ethnic=2_000_000, ethnic_sexed=(1_000_000, 1_000_000))])
+        self.assertIn("against a district population", str(caught.exception))
+
+    def test_a_missing_ethnic_figure_is_refused_not_skipped(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.check([self.row(ethnic=None, ethnic_sexed=(None, None))])
+        self.assertIn("ethnic population has no total", str(caught.exception))
+
+    def test_the_reason_states_the_count_and_the_share(self):
+        note = self.bd.ethnicity_gap("Rangamati", 372_875, 647_586)
+        self.assertIn("372,875", note)
+        self.assertIn("647,586", note)
+        self.assertIn("57.58%", note)
+        # And says what is missing, so the reader knows this is not a fetch
+        # nobody ran.
+        self.assertIn("does not", note.lower())
+
+    def test_the_reason_never_becomes_a_composition(self):
+        """The whole point: a total and a residual are not a list of peoples."""
+        import json
+        from scripts.common import NOT_AVAILABLE, gap
+        value = gap(NOT_AVAILABLE, self.bd.ethnicity_gap("Barguna", 1_137, 1_010_531))
+        self.assertEqual(value["status"], NOT_AVAILABLE)
+        self.assertNotIsInstance(value, list)
+        # No group name may appear in it -- there is no group name to use.
+        for people in ("Chakma", "Marma", "Santal", "Garo", "Bengali"):
+            self.assertNotIn(people, json.dumps(value))
+
+    def test_a_gap_carries_no_year(self):
+        """A year beside a gap claims a measurement nobody took."""
+        source = (ROOT / "scripts" / "fetch_census" / "bangladesh.py").read_text()
+        self.assertNotIn("ethnicity_year", source)

@@ -62,6 +62,27 @@ zilas cannot drift apart. It had been a bare ``not_available``, which on the
 map reads as a fetch nobody has run yet -- a different claim, and the wrong
 one.
 
+**Ethnicity is asked, counted, and published as one number per district.**
+Sheet *Ethnic Population by Sex* (Table P28) gives a district total and its
+sex split: 1,650,478 people nationally, 1.00% of the country, but 57.6% of
+Rangamati, 48.9% of Khagrachhari and 41.2% of Bandarban -- the three hill
+districts -- against 0.01% in Nilphamari. Those shares are of the population
+sheet's own district totals, the same denominator the religion check
+reconciles against; the workbook's other population sheet differs by a few
+hundred people in places, and mixing the two would put a share beside a total
+it was not taken from. What it does not give is which
+peoples they are. No sheet in the workbook names one; all 445 columns of the
+merged table were searched for Chakma, Marma, Santal, Garo, Tripura, Mro,
+Tanchangya, Khasi, Manipuri, Rakhain and eleven more, and none appears. The
+named groups are published nationally and nowhere lower.
+
+So this field stays a gap and the figure goes in its reason. A single total
+and a residual is not a composition: drawn as two slices it would read as a
+census that found two ethnicities, and the map would be stating something the
+Bureau never said. It had been a bare ``not_available`` with no note at all --
+the blank panel that reads as a fetch nobody ran, when the truth is a question
+answered and published at a coarser grain than this map draws.
+
 **The workbook's own merged sheet is not used, because it is wrong.**
 ``Merged_All_Table`` flattens the forty-two sheets into 445 columns, and in it
 Cumilla and Cox's Bazar hold each other's household and population figures --
@@ -103,6 +124,14 @@ WORKBOOK = ("https://data.humdata.org/dataset/"
 # the published file, and a lookup by the name as it reads would miss it.
 RELIGION_SHEET = "Population by Religion, Sex"
 POPULATION_SHEET = "Population by Sex, Dist & Loca"
+ETHNIC_SHEET = "Ethnic Population by Sex"
+
+# Table P28's three columns. The male one carries a stray space before its
+# underscore in the published file -- "# Male _Ethnic Population" -- and is
+# spelt here exactly as it is there rather than tidied, because a heading this
+# code invents is a heading it stops being able to find.
+ETHNIC_TOTAL = "# Overall_Ethnic Population"
+ETHNIC_SEXED = ("# Male _Ethnic Population", "# Female_Ethnic Population")
 
 # The order they appear in, and the names this map uses for them. "Others" is
 # the office's own residual and is kept as one, rather than being dropped or
@@ -140,6 +169,34 @@ ALIASES: dict[str, tuple[str, ...]] = {
 # its zilas disagreeing about whether Bangladesh asks the question is exactly
 # the failure the central table exists to prevent.
 LANGUAGE = collection_policy("BGD", "language")
+
+def ethnicity_gap(name: str, ethnic: int, whole: int) -> str:
+    """Why this district shows no ethnic composition, and what it does show.
+
+    Bangladesh asks the question -- "ethnic population" is one of the twenty
+    subjects the individual module covers -- and the answer reaches this level
+    as a single number. Table P28 gives one total per district and no
+    breakdown, and no sheet in the workbook names a single people: all 445
+    columns of it were searched, and Chakma, Marma, Santal, Garo, Tripura and
+    the rest appear in none of them. The named groups are published nationally
+    and nowhere lower.
+
+    So there is a measured share here and no composition to draw, and the two
+    must not be confused. "Ethnic population" against everyone else is not a
+    list of peoples; drawn as a two-slice chart it would read as a census that
+    found two ethnicities, which is the kind of wrong this project ranks below
+    a gap. The number itself is worth stating, though -- it is 57.6% in
+    Rangamati and 0.01% in Nilphamari, and a blank panel says none of that --
+    so it goes in the reason.
+    """
+    return (f"Census 2022 counts {ethnic:,} of {name}'s {whole:,} people as "
+            f"ethnic population -- {ethnic / whole * 100:.2f}% -- but does not "
+            "say which peoples they are. The Bureau publishes that total by "
+            "district (Table P28) and the named groups only nationally; no "
+            "sheet of its district workbook names one. A single figure and a "
+            "residual is not a composition, so it is stated here rather than "
+            "drawn as one.")
+
 
 NOTE = ("Census 2022. The religion table classifies the male and female "
         "population only -- each religion's total is exactly its male plus "
@@ -258,6 +315,21 @@ def check(districts: list[dict[str, Any]]) -> None:
             bad.append(f"{row['name']}: {classified:,} classified by religion "
                        f"plus {hijra:,} hijra is {classified + hijra:,}, "
                        f"against a published {whole:,}")
+        # The ethnic total held to the same standard as a religion's: its own
+        # male plus female, and never more people than the district has. The
+        # figure is about to be published as a percentage of that population,
+        # and a percentage over 100 is how a column read one place left
+        # announces itself.
+        ethnic, parts = row["ethnic"], row["ethnic_sexed"]
+        if ethnic is None or None in parts:
+            bad.append(f"{row['name']}: ethnic population has no total or no "
+                       f"sex split ({ethnic}, {parts})")
+        elif sum(parts) != ethnic:
+            bad.append(f"{row['name']}: ethnic population totals {ethnic:,} "
+                       f"against {sum(parts):,} by sex")
+        elif whole is not None and ethnic > whole:
+            bad.append(f"{row['name']}: {ethnic:,} ethnic population against "
+                       f"a district population of {whole:,}")
     if bad:
         raise SystemExit(f"{len(bad)} checks failed — " + "; ".join(bad[:4]))
     hijra = sum(row["hijra"] for row in districts)
@@ -265,6 +337,14 @@ def check(districts: list[dict[str, Any]]) -> None:
         f"in every district the religions plus the hijra come to the "
         f"published population exactly ({hijra:,} hijra nationally, whom the "
         f"religion table does not classify)")
+    ethnic = sum(row["ethnic"] for row in districts)
+    people = sum(row["population"] for row in districts)
+    top = max(districts, key=lambda row: row["ethnic"] / row["population"])
+    log(f"    ethnic population {ethnic:,} of {people:,} nationally "
+        f"({ethnic / people * 100:.2f}%), highest in {top['name']} at "
+        f"{top['ethnic'] / top['population'] * 100:.1f}% -- a total per "
+        f"district and no breakdown, so it is published as the reason this "
+        f"field is a gap rather than as a composition")
 
 
 def read(blob: bytes) -> list[dict[str, Any]]:
@@ -274,10 +354,12 @@ def read(blob: bytes) -> list[dict[str, Any]]:
     try:
         people = table(sheet(book, POPULATION_SHEET))
         religion = table(sheet(book, RELIGION_SHEET))
+        ethnic = table(sheet(book, ETHNIC_SHEET))
     finally:
         book.close()
     log(f"    {len(people)} districts in {POPULATION_SHEET}, "
-        f"{len(religion)} in {RELIGION_SHEET}")
+        f"{len(religion)} in {RELIGION_SHEET}, "
+        f"{len(ethnic)} in {ETHNIC_SHEET}")
 
     whole = {str(row["District"]).strip(): row for row in people}
     missing = sorted({str(r["District"]).strip() for r in religion} - set(whole))
@@ -286,6 +368,15 @@ def read(blob: bytes) -> list[dict[str, Any]]:
         # about the workbook rather than a row to quietly drop.
         raise SystemExit("districts in the religion sheet and not in "
                          f"{POPULATION_SHEET}: {', '.join(missing)}")
+
+    peoples = {str(row["District"]).strip(): row for row in ethnic}
+    missing = sorted(set(whole) - set(peoples))
+    if missing:
+        # The same rule the other way round. A district the ethnic sheet
+        # skips must be said out loud: a reason built from a figure that was
+        # never there would print a share of nothing.
+        raise SystemExit("districts in " + POPULATION_SHEET + " and not in "
+                         f"{ETHNIC_SHEET}: {', '.join(missing)}")
 
     out = []
     for row in religion:
@@ -299,6 +390,9 @@ def read(blob: bytes) -> list[dict[str, Any]]:
             "name": name,
             "population": number(pick(whole[name], "Population_Total")),
             "hijra": number(pick(whole[name], "Population_Hijra")),
+            "ethnic": number(peoples[name].get(ETHNIC_TOTAL)),
+            "ethnic_sexed": tuple(number(peoples[name].get(column))
+                                  for column in ETHNIC_SEXED),
             "counts": counts,
             "sexed": {religion_name: tuple(number(row.get(column))
                                            for column in pair)
@@ -330,6 +424,8 @@ def main() -> int:
             religion=shares(row["counts"], total=classified) or gap(NOT_AVAILABLE),
             religion_year=YEAR, religion_note=NOTE,
             language=gap(NOT_COLLECTED, LANGUAGE),
+            ethnicity=gap(NOT_AVAILABLE, ethnicity_gap(
+                row["name"], row["ethnic"], row["population"])),
             sources=[{"field": "population/religion", "name": SOURCE,
                       "url": URL, "license": LICENCE}]))
 
