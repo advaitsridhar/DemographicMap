@@ -2698,6 +2698,38 @@ class GilgitBaltistanWeighted(unittest.TestCase):
         self.assertIn("eight and a half points apart", note)
 
 
+class BhutanGewogAliases(unittest.TestCase):
+    """The transliteration table, and the limit on how it was built."""
+
+    def setUp(self):
+        from scripts.fetch_census import bhutan
+        self.bt = bhutan
+
+    def test_no_two_gewogs_claim_one_shape(self):
+        # The failure this guards is silent: two census gewogs aliased to one
+        # boundary name, one of them overwriting the other's people.
+        targets = [t for pair in self.bt.GEWOG_ALIASES.values() for t in pair]
+        self.assertEqual(len(targets), len(set(targets)))
+
+    def test_an_alias_is_not_the_name_it_aliases(self):
+        for name, pair in self.bt.GEWOG_ALIASES.items():
+            self.assertNotIn(name, pair, name)
+
+    def test_the_contested_pairs_are_left_out(self):
+        # 24 rows had a plausible candidate that another row matched better,
+        # and every one is left unmatched rather than guessed. These are the
+        # ones whose absence is the point.
+        for name in ("Sergithang", "Patshaling", "Karna", "Darkar",
+                     "Norgaygang", "Pemaling", "Tashichhoeling"):
+            self.assertNotIn(name, self.bt.GEWOG_ALIASES, name)
+
+    def test_gasas_four_are_all_reachable(self):
+        # Gasa has four gewogs and two of them needed an alias, which is why
+        # they were kept below the score bar: there is no other candidate.
+        self.assertEqual(self.bt.GEWOG_ALIASES["Khamaed"], ("Goenkhame",))
+        self.assertEqual(self.bt.GEWOG_ALIASES["Khatoed"], ("Goenkhatoe",))
+
+
 class PakistanMotherTongue(unittest.TestCase):
     """Table 11 of the 2023 census, and what reading it moved.
 

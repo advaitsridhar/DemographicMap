@@ -106,6 +106,115 @@ DZONGKHAG_ALIASES: dict[str, tuple[str, ...]] = {
     "Lhuentse": ("Lhuntse",),
 }
 
+# What geoBoundaries calls each gewog where it differs from NSB. Neither
+# spelling is wrong -- Dzongkha romanisation has no single standard, and the
+# two bodies made different choices: Barzhong against Barshong, Kikorthang
+# against Kilkhorthang, Dunglegang against Doonglagang.
+#
+# **Paired by mutual best match on the name and by nothing else, and that is a
+# deliberate limit.** The obvious corroboration would be the dzongkhag, and it
+# is not available here: CGAZ's two Bhutan layers are not the same partition
+# of the country. 81 of the 205 gewog polygons are less than 90% inside any
+# single dzongkhag polygon, and Punakha comes out with 6 children by maximum
+# overlap and 4 by the point-in-polygon rule the build uses, where it has 11.
+# A parent that is wrong cannot confirm a name.
+#
+# So a pair is taken only where each name is the other's best match in both
+# directions, which is what stops a chain of near-misses from cascading: 24
+# further rows have a plausible candidate that some other row matches better,
+# and every one of them is left unmatched rather than guessed. An unmatched
+# gewog is a visible gap; a gewog wearing its neighbour's people is not.
+#
+# Nine pairs score below 0.80 and are kept because the alternative does not
+# exist rather than because the string is close: Gasa has four gewogs, so
+# Khamaed can only be Goenkhame. "Pemaling" to "Pagli" scored 0.62 with no
+# such argument behind it and is left out.
+GEWOG_ALIASES: dict[str, tuple[str, ...]] = {
+    "Barp": ("Bara",),
+    "Barshong": ("Barzhong",),
+    "Bidoong": ("Bidung",),
+    "Bjagchhog": ("Bjachho",),
+    "Bjenag": ("Bjena",),
+    "Boomdeling": ("Bumdeling",),
+    "Chagsakhar": ("Chaskhar",),
+    "Chhaling": ("Chhali",),
+    "Chhimoong": ("Chhimung",),
+    "Chhoekhorling": ("Chokhorling",),
+    "Chhumig": ("Chhume",),
+    "Chhuzanggang": ("Chhuzagang",),
+    "Darla": ("Dala",),
+    "Doonglagang": ("Dunglegang",),
+    "Doongna": ("Dungna",),
+    "Dopshar-ri": ("Dopshari",),
+    "Draagteng": ("Dragteng",),
+    "Dramedtse": ("Drametse",),
+    "Drepoong": ("Drepung",),
+    "Drukjeygang": ("Drugyelgang",),
+    "Duenchhukha": ("Denchhukha",),
+    "Dzomi": ("Dzoma",),
+    "Gangteng": ("Gangte",),
+    "Gase Tshogongm": ("Gasetsho Gom",),
+    "Gase Tshowogm": ("Gasetsho Om",),
+    "Ge-nyen": ("Genye",),
+    "Gelegphu": ("Gelephu",),
+    "Goshing": ("Gozhing",),
+    "Hoongrel": ("Hungrel",),
+    "Jarey": ("Jaray",),
+    "Jigme Chhoeling": ("Jigmichhoeling",),
+    "Jurmed": ("Jurmey",),
+    "Kabisa": ("Kabjisa",),
+    "Kangpar": ("Kangpara",),
+    "Kar-tshog": ("Katsho",),
+    "Khamaed": ("Goenkhame",),
+    "Khatoed": ("Goenkhatoe",),
+    "Kilkhorthang": ("Kikorthang",),
+    "Kurtoed": ("Kurtoe",),
+    "Langchenphu": ("Langchhenphu",),
+    "Largyab": ("Lajab",),
+    "Lhamoi Dzingkha": ("Lhamoizingkha",),
+    "Loggchina": ("Logchina",),
+    "Loong-nyi": ("Lungnyi",),
+    "Maedtabkha": ("Patakla",),
+    "Maedtsho": ("Metsho",),
+    "Maedwang": ("Mewang",),
+    "Maenbi": ("Menbi",),
+    "Merag": ("Merak",),
+    "Minjey": ("Minjay",),
+    "Monggar": ("Mongar",),
+    "Namgyalchhoeling": ("Namgyel Chhoeling",),
+    "Norboogang": ("Norbugang",),
+    "Nyishog": ("Nyisho",),
+    "Phangkhar": ("Pangkhar",),
+    "Phongmed": ("Phongme",),
+    "Phuentshogling": ("Phuentsholing",),
+    "Phuentshogthang": ("Phuntsthothang",),
+    "Pungtenchhu": ("Phuentenchhu",),
+    "Radhi": ("Radi",),
+    "Ruebisa": ("Ruepisa",),
+    "Saephu": ("Sephu",),
+    "Sagteng": ("Sakteng",),
+    "Saling": ("Saleng",),
+    "Samar": ("Sama",),
+    "Semjong": ("Shemjong",),
+    "Senggey": ("Senge",),
+    "Serzhong": ("Sherzhong",),
+    "Sharpa": ("Shapa",),
+    "Shelnga-Bjemi": ("Shengabjimi",),
+    "Shermuhoong": ("Shermung",),
+    "Shumar": ("Shumer",),
+    "Talog": ("Talo",),
+    "Tashiding": ("Trashiding",),
+    "Tendruk": ("Tendu",),
+    "Toedpaisa": ("Toepisa",),
+    "Toedtsho": ("Toetsho",),
+    "Toedwang": ("Toewang",),
+    "Tsaenkhar": ("Tsenkhar",),
+    "Tsholingkhar": ("Tsholingkhor",),
+    "Tsirang Toed": ("Tsirangtoe",),
+    "Ugyentse": ("Ugentse",),
+}
+
+
 # Bhutan's two published totals, and they are both real. The national report:
 # "Bhutan's total population is 735,553 ... It includes 8,408
 # non-Bhutanese/tourists found in hotels and those on the move on census
@@ -593,6 +702,7 @@ def main() -> int:
                 f"BTN-{dzongkhag.lower().replace(' ', '-')}-"
                 f"{name.lower().replace(' ', '-')}",
                 name, level="admin2", parent="BTN", country="BTN",
+                aliases=list(GEWOG_ALIASES.get(name, ())),
                 parent_name=dzongkhag,
                 parent_aliases=list(DZONGKHAG_ALIASES.get(dzongkhag, ())),
                 population=measure(people, year=YEAR, source=SOURCE),
