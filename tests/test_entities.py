@@ -2924,19 +2924,28 @@ class PakistanDeclaresWhatIsNotPublished(unittest.TestCase):
         # could catch.
         with mock.patch.dict(self.pk.GB_SECTS, {"Sunni Islam": 31.05}):
             with self.assertRaises(SystemExit) as cm:
-                self.pk.gb_religion()
+                self.pk.gb_religion({})
         self.assertIn("sum to 101.0, not 100", str(cm.exception))
 
-    def test_the_declaration_carries_no_census_figure_of_its_own(self):
-        # Including population: Wikidata supplies one for both territories and
-        # a gap marker must never displace a real value, whichever order the
-        # two files merge in. Gilgit-Baltistan's religion is the one field
-        # here that is not a gap, and it is not the census's.
+    def test_a_declaration_with_nothing_read_carries_no_figure(self):
+        # `declared_gaps` is called here with no populations, which is what a
+        # run whose booklet did not answer hands it. Every field is then a
+        # gap marker rather than a value -- Wikidata supplies a population for
+        # both territories and a gap must never displace a real value,
+        # whichever order the two files merge in. Gilgit-Baltistan's religion
+        # is the one field here that is not a gap, and it is not the census's.
         for row in self.absent("ajk", "gb"):
             for field in ("population", "religion", "language", "ethnicity"):
                 if isinstance(row.get(field), list):
                     continue
                 self.assertIn("status", row[field])
+                if field == "population" and row["name"] != "Azad Kashmir" \
+                        and not row["name"].startswith("Azad"):
+                    # Never a bare gap: an empty field on this map reads as an
+                    # adapter nobody has run, which is a different claim from
+                    # the one Gilgit-Baltistan has to make.
+                    self.assertIn("Planning & Development",
+                                  row[field].get("note", ""))
 
     def test_azad_kashmir_is_declared_under_the_name_the_map_draws_it_by(self):
         # geoBoundaries draws one second-level unit for the whole territory
