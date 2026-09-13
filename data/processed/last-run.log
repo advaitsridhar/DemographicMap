@@ -1,6 +1,573 @@
-usage: probe_pdf.py [-h] [--url URL] [--aia] [--boxes] [--layout]
-                    [--terms TERMS] [--contents CONTENTS]
-                    [--max-pages MAX_PAGES] [--excerpt EXCERPT]
-                    [--pages PAGES] [--tables] [--context CONTEXT]
-                    [text]
-probe_pdf.py: error: unrecognized arguments: Population by,by Religion
+probe_pdf: https://drive.usercontent.google.com/download?id=1F7ooWwRjfRRVlFxNHdJCBoYmNLtY8ZKW&export=download&confirm=t
+  23,793,336 bytes
+  553 pages
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/JVBDJV+MyriadVariableConcept-Roman', '/Encoding': IndirectObject(16410, 0, 140013185462736), '/FirstChar': 24, '/FontDescriptor': IndirectObject(16411, 0, 140013185462736), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [514, 441, 499, 511, 364, 518, 203, 685]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+probe_pdf: 553 pages, 13 mention ['Tongue', 'Ethnic']
+=== front matter ===
+Rbïgvwi I M„nMYbv 2022
+POPULATION AND HOUSING CENSUS 2022  
+Report on Socio-Economic and Demographic Survey 2023
+evsjv‡`k cwimsL¨vb ey¨‡iv
+
+=== pages mentioning ['Tongue', 'Ethnic'] (first 10) ===
+
+--- page 6 ----------------------------------------------------
+LIST OF TABLES
+Table 1.1 Achievable Margin of Error for Different Types of Estimations........................................ 6
+Table 2.1 Household by Floor Material of Main Dwelling by Division and Location, 2023………. 21
+Table 2.2 Household by Wall Material of Main Dwelling by Division and Location, 2023……….. 22
+Table 2.3 Household by Roof Material of Main Dwelling by Division and Location, 2023……….. 24
+Table 2.4 Household by Structure of Main Dwelling by Division and Location, 2023…………….. 26
+Table 2.5 Household by Number of Bedroom, Division and Location, 2023………………………. 27
+Table 2.6 Household by Room Facility by Division and Location, 2023…………………………… 29
+Table 2.7 Household by Ownership Status of Dwelling and Land of Dwelling by Division and
+Location, 2023……………………………………………………………………………. 30
+Table 2.8 Household by Main Source of Drinking Water, Division and Location, 2023…………… 33
+Table 2.9 Household by Arsenic Test for Tube well, Place of Main Source of Drinking Water,
+Duration for Accessibility to Source of Drinking Water, Division and Location, 2023…. 35
+Table 2.10 Household by Method of Water Purification, Division and Location, 2023……………… 36
+Table 2.11 Household by Main Source of Water for Household Chores, Division and Location, 2023. 38
+Table 2.12 Household by Toilet Facilities, Division and Location, 2023……………………………. 39
+Table 2.13 Household by Type of Toilet Use, Division and Location, 2023………………………… 41
+Table 2.14 Household by Separate Handwashing Facilities, Division and Location, 2023………….. 41
+Table 2.15 Household by Waste Disposal, Division and Location, 2023……………………………. 43
+Table 2.16 Household by Main Source of Electricity, Division and Location, 2023………………… 44
+Table 2.17 Household by Main Source of Cooking Fuel, Division and Location, 2023……………… 46
+Table 2.18 Household by Exhausting Kitchen’s Smoke Facilities, Division and Location, 2023……. 47
+Table 2.19 Household by Reason of Losing Land due to Natural Disaster, Division and Location, 2023......... 48
+Table 2.20 Remittance Recipient Household by Mode of Remittance Received, Division and
+Location, 2023……………………………………………………………………………. 50
+Table 2.21 Remittance Recipient Household by Relationship of Remittance Sender with Head of
+Household, Division and Location, 2023………………………………………………… 51
+Table 2.22 Affected Household by Type of Financial Difficulties due to Corona Pandemic, Division
+and Location, 2023………………………………………………………………………. 53
+Table 2.23 Household by Coping Strategy of Financial Difficulties due to Corona Pandemic,
+Division and Location, 2023……………………………………………………………… 55
+Table 2.24 Head of Household by Sex, Division and Location, 2023……………………………….. 56
+Table 2.25 Household Composition by Location, 2023……………………………………………… 57
+Table 3.1 Population by Age Group, Sex and Location, 2023………………………………………. 61
+Table 3.2 Population by Religion, Division and Location, 2023……………………………………. 62
+Table 3.3 Household by Number of Person and Location, 2023……………………………………. 63
+Table 3.4 Ethnic Population by Sex, Division and Location, 2023…………………………………. 64
+Table 3.5 Persons with Disabilities by Sex, Division and Location, 2023………………………….. 65
+Table 3.6 Population by Mother Tongue and Second Language, Division and Location, 2023……. 66
+Table 3.7 Population Having Birth Certificate and Passport by Sex, Division and Location, 2023… 67
+Table 3.8 Population Aged 18 Years and above Having NID and Driving License by Sex, Division
+and Location, 2023……………………………………………………………………….. 68
+Table 3.9 Literacy Status of the Population Aged 5 Years and above by Sex, Division and Location, 2023… 69
+Table 3.10 Literacy Rate by Sex, Division and Location, 2023………………………………………. 70
+Table 3.11 Currently Student Aged 3 Years and above by Medium of Education, Educational
+Institutions, Sex and Division, 2023……………………………………………………… 73
+Table 3.12 Population Aged 3 -24 Years by Reasons for not Currently being Student, Sex and
+Division, 2023……………………………………………………………………………. 74
+Table 3.13 Population Aged 3 Years and above by Attending Educational Institution or Pre-primary
+Education Program Physically or Virtually (through Video Conference, TV, Radio etc.),
+Sex and Division, 2023…………………………………………………………………… 75
+Table 3.14 Population Aged 3 Years and above Having Distant Learning Supporting Device
+(Tab/Laptop/Computer/TV/Radio etc.) During the Corona Pandemic by Sex, Division
+and Location, 2023……………………………………………………………………….. 76
+
+--- page 24 ----------------------------------------------------
+xx Socio-Economic and Demographic Survey 2023 Report
+SL Indicators National Rural Urban
+Mini Solar Grid 0.01 0.01 0.01
+Solar 1.07 1.24 0.75
+Others 0.00 0.00 0.00
+No Electricity Connection 0.42 0.50 0.26
+09 Household Having Lost Land due to Natural Disaster (%) 2.38 2.67 1.80
+10 Ethnic Population (percent of total population)
+Total 0.91 0.98 0.78
+Male 0.93 1.00 0.78
+Female 0.90 0.96 0.77
+11 Persons with Disabilities (percent of total population)
+Total 1.09 1.18 0.91
+Male 1.24 1.33 1.04
+Female 0.94 1.02 0.78
+12 Mother Tongue (%)
+Bangla 99.17 99.19 99.15
+Other Language 0.83 0.81 0.85
+13 Having National ID (18 Years and above) (%)
+Total 96.45 96.60 96.15
+Male 97.07 97.15 96.90
+Female 95.86 96.08 95.43
+14 Having Birth Certificate (%)
+Total 82.86 82.67 83.25
+Male 83.64 83.52 83.90
+Female 82.08 81.82 82.61
+15 Having Passport (%)
+Total 4.39 2.74 7.71
+Male 6.50 4.61 10.32
+Female 2.30 0.89 5.14
+16 Having Driving License (18 Years and above) (%)
+Total 2.11 1.14 4.00
+Male 4.19 2.29 7.92
+Female 0.12 0.05 0.25
+17 Never Gone to School (5 Years and above) (%)
+Total 19.47 21.93 14.53
+Male 18.06 20.45 13.23
+Female 20.86 23.38 15.80
+18 Reason for not Currently being Student (Aged 3-24 Years) (%)
+Employed/Working 20.41 18.66 24.18
+Looking for Job/Work 4.99 4.75 5.52
+Did not Go Back to Educational Institution after Corona 2.24 2.36 2.00
+Financial Insolvency 17.17 17.30 16.90
+Marriage 41.64 43.35 37.95
+Unwilling 12.71 12.75 12.63
+Others 0.83 0.83 0.83
+19 Medium of Study of Currently Student (Aged 3-24 Years) (%)
+Bangla Medium 96.03 96.48 95.12
+English Medium 0.65 0.11 1.72
+
+--- page 36 ----------------------------------------------------
+ A total of 99.58% households are under the
+electricity coverage across the country. The highest
+56.85% of households of the country use
+wood/chalk/chopped wood as the main source of
+cooking fuel. It is recorded as 69.59% in the rural
+areas and 32.20%, in the urban areas. On the other
+hand, the percentage of using supply gas and LPG
+as cooking fuel is evident at 17.52% and 10.30%
+respectively. In the country, 85.20% households do
+not have any system for exhausting kitchen smoke.
+As many as 7.18% of households have facilities
+with only chimney followed by only exhaust fan,
+5.88% and both chimney and exhaust fan, 1.18%.
+দেক্ষশর দমাট জিসংখ্যার মক্ষধ্য ১০-১৪ র্ের র্য়সী জিসংখ্যার
+হার সর্ক্ষচক্ষয় দর্নশ, ৯.৬১%। পুরুষ ও িারী উিক্ষয়র দেক্ষত্র
+সর্ক্ষচক্ষয় দর্নশ জিসংখ্যার হার ঐ একই র্য়স-গ্রুক্ষপ র্া র্থাক্রক্ষম
+৯.৮৯% ও ৯.৩৩%।  জািীয় পযথাবয় মলিানুপাি ৯৮.৯৯ যা
+পমি এলাকায় ৯৯.২৬ ও শহর এলাকায় ৯৮.৪৫। জািীয় পযথাবয়
+মনভথরশীলিার অনুপাি ৫০.৪১। এ অনুপাত পনে এলাকায়
+৫২.৬০ ও শহরাঞ্চক্ষল ৪৬.১৭ অথবাৎ শহক্ষরর তুলিায় পনেক্ষত
+নিিবরশীলতার অনুপাত উক্ষেখক্ষর্াগ্য পনরমাক্ষর্ দর্নশ। জািীয়
+পযথাবয় ৭ েের ও িদূর্ধ্থ েয়সী জনবগাষ্ঠীর সাক্ষরিার হার
+৭৮.৮১%। পুরুষ ও নারীর দক্ষবে এ হার যর্াক্রবি ৮০.২২%%
+ও ৭৭.৪১%।
+ At the national level ,  the highest, 9.61% of the
+total population belongs to the age of 10-14 years.
+In the cases of both male and female, the highest
+rates belong to the same age group with 9.89 for
+male and 9.33 for female.  The sex ratio at the
+national level is 98.99, which is 99.26 in the rural
+areas and 98.45 in the urban areas. The dependency
+ratio of the country is 50.41 which is significantly
+higher in the rural areas, 52.60 than that of the
+urban areas, 46.17. The l iteracy rate of the
+population aged 7 years  and above is 78.81%,
+which is 80.22% for male and 77.41% for female.
+দদবশ ক্ষুদ্র নৃ-ক্ষগাষ্ঠীর্ভক্ত দমাট জিসংখ্যা র সর্ বানিক ৬১.১৫%
+চট্টগ্রাি মেভাবগ র্সর্াস কক্ষর। এোড়াও এ জিক্ষগাষ্ঠীর ১৮.৩৭%
+রাজশাহী, ৬.৯১% মসবলে এেং ৫.২৮% রংপুর নর্িাক্ষগ র্সর্াস
+কক্ষর।
+ Out of the total ethnic population , the highest
+61.15% inhabit in Chattogram division  whereas,
+Rajshahi occupies 18.37% followed by Sylhet
+6.91% and Rangpur 5.28%.
+
+--- page 37 ----------------------------------------------------
+Socio-Economic and Demographic Survey 2023 Report xxxiii
+দদবশ প্রমিেন্ধী ব্যনি দমাট জিসংখ্যার ১.০৯ শিাংশ। এ হার
+পুরুষ ও নারীর দক্ষবে যর্াক্রবি ১.২৪% ও ০.৯৪%।
+ The persons with disabilities are estimated at
+1.09% in the country. The rates for male and
+female are 1.24% and 0.94% respectively.
+দদবশর দিাে জনবগাষ্ঠীর ৯৯.১৭% এর িাতৃভাষা োংলা।
+লক্ষেীয় দয, চট্টগ্রাি মেভাবগ সেথামর্ক ২.৮৯% জনবগাষ্ঠীর
+িাতৃভাষা োংলা ব্যিীি অন্য দকাবনা ভাষা।
+ Bangla is the mother tongue of 99.17% of the total
+population of the country. It is noteworthy that in
+Chattogram Division , the highest 2.89% of the
+population has a language other than Bangla as
+their mother tongue.
+দিাে জনবগাষ্ঠীর ৮২.৮৬% এর জন্মমনেন্ধন সনদ রবয়বে। এ
+হার পুরুবষর দক্ষবে ৮৩.৬৪% এেং নারীর দক্ষবে ৮২.০৮%।
+দদবশর দিাে জনবগাষ্ঠীর ৪.৩৯% এর পাসবপােথ রবয়বে। ১৮
+েের ও িদূর্ধ্থ েয়সী জনবগাষ্ঠীর ৯৬.৪৫% এর জািীয়
+পমরচয়পে রবয়বে। এ োড়া উক্ত েয়সী জনবগাষ্ঠীর ২.১১% এর
+ড্রাইমভং লাইবসন্স রবয়বে। এ হার পুরুবষর দক্ষবে ৪.১৯% এেং
+নারীর দক্ষবে ০.১২%।
+ As many as 82.86% of the total population has
+birth registration certificate, with a breakdown of
+83.64% for male and 82.08% for female.  On the
+other hand, 96.45% of the total population aged 18
+and above has a National Identification (NID) card.
+In addition, 2.11% of the same age group possess
+a driving license. The rate  is 4.19% for male and
+0.12% for female.
+দদবশর ১০ েের ও িদূর্ধ্থ েয়সী জনবগামষ্ঠর িবধ্য শ্রিশমক্তবি
+অংশগ্রহেকারীর হার ৫৭.৪১% যা পুরুষ ও নারীবভবদ যর্াক্রবি
+৭৩.৭৫% এেং ৪১.৪১%। দেক্ষশ কমবসংস্থাক্ষির হার ৯৬.৭০%,
+র্া পুরুষ ও িারীক্ষিক্ষে র্থাক্রক্ষম ৯ ৬.৪১% এর্ং ৯৭.২১%।
+দেক্ষশ দর্কারক্ষত্বর হার ৩. ৩০%, র্া পুরুক্ষষ র দেক্ষত্র ৩.৫৯%
+এর্ং িারীর দেক্ষত্র ২.৭৯%। পেী ও শহরাঞ্চক্ষল এ হার র্থাক্রক্ষম
+২.৭৬% এর্ং ৪.৪৮%।
+ Overall labour force participation rate is 57.41%,
+which is 73.75% for male and 41.41% for female
+among country’s population aged 10 years and
+above. The employment rate for the country is
+estimated at 96.70% and it is 96.41% for male and
+97.21% for female. The overall unemployment rate
+is computed at 3.30%, with 3.59% for male and
+2.79% for female. Mention -worthy, the rural and
+urban unemployment rates are 2.76% and 4.48%
+respectively.
+কাবজ মনবয়ামজি দিাে জনসংখ্যার িবধ্য সবেথাচ্চ ২৩.১৯%
+নিজস্ব ব্যর্সা কার্ বক্রক্ষম (নিয়নমত কমবচারী ব্যতীত নিজস্ব
+ব্যর্সায়/কৃনষ কার্ বক্রম), ২৯.৬১% কিথচারী, ১০.৫২% অকৃমষ
+মদনিজুর, ২৫.০০% পামরোমরক কৃমষ কাবজ মেনা দেিবন
+সাহায্যকারী, এেং ৭.৩৯% কৃমষ মদনিজুর মহবসবে কিথরি
+রবয়বে। দিাে কাবজ মনবয়ামজি জনসংখ্যার সবেথাচ্চ ৪৩.৮৯%
+কৃমষখাবি, মিিীয় সবেথাচ্চ ৩৭.০৪% দসোখাবি ও ১৯.০৭%
+মশল্পখাবি কিথগি। দিাে কিথরি ব্যমক্তবদর সবেথাচ্চ ৪২.২১%
+
+--- page 47 ----------------------------------------------------
+মাধ্যদম সাংগ্রহ কিা হয়।
+ Module 1: Identification of Household - In this
+module, information related to the address of all
+selected households at PSU, mobile numbers of the
+household head, the sample household number, the
+number of household members,  etc. are collected
+through the CAPI application.
+মরিউল ২: গৃহ সাংক্রান্ত- এ মরিউদলি মাধ্যদম রিব বারচি খািাি
+প্রিাি বসির্দিি দমদঝ, দেয়াল ও োদেি/োউরিি উপকির্,
+বাসগৃদহি সাংখ যা, দমাে কক্ষ সাংখ যা ইিযারে িথ্য সাংগ্রহ কিা
+হয়।
+ Module 2: Dwelling- By this module, the floor,
+wall, and roof material of the main dwelling of the
+selected households , number of rooms of the
+households, etc. are collected from the selected
+household.
+মরিউল ৩: খািা সাংক্রান্ত- এ মরিউদলি মাধ্যদম খািাি খাবাি
+পারিি প্রিাি উৎস, টিউবওদয়দলি আদসবরিক পিীক্ষা/দেস্ট,
+েয়দলে/ল্যারিি সুরবিা, বজ বয ব যবস্থাপিা, খািায় রবে ুযৎ সুরবিাি
+প্রিাি উৎস, িান্নাি জ্বালারিি প্রিাি উৎস, রবদেশ দর্দক গৃহীি
+দিরমে যান্স, কদিািা অরিমািীি কািদর্ আরর্বক সমস্যা ও
+দমাকাদবলা ইিযারে সাংক্রান্ত িথ্য সাংগ্রহ কিা হদয়দে।
+ Module 3: Household - Data related to m ain
+sources of drinking water, arsenic testing of tube-
+well, type toilet/latrine facilit ies, waste
+management, main source of electricity, main
+source of cooking fuel, remittance received from
+abroad, financial difficulties  faced by the
+households due to the corona epidemic and coping
+strategies, etc. are collected by this module.
+মরিউল ৪: ব যরি রবষয়ক- এ মরিউদলি মাধ্যদম রিব বারচি
+খািাি সেস্যগদর্ি িাম, খািাপ্রিাদিি সাদর্ সম্পকব, বয়স, রলি,
+িমব, ক্ষুদ্র নৃদগাষ্ঠী রকিা, প্ররিবন্ধী বা রবদশষ চারহোসম্পন্ন রকিা,
+মাতৃিাষা, জািীয় পরিচয়পে, জন্মরিবন্ধি, পাসদপাে ব, ড্রাইরিাং
+লাইদসন্স, সাক্ষিিা, কদিািাকালীি রশক্ষাপ্ররিষ্ঠাি বন্ধ র্াকাি
+সময় দূিরশক্ষদর্ ইদলকিরিক রিিাইস ব্যবহাি, সদব বাচ্চ দেরর্
+পাশ ইিযারে িথ্য সাংগ্রহ কিা হয়।
+ Module 4: Individual- Personal information of
+members of the selected households are collected
+through this module, including name, relationship
+with the household head, age, sex, religion, ethnic
+population, disability or special needs, mother
+tongue, national identity card, birth certificate,
+passport, driving license, literacy, use of electronic
+devices for distance learning during the closure of
+educational institutions due to the corona
+pandemic, highest level of education attainment ,
+etc.
+মরিউল ৫: অর্বনিরিক কমবকাণ্ড- এ মরিউদলি মাধ্যদম ১০ বেি
+ও িদূর্ধ্ব বয়সী সেদস্যি অর্বনিরিক কাদজি িিি, কাদজি
+মর্ বাো ও কমবদক্ষদেি রববির্ (BSIC), দপশাি রবস্তারিি রববির্
+(BSCO) ইিযারে সাংক্রান্ত িথ্য সাংগ্রহ কিা হদয়দে।
+ Module 5: Economic Activity- Type of economic
+activity of household members aged 10 years and
+above, working status and industrial classification
+of work  (BSIC), occupation al classification
+(BSCO), etc. are collected through this module.
+মরিউল ৬: ব যাাংরকাং সুরবিা- এ মরিউদলি মাধ্যদম ১০ বেি ও
+িদূর্ধ্ব বয়সী সেদস্যি ব যাাংরকাং সুরবিা সাংক্রান্ত সাংক্রান্ত িথ্য
+সাংগ্রহ কিা হদয়দে।
+ Module 6: Banking Facilities - This module
+collects data related to the banking facilities of
+household members aged 10 years and above.
+মরিউল ৭: জন্ম সাংক্রান্ত- এ মরিউদলি মাধ্যদম ১০ হদি ৪৯
+বেি বয়সী মাদয়দেি সন্তাি জন্ম/প্রসবকালীি সাহার্ যকািী,
+সন্তাি প্রসদবি স্থাি, সন্তাদিি প্রসব/দিরলিারিি িিি, জদন্মি
+িিি, সন্তাদিি রলি, সন্তাদিি জন্মরিবন্ধি ইিযারে িথ্য সাংগ্রহ
+কিা হয়।
+ Module 7: Birth- Data on mothers aged 10 to 49
+years include birth  attendant, place of delivery,
+type of delivery, sex of baby, birth registration, etc.
+are collected through this module.
+
+--- page 99 ----------------------------------------------------
+Socio-Economic and Demographic Survey 2023 Report 61
+অধ্যায় ৩: জনসংখ্যার ম ৌলিক বৈলিষ্ট্য
+Chapter 3: Basic Characteristics of the Population
+এ অধ্যায়য় আর্থসামাজিক ও িনজমজিক িজিপ ২০২৩ এ প্রাপ্ত
+িথ্যেি লিলিয়ে দেথ্যেি িনসাধািণ সম্পথ্যকথ জকছু প্রার্জমক
+িে দেমন - নৃিাজিক পজিচয়, প্রজিবজিিা, ভাষা, পজিজচজি
+সনে (িািীয় পজিচয়পত্র, িন্মজনবিন সনে, ড্রাইজভিং লাইথ্যসন্স,
+পাসথ্যপার্ থ), জেক্ষাস্তি, জেক্ষাি মাধ্যম ইিযাজে িে-উপাত্ত প্রোন
+কিা হথ্যয়থ্যে।
+ In this chapter, based on the data obtained in the
+Socio-economic and Demographic Survey 2023,
+some basic information about the population of the
+country such as ethnic identity, population with
+disability, language, identification documents
+(national identity card, birth registration
+certificate, driving license, passport), education
+level, education medium, etc. are provided.
+Table 3.1 Population by Age Group, Sex and Location, 2023
+(In Percent)
+Age Group
+Total Rural Urban
+Total Male Female Total Male Female Total Male Female
+1 2 3 4 5 6 7 8 9 10
+Total 100.00 100.00 100.00 100.00 100.00 100.00 100.00 100.00 100.00
+0-4 9.14 9.37 8.92 9.26 9.48 9.03 8.91 9.13 8.68
+5-9 9.42 9.63 9.22 9.53 9.73 9.33 9.20 9.41 9.00
+10-14 9.61 9.89 9.33 9.85 10.15 9.56 9.12 9.37 8.88
+15-19 9.56 9.82 9.29 9.72 10.18 9.26 9.23 9.11 9.36
+20-24 8.52 7.81 9.21 8.25 7.79 8.70 9.05 7.84 10.24
+25-29 8.16 7.38 8.94 7.71 7.00 8.40 9.09 8.13 10.03
+30-34 7.18 6.62 7.73 6.82 6.18 7.45 7.91 7.50 8.31
+35-39 8.16 7.75 8.56 7.92 7.41 8.42 8.65 8.46 8.84
+40-44 6.58 6.68 6.48 6.37 6.40 6.34 7.00 7.25 6.75
+45-49 5.64 5.77 5.51 5.62 5.64 5.60 5.67 6.04 5.32
+50-54 5.13 5.16 5.11 5.20 5.13 5.27 5.00 5.22 4.79
+55-59 4.06 4.16 3.96 4.21 4.21 4.21 3.74 4.05 3.44
+60-64 3.50 3.85 3.16 3.72 4.06 3.39 3.06 3.44 2.69
+65-69 2.50 2.87 2.14 2.72 3.10 2.33 2.06 2.39 1.74
+70-74 1.50 1.79 1.22 1.63 1.93 1.34 1.23 1.50 0.97
+75-79 0.66 0.76 0.56 0.72 0.84 0.61 0.54 0.61 0.47
+80 and above 0.68 0.69 0.67 0.76 0.76 0.75 0.52 0.54 0.50
+সািজণ ৩.১-এ জবজভন্ন বয়স-গ্রুপ ও জলঙ্গথ্যভথ্যে িনসিংখ্যা ও এি
+েিকিা হাি উপস্থাপন কিা হথ্যয়থ্যে। সািজণটি দর্থ্যক দেখা োয়,
+দেথ্যেি দমার্ িনসিংখ্যাি মথ্যধ্য ১০-১৪ বেি বয়সী িনসিংখ্যাি
+হাি সবথ্যচথ্যয় দবজে, ৯.৬১%। পুরুষ ও নািী উভথ্যয়ি দক্ষথ্যত্র
+সবথ্যচথ্যয় দবজে িনসিংখ্যাি হাি ঐ একই বয়স-গ্রুথ্যপ ো ের্াক্রথ্যম
+৯.৮৯% ও ৯.৩৩%।
+ Table 3.1 depicts the number and the percentages
+of  population in terms of different age groups and
+sex. It is observed from the analysis that at the
+national level,  the highest, 9.61% of the total
+population belongs to the age of 10-14 years. In
+the cases of both male and female, the highest
+
+--- page 102 ----------------------------------------------------
+64 Socio-Economic and Demographic Survey 2023 Report
+Figure 3.2 Average Household Size, 2004-2023
+ক্ষুদ্র নৃ-য়গাষ্ঠী  Ethnic Population
+সিংস্কৃজি জবষয়ক মন্ত্রণালয় কর্তথক প্রণীি ‘ক্ষুদ্র নৃ -থ্য াষ্ঠী
+সািংস্কৃজিক প্রজিষ্ঠান আইন, ২০১০ ’ এ বজণ থি িনথ্য াষ্ঠী। ক্ষুদ্র
+নৃথ্য াষ্ঠী বলথ্যি এমন একটি িনসমজিথ্যক দবাঝায় োিা
+দমার্ামুটিভাথ্যব একটি জনজে থি অঞ্চথ্যল বসবাস কথ্যি এবিং িাথ্যেি
+জনিস্ব সািংস্কৃজিক ঐজিহ য িথ্যয়থ্যে।
+ The population defined as Ethnic Population by
+‘Khudra Nri-goshthi Sangakritik Pratisthan Ain,
+2010’ under the Ministry of Cultural Affairs.
+Ethnic population refers to a group of people who
+live roughly in a specific area and have their own
+cultural heritage.
+Table 3.4 Ethnic Population by Sex, Division and Location, 2023
+(In Percent)
+Division
+Ethnic Population
+Total Rural Urban
+Total Male Female Total Male Female Total Male Female
+1 2 3 4 5 6 7 8 9 10
+National 100.00 50.67 49.33 100.00 50.97 49.03 100.00 49.90 50.10
+Barishal 0.08 47.20 52.80 0.04 25.00 75.00 0.19 59.78 40.22
+Chattogram 61.15 50.73 49.27 54.11 50.99 49.01 79.14 50.28 49.72
+Dhaka 2.38 51.49 48.51 1.85 57.45 42.55 3.72 43.89 56.11
+Khulna 1.92 54.49 45.51 1.91 56.06 43.94 1.94 50.54 49.46
+Mymensingh 3.91 52.45 47.55 5.06 53.39 46.61 0.96 39.78 60.22
+Rajshahi 18.37 50.79 49.21 23.64 50.85 49.15 4.90 50.10 49.90
+Rangpur 5.28 51.14 48.86 5.90 51.61 48.39 3.71 49.21 50.79
+Sylhet 6.91 47.12 52.88 7.49 46.28 53.72 5.43 50.07 49.93
+সািজণ ৩.৪-এ ক্ষুদ্র নৃ-থ্য াষ্ঠীভুক্ত িনসিংখ্যাি েিকিা হাি পজি-
+েহি ও জবভা জভজত্তক প্রোন কিা হথ্যয়থ্যে । প্রেত্ত উপাত্ত
+পে থাথ্যলাচনায় দেখা োয়, মেয়ি ক্ষুদ্র নৃ-থ্য াষ্ঠীভুক্ত দমার্
+ The figures relating to the ethnic population are
+given by division and location in Table 3.4. It
+demonstrates that out of the total ethnic population
+4.66
+4.35
+3.96
+2004 2011 2023
+মিখলচত্র ৩.২-এি মাধ্যথ্যম, ২০০৪ দর্থ্যক ২০২৩ সাল পে থন্ত
+অনুজষ্ঠি জিনটি আর্থসামাজিক ও িনজমজিক িজিপ অনুোয়ী
+সাধািণ খানাি  ড় আকাি দেখাথ্যনা হথ্যয়থ্যে। প্রেত্ত দলখজচত্র হথ্যি
+স্পি দে, খানাি  ড় আকাি ক্রমান্বথ্যয় হ্রাস পাথ্যে। খানাি  ড়
+আকাি ২০০৪ সাথ্যল জেল ৪.৬৬ ো হ্রাস দপথ্যয় ২০২৩ সাথ্যল
+োঁজড়থ্যয়থ্যে ৩.৯৬।
+ Figure 3.2 shows the trend of the average size of
+general households from  three Socio -Economic
+and Demographic Surveys from 2004 to 2023. It is
+clear from the figure that the average size of
+households has been decreasing gradually. It was
+4.66 in 2004, which has declined to 3.96 in 2023.
+
+--- page 103 ----------------------------------------------------
+Socio-Economic and Demographic Survey 2023 Report 65
+িনসিংখ্যাি সব থাজধক ৬১.১৫% চট্টগ্রা  লৈিায়গ বসবাস কথ্যি।
+এোড়াও এ িনথ্য াষ্ঠীি ১৮.৩৭ % িািোহী, ৬.৯১% লসয়িট
+এৈং ৫.২৮% িিংপুি জবভাথ্য  বসবাস কথ্যি। জলঙ্গজভজত্তক উপাত্ত
+জবথ্যেষথ্যণ দেখা োয়, ক্ষুদ্র  নৃ-থ্য াষ্ঠীভুক্ত দমার্ িনসিংখ্যা ি
+৫০.৬৭% পুরুষ এবিং ৪৯.৩৩% নািী।
+the highest 61.15% inhabit in Chattogram
+division. Furthermore, out of the total ethnic
+population, Rajshahi occupies 18.37% followed
+by Sylhet 6.91% and Rangpur 5.28%. Analysing
+the figures by sex, it is revealed that the rate of
+male is 50.67% and female , 49.33% of the total
+ethnic population.
+প্রলেৈন্ধী ৈা লৈয়িষ চালহোসম্পন্ন  Disable Population
+সাধািনি দে সকল ব্যজি োিীজিক , মানজসক ও দবাধ ম্যিা
+সমস্যাি কািথ্যণ স্বাভাজবক িীবনোপথ্যন সক্ষম নয় , িাথ্যেিথ্যক
+প্রজিবিী বা জবথ্যেষ চাজহোসম্পন্ন ব্যজি বলা হয়।  প্রজিবিী
+ব্যজিি অজধকাি ও সুিক্ষা আইন , ২০১৩ অনুোয়ী ‘প্রজিবিী
+ব্যজি/প্রজিবজিিা বলথ্যি দবাঝায় িন্ম ি/থ্যকাথ্যনা কািথ্যণ ঘটিি
+েীঘ থথ্যময়াজে বা স্থায়ীভাথ্যব ব্যজিি োিীজিক, মানজসক, বুজদ্ধ ি,
+জবকাে বা ইজিয় ি ক্ষজিগ্রস্তিা বা প্রজিকূলিা এবিং সিংজেি
+ব্যজিি প্রজি দৃজিভজঙ্গ ও পজিথ্যবে ি বাধাি পািস্পজিক প্রভাব,
+োি কািথ্যণ সিংজেি ব্যজি সমিাি জভজত্তথ্যি সমাথ্যি পূণ থ ও
+কাে থকি অিংেগ্রহথ্যণ বাধাপ্রাপ্ত হন’। উথ্যিখ্য, দকাথ্যনা  ব্যজিি
+মথ্যধ্য েজে অটিজ , িারীলরক,  ানলসক, দৃলষ্ট্, ৈাক, বুলি, শ্রৈি,
+মসলরব্রাি পািলস, ডাউন লসনয়রা  ও অন্যান্য প্রলেৈলন্ধো
+থাকয়িই লেলন প্রলেৈন্ধী ৈা লৈয়িষ চালহোসম্পন্ন লহয়সয়ৈ
+লৈয়ৈলচে।
+ Persons who are generally unable to lead a normal
+life due to physical, mental, or cognitive problems
+are called persons with disabilities or special
+needs. According to the Rights and Protection of
+Persons with Disabilities Act, 2013, ‘Person with
+Disability’ means a congenital/long -term or
+permanent physical, mental, intellectual,
+developmental or sensory impairment or
+disadvantage of a person and the interaction of
+attitude and environmental barriers due to which
+the person concerned is prevented from
+participating fully and effectively in society on an
+equal basis. Note that if a person has autism,
+physical, mental, vision, speech, intelligence,
+hearing, cerebral palsy, down syndrome, and other
+disabilities, he is considered disabled or ha ving
+special needs.
+Table 3.5 Persons with Disabilities by Sex, Division and Location, 2023
+(In Percent)
+Division
+Total Rural Urban
+Total Male Female Total Male Female Total Male Female
+1 2 3 4 5 6 7 8 9 10
+National 1.09 1.24 0.94 1.18 1.33 1.02 0.91 1.04 0.78
+Barishal 1.04 1.17 0.91 1.08 1.22 0.95 0.93 1.04 0.81
+
+--- page 104 ----------------------------------------------------
+66 Socio-Economic and Demographic Survey 2023 Report
+দে, খুিনায় প্রজিবিী ব্যজিি হাি সয়ৈ মাচ্চ ১.৩৭%, যা চট্টগ্রায়
+সৈ মলনম্ন ০.৯২%।
+persons with disabilities is 1.18% in the rural areas
+and 0.91% in the urban areas. Analysing the
+figures by division, the highest percentage of
+persons with disabilities is recorded in Khulna,
+1.37% and the lowest in Chattogram, 0.92%.
+মার্তভাষা  Mother Tongue
+ ানুষ ময িাষা োর লপো াো ৈা অলিিাৈয়কর কাে মথয়ক
+মোটয়ৈিায় লিয়খয়ে এৈং ময িাষায় কথা ৈিয়ে সৈয়চয়য় মৈলি
+পারেিী সাধারিিায়ৈ মস িাষাটিয়ক  াতৃিাষা ৈিা হয়।
+ A language of people which they learn from their
+parents or guardians in childhood and are most
+proficient in speaking is generally called the
+mother tongue.
+জিিীয় ভাষা  Second Language
+মার্তভাষা দেখাি পি দকাথ্যনা ব্যজিি দেখা আথ্যিকটি ভাষা
+সাধািণি জিিীয় ভাষা। এ ভাষা এমন একটি ভাষা ো সিংজেি
+ব্যজিি স্থানীয় ভাষা নয় জকন্তু জিজন িা কমথথ্যক্ষথ্যত্র বা স্কুথ্যল বা
+অন্য দকার্াও ব্যবহাি কথ্যি র্াথ্যকন।
+ A second language is a language that a person
+learns after learning the mother tongue. This
+language is not a concerned person ’s local
+language but he uses it at the workplace, school,
+or elsewhere.
+Table 3.6 Population by Mother Tongue and Second Language, Division and Location, 2023
+(In Percent)
+Division
+Mother Tongue Second Language
+Total Bangla Others Total Bangla English Others None
+1 2 3 4 5 6 7 8 9
+National 100.00 99.17 0.83 100.00 0.80 6.10 0.17 92.94
+Barishal 100.00 99.99 0.01 100.00 0.01 4.36 0.08 95.55
+Chattogram 100.00 97.11 2.89 100.00 2.76 2.48 0.11 94.65
+Dhaka 100.00 99.76 0.24 100.00 0.24 11.20 0.17 88.39
+Khulna 100.00 100.00 0.00 100.00 0.00 5.11 0.09 94.80
+Mymensingh 100.00 99.29 0.71 100.00 0.70 7.41 0.15 91.74
+Rajshahi 100.00 99.36 0.64 100.00 0.63 1.66 0.18 97.52
+Rangpur 100.00 99.86 0.14 100.00 0.14 6.62 0.23 93.01
+Sylhet 100.00 98.96 1.04 100.00 1.02 2.51 0.39 96.08
+সারলি ৩.৬-এ মেয়ির জনগয়ির  াতৃিাষা ও লিেীয় িাষা
+সংক্রান্ত েথ্য-উপাি লৈিাগলিলিক প্রোন করা হয়য়য়ে। প্রেি
+উপাি অনুযায়ী মেয়ির ম াট জনয়গাষ্ঠীর ৯৯.১৭% এর
+ াতৃিাষা ৈাংিা। িক্ষিীয় ময, চট্টগ্রা  লৈিায়গ সৈ মালধক
+২.৮৯% জনয়গাষ্ঠীর  াতৃিাষা ৈাংিা ব্যেীে অন্য মকায়না
+িাষা। সারলি পয মায়িাচনায় আরও মেখা যায়, ম াট জনয়গাষ্ঠীর
+৯২.৯৪% এর  াতৃিাষা ব্যেীে লিেীয় মকায়না িাষা জানা
+মনই। উয়িখ্য, ম াট জনয়গাষ্ঠীর ৬.১০% এর লিেীয় িাষা
+ইংয়রলজ এৈং ০.৮০% এর লিেীয় িাষা ৈাংিা।
+ Table 3.6 provides the data on the mother tongue
+and the second language of the people of the
+country by division. According to the findings,
+Bangla is the mother tongue of 99.17% of the total
+population of the country. It is noteworthy that in
+Chattogram Division, the highest 2.89% of the
+population has a language other than Bangla as
+their mother tongue.  It is also observed that
+92.94% of the total population of the country do
+not know any other language other than their
+mother tongue. In addition, out of the total
+population, English as a second language is 6.10%
+while Bangla, 0.80%.
+
+--- page 308 ----------------------------------------------------
+270 Socio-Economic and Demographic Survey 2023 Report
+Table PC04 Ethnic Population by Sex and District, 2023
+(In Percent)
+Division
+Ethnic Population
+Total Rural Urban
+Total Male Female Total Male Female Total Male Female
+1 2 3 4 5 6 7 8 9 10
+National 100.00 50.67 49.33 100.00 50.97 49.03 100.00 49.90 50.10
+Barishal Division 100.00 47.20 52.80 100.00 25.00 75.00 100.00 59.78 40.22
+Barguna 100.00 58.78 41.22 0.00 0.00 0.00 100.00 58.78 41.22
+Barishal 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Bhola 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Jhalokathi 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Patuakhali 100.00 28.07 71.93 100.00 25.00 75.00 100.00 100.00 0.00
+Pirojpur 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Chattogram Division 100.00 50.73 49.27 100.00 50.99 49.01 100.00 50.28 49.72
+Bandarban 100.00 50.64 49.36 100.00 50.69 49.31 100.00 50.45 49.55
+Brahmanbaria 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Chandpur 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Chattogram 100.00 44.40 55.60 0.00 0.00 0.00 100.00 44.40 55.60
+Cox’s Bazar 100.00 48.64 51.36 100.00 58.12 41.88 100.00 43.75 56.25
+Cumilla 100.00 52.45 47.55 0.00 0.00 0.00 100.00 52.45 47.55
+Feni 100.00 75.00 25.00 0.00 0.00 0.00 100.00 75.00 25.00
+Khagrachhari 100.00 50.84 49.16 100.00 51.13 48.87 100.00 50.33 49.67
+Lakshmipur 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Noakhali 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Rangamati 100.00 50.88 49.12 100.00 50.92 49.08 100.00 50.84 49.16
+Dhaka Division  100.00 51.49 48.51 100.00 57.45 42.55 100.00 43.89 56.11
+Dhaka 100.00 40.29 59.71 0.00 0.00 0.00 100.00 40.29 59.71
+Faridpur 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Gazipur 100.00 39.23 60.77 100.00 33.33 66.67 100.00 40.15 59.85
+Gopalganj 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Kishoreganj 100.00 55.00 45.00 0.00 0.00 0.00 100.00 55.00 45.00
+Madaripur 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Manikganj 100.00 55.17 44.83 0.00 0.00 0.00 100.00 55.17 44.83
+Munshiganj 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Narayanganj 100.00 74.51 25.49 0.00 0.00 0.00 100.00 74.51 25.49
+Narsingdi 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Rajbari 100.00 43.64 56.36 100.00 43.75 56.25 100.00 40.00 60.00
+Shariatpur 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00
+Tangail 100.00 59.17 40.83 100.00 62.45 37.55 100.00 43.45 56.55
+Khulna Division 100.00 54.49 45.51 100.00 56.06 43.94 100.00 50.54 49.46
+Bagerhat 100.00 51.85 48.15 100.00 51.85 48.15 0.00 0.00 0.00
+Chuadanga 100.00 50.00 50.00 0.00 0.00 0.00 100.00 50.00 50.00
+
+... and 3 further pages match; re-run with a narrower --terms to see them.
