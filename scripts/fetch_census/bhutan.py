@@ -118,6 +118,14 @@ NATIONAL = 727_145
 # taken from the "Total" on that line or the next.
 HEADER_KEY = "Gewog/Town"
 HEADER_EDGE = "Total"
+
+# How far past the right edge of the header word "Total" its column's figures
+# may reach. The header word is centred over the column and the values are set
+# flush right, so they end past it: Dagana's header "Total" ends at x=229 and
+# "575" in the row below it does not. Clipping at the header word exactly cost
+# every Dagana row its third figure, which then failed the three-figure test
+# and was dropped -- the whole table, silently, as "no gewog rows read".
+COLUMN = 45.0
 SECTIONS = {"Urban", "Rural"}
 
 # The row that closes the table, and there are two spellings of it. Tsirang
@@ -188,6 +196,13 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
     at the same baselines as the gewog rows. With only a left edge, Bumthang
     read three gewogs and then lost the table's own Total row to an axis
     label, which the "no printed Total" refusal caught.
+
+    **The figures do not always end the row, and the column is wider than its
+    own header.** Dagana prints "Drukjeygang Town 250 325 575 Bhutan." on one
+    baseline, the last word belonging to the prose beside the table; and its
+    header word "Total" ends at x=229 while the figures beneath it do not.
+    Clipping at the header word and requiring the figures to end the row cost
+    Dagana every one of its rows.
 
     **A row's label can wrap around its own figures.** Chhukha prints
     "Phuentshogling" on the line above the figures for Phuentsholing Thromde
@@ -281,7 +296,7 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
                 reading = found_here = True
                 continue
             inside = [(x0, x1, t) for x0, x1, t in cells
-                      if x0 >= edge - 3.0 and x1 <= margin + 6.0]
+                      if x0 >= edge - 3.0 and x1 <= margin + COLUMN]
             if debug and cells:
                 log(f"    [debug] row {[t for _a,_b,t in cells][:9]} "
                     f"-> in span {[t for _a,_b,t in inside][:9]}")
@@ -292,8 +307,15 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
                 section = words[0]
                 pending = []          # a section heading labels nothing
                 continue
-            figures = [t for t in words if NUMBER.match(t)]
-            if len(figures) != 3 or words[-3:] != figures:
+            # The first run of three consecutive figures, with the name
+            # before it. Anything after is narrative that shares the baseline
+            # -- Dagana prints "Drukjeygang Town 250 325 575 Bhutan." on one
+            # line, the last word belonging to the column of prose beside the
+            # table. Requiring the figures to *end* the row dropped it.
+            at = next((i for i in range(1, len(words) - 2)
+                       if all(NUMBER.match(w) for w in words[i:i + 3])), None)
+            figures = list(words[at:at + 3]) if at is not None else []
+            if len(figures) != 3:
                 # Text inside the table's own span carrying no figures is a
                 # label whose row is still to come. Remembered rather than
                 # dropped; anything outside the span is prose and never
@@ -301,7 +323,7 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
                 if words and not figures:
                     pending.extend(words)
                 continue
-            name = " ".join([*pending, *words[:-3]]).strip()
+            name = " ".join([*pending, *words[:at]]).strip()
             pending = []
             if not name or NUMBER.match(name):
                 continue
