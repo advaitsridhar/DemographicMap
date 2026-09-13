@@ -2891,12 +2891,64 @@ male plus female column in every district (it does, 64 of 64), and must never
 exceed the district's population — which is how a column read one place left
 announces itself before it reaches a panel as a percentage over 100.
 
-**It is still not drawn as a composition, and must not be.** A single total
-and a residual is not a list of peoples; two slices reading "ethnic
-population" and everyone else would state something the Bureau never said. The
-open route to a real composition is the National Report's *Ethnic Population
-by Category, Sex and Division* — a category breakdown, but only at the eight
-divisions, not the 64 zilas.
+**It is still not drawn as a composition at zila level, and must not be.** A
+single total and a residual is not a list of peoples; two slices reading
+"ethnic population" and everyone else would state something the Bureau never
+said.
+
+#### The named groups, at the eight divisions
+
+The route the paragraph above left open has been taken. The National Report's
+**Table P29, *Ethnic Population by Category, Sex and Division*** (PDF pages
+413–420) breaks the same 1,650,478 people into **51 named categories** — the
+groups scheduled under the 2010 Act — for each division. Nationally: Chakma
+483,365, Marma 224,299, Tripura 156,620, Saontal 129,056, Oraon 85,858, Garo
+76,854, Munda 60,201, Mro 52,463, Tonchonga 45,974, Barman 44,671, down to
+Vil at 95 and Kol's two people in one division.
+
+**Table P28 is read from the same report alongside it**, and the two make each
+other trustworthy rather than merely parsed. Four checks, every one to the
+person:
+
+1. each block's rows sum to the header printed above them;
+2. the eight divisions sum to the national header;
+3. each category's national figure equals the sum of its eight divisional
+   ones — the table read down as well as across;
+4. the report's 64 district totals equal the workbook's, two separate
+   publications of one census agreeing.
+
+The Bureau spells two districts differently between its own publications —
+*Netrokona* against *Netrakona*, *Chapainawabganj* against *Chapainababganj* —
+and those two are declared rather than bridged by a rule, so a third spelling
+fails loudly instead of quietly matching something near it.
+
+**The shares are of each division's whole population.** Chattogram's Chakma
+are 475,548 people: 48% of the division's ethnic population and **1.4% of the
+division**. Published the first way, this map would call Chakma the largest
+group in Chattogram, where they are one person in seventy. So the denominator
+is the division's own population, summed from the districts the report itself
+places in it; the list covers 2.90% of Chattogram, 1.10% of Rajshahi, 1.00% of
+Sylhet and 0.05% of Barishal; the panel says so, and the map declines to name
+a leader because the largest listed group cannot exceed what is unlisted.
+
+Everyone else is **not shown**. The census publishes the ethnic categories and
+no count and no label for anybody else, and a slice invented to fill the bar
+would be fabrication.
+
+**47 of the 51 categories have no place in this project's group tree yet** and
+are published under the census's own spelling — Bom, Tonchonga, Monipuri,
+Saontal, Lusai as BBS writes them. The tree having no opinion about them is a
+fact about the tree; inventing one from a resemblance would be a fact about
+nothing. Placing them is open work.
+
+Two faults were found and fixed in the reading of this table, both silent.
+The reader locked onto the report's **list of tables**, where "Table P28" and
+"Table P29" sit two lines apart, read a two-line slice and found nothing — and
+the reconciliation **passed anyway**, because each of its checks loops over
+the blocks and there were none to disagree with. It wrote a file and logged
+success beside the line "-1 divisions in Table P28, 0 districts". Every
+occurrence of a heading is now tried and the first with rows under it is the
+table; emptiness is checked first and by shape.
 
 ### The United Kingdom: two geographies, because the boundary file draws two
 

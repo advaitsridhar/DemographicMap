@@ -491,8 +491,15 @@ class BangladeshSaysWhatWasAskedAndWhatWasPublished(unittest.TestCase):
         if not path.exists():  # pragma: no cover - built output may be absent
             self.skipTest("bangladesh_district.json has not been built")
         rows = json.loads(path.read_text())
-        self.assertEqual(len(rows), 64)
-        for row in rows:
+        # Zilas only. The adapter also writes the eight divisions, which carry
+        # the ethnic composition from Table P29 and take their language marker
+        # from the central policy rather than restating it; counting the file
+        # rather than the zilas made this test fail on 72 records the day that
+        # arrived, which is a fact about the file and not about the claim.
+        zilas = [row for row in rows if row["level"] == "admin2"]
+        self.assertEqual(len(zilas), 64)
+        self.assertEqual(len([r for r in rows if r["level"] == "admin1"]), 8)
+        for row in zilas:
             language = row["language"]
             self.assertNotEqual(language.get("status"), NOT_COLLECTED, row["name"])
             self.assertIn("Socio-Economic and Demographic Survey 2023",
