@@ -356,12 +356,18 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
                 # Ramjar's name and "Trashi Yangtse Dzongkhag ranks" in front
                 # of the closing row -- which then read as a gewog and
                 # doubled the dzongkhag.
+                # A short line replaces the pending label; a long one is the
+                # prose beside the table and leaves it alone. Dagana prints
+                # "Lhamoi Dzingkha", then a line of narrative, then the town's
+                # figures, then the word "Town" -- clearing on the narrative
+                # lost the row and its 1,961 people.
                 if words and not figures and len(words) <= 2:
                     pending = list(words)
-                elif words:
-                    pending = []
                 continue
-            name = " ".join([*pending, *words[:at]]).strip()
+            # The pending label is used only by a row that has no name of
+            # its own. Otherwise a stray one-word line above the table gets
+            # glued on -- Dagana read "Population Gozhi" for Gozhi.
+            name = " ".join(words[:at] if at else pending).strip()
             pending = []
             if not name or NUMBER.match(name):
                 continue
