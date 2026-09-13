@@ -1,3 +1,6 @@
-  wrote data/raw/codes/wikidata_countries.json (3 kB)
-  BTN: 240 admin2 units
-  wrote data/processed/bhutan_wikidata_gewog.json (179 kB)
+bangladesh: BBS Population and Housing Census 2022, by zila
+    1,213,869 bytes from HDX
+    64 districts in Population by Sex, Dist & Loca, 64 in Population by Religion, Sex
+    every religion's total matches its own male plus female, and in every district the religions plus the hijra come to the published population exactly (8,124 hijra nationally, whom the religion table does not classify)
+  wrote data/processed/bangladesh_district.json (166 kB)
+  64 districts
