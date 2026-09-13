@@ -61,6 +61,60 @@ CASES = {"as the sheet prints it": str.upper,
          "as the record spells it": lambda text: text}
 
 
+# Pakistan is no longer one of ``uscb.COUNTRIES``: the Bureau publishes Table
+# 11 of the 2023 census itself and ``scripts/fetch_census/pakistan.py`` reads
+# it directly, so the 2017 workbook has nothing left to add. The declaration
+# stays here because Karachi is the case that made ``merged`` exist, and it is
+# a harder case than Addis Ababa -- six parts with no published row of their
+# own to check the sum against, read out of a sheet that spells them in a case
+# no declaration is written in. Losing the test with the source would leave
+# ``combine()`` tested only where it is easy.
+#
+# Copied verbatim from what the module carried, so what is exercised here is
+# the declaration that ran, not one rewritten to suit the test.
+PAKISTAN = uscb.Country(
+    iso3="PAK",
+    name="Pakistan",
+    year=2017,
+    source=("Pakistan Bureau of Statistics, 2017 Population and Housing "
+            "Census, Table 11: Population by mother tongue, sex, and "
+            "rural/urban, prepared as subnational tables by the U.S. Census "
+            "Bureau"),
+    licence="CC BY-IGO, published via HDX",
+    dataset="pakistan-subnational-population-and-housing-data-tables",
+    out="pakistan_language.json",
+    levels={1: "admin1", 3: "admin2"},
+    topics=(uscb.Topic("Mother Tongue", "language", prefix="LNG_"),),
+    aliases={
+        "Batagram District": ("Battagram",),
+        "Jaffarabad District": ("Jafarabad",),
+        "Kambar Shahdadkot District": ("Qambar Shahdadkot",),
+        "Killa Abdullah District": ("Qilla Abdullah",),
+        "Killa Saifullah District": ("Qilla Saifullah",),
+        "Naushahro Feroze District": ("Naushehro Feroze",),
+        "Shaheed Benazirabad District": ("Nawabshah",),
+        "Sheikhupura District": ("Sheikhpura",),
+        "Vehari District": ("Vihari",),
+    },
+    no_shape=frozenset(
+        (("Pakistan", "Federally Administered Tribal Areas"),)),
+    merged={
+        ("Sindh", "Karachi"): ("Karachi Central District",
+                               "Karachi East District",
+                               "Karachi South District",
+                               "Karachi West District",
+                               "Korangi District",
+                               "Malir District"),
+    },
+    note=("2017 Population and Housing Census. The question is mother tongue, "
+          "which is the language of the household a person grew up in rather "
+          "than the language they speak now, and Pakistan's nine named "
+          "tongues leave a tenth column of Other -- 2.3% nationally, and the "
+          "place where Shina, Balti and Khowar are counted without being "
+          "named."),
+)
+
+
 # Table 11, population by mother tongue, for the six districts of Karachi,
 # for Badin -- a district of Sindh that is not part of it -- and for Sindh's
 # own row, which is what the assembly is checked against.
@@ -179,7 +233,7 @@ class Karachi(unittest.TestCase):
         for label, case in CASES.items():
             with self.subTest(label):
                 found = read_and_combine(pakistan_sheet(case),
-                                         uscb.PAKISTAN, LANGUAGE)
+                                         PAKISTAN, LANGUAGE)
                 self.assertIn(("Sindh", "Karachi"), found,
                               "no assembled Karachi; the declaration reached "
                               "none of the sheet's areas")
@@ -190,7 +244,7 @@ class Karachi(unittest.TestCase):
                 self.assertEqual(karachi["published"], 16024894)
 
     def test_every_language_adds_up_and_none_is_invented(self):
-        found = read_and_combine(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
+        found = read_and_combine(pakistan_sheet(), PAKISTAN, LANGUAGE)
         karachi = found[("Sindh", "Karachi")]
         self.assertEqual(sorted(karachi["counts"]), sorted(LANGUAGES))
         for index, label in enumerate(LANGUAGES):
@@ -198,16 +252,16 @@ class Karachi(unittest.TestCase):
                              sum(f[index] for f in KARACHI.values()), label)
 
     def test_the_parts_do_not_survive_the_fold(self):
-        found = read_and_combine(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
+        found = read_and_combine(pakistan_sheet(), PAKISTAN, LANGUAGE)
         # Folded, because an area the fold did not touch keeps the sheet's own
         # spelling and only the assembled one carries the declaration's.
-        left = sorted(uscb.spelling(uscb.PAKISTAN, *key)[1] for key in found)
+        left = sorted(uscb.spelling(PAKISTAN, *key)[1] for key in found)
         self.assertEqual(left, ["Badin District", "Karachi", "Sindh"],
                          "a part that has been summed must not also remain "
                          "as an area of its own")
 
     def test_the_shares_sum_to_a_hundred(self):
-        found = read_and_combine(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
+        found = read_and_combine(pakistan_sheet(), PAKISTAN, LANGUAGE)
         row = found[("Sindh", "Karachi")]
         published = uscb.shares(row["counts"], total=row["published"])
         self.assertAlmostEqual(sum(g["pct"] for g in published), 100.0,
@@ -216,8 +270,8 @@ class Karachi(unittest.TestCase):
         self.assertEqual(published[0]["count"], 6779142)
 
     def test_the_folded_sheet_still_reconciles(self):
-        found = read_and_combine(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
-        uscb.check_total(uscb.PAKISTAN, LANGUAGE, found)     # no SystemExit
+        found = read_and_combine(pakistan_sheet(), PAKISTAN, LANGUAGE)
+        uscb.check_total(PAKISTAN, LANGUAGE, found)     # no SystemExit
 
 
 class AddisAbaba(unittest.TestCase):
@@ -261,7 +315,7 @@ class Refusals(unittest.TestCase):
     def test_a_declaration_that_matches_nothing_is_refused(self):
         """The silent failure: a full, reconciled read that merged nothing."""
         country = dataclasses.replace(
-            uscb.PAKISTAN,
+            PAKISTAN,
             merged={("Sindh", "Karachi"): ("Karachi Centre District",)})
         with self.assertRaises(SystemExit) as caught:
             read_and_combine(pakistan_sheet(), country, LANGUAGE)
@@ -274,8 +328,8 @@ class Refusals(unittest.TestCase):
         """What actually happened: the key was compared against a spelling no
         cell in the sheet carries."""
         country = dataclasses.replace(
-            uscb.PAKISTAN,
-            merged={("Sind", "Karachi"): uscb.PAKISTAN.merged[
+            PAKISTAN,
+            merged={("Sind", "Karachi"): PAKISTAN.merged[
                 ("Sindh", "Karachi")]})
         with self.assertRaises(SystemExit) as caught:
             read_and_combine(pakistan_sheet(), country, LANGUAGE)
@@ -286,7 +340,7 @@ class Refusals(unittest.TestCase):
         book._rows = [r for r in book._rows
                       if str(r[0]).upper() != "MALIR DISTRICT"]
         with self.assertRaises(SystemExit) as caught:
-            read_and_combine(book, uscb.PAKISTAN, LANGUAGE)
+            read_and_combine(book, PAKISTAN, LANGUAGE)
         self.assertIn("Malir District", str(caught.exception))
         self.assertIn("part of an area's people", str(caught.exception))
 
@@ -295,26 +349,26 @@ class Refusals(unittest.TestCase):
         book._rows.append(["KARACHI", "SINDH", "KARACHI DIVISION", "KARACHI",
                            3, *BADIN, sum(BADIN)])
         with self.assertRaises(SystemExit) as caught:
-            read_and_combine(book, uscb.PAKISTAN, LANGUAGE)
+            read_and_combine(book, PAKISTAN, LANGUAGE)
         self.assertIn("twice", str(caught.exception))
 
     def test_parts_at_two_levels_are_refused(self):
-        found = uscb.read(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
+        found = uscb.read(pakistan_sheet(), PAKISTAN, LANGUAGE)
         found[("SINDH", "MALIR DISTRICT")]["level"] = 1
         with self.assertRaises(SystemExit) as caught:
-            uscb.combine(uscb.PAKISTAN, LANGUAGE, found)
+            uscb.combine(PAKISTAN, LANGUAGE, found)
         self.assertIn("two levels", str(caught.exception))
 
     def test_a_half_published_denominator_is_refused(self):
-        found = uscb.read(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
+        found = uscb.read(pakistan_sheet(), PAKISTAN, LANGUAGE)
         found[("SINDH", "MALIR DISTRICT")]["published"] = None
         with self.assertRaises(SystemExit) as caught:
-            uscb.combine(uscb.PAKISTAN, LANGUAGE, found)
+            uscb.combine(PAKISTAN, LANGUAGE, found)
         self.assertIn("denominator", str(caught.exception))
 
     def test_a_part_also_declared_absent_is_refused(self):
         country = dataclasses.replace(
-            uscb.PAKISTAN,
+            PAKISTAN,
             no_shape=frozenset((("Sindh", "Malir District"),)))
         with self.assertRaises(SystemExit) as caught:
             read_and_combine(pakistan_sheet(), country, LANGUAGE)
@@ -322,12 +376,12 @@ class Refusals(unittest.TestCase):
         self.assertIn("no_shape", str(caught.exception))
 
     def test_an_assembly_larger_than_its_parent_is_refused(self):
-        found = uscb.read(pakistan_sheet(), uscb.PAKISTAN, LANGUAGE)
+        found = uscb.read(pakistan_sheet(), PAKISTAN, LANGUAGE)
         row = found[("SINDH", "MALIR DISTRICT")]
         row["counts"]["Urdu"] += 40_000_000
         row["published"] += 40_000_000
         with self.assertRaises(SystemExit) as caught:
-            uscb.combine(uscb.PAKISTAN, LANGUAGE, found)
+            uscb.combine(PAKISTAN, LANGUAGE, found)
         self.assertIn("not all inside", str(caught.exception))
 
 
@@ -342,7 +396,7 @@ class Declarations(unittest.TestCase):
         declaration written any other way matches nothing, which is what
         happened, so it is asserted rather than assumed.
         """
-        for country in uscb.COUNTRIES.values():
+        for country in (*uscb.COUNTRIES.values(), PAKISTAN):
             declared = []
             for (parent, name), parts in country.merged.items():
                 declared += [parent, name, *parts]
@@ -354,7 +408,7 @@ class Declarations(unittest.TestCase):
                                  "the way record() spells an area")
 
     def test_no_area_is_both_absent_and_a_part(self):
-        for country in uscb.COUNTRIES.values():
+        for country in (*uscb.COUNTRIES.values(), PAKISTAN):
             for (parent, _name), parts in country.merged.items():
                 for part in parts:
                     self.assertNotIn(
@@ -363,7 +417,7 @@ class Declarations(unittest.TestCase):
                         "and part of a merge")
 
     def test_no_part_is_claimed_by_two_merges(self):
-        for country in uscb.COUNTRIES.values():
+        for country in (*uscb.COUNTRIES.values(), PAKISTAN):
             seen = set()
             for (parent, _name), parts in country.merged.items():
                 for part in parts:
@@ -373,7 +427,7 @@ class Declarations(unittest.TestCase):
                     seen.add((parent, part))
 
     def test_pakistan_declares_the_six_districts_of_2017(self):
-        parts = uscb.PAKISTAN.merged[("Sindh", "Karachi")]
+        parts = PAKISTAN.merged[("Sindh", "Karachi")]
         self.assertEqual(len(parts), 6)
         self.assertNotIn("Keamari District", parts,
                          "Keamari was split out of Karachi West in 2020, "
@@ -391,18 +445,18 @@ class Spelling(unittest.TestCase):
 
     def test_case_and_padding_fold_to_one_key(self):
         fold = uscb.spelling
-        self.assertEqual(fold(uscb.PAKISTAN, "SINDH", "KARACHI WEST DISTRICT"),
+        self.assertEqual(fold(PAKISTAN, "SINDH", "KARACHI WEST DISTRICT"),
                          ("Sindh", "Karachi West District"))
-        self.assertEqual(fold(uscb.PAKISTAN, "Sindh", "Karachi West District"),
+        self.assertEqual(fold(PAKISTAN, "Sindh", "Karachi West District"),
                          ("Sindh", "Karachi West District"))
-        self.assertEqual(fold(uscb.PAKISTAN, " Sindh ", "Karachi  West "
+        self.assertEqual(fold(PAKISTAN, " Sindh ", "Karachi  West "
                                                         "District"),
                          ("Sindh", "Karachi West District"))
 
     def test_an_empty_parent_reads_as_the_country(self):
         """A first-order row has no parent cell, and `no_shape` names the
         country there. The fold has to agree with it."""
-        self.assertEqual(uscb.spelling(uscb.PAKISTAN, "", "PUNJAB"),
+        self.assertEqual(uscb.spelling(PAKISTAN, "", "PUNJAB"),
                          ("Pakistan", "Punjab"))
 
 

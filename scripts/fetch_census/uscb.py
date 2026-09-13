@@ -607,83 +607,24 @@ UKRAINE = Country(
 # short exonym -- "BAKHCHYSARAYS'KYY RAYON" against "Bakhchysarai", 661 times.
 # Summing each oblast's own rayons is what got it in, and the oblasts match one
 # for one.
-PAKISTAN = Country(
-    iso3="PAK",
-    name="Pakistan",
-    year=2017,
-    source=("Pakistan Bureau of Statistics, 2017 Population and Housing "
-            "Census, Table 11: Population by mother tongue, sex, and "
-            "rural/urban, prepared as subnational tables by the U.S. Census "
-            "Bureau"),
-    licence="CC BY-IGO, published via HDX",
-    dataset="pakistan-subnational-population-and-housing-data-tables",
-    out="pakistan_language.json",
-    # Level 2 is the 36 divisions and level 3 the 155 districts. It is the
-    # districts geoBoundaries draws as Pakistan's second order, so reading
-    # level 2 here would put a division's figures on a district's shape --
-    # every one of them wrong, and none of them visibly so.
-    levels={1: "admin1", 3: "admin2"},
-    # Religion is deliberately not read, though this workbook carries it.
-    # scripts/fetch_census/pakistan.py already publishes it from the same
-    # census table, and two files claiming one shape with figures that
-    # disagree by a single person would send both to a gap under the
-    # agreement rule. Language is a field nothing else fills, so it is added
-    # where religion could only be risked.
-    topics=(Topic("Mother Tongue", "language", prefix="LNG_"),),
-    # The word "district" is dropped by norm(), so 105 of 126 districts
-    # reached their shape with no help at all. These nine are the ones the
-    # two sources spell differently, and each was read off the pair of
-    # leftovers rather than guessed: after the first join, exactly these
-    # census rows had reached no shape and exactly these shapes had no row.
-    #
-    # Six are transliteration (Killa/Qilla, Kambar/Qambar, Jaffarabad with
-    # two f's, Batagram with one t, Sheikhupura and Vehari with the vowels
-    # moved). Shaheed Benazirabad is different in kind: the district was
-    # renamed from Nawabshah in 2008 and geoBoundaries still carries the old
-    # name, so this alias is a date rather than a spelling.
-    aliases={
-        "Batagram District": ("Battagram",),
-        "Jaffarabad District": ("Jafarabad",),
-        "Kambar Shahdadkot District": ("Qambar Shahdadkot",),
-        "Killa Abdullah District": ("Qilla Abdullah",),
-        "Killa Saifullah District": ("Qilla Saifullah",),
-        "Naushahro Feroze District": ("Naushehro Feroze",),
-        "Shaheed Benazirabad District": ("Nawabshah",),
-        "Sheikhupura District": ("Sheikhpura",),
-        "Vehari District": ("Vihari",),
-    },
-    # The census counted the Federally Administered Tribal Areas as a
-    # first-order area; they were merged into Khyber Pakhtunkhwa in 2018 and
-    # geoBoundaries draws the seven that remain. Declared, so it reads as a
-    # boundary that no longer exists rather than as a row this map lost.
-    no_shape=frozenset(
-        (("Pakistan", "Federally Administered Tribal Areas"),)),
-    # geoBoundaries draws Karachi as one district. The census counts the six
-    # inside it, so every one of them reached no shape and Karachi -- 16.0
-    # million people in 2017, 20.4 million in 2023 -- was the largest
-    # second-level language gap left on this map, in a country that is
-    # otherwise 114 districts full.
-    #
-    # This is the same declaration scripts/fetch_census/pakistan.py already
-    # makes for religion off the 2023 census, and deliberately not the same
-    # list: that one has seven parts because Keamari was split out of Karachi
-    # West in 2020, after this census counted. Six districts in 2017 and seven
-    # in 2023 are the same ground, which is why one shape fits both.
-    merged={
-        ("Sindh", "Karachi"): ("Karachi Central District",
-                               "Karachi East District",
-                               "Karachi South District",
-                               "Karachi West District",
-                               "Korangi District",
-                               "Malir District"),
-    },
-    note=("2017 Population and Housing Census. The question is mother tongue, "
-          "which is the language of the household a person grew up in rather "
-          "than the language they speak now, and Pakistan's nine named "
-          "tongues leave a tenth column of Other -- 2.3% nationally, and the "
-          "place where Shina, Balti and Khowar are counted without being "
-          "named."),
-)
+# Pakistan was read here, and is not any more. The Bureau publishes Table 11
+# of the 2023 census itself, province by province, and
+# scripts/fetch_census/pakistan.py now reads it beside the Table 9 it was
+# already reading -- so language comes off the same census round as the
+# religion and population on the same shape, instead of trailing them by six
+# years.
+#
+# The 2017 question is what made the change worth making rather than merely
+# tidy. It named nine tongues and an Other, and the languages of the north
+# were all in the Other: Chitral came out 93.1% Other and Kohistan 91.9%, two
+# districts of 1.4 million people between them whose largest group was the
+# absence of a category. The 2023 form names fifteen, Kohistani and Kalasha
+# among them.
+#
+# What was written here for Pakistan has not been lost: the Karachi merge, the
+# nine spelling aliases and the note on what mother tongue means were each
+# read off a pair of leftovers rather than guessed, and pakistan.py already
+# carried its own version of all three from Table 9.
 
 
 CENTRAL_AFRICAN_REPUBLIC = Country(
@@ -962,7 +903,7 @@ BAHAMAS = Country(
 
 COUNTRIES: dict[str, Country] = {
     c.iso3: c for c in (PHILIPPINES, ETHIOPIA, MYANMAR, UKRAINE,
-                        PAKISTAN, CENTRAL_AFRICAN_REPUBLIC, MALI,
+                        CENTRAL_AFRICAN_REPUBLIC, MALI,
                         DEMOCRATIC_REPUBLIC_OF_THE_CONGO, COLOMBIA,
                         JAMAICA, BAHAMAS)}
 

@@ -1165,6 +1165,12 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         # Pakistan and the Dardic north. Khowar sits beside Shina: both are
         # Dardic, and Gilgit-Baltistan reports them together.
         "Lahnda", "Shina", "Pashai", "Khowar",
+        # The three the 2023 census added that belong here. Kalasha and
+        # Kohistani are Dardic like their neighbours above -- Kohistani is a
+        # cover term for the Indus valley's several, which is how the census
+        # prints it. Mewati is not northern at all: it is the Rajasthani of
+        # Mewat, on the form because Punjab and Sindh have the speakers.
+        "Kalasha", "Kohistani", "Mewati",
     ),
     "Nilo-Saharan languages": ("Songhai", "Zarma", "Kanuri", "Fur", "Gula"),
     "Gur languages": ("Gurma", "Bwamu", "Lobi", "Dagara",

@@ -2618,6 +2618,118 @@ class AjkYearbookReligion(unittest.TestCase):
         self.assertEqual(self.pk.AJK_YEAR, 2017)
 
 
+class PakistanMotherTongue(unittest.TestCase):
+    """Table 11 of the 2023 census, and what reading it moved.
+
+    Language used to come from the U.S. Census Bureau's tables of the 2017
+    round, whose question named nine tongues and an Other. The languages of
+    the north were all in the Other, so two districts of 1.4 million people
+    came out with the absence of a category as their largest group: Chitral
+    93.1% and Kohistan 91.9%.
+
+    The 2023 form names fifteen. These read what the adapter actually wrote,
+    so they fail if the table stops being read as well as if it is misread.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        path = be.PROCESSED / "pakistan_district.json"
+        if not path.exists():
+            raise unittest.SkipTest("pakistan_district.json has not been run")
+        cls.rows = {r["name"]: r for r in json.loads(
+            path.read_text(encoding="utf-8"))}
+
+    def groups(self, name):
+        language = self.rows[name].get("language")
+        if not isinstance(language, list):
+            self.fail(f"{name} has no language: {language}")
+        return {g["group"]: g for g in language}
+
+    def test_kohistan_speaks_kohistani_and_not_other(self):
+        # The whole point of the change, at the district where it is clearest:
+        # 91.9% Other became 88.5% a named language.
+        groups = self.groups("Kohistan")
+        largest = max(groups.values(), key=lambda g: g["pct"])
+        self.assertEqual(largest["group"], "Kohistani")
+        self.assertGreater(largest["pct"], 80)
+
+    def test_the_kalash_are_counted_by_name_in_chitral(self):
+        # Kalasha is one of the five tongues the 2023 form added. It is the
+        # only place in this map's data where the Kalash appear at all, and
+        # it is a census figure rather than an estimate.
+        kalasha = self.groups("Chitral")["Kalasha"]
+        self.assertGreater(kalasha["count"], 4000)
+        self.assertLess(kalasha["count"], 9000)
+
+    def test_the_kalasha_column_adds_up_to_the_published_national_figure(self):
+        # The strongest check available on this reader, because it is not this
+        # project's arithmetic: accounts of the 2023 census put Kalasha at
+        # 7,466 speakers nationally, and these districts come to 7,467. A
+        # column read one place to the left would still sum to each district's
+        # printed total and would not land within one of a figure published
+        # somewhere else.
+        everywhere = {r["name"]: g["count"]
+                      for r in self.rows.values() if r["level"] == "admin2"
+                      and isinstance(r.get("language"), list)
+                      for g in r["language"]
+                      if g["group"] == "Kalasha" and g.get("count")}
+        self.assertAlmostEqual(sum(everywhere.values()), 7466, delta=5)
+        # And it is concentrated where the Kalash valleys are. The rest is
+        # ones and twos in the cities -- 614 in Karachi is the largest -- so
+        # Chitral holds two thirds of it and is far the biggest.
+        largest = sorted(everywhere.items(), key=lambda kv: -kv[1])
+        self.assertEqual(largest[0][0], "Chitral")
+        self.assertGreater(largest[0][1], 8 * largest[1][1])
+
+    def test_chitral_says_what_its_other_still_holds(self):
+        # Khowar has no column on the 2023 form either, so Chitral is still
+        # mostly Other -- and the note is what keeps that from reading as a
+        # district nobody looked at.
+        note = self.rows["Chitral"]["language_note"]
+        self.assertIn("Khowar", note)
+        self.assertIn("Kalasha is named", note)
+
+    def test_chitral_says_who_is_in_its_other_religion(self):
+        note = self.rows["Chitral"]["religion_note"]
+        self.assertIn("Kalash", note)
+        self.assertIn("no category for them", note)
+
+    def test_every_note_is_written_for_a_district_that_exists(self):
+        # The guard in the adapter, asserted against what it actually read.
+        from scripts.fetch_census import pakistan
+        for keyed in (pakistan.TONGUE_DISTRICT_NOTES,
+                      pakistan.RELIGION_DISTRICT_NOTES):
+            for name in keyed:
+                self.assertIn(name.title(), self.rows,
+                              f"a note is written for {name}, which the "
+                              "tables do not name")
+
+    def test_no_district_is_left_with_a_residual_as_its_largest_language(self):
+        # Except Chitral, which is Khowar and says so. Anything else showing
+        # up here is a district whose language the census does name and this
+        # reader has lost.
+        residual = []
+        for row in self.rows.values():
+            language = row.get("language")
+            if row["level"] != "admin2" or not isinstance(language, list):
+                continue
+            largest = max(language, key=lambda g: g["pct"])
+            if largest["group"].startswith("Other"):
+                residual.append(row["name"])
+        self.assertEqual(residual, ["Chitral"])
+
+    def test_language_and_religion_are_now_the_same_census(self):
+        # They were six years apart. A district that carries one year for
+        # religion and another for language invites exactly the comparison
+        # that cannot be made.
+        for row in self.rows.values():
+            if isinstance(row.get("language"), list) \
+                    and isinstance(row.get("religion"), list) \
+                    and row["name"] != "Gilgit-Baltistan":
+                self.assertEqual(row["language_year"], row["religion_year"],
+                                 row["name"])
+
+
 class PakistanDeclaresWhatIsNotPublished(unittest.TestCase):
     """Azad Jammu and Kashmir and Gilgit-Baltistan, said rather than left out.
 
@@ -3778,16 +3890,16 @@ class UscbReader(unittest.TestCase):
         out = self.third({1: "admin1", 3: "admin2"})
         self.assertIn(("", "SINDH"), out)
 
-    def test_pakistan_reads_districts_and_not_divisions(self):
-        self.assertEqual(self.uscb.COUNTRIES["PAK"].levels,
-                         {1: "admin1", 3: "admin2"})
-
-    def test_pakistan_does_not_republish_the_religion_it_already_has(self):
-        # scripts/fetch_census/pakistan.py publishes religion from the same
-        # census table. Two files claiming one shape with figures that
-        # disagree at all would send both to a gap under the agreement rule.
-        fields = [t.field for t in self.uscb.COUNTRIES["PAK"].topics]
-        self.assertEqual(fields, ["language"])
+    def test_pakistan_is_not_read_here_at_all(self):
+        # It was, for language, off the 2017 round. The Bureau publishes the
+        # 2023 round's Table 11 itself and scripts/fetch_census/pakistan.py
+        # reads it, so this workbook has nothing left to add -- and were it
+        # still read, two files would claim one shape's language with figures
+        # six years and six named tongues apart, which the agreement rule
+        # answers by sending both to a gap.
+        self.assertNotIn("PAK", self.uscb.COUNTRIES)
+        self.assertFalse([c for c in self.uscb.COUNTRIES.values()
+                          if c.iso3 == "PAK"])
 
     def test_ukraine_publishes_oblasts_only(self):
         self.assertEqual(self.uscb.UKRAINE.levels, {1: "admin1"})

@@ -1171,6 +1171,11 @@ office publishes.
 
 ### Pakistan again: mother tongue, and a level that is not the one above
 
+> **Superseded for Pakistan**, and kept because the level problem it found is
+> general and still live for other countries. Pakistan's mother tongue now
+> comes from the 2023 census direct -- see *The 2023 Table 11*, below -- and
+> `PAKISTAN` is no longer one of `uscb.COUNTRIES`.
+
 The religion above comes from the Bureau of Statistics' own PDF. The Census
 Bureau's workbook for Pakistan carries **both** religion and mother tongue from
 the same 2017 census, and only the second is read here.
@@ -1322,6 +1327,12 @@ naming scheme as Table 9, down to Islamabad dropping the word "districts". It
 answers 404 to `table_11_ajk.pdf` and `table_11_gb.pdf`. So the 2023 round
 does publish mother tongue by district, for 240 million of Pakistan's people,
 and the figures on this map are 2017.
+
+> **Since done.** See *The 2023 Table 11, and two districts whose largest
+> group was a missing category*, below. The paragraphs that follow describe
+> why it had not been, and the reasoning they set out is the reasoning that
+> was followed: the 2023 table replaced the 2017 route, `PAKISTAN` left
+> `uscb.py`, and Table 11 is read the way Table 9 is.
 
 **Wiring it is not a matter of adding a file, which is why it has not been
 done here.** `pakistan_district.json` and `pakistan_language.json` currently
@@ -1545,6 +1556,123 @@ The language roll-up is the one thing still blocked, and the two ways to
 unblock it are both named above: read the 2023 Table 11 (which replaces the
 2017 route rather than joining it), or find a mother tongue for the two
 territories, where every route measured so far is closed.
+
+### The 2023 Table 11, and two districts whose largest group was a missing category
+
+The paragraph above named the route; this is what happened when it was taken.
+
+**The observation that started it was a district, not a country.** Chitral came
+out **93.1% "Other language"** and Kohistan **91.9%** -- 1.4 million people
+between them whose largest language group was the absence of a category. That
+is not a bad join, and it is not a gap either: a gap is visible and says the
+field is empty, while this says, with a number and a colour on the map, that
+the commonest thing about these people is that the form had no word for them.
+
+The cause was the census round. Language came from the 2017 question, which
+names nine tongues and an Other, and the languages of the north are all in the
+Other. **The 2023 question names fifteen** -- Shina, Balti, Mewati, Kalasha and
+Kohistani were added -- and the Bureau publishes it as Table 11, filed exactly
+as the Table 9 this project already reads:
+`table_11_<province>_districts.pdf`, with Islamabad again dropping the word
+because it is one district. All four provinces and the capital answer 200.
+Gilgit-Baltistan and Azad Kashmir answer 404, as they do for Table 9 -- one
+fact about the Bureau's coverage, not two.
+
+**The reader did not need to be written.** Table 11 has the same shape as Table
+9 down to the details that were expensive to learn the first time: tehsils
+interleaved with districts, ALL LOCALITIES / RURAL / URBAN each repeating the
+same people, a dash printed where a language is absent, and a figure arriving
+as several words. Nine cells to a row against sixteen is the only difference,
+so `districts()`, `check()`, `province_row()` and `merge()` now take the column
+list instead of assuming it.
+
+**Table 11's districts are held to Table 9's.** The two come out of one census
+and one office, so the sets are compared and any difference either way stops
+the run. The failure this guards against is silent: a district whose language
+row was never found simply has no language, which on this map is
+indistinguishable from a district the census did not ask.
+
+#### What it moved
+
+| | before (2017, via the Census Bureau) | after (2023, from the Bureau direct) |
+| --- | --- | --- |
+| Kohistan | 91.9% Other language | **88.5% Kohistani**, 6.5% Shina |
+| Chitral | 93.1% Other language | 92.4% Other -- and **Kalasha 5,065**, named |
+| Upper Dir | 8.6% Other | 3.7% Other, 5.1% Kohistani |
+| districts with a residual above 1% | 33 | 6 above 5% |
+| districts published | 124 | **127** -- Chaman, Duki and Surab, created since 2017 |
+| language year | 2017, six years off the religion beside it | 2023, the same census |
+
+The three districts gained and the six "Frontier Region" units lost are the
+same event: FATA was abolished in 2018, so those units do not exist in the 2023
+census, and three new districts do.
+
+**Pakistan therefore leaves `uscb.py`.** Two files publishing language onto one
+shape, six years and six named tongues apart, is exactly what the agreement
+rule answers by sending both to a gap. The Karachi declaration written there is
+the case that made `combine()` exist -- six parts, one shape, no published row
+of their own to check the sum against -- so `tests/test_uscb_merge.py` keeps it,
+copied verbatim rather than rewritten to suit the test.
+
+#### Kalasha, and what a census can and cannot see
+
+The Kalash are about four thousand people in three valleys of Chitral, and the
+only community in Pakistan practising the pre-Islamic religion of the Hindu
+Kush. Before this they appeared **nowhere in this project's data**, under any
+field, at any level.
+
+They appear now, as a language: `Kalasha`, **5,065 people in Chitral**. The
+column sums to **7,467 nationally** against the 7,466 that accounts of the 2023
+census publish -- which is the strongest check available on this reader,
+because it is not this project's arithmetic. The rest is ones and twos in the
+cities, 614 in Karachi the largest.
+
+They do **not** appear as a religion, and that is the census's doing rather
+than this project's. Table 9's categories are Muslim, Christian, Hindu, Ahmadi,
+Scheduled Castes, Sikh, Parsi and Other; the Kalash faith is in the Other, with
+4,970 people in Chitral. That figure is left as printed. Naming all of it
+Kalash would overstate a community put at 3,000 to 4,000 adherents, and naming
+part of it would mean choosing between estimates -- the gap between 4,970,
+5,065 Kalasha speakers and ~3,500 adherents being families who converted and
+kept the language. The note says all of this; the number stays the census's.
+
+#### Six districts that say what their Other holds
+
+Reading the newer table did not empty the Other column, and in one district it
+barely touched it: **Khowar has no column on the 2023 form either**, so Chitral
+is still 92.4% Other, and Khowar is what that is.
+
+Six districts now carry a note naming the contents of theirs:
+
+| district | Other | what it is |
+| --- | --- | --- |
+| Chitral | 92.4% | Khowar, then Palula, Dameli, Yidgha, Gawar-bati, Kativiri, Madaglashti, Wakhi |
+| Batagram | 11.9% | Gujari, and Kohistani across the northern boundary |
+| Mansehra | 11.6% | Gujari of the Kaghan valley |
+| Quetta | 8.2% | Hazaragi |
+| Rawalpindi | 6.3% | Pothwari |
+| Swat | 6.1% | Torwali in Bahrain, Gawri in Kalam, Gujari in the hills |
+
+**They name the languages and do not divide the figure between them**, which is
+a different decision from the one taken for India's "Other religions" and taken
+for a different reason. There the census published its own breakdown of its own
+residual (the C-01 Appendix) and the job was to read it. Here the Bureau prints
+one number and no breakdown at all, so any split would be this project's
+arithmetic wearing the census's clothes -- and the estimates that would drive it
+disagree badly: Dameli is "perhaps seventy families" in one account and 5,000
+speakers in another, an order of magnitude apart. SIL's *Sociolinguistic Survey
+of Northern Pakistan* volume 5 would settle it and answers **403** to this
+project, which is a deliberate block and is not worked around.
+
+A reader told the split is not published can go and find it. A reader shown a
+split this file invented cannot tell that it was.
+
+**A note keyed to a district that no longer exists reaches nobody, silently** --
+the district keeps the general note and looks exactly like one nothing was
+written for. The Bureau renames and splits districts between rounds (Chitral
+and Kohistan are each several districts now, summed here into the one shape
+geoBoundaries draws), so the run refuses if any note names a district the
+tables do not.
 
 ### Central African Republic: three fields, and a table that counts two things
 
