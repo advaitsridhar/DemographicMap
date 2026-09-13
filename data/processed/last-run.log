@@ -1,146 +1,210 @@
-probe_pdf: https://www.ubos.org/wp-content/uploads/publications/03_20182014_National_Census_Main_Report.pdf
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  2,049,840 bytes
-  105 pages
-probe_pdf: 105 pages, printing [81, 82, 83]
+probe_pdf: https://fca.vu/wp-content/uploads/2024/01/2020_Vanuatu_National_Population_and_Housing_Census_-_Analytical_report_Volume_2.pdf
+  10,628,723 bytes
+  119 pages
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/LOULFM+Bauhaus-Medium', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 86, '/FontDescriptor': IndirectObject(51, 0, 140413218130384), '/LastChar': 117, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [556, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 556, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 0, 0, 0, 0, 0, 333, 500]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+probe_pdf: 119 pages, 12 mention ['language']
+=== front matter ===
+1
+Vanuatu 2020 National Population and Housing Census – Analytical Report
+Volume 2
+VANUATU VANUATU 
+20202020 NATIONAL POPULATION  NATIONAL POPULATION 
+AND HOUSING CENSUSAND HOUSING CENSUS
+ANALYTICAL REPORTANALYTICAL REPORT
+VOLUME 2VOLUME 2
 
---- page 81 ----------------------------------------------------
-2014 NPHC - Main Report
-70
-Table A7:  Distribution of Households by source of Energy for Cooking , Sex and District
-District Electricity Gas Paraffin-Stove Charcoal Firewood Other s Total
-               -
-   Oyam                  668           244                         561                  2,962                70,437                 378                 76,493
-   Pader                  302             96                         277                  3,989                28,206                 156                 34,160
-   Yumbe                  475           275                         339                  4,801                55,056                 255                 63,362
-   Zombo                  383           265                         331                  3,430                44,662                 165                 50,869
-Western
-   Buhweju                  495           131                         155                      892                22,416                   85                 24,845
-   Buliisa                  146             74                         134                  4,144                17,018                 136                 21,652
-   Bundibugyo                  593           254                         418                  6,562                36,665                 274                 44,818
-   Bushenyi              1,088           332                         747                  6,827                41,827                 293                 51,378
-   Hoima              1,604           585                         812                20,954              100,696                 703               125,554
-   Ibanda                  851           248                         464                  6,483                46,141                 499                 55,006
-   Isingiro              1,431           284                         751                10,377                86,303             2,033               101,590
-   Kabale              2,073           429                         519                13,609              100,102                 918               117,854
-   Kabarole              2,272           722                     1,372                12,058                88,833             1,012               107,260
-   Kamwenge              1,247           383                         423                  6,356                78,958                 447                 88,686
-   Kanungu                  880           201                         347                  4,508                49,306                 274                 55,975
-   Kasese              2,947           526                     1,498                28,120              103,826             1,233               139,066
-   Kibaale              2,178           565                         748                15,735              147,707                 758               168,322
-   Kiruhura                  830           427                         592                  7,154                57,153                 583                 67,224
-   Kiryandongo                  464           177                         357                  8,776                41,949                 273                 52,158
-   Kisoro              1,099           192                         248                  4,342                54,543             1,533                 62,247
-   Kyegegwa                  754           308                         199                  5,068                53,331                 302                 60,061
-   Kyenjojo              1,327           427                         575                  5,961                82,572                 574                 91,534
-   Masindi              2,083           283                         652                14,199                47,046                 288                 64,935
-   Mbarara              3,786       1,152                     2,250                33,677                69,924             1, 439               112,849
-   Mitooma                  747           144                         296                  1,946                36,237                 327                 39,816
-   Ntoroko                  134             63                         113                  3,771                  9,445                 392                 13,942
-   Ntungamo              1,385           420                         623                11,392                85,832             1,750               101,796
-   Rubirizi                  395             74                         265                  3,090                24,618                 172                 28,789
-   Rukungiri              1,135           302                         491                  6,437                60,244                 439                 69,497
-   Sheema                  732           201                         512                  4,914                38,583                 797                 46,050
-Total          151,062     62,097                   80,885          1,678,259          5,210,191           61,052           7,306,942
 
---- page 82 ----------------------------------------------------
-2014 NPHC - Main Report
-71
-Table A8:  Population by Ethnicity/Citizenship by Sex and Residence
-                        Sex Residence Total
-Ethnicity/Citizenship Male Female Rural Urban
- Ugandans
-   Acholi 713,091 757,463 1,121,299 349,255 1,470,554
-   Aliba 9,101 9,195 16,149 2,147 18,296
-   Alur 425,670 452,783 731,579 146,874 878,453
-   Aringa 235,776 258,850 433,394 61,232 494,626
-   Baamba 20,923 21,636 32,987 9,572 42,559
-   Babukusu 18,484 18,633 33,146 3,971 37,117
-   Babwisi 48,435 52,677 79,376 21,736 101,112
-   Bafumbira 345,771 367,460 625,872 87,359 713,231
-   Baganda 2,688,700 2,866,619 3,268,588 2,286,731 5,555,319
-   Bagisu 805,808 841,096 1,351,587 295,317 1,646,904
-   Bagungu 41,538 42,448 69,251 14,735 83,986
-   Bagwe 50,493 49,391 94,117 5,767 99,884
-   Bagwere 302,969 318,181 528,604 92,546 621,150
-   Bahehe 1,996 2,027 3,498 525 4,023
-   Bahororo 73,723 77,843 118,127 33,439 151,566
-   Bakenyi 50,450 49,463 93,571 6,342 99,913
-   Bakiga 1,159,525 1,230,921 2,077,372 313,074 2,390,446
-   Bakonzo 414,657 435,989 719,076 131,570 850,646
-   Banyabindi 8,352 7,979 12,806 3,525 16,331
-   Banyabutumbi 4,972 5,141 7,777 2,336 10,113
-   Banyankore 1,554,458 1,661,874 2,563,622 652,710 3,216,332
-   Banyara 24,005 23,694 42,289 5,410 47,699
-   Banyaruguru 23,994 25,001 39,753 9,242 48,995
-   Banyarwanda 252,493 271,605 422,355 101,743 524,098
-   Banyole 263,043 267,077 438,582 91,538 530,120
-   Banyoro 473,084 493,892 685,921 281,055 966,976
-   Baruli 94,076 96,046 165,700 24,422 190,122
-   Barundi 48,657 43,913 82,134 10,436 92,570
-   Basamia 205,253 215,853 343,061 78,045 421,106
-   Basoga 1,429,287 1,531,603 2,403,105 557,785 2,960,890
-   Basongora 7,960 7,937 12,057 3,840 15,897
-   Batagwenda 28,020 28,131 49,153 6,998 56,151
-   Batoro 396,437 414,271 575,581 235,127 810,708
-   Batuku 17,378 17,972 27,950 7,400 35,350
-   Batwa 3,022 3,178 5,429 771 6,200
-   Chope 17,202 17,125 28,944 5,383 34,327
-   Dodoth 59,302 69,800 118,942 10,160 129,102
-   Ethur 47,315 51,033 80,069 18,279 98,348
-   Gimara 5,547 5,635 9,677 1,505 11,182
-   Ik (Teuso) 6,845 7,094 11,553 2,386 13,939
-   Iteso 1,160,208 1,204,361 2,071,918 292,651 2,364,569
-   Jie 75,406 89,836 155,710 9,532 165,242
-   Jonam 51,675 54,772 79,877 26,570 106,447
-   Jopadhola 235,742 246,074 409,048 72,768 481,816
-   Kakwa 89,837 92,599 124,701 57,735 182,436
-   Karimojong 172,419 199,294 343,648 28,065 371,713
-   Kebu (Okebu) 27,571 26,538 51,326 2,783 54,109
-   Kuku 22,103 24,394 41,661 4,836 46,497
-   Kumam 131,450 134,621 241,088 24,983 266,071
+Noumea, New Caledonia
+October 2022
+VANUATU VANUATU 
+20202020 NATIONAL POPULATION  NATIONAL POPULATION 
+AND HOUSING CENSUSAND HOUSING CENSUS
+ANALYTICAL REPORTANALYTICAL REPORT
+VOLUME 2VOLUME 2
+Vanuatu Bureau of Statistics and the Pacific Community
+Ralph Hakkert and Scott Pontifex
+© Pacific Community (SPC) and the Vanuatu Bureau of Statistics (VBoS) 2022
+All rights for commercial/for profit reproduction or translation, in any form, reserved. SPC and VBoS 
+authorise the partial reproduction or translation of this material for scientific, educational or research 
+purposes, provided that SPC and VBoS, and the source document are properly acknowledged. 
+Permission to reproduce the document and/or translate in whole, in any form, whether for commercial/
+for profit or non-profit purposes, must be requested in writing. Original SPC and VBoS artwork may not 
+be altered or separately published without permission.
+Disclaimer: While efforts have been made to ensure the accuracy and reliability of the material 
+contained in this report, SPC and VBoS cannot guarantee that the information is free from errors and 
+omissions, and do not accept any liability, contractual or otherwise, for the content of this report or 
+any consequences arising from its use.
+Hakkert, Ralph
+Vanuatu 2020 national population and housing census: analytical report - volume 2 / Ralph Hakkert 
+and Scott Pontifex
+1. Census — Vanuatu.
+2. Demography — Vanuatu.
+3. Vanuatu — Population — Statistics.
+4. Population — Vanuatu.
+5. Housing — Vanuatu — Statistics.
+I. Hakkert, Ralph II. Pontifex, Scott III. Title IV. Vanuatu. Bureau of Statistics V. Pacific Community
+319.595        AACR2
+ISBN: 978-982-00-1458-9
+Design and layout by Gaëlle Le Gall-Queguineur, SPC/SDD.
+Cover photo: Graham Crumb
+Prepared for publication at SPC’s Headquarters,  
+B. P . D5, 98 848, Noumea Cedex, New Caledonia, 2022
+i
+Vanuatu 2020 National Population and Housing Census – Analytical Report
+Volume 2
+CONTENTS
+ABBREVIATIONS  .............................................................................................................................................................iii
+TABLES ...............................................................................................................................................................................iv
+FIGURES .............................................................................................................................................................................vi
+SUMMARY OF MAIN INDICATORS .............................................................................................................................x
+MAP OF VANUATU .......................................................................................................................................................xiii
+1. INTRODUCTION  .........................................................................................................................................................1
+1.1. Geographic setting ......................................................................................................................................................1
+1.2. Background   ......................................................................................................................................1
+2. POPULATION SIZE, TREND, DISTRIBUTION, STRUCTURE AND URBANISATION ....................................2
+2.1. Population size and trend .........................................................................................................................................2
+2.2. Population distribution ..............................................................................................................................................5
+2.3. Population density ...................................................................................................................................................... 5
+2.4. Population structure ...................................................................................................................................................6
+2.5. Urban growth ..............................................................................................................................................................14
+2.5.1  Degree of urbanisation .......................................................................................................................................15
+2.5.2  Tempo of urbanisation ........................................................................................................................................15
+3. DEMOGRAPHIC COMPONENTS ..........................................................................................................................17
+3.1. Fertility  ...........................................................................................................................................................................17
+3.1.1  National estimates ................................................................................................................................................17
+3.1.2  Subnational estimates .........................................................................................................................................22
+3.2. Mortality  ........................................................................................................................................................................24
+3.2.1  National-level estimates .....................................................................................................................................24
+3.2.2  Subnational estimates of mortality ................................................................................................................32
+3.2.3  Maternal mortality ................................................................................................................................................34
+3.3. Integrated estimation of fertility and mortality ..............................................................................................34
+3.4. Migration  .......................................................................................................................................................................39
+3.4.1  Internal migration .................................................................................................................................................39
+3.4.2  International migration .......................................................................................................................................44
+4. SOCIAL CHARACTERISTICS ..................................................................................................................................46
+4.1. Marital status ...............................................................................................................................................................46
+4.2. Religion  ..........................................................................................................................................................................49
+4.3. Ethnic origin .................................................................................................................................................................50
+4.4. Health  .............................................................................................................................................................................51
+4.4.1  Disability ...................................................................................................................................................................51
+4.4.2  Smoking and drinking habits ...........................................................................................................................53
+4.5. Educational characteristics .....................................................................................................................................56
+4.5.1  School attendance ................................................................................................................................................57
+4.5.2  Educational attainment ......................................................................................................................................60
+4.5.3  Literacy and language ability ...........................................................................................................................61
+ii
+Vanuatu 2020 National Population and Housing Census – Analytical Report
+Volume 2
+4.6. Internet use ..................................................................................................................................................................65
+4.7. Labour market activity .............................................................................................................................................67
+4.7.1  Introduction ............................................................................................................................................................67
+4.7.2  Economic activity ..................................................................................................................................................68
+4.7.3  Labour force participation rate, employment–population ratio, and unemployment rate ......71
+4.7.4  Employment status ..............................................................................................................................................75
+4.7.5  Employed population by industry group .....................................................................................................76
+4.7.6  Employed population by occupational group ...........................................................................................77
+4.7.7  Population working overseas ...........................................................................................................................78
+5. HOUSEHOLD CHARACTERISTICS ......................................................................................................................80
+5.1. Household size ............................................................................................................................................................80
+5.2. Household composition ..........................................................................................................................................81
+5.3. Household income ....................................................................................................................................................82
+5.4. Amenities and capital goods .................................................................................................................................82
+5.4.1  Private households by housing and land tenure .......................................................................................82
+5.4.2  Private households by living quarters ...........................................................................................................84
+5.4.3  Private households by age of dwelling .........................................................................................................84
+5.4.4  Private households by number of rooms .....................................................................................................85
+5.4.5  Private households by construction material used for dwelling .........................................................85
+5.4.6  Private households by water source for drinking and washing ...........................................................86
+5.4.7  Private households by main energy source for lighting and cooking ...............................................87
+5.4.8  Private households by main toilet facility ....................................................................................................88
+5.4.9  Private households by means of communication .....................................................................................89
+5.4.10  Private households by main means of waste disposal .........................................................................89
+5.4.11  Private households involved in agricultural cash crop and fisheries activities ............................90
+5.4.12  Private households owning or raising livestock ......................................................................................92
+5.4.13  Private households and availability of various household items ......................................................92
+5.5. Household bed nets ..................................................................................................................................................93
+6. IMPLICATIONS OF DEMOGRAPHIC TRENDS ..................................................................................................94
 
---- page 83 ----------------------------------------------------
-2014 NPHC - Main Report
-72
-Table A8:  Population by Ethnicity/Citizenship by Sex and Residence
-                        Sex Residence Total
-Ethnicity/Citizenship Male Female Rural Urban
-   Langi 1,042,464 1,089,031 1,905,656 225,839 2,131,495
-   Lendu 9,693 9,226 16,904 2,015 18,919
-   Lugbara 533,012 566,721 987,252 112,481 1,099,733
-   Madi 142,916 150,067 240,538 52,445 292,983
-   Mening 1,264 1,391 2,428 227 2,655
-   Mvuba 1,391 1,488 2,301 578 2,879
-   Napore 12,337 13,080 24,050 1,367 25,417
-   Ngikutio 2,757 2,972 5,404 325 5,729
-   Nubi 14,181 14,591 9,033 19,739 28,772
-   Nyangia 4,751 4,883 9,277 357 9,634
-   Pokot 51,554 53,326 95,087 9,793 104,880
-   Reli 4,238 4,119 7,282 1,075 8,357
-   Sabiny 136,112 137,727 242,643 31,196 273,839
-   Shana 5,240 5,595 3,393 7,442 10,835
-   So (Tepeth) 11,041 12,381 23,311 111 23,422
-   Vonoma 1,235 1,378 2,123 490 2,613
-   Other Ugandans 29,937 30,881 39,672 21,146 60,818
-Non Ugandans
-   Kenya 16,023 18,097 18,401 15,719 34,120
-   Tanzania 22,426 23,115 33,751 11,790 45,541
-   Rwanda 43,271 47,960 66,058 25,173 91,231
-   Burundi 11,198 10,600 19,322 2,476 21,798
-   Sudan 56,683 62,153 75,085 43,751 118,836
-   Dem Rep Of Congo 66,326 69,179 113,211 22,294 135,505
-   Somalia 7,032 6,772 2,521 11,283 13,804
-   Other Africa 3,043 2,697 1,103 4,637 5,740
-   Other 298 296 186 408 594
-   United Kingdom 499 490 119 870 989
-   Other Europe 764 720 200 1,284 1,484
-   Asia 8,156 5,638 636 13,158 13,794
-   Usa 794 840 215 1,419 1,634
-   Canada 198 163 61 300 361
-   Central And Latin America 99 93 78 114 192
-   Australia 119 132 42 209 251
-   Oceania 110 84 21 173 194
-   Non-Ugandan Not Stated 9,629 8,499 4,554 13,586 18,128
- 16,595,014 17,547,403 26,994,948 7,147,469 34,142,417
+=== pages mentioning ['language'] (first 6) ===
+
+--- page 5 ----------------------------------------------------
+4.5. Educational characteristics .....................................................................................................................................56
+4.5.1  School attendance ................................................................................................................................................57
+4.5.2  Educational attainment ......................................................................................................................................60
+4.5.3  Literacy and language ability ...........................................................................................................................61
+
+--- page 11 ----------------------------------------------------
+Figure 58. Percentage of the population 15+ years by sex and place of residence, who drink kava, Vanuatu: 2020 .
+56
+Figure 59. Percentage of the population 15+ years by age and sex, who drink kava, Vanuatu: 2020 .........................56
+Figure 60. Population living in private HHs 5+ years by sex, and attending school, by main language of
+educational institution, Vanuatu: 2020 ................................................................................................................................................58
+Figure 61. Percentage of boys aged 5–24 years by age and school enrolment, Vanuatu: 2020 .....................................59
+Figure 62. Percentage of girls aged 5–24 years by age and school enrolment, Vanuatu: 2020 .....................................59
+
+--- page 12 ----------------------------------------------------
+Figure 65. Literacy rate (read or write) of the population 15+ years by sex (percentage literate), Vanuatu: 2020 ..62
+Figure 66. Literacy rate (read or write) of the population 15–24 years, by sex and place of residence (percentage
+literate), Vanuatu: 2020...............................................................................................................................................................................62
+Figure 67 . Percentage of the population 15+ years with language ability (read or write) in various languages, by
+sex, Vanuatu: 2020 .......................................................................................................................................................................................62
+Figure 68. Percentage of the population 15+ years with English language ability (read or write), by sex, Vanuatu:
+2020 ...................................................................................................................................................................................................................63
+Figure 69. Percentage of the population 15+ years with French language ability (read or write), by sex, Vanuatu:
+2020 ...................................................................................................................................................................................................................63
+Figure 70. Percentage of the population 15+ years with Bislama language ability (read or write), by sex, Vanuatu:
+2020 ...................................................................................................................................................................................................................63
+Figure 71. Percentage of the population 15+ years with Indigenous language ability (read or write), by sex,
+Vanuatu: 2020 ................................................................................................................................................................................................64
+Figure 72. Percentage of the population 15+ years with other language ability (read or write), by sex, Vanuatu:
+2020 ...................................................................................................................................................................................................................64
+Figure 73. Percentage of the population that can speak an Indigenous (vernacular) language, by age and sex,
+Vanuatu: 2020 ................................................................................................................................................................................................65
+Figure 74. Proportion of the population 15+ years by sex using the internet, Vanuatu: 2020 .......................................66
+Figure 75. Proportion of the population 15+ years by place of residence, using the internet, Vanuatu: 2020 ........66
+
+--- page 15 ----------------------------------------------------
+Literacy in English 76.9 89.5 72.8 73.9 76.1 67. 2 74.0 89.1 56.4
+Literacy in French 40.0 48.4 37. 2 27.1 39.1 33.8 38.7 46.6 32.9
+Literacy in Bislama 90.1 96.6 88.0 85.1 91.4 86.8 94.6 96.6 70.4
+Literacy in Indigenous language 70.9 78.0 68.6 58.0 69.7 73.9 60.2 82.4 53.8
+Literacy in other language 1.1 1.2 1.1 4.5 0.9 1.1 0.5 1.4 0.5
+Internet use (% of population aged 5+) 26.2 48.3 19.7 14.3 25.0 14.3 19.1 41.3 11.0
+     Males 28.3 49.4 22.1 17.1 27.4 18.4 22.2 42.2 12.7
+     Females 24.1 47. 2 17. 2 11.5 22.5 10.2 16.0 40.3 9.4
+
+--- page 51 ----------------------------------------------------
+Volume 2
+0.541 with the percentage who have completed primary education. Again, this is the same pattern
+that was found in the case of the TFR. There are also negative correlations with literacy rates in English
+and indigenous language, and a correlation of -0.499 with the male LFPR.
+3.2.3  Maternal mortality
+The 2020 census reported a total of 58 pregnancy-related deaths, i.e. deaths of women of reproductive
+age that occurred during pregnancy, childbirth, or up to 42 days after childbirth. Strictly speaking,
+
+--- page 75 ----------------------------------------------------
+58
+Vanuatu 2020 National Population and Housing Census – Analytical Report
+Volume 2
+With respect to the main language spoken in educational institutions, more than half (62.3%) of all
+students attended English-speaking schools (54,244); 26.4% attended French-speaking schools
+(23,011); and 7.1% attended schools where the language of instruction was Bislama. This compares to
+enrolment data from MoET, which indicates that 1,352 children received instruction in Bislama (ECCE
+level only), whereas at the primary level 38,561 received instruction in English and 17,862 in French. At
+the secondary level, these numbers were 17,128 and 6,815, respectively. Due to differences in categori-
+sation, the 2020 census numbers are difficult to compare to those of 2009, but it would seem that the
+proportion of children attending English language schools has increased.
+54,244
+23,011
+1,062
+      ...
+French
+Bislama Indigenous Other
+Number of pupils
+Language
+Figure 60. Population living in private HHs 5+ years by sex, and attending school, by main language of
+educational institution, Vanuatu: 2020
+For ages 5–18, female attendance rates were higher than male enrolment rates. From the age of 19,
+school attendance rates for males were slightly higher than for females (Fig. 61). Not at any age did
+
+... and 6 further pages match; re-run with a narrower --terms to see them.
