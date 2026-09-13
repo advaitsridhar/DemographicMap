@@ -119,13 +119,18 @@ NATIONAL = 727_145
 HEADER_KEY = "Gewog/Town"
 HEADER_EDGE = "Total"
 
-# How far past the right edge of the header word "Total" its column's figures
-# may reach. The header word is centred over the column and the values are set
-# flush right, so they end past it: Dagana's header "Total" ends at x=229 and
-# "575" in the row below it does not. Clipping at the header word exactly cost
-# every Dagana row its third figure, which then failed the three-figure test
-# and was dropped -- the whole table, silently, as "no gewog rows read".
-COLUMN = 45.0
+# There is no right clip, and there was: the header word "Total" is centred
+# over its column while the values are set flush right, so they end past it.
+# Dagana's "Total" ends at x=229 and the 575 beneath it does not, so clipping
+# there cost every Dagana row its third figure -- the whole table, reported as
+# "no gewog rows read". Widening the allowance only moved the guess.
+#
+# What actually separates a row from the prose beside it is not geometry but
+# shape: a row is three consecutive figures with a name in front. The left
+# edge still holds, because prose to the *left* of the table would otherwise
+# supply that name; to the right it can only add trailing words, and the run
+# rule ignores those.
+COLUMN = float("inf")
 SECTIONS = {"Urban", "Rural"}
 
 # The row that closes the table, and there are two spellings of it. Tsirang
