@@ -1646,7 +1646,7 @@ Six districts now carry a note naming the contents of theirs:
 
 | district | Other | what it is |
 | --- | --- | --- |
-| Chitral | 92.4% | Khowar, then Palula, Dameli, Yidgha, Gawar-bati, Kativiri, Madaglashti, Wakhi |
+| Chitral | 92.4% | **divided — see below** |
 | Batagram | 11.9% | Gujari, and Kohistani across the northern boundary |
 | Mansehra | 11.6% | Gujari of the Kaghan valley |
 | Quetta | 8.2% | Hazaragi |
@@ -1666,6 +1666,72 @@ project, which is a deliberate block and is not worked around.
 
 A reader told the split is not published can go and find it. A reader shown a
 split this file invented cannot tell that it was.
+
+#### Chitral, divided anyway — on the owner's instruction, and how it is marked
+
+The paragraph above is the general rule and Chitral is the declared exception
+to it. The owner asked for numbers. 474,149 people is too many to leave as a
+word, and unlike the other five this district's Other is not a fringe — it is
+almost everybody in it.
+
+**Khowar is the remainder, not a count, and that is the whole design.** No
+source publishes a Chitral-specific Khowar figure: Ethnologue's 580,000 is
+every Khowar speaker anywhere, which is more people than live in Chitral,
+because Khowar is also spoken in Ghizer, Gupis-Yasin and upper Swat. So the
+six minority languages take their published estimates and Khowar takes what
+is left of the census's column:
+
+| group | figure | where it comes from |
+| --- | --- | --- |
+| Khowar | **441,999** | the census column less the six below — a *remainder* |
+| Palula | 10,000 | Ashret and Biori valleys, Puri in Shishi, Kalkatak |
+| Yidgha | 6,150 | the Lutkoh valley |
+| Dameli | 5,000 | the Damel valley |
+| Gawar-bati | 4,000 | Arandu, of some 12,000 across the Afghan border |
+| Madaklashti | 4,000 | Badakhshani Persian, Shishi valley |
+| Kativiri | 3,000 | "less than 3,000", on the Nuristan border |
+
+Chitral therefore reads Khowar 86.1%, Pashto 5.8%, Palula 1.9%, Yidgha 1.2%,
+Kalasha 1.0%, Dameli 1.0%, and the rest below that — and carries **no residual
+at all**, the only district in Pakistan where one was removed rather than
+shrunk.
+
+**Why the remainder goes on the largest figure.** Every error in those six
+estimates lands on Khowar, where it is proportionally smallest: being wrong by
+2,000 on Palula moves Khowar by half a percent of itself. The estimates are of
+mixed vintage and are published as-is, not scaled up for Chitral's growth
+since they were made — scaling would be a second layer of this project's
+arithmetic on someone else's, and the residual absorbs whatever they are short
+by. This is the discipline Gilgit-Baltistan's language table already uses,
+where Balti carries the residual for being the least precise figure its source
+gives.
+
+**Khowar is overstated, and the note says so.** The tongues with no published
+Chitral figure — Wakhi in Broghil and upper Yarkhun, Kyrgyz beside them,
+Gujari, Sarikoli — have nowhere else to go, so they are inside that 441,999.
+They are families and hundreds against 442,000. Inventing a number for each to
+avoid admitting it would have been the worse trade.
+
+**What the note has to carry**, and what a test asserts it still does: that
+the division is not the census's, that the Khowar figure is a remainder rather
+than a count, and that Khowar is overstated. Only the district total and the
+Pashto, Kalasha, Urdu and Kohistani beside it are counted by the census.
+
+**Khyber Pakhtunkhwa's own row keeps its Other unbroken.** The estimate was
+made for one district; spreading it across the province would be exactly the
+arithmetic the note disclaims. A reader drilling from the province into the
+district will see the Other vanish, and that is the honest asymmetry rather
+than a bug.
+
+**The substitution is inside the Other column and touches nothing else**, so
+the row still sums to the district's printed 513,395 — asserted, and the run
+refuses if it stops being true. It also refuses rather than clamping if the
+estimates ever outgrow the column, because a negative remainder would mean
+either the column or an estimate is wrong, and both are worth stopping for.
+
+Nuristani joins the group tree as its own branch of Indo-Iranian, which is
+what Kativiri is — neither Indo-Aryan nor Iranian, and the only such language
+on this map.
 
 **A note keyed to a district that no longer exists reaches nobody, silently** --
 the district keeps the general note and looks exactly like one nothing was
