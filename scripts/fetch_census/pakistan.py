@@ -1243,6 +1243,91 @@ RELIGION_DISTRICT_NOTES: dict[str, str] = {
 }
 
 
+# Chitral's Other, divided. The owner asked for numbers rather than the note
+# below, and this is what numbers here can honestly be.
+#
+# The census prints one figure for the column -- 474,149 people, 92.4% of the
+# district -- and no breakdown of it. Khowar has no column on the 2023 form,
+# so that one number is very nearly the whole Kho population plus every small
+# language of the valleys. What follows names them.
+#
+# **Khowar is the remainder, not a count, and that is the whole design.** No
+# source publishes a Chitral-specific Khowar figure: Ethnologue's 580,000 is
+# every Khowar speaker anywhere, which is more people than live in Chitral,
+# because Khowar is also spoken in Ghizer, Gupis-Yasin and upper Swat. So the
+# minority languages take their published estimates, Khowar takes what is
+# left, and every error in those estimates lands on the largest figure where
+# it is proportionally smallest. This is the same discipline Gilgit-Baltistan's
+# table uses, where Balti carries the residual for being the least precise
+# figure its source gives.
+#
+# It also means **Khowar is overstated**, by the speakers of the languages with
+# no published Chitral figure: Wakhi in Broghil and upper Yarkhun, Kyrgyz in
+# the same corner, Gujari, Sarikoli. Those are families and hundreds rather
+# than thousands, against 442,000, and inventing a number for each to avoid
+# saying so would be the worse trade. The note says it instead.
+#
+# The estimates are of mixed vintage and mostly count speakers rather than
+# households or mother-tongue respondents. They are the published figures,
+# not adjusted for Chitral's growth since they were made -- adjusting them
+# would be a second layer of this project's arithmetic on top of somebody
+# else's, and the residual already absorbs whatever they are short by.
+CHITRAL_TONGUES: dict[str, int] = {
+    "Palula": 10_000,    # Ashret and Biori valleys, Puri in Shishi, Kalkatak
+    "Yidgha": 6_150,     # the Lutkoh valley, west of Chitral town
+    "Dameli": 5_000,     # the Damel valley
+    "Gawar-bati": 4_000, # Arandu, of some 12,000 across the Afghan border
+    "Madaklashti": 4_000,  # Badakhshani Persian, in the Shishi valley
+    "Kativiri": 3_000,   # "less than 3,000", on the Nuristan border
+}
+CHITRAL_RESIDUAL = "Khowar"
+CHITRAL_SPLIT_NOTE = (
+    " **The division of that Other below is not the census's.** The Bureau "
+    "prints one figure for the column and no breakdown. Khowar, the language "
+    "of the Kho and the valley's lingua franca, has no column on the 2023 "
+    "form, so nearly all of the column is Khowar -- and the figure shown for "
+    "it here is a remainder rather than a count: the six smaller languages "
+    "are set to published speaker estimates of mixed vintage and Khowar takes "
+    "what is left of the census's 474,149. Every error in those estimates "
+    "therefore lands on Khowar. Khowar is also overstated by the tongues no "
+    "source counts separately in this district -- Wakhi in Broghil and upper "
+    "Yarkhun, Kyrgyz beside them, Gujari, Sarikoli -- which are families and "
+    "hundreds against 442,000. Only the district total, and the Pashto, "
+    "Kalasha, Urdu and Kohistani beside it, are counted by the census. "
+    "Khyber Pakhtunkhwa's own row above keeps the Other unbroken, because "
+    "this estimate was made for this district and not for the province.")
+
+
+def chitral_split(counts: dict[str, int]) -> dict[str, int]:
+    """Chitral's row with its Other column replaced by named languages.
+
+    Takes and returns the table's own counts, so the result is still a row
+    that sums to the district's printed total -- the substitution is inside
+    the Other column and touches nothing else. ``shares()`` then divides it
+    exactly as it divides an unmodified row.
+
+    Refuses rather than clamps if the estimates outgrow the column. A negative
+    remainder would mean either the column has shrunk below what the small
+    languages are believed to hold or an estimate here has been raised too
+    far, and both are things to look at rather than round up to zero.
+    """
+    bucket = counts["Other language"]
+    named = sum(CHITRAL_TONGUES.values())
+    if named >= bucket:
+        raise SystemExit(
+            f"pakistan: Chitral's named minority languages come to {named:,} "
+            f"against an Other column of {bucket:,}, so {CHITRAL_RESIDUAL} "
+            f"would be {bucket - named:,}. The remainder carries every error "
+            f"in those estimates and it has run out of room to.")
+    out = {k: v for k, v in counts.items() if k != "Other language"}
+    out[CHITRAL_RESIDUAL] = bucket - named
+    out.update(CHITRAL_TONGUES)
+    if sum(v for k, v in out.items() if k != "TOTAL") != counts["TOTAL"]:
+        raise SystemExit(
+            "pakistan: Chitral's split no longer sums to its printed total")
+    return out
+
+
 # What the Other is, in the six districts where it is still large enough to
 # be the thing a reader asks about. Keyed by the table's own spelling, which
 # is what ``found`` is keyed by.
@@ -1261,15 +1346,7 @@ RELIGION_DISTRICT_NOTES: dict[str, str] = {
 # A reader who wants the split can be told it is not published; a reader
 # shown a split this file invented cannot tell that it was.
 TONGUE_DISTRICT_NOTES: dict[str, str] = {
-    "CHITRAL":
-        " Almost all of Chitral's Other is Khowar, the language of the Kho "
-        "and the valley's lingua franca, which the census form does not name "
-        "-- which is why this district is 92.4% Other while its neighbours "
-        "are not. Kalasha is named, and the 5,065 counted under it are the "
-        "Kalash. The rest of the Other is the smallest languages in Pakistan: "
-        "Palula in Ashret and Biori, Dameli in the Damel valley, Yidgha in "
-        "upper Lotkoh, Gawar-bati at Arandu, Eastern Kativiri, Madaglashti "
-        "Persian in Shishi, and Wakhi in upper Yarkhun.",
+    "CHITRAL": CHITRAL_SPLIT_NOTE,
     "MANSEHRA":
         " The Other here is largely Gujari, the language of the Gujar "
         "herding communities of the Kaghan valley and the hills above it, "
@@ -1344,6 +1421,8 @@ def spoken(counts: dict[str, int], name: str = "") -> dict[str, Any]:
     province gets the general note alone: "largely Khowar" is true of Chitral
     and says nothing useful about Khyber Pakhtunkhwa.
     """
+    if name == "CHITRAL":
+        counts = chitral_split(counts)
     total = counts["TOTAL"]
     parts = {k: v for k, v in counts.items() if k != "TOTAL"}
     return {
