@@ -823,7 +823,7 @@ GB_NOTE = (
     "overwhelmingly Twelver, Ghanche the centre of the Noorbakhshia order -- "
     "and the same paper's 'Faith Map of Gilgit-Baltistan' gives an area-wise "
     "breakdown, so each of the ten districts carries its own figure rather "
-    "than this average.")
+    "than an average.")
 
 
 # Gilgit-Baltistan's religion by district, on the owner's instruction.
@@ -997,23 +997,37 @@ def gb_religion(counts: dict[str, int]) -> dict[str, Any]:
     to stand in for it. One id, one record, one place that decides.
 
     ``counts`` is the census population of each district, where this run read
-    it, and it is here only so the note can say what the district figures come
-    to when those weight them. The shares themselves are the paper's and are
-    not touched by it.
+    it, and it decides which of two figures this row carries. With the
+    populations, the row is the ten districts weighted by them, and the
+    territory then agrees with the map drawn beneath it. Without them there is
+    nothing to weight by, and the row falls back to the paper's own
+    territory-wide estimate, which is where it stood before the populations
+    were read.
     """
-    total = round(sum(GB_SECTS.values()), 2)
+    for label, shares in (("territory-wide", GB_SECTS),
+                          *((f"{name}'s", s) for name, s
+                            in GB_DISTRICT_SECTS.items())):
+        total = round(sum(shares.values()), 2)
+        if total != 100.0:
+            raise SystemExit(
+                f"pakistan: Gilgit-Baltistan's {label} sect shares sum to "
+                f"{total}, not 100. A composition that does not partition its "
+                f"population is not one, and these are declared rather than "
+                f"read, so a wrong figure would be a typo nothing else catches")
+    weighted = gb_weighted(counts)
+    shares = weighted or GB_SECTS
+    total = round(sum(shares.values()), 2)
     if total != 100.0:
         raise SystemExit(
-            f"pakistan: the Gilgit-Baltistan sect shares sum to {total}, not "
-            f"100. A composition that does not partition its population is "
-            f"not one, and this one is declared rather than read, so a wrong "
-            f"figure here would be a typo nothing else could catch")
+            f"pakistan: Gilgit-Baltistan's published sect shares sum to "
+            f"{total}, not 100, after weighting. The rounding that makes the "
+            f"four add up has failed, which no other check here would see")
     return {
         "religion": [{"group": name, "pct": pct}
-                     for name, pct in sorted(GB_SECTS.items(),
+                     for name, pct in sorted(shares.items(),
                                              key=lambda kv: -kv[1])],
         "religion_year": GB_YEAR,
-        "religion_note": GB_NOTE + gb_reconciled(counts),
+        "religion_note": GB_NOTE + gb_disagreement(weighted),
         "religion_basis": "sectarian affiliation",
     }
 
@@ -1332,38 +1346,80 @@ def gb_population(blob: bytes) -> dict[str, int]:
     raise LookupError("no page carries 'District Wise Population and Area of GB'")
 
 
-def gb_reconciled(counts: dict[str, int]) -> str:
-    """What the district sect figures come to when the census weights them.
+def gb_weighted(counts: dict[str, int]) -> dict[str, float]:
+    """The ten district sect figures, weighted by their census populations.
 
-    The populations above are what made this askable, and the answer is worth
-    printing: PILDAT's area-wise map and PILDAT's territory-wide estimate, in
-    the same paper, do not describe the same population. Weighted by the 2023
-    census the districts run markedly less Ismaili than the paper's own
-    territory figure. Neither is adjusted to the other -- both are the paper's
-    -- and the disagreement is named where it can be seen.
+    This is what the territory row publishes, and the populations are what
+    made it possible: before they were read there was no way to add the ten
+    districts up, so the territory carried PILDAT's separate territory-wide
+    estimate instead and the two were never compared.
 
-    Empty when there are no populations to weight by, which leaves the note
-    saying exactly what it said before this route existed.
+    They do not agree. The same paper's area-wise map and its territory-wide
+    figure describe different populations, most sharply on the Ismaili share.
+    The weighted one is published because it is the only one of the two that
+    is consistent with what this map shows underneath it -- a territory whose
+    own districts do not add up to it is a contradiction a reader can see and
+    cannot resolve. ``GB_DISAGREEMENT`` says the other figure exists and what
+    it is, so choosing between them is visible rather than silent.
+
+    Empty when any district's population is missing, because a partial
+    weighting is the dangerous kind of wrong: it would quietly reweight the
+    territory onto whichever districts happened to be read.
+
+    Largest-remainder rounding, so the four published shares sum to 100.0
+    exactly rather than to 99.9 through four independent roundings.
     """
     whole = counts.get(GB_POP_WHOLE)
     if not whole:
-        return ""
-    weighted: dict[str, float] = {}
+        return {}
+    people = {name: counts.get(name) for name in GB_DISTRICT_SECTS}
+    if not all(people.values()):
+        return {}
+    counted = sum(people.values())
+    if counted != whole:
+        raise SystemExit(
+            f"pakistan: Gilgit-Baltistan's ten districts hold {counted:,} "
+            f"people against the {whole:,} printed for the territory. The "
+            f"sect shares are weighted by these, so a territory row that is "
+            f"not the sum of its districts would publish a composition of a "
+            f"population that does not exist")
+    exact: dict[str, float] = {}
     for name, sects in GB_DISTRICT_SECTS.items():
-        people = counts.get(name)
-        if not people:
-            return ""
         for sect, pct in sects.items():
-            weighted[sect] = weighted.get(sect, 0.0) + people * pct / 100.0
-    said = ", ".join(
-        f"{sect} {100.0 * value / whole:.1f}%"
-        for sect, value in sorted(weighted.items(), key=lambda kv: -kv[1]))
-    return (" Those ten district figures, weighted by the census populations "
-            "now published beside them, come to " + said + " -- which is not "
-            "what this row says. The paper's territory-wide estimate and its "
-            "own area-wise map disagree, most sharply about the Ismaili "
-            "share, and both are printed here as the paper gives them rather "
-            "than reconciled to each other.")
+            exact[sect] = exact.get(sect, 0.0) + people[name] * pct / 100.0
+    shares = {sect: 100.0 * value / whole for sect, value in exact.items()}
+    floors = {sect: round(value, 1) for sect, value in shares.items()}
+    short = round(100.0 - sum(floors.values()), 1)
+    if short:
+        biggest = max(floors, key=lambda k: floors[k])
+        floors[biggest] = round(floors[biggest] + short, 1)
+    return floors
+
+
+def gb_disagreement(weighted: dict[str, float]) -> str:
+    """The territory-wide figure that is not published, named where it is due.
+
+    PILDAT gives both, in one paper, and they differ by eight and a half
+    points on the Ismaili share. Publishing one and saying nothing about the
+    other would hide a disagreement inside the source rather than a
+    disagreement between sources, which is the harder kind for a reader to
+    find on their own.
+    """
+    if not weighted:
+        return ""
+    said = ", ".join(f"{sect} {pct}%" for sect, pct
+                     in sorted(GB_SECTS.items(), key=lambda kv: -kv[1]))
+    return (" This row is the ten districts' own figures weighted by their "
+            "2023 census populations, which is why it agrees with what is "
+            "drawn beneath it. The same paper also gives a territory-wide "
+            "estimate -- " + said + " -- and the two do not describe the same "
+            "population: they are eight and a half points apart on the "
+            "Ismaili share. Neither has been adjusted to the other. The "
+            "weighted figure is the one published because a territory whose "
+            "districts do not add up to it is a contradiction a reader can "
+            "see and cannot resolve; the likeliest reading of the gap is that "
+            "the faith map's flat 100% for Hunza and Ghizer leaves no room "
+            "for the Ismaili minorities the same page's prose puts in Skardu.")
 
 
 def gb_population_fields(name: str, counts: dict[str, int],

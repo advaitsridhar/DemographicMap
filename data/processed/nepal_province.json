@@ -110,14 +110,14 @@
         "count": 82640
       },
       {
-        "group": "Sherpa",
-        "pct": 1.3,
-        "count": 65399
-      },
-      {
         "group": "Nepalbhasha (Newari)",
         "pct": 1.3,
         "count": 62741
+      },
+      {
+        "group": "Sherpa",
+        "pct": 1.3,
+        "count": 65399
       },
       {
         "group": "Santhali",
@@ -125,14 +125,14 @@
         "count": 53438
       },
       {
-        "group": "Kulung",
-        "pct": 0.7,
-        "count": 36372
-      },
-      {
         "group": "Angika",
         "pct": 0.7,
         "count": 35903
+      },
+      {
+        "group": "Kulung",
+        "pct": 0.7,
+        "count": 36372
       },
       {
         "group": "Oraon/Kudukh",
@@ -160,6 +160,11 @@
         "count": 22098
       },
       {
+        "group": "Dhimal",
+        "pct": 0.4,
+        "count": 20022
+      },
+      {
         "group": "Sampang",
         "pct": 0.4,
         "count": 20687
@@ -170,9 +175,9 @@
         "count": 20167
       },
       {
-        "group": "Dhimal",
-        "pct": 0.4,
-        "count": 20022
+        "group": "Bahing/Bayung",
+        "pct": 0.3,
+        "count": 13219
       },
       {
         "group": "Bangla",
@@ -195,9 +200,9 @@
         "count": 14502
       },
       {
-        "group": "Yakkha",
+        "group": "Majhi",
         "pct": 0.3,
-        "count": 13639
+        "count": 13068
       },
       {
         "group": "Sunuwar",
@@ -205,34 +210,14 @@
         "count": 13459
       },
       {
-        "group": "Bahing/Bayung",
-        "pct": 0.3,
-        "count": 13219
-      },
-      {
         "group": "Wambule",
         "pct": 0.3,
         "count": 13216
       },
       {
-        "group": "Majhi",
+        "group": "Yakkha",
         "pct": 0.3,
-        "count": 13068
-      },
-      {
-        "group": "Yamphu/Yamphe",
-        "pct": 0.2,
-        "count": 10476
-      },
-      {
-        "group": "Marwadi",
-        "pct": 0.2,
-        "count": 10242
-      },
-      {
-        "group": "Nachhiring",
-        "pct": 0.2,
-        "count": 9314
+        "count": 13639
       },
       {
         "group": "Danuwar",
@@ -240,29 +225,29 @@
         "count": 8224
       },
       {
-        "group": "Musalman",
-        "pct": 0.2,
-        "count": 7774
-      },
-      {
         "group": "Dumi",
         "pct": 0.2,
         "count": 7542
       },
       {
-        "group": "Mewahang",
-        "pct": 0.1,
-        "count": 7203
+        "group": "Marwadi",
+        "pct": 0.2,
+        "count": 10242
       },
       {
-        "group": "Bhujel",
-        "pct": 0.1,
-        "count": 7113
+        "group": "Musalman",
+        "pct": 0.2,
+        "count": 7774
       },
       {
-        "group": "Puma",
-        "pct": 0.1,
-        "count": 6565
+        "group": "Nachhiring",
+        "pct": 0.2,
+        "count": 9314
+      },
+      {
+        "group": "Yamphu/Yamphe",
+        "pct": 0.2,
+        "count": 10476
       },
       {
         "group": "Athpahariya",
@@ -270,24 +255,34 @@
         "count": 5459
       },
       {
-        "group": "Dungmali",
-        "pct": 0.1,
-        "count": 5301
-      },
-      {
         "group": "Bhote",
         "pct": 0.1,
         "count": 4603
       },
       {
-        "group": "Sanskrit",
+        "group": "Bhujel",
         "pct": 0.1,
-        "count": 4433
+        "count": 7113
       },
       {
-        "group": "Meche",
+        "group": "Chhintang",
         "pct": 0.1,
-        "count": 4153
+        "count": 2529
+      },
+      {
+        "group": "Dungmali",
+        "pct": 0.1,
+        "count": 5301
+      },
+      {
+        "group": "Jero/Jerung",
+        "pct": 0.1,
+        "count": 2564
+      },
+      {
+        "group": "Kewarat",
+        "pct": 0.1,
+        "count": 3458
       },
       {
         "group": "Koyee",
@@ -300,19 +295,24 @@
         "count": 3642
       },
       {
-        "group": "Kewarat",
+        "group": "Meche",
         "pct": 0.1,
-        "count": 3458
+        "count": 4153
       },
       {
-        "group": "Jero/Jerung",
+        "group": "Mewahang",
         "pct": 0.1,
-        "count": 2564
+        "count": 7203
       },
       {
-        "group": "Chhintang",
+        "group": "Puma",
         "pct": 0.1,
-        "count": 2529
+        "count": 6565
+      },
+      {
+        "group": "Sanskrit",
+        "pct": 0.1,
+        "count": 4433
       }
     ],
     "ethnicity": [
@@ -412,9 +412,9 @@
         "count": 45833
       },
       {
-        "group": "Koiri/Kushwaha",
+        "group": "Bantar/Sardar",
         "pct": 0.8,
-        "count": 42150
+        "count": 39662
       },
       {
         "group": "Gangai",
@@ -422,14 +422,14 @@
         "count": 41226
       },
       {
-        "group": "Bantar/Sardar",
-        "pct": 0.8,
-        "count": 39662
-      },
-      {
         "group": "Gharti/Bhujel",
         "pct": 0.8,
         "count": 37703
+      },
+      {
+        "group": "Koiri/Kushwaha",
+        "pct": 0.8,
+        "count": 42150
       },
       {
         "group": "Oraon/Kudukh",
@@ -442,14 +442,14 @@
         "count": 34437
       },
       {
-        "group": "Kulung",
-        "pct": 0.6,
-        "count": 32180
-      },
-      {
         "group": "Dhanuk",
         "pct": 0.6,
         "count": 31052
+      },
+      {
+        "group": "Kulung",
+        "pct": 0.6,
+        "count": 32180
       },
       {
         "group": "Majhi",
@@ -457,9 +457,9 @@
         "count": 29850
       },
       {
-        "group": "Kewat",
+        "group": "Brahman - Tarai",
         "pct": 0.5,
-        "count": 26749
+        "count": 23718
       },
       {
         "group": "Dhimal",
@@ -467,34 +467,14 @@
         "count": 24435
       },
       {
+        "group": "Kewat",
+        "pct": 0.5,
+        "count": 26749
+      },
+      {
         "group": "Mallaha",
         "pct": 0.5,
         "count": 24237
-      },
-      {
-        "group": "Brahman - Tarai",
-        "pct": 0.5,
-        "count": 23718
-      },
-      {
-        "group": "Sunuwar",
-        "pct": 0.4,
-        "count": 21649
-      },
-      {
-        "group": "Haluwai",
-        "pct": 0.4,
-        "count": 21265
-      },
-      {
-        "group": "Tajpuriya",
-        "pct": 0.4,
-        "count": 20605
-      },
-      {
-        "group": "Khawas",
-        "pct": 0.4,
-        "count": 18924
       },
       {
         "group": "Foreigner",
@@ -502,39 +482,24 @@
         "count": 19254
       },
       {
-        "group": "Danuwar",
-        "pct": 0.3,
-        "count": 16900
+        "group": "Haluwai",
+        "pct": 0.4,
+        "count": 21265
       },
       {
-        "group": "Yakkha",
-        "pct": 0.3,
-        "count": 16451
+        "group": "Khawas",
+        "pct": 0.4,
+        "count": 18924
       },
       {
-        "group": "Hajam/Thakur",
-        "pct": 0.3,
-        "count": 15447
+        "group": "Sunuwar",
+        "pct": 0.4,
+        "count": 21649
       },
       {
-        "group": "Bantawa",
-        "pct": 0.3,
-        "count": 14985
-      },
-      {
-        "group": "Dusadh/Pasawan/Pasi",
-        "pct": 0.3,
-        "count": 14424
-      },
-      {
-        "group": "Marwadi",
-        "pct": 0.3,
-        "count": 14050
-      },
-      {
-        "group": "Chamar/Harijan/Ram",
-        "pct": 0.3,
-        "count": 14011
+        "group": "Tajpuriya",
+        "pct": 0.4,
+        "count": 20605
       },
       {
         "group": "Amat",
@@ -542,14 +507,44 @@
         "count": 13900
       },
       {
+        "group": "Bantawa",
+        "pct": 0.3,
+        "count": 14985
+      },
+      {
+        "group": "Chamar/Harijan/Ram",
+        "pct": 0.3,
+        "count": 14011
+      },
+      {
+        "group": "Danuwar",
+        "pct": 0.3,
+        "count": 16900
+      },
+      {
+        "group": "Dusadh/Pasawan/Pasi",
+        "pct": 0.3,
+        "count": 14424
+      },
+      {
+        "group": "Hajam/Thakur",
+        "pct": 0.3,
+        "count": 15447
+      },
+      {
+        "group": "Marwadi",
+        "pct": 0.3,
+        "count": 14050
+      },
+      {
         "group": "Nuniya",
         "pct": 0.3,
         "count": 13726
       },
       {
-        "group": "Sundi",
-        "pct": 0.2,
-        "count": 12173
+        "group": "Yakkha",
+        "pct": 0.3,
+        "count": 16451
       },
       {
         "group": "Bangali",
@@ -562,14 +557,9 @@
         "count": 10802
       },
       {
-        "group": "Khatwe",
+        "group": "Kalwar",
         "pct": 0.2,
-        "count": 10736
-      },
-      {
-        "group": "Yamphu",
-        "pct": 0.2,
-        "count": 8899
+        "count": 7777
       },
       {
         "group": "Kewarat",
@@ -577,54 +567,24 @@
         "count": 8794
       },
       {
+        "group": "Khatwe",
+        "pct": 0.2,
+        "count": 10736
+      },
+      {
+        "group": "Sundi",
+        "pct": 0.2,
+        "count": 12173
+      },
+      {
         "group": "Thakuri",
         "pct": 0.2,
         "count": 8271
       },
       {
-        "group": "Kalwar",
+        "group": "Yamphu",
         "pct": 0.2,
-        "count": 7777
-      },
-      {
-        "group": "Sonar",
-        "pct": 0.1,
-        "count": 7286
-      },
-      {
-        "group": "Nachhiring",
-        "pct": 0.1,
-        "count": 7010
-      },
-      {
-        "group": "Badhaee/Badhee",
-        "pct": 0.1,
-        "count": 6977
-      },
-      {
-        "group": "Kumal",
-        "pct": 0.1,
-        "count": 6920
-      },
-      {
-        "group": "Tatma/Tatwa",
-        "pct": 0.1,
-        "count": 6666
-      },
-      {
-        "group": "Baniyan",
-        "pct": 0.1,
-        "count": 6022
-      },
-      {
-        "group": "Bahing",
-        "pct": 0.1,
-        "count": 6021
-      },
-      {
-        "group": "Thulung",
-        "pct": 0.1,
-        "count": 5717
+        "count": 8899
       },
       {
         "group": "Aathpahariya",
@@ -632,9 +592,59 @@
         "count": 5641
       },
       {
-        "group": "Mewahang",
+        "group": "Badhaee/Badhee",
         "pct": 0.1,
-        "count": 5597
+        "count": 6977
+      },
+      {
+        "group": "Bahing",
+        "pct": 0.1,
+        "count": 6021
+      },
+      {
+        "group": "Baniyan",
+        "pct": 0.1,
+        "count": 6022
+      },
+      {
+        "group": "Baraee",
+        "pct": 0.1,
+        "count": 3125
+      },
+      {
+        "group": "Bhote",
+        "pct": 0.1,
+        "count": 4786
+      },
+      {
+        "group": "Bin",
+        "pct": 0.1,
+        "count": 3528
+      },
+      {
+        "group": "Dev",
+        "pct": 0.1,
+        "count": 3726
+      },
+      {
+        "group": "Dhobi",
+        "pct": 0.1,
+        "count": 2665
+      },
+      {
+        "group": "Dom",
+        "pct": 0.1,
+        "count": 4775
+      },
+      {
+        "group": "Gaderi/Bhediyar",
+        "pct": 0.1,
+        "count": 3758
+      },
+      {
+        "group": "Kathabaniyan",
+        "pct": 0.1,
+        "count": 3956
       },
       {
         "group": "Kayastha",
@@ -647,9 +657,9 @@
         "count": 5346
       },
       {
-        "group": "Kurmi",
+        "group": "Kumal",
         "pct": 0.1,
-        "count": 5271
+        "count": 6920
       },
       {
         "group": "Kumhar",
@@ -657,29 +667,49 @@
         "count": 5104
       },
       {
+        "group": "Kurmi",
+        "pct": 0.1,
+        "count": 5271
+      },
+      {
+        "group": "Lepcha",
+        "pct": 0.1,
+        "count": 3302
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.1,
+        "count": 3821
+      },
+      {
         "group": "Meche",
         "pct": 0.1,
         "count": 4997
       },
       {
-        "group": "Bhote",
+        "group": "Mewahang",
         "pct": 0.1,
-        "count": 4786
+        "count": 5597
       },
       {
-        "group": "Dom",
+        "group": "Munda",
         "pct": 0.1,
-        "count": 4775
+        "count": 3529
       },
       {
-        "group": "Sampang",
+        "group": "Nachhiring",
         "pct": 0.1,
-        "count": 4612
+        "count": 7010
       },
       {
-        "group": "Sarbaria",
+        "group": "Others",
         "pct": 0.1,
-        "count": 4602
+        "count": 3686
+      },
+      {
+        "group": "Rajbhar",
+        "pct": 0.1,
+        "count": 3510
       },
       {
         "group": "Rajput",
@@ -692,59 +722,29 @@
         "count": 4520
       },
       {
-        "group": "Kathabaniyan",
+        "group": "Sampang",
         "pct": 0.1,
-        "count": 3956
+        "count": 4612
       },
       {
-        "group": "Lohar",
+        "group": "Sarbaria",
         "pct": 0.1,
-        "count": 3821
+        "count": 4602
       },
       {
-        "group": "Gaderi/Bhediyar",
+        "group": "Sonar",
         "pct": 0.1,
-        "count": 3758
+        "count": 7286
       },
       {
-        "group": "Dev",
+        "group": "Tatma/Tatwa",
         "pct": 0.1,
-        "count": 3726
+        "count": 6666
       },
       {
-        "group": "Munda",
+        "group": "Thulung",
         "pct": 0.1,
-        "count": 3529
-      },
-      {
-        "group": "Bin",
-        "pct": 0.1,
-        "count": 3528
-      },
-      {
-        "group": "Rajbhar",
-        "pct": 0.1,
-        "count": 3510
-      },
-      {
-        "group": "Lepcha",
-        "pct": 0.1,
-        "count": 3302
-      },
-      {
-        "group": "Baraee",
-        "pct": 0.1,
-        "count": 3125
-      },
-      {
-        "group": "Dhobi",
-        "pct": 0.1,
-        "count": 2665
-      },
-      {
-        "group": "Others",
-        "pct": 0.1,
-        "count": 3686
+        "count": 5717
       }
     ],
     "sources": [
@@ -878,19 +878,14 @@
         "count": 8530
       },
       {
-        "group": "Oraon/Kudukh",
-        "pct": 0.1,
-        "count": 5296
-      },
-      {
         "group": "Majhi",
         "pct": 0.1,
         "count": 4736
       },
       {
-        "group": "Rai",
+        "group": "Marwadi",
         "pct": 0.1,
-        "count": 4676
+        "count": 3926
       },
       {
         "group": "Musalman",
@@ -898,9 +893,14 @@
         "count": 4403
       },
       {
-        "group": "Marwadi",
+        "group": "Oraon/Kudukh",
         "pct": 0.1,
-        "count": 3926
+        "count": 5296
+      },
+      {
+        "group": "Rai",
+        "pct": 0.1,
+        "count": 4676
       }
     ],
     "ethnicity": [
@@ -945,24 +945,24 @@
         "count": 180581
       },
       {
-        "group": "Musahar",
-        "pct": 2.9,
-        "count": 179153
-      },
-      {
         "group": "Dusadh/Pasawan/Pasi",
         "pct": 2.9,
         "count": 176190
       },
       {
-        "group": "Mallaha",
-        "pct": 2.3,
-        "count": 141638
+        "group": "Musahar",
+        "pct": 2.9,
+        "count": 179153
       },
       {
         "group": "Kanu",
         "pct": 2.3,
         "count": 139088
+      },
+      {
+        "group": "Mallaha",
+        "pct": 2.3,
+        "count": 141638
       },
       {
         "group": "Tamang",
@@ -980,29 +980,19 @@
         "count": 112521
       },
       {
-        "group": "Kalwar",
-        "pct": 1.7,
-        "count": 101860
-      },
-      {
         "group": "Brahman - Tarai",
         "pct": 1.7,
         "count": 101093
       },
       {
+        "group": "Kalwar",
+        "pct": 1.7,
+        "count": 101860
+      },
+      {
         "group": "Kshetri",
         "pct": 1.6,
         "count": 98002
-      },
-      {
-        "group": "Kewat",
-        "pct": 1.5,
-        "count": 92346
-      },
-      {
-        "group": "Sundi",
-        "pct": 1.5,
-        "count": 89896
       },
       {
         "group": "Bin",
@@ -1015,19 +1005,29 @@
         "count": 88804
       },
       {
+        "group": "Kewat",
+        "pct": 1.5,
+        "count": 92346
+      },
+      {
+        "group": "Sundi",
+        "pct": 1.5,
+        "count": 89896
+      },
+      {
         "group": "Brahman - Hill",
         "pct": 1.3,
         "count": 80387
       },
       {
-        "group": "Nuniya",
-        "pct": 1.2,
-        "count": 72976
-      },
-      {
         "group": "Kumhar",
         "pct": 1.2,
         "count": 72454
+      },
+      {
+        "group": "Nuniya",
+        "pct": 1.2,
+        "count": 72976
       },
       {
         "group": "Lohar",
@@ -1065,9 +1065,24 @@
         "count": 37356
       },
       {
-        "group": "Rajput",
+        "group": "Amat",
         "pct": 0.5,
-        "count": 33455
+        "count": 31999
+      },
+      {
+        "group": "Badhaee/Badhee",
+        "pct": 0.5,
+        "count": 30211
+      },
+      {
+        "group": "Bhumihar",
+        "pct": 0.5,
+        "count": 30769
+      },
+      {
+        "group": "Bishwokarma",
+        "pct": 0.5,
+        "count": 28344
       },
       {
         "group": "Danuwar",
@@ -1080,29 +1095,14 @@
         "count": 33029
       },
       {
-        "group": "Amat",
-        "pct": 0.5,
-        "count": 31999
-      },
-      {
-        "group": "Bhumihar",
-        "pct": 0.5,
-        "count": 30769
-      },
-      {
-        "group": "Badhaee/Badhee",
-        "pct": 0.5,
-        "count": 30211
-      },
-      {
         "group": "Majhi",
         "pct": 0.5,
         "count": 29599
       },
       {
-        "group": "Bishwokarma",
+        "group": "Rajput",
         "pct": 0.5,
-        "count": 28344
+        "count": 33455
       },
       {
         "group": "Bantar/Sardar",
@@ -1113,6 +1113,16 @@
         "group": "Foreigner",
         "pct": 0.4,
         "count": 27424
+      },
+      {
+        "group": "Baniyan",
+        "pct": 0.3,
+        "count": 16991
+      },
+      {
+        "group": "Gaderi/Bhediyar",
+        "pct": 0.3,
+        "count": 16714
       },
       {
         "group": "Kayastha",
@@ -1130,29 +1140,9 @@
         "count": 19714
       },
       {
-        "group": "Baniyan",
-        "pct": 0.3,
-        "count": 16991
-      },
-      {
-        "group": "Gaderi/Bhediyar",
-        "pct": 0.3,
-        "count": 16714
-      },
-      {
         "group": "Dom",
         "pct": 0.2,
         "count": 14060
-      },
-      {
-        "group": "Mali",
-        "pct": 0.2,
-        "count": 13974
-      },
-      {
-        "group": "Rajdhob",
-        "pct": 0.2,
-        "count": 13674
       },
       {
         "group": "Kahar",
@@ -1160,14 +1150,9 @@
         "count": 12015
       },
       {
-        "group": "Rai",
+        "group": "Mali",
         "pct": 0.2,
-        "count": 10210
-      },
-      {
-        "group": "Thakuri",
-        "pct": 0.2,
-        "count": 10006
+        "count": 13974
       },
       {
         "group": "Pariyar",
@@ -1175,9 +1160,24 @@
         "count": 9677
       },
       {
-        "group": "Gondh/Gond",
+        "group": "Rai",
+        "pct": 0.2,
+        "count": 10210
+      },
+      {
+        "group": "Rajdhob",
+        "pct": 0.2,
+        "count": 13674
+      },
+      {
+        "group": "Thakuri",
+        "pct": 0.2,
+        "count": 10006
+      },
+      {
+        "group": "Chai/Khulaut",
         "pct": 0.1,
-        "count": 7837
+        "count": 4651
       },
       {
         "group": "Dhunia",
@@ -1185,24 +1185,14 @@
         "count": 7698
       },
       {
-        "group": "Marwadi",
-        "pct": 0.1,
-        "count": 7408
-      },
-      {
-        "group": "Oraon/Kudukh",
-        "pct": 0.1,
-        "count": 6953
-      },
-      {
         "group": "Gharti/Bhujel",
         "pct": 0.1,
         "count": 6685
       },
       {
-        "group": "Mijar",
+        "group": "Gondh/Gond",
         "pct": 0.1,
-        "count": 5971
+        "count": 7837
       },
       {
         "group": "Kumal",
@@ -1210,14 +1200,24 @@
         "count": 5486
       },
       {
+        "group": "Marwadi",
+        "pct": 0.1,
+        "count": 7408
+      },
+      {
+        "group": "Mijar",
+        "pct": 0.1,
+        "count": 5971
+      },
+      {
+        "group": "Oraon/Kudukh",
+        "pct": 0.1,
+        "count": 6953
+      },
+      {
         "group": "Rajbhar",
         "pct": 0.1,
         "count": 4689
-      },
-      {
-        "group": "Chai/Khulaut",
-        "pct": 0.1,
-        "count": 4651
       }
     ],
     "sources": [
@@ -1381,54 +1381,14 @@
         "count": 16674
       },
       {
-        "group": "Majhi",
-        "pct": 0.2,
-        "count": 13208
-      },
-      {
         "group": "Ghale",
         "pct": 0.2,
         "count": 13203
       },
       {
-        "group": "Hyolmo/Yholmo",
-        "pct": 0.1,
-        "count": 8251
-      },
-      {
-        "group": "Darai",
-        "pct": 0.1,
-        "count": 7573
-      },
-      {
-        "group": "Doteli",
-        "pct": 0.1,
-        "count": 6361
-      },
-      {
-        "group": "Marwadi",
-        "pct": 0.1,
-        "count": 6055
-      },
-      {
-        "group": "Chamling",
-        "pct": 0.1,
-        "count": 5615
-      },
-      {
-        "group": "Pahari",
-        "pct": 0.1,
-        "count": 5562
-      },
-      {
-        "group": "Kumal",
-        "pct": 0.1,
-        "count": 5204
-      },
-      {
-        "group": "Jirel",
-        "pct": 0.1,
-        "count": 5026
+        "group": "Majhi",
+        "pct": 0.2,
+        "count": 13208
       },
       {
         "group": "Bajjika",
@@ -1441,14 +1401,54 @@
         "count": 4211
       },
       {
-        "group": "Urdu",
-        "pct": 0.1,
-        "count": 3949
-      },
-      {
         "group": "Bantawa",
         "pct": 0.1,
         "count": 3940
+      },
+      {
+        "group": "Chamling",
+        "pct": 0.1,
+        "count": 5615
+      },
+      {
+        "group": "Darai",
+        "pct": 0.1,
+        "count": 7573
+      },
+      {
+        "group": "Doteli",
+        "pct": 0.1,
+        "count": 6361
+      },
+      {
+        "group": "Hyolmo/Yholmo",
+        "pct": 0.1,
+        "count": 8251
+      },
+      {
+        "group": "Jirel",
+        "pct": 0.1,
+        "count": 5026
+      },
+      {
+        "group": "Kumal",
+        "pct": 0.1,
+        "count": 5204
+      },
+      {
+        "group": "Marwadi",
+        "pct": 0.1,
+        "count": 6055
+      },
+      {
+        "group": "Pahari",
+        "pct": 0.1,
+        "count": 5562
+      },
+      {
+        "group": "Sanskrit",
+        "pct": 0.1,
+        "count": 3183
       },
       {
         "group": "Tibetan",
@@ -1456,9 +1456,9 @@
         "count": 3584
       },
       {
-        "group": "Sanskrit",
+        "group": "Urdu",
         "pct": 0.1,
-        "count": 3183
+        "count": 3949
       }
     ],
     "ethnicity": [
@@ -1528,14 +1528,14 @@
         "count": 58119
       },
       {
-        "group": "Thakuri",
-        "pct": 0.8,
-        "count": 50461
-      },
-      {
         "group": "Foreigner",
         "pct": 0.8,
         "count": 51770
+      },
+      {
+        "group": "Thakuri",
+        "pct": 0.8,
+        "count": 50461
       },
       {
         "group": "Majhi",
@@ -1558,14 +1558,14 @@
         "count": 34527
       },
       {
-        "group": "Musalman",
-        "pct": 0.5,
-        "count": 32886
-      },
-      {
         "group": "Danuwar",
         "pct": 0.5,
         "count": 32562
+      },
+      {
+        "group": "Musalman",
+        "pct": 0.5,
+        "count": 32886
       },
       {
         "group": "Thami",
@@ -1573,19 +1573,9 @@
         "count": 29407
       },
       {
-        "group": "Yakthung/Limbu",
-        "pct": 0.4,
-        "count": 23893
-      },
-      {
         "group": "Brahman - Tarai",
         "pct": 0.4,
         "count": 23246
-      },
-      {
-        "group": "Kumal",
-        "pct": 0.4,
-        "count": 22213
       },
       {
         "group": "Ghale",
@@ -1593,19 +1583,19 @@
         "count": 21632
       },
       {
+        "group": "Kumal",
+        "pct": 0.4,
+        "count": 22213
+      },
+      {
+        "group": "Yakthung/Limbu",
+        "pct": 0.4,
+        "count": 23893
+      },
+      {
         "group": "Yadav",
         "pct": 0.3,
         "count": 19627
-      },
-      {
-        "group": "Pahari",
-        "pct": 0.2,
-        "count": 13504
-      },
-      {
-        "group": "Teli",
-        "pct": 0.2,
-        "count": 11186
       },
       {
         "group": "Darai",
@@ -1618,44 +1608,14 @@
         "count": 9679
       },
       {
-        "group": "Kalwar",
-        "pct": 0.1,
-        "count": 8399
+        "group": "Pahari",
+        "pct": 0.2,
+        "count": 13504
       },
       {
-        "group": "Hyolmo/Yholmopa",
-        "pct": 0.1,
-        "count": 7989
-      },
-      {
-        "group": "Hajam/Thakur",
-        "pct": 0.1,
-        "count": 7238
-      },
-      {
-        "group": "Jirel",
-        "pct": 0.1,
-        "count": 5858
-      },
-      {
-        "group": "Sonar",
-        "pct": 0.1,
-        "count": 5602
-      },
-      {
-        "group": "Koiri/Kushwaha",
-        "pct": 0.1,
-        "count": 5052
-      },
-      {
-        "group": "Sundi",
-        "pct": 0.1,
-        "count": 4353
-      },
-      {
-        "group": "Kanu",
-        "pct": 0.1,
-        "count": 3715
+        "group": "Teli",
+        "pct": 0.2,
+        "count": 11186
       },
       {
         "group": "Bote",
@@ -1663,9 +1623,39 @@
         "count": 3652
       },
       {
-        "group": "Thakali",
+        "group": "Hajam/Thakur",
         "pct": 0.1,
-        "count": 3369
+        "count": 7238
+      },
+      {
+        "group": "Hyolmo/Yholmopa",
+        "pct": 0.1,
+        "count": 7989
+      },
+      {
+        "group": "Jirel",
+        "pct": 0.1,
+        "count": 5858
+      },
+      {
+        "group": "Kalwar",
+        "pct": 0.1,
+        "count": 8399
+      },
+      {
+        "group": "Kanu",
+        "pct": 0.1,
+        "count": 3715
+      },
+      {
+        "group": "Kayastha",
+        "pct": 0.1,
+        "count": 3145
+      },
+      {
+        "group": "Koiri/Kushwaha",
+        "pct": 0.1,
+        "count": 5052
       },
       {
         "group": "Musahar",
@@ -1673,9 +1663,19 @@
         "count": 3234
       },
       {
-        "group": "Kayastha",
+        "group": "Sonar",
         "pct": 0.1,
-        "count": 3145
+        "count": 5602
+      },
+      {
+        "group": "Sundi",
+        "pct": 0.1,
+        "count": 4353
+      },
+      {
+        "group": "Thakali",
+        "pct": 0.1,
+        "count": 3369
       }
     ],
     "sources": [
@@ -1792,29 +1792,14 @@
         "count": 15090
       },
       {
-        "group": "Magar Kham",
-        "pct": 0.3,
-        "count": 8030
-      },
-      {
         "group": "Ghale",
         "pct": 0.3,
         "count": 7997
       },
       {
-        "group": "Kumal",
-        "pct": 0.2,
-        "count": 6027
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.2,
-        "count": 5573
-      },
-      {
-        "group": "Darai",
-        "pct": 0.2,
-        "count": 4338
+        "group": "Magar Kham",
+        "pct": 0.3,
+        "count": 8030
       },
       {
         "group": "Chum/Nubri",
@@ -1822,29 +1807,29 @@
         "count": 4052
       },
       {
-        "group": "Maithili",
-        "pct": 0.1,
-        "count": 3642
+        "group": "Darai",
+        "pct": 0.2,
+        "count": 4338
       },
       {
-        "group": "Chepang",
-        "pct": 0.1,
-        "count": 3209
+        "group": "Hindi",
+        "pct": 0.2,
+        "count": 5573
       },
       {
-        "group": "Chhantyal",
-        "pct": 0.1,
-        "count": 3092
+        "group": "Kumal",
+        "pct": 0.2,
+        "count": 6027
       },
       {
-        "group": "Sanskrit",
+        "group": "Balkura/Baram",
         "pct": 0.1,
-        "count": 2924
+        "count": 1287
       },
       {
-        "group": "Rai",
+        "group": "Baragunwa",
         "pct": 0.1,
-        "count": 2706
+        "count": 1536
       },
       {
         "group": "Bhujel",
@@ -1857,29 +1842,14 @@
         "count": 2512
       },
       {
-        "group": "Khash",
+        "group": "Chepang",
         "pct": 0.1,
-        "count": 2342
+        "count": 3209
       },
       {
-        "group": "Thakali",
+        "group": "Chhantyal",
         "pct": 0.1,
-        "count": 2252
-      },
-      {
-        "group": "Lhopa",
-        "pct": 0.1,
-        "count": 2202
-      },
-      {
-        "group": "Musalman",
-        "pct": 0.1,
-        "count": 1836
-      },
-      {
-        "group": "Baragunwa",
-        "pct": 0.1,
-        "count": 1536
+        "count": 3092
       },
       {
         "group": "Dura",
@@ -1887,14 +1857,44 @@
         "count": 1337
       },
       {
-        "group": "Balkura/Baram",
+        "group": "Khash",
         "pct": 0.1,
-        "count": 1287
+        "count": 2342
+      },
+      {
+        "group": "Lhopa",
+        "pct": 0.1,
+        "count": 2202
+      },
+      {
+        "group": "Maithili",
+        "pct": 0.1,
+        "count": 3642
       },
       {
         "group": "Majhi",
         "pct": 0.1,
         "count": 1236
+      },
+      {
+        "group": "Musalman",
+        "pct": 0.1,
+        "count": 1836
+      },
+      {
+        "group": "Rai",
+        "pct": 0.1,
+        "count": 2706
+      },
+      {
+        "group": "Sanskrit",
+        "pct": 0.1,
+        "count": 2924
+      },
+      {
+        "group": "Thakali",
+        "pct": 0.1,
+        "count": 2252
       }
     ],
     "ethnicity": [
@@ -1929,14 +1929,14 @@
         "count": 112991
       },
       {
-        "group": "Pariyar",
-        "pct": 4.1,
-        "count": 101521
-      },
-      {
         "group": "Newa: (Newar)",
         "pct": 4.1,
         "count": 101450
+      },
+      {
+        "group": "Pariyar",
+        "pct": 4.1,
+        "count": 101521
       },
       {
         "group": "Tamang",
@@ -1984,9 +1984,19 @@
         "count": 10722
       },
       {
+        "group": "Baram / Baramu",
+        "pct": 0.3,
+        "count": 6452
+      },
+      {
         "group": "Chhantyal/Chhantel",
         "pct": 0.3,
         "count": 8502
+      },
+      {
+        "group": "Darai",
+        "pct": 0.3,
+        "count": 7581
       },
       {
         "group": "Pun",
@@ -1999,24 +2009,9 @@
         "count": 7599
       },
       {
-        "group": "Darai",
-        "pct": 0.3,
-        "count": 7581
-      },
-      {
-        "group": "Baram / Baramu",
-        "pct": 0.3,
-        "count": 6452
-      },
-      {
-        "group": "Thakali",
+        "group": "Bote",
         "pct": 0.2,
-        "count": 5851
-      },
-      {
-        "group": "Chepang/Praja",
-        "pct": 0.2,
-        "count": 5617
+        "count": 4496
       },
       {
         "group": "Brahman - Tarai",
@@ -2024,24 +2019,9 @@
         "count": 5451
       },
       {
-        "group": "Sunuwar",
+        "group": "Chepang/Praja",
         "pct": 0.2,
-        "count": 5233
-      },
-      {
-        "group": "Bote",
-        "pct": 0.2,
-        "count": 4496
-      },
-      {
-        "group": "Majhi",
-        "pct": 0.2,
-        "count": 4188
-      },
-      {
-        "group": "Dura",
-        "pct": 0.2,
-        "count": 4135
+        "count": 5617
       },
       {
         "group": "Chumba/Nubri",
@@ -2049,19 +2029,24 @@
         "count": 4096
       },
       {
-        "group": "Sonar",
-        "pct": 0.1,
-        "count": 2151
+        "group": "Dura",
+        "pct": 0.2,
+        "count": 4135
       },
       {
-        "group": "Yakthung/Limbu",
-        "pct": 0.1,
-        "count": 1493
+        "group": "Majhi",
+        "pct": 0.2,
+        "count": 4188
       },
       {
-        "group": "Yadav",
-        "pct": 0.1,
-        "count": 1466
+        "group": "Sunuwar",
+        "pct": 0.2,
+        "count": 5233
+      },
+      {
+        "group": "Thakali",
+        "pct": 0.2,
+        "count": 5851
       },
       {
         "group": "Gaine",
@@ -2069,19 +2054,34 @@
         "count": 1446
       },
       {
-        "group": "Lhopa",
-        "pct": 0.1,
-        "count": 1311
-      },
-      {
         "group": "Khawas",
         "pct": 0.1,
         "count": 1268
       },
       {
+        "group": "Lhopa",
+        "pct": 0.1,
+        "count": 1311
+      },
+      {
         "group": "Sherpa",
         "pct": 0.1,
         "count": 1253
+      },
+      {
+        "group": "Sonar",
+        "pct": 0.1,
+        "count": 2151
+      },
+      {
+        "group": "Yadav",
+        "pct": 0.1,
+        "count": 1466
+      },
+      {
+        "group": "Yakthung/Limbu",
+        "pct": 0.1,
+        "count": 1493
       }
     ],
     "sources": [
@@ -2208,6 +2208,11 @@
         "count": 20263
       },
       {
+        "group": "Khash",
+        "pct": 0.1,
+        "count": 2682
+      },
+      {
         "group": "Kumal",
         "pct": 0.1,
         "count": 5786
@@ -2221,11 +2226,6 @@
         "group": "Tamang",
         "pct": 0.1,
         "count": 3884
-      },
-      {
-        "group": "Khash",
-        "pct": 0.1,
-        "count": 2682
       }
     ],
     "ethnicity": [
@@ -2295,14 +2295,14 @@
         "count": 64121
       },
       {
-        "group": "Newa: (Newar)",
-        "pct": 1.2,
-        "count": 62599
-      },
-      {
         "group": "Brahman - Tarai",
         "pct": 1.2,
         "count": 62094
+      },
+      {
+        "group": "Newa: (Newar)",
+        "pct": 1.2,
+        "count": 62599
       },
       {
         "group": "Dusadh/Pasawan/Pasi",
@@ -2313,11 +2313,6 @@
         "group": "Kumal",
         "pct": 1.0,
         "count": 49971
-      },
-      {
-        "group": "Teli",
-        "pct": 0.9,
-        "count": 48191
       },
       {
         "group": "Gurung",
@@ -2333,6 +2328,11 @@
         "group": "Sanyasi/Dasnami",
         "pct": 0.9,
         "count": 45184
+      },
+      {
+        "group": "Teli",
+        "pct": 0.9,
+        "count": 48191
       },
       {
         "group": "Lodh",
@@ -2365,14 +2365,9 @@
         "count": 23407
       },
       {
-        "group": "Rajbhar",
+        "group": "Foreigner",
         "pct": 0.4,
-        "count": 20903
-      },
-      {
-        "group": "Nuniya",
-        "pct": 0.4,
-        "count": 19789
+        "count": 18835
       },
       {
         "group": "Kori",
@@ -2380,34 +2375,14 @@
         "count": 18623
       },
       {
-        "group": "Foreigner",
+        "group": "Nuniya",
         "pct": 0.4,
-        "count": 18835
+        "count": 19789
       },
       {
-        "group": "Kumhar",
-        "pct": 0.3,
-        "count": 17407
-      },
-      {
-        "group": "Baraee",
-        "pct": 0.3,
-        "count": 16481
-      },
-      {
-        "group": "Lohar",
-        "pct": 0.3,
-        "count": 15849
-      },
-      {
-        "group": "Kalwar",
-        "pct": 0.3,
-        "count": 15795
-      },
-      {
-        "group": "Gaderi/Bhediyar",
-        "pct": 0.3,
-        "count": 14741
+        "group": "Rajbhar",
+        "pct": 0.4,
+        "count": 20903
       },
       {
         "group": "Badhaee/Badhee",
@@ -2415,14 +2390,29 @@
         "count": 14076
       },
       {
-        "group": "Kathabaniyan",
-        "pct": 0.2,
-        "count": 12442
+        "group": "Baraee",
+        "pct": 0.3,
+        "count": 16481
       },
       {
-        "group": "Sonar",
-        "pct": 0.2,
-        "count": 10943
+        "group": "Gaderi/Bhediyar",
+        "pct": 0.3,
+        "count": 14741
+      },
+      {
+        "group": "Kalwar",
+        "pct": 0.3,
+        "count": 15795
+      },
+      {
+        "group": "Kumhar",
+        "pct": 0.3,
+        "count": 17407
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.3,
+        "count": 15849
       },
       {
         "group": "Gharti/Bhujel",
@@ -2430,9 +2420,14 @@
         "count": 9737
       },
       {
-        "group": "Sunuwar",
+        "group": "Kanu",
         "pct": 0.2,
-        "count": 9689
+        "count": 8607
+      },
+      {
+        "group": "Kathabaniyan",
+        "pct": 0.2,
+        "count": 12442
       },
       {
         "group": "Khatik",
@@ -2440,9 +2435,14 @@
         "count": 9121
       },
       {
-        "group": "Kanu",
+        "group": "Sonar",
         "pct": 0.2,
-        "count": 8607
+        "count": 10943
+      },
+      {
+        "group": "Sunuwar",
+        "pct": 0.2,
+        "count": 9689
       },
       {
         "group": "Tamang",
@@ -2450,64 +2450,9 @@
         "count": 7839
       },
       {
-        "group": "Dhunia",
-        "pct": 0.1,
-        "count": 6616
-      },
-      {
-        "group": "Musahar",
-        "pct": 0.1,
-        "count": 6603
-      },
-      {
-        "group": "Rajput",
-        "pct": 0.1,
-        "count": 5956
-      },
-      {
-        "group": "Gondh/Gond",
-        "pct": 0.1,
-        "count": 4204
-      },
-      {
-        "group": "Mali",
-        "pct": 0.1,
-        "count": 3548
-      },
-      {
-        "group": "Gaine",
-        "pct": 0.1,
-        "count": 3415
-      },
-      {
-        "group": "Kayastha",
-        "pct": 0.1,
-        "count": 3371
-      },
-      {
-        "group": "Oraon/Kudukh",
-        "pct": 0.1,
-        "count": 3349
-      },
-      {
-        "group": "Haluwai",
-        "pct": 0.1,
-        "count": 3261
-      },
-      {
         "group": "Badi",
         "pct": 0.1,
         "count": 3068
-      },
-      {
-        "group": "Majhi",
-        "pct": 0.1,
-        "count": 2960
-      },
-      {
-        "group": "Patharkatt/ Kushwadiya",
-        "pct": 0.1,
-        "count": 2936
       },
       {
         "group": "Bin",
@@ -2515,9 +2460,64 @@
         "count": 2811
       },
       {
+        "group": "Dhunia",
+        "pct": 0.1,
+        "count": 6616
+      },
+      {
+        "group": "Gaine",
+        "pct": 0.1,
+        "count": 3415
+      },
+      {
+        "group": "Gondh/Gond",
+        "pct": 0.1,
+        "count": 4204
+      },
+      {
+        "group": "Haluwai",
+        "pct": 0.1,
+        "count": 3261
+      },
+      {
+        "group": "Kayastha",
+        "pct": 0.1,
+        "count": 3371
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.1,
+        "count": 2960
+      },
+      {
+        "group": "Mali",
+        "pct": 0.1,
+        "count": 3548
+      },
+      {
+        "group": "Musahar",
+        "pct": 0.1,
+        "count": 6603
+      },
+      {
+        "group": "Oraon/Kudukh",
+        "pct": 0.1,
+        "count": 3349
+      },
+      {
+        "group": "Patharkatt/ Kushwadiya",
+        "pct": 0.1,
+        "count": 2936
+      },
+      {
         "group": "Rai",
         "pct": 0.1,
         "count": 2628
+      },
+      {
+        "group": "Rajput",
+        "pct": 0.1,
+        "count": 5956
       }
     ],
     "sources": [
@@ -2629,31 +2629,6 @@
         "count": 3048
       },
       {
-        "group": "Karmarong",
-        "pct": 0.1,
-        "count": 2483
-      },
-      {
-        "group": "Mugali",
-        "pct": 0.1,
-        "count": 1724
-      },
-      {
-        "group": "Gurung",
-        "pct": 0.1,
-        "count": 1516
-      },
-      {
-        "group": "Tamang",
-        "pct": 0.1,
-        "count": 1327
-      },
-      {
-        "group": "Hindi",
-        "pct": 0.1,
-        "count": 1204
-      },
-      {
         "group": "Achhami",
         "pct": 0.1,
         "count": 1196
@@ -2664,14 +2639,39 @@
         "count": 1086
       },
       {
-        "group": "Raji",
+        "group": "Gurung",
         "pct": 0.1,
-        "count": 993
+        "count": 1516
+      },
+      {
+        "group": "Hindi",
+        "pct": 0.1,
+        "count": 1204
+      },
+      {
+        "group": "Karmarong",
+        "pct": 0.1,
+        "count": 2483
       },
       {
         "group": "Magar Kaike",
         "pct": 0.1,
         "count": 958
+      },
+      {
+        "group": "Mugali",
+        "pct": 0.1,
+        "count": 1724
+      },
+      {
+        "group": "Raji",
+        "pct": 0.1,
+        "count": 993
+      },
+      {
+        "group": "Tamang",
+        "pct": 0.1,
+        "count": 1327
       }
     ],
     "ethnicity": [
@@ -2731,14 +2731,14 @@
         "count": 6055
       },
       {
-        "group": "Dolpo",
-        "pct": 0.3,
-        "count": 5205
-      },
-      {
         "group": "Badi",
         "pct": 0.3,
         "count": 4764
+      },
+      {
+        "group": "Dolpo",
+        "pct": 0.3,
+        "count": 5205
       },
       {
         "group": "Newa: (Newar)",
@@ -2756,34 +2756,14 @@
         "count": 3890
       },
       {
-        "group": "Sunuwar",
-        "pct": 0.2,
-        "count": 3399
-      },
-      {
         "group": "Musalman",
         "pct": 0.2,
         "count": 3203
       },
       {
-        "group": "Kumal",
-        "pct": 0.1,
-        "count": 2301
-      },
-      {
-        "group": "Mugal/Mugum",
-        "pct": 0.1,
-        "count": 1789
-      },
-      {
-        "group": "Sonar",
-        "pct": 0.1,
-        "count": 1749
-      },
-      {
-        "group": "Majhi",
-        "pct": 0.1,
-        "count": 1700
+        "group": "Sunuwar",
+        "pct": 0.2,
+        "count": 3399
       },
       {
         "group": "Gharti/Bhujel",
@@ -2791,14 +2771,34 @@
         "count": 1694
       },
       {
+        "group": "Karmarong",
+        "pct": 0.1,
+        "count": 1465
+      },
+      {
+        "group": "Kumal",
+        "pct": 0.1,
+        "count": 2301
+      },
+      {
+        "group": "Majhi",
+        "pct": 0.1,
+        "count": 1700
+      },
+      {
+        "group": "Mugal/Mugum",
+        "pct": 0.1,
+        "count": 1789
+      },
+      {
         "group": "Raji",
         "pct": 0.1,
         "count": 1502
       },
       {
-        "group": "Karmarong",
+        "group": "Sonar",
         "pct": 0.1,
-        "count": 1465
+        "count": 1749
       }
     ],
     "sources": [
@@ -2925,6 +2925,11 @@
         "count": 17326
       },
       {
+        "group": "Hindi",
+        "pct": 0.3,
+        "count": 7790
+      },
+      {
         "group": "Magar Kham",
         "pct": 0.3,
         "count": 9156
@@ -2935,14 +2940,14 @@
         "count": 7837
       },
       {
-        "group": "Hindi",
-        "pct": 0.3,
-        "count": 7790
-      },
-      {
         "group": "Maithili",
         "pct": 0.2,
         "count": 4635
+      },
+      {
+        "group": "Avadhi",
+        "pct": 0.1,
+        "count": 3241
       },
       {
         "group": "Dailekhi",
@@ -2950,9 +2955,9 @@
         "count": 3971
       },
       {
-        "group": "Avadhi",
+        "group": "Gurung",
         "pct": 0.1,
-        "count": 3241
+        "count": 1590
       },
       {
         "group": "Jumli",
@@ -2965,19 +2970,14 @@
         "count": 2583
       },
       {
-        "group": "Raji",
-        "pct": 0.1,
-        "count": 2437
-      },
-      {
         "group": "Nepalbhasha (Newari)",
         "pct": 0.1,
         "count": 1916
       },
       {
-        "group": "Gurung",
+        "group": "Raji",
         "pct": 0.1,
-        "count": 1590
+        "count": 2437
       }
     ],
     "ethnicity": [
@@ -3042,9 +3042,9 @@
         "count": 9781
       },
       {
-        "group": "Newa: (Newar)",
+        "group": "Foreigner",
         "pct": 0.2,
-        "count": 4549
+        "count": 6456
       },
       {
         "group": "Gurung",
@@ -3052,19 +3052,9 @@
         "count": 4279
       },
       {
-        "group": "Foreigner",
+        "group": "Newa: (Newar)",
         "pct": 0.2,
-        "count": 6456
-      },
-      {
-        "group": "Musalman",
-        "pct": 0.1,
-        "count": 3942
-      },
-      {
-        "group": "Sonar",
-        "pct": 0.1,
-        "count": 3466
+        "count": 4549
       },
       {
         "group": "Badi",
@@ -3072,14 +3062,9 @@
         "count": 2580
       },
       {
-        "group": "Raji",
+        "group": "Bhote",
         "pct": 0.1,
-        "count": 2521
-      },
-      {
-        "group": "Kumal",
-        "pct": 0.1,
-        "count": 2314
+        "count": 1460
       },
       {
         "group": "Brahman - Tarai",
@@ -3087,19 +3072,34 @@
         "count": 1852
       },
       {
-        "group": "Sunuwar",
+        "group": "Kumal",
         "pct": 0.1,
-        "count": 1752
-      },
-      {
-        "group": "Bhote",
-        "pct": 0.1,
-        "count": 1460
+        "count": 2314
       },
       {
         "group": "Majhi",
         "pct": 0.1,
         "count": 1384
+      },
+      {
+        "group": "Musalman",
+        "pct": 0.1,
+        "count": 3942
+      },
+      {
+        "group": "Raji",
+        "pct": 0.1,
+        "count": 2521
+      },
+      {
+        "group": "Sonar",
+        "pct": 0.1,
+        "count": 3466
+      },
+      {
+        "group": "Sunuwar",
+        "pct": 0.1,
+        "count": 1752
       }
     ],
     "sources": [

@@ -251,61 +251,22 @@ ADAPTER_GAPS: dict[str, str] = {
 #
 # Every entry here is required to be a shape that really does end up empty; a
 # stale one fails the build. See check_shape_gaps below.
-SHAPE_GAPS: dict[str, dict[str, str]] = {
-    # geoBoundaries CGAZ draws 75 shapes for Nepal's 77 districts: it uses
-    # "Bara" and "Saptari" twice each, omits Parsa and Siraha, and through
-    # Karnali and Lumbini the labels are shifted along by one. This is not a
-    # judgement -- it is the output of scripts/verify_shapes.py, which checks
-    # every district's Wikidata P625 reference point against the polygon
-    # bearing its name. 64 of the 77 land inside their own, 2 just outside,
-    # and the 11 behind these 7 labels are somewhere else entirely.
-    #
-    # The census measured all 77. Nothing here is missing data: it is data
-    # with nowhere trustworthy to put it, and Nepal's seven provinces carry
-    # every one of these people.
-    "NPL": {
-        "Bara": "Two of geoBoundaries' shapes are named Bara, and one of them "
-                "is Parsa. Nepal's 2021 census measured both districts, but "
-                "nothing distinguishes the two polygons, so putting either "
-                "district's figures on either shape would be a coin toss "
-                "presented as a measurement. Both districts' people are "
-                "counted in the Madhesh province total.",
-        "Saptari": "Two of geoBoundaries' shapes are named Saptari, and one of "
-                   "them is Siraha. Nepal's 2021 census measured both "
-                   "districts, but nothing distinguishes the two polygons, so "
-                   "putting either district's figures on either shape would be "
-                   "a coin toss presented as a measurement. Both districts' "
-                   "people are counted in the Madhesh province total.",
-        "Jajarkot": "This polygon is Dailekh's ground, not Jajarkot's -- "
-                    "Jajarkot's own lies inside the shape named Rukum West. "
-                    "Through Karnali the boundary file's labels are shifted "
-                    "along by one, so the 2021 census figures for either "
-                    "district would land on the other's territory. Both are "
-                    "counted in the Karnali province total.",
-        "Rukum_W": "This polygon is Jajarkot's ground, not Rukum West's. "
-                   "Through Karnali the boundary file's labels are shifted "
-                   "along by one, so the 2021 census figures for either "
-                   "district would land on the other's territory. Both are "
-                   "counted in the Karnali province total.",
-        "Rukum_E": "This polygon is Rukum West's ground; the district called "
-                   "Rukum East is about 20 km away, inside the shape named "
-                   "Rolpa. The 2021 census measured Rukum East, and there is "
-                   "no polygon here to put it on. Its people are counted in "
-                   "the Lumbini province total.",
-        "Nawalapur": "This polygon is Rupandehi's ground. Nepal split "
-                     "Nawalparasi in two in 2017 along the Bardaghat Susta "
-                     "road, and the boundary file did not follow: no shape "
-                     "bears Rupandehi's name, and no shape contains Parasi at "
-                     "all. The 2021 census measured all three districts; the "
-                     "Lumbini province total carries them.",
-        "Nawalparasi": "This polygon is Nawalpur's ground. Nepal split "
-                       "Nawalparasi in two in 2017 along the Bardaghat Susta "
-                       "road, and the boundary file still draws the undivided "
-                       "district under its old name. The 2021 census measured "
-                       "Nawalpur and Parasi separately; the Gandaki and "
-                       "Lumbini province totals carry them.",
-    },
-}
+# Per-shape gap reasons, keyed by the boundary file's own spelling of the
+# shape's name -- which is what reaches both polygons when a country's
+# boundary file uses one name twice.
+#
+# Nepal's seven entries used to live here, covering nine shapes, and they are
+# gone because the shapes are no longer empty: geoBoundaries draws Nepal's
+# pre-2015 districts correctly and only *labels* them wrongly, so the nine are
+# bound by shape id in scripts/fetch_census/nepal.py instead. Five of those
+# seven reasons also said things that were not true -- that nothing
+# distinguished the two polygons called "Bara", that Rukum East lay inside the
+# shape named Rolpa, that Parsi's ground was inside no polygon at all. The
+# last two were artefacts of bad Wikidata reference points (Parasi's P625 is
+# in India), read as facts about the boundary file. A gap that says why it is
+# a gap is worth having; a gap that says why, wrongly, is worse than a silent
+# one, because it stops anyone looking again.
+SHAPE_GAPS: dict[str, dict[str, str]] = {}
 
 EUROSTAT_HINT = ("Eurostat NUTS population and median age: "
                  "python -m scripts.fetch_census.eurostat --level nuts3")
@@ -2305,6 +2266,14 @@ def main() -> int:
         a2: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for entity in admin2_by_country.get(iso3, []):
             a2[norm(entity["name"])].append(entity)
+        # Both levels, because a binding names a polygon and does not care
+        # which order the boundary file draws it at.
+        by_shape: dict[str, dict[str, Any]] = {
+            entity["id"]: entity
+            for entity in (*admin1_by_country.get(iso3, []),
+                           *admin2_by_country.get(iso3, []))
+            if entity.get("id")}
+        claimed: set[int] = set()
         hit = miss = ambiguous = outside = collided = declared = 0
         matched: list[tuple[dict[str, Any], dict[str, Any], str]] = []
         deferred: list[tuple[dict[str, Any], dict[str, Any]]] = []
@@ -2342,6 +2311,40 @@ def main() -> int:
                    # one rescue that lets a correct match survive a parent named
                    # historically rather than currently.
                    "point": row_point(row)}
+            # A row that names the shape it belongs on is put there, and no
+            # name is consulted. This is the escape hatch for a boundary file
+            # whose geometry is right and whose *labels* are wrong: Nepal's
+            # CGAZ ADM2 draws the 75 pre-2015 districts correctly and uses two
+            # of their names twice, omits four, and puts two post-split names
+            # on pre-split polygons. No alias can fix that -- the keys collide
+            # with real district names elsewhere in the same country -- and no
+            # name-keyed pass can tell two polygons called "Bara" apart.
+            #
+            # Deliberately narrow. The id must exist in the country being
+            # joined and must not already be spoken for, and a row asking for
+            # an id that is not drawn stops the run rather than falling back
+            # to a name: a stale id is a real mistake and the fallback would
+            # hide it behind a match that looks ordinary. This is the strongest
+            # claim an adapter can make about a shape, so it is the one that
+            # has to be checked hardest.
+            if row.get("match_by") == "shape_id":
+                wanted = row.get("shape_id")
+                entity = by_shape.get(wanted)
+                if entity is None:
+                    raise SystemExit(
+                        f"{iso3}: {row.get('name')!r} asks for shape "
+                        f"{wanted!r}, which this country does not draw. A "
+                        f"binding is a claim about a specific polygon, so a "
+                        f"stale one is a mistake rather than a near miss")
+                if id(entity) in claimed:
+                    raise SystemExit(
+                        f"{iso3}: shape {wanted!r} is claimed by "
+                        f"{row.get('name')!r} and by another row. Two rows on "
+                        f"one shape is how one district quietly wears "
+                        f"another's figures")
+                claimed.add(id(entity))
+                matched.append((row, entity, "shape_id"))
+                continue
             if row.get("level") == "admin1":
                 entity, how = match_name(
                     key, settle(a1_by_key, [key["name"], *key["aliases"]]))

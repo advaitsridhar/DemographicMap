@@ -104,8 +104,17 @@ class Parsing(unittest.TestCase):
 
     def test_the_boundary_files_spelling_reaches_the_census_name(self):
         self.assertEqual(nepal.canonical_area("Chitawan"), "Chitwan")
-        self.assertEqual(nepal.canonical_area("Rukum_E"), "Rukum East")
+        self.assertEqual(nepal.canonical_area("Rukum_W"), "Rukum West")
         self.assertEqual(nepal.canonical_area("Province 1"), "Koshi")
+
+    def test_a_label_that_sits_on_the_undivided_district_is_not_an_alias(self):
+        # "Rukum_E" and "Nawalparasi" are boundary-file labels on polygons
+        # that are the *undivided* districts, not on the halves they name.
+        # Aliasing a half to them put 56,786 people's composition on a polygon
+        # holding 223,526, and 386,868 on one holding 764,947. Only the old
+        # withholding list was hiding it, so the alias had to go with it.
+        for label in ("Rukum_E", "Nawalparasi", "Nawalparasi West"):
+            self.assertFalse(nepal.known_area(label), label)
 
     def test_the_census_own_names_for_the_split_districts(self):
         self.assertEqual(
@@ -198,23 +207,55 @@ class Composition(unittest.TestCase):
         self.assertAlmostEqual(sum(r["pct"] for r in got), 100.0, places=0)
 
 
-class Withholding(unittest.TestCase):
-    def test_the_districts_with_no_trustworthy_shape_are_named(self):
-        # Not a judgement call at build time: these are the districts whose
-        # territory the boundary file puts inside a differently-named polygon,
-        # or whose name it carries twice.
-        for district in ("Rupandehi", "Dailekh", "Siraha", "Parsa",
-                         "Bara", "Saptari", "Nawalpur"):
-            self.assertIn(district, nepal.UNJOINABLE)
+class ShapeBindings(unittest.TestCase):
+    """The nine shapes whose label is wrong, bound by the shape's own id.
+
+    These districts used to be withheld -- the boundary file names two of them
+    twice, omits four, and puts two post-split names on pre-split polygons, so
+    no name-keyed join could reach them safely. The geometry was never the
+    problem, only the name column, so the binding names the polygon instead.
+    """
+
+    def test_the_districts_the_name_column_loses_are_all_bound(self):
+        bound = {d for parts in nepal.SHAPE_BOUND.values() for d in parts}
+        for district in ("Rupandehi", "Dailekh", "Siraha", "Parsa", "Bara",
+                         "Saptari", "Nawalpur", "Parasi", "Jajarkot",
+                         "Rukum East", "Rukum West"):
+            self.assertIn(district, bound, district)
+        self.assertEqual(len(bound), 11)
 
     def test_every_district_belongs_to_exactly_one_province(self):
         seen = [d for names in nepal.DISTRICTS.values() for d in names]
         self.assertEqual(len(seen), 77)
         self.assertEqual(len(set(seen)), 77)
 
-    def test_every_withheld_district_is_a_real_district(self):
+    def test_every_bound_district_is_a_real_district(self):
         known = {d for names in nepal.DISTRICTS.values() for d in names}
-        self.assertTrue(set(nepal.UNJOINABLE) <= known)
+        bound = {d for parts in nepal.SHAPE_BOUND.values() for d in parts}
+        self.assertTrue(bound <= known)
+
+    def test_no_district_is_bound_to_two_shapes(self):
+        # Two shapes claiming one district would publish its people twice.
+        seen = [d for parts in nepal.SHAPE_BOUND.values() for d in parts]
+        self.assertEqual(len(seen), len(set(seen)))
+
+    def test_every_bound_shape_says_what_it_is_labelled(self):
+        # The note tells the reader the polygon carries another name, because
+        # an unexplained disagreement is its own kind of error.
+        self.assertEqual(set(nepal.SHAPE_BOUND), set(nepal.SHAPE_LABELS))
+
+    def test_the_two_summed_shapes_are_the_undivided_districts(self):
+        pairs = {shape: parts for shape, parts in nepal.SHAPE_BOUND.items()
+                 if len(parts) > 1}
+        self.assertEqual(
+            sorted(tuple(p) for p in pairs.values()),
+            [("Nawalpur", "Parasi"), ("Rukum East", "Rukum West")])
+
+    def test_a_shape_id_looks_like_one(self):
+        # A typo here binds to nothing, and the build refuses rather than
+        # falling back to a name -- but catching it in the table is cheaper.
+        for shape in nepal.SHAPE_BOUND:
+            self.assertRegex(shape, r"^79688334B\d+$", shape)
 
 
 if __name__ == "__main__":

@@ -2618,6 +2618,86 @@ class AjkYearbookReligion(unittest.TestCase):
         self.assertEqual(self.pk.AJK_YEAR, 2017)
 
 
+class GilgitBaltistanWeighted(unittest.TestCase):
+    """The territory row is its own districts, weighted by the census.
+
+    Before the populations were read there was no way to add the ten
+    districts up, so the territory carried PILDAT's separate territory-wide
+    estimate and the two were never compared. They disagree by eight and a
+    half points on the Ismaili share.
+    """
+
+    POP = {"Astore": 111573, "Diamer": 337329, "Ghanche": 157822,
+           "Ghizer": 200069, "Gilgit": 324552, "Hunza": 65497,
+           "Kharmang": 61304, "Nagar": 87410, "Shigar": 84608,
+           "Skardu": 278885, "GB": 1709049}
+
+    def setUp(self):
+        from scripts.fetch_census import pakistan
+        self.pk = pakistan
+
+    def test_the_published_row_is_the_weighted_one(self):
+        shares = {g["group"]: g["pct"]
+                  for g in self.pk.gb_religion(self.POP)["religion"]}
+        self.assertEqual(shares["Isma'ili Shi'a Islam"], 15.5)
+        self.assertNotEqual(shares["Isma'ili Shi'a Islam"],
+                            self.pk.GB_SECTS["Isma'ili Shi'a Islam"])
+        self.assertAlmostEqual(sum(shares.values()), 100.0, places=6)
+
+    def test_the_territory_agrees_with_its_own_districts(self):
+        # The property that made the weighted figure the one to publish: a
+        # territory whose districts do not add up to it is a contradiction a
+        # reader can see and cannot resolve.
+        weighted = self.pk.gb_weighted(self.POP)
+        rebuilt = {}
+        for name, sects in self.pk.GB_DISTRICT_SECTS.items():
+            for sect, pct in sects.items():
+                rebuilt[sect] = rebuilt.get(sect, 0.0) \
+                    + self.POP[name] * pct / 100.0
+        exact = {sect: 100.0 * people / self.POP["GB"]
+                 for sect, people in rebuilt.items()}
+        # Every share is its exact value to within a rounding step, and the
+        # published four sum to 100.0 on the nose.
+        for sect, value in exact.items():
+            self.assertAlmostEqual(weighted[sect], value, delta=0.11, msg=sect)
+        self.assertAlmostEqual(sum(weighted.values()), 100.0, places=6)
+        # Largest-remainder: at most one share is off by more than half a
+        # rounding step, and it is the biggest, which carries the shortfall.
+        carried = [sect for sect, value in exact.items()
+                   if abs(weighted[sect] - value) > 0.05]
+        self.assertLessEqual(len(carried), 1)
+        if carried:
+            self.assertEqual(carried[0], max(weighted, key=weighted.get))
+
+    def test_without_populations_it_falls_back_to_the_papers_own_row(self):
+        # Where the booklet has not been read there is nothing to weight by,
+        # and the row stands where it stood before the populations existed.
+        self.assertEqual(self.pk.gb_weighted({}), {})
+        shares = {g["group"]: g["pct"]
+                  for g in self.pk.gb_religion({})["religion"]}
+        self.assertEqual(shares, dict(self.pk.GB_SECTS))
+
+    def test_a_partial_weighting_is_refused(self):
+        # The dangerous case: weighting on the districts that happen to have
+        # been read would quietly reweight the territory onto them.
+        short = dict(self.POP)
+        del short["Skardu"]
+        self.assertEqual(self.pk.gb_weighted(short), {})
+
+    def test_districts_that_do_not_sum_to_the_territory_stop_the_run(self):
+        wrong = dict(self.POP, Skardu=self.POP["Skardu"] + 1)
+        with self.assertRaises(SystemExit):
+            self.pk.gb_weighted(wrong)
+
+    def test_the_note_names_the_figure_that_is_not_published(self):
+        # A disagreement inside one source is harder for a reader to find than
+        # one between two sources, so it is stated rather than resolved away.
+        note = self.pk.gb_religion(self.POP)["religion_note"]
+        self.assertIn("weighted by their", note)
+        self.assertIn("24.0%", note)
+        self.assertIn("eight and a half points apart", note)
+
+
 class PakistanMotherTongue(unittest.TestCase):
     """Table 11 of the 2023 census, and what reading it moved.
 
@@ -3141,18 +3221,25 @@ class PakistanGilgitBaltistanPopulation(unittest.TestCase):
         self.assertIn("Gilgit-Baltistan at a Glance 2025", note)
         self.assertNotIn("population_note", field)
 
-    def test_the_territory_note_names_what_the_districts_weigh_to(self):
-        # The populations are what made this askable. PILDAT's area-wise faith
-        # map and PILDAT's territory estimate, in one paper, do not describe
-        # the same population, and the note says so rather than letting a
-        # reader find it by adding up the districts themselves.
+    def test_the_territory_row_is_its_districts_and_the_note_says_so(self):
+        # The populations are what made this askable, and having asked, the
+        # weighted figure is the one published: a territory whose districts do
+        # not add up to it is a contradiction a reader can see and cannot
+        # resolve. PILDAT's separate territory-wide estimate disagrees, so the
+        # note names it rather than letting the disagreement disappear.
         counts = self.read()
-        note = self.pk.gb_religion(counts)["religion_note"]
-        self.assertIn("weighted by the census populations", note)
-        self.assertIn("Isma'ili Shi'a Islam 15.5%", note)
-        # And says nothing of the kind when there is nothing to weight by.
-        self.assertNotIn("weighted by",
-                         self.pk.gb_religion({})["religion_note"])
+        fields = self.pk.gb_religion(counts)
+        shares = {g["group"]: g["pct"] for g in fields["religion"]}
+        self.assertEqual(shares["Isma'ili Shi'a Islam"], 15.5)
+        note = fields["religion_note"]
+        self.assertIn("weighted by their 2023 census populations", note)
+        self.assertIn("Isma'ili Shi'a Islam 24.0%", note)
+        # And falls back to the paper's own row when there is nothing to
+        # weight by, saying nothing of the kind.
+        plain = self.pk.gb_religion({})
+        self.assertEqual({g["group"]: g["pct"] for g in plain["religion"]},
+                         dict(self.pk.GB_SECTS))
+        self.assertNotIn("weighted by", plain["religion_note"])
 
 
 class PakistanGilgitBaltistanIsPublished(unittest.TestCase):
