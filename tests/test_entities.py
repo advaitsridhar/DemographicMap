@@ -3778,16 +3778,16 @@ class UscbReader(unittest.TestCase):
         out = self.third({1: "admin1", 3: "admin2"})
         self.assertIn(("", "SINDH"), out)
 
-    def test_pakistan_reads_districts_and_not_divisions(self):
-        self.assertEqual(self.uscb.COUNTRIES["PAK"].levels,
-                         {1: "admin1", 3: "admin2"})
-
-    def test_pakistan_does_not_republish_the_religion_it_already_has(self):
-        # scripts/fetch_census/pakistan.py publishes religion from the same
-        # census table. Two files claiming one shape with figures that
-        # disagree at all would send both to a gap under the agreement rule.
-        fields = [t.field for t in self.uscb.COUNTRIES["PAK"].topics]
-        self.assertEqual(fields, ["language"])
+    def test_pakistan_is_not_read_here_at_all(self):
+        # It was, for language, off the 2017 round. The Bureau publishes the
+        # 2023 round's Table 11 itself and scripts/fetch_census/pakistan.py
+        # reads it, so this workbook has nothing left to add -- and were it
+        # still read, two files would claim one shape's language with figures
+        # six years and six named tongues apart, which the agreement rule
+        # answers by sending both to a gap.
+        self.assertNotIn("PAK", self.uscb.COUNTRIES)
+        self.assertFalse([c for c in self.uscb.COUNTRIES.values()
+                          if c.iso3 == "PAK"])
 
     def test_ukraine_publishes_oblasts_only(self):
         self.assertEqual(self.uscb.UKRAINE.levels, {1: "admin1"})
