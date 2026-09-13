@@ -106,9 +106,28 @@ DZONGKHAG_ALIASES: dict[str, tuple[str, ...]] = {
     "Lhuentse": ("Lhuntse",),
 }
 
-# The census's own total, from the national report, and the control every
-# dzongkhag read here is held to collectively.
-NATIONAL = 727_145
+# Bhutan's two published totals, and they are both real. The national report:
+# "Bhutan's total population is 735,553 ... It includes 8,408
+# non-Bhutanese/tourists found in hotels and those on the move on census
+# reference day. The analyses in this Report are based on 727,145 persons
+# since no detailed information was collected from the 8,408."
+NATIONAL_FOUND = 735_553      # everyone found in Bhutan on the day
+NATIONAL_ANALYSED = 727_145   # what the report's own tables are built on
+
+# The twenty dzongkhag reports do not sum to either, and that is a
+# disagreement between NSB's own publications rather than a misread here.
+# Their Table 2.1 figures agree with the national report's Table 2.1 exactly
+# for Bumthang, Chhukha, Dagana, Gasa, Haa, Monggar and Pema Gatshel, and
+# differ for others -- Paro 43,362 against 46,316, Punakha 27,360 against
+# 28,740, Lhuentse 14,240 against 14,437. Each dzongkhag report reconciles
+# internally, gewog by gewog, to the total printed in it.
+#
+# So the per-dzongkhag reconciliation is the hard check and this one is
+# reported rather than enforced: every dzongkhag is required to be read and
+# to add up to its own printed total, which is what would catch one read
+# twice or not at all. A bound here would either be loose enough to miss
+# Gasa's 3,952 or tight enough to refuse this known disagreement.
+NATIONAL = NATIONAL_ANALYSED
 
 # The header is two stacked rows -- "Gewog/Town | Persons" over
 # "Male | Female | Total" -- and whether they land on one baseline or two is
@@ -149,10 +168,15 @@ NUMBER = re.compile(r"^[\d,]+$")
 TOWN = re.compile(r"\b(Town|Thromde)$")
 
 POPULATION_NOTE = (
-    "2017 Population and Housing Census, the whole resident population "
-    "'irrespective of their nationality' as the report puts it. Bhutan's "
-    "census does not ask religion, language or ethnicity, so those three are "
-    "declared rather than left empty.")
+    "2017 Population and Housing Census, from the dzongkhag's own report, "
+    "counting everyone found there 'irrespective of their nationality' as the "
+    "report puts it. Bhutan's census does not ask religion, language or "
+    "ethnicity, so those three are declared rather than left empty. Note that "
+    "the dzongkhag reports and the national report do not agree everywhere: "
+    "the twenty come to 720,837 against the 727,145 the national report "
+    "analyses, itself 8,408 short of the 735,553 found in the country once "
+    "non-Bhutanese in hotels are counted. The figure here is the dzongkhag's "
+    "own, which its gewogs add up to exactly.")
 GEWOG_NOTE = (
     " This is the gewog's own count. Towns and thromdes are enumerated beside "
     "the gewogs rather than inside them and the boundary file draws none of "
@@ -582,16 +606,13 @@ def main() -> int:
             f"bhutan: {len(absent)} of {len(wanted)} dzongkhag reports were "
             f"not read; refusing to write a partial Bhutan")
 
-    if not args.only and national != NATIONAL:
-        raise SystemExit(
-            f"bhutan: the twenty dzongkhags hold {national:,} against the "
-            f"{NATIONAL:,} the national report prints -- "
-            f"{NATIONAL - national:+,}. Each dzongkhag reconciled to its own "
-            f"printed total, so this is a whole dzongkhag read twice or not "
-            f"at all, which no per-file check can see")
     if not args.only:
-        log(f"  the twenty dzongkhags come to {national:,}, the national "
-            f"report's own figure")
+        log(f"  the twenty dzongkhags come to {national:,}, against the "
+            f"{NATIONAL_ANALYSED:,} the national report analyses and the "
+            f"{NATIONAL_FOUND:,} it says were found -- "
+            f"{national - NATIONAL_ANALYSED:+,} on the first. The two "
+            f"publications disagree for some dzongkhags; each report here "
+            f"reconciles to its own printed total.")
 
     out = args.out or PROCESSED / "bhutan_gewog.json"
     write_json(out, records)
