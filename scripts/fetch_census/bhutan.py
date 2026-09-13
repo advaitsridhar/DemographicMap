@@ -229,6 +229,7 @@ def table(blob: bytes, dzongkhag: str
     printed = 0
     edge: float | None = None
     margin: float | None = None
+    waited = 0
     reading = False
     section = ""
     # A label that wrapped onto its own line, waiting for the figures beneath
@@ -241,18 +242,36 @@ def table(blob: bytes, dzongkhag: str
     for rows in words_by_row(blob):
         if printed:
             break
-        found_here = margin is None and edge is not None
+        found_here = edge is not None and margin is None
         for cells in rows:
             texts = [t for _a, _b, t in cells]
             if margin is None:
-                if edge is None and HEADER_KEY in texts:
-                    edge = min(x0 for x0, _x1, t in cells if t == HEADER_KEY)
-                    found_here = True
-                if edge is not None and HEADER_EDGE in texts:
+                if edge is None:
+                    if HEADER_KEY in texts:
+                        edge = min(x0 for x0, _x1, t in cells
+                                   if t == HEADER_KEY)
+                        waited = 0
+                        found_here = True
+                        if HEADER_EDGE in texts:
+                            margin = max(x1 for _x0, x1, t in cells
+                                         if t == HEADER_EDGE)
+                            reading = True
+                    continue
+                # The header opened on an earlier line and its second row is
+                # still to come. Give it two lines, then give up on the right
+                # edge rather than on the table: clipping is what keeps a
+                # chart printed beside the table out, and a table with no
+                # chart beside it does not need it.
+                if HEADER_EDGE in texts:
                     margin = max(x1 for _x0, x1, t in cells
                                  if t == HEADER_EDGE)
-                    reading = True
-                    found_here = True
+                else:
+                    waited += 1
+                    if waited < 2:
+                        continue
+                    margin = float("inf")
+                reading = True
+                found_here = True
                 continue
             inside = [(x0, x1, t) for x0, x1, t in cells
                       if x0 >= edge - 3.0 and x1 <= margin + 6.0]
