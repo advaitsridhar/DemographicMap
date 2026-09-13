@@ -105,6 +105,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts. The census measured all 77; the boundary file is what fails, drawing 75 shapes whose names do not all sit on the right ground, and the 9 shapes that therefore carry nothing each say so and name the province total that holds their people. |
 | India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 734 of 735 district shapes carry figures. 637 are the census's own rows; 97 are shapes the census never enumerated and which carry their predecessor's shares as a stated estimate, with no head count, so nobody is counted twice. 75 more are districts that have since lost territory, and keep their 2011 figure under a caveat saying how much ground they have left. The one shape without figures is not a district at all. Telangana and Ladakh have state figures summed from the ten and two districts the census did enumerate, and Andhra Pradesh and Jammu and Kashmir carry the residual rather than the undivided state. |
+| Bhutan | National Statistics Bureau, 2017 Population & Housing Census of Bhutan (PHCB), Table 2.1 — population distribution by gewog and town — in each of the twenty *Dzongkhag Series* volumes, with the *National Report* (288 pp, ISBN 978-99936-28-50-7) as the control. Indexed at `www.nsb.gov.bt/phcb`, which links the national report and the twenty volumes; the volumes are fetched as `nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_{Dzongkhag}.pdf`. Licence: none stated — NSB official publications, cited as such. | dzongkhag, gewog | **Population and sex ratio only**, for all 20 dzongkhags and 205 gewogs, each volume's own Table 2.1. Religion, language and ethnicity are `not_collected`, measured over the round's whole 1,798 pages rather than assumed — see below. The census's one identity-adjacent split is **citizenship** (Bhutanese against non-Bhutanese, published to gewog) and it is deliberately not read as ethnicity. Sex ratio is derived as females per 1,000 males from the Male and Female columns of the same row, and only where those two reach the Total printed beside them; a row that does not add up keeps its head count and publishes a gap naming the three figures. The publications disagree on the head count and the disagreement is reported rather than resolved: the twenty volumes come to **720,837**, the national report analyses **727,145**, and it says **735,553** were found in the country, the difference being 8,408 non-Bhutanese and tourists in hotels on census night about whom nothing else was collected. Each volume reconciles to its own printed total, gewog by gewog, so the dzongkhag's own figure is the one carried. Towns and thromdes are enumerated *beside* the gewogs, not inside them, and geoBoundaries draws none of them, so the gewog layer is short of its parent by the urban population — 37.8% of Bhutan — and every gewog record says so. `scripts/fetch_census/bhutan.py`. |
 
 ### New Zealand: the geography that already fitted
 
@@ -4719,6 +4720,65 @@ route, and it is left open here rather than taken: CGAZ draws 398 second-level
 units against the gazetteer's 402, so it needs the same kind of careful,
 per-district reconciliation that Nepal's shape bindings needed, and it would
 fill no part of the religion, ethnicity or language gap this section is about.
+
+
+### Bhutan: 1,798 pages, and a census that asks none of the three
+
+`NOT_COLLECTED_POLICY["BTN"]` declares religion, language **and** ethnicity,
+which is the strongest form of the claim this project makes about a country,
+so it is worth recording exactly what was read to support it. Bhutan is not a
+country without a census: the 2017 Population & Housing Census was enumerated
+over three days from 30 May 2017 by 9,750 enumerators, it reached every
+dzongkhag, and it published more than most. It simply does not ask.
+
+Both halves of the round were swept, page by page, over the text of every page:
+
+* **National Report** (NSB, 2018, ISBN 978-99936-28-50-7), **288 pages**.
+  Searched for *religion*, *ethnic*, *tongue*, *Lhotshamkha* and *Nepali*:
+  **two pages match, and both match on Lhotshamkha alone**. Page 24 is census
+  publicity — radio talk shows advocating the census "were held in Dzongkha,
+  Sharchopkha, and Lhotshamkha". Page 42 is the definition of literacy, "the
+  ability to read and write a short text in Dzongkha, English, Lhotshamkha, or
+  any other language". *Religion*, *ethnic*, *mother tongue* and *Nepali*
+  occur on no page of the report at all. Its chapters are demographic
+  characteristics, education, health, labour and employment, migration,
+  housing and amenities, and household asset ownership, at national, dzongkhag
+  and thromde level.
+* **Dzongkhag Series**, the twenty volumes, **1,510 pages** read as one
+  document. Searched for the same five terms and *Hindu*: **twenty pages
+  match, one per volume, and every one is the same sentence** — that literacy
+  definition again. Not one occurrence of *religion*, *ethnic*, *mother
+  tongue*, *Nepali* or *Hindu* in fifteen hundred pages. Each volume runs
+  introduction and administrative set-up, demographic characteristics,
+  education, health, labour and employment, migration and housing.
+
+A definition of literacy naming three languages is not a language composition;
+it is the set of scripts a test card could be written in. The 2005 round is
+the same, and its own list of what it collected stops at housing.
+
+**What the census does ask that looks close, and why it is refused.**
+Citizenship — Bhutanese against non-Bhutanese — is published down to gewog,
+and it is not read here or anywhere else on this map as a proxy for ethnicity.
+Citizenship is precisely the contested variable in Bhutan: the 1985
+Citizenship Act is how much of the Lhotshampa population lost its legal
+standing before leaving. A map that quietly relabelled that column "ethnicity"
+would be making a claim about people the census took care not to make.
+
+**So the national figures on Bhutan's country row are not Bhutanese.** The
+Factbook's religion vector is not from either census — PHCB 2005 has no
+religion table at all — and the State Department's religious freedom report
+attributes the same split to Pew. There is no Bhutanese figure of any kind to
+prefer to it, at any level.
+
+**What was filled instead.** Table 2.1 of each volume prints Male, Female and
+Total for every gewog, every town and the dzongkhag itself, so the twenty
+volumes give a head count and a sex ratio for 20 dzongkhags and 205 gewogs.
+Both are the dzongkhag's own figures; the sex ratio is taken only where the
+publisher's two halves reach the total printed beside them, and a row that
+does not add up keeps its head count and says in its gap why it has no ratio.
+The national report's own row — 380,453 males and 346,692 females of 727,145 —
+is the control the twenty volumes are reported against, and is not written
+onto any record here.
 
 
 ### South Korea: a survey, spread by decision

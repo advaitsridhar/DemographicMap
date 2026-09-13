@@ -2874,6 +2874,139 @@ class BhutanGewogAliases(unittest.TestCase):
         self.assertEqual(self.bt.GEWOG_ALIASES["Khatoed"], ("Goenkhatoe",))
 
 
+class BhutanSexRatio(unittest.TestCase):
+    """The one composition the 2017 census does count, and its refusal rule.
+
+    Bhutan's census asks nothing about religion, language or ethnicity -- 288
+    pages of national report and 1,510 of dzongkhag volumes were swept for the
+    words and they are not there -- so the sex split of Table 2.1 is the whole
+    of what the round says about who these people are. It was printed in the
+    same rows the reader was already parsing for the head count, three columns
+    of which only the last was kept.
+
+    The rule that matters here is the refusal: a ratio is derived only where
+    the publisher's own Male and Female reach the Total printed beside them.
+    Recomputing the total instead would hide a misread column behind arithmetic
+    that always works, and print a figure of this map's making in a field that
+    claims to be a census measurement.
+    """
+
+    def setUp(self):
+        from scripts.fetch_census import bhutan
+        self.bt = bhutan
+
+    def test_the_national_split_the_report_prints_reconciles(self):
+        # Page 29 of the national report: "Bhutan 380,453 52.3 346,692 47.7
+        # 727,145". The two halves are the whole, and the whole is the
+        # population the report's own analyses are built on.
+        self.assertEqual(self.bt.NATIONAL_MALE, 380_453)
+        self.assertEqual(self.bt.NATIONAL_FEMALE, 346_692)
+        self.assertEqual(self.bt.NATIONAL_MALE + self.bt.NATIONAL_FEMALE,
+                         self.bt.NATIONAL_ANALYSED)
+        self.assertEqual(self.bt.NATIONAL_ANALYSED, 727_145)
+        ratio = self.bt.sex_ratio(self.bt.NATIONAL_MALE, self.bt.NATIONAL_FEMALE,
+                                  self.bt.NATIONAL_ANALYSED, "Bhutan")
+        self.assertEqual(ratio["value"], 911)
+        self.assertEqual(ratio["unit"], "females_per_1000_males")
+        self.assertEqual(ratio["year"], 2017)
+
+    def test_a_row_whose_halves_contradict_its_total_publishes_no_ratio(self):
+        # 423 + 419 is 842, and a row printing 843 has told this reader two
+        # different things. The gap says which three figures disagreed, so it
+        # cannot be read as "nobody ran the adapter".
+        refused = self.bt.sex_ratio(423, 419, 843, "Test/Row")
+        self.assertEqual(refused["status"], "not_available")
+        for figure in ("423", "419", "843"):
+            self.assertIn(figure, refused["note"])
+        self.assertNotIn("value", refused)
+        # The same row, adding up, is published.
+        taken = self.bt.sex_ratio(423, 419, 842, "Test/Row")
+        self.assertEqual(taken["value"], 991)
+
+    def test_a_row_with_no_males_has_no_denominator(self):
+        # Not a real gewog, and the guard is not for one: it is what keeps a
+        # zero in the Male column from raising ZeroDivisionError halfway
+        # through the twenty reports.
+        empty = self.bt.sex_ratio(0, 5, 5, "Test/Row")
+        self.assertEqual(empty["status"], "not_available")
+        self.assertNotIn("value", empty)
+
+
+class BhutanGewogFigures(unittest.TestCase):
+    """What the adapter actually wrote, checked against the other publication.
+
+    The dzongkhag volumes and the national report disagree on some dzongkhags'
+    head counts -- the twenty come to 720,837 against the 727,145 the national
+    report analyses -- so the national report cannot check every row. It can
+    check the eight where the two publications print the same total, and those
+    are a real control: the ratios below are computed from the national
+    report's own Male and Female columns, in a different document, laid out
+    differently, read by nothing.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        path = be.PROCESSED / "bhutan_gewog.json"
+        if not path.exists():
+            raise unittest.SkipTest("bhutan_gewog.json has not been run")
+        from scripts.fetch_census import bhutan
+        cls.bt = bhutan
+        cls.rows = json.loads(path.read_text(encoding="utf-8"))
+        cls.by_name = {r["name"]: r for r in cls.rows if r["level"] == "admin1"}
+
+    def test_every_record_carries_a_ratio_from_its_own_table(self):
+        self.assertEqual(len(self.rows), 225)
+        for row in self.rows:
+            ratio = row["sex_ratio"]
+            self.assertIn("value", ratio, row["name"])
+            self.assertEqual(ratio["unit"], "females_per_1000_males")
+            self.assertEqual(ratio["year"], 2017)
+            self.assertIn("Table 2.1", ratio["source"])
+
+    def test_the_national_report_agrees_where_it_can_be_asked(self):
+        # (male, female, total) as the national report's Table 2.1 prints
+        # them, for the eight dzongkhags whose totals the two publications
+        # agree on. A column read one place to the left would survive every
+        # check inside the dzongkhag volumes and fail here.
+        printed = {
+            "Bumthang": (9_396, 8_424, 17_820),
+            "Chhukha": (36_041, 32_925, 68_966),
+            "Dagana": (12_956, 12_009, 24_965),
+            "Trashi Yangtse": (8_719, 8_581, 17_300),
+            "Trongsa": (11_878, 8_082, 19_960),
+            "Tsirang": (11_526, 10_850, 22_376),
+            "Wangdue Phodrang": (24_302, 17_884, 42_186),
+            "Zhemgang": (9_195, 8_568, 17_763),
+        }
+        for name, (male, female, total) in printed.items():
+            row = self.by_name[name]
+            self.assertEqual(row["population"]["value"], total, name)
+            self.assertEqual(row["sex_ratio"]["value"],
+                             round(1000.0 * female / male), name)
+
+    def test_no_town_was_given_a_record(self):
+        # Towns and thromdes are enumerated beside the gewogs and geoBoundaries
+        # draws none of them, so they have nowhere to go. Chhukha's
+        # Phuentshogling Thromde and its Phuentshogling gewog are two rows of
+        # one table sharing a name; only the gewog is a record here, and its
+        # people are its own.
+        levels = collections.Counter(r["level"] for r in self.rows)
+        self.assertEqual(levels["admin1"], 20)
+        self.assertEqual(levels["admin2"], 205)
+        for row in self.rows:
+            self.assertIsNone(self.bt.TOWN.search(row["name"]), row["name"])
+
+    def test_the_most_skewed_gewog_sits_where_the_census_found_the_men(self):
+        # 209 females per 1,000 males is not a misreading. Darkar's dzongkhag,
+        # Wangdue Phodrang, is 57.6% male in the national report -- with
+        # Trongsa's 59.5% the most skewed in the country -- and Darkar's own
+        # row adds up, which is what a shifted column would not do.
+        gewogs = {r["name"]: r for r in self.rows if r["level"] == "admin2"}
+        self.assertEqual(gewogs["Darkar"]["parent_name"], "Wangdue Phodrang")
+        self.assertEqual(gewogs["Darkar"]["sex_ratio"]["value"], 209)
+        self.assertEqual(gewogs["Dramedtse"]["sex_ratio"]["value"], 1267)
+
+
 class PakistanMotherTongue(unittest.TestCase):
     """Table 11 of the 2023 census, and what reading it moved.
 
