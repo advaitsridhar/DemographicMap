@@ -472,7 +472,11 @@ def table(blob: bytes, dzongkhag: str, debug: bool = False
             f"bhutan: {dzongkhag}: {len(gewogs)} gewogs and {len(towns)} "
             f"towns hold {counted:,} against the {printed:,} printed beside "
             f"them -- {printed - counted:+,}. A gewog this reader never "
-            f"noticed is a hole, and every other check here passes over it")
+            f"noticed is a hole, and every other check here passes over it."
+            f"\n      gewogs: " + ", ".join(f"{k} {v:,}"
+                                            for k, v in sorted(gewogs.items()))
+            + f"\n      towns: " + ", ".join(f"{k} {v:,}"
+                                             for k, v in sorted(towns.items())))
     return gewogs, towns, printed
 
 
