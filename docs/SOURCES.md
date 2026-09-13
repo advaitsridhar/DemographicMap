@@ -4625,14 +4625,21 @@ So all three fields are declared in `NOT_COLLECTED_POLICY["MDV"]`, and
 and 20 second-level shapes. **No adapter and no atoll-level file were
 written**, and that is the point rather than a shortcut: there is nothing to
 join, and a per-atoll record would have to be bound through a boundary file
-that does not nest -- CGAZ draws the Maldives' first level as 13 of the 21
-administrative atolls under their Thaana letter-names (Haa Alif, Baa, Kaafu)
-and its second level as 20 natural atolls under their geographic names
-(North Thiladhunmathe, South Maalhosmadulu, Faadhippolhu), with `Male'` used
-twice and Gnaviyani/Fuvahmulah absent from both. Seven of the twenty have no
-first-level polygon to sit inside at all. None of that has to be solved to say
-truthfully that the census does not ask; it would have to be solved to publish
-a number, and there is no number.
+that does not nest. CGAZ draws the Maldives' first level as **13** units named
+for administrative atolls (Haa Alif, Baa, Kaafu -- the country has 20 of those
+plus Malé City) and its second level as **20** units named for the natural
+atolls (North Thiladhunmathe, South Maalhosmadulu, Faadhippolhu), with `Male'`
+used for two different second-level shapes and Gnaviyani/Fuvahmulah on
+neither level. Measured against the geometry: **13 of the 20 second-level
+representative points fall outside every first-level polygon**, and **9 of the
+20 intersect no first-level polygon at all** -- several of the first-level
+shapes are slivers of near-zero area, one of them a single point. Eleven pair
+cleanly by overlap (South Nilandhoo to Dhaalu, Faadhippolhu to Lhaviyani, and
+so on), which is the shape of the answer if anyone needs it: pair by
+intersection area and bind by `shape_id`, the way `fetch_census/nepal.py`
+binds the nine districts CGAZ labels wrongly. None of that has to be solved to
+say truthfully that the census does not ask. It would have to be solved to
+publish a number, and there is no number.
 
 What this closes and what it does not: religion, ethnicity and language are
 answered. **Population by atoll and island is published and is not here** --
