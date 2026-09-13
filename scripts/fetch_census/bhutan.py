@@ -59,6 +59,19 @@ Tsirang's page 12 opens "Trashigang Dzongkhag as of the census...", a
 copy-paste left in NSB's own text. The tables are Tsirang's. Read the tables,
 never the sentences.
 
+**A gewog reaches its polygon by where it is, not by what it is called.**
+geoBoundaries draws 205 Bhutanese gewogs and the census publishes 205, but
+the two disagree about the names of thirty of them -- and not as spellings.
+The boundary file labels Samtse's Tashicholing "Sipsu" and its Norgaygang
+"Bara", Sarpang's Samtenling "Bhur", Tsirang's Patshaling "Beteni": the
+Nepali-origin names southern Bhutan carried before the renamings. No
+romanisation rule crosses that, and the one thing worse than leaving those
+thirty shapes empty is filling them from a resemblance. So they are paired by
+a reference point -- Wikidata's own point for the gewog the census names,
+falling inside the polygon the boundary file draws, with Wikidata's dzongkhag
+for it agreeing with the census's. See ``GEWOG_BY_POINT``, which also records
+the two pairs the old name-matching got wrong.
+
 Usage:
     python -m scripts.fetch_census.bhutan
 """
@@ -131,8 +144,19 @@ DZONGKHAG_ALIASES: dict[str, tuple[str, ...]] = {
 # is not available here: CGAZ's two Bhutan layers are not the same partition
 # of the country. 81 of the 205 gewog polygons are less than 90% inside any
 # single dzongkhag polygon, and Punakha comes out with 6 children by maximum
-# overlap and 4 by the point-in-polygon rule the build uses, where it has 11.
-# A parent that is wrong cannot confirm a name.
+# overlap and 4 by the point-in-polygon rule the build used then, where it has
+# 11. A parent that is wrong cannot confirm a name.
+#
+# **Two of these pairs were wrong, and the limit is why.** A name matched
+# without a place behind it can land anywhere, and twice it did: Punakha's
+# Barp was aliased to a shape called "Bara" that sits 96% inside Samtse, and
+# Chhukha's Maedtabkha to "Patakla", 60% inside Tsirang. Both have been
+# removed; both gewogs are now bound by GEWOG_BY_POINT below, and the two
+# shapes turn out to be Samtse's Norgaygang and Tsirang's Sergithang, which
+# had no figures at all while two other dzongkhags' people sat on them. The
+# refusals in this table held up better than its acceptances: "Pemaling" to
+# "Pagli" scored 0.62 and was left out, and Pemaling is Biru -- Pagli is
+# Phuentshogpelri.
 #
 # So a pair is taken only where each name is the other's best match in both
 # directions, which is what stops a chain of near-misses from cascading: 24
@@ -145,7 +169,6 @@ DZONGKHAG_ALIASES: dict[str, tuple[str, ...]] = {
 # Khamaed can only be Goenkhame. "Pemaling" to "Pagli" scored 0.62 with no
 # such argument behind it and is left out.
 GEWOG_ALIASES: dict[str, tuple[str, ...]] = {
-    "Barp": ("Bara",),
     "Barshong": ("Barzhong",),
     "Bidoong": ("Bidung",),
     "Bjagchhog": ("Bjachho",),
@@ -189,7 +212,6 @@ GEWOG_ALIASES: dict[str, tuple[str, ...]] = {
     "Lhamoi Dzingkha": ("Lhamoizingkha",),
     "Loggchina": ("Logchina",),
     "Loong-nyi": ("Lungnyi",),
-    "Maedtabkha": ("Patakla",),
     "Maedtsho": ("Metsho",),
     "Maedwang": ("Mewang",),
     "Maenbi": ("Menbi",),
@@ -197,7 +219,6 @@ GEWOG_ALIASES: dict[str, tuple[str, ...]] = {
     "Minjey": ("Minjay",),
     "Monggar": ("Mongar",),
     "Namgyalchhoeling": ("Namgyel Chhoeling",),
-    "Norboogang": ("Norbugang",),
     "Nyishog": ("Nyisho",),
     "Phangkhar": ("Pangkhar",),
     "Phongmed": ("Phongme",),
@@ -227,6 +248,116 @@ GEWOG_ALIASES: dict[str, tuple[str, ...]] = {
     "Tsholingkhar": ("Tsholingkhor",),
     "Tsirang Toed": ("Tsirangtoe",),
     "Ugyentse": ("Ugentse",),
+}
+
+# The gewogs the boundary file draws under a name that is not a spelling of
+# the census's at all, paired by where they are rather than by what they are
+# called. Every one of these is a *place*, not a string: Samtse's Tashicholing
+# is drawn as "Sipsu", its Norgaygang as "Bara", Sarpang's Samtenling as
+# "Bhur", Tsirang's Patshaling as "Beteni". No romanisation rule reaches any
+# of those, and no rule should -- they are the Nepali-origin names the
+# southern dzongkhags carried before the renamings of the 1950s to 1990s and
+# the 1996-97 romanisation standardisation, and CGAZ still labels the polygons
+# with them.
+#
+# **The evidence is a reference point inside a polygon, and it is checked two
+# ways.** Wikidata carries Bhutan's gewogs with P131 (the dzongkhag) and P625
+# (a point); `data/processed/bhutan_wikidata_gewog.json` holds 240 of them,
+# 166 with a point. A pair is taken only where the point of the gewog *the
+# census names* falls inside the polygon *the boundary file draws*, AND
+# Wikidata's dzongkhag for that gewog is the dzongkhag the census printed it
+# under. Two independent statements about the same ground, neither of them a
+# string comparison.
+#
+# The method was measured before it was trusted: of the 102 gewogs that carry
+# a point and whose name the boundary file already matched, 98 have their
+# point inside their own polygon. The four that do not are on borders. That is
+# the same reading Nepal's district bindings rest on, and for the same reason
+# -- a polygon is identified by what is inside it, not by what it is labelled.
+#
+# Corroborated a third time by the list of gewogs each dzongkhag has: the
+# Wikipedia article *Gewogs of Bhutan* prints all 205 with their Dzongkha, and
+# each pair below is one gewog of the dzongkhag the census printed it under.
+# The Dzongkha settles several that look like different words in Latin script:
+# the census's Karna is བཀར་ན་ (Kana), its Maedtabkha is སྨད་བཏབ་ཁ་ (Metakha),
+# its Darkarla is དར་དཀར་ལ་ (Dagala), its Nagya is ན་རྒྱ་ (Naja).
+#
+# Keyed by (gewog, dzongkhag) because two of Bhutan's gewog names are not
+# unique: an alias keyed on the name alone is what put both Norboogangs on one
+# shape and lost both. Those four rows are in SHAPE_BOUND instead.
+GEWOG_BY_POINT: dict[tuple[str, str], tuple[str, ...]] = {
+    ("Maedtabkha", "Chhukha"): ("Metap",),
+    ("Karmaling", "Dagana"): ("Deorali",),
+    ("Karna", "Dagana"): ("Kalidzingkha",),
+    ("Khebisa", "Dagana"): ("Khipisa",),
+    ("Sangbay", "Haa"): ("Sombey",),
+    ("Dokar", "Paro"): ("Doga",),
+    ("Nagya", "Paro"): ("Naja",),
+    ("Dungmaed", "Pema Gatshel"): ("Dungmin",),
+    ("Barp", "Punakha"): ("Bapisa",),
+    ("Orong", "Samdrup Jongkhar"): ("Jangchhubling",),
+    ("Doomtoed", "Samtse"): ("Dungtoe",),
+    ("Dophuchen", "Samtse"): ("Dorokha",),
+    ("Norgaygang", "Samtse"): ("Bara",),
+    ("Pemaling", "Samtse"): ("Biru",),
+    ("Phuentshogpelri", "Samtse"): ("Pagli",),
+    ("Sang-Ngag-", "Samtse"): ("Chargharay",),
+    ("Tashichhoeling", "Samtse"): ("Sipsu",),
+    ("Chhudzom", "Sarpang"): ("Doban",),
+    ("Samtenling", "Sarpang"): ("Bhur",),
+    ("Tareythang", "Sarpang"): ("Taklai",),
+    ("Darkarla", "Thimphu"): ("Dagala",),
+    ("Tongmajangsa", "Trashi Yangtse"): ("Tomzhangtshen",),
+    ("Yangtse", "Trashi Yangtse"): ("Trashiyangtse",),
+    ("Patshaling", "Tsirang"): ("Beteni",),
+    ("Sergithang", "Tsirang"): ("Patakla",),
+    ("Darkar", "Wangdue Phodrang"): ("Daga",),
+}
+
+# The six of those the point could not settle, and what settles them instead.
+# Six gewogs have no P625 on Wikidata, so the pairing rests on the two lists
+# closing: the dzongkhag's gewogs as the article prints them and as the census
+# prints them agree name for name except at one place each, every other shape
+# in the dzongkhag is claimed, and the remainder is forced. Trashi Yangtse is
+# the one with two left over, and the boundary file's own labelling separates
+# them: "Tomzhangtshen" is the article's Tomzhang (སྟོང་མི་གཞང་ས་, the census's
+# Tongmajangsa), leaving the polygon labelled with the dzongkhag's own name,
+# "Trashiyangtse", as the gewog of Yangtse that holds its seat.
+BY_CLOSURE: frozenset[tuple[str, str]] = frozenset({
+    ("Nagya", "Paro"),
+    ("Doomtoed", "Samtse"),
+    ("Darkarla", "Thimphu"),
+    ("Tongmajangsa", "Trashi Yangtse"),
+    ("Yangtse", "Trashi Yangtse"),
+    ("Darkar", "Wangdue Phodrang"),
+})
+
+# Gewogs bound to one polygon by that polygon's id, because their name cannot
+# do it. Bhutan has two gewogs called Gakiling -- one in Haa, one in Sarpang
+# -- and two called Norbugang, in Pema Gatshel and in Samtse. A name-keyed
+# match cannot tell them apart: country-wide it is ambiguous, and the build
+# refuses both rows rather than letting one wear the other's people, which is
+# why all four shapes were empty. Which polygon is which is settled the same
+# way as GEWOG_BY_POINT -- Wikidata's Gakiling [Haa] point falls in the
+# polygon labelled "Gakiling" and its Gakiling [Sarpang] point in the one
+# labelled "Hiley"; Norbugang [Pema Gatshel] in "Norbugang" and Norbugang
+# [Samtse] in "Chengmari", the name Samtse's gewog carried before it was
+# renamed.
+SHAPE_BOUND: dict[tuple[str, str], str] = {
+    ("Gakiling", "Haa"): "84629894B40252407393905",          # "Gakiling"
+    ("Gakiling", "Sarpang"): "84629894B8166759987677",       # "Hiley"
+    ("Norboogang", "Pema Gatshel"): "84629894B84199937092772",  # "Norbugang"
+    ("Norboogang", "Samtse"): "84629894B7629980605125",      # "Chengmari"
+}
+
+# What the boundary file calls each bound shape, for the note that says so.
+# A reader who looks the shape up will find the other name on it, and an
+# unexplained disagreement is its own kind of error.
+SHAPE_LABELS: dict[str, str] = {
+    "84629894B40252407393905": "Gakiling",
+    "84629894B8166759987677": "Hiley",
+    "84629894B84199937092772": "Norbugang",
+    "84629894B7629980605125": "Chengmari",
 }
 
 
@@ -324,6 +455,20 @@ SEX_RATIO_REFUSED = (
     "whole that is published beside them. The head count is the report's own "
     "and stands; a ratio derived from figures the census does not itself add "
     "up would be this map's arithmetic, not Bhutan's measurement.")
+# The two ways a gewog reaches a polygon the boundary file labels differently,
+# said on the record itself. In the southern dzongkhags the label is usually
+# the Nepali-origin name the place carried before the renamings; elsewhere it
+# is another romanisation of the same word. Either way the name is not what
+# made the join, and the note says what did.
+RENAMED_NOTE = (
+    " The boundary file draws this gewog as {label}. The polygon was "
+    "identified by this gewog's own reference point falling inside it and by "
+    "Wikidata placing that gewog in this dzongkhag, not by either spelling.")
+CLOSURE_NOTE = (
+    " The boundary file draws this gewog as {label}. This gewog has no "
+    "reference point to place it with, so the polygon was identified by "
+    "elimination: every other gewog of {dzongkhag} is matched, and this is "
+    "the one polygon and the one gewog left.")
 GEWOG_NOTE = (
     " This is the gewog's own count. Towns and thromdes are enumerated beside "
     "the gewogs rather than inside them and the boundary file draws none of "
@@ -833,15 +978,33 @@ def main() -> int:
             ratio = sex_ratio(male, female, people, f"{dzongkhag}/{name}")
             if "value" not in ratio:
                 refused.append(f"{dzongkhag}/{name}")
+            where = (name, dzongkhag)
+            bound = SHAPE_BOUND.get(where)
+            note = POPULATION_NOTE + GEWOG_NOTE
+            if bound:
+                note += RENAMED_NOTE.format(label=SHAPE_LABELS[bound])
+                log(f"    {dzongkhag}/{name} -> shape {bound} "
+                    f"(labelled {SHAPE_LABELS[bound]!r})")
+            elif where in GEWOG_BY_POINT:
+                label = GEWOG_BY_POINT[where][0]
+                template = (CLOSURE_NOTE if where in BY_CLOSURE
+                            else RENAMED_NOTE)
+                note += template.format(label=label, dzongkhag=dzongkhag)
+                log(f"    {dzongkhag}/{name} -> labelled {label!r}"
+                    + ("  (by the two lists closing, not by a point)"
+                       if where in BY_CLOSURE else ""))
             records.append(record(
                 f"BTN-{dzongkhag.lower().replace(' ', '-')}-"
                 f"{name.lower().replace(' ', '-')}",
                 name, level="admin2", parent="BTN", country="BTN",
-                aliases=list(GEWOG_ALIASES.get(name, ())),
+                aliases=list(GEWOG_ALIASES.get(name, ()))
+                + list(GEWOG_BY_POINT.get(where, ())),
                 parent_name=dzongkhag,
                 parent_aliases=list(DZONGKHAG_ALIASES.get(dzongkhag, ())),
+                shape_id=bound,
+                match_by="shape_id" if bound else None,
                 population=measure(people, year=YEAR, source=SOURCE),
-                population_note=POPULATION_NOTE + GEWOG_NOTE,
+                population_note=note,
                 sex_ratio=ratio,
                 sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
                 sources=list(cite)))
@@ -852,6 +1015,21 @@ def main() -> int:
         raise SystemExit(
             f"bhutan: {len(absent)} of {len(wanted)} dzongkhag reports were "
             f"not read; refusing to write a partial Bhutan")
+
+    if not args.only:
+        # A binding is a claim about a specific gewog of a specific dzongkhag,
+        # so a key naming a pair this census does not print is a mistake and
+        # not a near miss -- the same rule build_entities keeps for a shape id
+        # it cannot find. Silently, it would mean a gewog the tables think is
+        # handled and which is in fact reaching no shape at all.
+        read_pairs = {(r["name"], r.get("parent_name")) for r in records
+                      if r["level"] == "admin2"}
+        stale = sorted((set(GEWOG_BY_POINT) | set(SHAPE_BOUND)) - read_pairs)
+        if stale:
+            raise SystemExit(
+                "bhutan: these bindings name a gewog and dzongkhag the "
+                "census does not print together: "
+                + "; ".join(f"{n} ({d})" for n, d in stale))
 
     if not args.only:
         log(f"  the twenty dzongkhags come to {national:,}, against the "
