@@ -1217,6 +1217,82 @@ def declared_gaps(absent: dict[str, list[tuple[str, str]]]) -> list[dict[str, An
     return out
 
 
+# The same for religion, and for one district. Table 9's categories are
+# Muslim, Christian, Hindu, Ahmadi, Scheduled Castes, Sikh, Parsi and Other,
+# and the Kalash faith is not among them -- so the one community in Pakistan
+# that practises a religion older than all eight is counted in the eighth
+# column, unnamed, in the one district where it lives.
+#
+# The count is not divided here either, and for a sharper reason than above:
+# the census's 4,970 and the community's own size do not agree. Accounts of
+# the Kalash put adherents at roughly 3,000 to 4,000, while Table 11 counts
+# 5,065 Kalasha speakers in the same district -- the gap between the two being
+# Kalash families who have converted and kept the language. Naming the whole
+# of Other as Kalash would therefore overstate it by a quarter, and naming
+# part of it would mean choosing which estimate to believe.
+RELIGION_DISTRICT_NOTES: dict[str, str] = {
+    "CHITRAL":
+        " The 4,970 people in Other religion here are, in the main, the "
+        "Kalash: Pakistan's last community practising the pre-Islamic "
+        "religion of the Hindu Kush, in the Bumburet, Rumbur and Birir "
+        "valleys. The census form has no category for them. Their own size "
+        "is put at roughly 3,000 to 4,000 adherents, against 5,065 Kalasha "
+        "speakers counted in this district by Table 11 -- the difference "
+        "being families who converted and kept the language -- so the column "
+        "is left as the census prints it rather than renamed.",
+}
+
+
+# What the Other is, in the six districts where it is still large enough to
+# be the thing a reader asks about. Keyed by the table's own spelling, which
+# is what ``found`` is keyed by.
+#
+# These name the languages; they do not divide the figure between them, and
+# the difference is deliberate. The Bureau prints one number for the column
+# and no breakdown of it, so any split would be this project's arithmetic
+# wearing the census's clothes -- and the figures that would have to drive it
+# are survey estimates of mixed vintage that disagree with each other: Dameli
+# is "perhaps seventy families" in one account and 5,000 speakers in another,
+# an order of magnitude apart. The one authoritative source, SIL's
+# Sociolinguistic Survey of Northern Pakistan volume 5, answers 403 to this
+# project and is not worked around.
+#
+# So the column keeps the census's number and the note says what is in it.
+# A reader who wants the split can be told it is not published; a reader
+# shown a split this file invented cannot tell that it was.
+TONGUE_DISTRICT_NOTES: dict[str, str] = {
+    "CHITRAL":
+        " Almost all of Chitral's Other is Khowar, the language of the Kho "
+        "and the valley's lingua franca, which the census form does not name "
+        "-- which is why this district is 92.4% Other while its neighbours "
+        "are not. Kalasha is named, and the 5,065 counted under it are the "
+        "Kalash. The rest of the Other is the smallest languages in Pakistan: "
+        "Palula in Ashret and Biori, Dameli in the Damel valley, Yidgha in "
+        "upper Lotkoh, Gawar-bati at Arandu, Eastern Kativiri, Madaglashti "
+        "Persian in Shishi, and Wakhi in upper Yarkhun.",
+    "MANSEHRA":
+        " The Other here is largely Gujari, the language of the Gujar "
+        "herding communities of the Kaghan valley and the hills above it, "
+        "which the census form does not name.",
+    "BATAGRAM":
+        " The Other here is largely Gujari, which the census form does not "
+        "name, alongside the Kohistani spoken across the district's northern "
+        "boundary.",
+    "QUETTA":
+        " The Other here is largely Hazaragi, the Persian variety of "
+        "Quetta's Hazara population, which the census form does not name.",
+    "RAWALPINDI":
+        " The Other here is largely Pothwari, the speech of the Potohar "
+        "plateau; the form names Punjabi but not this, and where the line "
+        "between the two is drawn is a matter the census leaves to the "
+        "person answering.",
+    "SWAT":
+        " The Other here is largely Torwali in Bahrain and Gawri in the "
+        "Kalam valley, with Gujari in the hills -- none of them named on the "
+        "census form.",
+}
+
+
 def read_tongues(slug: str, province: str,
                  counted: set[str]) -> tuple[dict[str, dict[str, int]], str]:
     """Table 11 for one province, read the same way Table 9 was.
@@ -1260,14 +1336,20 @@ def read_tongues(slug: str, province: str,
     return found, url
 
 
-def spoken(counts: dict[str, int]) -> dict[str, Any]:
-    """One unit's mother-tongue fields, from its row of Table 11."""
+def spoken(counts: dict[str, int], name: str = "") -> dict[str, Any]:
+    """One unit's mother-tongue fields, from its row of Table 11.
+
+    ``name`` is the table's spelling of the district, and only so that the
+    six districts whose Other is still large can say what is in it. A
+    province gets the general note alone: "largely Khowar" is true of Chitral
+    and says nothing useful about Khyber Pakhtunkhwa.
+    """
     total = counts["TOTAL"]
     parts = {k: v for k, v in counts.items() if k != "TOTAL"}
     return {
         "language": shares(parts, total=total) or gap(NOT_AVAILABLE),
         "language_year": YEAR,
-        "language_note": TONGUE_NOTE,
+        "language_note": TONGUE_NOTE + TONGUE_DISTRICT_NOTES.get(name, ""),
     }
 
 
@@ -1279,6 +1361,9 @@ def main() -> int:
 
     log("pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11")
     records: list[dict[str, Any]] = []
+    # Every district name the run actually read, so the notes keyed by name
+    # can be held to it below.
+    named: set[str] = set()
     absent: dict[str, list[tuple[str, str]]] = {
         REQUIRED: [], PUBLISHED: [], APART: []}
     for slug, (province, standing, candidates) in PROVINCES.items():
@@ -1300,6 +1385,7 @@ def main() -> int:
         check(province, found, whole)
         assembled = merge(province, found)
         tongues, tongue_url = read_tongues(slug, province, set(found))
+        named.update(found)
 
         # The province itself, from its own printed row. Twelve districts have
         # no boundary shape, so anything summed from what joins the map is
@@ -1335,12 +1421,12 @@ def main() -> int:
         for name, counts in sorted(found.items()):
             total = counts["TOTAL"]
             parts = {k: v for k, v in counts.items() if k != "TOTAL"}
-            note = NOTE
+            note = NOTE + RELIGION_DISTRICT_NOTES.get(name, "")
             if name in assembled:
                 note += (" The boundary file draws one shape here, so this is "
                          + ", ".join(p.title() for p in assembled[name])
                          + " summed.")
-            said = spoken(tongues[name]) if name in tongues else {}
+            said = spoken(tongues[name], name) if name in tongues else {}
             records.append(record(
                 f"PAK-{slug}-{name.lower().replace(' ', '-')}",
                 name.title(), level="admin2", parent="PAK",
@@ -1349,6 +1435,24 @@ def main() -> int:
                 religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
                 religion_year=YEAR, religion_note=note,
                 sources=list(cite), **said))
+
+    # A note keyed to a district that no longer exists reaches nobody, and
+    # reaches nobody silently: the district keeps the general note and looks
+    # exactly like a district nothing was ever written for. The Bureau
+    # renames and splits districts between rounds -- Chitral and Kohistan are
+    # each several districts now -- so this is a thing that will happen.
+    stale = sorted((set(TONGUE_DISTRICT_NOTES) | set(RELIGION_DISTRICT_NOTES))
+                   - named)
+    if stale:
+        raise SystemExit(
+            "pakistan: a note is written for "
+            + ", ".join(stale)
+            + ", which the tables do not name. Either the district was "
+              "renamed or it was split, and in both cases the note now has "
+              "to say something about somewhere else.")
+    log(f"  {len(TONGUE_DISTRICT_NOTES)} districts say what their Other "
+        f"language holds, and {len(RELIGION_DISTRICT_NOTES)} what their "
+        f"Other religion does")
 
     for _slug, line in absent[APART]:
         log(f"  NOT PUBLISHED (enumerated apart from the census proper) "
