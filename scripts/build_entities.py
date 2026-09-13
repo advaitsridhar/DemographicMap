@@ -231,6 +231,82 @@ ADAPTER_GAPS: dict[str, str] = {
            "the 2006 census, national only. The data exists and is withheld.",
 }
 
+# Shapes an adapter deliberately will not fill, and why -- a fact about the
+# boundary file rather than about what a country publishes, which is why it
+# sits here beside ADAPTER_GAPS rather than in an adapter.
+#
+# ADAPTER_GAPS answers "this country has no adapter". This answers the harder
+# case: the country has an adapter, the adapter has the figures, and a
+# particular polygon still cannot be given them because the polygon is not the
+# place its label says it is. Joining by name anyway would put one district's
+# population on another's ground -- the mis-match that looks exactly like a
+# right answer, which is the one failure this project is built to avoid.
+#
+# Keyed by the name the boundary file writes, not by the district's own name,
+# because the shape is what a reader clicks on. A name the file uses twice is
+# keyed once: the reason is a fact about the label, so it is true of both
+# polygons bearing it, and keying by name reaches both -- which nothing that
+# joins data by name can do, since an ambiguous name is exactly what makes the
+# join unsafe.
+#
+# Every entry here is required to be a shape that really does end up empty; a
+# stale one fails the build. See check_shape_gaps below.
+SHAPE_GAPS: dict[str, dict[str, str]] = {
+    # geoBoundaries CGAZ draws 75 shapes for Nepal's 77 districts: it uses
+    # "Bara" and "Saptari" twice each, omits Parsa and Siraha, and through
+    # Karnali and Lumbini the labels are shifted along by one. This is not a
+    # judgement -- it is the output of scripts/verify_shapes.py, which checks
+    # every district's Wikidata P625 reference point against the polygon
+    # bearing its name. 64 of the 77 land inside their own, 2 just outside,
+    # and the 11 behind these 7 labels are somewhere else entirely.
+    #
+    # The census measured all 77. Nothing here is missing data: it is data
+    # with nowhere trustworthy to put it, and Nepal's seven provinces carry
+    # every one of these people.
+    "NPL": {
+        "Bara": "Two of geoBoundaries' shapes are named Bara, and one of them "
+                "is Parsa. Nepal's 2021 census measured both districts, but "
+                "nothing distinguishes the two polygons, so putting either "
+                "district's figures on either shape would be a coin toss "
+                "presented as a measurement. Both districts' people are "
+                "counted in the Madhesh province total.",
+        "Saptari": "Two of geoBoundaries' shapes are named Saptari, and one of "
+                   "them is Siraha. Nepal's 2021 census measured both "
+                   "districts, but nothing distinguishes the two polygons, so "
+                   "putting either district's figures on either shape would be "
+                   "a coin toss presented as a measurement. Both districts' "
+                   "people are counted in the Madhesh province total.",
+        "Jajarkot": "This polygon is Dailekh's ground, not Jajarkot's -- "
+                    "Jajarkot's own lies inside the shape named Rukum West. "
+                    "Through Karnali the boundary file's labels are shifted "
+                    "along by one, so the 2021 census figures for either "
+                    "district would land on the other's territory. Both are "
+                    "counted in the Karnali province total.",
+        "Rukum_W": "This polygon is Jajarkot's ground, not Rukum West's. "
+                   "Through Karnali the boundary file's labels are shifted "
+                   "along by one, so the 2021 census figures for either "
+                   "district would land on the other's territory. Both are "
+                   "counted in the Karnali province total.",
+        "Rukum_E": "This polygon is Rukum West's ground; the district called "
+                   "Rukum East is about 20 km away, inside the shape named "
+                   "Rolpa. The 2021 census measured Rukum East, and there is "
+                   "no polygon here to put it on. Its people are counted in "
+                   "the Lumbini province total.",
+        "Nawalapur": "This polygon is Rupandehi's ground. Nepal split "
+                     "Nawalparasi in two in 2017 along the Bardaghat Susta "
+                     "road, and the boundary file did not follow: no shape "
+                     "bears Rupandehi's name, and no shape contains Parasi at "
+                     "all. The 2021 census measured all three districts; the "
+                     "Lumbini province total carries them.",
+        "Nawalparasi": "This polygon is Nawalpur's ground. Nepal split "
+                       "Nawalparasi in two in 2017 along the Bardaghat Susta "
+                       "road, and the boundary file still draws the undivided "
+                       "district under its old name. The 2021 census measured "
+                       "Nawalpur and Parasi separately; the Gandaki and "
+                       "Lumbini province totals carry them.",
+    },
+}
+
 EUROSTAT_HINT = ("Eurostat NUTS population and median age: "
                  "python -m scripts.fetch_census.eurostat --level nuts3")
 EUROSTAT_COUNTRIES = {
@@ -1723,12 +1799,63 @@ def mark_disputed_or_hint(entity: dict[str, Any], group: str) -> None:
     if is_disputed(group):
         entity["disputed"] = True
         entity["note"] = DISPUTED_NOTE
+    elif entity.get("name") in SHAPE_GAPS.get(group, {}):
+        # Before the country-level cases, because this is the more specific
+        # fact: the adapter ran, and this one polygon still cannot be given
+        # what it found. An adapter hint here would tell the reader to run a
+        # script that has already run and deliberately skipped this shape.
+        entity["gap_reason"] = SHAPE_GAPS[group][entity["name"]]
     elif group in ADAPTER_GAPS:
         # Not a hint: naming a script here would say the gap is this build's
         # doing, when it belongs to what the country publishes.
         entity["gap_reason"] = ADAPTER_GAPS[group]
     else:
         entity["adapter_hint"] = adapter_hint(group)
+
+
+def check_shape_gaps(admin1: dict[str, list[dict[str, Any]]],
+                     admin2: dict[str, list[dict[str, Any]]]) -> None:
+    """Every declared shape gap names a shape that really is empty.
+
+    The table is a promise about the boundary file, and boundary files change.
+    A shape that gets renamed leaves an entry matching nothing, and a shape
+    whose label gets corrected upstream would keep a sentence saying its
+    figures cannot be trusted while quietly wearing them -- which is worse
+    than the gap it was written to explain.
+
+    So both directions are checked: an entry that matches no shape is stale,
+    and an entry whose shape ended up with a composition is wrong. Either
+    stops the build, because a declaration nobody checks is a comment.
+    """
+    problems: list[str] = []
+    for iso3, declared in SHAPE_GAPS.items():
+        seen = {name: [] for name in declared}
+        for table in (admin1, admin2):
+            for entity in table.get(iso3, []):
+                if entity.get("name") in seen:
+                    seen[entity["name"]].append(entity)
+        for name, found in seen.items():
+            if not found:
+                problems.append(
+                    f"{iso3} / {name}: declared a shape gap, but no shape of "
+                    f"that name is drawn -- the boundary file has changed and "
+                    f"the reason now explains nothing")
+                continue
+            filled = [e for e in found
+                      if any(isinstance(e.get(f), list) and e[f]
+                             for f in ("religion", "language", "ethnicity"))]
+            if filled:
+                problems.append(
+                    f"{iso3} / {name}: declared a shape gap, but {len(filled)} "
+                    f"of {len(found)} shape(s) of that name carry a "
+                    f"composition -- either the join was fixed and this entry "
+                    f"should go, or figures are landing on a shape this table "
+                    f"says they must not")
+    if problems:
+        raise SystemExit(
+            "build_entities: the shape-gap table does not match the shapes "
+            "actually drawn, so nothing is being written:\n  - "
+            + "\n  - ".join(problems))
 
 
 def blank(shape: dict[str, Any], level: str, parent: str | None) -> dict[str, Any]:
@@ -2270,6 +2397,11 @@ def main() -> int:
                    f"{declared} with no boundary, as declared" if declared else ""]
             extra = " (" + ", ".join(w for w in why if w) + ")" if any(why) else ""
             log(f"  {iso3}: adapter rows matched {hit}, unmatched {miss}{extra}")
+
+    # -- the shape-gap table is a promise, so check it -----------------------
+    # Here rather than at declaration time: it is a claim about what the join
+    # did, and the join has only just finished.
+    check_shape_gaps(admin1_by_country, admin2_by_country)
 
     # -- collection policy ---------------------------------------------------
     # Last, so an adapter's real value always wins over the national marker.
