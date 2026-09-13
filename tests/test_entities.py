@@ -7344,6 +7344,22 @@ class BangladeshEthnicPopulation(unittest.TestCase):
             self.assertNotIn(people, json.dumps(value))
 
     def test_a_gap_carries_no_year(self):
-        """A year beside a gap claims a measurement nobody took."""
-        source = (ROOT / "scripts" / "fetch_census" / "bangladesh.py").read_text()
-        self.assertNotIn("ethnicity_year", source)
+        """A year beside a gap claims a measurement nobody took.
+
+        This used to assert that the word "ethnicity_year" appeared nowhere in
+        the adapter, which was true only while every ethnicity value it wrote
+        was a gap. The eight divisions now carry a real composition from Table
+        P29 and a year is exactly right on those, so the test asserts the
+        invariant it was always reaching for: a year may sit beside a figure
+        and never beside a gap.
+        """
+        rows = json.loads(
+            (ROOT / "data" / "processed" / "bangladesh_district.json").read_text())
+        self.assertTrue(rows, "the adapter has written no records")
+        for row in rows:
+            if isinstance(row.get("ethnicity"), dict):
+                self.assertNotIn("ethnicity_year", row,
+                                 f"{row['name']} dates a gap")
+            elif isinstance(row.get("ethnicity"), list):
+                self.assertEqual(row.get("ethnicity_year"), 2022,
+                                 f"{row['name']} publishes an undated composition")

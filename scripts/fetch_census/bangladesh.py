@@ -107,6 +107,45 @@ Bureau never said. It had been a bare ``not_available`` with no note at all --
 the blank panel that reads as a fetch nobody ran, when the truth is a question
 answered and published at a coarser grain than this map draws.
 
+**The named groups are in the National Report, by division.** Table P29,
+*Ethnic Population by Category, Sex and Division*, breaks the same 1,650,478
+people into **fifty-one named categories** -- the groups scheduled under the
+2010 Act -- for each of the eight divisions. Nationally: Chakma 483,365,
+Marma 224,299, Tripura 156,620, Saontal 129,056, Oraon 85,858, Garo 76,854,
+Munda 60,201, Mro 52,463, Tonchonga 45,974, Barman 44,671, and forty more
+down to Vil at 95 and Kol's two people in one division.
+
+It is read alongside Table P28 from the same report, and the two are what make
+each other trustworthy: P28 gives which districts belong to which division and
+a per-district ethnic total the **workbook states independently**, and P29's
+division headers must equal P28's. Four checks, all to the person -- every
+block's rows sum to its printed header; the eight divisions sum to the
+national header; each category's national figure equals the sum of its eight
+divisional ones, which is the table read down as well as across; and the
+report's 64 district totals equal the workbook's. Two publications of one
+census agreeing is what distinguishes this from a parse that merely did not
+crash.
+
+**The shares are of each division's whole population, and that is the whole
+argument.** Chattogram's Chakma are 475,548 people: 48% of the division's
+ethnic population and **1.4% of the division**. Published the first way, this
+map would call Chakma the largest group in Chattogram, where they are one
+person in seventy -- the invisible kind of wrong. So the denominator is the
+division's own population, summed from the districts the report itself places
+in it, and the list legitimately covers only 2.90% of Chattogram and 0.05% of
+Barishal. The panel says so; the map declines to name a leader, because the
+largest listed group cannot exceed what is unlisted.
+
+Everyone else is **not shown and must not be**. The census publishes the
+ethnic categories and no count and no label for anybody else; a slice invented
+to fill the bar would be the fabrication the rules forbid.
+
+Forty-seven of the fifty-one categories have no place in this project's group
+tree yet, and are published under the census's own spelling rather than
+guessed into a family. The tree having no opinion about Bom or Tonchonga is a
+fact about the tree; inventing one from a resemblance would be a fact about
+nothing.
+
 **The workbook's own merged sheet is not used, because it is wrong.**
 ``Merged_All_Table`` flattens the forty-two sheets into 445 columns, and in it
 Cumilla and Cox's Bazar hold each other's household and population figures --
@@ -125,13 +164,20 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import collections
 import io
+import re
+import sys
+from pathlib import Path
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, collection_gap, gap, log, measure, record,
-    shares, write_json,
+    NOT_AVAILABLE, PROCESSED, collection_gap, gap, http_get, log, measure,
+    record, shares, write_json,
 )
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from probe_pdf import laid_out  # noqa: E402
 
 SOURCE = ("Bangladesh Bureau of Statistics, Population and Housing Census 2022, "
           "district-level indicators")
@@ -186,6 +232,52 @@ ALIASES: dict[str, tuple[str, ...]] = {
     "Cumilla": ("Comilla",),
     "Jashore": ("Jessore",),
     "Moulvibazar": ("Maulvibazar",),
+}
+
+# The National Report, from the Bureau's own storage rather than a mirror. The
+# workbook above stops at a district total; the report is where the fifty-one
+# named categories behind that total are, and it is the same census.
+REPORT = ("https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/"
+          "b/V2Ministry/o/office-bbs/2024/12/9ce5bd160bb14a1ab1eabe886adddb9a.pdf")
+REPORT_SOURCE = ("Bangladesh Bureau of Statistics, Population and Housing Census 2022, "
+                 "National Report (Volume I), Table P29: ethnic population by "
+                 "category, sex and division")
+REPORT_PAGE = ("https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/"
+               "Population-and-Housing-Census")
+
+# Both tables are laid out the same way: a header row naming the nation or a
+# division, then the rows that partition it. Every row carries six figures --
+# a count, the literal 100.00 of its own row percentage, then male and female
+# with theirs -- and that middle 100.00 is what separates a data row from the
+# page furniture, which has no such column. The name may hold spaces, slashes
+# and hyphens ("Mahato/Kurmi Mahato/Bedia Mahato"), so it is whatever precedes
+# the six figures rather than a pattern of its own; it must start with a
+# non-digit, or the "1 2 3 4 5 6 7" column-number line the report prints under
+# every table heading would read as a category called "1".
+REPORT_ROW = re.compile(
+    r"^(?P<name>\D.*?)\s+(?P<total>[\d,]+(?:\.\d+)?)\s+100\.00\s+"
+    r"[\d,]+(?:\.\d+)?\s+\d+(?:\.\d+)?\s+[\d,]+(?:\.\d+)?\s+\d+(?:\.\d+)?$")
+
+# What geoBoundaries calls each division. Bangladesh respelled Barisal and
+# Chittagong in 2018 exactly as it respelled their districts, and the boundary
+# file also writes Rajshahi as "Rajshani".
+DIVISION_ALIASES: dict[str, tuple[str, ...]] = {
+    "Barishal": ("Barisal",),
+    "Chattogram": ("Chittagong",),
+    "Rajshahi": ("Rajshani",),
+}
+
+# The Bureau's own two publications of this census disagree about two
+# districts' spelling: the National Report writes Netrokona and
+# Chapainawabganj where the workbook writes Netrakona and Chapainababganj.
+# Declared rather than bridged by a rule, because a rule loose enough to join
+# "Chapainawabganj" to "Chapainababganj" would join a great deal else, and
+# these two names are how the report's figures find the workbook's -- a check
+# that must fail loudly if a third spelling ever appears rather than quietly
+# matching something near it.
+REPORT_SPELLING = {
+    "Netrokona": "Netrakona",
+    "Chapainawabganj": "Chapainababganj",
 }
 
 # Taken from the one place that decides it rather than restated here -- the
@@ -430,6 +522,145 @@ def read(blob: bytes) -> list[dict[str, Any]]:
     return out
 
 
+def division_note(where: str, ethnic: int, whole: int,
+                  counts: dict[str, int]) -> str:
+    """What these shares are of, said before anybody reads them as a whole.
+
+    The shares are of the division's entire population, not of its ethnic
+    population, and that choice is the difference between a figure and a
+    misstatement. Chattogram's Chakma are 475,548 people: 48% of the division's
+    ethnic population and 1.4% of the division. Published the first way this
+    map would call Chakma the largest group in Chattogram, where they are one
+    person in seventy.
+
+    So the list here covers only the few per cent of the division the census
+    enumerates by ethnic category, and says so. Everyone else is not a group
+    the census names -- it publishes no count of them and no label for them --
+    and inventing one to fill the bar would be the fabrication the rules
+    forbid.
+    """
+    biggest = max(counts.items(), key=lambda kv: (kv[1], kv[0]))
+    return (f"Census 2022, Table P29. These shares are of {where}'s whole "
+            f"population of {whole:,}, of whom {ethnic:,} ({ethnic / whole * 100:.2f}%) "
+            f"are enumerated by ethnic category; the largest is "
+            f"{biggest[0]} at {biggest[1]:,}. The rest of the division is not "
+            "shown because the census names no group for it: it publishes the "
+            "ethnic categories and no label for anybody else, so the bar here "
+            "describes the part of the population that was asked and answered "
+            "this question.")
+
+
+def report_blocks(lines: list[str], table: str, until: str | None) -> dict[str, Any]:
+    """One report table as ``{where: {"total": n, "rows": {name: n}}}``.
+
+    ``where`` is "National" or a division with the word "Division" dropped,
+    because a division is the same place whether or not the word is printed
+    and the shape it has to reach is named without it.
+    """
+    start = next((i for i, line in enumerate(lines)
+                  if line.strip().startswith(table)), None)
+    if start is None:
+        raise SystemExit(f"{table} is not in the National Report; the report "
+                         "it was read from has changed")
+    end = len(lines)
+    if until:
+        end = next((i for i in range(start + 1, len(lines))
+                    if lines[i].strip().startswith(until)), len(lines))
+
+    out: dict[str, Any] = {}
+    where = None
+    for line in lines[start:end]:
+        found = REPORT_ROW.match(" ".join(line.split()))
+        if not found:
+            continue
+        name = found.group("name").strip()
+        total = int(float(found.group("total").replace(",", "")))
+        if name == "National" or name.endswith("Division"):
+            where = name.removesuffix(" Division")
+            out[where] = {"total": total, "rows": {}}
+        elif where is not None:
+            # Summed rather than assigned: a category that appeared twice in
+            # one block would otherwise silently keep only the second figure,
+            # and the reconciliation below would then be checking a number
+            # against itself.
+            out[where]["rows"][name] = out[where]["rows"].get(name, 0) + total
+    return out
+
+
+def read_report(blob: bytes) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Tables P28 and P29, checked against each other and against themselves.
+
+    P28 is the ethnic population by district and P29 the same total broken
+    into named categories, both grouped by division. Reading both is what
+    makes this trustworthy rather than merely parsed: P28 gives which
+    districts are in which division and a per-district total that the
+    workbook states independently, and P29's division headers must equal
+    P28's. Three tables, two publications, one set of figures.
+    """
+    lines = laid_out(blob).splitlines()
+    districts = report_blocks(lines, "Table P28", "Table P29")
+    categories = report_blocks(lines, "Table P29", "Table P30")
+    log(f"    National Report: {len(districts) - 1} divisions in Table P28, "
+        f"{sum(len(b['rows']) for k, b in districts.items() if k != 'National')} "
+        f"districts; Table P29 names "
+        f"{len(categories.get('National', {}).get('rows', {}))} categories")
+    return districts, categories
+
+
+def check_report(districts: dict[str, Any], categories: dict[str, Any],
+                 workbook: dict[str, int]) -> None:
+    """Every figure here is stated twice, and the two must agree to the person.
+
+    Four checks, each of which has somewhere else to fall down:
+
+    * every block's rows sum to the header printed above them -- a row lost to
+      a page break, or a page of the table missed entirely, fails here;
+    * the eight divisions sum to the national header;
+    * each category's national figure equals the sum of its eight divisional
+      ones, which is the table read down as well as across;
+    * P28's district totals equal the workbook's, and P29's division headers
+      equal P28's -- two separate publications of the same census agreeing,
+      which is what makes the categories trustworthy rather than merely
+      arithmetically consistent with themselves.
+    """
+    bad: list[str] = []
+    for label, book in (("P28", districts), ("P29", categories)):
+        for where, block in book.items():
+            summed = sum(block["rows"].values())
+            if block["rows"] and summed != block["total"]:
+                bad.append(f"{label} {where}: rows sum to {summed:,} against a "
+                           f"printed {block['total']:,}")
+        divisions = sum(b["total"] for w, b in book.items() if w != "National")
+        national = book.get("National", {}).get("total")
+        if national is not None and divisions != national:
+            bad.append(f"{label}: divisions sum to {divisions:,} against a "
+                       f"national {national:,}")
+
+    for name, count in categories.get("National", {}).get("rows", {}).items():
+        summed = sum(b["rows"].get(name, 0)
+                     for w, b in categories.items() if w != "National")
+        if summed != count:
+            bad.append(f"P29 {name}: national {count:,} against {summed:,} "
+                       "summed over the divisions")
+
+    for where, block in districts.items():
+        if where == "National":
+            continue
+        if categories.get(where, {}).get("total") != block["total"]:
+            bad.append(f"{where}: P28 has {block['total']:,} and P29 "
+                       f"{categories.get(where, {}).get('total')}")
+        for district, count in block["rows"].items():
+            name = REPORT_SPELLING.get(district, district)
+            if workbook.get(name) != count:
+                bad.append(f"{district}: the report says {count:,} ethnic "
+                           f"people and the workbook {workbook.get(name)}")
+    if bad:
+        raise SystemExit(f"{len(bad)} report checks failed — " + "; ".join(bad[:4]))
+    log("    the report's district totals match the workbook's to the person, "
+        "its division headers match between Tables P28 and P29, and every "
+        "category's national figure is the sum of its eight divisional ones")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -457,6 +688,38 @@ def main() -> int:
                 row["name"], row["ethnic"], row["population"])),
             sources=[{"field": "population/religion", "name": SOURCE,
                       "url": URL, "license": LICENCE}]))
+
+    report = http_get(REPORT, binary=True)
+    log(f"    {len(report):,} bytes of National Report from the Bureau's own storage")
+    by_district, by_category = read_report(report)
+    check_report(by_district, by_category,
+                 {row["name"]: row["ethnic"] for row in districts})
+
+    population = {row["name"]: row["population"] for row in districts}
+    for where, block in by_district.items():
+        if where == "National":
+            continue
+        # The division's population is the sum of the districts the report
+        # itself puts in it, taken from the workbook -- not a division figure
+        # from somewhere else. The share and the denominator then come from
+        # the same census read the same way, which is the whole point of
+        # having checked the two publications against each other above.
+        whole = sum(population[REPORT_SPELLING.get(name, name)]
+                    for name in block["rows"])
+        counts = by_category[where]["rows"]
+        records.append(record(
+            f"BGD-{where.lower()}", where, level="admin1", parent="BGD",
+            aliases=list(DIVISION_ALIASES.get(where, ())),
+            ethnicity=shares(counts, total=whole),
+            ethnicity_year=YEAR,
+            ethnicity_basis="the ethnic population the census enumerates",
+            ethnicity_note=division_note(where, block["total"], whole, counts),
+            sources=[{"field": "ethnicity", "name": REPORT_SOURCE,
+                      "url": REPORT_PAGE, "license": LICENCE}]))
+    log(f"    {len(by_category) - 1} divisions carry a named ethnic composition, "
+        f"{sum(by_category[w]['total'] for w in by_category if w != 'National'):,} "
+        "people across "
+        f"{len(by_category.get('National', {}).get('rows', {}))} categories")
 
     out = args.out or PROCESSED / "bangladesh_district.json"
     write_json(out, records)
