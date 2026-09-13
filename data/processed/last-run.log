@@ -1,60 +1,307 @@
-probe_pdf: https://file.portal.gov.bd/media/a843c98f-964e-4de5-a7a4-f0732be76fa2/uploaded-files/2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
-    super().connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
-    self.sock = self._create_connection(
-                ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
-    raise exceptions[0]
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
-    sock.connect(sa)
-TimeoutError: timed out
+probe_pdf: https://catalog.ihsn.org/catalog/6557/download/80079
+  463,632 bytes
+  45 pages
+probe_pdf: 45 pages, 0 mention ['religio', 'ethnic', 'tongue', 'language', 'Pashto', 'Dari']
+=== front matter ===
+223 
+ 
+ANNEX III.1 ALCS HOUSEHOLD QUESTIONNAIRE 
+ 
+ 
+ 
+Household questionnaire
+1. Household identification (Male questionnaire)
+Supervisor-filled information Interviewer-filled information
+Province Code
+name 1.8 Household number (1-15)
+Code
+Door number
+Control and Enumeration Area code Name of head of
+household
+Cluster code
+Urban …………………………1
+Rural …………………………2
+Kuchi …………………………3
+Code 1.12 Respondent's name
+Code Respondent's line number
+(from roster)
+2. Process monitoring
+All contents of this questionnaire are checked by < Supervisor and PSO >
+and document is ready for dispatch to CSO Kabul
+Supervisor PSO
+Ratification : Ratification :
+Signature    : Signature    :
+Date of interview Day Month Year 
+2.1a Interview start time Hour Minute 2.1b Interview finish time Hour Minute
+: :
+Interviewers' number Male interviewer Female interviewer 
+Supervisor's number Regional supervisor's number
+Date of office editing Day Month Year 
+Office editor's code
+Data-entry officer code (first)
+Data-entry officer code (second)
+2.3.a 2.3.b
+2.7
+2.6
+2.5
+2.1
+2.2
+2.4
+1.13
+1.3 1.10
+1.7 Village name
+If respondent is not the head of household, fill 1.12 and 1.13
+1.6
+District name
+Urban nahia
+1.5 Residence code
+1.11 Head's father's name
+1.1
+1.2
+Afghanistan Living Conditions
+Survey (ALCS 1392-93)
+1.4
+1.9
 
-During handling of the above exception, another exception occurred:
+224 
+ 
+3. Household roster
+3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 3.10 3.11 INTERVIEWER: 
+Line Write the name What is the How old Is What is Line Does <name's> Line Does <name's> Line List all people who usually live and 
+no. of each household relationship is <name> <name's> number father live in number mother live in number sleep in this household, starting with 
+member of <name> <name>? male or marital status? of (first) this household? of this household? of the head of the household.
+to the head of For female? For codes, spouse this this
+household? children see at right 1=Yes father 1=Yes mother Record all people who usually stay 
+less than If not If not in this 2=No 2=No here, including babies and infants, and 
+For codes, one year, 1=Male married, household, If No, If No, go people who are not immediate kin.
+see at right write '00' 2=Female go to 3.8 write '98' go to 3.10 to next line
+01 1     2 1     2 1     2
+02 1     2 1     2 1     2
+03 1     2 1     2 1     2
+04 1     2 1     2 1     2
+05 1     2 1     2 1     2
+06 1     2 1     2 1     2
+07 1     2 1     2 1     2
+08 1     2 1     2 1     2
+09 1     2 1     2 1     2
+10 1     2 1     2 1     2
+11 1     2 1     2 1     2
+12 1     2 1     2 1     2
+3.3 (Relationship to head of 
+household)
+01 = Household head
+02 = Wife or husband
+03 = Son or daughter
+04 = Son- or daughter-in-law
+05 = Grandchild
+06 = Father or mother
+07 = Nephew or niece
+08 = Brother or sister
+09 = Brother- or sister-in-law
+10 = Other relative
+11 = Unrelated member
+3.6 (Marital status)
+1 = Married
+2 = Widowed
+3 = Divorced or separated
+4 = Engaged
+5 = Never married
+10
+225 
+ 
+ 
+  
+4. Housing and amenities
+4.1 How would you describe your dwelling, Single family house ……………………………………………………………1
+is it <read answer options>? Part of a shared house ……………………………………………………………2
+Apartment (shared or separate) ……………………………………………………………3
+Tent ……………………………………………………………4 Go to 4.6
+Temporary shelter/shack ……………………………………………………………5
+Other ……………………………………………………………6
+4.2 What is the main construction material of the Fired brick/stone ……………………………………………………………1
+exterior walls of the dwelling, in the main living Concrete ……………………………………………………………2
+area of the family? Mud bricks / mud ……………………………………………………………3
+Stone/mud ……………………………………………………………4
+Other ……………………………………………………………5
+4.3 What is the main construction material of the roof Concrete (with metal) ……………………………………………………………1
+of the dwelling? Wood / wood with mud ……………………………………………………………2
+Tin/metal ……………………………………………………………3
+Girder with fired brick ……………………………………………………………4
+Mud bricks ……………………………………………………………5
+Other ……………………………………………………………6
+4.4 What is the main construction material of the floor Mud/earth ……………………………………………………………1
+of this dwelling, in the main living area of the family? Concrete/tile ……………………………………………………………2
+Other ……………………………………………………………3
+4.5 When was this dwelling constructed? Less than 2 years ago ……………………………………………………………1
+2-4 years ago ……………………………………………………………2
+5-9 years ago ……………………………………………………………3
+10-19 years ago ……………………………………………………………4
+20-29 years ago ……………………………………………………………5
+More than 30 years ago ……………………………………………………………6
+Don't know ……………………………………………………………9
+4.6 What is the arrangement on the basis of which Inheritance or from family ……………………………………………………………1
+your household currently occupies this dwelling? Purchased dwelling ……………………………………………………………2
+Constructed dwelling ……………………………………………………………3
+Caretaker ……………………………………………………………4
+Mortgaging ……………………………………………………………5
+Being relative or friend of owner  ……………………………………………………………6
+Own - given free, charity ……………………………………………………………7
+Tenant (renting) ……………………………………………………………8
+Other ……………………………………………………………9
+4.7 What kind of kitchen/cooking facilities Kitchen is separate room in dwelling ……………………………………………………………1
+does this dwelling have? Kitchen is part of a room in the dwelling (or part of the tent) 2
+Kitchen is in a separate room outside the dwelling ……………………………………………………………3
+Cooking is done in the open ……………………………………………………………4
+Other ……………………………………………………………………..5
+4.8 How many rooms does your household occupy (exclude corridors, balconies)?
+FOR KUCHI HOUSEHOLDS LIVING IN TENTS, RECORD NUMBER OF TENTS
+4.9 a. What is the distance to this dwelling b. Measured in meters …….1 Go to 4.11
+from the nearest paved road? Measured in kilometers …….2
+4.10 a. What is the distance to this dwelling b. Measured in meters …….1
+from the nearest unpaved road? Measured in kilometers …….2
+226 
+ 
+ 
+  
+4. Housing and amenities (continued)
+4.11 Has your household had electrictiy at any time Yes No
+in the past month from any of these sources? a. Electric grid ……………………………………………………………1 2
+b. Government generator ……………………………………………………………1 2
+INTERVIEWER: READ ALL OPTIONS a-i c. Private generator (engine) ……………………………………………………………1 2
+d. Private generator (hydro) ……………………………………………………………1 2
+e. Community generator (engine) ……………………………………………………………1 2
+f. Community generator (hydro) ……………………………………………………………1 2
+g. Solar ……………………………………………………………1 2
+h. Wind ……………………………………………………………1 2
+i. Battery ……………………………………………………………1 2
+4.12 What is the main source of energy No lighting in the house ……………………………………………………………1
+used for lighting the dwelling? Electricity ……………………………………………………………2
+Gas ……………………………………………………………3
+Candle ……………………………………………………………4
+Fuel (oil, kerosene, etc.) ……………………………………………………………5
+Other source ……………………………………………………………6
+4.13 In the past month, what has been the household's Animal dung ……………………………………………………………1
+main source of cooking fuel? Bushes (ping), twigs/branches ……………………………………………………………2
+Firewood ……………………………………………………………3
+Crop residue, trash ……………………………………………………………4
+Charcoal, coal ……………………………………………………………5
+Gas ……………………………………………………………6
+Electricity ……………………………………………………………7
+Other ……………………………………………………………8
+4.14 What is the main source of heating for this house No heating in the house ……………………………………………………………1
+in winter? Bushes(ping), twigs/branches, straw 2
+Firewood ……………………………………………………………3
+Animal dung ……………………………………………………………4
+Crop residue, trash ……………………………………………………………5
+Charcoal, coal ……………………………………………………………6
+Gas ……………………………………………………………7
+Electricity ……………………………………………………………8
+Other ……………………………………………………………9
+4.15 How much did this household spend in the last month a. Electricity ……………………………………………………………
+for each type of fuel used in the household? (in Afghanis) b. Gas ……………………………………………………………
+READ ALL QUESTIONS a-e c. Fuel, oil ……………………………………………………………
+IF HOUSEHOLD DID NOT SPEND ON A SPECIFIC d. Firewood ……………………………………………………………
+TYPE OF FUEL, WRITE '0' e. Ping, straw, manure ……………………………………………………………
+4.16 What main toilet facility does your household use? Pit latrine - with slab / covered ……………………………………………………………1
+Pit latrine - without slab / open ……………………………………………………………2
+Ventilated improved pit latrine ……………………………………………………………3
+Flush toilet to sewer system ……………………………………………………………4
+Flush/pour toilet to septic tank/pit ……………………………………………………………5
+No facility - open field, dearan, bush ……………………………………………………………6 Go to 4.18
+Other, specify ……………………………………………………………7
+4.17 Is the toilet facility shared with other households? Yes ……………………………………………………………1
+No ……………………………………………………………2
+,
+,
+,
+,
+,
+227 
+ 
+ 
+  
+4. Housing and amenities (continued)
+4.18 What was the main source of drinking water for members Piped - private ……………………………………………………………1
+of your household in the past month? Piped - municipal ……………………………………………………………2
+Hand pump (bore hole,
+tube well) - private ……………………………………………………………3
+Hand pump (bore hole,
+tube well) - public ……………………………………………………………4
+Spring, well or kariz  - protected ……………………………………………………………5
+Spring, well or kariz  - unprotected ……………………………………………………………6
+Surface water (river, stream, irrigation
+channel, lake, pond, lake, kanda) ……………………………………………………………7
+Tanker-truck ……………………………………………………………8
+Other, specify 9
+4.19 How many minutes does it take to walk, one way, 
+to this main source of water? Minutes
+IF WATER SOURCE IS IN THE HOUSE OR COMPOUND, WRITE '0'
+IF RESPONDENT DOES NOT KNOW, ASK FOR AN ESTIMATE
+228 
+ 
+ 
+  
+5. Livestock
+5.1 Does any member of your household own any Yes ……………………………………………………………1
+livestock, including poultry, at the present time? No ……………………………………………………………2 Go to 5.10
+5.2 5.2 5.3 5.4 5.5
+5.3 How many of the following Did the household have How many of these How many of these
+5.4 animals does your household more, the same or less <animals> were vaccinated <animals> are
+5.5 own today? of these one year ago? in the last 12 months? productive
+1=More, 2=Same, 3=Less 1=None, 2=Some, 3=All females?
+IF ANY ANIMALS OF A SPECIFIC TYPE ARE OWNED, WRITE THEIR NUMBER IN 5.2 AND ASK QUESTIONS 5.3 to 5.5
+IF NO ANIMALS OF A SPECIFIC TYPE ARE OWNED, WRITE '0' FOR QUESTION 5.2 AND CONTINUE WITH NEXT TYPE
+a. Cattle (meat and dairy) a. 1    2    3      a. 1    2    3      a.
+b. Oxen, yaks b. 1    2    3      b. 1    2    3      
+c. Horses c. 1    2    3      c. 1    2    3      
+d. Donkeys d. 1    2    3      d. 1    2    3      
+e. Camels e. 1    2    3      e. 1    2    3      
+f. Goats f. 1    2    3      f. 1    2    3      f.
+g. Sheep g. 1    2    3      g. 1    2    3      g.
+h. Chickens h. 1    2    3      h. 1    2    3      h.
+i. Any other birds i. 1    2    3      i. 1    2    3      i.
+5.6 If you would like to use animal feed concentrate, Yes, sufficient ……………………………………………………………1
+do you have access to it? Yes, but insufficient ……………………………………………………………2
+Not at all ……………………………………………………………3
+5.7 Did your household obtain medicine for livestock, veterinary Yes ……………………………………………………………1
+help or information on livestock in the past 12 months? No ……………………………………………………………2 Go to 5.9
+5.8 What was the main type of veterinary service provider Goverment veterinary service ……………………………………………………………1
+that your household used? VFU (Veterinary Field Unit) ……………………………………………………………2 Go to
+Other NGO veterinary service ……………………………………………………………3 5.10
+Private veterinary service ……………………………………………………………4
+Other ……………………………………………………………5
+5.9 What was the main reason you did not use any advice Did not need service ……………………………………………………………1
+or help from veterinary services in the past 12 months? Had too few animals/poultry ……………………………………………………………2
+Could not afford / too expensive ……………………………………………………………3
+Too far away ……………………………………………………………4
+Do not know how to find/obtain ……………………………………………………………5
+Provider would not work with me ……………………………………………………………6
+Other ……………………………………………………………7
+,,
+,
+, ,
+,
+229 
+ 
+ 
+5. Livestock (continued)
+5.10 Did your household sell any live animals Yes ……………………………………………………………1
+in the past 12 months? No ……………………………………………………………2 Go to 5.12
+5.11 How many of the following live animals a. Cattle ……………………………………………………………
+did you sell in the last 12 months? b. Oxen, yaks ……………………………………………………………
+ASK FOR EACH OF THE LIVESTOCK a-i MENTIONED c. Horses ……………………………………………………………
+WRITE '0' IF NO ANIMAL SOLD d. Donkeys ……………………………………………………………
+e. Camels ……………………………………………………………
+f. Goats ……………………………………………………………
+g. Sheep ……………………………………………………………
+h. Chickens ……………………………………………………………
+i. Turkeys, ducks, geese, other birds ….
+5.12 Did your household sell any animal products in the last Yes ……………………………………………………………1
+month, like milk, meat, poultry, wool, cashmere, No ……………………………………………………………2 Go to next
+hides or eggs? module
+5.13 What quantity of <item> did you 
+sell in the last month? a. Milk …………………………………………….. Liter
+ASK FOR EACH OF THE b. Butter …………………………………………………………………..Kg.
+PRODUCE a-f MENTIONED c. Cheese …………………………………………………………………..Kg.
 
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
-    blob = fetch_blob(url, aia=aia)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
-    with urllib.request.urlopen(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error timed out>
+=== pages mentioning ['religio', 'ethnic', 'tongue', 'language', 'Pashto', 'Dari'] (first 30) ===
