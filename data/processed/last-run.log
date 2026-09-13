@@ -1,4 +1,24 @@
-usage: probe_page.py [-h] [--section SECTION] [--terms TERMS]
-                     [--context CONTEXT]
-                     url
-probe_page.py: error: unrecognized arguments: https://statisticsmaldives.gov.mv/census-2014/ https://statisticsmaldives.gov.mv/census-2006/
+page: https://unstats.un.org/unsd/demographic/sources/census/quest/default.htm
+  unreachable: HTTPError: HTTP Error 404: Not Found
+page: https://unstats.un.org/unsd/demographic-social/census/censusdates/
+  248,738 bytes
+  8 matching link(s)
+  - 16 Oct.-5 Nov. 2010
+    http://www.zamstats.gov.zm/media/census_2010_mapping_edited.pdf
+  - 22 January 2001
+    http://www.bbsgov.org/Population%20Census%202001.PDF
+  - 1 June 1999
+    http://www.pacificweb.org/rmi/pdf/99census.PDF
+  - 1 April 2000
+    http://www.pacificweb.org/fsm/pdf/02_Cover%20Page.pdf
+  - 17 August 1997
+    http://www.spc.int/prism/Country/NU/stats/NU_Reports/Population/NIUE_Profile_1997.PDF
+  - 5 November 2006
+    http://www.spc.int/prism/country/ws/stats/Products&Services/Reports/PDF/PopCensus/Preliminary%20Report/2006%20Census.pdf
+  - 18 October 2006
+    http://www.info.gov.nf/reports/Reports/Census_2006.pdf
+  - 11 October 2001
+    http://www.info.gov.nf/reports/Reports/Census_2001.pdf
+page: https://data.humdata.org/api/3/action/package_show?id=populationa-and-housing-census-dataset
+  9,548 bytes
+  0 matching link(s)
