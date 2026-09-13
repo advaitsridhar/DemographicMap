@@ -36,6 +36,24 @@ wrong number.
 That also makes the check exact rather than approximate: the religions plus
 the hijra must equal the published total, to the person, in every district.
 
+**There is no mother tongue here, and that is a fact about the census rather
+than about this adapter.** The workbook's forty-two topic sheets run from
+dwelling type through religion, disability, literacy, work, banking and ethnic
+population to cooking fuel, and not one of them is language. Nor is the
+absence the mirror's: the census's own *National Report (Volume I)* describes
+the questionnaire as two modules -- 15 household questions and 20 individual
+ones, 35 in all -- and lists what the individual module asks (age, sex,
+marital status, religion, disability, education, working status, training,
+mobile phone and internet use, banking inclusion, ethnic population). Language
+is not among them, and none of the report's 520 pages or 33 district tables is
+a language table.
+
+So the language field here is ``not_collected`` with that reason attached,
+from ``NOT_COLLECTED_POLICY`` in ``scripts/common.py`` so the country and its
+zilas cannot drift apart. It had been a bare ``not_available``, which on the
+map reads as a fetch nobody has run yet -- a different claim, and the wrong
+one.
+
 **The workbook's own merged sheet is not used, because it is wrong.**
 ``Merged_All_Table`` flattens the forty-two sheets into 445 columns, and in it
 Cumilla and Cox's Bazar hold each other's household and population figures --
@@ -58,7 +76,8 @@ import io
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, collection_policy, gap, log,
+    measure, record, shares, write_json,
 )
 
 SOURCE = ("Bangladesh Bureau of Statistics, Population and Housing Census 2022, "
@@ -107,6 +126,12 @@ ALIASES: dict[str, tuple[str, ...]] = {
     "Jashore": ("Jessore",),
     "Moulvibazar": ("Maulvibazar",),
 }
+
+# Taken from the one place that decides it rather than restated here: a second
+# copy of this sentence is a second thing to keep true, and the country row and
+# its zilas disagreeing about whether Bangladesh asks the question is exactly
+# the failure the central table exists to prevent.
+LANGUAGE = collection_policy("BGD", "language")
 
 NOTE = ("Census 2022. The religion table classifies the male and female "
         "population only -- each religion's total is exactly its male plus "
@@ -296,6 +321,7 @@ def main() -> int:
             population=measure(row["population"], year=YEAR, source=SOURCE),
             religion=shares(row["counts"], total=classified) or gap(NOT_AVAILABLE),
             religion_year=YEAR, religion_note=NOTE,
+            language=gap(NOT_COLLECTED, LANGUAGE),
             sources=[{"field": "population/religion", "name": SOURCE,
                       "url": URL, "license": LICENCE}]))
 

@@ -146,6 +146,34 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
     "IND": {
         "ethnicity": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead.",
     },
+    # Read off the census's own account of its questionnaire, not inferred
+    # from a file that happened to lack the column. The Population and Housing
+    # Census 2022 National Report (Volume I) describes the form it was
+    # collected on -- two modules, 15 household questions and 20 individual
+    # ones, 35 in all -- and names the individual module's subjects. Language
+    # is not one of them; ethnic group is, and religion is. Nothing in the
+    # report's 520 pages is a language table, its list of district tables
+    # (P1-P33) has none, and the Bureau's own district-level indicator
+    # workbook runs to 42 topic sheets without one.
+    #
+    # So the 64 zilas' empty language field was reading as "the adapter has
+    # not been run", which is the opposite of the truth: the question was
+    # never put. Religion, which the same census does ask, is on the map from
+    # the same workbook.
+    "BGD": {
+        "language": "Bangladesh's census does not ask language or mother tongue. "
+                    "The 2022 questionnaire has 35 questions -- 15 in the household "
+                    "module and 20 in the individual module, which the National "
+                    "Report (Volume I) lists as age, sex, marital status, religion, "
+                    "disability, education, working status, training, mobile phone "
+                    "and internet use, banking inclusion and ethnic population -- "
+                    "and none of them is language. The report's 520 pages carry no "
+                    "language table and its 33 district tables none, and the "
+                    "Bureau's own district-level indicator workbook has 42 topic "
+                    "sheets and none. What the census asks about a minority's "
+                    "identity is ethnic group, under the Khudra Nri-goshthi "
+                    "Sangskritik Pratisthan Ain 2010.",
+    },
     "ESP": {
         "ethnicity": "Spain's census records nationality and birthplace, not ethnicity.",
         "religion": "Spain's census does not ask religion (CIS survey data exists instead).",

@@ -3246,7 +3246,49 @@ class PakistanDeclaresWhatIsNotPublished(unittest.TestCase):
                 if isinstance(row.get(field), list):
                     continue          # Gilgit-Baltistan's religion, below
                 self.assertEqual(row[field]["status"], "not_available")
-                self.assertIn("publishes no Table 9", row[field]["note"])
+                self.assertIn("Bureau of Statistics publishes no",
+                              row[field]["note"])
+
+    def test_a_gap_names_the_table_that_would_have_answered_it(self):
+        """Religion's gap and language's gap are not the same sentence.
+
+        They were, and the shared wording was the weaker claim: a reader of a
+        district with no language was told about Table 9, the religion table,
+        which is not what they are missing. Table 9 answers religion and Table
+        11 answers mother tongue, so each field's note names its own.
+        """
+        for row in self.absent("ajk", "gb"):
+            for field, table in (("religion", "Table 9"),
+                                 ("language", "Table 11")):
+                if isinstance(row.get(field), list):
+                    continue
+                with self.subTest(row=row["id"], field=field):
+                    self.assertIn(table, row[field]["note"])
+
+    def test_a_gilgit_district_says_why_it_has_no_language_of_its_own(self):
+        """The territory has a figure and its districts do not, which needs
+        saying in the place a reader looks: on the district.
+
+        The territory-wide note explains what the territory carries. A
+        district carrying the same words would be telling the reader about a
+        figure that is not on the district, and saying nothing about why the
+        one they are looking at is empty. So the district's note names the
+        four routes that were asked and the reason the territory's own figure
+        is not spread over the ten.
+        """
+        rows = {r["name"]: r for r in self.absent("gb")}
+        territory = rows["Gilgit-Baltistan"]["language"]
+        for name in self.pk.TERRITORIES["gb"][2]:
+            with self.subTest(district=name):
+                note = rows[name]["language"]["note"]
+                self.assertIn("none of its ten districts", note)
+                # Named, each of them, because "no district table" is a
+                # conclusion and these are what it rests on.
+                for route in ("Table 11", "at a Glance", "MICS"):
+                    self.assertIn(route, note)
+                if isinstance(territory, list):
+                    self.assertNotEqual(
+                        note, rows["Gilgit-Baltistan"].get("language_note"))
 
     def test_gilgit_baltistan_carries_its_one_non_census_figure(self):
         # The territory row, from PILDAT's estimate of the sects.
