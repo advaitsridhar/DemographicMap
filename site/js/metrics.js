@@ -159,18 +159,54 @@ window.Metrics = (function () {
              range: matched.length === 1 ? matched[0].range : null };
   }
 
+  /* Could an unlisted group beat the largest listed one?
+   *
+   * A composition does not always partition its population. Some describe a
+   * slice of it: the Factbook gives the DRC six religions summing to 6.8%,
+   * Andorra's add to 10.5%, and Bangladesh's census enumerates ethnic groups
+   * covering 1% of the country and nobody else. Asked which group leads, this
+   * map answered from the list it had -- so it said the DRC's largest religion
+   * is Kimbanguist, at 2.8%, with 93.2% of Congolese unaccounted for and any
+   * of them able to outweigh it several times over.
+   *
+   * The test is arithmetic rather than a threshold. If the listed groups sum
+   * to `total`, the unlisted remainder is `100 - total`, and the largest
+   * listed group is provably the largest only when it exceeds that remainder.
+   * A composition that partitions its population has no remainder and always
+   * passes; one that allows several answers per person sums past 100 and
+   * passes too; one describing a fraction of the population passes only where
+   * the leader is big enough that nothing missing could beat it.
+   *
+   * Declining is not the same as having nothing. The panel still lists every
+   * group and its real share, and says what fraction of the population the
+   * list covers. What stops is the single claim this map cannot support.
+   */
+  function leads(record, field, pct) {
+    const value = record[field];
+    if (!Array.isArray(value)) return false;
+    let total = 0;
+    for (const row of value) {
+      if (typeof row.pct === "number") total += row.pct;
+    }
+    return pct > 100 - total;
+  }
+
   function largestShare(record, field) {
     const value = record[field];
     if (!Array.isArray(value) || !value.length) return null;
     const best = value.reduce((a, b) => ((b.pct || 0) > (a.pct || 0) ? b : a));
-    return typeof best.pct === "number" ? best.pct : null;
+    if (typeof best.pct !== "number") return null;
+    return leads(record, field, best.pct) ? best.pct : null;
   }
 
   function largestShareDetail(record, field) {
     const value = record[field];
     if (!Array.isArray(value) || !value.length) return { value: null, approximate: false };
     const best = value.reduce((a, b) => ((b.pct || 0) > (a.pct || 0) ? b : a));
-    return { value: typeof best.pct === "number" ? best.pct : null,
+    if (typeof best.pct !== "number" || !leads(record, field, best.pct)) {
+      return { value: null, approximate: false };
+    }
+    return { value: best.pct,
              approximate: Boolean(best.bound || best.range),
              bound: best.bound, range: best.range };
   }
@@ -207,7 +243,10 @@ window.Metrics = (function () {
         if (slot === "best") best = found; else bestResidual = found;
       }
     }
-    return best || bestResidual;
+    const found = best || bestResidual;
+    // The same arithmetic as `largestShare`, and for the stronger reason: this
+    // one paints the unit a colour that names a group.
+    return found && leads(record, field, found.pct) ? found : null;
   }
 
   const METRICS = {

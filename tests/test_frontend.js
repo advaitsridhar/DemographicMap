@@ -164,11 +164,65 @@ function factTilesCarryTheirStatedReason() {
             "a gap with no stated reason gets no info button");
 }
 
+/* A leader is only a leader if nothing missing could beat it.
+ *
+ * Not every composition partitions its population. The Factbook gives the DRC
+ * six religions summing to 6.8%; Bangladesh's census enumerates ethnic groups
+ * covering 1% of the country and nobody else. Asked which group leads, this
+ * map answered from the list it had and said the DRC's largest religion is
+ * Kimbanguist at 2.8% -- with 93.2% of Congolese unlisted, any of whom could
+ * outweigh it several times over. The panel kept saying the list describes
+ * 6.8% of the population while the map painted a winner from it.
+ */
+function aLeaderIsOnlyNamedWhenNothingMissingCouldBeatIt() {
+  const context = vm.createContext({ window: {}, console });
+  vm.runInContext(source("data.js"), context);
+  context.window.Palette = {
+    sequential: () => "blue", neutral: () => "grey", ramp: () => [],
+    categorical: () => "blue", group: () => "blue", unplaced: () => "violet",
+    status: () => ({ color: "grey" }), groupRamp: () => [], SHARE_FLOOR: 25,
+  };
+  vm.runInContext(source("metrics.js"), context);
+  context.window.Metrics.setGroupIndex(data("groups.json"));
+  const M = context.window.Metrics;
+
+  // A composition that partitions its population: unchanged.
+  const whole = { religion: [{ group: "Islam", pct: 91 },
+                             { group: "Hinduism", pct: 8 },
+                             { group: "Christianity", pct: 1 }] };
+  assert.strictEqual(M.largestShare(whole, "religion"), 91);
+  assert.ok(M.dominant(whole, "religion", 1), "a whole composition still has a leader");
+
+  // 6.8% of a population, led by 2.8%: 2.8 cannot exceed the 93.2 unlisted.
+  const sliver = { religion: [{ group: "Kimbanguist", pct: 2.8 },
+                              { group: "Christianity", pct: 2.0 },
+                              { group: "Islam", pct: 2.0 }] };
+  assert.strictEqual(M.largestShare(sliver, "religion"), null,
+                     "no leader may be named from a composition of 6.8%");
+  assert.strictEqual(M.dominant(sliver, "religion", 1), null,
+                     "and the map must not paint one either");
+
+  // Short of 100 but decisively led: 60 beats the 10 unlisted, so it stands.
+  const mostly = { religion: [{ group: "Islam", pct: 60 },
+                              { group: "Hinduism", pct: 30 }] };
+  assert.strictEqual(M.largestShare(mostly, "religion"), 60);
+
+  // Multi-response sums past 100, leaving no remainder at all.
+  const several = { language: [{ group: "English", pct: 80 },
+                               { group: "Spanish", pct: 40 }] };
+  assert.strictEqual(M.largestShare(several, "language"), 80);
+
+  // The readout goes quiet with the map rather than disagreeing with it.
+  assert.strictEqual(
+    M.METRICS.largest_share.display(sliver, { field: "religion" }), "—");
+}
+
 (async () => {
   await concurrentLoadsAreIndexedOnce();
   await deepSearchWaitsForTheSecondShard();
   uncertainSharesKeepTheirQualifier();
   mapStateSurvivesThemeChangesAndUsesRepresentativePoints();
   factTilesCarryTheirStatedReason();
+  aLeaderIsOnlyNamedWhenNothingMissingCouldBeatIt();
   console.log("frontend regression tests passed");
 })().catch((error) => { console.error(error); process.exitCode = 1; });
