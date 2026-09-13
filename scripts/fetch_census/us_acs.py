@@ -155,7 +155,7 @@ def geoid(row: dict[str, str], level: str) -> str:
 
 
 def with_detail(counts: dict[str, float], detail: dict[str, float] | None,
-                name: str) -> dict[str, float]:
+                name: str, raw: dict[str, str] | None = None) -> dict[str, float]:
     """C16001's twelve named categories, with its residual replaced by B16001's
     seven.
 
@@ -185,7 +185,10 @@ def with_detail(counts: dict[str, float], detail: dict[str, float] | None,
             f"'{RESIDUAL}' come to {named:,.0f} against the {bucket:,.0f} "
             f"C16001 prints for the column itself. They are the same survey's "
             f"figures for the same people, so they agree or a line number "
-            f"here is wrong. Nothing is being emitted.")
+            f"here is wrong, or this table is not published at this level. "
+            f"What the API returned for it: "
+            f"{ {k: v for k, v in (raw or {}).items() if k in RESIDUAL_DETAIL} }. "
+            f"Nothing is being emitted.")
     out = {label: value for label, value in counts.items() if label != RESIDUAL}
     out.update({label: value for label, value in detail.items() if value})
     return out
@@ -234,7 +237,7 @@ def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
                     for code, label in RESIDUAL_DETAIL.items()})
 
         race_rows = shares(counts, total=total)
-        lang_rows = shares(with_detail(lcounts, dcounts, name) if lrow else lcounts,
+        lang_rows = shares(with_detail(lcounts, dcounts, name, drow) if lrow else lcounts,
                            total=as_float(lrow.get(LANGUAGE_TOTAL)))
         out.append(record(
             f"USA-{gid}",
