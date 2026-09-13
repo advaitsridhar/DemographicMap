@@ -1,53 +1,76 @@
-probe_pdf: https://www.ubos.org/wp-content/uploads/publications/03_20182014_National_Census_Main_Report.pdf
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  2,049,840 bytes
-  105 pages
-probe_pdf: 105 pages, 3 mention ['Baganda']
-=== front matter ===
-
-
-=== pages mentioning ['Baganda'] (first 5) ===
-
---- page 31 ----------------------------------------------------
-constitute 88.7 percent of non-Ugandan population as shown in Appendix Table A8.
-4.2.2 Ethnicity of Ugandans
-Ethnicity is the state of belonging to a social group with comm on culture, tradition and
-language. Ugandans are classified by ethnic groups as listed in  the Constitution of the
-Republic of Uganda. The Baganda are the majority accounting for close to 17 percent of the
-population followed by the Banyankole with about 10 percent as shown in table 4.3. Detailed
-population by ethnicity is presented in Appendix Table A8.
-Table 4.3:  Percentage distribution of the population by Ethnicity, 2014
- Ethnic Group
-      ...
-Number (Millions) Percentage
-Number
-Percentage
-(Millions)
-Baganda 4.13 17.7 5.56 16.5
-Banyankore 2.33 10.0 3.22
-9.6
-Basoga 2.07 8.9 2.96 8.8
-Bakiga 1.68 7.2 2.39 7.1
-
---- page 82 ----------------------------------------------------
-   Baamba 20,923 21,636 32,987 9,572 42,559
-   Babukusu 18,484 18,633 33,146 3,971 37,117
-   Babwisi 48,435 52,677 79,376 21,736 101,112
-   Bafumbira 345,771 367,460 625,872 87,359 713,231
-   Baganda 2,688,700 2,866,619 3,268,588 2,286,731 5,555,319
-   Bagisu 805,808 841,096 1,351,587 295,317 1,646,904
-   Bagungu 41,538 42,448 69,251 14,735 83,986
-   Bagwe 50,493 49,391 94,117 5,767 99,884
-   Bagwere 302,969 318,181 528,604 92,546 621,150
-
---- page 104 ----------------------------------------------------
-Baamba Baruli Kumam Tanzania Seventh-Day Adventist Sweet Potatoes Passion fruit
-Babukusu Barundi Lango Rwanda Orthodox G/nuts
-Babwisi Basamia Lendu Burundi Pentecostal/ Born Again/ Evangelical Sorghum
-10 Usual head of hh - Absent Bafumbira Basoga Lugbara South Sudan Baha’i Millets
-11 Usual head of hh - Present Baganda Basongora Madi Dem. Rep. Of Congo Baptist Sim Sim Vanilla
-12 Spouse Bagisu Batagwenda Mening Somalia Jews Banana (Beer) Tea
-13 Biological Son Bagungu Batoro Mvuba Other Africa Presbyterian Irish Potatoes Wheat
-14 Biological Daughter Bagwe Batuku Napore United Kingdom Mammon Soya Beans Barley
-15 Step son Bagwere Batwa Ngikutio Other Europe Hindus Rice Spinach
+pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11
+  Khyber Pakhtunkhwa
+    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
+    35 districts, 123 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 35 districts add up to the province
+    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
+    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
+    Table 11: 3,436,846 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_kp_districts.pdf
+    35 districts, 123 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 35 districts add up to the province
+    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
+    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
+    and its 32 districts are Table 9's districts
+  Punjab
+    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
+    36 districts, 145 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 36 districts add up to the province
+    Table 11: 3,538,413 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_punjab_districts.pdf
+    36 districts, 145 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 36 districts add up to the province
+    and its 36 districts are Table 9's districts
+  Sindh
+    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
+    30 districts, 0 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 30 districts add up to the province
+    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
+    Table 11: 3,230,815 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_sindh_districts.pdf
+    30 districts, 0 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 30 districts add up to the province
+    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
+    and its 24 districts are Table 9's districts
+  Balochistan
+    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
+    34 districts, 80 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 34 districts add up to the province
+    Table 11: 3,596,501 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_balochistan_districts.pdf
+    34 districts, 80 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 34 districts add up to the province
+    and its 34 districts are Table 9's districts
+  Islamabad Capital Territory
+    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
+    1 districts, 1 tehsils passed over
+    one district, and it is the territory: the table prints no separate territory row
+    every district's religions sum to its own printed total
+    and the 1 districts add up to the province
+    Table 11: 45,805 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_islamabad.pdf
+    1 districts, 1 tehsils passed over
+    one district, and it is the territory: the table prints no separate territory row
+    every district's mother tongues sum to its own printed total
+    and the 1 districts add up to the province
+    and its 1 districts are Table 9's districts
+  Azad Jammu and Kashmir
+  Gilgit-Baltistan
+  6 districts say what their Other language holds, and 1 what their Other religion does
+  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  Azad Jammu and Kashmir, from the territory's own yearbook
+    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
+    Table 15.24 named on page 15 with no rows under it: the contents, not the table
+    Table 15.24 on page 209: 10 districts
+    all 7 columns sum to the printed AJ&K row
+    Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
+  Gilgit-Baltistan, from the territory's own At a Glance
+    2,369,329 bytes from https://www.pnd.gog.pk/storage/downloads/AiRIlDEcscWPC1s58oXIgpjlVAS7jd-metaR0IgQVQgR2xhbmNlIDIwMjUuMS5wZGY=-.pdf
+    10 districts on page 3, summing to the territory's own printed 1,709,049
+  11 records declaring what is not published, rather than leaving the field empty
+  wrote data/processed/pakistan_district.json (640 kB)
+  138 districts and 7 provinces
