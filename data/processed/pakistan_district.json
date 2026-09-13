@@ -21875,10 +21875,40 @@
         "count": 60
       }
     ],
-    "language": {
-      "status": "not_available",
-      "note": "Mother tongue is the field Azad Jammu and Kashmir still has no source for. The Bureau of Statistics publishes no Table 11 for it, the U.S. Census Bureau's workbook of the 2017 census lists the territory and leaves it blank, and the AJ&K Statistical Year Book 2023 -- which does print the census's religion table -- contains the word 'tongue' on no page of it."
-    },
+    "language": [
+      {
+        "group": "Pahari-Pothwari",
+        "pct": 68.8
+      },
+      {
+        "group": "Gojri",
+        "pct": 18.6
+      },
+      {
+        "group": "Kashmiri",
+        "pct": 4.6
+      },
+      {
+        "group": "Punjabi",
+        "pct": 3.6
+      },
+      {
+        "group": "Dogri",
+        "pct": 3.1
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.0
+      },
+      {
+        "group": "Shina",
+        "pct": 0.2
+      },
+      {
+        "group": "Kundal Shahi",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": {
       "status": "not_available"
     },
@@ -21888,13 +21918,21 @@
         "name": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: District wise Population of AJ&K by Religion, as printed in the AJ&K Statistical Year Book 2023 (Bureau of Statistics, P&DD, Azad Government of the State of Jammu & Kashmir)",
         "url": "https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf",
         "license": "Azad Government of the State of Jammu & Kashmir, P&DD"
+      },
+      {
+        "field": "language",
+        "name": "Kashmir Liberation Cell, Muzaffarabad, Table 15.33 'Languages Spoken in AJ&K', as printed in the AJ&K Statistical Year Book 2023 (Bureau of Statistics, P&DD, Azad Government of the State of Jammu & Kashmir)",
+        "url": "https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf",
+        "license": "Azad Government of the State of Jammu & Kashmir, P&DD"
       }
     ],
     "aliases": [
       "Azad Kashmir"
     ],
     "religion_year": 2017,
-    "religion_note": "Population and Housing Census 2017, as reprinted by the AJ&K Bureau of Statistics in its Statistical Year Book 2023. Azad Jammu and Kashmir is enumerated apart from the census proper -- its people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 for it, so this comes from the territory's own government rather than from the same file as the four provinces. The categories are the census's own: Ahmadis are counted separately from Muslims and Scheduled Castes separately from Hindus."
+    "religion_note": "Population and Housing Census 2017, as reprinted by the AJ&K Bureau of Statistics in its Statistical Year Book 2023. Azad Jammu and Kashmir is enumerated apart from the census proper -- its people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 for it, so this comes from the territory's own government rather than from the same file as the four provinces. The categories are the census's own: Ahmadis are counted separately from Muslims and Scheduled Castes separately from Hindus.",
+    "language_note": "Not a census. Azad Jammu and Kashmir is enumerated apart from the census proper and the Bureau of Statistics publishes no mother-tongue table for it, so this is Table 15.33 of the AJ&K Statistical Year Book 2023, whose source line names not the territory's Bureau of Statistics but its Kashmir Liberation Cell. The table gives a percentage for each of the ten districts and prints no year; these are those ten rows weighted by their 2017 census populations, which is why the territory's figure agrees with the districts underneath it. The figures are round -- 50, 95, 63 -- and the question they answer is which languages are spoken here rather than the census's mother tongue, which is why they are not added into Pakistan's national language figure. Pahari-Pothwari is the table's 'Pahari' column together with the local names it prints inside it (Dhundi-Khairali in Bagh, Chibali in Haveli, Punchi in Poonch and Sudhnoti, Mirpuri in Mirpur and Bhimber); Dogri and Punjabi are named in Bhimber's row and Kundal Shahi in Neelum's, each printed under a column headed for a different language. One row does not add up and is not quietly squared: Mirpur's row sums to 97% rather than 100, so the three points the source leaves unaccounted for are spread across that district's own languages in proportion rather than across the territory's, which is where the people they describe live.",
+    "language_basis": "languages spoken"
   },
   {
     "id": "PAK-ajk-azad-kashmir",
@@ -21950,10 +21988,40 @@
         "count": 60
       }
     ],
-    "language": {
-      "status": "not_available",
-      "note": "Mother tongue is the field Azad Jammu and Kashmir still has no source for. The Bureau of Statistics publishes no Table 11 for it, the U.S. Census Bureau's workbook of the 2017 census lists the territory and leaves it blank, and the AJ&K Statistical Year Book 2023 -- which does print the census's religion table -- contains the word 'tongue' on no page of it."
-    },
+    "language": [
+      {
+        "group": "Pahari-Pothwari",
+        "pct": 68.8
+      },
+      {
+        "group": "Gojri",
+        "pct": 18.6
+      },
+      {
+        "group": "Kashmiri",
+        "pct": 4.6
+      },
+      {
+        "group": "Punjabi",
+        "pct": 3.6
+      },
+      {
+        "group": "Dogri",
+        "pct": 3.1
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.0
+      },
+      {
+        "group": "Shina",
+        "pct": 0.2
+      },
+      {
+        "group": "Kundal Shahi",
+        "pct": 0.1
+      }
+    ],
     "ethnicity": {
       "status": "not_available"
     },
@@ -21963,6 +22031,12 @@
         "name": "Pakistan Bureau of Statistics, Population and Housing Census 2017, Table: District wise Population of AJ&K by Religion, as printed in the AJ&K Statistical Year Book 2023 (Bureau of Statistics, P&DD, Azad Government of the State of Jammu & Kashmir)",
         "url": "https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf",
         "license": "Azad Government of the State of Jammu & Kashmir, P&DD"
+      },
+      {
+        "field": "language",
+        "name": "Kashmir Liberation Cell, Muzaffarabad, Table 15.33 'Languages Spoken in AJ&K', as printed in the AJ&K Statistical Year Book 2023 (Bureau of Statistics, P&DD, Azad Government of the State of Jammu & Kashmir)",
+        "url": "https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf",
+        "license": "Azad Government of the State of Jammu & Kashmir, P&DD"
       }
     ],
     "parent_name": "Azad Jammu and Kashmir",
@@ -21970,7 +22044,9 @@
       "Azad Kashmir"
     ],
     "religion_year": 2017,
-    "religion_note": "Population and Housing Census 2017, as reprinted by the AJ&K Bureau of Statistics in its Statistical Year Book 2023. Azad Jammu and Kashmir is enumerated apart from the census proper -- its people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 for it, so this comes from the territory's own government rather than from the same file as the four provinces. The categories are the census's own: Ahmadis are counted separately from Muslims and Scheduled Castes separately from Hindus. geoBoundaries draws one second-level unit for the whole territory where the yearbook counts ten districts, so this is the territory's figure on the territory's shape rather than any one district's."
+    "religion_note": "Population and Housing Census 2017, as reprinted by the AJ&K Bureau of Statistics in its Statistical Year Book 2023. Azad Jammu and Kashmir is enumerated apart from the census proper -- its people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 for it, so this comes from the territory's own government rather than from the same file as the four provinces. The categories are the census's own: Ahmadis are counted separately from Muslims and Scheduled Castes separately from Hindus. geoBoundaries draws one second-level unit for the whole territory where the yearbook counts ten districts, so this is the territory's figure on the territory's shape rather than any one district's.",
+    "language_note": "Not a census. Azad Jammu and Kashmir is enumerated apart from the census proper and the Bureau of Statistics publishes no mother-tongue table for it, so this is Table 15.33 of the AJ&K Statistical Year Book 2023, whose source line names not the territory's Bureau of Statistics but its Kashmir Liberation Cell. The table gives a percentage for each of the ten districts and prints no year; these are those ten rows weighted by their 2017 census populations, which is why the territory's figure agrees with the districts underneath it. The figures are round -- 50, 95, 63 -- and the question they answer is which languages are spoken here rather than the census's mother tongue, which is why they are not added into Pakistan's national language figure. Pahari-Pothwari is the table's 'Pahari' column together with the local names it prints inside it (Dhundi-Khairali in Bagh, Chibali in Haveli, Punchi in Poonch and Sudhnoti, Mirpuri in Mirpur and Bhimber); Dogri and Punjabi are named in Bhimber's row and Kundal Shahi in Neelum's, each printed under a column headed for a different language. One row does not add up and is not quietly squared: Mirpur's row sums to 97% rather than 100, so the three points the source leaves unaccounted for are spread across that district's own languages in proportion rather than across the territory's, which is where the people they describe live.",
+    "language_basis": "languages spoken"
   },
   {
     "id": "PAK-gb",
@@ -21997,45 +22073,45 @@
     "religion": [
       {
         "group": "Twelver Shi'a Islam",
-        "pct": 39.85
+        "pct": 42.9
       },
       {
         "group": "Sunni Islam",
-        "pct": 30.05
+        "pct": 33.7
       },
       {
         "group": "Isma'ili Shi'a Islam",
-        "pct": 24.0
+        "pct": 15.5
       },
       {
         "group": "Nurbakhshia Islam",
-        "pct": 6.1
+        "pct": 7.9
       }
     ],
     "language": [
       {
-        "group": "Balti",
-        "pct": 37.93
+        "group": "Shina",
+        "pct": 48.1
       },
       {
-        "group": "Shina",
-        "pct": 35.89
+        "group": "Balti",
+        "pct": 29.2
       },
       {
         "group": "Burushaski",
-        "pct": 17.18
-      },
-      {
-        "group": "Other languages",
-        "pct": 4.0
+        "pct": 12.3
       },
       {
         "group": "Khowar",
-        "pct": 3.0
+        "pct": 5.2
+      },
+      {
+        "group": "Other languages",
+        "pct": 4.2
       },
       {
         "group": "Wakhi",
-        "pct": 2.0
+        "pct": 1.0
       }
     ],
     "ethnicity": {
@@ -22056,9 +22132,10 @@
       },
       {
         "field": "language",
-        "name": "Pamir Times, 'Treading the Sacred Linguistic Landscape of Gilgit-Baltistan', 23 December 2023, reporting Gilgit-Baltistan MICS 2017 household data",
-        "url": "https://pamirtimes.net/2023/12/23/treading-the-sacred-linguistic-landscape-of-gilgit-baltistan/",
-        "year": 2017
+        "name": "Gilgit-Baltistan Multiple Indicator Cluster Survey 2024-25, Table SR.3.1 (Household composition), Planning & Development Department, Government of Gilgit-Baltistan, with UNICEF",
+        "url": "https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf",
+        "license": "Government of Gilgit-Baltistan, Planning & Development Department",
+        "year": 2025
       },
       {
         "field": "population",
@@ -22070,11 +22147,11 @@
     ],
     "aliases": [],
     "religion_year": 2011,
-    "religion_note": "Not a census. Pakistan's Bureau of Statistics publishes no religion table for Gilgit-Baltistan at all, so this is PILDAT's estimate of the territory's sectarian composition, from a 2011 background paper on sectarian conflict. The four shares are as that paper gives them and sum to 100%. They describe a population taken to be entirely Muslim, which the last census to count religion here bears out: the 1941 Census of India returned 99.7% Muslim across Gilgit Agency, Gilgit Leased, Skardu and Astore. Gilgit-Baltistan is the only Shia-plurality region of a Sunni-majority country. Its districts differ sharply from each other and from this average -- Diamer is Sunni, Hunza and Ghizer Ismaili, Baltistan overwhelmingly Twelver, Ghanche the centre of the Noorbakhshia order -- and the same paper's 'Faith Map of Gilgit-Baltistan' gives an area-wise breakdown, so each of the ten districts carries its own figure rather than this average. Those ten district figures, weighted by the census populations now published beside them, come to Twelver Shi'a Islam 42.8%, Sunni Islam 33.7%, Isma'ili Shi'a Islam 15.5%, Nurbakhshia Islam 7.9% -- which is not what this row says. The paper's territory-wide estimate and its own area-wise map disagree, most sharply about the Ismaili share, and both are printed here as the paper gives them rather than reconciled to each other.",
+    "religion_note": "Not a census. Pakistan's Bureau of Statistics publishes no religion table for Gilgit-Baltistan at all, so this is PILDAT's estimate of the territory's sectarian composition, from a 2011 background paper on sectarian conflict. The four shares are as that paper gives them and sum to 100%. They describe a population taken to be entirely Muslim, which the last census to count religion here bears out: the 1941 Census of India returned 99.7% Muslim across Gilgit Agency, Gilgit Leased, Skardu and Astore. Gilgit-Baltistan is the only Shia-plurality region of a Sunni-majority country. Its districts differ sharply from each other and from this average -- Diamer is Sunni, Hunza and Ghizer Ismaili, Baltistan overwhelmingly Twelver, Ghanche the centre of the Noorbakhshia order -- and the same paper's 'Faith Map of Gilgit-Baltistan' gives an area-wise breakdown, so each of the ten districts carries its own figure rather than an average. This row is the ten districts' own figures weighted by their 2023 census populations, which is why it agrees with what is drawn beneath it. The same paper also gives a territory-wide estimate -- Twelver Shi'a Islam 39.85%, Sunni Islam 30.05%, Isma'ili Shi'a Islam 24.0%, Nurbakhshia Islam 6.1% -- and the two do not describe the same population: they are eight and a half points apart on the Ismaili share. Neither has been adjusted to the other. The weighted figure is the one published because a territory whose districts do not add up to it is a contradiction a reader can see and cannot resolve; the likeliest reading of the gap is that the faith map's flat 100% for Hunza and Ghizer leaves no room for the Ismaili minorities the same page's prose puts in Skardu.",
     "religion_basis": "sectarian affiliation",
-    "language_year": 2017,
-    "language_note": "Not a census, and not a count of people. Pakistan's Bureau of Statistics publishes no mother-tongue table for Gilgit-Baltistan, and the census's own question would not help if it did: it names nine languages and an 'Other', and Shina, Balti and Burushaski all fall in the Other. These shares are households, from a December 2023 Pamir Times article working from the Gilgit-Baltistan MICS 2017 survey and scaling it on 2017 census population -- an estimate at two removes, and households rather than persons, which is why it is not added into Pakistan's national figure. The article gives three household counts and three percentages but no total; the total of 195,068 households is derived here by division. Balti and Shina cannot be separated by this source: it puts them 4,000 households apart on figures it rounds to the thousand, and other accounts of the territory call Shina the larger. The territory-wide figure also hides a sharp geography -- Balti dominates Skardu, Ghanche, Kharmang and Shigar, Shina dominates Astore, Diamer, Ghizer and Gilgit, and Burushaski Hunza and Nagar -- and no district table is published, so none of the ten districts carries this figure.",
-    "language_basis": "language of the household",
+    "language_year": 2025,
+    "language_note": "A survey, not a census, and households rather than people. Pakistan's Bureau of Statistics publishes no mother-tongue table for Gilgit-Baltistan at any path, and the census's own question would not help if it did: the 2023 form names Shina and Balti but has no column for Burushaski, Khowar, Wakhi or Domaaki, so a third of the territory would be counted inside its 'Other'. This is instead the territory's own Gilgit-Baltistan MICS 2024-25, run by its Planning & Development Department with UNICEF: Table SR.3.1 distributes 6,929 surveyed households by the language of the household head. Households and not persons, which is what language_basis records and what keeps these out of Pakistan's national mother tongue -- household size varies sharply across these districts, Diamer's being far larger than Hunza's. The report spells Burushaski 'Brushaski'; the name here is the one the rest of this map uses. The same table gives the survey's districts as a separate distribution rather than crossed with language, so none of the ten districts carries a language figure of its own.",
+    "language_basis": "language of the household head",
     "population_note": "The 7th Population and Housing Census 2023, read from the territory's own government rather than from the Bureau of Statistics: Gilgit-Baltistan is enumerated apart from the census proper -- its people are outside the 241.5 million Pakistan reports -- and the Bureau publishes no census table for it at any path, so this count is taken from Gilgit-Baltistan at a Glance 2025, which prints it over a source line naming the Bureau. The same table carries a 2026 projection beside the census column; this is the count and not the projection. The ten districts add up to this figure to the person, which is the one control the table supplies on itself."
   },
   {
@@ -22111,7 +22188,7 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
+      "note": "Gilgit-Baltistan's language is published for the territory and for none of its ten districts, and every route to a district figure has been asked. The Bureau of Statistics publishes no Table 11 for this territory under any of the names the four provinces and Islamabad are filed under. The census form would not answer it either: the 2023 question names fifteen tongues including Shina and Balti but has no column for Burushaski, Khowar, Wakhi or Domaaki, so Hunza, Nagar and much of Ghizer would be counted inside its 'Other'. Gilgit-Baltistan at a Glance 2025, which is where this district's population comes from, carries no language table. And the territory's own household surveys stop at the territory: the GB MICS 2024-25 report gives language of the household head and district as two separate distributions rather than one crossed table, and the 2016-17 round's 398-page final report has no language table at all. The territory's figure is not spread over the ten because they differ sharply from it and from each other -- Balti is the language of Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer and Gilgit, Burushaski of Hunza and Nagar -- so an average put on all ten would be wrong on every one of them."
     },
     "ethnicity": {
       "status": "not_available"
@@ -22131,9 +22208,10 @@
       },
       {
         "field": "language",
-        "name": "Pamir Times, 'Treading the Sacred Linguistic Landscape of Gilgit-Baltistan', 23 December 2023, reporting Gilgit-Baltistan MICS 2017 household data",
-        "url": "https://pamirtimes.net/2023/12/23/treading-the-sacred-linguistic-landscape-of-gilgit-baltistan/",
-        "year": 2017
+        "name": "Gilgit-Baltistan Multiple Indicator Cluster Survey 2024-25, Table SR.3.1 (Household composition), Planning & Development Department, Government of Gilgit-Baltistan, with UNICEF",
+        "url": "https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf",
+        "license": "Government of Gilgit-Baltistan, Planning & Development Department",
+        "year": 2025
       },
       {
         "field": "population",
@@ -22193,7 +22271,7 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
+      "note": "Gilgit-Baltistan's language is published for the territory and for none of its ten districts, and every route to a district figure has been asked. The Bureau of Statistics publishes no Table 11 for this territory under any of the names the four provinces and Islamabad are filed under. The census form would not answer it either: the 2023 question names fifteen tongues including Shina and Balti but has no column for Burushaski, Khowar, Wakhi or Domaaki, so Hunza, Nagar and much of Ghizer would be counted inside its 'Other'. Gilgit-Baltistan at a Glance 2025, which is where this district's population comes from, carries no language table. And the territory's own household surveys stop at the territory: the GB MICS 2024-25 report gives language of the household head and district as two separate distributions rather than one crossed table, and the 2016-17 round's 398-page final report has no language table at all. The territory's figure is not spread over the ten because they differ sharply from it and from each other -- Balti is the language of Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer and Gilgit, Burushaski of Hunza and Nagar -- so an average put on all ten would be wrong on every one of them."
     },
     "ethnicity": {
       "status": "not_available"
@@ -22213,9 +22291,10 @@
       },
       {
         "field": "language",
-        "name": "Pamir Times, 'Treading the Sacred Linguistic Landscape of Gilgit-Baltistan', 23 December 2023, reporting Gilgit-Baltistan MICS 2017 household data",
-        "url": "https://pamirtimes.net/2023/12/23/treading-the-sacred-linguistic-landscape-of-gilgit-baltistan/",
-        "year": 2017
+        "name": "Gilgit-Baltistan Multiple Indicator Cluster Survey 2024-25, Table SR.3.1 (Household composition), Planning & Development Department, Government of Gilgit-Baltistan, with UNICEF",
+        "url": "https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf",
+        "license": "Government of Gilgit-Baltistan, Planning & Development Department",
+        "year": 2025
       },
       {
         "field": "population",
@@ -22283,7 +22362,7 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
+      "note": "Gilgit-Baltistan's language is published for the territory and for none of its ten districts, and every route to a district figure has been asked. The Bureau of Statistics publishes no Table 11 for this territory under any of the names the four provinces and Islamabad are filed under. The census form would not answer it either: the 2023 question names fifteen tongues including Shina and Balti but has no column for Burushaski, Khowar, Wakhi or Domaaki, so Hunza, Nagar and much of Ghizer would be counted inside its 'Other'. Gilgit-Baltistan at a Glance 2025, which is where this district's population comes from, carries no language table. And the territory's own household surveys stop at the territory: the GB MICS 2024-25 report gives language of the household head and district as two separate distributions rather than one crossed table, and the 2016-17 round's 398-page final report has no language table at all. The territory's figure is not spread over the ten because they differ sharply from it and from each other -- Balti is the language of Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer and Gilgit, Burushaski of Hunza and Nagar -- so an average put on all ten would be wrong on every one of them."
     },
     "ethnicity": {
       "status": "not_available"
@@ -22303,9 +22382,10 @@
       },
       {
         "field": "language",
-        "name": "Pamir Times, 'Treading the Sacred Linguistic Landscape of Gilgit-Baltistan', 23 December 2023, reporting Gilgit-Baltistan MICS 2017 household data",
-        "url": "https://pamirtimes.net/2023/12/23/treading-the-sacred-linguistic-landscape-of-gilgit-baltistan/",
-        "year": 2017
+        "name": "Gilgit-Baltistan Multiple Indicator Cluster Survey 2024-25, Table SR.3.1 (Household composition), Planning & Development Department, Government of Gilgit-Baltistan, with UNICEF",
+        "url": "https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf",
+        "license": "Government of Gilgit-Baltistan, Planning & Development Department",
+        "year": 2025
       },
       {
         "field": "population",
@@ -22365,7 +22445,7 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
+      "note": "Gilgit-Baltistan's language is published for the territory and for none of its ten districts, and every route to a district figure has been asked. The Bureau of Statistics publishes no Table 11 for this territory under any of the names the four provinces and Islamabad are filed under. The census form would not answer it either: the 2023 question names fifteen tongues including Shina and Balti but has no column for Burushaski, Khowar, Wakhi or Domaaki, so Hunza, Nagar and much of Ghizer would be counted inside its 'Other'. Gilgit-Baltistan at a Glance 2025, which is where this district's population comes from, carries no language table. And the territory's own household surveys stop at the territory: the GB MICS 2024-25 report gives language of the household head and district as two separate distributions rather than one crossed table, and the 2016-17 round's 398-page final report has no language table at all. The territory's figure is not spread over the ten because they differ sharply from it and from each other -- Balti is the language of Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer and Gilgit, Burushaski of Hunza and Nagar -- so an average put on all ten would be wrong on every one of them."
     },
     "ethnicity": {
       "status": "not_available"
@@ -22385,9 +22465,10 @@
       },
       {
         "field": "language",
-        "name": "Pamir Times, 'Treading the Sacred Linguistic Landscape of Gilgit-Baltistan', 23 December 2023, reporting Gilgit-Baltistan MICS 2017 household data",
-        "url": "https://pamirtimes.net/2023/12/23/treading-the-sacred-linguistic-landscape-of-gilgit-baltistan/",
-        "year": 2017
+        "name": "Gilgit-Baltistan Multiple Indicator Cluster Survey 2024-25, Table SR.3.1 (Household composition), Planning & Development Department, Government of Gilgit-Baltistan, with UNICEF",
+        "url": "https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf",
+        "license": "Government of Gilgit-Baltistan, Planning & Development Department",
+        "year": 2025
       },
       {
         "field": "population",
@@ -22451,7 +22532,7 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
+      "note": "Gilgit-Baltistan's language is published for the territory and for none of its ten districts, and every route to a district figure has been asked. The Bureau of Statistics publishes no Table 11 for this territory under any of the names the four provinces and Islamabad are filed under. The census form would not answer it either: the 2023 question names fifteen tongues including Shina and Balti but has no column for Burushaski, Khowar, Wakhi or Domaaki, so Hunza, Nagar and much of Ghizer would be counted inside its 'Other'. Gilgit-Baltistan at a Glance 2025, which is where this district's population comes from, carries no language table. And the territory's own household surveys stop at the territory: the GB MICS 2024-25 report gives language of the household head and district as two separate distributions rather than one crossed table, and the 2016-17 round's 398-page final report has no language table at all. The territory's figure is not spread over the ten because they differ sharply from it and from each other -- Balti is the language of Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer and Gilgit, Burushaski of Hunza and Nagar -- so an average put on all ten would be wrong on every one of them."
     },
     "ethnicity": {
       "status": "not_available"
@@ -22471,9 +22552,10 @@
       },
       {
         "field": "language",
-        "name": "Pamir Times, 'Treading the Sacred Linguistic Landscape of Gilgit-Baltistan', 23 December 2023, reporting Gilgit-Baltistan MICS 2017 household data",
-        "url": "https://pamirtimes.net/2023/12/23/treading-the-sacred-linguistic-landscape-of-gilgit-baltistan/",
-        "year": 2017
+        "name": "Gilgit-Baltistan Multiple Indicator Cluster Survey 2024-25, Table SR.3.1 (Household composition), Planning & Development Department, Government of Gilgit-Baltistan, with UNICEF",
+        "url": "https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf",
+        "license": "Government of Gilgit-Baltistan, Planning & Development Department",
+        "year": 2025
       },
       {
         "field": "population",
@@ -22533,7 +22615,7 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
+      "note": "Gilgit-Baltistan's language is published for the territory and for none of its ten districts, and every route to a district figure has been asked. The Bureau of Statistics publishes no Table 11 for this territory under any of the names the four provinces and Islamabad are filed under. The census form would not answer it either: the 2023 question names fifteen tongues including Shina and Balti but has no column for Burushaski, Khowar, Wakhi or Domaaki, so Hunza, Nagar and much of Ghizer would be counted inside its 'Other'. Gilgit-Baltistan at a Glance 2025, which is where this district's population comes from, carries no language table. And the territory's own household surveys stop at the territory: the GB MICS 2024-25 report gives language of the household head and district as two separate distributions rather than one crossed table, and the 2016-17 round's 398-page final report has no language table at all. The territory's figure is not spread over the ten because they differ sharply from it and from each other -- Balti is the language of Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer and Gilgit, Burushaski of Hunza and Nagar -- so an average put on all ten would be wrong on every one of them."
     },
     "ethnicity": {
       "status": "not_available"
@@ -22553,9 +22635,10 @@
       },
       {
         "field": "language",
-        "name": "Pamir Times, 'Treading the Sacred Linguistic Landscape of Gilgit-Baltistan', 23 December 2023, reporting Gilgit-Baltistan MICS 2017 household data",
-        "url": "https://pamirtimes.net/2023/12/23/treading-the-sacred-linguistic-landscape-of-gilgit-baltistan/",
-        "year": 2017
+        "name": "Gilgit-Baltistan Multiple Indicator Cluster Survey 2024-25, Table SR.3.1 (Household composition), Planning & Development Department, Government of Gilgit-Baltistan, with UNICEF",
+        "url": "https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf",
+        "license": "Government of Gilgit-Baltistan, Planning & Development Department",
+        "year": 2025
       },
       {
         "field": "population",
@@ -22623,7 +22706,7 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
+      "note": "Gilgit-Baltistan's language is published for the territory and for none of its ten districts, and every route to a district figure has been asked. The Bureau of Statistics publishes no Table 11 for this territory under any of the names the four provinces and Islamabad are filed under. The census form would not answer it either: the 2023 question names fifteen tongues including Shina and Balti but has no column for Burushaski, Khowar, Wakhi or Domaaki, so Hunza, Nagar and much of Ghizer would be counted inside its 'Other'. Gilgit-Baltistan at a Glance 2025, which is where this district's population comes from, carries no language table. And the territory's own household surveys stop at the territory: the GB MICS 2024-25 report gives language of the household head and district as two separate distributions rather than one crossed table, and the 2016-17 round's 398-page final report has no language table at all. The territory's figure is not spread over the ten because they differ sharply from it and from each other -- Balti is the language of Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer and Gilgit, Burushaski of Hunza and Nagar -- so an average put on all ten would be wrong on every one of them."
     },
     "ethnicity": {
       "status": "not_available"
@@ -22643,9 +22726,10 @@
       },
       {
         "field": "language",
-        "name": "Pamir Times, 'Treading the Sacred Linguistic Landscape of Gilgit-Baltistan', 23 December 2023, reporting Gilgit-Baltistan MICS 2017 household data",
-        "url": "https://pamirtimes.net/2023/12/23/treading-the-sacred-linguistic-landscape-of-gilgit-baltistan/",
-        "year": 2017
+        "name": "Gilgit-Baltistan Multiple Indicator Cluster Survey 2024-25, Table SR.3.1 (Household composition), Planning & Development Department, Government of Gilgit-Baltistan, with UNICEF",
+        "url": "https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf",
+        "license": "Government of Gilgit-Baltistan, Planning & Development Department",
+        "year": 2025
       },
       {
         "field": "population",
@@ -22705,7 +22789,7 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
+      "note": "Gilgit-Baltistan's language is published for the territory and for none of its ten districts, and every route to a district figure has been asked. The Bureau of Statistics publishes no Table 11 for this territory under any of the names the four provinces and Islamabad are filed under. The census form would not answer it either: the 2023 question names fifteen tongues including Shina and Balti but has no column for Burushaski, Khowar, Wakhi or Domaaki, so Hunza, Nagar and much of Ghizer would be counted inside its 'Other'. Gilgit-Baltistan at a Glance 2025, which is where this district's population comes from, carries no language table. And the territory's own household surveys stop at the territory: the GB MICS 2024-25 report gives language of the household head and district as two separate distributions rather than one crossed table, and the 2016-17 round's 398-page final report has no language table at all. The territory's figure is not spread over the ten because they differ sharply from it and from each other -- Balti is the language of Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer and Gilgit, Burushaski of Hunza and Nagar -- so an average put on all ten would be wrong on every one of them."
     },
     "ethnicity": {
       "status": "not_available"
@@ -22725,9 +22809,10 @@
       },
       {
         "field": "language",
-        "name": "Pamir Times, 'Treading the Sacred Linguistic Landscape of Gilgit-Baltistan', 23 December 2023, reporting Gilgit-Baltistan MICS 2017 household data",
-        "url": "https://pamirtimes.net/2023/12/23/treading-the-sacred-linguistic-landscape-of-gilgit-baltistan/",
-        "year": 2017
+        "name": "Gilgit-Baltistan Multiple Indicator Cluster Survey 2024-25, Table SR.3.1 (Household composition), Planning & Development Department, Government of Gilgit-Baltistan, with UNICEF",
+        "url": "https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf",
+        "license": "Government of Gilgit-Baltistan, Planning & Development Department",
+        "year": 2025
       },
       {
         "field": "population",
@@ -22795,7 +22880,7 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
+      "note": "Gilgit-Baltistan's language is published for the territory and for none of its ten districts, and every route to a district figure has been asked. The Bureau of Statistics publishes no Table 11 for this territory under any of the names the four provinces and Islamabad are filed under. The census form would not answer it either: the 2023 question names fifteen tongues including Shina and Balti but has no column for Burushaski, Khowar, Wakhi or Domaaki, so Hunza, Nagar and much of Ghizer would be counted inside its 'Other'. Gilgit-Baltistan at a Glance 2025, which is where this district's population comes from, carries no language table. And the territory's own household surveys stop at the territory: the GB MICS 2024-25 report gives language of the household head and district as two separate distributions rather than one crossed table, and the 2016-17 round's 398-page final report has no language table at all. The territory's figure is not spread over the ten because they differ sharply from it and from each other -- Balti is the language of Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer and Gilgit, Burushaski of Hunza and Nagar -- so an average put on all ten would be wrong on every one of them."
     },
     "ethnicity": {
       "status": "not_available"
@@ -22815,9 +22900,10 @@
       },
       {
         "field": "language",
-        "name": "Pamir Times, 'Treading the Sacred Linguistic Landscape of Gilgit-Baltistan', 23 December 2023, reporting Gilgit-Baltistan MICS 2017 household data",
-        "url": "https://pamirtimes.net/2023/12/23/treading-the-sacred-linguistic-landscape-of-gilgit-baltistan/",
-        "year": 2017
+        "name": "Gilgit-Baltistan Multiple Indicator Cluster Survey 2024-25, Table SR.3.1 (Household composition), Planning & Development Department, Government of Gilgit-Baltistan, with UNICEF",
+        "url": "https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf",
+        "license": "Government of Gilgit-Baltistan, Planning & Development Department",
+        "year": 2025
       },
       {
         "field": "population",
@@ -22885,7 +22971,7 @@
     ],
     "language": {
       "status": "not_available",
-      "note": "The 7th Population and Housing Census 2023 enumerated Azad Jammu and Kashmir and Gilgit-Baltistan apart from the census proper -- their people are outside the 241.5 million Pakistan reports -- and the Bureau of Statistics publishes no Table 9 (religion) or Table 11 (mother tongue) for either: the four provinces and Islamabad have both and these two have neither, at any path the office uses. Their own Planning & Development departments publish district tables from the same census, and those carry population without ever naming a religion or a mother tongue. The 2017 round is no better: its subnational workbook lists both territories and leaves them blank. The question was asked; the answer is unpublished."
+      "note": "Gilgit-Baltistan's language is published for the territory and for none of its ten districts, and every route to a district figure has been asked. The Bureau of Statistics publishes no Table 11 for this territory under any of the names the four provinces and Islamabad are filed under. The census form would not answer it either: the 2023 question names fifteen tongues including Shina and Balti but has no column for Burushaski, Khowar, Wakhi or Domaaki, so Hunza, Nagar and much of Ghizer would be counted inside its 'Other'. Gilgit-Baltistan at a Glance 2025, which is where this district's population comes from, carries no language table. And the territory's own household surveys stop at the territory: the GB MICS 2024-25 report gives language of the household head and district as two separate distributions rather than one crossed table, and the 2016-17 round's 398-page final report has no language table at all. The territory's figure is not spread over the ten because they differ sharply from it and from each other -- Balti is the language of Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer and Gilgit, Burushaski of Hunza and Nagar -- so an average put on all ten would be wrong on every one of them."
     },
     "ethnicity": {
       "status": "not_available"
@@ -22905,9 +22991,10 @@
       },
       {
         "field": "language",
-        "name": "Pamir Times, 'Treading the Sacred Linguistic Landscape of Gilgit-Baltistan', 23 December 2023, reporting Gilgit-Baltistan MICS 2017 household data",
-        "url": "https://pamirtimes.net/2023/12/23/treading-the-sacred-linguistic-landscape-of-gilgit-baltistan/",
-        "year": 2017
+        "name": "Gilgit-Baltistan Multiple Indicator Cluster Survey 2024-25, Table SR.3.1 (Household composition), Planning & Development Department, Government of Gilgit-Baltistan, with UNICEF",
+        "url": "https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf",
+        "license": "Government of Gilgit-Baltistan, Planning & Development Department",
+        "year": 2025
       },
       {
         "field": "population",
