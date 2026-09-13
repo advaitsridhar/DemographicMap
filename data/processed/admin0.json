@@ -66,18 +66,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Muslim",
-        "pct": 99.7
-      },
-      {
-        "group": "other",
-        "pct": 0.3,
-        "bound": "<"
-      }
-    ],
-    "religion_year": 2009,
+    "religion": {
+      "status": "not_collected",
+      "note": "Afghanistan has never completed a population census: the 1979 count was abandoned partway and none has been held since, so no census question on religion exists; the NSIA publishes estimates only."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Afghan Persian or Dari",
@@ -125,11 +118,12 @@
         "bound": "<"
       }
     ],
+    "language_year": 2020,
     "ethnicity": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: current, reliable statistical data on ethnicity in Afghanistan are not available; Afghanistan's 2004 Constitution cited Pashtun, Tajik, Hazara, Uzbek, Turkman, Baluch, Pashaie, Nur"
+      "status": "not_collected",
+      "note": "Afghanistan has never completed a population census, so no census question on ethnicity exists; the NSIA publishes estimates only."
     },
-    "ethnicity_year": 2004,
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -198,6 +192,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -329,6 +324,7 @@
         "pct": 0.1
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Albanian",
@@ -431,18 +427,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Muslim",
-        "pct": 99.0
-      },
-      {
-        "group": "other",
-        "pct": 1.0,
-        "bound": "<"
-      }
-    ],
-    "religion_year": 2012,
+    "religion": {
+      "status": "not_collected",
+      "note": "Algeria's census does not ask religion; censuses on a religious, linguistic or ethnic basis are barred to preserve national unity. The 2022 RGPH form has no such question."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Arabic",
@@ -475,17 +464,11 @@
         "pct_status": "not_available"
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Arab-Amazigh",
-        "pct": 99.0
-      },
-      {
-        "group": "European",
-        "pct": 1.0,
-        "bound": "<"
-      }
-    ],
+    "language_year": null,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Algeria's census does not ask ethnicity, barred with religion and language; the 2022 RGPH form has no such question."
+    },
     "ethnicity_year": null,
     "sources": [
       {
@@ -607,6 +590,7 @@
         "pct": 0.5
       }
     ],
+    "language_year": 2020,
     "ethnicity": [
       {
         "group": "Pacific Islander",
@@ -745,6 +729,7 @@
         "pct": 6.8
       }
     ],
+    "language_year": 2022,
     "ethnicity": [
       {
         "group": "Spanish",
@@ -938,6 +923,7 @@
         "pct": 3.6
       }
     ],
+    "language_year": 2014,
     "ethnicity": [
       {
         "group": "Ovimbundu",
@@ -1080,6 +1066,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "African/Black",
@@ -1169,6 +1156,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -1286,6 +1274,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "African descent",
@@ -1420,33 +1409,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Roman Catholic",
-        "pct": 62.9
-      },
-      {
-        "group": "Evangelical",
-        "pct": 15.3
-      },
-      {
-        "group": "Jehovah's Witness and Church of Jesus Christ",
-        "pct": 1.4
-      },
-      {
-        "group": "other",
-        "pct": 1.2
-      },
-      {
-        "group": "none",
-        "pct": 18.9
-      },
-      {
-        "group": "unspecified",
-        "pct": 0.3
-      }
-    ],
-    "religion_year": 2019,
+    "religion": {
+      "status": "not_collected",
+      "note": "Argentina's census has not asked religion since 1960; only the 1947 and 1960 censuses carried the question. The 2022 census asks indigenous and Afro-descendant self-recognition instead."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Spanish",
@@ -1489,6 +1456,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "European and Mestizo",
@@ -1606,6 +1574,7 @@
         "pct": 1.0
       }
     ],
+    "language_year": 2022,
     "ethnicity": [
       {
         "group": "Armenian",
@@ -1751,6 +1720,7 @@
         "pct": 0.4
       }
     ],
+    "language_year": 2010,
     "ethnicity": [
       {
         "group": "Dutch",
@@ -1836,6 +1806,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -2021,6 +1992,7 @@
         "pct": 5.7
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "English",
@@ -2145,37 +2117,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Roman Catholic",
-        "pct": 55.2
-      },
-      {
-        "group": "Muslim",
-        "pct": 8.3
-      },
-      {
-        "group": "Orthodox",
-        "pct": 4.9
-      },
-      {
-        "group": "Evangelical Christian",
-        "pct": 3.8
-      },
-      {
-        "group": "Jewish",
-        "pct": 0.1
-      },
-      {
-        "group": "other",
-        "pct": 5.4
-      },
-      {
-        "group": "none",
-        "pct": 22.4
-      }
-    ],
-    "religion_year": 2021,
+    "religion": {
+      "status": "not_collected",
+      "note": "Austria's register-based census carries no religion; the last religion question was in the 2001 census."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "German",
@@ -2198,37 +2144,12 @@
         "pct": 5.3
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Austrian",
-        "pct": 80.8
-      },
-      {
-        "group": "German",
-        "pct": 2.6
-      },
-      {
-        "group": "Bosnian and Herzegovinian",
-        "pct": 1.9
-      },
-      {
-        "group": "Turkish",
-        "pct": 1.8
-      },
-      {
-        "group": "Serbian",
-        "pct": 1.6
-      },
-      {
-        "group": "Romanian",
-        "pct": 1.3
-      },
-      {
-        "group": "other",
-        "pct": 10.0
-      }
-    ],
-    "ethnicity_year": 2018,
+    "language_year": 2001,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Austria's census has been register-based since 2011 (Registerzählung) and records citizenship and country of birth; no register holds ethnicity."
+    },
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -2337,6 +2258,7 @@
         "pct": 1.4
       }
     ],
+    "language_year": 2019,
     "ethnicity": [
       {
         "group": "Azerbaijani",
@@ -2458,6 +2380,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Bahraini",
@@ -2549,6 +2472,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -2686,6 +2610,7 @@
         "pct": 1.2
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Bengali",
@@ -2823,6 +2748,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "African descent",
@@ -2927,25 +2853,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Orthodox",
-        "pct": 48.3
-      },
-      {
-        "group": "Catholic",
-        "pct": 7.1
-      },
-      {
-        "group": "other",
-        "pct": 3.5
-      },
-      {
-        "group": "non-believers",
-        "pct": 41.1
-      }
-    ],
-    "religion_year": 2011,
+    "religion": {
+      "status": "not_collected",
+      "note": "Belarus's 2019 census asked nationality and language, not religion."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Russian",
@@ -2964,6 +2876,7 @@
         "pct": 2.3
       }
     ],
+    "language_year": 2019,
     "ethnicity": [
       {
         "group": "Belarusian",
@@ -3074,38 +2987,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Roman Catholic",
-        "pct": 57.1
-      },
-      {
-        "group": "Protestant",
-        "pct": 2.3
-      },
-      {
-        "group": "other Christian",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Muslim",
-        "pct": 6.8
-      },
-      {
-        "group": "other",
-        "pct": 1.7
-      },
-      {
-        "group": "atheist",
-        "pct": 9.1
-      },
-      {
-        "group": "nonbeliever/agnostic",
-        "pct": 20.2
-      }
-    ],
-    "religion_year": 2018,
+    "religion": {
+      "status": "not_collected",
+      "note": "Belgium's census is compiled from registers and has never carried religion."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Dutch",
@@ -3121,11 +3007,12 @@
         "bound": "<"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "Belgium does not collect ethnicity; language community is administrative, not a census question."
     },
-    "ethnicity_year": 2012,
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -3264,6 +3151,7 @@
         "pct": 0.5
       }
     ],
+    "language_year": 2010,
     "ethnicity": [
       {
         "group": "Mestizo",
@@ -3452,6 +3340,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Fon and related",
@@ -3619,6 +3508,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "African descent",
@@ -3719,21 +3609,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Lamaistic Buddhist",
-        "pct": 75.3
-      },
-      {
-        "group": "Indian- and Nepali-influenced Hinduism",
-        "pct": 22.1
-      },
-      {
-        "group": "other",
-        "pct": 2.6
-      }
-    ],
-    "religion_year": 2005,
+    "religion": {
+      "status": "not_collected",
+      "note": "Bhutan's census does not ask religion. The 2017 round published 288 pages of national tables and 20 dzongkhag volumes on education, fertility, mortality, disability, labour, migration and housing, and asked nothing about it; the 2005 round did not either."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Sharchopkha",
@@ -3752,20 +3632,11 @@
         "pct": 26.0
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Ngalop",
-        "pct": 50.0
-      },
-      {
-        "group": "ethnic Nepali",
-        "pct": 35.0
-      },
-      {
-        "group": "indigenous or migrant tribes",
-        "pct": 15.0
-      }
-    ],
+    "language_year": 2005,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Bhutan's census does not ask ethnicity. It does publish citizenship -- Bhutanese against non-Bhutanese, down to gewog -- which is not the same question and is not used as a proxy for it here: citizenship is the contested variable in Bhutan, the 1985 Citizenship Act being how much of the Lhotshampa population lost its legal standing before leaving."
+    },
     "ethnicity_year": null,
     "sources": [
       {
@@ -3923,6 +3794,7 @@
         "pct": 2.1
       }
     ],
+    "language_year": 2012,
     "ethnicity": [
       {
         "group": "Mestizo",
@@ -4084,6 +3956,7 @@
         "pct": 0.2
       }
     ],
+    "language_year": 2013,
     "ethnicity": [
       {
         "group": "Bosniak",
@@ -4245,6 +4118,7 @@
         "pct": 2.8
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Tswana",
@@ -4322,6 +4196,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -4511,6 +4386,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "mixed",
@@ -4590,6 +4466,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -4715,6 +4592,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "African/Black",
@@ -4863,6 +4741,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Malay",
@@ -5000,6 +4879,7 @@
         "pct": 10.4
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Bulgarian",
@@ -5195,6 +5075,7 @@
         "pct": 6.6
       }
     ],
+    "language_year": 2019,
     "ethnicity": [
       {
         "group": "Mossi",
@@ -5367,6 +5248,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Burman",
@@ -5525,6 +5407,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": 2008,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Hutu, Tutsi, Twa, South Asian"
@@ -5662,6 +5545,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Creole",
@@ -5795,6 +5679,7 @@
         "pct": 0.2
       }
     ],
+    "language_year": 2019,
     "ethnicity": [
       {
         "group": "Khmer",
@@ -5941,6 +5826,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Bamileke-Bamu",
@@ -6170,6 +6056,7 @@
         "pct": 1.5
       }
     ],
+    "language_year": 2022,
     "ethnicity": [
       {
         "group": "Canadian",
@@ -6351,6 +6238,7 @@
         "pct": 0.7
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Cayman Islander",
@@ -6527,6 +6415,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Baya",
@@ -6705,6 +6594,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Sara",
@@ -6922,6 +6812,7 @@
         "pct": 0.2
       }
     ],
+    "language_year": 2012,
     "ethnicity": [
       {
         "group": "White and non-Indigenous",
@@ -7056,7 +6947,7 @@
       "status": "not_collected",
       "note": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead."
     },
-    "religion_year": 2021,
+    "religion_year": null,
     "language": [
       {
         "group": "Standard Chinese or Mandarin (official",
@@ -7114,6 +7005,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Han Chinese",
@@ -7252,6 +7144,7 @@
         "pct": 27.1
       }
     ],
+    "language_year": 2016,
     "ethnicity": [
       {
         "group": "Chinese",
@@ -7325,6 +7218,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "France does not collect ethnicity; statistiques ethniques are barred by law (Loi Informatique et Libertes 1978, Conseil constitutionnel 2007)."
@@ -7425,6 +7319,7 @@
         "pct": 8.9
       }
     ],
+    "language_year": 2016,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Europeans, Cocos Malays"
@@ -7537,46 +7432,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Roman Catholic",
-        "pct": 63.6
-      },
-      {
-        "group": "Protestant",
-        "pct": 17.2
-      },
-      {
-        "group": "Jehovah's Witness",
-        "pct": 0.6
-      },
-      {
-        "group": "Church of Jesus Christ",
-        "pct": 0.1
-      },
-      {
-        "group": "other",
-        "pct": 0.3
-      },
-      {
-        "group": "believer",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "atheist",
-        "pct": 1.0
-      },
-      {
-        "group": "none",
-        "pct": 14.2
-      },
-      {
-        "group": "unspecified",
-        "pct": 1.8
-      }
-    ],
-    "religion_year": 2023,
+    "religion": {
+      "status": "not_collected",
+      "note": "Colombia's census does not ask religion; DANE publishes no religious statistics. The 2018 census asked ethnic self-recognition, which is on the map."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Spanish",
@@ -7591,6 +7451,7 @@
         "pct": 0.1
       }
     ],
+    "language_year": 2023,
     "ethnicity": [
       {
         "group": "Mestizo and White",
@@ -7733,6 +7594,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Antalote, Cafre, Makoa, Oimatsaha, Sakalava"
@@ -7873,6 +7735,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Kongo",
@@ -8042,6 +7905,7 @@
         "pct": 8.3
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Cook Island Maori",
@@ -8131,6 +7995,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -8252,6 +8117,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "White or Mestizo",
@@ -8413,6 +8279,7 @@
         "pct": 3.1
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Croat",
@@ -8556,6 +8423,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "White",
@@ -8713,6 +8581,7 @@
         "pct": 0.3
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Curacaoan",
@@ -8924,6 +8793,7 @@
         "pct": 0.6
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Greek",
@@ -9057,6 +8927,7 @@
         "pct": 7.2
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Czech",
@@ -9201,6 +9072,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Akan",
@@ -9390,6 +9262,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: more than 200 African ethnic groups of which the majority are Bantu; the four largest groups - Mongo, Luba, Kongo (all Bantu), and the Mangbetu-Azande (Hamitic) - make up about 45%"
@@ -9509,11 +9382,12 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "Denmark records ancestry/citizenship, not ethnicity."
     },
-    "ethnicity_year": 2023,
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -9582,6 +9456,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -9697,6 +9572,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Somali",
@@ -9832,6 +9708,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "African descent",
@@ -10022,6 +9899,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -10151,6 +10029,7 @@
         "pct": 0.6
       }
     ],
+    "language_year": 2022,
     "ethnicity": [
       {
         "group": "Mestizo",
@@ -10298,6 +10177,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Egyptian",
@@ -10417,6 +10297,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Mestizo",
@@ -10546,6 +10427,7 @@
         "pct": 32.4
       }
     ],
+    "language_year": 1994,
     "ethnicity": [
       {
         "group": "Fang",
@@ -10700,6 +10582,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Tigrinya",
@@ -10857,6 +10740,7 @@
         "pct": 0.6
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Estonian",
@@ -10989,6 +10873,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: predominantly Swazi; smaller populations of other African ethnic groups, including the Zulu, as well as people of European ancestry"
@@ -11161,6 +11046,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": 2007,
     "ethnicity": [
       {
         "group": "Oromo",
@@ -11309,6 +11195,7 @@
         "pct": 3.3
       }
     ],
+    "language_year": 2006,
     "ethnicity": [
       {
         "group": "Falkland Islander",
@@ -11450,6 +11337,7 @@
         "pct": 3.0
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Faroese",
@@ -11624,6 +11512,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Chuukese/Mortlockese",
@@ -11788,6 +11677,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "iTaukei",
@@ -11921,9 +11811,10 @@
         "pct": 7.2
       }
     ],
+    "language_year": 2022,
     "ethnicity": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: Finnish, Swedish, Russian, Estonian, Romani, Sami"
+      "status": "not_collected",
+      "note": "Finland's census is register-based and records citizenship, country of birth and mother tongue, not ethnicity."
     },
     "ethnicity_year": null,
     "sources": [
@@ -12037,7 +11928,7 @@
       "status": "not_collected",
       "note": "France does not collect religion in its census for the same reason."
     },
-    "religion_year": 2021,
+    "religion_year": null,
     "language": [
       {
         "group": "French",
@@ -12049,6 +11940,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "France does not collect ethnicity; statistiques ethniques are barred by law (Loi Informatique et Libertes 1978, Conseil constitutionnel 2007)."
@@ -12176,6 +12068,7 @@
         "pct": 1.6
       }
     ],
+    "language_year": 2017,
     "ethnicity": [
       {
         "group": "Polynesian",
@@ -12251,6 +12144,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -12396,6 +12290,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Fang",
@@ -12559,6 +12454,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Palestinian Arab"
@@ -12690,6 +12586,7 @@
         "pct": 1.0
       }
     ],
+    "language_year": 2014,
     "ethnicity": [
       {
         "group": "Georgian",
@@ -12840,11 +12737,12 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "Germany does not collect ethnicity. The census records citizenship and migration background; religion comes from church-tax registration, not fine-grained self-ID."
     },
-    "ethnicity_year": 2022,
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -13003,6 +12901,7 @@
         "pct": 31.2
       }
     ],
+    "language_year": 2010,
     "ethnicity": [
       {
         "group": "Akan",
@@ -13180,6 +13079,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Gibraltarian",
@@ -13290,37 +13190,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Greek Orthodox",
-        "pct": 85.5,
-        "range": [
-          81.0,
-          90.0
-        ]
-      },
-      {
-        "group": "Muslim",
-        "pct": 2.0
-      },
-      {
-        "group": "other",
-        "pct": 3.0
-      },
-      {
-        "group": "none",
-        "pct": 9.5,
-        "range": [
-          4.0,
-          15.0
-        ]
-      },
-      {
-        "group": "unspecified",
-        "pct": 1.0
-      }
-    ],
-    "religion_year": 2015,
+    "religion": {
+      "status": "not_collected",
+      "note": "Greece's census has not asked religion since 1951; the 2021 census records citizenship and country of birth."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Greek",
@@ -13331,6 +13205,7 @@
         "pct": 1.0
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Greek",
@@ -13445,6 +13320,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Greenlandic",
@@ -13588,6 +13464,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "African descent",
@@ -13733,6 +13610,7 @@
         "pct": 6.5
       }
     ],
+    "language_year": 2020,
     "ethnicity": [
       {
         "group": "Native Hawaiian and other Pacific Islander",
@@ -13874,6 +13752,7 @@
         "pct": 0.4
       }
     ],
+    "language_year": 2018,
     "ethnicity": [
       {
         "group": "Mestizo",
@@ -14000,6 +13879,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Guernsey",
@@ -14158,6 +14038,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Fulani",
@@ -14312,6 +14193,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Balanta",
@@ -14487,6 +14369,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": 2014,
     "ethnicity": [
       {
         "group": "East Indian",
@@ -14622,6 +14505,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Black",
@@ -14691,6 +14575,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -14784,11 +14669,12 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Italian, Swiss, Argentinian, and other nationalities from around the world (2017)"
     },
-    "ethnicity_year": 2017,
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -14903,6 +14789,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Mestizo",
@@ -15055,6 +14942,7 @@
         "pct": 3.2
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Chinese",
@@ -15212,6 +15100,7 @@
         "pct": 5.1
       }
     ],
+    "language_year": 2022,
     "ethnicity": [
       {
         "group": "Hungarian",
@@ -15370,29 +15259,12 @@
         "pct_status": "not_available"
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Icelandic",
-        "pct": 78.7
-      },
-      {
-        "group": "Polish",
-        "pct": 5.8
-      },
-      {
-        "group": "Danish",
-        "pct": 1.0
-      },
-      {
-        "group": "Ukrainian",
-        "pct": 1.0
-      },
-      {
-        "group": "other",
-        "pct": 13.5
-      }
-    ],
-    "ethnicity_year": 2024,
+    "language_year": null,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Iceland's census is register-based and records citizenship and country of birth, not ethnicity."
+    },
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -15581,11 +15453,12 @@
         "pct": 5.6
       }
     ],
+    "language_year": 2011,
     "ethnicity": {
       "status": "not_collected",
       "note": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead."
     },
-    "ethnicity_year": 2000,
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -15743,6 +15616,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Javanese",
@@ -15977,9 +15851,10 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: Persian, Azeri, Kurd, Lur, Baloch, Arab, Turkmen, and Turkic tribes"
+      "status": "not_collected",
+      "note": "Iran's census does not ask ethnicity; the 2016 census asked religion in the state's recognised categories, not ethnic group."
     },
     "ethnicity_year": null,
     "sources": [
@@ -16124,28 +15999,11 @@
         "pct_status": "not_available"
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Arab",
-        "pct": 77.5,
-        "range": [
-          75.0,
-          80.0
-        ]
-      },
-      {
-        "group": "Kurdish",
-        "pct": 17.5,
-        "range": [
-          15.0,
-          20.0
-        ]
-      },
-      {
-        "group": "other",
-        "pct": 5.0
-      }
-    ],
+    "language_year": null,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Iraq's 2024 census, the first nationwide count since 1987, deliberately excluded ethnicity from the questionnaire; religion was asked, sect was not."
+    },
     "ethnicity_year": null,
     "sources": [
       {
@@ -16274,6 +16132,7 @@
         "pct": 37.7
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Irish",
@@ -16420,6 +16279,7 @@
         "pct": 2.0
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "White",
@@ -16572,6 +16432,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Jewish",
@@ -16740,6 +16601,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "Italy's census records citizenship, not ethnicity."
@@ -16865,6 +16727,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Black",
@@ -16946,6 +16809,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -17060,9 +16924,9 @@
     },
     "religion": {
       "status": "not_collected",
-      "note": "Japan's census does not ask religion; published figures are religious-body self-reports that exceed the population."
+      "note": "Japan's census does not ask religion. The one official religion statistic counts adherents as religious bodies report them -- 175.1 million against 123.8 million people, and from 0.5 to 3.2 times a prefecture's population depending on where the corporations are registered."
     },
-    "religion_year": 2021,
+    "religion_year": null,
     "language": [
       {
         "group": "Japanese",
@@ -17070,11 +16934,12 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
-      "note": "Japan's census collects nationality, not ethnicity."
+      "note": "Japan's census collects nationality, not ethnicity. The eight tables in e-Stat carrying the word for ethnic group are museum holdings and prison nationality counts."
     },
-    "ethnicity_year": 2022,
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -17197,6 +17062,7 @@
         "pct": 0.9
       }
     ],
+    "language_year": 2001,
     "ethnicity": [
       {
         "group": "Jersey",
@@ -17352,6 +17218,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Jordanian",
@@ -17509,6 +17376,7 @@
         "pct": 35.1
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Kazakh",
@@ -17671,6 +17539,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Kikuyu",
@@ -17846,6 +17715,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "I-Kiribati",
@@ -17991,6 +17861,7 @@
         "pct": 0.1
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Albanians",
@@ -18134,6 +18005,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Kuwaiti",
@@ -18267,6 +18139,7 @@
         "pct": 5.2
       }
     ],
+    "language_year": 2009,
     "ethnicity": [
       {
         "group": "Kyrgyz",
@@ -18408,6 +18281,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Lao",
@@ -18528,33 +18402,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Lutheran",
-        "pct": 36.2
-      },
-      {
-        "group": "Roman Catholic",
-        "pct": 19.5
-      },
-      {
-        "group": "Orthodox",
-        "pct": 19.1
-      },
-      {
-        "group": "other Christian",
-        "pct": 1.6
-      },
-      {
-        "group": "other",
-        "pct": 0.1
-      },
-      {
-        "group": "unspecified/none",
-        "pct": 23.5
-      }
-    ],
-    "religion_year": 2017,
+    "religion": {
+      "status": "not_collected",
+      "note": "Latvia's census does not ask religion; it asks ethnicity and language."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Latvian",
@@ -18573,6 +18425,7 @@
         "pct": 9.4
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Latvian",
@@ -18737,6 +18590,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Arab",
@@ -18879,6 +18733,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Sotho",
@@ -18996,6 +18851,7 @@
         "pct": 20.0
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Kpelle",
@@ -19252,6 +19108,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Amazigh and Arab",
@@ -19405,6 +19262,7 @@
         "pct": 4.6
       }
     ],
+    "language_year": 2015,
     "ethnicity": [
       {
         "group": "Liechtensteiner",
@@ -19566,6 +19424,7 @@
         "pct": 1.7
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Lithuanian",
@@ -19670,25 +19529,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Christian",
-        "pct": 70.6
-      },
-      {
-        "group": "Muslim",
-        "pct": 2.3
-      },
-      {
-        "group": "other",
-        "pct": 0.4
-      },
-      {
-        "group": "unaffiliated",
-        "pct": 26.7
-      }
-    ],
-    "religion_year": 2020,
+    "religion": {
+      "status": "not_collected",
+      "note": "Luxembourg's census (RP 2021) does not ask religion."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Luxembourgish",
@@ -19719,45 +19564,12 @@
         "pct": 10.8
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Luxembourger",
-        "pct": 52.9
-      },
-      {
-        "group": "Portuguese",
-        "pct": 14.5
-      },
-      {
-        "group": "French",
-        "pct": 7.6
-      },
-      {
-        "group": "Italian",
-        "pct": 3.7
-      },
-      {
-        "group": "Belgian",
-        "pct": 3.0
-      },
-      {
-        "group": "German",
-        "pct": 2.0
-      },
-      {
-        "group": "Spanish",
-        "pct": 1.3
-      },
-      {
-        "group": "Romania",
-        "pct": 1.0
-      },
-      {
-        "group": "other",
-        "pct": 14.0
-      }
-    ],
-    "ethnicity_year": 2022,
+    "language_year": 2021,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Luxembourg's census records nationality, not ethnicity."
+    },
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -19887,6 +19699,7 @@
         "pct": 1.8
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Chinese",
@@ -20040,6 +19853,7 @@
         "pct": 0.6
       }
     ],
+    "language_year": 2018,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Malayo-Indonesian (Merina and related Betsileo), Cotiers (mixed African, Malayo-Indonesian, and Arab ancestry - Betsimisaraka, Tsimihety, Antaisaka, Sakalava), French, Indian, Creo"
@@ -20221,6 +20035,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Chewa",
@@ -20450,6 +20265,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Bumiputera",
@@ -20577,6 +20393,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: homogeneous mixture of Sinhalese, Dravidian, Arab, Australasian, and African resulting from historical changes in regional hegemony over marine trade routes"
@@ -20733,6 +20550,7 @@
         "pct": 0.7
       }
     ],
+    "language_year": 2009,
     "ethnicity": [
       {
         "group": "Bambara",
@@ -20887,6 +20705,7 @@
         "pct": 0.9
       }
     ],
+    "language_year": 2005,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Maltese (descendants of ancient Carthaginians and Phoenicians with strong elements of Italian and other Mediterranean stock)"
@@ -21006,6 +20825,7 @@
         "pct": 1.8
       }
     ],
+    "language_year": 1999,
     "ethnicity": [
       {
         "group": "Marshallese",
@@ -21132,6 +20952,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Black Moors",
@@ -21281,6 +21102,7 @@
         "pct": 0.1
       }
     ],
+    "language_year": 2011,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Indo-Mauritian (compose approximately two thirds of the total population), Creole, Sino-Mauritian, Franco-Mauritian"
@@ -21430,6 +21252,7 @@
         "pct": 0.2
       }
     ],
+    "language_year": 2020,
     "ethnicity": [
       {
         "group": "Mestizo",
@@ -21584,6 +21407,7 @@
         "pct": 0.2
       }
     ],
+    "language_year": 2014,
     "ethnicity": [
       {
         "group": "Moldovan",
@@ -21725,6 +21549,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Monegasque",
@@ -21896,6 +21721,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": 1999,
     "ethnicity": [
       {
         "group": "Khalkh",
@@ -22065,6 +21891,7 @@
         "pct": 4.0
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Montenegrin",
@@ -22219,6 +22046,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "African/Black",
@@ -22401,6 +22229,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Arab-Amazigh",
@@ -22587,6 +22416,7 @@
         "pct": 1.8
       }
     ],
+    "language_year": 2017,
     "ethnicity": [
       {
         "group": "African",
@@ -22736,6 +22566,7 @@
         "pct": 1.0
       }
     ],
+    "language_year": 2016,
     "ethnicity": [
       {
         "group": "Ovambo",
@@ -22890,6 +22721,7 @@
         "pct": 5.0
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Nauruan",
@@ -22967,6 +22799,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -23130,6 +22963,7 @@
         "pct": 8.9
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Chhettri",
@@ -23327,11 +23161,12 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "The Netherlands records migration background, not ethnicity."
     },
-    "ethnicity_year": 2021,
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -23440,6 +23275,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Kanak",
@@ -23641,6 +23477,7 @@
         "pct": 17.2
       }
     ],
+    "language_year": 2018,
     "ethnicity": [
       {
         "group": "European",
@@ -23814,6 +23651,7 @@
         "pct": 0.1
       }
     ],
+    "language_year": 2020,
     "ethnicity": [
       {
         "group": "Mestizo",
@@ -23971,6 +23809,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Hausa",
@@ -24117,25 +23956,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Muslim",
-        "pct": 53.5
-      },
-      {
-        "group": "Roman Catholic",
-        "pct": 10.6
-      },
-      {
-        "group": "other Christian",
-        "pct": 35.3
-      },
-      {
-        "group": "other",
-        "pct": 0.6
-      }
-    ],
-    "religion_year": 2018,
+    "religion": {
+      "status": "not_collected",
+      "note": "Nigeria's census does not ask religion. The National Population Commission stated in 2022 and 2023 that the question was excluded from the 2023 questionnaire for its sensitivity, as it was from 1991 and 2006; the only subnational figures are survey estimates."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "English",
@@ -24168,45 +23993,12 @@
         "pct_status": "not_available"
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Hausa",
-        "pct": 30.0
-      },
-      {
-        "group": "Yoruba",
-        "pct": 15.5
-      },
-      {
-        "group": "Igbo",
-        "pct": 15.2
-      },
-      {
-        "group": "Fulani",
-        "pct": 6.0
-      },
-      {
-        "group": "Tiv",
-        "pct": 2.4
-      },
-      {
-        "group": "Kanuri/Beriberi",
-        "pct": 2.4
-      },
-      {
-        "group": "Ibibio",
-        "pct": 1.8
-      },
-      {
-        "group": "Ijaw/Izon",
-        "pct": 1.8
-      },
-      {
-        "group": "other",
-        "pct": 24.9
-      }
-    ],
-    "ethnicity_year": 2018,
+    "language_year": null,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Nigeria's census does not ask ethnicity, excluded from the 2023 questionnaire with religion for the same stated reason; the only subnational figures are survey estimates."
+    },
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -24325,6 +24117,7 @@
         "pct": 6.0
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Niuean",
@@ -24442,6 +24235,7 @@
         "pct": 6.2
       }
     ],
+    "language_year": 2016,
     "ethnicity": [
       {
         "group": "Australian",
@@ -24543,8 +24337,8 @@
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
     "religion": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: traditionally Buddhist and Confucian, some Christian and syncretic Chondogyo (Religion of the Heavenly Way)"
+      "status": "not_collected",
+      "note": "North Korea's only modern census, 2008, asked no religion question, and the state publishes no other figures."
     },
     "religion_year": null,
     "language": [
@@ -24554,9 +24348,10 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: racially homogeneous; there is a small Chinese community and a few ethnic Japanese"
+      "status": "not_collected",
+      "note": "North Korea's 2008 census asked no ethnicity question."
     },
     "ethnicity_year": null,
     "sources": [
@@ -24681,6 +24476,7 @@
         "pct": 7.2
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Macedonian",
@@ -24812,6 +24608,7 @@
         "pct": 10.1
       }
     ],
+    "language_year": 2010,
     "ethnicity": [
       {
         "group": "Asian",
@@ -24952,11 +24749,12 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "Norway records immigrant background, not ethnicity."
     },
-    "ethnicity_year": 2021,
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -25015,6 +24813,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -25148,6 +24947,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Arab, Baluchi, South Asian (Indian, Pakistani, Sri Lankan, Bangladeshi), African"
@@ -25313,6 +25113,7 @@
         "pct": 2.4
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Punjabi",
@@ -25470,6 +25271,7 @@
         "pct": 2.8
       }
     ],
+    "language_year": 2015,
     "ethnicity": [
       {
         "group": "Palauan",
@@ -25647,6 +25449,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Mestizo",
@@ -25791,6 +25594,7 @@
         "pct": 12.0
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Melanesian, Papuan, Negrito, Micronesian, Polynesian"
@@ -25856,6 +25660,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -25992,6 +25797,7 @@
         "pct": 0.4
       }
     ],
+    "language_year": 2012,
     "ethnicity": [
       {
         "group": "Mestizo",
@@ -26145,6 +25951,7 @@
         "pct": 0.7
       }
     ],
+    "language_year": 2017,
     "ethnicity": [
       {
         "group": "Mestizo",
@@ -26363,6 +26170,7 @@
         "pct": 0.4
       }
     ],
+    "language_year": 2020,
     "ethnicity": [
       {
         "group": "Tagalog",
@@ -26486,6 +26294,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: descendants of the Bounty mutineers and their Tahitian wives"
@@ -26607,6 +26416,7 @@
         "pct": 1.2
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Polish",
@@ -26757,12 +26567,11 @@
         "pct_status": "not_available"
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Portuguese",
-        "pct": 95.0
-      }
-    ],
+    "language_year": null,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Portugal's census records nationality, not ethnicity; an ethno-racial question was considered for 2021 and not included."
+    },
     "ethnicity_year": null,
     "sources": [
       {
@@ -26876,6 +26685,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "White",
@@ -27029,6 +26839,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "non-Qatari",
@@ -27158,6 +26969,7 @@
         "pct": 0.7
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Romanian",
@@ -27292,29 +27104,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Russian Orthodox",
-        "pct": 17.5,
-        "range": [
-          15.0,
-          20.0
-        ]
-      },
-      {
-        "group": "Muslim",
-        "pct": 12.5,
-        "range": [
-          10.0,
-          15.0
-        ]
-      },
-      {
-        "group": "other Christian",
-        "pct": 2.0
-      }
-    ],
-    "religion_year": 2006,
+    "religion": {
+      "status": "not_collected",
+      "note": "Russia's census has never asked religion; the 2020 census asked nationality and native language, which are on the map."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Russian",
@@ -27333,6 +27127,7 @@
         "pct": 10.1
       }
     ],
+    "language_year": 2010,
     "ethnicity": [
       {
         "group": "Russian",
@@ -27514,6 +27309,7 @@
         "pct": 0.3
       }
     ],
+    "language_year": 2002,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Hutu, Tutsi, Twa"
@@ -27605,6 +27401,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: French, Portuguese, Caribbean, Afro-Caribbean"
@@ -27741,6 +27538,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "St. Helena",
@@ -27853,6 +27651,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "African descent",
@@ -28000,6 +27799,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Black/African descent",
@@ -28144,6 +27944,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Creole (Mulatto), Black, Guadeloupe Mestizo (French-East Asian), White, East Indian, other"
@@ -28244,6 +28045,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Basques and Bretons (French fishermen)"
@@ -28374,6 +28176,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "African descent",
@@ -28531,6 +28334,7 @@
         "pct": 1.6
       }
     ],
+    "language_year": 2006,
     "ethnicity": [
       {
         "group": "Samoan",
@@ -28635,6 +28439,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Sammarinese, Italian"
@@ -28794,6 +28599,7 @@
         "pct": 2.4
       }
     ],
+    "language_year": 2012,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Mestico, Angolares (descendants of Angolan slaves), Forros (descendants of freed slaves), Servicais (contract laborers from Angola, Mozambique, and Cabo Verde), Tongas (children of"
@@ -28906,19 +28712,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Muslim",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "other",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
-    "religion_year": 2020,
+    "religion": {
+      "status": "not_collected",
+      "note": "Saudi Arabia's 2022 census asks citizenship (Saudi or non-Saudi, and country of citizenship) and not religion; there are no official religious statistics at any level."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Arabic",
@@ -28926,16 +28724,11 @@
         "pct_status": "not_available"
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Arab",
-        "pct": 90.0
-      },
-      {
-        "group": "Afro-Asian",
-        "pct": 10.0
-      }
-    ],
+    "language_year": null,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Saudi Arabia's 2022 census records citizenship, not ethnicity."
+    },
     "ethnicity_year": null,
     "sources": [
       {
@@ -29062,6 +28855,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Wolof",
@@ -29223,6 +29017,7 @@
         "pct": 1.8
       }
     ],
+    "language_year": 2011,
     "ethnicity": [
       {
         "group": "Serb",
@@ -29384,6 +29179,7 @@
         "pct": 1.4
       }
     ],
+    "language_year": 2010,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: predominantly Creole (mainly of East African and Malagasy heritage); also French, Indian, Chinese, and Arab populations"
@@ -29499,6 +29295,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Temne",
@@ -29680,6 +29477,7 @@
         "pct": 1.4
       }
     ],
+    "language_year": 2020,
     "ethnicity": [
       {
         "group": "Chinese",
@@ -29849,6 +29647,7 @@
         "pct": 3.5
       }
     ],
+    "language_year": 2001,
     "ethnicity": [
       {
         "group": "Saint Maarten",
@@ -30054,6 +29853,7 @@
         "pct": 5.7
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Slovak",
@@ -30154,41 +29954,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Catholic",
-        "pct": 69.0
-      },
-      {
-        "group": "Orthodox",
-        "pct": 4.0
-      },
-      {
-        "group": "Muslim",
-        "pct": 3.0
-      },
-      {
-        "group": "Christian",
-        "pct": 1.0
-      },
-      {
-        "group": "other",
-        "pct": 3.0
-      },
-      {
-        "group": "atheist",
-        "pct": 14.0
-      },
-      {
-        "group": "non-believer/agnostic",
-        "pct": 4.0
-      },
-      {
-        "group": "refused to answer",
-        "pct": 2.0
-      }
-    ],
-    "religion_year": 2019,
+    "religion": {
+      "status": "not_collected",
+      "note": "Slovenia's register-based census carries no religion; last asked in 2002."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Slovene",
@@ -30223,29 +29993,12 @@
         "pct": 3.9
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Slovene",
-        "pct": 83.1
-      },
-      {
-        "group": "Serb",
-        "pct": 2.0
-      },
-      {
-        "group": "Croat",
-        "pct": 1.8
-      },
-      {
-        "group": "Bosniak",
-        "pct": 1.1
-      },
-      {
-        "group": "other or unspecified",
-        "pct": 12.0
-      }
-    ],
-    "ethnicity_year": 2002,
+    "language_year": 2002,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Slovenia's census has been register-based since 2011; ethnic affiliation was last asked in 2002."
+    },
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -30361,6 +30114,7 @@
         ]
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Melanesian",
@@ -30496,6 +30250,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: predominantly Somali with lesser numbers of Arabs, Bantus, and others"
@@ -30681,6 +30436,7 @@
         "pct": 2.0
       }
     ],
+    "language_year": 2018,
     "ethnicity": [
       {
         "group": "Black African",
@@ -30758,6 +30514,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -30901,6 +30658,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "South Korea's census does not collect ethnicity."
@@ -30983,31 +30741,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Christian",
-        "pct": 60.5
-      },
-      {
-        "group": "folk religion",
-        "pct": 32.9
-      },
-      {
-        "group": "Muslim",
-        "pct": 6.2
-      },
-      {
-        "group": "other",
-        "pct": 1.0,
-        "bound": "<"
-      },
-      {
-        "group": "unaffiliated",
-        "pct": 1.0,
-        "bound": "<"
-      }
-    ],
-    "religion_year": 2020,
+    "religion": {
+      "status": "not_collected",
+      "note": "South Sudan has held no census since independence; the 2008 Sudan census that covered it dropped religion from the questionnaire by decision of the Presidency."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "English",
@@ -31045,111 +30783,12 @@
         "pct_status": "not_available"
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Dinka",
-        "pct": 37.5,
-        "range": [
-          35.0,
-          40.0
-        ]
-      },
-      {
-        "group": "Nuer",
-        "pct": 15.0
-      },
-      {
-        "group": "Shilluk",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Azande",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Bari",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Kakwa",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Kuku",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Murle",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Mandari",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Didinga",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Ndogo",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Bviri",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Lndi",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Anuak",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Bongo",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Lango",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Dungotona",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Acholi",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Baka",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Fertit",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
-    "ethnicity_year": 2011,
+    "language_year": null,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "South Sudan has held no census since independence; the 2008 Sudan census that covered it dropped ethnicity with religion."
+    },
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -31243,7 +30882,7 @@
       "status": "not_collected",
       "note": "Spain's census does not ask religion (CIS survey data exists instead)."
     },
-    "religion_year": 2021,
+    "religion_year": null,
     "language": [
       {
         "group": "Castilian Spanish",
@@ -31267,11 +30906,12 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "Spain's census records nationality and birthplace, not ethnicity."
     },
-    "ethnicity_year": 2021,
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -31330,6 +30970,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -31459,6 +31100,7 @@
         "pct": 23.8
       }
     ],
+    "language_year": 2012,
     "ethnicity": [
       {
         "group": "Sinhalese",
@@ -31566,8 +31208,8 @@
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
     "religion": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: Sunni Muslim, small Christian minority"
+      "status": "not_collected",
+      "note": "Sudan's 2008 census, the last, dropped religion from the questionnaire by decision of the Presidency (UNSD country paper; IHSN catalogue); the only subnational figures are survey estimates."
     },
     "religion_year": null,
     "language": [
@@ -31597,67 +31239,11 @@
         "pct_status": "not_available"
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Sudanese Arab",
-        "pct": 70.0
-      },
-      {
-        "group": "Fur",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Beja",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Nuba",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Ingessana",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Uduk",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Fallata",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Masalit",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Dajo",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Gimir",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Tunjur",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Berti",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language_year": null,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Sudan's 2008 census dropped ethnicity with religion; the last count of ethnic group was 1956, on nine provinces that match no current boundary."
+    },
     "ethnicity_year": null,
     "sources": [
       {
@@ -31811,6 +31397,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Hindustani",
@@ -31912,6 +31499,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Norwegian",
@@ -32000,21 +31588,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Church of Sweden",
-        "pct": 53.9
-      },
-      {
-        "group": "other",
-        "pct": 8.9
-      },
-      {
-        "group": "none or unspecified",
-        "pct": 37.2
-      }
-    ],
-    "religion_year": 2021,
+    "religion": {
+      "status": "not_collected",
+      "note": "Sweden's census is compiled from registers, and no register records religion; the state kept none after the Church of Sweden separated in 2000."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Swedish",
@@ -32022,11 +31600,12 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_collected",
       "note": "Sweden records country of birth and citizenship, not ethnicity."
     },
-    "ethnicity_year": 2022,
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -32183,41 +31762,12 @@
         "pct": 7.9
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Swiss",
-        "pct": 69.2
-      },
-      {
-        "group": "German",
-        "pct": 4.2
-      },
-      {
-        "group": "Italian",
-        "pct": 3.2
-      },
-      {
-        "group": "Portuguese",
-        "pct": 2.5
-      },
-      {
-        "group": "French",
-        "pct": 2.1
-      },
-      {
-        "group": "Kosovan",
-        "pct": 1.1
-      },
-      {
-        "group": "Turkish",
-        "pct": 1.0
-      },
-      {
-        "group": "other",
-        "pct": 16.7
-      }
-    ],
-    "ethnicity_year": 2020,
+    "language_year": 2019,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Switzerland's census records nationality, not ethnicity; religion and language come from the structural survey."
+    },
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -32313,20 +31863,10 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Muslim",
-        "pct": 87.0
-      },
-      {
-        "group": "Christian",
-        "pct": 10.0
-      },
-      {
-        "group": "Druze",
-        "pct": 3.0
-      }
-    ],
+    "religion": {
+      "status": "not_collected",
+      "note": "Syria's census has not asked religion since 1960; the 2004 census asked nationality (citizenship) only, as the US Census Bureau workbook's dictionary confirms."
+    },
     "religion_year": null,
     "language": [
       {
@@ -32365,9 +31905,10 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: Arab ~50%, Alawite ~15%, Kurd ~10%, Levantine ~10%, other ~15% (includes Druze, Ismaili, Imami, Nusairi, Assyrian, Turkoman, Armenian)"
+      "status": "not_collected",
+      "note": "Syria's census has never asked ethnicity; the 2004 sheet labelled Ethnicity is a distribution by nationality, which is citizenship."
     },
     "ethnicity_year": null,
     "sources": [
@@ -32522,6 +32063,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Han Chinese",
@@ -32640,6 +32182,7 @@
         "pct": 2.4
       }
     ],
+    "language_year": 2010,
     "ethnicity": [
       {
         "group": "Tajik",
@@ -32750,45 +32293,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Christian",
-        "pct": 63.1
-      },
-      {
-        "group": "Muslim",
-        "pct": 34.1
-      },
-      {
-        "group": "folk religion",
-        "pct": 1.1
-      },
-      {
-        "group": "Buddhist",
-        "pct": 1.0,
-        "bound": "<"
-      },
-      {
-        "group": "Hindu",
-        "pct": 1.0,
-        "bound": "<"
-      },
-      {
-        "group": "Jewish",
-        "pct": 1.0,
-        "bound": "<"
-      },
-      {
-        "group": "other",
-        "pct": 1.0,
-        "bound": "<"
-      },
-      {
-        "group": "unspecified",
-        "pct": 1.6
-      }
-    ],
-    "religion_year": 2020,
+    "religion": {
+      "status": "not_collected",
+      "note": "Tanzania's census has not asked religion since 1967; the 2022 census did not, and the only subnational figures are survey estimates."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Kiswahili or Swahili",
@@ -32831,16 +32340,11 @@
         "pct_status": "not_available"
       }
     ],
-    "ethnicity": [
-      {
-        "group": "mainland - African",
-        "pct": 99.0
-      },
-      {
-        "group": "other",
-        "pct": 1.0
-      }
-    ],
+    "language_year": null,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Tanzania's census has not asked ethnic group since 1973; the 2022 census did not."
+    },
     "ethnicity_year": null,
     "sources": [
       {
@@ -32982,6 +32486,7 @@
         "pct": 2.9
       }
     ],
+    "language_year": 2010,
     "ethnicity": [
       {
         "group": "Thai",
@@ -33118,6 +32623,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "African descent",
@@ -33244,6 +32750,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "mixed",
@@ -33382,6 +32889,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Mandinka/Jahanka",
@@ -33571,6 +33079,7 @@
         "pct": 4.5
       }
     ],
+    "language_year": 2015,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Austronesian (Malayo-Polynesian) (includes Tetun, Mambai, Tokodede, Galoli, Kemak, Baikeno), Melanesian-Papuan (includes Bunak, Fataluku, Bakasai), small Chinese minority"
@@ -33714,6 +33223,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Adja-Ewe/Mina",
@@ -33862,6 +33372,7 @@
         "pct": 0.8
       }
     ],
+    "language_year": 2016,
     "ethnicity": [
       {
         "group": "Tokelauan",
@@ -34015,6 +33526,7 @@
         "pct": 1.1
       }
     ],
+    "language_year": 2021,
     "ethnicity": [
       {
         "group": "Tongan",
@@ -34175,6 +33687,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "East Indian",
@@ -34279,17 +33792,10 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Muslim",
-        "pct": 99.0
-      },
-      {
-        "group": "other",
-        "pct": 1.0,
-        "bound": "<"
-      }
-    ],
+    "religion": {
+      "status": "not_collected",
+      "note": "Tunisia's census (2014, 2024) carries no religion question; the national figure is an estimate, not a count, and the only subnational figures are survey estimates."
+    },
     "religion_year": null,
     "language": [
       {
@@ -34313,20 +33819,11 @@
         "pct_status": "not_available"
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Arab",
-        "pct": 98.0
-      },
-      {
-        "group": "European",
-        "pct": 1.0
-      },
-      {
-        "group": "Jewish and other",
-        "pct": 1.0
-      }
-    ],
+    "language_year": null,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Tunisia's census does not ask ethnicity."
+    },
     "ethnicity_year": null,
     "sources": [
       {
@@ -34435,16 +33932,10 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Muslim",
-        "pct": 99.8
-      },
-      {
-        "group": "other",
-        "pct": 0.2
-      }
-    ],
+    "religion": {
+      "status": "not_collected",
+      "note": "Turkey does not publish religion. Its statistical database lists 92 subjects and none is religion; population figures come from an address-based register."
+    },
     "religion_year": null,
     "language": [
       {
@@ -34463,29 +33954,12 @@
         "pct_status": "not_available"
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Turkish",
-        "pct": 72.5,
-        "range": [
-          70.0,
-          75.0
-        ]
-      },
-      {
-        "group": "Kurdish",
-        "pct": 19.0
-      },
-      {
-        "group": "other minorities",
-        "pct": 8.5,
-        "range": [
-          6.0,
-          11.0
-        ]
-      }
-    ],
-    "ethnicity_year": 2016,
+    "language_year": null,
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Turkey has not collected ethnicity since the 1965 census; its address-based register records residence and citizenship instead."
+    },
+    "ethnicity_year": null,
     "sources": [
       {
         "field": "*",
@@ -34617,6 +34091,7 @@
         "pct": 7.0
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Turkmen",
@@ -34739,6 +34214,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Black",
@@ -34884,6 +34360,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Tuvaluan",
@@ -35035,6 +34512,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Baganda",
@@ -35180,10 +34658,10 @@
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
     "religion": {
-      "status": "not_available",
-      "note": "Factbook reports free text only: Orthodox (includes the Orthodox Church of Ukraine (OCU), Ukrainian Autocephalous Orthodox Church (UAOC), and the Ukrainian Orthodox - Moscow Patriarchate (UOC-MP)), Ukrainian Greek"
+      "status": "not_collected",
+      "note": "Ukraine's 2001 census asked nationality and language, not religion."
     },
-    "religion_year": 2013,
+    "religion_year": null,
     "language": [
       {
         "group": "Ukrainian",
@@ -35198,6 +34676,7 @@
         "pct": 2.9
       }
     ],
+    "language_year": 2001,
     "ethnicity": [
       {
         "group": "Ukrainian",
@@ -35403,6 +34882,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Emirati",
@@ -35567,6 +35047,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "White",
@@ -35770,6 +35251,7 @@
         "pct": 7.3
       }
     ],
+    "language_year": 2017,
     "ethnicity": [
       {
         "group": "White",
@@ -35917,6 +35399,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "White",
@@ -36050,6 +35533,7 @@
         "pct": 7.1
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Uzbek",
@@ -36211,6 +35695,7 @@
         "pct": 0.8
       }
     ],
+    "language_year": 2020,
     "ethnicity": [
       {
         "group": "Ni-Vanuatu",
@@ -36329,50 +35814,11 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": [
-      {
-        "group": "Roman Catholic",
-        "pct": 48.1
-      },
-      {
-        "group": "Protestant",
-        "pct": 31.6
-      },
-      {
-        "group": "Jehovah's Witness",
-        "pct": 1.4
-      },
-      {
-        "group": "African American/umbanda",
-        "pct": 0.7
-      },
-      {
-        "group": "other",
-        "pct": 0.1
-      },
-      {
-        "group": "believer",
-        "pct": 3.5
-      },
-      {
-        "group": "agnostic",
-        "pct": 0.1
-      },
-      {
-        "group": "atheist",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "none",
-        "pct": 13.6
-      },
-      {
-        "group": "unspecified",
-        "pct": 0.6
-      }
-    ],
-    "religion_year": 2023,
+    "religion": {
+      "status": "not_collected",
+      "note": "Venezuela's 2011 census asked indigenous and Afro-descendant self-recognition and not religion; no census since 1961 has carried a religion question."
+    },
+    "religion_year": null,
     "language": [
       {
         "group": "Spanish",
@@ -36391,6 +35837,7 @@
         "pct": 0.4
       }
     ],
+    "language_year": 2023,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: unspecified Spanish, Italian, Portuguese, Arab, German, African, Indigenous"
@@ -36558,6 +36005,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Kinh",
@@ -36711,6 +36159,7 @@
         "pct": 2.5
       }
     ],
+    "language_year": 2010,
     "ethnicity": [
       {
         "group": "African-American or African descent",
@@ -36796,6 +36245,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -36907,6 +36357,7 @@
         "pct": 0.2
       }
     ],
+    "language_year": 2003,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Polynesian"
@@ -37043,6 +36494,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Palestinian Arab, Jewish, other"
@@ -37160,6 +36612,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: Arab, Berber"
@@ -37223,6 +36676,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -37286,6 +36740,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -37404,6 +36859,7 @@
         "pct_status": "not_available"
       }
     ],
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "Factbook reports free text only: predominantly Arab; but also Afro-Arab, South Asian, European"
@@ -37467,6 +36923,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -37530,6 +36987,7 @@
     "language": {
       "status": "not_available"
     },
+    "language_year": null,
     "ethnicity": {
       "status": "not_available",
       "note": "No composition published by the Factbook for this entity."
@@ -37715,6 +37173,7 @@
         "pct": 0.2
       }
     ],
+    "language_year": 2010,
     "ethnicity": [
       {
         "group": "Bemba",
@@ -37932,6 +37391,7 @@
         "pct": 0.3
       }
     ],
+    "language_year": 2022,
     "ethnicity": [
       {
         "group": "African",
