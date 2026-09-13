@@ -326,6 +326,55 @@ MERGED: dict[str, tuple[str, ...]] = {
 COLUMNS = ["TOTAL", "Muslim", "Christian", "Hindu", "Ahmadi",
            "Scheduled Castes", "Sikh", "Parsi", "Other religion"]
 
+# Table 11's, from the same files' header row. Fifteen tongues where the 2017
+# round named nine: Shina, Balti, Mewati, Kalasha and Kohistani were added,
+# and that addition is the whole reason this table is read.
+#
+# The 2017 table reached this map through the U.S. Census Bureau's HDX tables
+# and left two districts almost entirely unnamed -- Chitral 93.1% Other,
+# Kohistan 91.9% -- because the languages those districts actually speak had
+# no column to be counted in. Reading the 2023 table directly puts Kohistani
+# on Kohistan and Kalasha on Chitral, and it puts language on the same census
+# round as the religion and population already read from Table 9 beside it,
+# which the 2017 figures never were.
+#
+# "KOHIOSTANI" is the office's own spelling in the header; it is not repeated
+# here, because what this list names is the group as this map writes it.
+TONGUE_COLUMNS = ["TOTAL", "Urdu", "Punjabi", "Sindhi", "Pushto", "Balochi",
+                  "Kashmiri", "Saraiki", "Hindko", "Brahvi", "Shina", "Balti",
+                  "Mewati", "Kalasha", "Kohistani", "Other language"]
+
+# Filed exactly as Table 9 is, province by province, and Islamabad again
+# without the word "districts" -- the same scheme, so the same two paths are
+# tried. Gilgit-Baltistan and Azad Jammu and Kashmir answer 404 here as they
+# do for Table 9: the Bureau does not publish either table for either
+# territory, which is one fact about its coverage rather than two.
+TONGUE_FILES: dict[str, tuple[str, ...]] = {
+    "kp": (f"{BASE}/table_11_kp_districts.pdf",
+           f"{DCR}/kp/dcr/table_11.pdf"),
+    "punjab": (f"{BASE}/table_11_punjab_districts.pdf",
+               f"{DCR}/punjab/dcr/table_11.pdf"),
+    "sindh": (f"{BASE}/table_11_sindh_districts.pdf",
+              f"{DCR}/sindh/dcr/table_11.pdf"),
+    "balochistan": (f"{BASE}/table_11_balochistan_districts.pdf",
+                    f"{DCR}/balochistan/dcr/table_11.pdf"),
+    "ict": (f"{BASE}/table_11_islamabad.pdf",
+            f"{BASE}/table_11_islamabad_districts.pdf",
+            f"{DCR}/islamabad/dcr/table_11.pdf"),
+}
+
+TONGUE_SOURCE = ("Pakistan Bureau of Statistics, 7th Population and Housing "
+                 "Census 2023, Table 11: population by mother tongue, sex and "
+                 "rural/urban")
+TONGUE_NOTE = (
+    "Census 2023 Table 11. The question is mother tongue -- the language of "
+    "the household a person grew up in, rather than the one they speak now. "
+    "The form names fifteen tongues and an Other, six more than the 2017 "
+    "round, which is what lets Kohistani and Kalasha be counted by name here "
+    "at all. The Other is still a real category and still large in places: "
+    "Khowar, Burushaski, Torwali, Gujari and Wakhi have no column of their "
+    "own and are counted inside it.")
+
 # A row of figures belongs to one of these. Only ALL SEXES is read: the others
 # are the same people split by sex.
 SEXES = ("ALL SEXES", "MALE", "FEMALE", "TRANSGENDER")
@@ -433,9 +482,16 @@ def values(cells: list[Cell], province: str, where: str,
     return figures
 
 
-def districts(blob: bytes,
-              province: str) -> tuple[dict[str, dict[str, int]], list[int]]:
-    """{district: {religion: count}} for one province's Table 9, and its own.
+def districts(blob: bytes, province: str,
+              columns: list[str] = COLUMNS
+              ) -> tuple[dict[str, dict[str, int]], list[int]]:
+    """{district: {group: count}} for one province's table, and its own row.
+
+    ``columns`` because the Bureau files two tables of this shape and they are
+    not the same width -- Table 9 prints nine cells to a row and Table 11
+    sixteen. Everything else about them is identical, down to the tehsils
+    interleaved with the districts and the dash written for a zero, so the
+    reading is the same reading and the width is the only thing passed in.
 
     The province's own row is the first ALL SEXES line in the file, before any
     district heading, and it is worth keeping: it is the file's own statement
@@ -474,7 +530,8 @@ def districts(blob: bytes,
                 # Before the first district heading, and only then, this is
                 # the province's own row.
                 if not found and not whole and line.startswith("ALL SEXES"):
-                    whole.extend(values(cells, province, province) or [])
+                    whole.extend(
+                        values(cells, province, province, columns) or [])
                 continue
             # The label is two words and the row is a list of words, so
             # comparing the first of them to "ALL SEXES" could never be true:
@@ -482,9 +539,9 @@ def districts(blob: bytes,
             # the file while still counting the tehsils it passed over.
             if not line.startswith("ALL SEXES"):
                 continue
-            numbers = values(cells, province, current)
+            numbers = values(cells, province, current, columns)
             if numbers and current not in found:
-                found[current] = dict(zip(COLUMNS, numbers))
+                found[current] = dict(zip(columns, numbers))
             current = None                          # one row per district
 
     log(f"    {len(found)} districts, {skipped_tehsils} tehsils passed over")
@@ -492,7 +549,7 @@ def districts(blob: bytes,
 
 
 def check(province: str, found: dict[str, dict[str, int]],
-          whole: list[int]) -> None:
+          whole: list[int], parts_are: str = "religions") -> None:
     """Two controls the file supplies itself, neither of them invented here.
 
     Each district's religions must add up to the total printed beside it: a
@@ -512,12 +569,12 @@ def check(province: str, found: dict[str, dict[str, int]],
         if not total:
             bad.append(f"{name}: no total")
         elif abs(parts - total) > max(1, 0.001 * total):
-            bad.append(f"{name}: religions sum to {parts:,} against a "
+            bad.append(f"{name}: {parts_are} sum to {parts:,} against a "
                        f"printed {total:,}")
     if bad:
         raise SystemExit(f"{province}: {len(bad)} districts do not reconcile — "
                          + "; ".join(bad[:4]))
-    log("    every district's religions sum to its own printed total")
+    log(f"    every district's {parts_are} sum to its own printed total")
 
     if not whole:
         raise SystemExit(
@@ -534,7 +591,8 @@ def check(province: str, found: dict[str, dict[str, int]],
 
 
 def province_row(slug: str, province: str, found: dict[str, dict[str, int]],
-                 whole: list[int]) -> list[int]:
+                 whole: list[int],
+                 columns: list[str] = COLUMNS) -> list[int]:
     """The row the districts have to add up to, for a file that prints one.
 
     Every province file prints its own row above its districts. Islamabad's
@@ -559,11 +617,11 @@ def province_row(slug: str, province: str, found: dict[str, dict[str, int]],
     only = next(iter(found.values()))
     log("    one district, and it is the territory: the table prints no "
         "separate territory row")
-    return [only[column] for column in COLUMNS]
+    return [only[column] for column in columns]
 
 
-def merge(province: str,
-          found: dict[str, dict[str, int]]) -> dict[str, tuple[str, ...]]:
+def merge(province: str, found: dict[str, dict[str, int]],
+          columns: list[str] = COLUMNS) -> dict[str, tuple[str, ...]]:
     """Sum the districts that share one boundary shape. Which ones, back."""
     assembled: dict[str, tuple[str, ...]] = {}
     for name, parts in MERGED.items():
@@ -581,7 +639,7 @@ def merge(province: str,
                 f"{province}: {name} is both printed in the table and "
                 "assembled from its parts here, so it would be counted twice")
         found[name] = {column: sum(found[part][column] for part in parts)
-                       for column in COLUMNS}
+                       for column in columns}
         for part in parts:
             del found[part]
         assembled[name] = parts
@@ -1159,13 +1217,67 @@ def declared_gaps(absent: dict[str, list[tuple[str, str]]]) -> list[dict[str, An
     return out
 
 
+def read_tongues(slug: str, province: str,
+                 counted: set[str]) -> tuple[dict[str, dict[str, int]], str]:
+    """Table 11 for one province, read the same way Table 9 was.
+
+    ``counted`` is the set of districts Table 9 produced, after merging, and
+    it is the control this table is held to. The two tables come out of one
+    census and one office, so they should name the same districts; if they do
+    not, one of them has been misread, and the failure mode is silent -- a
+    district whose language row was never found simply has no language, which
+    looks exactly like a district the census did not ask.
+
+    So the sets are compared rather than the rows zipped, and any difference
+    in either direction stops the run. Language is added to Pakistan here; it
+    is not worth adding it in a way that can quietly go missing.
+
+    A province whose file cannot be fetched returns nothing and says so. That
+    is not fatal: religion, population and the province row are already read
+    by then, and losing this table should cost the language field rather than
+    the country.
+    """
+    try:
+        blob, url = fetch(TONGUE_FILES[slug])
+    except LookupError as err:
+        log(f"    NO TABLE 11 -- {err}")
+        return {}, ""
+    log(f"    Table 11: {len(blob):,} bytes from {url}")
+    found, whole = districts(blob, province, TONGUE_COLUMNS)
+    if not found:
+        log("    NO TABLE 11 -- fetched but no districts read")
+        return {}, ""
+    whole = province_row(slug, province, found, whole, TONGUE_COLUMNS)
+    check(province, found, whole, "mother tongues")
+    merge(province, found, TONGUE_COLUMNS)
+    if set(found) != counted:
+        raise SystemExit(
+            f"{province}: Table 11 names districts Table 9 does not, or the "
+            f"other way about. Only in Table 11: "
+            f"{', '.join(sorted(set(found) - counted)) or 'none'}. Only in "
+            f"Table 9: {', '.join(sorted(counted - set(found))) or 'none'}")
+    log(f"    and its {len(found)} districts are Table 9's districts")
+    return found, url
+
+
+def spoken(counts: dict[str, int]) -> dict[str, Any]:
+    """One unit's mother-tongue fields, from its row of Table 11."""
+    total = counts["TOTAL"]
+    parts = {k: v for k, v in counts.items() if k != "TOTAL"}
+    return {
+        "language": shares(parts, total=total) or gap(NOT_AVAILABLE),
+        "language_year": YEAR,
+        "language_note": TONGUE_NOTE,
+    }
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
-    log("pakistan: Bureau of Statistics, Census 2023 Table 9")
+    log("pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11")
     records: list[dict[str, Any]] = []
     absent: dict[str, list[tuple[str, str]]] = {
         REQUIRED: [], PUBLISHED: [], APART: []}
@@ -1187,6 +1299,7 @@ def main() -> int:
         whole = province_row(slug, province, found, whole)
         check(province, found, whole)
         assembled = merge(province, found)
+        tongues, tongue_url = read_tongues(slug, province, set(found))
 
         # The province itself, from its own printed row. Twelve districts have
         # no boundary shape, so anything summed from what joins the map is
@@ -1200,6 +1313,17 @@ def main() -> int:
         # reader cannot open is worse than a long one they can.
         cite = [{"field": "population/religion", "name": SOURCE,
                  "url": url, "license": LICENCE}]
+        if tongue_url:
+            cite.append({"field": "language", "name": TONGUE_SOURCE,
+                         "url": tongue_url, "license": LICENCE})
+        # The province's own Table 11 row, recovered the same way its religion
+        # row was: by summing the districts this reader has just proved add up
+        # to the printed province total. Summing is safe here and only here,
+        # because that equality was checked against the file's own row.
+        here = {}
+        if tongues:
+            here = spoken({column: sum(d[column] for d in tongues.values())
+                           for column in TONGUE_COLUMNS})
         records.append(record(
             f"PAK-{slug}", province, level="admin1", parent="PAK",
             population=measure(total, year=YEAR, source=SOURCE),
@@ -1207,7 +1331,7 @@ def main() -> int:
                             total=total) or gap(NOT_AVAILABLE),
             religion_year=YEAR,
             religion_note=TERRITORY_NOTE if slug in ONE_DISTRICT else PROVINCE_NOTE,
-            sources=list(cite)))
+            sources=list(cite), **here))
         for name, counts in sorted(found.items()):
             total = counts["TOTAL"]
             parts = {k: v for k, v in counts.items() if k != "TOTAL"}
@@ -1216,6 +1340,7 @@ def main() -> int:
                 note += (" The boundary file draws one shape here, so this is "
                          + ", ".join(p.title() for p in assembled[name])
                          + " summed.")
+            said = spoken(tongues[name]) if name in tongues else {}
             records.append(record(
                 f"PAK-{slug}-{name.lower().replace(' ', '-')}",
                 name.title(), level="admin2", parent="PAK",
@@ -1223,7 +1348,7 @@ def main() -> int:
                 population=measure(total, year=YEAR, source=SOURCE),
                 religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
                 religion_year=YEAR, religion_note=note,
-                sources=list(cite)))
+                sources=list(cite), **said))
 
     for _slug, line in absent[APART]:
         log(f"  NOT PUBLISHED (enumerated apart from the census proper) "

@@ -77,11 +77,11 @@ ADAPTER_FILES = [
     "estonia_county.json", "latvia_municipality.json", "finland_region.json",
     "singapore_region.json", "singapore_planning_area.json",
     "srilanka_province.json", "srilanka_district.json",
+    # Religion, population and mother tongue together: this one file reads
+    # Table 9 and Table 11 of the same census. It used to be a pair, the
+    # language half coming from the U.S. Census Bureau's tables of the 2017
+    # round, which named nine tongues and left Chitral 93.1% "Other".
     "pakistan_district.json",
-    # After it, and for the same reason as India's pair above: mother
-    # tongue is the one field this file adds, and the census table it
-    # reads is the one the file above already reads for religion.
-    "pakistan_language.json",
     "bangladesh_district.json",
     "south_africa_province.json",
     "philippines_province.json", "ethiopia_region.json",
