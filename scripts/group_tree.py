@@ -260,7 +260,12 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         # Hunza. "Pamiri" above is the cover term; Wakhi is the one this
         # project meets by name.
         "Wakhi",
+        # Chitral's two Iranian minorities. Yidgha is Pamiri like Wakhi, in
+        # the Lutkoh valley; Madaklashti is a Badakhshani Persian of the
+        # Shishi valley, so it sits beside Dari rather than under it.
+        "Yidgha", "Madaklashti",
     ),
+    "Nuristani languages": ("Kativiri", "Kamviri", "Kamkata-viri"),
     "Baltic languages": ("Lithuanian", "Latvian", "Latgalian"),
     "Celtic languages": (
         "Irish", "Welsh", "Scottish Gaelic", "Breton", "Cornish", "Manx",
@@ -484,6 +489,10 @@ LANGUAGE_FAMILY: dict[str, tuple[str, ...]] = {
         "Indo-Aryan languages", "Iranian languages", "Baltic languages",
         "Celtic languages", "Hellenic languages", "Albanian languages",
         "Armenian languages",
+        # Its own branch of Indo-Iranian, neither Indo-Aryan nor Iranian.
+        # Chitral is the only ground on this map where one is spoken:
+        # Kativiri, over the ridge from Nuristan.
+        "Nuristani languages",
     ),
     "Afro-Asiatic languages": (
         "Semitic languages", "Berber languages", "Cushitic languages",
@@ -1171,6 +1180,10 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         # prints it. Mewati is not northern at all: it is the Rajasthani of
         # Mewat, on the form because Punjab and Sindh have the speakers.
         "Kalasha", "Kohistani", "Mewati",
+        # Chitral's Dardic minorities, named where the census prints only
+        # "Other": Palula in Ashret and Biori, Dameli in the Damel valley,
+        # Gawar-bati at Arandu.
+        "Palula", "Dameli", "Gawar-bati",
     ),
     "Nilo-Saharan languages": ("Songhai", "Zarma", "Kanuri", "Fur", "Gula"),
     "Gur languages": ("Gurma", "Bwamu", "Lobi", "Dagara",

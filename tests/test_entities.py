@@ -2681,13 +2681,48 @@ class PakistanMotherTongue(unittest.TestCase):
         self.assertEqual(largest[0][0], "Chitral")
         self.assertGreater(largest[0][1], 8 * largest[1][1])
 
-    def test_chitral_says_what_its_other_still_holds(self):
-        # Khowar has no column on the 2023 form either, so Chitral is still
-        # mostly Other -- and the note is what keeps that from reading as a
-        # district nobody looked at.
+    def test_chitral_carries_no_residual_at_all(self):
+        # Khowar has no column on the 2023 form, so the census leaves this
+        # district 92.4% Other. That column is divided here into named
+        # languages, so nothing is left under Other.
+        groups = self.groups("Chitral")
+        self.assertNotIn("Other language", groups)
+        largest = max(groups.values(), key=lambda g: g["pct"])
+        self.assertEqual(largest["group"], "Khowar")
+
+    def test_chitral_says_the_split_is_not_the_census(self):
+        # The figures are real and the division of them is not. A reader who
+        # cannot tell those apart has been misled, so this is the load-bearing
+        # sentence of the whole change.
         note = self.rows["Chitral"]["language_note"]
-        self.assertIn("Khowar", note)
-        self.assertIn("Kalasha is named", note)
+        self.assertIn("not the census's", note)
+        self.assertIn("remainder rather than a count", note)
+        self.assertIn("overstated", note)
+
+    def test_chitrals_split_still_adds_up_to_the_census_total(self):
+        # The substitution happens inside the Other column, so the row must
+        # still come to the district's printed population.
+        counted = sum(g["count"] for g in self.rows["Chitral"]["language"])
+        self.assertEqual(counted, self.rows["Chitral"]["population"]["value"])
+
+    def test_khowar_absorbs_the_estimates_rather_than_being_one(self):
+        from scripts.fetch_census import pakistan
+        groups = self.groups("Chitral")
+        named = sum(pakistan.CHITRAL_TONGUES.values())
+        # Every minority is published at exactly its declared estimate...
+        for language, estimate in pakistan.CHITRAL_TONGUES.items():
+            self.assertEqual(groups[language]["count"], estimate, language)
+        # ...and Khowar is what the census's column has left over, so the
+        # district total is untouched by any of them being wrong.
+        self.assertEqual(groups["Khowar"]["count"], 474149 - named)
+
+    def test_the_province_above_keeps_its_other_unbroken(self):
+        # The estimate was made for one district. Khyber Pakhtunkhwa's own
+        # row is the census's, and silently spreading a Chitral figure across
+        # it would be the kind of arithmetic this note disclaims.
+        kp = {g["group"] for g in self.rows["Khyber Pakhtunkhwa"]["language"]}
+        self.assertIn("Other language", kp)
+        self.assertNotIn("Khowar", kp)
 
     def test_chitral_says_who_is_in_its_other_religion(self):
         note = self.rows["Chitral"]["religion_note"]
@@ -2705,9 +2740,8 @@ class PakistanMotherTongue(unittest.TestCase):
                               "tables do not name")
 
     def test_no_district_is_left_with_a_residual_as_its_largest_language(self):
-        # Except Chitral, which is Khowar and says so. Anything else showing
-        # up here is a district whose language the census does name and this
-        # reader has lost.
+        # None now, Chitral included. A district turning up here is one whose
+        # language the census does name and this reader has lost.
         residual = []
         for row in self.rows.values():
             language = row.get("language")
@@ -2716,7 +2750,7 @@ class PakistanMotherTongue(unittest.TestCase):
             largest = max(language, key=lambda g: g["pct"])
             if largest["group"].startswith("Other"):
                 residual.append(row["name"])
-        self.assertEqual(residual, ["Chitral"])
+        self.assertEqual(residual, [])
 
     def test_language_and_religion_are_now_the_same_census(self):
         # They were six years apart. A district that carries one year for
@@ -2728,6 +2762,56 @@ class PakistanMotherTongue(unittest.TestCase):
                     and row["name"] != "Gilgit-Baltistan":
                 self.assertEqual(row["language_year"], row["religion_year"],
                                  row["name"])
+
+
+class ChitralSplit(unittest.TestCase):
+    """The arithmetic of the split, against rows this test writes itself.
+
+    Separate from the class above because these need no run: they are about
+    what the function refuses, and the case that matters most is one the real
+    table does not currently produce.
+    """
+
+    def setUp(self):
+        from scripts.fetch_census import pakistan
+        self.pk = pakistan
+
+    def row(self, bucket, total=None):
+        named = sum(self.pk.CHITRAL_TONGUES.values())
+        return {"TOTAL": total if total is not None else bucket + 1000,
+                "Pushto": 1000, "Other language": bucket}
+
+    def test_the_remainder_is_the_column_less_the_estimates(self):
+        out = self.pk.chitral_split(self.row(100_000))
+        named = sum(self.pk.CHITRAL_TONGUES.values())
+        self.assertEqual(out["Khowar"], 100_000 - named)
+        self.assertNotIn("Other language", out)
+        self.assertEqual(out["Pushto"], 1000)
+
+    def test_a_column_too_small_for_the_estimates_refuses_the_run(self):
+        # Not clamped to zero and not allowed negative. If Chitral's Other
+        # ever falls below what the small languages are believed to hold,
+        # either the column or an estimate here is wrong, and both are worth
+        # stopping for.
+        named = sum(self.pk.CHITRAL_TONGUES.values())
+        with self.assertRaises(SystemExit):
+            self.pk.chitral_split(self.row(named - 1))
+        with self.assertRaises(SystemExit):
+            self.pk.chitral_split(self.row(named))
+
+    def test_the_split_never_changes_the_district_total(self):
+        for bucket in (40_000, 100_000, 474_149):
+            with self.subTest(bucket=bucket):
+                row = self.row(bucket)
+                out = self.pk.chitral_split(row)
+                self.assertEqual(
+                    sum(v for k, v in out.items() if k != "TOTAL"),
+                    row["TOTAL"])
+
+    def test_khowar_is_not_itself_one_of_the_estimates(self):
+        # The design in one assertion: Khowar is the residual, so declaring a
+        # figure for it would mean the row no longer had to add up.
+        self.assertNotIn(self.pk.CHITRAL_RESIDUAL, self.pk.CHITRAL_TONGUES)
 
 
 class PakistanDeclaresWhatIsNotPublished(unittest.TestCase):
