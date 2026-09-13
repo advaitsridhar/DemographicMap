@@ -366,7 +366,14 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
             # Keyed by name and classified by suffix, the thromde landed in
             # `gewogs` and was then overwritten by the gewog: 27,658 people,
             # the second city of Bhutan, gone without a trace.
-            into = towns if section == "Urban" else gewogs
+            # A town by its name or by the section it sits under, because
+            # neither alone is enough. Bumthang's two-column page emits both
+            # section labels before any row, so the section is "Rural" by the
+            # time "Bumthang Town" arrives; and Chhukha's Phuentsholing loses
+            # the word "Thromde" to a line break, so only the section knows it
+            # is urban. Each covers the other's blind spot.
+            into = towns if (TOWN.search(name) or section == "Urban") \
+                else gewogs
             if name in into:
                 raise SystemExit(
                     f"bhutan: {dzongkhag}: two rows of Table 2.1 are both "
