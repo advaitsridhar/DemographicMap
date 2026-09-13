@@ -4431,5 +4431,2359 @@
     "aliases": [],
     "religion_year": 2022,
     "religion_note": "Census 2022. The religion table classifies the male and female population only -- each religion's total is exactly its male plus its female column -- so these shares are of a denominator a few dozen people short of the district's own population, the difference being the third-gender (hijra) population the table does not classify."
+  },
+  {
+    "id": "BGD-barishal",
+    "level": "admin1",
+    "name": "Barishal",
+    "parent": "BGD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Bagdi",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Banai",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Barman",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Bedia",
+        "pct": 0.0,
+        "count": 46
+      },
+      {
+        "group": "Bhuimali",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Bhumij",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Bom",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Boraik/Baraik",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Chak",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Chakma",
+        "pct": 0.0,
+        "count": 123
+      },
+      {
+        "group": "Dalu",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Garo",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Gonju",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Gurkha",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Hajong",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Ho",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Hudi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kharia/Khadria",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kharoar/Kheroar",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Khasia/Khasi",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Khiang",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Khumi",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Koch",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kol",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Kondo",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Kora",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Lusai",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Mahali",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Mahato/Kurmi Mahato/Bedia Mahato",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Malo/Ghasimalo",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Marma",
+        "pct": 0.0,
+        "count": 109
+      },
+      {
+        "group": "Monipuri",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Mro",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Munda",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Mushor",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Oraon",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Others",
+        "pct": 0.0,
+        "count": 1317
+      },
+      {
+        "group": "Pahari/Malpahari",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Pankhoa/Pankho",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Patro",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Rajoar",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Rakhain",
+        "pct": 0.0,
+        "count": 1923
+      },
+      {
+        "group": "Saontal",
+        "pct": 0.0,
+        "count": 85
+      },
+      {
+        "group": "Shobor",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Teli",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Tonchonga",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Tripura",
+        "pct": 0.0,
+        "count": 171
+      },
+      {
+        "group": "Turi",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Vil",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      }
+    ],
+    "aliases": [
+      "Barisal"
+    ],
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "the ethnic population the census enumerates",
+    "ethnicity_note": "Census 2022, Table P29. These shares are of Barishal's whole population of 9,100,104, of whom 4,190 (0.05%) are enumerated by ethnic category; the largest is Rakhain at 1,923. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+  },
+  {
+    "id": "BGD-chattogram",
+    "level": "admin1",
+    "name": "Chattogram",
+    "parent": "BGD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Chakma",
+        "pct": 1.4,
+        "count": 475548
+      },
+      {
+        "group": "Marma",
+        "pct": 0.7,
+        "count": 220067
+      },
+      {
+        "group": "Tripura",
+        "pct": 0.5,
+        "count": 151656
+      },
+      {
+        "group": "Mro",
+        "pct": 0.2,
+        "count": 52022
+      },
+      {
+        "group": "Tonchonga",
+        "pct": 0.1,
+        "count": 45636
+      },
+      {
+        "group": "Bagdi",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Banai",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Barman",
+        "pct": 0.0,
+        "count": 174
+      },
+      {
+        "group": "Bedia",
+        "pct": 0.0,
+        "count": 1147
+      },
+      {
+        "group": "Bhumij",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Bom",
+        "pct": 0.0,
+        "count": 12529
+      },
+      {
+        "group": "Boraik/Baraik",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Chak",
+        "pct": 0.0,
+        "count": 2968
+      },
+      {
+        "group": "Dalu",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Garo",
+        "pct": 0.0,
+        "count": 728
+      },
+      {
+        "group": "Gonju",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Gorait",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Gurkha",
+        "pct": 0.0,
+        "count": 54
+      },
+      {
+        "group": "Hajong",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Ho",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Hudi",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kharia/Khadria",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Kharoar/Kheroar",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Khasia/Khasi",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Khiang",
+        "pct": 0.0,
+        "count": 4709
+      },
+      {
+        "group": "Khumi",
+        "pct": 0.0,
+        "count": 3360
+      },
+      {
+        "group": "Koch",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Kol",
+        "pct": 0.0,
+        "count": 36
+      },
+      {
+        "group": "Kondo",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Kora",
+        "pct": 0.0,
+        "count": 112
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Lusai",
+        "pct": 0.0,
+        "count": 237
+      },
+      {
+        "group": "Mahali",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Mahato/Kurmi Mahato/Bedia Mahato",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Malo/Ghasimalo",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Monipuri",
+        "pct": 0.0,
+        "count": 126
+      },
+      {
+        "group": "Munda",
+        "pct": 0.0,
+        "count": 477
+      },
+      {
+        "group": "Mushor",
+        "pct": 0.0,
+        "count": 37
+      },
+      {
+        "group": "Oraon",
+        "pct": 0.0,
+        "count": 789
+      },
+      {
+        "group": "Others",
+        "pct": 0.0,
+        "count": 5689
+      },
+      {
+        "group": "Pahari/Malpahari",
+        "pct": 0.0,
+        "count": 346
+      },
+      {
+        "group": "Pankhoa/Pankho",
+        "pct": 0.0,
+        "count": 1547
+      },
+      {
+        "group": "Patro",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Rajoar",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Rakhain",
+        "pct": 0.0,
+        "count": 8832
+      },
+      {
+        "group": "Saontal",
+        "pct": 0.0,
+        "count": 1067
+      },
+      {
+        "group": "Shobor",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Teli",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Turi",
+        "pct": 0.0,
+        "count": 303
+      },
+      {
+        "group": "Vil",
+        "pct": 0.0,
+        "count": 15
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      }
+    ],
+    "aliases": [
+      "Chittagong"
+    ],
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "the ethnic population the census enumerates",
+    "ethnicity_note": "Census 2022, Table P29. These shares are of Chattogram's whole population of 33,202,357, of whom 991,013 (2.98%) are enumerated by ethnic category; the largest is Chakma at 475,548. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+  },
+  {
+    "id": "BGD-dhaka",
+    "level": "admin1",
+    "name": "Dhaka",
+    "parent": "BGD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Garo",
+        "pct": 0.1,
+        "count": 23462
+      },
+      {
+        "group": "Bagdi",
+        "pct": 0.0,
+        "count": 3006
+      },
+      {
+        "group": "Banai",
+        "pct": 0.0,
+        "count": 1628
+      },
+      {
+        "group": "Barman",
+        "pct": 0.0,
+        "count": 9822
+      },
+      {
+        "group": "Bedia",
+        "pct": 0.0,
+        "count": 878
+      },
+      {
+        "group": "Bhuimali",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Bhumij",
+        "pct": 0.0,
+        "count": 453
+      },
+      {
+        "group": "Bom",
+        "pct": 0.0,
+        "count": 390
+      },
+      {
+        "group": "Boraik/Baraik",
+        "pct": 0.0,
+        "count": 32
+      },
+      {
+        "group": "Chak",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Chakma",
+        "pct": 0.0,
+        "count": 6732
+      },
+      {
+        "group": "Dalu",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Gonju",
+        "pct": 0.0,
+        "count": 66
+      },
+      {
+        "group": "Gorait",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Gurkha",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Hajong",
+        "pct": 0.0,
+        "count": 302
+      },
+      {
+        "group": "Ho",
+        "pct": 0.0,
+        "count": 92
+      },
+      {
+        "group": "Hudi",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Kharia/Khadria",
+        "pct": 0.0,
+        "count": 41
+      },
+      {
+        "group": "Kharoar/Kheroar",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Khasia/Khasi",
+        "pct": 0.0,
+        "count": 122
+      },
+      {
+        "group": "Khiang",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Khumi",
+        "pct": 0.0,
+        "count": 189
+      },
+      {
+        "group": "Koch",
+        "pct": 0.0,
+        "count": 7832
+      },
+      {
+        "group": "Kol",
+        "pct": 0.0,
+        "count": 90
+      },
+      {
+        "group": "Kondo",
+        "pct": 0.0,
+        "count": 80
+      },
+      {
+        "group": "Kora",
+        "pct": 0.0,
+        "count": 167
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.0,
+        "count": 154
+      },
+      {
+        "group": "Lusai",
+        "pct": 0.0,
+        "count": 86
+      },
+      {
+        "group": "Mahali",
+        "pct": 0.0,
+        "count": 94
+      },
+      {
+        "group": "Mahato/Kurmi Mahato/Bedia Mahato",
+        "pct": 0.0,
+        "count": 699
+      },
+      {
+        "group": "Malo/Ghasimalo",
+        "pct": 0.0,
+        "count": 2757
+      },
+      {
+        "group": "Marma",
+        "pct": 0.0,
+        "count": 3292
+      },
+      {
+        "group": "Monipuri",
+        "pct": 0.0,
+        "count": 487
+      },
+      {
+        "group": "Mro",
+        "pct": 0.0,
+        "count": 264
+      },
+      {
+        "group": "Munda",
+        "pct": 0.0,
+        "count": 233
+      },
+      {
+        "group": "Mushor",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Oraon",
+        "pct": 0.0,
+        "count": 856
+      },
+      {
+        "group": "Others",
+        "pct": 0.0,
+        "count": 12895
+      },
+      {
+        "group": "Pahari/Malpahari",
+        "pct": 0.0,
+        "count": 170
+      },
+      {
+        "group": "Pankhoa/Pankho",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Patro",
+        "pct": 0.0,
+        "count": 129
+      },
+      {
+        "group": "Rajoar",
+        "pct": 0.0,
+        "count": 109
+      },
+      {
+        "group": "Rakhain",
+        "pct": 0.0,
+        "count": 320
+      },
+      {
+        "group": "Saontal",
+        "pct": 0.0,
+        "count": 1300
+      },
+      {
+        "group": "Shobor",
+        "pct": 0.0,
+        "count": 34
+      },
+      {
+        "group": "Teli",
+        "pct": 0.0,
+        "count": 84
+      },
+      {
+        "group": "Tonchonga",
+        "pct": 0.0,
+        "count": 229
+      },
+      {
+        "group": "Tripura",
+        "pct": 0.0,
+        "count": 2136
+      },
+      {
+        "group": "Turi",
+        "pct": 0.0,
+        "count": 170
+      },
+      {
+        "group": "Vil",
+        "pct": 0.0,
+        "count": 34
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      }
+    ],
+    "aliases": [],
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "the ethnic population the census enumerates",
+    "ethnicity_note": "Census 2022, Table P29. These shares are of Dhaka's whole population of 44,215,759, of whom 82,324 (0.19%) are enumerated by ethnic category; the largest is Garo at 23,462. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+  },
+  {
+    "id": "BGD-khulna",
+    "level": "admin1",
+    "name": "Khulna",
+    "parent": "BGD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Malo/Ghasimalo",
+        "pct": 0.1,
+        "count": 9067
+      },
+      {
+        "group": "Others",
+        "pct": 0.1,
+        "count": 11871
+      },
+      {
+        "group": "Bagdi",
+        "pct": 0.0,
+        "count": 6224
+      },
+      {
+        "group": "Banai",
+        "pct": 0.0,
+        "count": 680
+      },
+      {
+        "group": "Barman",
+        "pct": 0.0,
+        "count": 2615
+      },
+      {
+        "group": "Bedia",
+        "pct": 0.0,
+        "count": 780
+      },
+      {
+        "group": "Bhuimali",
+        "pct": 0.0,
+        "count": 285
+      },
+      {
+        "group": "Bhumij",
+        "pct": 0.0,
+        "count": 166
+      },
+      {
+        "group": "Bom",
+        "pct": 0.0,
+        "count": 51
+      },
+      {
+        "group": "Boraik/Baraik",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Chak",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Chakma",
+        "pct": 0.0,
+        "count": 177
+      },
+      {
+        "group": "Dalu",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Garo",
+        "pct": 0.0,
+        "count": 73
+      },
+      {
+        "group": "Gonju",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Gorait",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Gurkha",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Hajong",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Ho",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Hudi",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Kharia/Khadria",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Kharoar/Kheroar",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Khasia/Khasi",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Khiang",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Khumi",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Koch",
+        "pct": 0.0,
+        "count": 1397
+      },
+      {
+        "group": "Kol",
+        "pct": 0.0,
+        "count": 561
+      },
+      {
+        "group": "Kondo",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Kora",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.0,
+        "count": 65
+      },
+      {
+        "group": "Lusai",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Mahali",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Mahato/Kurmi Mahato/Bedia Mahato",
+        "pct": 0.0,
+        "count": 183
+      },
+      {
+        "group": "Marma",
+        "pct": 0.0,
+        "count": 118
+      },
+      {
+        "group": "Monipuri",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Mro",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Munda",
+        "pct": 0.0,
+        "count": 3179
+      },
+      {
+        "group": "Mushor",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Oraon",
+        "pct": 0.0,
+        "count": 52
+      },
+      {
+        "group": "Pahari/Malpahari",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Patro",
+        "pct": 0.0,
+        "count": 258
+      },
+      {
+        "group": "Rajoar",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Rakhain",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Saontal",
+        "pct": 0.0,
+        "count": 446
+      },
+      {
+        "group": "Shobor",
+        "pct": 0.0,
+        "count": 56
+      },
+      {
+        "group": "Teli",
+        "pct": 0.0,
+        "count": 194
+      },
+      {
+        "group": "Tonchonga",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Tripura",
+        "pct": 0.0,
+        "count": 149
+      },
+      {
+        "group": "Turi",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Vil",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      }
+    ],
+    "aliases": [],
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "the ethnic population the census enumerates",
+    "ethnicity_note": "Census 2022, Table P29. These shares are of Khulna's whole population of 17,415,924, of whom 38,992 (0.22%) are enumerated by ethnic category; the largest is Others at 11,871. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+  },
+  {
+    "id": "BGD-mymensingh",
+    "level": "admin1",
+    "name": "Mymensingh",
+    "parent": "BGD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Garo",
+        "pct": 0.4,
+        "count": 45164
+      },
+      {
+        "group": "Bagdi",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Banai",
+        "pct": 0.0,
+        "count": 43
+      },
+      {
+        "group": "Barman",
+        "pct": 0.0,
+        "count": 2733
+      },
+      {
+        "group": "Bedia",
+        "pct": 0.0,
+        "count": 135
+      },
+      {
+        "group": "Bhumij",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Bom",
+        "pct": 0.0,
+        "count": 63
+      },
+      {
+        "group": "Boraik/Baraik",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Chak",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Chakma",
+        "pct": 0.0,
+        "count": 221
+      },
+      {
+        "group": "Dalu",
+        "pct": 0.0,
+        "count": 290
+      },
+      {
+        "group": "Gonju",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Gorait",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Gurkha",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Hajong",
+        "pct": 0.0,
+        "count": 6068
+      },
+      {
+        "group": "Ho",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Hudi",
+        "pct": 0.0,
+        "count": 1394
+      },
+      {
+        "group": "Kharia/Khadria",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Kharoar/Kheroar",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Khasia/Khasi",
+        "pct": 0.0,
+        "count": 61
+      },
+      {
+        "group": "Khiang",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Khumi",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Koch",
+        "pct": 0.0,
+        "count": 2560
+      },
+      {
+        "group": "Kol",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Kondo",
+        "pct": 0.0,
+        "count": 15
+      },
+      {
+        "group": "Kora",
+        "pct": 0.0,
+        "count": 55
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Lusai",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Mahali",
+        "pct": 0.0,
+        "count": 22
+      },
+      {
+        "group": "Mahato/Kurmi Mahato/Bedia Mahato",
+        "pct": 0.0,
+        "count": 18
+      },
+      {
+        "group": "Malo/Ghasimalo",
+        "pct": 0.0,
+        "count": 148
+      },
+      {
+        "group": "Marma",
+        "pct": 0.0,
+        "count": 242
+      },
+      {
+        "group": "Monipuri",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Mro",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Munda",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Mushor",
+        "pct": 0.0,
+        "count": 91
+      },
+      {
+        "group": "Oraon",
+        "pct": 0.0,
+        "count": 270
+      },
+      {
+        "group": "Others",
+        "pct": 0.0,
+        "count": 1306
+      },
+      {
+        "group": "Pahari/Malpahari",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Pankhoa/Pankho",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Patro",
+        "pct": 0.0,
+        "count": 28
+      },
+      {
+        "group": "Rajoar",
+        "pct": 0.0,
+        "count": 45
+      },
+      {
+        "group": "Rakhain",
+        "pct": 0.0,
+        "count": 40
+      },
+      {
+        "group": "Saontal",
+        "pct": 0.0,
+        "count": 74
+      },
+      {
+        "group": "Shobor",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Teli",
+        "pct": 0.0,
+        "count": 16
+      },
+      {
+        "group": "Tonchonga",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Tripura",
+        "pct": 0.0,
+        "count": 141
+      },
+      {
+        "group": "Turi",
+        "pct": 0.0,
+        "count": 50
+      },
+      {
+        "group": "Vil",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      }
+    ],
+    "aliases": [],
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "the ethnic population the census enumerates",
+    "ethnicity_note": "Census 2022, Table P29. These shares are of Mymensingh's whole population of 12,225,449, of whom 61,561 (0.50%) are enumerated by ethnic category; the largest is Garo at 45,164. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+  },
+  {
+    "id": "BGD-rajshahi",
+    "level": "admin1",
+    "name": "Rajshahi",
+    "parent": "BGD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Oraon",
+        "pct": 0.3,
+        "count": 62178
+      },
+      {
+        "group": "Saontal",
+        "pct": 0.3,
+        "count": 56990
+      },
+      {
+        "group": "Munda",
+        "pct": 0.2,
+        "count": 32595
+      },
+      {
+        "group": "Barman",
+        "pct": 0.1,
+        "count": 21205
+      },
+      {
+        "group": "Mahato/Kurmi Mahato/Bedia Mahato",
+        "pct": 0.1,
+        "count": 14398
+      },
+      {
+        "group": "Others",
+        "pct": 0.1,
+        "count": 18517
+      },
+      {
+        "group": "Bagdi",
+        "pct": 0.0,
+        "count": 1785
+      },
+      {
+        "group": "Banai",
+        "pct": 0.0,
+        "count": 236
+      },
+      {
+        "group": "Bedia",
+        "pct": 0.0,
+        "count": 3716
+      },
+      {
+        "group": "Bhuimali",
+        "pct": 0.0,
+        "count": 1350
+      },
+      {
+        "group": "Bhumij",
+        "pct": 0.0,
+        "count": 2023
+      },
+      {
+        "group": "Bom",
+        "pct": 0.0,
+        "count": 44
+      },
+      {
+        "group": "Boraik/Baraik",
+        "pct": 0.0,
+        "count": 776
+      },
+      {
+        "group": "Chak",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Chakma",
+        "pct": 0.0,
+        "count": 157
+      },
+      {
+        "group": "Dalu",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Garo",
+        "pct": 0.0,
+        "count": 347
+      },
+      {
+        "group": "Gonju",
+        "pct": 0.0,
+        "count": 2453
+      },
+      {
+        "group": "Gorait",
+        "pct": 0.0,
+        "count": 1856
+      },
+      {
+        "group": "Gurkha",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Hajong",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Ho",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Hudi",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Kharia/Khadria",
+        "pct": 0.0,
+        "count": 146
+      },
+      {
+        "group": "Kharoar/Kheroar",
+        "pct": 0.0,
+        "count": 89
+      },
+      {
+        "group": "Khasia/Khasi",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Khiang",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Khumi",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Koch",
+        "pct": 0.0,
+        "count": 283
+      },
+      {
+        "group": "Kol",
+        "pct": 0.0,
+        "count": 2314
+      },
+      {
+        "group": "Kondo",
+        "pct": 0.0,
+        "count": 25
+      },
+      {
+        "group": "Kora",
+        "pct": 0.0,
+        "count": 173
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.0,
+        "count": 1439
+      },
+      {
+        "group": "Lusai",
+        "pct": 0.0,
+        "count": 27
+      },
+      {
+        "group": "Mahali",
+        "pct": 0.0,
+        "count": 3272
+      },
+      {
+        "group": "Malo/Ghasimalo",
+        "pct": 0.0,
+        "count": 2074
+      },
+      {
+        "group": "Marma",
+        "pct": 0.0,
+        "count": 187
+      },
+      {
+        "group": "Monipuri",
+        "pct": 0.0,
+        "count": 31
+      },
+      {
+        "group": "Mro",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Mushor",
+        "pct": 0.0,
+        "count": 1314
+      },
+      {
+        "group": "Pahari/Malpahari",
+        "pct": 0.0,
+        "count": 7269
+      },
+      {
+        "group": "Pankhoa/Pankho",
+        "pct": 0.0,
+        "count": 88
+      },
+      {
+        "group": "Patro",
+        "pct": 0.0,
+        "count": 17
+      },
+      {
+        "group": "Rajoar",
+        "pct": 0.0,
+        "count": 1970
+      },
+      {
+        "group": "Rakhain",
+        "pct": 0.0,
+        "count": 26
+      },
+      {
+        "group": "Shobor",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Teli",
+        "pct": 0.0,
+        "count": 606
+      },
+      {
+        "group": "Tonchonga",
+        "pct": 0.0,
+        "count": 20
+      },
+      {
+        "group": "Tripura",
+        "pct": 0.0,
+        "count": 126
+      },
+      {
+        "group": "Turi",
+        "pct": 0.0,
+        "count": 2293
+      },
+      {
+        "group": "Vil",
+        "pct": 0.0,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      }
+    ],
+    "aliases": [
+      "Rajshani"
+    ],
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "the ethnic population the census enumerates",
+    "ethnicity_note": "Census 2022, Table P29. These shares are of Rajshahi's whole population of 20,353,116, of whom 244,627 (1.20%) are enumerated by ethnic category; the largest is Oraon at 62,178. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+  },
+  {
+    "id": "BGD-rangpur",
+    "level": "admin1",
+    "name": "Rangpur",
+    "parent": "BGD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Saontal",
+        "pct": 0.3,
+        "count": 55820
+      },
+      {
+        "group": "Oraon",
+        "pct": 0.1,
+        "count": 13982
+      },
+      {
+        "group": "Bagdi",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Banai",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Barman",
+        "pct": 0.0,
+        "count": 7646
+      },
+      {
+        "group": "Bedia",
+        "pct": 0.0,
+        "count": 211
+      },
+      {
+        "group": "Bhuimali",
+        "pct": 0.0,
+        "count": 182
+      },
+      {
+        "group": "Bhumij",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Bom",
+        "pct": 0.0,
+        "count": 35
+      },
+      {
+        "group": "Boraik/Baraik",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Chak",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Chakma",
+        "pct": 0.0,
+        "count": 110
+      },
+      {
+        "group": "Dalu",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Garo",
+        "pct": 0.0,
+        "count": 99
+      },
+      {
+        "group": "Gonju",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Gorait",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Gurkha",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Hajong",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Ho",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Hudi",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Kharia/Khadria",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Kharoar/Kheroar",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Khasia/Khasi",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Khiang",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Khumi",
+        "pct": 0.0,
+        "count": 8
+      },
+      {
+        "group": "Koch",
+        "pct": 0.0,
+        "count": 1525
+      },
+      {
+        "group": "Kol",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Kondo",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Kora",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.0,
+        "count": 212
+      },
+      {
+        "group": "Lusai",
+        "pct": 0.0,
+        "count": 7
+      },
+      {
+        "group": "Mahali",
+        "pct": 0.0,
+        "count": 1155
+      },
+      {
+        "group": "Mahato/Kurmi Mahato/Bedia Mahato",
+        "pct": 0.0,
+        "count": 397
+      },
+      {
+        "group": "Malo/Ghasimalo",
+        "pct": 0.0,
+        "count": 485
+      },
+      {
+        "group": "Marma",
+        "pct": 0.0,
+        "count": 113
+      },
+      {
+        "group": "Monipuri",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Mro",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Munda",
+        "pct": 0.0,
+        "count": 1576
+      },
+      {
+        "group": "Mushor",
+        "pct": 0.0,
+        "count": 2671
+      },
+      {
+        "group": "Others",
+        "pct": 0.0,
+        "count": 3286
+      },
+      {
+        "group": "Pahari/Malpahari",
+        "pct": 0.0,
+        "count": 613
+      },
+      {
+        "group": "Pankhoa/Pankho",
+        "pct": 0.0,
+        "count": 29
+      },
+      {
+        "group": "Patro",
+        "pct": 0.0,
+        "count": 23
+      },
+      {
+        "group": "Rajoar",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Rakhain",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Shobor",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Teli",
+        "pct": 0.0,
+        "count": 62
+      },
+      {
+        "group": "Tonchonga",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Tripura",
+        "pct": 0.0,
+        "count": 75
+      },
+      {
+        "group": "Turi",
+        "pct": 0.0,
+        "count": 347
+      },
+      {
+        "group": "Vil",
+        "pct": 0.0,
+        "count": 18
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      }
+    ],
+    "aliases": [],
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "the ethnic population the census enumerates",
+    "ethnicity_note": "Census 2022, Table P29. These shares are of Rangpur's whole population of 17,610,955, of whom 91,079 (0.52%) are enumerated by ethnic category; the largest is Saontal at 55,820. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+  },
+  {
+    "id": "BGD-sylhet",
+    "level": "admin1",
+    "name": "Sylhet",
+    "parent": "BGD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Monipuri",
+        "pct": 0.2,
+        "count": 22150
+      },
+      {
+        "group": "Munda",
+        "pct": 0.2,
+        "count": 22125
+      },
+      {
+        "group": "Bhumij",
+        "pct": 0.1,
+        "count": 6962
+      },
+      {
+        "group": "Garo",
+        "pct": 0.1,
+        "count": 6941
+      },
+      {
+        "group": "Khasia/Khasi",
+        "pct": 0.1,
+        "count": 12120
+      },
+      {
+        "group": "Oraon",
+        "pct": 0.1,
+        "count": 7666
+      },
+      {
+        "group": "Others",
+        "pct": 0.1,
+        "count": 13707
+      },
+      {
+        "group": "Saontal",
+        "pct": 0.1,
+        "count": 13274
+      },
+      {
+        "group": "Bagdi",
+        "pct": 0.0,
+        "count": 989
+      },
+      {
+        "group": "Banai",
+        "pct": 0.0,
+        "count": 237
+      },
+      {
+        "group": "Barman",
+        "pct": 0.0,
+        "count": 472
+      },
+      {
+        "group": "Bedia",
+        "pct": 0.0,
+        "count": 296
+      },
+      {
+        "group": "Bhuimali",
+        "pct": 0.0,
+        "count": 67
+      },
+      {
+        "group": "Bom",
+        "pct": 0.0,
+        "count": 38
+      },
+      {
+        "group": "Boraik/Baraik",
+        "pct": 0.0,
+        "count": 2538
+      },
+      {
+        "group": "Chak",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Chakma",
+        "pct": 0.0,
+        "count": 297
+      },
+      {
+        "group": "Dalu",
+        "pct": 0.0,
+        "count": 6
+      },
+      {
+        "group": "Gonju",
+        "pct": 0.0,
+        "count": 1581
+      },
+      {
+        "group": "Gorait",
+        "pct": 0.0,
+        "count": 827
+      },
+      {
+        "group": "Gurkha",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Hajong",
+        "pct": 0.0,
+        "count": 1528
+      },
+      {
+        "group": "Ho",
+        "pct": 0.0,
+        "count": 33
+      },
+      {
+        "group": "Hudi",
+        "pct": 0.0,
+        "count": 60
+      },
+      {
+        "group": "Kharia/Khadria",
+        "pct": 0.0,
+        "count": 2859
+      },
+      {
+        "group": "Kharoar/Kheroar",
+        "pct": 0.0,
+        "count": 145
+      },
+      {
+        "group": "Khiang",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Khumi",
+        "pct": 0.0,
+        "count": 166
+      },
+      {
+        "group": "Koch",
+        "pct": 0.0,
+        "count": 49
+      },
+      {
+        "group": "Kol",
+        "pct": 0.0,
+        "count": 774
+      },
+      {
+        "group": "Kondo",
+        "pct": 0.0,
+        "count": 1735
+      },
+      {
+        "group": "Kora",
+        "pct": 0.0,
+        "count": 150
+      },
+      {
+        "group": "Lohar",
+        "pct": 0.0,
+        "count": 1528
+      },
+      {
+        "group": "Lusai",
+        "pct": 0.0,
+        "count": 12
+      },
+      {
+        "group": "Mahali",
+        "pct": 0.0,
+        "count": 2005
+      },
+      {
+        "group": "Mahato/Kurmi Mahato/Bedia Mahato",
+        "pct": 0.0,
+        "count": 3520
+      },
+      {
+        "group": "Malo/Ghasimalo",
+        "pct": 0.0,
+        "count": 220
+      },
+      {
+        "group": "Marma",
+        "pct": 0.0,
+        "count": 171
+      },
+      {
+        "group": "Mro",
+        "pct": 0.0,
+        "count": 69
+      },
+      {
+        "group": "Mushor",
+        "pct": 0.0,
+        "count": 456
+      },
+      {
+        "group": "Pahari/Malpahari",
+        "pct": 0.0,
+        "count": 335
+      },
+      {
+        "group": "Pankhoa/Pankho",
+        "pct": 0.0,
+        "count": 123
+      },
+      {
+        "group": "Patro",
+        "pct": 0.0,
+        "count": 2571
+      },
+      {
+        "group": "Rajoar",
+        "pct": 0.0,
+        "count": 103
+      },
+      {
+        "group": "Rakhain",
+        "pct": 0.0,
+        "count": 19
+      },
+      {
+        "group": "Shobor",
+        "pct": 0.0,
+        "count": 1853
+      },
+      {
+        "group": "Teli",
+        "pct": 0.0,
+        "count": 1065
+      },
+      {
+        "group": "Tonchonga",
+        "pct": 0.0,
+        "count": 47
+      },
+      {
+        "group": "Tripura",
+        "pct": 0.0,
+        "count": 2166
+      },
+      {
+        "group": "Turi",
+        "pct": 0.0,
+        "count": 601
+      },
+      {
+        "group": "Vil",
+        "pct": 0.0,
+        "count": 10
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      }
+    ],
+    "aliases": [],
+    "ethnicity_year": 2022,
+    "ethnicity_basis": "the ethnic population the census enumerates",
+    "ethnicity_note": "Census 2022, Table P29. These shares are of Sylhet's whole population of 11,034,952, of whom 136,692 (1.24%) are enumerated by ethnic category; the largest is Monipuri at 22,150. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
   }
 ]
