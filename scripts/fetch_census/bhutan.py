@@ -110,7 +110,14 @@ DZONGKHAG_ALIASES: dict[str, tuple[str, ...]] = {
 # dzongkhag read here is held to collectively.
 NATIONAL = 727_145
 
-HEADER = ("Gewog/Town", "Male", "Female", "Total")
+# The header is two stacked rows -- "Gewog/Town | Persons" over
+# "Male | Female | Total" -- and whether they land on one baseline or two is
+# a fact about the individual file. Bumthang and Tsirang put them on one;
+# Dagana puts them on two, and requiring all four words together read no rows
+# at all there. So the distinctive word opens the header and the right edge is
+# taken from the "Total" on that line or the next.
+HEADER_KEY = "Gewog/Town"
+HEADER_EDGE = "Total"
 SECTIONS = {"Urban", "Rural"}
 
 # The row that closes the table, and there are two spellings of it. Tsirang
@@ -194,6 +201,12 @@ def table(blob: bytes, dzongkhag: str
     into a dict key. A duplicate name inside one section now stops the run
     rather than keeping whichever arrived second.
 
+    **The header is two stacked rows, on one baseline or two.** "Gewog/Town |
+    Persons" sits over "Male | Female | Total"; Bumthang and Tsirang put them
+    on a single baseline and Dagana on two. Requiring all four words together
+    read no rows at all from Dagana, so the distinctive word opens the header
+    and the right edge comes from the "Total" on that line or the next.
+
     **The closing row has two spellings.** Tsirang writes "Total"; Bumthang
     writes "Both Areas", meaning urban and rural together. Looking only for
     "Total" is what made this file fail on Bumthang while its gewogs were
@@ -228,13 +241,16 @@ def table(blob: bytes, dzongkhag: str
     for rows in words_by_row(blob):
         if printed:
             break
-        found_here = False
+        found_here = margin is None and edge is not None
         for cells in rows:
             texts = [t for _a, _b, t in cells]
-            if edge is None:
-                if all(word in texts for word in HEADER):
-                    edge = min(x0 for x0, _x1, t in cells if t == HEADER[0])
-                    margin = max(x1 for _x0, x1, t in cells if t == HEADER[-1])
+            if margin is None:
+                if edge is None and HEADER_KEY in texts:
+                    edge = min(x0 for x0, _x1, t in cells if t == HEADER_KEY)
+                    found_here = True
+                if edge is not None and HEADER_EDGE in texts:
+                    margin = max(x1 for _x0, x1, t in cells
+                                 if t == HEADER_EDGE)
                     reading = True
                     found_here = True
                 continue
