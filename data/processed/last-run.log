@@ -1,84 +1,179 @@
-pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11
-  Khyber Pakhtunkhwa
-    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-    Table 11: 3,436,846 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-    and its 32 districts are Table 9's districts
-  Punjab
-    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 36 districts add up to the province
-    Table 11: 3,538,413 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 36 districts add up to the province
-    and its 36 districts are Table 9's districts
-  Sindh
-    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-    Table 11: 3,230,815 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-    and its 24 districts are Table 9's districts
-  Balochistan
-    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 34 districts add up to the province
-    Table 11: 3,596,501 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 34 districts add up to the province
-    and its 34 districts are Table 9's districts
-  Islamabad Capital Territory
-    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's religions sum to its own printed total
-    and the 1 districts add up to the province
-    Table 11: 45,805 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's mother tongues sum to its own printed total
-    and the 1 districts add up to the province
-    and its 1 districts are Table 9's districts
-  Azad Jammu and Kashmir
-  Gilgit-Baltistan
-  6 districts say what their Other language holds, and 1 what their Other religion does
-  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  Azad Jammu and Kashmir, from the territory's own yearbook
-    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
-    Table 15.24 named on page 15 with no rows under it: the contents, not the table
-    Table 15.24 on page 209: 10 districts
-    all 7 columns sum to the printed AJ&K row
-    Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
-    Table 15.33 named on page 16 with no heading row under it: the contents, not the table
-    Table 15.33 on page 213: 10 districts, 8 languages
-    Mirpur: Table 15.33 sums to 97%, rescaled to 100 across its own languages
-    AJ&K languages: Pahari-Pothwari 68.8%, Gojri 18.6%, Kashmiri 4.6%, Punjabi 3.6%, Dogri 3.1%, Other languages 1.0%, Shina 0.2%, Kundal Shahi 0.1%
-  Gilgit-Baltistan, from the territory's own At a Glance
-    2,369,329 bytes from https://www.pnd.gog.pk/storage/downloads/AiRIlDEcscWPC1s58oXIgpjlVAS7jd-metaR0IgQVQgR2xhbmNlIDIwMjUuMS5wZGY=-.pdf
-    10 districts on page 3, summing to the territory's own printed 1,709,049
-  Gilgit-Baltistan's language, from the territory's own MICS
-    22,827,802 bytes from https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf
-    Table SR.3.1 named on page 6 with no language block under it: the contents, not the table
-    Table SR.3.1 on page 57: 6 languages over 6,929 households, 2025
-  11 records declaring what is not published, rather than leaving the field empty
-  wrote data/processed/pakistan_district.json (652 kB)
-  138 districts and 7 provinces
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+bbs.gov.bd:443
+  issuer: ((('countryName', 'GB'),), (('organizationName', 'Sectigo Limited'),), (('commonName', 'Sectigo Public Server Authentication CA DV R36'),))
+  notAfter: Feb  5 23:59:59 2027 GMT
+  CN=alnahyantrust.gov.bd
+  DNS:alnahyantrust.gov.bd
+  DNS:ansarvdp.gov.bd
+  DNS:architecture.gov.bd
+  DNS:ashrayanpmo.gov.bd
+  DNS:attorneygeneral.gov.bd
+  DNS:avacademy.gov.bd
+  DNS:bab.gov.bd
+  DNS:badc.gov.bd
+  DNS:baec.gov.bd
+  DNS:baera.gov.bd
+  DNS:bansdoc.gov.bd
+  DNS:bard.gov.bd
+  DNS:bari.gov.bd
+  DNS:barishalpoly.gov.bd
+  DNS:bba.gov.bd
+  DNS:bbs.gov.bd
+  DNS:bcct.gov.bd
+  DNS:bcic.gov.bd
+  DNS:bcmcl.org.bd
+  DNS:bcsadmin.gov.bd
+  DNS:bcsadminacademy.gov.bd
+  DNS:bcsir.gov.bd
+  DNS:bcswomen.net.bd
+  DNS:bdbl.com.bd
+  DNS:bdccl.gov.bd
+  DNS:berc.org.bd
+  DNS:bfa.gov.bd
+  DNS:bfcb.gov.bd
+  DNS:bfdc.gov.bd
+  DNS:bffwt.gov.bd
+  DNS:bfidc.gov.bd
+  DNS:bforest.gov.bd
+  DNS:bfri.gov.bd
+  DNS:bgb.gov.bd
+  DNS:bgdcl.gov.bd
+  DNS:bgfcl.org.bd
+  DNS:bhb.gov.bd
+  DNS:bhbfc.gov.bd
+  DNS:bhdc.gov.bd
+  DNS:bhtpa.gov.bd
+  DNS:bia.gov.bd
+  DNS:bim.gov.bd
+  DNS:bina.gov.bd
+  DNS:birtan.gov.bd
+  DNS:bisdp.gov.bd
+  DNS:bitac.gov.bd
+  DNS:biwta.gov.bd
+  DNS:biwtc.gov.bd
+  DNS:bjc.gov.bd
+  DNS:bjmc.gov.bd
+  DNS:bjri.gov.bd
+  DNS:bjwt.gov.bd
+  DNS:bkkb.gov.bd
+  DNS:bksp.gov.bd
+  DNS:blri.gov.bd
+  DNS:blwf.gov.bd
+  DNS:bmda.gov.bd
+  DNS:bmtti.gov.bd
+  DNS:bnacwcafd.gov.bd
+  DNS:bncu.gov.bd
+  DNS:bnf.gov.bd
+  DNS:bnh.gov.bd
+  DNS:bnswc.gov.bd
+  DNS:bnzoo.gov.bd
+  DNS:boesl.gov.bd
+  DNS:boiler.gov.bd
+  DNS:bori.gov.bd
+  DNS:bpi.gov.bd
+  DNS:bricm.gov.bd
+  DNS:brri.gov.bd
+  DNS:brtc.gov.bd
+  DNS:brwt.gov.bd
+  DNS:bsb.gov.bd
+  DNS:bsbl.org.bd
+  DNS:bscic.gov.bd
+  DNS:bscplc.gov.bd
+  DNS:bsec.gov.bd
+  DNS:bsfic.gov.bd
+  DNS:bsmriith.gov.bd
+  DNS:bsri.gov.bd
+  DNS:bsrti.gov.bd
+  DNS:bstft.gov.bd
+  DNS:btc.gov.bd
+  DNS:btmc.gov.bd
+  DNS:btri.gov.bd
+  DNS:btv.gov.bd
+  DNS:cca.gov.bd
+  DNS:ccb.gov.bd
+  DNS:ccbl.gov.bd
+  DNS:ccbs.gov.bd
+  DNS:ccie.gov.bd
+  DNS:cdb.gov.bd
+  DNS:cgdf.gov.bd
+  DNS:chrdc.gov.bd
+  DNS:cme.gov.bd
+  DNS:simcbp-mowca.gov.bd
+  DNS:stft.gov.bd
+  AIA caIssuers: http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
+bbs.gov.bd:443 -- completing the chain from AIA
+  added intermediate from http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
+    subject ['CN=Sectigo Public Server Authentication CA DV R36'] until Mar 21 23:59:59 2036 GMT
+  added intermediate from http://crt.sectigo.com/SectigoPublicServerAuthenticationRootR46.p7c
+    subject ['CN=Sectigo Public Server Authentication Root R46'] until Mar 21 23:59:59 2046 GMT
+    this is a self-signed root; chain complete
+  VERIFIED handshake ok, TLSv1.3
+
+page: https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census
+  200 text/html; charset=utf-8 139245 bytes
+  link: https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census
+    200 text/html; charset=utf-8 150121 bytes 
+  link: https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/9ce5bd160bb14a1ab1eabe886adddb9a.pdf
+    200 application/pdf 10307919 bytes 
+  link: https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/20d9218dadf64c0a866afe13d84b8542.pdf
+    200 application/pdf 2119722 bytes 
+  link: https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/6be42f15c1d342029649fa3baca69ab7.pdf
+    200 application/pdf 11289395 bytes 
+  link: https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/64cfb2e2a63042c9b96acfc276275836.pdf
+    200 application/pdf 36965905 bytes 
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/NRV-5Report2011.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/National%20Reports/SED_REPORT_Vol-4.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/National%20Reports/Population Housing Census 2011.pdf
+    HEAD failed: InvalidURL: URL can't contain control characters. '/WebTestApplication/userfiles/Image/National%20Reports/Population Housing Census 2011.pdf' (found at least ' ')
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/National%20Reports/Union%20Statistics.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/NRV-1Report2011.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/LatestReports/PEC%20Report%202011.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-bbs/2024/12/0ea528bd7abd4f0b84dd5102112c32e0.pdf
+    200 application/pdf 2502841 bytes 
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/Census2011/Bangladesh_glance.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Barisal.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_BHOLA.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Pirojpur.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Patuakhali.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Barguna.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Jhalokathi.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Chittagong.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_CoxsBazar.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Bandarban.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Rangamati.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Noakhali.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Feni.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Comilla.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Chandpur.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Brahmanbaria.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Khagrachhari.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Lakshmipur.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Dhaka.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila-Narayanganj.pdf
+    HEAD failed: URLError: <urlopen error timed out>
+  link: http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCenZilz2011/Zila_Gazipur.pdf
