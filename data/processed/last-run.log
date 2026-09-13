@@ -1,22 +1,62 @@
-bhutan: National Statistics Bureau, PHCB 2017 Table 2.1
-  Bumthang: 4 gewogs, 2 town(s), 17,820 people
-  Chhukha: 11 gewogs, 5 town(s), 68,966 people
-  Dagana: 14 gewogs, 5 town(s), 24,965 people
-  Gasa: 4 gewogs, 2 town(s), 3,952 people
-  Haa: 6 gewogs, 2 town(s), 13,655 people
-  Lhuentse: 8 gewogs, 2 town(s), 14,240 people
-  Monggar: 17 gewogs, 6 town(s), 37,150 people
-  Paro: 10 gewogs, 2 town(s), 43,362 people
-  Pema Gatshel: 11 gewogs, 8 town(s), 23,632 people
-  Punakha: 11 gewogs, 2 town(s), 27,360 people
-  Samdrup Jongkhar: 11 gewogs, 3 town(s), 35,079 people
-  Samtse: 15 gewogs, 3 town(s), 62,590 people
-  Sarpang: 12 gewogs, 2 town(s), 46,004 people
-  Thimphu: 8 gewogs, 2 town(s), 138,736 people
-  Trashi Yangtse: 8 gewogs, 2 town(s), 17,300 people
-  Trashigang: 15 gewogs, 6 town(s), 43,741 people
-  Trongsa: 5 gewogs, 2 town(s), 19,960 people
-  Tsirang: 12 gewogs, 2 town(s), 22,376 people
-  Wangdue Phodrang: 15 gewogs, 3 town(s), 42,186 people
-  Zhemgang: 8 gewogs, 3 town(s), 17,763 people
-bhutan: the twenty dzongkhags hold 720,837 against the 727,145 the national report prints -- +6,308. Each dzongkhag reconciled to its own printed total, so this is a whole dzongkhag read twice or not at all, which no per-file check can see
+probe_pdf: https://nsb.gov.bt/wp-content/uploads/2026/08/2017-PHCB-report-_national.pdf
+  5,894,308 bytes
+  288 pages
+probe_pdf: 289 pages, 83 mention ['Bumthang']
+=== front matter ===
+
+
+=== pages mentioning ['Bumthang'] (first 1) ===
+
+--- page 29 ----------------------------------------------------
+person is found at the census moment, though in found in hotels and those on the move on census
+some isolated cases, a combination of the de-facto reference day.
+and the de-jure (enumeration based on their usual The current total population size represents
+or legal residence) methods was also adopted. an increase of about 100,571 persons (16%)
+from the population size observed during the
+2.2 POPULATION OF BHUTAN
+2005 PHCB. The Population Growth Rate (PGR)
+between 2005 and 2017 is 1.3% per annum.
+2.2.1 Total Population
+The analyses in this Report are based on
+The 2017 PHCB reveals that as of 30 May 2017, 727,145 persons since no detailed information
+Bhutan’s total population is 735,553. This is the was collected from the 8,408 non-Bhutanese/tour-
+total number of people found in Bhutan on the ists found in hotels on the census reference day.
+census reference day irrespective of their nation- Table 2.1 presents the population by Sex,
+ality. It includes 8,408 non-Bhutanese/tourists and by Dzongkhag/Thromde. Out of 727,145
+Table 2.1 Distribution of Population by Sex and Dzongkhag/Thromde, Bhutan 2017
+Persons
+Dzongkhag/Thromde Male Percent Female Percent Total
+Bumthang 9,396 52.7 8,424 47.3 17,820
+Chhukha 36,041 52.3 32,925 47.7 68,966
+Phuentshogling Thromde 15,052 54.4 12,606 45.6 27,658
+Other than Phuentshogling Thromde 20,989 50.8 20,319 49.2 41,308
+Dagana 12,956 51.9 12,009 48.1 24,965
+Gasa 2,104 53.2 1,848 46.8 3,952
+Haa 7,435 54.4 6,220 45.6 13,655
+Lhuentse 7,407 51.3 7,030 48.7 14,437
+Monggar 18,247 49.1 18,903 50.9 37,150
+Paro 23,941 51.7 22,375 48.3 46,316
+Pema Gatshel 11,922 50.4 11,710 49.6 23,632
+Punakha 15,079 52.5 13,661 47.5 28,740
+Samdrup Jongkhar 18,329 52.3 16,750 47.7 35,079
+Samdrup Jongkhar Thromde 5,016 53.8 4,309 46.2 9,325
+Other than Samdrup Jongkhar Thromde 13,313 51.7 12,441 48.3 25,754
+Samtse 32,022 51.2 30,568 48.8 62,590
+Sarpang 24,018 52.2 21,986 47.8 46,004
+Gelegphu Thromde 5,146 52.2 4,712 47.8 9,858
+Other than Gelegphu Thromde 18,872 52.2 17,274 47.8 36,146
+Thimphu 72,522 52.3 66,214 47.7 138,736
+Thimphu Thromde 58,996 51.5 55,555 48.5 114,551
+Other than Thimphu Thromde 13,526 55.9 10,659 44.1 24,185
+Trashigang 23,414 51.4 22,104 48.6 45,518
+Trashi Yangtse 8,719 50.4 8,581 49.6 17,300
+Trongsa 11,878 59.5 8,082 40.5 19,960
+Tsirang 11,526 51.5 10,850 48.5 22,376
+Wangdue Phodrang 24,302 57.6 17,884 42.4 42,186
+Zhemgang 9,195 51.8 8,568 48.2 17,763
+Bhutan 380,453 52.3 346,692 47.7 727,145
+Note: Excludes 8,408 tourists/non-Bhutanese found in hotels on the census reference day
+10 2017 Population and Housing Census of Bhutan
+[401 words in 49 rows]
+
+... and 82 further pages match; re-run with a narrower --terms to see them.
