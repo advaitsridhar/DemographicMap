@@ -330,6 +330,74 @@ class TableIsSelfConsistent(unittest.TestCase):
         self.assertEqual("Andhra Pradesh", india_census.STATE_IN_2011["Telangana"])
 
 
+class TheReasonNamesWhereTheCountIs(unittest.TestCase):
+    """A gap's note is a claim, and this is the claim that went stale.
+
+    When the shrunken predecessors were blanked, `created_reason` truthfully
+    told the reader that no district on the map carried the 2011 row and that
+    the state total did. `LOST_TERRITORY_SINCE_2011` then gave every one of
+    them its census row back, with a caption saying how much of its ground it
+    has left -- and the sentence pointing away from them was not rewritten. For
+    87 of the 91 post-2011 districts it was sending a reader to a state total
+    for a count sitting on the next shape along.
+
+    A stale note is worse than a blank: a blank says nobody has looked, and a
+    note says somebody did.
+    """
+
+    def predecessors(self):
+        for state, entries in india_census.CREATED_AFTER_2011.items():
+            for name, year, preds in entries:
+                yield state, name, year, preds
+
+    def test_every_predecessor_either_keeps_its_row_or_has_none(self):
+        """The fork the sentence rests on, asserted on the shipped tables.
+
+        `check_lost_territory` enforces it on every run against the census's
+        own district list; this asserts it without a census file, so the
+        sentence cannot be left true only by a check that a refactor skips.
+        """
+        kept = {name.casefold()
+                for entries in india_census.LOST_TERRITORY_SINCE_2011.values()
+                for name, _ in entries}
+        for state, name, _, preds in self.predecessors():
+            for predecessor in preds:
+                with self.subTest(district=f"{state} / {name}", of=predecessor):
+                    self.assertTrue(
+                        predecessor.casefold() in kept
+                        or predecessor.casefold() in india_census.SUBDIVIDED_SINCE_2011,
+                        f"{predecessor} is neither a shape that kept its 2011 "
+                        f"row nor one whose name survives on no shape, so the "
+                        f"note cannot say where the count is")
+
+    def test_a_predecessor_that_kept_its_row_is_not_called_missing(self):
+        agar = india_census.created_reason("Agar", 2013, ("Shajapur",))
+        self.assertIn("Shajapur", agar)
+        self.assertNotIn("no district on this map carries it", agar)
+        self.assertNotIn("The state total carries it", agar)
+        # It has to say the count is for more ground than that shape covers,
+        # or sending the reader to it is the mis-match all over again.
+        self.assertIn("more ground than that shape covers", agar)
+
+    def test_a_predecessor_that_kept_no_shape_still_names_the_state(self):
+        # Warangal was split six ways and its name survives on no shape, so
+        # here the state total really is the only place the row is.
+        jangaon = india_census.created_reason("Jangaon", 2016, ("Warangal",))
+        self.assertIn("has itself since been subdivided", jangaon)
+        self.assertIn("the state total carries it", jangaon)
+
+    def test_the_reason_is_true_of_every_declared_district(self):
+        for state, name, year, preds in self.predecessors():
+            with self.subTest(district=f"{state} / {name}"):
+                note = india_census.created_reason(name, year, preds)
+                orphaned = any(p.casefold() in india_census.SUBDIVIDED_SINCE_2011
+                               for p in preds)
+                if orphaned:
+                    self.assertIn("the state total carries it", note)
+                else:
+                    self.assertNotIn("state total", note)
+
+
 class Subdivided(unittest.TestCase):
     def test_the_undivided_row_is_not_emitted_under_its_own_name(self):
         got = emitted()

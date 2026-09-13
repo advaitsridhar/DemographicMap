@@ -103,10 +103,72 @@ function mapStateSurvivesThemeChangesAndUsesRepresentativePoints() {
   assert.deepStrictEqual(Array.from(lastEase.center), Array.from(usa.point));
 }
 
+/* A fact tile has to carry the sentence that says how to read it.
+ *
+ * Both halves of this were shipped and neither reached a reader. A gap built
+ * by common.py's `gap()` carries its reason inside the value; a figure that
+ * needs a caveat carries it beside the record as `<field>_note`. The
+ * composition panels printed theirs and the fact tiles printed neither, so
+ * India's 98 districts with no 2011 head count said "Not available" and
+ * nothing else -- which is the blank this project exists to prevent, because
+ * it reads as "nobody ran the adapter" rather than "the district did not
+ * exist when the census counted" -- and the 75 that show the undivided
+ * district's count said nothing about the ground that count is really for.
+ *
+ * Asserted on both a gap and a value, because the second is the worse case:
+ * there the panel shows a number and the note is the only thing saying what
+ * the number is about.
+ */
+function factTilesCarryTheirStatedReason() {
+  const rendered = [];
+  const container = {
+    set innerHTML(html) { rendered.push(html); },
+    get innerHTML() { return rendered[rendered.length - 1] || ""; },
+    scrollTop: 0,
+    querySelectorAll: () => [],
+  };
+  const context = vm.createContext({ window: {}, console });
+  vm.runInContext(source("data.js"), context);
+  vm.runInContext(source("palette.js"), context);
+  context.window.DataStore = { country: () => null, get: () => null, children: () => [] };
+  vm.runInContext(source("dashboard.js"), context);
+
+  const uncounted = "Agar did not exist at the 2011 census: it was created in 2013.";
+  const undivided = "This figure is for Shajapur as the 2011 census measured it.";
+  context.window.Dashboard.render({
+    id: "IND-TEST", level: "admin2", name: "Agar", country: "IND",
+    population: { status: "not_available", note: uncounted },
+    sex_ratio: { value: 938, unit: "females_per_1000_males", year: 2011 },
+    sex_ratio_note: undivided,
+  }, container);
+
+  const html = container.innerHTML;
+  // The reason itself, not merely some note: a panel that prints "Not
+  // available" and a generic apology is the state this test exists to fail.
+  assert.ok(html.includes(uncounted),
+            "a gap's own note must reach the population tile");
+  assert.ok(html.includes(undivided),
+            "a value's <field>_note must reach its tile");
+  // Behind the same "i" a composition heading uses, rather than loose in a
+  // two-column grid of tiles.
+  assert.ok(/class="fact-label">Population<button type="button" class="info"/.test(html),
+            "the note belongs to the tile's own label");
+
+  // And a gap with nothing written about it must not grow an empty bubble.
+  rendered.length = 0;
+  context.window.Dashboard.render({
+    id: "IND-TEST-2", level: "admin2", name: "Nowhere", country: "IND",
+    population: { status: "not_available" },
+  }, container);
+  assert.ok(!/class="fact-label">Population<button/.test(container.innerHTML),
+            "a gap with no stated reason gets no info button");
+}
+
 (async () => {
   await concurrentLoadsAreIndexedOnce();
   await deepSearchWaitsForTheSecondShard();
   uncertainSharesKeepTheirQualifier();
   mapStateSurvivesThemeChangesAndUsesRepresentativePoints();
+  factTilesCarryTheirStatedReason();
   console.log("frontend regression tests passed");
 })().catch((error) => { console.error(error); process.exitCode = 1; });

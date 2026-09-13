@@ -1024,6 +1024,83 @@ mandals but split some of them, so a hand-written mapping would not be a
 partition even if every line of it were right. Writing one out would invent
 precisely the thing the sub-district tables were meant to supply.
 
+### "Many Indian districts have no population": which, why, and where the reason went
+
+Counted rather than estimated, over the 735 CGAZ ADM2 shapes for IND:
+
+| | shapes |
+|---|---:|
+| carry a 2011 head count | 637 |
+| carry none | 98 |
+
+None of the 98 is a join that failed. Every one of the 735 shapes is claimed by
+an adapter row — 735 rows from `india_district.json` and 734 from
+`india_language_district.json`, no row unmatched, no shape unclaimed — so there
+is no alias to add and no binding to make. The 98 break down as:
+
+| class | shapes | |
+|---|---:|---|
+| the source has the figure and the row never matched the shape | **0** | nothing to fix |
+| the source genuinely has no figure | **97** | 91 districts created 2010–2020 out of a district the census *did* count, plus the 6 successors of the three districts subdivided since (Warangal ×2, Karbi Anglong ×2, Jaintia Hills ×2) |
+| the adapter never read the table | **0** | both C-01 and C-16 are read at district level |
+| not a district at all | **1** | `DATA NOT AVAILABLE`, geoBoundaries' 268-fragment sliver in Jammu and Kashmir |
+
+So it is the honest case throughout, and `CREATED_AFTER_2011`,
+`SUBDIVIDED_SINCE_2011` and `BOUNDARY_ARTEFACTS` already wrote a sentence for
+every one of them saying which census never counted that ground.
+
+**The reason was written and then thrown away at the last step.** The sentence
+lived in the record — `population: {status, note}`, which is what
+`common.py`'s `gap()` builds — and `tests/test_india.py` asserted on the built
+file that no Indian district carries a gap without one. What had no test was
+the panel. `Dashboard.factCard` rendered a gap as the words "Not yet
+available" and dropped `note` on the floor, and rendered a value without
+reading the record's `<field>_note` beside it. Across the whole build that was
+**1,311 written reasons that never reached a reader**: 887 notes inside gap
+values and 424 `population_note` / `sex_ratio_note` / `median_age_note`
+sidecars. 354 of them are India's — the 98 blanks, and the 75 shrunken
+districts whose head count is for more ground than the shape covers and whose
+caption saying so was also dropped, which is the worse half of the same bug.
+The fact tiles now carry the note behind the same "i" the composition panels
+use, and `tests/test_frontend.js` asserts it on both a gap and a value.
+
+**Is there a newer official figure?** Asked rather than assumed, and the answer
+is no at this geography:
+
+* **Census.** 2011 remains the last complete count. The 2021 round was
+  postponed; the Government notified the next in the Gazette on 16 June 2025,
+  with reference dates of 1 October 2026 for the snow-bound areas of Ladakh,
+  Jammu and Kashmir, Himachal Pradesh and Uttarakhand and **1 March 2027** for
+  the rest of the country. Nothing from it is published.
+* **Projections.** The one official series is *Population Projections for India
+  and States 2011–2036* (Technical Group on Population Projections, National
+  Commission on Population, July 2020), and its title is exact: India and the
+  states. It contains no district table. The district-level projections that
+  circulate — an IIPS report prepared for the health ministry, and academic
+  products such as India Policy Insights — are derivations from that state
+  series, not Registrar General output, and they are keyed to the NFHS survey
+  frames (640 districts for NFHS-4, 707 for NFHS-5) rather than to the present
+  set, so they would not reach the districts that are empty here.
+* **Sample Registration System.** A sample survey, published for India and the
+  major states; its own documentation states it cannot produce small-area
+  statistics at district or sub-district level, and its sample supports
+  breakdowns no finer than NSSO natural divisions, which are groups of
+  districts.
+* **Civil registration.** The CRS counts registered births and deaths. It is
+  not a population count and cannot become one without a base to carry forward,
+  which is the thing that is missing.
+
+So the 97 stay gaps, and the fix owed them was the one made: to say so where a
+reader is standing. The route that *would* fill them with a measurement rather
+than a projection is the sub-district one described above — and note that the
+raw material for half of it is already in this repository, since the C-16
+workbooks under `data/raw/india/c16/` carry sub-district rows beside their
+district rows (Punjab's, for instance, has 20 district rows and 77 sub-district
+rows, with Pathankot and Dhar Kalan sitting under Gurdaspur as the tehsils that
+became Pathankot district in 2011). It is still the other half — a published
+concordance from 2011 sub-districts to present-day districts — that does not
+exist, and hand-writing one is what this file declines to do.
+
 ### Telangana, Ladakh, and summing a state from its districts
 
 The mirror of the same problem, one level up, and here the fix adds figures

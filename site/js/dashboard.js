@@ -38,19 +38,51 @@ window.Dashboard = (function () {
     </div>`;
   }
 
-  function factCard(label, value, meta) {
+  /* A fact tile, and the sentence that says how to read it.
+   *
+   * Both halves of that sentence used to be dropped on the floor here, and a
+   * composition panel two inches below printed its own. A gap carries its
+   * reason inside the value -- `{status, note}`, which is what common.py's
+   * `gap()` builds -- and a figure that needs a caveat carries it beside the
+   * record as `<field>_note`, exactly the way a composition carries
+   * `religion_note`. This function read neither, so every one of them stopped
+   * at the file.
+   *
+   * India is where that showed worst. 98 of its 735 district shapes have no
+   * 2011 head count because the district did not exist in 2011, and each one
+   * carries a written sentence saying which census never counted it and where
+   * its people were counted instead; the panel printed "Not available" and
+   * nothing else, which is the reading this project exists to prevent -- a
+   * blank that says "nobody ran the adapter" where the truth is "the census
+   * never counted this ground". 75 more show the undivided district's head
+   * count under a note saying the shape keeps a part of that ground, and that
+   * note was dropped too, which is the worse half: a figure about somewhere
+   * else, silently.
+   *
+   * The note goes behind the same "i" a composition heading uses rather than
+   * into the tile. These run to a hundred words apiece and the tiles are a
+   * two-column grid; the bubble is the pattern this panel already uses for
+   * exactly that trade.
+   */
+  function factCard(label, value, meta, note) {
+    // The gap's own note first: it was written about this field, whereas a
+    // `<field>_note` beside a gap would have been written about a figure that
+    // is not being shown.
+    const reason = (isGap(value) && value && value.note) || note || "";
+    const head = `<div class="fact-label">${esc(label)}` +
+      `${infoDot(reason, `About the ${label.toLowerCase()} figure`)}</div>`;
     if (isGap(value)) {
       const status = gapStatus(value);
       const s = window.Palette.status(status);
       return `<div class="fact">
-        <div class="fact-label">${esc(label)}</div>
+        ${head}
         <div class="fact-value is-gap">
           <span style="color:${s.color}" aria-hidden="true">${s.icon}</span> ${esc(s.label)}
         </div>
       </div>`;
     }
     return `<div class="fact">
-      <div class="fact-label">${esc(label)}</div>
+      ${head}
       <div class="fact-value">${esc(value)}</div>
       ${meta ? `<div class="fact-meta">${esc(meta)}</div>` : ""}
     </div>`;
@@ -70,14 +102,14 @@ window.Dashboard = (function () {
     return String(measure.unit).replace(/_/g, " ");
   }
 
-  function measureCard(label, measure, format, unit) {
-    if (isGap(measure)) return factCard(label, measure);
+  function measureCard(label, measure, format, unit, note) {
+    if (isGap(measure)) return factCard(label, measure, null, note);
     const raw = valueOf(measure);
     const meta = [];
     if (unit) meta.push(unit);
     if (measure && measure.year) meta.push(String(measure.year));
     if (measure && measure.source) meta.push(measure.source.split(",")[0]);
-    return factCard(label, format ? format(raw) : raw, meta.join(" · "));
+    return factCard(label, format ? format(raw) : raw, meta.join(" · "), note);
   }
 
   /* Make a partition's displayed percentages add to exactly 100.0.
@@ -373,16 +405,20 @@ window.Dashboard = (function () {
     }
 
     html.push(`<div class="facts">
-      ${measureCard("Population", record.population, (n) => number(n))}
-      ${factCard("Capital", isGap(capital) ? capital : capital)}
-      ${factCard("Largest settlement", isGap(largest) ? largest : largest,
+      ${measureCard("Population", record.population, (n) => number(n), null,
+                    record.population_note)}
+      ${factCard("Capital", capital, null, record.capital_note)}
+      ${factCard("Largest settlement", largest,
                  record.largest_settlement_population
                    ? `${number(valueOf(record.largest_settlement_population))} people`
-                   : null)}
-      ${measureCard("Median age", record.median_age, (n) => `${n} yrs`)}
+                   : null,
+                 record.largest_settlement_note)}
+      ${measureCard("Median age", record.median_age, (n) => `${n} yrs`, null,
+                    record.median_age_note)}
       ${measureCard("Sex ratio", record.sex_ratio, (n) => String(n),
-                    unitLabel(record.sex_ratio))}
-      ${measureCard("Life expectancy", record.life_expectancy, (n) => `${n} yrs`)}
+                    unitLabel(record.sex_ratio), record.sex_ratio_note)}
+      ${measureCard("Life expectancy", record.life_expectancy, (n) => `${n} yrs`,
+                    null, record.life_expectancy_note)}
     </div>`);
 
     html.push(compositionPanel("Religion", record.religion, record.religion_note, record.religion_year));
