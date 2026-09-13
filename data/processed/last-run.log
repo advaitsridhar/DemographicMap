@@ -1,570 +1,78 @@
-probe_pdf: https://washdata.org/sites/default/files/documents/reports/2018-07/Afghanistan%20ALCS%202016-17%20Analysis%20report.pdf
-  8,650,165 bytes
-  421 pages
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/PFAZYC+AcuminPro-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(48164, 0, 140663554708176), '/LastChar': 122, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [253, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 660, 0, 686, 0, 597, 0, 0, 730, 276, 0, 0, 0, 0, 0, 751, 0, 0, 642, 606, 558, 714, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 529, 571, 506, 571, 523, 283, 567, 566, 237, 237, 0, 237, 846, 566, 550, 570, 0, 352, 473, 319, 557, 0, 0, 0, 481, 451]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/PFAZYC+AcuminPro-Bold', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(48166, 0, 140663554708176), '/LastChar': 89, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [242, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 386, 0, 0, 591, 399, 554, 0, 0, 0, 578, 494, 0, 0, 0, 0, 0, 0, 0, 0, 0, 688, 0, 712, 736, 618, 588, 751, 740, 313, 0, 0, 586, 0, 755, 765, 0, 0, 662, 635, 588, 725, 670, 0, 0, 619]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-probe_pdf: 421 pages, 14 mention ['mother']
-=== front matter ===
-Analysis report
-This project is funded by the European Union
-Islamic Republic of Afghanistan 
-Central Statistics Organization
-AFGHANISTAN LIVING 
-CONDITIONS SURVEY 
-2016 - 17
-
-ii 
-The Afghanistan Living Conditions Survey 2016-2017 was implemented by the Central Statistics 
-Organization (CSO) of the Government of the Islamic Republic of Afghanistan with technical assistance 
-from ICON-Institute Public Sector Gmbh. 
-This publication was produced with the financial support of the European Union.  Its contents are the sole 
-responsibility of CSO and ICON-INSTITUTE and do not necessarily reflect the views of the European 
-Union. 
-For further information, please contact: 
-CSO 
-www.cso.gov.af 
-E-mail: info@cso.gov.af
-ICON-Institute 
-www.icon-institute.de 
-E-mail:  christophe.dietrich@icon-institute.de (Project Manager) or
-b.j.debruijn@online.nl (Chief Analyst/Editor)
-Delegation of the European Union to Afghanistan 
-http://eeas.europa.eu/delegations/afghanistan/index_en.htm 
-E-mail: delegation-afghanistan-press@eeas.europa.eu
-Recommended citation: 
-Central Statistics Organization (2018), Afghanistan Living Conditions Survey 2016-17. Kabul, CSO. 
-ISBN: 978-9936-8050-7-1 
-Cover page photos are used by courtesy of Mr Khalid Amarkhel and Pixalia 
-iii 
-FOREWORD 
-The present Afghanistan Living Conditions Survey (ALCS), conducted 
-by the Central Statistics Organization (CSO) and financially supported 
-by the European Commission, is the sixth round of data collection since 
-the start of the survey in 2003. The history of the ALCS has seen an 
-enlargement of coverage of development themes that are crucial for the 
-development planning of Afghanistan, while maintaining a balance in 
-the details and periodicity of reporting that are relevant for the large 
-number of stakeholders involved in and benefiting from the survey. At 
-the same time, the ALCS has been able to ac commodate international 
-standards and methodologies to produce internationally comparable 
-indicators and to improve the quality and speed of reporting. The release 
-of the ALCS 2016 -17 report almost exactly one year after the 
-completion of the data collecti on is an achievement that is hardly ever 
-met by surveys of similar coverage and complexity. In addition, the 
-history of the ALCS is also the account of building CSO’s capacity in 
-data collection, survey management, data processing and analysis, and I am proud of the efforts and skills 
-demonstrated by the staff of CSO involved in the present survey. 
-The ALCS is the flagship of the Central Statistics Organization. Several features make the ALCS a unique 
-instrument for policy makers and all the national and international organisations investing in the future of 
-the country. These features include the coverage of the nomadic Kuchi population, the ability to capture 
-seasonal variation in relevant development indicators, the ability to produce statistics at provincial level, the 
-continuity of the survey that allows making trend analyses of key development indicators, the large number 
-of stakeholders benefitting from the survey results and the survey’s flexibility to adapt to Afghanistan’s 
-needs. 
-The present report is the most comprehensive in the history of the survey, covering detailed analyses on 
-population and households, labour market, agriculture, health, education, housing, gender and the challenges 
-faced by Afghanistan’s households, their coping strategies and people’s priorities for development. Next to 
-the standard set of indicators produced in each survey round, the present ALCS report moreover focuses 
-again on poverty and food-security analysis, and in addition provides detailed information about disabilit y 
-in the population. As Director General of the Central Statistics Organization, I am also very pleased 
-that with this report, Afghanistan is one of the first countries in the world to produce official 
-Sustainable Development Goals indicators. The present round of the ALCS produced no less than 20 
-indicators for 12 of the 17 SDGs. In this respect, the ALCS also provided the platform to implement the 
-new drinking water quality test on the basis of which Afghanistan is one of the first countries in the world 
-to produce the SDG indicator on safely managed drinking water services. Furthermore, I am appreciative 
-that the present ALCS was partially conducted with mobile data entry in the field, thereby further 
-expanding CSO’s proficiency in applying new technologies for statistical data collection. 
-
-iv 
-I am convinced that the results of the ALCS 2016-17 presented here, as well as the micro data that are 
-available for further analysis, will be instrumental for development planning and programming for a wide 
-range of data users. I sincerely hope that this report will be an interesting source of information and 
-knowledge for the readers. 
-Ahmad Jawed Rasuli 
-Director General of the Central statistics Organization
-v 
-KEY INDICATORS
-Indicator SDG /MDG 
-indicator Sub-groupsa National 
-Population and households 
-Percentage of population under age 15 U 42.9; R 49.0; K 52.2 47.7 
-Percentage of population aged 65 and over U 3.0; R 2.6; K 1.6 2.7 
-Sex ratio U 102; R 104; K 108 104 
-Dependency ratio U 85; R 107; K 117 101 
-Child dependency ratio U 79; R 101; K 113 96 
-Old-age dependency ratio U 6; R 5; K 4 5 
-Average household size U 7.3; R 7.8; K 7.6 7.7 
-Mean age at first marriage, women aged 20-24 U 18.0; R 17.5; K 17.4 17.6 
-Median age at first marriage, women aged 20-24 U 18; R 18; K 18 18 
-Percentage of women aged 20-24 married at age 16 SDG 5.3.1 U 2.1; R 5.0; K 4.8 4.2 
-Percentage of women aged 20-24 married at age 18 SDG 5.3.1 U 18.4; R 31.9; K 36.3 28.3 
-Percentage of married women living in a polygamous 
-marriage 8.2 
-Labour force (national definition) 
-Labour force participation rate M 80.6; F 26.8 
-U 48.0; R 54.9; K 72.4 53.9 
-Employment-to-population ratio MDG 1.5 M 65.8; F 15.8 
-U 35.3; R 41.7; K 63.5 41.0 
-Percentage not-gainfully employed population M 34.4; F 55.1 
-U 35.3; R 41.2; K 35.3 39.5 
-Underemployment rate, as percentage of the employed M 19.7; F 23.9 
-U 11.9; R 22.6; K 26.3 20.5 
-Underemployment rate, as percentage of the labour force 
-M 16.1; F 14.1 
-U 8.7; R 17.2; K 23.0 15.6 
-Unemployment rate SDG 8.5.2 
-M 18.3; F 41.0 
-U 26.5; R 24.0; K 12.3 
-D 37.7; ND 23.3 
-23.9 
-Youth unemployment rate 
-M 24.3; F 47.4 
-U 39.1; R 29.6; K 13.3 30.7 
- vi 
-Indicator SDG /MDG 
-indicator Sub-groupsa National 
-Youth unemployment as percentage of total 
-unemployment  M 44.8; F 46.4 
-U 48.4; R 44.5; K 44.0 45.5 
-Share of youth (aged 15-24 years) not in education, 
-employment or training (NEET) SDG 8.6.1 
-M 16.6; F 67.9 
-U 37.9; 44.1; 33.6 
-D 56.6; 41.7 
-42.0 
-Proportion of informal employment in non-agriculture 
-employment (in percentages) (proxy) SDG 8.5.3 M: 66.7; F: 71.3 66.7 
-Proportion of jobs in sustainable tourism industries out 
-of total tourism jobs (in percentages) (proxy) SDG 8.9.2 M 8.5; F 0.3 6.7 
-Proportion of own-account and contributing family 
-workers in total employment (in percentages) MDG 1.7 M 77.5; F 89.9 
-U 60.9; R 85.8; K 90.0 
-80.2 
-Manufacturing employment as a proportion of total 
-employment (in percentages) SDG 9.2.2 M 16.4; F 24.0 18.1 
-Proportion of adults (15 years and older) with an account 
-at a bank or other financial institution or with a mobile-
-money-service provider 
-SDG 8.10.2 
-M 9.5; F 1.1 
-U 9.9; R 4.0; K 0.1 
-D 4.7; ND 5.4 
-5.4 
-Proportion of employed persons living in a household 
-whose members are estimated to be below the poverty 
-line 
- 
-M: 51.2; F 50.0 
-U 38.0; R 54.2; 59.3 
-D 50.4; ND 51.0 
-50.9 
-    
-Agriculture and livestock    
-Percentage of households owning irrigated land   37.9 
-Percentage of households owning rain-fed land   19.4 
-Percentage of households owning or having access to a 
-garden plot   13.1 
-Percentage of households having access to irrigated land   41.4 
-Percentage of households having access to rain-fed land   20.5 
-Mean size of owned irrigated land (in jeribsb)   4.9 
-Mean size of owned rain-fed land (in jeribsb)   12.1 
-Mean size of owned or accessed garden plot (in jeribsb)   1.9 
-Mean size of accessed irrigated land (in jeribsb)   5.1 
-Mean size of accessed rain-fed land (in jeribsb)   12.4 
-Number of cattle (in thousands)   3,371 
-Number of goats (in thousands)   9,754 
-Number of sheep (in thousands)   21,813 
- vii 
-Indicator SDG /MDG 
-indicator Sub-groupsa National 
-Number of chickens (in thousands)   10,341 
-    
-Poverty    
-Proportion of population living below the national 
-poverty line (in percentages) SDG 1.2.1 U 41.6; RK 58.5 54.5 
-Poverty gap MDG 1.2 U 10.3; RK 16.4 15.0 
-Squared poverty gap  U 3.6; RK 6.2 5.6 
-Gini Index  U 0.29; RK 0.25 0.31 
- 
-Food security 
-Percentage of food-insecure population MDG 1.9 U 42.1; R 46.2; K 32.3 44.6 
-Percentage of severely or very severely food insecure 
-population  U 25.0; R 28.9; K 18.3 27.5 
-Percentage of population with protein deficiency  U 27.1; R; 31.7; K 22.7 30.1 
-Diet Diversity Score (mean)  U: 5.8; R: 4.9; K: 5.0 5.1 
- 
-Education 
-Adult literacy rate (15 years of age and over)  M 49.4; F 19.9 
-U 53.7; R 29.6; K 5.8 34.8 
-Youth literacy rate (15-24 years of age) MDG 2.3 M 68.2; F 38.7 
-U 75.1; R 47.9; K 7.0 53.6 
-Gross intake ratio in primary education  M 53.6; F 42.9 
-U 77.4; RK 41.1 48.5 
-Net attendance rate in primary education MDG 2.1 M 65.5; F 45.5 
-U 74.3; R 54.0; K 6.6 56.1 
-Net attendance rate in secondary education  M 46.8; F 24.1 
-U 51.6; R 31.7; K: 1.8 35.7 
-Net attendance rate in tertiary education  M 14.9; F 4.8 
-U 18.1; R 6.9; K 0.2 9.7 
-Adjusted net attendance rate in primary education  M 73.2; F 50.1 62.4 
-Adjusted net attendance rate in secondary education  M 47.3; F 25.7 36.9 
-Gross attendance ratio in primary education  M 84.4; F 58.9 
-U 95.5 R 69.9; K 8.9 
-72.5 
-Indicator SDG /MDG 
-indicator Sub-groupsa National 
-viii 
-Gross attendance ratio in secondary education M 63.0; F 32.2 
-U 69.2; R 42.5; K 2.6 48.0 
-Gross attendance ratio in tertiary education M 20.6; F 8.0 
-U 27.3; R 9.6; K 0.2 14.1 
-Percentage of pupils starting grade one who reach grade 
-5 of primary education MDG 2.2 M 88.9 F 86.3 
-U 90.2 R+K 86.9 87.9 
-Percentage of pupils starting grade one who reach last 
-grade of primary education MDG 2.2 M 86.5 F 82.6 
-U 88.3 R+K 83.7 
-85.1 
-Percentage of school starters who drop out before 
-reaching grade six 
-M 12.3 F 15.7 
-U 10.2 RK 15.0 13.6 
-Primary completion rate M 51.9 F 33.2 
-U 74.6 RK 33.7 56.6 
-Transition rate to secondary school M 96.2 F 93.2 
-U 96.6 RK 94.2 95.2 
-The transition rate to tertiary school M 61.2 F 54.8 
-U 67.5 RK 51.1 58.9 
-School life expectancy (in years) M 9.7; F 5.6 
-U 11.1; RK 6.7 7.8 
-Primary-school-age children out-of-school (in thousands) M 864; F 1,272 
-U 206; RK 1,930 2,136 
-Secondary-school-age children out-of-school (in 
-thousands) 
-M 803; F 1,298 
-U 336; RK 1,765 2,101 
-Tertiary-school-age youth out-of-school (in thousands) M 1,036; F 1,346 
-U 583; RK 1,799 2,382 
-Participation rate of youth in formal and non-formal 
-education and training in the previous 12 months SDG 4.3.1 
-M: 39.9; F 17.2; 
-U 42.2; R 24.6; K 1.9 
-D 17.9; ND 28.7 
-28.5 
-Health 
-Percentage of population within two hours travel time 
-from public clinic U 95.8; R 92.5; K 90.4 93.2 
-Percentage of pregnant women who received tetanus 
-injection during pregnancy U 35.6; R 36.4; K 23.5 35.6 
-Antenatal care coverage (at least one visit) MDG 5.5 U 87.7; R 66.8; K 46.3 70.2 
-Antenatal care coverage (at least four visits) MDG 5.5 U 33.5; R 12.7; K 5.4 16.3 
-Indicator SDG /MDG 
-indicator Sub-groupsa National 
- ix 
-Percentage of births attended by skilled health personnel SDG 3.1.2 
-MDG 5.2 U 86.8; R 46.0; K 18.5 53.4 
-Percentage of deliveries in institutional facilities  U 82.7; R 43.4; K 16.4 50.5 
-Percentage of children aged 0-59 months who received 
-Vitamin A tablet or capsule in the last six months  U 64.7; R 48.8; K 33.7 51.2 
-Proportion of children under 5 years of age whose births 
-have been registered with a civil authority (in 
-percentages) 
-SDG 16.9.1 U 60.9; R 29.5; K 10.4 29.5 
-Disability prevalence rate (in percentages)  U 3.2; R 4.3; K 2.8 
-M 3.2; F 3.1 3.2 
-Percentage of people with a disability who have multiple 
-disabilities  M 33.4; F 32.2 33.1 
- 
-Housing and amenities 
-Proportion of the rural population who live within 2 km 
-of an all-season road (in percentages)   63.1 
-Percentage of households owning their dwelling  U 66.9; R 94.2; K 88.4 87.1 
-Average number of persons per room  U 3.1; R 3.1; K 5.2 3.2 
-Percentage of households living in overcrowded 
-dwellings  U 42.7; R 41.5; K 83.3 43.9 
-Proportion of urban population living in slums, informal 
-settlements or inadequate housing (in percentages) 
-MDG 7.10 
-SDG 11.1.1  72.4 
-Proportion of population with access to electricity (in 
-percentages) SDG 7.1.1 U 99.5; R 97.8; K 86.1 97.7 
-Percentage of population using improved drinking water 
-sourcesc MDG 7.8 U 91.5; R 56.6; K 35.8 63.9 
-Proportion of population using safely managed drinking 
-water services (in percentages)d (proxy indicator) SDG 6.1.1 U 75.3; R 25.1; K 3.0 36.0 
-Proportion of population using safely managed drinking 
-water services (in percentages)e SDG 6.1.1 (U 36.7; RK 10.1) (21.0) 
-Percentage of households with E. coli in household 
-drinking watere  (U 67.1; RK 84.2) (76.9) 
-Percentage of population using an improved sanitation 
-facility (limited and basic services) MDG 7.9 U 83.2; R 46.1; K 7.4 53.0 
-Proportion of population using safely managed sanitation 
-services (in percentages) (proxy indicator)f SDG 6.2.1 U 56.5; R 38.8; K 6.7 41.4 
-Indicator SDG /MDG 
-indicator Sub-groupsa National 
-x 
-Proportion of population with primary reliance on clean 
-fuels and technology (in percentages) – for cooking SDG 7.1.2 U 79.1; R 9.0; K 1.1 25.2 
-Proportion of population with primary reliance on clean 
-fuels and technology (in percentages) – for heating SDG 7.1.2 U 11.9; R: 1.9; K 0.6 4.2 
-Proportion of population with primary reliance on clean 
-fuels and technology (in percentages) – for lighting SDG 7.1.2 U 99.8; R 98.2; 87.7 98.1 
-Proportion of individuals who own a mobile telephone 
-(in percentages) SDG 5.b.1 U 60.2; R 38.4; K 24.8 43.3 
-Internet users per 100 population MDG 8.16 
-SDG 17.8.1 
-U 10.8; R 1.5; K 0.2 
-M 6.4; F 1.3 3.9 
-Share of women in wage employment in the non-
-agricultural sector (in percentages) MDG 3.2 13.2 
-Proportion of women in managerial positions (in 
-percentages) SDG 5.5.2 U 4.4; R 3.8; K - 4.3 
-Adult literacy gender parity index (age 15 and over) U 0.61; R 0.29; K 0.07 0.40 
-Youth literacy gender parity index (age 15-24) U 0.81; R 0.44; K 0.10 0.57 
-Gender parity index of gross primary attendance ratios MDG 3.1 U 0.90; R 0.62; K 0.30 0.71 
-Gender parity index of gross secondary attendance ratios MDG 3.1 U 0.74; R 0.38; K 0.00 0.51 
-Gender parity index of gross tertiary attendance ratios MDG 3.1 U 0.58; R 0.21; K 0.00 0.39 
-a U: urban, R: rural, K: Kuchi, M: male, F: female, D: disabled, ND: non-disabled 
-b One jerib is 0.2 hectare (2,000 m2) 
-c Including water supplied by tanker trucks 
-d Proxy indicator not considering eventual water contamination assessed prior to its use by households 
-e Based on a non-representative sample from ten selected provinces 
-f Proxy indicator not considering procedures for excreta disposal; the indicator corresponds to ‘basic sanitation 
-services’ according to the sanitation ladder. 
-( ) Indicators between brackets are considered less reliable and are indicative only. 
- xi 
-TABLE OF CONTENTS 
- 
-Foreword .........................................................................................................................................................  
-Key indicators .................................................................................................................................................  
-Table of contents 
-List of tables ....................................................................................................................................................  
-List of figures ..................................................................................................................................................  
-List of text boxes .............................................................................................................................................  
-Abbreviations ..................................................................................................................................................  
-Map of Afghanistan.........................................................................................................................................  
-Acknowledgements .........................................................................................................................................  
-Executive summary .........................................................................................................................................  
- 
-1 Introduction .............................................................................................................................................  
- 1.1 General survey backgrounds............................................................................................................  
- 1.2 The context of development in Afghanistan ....................................................................................  
-  1.2.1 The macro-economic and security context ............................................................................  
-  1.2.2 The demographic context of Afghanistan .............................................................................  
- 1.3 The ALCS and the SDGs .................................................................................................................  
- 1.4 The structure of the report ...............................................................................................................  
- 
-2 Survey methodology and operations .......................................................................................................  
- 2.1 Introduction .....................................................................................................................................  
- 2.2 Survey preparation ...........................................................................................................................  
-  2.2.1 Stakeholder involvement .......................................................................................................  
-  2.2.2 Questionnaire design .............................................................................................................  
-  2.2.3 Selection and training of field staff .......................................................................................  
-  2.2.4 Sampling design ....................................................................................................................  
- 2.3 Data collection .................................................................................................................................  
-  2.3.1 Field operations .....................................................................................................................  
-  2.3.2 Mobile data collection in field operations .............................................................................  
- 2.4 Data processing ................................................................................................................................  
-  2.4.1 Manual checking and coding.................................................................................................  
-  2.4.2 Data entry and data editing ....................................................................................................  
- 2.5 Survey outcomes ..............................................................................................................................  
-  2.5.1 Comparability of results ........................................................................................................  
-  2.5.2 Data limitations .....................................................................................................................  
-  2.5.3 Reporting ...............................................................................................................................  
- xii 
- 
-3 Population and households ......................................................................................................................  
- 3.1 Introduction .....................................................................................................................................  
- 3.2 Population structure and distribution ...............................................................................................  
-  3.2.1 Distribution by residence ......................................................................................................  
-  3.2.2 Age distribution .....................................................................................................................  
-  3.2.3 Sex ratio.................................................................................................................................  
-  3.2.3 Distribution by place of residence .........................................................................................  
- 3.3 Household composition ...................................................................................................................  
-  3.3.1 Household structure...............................................................................................................  
-  3.3.2 Female heads of household ...................................................................................................  
- 3.4 Marriage patterns .............................................................................................................................  
-  3.4.1 Marital status distribution......................................................................................................  
-  3.4.2 Age at first marriage ..............................................................................................................  
-  3.4.3 The marriage age gap ............................................................................................................  
-  3.4.4 Polygamy ...............................................................................................................................  
- 3.5 Migration .........................................................................................................................................  
-  3.5.1  Afghanistan’s migration context ...........................................................................................  
-  3.5.2  Migration concepts ................................................................................................................  
-  3.5.3 Life-time migrants .................................................................................................................  
-  3.5.4 Recent migrants .....................................................................................................................  
-  3.5.5 Reasons for migration ...........................................................................................................  
-  3.5.6 Migrant characteristics ..........................................................................................................  
-  3.5.7 Households returned from displacement ...............................................................................  
- 
-4 Labour market .........................................................................................................................................  
- 4.1 Introduction .....................................................................................................................................  
- 4.2 Labour force participation ...............................................................................................................  
-  4.2.1 Labour participation rate .......................................................................................................  
-  4.2.2 Differentials in labour force participation .............................................................................  
-  4.2.3 Reason for economic inactivity .............................................................................................  
- 4.3  Labour force characteristics .............................................................................................................  
-  4.3.1 Labour force concepts ...........................................................................................................  
-
-=== pages mentioning ['mother'] (first 25) ===
-
---- page 75 ----------------------------------------------------
-Table 3.4 shows the absolute and relative distribution of people according to their relationship to the head
-of household: 13.0 percent of all persons are head themselves, while 12.8 percent were registered as spouse
-of head and 54.2 percent as a son or daughter of  the head. Other family members are respectively s on- or
-daughter-in-law (3.1 percent), grandchild (6.6 percent), father or mother (3.0 percent), nephew or niece (2.1
-percent), brother or sister (3.9 percent), brother- or sister-in-law (0.9 percent) or other relative (0.5 percent).
-The number of unrelated persons is very small. Out of the total population only 12.5 thousand persons live
-in a household where they are unrelated to the head.
-      ...
-Son or daughter 15,774 54.2
-Son/daughter in law 899 3.1
-Grandchild 1,923 6.6
-Father or mother 873 3.0
-Nephew or niece 601 2.1
-Brother or sister 1,128 3.9
-Brother/sister in law 254 0.9
-
---- page 77 ----------------------------------------------------
-Total
-Percentage
-AgeHousehold head Wife of head Daughter
-Daughter  in law Grandchild Mother of head
-Niece Sister Sister in law
-Other relative Unrelated household member
-
---- page 238 ----------------------------------------------------
-during four visits, at specified intervals during pregnancy (Villar and Bergsjø 2002). For each visit specific
-controls must be carried out, following a basic ante-natal care component checklist. As reported in  the
-ALCS 2013-14, important progress has been made in securing adequate ante-natal care for pregnant
-mothers, but considerable efforts still need to be made to reach universal care. The ALCS 2016-17 enables
-monitoring whether additional progress has been made.
-Figure 9.8 shows the percentage of women with at least one live birth, who reported at least one ante-natal
-examination by a skilled provider for their last pregnancy in the ALCS 2016-17 together with information
-
---- page 240 ----------------------------------------------------
-women visit health care providers at least once to receive an ante-natal check-up. Among women aged 45-
-49, 62.4 percent obtain ante-natal care. Age is also an important determinant in the number of visits to an
-ante-natal health care provider (see Figure 9.10). Younger women receive, on average, more ante-natal
-check-ups than older women. Young expectant mothers between 15 and 19 years have on average 2.5 times
-ante-natal care visits. The number of times care is received drops within every five -year age-group to 2.0
-in the age-group 30 to 34 years of age and to 1.6 times for women 45 to 49 years of age.
-Figure 9.9: Percentage of women with a live birth in the five years preceding the survey who received any
-
---- page 242 ----------------------------------------------------
-198
-Figure 9.11: Percentage of women with a live birth in the five years preceding the survey, who reported
-at least one ante-natal care visit during their last pregnancy, by province
-Having an ante-natal visit is closely linked to the level of education of the mother. Among women with no
-formal education, 60.9 percent received ante-natal care. The higher a women’s educational attainment, the
-higher the percentage of women who received ante-natal care. The biggest gap is between women with no
-schooling at all (60.9 percent) and women with primary education (83.2 percent). Only small differences
-
---- page 243 ----------------------------------------------------
-Not only the frequency of ante-natal care visits is important, but also the level of expertise of the provider
-who does the examination and provides care. Figure 9.13 shows the health care provider who gave the ante-
-natal care by type of residence. In the ALCS interview, it was asked whether during the last pregnancy the
-expectant mother saw any of the named providers. For each type of provider, the woman then had to answer
-‘yes’ or ‘no’. This means that a number of women who h ad more than one ANC  visit, indicated they had
-also visited more than one type of provider. In some cases, women saw both traditional birth attendants and
-a doctor. Of all pregnant women who gave birth in the last five years, 66.2 percent had a check -up with a
-
---- page 244 ----------------------------------------------------
-Little difference exists between urban and rural areas: 35.6 percent coverage in urban areas and 36.4 percent
-in rural areas. Kuch i women have considerably lower coverage (23.5 percent).  Figure 9.14 shows that
-tetanus vaccination among young women is muc h higher than among somewhat older women. Expectant
-mothers between 15 and 19 years old have a coverage of 44.2 percent. For each five-year age group, the
-coverage decreases: 35.7 percent for women 25-29 years old, 32.6 for women 35-39 years old and 26.4 for
-women 45-49 years old.
-68.5
-
---- page 247 ----------------------------------------------------
-tetanus vaccination during their last pregnancy, by number of vaccinations received, and by residence
-9.4.2 Skilled birth attendance and place of delivery
-Skilled birth attendance
-To guarantee the health of the mother and the new-born child, each delivery should be assisted by a skilled
-birth attendant and should take place in a hygienic, healthy and safe environment. In a study on the effect
-of various childbirth care packages on neo-natal mortality due to intrapartum-related events, Lee et al. (2011)
-estimated that globally intra-partum-related neo-natal deaths could be reduced by 25 percent by universal
-
---- page 250 ----------------------------------------------------
-206
-Figure 9.19: Percentage of women with a live birth in the five years preceding the survey with deliveries
-assisted by a skilled birth attendant, by province
-Being assisted by a skilled birth attendant is closely related to the educational attainment of the mother.
-Women with no education have  30 percentage points less skilled attendance during delivery then women
-with primary education. Only 48.9 percent of women with no education can count on professional assistance
-during childbirth. The higher a woman’s education the higher her chance of being assisted professionally.
-
---- page 252 ----------------------------------------------------
-Other public health facility 6.4 12.0 2.5 10.3
-Private health facility 11.9 3.2 1.2 5.0
-Other 0.3 0.3 0.6 0.3
-As home delivery may be a significant health risk for mother and child within most of Afghanistan’s social
-and physical environment , it is important for public health interventions to indicate in what areas home
-delivery is most prominent. According to the ALCS 2016-17, in three provinces still more than 90 percent
-of women deliver at home: Ghor, Nooristan and Badghis. In 20 out of 34 provinces more than 50 percent
-
---- page 254 ----------------------------------------------------
-210
-this method and the pill used by 11.9 percent of all women ( Figure 9.23). Breastfeeding can be used as a
-birth control method roughly for the first 6 months of a baby’s life, or until the mother starts menstruating
-again. Among the selection of women in the ALCS, 9.9 percent were deliberately using breastfeeding as a
-means of contraception. Implants (0.5 percent) and IUDs (2.4 percent) were less popular than condoms,
-which were us ed by 6.3 percent of women. Traditional methods were only sparsely used: periodic
-      ...
-Afghanistan were contraceptive pills (7.0 percent) and injectables (5.0 percent).
-Figure 9.23: Percentage of women who had a child in the last five years and who were not pregnant and
-were using contraception, by type of contraception
-Ante-natal care gives skilled providers an opportunity to communicate with women about safe motherhood,
-maternal and child health and the benefits of family planning. The ALCS 2016-17 allows to evaluate if
-women who obtained ante-natal care had higher contraceptive use. This is indeed the case. Contraceptive
-use of any method among women who had received ante-natal care was 54.4 percent, against 36.1 percent
-
---- page 256 ----------------------------------------------------
-the distribution to those in need. Figure 9.25 shows the percentage of children 0 to 59 months old who
-received Vitamin A tablets or capsules, by province. Large differences exist between the provinces in terms
-of distribution of Vitamin A, ranging from almost full coverage to virtually no distribution at all. In three
-provinces, mothers report ed that almost none of their children get the Vitamin A supplement: Takhar,
-Badghis and Baghlan, while in two other provinces less than 20 percent of children were given the
-supplement (Nimroz and Ghazni). While slightly more than half of all young children living in Afghanistan
-received Vitamin A supplement, in 16 provinces less than half of children did so.
-
---- page 318 ----------------------------------------------------
-3. Household roster
-3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9 3.10 3.11 INTERVIEWER:
-Line Write the name What is the How old Is What is Line Does <name's> Line Does <name's> Line List all people who usually live and
-no. of each household relationship is <name> <name's> number father live in number mother live in number sleep in this household, starting with
-member of <name> <name>? male or marital status? of (first) this household? of this household? of the head of the household.
-to the head of For female? For codes, spouse this this
-household? children see at right 1=Yes father 1=Yes mother Record all people who usually stay
-less than If not If not in this 2=No 2=No here, including babies and infants, and
-For codes, one year, 1=Male married, household, If No, If No, go people who are not immediate kin.
-see at right write '00' 2=Female go to 3.8 write '98' go to 3.10 to next line
-      ...
-03 = Son or daughter
-04 = Son- or daughter-in-law
-05 = Grandchild
-06 = Father or mother
-07 = Nephew or niece
-08 = Brother or sister
-09 = Brother- or sister-in-law
-
---- page 349 ----------------------------------------------------
-21.1 21.2 21.3 21.4 21.5 21.6 21.7 21.8 21.9 21.10 21.11
-Line Write the name What is the How old Is What is Line Does Line Does Line
-no. of each missed relationship is <name> <name's> number <name's> number <name's> number
-household member of <name> <name>? male or marital of (first) father live of mother of
-to the head female? status? spouse in this this live in this this
-CON- of house- house- father house- mother
-TINUE hold? For For codes, hold? hold?
-FROM children see below 1=Yes 1=Yes
-LAST less than If not If not in this 2=No 2=No
-      ...
-1     2 1     2 1     2
-1     2 1     2 1     2
-Codes for 21.3 (Relationship to head of household) Codes for 21.6 (Marital status)
-02 = Wife or husband 06 = Father or mother 10 = Other relative 1 = Married 4 = Engaged
-03 = Son or daughter 07 = Nephew or niece 11 = Unrelated member 2 = Widowed 5 = Never married
-04 = Son-/daughter-in-law 08 = Brother or sister 3 = Divorced or separated
-05 = Grandchild 09 = Brother-/sister-in-law
+page: https://catalog.ihsn.org/catalog/4273/related-materials
+  54,325 bytes
+  18 matching link(s)
+  - 
+    https://catalog.ihsn.org/
+  - Home
+    https://catalog.ihsn.org/home
+  - Microdata Catalog
+    https://catalog.ihsn.org/catalog
+  - Citations
+    https://catalog.ihsn.org/citations
+  - Login
+    https://catalog.ihsn.org/auth/login
+  - Home
+    https://catalog.ihsn.org//
+  - Central Data Catalog
+    https://catalog.ihsn.org//catalog
+  - MDV_2006_PHC_V01_M
+    https://catalog.ihsn.org//catalog/4273
+  - 
+    https://catalog.ihsn.org/catalog/central
+  - DDI/XML
+    https://catalog.ihsn.org/metadata/export/4273/ddi
+  - JSON
+    https://catalog.ihsn.org/metadata/export/4273/json
+  - Study Description
+    https://catalog.ihsn.org/catalog/4273/study-description
+  - Downloads
+    https://catalog.ihsn.org/catalog/4273/related-materials
+  - Get Microdata
+    https://catalog.ihsn.org/catalog/4273/get-microdata
+  - Related Publications
+    https://catalog.ihsn.org/catalog/4273/related-publications
+  - Download [PDF, 387.9 KB]
+    https://catalog.ihsn.org//catalog/4273/download/56171
+  - Download [PDF, 10.2 MB]
+    https://catalog.ihsn.org//catalog/4273/download/56172
+  - Download [PDF, 1.82 MB]
+    https://catalog.ihsn.org//catalog/4273/download/56173
+page: https://catalog.ihsn.org/catalog/221/related-materials
+  34,308 bytes
+  17 matching link(s)
+  - 
+    https://catalog.ihsn.org/
+  - Home
+    https://catalog.ihsn.org/home
+  - Microdata Catalog
+    https://catalog.ihsn.org/catalog
+  - Citations
+    https://catalog.ihsn.org/citations
+  - Login
+    https://catalog.ihsn.org/auth/login
+  - Home
+    https://catalog.ihsn.org//
+  - Central Data Catalog
+    https://catalog.ihsn.org//catalog
+  - MDV_2000_PHC_V01_M
+    https://catalog.ihsn.org//catalog/221
+  - 
+    https://catalog.ihsn.org/catalog/central
+  - DDI/XML
+    https://catalog.ihsn.org/metadata/export/221/ddi
+  - JSON
+    https://catalog.ihsn.org/metadata/export/221/json
+  - Study Description
+    https://catalog.ihsn.org/catalog/221/study-description
+  - Data Dictionary
+    https://catalog.ihsn.org/catalog/221/data-dictionary
+  - Downloads
+    https://catalog.ihsn.org/catalog/221/related-materials
+  - Get Microdata
+    https://catalog.ihsn.org/catalog/221/get-microdata
+  - Related Publications
+    https://catalog.ihsn.org/catalog/221/related-publications
+  - Download [PDF, 190.57 KB]
+    https://catalog.ihsn.org//catalog/221/download/29510
+page: https://census.gov.mv/2022/statistical-releases/
+  unreachable: HTTPError: HTTP Error 404: Not Found
