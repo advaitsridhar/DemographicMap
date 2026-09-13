@@ -6446,3 +6446,62 @@ class SupersededSources(unittest.TestCase):
         be.merge_adapter(
             entity, {"religion": {"status": "not_available"}, "sources": []})
         self.assertEqual([s["name"] for s in entity["sources"]], ["ASARB"])
+
+
+class CountryDetail(unittest.TestCase):
+    """The admin-0 curated layer: what a country's large 'other' holds.
+
+    Guarded the way the admin1 seed is guarded, plus the one failure the
+    admin1 seed cannot have: a row here names its country by ISO3 and there
+    is no name to match on, so a code that has drifted would attach a
+    paragraph to nothing at all.
+    """
+
+    def rows(self):
+        payload = common.read_json(
+            ROOT / "data" / "curated" / "admin0_detail.json", {})
+        self.assertTrue(payload.get("rows"))
+        return payload["rows"]
+
+    def test_every_row_names_a_country_a_field_and_a_note(self):
+        for row in self.rows():
+            self.assertRegex(row.get("country", ""), r"^[A-Z]{3}$", row)
+            self.assertIn(row.get("field"), ("religion", "language", "ethnicity"))
+            self.assertGreater(len(row.get("note", "")), 80,
+                               f"{row['country']} {row['field']}: a note that "
+                               f"does not explain is worse than none")
+
+    def test_a_substituted_composition_partitions_the_population(self):
+        for row in self.rows():
+            groups = row.get("groups")
+            if not groups:
+                continue
+            names = [g["group"] for g in groups]
+            self.assertEqual(len(names), len(set(names)),
+                             f"{row['country']} names a group twice")
+            total = sum(g["pct"] for g in groups)
+            self.assertGreater(total, 99.0, f"{row['country']} sums to {total}")
+            self.assertLess(total, 101.0, f"{row['country']} sums to {total}")
+            for group in groups:
+                self.assertIn("count", group, group)
+            self.assertIn("year", row,
+                          f"{row['country']} substitutes figures and does not "
+                          f"say what year they are")
+            self.assertIn("source", row)
+
+    def test_a_row_that_matches_no_country_stops_the_build(self):
+        admin0 = [{"id": "UGA", "ethnicity": []}]
+        with self.assertRaises(SystemExit):
+            be.apply_country_detail(admin0, {"XXX": [{"country": "XXX",
+                                                     "field": "ethnicity",
+                                                     "note": "n"}]})
+
+    def test_the_note_lands_on_the_field_it_names(self):
+        admin0 = [{"id": "VUT", "language": [{"group": "indigenous languages",
+                                              "pct": 82.6}]}]
+        be.apply_country_detail(admin0, {"VUT": [{"country": "VUT",
+                                                  "field": "language",
+                                                  "note": "what it holds"}]})
+        self.assertEqual(admin0[0]["language_note"], "what it holds")
+        # A note-only row leaves the figures exactly as they were.
+        self.assertEqual(admin0[0]["language"][0]["pct"], 82.6)

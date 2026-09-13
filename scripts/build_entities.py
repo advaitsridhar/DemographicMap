@@ -522,6 +522,85 @@ def load_curated() -> tuple[dict[str, list[dict[str, Any]]], dict[str, Any]]:
     return rows, payload.get("_provenance", {})
 
 
+# ---------------------------------------------------------------------------
+# What a country's "other" holds
+# ---------------------------------------------------------------------------
+#
+# The country panel's figures come from the Factbook, which prints one line per
+# field and no note at all. Where a country's residual is large -- Vanuatu's
+# "indigenous languages" is 82.6% of everybody, Bahrain's "other" religion a
+# quarter of the country -- the question the reader has is what is inside it,
+# and the Factbook's line cannot answer it.
+#
+# Two kinds of answer go in data/curated/admin0_detail.json. A row with
+# ``groups`` replaces the field with a census's own division of it, which is
+# always the better answer and is used wherever such a table exists. A row with
+# only a ``note`` says what the bucket holds and why it is not divided, which
+# is what is left when the census published one number and no break-up of it.
+# Neither invents a split.
+#
+# This is the admin-0 counterpart of data/curated/admin1_seed.json, and it is a
+# curated file for the same reason that one is: an adapter cannot reach admin0.
+# Adapter output lands on admin1 and admin2 shapes; the country record is the
+# Factbook profile plus whatever its children roll up into it, and there is no
+# third door.
+
+
+def load_country_detail() -> dict[str, list[dict[str, Any]]]:
+    """ISO3 -> the curated admin-0 rows for it."""
+    payload = read_json(ROOT / "data" / "curated" / "admin0_detail.json", {})
+    rows: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in payload.get("rows", []):
+        rows[row["country"]].append(row)
+    return rows
+
+
+def apply_country_detail(admin0: list[dict[str, Any]],
+                         rows: dict[str, list[dict[str, Any]]]) -> None:
+    """Attach the curated notes and compositions to the country records.
+
+    Runs after the roll-ups, so a curated row is the last word on the field it
+    names. That order is the point: a note about a Factbook residual would be
+    left standing beside a figure summed from the country's own divisions if
+    the roll-up ran afterwards, describing a column that is no longer there.
+
+    Every row must find its country and must name a field that exists, and a
+    row that does not stops the build. A curated file whose keys have drifted
+    fails silently otherwise -- the note simply never appears, which looks
+    exactly like a country that was never given one.
+    """
+    by_id = {entity["id"]: entity for entity in admin0}
+    applied = 0
+    for iso3, country_rows in sorted(rows.items()):
+        entity = by_id.get(iso3)
+        if entity is None:
+            raise SystemExit(
+                f"admin0_detail: no country record with id {iso3!r}. The "
+                f"curated rows for it would go nowhere and nothing would say "
+                f"so.")
+        for row in country_rows:
+            field = row["field"]
+            if field not in ("religion", "language", "ethnicity"):
+                raise SystemExit(
+                    f"admin0_detail: {iso3} names field {field!r}, which is "
+                    f"not one of the three compositions.")
+            if row.get("groups"):
+                entity[field] = row["groups"]
+                if row.get("year"):
+                    entity[f"{field}_year"] = row["year"]
+                if row.get("basis"):
+                    entity[f"{field}_basis"] = row["basis"]
+            entity[f"{field}_note"] = row["note"]
+            if row.get("source"):
+                entity.setdefault("sources", []).append(
+                    {"field": field, "name": row["source"],
+                     "url": row.get("url"), "year": row.get("year"),
+                     "license": row.get("license", "See docs/SOURCES.md")})
+            applied += 1
+    log(f"  admin0 detail: {applied} curated rows on "
+        f"{len(rows)} countries")
+
+
 def primary_country_profiles(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     """Choose the one profile that can supply each ISO3 boundary."""
     countries: dict[str, dict[str, Any]] = {}
@@ -2084,6 +2163,7 @@ def main() -> int:
     cities = read_json(PROCESSED / "cities.json", {"by_country": {}, "by_admin1": {}})
     adapters = load_adapters()
     curated_rows, provenance = load_curated()
+    country_detail = load_country_detail()
 
     # -- admin 0 -------------------------------------------------------------
     admin0: list[dict[str, Any]] = []
@@ -2426,6 +2506,9 @@ def main() -> int:
     # carry into its country -- and so the country's note counts the divisions
     # as they finally stand rather than as they arrived.
     roll_up_countries(admin0, admin1_by_country)
+
+    # Last, so a curated country row is the last word on the field it names.
+    apply_country_detail(admin0, country_detail)
 
     # -- write ---------------------------------------------------------------
     out = args.out

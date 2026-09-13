@@ -1,0 +1,377 @@
+{
+ "_readme": "Country-level detail for the three compositions, applied by scripts/build_entities.py after the roll-ups. Each row names one country and one field. A row with 'groups' replaces the field with a census's own division of it and is always preferred; a row with only a 'note' says what a large residual holds and why it is not divided. Neither invents a split. This is the admin-0 counterpart of admin1_seed.json, and it is curated for the same reason: adapter output lands on admin1 and admin2 shapes, and the country record is the Factbook profile plus whatever its children roll up into it.",
+ "rows": [
+  {
+   "country": "UGA",
+   "field": "ethnicity",
+   "year": 2014,
+   "source": "Uganda Bureau of Statistics, National Population and Housing Census 2014 -- Main Report, Appendix Table A8 (Population by Ethnicity/Citizenship by Sex and Residence)",
+   "url": "https://www.ubos.org/wp-content/uploads/publications/03_20182014_National_Census_Main_Report.pdf",
+   "license": "Uganda Bureau of Statistics; official statistics",
+   "note": "Uganda's 2014 census asks one question and takes two kinds of answer: a Ugandan names an ethnic group, a non-Ugandan a country of citizenship. This is Appendix Table A8 of the Main Report in full -- the sixty-five ethnic groups it names and its own 'Other Ugandans', each as a share of the 34,142,417 people it enumerates, with the 504,196 non-Ugandans pooled into one row rather than shown as eighteen more ethnic groups, which they are not. It replaces nine names and an 'other' of 32.1%, which were the same census's figures on a Ugandans-only base: that thirty-two per cent was the fifty-six groups the short list did not reach. The shares here are a per cent or so lower than the familiar ones because the base is everybody enumerated rather than Ugandans alone -- Baganda are 16.5% of Ugandans and 16.3% of the country.",
+   "groups": [
+    {
+     "group": "Baganda",
+     "pct": 16.3,
+     "count": 5555319
+    },
+    {
+     "group": "Banyankore",
+     "pct": 9.4,
+     "count": 3216332
+    },
+    {
+     "group": "Basoga",
+     "pct": 8.7,
+     "count": 2960890
+    },
+    {
+     "group": "Bakiga",
+     "pct": 7.0,
+     "count": 2390446
+    },
+    {
+     "group": "Iteso",
+     "pct": 6.9,
+     "count": 2364569
+    },
+    {
+     "group": "Langi",
+     "pct": 6.2,
+     "count": 2131495
+    },
+    {
+     "group": "Bagisu",
+     "pct": 4.8,
+     "count": 1646904
+    },
+    {
+     "group": "Acholi",
+     "pct": 4.3,
+     "count": 1470554
+    },
+    {
+     "group": "Lugbara",
+     "pct": 3.2,
+     "count": 1099733
+    },
+    {
+     "group": "Banyoro",
+     "pct": 2.8,
+     "count": 966976
+    },
+    {
+     "group": "Alur",
+     "pct": 2.6,
+     "count": 878453
+    },
+    {
+     "group": "Bakonzo",
+     "pct": 2.5,
+     "count": 850646
+    },
+    {
+     "group": "Batoro",
+     "pct": 2.4,
+     "count": 810708
+    },
+    {
+     "group": "Bafumbira",
+     "pct": 2.1,
+     "count": 713231
+    },
+    {
+     "group": "Bagwere",
+     "pct": 1.8,
+     "count": 621150
+    },
+    {
+     "group": "Banyole",
+     "pct": 1.6,
+     "count": 530120
+    },
+    {
+     "group": "Banyarwanda",
+     "pct": 1.5,
+     "count": 524098
+    },
+    {
+     "group": "Non-Ugandan nationals",
+     "pct": 1.5,
+     "count": 504196
+    },
+    {
+     "group": "Aringa",
+     "pct": 1.4,
+     "count": 494626
+    },
+    {
+     "group": "Jopadhola",
+     "pct": 1.4,
+     "count": 481816
+    },
+    {
+     "group": "Basamia",
+     "pct": 1.2,
+     "count": 421106
+    },
+    {
+     "group": "Karimojong",
+     "pct": 1.1,
+     "count": 371713
+    },
+    {
+     "group": "Madi",
+     "pct": 0.9,
+     "count": 292983
+    },
+    {
+     "group": "Kumam",
+     "pct": 0.8,
+     "count": 266071
+    },
+    {
+     "group": "Sabiny",
+     "pct": 0.8,
+     "count": 273839
+    },
+    {
+     "group": "Baruli",
+     "pct": 0.6,
+     "count": 190122
+    },
+    {
+     "group": "Jie",
+     "pct": 0.5,
+     "count": 165242
+    },
+    {
+     "group": "Kakwa",
+     "pct": 0.5,
+     "count": 182436
+    },
+    {
+     "group": "Bahororo",
+     "pct": 0.4,
+     "count": 151566
+    },
+    {
+     "group": "Dodoth",
+     "pct": 0.4,
+     "count": 129102
+    },
+    {
+     "group": "Babwisi",
+     "pct": 0.3,
+     "count": 101112
+    },
+    {
+     "group": "Bagwe",
+     "pct": 0.3,
+     "count": 99884
+    },
+    {
+     "group": "Bakenyi",
+     "pct": 0.3,
+     "count": 99913
+    },
+    {
+     "group": "Barundi",
+     "pct": 0.3,
+     "count": 92570
+    },
+    {
+     "group": "Ethur",
+     "pct": 0.3,
+     "count": 98348
+    },
+    {
+     "group": "Jonam",
+     "pct": 0.3,
+     "count": 106447
+    },
+    {
+     "group": "Pokot",
+     "pct": 0.3,
+     "count": 104880
+    },
+    {
+     "group": "Bagungu",
+     "pct": 0.2,
+     "count": 83986
+    },
+    {
+     "group": "Batagwenda",
+     "pct": 0.2,
+     "count": 56151
+    },
+    {
+     "group": "Kebu (Okebu)",
+     "pct": 0.2,
+     "count": 54109
+    },
+    {
+     "group": "Other Ugandans",
+     "pct": 0.2,
+     "count": 60818
+    },
+    {
+     "group": "Aliba",
+     "pct": 0.1,
+     "count": 18296
+    },
+    {
+     "group": "Baamba",
+     "pct": 0.1,
+     "count": 42559
+    },
+    {
+     "group": "Babukusu",
+     "pct": 0.1,
+     "count": 37117
+    },
+    {
+     "group": "Banyara",
+     "pct": 0.1,
+     "count": 47699
+    },
+    {
+     "group": "Banyaruguru",
+     "pct": 0.1,
+     "count": 48995
+    },
+    {
+     "group": "Batuku",
+     "pct": 0.1,
+     "count": 35350
+    },
+    {
+     "group": "Chope",
+     "pct": 0.1,
+     "count": 34327
+    },
+    {
+     "group": "Kuku",
+     "pct": 0.1,
+     "count": 46497
+    },
+    {
+     "group": "Lendu",
+     "pct": 0.1,
+     "count": 18919
+    },
+    {
+     "group": "Napore",
+     "pct": 0.1,
+     "count": 25417
+    },
+    {
+     "group": "Nubi",
+     "pct": 0.1,
+     "count": 28772
+    },
+    {
+     "group": "So (Tepeth)",
+     "pct": 0.1,
+     "count": 23422
+    },
+    {
+     "group": "Bahehe",
+     "pct": 0.0,
+     "count": 4023
+    },
+    {
+     "group": "Banyabindi",
+     "pct": 0.0,
+     "count": 16331
+    },
+    {
+     "group": "Banyabutumbi",
+     "pct": 0.0,
+     "count": 10113
+    },
+    {
+     "group": "Basongora",
+     "pct": 0.0,
+     "count": 15897
+    },
+    {
+     "group": "Batwa",
+     "pct": 0.0,
+     "count": 6200
+    },
+    {
+     "group": "Gimara",
+     "pct": 0.0,
+     "count": 11182
+    },
+    {
+     "group": "Ik (Teuso)",
+     "pct": 0.0,
+     "count": 13939
+    },
+    {
+     "group": "Mening",
+     "pct": 0.0,
+     "count": 2655
+    },
+    {
+     "group": "Mvuba",
+     "pct": 0.0,
+     "count": 2879
+    },
+    {
+     "group": "Ngikutio",
+     "pct": 0.0,
+     "count": 5729
+    },
+    {
+     "group": "Nyangia",
+     "pct": 0.0,
+     "count": 9634
+    },
+    {
+     "group": "Reli",
+     "pct": 0.0,
+     "count": 8357
+    },
+    {
+     "group": "Shana",
+     "pct": 0.0,
+     "count": 10835
+    },
+    {
+     "group": "Vonoma",
+     "pct": 0.0,
+     "count": 2613
+    }
+   ]
+  },
+  {
+   "country": "VUT",
+   "field": "language",
+   "source": "Vanuatu Bureau of Statistics and the Pacific Community, Vanuatu 2020 National Population and Housing Census -- Analytical Report Volume 2",
+   "url": "https://vnso.gov.vu/sites/default/files/2020_Vanuatu_National_Population_and_Housing_Census_-_Analytical_report_Volume_2.pdf",
+   "license": "SPC and VBoS; reproduction permitted for research with acknowledgement",
+   "note": "The 82.6% is first language spoken, from the 2020 census, and it is not one language: Vanuatu has more than a hundred, the highest number of languages per head of population anywhere on earth, all of them Oceanic languages of the Austronesian family. None of them is large. The biggest -- Lenakel and Whitesands on Tanna, Apma and Raga on Pentecost, the languages of north Efate and of Ambrym -- are counted in the thousands, so not one of them reaches five per cent of the country. The census records which language each person first spoke and the Bureau publishes none of them: the 2020 Analytical Report carries the four-way split alone -- indigenous language, Bislama, English, French -- and treats 'Indigenous language' as a single category throughout. The individual codes exist in the microdata and in nothing published. Dividing the column here would mean dividing it by speaker estimates of mixed vintage, most of them counts made around 2000 for a country that has grown by three-fifths since, and that would be this project's arithmetic wearing the census's clothes."
+  },
+  {
+   "country": "BHR",
+   "field": "religion",
+   "source": "US Department of State, 2021 Report on International Religious Freedom: Bahrain, reading Bahrain's 2020 census",
+   "url": "https://www.state.gov/reports/2021-report-on-international-religious-freedom/bahrain/",
+   "license": "Public domain (U.S. Government work)",
+   "note": "Bahrain's census asks religion and publishes the answer as two numbers: Muslim, and not. The 25.9% is the whole of the not, and it is almost entirely the foreign residents who are about half of everybody living in the country. Reading the same 2020 census, the US State Department's religious freedom report puts roughly 401,500 foreign residents as Muslim and roughly 387,800 as Hindu, Buddhist, Baha'i, Sikh or Christian -- the Christians chiefly Roman Catholic, Protestant, Syrian Orthodox and Mar Thoma, from south India -- and that is as far as any published figure divides this column. Bahraini citizens are about 99.8% Muslim by the Ministry of Information's own count, so hardly any of it is theirs. No count of Hindus, of Christians, or of the few dozen Bahraini Jews is published, so none is shown."
+  },
+  {
+   "country": "GNQ",
+   "field": "language",
+   "note": "The 32.4% is everything that is not Spanish, and the Factbook's own line names what is in it: Fang, Bubi, the two other official languages Portuguese and French, and the Fa d'Ambo of Annobon -- to which belong Ndowe, Benga, Bisio and the Pichinglis of Bioko. Read it as a measure of Spanish rather than of anyone's mother tongue: Spanish is the language of school, government and the towns and is a second language for most of the people counted in it. The figure is a 1994 estimate and nothing has replaced it. The nearest thing to a division of the column is the ethnicity row on this same record, which is the 2011 census -- Fang 78.1%, Bubi 9.4%, Ndowe 2.8%, Bisio 0.9% -- each of those a people whose language carries the same name."
+  },
+  {
+   "country": "GHA",
+   "field": "language",
+   "note": "The ten names above are Ghana's largest ethnolinguistic groups in the 2010 census, and several are divisions of one larger group: Asante, Fante, Akyem and Boron are all Akan, and Dagomba and Dagarte are both Mole-Dagbani. The 31.2% is the rest of the same two clusters -- Akuapem, Kwahu, Nzema, Sefwi, Wassa and Aowin among the Akan, Mamprusi, Nanumba, Wali and Frafra among the Mole-Dagbani -- together with the Gurma, Guan, Grusi and Mande languages and Hausa. The census divides the same people into those eight clusters and leaves only 1.6% over: Akan 45.7%, Mole-Dagbani 18.5%, Ewe 12.8%, Ga-Dangme 7.1%, Gurma 6.4%, Guan 3.2%, Grusi 2.7%, Mande 2.0% (2021 census). What it does not publish is a division of the language question itself, so the column is left as it stands rather than being given the ethnicity table's shape."
+  }
+ ]
+}
