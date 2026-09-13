@@ -182,11 +182,17 @@ def table(blob: bytes, dzongkhag: str
     read three gewogs and then lost the table's own Total row to an axis
     label, which the "no printed Total" refusal caught.
 
-    **A row's label can wrap onto its own line.** Chhukha prints "Tsimasham"
-    above "Town" and "Phuentsholing" above "Thromde", so those rows arrive as
-    three figures with no name beside them. Dropping them cost Chhukha 29,793
-    people, almost all of them Phuentsholing -- and the reconciliation is what
-    said so, because every row it did read was right.
+    **A row's label can wrap around its own figures.** Chhukha prints
+    "Phuentshogling" on the line above the figures for Phuentsholing Thromde
+    and the word "Thromde" on the line *below* them. So the row arrives called
+    "Phuentshogling" -- which is also a gewog further down the same table.
+
+    That is why rows are classified by the **section** they sit under, Urban
+    or Rural, and never by what their name ends in. Classified by suffix, the
+    thromde was filed as a gewog and then overwritten by the real gewog of
+    that name: 27,658 people, the second city of Bhutan, gone without a trace
+    into a dict key. A duplicate name inside one section now stops the run
+    rather than keeping whichever arrived second.
 
     **The closing row has two spellings.** Tsirang writes "Total"; Bumthang
     writes "Both Areas", meaning urban and rural together. Looking only for
@@ -211,6 +217,7 @@ def table(blob: bytes, dzongkhag: str
     edge: float | None = None
     margin: float | None = None
     reading = False
+    section = ""
     # A label that wrapped onto its own line, waiting for the figures beneath
     # it. Chhukha prints "Tsimasham\nTown" and "Phuentsholing\nThromde", and
     # a row whose name wraps arrives here as three figures and no name.
@@ -237,6 +244,7 @@ def table(blob: bytes, dzongkhag: str
             if not words:
                 continue
             if len(words) == 1 and words[0] in SECTIONS:
+                section = words[0]
                 pending = []          # a section heading labels nothing
                 continue
             figures = [t for t in words if NUMBER.match(t)]
@@ -261,11 +269,25 @@ def table(blob: bytes, dzongkhag: str
                 printed = total
                 break
             if name in SECTIONS:
+                section = name
                 continue
-            if TOWN.search(name):
-                towns[name] = total
-            else:
-                gewogs[name] = total
+            # Classified by the section it is under, never by its name. The
+            # name is not reliable: Chhukha prints "Phuentshogling" above the
+            # figures for Phuentsholing Thromde and the word "Thromde" on the
+            # line *below* them, so the row arrives called "Phuentshogling" --
+            # which is also the name of a gewog further down the same table.
+            # Keyed by name and classified by suffix, the thromde landed in
+            # `gewogs` and was then overwritten by the gewog: 27,658 people,
+            # the second city of Bhutan, gone without a trace.
+            into = towns if section == "Urban" else gewogs
+            if name in into:
+                raise SystemExit(
+                    f"bhutan: {dzongkhag}: two rows of Table 2.1 are both "
+                    f"called {name!r} in the same section. One would silently "
+                    f"replace the other, which is how Phuentsholing went "
+                    f"missing; refusing rather than keeping whichever came "
+                    f"second")
+            into[name] = total
         # A page that carried none of this table's rows ends it. Table 2.1
         # runs to one page in the small dzongkhags and two in the large ones,
         # and nothing later in the report is it.
