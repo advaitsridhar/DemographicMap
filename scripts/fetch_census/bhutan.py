@@ -162,54 +162,70 @@ def table(blob: bytes, dzongkhag: str
           ) -> tuple[dict[str, int], dict[str, int], int]:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
 
-    The header fixes the table's left edge and nothing to the left of it is
-    read. That is the whole defence against the narrative: prose and data
+    Two things bound the read, and the first attempt had only one of them.
+
+    **The header fixes the table's left edge**, and nothing to the left of it
+    is considered. That is the defence against the narrative: prose and data
     share a baseline on these pages, so a rule counting numbers in a line
     would take "4,183 persons during the intercensal" for a row.
 
-    A row is its trailing three figures -- male, female, total -- and the
-    words before them are the name. The printed Total row closes the table.
+    **The table is bounded by its pages**, not only by its printed Total.
+    Bounding it by the Total alone let the reader run off the end of Table 2.1
+    and through the rest of the document -- Tsirang came back with 885 gewogs
+    holding 1.2 million people against a printed 22,376, which the
+    reconciliation caught and refused. So collection starts on the page
+    carrying the header and stops at the printed Total or at the first page
+    that yields no rows, whichever comes first.
+
+    A row is exactly three figures with a name before them. Exactly, not at
+    least: a line of prose that happens to carry four numbers is not a row of
+    this table, and treating it as one is how the first attempt filled up.
     """
     gewogs: dict[str, int] = {}
     towns: dict[str, int] = {}
     printed = 0
     edge: float | None = None
+    reading = False
 
     for rows in words_by_row(blob):
+        if printed:
+            break
+        found_here = False
         for cells in rows:
             texts = [t for _a, _b, t in cells]
             if edge is None:
                 if all(word in texts for word in HEADER):
                     edge = min(x0 for x0, _x1, t in cells if t == HEADER[0])
+                    reading = True
+                    found_here = True
                 continue
             inside = [(x0, x1, t) for x0, x1, t in cells if x0 >= edge - 3.0]
-            if not inside:
-                continue
             words = [t for _a, _b, t in inside]
-            if words[0] in SECTIONS and len(words) == 1:
+            if not words or (len(words) == 1 and words[0] in SECTIONS):
                 continue
             figures = [t for t in words if NUMBER.match(t)]
-            if len(figures) < 3:
+            if len(figures) != 3 or words[-3:] != figures:
                 continue
-            # The last three are male, female and total. Anything before the
-            # first of them is the name -- which is how a gewog whose name
-            # contains a digit would still read correctly.
-            cut = len(words) - 3
-            name = " ".join(words[:cut]).strip()
+            name = " ".join(words[:-3]).strip()
+            if not name or NUMBER.match(name):
+                continue
             try:
                 total = int(figures[-1].replace(",", ""))
             except ValueError:
                 continue
-            if not name:
-                continue
+            found_here = True
             if name == "Total":
                 printed = total
-                edge = None          # the table has closed
-                continue
+                break
             if TOWN.search(name):
                 towns[name] = total
             else:
                 gewogs[name] = total
+        # A page that carried none of this table's rows ends it. Table 2.1
+        # runs to one page in the small dzongkhags and two in the large ones,
+        # and nothing later in the report is it.
+        if reading and not found_here:
+            break
 
     if not gewogs:
         raise SystemExit(f"bhutan: {dzongkhag}: no gewog rows read from "
