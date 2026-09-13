@@ -2967,6 +2967,240 @@ class PakistanDeclaresWhatIsNotPublished(unittest.TestCase):
                 self.assertEqual(row["parent_name"], "Gilgit-Baltistan")
 
 
+class PakistanGilgitBaltistanPopulation(unittest.TestCase):
+    """The 2023 census count, read where the Bureau does not print it.
+
+    Gilgit-Baltistan has no census table from the Bureau of Statistics at any
+    path, so it wore a 2011 Wikidata figure of 1,155,755 while the census had
+    counted 1,709,049, and its ten districts wore nothing. The territory's own
+    Planning & Development Department prints the census's district counts in
+    *Gilgit-Baltistan at a Glance 2025*, and that is what is read.
+
+    ``PAGE`` is the real page, word for word and box for box, as pdfplumber
+    reports it -- including the figures this table splits across words, which
+    is the thing most likely to be got wrong. Ghanche's 156,697 arrives as
+    ``156,``, ``6``, ``9``, ``7`` and Shigar's density 22 as ``2`` and ``2``.
+    """
+
+    PAGE = [
+        [(12.0, 29.0, "Astore"), (52.0, 66.0, "5,411"), (83.0, 101.0, "95,416"),
+         (115.0, 136.0, "111,573"), (148.0, 165.0, "2.64%"),
+         (179.0, 200.0, "120,650"), (219.0, 226.0, "22")],
+        [(12.0, 32.0, "Diamer"), (52.0, 66.0, "7,234"), (81.0, 102.0, "269,772"),
+         (115.0, 136.0, "337,329"), (148.0, 165.0, "3.79%"),
+         (179.0, 200.0, "377,209"), (219.0, 226.0, "52")],
+        [(12.0, 35.0, "Ghanche"), (52.0, 60.0, "8,5"), (60.0, 66.0, "31"),
+         (81.0, 92.0, "156,"), (92.0, 96.0, "6"), (96.0, 99.0, "9"),
+         (99.0, 102.0, "7"), (115.0, 136.0, "157,822"), (148.0, 165.0, "0.12%"),
+         (179.0, 200.0, "158,388"), (219.0, 225.0, "19")],
+        [(12.0, 30.0, "Ghizer"), (50.0, 68.0, "12,381"), (81.0, 102.0, "172,696"),
+         (115.0, 137.0, "200,069"), (148.0, 165.0, "2.48%"),
+         (179.0, 200.0, "215,342"), (219.0, 225.0, "17")],
+        [(12.0, 27.0, "Gilgit"), (52.0, 60.0, "4,2"), (60.0, 66.0, "08"),
+         (81.0, 93.0, "285,"), (93.0, 96.0, "2"), (96.0, 99.0, "3"),
+         (99.0, 102.0, "6"), (115.0, 136.0, "324,552"), (148.0, 165.0, "2.18%"),
+         (179.0, 200.0, "346,198"), (219.0, 226.0, "82")],
+        [(12.0, 29.0, "Hunza"), (50.0, 68.0, "10,109"), (83.0, 101.0, "51,372"),
+         (117.0, 135.0, "65,497"), (148.0, 165.0, "4.13%"),
+         (181.0, 199.0, "73,955"), (221.0, 224.0, "7")],
+        [(12.0, 39.0, "Kharmang"), (52.0, 60.0, "6,1"), (60.0, 66.0, "44"),
+         (83.0, 94.0, "54,6"), (94.0, 98.0, "1"), (98.0, 101.0, "3"),
+         (117.0, 128.0, "61,3"), (128.0, 135.0, "04"), (148.0, 164.0, "1.94%"),
+         (181.0, 199.0, "64,951"), (219.0, 226.0, "11")],
+        [(12.0, 28.0, "Nagar"), (52.0, 66.0, "4,137"), (83.0, 101.0, "71,746"),
+         (117.0, 135.0, "87,410"), (148.0, 165.0, "3.35%"),
+         (181.0, 199.0, "96,481"), (219.0, 226.0, "23")],
+        [(12.0, 29.0, "Shigar"), (52.0, 60.0, "4,1"), (60.0, 67.0, "73"),
+         (83.0, 94.0, "74,5"), (94.0, 97.0, "4"), (97.0, 101.0, "0"),
+         (117.0, 128.0, "84,6"), (128.0, 135.0, "08"), (148.0, 165.0, "2.13%"),
+         (181.0, 199.0, "90,141"), (219.0, 222.0, "2"), (222.0, 226.0, "2")],
+        [(12.0, 30.0, "Skardu"), (50.0, 68.0, "10,168"), (81.0, 102.0, "260,836"),
+         (116.0, 137.0, "278,885"), (148.0, 164.0, "1.12%"),
+         (179.0, 200.0, "288,373"), (219.0, 226.0, "28")],
+        [(12.0, 21.0, "GB"), (50.0, 68.0, "72,496"), (78.0, 104.0, "1,492,924"),
+         (113.0, 139.0, "1,709,049"), (148.0, 165.0, "2.28%"),
+         (177.0, 203.0, "1,831,687"), (219.0, 226.0, "25")],
+    ]
+    CAPTION = [(57.0, 82.0, "District"), (83.0, 99.0, "Wise"),
+               (101.0, 136.0, "Population"), (138.0, 150.0, "and"),
+               (151.0, 167.0, "Area"), (169.0, 175.0, "of"), (177.0, 188.0, "GB")]
+    # The column headings, which are a row of numerals that is not a row of
+    # figures: reading 2017 and 2023 as an area and a count would be silent.
+    HEADER = [(50.0, 68.0, "Sq.KM"), (86.0, 98.0, "2017"), (120.0, 132.0, "2023"),
+              (151.0, 161.0, "(%)"), (184.0, 196.0, "2026")]
+
+    def setUp(self):
+        from scripts.fetch_census import pakistan
+        self.pk = pakistan
+
+    def read(self, page=None):
+        rows = [self.CAPTION, self.HEADER] + list(page or self.PAGE)
+        with mock.patch.object(self.pk, "words_by_row",
+                               lambda blob: iter([rows])):
+            return self.pk.gb_population(b"")
+
+    def test_a_figure_split_across_words_is_one_cell(self):
+        # Ghanche's area and its 2017 count each arrive in pieces, and the gap
+        # inside a figure is 0 points where the gap between two columns is
+        # never less than 12. Splitting the row on whitespace would give this
+        # row eleven cells and put every column one place to the left.
+        name, cells = self.pk.gb_cells(self.PAGE[2])
+        self.assertEqual(name, "Ghanche")
+        self.assertEqual(cells, ["8531", "156697", "157822", "0.12%",
+                                 "158388", "19"])
+
+    def test_a_split_density_is_one_cell_too(self):
+        name, cells = self.pk.gb_cells(self.PAGE[8])
+        self.assertEqual(name, "Shigar")
+        self.assertEqual(cells[-1], "22")
+        self.assertEqual(len(cells), len(self.pk.GB_POP_COLUMNS))
+
+    def test_the_column_headings_are_not_a_row_of_figures(self):
+        self.assertEqual(self.pk.gb_cells(self.HEADER), ("", []))
+
+    def test_the_printed_growth_rate_comes_back_from_the_two_counts(self):
+        # This is the check that says which column is which, so it is worth
+        # asserting on the real row rather than only trusting the reader.
+        for cells in self.PAGE:
+            name, printed = self.pk.gb_cells(cells)
+            with self.subTest(district=name):
+                rate = float(printed[self.pk.GB_POP_RATE].rstrip("%"))
+                grown = self.pk.gb_grown(int(printed[self.pk.GB_POP_EARLIER]),
+                                         int(printed[self.pk.GB_POP_COUNT]))
+                self.assertLess(abs(grown - rate), self.pk.GB_POP_SLACK)
+
+    def test_the_projection_beside_it_would_not(self):
+        # The failure this map would never see: the 2026 projection sits in
+        # the next column and looks exactly like a census count. Reading it
+        # instead breaks the arithmetic in every row.
+        for cells in self.PAGE:
+            name, printed = self.pk.gb_cells(cells)
+            with self.subTest(district=name):
+                rate = float(printed[self.pk.GB_POP_RATE].rstrip("%"))
+                grown = self.pk.gb_grown(int(printed[self.pk.GB_POP_EARLIER]),
+                                         int(printed[self.pk.GB_POP_COUNT + 2]))
+                self.assertGreater(abs(grown - rate), self.pk.GB_POP_SLACK)
+
+    def test_the_page_reads_as_ten_districts_and_a_territory(self):
+        counts = self.read()
+        self.assertEqual(sorted(counts),
+                         sorted(list(self.pk.TERRITORIES["gb"][2])
+                                + [self.pk.GB_POP_WHOLE]))
+        self.assertEqual(counts["GB"], 1_709_049)
+        self.assertEqual(counts["Diamer"], 337_329)
+        self.assertEqual(
+            sum(v for k, v in counts.items() if k != self.pk.GB_POP_WHOLE),
+            counts["GB"])
+
+    def test_a_page_without_the_caption_is_a_lookup_failure(self):
+        # The booklet is reissued every year. A table that has moved or gone
+        # leaves the territory where it was -- declared -- rather than
+        # stopping the run, and that must not be the same failure as a table
+        # that is there and does not read.
+        with mock.patch.object(self.pk, "words_by_row",
+                               lambda blob: iter([list(self.PAGE)])):
+            with self.assertRaises(LookupError):
+                self.pk.gb_population(b"")
+
+    def test_districts_that_stop_adding_up_refuse_the_run(self):
+        # 49 people off the printed territory row, on a pair that still
+        # reproduces the printed growth rate, so nothing else here notices.
+        page = [list(row) for row in self.PAGE]
+        page[-1][3] = (113.0, 139.0, "1,709,000")
+        with self.assertRaises(SystemExit) as cm:
+            self.read(page)
+        self.assertIn("1,709,000", str(cm.exception))
+
+    def test_a_rate_that_does_not_reproduce_refuses_the_run(self):
+        page = [list(row) for row in self.PAGE]
+        page[0][4] = (148.0, 165.0, "9.99%")
+        with self.assertRaises(SystemExit) as cm:
+            self.read(page)
+        self.assertIn("Astore", str(cm.exception))
+
+    def test_a_district_the_map_draws_and_the_table_lacks_refuses_the_run(self):
+        # The districts read are held to the ten the map draws, in both
+        # directions. A district the booklet stops printing would otherwise
+        # simply have no population, which is indistinguishable from a
+        # district nobody counted.
+        drawn = self.pk.TERRITORIES["gb"][2] + ("Yasin",)
+        with mock.patch.dict(self.pk.TERRITORIES,
+                             {"gb": ("Gilgit-Baltistan", (), drawn)}):
+            with self.assertRaises(SystemExit) as cm:
+                self.read()
+        self.assertIn("Yasin", str(cm.exception))
+
+    def test_with_nothing_read_the_field_says_why(self):
+        # Never a bare gap. `record` defaults an unfilled field to a gap with
+        # nothing in it, which on this map reads as an adapter nobody has run
+        # -- a different claim from "the office publishes no table".
+        field = self.pk.gb_population_fields("Skardu", {}, "")
+        self.assertEqual(field["population"]["status"], "not_available")
+        note = field["population"]["note"]
+        self.assertIn("Table 9 and Table 11 answer 404", note)
+        self.assertIn("Gilgit-Baltistan at a Glance 2025", note)
+        self.assertNotIn("population_note", field)
+
+    def test_the_territory_note_names_what_the_districts_weigh_to(self):
+        # The populations are what made this askable. PILDAT's area-wise faith
+        # map and PILDAT's territory estimate, in one paper, do not describe
+        # the same population, and the note says so rather than letting a
+        # reader find it by adding up the districts themselves.
+        counts = self.read()
+        note = self.pk.gb_religion(counts)["religion_note"]
+        self.assertIn("weighted by the census populations", note)
+        self.assertIn("Isma'ili Shi'a Islam 15.5%", note)
+        # And says nothing of the kind when there is nothing to weight by.
+        self.assertNotIn("weighted by",
+                         self.pk.gb_religion({})["religion_note"])
+
+
+class PakistanGilgitBaltistanIsPublished(unittest.TestCase):
+    """What the adapter actually wrote, so this fails if the booklet stops
+    being read as well as if it is misread."""
+
+    @classmethod
+    def setUpClass(cls):
+        path = be.PROCESSED / "pakistan_district.json"
+        if not path.exists():
+            raise unittest.SkipTest("pakistan_district.json has not been run")
+        cls.rows = {r["name"]: r for r in json.loads(
+            path.read_text(encoding="utf-8"))}
+
+    def test_the_territory_carries_the_2023_census_count(self):
+        gb = self.rows["Gilgit-Baltistan"]["population"]
+        self.assertEqual(gb["value"], 1_709_049)
+        self.assertEqual(gb["year"], 2023)
+        self.assertIn("Gilgit-Baltistan at a Glance 2025", gb["source"])
+        # Not the 2011 Wikidata figure it replaced, and not the booklet's own
+        # 2026 projection printed in the next column.
+        self.assertNotIn(gb["value"], (1_155_755, 1_831_687))
+
+    def test_all_ten_districts_are_counted_and_add_up(self):
+        from scripts.fetch_census import pakistan
+        counts = {}
+        for name in pakistan.TERRITORIES["gb"][2]:
+            with self.subTest(district=name):
+                population = self.rows[name]["population"]
+                self.assertIn("value", population, name)
+                self.assertEqual(population["year"], 2023)
+                counts[name] = population["value"]
+        self.assertEqual(sum(counts.values()), 1_709_049)
+        # The projections, which are in the same table and must not be here.
+        self.assertNotIn(counts["Astore"], (120_650, 95_416))
+
+    def test_every_counted_district_cites_the_booklet_it_was_read_from(self):
+        from scripts.fetch_census import pakistan
+        for name in pakistan.TERRITORIES["gb"][2]:
+            with self.subTest(district=name):
+                row = self.rows[name]
+                cited = [s for s in row["sources"]
+                         if s.get("field") == "population"]
+                self.assertTrue(cited, name)
+                self.assertIn("pnd.gog.pk", cited[0]["url"])
+                self.assertIn("Census 2023", row["population_note"])
+
+
 class BangladeshZila(unittest.TestCase):
     """Two sheets that have to agree to the person, and one that does not.
 

@@ -1287,7 +1287,13 @@ def gb_population(blob: bytes) -> dict[str, int]:
             if name not in wanted or len(printed_cells) != len(GB_POP_COLUMNS):
                 continue
             rate = printed_cells[GB_POP_RATE]
-            if not PERCENTAGE.match(rate):
+            # The shape of the row, not its contents: exactly one cell is a
+            # percentage and it is the fourth. A row of six cells that does
+            # not sit that way is not a row of this table, and the name check
+            # below is what refuses if one of the ten was in it.
+            if not PERCENTAGE.match(rate) or not all(
+                    cell.isdigit() for index, cell in enumerate(printed_cells)
+                    if index != GB_POP_RATE):
                 continue
             earlier = int(printed_cells[GB_POP_EARLIER])
             later = int(printed_cells[GB_POP_COUNT])

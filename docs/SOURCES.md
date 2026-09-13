@@ -1520,11 +1520,13 @@ again.
   There is nothing for a spec to read: `wiki_census` needs share columns and
   refuses a table it cannot add up, which is the property that makes the route
   safe. Recorded so the next person does not open the article hoping.
-* **That district table is a population route, though, and GB's population on
-  this map is a 2011 Wikidata figure of 1,155,755 against a 2023 census
-  1,709,049 -- a third too low.** The better source for it is not Wikipedia:
-  *GB At a Glance 2025*, on the territory's own P&DD host, carries district
-  tables from the same census. Neither is read here.
+* **That district table is a population route, though, and it has now been
+  taken -- from the territory's own government rather than from Wikipedia.**
+  GB's population on this map was a 2011 Wikidata figure of 1,155,755 against
+  a 2023 census 1,709,049, a third too low, and its ten districts had no
+  population at all. *Gilgit-Baltistan at a Glance 2025*, on the P&DD host,
+  prints the census's district counts, and that is what is read. See
+  *Gilgit-Baltistan's population, and what the districts weigh to* below.
 * **The census's own category scheme is the deeper problem.** Pakistan's
   mother-tongue question names nine tongues and an "Other", and Shina, Balti
   and Burushaski -- which is to say nearly all of Gilgit-Baltistan -- are in
@@ -1548,7 +1550,7 @@ question.
 | --- | --- | --- |
 | Islamabad Capital Territory | no population, no religion | 2,283,244; religion 2023 |
 | Azad Jammu and Kashmir | no religion; population 4,567,982, a **2008** Wikidata figure | religion 2017 (Muslim 99.8%, Ahmadi 3,402, Christian 2,934); population 4,032,363, the 2017 census |
-| Gilgit-Baltistan | empty | declared, with the routes named |
+| Gilgit-Baltistan | empty | declared, with the routes named; its population read since, below |
 | Pakistan's religion roll-up | refused, and **unmeasurable** -- Islamabad had neither the field nor a population, so `covered_share` could not answer at all | measurable, at **99.5%**: only Gilgit-Baltistan's 1.2 million are outside it, against a `COUNTRY_MIN_COVERAGE` of 98% |
 | Pakistan's language roll-up | refused at 97.65% | still refused: Azad Kashmir and Gilgit-Baltistan have no mother tongue, and 2.1% of the country is more than the bound allows |
 
@@ -1556,6 +1558,100 @@ The language roll-up is the one thing still blocked, and the two ways to
 unblock it are both named above: read the 2023 Table 11 (which replaces the
 2017 route rather than joining it), or find a mother tongue for the two
 territories, where every route measured so far is closed.
+
+### Gilgit-Baltistan's population, and what the districts weigh to
+
+The paragraph above named the route and said it was not taken. This is what
+happened when it was.
+
+**The Bureau still publishes nothing, and that has not changed.** Table 9 and
+Table 11 answer 404 for this territory under every name the four provinces and
+Islamabad are filed under. What the territory's own Planning & Development
+Department publishes is the census's figures: *Gilgit-Baltistan at a Glance
+2025* -- the eighth edition of the Statistical & Research Cell's annual
+compilation, 2.4 MB, eighteen pages -- carries "District Wise Population and
+Area of GB" on page 3, over a source line reading *i. Pakistan Bureau of
+Statistics ii. SRC P&DD GB*. The row is area, the 2017 and 2023 census counts,
+the intercensal growth rate, a 2026 projection and a population density, for
+the ten districts and for the territory. So the figures are the census's and
+the booklet is where they are printed, which is exactly the standing the AJ&K
+Statistical Year Book's religion table already has here.
+
+| | |
+| --- | --- |
+| file | `www.pnd.gog.pk/storage/downloads/AiRIlDEcscWPC1s58oXIgpjlVAS7jd-metaR0IgQVQgR2xhbmNlIDIwMjUuMS5wZGY=-.pdf` |
+| found from | `www.pnd.gog.pk/pages/downloads`, which links eight PDFs |
+| table | page 3, *District Wise Population and Area of GB* |
+
+**Wikipedia has the same table and is not what is read.** "Gilgit-Baltistan"
+transcribes it figure for figure -- ten districts with area, capital and a 2023
+population, totalling the same 1,709,049 -- and `wiki_census.py` exists for the
+case where an encyclopaedia's copy is the only reachable one. That is not this
+case: the office's own publication is reachable, so it is preferred, and the
+article is worth recording only as an independent confirmation that the ten
+figures are what they are. Its copy is also the harder of the two to read. The
+article's division column is merged across rows, so Ghanche, Gilgit, Diamer and
+Astore each arrive with a division's name sitting in the district's cell.
+
+**Two columns in that row must never be confused, and no figure tells them
+apart.** The 2023 census count and the 2026 projection sit side by side, and
+publishing the projection as a census would be invisible -- the exact failure
+this project calls worse than a gap. So the column is not taken by position.
+The growth rate the table prints between them is recomputed from the two census
+counts compounded over the six years between rounds, and a row whose printed
+rate does not come back within a twentieth of a percentage point stops the run.
+All eleven rows reproduce to within 0.006 of a point. Reading the projection as
+the count, or 2017 as 2023, breaks the arithmetic in the first row it is tried
+on.
+
+**And the ten add up to the eleventh, to the person** -- 1,709,049, the same
+control the AJ&K table is held to and for the same reason: a district this
+reader never noticed would otherwise cost its people silently.
+
+| district | 2023 census |
+| --- | ---: |
+| Astore | 111,573 |
+| Diamer | 337,329 |
+| Ghanche | 157,822 |
+| Ghizer | 200,069 |
+| Gilgit | 324,552 |
+| Hunza | 65,497 |
+| Kharmang | 61,304 |
+| Nagar | 87,410 |
+| Shigar | 84,608 |
+| Skardu | 278,885 |
+| **Gilgit-Baltistan** | **1,709,049** |
+
+A figure arrives as several words here too, and more freely than in the
+Bureau's tables: Ghanche's 156,697 comes back as `156,`, `6`, `9`, `7`, its
+area 8,531 as `8,5` and `31`, and Shigar's density 22 as `2` and `2`. The gap
+inside a figure is 0 points and the gap between two columns is never less than
+12, which is the same measurement `printed()` already rests on, so the same
+threshold rejoins them.
+
+#### What the districts weigh to, which is not what the territory row says
+
+The district populations are what made this askable, and the answer is worth
+printing. PILDAT's "Faith Map of Gilgit-Baltistan" gives an area-wise
+breakdown, already published here district by district. Weighted by the census
+counts above, those ten come to:
+
+| | weighted from the districts | PILDAT's own territory figure |
+| --- | ---: | ---: |
+| Twelver Shi'a | 42.8% | 39.85% |
+| Sunni | 33.7% | 30.05% |
+| Isma'ili Shi'a | **15.5%** | **24.0%** |
+| Nurbakhshia | 7.9% | 6.1% |
+
+One paper, two statements about one population, and they do not agree -- most
+sharply about the Ismaili share, where the gap is eight and a half points. The
+likeliest reading is that the area-wise map's flat 100 per cent for Hunza and
+Ghizer understates how widely Ismailis live outside those two districts; the
+same page's narrative names Ismaili minorities in Skardu that its own figures
+leave no room for. Neither figure is adjusted to the other. Both are the
+paper's, the territory row's note now says so in as many words, and the
+sentence is built from the figures the run computes rather than from a number
+typed beside them.
 
 ### The 2023 Table 11, and two districts whose largest group was a missing category
 
