@@ -557,34 +557,48 @@ def report_blocks(lines: list[str], table: str, until: str | None) -> dict[str, 
     because a division is the same place whether or not the word is printed
     and the shape it has to reach is named without it.
     """
-    start = next((i for i, line in enumerate(lines)
-                  if line.strip().startswith(table)), None)
-    if start is None:
+    # A table's heading appears twice: once in the list of tables at the front
+    # of the report, with a dot leader and a page number, and once over the
+    # table itself. Taking the first match put the reader in the contents,
+    # where "Table P28" and "Table P29" are two lines apart, so it read a
+    # two-line slice, found nothing, and said so in a log nobody had to
+    # believe: "-1 divisions, 0 districts". Bhutan's reader locked onto a
+    # contents page the same way. So every occurrence is tried and the first
+    # one that actually yields blocks is the table.
+    starts = [i for i, line in enumerate(lines) if line.strip().startswith(table)]
+    if not starts:
         raise SystemExit(f"{table} is not in the National Report; the report "
                          "it was read from has changed")
-    end = len(lines)
-    if until:
-        end = next((i for i in range(start + 1, len(lines))
-                    if lines[i].strip().startswith(until)), len(lines))
 
-    out: dict[str, Any] = {}
-    where = None
-    for line in lines[start:end]:
-        found = REPORT_ROW.match(" ".join(line.split()))
-        if not found:
-            continue
-        name = found.group("name").strip()
-        total = int(float(found.group("total").replace(",", "")))
-        if name == "National" or name.endswith("Division"):
-            where = name.removesuffix(" Division")
-            out[where] = {"total": total, "rows": {}}
-        elif where is not None:
-            # Summed rather than assigned: a category that appeared twice in
-            # one block would otherwise silently keep only the second figure,
-            # and the reconciliation below would then be checking a number
-            # against itself.
-            out[where]["rows"][name] = out[where]["rows"].get(name, 0) + total
-    return out
+    for start in starts:
+        end = len(lines)
+        if until:
+            end = next((i for i in range(start + 1, len(lines))
+                        if lines[i].strip().startswith(until)), len(lines))
+        out: dict[str, Any] = {}
+        where = None
+        for line in lines[start:end]:
+            found = REPORT_ROW.match(" ".join(line.split()))
+            if not found:
+                continue
+            name = found.group("name").strip()
+            total = int(float(found.group("total").replace(",", "")))
+            if name == "National" or name.endswith("Division"):
+                where = name.removesuffix(" Division")
+                out[where] = {"total": total, "rows": {}}
+            elif where is not None:
+                # Summed rather than assigned: a category that appeared twice
+                # in one block would otherwise silently keep only the second
+                # figure, and the reconciliation below would then be checking
+                # a number against itself.
+                out[where]["rows"][name] = out[where]["rows"].get(name, 0) + total
+        if out:
+            return out
+
+    raise SystemExit(
+        f"{table} was found {len(starts)} time(s) in the National Report and "
+        "no occurrence had any rows under it. The table's layout has changed, "
+        "or the text extraction has.")
 
 
 def read_report(blob: bytes) -> tuple[dict[str, Any], dict[str, Any]]:
@@ -623,7 +637,25 @@ def check_report(districts: dict[str, Any], categories: dict[str, Any],
       which is what makes the categories trustworthy rather than merely
       arithmetically consistent with themselves.
     """
+    # Emptiness first, and this is not defensive padding. The first run of
+    # this reader parsed nothing at all, and every check below passed --
+    # because each iterates the blocks, and there were none to disagree with.
+    # It wrote a file and reported success. A check that cannot fail on an
+    # empty input is not checking anything.
     bad: list[str] = []
+    for label, book in (("P28", districts), ("P29", categories)):
+        divisions = [w for w in book if w != "National"]
+        if len(divisions) != 8:
+            bad.append(f"{label}: {len(divisions)} divisions, expected 8")
+        if not book.get("National", {}).get("total"):
+            bad.append(f"{label}: no national header row")
+    if not categories.get("National", {}).get("rows"):
+        bad.append("P29: the national block names no categories")
+    if sum(len(b["rows"]) for w, b in districts.items() if w != "National") != 64:
+        bad.append("P28: the divisions do not hold 64 districts between them")
+    if bad:
+        raise SystemExit(f"{len(bad)} report checks failed — " + "; ".join(bad[:4]))
+
     for label, book in (("P28", districts), ("P29", categories)):
         for where, block in book.items():
             summed = sum(block["rows"].values())

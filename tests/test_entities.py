@@ -7279,6 +7279,69 @@ class Adm2Parents(unittest.TestCase):
         self.assertIs(be.whole(square), square)
 
 
+class BangladeshReportTables(unittest.TestCase):
+    """Reading Tables P28 and P29 out of the National Report.
+
+    Both faults these tests pin were real and both were silent. The reader
+    locked onto the report's *list of tables*, where "Table P28" and "Table
+    P29" sit two lines apart, read a two-line slice and found nothing -- and
+    the reconciliation passed anyway, because every one of its checks iterates
+    the blocks and there were no blocks to disagree with. It wrote a file and
+    logged success.
+    """
+
+    CONTENTS = [
+        "Table P28  Ethnic Population by Sex and District, 2022 ............ 363",
+        "Table P29  Ethnic Population by Category, Sex and Division, 2022 .. 365",
+        "Table P30  Population by Home District and Sex, 2022 .............. 373",
+    ]
+    TABLE = [
+        "Table P29 Ethnic Population by Category, Sex and Division, 2022",
+        "Total Male Female",
+        "Category",
+        "Number Percent Number Percent Number Percent",
+        "1 2 3 4 5 6 7",
+        "National 300 100.00 150 50.00 150 50.00",
+        "Chakma 200 100.00 100 50.00 100 50.00",
+        "Marma 100 100.00 50 50.00 50 50.00",
+        "Barishal Division 300 100.00 150 50.00 150 50.00",
+        "Chakma 200 100.00 100 50.00 100 50.00",
+        "Marma 100 100.00 50 50.00 50 50.00",
+        "Table P30 Population by Home District and Sex, 2022",
+    ]
+
+    def setUp(self):
+        from scripts.fetch_census import bangladesh
+        self.bd = bangladesh
+
+    def test_the_contents_listing_is_not_mistaken_for_the_table(self):
+        blocks = self.bd.report_blocks(
+            self.CONTENTS + self.TABLE, "Table P29", "Table P30")
+        self.assertEqual(sorted(blocks), ["Barishal", "National"])
+        self.assertEqual(blocks["Barishal"]["rows"], {"Chakma": 200, "Marma": 100})
+
+    def test_a_heading_with_nothing_under_it_anywhere_is_refused(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.report_blocks(self.CONTENTS, "Table P29", "Table P30")
+        self.assertIn("no occurrence had any rows", str(caught.exception))
+
+    def test_the_column_number_line_is_not_a_category(self):
+        blocks = self.bd.report_blocks(self.TABLE, "Table P29", "Table P30")
+        self.assertNotIn("1", blocks["National"]["rows"])
+
+    def test_an_empty_parse_cannot_pass_the_reconciliation(self):
+        """The check that could not fail on nothing, and now can."""
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.check_report({}, {}, {})
+        self.assertIn("divisions, expected 8", str(caught.exception))
+
+    def test_a_division_whose_rows_do_not_sum_to_its_header_is_refused(self):
+        districts = {"National": {"total": 300, "rows": {}},
+                     **{f"D{i}": {"total": 0, "rows": {}} for i in range(8)}}
+        with self.assertRaises(SystemExit):
+            self.bd.check_report(districts, districts, {})
+
+
 class BangladeshEthnicPopulation(unittest.TestCase):
     """A question the census asks and publishes one number of.
 
