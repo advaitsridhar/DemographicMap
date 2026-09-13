@@ -1,12 +1,2 @@
-bangladesh: BBS Population and Housing Census 2022, by zila
-    1,213,869 bytes from HDX
-    64 districts in Population by Sex, Dist & Loca, 64 in Population by Religion, Sex, 64 in Ethnic Population by Sex
-    every religion's total matches its own male plus female, and in every district the religions plus the hijra come to the published population exactly (8,124 hijra nationally, whom the religion table does not classify)
-    ethnic population 1,650,478 of 165,158,616 nationally (1.00%), highest in Rangamati at 57.6% -- a total per district and no breakdown, so it is published as the reason this field is a gap rather than as a composition
-    10,307,919 bytes of National Report from the Bureau's own storage
-  520 pages
-    National Report: 8 divisions in Table P28, 64 districts; Table P29 names 51 categories
-    the report's district totals match the workbook's to the person, its division headers match between Tables P28 and P29, and every category's national figure is the sum of its eight divisional ones
-    8 divisions carry a named ethnic composition, 1,650,478 people across 51 categories
-  wrote data/processed/bangladesh_district.json (265 kB)
-  72 districts
+page: https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census
+  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
