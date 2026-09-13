@@ -56,6 +56,17 @@ UNDATED_BY_DESIGN: dict[str, dict[str, set[str] | None]] = {
     # it. Dating these means adding the interview-date column to the extract,
     # which needs the 24 MB published workbook and an --extract run.
     "afrobarometer_region.json": {"religion": None, "ethnicity": None},
+    # Azad Jammu and Kashmir's languages are Table 15.33 of the AJ&K
+    # Statistical Year Book 2023, and that table carries no year: the
+    # marriages table above it on the same page is captioned "(2018 to 2022)"
+    # and this one is captioned nothing at all. The yearbook's cover says
+    # 2023, which is when it was printed and not when the Kashmir Liberation
+    # Cell counted -- the same distinction the religion table fourteen pages
+    # earlier is careful about, where a 2023 book prints the 2017 census.
+    # Two rows and one territory: geoBoundaries draws Azad Kashmir as a single
+    # second-level unit, so it appears once as admin1 and once as admin2.
+    "pakistan_district.json": {"language": {"PAK-ajk",
+                                            "PAK-ajk-azad-kashmir"}},
 }
 
 # The adapter now stamps the year; the committed file predates that and says

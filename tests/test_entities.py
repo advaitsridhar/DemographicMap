@@ -3294,15 +3294,46 @@ class PakistanMotherTongue(unittest.TestCase):
         self.assertEqual(residual, [])
 
     def test_language_and_religion_are_now_the_same_census(self):
-        # They were six years apart. A district that carries one year for
-        # religion and another for language invites exactly the comparison
-        # that cannot be made.
+        """They were six years apart. A unit carrying one year for religion
+        and another for language invites exactly the comparison that cannot
+        be made.
+
+        The rule is about the census and not about a list of exceptions, so it
+        is stated that way: a field that does *not* come from the census says
+        so in ``{field}_basis`` -- Gilgit-Baltistan's sects and its household
+        survey, Azad Kashmir's languages -- and those are the rows allowed to
+        differ. Every row where both fields are the census's must agree, and
+        naming the exceptions by their basis rather than by name means a
+        future one cannot slip in undeclared.
+        """
         for row in self.rows.values():
-            if isinstance(row.get("language"), list) \
-                    and isinstance(row.get("religion"), list) \
-                    and row["name"] != "Gilgit-Baltistan":
+            if not (isinstance(row.get("language"), list)
+                    and isinstance(row.get("religion"), list)):
+                continue
+            if row.get("language_basis") or row.get("religion_basis"):
+                continue                    # not the census, and says so
+            with self.subTest(row=row["id"]):
                 self.assertEqual(row["language_year"], row["religion_year"],
                                  row["name"])
+
+    def test_a_field_from_outside_the_census_declares_its_basis(self):
+        """The other half of the rule above, so it cannot be met by silence.
+
+        A row exempted from the year check because it carries a basis must
+        also be one of the rows that are genuinely not the census: the two
+        territories the Bureau publishes no table for. If a province ever
+        acquires a basis, this fails rather than quietly dropping it out of
+        the comparison.
+        """
+        apart = sorted(row["id"] for row in self.rows.values()
+                       if row.get("language_basis") or row.get("religion_basis"))
+        self.assertTrue(apart)
+        for entity in apart:
+            with self.subTest(row=entity):
+                self.assertTrue(entity.startswith(("PAK-ajk", "PAK-gb")),
+                                f"{entity} counts something other than the "
+                                f"census and is not one of the two "
+                                f"territories the census tables do not reach")
 
 
 class ChitralSplit(unittest.TestCase):

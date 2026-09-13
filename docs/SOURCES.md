@@ -1222,6 +1222,11 @@ Pakistan's 241 million people -- are required before anything is written.
 > Jammu and Kashmir's religion comes from its own government's yearbook.
 > Gilgit-Baltistan is the only one of the three still empty. See *Pakistan's
 > last three divisions* below, which measures all of it.
+>
+> **And none of the seven is empty now.** Both territories have a language as
+> well, each from its own government and neither from the census -- Azad
+> Kashmir from Table 15.33 of the same yearbook, Gilgit-Baltistan from Table
+> SR.3.1 of its MICS 2024-25. See *The two territories' languages* below.
 
 **Joining, and three different kinds of miss.** Of 126 units, 114 join and
 carry 96.7% of the people.
@@ -1545,6 +1550,15 @@ The territory's population becomes **4,032,363 (2017 census)**, replacing a
 **2008** Wikidata figure of 4,567,982.
 
 #### Gilgit-Baltistan is the one real absence
+
+> **Partly superseded** by *The two territories' languages, from two
+> governments and neither of them the census* below. The census routes named
+> here are still shut and still 404. What has changed is the survey: the GB
+> MICS bullet below says the territory's own report is "recorded here and not
+> wired", and the **2024-25** round's Table SR.3.1 is now what
+> Gilgit-Baltistan's language comes from. Azad Kashmir's languages have a
+> source too, from a table in the yearbook this section had searched for the
+> wrong word.
 
 Nothing found for it, and the routes are worth naming so nobody walks them
 again.
