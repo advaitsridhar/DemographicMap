@@ -2661,19 +2661,25 @@ class PakistanMotherTongue(unittest.TestCase):
         self.assertGreater(kalasha["count"], 4000)
         self.assertLess(kalasha["count"], 9000)
 
-    def test_kalasha_is_counted_where_the_kalash_live_and_not_elsewhere(self):
-        # A column read one place to the left would still sum to the printed
-        # total. It would not put almost every Kalasha speaker in Pakistan in
-        # the one district the Kalash valleys are in.
-        everywhere = [(r["name"], g["count"])
+    def test_the_kalasha_column_adds_up_to_the_published_national_figure(self):
+        # The strongest check available on this reader, because it is not this
+        # project's arithmetic: accounts of the 2023 census put Kalasha at
+        # 7,466 speakers nationally, and these districts come to 7,467. A
+        # column read one place to the left would still sum to each district's
+        # printed total and would not land within one of a figure published
+        # somewhere else.
+        everywhere = {r["name"]: g["count"]
                       for r in self.rows.values() if r["level"] == "admin2"
-                      for g in (r.get("language") or [])
-                      if isinstance(r.get("language"), list)
-                      and g["group"] == "Kalasha" and g.get("count")]
-        total = sum(count for _name, count in everywhere)
-        chitral = dict(everywhere)["Chitral"]
-        self.assertGreater(chitral / total, 0.7,
-                           f"Kalasha is spread across {everywhere}")
+                      and isinstance(r.get("language"), list)
+                      for g in r["language"]
+                      if g["group"] == "Kalasha" and g.get("count")}
+        self.assertAlmostEqual(sum(everywhere.values()), 7466, delta=5)
+        # And it is concentrated where the Kalash valleys are. The rest is
+        # ones and twos in the cities -- 614 in Karachi is the largest -- so
+        # Chitral holds two thirds of it and is far the biggest.
+        largest = sorted(everywhere.items(), key=lambda kv: -kv[1])
+        self.assertEqual(largest[0][0], "Chitral")
+        self.assertGreater(largest[0][1], 8 * largest[1][1])
 
     def test_chitral_says_what_its_other_still_holds(self):
         # Khowar has no column on the 2023 form either, so Chitral is still
