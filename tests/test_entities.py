@@ -2861,8 +2861,12 @@ class BhutanGewogAliases(unittest.TestCase):
 
     def test_the_contested_pairs_are_left_out(self):
         # 24 rows had a plausible candidate that another row matched better,
-        # and every one is left unmatched rather than guessed. These are the
-        # ones whose absence is the point.
+        # and every one was left unmatched rather than guessed. They are
+        # matched now -- by a reference point inside the polygon, in
+        # GEWOG_BY_POINT -- and their absence from this table is still the
+        # point: a name that another name matches better is not evidence, and
+        # "Pemaling" would have been aliased to Pagli, which is
+        # Phuentshogpelri's polygon.
         for name in ("Sergithang", "Patshaling", "Karna", "Darkar",
                      "Norgaygang", "Pemaling", "Tashichhoeling"):
             self.assertNotIn(name, self.bt.GEWOG_ALIASES, name)
@@ -2872,6 +2876,154 @@ class BhutanGewogAliases(unittest.TestCase):
         # they were kept below the score bar: there is no other candidate.
         self.assertEqual(self.bt.GEWOG_ALIASES["Khamaed"], ("Goenkhame",))
         self.assertEqual(self.bt.GEWOG_ALIASES["Khatoed"], ("Goenkhatoe",))
+
+
+class BhutanGewogBindings(unittest.TestCase):
+    """The thirty gewogs the boundary file calls something else.
+
+    Bhutan's shapes and its census both count 205 gewogs, and thirty of them
+    are labelled with a different name -- not a different spelling. Samtse's
+    Tashicholing is drawn as "Sipsu", its Norgaygang as "Bara", Sarpang's
+    Samtenling as "Bhur": the Nepali-origin names the southern dzongkhags
+    carried before the renamings. Those are paired by a reference point inside
+    the polygon, not by the string, and these tests hold the tables to the two
+    properties that make such a pairing safe -- one shape per gewog, and no
+    country-wide claim on a name two dzongkhags both use.
+    """
+
+    def setUp(self):
+        from scripts.fetch_census import bhutan
+        self.bt = bhutan
+
+    def test_no_two_gewogs_claim_one_shape_across_both_tables(self):
+        # The name table and the point table are searched together, so the
+        # uniqueness that matters is over both of them at once.
+        targets = [t for pair in self.bt.GEWOG_ALIASES.values() for t in pair]
+        targets += [t for pair in self.bt.GEWOG_BY_POINT.values() for t in pair]
+        self.assertEqual(len(targets), len(set(targets)))
+        self.assertEqual(len(set(self.bt.SHAPE_BOUND.values())),
+                         len(self.bt.SHAPE_BOUND))
+        self.assertEqual(set(self.bt.SHAPE_LABELS),
+                         set(self.bt.SHAPE_BOUND.values()))
+
+    def test_a_name_two_dzongkhags_share_is_never_claimed_country_wide(self):
+        # Haa and Sarpang both have a Gakiling; Pema Gatshel and Samtse both
+        # have a Norboogang. An alias keyed on the name alone would hand one
+        # dzongkhag's gewog the other's polygon -- or, as it did, make the
+        # build refuse both and leave four shapes empty. Every one of the four
+        # is bound to a polygon by id, and none of them appears in either
+        # name-keyed table.
+        repeated = {"Gakiling", "Norboogang"}
+        for name in repeated:
+            self.assertNotIn(name, self.bt.GEWOG_ALIASES, name)
+        self.assertEqual({name for name, _dz in self.bt.SHAPE_BOUND}, repeated)
+        self.assertEqual({name for name, _dz in self.bt.GEWOG_BY_POINT} & repeated,
+                         set())
+        # And the four are four different polygons.
+        self.assertEqual(len(self.bt.SHAPE_BOUND), 4)
+
+    def test_the_two_misjoins_are_gone_and_their_shapes_reassigned(self):
+        # Punakha's Barp was aliased to "Bara", a polygon 96% inside Samtse,
+        # and Chhukha's Maedtabkha to "Patakla", 60% inside Tsirang. Both
+        # polygons belong to gewogs that had no figures at all.
+        self.assertNotIn("Bara", self.bt.GEWOG_ALIASES.get("Barp", ()))
+        self.assertNotIn("Patakla", self.bt.GEWOG_ALIASES.get("Maedtabkha", ()))
+        self.assertEqual(self.bt.GEWOG_BY_POINT[("Barp", "Punakha")], ("Bapisa",))
+        self.assertEqual(self.bt.GEWOG_BY_POINT[("Maedtabkha", "Chhukha")],
+                         ("Metap",))
+        self.assertEqual(self.bt.GEWOG_BY_POINT[("Norgaygang", "Samtse")],
+                         ("Bara",))
+        self.assertEqual(self.bt.GEWOG_BY_POINT[("Sergithang", "Tsirang")],
+                         ("Patakla",))
+
+    def test_the_six_taken_by_elimination_are_declared(self):
+        # A pairing with no reference point behind it says so on the record,
+        # so the six that rest on the dzongkhag's two lists closing are named
+        # rather than left to look like the other twenty.
+        self.assertLessEqual(set(self.bt.BY_CLOSURE), set(self.bt.GEWOG_BY_POINT))
+        self.assertEqual(len(self.bt.BY_CLOSURE), 6)
+        self.assertIn(("Yangtse", "Trashi Yangtse"), self.bt.BY_CLOSURE)
+
+
+class BhutanGewogJoin(unittest.TestCase):
+    """What the adapter wrote, and whether it can reach all 205 shapes.
+
+    The bindings are only worth anything if every gewog lands on exactly one
+    polygon and no polygon is left holding nobody. The boundary file is 550 MB
+    and not in the repository, so the full bijection is checked only where it
+    is present; what is checked everywhere is that the rows carry what the
+    join needs.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        path = be.PROCESSED / "bhutan_gewog.json"
+        if not path.exists():
+            raise unittest.SkipTest("bhutan_gewog.json has not been run")
+        from scripts.fetch_census import bhutan
+        cls.bt = bhutan
+        cls.rows = json.loads(path.read_text(encoding="utf-8"))
+        cls.gewogs = [r for r in cls.rows if r["level"] == "admin2"]
+
+    def test_every_binding_names_a_gewog_this_census_prints(self):
+        # A binding is a claim about one gewog of one dzongkhag. A key naming
+        # a pair the census does not print together is a mistake, not a near
+        # miss: it would mean a gewog the table thinks is handled and which is
+        # in fact reaching no shape.
+        printed = {(r["name"], r["parent_name"]) for r in self.gewogs}
+        for key in (*self.bt.GEWOG_BY_POINT, *self.bt.SHAPE_BOUND):
+            self.assertIn(key, printed, key)
+
+    def test_the_ambiguous_four_are_bound_by_id_and_nobody_else_is(self):
+        bound = {(r["name"], r["parent_name"]): r for r in self.gewogs
+                 if r.get("match_by") == "shape_id"}
+        self.assertEqual(set(bound), set(self.bt.SHAPE_BOUND))
+        for key, row in bound.items():
+            self.assertEqual(row["shape_id"], self.bt.SHAPE_BOUND[key])
+        self.assertEqual([r["name"] for r in self.gewogs if r.get("shape_id")
+                          and r.get("match_by") != "shape_id"], [])
+
+    def test_a_renamed_gewog_says_what_the_boundary_file_calls_it(self):
+        # A reader who looks the polygon up will find the other name on it,
+        # and an unexplained disagreement is its own kind of error.
+        rows = {(r["name"], r["parent_name"]): r for r in self.gewogs}
+        sipsu = rows[("Tashichhoeling", "Samtse")]
+        self.assertIn("Sipsu", sipsu["aliases"])
+        self.assertIn("draws this gewog as Sipsu", sipsu["population_note"])
+        self.assertIn("reference point", sipsu["population_note"])
+        yangtse = rows[("Yangtse", "Trashi Yangtse")]
+        self.assertIn("elimination", yangtse["population_note"])
+
+    def test_every_gewog_shape_is_claimed_exactly_once(self):
+        # The whole point, where the geometry is at hand to check it: 205
+        # census gewogs onto 205 polygons, no shape claimed twice and none
+        # left empty.
+        gpkg = be.RAW / "boundaries" / "geoBoundariesCGAZ_ADM2.gpkg"
+        if not gpkg.exists():
+            raise unittest.SkipTest("CGAZ boundaries are not in the repository")
+        import fiona
+        with fiona.open(gpkg) as src:
+            shapes = [f["properties"] for f in src
+                      if f["properties"].get("shapeGroup") == "BTN"]
+        self.assertEqual(len(shapes), 205)
+        by_norm = collections.defaultdict(list)
+        for s in shapes:
+            by_norm[be.norm(s["shapeName"])].append(s)
+        unique = {k: v[0] for k, v in by_norm.items() if len(v) == 1}
+        claims = collections.defaultdict(list)
+        unmatched = []
+        for row in self.gewogs:
+            key = (row["name"], row["parent_name"])
+            if row.get("match_by") == "shape_id":
+                claims[row["shape_id"]].append(key)
+                continue
+            hit = next((unique[be.norm(c)] for c in
+                        [row["name"], *row.get("aliases", [])]
+                        if be.norm(c) in unique), None)
+            (claims[hit["shapeID"]] if hit else unmatched).append(key)
+        self.assertEqual(unmatched, [])
+        self.assertEqual([k for k in claims.values() if len(k) > 1], [])
+        self.assertEqual(len(claims), 205)
 
 
 class BhutanSexRatio(unittest.TestCase):
