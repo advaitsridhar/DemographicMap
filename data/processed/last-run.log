@@ -1,76 +1,146 @@
-pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11
-  Khyber Pakhtunkhwa
-    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-    Table 11: 3,436,846 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_kp_districts.pdf
-    35 districts, 123 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 35 districts add up to the province
-    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
-    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
-    and its 32 districts are Table 9's districts
-  Punjab
-    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 36 districts add up to the province
-    Table 11: 3,538,413 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_punjab_districts.pdf
-    36 districts, 145 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 36 districts add up to the province
-    and its 36 districts are Table 9's districts
-  Sindh
-    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-    Table 11: 3,230,815 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_sindh_districts.pdf
-    30 districts, 0 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 30 districts add up to the province
-    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
-    and its 24 districts are Table 9's districts
-  Balochistan
-    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's religions sum to its own printed total
-    and the 34 districts add up to the province
-    Table 11: 3,596,501 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_balochistan_districts.pdf
-    34 districts, 80 tehsils passed over
-    every district's mother tongues sum to its own printed total
-    and the 34 districts add up to the province
-    and its 34 districts are Table 9's districts
-  Islamabad Capital Territory
-    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's religions sum to its own printed total
-    and the 1 districts add up to the province
-    Table 11: 45,805 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_islamabad.pdf
-    1 districts, 1 tehsils passed over
-    one district, and it is the territory: the table prints no separate territory row
-    every district's mother tongues sum to its own printed total
-    and the 1 districts add up to the province
-    and its 1 districts are Table 9's districts
-  Azad Jammu and Kashmir
-  Gilgit-Baltistan
-  6 districts say what their Other language holds, and 1 what their Other religion does
-  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
-  Azad Jammu and Kashmir, from the territory's own yearbook
-    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
-    Table 15.24 named on page 15 with no rows under it: the contents, not the table
-    Table 15.24 on page 209: 10 districts
-    all 7 columns sum to the printed AJ&K row
-    Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
-  Gilgit-Baltistan, from the territory's own At a Glance
-    2,369,329 bytes from https://www.pnd.gog.pk/storage/downloads/AiRIlDEcscWPC1s58oXIgpjlVAS7jd-metaR0IgQVQgR2xhbmNlIDIwMjUuMS5wZGY=-.pdf
-    10 districts on page 3, summing to the territory's own printed 1,709,049
-  11 records declaring what is not published, rather than leaving the field empty
-  wrote data/processed/pakistan_district.json (640 kB)
-  138 districts and 7 provinces
+probe_pdf: https://www.ubos.org/wp-content/uploads/publications/03_20182014_National_Census_Main_Report.pdf
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  2,049,840 bytes
+  105 pages
+probe_pdf: 105 pages, printing [81, 82, 83]
+
+--- page 81 ----------------------------------------------------
+2014 NPHC - Main Report
+70
+Table A7:  Distribution of Households by source of Energy for Cooking , Sex and District
+District Electricity Gas Paraffin-Stove Charcoal Firewood Other s Total
+               -
+   Oyam                  668           244                         561                  2,962                70,437                 378                 76,493
+   Pader                  302             96                         277                  3,989                28,206                 156                 34,160
+   Yumbe                  475           275                         339                  4,801                55,056                 255                 63,362
+   Zombo                  383           265                         331                  3,430                44,662                 165                 50,869
+Western
+   Buhweju                  495           131                         155                      892                22,416                   85                 24,845
+   Buliisa                  146             74                         134                  4,144                17,018                 136                 21,652
+   Bundibugyo                  593           254                         418                  6,562                36,665                 274                 44,818
+   Bushenyi              1,088           332                         747                  6,827                41,827                 293                 51,378
+   Hoima              1,604           585                         812                20,954              100,696                 703               125,554
+   Ibanda                  851           248                         464                  6,483                46,141                 499                 55,006
+   Isingiro              1,431           284                         751                10,377                86,303             2,033               101,590
+   Kabale              2,073           429                         519                13,609              100,102                 918               117,854
+   Kabarole              2,272           722                     1,372                12,058                88,833             1,012               107,260
+   Kamwenge              1,247           383                         423                  6,356                78,958                 447                 88,686
+   Kanungu                  880           201                         347                  4,508                49,306                 274                 55,975
+   Kasese              2,947           526                     1,498                28,120              103,826             1,233               139,066
+   Kibaale              2,178           565                         748                15,735              147,707                 758               168,322
+   Kiruhura                  830           427                         592                  7,154                57,153                 583                 67,224
+   Kiryandongo                  464           177                         357                  8,776                41,949                 273                 52,158
+   Kisoro              1,099           192                         248                  4,342                54,543             1,533                 62,247
+   Kyegegwa                  754           308                         199                  5,068                53,331                 302                 60,061
+   Kyenjojo              1,327           427                         575                  5,961                82,572                 574                 91,534
+   Masindi              2,083           283                         652                14,199                47,046                 288                 64,935
+   Mbarara              3,786       1,152                     2,250                33,677                69,924             1, 439               112,849
+   Mitooma                  747           144                         296                  1,946                36,237                 327                 39,816
+   Ntoroko                  134             63                         113                  3,771                  9,445                 392                 13,942
+   Ntungamo              1,385           420                         623                11,392                85,832             1,750               101,796
+   Rubirizi                  395             74                         265                  3,090                24,618                 172                 28,789
+   Rukungiri              1,135           302                         491                  6,437                60,244                 439                 69,497
+   Sheema                  732           201                         512                  4,914                38,583                 797                 46,050
+Total          151,062     62,097                   80,885          1,678,259          5,210,191           61,052           7,306,942
+
+--- page 82 ----------------------------------------------------
+2014 NPHC - Main Report
+71
+Table A8:  Population by Ethnicity/Citizenship by Sex and Residence
+                        Sex Residence Total
+Ethnicity/Citizenship Male Female Rural Urban
+ Ugandans
+   Acholi 713,091 757,463 1,121,299 349,255 1,470,554
+   Aliba 9,101 9,195 16,149 2,147 18,296
+   Alur 425,670 452,783 731,579 146,874 878,453
+   Aringa 235,776 258,850 433,394 61,232 494,626
+   Baamba 20,923 21,636 32,987 9,572 42,559
+   Babukusu 18,484 18,633 33,146 3,971 37,117
+   Babwisi 48,435 52,677 79,376 21,736 101,112
+   Bafumbira 345,771 367,460 625,872 87,359 713,231
+   Baganda 2,688,700 2,866,619 3,268,588 2,286,731 5,555,319
+   Bagisu 805,808 841,096 1,351,587 295,317 1,646,904
+   Bagungu 41,538 42,448 69,251 14,735 83,986
+   Bagwe 50,493 49,391 94,117 5,767 99,884
+   Bagwere 302,969 318,181 528,604 92,546 621,150
+   Bahehe 1,996 2,027 3,498 525 4,023
+   Bahororo 73,723 77,843 118,127 33,439 151,566
+   Bakenyi 50,450 49,463 93,571 6,342 99,913
+   Bakiga 1,159,525 1,230,921 2,077,372 313,074 2,390,446
+   Bakonzo 414,657 435,989 719,076 131,570 850,646
+   Banyabindi 8,352 7,979 12,806 3,525 16,331
+   Banyabutumbi 4,972 5,141 7,777 2,336 10,113
+   Banyankore 1,554,458 1,661,874 2,563,622 652,710 3,216,332
+   Banyara 24,005 23,694 42,289 5,410 47,699
+   Banyaruguru 23,994 25,001 39,753 9,242 48,995
+   Banyarwanda 252,493 271,605 422,355 101,743 524,098
+   Banyole 263,043 267,077 438,582 91,538 530,120
+   Banyoro 473,084 493,892 685,921 281,055 966,976
+   Baruli 94,076 96,046 165,700 24,422 190,122
+   Barundi 48,657 43,913 82,134 10,436 92,570
+   Basamia 205,253 215,853 343,061 78,045 421,106
+   Basoga 1,429,287 1,531,603 2,403,105 557,785 2,960,890
+   Basongora 7,960 7,937 12,057 3,840 15,897
+   Batagwenda 28,020 28,131 49,153 6,998 56,151
+   Batoro 396,437 414,271 575,581 235,127 810,708
+   Batuku 17,378 17,972 27,950 7,400 35,350
+   Batwa 3,022 3,178 5,429 771 6,200
+   Chope 17,202 17,125 28,944 5,383 34,327
+   Dodoth 59,302 69,800 118,942 10,160 129,102
+   Ethur 47,315 51,033 80,069 18,279 98,348
+   Gimara 5,547 5,635 9,677 1,505 11,182
+   Ik (Teuso) 6,845 7,094 11,553 2,386 13,939
+   Iteso 1,160,208 1,204,361 2,071,918 292,651 2,364,569
+   Jie 75,406 89,836 155,710 9,532 165,242
+   Jonam 51,675 54,772 79,877 26,570 106,447
+   Jopadhola 235,742 246,074 409,048 72,768 481,816
+   Kakwa 89,837 92,599 124,701 57,735 182,436
+   Karimojong 172,419 199,294 343,648 28,065 371,713
+   Kebu (Okebu) 27,571 26,538 51,326 2,783 54,109
+   Kuku 22,103 24,394 41,661 4,836 46,497
+   Kumam 131,450 134,621 241,088 24,983 266,071
+
+--- page 83 ----------------------------------------------------
+2014 NPHC - Main Report
+72
+Table A8:  Population by Ethnicity/Citizenship by Sex and Residence
+                        Sex Residence Total
+Ethnicity/Citizenship Male Female Rural Urban
+   Langi 1,042,464 1,089,031 1,905,656 225,839 2,131,495
+   Lendu 9,693 9,226 16,904 2,015 18,919
+   Lugbara 533,012 566,721 987,252 112,481 1,099,733
+   Madi 142,916 150,067 240,538 52,445 292,983
+   Mening 1,264 1,391 2,428 227 2,655
+   Mvuba 1,391 1,488 2,301 578 2,879
+   Napore 12,337 13,080 24,050 1,367 25,417
+   Ngikutio 2,757 2,972 5,404 325 5,729
+   Nubi 14,181 14,591 9,033 19,739 28,772
+   Nyangia 4,751 4,883 9,277 357 9,634
+   Pokot 51,554 53,326 95,087 9,793 104,880
+   Reli 4,238 4,119 7,282 1,075 8,357
+   Sabiny 136,112 137,727 242,643 31,196 273,839
+   Shana 5,240 5,595 3,393 7,442 10,835
+   So (Tepeth) 11,041 12,381 23,311 111 23,422
+   Vonoma 1,235 1,378 2,123 490 2,613
+   Other Ugandans 29,937 30,881 39,672 21,146 60,818
+Non Ugandans
+   Kenya 16,023 18,097 18,401 15,719 34,120
+   Tanzania 22,426 23,115 33,751 11,790 45,541
+   Rwanda 43,271 47,960 66,058 25,173 91,231
+   Burundi 11,198 10,600 19,322 2,476 21,798
+   Sudan 56,683 62,153 75,085 43,751 118,836
+   Dem Rep Of Congo 66,326 69,179 113,211 22,294 135,505
+   Somalia 7,032 6,772 2,521 11,283 13,804
+   Other Africa 3,043 2,697 1,103 4,637 5,740
+   Other 298 296 186 408 594
+   United Kingdom 499 490 119 870 989
+   Other Europe 764 720 200 1,284 1,484
+   Asia 8,156 5,638 636 13,158 13,794
+   Usa 794 840 215 1,419 1,634
+   Canada 198 163 61 300 361
+   Central And Latin America 99 93 78 114 192
+   Australia 119 132 42 209 251
+   Oceania 110 84 21 173 194
+   Non-Ugandan Not Stated 9,629 8,499 4,554 13,586 18,128
+ 16,595,014 17,547,403 26,994,948 7,147,469 34,142,417
