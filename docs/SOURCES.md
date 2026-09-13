@@ -4528,6 +4528,17 @@ The `not_collected` marker is asserted from these tables and nowhere else:
 Adding a country means adding a row with a citable reason. An empty API response is
 never sufficient grounds: it produces `not_available`.
 
+The country row honours the same declaration, for **all three** fields. It used
+to honour two of them: `fetch_factbook.py` passed religion and ethnicity
+through the policy gate and let language past it, so Japan, Turkey, Sweden,
+Belgium, Austria, Algeria, Saudi Arabia, Iraq, Greece, North Korea, Afghanistan
+and the rest each had every province saying that no census of theirs asks
+language, while the country panel directly above them showed a Factbook list.
+That is the map contradicting itself on one screen, and it is now one gate for
+the three. Nothing else narrows: a country with no policy keeps exactly what
+the Factbook says, and a declaration is never dated, because `dated()` stamps a
+year onto a composition and onto nothing else.
+
 ### Measured on the runner, and declared: Iran, Korea, Egypt, Afghanistan, Venezuela
 
 A second pass over the largest countries still empty at the first level, after
@@ -4550,9 +4561,165 @@ the Wikipedia transcriptions above, ended in declarations rather than files:
 * **Afghanistan** -- no population census has ever been completed (the 1979
   count was abandoned partway), so no census question exists for any of the
   three fields: `not_collected` on all three, with the NSIA's estimates named
-  as what does exist.
+  as what does exist. Re-checked since against the household survey that would
+  otherwise stand in for a census -- see *Afghanistan: verifying a declaration,
+  and the survey that does not exist* below.
 * **Venezuela** -- the 2011 census asked indigenous and Afro-descendant
   self-recognition and not religion; `not_collected` for religion only.
+
+### The Maldives: one question about who you are, and its answer is a passport
+
+The Maldives was empty at all three levels -- one country row of Factbook prose,
+13 atolls and 20 atolls below them with nothing. The obvious explanation is the
+one to refuse: Article 9(d) of the constitution requires a citizen of the
+Maldives to be a Muslim, so "100% Islam" is a sentence anyone could write, and
+it is not a census result. Nobody was counted giving that answer. Putting it on
+the map would be the mis-match this project ranks below a gap -- a figure with a
+census's authority that no census produced -- so what was measured instead is
+the census's own form and the census's own list of tables.
+
+**The form.** The 2006 questionnaire is published through the IHSN microdata
+catalogue as the entry for `MDV_2006_PHC_V01_M`
+(`catalog.ihsn.org/catalog/4273/related-materials`, the 388 kB PDF): 16 pages,
+the whole *Shaviyani Form -- Information on Households and Individuals*, issued
+by the Ministry of Planning and National Development. Searched for *religion*,
+*mother tongue*, *language*, *ethnic*, *nationality* and *Dhivehi*, exactly one
+page of the sixteen matches, and the match is question **M4, "What is your
+Nationality?", answered 1 Maldivian or 2 Foreigner**. The rest of the form is
+household composition, the building, water, sanitation, lighting, fuel, waste,
+tenure, education, activity and migration. There is no religion question, no
+language question and no ethnicity question on it.
+
+**The tables.** The Census 2022 results summary
+(`statisticsmaldives.gov.mv/census-2022-results-summary/`) lists the round's
+whole published output, and it is about sixty tables in five families:
+
+| family | tables | what they cross |
+| --- | --- | --- |
+| Population | P1-P6 | place of enumeration, **nationality**, sex, locality, island, five-year age group |
+| Employment | EC1-EC6 | labour force status, activity, industry, occupation, employment status |
+| Housing | H1-H8 | type of living quarters, rooms, drinking water, assets |
+| Migration | MG1-MG13 | place of registration, birth, usual residence, enumeration, **nationality** |
+| Education | ED1-ED19 | literacy, attendance, grade, highest attainment |
+
+Not one is a religion table. Nationality -- Maldivian or foreigner, the same
+M4 -- is the only characteristic of that kind anywhere in the set, which is
+the published half of the fact the questionnaire shows the collection half of.
+The atoll profiles the Bureau has been issuing from the same round since 2024
+say it a third time: Shaviyani's, 32 pages, is resident population, resident
+Maldivians, resident foreigners, administrative and non-administrative islands,
+and no more.
+
+**Language is the Irish case, not an absence.** ED1, ED2 and ED16 cross
+*literacy in mother tongue* with age, sex, atoll and island; ED3 and ED4 do the
+same for English. Those count an **ability**. Which language the mother tongue
+*is* never gets recorded, so there is no composition inside them, and deriving
+"Dhivehi 100%" from the fact that Maldivians are literate in their mother
+tongue would be inventing the very figure the table declines to collect. It is
+the same distinction already written down for Ireland, whose census asks
+whether a person can speak Irish and gets an answer that is a skill.
+
+So all three fields are declared in `NOT_COLLECTED_POLICY["MDV"]`, and
+`apply_collection_policy` carries the declaration down to all 13 first-level
+and 20 second-level shapes. **No adapter and no atoll-level file were
+written**, and that is the point rather than a shortcut: there is nothing to
+join, and a per-atoll record would have to be bound through a boundary file
+that does not nest -- CGAZ draws the Maldives' first level as 13 of the 21
+administrative atolls under their Thaana letter-names (Haa Alif, Baa, Kaafu)
+and its second level as 20 natural atolls under their geographic names
+(North Thiladhunmathe, South Maalhosmadulu, Faadhippolhu), with `Male'` used
+twice and Gnaviyani/Fuvahmulah absent from both. Seven of the twenty have no
+first-level polygon to sit inside at all. None of that has to be solved to say
+truthfully that the census does not ask; it would have to be solved to publish
+a number, and there is no number.
+
+What this closes and what it does not: religion, ethnicity and language are
+answered. **Population by atoll and island is published and is not here** --
+`Atoll-Level-Indicator-Sheet-Population.xlsx` and
+`Island-Level-Indicator-Sheet-Population.xlsx` under
+`statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/`, plus tables P1-P6
+as both XLSX and PDF. That is a real route, left open deliberately, and whoever
+takes it will spend their time on the name-matching described above rather than
+on the figures.
+
+One thing the census site does not serve: `census.gov.mv/2022/` and every
+directory under it answer 404 to a reader, though individual files beneath
+`census.gov.mv/2022/wp-content/uploads/` still resolve. The Bureau's own
+`statisticsmaldives.gov.mv` carries the same material and is what was read.
+
+### Afghanistan: verifying a declaration, and the survey that does not exist
+
+`NOT_COLLECTED_POLICY["AFG"]` already said that Afghanistan has never completed
+a population census, so no census question on religion, ethnicity or language
+exists. That stands, and nothing found here disturbs it. What it left open is
+the question worth asking of any country in that position, because this map
+answers it *yes* elsewhere: **is there a survey?** South Korea's provinces
+carry a pollster's pooled web panel; 39 African countries carry Afrobarometer,
+a sample of 53,444 people. A survey from a named institution, labelled as one
+and carrying its own provenance, is a source this project accepts. Afghanistan
+has the institution and the survey series -- the Central Statistics
+Organization, now the NSIA, has run a nationwide household survey since 2003
+that is **designed to be representative at provincial level** -- so the only
+thing to establish was whether it asks the three questions.
+
+It does not, and this was measured rather than inferred:
+
+* **ALCS 2013-14 household questionnaire** (the ALCS 1392-93 form, printed as
+  Annex III.1 and published at `catalog.ihsn.org/catalog/6557/download/80079`),
+  45 pages. Searched for *religio*, *ethnic*, *tongue*, *language*, *Pashto*
+  and *Dari*: **zero pages match**. The household roster asks name,
+  relationship to head, age, sex, marital status, and the line numbers of
+  spouse, father and mother. Nothing else about identity.
+* **ALCS 2016-17 analysis report** (CSO, 2018, ISBN 978-9936-8050-7-1), 421
+  pages, questionnaire annexed. Eleven pages match those six terms and not one
+  is a table or a question: the SDG disaggregation boilerplate, an entrance
+  exam interviewers sat on local culture, the languages the CAPI application
+  was written in, the UN's definition of a refugee, and the Dari-or-Pashtu
+  choice in the primary school curriculum.
+* **NRVA 2011-12 report** (CSO, 2014), 238 pages. Two pages match, both in the
+  metadata chapter, both saying that the report itself will be available in
+  Dari, Pashtu and English.
+* **Socio-Demographic and Economic Survey** (CSO with UNFPA, Bamiyan 2011 then
+  Ghor and Daykundi 2012), the only sub-provincial enumeration since 1979 and
+  the last open lead in `survey/findings/AFG.json`. Its own contents page lists
+  population characteristics, literacy, educational attainment, migration,
+  employment, functional difficulty, fertility, mortality and housing. None of
+  the three is among them.
+
+So the declaration is not merely "there is no census". It is that the survey
+which would otherwise stand in for one has a published questionnaire and that
+questionnaire carries none of the three fields -- which is a stronger claim and
+a more useful one, because it tells the next reader that the ALCS is not worth
+re-opening. The three reasons in `common.py` now say so. The claim sometimes
+made that the 2011-13 NRVA/ALCS rounds carried language and ethnicity at
+province level was tested here against the questionnaire and the report, and it
+is not so.
+
+**What the NSIA does publish, and where it can be reached.** Annual population
+estimates by province and district, which is real and is not a composition.
+Its own site cannot be read over a verified connection: `nsia.gov.af` and
+`www.nsia.gov.af` serve, on both 443 and 8443, a Certum DV certificate issued
+for `*.gsia.gov.af` and `gsia.gov.af` and for no other name, so every request
+fails hostname verification. `gsia.gov.af` itself *does* verify once the
+missing intermediate is fetched through the certificate's own AIA extension
+(`scripts/probe_tls.py --chain` reports `VERIFIED handshake ok, TLSv1.3`), and
+what it serves at the root is a 2.4 kB stub with no links. Verification is not
+turned off for either, and no User-Agent is spoofed.
+
+The estimates are reachable anyway, through HDX, the same route several other
+countries here are covered by: dataset **`cod-ps-afg`, "Afghanistan -
+Subnational Population Statistics"**, whose `dataset_source` is *National
+Statistic and Information Authority (NSIA) Afghanistan*, maintained by OCHA
+Afghanistan, CC BY-IGO, last modified December 2025. It carries admin-0,
+admin-1 and admin-2 population as XLSX, with a gazetteer of **34 provinces and
+402 districts**; the reference year is 2021 and the method is stated as
+estimates built on a 2017 Flowminder/UNFPA micro-census and remote-sensing
+study, not an enumeration. That is a population route and only a population
+route, and it is left open here rather than taken: CGAZ draws 398 second-level
+units against the gazetteer's 402, so it needs the same kind of careful,
+per-district reconciliation that Nepal's shape bindings needed, and it would
+fill no part of the religion, ethnicity or language gap this section is about.
+
 
 ### South Korea: a survey, spread by decision
 

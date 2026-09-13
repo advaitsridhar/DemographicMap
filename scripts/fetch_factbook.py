@@ -37,6 +37,7 @@ from common import (  # noqa: E402
     http_get,
     log,
     measure,
+    _split_top_level,
     parse_composition,
     parse_number,
     parse_year,
@@ -239,6 +240,23 @@ def languages_text(profile: dict[str, Any]) -> str | None:
     return raw
 
 
+def _drop_asides(text: str) -> str:
+    """Remove parenthesised asides, innermost first, until none is left.
+
+    One pass of ``\\([^)]*\\)`` cannot do it, because the Factbook nests them:
+    Morocco's "Tamazight languages (Tamazight (official), Tachelhit, Tarifit)"
+    matches from the first bracket to the first close, and what survives is
+    ", Tachelhit, Tarifit)" -- an aside promoted to a language, with a stray
+    bracket on it. Matching only brackets that contain no bracket takes the
+    inner pair first, and repeating does the rest.
+    """
+    previous = None
+    while previous != text:
+        previous = text
+        text = re.sub(r"\([^()]*\)", " ", text)
+    return re.sub(r"\s+", " ", text)
+
+
 def parse_languages(profile: dict[str, Any]) -> list[dict[str, Any]] | None:
     raw = languages_text(profile)
     comp = parse_composition(raw)
@@ -246,9 +264,16 @@ def parse_languages(profile: dict[str, Any]) -> list[dict[str, Any]] | None:
         return comp
     if not raw:
         return None
-    # No percentages published -- keep the named languages, flag the missing shares.
-    names = [re.sub(r"\([^)]*\)", "", part).strip(" ,.;")
-             for part in re.split(r"[,;]", raw.split("note")[0])]
+    # No percentages published -- keep the named languages, flag the missing
+    # shares. Split at the top level only: the Factbook's asides contain
+    # commas, and a plain split(",") tears one aside into several "languages".
+    # The Maldives read as four -- "Dhivehi (official", "closely related to
+    # Sinhala", "script derived from Arabic)", "English" -- which is one
+    # language, one sentence about its alphabet, and English. The composition
+    # parser above has always split this way; this branch did not, and it is
+    # the branch every country with no published shares falls into.
+    names = [_drop_asides(part).strip(" ,.;")
+             for part in _split_top_level(raw.split("note")[0], ",;")]
     names = [n for n in names if n and len(n) < 60][:12]
     if not names:
         return None
@@ -407,20 +432,43 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
 
     policy = NOT_COLLECTED_POLICY.get(iso3 or "", {})
 
-    def composition(field: str, text: str | None) -> Any:
+    def composition(field: str, text: str | None, parsed: Any = None) -> Any:
+        """The Factbook's figure for one field, unless the country declares it
+        uncollected -- in which case the declaration is the answer.
+
+        ``parsed`` is for language, whose reader is not ``parse_composition``:
+        it keeps a named language with no share rather than dropping it. The
+        policy gate is in front of both, because which parser produced a
+        composition has nothing to do with whether the country gathers it.
+        """
         if field in policy:
             return gap(NOT_COLLECTED, policy[field])
-        comp = parse_composition(text)
+        comp = parse_composition(text) if parsed is None else parsed
         if comp:
             return comp
         if text:
             return gap(NOT_AVAILABLE, f"Factbook reports free text only: {text[:180]}")
         return gap(NOT_AVAILABLE, "No composition published by the Factbook for this entity.")
 
-    languages = parse_languages(profile)
     language_text = languages_text(profile)
     religion = composition("religion", religion_text)
     ethnicity = composition("ethnicity", ethnic_text)
+    # Language goes through the same gate as the other two, and used not to.
+    # The inconsistency was visible on the map rather than internal: Japan,
+    # Turkey, Sweden, Belgium, Austria, Algeria, Saudi Arabia, Iraq, Greece,
+    # North Korea, Afghanistan and the rest each declare that no census of
+    # theirs asks language, every one of their provinces says so, and the
+    # country panel above them still showed a Factbook list -- so the map
+    # contradicted itself on one screen. The Maldives is the clearest case:
+    # "Dhivehi (official, closely related to Sinhala, script derived from
+    # Arabic), English" parsed into four "languages", two of which are halves
+    # of a sentence about the alphabet.
+    #
+    # The rule this follows is the one already written for the other two
+    # fields: a declaration is a fact about what the state gathers, and an
+    # outside estimate is not evidence against it. Nothing is lost that the
+    # Factbook does not still say in its own file.
+    language = composition("language", language_text, parsed=parse_languages(profile))
 
     return {
         "id": iso3 or f"GEC-{gec.upper()}",
@@ -457,8 +505,8 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
         # year printed beside that gap claims a measurement nobody took.
         "religion": religion,
         "religion_year": dated(religion, parse_year(religion_text)),
-        "language": languages or gap(NOT_AVAILABLE),
-        "language_year": dated(languages, parse_year(language_text)),
+        "language": language,
+        "language_year": dated(language, parse_year(language_text)),
         "ethnicity": ethnicity,
         "ethnicity_year": dated(ethnicity, parse_year(ethnic_text)),
         "sources": [{
