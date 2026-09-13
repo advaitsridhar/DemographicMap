@@ -82,6 +82,11 @@ ADAPTER_FILES = [
     # language half coming from the U.S. Census Bureau's tables of the 2017
     # round, which named nine tongues and left Chitral 93.1% "Other".
     "pakistan_district.json",
+    # Population only, and the three composition fields are declared
+    # not_collected in common.py rather than left empty: Bhutan's census does
+    # not ask them. This fills 205 gewogs that carried nothing at all, and
+    # Thimphu, which carried nothing because geoBoundaries spells it "Thimpu".
+    "bhutan_gewog.json",
     "bangladesh_district.json",
     "south_africa_province.json",
     "philippines_province.json", "ethiopia_region.json",
