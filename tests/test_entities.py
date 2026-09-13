@@ -223,6 +223,150 @@ class CollectionPolicyPropagation(unittest.TestCase):
                 self.assertIn(field, ("religion", "ethnicity", "language"))
                 self.assertGreater(len(reason), 30, f"{iso3}/{field} reason is too thin")
 
+    def test_no_declaration_carries_a_figure(self):
+        """A declaration explains an absence; it never states a share.
+
+        The Maldives is why this is written down. Its constitution requires a
+        citizen to be a Muslim, so "100% Islam" is the obvious sentence to
+        reach for and it is not a census result -- nobody was counted giving
+        that answer, and a reason carrying it would put a fabricated figure
+        into the one field whose whole job is to say no figure exists.
+        """
+        import re as _re
+        for iso3, fields in common.NOT_COLLECTED_POLICY.items():
+            for field, reason in fields.items():
+                where = f"{iso3}/{field}"
+                self.assertNotIn("%", reason, where)
+                self.assertIsNone(
+                    _re.search(r"\b\d+(?:\.\d+)?\s*per\s?cent\b", reason, _re.I),
+                    where)
+
+
+class MaldivesAndAfghanistanAreDeclaredNotEmpty(unittest.TestCase):
+    """Two countries that are empty for opposite reasons, and say so.
+
+    The Maldives asks a census question about who you are exactly once, and
+    the answer is Maldivian or foreigner. Afghanistan has never completed a
+    census at all, and the household surveys that stand in for one -- the
+    kind of source this map does carry for Korea and for 39 African countries
+    -- ask none of the three either. Neither should ever read as "nobody ran
+    the adapter".
+    """
+
+    def test_the_maldives_declares_all_three(self):
+        policy = common.NOT_COLLECTED_POLICY["MDV"]
+        self.assertEqual(sorted(policy), ["ethnicity", "language", "religion"])
+
+    def test_the_maldives_language_reason_is_about_an_ability(self):
+        """ED1/ED2/ED16 cross literacy in mother tongue with atoll and island.
+
+        That is a skill, not a composition: which language the mother tongue
+        is goes unrecorded. A reason that said "the census asks nothing about
+        language" would be false and would stop anyone looking at those
+        tables again.
+        """
+        reason = common.NOT_COLLECTED_POLICY["MDV"]["language"]
+        self.assertIn("literacy", reason.lower())
+        self.assertNotIn("Dhivehi 100", reason)
+
+    def test_afghanistan_says_why_no_survey_replaces_the_census(self):
+        """The declaration has to answer the question it invites.
+
+        "No census" on its own leaves open whether some survey carries the
+        fields, which for Afghanistan is the first thing to ask -- the ALCS
+        is representative at province level and this map does publish survey
+        compositions. It does not carry these, and the reason says so.
+        """
+        for field in ("religion", "ethnicity", "language"):
+            reason = common.NOT_COLLECTED_POLICY["AFG"][field]
+            self.assertIn("ALCS", reason, field)
+
+
+class TheFactbookHonoursTheSameDeclaration(unittest.TestCase):
+    """All three fields pass the policy gate, not two of them.
+
+    Language did not, and the map contradicted itself on one screen: every
+    province of Japan, Turkey, Sweden, Austria, Algeria, Saudi Arabia, Iraq,
+    Greece, North Korea and Afghanistan said the census asks no language
+    question, while the country panel above them showed a Factbook list.
+    """
+
+    def build(self, iso3, gec):
+        import fetch_factbook
+        profile = {"People and Society": {
+            "Languages": {"Languages": {"text": "Dhivehi (official, closely "
+                                                "related to Sinhala, script "
+                                                "derived from Arabic), English "
+                                                "(2022 est.)"}},
+            "Religions": {"text": "Sunni Muslim (official)"},
+            "Ethnic groups": {"text": "homogeneous mixture"},
+        }}
+        return fetch_factbook.build_record("south-asia", gec, profile, iso3, None)
+
+    def test_a_declared_country_shows_the_declaration(self):
+        row = self.build("MDV", "mv")
+        for field in ("religion", "ethnicity", "language"):
+            self.assertEqual(row[field]["status"], common.NOT_COLLECTED, field)
+            self.assertEqual(row[field]["note"],
+                             common.NOT_COLLECTED_POLICY["MDV"][field], field)
+
+    def test_a_declaration_is_never_dated(self):
+        """The Factbook text carries "(2022 est.)"; nothing was measured."""
+        row = self.build("MDV", "mv")
+        self.assertIsNone(row["language_year"])
+        self.assertIsNone(row["religion_year"])
+
+    def test_an_undeclared_country_keeps_what_the_factbook_says(self):
+        """The gate narrows nothing else: Kenya declares no policy at all."""
+        row = self.build("KEN", "ke")
+        self.assertIsInstance(row["language"], list)
+        self.assertEqual(row["language"][0]["group"], "Dhivehi")
+        self.assertEqual(row["language_year"], 2022)
+
+
+class AnAsideIsNotALanguage(unittest.TestCase):
+    """The Factbook writes its asides with commas in them.
+
+    When it publishes no shares, every country falls into the name-list
+    branch, and that branch split on every comma -- so the aside broke into
+    pieces and each piece became a language. Twenty-one countries read that
+    way, the Maldives worst: one language, one remark about its alphabet cut
+    in two, and English.
+    """
+
+    def parse(self, text):
+        import fetch_factbook
+        profile = {"People and Society": {"Languages": {"Languages": {"text": text}}}}
+        rows = fetch_factbook.parse_languages(profile)
+        return [row["group"] for row in rows or []]
+
+    def test_a_comma_inside_an_aside_does_not_split_it(self):
+        self.assertEqual(
+            self.parse("Dhivehi (official, closely related to Sinhala, script "
+                       "derived from Arabic), English"),
+            ["Dhivehi", "English"])
+
+    def test_a_nested_aside_is_removed_whole(self):
+        """Morocco nests one bracket inside another.
+
+        A single non-recursive pass matches from the first bracket to the
+        first close and leaves ", Tachelhit, Tarifit)" behind -- an aside
+        promoted to a language, with a stray bracket still on it.
+        """
+        self.assertEqual(
+            self.parse("Arabic (official), Tamazight languages (Tamazight "
+                       "(official), Tachelhit, Tarifit), French (often the "
+                       "language of business)"),
+            ["Arabic", "Tamazight languages", "French"])
+
+    def test_a_plain_list_is_unchanged(self):
+        self.assertEqual(self.parse("Kinyarwanda, French, English"),
+                         ["Kinyarwanda", "French", "English"])
+
+    def test_shares_still_win_when_the_source_publishes_them(self):
+        rows = self.parse("Swahili 90%, English 5%, other 5%")
+        self.assertEqual(rows, ["Swahili", "English", "other"])
+
 
 class AbsDimensionDetection(unittest.TestCase):
     """The ABS names its dimensions differently per dataflow, so they are found,
@@ -6624,3 +6768,113 @@ class CountryDetail(unittest.TestCase):
         self.assertEqual(admin0[0]["language_note"], "what it holds")
         # A note-only row leaves the figures exactly as they were.
         self.assertEqual(admin0[0]["language"][0]["pct"], 82.6)
+
+
+class Adm2Parents(unittest.TestCase):
+    """Which first-order shape a second-order unit is filed under.
+
+    CGAZ ships no parent link, so the build works it out from the geometry.
+    It used to do that by containment of the unit's representative point and,
+    where that failed, by whichever bounding box the spatial index returned
+    first. Measured over all 49,349 units, 228 were filed under the wrong
+    first-order shape -- Apostoles Department under Corrientes when it is in
+    Misiones, eleven Bhutanese gewogs under the wrong dzongkhag. The parent is
+    what scopes an adapter's row to a shape, so it decides matches too.
+    """
+
+    @staticmethod
+    def _square(x0, y0, x1, y1):
+        from shapely.geometry import box
+        return box(x0, y0, x1, y1)
+
+    def _country(self, *parents):
+        """Build the (tree, rows) entry link_adm2_parents hands the weighing."""
+        import shapely
+        from shapely.strtree import STRtree
+        rows = []
+        for name, geom in parents:
+            geom = be.whole(geom)
+            shapely.prepare(geom)
+            rows.append({"shape_id": f"ADM1-{name}", "name": name,
+                         "group": "XXX", "_geom": geom})
+        return {"XXX": (STRtree([r["_geom"] for r in rows]), rows)}
+
+    def _unit(self, name, parent, bbox):
+        return {"shape_id": f"ADM2-{name}", "name": name, "group": "XXX",
+                "parent_shape": parent, "bbox": bbox}
+
+    def test_a_straddling_unit_goes_to_the_side_it_is_mostly_on(self):
+        # West is 0..10, East is 10..20. The unit spans 8..14, so a third of
+        # it is in West and two thirds in East -- and its representative point
+        # sits in West, which is exactly how the old rule got these wrong.
+        trees = self._country(("West", self._square(0, 0, 10, 10)),
+                              ("East", self._square(10, 0, 20, 10)))
+        row = self._unit("Straddler", "ADM1-West", [8, 2, 14, 6])
+        moved, unplaced = be.weigh_adm2_parents(
+            {"ADM2-Straddler": row}, trees,
+            [("ADM2-Straddler", self._square(8, 2, 14, 6))])
+        self.assertEqual(row["parent_shape"], "ADM1-East")
+        self.assertEqual((moved, unplaced), (1, []))
+
+    def test_a_majority_holding_parent_is_left_alone(self):
+        trees = self._country(("West", self._square(0, 0, 10, 10)),
+                              ("East", self._square(10, 0, 20, 10)))
+        row = self._unit("Mostly west", "ADM1-West", [6, 2, 11, 6])
+        moved, unplaced = be.weigh_adm2_parents(
+            {"ADM2-Mostly west": row}, trees,
+            [("ADM2-Mostly west", self._square(6, 2, 11, 6))])
+        self.assertEqual(row["parent_shape"], "ADM1-West")
+        self.assertEqual((moved, unplaced), (0, []))
+
+    def test_a_unit_that_meets_nothing_loses_its_parent_rather_than_guessing(self):
+        # Belize City's six electoral divisions are drawn outside every one of
+        # Belize's own district polygons. Geometry has no evidence there, and
+        # nearness is a proxy for evidence rather than evidence, so the unit
+        # falls back to the country -- which is true -- instead of to a
+        # province picked for being close, which may not be.
+        trees = self._country(("West", self._square(0, 0, 10, 10)),
+                              ("East", self._square(10, 0, 20, 10)))
+        row = self._unit("Adrift", "ADM1-West", [30, 30, 31, 31])
+        moved, unplaced = be.weigh_adm2_parents(
+            {"ADM2-Adrift": row}, trees,
+            [("ADM2-Adrift", self._square(30, 30, 31, 31))])
+        self.assertIsNone(row["parent_shape"])
+        self.assertEqual((moved, unplaced), (0, ["Adrift (XXX)"]))
+
+    def test_an_invalid_polygon_is_repaired_and_not_dropped(self):
+        """A self-touching ring must not cost a unit its true parent.
+
+        346 of CGAZ's 3,224 first-order polygons and 843 of its second-order
+        ones do not satisfy GEOS. An earlier version of this caught the
+        exception the overlay raises and moved on, which silently dropped the
+        best candidate and handed the unit to whichever lesser neighbour
+        happened not to raise: Bouches-du-Rhone to Occitanie, Abu Dhabi to
+        Sharjah. Swallowing an error from the most important candidate is
+        worse than the arbitrary fallback it replaced.
+        """
+        from shapely.geometry import Polygon
+        # A bowtie: one ring crossing itself, so GEOS calls it invalid.
+        bowtie = Polygon([(11, 0), (19, 8), (11, 8), (19, 0), (11, 0)])
+        self.assertFalse(bowtie.is_valid)
+        trees = self._country(("West", self._square(0, 0, 10, 10)),
+                              ("East", self._square(10, 0, 20, 10)))
+        row = self._unit("Bowtie", None, [11, 0, 19, 8])
+        moved, unplaced = be.weigh_adm2_parents(
+            {"ADM2-Bowtie": row}, trees, [("ADM2-Bowtie", bowtie)])
+        self.assertEqual(row["parent_shape"], "ADM1-East")
+        self.assertEqual(unplaced, [])
+
+    def test_repair_keeps_the_polygon_and_drops_the_stray_lines(self):
+        # make_valid can hand back lines and points alongside the polygon;
+        # area and containment are questions about the polygon.
+        from shapely.geometry import Polygon
+        spike = Polygon([(0, 0), (4, 0), (4, 4), (0, 4), (0, 0),
+                         (8, 0), (0, 0)])
+        fixed = be.whole(spike)
+        self.assertTrue(fixed.is_valid)
+        self.assertIn(fixed.geom_type, ("Polygon", "MultiPolygon"))
+        self.assertAlmostEqual(fixed.area, 16.0, places=6)
+
+    def test_a_valid_polygon_is_handed_back_unchanged(self):
+        square = self._square(0, 0, 2, 2)
+        self.assertIs(be.whole(square), square)
