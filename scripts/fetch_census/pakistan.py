@@ -1496,14 +1496,6 @@ def gb_mics_language(blob: bytes) -> tuple[dict[str, int], int]:
                         if GB_MICS_TABLE.search(line)), None)
         if caption is None:
             continue
-        span = GB_MICS_SPAN.search(" ".join(line for line, _c in page))
-        if not span:
-            raise SystemExit(
-                f"pakistan: Table SR.3.1 is on page {number} of the GB MICS "
-                f"report and nothing on that page dates it. A survey "
-                f"published under the wrong year is a figure that looks "
-                f"current and is not")
-        year = int(span.group(1)[:2] + span.group(2))
         whole = 0
         found: dict[str, int] = {}
         reading = False
@@ -1529,6 +1521,18 @@ def gb_mics_language(blob: bytes) -> tuple[dict[str, int], int]:
             log(f"    Table SR.3.1 named on page {number} with no language "
                 f"block under it: the contents, not the table")
             continue
+        # Dated only now, and from this page. The caption is in the contents
+        # too, and a contents page carries no year -- asking it for one before
+        # knowing whether the table is under it would refuse the run over a
+        # listing.
+        span = GB_MICS_SPAN.search(" ".join(line for line, _c in page))
+        if not span:
+            raise SystemExit(
+                f"pakistan: Table SR.3.1 is on page {number} of the GB MICS "
+                f"report and nothing on that page dates it. A survey "
+                f"published under the wrong year is a figure that looks "
+                f"current and is not")
+        year = int(span.group(1)[:2] + span.group(2))
         counted = sum(found.values())
         if not whole or counted != whole:
             raise SystemExit(

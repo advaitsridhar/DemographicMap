@@ -1731,6 +1731,132 @@ paper's, the territory row's note now says so in as many words, and the
 sentence is built from the figures the run computes rather than from a number
 typed beside them.
 
+### The two territories' languages, from two governments and neither of them the census
+
+*Gilgit-Baltistan is the one real absence* above ends by saying that the
+territories' mother tongue has no route. Two of the three statements in it
+have since been overtaken by measurement, and the third has been sharpened.
+What follows is what each route actually answered.
+
+**Azad Jammu and Kashmir had a district table nobody had opened.** The
+paragraph above records that the AJ&K Statistical Year Book 2023 "contains the
+word 'tongue' on no page of it", which is true and was the wrong search. The
+table is called **15.33, *Languages Spoken in AJ&K***, it is on PDF page 213
+beside the marriages table, and it prints a percentage for each of the ten
+districts:
+
+| district | Kashmiri | Gojri | Pahari | Shina | Others |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Muzaffarabad | 15 | 35 | 50 | – | – |
+| Neelum | 20 | 10 | 63 | 5 | 2 *Kundal Shahi* |
+| Jhelum Valley | 15 | 35 | 50 | – | – |
+| Bagh | 2 | 3 | 95 *Dhundi-Khairali* | – | – |
+| Haveli | 5 | 30 | 65 *Chibali* | – | – |
+| Poonch | – | 6 | 94 *Punchi* | – | – |
+| Sudhnoti | – | – | 95 *Punchi* | – | 5 |
+| Kotli | – | 35 | 63 *Pahari Pothwari* | – | 2 |
+| Mirpur | – | 10 | 85 *Mirpuri* | – | 2 |
+| Bhimber | – | 5 | 30 *Mirpuri* | 30 *Dogri* | 35 *Punjabi* |
+
+Four things about that table decide how it is read.
+
+* **Its source is not a statistical office.** The line under it names the
+  **Kashmir Liberation Cell, Muzaffarabad** — a department of the AJ&K
+  government — and not the Bureau of Statistics whose religion table sits nine
+  pages earlier. The record says so first, and `language_basis` is
+  *languages spoken*, which keeps it out of Pakistan's national mother tongue
+  exactly as Gilgit-Baltistan's is kept out.
+* **It prints no year.** Table 15.32 above it is captioned "(2018 to 2022)";
+  15.33 is captioned nothing. So the two AJ&K rows carry **no
+  `language_year`**, and `tests/test_composition_year.py` was rewritten to
+  hold an exemption to the *rows* it covers rather than to a whole field of a
+  file, so this one table cannot cover for a second.
+* **Five columns are made to hold eight languages.** Where a district speaks
+  something the headings do not name, the office writes the name in the cell:
+  Bhimber's **Dogri is printed under the column headed *Shina*** and its
+  Punjabi under *Others*. Reading the heading would have filed Dogri speakers
+  as Shina, and Bhimber would still have summed to 100. Every cell name is
+  therefore declared in `AJK_TONGUE_NAMES`, and an unrecognised one stops the
+  run. The five local names of the Pahari–Pothwari continuum stay in the
+  Pahari column, where the table puts them; the map writes
+  **Pahari-Pothwari** rather than "Pahari" because Nepal's unrelated
+  Tibeto-Burman *Pahari* is already on this map, and one label for two
+  languages would put four million people in the wrong family.
+* **Mirpur's row sums to 97.** The other nine sum to exactly 100. Three points
+  of one district is 0.34% of the territory — inside the half point the
+  panel's own rounding repair would have swallowed without a word — so it is
+  spread across *Mirpur's own* languages, where the people it describes live,
+  and the note names the district and the shortfall.
+
+geoBoundaries draws Azad Kashmir as a **single** second-level unit — measured
+against the boundary file, which gives Pakistan 126 second-level shapes and
+exactly one of them for the whole territory — so the ten rows have nowhere of
+their own to land, exactly as the religion table's ten do. They are weighted
+by the 2017 census populations the religion table already supplies and
+published once on the territory and once on the shape:
+
+> **Pahari-Pothwari 68.8%, Gojri 18.6%, Kashmiri 4.6%, Punjabi 3.6%, Dogri
+> 3.1%, Other languages 1.0%, Shina 0.2%, Kundal Shahi 0.1%.**
+
+Two of those eight exist only because the cell was read instead of the column:
+Dogri's 3.1% is Bhimber's 30% of 432,719 people, and it would otherwise have
+been added to Shina, which 0.2% of the territory actually speaks.
+
+**The AJ&K MICS asks the question and does not publish the answer.** Worth
+recording, because it is the obvious next place to look. `pndajk.gov.pk/micsajk/`
+serves three files; the 734-page **AJ&K MICS 2020-21 Survey Findings Report**
+prints the questionnaire in Appendix E, and **HC1B** reads *"What is the mother
+tongue of (name of the head of the household)?"* with English, Urdu,
+Hindko/Pahari/Potohari, Kashmiri, Gojri, Punjabi and an Other. The word
+"Gojri" occurs on eight pages of that report and every one of them is a
+questionnaire: there is no results table. The answers are in the microdata, on
+`mics.unicef.org`, which this repository has already recorded as blocking
+non-browser clients and which is not spoofed.
+
+**Gilgit-Baltistan's own survey does publish it.** `www.pnd.gog.pk` links two
+**GB MICS 2024-25** reports, and the Survey Findings Report's **Table SR.3.1,
+*Household composition*** (PDF page 57, printed page 39) distributes 6,929
+households by the language of the household head:
+
+| | Shina | Balti | Brushaski | Khowar | Wakhi | Other |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| weighted per cent | 48.0 | 29.2 | 12.3 | 5.2 | 1.0 | 4.2 |
+| weighted households | 3,325 | 2,025 | 855 | 360 | 71 | 293 |
+
+That table had been looked for and missed, **because the report spells it
+"Brushaski"**: a search of its 731 pages for *Burushaski* returned nothing, and
+so did the 2016-17 round's 398-page Final Report, which genuinely has no
+language table at all — neither *Burushaski* nor *Shina* appears on any page
+of it. The spelling is declared in `GB_MICS_SPELLING` rather than matched
+loosely. The shares are built from the weighted household counts rather than
+the printed percentages, so they partition exactly; fieldwork ran **October
+2024 – February 2025**, so the year is 2025, and the run reads it off the
+table's own caption rather than the file name.
+
+**This replaces the Pamir Times article as the figure and keeps it as the
+fallback.** The owner overruled a refusal to cite that article twice, and the
+reason was that nothing official was reachable; the office's own report now
+is. The two disagree about the thing the article's own note flagged: it put
+Balti 4,000 households ahead of Shina on figures rounded to the thousand, and
+the survey's own table puts **Shina eighteen points ahead of Balti**. Where
+the survey cannot be fetched the field falls back to the article, with its
+date and its note, rather than to a blank.
+
+**The ten districts still have no language, and now say why.** Every route was
+asked and each is named on the district rather than only here: the Bureau
+publishes no Table 11 for the territory under any name the four provinces are
+filed under; the 2023 census question would not answer it either, naming Shina
+and Balti but having **no column for Burushaski, Khowar, Wakhi or Domaaki**, so
+Hunza, Nagar and much of Ghizer would be counted inside its "Other"; *GB at a
+Glance 2025*, which is where these districts' population comes from, carries
+no language table; and **both MICS rounds give district and language of the
+household head as two separate distributions in the same table rather than one
+crossed table**. The territory's figure is not spread over the ten because
+they differ sharply from it and from each other — Balti is the language of
+Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer and
+Gilgit, Burushaski of Hunza and Nagar — so a territory average put on all ten
+would be wrong on every one of them.
+
 ### The 2023 Table 11, and two districts whose largest group was a missing category
 
 The paragraph above named the route; this is what happened when it was taken.
@@ -2577,6 +2703,49 @@ Chattogram, Comilla to Cumilla, Barisal to Barishal, Jessore to Jashore, Bogra
 to Bogura — and geoBoundaries still carries the older forms, with plain
 transliteration variants for three more. Declared rather than derived:
 "Nawabganj" and "Chapainababganj" share no word.
+
+#### Bangladesh's language: the question was never put
+
+All 64 zilas carried an empty `language`, with no note on it at all — which on
+this map reads as an adapter nobody has run. It is not that. Measured, in this
+order:
+
+| asked | answered |
+| --- | --- |
+| the HDX workbook's 42 sheets, listed in full | dwelling, household type, sex, marital status, **religion**, growth and sex ratio, disability, literacy (three sheets, one of them by religion), students, working status, work type, sector, NEET, mobile phone, internet, financial account, mobile banking, **ethnic population**, nationality, returned migrant, and fourteen housing sheets. **No language sheet, and no language column in the 445-column merged sheet.** |
+| `nsds.bbs.gov.bd` (two census pages) | timed out, both |
+| `file.portal.gov.bd` (the National Report) | timed out |
+| `web.archive.org` mirror of `bbs.portal.gov.bd/.../2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf` | **200**, 10.3 MB, *Population and Housing Census 2022, National Report (Volume I)*, 520 pages |
+| `catalog.ihsn.org`, keyword *bangladesh* | 957 studies, none of them this census |
+
+The archived National Report is what settles it, because it describes the form
+the census was collected on. Section 1.8, *Census Questionnaire*, page 15:
+
+> The questionnaire consists of two modules the Household Module and the
+> Individual Module. In the Household Module, there are 15 questions on various
+> characteristics of households […] In the Individual Module, there are 20
+> questions on different individual facts such as age, sex, marital status,
+> religion, disability, education, working status, training, mobile phone and
+> internet use, banking inclusion, ethnic population etc. Including all, there
+> are 35 questions in the census questionnaire.
+
+Language is not among them, and nothing downstream contradicts that: the
+report's contents list no language table, its 33 district tables (P1–P33) run
+from household and population through literacy, disability and work to
+*Ethnic Population by Sex and District* and *Ethnic Population by Category,
+Sex and Division* without one, and the office's own district workbook has 42
+topic sheets and none.
+
+So Bangladesh's language is `not_collected`, in `NOT_COLLECTED_POLICY`, with
+that reason attached — the country and its 64 zilas from one place, so they
+cannot drift apart. **Religion is not declared with it**: the same census asks
+religion, and it is on the map from the same workbook. What Bangladesh asks
+about a minority's identity is ethnic group, under the *Khudra Nri-goshthi
+Sangskritik Pratisthan Ain, 2010*, and that stays `not_available` rather than
+`not_collected`: the census does collect it, publishes a count of the ethnic
+population by district and a breakdown by category only by division, and a
+count of "the ethnic population" against everyone else is not a composition
+by ethnic group.
 
 ### The United Kingdom: two geographies, because the boundary file draws two
 
