@@ -1,198 +1,60 @@
-probe_pdf: https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
-  9,083,563 bytes
-  282 pages
-probe_pdf: 282 pages, 7 mention ['Pahari', 'Gojri', 'Mother', 'Language']
-=== front matter ===
- 
- 
-STATISTICAL YEAR BOOK 
- 
-2023 
+probe_pdf: https://file.portal.gov.bd/media/a843c98f-964e-4de5-a7a4-f0732be76fa2/uploaded-files/2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
+    self.send(msg)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
+    self.connect()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
+    super().connect()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
+    raise exceptions[0]
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
 
-=== pages mentioning ['Pahari', 'Gojri', 'Mother', 'Language'] (first 20) ===
+During handling of the above exception, another exception occurred:
 
---- page 8 ----------------------------------------------------
-GTTI Government Technical Training Institute Max. Maximum
-GYM Gymnasium MBBS Bachelor of Medicine & Bachelor of Surgery
-H.B Hemoglobin MAM Moderate Acute Malnutrition
-HR Human Resource MC Municipal Committee
-HT High Transmission MCB Muslim Commercial Bank
-HVAC&R Heating Ventilation Air Conditioning and
-Refrigeration MCH Mother Child Health
-IEE Initial Environmental Examination MCO Micro Credit Officer
-IGP Inspector General Police MHP Master of Health Planning
-IMR Infant Mortality Rate MICS Multiple Indicator Cluster Survey
-IoK Indian Occupied Kashmir Min. Minimum
-IPF Investment Project Financing MIS Management Information System
-IPV Inactivated Polio Vaccine MKWh Million Kilo Watt hour
-
---- page 16 ----------------------------------------------------
-Table
-# Description Page #
-15.30 Percentage of Population of AJ&K (18 Years and above) having CNIC by Area and Gender
-(Census 2017) 178
-15.31 District-wise Population of AJ&K Living Abroad by Area and Gender (Census 2017) 178
-15.32 District wise Number and Percentage of Marriages in AJ&K (2017-2022) 179
-15.33 Languages Spoken in AJ&K 179
-16.1 Summary Status of Potential of Hydel Power Projects in AJ&K (2020 to 2022) 180
-16.2 District wise Completed and Ongoing Hydel Power Projects of Public/Private Sector in AJ&K
-(2020 to 2022) 181
-16.3 District-wise Hydel Power Potential of AJ&K (2022) 182
-16.4 Infrastructure Status of AJ&K Electricity Department (2020-21 to 2022-23) 185
-16.5 District-wise Cumulative Electricity Connections in AJ&K (2020-21 to 2022-23) 186
-
---- page 24 ----------------------------------------------------
-the fields mostly use Kameez and a Tehband instead of Shalwar. In summer, l ight garments
-are used as these are more comfortable. In winter, people use blankets or Loi to protect
-themselves from cold. Some of the males wear turban . Generally, women wear bangles
-(made up of glass or gold), finger -ring, a golden chain neck and ear -ring of different sizes,
-color and design. The jewelry produced in the form of leaves, bracelets and nose -rings are
-well known.
-1.9 Languages
-Urdu is the official language of the Government of AJ&K  which is mixture of Persian and
-Arabic. Besides, Gojri, Kashmiri, Pahari, Pothohari, Hindku, D ogri and Punjabi are also
-spoken in the State.
-1.10 Food
-Rice is the staple food of Kashmiries whereas  other favorite foods of Kashmiries are  wheat,
-maize, meat, vegetables, etc. The manner of cooking is the same as in Pakistan. In the rural
-areas of AJ&K, vegetable s are found in abundance while  subsidiary food is egg and fish.
-During festivals, people cook P ulao, Zarda, Biryani, etc. Drinking water is also available
-
---- page 125 ----------------------------------------------------
-Teaching/Other Hospitals 7 8 8
-District Head Quarter (DHQ) Hospitals 7 7 7
-Tehsil Head Quarter (THQ) Hospitals 11 13 14
-Rural Health Centres (RHC) 47 45 46
-Basic Health Units (BHU) 228 228 236
-Dispensaries 81 81 78
-Mother & Child Health Care Centres 201 201 233
-TB/Leprosy Centres 64 64 64
-Dental Centres 56 56 56
-Malaria Centres 160 160 160
-Beds                                                                     2,660 2,920 2,950*
-First Aid Posts (Permanent/Temporary) 445 445 472
-Available Ventilators 90 90 90
-
---- page 127 ----------------------------------------------------
-Mzd. Neelum Jhelum
-Valley Bagh Haveli Poonch Sudhnoti Kotli Mirpur Bhimber Total
-1 2 3 4 5 6 7 8 9 10 11 12
-Dispensaries 13 1 2 7 7 - 4 16 8 12 70
-Unani Dispensaries  1 - 1 2 3 - - 2 2 - 11
-Total 14 1 3 9 10 - 4 18 10 12 81
-Mother & Child
-Health Centre 38 9 11 23 4 28 13 36 23 16 201
-TB / Leprosy Centre 8 4 5 10 4 6 7 9 5 6 64
-Dental Centres 9 2 3 5 2 8 5 11 7 4 56
-Malaria Centres
-(Division-wise) 44 - - - - 46 - - 70 - 160
-First Aid Post
-Permanent 40 10 14 17 10 26 18 62 11 20 228
-First Aid Post
-Temporary  14 9 1 23 8 27 31 48 28 28 217
-Dispensaries 13 1 2 7 7 - 4 16 8 12 70
-Unani Dispensaries  1 - 1 2 3 - - 2 2 - 11
-Total 14 1 3 9 10 - 4 18 10 12 81
-Mother & Child
-Health Centre 38 9 11 23 4 28 13 36 23 16 201
-TB / Leprosy Centre 8 4 5 10 4 6 7 9 5 6 64
-Dental Centres 9 2 3 5 2 8 5 11 7 4 56
-Malaria Centres
-(Division-wise) 44 - - - - 46 - - 70 - 160
-First Aid Posts
-Permanent 40 10 14 17 10 26 18 62 11 20 228
-First Aid Post
-Temporary 14 9 1 23 8 27 31 48 28 28 217
-Dispensaries 12 1 2 6 7 - 4 15 8 12 67
-Unani Dispensaries  1 - 1 2 3 - - 2 2 - 11
-Total 13 1 3 8 10 - 4 17 10 12 78
-Mother & Child
-Health Centre 38 9 11 38 7 40 13 36 25 16 233
-TB / Leprosy Centre 8 4 5 10 4 6 7 9 5 6 64
-Dental Centres 9 2 3 5 2 8 5 11 7 4 56
-Malaria Centres
-(Division-wise) 44 - - - - 46 - - 70 - 160
-First Aid Post
-
---- page 143 ----------------------------------------------------
-vi)   Nutritional Status of Women of Reproductive Age (15-49)
-vii)   Fertility Rate
-Maternal Mortality Ratio (MMR)
-(Per 100,000 Lb) - - 186.00* 104.00*
-Under-5 Mortality Rate (Per 1000 Lb) - - 74.00 53.00
-Infant Mortality Rate (IMR) (Per 1000 Lb) - - 62.00 47.00
-Iron Supplement (Among Mothers) 33.40 46.70 57.20 65.60
-Fertility Rate -
-Percentage of Demand Satisfied with Modern
-Methods -
-Unmet Need
-Modern Contraceptive Use
--
--
--
--
--
--
-viii)   Unmet Need for Family Planning
-ix)    Mother and Child Mortality
-Normal 46.10 52.40 39.30 45.50
-Obese 13.80 10.30 21.80 18.70
-Overweight 24.00 23.40 30.00 26.50
-Underweight 14.40 12.90 8.50 9.30
-Anaemia 42.70 55.90 - -
-Vitamin D Deficiency 79.70 83.90 - -
-
---- page 213 ----------------------------------------------------
-Chapter 15 Azad Jammu & Kashmir Statistical Year Book 2023 Marriages/Languages          .
-Nos. % Nos. % Nos. % Nos. % Nos. %
-1 2 3 4 5 6 7 8 9 10 11
-Muzaffarabad 5,850 15 5,920 14 5,202 15 5,935 15 5,740 13
-Neelum 1,961 5 1,795 4 1,868 5 1,929 5 1,925 4
-Jhelum Valley 862 2 1,364 3 2,338 7 2,247 6 2,165 5
-Bagh 3,657 10 3,814 9 3,253 9 3,886 10 3,738 9
-      ...
-2018 2019 2020
-6
-2022
-%
-2021
--
-Gojri
-3
-35
-35
-3
--
--
-      ...
--
-35
-85 Mirpuri
-30 Mirpuri
-94 Punchi
-95 Punchi
-63 Pahari Pothwari
-30 Dogri
--
--
--
--
--
-      ...
-2
-35 Punjabi
--
--
-5
-10 63 5 2 Kundal Shahi
-Languages of AJ&K
-Table:15.33                                             Languages Spoken in AJ&K
-OthersShina
-5
-Pahari
-4
-0
-5,000
-10,000
-15,000
-20,000
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
+    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
+    blob = fetch_blob(url, aia=aia)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
+    with urllib.request.urlopen(req, timeout=90) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
