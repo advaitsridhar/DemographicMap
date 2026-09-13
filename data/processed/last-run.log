@@ -1,28 +1,4 @@
-nsia.gov.af:443
-  issuer: ((('countryName', 'PL'),), (('organizationName', 'Asseco Data Systems S.A.'),), (('commonName', 'Certum DV TLS G2 R39 CA'),))
-  notAfter: Mar 12 03:48:08 2027 GMT
-  CN=*.gsia.gov.af
-  DNS:*.gsia.gov.af
-  DNS:gsia.gov.af
-  AIA caIssuers: http://certumdvtlsg2r39ca.repository.certum.pl/certumdvtlsg2r39ca.cer
-nsia.gov.af:443 -- completing the chain from AIA
-  added intermediate from http://certumdvtlsg2r39ca.repository.certum.pl/certumdvtlsg2r39ca.cer
-    subject ['CN=Certum DV TLS G2 R39 CA'] until Jun  5 07:41:22 2039 GMT
-  added intermediate from http://subca.repository.certum.pl/ctrca.cer
-    subject ['CN=Certum Trusted Root CA'] until Mar 16 12:10:13 2043 GMT
-    this is a self-signed root; chain complete
-  still fails with verification on: SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'nsia.gov.af'. (_ssl.c:1016)
-www.nsia.gov.af:443
-  issuer: ((('countryName', 'PL'),), (('organizationName', 'Asseco Data Systems S.A.'),), (('commonName', 'Certum DV TLS G2 R39 CA'),))
-  notAfter: Mar 12 03:48:08 2027 GMT
-  CN=*.gsia.gov.af
-  DNS:*.gsia.gov.af
-  DNS:gsia.gov.af
-  AIA caIssuers: http://certumdvtlsg2r39ca.repository.certum.pl/certumdvtlsg2r39ca.cer
-www.nsia.gov.af:443 -- completing the chain from AIA
-  added intermediate from http://certumdvtlsg2r39ca.repository.certum.pl/certumdvtlsg2r39ca.cer
-    subject ['CN=Certum DV TLS G2 R39 CA'] until Jun  5 07:41:22 2039 GMT
-  added intermediate from http://subca.repository.certum.pl/ctrca.cer
-    subject ['CN=Certum Trusted Root CA'] until Mar 16 12:10:13 2043 GMT
-    this is a self-signed root; chain complete
-  still fails with verification on: SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.nsia.gov.af'. (_ssl.c:1016)
+page: https://statisticsmaldives.gov.mv/nbs/wp-content/uploads/2006/12/census2006_island_level_tables/
+  unreachable: HTTPError: HTTP Error 404: Not Found
+page: https://statisticsmaldives.gov.mv/nbs/wp-content/uploads/2006/12/analysiscd/
+  unreachable: HTTPError: HTTP Error 404: Not Found
