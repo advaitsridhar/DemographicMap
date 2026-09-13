@@ -760,9 +760,174 @@ GB_NOTE = (
     "the last census to count religion here bears out: the 1941 Census of "
     "India returned 99.7% Muslim across Gilgit Agency, Gilgit Leased, Skardu "
     "and Astore. Gilgit-Baltistan is the only Shia-plurality region of a "
-    "Sunni-majority country and the figures are territory-wide: its districts "
-    "differ sharply from each other and from this average, and no source "
-    "breaks it down, so none of them carries this figure.")
+    "Sunni-majority country. Its districts differ sharply from each other and "
+    "from this average -- Diamer is Sunni, Hunza and Ghizer Ismaili, Baltistan "
+    "overwhelmingly Twelver, Ghanche the centre of the Noorbakhshia order -- "
+    "and the same paper's 'Faith Map of Gilgit-Baltistan' gives an area-wise "
+    "breakdown, so each of the ten districts carries its own figure rather "
+    "than this average.")
+
+
+# Gilgit-Baltistan's religion by district, on the owner's instruction.
+#
+# The territory note used to say "no source breaks it down". That was wrong,
+# and it was wrong about the paper this file already cites: PILDAT's page 13
+# carries a section headed "Faith Map of Gilgit-Baltistan" whose area-wise list
+# gives percentages. It is quoted here verbatim rather than paraphrased,
+# because every figure below is either one of its lines or is derived from one
+# by a rule stated beside it:
+#
+#     i.   Gilgit is 60 per cent Shia, 40 per cent Sunni;
+#     ii.  Hunza 100 per cent Ismaili;
+#     iii. Nagar 100 per cent Shia;
+#     iv.  Punial 100 per cent Ismaili;
+#     v.   Yasin 100 per cent Ismaili;
+#     vi.  Ishkoman 100 per cent Ismaili;
+#     vii. Gupis 100 per cent Ismaili;
+#     viii.Chilas 100 per cent Sunni;
+#     ix.  Darel/Tangir 100 per cent Sunni;
+#     x.   Astor 90 per cent Sunni, 10 per cent Shia;
+#     xi.  Baltistan 96 (or 98) per cent Shia; 2 per cent Noorbakhshi;
+#          2 per cent Sunni
+#
+# Four of those names are not districts. Punial, Yasin, Ishkoman and Gupis are
+# the valleys of Ghizer; Chilas and Darel/Tangir are Diamer's. The paper's own
+# narrative confirms both roll-ups in so many words -- "Ismailis hold majority
+# in Ghizer District", Sunni "possesses 100% population in Diamer District" --
+# so the district takes the figure its every named part is given.
+#
+# "96 (or 98)" is read as 96, the only reading under which the line sums to
+# 100. Baltistan in 2011 is today's Skardu, Kharmang and Shigar, the last two
+# carved out after this paper was written; they inherit the divisional figure
+# the way a post-2011 Indian district inherits its predecessor's shares.
+#
+# GHANCHE IS THE ONE PLACE THE PAPER CONTRADICTS ITSELF, and it is not a small
+# contradiction. The line above puts Noorbakhshia at 2 per cent of Baltistan,
+# while the same page says the "Noorbakhshi Community only resides in Skardu
+# and Ghanche, they are in majority in the latter". Both cannot hold: Ghanche
+# is too large a part of Baltistan for a division that is 2 per cent
+# Noorbakhshia to contain a Noorbakhshia-majority district. The 2 per cent is
+# what breaks -- Pakistan's Noorbakhshia are usually counted near 6 per cent of
+# Gilgit-Baltistan as a whole, which is the figure this file already publishes
+# for the territory, and they are concentrated here. So Ghanche takes the
+# reported 80 per cent Noorbakhshia and its remainder is split on Baltistan's
+# own 96:2 Shia-to-Sunni ratio, which is the only part of that line still
+# standing.
+#
+# What these are NOT is a census. They are a 2011 conflict background paper's
+# figures, they are round in a way no measurement is -- four districts at a
+# flat 100 per cent, which no district anywhere actually is -- and the paper's
+# narrative names minorities in Ghizer that its own 100 per cent leaves no room
+# for. Every one of those caveats is in the note that travels with the value,
+# and `religion_basis` keeps the whole set out of Pakistan's national figure
+# exactly as the territory row is kept out.
+GB_DISTRICT_SECTS: dict[str, dict[str, float]] = {
+    "Gilgit": {"Twelver Shi'a Islam": 60.0, "Sunni Islam": 40.0},
+    "Astore": {"Sunni Islam": 90.0, "Twelver Shi'a Islam": 10.0},
+    "Diamer": {"Sunni Islam": 100.0},
+    "Nagar": {"Twelver Shi'a Islam": 100.0},
+    "Hunza": {"Isma'ili Shi'a Islam": 100.0},
+    "Ghizer": {"Isma'ili Shi'a Islam": 100.0},
+    "Skardu": {"Twelver Shi'a Islam": 96.0, "Nurbakhshia Islam": 2.0,
+               "Sunni Islam": 2.0},
+    "Kharmang": {"Twelver Shi'a Islam": 96.0, "Nurbakhshia Islam": 2.0,
+                 "Sunni Islam": 2.0},
+    "Shigar": {"Twelver Shi'a Islam": 96.0, "Nurbakhshia Islam": 2.0,
+               "Sunni Islam": 2.0},
+    "Ghanche": {"Nurbakhshia Islam": 80.0, "Twelver Shi'a Islam": 19.6,
+                "Sunni Islam": 0.4},
+}
+
+# How each district's figure was arrived at, in the district's own words. The
+# reader sees this under the composition, so it says where the number came from
+# before it says anything else, and it does not hide the places the source
+# argues with itself.
+GB_DISTRICT_BASIS: dict[str, str] = {
+    "Gilgit": "PILDAT gives Gilgit directly: '60 per cent Shia, 40 per cent "
+              "Sunni'. Gilgit is where the territory's two largest sects meet "
+              "in comparable numbers, which is the paper's explanation for why "
+              "its sectarian violence has centred on this district.",
+    "Astore": "PILDAT gives Astore directly: '90 per cent Sunni, 10 per cent "
+              "Shia'.",
+    "Diamer": "PILDAT gives Diamer's two areas, Chilas and Darel/Tangir, as "
+              "'100 per cent Sunni' each, and says separately that Sunnis "
+              "'possess 100% population in Diamer District'. A flat 100 per "
+              "cent is the paper's round figure rather than a count.",
+    "Nagar": "PILDAT gives Nagar directly: '100 per cent Shia'. A flat 100 per "
+             "cent is the paper's round figure rather than a count.",
+    "Hunza": "PILDAT gives Hunza directly: '100 per cent Ismaili', and says "
+             "separately that Ismailis hold a majority in the Hunza "
+             "sub-division. A flat 100 per cent is the paper's round figure "
+             "rather than a count.",
+    "Ghizer": "PILDAT gives all four of Ghizer's valleys -- Punial, Yasin, "
+              "Ishkoman and Gupis -- as '100 per cent Ismaili', and says "
+              "separately that 'Ismailis hold majority in Ghizer District'. "
+              "The same page also says Shias are a minority here and that "
+              "Sunnis live here, which a flat 100 per cent leaves no room for: "
+              "read the figure as an Ismaili district with minorities the "
+              "source does not size.",
+    "Skardu": "PILDAT gives one figure for Baltistan as a whole -- 96 per cent "
+              "Shia, 2 per cent Noorbakhshia, 2 per cent Sunni -- and not one "
+              "for Skardu by itself. The paper also places Noorbakhshia and a "
+              "minority of Ismailis in Skardu, so the 2 per cent is likely low "
+              "and the Ismaili share is missing entirely.",
+    "Kharmang": "Kharmang was created in 2015, four years after this paper, "
+                "out of Skardu. It carries PILDAT's figure for Baltistan as a "
+                "whole -- 96 per cent Shia, 2 per cent Noorbakhshia, 2 per "
+                "cent Sunni -- because no source describes it separately.",
+    "Shigar": "Shigar was created in 2015, four years after this paper, out of "
+              "Skardu. It carries PILDAT's figure for Baltistan as a whole -- "
+              "96 per cent Shia, 2 per cent Noorbakhshia, 2 per cent Sunni -- "
+              "because no source describes it separately.",
+    "Ghanche": "The one district where PILDAT contradicts itself. Its figure "
+               "for Baltistan puts Noorbakhshia at 2 per cent, while the same "
+               "page says the Noorbakhshia 'only reside in Skardu and Ghanche, "
+               "they are in majority in the latter' -- which 2 per cent of the "
+               "division cannot produce. The majority statement is the one "
+               "kept, at the 80 per cent reported for Ghanche elsewhere, with "
+               "the remaining fifth split on Baltistan's own 96:2 "
+               "Shia-to-Sunni ratio. Ghanche is the centre of the Noorbakhshia "
+               "order, which is why the territory's 6 per cent is concentrated "
+               "here rather than spread.",
+}
+GB_DISTRICT_NOTE = (
+    "Not a census, and not a count of people. Pakistan's Bureau of Statistics "
+    "publishes no religion table for Gilgit-Baltistan at any level, so this is "
+    "PILDAT's 2011 'Faith Map of Gilgit-Baltistan', from a background paper on "
+    "sectarian conflict rather than a demographic survey. {basis} These shares "
+    "describe a population taken to be entirely Muslim -- the last census to "
+    "count religion here, the 1941 Census of India, returned 99.7% Muslim "
+    "across Gilgit Agency, Gilgit Leased, Skardu and Astore -- so they "
+    "partition the district between sects rather than between religions. They "
+    "are not added into Pakistan's national religion figure, which is a census "
+    "of a different question.")
+
+
+def gb_district_religion(name: str) -> dict[str, Any]:
+    """The religion fields for one Gilgit-Baltistan district.
+
+    Empty when the district is not in the table, so a district this file has
+    no figure for keeps the declared gap rather than being given a blank
+    composition, which would be the worse of the two.
+    """
+    sects = GB_DISTRICT_SECTS.get(name)
+    if not sects:
+        return {}
+    total = round(sum(sects.values()), 2)
+    if total != 100.0:
+        raise SystemExit(
+            f"pakistan: {name}'s sect shares sum to {total}, not 100. These "
+            f"are declared rather than read from a table, and one of them is "
+            f"arithmetic on a contradiction, so a wrong figure here is a typo "
+            f"nothing else would catch")
+    return {
+        "religion": [{"group": group, "pct": pct}
+                     for group, pct in sorted(sects.items(),
+                                              key=lambda kv: -kv[1])],
+        "religion_year": GB_YEAR,
+        "religion_note": GB_DISTRICT_NOTE.format(basis=GB_DISTRICT_BASIS[name]),
+        "religion_basis": "sectarian affiliation",
+    }
 
 
 def gb_religion() -> dict[str, Any]:
@@ -972,13 +1137,22 @@ def declared_gaps(absent: dict[str, list[tuple[str, str]]]) -> list[dict[str, An
             aliases=list(alias),
             sources=list(source), **fields))
         for name in inside:
+            # Gilgit-Baltistan's ten have a sect figure of their own; Azad
+            # Kashmir's one shape does not, and keeps the declared gap.
+            fields = gb_district_religion(name) if slug == "gb" else {}
+            district_source = list(source)
+            if fields:
+                district_source += [
+                    {"field": "religion", "name": GB_SOURCE, "url": GB_URL,
+                     "year": GB_YEAR}]
             out.append(record(
                 f"PAK-{slug}-{name.lower().replace(' ', '-')}", name,
                 level="admin2", parent="PAK", parent_name=province,
                 parent_aliases=list(alias),
-                religion=gap(NOT_AVAILABLE, TERRITORY_GAP),
+                religion=fields.pop("religion", None)
+                or gap(NOT_AVAILABLE, TERRITORY_GAP),
                 language=gap(NOT_AVAILABLE, TERRITORY_GAP),
-                sources=list(source)))
+                sources=district_source, **fields))
     if out:
         log(f"  {len(out)} records declaring what is not published, rather "
             f"than leaving the field empty")
