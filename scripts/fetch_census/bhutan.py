@@ -173,7 +173,7 @@ def words_by_row(blob: bytes, tolerance: float = 2.0):
             yield [sorted(cells) for _top, cells in rows]
 
 
-def scan(blob: bytes, strict: bool, dzongkhag: str = ""
+def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
          ) -> tuple[dict[str, int], dict[str, int], int]:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
 
@@ -257,6 +257,12 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = ""
                         margin = max(x1 for _x0, x1, t in cells
                                      if t == HEADER_EDGE)
                         reading = found_here = True
+                        if debug:
+                            log(f"    [debug] strict header at x={edge:.0f}"
+                                f"..{margin:.0f}: {texts}")
+                    elif debug and HEADER_KEY in texts:
+                        log(f"    [debug] saw {HEADER_KEY} but not all four: "
+                            f"{texts}")
                     continue
                 # Relaxed: the two header rows landed on different baselines,
                 # which is how Dagana prints it. Only reached when the strict
@@ -276,6 +282,9 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = ""
                 continue
             inside = [(x0, x1, t) for x0, x1, t in cells
                       if x0 >= edge - 3.0 and x1 <= margin + 6.0]
+            if debug and cells:
+                log(f"    [debug] row {[t for _a,_b,t in cells][:9]} "
+                    f"-> in span {[t for _a,_b,t in inside][:9]}")
             words = [t for _a, _b, t in inside]
             if not words:
                 continue
@@ -333,7 +342,7 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = ""
     return gewogs, towns, printed
 
 
-def table(blob: bytes, dzongkhag: str
+def table(blob: bytes, dzongkhag: str, debug: bool = False
           ) -> tuple[dict[str, int], dict[str, int], int]:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
 
@@ -344,13 +353,13 @@ def table(blob: bytes, dzongkhag: str
     following line -- Dagana's layout, and loose enough that letting it run
     first cost Bumthang its whole table.
     """
-    gewogs, towns, printed = scan(blob, True, dzongkhag)
+    gewogs, towns, printed = scan(blob, True, dzongkhag, debug)
     counted = sum(gewogs.values()) + sum(towns.values())
     if not gewogs or not printed or counted != printed:
         # The strict pass either found no header or found one and did not
         # reconcile. Either way the relaxed pass is worth asking, and only a
         # result that reconciles is allowed to replace one that does not.
-        loose = scan(blob, False, dzongkhag)
+        loose = scan(blob, False, dzongkhag, debug)
         if loose[0] and loose[2] and \
                 sum(loose[0].values()) + sum(loose[1].values()) == loose[2]:
             gewogs, towns, printed = loose
@@ -389,6 +398,8 @@ def main() -> int:
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default=None)
+    ap.add_argument("--debug", action="store_true",
+                    help="print what the reader sees, for one dzongkhag")
     ap.add_argument("--only", default="",
                     help="one dzongkhag, for working out a layout")
     args = ap.parse_args()
@@ -408,7 +419,7 @@ def main() -> int:
         except Exception as err:                        # noqa: BLE001
             absent.append(f"{dzongkhag}: {type(err).__name__} {str(err)[:60]}")
             continue
-        gewogs, towns, printed = table(blob, dzongkhag)
+        gewogs, towns, printed = table(blob, dzongkhag, args.debug)
         national += printed
         urban_total += sum(towns.values())
         log(f"  {dzongkhag}: {len(gewogs)} gewogs, {len(towns)} town(s), "
