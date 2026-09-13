@@ -2664,17 +2664,64 @@ class PakistanDeclaresWhatIsNotPublished(unittest.TestCase):
                 self.assertIn("publishes no Table 9", row[field]["note"])
 
     def test_gilgit_baltistan_carries_its_one_non_census_figure(self):
-        # The territory row, and only it: PILDAT estimates the sects for the
-        # whole of Gilgit-Baltistan and the districts differ sharply from that
-        # average, so they keep the declaration.
+        # The territory row, from PILDAT's estimate of the sects.
         rows = {r["name"]: r for r in self.absent("gb")}
         gb = rows["Gilgit-Baltistan"]
         self.assertEqual(round(sum(g["pct"] for g in gb["religion"]), 2), 100.0)
         self.assertTrue(gb["religion_note"].startswith("Not a census."))
         self.assertIn("PILDAT", " ".join(str(x.get("name"))
                                          for x in gb["sources"]))
-        for name in ("Skardu", "Hunza", "Diamer"):
-            self.assertEqual(rows[name]["religion"]["status"], "not_available")
+
+    def test_every_district_carries_its_own_sects(self):
+        # The same paper's "Faith Map of Gilgit-Baltistan" gives an area-wise
+        # breakdown, so the districts no longer wear the territory's average
+        # -- and must not wear each other's either. Each partitions its own
+        # population and says where the figure came from.
+        rows = {r["name"]: r for r in self.absent("gb")}
+        for name in self.pk.TERRITORIES["gb"][2]:
+            with self.subTest(district=name):
+                row = rows[name]
+                self.assertIsInstance(row["religion"], list, name)
+                self.assertEqual(
+                    round(sum(g["pct"] for g in row["religion"]), 2), 100.0)
+                self.assertEqual("sectarian affiliation",
+                                 row["religion_basis"])
+                self.assertTrue(
+                    row["religion_note"].startswith("Not a census"))
+                self.assertIn("PILDAT", " ".join(str(x.get("name"))
+                                                 for x in row["sources"]))
+
+    def test_the_districts_are_not_all_the_same_figure(self):
+        # The point of reading the faith map at all. If a refactor ever gave
+        # every district the territory average this would still sum to 100 and
+        # still carry a note, and only this notices.
+        rows = {r["name"]: r for r in self.absent("gb")}
+        shapes = {name: tuple(sorted((g["group"], g["pct"])
+                                     for g in rows[name]["religion"]))
+                  for name in self.pk.TERRITORIES["gb"][2]}
+        self.assertGreater(len(set(shapes.values())), 4)
+        # Diamer is the Sunni district and Hunza the Ismaili one; if those two
+        # ever match, the join has gone wrong in a way no sum would show.
+        self.assertNotEqual(shapes["Diamer"], shapes["Hunza"])
+
+    def test_ghanche_keeps_the_noorbakhshia_majority(self):
+        # The one district where the paper argues with itself: its Baltistan
+        # line says 2 per cent Noorbakhshia, its narrative says Ghanche is
+        # Noorbakhshia-majority. The majority is what is kept, and a refactor
+        # that quietly handed Ghanche the Baltistan figure would undo the only
+        # judgement call in this table.
+        rows = {r["name"]: r for r in self.absent("gb")}
+        top = max(rows["Ghanche"]["religion"], key=lambda g: g["pct"])
+        self.assertEqual("Nurbakhshia Islam", top["group"])
+        self.assertGreater(top["pct"], 50.0)
+        self.assertIn("contradicts itself", rows["Ghanche"]["religion_note"])
+
+    def test_district_shares_that_stop_partitioning_refuse_the_run(self):
+        with mock.patch.dict(self.pk.GB_DISTRICT_SECTS,
+                             {"Nagar": {"Twelver Shi'a Islam": 99.0}}):
+            with self.assertRaises(SystemExit) as cm:
+                self.pk.gb_district_religion("Nagar")
+        self.assertIn("sum to 99.0, not 100", str(cm.exception))
 
     def test_shares_that_stop_partitioning_refuse_the_run(self):
         # Declared rather than read, so a typo here is a thing nothing else
