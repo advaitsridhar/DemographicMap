@@ -1,7 +1,6 @@
-bangladesh: BBS Population and Housing Census 2022, by zila
-    1,213,869 bytes from HDX
-    64 districts in Population by Sex, Dist & Loca, 64 in Population by Religion, Sex, 64 in Ethnic Population by Sex
-    every religion's total matches its own male plus female, and in every district the religions plus the hijra come to the published population exactly (8,124 hijra nationally, whom the religion table does not classify)
-    ethnic population 1,650,478 of 165,158,616 nationally (1.00%), highest in Rangamati at 57.6% -- a total per district and no breakdown, so it is published as the reason this field is a gap rather than as a composition
-  wrote data/processed/bangladesh_district.json (191 kB)
-  64 districts
+usage: probe_pdf.py [-h] [--url URL] [--aia] [--boxes] [--layout]
+                    [--terms TERMS] [--contents CONTENTS]
+                    [--max-pages MAX_PAGES] [--excerpt EXCERPT]
+                    [--pages PAGES] [--tables] [--context CONTEXT]
+                    [text]
+probe_pdf.py: error: unrecognized arguments: Population by,by Religion
