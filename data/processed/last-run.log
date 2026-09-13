@@ -1,18 +1,129 @@
-gsia.gov.af:443
-  issuer: ((('countryName', 'PL'),), (('organizationName', 'Asseco Data Systems S.A.'),), (('commonName', 'Certum DV TLS G2 R39 CA'),))
-  notAfter: Mar 12 03:48:08 2027 GMT
-  CN=*.gsia.gov.af
-  DNS:*.gsia.gov.af
-  DNS:gsia.gov.af
-  AIA caIssuers: http://certumdvtlsg2r39ca.repository.certum.pl/certumdvtlsg2r39ca.cer
-gsia.gov.af:443 -- completing the chain from AIA
-  added intermediate from http://certumdvtlsg2r39ca.repository.certum.pl/certumdvtlsg2r39ca.cer
-    subject ['CN=Certum DV TLS G2 R39 CA'] until Jun  5 07:41:22 2039 GMT
-  added intermediate from http://subca.repository.certum.pl/ctrca.cer
-    subject ['CN=Certum Trusted Root CA'] until Mar 16 12:10:13 2043 GMT
-    this is a self-signed root; chain complete
-  VERIFIED handshake ok, TLSv1.3
-
-page: https://gsia.gov.af/
-  200 text/html 2443 bytes
-  no links matched
+probe_page: https://statisticsmaldives.gov.mv/census-2022-results-summary/
+  216 lines of text, 58 mentioning religio, tongue, language, ethnic, Islam, Muslim, Table, P1
+       58  Place of enumeration
+       59  Place of enumeration refers to the island where the person was found on census night (13 September 00.00 hrs). The migration tables however excludes the non-resident Maldivians who were enumerated in the Maldives
+       60  Place of usual residence
+       76  PDF
+       77  Tables – Population
+       78  Table P1: Resident Population by Place of Enumeration by Nationality, Sex and Locality, 2014 and 2022
+       79  XLS
+       80  PDF
+       81  Table P2: Resident Population by Place of Enumeration and Administrative Division and Intercensal Growth Rate, 2022 & 2014
+       82  XLS
+       83  PDF
+       84  Table P3: Resident Population by Place of Enumeration and by Island, 2014-2022
+       85  XLS
+       86  PDF
+       87  Table P4: Resident Population by Place of Enumeration, by Locality and Sex, 2022
+       88  XLS
+       89  PDF
+       90  Table P5: Resident Population by Island and Sex, 2022
+       91  XLS
+       92  PDF
+       93  Table P6: Resident Population by 5 Year Age Group by Sex, Nationality and by Locality, 2022
+       94  XLS
+       95  PDF
+       96  Tables – Employment Revised
+       97  Table EC1: Resident Population 15 Years and over by Labour Force Status, Sex and Locality, 2022
+       98  XLS
+       99  Table EC2: Resident Population 15 Years of Age and over by Labour Force Status, Sex, Age and Locality, 2022
+      100  XLS
+      101  Table EC3: Resident Population 15 Years of Age and over by Economic Activity Status, Administrative Islands in Atolls, 2022
+      102  XLS
+      103  Table EC4: Number of Employed Resident Population 15 Years of Age and over by Industry, Sex and Locality, 2022
+      104  XLS
+      105  Table EC5: Number of Employed Resident Population 15 Years of Age and over by Occupation, Sex and Locality, 2022
+      106  XLS
+      107  Table EC6: Number of Employed Resident Population 15 Years of Age and over by Employment Status, Sex and Locality, 2022
+      108  XLS
+      109  Tables – Housing
+      110  Table H1: Households By Type Of Living Quarters And By Locality, 2022
+      111  XLS
+      112  PDF
+      113  Table H2: Households By Type Of Living Quarters And By Island, 2022
+      114  XLS
+      115  PDF
+      116  Table H3: Population By Type Of Living Quarters And By Locality, 2022
+      117  XLS
+      118  PDF
+      119  Table H4: Population By Type Of Living Quarters And By Island, 2022
+      120  XLS
+      121  PDF
+      122  Table H5: Average Household Size By Type Of Living Quarters And By Locality, 2022
+      123  XLS
+      124  PDF
+      125  Table H6: Number Of Households In House/ Flat/ Apartments By Number Of Room And By Island, 2022
+      126  XLS
+      127  PDF
+      128  Table H7: Households By The Type Of Drinking Water Used And Locality (Atolls), 2022
+      129  XLS
+      130  PDF
+      131  Table H8: Households In House/Flat/Appartments By The Ownership Of Selected Assets And Locality (Atolls), 2022
+      132  XLS
+      133  PDF
+      134  Tables – Migration
+      135  Table MG1 : Resident Maldivian Population by Place of Registration Cross Classified by Place of Birth, Sex and Locality (Atoll), 2022
+      136  XLS
+      137  Table MG2 : Resident Maldivian Population by Place of Registration Cross Classified by Place of Usual Residence, Sex and Locality (Atoll), 2022
+      138  XLS
+      139  Table MG3 : Resident Maldivian Population by Place of Usual Residence Cross Classified by Place of Birth, Sex and Locality (Atoll), 2022
+      140  XLS
+      141  Table MG4 : Resident Maldivian Population by Place of Enumeration Cross Classified by Place of Usual Residence, Sex and Locality (Atoll), 2022
+      142  XLS
+      143  Table MG5 : Resident Maldivian Population by Place Of Enumeration Cross Classified by Place of Birth, Sex and Locality (Atoll), 2022
+      144  XLS
+      145  Table MG6 : Resident Maldivian Population by Place Of Enumeration Cross Classified by Place of Registration , Sex and Locality (Atoll), 2022
+      146  XLS
+      147  Table MG7: Resident Maldivian Population by Place of Enumeration, Usual Residence and Place of Registration by Sex, 2022
+      148  XLS
+      149  Table MG8: Resident Maldivian Population by Place of Enumeration, Usual Residence and Place of Registration by Sex and Island, 2022
+      150  XLS
+      151  Table MG9: Resident Population by Place of Enumeration, Usual Residence and by Nationality and Sex, 2022
+      152  XLS
+      153  Table MG10: Resident Population by Place of Enumeration, Usual Residence and by Nationality, Sex and Island 2022
+      154  XLS
+      155  Table MG11: Usual Resident Population by Nationality and Locality, 2022
+      156  XLS
+      157  Table MG12: Usual Resident Population by Nationality and by Island, 2022
+      158  XLS
+      159  Table MG13: Usual Resident Maldivian Population of Maale by Registered Island, by Sex, 2022
+      160  XLS
+      161  Tables – Education New
+      162  Table ED1: Resident Population 10 Years of Age and Over by Literacy in Mother Tongue, Age and Locality, 2022
+      163  XLS
+      164  Table ED2: Resident Population 10 Years of Age and Over by Literacy in Mother Tongue, Sex and Atoll, 2022
+      165  XLS
+      166  Table ED3: Resident Population 10 Years of Age and Over by Literacy in English, Age Group and Locality, 2022
+      167  XLS
+      168  Table ED4: Resident Population 10 Years of Age and Over by Literacy In English, Age Group And Locality, 2022
+      169  XLS
+      170  Table ED5: Resident Maldivian Population 2 Years of Age and Over by The Status of Current Attendance in Educational Establishment, Age and Sex, 2022
+      171  XLS
+      172  Table ED6 : Resident Maldivian Population 2 Years of Age and Over by the Status of Current Attendance in Educational Establishment and Locality, 2022
+      173  XLS
+      174  Table ED7: Resident Maldivian Population 2 Years and Over Currently Studying, Sex, Age and Locality, 2022
+      175  XLS
+      176  Table ED8: Resident Maldivian Population 5 Years and Over Currently Studying in Training Institutions by Mode of Study, Sex, Age and Locality, 2022
+      177  XLS
+      178  Table ED9: Resident Maldivian Population 2 Years and Over Currently Attending School, by Grade, Age, Sex and Locality, 2022
+      179  XLS
+      180  Table ED10: Resident Maldivian Population 2 Years and Over Currently Attending other Educational Institutions, by Level of Education, Age, Sex and Locality
+      181  XLS
+      182  Table ED11: Resident Maldivian Population by Highest Grade Completed for those having Completed Current Grade System in Maldives, Sex and Locality, 2014
+      183  XLS
+      184  Table ED12: Highest Educational Attainment of Resident Maldivian Population 15 Years of Age and Over who has ever Attended School or Training Institution by Sex, Age and Locality, 2022
+      185  XLS
+      186  Table ED13 : Resident Maldivian Population 15 Years of Age and Over who has ever Attended School or Training Institution by Highest Educational Attainment, Sex and Locality, 2022
+      187  XLS
+      188  Table ED14: Highest Educational Attainment of Resident Foreign Population 15 Years of Age and Over who has ever Attended School or Training Institution by Sex, Age and Locality, 2022
+      189  XLS
+      190  Table ED15: Resident Foreign Population 15 Years of Age and Over who has ever Attended School or Training Institution by Highest Educational Attainment, Sex and Locality, 2022
+      191  XLS
+      192  Table ED16: Literate Population 10 Years of Age and Over in Mother Tongue, Sex and Island, 2022
+      193  XLS
+      194  Table ED17: Resident Maldivian Population 2 Years of Age and Over by the Status of Current Attendance, Age and Island, 2022
+      195  XLS
+      196  Table ED18: Resident Maldivian Population 2 Years and Over Currently Attending Educational Institution by Level, and Locality, 2022
+      197  XLS
+      198  Table ED19: Resident Maldivian Population 15 Years of Age and Over who has ever Attended School or Training Institution by Highest Educational Attainment, and Island, 2022
+      199  XLS
