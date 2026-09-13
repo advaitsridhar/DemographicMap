@@ -1,6 +1,10 @@
-page: https://nsia.gov.af/library
-  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
-page: https://www.nsia.gov.af/library
-  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
-page: https://nsia.gov.af/estimated-population
-  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+probe_pdf: https://drive.usercontent.google.com/download?id=1gxQwME8YE3KlaRIla5qwZnqs7ZKl6nuX&export=download&confirm=t
+  5,894,308 bytes
+  288 pages
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/LOXOBK+Helvetica', '/Encoding': IndirectObject(714, 0, 140082586829520), '/FirstChar': 25, '/FontDescriptor': IndirectObject(715, 0, 140082586829520), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [556, 556, 556, 556, 556, 556, 556]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/LOXOBK+Courier', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(716, 0, 140082586829520), '/LastChar': 83, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [600, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 600, 0, 0, 0, 0, 600, 600, 600, 0, 600, 600, 600, 600, 0, 0, 0, 0, 0, 0, 0, 0, 600, 0, 0, 0, 0, 0, 0, 600, 0, 0, 0, 0, 600, 0, 0, 0, 0, 600]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+probe_pdf: 288 pages, 0 mention ['2.1:']
+=== front matter ===
+2017 POPULATION AND HOUSING CENSUS OF BHUTAN NATIONAL REPORT
+
+=== pages mentioning ['2.1:'] (first 6) ===
