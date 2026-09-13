@@ -182,6 +182,12 @@ def table(blob: bytes, dzongkhag: str
     read three gewogs and then lost the table's own Total row to an axis
     label, which the "no printed Total" refusal caught.
 
+    **A row's label can wrap onto its own line.** Chhukha prints "Tsimasham"
+    above "Town" and "Phuentsholing" above "Thromde", so those rows arrive as
+    three figures with no name beside them. Dropping them cost Chhukha 29,793
+    people, almost all of them Phuentsholing -- and the reconciliation is what
+    said so, because every row it did read was right.
+
     **The closing row has two spellings.** Tsirang writes "Total"; Bumthang
     writes "Both Areas", meaning urban and rural together. Looking only for
     "Total" is what made this file fail on Bumthang while its gewogs were
@@ -205,6 +211,12 @@ def table(blob: bytes, dzongkhag: str
     edge: float | None = None
     margin: float | None = None
     reading = False
+    # A label that wrapped onto its own line, waiting for the figures beneath
+    # it. Chhukha prints "Tsimasham\nTown" and "Phuentsholing\nThromde", and
+    # a row whose name wraps arrives here as three figures and no name.
+    # Dropping those cost Chhukha 29,793 people -- almost all of them
+    # Phuentsholing, the second city of Bhutan.
+    pending: list[str] = []
 
     for rows in words_by_row(blob):
         if printed:
@@ -222,12 +234,22 @@ def table(blob: bytes, dzongkhag: str
             inside = [(x0, x1, t) for x0, x1, t in cells
                       if x0 >= edge - 3.0 and x1 <= margin + 6.0]
             words = [t for _a, _b, t in inside]
-            if not words or (len(words) == 1 and words[0] in SECTIONS):
+            if not words:
+                continue
+            if len(words) == 1 and words[0] in SECTIONS:
+                pending = []          # a section heading labels nothing
                 continue
             figures = [t for t in words if NUMBER.match(t)]
             if len(figures) != 3 or words[-3:] != figures:
+                # Text inside the table's own span carrying no figures is a
+                # label whose row is still to come. Remembered rather than
+                # dropped; anything outside the span is prose and never
+                # reaches here.
+                if words and not figures:
+                    pending.extend(words)
                 continue
-            name = " ".join(words[:-3]).strip()
+            name = " ".join([*pending, *words[:-3]]).strip()
+            pending = []
             if not name or NUMBER.match(name):
                 continue
             try:
@@ -238,6 +260,8 @@ def table(blob: bytes, dzongkhag: str
             if name in CLOSERS:
                 printed = total
                 break
+            if name in SECTIONS:
+                continue
             if TOWN.search(name):
                 towns[name] = total
             else:
