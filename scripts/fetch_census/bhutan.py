@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
 """Bhutan -- Population & Housing Census 2017, population by gewog.
 
-**This adapter publishes population and nothing else, and the reason is worth
-stating rather than leaving as an empty field.** Bhutan's census does not ask
-religion, language or ethnicity. That is not "does not publish": the 2017
-national report runs 288 pages over education, fertility, mortality,
-disability, labour, migration and housing, and the words religion, ethnic,
-Hindu, Buddhist and mother tongue occur on none of them except two pages
-describing the census's own publicity -- talk shows held in Dzongkha,
-Sharchopkha and Lhotshamkha, and the literacy test card. The 2005 round is the
-same. So the three composition fields are declared ``not_collected`` in
-``scripts/common.py`` and this file fills the one thing the census does count.
+**This adapter publishes a head count and a sex ratio and nothing else, and
+the reason is worth stating rather than leaving as an empty field.** Bhutan's
+census does not ask religion, language or ethnicity. That is not "does not
+publish": the 2017 national report runs 288 pages over education, fertility,
+mortality, disability, labour, migration and housing, and the words religion,
+ethnic, Hindu, Buddhist and mother tongue occur on none of them except two
+pages describing the census's own publicity -- talk shows held in Dzongkha,
+Sharchopkha and Lhotshamkha, and the literacy test card. The twenty dzongkhag
+volumes, 1,510 pages read as one sweep, carry one hit apiece and it is the
+same sentence every time: the definition of literacy, "the ability to read and
+write a short text in Dzongkha, English, Lhotshamkha, or any other language".
+The 2005 round is the same. So the three composition fields are declared
+``not_collected`` in ``scripts/common.py`` and this file fills what the census
+does count.
 
 **The one identity-adjacent split the census does publish is citizenship**,
 Bhutanese against non-Bhutanese, by dzongkhag and by gewog. It is deliberately
@@ -20,6 +24,17 @@ much of the Lhotshampa population lost its legal standing before leaving.
 Table 2.1, which this reads, is the whole resident population "irrespective of
 their nationality" -- the report's own words -- which is the figure that
 belongs on a map of where people are.
+
+**The sex ratio comes from the same three columns.** Table 2.1 prints Male,
+Female and Total for every gewog, every town and the dzongkhag itself, and the
+reader has always parsed all three and kept the last. The ratio is derived as
+females per 1,000 males, the convention the rest of South Asia is published in
+here, and it is derived only where the publisher's own two columns add up to
+the total printed beside them. Where they do not, the row keeps its printed
+head count -- that figure is the office's -- and publishes no ratio at all,
+naming the disagreement in its gap. A ratio computed from figures NSB itself
+does not add up would be a number this map invented, and it would be
+indistinguishable on the page from one the census measured.
 
 Three things about the documents shape the reader.
 
@@ -53,7 +68,7 @@ from __future__ import annotations
 import argparse
 import io
 import re
-from typing import Any
+from typing import Any, NamedTuple
 
 from ._shared import (
     NOT_AVAILABLE, PROCESSED, gap, log, measure, record, write_json,
@@ -223,6 +238,14 @@ GEWOG_ALIASES: dict[str, tuple[str, ...]] = {
 NATIONAL_FOUND = 735_553      # everyone found in Bhutan on the day
 NATIONAL_ANALYSED = 727_145   # what the report's own tables are built on
 
+# The same table's national row, male and female, as the national report
+# prints it: "Bhutan 380,453 52.3 346,692 47.7 727,145". It is the control the
+# twenty dzongkhag volumes are reported against below, not a figure written
+# onto any record here -- the country's own row on this map comes from the
+# Factbook, and these two are what the census itself counted.
+NATIONAL_MALE = 380_453
+NATIONAL_FEMALE = 346_692
+
 # The twenty dzongkhag reports do not sum to either, and that is a
 # disagreement between NSB's own publications rather than a misread here.
 # Their Table 2.1 figures agree with the national report's Table 2.1 exactly
@@ -286,12 +309,71 @@ POPULATION_NOTE = (
     "analyses, itself 8,408 short of the 735,553 found in the country once "
     "non-Bhutanese in hotels are counted. The figure here is the dzongkhag's "
     "own, which its gewogs add up to exactly.")
+SEX_RATIO_NOTE = (
+    "Females per 1,000 males, derived from the Male and Female columns of the "
+    "same Table 2.1 row as the population beside it. The census counts sex "
+    "and nothing else about identity, so this is the whole of what it says "
+    "about who these people are.")
+# What is written in place of a ratio where the publisher's own halves do not
+# reach the total it prints next to them. The figures go in the note, because
+# "not available" without them reads as "nobody fetched this", and what
+# actually happened is that the source contradicted itself on this one row.
+SEX_RATIO_REFUSED = (
+    "Table 2.1 prints {male:,} males and {female:,} females against a total "
+    "of {total:,} for this row -- {diff:+,} -- so the two halves are not the "
+    "whole that is published beside them. The head count is the report's own "
+    "and stands; a ratio derived from figures the census does not itself add "
+    "up would be this map's arithmetic, not Bhutan's measurement.")
 GEWOG_NOTE = (
     " This is the gewog's own count. Towns and thromdes are enumerated beside "
     "the gewogs rather than inside them and the boundary file draws none of "
     "them, so a dzongkhag's gewogs come to less than the dzongkhag itself by "
     "its urban population -- 37.8% of Bhutan nationally, and named on the "
     "dzongkhag's record.")
+
+
+class Read(NamedTuple):
+    """One report's Table 2.1: its rows, their sexes, and its printed total.
+
+    The sexes are kept in their own mapping rather than beside each total,
+    because the names are not unique across the two: Chhukha has a gewog and a
+    thromde both called Phuentshogling, and one dictionary keyed by name would
+    have the thromde's men standing in for the gewog's. ``towns`` gets no
+    entry here at all -- no shape is drawn for a town, so no record is built
+    for one, and a ratio computed for a row that reaches no map is a figure
+    with nowhere to be wrong in public.
+    """
+
+    gewogs: dict[str, int]
+    towns: dict[str, int]
+    printed: int
+    sexes: dict[str, tuple[int, int]]
+    printed_sexes: tuple[int, int] | None
+
+
+def sex_ratio(male: int, female: int, total: int, where: str) -> dict[str, Any]:
+    """Females per 1,000 males for one row, or a gap saying why not.
+
+    The check is the publisher's own arithmetic: Male plus Female must be the
+    Total printed on that row. Where it is, the ratio is the census's; where
+    it is not, there is no honest ratio to take -- either a figure was misread
+    here or the table disagrees with itself, and neither is a thing to divide.
+    """
+    if male + female != total:
+        log(f"    {where}: no sex ratio -- Table 2.1 prints {male:,} + "
+            f"{female:,} = {male + female:,} against the {total:,} on the "
+            f"same row ({male + female - total:+,})")
+        return gap(NOT_AVAILABLE, SEX_RATIO_REFUSED.format(
+            male=male, female=female, total=total,
+            diff=male + female - total))
+    if not male:
+        log(f"    {where}: no sex ratio -- no males on the row, so females "
+            f"per 1,000 males has no denominator")
+        return gap(NOT_AVAILABLE,
+                   "Table 2.1 counts no males in this row, so there is "
+                   "nothing to express the females per thousand of.")
+    return measure(round(1000.0 * female / male),
+                   unit="females_per_1000_males", year=YEAR, source=SOURCE)
 
 
 def words_by_row(blob: bytes, tolerance: float = 2.0):
@@ -320,7 +402,7 @@ def words_by_row(blob: bytes, tolerance: float = 2.0):
 
 
 def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
-         ) -> tuple[dict[str, int], dict[str, int], int]:
+         ) -> Read:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
 
     Two things bound the read, and the first attempt had only one of them.
@@ -379,7 +461,9 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
     """
     gewogs: dict[str, int] = {}
     towns: dict[str, int] = {}
+    sexes: dict[str, tuple[int, int]] = {}
     printed = 0
+    printed_sexes: tuple[int, int] | None = None
     edge: float | None = None
     margin: float | None = None
     waited = 0
@@ -505,12 +589,18 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
             if not name or NUMBER.match(name):
                 continue
             try:
-                total = int(figures[-1].replace(",", ""))
+                # All three, where only the last used to be kept. The first
+                # two are the sex split of the same people, printed on the
+                # same row by the same office, and they are what the sex
+                # ratio is derived from; NUMBER has already matched each.
+                male, female, total = (int(f.replace(",", ""))
+                                       for f in figures)
             except ValueError:
                 continue
             found_here = True
             if name in CLOSERS:
                 printed = total
+                printed_sexes = (male, female)
                 break
             if name in SECTIONS:
                 section = name
@@ -539,6 +629,8 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
                     f"missing; refusing rather than keeping whichever came "
                     f"second")
             into[name] = total
+            if into is gewogs:
+                sexes[name] = (male, female)
         # A page that carried none of this table's rows ends it. Table 2.1
         # runs to one page in the small dzongkhags and two in the large ones,
         # and nothing later in the report is it.
@@ -559,7 +651,7 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
             section = ""
             pending = []
 
-    return gewogs, towns, printed
+    return Read(gewogs, towns, printed, sexes, printed_sexes)
 
 
 # Every report states its own total in prose: "The total population of X
@@ -585,8 +677,7 @@ def stated_total(blob: bytes) -> int:
     return 0
 
 
-def table(blob: bytes, dzongkhag: str, debug: bool = False
-          ) -> tuple[dict[str, int], dict[str, int], int]:
+def table(blob: bytes, dzongkhag: str, debug: bool = False) -> Read:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
 
     Two passes, and the order matters. The strict one wants all four header
@@ -596,33 +687,43 @@ def table(blob: bytes, dzongkhag: str, debug: bool = False
     following line -- Dagana's layout, and loose enough that letting it run
     first cost Bumthang its whole table.
     """
-    gewogs, towns, printed = scan(blob, True, dzongkhag, debug)
-    counted = sum(gewogs.values()) + sum(towns.values())
-    if not gewogs or not printed or counted != printed:
+    read = scan(blob, True, dzongkhag, debug)
+    counted = sum(read.gewogs.values()) + sum(read.towns.values())
+    if not read.gewogs or not read.printed or counted != read.printed:
         # The strict pass either found no header or found one and did not
         # reconcile. Either way the relaxed pass is worth asking, and only a
         # result that reconciles is allowed to replace one that does not.
         loose = scan(blob, False, dzongkhag, debug)
-        if loose[0] and loose[2] and \
-                sum(loose[0].values()) + sum(loose[1].values()) == loose[2]:
-            gewogs, towns, printed = loose
-    if not gewogs:
+        if loose.gewogs and loose.printed and \
+                sum(loose.gewogs.values()) + sum(loose.towns.values()) \
+                == loose.printed:
+            read = loose
+    if not read.gewogs:
         raise SystemExit(f"bhutan: {dzongkhag}: no gewog rows read from "
                          f"Table 2.1")
-    if not printed:
+    if not read.printed:
         # The closing row is spelt "Total" in some reports and "Both Areas" in
         # others, and Trashi Yangtse prints neither where this reader can see
         # it. The narrative's own sentence stands in -- it is the office's
         # figure, not one computed here, and the rows are still held to it.
+        #
+        # It stands in for the head count only. That sentence gives no split
+        # by sex, so a report reached this way has no dzongkhag-level ratio,
+        # and `printed_sexes` stays None rather than being reconstructed from
+        # the rows: the gewogs are short of the dzongkhag by its towns, and a
+        # ratio built from them would be the rural one wearing the whole
+        # dzongkhag's name.
         printed = stated_total(blob)
         if printed:
             log(f"    {dzongkhag}: no closing row; held to the "
                 f"{printed:,} its own text states")
-    if not printed:
+            read = read._replace(printed=printed)
+    if not read.printed:
         raise SystemExit(
             f"bhutan: {dzongkhag}: Table 2.1 has no closing row and the "
             f"report states no total in its text either, so nothing says "
-            f"these {len(gewogs)} gewogs are all of them")
+            f"these {len(read.gewogs)} gewogs are all of them")
+    gewogs, towns, printed = read.gewogs, read.towns, read.printed
     counted = sum(gewogs.values()) + sum(towns.values())
     if counted != printed:
         raise SystemExit(
@@ -634,7 +735,7 @@ def table(blob: bytes, dzongkhag: str, debug: bool = False
                                             for k, v in sorted(gewogs.items()))
             + f"\n      towns: " + ", ".join(f"{k} {v:,}"
                                              for k, v in sorted(towns.items())))
-    return gewogs, towns, printed
+    return read
 
 
 def fetch(url: str) -> bytes:
@@ -663,7 +764,9 @@ def main() -> int:
     log("bhutan: National Statistics Bureau, PHCB 2017 Table 2.1")
     records: list[dict[str, Any]] = []
     absent: list[str] = []
+    refused: list[str] = []
     national = 0
+    males = females = 0
     urban_total = 0
     wanted = {k: v for k, v in DZONGKHAGS.items()
               if not args.only or k == args.only}
@@ -675,14 +778,18 @@ def main() -> int:
         except Exception as err:                        # noqa: BLE001
             absent.append(f"{dzongkhag}: {type(err).__name__} {str(err)[:60]}")
             continue
-        gewogs, towns, printed = table(blob, dzongkhag, args.debug)
+        read = table(blob, dzongkhag, args.debug)
+        gewogs, towns, printed = read.gewogs, read.towns, read.printed
         national += printed
         urban_total += sum(towns.values())
         log(f"  {dzongkhag}: {len(gewogs)} gewogs, {len(towns)} town(s), "
             f"{printed:,} people")
 
-        cite = [{"field": "population", "name": SOURCE, "url": url,
-                 "license": LICENCE}]
+        # The sex ratio is read from the same table and the same row as the
+        # population, so it is cited the same way and separately: a reader
+        # asking where a figure came from asks it of one field at a time.
+        cite = [{"field": field, "name": SOURCE, "url": url,
+                 "license": LICENCE} for field in ("population", "sex_ratio")]
         note = POPULATION_NOTE
         if towns:
             note += (" Of these, " + f"{sum(towns.values()):,}"
@@ -690,14 +797,42 @@ def main() -> int:
                      + ", ".join(sorted(towns))
                      + ", which the boundary file does not draw, so the "
                        "gewogs below come to that much less than this row.")
+        if read.printed_sexes:
+            male, female = read.printed_sexes
+            ratio = sex_ratio(male, female, printed, dzongkhag)
+            # Counted into the national tally whether or not the ratio was
+            # taken: these are the office's own two columns, and the tally is
+            # a check on the reading rather than a figure anyone is shown.
+            males += male
+            females += female
+            if "value" not in ratio:
+                refused.append(dzongkhag)
+        else:
+            # Only reachable where the closing row was never found and the
+            # total came from the report's own sentence, which counts persons
+            # and does not split them.
+            ratio = gap(NOT_AVAILABLE,
+                        "Table 2.1 in this report has no closing row this "
+                        "reader can see; the total beside it is the one the "
+                        "report's own text states, and that sentence gives "
+                        "no split between males and females.")
+            log(f"    {dzongkhag}: no sex ratio -- the total came from the "
+                f"report's text, which gives no split by sex")
+            refused.append(dzongkhag)
         records.append(record(
             f"BTN-{dzongkhag.lower().replace(' ', '-')}", dzongkhag,
             level="admin1", parent="BTN", country="BTN",
             aliases=list(DZONGKHAG_ALIASES.get(dzongkhag, ())),
             population=measure(printed, year=YEAR, source=SOURCE),
             population_note=note,
+            sex_ratio=ratio,
+            sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
             sources=list(cite)))
         for name, people in sorted(gewogs.items()):
+            male, female = read.sexes[name]
+            ratio = sex_ratio(male, female, people, f"{dzongkhag}/{name}")
+            if "value" not in ratio:
+                refused.append(f"{dzongkhag}/{name}")
             records.append(record(
                 f"BTN-{dzongkhag.lower().replace(' ', '-')}-"
                 f"{name.lower().replace(' ', '-')}",
@@ -707,6 +842,8 @@ def main() -> int:
                 parent_aliases=list(DZONGKHAG_ALIASES.get(dzongkhag, ())),
                 population=measure(people, year=YEAR, source=SOURCE),
                 population_note=POPULATION_NOTE + GEWOG_NOTE,
+                sex_ratio=ratio,
+                sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
                 sources=list(cite)))
 
     for line in absent:
@@ -723,6 +860,21 @@ def main() -> int:
             f"{national - NATIONAL_ANALYSED:+,} on the first. The two "
             f"publications disagree for some dzongkhags; each report here "
             f"reconciles to its own printed total.")
+        # Reported against the national report's own row, and not enforced,
+        # for exactly the reason the head count above is not: the twenty
+        # volumes and the national report disagree on several dzongkhags, and
+        # the sex split inherits that disagreement rather than adding one.
+        # What this line is for is the other kind of error -- a column read
+        # one place to the left would put the sexes wildly out here while
+        # every total still added up.
+        log(f"  their sexes come to {males:,} male and {females:,} female, "
+            f"against the {NATIONAL_MALE:,} and {NATIONAL_FEMALE:,} the "
+            f"national report prints for the country -- "
+            f"{males - NATIONAL_MALE:+,} and {females - NATIONAL_FEMALE:+,}.")
+        if refused:
+            log(f"  {len(refused)} row(s) publish no sex ratio because the "
+                f"published halves do not reach the published total: "
+                + ", ".join(refused))
 
     out = args.out or PROCESSED / "bhutan_gewog.json"
     write_json(out, records)
