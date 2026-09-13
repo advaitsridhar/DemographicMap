@@ -312,7 +312,13 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
             # -- Dagana prints "Drukjeygang Town 250 325 575 Bhutan." on one
             # line, the last word belonging to the column of prose beside the
             # table. Requiring the figures to *end* the row dropped it.
-            at = next((i for i in range(1, len(words) - 2)
+            # From index 0 only when a label is already waiting: Chhukha's
+            # Phuentsholing row is three figures and nothing else, its name
+            # having wrapped onto the line above. Without a pending label a
+            # row must carry its own name, or a stray trio of numbers in the
+            # prose would become a gewog.
+            first = 0 if pending else 1
+            at = next((i for i in range(first, max(first + 1, len(words) - 2))
                        if all(NUMBER.match(w) for w in words[i:i + 3])), None)
             figures = list(words[at:at + 3]) if at is not None else []
             if len(figures) != 3:
