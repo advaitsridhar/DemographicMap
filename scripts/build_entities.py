@@ -636,8 +636,11 @@ def weigh_adm2_parents(
         if best["shape_id"] != was:
             moved += 1
             if row["group"] in TRACE:
+                # The name, not the shape id: this line is read by a person
+                # deciding whether the move is right, and "not
+                # 66845921B82067974050695" tells them nothing.
                 log(f"    {row['group']} {row['name']}: parent by area is "
-                    f"{best['name']}, not {was or '(none)'} "
+                    f"{best['name']}, not {sitting['name'] if sitting else '(none)'} "
                     f"({held / unit.area * 100:.1f}% inside)")
     return moved, unplaced
 
