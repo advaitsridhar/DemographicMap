@@ -130,7 +130,7 @@ HEADER_EDGE = "Total"
 # edge still holds, because prose to the *left* of the table would otherwise
 # supply that name; to the right it can only add trailing words, and the run
 # rule ignores those.
-COLUMN = float("inf")
+COLUMN = float("inf")   # replaced below by a measured width
 SECTIONS = {"Urban", "Rural"}
 
 # The row that closes the table, and there are two spellings of it. Tsirang
@@ -276,6 +276,16 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
                                    if t == HEADER_KEY)
                         margin = max(x1 for _x0, x1, t in cells
                                      if t == HEADER_EDGE)
+                        # One column's width past the header word, measured
+                        # from the header itself: the words are centred over
+                        # their columns and the figures are flush right, so
+                        # they end past the word. Dagana needed this; taking
+                        # the header word's own edge cost it every row, and
+                        # removing the clip entirely let the prose beside the
+                        # table into the row names.
+                        before = [x1 for _x0, x1, t in cells if t == "Female"]
+                        if before:
+                            margin += max(0.0, margin - max(before))
                         reading = found_here = True
                         if debug:
                             log(f"    [debug] strict header at x={edge:.0f}"
@@ -340,8 +350,16 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
                 # label whose row is still to come. Remembered rather than
                 # dropped; anything outside the span is prose and never
                 # reaches here.
-                if words and not figures:
-                    pending.extend(words)
+                # A wrapped label is one or two words. Anything longer is
+                # the prose beside the table, and letting it accumulate put
+                # "2005 and 2017.The population of Trashi" in front of
+                # Ramjar's name and "Trashi Yangtse Dzongkhag ranks" in front
+                # of the closing row -- which then read as a gewog and
+                # doubled the dzongkhag.
+                if words and not figures and len(words) <= 2:
+                    pending = list(words)
+                elif words:
+                    pending = []
                 continue
             name = " ".join([*pending, *words[:at]]).strip()
             pending = []
