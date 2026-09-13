@@ -112,6 +112,14 @@ NATIONAL = 727_145
 
 HEADER = ("Gewog/Town", "Male", "Female", "Total")
 SECTIONS = {"Urban", "Rural"}
+
+# The row that closes the table, and there are two spellings of it. Tsirang
+# writes "Total"; Bumthang writes "Both Areas", meaning urban and rural
+# together. That one word is what the first three attempts at this file were
+# actually failing on -- the reader looked for "Total", never found it in
+# Bumthang, and reported "no printed Total row" while its gewogs were read
+# correctly the whole time. Both are the same row and both close the table.
+CLOSERS = {"Total", "Both Areas"}
 NUMBER = re.compile(r"^[\d,]+$")
 
 # A town row ends in the word Town or Thromde. Bhutan's four thromdes --
@@ -174,7 +182,12 @@ def table(blob: bytes, dzongkhag: str
     read three gewogs and then lost the table's own Total row to an axis
     label, which the "no printed Total" refusal caught.
 
-    **The table is bounded by its pages**, not only by its printed Total.
+    **The closing row has two spellings.** Tsirang writes "Total"; Bumthang
+    writes "Both Areas", meaning urban and rural together. Looking only for
+    "Total" is what made this file fail on Bumthang while its gewogs were
+    being read correctly all along -- ``CLOSERS`` holds both.
+
+    **The table is bounded by its pages**, not only by its closing row.
     Bounding it by the Total alone let the reader run off the end of Table 2.1
     and through the rest of the document -- Tsirang came back with 885 gewogs
     holding 1.2 million people against a printed 22,376, which the
@@ -222,7 +235,7 @@ def table(blob: bytes, dzongkhag: str
             except ValueError:
                 continue
             found_here = True
-            if name == "Total":
+            if name in CLOSERS:
                 printed = total
                 break
             if TOWN.search(name):
