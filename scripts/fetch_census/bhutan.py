@@ -164,10 +164,15 @@ def table(blob: bytes, dzongkhag: str
 
     Two things bound the read, and the first attempt had only one of them.
 
-    **The header fixes the table's left edge**, and nothing to the left of it
-    is considered. That is the defence against the narrative: prose and data
-    share a baseline on these pages, so a rule counting numbers in a line
-    would take "4,183 persons during the intercensal" for a row.
+    **The header fixes the table's left AND right edges**, and nothing outside
+    them is considered. The left edge is the defence against the narrative:
+    prose and data share a baseline on these pages, so a rule counting numbers
+    in a line would take "4,183 persons during the intercensal" for a row. The
+    right edge is the defence against the *charts*: Bumthang prints Figure 2.1
+    beside its Table 2.1, and the chart's y-axis -- 100, 90, 80, 70, 60 -- sits
+    at the same baselines as the gewog rows. With only a left edge, Bumthang
+    read three gewogs and then lost the table's own Total row to an axis
+    label, which the "no printed Total" refusal caught.
 
     **The table is bounded by its pages**, not only by its printed Total.
     Bounding it by the Total alone let the reader run off the end of Table 2.1
@@ -185,6 +190,7 @@ def table(blob: bytes, dzongkhag: str
     towns: dict[str, int] = {}
     printed = 0
     edge: float | None = None
+    margin: float | None = None
     reading = False
 
     for rows in words_by_row(blob):
@@ -196,10 +202,12 @@ def table(blob: bytes, dzongkhag: str
             if edge is None:
                 if all(word in texts for word in HEADER):
                     edge = min(x0 for x0, _x1, t in cells if t == HEADER[0])
+                    margin = max(x1 for _x0, x1, t in cells if t == HEADER[-1])
                     reading = True
                     found_here = True
                 continue
-            inside = [(x0, x1, t) for x0, x1, t in cells if x0 >= edge - 3.0]
+            inside = [(x0, x1, t) for x0, x1, t in cells
+                      if x0 >= edge - 3.0 and x1 <= margin + 6.0]
             words = [t for _a, _b, t in inside]
             if not words or (len(words) == 1 and words[0] in SECTIONS):
                 continue
