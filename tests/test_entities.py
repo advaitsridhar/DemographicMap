@@ -7467,25 +7467,57 @@ class BangladeshEthnicPopulation(unittest.TestCase):
             self.bd.check([self.row(ethnic=None, ethnic_sexed=(None, None))])
         self.assertIn("ethnic population has no total", str(caught.exception))
 
-    def test_the_reason_states_the_count_and_the_share(self):
-        note = self.bd.ethnicity_gap("Rangamati", 372_875, 647_586)
+    def test_the_note_states_the_count_and_the_share(self):
+        note = self.bd.zila_note("Rangamati", 372_875, 647_586)
         self.assertIn("372,875", note)
         self.assertIn("647,586", note)
         self.assertIn("57.58%", note)
-        # And says what is missing, so the reader knows this is not a fetch
-        # nobody ran.
-        self.assertIn("does not", note.lower())
 
-    def test_the_reason_never_becomes_a_composition(self):
-        """The whole point: a total and a residual are not a list of peoples."""
-        import json
-        from scripts.common import NOT_AVAILABLE, gap
-        value = gap(NOT_AVAILABLE, self.bd.ethnicity_gap("Barguna", 1_137, 1_010_531))
-        self.assertEqual(value["status"], NOT_AVAILABLE)
-        self.assertNotIsInstance(value, list)
-        # No group name may appear in it -- there is no group name to use.
-        for people in ("Chakma", "Marma", "Santal", "Garo", "Bengali"):
-            self.assertNotIn(people, json.dumps(value))
+    def test_the_note_sends_the_reader_up_a_level_for_the_peoples(self):
+        """A zila is as fine as the *naming* goes, and must say which it is.
+
+        This test used to assert the opposite -- that the field stayed a gap
+        and that no group name appeared in it. That was right while Table P28's
+        district total sat beside an unnamed rest. Both figures are counted, so
+        the two-way split is a composition; what a zila still cannot do is name
+        the fifty-one categories, which Table P29 gives by division only.
+        """
+        note = self.bd.zila_note("Rangamati", 372_875, 647_586)
+        self.assertIn("division", note)
+        self.assertIn("Khudra Nri-goshthi", note)
+
+    def test_the_zila_split_is_two_counted_categories(self):
+        rows = json.loads(
+            (ROOT / "data" / "processed" / "bangladesh_district.json").read_text())
+        zilas = [r for r in rows if r["level"] == "admin2"]
+        self.assertEqual(len(zilas), 64)
+        for row in zilas:
+            groups = {g["group"]: g for g in row["ethnicity"]}
+            self.assertEqual(set(groups),
+                             {"Bengali", "Scheduled ethnic groups"}, row["name"])
+            self.assertAlmostEqual(sum(g["pct"] for g in row["ethnicity"]),
+                                   100.0, places=1, msg=row["name"])
+            self.assertEqual(groups["Bengali"]["count"]
+                             + groups["Scheduled ethnic groups"]["count"],
+                             row["population"]["value"], row["name"])
+
+    def test_the_hill_districts_lead_with_the_scheduled_groups(self):
+        """Rangamati is the one zila where they are the majority.
+
+        And the reason the category is not called "ethnic minorities": that
+        name is China's in the group index, marked residual, and the map skips
+        residuals in favour of anything else -- so Rangamati would have been
+        painted Bengali at 42.4% while the scheduled groups held 57.6%.
+        """
+        rows = json.loads(
+            (ROOT / "data" / "processed" / "bangladesh_district.json").read_text())
+        by_name = {r["name"]: r for r in rows if r["level"] == "admin2"}
+        held = {g["group"]: g["pct"]
+                for g in by_name["Rangamati"]["ethnicity"]}
+        self.assertGreater(held["Scheduled ethnic groups"], held["Bengali"])
+        for name in ("Khagrachhari", "Bandarban"):
+            share = {g["group"]: g["pct"] for g in by_name[name]["ethnicity"]}
+            self.assertGreater(share["Scheduled ethnic groups"], 40.0, name)
 
     def test_a_gap_carries_no_year(self):
         """A year beside a gap claims a measurement nobody took.

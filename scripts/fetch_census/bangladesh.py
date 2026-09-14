@@ -333,6 +333,20 @@ TONGUE_NOTE = (
 # the Urdu-speaking Biharis above all, whom no schedule covers.
 RESIDUAL_GROUP = "Bengali"
 
+# The other side of that split, at the level where it is all the census gives.
+# Table P28 counts the scheduled groups per district without naming them, so a
+# zila can carry the two-way split and not the fifty-one categories -- and two
+# measured figures are a composition, where a total beside an unnamed rest was
+# only a sentence.
+#
+# It is deliberately not called "ethnic minorities": that label already exists
+# in the group index as China's, marked residual, and `dominant()` skips
+# residuals in favour of anything else. Rangamati would then have been painted
+# Bengali at 42.4% while the scheduled groups held 57.6% of it -- the map
+# contradicting its own panel. This is a counted category, not a leftover, and
+# it is named as one.
+SCHEDULED_GROUP = "Scheduled ethnic groups"
+
 # The Bureau's own two publications of this census disagree about two
 # districts' spelling: the National Report writes Netrokona and
 # Chapainawabganj where the workbook writes Netrakona and Chapainababganj.
@@ -357,32 +371,26 @@ REPORT_SPELLING = {
 # cannot draw.
 LANGUAGE = collection_gap("BGD", "language")
 
-def ethnicity_gap(name: str, ethnic: int, whole: int) -> str:
-    """Why this district shows no ethnic composition, and what it does show.
+def zila_note(name: str, ethnic: int, whole: int) -> str:
+    """Two categories, both counted, and where the detail lives.
 
-    Bangladesh asks the question -- "ethnic population" is one of the twenty
-    subjects the individual module covers -- and the answer reaches this level
-    as a single number. Table P28 gives one total per district and no
-    breakdown, and no sheet in the workbook names a single people: all 445
-    columns of it were searched, and Chakma, Marma, Santal, Garo, Tripura and
-    the rest appear in none of them. The named groups are published nationally
-    and nowhere lower.
-
-    So there is a measured share here and no composition to draw, and the two
-    must not be confused. "Ethnic population" against everyone else is not a
-    list of peoples; drawn as a two-slice chart it would read as a census that
-    found two ethnicities, which is the kind of wrong this project ranks below
-    a gap. The number itself is worth stating, though -- it is 57.6% in
-    Rangamati and 0.01% in Nilphamari, and a blank panel says none of that --
-    so it goes in the reason.
+    This is as fine as the census goes. Table P28 gives each district's
+    scheduled-group total and Table P29 names the fifty-one categories only by
+    division, so a zila can honestly carry the split and not the breakdown.
+    Saying which of the two it is matters: a reader who sees "Scheduled ethnic
+    groups 57.6%" in Rangamati should know that Chakma, Marma and Tripura are
+    inside it and that the map can show them one level up, not that the census
+    declined to look.
     """
-    return (f"Census 2022 counts {ethnic:,} of {name}'s {whole:,} people as "
-            f"ethnic population -- {ethnic / whole * 100:.2f}% -- but does not "
-            "say which peoples they are. The Bureau publishes that total by "
-            "district (Table P28) and the named groups only nationally; no "
-            "sheet of its district workbook names one. A single figure and a "
-            "residual is not a composition, so it is stated here rather than "
-            "drawn as one.")
+    return (f"Census 2022, Table P28. {ethnic:,} of {name}'s {whole:,} people "
+            f"({ethnic / whole * 100:.2f}%) are counted in the ethnic groups "
+            "scheduled under the Khudra Nri-goshthi Sangskritik Pratisthan Ain "
+            "2010; the rest are shown as Bengali, the census's own framing for "
+            "the population those schedules are set apart from. Both figures "
+            "are counted rather than inferred, but the district is as fine as "
+            "the naming goes: the Bureau publishes the fifty-one categories "
+            "behind that total only by division, so which peoples these are is "
+            "on the division above this one, not here.")
 
 
 NOTE = ("Census 2022. The religion table classifies the male and female "
@@ -529,9 +537,9 @@ def check(districts: list[dict[str, Any]]) -> None:
     top = max(districts, key=lambda row: row["ethnic"] / row["population"])
     log(f"    ethnic population {ethnic:,} of {people:,} nationally "
         f"({ethnic / people * 100:.2f}%), highest in {top['name']} at "
-        f"{top['ethnic'] / top['population'] * 100:.1f}% -- a total per "
-        f"district and no breakdown, so it is published as the reason this "
-        f"field is a gap rather than as a composition")
+        f"{top['ethnic'] / top['population'] * 100:.1f}% -- a counted total "
+        f"per district, published there against the Bengali remainder; the "
+        f"fifty-one categories behind it are named by division only")
 
 
 def read(blob: bytes) -> list[dict[str, Any]]:
@@ -819,8 +827,13 @@ def main() -> int:
             religion=shares(row["counts"], total=classified) or gap(NOT_AVAILABLE),
             religion_year=YEAR, religion_note=NOTE,
             language=dict(LANGUAGE),
-            ethnicity=gap(NOT_AVAILABLE, ethnicity_gap(
-                row["name"], row["ethnic"], row["population"])),
+            ethnicity=whole_hundred(shares(
+                {RESIDUAL_GROUP: row["population"] - row["ethnic"],
+                 SCHEDULED_GROUP: row["ethnic"]},
+                total=row["population"])),
+            ethnicity_year=YEAR,
+            ethnicity_note=zila_note(row["name"], row["ethnic"],
+                                     row["population"]),
             sources=[{"field": "population/religion", "name": SOURCE,
                       "url": URL, "license": LICENCE}]))
 
