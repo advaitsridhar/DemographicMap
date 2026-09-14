@@ -510,7 +510,13 @@ def apply_collection_policy(record: dict[str, Any], iso3: str | None,
         if not entry:
             continue
         current = record.get(field)
-        if isinstance(current, dict) and current.get("status") == NOT_AVAILABLE:
+        # Bare means no note. A not_available that already says why is a more
+        # specific gap than the country-level paragraph, and the docstring
+        # promises to leave it alone -- the condition used to check status
+        # only, which would have silently swapped a district's own reason for
+        # the country's.
+        if (isinstance(current, dict) and current.get("status") == NOT_AVAILABLE
+                and not current.get("note")):
             record[field] = gap(entry["status"], entry["note"])
             applied.append(field)
     return applied

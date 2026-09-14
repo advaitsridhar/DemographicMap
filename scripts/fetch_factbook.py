@@ -452,10 +452,10 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
             # opposite of what the Bureau did, and nested the whole dict where
             # the note should be. It went unseen only because admin0.json had
             # not been rebuilt since that entry was written.
-            declared = collection_gap(iso3, field)
-            if declared:
-                return declared
-            return gap(NOT_COLLECTED, policy[field])
+            # policy is non-empty only when iso3 is, and then collection_gap
+            # answers for the same field, so there is no fallback to write --
+            # and the one that was here was the nested-dict bug itself.
+            return collection_gap(iso3, field)
         comp = parse_composition(text) if parsed is None else parsed
         if comp:
             return comp

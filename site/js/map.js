@@ -364,6 +364,19 @@ window.WorldMap = (function () {
 
     popup = new window.maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 8 });
 
+    // The style loads on the next animation frame, not synchronously: MapLibre's
+    // Style.loadJSON defers _load through frameAsync, and getLayer() reads the
+    // layer table that _load fills. So a setPartialLevels() call that lands
+    // between init() and that frame -- which is the normal case, since
+    // build.json is already cached by the time the app reaches init() -- finds
+    // no "partial-land" layer to filter, and the style keeps the empty list it
+    // was built with. Uruguay rendered as sea until the theme toggle rebuilt
+    // the style. Applying the module state here closes that window, and every
+    // later restyle, in the same place.
+    map.on("style.load", () => {
+      if (map.getLayer("partial-land")) map.setFilter("partial-land", partialFilter());
+    });
+
     map.on("load", () => {
       activeLevel = levelIndex(map.getZoom());
       if (handlers.onReady) handlers.onReady(map);
