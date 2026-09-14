@@ -500,9 +500,19 @@ def apply_collection_policy(record: dict[str, Any], iso3: str | None,
 
     Only replaces a ``not_available`` marker: a real value from a subnational
     source always wins (a country can decline to ask nationally while a region
-    publishes its own figures), and a more specific gap is left alone. A bare
-    ``not_available`` is replaced even when the policy's own status is
-    ``not_available`` too, because what is being added is the reason.
+    publishes its own figures), and a gap of any other status is left alone.
+
+    A ``not_available`` is replaced whether or not it already carries a note,
+    and that is deliberate. The policy is the one place a country-level reason
+    is written, and the notes adapters attach to a ``not_available`` are
+    either a copy of it or a generic hint from a multi-country source. Both
+    should yield: a copy goes stale the moment the policy is improved (the 64
+    Bangladeshi zilas lost the MICS evidence when a note-guard was tried), and
+    a generic hint can be flatly wrong for the country it is printed on --
+    Eurostat's "SI collects religion in its national census" for a Slovenia
+    that has been register-based since 2011. A review proposed guarding on
+    the note; a rebuild showed both of those regressions, and the guard was
+    taken out. The Slovenia case is pinned in the tests.
     """
     applied: list[str] = []
     for field in fields:

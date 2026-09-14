@@ -781,6 +781,13 @@ def weigh_adm2_parents(
         was = row["parent_shape"]
         sitting = next((r for r in rows if r["shape_id"] == was), None)
         best, held = None, 0.0
+        if sitting is not None and unit.area == 0:
+            # A sliver that make_valid collapsed to nothing polygonal cannot be
+            # weighed -- every intersection is zero -- but the point pass had
+            # already placed it, and that placement was sound. Re-weighing it
+            # here would unparent a unit for having no area, which is not a
+            # reason to doubt where its representative point fell.
+            continue
         if sitting is not None:
             held = shapely.intersection(unit, sitting["_geom"]).area
             if held * 2 > unit.area:

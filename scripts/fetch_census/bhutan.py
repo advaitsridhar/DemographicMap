@@ -932,9 +932,14 @@ def main() -> int:
 
         # The sex ratio is read from the same table and the same row as the
         # population, so it is cited the same way and separately: a reader
-        # asking where a figure came from asks it of one field at a time.
-        cite = [{"field": field, "name": SOURCE, "url": url,
-                 "license": LICENCE} for field in ("population", "sex_ratio")]
+        # asking where a figure came from asks it of one field at a time. And
+        # only where there is a figure: a ratio this adapter refused because
+        # the row did not add up is a gap, and a citation beside a gap tells
+        # the reader a source stands behind a number nobody published.
+        def cite(ratio: dict[str, Any]) -> list[dict[str, Any]]:
+            fields = ["population"] + (["sex_ratio"] if "value" in ratio else [])
+            return [{"field": field, "name": SOURCE, "url": url,
+                     "license": LICENCE} for field in fields]
         note = POPULATION_NOTE
         if towns:
             note += (" Of these, " + f"{sum(towns.values()):,}"
@@ -972,7 +977,7 @@ def main() -> int:
             population_note=note,
             sex_ratio=ratio,
             sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
-            sources=list(cite)))
+            sources=cite(ratio)))
         for name, people in sorted(gewogs.items()):
             male, female = read.sexes[name]
             ratio = sex_ratio(male, female, people, f"{dzongkhag}/{name}")
@@ -1007,7 +1012,7 @@ def main() -> int:
                 population_note=note,
                 sex_ratio=ratio,
                 sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
-                sources=list(cite)))
+                sources=cite(ratio)))
 
     for line in absent:
         log(f"  NOT READ -- {line}")

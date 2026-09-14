@@ -208,6 +208,40 @@ class CollectionPolicyPropagation(unittest.TestCase):
         self.assertEqual(entity["religion"]["status"], common.NOT_AVAILABLE)
         self.assertEqual(entity["ethnicity"]["status"], common.NOT_COLLECTED)
 
+    def test_a_wrong_generic_note_yields_to_the_policy(self):
+        # Eurostat writes one hint for every country it does not redistribute,
+        # and for Slovenia the hint is false: the census has been
+        # register-based since 2011 and asks no religion. A review proposed
+        # leaving any noted not_available alone; a rebuild then kept this
+        # sentence on both Slovenian regions. The policy is the authority on
+        # why a country does not publish, and a note does not make a gap more
+        # specific than it.
+        entity = {"religion": common.gap(
+            common.NOT_AVAILABLE,
+            "SI collects religion in its national census; Eurostat does not "
+            "redistribute it sub-nationally -- fetch from the national "
+            "statistical office.")}
+        self.assertEqual(common.apply_collection_policy(entity, "SVN"),
+                         ["religion"])
+        self.assertEqual(entity["religion"]["status"], common.NOT_COLLECTED)
+        self.assertIn("register-based", entity["religion"]["note"])
+        self.assertNotIn("SI collects", entity["religion"]["note"])
+
+    def test_a_stale_copy_of_the_policy_is_refreshed(self):
+        # An adapter that copies the policy's reason into its records holds
+        # that copy until it is next run. The same note-guard left all 64
+        # Bangladeshi zilas with the paragraph as it stood before the MICS
+        # evidence was added to it. The build must print the policy as it is
+        # now, not as it was when the adapter last ran.
+        current = common.collection_policy("BGD", "language")
+        self.assertIn("HC1B", current)
+        stale = current.split(" The one Bangladeshi instrument")[0]
+        self.assertNotIn("HC1B", stale)
+        entity = {"language": common.gap(common.NOT_AVAILABLE, stale)}
+        self.assertEqual(common.apply_collection_policy(entity, "BGD"),
+                         ["language"])
+        self.assertIn("HC1B", entity["language"]["note"])
+
     def test_country_without_a_policy_is_a_no_op(self):
         entity = {"ethnicity": common.gap(common.NOT_AVAILABLE)}
         self.assertEqual(common.apply_collection_policy(entity, "BRA"), [])

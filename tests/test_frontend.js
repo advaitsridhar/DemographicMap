@@ -300,6 +300,65 @@ function groundInNoUnitReadsAsLandRatherThanSea() {
                          "a theme change must not lose the declaration");
 }
 
+/* The land underlay must survive the style loading after the list arrives.
+ *
+ * MapLibre does not build the style synchronously: Style.loadJSON defers
+ * _load to the next animation frame, and getLayer() reads the table _load
+ * fills. build.json is already cached by the time the app reaches init(), so
+ * setPartialLevels() normally runs in a microtask *before* that frame -- finds
+ * no "partial-land" layer, skips the setFilter, and the style keeps the empty
+ * list it was built with. Uruguay rendered as sea on every cold load and was
+ * only put right by the theme toggle, which rebuilds the style from state.
+ *
+ * The test above could not see this because its stub answers getLayer at
+ * once. This one answers it the way MapLibre does: undefined until the style
+ * has loaded, then the layer -- and asserts the filter is on it afterwards.
+ */
+function thePartialListAppliesWhenTheStyleLoadsAfterIt() {
+  const listeners = new Map();
+  let loaded = false;
+  let styleLayers = [];
+  const filters = new Map();
+  class Map_ {
+    constructor(options) { styleLayers = options.style.layers; }
+    on(event, callback) { listeners.set(event, callback); }
+    once() {}
+    addControl() {}
+    getLayer(id) { return loaded ? styleLayers.find((l) => l.id === id) : undefined; }
+    setFilter(id, filter) { filters.set(id, filter); }
+    getZoom() { return 2; }
+    setStyle(style) { styleLayers = style.layers; }
+    setLayoutProperty() {} setLayerZoomRange() {} setPaintProperty() {}
+    setMinZoom() {} setZoom() {} easeTo() {} resize() {}
+  }
+  const context = vm.createContext({
+    window: {
+      maplibregl: { Map: Map_, NavigationControl: class {}, ScaleControl: class {},
+                    Popup: class {}, addProtocol() {} },
+      pmtiles: { Protocol: class { constructor() { this.tile = () => {}; } } },
+    },
+    document: { documentElement: {}, getElementById: () => ({}) },
+    console,
+    getComputedStyle: () => ({ getPropertyValue: () => "" }),
+  });
+  vm.runInContext(source("map.js"), context);
+  const worldMap = context.window.WorldMap;
+  worldMap.init({});
+
+  // The list lands before the style has: nothing to filter yet.
+  worldMap.setPartialLevels([{ iso3: "URY" }]);
+  assert.strictEqual(filters.get("partial-land"), undefined,
+                     "there is no layer to filter before the style loads");
+
+  // Then the style loads, as it does a frame later in the browser.
+  loaded = true;
+  assert.ok(listeners.has("style.load"), "the map must listen for the style loading");
+  listeners.get("style.load")();
+  assert.deepStrictEqual(JSON.parse(JSON.stringify(filters.get("partial-land"))),
+                         ["in", ["get", "shapeGroup"], ["literal", ["URY"]]],
+                         "the declared list reaches the layer once it exists");
+}
+
 (async () => {
   await concurrentLoadsAreIndexedOnce();
   await deepSearchWaitsForTheSecondShard();
@@ -308,5 +367,6 @@ function groundInNoUnitReadsAsLandRatherThanSea() {
   factTilesCarryTheirStatedReason();
   aLeaderIsOnlyNamedWhenNothingMissingCouldBeatIt();
   groundInNoUnitReadsAsLandRatherThanSea();
+  thePartialListAppliesWhenTheStyleLoadsAfterIt();
   console.log("frontend regression tests passed");
 })().catch((error) => { console.error(error); process.exitCode = 1; });
