@@ -588,6 +588,26 @@ def read(blob: bytes) -> list[dict[str, Any]]:
     return out
 
 
+def whole_hundred(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Make a composition reach 100.0 exactly, by the smallest available move.
+
+    ``shares()`` rounds each row on its own, which is invisible with five
+    groups and not with fifty-one: Chattogram's categories plus the Bangalee
+    remainder came to 99.9, and a reader cannot tell that drift from a source
+    that does not partition its population.
+
+    Largest remainder, the same rule ``pakistan.to_hundred`` uses -- the tenth
+    of a point goes to the biggest share, where it is the smallest lie
+    available. The counts are left exactly as the census printed them; only
+    the percentage moves.
+    """
+    drift = round(100.0 - sum(row["pct"] for row in rows), 1)
+    if drift and rows:
+        biggest = max(rows, key=lambda row: row["pct"])
+        biggest["pct"] = round(biggest["pct"] + drift, 1)
+    return rows
+
+
 def division_note(where: str, ethnic: int, whole: int,
                   counts: dict[str, int]) -> str:
     """What these shares are of, said before anybody reads them as a whole.
@@ -840,7 +860,7 @@ def main() -> int:
         records.append(record(
             f"BGD-{where.lower()}", where, level="admin1", parent="BGD",
             aliases=list(DIVISION_ALIASES.get(where, ())),
-            ethnicity=shares(counts, total=whole),
+            ethnicity=whole_hundred(shares(counts, total=whole)),
             ethnicity_year=YEAR,
             ethnicity_note=division_note(where, block["total"], whole,
                                          by_category[where]["rows"]),
