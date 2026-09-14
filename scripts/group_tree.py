@@ -929,6 +929,15 @@ ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
         "Middle Eastern or North African", "Other ethnic group: Arab",
         "Middle Eastern/Latin American/African",
     ),
+    # Bangladesh counts one figure per district for the peoples scheduled
+    # under the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010, and names
+    # the fifty-one categories inside it only by division. The total is a
+    # counted category rather than a leftover -- it is the majority of
+    # Rangamati -- so it is filed as the census category it is, beside the
+    # peoples themselves, and not as a residual the map would step over.
+    "Scheduled ethnic groups (census category)": (
+        "Scheduled ethnic groups",
+    ),
 }
 
 # The answers that name a country rather than a people. Where the country has
@@ -976,6 +985,7 @@ ETHNIC_ANCESTRY: dict[str, tuple[str, ...]] = {
     "South Asian ancestry": (
         "Indo-Aryan peoples", "Dravidian peoples",
         "Himalayan and Tibeto-Burman peoples", "Munda peoples",
+        "Scheduled ethnic groups (census category)",
     ),
     "East and Southeast Asian ancestry": (
         "Han and Sinitic peoples", "Japanese peoples", "Korean peoples",
@@ -1504,6 +1514,16 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Pa'o", "Intha", "Kayan", "Taungyo", "Kadu", "Kanan",
         # North-east India.
         "Tripuri", "Rabha", "Deori", "Hmar", "Paite", "Vaiphei",
+        # Bangladesh's scheduled peoples, in the Bureau's own spellings.
+        # The Chittagong Hill Tracts first -- Marma and Rakhain are
+        # Arakanese, Bom, Khiang, Khumi, Lusai and Pankhoa are Kuki-Chin,
+        # Mro and Chak stand on their own branches.
+        "Marma", "Rakhain", "Mro", "Chak", "Bom", "Khiang", "Khumi",
+        "Lusai", "Pankhoa/Pankho",
+        # Then the Bodo-Garo peoples of the Mymensingh and Sylhet borders,
+        # and Monipuri, whom the Bureau lists under the Meitei homeland's
+        # name rather than the people's.
+        "Tripura", "Monipuri", "Koch", "Barman", "Dalu",
     ),
     "Arab peoples": ("Iraki", "Rashaida", "Sahraoui", "Sahrawi"),
     # Suriname's census names the community by where its ancestors came from.
@@ -1527,6 +1547,19 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Kewarat", "Chai", "Khulaut",
         # Pakistan's Urdu-speaking migrants from India.
         "Muhajirs", "Muhajir",
+        # Bangladesh's scheduled peoples whose own language is Indo-Aryan.
+        # Chakma and Tonchonga are the hill peoples the table files here
+        # rather than with their Chittagong Hill Tracts neighbours: this
+        # tree files a people by the language it speaks, and theirs is a
+        # close relative of Chittagonian, not of Marma.
+        "Chakma", "Tonchonga", "Hajong", "Banai",
+        # The plains communities of the north and the tea gardens, which
+        # speak Bengali or a Bihari language. Mushor is the Bureau's
+        # spelling of Musahar, already carried above in Nepal's.
+        "Bagdi", "Bedia", "Bhuimali", "Gonju", "Malo/Ghasimalo", "Mushor",
+        "Rajoar", "Vil",
+        # Descendants of the Nepali soldiers of the garrison towns.
+        "Gurkha",
     ),
     # Small territories whose census asks for the island, not an ancestry.
     "Other national identities": (
@@ -1579,7 +1612,12 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     "Turkic peoples": ("Soyot", "Teleut", "Chulym", "Kumandin", "Chelkan",
                        "Tubalar"),
     "Horn of Africa peoples": ("Orma", "Borana", "Bilen", "Tigre"),
-    "Dravidian peoples": ("Bharatha",),
+    # Kondo is the Bureau's spelling of Khond, whose Kui is Dravidian.
+    "Dravidian peoples": ("Bharatha", "Kondo"),
+    # The Austroasiatic peoples of Bangladesh's north-west, whom the
+    # schedule lists beside the Santal the tree already carries. Saontal is
+    # the Bureau's spelling of that same people.
+    "Munda peoples": ("Saontal", "Mahali", "Kora", "Turi", "Kol", "Shobor"),
     "Polynesian peoples": ("Futunian",),
     "Aboriginal and Torres Strait Islander peoples": ("Australian Aboriginal",),
     "Hispanic or Latino (census category)": ("Latino",),

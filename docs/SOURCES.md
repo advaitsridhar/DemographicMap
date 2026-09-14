@@ -2891,10 +2891,14 @@ male plus female column in every district (it does, 64 of 64), and must never
 exceed the district's population — which is how a column read one place left
 announces itself before it reaches a panel as a percentage over 100.
 
-**It is still not drawn as a composition at zila level, and must not be.** A
-single total and a residual is not a list of peoples; two slices reading
-"ethnic population" and everyone else would state something the Bureau never
-said.
+**This paragraph used to end "it is still not drawn as a composition at zila
+level, and must not be", and that was wrong.** The objection was that "a
+single total and a residual is not a list of peoples". The premise is false:
+the remainder is not a residual. Table P28 counts the scheduled population and
+*Population by Sex, Dist & Loca* counts the whole district, and the difference
+between two counted figures is itself counted. What the split does not do is
+*name* the peoples — which is a limit on the labels, not a reason to withhold
+the measurement. See "The split the census does support" below.
 
 #### The named groups, at the eight divisions
 
@@ -2940,6 +2944,80 @@ are published under the census's own spelling — Bom, Tonchonga, Monipuri,
 Saontal, Lusai as BBS writes them. The tree having no opinion about them is a
 fact about the tree; inventing one from a resemblance would be a fact about
 nothing. Placing them is open work.
+
+#### The split the census does support, at all 64 zilas
+
+The naming stops at the division. The *counting* does not, and those are two
+different limits that were being treated as one.
+
+Table P28 gives every district the number of people in the scheduled ethnic
+groups. *Population by Sex, Dist & Loca* gives every district its whole
+population. Both are counted, both are published, and their difference is
+counted too — so each zila now carries a two-part composition rather than a
+sentence in a panel:
+
+| Zila | Scheduled ethnic groups | Bengali |
+| --- | --- | --- |
+| Rangamati | 372,875 — **57.6%** | 274,711 — 42.4% |
+| Khagrachhari | 349,390 — 48.9% | 364,729 — **51.1%** |
+| Bandarban | 197,983 — 41.2% | 283,123 — **58.8%** |
+| Dhaka | 27,137 — 0.2% | 14,707,564 — **99.8%** |
+
+Rangamati is the one district in Bangladesh where the scheduled groups are the
+majority, and until this change the map painted it nothing at all.
+
+**The remainder is called Bengali because that is the census's own framing**,
+not because it is a leftover bucket. The 2010 Act schedules a list of peoples
+*set apart from* the Bangalee population; the Bureau's own tables are built on
+that contrast. Naming it "other" would be less true, not more cautious.
+
+**The category is deliberately not called "ethnic minorities".** That label
+already exists in the group index as China's, marked residual — and
+`dominant()` skips residual groups in favour of any non-residual one. Under
+that name Rangamati would have been painted **Bengali at 42.4%** while the
+scheduled groups held 57.6% of it: the map contradicting its own panel. This
+is a counted category, so it is named and filed as one — a census category
+under South Asian ancestry in `group_tree.py`, beside Indo-Aryan, Dravidian,
+Munda and Tibeto-Burman rather than below them, because the fifty-one peoples
+inside it belong to all four.
+
+**Every zila note says where the naming stops**, so "Scheduled ethnic groups
+57.6%" cannot be read as the census declining to look:
+
+> …the district is as fine as the naming goes: the Bureau publishes the
+> fifty-one categories behind that total only by division, so which peoples
+> these are is on the division above this one, not here.
+
+**Language does not follow.** The same question was put to the mother-tongue
+source and the answer is no: SDS 2023 Table 3.6 is published by division and
+the report's list of tables says "Division" sixty-six times and "District" not
+once. There is no district figure to difference against, so the zilas keep
+their language gap and its stated reason.
+
+#### The fifty-one categories, placed in the group tree
+
+Publishing the names at division level put 42 labels in front of the map that
+the tree had no family for — they would have led a unit with no colour. They
+are now filed by the language each community speaks, which is the axis
+`group_tree.py` states it uses elsewhere:
+
+* **Tibeto-Burman** — Marma, Rakhain, Mro, Chak, Bom, Khiang, Khumi, Lusai and
+  Pankhoa in the Hill Tracts; Tripura, Monipuri, Koch, Barman and Dalu along
+  the northern border.
+* **Indo-Aryan** — Chakma and Tonchonga, whose language is a close relative of
+  Chittagonian rather than of Marma, which is why they sit here and not with
+  their Hill Tracts neighbours; Hajong and Banai; the plains and tea-garden
+  communities Bagdi, Bedia, Bhuimali, Gonju, Malo/Ghasimalo, Mushor, Rajoar
+  and Vil; and Gurkha, from the Nepali garrison settlements.
+* **Munda** — Saontal, Mahali, Kora, Turi, Kol and Shobor.
+* **Dravidian** — Kondo, the Bureau's spelling of Khond, whose Kui is
+  Dravidian.
+
+**Five are left unplaced on purpose**: Boraik/Baraik, Gorait, Hudi,
+Kharoar/Kheroar and Patro. Each is a small tea-garden or Sylhet community
+whose affiliation the sources genuinely disagree about, and this project would
+rather carry five labels with no family than five filed under a guess. They
+lead no unit, so nothing on the map turns on them.
 
 #### Why the hill districts stop at the division too — both 2011 series read
 
