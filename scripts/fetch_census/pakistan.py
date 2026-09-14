@@ -60,6 +60,16 @@ the capital under "not published" -- where it stayed for two census rounds,
 URL that 404s and a table that was never published are the same observation,
 and the only thing that separates them is asking again.
 
+**Ethnicity is not a gap in this data; it is a gap in the census.** Pakistan
+asks religion and mother tongue and has no ethnicity question, which the
+Bureau's own National Census Report 2023 says twice over -- once by listing
+the eight characteristics the census collected without it, and once by ruling
+out the only variable that resembles one. So the field is ``not_collected``
+rather than ``not_available``, and every unit carries the reason rather than
+an empty panel that would read as a fetch nobody has run. Mother tongue is
+what Pakistan's ethnic composition is usually estimated from; it is a
+different measurement and it stays on the language field.
+
 **Azad Jammu and Kashmir and Gilgit-Baltistan are genuinely not published.**
 Six filenames were tried for each, the office answered 404 to all twelve, and
 their own statistical booklets -- which do carry district tables from this
@@ -79,7 +89,8 @@ import re
 from typing import Any
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, gap, log, measure, record, shares, write_json,
+    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, log, measure, record,
+    shares, write_json,
 )
 
 SOURCE = "Pakistan Bureau of Statistics, 7th Population and Housing Census 2023, Table 9"
@@ -117,6 +128,86 @@ NOTE = ("Census 2023 Table 9. 'Scheduled Castes' is counted separately from "
         "a category of their own rather than within Islam. The population is "
         "the table's own TOTAL POPULATION column, which is the denominator "
         "these shares are of.")
+
+
+# ---------------------------------------------------------------------------
+# Ethnicity, which is the one field here with no answer anywhere, and the
+# reason it has none.
+#
+# Every clause below was read off the Bureau's own documents on the runner
+# rather than recalled, because the two things this field could be saying are
+# opposite claims about the state and only the office can settle which:
+#
+#   * the *National Census Report 2023* (234 pages) sets out, at 4.1.2, which
+#     characteristics the census collected -- "age, mother tongue, religion,
+#     disability, migration, literacy, employment and nationality". Eight, and
+#     ethnicity is not one of them;
+#
+#   * the same report's 4.4, on the one variable that could be mistaken for
+#     one, says a person's nationality "can be called and understood as
+#     citizenship, or more generally as subject or belonging to a sovereign
+#     state, and not as ethnicity". That is the Bureau ruling out the reading
+#     in its own words, and the District Census Reports repeat the sentence;
+#
+#   * the office's *List of Statistical Tables of Population and Housing
+#     Census 2023 (Updated & Final)* runs Table 1 to 26 and 31 to 34, under
+#     the headings Basic, Literacy and Education, Economic Active Population,
+#     Disabled Population, Migration, Housing Census and Listing Information.
+#     Every one of the twenty-six was fetched and its printed title read. The
+#     three that ask who a person is are Table 9 religion, Table 10
+#     nationality and Table 11 mother tongue;
+#
+#   * the report's only other use of the word is descriptive geography --
+#     "Pakistan has a diverse ethnic and linguistic background" -- and not a
+#     variable.
+#
+# So the status is not_collected. That is the whole point of writing it: a
+# gap saying not_available would claim the census asked and the Bureau held
+# the answer back at this level, which is what Gilgit-Baltistan's religion and
+# language fields *do* claim and is a different fact about Pakistan.
+#
+# The three enumeration forms the Bureau publishes as PDFs were fetched too
+# and are not evidence either way: they answered zero for every term in the
+# sweep, religion and mother tongue included, which are certainly on the
+# census form. They are scans with no text layer, and reading a scan's silence
+# as "the question is not asked" would be the worst mistake available here.
+ETHNICITY_GAP = (
+    "Pakistan's census does not ask ethnicity, so no level of it has an "
+    "answer to publish. The Bureau of Statistics says as much in its own "
+    "National Census Report 2023: the report's account of what the 7th "
+    "Population and Housing Census collected names eight characteristics -- "
+    "age, mother tongue, religion, disability, migration, literacy, "
+    "employment and nationality -- and ethnicity is not among them, and its "
+    "section on the one variable that might be mistaken for one states that "
+    "nationality \"can be called and understood as citizenship, or more "
+    "generally as subject or belonging to a sovereign state, and not as "
+    "ethnicity\". The office's own final list of census tables bears that "
+    "out: it runs Table 1 to 26 and 31 to 34, and the three that ask who a "
+    "person is are Table 9 religion, Table 10 nationality and Table 11 "
+    "mother tongue. The 'Scheduled Castes' column of Table 9 is not the "
+    "exception it looks like -- it is a category of the religion question, "
+    "counted apart from Hindu, rather than an enumeration of caste. So this "
+    "is not_collected and not not_available: the question was never put, "
+    "which is a different claim from asked and not published at this level.")
+
+# Where the reader should go instead, and what they must not take it for. A
+# note may point at the language field; the figures may not move into this
+# one. Mother tongue is what Pakistan's ethnic composition is usually
+# estimated from and it is not the same measurement -- Table 11 counts the
+# language of the household a person grew up in, which crosses the groups it
+# is read as and misses the people who changed it. Chitral is the case in the
+# file: 5,065 Kalasha speakers against a Kalash community of some 3,000 to
+# 4,000, the difference being families who converted and kept the language.
+ETHNICITY_TONGUE = (
+    " Mother tongue is the nearest thing the census does count, and a "
+    "language is not an ethnicity: it is not republished under this field, "
+    "but it is on the language field beside this one, where {group} leads at "
+    "{pct}%.")
+ETHNICITY_NO_TONGUE = (
+    " Mother tongue is the nearest thing the census does count, and a "
+    "language is not an ethnicity: it is not republished under this field, "
+    "and the language field beside this one says what is known of it here, "
+    "or why nothing is.")
 
 BASE = "https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables"
 
@@ -2292,6 +2383,35 @@ def spoken(counts: dict[str, int], name: str = "") -> dict[str, Any]:
     }
 
 
+def say_ethnicity(records: list[dict[str, Any]]) -> int:
+    """Give every record the reason its ethnicity field is empty.
+
+    One pass over the finished list rather than a keyword at each of the six
+    places a record is built, and deliberately: the fault being fixed is what
+    a seventh place would reintroduce. ``record()`` defaults an unfilled field
+    to ``{"status": "not_available"}`` with nothing in it, the map draws that
+    as an empty panel, and an empty panel reads as a fetch nobody has run --
+    which for this field is the opposite of true. Every Pakistani unit had
+    one.
+
+    A composition, if a source for one ever appears, wins: only a gap is
+    written over. The count comes back so the run can say how many units it
+    just spoke for rather than leaving that to be assumed.
+    """
+    said = 0
+    for row in records:
+        if isinstance(row.get("ethnicity"), list):
+            continue
+        tongues = row.get("language")
+        first = tongues[0] if isinstance(tongues, list) and tongues else None
+        note = ETHNICITY_GAP + (
+            ETHNICITY_TONGUE.format(group=first["group"], pct=first["pct"])
+            if first else ETHNICITY_NO_TONGUE)
+        row["ethnicity"] = gap(NOT_COLLECTED, note)
+        said += 1
+    return said
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -2503,6 +2623,23 @@ def main() -> int:
                 log(f"    NO LANGUAGE TABLE -- {err}")
 
     records.extend(declared_gaps(absent, counts, households, mics_year))
+
+    # Said last, so it covers every record however it was built -- the four
+    # provinces and Islamabad from Table 9, Azad Kashmir from its yearbook,
+    # Gilgit-Baltistan from its own department -- and so a route added later
+    # cannot slip past it.
+    log(f"  {say_ethnicity(records)} units say why their ethnicity field is "
+        f"empty, which is that the census does not ask it")
+    bare = [row["id"] for row in records
+            if isinstance(row.get("ethnicity"), dict)
+            and not row["ethnicity"].get("note")]
+    if bare:
+        raise SystemExit(
+            f"pakistan: {len(bare)} records carry a bare ethnicity gap -- "
+            + ", ".join(bare[:5])
+            + ". A gap with no reason on it reads as a fetch nobody has run, "
+              "and refusing is better than publishing that.")
+
     out = args.out or PROCESSED / "pakistan_district.json"
     write_json(out, records)
     provinces = sum(1 for r in records if r["level"] == "admin1")
