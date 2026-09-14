@@ -161,12 +161,18 @@ def wp(path: str, **params: Any) -> Any:
         return None
 
 
-def catalogue() -> list[str]:
-    """PDF links the office's own upload index names, searched by word."""
+def catalogue(terms: tuple[str, ...] = ()) -> list[str]:
+    """PDF links the office's own upload index names, searched by word.
+
+    ``terms`` overrides the questionnaire hunt, so the same catalogue can be
+    asked a different question without a second probe: the point of going
+    through the upload index rather than guessing filenames holds whatever is
+    being looked for.
+    """
     found: dict[str, str] = {}
     log("WordPress upload catalogue")
-    for term in ("questionnaire", "form", "census 2023", "census", "training",
-                 "manual", "instruction"):
+    for term in terms or ("questionnaire", "form", "census 2023", "census",
+                          "training", "manual", "instruction"):
         items = wp("media", search=term, per_page=50, _fields="source_url,title")
         if not isinstance(items, list):
             continue
@@ -175,7 +181,7 @@ def catalogue() -> list[str]:
             title = ((item or {}).get("title") or {}).get("rendered") or ""
             if src and src.lower().endswith(".pdf"):
                 found.setdefault(src, title)
-    for term in ("questionnaire", "census questionnaire"):
+    for term in terms or ("questionnaire", "census questionnaire"):
         items = wp("search", search=term, per_page=30)
         if isinstance(items, list):
             for item in items:
@@ -258,6 +264,9 @@ def main() -> int:
     ap.add_argument("--text", action="append", default=[],
                     help="URL#pages, e.g. '...report.pdf#163-166': print "
                          "those pages in full instead of counting words")
+    ap.add_argument("--catalogue", action="append", default=[],
+                    help="ask the office's upload index for these words and "
+                         "print what it names, instead of the table series")
     args = ap.parse_args()
 
     log("pakistan_questions: what the 2023 census form asks, measured")
@@ -268,6 +277,12 @@ def main() -> int:
         for spec in args.text:
             url, _, want = spec.partition("#")
             show(url, want or "1")
+        return 0
+    if args.catalogue:
+        # The catalogue on its own. Asking the office what it has published
+        # about a place is a different question from what its form asks, and
+        # it should not cost the half-hour the table series takes.
+        catalogue(tuple(args.catalogue))
         return 0
     if args.url:
         # Same reason: a named document to sweep is a follow-up question, and

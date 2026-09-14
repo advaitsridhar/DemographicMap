@@ -790,13 +790,31 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
     "Munda peoples": ("Santal", "Santhal", "Santali", "Munda", "Ho",
                       "Kharia", "Korku", "Bhumij", "Sora", "Savara",
                       "Juang", "Mundari"),
+    # The Khasic peoples of Meghalaya and the Sylhet hills, who were filed
+    # under Tibeto-Burman here because that is where the north-east mostly
+    # lands -- and who are not Tibeto-Burman at all. Khasi is Austroasiatic,
+    # of the Khasic branch, which this repository's *language* tree has always
+    # had right: "Khasi" sits under "Austroasiatic languages" beside Khmer and
+    # Vietnamese. Only the ethnicity tree disagreed with it.
+    #
+    # They are not filed under "Munda peoples" either, despite that node being
+    # the Austroasiatic one here. Munda is a different branch, and a Khasi is
+    # no more a Munda than a Bengali is a Persian for both being Indo-European.
+    # Standing alone is the same answer the tree already gives Basque, for the
+    # same reason: the honest parent does not exist in this band.
+    #
+    # Nothing on the map moves today -- India publishes no ethnicity
+    # composition here yet. It would the moment one landed: Meghalaya is
+    # 1,431,344 Khasi and would be led by them.
+    "Khasi peoples": ("Khasi", "Khasia", "Pnar", "Jaintia", "Synteng",
+                      "War", "Lyngngam"),
     # Basques are neither Romance nor anything else in this band; the
     # language they are named for has no relatives at all.
     "Basque peoples": ("Basque", "Euskaldun"),
     "Himalayan and Tibeto-Burman peoples": (
         "Tamang", "Newar", "Newa: (Newar)", "Gurung", "Rai", "Limbu",
         "Sherpa", "Sunuwar", "Thakali", "Chepang", "Tibetan", "Bhutia",
-        "Lepcha", "Bodo", "Naga", "Mizo", "Manipuri", "Garo", "Khasi",
+        "Lepcha", "Bodo", "Naga", "Mizo", "Manipuri", "Garo",
         "Chin", "Kachin", "Karen", "Rakhine", "Mon", "Shan", "Kayah",
         "Burman", "Bamar", "Wa", "Palaung", "Danu", "Kokang", "Lahu",
         "Akha", "Lisu",
@@ -985,7 +1003,7 @@ ETHNIC_ANCESTRY: dict[str, tuple[str, ...]] = {
     "South Asian ancestry": (
         "Indo-Aryan peoples", "Dravidian peoples",
         "Himalayan and Tibeto-Burman peoples", "Munda peoples",
-        "Scheduled ethnic groups (census category)",
+        "Scheduled ethnic groups (census category)", "Khasi peoples",
     ),
     "East and Southeast Asian ancestry": (
         "Han and Sinitic peoples", "Japanese peoples", "Korean peoples",
