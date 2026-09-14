@@ -4455,10 +4455,22 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Bengali",
+        "pct": 99.99
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.01
+      }
+    ],
     "ethnicity": [
+      {
+        "group": "Bengali",
+        "pct": 100.0,
+        "count": 9095914
+      },
       {
         "group": "Bagdi",
         "pct": 0.0,
@@ -4716,14 +4728,21 @@
         "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
         "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
         "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      },
+      {
+        "field": "language",
+        "name": "Bangladesh Bureau of Statistics, Report on Socio-Economic and Demographic Survey 2023, Table 3.6: population by mother tongue and second language, division and location",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
       }
     ],
     "aliases": [
       "Barisal"
     ],
     "ethnicity_year": 2022,
-    "ethnicity_basis": "the ethnic population the census enumerates",
-    "ethnicity_note": "Census 2022, Table P29. These shares are of Barishal's whole population of 9,100,104, of whom 4,190 (0.05%) are enumerated by ethnic category; the largest is Rakhain at 1,923. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+    "ethnicity_note": "Census 2022, Table P29. Of Barishal's 9,100,104 people, 4,190 (0.05%) are enumerated in the fifty-one scheduled ethnic categories, the largest being Rakhain at 1,923. The remaining 9,095,914 are shown as Bengali, which is the census's own framing rather than an inference: the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010 schedules the small ethnic groups as a set apart from the Bangalee majority, and the Constitution names the people of Bangladesh as Bangalees. The Bureau prints no count for that majority, so this figure is the division's population less the scheduled groups, and it absorbs anyone who is neither -- the Urdu-speaking Biharis above all, whom no schedule covers and whom no published table separates.",
+    "language_year": 2023,
+    "language_note": "Socio-Economic and Demographic Survey 2023, Table 3.6, as published: the Bureau prints mother tongue in two columns, Bangla and Others, and names no other language anywhere in the survey's 553 pages. The residual is left unnamed here for that reason. It is deliberately not filled in from the ethnic categories, which measure something else and disagree with it division by division -- Khulna has 38,992 people in scheduled ethnic groups and a non-Bangla mother tongue that rounds to 0.00%, while Mymensingh has more non-Bangla speakers than it has people in those groups. This is a sample survey, not the census, so it is dated 2023 and carries no figure below the division."
   },
   {
     "id": "BGD-chattogram",
@@ -4748,10 +4767,22 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Bengali",
+        "pct": 97.11
+      },
+      {
+        "group": "Other languages",
+        "pct": 2.89
+      }
+    ],
     "ethnicity": [
+      {
+        "group": "Bengali",
+        "pct": 97.0,
+        "count": 32211344
+      },
       {
         "group": "Chakma",
         "pct": 1.4,
@@ -5009,14 +5040,21 @@
         "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
         "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
         "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      },
+      {
+        "field": "language",
+        "name": "Bangladesh Bureau of Statistics, Report on Socio-Economic and Demographic Survey 2023, Table 3.6: population by mother tongue and second language, division and location",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
       }
     ],
     "aliases": [
       "Chittagong"
     ],
     "ethnicity_year": 2022,
-    "ethnicity_basis": "the ethnic population the census enumerates",
-    "ethnicity_note": "Census 2022, Table P29. These shares are of Chattogram's whole population of 33,202,357, of whom 991,013 (2.98%) are enumerated by ethnic category; the largest is Chakma at 475,548. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+    "ethnicity_note": "Census 2022, Table P29. Of Chattogram's 33,202,357 people, 991,013 (2.98%) are enumerated in the fifty-one scheduled ethnic categories, the largest being Chakma at 475,548. The remaining 32,211,344 are shown as Bengali, which is the census's own framing rather than an inference: the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010 schedules the small ethnic groups as a set apart from the Bangalee majority, and the Constitution names the people of Bangladesh as Bangalees. The Bureau prints no count for that majority, so this figure is the division's population less the scheduled groups, and it absorbs anyone who is neither -- the Urdu-speaking Biharis above all, whom no schedule covers and whom no published table separates.",
+    "language_year": 2023,
+    "language_note": "Socio-Economic and Demographic Survey 2023, Table 3.6, as published: the Bureau prints mother tongue in two columns, Bangla and Others, and names no other language anywhere in the survey's 553 pages. The residual is left unnamed here for that reason. It is deliberately not filled in from the ethnic categories, which measure something else and disagree with it division by division -- Khulna has 38,992 people in scheduled ethnic groups and a non-Bangla mother tongue that rounds to 0.00%, while Mymensingh has more non-Bangla speakers than it has people in those groups. This is a sample survey, not the census, so it is dated 2023 and carries no figure below the division."
   },
   {
     "id": "BGD-dhaka",
@@ -5041,10 +5079,22 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Bengali",
+        "pct": 99.76
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.24
+      }
+    ],
     "ethnicity": [
+      {
+        "group": "Bengali",
+        "pct": 99.8,
+        "count": 44133435
+      },
       {
         "group": "Garo",
         "pct": 0.1,
@@ -5307,12 +5357,19 @@
         "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
         "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
         "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      },
+      {
+        "field": "language",
+        "name": "Bangladesh Bureau of Statistics, Report on Socio-Economic and Demographic Survey 2023, Table 3.6: population by mother tongue and second language, division and location",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
       }
     ],
     "aliases": [],
     "ethnicity_year": 2022,
-    "ethnicity_basis": "the ethnic population the census enumerates",
-    "ethnicity_note": "Census 2022, Table P29. These shares are of Dhaka's whole population of 44,215,759, of whom 82,324 (0.19%) are enumerated by ethnic category; the largest is Garo at 23,462. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+    "ethnicity_note": "Census 2022, Table P29. Of Dhaka's 44,215,759 people, 82,324 (0.19%) are enumerated in the fifty-one scheduled ethnic categories, the largest being Garo at 23,462. The remaining 44,133,435 are shown as Bengali, which is the census's own framing rather than an inference: the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010 schedules the small ethnic groups as a set apart from the Bangalee majority, and the Constitution names the people of Bangladesh as Bangalees. The Bureau prints no count for that majority, so this figure is the division's population less the scheduled groups, and it absorbs anyone who is neither -- the Urdu-speaking Biharis above all, whom no schedule covers and whom no published table separates.",
+    "language_year": 2023,
+    "language_note": "Socio-Economic and Demographic Survey 2023, Table 3.6, as published: the Bureau prints mother tongue in two columns, Bangla and Others, and names no other language anywhere in the survey's 553 pages. The residual is left unnamed here for that reason. It is deliberately not filled in from the ethnic categories, which measure something else and disagree with it division by division -- Khulna has 38,992 people in scheduled ethnic groups and a non-Bangla mother tongue that rounds to 0.00%, while Mymensingh has more non-Bangla speakers than it has people in those groups. This is a sample survey, not the census, so it is dated 2023 and carries no figure below the division."
   },
   {
     "id": "BGD-khulna",
@@ -5337,10 +5394,22 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Bengali",
+        "pct": 100.0
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.0
+      }
+    ],
     "ethnicity": [
+      {
+        "group": "Bengali",
+        "pct": 99.8,
+        "count": 17376932
+      },
       {
         "group": "Malo/Ghasimalo",
         "pct": 0.1,
@@ -5598,12 +5667,19 @@
         "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
         "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
         "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      },
+      {
+        "field": "language",
+        "name": "Bangladesh Bureau of Statistics, Report on Socio-Economic and Demographic Survey 2023, Table 3.6: population by mother tongue and second language, division and location",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
       }
     ],
     "aliases": [],
     "ethnicity_year": 2022,
-    "ethnicity_basis": "the ethnic population the census enumerates",
-    "ethnicity_note": "Census 2022, Table P29. These shares are of Khulna's whole population of 17,415,924, of whom 38,992 (0.22%) are enumerated by ethnic category; the largest is Others at 11,871. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+    "ethnicity_note": "Census 2022, Table P29. Of Khulna's 17,415,924 people, 38,992 (0.22%) are enumerated in the fifty-one scheduled ethnic categories, the largest being Others at 11,871. The remaining 17,376,932 are shown as Bengali, which is the census's own framing rather than an inference: the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010 schedules the small ethnic groups as a set apart from the Bangalee majority, and the Constitution names the people of Bangladesh as Bangalees. The Bureau prints no count for that majority, so this figure is the division's population less the scheduled groups, and it absorbs anyone who is neither -- the Urdu-speaking Biharis above all, whom no schedule covers and whom no published table separates.",
+    "language_year": 2023,
+    "language_note": "Socio-Economic and Demographic Survey 2023, Table 3.6, as published: the Bureau prints mother tongue in two columns, Bangla and Others, and names no other language anywhere in the survey's 553 pages. The residual is left unnamed here for that reason. It is deliberately not filled in from the ethnic categories, which measure something else and disagree with it division by division -- Khulna has 38,992 people in scheduled ethnic groups and a non-Bangla mother tongue that rounds to 0.00%, while Mymensingh has more non-Bangla speakers than it has people in those groups. This is a sample survey, not the census, so it is dated 2023 and carries no figure below the division."
   },
   {
     "id": "BGD-mymensingh",
@@ -5628,10 +5704,22 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Bengali",
+        "pct": 99.29
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.71
+      }
+    ],
     "ethnicity": [
+      {
+        "group": "Bengali",
+        "pct": 99.5,
+        "count": 12163888
+      },
       {
         "group": "Garo",
         "pct": 0.4,
@@ -5889,12 +5977,19 @@
         "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
         "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
         "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      },
+      {
+        "field": "language",
+        "name": "Bangladesh Bureau of Statistics, Report on Socio-Economic and Demographic Survey 2023, Table 3.6: population by mother tongue and second language, division and location",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
       }
     ],
     "aliases": [],
     "ethnicity_year": 2022,
-    "ethnicity_basis": "the ethnic population the census enumerates",
-    "ethnicity_note": "Census 2022, Table P29. These shares are of Mymensingh's whole population of 12,225,449, of whom 61,561 (0.50%) are enumerated by ethnic category; the largest is Garo at 45,164. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+    "ethnicity_note": "Census 2022, Table P29. Of Mymensingh's 12,225,449 people, 61,561 (0.50%) are enumerated in the fifty-one scheduled ethnic categories, the largest being Garo at 45,164. The remaining 12,163,888 are shown as Bengali, which is the census's own framing rather than an inference: the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010 schedules the small ethnic groups as a set apart from the Bangalee majority, and the Constitution names the people of Bangladesh as Bangalees. The Bureau prints no count for that majority, so this figure is the division's population less the scheduled groups, and it absorbs anyone who is neither -- the Urdu-speaking Biharis above all, whom no schedule covers and whom no published table separates.",
+    "language_year": 2023,
+    "language_note": "Socio-Economic and Demographic Survey 2023, Table 3.6, as published: the Bureau prints mother tongue in two columns, Bangla and Others, and names no other language anywhere in the survey's 553 pages. The residual is left unnamed here for that reason. It is deliberately not filled in from the ethnic categories, which measure something else and disagree with it division by division -- Khulna has 38,992 people in scheduled ethnic groups and a non-Bangla mother tongue that rounds to 0.00%, while Mymensingh has more non-Bangla speakers than it has people in those groups. This is a sample survey, not the census, so it is dated 2023 and carries no figure below the division."
   },
   {
     "id": "BGD-rajshahi",
@@ -5919,10 +6014,22 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Bengali",
+        "pct": 99.36
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.64
+      }
+    ],
     "ethnicity": [
+      {
+        "group": "Bengali",
+        "pct": 98.8,
+        "count": 20108489
+      },
       {
         "group": "Oraon",
         "pct": 0.3,
@@ -6185,14 +6292,21 @@
         "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
         "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
         "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      },
+      {
+        "field": "language",
+        "name": "Bangladesh Bureau of Statistics, Report on Socio-Economic and Demographic Survey 2023, Table 3.6: population by mother tongue and second language, division and location",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
       }
     ],
     "aliases": [
       "Rajshani"
     ],
     "ethnicity_year": 2022,
-    "ethnicity_basis": "the ethnic population the census enumerates",
-    "ethnicity_note": "Census 2022, Table P29. These shares are of Rajshahi's whole population of 20,353,116, of whom 244,627 (1.20%) are enumerated by ethnic category; the largest is Oraon at 62,178. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+    "ethnicity_note": "Census 2022, Table P29. Of Rajshahi's 20,353,116 people, 244,627 (1.20%) are enumerated in the fifty-one scheduled ethnic categories, the largest being Oraon at 62,178. The remaining 20,108,489 are shown as Bengali, which is the census's own framing rather than an inference: the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010 schedules the small ethnic groups as a set apart from the Bangalee majority, and the Constitution names the people of Bangladesh as Bangalees. The Bureau prints no count for that majority, so this figure is the division's population less the scheduled groups, and it absorbs anyone who is neither -- the Urdu-speaking Biharis above all, whom no schedule covers and whom no published table separates.",
+    "language_year": 2023,
+    "language_note": "Socio-Economic and Demographic Survey 2023, Table 3.6, as published: the Bureau prints mother tongue in two columns, Bangla and Others, and names no other language anywhere in the survey's 553 pages. The residual is left unnamed here for that reason. It is deliberately not filled in from the ethnic categories, which measure something else and disagree with it division by division -- Khulna has 38,992 people in scheduled ethnic groups and a non-Bangla mother tongue that rounds to 0.00%, while Mymensingh has more non-Bangla speakers than it has people in those groups. This is a sample survey, not the census, so it is dated 2023 and carries no figure below the division."
   },
   {
     "id": "BGD-rangpur",
@@ -6217,10 +6331,22 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Bengali",
+        "pct": 99.86
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.14
+      }
+    ],
     "ethnicity": [
+      {
+        "group": "Bengali",
+        "pct": 99.5,
+        "count": 17519876
+      },
       {
         "group": "Saontal",
         "pct": 0.3,
@@ -6483,12 +6609,19 @@
         "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
         "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
         "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      },
+      {
+        "field": "language",
+        "name": "Bangladesh Bureau of Statistics, Report on Socio-Economic and Demographic Survey 2023, Table 3.6: population by mother tongue and second language, division and location",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
       }
     ],
     "aliases": [],
     "ethnicity_year": 2022,
-    "ethnicity_basis": "the ethnic population the census enumerates",
-    "ethnicity_note": "Census 2022, Table P29. These shares are of Rangpur's whole population of 17,610,955, of whom 91,079 (0.52%) are enumerated by ethnic category; the largest is Saontal at 55,820. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+    "ethnicity_note": "Census 2022, Table P29. Of Rangpur's 17,610,955 people, 91,079 (0.52%) are enumerated in the fifty-one scheduled ethnic categories, the largest being Saontal at 55,820. The remaining 17,519,876 are shown as Bengali, which is the census's own framing rather than an inference: the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010 schedules the small ethnic groups as a set apart from the Bangalee majority, and the Constitution names the people of Bangladesh as Bangalees. The Bureau prints no count for that majority, so this figure is the division's population less the scheduled groups, and it absorbs anyone who is neither -- the Urdu-speaking Biharis above all, whom no schedule covers and whom no published table separates.",
+    "language_year": 2023,
+    "language_note": "Socio-Economic and Demographic Survey 2023, Table 3.6, as published: the Bureau prints mother tongue in two columns, Bangla and Others, and names no other language anywhere in the survey's 553 pages. The residual is left unnamed here for that reason. It is deliberately not filled in from the ethnic categories, which measure something else and disagree with it division by division -- Khulna has 38,992 people in scheduled ethnic groups and a non-Bangla mother tongue that rounds to 0.00%, while Mymensingh has more non-Bangla speakers than it has people in those groups. This is a sample survey, not the census, so it is dated 2023 and carries no figure below the division."
   },
   {
     "id": "BGD-sylhet",
@@ -6513,10 +6646,22 @@
     "religion": {
       "status": "not_available"
     },
-    "language": {
-      "status": "not_available"
-    },
+    "language": [
+      {
+        "group": "Bengali",
+        "pct": 98.96
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.04
+      }
+    ],
     "ethnicity": [
+      {
+        "group": "Bengali",
+        "pct": 98.8,
+        "count": 10898260
+      },
       {
         "group": "Monipuri",
         "pct": 0.2,
@@ -6779,11 +6924,18 @@
         "name": "Bangladesh Bureau of Statistics, Population and Housing Census 2022, National Report (Volume I), Table P29: ethnic population by category, sex and division",
         "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
         "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
+      },
+      {
+        "field": "language",
+        "name": "Bangladesh Bureau of Statistics, Report on Socio-Economic and Demographic Survey 2023, Table 3.6: population by mother tongue and second language, division and location",
+        "url": "https://bbs.gov.bd/site/page/47856ad0-7e1c-4aab-bd78-892733bc06eb/Population-and-Housing-Census",
+        "license": "CC0 (public domain), published via HDX by the UN in Bangladesh"
       }
     ],
     "aliases": [],
     "ethnicity_year": 2022,
-    "ethnicity_basis": "the ethnic population the census enumerates",
-    "ethnicity_note": "Census 2022, Table P29. These shares are of Sylhet's whole population of 11,034,952, of whom 136,692 (1.24%) are enumerated by ethnic category; the largest is Monipuri at 22,150. The rest of the division is not shown because the census names no group for it: it publishes the ethnic categories and no label for anybody else, so the bar here describes the part of the population that was asked and answered this question."
+    "ethnicity_note": "Census 2022, Table P29. Of Sylhet's 11,034,952 people, 136,692 (1.24%) are enumerated in the fifty-one scheduled ethnic categories, the largest being Monipuri at 22,150. The remaining 10,898,260 are shown as Bengali, which is the census's own framing rather than an inference: the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010 schedules the small ethnic groups as a set apart from the Bangalee majority, and the Constitution names the people of Bangladesh as Bangalees. The Bureau prints no count for that majority, so this figure is the division's population less the scheduled groups, and it absorbs anyone who is neither -- the Urdu-speaking Biharis above all, whom no schedule covers and whom no published table separates.",
+    "language_year": 2023,
+    "language_note": "Socio-Economic and Demographic Survey 2023, Table 3.6, as published: the Bureau prints mother tongue in two columns, Bangla and Others, and names no other language anywhere in the survey's 553 pages. The residual is left unnamed here for that reason. It is deliberately not filled in from the ethnic categories, which measure something else and disagree with it division by division -- Khulna has 38,992 people in scheduled ethnic groups and a non-Bangla mother tongue that rounds to 0.00%, while Mymensingh has more non-Bangla speakers than it has people in those groups. This is a sample survey, not the census, so it is dated 2023 and carries no figure below the division."
   }
 ]
