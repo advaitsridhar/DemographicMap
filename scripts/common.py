@@ -128,6 +128,21 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "DEU": {
         "ethnicity": "Germany does not collect ethnicity. The census records citizenship and migration background; religion comes from church-tax registration, not fine-grained self-ID.",
     },
+    # Pakistan is here because the country row was contradicting its own
+    # districts. All 145 Pakistani units say the census asks no ethnicity
+    # question -- read out of the Bureau's own National Census Report 2023 and
+    # its final list of census tables -- while PAK's admin0 record carried a
+    # seven-group "ethnicity" composition with no year and no note.
+    #
+    # That composition is the Factbook's Ethnic groups vector, and for Pakistan
+    # it is the 1998 census's *mother tongue* shares with the labels swapped:
+    # Pashto printed as Pashtun, Urdu as Muhajir. The map already carries those
+    # figures, correctly, on the language field. Publishing them again under
+    # ethnicity is the mis-match this project treats as worse than a gap --
+    # invisible, because it looks like an answer.
+    "PAK": {
+        "ethnicity": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups vector for Pakistan is the 1998 census's mother-tongue shares relabelled (Pashto as Pashtun, Urdu as Muhajir), so it is not used here: those figures are on the language field, which is the question that was actually asked.",
+    },
     # Measured against e-Stat's catalogue rather than against the census
     # questionnaire alone -- see docs/SOURCES.md. The catalogue is the reason
     # each of these three is a declaration and not a gap: the API was asked, it
