@@ -2941,6 +2941,76 @@ Saontal, Lusai as BBS writes them. The tree having no opinion about them is a
 fact about the tree; inventing one from a resemblance would be a fact about
 nothing. Placing them is open work.
 
+#### Why the hill districts stop at the division too — both 2011 series read
+
+Table P29 stops at eight divisions, so the obvious next question is whether
+the three Chittagong Hill Tracts districts — Rangamati 57.6% ethnic,
+Khagrachhari 48.9%, Bandarban 41.2% — can be given a composition of their
+own. **They cannot from anything BBS has published.** Both candidate series
+were fetched and read rather than assumed:
+
+* **Zila Report: Rangamati** (2011 census, BBS, October 2015, 470 pp,
+  ISBN 978-984-33-8608-3). It has an *Ethnic Population* section and three
+  upazila-level ethnic tables, and none of them is a breakdown by group:
+  **H08** crosses ethnic households with drinking water, toilet and
+  electricity; **H09** with literacy; **H10** with household size and sex.
+  The zila's ethnic population is given as a single total — 356,153 people,
+  59.76% of Rangamati — and the peoples appear only in a prose sentence with
+  no numbers: *"Ethnic communities such as Chakma, Marma, Tanchangya,
+  Tripura, Chak, Khumee, Luchei, Pankhoa, Riang, Khumi, Mro, Santal,
+  Monipuri, Bome, Kheyang, Murang and other sub-groups belong to this zila."*
+
+* **Zila Community Report: Bandarban** (2011 census, BBS, November 2014,
+  617 pp, 22.7 MB). Its **Table C-01** is *"Area, household, population and
+  density by residence and community"*, and its columns are area in acres,
+  households, population total, population in households, floating
+  population and density — verified on the zila line, 387,129 in households
+  plus 1,206 floating against a printed 388,335. It is a **gazetteer**: every
+  mauza and para of the district listed with its head count. There is no
+  ethnic column and no group column anywhere in it. The hundreds of pages
+  that match *Chakma*, *Marma* or *Mro* match them as **place names** —
+  Banopur Chakma Para, Amtali Marma Para, Nutan Murung Para — *para* being a
+  hamlet, not a category.
+
+So BBS 2011 publishes ethnic population exactly as BBS 2022 does: **a total,
+never split by named group**, one administrative level finer. Which means the
+per-upazila group percentages that circulate (Wikipedia's *Ethnic groups in
+the Chittagong Hill Tracts* gives Chakma 91.15% in Juraichhari, Marma 49.48%
+in Rowangchhari, and so on for six peoples) **are not traceable to either
+published series**, and this project does not carry a figure it cannot source.
+They are also percentages with no denominators and truncated at `Others <1%`,
+so they could not be aggregated to a district even if they were sourced.
+
+**Fetching note, since the route is not obvious.** `bbs.gov.bd` hangs on this
+page (a `probe_tls --chain --fetch` run sat in progress for 25 minutes), and
+the reports themselves live on `203.112.218.65:8008`, a host that is dead.
+The Internet Archive has them, but asking it for a *page's* timestamp gives a
+playback that truncates: two attempts at `Com_Bandarban.pdf` both died at
+7,257,916 of 22,753,064 bytes. The fix is the **CDX API** — query
+`web.archive.org/cdx/search/cdx?url=…&matchType=prefix` for the file's own
+captures, then request one by its exact timestamp with the `id_` modifier.
+`20211123141051id_` returned all 22.7 MB cleanly. Four good captures of that
+file exist (2019, and three in 2021).
+
+#### The two Wikipedia tables, reconciled
+
+* ***Ethnic minorities in Bangladesh*** carries Table P29's national column:
+  the same 51 categories, none extra, none missing. But **21 of 51 rows agree
+  exactly and 30 do not**, and every disagreement is in the same direction —
+  the census higher. Chakma 483,365 against 483,299, Marma 224,299 against
+  224,261, Tripura 156,620 against 156,578, Others 68,588 against 68,538;
+  total **1,650,478 against 1,650,159**, 319 people short. A one-directional
+  error across 30 rows is a transcription, not a second measurement.
+
+* ***Languages of Bangladesh*** gives Bangla 163,507,029 and Others
+  **1,651,587** against a total of 165,158,616 — and that total is the census
+  figure exactly. But "Others" is **1.0000% of it to within one person**
+  (a flat 1% would be 1,651,586), while BBS's own SDS 2023 Table 3.6 puts
+  Others at **0.83%**, about 1,370,817 people. The ethnic population is
+  1,650,478, or 0.9993%. The table therefore looks like the **ethnic count
+  relabelled as a language split**, and it contradicts the Bureau's own
+  language figure by roughly 281,000 people. It is not used.
+
 Two faults were found and fixed in the reading of this table, both silent.
 The reader locked onto the report's **list of tables**, where "Table P28" and
 "Table P29" sit two lines apart, read a two-line slice and found nothing — and
