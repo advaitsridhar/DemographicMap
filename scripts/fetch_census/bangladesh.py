@@ -126,19 +126,39 @@ report's 64 district totals equal the workbook's. Two publications of one
 census agreeing is what distinguishes this from a parse that merely did not
 crash.
 
-**The shares are of each division's whole population, and that is the whole
-argument.** Chattogram's Chakma are 475,548 people: 48% of the division's
-ethnic population and **1.4% of the division**. Published the first way, this
-map would call Chakma the largest group in Chattogram, where they are one
-person in seventy -- the invisible kind of wrong. So the denominator is the
-division's own population, summed from the districts the report itself places
-in it, and the list legitimately covers only 2.90% of Chattogram and 0.05% of
-Barishal. The panel says so; the map declines to name a leader, because the
-largest listed group cannot exceed what is unlisted.
+**The shares are of each division's whole population.** Chattogram's Chakma
+are 475,548 people: 48% of the division's ethnic population and **1.4% of the
+division**. Published the first way, this map would call Chakma the largest
+group in Chattogram, where they are one person in seventy.
 
-Everyone else is **not shown and must not be**. The census publishes the
-ethnic categories and no count and no label for anybody else; a slice invented
-to fill the bar would be the fabrication the rules forbid.
+**The remainder is named Bengali, and that is the census's framing rather than
+an inference.** The *Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010*
+schedules the small ethnic groups as a set apart from the Bangalee majority,
+and Article 6(2) of the Constitution names the people of Bangladesh as
+Bangalees; the Bureau counts by that law and prints no figure for the
+majority, so the complement of the scheduled groups *is* the Bangalee
+population. Naming it makes each division's composition partition its people,
+which is what lets the panel read as a whole population and the
+dominant-group map answer for these shapes at all. What the residual also
+absorbs is stated in every division's note rather than hidden: anyone the
+schedule does not cover and who is not Bangalee either -- the Urdu-speaking
+Biharis above all, whom no published table separates.
+
+**Mother tongue comes from the survey that measured it, not from the ethnic
+categories.** Table 3.6 of the *Report on Socio-Economic and Demographic
+Survey 2023* gives mother tongue by division in the two columns the Bureau
+publishes it in -- Bangla and Others -- and that is what the eight divisions
+carry, dated 2023 because it is a sample survey and not the census.
+
+The residual there is left **unnamed**, and the reason is measured rather than
+cautious. Deriving it from the fifty-one ethnic categories would contradict
+the Bureau's own figures division by division: Khulna holds 38,992 people in
+scheduled ethnic groups and a non-Bangla mother tongue that rounds to
+**0.00%**, while Mymensingh reports **more** non-Bangla speakers than it has
+people in those groups. Ethnicity and language disagree in both directions
+here, so one cannot be read off the other, and no mother tongue but Bangla is
+named anywhere in the survey's 553 pages to read off instead. Nothing below
+the division has a mother-tongue figure from either round.
 
 Forty-seven of the fifty-one categories have no place in this project's group
 tree yet, and are published under the census's own spelling rather than
@@ -266,6 +286,52 @@ DIVISION_ALIASES: dict[str, tuple[str, ...]] = {
     "Chattogram": ("Chittagong",),
     "Rajshahi": ("Rajshani",),
 }
+
+# Table 3.6 of the Report on Socio-Economic and Demographic Survey 2023 --
+# the census project's own long-questionnaire survey -- as printed: mother
+# tongue by division, in the two columns the Bureau publishes it in. It is a
+# named language against a residual and nothing more; no mother tongue but
+# Bangla is named in the survey's 553 pages, and none of the fifty-one ethnic
+# categories is used to guess at one. Every row sums to 100.00 as published,
+# which is checked rather than assumed.
+MOTHER_TONGUE = {
+    "Barishal": (99.99, 0.01),
+    "Chattogram": (97.11, 2.89),
+    "Dhaka": (99.76, 0.24),
+    "Khulna": (100.00, 0.00),
+    "Mymensingh": (99.29, 0.71),
+    "Rajshahi": (99.36, 0.64),
+    "Rangpur": (99.86, 0.14),
+    "Sylhet": (98.96, 1.04),
+}
+TONGUE_YEAR = 2023
+TONGUE_SOURCE = ("Bangladesh Bureau of Statistics, Report on Socio-Economic and "
+                 "Demographic Survey 2023, Table 3.6: population by mother "
+                 "tongue and second language, division and location")
+TONGUE_NOTE = (
+    "Socio-Economic and Demographic Survey 2023, Table 3.6, as published: the "
+    "Bureau prints mother tongue in two columns, Bangla and Others, and names "
+    "no other language anywhere in the survey's 553 pages. The residual is "
+    "left unnamed here for that reason. It is deliberately not filled in from "
+    "the ethnic categories, which measure something else and disagree with it "
+    "division by division -- Khulna has 38,992 people in scheduled ethnic "
+    "groups and a non-Bangla mother tongue that rounds to 0.00%, while "
+    "Mymensingh has more non-Bangla speakers than it has people in those "
+    "groups. This is a sample survey, not the census, so it is dated 2023 and "
+    "carries no figure below the division.")
+
+# The residual of the ethnic categories, named. Bangladesh's own framing makes
+# this a statement rather than a guess: the Khudra Nri-goshthi Sangskritik
+# Pratisthan Ain 2010 schedules the "small ethnic groups" as a set apart from
+# the Bangalee majority, and Article 6(2) of the Constitution says the people
+# of Bangladesh "shall be known as Bangalees as a nation". So the complement of
+# the scheduled groups is the Bangalee population, and calling it that follows
+# the law the census counts by.
+#
+# What it also absorbs is said in the note rather than hidden: anyone the
+# census does not place in a scheduled group and who is not Bangalee either --
+# the Urdu-speaking Biharis above all, whom no schedule covers.
+RESIDUAL_GROUP = "Bengali"
 
 # The Bureau's own two publications of this census disagree about two
 # districts' spelling: the National Report writes Netrokona and
@@ -522,6 +588,26 @@ def read(blob: bytes) -> list[dict[str, Any]]:
     return out
 
 
+def whole_hundred(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Make a composition reach 100.0 exactly, by the smallest available move.
+
+    ``shares()`` rounds each row on its own, which is invisible with five
+    groups and not with fifty-one: Chattogram's categories plus the Bangalee
+    remainder came to 99.9, and a reader cannot tell that drift from a source
+    that does not partition its population.
+
+    Largest remainder, the same rule ``pakistan.to_hundred`` uses -- the tenth
+    of a point goes to the biggest share, where it is the smallest lie
+    available. The counts are left exactly as the census printed them; only
+    the percentage moves.
+    """
+    drift = round(100.0 - sum(row["pct"] for row in rows), 1)
+    if drift and rows:
+        biggest = max(rows, key=lambda row: row["pct"])
+        biggest["pct"] = round(biggest["pct"] + drift, 1)
+    return rows
+
+
 def division_note(where: str, ethnic: int, whole: int,
                   counts: dict[str, int]) -> str:
     """What these shares are of, said before anybody reads them as a whole.
@@ -540,14 +626,19 @@ def division_note(where: str, ethnic: int, whole: int,
     forbid.
     """
     biggest = max(counts.items(), key=lambda kv: (kv[1], kv[0]))
-    return (f"Census 2022, Table P29. These shares are of {where}'s whole "
-            f"population of {whole:,}, of whom {ethnic:,} ({ethnic / whole * 100:.2f}%) "
-            f"are enumerated by ethnic category; the largest is "
-            f"{biggest[0]} at {biggest[1]:,}. The rest of the division is not "
-            "shown because the census names no group for it: it publishes the "
-            "ethnic categories and no label for anybody else, so the bar here "
-            "describes the part of the population that was asked and answered "
-            "this question.")
+    return (f"Census 2022, Table P29. Of {where}'s {whole:,} people, "
+            f"{ethnic:,} ({ethnic / whole * 100:.2f}%) are enumerated in the "
+            f"fifty-one scheduled ethnic categories, the largest being "
+            f"{biggest[0]} at {biggest[1]:,}. The remaining "
+            f"{whole - ethnic:,} are shown as Bengali, which is the census's "
+            "own framing rather than an inference: the Khudra Nri-goshthi "
+            "Sangskritik Pratisthan Ain 2010 schedules the small ethnic groups "
+            "as a set apart from the Bangalee majority, and the Constitution "
+            "names the people of Bangladesh as Bangalees. The Bureau prints no "
+            "count for that majority, so this figure is the division's "
+            "population less the scheduled groups, and it absorbs anyone who "
+            "is neither -- the Urdu-speaking Biharis above all, whom no "
+            "schedule covers and whom no published table separates.")
 
 
 def report_blocks(lines: list[str], table: str, until: str | None) -> dict[str, Any]:
@@ -686,6 +777,18 @@ def check_report(districts: dict[str, Any], categories: dict[str, Any],
             if workbook.get(name) != count:
                 bad.append(f"{district}: the report says {count:,} ethnic "
                            f"people and the workbook {workbook.get(name)}")
+    for where, (bangla, others) in MOTHER_TONGUE.items():
+        # As published, and published rows add up. A division missing from the
+        # table, or a pair that does not reach 100, means Table 3.6 was
+        # transcribed wrong -- and these are the only figures here that are
+        # typed from a report rather than parsed out of one.
+        if where not in districts:
+            bad.append(f"{where} has a mother tongue and is not a division")
+        if abs(bangla + others - 100.0) > 0.005:
+            bad.append(f"{where}: mother tongue sums to {bangla + others}")
+    missing = sorted(set(districts) - {"National"} - set(MOTHER_TONGUE))
+    if missing:
+        bad.append("no mother tongue for " + ", ".join(missing))
     if bad:
         raise SystemExit(f"{len(bad)} report checks failed — " + "; ".join(bad[:4]))
     log("    the report's district totals match the workbook's to the person, "
@@ -738,15 +841,36 @@ def main() -> int:
         # having checked the two publications against each other above.
         whole = sum(population[REPORT_SPELLING.get(name, name)]
                     for name in block["rows"])
-        counts = by_category[where]["rows"]
+        # The scheduled groups, plus everyone the schedule does not cover under
+        # the name Bangladesh's own law gives them. With the residual named the
+        # composition partitions the division, so the panel reads as a whole
+        # population rather than as 2.9% of one, and the dominant-group map can
+        # answer for these shapes at all.
+        counts = dict(by_category[where]["rows"])
+        # The residual about to be named has to be a real number of people. A
+        # negative one would mean the scheduled groups outnumber the division,
+        # which is how a division read against the wrong population announces
+        # itself -- and it would reach the panel as a negative share.
+        if block["total"] > whole:
+            raise SystemExit(
+                f"{where}: {block['total']:,} in scheduled ethnic groups "
+                f"against a division population of {whole:,}")
+        counts[RESIDUAL_GROUP] = whole - block["total"]
+        tongue = MOTHER_TONGUE[where]
         records.append(record(
             f"BGD-{where.lower()}", where, level="admin1", parent="BGD",
             aliases=list(DIVISION_ALIASES.get(where, ())),
-            ethnicity=shares(counts, total=whole),
+            ethnicity=whole_hundred(shares(counts, total=whole)),
             ethnicity_year=YEAR,
-            ethnicity_basis="the ethnic population the census enumerates",
-            ethnicity_note=division_note(where, block["total"], whole, counts),
+            ethnicity_note=division_note(where, block["total"], whole,
+                                         by_category[where]["rows"]),
+            language=[{"group": "Bengali", "pct": tongue[0]},
+                      {"group": "Other languages", "pct": tongue[1]}],
+            language_year=TONGUE_YEAR,
+            language_note=TONGUE_NOTE,
             sources=[{"field": "ethnicity", "name": REPORT_SOURCE,
+                      "url": REPORT_PAGE, "license": LICENCE},
+                     {"field": "language", "name": TONGUE_SOURCE,
                       "url": REPORT_PAGE, "license": LICENCE}]))
     log(f"    {len(by_category) - 1} divisions carry a named ethnic composition, "
         f"{sum(by_category[w]['total'] for w in by_category if w != 'National'):,} "

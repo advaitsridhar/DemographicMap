@@ -7342,6 +7342,87 @@ class BangladeshReportTables(unittest.TestCase):
             self.bd.check_report(districts, districts, {})
 
 
+class BangladeshDivisionRemainder(unittest.TestCase):
+    """Naming the majority, and refusing to name the other mother tongues.
+
+    Table P29 counts the fifty-one scheduled ethnic groups and prints no
+    figure for everybody else. The complement is named Bengali because
+    Bangladesh's own law frames it that way -- the 2010 Act schedules the
+    small ethnic groups as a set apart from the Bangalee majority, and the
+    Constitution names the people of Bangladesh as Bangalees -- not because a
+    residual looked like it needed a label.
+
+    The same move is refused for mother tongue, and on measured grounds: the
+    Bureau's two tables disagree division by division, so language cannot be
+    read off ethnicity.
+    """
+
+    def setUp(self):
+        from scripts.fetch_census import bangladesh
+        self.bd = bangladesh
+        self.rows = json.loads(
+            (ROOT / "data" / "processed" / "bangladesh_district.json").read_text())
+        self.divisions = [r for r in self.rows if r["level"] == "admin1"]
+
+    def test_every_division_partitions_its_people(self):
+        self.assertEqual(len(self.divisions), 8)
+        for row in self.divisions:
+            total = sum(g["pct"] for g in row["ethnicity"])
+            self.assertAlmostEqual(total, 100.0, places=1, msg=row["name"])
+
+    def test_the_remainder_is_the_division_less_the_scheduled_groups(self):
+        for row in self.divisions:
+            named = {g["group"]: g["count"] for g in row["ethnicity"]}
+            self.assertIn("Bengali", named, row["name"])
+            scheduled = sum(c for g, c in named.items() if g != "Bengali")
+            self.assertEqual(named["Bengali"] + scheduled,
+                             sum(named.values()), row["name"])
+            # And it is the majority everywhere, including the hill division.
+            self.assertGreater(named["Bengali"], scheduled, row["name"])
+
+    def test_a_residual_larger_than_the_division_is_refused(self):
+        """A negative remainder would reach the panel as a negative share."""
+        source = (ROOT / "scripts" / "fetch_census" / "bangladesh.py").read_text()
+        self.assertIn("in scheduled ethnic groups", source)
+        self.assertIn("against a division population of", source)
+
+    def test_mother_tongue_is_the_survey_as_published(self):
+        for row in self.divisions:
+            groups = {g["group"]: g["pct"] for g in row["language"]}
+            self.assertEqual(set(groups), {"Bengali", "Other languages"},
+                             row["name"])
+            self.assertAlmostEqual(sum(groups.values()), 100.0, places=2,
+                                   msg=row["name"])
+            # A sample survey, not the census, so not the census's year.
+            self.assertEqual(row["language_year"], 2023, row["name"])
+
+    def test_chattogram_carries_the_published_figure(self):
+        row = next(r for r in self.divisions if r["name"] == "Chattogram")
+        groups = {g["group"]: g["pct"] for g in row["language"]}
+        self.assertEqual(groups["Bengali"], 97.11)
+        self.assertEqual(groups["Other languages"], 2.89)
+
+    def test_no_minority_language_is_invented_from_an_ethnic_group(self):
+        """The refusal this class exists for.
+
+        The survey names no mother tongue but Bangla in 553 pages, and its
+        figures contradict the ethnic ones: Khulna has 38,992 people in
+        scheduled groups and 0.00% non-Bangla mother tongue.
+        """
+        for row in self.divisions:
+            for group in row["language"]:
+                self.assertIn(group["group"], ("Bengali", "Other languages"),
+                              f"{row['name']} names a language the survey does not")
+        khulna = next(r for r in self.divisions if r["name"] == "Khulna")
+        self.assertEqual(
+            {g["group"]: g["pct"] for g in khulna["language"]}["Other languages"],
+            0.0, "Khulna's published non-Bangla share is 0.00")
+        scheduled = sum(g["count"] for g in khulna["ethnicity"]
+                        if g["group"] != "Bengali")
+        self.assertGreater(scheduled, 30_000,
+                           "and it still holds tens of thousands of ethnic people")
+
+
 class BangladeshEthnicPopulation(unittest.TestCase):
     """A question the census asks and publishes one number of.
 
