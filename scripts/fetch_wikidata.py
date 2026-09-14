@@ -225,33 +225,56 @@ def main() -> int:
         records.extend(got)
         time.sleep(args.sleep)
 
-    # A thinner answer is not an answer either. A Wikidata timeout looks
-    # exactly like a country with no units, so a run where half the queries
-    # failed would quietly replace a complete file with a partial one and
-    # every country it dropped would read as "checked, found nothing".
+    # A run updates the countries it asked about and leaves the rest alone.
     #
-    # The test is coverage, not row count: countries legitimately gain and
-    # lose units between runs, but the set of countries answered for should
-    # never shrink unless the caller says so.
+    # This file used to be replaced wholesale by whatever the run returned,
+    # which made `--countries URY` unusable: adding one country meant
+    # re-querying the other thirteen in the same job, and Wikidata's endpoint
+    # rate-limits and times out under load, so one 504 anywhere in the list
+    # refused the whole write. Three of fourteen failed that way, and Uruguay
+    # -- which had answered, with 244 units -- was thrown out with them.
+    #
+    # A country this run never asked about is not evidence of anything, so its
+    # rows carry over untouched. A country it *did* ask about and could not
+    # reach is not evidence either: the old rows stand and the failure is
+    # logged. Only a query that succeeded speaks for its country.
     out = args.out or PROCESSED / f"wikidata_{args.level}.json"
-    covered = countries_in(records)
-    existing = countries_in(read_json(out, []) or [])
-    lost = existing - covered
+    previous = read_json(out, []) or []
+    answered = countries_in(records)
+    kept = [row for row in previous
+            if (row.get("country") or (row.get("id") or "")[:3]).upper()
+            not in answered]
+    merged = kept + records
+
+    # A thinner answer is still not an answer. A Wikidata timeout looks exactly
+    # like a country with no units, so the guard stays -- but it now asks the
+    # sharper question the merge makes available: did a country this run
+    # actually reached come back empty? A country that was asked for, answered,
+    # and lost every unit is a real disappearance and worth stopping for. One
+    # that simply could not be fetched is not, and no longer blocks the rest.
+    #
+    # The test is coverage, not row count: countries legitimately gain and lose
+    # units between runs, but a country should not stop being covered at all.
+    asked = {c.upper() for c in codes} - set(missing)
+    before = countries_in(previous)
+    lost = (before & asked) - answered
     if lost and not args.allow_shrink:
         raise SystemExit(
-            f"{len(missing)} of {len(codes)} queries failed, and writing this "
-            f"would drop {len(lost)} countries already in {out.name}: "
-            f"{', '.join(sorted(lost)[:20])}.\n"
-            "Wikidata's endpoint rate-limits and times out under load, so "
-            "retry rather than publishing the gap. Pass --allow-shrink if the "
-            "units really have gone away.")
+            f"{len(lost)} countries answered with no {args.level} units at all "
+            f"but are already in {out.name}: {', '.join(sorted(lost)[:20])}.\n"
+            "That is a real disappearance rather than a failed fetch, so "
+            "nothing is written. Pass --allow-shrink if the units really have "
+            "gone away.")
     if not records:
         raise SystemExit(
             f"every query failed ({', '.join(missing[:30])}); nothing written.")
 
-    write_json(out, records)
+    write_json(out, merged)
+    log(f"  {len(answered)} countries refreshed, {len(before - answered)} "
+        f"carried over, {len(merged)} records in {out.name}")
     if missing:
-        log(f"  no data for {len(missing)} countries: {', '.join(missing[:30])}")
+        log(f"  could not fetch {len(missing)}, previous rows kept: "
+            f"{', '.join(missing[:30])}")
     return 0
 
 
