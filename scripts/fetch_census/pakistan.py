@@ -1639,9 +1639,28 @@ def gb_mics_language(blob: bytes) -> tuple[dict[str, int], int]:
 
 # What the ten districts are missing, which is not what the territory's note
 # says and not what TERRITORY_GAP says either. Written out because "no district
-# table" is a conclusion, and the reader is owed the four measurements it rests
-# on: the Bureau's series, the census form's own categories, the territory's
-# booklet, and the two survey reports.
+# table" is a conclusion, and the reader is owed the measurements it rests on:
+# the Bureau's series, the census form's own categories, the territory's
+# booklet, the two survey reports, the Bureau's own index of what it has
+# published, and the territory government's site.
+#
+# The last two were asked after the rest, to answer the fair objection that
+# the search had only looked where a table was expected. The Bureau's site
+# runs on WordPress, whose REST API lists every file the office has uploaded:
+# asked for "gilgit", "baltistan", "mother tongue" and "language", it names no
+# PDF at all. Its census archive page parses to 709 links and not one of them
+# carries any of those words in its href or its text. And the territory's own
+# portal is a thin one -- 42 links, no statistics section, and a downloads page
+# that is policies, acts and gazette notifications.
+#
+# Two routes exist and are not taken. The MICS household microdata would cross
+# language against district directly, and the Sociolinguistic Survey of
+# Northern Pakistan mapped these valleys village by village; both sit behind
+# hosts that deliberately refuse this kind of client, and this project does not
+# dress itself up as a browser to get round that. They are named here because a
+# route closed by someone else's policy is a different fact from a figure that
+# was never collected, and a reader deciding whether to go and look deserves to
+# know which one this is.
 GB_TONGUE_DISTRICT_GAP = (
     "Gilgit-Baltistan's language is published for the territory and for none "
     "of its ten districts, and every route to a district figure has been "
@@ -1656,7 +1675,18 @@ GB_TONGUE_DISTRICT_GAP = (
     "territory: the GB MICS 2024-25 report gives language of the household "
     "head and district as two separate distributions rather than one crossed "
     "table, and the 2016-17 round's 398-page final report has no language "
-    "table at all. The territory's figure is not spread over the ten because "
+    "table at all. Nor has the Bureau published one anywhere else: its own "
+    "upload index names no file at all for 'gilgit', 'baltistan', 'mother "
+    "tongue' or 'language', its census archive page links 709 documents and "
+    "none of them carries any of those words, and the territory government's "
+    "own portal publishes policies and gazette notifications rather than "
+    "statistics. Two routes are known and not taken -- the MICS household "
+    "microdata, which would cross language against district directly, and the "
+    "Sociolinguistic Survey of Northern Pakistan, which mapped these valleys "
+    "village by village -- because both sit behind hosts that deliberately "
+    "refuse this kind of client, and this project does not disguise itself as "
+    "a browser to get round that. The territory's figure is not spread over "
+    "the ten because "
     "they differ sharply from it and from each other -- Balti is the language "
     "of Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer "
     "and Gilgit, Burushaski of Hunza and Nagar -- so an average put on all ten "

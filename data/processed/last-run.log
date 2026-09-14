@@ -1,4 +1,85 @@
-fetch_factbook: syncing source
-  cloning https://github.com/factbook/factbook.json (shallow)
-  260 Factbook entities
-  ERROR: run scripts/fetch_natural_earth.py first (it writes data/raw/codes/country_index.json).
+pakistan: Bureau of Statistics, Census 2023, Tables 9 and 11
+  Khyber Pakhtunkhwa
+    2,255,958 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_kp_districts.pdf
+    35 districts, 123 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 35 districts add up to the province
+    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
+    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
+    Table 11: 3,436,846 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_kp_districts.pdf
+    35 districts, 123 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 35 districts add up to the province
+    CHITRAL is one shape in the boundaries: summed 2 districts, 513,395 people
+    KOHISTAN is one shape in the boundaries: summed 3 districts, 914,214 people
+    and its 32 districts are Table 9's districts
+  Punjab
+    2,592,933 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_punjab_districts.pdf
+    36 districts, 145 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 36 districts add up to the province
+    Table 11: 3,538,413 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_punjab_districts.pdf
+    36 districts, 145 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 36 districts add up to the province
+    and its 36 districts are Table 9's districts
+  Sindh
+    2,399,774 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_sindh_districts.pdf
+    30 districts, 0 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 30 districts add up to the province
+    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
+    Table 11: 3,230,815 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_sindh_districts.pdf
+    30 districts, 0 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 30 districts add up to the province
+    KARACHI is one shape in the boundaries: summed 7 districts, 20,357,474 people
+    and its 24 districts are Table 9's districts
+  Balochistan
+    2,698,658 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_balochistan_districts.pdf
+    34 districts, 80 tehsils passed over
+    every district's religions sum to its own printed total
+    and the 34 districts add up to the province
+    Table 11: 3,596,501 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_balochistan_districts.pdf
+    34 districts, 80 tehsils passed over
+    every district's mother tongues sum to its own printed total
+    and the 34 districts add up to the province
+    and its 34 districts are Table 9's districts
+  Islamabad Capital Territory
+    36,012 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_9_islamabad.pdf
+    1 districts, 1 tehsils passed over
+    one district, and it is the territory: the table prints no separate territory row
+    every district's religions sum to its own printed total
+    and the 1 districts add up to the province
+    Table 11: 45,805 bytes from https://www.pbs.gov.pk/wp-content/uploads/census_tables/tables/table_11_islamabad.pdf
+    1 districts, 1 tehsils passed over
+    one district, and it is the territory: the table prints no separate territory row
+    every district's mother tongues sum to its own printed total
+    and the 1 districts add up to the province
+    and its 1 districts are Table 9's districts
+  Azad Jammu and Kashmir
+  Gilgit-Baltistan
+  6 districts say what their Other language holds, and 1 what their Other religion does
+  NOT PUBLISHED (enumerated apart from the census proper) -- Azad Jammu and Kashmir: table_9_ajk.pdf: HTTPError HTTP Error 404: Not Found; table_9_ajk_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  NOT PUBLISHED (enumerated apart from the census proper) -- Gilgit-Baltistan: table_9_gb.pdf: HTTPError HTTP Error 404: Not Found; table_9_gb_districts.pdf: HTTPError HTTP Error 404: Not Found; table_9.pdf: HTTPError HTTP Error 404: Not Found
+  Azad Jammu and Kashmir, from the territory's own yearbook
+    9,083,563 bytes from https://pndajk.gov.pk/uploadfiles/downloads/AJ&K%20Statistical%20Year%20Book%202023(1).pdf
+    Table 15.24 named on page 15 with no rows under it: the contents, not the table
+    Table 15.24 on page 209: 10 districts
+    all 7 columns sum to the printed AJ&K row
+    Poonch: religions sum to +54 against its own printed total, which the yearbook's own 15.23 also shows
+    Table 15.33 named on page 16 with no heading row under it: the contents, not the table
+    Table 15.33 on page 213: 10 districts, 8 languages
+    Mirpur: Table 15.33 sums to 97%, rescaled to 100 across its own languages
+    AJ&K languages: Pahari-Pothwari 68.8%, Gojri 18.6%, Kashmiri 4.6%, Punjabi 3.6%, Dogri 3.1%, Other languages 1.0%, Shina 0.2%, Kundal Shahi 0.1%
+  Gilgit-Baltistan, from the territory's own At a Glance
+    2,369,329 bytes from https://www.pnd.gog.pk/storage/downloads/AiRIlDEcscWPC1s58oXIgpjlVAS7jd-metaR0IgQVQgR2xhbmNlIDIwMjUuMS5wZGY=-.pdf
+    10 districts on page 3, summing to the territory's own printed 1,709,049
+  Gilgit-Baltistan's language, from the territory's own MICS
+    22,827,802 bytes from https://www.pnd.gog.pk/storage/downloads/oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf
+    Table SR.3.1 named on page 6 with no language block under it: the contents, not the table
+    Table SR.3.1 on page 57: 6 languages over 6,929 households, 2025
+  11 records declaring what is not published, rather than leaving the field empty
+  145 units say why their ethnicity field is empty, which is that the census does not ask it
+  wrote data/processed/pakistan_district.json (861 kB)
+  138 districts and 7 provinces
