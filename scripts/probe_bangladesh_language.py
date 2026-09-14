@@ -107,16 +107,28 @@ def workbook_sheets(url: str) -> None:
         book.close()
 
 
-def pdf_text(url: str) -> list[str]:
+# The 2011 series lives on the Bureau's legacy host, 203.112.218.65:8008,
+# which answers slowly enough that the default patience -- four tries of five
+# minutes -- can hold a runner for twenty minutes on one unreachable file.
+# A probe that never returns teaches nothing, so its patience is bounded and
+# settable: a slow host and an absent one are different findings, and the log
+# has to be able to say which.
+PDF_TIMEOUT = 120
+PDF_RETRIES = 2
+
+
+def pdf_text(url: str, timeout: int = PDF_TIMEOUT,
+             retries: int = PDF_RETRIES) -> list[str]:
     import pypdf
 
-    blob = http_get(url, binary=True, timeout=300)
+    blob = http_get(url, binary=True, timeout=timeout, retries=retries)
     log(f"  {len(blob):,} bytes")
     reader = pypdf.PdfReader(io.BytesIO(blob))
     return [(page.extract_text() or "") for page in reader.pages]
 
 
-def search_pdf(url: str, label: str) -> None:
+def search_pdf(url: str, label: str, timeout: int = PDF_TIMEOUT,
+               retries: int = PDF_RETRIES) -> None:
     """A whole PDF searched for language, and its table headings listed.
 
     Two different questions, and both have to be asked. A term search says
@@ -127,7 +139,7 @@ def search_pdf(url: str, label: str) -> None:
     log(f"\n=== {label} ===")
     log(f"  {url}")
     try:
-        pages = pdf_text(url)
+        pages = pdf_text(url, timeout=timeout, retries=retries)
     except Exception as exc:                                   # noqa: BLE001
         log(f"  UNREADABLE: {type(exc).__name__}: {exc}")
         return
@@ -205,6 +217,8 @@ def main() -> int:
     ap.add_argument("--skip-workbook", action="store_true")
     ap.add_argument("--skip-report", action="store_true")
     ap.add_argument("--skip-pages", action="store_true")
+    ap.add_argument("--pdf-timeout", type=int, default=PDF_TIMEOUT)
+    ap.add_argument("--pdf-retries", type=int, default=PDF_RETRIES)
     args = ap.parse_args()
 
     if not args.skip_workbook:
@@ -218,7 +232,8 @@ def main() -> int:
         for page in PAGES:
             links(page)
     for extra in args.pdf:
-        search_pdf(extra, f"extra: {extra.rsplit('/', 1)[-1]}")
+        search_pdf(extra, f"extra: {extra.rsplit('/', 1)[-1]}",
+                   timeout=args.pdf_timeout, retries=args.pdf_retries)
     return 0
 
 
