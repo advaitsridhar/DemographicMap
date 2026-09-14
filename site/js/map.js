@@ -26,6 +26,12 @@ window.WorldMap = (function () {
   let hoverId = null;
   let activeLevel = 0;
   let handlers = {};
+  // ISO3 codes whose second level covers only part of the country -- read from
+  // build.json, which the build writes from PARTIAL_LEVELS. Empty until it
+  // arrives, which is why the layer below filters to a literal list rather
+  // than being created conditionally: the style must not depend on the order
+  // a fetch happens to complete in.
+  let partialCountries = [];
   const colorState = new Map();  // level id -> Map(shapeID -> color)
 
   // When set, the viewer has chosen a level explicitly and zoom no longer picks
@@ -136,6 +142,26 @@ window.WorldMap = (function () {
     return expr;
   }
 
+  function partialFilter() {
+    return ["in", ["get", "shapeGroup"], ["literal", partialCountries.slice()]];
+  }
+
+  /* Tell the map which countries have a partial second level.
+   *
+   * Called once build.json is in. Kept in module state as well as applied, so
+   * a restyle (theme change) rebuilds the layer with the same list rather than
+   * silently dropping it.
+   */
+  function setPartialLevels(list) {
+    partialCountries = Array.isArray(list)
+      ? list.map((row) => (typeof row === "string" ? row : row && row.iso3))
+            .filter(Boolean)
+      : [];
+    if (map && map.getLayer("partial-land")) {
+      map.setFilter("partial-land", partialFilter());
+    }
+  }
+
   function baseStyle() {
     const css = getComputedStyle(document.documentElement);
     const water = css.getPropertyValue("--water").trim() || "#dfe6ee";
@@ -144,6 +170,38 @@ window.WorldMap = (function () {
 
     const sources = {};
     const layers = [{ id: "background", type: "background", paint: { "background-color": water } }];
+
+    /* Land that is inside no second-order unit.
+     *
+     * Every fill below paints a *unit*. Where a country's second level does
+     * not tile it there is no unit to paint, so the ground falls through to
+     * the background -- which is the water colour. Uruguay's second-order
+     * units are municipios, constituted around population centres rather than
+     * carved out of the map, and they cover 36.8% of the country; at
+     * second-order zoom the other 112,404 km2 was rendering as sea. A missing
+     * figure is a gap, but ground drawn as ocean is a false statement about
+     * the world, and the worse of the two.
+     *
+     * So the neutral land colour goes underneath those countries, and the
+     * ground reads as land with nothing known about it -- which is what it is.
+     * It deliberately carries no data colour: an unmapped stretch of Durazno
+     * must not borrow its department's figure, which would invent a
+     * measurement for a unit that does not exist.
+     *
+     * Filtered to the countries the build declares, so nothing else changes.
+     * The first-order geometry is the source because that is the level which
+     * does cover these countries, and it is drawn only from the zoom where the
+     * second-order layer starts to paint.
+     */
+    layers.push({
+      id: "partial-land",
+      type: "fill",
+      source: "admin1",
+      "source-layer": "admin1",
+      minzoom: layerMinZoom(LEVELS[2]),
+      paint: { "fill-color": land },
+      filter: partialFilter(),
+    });
 
     for (const level of LEVELS) {
       sources[level.id] = {
@@ -400,5 +458,5 @@ window.WorldMap = (function () {
 
   return { init, applyColors, repaintAll, select, fitBBox, visibleCountries, inView,
            getMap, getLevel, levelId, restyle, setPinnedLevel, getPinnedLevel,
-           LEVELS };
+           setPartialLevels, LEVELS };
 })();

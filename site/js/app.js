@@ -1176,6 +1176,14 @@
       refreshColors();
     }).catch(() => { /* picker stays label-local; the map still works */ });
 
+    // The map paints land under ground that is in no second-order unit, and the
+    // build stamp says which countries that is. Fire-and-forget: if it fails
+    // the map still draws, and Uruguay's interior is the only thing that looks
+    // wrong, which is what it looked like before.
+    window.DataStore.loadPartialLevels()
+      .then((rows) => window.WorldMap.setPartialLevels(rows))
+      .catch(() => { /* the stamp is optional; the map is not */ });
+
     window.WorldMap.init({
       onReady: () => refreshColors(),
       onLevelChange: (level) => {

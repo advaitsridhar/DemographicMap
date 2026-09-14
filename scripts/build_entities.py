@@ -2977,7 +2977,19 @@ def main() -> int:
             digest.update(path.read_bytes())
     write_json(out / "build.json",
                {"version": digest.hexdigest()[:12],
-                "adapters": adapter_digests()}, compact=True)
+                "adapters": adapter_digests(),
+                # The countries whose second level is an overlay rather than a
+                # partition, so the map can put land under the ground that is
+                # in no unit instead of letting it fall through to the water
+                # colour. Emitted from PARTIAL_LEVELS rather than repeated in
+                # JavaScript: the declaration and what the map draws from it
+                # must not be able to disagree.
+                "partial_levels": [
+                    {"iso3": iso3, "level": level,
+                     "units": entry["units"],
+                     "coverage_pct": entry["coverage_pct"]}
+                    for (iso3, level), entry in sorted(PARTIAL_LEVELS.items())
+                ]}, compact=True)
 
     log(f"  admin0 {len(admin0)} | admin1 {sum(len(v) for v in admin1_by_country.values())} "
         f"| admin2 {sum(len(v) for v in admin2_by_country.values())} | index {len(index)}")
