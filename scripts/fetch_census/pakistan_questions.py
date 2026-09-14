@@ -202,6 +202,49 @@ CANDIDATES = (
 )
 
 
+def spans(spec: str) -> list[int]:
+    """"14-16,21,163-166" as a list of page numbers, one-based."""
+    out: list[int] = []
+    for piece in spec.split(","):
+        piece = piece.strip()
+        if not piece:
+            continue
+        first, _, last = piece.partition("-")
+        out.extend(range(int(first), int(last or first) + 1))
+    return out
+
+
+def show(url: str, spec: str) -> None:
+    """Print named pages of a PDF in full.
+
+    A term sweep says which page carries a word and nothing about what the
+    sentence around it claims -- and the difference decides this whole
+    question. The National Census Report has "ethnicity" on one page of 234,
+    and whether that page is a table of Pakistan's ethnic groups or a glossary
+    entry explaining that the census records nationality instead is not
+    something a hit count can tell you.
+
+    It also guards the opposite error. Three of the Bureau's enumeration forms
+    answered zero for every term in this list, religion and mother tongue
+    included, which are certainly on the census form -- they are scans with no
+    text layer, and reading that as "the form does not ask" would be the worst
+    mistake available here.
+    """
+    status, blob, _ctype = get(url)
+    if status != 200 or blob[:4] != b"%PDF":
+        log(f"  {status}  not a PDF  {url}")
+        return
+    texts = pages(blob)
+    log(f"  {url}  ({len(texts)} pages)")
+    for number in spans(spec):
+        if not 1 <= number <= len(texts):
+            log(f"    page {number}: out of range")
+            continue
+        log(f"    ---- page {number} " + "-" * 50)
+        for line in (texts[number - 1] or "(no text layer)").splitlines():
+            log(f"    | {line}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(
         description=__doc__,
@@ -210,9 +253,20 @@ def main() -> int:
                     help="range of table numbers to ask the office for")
     ap.add_argument("--url", action="append", default=[],
                     help="an extra PDF to fetch and sweep for the terms")
+    ap.add_argument("--text", action="append", default=[],
+                    help="URL#pages, e.g. '...report.pdf#163-166': print "
+                         "those pages in full instead of counting words")
     args = ap.parse_args()
 
     log("pakistan_questions: what the 2023 census form asks, measured")
+    if args.text:
+        # Reading named pages is its own run: the table series above costs
+        # half an hour of the runner's time and answers a question already
+        # answered.
+        for spec in args.text:
+            url, _, want = spec.partition("#")
+            show(url, want or "1")
+        return 0
     table_series(args.tables)
 
     urls = list(catalogue())
