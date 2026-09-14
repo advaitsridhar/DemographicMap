@@ -252,7 +252,9 @@ def main() -> int:
     ap.add_argument("--tables", default="1-30",
                     help="range of table numbers to ask the office for")
     ap.add_argument("--url", action="append", default=[],
-                    help="an extra PDF to fetch and sweep for the terms")
+                    help="a PDF to fetch and sweep for the terms, on its own: "
+                         "given at least once, the table series and the "
+                         "catalogue are not asked for again")
     ap.add_argument("--text", action="append", default=[],
                     help="URL#pages, e.g. '...report.pdf#163-166': print "
                          "those pages in full instead of counting words")
@@ -266,6 +268,19 @@ def main() -> int:
         for spec in args.text:
             url, _, want = spec.partition("#")
             show(url, want or "1")
+        return 0
+    if args.url:
+        # Same reason: a named document to sweep is a follow-up question, and
+        # re-enumerating 26 table PDFs to ask it costs half an hour and
+        # answers nothing new.
+        log("term sweep")
+        for url in args.url:
+            status, blob, _ctype = get(url)
+            if status != 200 or blob[:4] != b"%PDF":
+                log(f"  {status}  not a PDF  {url}")
+                continue
+            log(f"  {url}")
+            sweep(url.rsplit("/", 1)[-1], pages(blob))
         return 0
     table_series(args.tables)
 
