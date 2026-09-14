@@ -23,6 +23,69 @@
   replaces disputed areas with polygons following US Department of State definitions.
   For single-country precision use gbOpen HPSCU (`--full-precision`).
 
+### A second level that is not a partition — Uruguay
+
+Reported as "nothing is visible at admin2 for Uruguay". It is not a build
+failure and not a join failure. Everything in the pipeline checks out:
+`site/data/admin2/URY.json` holds 124 records, all 124 ids match a CGAZ ADM2
+`shapeID`, all 124 parents resolve to a real Uruguayan department, and URY
+features decode out of `site/tiles/admin2.pmtiles` at z6, z7 and z8.
+
+What is true is geometric, and measured against the boundary files with an
+equal-area projection:
+
+| level | shapes | area | share of the country |
+| --- | --- | --- | --- |
+| ADM0 | 1 | 177,859 km² | — |
+| ADM1 departments | 19 | 177,753 km² | **99.9%** |
+| ADM2 municipios | 124 | 65,417 km² | **36.8%** |
+
+**Uruguay's second-order units are municipios, and municipios do not tile the
+country.** A municipio is constituted around a population centre rather than
+carved out of the map (Ley 18.567 of 2009), so the territory of a department
+lying in no municipio is administered by the departmental government directly.
+Flores is 0.0% covered, Florida 5.7%, Durazno 9.4%, Tacuarembó 11.8%.
+
+**Why that reads as invisibility rather than as a gap.** Above roughly z7.75
+the first-order layer has faded out and only the second-order layer paints.
+Every fill in the style paints a *unit*, so ground inside no unit fell through
+to the background — which is the water colour. Zoom into the interior and you
+did not see a country with missing data; you saw sea. A missing figure is a
+gap and the panel says so; ground drawn as ocean is a false statement about
+the world, and the worse of the two.
+
+Two changes, and they answer different questions:
+
+* `PARTIAL_LEVELS` in `scripts/build_entities.py` declares the level and why,
+  and the note reaches all 124 municipios and nothing else — not Uruguay's
+  departments, which do tile the country and do carry figures.
+  `check_level_coverage()` re-measures the declaration on every build and
+  stops it if the figure a reader is shown has drifted **in either direction**,
+  since a level that quietly became a tiling would leave a false sentence
+  standing. The same pass logs any country that develops this shape without a
+  declaration.
+* The map paints a flat land colour under the declared countries, above the
+  water background and below every data fill. It carries no feature-state: an
+  unmapped stretch of Durazno must not borrow its department's number, because
+  a unit that does not exist cannot be given a measurement. The country list
+  comes from `build.json`, emitted from `PARTIAL_LEVELS`, so the declaration
+  and what the map draws from it cannot disagree.
+
+**Uruguay is a category of one.** Ranking all 218 countries CGAZ draws
+second-order units for, by coverage lost between the first level and the
+second: Uruguay 63.2 points, Tonga 19.5 (a 683 km² archipelago whose first
+level is equally partial), Uganda 13.1 (Lake Victoria, which is water and
+*should* be drawn as water), Bahamas 6.4 (open sea between islands), Kuwait
+5.6. Nothing else exceeds three — which is why the land underlay is filtered
+to declared countries rather than applied globally.
+
+**It is recorded rather than repaired.** Inventing "resto del departamento"
+polygons would put units on the map that Uruguay does not have.
+
+Uruguay went unnoticed for as long as it did because a level with no polygons
+looks exactly like a level with no data, and the only thing separating them is
+a measurement nobody was taking.
+
 ### GADM — deliberately not used
 
 GADM's licence states the data "is freely available for academic and other
