@@ -1,68 +1,9 @@
-pakistan_questions: what the 2023 census form asks, measured
-WordPress upload catalogue
-  200  https://www.pbs.gov.pk/wp-json/wp/v2/media?search=gilgit&per_page=50&_fields=source_url%2Ctitle
-  200  https://www.pbs.gov.pk/wp-json/wp/v2/media?search=gilgit+baltistan&per_page=50&_fields=source_url%2Ctitle
-  200  https://www.pbs.gov.pk/wp-json/wp/v2/media?search=baltistan&per_page=50&_fields=source_url%2Ctitle
-  200  https://www.pbs.gov.pk/wp-json/wp/v2/media?search=mother+tongue&per_page=50&_fields=source_url%2Ctitle
-  200  https://www.pbs.gov.pk/wp-json/wp/v2/media?search=language&per_page=50&_fields=source_url%2Ctitle
-  200  https://www.pbs.gov.pk/wp-json/wp/v2/search?search=gilgit&per_page=30
-    page: 'PDHS' https://www.pbs.gov.pk/pdhs/
-    page: 'CensusArchive' https://www.pbs.gov.pk/censusarchive/
-    page: 'Social Statistics' https://www.pbs.gov.pk/docs/social-statistics/
-    page: 'Mouza Census' https://www.pbs.gov.pk/mouza-census/
-    page: 'HIES' https://www.pbs.gov.pk/hies/
-    page: 'Energy and Mining Statistics Section' https://www.pbs.gov.pk/docs/energy-and-mining-statistics-section/
-    page: 'Field Services' https://www.pbs.gov.pk/docs/field-services/
-    page: 'CONSULTATIVE MEETINGS WITH PROVINCES' https://www.pbs.gov.pk/consultative-meetings-with-provinces/
-    page: 'GIS' https://www.pbs.gov.pk/gis/
-    page: 'Census' https://www.pbs.gov.pk/census/
-    page: 'Sample Design' https://www.pbs.gov.pk/sample-design/
-    page: 'PSLM' https://www.pbs.gov.pk/pslm-3/
-    page: 'Labour Force Statistics' https://www.pbs.gov.pk/labour-force-statistics/
-    page: 'Field Services' https://www.pbs.gov.pk/field-services-landing-page/
-    page: 'Agriculture Census' https://www.pbs.gov.pk/agriculture-census/
-    page: 'Moza Census' https://www.pbs.gov.pk/moza-census/
-    page: 'Contact Us' https://www.pbs.gov.pk/contact-1/
-  200  https://www.pbs.gov.pk/wp-json/wp/v2/search?search=gilgit+baltistan&per_page=30
-    page: 'CensusArchive' https://www.pbs.gov.pk/censusarchive/
-    page: 'Social Statistics' https://www.pbs.gov.pk/docs/social-statistics/
-    page: 'Mouza Census' https://www.pbs.gov.pk/mouza-census/
-    page: 'HIES' https://www.pbs.gov.pk/hies/
-    page: 'Energy and Mining Statistics Section' https://www.pbs.gov.pk/docs/energy-and-mining-statistics-section/
-    page: 'Field Services' https://www.pbs.gov.pk/docs/field-services/
-    page: 'CONSULTATIVE MEETINGS WITH PROVINCES' https://www.pbs.gov.pk/consultative-meetings-with-provinces/
-    page: 'Census' https://www.pbs.gov.pk/census/
-    page: 'Sample Design' https://www.pbs.gov.pk/sample-design/
-    page: 'PSLM' https://www.pbs.gov.pk/pslm-3/
-    page: 'Field Services' https://www.pbs.gov.pk/field-services-landing-page/
-    page: 'Agriculture Census' https://www.pbs.gov.pk/agriculture-census/
-    page: 'Moza Census' https://www.pbs.gov.pk/moza-census/
-    page: 'PDHS' https://www.pbs.gov.pk/pdhs/
-    page: 'GIS' https://www.pbs.gov.pk/gis/
-    page: 'Labour Force Statistics' https://www.pbs.gov.pk/labour-force-statistics/
-  200  https://www.pbs.gov.pk/wp-json/wp/v2/search?search=baltistan&per_page=30
-    page: 'PDHS' https://www.pbs.gov.pk/pdhs/
-    page: 'CensusArchive' https://www.pbs.gov.pk/censusarchive/
-    page: 'Social Statistics' https://www.pbs.gov.pk/docs/social-statistics/
-    page: 'Mouza Census' https://www.pbs.gov.pk/mouza-census/
-    page: 'HIES' https://www.pbs.gov.pk/hies/
-    page: 'Energy and Mining Statistics Section' https://www.pbs.gov.pk/docs/energy-and-mining-statistics-section/
-    page: 'Field Services' https://www.pbs.gov.pk/docs/field-services/
-    page: 'CONSULTATIVE MEETINGS WITH PROVINCES' https://www.pbs.gov.pk/consultative-meetings-with-provinces/
-    page: 'GIS' https://www.pbs.gov.pk/gis/
-    page: 'Census' https://www.pbs.gov.pk/census/
-    page: 'Sample Design' https://www.pbs.gov.pk/sample-design/
-    page: 'PSLM' https://www.pbs.gov.pk/pslm-3/
-    page: 'Labour Force Statistics' https://www.pbs.gov.pk/labour-force-statistics/
-    page: 'Field Services' https://www.pbs.gov.pk/field-services-landing-page/
-    page: 'Agriculture Census' https://www.pbs.gov.pk/agriculture-census/
-    page: 'Moza Census' https://www.pbs.gov.pk/moza-census/
-  200  https://www.pbs.gov.pk/wp-json/wp/v2/search?search=mother+tongue&per_page=30
-    page: 'CensusArchive' https://www.pbs.gov.pk/censusarchive/
-    page: 'Census' https://www.pbs.gov.pk/census/
-  200  https://www.pbs.gov.pk/wp-json/wp/v2/search?search=language&per_page=30
-    page: 'PBS library' https://www.pbs.gov.pk/pbs-library/
-    page: 'HIES' https://www.pbs.gov.pk/hies/
-    page: 'Pakistan Social and Living Standard Measurement Survey (PSLM)' https://www.pbs.gov.pk/docs/pakistan-social-and-living-standard-measurement-survey-pslm/
-    page: 'Census' https://www.pbs.gov.pk/census/
-    page: 'PSLM' https://www.pbs.gov.pk/pslm-3/
+page: https://www.pbs.gov.pk/censusarchive/
+  665,960 bytes
+  0 distinct match(es) for 'gilgit,baltistan,northern,language,mother'
+page: https://www.pbs.gov.pk/pbs-library/
+  227,453 bytes
+  0 distinct match(es) for 'gilgit,baltistan,northern,language,mother'
+page: https://www.pbs.gov.pk/census/
+  2,085,135 bytes
+  0 distinct match(es) for 'gilgit,baltistan,northern,language,mother'
