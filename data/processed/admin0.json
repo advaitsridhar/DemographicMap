@@ -2504,17 +2504,11 @@
       }
     ],
     "religion_year": 2022,
-    "language": [
-      {
-        "group": "Bangla",
-        "pct": 98.8
-      },
-      {
-        "group": "other",
-        "pct": 1.2
-      }
-    ],
-    "language_year": 2011,
+    "language": {
+      "status": "not_available",
+      "note": "Bangladesh's census does not ask language. The 2022 questionnaire has 35 questions -- 15 in the household module and 20 in the individual module, which the National Report (Volume I) lists as age, sex, marital status, religion, disability, education, working status, training, mobile phone and internet use, banking inclusion and ethnic population -- and none of them is language. The census project's own long-questionnaire sample survey does ask it: the Report on Socio-Economic and Demographic Survey 2023 (BBS, June 2024, 553 pages) collects mother tongue in Module 4 and publishes Table 3.6, Population by Mother Tongue and Second Language, Division and Location. That table has two mother-tongue columns for the eight divisions, Bangla and Others, and no mother tongue but Bangla is named anywhere in its 553 pages. A named group against a residual is not a composition, and the survey publishes nothing below the division, so no zila has a mother-tongue figure from either round. The one Bangladeshi instrument that is district-representative asks the question and never tabulates it: MICS 2019 puts it to every household as question HC1B, \"What is the mother tongue/native language of the head of the household?\", and prints exactly two answers beside it, BANGLA and OTHER LANGUAGE. In 564 pages that phrase appears once, on the blank questionnaire, and the survey's own District Summary Findings Report does not contain the word language at all. So the limit is not only that the figures stop at the division: every Bangladeshi instrument that asks mother tongue codes it as one language against an unnamed rest, which is not a composition at any level. What the census asks about a minority's identity is ethnic group, under the Khudra Nri-goshthi Sangskritik Pratisthan Ain 2010."
+    },
+    "language_year": null,
     "ethnicity": [
       {
         "group": "Bengali",
@@ -24745,36 +24739,10 @@
       }
     ],
     "language_year": null,
-    "ethnicity": [
-      {
-        "group": "Punjabi",
-        "pct": 44.7
-      },
-      {
-        "group": "Pashtun",
-        "pct": 15.4
-      },
-      {
-        "group": "Sindhi",
-        "pct": 14.1
-      },
-      {
-        "group": "Saraiki",
-        "pct": 8.4
-      },
-      {
-        "group": "Muhajirs",
-        "pct": 7.6
-      },
-      {
-        "group": "Baloch",
-        "pct": 3.6
-      },
-      {
-        "group": "other",
-        "pct": 6.3
-      }
-    ],
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups vector for Pakistan is the 1998 census's mother-tongue shares relabelled (Pashto as Pashtun, Urdu as Muhajir), so it is not used here: those figures are on the language field, which is the question that was actually asked."
+    },
     "ethnicity_year": null,
     "sources": [
       {

@@ -273,6 +273,173 @@ ADAPTER_GAPS: dict[str, str] = {
 # one, because it stops anyone looking again.
 SHAPE_GAPS: dict[str, dict[str, str]] = {}
 
+
+# ---------------------------------------------------------------------------
+# Levels that are an overlay on a country rather than a partition of it.
+#
+# The three tables above are all about *data*: who publishes what, and which
+# polygon an adapter must not fill. This one is about *ground*. A level is
+# normally a tiling -- every square metre of the country is inside exactly one
+# unit -- and the map is drawn on that assumption: above roughly z7.75 the
+# first-order layer has faded out and only the second-order layer paints, so
+# ground that is inside no second-order unit is painted with the background,
+# which is the sea colour. A country whose second level does not tile it
+# therefore does not look like a country with a gap in its data. It looks like
+# a country that is not there.
+#
+# Uruguay is the one country in CGAZ where that happens at scale, and it is not
+# a defect in the boundary file. Uruguay's second-order units are municipios,
+# the third tier of government created by the 2009 decentralisation law (Ley
+# 18.567), and a municipio is constituted around a population centre rather
+# than carved out of the map: the territory of a department that lies in no
+# municipio is administered by the departmental government directly. So the
+# municipios are real, correctly drawn, and cover 36.8% of the country.
+# 112,404 km2 of Uruguay -- 63.2%, more than the area of Bulgaria -- is inside
+# no municipio, and at second-order zoom it renders as sea. Flores department
+# is 0.0% covered, Florida 5.7%, Durazno 9.4%, Tacuarembo 11.8%.
+#
+# Measured across all 218 countries CGAZ draws second-order units for, Uruguay
+# is alone by a factor of three. Ranking by how much coverage is lost between
+# the first and second level: Uruguay 63.2 points, Tonga 19.5 (a 683 km2
+# archipelago), Uganda 13.1 (Lake Victoria, which is water and *should* be
+# drawn as water), Bahamas 6.4 (sea between islands), Kuwait 5.6. Nothing else
+# exceeds 3. See check_level_coverage below, which re-measures this on every
+# build so the claim cannot go stale, and which reports any country that
+# develops the same shape without a declaration here.
+#
+# This is recorded rather than repaired. Inventing polygons for "resto del
+# departamento" would put a unit on the map that Uruguay does not have, and a
+# unit that does not exist cannot be given data that does not exist for it.
+# A stated absence is the smaller lie: none.
+PARTIAL_LEVELS: dict[tuple[str, str], dict[str, Any]] = {
+    ("URY", "admin2"): {
+        "units": 124,
+        "coverage_pct": 36.8,
+        "note": "Uruguay's second-order units are municipios, and they do not "
+                "cover the country. A municipio is constituted around a "
+                "population centre rather than carved out of the map (Ley "
+                "18.567 of 2009), so the ground of a department that lies in "
+                "no municipio is administered by the departmental government "
+                "directly and is not part of any second-order unit. "
+                "geoBoundaries CGAZ draws 124 municipios covering 36.8% of "
+                "Uruguay; the remaining 112,404 km2 -- 63.2% of the country, "
+                "including almost all of Flores, Florida, Durazno and "
+                "Tacuarembo -- is inside no second-order unit and is blank at "
+                "this level because there is nothing there to draw. Uruguay's "
+                "19 departments are the level that does cover it.",
+    },
+}
+
+# How far a declared coverage figure may drift from the measured one before the
+# build stops. The declaration is a sentence a reader is asked to believe, and
+# boundary files change under it; a point of slack absorbs a redrawn coastline
+# without absorbing a level that has quietly become a tiling (or stopped being
+# one).
+COVERAGE_TOLERANCE = 1.0
+
+# The shape that makes a level worth declaring: the level above tiles the
+# country and this one does not, by a margin no redrawn border explains. Set
+# below Tonga's 19.5-point drop -- the largest undeclared case measured -- so a
+# new one is reported, and well above the 3-point band every other country sits
+# in, so ordinary coastline noise is not.
+COVERAGE_DROP_REPORTABLE = 15.0
+
+
+def _coverage(shapes: dict[str, list[dict[str, Any]]]) -> dict[str, dict[str, float]]:
+    """Per-country share of the ADM0 polygon that each level's units cover.
+
+    Areas are the planar degree-squared areas read_shapes already computed, not
+    projected ones. The answer wanted is a ratio between two levels of the same
+    country, so the projection's distortion is common to numerator and
+    denominator and divides out: measured against an equal-area projection,
+    Uruguay comes to 36.8% either way.
+    """
+    totals: dict[str, dict[str, float]] = {}
+    for level in ("ADM0", "ADM1", "ADM2"):
+        sums: dict[str, float] = defaultdict(float)
+        for row in shapes.get(level, []):
+            sums[row["group"]] += row.get("area") or 0.0
+        totals[level] = sums
+    out: dict[str, dict[str, float]] = {}
+    for iso3, whole_area in totals["ADM0"].items():
+        if whole_area <= 0:
+            continue
+        out[iso3] = {
+            "adm1": totals["ADM1"].get(iso3, 0.0) / whole_area * 100,
+            "adm2": totals["ADM2"].get(iso3, 0.0) / whole_area * 100,
+        }
+    return out
+
+
+def check_level_coverage(shapes: dict[str, list[dict[str, Any]]]) -> None:
+    """Re-measure every declared partial level, and report undeclared ones.
+
+    Two directions, for the same reason check_shape_gaps has two. A declaration
+    that has drifted is worse than no declaration: it is a specific number in
+    front of a reader, and a reader who checks it is the person this map is
+    for. And a country that has newly become partial is the bug this table was
+    written to make visible -- Uruguay went unnoticed because a level with no
+    polygons looks exactly like a level with no data, and the only difference
+    is a measurement nobody was taking.
+
+    A drifted declaration stops the build. A newly partial country is logged:
+    it is a fact about an upstream boundary file that this build cannot fix,
+    and refusing to write 218 countries because geoBoundaries redrew a
+    nineteenth would be the wrong trade.
+    """
+    if not (shapes.get("ADM0") and shapes.get("ADM2")):
+        return
+    coverage = _coverage(shapes)
+    counts: dict[str, int] = defaultdict(int)
+    for row in shapes.get("ADM2", []):
+        counts[row["group"]] += 1
+
+    problems: list[str] = []
+    for (iso3, level), declared in PARTIAL_LEVELS.items():
+        if level != "admin2":
+            continue
+        if iso3 not in coverage:
+            # A run that carries neither the country's outline nor any of its
+            # second-order units is not a run this declaration is about --
+            # that is what a caller passing a subset of shapes looks like, and
+            # it is not evidence of anything. A country that has kept its
+            # outline and lost its units is a different matter, and the unit
+            # count below is what catches it.
+            if not counts.get(iso3):
+                continue
+            problems.append(f"{iso3}: declared a partial {level}, and the "
+                            f"boundary file draws {counts[iso3]} second-order "
+                            f"units for it but no country polygon, so there is "
+                            f"nothing to measure the coverage against")
+            continue
+        measured = coverage[iso3]["adm2"]
+        if abs(measured - declared["coverage_pct"]) > COVERAGE_TOLERANCE:
+            problems.append(
+                f"{iso3} {level}: declared {declared['coverage_pct']}% of the "
+                f"country covered, boundary file now gives {measured:.1f}% -- "
+                f"the note a reader sees states the old figure")
+        if counts.get(iso3, 0) != declared["units"]:
+            problems.append(
+                f"{iso3} {level}: declared {declared['units']} units, boundary "
+                f"file draws {counts.get(iso3, 0)}")
+    if problems:
+        raise SystemExit(
+            "build_entities: a partial-level declaration no longer matches the "
+            "boundaries it describes, so nothing is being written:\n  - "
+            + "\n  - ".join(problems))
+
+    for iso3, pct in sorted(coverage.items()):
+        if (iso3, "admin2") in PARTIAL_LEVELS:
+            continue
+        if not counts.get(iso3):
+            continue
+        if pct["adm1"] - pct["adm2"] >= COVERAGE_DROP_REPORTABLE and pct["adm2"] < 90:
+            log(f"  note: {iso3} second-order units cover {pct['adm2']:.1f}% of "
+                f"the country where its first-order units cover "
+                f"{pct['adm1']:.1f}% -- ground in no second-order unit is drawn "
+                f"as sea at that zoom. If that is how the country is governed, "
+                f"declare it in PARTIAL_LEVELS so the map says so.")
+
 EUROSTAT_HINT = ("Eurostat NUTS population and median age: "
                  "python -m scripts.fetch_census.eurostat --level nuts3")
 EUROSTAT_COUNTRIES = {
@@ -2030,6 +2197,15 @@ def mark_disputed_or_hint(entity: dict[str, Any], group: str) -> None:
     A disputed polygon gets no adapter hint: no statistical agency publishes
     demographics for it, so pointing at one would be a false promise.
     """
+    partial = PARTIAL_LEVELS.get((group, entity.get("level")))
+    if partial and not is_disputed(group):
+        # Before the branch below and outside it: this says why the *level*
+        # looks the way it does, which is a different question from why this
+        # unit is empty, and the unit still wants its adapter hint. A reader
+        # who has just watched two thirds of Uruguay render as sea is owed the
+        # first answer whether or not there is data in the panel.
+        entity["note"] = partial["note"]
+
     if is_disputed(group):
         entity["disputed"] = True
         entity["note"] = DISPUTED_NOTE
@@ -2306,6 +2482,10 @@ def main() -> int:
     shapes = {level: read_shapes(level) for level in args.levels}
     if "ADM1" in shapes and "ADM2" in shapes:
         link_adm2_parents(shapes["ADM1"], shapes["ADM2"])
+    # Before anything is joined: this is a claim about the boundary files alone,
+    # and it is the claim that explains a level looking empty for a reason no
+    # amount of data would fix.
+    check_level_coverage(shapes)
 
     log("build_entities: reading attributes")
     # Several Factbook entities can share one ISO3 (Australia and the Coral Sea
@@ -2797,7 +2977,19 @@ def main() -> int:
             digest.update(path.read_bytes())
     write_json(out / "build.json",
                {"version": digest.hexdigest()[:12],
-                "adapters": adapter_digests()}, compact=True)
+                "adapters": adapter_digests(),
+                # The countries whose second level is an overlay rather than a
+                # partition, so the map can put land under the ground that is
+                # in no unit instead of letting it fall through to the water
+                # colour. Emitted from PARTIAL_LEVELS rather than repeated in
+                # JavaScript: the declaration and what the map draws from it
+                # must not be able to disagree.
+                "partial_levels": [
+                    {"iso3": iso3, "level": level,
+                     "units": entry["units"],
+                     "coverage_pct": entry["coverage_pct"]}
+                    for (iso3, level), entry in sorted(PARTIAL_LEVELS.items())
+                ]}, compact=True)
 
     log(f"  admin0 {len(admin0)} | admin1 {sum(len(v) for v in admin1_by_country.values())} "
         f"| admin2 {sum(len(v) for v in admin2_by_country.values())} | index {len(index)}")

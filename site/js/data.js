@@ -27,6 +27,10 @@ window.DataStore = (function () {
   const listeners = new Set();
   let coverage = null;
   let groups = null;
+  // Countries whose second level covers only part of the country, from the
+  // build stamp. The map needs it to know where to put land under ground that
+  // is in no unit.
+  let partialLevels = [];
 
   function on(fn) { listeners.add(fn); return () => listeners.delete(fn); }
   function emit(event) { listeners.forEach((fn) => { try { fn(event); } catch (e) { console.error(e); } }); }
@@ -36,7 +40,11 @@ window.DataStore = (function () {
     if (version) return version;
     try {
       const res = await fetch(BASE + "build.json", { cache: "no-store" });
-      if (res.ok) version = (await res.json()).version || "";
+      if (res.ok) {
+        const stamp = await res.json();
+        version = stamp.version || "";
+        if (Array.isArray(stamp.partial_levels)) partialLevels = stamp.partial_levels;
+      }
     } catch (err) {
       // No stamp is survivable -- requests just fall back to HTTP caching.
       console.warn("build stamp unavailable", err);
@@ -168,7 +176,14 @@ window.DataStore = (function () {
   function isLoaded(iso3, level) { return loaded[level === 1 ? "admin1" : "admin2"].has(iso3); }
   function all() { return byId; }
 
-  return { loadCountries, loadLevel, ensureLoaded, loadCoverage, loadGroups,
+  /** The declared partial levels, once the build stamp has been read. */
+  async function loadPartialLevels() {
+    await loadVersion();
+    return partialLevels;
+  }
+
+  return { loadPartialLevels,
+           loadCountries, loadLevel, ensureLoaded, loadCoverage, loadGroups,
            get, country, children, countries, isLoaded, all, on, url,
            loadVersion };
 })();

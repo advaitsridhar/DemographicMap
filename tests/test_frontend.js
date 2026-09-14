@@ -217,6 +217,89 @@ function aLeaderIsOnlyNamedWhenNothingMissingCouldBeatIt() {
     M.METRICS.largest_share.display(sliver, { field: "religion" }), "—");
 }
 
+/* Ground in no second-order unit must read as land, not as ocean.
+ *
+ * Uruguay's second-order units are municipios, and municipios do not tile the
+ * country: 124 of them cover 36.8% of it. Every fill in the style paints a
+ * *unit*, so the other 63.2% had no polygon over it and fell through to the
+ * background -- which is the water colour. Zoomed past the point where the
+ * first-order layer has faded out, two thirds of Uruguay was drawn as sea.
+ *
+ * A missing figure is a gap and the map says so in the panel. Ground drawn as
+ * ocean is a different thing: a false statement about the world, made by the
+ * map itself, and the one this project ranks as worse.
+ *
+ * Three things are asserted, because the layer is only right if all three
+ * hold: it sits under every data fill (or it would paint over real figures),
+ * it carries no data colour (or an unmapped stretch of Durazno would borrow
+ * its department's number), and it is filtered rather than global (or every
+ * country's lakes and coastline would silently become land).
+ */
+function groundInNoUnitReadsAsLandRatherThanSea() {
+  const layers = new Map();
+  const order = [];
+  const filters = new Map();
+  const map = {
+    getLayer: (id) => layers.get(id),
+    setFilter: (id, filter) => { filters.set(id, filter); },
+    getStyle: () => ({ layers: order.map((id) => layers.get(id)) }),
+    setLayoutProperty: () => {}, setLayerZoomRange: () => {},
+    setPaintProperty: () => {}, setMinZoom: () => {}, getZoom: () => 8,
+    setZoom: () => {}, easeTo: () => {},
+    once: (event, callback) => { if (event === "idle") callback(); },
+    setStyle: (style) => {
+      layers.clear();
+      order.length = 0;
+      style.layers.forEach((layer) => { layers.set(layer.id, layer); order.push(layer.id); });
+    },
+  };
+  const context = vm.createContext({
+    window: {}, document: { documentElement: {} }, console,
+    getComputedStyle: () => ({ getPropertyValue: (name) => (name === "--land-base" ? "#eceae4" : "") }),
+  });
+  const injectable = source("map.js").replace(
+    "return { init, applyColors",
+    "return { _setMapForTest: value => { map = value; }, init, applyColors",
+  );
+  vm.runInContext(injectable, context);
+  const worldMap = context.window.WorldMap;
+  worldMap._setMapForTest(map);
+  worldMap.restyle();
+
+  const land = layers.get("partial-land");
+  assert.ok(land, "the style must carry a land layer for partial levels");
+
+  // Under every fill that paints a unit, and over the water background.
+  assert.ok(order.indexOf("partial-land") > order.indexOf("background"),
+            "land must sit above the water background");
+  for (const id of ["admin0-fill", "admin1-fill", "admin2-fill"]) {
+    assert.ok(order.indexOf("partial-land") < order.indexOf(id),
+              `land must sit below ${id} so it never covers a real figure`);
+  }
+
+  // A flat colour. No feature-state, so no unit's value leaks onto ground
+  // that is in no unit.
+  assert.strictEqual(land.paint["fill-color"], "#eceae4",
+                     "the land underlay carries no data colour");
+
+  // Nothing until the build says which countries, and only those countries.
+  const plain = (value) => JSON.parse(JSON.stringify(value));
+  assert.deepStrictEqual(plain(land.filter),
+                         ["in", ["get", "shapeGroup"], ["literal", []]],
+                         "no country is land-backed before the build stamp arrives");
+
+  worldMap.setPartialLevels([{ iso3: "URY", level: "admin2", coverage_pct: 36.8 }]);
+  assert.deepStrictEqual(plain(filters.get("partial-land")),
+                         ["in", ["get", "shapeGroup"], ["literal", ["URY"]]],
+                         "only the declared countries get land under them");
+
+  // And a restyle (the theme toggle) must not quietly drop it again.
+  worldMap.restyle();
+  assert.deepStrictEqual(plain(layers.get("partial-land").filter),
+                         ["in", ["get", "shapeGroup"], ["literal", ["URY"]]],
+                         "a theme change must not lose the declaration");
+}
+
 (async () => {
   await concurrentLoadsAreIndexedOnce();
   await deepSearchWaitsForTheSecondShard();
@@ -224,5 +307,6 @@ function aLeaderIsOnlyNamedWhenNothingMissingCouldBeatIt() {
   mapStateSurvivesThemeChangesAndUsesRepresentativePoints();
   factTilesCarryTheirStatedReason();
   aLeaderIsOnlyNamedWhenNothingMissingCouldBeatIt();
+  groundInNoUnitReadsAsLandRatherThanSea();
   console.log("frontend regression tests passed");
 })().catch((error) => { console.error(error); process.exitCode = 1; });

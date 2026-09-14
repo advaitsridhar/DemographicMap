@@ -128,6 +128,21 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "DEU": {
         "ethnicity": "Germany does not collect ethnicity. The census records citizenship and migration background; religion comes from church-tax registration, not fine-grained self-ID.",
     },
+    # Pakistan is here because the country row was contradicting its own
+    # districts. All 145 Pakistani units say the census asks no ethnicity
+    # question -- read out of the Bureau's own National Census Report 2023 and
+    # its final list of census tables -- while PAK's admin0 record carried a
+    # seven-group "ethnicity" composition with no year and no note.
+    #
+    # That composition is the Factbook's Ethnic groups vector, and for Pakistan
+    # it is the 1998 census's *mother tongue* shares with the labels swapped:
+    # Pashto printed as Pashtun, Urdu as Muhajir. The map already carries those
+    # figures, correctly, on the language field. Publishing them again under
+    # ethnicity is the mis-match this project treats as worse than a gap --
+    # invisible, because it looks like an answer.
+    "PAK": {
+        "ethnicity": "Pakistan's census does not ask ethnicity. The Bureau of Statistics' National Census Report 2023 lists what the 7th Population and Housing Census collected -- age, mother tongue, religion, disability, migration, literacy, employment and nationality -- and ethnicity is not among the eight; the report adds that nationality \"can be called and understood as citizenship, or more generally as subject or belonging to a sovereign state, and not as ethnicity\". The Factbook's ethnic-groups vector for Pakistan is the 1998 census's mother-tongue shares relabelled (Pashto as Pashtun, Urdu as Muhajir), so it is not used here: those figures are on the language field, which is the question that was actually asked.",
+    },
     # Measured against e-Stat's catalogue rather than against the census
     # questionnaire alone -- see docs/SOURCES.md. The catalogue is the reason
     # each of these three is a declaration and not a gap: the API was asked, it
@@ -205,7 +220,19 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
                     "mother tongue but Bangla is named anywhere in its 553 pages. "
                     "A named group against a residual is not a composition, and "
                     "the survey publishes nothing below the division, so no zila "
-                    "has a mother-tongue figure from either round. What the census asks "
+                    "has a mother-tongue figure from either round. The one "
+                    "Bangladeshi instrument that is district-representative asks "
+                    "the question and never tabulates it: MICS 2019 puts it to "
+                    "every household as question HC1B, \"What is the mother "
+                    "tongue/native language of the head of the household?\", and "
+                    "prints exactly two answers beside it, BANGLA and OTHER "
+                    "LANGUAGE. In 564 pages that phrase appears once, on the blank "
+                    "questionnaire, and the survey's own District Summary Findings "
+                    "Report does not contain the word language at all. So the limit "
+                    "is not only that the figures stop at the division: every "
+                    "Bangladeshi instrument that asks mother tongue codes it as one "
+                    "language against an unnamed rest, which is not a composition at "
+                    "any level. What the census asks "
                     "about a minority's identity is ethnic group, under the Khudra "
                     "Nri-goshthi Sangskritik Pratisthan Ain 2010.",
         },

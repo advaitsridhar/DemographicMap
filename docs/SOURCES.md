@@ -23,6 +23,69 @@
   replaces disputed areas with polygons following US Department of State definitions.
   For single-country precision use gbOpen HPSCU (`--full-precision`).
 
+### A second level that is not a partition — Uruguay
+
+Reported as "nothing is visible at admin2 for Uruguay". It is not a build
+failure and not a join failure. Everything in the pipeline checks out:
+`site/data/admin2/URY.json` holds 124 records, all 124 ids match a CGAZ ADM2
+`shapeID`, all 124 parents resolve to a real Uruguayan department, and URY
+features decode out of `site/tiles/admin2.pmtiles` at z6, z7 and z8.
+
+What is true is geometric, and measured against the boundary files with an
+equal-area projection:
+
+| level | shapes | area | share of the country |
+| --- | --- | --- | --- |
+| ADM0 | 1 | 177,859 km² | — |
+| ADM1 departments | 19 | 177,753 km² | **99.9%** |
+| ADM2 municipios | 124 | 65,417 km² | **36.8%** |
+
+**Uruguay's second-order units are municipios, and municipios do not tile the
+country.** A municipio is constituted around a population centre rather than
+carved out of the map (Ley 18.567 of 2009), so the territory of a department
+lying in no municipio is administered by the departmental government directly.
+Flores is 0.0% covered, Florida 5.7%, Durazno 9.4%, Tacuarembó 11.8%.
+
+**Why that reads as invisibility rather than as a gap.** Above roughly z7.75
+the first-order layer has faded out and only the second-order layer paints.
+Every fill in the style paints a *unit*, so ground inside no unit fell through
+to the background — which is the water colour. Zoom into the interior and you
+did not see a country with missing data; you saw sea. A missing figure is a
+gap and the panel says so; ground drawn as ocean is a false statement about
+the world, and the worse of the two.
+
+Two changes, and they answer different questions:
+
+* `PARTIAL_LEVELS` in `scripts/build_entities.py` declares the level and why,
+  and the note reaches all 124 municipios and nothing else — not Uruguay's
+  departments, which do tile the country and do carry figures.
+  `check_level_coverage()` re-measures the declaration on every build and
+  stops it if the figure a reader is shown has drifted **in either direction**,
+  since a level that quietly became a tiling would leave a false sentence
+  standing. The same pass logs any country that develops this shape without a
+  declaration.
+* The map paints a flat land colour under the declared countries, above the
+  water background and below every data fill. It carries no feature-state: an
+  unmapped stretch of Durazno must not borrow its department's number, because
+  a unit that does not exist cannot be given a measurement. The country list
+  comes from `build.json`, emitted from `PARTIAL_LEVELS`, so the declaration
+  and what the map draws from it cannot disagree.
+
+**Uruguay is a category of one.** Ranking all 218 countries CGAZ draws
+second-order units for, by coverage lost between the first level and the
+second: Uruguay 63.2 points, Tonga 19.5 (a 683 km² archipelago whose first
+level is equally partial), Uganda 13.1 (Lake Victoria, which is water and
+*should* be drawn as water), Bahamas 6.4 (open sea between islands), Kuwait
+5.6. Nothing else exceeds three — which is why the land underlay is filtered
+to declared countries rather than applied globally.
+
+**It is recorded rather than repaired.** Inventing "resto del departamento"
+polygons would put units on the map that Uruguay does not have.
+
+Uruguay went unnoticed for as long as it did because a level with no polygons
+looks exactly like a level with no data, and the only thing separating them is
+a measurement nobody was taking.
+
 ### GADM — deliberately not used
 
 GADM's licence states the data "is freely available for academic and other
@@ -1437,6 +1500,78 @@ The other half of the old plan is answered too:
 was the second route named here, to say whether the Census Bureau's workbook
 had been reissued off the 2023 round. It does not need running to settle the
 question the 2023 tables now answer directly.
+
+### Pakistan: ethnicity, and the difference between two kinds of empty
+
+All 145 Pakistani records — 7 provinces and 138 districts — carried a bare
+`not_available` on ethnicity: a status with no reason, which on the map is an
+empty panel that reads as "nobody ran the adapter". Worse, `not_available` is
+a specific claim — *asked, and not published at this level* — and it was the
+wrong one.
+
+**Pakistan's census does not ask ethnicity.** Measured against the Bureau's
+own publications rather than recalled:
+
+* **The official table list.** *List of Statistical Tables of Population and
+  Housing Census-2023 (Updated & Final)* runs Tables 1–26 and 31–34, under
+  Basic / Literacy and Education / Economic Active Population / Disabled
+  Population / Migration / Housing Census / Listing Information. All 26
+  district files were fetched and their printed titles read. The only three
+  tables about who a person is are **Table 9 religion, Table 10 nationality,
+  Table 11 mother tongue.**
+* **National Census Report 2023, §4.1.2** (p. 124) lists what the census
+  collected: age, mother tongue, religion, disability, migration, literacy,
+  employment and nationality. Eight characteristics; ethnicity is not one.
+* **§4.4** (p. 138), repeated in the District Census Reports, is PBS ruling out
+  its own nearest-looking variable in its own words: nationality *"can be
+  called and understood as citizenship, or more generally as subject or
+  belonging to a sovereign state, **and not as ethnicity**."*
+* **"Scheduled Castes" is not the exception it looks like.** It is a category
+  of the *religion* question in Table 9, counted apart from Hindu, not an
+  enumeration of caste.
+
+So the status is `not_collected`, and all 145 records now carry it with a
+stated reason naming the report, the section and the table list.
+
+**Mother tongue was not moved into the field.** A language is not an
+ethnicity, and republishing Table 11 under the ethnicity heading would be the
+mis-match this project ranks below a gap. The note instead points the reader
+at the language field beside it and names that unit's leading tongue — Karachi
+"Urdu leads at 50.7%", Khyber Pakhtunkhwa "Pushto leads at 81.0%" — with a
+variant carrying no figure for units that have no language composition.
+
+**One honest negative.** The three enumeration-form PDFs PBS publishes scored
+zero for *every* term, religion and mother tongue included, which are
+certainly on the form. They are scans with no text layer. Reading that silence
+as "not asked" would have been the worst mistake available here; the claim
+rests on the report and the table list instead.
+
+#### The country row was contradicting the districts
+
+`admin0.json` gave PAK a seven-group ethnicity composition — Punjabi 44.7,
+Pashtun 15.4, Sindhi 14.1, Saraiki 8.4, Muhajirs 7.6, Baloch 3.6 — undated and
+unsourced, while all 145 units beneath it said the question is never asked.
+
+That vector is the Factbook's, and for Pakistan it is **the 1998 census's
+mother-tongue shares with the labels swapped**: Pashto printed as Pashtun,
+Urdu as Muhajir. The map already carries those figures correctly on the
+language field, where the same country row gives Pashto 18.2% beside the
+ethnicity row's Pashtun 15.4% — two numbers for one question asked once.
+
+PAK is therefore declared in `NOT_COLLECTED_POLICY`, which `fetch_factbook`
+consults *before* it parses anything, so the declaration is the answer for
+that field and the measured figures keep the field they belong to.
+
+#### Gilgit-Baltistan and Azad Jammu & Kashmir, checked while here
+
+AJ&K carries a language composition on both its rows (Pahari-Pothwari 68.8,
+Gojri 18.6, Kashmiri 4.6, Punjabi 3.6); GB's territory row carries one (Shina
+48.1, Balti 29.2, Burushaski 12.3, Khowar 5.2). **GB's 10 districts remain a
+stated gap**, and the search behind it is exhausted rather than untried: no
+Table 11 under any filename, no language table in *GB At a Glance 2025*, and
+GB-MICS 2024-25 publishes language of household head and district as two
+uncrossed distributions. A district-level GB language figure is a separate
+investigation, not a loose end.
 
 ### Pakistan's last three divisions: a filename, a yearbook, and one real absence
 
@@ -2988,11 +3123,55 @@ inside it belong to all four.
 > fifty-one categories behind that total only by division, so which peoples
 > these are is on the division above this one, not here.
 
-**Language does not follow.** The same question was put to the mother-tongue
-source and the answer is no: SDS 2023 Table 3.6 is published by division and
-the report's list of tables says "Division" sixty-six times and "District" not
-once. There is no district figure to difference against, so the zilas keep
-their language gap and its stated reason.
+**Language does not follow**, and the reason is sharper than the geography.
+See the sweep below.
+
+#### Why there is no zila language, re-argued from five publications
+
+"SDS 2023 stops at the division" was one source's habit, not a fact about
+Bangladesh. It was treated as a hypothesis and attacked on five routes, all
+fetched on the runner:
+
+1. **The Census 2022 admin-2 workbook** (HDX, 1,213,869 bytes) — **all 42
+   sheets** enumerated by name with their header rows, not just the three the
+   adapter reads. Dwelling type, household type, sex and location, marital
+   status, religion, growth and sex ratio, disability, literacy ×3, students,
+   working status, type of work, sector, NEET, mobile phone, internet,
+   financial account, mobile banking, ethnic population, `Population_District`,
+   returned migrants and 14 housing sheets. **None is language.** The two
+   sheets matching "Bangla" carry *Bangladeshi National* — citizenship.
+2. **The Census 2022 National Report**, 520 pages. `mother tongue`: **0
+   pages**. `language`: 1 page. `bilingual`, `spoken`, `speak`, `dialect`,
+   `linguistic`: 0. Of its **239 distinct table headings, 109 name a Division
+   and 46 a District — not one names a language.**
+3. **2011 Zila Report, Rangamati** (470 pp), chosen as the most linguistically
+   various district. `mother tongue`: 0 pages. 49 table headings, none a
+   language.
+4. **2011 Community Report, Rangpur** (694 pp) — 32 table headings, none a
+   mother tongue.
+5. **MICS 2019** (564 pp), and this is the sharpest finding. MICS **is**
+   district-representative and it **does ask**: question **HC1B**, *"What is
+   the mother tongue/native language of the head of the household?"*, with
+   exactly two printed answers, **BANGLA** and **OTHER LANGUAGE**. The phrase
+   occurs on 1 page in 564, and that page is the blank questionnaire. Nothing
+   tabulates it. The MICS 2019 *District Summary Findings Report* does not
+   contain the word "language" at all.
+
+**So the limit is not geography first.** Both Bangladeshi instruments that ask
+mother tongue — SDS 2023 and MICS 2019 — code it as **one named language
+against an unnamed residual**. That shape is not a composition at *any* level;
+the division ceiling is the second reason, not the first.
+
+**Two limits stated rather than rounded up.** 63 of the 64 Zila Reports were
+not read. And the 2011 *National Report Vol-04* (378 pp) scored zero for every
+term and **proves nothing** — printing its pages returns empty text, because it
+is a scan with no text layer. That is recorded as a non-result rather than
+counted as evidence.
+
+The three 2011 volumes were read through the Internet Archive's copy of the
+Bureau's own files: `203.112.218.65:8008`, which `bbs.gov.bd` still links the
+whole series to, times out from the runner.
+
 
 #### The fifty-one categories, placed in the group tree
 

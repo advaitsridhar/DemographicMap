@@ -45,16 +45,70 @@ That also makes the check exact rather than approximate: the religions plus
 the hijra must equal the published total, to the person, in every district.
 
 **There is no mother tongue here, and that is a fact about the census rather
-than about this adapter.** The workbook's forty-two topic sheets run from
-dwelling type through religion, disability, literacy, work, banking and ethnic
-population to cooking fuel, and not one of them is language. Nor is the
-absence the mirror's: the census's own *National Report (Volume I)* describes
-the questionnaire as two modules -- 15 household questions and 20 individual
-ones, 35 in all -- and lists what the individual module asks (age, sex,
-marital status, religion, disability, education, working status, training,
-mobile phone and internet use, banking inclusion, ethnic population). Language
-is not among them, and none of the report's 520 pages or 33 district tables is
-a language table.
+than about this adapter.** Both halves of that were measured rather than
+recalled, because "the adapter did not look" and "the Bureau did not publish"
+are the same absence seen from opposite sides.
+
+The workbook holds forty-two sheets -- the merged table and forty-one topic
+sheets -- and **all forty-two were listed by name and their headers read**,
+not just the three this adapter opens. They run from dwelling type through
+religion, marital status, disability, literacy, schooling, work, NEET, mobile
+phone, internet, banking, ethnic population and returned migrants to wall,
+roof and floor material, water, toilets, handwashing, electricity and cooking
+fuel. Not one of them is language. The only two that even mention Bangla are
+``Merged_All_Table`` and ``Population_District``, and what they hold is
+*Bangladeshi National* -- citizenship, not a tongue.
+
+Nor is the absence the mirror's. The census's own *National Report (Volume I)*
+was fetched from the Bureau's storage and **swept whole**: across its 520
+pages the phrase "mother tongue" occurs **zero** times, "language" on exactly
+**one** page, and "bilingual", "spoken", "speak", "dialect" and "linguistic"
+on none. Of its 239 distinct table headings, 109 name a Division and 46 a
+District, and **not one names a language** -- the three that match on the
+letters are *Bangladeshi* citizens living abroad and by home district. The
+report also describes the questionnaire as two modules -- 15 household
+questions and 20 individual ones, 35 in all -- and lists what the individual
+module asks (age, sex, marital status, religion, disability, education,
+working status, training, mobile phone and internet use, banking inclusion,
+ethnic population). Language is not among them.
+
+**The search went wider than the census, and the answer did not change.**
+Every publication below was fetched and swept for the same terms plus thirty
+named tongues, Chakma through Rajbanshi:
+
+* the **2011 Zila Report for Rangamati** (470 pp). One volume of sixty-four,
+  and deliberately that one: Rangamati is the most linguistically various
+  district in Bangladesh, so if any district volume carried the question this
+  is where it would be. "Mother tongue": zero pages. Forty-nine table
+  headings, seven at zila level and seven at upazila, **none a language**.
+* the **2011 Community Report for Rangpur** (694 pp). Thirty-two table
+  headings, eight at zila and eight at upazila, same sweep, same answer.
+* the **Multiple Indicator Cluster Survey 2019** final report (564 pp), which
+  *is* district-representative. It does ask -- question HC1B, "What is the
+  mother tongue/native language of the head of the household?" -- and prints
+  exactly two answers: **BANGLA** and **OTHER LANGUAGE**. The phrase occurs on
+  one page in 564, and that page is the blank questionnaire. Nothing in the
+  report tabulates it, and the companion **MICS 2019 District Summary Findings
+  Report** (72 pp) does not contain the word "language" at all.
+
+So the two Bangladeshi instruments that ask mother tongue -- the census
+project's 2023 survey and MICS 2019 -- both code it the same way, a named
+language against an unnamed rest; one publishes that by division and the other
+does not publish it anywhere. This is a fact about how Bangladesh asks the
+question, not about one report.
+
+Two things this sweep does **not** establish, said plainly rather than
+rounded up. Sixty-three of the sixty-four 2011 Zila Reports were not read.
+And the *2011 National Report Volume-04, Socio-Economic and Demographic
+Report* (378 pp) was fetched and scored zero for every term -- which proves
+nothing, because printing its pages returns **empty text**: it is a scan with
+no text layer, and reading that silence as an answer would be the worst
+mistake available here.
+
+The 2011 series lives on ``203.112.218.65:8008``, which the Bureau still links
+to and which **times out** from an open-egress runner, so those three were
+read through the Internet Archive's copy of the Bureau's own files -- the same
+mirror-rather-than-fabricate trade the workbook above makes.
 
 **But the census is not the whole of what the Bureau asked.** The *Report on
 Socio-Economic and Demographic Survey 2023* (BBS, June 2024, 553 pp, ISBN
@@ -158,7 +212,8 @@ scheduled ethnic groups and a non-Bangla mother tongue that rounds to
 people in those groups. Ethnicity and language disagree in both directions
 here, so one cannot be read off the other, and no mother tongue but Bangla is
 named anywhere in the survey's 553 pages to read off instead. Nothing below
-the division has a mother-tongue figure from either round.
+the division carries a mother-tongue figure in anything read above -- not the
+census, not its workbook, not the 2011 district volumes, not MICS.
 
 Forty-seven of the fifty-one categories have no place in this project's group
 tree yet, and are published under the census's own spelling rather than
