@@ -29,6 +29,7 @@ from common import (  # noqa: E402
     NOT_APPLICABLE,
     NOT_AVAILABLE,
     NOT_COLLECTED_POLICY,
+    collection_gap,
     NOT_COLLECTED,
     PROCESSED,
     RAW,
@@ -442,6 +443,18 @@ def build_record(region: str, gec: str, profile: dict[str, Any],
         composition has nothing to do with whether the country gathers it.
         """
         if field in policy:
+            # collection_gap, not gap(NOT_COLLECTED, policy[field]): a policy
+            # entry is either a plain reason or a {status, note} pair, and this
+            # gate used to assume the first. Bangladesh's language entry is the
+            # second -- deliberately not_available, because the census project
+            # *does* ask mother tongue and publishes it in a shape this map
+            # cannot draw -- so the old form printed not_collected, stating the
+            # opposite of what the Bureau did, and nested the whole dict where
+            # the note should be. It went unseen only because admin0.json had
+            # not been rebuilt since that entry was written.
+            declared = collection_gap(iso3, field)
+            if declared:
+                return declared
             return gap(NOT_COLLECTED, policy[field])
         comp = parse_composition(text) if parsed is None else parsed
         if comp:
