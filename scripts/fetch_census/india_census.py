@@ -827,13 +827,30 @@ def created_reason(name: str, year: int, predecessors: tuple[str, ...]) -> str:
     """Why a district created after the census carries no figure, and where its
     people were counted instead.
 
-    The last sentence used to send the reader to the predecessor: "the 2011
-    figures for Karimnagar are on this map under that name and cover this
-    ground too". They were, and it was the bug -- the shape called Karimnagar
-    is a quarter of the district the census measured, and pointing at it as
-    though it were the whole was how the mis-match got its confident tone.
-    Neither fragment carries the figure now, so the sentence names where it
-    actually is: the state.
+    The last sentence has now been wrong in both directions, which is worth
+    recording because the second was the harder one to see.
+
+    It first read: "the 2011 figures for Karimnagar are on this map under that
+    name and cover this ground too". They were, and it was the bug -- the shape
+    called Karimnagar is a quarter of the district the census measured, and
+    pointing at it as though it were the whole was how the mis-match got its
+    confident tone. So the figures were blanked, and the sentence was rewritten
+    to say that no district on this map carries that row and the state total
+    does.
+
+    Then the owner asked for the figures back, and ``LOST_TERRITORY_SINCE_2011``
+    gave every shrunken predecessor its census row again with a sentence saying
+    how much of its ground it has left -- and this sentence was not rewritten
+    with it. It has been telling the reader to look at the state total for a
+    count that is sitting on the next shape along, declared and captioned. A
+    note is a claim like any other, and a stale one is worse than a blank
+    because it reads as though someone checked.
+
+    So it names where the row actually is, and both branches are guaranteed by
+    ``check_lost_territory``: every predecessor named here is either in
+    ``LOST_TERRITORY_SINCE_2011``, so its shape keeps the row, or in
+    ``SUBDIVIDED_SINCE_2011``, so no shape does and the state total is the
+    truthful answer. A run in which that stops holding stops before it emits.
     """
     orphaned = [p for p in predecessors if p.casefold() in SUBDIVIDED_SINCE_2011]
     listed = " and ".join(predecessors)
@@ -848,11 +865,13 @@ def created_reason(name: str, year: int, predecessors: tuple[str, ...]) -> str:
     else:
         many = len(predecessors) > 1
         note += (f"The 2011 row that counted these people covers the undivided "
-                 f"{listed}, and no district on this map carries it: the shape "
-                 f"that still bears {'those names is' if many else 'that name is'} "
-                 f"only the part left after this district was carved out, and "
-                 f"giving a fragment the whole district's figure is the error "
-                 f"this gap exists to avoid. The state total carries it.")
+                 f"{listed}. That row is on this map, on the shape that still "
+                 f"bears {'those names' if many else 'that name'} -- now only "
+                 f"the part left after this district was carved out, which the "
+                 f"note on it says -- so the count exists and is for more "
+                 f"ground than that shape covers. It is not repeated here: "
+                 f"dividing one figure between the districts it was measured "
+                 f"over would be an estimate rather than a measurement.")
     return note
 
 

@@ -1,24 +1,238 @@
-bhutan: National Statistics Bureau, PHCB 2017 Table 2.1
-  Bumthang: 4 gewogs, 2 town(s), 17,820 people
-  Chhukha: 11 gewogs, 5 town(s), 68,966 people
-  Dagana: 14 gewogs, 5 town(s), 24,965 people
-  Gasa: 4 gewogs, 2 town(s), 3,952 people
-  Haa: 6 gewogs, 2 town(s), 13,655 people
-  Lhuentse: 8 gewogs, 2 town(s), 14,240 people
-  Monggar: 17 gewogs, 6 town(s), 37,150 people
-  Paro: 10 gewogs, 2 town(s), 43,362 people
-  Pema Gatshel: 11 gewogs, 8 town(s), 23,632 people
-  Punakha: 11 gewogs, 2 town(s), 27,360 people
-  Samdrup Jongkhar: 11 gewogs, 3 town(s), 35,079 people
-  Samtse: 15 gewogs, 3 town(s), 62,590 people
-  Sarpang: 12 gewogs, 2 town(s), 46,004 people
-  Thimphu: 8 gewogs, 2 town(s), 138,736 people
-  Trashi Yangtse: 8 gewogs, 2 town(s), 17,300 people
-  Trashigang: 15 gewogs, 6 town(s), 43,741 people
-  Trongsa: 5 gewogs, 2 town(s), 19,960 people
-  Tsirang: 12 gewogs, 2 town(s), 22,376 people
-  Wangdue Phodrang: 15 gewogs, 3 town(s), 42,186 people
-  Zhemgang: 8 gewogs, 3 town(s), 17,763 people
-  the twenty dzongkhags come to 720,837, against the 727,145 the national report analyses and the 735,553 it says were found -- -6,308 on the first. The two publications disagree for some dzongkhags; each report here reconciles to its own printed total.
-  wrote data/processed/bhutan_gewog.json (482 kB)
-  20 dzongkhags and 205 gewogs, 273,174 people in towns with no shape
+probe_pdf: https://web.archive.org/web/20211123141051id_/http://203.112.218.65:8008/WebTestApplication/userfiles/Image/PopCen2011/Com_Bandarban.pdf
+  22,753,064 bytes
+  617 pages
+probe_pdf: 618 pages, printing [58, 59, 60, 61, 62, 63]
+
+--- page 58 ----------------------------------------------------
+[0 words in 0 rows]
+
+--- page 59 ----------------------------------------------------
+[0 words in 0 rows]
+
+--- page 60 ----------------------------------------------------
+Table C-01 : Area, household, population and density by residence and community
+HAM Population
+draW Administrative Unit Area Population
+alizapU egalliV
+OMR Total
+aliZ Residence (Acres) Density
+/ In
+/ AZM Households Total Floating
+NU Community (sq. km)
+Households
+1 2 3 4 5 6 7 8 9
+03 Bandarban Zila Total 1E+06 80102 388335 387129 1206 87
+03 1 Bandarban Zila 59352 287912 287805 107
+03 2 Bandarban Zila 12761 61574 60499 1075
+03 3 Bandarban Zila 7989 38849 38825 24
+03 04 Alikadam Upazila Total 218880 9422 49317 49317 0 56
+03 04 1 Alikadam Upazila 6546 34792 34792 0
+03 04 2 Alikadam Upazila 45 763 763 0
+03 04 3 Alikadam Upazila 2831 13762 13762 0
+03 04 31 Alikadam Union Total 186880 5391 28495 28495 0 38
+03 04 31 1 Alikadam Union 2515 13970 13970 0
+03 04 31 2 Alikadam Union 45 763 763 0
+03 04 31 3 Alikadam Union 2831 13762 13762 0
+03 04 31 142 3 *Alikadam 2831 13762 13762 0
+03 04 31 142 01 3 Saber Miah Para 244 1238 1238 0
+03 04 31 142 02 3 Mangfu Mahajan Para 101 458 458 0
+03 04 31 142 03 3 Upazila Parishad 207 919 919 0
+03 04 31 142 04 3 Bazar Para 120 469 469 0
+03 04 31 142 05 3 Uttar Bazar 58 333 333 0
+03 04 31 142 06 3 Dakshin Bazar 60 260 260 0
+03 04 31 142 07 3 Bazar Mogh Para 104 460 460 0
+03 04 31 142 08 3 Khulla Mia Para 79 399 399 0
+03 04 31 142 09 3 Anwar Hossain Chairman Para 182 807 807 0
+03 04 31 142 10 3 Ali Muddin Para 107 457 457 0
+03 04 31 142 11 3 Danu Sardar Para 374 2060 2060 0
+03 04 31 142 12 3 Uttar Palong Para 212 1038 1038 0
+03 04 31 142 13 3 Purba Palong Para 460 2270 2270 0
+03 04 31 142 14 3 Mong Soi Pru Para 75 365 365 0
+03 04 31 142 15 3 Daya Chan Dra Para 48 251 251 0
+03 04 31 142 16 3 Mong Golu Para 37 172 172 0
+03 04 31 142 17 3 Mostack Para 50 275 275 0
+03 04 31 142 18 3 Chion Para 24 136 136 0
+03 04 31 142 19 3 Taluk Ddar Para 9 34 34 0
+03 04 31 142 20 3 Godar Par Para 118 587 587 0
+03 04 31 142 21 3 Amtali Para 162 774 774 0
+03 04 31 284 1 *Chaimfra 659 3601 3601 0
+03 04 31 284 01 1 Ka-You Karbari Para 17 84 84 0
+03 04 31 284 02 1 Ra-Lai-Para 59 333 333 0
+03 04 31 284 03 1 Man Rom Para 41 225 225 0
+03 04 31 284 04 1 Man Long Para 5 29 29 0
+03 04 31 284 05 1 Payea Para 16 101 101 0
+03 04 31 284 06 1 Menlay Para 29 159 159 0
+03 04 31 284 07 1 Prova Para 17 93 93 0
+RMO: 1 = Rural, 2 = Urban and 3 = Other Urban 41 Community Report: Bandarban
+[553 words in 54 rows]
+
+--- page 61 ----------------------------------------------------
+Table C-01 : Area, household, population and density by residence and community
+HAM Population
+draW Administrative Unit Area Population
+alizapU egalliV
+OMR Total
+aliZ Residence (Acres) Density
+/ In
+/ AZM Households Total Floating
+NU Community (sq. km)
+Households
+1 2 3 4 5 6 7 8 9
+03 04 31 284 08 1 Paley Para 50 254 254 0
+03 04 31 284 09 1 Langthong 15 87 87 0
+03 04 31 284 10 1 Bu-Li Para 14 70 70 0
+03 04 31 284 11 1 Ching Chong Karbari Para 29 141 141 0
+03 04 31 284 12 1 Da-Khoi Para 13 63 63 0
+03 04 31 284 13 1 Ba Choa Para 8 35 35 0
+03 04 31 284 14 1 Rai To Moni Karbari Para 90 467 467 0
+03 04 31 284 15 1 Padi Para 24 135 135 0
+03 04 31 284 16 1 Chak Lam Karbari Para 21 81 81 0
+03 04 31 284 17 1 Do Basi Para 16 109 109 0
+03 04 31 284 18 1 Chandra Moni Para 14 89 89 0
+03 04 31 284 19 1 Langchong 32 177 177 0
+03 04 31 284 20 1 Mencock 24 130 130 0
+03 04 31 284 21 1 Menning 30 155 155 0
+03 04 31 284 22 1 Johonmaster 16 89 89 0
+03 04 31 284 23 1 Menku Para 21 132 132 0
+03 04 31 284 24 1 Khido Para 33 204 204 0
+03 04 31 284 25 1 Motaparow 25 159 159 0
+03 04 31 700 1 *Matamuhury Reserve Forest 1292 7304 7304 0
+03 04 31 700 01 1 Langchong Para 60 346 346 0
+03 04 31 700 02 1 Satirang Para 15 89 89 0
+03 04 31 700 03 1 Adoy Para 60 324 324 0
+03 04 31 700 04 1 Kain Prey Para 60 327 327 0
+03 04 31 700 05 1 Consola Para 30 173 173 0
+03 04 31 700 06 1 Bhaluk Para 21 93 93 0
+03 04 31 700 10 1 Babu Para 103 506 506 0
+03 04 31 700 11 1 Zira Para 49 260 260 0
+03 04 31 700 12 1 Janaly Para 3 35 35 0
+03 04 31 700 13 1 Aungsuy Para 30 177 177 0
+03 04 31 700 14 1 Tili Para 60 381 381 0
+03 04 31 700 15 1 Ringlot Para 60 362 362 0
+03 04 31 700 16 1 Krokpata Bazar 53 265 265 0
+03 04 31 700 17 1 Khampur Para 60 302 302 0
+03 04 31 700 18 1 Patoy Para 53 250 250 0
+03 04 31 700 19 1 Awoy Para 60 313 313 0
+03 04 31 700 20 1 Menry Para 25 155 155 0
+03 04 31 700 21 1 Mencrat Para 30 139 139 0
+03 04 31 700 22 1 Khamtok Para 38 237 237 0
+03 04 31 700 23 1 Langpung Para 17 101 101 0
+03 04 31 700 24 1 Maliram Para 60 402 402 0
+03 04 31 700 25 1 Jeoung Way Para 60 362 362 0
+03 04 31 700 27 1 Indu Mukh Para 55 382 382 0
+RMO: 1 = Rural, 2 = Urban and 3 = Other Urban 42 Community Report: Bandarban
+[575 words in 54 rows]
+
+--- page 62 ----------------------------------------------------
+Table C-01 : Area, household, population and density by residence and community
+HAM Population
+draW Administrative Unit Area Population
+alizapU egalliV
+OMR Total
+aliZ Residence (Acres) Density
+/ In
+/ AZM Households Total Floating
+NU Community (sq. km)
+Households
+1 2 3 4 5 6 7 8 9
+03 04 31 700 28 1 Mendir Para 60 342 342 0
+03 04 31 700 29 1 Kengkaw Para 59 333 333 0
+03 04 31 700 30 1 Chowkraon Para 59 346 346 0
+03 04 31 700 31 1 Doge Chondra Para 52 302 302 0
+03 04 31 994 1 *Tainfa 564 3065 3065 0
+03 04 31 994 01 1 Jabiram Karbari Para 69 493 493 0
+03 04 31 994 02 1 Thoiwio Goa Para 4 15 15 0
+03 04 31 994 03 1 Yunus Member Para 64 368 368 0
+03 04 31 994 04 1 Langri Para 44 233 233 0
+03 04 31 994 05 1 Ba Chaiya Para 25 171 171 0
+03 04 31 994 06 1 Chang Li Para 22 111 111 0
+03 04 31 994 07 1 Man Rom Para 14 68 68 0
+03 04 31 994 08 1 Jalanta Mani Para 46 217 217 0
+03 04 31 994 09 1 Klaing Para 20 108 108 0
+03 04 31 994 10 1 A-Sa-Ti Tripura Para 60 287 287 0
+03 04 31 994 11 1 Bulu Para 20 110 110 0
+03 04 31 994 12 1 Rai Nai Karbari Para 15 67 67 0
+03 04 31 994 13 1 Uk-Ling Para 10 40 40 0
+03 04 31 994 14 1 Diri Para 9 34 34 0
+03 04 31 994 15 1 Kang Oya Para 15 79 79 0
+03 04 31 994 16 1 Chilochandra Para 21 100 100 0
+03 04 31 994 17 1 Kransing Para 28 125 125 0
+03 04 31 994 18 1 Agula Trapura Para 7 38 38 0
+03 04 31 994 19 1 Man Poya Para 3 16 16 0
+03 04 31 994 20 1 Babi Para 31 181 181 0
+03 04 31 994 21 1 Pai Toi Karbari Para 28 145 145 0
+03 04 31 994 22 1 Ni-Ang Para 9 59 59 0
+03 04 31 998 2 *Cantonment 45 763 763 0
+03 04 63 Chokhyong Union Total 32000 4031 20822 20822 0 161
+03 04 63 426 1 *Chokhyong 1299 6678 6678 0
+03 04 63 426 01 1 Thoaichhi Para 60 240 240 0
+03 04 63 426 02 1 Mannan Member Para 107 589 589 0
+03 04 63 426 03 1 Puterjhiri Para 39 227 227 0
+03 04 63 426 04 1 Gurumia Para 83 432 432 0
+03 04 63 426 05 1 Sanichary Paraa 90 495 495 0
+03 04 63 426 06 1 Barir Muk Para 121 722 722 0
+03 04 63 426 07 1 Maila Karbari Para 56 243 243 0
+03 04 63 426 08 1 Mohd Ali Para 16 81 81 0
+03 04 63 426 09 1 Siddque Para 58 345 345 0
+03 04 63 426 10 1 Mong Ching Para 58 269 269 0
+03 04 63 426 11 1 Akibar Para 31 160 160 0
+03 04 63 426 12 1 Ali Member Para 60 316 316 0
+RMO: 1 = Rural, 2 = Urban and 3 = Other Urban 43 Community Report: Bandarban
+[584 words in 54 rows]
+
+--- page 63 ----------------------------------------------------
+Table C-01 : Area, household, population and density by residence and community
+HAM Population
+draW Administrative Unit Area Population
+alizapU egalliV
+OMR Total
+aliZ Residence (Acres) Density
+/ In
+/ AZM Households Total Floating
+NU Community (sq. km)
+Households
+1 2 3 4 5 6 7 8 9
+03 04 63 426 13 1 Kashem Member Para 48 233 233 0
+03 04 63 426 14 1 Pokhaiya Jiri Para 47 225 225 0
+03 04 63 426 15 1 Panijiri Para 28 118 118 0
+03 04 63 426 16 1 Obaidul Hakim Para 119 602 602 0
+03 04 63 426 18 1 Shiraj Karbari Para 60 306 306 0
+03 04 63 426 19 1 Sonachandra Tripura Para 45 225 225 0
+03 04 63 426 20 1 Tara Bunia Para 94 450 450 0
+03 04 63 426 21 1 Padoymorong Para 43 199 199 0
+03 04 63 426 22 1 Cairi Morong Para 21 131 131 0
+03 04 63 426 23 1 Oti Chandra Para 15 70 70 0
+03 04 63 568 1 *Mango 266 1565 1565 0
+03 04 63 568 01 1 Ramju Para 9 53 53 0
+03 04 63 568 02 1 Joynal Para 2 15 15 0
+03 04 63 568 03 1 Ruirok Para 30 187 187 0
+03 04 63 568 04 1 Chhatra Para 19 117 117 0
+03 04 63 568 05 1 Tang Tuipara 7 40 40 0
+03 04 63 568 06 1 Ruipa Para 22 131 131 0
+03 04 63 568 07 1 Rang Yeua Karbari Para 3 23 23 0
+03 04 63 568 08 1 Menrua Para 13 65 65 0
+03 04 63 568 09 1 Mempa Para 32 165 165 0
+03 04 63 568 10 1 Laru Para 6 51 51 0
+03 04 63 568 11 1 Adu Para 27 194 194 0
+03 04 63 568 12 1 Sang Chung 4 16 16 0
+03 04 63 568 13 1 Khakue Para 6 38 38 0
+03 04 63 568 14 1 Khingpong Para 10 64 64 0
+03 04 63 568 15 1 Namsak Para 13 79 79 0
+03 04 63 568 16 1 Pubola Para 7 58 58 0
+03 04 63 568 17 1 Basa Chandra Para 11 59 59 0
+03 04 63 568 18 1 Sak Lang Para 45 210 210 0
+03 04 63 852 1 *Tain 2466 12579 12579 0
+03 04 63 852 01 1 Mongbu Karbari Para 37 160 160 0
+03 04 63 852 02 1 Chibatali Para 108 569 569 0
+03 04 63 852 03 1 Repar Para Bazar 306 1558 1558 0
+03 04 63 852 04 1 Dopru Morong Para 21 100 100 0
+03 04 63 852 05 1 Pattakhaiya Para 183 970 970 0
+03 04 63 852 06 1 Shilbunia 60 248 248 0
+03 04 63 852 07 1 Kerajiripara 31 176 176 0
+03 04 63 852 08 1 Mangkhai Para 19 96 96 0
+03 04 63 852 09 1 Dardari/Abul Kashem Para 59 319 319 0
+03 04 63 852 10 1 Bager Jiri Para 19 96 96 0
+03 04 63 852 11 1 Youkki Para 8 29 29 0
+03 04 63 852 12 1 Punarbasan-1 28 154 154 0
+RMO: 1 = Rural, 2 = Urban and 3 = Other Urban 44 Community Report: Bandarban
+[578 words in 54 rows]

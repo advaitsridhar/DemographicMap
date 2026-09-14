@@ -38,7 +38,16 @@ PROCESSED = ROOT / "data" / "processed"
 
 # A source that cannot be dated, for a reason about the source and not about
 # the adapter. No adapter run will change these; they are not a backlog.
-UNDATED_BY_DESIGN = {
+#
+# Keyed by file, then by field, then by the ids the exemption covers. ``None``
+# is every row in the file, which is what a whole-file source needs; a set of
+# ids is one table inside a file that is otherwise dated, and it is the
+# tighter claim -- a second undated row appearing in the same field of the
+# same file is then a failure rather than something an existing exemption
+# quietly absorbs. Pakistan is why the distinction was needed: 143 of its 145
+# rows are a census with a year on it and two are a yearbook table that prints
+# none.
+UNDATED_BY_DESIGN: dict[str, dict[str, set[str] | None]] = {
     # Round 9 was fielded across 2021-2023 and the committed five-column
     # extract carries no interview date, so there is no per-country year to
     # read. One stamp cannot describe the round, and taking one from the
@@ -46,7 +55,18 @@ UNDATED_BY_DESIGN = {
     # the fault this whole file exists to prevent, not a smaller version of
     # it. Dating these means adding the interview-date column to the extract,
     # which needs the 24 MB published workbook and an --extract run.
-    "afrobarometer_region.json": {"religion", "ethnicity"},
+    "afrobarometer_region.json": {"religion": None, "ethnicity": None},
+    # Azad Jammu and Kashmir's languages are Table 15.33 of the AJ&K
+    # Statistical Year Book 2023, and that table carries no year: the
+    # marriages table above it on the same page is captioned "(2018 to 2022)"
+    # and this one is captioned nothing at all. The yearbook's cover says
+    # 2023, which is when it was printed and not when the Kashmir Liberation
+    # Cell counted -- the same distinction the religion table fourteen pages
+    # earlier is careful about, where a 2023 book prints the 2017 census.
+    # Two rows and one territory: geoBoundaries draws Azad Kashmir as a single
+    # second-level unit, so it appears once as admin1 and once as admin2.
+    "pakistan_district.json": {"language": {"PAK-ajk",
+                                            "PAK-ajk-azad-kashmir"}},
 }
 
 # The adapter now stamps the year; the committed file predates that and says
@@ -103,15 +123,20 @@ class NoStampWithoutAFigure(unittest.TestCase):
     """
 
     def test_every_stamp_has_a_composition_under_it(self):
+        """Every file, admin0.json included.
+
+        It used to be excused here. The excuse was real -- the committed file
+        predated the ``dated()`` guard in fetch_factbook and carried 16 stamps
+        with nothing under them -- and it is spent: the adapter has since been
+        re-run and the file carries none. AWAITING_AN_ADAPTER_RUN still lists
+        it, because it is still behind on the *other* check below (144 of its
+        compositions have no year, the Factbook printing none), and those are
+        different faults. Skipping a file for one because it is behind on the
+        other is how a guard rots: the very next fetch_factbook change would
+        have had nothing watching it.
+        """
         offenders = []
         for path in processed_files():
-            # fetch_factbook guards these now; the committed file predates the
-            # guard and carries 16 of them. It is the one file here that cannot
-            # be refreshed as part of the change that fixed it -- today's
-            # mirror has moved on, and re-running it would drop 36 countries'
-            # compositions to free text for reasons this change is not about.
-            if path.name in AWAITING_AN_ADAPTER_RUN:
-                continue
             for row in rows(path):
                 if not isinstance(row, dict):
                     continue
@@ -135,6 +160,7 @@ class EveryDatableSourceSaysItsYear(unittest.TestCase):
     """
 
     def undated(self):
+        """{file: {field: {ids}}} for every composition carrying no year."""
         found = {}
         for path in processed_files():
             for row in rows(path):
@@ -142,21 +168,53 @@ class EveryDatableSourceSaysItsYear(unittest.TestCase):
                     continue
                 for field in FIELDS:
                     if isinstance(row.get(field), list) and not row.get(f"{field}_year"):
-                        found.setdefault(path.name, set()).add(field)
+                        (found.setdefault(path.name, {})
+                              .setdefault(field, set())
+                              .add(row.get("id")))
         return found
 
+    def exempt(self, name, field, ids):
+        """The rows of one file and field an exemption actually covers."""
+        allowed = UNDATED_BY_DESIGN.get(name, {})
+        if field not in allowed:
+            return False
+        return allowed[field] is None or ids <= allowed[field]
+
     def test_nothing_is_undated_but_the_two_lists_say_so(self):
-        unexplained = {name: sorted(fields)
-                       for name, fields in self.undated().items()
-                       if name not in AWAITING_AN_ADAPTER_RUN
-                       and not (UNDATED_BY_DESIGN.get(name, set()) >= fields)}
+        unexplained = {
+            f"{name}: {field}": sorted(ids - (UNDATED_BY_DESIGN
+                                              .get(name, {}).get(field) or set()))
+            for name, fields in self.undated().items()
+            for field, ids in fields.items()
+            if name not in AWAITING_AN_ADAPTER_RUN
+            and not self.exempt(name, field, ids)}
         self.assertEqual(
             {}, unexplained,
-            "these files publish a composition and no year. Either the adapter "
+            "these rows publish a composition and no year. Either the adapter "
             "should stamp the census year it read, or -- if the source "
-            "genuinely mixes vintages -- it belongs in UNDATED_BY_DESIGN with "
-            "the reason written out. Do not add it to AWAITING_AN_ADAPTER_RUN "
-            "unless an adapter that stamps the year is already merged.")
+            "genuinely mixes vintages or prints no date at all -- they belong "
+            "in UNDATED_BY_DESIGN, named by id, with the reason written out. "
+            "Do not add the file to AWAITING_AN_ADAPTER_RUN unless an adapter "
+            "that stamps the year is already merged.")
+
+    def test_an_exemption_is_no_wider_than_the_rows_it_names(self):
+        """An id that is dated must come out of the exemption.
+
+        The reason for naming ids rather than a field is that the exemption
+        stays the size of the problem. That only holds if it shrinks too: an
+        id left in after its source starts printing a year would go on
+        exempting whatever row is written under that id next.
+        """
+        stale = []
+        for name, fields in UNDATED_BY_DESIGN.items():
+            found = self.undated().get(name, {})
+            for field, ids in fields.items():
+                if ids is None:
+                    continue
+                for entity in sorted(ids - found.get(field, set())):
+                    stale.append(f"{name}: {entity} has a {field} year now")
+        self.assertEqual([], stale,
+                         "remove these from UNDATED_BY_DESIGN")
 
     def test_the_backlog_only_shrinks(self):
         """A file that is dated must come off the list, not sit on it.

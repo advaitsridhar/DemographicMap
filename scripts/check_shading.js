@@ -112,10 +112,45 @@ function main() {
     const pale = luminance(P.group(hues[0], 25));
     const deep = luminance(P.group(hues[0], 100));
     if (!(deep < pale)) {
-      console.log(`${theme}: the ramp does not run pale to dark`);
+      console.log(`${theme}: the group ramp does not run pale to dark`);
       failures += 1;
     }
-    console.log(`${theme}: ${hues.length} hues, ramp ${pale.toFixed(3)} -> ${deep.toFixed(3)}`);
+    console.log(`${theme}: ${hues.length} hues, group ramp ${pale.toFixed(3)} -> ${deep.toFixed(3)}`);
+
+    // The neutral magnitude ramp -- population, median age, how-concentrated
+    // -- is a second encoding of exactly the same idea, and it was left out of
+    // this check when the group band was fixed. It kept the reversed
+    // dark-mode array the band had just lost, so for two hundred merges the
+    // population map drew the most crowded places palest for every reader in
+    // dark mode. It is checked here now, to the same three rules.
+    const steps = P.ramp();
+    let last = Infinity;
+    for (const hex of steps) {
+      const here = luminance(hex);
+      if (here > last + 1e-6) {
+        console.log(`${theme}: the magnitude ramp gets LIGHTER at ${hex} ` +
+                    `(${here.toFixed(3)} vs ${last.toFixed(3)})`);
+        failures += 1;
+      }
+      last = here;
+    }
+    const seqPale = luminance(P.sequential(0));
+    const seqDeep = luminance(P.sequential(1));
+    if (!(seqDeep < seqPale)) {
+      console.log(`${theme}: the magnitude ramp does not run pale to dark`);
+      failures += 1;
+    }
+    // Its dark end must stay off the land beneath it, or the biggest places
+    // vanish into the basemap instead of standing out on it.
+    const land = luminance(P.neutral());
+    const clear = theme === "dark" ? seqDeep > land * 2 : seqDeep < land / 2;
+    if (!clear) {
+      console.log(`${theme}: the magnitude ramp's dark end (${seqDeep.toFixed(3)}) ` +
+                  `does not separate from the empty land (${land.toFixed(3)})`);
+      failures += 1;
+    }
+    console.log(`${theme}: magnitude ramp ${seqPale.toFixed(3)} -> ${seqDeep.toFixed(3)}, ` +
+                `land ${land.toFixed(3)}`);
   }
 
   console.log(failures ? `${failures} shading problems` : "shading is monotone and hue-independent in both themes");

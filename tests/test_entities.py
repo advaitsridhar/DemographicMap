@@ -217,11 +217,195 @@ class CollectionPolicyPropagation(unittest.TestCase):
         self.assertEqual(common.apply_collection_policy(entity, None), [])
 
     def test_every_policy_entry_carries_a_reason(self):
+        # Either spelling: a plain string is the ordinary "never gathered at
+        # all" declaration, a mapping is one that names its own status.
         for iso3, fields in common.NOT_COLLECTED_POLICY.items():
             self.assertRegex(iso3, r"^[A-Z]{3}$")
-            for field, reason in fields.items():
+            for field, declared in fields.items():
                 self.assertIn(field, ("religion", "ethnicity", "language"))
+                reason = common.collection_policy(iso3, field)
+                status = common.collection_status(iso3, field)
                 self.assertGreater(len(reason), 30, f"{iso3}/{field} reason is too thin")
+                self.assertIn(status, common.GAP_STATUSES, f"{iso3}/{field}")
+                if isinstance(declared, str):
+                    self.assertEqual(status, common.NOT_COLLECTED)
+
+    def test_a_declared_status_is_the_one_propagated(self):
+        # The long form exists so a country that does gather a field, but
+        # publishes it in a shape this map cannot draw, is not marked as
+        # never having asked. Bangladesh's mother tongue is that case.
+        self.assertEqual(common.collection_status("BGD", "language"),
+                         common.NOT_AVAILABLE)
+        entity = {"language": common.gap(common.NOT_AVAILABLE)}
+        self.assertEqual(common.apply_collection_policy(entity, "BGD"),
+                         ["language"])
+        self.assertEqual(entity["language"]["status"], common.NOT_AVAILABLE)
+        self.assertIn("Socio-Economic and Demographic Survey 2023",
+                      entity["language"]["note"])
+
+    def test_the_short_form_still_means_not_collected(self):
+        # Every other entry in the table is a plain string and must keep
+        # behaving exactly as it did.
+        self.assertEqual(common.collection_status("BTN", "language"),
+                         common.NOT_COLLECTED)
+        entity = {"language": common.gap(common.NOT_AVAILABLE)}
+        common.apply_collection_policy(entity, "BTN")
+        self.assertEqual(entity["language"]["status"], common.NOT_COLLECTED)
+
+    def test_collection_gap_is_the_whole_marker(self):
+        for iso3, field in (("BGD", "language"), ("BTN", "religion")):
+            marker = common.collection_gap(iso3, field)
+            self.assertEqual(marker["status"], common.collection_status(iso3, field))
+            self.assertEqual(marker["note"], common.collection_policy(iso3, field))
+        self.assertIsNone(common.collection_gap("BRA", "religion"))
+
+    def test_no_declaration_carries_a_figure(self):
+        """A declaration explains an absence; it never states a share.
+
+        The Maldives is why this is written down. Its constitution requires a
+        citizen to be a Muslim, so "100% Islam" is the obvious sentence to
+        reach for and it is not a census result -- nobody was counted giving
+        that answer, and a reason carrying it would put a fabricated figure
+        into the one field whose whole job is to say no figure exists.
+        """
+        import re as _re
+        for iso3, fields in common.NOT_COLLECTED_POLICY.items():
+            for field in fields:
+                where = f"{iso3}/{field}"
+                # Through the accessor, so the rule covers both spellings of
+                # an entry -- a plain string and the mapping that names its
+                # own status. Reading the raw value skipped the long form.
+                reason = common.collection_policy(iso3, field)
+                self.assertNotIn("%", reason, where)
+                self.assertIsNone(
+                    _re.search(r"\b\d+(?:\.\d+)?\s*per\s?cent\b", reason, _re.I),
+                    where)
+
+
+class MaldivesAndAfghanistanAreDeclaredNotEmpty(unittest.TestCase):
+    """Two countries that are empty for opposite reasons, and say so.
+
+    The Maldives asks a census question about who you are exactly once, and
+    the answer is Maldivian or foreigner. Afghanistan has never completed a
+    census at all, and the household surveys that stand in for one -- the
+    kind of source this map does carry for Korea and for 39 African countries
+    -- ask none of the three either. Neither should ever read as "nobody ran
+    the adapter".
+    """
+
+    def test_the_maldives_declares_all_three(self):
+        policy = common.NOT_COLLECTED_POLICY["MDV"]
+        self.assertEqual(sorted(policy), ["ethnicity", "language", "religion"])
+
+    def test_the_maldives_language_reason_is_about_an_ability(self):
+        """ED1/ED2/ED16 cross literacy in mother tongue with atoll and island.
+
+        That is a skill, not a composition: which language the mother tongue
+        is goes unrecorded. A reason that said "the census asks nothing about
+        language" would be false and would stop anyone looking at those
+        tables again.
+        """
+        reason = common.NOT_COLLECTED_POLICY["MDV"]["language"]
+        self.assertIn("literacy", reason.lower())
+        self.assertNotIn("Dhivehi 100", reason)
+
+    def test_afghanistan_says_why_no_survey_replaces_the_census(self):
+        """The declaration has to answer the question it invites.
+
+        "No census" on its own leaves open whether some survey carries the
+        fields, which for Afghanistan is the first thing to ask -- the ALCS
+        is representative at province level and this map does publish survey
+        compositions. It does not carry these, and the reason says so.
+        """
+        for field in ("religion", "ethnicity", "language"):
+            reason = common.NOT_COLLECTED_POLICY["AFG"][field]
+            self.assertIn("ALCS", reason, field)
+
+
+class TheFactbookHonoursTheSameDeclaration(unittest.TestCase):
+    """All three fields pass the policy gate, not two of them.
+
+    Language did not, and the map contradicted itself on one screen: every
+    province of Japan, Turkey, Sweden, Austria, Algeria, Saudi Arabia, Iraq,
+    Greece, North Korea and Afghanistan said the census asks no language
+    question, while the country panel above them showed a Factbook list.
+    """
+
+    def build(self, iso3, gec):
+        import fetch_factbook
+        profile = {"People and Society": {
+            "Languages": {"Languages": {"text": "Dhivehi (official, closely "
+                                                "related to Sinhala, script "
+                                                "derived from Arabic), English "
+                                                "(2022 est.)"}},
+            "Religions": {"text": "Sunni Muslim (official)"},
+            "Ethnic groups": {"text": "homogeneous mixture"},
+        }}
+        return fetch_factbook.build_record("south-asia", gec, profile, iso3, None)
+
+    def test_a_declared_country_shows_the_declaration(self):
+        row = self.build("MDV", "mv")
+        for field in ("religion", "ethnicity", "language"):
+            self.assertEqual(row[field]["status"], common.NOT_COLLECTED, field)
+            self.assertEqual(row[field]["note"],
+                             common.NOT_COLLECTED_POLICY["MDV"][field], field)
+
+    def test_a_declaration_is_never_dated(self):
+        """The Factbook text carries "(2022 est.)"; nothing was measured."""
+        row = self.build("MDV", "mv")
+        self.assertIsNone(row["language_year"])
+        self.assertIsNone(row["religion_year"])
+
+    def test_an_undeclared_country_keeps_what_the_factbook_says(self):
+        """The gate narrows nothing else: Kenya declares no policy at all."""
+        row = self.build("KEN", "ke")
+        self.assertIsInstance(row["language"], list)
+        self.assertEqual(row["language"][0]["group"], "Dhivehi")
+        self.assertEqual(row["language_year"], 2022)
+
+
+class AnAsideIsNotALanguage(unittest.TestCase):
+    """The Factbook writes its asides with commas in them.
+
+    When it publishes no shares, every country falls into the name-list
+    branch, and that branch split on every comma -- so the aside broke into
+    pieces and each piece became a language. Twenty-one countries read that
+    way, the Maldives worst: one language, one remark about its alphabet cut
+    in two, and English.
+    """
+
+    def parse(self, text):
+        import fetch_factbook
+        profile = {"People and Society": {"Languages": {"Languages": {"text": text}}}}
+        rows = fetch_factbook.parse_languages(profile)
+        return [row["group"] for row in rows or []]
+
+    def test_a_comma_inside_an_aside_does_not_split_it(self):
+        self.assertEqual(
+            self.parse("Dhivehi (official, closely related to Sinhala, script "
+                       "derived from Arabic), English"),
+            ["Dhivehi", "English"])
+
+    def test_a_nested_aside_is_removed_whole(self):
+        """Morocco nests one bracket inside another.
+
+        A single non-recursive pass matches from the first bracket to the
+        first close and leaves ", Tachelhit, Tarifit)" behind -- an aside
+        promoted to a language, with a stray bracket still on it.
+        """
+        self.assertEqual(
+            self.parse("Arabic (official), Tamazight languages (Tamazight "
+                       "(official), Tachelhit, Tarifit), French (often the "
+                       "language of business)"),
+            ["Arabic", "Tamazight languages", "French"])
+
+    def test_a_plain_list_is_unchanged(self):
+        self.assertEqual(self.parse("Kinyarwanda, French, English"),
+                         ["Kinyarwanda", "French", "English"])
+
+    def test_shares_still_win_when_the_source_publishes_them(self):
+        rows = self.parse("Swahili 90%, English 5%, other 5%")
+        self.assertEqual(rows, ["Swahili", "English", "other"])
 
 
 class AbsDimensionDetection(unittest.TestCase):
@@ -2698,6 +2882,323 @@ class GilgitBaltistanWeighted(unittest.TestCase):
         self.assertIn("eight and a half points apart", note)
 
 
+class BhutanGewogAliases(unittest.TestCase):
+    """The transliteration table, and the limit on how it was built."""
+
+    def setUp(self):
+        from scripts.fetch_census import bhutan
+        self.bt = bhutan
+
+    def test_no_two_gewogs_claim_one_shape(self):
+        # The failure this guards is silent: two census gewogs aliased to one
+        # boundary name, one of them overwriting the other's people.
+        targets = [t for pair in self.bt.GEWOG_ALIASES.values() for t in pair]
+        self.assertEqual(len(targets), len(set(targets)))
+
+    def test_an_alias_is_not_the_name_it_aliases(self):
+        for name, pair in self.bt.GEWOG_ALIASES.items():
+            self.assertNotIn(name, pair, name)
+
+    def test_the_contested_pairs_are_left_out(self):
+        # 24 rows had a plausible candidate that another row matched better,
+        # and every one was left unmatched rather than guessed. They are
+        # matched now -- by a reference point inside the polygon, in
+        # GEWOG_BY_POINT -- and their absence from this table is still the
+        # point: a name that another name matches better is not evidence, and
+        # "Pemaling" would have been aliased to Pagli, which is
+        # Phuentshogpelri's polygon.
+        for name in ("Sergithang", "Patshaling", "Karna", "Darkar",
+                     "Norgaygang", "Pemaling", "Tashichhoeling"):
+            self.assertNotIn(name, self.bt.GEWOG_ALIASES, name)
+
+    def test_gasas_four_are_all_reachable(self):
+        # Gasa has four gewogs and two of them needed an alias, which is why
+        # they were kept below the score bar: there is no other candidate.
+        self.assertEqual(self.bt.GEWOG_ALIASES["Khamaed"], ("Goenkhame",))
+        self.assertEqual(self.bt.GEWOG_ALIASES["Khatoed"], ("Goenkhatoe",))
+
+
+class BhutanGewogBindings(unittest.TestCase):
+    """The thirty gewogs the boundary file calls something else.
+
+    Bhutan's shapes and its census both count 205 gewogs, and thirty of them
+    are labelled with a different name -- not a different spelling. Samtse's
+    Tashicholing is drawn as "Sipsu", its Norgaygang as "Bara", Sarpang's
+    Samtenling as "Bhur": the Nepali-origin names the southern dzongkhags
+    carried before the renamings. Those are paired by a reference point inside
+    the polygon, not by the string, and these tests hold the tables to the two
+    properties that make such a pairing safe -- one shape per gewog, and no
+    country-wide claim on a name two dzongkhags both use.
+    """
+
+    def setUp(self):
+        from scripts.fetch_census import bhutan
+        self.bt = bhutan
+
+    def test_no_two_gewogs_claim_one_shape_across_both_tables(self):
+        # The name table and the point table are searched together, so the
+        # uniqueness that matters is over both of them at once.
+        targets = [t for pair in self.bt.GEWOG_ALIASES.values() for t in pair]
+        targets += [t for pair in self.bt.GEWOG_BY_POINT.values() for t in pair]
+        self.assertEqual(len(targets), len(set(targets)))
+        self.assertEqual(len(set(self.bt.SHAPE_BOUND.values())),
+                         len(self.bt.SHAPE_BOUND))
+        self.assertEqual(set(self.bt.SHAPE_LABELS),
+                         set(self.bt.SHAPE_BOUND.values()))
+
+    def test_a_name_two_dzongkhags_share_is_never_claimed_country_wide(self):
+        # Haa and Sarpang both have a Gakiling; Pema Gatshel and Samtse both
+        # have a Norboogang. An alias keyed on the name alone would hand one
+        # dzongkhag's gewog the other's polygon -- or, as it did, make the
+        # build refuse both and leave four shapes empty. Every one of the four
+        # is bound to a polygon by id, and none of them appears in either
+        # name-keyed table.
+        repeated = {"Gakiling", "Norboogang"}
+        for name in repeated:
+            self.assertNotIn(name, self.bt.GEWOG_ALIASES, name)
+        self.assertEqual({name for name, _dz in self.bt.SHAPE_BOUND}, repeated)
+        self.assertEqual({name for name, _dz in self.bt.GEWOG_BY_POINT} & repeated,
+                         set())
+        # And the four are four different polygons.
+        self.assertEqual(len(self.bt.SHAPE_BOUND), 4)
+
+    def test_the_two_misjoins_are_gone_and_their_shapes_reassigned(self):
+        # Punakha's Barp was aliased to "Bara", a polygon 96% inside Samtse,
+        # and Chhukha's Maedtabkha to "Patakla", 60% inside Tsirang. Both
+        # polygons belong to gewogs that had no figures at all.
+        self.assertNotIn("Bara", self.bt.GEWOG_ALIASES.get("Barp", ()))
+        self.assertNotIn("Patakla", self.bt.GEWOG_ALIASES.get("Maedtabkha", ()))
+        self.assertEqual(self.bt.GEWOG_BY_POINT[("Barp", "Punakha")], ("Bapisa",))
+        self.assertEqual(self.bt.GEWOG_BY_POINT[("Maedtabkha", "Chhukha")],
+                         ("Metap",))
+        self.assertEqual(self.bt.GEWOG_BY_POINT[("Norgaygang", "Samtse")],
+                         ("Bara",))
+        self.assertEqual(self.bt.GEWOG_BY_POINT[("Sergithang", "Tsirang")],
+                         ("Patakla",))
+
+    def test_the_six_taken_by_elimination_are_declared(self):
+        # A pairing with no reference point behind it says so on the record,
+        # so the six that rest on the dzongkhag's two lists closing are named
+        # rather than left to look like the other twenty.
+        self.assertLessEqual(set(self.bt.BY_CLOSURE), set(self.bt.GEWOG_BY_POINT))
+        self.assertEqual(len(self.bt.BY_CLOSURE), 6)
+        self.assertIn(("Yangtse", "Trashi Yangtse"), self.bt.BY_CLOSURE)
+
+
+class BhutanGewogJoin(unittest.TestCase):
+    """What the adapter wrote, and whether it can reach all 205 shapes.
+
+    The bindings are only worth anything if every gewog lands on exactly one
+    polygon and no polygon is left holding nobody. The boundary file is 550 MB
+    and not in the repository, so the full bijection is checked only where it
+    is present; what is checked everywhere is that the rows carry what the
+    join needs.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        path = be.PROCESSED / "bhutan_gewog.json"
+        if not path.exists():
+            raise unittest.SkipTest("bhutan_gewog.json has not been run")
+        from scripts.fetch_census import bhutan
+        cls.bt = bhutan
+        cls.rows = json.loads(path.read_text(encoding="utf-8"))
+        cls.gewogs = [r for r in cls.rows if r["level"] == "admin2"]
+
+    def test_every_binding_names_a_gewog_this_census_prints(self):
+        # A binding is a claim about one gewog of one dzongkhag. A key naming
+        # a pair the census does not print together is a mistake, not a near
+        # miss: it would mean a gewog the table thinks is handled and which is
+        # in fact reaching no shape.
+        printed = {(r["name"], r["parent_name"]) for r in self.gewogs}
+        for key in (*self.bt.GEWOG_BY_POINT, *self.bt.SHAPE_BOUND):
+            self.assertIn(key, printed, key)
+
+    def test_the_ambiguous_four_are_bound_by_id_and_nobody_else_is(self):
+        bound = {(r["name"], r["parent_name"]): r for r in self.gewogs
+                 if r.get("match_by") == "shape_id"}
+        self.assertEqual(set(bound), set(self.bt.SHAPE_BOUND))
+        for key, row in bound.items():
+            self.assertEqual(row["shape_id"], self.bt.SHAPE_BOUND[key])
+        self.assertEqual([r["name"] for r in self.gewogs if r.get("shape_id")
+                          and r.get("match_by") != "shape_id"], [])
+
+    def test_a_renamed_gewog_says_what_the_boundary_file_calls_it(self):
+        # A reader who looks the polygon up will find the other name on it,
+        # and an unexplained disagreement is its own kind of error.
+        rows = {(r["name"], r["parent_name"]): r for r in self.gewogs}
+        sipsu = rows[("Tashichhoeling", "Samtse")]
+        self.assertIn("Sipsu", sipsu["aliases"])
+        self.assertIn("draws this gewog as Sipsu", sipsu["population_note"])
+        self.assertIn("reference point", sipsu["population_note"])
+        yangtse = rows[("Yangtse", "Trashi Yangtse")]
+        self.assertIn("elimination", yangtse["population_note"])
+
+    def test_every_gewog_shape_is_claimed_exactly_once(self):
+        # The whole point, where the geometry is at hand to check it: 205
+        # census gewogs onto 205 polygons, no shape claimed twice and none
+        # left empty.
+        gpkg = be.RAW / "boundaries" / "geoBoundariesCGAZ_ADM2.gpkg"
+        if not gpkg.exists():
+            raise unittest.SkipTest("CGAZ boundaries are not in the repository")
+        import fiona
+        with fiona.open(gpkg) as src:
+            shapes = [f["properties"] for f in src
+                      if f["properties"].get("shapeGroup") == "BTN"]
+        self.assertEqual(len(shapes), 205)
+        by_norm = collections.defaultdict(list)
+        for s in shapes:
+            by_norm[be.norm(s["shapeName"])].append(s)
+        unique = {k: v[0] for k, v in by_norm.items() if len(v) == 1}
+        claims = collections.defaultdict(list)
+        unmatched = []
+        for row in self.gewogs:
+            key = (row["name"], row["parent_name"])
+            if row.get("match_by") == "shape_id":
+                claims[row["shape_id"]].append(key)
+                continue
+            hit = next((unique[be.norm(c)] for c in
+                        [row["name"], *row.get("aliases", [])]
+                        if be.norm(c) in unique), None)
+            (claims[hit["shapeID"]] if hit else unmatched).append(key)
+        self.assertEqual(unmatched, [])
+        self.assertEqual([k for k in claims.values() if len(k) > 1], [])
+        self.assertEqual(len(claims), 205)
+
+
+class BhutanSexRatio(unittest.TestCase):
+    """The one composition the 2017 census does count, and its refusal rule.
+
+    Bhutan's census asks nothing about religion, language or ethnicity -- 288
+    pages of national report and 1,510 of dzongkhag volumes were swept for the
+    words and they are not there -- so the sex split of Table 2.1 is the whole
+    of what the round says about who these people are. It was printed in the
+    same rows the reader was already parsing for the head count, three columns
+    of which only the last was kept.
+
+    The rule that matters here is the refusal: a ratio is derived only where
+    the publisher's own Male and Female reach the Total printed beside them.
+    Recomputing the total instead would hide a misread column behind arithmetic
+    that always works, and print a figure of this map's making in a field that
+    claims to be a census measurement.
+    """
+
+    def setUp(self):
+        from scripts.fetch_census import bhutan
+        self.bt = bhutan
+
+    def test_the_national_split_the_report_prints_reconciles(self):
+        # Page 29 of the national report: "Bhutan 380,453 52.3 346,692 47.7
+        # 727,145". The two halves are the whole, and the whole is the
+        # population the report's own analyses are built on.
+        self.assertEqual(self.bt.NATIONAL_MALE, 380_453)
+        self.assertEqual(self.bt.NATIONAL_FEMALE, 346_692)
+        self.assertEqual(self.bt.NATIONAL_MALE + self.bt.NATIONAL_FEMALE,
+                         self.bt.NATIONAL_ANALYSED)
+        self.assertEqual(self.bt.NATIONAL_ANALYSED, 727_145)
+        ratio = self.bt.sex_ratio(self.bt.NATIONAL_MALE, self.bt.NATIONAL_FEMALE,
+                                  self.bt.NATIONAL_ANALYSED, "Bhutan")
+        self.assertEqual(ratio["value"], 911)
+        self.assertEqual(ratio["unit"], "females_per_1000_males")
+        self.assertEqual(ratio["year"], 2017)
+
+    def test_a_row_whose_halves_contradict_its_total_publishes_no_ratio(self):
+        # 423 + 419 is 842, and a row printing 843 has told this reader two
+        # different things. The gap says which three figures disagreed, so it
+        # cannot be read as "nobody ran the adapter".
+        refused = self.bt.sex_ratio(423, 419, 843, "Test/Row")
+        self.assertEqual(refused["status"], "not_available")
+        for figure in ("423", "419", "843"):
+            self.assertIn(figure, refused["note"])
+        self.assertNotIn("value", refused)
+        # The same row, adding up, is published.
+        taken = self.bt.sex_ratio(423, 419, 842, "Test/Row")
+        self.assertEqual(taken["value"], 991)
+
+    def test_a_row_with_no_males_has_no_denominator(self):
+        # Not a real gewog, and the guard is not for one: it is what keeps a
+        # zero in the Male column from raising ZeroDivisionError halfway
+        # through the twenty reports.
+        empty = self.bt.sex_ratio(0, 5, 5, "Test/Row")
+        self.assertEqual(empty["status"], "not_available")
+        self.assertNotIn("value", empty)
+
+
+class BhutanGewogFigures(unittest.TestCase):
+    """What the adapter actually wrote, checked against the other publication.
+
+    The dzongkhag volumes and the national report disagree on some dzongkhags'
+    head counts -- the twenty come to 720,837 against the 727,145 the national
+    report analyses -- so the national report cannot check every row. It can
+    check the eight where the two publications print the same total, and those
+    are a real control: the ratios below are computed from the national
+    report's own Male and Female columns, in a different document, laid out
+    differently, read by nothing.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        path = be.PROCESSED / "bhutan_gewog.json"
+        if not path.exists():
+            raise unittest.SkipTest("bhutan_gewog.json has not been run")
+        from scripts.fetch_census import bhutan
+        cls.bt = bhutan
+        cls.rows = json.loads(path.read_text(encoding="utf-8"))
+        cls.by_name = {r["name"]: r for r in cls.rows if r["level"] == "admin1"}
+
+    def test_every_record_carries_a_ratio_from_its_own_table(self):
+        self.assertEqual(len(self.rows), 225)
+        for row in self.rows:
+            ratio = row["sex_ratio"]
+            self.assertIn("value", ratio, row["name"])
+            self.assertEqual(ratio["unit"], "females_per_1000_males")
+            self.assertEqual(ratio["year"], 2017)
+            self.assertIn("Table 2.1", ratio["source"])
+
+    def test_the_national_report_agrees_where_it_can_be_asked(self):
+        # (male, female, total) as the national report's Table 2.1 prints
+        # them, for the eight dzongkhags whose totals the two publications
+        # agree on. A column read one place to the left would survive every
+        # check inside the dzongkhag volumes and fail here.
+        printed = {
+            "Bumthang": (9_396, 8_424, 17_820),
+            "Chhukha": (36_041, 32_925, 68_966),
+            "Dagana": (12_956, 12_009, 24_965),
+            "Trashi Yangtse": (8_719, 8_581, 17_300),
+            "Trongsa": (11_878, 8_082, 19_960),
+            "Tsirang": (11_526, 10_850, 22_376),
+            "Wangdue Phodrang": (24_302, 17_884, 42_186),
+            "Zhemgang": (9_195, 8_568, 17_763),
+        }
+        for name, (male, female, total) in printed.items():
+            row = self.by_name[name]
+            self.assertEqual(row["population"]["value"], total, name)
+            self.assertEqual(row["sex_ratio"]["value"],
+                             round(1000.0 * female / male), name)
+
+    def test_no_town_was_given_a_record(self):
+        # Towns and thromdes are enumerated beside the gewogs and geoBoundaries
+        # draws none of them, so they have nowhere to go. Chhukha's
+        # Phuentshogling Thromde and its Phuentshogling gewog are two rows of
+        # one table sharing a name; only the gewog is a record here, and its
+        # people are its own.
+        levels = collections.Counter(r["level"] for r in self.rows)
+        self.assertEqual(levels["admin1"], 20)
+        self.assertEqual(levels["admin2"], 205)
+        for row in self.rows:
+            self.assertIsNone(self.bt.TOWN.search(row["name"]), row["name"])
+
+    def test_the_most_skewed_gewog_sits_where_the_census_found_the_men(self):
+        # 209 females per 1,000 males is not a misreading. Darkar's dzongkhag,
+        # Wangdue Phodrang, is 57.6% male in the national report -- with
+        # Trongsa's 59.5% the most skewed in the country -- and Darkar's own
+        # row adds up, which is what a shifted column would not do.
+        gewogs = {r["name"]: r for r in self.rows if r["level"] == "admin2"}
+        self.assertEqual(gewogs["Darkar"]["parent_name"], "Wangdue Phodrang")
+        self.assertEqual(gewogs["Darkar"]["sex_ratio"]["value"], 209)
+        self.assertEqual(gewogs["Dramedtse"]["sex_ratio"]["value"], 1267)
+
+
 class PakistanMotherTongue(unittest.TestCase):
     """Table 11 of the 2023 census, and what reading it moved.
 
@@ -2833,15 +3334,46 @@ class PakistanMotherTongue(unittest.TestCase):
         self.assertEqual(residual, [])
 
     def test_language_and_religion_are_now_the_same_census(self):
-        # They were six years apart. A district that carries one year for
-        # religion and another for language invites exactly the comparison
-        # that cannot be made.
+        """They were six years apart. A unit carrying one year for religion
+        and another for language invites exactly the comparison that cannot
+        be made.
+
+        The rule is about the census and not about a list of exceptions, so it
+        is stated that way: a field that does *not* come from the census says
+        so in ``{field}_basis`` -- Gilgit-Baltistan's sects and its household
+        survey, Azad Kashmir's languages -- and those are the rows allowed to
+        differ. Every row where both fields are the census's must agree, and
+        naming the exceptions by their basis rather than by name means a
+        future one cannot slip in undeclared.
+        """
         for row in self.rows.values():
-            if isinstance(row.get("language"), list) \
-                    and isinstance(row.get("religion"), list) \
-                    and row["name"] != "Gilgit-Baltistan":
+            if not (isinstance(row.get("language"), list)
+                    and isinstance(row.get("religion"), list)):
+                continue
+            if row.get("language_basis") or row.get("religion_basis"):
+                continue                    # not the census, and says so
+            with self.subTest(row=row["id"]):
                 self.assertEqual(row["language_year"], row["religion_year"],
                                  row["name"])
+
+    def test_a_field_from_outside_the_census_declares_its_basis(self):
+        """The other half of the rule above, so it cannot be met by silence.
+
+        A row exempted from the year check because it carries a basis must
+        also be one of the rows that are genuinely not the census: the two
+        territories the Bureau publishes no table for. If a province ever
+        acquires a basis, this fails rather than quietly dropping it out of
+        the comparison.
+        """
+        apart = sorted(row["id"] for row in self.rows.values()
+                       if row.get("language_basis") or row.get("religion_basis"))
+        self.assertTrue(apart)
+        for entity in apart:
+            with self.subTest(row=entity):
+                self.assertTrue(entity.startswith(("PAK-ajk", "PAK-gb")),
+                                f"{entity} counts something other than the "
+                                f"census and is not one of the two "
+                                f"territories the census tables do not reach")
 
 
 class ChitralSplit(unittest.TestCase):
@@ -2937,7 +3469,49 @@ class PakistanDeclaresWhatIsNotPublished(unittest.TestCase):
                 if isinstance(row.get(field), list):
                     continue          # Gilgit-Baltistan's religion, below
                 self.assertEqual(row[field]["status"], "not_available")
-                self.assertIn("publishes no Table 9", row[field]["note"])
+                self.assertIn("Bureau of Statistics publishes no",
+                              row[field]["note"])
+
+    def test_a_gap_names_the_table_that_would_have_answered_it(self):
+        """Religion's gap and language's gap are not the same sentence.
+
+        They were, and the shared wording was the weaker claim: a reader of a
+        district with no language was told about Table 9, the religion table,
+        which is not what they are missing. Table 9 answers religion and Table
+        11 answers mother tongue, so each field's note names its own.
+        """
+        for row in self.absent("ajk", "gb"):
+            for field, table in (("religion", "Table 9"),
+                                 ("language", "Table 11")):
+                if isinstance(row.get(field), list):
+                    continue
+                with self.subTest(row=row["id"], field=field):
+                    self.assertIn(table, row[field]["note"])
+
+    def test_a_gilgit_district_says_why_it_has_no_language_of_its_own(self):
+        """The territory has a figure and its districts do not, which needs
+        saying in the place a reader looks: on the district.
+
+        The territory-wide note explains what the territory carries. A
+        district carrying the same words would be telling the reader about a
+        figure that is not on the district, and saying nothing about why the
+        one they are looking at is empty. So the district's note names the
+        four routes that were asked and the reason the territory's own figure
+        is not spread over the ten.
+        """
+        rows = {r["name"]: r for r in self.absent("gb")}
+        territory = rows["Gilgit-Baltistan"]["language"]
+        for name in self.pk.TERRITORIES["gb"][2]:
+            with self.subTest(district=name):
+                note = rows[name]["language"]["note"]
+                self.assertIn("none of its ten districts", note)
+                # Named, each of them, because "no district table" is a
+                # conclusion and these are what it rests on.
+                for route in ("Table 11", "at a Glance", "MICS"):
+                    self.assertIn(route, note)
+                if isinstance(territory, list):
+                    self.assertNotEqual(
+                        note, rows["Gilgit-Baltistan"].get("language_note"))
 
     def test_gilgit_baltistan_carries_its_one_non_census_figure(self):
         # The territory row, from PILDAT's estimate of the sects.
@@ -3301,6 +3875,7 @@ class BangladeshZila(unittest.TestCase):
         "sexed": {"Muslim": (457_588, 479_907), "Hindu": (34_436, 35_045),
                   "Christian": (117, 135), "Buddhist": (2_564, 621),
                   "Other religion": (33, 15)},
+        "ethnic": 1_137, "ethnic_sexed": (555, 582),
     }
 
     def setUp(self):
@@ -6592,3 +7167,262 @@ class CountryDetail(unittest.TestCase):
         self.assertEqual(admin0[0]["language_note"], "what it holds")
         # A note-only row leaves the figures exactly as they were.
         self.assertEqual(admin0[0]["language"][0]["pct"], 82.6)
+
+
+class Adm2Parents(unittest.TestCase):
+    """Which first-order shape a second-order unit is filed under.
+
+    CGAZ ships no parent link, so the build works it out from the geometry.
+    It used to do that by containment of the unit's representative point and,
+    where that failed, by whichever bounding box the spatial index returned
+    first. Measured over all 49,349 units, 228 were filed under the wrong
+    first-order shape -- Apostoles Department under Corrientes when it is in
+    Misiones, eleven Bhutanese gewogs under the wrong dzongkhag. The parent is
+    what scopes an adapter's row to a shape, so it decides matches too.
+    """
+
+    @staticmethod
+    def _square(x0, y0, x1, y1):
+        from shapely.geometry import box
+        return box(x0, y0, x1, y1)
+
+    def _country(self, *parents):
+        """Build the (tree, rows) entry link_adm2_parents hands the weighing."""
+        import shapely
+        from shapely.strtree import STRtree
+        rows = []
+        for name, geom in parents:
+            geom = be.whole(geom)
+            shapely.prepare(geom)
+            rows.append({"shape_id": f"ADM1-{name}", "name": name,
+                         "group": "XXX", "_geom": geom})
+        return {"XXX": (STRtree([r["_geom"] for r in rows]), rows)}
+
+    def _unit(self, name, parent, bbox):
+        return {"shape_id": f"ADM2-{name}", "name": name, "group": "XXX",
+                "parent_shape": parent, "bbox": bbox}
+
+    def test_a_straddling_unit_goes_to_the_side_it_is_mostly_on(self):
+        # West is 0..10, East is 10..20. The unit spans 8..14, so a third of
+        # it is in West and two thirds in East -- and its representative point
+        # sits in West, which is exactly how the old rule got these wrong.
+        trees = self._country(("West", self._square(0, 0, 10, 10)),
+                              ("East", self._square(10, 0, 20, 10)))
+        row = self._unit("Straddler", "ADM1-West", [8, 2, 14, 6])
+        moved, unplaced = be.weigh_adm2_parents(
+            {"ADM2-Straddler": row}, trees,
+            [("ADM2-Straddler", self._square(8, 2, 14, 6))])
+        self.assertEqual(row["parent_shape"], "ADM1-East")
+        self.assertEqual((moved, unplaced), (1, []))
+
+    def test_a_majority_holding_parent_is_left_alone(self):
+        trees = self._country(("West", self._square(0, 0, 10, 10)),
+                              ("East", self._square(10, 0, 20, 10)))
+        row = self._unit("Mostly west", "ADM1-West", [6, 2, 11, 6])
+        moved, unplaced = be.weigh_adm2_parents(
+            {"ADM2-Mostly west": row}, trees,
+            [("ADM2-Mostly west", self._square(6, 2, 11, 6))])
+        self.assertEqual(row["parent_shape"], "ADM1-West")
+        self.assertEqual((moved, unplaced), (0, []))
+
+    def test_a_unit_that_meets_nothing_loses_its_parent_rather_than_guessing(self):
+        # Belize City's six electoral divisions are drawn outside every one of
+        # Belize's own district polygons. Geometry has no evidence there, and
+        # nearness is a proxy for evidence rather than evidence, so the unit
+        # falls back to the country -- which is true -- instead of to a
+        # province picked for being close, which may not be.
+        trees = self._country(("West", self._square(0, 0, 10, 10)),
+                              ("East", self._square(10, 0, 20, 10)))
+        row = self._unit("Adrift", "ADM1-West", [30, 30, 31, 31])
+        moved, unplaced = be.weigh_adm2_parents(
+            {"ADM2-Adrift": row}, trees,
+            [("ADM2-Adrift", self._square(30, 30, 31, 31))])
+        self.assertIsNone(row["parent_shape"])
+        self.assertEqual((moved, unplaced), (0, ["Adrift (XXX)"]))
+
+    def test_an_invalid_polygon_is_repaired_and_not_dropped(self):
+        """A self-touching ring must not cost a unit its true parent.
+
+        346 of CGAZ's 3,224 first-order polygons and 843 of its second-order
+        ones do not satisfy GEOS. An earlier version of this caught the
+        exception the overlay raises and moved on, which silently dropped the
+        best candidate and handed the unit to whichever lesser neighbour
+        happened not to raise: Bouches-du-Rhone to Occitanie, Abu Dhabi to
+        Sharjah. Swallowing an error from the most important candidate is
+        worse than the arbitrary fallback it replaced.
+        """
+        from shapely.geometry import Polygon
+        # A bowtie: one ring crossing itself, so GEOS calls it invalid.
+        bowtie = Polygon([(11, 0), (19, 8), (11, 8), (19, 0), (11, 0)])
+        self.assertFalse(bowtie.is_valid)
+        trees = self._country(("West", self._square(0, 0, 10, 10)),
+                              ("East", self._square(10, 0, 20, 10)))
+        row = self._unit("Bowtie", None, [11, 0, 19, 8])
+        moved, unplaced = be.weigh_adm2_parents(
+            {"ADM2-Bowtie": row}, trees, [("ADM2-Bowtie", bowtie)])
+        self.assertEqual(row["parent_shape"], "ADM1-East")
+        self.assertEqual(unplaced, [])
+
+    def test_repair_keeps_the_polygon_and_drops_the_stray_lines(self):
+        # make_valid can hand back lines and points alongside the polygon;
+        # area and containment are questions about the polygon.
+        from shapely.geometry import Polygon
+        spike = Polygon([(0, 0), (4, 0), (4, 4), (0, 4), (0, 0),
+                         (8, 0), (0, 0)])
+        fixed = be.whole(spike)
+        self.assertTrue(fixed.is_valid)
+        self.assertIn(fixed.geom_type, ("Polygon", "MultiPolygon"))
+        self.assertAlmostEqual(fixed.area, 16.0, places=6)
+
+    def test_a_valid_polygon_is_handed_back_unchanged(self):
+        square = self._square(0, 0, 2, 2)
+        self.assertIs(be.whole(square), square)
+
+
+class BangladeshReportTables(unittest.TestCase):
+    """Reading Tables P28 and P29 out of the National Report.
+
+    Both faults these tests pin were real and both were silent. The reader
+    locked onto the report's *list of tables*, where "Table P28" and "Table
+    P29" sit two lines apart, read a two-line slice and found nothing -- and
+    the reconciliation passed anyway, because every one of its checks iterates
+    the blocks and there were no blocks to disagree with. It wrote a file and
+    logged success.
+    """
+
+    CONTENTS = [
+        "Table P28  Ethnic Population by Sex and District, 2022 ............ 363",
+        "Table P29  Ethnic Population by Category, Sex and Division, 2022 .. 365",
+        "Table P30  Population by Home District and Sex, 2022 .............. 373",
+    ]
+    TABLE = [
+        "Table P29 Ethnic Population by Category, Sex and Division, 2022",
+        "Total Male Female",
+        "Category",
+        "Number Percent Number Percent Number Percent",
+        "1 2 3 4 5 6 7",
+        "National 300 100.00 150 50.00 150 50.00",
+        "Chakma 200 100.00 100 50.00 100 50.00",
+        "Marma 100 100.00 50 50.00 50 50.00",
+        "Barishal Division 300 100.00 150 50.00 150 50.00",
+        "Chakma 200 100.00 100 50.00 100 50.00",
+        "Marma 100 100.00 50 50.00 50 50.00",
+        "Table P30 Population by Home District and Sex, 2022",
+    ]
+
+    def setUp(self):
+        from scripts.fetch_census import bangladesh
+        self.bd = bangladesh
+
+    def test_the_contents_listing_is_not_mistaken_for_the_table(self):
+        blocks = self.bd.report_blocks(
+            self.CONTENTS + self.TABLE, "Table P29", "Table P30")
+        self.assertEqual(sorted(blocks), ["Barishal", "National"])
+        self.assertEqual(blocks["Barishal"]["rows"], {"Chakma": 200, "Marma": 100})
+
+    def test_a_heading_with_nothing_under_it_anywhere_is_refused(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.report_blocks(self.CONTENTS, "Table P29", "Table P30")
+        self.assertIn("no occurrence had any rows", str(caught.exception))
+
+    def test_the_column_number_line_is_not_a_category(self):
+        blocks = self.bd.report_blocks(self.TABLE, "Table P29", "Table P30")
+        self.assertNotIn("1", blocks["National"]["rows"])
+
+    def test_an_empty_parse_cannot_pass_the_reconciliation(self):
+        """The check that could not fail on nothing, and now can."""
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.check_report({}, {}, {})
+        self.assertIn("divisions, expected 8", str(caught.exception))
+
+    def test_a_division_whose_rows_do_not_sum_to_its_header_is_refused(self):
+        districts = {"National": {"total": 300, "rows": {}},
+                     **{f"D{i}": {"total": 0, "rows": {}} for i in range(8)}}
+        with self.assertRaises(SystemExit):
+            self.bd.check_report(districts, districts, {})
+
+
+class BangladeshEthnicPopulation(unittest.TestCase):
+    """A question the census asks and publishes one number of.
+
+    Bangladesh counts its ethnic population and prints a total per district --
+    1,650,478 people, 1% of the country, but 57.6% of Rangamati -- and names
+    no people at any level below the nation. That is neither a composition nor
+    an absence, and this map had been calling it an absence: a bare
+    ``not_available`` with no note on all sixty-four zilas, which reads as a
+    fetch nobody ran.
+
+    The figure now goes in the reason instead. What it must never become is a
+    two-slice chart of "ethnic population" and everyone else, which would read
+    as a census that found two ethnicities.
+    """
+
+    BARGUNA = BangladeshZila.BARGUNA
+
+    def setUp(self):
+        from scripts.fetch_census import bangladesh
+        self.bd = bangladesh
+
+    def row(self, **changes):
+        row = {k: (dict(v) if isinstance(v, dict) else v)
+               for k, v in self.BARGUNA.items()}
+        row.update(changes)
+        return row
+
+    def test_the_ethnic_total_must_match_its_own_sexes(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.check([self.row(ethnic_sexed=(555, 999))])
+        self.assertIn("ethnic population totals", str(caught.exception))
+
+    def test_more_ethnic_people_than_people_is_refused(self):
+        # How a column read one place left announces itself, before the figure
+        # reaches a panel as a percentage over 100.
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.check([self.row(ethnic=2_000_000, ethnic_sexed=(1_000_000, 1_000_000))])
+        self.assertIn("against a district population", str(caught.exception))
+
+    def test_a_missing_ethnic_figure_is_refused_not_skipped(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.bd.check([self.row(ethnic=None, ethnic_sexed=(None, None))])
+        self.assertIn("ethnic population has no total", str(caught.exception))
+
+    def test_the_reason_states_the_count_and_the_share(self):
+        note = self.bd.ethnicity_gap("Rangamati", 372_875, 647_586)
+        self.assertIn("372,875", note)
+        self.assertIn("647,586", note)
+        self.assertIn("57.58%", note)
+        # And says what is missing, so the reader knows this is not a fetch
+        # nobody ran.
+        self.assertIn("does not", note.lower())
+
+    def test_the_reason_never_becomes_a_composition(self):
+        """The whole point: a total and a residual are not a list of peoples."""
+        import json
+        from scripts.common import NOT_AVAILABLE, gap
+        value = gap(NOT_AVAILABLE, self.bd.ethnicity_gap("Barguna", 1_137, 1_010_531))
+        self.assertEqual(value["status"], NOT_AVAILABLE)
+        self.assertNotIsInstance(value, list)
+        # No group name may appear in it -- there is no group name to use.
+        for people in ("Chakma", "Marma", "Santal", "Garo", "Bengali"):
+            self.assertNotIn(people, json.dumps(value))
+
+    def test_a_gap_carries_no_year(self):
+        """A year beside a gap claims a measurement nobody took.
+
+        This used to assert that the word "ethnicity_year" appeared nowhere in
+        the adapter, which was true only while every ethnicity value it wrote
+        was a gap. The eight divisions now carry a real composition from Table
+        P29 and a year is exactly right on those, so the test asserts the
+        invariant it was always reaching for: a year may sit beside a figure
+        and never beside a gap.
+        """
+        rows = json.loads(
+            (ROOT / "data" / "processed" / "bangladesh_district.json").read_text())
+        self.assertTrue(rows, "the adapter has written no records")
+        for row in rows:
+            if isinstance(row.get("ethnicity"), dict):
+                self.assertNotIn("ethnicity_year", row,
+                                 f"{row['name']} dates a gap")
+            elif isinstance(row.get("ethnicity"), list):
+                self.assertEqual(row.get("ethnicity_year"), 2022,
+                                 f"{row['name']} publishes an undated composition")

@@ -252,12 +252,16 @@ AJK_ONE_SHAPE = (
     "the yearbook counts ten districts, so this is the territory's figure on "
     "the territory's shape rather than any one district's.")
 AJK_LANGUAGE_GAP = (
-    "Mother tongue is the field Azad Jammu and Kashmir still has no source "
-    "for. The Bureau of Statistics publishes no Table 11 for it, the U.S. "
-    "Census Bureau's workbook of the 2017 census lists the territory and "
-    "leaves it blank, and the AJ&K Statistical Year Book 2023 -- which does "
-    "print the census's religion table -- contains the word 'tongue' on no "
-    "page of it.")
+    "Azad Jammu and Kashmir has no mother-tongue table from any census: the "
+    "Bureau of Statistics publishes no Table 11 for it and the U.S. Census "
+    "Bureau's workbook of the 2017 census lists the territory and leaves it "
+    "blank. The territory's own AJ&K MICS 2020-21 asks the question -- "
+    "Appendix E prints it as HC1B, the mother tongue of the head of the "
+    "household -- and publishes no distribution of the answer in 734 pages. "
+    "What does exist is Table 15.33 of the AJ&K Statistical Year Book 2023, "
+    "'Languages Spoken in AJ&K', a district-wise percentage from the Kashmir "
+    "Liberation Cell rather than from a census, and this run could not read "
+    "it.")
 
 # The name each territory is drawn under, and the second-level units inside it.
 # Both lists are geoBoundaries' own spellings, because a declaration that
@@ -391,6 +395,27 @@ NUMBER = re.compile(r"^[\d,]+$")
 
 
 Cell = tuple[float, float, str]           # (left x, right x, text)
+
+
+def to_hundred(exact: dict[str, float]) -> dict[str, float]:
+    """Percentages rounded to a tenth and summing to 100.0 exactly.
+
+    Largest remainder, because the alternative is a composition that adds to
+    99.9 or 100.1 through independent roundings and a reader who cannot tell
+    that drift from a source that does not partition its population. The
+    adjustment goes to the largest share, where a tenth of a point is the
+    smallest lie available.
+
+    Three tables here need it -- Gilgit-Baltistan's sects and its languages,
+    Azad Kashmir's languages -- and all three are weighted sums rather than
+    counts, so ``shares()``, which rounds each row on its own, cannot do it.
+    """
+    floors = {name: round(value, 1) for name, value in exact.items()}
+    drift = round(100.0 - sum(floors.values()), 1)
+    if drift:
+        biggest = max(floors, key=lambda name: floors[name])
+        floors[biggest] = round(floors[biggest] + drift, 1)
+    return floors
 
 
 def words_by_row(blob: bytes, tolerance: float = 2.0):
@@ -774,6 +799,283 @@ def ajk_check(found: dict[str, dict[str, int]], whole: dict[str, int]) -> None:
             f"printed total, which the yearbook's own 15.23 also shows")
 
 
+# ---------------------------------------------------------------------------
+# Azad Jammu and Kashmir's languages: the same yearbook, a different office.
+# ---------------------------------------------------------------------------
+#
+# Table 15.33, *Languages Spoken in AJ&K*, is the only district-level language
+# figure this territory has, and finding that out took measuring the three
+# routes that do not lead to one:
+#
+#   * the Bureau of Statistics publishes no Table 11 for AJ&K, under any of
+#     the names the four provinces and Islamabad are filed under;
+#   * the **AJ&K MICS 2020-21**, the territory's own household survey, *does*
+#     ask the question -- Appendix E prints it as HC1B, "What is the mother
+#     tongue of the head of the household?", with English, Urdu,
+#     Hindko/Pahari/Potohari, Kashmiri, Gojri, Punjabi and an Other -- and its
+#     734-page Survey Findings Report publishes no distribution of the answer.
+#     The word "Gojri" occurs on eight of those pages and every one of them is
+#     a questionnaire. The answers are in the microdata, which lives on
+#     mics.unicef.org behind a client check this project does not spoof;
+#   * the same yearbook's prose (section 1.9) lists the languages by name and
+#     gives no figures at all.
+#
+# So this table, and it is not a census. Three things about it are stated
+# rather than smoothed over, because a reader has to be able to discount it:
+#
+# **Its source is not a statistical office.** The line under it reads "Kashmir
+# Liberation Cell, Muzaffarabad" -- a department of the AJ&K government, and
+# not the Bureau of Statistics whose religion table sits nine pages earlier.
+# The figures are round to a degree no count is: 50, 95, 63, 35.
+#
+# **It carries no year.** Table 15.32 above it is captioned "(2018 to 2022)"
+# and this one is captioned nothing, so the records it fills carry no
+# `language_year`. Dating it 2023 from the cover is precisely the error the
+# religion table above documents avoiding.
+#
+# **Five columns are made to hold eight languages.** The headings are
+# Kashmiri, Gojri, Pahari, Shina and Others, and where a district's language
+# is none of those the office writes its name inside the cell: Bhimber's Dogri
+# is printed under the *Shina* column and its Punjabi under *Others*. Reading
+# a column heading as the language would put Dogri speakers under Shina -- a
+# wrong row that no total would catch, which is the one failure this module
+# exists to refuse. Every cell name is therefore declared in
+# ``AJK_TONGUE_NAMES`` below and an unrecognised one stops the run.
+AJK_TONGUE_TABLE = re.compile(r"Languages\s*Spoken\s*in\s*AJ&K", re.I)
+# The five printed headings, left to right. They are what locates the columns
+# on the page; what they mean is ``AJK_TONGUE_NAMES``.
+AJK_TONGUE_COLUMNS = ("Kashmiri", "Gojri", "Pahari", "Shina", "Others")
+# Every label the table prints, and the group this map files it under. A
+# heading with no name written beside the figure means the heading; a name
+# written beside the figure means that name.
+AJK_TONGUE_NAMES: dict[str, str] = {
+    "Kashmiri": "Kashmiri",
+    "Gojri": "Gojri",
+    # The heading is "Pahari" and Kotli's own cell writes "Pahari Pothwari".
+    # This map writes Pahari-Pothwari for both, because "Pahari" alone is also
+    # the name of a Tibeto-Burman language of Nepal that this project already
+    # carries: one label for two unrelated languages would put four million
+    # people in the wrong family and the wrong colour on the map.
+    "Pahari": "Pahari-Pothwari",
+    "Shina": "Shina",
+    "Others": "Other languages",
+    # The names printed inside a cell. The first five are what a district
+    # calls its own variety of Pahari-Pothwari -- Dhundi-Kairali in Bagh,
+    # Chibhali in Haveli, Punchi in Poonch and Sudhnoti, Mirpuri in Mirpur and
+    # Bhimber -- and the table files each of them in the Pahari column, which
+    # is where they belong and where they stay.
+    "Dhundi-Khairali": "Pahari-Pothwari",
+    "Chibali": "Pahari-Pothwari",
+    "Punchi": "Pahari-Pothwari",
+    "Pahari Pothwari": "Pahari-Pothwari",
+    "Mirpuri": "Pahari-Pothwari",
+    # And the three that are languages in their own right, printed in
+    # whichever column had room: Dogri under Shina, Punjabi under Others, and
+    # Kundal Shahi -- the Dardic language of two villages in the Neelum valley
+    # -- under Others as well.
+    "Dogri": "Dogri",
+    "Punjabi": "Punjabi",
+    "Kundal Shahi": "Kundal Shahi",
+}
+AJK_TONGUE_SOURCE = ("Kashmir Liberation Cell, Muzaffarabad, Table 15.33 "
+                     "'Languages Spoken in AJ&K', as printed in the AJ&K "
+                     "Statistical Year Book 2023 (Bureau of Statistics, P&DD, "
+                     "Azad Government of the State of Jammu & Kashmir)")
+AJK_TONGUE_LICENCE = AJK_LICENCE
+# What a composition counts, and what keeps it out of Pakistan's national
+# mother tongue: the four provinces and Islamabad answer the census's mother
+# tongue question and this answers "what is spoken here".
+AJK_TONGUE_BASIS = "languages spoken"
+# The most a printed row may fall short of 100 before this is a misreading
+# rather than the source's own rounding. Mirpur's row sums to 97 and every
+# other row to exactly 100, so five points is wide enough to admit the one
+# and narrow enough that a column read into the wrong place -- which moves a
+# row by tens -- still stops the run.
+AJK_TONGUE_SHORT = 5.0
+AJK_TONGUE_NOTE = (
+    "Not a census. Azad Jammu and Kashmir is enumerated apart from the census "
+    "proper and the Bureau of Statistics publishes no mother-tongue table for "
+    "it, so this is Table 15.33 of the AJ&K Statistical Year Book 2023, whose "
+    "source line names not the territory's Bureau of Statistics but its "
+    "Kashmir Liberation Cell. The table gives a percentage for each of the ten "
+    "districts and prints no year; these are those ten rows weighted by their "
+    "2017 census populations, which is why the territory's figure agrees with "
+    "the districts underneath it. The figures are round -- 50, 95, 63 -- and "
+    "the question they answer is which languages are spoken here rather than "
+    "the census's mother tongue, which is why they are not added into "
+    "Pakistan's national language figure. Pahari-Pothwari is the table's "
+    "'Pahari' column together with the local names it prints inside it "
+    "(Dhundi-Khairali in Bagh, Chibali in Haveli, Punchi in Poonch and "
+    "Sudhnoti, Mirpuri in Mirpur and Bhimber); Dogri and Punjabi are named in "
+    "Bhimber's row and Kundal Shahi in Neelum's, each printed under a column "
+    "headed for a different language.{short}")
+AJK_TONGUE_SHORT_NOTE = (
+    " One row does not add up and is not quietly squared: {names}, so the "
+    "three points the source leaves unaccounted for are spread across that "
+    "district's own languages in proportion rather than across the territory's, "
+    "which is where the people they describe live.")
+
+# A share in this table: one, two or three digits and never a thousands
+# separator, which is what tells it apart from the marriage counts printed
+# above it on the same page.
+SHARE = re.compile(r"^\d{1,3}$")
+
+
+def ajk_tongue_row(cells: list[Cell], centres: list[tuple[float, str]],
+                   district: str, limit: float) -> dict[str, float]:
+    """One district's row of Table 15.33 as {language: percent}.
+
+    Three kinds of thing are in the row and only one of them is a figure: the
+    district's name, five columns of percentages with a dash where a language
+    is absent, and -- inside a cell, after its number -- the local name of the
+    language that number counts.
+
+    So the numbers are placed by where they sit and named by what follows
+    them. ``limit`` is half the narrowest gap between two column centres, so a
+    figure nearer to no column than that is a row this reader has misread
+    rather than a column it has not been told about.
+    """
+    slots: list[tuple[float, int, list[str]]] = []
+    for x0, x1, text in cells:
+        if text == DASH:
+            continue                       # the office's "not spoken here"
+        if SHARE.match(text):
+            slots.append(((x0 + x1) / 2.0, int(text), []))
+            continue
+        if not slots:
+            raise SystemExit(
+                f"AJ&K Table 15.33: {district}'s row begins {text!r} before "
+                f"any figure, so the district's name has not been read off it")
+        slots[-1][2].append(text)
+
+    out: dict[str, float] = {}
+    taken: dict[str, int] = {}
+    for centre, value, words in slots:
+        distance, column = min((abs(x - centre), name) for x, name in centres)
+        if distance > limit:
+            raise SystemExit(
+                f"AJ&K Table 15.33: {district} prints {value} at x={centre:.0f}, "
+                f"{distance:.0f} points from the nearest column ({column}); "
+                f"the columns are not where this reader thinks they are")
+        if column in taken:
+            raise SystemExit(
+                f"AJ&K Table 15.33: {district} puts {taken[column]} and "
+                f"{value} both in the {column} column")
+        taken[column] = value
+        label = " ".join(words) or column
+        group = AJK_TONGUE_NAMES.get(label)
+        if group is None:
+            raise SystemExit(
+                f"AJ&K Table 15.33: {district} names {label!r}, which this "
+                f"module has not been told what to do with. A language filed "
+                f"under the wrong column heading is invisible, so an "
+                f"unrecognised one stops the run rather than being guessed at")
+        out[group] = out.get(group, 0.0) + value
+    return out
+
+
+def ajk_tongue_table(blob: bytes) -> dict[str, dict[str, float]]:
+    """Table 15.33: ten districts, each as {language: percent}.
+
+    The caption alone does not find it. Table 15.32, *District-wise Number and
+    Percentage of Marriages*, is printed on the same page with the same ten
+    district names down its left edge, so a reader that took the first row
+    beginning "Muzaffarabad" would come away with a marriage count. The rows
+    are therefore read only below 15.33's own heading row -- the one carrying
+    all five column names -- and only as far as its source line.
+
+    A caption with no heading row under it is the contents listing, thirteen
+    pages earlier, and is skipped rather than refused; the same distinction
+    ``ajk_table`` draws, for the same reason.
+    """
+    for number, rows in enumerate(words_by_row(blob), start=1):
+        page = [(" ".join(t for _a, _b, t in cells), cells) for cells in rows]
+        if not any(AJK_TONGUE_TABLE.search(line) for line, _cells in page):
+            continue
+        head = next((i for i, (_line, cells) in enumerate(page)
+                     if all(name in [t for _a, _b, t in cells]
+                            for name in AJK_TONGUE_COLUMNS)), None)
+        if head is None:
+            log(f"    Table 15.33 named on page {number} with no heading row "
+                f"under it: the contents, not the table")
+            continue
+        centres = [((x0 + x1) / 2.0, text) for x0, x1, text in page[head][1]
+                   if text in AJK_TONGUE_COLUMNS]
+        gaps = [b[0] - a[0] for a, b in zip(centres, centres[1:])]
+        limit = min(gaps) / 2.0
+        found: dict[str, dict[str, float]] = {}
+        for line, cells in page[head + 1:]:
+            if line.startswith("Source:"):
+                break
+            name = next((d for d in AJK_DISTRICTS
+                         if line.startswith(f"{d} ")), None)
+            if name is None or name in found:
+                continue
+            found[name] = ajk_tongue_row(cells[len(name.split()):],
+                                         centres, name, limit)
+        if len(found) != len(AJK_DISTRICTS):
+            raise SystemExit(
+                f"AJ&K Table 15.33 is on page {number} and this read "
+                f"{len(found)} of {len(AJK_DISTRICTS)} districts: "
+                + ", ".join(sorted(found)))
+        log(f"    Table 15.33 on page {number}: {len(found)} districts, "
+            f"{len(set().union(*found.values()))} languages")
+        return found
+    raise LookupError("no page carries Table 15.33's caption")
+
+
+def ajk_tongue_weighted(tongues: dict[str, dict[str, float]],
+                        people: dict[str, dict[str, int]],
+                        whole: dict[str, int]) -> tuple[dict[str, float], str]:
+    """The ten districts' languages weighted into the territory's own row.
+
+    geoBoundaries draws Azad Kashmir as a single second-level unit, so the ten
+    rows have nowhere of their own to land -- ``ajk_records`` explains why they
+    are not published one per district. What they can do is add up, and the
+    populations to add them with are already read: they are the TOTAL column of
+    the religion table above, which ``ajk_check`` has just shown sums to the
+    territory exactly.
+
+    Largest-remainder rounding, so the published shares come to 100.0 rather
+    than to 99.9 through eight independent roundings.
+
+    Returns the shares and the sentence describing any row the source left
+    short of 100, which is carried into the note rather than smoothed away.
+    """
+    missing = sorted(set(tongues) - set(people))
+    if missing:
+        raise SystemExit(
+            "AJ&K: Table 15.33 names districts Table 15.24 does not -- "
+            + ", ".join(missing))
+    short: list[str] = []
+    exact: dict[str, float] = {}
+    counted = 0
+    for name, shares_of in tongues.items():
+        printed_total = sum(shares_of.values())
+        if abs(printed_total - 100.0) > AJK_TONGUE_SHORT:
+            raise SystemExit(
+                f"AJ&K Table 15.33: {name}'s languages sum to "
+                f"{printed_total:g}%, too far from 100 to be the source's own "
+                f"rounding")
+        if printed_total != 100.0:
+            short.append(f"{name}'s row sums to {printed_total:g}% rather "
+                         f"than 100")
+            log(f"    {name}: Table 15.33 sums to {printed_total:g}%, "
+                f"rescaled to 100 across its own languages")
+        count = people[name]["TOTAL"]
+        counted += count
+        for group, pct in shares_of.items():
+            exact[group] = exact.get(group, 0.0) + count * pct / printed_total
+    if counted != whole["TOTAL"]:
+        raise SystemExit(
+            f"AJ&K: the ten language rows weigh {counted:,} people against "
+            f"the {whole['TOTAL']:,} printed for the territory")
+    weighted = to_hundred({group: 100.0 * value / counted
+                           for group, value in exact.items()})
+    return weighted, (AJK_TONGUE_SHORT_NOTE.format(names=" and ".join(short))
+                      if short else "")
+
+
 # Gilgit-Baltistan's religion, which no census publishes and one institute does.
 #
 # Everything above this is a census table read off a government file. This is
@@ -1032,15 +1334,78 @@ def gb_religion(counts: dict[str, int]) -> dict[str, Any]:
     }
 
 
-# Gilgit-Baltistan's mother tongue, on the owner's instruction, from the one
-# published account of it.
+# Gilgit-Baltistan's language, from the territory's own survey.
 #
-# The official routes are shut and stay shut: Table 11 does not exist for this
-# territory at any path the Bureau uses, GB At a Glance 2025 carries district
-# tables from the same census and the word "tongue" on no page, and Pakistan's
-# own mother-tongue question names nine languages and an "Other" -- Shina,
-# Balti and Burushaski, which is to say nearly all of Gilgit-Baltistan, all
-# fall in the Other. A census figure here would not name one of its languages.
+# The census routes are shut and stay shut: Table 11 does not exist for this
+# territory at any path the Bureau uses, and GB At a Glance 2025 carries
+# district tables from the same census with the word "tongue" on no page.
+#
+# What does exist is the **Gilgit-Baltistan MICS 2024-25**, run by the
+# territory's Planning & Development Department with UNICEF and published by
+# the department itself. Its Table SR.3.1, *Household composition*, prints the
+# distribution of 6,929 households by language of the household head: Shina
+# 48.0%, Balti 29.2%, Brushaski 12.3%, Khowar 5.2%, Wakhi 1.0%, Other 4.2%.
+# That is the office's own figure for the field, and it is read here.
+#
+# It was not found earlier because of a spelling. The 2016-17 round's 398-page
+# Final Report has no language table at all -- "Burushaski" and "Shina" appear
+# on none of its pages -- and this report spells the language **Brushaski**,
+# without the u, so a search for the standard spelling found nothing in 731
+# pages either. The map writes Burushaski, which is what every other source
+# here calls it; ``GB_TONGUE_SPELLING`` is where that is decided rather than
+# in a guess at read time.
+#
+# The Pamir Times figures below are kept as what this field falls back to, and
+# they are a different measurement: a newspaper's account of the 2017 round,
+# scaled on census population. Where the two disagree the survey's own report
+# wins -- most visibly on which language leads, where the article put Balti
+# 4,000 households ahead of Shina on figures it rounded to the thousand and
+# the office's own table puts Shina eighteen points ahead.
+GB_MICS_BOOK = ("https://www.pnd.gog.pk/storage/downloads/"
+                "oSrtpZkKNFTPMVipYa8VTI94BZmR2g-metaR0IgTUlDUyAyMDI0LTI1IFN1"
+                "cnZleSBGaW5kaW5ncyBSZXBvcnQucGRm-.pdf")
+GB_MICS_TABLE = re.compile(r"Table\s*SR\.3\.1\s*:\s*Household\s*composition",
+                           re.I)
+GB_MICS_HEAD = "Language of household head"
+GB_MICS_TOTAL = "Total"
+# The survey's own years, taken off the table's caption rather than from the
+# file name, so a later round cannot be published under this one's date. The
+# stamp is the later of the two: fieldwork that spans a new year is dated by
+# where it ended, which is also the only reading that never claims a figure is
+# fresher than it is.
+GB_MICS_SPAN = re.compile(r"(20\d\d)-(\d\d)\b")
+# The report's spelling against this map's. Declared, because a silent rename
+# at read time is how two spellings of one language end up as two languages.
+GB_MICS_SPELLING = {"Brushaski": "Burushaski", "Other": "Other languages"}
+GB_MICS_SOURCE = ("Gilgit-Baltistan Multiple Indicator Cluster Survey 2024-25, "
+                  "Table SR.3.1 (Household composition), Planning & "
+                  "Development Department, Government of Gilgit-Baltistan, "
+                  "with UNICEF")
+GB_MICS_LICENCE = ("Government of Gilgit-Baltistan, Planning & Development "
+                   "Department")
+GB_MICS_NOTE = (
+    "A survey, not a census, and households rather than people. Pakistan's "
+    "Bureau of Statistics publishes no mother-tongue table for Gilgit-"
+    "Baltistan at any path, and the census's own question would not help if it "
+    "did: the 2023 form names Shina and Balti but has no column for "
+    "Burushaski, Khowar, Wakhi or Domaaki, so a third of the territory would "
+    "be counted inside its 'Other'. This is instead the territory's own "
+    "Gilgit-Baltistan MICS 2024-25, run by its Planning & Development "
+    "Department with UNICEF: Table SR.3.1 distributes {households:,} surveyed "
+    "households by the language of the household head. Households and not "
+    "persons, which is what language_basis records and what keeps these out of "
+    "Pakistan's national mother tongue -- household size varies sharply across "
+    "these districts, Diamer's being far larger than Hunza's. The report "
+    "spells Burushaski 'Brushaski'; the name here is the one the rest of this "
+    "map uses. The same table gives the survey's districts as a separate "
+    "distribution rather than crossed with language, so none of the ten "
+    "districts carries a language figure of its own.")
+
+
+# The Pamir Times account of the 2017 round, now the fallback rather than the
+# figure. Kept because it is what this field had, because the owner chose it
+# over a blank twice, and because a survey report that a run cannot open should
+# cost the field's freshness rather than the field.
 #
 # So this is a newspaper's account of a survey, and the note leads with that.
 # What the article gives is three household counts (Balti "over 74,000", Shina
@@ -1106,12 +1471,134 @@ GB_TONGUE_NOTE = (
     "none of the ten districts carries this figure.")
 
 
-def gb_language() -> dict[str, Any]:
-    """The mother-tongue fields for Gilgit-Baltistan's territory row.
+COUNT = re.compile(r"^[\d,]+$")
+PERCENT = re.compile(r"^\d+(?:\.\d+)?$")
+
+
+def gb_mics_language(blob: bytes) -> tuple[dict[str, int], int]:
+    """Table SR.3.1's language block: {language: households}, and the year.
+
+    The table is a single column of percentages with a stack of row groups
+    under it -- sex of household head, age, area, division, district,
+    education, household size, and last of all language -- so the block is
+    found by its own heading and read until the rows stop looking like it.
+
+    Two controls, and they are the reason this is read rather than copied out
+    by hand. The six households counts must add to the *Total* the same page
+    prints at the top of the table, which no misread row survives. And the
+    weighted counts rather than the printed percentages are what the shares
+    are made of, so the composition adds to 100 by construction instead of to
+    the 99.9 the printed column comes to.
+    """
+    for number, rows in enumerate(words_by_row(blob), start=1):
+        page = [(" ".join(t for _a, _b, t in cells), cells) for cells in rows]
+        caption = next((line for line, _cells in page
+                        if GB_MICS_TABLE.search(line)), None)
+        if caption is None:
+            continue
+        whole = 0
+        found: dict[str, int] = {}
+        reading = False
+        for line, _cells in page:
+            words = line.split()
+            if not reading and words[:1] == [GB_MICS_TOTAL] and len(words) == 4:
+                whole = int(words[2].replace(",", ""))
+                continue
+            if line.strip() == GB_MICS_HEAD:
+                reading = True
+                continue
+            if not reading:
+                continue
+            # label ... percent weighted unweighted, and anything else is the
+            # end of the block: a page footer, or the next table's heading.
+            if (len(words) < 4 or not PERCENT.match(words[-3])
+                    or not COUNT.match(words[-2]) or not COUNT.match(words[-1])):
+                break
+            label = " ".join(words[:-3])
+            found[GB_MICS_SPELLING.get(label, label)] = int(
+                words[-2].replace(",", ""))
+        if not found:
+            log(f"    Table SR.3.1 named on page {number} with no language "
+                f"block under it: the contents, not the table")
+            continue
+        # Dated only now, and from this page. The caption is in the contents
+        # too, and a contents page carries no year -- asking it for one before
+        # knowing whether the table is under it would refuse the run over a
+        # listing.
+        span = GB_MICS_SPAN.search(" ".join(line for line, _c in page))
+        if not span:
+            raise SystemExit(
+                f"pakistan: Table SR.3.1 is on page {number} of the GB MICS "
+                f"report and nothing on that page dates it. A survey "
+                f"published under the wrong year is a figure that looks "
+                f"current and is not")
+        year = int(span.group(1)[:2] + span.group(2))
+        counted = sum(found.values())
+        if not whole or counted != whole:
+            raise SystemExit(
+                f"pakistan: the GB MICS language rows hold {counted:,} "
+                f"households against the {whole:,} the same table prints as "
+                f"its total. A row read wrong or missed moves that sum, which "
+                f"is the one control this table supplies on itself")
+        log(f"    Table SR.3.1 on page {number}: {len(found)} languages over "
+            f"{whole:,} households, {year}")
+        return found, year
+    raise LookupError("no page carries Table SR.3.1's caption")
+
+
+# What the ten districts are missing, which is not what the territory's note
+# says and not what TERRITORY_GAP says either. Written out because "no district
+# table" is a conclusion, and the reader is owed the four measurements it rests
+# on: the Bureau's series, the census form's own categories, the territory's
+# booklet, and the two survey reports.
+GB_TONGUE_DISTRICT_GAP = (
+    "Gilgit-Baltistan's language is published for the territory and for none "
+    "of its ten districts, and every route to a district figure has been "
+    "asked. The Bureau of Statistics publishes no Table 11 for this territory "
+    "under any of the names the four provinces and Islamabad are filed under. "
+    "The census form would not answer it either: the 2023 question names "
+    "fifteen tongues including Shina and Balti but has no column for "
+    "Burushaski, Khowar, Wakhi or Domaaki, so Hunza, Nagar and much of Ghizer "
+    "would be counted inside its 'Other'. Gilgit-Baltistan at a Glance 2025, "
+    "which is where this district's population comes from, carries no "
+    "language table. And the territory's own household surveys stop at the "
+    "territory: the GB MICS 2024-25 report gives language of the household "
+    "head and district as two separate distributions rather than one crossed "
+    "table, and the 2016-17 round's 398-page final report has no language "
+    "table at all. The territory's figure is not spread over the ten because "
+    "they differ sharply from it and from each other -- Balti is the language "
+    "of Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer "
+    "and Gilgit, Burushaski of Hunza and Nagar -- so an average put on all ten "
+    "would be wrong on every one of them.")
+
+
+def gb_language(households: dict[str, int] | None = None,
+                year: int | None = None) -> dict[str, Any]:
+    """The language fields for Gilgit-Baltistan's territory row.
 
     Fields rather than a record, for the reason ``gb_religion`` gives: one id,
     one record, one place that decides.
+
+    The survey's own table when this run could read it, and the Pamir Times
+    account of the earlier round when it could not. Both are households rather
+    than persons and both say so in ``language_basis``, so the field's meaning
+    does not change with which one answered -- only its provenance and its
+    date, and the note names both.
     """
+    if households:
+        whole = sum(households.values())
+        spoken_by = to_hundred({name: 100.0 * count / whole
+                                for name, count in households.items()})
+        return {
+            # Shares and no counts. `shares()` would attach the household
+            # count to each group, and a count beside a language reads as
+            # people everywhere else on this map; these are households.
+            "language": [{"group": name, "pct": pct} for name, pct
+                         in sorted(spoken_by.items(), key=lambda kv: -kv[1])],
+            "language_year": year,
+            "language_note": GB_MICS_NOTE.format(households=whole),
+            "language_basis": "language of the household head",
+        }
     total = round(sum(GB_TONGUES.values()), 2)
     if total != 100.0:
         raise SystemExit(
@@ -1387,13 +1874,8 @@ def gb_weighted(counts: dict[str, int]) -> dict[str, float]:
     for name, sects in GB_DISTRICT_SECTS.items():
         for sect, pct in sects.items():
             exact[sect] = exact.get(sect, 0.0) + people[name] * pct / 100.0
-    shares = {sect: 100.0 * value / whole for sect, value in exact.items()}
-    floors = {sect: round(value, 1) for sect, value in shares.items()}
-    short = round(100.0 - sum(floors.values()), 1)
-    if short:
-        biggest = max(floors, key=lambda k: floors[k])
-        floors[biggest] = round(floors[biggest] + short, 1)
-    return floors
+    return to_hundred({sect: 100.0 * value / whole
+                       for sect, value in exact.items()})
 
 
 def gb_disagreement(weighted: dict[str, float]) -> str:
@@ -1439,30 +1921,48 @@ def gb_population_fields(name: str, counts: dict[str, int],
     }
 
 
-def ajk_records(found: dict[str, dict[str, int]],
-                whole: dict[str, int]) -> list[dict[str, Any]]:
+def ajk_records(found: dict[str, dict[str, int]], whole: dict[str, int],
+                tongues: dict[str, float] | None = None,
+                short: str = "") -> list[dict[str, Any]]:
     """Azad Jammu and Kashmir, and the one second-level shape drawn for it.
 
-    Both from the printed territory row, which the check above has just shown
-    equals the ten districts column for column. The districts themselves are
-    not published as records: geoBoundaries draws Azad Kashmir as a single
-    second-level unit, so ten rows would reach one shape, nine of them would
-    lose, and the tenth would put a district's figures on the whole territory
-    -- the Karachi failure in reverse and far worse, because it would look
-    entirely normal.
+    Religion and population from the printed territory row, which the check
+    above has just shown equals the ten districts column for column. The
+    districts themselves are not published as records: geoBoundaries draws
+    Azad Kashmir as a single second-level unit, so ten rows would reach one
+    shape, nine of them would lose, and the tenth would put a district's
+    figures on the whole territory -- the Karachi failure in reverse and far
+    worse, because it would look entirely normal.
+
+    Language is the ten districts of Table 15.33 weighted into one row for the
+    same reason and by the same populations. Both rows carry it: they are the
+    same territory drawn twice, and an admin2 shape that covers the whole of
+    AJ&K has the whole of AJ&K's languages on it.
     """
     total = whole["TOTAL"]
     parts = {k: v for k, v in whole.items() if k != "TOTAL"}
     cite = [{"field": "population/religion", "name": AJK_SOURCE,
              "url": AJK_BOOK, "license": AJK_LICENCE}]
+    # Built once and put on both rows. No ``language_year``: Table 15.33
+    # prints none, and 2023 is the yearbook's cover rather than the figures'
+    # date -- the distinction the religion table above is careful about.
+    said: dict[str, Any] = {"language": gap(NOT_AVAILABLE, AJK_LANGUAGE_GAP)}
+    if tongues:
+        said = {
+            "language": [{"group": group, "pct": pct} for group, pct
+                         in sorted(tongues.items(), key=lambda kv: -kv[1])],
+            "language_note": AJK_TONGUE_NOTE.format(short=short),
+            "language_basis": AJK_TONGUE_BASIS,
+        }
+        cite.append({"field": "language", "name": AJK_TONGUE_SOURCE,
+                     "url": AJK_BOOK, "license": AJK_TONGUE_LICENCE})
     return [
         record("PAK-ajk", "Azad Jammu and Kashmir", level="admin1",
                parent="PAK", aliases=["Azad Kashmir"],
                population=measure(total, year=AJK_YEAR, source=AJK_SOURCE),
                religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
                religion_year=AJK_YEAR, religion_note=AJK_NOTE,
-               language=gap(NOT_AVAILABLE, AJK_LANGUAGE_GAP),
-               sources=list(cite)),
+               sources=list(cite), **said),
         record("PAK-ajk-azad-kashmir", "Azad Kashmir", level="admin2",
                parent="PAK", parent_name="Azad Jammu and Kashmir",
                parent_aliases=["Azad Kashmir"],
@@ -1470,13 +1970,14 @@ def ajk_records(found: dict[str, dict[str, int]],
                religion=shares(parts, total=total) or gap(NOT_AVAILABLE),
                religion_year=AJK_YEAR,
                religion_note=AJK_NOTE + " " + AJK_ONE_SHAPE,
-               language=gap(NOT_AVAILABLE, AJK_LANGUAGE_GAP),
-               sources=list(cite)),
+               sources=list(cite), **said),
     ]
 
 
 def declared_gaps(absent: dict[str, list[tuple[str, str]]],
-                  counts: dict[str, int] | None = None) -> list[dict[str, Any]]:
+                  counts: dict[str, int] | None = None,
+                  households: dict[str, int] | None = None,
+                  year: int | None = None) -> list[dict[str, Any]]:
     """Records for the territories the census tables do not reach.
 
     Written from the run's own failed lookups rather than from a list kept
@@ -1514,14 +2015,18 @@ def declared_gaps(absent: dict[str, list[tuple[str, str]]],
         }
         if slug == "gb":
             fields.update(gb_religion(counts))
-            fields.update(gb_language())
+            fields.update(gb_language(households, year))
             fields.update(gb_population_fields(GB_POP_WHOLE, counts,
                                                GB_WHOLE_CONTROL))
+            spoke = ({"field": "language", "name": GB_MICS_SOURCE,
+                      "url": GB_MICS_BOOK, "license": GB_MICS_LICENCE,
+                      "year": year} if households else
+                     {"field": "language", "name": GB_TONGUE_SOURCE,
+                      "url": GB_TONGUE_URL, "year": GB_TONGUE_YEAR})
             source = list(source) + [
                 {"field": "religion", "name": GB_SOURCE, "url": GB_URL,
                  "year": GB_YEAR},
-                {"field": "language", "name": GB_TONGUE_SOURCE,
-                 "url": GB_TONGUE_URL, "year": GB_TONGUE_YEAR},
+                spoke,
             ]
             if GB_POP_WHOLE in counts:
                 source = list(source) + [
@@ -1556,7 +2061,15 @@ def declared_gaps(absent: dict[str, list[tuple[str, str]]],
                 parent_aliases=list(alias),
                 religion=fields.pop("religion", None)
                 or gap(NOT_AVAILABLE, TERRITORY_GAP),
-                language=gap(NOT_AVAILABLE, TERRITORY_GAP),
+                # The one field that is a different gap for the two
+                # territories. Azad Kashmir's single shape is the territory,
+                # so it gets the territory's figure and never reaches here;
+                # Gilgit-Baltistan's ten are real districts with no language
+                # of their own, and what they are missing is not what the
+                # general note describes.
+                language=gap(NOT_AVAILABLE,
+                             GB_TONGUE_DISTRICT_GAP if slug == "gb"
+                             else TERRITORY_GAP),
                 sources=district_source, **fields))
     if out:
         log(f"  {len(out)} records declaring what is not published, rather "
@@ -1920,7 +2433,27 @@ def main() -> int:
                 log(f"    NOT READ -- {err}")
             else:
                 ajk_check(found, whole)
-                records.extend(ajk_records(found, whole))
+                # Table 15.33 is in the same book and is a separate finding:
+                # the religion table is the census reprinted and this one is
+                # the Kashmir Liberation Cell's. A yearbook that drops it
+                # should cost the language field and not the territory, so a
+                # missing caption leaves the declared gap standing -- while a
+                # caption that is there and does not read refuses, which is
+                # ajk_tongue_table's decision and not this block's.
+                tongues: dict[str, float] = {}
+                short = ""
+                try:
+                    printed_tongues = ajk_tongue_table(blob)
+                except LookupError as err:
+                    log(f"    NO LANGUAGE TABLE -- {err}")
+                else:
+                    tongues, short = ajk_tongue_weighted(
+                        printed_tongues, found, whole)
+                    log("    AJ&K languages: "
+                        + ", ".join(f"{g} {p}%" for g, p in
+                                    sorted(tongues.items(),
+                                           key=lambda kv: -kv[1])))
+                records.extend(ajk_records(found, whole, tongues, short))
                 absent[APART] = [(slug, line) for slug, line in absent[APART]
                                  if slug != "ajk"]
 
@@ -1930,6 +2463,8 @@ def main() -> int:
     # reading the same question as the four provinces, and would win without a
     # rule needing to be written for it.
     counts: dict[str, int] = {}
+    households: dict[str, int] = {}
+    mics_year: int | None = None
     if any(slug == "gb" for slug, _line in absent[APART]):
         log("  Gilgit-Baltistan, from the territory's own At a Glance")
         try:
@@ -1948,7 +2483,26 @@ def main() -> int:
                 # refuses instead, and that is gb_population's decision.
                 log(f"    NOT READ -- {err}")
 
-    records.extend(declared_gaps(absent, counts))
+        # And the same department's survey, which is where the language comes
+        # from. A separate fetch because it is a separate publication and a
+        # separate finding: the booklet has the census's populations and no
+        # language, the survey report has language and is not a census. Either
+        # can fail without taking the other with it, and the field that fails
+        # falls back to what it had -- population to a stated gap, language to
+        # the Pamir Times account of the 2017 round.
+        log("  Gilgit-Baltistan's language, from the territory's own MICS")
+        try:
+            blob, url = fetch((GB_MICS_BOOK,))
+        except LookupError as err:
+            log(f"    NOT READ -- {err}")
+        else:
+            log(f"    {len(blob):,} bytes from {url}")
+            try:
+                households, mics_year = gb_mics_language(blob)
+            except LookupError as err:
+                log(f"    NO LANGUAGE TABLE -- {err}")
+
+    records.extend(declared_gaps(absent, counts, households, mics_year))
     out = args.out or PROCESSED / "pakistan_district.json"
     write_json(out, records)
     provinces = sum(1 for r in records if r["level"] == "admin1")

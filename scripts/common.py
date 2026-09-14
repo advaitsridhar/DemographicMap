@@ -92,7 +92,7 @@ def measure(value: Any, *, year: Any = None, source: str | None = None, unit: st
 
 
 # ---------------------------------------------------------------------------
-# Collection policy: which states do not gather a field AT ALL.
+# Collection policy: which states do not publish a composition for a field.
 #
 # This is the project's central editorial claim, so it lives in one place and is
 # asserted only from a citable reason -- never inferred from an empty API
@@ -104,7 +104,7 @@ def measure(value: Any, *, year: Any = None, source: str | None = None, unit: st
 # told the reader the exact opposite of the truth.
 # ---------------------------------------------------------------------------
 
-NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
+NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # Bhutan's census does not ask any of the three, which is a different
     # fact from not publishing them. Measured rather than assumed: the 2017
     # national report runs 288 pages and the words religion, ethnic, Hindu,
@@ -145,6 +145,70 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
     },
     "IND": {
         "ethnicity": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead.",
+    },
+    # Read off the census's own account of its questionnaire, not inferred
+    # from a file that happened to lack the column. The Population and Housing
+    # Census 2022 National Report (Volume I) describes the form it was
+    # collected on -- two modules, 15 household questions and 20 individual
+    # ones, 35 in all -- and names the individual module's subjects. Language
+    # is not one of them; ethnic group is, and religion is. Nothing in the
+    # report's 520 pages is a language table, its list of district tables
+    # (P1-P33) has none, and the Bureau's own district-level indicator
+    # workbook runs to 42 topic sheets without one.
+    #
+    # That was read as "the question was never put", and this entry said so
+    # with status not_collected. **It is too strong, and the census project
+    # itself is what disproves it.** The Bureau's *Report on Socio-Economic
+    # and Demographic Survey 2023* -- June 2024, ISBN 978-984-475-268-9, 553
+    # pages, one of the five national reports published under the Population
+    # and Housing Census 2021 Project -- is the long-questionnaire survey run
+    # after the census on a sample of 301,000 households, and its Module 4
+    # collects mother tongue by name, beside religion and ethnic population.
+    # So Bangladesh does gather the answer; what it does not do is publish a
+    # composition of it.
+    #
+    # Table 3.6, *Population by Mother Tongue and Second Language, Division
+    # and Location*, has exactly two mother-tongue columns -- Bangla and
+    # Others -- for the eight divisions. (The shares themselves are in
+    # docs/SOURCES.md, not here: a declaration explains an absence and never
+    # states a share, which is the rule the Maldives' "100% Islam" was written
+    # down to prevent.) Across all 553 pages no mother tongue but Bangla is
+    # ever named: a sweep for Chakma,
+    # Marma, Santal, Garo, Tripura, Mro, Rakhain, Manipuri, Urdu, Bishnupriya,
+    # Tanchangya, Khasi, Hajong, Munda, Oraon, Rohingya, Bawm, Khumi, Chak,
+    # Pankho, Lushai, Koch, Dalu and Rajbanshi returns zero pages.
+    #
+    # A named group against a residual is not a composition -- drawn as two
+    # slices it would read as a survey that found two languages -- and the
+    # report publishes nothing below the division anyway, so no zila has a
+    # mother-tongue figure from either round. The gap therefore stands, but
+    # it is `not_available` and not `not_collected`: the question is asked,
+    # and the honest reason names what the answer was and why it cannot be a
+    # chart. Religion, which the same census asks at zila level, is on the
+    # map from the Bureau's own workbook.
+    "BGD": {
+        "language": {
+            "status": NOT_AVAILABLE,
+            "note": "Bangladesh's census does not ask language. The 2022 "
+                    "questionnaire has 35 questions -- 15 in the household "
+                    "module and 20 in the individual module, which the National "
+                    "Report (Volume I) lists as age, sex, marital status, religion, "
+                    "disability, education, working status, training, mobile phone "
+                    "and internet use, banking inclusion and ethnic population -- "
+                    "and none of them is language. The census project's own "
+                    "long-questionnaire sample survey does ask it: the Report on "
+                    "Socio-Economic and Demographic Survey 2023 (BBS, June 2024, "
+                    "553 pages) collects mother tongue in Module 4 and publishes "
+                    "Table 3.6, Population by Mother Tongue and Second Language, "
+                    "Division and Location. That table has two mother-tongue "
+                    "columns for the eight divisions, Bangla and Others, and no "
+                    "mother tongue but Bangla is named anywhere in its 553 pages. "
+                    "A named group against a residual is not a composition, and "
+                    "the survey publishes nothing below the division, so no zila "
+                    "has a mother-tongue figure from either round. What the census asks "
+                    "about a minority's identity is ethnic group, under the Khudra "
+                    "Nri-goshthi Sangskritik Pratisthan Ain 2010.",
+        },
     },
     "ESP": {
         "ethnicity": "Spain's census records nationality and birthplace, not ethnicity.",
@@ -231,10 +295,62 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
         "religion": "Greece's census has not asked religion since 1951; the 2021 census records citizenship and country of birth.",
         "language": "Greece's census has not asked mother tongue since 1951.",
     },
+    # The census half of this was already established. What has now been
+    # measured is the half it left open: whether the household surveys that
+    # stand in for the census carry the three fields, the way Afrobarometer
+    # and the Hankook pooled survey carry them elsewhere on this map. They do
+    # not. The CSO/NSIA series -- NRVA 2003, 2005, 2007-08 and 2011-12, then
+    # ALCS 2013-14 and 2016-17 -- prints its own household questionnaire in
+    # the report, and the ALCS 1392-93 form (45 pages) mentions religion,
+    # ethnicity, language, Pashto and Dari on no page at all. The ALCS 2016-17
+    # report runs 421 pages and its eleven mentions of those words are the
+    # language the interview software was written in, an exam interviewers sat
+    # on local culture, and the UN's definition of a refugee. The NRVA 2011-12
+    # report, 238 pages, mentions "language" twice, both times to say which
+    # languages the report itself is printed in. The one sub-provincial
+    # enumeration since 1979, the CSO/UNFPA Socio-Demographic and Economic
+    # Survey, lists its own contents -- population, literacy, education,
+    # migration, employment, disability, fertility, mortality, housing -- and
+    # none of the three is among them.
+    #
+    # So there is no survey to label and carry here; the declaration stands on
+    # its own, and it now says why no non-census route replaces it.
     "AFG": {
-        "religion": "Afghanistan has never completed a population census: the 1979 count was abandoned partway and none has been held since, so no census question on religion exists; the NSIA publishes estimates only.",
-        "ethnicity": "Afghanistan has never completed a population census, so no census question on ethnicity exists; the NSIA publishes estimates only.",
-        "language": "Afghanistan has never completed a population census, so no census question on language exists; the NSIA publishes estimates only.",
+        "religion": "Afghanistan has never completed a population census: the 1979 count was abandoned partway and none has been held since, so no census question on religion exists. No survey stands in for it either -- the CSO/NSIA household series (NRVA 2011-12, ALCS 2013-14 and 2016-17) publishes its questionnaire and asks nothing about religion. The NSIA publishes population estimates only.",
+        "ethnicity": "Afghanistan has never completed a population census, so no census question on ethnicity exists; the census restarted in 2013 excluded ethnicity and language deliberately. The CSO/NSIA household series (NRVA 2011-12, ALCS 2013-14 and 2016-17) does not ask it either. The NSIA publishes population estimates only.",
+        "language": "Afghanistan has never completed a population census, so no census question on language exists. The CSO/NSIA household series does not ask mother tongue: the ALCS questionnaire carries no language question, and the NRVA 2011-12 report mentions language only to say which languages the report itself is printed in. The NSIA publishes population estimates only.",
+    },
+    # Measured against the census's own form and its own table list, not
+    # against the constitution. Article 9(d) requires a citizen of the
+    # Maldives to be a Muslim, and that is a fact about the law rather than an
+    # answer anybody was counted giving: a 100% Islam figure attributed to the
+    # census would be a figure the census never produced, which is the one
+    # kind of error this project ranks below a gap.
+    #
+    # What the form asks: the 2006 questionnaire -- 16 pages, the whole
+    # Shaviyani Form, published through the IHSN microdata catalogue -- puts
+    # exactly one question about who a person is, M4, "What is your
+    # Nationality?", answered Maldivian or Foreigner. Nothing on religion,
+    # ethnicity, mother tongue or language.
+    #
+    # What the round publishes: the Census 2022 results summary lists the
+    # whole output, and it is 60-odd tables -- population P1-P6, employment
+    # EC1-EC6, housing H1-H8, migration MG1-MG13, education ED1-ED19. Not one
+    # is a religion table; nationality is again the only characteristic of
+    # that kind anywhere in the set. The atoll profiles the Bureau published
+    # from it in 2024-25 are the same: resident population, Maldivians and
+    # foreigners, island by island.
+    #
+    # Language is the Irish case rather than an absence. ED1, ED2 and ED16
+    # cross "literacy in mother tongue" with age, sex, atoll and island, and
+    # ED3-ED4 do the same for English. Those count an ability; which language
+    # the mother tongue *is* goes unrecorded, so there is no composition in
+    # them and reading one out would be inventing it. Dhivehi being
+    # near-universal is a true sentence and not a published figure.
+    "MDV": {
+        "religion": "The Maldives census does not ask religion. The only question on its form about who a person is asks nationality -- Maldivian or foreigner -- and no output of the 2022 round, across some sixty published tables, is a religion table. The constitution requires a citizen to be Muslim; that is the law, not a count, and no census figure for it exists.",
+        "ethnicity": "The Maldives census does not ask ethnicity. Nationality, Maldivian or foreigner, is the only question of that kind on the form and the only such breakdown in the published tables.",
+        "language": "The Maldives census does not ask language. It asks literacy in mother tongue and literacy in English -- Census 2022 tables ED1, ED2, ED16 and ED3-ED4 -- which count an ability and never record which language the mother tongue is. Dhivehi being near-universal is not a figure the census published.",
     },
     "VEN": {
         "religion": "Venezuela's 2011 census asked indigenous and Afro-descendant self-recognition and not religion; no census since 1961 has carried a religion question.",
@@ -303,30 +419,72 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str]] = {
 }
 
 
-def collection_policy(iso3: str | None, field: str) -> str | None:
-    """The documented reason a country does not collect ``field``, or None."""
+def _policy_entry(iso3: str | None, field: str) -> dict[str, str] | None:
+    """One policy declaration, in its long form.
+
+    An entry is written as a plain string when the country does not gather the
+    field at all, which is the ordinary case and stays the ordinary spelling.
+    It may instead be a mapping carrying its own ``status``, for the case the
+    string form cannot say: a country that *does* gather the answer and
+    publishes it in a shape this map cannot draw. Bangladesh's mother tongue
+    is the one of those -- asked in the census project's sample survey,
+    published as Bangla against a residual at the division and nowhere below
+    it -- and calling that ``not_collected`` would state the opposite of what
+    the Bureau did.
+    """
     if not iso3:
         return None
-    return NOT_COLLECTED_POLICY.get(iso3.upper(), {}).get(field)
+    declared = NOT_COLLECTED_POLICY.get(iso3.upper(), {}).get(field)
+    if declared is None:
+        return None
+    if isinstance(declared, str):
+        return {"status": NOT_COLLECTED, "note": declared}
+    return {"status": declared["status"], "note": declared["note"]}
+
+
+def collection_policy(iso3: str | None, field: str) -> str | None:
+    """The documented reason a country does not publish ``field``, or None."""
+    entry = _policy_entry(iso3, field)
+    return entry["note"] if entry else None
+
+
+def collection_status(iso3: str | None, field: str) -> str | None:
+    """The gap status the policy declares for ``field``, or None."""
+    entry = _policy_entry(iso3, field)
+    return entry["status"] if entry else None
+
+
+def collection_gap(iso3: str | None, field: str) -> dict[str, Any] | None:
+    """The policy's declaration as a ready-made gap marker, or None.
+
+    Adapters take the whole marker from here rather than pairing a status of
+    their own with the central reason: the country row and its districts
+    disagreeing about whether the question was asked is exactly the drift this
+    table exists to prevent, and a status is half of that claim.
+    """
+    entry = _policy_entry(iso3, field)
+    return gap(entry["status"], entry["note"]) if entry else None
 
 
 def apply_collection_policy(record: dict[str, Any], iso3: str | None,
                             fields: Iterable[str] = ("religion", "ethnicity", "language"),
                             ) -> list[str]:
-    """Mark fields the country never collects, in place.
+    """Mark fields the country does not publish a composition for, in place.
 
     Only replaces a ``not_available`` marker: a real value from a subnational
     source always wins (a country can decline to ask nationally while a region
-    publishes its own figures), and a more specific gap is left alone.
+    publishes its own figures), and a more specific gap is left alone. A bare
+    ``not_available`` is replaced even when the policy's own status is
+    ``not_available`` too, because what is being added is the reason.
     """
     applied: list[str] = []
     for field in fields:
-        reason = collection_policy(iso3, field)
-        if not reason:
+        entry = _policy_entry(iso3, field)
+        if not entry:
             continue
         current = record.get(field)
         if isinstance(current, dict) and current.get("status") == NOT_AVAILABLE:
-            record[field] = gap(NOT_COLLECTED, reason)
+            record[field] = gap(entry["status"], entry["note"])
             applied.append(field)
     return applied
 

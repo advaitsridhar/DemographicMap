@@ -105,6 +105,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts. The census measured all 77; the boundary file is what fails, drawing 75 shapes whose names do not all sit on the right ground, and the 9 shapes that therefore carry nothing each say so and name the province total that holds their people. |
 | India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 734 of 735 district shapes carry figures. 637 are the census's own rows; 97 are shapes the census never enumerated and which carry their predecessor's shares as a stated estimate, with no head count, so nobody is counted twice. 75 more are districts that have since lost territory, and keep their 2011 figure under a caveat saying how much ground they have left. The one shape without figures is not a district at all. Telangana and Ladakh have state figures summed from the ten and two districts the census did enumerate, and Andhra Pradesh and Jammu and Kashmir carry the residual rather than the undivided state. |
+| Bhutan | National Statistics Bureau, 2017 Population & Housing Census of Bhutan (PHCB), Table 2.1 — population distribution by gewog and town — in each of the twenty *Dzongkhag Series* volumes, with the *National Report* (288 pp, ISBN 978-99936-28-50-7) as the control. Indexed at `www.nsb.gov.bt/phcb`, which links the national report and the twenty volumes; the volumes are fetched as `nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_{Dzongkhag}.pdf`. Licence: none stated — NSB official publications, cited as such. | dzongkhag, gewog | **Population and sex ratio only**, for all 20 dzongkhags and 205 gewogs, each volume's own Table 2.1. Religion, language and ethnicity are `not_collected`, measured over the round's whole 1,798 pages rather than assumed — see below. The census's one identity-adjacent split is **citizenship** (Bhutanese against non-Bhutanese, published to gewog) and it is deliberately not read as ethnicity. Sex ratio is derived as females per 1,000 males from the Male and Female columns of the same row, and only where those two reach the Total printed beside them; a row that does not add up keeps its head count and publishes a gap naming the three figures. The publications disagree on the head count and the disagreement is reported rather than resolved: the twenty volumes come to **720,837**, the national report analyses **727,145**, and it says **735,553** were found in the country, the difference being 8,408 non-Bhutanese and tourists in hotels on census night about whom nothing else was collected. Each volume reconciles to its own printed total, gewog by gewog, so the dzongkhag's own figure is the one carried. Towns and thromdes are enumerated *beside* the gewogs, not inside them, and geoBoundaries draws none of them, so the gewog layer is short of its parent by the urban population — 37.8% of Bhutan — and every gewog record says so. **Thirty gewogs are drawn under a different name, not a different spelling** — Samtse's Tashicholing as "Sipsu", its Norgaygang as "Bara", Sarpang's Samtenling as "Bhur": the Nepali-origin names southern Bhutan carried before the renamings. They are paired by Wikidata's reference point for the gewog the census names falling inside the polygon the boundary file draws, with Wikidata's dzongkhag agreeing with the census's — a method measured first (98 of the 102 gewogs already matched by name have their own point inside their own polygon) and corroborated against the published list of all 205 gewogs with their Dzongkha. Six with no point are taken by elimination inside a dzongkhag where nothing else is left; four whose names repeat across dzongkhags (two Gakilings, two Norboogangs) are bound to a polygon by its id. Two earlier name pairings were wrong and are removed: Punakha's Barp was wearing a polygon 96% inside Samtse, Chhukha's Maedtabkha one 60% inside Tsirang, and those two polygons are Samtse's Norgaygang and Tsirang's Sergithang, which had no figures at all. 205 of 205 gewog shapes now carry the census's. `scripts/fetch_census/bhutan.py`. |
 
 ### New Zealand: the geography that already fitted
 
@@ -1024,6 +1025,83 @@ mandals but split some of them, so a hand-written mapping would not be a
 partition even if every line of it were right. Writing one out would invent
 precisely the thing the sub-district tables were meant to supply.
 
+### "Many Indian districts have no population": which, why, and where the reason went
+
+Counted rather than estimated, over the 735 CGAZ ADM2 shapes for IND:
+
+| | shapes |
+|---|---:|
+| carry a 2011 head count | 637 |
+| carry none | 98 |
+
+None of the 98 is a join that failed. Every one of the 735 shapes is claimed by
+an adapter row — 735 rows from `india_district.json` and 734 from
+`india_language_district.json`, no row unmatched, no shape unclaimed — so there
+is no alias to add and no binding to make. The 98 break down as:
+
+| class | shapes | |
+|---|---:|---|
+| the source has the figure and the row never matched the shape | **0** | nothing to fix |
+| the source genuinely has no figure | **97** | 91 districts created 2010–2020 out of a district the census *did* count, plus the 6 successors of the three districts subdivided since (Warangal ×2, Karbi Anglong ×2, Jaintia Hills ×2) |
+| the adapter never read the table | **0** | both C-01 and C-16 are read at district level |
+| not a district at all | **1** | `DATA NOT AVAILABLE`, geoBoundaries' 268-fragment sliver in Jammu and Kashmir |
+
+So it is the honest case throughout, and `CREATED_AFTER_2011`,
+`SUBDIVIDED_SINCE_2011` and `BOUNDARY_ARTEFACTS` already wrote a sentence for
+every one of them saying which census never counted that ground.
+
+**The reason was written and then thrown away at the last step.** The sentence
+lived in the record — `population: {status, note}`, which is what
+`common.py`'s `gap()` builds — and `tests/test_india.py` asserted on the built
+file that no Indian district carries a gap without one. What had no test was
+the panel. `Dashboard.factCard` rendered a gap as the words "Not yet
+available" and dropped `note` on the floor, and rendered a value without
+reading the record's `<field>_note` beside it. Across the whole build that was
+**1,311 written reasons that never reached a reader**: 887 notes inside gap
+values and 424 `population_note` / `sex_ratio_note` / `median_age_note`
+sidecars. 354 of them are India's — the 98 blanks, and the 75 shrunken
+districts whose head count is for more ground than the shape covers and whose
+caption saying so was also dropped, which is the worse half of the same bug.
+The fact tiles now carry the note behind the same "i" the composition panels
+use, and `tests/test_frontend.js` asserts it on both a gap and a value.
+
+**Is there a newer official figure?** Asked rather than assumed, and the answer
+is no at this geography:
+
+* **Census.** 2011 remains the last complete count. The 2021 round was
+  postponed; the Government notified the next in the Gazette on 16 June 2025,
+  with reference dates of 1 October 2026 for the snow-bound areas of Ladakh,
+  Jammu and Kashmir, Himachal Pradesh and Uttarakhand and **1 March 2027** for
+  the rest of the country. Nothing from it is published.
+* **Projections.** The one official series is *Population Projections for India
+  and States 2011–2036* (Technical Group on Population Projections, National
+  Commission on Population, July 2020), and its title is exact: India and the
+  states. It contains no district table. The district-level projections that
+  circulate — an IIPS report prepared for the health ministry, and academic
+  products such as India Policy Insights — are derivations from that state
+  series, not Registrar General output, and they are keyed to the NFHS survey
+  frames (640 districts for NFHS-4, 707 for NFHS-5) rather than to the present
+  set, so they would not reach the districts that are empty here.
+* **Sample Registration System.** A sample survey, published for India and the
+  major states; its own documentation states it cannot produce small-area
+  statistics at district or sub-district level, and its sample supports
+  breakdowns no finer than NSSO natural divisions, which are groups of
+  districts.
+* **Civil registration.** The CRS counts registered births and deaths. It is
+  not a population count and cannot become one without a base to carry forward,
+  which is the thing that is missing.
+
+So the 97 stay gaps, and the fix owed them was the one made: to say so where a
+reader is standing. The route that *would* fill them with a measurement rather
+than a projection is the sub-district one described above — and note that the
+raw material for half of it is already in this repository, since the C-16
+workbooks under `data/raw/india/c16/` carry sub-district rows beside their
+district rows (Punjab's, for instance, has 20 district rows and 77 sub-district
+rows, with Pathankot and Dhar Kalan sitting under Gurdaspur as the tehsils that
+became Pathankot district in 2011). It is still the other half — a published
+concordance from 2011 sub-districts to present-day districts — that does not
+exist, and hand-writing one is what this file declines to do.
+
 ### Telangana, Ladakh, and summing a state from its districts
 
 The mirror of the same problem, one level up, and here the fix adds figures
@@ -1144,6 +1222,11 @@ Pakistan's 241 million people -- are required before anything is written.
 > Jammu and Kashmir's religion comes from its own government's yearbook.
 > Gilgit-Baltistan is the only one of the three still empty. See *Pakistan's
 > last three divisions* below, which measures all of it.
+>
+> **And none of the seven is empty now.** Both territories have a language as
+> well, each from its own government and neither from the census -- Azad
+> Kashmir from Table 15.33 of the same yearbook, Gilgit-Baltistan from Table
+> SR.3.1 of its MICS 2024-25. See *The two territories' languages* below.
 
 **Joining, and three different kinds of miss.** Of 126 units, 114 join and
 carry 96.7% of the people.
@@ -1468,6 +1551,15 @@ The territory's population becomes **4,032,363 (2017 census)**, replacing a
 
 #### Gilgit-Baltistan is the one real absence
 
+> **Partly superseded** by *The two territories' languages, from two
+> governments and neither of them the census* below. The census routes named
+> here are still shut and still 404. What has changed is the survey: the GB
+> MICS bullet below says the territory's own report is "recorded here and not
+> wired", and the **2024-25** round's Table SR.3.1 is now what
+> Gilgit-Baltistan's language comes from. Azad Kashmir's languages have a
+> source too, from a table in the yearbook this section had searched for the
+> wrong word.
+
 Nothing found for it, and the routes are worth naming so nobody walks them
 again.
 
@@ -1652,6 +1744,132 @@ leave no room for. Neither figure is adjusted to the other. Both are the
 paper's, the territory row's note now says so in as many words, and the
 sentence is built from the figures the run computes rather than from a number
 typed beside them.
+
+### The two territories' languages, from two governments and neither of them the census
+
+*Gilgit-Baltistan is the one real absence* above ends by saying that the
+territories' mother tongue has no route. Two of the three statements in it
+have since been overtaken by measurement, and the third has been sharpened.
+What follows is what each route actually answered.
+
+**Azad Jammu and Kashmir had a district table nobody had opened.** The
+paragraph above records that the AJ&K Statistical Year Book 2023 "contains the
+word 'tongue' on no page of it", which is true and was the wrong search. The
+table is called **15.33, *Languages Spoken in AJ&K***, it is on PDF page 213
+beside the marriages table, and it prints a percentage for each of the ten
+districts:
+
+| district | Kashmiri | Gojri | Pahari | Shina | Others |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Muzaffarabad | 15 | 35 | 50 | – | – |
+| Neelum | 20 | 10 | 63 | 5 | 2 *Kundal Shahi* |
+| Jhelum Valley | 15 | 35 | 50 | – | – |
+| Bagh | 2 | 3 | 95 *Dhundi-Khairali* | – | – |
+| Haveli | 5 | 30 | 65 *Chibali* | – | – |
+| Poonch | – | 6 | 94 *Punchi* | – | – |
+| Sudhnoti | – | – | 95 *Punchi* | – | 5 |
+| Kotli | – | 35 | 63 *Pahari Pothwari* | – | 2 |
+| Mirpur | – | 10 | 85 *Mirpuri* | – | 2 |
+| Bhimber | – | 5 | 30 *Mirpuri* | 30 *Dogri* | 35 *Punjabi* |
+
+Four things about that table decide how it is read.
+
+* **Its source is not a statistical office.** The line under it names the
+  **Kashmir Liberation Cell, Muzaffarabad** — a department of the AJ&K
+  government — and not the Bureau of Statistics whose religion table sits nine
+  pages earlier. The record says so first, and `language_basis` is
+  *languages spoken*, which keeps it out of Pakistan's national mother tongue
+  exactly as Gilgit-Baltistan's is kept out.
+* **It prints no year.** Table 15.32 above it is captioned "(2018 to 2022)";
+  15.33 is captioned nothing. So the two AJ&K rows carry **no
+  `language_year`**, and `tests/test_composition_year.py` was rewritten to
+  hold an exemption to the *rows* it covers rather than to a whole field of a
+  file, so this one table cannot cover for a second.
+* **Five columns are made to hold eight languages.** Where a district speaks
+  something the headings do not name, the office writes the name in the cell:
+  Bhimber's **Dogri is printed under the column headed *Shina*** and its
+  Punjabi under *Others*. Reading the heading would have filed Dogri speakers
+  as Shina, and Bhimber would still have summed to 100. Every cell name is
+  therefore declared in `AJK_TONGUE_NAMES`, and an unrecognised one stops the
+  run. The five local names of the Pahari–Pothwari continuum stay in the
+  Pahari column, where the table puts them; the map writes
+  **Pahari-Pothwari** rather than "Pahari" because Nepal's unrelated
+  Tibeto-Burman *Pahari* is already on this map, and one label for two
+  languages would put four million people in the wrong family.
+* **Mirpur's row sums to 97.** The other nine sum to exactly 100. Three points
+  of one district is 0.34% of the territory — inside the half point the
+  panel's own rounding repair would have swallowed without a word — so it is
+  spread across *Mirpur's own* languages, where the people it describes live,
+  and the note names the district and the shortfall.
+
+geoBoundaries draws Azad Kashmir as a **single** second-level unit — measured
+against the boundary file, which gives Pakistan 126 second-level shapes and
+exactly one of them for the whole territory — so the ten rows have nowhere of
+their own to land, exactly as the religion table's ten do. They are weighted
+by the 2017 census populations the religion table already supplies and
+published once on the territory and once on the shape:
+
+> **Pahari-Pothwari 68.8%, Gojri 18.6%, Kashmiri 4.6%, Punjabi 3.6%, Dogri
+> 3.1%, Other languages 1.0%, Shina 0.2%, Kundal Shahi 0.1%.**
+
+Two of those eight exist only because the cell was read instead of the column:
+Dogri's 3.1% is Bhimber's 30% of 432,719 people, and it would otherwise have
+been added to Shina, which 0.2% of the territory actually speaks.
+
+**The AJ&K MICS asks the question and does not publish the answer.** Worth
+recording, because it is the obvious next place to look. `pndajk.gov.pk/micsajk/`
+serves three files; the 734-page **AJ&K MICS 2020-21 Survey Findings Report**
+prints the questionnaire in Appendix E, and **HC1B** reads *"What is the mother
+tongue of (name of the head of the household)?"* with English, Urdu,
+Hindko/Pahari/Potohari, Kashmiri, Gojri, Punjabi and an Other. The word
+"Gojri" occurs on eight pages of that report and every one of them is a
+questionnaire: there is no results table. The answers are in the microdata, on
+`mics.unicef.org`, which this repository has already recorded as blocking
+non-browser clients and which is not spoofed.
+
+**Gilgit-Baltistan's own survey does publish it.** `www.pnd.gog.pk` links two
+**GB MICS 2024-25** reports, and the Survey Findings Report's **Table SR.3.1,
+*Household composition*** (PDF page 57, printed page 39) distributes 6,929
+households by the language of the household head:
+
+| | Shina | Balti | Brushaski | Khowar | Wakhi | Other |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| weighted per cent | 48.0 | 29.2 | 12.3 | 5.2 | 1.0 | 4.2 |
+| weighted households | 3,325 | 2,025 | 855 | 360 | 71 | 293 |
+
+That table had been looked for and missed, **because the report spells it
+"Brushaski"**: a search of its 731 pages for *Burushaski* returned nothing, and
+so did the 2016-17 round's 398-page Final Report, which genuinely has no
+language table at all — neither *Burushaski* nor *Shina* appears on any page
+of it. The spelling is declared in `GB_MICS_SPELLING` rather than matched
+loosely. The shares are built from the weighted household counts rather than
+the printed percentages, so they partition exactly; fieldwork ran **October
+2024 – February 2025**, so the year is 2025, and the run reads it off the
+table's own caption rather than the file name.
+
+**This replaces the Pamir Times article as the figure and keeps it as the
+fallback.** The owner overruled a refusal to cite that article twice, and the
+reason was that nothing official was reachable; the office's own report now
+is. The two disagree about the thing the article's own note flagged: it put
+Balti 4,000 households ahead of Shina on figures rounded to the thousand, and
+the survey's own table puts **Shina eighteen points ahead of Balti**. Where
+the survey cannot be fetched the field falls back to the article, with its
+date and its note, rather than to a blank.
+
+**The ten districts still have no language, and now say why.** Every route was
+asked and each is named on the district rather than only here: the Bureau
+publishes no Table 11 for the territory under any name the four provinces are
+filed under; the 2023 census question would not answer it either, naming Shina
+and Balti but having **no column for Burushaski, Khowar, Wakhi or Domaaki**, so
+Hunza, Nagar and much of Ghizer would be counted inside its "Other"; *GB at a
+Glance 2025*, which is where these districts' population comes from, carries
+no language table; and **both MICS rounds give district and language of the
+household head as two separate distributions in the same table rather than one
+crossed table**. The territory's figure is not spread over the ten because
+they differ sharply from it and from each other — Balti is the language of
+Skardu, Ghanche, Kharmang and Shigar, Shina of Astore, Diamer, Ghizer and
+Gilgit, Burushaski of Hunza and Nagar — so a territory average put on all ten
+would be wrong on every one of them.
 
 ### The 2023 Table 11, and two districts whose largest group was a missing category
 
@@ -2446,6 +2664,18 @@ be fetched over a connection that verifies:
   the server never sends its intermediate, so no chain can be built. A browser
   papers over this by fetching the issuer the certificate names; urllib does
   not.
+
+  > **This one is now openable, and the repair is the project's own.**
+  > `probe_tls --chain` fetched the intermediate from the certificate's AIA
+  > `caIssuers` extension, then the root above it, and reported **VERIFIED
+  > handshake ok, TLSv1.3**; the census page then answered 200 and linked the
+  > office's own PDFs, which serve 200 to a plain client. That is the same
+  > `aia=True` repair `india_census.py` uses, and it is full verification
+  > rather than a way round it — see `scripts/probe_tls.py`. It is what the
+  > Bangladesh language evidence below is cited from. The workbook itself is
+  > still read from HDX, which works and is the office's own file under a CC0
+  > release; moving a working data path is a separate change from recording
+  > that the host is no longer shut.
 * `bbs.portal.gov.bd` answers with a "Kubernetes Ingress Controller Fake
   Certificate" for `ingress.local`.
 * `file.portal.gov.bd`, `sid.portal.gov.bd` and `portal.gov.bd` time out.
@@ -2499,6 +2729,296 @@ Chattogram, Comilla to Cumilla, Barisal to Barishal, Jessore to Jashore, Bogra
 to Bogura — and geoBoundaries still carries the older forms, with plain
 transliteration variants for three more. Declared rather than derived:
 "Nawabganj" and "Chapainababganj" share no word.
+
+#### Bangladesh's language: the question was put, and the answer has two columns
+
+All 64 zilas carried an empty `language`, with no note on it at all — which on
+this map reads as an adapter nobody has run. It is not that. Measured, in this
+order:
+
+| asked | answered |
+| --- | --- |
+| the HDX workbook's 42 sheets, listed in full | dwelling, household type, sex, marital status, **religion**, growth and sex ratio, disability, literacy (three sheets, one of them by religion), students, working status, work type, sector, NEET, mobile phone, internet, financial account, mobile banking, **ethnic population**, nationality, returned migrant, and fourteen housing sheets. **No language sheet, and no language column in the 445-column merged sheet.** |
+| `nsds.bbs.gov.bd` (two census pages) | timed out, both |
+| `file.portal.gov.bd` (the National Report) | timed out |
+| `web.archive.org` mirror of `bbs.portal.gov.bd/.../2024-01-31-15-51-b53c55dd692233ae401ba013060b9cbb.pdf` | **200**, 10,307,919 bytes, *Population and Housing Census 2022, National Report (Volume I)*, 520 pages |
+| `bbs.gov.bd/site/page/47856ad0-…/Population-and-Housing-Census`, with the chain completed from AIA | **200**, and it links the office's own copy of that report |
+| `objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/…/9ce5bd160bb14a1ab1eabe886adddb9a.pdf` | **200**, **10,307,919 bytes**, 520 pages — the same file, first-hand |
+| that file, searched for *tongue* and *Language* | **one page in 520**, and it is the literacy definition ("can read and write at least in one language") |
+| `catalog.ihsn.org`, keyword *bangladesh* | 957 studies, none of them this census |
+
+The National Report is what settles it, because it describes the form the
+census was collected on. It was first read through the Internet Archive and
+then from the office's own store, byte for byte the same file, which is the
+copy cited here. Section 1.8, *Census Questionnaire*, page 15:
+
+> The questionnaire consists of two modules the Household Module and the
+> Individual Module. In the Household Module, there are 15 questions on various
+> characteristics of households […] In the Individual Module, there are 20
+> questions on different individual facts such as age, sex, marital status,
+> religion, disability, education, working status, training, mobile phone and
+> internet use, banking inclusion, ethnic population etc. Including all, there
+> are 35 questions in the census questionnaire.
+
+Language is not among them, and nothing downstream contradicts that. The word
+appears on **one of the report's 520 pages**, and that page is the definition
+of literacy rather than a table. Its contents list no language table, its 33
+district tables (P1–P33) run from household and population through literacy,
+disability and work to *Ethnic Population by Sex and District* and *Ethnic
+Population by Category, Sex and Division* without one, and the office's own
+district workbook has 42 topic sheets and none.
+
+All of that is true, and the conclusion first drawn from it — that the
+question was never put, `not_collected` — was **too strong**. The census is
+not the whole of what the Bureau asked.
+
+##### The survey that does ask it
+
+The *Report on Socio-Economic and Demographic Survey 2023* (BBS, Statistics
+and Informatics Division, Ministry of Planning, June 2024, ISBN
+978-984-475-268-9, **553 pages**, Bangla and English on facing columns) is the
+**long-questionnaire survey run after the census** — "formerly known as a
+Sample Census" — and is published as one of the **five national reports of the
+Population and Housing Census 2021 Project**. Fieldwork ran 21 May to 22 June
+2023. Two-stage cluster sample: EAs drawn from the Census 2022 EA frame, then
+25 households per EA, 86 EAs per stratum across **140 strata** — each of the
+64 districts split rural/urban, plus 12 city corporations, `(64×2) + 12 = 140`.
+
+Its **Module 4 collects mother tongue by name**, beside religion and ethnic
+population. So Bangladesh does gather the answer, and a map saying otherwise
+is wrong — most visibly on the eight divisions, the exact shapes for which a
+mother-tongue table exists.
+
+**What it publishes still cannot be drawn.** Table 3.6, *Population by Mother
+Tongue and Second Language, Division and Location*, has exactly two
+mother-tongue columns:
+
+| division | Bangla | Others |
+| --- | ---: | ---: |
+| National | 99.17 | 0.83 |
+| Barishal | 99.99 | 0.01 |
+| Chattogram | 97.11 | **2.89** |
+| Dhaka | 99.76 | 0.24 |
+| Khulna | 100.00 | 0.00 |
+| Mymensingh | 99.29 | 0.71 |
+| Rajshahi | 99.36 | 0.64 |
+| Rangpur | 99.86 | 0.14 |
+| Sylhet | 98.96 | 1.04 |
+
+"Others" is a residual and nothing else: **no mother tongue but Bangla is
+named anywhere in the report**. All 553 pages were swept for Chakma, Marma,
+Santal, Garo, Tripura, Mro, Rakhain, Manipuri, Urdu, Bishnupriya, Tanchangya,
+Khasi, Hajong, Munda, Oraon, Rohingya, Bawm, Khumi, Chak, Pankho, Lushai,
+Koch, Dalu and Rajbanshi — **zero pages match**. (The only other language the
+report names at all is English, and it names it as a *second* language, an
+ability rather than a composition.)
+
+A named group against a residual is not a composition: drawn as two slices it
+would read as a survey that found two languages. And there is nothing below
+the division to draw in any case — the report's list of tables says
+**Division 66 times and District not once**, although the survey is stratified
+on the districts and its own precision table (Table 1.1) quotes a *District
+Estimate* margin of error beside the divisional ones. The design supports
+district figures; this report publishes none.
+
+##### So the gap stands, and its reason changed
+
+Bangladesh's language is a gap at every level, and it is **`not_available`,
+not `not_collected`** — declared once in `NOT_COLLECTED_POLICY` so the country
+row and its 64 zilas cannot drift apart. The status matters: `not_collected`
+means the state never gathers the field, and Bangladesh does. The honest
+reason names the census questionnaire that omits it, the survey that asks it,
+and the two-column shape of what was published.
+
+That is the same shape of fact as Bangladesh's ethnicity, and is now marked
+the same way. The central declaration carries no percentages, by the rule that
+**a declaration explains an absence and never states a share** — the rule the
+Maldives' tempting "100% Islam" was written down to prevent. The figures live
+in this document instead.
+
+**Religion is not declared with it**: the same census asks religion, and it is
+on the map from the same workbook, at zila level. What Bangladesh asks about a
+minority's identity is ethnic group, under the *Khudra Nri-goshthi Sangskritik
+Pratisthan Ain, 2010*, and that stays `not_available` too: the census does
+collect it, publishes a count of the ethnic population by district and a
+breakdown by category only by division, and a count of "the ethnic population"
+against everyone else is not a composition by ethnic group.
+
+##### What the survey report does *not* settle
+
+Measured, so the next reader does not re-open it hoping:
+
+* **Religion** — Table 3.2, *Population by Religion, Division and Location*:
+  Muslim, Hindu, Christian, Buddhist, Others, for the eight divisions. The map
+  already carries the same five groups for all **64 zilas** from the 2022
+  census itself, as exact counts rather than sample shares. The survey table
+  is coarser and weaker, and is not read.
+* **Ethnicity** — Table 3.4, *Ethnic Population by Sex, Division and
+  Location*, is **not** each division's ethnic share. Its division column sums
+  to exactly 100.00 (0.08 + 61.15 + 2.38 + 1.92 + 3.91 + 18.37 + 5.28 + 6.91):
+  it is the distribution of the country's ethnic population *across*
+  divisions, and carries no category breakdown at all. It is a different table
+  from the National Report's *Ethnic Population by Category, Sex and
+  Division*, which remains the open route to a real Bangladeshi ethnicity
+  composition and is **not** in this report.
+
+#### …and the count it does publish now reaches the reader
+
+`not_available` was right; a *bare* `not_available` was not. All 64 zilas
+carried the status with no note at all — on the map, the blank panel that says
+a fetch nobody ran, when what is true is a question asked, answered and
+published at a coarser grain than this map draws.
+
+The adapter now reads the workbook's third relevant sheet, *Ethnic Population
+by Sex* (Table P28), and puts the district's own figure in the reason:
+
+> Census 2022 counts 372,875 of Rangamati's 647,586 people as ethnic
+> population — 57.58% — but does not say which peoples they are. …
+
+Nationally that is **1,650,478 people, 1.00%**, and it is concentrated almost
+entirely in three districts: **Rangamati 57.6%, Khagrachhari 48.9%, Bandarban
+41.2%** — the Chittagong Hill Tracts — against 0.01% in Nilphamari,
+Lakshmipur and Lalmonirhat. None of that was visible before.
+
+The shares are taken against *Population by Sex, Dist & Loca*, the same
+district totals the religion check reconciles to the person. The workbook's
+other population sheet, `Population_District`, differs by a few hundred people
+in places; mixing the two would print a share beside a total it was not taken
+from.
+
+Held to the same standard as a religion: the ethnic total must equal its own
+male plus female column in every district (it does, 64 of 64), and must never
+exceed the district's population — which is how a column read one place left
+announces itself before it reaches a panel as a percentage over 100.
+
+**It is still not drawn as a composition at zila level, and must not be.** A
+single total and a residual is not a list of peoples; two slices reading
+"ethnic population" and everyone else would state something the Bureau never
+said.
+
+#### The named groups, at the eight divisions
+
+The route the paragraph above left open has been taken. The National Report's
+**Table P29, *Ethnic Population by Category, Sex and Division*** (PDF pages
+413–420) breaks the same 1,650,478 people into **51 named categories** — the
+groups scheduled under the 2010 Act — for each division. Nationally: Chakma
+483,365, Marma 224,299, Tripura 156,620, Saontal 129,056, Oraon 85,858, Garo
+76,854, Munda 60,201, Mro 52,463, Tonchonga 45,974, Barman 44,671, down to
+Vil at 95 and Kol's two people in one division.
+
+**Table P28 is read from the same report alongside it**, and the two make each
+other trustworthy rather than merely parsed. Four checks, every one to the
+person:
+
+1. each block's rows sum to the header printed above them;
+2. the eight divisions sum to the national header;
+3. each category's national figure equals the sum of its eight divisional
+   ones — the table read down as well as across;
+4. the report's 64 district totals equal the workbook's, two separate
+   publications of one census agreeing.
+
+The Bureau spells two districts differently between its own publications —
+*Netrokona* against *Netrakona*, *Chapainawabganj* against *Chapainababganj* —
+and those two are declared rather than bridged by a rule, so a third spelling
+fails loudly instead of quietly matching something near it.
+
+**The shares are of each division's whole population.** Chattogram's Chakma
+are 475,548 people: 48% of the division's ethnic population and **1.4% of the
+division**. Published the first way, this map would call Chakma the largest
+group in Chattogram, where they are one person in seventy. So the denominator
+is the division's own population, summed from the districts the report itself
+places in it; the list covers 2.90% of Chattogram, 1.10% of Rajshahi, 1.00% of
+Sylhet and 0.05% of Barishal; the panel says so, and the map declines to name
+a leader because the largest listed group cannot exceed what is unlisted.
+
+Everyone else is **not shown**. The census publishes the ethnic categories and
+no count and no label for anybody else, and a slice invented to fill the bar
+would be fabrication.
+
+**47 of the 51 categories have no place in this project's group tree yet** and
+are published under the census's own spelling — Bom, Tonchonga, Monipuri,
+Saontal, Lusai as BBS writes them. The tree having no opinion about them is a
+fact about the tree; inventing one from a resemblance would be a fact about
+nothing. Placing them is open work.
+
+#### Why the hill districts stop at the division too — both 2011 series read
+
+Table P29 stops at eight divisions, so the obvious next question is whether
+the three Chittagong Hill Tracts districts — Rangamati 57.6% ethnic,
+Khagrachhari 48.9%, Bandarban 41.2% — can be given a composition of their
+own. **They cannot from anything BBS has published.** Both candidate series
+were fetched and read rather than assumed:
+
+* **Zila Report: Rangamati** (2011 census, BBS, October 2015, 470 pp,
+  ISBN 978-984-33-8608-3). It has an *Ethnic Population* section and three
+  upazila-level ethnic tables, and none of them is a breakdown by group:
+  **H08** crosses ethnic households with drinking water, toilet and
+  electricity; **H09** with literacy; **H10** with household size and sex.
+  The zila's ethnic population is given as a single total — 356,153 people,
+  59.76% of Rangamati — and the peoples appear only in a prose sentence with
+  no numbers: *"Ethnic communities such as Chakma, Marma, Tanchangya,
+  Tripura, Chak, Khumee, Luchei, Pankhoa, Riang, Khumi, Mro, Santal,
+  Monipuri, Bome, Kheyang, Murang and other sub-groups belong to this zila."*
+
+* **Zila Community Report: Bandarban** (2011 census, BBS, November 2014,
+  617 pp, 22.7 MB). Its **Table C-01** is *"Area, household, population and
+  density by residence and community"*, and its columns are area in acres,
+  households, population total, population in households, floating
+  population and density — verified on the zila line, 387,129 in households
+  plus 1,206 floating against a printed 388,335. It is a **gazetteer**: every
+  mauza and para of the district listed with its head count. There is no
+  ethnic column and no group column anywhere in it. The hundreds of pages
+  that match *Chakma*, *Marma* or *Mro* match them as **place names** —
+  Banopur Chakma Para, Amtali Marma Para, Nutan Murung Para — *para* being a
+  hamlet, not a category.
+
+So BBS 2011 publishes ethnic population exactly as BBS 2022 does: **a total,
+never split by named group**, one administrative level finer. Which means the
+per-upazila group percentages that circulate (Wikipedia's *Ethnic groups in
+the Chittagong Hill Tracts* gives Chakma 91.15% in Juraichhari, Marma 49.48%
+in Rowangchhari, and so on for six peoples) **are not traceable to either
+published series**, and this project does not carry a figure it cannot source.
+They are also percentages with no denominators and truncated at `Others <1%`,
+so they could not be aggregated to a district even if they were sourced.
+
+**Fetching note, since the route is not obvious.** `bbs.gov.bd` hangs on this
+page (a `probe_tls --chain --fetch` run sat in progress for 25 minutes), and
+the reports themselves live on `203.112.218.65:8008`, a host that is dead.
+The Internet Archive has them, but asking it for a *page's* timestamp gives a
+playback that truncates: two attempts at `Com_Bandarban.pdf` both died at
+7,257,916 of 22,753,064 bytes. The fix is the **CDX API** — query
+`web.archive.org/cdx/search/cdx?url=…&matchType=prefix` for the file's own
+captures, then request one by its exact timestamp with the `id_` modifier.
+`20211123141051id_` returned all 22.7 MB cleanly. Four good captures of that
+file exist (2019, and three in 2021).
+
+#### The two Wikipedia tables, reconciled
+
+* ***Ethnic minorities in Bangladesh*** carries Table P29's national column:
+  the same 51 categories, none extra, none missing. But **21 of 51 rows agree
+  exactly and 30 do not**, and every disagreement is in the same direction —
+  the census higher. Chakma 483,365 against 483,299, Marma 224,299 against
+  224,261, Tripura 156,620 against 156,578, Others 68,588 against 68,538;
+  total **1,650,478 against 1,650,159**, 319 people short. A one-directional
+  error across 30 rows is a transcription, not a second measurement.
+
+* ***Languages of Bangladesh*** gives Bangla 163,507,029 and Others
+  **1,651,587** against a total of 165,158,616 — and that total is the census
+  figure exactly. But "Others" is **1.0000% of it to within one person**
+  (a flat 1% would be 1,651,586), while BBS's own SDS 2023 Table 3.6 puts
+  Others at **0.83%**, about 1,370,817 people. The ethnic population is
+  1,650,478, or 0.9993%. The table therefore looks like the **ethnic count
+  relabelled as a language split**, and it contradicts the Bureau's own
+  language figure by roughly 281,000 people. It is not used.
+
+Two faults were found and fixed in the reading of this table, both silent.
+The reader locked onto the report's **list of tables**, where "Table P28" and
+"Table P29" sit two lines apart, read a two-line slice and found nothing — and
+the reconciliation **passed anyway**, because each of its checks loops over
+the blocks and there were none to disagree with. It wrote a file and logged
+success beside the line "-1 divisions in Table P28, 0 districts". Every
+occurrence of a heading is now tried and the first with rows under it is the
+table; emptiness is checked first and by shape.
 
 ### The United Kingdom: two geographies, because the boundary file draws two
 
@@ -4451,6 +4971,17 @@ The `not_collected` marker is asserted from these tables and nowhere else:
 Adding a country means adding a row with a citable reason. An empty API response is
 never sufficient grounds: it produces `not_available`.
 
+The country row honours the same declaration, for **all three** fields. It used
+to honour two of them: `fetch_factbook.py` passed religion and ethnicity
+through the policy gate and let language past it, so Japan, Turkey, Sweden,
+Belgium, Austria, Algeria, Saudi Arabia, Iraq, Greece, North Korea, Afghanistan
+and the rest each had every province saying that no census of theirs asks
+language, while the country panel directly above them showed a Factbook list.
+That is the map contradicting itself on one screen, and it is now one gate for
+the three. Nothing else narrows: a country with no policy keeps exactly what
+the Factbook says, and a declaration is never dated, because `dated()` stamps a
+year onto a composition and onto nothing else.
+
 ### Measured on the runner, and declared: Iran, Korea, Egypt, Afghanistan, Venezuela
 
 A second pass over the largest countries still empty at the first level, after
@@ -4473,9 +5004,231 @@ the Wikipedia transcriptions above, ended in declarations rather than files:
 * **Afghanistan** -- no population census has ever been completed (the 1979
   count was abandoned partway), so no census question exists for any of the
   three fields: `not_collected` on all three, with the NSIA's estimates named
-  as what does exist.
+  as what does exist. Re-checked since against the household survey that would
+  otherwise stand in for a census -- see *Afghanistan: verifying a declaration,
+  and the survey that does not exist* below.
 * **Venezuela** -- the 2011 census asked indigenous and Afro-descendant
   self-recognition and not religion; `not_collected` for religion only.
+
+### The Maldives: one question about who you are, and its answer is a passport
+
+The Maldives was empty at all three levels -- one country row of Factbook prose,
+13 atolls and 20 atolls below them with nothing. The obvious explanation is the
+one to refuse: Article 9(d) of the constitution requires a citizen of the
+Maldives to be a Muslim, so "100% Islam" is a sentence anyone could write, and
+it is not a census result. Nobody was counted giving that answer. Putting it on
+the map would be the mis-match this project ranks below a gap -- a figure with a
+census's authority that no census produced -- so what was measured instead is
+the census's own form and the census's own list of tables.
+
+**The form.** The 2006 questionnaire is published through the IHSN microdata
+catalogue as the entry for `MDV_2006_PHC_V01_M`
+(`catalog.ihsn.org/catalog/4273/related-materials`, the 388 kB PDF): 16 pages,
+the whole *Shaviyani Form -- Information on Households and Individuals*, issued
+by the Ministry of Planning and National Development. Searched for *religion*,
+*mother tongue*, *language*, *ethnic*, *nationality* and *Dhivehi*, exactly one
+page of the sixteen matches, and the match is question **M4, "What is your
+Nationality?", answered 1 Maldivian or 2 Foreigner**. The rest of the form is
+household composition, the building, water, sanitation, lighting, fuel, waste,
+tenure, education, activity and migration. There is no religion question, no
+language question and no ethnicity question on it.
+
+**The tables.** The Census 2022 results summary
+(`statisticsmaldives.gov.mv/census-2022-results-summary/`) lists the round's
+whole published output, and it is about sixty tables in five families:
+
+| family | tables | what they cross |
+| --- | --- | --- |
+| Population | P1-P6 | place of enumeration, **nationality**, sex, locality, island, five-year age group |
+| Employment | EC1-EC6 | labour force status, activity, industry, occupation, employment status |
+| Housing | H1-H8 | type of living quarters, rooms, drinking water, assets |
+| Migration | MG1-MG13 | place of registration, birth, usual residence, enumeration, **nationality** |
+| Education | ED1-ED19 | literacy, attendance, grade, highest attainment |
+
+Not one is a religion table. Nationality -- Maldivian or foreigner, the same
+M4 -- is the only characteristic of that kind anywhere in the set, which is
+the published half of the fact the questionnaire shows the collection half of.
+The atoll profiles the Bureau has been issuing from the same round since 2024
+say it a third time: Shaviyani's, 32 pages, is resident population, resident
+Maldivians, resident foreigners, administrative and non-administrative islands,
+and no more.
+
+**Language is the Irish case, not an absence.** ED1, ED2 and ED16 cross
+*literacy in mother tongue* with age, sex, atoll and island; ED3 and ED4 do the
+same for English. Those count an **ability**. Which language the mother tongue
+*is* never gets recorded, so there is no composition inside them, and deriving
+"Dhivehi 100%" from the fact that Maldivians are literate in their mother
+tongue would be inventing the very figure the table declines to collect. It is
+the same distinction already written down for Ireland, whose census asks
+whether a person can speak Irish and gets an answer that is a skill.
+
+So all three fields are declared in `NOT_COLLECTED_POLICY["MDV"]`, and
+`apply_collection_policy` carries the declaration down to all 13 first-level
+and 20 second-level shapes. **No adapter and no atoll-level file were
+written**, and that is the point rather than a shortcut: there is nothing to
+join, and a per-atoll record would have to be bound through a boundary file
+that does not nest. CGAZ draws the Maldives' first level as **13** units named
+for administrative atolls (Haa Alif, Baa, Kaafu -- the country has 20 of those
+plus Malé City) and its second level as **20** units named for the natural
+atolls (North Thiladhunmathe, South Maalhosmadulu, Faadhippolhu), with `Male'`
+used for two different second-level shapes and Gnaviyani/Fuvahmulah on
+neither level. Measured against the geometry: **13 of the 20 second-level
+representative points fall outside every first-level polygon**, and **9 of the
+20 intersect no first-level polygon at all** -- several of the first-level
+shapes are slivers of near-zero area, one of them a single point. Eleven pair
+cleanly by overlap (South Nilandhoo to Dhaalu, Faadhippolhu to Lhaviyani, and
+so on), which is the shape of the answer if anyone needs it: pair by
+intersection area and bind by `shape_id`, the way `fetch_census/nepal.py`
+binds the nine districts CGAZ labels wrongly. None of that has to be solved to
+say truthfully that the census does not ask. It would have to be solved to
+publish a number, and there is no number.
+
+What this closes and what it does not: religion, ethnicity and language are
+answered. **Population by atoll and island is published and is not here** --
+`Atoll-Level-Indicator-Sheet-Population.xlsx` and
+`Island-Level-Indicator-Sheet-Population.xlsx` under
+`statisticsmaldives.gov.mv/mbs/wp-content/uploads/2023/09/`, plus tables P1-P6
+as both XLSX and PDF. That is a real route, left open deliberately, and whoever
+takes it will spend their time on the name-matching described above rather than
+on the figures.
+
+One thing the census site does not serve: `census.gov.mv/2022/` and every
+directory under it answer 404 to a reader, though individual files beneath
+`census.gov.mv/2022/wp-content/uploads/` still resolve. The Bureau's own
+`statisticsmaldives.gov.mv` carries the same material and is what was read.
+
+### Afghanistan: verifying a declaration, and the survey that does not exist
+
+`NOT_COLLECTED_POLICY["AFG"]` already said that Afghanistan has never completed
+a population census, so no census question on religion, ethnicity or language
+exists. That stands, and nothing found here disturbs it. What it left open is
+the question worth asking of any country in that position, because this map
+answers it *yes* elsewhere: **is there a survey?** South Korea's provinces
+carry a pollster's pooled web panel; 39 African countries carry Afrobarometer,
+a sample of 53,444 people. A survey from a named institution, labelled as one
+and carrying its own provenance, is a source this project accepts. Afghanistan
+has the institution and the survey series -- the Central Statistics
+Organization, now the NSIA, has run a nationwide household survey since 2003
+that is **designed to be representative at provincial level** -- so the only
+thing to establish was whether it asks the three questions.
+
+It does not, and this was measured rather than inferred:
+
+* **ALCS 2013-14 household questionnaire** (the ALCS 1392-93 form, printed as
+  Annex III.1 and published at `catalog.ihsn.org/catalog/6557/download/80079`),
+  45 pages. Searched for *religio*, *ethnic*, *tongue*, *language*, *Pashto*
+  and *Dari*: **zero pages match**. The household roster asks name,
+  relationship to head, age, sex, marital status, and the line numbers of
+  spouse, father and mother. Nothing else about identity.
+* **ALCS 2016-17 analysis report** (CSO, 2018, ISBN 978-9936-8050-7-1), 421
+  pages, questionnaire annexed. Eleven pages match those six terms and not one
+  is a table or a question: the SDG disaggregation boilerplate, an entrance
+  exam interviewers sat on local culture, the languages the CAPI application
+  was written in, the UN's definition of a refugee, and the Dari-or-Pashtu
+  choice in the primary school curriculum.
+* **NRVA 2011-12 report** (CSO, 2014), 238 pages. Two pages match, both in the
+  metadata chapter, both saying that the report itself will be available in
+  Dari, Pashtu and English.
+* **Socio-Demographic and Economic Survey** (CSO with UNFPA, Bamiyan 2011 then
+  Ghor and Daykundi 2012), the only sub-provincial enumeration since 1979 and
+  the last open lead in `survey/findings/AFG.json`. Its own contents page lists
+  population characteristics, literacy, educational attainment, migration,
+  employment, functional difficulty, fertility, mortality and housing. None of
+  the three is among them.
+
+So the declaration is not merely "there is no census". It is that the survey
+which would otherwise stand in for one has a published questionnaire and that
+questionnaire carries none of the three fields -- which is a stronger claim and
+a more useful one, because it tells the next reader that the ALCS is not worth
+re-opening. The three reasons in `common.py` now say so. The claim sometimes
+made that the 2011-13 NRVA/ALCS rounds carried language and ethnicity at
+province level was tested here against the questionnaire and the report, and it
+is not so.
+
+**What the NSIA does publish, and where it can be reached.** Annual population
+estimates by province and district, which is real and is not a composition.
+Its own site cannot be read over a verified connection: `nsia.gov.af` and
+`www.nsia.gov.af` serve, on both 443 and 8443, a Certum DV certificate issued
+for `*.gsia.gov.af` and `gsia.gov.af` and for no other name, so every request
+fails hostname verification. `gsia.gov.af` itself *does* verify once the
+missing intermediate is fetched through the certificate's own AIA extension
+(`scripts/probe_tls.py --chain` reports `VERIFIED handshake ok, TLSv1.3`), and
+what it serves at the root is a 2.4 kB stub with no links. Verification is not
+turned off for either, and no User-Agent is spoofed.
+
+The estimates are reachable anyway, through HDX, the same route several other
+countries here are covered by: dataset **`cod-ps-afg`, "Afghanistan -
+Subnational Population Statistics"**, whose `dataset_source` is *National
+Statistic and Information Authority (NSIA) Afghanistan*, maintained by OCHA
+Afghanistan, CC BY-IGO, last modified December 2025. It carries admin-0,
+admin-1 and admin-2 population as XLSX, with a gazetteer of **34 provinces and
+402 districts**; the reference year is 2021 and the method is stated as
+estimates built on a 2017 Flowminder/UNFPA micro-census and remote-sensing
+study, not an enumeration. That is a population route and only a population
+route, and it is left open here rather than taken: CGAZ draws 398 second-level
+units against the gazetteer's 402, so it needs the same kind of careful,
+per-district reconciliation that Nepal's shape bindings needed, and it would
+fill no part of the religion, ethnicity or language gap this section is about.
+
+
+### Bhutan: 1,798 pages, and a census that asks none of the three
+
+`NOT_COLLECTED_POLICY["BTN"]` declares religion, language **and** ethnicity,
+which is the strongest form of the claim this project makes about a country,
+so it is worth recording exactly what was read to support it. Bhutan is not a
+country without a census: the 2017 Population & Housing Census was enumerated
+over three days from 30 May 2017 by 9,750 enumerators, it reached every
+dzongkhag, and it published more than most. It simply does not ask.
+
+Both halves of the round were swept, page by page, over the text of every page:
+
+* **National Report** (NSB, 2018, ISBN 978-99936-28-50-7), **288 pages**.
+  Searched for *religion*, *ethnic*, *tongue*, *Lhotshamkha* and *Nepali*:
+  **two pages match, and both match on Lhotshamkha alone**. Page 24 is census
+  publicity — radio talk shows advocating the census "were held in Dzongkha,
+  Sharchopkha, and Lhotshamkha". Page 42 is the definition of literacy, "the
+  ability to read and write a short text in Dzongkha, English, Lhotshamkha, or
+  any other language". *Religion*, *ethnic*, *mother tongue* and *Nepali*
+  occur on no page of the report at all. Its chapters are demographic
+  characteristics, education, health, labour and employment, migration,
+  housing and amenities, and household asset ownership, at national, dzongkhag
+  and thromde level.
+* **Dzongkhag Series**, the twenty volumes, **1,510 pages** read as one
+  document. Searched for the same five terms and *Hindu*: **twenty pages
+  match, one per volume, and every one is the same sentence** — that literacy
+  definition again. Not one occurrence of *religion*, *ethnic*, *mother
+  tongue*, *Nepali* or *Hindu* in fifteen hundred pages. Each volume runs
+  introduction and administrative set-up, demographic characteristics,
+  education, health, labour and employment, migration and housing.
+
+A definition of literacy naming three languages is not a language composition;
+it is the set of scripts a test card could be written in. The 2005 round is
+the same, and its own list of what it collected stops at housing.
+
+**What the census does ask that looks close, and why it is refused.**
+Citizenship — Bhutanese against non-Bhutanese — is published down to gewog,
+and it is not read here or anywhere else on this map as a proxy for ethnicity.
+Citizenship is precisely the contested variable in Bhutan: the 1985
+Citizenship Act is how much of the Lhotshampa population lost its legal
+standing before leaving. A map that quietly relabelled that column "ethnicity"
+would be making a claim about people the census took care not to make.
+
+**So the national figures on Bhutan's country row are not Bhutanese.** The
+Factbook's religion vector is not from either census — PHCB 2005 has no
+religion table at all — and the State Department's religious freedom report
+attributes the same split to Pew. There is no Bhutanese figure of any kind to
+prefer to it, at any level.
+
+**What was filled instead.** Table 2.1 of each volume prints Male, Female and
+Total for every gewog, every town and the dzongkhag itself, so the twenty
+volumes give a head count and a sex ratio for 20 dzongkhags and 205 gewogs.
+Both are the dzongkhag's own figures; the sex ratio is taken only where the
+publisher's two halves reach the total printed beside them, and a row that
+does not add up keeps its head count and says in its gap why it has no ratio.
+The national report's own row — 380,453 males and 346,692 females of 727,145 —
+is the control the twenty volumes are reported against, and is not written
+onto any record here.
+
 
 ### South Korea: a survey, spread by decision
 

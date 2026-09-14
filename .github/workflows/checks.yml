@@ -38,6 +38,19 @@ jobs:
       - name: Frontend regression tests
         run: node tests/test_frontend.js
 
+      # Both of these existed and neither was run by anything. The shading
+      # check was written to catch a ramp that means one thing in light mode
+      # and the opposite in dark, caught it in the group band, and then sat
+      # unrun while the neutral magnitude ramp kept the reversed dark-mode
+      # array the band had just lost -- so the population map stayed upside
+      # down in dark mode until a reader said so. A check nobody runs is a
+      # comment.
+      - name: Does darker always mean more?
+        run: node scripts/check_shading.js
+
+      - name: Do the panel's percentages add up?
+        run: node scripts/check_percentages.js
+
       - name: Shell syntax
         run: for f in scripts/*.sh; do bash -n "$f"; done
 

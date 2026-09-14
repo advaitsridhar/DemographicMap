@@ -103,10 +103,126 @@ function mapStateSurvivesThemeChangesAndUsesRepresentativePoints() {
   assert.deepStrictEqual(Array.from(lastEase.center), Array.from(usa.point));
 }
 
+/* A fact tile has to carry the sentence that says how to read it.
+ *
+ * Both halves of this were shipped and neither reached a reader. A gap built
+ * by common.py's `gap()` carries its reason inside the value; a figure that
+ * needs a caveat carries it beside the record as `<field>_note`. The
+ * composition panels printed theirs and the fact tiles printed neither, so
+ * India's 98 districts with no 2011 head count said "Not available" and
+ * nothing else -- which is the blank this project exists to prevent, because
+ * it reads as "nobody ran the adapter" rather than "the district did not
+ * exist when the census counted" -- and the 75 that show the undivided
+ * district's count said nothing about the ground that count is really for.
+ *
+ * Asserted on both a gap and a value, because the second is the worse case:
+ * there the panel shows a number and the note is the only thing saying what
+ * the number is about.
+ */
+function factTilesCarryTheirStatedReason() {
+  const rendered = [];
+  const container = {
+    set innerHTML(html) { rendered.push(html); },
+    get innerHTML() { return rendered[rendered.length - 1] || ""; },
+    scrollTop: 0,
+    querySelectorAll: () => [],
+  };
+  const context = vm.createContext({ window: {}, console });
+  vm.runInContext(source("data.js"), context);
+  vm.runInContext(source("palette.js"), context);
+  context.window.DataStore = { country: () => null, get: () => null, children: () => [] };
+  vm.runInContext(source("dashboard.js"), context);
+
+  const uncounted = "Agar did not exist at the 2011 census: it was created in 2013.";
+  const undivided = "This figure is for Shajapur as the 2011 census measured it.";
+  context.window.Dashboard.render({
+    id: "IND-TEST", level: "admin2", name: "Agar", country: "IND",
+    population: { status: "not_available", note: uncounted },
+    sex_ratio: { value: 938, unit: "females_per_1000_males", year: 2011 },
+    sex_ratio_note: undivided,
+  }, container);
+
+  const html = container.innerHTML;
+  // The reason itself, not merely some note: a panel that prints "Not
+  // available" and a generic apology is the state this test exists to fail.
+  assert.ok(html.includes(uncounted),
+            "a gap's own note must reach the population tile");
+  assert.ok(html.includes(undivided),
+            "a value's <field>_note must reach its tile");
+  // Behind the same "i" a composition heading uses, rather than loose in a
+  // two-column grid of tiles.
+  assert.ok(/class="fact-label">Population<button type="button" class="info"/.test(html),
+            "the note belongs to the tile's own label");
+
+  // And a gap with nothing written about it must not grow an empty bubble.
+  rendered.length = 0;
+  context.window.Dashboard.render({
+    id: "IND-TEST-2", level: "admin2", name: "Nowhere", country: "IND",
+    population: { status: "not_available" },
+  }, container);
+  assert.ok(!/class="fact-label">Population<button/.test(container.innerHTML),
+            "a gap with no stated reason gets no info button");
+}
+
+/* A leader is only a leader if nothing missing could beat it.
+ *
+ * Not every composition partitions its population. The Factbook gives the DRC
+ * six religions summing to 6.8%; Bangladesh's census enumerates ethnic groups
+ * covering 1% of the country and nobody else. Asked which group leads, this
+ * map answered from the list it had and said the DRC's largest religion is
+ * Kimbanguist at 2.8% -- with 93.2% of Congolese unlisted, any of whom could
+ * outweigh it several times over. The panel kept saying the list describes
+ * 6.8% of the population while the map painted a winner from it.
+ */
+function aLeaderIsOnlyNamedWhenNothingMissingCouldBeatIt() {
+  const context = vm.createContext({ window: {}, console });
+  vm.runInContext(source("data.js"), context);
+  context.window.Palette = {
+    sequential: () => "blue", neutral: () => "grey", ramp: () => [],
+    categorical: () => "blue", group: () => "blue", unplaced: () => "violet",
+    status: () => ({ color: "grey" }), groupRamp: () => [], SHARE_FLOOR: 25,
+  };
+  vm.runInContext(source("metrics.js"), context);
+  context.window.Metrics.setGroupIndex(data("groups.json"));
+  const M = context.window.Metrics;
+
+  // A composition that partitions its population: unchanged.
+  const whole = { religion: [{ group: "Islam", pct: 91 },
+                             { group: "Hinduism", pct: 8 },
+                             { group: "Christianity", pct: 1 }] };
+  assert.strictEqual(M.largestShare(whole, "religion"), 91);
+  assert.ok(M.dominant(whole, "religion", 1), "a whole composition still has a leader");
+
+  // 6.8% of a population, led by 2.8%: 2.8 cannot exceed the 93.2 unlisted.
+  const sliver = { religion: [{ group: "Kimbanguist", pct: 2.8 },
+                              { group: "Christianity", pct: 2.0 },
+                              { group: "Islam", pct: 2.0 }] };
+  assert.strictEqual(M.largestShare(sliver, "religion"), null,
+                     "no leader may be named from a composition of 6.8%");
+  assert.strictEqual(M.dominant(sliver, "religion", 1), null,
+                     "and the map must not paint one either");
+
+  // Short of 100 but decisively led: 60 beats the 10 unlisted, so it stands.
+  const mostly = { religion: [{ group: "Islam", pct: 60 },
+                              { group: "Hinduism", pct: 30 }] };
+  assert.strictEqual(M.largestShare(mostly, "religion"), 60);
+
+  // Multi-response sums past 100, leaving no remainder at all.
+  const several = { language: [{ group: "English", pct: 80 },
+                               { group: "Spanish", pct: 40 }] };
+  assert.strictEqual(M.largestShare(several, "language"), 80);
+
+  // The readout goes quiet with the map rather than disagreeing with it.
+  assert.strictEqual(
+    M.METRICS.largest_share.display(sliver, { field: "religion" }), "—");
+}
+
 (async () => {
   await concurrentLoadsAreIndexedOnce();
   await deepSearchWaitsForTheSecondShard();
   uncertainSharesKeepTheirQualifier();
   mapStateSurvivesThemeChangesAndUsesRepresentativePoints();
+  factTilesCarryTheirStatedReason();
+  aLeaderIsOnlyNamedWhenNothingMissingCouldBeatIt();
   console.log("frontend regression tests passed");
 })().catch((error) => { console.error(error); process.exitCode = 1; });

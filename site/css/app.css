@@ -638,6 +638,11 @@ dialog p, dialog li { font-size: .8rem; line-height: 1.6; color: var(--ink-secon
 .filter-section > h3, .panel-head h3 { display: flex; align-items: center; }
 .panel-head h3 .info { letter-spacing: 0; }
 
+/* Same trade one size down, on the fact tiles. The label is uppercase with a
+   .05em tracking, which would push the "i" off its own circle. */
+.fact-label { display: flex; align-items: center; }
+.fact-label .info { letter-spacing: 0; flex: none; }
+
 /* The table view's total, which exists so a reader can see the column adds up
    rather than take it on trust. */
 .data-table .total-row th {

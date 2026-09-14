@@ -415,9 +415,91 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
     return out
 
 
+def whole(geom):
+    """The same shape, in a form GEOS will overlay.
+
+    346 of CGAZ's 3,224 first-order polygons and 843 of its second-order ones
+    do not satisfy GEOS -- a ring that touches itself, a hole that leaves its
+    shell. An overlay against one of those either raises or, worse, quietly
+    returns an empty geometry, and an empty geometry is indistinguishable from
+    "these two do not meet". Repairing first is the only way the area of
+    overlap means what it says: with lazy repair-on-exception, Belize City's
+    six divisions came out overlapping no district in their own country.
+
+    ``make_valid`` can hand back stray lines and points alongside the polygon.
+    Area and containment are questions about the polygon, so that is the part
+    kept.
+    """
+    from shapely import make_valid
+    from shapely.ops import unary_union
+
+    if geom is None or geom.is_valid:
+        return geom
+    fixed = make_valid(geom)
+    if fixed.geom_type in ("Polygon", "MultiPolygon"):
+        return fixed
+    parts = [g for g in getattr(fixed, "geoms", [])
+             if g.geom_type in ("Polygon", "MultiPolygon")]
+    return unary_union(parts) if parts else fixed
+
+
 def link_adm2_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]]) -> None:
-    """CGAZ ADM2 carries no parent link, so assign it by point-in-polygon."""
-    from shapely.geometry import Point
+    """CGAZ ADM2 carries no parent link, so work it out from the geometry.
+
+    The unit belongs to the first-order shape it has the most area inside.
+    That is the whole rule; everything below is about arriving at it without
+    holding fifty thousand polygons in memory or intersecting all of them.
+
+    It used to be a different rule: containment of the unit's representative
+    point, and where that failed, whichever bounding box the spatial index
+    happened to return first. Both halves were wrong in the same direction.
+    The point is a one-pixel sample of a polygon, so where the two levels are
+    not the same partition of the country it can land in a neighbour -- and
+    the fallback is not a geographic answer at all, since index order is an
+    artefact of how the tree was packed. Measured over all 49,349 second-order
+    units, 228 were filed under the wrong first-order shape: Apostoles
+    Department under Corrientes when it is in Misiones, Rukum East under
+    Lumbini when it is in Karnali, eleven Bhutanese gewogs under the wrong
+    dzongkhag, forty Chinese counties, forty-four Brazilian municipalities.
+    A district filed under a neighbouring province is the kind of wrong this
+    project ranks below a gap: nothing on screen says so, and the parent is
+    what scopes an adapter's row to a shape, so it decides matches too.
+
+    Three things make the exact rule affordable:
+
+    * The point pass still runs first and is still right for nearly every
+      unit; it costs no second-order geometry at all.
+    * ``read_shapes`` already keeps every unit's bounding box. A unit whose
+      whole box lies inside the parent the point chose cannot be mostly inside
+      anything else, so it is settled there and never needs its polygon. That
+      is 17,861 of them.
+    * For the rest the file is streamed a second time, one polygon at a time.
+      If the sitting parent holds a majority of the unit's area, no other
+      candidate can beat it and the search stops at one overlay; only 256
+      units in the world need the full comparison.
+
+    Invalid polygons are repaired rather than skipped, and this is not a
+    detail: 346 of the 3,224 first-order shapes and 843 of the second-order
+    ones do not satisfy GEOS, and an overlay against one of them raises. An
+    earlier version of this caught that exception and moved on, which silently
+    dropped the true parent and handed the unit to whichever lesser neighbour
+    happened not to raise -- Bouches-du-Rhone to Occitanie, Abu Dhabi to
+    Sharjah. Swallowing an error from the most important candidate is worse
+    than the arbitrary fallback it replaced.
+
+    A unit whose polygon meets no first-order shape in its own country is left
+    without a parent and counted in the log. Geometry has no evidence there,
+    and nearness is a proxy for evidence rather than evidence; the entity
+    falls back to the country, which is true, instead of to a province picked
+    for being close, which may not be. Note also that no rule here can fix a
+    boundary file whose two levels are not the same partition of the country.
+    Bhutan's are not, and where the answer is still wrong the consequence is a
+    row that fails to match and says so, not one that matches silently --
+    ``resolve_admin2`` accepts an exact, country-unique name over a parent
+    disagreement for exactly that reason.
+    """
+    import shapely
+    from shapely.geometry import Point, box
     from shapely.strtree import STRtree
 
     by_country: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -426,12 +508,20 @@ def link_adm2_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]]) ->
 
     trees: dict[str, tuple[STRtree, list[dict[str, Any]]]] = {}
     for iso3, rows in by_country.items():
-        geoms = [r["_geom"] for r in rows if r["_geom"] is not None]
         kept = [r for r in rows if r["_geom"] is not None]
-        if geoms:
-            trees[iso3] = (STRtree(geoms), kept)
+        if not kept:
+            continue
+        for parent in kept:
+            # Repaired before anything is asked of it, and prepared once, then
+            # asked about tens of thousands of points and boxes. Without the
+            # preparation the point pass alone is minutes of work; without the
+            # repair its answers are not reliably true.
+            parent["_geom"] = whole(parent["_geom"])
+            shapely.prepare(parent["_geom"])
+        trees[iso3] = (STRtree([r["_geom"] for r in kept]), kept)
 
     matched = 0
+    pending: dict[str, dict[str, Any]] = {}
     for row in adm2:
         entry = trees.get(row["group"])
         row["parent_shape"] = None
@@ -439,21 +529,120 @@ def link_adm2_parents(adm1: list[dict[str, Any]], adm2: list[dict[str, Any]]) ->
             continue
         tree, rows = entry
         point = Point(row["point"])
-        hits = tree.query(point)
-        parent = None
-        for idx in hits:
+        sitting = None
+        for idx in tree.query(point):
             candidate = rows[int(idx)]
-            if candidate["_geom"].contains(point):
-                parent = candidate
+            if shapely.contains(candidate["_geom"], point):
+                sitting = candidate
                 break
-        if parent is None and len(rows) == 1:
-            parent = rows[0]
-        if parent is None and len(hits):
-            parent = rows[int(hits[0])]
-        if parent is not None:
-            row["parent_shape"] = parent["shape_id"]
+        if sitting is None and len(rows) == 1:
+            # One first-order shape in the country: there is nothing to choose
+            # between, and reading the unit's polygon to prove it would be
+            # waste.
+            sitting = rows[0]
+        if sitting is not None:
+            row["parent_shape"] = sitting["shape_id"]
             matched += 1
-    log(f"  ADM2 -> ADM1 parent assigned for {matched}/{len(adm2)} units")
+            if shapely.contains(sitting["_geom"], box(*row["bbox"])):
+                continue
+        if row["shape_id"]:
+            pending[row["shape_id"]] = row
+
+    moved, unplaced = (weigh_adm2_parents(pending, trees, adm2_geometry(pending))
+                       if pending else (0, []))
+    # Recounted rather than adjusted: the second pass both gives parents to
+    # units the point pass left without one and takes them away from units
+    # whose polygon turns out to meet no first-order shape at all.
+    matched = sum(1 for row in adm2 if row["parent_shape"])
+    log(f"  ADM2 -> ADM1 parent assigned for {matched}/{len(adm2)} units "
+        f"({len(pending)} weighed by area, {moved} moved to the shape they are "
+        f"mostly inside)")
+    if unplaced:
+        shown = ", ".join(unplaced[:8])
+        more = f" and {len(unplaced) - 8} more" if len(unplaced) > 8 else ""
+        log(f"  {len(unplaced)} units meet no first-order shape of their own "
+            f"country and stay under it: {shown}{more}")
+
+
+def adm2_geometry(pending: dict[str, dict[str, Any]]):
+    """Stream the second-order polygons the weighing pass asked for, and only those.
+
+    A second read of the file rather than keeping every polygon from the
+    first: the build wants ADM2 geometry for the parent pass and for nothing
+    else, and 49,349 of them do not need to sit in memory through the whole
+    join to serve one function. Skipping the ones not asked for means the
+    two-thirds of units the bounding box already settled are never even
+    turned into geometry.
+    """
+    import fiona
+    from shapely.geometry import shape as to_shape
+
+    with fiona.open(BOUNDARIES / "geoBoundariesCGAZ_ADM2.gpkg") as src:
+        for feat in src:
+            shape_id = feat["properties"].get("shapeID")
+            if shape_id not in pending or not feat["geometry"]:
+                continue
+            geom = to_shape(feat["geometry"])
+            if not geom.is_empty:
+                yield shape_id, geom
+
+
+def weigh_adm2_parents(
+    pending: dict[str, dict[str, Any]],
+    trees: dict[str, tuple[Any, list[dict[str, Any]]]],
+    units,
+) -> tuple[int, list[str]]:
+    """Give each pending unit the first-order shape it is most inside.
+
+    ``units`` yields ``(shape_id, polygon)``; where they come from is the
+    caller's business, which is what lets this be tested on four squares
+    instead of on 550 MB of boundary file.
+
+    Returns ``(moved, unplaced_names)`` -- how many units changed parent, and
+    the names of the ones left without one.
+    """
+    import shapely
+
+    moved = 0
+    unplaced: list[str] = []
+    for shape_id, geom in units:
+        row = pending.get(shape_id)
+        if row is None:
+            continue
+        unit = whole(geom)
+        tree, rows = trees[row["group"]]
+        was = row["parent_shape"]
+        sitting = next((r for r in rows if r["shape_id"] == was), None)
+        best, held = None, 0.0
+        if sitting is not None:
+            held = shapely.intersection(unit, sitting["_geom"]).area
+            if held * 2 > unit.area:
+                # A majority is unbeatable: the rest of the country has less
+                # than half the unit between all of it.
+                continue
+            best = sitting if held > 0 else None
+        for idx in tree.query(unit):
+            candidate = rows[int(idx)]
+            if candidate is sitting:
+                continue
+            area = shapely.intersection(unit, candidate["_geom"]).area
+            if area > held:
+                best, held = candidate, area
+        if best is None:
+            row["parent_shape"] = None
+            unplaced.append(f"{row['name']} ({row['group']})")
+            continue
+        row["parent_shape"] = best["shape_id"]
+        if best["shape_id"] != was:
+            moved += 1
+            if row["group"] in TRACE:
+                # The name, not the shape id: this line is read by a person
+                # deciding whether the move is right, and "not
+                # 66845921B82067974050695" tells them nothing.
+                log(f"    {row['group']} {row['name']}: parent by area is "
+                    f"{best['name']}, not {sitting['name'] if sitting else '(none)'} "
+                    f"({held / unit.area * 100:.1f}% inside)")
+    return moved, unplaced
 
 
 # ---------------------------------------------------------------------------
@@ -2518,7 +2707,8 @@ def main() -> int:
     if policy_hits:
         total = sum(policy_hits.values())
         top = sorted(policy_hits.items(), key=lambda kv: -kv[1])[:8]
-        log(f"  collection policy marked {total} subnational fields as not_collected: "
+        log(f"  collection policy marked {total} subnational fields with a "
+            f"declared gap and its reason: "
             + ", ".join(f"{k} {v}" for k, v in top))
 
     # -- sum parents from children -------------------------------------------

@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
 """Bhutan -- Population & Housing Census 2017, population by gewog.
 
-**This adapter publishes population and nothing else, and the reason is worth
-stating rather than leaving as an empty field.** Bhutan's census does not ask
-religion, language or ethnicity. That is not "does not publish": the 2017
-national report runs 288 pages over education, fertility, mortality,
-disability, labour, migration and housing, and the words religion, ethnic,
-Hindu, Buddhist and mother tongue occur on none of them except two pages
-describing the census's own publicity -- talk shows held in Dzongkha,
-Sharchopkha and Lhotshamkha, and the literacy test card. The 2005 round is the
-same. So the three composition fields are declared ``not_collected`` in
-``scripts/common.py`` and this file fills the one thing the census does count.
+**This adapter publishes a head count and a sex ratio and nothing else, and
+the reason is worth stating rather than leaving as an empty field.** Bhutan's
+census does not ask religion, language or ethnicity. That is not "does not
+publish": the 2017 national report runs 288 pages over education, fertility,
+mortality, disability, labour, migration and housing, and the words religion,
+ethnic, Hindu, Buddhist and mother tongue occur on none of them except two
+pages describing the census's own publicity -- talk shows held in Dzongkha,
+Sharchopkha and Lhotshamkha, and the literacy test card. The twenty dzongkhag
+volumes, 1,510 pages read as one sweep, carry one hit apiece and it is the
+same sentence every time: the definition of literacy, "the ability to read and
+write a short text in Dzongkha, English, Lhotshamkha, or any other language".
+The 2005 round is the same. So the three composition fields are declared
+``not_collected`` in ``scripts/common.py`` and this file fills what the census
+does count.
 
 **The one identity-adjacent split the census does publish is citizenship**,
 Bhutanese against non-Bhutanese, by dzongkhag and by gewog. It is deliberately
@@ -20,6 +24,17 @@ much of the Lhotshampa population lost its legal standing before leaving.
 Table 2.1, which this reads, is the whole resident population "irrespective of
 their nationality" -- the report's own words -- which is the figure that
 belongs on a map of where people are.
+
+**The sex ratio comes from the same three columns.** Table 2.1 prints Male,
+Female and Total for every gewog, every town and the dzongkhag itself, and the
+reader has always parsed all three and kept the last. The ratio is derived as
+females per 1,000 males, the convention the rest of South Asia is published in
+here, and it is derived only where the publisher's own two columns add up to
+the total printed beside them. Where they do not, the row keeps its printed
+head count -- that figure is the office's -- and publishes no ratio at all,
+naming the disagreement in its gap. A ratio computed from figures NSB itself
+does not add up would be a number this map invented, and it would be
+indistinguishable on the page from one the census measured.
 
 Three things about the documents shape the reader.
 
@@ -44,6 +59,19 @@ Tsirang's page 12 opens "Trashigang Dzongkhag as of the census...", a
 copy-paste left in NSB's own text. The tables are Tsirang's. Read the tables,
 never the sentences.
 
+**A gewog reaches its polygon by where it is, not by what it is called.**
+geoBoundaries draws 205 Bhutanese gewogs and the census publishes 205, but
+the two disagree about the names of thirty of them -- and not as spellings.
+The boundary file labels Samtse's Tashicholing "Sipsu" and its Norgaygang
+"Bara", Sarpang's Samtenling "Bhur", Tsirang's Patshaling "Beteni": the
+Nepali-origin names southern Bhutan carried before the renamings. No
+romanisation rule crosses that, and the one thing worse than leaving those
+thirty shapes empty is filling them from a resemblance. So they are paired by
+a reference point -- Wikidata's own point for the gewog the census names,
+falling inside the polygon the boundary file draws, with Wikidata's dzongkhag
+for it agreeing with the census's. See ``GEWOG_BY_POINT``, which also records
+the two pairs the old name-matching got wrong.
+
 Usage:
     python -m scripts.fetch_census.bhutan
 """
@@ -53,7 +81,7 @@ from __future__ import annotations
 import argparse
 import io
 import re
-from typing import Any
+from typing import Any, NamedTuple
 
 from ._shared import (
     NOT_AVAILABLE, PROCESSED, gap, log, measure, record, write_json,
@@ -106,6 +134,233 @@ DZONGKHAG_ALIASES: dict[str, tuple[str, ...]] = {
     "Lhuentse": ("Lhuntse",),
 }
 
+# What geoBoundaries calls each gewog where it differs from NSB. Neither
+# spelling is wrong -- Dzongkha romanisation has no single standard, and the
+# two bodies made different choices: Barzhong against Barshong, Kikorthang
+# against Kilkhorthang, Dunglegang against Doonglagang.
+#
+# **Paired by mutual best match on the name and by nothing else, and that is a
+# deliberate limit.** The obvious corroboration would be the dzongkhag, and it
+# is not available here: CGAZ's two Bhutan layers are not the same partition
+# of the country. 81 of the 205 gewog polygons are less than 90% inside any
+# single dzongkhag polygon, and Punakha comes out with 6 children by maximum
+# overlap and 4 by the point-in-polygon rule the build used then, where it has
+# 11. A parent that is wrong cannot confirm a name.
+#
+# **Two of these pairs were wrong, and the limit is why.** A name matched
+# without a place behind it can land anywhere, and twice it did: Punakha's
+# Barp was aliased to a shape called "Bara" that sits 96% inside Samtse, and
+# Chhukha's Maedtabkha to "Patakla", 60% inside Tsirang. Both have been
+# removed; both gewogs are now bound by GEWOG_BY_POINT below, and the two
+# shapes turn out to be Samtse's Norgaygang and Tsirang's Sergithang, which
+# had no figures at all while two other dzongkhags' people sat on them. The
+# refusals in this table held up better than its acceptances: "Pemaling" to
+# "Pagli" scored 0.62 and was left out, and Pemaling is Biru -- Pagli is
+# Phuentshogpelri.
+#
+# So a pair is taken only where each name is the other's best match in both
+# directions, which is what stops a chain of near-misses from cascading: 24
+# further rows have a plausible candidate that some other row matches better,
+# and every one of them is left unmatched rather than guessed. An unmatched
+# gewog is a visible gap; a gewog wearing its neighbour's people is not.
+#
+# Nine pairs score below 0.80 and are kept because the alternative does not
+# exist rather than because the string is close: Gasa has four gewogs, so
+# Khamaed can only be Goenkhame. "Pemaling" to "Pagli" scored 0.62 with no
+# such argument behind it and is left out.
+GEWOG_ALIASES: dict[str, tuple[str, ...]] = {
+    "Barshong": ("Barzhong",),
+    "Bidoong": ("Bidung",),
+    "Bjagchhog": ("Bjachho",),
+    "Bjenag": ("Bjena",),
+    "Boomdeling": ("Bumdeling",),
+    "Chagsakhar": ("Chaskhar",),
+    "Chhaling": ("Chhali",),
+    "Chhimoong": ("Chhimung",),
+    "Chhoekhorling": ("Chokhorling",),
+    "Chhumig": ("Chhume",),
+    "Chhuzanggang": ("Chhuzagang",),
+    "Darla": ("Dala",),
+    "Doonglagang": ("Dunglegang",),
+    "Doongna": ("Dungna",),
+    "Dopshar-ri": ("Dopshari",),
+    "Draagteng": ("Dragteng",),
+    "Dramedtse": ("Drametse",),
+    "Drepoong": ("Drepung",),
+    "Drukjeygang": ("Drugyelgang",),
+    "Duenchhukha": ("Denchhukha",),
+    "Dzomi": ("Dzoma",),
+    "Gangteng": ("Gangte",),
+    "Gase Tshogongm": ("Gasetsho Gom",),
+    "Gase Tshowogm": ("Gasetsho Om",),
+    "Ge-nyen": ("Genye",),
+    "Gelegphu": ("Gelephu",),
+    "Goshing": ("Gozhing",),
+    "Hoongrel": ("Hungrel",),
+    "Jarey": ("Jaray",),
+    "Jigme Chhoeling": ("Jigmichhoeling",),
+    "Jurmed": ("Jurmey",),
+    "Kabisa": ("Kabjisa",),
+    "Kangpar": ("Kangpara",),
+    "Kar-tshog": ("Katsho",),
+    "Khamaed": ("Goenkhame",),
+    "Khatoed": ("Goenkhatoe",),
+    "Kilkhorthang": ("Kikorthang",),
+    "Kurtoed": ("Kurtoe",),
+    "Langchenphu": ("Langchhenphu",),
+    "Largyab": ("Lajab",),
+    "Lhamoi Dzingkha": ("Lhamoizingkha",),
+    "Loggchina": ("Logchina",),
+    "Loong-nyi": ("Lungnyi",),
+    "Maedtsho": ("Metsho",),
+    "Maedwang": ("Mewang",),
+    "Maenbi": ("Menbi",),
+    "Merag": ("Merak",),
+    "Minjey": ("Minjay",),
+    "Monggar": ("Mongar",),
+    "Namgyalchhoeling": ("Namgyel Chhoeling",),
+    "Nyishog": ("Nyisho",),
+    "Phangkhar": ("Pangkhar",),
+    "Phongmed": ("Phongme",),
+    "Phuentshogling": ("Phuentsholing",),
+    "Phuentshogthang": ("Phuntsthothang",),
+    "Pungtenchhu": ("Phuentenchhu",),
+    "Radhi": ("Radi",),
+    "Ruebisa": ("Ruepisa",),
+    "Saephu": ("Sephu",),
+    "Sagteng": ("Sakteng",),
+    "Saling": ("Saleng",),
+    "Samar": ("Sama",),
+    "Semjong": ("Shemjong",),
+    "Senggey": ("Senge",),
+    "Serzhong": ("Sherzhong",),
+    "Sharpa": ("Shapa",),
+    "Shelnga-Bjemi": ("Shengabjimi",),
+    "Shermuhoong": ("Shermung",),
+    "Shumar": ("Shumer",),
+    "Talog": ("Talo",),
+    "Tashiding": ("Trashiding",),
+    "Tendruk": ("Tendu",),
+    "Toedpaisa": ("Toepisa",),
+    "Toedtsho": ("Toetsho",),
+    "Toedwang": ("Toewang",),
+    "Tsaenkhar": ("Tsenkhar",),
+    "Tsholingkhar": ("Tsholingkhor",),
+    "Tsirang Toed": ("Tsirangtoe",),
+    "Ugyentse": ("Ugentse",),
+}
+
+# The gewogs the boundary file draws under a name that is not a spelling of
+# the census's at all, paired by where they are rather than by what they are
+# called. Every one of these is a *place*, not a string: Samtse's Tashicholing
+# is drawn as "Sipsu", its Norgaygang as "Bara", Sarpang's Samtenling as
+# "Bhur", Tsirang's Patshaling as "Beteni". No romanisation rule reaches any
+# of those, and no rule should -- they are the Nepali-origin names the
+# southern dzongkhags carried before the renamings of the 1950s to 1990s and
+# the 1996-97 romanisation standardisation, and CGAZ still labels the polygons
+# with them.
+#
+# **The evidence is a reference point inside a polygon, and it is checked two
+# ways.** Wikidata carries Bhutan's gewogs with P131 (the dzongkhag) and P625
+# (a point); `data/processed/bhutan_wikidata_gewog.json` holds 240 of them,
+# 166 with a point. A pair is taken only where the point of the gewog *the
+# census names* falls inside the polygon *the boundary file draws*, AND
+# Wikidata's dzongkhag for that gewog is the dzongkhag the census printed it
+# under. Two independent statements about the same ground, neither of them a
+# string comparison.
+#
+# The method was measured before it was trusted: of the 102 gewogs that carry
+# a point and whose name the boundary file already matched, 98 have their
+# point inside their own polygon. The four that do not are on borders. That is
+# the same reading Nepal's district bindings rest on, and for the same reason
+# -- a polygon is identified by what is inside it, not by what it is labelled.
+#
+# Corroborated a third time by the list of gewogs each dzongkhag has: the
+# Wikipedia article *Gewogs of Bhutan* prints all 205 with their Dzongkha, and
+# each pair below is one gewog of the dzongkhag the census printed it under.
+# The Dzongkha settles several that look like different words in Latin script:
+# the census's Karna is བཀར་ན་ (Kana), its Maedtabkha is སྨད་བཏབ་ཁ་ (Metakha),
+# its Darkarla is དར་དཀར་ལ་ (Dagala), its Nagya is ན་རྒྱ་ (Naja).
+#
+# Keyed by (gewog, dzongkhag) because two of Bhutan's gewog names are not
+# unique: an alias keyed on the name alone is what put both Norboogangs on one
+# shape and lost both. Those four rows are in SHAPE_BOUND instead.
+GEWOG_BY_POINT: dict[tuple[str, str], tuple[str, ...]] = {
+    ("Maedtabkha", "Chhukha"): ("Metap",),
+    ("Karmaling", "Dagana"): ("Deorali",),
+    ("Karna", "Dagana"): ("Kalidzingkha",),
+    ("Khebisa", "Dagana"): ("Khipisa",),
+    ("Sangbay", "Haa"): ("Sombey",),
+    ("Dokar", "Paro"): ("Doga",),
+    ("Nagya", "Paro"): ("Naja",),
+    ("Dungmaed", "Pema Gatshel"): ("Dungmin",),
+    ("Barp", "Punakha"): ("Bapisa",),
+    ("Orong", "Samdrup Jongkhar"): ("Jangchhubling",),
+    ("Doomtoed", "Samtse"): ("Dungtoe",),
+    ("Dophuchen", "Samtse"): ("Dorokha",),
+    ("Norgaygang", "Samtse"): ("Bara",),
+    ("Pemaling", "Samtse"): ("Biru",),
+    ("Phuentshogpelri", "Samtse"): ("Pagli",),
+    ("Sang-Ngag-", "Samtse"): ("Chargharay",),
+    ("Tashichhoeling", "Samtse"): ("Sipsu",),
+    ("Chhudzom", "Sarpang"): ("Doban",),
+    ("Samtenling", "Sarpang"): ("Bhur",),
+    ("Tareythang", "Sarpang"): ("Taklai",),
+    ("Darkarla", "Thimphu"): ("Dagala",),
+    ("Tongmajangsa", "Trashi Yangtse"): ("Tomzhangtshen",),
+    ("Yangtse", "Trashi Yangtse"): ("Trashiyangtse",),
+    ("Patshaling", "Tsirang"): ("Beteni",),
+    ("Sergithang", "Tsirang"): ("Patakla",),
+    ("Darkar", "Wangdue Phodrang"): ("Daga",),
+}
+
+# The six of those the point could not settle, and what settles them instead.
+# Six gewogs have no P625 on Wikidata, so the pairing rests on the two lists
+# closing: the dzongkhag's gewogs as the article prints them and as the census
+# prints them agree name for name except at one place each, every other shape
+# in the dzongkhag is claimed, and the remainder is forced. Trashi Yangtse is
+# the one with two left over, and the boundary file's own labelling separates
+# them: "Tomzhangtshen" is the article's Tomzhang (སྟོང་མི་གཞང་ས་, the census's
+# Tongmajangsa), leaving the polygon labelled with the dzongkhag's own name,
+# "Trashiyangtse", as the gewog of Yangtse that holds its seat.
+BY_CLOSURE: frozenset[tuple[str, str]] = frozenset({
+    ("Nagya", "Paro"),
+    ("Doomtoed", "Samtse"),
+    ("Darkarla", "Thimphu"),
+    ("Tongmajangsa", "Trashi Yangtse"),
+    ("Yangtse", "Trashi Yangtse"),
+    ("Darkar", "Wangdue Phodrang"),
+})
+
+# Gewogs bound to one polygon by that polygon's id, because their name cannot
+# do it. Bhutan has two gewogs called Gakiling -- one in Haa, one in Sarpang
+# -- and two called Norbugang, in Pema Gatshel and in Samtse. A name-keyed
+# match cannot tell them apart: country-wide it is ambiguous, and the build
+# refuses both rows rather than letting one wear the other's people, which is
+# why all four shapes were empty. Which polygon is which is settled the same
+# way as GEWOG_BY_POINT -- Wikidata's Gakiling [Haa] point falls in the
+# polygon labelled "Gakiling" and its Gakiling [Sarpang] point in the one
+# labelled "Hiley"; Norbugang [Pema Gatshel] in "Norbugang" and Norbugang
+# [Samtse] in "Chengmari", the name Samtse's gewog carried before it was
+# renamed.
+SHAPE_BOUND: dict[tuple[str, str], str] = {
+    ("Gakiling", "Haa"): "84629894B40252407393905",          # "Gakiling"
+    ("Gakiling", "Sarpang"): "84629894B8166759987677",       # "Hiley"
+    ("Norboogang", "Pema Gatshel"): "84629894B84199937092772",  # "Norbugang"
+    ("Norboogang", "Samtse"): "84629894B7629980605125",      # "Chengmari"
+}
+
+# What the boundary file calls each bound shape, for the note that says so.
+# A reader who looks the shape up will find the other name on it, and an
+# unexplained disagreement is its own kind of error.
+SHAPE_LABELS: dict[str, str] = {
+    "84629894B40252407393905": "Gakiling",
+    "84629894B8166759987677": "Hiley",
+    "84629894B84199937092772": "Norbugang",
+    "84629894B7629980605125": "Chengmari",
+}
+
+
 # Bhutan's two published totals, and they are both real. The national report:
 # "Bhutan's total population is 735,553 ... It includes 8,408
 # non-Bhutanese/tourists found in hotels and those on the move on census
@@ -113,6 +368,14 @@ DZONGKHAG_ALIASES: dict[str, tuple[str, ...]] = {
 # since no detailed information was collected from the 8,408."
 NATIONAL_FOUND = 735_553      # everyone found in Bhutan on the day
 NATIONAL_ANALYSED = 727_145   # what the report's own tables are built on
+
+# The same table's national row, male and female, as the national report
+# prints it: "Bhutan 380,453 52.3 346,692 47.7 727,145". It is the control the
+# twenty dzongkhag volumes are reported against below, not a figure written
+# onto any record here -- the country's own row on this map comes from the
+# Factbook, and these two are what the census itself counted.
+NATIONAL_MALE = 380_453
+NATIONAL_FEMALE = 346_692
 
 # The twenty dzongkhag reports do not sum to either, and that is a
 # disagreement between NSB's own publications rather than a misread here.
@@ -177,12 +440,85 @@ POPULATION_NOTE = (
     "analyses, itself 8,408 short of the 735,553 found in the country once "
     "non-Bhutanese in hotels are counted. The figure here is the dzongkhag's "
     "own, which its gewogs add up to exactly.")
+SEX_RATIO_NOTE = (
+    "Females per 1,000 males, derived from the Male and Female columns of the "
+    "same Table 2.1 row as the population beside it. The census counts sex "
+    "and nothing else about identity, so this is the whole of what it says "
+    "about who these people are.")
+# What is written in place of a ratio where the publisher's own halves do not
+# reach the total it prints next to them. The figures go in the note, because
+# "not available" without them reads as "nobody fetched this", and what
+# actually happened is that the source contradicted itself on this one row.
+SEX_RATIO_REFUSED = (
+    "Table 2.1 prints {male:,} males and {female:,} females against a total "
+    "of {total:,} for this row -- {diff:+,} -- so the two halves are not the "
+    "whole that is published beside them. The head count is the report's own "
+    "and stands; a ratio derived from figures the census does not itself add "
+    "up would be this map's arithmetic, not Bhutan's measurement.")
+# The two ways a gewog reaches a polygon the boundary file labels differently,
+# said on the record itself. In the southern dzongkhags the label is usually
+# the Nepali-origin name the place carried before the renamings; elsewhere it
+# is another romanisation of the same word. Either way the name is not what
+# made the join, and the note says what did.
+RENAMED_NOTE = (
+    " The boundary file draws this gewog as {label}. The polygon was "
+    "identified by this gewog's own reference point falling inside it and by "
+    "Wikidata placing that gewog in this dzongkhag, not by either spelling.")
+CLOSURE_NOTE = (
+    " The boundary file draws this gewog as {label}. This gewog has no "
+    "reference point to place it with, so the polygon was identified by "
+    "elimination: every other gewog of {dzongkhag} is matched, and this is "
+    "the one polygon and the one gewog left.")
 GEWOG_NOTE = (
     " This is the gewog's own count. Towns and thromdes are enumerated beside "
     "the gewogs rather than inside them and the boundary file draws none of "
     "them, so a dzongkhag's gewogs come to less than the dzongkhag itself by "
     "its urban population -- 37.8% of Bhutan nationally, and named on the "
     "dzongkhag's record.")
+
+
+class Read(NamedTuple):
+    """One report's Table 2.1: its rows, their sexes, and its printed total.
+
+    The sexes are kept in their own mapping rather than beside each total,
+    because the names are not unique across the two: Chhukha has a gewog and a
+    thromde both called Phuentshogling, and one dictionary keyed by name would
+    have the thromde's men standing in for the gewog's. ``towns`` gets no
+    entry here at all -- no shape is drawn for a town, so no record is built
+    for one, and a ratio computed for a row that reaches no map is a figure
+    with nowhere to be wrong in public.
+    """
+
+    gewogs: dict[str, int]
+    towns: dict[str, int]
+    printed: int
+    sexes: dict[str, tuple[int, int]]
+    printed_sexes: tuple[int, int] | None
+
+
+def sex_ratio(male: int, female: int, total: int, where: str) -> dict[str, Any]:
+    """Females per 1,000 males for one row, or a gap saying why not.
+
+    The check is the publisher's own arithmetic: Male plus Female must be the
+    Total printed on that row. Where it is, the ratio is the census's; where
+    it is not, there is no honest ratio to take -- either a figure was misread
+    here or the table disagrees with itself, and neither is a thing to divide.
+    """
+    if male + female != total:
+        log(f"    {where}: no sex ratio -- Table 2.1 prints {male:,} + "
+            f"{female:,} = {male + female:,} against the {total:,} on the "
+            f"same row ({male + female - total:+,})")
+        return gap(NOT_AVAILABLE, SEX_RATIO_REFUSED.format(
+            male=male, female=female, total=total,
+            diff=male + female - total))
+    if not male:
+        log(f"    {where}: no sex ratio -- no males on the row, so females "
+            f"per 1,000 males has no denominator")
+        return gap(NOT_AVAILABLE,
+                   "Table 2.1 counts no males in this row, so there is "
+                   "nothing to express the females per thousand of.")
+    return measure(round(1000.0 * female / male),
+                   unit="females_per_1000_males", year=YEAR, source=SOURCE)
 
 
 def words_by_row(blob: bytes, tolerance: float = 2.0):
@@ -211,7 +547,7 @@ def words_by_row(blob: bytes, tolerance: float = 2.0):
 
 
 def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
-         ) -> tuple[dict[str, int], dict[str, int], int]:
+         ) -> Read:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
 
     Two things bound the read, and the first attempt had only one of them.
@@ -270,7 +606,9 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
     """
     gewogs: dict[str, int] = {}
     towns: dict[str, int] = {}
+    sexes: dict[str, tuple[int, int]] = {}
     printed = 0
+    printed_sexes: tuple[int, int] | None = None
     edge: float | None = None
     margin: float | None = None
     waited = 0
@@ -396,12 +734,18 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
             if not name or NUMBER.match(name):
                 continue
             try:
-                total = int(figures[-1].replace(",", ""))
+                # All three, where only the last used to be kept. The first
+                # two are the sex split of the same people, printed on the
+                # same row by the same office, and they are what the sex
+                # ratio is derived from; NUMBER has already matched each.
+                male, female, total = (int(f.replace(",", ""))
+                                       for f in figures)
             except ValueError:
                 continue
             found_here = True
             if name in CLOSERS:
                 printed = total
+                printed_sexes = (male, female)
                 break
             if name in SECTIONS:
                 section = name
@@ -430,6 +774,8 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
                     f"missing; refusing rather than keeping whichever came "
                     f"second")
             into[name] = total
+            if into is gewogs:
+                sexes[name] = (male, female)
         # A page that carried none of this table's rows ends it. Table 2.1
         # runs to one page in the small dzongkhags and two in the large ones,
         # and nothing later in the report is it.
@@ -450,7 +796,7 @@ def scan(blob: bytes, strict: bool, dzongkhag: str = "", debug: bool = False
             section = ""
             pending = []
 
-    return gewogs, towns, printed
+    return Read(gewogs, towns, printed, sexes, printed_sexes)
 
 
 # Every report states its own total in prose: "The total population of X
@@ -476,8 +822,7 @@ def stated_total(blob: bytes) -> int:
     return 0
 
 
-def table(blob: bytes, dzongkhag: str, debug: bool = False
-          ) -> tuple[dict[str, int], dict[str, int], int]:
+def table(blob: bytes, dzongkhag: str, debug: bool = False) -> Read:
     """Table 2.1 for one dzongkhag: its gewogs, its towns, and its total.
 
     Two passes, and the order matters. The strict one wants all four header
@@ -487,33 +832,43 @@ def table(blob: bytes, dzongkhag: str, debug: bool = False
     following line -- Dagana's layout, and loose enough that letting it run
     first cost Bumthang its whole table.
     """
-    gewogs, towns, printed = scan(blob, True, dzongkhag, debug)
-    counted = sum(gewogs.values()) + sum(towns.values())
-    if not gewogs or not printed or counted != printed:
+    read = scan(blob, True, dzongkhag, debug)
+    counted = sum(read.gewogs.values()) + sum(read.towns.values())
+    if not read.gewogs or not read.printed or counted != read.printed:
         # The strict pass either found no header or found one and did not
         # reconcile. Either way the relaxed pass is worth asking, and only a
         # result that reconciles is allowed to replace one that does not.
         loose = scan(blob, False, dzongkhag, debug)
-        if loose[0] and loose[2] and \
-                sum(loose[0].values()) + sum(loose[1].values()) == loose[2]:
-            gewogs, towns, printed = loose
-    if not gewogs:
+        if loose.gewogs and loose.printed and \
+                sum(loose.gewogs.values()) + sum(loose.towns.values()) \
+                == loose.printed:
+            read = loose
+    if not read.gewogs:
         raise SystemExit(f"bhutan: {dzongkhag}: no gewog rows read from "
                          f"Table 2.1")
-    if not printed:
+    if not read.printed:
         # The closing row is spelt "Total" in some reports and "Both Areas" in
         # others, and Trashi Yangtse prints neither where this reader can see
         # it. The narrative's own sentence stands in -- it is the office's
         # figure, not one computed here, and the rows are still held to it.
+        #
+        # It stands in for the head count only. That sentence gives no split
+        # by sex, so a report reached this way has no dzongkhag-level ratio,
+        # and `printed_sexes` stays None rather than being reconstructed from
+        # the rows: the gewogs are short of the dzongkhag by its towns, and a
+        # ratio built from them would be the rural one wearing the whole
+        # dzongkhag's name.
         printed = stated_total(blob)
         if printed:
             log(f"    {dzongkhag}: no closing row; held to the "
                 f"{printed:,} its own text states")
-    if not printed:
+            read = read._replace(printed=printed)
+    if not read.printed:
         raise SystemExit(
             f"bhutan: {dzongkhag}: Table 2.1 has no closing row and the "
             f"report states no total in its text either, so nothing says "
-            f"these {len(gewogs)} gewogs are all of them")
+            f"these {len(read.gewogs)} gewogs are all of them")
+    gewogs, towns, printed = read.gewogs, read.towns, read.printed
     counted = sum(gewogs.values()) + sum(towns.values())
     if counted != printed:
         raise SystemExit(
@@ -525,7 +880,7 @@ def table(blob: bytes, dzongkhag: str, debug: bool = False
                                             for k, v in sorted(gewogs.items()))
             + f"\n      towns: " + ", ".join(f"{k} {v:,}"
                                              for k, v in sorted(towns.items())))
-    return gewogs, towns, printed
+    return read
 
 
 def fetch(url: str) -> bytes:
@@ -554,7 +909,9 @@ def main() -> int:
     log("bhutan: National Statistics Bureau, PHCB 2017 Table 2.1")
     records: list[dict[str, Any]] = []
     absent: list[str] = []
+    refused: list[str] = []
     national = 0
+    males = females = 0
     urban_total = 0
     wanted = {k: v for k, v in DZONGKHAGS.items()
               if not args.only or k == args.only}
@@ -566,14 +923,18 @@ def main() -> int:
         except Exception as err:                        # noqa: BLE001
             absent.append(f"{dzongkhag}: {type(err).__name__} {str(err)[:60]}")
             continue
-        gewogs, towns, printed = table(blob, dzongkhag, args.debug)
+        read = table(blob, dzongkhag, args.debug)
+        gewogs, towns, printed = read.gewogs, read.towns, read.printed
         national += printed
         urban_total += sum(towns.values())
         log(f"  {dzongkhag}: {len(gewogs)} gewogs, {len(towns)} town(s), "
             f"{printed:,} people")
 
-        cite = [{"field": "population", "name": SOURCE, "url": url,
-                 "license": LICENCE}]
+        # The sex ratio is read from the same table and the same row as the
+        # population, so it is cited the same way and separately: a reader
+        # asking where a figure came from asks it of one field at a time.
+        cite = [{"field": field, "name": SOURCE, "url": url,
+                 "license": LICENCE} for field in ("population", "sex_ratio")]
         note = POPULATION_NOTE
         if towns:
             note += (" Of these, " + f"{sum(towns.values()):,}"
@@ -581,22 +942,71 @@ def main() -> int:
                      + ", ".join(sorted(towns))
                      + ", which the boundary file does not draw, so the "
                        "gewogs below come to that much less than this row.")
+        if read.printed_sexes:
+            male, female = read.printed_sexes
+            ratio = sex_ratio(male, female, printed, dzongkhag)
+            # Counted into the national tally whether or not the ratio was
+            # taken: these are the office's own two columns, and the tally is
+            # a check on the reading rather than a figure anyone is shown.
+            males += male
+            females += female
+            if "value" not in ratio:
+                refused.append(dzongkhag)
+        else:
+            # Only reachable where the closing row was never found and the
+            # total came from the report's own sentence, which counts persons
+            # and does not split them.
+            ratio = gap(NOT_AVAILABLE,
+                        "Table 2.1 in this report has no closing row this "
+                        "reader can see; the total beside it is the one the "
+                        "report's own text states, and that sentence gives "
+                        "no split between males and females.")
+            log(f"    {dzongkhag}: no sex ratio -- the total came from the "
+                f"report's text, which gives no split by sex")
+            refused.append(dzongkhag)
         records.append(record(
             f"BTN-{dzongkhag.lower().replace(' ', '-')}", dzongkhag,
             level="admin1", parent="BTN", country="BTN",
             aliases=list(DZONGKHAG_ALIASES.get(dzongkhag, ())),
             population=measure(printed, year=YEAR, source=SOURCE),
             population_note=note,
+            sex_ratio=ratio,
+            sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
             sources=list(cite)))
         for name, people in sorted(gewogs.items()):
+            male, female = read.sexes[name]
+            ratio = sex_ratio(male, female, people, f"{dzongkhag}/{name}")
+            if "value" not in ratio:
+                refused.append(f"{dzongkhag}/{name}")
+            where = (name, dzongkhag)
+            bound = SHAPE_BOUND.get(where)
+            note = POPULATION_NOTE + GEWOG_NOTE
+            if bound:
+                note += RENAMED_NOTE.format(label=SHAPE_LABELS[bound])
+                log(f"    {dzongkhag}/{name} -> shape {bound} "
+                    f"(labelled {SHAPE_LABELS[bound]!r})")
+            elif where in GEWOG_BY_POINT:
+                label = GEWOG_BY_POINT[where][0]
+                template = (CLOSURE_NOTE if where in BY_CLOSURE
+                            else RENAMED_NOTE)
+                note += template.format(label=label, dzongkhag=dzongkhag)
+                log(f"    {dzongkhag}/{name} -> labelled {label!r}"
+                    + ("  (by the two lists closing, not by a point)"
+                       if where in BY_CLOSURE else ""))
             records.append(record(
                 f"BTN-{dzongkhag.lower().replace(' ', '-')}-"
                 f"{name.lower().replace(' ', '-')}",
                 name, level="admin2", parent="BTN", country="BTN",
+                aliases=list(GEWOG_ALIASES.get(name, ()))
+                + list(GEWOG_BY_POINT.get(where, ())),
                 parent_name=dzongkhag,
                 parent_aliases=list(DZONGKHAG_ALIASES.get(dzongkhag, ())),
+                shape_id=bound,
+                match_by="shape_id" if bound else None,
                 population=measure(people, year=YEAR, source=SOURCE),
-                population_note=POPULATION_NOTE + GEWOG_NOTE,
+                population_note=note,
+                sex_ratio=ratio,
+                sex_ratio_note=SEX_RATIO_NOTE if "value" in ratio else None,
                 sources=list(cite)))
 
     for line in absent:
@@ -607,12 +1017,42 @@ def main() -> int:
             f"not read; refusing to write a partial Bhutan")
 
     if not args.only:
+        # A binding is a claim about a specific gewog of a specific dzongkhag,
+        # so a key naming a pair this census does not print is a mistake and
+        # not a near miss -- the same rule build_entities keeps for a shape id
+        # it cannot find. Silently, it would mean a gewog the tables think is
+        # handled and which is in fact reaching no shape at all.
+        read_pairs = {(r["name"], r.get("parent_name")) for r in records
+                      if r["level"] == "admin2"}
+        stale = sorted((set(GEWOG_BY_POINT) | set(SHAPE_BOUND)) - read_pairs)
+        if stale:
+            raise SystemExit(
+                "bhutan: these bindings name a gewog and dzongkhag the "
+                "census does not print together: "
+                + "; ".join(f"{n} ({d})" for n, d in stale))
+
+    if not args.only:
         log(f"  the twenty dzongkhags come to {national:,}, against the "
             f"{NATIONAL_ANALYSED:,} the national report analyses and the "
             f"{NATIONAL_FOUND:,} it says were found -- "
             f"{national - NATIONAL_ANALYSED:+,} on the first. The two "
             f"publications disagree for some dzongkhags; each report here "
             f"reconciles to its own printed total.")
+        # Reported against the national report's own row, and not enforced,
+        # for exactly the reason the head count above is not: the twenty
+        # volumes and the national report disagree on several dzongkhags, and
+        # the sex split inherits that disagreement rather than adding one.
+        # What this line is for is the other kind of error -- a column read
+        # one place to the left would put the sexes wildly out here while
+        # every total still added up.
+        log(f"  their sexes come to {males:,} male and {females:,} female, "
+            f"against the {NATIONAL_MALE:,} and {NATIONAL_FEMALE:,} the "
+            f"national report prints for the country -- "
+            f"{males - NATIONAL_MALE:+,} and {females - NATIONAL_FEMALE:+,}.")
+        if refused:
+            log(f"  {len(refused)} row(s) publish no sex ratio because the "
+                f"published halves do not reach the published total: "
+                + ", ".join(refused))
 
     out = args.out or PROCESSED / "bhutan_gewog.json"
     write_json(out, records)

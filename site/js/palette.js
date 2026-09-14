@@ -41,14 +41,31 @@ window.Palette = (function () {
             "#d55181", "#008300", "#9085e9", "#e66767"],
   };
 
-  // Blue ramp, 100 -> 700. The lightest steps are only used for sequential
-  // encoding, where "nearly the surface colour" correctly means "nearly zero".
-  const SEQUENTIAL = {
-    light: ["#cde2fb", "#b7d3f6", "#9ec5f4", "#86b6ef", "#6da7ec",
-            "#5598e7", "#3987e5", "#2a78d6", "#256abf", "#1c5cab", "#184f95"],
-    dark:  ["#0d366b", "#104281", "#184f95", "#1c5cab", "#256abf",
-            "#2a78d6", "#3987e5", "#5598e7", "#6da7ec", "#86b6ef", "#9ec5f4"],
-  };
+  /* The magnitude ramp: one hue, pale for little and dark for much.
+   *
+   * It used to be two hand-written arrays of the same eleven blues, the
+   * dark-mode one being the light-mode one reversed, on the reasoning that
+   * "nearly the surface colour" should mean "nearly zero" in either theme.
+   * That is the same dark-interface instinct that once ran the group band
+   * backwards, and it had the same effect: in dark mode the population map
+   * drew the most crowded places palest and the emptiest darkest, so every
+   * reading of it was upside down -- and unlike the group band, nothing
+   * checked it, which is how it outlived the fix next door.
+   *
+   * So it now runs off the same luminance band `group` does, pale to dark in
+   * both themes. What a shade means is a property of the data and must not
+   * change with the colour of the surrounding furniture. The themes still
+   * differ in where the dark end stops, so a crowded unit stays clearly apart
+   * from the land beneath it.
+   *
+   * The pale end is deliberately not the surface colour. Small is not
+   * missing: a gewog of four thousand people has been counted, and the thing
+   * that has to recede into the background is the neutral, which means nobody
+   * counted at all.
+   */
+  const SEQUENTIAL_HUE = "#3987e5";
+  const SEQUENTIAL_STEPS = 11;
+  const SEQUENTIAL_CACHE = {};
 
   const STATUS = {
     present:       { color: "#0ca30c", icon: "●", label: "Recorded" },
@@ -88,10 +105,10 @@ window.Palette = (function () {
   }
 
   function sequential(t) {
-    const ramp = SEQUENTIAL[mode()];
+    const steps = sequentialRamp();
     if (!Number.isFinite(t)) return NEUTRAL[mode()];
     const clamped = Math.max(0, Math.min(1, t));
-    return ramp[Math.round(clamped * (ramp.length - 1))];
+    return steps[Math.round(clamped * (steps.length - 1))];
   }
 
   /* ----------------------------------------------------- group colouring */
@@ -220,7 +237,26 @@ window.Palette = (function () {
       (_, i) => group(hex, base + (i / (n - 1)) * (ceiling - base), base, ceiling));
   }
 
-  function ramp() { return SEQUENTIAL[mode()].slice(); }
+  /* The steps of the magnitude ramp for this theme, palest first.
+   *
+   * Cached per theme because `atLuminance` bisects sixteen times per step and
+   * this is asked for once per unit on the map -- fifty thousand of them at
+   * admin-2 -- while the answer depends on nothing but the theme.
+   */
+  function sequentialRamp() {
+    const m = mode();
+    if (!SEQUENTIAL_CACHE[m]) {
+      const [h, s] = hexToHsl(SEQUENTIAL_HUE);
+      const band = BAND[m] || BAND.light;
+      SEQUENTIAL_CACHE[m] = Array.from({ length: SEQUENTIAL_STEPS }, (_, i) => {
+        const t = i / (SEQUENTIAL_STEPS - 1);
+        return atLuminance(h, s, band.pale + t * (band.deep - band.pale));
+      });
+    }
+    return SEQUENTIAL_CACHE[m];
+  }
+
+  function ramp() { return sequentialRamp().slice(); }
   function neutral() { return NEUTRAL[mode()]; }
   function unplaced() { return UNPLACED[mode()]; }
   function status(name) { return STATUS[name] || STATUS.not_available; }
