@@ -183,6 +183,75 @@ class ContainmentMatching(unittest.TestCase):
         self.assertIsNone(entity)
 
 
+class EveryBareFieldSaysWhy(unittest.TestCase):
+    """A composition field left empty by every earlier stage still gets the
+    true reason. 79,588 fields carried a status and no note before this pass;
+    on the map that is a blank panel, which says "nobody ran the adapter" --
+    a different claim from any of the true ones."""
+
+    def bare(self):
+        return {"religion": common.gap(common.NOT_AVAILABLE),
+                "language": common.gap(common.NOT_AVAILABLE),
+                "ethnicity": common.gap(common.NOT_AVAILABLE), "sources": []}
+
+    def test_a_unit_no_adapter_touched_says_nothing_was_read(self):
+        # 83% of the bare fields: no adapter row at all. The reason is that
+        # nothing was fetched -- and it says so, and says it is not a claim
+        # about the census.
+        e = self.bare()
+        self.assertEqual(be.say_why_empty(e, "Portugal"),
+                         "no source read")
+        for f in ("religion", "language", "ethnicity"):
+            self.assertEqual(e[f]["status"], common.NOT_AVAILABLE)
+            self.assertIn("No unit-level source has been read for Portugal",
+                          e[f]["note"])
+            self.assertIn("not a claim about what the census asks", e[f]["note"])
+
+    def test_a_matched_unit_names_the_source_and_what_it_lacks(self):
+        e = self.bare()
+        e["match"] = "adapter:name"
+        e["religion"] = [{"group": "Christianity", "pct": 90.0}]
+        e["sources"] = [{"field": "religion", "name": "Afrobarometer"}]
+        be.say_why_empty(e, "Lesotho")
+        self.assertIn("Afrobarometer", e["language"]["note"])
+        self.assertIn("carries religion and not language", e["language"]["note"])
+        # The composition it did carry is untouched.
+        self.assertIsInstance(e["religion"], list)
+
+    def test_a_matched_unit_with_no_composition_says_so(self):
+        e = self.bare()
+        e["match"] = "adapter:name"
+        e["sources"] = [{"field": "population", "name": "Wikidata"}]
+        self.assertEqual(be.say_why_empty(e, "Micronesia"),
+                         "source carries no composition")
+        self.assertIn("carries no composition", e["religion"]["note"])
+
+    def test_the_country_level_reason_becomes_the_field_reason(self):
+        e = self.bare()
+        e["gap_reason"] = "The census publishes these nationally only."
+        be.say_why_empty(e, "Vietnam")
+        self.assertEqual(e["ethnicity"]["note"],
+                         "The census publishes these nationally only.")
+
+    def test_a_disputed_unit_says_no_source_is_joined(self):
+        e = self.bare()
+        e["disputed"] = True
+        be.say_why_empty(e, "X")
+        self.assertIn("no demographic source is joined", e["religion"]["note"])
+
+    def test_a_field_that_already_has_a_reason_is_never_touched(self):
+        # The policy's paragraph, an adapter's own note, a composition: all
+        # three are what this pass exists to defer to.
+        e = self.bare()
+        e["religion"] = common.gap(common.NOT_COLLECTED, "Never asked, and here is why.")
+        e["language"] = [{"group": "Tongan", "pct": 97.0}]
+        be.say_why_empty(e, "Tonga")
+        self.assertEqual(e["religion"]["note"], "Never asked, and here is why.")
+        self.assertIsInstance(e["language"], list)
+        # Only ethnicity was bare, so only ethnicity was written.
+        self.assertIn("No unit-level source", e["ethnicity"]["note"])
+
+
 class CollectionPolicyPropagation(unittest.TestCase):
     """A country that does not collect a field does not collect it in its regions."""
 
