@@ -86,6 +86,34 @@ Uruguay went unnoticed for as long as it did because a level with no polygons
 looks exactly like a level with no data, and the only thing separating them is
 a measurement nobody was taking.
 
+### Romania — a route closed by the network, not by the census
+
+Romania has the largest single count of composition fields with no source
+read: 9,829, across its 42 județe and their communes. That is not for want of
+data. The 2021 census (RPL 2021, INS) asks ethnicity, religion and mother
+tongue and publishes all three by județ — it is one of the better-documented
+censuses in Europe on exactly these questions.
+
+**The hosts cannot be reached from the runner.** Two dispatches, the second
+with a 90-second timeout:
+
+| host | result, both runs |
+| --- | --- |
+| `recensamantromania.ro` (the census results site) | timed out |
+| `insse.ro` (INS, the statistical office) | `[Errno 101] Network is unreachable` |
+
+Errno 101 is a routing failure, not a slow server and not a block page: the
+runner has no route to the host at all. That is the same class of closure as
+the Bureau of Statistics' legacy host in Bangladesh, and it is recorded here
+for the same reason — so the next person does not spend two dispatches
+learning it again.
+
+The fields carry the "no unit-level source has been read" reason from the
+build, which is the true one. Romania is **not** declared in
+`NOT_COLLECTED_POLICY`, because that would state the opposite of what INS
+does. When a route opens — a mirror, HDX, or a runner with a different
+egress — this is the first European country to fetch.
+
 ### GADM — deliberately not used
 
 GADM's licence states the data "is freely available for academic and other

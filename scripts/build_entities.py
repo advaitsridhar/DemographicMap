@@ -312,6 +312,26 @@ SHAPE_GAPS: dict[str, dict[str, str]] = {}
 # unit that does not exist cannot be given data that does not exist for it.
 # A stated absence is the smaller lie: none.
 PARTIAL_LEVELS: dict[tuple[str, str], dict[str, Any]] = {
+    # Found by the detector below, then measured the way Uruguay was. The
+    # 142 km2 of first-level ground that is in no district lies entirely
+    # inside the country polygon -- which is itself 683 km2 against a real
+    # land area near 750, so it is a land outline and not an envelope drawn
+    # round the sea. That is land rendering as sea, at a fifth of the country.
+    # The declaration says what was measured and not why: which islets the
+    # districts leave out, and whether anyone lives on them, is not something
+    # the boundary file can answer.
+    ("TON", "admin2"): {
+        "units": 21,
+        "coverage_pct": 67.2,
+        "note": "Tonga's second-order units are the 21 districts, and they do "
+                "not cover the country: geoBoundaries draws them over 67.2% "
+                "of it, and the remaining 142 km2 -- about a fifth of Tonga, "
+                "inside the five island groups -- is in no district. That "
+                "ground is land, not sea between islands; it lies inside the "
+                "country polygon. It is blank at this level because there is "
+                "nothing there to draw. The five island groups are the level "
+                "that does cover it.",
+    },
     ("URY", "admin2"): {
         "units": 124,
         "coverage_pct": 36.8,
@@ -2230,6 +2250,71 @@ def mark_disputed_or_hint(entity: dict[str, Any], group: str) -> None:
         entity["adapter_hint"] = adapter_hint(group)
 
 
+COMPOSITION_FIELDS = ("religion", "language", "ethnicity")
+
+# The three ways a composition field can still be bare at the end of the
+# pipeline, in the words the panel prints. Each says what is true and stops
+# there: none of them claims the census does not ask, because none of them
+# knows. The first is the one this pass exists for.
+NO_SOURCE_READ = (
+    "No unit-level source has been read for {country} at this level, so "
+    "nothing has been fetched for this field. That is a gap in this map's "
+    "reading, not a claim about what the census asks or publishes.")
+SOURCE_LACKS_FIELD = (
+    "The source read for this unit -- {sources} -- carries {present} and "
+    "not {field}. Nothing has been fetched for it here, which is a limit of "
+    "what was read and not a statement that the census does not ask.")
+SOURCE_LACKS_ALL = (
+    "The source read for this unit -- {sources} -- carries no composition "
+    "for any of religion, language or ethnicity. Nothing has been fetched "
+    "for this field, which is a limit of what was read and not a statement "
+    "that the census does not ask.")
+
+
+def say_why_empty(entity: dict[str, Any], country: str) -> str | None:
+    """Give every bare composition field the true reason it is bare.
+
+    A field left as ``{"status": "not_available"}`` with no note reads, on the
+    map, as a blank panel -- and a blank panel says "nobody ran the adapter",
+    which is a different claim from any of the true ones. This is the last
+    pass before the files are written, so it sees only what every earlier
+    stage left untouched: the adapters, the collection policy, the parent
+    sums. It never overwrites a note, a composition, or a status it did not
+    find bare.
+
+    Returns which case applied, for the build log to count, or None.
+    """
+    case = None
+    for field in COMPOSITION_FIELDS:
+        value = entity.get(field)
+        if not (isinstance(value, dict) and value.get("status")
+                and not value.get("note")):
+            continue
+        if entity.get("disputed"):
+            note, case = DISPUTED_NOTE, "disputed"
+        elif entity.get("gap_reason"):
+            # The country-level fact already on the record: what the country
+            # publishes. True of the field, so it is the field's reason too.
+            note, case = entity["gap_reason"], "country publishes nothing"
+        elif entity.get("match"):
+            sources = sorted({s.get("name") for s in entity.get("sources", [])
+                              if s.get("name")}) or ["an unnamed source"]
+            present = [f for f in COMPOSITION_FIELDS
+                       if isinstance(entity.get(f), list)]
+            if present:
+                note = SOURCE_LACKS_FIELD.format(
+                    sources=", ".join(sources), field=field,
+                    present=" and ".join(present))
+                case = "source lacks the field"
+            else:
+                note = SOURCE_LACKS_ALL.format(sources=", ".join(sources))
+                case = "source carries no composition"
+        else:
+            note, case = NO_SOURCE_READ.format(country=country), "no source read"
+        entity[field] = gap(value["status"], note)
+    return case
+
+
 def check_shape_gaps(admin1: dict[str, list[dict[str, Any]]],
                      admin2: dict[str, list[dict[str, Any]]]) -> None:
     """Every declared shape gap names a shape that really is empty.
@@ -2910,6 +2995,24 @@ def main() -> int:
 
     # Last, so a curated country row is the last word on the field it names.
     apply_country_detail(admin0, country_detail)
+
+    # -- every bare field says why -------------------------------------------
+    # Last of all, after the policy and the parent sums have had their turn:
+    # this pass only names what is still empty, and must not get in front of
+    # anything that could have filled it. 79,588 fields were bare here before
+    # it existed, 83% of them on units no adapter had ever touched.
+    country_name = {r["id"]: r.get("name") or r["id"] for r in admin0}
+    why: dict[str, int] = defaultdict(int)
+    for table in (admin1_by_country, admin2_by_country):
+        for iso3, rows in table.items():
+            for entity in rows:
+                case = say_why_empty(entity, country_name.get(iso3, iso3))
+                if case:
+                    why[case] += 1
+    if why:
+        log("  every bare composition field now says why: "
+            + ", ".join(f"{n} units where {k}" for k, n in
+                        sorted(why.items(), key=lambda kv: -kv[1])))
 
     # -- write ---------------------------------------------------------------
     out = args.out

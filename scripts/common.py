@@ -520,7 +520,17 @@ def apply_collection_policy(record: dict[str, Any], iso3: str | None,
         if not entry:
             continue
         current = record.get(field)
-        if isinstance(current, dict) and current.get("status") == NOT_AVAILABLE:
+        if not isinstance(current, dict):
+            continue
+        status = current.get("status")
+        # A not_available always yields (see the docstring). A not_collected
+        # yields only when it carries no reason: that is an adapter agreeing
+        # with the policy and saying nothing else, and the five Tunisian
+        # fields Afrobarometer wrote that way sat bare because this branch
+        # matched only the one status. A noted not_collected is an adapter's
+        # own declaration and stands.
+        if status == NOT_AVAILABLE or (status == entry["status"]
+                                       and not current.get("note")):
             record[field] = gap(entry["status"], entry["note"])
             applied.append(field)
     return applied
