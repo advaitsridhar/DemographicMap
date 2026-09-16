@@ -757,7 +757,128 @@ MISSPELLED: dict[tuple[str, str], str] = {
     # It matched anyway, on the prefix, so this changes no join -- it changes
     # what a reader is shown, which is reason enough.
     ("CHN", "Ningxia Ningxia Hui Autonomous Region"): "Ningxia Hui Autonomous Region",
+    # Found by reading the units that sat blank beside covered neighbours.
+    # Each is a well-formed string and none is detectable; the right-hand side
+    # is the name the country itself uses.
+    ("ERI", "Northen Red Sea Region"): "Northern Red Sea Region",
+    ("GUY", "Barina-Waini"): "Barima-Waini",
+    ("BEN", "Atlanique"): "Atlantique",
+    ("NIC", "North Carribean Coast Autonomous Region"):
+        "North Caribbean Coast Autonomous Region",
+    ("TKM", "Ahai"): "Ahal",
+    ("WSM", "Fa'asaleleage"): "Fa'asaleleaga",
+    ("LCA", "Anse la Raya"): "Anse la Raye",
+    # Seychelles is not misspelled -- it is cut off. Every one of its 26
+    # district names in CGAZ is at most ten characters ("Anse Boile", "Baie
+    # Saint", "Roche Caïm", "La Digue a"), which is a field width, not a
+    # spelling. Most survived because ten characters still uniquely prefix one
+    # district. These four did not: "Anse Aux P" stops mid-word, so no
+    # whole-word pass can reach "Anse aux Pins", and the two Grand'Anses --
+    # one on Mahé, one on Praslin, 45 km apart -- are cut down to a pair of
+    # names that differ only by an apostrophe and prefix both districts
+    # equally, so the matcher rightly refused to choose.
+    #
+    # Which is which was settled on the shapes and not on the names: the
+    # district CGAZ calls "Grand Anse" is centred at 55.722E, 4.327S, four
+    # hundred metres from Wikidata's Grand'Anse Praslin, and the one it calls
+    # "Grand'Anse" sits on Mahé. The apostrophe is on the wrong one -- reading
+    # the names would have swapped them.
+    ("SYC", "Anse Aux P"): "Anse aux Pins",
+    ("SYC", "Grand Anse"): "Grand'Anse Praslin",
+    ("SYC", "Grand'Anse"): "Grand'Anse Mahé",
+    ("SYC", "Outer Isla"): "Outer Islands",
 }
+
+# The other half of the same problem, and the opposite remedy. Above, the
+# boundary file is wrong and correcting it fixes both the label and the join.
+# Here the boundary file is *right* -- "Sofia" is the oblast's name, "Al
+# Asimah" is the governorate's, "Caprivi" is what the strip was called until
+# 2013 -- and a source simply calls the place something else. Renaming the
+# shape to the source's word would be a worse error than the gap it closes, so
+# these are joined under an extra name and labelled under their own.
+#
+# Every entry was checked against the shape it claims: the source's own
+# coordinate has to fall inside that shape's bounding box, which is a stronger
+# test than any reading of the two names. It rejected two pairs that looked
+# plausible on paper -- Trinidad and Tobago's leftover shape "Tobago" against
+# the leftover row "Arima", 95 km away on the other island, and Seychelles'
+# "Outer Isla" against "La Digue and Inner Islands", 1,184 km away. Neither
+# has a row in the source at all, and an unmatched unit is a visible gap where
+# either of those would have been an invisible lie.
+# What this table cannot do, because norm() folds the words that would carry
+# the distinction. "Sofia" and "Sofia City" both reduce to "sofia", as do
+# "Sofia Oblast" and "Sofia City"; so do Mozambique's "Maputo" and "Maputo
+# Province", and Yemen's "Sanʿaʾ" and "Sanʿaʾ Governorate". These are not
+# variant names -- they are a city and the region around it colliding on one
+# key -- and an alias cannot separate them, because every name anyone would
+# declare lands on the same key that is already ambiguous. They are left as
+# stated gaps: a declaration that does nothing is worse than the gap it claims
+# to close, because it reads like the question has been settled.
+ALSO_KNOWN_AS: dict[tuple[str, str], tuple[str, ...]] = {
+    # Albanian and Bulgarian counties written with, and without, the word.
+    ("ALB", "Dibër"): ("Dibra County", "Dibra"),
+    ("ALB", "Tiranë"): ("Tirana County", "Tirana"),
+    # Chile's regions in Spanish on the map, in English in the source.
+    ("CHL", "Región Metropolitana de Santiago"): ("Santiago Metropolitan Region",),
+    ("CHL", "Región de Magallanes y Antártica Chilena"):
+        ("Magellan and the Chilean Antarctic Region",),
+    ("CUB", "Isle of Youth"): ("Isla de la Juventud",),
+    ("DOM", "Bahoruco"): ("Baoruco Province", "Baoruco"),
+    ("DOM", "El Seybo"): ("El Seibo Province", "El Seibo"),
+    # Renamed for the general in 1942; the older name is still the shape's.
+    ("DOM", "La Estrelleta"): ("Elías Piña Province", "Elías Piña"),
+    # "Al Asimah" is Arabic for "the Capital", which is what the source calls it.
+    ("KWT", "Al Asimah"): ("Capital Governorate",),
+    ("MAR", "Fez-Meknes"): ("Fès-Meknès",),
+    # Transnistria under the name Moldova gives it in law.
+    ("MDA", "Transnistria"):
+        ("Administrative-Territorial Units of the Left Bank of the Dniester",),
+    ("MNG", "Hovsgel"): ("Khövsgöl Province", "Khövsgöl"),
+    ("MNG", "Ömnögovi"): ("Province of Umnugobi", "Umnugobi"),
+    ("MRT", "Guidimaka"): ("Guidimakha",),
+    # Renamed from Caprivi to Zambezi in 2013.
+    ("NAM", "Caprivi"): ("Zambezi Region", "Zambezi"),
+    # Renamed from South Atlantic to South Caribbean Coast in 1987.
+    ("NIC", "South Atlantic Autonomous Region"):
+        ("South Caribbean Coast Autonomous Region",),
+    # Panama writes the word first, the source writes it last.
+    ("PAN", "Comarca Emberá-Wounaan"): ("Emberá-Wounaan Comarca",),
+    ("PAN", "Comarca Ngäbe-Buglé"): ("Ngöbe-Buglé Comarca", "Ngäbe-Buglé Comarca"),
+    ("PAN", "Provincia de Panamá"): ("Panamá Province", "Panamá"),
+    ("PNG", "Northern (Oro) Province"): ("Oro Province", "Northern Province"),
+    # CGAZ shouts this one and drops the accent, alone among the seventeen
+    # departments. Left as it is rather than declared a misspelling: norm()
+    # folds case and accents both, so correcting it would change no join, and
+    # the table above is checked for exactly that.
+    ("PRY", "ASUNCION"): ("Capital District", "Distrito Capital"),
+    ("SLV", "Departamento de La Paz"): ("La Paz Department",),
+    ("SLV", "Departamento de Santa Ana"): ("Santa Ana Department",),
+    # Srem is the Serbian name for Syrmia.
+    ("SRB", "Syrmia District"): ("Srem District",),
+    ("TJK", "Districts of Republican Subordination"):
+        ("Districts under Central Government Jurisdiction",),
+    ("TTO", "Rio Claro-Mayaro"): ("Mayaro-Rio Claro",),
+    # Yemen in two romanisations. The Sanaa pair is the one that could have
+    # gone wrong quietly: CGAZ draws "Sanʿaʾ" and "Sanʿaʾ Governorate", and
+    # the source draws "Amanat al-Asimah Governorate" -- the capital
+    # municipality -- and "Sanaa Governorate" around it. The small shape is
+    # 0.11 square degrees and the large one 2.08, which settles it on size and
+    # on position both, where the names alone do not.
+    ("YEM", "Sanʿaʾ"): ("Amanat al-Asimah Governorate", "Amanat al-Asimah"),
+    ("YEM", "Ad Dali' Governorate"): ("Dhale Governorate",),
+    ("YEM", "Sa'dah Governorate"): ("Saada Governorate",),
+    ("YEM", "‘Adan Governorate"): ("Aden Governorate", "Aden"),
+}
+
+
+def known_as(name: str, group: str | None = None) -> tuple[str, ...]:
+    """The declared alternative names for a boundary-file shape, if any.
+
+    Read after respell(), so an entry is keyed by the name a viewer sees.
+    """
+    if not group:
+        return ()
+    return ALSO_KNOWN_AS.get((group, name), ())
 
 
 def respell(name: str, group: str | None = None) -> str:

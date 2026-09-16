@@ -5056,6 +5056,73 @@ coordinate settles fifteen of them, but the shape it picks usually contradicts
 the state the row itself names, so the two signals disagree and neither is
 strong enough to overrule the other. They stay visible gaps.
 
+### The units that sat blank beside their neighbours
+
+A different failure, found by asking which first-level units were empty on all
+three fields while most of their siblings were filled. That shape is the
+signature of a join that missed, not of a source that does not exist: **59
+units in 34 countries**, each one blank next to a country that had been read.
+
+They were also saying the wrong thing. A unit no adapter row reached fell
+through to the note "No unit-level source has been read for Bulgaria at this
+level" — which was false, and false in the direction that hides the bug. A
+source *had* been read for Bulgaria; 27 of its 28 oblasts carried it. So a
+fourth case was added, and it counts what it claims:
+
+> A unit-level source was read for Bulgaria at this level — Wikidata — and 27
+> of its 28 units were joined to it. This unit matched no row in that source,
+> so whatever it publishes here has not been reached. That is a gap in this
+> map's joining, not a claim about what the census asks or publishes.
+
+Across both levels that sentence replaced the wrong one on **665 units**.
+
+**40 of the 59 then joined**, under two tables with opposite meanings. Where
+the boundary file is *wrong*, `MISSPELLED` corrects it and fixes the label and
+the join together: Eritrea's "Northen Red Sea Region", Guyana's "Barina-Waini"
+for Barima-Waini, Nicaragua's "Carribean", Benin's "Atlanique", Turkmenistan's
+"Ahai" for Ahal. Seychelles was not misspelled but *cut off* — every one of its
+26 district names in CGAZ is at most ten characters ("Anse Boile", "Roche
+Caïm", "La Digue a"), which is a field width and not a spelling.
+
+Where the boundary file is *right* and a source simply says something else,
+`ALSO_KNOWN_AS` joins the shape under a second name and leaves its label
+alone: Srem for Syrmia, Al Asimah for the Capital Governorate, Zambezi for
+Caprivi, Elías Piña for La Estrelleta. Renaming those shapes to the source's
+word would be a worse error than the gap it closes.
+
+Every entry was checked against the shape it claims — the source's own
+coordinate has to fall inside that shape's bounding box, a stronger test than
+any reading of two names. It earned its keep twice. Trinidad and Tobago's
+leftover shape "Tobago" and leftover row "Arima" are 95 km apart on different
+islands, which a distance threshold loose enough for a large country would
+have waved through; and Seychelles' two Grand'Anses, one on Mahé and one on
+Praslin, are assigned *opposite* to what the names suggest — the district CGAZ
+writes without the apostrophe is the one on Praslin. Reading the names would
+have swapped them.
+
+**19 units did not join, for three reasons, and all three are stated rather
+than papered over.**
+
+*The source has no such row.* Burundi's Rumonge (created 2015), Botswana's
+Chobe, Mauritius' Agaléga and St. Brandon, Seychelles' Outer Islands, Tobago,
+St Lucia's Canaries, Samoa's Tuamasaga.
+
+*The two sides divide the ground differently.* Namibia draws one Kavango where
+the source has Kavango East and West; Chad draws Ennedi-Est and Ennedi-Ouest
+where the source has one Ennedi; Grenada draws one Southern Grenadine Islands
+for Carriacou and Petite Martinique; Madagascar's shapes are the 22 regions and
+the source's rows are the 6 old provinces. Each is a sum or a split, not a
+name, and inventing either would put a number on the map that nobody published.
+
+*A city and the region around it collide on one key.* `norm()` drops the words
+"City", "Oblast", "Province" and "Governorate", so Sofia and Sofia City reduce
+alike, as do Maputo and Maputo Province and Sanʿaʾ and Sanʿaʾ Governorate. No
+alias can separate them: every name anyone would declare lands on the key that
+is already ambiguous. These are the one class where a declaration would have
+*looked* like a fix, so the table says in writing that it cannot make it — a
+declaration that does nothing is worse than the gap it claims to close,
+because it reads as though the question has been settled.
+
 ## Summing a parent from its children
 
 Ladakh became a union territory in 2019, so the 2011 census that supplies
