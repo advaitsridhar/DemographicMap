@@ -175,7 +175,11 @@ RELIGION_PATTERNS: tuple[tuple[str, tuple[str, ...]], ...] = (
     # other tradition here covers.
     ("Christianity", ("Tocoist",)),
     ("Jehovah's Witnesses", ("Jehovah",)),
-    ("Orthodoxy", ("Orthodox",)),
+    # "Armenian Apostolic" before the Protestant patterns below, which match
+    # the bare word "Church" and were quietly claiming the Armenian Apostolic
+    # Church for the Reformation. It is Oriental Orthodox, and Romania's
+    # census counts it as its own column.
+    ("Orthodoxy", ("Orthodox", "Armenian Apostolic", "Armenian Church")),
     ("Catholicism", ("Catholic", "Oblates")),
     ("Protestantism", (
         "Protestant", "Salvation", "Fellowship", "Believer", "Praise",
@@ -184,6 +188,11 @@ RELIGION_PATTERNS: tuple[tuple[str, tuple[str, ...]], ...] = (
         "Things to Come", "Lord of the Nations", "Way of Salvation",
         "Baptist", "Pentecostal", "Evangelical", "Methodist", "Lutheran",
         "Presbyterian", "Anglican", "Episcopal", "Adventist", "Reformed",
+        # Transylvania's Hungarian Unitarian Church, which Romania's census
+        # counts apart from the Reformed. A Reformation church that dropped
+        # the Trinity: Protestant by descent, which is the axis this tree
+        # files a confession on.
+        "Unitarian",
         "Brethren", "Iglesia", "Ministries", "Mission", "Church", "Christ",
         "Christian", "Gospel", "Assembly of God", "Assemblies of God",
     )),

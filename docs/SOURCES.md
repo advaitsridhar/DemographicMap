@@ -86,33 +86,89 @@ Uruguay went unnoticed for as long as it did because a level with no polygons
 looks exactly like a level with no data, and the only thing separating them is
 a measurement nobody was taking.
 
-### Romania — a route closed by the network, not by the census
+### Romania — the census read through the Internet Archive
 
-Romania has the largest single count of composition fields with no source
-read: 9,829, across its 42 județe and their communes. That is not for want of
-data. The 2021 census (RPL 2021, INS) asks ethnicity, religion and mother
-tongue and publishes all three by județ — it is one of the better-documented
-censuses in Europe on exactly these questions.
+Romania had the largest single count of composition fields with no source
+read: 9,829. Not for want of data — the census asks ethnicity and religion
+and publishes both by județ — but for want of a route.
 
-**The hosts cannot be reached from the runner.** Two dispatches, the second
-with a 90-second timeout:
+**Every Romanian host is unreachable from the runner**, measured five ways
+across two days:
 
-| host | result, both runs |
+| host | result |
 | --- | --- |
-| `recensamantromania.ro` (the census results site) | timed out |
-| `insse.ro` (INS, the statistical office) | `[Errno 101] Network is unreachable` |
+| `insse.ro` (INS), http and https | `[Errno 101] Network is unreachable` |
+| `statistici.insse.ro` (TEMPO) | TLS handshake failure |
+| `recensamantromania.ro` | timed out, including at 90s |
+| `data.gov.ro` | timed out |
+| HDX, searched for Romanian census | no dataset |
 
-Errno 101 is a routing failure, not a slow server and not a block page: the
-runner has no route to the host at all. That is the same class of closure as
-the Bureau of Statistics' legacy host in Bangladesh, and it is recorded here
-for the same reason — so the next person does not spend two dispatches
-learning it again.
+Errno 101 is a routing failure: no route to the host at all, not a slow
+server and not a block page.
 
-The fields carry the "no unit-level source has been read" reason from the
-build, which is the true one. Romania is **not** declared in
-`NOT_COLLECTED_POLICY`, because that would state the opposite of what INS
-does. When a route opens — a mirror, HDX, or a runner with a different
-egress — this is the first European country to fetch.
+**So the office's own workbooks are read from the Internet Archive** — the
+same trade already made for Bangladesh's Bureau, and for the same reason: the
+alternative is not a better source, it is no source. A capture is fetched raw
+with the `id_` modifier, and the adapter refuses outright if one plays back as
+HTML, because xlrd failing to open a toolbar would otherwise read as the
+office publishing a broken file.
+
+Two tables from Volume 2, *Populația stabilă — structura etnică și
+confesională*:
+
+* **`vol2_t1.xls`** — population by ethnicity per county, nineteen named
+  peoples, one row per census year 1930–2011.
+* **`vol2_t12.xls`** — population by religion per county, twenty named
+  confessions.
+
+Both publish people, so shares are computed and the counts kept beside them.
+**2011 and not 2021 deliberately:** RPL 2021 asks the same questions but its
+county tables exist only behind those unreachable hosts. Every record carries
+the year.
+
+#### Three faults the tables set, and how each was caught
+
+**The repeated table, which is the one that nearly shipped.** `vol2_t12`
+prints the whole county list three times — total, then urban, then rural —
+with identical headings and nothing in column zero to say which pass you are
+in. Reading the last occurrence published each county's **rural** population
+as the county. Nothing about the output looked wrong: every composition summed
+to 100%, named the right confessions, and sat in a believable range. Only the
+head count disagreed — Harghita's religion came to 178,447 people against a
+census county of 310,867, Cluj to 232,738 against 691,106.
+
+The first block is the total one, and `check_totals()` now makes the mistake
+unshippable: **every composition must add up to the unit's own printed
+population**, which is the one thing a wrong block cannot fake.
+
+**The footnote marker.** The ethnicity table writes `ILFOV ⁴` and
+`MUNICIPIUL BUCUREȘTI ⁴` — Ilfov was carved back out of Bucharest in 1997 and
+that table spans rounds on both sides of it — while the religion table, which
+covers one round, has no footnote to hang. One read 42 counties and the other
+40 until the marker came off.
+
+**Bucharest's dashes.** The religion table lists Bucharest among the counties
+and fills its trailing block with dashes end to end. A dash elsewhere in this
+volume is a stated zero, so they were read as zeros and produced a composition
+of nobody. Bucharest turned out to be the *only* county unaffected by the
+repeated-table fault, for the same reason it looked broken: a city has no
+rural block, so the placeholder was skipped and its total survived.
+
+#### What validates it
+
+Two independent checks, neither from the source being read. The English
+Wikipedia's "Hungarians in Romania" transcribes county figures from a separate
+route, and it agrees **to the person**: Harghita 257,707 Hungarians, Covasna
+150,468. And every county's groups now add to its published 2011 population —
+Cluj 691,106, Timiș 683,540, Bucharest 1,883,425 — with the only differences
+being the handful of people in cells the office suppressed for disclosure
+control, which are dropped rather than read as zero.
+
+`Unitarian` joins the religion tree for Transylvania's Hungarian Unitarian
+Church, which the census counts apart from the Reformed. Chasing a failing
+test also found a pre-existing fault: the Protestant patterns match the bare
+word "Church", so **Armenian Apostolic Church** was being filed under the
+Reformation. It is Oriental Orthodox, and now matches under Orthodoxy.
 
 ### GADM — deliberately not used
 

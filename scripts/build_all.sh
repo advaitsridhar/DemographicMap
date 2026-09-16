@@ -91,6 +91,7 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.czechia
   # One 18 MB DZS workbook; no key.
   soft python3 -m scripts.fetch_census.croatia
+  soft python3 -m scripts.fetch_census.romania
   # Three small BHAS workbooks; no key.
   soft python3 -m scripts.fetch_census.bosnia
   soft python3 -m scripts.fetch_census.statcan

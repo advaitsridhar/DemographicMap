@@ -63,6 +63,9 @@ ADAPTER_FILES = [
     "korea_survey_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
+    # After Eurostat, which carries no ethnicity or religion for Romania and
+    # says so in a generic sentence; this is the census itself.
+    "romania_county.json",
     "india_state.json", "india_district.json",
     # After the C-01 files: mother tongue is the one field these add, and a
     # later file never overwrites an earlier real value with a gap marker.
