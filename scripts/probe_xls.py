@@ -72,6 +72,9 @@ def main() -> int:
                          "capture, raw (the id_ modifier)")
     ap.add_argument("--rows", type=int, default=8, help="first rows to print per sheet")
     ap.add_argument("--sheets", type=int, default=6, help="sheets to print per workbook")
+    ap.add_argument("--cols", type=int, default=12,
+                    help="columns to print per row; a census table is wide and "
+                         "the groups past the twelfth are the ones a first look misses")
     args = ap.parse_args()
 
     for url in args.url:
@@ -99,7 +102,7 @@ def main() -> int:
             log(f"  -- {name!r}: {nrows} rows x {ncols} cols")
             for row in grid[:max(0, args.rows)]:
                 if any(c for c in row):
-                    log(f"     {row[:12]}")
+                    log(f"     {row[:max(1, args.cols)]}")
     return 0
 
 
