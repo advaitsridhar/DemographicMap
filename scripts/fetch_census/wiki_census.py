@@ -60,6 +60,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_wikitable import tables  # noqa: E402
 
 API = "https://en.wikipedia.org/w/api.php"
+
+
+def api(lang: str = "en") -> str:
+    """The MediaWiki endpoint for one language edition.
+
+    A census table by region is usually transcribed in the country's own
+    Wikipedia long before the English one, and sometimes only there: the
+    English "Demographics of Romania" carries national totals, while the
+    Romanian edition carries the county table. The language edition is part
+    of a spec, and the source line names it, because which edition a figure
+    was read from is part of where it came from.
+    """
+    return f"https://{lang}.wikipedia.org/w/api.php"
 REMAINDER = "Other or not stated"
 
 SPECS: dict[str, dict[str, Any]] = {
@@ -160,7 +173,8 @@ def build(iso3: str, spec: dict[str, Any], wikitext: str) -> list[dict[str, Any]
             f"{iso3}-{slug(name)}", name, level=spec["level"], parent=iso3, country=iso3,
             aliases=spec["aliases"].get(name, []),
             sources=[{"field": field, "name": spec["source"],
-                      "url": f"https://en.wikipedia.org/wiki/{spec['title'].replace(' ', '_')}",
+                      "url": f"https://{spec.get('lang', 'en')}.wikipedia.org/wiki/"
+                             f"{spec['title'].replace(' ', '_')}",
                       "license": spec["licence"]}],
             # ``shares`` is non-empty by the check above, so the year always
             # has a figure to describe.
@@ -175,12 +189,12 @@ def slug(text: str) -> str:
     return slugify(text)
 
 
-def fetch(title: str) -> str:
+def fetch(title: str, lang: str = "en") -> str:
     q = urllib.parse.urlencode({"action": "parse", "page": title, "prop": "wikitext",
                                 "format": "json", "formatversion": "2", "redirects": "1"})
-    parsed = http_json(f"{API}?{q}", timeout=90).get("parse") or {}
+    parsed = http_json(f"{api(lang)}?{q}", timeout=90).get("parse") or {}
     text = parsed.get("wikitext") or ""
-    log(f"  {title!r}: {len(text):,} bytes of wikitext")
+    log(f"  [{lang}] {title!r}: {len(text):,} bytes of wikitext")
     return text
 
 
@@ -203,7 +217,8 @@ def main() -> int:
         # itself a search: a runner dispatch costs minutes, and surveying six
         # candidates one per dispatch is most of an hour.
         for title in args.inspect:
-            found = tables(fetch(title))
+            lang, _, page = title.partition(":") if title[:3] in ("en:", "ro:", "hu:", "id:", "ru:") else ("en", "", title)
+            found = tables(fetch(page or title, lang))
             log(f"  {len(found)} table(s)")
             for n, t in enumerate(found):
                 if not t:
@@ -217,7 +232,7 @@ def main() -> int:
         if args.country and iso3 != args.country:
             continue
         log(f"wiki_census {iso3}: {spec['source']}")
-        records = build(iso3, spec, fetch(spec["title"]))
+        records = build(iso3, spec, fetch(spec["title"], spec.get("lang", "en")))
         log(f"  {len(records)} {spec['level']} records"
             + (f"; not matched by design: {sorted(spec['unmatched_by_design'])}"
                if spec["unmatched_by_design"] else ""))
