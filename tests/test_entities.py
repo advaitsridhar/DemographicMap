@@ -251,6 +251,52 @@ class EveryBareFieldSaysWhy(unittest.TestCase):
         # Only ethnicity was bare, so only ethnicity was written.
         self.assertIn("No unit-level source", e["ethnicity"]["note"])
 
+    def test_an_unmatched_unit_beside_matched_siblings_blames_the_join(self):
+        # Bulgaria's Sofia oblast. Twenty-seven of its twenty-eight units
+        # carry Wikidata; this one matched no row, because "Sofia Oblast"
+        # could reach neither "Sofia" nor "Sofia City" without reaching both.
+        # Telling the reader "no unit-level source has been read for Bulgaria"
+        # is false, and false in the direction that hides the bug: it blames
+        # the absence of a source for what is an unmatched row.
+        rows = [self.bare() for _ in range(28)]
+        for row in rows[1:]:
+            row["match"] = "adapter:name"
+            row["sources"] = [{"field": "population", "name": "Wikidata"}]
+        joined = be.joined_here(rows)
+        self.assertEqual(joined, {"sources": "Wikidata",
+                                  "matched": 27, "units": 28})
+        self.assertEqual(be.say_why_empty(rows[0], "Bulgaria", joined),
+                         "unit matched no row")
+        note = rows[0]["religion"]["note"]
+        self.assertIn("A unit-level source was read for Bulgaria", note)
+        self.assertIn("Wikidata", note)
+        self.assertIn("27 of its 28 units were joined", note)
+        self.assertIn("this unit matched no row", note.lower())
+        self.assertNotIn("No unit-level source has been read", note)
+
+    def test_a_country_nothing_reached_still_says_nothing_was_read(self):
+        # The counts must not turn an untouched country into a join failure:
+        # with no sibling matched there is no join to blame.
+        rows = [self.bare() for _ in range(6)]
+        joined = be.joined_here(rows)
+        self.assertEqual(joined["matched"], 0)
+        self.assertEqual(be.say_why_empty(rows[0], "Chad", joined),
+                         "no source read")
+        self.assertIn("No unit-level source has been read for Chad",
+                      rows[0]["religion"]["note"])
+
+    def test_disputed_units_are_not_counted_as_units_the_join_missed(self):
+        # A disputed shape carries no source by design and gets its own
+        # sentence, so counting it would understate how complete the join is
+        # and put a number in the note that no reader could reconcile.
+        rows = [self.bare() for _ in range(3)]
+        rows[0]["disputed"] = True
+        for row in rows[1:]:
+            row["match"] = "adapter:name"
+            row["sources"] = [{"field": "religion", "name": "Wikidata"}]
+        self.assertEqual(be.joined_here(rows),
+                         {"sources": "Wikidata", "matched": 2, "units": 2})
+
 
 class CollectionPolicyPropagation(unittest.TestCase):
     """A country that does not collect a field does not collect it in its regions."""
@@ -4576,6 +4622,85 @@ class SiteFreshness(unittest.TestCase):
             if (be.PROCESSED / filename).exists():
                 self.assertIn(filename, stamped)
                 self.assertEqual(len(stamped[filename]), 12)
+
+
+class DeclaredSecondNames(unittest.TestCase):
+    """ALSO_KNOWN_AS joins a shape under a name that is not its own.
+
+    The table's whole purpose is to close gaps left by a matcher that
+    correctly refused to guess, so its own safety is the thing to test: it may
+    add a match and must never remove one, and it must never resolve an
+    ambiguity by picking a side."""
+
+    def index(self, entities):
+        idx = collections.defaultdict(list)
+        for e in entities:
+            idx[be.norm(e["name"])].append(e)
+        return idx
+
+    def shape(self, name, country):
+        return {"name": name, "country": country}
+
+    def test_an_alias_reaches_the_shape_it_names(self):
+        # Serbia's Syrmia, which the source calls Srem: no pass of the matcher
+        # can bridge those two words, so the district sat blank beside the
+        # twenty-four that were filled.
+        rows = [self.shape("Syrmia District", "SRB"),
+                self.shape("Bor District", "SRB")]
+        idx = self.index(rows)
+        self.assertEqual(be.add_known_as(idx, rows), 1)
+        self.assertEqual([e["name"] for e in idx[be.norm("Srem District")]],
+                         ["Syrmia District"])
+
+    def test_a_city_colliding_with_its_region_is_not_declared_away(self):
+        # norm() drops "City", "Oblast", "Province" and "Governorate", so a
+        # capital and the region around it land on one key and every name
+        # anyone could declare lands on it too. No alias can separate them,
+        # and an entry that looks like it does would read as a settled
+        # question. These stay out of the table.
+        folded = [("BGR", "Sofia"), ("MOZ", "Maputo"),
+                  ("YEM", "Sanʿaʾ Governorate")]
+        for key in folded:
+            self.assertNotIn(key, common.ALSO_KNOWN_AS)
+        self.assertEqual(be.norm("Sofia"), be.norm("Sofia City"))
+        self.assertEqual(be.norm("Maputo"), be.norm("Maputo Province"))
+
+    def test_an_alias_never_displaces_a_shape_s_own_name(self):
+        # The failure that would make this table dangerous: a declaration
+        # whose alias happens to be another shape's real name. If the alias
+        # were indexed, that key would hold two claimants, the matcher would
+        # refuse it as ambiguous, and a unit that had been filled for months
+        # would go blank -- a gap created by the code meant to close gaps.
+        rows = [self.shape("Caprivi", "NAM"), self.shape("Zambezi Region", "NAM")]
+        idx = self.index(rows)
+        self.assertEqual(be.add_known_as(idx, rows), 0)
+        self.assertEqual([e["name"] for e in idx[be.norm("Zambezi Region")]],
+                         ["Zambezi Region"])
+
+    def test_nothing_is_indexed_for_a_shape_with_no_declaration(self):
+        rows = [self.shape("Somewhere Undeclared", "ZZZ")]
+        idx = self.index(rows)
+        self.assertEqual(be.add_known_as(idx, rows), 0)
+
+    def test_every_alias_differs_from_the_name_it_is_declared_for(self):
+        # Same guard the misspelling table carries: an alias that norm() folds
+        # onto the shape's own name is doing nothing, and a table full of
+        # entries doing nothing hides the ones that are aimed wrongly.
+        for (group, name), aliases in common.ALSO_KNOWN_AS.items():
+            self.assertTrue(aliases, f"{group} {name!r} declares no alias")
+            for alias in aliases:
+                with self.subTest(group=group, name=name, alias=alias):
+                    self.assertNotEqual(
+                        be.norm(alias), be.norm(name),
+                        f"{group} {name!r} -> {alias!r} survives norm() unchanged, "
+                        "so the join matched it already")
+
+    def test_no_shape_is_declared_in_both_tables(self):
+        # The two tables mean opposite things -- one says the boundary file is
+        # wrong, the other says it is right -- so a name in both is a
+        # contradiction, and which won would depend on the order they are read.
+        self.assertEqual(
+            set(common.MISSPELLED) & set(common.ALSO_KNOWN_AS), set())
 
 
 class BoundaryMisspellings(unittest.TestCase):

@@ -43,7 +43,7 @@ import canonical_groups
 import group_tree
 from common import (  # noqa: E402
     NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, ROOT, apply_collection_policy,
-    gap, is_gap, log, measure, read_json, repair, respell, write_json,
+    gap, is_gap, known_as, log, measure, read_json, repair, respell, write_json,
 )
 
 SITE_DATA = ROOT / "site" / "data"
@@ -2272,9 +2272,32 @@ SOURCE_LACKS_ALL = (
     "for any of religion, language or ethnicity. Nothing has been fetched "
     "for this field, which is a limit of what was read and not a statement "
     "that the census does not ask.")
+UNMATCHED_UNIT = (
+    "A unit-level source was read for {country} at this level -- {sources} -- "
+    "and {matched} of its {units} units were joined to it. This unit matched "
+    "no row in that source, so whatever it publishes here has not been "
+    "reached. That is a gap in this map's joining, not a claim about what the "
+    "census asks or publishes.")
 
 
-def say_why_empty(entity: dict[str, Any], country: str) -> str | None:
+def joined_here(rows: Sequence[dict[str, Any]]) -> dict[str, Any]:
+    """What a source reached at this level, for the units it did not reach.
+
+    An unmatched unit sits beside units that matched, and the two need
+    different sentences. Counting the siblings once per country is what lets
+    say_why_empty tell them apart, and the counts go into the note so a reader
+    can see the shape of the failure rather than take the word "gap" on trust.
+    """
+    live = [r for r in rows if not r.get("disputed")]
+    matched = [r for r in live if r.get("match")]
+    names = sorted({s.get("name") for r in matched
+                    for s in r.get("sources", []) if s.get("name")})
+    return {"sources": ", ".join(names) or "an unnamed source",
+            "matched": len(matched), "units": len(live)}
+
+
+def say_why_empty(entity: dict[str, Any], country: str,
+                  joined: dict[str, Any] | None = None) -> str | None:
     """Give every bare composition field the true reason it is bare.
 
     A field left as ``{"status": "not_available"}`` with no note reads, on the
@@ -2312,6 +2335,16 @@ def say_why_empty(entity: dict[str, Any], country: str) -> str | None:
             else:
                 note = SOURCE_LACKS_ALL.format(sources=", ".join(sources))
                 case = "source carries no composition"
+        elif joined and joined["matched"]:
+            # The unit is bare because the join missed it, not because nobody
+            # read anything: 27 of Bulgaria's 28 oblasts carry Wikidata and
+            # Sofia does not, because "Sofia Oblast" could reach neither
+            # "Sofia" nor "Sofia City" without reaching both. Saying "no
+            # source has been read for Bulgaria" there is false, and false in
+            # the direction that hides the bug -- it blames the absence of a
+            # source for what is an unmatched row.
+            note = UNMATCHED_UNIT.format(country=country, **joined)
+            case = "unit matched no row"
         else:
             note, case = NO_SOURCE_READ.format(country=country), "no source read"
         entity[field] = gap(value["status"], note)
@@ -2361,6 +2394,30 @@ def check_shape_gaps(admin1: dict[str, list[dict[str, Any]]],
             "build_entities: the shape-gap table does not match the shapes "
             "actually drawn, so nothing is being written:\n  - "
             + "\n  - ".join(problems))
+
+
+def add_known_as(index: dict[str, list[dict[str, Any]]],
+                 entities: Sequence[dict[str, Any]]) -> int:
+    """Index each shape's declared alternative names, under two rules.
+
+    A real name always wins. An alias is only ever added to a key no shape's
+    own name has claimed, so declaring one can never make a working join
+    ambiguous and take a filled unit away -- the table can add a match, never
+    remove one.
+
+    And an alias claimed by two shapes stays ambiguous, because the index
+    keeps every claimant and the matcher refuses a key with more than one.
+    Guessing between them is the failure this whole table exists to avoid.
+    """
+    own = {norm(e["name"]) for e in entities}
+    added = 0
+    for entity in entities:
+        for alias in known_as(entity["name"], entity.get("country")):
+            key = norm(alias)
+            if key and key not in own and entity not in index[key]:
+                index[key].append(entity)
+                added += 1
+    return added
 
 
 def blank(shape: dict[str, Any], level: str, parent: str | None) -> dict[str, Any]:
@@ -2675,7 +2732,11 @@ def main() -> int:
 
     for iso3, rows in curated_rows.items():
         prov = provenance.get(iso3, {})
-        lookup = {norm(e["name"]): e for e in admin1_by_country.get(iso3, [])}
+        indexed: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for e in admin1_by_country.get(iso3, []):
+            indexed[norm(e["name"])].append(e)
+        add_known_as(indexed, admin1_by_country.get(iso3, []))
+        lookup = {k: v[0] for k, v in indexed.items() if len(v) == 1}
         for row in rows:
             entity, how = match_name(row, lookup)
             if entity is None:
@@ -2702,6 +2763,8 @@ def main() -> int:
         a1_by_key: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for entity in admin1_by_country.get(iso3, []):
             a1_by_key[norm(entity["name"])].append(entity)
+        # After every real name, so an alias can only fill an empty key.
+        aka = add_known_as(a1_by_key, admin1_by_country.get(iso3, []))
         # A flat view for resolving a *parent*, where an ambiguous key is
         # simply dropped: a parent nobody can identify cannot scope anything,
         # and there is no row name to settle it with.
@@ -2735,6 +2798,7 @@ def main() -> int:
         a2: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for entity in admin2_by_country.get(iso3, []):
             a2[norm(entity["name"])].append(entity)
+        aka += add_known_as(a2, admin2_by_country.get(iso3, []))
         # Both levels, because a binding names a polygon and does not care
         # which order the boundary file draws it at.
         by_shape: dict[str, dict[str, Any]] = {
@@ -2962,7 +3026,9 @@ def main() -> int:
             why = [f"{ambiguous} ambiguous" if ambiguous else "",
                    f"{outside} outside their stated parent" if outside else "",
                    f"{collided} beaten to their shape by another row" if collided else "",
-                   f"{declared} with no boundary, as declared" if declared else ""]
+                   f"{declared} with no boundary, as declared" if declared else "",
+                   f"{aka} shapes reachable under a declared second name"
+                   if aka else ""]
             extra = " (" + ", ".join(w for w in why if w) + ")" if any(why) else ""
             log(f"  {iso3}: adapter rows matched {hit}, unmatched {miss}{extra}")
 
@@ -3008,8 +3074,9 @@ def main() -> int:
     why: dict[str, int] = defaultdict(int)
     for table in (admin1_by_country, admin2_by_country):
         for iso3, rows in table.items():
+            joined = joined_here(rows)
             for entity in rows:
-                case = say_why_empty(entity, country_name.get(iso3, iso3))
+                case = say_why_empty(entity, country_name.get(iso3, iso3), joined)
                 if case:
                     why[case] += 1
     if why:
