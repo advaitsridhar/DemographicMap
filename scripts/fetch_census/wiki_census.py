@@ -188,7 +188,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--country", default=None, help="one ISO3 from SPECS; default all")
-    ap.add_argument("--inspect", default=None, metavar="TITLE",
+    ap.add_argument("--inspect", action="append", default=[], metavar="TITLE",
                     help="print the tables an article holds -- their first header "
                          "row and a sample data row -- instead of reading a spec. "
                          "A spec is written from this: first_header has to match "
@@ -199,16 +199,19 @@ def main() -> int:
     args = ap.parse_args()
 
     if args.inspect:
-        found = tables(fetch(args.inspect))
-        log(f"  {len(found)} table(s)")
-        for n, t in enumerate(found):
-            if not t:
-                continue
-            log(f"  -- table {n}: {len(t)} rows, {len(t[0])} columns")
-            for label, row in (("header", t[0]),):
-                log(f"     {label}: {[c.strip()[:28] for c in row]}")
-            for row in t[1:1 + max(0, args.rows)]:
-                log(f"     row   : {[c.strip()[:28] for c in row]}")
+        # Repeatable, because finding the article that holds the table is
+        # itself a search: a runner dispatch costs minutes, and surveying six
+        # candidates one per dispatch is most of an hour.
+        for title in args.inspect:
+            found = tables(fetch(title))
+            log(f"  {len(found)} table(s)")
+            for n, t in enumerate(found):
+                if not t:
+                    continue
+                log(f"  -- table {n}: {len(t)} rows, {len(t[0])} columns")
+                log(f"     header: {[c.strip()[:28] for c in t[0]]}")
+                for row in t[1:1 + max(0, args.rows)]:
+                    log(f"     row   : {[c.strip()[:28] for c in row]}")
         return 0
     for iso3, spec in SPECS.items():
         if args.country and iso3 != args.country:
