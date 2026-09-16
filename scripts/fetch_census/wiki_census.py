@@ -188,7 +188,28 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--country", default=None, help="one ISO3 from SPECS; default all")
+    ap.add_argument("--inspect", default=None, metavar="TITLE",
+                    help="print the tables an article holds -- their first header "
+                         "row and a sample data row -- instead of reading a spec. "
+                         "A spec is written from this: first_header has to match "
+                         "the article exactly or find_table refuses, and guessing "
+                         "it costs a runner dispatch each time.")
+    ap.add_argument("--rows", type=int, default=2,
+                    help="sample data rows to print per table with --inspect")
     args = ap.parse_args()
+
+    if args.inspect:
+        found = tables(fetch(args.inspect))
+        log(f"  {len(found)} table(s)")
+        for n, t in enumerate(found):
+            if not t:
+                continue
+            log(f"  -- table {n}: {len(t)} rows, {len(t[0])} columns")
+            for label, row in (("header", t[0]),):
+                log(f"     {label}: {[c.strip()[:28] for c in row]}")
+            for row in t[1:1 + max(0, args.rows)]:
+                log(f"     row   : {[c.strip()[:28] for c in row]}")
+        return 0
     for iso3, spec in SPECS.items():
         if args.country and iso3 != args.country:
             continue
