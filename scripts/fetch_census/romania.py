@@ -121,6 +121,15 @@ SHAPE_NAMES: dict[str, str] = {
 # Rows that are not a county: the national total, and the macro-regions and
 # development regions the volume also totals over.
 NOT_A_COUNTY = {"ROMANIA", "TOTAL"}
+
+# The census hangs a footnote marker off a name where the county's boundary
+# moved between rounds, and it does so in one table and not the other: the
+# ethnicity table says "ILFOV  4" and "MUNICIPIUL BUCURESTI  4" -- Ilfov was
+# carved back out of Bucharest in 1997 -- while the religion table, which
+# covers one round only, has no footnote to hang. Both spellings are the same
+# county, so the marker comes off before the name is matched. Nothing here is
+# a rename: a county whose name genuinely ends in a digit does not exist.
+FOOTNOTE_MARKS = "0123456789" + "\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079"
 SEX_ROWS = {"AMBELE SEXE", "MASCULIN", "FEMININ"}
 BOTH_SEXES = "AMBELE SEXE"
 SUPPRESSED = "*"
@@ -168,6 +177,11 @@ def count(cell: str) -> float | None:
         raise SystemExit(f"romania: cannot read {cell!r} as a count")
 
 
+def clean(label: str) -> str:
+    """A row label with its footnote marker and spacing taken off."""
+    return " ".join(label.strip().rstrip(FOOTNOTE_MARKS + " ").split()).upper()
+
+
 def unknown(label: str) -> bool:
     """A row label that looks like a place and is not one this adapter knows.
 
@@ -186,7 +200,7 @@ def read_ethnicity(rows: list[list[str]]) -> dict[str, dict[str, float]]:
     strangers: set[str] = set()
     where: str | None = None
     for row in rows:
-        label = row[0].strip().upper()
+        label = clean(row[0])
         if label in SHAPE_NAMES:
             where = label
             continue
@@ -220,7 +234,7 @@ def read_religion(rows: list[list[str]]) -> dict[str, dict[str, float]]:
     out: dict[str, dict[str, float]] = {}
     where: str | None = None
     for row in rows:
-        label = row[0].strip().upper()
+        label = clean(row[0])
         if label in SHAPE_NAMES:
             where = label
             continue
