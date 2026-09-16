@@ -175,7 +175,11 @@ RELIGION_PATTERNS: tuple[tuple[str, tuple[str, ...]], ...] = (
     # other tradition here covers.
     ("Christianity", ("Tocoist",)),
     ("Jehovah's Witnesses", ("Jehovah",)),
-    ("Orthodoxy", ("Orthodox",)),
+    # "Armenian Apostolic" before the Protestant patterns below, which match
+    # the bare word "Church" and were quietly claiming the Armenian Apostolic
+    # Church for the Reformation. It is Oriental Orthodox, and Romania's
+    # census counts it as its own column.
+    ("Orthodoxy", ("Orthodox", "Armenian Apostolic", "Armenian Church")),
     ("Catholicism", ("Catholic", "Oblates")),
     ("Protestantism", (
         "Protestant", "Salvation", "Fellowship", "Believer", "Praise",
