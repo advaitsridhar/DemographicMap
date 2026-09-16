@@ -195,9 +195,11 @@ def unknown(label: str) -> bool:
         and label not in SEX_ROWS and not label[0].isdigit() and label not in ("A", "B")
 
 
-def read_ethnicity(rows: list[list[str]]) -> dict[str, dict[str, float]]:
-    """{county: {group: count}} for the 2011 row of each county."""
+def read_ethnicity(rows: list[list[str]]
+                   ) -> tuple[dict[str, dict[str, float]], dict[str, float]]:
+    """({county: {group: count}}, {county: printed total}) for the 2011 row."""
     out: dict[str, dict[str, float]] = {}
+    printed: dict[str, float] = {}
     strangers: set[str] = set()
     where: str | None = None
     for row in rows:
@@ -223,14 +225,18 @@ def read_ethnicity(rows: list[list[str]]) -> dict[str, dict[str, float]]:
             if value is not None:
                 counts[group] = counts.get(group, 0.0) + value
         if counts and whole:
-            out[where] = counts
-        elif where:
+            # setdefault, not assignment: the table repeats its county list
+            # for urban and rural, and a later block must not replace the
+            # total one.
+            out.setdefault(where, counts)
+            printed.setdefault(where, whole)
+        elif where and where not in out:
             log(f"  {where}: the county ethnicity table prints no figures")
         where = None
     if strangers:
         log(f"  ethnicity table: {len(strangers)} unrecognised headings: "
             + ", ".join(sorted(strangers)[:12]))
-    return out
+    return out, printed
 
 
 # Where the county religion table prints nothing at all. The volume lists
@@ -240,6 +246,19 @@ def read_ethnicity(rows: list[list[str]]) -> dict[str, dict[str, float]]:
 # elsewhere in this volume is a stated zero, so reading these as zeros would
 # have given Bucharest a religion composition of nobody: the run refused it,
 # which is the check doing its job.
+# The religion table prints the whole county list three times -- total, then
+# urban, then rural -- with the same headings each time and nothing in column
+# zero to say which pass you are in. Taking the last occurrence of a county
+# silently published its *rural* population as the county: Harghita came to
+# 178,447 people against a census county of 310,867, and every share was
+# subtly wrong in a way no percentage could reveal, because a rural-only
+# composition still sums to 100. The first block is the total one -- the
+# national row that opens it is Romania's full 20,121,641 -- so the first
+# occurrence wins and the rest are ignored.
+#
+# The guard against ever making this mistake again is check_totals below: a
+# composition has to add up to the unit's own printed population, which is
+# the one thing a wrong block cannot fake.
 NO_FIGURE = ("Romania's 2011 census prints no religion figures for Bucharest "
              "in the volume's county table: the capital's row is dashes from "
              "end to end, where every other county carries counts. The census "
@@ -249,9 +268,11 @@ NO_FIGURE = ("Romania's 2011 census prints no religion figures for Bucharest "
              "volume's Table 1, is a real count and is shown beside this.")
 
 
-def read_religion(rows: list[list[str]]) -> dict[str, dict[str, float]]:
-    """{county: {group: count}} from the both-sexes row of each county."""
+def read_religion(rows: list[list[str]]
+                  ) -> tuple[dict[str, dict[str, float]], dict[str, float]]:
+    """({county: {group: count}}, {county: printed total}), first block only."""
     out: dict[str, dict[str, float]] = {}
+    printed: dict[str, float] = {}
     where: str | None = None
     for row in rows:
         label = clean(row[0])
@@ -274,11 +295,15 @@ def read_religion(rows: list[list[str]]) -> dict[str, dict[str, float]]:
         # The printed total is the test, not whether any cell parsed: a row of
         # dashes parses to a full set of zeros and is not a composition.
         if counts and whole:
-            out[where] = counts
-        elif where:
+            # setdefault, not assignment: the table repeats its county list
+            # for urban and rural, and a later block must not replace the
+            # total one.
+            out.setdefault(where, counts)
+            printed.setdefault(where, whole)
+        elif where and where not in out:
             log(f"  {where}: the county religion table prints no figures")
         where = None
-    return out
+    return out, printed
 
 
 def note(field: str) -> str:
@@ -293,8 +318,10 @@ def note(field: str) -> str:
 
 
 def build() -> list[dict[str, Any]]:
-    ethnic = read_ethnicity(grid(fetch(*ETHNIC)))
-    religion = read_religion(grid(fetch(*RELIGION)))
+    ethnic, ethnic_total = read_ethnicity(grid(fetch(*ETHNIC)))
+    religion, religion_total = read_religion(grid(fetch(*RELIGION)))
+    check_totals("ethnicity", ethnic, ethnic_total)
+    check_totals("religion", religion, religion_total)
     log(f"  {len(ethnic)} counties with ethnicity, {len(religion)} with religion")
 
     records: list[dict[str, Any]] = []
@@ -319,6 +346,30 @@ def build() -> list[dict[str, Any]]:
             f"ROU-{slugify(name)}", name, level="admin1", parent="ROU",
             country="ROU", sources=cite, **fields))
     return records
+
+
+def check_totals(field: str, counts: dict[str, dict[str, float]],
+                 printed: dict[str, float]) -> None:
+    """Every composition adds up to the unit's own printed population.
+
+    This is the check that catches a block-structure mistake, and nothing
+    else does. A composition built from the wrong pass of a repeated table --
+    the rural rows read as the county -- still sums to 100% and still names
+    plausible groups; only the head count gives it away. Harghita's religion
+    came to 178,447 people against a printed county of 310,867 before this
+    existed, and every share was wrong.
+    """
+    for where, groups in sorted(counts.items()):
+        whole = printed.get(where)
+        if not whole:
+            continue
+        summed = sum(groups.values())
+        if abs(summed - whole) > max(2.0, whole * 0.001):
+            raise SystemExit(
+                f"romania: {where} {field} counts add to {summed:,.0f} against "
+                f"the {whole:,.0f} the census prints for it -- the wrong block "
+                f"of a repeated table, not a rounding difference")
+    log(f"  {field}: every county's groups add up to its printed population")
 
 
 def check(records: list[dict[str, Any]]) -> None:
