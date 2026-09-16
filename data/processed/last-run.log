@@ -1,13 +1,14 @@
-page: https://www.insse.ro/cms/
-  unreachable: URLError: <urlopen error [Errno 101] Network is unreachable>
-page: http://www.insse.ro/cms/
-  unreachable: URLError: <urlopen error [Errno 101] Network is unreachable>
-page: https://statistici.insse.ro/shop/
-  unreachable: URLError: <urlopen error [SSL] unknown error (_ssl.c:1016)>
-page: https://recensamantromania.ro/
-  unreachable: URLError: <urlopen error timed out>
-page: https://data.gov.ro/
-  unreachable: URLError: <urlopen error timed out>
-page: https://data.humdata.org/dataset?q=romania+census
-  2,303 bytes
-  0 matching link(s)
+  [ro] 'Recensământul populației din 2021 (România)': 5,214 bytes of wikitext
+  0 table(s)
+  [en] 'Counties of Romania': 38,958 bytes of wikitext
+  1 table(s)
+  -- table 0: 43 rows, 13 columns
+     header: ['class=unsortable|CoA', 'County', 'County seat', 'Name origin', 'Region', 'ISO code', 'Postal code', 'Area code', 'NUTS code', 'Pop. (1 December 2021)', 'Area', 'Density (pop./km²)', 'Map']
+     row   : ['40px|alt=Coat of arms of Alb', 'Alba', 'Alba Iulia', 'county seat', 'Center', 'AB', '51', '58', 'RO121', '325,941', 'abbr=on', '52', '100px|alt=Map of Romania hig']
+     row   : ['40px|alt=Coat of arms of Ara', 'Arad', 'Arad', 'county seat', 'West', 'AR', '31', '57', 'RO421', '410,143', 'abbr=on', '53', '100px|alt=Map of Romania hig']
+  [en] 'Hungarians in Romania': 48,782 bytes of wikitext
+  1 table(s)
+  -- table 0: 20 rows, 4 columns
+     header: ['County', 'Hungarians in county', 'Hungarians as % of total cou', 'As % of total Hungarians in ']
+     row   : ['Harghita', '257,707', '85.21%', '20.99%']
+     row   : ['Covasna', '150,468', '73.74%', '12.25%']
