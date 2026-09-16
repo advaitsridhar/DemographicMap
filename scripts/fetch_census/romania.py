@@ -168,9 +168,22 @@ def count(cell: str) -> float | None:
         raise SystemExit(f"romania: cannot read {cell!r} as a count")
 
 
+def unknown(label: str) -> bool:
+    """A row label that looks like a place and is not one this adapter knows.
+
+    The two tables do not spell their counties identically, and a silently
+    skipped county is exactly the invisible miss this project cares about:
+    the first run read 42 counties of religion and 40 of ethnicity, and said
+    nothing about the two until this existed.
+    """
+    return bool(label) and label not in SHAPE_NAMES and label not in NOT_A_COUNTY \
+        and label not in SEX_ROWS and not label[0].isdigit() and label not in ("A", "B")
+
+
 def read_ethnicity(rows: list[list[str]]) -> dict[str, dict[str, float]]:
     """{county: {group: count}} for the 2011 row of each county."""
     out: dict[str, dict[str, float]] = {}
+    strangers: set[str] = set()
     where: str | None = None
     for row in rows:
         label = row[0].strip().upper()
@@ -180,6 +193,10 @@ def read_ethnicity(rows: list[list[str]]) -> dict[str, dict[str, float]]:
         if label in NOT_A_COUNTY:
             where = None
             continue
+        if unknown(label) and not row[1].strip():
+            # A place-looking row with no year beside it is a heading, and a
+            # heading this adapter does not recognise is worth printing.
+            strangers.add(label)
         # A year row: the county it belongs to is the last one named above it.
         year = row[1].strip()
         if where is None or not year.startswith(str(YEAR)):
@@ -192,6 +209,9 @@ def read_ethnicity(rows: list[list[str]]) -> dict[str, dict[str, float]]:
         if counts:
             out[where] = counts
         where = None
+    if strangers:
+        log(f"  ethnicity table: {len(strangers)} unrecognised headings: "
+            + ", ".join(sorted(strangers)[:12]))
     return out
 
 
