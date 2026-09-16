@@ -53,7 +53,8 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from common import PROCESSED, http_get, log, slugify, write_json  # noqa: E402
+from common import (NOT_AVAILABLE, PROCESSED, gap, http_get, log, slugify,  # noqa: E402
+                    write_json)
 from fetch_census._shared import record, shares  # noqa: E402
 
 YEAR = 2011
@@ -215,18 +216,37 @@ def read_ethnicity(rows: list[list[str]]) -> dict[str, dict[str, float]]:
         year = row[1].strip()
         if where is None or not year.startswith(str(YEAR)):
             continue
+        whole = count(row[2]) if len(row) > 2 else None
         counts = {}
         for i, group in ETHNIC_COLUMNS.items():
             value = count(row[i]) if i < len(row) else None
             if value is not None:
                 counts[group] = counts.get(group, 0.0) + value
-        if counts:
+        if counts and whole:
             out[where] = counts
+        elif where:
+            log(f"  {where}: the county ethnicity table prints no figures")
         where = None
     if strangers:
         log(f"  ethnicity table: {len(strangers)} unrecognised headings: "
             + ", ".join(sorted(strangers)[:12]))
     return out
+
+
+# Where the county religion table prints nothing at all. The volume lists
+# Bucharest among the counties and fills its row with dashes, top to bottom --
+# the capital's confessions are broken out by sector somewhere this adapter
+# has not opened, and the county table stands in with a placeholder. A dash
+# elsewhere in this volume is a stated zero, so reading these as zeros would
+# have given Bucharest a religion composition of nobody: the run refused it,
+# which is the check doing its job.
+NO_FIGURE = ("Romania's 2011 census prints no religion figures for Bucharest "
+             "in the volume's county table: the capital's row is dashes from "
+             "end to end, where every other county carries counts. The census "
+             "does ask religion, and Bucharest's answer is published somewhere "
+             "this adapter has not opened -- most likely broken out by sector "
+             "rather than given as one city. Its ethnicity, from the same "
+             "volume's Table 1, is a real count and is shown beside this.")
 
 
 def read_religion(rows: list[list[str]]) -> dict[str, dict[str, float]]:
@@ -245,13 +265,18 @@ def read_religion(rows: list[list[str]]) -> dict[str, dict[str, float]]:
             continue
         if where is None or label != BOTH_SEXES:
             continue
+        whole = count(row[1]) if len(row) > 1 else None
         counts: dict[str, float] = {}
         for i, group in RELIGION_COLUMNS.items():
             value = count(row[i]) if i < len(row) else None
             if value is not None:
                 counts[group] = counts.get(group, 0.0) + value
-        if counts:
+        # The printed total is the test, not whether any cell parsed: a row of
+        # dashes parses to a full set of zeros and is not a composition.
+        if counts and whole:
             out[where] = counts
+        elif where:
+            log(f"  {where}: the county religion table prints no figures")
         where = None
     return out
 
@@ -279,6 +304,7 @@ def build() -> list[dict[str, Any]]:
         for field, table in (("ethnicity", ethnic), ("religion", religion)):
             counts = table.get(key)
             if not counts:
+                fields[field] = gap(NOT_AVAILABLE, NO_FIGURE)
                 continue
             fields[field] = shares(counts)
             fields[f"{field}_year"] = YEAR
@@ -286,8 +312,8 @@ def build() -> list[dict[str, Any]]:
             cite.append({"field": field, "name": SOURCE,
                          "url": ETHNIC[0] if field == "ethnicity" else RELIGION[0],
                          "license": LICENCE})
-        if not fields:
-            log(f"  {name}: no row in either table")
+        if not any(isinstance(v, list) for v in fields.values()):
+            log(f"  {name}: no figures in either table")
             continue
         records.append(record(
             f"ROU-{slugify(name)}", name, level="admin1", parent="ROU",
@@ -307,8 +333,11 @@ def check(records: list[dict[str, Any]]) -> None:
     for row in records:
         for field in ("ethnicity", "religion"):
             comp = row.get(field)
-            if not isinstance(comp, list):
-                raise SystemExit(f"romania: {row['name']} has no {field}")
+            if isinstance(comp, dict) and comp.get("note"):
+                continue          # a stated gap, which is an answer
+            if not isinstance(comp, list) or not comp:
+                raise SystemExit(f"romania: {row['name']} has no {field} and "
+                                 "no stated reason for the absence")
             total = sum(g["pct"] for g in comp)
             if abs(total - 100.0) > 0.6:
                 raise SystemExit(f"romania: {row['name']} {field} adds to "
