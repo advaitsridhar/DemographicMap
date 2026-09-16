@@ -43,7 +43,7 @@ def cell(value: object, width: int = 22) -> str:
     return text[:width]
 
 
-def rows_of(blob: bytes, name: str) -> list[tuple[str, int, int, list[list[str]]]]:
+def rows_of(blob: bytes, name: str, args_start: int = 0) -> list[tuple[str, int, int, list[list[str]]]]:
     """(sheet name, rows, columns, first rows) for every sheet."""
     out: list[tuple[str, int, int, list[list[str]]]] = []
     if name.lower().endswith(".xlsx"):
@@ -51,14 +51,14 @@ def rows_of(blob: bytes, name: str) -> list[tuple[str, int, int, list[list[str]]
         book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
         for sheet in book.worksheets:
             grid = [[cell(c) for c in row]
-                    for row in sheet.iter_rows(max_row=40, values_only=True)]
+                    for row in sheet.iter_rows(max_row=args_start + 40, values_only=True)]
             out.append((sheet.title, sheet.max_row or 0, sheet.max_column or 0, grid))
         return out
     import xlrd
     book = xlrd.open_workbook(file_contents=blob)
     for sheet in book.sheets():
         grid = [[cell(sheet.cell_value(r, c)) for c in range(sheet.ncols)]
-                for r in range(min(sheet.nrows, 40))]
+                for r in range(min(sheet.nrows, args_start + 40))]
         out.append((sheet.name, sheet.nrows, sheet.ncols, grid))
     return out
 
@@ -70,7 +70,10 @@ def main() -> int:
     ap.add_argument("--wayback", default=None, metavar="TIMESTAMP",
                     help="fetch each URL from the Internet Archive at this "
                          "capture, raw (the id_ modifier)")
-    ap.add_argument("--rows", type=int, default=8, help="first rows to print per sheet")
+    ap.add_argument("--rows", type=int, default=8, help="rows to print per sheet")
+    ap.add_argument("--from", dest="start", type=int, default=0,
+                    help="first row to print; the interesting part of a census "
+                         "table is rarely the top of it")
     ap.add_argument("--sheets", type=int, default=6, help="sheets to print per workbook")
     ap.add_argument("--cols", type=int, default=12,
                     help="columns to print per row; a census table is wide and "
@@ -93,14 +96,14 @@ def main() -> int:
             log("  HTML, not a workbook -- the capture played back rewritten")
             continue
         try:
-            sheets = rows_of(blob, url)
+            sheets = rows_of(blob, url, args.start)
         except Exception as exc:                      # noqa: BLE001
             log(f"  cannot open: {type(exc).__name__}: {exc}")
             continue
         log(f"  {len(sheets)} sheet(s)")
         for name, nrows, ncols, grid in sheets[:max(0, args.sheets)]:
             log(f"  -- {name!r}: {nrows} rows x {ncols} cols")
-            for row in grid[:max(0, args.rows)]:
+            for row in grid[args.start:args.start + max(0, args.rows)]:
                 if any(c for c in row):
                     log(f"     {row[:max(1, args.cols)]}")
     return 0
