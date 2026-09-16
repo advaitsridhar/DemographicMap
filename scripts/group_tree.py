@@ -184,6 +184,11 @@ RELIGION_PATTERNS: tuple[tuple[str, tuple[str, ...]], ...] = (
         "Things to Come", "Lord of the Nations", "Way of Salvation",
         "Baptist", "Pentecostal", "Evangelical", "Methodist", "Lutheran",
         "Presbyterian", "Anglican", "Episcopal", "Adventist", "Reformed",
+        # Transylvania's Hungarian Unitarian Church, which Romania's census
+        # counts apart from the Reformed. A Reformation church that dropped
+        # the Trinity: Protestant by descent, which is the axis this tree
+        # files a confession on.
+        "Unitarian",
         "Brethren", "Iglesia", "Ministries", "Mission", "Church", "Christ",
         "Christian", "Gospel", "Assembly of God", "Assemblies of God",
     )),
