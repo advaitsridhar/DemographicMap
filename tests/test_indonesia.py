@@ -281,7 +281,8 @@ class InfoboxReligion(unittest.TestCase):
         self.assertEqual(rows[-1], {"group": m.REMAINDER, "pct": 1.0})
         rows, why = m.religion_shares([("Islam", 70.86), ("Kristen", 24.88),
                                        ("Protestan", 24.97), ("Katolik", 0.91), ("Hindu", 5.25)])
-        self.assertIn("102.00", why)
+        self.assertIn("shares add to 10", why)
+        self.assertEqual(rows, [])
 
     def test_uncited_figure_is_not_read(self):
         out, printed = quiet(m.read_religion, UNCITED, "Kabupaten Nowhere")
