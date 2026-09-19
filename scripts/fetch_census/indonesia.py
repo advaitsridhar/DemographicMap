@@ -237,8 +237,13 @@ ETHNIC_LABELS: dict[str, str] = {
     "lain": "Other ethnic groups",
     "suku lainnya": "Other ethnic groups", "suku lain": "Other ethnic groups",
     "suku-suku lainnya": "Other ethnic groups",
-    "suku bangsa lainnya": "Other ethnic groups",
+    "suku bangsa lainnya": "Other ethnic groups", "bangsa lainnya": "Other ethnic groups",
+    "bangsa lain": "Other ethnic groups", "etnis lainnya": "Other ethnic groups",
+    "etnis lain": "Other ethnic groups",
 }
+# An unknown row this small is carried in the residual and named in the
+# note; a larger one refuses the run, since it would be a people unplaced.
+SMALL_UNKNOWN = 0.01
 # East Nusa Tenggara's "asal Kalimantan" row, carried as the residual: see
 # the module docstring.
 RESIDUAL_BY_PROVINCE: dict[tuple[str, str], str] = {
@@ -721,30 +726,37 @@ def read_ethnicity(wikitext: str, province: str, title: str, expected: int | Non
     rows, name_col = found
     body, total = split_total(table_rows(rows, name_col), province, title)
     counts: dict[str, int] = {}
-    unknown: list[str] = []
+    unknown: list[tuple[str, int]] = []
     for name, count in body:
         key = normalise_label(name)
         if not key:
             continue
         label = ethnic_label(province, key)
         if label is None:
-            unknown.append(name)
+            unknown.append((name, count))
             continue
         counts[label] = counts.get(label, 0) + count
-    if unknown:
-        raise SystemExit(f"indonesia: {province}: ethnic labels not in ETHNIC_LABELS: {unknown}")
     if not counts:
         log(f"    {province}: the ethnic table has no readable rows")
         return None
-    summed = sum(counts.values())
     remark = ""
+    if unknown:
+        whole = sum(counts.values()) + sum(c for _, c in unknown)
+        big = [n for n, c in unknown if c > SMALL_UNKNOWN * whole]
+        if big:
+            raise SystemExit(f"indonesia: {province}: ethnic labels not in ETHNIC_LABELS: {big}")
+        for name, count in unknown:
+            counts[RESIDUAL] = counts.get(RESIDUAL, 0) + count
+        remark = ("Rows the reader has no label for are in 'Other ethnic groups': "
+                  + ", ".join(f"'{n}' ({100 * c / whole:.1f}%)" for n, c in unknown) + ".")
+    summed = sum(counts.values())
     if total is None:
         log(f"    {province}: no total row; the rows' sum {summed:,} stands as the total")
     elif abs(summed - total) > TOTAL_TOLERANCE * total:
         if expected and fits(summed, expected) and not fits(total, expected):
-            remark = (f"The table's printed total, {total:,}, is not the 2010 census "
-                      f"population; its rows add to {summed:,}, which is, and are the "
-                      "denominator.")
+            remark = join(remark, f"The table's printed total, {total:,}, is not the 2010 "
+                          f"census population; its rows add to {summed:,}, which is, and "
+                          "are the denominator.")
         else:
             raise SystemExit(f"indonesia: {province}: rows add to {summed:,} against the "
                              f"table's total {total:,} ({100 * summed / total:.2f}%)")
@@ -752,15 +764,19 @@ def read_ethnicity(wikitext: str, province: str, title: str, expected: int | Non
         # Central Kalimantan's rows add to 0.3% more than its printed total:
         # a transcription slip in one or the other. The rows are the figures
         # carried, so they are the denominator, and the slip is on record.
-        remark = (f"The table's rows add to {summed:,} against its printed total "
-                  f"{total:,}; the rows are the denominator.")
+        remark = join(remark, f"The table's rows add to {summed:,} against its printed "
+                      f"total {total:,}; the rows are the denominator.")
     if province in {p for p, _ in RESIDUAL_BY_PROVINCE}:
-        remark = (remark + " " if remark else "") + (
-            "The article's 'asal Kalimantan' row, 14.5%, is carried in 'Other ethnic "
-            "groups': no census of the province supports a Kalimantan share of that size.")
+        remark = join(remark, "The article's 'asal Kalimantan' row, 14.5%, is carried in "
+                      "'Other ethnic groups': no census of the province supports a "
+                      "Kalimantan share of that size.")
     if remark:
         log(f"    {province}: {remark}")
     return counts, summed, remark
+
+
+def join(remark: str, sentence: str) -> str:
+    return f"{remark} {sentence}" if remark else sentence
 
 
 def fits(total: int, expected: int) -> bool:

@@ -205,13 +205,19 @@ class EthnicTables(unittest.TestCase):
         self.assertEqual(total, 9_547_541)
         self.assertEqual(counts["Betawi"], 2_700_722)
 
-    def test_unknown_label_refuses(self):
+    def test_unknown_label_refuses_unless_small(self):
         bad = table("! No !! Suku !! Jumlah 2010 !! %", [
             "| 1 || Jawa || 900 || 90,00%", "| 2 || Martian || 100 || 10,00%",
             "| || Total || 1.000 || 100%"])
         with self.assertRaises(SystemExit) as cm:
             m.read_ethnicity(bad, "Bali", "Bali")
         self.assertIn("Martian", str(cm.exception))
+        small = table("! No !! Suku !! Jumlah 2010 !! %", [
+            "| 1 || Jawa || 9.950 || 99,50%", "| 2 || Martian || 50 || 0,50%",
+            "| || Total || 10.000 || 100%"])
+        (counts, total, remark), printed = quiet(m.read_ethnicity, small, "Bali", "Bali")
+        self.assertEqual(counts["Other ethnic groups"], 50)
+        self.assertIn("'Martian' (0.5%)", remark)
 
     def test_no_table_is_none(self):
         out, printed = quiet(m.read_ethnicity, GOVERNORS, "Bali", "Bali")
