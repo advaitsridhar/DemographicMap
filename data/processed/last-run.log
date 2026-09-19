@@ -1,10 +1,2 @@
-key found in $DEMOGRAPHICMAP (100 characters). Its value is never printed.
-
-=== raw page 1: HTTP 200
-{"code":0,"data":{"datasets":[{"datasetId":"d_9e7de44094f876f6804b8b5bcee45c81","createdAt":"2025-05-06T01:44:58+08:00","name":"Historical Rainfall across Singapore (2020)","status":"active","description":"Historical rainfall across Singapore. All timestamps are provided in Singapore Time (SGT), formatted in ISO 8601.\n\n⠀\n\nDisclaimer: This dataset may contain missing records and has not undergone quality control procedures applied to climate data and records. For official climate records or climate data reports, please contact sales_climo@nea.gov.sg. Please note that fees may apply for data and report preparation.","format":"CSV","lastUpdatedAt":"2025-05-06T01:51:22+08:00","managedByAgenc
-
-=== raw page 2: HTTP 200
-{"code":0,"data":{"datasets":[{"datasetId":"d_f71b449b4b43a69b5ecfe411b440d249","createdAt":"2023-07-31T17:00:16+08:00","name":"SportsFields@SG","status":"active","format":"GEOJSON","lastUpdatedAt":"2024-06-06T15:08:48+08:00","managedByAgencyName":"Health Promotion Board"},{"datasetId":"d_785903005a276ca9efdeab97707cdbbf","createdAt":"2026-03-23T15:24:56+08:00","name":"Average Monthly Recruitment Rate by Industry and Occupation - Quarterly","status":"active","description":"Average Monthly Recruitment Rate during a quarter is defined as the average number of persons recruited in a month during the quarter divided by the average number of employees in the establishment. The annual figures are 
-
-=== raw page 3: HTTP 200
-{"code":0,"data":{"datasets":[{"datasetId":"d_96c1552562607cb3d74fe6a61e0345d4","createdAt":"2024-10-22T13:24:35+08:00","name":"Employed Residents Aged 15 Years and Over by Gross Monthly Income from Work, Ethnic Group and Sex (Census of Population 2020)","status":"active","description":"Source: SINGAPORE DEPARTMENT OF STATISTICS\r\n\r\nData Last Updated: 30/06/2026\r\n\r\nUpdate Frequency: 10 years\r\n\r\nSurvey period: Census of Population 2020\r\n\r\nFootnotes: Note: Data on income from work have been updated to include Additional MediSave Contributions from employers with the release of the Key Household Income Trends 2025 report in February 2026. For more information, you may refer to th
+probe_page: https://jumin.mois.go.kr/statMonth.do?tableId=month&sltOrgType=1&sltOrgLvl1=A&sltOrgLvl2=A&searchYearStart=2023&searchMonthStart=12&searchYearEnd=2023&searchMonthEnd=12&sltUndefType=Y&gender=N&sum=N
+  5 lines of text, 0 mentioning 종로구, 수원시, 총인구수, 행정구역, 2023년
