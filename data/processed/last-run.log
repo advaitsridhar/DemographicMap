@@ -1,31 +1,55 @@
 probe_post: https://jumin.mois.go.kr/downloadCsv.do?searchYearMonth=month&xlsStats=1
   14 field(s): tableId, category, sltOrgType, sltOrgLvl1, sltOrgLvl2, searchYearStart, searchMonthStart, searchYearEnd, searchMonthEnd, sltUndefType, sltOrderType, sltOrderValue, searchYearMonth, nowYear
-  200 text/html;charset=utf-8 size=1,053
-  27 non-blank line(s) decoded as cp949
-  <!DOCTYPE html>
-  <html lang="ko">
-  	<head>
-  		<meta charset="utf-8"/>
-  		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  		<title> �삤瑜섑럹�씠吏�</title>
-  	</head>
-  	<body>
-  					<div id="content_main">
-  						<div class="error_list ty2">
-  							<div>
-  								<p>�삁�긽�븯吏� 紐삵븳 �삤瑜섍�� <span>諛쒖깮�븯����뒿�땲�떎.</span></p>
-  								<ul>
-  									<li>諛⑸Ц�븯�떆�젮�뒗 �럹�씠吏��쓽 二쇱냼媛� �옒紐� �엯�젰�릺�뿀嫄곕굹, 蹂�寃� �삉�뒗 �궘�젣�릺�뼱 <span class="under">�슂泥��븯�떊 �럹�씠吏�瑜� 李얠쓣 �닔 �뾾�뒿�땲�떎.</span></li>
-  									<li><strong>�깉濡� 怨좎묠(F5)</strong>�쓣 �븯�떆嫄곕굹 �럹�씠吏� �솗�씤 �썑 <span>�떎�떆 �젒�냽�빐 二쇱떆湲� 諛붾엻�땲�떎.</span></li>
-  								</ul>
-  								<ul>
-  									<li>String index out of range: 2</li>
-  								</ul>
-  								<p class="btn_area mt40"><a href="#" onClick="history.back()" class="btn_fclose">�씠�쟾�럹�씠吏�</a><a href="/" class="type1 ty3">硫붿씤�쑝濡�</a></p>
-  							</div>
-  						</div>
-  					</div>
-  				</div>
-  				<!-- //content -->
-  	</body>
-  </html>
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
+    self.send(msg)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
+    self.connect()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
+    super().connect()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
+    raise exceptions[0]
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_post.py", line 102, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_post.py", line 64, in main
+    with urllib.request.urlopen(req, timeout=args.timeout) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 110] Connection timed out>
