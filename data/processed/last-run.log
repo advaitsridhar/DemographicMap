@@ -1,6 +1,46 @@
-xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
-usage: probe_links.py [-h] [--match MATCH] [--head] [--limit LIMIT]
-                      [--timeout TIMEOUT] [--check CHECK] [--accept ACCEPT]
-                      [--find FIND] [--raw RAW]
-                      url [url ...]
-probe_links.py: error: argument --find: expected one argument
+page: https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=주민등록인구+시군구&dType=FILE
+  430,672 bytes
+  10 matching link(s)
+  - 행정안전부_지역별 연령별 주민 등록 인구 현황
+    https://www.data.go.kr/data/3033304/fileData.do
+  - 행정안전부_지역별(행정동) 성별 주민 등록 인구 증감
+    https://www.data.go.kr/data/3033254/fileData.do
+  - 행정안전부_지역별 주민 등록 성별 인구 현황
+    https://www.data.go.kr/data/3033301/fileData.do
+  - 전북특별자치도_ 주민등록인구 및 세대현황
+    https://www.data.go.kr/data/15051339/fileData.do
+  - 보건복지부_ 시군구 별 치매현황
+    https://www.data.go.kr/data/15073342/fileData.do
+  - 행정안전부_지역별 주민 등록 인구 평균연령
+    https://www.data.go.kr/data/3033255/fileData.do
+  - 서울특별시 동대문구_ 주민등록인구
+    https://www.data.go.kr/data/15143005/fileData.do
+  - 충청북도_ 주민 등록 인구 통계
+    https://www.data.go.kr/data/3075677/fileData.do
+  - 대구광역시 중구_행정동별 주민 등록 인구 통계
+    https://www.data.go.kr/data/3080681/fileData.do
+  - 경기도 안양시_행정동별 주민 등록 인구 및 세대현황
+    https://www.data.go.kr/data/15125545/fileData.do
+page: https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=외국인주민+현황&dType=FILE
+  430,977 bytes
+  10 matching link(s)
+  - 인천광역시_주민등록인구 및 외국인 현황
+    https://www.data.go.kr/data/3075810/fileData.do
+  - 경상남도 거제시_ 외국인 주민 현황
+    https://www.data.go.kr/data/3079542/fileData.do
+  - 서울특별시_ 외국인주민 (연령별) 통계
+    https://www.data.go.kr/data/15047025/fileData.do
+  - 충청남도_ 외국인주민 현황 (유형별)
+    https://www.data.go.kr/data/15047603/fileData.do
+  - 충청남도_ 외국인주민 현황 (국적별)
+    https://www.data.go.kr/data/15047604/fileData.do
+  - 서울특별시_ 외국인주민 현황 (구별) 통계
+    https://www.data.go.kr/data/15046960/fileData.do
+  - 서울특별시_ 외국인주민 (국적별) 통계
+    https://www.data.go.kr/data/15047033/fileData.do
+  - 서울특별시_ 외국인주민 총괄 통계
+    https://www.data.go.kr/data/15047032/fileData.do
+  - 경기도 안산시_ 외국인주민 직업능력개발교육 현황
+    https://www.data.go.kr/data/3035864/fileData.do
+  - 전남광주통합특별시_ 외국인주민 지원 단체 현황
+    https://www.data.go.kr/data/15124507/fileData.do
