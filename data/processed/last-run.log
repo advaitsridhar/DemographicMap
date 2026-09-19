@@ -1,6 +1,7 @@
+korea_nationality: Ministry of Justice (Korea Immigration Service), registered foreign residents by city/county/district and nationality at 31 December 2023 (시군구별 국적(지역)별 등록외국인 체류현황, data.go.kr dataset 15108413)
   cached moj_registered_foreigners_by_district_2022_2023.zip (0.1 MB)
   2023 시군구별 국적(지역)별 등록외국인 체류 현황.csv: 322,310 bytes
-  have the Ministry of Justice's district file
+  229 units in 17 provinces
   register: 17 provinces listed
     서울특별시: 26 rows
     부산광역시: 17 rows
@@ -19,11 +20,17 @@
     경상북도: 25 rows
     경상남도: 24 rows
     제주특별자치도: 3 rows
-  have the resident register
-  retry 1/4 in 2s :: <urlopen error timed out>
-  retry 2/4 in 4s :: <urlopen error timed out>
-  retry 3/4 in 8s :: <urlopen error timed out>
-  retry 4/4 in 16s :: <urlopen error timed out>
-  retry 5/4 in 32s :: <urlopen error timed out>
-  the Ministry's national table did not answer: download failed: https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003669729&fileDetailSn=1&insertDataPrcus=N
-korea_nationality: still missing the Ministry's national table
+  register: 247 rows, 51,325,329 nationally
+  fetched moj_registered_foreigners_by_nationality_by_year.csv (53,370 bytes)
+  published: 195 nationalities for 2023
+  national: 1,348,626 registered foreigners against 51,325,329 Koreans (2.56%)
+  published: the Ministry's national table gives 1,348,626 registered foreigners (2.56%) against the district file's 1,348,626 (2.56%)
+      Vietnamese         districts   227,930  national   227,930  (0.0% apart)
+      Uzbek              districts    55,239  national    55,239  (0.0% apart)
+      Thai               districts    40,062  national    40,062  (0.0% apart)
+      Taiwanese          districts    17,704  national    17,704  (0.0% apart)
+      Sri Lankan         districts    28,258  national    28,258  (0.0% apart)
+  named: Korean-Chinese, Vietnamese, Chinese, Nepalese, Uzbek, Cambodian, Indonesian, Filipino, Thai, Burmese, American, Mongolian, Sri Lankan, Japanese, Bangladeshi, Kazakh, Russian, Taiwanese, Pakistani, Indian
+  South Jeolla 영광군 (Yeonggwang-gun): no shape; counted in the province only
+  17 provinces, 228 districts
+  wrote data/processed/korea_nationality.json (1240 kB)
