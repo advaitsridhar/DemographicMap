@@ -1,8 +1,2 @@
-malaysia_religion: religion by state and district, MyCensus 2020 via Kawasanku
-  national row matches DOSM's published 2020 figures: Islam 63.5, Buddhism 18.7, Christianity 9.1, Hinduism 6.1, Other religions 0.9, No religion 1.8
-  dashboard: 16 states, 160 districts; population base 2020: 16 states, 160 districts
-  the 16 states, weighted, reproduce the national row
-  districts matched to a state: 160; unmatched: []
-  districts of 16 states, weighted, reproduce their state
-  wrote data/processed/malaysia_religion.json (419 kB)
-  wrote 176 records
+indonesia: ethnicity by province (2010 census) and religion by province and regency, read from the Indonesian Wikipedia
+indonesia: Aceh: rows add to 1,246,716 against the table's total 3,160,728 (39.44%)
