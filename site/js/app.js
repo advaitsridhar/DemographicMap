@@ -662,7 +662,11 @@
   function groupRowHTML(row) {
     const group = row.group;
     const countries = group.countries.length;
-    const areas = `${number(group.units)} area${group.units === 1 ? "" : "s"}`;
+    // A modelled figure is not a figure, so it is not in `units`; it is still
+    // something the map can show, so the row says how many there are.
+    const modelled = group.estimated_units
+      ? ` · ${number(group.estimated_units)} modelled` : "";
+    const areas = `${number(group.units)} area${group.units === 1 ? "" : "s"}${modelled}`;
     const reach = countries === 1 ? `1 country · ${areas}`
                                   : `${number(countries)} countries · ${areas}`;
     const kids = (group.children || []).length;
