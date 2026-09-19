@@ -1,52 +1,122 @@
-probe_page: https://ko.wikipedia.org/wiki/대한민국의_외국인
-  retry 1/4 after 2s :: https://ko.wikipedia.org/wiki/대한민국의_외국인 :: 'ascii' codec can't encode characters in position 10-14: ordinal not in range(128)
-  retry 2/4 after 4s :: https://ko.wikipedia.org/wiki/대한민국의_외국인 :: 'ascii' codec can't encode characters in position 10-14: ordinal not in range(128)
-  retry 3/4 after 8s :: https://ko.wikipedia.org/wiki/대한민국의_외국인 :: 'ascii' codec can't encode characters in position 10-14: ordinal not in range(128)
-  retry 4/4 after 16s :: https://ko.wikipedia.org/wiki/대한민국의_외국인 :: 'ascii' codec can't encode characters in position 10-14: ordinal not in range(128)
-Traceback (most recent call last):
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 636, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1362, in _send_request
-    self.putrequest(method, url, **skips)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1200, in putrequest
-    self._output(self._encode_request(request))
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1280, in _encode_request
-    return request.encode('ascii')
-           ^^^^^^^^^^^^^^^^^^^^^^^
-UnicodeEncodeError: 'ascii' codec can't encode characters in position 10-14: ordinal not in range(128)
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 157, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 145, in main
-    body = http_get(args.url)
-           ^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 657, in http_get
-    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 4 retries: https://ko.wikipedia.org/wiki/대한민국의_외국인
+page: https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&searchWrd=%EC%99%B8%EA%B5%AD%EC%9D%B8%EC%A3%BC%EB%AF%BC
+  139,533 bytes
+  29 matching link(s)
+  - 주민등록 인구통계
+    https://jumin.mois.go.kr/index.jsp
+  - 주민등록,인감
+    https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000052
+  - 예산현황
+    https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000031&nttId=115186
+  - - 주민등록번호 변경제도
+    https://www.mois.go.kr/frt/sub/a06/b06/IDCardChange/screen.do
+  - - 주민등록증
+    https://www.mois.go.kr/frt/sub/a06/b06/IDCard/screen.do
+  - - 재외국민 주민등록
+    https://www.mois.go.kr/frt/sub/a06/b06/foreignIDCard/screen.do
+  - 일일이 누리집 안 찾아도 된다 국가 기록·역사 자료, 인공지능으로 한곳에서 검색
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=sTJ_LNzxboVDSPUrLEgkmBc8gydD-BmojpJdzp2L.node50?bbsId=BBSMSTR_000000000008&amp;nttId=129563
+  - 한성숙 총리, “철저한 준비와 반복적인 훈련이 국민의 생명과 안전 지키는 길”
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=sTJ_LNzxboVDSPUrLEgkmBc8gydD-BmojpJdzp2L.node50?bbsId=BBSMSTR_000000000008&amp;nttId=129561
+  - 아이들의 안전한 학교생활 위해, 개학기 학교 주변 안전관리 현장 점검
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=sTJ_LNzxboVDSPUrLEgkmBc8gydD-BmojpJdzp2L.node50?bbsId=BBSMSTR_000000000008&amp;nttId=129559
+  - 환희의 순간부터 변화한 도시와 일상까지 기록으로 다시 읽는 86·88 국제스포츠대회
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=sTJ_LNzxboVDSPUrLEgkmBc8gydD-BmojpJdzp2L.node50?bbsId=BBSMSTR_000000000008&amp;nttId=129558
+  - 8월 호우 피해 이재민, 추석 전 주거 안정 총력 지원
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=sTJ_LNzxboVDSPUrLEgkmBc8gydD-BmojpJdzp2L.node50?bbsId=BBSMSTR_000000000008&amp;nttId=129557
+  - 따뜻한·안전한 추석대비 민생안정대책 논의, 2026년 제7회 중앙지방정책협의회 개최
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=sTJ_LNzxboVDSPUrLEgkmBc8gydD-BmojpJdzp2L.node50?bbsId=BBSMSTR_000000000008&amp;nttId=129571
+  - 저연차가 만드는 공직문화 변화, 조직문화 새로고침(F5) 3기 새출발!
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=sTJ_LNzxboVDSPUrLEgkmBc8gydD-BmojpJdzp2L.node50?bbsId=BBSMSTR_000000000008&amp;nttId=129570
+  - 8.28.~9.1. 호우 피해 특별재난지역 선포
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=sTJ_LNzxboVDSPUrLEgkmBc8gydD-BmojpJdzp2L.node50?bbsId=BBSMSTR_000000000008&amp;nttId=129569
+  - 「지방자치법」 개정안 국회 통과 자치분권·균형성장 제도적 기반 확대
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=sTJ_LNzxboVDSPUrLEgkmBc8gydD-BmojpJdzp2L.node50?bbsId=BBSMSTR_000000000008&amp;nttId=129553
+  - 재난안전관리본부장, 태풍 대응체계부터 추석 안전까지 빈틈없이 챙긴다
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=sTJ_LNzxboVDSPUrLEgkmBc8gydD-BmojpJdzp2L.node50?bbsId=BBSMSTR_000000000008&amp;nttId=129544
+  - 처음페이지
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=외국인주민&amp;pageIndex=1
+  - 2
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=외국인주민&amp;pageIndex=2
+  - 3
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=외국인주민&amp;pageIndex=3
+  - 4
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=외국인주민&amp;pageIndex=4
+  - 5
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=외국인주민&amp;pageIndex=5
+  - 6
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=외국인주민&amp;pageIndex=6
+  - 7
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=외국인주민&amp;pageIndex=7
+  - 8
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=외국인주민&amp;pageIndex=8
+  - 9
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=외국인주민&amp;pageIndex=9
+  - 10
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=외국인주민&amp;pageIndex=10
+  - 다음페이지
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=외국인주민&amp;pageIndex=11
+  - 마지막페이지
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=외국인주민&amp;pageIndex=1605
+  - 주민등록번호변경위원회
+    http://www.rrncc.go.kr/
+page: https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&searchWrd=%EC%A3%BC%EB%AF%BC%EB%93%B1%EB%A1%9D+%EC%9D%B8%EA%B5%AC
+  139,563 bytes
+  29 matching link(s)
+  - 주민등록 인구통계
+    https://jumin.mois.go.kr/index.jsp
+  - 주민등록,인감
+    https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000052
+  - 예산현황
+    https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000031&nttId=115186
+  - - 주민등록번호 변경제도
+    https://www.mois.go.kr/frt/sub/a06/b06/IDCardChange/screen.do
+  - - 주민등록증
+    https://www.mois.go.kr/frt/sub/a06/b06/IDCard/screen.do
+  - - 재외국민 주민등록
+    https://www.mois.go.kr/frt/sub/a06/b06/foreignIDCard/screen.do
+  - 일일이 누리집 안 찾아도 된다 국가 기록·역사 자료, 인공지능으로 한곳에서 검색
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=9sTr1WEj7-JP5Qnkhdxd5vf5I_1zC5LU30r3rMIJ.node20?bbsId=BBSMSTR_000000000008&amp;nttId=129563
+  - 한성숙 총리, “철저한 준비와 반복적인 훈련이 국민의 생명과 안전 지키는 길”
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=9sTr1WEj7-JP5Qnkhdxd5vf5I_1zC5LU30r3rMIJ.node20?bbsId=BBSMSTR_000000000008&amp;nttId=129561
+  - 아이들의 안전한 학교생활 위해, 개학기 학교 주변 안전관리 현장 점검
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=9sTr1WEj7-JP5Qnkhdxd5vf5I_1zC5LU30r3rMIJ.node20?bbsId=BBSMSTR_000000000008&amp;nttId=129559
+  - 환희의 순간부터 변화한 도시와 일상까지 기록으로 다시 읽는 86·88 국제스포츠대회
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=9sTr1WEj7-JP5Qnkhdxd5vf5I_1zC5LU30r3rMIJ.node20?bbsId=BBSMSTR_000000000008&amp;nttId=129558
+  - 8월 호우 피해 이재민, 추석 전 주거 안정 총력 지원
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=9sTr1WEj7-JP5Qnkhdxd5vf5I_1zC5LU30r3rMIJ.node20?bbsId=BBSMSTR_000000000008&amp;nttId=129557
+  - 따뜻한·안전한 추석대비 민생안정대책 논의, 2026년 제7회 중앙지방정책협의회 개최
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=9sTr1WEj7-JP5Qnkhdxd5vf5I_1zC5LU30r3rMIJ.node20?bbsId=BBSMSTR_000000000008&amp;nttId=129571
+  - 저연차가 만드는 공직문화 변화, 조직문화 새로고침(F5) 3기 새출발!
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=9sTr1WEj7-JP5Qnkhdxd5vf5I_1zC5LU30r3rMIJ.node20?bbsId=BBSMSTR_000000000008&amp;nttId=129570
+  - 8.28.~9.1. 호우 피해 특별재난지역 선포
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=9sTr1WEj7-JP5Qnkhdxd5vf5I_1zC5LU30r3rMIJ.node20?bbsId=BBSMSTR_000000000008&amp;nttId=129569
+  - 「지방자치법」 개정안 국회 통과 자치분권·균형성장 제도적 기반 확대
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=9sTr1WEj7-JP5Qnkhdxd5vf5I_1zC5LU30r3rMIJ.node20?bbsId=BBSMSTR_000000000008&amp;nttId=129553
+  - 재난안전관리본부장, 태풍 대응체계부터 추석 안전까지 빈틈없이 챙긴다
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do;jsessionid=9sTr1WEj7-JP5Qnkhdxd5vf5I_1zC5LU30r3rMIJ.node20?bbsId=BBSMSTR_000000000008&amp;nttId=129544
+  - 처음페이지
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=주민등록 인구&amp;pageIndex=1
+  - 2
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=주민등록 인구&amp;pageIndex=2
+  - 3
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=주민등록 인구&amp;pageIndex=3
+  - 4
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=주민등록 인구&amp;pageIndex=4
+  - 5
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=주민등록 인구&amp;pageIndex=5
+  - 6
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=주민등록 인구&amp;pageIndex=6
+  - 7
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=주민등록 인구&amp;pageIndex=7
+  - 8
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=주민등록 인구&amp;pageIndex=8
+  - 9
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=주민등록 인구&amp;pageIndex=9
+  - 10
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=주민등록 인구&amp;pageIndex=10
+  - 다음페이지
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=주민등록 인구&amp;pageIndex=11
+  - 마지막페이지
+    https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008&amp;searchCnd=&amp;searchWrd=주민등록 인구&amp;pageIndex=1605
+  - 주민등록번호변경위원회
+    http://www.rrncc.go.kr/
