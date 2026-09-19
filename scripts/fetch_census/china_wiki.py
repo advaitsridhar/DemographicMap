@@ -150,14 +150,13 @@ DIVISIONS: list[tuple[str, str, str]] = [
     ("Xinjiang Uyghur Autonomous Region", "Xinjiang", "新疆维吾尔自治区"),
 ]
 
-# Articles beyond a division's own that may carry its census table, as
+# Articles beyond a division's own that carry its census table, as
 # "lang:Title", read with the same standing as the division's own. The
-# Chinese edition keeps a "民族构成列表" page for some provinces -- every
-# nationality with its count from the census yearbook -- under the
-# province's name, so every division's is tried and a missing page is
-# logged and costs nothing; Yunnan's sits under the shorter title.
+# Chinese edition keeps a "民族构成列表" page for every division -- all 56
+# nationalities with their counts from the census yearbook, mostly of the
+# 2000 census, with 2010 for Inner Mongolia and Tibet and 2020 for
+# Guangdong and Yunnan.
 EXTRA: dict[str, list[str]] = {name: [f"zh:{zh}民族构成列表"] for name, _, zh in DIVISIONS}
-EXTRA["Yunnan Province"].append("zh:云南民族")
 
 # The English list article that tabulates the 2020 census for every
 # division: six regional tables of a column pair (count, share) per
@@ -241,8 +240,9 @@ RESIDUAL_WORDS = re.compile(
     r"^(others?|other ethnic groups?|other nationalit(y|ies)|other minorit(y|ies)|"
     r"other ethnicit(y|ies)|other minority groups?|all others?|other groups?|"
     r"other peoples?|其他|其他民族|其它|其它民族|其余民族)$", re.I)
-TOTAL_WORDS = re.compile(r"^(total|all|population|total population|合计|总计|总人口|全部|全省|"
-                         r"全区|全市|(19|20)\d\d census( total)?|census (19|20)\d\d)$", re.I)
+TOTAL_WORDS = re.compile(r"^(total|all|population|total population|合计|总计|总人口|人口总数|"
+                         r"人口合计|总数|全部|全省|全区|全市|(19|20)\d\d census( total)?|"
+                         r"census (19|20)\d\d)$", re.I)
 SUBTOTAL_WORDS = re.compile(
     r"^((all |ethnic |national )?minorit(y|ies)( nationalities| groups| ethnic groups)?|"
     r"non-han|non han|少数民族|各少数民族|少数民族人口)$", re.I)
@@ -375,8 +375,14 @@ def ethnonym(cell: str) -> str | None:
 
 
 def kind(cell: str) -> str:
-    """What a label cell is: a nationality, the residual, a total, or prose."""
+    """What a label cell is: a nationality, the residual, a total, or prose.
+
+    A Chinese label is matched without its spaces, because a line break
+    in the cell ("外国人<br>加入中国籍") comes out as one.
+    """
     text = re.sub(r"[(（].*?[)）]", "", simplified(cell)).strip(" *:")
+    if re.search(r"[一-鿿]", text):
+        text = re.sub(r"\s+", "", text)
     if ethnonym(cell):
         return "group"
     if RESIDUAL_WORDS.match(text):
@@ -434,9 +440,15 @@ def is_ethnic_table(t: dict[str, Any]) -> bool:
 
 
 def year_of(t: dict[str, Any]) -> int | None:
-    """The census year the table says it is, from its caption, header or prose."""
-    for text in (t["caption"], " ".join(t["rows"][0]) if t["rows"] else "",
-                 t["section"], t["prose"]):
+    """The census year the table says it is: its caption first, then its
+    section heading and header row together, then the prose before it.
+
+    The heading and the header are read as one because a "2010年人口普查"
+    section can hold a table whose header compares with 2000; the latest
+    year of the two is the census the table is of.
+    """
+    header = " ".join(t["rows"][0]) if t["rows"] else ""
+    for text in (t["caption"], t["section"] + " " + header, t["prose"]):
         years = [int(y) for y in re.findall(r"(?<!\d)(19[89]\d|20[012]\d)(?!\d)", text)]
         if years:
             return max(years)
@@ -800,11 +812,10 @@ def build_one(name: str, articles: list[tuple[str, str, str, bool]],
             f"Wikipedia article {title!r} transcribes it"
             + (f" (table {t['caption']!r})" if t["caption"] else "") + f". {how}")
     if "remainder" in read:
-        note += (f" The table lists the region's largest nationalities; the "
-                 f"{read['remainder']:,.0f} residents it does not name are written as "
-                 f"{RESIDUAL!r} with its own residual rows"
-                 + (" (" + " and ".join(repr(f) for f in read["folded"]) + ")"
-                    if read["folded"] else "") + ".")
+        note += (f" The table names the region's largest nationalities; the "
+                 f"{read['remainder']:,.0f} residents outside them are {RESIDUAL!r}"
+                 + (", with its " + " and ".join(repr(f) for f in read["folded"])
+                    + " row" if read["folded"] else "") + ".")
     elif RESIDUAL in read["groups"]:
         note += (f" {RESIDUAL!r} is the census's own remainder row"
                  + (", with its " + " and ".join(repr(f) for f in read["folded"])
