@@ -115,12 +115,25 @@ MOIS_SOURCE = ("Ministry of the Interior and Safety, resident registration popul
 MOIS_LICENCE = MOJ_LICENCE
 REGISTER_YEAR, REGISTER_MONTH = "2023", "12"
 ALL = "A"
+DISTRICT_TYPE = "2"
 
-# The Ministry of Justice's published national figure for the same date, to
-# be read on the runner from the Ministry's own release; the national row
+# --- the Ministry of Justice's own national figure -------------------------
+# The Ministry publishes registered foreigners by nationality and year for
+# the whole country as one long cp949 CSV (년, 국적지역, 등록외국인 수; 2011
+# to 2025, some 195 nationalities a year). The 2023 rows are the published
+# national total the district file is checked against: the foreign share
 # rebuilt from the 250 units must sit within NATIONAL_TOLERANCE points of
-# the share it gives. Filled in from the probe that reads it.
-PUBLISHED: dict[str, int] = {}
+# the population of the one the Ministry prints, or the district file is
+# the wrong thing; a smaller difference is published and stated on every
+# row, by the owner's instruction.
+MOJ_NATIONAL_DATASET = "https://www.data.go.kr/data/15100019/fileData.do"
+MOJ_NATIONAL_URL = ("https://www.data.go.kr/cmm/cmm/fileDownload.do"
+                    "?atchFileId=FILE_000000003669729&fileDetailSn=1&insertDataPrcus=N")
+MOJ_NATIONAL_FILE = KEEP / "moj_registered_foreigners_by_nationality_by_year.csv"
+MOJ_NATIONAL_SOURCE = ("Ministry of Justice, registered foreign residents by nationality by "
+                       "year (연도별 등록외국인 국적(지역)별 현황, data.go.kr dataset 15100019)")
+COL_YEAR, COL_NATIONALITY, COL_COUNT = "년", "국적지역", "등록외국인"
+TOTAL_ROWS = {"총계", "합계", "계", "총합계", "전체"}
 NATIONAL_TOLERANCE = 0.5     # points of the total population
 SUM_TOLERANCE = 0.3          # points, a unit's shares against 100
 NAMED_MIN = 10_000           # registered residents nationally, to be named
@@ -305,7 +318,7 @@ UNDRAWN: dict[tuple[str, str], str] = {
 # Ministry has used both.
 NATIONALITIES: dict[str, str] = {
     "한국계중국인": "Korean-Chinese", "한국계 중국인": "Korean-Chinese",
-    "중국": "Chinese", "베트남": "Vietnamese", "태국": "Thai",
+    "중국": "Chinese", "베트남": "Vietnamese", "태국": "Thai", "타이": "Thai",
     "우즈베키스탄": "Uzbek", "네팔": "Nepalese", "필리핀": "Filipino",
     "캄보디아": "Cambodian", "인도네시아": "Indonesian", "미국": "American",
     "미얀마": "Burmese", "스리랑카": "Sri Lankan", "몽골": "Mongolian",
@@ -314,7 +327,8 @@ NATIONALITIES: dict[str, str] = {
     "파키스탄": "Pakistani", "대만": "Taiwanese", "타이완": "Taiwanese",
     "키르기즈": "Kyrgyz", "키르기스스탄": "Kyrgyz", "키르기즈스탄": "Kyrgyz",
     "캐나다": "Canadian", "인도": "Indian", "말레이시아": "Malaysian",
-    "동티모르": "East Timorese", "라오스": "Lao", "호주": "Australian",
+    "동티모르": "East Timorese", "티모르민주공화국": "East Timorese", "라오스": "Lao",
+    "호주": "Australian",
     "영국": "British", "홍콩": "Hong Konger", "프랑스": "French", "독일": "German",
     "우크라이나": "Ukrainian", "나이지리아": "Nigerian", "이란": "Iranian",
     "타지키스탄": "Tajik", "튀르키예": "Turkish", "터키": "Turkish",
@@ -543,33 +557,83 @@ def check(units: dict[tuple[str, str], dict[str, int]], register: dict[tuple[str
         raise SystemExit(f"korea_nationality: the provinces' Koreans sum to "
                          f"{national['koreans']:,} against the register's national "
                          f"{register[('', '')]:,}")
-    foreign_total = national["__total__"]
-    share = foreign_total / (foreign_total + national["koreans"]) * 100
-    if PUBLISHED:
-        published = PUBLISHED["foreign"] / (PUBLISHED["foreign"] + PUBLISHED["koreans"]) * 100
-        if abs(share - published) > NATIONAL_TOLERANCE:
-            raise SystemExit(f"korea_nationality: the national foreign share rebuilt from the "
-                             f"districts is {share:.2f}% against a published {published:.2f}%")
-        log(f"  national: {foreign_total:,} registered foreigners against {national['koreans']:,} "
-            f"Koreans ({share:.2f}%); the Ministry publishes {PUBLISHED['foreign']:,} "
-            f"({published:.2f}%)")
-    else:
-        log(f"  national: {foreign_total:,} registered foreigners against {national['koreans']:,} "
-            f"Koreans ({share:.2f}%)")
+    log(f"  national: {national['__total__']:,} registered foreigners against "
+        f"{national['koreans']:,} Koreans "
+        f"({national['__total__'] / (national['__total__'] + national['koreans']) * 100:.2f}%)")
     return {p: dict(v) for p, v in provinces.items()}, koreans, national
+
+
+def read_national(table: list[list[str]], year: int = YEAR) -> dict[str, int]:
+    """{nationality: registered foreigners} for ``year`` from the Ministry's
+    national by-year table, total rows left out."""
+    header = table[0]
+    i_year = column(header, COL_YEAR)
+    i_nat = column(header, COL_NATIONALITY)
+    i_count = column(header, COL_COUNT)
+    out: dict[str, int] = {}
+    for row in table[1:]:
+        if len(row) <= max(i_year, i_nat, i_count) or row[i_year].strip() != str(year):
+            continue
+        label = row[i_nat].strip()
+        if label in TOTAL_ROWS:
+            continue
+        out[label] = out.get(label, 0) + number(row[i_count])
+    if not out:
+        raise SystemExit(f"korea_nationality: the national table has no rows for {year}")
+    return out
+
+
+def published_caveat(national: dict[str, int], published: dict[str, int]) -> str:
+    """The district file's national row against the Ministry's published one.
+
+    Refuses when the foreign share of the population they give differ by
+    more than NATIONAL_TOLERANCE points. Returns the sentence that states a
+    smaller difference, or "" when the two agree exactly.
+    """
+    koreans = national["koreans"]
+    districts = national["__total__"]
+    total = sum(published.values())
+    share = districts / (districts + koreans) * 100
+    printed = total / (total + koreans) * 100
+    if abs(share - printed) > NATIONAL_TOLERANCE:
+        raise SystemExit(f"korea_nationality: the district file's {districts:,} registered "
+                         f"foreigners ({share:.2f}%) are {abs(share - printed):.2f} points from "
+                         f"the Ministry's national {total:,} ({printed:.2f}%); not the same "
+                         "register")
+    by_label: dict[str, int] = {}
+    for label, count in published.items():
+        by_label[NATIONALITIES.get(label, OTHER)] = by_label.get(NATIONALITIES.get(label, OTHER), 0) + count
+    ours: dict[str, int] = {}
+    for col, count in national.items():
+        if col in ("__total__", "koreans"):
+            continue
+        ours[NATIONALITIES.get(col, OTHER)] = ours.get(NATIONALITIES.get(col, OTHER), 0) + count
+    drift = sorted(((abs(ours.get(k, 0) - v) / v, k, ours.get(k, 0), v)
+                    for k, v in by_label.items() if v >= NAMED_MIN), reverse=True)
+    log(f"  published: the Ministry's national table gives {total:,} registered foreigners "
+        f"({printed:.2f}%) against the district file's {districts:,} ({share:.2f}%)")
+    for rel, label, mine, theirs in drift[:5]:
+        log(f"      {label:18} districts {mine:>9,}  national {theirs:>9,}  ({rel * 100:.1f}% apart)")
+    if districts == total:
+        return ""
+    return (f"The Ministry's national table for the same date counts {total:,} registered "
+            f"foreigners ({printed:.1f}% of the population) where the district file sums to "
+            f"{districts:,} ({share:.1f}%), so the foreign share here runs about "
+            f"{printed - share:.1f} points below the national figure.")
 
 
 # ---------------------------------------------------------------------------
 # Records
 # ---------------------------------------------------------------------------
 
-def note_for(name: str, province: str | None, drawn_under: str | None) -> str:
+def note_for(name: str, province: str | None, drawn_under: str | None,
+             caveat: str = "") -> str:
     where = ("this district" if province else "this province")
-    placement = ""
+    placement = f" {caveat}" if caveat else ""
     if drawn_under is not None:
         under = drawn_under or "the country itself"
-        placement = (f" The boundary file draws {name} under {under}; it is a district of "
-                     f"{province}, and is counted in {province}'s row here.")
+        placement += (f" The boundary file draws {name} under {under}; it is a district of "
+                      f"{province}, and is counted in {province}'s row here.")
     return (
         f"Registered foreign residents by country of nationality at {AS_OF} (Ministry of "
         "Justice, 시군구별 국적(지역)별 등록외국인 체류현황) against the resident-registered "
@@ -586,15 +650,20 @@ def note_for(name: str, province: str | None, drawn_under: str | None) -> str:
         f"{DECISION}.")
 
 
-def build(units: dict[tuple[str, str], dict[str, int]], register: dict[tuple[str, str], int]
-          ) -> list[dict[str, Any]]:
+def build(units: dict[tuple[str, str], dict[str, int]], register: dict[tuple[str, str], int],
+          published: dict[str, int] | None = None) -> list[dict[str, Any]]:
     provinces, koreans, national = check(units, register)
+    caveat = published_caveat(national, published) if published else ""
     names = named(national)
-    log(f"  named: {', '.join(NATIONALITIES[c] for c in names)}")
+    log(f"  named: {', '.join(dict.fromkeys(NATIONALITIES[c] for c in names))}")
     sources = [{"field": "ethnicity", "name": MOJ_SOURCE, "url": MOJ_DATASET, "year": YEAR,
                 "license": MOJ_LICENCE},
                {"field": "ethnicity", "name": MOIS_SOURCE, "url": MOIS_DATASET, "year": YEAR,
                 "license": MOIS_LICENCE}]
+    if published:
+        sources.append({"field": "ethnicity", "name": MOJ_NATIONAL_SOURCE + ", the national "
+                        "check", "url": MOJ_NATIONAL_DATASET, "year": YEAR,
+                        "license": MOJ_LICENCE})
     records: list[dict[str, Any]] = []
     for province in SIDO.values():
         if any(r["name"] == province for r in records):
@@ -610,7 +679,7 @@ def build(units: dict[tuple[str, str], dict[str, int]], register: dict[tuple[str
             population=measure(population, year=YEAR,
                                source="resident-registered Koreans plus registered foreigners"),
             ethnicity=shares, ethnicity_year=YEAR, ethnicity_basis="nationality",
-            ethnicity_note=note_for(province, None, None)))
+            ethnicity_note=note_for(province, None, None, caveat)))
     matched: set[tuple[str, str]] = set()
     unmatched: list[str] = []
     for (province, word), counts in sorted(units.items()):
@@ -639,7 +708,7 @@ def build(units: dict[tuple[str, str], dict[str, int]], register: dict[tuple[str
             population=measure(population, year=YEAR,
                                source="resident-registered Koreans plus registered foreigners"),
             ethnicity=shares, ethnicity_year=YEAR, ethnicity_basis="nationality",
-            ethnicity_note=note_for(shape, province, drawn_under)))
+            ethnicity_note=note_for(shape, province, drawn_under, caveat)))
         matched.add((drawn_under if drawn_under is not None else province, shape))
     if unmatched:
         raise SystemExit(f"korea_nationality: units the boundary table does not know: {unmatched}")
@@ -689,15 +758,18 @@ def fetch_moj() -> list[list[str]]:
     return rows_of(found[name])
 
 
-def register_fields(level1: str, level2: str = ALL) -> list[tuple[str, str]]:
+def register_fields(level1: str, level2: str = ALL, *, districts: bool = False
+                    ) -> list[tuple[str, str]]:
     """The form's fields for one month, as its page posts them (the runner's
     probe of statMonth.do printed the inputs): the province level, the
     district level ("A" for every district of the province), the month at
     both ends of the range, and the register's default of every resident
-    (sltUndefType blank)."""
+    (sltUndefType blank). ``sltOrgType`` is the level the listing is made
+    at: 1 lists provinces, DISTRICT_TYPE a province's districts."""
     return [
         ("tableId", "month"), ("category", "month"), ("searchYearMonth", "month"),
-        ("sltOrgType", "1"), ("sltOrgLvl1", level1), ("sltOrgLvl2", level2),
+        ("sltOrgType", DISTRICT_TYPE if districts else "1"),
+        ("sltOrgLvl1", level1), ("sltOrgLvl2", level2),
         ("searchYearStart", REGISTER_YEAR), ("searchMonthStart", REGISTER_MONTH),
         ("searchYearEnd", REGISTER_YEAR), ("searchMonthEnd", REGISTER_MONTH),
         ("sltUndefType", ""), ("sltOrderType", "1"), ("sltOrderValue", "ASC"),
@@ -748,13 +820,13 @@ def post_csv(url: str, fields: list[tuple[str, str]], *, keep: Path | None = Non
     return table
 
 
-def kept(level1: str) -> Path:
-    return KEEP / f"jumin_{REGISTER_YEAR}{REGISTER_MONTH}_{level1}.csv"
+def kept(name: str) -> Path:
+    return KEEP / f"jumin_{REGISTER_YEAR}{REGISTER_MONTH}_{name}.csv"
 
 
 def fetch_register(url: str) -> list[list[list[str]]]:
     """The province listing, then every province's district listing."""
-    provinces = post_csv(url, register_fields(ALL), keep=kept(ALL))
+    provinces = post_csv(url, register_fields(ALL), keep=kept("provinces"))
     listed = [(area, code) for area, code, _ in register_rows(provinces) if area != "전국"]
     log(f"  register: {len(listed)} provinces listed")
     if len(listed) != 17:
@@ -762,11 +834,24 @@ def fetch_register(url: str) -> list[list[list[str]]]:
                          f"{[a for a, _ in listed]}")
     tables = [provinces]
     for area, code in listed:
-        table = post_csv(url, register_fields(code), keep=kept(code))
+        table = post_csv(url, register_fields(code, districts=True),
+                         keep=kept(f"districts_{code}"))
         rows = register_rows(table)
+        if len(rows) < 2:
+            raise SystemExit(f"korea_nationality: the register lists no districts for {area}")
         log(f"    {area}: {len(rows)} rows")
         tables.append(table)
     return tables
+
+
+def fetch_national() -> list[list[str]]:
+    blob = download(MOJ_NATIONAL_URL, MOJ_NATIONAL_FILE, timeout=90).read_bytes()
+    table = rows_of(blob)
+    if not table or COL_YEAR not in table[0][0]:
+        MOJ_NATIONAL_FILE.unlink()
+        raise SystemExit(f"korea_nationality: {MOJ_NATIONAL_URL} answered {len(blob):,} bytes "
+                         "that are not the national table; the copy is discarded")
+    return table
 
 
 def main() -> int:
@@ -787,7 +872,9 @@ def main() -> int:
     log(f"  {len(units)} units in 17 provinces")
     register = read_register(fetch_register(args.register))
     log(f"  register: {len(register)} rows, {register.get(('', ''), 0):,} nationally")
-    records = build(units, register)
+    published = read_national(fetch_national())
+    log(f"  published: {len(published)} nationalities for {YEAR}")
+    records = build(units, register, published)
     log(f"  {sum(1 for r in records if r['level'] == 'admin1')} provinces, "
         f"{sum(1 for r in records if r['level'] == 'admin2')} districts")
     write_json(PROCESSED / OUT, records)

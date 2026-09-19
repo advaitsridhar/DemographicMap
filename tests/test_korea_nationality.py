@@ -225,12 +225,7 @@ class TheRecords(unittest.TestCase):
         units = every_unit()
         cls.units = m.read_moj(moj_rows(units))
         cls.register = register_for(units)
-        saved = dict(m.PUBLISHED)
-        m.PUBLISHED.clear()
-        try:
-            cls.records = m.build(cls.units, cls.register)
-        finally:
-            m.PUBLISHED.update(saved)
+        cls.records = m.build(cls.units, cls.register)
 
     def test_seventeen_provinces_and_228_districts(self):
         levels = [r["level"] for r in self.records]
@@ -289,16 +284,34 @@ class TheRecords(unittest.TestCase):
         with self.assertRaises(SystemExit):
             m.build(self.units, register)
 
-    def test_the_published_total_is_enforced(self):
-        saved = dict(m.PUBLISHED)
-        m.PUBLISHED.clear()
-        m.PUBLISHED.update({"foreign": 1, "koreans": 1})
-        try:
-            with self.assertRaises(SystemExit):
-                m.build(self.units, self.register)
-        finally:
-            m.PUBLISHED.clear()
-            m.PUBLISHED.update(saved)
+    def test_the_published_total_is_enforced_and_a_small_difference_is_stated(self):
+        national = m.check(self.units, self.register)[2]
+        # The Ministry's own table, agreeing exactly: no sentence.
+        agreeing = {"한국계중국인": national["한국계중국인"], "베트남": national["베트남"],
+                    "중국": national["__total__"] - national["한국계중국인"] - national["베트남"]}
+        self.assertEqual(m.published_caveat(national, agreeing), "")
+        # A few thousand more in the national table than the districts sum
+        # to: published, and said on every row.
+        close = dict(agreeing)
+        close["중국"] += 5_000
+        sentence = m.published_caveat(national, close)
+        self.assertIn(f"{sum(close.values()):,} registered foreigners", sentence)
+        records = m.build(self.units, self.register, close)
+        self.assertTrue(all(sentence in r["ethnicity_note"] for r in records))
+        self.assertEqual(len(records[0]["sources"]), 3)
+        # Half the population: not the same register.
+        with self.assertRaises(SystemExit):
+            m.published_caveat(national, {"중국": national["koreans"]})
+
+    def test_the_national_table_is_read_for_one_year_without_its_totals(self):
+        table = [["년", "국적지역", "등록외국인 수"],
+                 ["2022", "중국", "1"], ["2023", "총계", "999"],
+                 ["2023", "중국", "200000"], ["2023", "한국계중국인", "230000"],
+                 ["2023", "타이완", "5"]]
+        self.assertEqual(m.read_national(table),
+                         {"중국": 200000, "한국계중국인": 230000, "타이완": 5})
+        with self.assertRaises(SystemExit):
+            m.read_national(table, 2019)
 
 
 class Integration(unittest.TestCase):
