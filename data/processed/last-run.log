@@ -1,15 +1,83 @@
-page: https://www.data.go.kr/data/3033301/fileData.do
-  156,409 bytes
-  2 distinct match(es) for '(?:fileDownload.do|fileDataDown|atchFileId|selectFileDataDownload|publicDataDetailPk|fileDetailSn)[^<]{0,300}'
-    atchFileId: $('#limitAtchFileId').val(),
-    				fileDetailSn: $('#limitFileDetailSn').val()
-    			},
-    			success: function(res) {
-    				if (res.success) {
-    					alert("인증이 완료되었습니다. 다시 다운로드 시도해주세요.");		
-    				} else {
-    					alert('처리 중 오류가 발생했습니다. 다시 시도해 주십시오.');
-    				}
-					closeFileLimitMod
-    publicDataDetailPk" name="publicDataDetailPk" value="uddi:77279257-02b1-4ca0-9e09-efefd780a88e_201907191550" />
-    
+page: https://www.mois.go.kr/frt/sub/a05/foreigner/screen.do
+  122,430 bytes
+  80 distinct match(es) for 'href=[^>]*(?:bbs|Board|nttId|xls)[^>]{0,200}'
+    href="/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000031&nttId=115186" title="예산현황 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000002" title="감사(감찰)계획 및 결과공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000009" title="설명자료 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000012"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000012" title="간행물 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000013" title="통계 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000013" title="통계연보&middot;주제별 통계 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000014" title="승인통계 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000015" title="참고자료 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000016"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000016" title="훈령&middot;예규&middot;고시 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000018" title="법령자료실 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000030" title="정책관리 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000031" title="기획&middot;예산&middot;국회 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000032" title="행정관리 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000033" title="입법&middot;송무&middot;규제혁신 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000034" title="성과 및 고객관리 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000035" title="정보자원&middot;보안 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000036" title="국제협력지원 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000037" title="행정절차 지원&middot;교육,행정사 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000039" title="국민참여혁신 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000040" title="민원제도 혁신 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000040" title="민원제도혁신 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000045" title="정보화 표준&middot;지침 자료실 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000049" title="공직선거 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000050" title="주민참여 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000051" title="여성공무원정책 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000052" title="주민등록,인감 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000054"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000055" title="지방자치제도 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000056" title="자치법규 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000057" title="민간협력 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000061" title="지방계약, 회계예규 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000062" title="지방공기업제도&middot;운영 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000063" title="공유재산&middot;물품관리 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000072" title="정부포상 추천대상자 공개검증 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000165" title="민간보조금 현황공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000185" title="업무추진비 공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000186" title="업무추진비 공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000187" title="업무추진비 공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000188" title="업무추진비 공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000189" title="업무추진비 공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000190" title="업무추진비 공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000195" title="반부패 &middot; 청렴현황 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000196" title="반부패 &middot; 청렴시책자료 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000245" title="주요업무계획 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000306" title="업무추진비 공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000307" title="업무추진비 공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000308" title="업무추진비 공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000327" title="비상대비 참고자료실 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000336"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000336" class="ibtn red"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000336" title="안전관리일일상황 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000410" title="업무추진비 공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000430" title="국무·차관회의 회의록"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000510" title="업무추진비 공개 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000520" title="공중화장실 자료실 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000540" title="자료실 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000570" title="추모지원 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000572" title="최신소식 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000610" title="개인정보 목적 외 이용 및 제3자 제공 페이지로 이동"
+    href="/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000620" title="정보공개심의회 결과 공개 페이지로 이동"
+    href="/frt/bbs/type002/commonSelectBoardList.do?bbsId=BBSMSTR_000000000010"
+    href="/frt/bbs/type002/commonSelectBoardList.do?bbsId=BBSMSTR_000000000010" title="사진자료실 페이지로 이동"
+    href="/frt/bbs/type002/commonSelectBoardList.do?bbsId=BBSMSTR_000000000205" title="카드뉴스 페이지로 이동"
+    href="/frt/bbs/type002/commonSelectBoardList.do?bbsId=BBSMSTR_000000000205" title="홍보자료 페이지로 이동"
+    href="/frt/bbs/type002/commonSelectBoardList.do?bbsId=BBSMSTR_000000000215" title="정보 그림 페이지로 이동"
+    href="/frt/bbs/type002/commonSelectBoardList.do?bbsId=BBSMSTR_000000000216" title="웹툰 페이지로 이동"
+    href="/frt/bbs/type002/commonSelectBoardList.do?bbsId=BBSMSTR_000000000530" title="국민행동요령 페이지로 이동"
+    href="/frt/bbs/type002/commonSelectBoardList.do?bbsId=BBSMSTR_000000000590" title="주요 성과뉴스 페이지로 이동"
+    href="/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008"
+    href="/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008" title="보도자료 페이지로 이동"
+    href="/frt/bbs/type013/commonSelectBoardList.do?bbsId=BBSMSTR_000000000006"
+    href="/frt/bbs/type013/commonSelectBoardList.do?bbsId=BBSMSTR_000000000006" title="새소식 페이지로 이동"
+    href="/frt/bbs/type013/commonSelectBoardList.do?bbsId=BBSMSTR_000000000006" title="알립니다 페이지로 이동"
+    href="/frt/bbs/type013/commonSelectBoardList.do?bbsId=BBSMSTR_000000000450" title="중앙지방협력회의 회의록"
+    href="/frt/bbs/type014/commonSelectBoardList.do?bbsId=BBSMSTR_000000000003"
+    href="/frt/bbs/type017/commonSelectBoardList.do?bbsId=BBSMSTR_000000000144" title="발주계획 및 계약현황 페이지로 이동"
+    href="http://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/csc/bbs_conf.jsp?bbs_no=26&emgPage=Y&menuSeq=735" title="재해연보 새창으로 이동" target="_blank"
+    href="http://www.wa.or.kr/board/list.asp?search=link_url&SearchString=www.mois.go.kr&BoardID=0006" target="_blank" title="새창에서 열기" class="mark" style="max-width: 115px;"
