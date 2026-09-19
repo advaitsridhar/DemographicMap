@@ -38,8 +38,17 @@ USER_AGENT = (
 NOT_COLLECTED = "not_collected"   # country legally/administratively never gathers it
 NOT_AVAILABLE = "not_available"   # exists somewhere, but not in this build
 NOT_APPLICABLE = "not_applicable"  # meaningless for this entity (e.g. capital of a county)
+# An estimate is a gap that carries a guess. Nothing has been read for the
+# unit; what is here follows from figures read elsewhere, and the status says
+# by what step. It sits among the gap statuses on purpose: every consumer
+# that asks "is there a real value" -- the choropleth, the parent sums, the
+# group index, the filter counts -- must answer no, and does, because is_gap
+# says so. Only code that asks for the estimate by name gets it.
+DERIVED = "derived"     # follows from published figures by arithmetic or geometry alone
+MODELLED = "modelled"   # follows from published figures under a stated assumption
 
-GAP_STATUSES = {NOT_COLLECTED, NOT_AVAILABLE, NOT_APPLICABLE}
+GAP_STATUSES = {NOT_COLLECTED, NOT_AVAILABLE, NOT_APPLICABLE, DERIVED, MODELLED}
+ESTIMATE_STATUSES = {DERIVED, MODELLED}
 
 
 def gap(status: str, note: str | None = None) -> dict[str, Any]:
@@ -54,6 +63,33 @@ def gap(status: str, note: str | None = None) -> dict[str, Any]:
 
 def is_gap(value: Any) -> bool:
     return value is None or (isinstance(value, dict) and value.get("status") in GAP_STATUSES)
+
+
+def is_estimate(value: Any) -> bool:
+    """A gap that carries a guess: derived or modelled, never read."""
+    return isinstance(value, dict) and value.get("status") in ESTIMATE_STATUSES
+
+
+def estimate(status: str, shares: Iterable[dict[str, Any]], *, method: str,
+             inputs: Iterable[str], note: str) -> dict[str, Any]:
+    """An estimate, built the one way that makes it recognisable everywhere.
+
+    The shares go under ``estimate`` and not under the field's own shape, so
+    no reader that expects a list finds one. The method names the step that
+    produced it, the inputs name the records it was produced from, and the
+    note is what the panel prints: it must say that nothing was read for this
+    unit and that the figure is not evidence of what any census says.
+    """
+    if status not in ESTIMATE_STATUSES:
+        raise ValueError(f"not an estimate status: {status!r}")
+    if not note:
+        raise ValueError("an estimate must say what it is")
+    rows = [{"group": row["group"], "pct": row["pct"]} for row in shares
+            if isinstance(row, dict) and row.get("group") and row.get("pct") is not None]
+    if not rows:
+        raise ValueError("an estimate must carry shares")
+    return {"status": status, "estimate": rows, "method": method,
+            "inputs": list(inputs), "note": note}
 
 
 def dated(value: Any, year: int | None) -> int | None:
@@ -828,6 +864,13 @@ ALSO_KNOWN_AS: dict[tuple[str, str], tuple[str, ...]] = {
     # Renamed for the general in 1942; the older name is still the shape's.
     ("DOM", "La Estrelleta"): ("Elías Piña Province", "Elías Piña"),
     # "Al Asimah" is Arabic for "the Capital", which is what the source calls it.
+    # Renamed Turkistan in 2018; the 2021 census row carries the new name and
+    # the boundary file the old. 3.4 million people, the country's most
+    # populous region, blank beside fifteen filled ones -- and the one case
+    # measured in docs/MODELLING.md that would have qualified for an exact
+    # residual, since the census publishes the national total and every other
+    # region. Read directly instead, which is always better than derived.
+    ("KAZ", "South Kazakhstan Region"): ("Turkistan Region", "Turkistan"),
     ("KWT", "Al Asimah"): ("Capital Governorate",),
     ("MAR", "Fez-Meknes"): ("Fès-Meknès",),
     # Transnistria under the name Moldova gives it in law.

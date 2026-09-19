@@ -227,12 +227,20 @@ variation.
 
 ## 6. How a modelled value must be represented
 
-The repository already has the invariant that does most of this work: **a
-composition is a `list`; anything else is a gap.** Every existing consumer —
-the choropleth, `check_percentages`, the group index, the filter counts —
-keys off `isinstance(value, list)`.
+The repository's invariant is narrower than it first looks. A composition is
+a `list`; but a dict is a gap **only when its status is one the code knows**.
+`is_gap` in Python and `gapStatus` in the browser both fall through to
+*present* for a status they have not seen, so an unregistered `modelled` dict
+would have been painted as read data — the exact failure this document exists
+to prevent. `derived` and `modelled` are therefore registered in both gap
+sets, and a test on each side pins that.
 
-So a modelled value must be **a dict with a status, never a list**:
+With that done, every existing consumer — the choropleth,
+`check_percentages`, the group index, the filter counts, the parent sums —
+treats an estimate as a gap until something explicitly opts in.
+
+So a modelled value must be **a dict with a registered status, never a
+list**:
 
 ```json
 {
@@ -248,9 +256,9 @@ So a modelled value must be **a dict with a status, never a list**:
 }
 ```
 
-This is not decoration. Because it is a dict, **every existing code path
-treats it as a gap until something explicitly opts in** — which is the correct
-default and comes for free from the current architecture. Then, deliberately:
+This is not decoration. Because the status is registered, **every existing
+code path treats it as a gap until something explicitly opts in**. Then,
+deliberately:
 
 - **Never** in the dominant-group choropleth on the same footing as read data.
   At the very best measured accuracy, 1 unit in 12 would be painted the wrong
@@ -276,6 +284,46 @@ coverage improves, the numbers move, and the gate must be re-derived rather
 than inherited.
 
 ---
+
+## 7b. What Tiers 0 and 1 yield today — measured after building them
+
+The tiers were built and run against the live data. This is what they
+produced, and it is smaller than the tier table in section 1 suggests, for
+reasons worth knowing.
+
+| Step | Fired | Result |
+|---|---:|---|
+| Union pooled (`SHAPE_IS_UNION_OF`) | 2 shapes | Kavango: religion and ethnicity from the two Afrobarometer halves, population 341,687 from Wikidata's. Southern Grenadine Islands: population 6,900. Written as sums, the way a parent is. |
+| Split written as estimate (`ROW_COVERS_SHAPES`) | 1 field | Bueng Kan's religion, `modelled` from Nong Khai's 2000 row. |
+| Single-unit inheritance (Tier 0) | 2 fields | Monaco's religion and ethnicity, `derived` from the national row. |
+| Exact residual (Tier 0) | **0 of 7** | Every candidate refused: *the national figure and the units' come from different sources.* |
+
+**The residual tier is empty in practice, and the reason is structural.** The
+nine candidates in section 1 all had the same shape: a Factbook national row
+over Afrobarometer unit rows. A national figure counted by one body minus unit
+figures counted by another is mostly the disagreement between the two bodies,
+and the pass refuses it by name. The one case that *would* have passed —
+Kazakhstan, where the 2021 census publishes the national total and fifteen of
+sixteen regions from one table — turned out not to be a residual at all: the
+sixteenth region was blank because the census calls it Turkistan and the
+boundary file South Kazakhstan. An alias read it directly, 3.4 million people,
+which is better than any derivation. **When a parent and all-but-one of its
+children are known, look for the join failure before the subtraction.**
+
+**The geometric cases mostly carry only population.** Ennedi and the Malagasy
+provinces exist in the sources as Wikidata rows with no composition, so a
+split there would model nothing but a head count, and Ennedi has none to
+split. Of the four split/merge cases named in `SOURCES.md`, one carried
+compositions worth pooling (Kavango) and one a composition worth copying
+(Bueng Kan). The machinery is general and declarative, so the next case is one
+line; but the yield today is three estimates and two pooled shapes, and a
+methodology that promised more would be promising what the sources do not
+hold.
+
+Everything above passed the checks that matter: no estimate sits on a field
+the country does not collect (`check_no_estimate_on_policy_field` is fatal),
+no estimate rolls into a parent, and the field-level diff against the previous
+build gained three real compositions and lost none.
 
 ## 8. Recommendation
 

@@ -5123,6 +5123,54 @@ is already ambiguous. These are the one class where a declaration would have
 declaration that does nothing is worse than the gap it claims to close,
 because it reads as though the question has been settled.
 
+## Derived values: what follows without reading more
+
+`docs/MODELLING.md` measures what modelling the blank regions could and could
+not do, and recommends building only the part that is arithmetic or geometry.
+That part is built, and everything it writes is an *estimate* in
+`common.py`'s sense: a gap that carries a guess, with status `derived` or
+`modelled`, shares under `estimate` rather than under the field, and a note
+saying nothing was read for the unit. Both statuses are registered as gaps in
+Python and in the browser, so the choropleth, the group index, the filter
+counts and the parent sums all treat an estimate as a gap; the panel shows it
+under its own label, after the sentence that says what it is.
+
+**Pooled unions.** Namibia split Kavango into East and West in 2013 and CGAZ
+still draws one Kavango; Afrobarometer surveys each half and Wikidata counts
+each. `SHAPE_IS_UNION_OF` declares the parts, and the build pools them within
+each source file — respondents with respondents, people with people — into
+one row named for the shape. Kavango now carries religion and ethnicity from
+the survey and a population of 341,687 from Wikidata; the Southern Grenadine
+Islands carry Carriacou's and Petite Martinique's 6,900 people. A pooled row
+is a sum of published figures and is written as one, the way a parent summed
+from its children is.
+
+**Declared splits.** Bueng Kan was carved from Nong Khai in 2011; the 2000
+census row for Nong Khai counted both. `ROW_COVERS_SHAPES` declares that, and
+the build gives Bueng Kan a `modelled` copy of Nong Khai's religion — 99.1%
+Buddhist — on the assumption that the old province was uniform inside, which
+`MODELLING.md` measures to be false in about 45% of countries. The note says
+so. Nong Khai keeps the published row untouched.
+
+**Single-unit countries.** Monaco is drawn as one first-level unit, so its
+religion and ethnicity are the country's own figures, written `derived`.
+
+**Exact residuals: built, and empty.** Where a country's composition and
+every unit's but one are known, the missing unit follows by subtraction — if
+the national figure and the units' come from the same source, their
+populations agree, the units name no group the national figure lacks, and no
+share goes negative. Seven candidates, seven refusals, all on the first test:
+a Factbook national over Afrobarometer units, whose difference is the
+disagreement between two bodies and not a place. The one country that would
+have passed, Kazakhstan, was a join failure instead — the 2021 census calls
+the region Turkistan and the boundary file South Kazakhstan — and reads
+directly now, 3.4 million people. When a parent and all-but-one of its
+children are known, look for the unmatched name before the subtraction.
+
+An estimate is never written on a field the country does not collect.
+`check_no_estimate_on_policy_field` runs after every pass and fails the build
+if one is.
+
 ## Summing a parent from its children
 
 Ladakh became a union territory in 2019, so the 2011 census that supplies
