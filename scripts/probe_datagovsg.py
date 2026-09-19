@@ -257,7 +257,7 @@ def main() -> int:
         terms = [t for t in args.search.lower().split() if len(t) > 2]
         log(f"\n=== searching the catalogue for {terms}")
         matches = catalogue(terms, key, args.throttle, args.per_page)
-        for entry in matches[:40]:
+        for entry in matches:
             log(f"  {entry.get('datasetId')}  {entry.get('name')}")
         if matches:
             first = matches[0]
