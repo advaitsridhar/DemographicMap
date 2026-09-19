@@ -18,9 +18,15 @@ count -- under ``ethnicity_basis: "nationality"``, because a passport is not
 an ethnicity: Japanese nationals include naturalised citizens and people of
 any ancestry, and the Ainu, Ryukyuans and long-settled Koreans who hold
 Japanese nationality are all "Japanese" here. The reader checks the table
-against itself (the 47 prefectures must sum to its own 全国 row) and against
-the Statistics Bureau's published national figures (``PUBLISHED``), and
-refuses to write anything if either disagrees.
+against itself (the 47 prefectures must sum to its own 全国 row, the
+thirteen nationalities to its foreign total) and refuses to write anything
+if they do not: that is a table that is the wrong thing. It then checks the
+全国 row against the national figures the Statistics Bureau printed in the
+census's 結果の概要 (``PUBLISHED``): a composition more than half a point
+away is also the wrong table, but a count that differs by less is published
+and the difference goes into every prefecture's ``ethnicity_note`` in one
+sentence, by the owner's instruction, rather than holding the prefectures
+back over a summary.
 
 **Religion is modelled.** Nothing counts religion by prefecture in a way
 that partitions a population: the one official statistic, the Agency for
@@ -103,18 +109,28 @@ NATIONALITY_CODES: dict[str, str] = {
 }
 CODE_TOTAL, CODE_FOREIGN, CODE_UNKNOWN = "0", "1", "3"
 
-# The Statistics Bureau's published national figures for the same census
-# (人口等基本集計 結果の概要, 30 November 2021): the foreign population and the
-# ten nationalities it prints. The table's own 全国 row must reproduce each
-# of them exactly, and the 47 prefectures summed must reproduce the national
-# composition within NATIONAL_TOLERANCE points, or nothing is written.
+# The Statistics Bureau's printed national figures for the same census,
+# read from 令和２年国勢調査 人口等基本集計結果 結果の概要 (30 November 2021),
+# section IV, pages 33 and 35 (the runner's probe of PUBLISHED_URL). They are
+# a different universe from the table: the 概要's headline counts are 不詳補完値,
+# in which the 2,202,419 people recorded as neither Japanese nor foreign are
+# allocated to one or the other, so its foreign population is 2,747,137 where
+# the table records 2,402,460. The total population is the same count in both
+# and must match exactly, or the table is the wrong thing; the imputed
+# Japanese and foreign counts must sum to it; and the foreign share the
+# imputation gives must sit within NATIONAL_TOLERANCE points of the share this
+# composition gives, or the table is the wrong thing. Inside that tolerance
+# the difference is published and stated on every prefecture in one sentence
+# (``imputation_caveat``), by the owner's instruction of 19 September 2026.
+# Section VII of the same document prints the nationalities; the probe's page
+# cap stopped short of it, and no second probe was spent.
+PUBLISHED_URL = "https://www.stat.go.jp/data/kokusei/2020/kekka/pdf/outline_01.pdf"
 PUBLISHED: dict[str, int] = {
-    "foreign": 2_402_460,
-    "Chinese": 667_475, "Korean": 375_247, "Vietnamese": 320_805,
-    "Filipino": 209_183, "Brazilian": 166_616, "Nepalese": 74_704,
-    "Indonesian": 43_853, "American": 42_758, "Thai": 33_896, "Peruvian": 32_215,
+    "total": 126_146_099,
+    "japanese_imputed": 123_398_962,
+    "foreign_imputed": 2_747_137,
 }
-NATIONAL_TOLERANCE = 0.5     # points, national composition rebuilt from prefectures
+NATIONAL_TOLERANCE = 0.5     # points, foreign share: imputed against recorded
 SUM_TOLERANCE = 0.3          # points, a prefecture's shares against 100
 
 # --- the survey: the national prior -----------------------------------------
@@ -296,8 +312,31 @@ def languages_from(nationality: dict[str, float], *, floor: float = 0.0005
 # Checks
 # ---------------------------------------------------------------------------
 
-def check_nationality(table: dict[str, dict[str, int]]) -> None:
-    """The census table against itself and against the Bureau's published figures."""
+def imputation_caveat(nat: dict[str, int]) -> tuple[float, str]:
+    """(points between the imputed and the recorded foreign share, the sentence
+    that states the difference). ``nat`` is the table's 全国 row."""
+    recorded = nat[CODE_FOREIGN] / (nat["2"] + nat[CODE_FOREIGN]) * 100
+    imputed = PUBLISHED["foreign_imputed"] / PUBLISHED["total"] * 100
+    to_foreign = PUBLISHED["foreign_imputed"] - nat[CODE_FOREIGN]
+    sentence = (
+        "The Bureau's 結果の概要 headline puts foreign nationals at "
+        f"{PUBLISHED['foreign_imputed']:,} ({imputed:.1f}% of {PUBLISHED['total']:,}) against "
+        f"the {nat[CODE_FOREIGN]:,} ({recorded:.1f}%) this table records, because the headline "
+        f"is a 不詳補完値 that allocates the {nat[CODE_UNKNOWN]:,} people of unstated status, "
+        f"{to_foreign:,} of them to foreign; shares here are of recorded nationalities only, "
+        f"so the foreign share runs about {imputed - recorded:.1f} points low nationally.")
+    return imputed - recorded, sentence
+
+
+def check_nationality(table: dict[str, dict[str, int]]) -> str:
+    """The census table against itself, then against the Bureau's printed figures.
+
+    Refuses a table that is the wrong thing: prefectures that do not sum to
+    its own 全国 row, nationalities that do not sum to its foreign total, a
+    total that is not the census's, or a foreign share more than
+    NATIONAL_TOLERANCE points from the one the Bureau's imputation prints.
+    Returns the sentence that states the remaining difference.
+    """
     nat = table[NATIONAL]
     for code, label in NATIONALITY_CODES.items():
         summed = sum(table[p][code] for p in PREFECTURES)
@@ -310,26 +349,23 @@ def check_nationality(table: dict[str, dict[str, int]]) -> None:
                          f"table's foreign total {nat[CODE_FOREIGN]:,}")
     if nat[CODE_TOTAL] != nat["2"] + nat[CODE_FOREIGN] + nat[CODE_UNKNOWN]:
         raise SystemExit("japan: Japanese + foreign + unknown is not the table's total")
-    by_label = {label: nat[code] for code, label in NATIONALITY_CODES.items()}
-    by_label["foreign"] = nat[CODE_FOREIGN]
-    wrong = [f"{k}: table {by_label[k]:,}, published {v:,}"
-             for k, v in PUBLISHED.items() if by_label[k] != v]
-    if wrong:
-        raise SystemExit("japan: the table's national row does not reproduce the Bureau's "
-                         "published figures: " + "; ".join(wrong))
-    # And the composition rebuilt from the prefectures, in points.
-    known = {label: nat[code] for code, label in NATIONALITY_CODES.items()}
-    denominator = sum(known.values())
-    rebuilt = {label: sum(table[p][code] for p in PREFECTURES) / denominator * 100
-               for code, label in NATIONALITY_CODES.items()}
-    published = {"Japanese": known["Japanese"] / denominator * 100}
-    published.update({k: v / denominator * 100 for k, v in PUBLISHED.items() if k != "foreign"})
-    worst = max(abs(rebuilt[k] - published[k]) for k in published)
-    if worst > NATIONAL_TOLERANCE:
-        raise SystemExit(f"japan: the national composition rebuilt from the prefectures is "
-                         f"{worst:.2f} points from the published one")
-    log(f"  nationality: the 47 prefectures reproduce the table's national row and the "
-        f"Bureau's published figures; rebuilt national composition within {worst:.3f} points")
+    if nat[CODE_TOTAL] != PUBLISHED["total"]:
+        raise SystemExit(f"japan: the table's total {nat[CODE_TOTAL]:,} is not the census's "
+                         f"published {PUBLISHED['total']:,}")
+    if PUBLISHED["japanese_imputed"] + PUBLISHED["foreign_imputed"] != PUBLISHED["total"]:
+        raise SystemExit("japan: the published imputed Japanese and foreign counts do not "
+                         "sum to the published total")
+    if nat[CODE_FOREIGN] > PUBLISHED["foreign_imputed"]:
+        raise SystemExit(f"japan: the table records {nat[CODE_FOREIGN]:,} foreign nationals, "
+                         f"more than the {PUBLISHED['foreign_imputed']:,} the imputation prints")
+    points, sentence = imputation_caveat(nat)
+    if abs(points) > NATIONAL_TOLERANCE:
+        raise SystemExit(f"japan: the foreign share the Bureau's imputation prints is "
+                         f"{points:.2f} points from this table's; not the same census")
+    log(f"  nationality: the 47 prefectures reproduce the table's national row; total "
+        f"{nat[CODE_TOTAL]:,} is the published one; the imputed foreign share is "
+        f"{points:+.2f} points from the recorded one (stated on every prefecture)")
+    return sentence
 
 
 def check_believers(table: dict[str, dict[str, int]], population: dict[str, int]) -> None:
@@ -447,33 +483,26 @@ def religion_estimate(code: str, believers: dict[str, dict[str, int]]
     japanese, name = PREFECTURES[code]
     ratio_text = ", ".join(f"{g} x{ratios[g]:.2f}" for g in PRIOR)
     held_text = ("" if not held else
-                 f" {' and '.join(held)} came out above the stated bound "
-                 f"({', '.join(f'{g} {CAPS[g]:.0f}%' for g in held)}) and "
-                 f"{'were' if len(held) > 1 else 'was'} held there, the other traditions "
-                 "rescaled.")
+                 f"; {' and '.join(held)} came out above the bound and "
+                 f"{'were' if len(held) > 1 else 'was'} held there, the rest rescaled")
     note = (
-        "MODELLED, not read: no census or survey publishes religion for this prefecture, "
-        "and this figure is not evidence of what any census says. It is a national "
-        f"self-identification survey tilted by an official registration count. Prior: {PRIOR_SOURCE}, "
-        f"which asked adults whether they usually practise a religion and found Buddhism "
-        f"{PRIOR['Buddhism']:.0f}%, Shinto {PRIOR['Shinto']:.0f}%, Christianity "
-        f"{PRIOR['Christianity']:.0f}%, other {PRIOR['Other religions']:.0f}%, no religion "
-        f"{PRIOR_NONE:.0f}%, no answer {PRIOR_NO_ANSWER:.0f}% (the last left out and the rest "
-        f"scaled to 100). Signal: {BELIEVERS_SOURCE}, which counts memberships as religious "
-        "corporations report them against the prefecture where each is registered -- "
-        f"{believers[NATIONAL][TRADITION_TOTAL]:,} believers nationally against about 124 "
-        "million people -- and so is used only relatively: each tradition's share of this "
-        f"prefecture's {believers[code][TRADITION_TOTAL]:,} reported believers divided by "
-        f"its share of the nation's, clipped to between 1/{TILT_BOUND:.0f} and {TILT_BOUND:.0f} "
-        f"({ratio_text}), multiplies the survey's share for that tradition; the four are "
-        "then rescaled to the survey's affiliated total, and no religion is held at the "
-        "survey's national figure because no source gives it by prefecture. Bounds: "
-        f"Christianity at most {CAPS['Christianity']:.0f}%, Shinto at most {CAPS['Shinto']:.0f}%."
-        f"{held_text} The result sits {moved:.1f} points from the national prior. No backtest "
-        "is possible: there is no prefecture-level self-identification figure to score this "
-        f"against. Written by the map owner's decision of {DECISION} that Japan's prefectures "
-        "should carry stated models rather than stay blank; a survey of this prefecture's "
-        "residents replaces it when one is read.")
+        "MODELLED, not read: no census or survey gives religion for this prefecture, and "
+        "this is not evidence of what any census says. It is NHK's ISSP 2018 national "
+        f"self-identification survey (Buddhism {PRIOR['Buddhism']:.0f}%, Shinto "
+        f"{PRIOR['Shinto']:.0f}%, Christianity {PRIOR['Christianity']:.0f}%, other "
+        f"{PRIOR['Other religions']:.0f}%, no religion {PRIOR_NONE:.0f}%, no answer "
+        f"{PRIOR_NO_ANSWER:.0f}% left out) tilted by the Agency for Cultural Affairs' "
+        f"宗教統計調査 believers by prefecture at {BELIEVERS_ASOF}, a membership count of "
+        f"{believers[NATIONAL][TRADITION_TOTAL]:,} in a country of 126 million that is used "
+        "only relatively: each tradition's share of this prefecture's "
+        f"{believers[code][TRADITION_TOTAL]:,} reported believers over its share of the "
+        f"nation's, clipped to 1/{TILT_BOUND:.0f}-{TILT_BOUND:.0f} ({ratio_text}), scales the "
+        "survey's share, the four are rescaled to the survey's affiliated total, and no "
+        "religion is held at the national figure because nothing gives it by prefecture. "
+        f"Bounds: Christianity at most {CAPS['Christianity']:.0f}%, Shinto at most "
+        f"{CAPS['Shinto']:.0f}%{held_text}. The result sits {moved:.1f} points from the prior; "
+        "no backtest is possible, because no prefecture-level self-identification figure "
+        f"exists. Written by the map owner's decision of {DECISION}.")
     est = estimate(MODELLED, rows, method=RELIGION_METHOD,
                    inputs=[f"nhk-issp-{PRIOR_YEAR}-japan",
                            f"estat-{BELIEVERS_TABLE}-{code}-{BELIEVERS_TIME}",
@@ -501,27 +530,24 @@ def language_estimate(code: str, row: dict[str, int], ethnicity_id: str) -> dict
     rows = hundred(by_language)
     japanese_share = by_language["Japanese"] / sum(by_language.values()) * 100
     note = (
-        "MODELLED, not read: Japan's census does not ask language, and this figure is not "
-        "evidence of what any census says. It is the same prefecture's 2020 census "
-        "nationality composition with every person assigned the majority home language of "
-        "their nationality (Japanese to Japanese, Korean to Korean, Chinese to Mandarin, "
-        "Filipino to Filipino, Brazilian to Portuguese, Peruvian to Spanish, Nepalese to "
-        "Nepali, Indian to Hindi, which is India's plurality language and not a majority, "
-        "British and American to English, and so on). That assumption understates "
-        "Japanese-speaking: a Korean national born in Japan and a Brazilian of Japanese "
-        "descent speak Japanese at home more often than it allows, and the families of "
-        "naturalised citizens are counted as Japanese-speaking whatever they speak. It puts "
-        f"Japanese at {japanese_share:.1f}% here, which is the share of people with a known "
-        "nationality who hold Japanese nationality, and it says nothing about Ainu, "
-        "Ryukyuan or any regional language. No backtest is possible: no prefecture-level "
-        f"language figure exists. Written by the map owner's decision of {DECISION}.")
+        "MODELLED, not read: Japan's census does not ask language, and this is not evidence "
+        "of what any census says. It is this prefecture's 2020 census nationality "
+        "composition with everyone assigned their nationality's majority home language "
+        "(Chinese to Mandarin, Filipino to Filipino, Brazilian to Portuguese, Peruvian to "
+        "Spanish, Indian to Hindi, a plurality not a majority, British and American to "
+        f"English), so Japanese at {japanese_share:.1f}% is simply the share holding Japanese "
+        "nationality. That understates Japanese-speaking among Japan-born Koreans and "
+        "Brazilians of Japanese descent, overstates it among naturalised citizens' "
+        "families, and says nothing of Ainu or Ryukyuan; no backtest is possible, because "
+        f"no prefecture-level language figure exists. Written by the map owner's decision "
+        f"of {DECISION}.")
     return estimate(MODELLED, rows, method=LANGUAGE_METHOD,
                     inputs=[ethnicity_id, f"estat-{NATIONALITY_TABLE}-{code}"], note=note)
 
 
 def build(nationality: dict[str, dict[str, int]], believers: dict[str, dict[str, int]]
           ) -> list[dict[str, Any]]:
-    check_nationality(nationality)
+    caveat = check_nationality(nationality)
     population = {p: nationality[p][CODE_TOTAL] for p in nationality}
     check_believers(believers, population)
     prior, none = prior_shares()
@@ -550,17 +576,15 @@ def build(nationality: dict[str, dict[str, int]], believers: dict[str, dict[str,
         religion, dist, held, tilted = religion_estimate(code, believers)
         moved.append((dist, name, held, tilted))
         ethnicity_note = (
-            f"{NATIONALITY_SOURCE}. The census counts NATIONALITY, not ethnicity: Japan "
-            "asks no ethnicity question, and 'Japanese' here is everyone holding Japanese "
-            "nationality, including naturalised citizens and people of any ancestry -- "
-            "Ainu, Ryukyuan and Japan-born Koreans who have naturalised are all in it. "
-            "'Korean' is the census's 韓国，朝鮮 row, the two Korean nationalities together; "
-            "'Chinese' its 中国 row as printed. Shares are of the "
-            f"{known:,} people whose nationality the census recorded; a further "
-            f"{unknown:,} ({unknown / row[CODE_TOTAL] * 100:.1f}% of the prefecture's "
-            f"{row[CODE_TOTAL]:,}) were recorded as neither Japanese nor foreign and are left "
-            f"out. Written by the map owner's decision of {DECISION} that Japan's "
-            "prefectures carry what the census does count, labelled for what it is.")
+            f"2020 Population Census (e-Stat table {NATIONALITY_TABLE}): population by "
+            "NATIONALITY, not ethnicity, which Japan's census does not ask. 'Japanese' is "
+            "everyone holding Japanese nationality, naturalised citizens and people of any "
+            "ancestry included (Ainu, Ryukyuans and naturalised Japan-born Koreans among "
+            "them); 'Korean' is the census's 韓国，朝鮮 row. Shares are of the "
+            f"{known:,} people whose nationality the census recorded; {unknown:,} "
+            f"({unknown / row[CODE_TOTAL] * 100:.1f}% of {row[CODE_TOTAL]:,}) recorded as "
+            f"neither Japanese nor foreign are left out. {caveat} Written by the map owner's "
+            f"decision of {DECISION}.")
         records.append(record(
             entity_id, name, level="admin1", parent="JPN", country="JPN",
             sources=sources,
@@ -578,7 +602,7 @@ def build(nationality: dict[str, dict[str, int]], believers: dict[str, dict[str,
         log(f"      {name:22} {dist:5.1f} points  {top}"
             + (f"  (held at the bound: {', '.join(held)})" if held else ""))
     capped = [name for _, name, held, _ in moved if held]
-    log(f"  religion: {len(capped)} prefectures hit a bound"
+    log(f"  religion: {len(capped)} prefecture{'' if len(capped) == 1 else 's'} hit a bound"
         + (f": {', '.join(capped)}" if capped else ""))
     return records
 

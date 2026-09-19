@@ -4,7 +4,9 @@ modelled, and what the arithmetic promises.
 The believers figures are e-Stat table 0003282963 at 2025年度 as the runner
 read them (data/processed/last-run.log of the probe that fetched all 240
 values); the nationality table is synthetic, built so its national row is
-the Statistics Bureau's published one and its prefectures sum to it.
+what e-Stat table 0003445244 served the runner (the first Japan run's log
+printed the thirteen nationalities and the foreign total) with the census's
+published total, and its prefectures sum to it.
 """
 
 import sys
@@ -47,15 +49,18 @@ def believers_for(codes):
     return table
 
 
+# The table's 全国 row as the runner read it: the thirteen nationalities the
+# refusal log printed, the foreign total, and the census's published total,
+# with the 不詳 row as the remainder.
+FOREIGN = 2_402_460
+
+
 def nationality_table():
-    nat = dict(m.PUBLISHED)
-    counts = {"2": 121_541_220, "101": nat["Korean"], "102": nat["Chinese"],
-              "103": nat["Filipino"], "104": nat["Thai"], "105": nat["Indonesian"],
-              "106": nat["Vietnamese"], "107": 36_000, "108": nat["Nepalese"],
-              "109": 13_000, "110": nat["American"], "111": nat["Brazilian"],
-              "112": nat["Peruvian"]}
-    counts["113"] = nat["foreign"] - sum(v for k, v in counts.items() if k != "2")
-    counts["3"] = 2_202_419
+    counts = {"2": 121_541_220, "101": 374_593, "102": 667_475, "103": 230_351,
+              "104": 42_702, "105": 49_147, "106": 320_805, "107": 36_000, "108": 67_325,
+              "109": 13_000, "110": 47_875, "111": 180_014, "112": 41_034}
+    counts["113"] = FOREIGN - sum(v for k, v in counts.items() if k != "2")
+    counts["3"] = m.PUBLISHED["total"] - counts["2"] - FOREIGN
     prefs = list(m.PREFECTURES)
     table = {p: {k: v // len(prefs) for k, v in counts.items()} for p in prefs}
     for k, v in counts.items():
@@ -163,9 +168,19 @@ class Language(unittest.TestCase):
 
 
 class Checks(unittest.TestCase):
-    def test_the_nationality_table_must_reproduce_the_published_figures(self):
+    def test_the_published_total_is_enforced_and_the_imputation_is_stated(self):
         table = nationality_table()
-        m.check_nationality(table)      # no exception
+        sentence = m.check_nationality(table)
+        # The Bureau's headline is 不詳補完値: its foreign count, the table's,
+        # and the difference in points all appear in the one sentence that
+        # goes on every prefecture, and the difference is within tolerance.
+        points, _ = m.imputation_caveat(table["00000"])
+        self.assertLess(abs(points), m.NATIONAL_TOLERANCE)
+        self.assertIn("2,747,137", sentence)
+        self.assertIn("2,402,460", sentence)
+        self.assertIn("不詳補完値", sentence)
+        self.assertIn(f"{points:.1f} points low", sentence)
+        # A table whose total is not the census's is the wrong table.
         bad = {k: dict(v) for k, v in table.items()}
         bad["13000"]["102"] += 1000
         bad["00000"]["102"] += 1000
@@ -176,6 +191,19 @@ class Checks(unittest.TestCase):
         with self.assertRaises(SystemExit) as cm:
             m.check_nationality(bad)
         self.assertIn("published", str(cm.exception))
+
+    def test_a_foreign_share_far_from_the_imputed_one_is_the_wrong_census(self):
+        # Move a million people from the 不詳 row to the foreign row, keeping
+        # the total: the recorded foreign share is now well over the imputed
+        # one, and no sentence excuses that.
+        table = nationality_table()
+        for area in ("13000", "00000"):
+            table[area]["113"] += 1_000_000
+            table[area]["1"] += 1_000_000
+            table[area]["3"] -= 1_000_000
+        with self.assertRaises(SystemExit) as cm:
+            m.check_nationality(table)
+        self.assertIn("imputation", str(cm.exception))
 
     def test_a_prefecture_that_does_not_sum_to_the_national_row_is_refused(self):
         table = nationality_table()
@@ -230,8 +258,8 @@ class Records(unittest.TestCase):
         for r in self.records:
             self.assertNotIn("backtest", r["religion"])
             self.assertNotIn("backtest", r["language"])
-            self.assertIn("No backtest is possible", r["religion"]["note"])
-            self.assertIn("No backtest is possible", r["language"]["note"])
+            self.assertIn("no backtest is possible", r["religion"]["note"])
+            self.assertIn("no backtest is possible", r["language"]["note"])
 
     def test_the_notes_say_what_they_are_and_when_it_was_decided(self):
         for r in self.records:
@@ -240,9 +268,16 @@ class Records(unittest.TestCase):
                 self.assertTrue(note.startswith("MODELLED, not read"))
                 self.assertIn(m.DECISION, note)
                 self.assertIn("not evidence of what any census says", note)
-            self.assertIn("NATIONALITY, not ethnicity", r["ethnicity_note"])
-            self.assertIn("naturalised", r["ethnicity_note"])
-            self.assertIn(m.DECISION, r["ethnicity_note"])
+                # Short: the first sentence says what it is, the caveats after
+                # it, not a paragraph.
+                self.assertLess(len(note), 1300, f"{r['name']} {field} note is {len(note)}")
+            note = r["ethnicity_note"]
+            self.assertTrue(note.startswith("2020 Population Census"))
+            self.assertIn("NATIONALITY, not ethnicity", note)
+            self.assertIn("naturalised", note)
+            self.assertIn("不詳補完値", note)
+            self.assertIn(m.DECISION, note)
+            self.assertLess(len(note), 1000, f"{r['name']} ethnicity note is {len(note)}")
 
     def test_the_bounds_hold_on_every_prefecture(self):
         for r in self.records:
