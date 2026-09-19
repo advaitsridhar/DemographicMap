@@ -81,6 +81,13 @@ ADAPTER_FILES = [
     # Viet Nam's 2019 census, ethnicity by province from Table 2 of the
     # office's own Vietnamese results volume: a census count.
     "vietnam_province.json",
+    # Indonesia, by the owner's decision of 19 September 2026: the 2010
+    # census's ethnicity by province as its provinces' Wikipedia articles
+    # transcribe it, and religion by province and regency from the registry
+    # or BPS figure each place's article cites. Part census transcription
+    # and part registry, so it sits with the surveys, below every census
+    # file read from its office.
+    "indonesia.json",
     # Hong Kong's own census, one shape under China: ethnicity and usual
     # spoken language from the 2021 Main Results workbook.
     "hongkong_census.json",
@@ -238,6 +245,10 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.germany",
     "CAN": "Statistics Canada 2021 Census Profile (religion, visible minority, language): "
            "python -m scripts.fetch_census.statcan",
+    "IDN": "2010 census ethnicity by province and the registry or BPS religion "
+           "figure by province and regency, as the Indonesian Wikipedia transcribes "
+           "them (BPS itself refuses automated readers and its API needs a key): "
+           "python -m scripts.fetch_census.indonesia",
     "BRA": "IBGE SIDRA 2022 census (population, cor ou raça, religion): "
            "python -m scripts.fetch_census.ibge_sidra --level municipality",
     "AUS": "ABS 2021 Census (religion, ancestry): "
@@ -265,9 +276,6 @@ ADAPTER_HINTS: dict[str, str] = {
 # not, and saying so is the point of the map rather than an admission against
 # it. Kept short here; docs/SOURCES.md carries what was actually tried.
 ADAPTER_GAPS: dict[str, str] = {
-    "IDN": "BPS publishes religion by regency, but its API needs a free "
-           "registered key and its other hosts refuse automated readers. The "
-           "data exists and is not reachable without that key.",
     "THA": "The statistical office refuses automated readers on every host "
            "tried. Religion by province is the 2000 census, read from its "
            "provincial final reports as transcribed on Wikipedia; language was "

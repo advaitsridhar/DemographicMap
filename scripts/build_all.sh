@@ -107,6 +107,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # One DOSM dashboard parquet (religion, 2020 census) plus the two population
   # CSVs above for the count base; needs pyarrow.
   soft python3 -m scripts.fetch_census.malaysia_religion
+  # Indonesia: 2010 census ethnicity by province and registry/BPS religion by
+  # province and regency, read from the Indonesian Wikipedia (~550 API calls).
+  soft python3 -m scripts.fetch_census.indonesia
   soft python3 -m scripts.fetch_census.poland
   # Three ČSÚ open-data CSVs, 170 MB between them; no key.
   soft python3 -m scripts.fetch_census.czechia

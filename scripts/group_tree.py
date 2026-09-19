@@ -126,6 +126,10 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
         # apart, and folding one into the other would invent a share. Yumasam
         # is the Limbu faith, 2.0% of Sikkim.
         "Adim dhamm", "Yumasam",
+        # Indonesia's named indigenous religions as its regencies' figures
+        # carry them: Marapu of Sumba, Aluk Todolo of the Toraja, Ugamo
+        # Malim (Parmalim) of the Toba Batak, Kaharingan of the Dayak.
+        "Marapu", "Aluk Todolo", "Ugamo Malim", "Kaharingan",
     ),
     "Other and new religions": (
         "Zoroastrianism", "Yazidi", "Jedi", "Eckankar", "Wicca",
@@ -1662,11 +1666,38 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # Viet Nam's Hoa are its Han Chinese, and the Ngái its Hakka-speaking
     # Chinese of the north-east; the census counts them as two groups. The
     # Thai Chinese are Thailand's, the Ethnolinguistic Maps' own label.
-    "Han and Sinitic peoples": ("Hui", "Hoa", "Ngái", "Thai Chinese"),
+    "Han and Sinitic peoples": ("Hui", "Hoa", "Ngái", "Thai Chinese",
+                                # BPS's Tionghoa, the 2010 census's own group.
+                                "Chinese Indonesian"),
     # The Austronesian peoples of maritime south-east Asia that Indonesia,
     # Malaysia and Myanmar name beyond the tree's existing list.
     "Malay and Indonesian peoples": ("Banjarese", "Bantenese", "Sasak",
-                                     "Moken"),
+                                     "Moken",
+                                     # The peoples BPS's 2010 census names by
+                                     # province, and its regional bundles
+                                     # ("asal Sulawesi", "asal Sumatera
+                                     # Selatan"): every one Austronesian.
+                                     # East Nusa Tenggara's bundle holds the
+                                     # Alor-Pantar speakers too, a twentieth
+                                     # of it; Maluku's is not placed, its
+                                     # northern peoples being Papuan.
+                                     "Makassarese", "Cirebonese", "Nias",
+                                     "Lampung", "Gayo", "Aneuk Jamee",
+                                     "Singkil", "Devayan", "Mentawai",
+                                     "Rejang", "Serawai", "Minahasan",
+                                     "Gorontalo", "Torajan", "Kutai", "Paser",
+                                     "Butonese", "Berau", "Mandar",
+                                     "Florenese", "Mamuju", "Palembang",
+                                     "East Nusa Tenggara peoples",
+                                     "Bima and Sumbawa peoples",
+                                     "Other Sulawesi peoples",
+                                     "Central Sulawesi peoples",
+                                     "Southeast Sulawesi peoples",
+                                     "South Sumatra peoples",
+                                     "Other Sumatra peoples", "Jambi peoples",
+                                     "Riau peoples", "Other Java peoples",
+                                     "Other Kalimantan peoples",
+                                     "Other indigenous Bengkulu peoples"),
     "Philippine peoples": ("Tinananen", "Kabayukan"),
     # Poland's ethnographic regions, which its census counts as separate
     # declarations of ethnicity beside Silesian and Kashubian.

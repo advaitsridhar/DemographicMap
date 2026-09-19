@@ -4567,10 +4567,14 @@ class GapReasons(unittest.TestCase):
         self.assertIn("us_acs", be.adapter_hint("USA"))
         self.assertNotIn("USA", be.ADAPTER_GAPS)
 
-    def test_the_three_documented_gaps_carry_a_reason(self):
-        for iso3 in ("IDN", "THA"):
+    def test_the_documented_gaps_carry_a_reason(self):
+        # Indonesia and Viet Nam were here until 19 September 2026, when
+        # each was read from what its statistical office's refusal left
+        # reachable; both carry a command now.
+        for iso3 in ("THA",):
             self.assertIn(iso3, be.ADAPTER_GAPS)
             self.assertGreater(len(be.ADAPTER_GAPS[iso3]), 40)
+        self.assertIn("indonesia", be.ADAPTER_HINTS["IDN"])
 
     def test_a_gap_reason_is_prose_rather_than_a_command(self):
         # A hint is rendered inside <code> and run; a reason is not.
