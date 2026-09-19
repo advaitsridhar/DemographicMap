@@ -1,131 +1,200 @@
-probe_kaggle: search 'thailand census'
-  ayessa/salary-prediction-classification
-      'Salary Prediction Classification'; 'Classification on Salary whether  less than 50K or  greater than 50K'
-      471,055 bytes; licence 'Unknown'; usability 0.7647059; updated 2022-04-18 12:17:00.120000; 15233 downloads
-  vivamoto/us-adult-income-update
-      'Census Income Data Set'; 'Predict whether income exceeds $50K/yr based on census data.'
-      1,334,930 bytes; licence 'U.S. Government Works'; usability 0.9411765; updated 2019-12-18 21:04:29.627000; 4484 downloads
-  julianacorts/us-census-of-adults-1994
-      'US Census of Adults 1994'; 'Predict whether income exceeds $50K/yr based on census data. Also known as "Cens'
-      725,451 bytes; licence 'Other (specified in description)'; usability 1; updated 2023-06-22 17:42:07.043000; 505 downloads
-  aguado/uci-adult-data-set-1994
-      'UCI Adult Data Set 1994'; '1994 Census database extraction done by Barry Becker.'
-      719,361 bytes; licence 'Other (specified in description)'; usability 1; updated 2022-11-25 13:26:27.233000; 217 downloads
-  mlbysoham/adult-dataset
-      'Adult Dataset'; ''
-      478,897 bytes; licence 'CC BY-NC-SA 4.0'; usability 0.75; updated 2023-06-02 08:03:07.713000; 1781 downloads
-  dskagglemt/census-income-data-from-various-country
-      'Census Income Data from various country'; 'UCI Machine Learning Repository'
-      478,897 bytes; licence 'Unknown'; usability 0.5625; updated 2021-06-25 12:26:45.383000; 435 downloads
-  mohamedziauddin/mh-work-hour-prediction
-      'MH : Work Hour Prediction'; 'MachineHack Fortnight: Work Hour Prediction'
-      453,136 bytes; licence 'Unknown'; usability 0.5294118; updated 2021-09-27 12:29:13.543000; 165 downloads
-  sumaiaparveenshupti/us-hate-crime-dataset-20102019-multiple-sources
-      'US Hate Crime Dataset 2010-2019 (Multiple Sources)'; 'What can we infer from the data?'
-      40,112 bytes; licence 'CC0: Public Domain'; usability 1; updated 2021-06-23 01:37:26.800000; 1771 downloads
-  mexwell/us-country-demographics
-      '👨\u200d👩\u200d👧 US Country Demographics'; 'US Country Demographics Data from 2010 - 2019 '
-      343,499 bytes; licence 'GPL 2'; usability 0.9411765; updated 2023-08-14 11:54:29.463000; 557 downloads
-  saumyajana/income-data
-      'Income data'; ''
-      719,361 bytes; licence 'CC0: Public Domain'; usability 0.5625; updated 2023-09-30 17:52:02.587000; 121 downloads
-  rishabhrathore055/census-income-uci-machine-learning
-      'Census Income - UCI Machine Learning'; 'Extraction was done by Barry Becker from the 1994 Census database.'
-      767,035 bytes; licence 'MIT'; usability 0.7058824; updated 2026-04-15 06:06:28.153000; 12 downloads
-  ruicarvalhosilva/adultdata
-      'adultData'; 'American Census Income 1994'
-      478,895 bytes; licence 'Unknown'; usability 0.47058824; updated 2024-04-19 12:07:46.230000; 27 downloads
-  jyotsnaparyani/adult-census-data
-      'Adult census data'; ''
-      444,795 bytes; licence 'Unknown'; usability 0.4117647; updated 2019-07-18 10:46:43.320000; 332 downloads
-  13 dataset(s) listed
-probe_kaggle: search 'thailand population province'
-  cresht2606/vietnam-real-estate-datasets-catalyst
-      'Vietnam Real Estate Datasets - Catalyst'; ''
-      5,576,146 bytes; licence 'MIT'; usability 0.47058824; updated 2026-01-02 03:22:18.947000; 142 downloads
-  1 dataset(s) listed
-probe_kaggle: search 'thailand language'
-  thaweewatboy/thailand-domestic-tourism-statistics
-      'Thailand Domestic Tourism Statistics'; 'Monthly Provincial Data on Tourist Numbers, Occupancy, and Revenue (2019-2023)'
-      917,424 bytes; licence 'Attribution 4.0 International (CC BY 4.0)'; usability 1; updated 2023-04-18 15:41:24.077000; 5699 downloads
-  pratyushpuri/multilingual-mobile-app-reviews-dataset-2025
-      'Multilingual Mobile App Review Dataset Sept 2025'; '2.5K reviews across 40+ apps, 24 languages, perfect for NLP & sentiment analysis'
-      136,331 bytes; licence 'Apache 2.0'; usability 1; updated 2025-07-31 03:09:08.217000; 7781 downloads
-  rtatman/hse-thai-corpus
-      'HSE Thai Corpus'; 'A 35 Million Word Corpus of Thai'
-      99,488,002 bytes; licence 'Other (specified in description)'; usability 0.8235294; updated 2017-09-05 22:20:21.227000; 838 downloads
-  jxxn03x/thai-call-center-call-log-dataset
-      'Thai Call Center Call Log Dataset'; '195 Thai call logs labeled by type with simulated [Call]/[User] format.'
-      14,156 bytes; licence 'Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)'; usability 1; updated 2025-04-19 17:32:04.660000; 447 downloads
-  yusufmurtaza01/youtube-top-channels-2026
-      'Top YouTube Channels: Global & Country-Wise (2026)'; 'Statistics for top ~4k global channels and top 100 channels across 30 countries.'
-      2,516,032 bytes; licence 'CC0: Public Domain'; usability 1; updated 2026-04-10 04:03:16.633000; 860 downloads
-  lakshmiindukosuri/top-5000-dramas-1983-2023
-      'Top 5000 Asian Dramas Dataset : (1983-2023)'; 'Unveiling 5000 Top Dramas: Korea, Japan, China, Taiwan, and Thailand '
-      82,963 bytes; licence 'Unknown'; usability 0.8235294; updated 2023-09-10 06:06:05.987000; 456 downloads
-  timefear007/dinosaturday-dataset
-      'Dinosaturday Dataset'; 'FB Feeds from a famous FB page from Thailand'
-      108,396 bytes; licence 'CC0: Public Domain'; usability 0.7647059; updated 2021-01-23 12:59:06.807000; 53 downloads
-  suprmans/aad-eeg-thai
-      'AAD EEG Thai'; ''
-      2,501,837,589 bytes; licence 'Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)'; usability 0.5882353; updated 2026-03-19 05:27:18.457000; 4 downloads
-  thaweewatboy/thailand-fatal-road-accident
-      'Thailand Fatal Road Accident [2011-2022]'; '240K Thailand Countrywide fatal Traffic Accident (2011-2022)'
-      12,402,889 bytes; licence 'Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)'; usability 1; updated 2023-04-19 19:15:46.297000; 747 downloads
-  shortg/janonspeech
-      'JANON-SPEECH'; 'Japanese Non-native Speech Corpus'
-      972,336,836 bytes; licence 'Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)'; usability 0.64705884; updated 2021-02-10 03:57:38.693000; 156 downloads
-  thaweewatboy/thailand-road-accident-2019-2022
-      'Thailand Road Accident [2019-2022]'; 'Recorded road accidents in Thailand, spanning from approximately 2019 to 2022'
-      7,724,573 bytes; licence 'CC0: Public Domain'; usability 0.9411765; updated 2023-08-19 04:31:41.437000; 1901 downloads
-  bwandowando/thailand-cities-food-panda-resto-reviews
-      '🇹🇭🐼 Thailand Cities Food Panda Resto Reviews'; 'Client reviews of Food Panda restaurants in Thailand 🇹🇭'
-      28,250,584 bytes; licence 'CC BY-NC-SA 4.0'; usability 0.9411765; updated 2025-04-19 15:38:42.227000; 280 downloads
-  dianamykhaylychenko/culturalaffect-bench-data
-      'culturalaffect-bench-data'; 'Architectural spaces from Ukraine and 20+ countries rated by Ukrainian raters'
-      68,109,890 bytes; licence 'CC BY-NC-SA 4.0'; usability 0.5294118; updated 2026-04-16 03:53:50.130000; 5 downloads
-  bwandowando/reddit-rthailand-subreddit-dataset
-      '🇹🇭 Reddit r/Thailand Subreddit Dataset'; 'r/Thailand Subreddit threads, comments, and images 🇹🇭'
-      4,497,250,001 bytes; licence 'Reddit API Terms'; usability 0.875; updated 2026-01-04 01:02:32.820000; 343 downloads
-  techsalerator/multilingual-text-and-audio-data-for-thailand
-      'Multilingual Text & Audio Data for Thailand'; 'This is a Techsalerator dataset on Multilingual Text & Audio Data for Thailand'
-      281,883,961 bytes; licence 'Apache 2.0'; usability 0.5625; updated 2026-04-20 07:02:29.447000; 11 downloads
-  techsalerator/youtube-and-video-data-for-thailand
-      'Youtube & Video Data for Thailand'; 'This is a Techsalerator dataset on Youtube & Video Data for Thailand'
-      281,883,961 bytes; licence 'Apache 2.0'; usability 0.5625; updated 2026-04-17 18:38:11.767000; 5 downloads
-  lucafrance/the-world-factbook-by-cia
-      'The World Factbook by CIA'; 'The World Factbook, the indispensable source for basic information.'
-      4,940,588 bytes; licence 'CC0: Public Domain'; usability 0.9411765; updated 2025-03-14 19:36:06.400000; 8869 downloads
-  ponthakornsodchun/foods-in-thailand
-      'Foods in Thailand'; 'A Culinary Exploration of Traditional Thai Dishes'
-      6,973 bytes; licence 'Database: Open Database, Contents: © Original Authors'; usability 0.7058824; updated 2024-07-29 12:01:40.777000; 611 downloads
-  techsalerator/new-events-data-in-thailand
-      'New Events Data in Thailand'; 'This is a Techsalerator dataset on New Events Data in Thailand'
-      4,948 bytes; licence 'Apache 2.0'; usability 0.64705884; updated 2024-09-14 08:51:58.277000; 22 downloads
-  techsalerator/thailand-b2b-firmographic-data-techsalerator
-      'Thailand B2B firmographic Data Techsalerator'; 'Thailand B2B firmographic Data from Techsalerator'
-      40,803 bytes; licence 'Unknown'; usability 0.47058824; updated 2023-07-28 11:24:33.633000; 26 downloads
-  techsalerator/point-of-interest-data-thailand-techsalerator
-      'Point of interest Data Thailand Techsalerator'; 'This is a representative sample of Techsalerator POI Data in Thailand.'
-      36,528 bytes; licence 'Unknown'; usability 0.47058824; updated 2023-08-01 17:06:22.280000; 29 downloads
-  wuttipats/lazada-thailand-health-products-dataset
-      'Lazada Thailand Health Products Dataset'; 'Web scraping e-commerce websites for health domain product data.'
-      1,051,391 bytes; licence 'Other (specified in description)'; usability 1; updated 2023-08-10 14:36:58.570000; 678 downloads
-  keeratideja/product-review-datasets-thai-language
-      'Beauty Product Review Dataset (Thai Language)'; ''
-      41,002,592 bytes; licence 'MIT'; usability 0.64705884; updated 2024-01-06 11:59:33.757000; 299 downloads
-  pamin2222/datahack-thai-local-govt-grants-and-revenue-data
-      '[DataHack] Thai Local Govt: Grants & Revenue Data'; '[DataHack] Thai Local Govt: Grants & Revenue Data'
-      5,603,336 bytes; licence 'MIT'; usability 0.7647059; updated 2023-12-08 05:29:19.227000; 94 downloads
-  phatrapolphatr/thailand-cpi-dataset-from-government-web
-      'thailand cpi dataset from government web'; 'Core cpi and feature that could impack to cpi in Thailand'
-      3,500 bytes; licence 'Attribution 4.0 International (CC BY 4.0)'; usability 1; updated 2025-11-11 12:59:55.447000; 15 downloads
-  25 dataset(s) listed
-probe_kaggle: search 'thailand ethnic'
-  lucafrance/the-world-factbook-by-cia
-      'The World Factbook by CIA'; 'The World Factbook, the indispensable source for basic information.'
-      4,940,588 bytes; licence 'CC0: Public Domain'; usability 0.9411765; updated 2025-03-14 19:36:06.400000; 8869 downloads
-  sumaiaparveenshupti/us-hate-crime-dataset-20102019-multiple-sources
-      'US Hate Crime Dataset 2010-2019 (Multiple Sources)'; 'What can we infer from the data?'
-      40,112 bytes; licence 'CC0: Public Domain'; usability 1; updated 2021-06-23 01:37:26.800000; 1771 downloads
-  2 dataset(s) listed
+  [en] 'Ethnic groups in Thailand': 23,586 bytes of wikitext
+  2 table(s)
+  -- table 0: 26 rows, 5 columns
+     header: ['Tai', 'Austroasiatic', 'Sino-Tibetan', 'Austronesian', 'Hmong-Mien']
+     row   : ['24 Groups', '22 groups', '11 Groups', '3 Groups', '2 Groups']
+     row   : ['Kaleung', 'Kasong', 'Guong (Ugong)', 'Malay (Malayu / Nayu / Yawi', 'Hmong (Meo)']
+     row   : ['Kammuang / Yuan (Northern Th', 'Kuy / Kuay', 'Karen (7 subfamilies)', 'Moken / Moklen', 'Mien (Yao)']
+     row   : ['Tai Dam', 'Khmu', '- Sgaw Karen', 'Urak Lawoi', '']
+     row   : ['Nyaw', 'Thailand Khmer, Northern Khm', '- Pwo Karen', '', '']
+     row   : ['Tai Khun', 'Chong', '- Kaya Karen', '', '']
+  -- table 1: 14 rows, 4 columns
+     header: ['Tai Language Family', 'Persons', 'Austroasiatic Language Famil', 'Persons']
+     row   : ['Lao Esan / Thai Lao', '13,000,000', 'Thailand Khmer / Northern Kh', '1,400,000']
+     row   : ['Central Thai', '800,000', 'Kuy / Kuay', '400,000']
+     row   : ['Thai Khorat / Tai Beung / Ta', '600,000', 'So', '70,000']
+     row   : ['Thai-Loei', '', 'Bru', 'combined']
+     row   : ['Phu Thai', '500,000', 'Vietnamese', '20,000']
+     row   : ['Nyaw', '500,000', 'Ngeu', '10,000']
+  [en] 'Demographics of Thailand': 79,206 bytes of wikitext
+  15 table(s)
+  -- table 0: 23 rows, 5 columns
+     header: ['Age group', 'Male', 'Female', 'Total', '%']
+     row   : ['Total', '33 328 645', '34 583 075', '67 911 720', '100']
+     row   : ['0–4', '2 041 071', '1 938 793', '3 979 864', '5.86']
+     row   : ['5–9', '2 353 198', '2 270 890', '4 624 088', '6.81']
+     row   : ['10–14', '2 438 774', '2 327 414', '4 766 188', '7.02']
+     row   : ['15–19', '2 593 629', '2 473 402', '5 067 031', '7.46']
+     row   : ['20–24', '2 673 846', '2 563 359', '5 237 205', '7.71']
+  -- table 1: 27 rows, 5 columns
+     header: ['Age group', 'Male', 'Female', 'Total', '%']
+     row   : ['Total', '32 128 245', '34 406 439', '66 534 684', '100']
+     row   : ['0–4', '1 820 722', '1 738 061', '3 558 783', '5.35']
+     row   : ['5–9', '1 928 856', '1 842 729', '3 771 584', '5.67']
+     row   : ['10–14', '1 994 908', '1 899 797', '3 894 705', '5.85']
+     row   : ['15–19', '2 173 180', '2 087 943', '4 261 123', '6.40']
+     row   : ['20–24', '2 318 425', '2 248 622', '4 567 047', '6.86']
+  -- table 2: 70 rows, 10 columns
+     header: ['Year', 'Population', 'Live births', 'Deaths', 'Natural change', 'Crude birth rate (per 1000)', 'Crude death rate (per 1000)', 'Natural change (per 1000)', 'Crude migration change (per ', 'Total Fertility Rate']
+     row   : ['1957', '24,148,000', '777,436', '218,124', '559,294', '32.2', '9.0', '23.2', '', '']
+     row   : ['1958', '24,873,000', '970,155', '208,866', '761,289', '39.0', '8.4', '30.6', '-1.50', '']
+     row   : ['1959', '25,619,000', '801,380', '206,129', '595,254', '31.3', '8.0', '23.3', '6.06', '']
+     row   : ['1960', '26,388,000', '915,538', '221,853', '693,685', '34.7', '8.4', '26.3', '2.94', '']
+     row   : ['1961', '', '813,805', '210,709', '603,096', '', '', '', '', '']
+     row   : ['1962', '', '973,634', '221,157', '752,477', '', '', '', '', '']
+  -- table 3: 5 rows, 4 columns
+     header: ['Period', 'Live births', 'Deaths', 'Natural increase']
+     row   : ['January—August 2025', '270,317', '369,353', '−99,036']
+     row   : ['January—August 2026', '238,080', '371,547', '−133,467']
+     row   : ['Difference', 'decrease −32,237 (−11.93%)', 'increasenegative +2,194 (+0.', 'valign=top| decrease −34,431']
+     row   : ['Source:']
+  -- table 4: 17 rows, 9 columns
+     header: ['Period', 'Live births', 'Deaths', 'Natural change', 'CBR 1', 'CDR 1', 'NC 1', 'TFR 1', 'IMR 1']
+     row   : ['1950–1955', '940 000', '344 000', '596 000', '42.5', '15.6', '27.0', '6.14', '130.3']
+     row   : ['1955–1960', '1 093 000', '348 000', '745 000', '43.0', '13.7', '29.3', '6.14', '108.7']
+     row   : ['1960–1965', '1 249 000', '353 000', '896 000', '42.3', '12.0', '30.3', '6.13', '90.5']
+     row   : ['1965–1970', '1 386 000', '362 000', '1 025 000', '40.4', '10.5', '29.8', '5.99', '75.5']
+     row   : ['1970–1975', '1 371 000', '355 000', '1 016 000', '34.6', '8.9', '25.6', '5.05', '63.2']
+     row   : ['1975–1980', '1 297 000', '338 000', '959 000', '28.9', '7.5', '21.3', '3.92', '50.4']
+  -- table 5: 76 rows, 2 columns
+     header: ['Province', 'TFR']
+     row   : ['Bangkok', '0.67']
+     row   : ['Nonthaburi', '0.80']
+     row   : ['Pathum Thani', '0.83']
+     row   : ['Samut Prakan', '0.85']
+     row   : ['Chonburi', '0.89']
+     row   : ['Phuket', '0.92']
+  -- table 6: 2 rows, 11 columns
+     header: ['Years', '1925', '1926', '1927', '1928', '1929', '1930', '1931', '1932', '1933', '1934']
+     row   : ['Total Fertility Rate in Thai', '6.35', '6.34', '6.33', '6.32', '6.32', '6.31', '6.30', '6.29', '6.28', '6.27']
+  -- table 7: 2 rows, 11 columns
+     header: ['Years', '1935', '1936', '1937', '1938', '1939', '1940', '1941', '1942', '1943', '1944']
+     row   : ['Total Fertility Rate in Thai', '6.26', '6.25', '6.25', '6.24', '6.23', '6.22', '6.21', '6.20', '6.19', '6.18']
+  -- table 8: 2 rows, 6 columns
+     header: ['Years', '1945', '1946', '1947', '1948', '1949']
+     row   : ['Total Fertility Rate in Thai', '6.18', '6.17', '6.16', '6.15', '6.14']
+  -- table 9: 8 rows, 4 columns
+     header: ['Period', 'Life expectancy (years)', 'Period', 'Life expectancy (years)']
+     row   : ['1950–1955', '50.8', '1985–1990', '69.8']
+     row   : ['1955–1960', '53.3', '1990–1995', '70.2']
+     row   : ['1960–1965', '56.1', '1995–2000', '70.3']
+     row   : ['1965–1970', '58.2', '2000–2005', '71.2']
+     row   : ['1970–1975', '60.7', '2005–2010', '73.2']
+     row   : ['1975–1980', '63.3', '2010–2015', '75.2']
+  -- table 10: 9 rows, 4 columns
+     header: ['Region', '2005–06', '1995–96', '1985–86']
+     row   : ['Thailand (total)', '1.471', '2.022', '2.730']
+     row   : ['Urban', '1.033', '1.332', '1.766']
+     row   : ['Rural', '1.727', '2.285', '2.962']
+     row   : ['Bangkok Metropolis', '0.878', '1.261', '1.735']
+     row   : ['Central Region', '1.190', '1.664', '2.494']
+     row   : ['Northern Region', '1.575', '1.894', '2.248']
+  -- table 11: 11 rows, 3 columns
+     header: ['Language', 'Speakers', 'Language Family']
+     row   : ['Central Thai', 'formatnum:20.0 million', 'Tai-Kadai']
+     row   : ['Lao', 'formatnum:15.2 million', 'Tai-Kadai']
+     row   : ['Kam Mueang', 'formatnum:6.0 million', 'Tai-Kadai']
+     row   : ['Pak Tai', 'formatnum:4.5 million', 'Tai-Kadai']
+     row   : ['Northern Khmer', 'formatnum:1.4 million', 'Austroasiatic']
+     row   : ['Yawi', 'formatnum:1.4 million', 'Austronesian']
+  -- table 12: 13 rows, 3 columns
+     header: ['Language', 'Language family', 'No. of speakers']
+     row   : ['Thai', 'Tai-Kadai', '59,866,190']
+     row   : ['Burmese', 'Sino-Tibetan', '827,713']
+     row   : ['Tai', 'Tai-Kadai', '787,696']
+     row   : ['Karen', 'Sino-Tibetan', '441,114']
+     row   : ['English', 'Indo-European', '323,779']
+     row   : ['Chinese', 'Sino-Tibetan', '111,866']
+  -- table 13: 30 rows, 3 columns
+     header: ['Myanmar Myanmar', '4,000,000', '50.08']
+     row   : ['Cambodia Cambodia', '1,100,000', '10.90']
+     row   : ['Laos Laos', '700,000', '8.62']
+     row   : ['China China', '400,000-600,000', '5.48']
+     row   : ['Vietnam Vietnam', '500,000', '3.33']
+     row   : ['India India', '150,000', '0.5']
+     row   : ['Taiwan Taiwan', '145,000', '1.80']
+  -- table 14: 14 rows, 3 columns
+     header: ['Region', 'Population', 'Percentage']
+     row   : ['Southeast Asia', 'style="text-align: right; | ', '71.51']
+     row   : ['East Asia', 'style="text-align: right; | ', '9.65']
+     row   : ['Europe', 'style="text-align: right; | ', '7.77']
+     row   : ['South Asia', 'style="text-align: right; | ', '3.04']
+     row   : ['Northern America', 'style="text-align: right; | ', '1.79']
+     row   : ['Australia and Oceania', 'style="text-align: right; | ', '0.51']
+  [en] 'Languages of Thailand': 41,949 bytes of wikitext
+  0 table(s)
+  [en] 'Northern Khmer people': 13,510 bytes of wikitext
+  1 table(s)
+  -- table 0: 10 rows, 3 columns
+     header: ['Province', 'Khmer % in 1990', 'Khmer % in 2000']
+     row   : ['scope=row | Surin', '63.4%', '47.2%']
+     row   : ['scope=row | Buriram', '0.3%', '27.6%']
+     row   : ['scope=row | Sisaket', '30.2%', '26.2%']
+     row   : ['scope=row | Trat', '0.4%', '2.1%']
+     row   : ['scope=row | Sa Kaeo', 'N/A', '1.9%']
+     row   : ['scope=row | Chanthaburi', '0.6%', '1.6%']
+  [en] 'Isan people': 36,741 bytes of wikitext
+  0 table(s)
+  [th] 'กลุ่มชาติพันธุ์ในประเทศไทย': 0 bytes of wikitext
+  0 table(s)
+  [th] 'ภาษาในประเทศไทย': 29,068 bytes of wikitext
+  0 table(s)
+  [th] 'ประชากรศาสตร์ไทย': 48,874 bytes of wikitext
+  7 table(s)
+  -- table 0: 12 rows, 4 columns
+     header: ['ครั้ง', 'ปีที่สำรวจ (พ.ศ./ค.ศ.)', 'จำนวน (คน)', 'อัตราเพิ่ม (ร้อยละ/ต่อ 10 ปี']
+     row   : ['1', '2453 (1910)', '8,131,247', '-']
+     row   : ['2', '2462 (1919)', '9,207,355', '+ 13.2 (ต่อ 9 ปี)']
+     row   : ['3', '2472 (1929)', '11,506,207', '+ 25.0']
+     row   : ['4', '2480 (1937)', '14,464,105', '+ 25.7 (ต่อ 8 ปี)']
+     row   : ['5', '2490 (1947)', '17,442,689', '+ 20.6']
+     row   : ['6', '2503 (1960)', '26,257,916', '+ 50.5 (ต่อ 13 ปี)']
+  -- table 1: 44 rows, 10 columns
+     header: ['ปี (พ.ศ./ค.ศ.)', 'จำนวนประชากร', 'จำนวนเกิดมีชีพ', 'จำนวนตาย', 'จำนวนเพิ่มตามธรรมชาติ', 'อัตราเกิดมีชีพ (ต่อ 1,000 คน', 'อัตราตาย (ต่อ 1,000 คน)', 'อัตราเพิ่มตามธรรมชาติ (ต่อ 1', 'อัตราเจริญพันธุ์รวม', 'แหล่งข้อมูลอื่น']
+     row   : ['2526/1983', '', '1 055 802', '252 592', '803 210', '21.3', '5.1', '16.2', '', '']
+     row   : ['2527/1984', '', '956 680', '225 282', '731 398', '19.0', '4.5', '14.5', '', '']
+     row   : ['2528/1985', '', '973 624', '225 088', '748 536', '18.8', '4.4', '14.4', '', '']
+     row   : ['2529/1986', '', '945 827', '218 025', '727 802', '18.0', '4.1', '13.9', '', '']
+     row   : ['2530/1987', '', '884 043', '232 968', '651 075', '16.5', '4.3', '12.2', '']
+     row   : ['2531/1988', '', '873 842', '231 227', '642 615', '16.0', '4.2', '11.8', '', '']
+  -- table 2: 32 rows, 8 columns
+     header: ['ปี (พ.ศ./ค.ศ.)', 'จำนวนประชากร (คน)', 'จำนวนเกิดมีชีพ (คน)', 'จำนวนตาย (คน)', 'จำนวนที่เพิ่ม พิจารณาจากจำนว', 'อัตราเกิดมีชีพ (ต่อ 1,000 คน', 'อัตราตาย (ต่อ 1,000 คน)', 'อัตราเพิ่ม ของประชากร (ต่อ 1']
+     row   : ['2526/1983', '-', '1,055,802', '252,592', '', '', '', '']
+     row   : ['2527/1984', '-', '956,680', '225,282', '', '', '', '']
+     row   : ['2528/1985', '-', '973,624', '225,088', '', '', '', '']
+     row   : ['2529/1986', '-', '945,827', '218,025', '', '', '', '']
+     row   : ['2530/1987', '-', '884,043', '232,968', '', '', '', '']
+     row   : ['2531/1988', '-', '873,842', '231,227', '', '', '', '']
+  -- table 3: 25 rows, 8 columns
+     header: ['ปี (พ.ศ./ค.ศ.)', 'จำนวนประชากร (คน)', 'จำนวนคนเกิด (คน)', 'จำนวนคนตาย (คน)', 'จำนวนเพิ่มตามธรรมชาติ (คน)', 'อัตราเกิด (ต่อ 1,000 คน)', 'อัตราตาย (ต่อ 1,000 คน)', 'อัตราเพิ่ม ของประชากร (ต่อ 1']
+     row   : ['2535/1992', '57,788,965', '-', '-', '-', '-', '-', '-']
+     row   : ['2536/1993', '58,336,072', '983,964', '277,499', '706,465', '16.87', '4.76', '12.11']
+     row   : ['2537/1994', '59,095,419', '970,760', '244,061', '726,699', '16.43', '4.13', '12.30']
+     row   : ['2538/1995', '59,460,382', '928,956', '298,468', '630,488', '15.62', '5.02', '10.60']
+     row   : ['2539/1996', '60,116,182', '983,395', '315,467', '667,928', '16.36', '5.25', '11.11']
+     row   : ['2540/1997', '60,816,227', '880,028', '279,090', '600,938', '14.47', '4.59', '9.88']
+  -- table 4: 8 rows, 3 columns
+     header: ['อันดับ', 'ภาค', 'จำนวนประชากร (คน)']
+     row   : ['1', 'ภาคตะวันออกเฉียงเหนือ', 'align=right |21,716,975']
+     row   : ['2', 'ภาคกลาง', 'align=right | 20,099,945']
+     row   : ['3', 'ภาคใต้', 'align=right |9,512,975']
+     row   : ['4', 'ภาคเหนือ', 'align=right |6,290,583']
+     row   : ['5', 'ภาคตะวันออก', 'align=right |4,945,751']
+     row   : ['6', 'ภาคตะวันตก', '3,486,386']
+  -- table 5: 6 rows, 4 columns
+     header: ['ปี (พ.ศ.)', 'สมรส (คน)', 'หย่า (คน)', 'อัตราการหย่า (ร้อยละ)']
+     row   : ['2550', '307,910', '100,420', '32.6']
+     row   : ['2551', '318,496', '109,084', '34.2']
+     row   : ['2552', '300,878', '109,277', '36.3']
+     row   : ['2553', '305,944', '100,402', '37.9']
+     row   : ['2554', '308,048', '109,312', '35.5']
+  -- table 6: 13 rows, 9 columns
+     header: ['ช่วงปี (ค.ศ.)', 'จำนวนคนเกิด (คน/ปี)', 'จำนวนคนตาย (คน/ปี)', 'เปลี่ยนแปลง (คน/ปี)', 'อัตราเกิด (ต่อ 1,000 คน)', 'อัตราตาย (ต่อ 1,000 คน)', 'อัตราเพิ่ม (ต่อ 1,000 คน)', 'อัตราการเจริญพันธุ์ (คน)', 'อัตราการตายของทารก (ต่อ 1,00']
+     row   : ['1950-1955', '940 000', '344 000', '596 000', '42.5', '15.6', '26.9', '6.14', '130.3']
+     row   : ['1955-1960', '1 093 000', '348 000', '745 000', '43.0', '13.7', '29.3', '6.14', '108.7']
+     row   : ['1960-1965', '1 249 000', '353 000', '896 000', '42.3', '12.0', '30.3', '6.13', '90.5']
+     row   : ['1965-1970', '1 385 000', '362 000', '1 025 000', '40.4', '10.5', '29.9', '5.99', '75.5']
+     row   : ['1970-1975', '1 371 000', '355 000', '1 097 000', '34.6', '8.9', '25.7', '5.05', '63.2']
+     row   : ['1975-1980', '1 297 000', '338 000', '1 017 000', '28.9', '7.5', '21.4', '3.92', '50.4']
+  [th] 'ชาวไทยเชื้อสายจีน': 45,162 bytes of wikitext
+  0 table(s)
