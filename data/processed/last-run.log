@@ -1,2 +1,7 @@
-page: https://www.data.go.kr/tcs/dss/selectFileDataDownload.do?publicDataPk=3033301&publicDataDetailPk=uddi:77279257-02b1-4ca0-9e09-efefd780a88e_201907191550
-  unreachable: URLError: <urlopen error timed out>
+probe_page: https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy
+  5 lines:
+        0  內政統計年報
+        1  --- 內政統計年報 ---
+        2  English
+        3  [ 1民政 ] [ 2戶政 ] [ 3役政 ] [ 4合作及人民團體 ] [ 5地政 ] [ 6宗教及禮制 ] [ 7警政 ] [ 8移民 ] [ 9消防 ] [ 10國土管理 ] [ 11國家公園 ][ 12空中勤務 ][ 13建築研究 ]
+        4  *僅提供近10年資料，以前年度資料請至「歷史內政統計年報」查詢。
