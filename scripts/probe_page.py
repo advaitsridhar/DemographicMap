@@ -95,6 +95,30 @@ def report(lines: list[str], terms: list[str], context: int) -> None:
                 log(f"    {j:>5}  {lines[j][:300]}")
 
 
+def decode(body: bytes, override: str | None = None) -> str:
+    """The page as text, in the charset it declares.
+
+    Chinese statistical offices still serve GB2312 pages, and a GB2312 page
+    read as UTF-8 is a run of replacement characters that matches nothing:
+    Beijing's 2010 census communique came back as 33 lines mentioning
+    neither 人口 nor 区. The declared charset -- a <meta charset> or the
+    http-equiv form -- is honoured, gb2312 is widened to gb18030 (its
+    superset, which decodes everything gb2312 does and the characters that
+    a bureau's editor typed outside it), and utf-8 is the fallback.
+    """
+    head = body[:4096].decode("ascii", "ignore").lower()
+    declared = override or next(iter(re.findall(
+        r'charset\s*=\s*["\']?\s*([a-z0-9_-]+)', head)), None)
+    if declared in ("gb2312", "gbk", "gb_2312-80", "x-gbk"):
+        declared = "gb18030"
+    for name in [c for c in (declared, "utf-8") if c]:
+        try:
+            return body.decode(name)
+        except (UnicodeDecodeError, LookupError):
+            continue
+    return body.decode("utf-8", "replace")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("url", help="page to read, or a Wikipedia article URL")
@@ -102,6 +126,8 @@ def main() -> int:
     ap.add_argument("--terms", default="religion,language,population",
                     help="comma-separated words to report around")
     ap.add_argument("--context", type=int, default=2)
+    ap.add_argument("--charset", default=None, help="decode the page as this instead")
+    ap.add_argument("--all", action="store_true", help="print every line, not only matches")
     args = ap.parse_args()
 
     terms = [t.strip() for t in args.terms.split(",") if t.strip()]
@@ -114,8 +140,12 @@ def main() -> int:
     else:
         log(f"probe_page: {args.url}")
         body = http_get(args.url)
-        lines = readable(body.decode("utf-8", "replace")
-                         if isinstance(body, bytes) else body)
+        lines = readable(decode(body, args.charset) if isinstance(body, bytes) else body)
+    if args.all:
+        log(f"  {len(lines)} lines:")
+        for j, line in enumerate(lines):
+            log(f"    {j:>5}  {line[:400]}")
+        return 0
     report(lines, terms, args.context)
     return 0
 
