@@ -1,68 +1,68 @@
-probe_page: https://jumin.mois.go.kr/openapi.do
-  retry 1/4 after 2s :: https://jumin.mois.go.kr/openapi.do :: <urlopen error timed out>
-  retry 2/4 after 4s :: https://jumin.mois.go.kr/openapi.do :: <urlopen error timed out>
-  retry 3/4 after 8s :: https://jumin.mois.go.kr/openapi.do :: <urlopen error timed out>
-  retry 4/4 after 16s :: https://jumin.mois.go.kr/openapi.do :: <urlopen error timed out>
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
-    super().connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
-    self.sock = self._create_connection(
-                ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
-    raise exceptions[0]
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
-    sock.connect(sa)
-TimeoutError: timed out
+key found in $DEMOGRAPHICMAP (100 characters). Its value is never printed.
 
-During handling of the above exception, another exception occurred:
+=== searching the catalogue for ['planning']
+  page 1: 10 datasets, totalRowCount=4615, pages=462
+  page 463: empty (1 in a row)
+  page 464: empty (2 in a row)
+  page 465: empty (3 in a row)
+  read 464 page(s), 4615 datasets, 126 matching ['planning']
+  d_e7ae90176a68945837ad67892b898466  Resident Population by Planning Area/Subzone of Residence, Ethnic Group and Sex (Census of Population 2020)
+  d_d95ae740c0f8961a0b10435836660ce0  Resident Population by Planning Area/Subzone of Residence, Age Group and Sex (Census of Population 2020)
+  d_e2e2421777b5c2b6aff5db721d3dfabc  Resident Households by Planning Area and Monthly Household Income from Work (General Household Survey 2015)
+  d_7f243956483d5901f237e6f87b096636  Resident Population by Planning Area/Subzone of Residence and Type of Dwelling (Census of Population 2020)
+  d_cd4f91f7a1ebb2b7ceb1a70c0dbb706d  Solar PV Installations by URA Planning Region
+  d_e5048faf590692d3a804c51235a72f4f  Number Of Students By School Level, Planning Region And Sex, Annual
+  d_4e150bbd35c3145ea43019212c7b46c2  Resident Households by Planning Area of Residence and Monthly Household Income from Work (Census of Population 2020)
+  d_0fb04e9e94b62c4b45aeed46a0def3fd  Resident Population by Planning Area/Subzone and Age Group (Census of Population 2010)
+  d_bf4d24df9129d5a8ff8cf82e20959ee0  Master Plan 2019 Region Boundary (No Sea) (GEOJSON)
+  d_75248cf2fbf340de6a746dc91ec9223c  Public Transport Utilisation - Average Public Transport Ridership
+  d_fb887ade66d2fe8d248d18dd350a119d  Resident Population by Planning Area/Subzone, Ethnic Group and Sex (Census of Population 2010)
+  d_9e035622439b5d25a63d7ea0699c9451  Resident Population by Planning Area/Subzone of Residence, Age Group and Floor Area of Residence (Census of Population 2020)
+  d_0ef47f84a0776b27010b242038ea2c6b  Resident Households by Planning Area of Residence and Household Size (Census Of Population 2020)
+  d_1ca435a3b62aafa6857d96368971765b  Resident Households by Planning Area of Residence and Tenancy (Census Of Population 2020)
+  d_ce59c90c5be03d5de14cea4dbf57295d  Resident Households by Planning Area and Household Size (Census of Population 2010)
+  d_d8cf1d22b2c0cc96883c3846f6f1a087  Resident Students Aged 5 Years and Over by Planning Area and Usual Mode of Transport to School (Census of Population 2010)
+  d_90215b2256c68fe94a058cb931d29591  Resident Population Aged 15 Years and Over by Planning Area of Residence and Highest Qualification Attained (Census of Population 2020)
+  d_0df2274bb51639b2ebdfe89a302f8cdc  Resident Population Aged 15 Years and Over by Planning Area of Residence, Marital Status and Sex (Census of Population 2020)
+  d_ec3b9f67889aaca1e710a63901bb92d8  Resident Population by Planning Area/Subzone, Ethnic Group and Sex (General Household Survey 2015)
+  d_00f89f978f9f9a4b30509c9d25d3982a  Resident Working Persons Aged 15 Years and Over by Planning Area and Travelling Time to Work (Census of Population 2010)
+  d_ea524796fa06e39a70aed4a2c617175e  Resident Students Aged 5 Years and Over by Planning Area and Travelling Time to School (Census of Population 2010)
+  d_7dd573b7e1c4cae2c0c70559037d0e4e  Resident Students Aged 5 Years and Over by Planning Area and Level of Education Attending (Census of Population 2010)
+  d_c3ed3269adea97f53092d70c4d6d9682  Resident Population Aged 5 Years and Over by Planning Area and Language Most Frequently Spoken at Home (Census of Population 2010)
+  d_235d7a3b5bc3840f9c0b5a659252f6f8  Resident Population Aged 15 Years and Over by Planning Area, Marital Status and Sex (Census of Population 2010)
+  d_d4be7f8ba23ba93e5d59564d1dfb5eaa  Resident Population Aged 15 Years and Over by Planning Area and Religion (Census of Population 2010)
+  d_474090009224568420360c985b7e4891  Resident Households by Planning Area and Monthly Household Income from Work (Census of Population 2010)
+  d_b50749597cb4d0ce3b62574c977f2324  Resident Working Persons Aged 15 Years and Over by Planning Area and Occupation (Census of Population 2010)
+  d_daab6e1f628186abf4c02214b99a0eb9  Resident Working Persons Aged 15 Years and Over by Planning Area and Industry (Census of Population 2010)
+  d_4ce0038f7ac689652350bb91b7fb92ed  Master Plan 2025 Region Boundary (No Sea)
+  d_2cc750190544007400b2cfd5d7f53209  Master Plan 2025 Planning Area Boundary (No Sea)
+  d_a1636a40f8c76011be0f5640d1354c54  Resident Working Persons Aged 15 Years and Over by Planning Area and Usual Mode of Transport to Work (Census of Population 2010)
+  d_96958152e0dd18b503f5c351eac5232e  Resident Households by Planning Area and Type of Dwelling (Census of Population 2010)
+  d_d59ed9cc61560544973393078baf74b0  Resident Working Persons Aged 15 Years and Over by Planning Area and Gross Monthly Income from Work (Census of Population 2010)
+  d_4dfd6c43ee078800ae73f60b73dd207b  Resident Population Aged 15 Years and Over by Planning Area, Economic Status and Sex (Census of Population 2010)
+  d_0034746f51f894e005e846550bff78fa  Resident Population Aged 15 Years and Over by Planning Area and Highest Qualification Attained (Census of Population 2010)
+  d_4f8798e1ec5067db54e708eb7e3c8060  Resident Population Aged 15 Years and Over by Planning Area and Language Literate In (Census of Population 2010)
+  d_d50983a131441ec2ea11c411579830a2  Resident Households by Planning Area and Tenancy (Census of Population 2010)
+  d_c01346b80252e51694650f3803a18400  Resident Households by Planning Area and Household Structure (Census of Population 2010)
+  d_4765db0e87b9c86336792efe8a1f7a66  Master Plan 2019 Planning Area Boundary (No Sea)
+  d_20d3fc7f08caa581c5586df51a8993c5  Annual Car Population by Make
 
-Traceback (most recent call last):
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 643, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error timed out>
+=== sampling 'Resident Population by Planning Area/Subzone of Residence, Ethnic Group and Sex (Census of Population 2020)' (d_e7ae90176a68945837ad67892b898466)
 
-The above exception was the direct cause of the following exception:
+  --- metadata: HTTP 200
+      https://api-production.data.gov.sg/v2/public/api/datasets/d_e7ae90176a68945837ad67892b898466/metadata
+  JSON object, keys: ['code', 'data', 'errorMsg']
+  data scalars: {"datasetId": "d_e7ae90176a68945837ad67892b898466", "createdAt": "2024-10-22T13:24:17+08:00", "name": "Resident Population by Planning Area/Subzone of Residence, Ethnic Group and Sex (Census of Population 2020)", "description": "Source: SINGAPORE DEPARTMENT OF STATISTICS\r\n\r\nData Last Updated: 18/06/2021\r\n\r\nUpdate Frequency: 10 years\r\n\r\nSurvey period: Census of Population 2020\r\n\r\nFo
+  data keys: ['collectionIds', 'columnMetadata', 'contactEmails', 'createdAt', 'datasetId', 'datasetSize', 'description', 'format', 'lastUpdatedAt', 'managedBy', 'name']
 
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 157, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 145, in main
-    body = http_get(args.url)
-           ^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 664, in http_get
-    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 4 retries: https://jumin.mois.go.kr/openapi.do
+  --- datastore rows: HTTP 200
+      https://data.gov.sg/api/action/datastore_search?resource_id=d_e7ae90176a68945837ad67892b898466&limit=3
+  JSON object, keys: ['result', 'success']
+  result scalars: {"resource_id": "d_e7ae90176a68945837ad67892b898466", "total": 388, "limit": 3}
+  result keys: ['_links', 'fields', 'limit', 'records', 'resource_id', 'total']
+  result.records: 3 items; first:
+    {"_id": 1, "Number": "Total", "Total_Total": "4044210", "Total_Males": "1977560", "Total_Females": "2066650", "Chinese_Total": "3006770", "Chinese_Males": "1461340", "Chinese_Females": "1545430", "Malays_Total": "545500", "Malays_Males": "271330", "Malays_Females": "274170", "Indians_Total": "362270", "Indians_Males": "185570", "Indians_Females": "176710", "Others_Total": "129670", "Others_Males": "59320", "Others_Females": "70350"}
+
+  --- api-open rows: HTTP 201
+      https://api-open.data.gov.sg/v1/public/api/datasets/d_e7ae90176a68945837ad67892b898466/poll-download
+      {"code":0,"data":{"status":"DOWNLOAD_SUCCESS","url":"https://s3.ap-southeast-1.amazonaws.com/table-downloads-ingest.data.gov.sg/d_e7ae90176a68945837ad67892b898466/4105b71568b5b025cd22b85498360077e49b2a9ad0c42d594c30b1c84
