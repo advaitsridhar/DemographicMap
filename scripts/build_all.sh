@@ -81,6 +81,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.korea_survey
   # Five Chinese provinces from a survey, transcribed; no network.
   soft python3 -m scripts.fetch_census.cfps_survey
+  # Its newer wave from the public-release file on Kaggle; needs egress.
+  soft python3 -m scripts.fetch_census.cfps_microdata
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.
   soft python3 -m scripts.fetch_census.thailand
   # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).

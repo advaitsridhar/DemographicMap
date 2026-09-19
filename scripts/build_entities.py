@@ -65,6 +65,9 @@ ADAPTER_FILES = [
     # And CFPS 2012 for five Chinese provinces: a survey where the census
     # asks nothing, transcribed from the paper that reports it.
     "cfps_survey_province.json",
+    # The same survey's newer wave, tabulated from its public-release file
+    # and checked against that paper: it replaces the 2012 figure where read.
+    "cfps_microdata_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
