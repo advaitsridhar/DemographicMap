@@ -1,9 +1,14 @@
-downloading https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000002903067&fileDetailSn=1&insertDataPrcus=N
-  75,486 bytes, content-type application/octet-stream; charset=UTF-8
-  2 member(s)
-  - 2022 ╜├▒║▒╕║░ ▒╣└√(┴÷┐¬)║░ ╡ε╖╧┐▄▒╣└╬ ├╝╖∙ ╟÷╚▓.csv  (313,452 bytes)
-  - 2023 ╜├▒║▒╕║░ ▒╣└√(┴÷┐¬)║░ ╡ε╖╧┐▄▒╣└╬ ├╝╖∙ ╟÷╚▓.csv  (322,310 bytes)
-
-=== data: 2023 ╜├▒║▒╕║░ ▒╣└√(┴÷┐¬)║░ ╡ε╖╧┐▄▒╣└╬ ├╝╖∙ ╟÷╚▓.csv
-  201 columns
-  matching: []
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_csvzip.py", line 107, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_csvzip.py", line 77, in main
+    dialect = csv.Sniffer().sniff(sample, delimiters=",;\t") if sample else csv.excel
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/csv.py", line 189, in sniff
+    raise Error("Could not determine delimiter")
+_csv.Error: Could not determine delimiter
+75,486 bytes
+member: 2023 ╜├▒║▒╕║░ ▒╣└√(┴÷┐¬)║░ ╡ε╖╧┐▄▒╣└╬ ├╝╖∙ ╟÷╚▓.csv (322,310 bytes)
