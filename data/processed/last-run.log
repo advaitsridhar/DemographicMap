@@ -1,6 +1,117 @@
-page: https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=출입국+통계월보&dType=FILE
-  unreachable: URLError: <urlopen error [Errno 110] Connection timed out>
-page: https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=법무부+체류외국인+국적별&dType=FILE
-  unreachable: URLError: <urlopen error [Errno 110] Connection timed out>
-page: https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=주민등록+인구통계+시군구&dType=FILE
-  unreachable: URLError: <urlopen error [Errno 110] Connection timed out>
+probe_kaggle: search 'singapore planning area'
+  lzytim/hdb-resale-prices
+      'Singapore Resale Flat Prices (Jan-17 to Sep-25)'; 'Flat prices, geospatial information & closest MRT station for each transaction'
+      18,776,556 bytes; licence 'MIT'; usability 1; updated 2025-10-12 07:57:21.353000; 618 downloads
+  shymammoth/singapore-district-planning-area-geojson
+      'Singapore District - Planning Area Geojson'; 'Singapore 5 districts and 55 planning area geojson data'
+      242,221 bytes; licence 'Other (specified in description)'; usability 0.6875; updated 2023-09-22 07:57:09.303000; 409 downloads
+  denzilg/hdb-flat-prices-19902021-march
+      'HDB flat prices 1990-2021 March'; '840,000 transactions of HDB resale flats, including address and geolocation'
+      70,899,592 bytes; licence 'Database: Open Database, Contents: © Original Authors'; usability 1; updated 2021-06-17 06:00:52.283000; 1565 downloads
+  weiyuet/resident-population-by-planning-area-and-dwelling
+      'Resident Population by Planning Area and Dwelling'; 'Resident population in Singapore by planning area, and dwelling type, 2015 '
+      13,955 bytes; licence 'Database: Open Database, Contents: © Original Authors'; usability 0.6764706; updated 2021-08-26 17:06:13.603000; 69 downloads
+  mlippo/freedom-economic-index
+      'Freedom Economic Index'; 'Data featuring more than 170 countries'
+      12,723 bytes; licence 'Database: Open Database, Contents: © Original Authors'; usability 1; updated 2024-06-01 17:34:34.653000; 2100 downloads
+  y2h1987/singapore-property-transactions-hdb-private
+      'Singapore Property Transactions (HDB + Private)'; 'Singapore property: 369k HDB resale + URA private transactions (2017-2026)'
+      14,872,435 bytes; licence 'Attribution 4.0 International (CC BY 4.0)'; usability 0.5882353; updated 2026-06-16 02:13:53.897000; 71 downloads
+  6 dataset(s) listed
+probe_kaggle: search 'singapore census 2020'
+  0 dataset(s) listed
+probe_kaggle: search 'singapore subzone'
+  huikang/singapore-subzone-population
+      'singapore_subzone_population'; ''
+      769,762 bytes; licence 'Unknown'; usability 0.25; updated 2019-12-31 08:45:31.997000; 37 downloads
+  weiyuet/resident-population-by-planning-area-and-dwelling
+      'Resident Population by Planning Area and Dwelling'; 'Resident population in Singapore by planning area, and dwelling type, 2015 '
+      13,955 bytes; licence 'Database: Open Database, Contents: © Original Authors'; usability 0.6764706; updated 2021-08-26 17:06:13.603000; 69 downloads
+  nicholasleong92/mcdonalds-in-singapore
+      "McDonald's in Singapore"; "Predict Prices of McDonald's in Singapore"
+      156,308 bytes; licence 'GPL 2'; usability 0.5294118; updated 2023-04-03 07:40:32.907000; 78 downloads
+  3 dataset(s) listed
+probe_kaggle: search 'singapore ethnic group'
+  fionatanyuxin/singapore-citizens-population-data-1970-2022
+      'Singapore Citizens Population data (1970-2022)'; 'Singapore Citizens By Age Group, Ethnic Group And Sex, End June, Annual'
+      431,455 bytes; licence 'Other (specified in description)'; usability 0.9411765; updated 2023-07-16 09:06:30.120000; 203 downloads
+  anujsahay112/singapore-residents-dataset
+      'Singapore Residents dataset'; 'Population exploratory data'
+      116,422 bytes; licence 'Unknown'; usability 0.64705884; updated 2019-08-28 04:38:50.570000; 319 downloads
+  lucafrance/the-world-factbook-by-cia
+      'The World Factbook by CIA'; 'The World Factbook, the indispensable source for basic information.'
+      4,940,588 bytes; licence 'CC0: Public Domain'; usability 0.9411765; updated 2025-03-14 19:36:06.400000; 8870 downloads
+  fatimaafifi/finalpro
+      'Finalpro'; ''
+      6,095 bytes; licence 'Unknown'; usability 0.11764706; updated 2020-07-01 17:55:43.947000; 14 downloads
+  nikarankm/three-cultures-three-scripts
+      'Three Cultures Three Scripts'; ''
+      5,175,571,475 bytes; licence 'CC BY-SA 4.0'; usability 0.4375; updated 2026-04-24 03:44:32.913000; 35 downloads
+  fajilatunnahar/singaporemusicclassifier
+      'Singapore-music-classifier'; ''
+      1,534,107,746 bytes; licence 'Unknown'; usability 0.4375; updated 2020-11-13 02:04:03.170000; 72 downloads
+  6 dataset(s) listed
+probe_kaggle: search 'singapore religion'
+  chanyax/thailand-happiness
+      'Thailand Happiness'; 'Thailand Happiness scored according to economic production, social support, etc.'
+      1,225 bytes; licence 'Other (specified in description)'; usability 0.85294116; updated 2022-12-21 06:24:12.313000; 258 downloads
+  contactprad/straits-times-index-data
+      'Straits Times index Data'; 'This is a time series data to perform prediction and classification'
+      50,117 bytes; licence 'Database: Open Database, Contents: Database Contents'; usability 0.8235294; updated 2017-07-18 05:55:03.233000; 361 downloads
+  nikarankm/tamil-cultural-multimodal-backdoor-dataset
+      'Tamil Cultural Multimodal Backdoor Dataset'; ''
+      4,306,656,661 bytes; licence 'CC BY-NC-SA 4.0'; usability 0.5; updated 2026-04-19 23:17:42.917000; 287 downloads
+  junaidgpu/stock-data-with-financial-news-analysis
+      'Stock data with financial news analysis'; 'https://github.com/junaidmaqbool/StockPrediction'
+      42,470,316 bytes; licence 'Database: Open Database, Contents: Database Contents'; usability 0.7058824; updated 2024-03-18 09:59:57.790000; 184 downloads
+  nikarankm/three-cultures-three-scripts
+      'Three Cultures Three Scripts'; ''
+      5,175,571,475 bytes; licence 'CC BY-SA 4.0'; usability 0.4375; updated 2026-04-24 03:44:32.913000; 35 downloads
+  5 dataset(s) listed
+probe_kaggle: search 'singapore population'
+  ikiulian/global-hospital-beds-capacity-for-covid19
+      'Global Hospital Beds Capacity (for covid-19)'; 'Baseline for understanding the typical hospitals bed capacity globally'
+      290,457 bytes; licence 'CC0: Public Domain'; usability 1; updated 2020-04-26 09:39:35.367000; 8475 downloads
+  lin0li/covid19testing
+      'COVID19 Worldwide Testing Data'; 'Number of tests conducted from different countries over time'
+      526,501 bytes; licence 'Other (specified in description)'; usability 1; updated 2020-11-08 16:20:51.147000; 4622 downloads
+  sinakaraji/covid-vaccination-vs-death
+      'COVID vaccination vs. mortality '; 'you can find COVID vaccination percentage and progress beside death counts'
+      981,021 bytes; licence 'CC0: Public Domain'; usability 0.8235294; updated 2022-07-01 07:50:12.377000; 10580 downloads
+  alitaqishah/global-cvd-burden-2025-2050-73-countries
+      'Global CVD Burden 2025-2050 | 73 Countries'; '73 Countries | Deaths, Risk Factors & Projections to 2050'
+      31,873 bytes; licence 'CC0: Public Domain'; usability 1; updated 2026-03-10 10:35:34.670000; 172 downloads
+  fionatanyuxin/singapore-citizens-population-data-1970-2022
+      'Singapore Citizens Population data (1970-2022)'; 'Singapore Citizens By Age Group, Ethnic Group And Sex, End June, Annual'
+      431,455 bytes; licence 'Other (specified in description)'; usability 0.9411765; updated 2023-07-16 09:06:30.120000; 203 downloads
+  pavan9065/internet-usage
+      'Internet Usage'; 'History of Internet and evolution of Broadband '
+      219,565 bytes; licence 'CC0: Public Domain'; usability 1; updated 2021-10-07 04:18:01.693000; 5162 downloads
+  mohitmaithani/singapore-resident-dataset
+      'Singapore Resident Dataset'; 'The data contains Population by ethnicity, age and gender for Singapore resident'
+      371,933 bytes; licence 'Database: Open Database, Contents: Database Contents'; usability 0.88235295; updated 2020-07-17 13:25:47.667000; 395 downloads
+  jiantay33/singapore-used-car
+      'Singapore_used_car'; 'A list of used car on sale online'
+      191,801 bytes; licence 'Data files © Original Authors'; usability 0.9117647; updated 2021-11-15 07:39:14.210000; 507 downloads
+  denzilg/hdb-flat-prices-19902021-march
+      'HDB flat prices 1990-2021 March'; '840,000 transactions of HDB resale flats, including address and geolocation'
+      70,899,592 bytes; licence 'Database: Open Database, Contents: © Original Authors'; usability 1; updated 2021-06-17 06:00:52.283000; 1565 downloads
+  lucafrance/the-world-factbook-by-cia
+      'The World Factbook by CIA'; 'The World Factbook, the indispensable source for basic information.'
+      4,940,588 bytes; licence 'CC0: Public Domain'; usability 0.9411765; updated 2025-03-14 19:36:06.400000; 8870 downloads
+  anujsahay112/singapore-residents-dataset
+      'Singapore Residents dataset'; 'Population exploratory data'
+      116,422 bytes; licence 'Unknown'; usability 0.64705884; updated 2019-08-28 04:38:50.570000; 319 downloads
+  chanyax/thailand-happiness
+      'Thailand Happiness'; 'Thailand Happiness scored according to economic production, social support, etc.'
+      1,225 bytes; licence 'Other (specified in description)'; usability 0.85294116; updated 2022-12-21 06:24:12.313000; 258 downloads
+  talietzin/singapore-hdb-resale-prices-1990-to-2023
+      'Singapore Home Resale Prices (HDB)'; 'Transacted resale flat prices w/ distance to MRT & CBD. Official SG Gov data.'
+      11,929,166 bytes; licence 'Other (specified in description)'; usability 1; updated 2024-04-22 16:39:18.317000; 347 downloads
+  daviddave7100/immigrations-and-emigrations-statistics
+      'Human Capital Migration Study'; 'Using data and statistical techniques to study global human capital migration.'
+      8,414 bytes; licence 'Unknown'; usability 0.7058824; updated 2024-12-24 05:31:35.397000; 403 downloads
+  xiaoanchen/singapore-population-1950-2022-xlsx
+      'Singapore-Population-1950-2022.xlsx'; ''
+      24,546 bytes; licence 'Apache 2.0'; usability 0.11764706; updated 2026-05-03 15:58:33.603000; 4 downloads
+  15 dataset(s) listed
