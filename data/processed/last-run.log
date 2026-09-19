@@ -1,2 +1,10 @@
-page: https://jumin.mois.go.kr/statMonth.do
-  unreachable: URLError: <urlopen error timed out>
+ethnicity: fetching
+  ethnicity_planning_area_census2020.csv: 388 rows, 16 columns, from data.gov.sg d_e7ae90176a68945837ad67892b898466
+religion: fetching
+  religion_planning_area_census2020_datagovsg.csv: 32 rows, 11 columns, from data.gov.sg d_a58564fbed922609a0f79af96069dd9b
+language: fetching
+  language_planning_area_census2020_datagovsg.csv: 32 rows, 29 columns, from data.gov.sg d_21f546492a87dec38391fc72eb4c7890
+religion_2010: fetching
+  religion_planning_area_census2010.csv: 37 rows, 11 columns, from data.gov.sg d_d4be7f8ba23ba93e5d59564d1dfb5eaa
+language_2010: fetching
+  language_planning_area_census2010.csv: 37 rows, 9 columns, from data.gov.sg d_c3ed3269adea97f53092d70c4d6d9682
