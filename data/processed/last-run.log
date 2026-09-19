@@ -1,8 +1,8 @@
-probe_page: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=2
-  retry 1/4 after 2s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=2 :: <urlopen error timed out>
-  retry 2/4 after 4s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=2 :: <urlopen error timed out>
-  retry 3/4 after 8s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=2 :: <urlopen error timed out>
-  retry 4/4 after 16s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=2 :: <urlopen error timed out>
+probe_page: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=1
+  retry 1/4 after 2s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=1 :: <urlopen error timed out>
+  retry 2/4 after 4s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=1 :: <urlopen error timed out>
+  retry 3/4 after 8s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=1 :: <urlopen error timed out>
+  retry 4/4 after 16s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=1 :: <urlopen error timed out>
 Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
     h.request(req.get_method(), req.selector, req.data, headers,
@@ -65,4 +65,4 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^^
   File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 651, in http_get
     raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 4 retries: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=2
+RuntimeError: GET failed after 4 retries: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=1
