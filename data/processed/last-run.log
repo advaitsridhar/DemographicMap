@@ -1,23 +1,31 @@
-page: https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=국적별+등록외국인&dType=FILE
-  429,881 bytes
-  10 matching link(s)
-  - 법무부_시군구별 국적별 등록외국인 체류현황
-    https://www.data.go.kr/data/15108413/fileData.do
-  - 서울특별시_ 등록외국인 현황( 국적별 구별) 통계
-    https://www.data.go.kr/data/15046956/fileData.do
-  - 인천광역시_외국인 국적별 등록현황
-    https://www.data.go.kr/data/15055021/fileData.do
-  - 서울특별시_서울시 등록외국인 현황( 국적별 동별) 통계
-    https://www.data.go.kr/data/15046967/fileData.do
-  - 서울특별시_ 등록외국인 현황(연령별 국적별 ) 통계
-    https://www.data.go.kr/data/15046964/fileData.do
-  - 서울특별시_ 등록외국인 현황( 국적별 체류자격별) 통계
-    https://www.data.go.kr/data/15046962/fileData.do
-  - 서울특별시 서대문구_ 국적별 등록외국인현황
-    https://www.data.go.kr/data/15055365/fileData.do
-  - 서울특별시_ 등록외국인 현황( 국적별 동별) 통계
-    https://www.data.go.kr/data/15146338/fileData.do
-  - 제주특별자치도_ 국적별 외국인 등록 현황
-    https://www.data.go.kr/data/15045325/fileData.do
-  - 강원특별자치도_주요 국적별 외국인 등록 현황 통계
-    https://www.data.go.kr/data/15050501/fileData.do
+probe_page: https://www.data.go.kr/data/15108413/fileData.do
+  248 lines of text, 11 mentioning 파일, csv, xlsx, 갱신, 등록일, 기준, 확장자, 설명
+      117  홈
+      118  CSV
+      119  새창 열림
+      128  이 페이지의 구성
+      129  파일데이터 상세
+      130  파일데이터 정보
+      131  표준 메타데이터
+      135  추천데이터
+      136  파일데이터 정보
+      137  데이터 오류·개선 의견이 있으신가요?
+      140  기본 정보
+      141  파일데이터명
+      142  법무부_시군구별 국적별 등록외국인 체류현황_20231231
+      156  상세 및 제공정보
+      157  설명
+      158  국내 체류중인 등록외국인의 시군구별 성별 국적별로 데이터를 제공 (제공 항목 : 시도, 시군구, 성별, 국적별) 해당 통계는 제공신청에 따른 2022-2023년 통계임
+      167  텍스트
+      168  확장자
+      169  CSV
+      170  전체 행
+      177  제공형태
+      178  공공데이터포털에서 다운로드(원문파일등록)
+      179  다운로드(바로가기)
+      180  3833
+      181  등록일
+      182  2024-04-19
+      192  무료
+      193  비용부과기준 및 단위
+      194  건
