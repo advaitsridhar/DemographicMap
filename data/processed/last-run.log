@@ -1,61 +1,54 @@
-probe_pdf: https://ws.dgbas.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDYzL3JlbGZpbGUvMTA5ODAvMjMwMTYyL2M5NWE5ZWU5LWI1OTEtNGNkMS04YzAwLTI3NTkyYjJhOGRlNC5wZGY%3d&n=MTA55bm05Lq65Y%2bj5Y%2bK5L2P5a6F5pmu5p%2bl57i95aCx5ZGK57Wx6KiI57WQ5p6cLeaWsOiBnueovy5wZGY%3d
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1523, in connect
-    self.sock = self._context.wrap_socket(self.sock,
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 517, in wrap_socket
-    return self.sslsocket_class._create(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 1104, in _create
-    self.do_handshake()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/ssl.py", line 1382, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
-    blob = fetch_blob(url, aia=aia)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
-    with urllib.request.urlopen(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+probe_page: en.wikipedia.org Religion_in_Taiwan
+  762 lines of text, 9 mentioning Social_Change, Academia_Sinica, 49.3, Yiguandao, Pew
+        0  "Religion in the Republic of China" redirects here. For religion in the People's Republic of China, see Religion in China .
+        1  Religion in Taiwan by self-identified affiliation ( Pew Research Center 2023) [ 1 ]
+        2  Buddhism (28%)
+        3  No religion (27%)
+        4  Taoism (24%)
+       11  Buddhism (19.8%)
+       12  Taoism (18.7%)
+       13  Protestantism (5.50%)
+       14  Yiguandao (2.20%)
+       15  Catholicism (1.40%)
+       16  Other religions (0.60%)
+       17  Mengjia Longshan Temple is a Chinese folk religion temple with both Buddhist and Taoist deities.
+       52  Another effect of the Japanese colonisation on religious life in Taiwan was due to the modernisation of infrastructures. [ 25 ] Before the 20th century the travel infrastructure of Taiwan was not very developed, and it was difficult for people to move from a part of the island to another. [ 25 ] The
+       53  1945 onwards—Republic of China rule
+       54  [ edit ]
+       55  Religion of upbringing in Taiwan ( Pew Research Center 2023) [ 1 ]
+       56  Taoism (42%)
+       57  Buddhism (25%)
+       58  No religion (9%)
+       59  Christianity (5%)
+       60  Other religions (19%)
+       61  Tianyuanggong , a temple of Yiguandao in Tamsui, New Taipei.
+       62  In 1945, after the Second World War , the administration of Taiwan was handed over to the Republic of China through General Order No. 1 . The People's Republic of China was established four years later in mainland China under the Chinese Communist Party .
+       63  In 1949, several religious leaders of mainland China including the 63rd Celestial Master of Taoism Zhang Enpu (張恩溥), and the 7th Changkya Khutukhtu , the spiritual head of Tibetan Buddhism in Inner Mongolia Lobsang Pelden Tenpe Dronme [ 27 ] escaped to Taiwan after the Government of the Republic of 
+       64  The rapid economic growth of Taiwan since the 1970s and 1980s (" Taiwan Miracle ") accompanied by a quick renewal of Chinese folk religion , challenging Max Weber 's theories on secularisation and disenchantment , has led many scholars to investigate how folk religious culture, with its emphasis on 
+       65  After the 1950s, and especially since the 1970s, there was a significant growth of Buddhism . [ 32 ] Chinese Buddhism developed into distinctively new forms , with the foundation of organizations like the Tzu Chi , the Fo Guang Shan and the Dharma Drum Mountain , which follow the Humanistic Buddhism
+       66  Adults raised with a religious identity different from their current one by Pew Research Center 2023 [ 1 ]
+       67  Religion
+       68  Religion of upbringing
+       69  Religion they now profess
+      131  Chinese salvationism
+      132  [ edit ]
+      133  Main article: Chinese salvationist religions
+      134  As of 2005, more than 10% of the population of Taiwan adhered to a variety of folk religious organisations of salvation. The largest of them is Yiguandao (with 3.5% of the population), followed by Tiandiism (whose two churches, the Holy Church of the Heavenly Virtue and the Lord of Universe Church, 
+      135  A Yiguandao-organised Confucian ceremony for the worship of gods and Heaven in March 2017. Yiguandao elders are those clad in grey robes.
+      136  The Luanist Rebirth Church (重生堂 Chóngshēngtáng ) in Taichung.
+      137  Minor religions
+      138  [ edit ]
+      188  7,600,000
+      189  33.0%
+      190  18,274
+      191  Yiguandao ( 一貫道 )
+      192  810,000
+      193  3.5%
+      194  3,260
+      311  [ edit ]
+      312  Citations
+      313  [ edit ]
+      314  ^ a b c Evans, Jonathan; Cooperman, Alan; Starr, Kelsey Jo; Korichi, Manolo; Miner, William; Lesage, Kirsten (17 June 2024). "Religion and Spirituality in East Asian Societies" . Pew Research Center .
+      315  ^ "2023 Report on International Religious Freedom: Taiwan" . United States Department of State .
+      316  ^ "內政統計年報" . 內政部全球資訊網-中文網 (in Chinese) . Retrieved 2025-08-11 .
+      317  ^ Clart & Jones (2003) , p. 11.
