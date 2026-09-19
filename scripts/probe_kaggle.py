@@ -160,10 +160,24 @@ def main() -> int:
         return 1
     files = listing(root)
     only = re.compile(args.only) if args.only else None
+    stems = {p.stem for p in files if p.suffix in {".dta", ".sav"}}
     for p in files:
         if p.suffix.lower() not in TABULAR:
             continue
         if only and not only.search(str(p.relative_to(root))):
+            continue
+        # A bundle often ships each Stata file again as a spreadsheet
+        # ("x.dta" beside "x_data.xlsx" and "x_labels.xlsx"). The spreadsheet
+        # carries less -- no value labels -- and openpyxl loads all of it to
+        # read one header row, which on a 100 MB export is most of an hour.
+        # The Stata file is read instead, and the twin is named and skipped.
+        if p.suffix in {".xlsx", ".xls"} and (
+                p.stem in stems or re.sub(r"_(data|labels)$", "", p.stem) in stems):
+            log(f"  -- {p.relative_to(root)}: a spreadsheet twin of a Stata file, skipped")
+            continue
+        if p.suffix in {".xlsx", ".xls"} and p.stat().st_size > 20_000_000:
+            log(f"  -- {p.relative_to(root)}: {p.stat().st_size:,} bytes of spreadsheet, "
+                "too slow to open for a header; use --only to insist")
             continue
         log(f"  == {p.relative_to(root)}")
         probe(p, terms, args.rows, args.max_values)
