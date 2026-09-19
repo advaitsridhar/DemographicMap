@@ -1,34 +1,23 @@
-page: https://www.data.go.kr/js/biz/datset/script_fileDetail.js
-  13,459 bytes
-  12 distinct match(es) for '(?:fileDataDown|fileDownload|selectFileData|atchFileId|location.href)[^;]{0,300}'
-    atchFileId: atchFileId,
-            fileDetailSn: fileDetailSn,
-            publicDataTyCode: 'PR0051',
-            url: '/tcs/dss/selectFileDataDownload.do'
-        }, fileDetailObj.fn_fileDataDownCb)
-    fileDataDown(url,publicDataPk, publicDataDetailPk) {
-
-    $.ajax({
-        url: url,
-        data: {publicDataPk: publicDataPk,
-                publicDataDetailPk: publicDataDetailPk},
-        success	: function(data) {
-            let jsonObj = JSON.parse(data)
-    fileDataDown: function(publicDataPk, publicDataDetailPk, atchFileId, fileDetailSn, publicDataHistSn) {
-        if(publicDataHistSn > 1) {
-            fileDetailObj.fn_checkUpdtDt()
-    fileDataDownCb)
-
-        $(".recommend-after-download").slideDown()
-    fileDataDownCb: function(data) {
-        let jsonObj = JSON.parse(data)
-    fileDataDownload(jsonObj.atchFileId, jsonObj.fileDetailSn, jsonObj.dataSetFileDetailInfo.dataNm)
-    fileDataDownload(jsonObj.atchFileId, jsonObj.fileDetailSn, jsonObj.dataSetFileDetailInfo.publicDataSj)
-    location.href = "/uim/login/loginView.do"
-    location.href = '/uim/login/loginView.do'
-    location.href = '/uim/login/loginView.do'
-                return
-    location.href = jsonObj.linkUrl
-    selectFileDataApplyReqForm.do" + "?publicDataPk=" + jsonObj.publicDataPk + "&publicDataDetailPk=" + jsonObj.publicDataDetailPk)
-        } else {
-            alert(jsonObj.errorDc)
+page: https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=국적별+등록외국인&dType=FILE
+  429,881 bytes
+  10 matching link(s)
+  - 법무부_시군구별 국적별 등록외국인 체류현황
+    https://www.data.go.kr/data/15108413/fileData.do
+  - 서울특별시_ 등록외국인 현황( 국적별 구별) 통계
+    https://www.data.go.kr/data/15046956/fileData.do
+  - 인천광역시_외국인 국적별 등록현황
+    https://www.data.go.kr/data/15055021/fileData.do
+  - 서울특별시_서울시 등록외국인 현황( 국적별 동별) 통계
+    https://www.data.go.kr/data/15046967/fileData.do
+  - 서울특별시_ 등록외국인 현황(연령별 국적별 ) 통계
+    https://www.data.go.kr/data/15046964/fileData.do
+  - 서울특별시_ 등록외국인 현황( 국적별 체류자격별) 통계
+    https://www.data.go.kr/data/15046962/fileData.do
+  - 서울특별시 서대문구_ 국적별 등록외국인현황
+    https://www.data.go.kr/data/15055365/fileData.do
+  - 서울특별시_ 등록외국인 현황( 국적별 동별) 통계
+    https://www.data.go.kr/data/15146338/fileData.do
+  - 제주특별자치도_ 국적별 외국인 등록 현황
+    https://www.data.go.kr/data/15045325/fileData.do
+  - 강원특별자치도_주요 국적별 외국인 등록 현황 통계
+    https://www.data.go.kr/data/15050501/fileData.do
