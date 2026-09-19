@@ -177,6 +177,17 @@ class Tilt(unittest.TestCase):
     PRIOR = {"Buddhism": 28.0, "Taoism": 24.0, "Christianity": 7.0, "Other religions": 12.0}
     NATIONAL = {"Buddhism": 20.0, "Taoism": 60.0, "Christianity": 15.0, "Other religions": 5.0}
 
+    def test_a_signal_map_tilts_by_temples_and_churches(self):
+        # Churches are 40 of 100 here against 20 of 100 nationally.
+        national = {m.TEMPLES: 80.0, m.CHURCHES: 20.0}
+        unit = {m.TEMPLES: 60.0, m.CHURCHES: 40.0}
+        shares, ratios, _ = m.tilt(self.PRIOR, 29.0, national, unit, caps={}, signal=m.SIGNAL)
+        self.assertAlmostEqual(ratios[m.CHURCHES], 2.0)
+        self.assertAlmostEqual(ratios[m.TEMPLES], 0.75)
+        self.assertAlmostEqual(shares["Buddhism"] / shares["Taoism"], 28.0 / 24.0)
+        self.assertGreater(shares["Christianity"], 7.0)
+        self.assertAlmostEqual(sum(shares.values()), 100.0)
+
     def test_a_unit_with_the_national_pattern_is_the_prior(self):
         shares, ratios, held = m.tilt(self.PRIOR, 29.0, self.NATIONAL, dict(self.NATIONAL),
                                       caps={})
@@ -226,6 +237,211 @@ class Hundred(unittest.TestCase):
         rows = m.hundred({"a": 1 / 3, "b": 1 / 3, "c": 1 / 3})
         self.assertAlmostEqual(sum(r["pct"] for r in rows), 100.0)
         self.assertEqual([r["pct"] for r in rows], [33.4, 33.3, 33.3])
+
+
+def synthetic_register():
+    """Population and indigenous counts by county whose totals are their sums."""
+    population = {c: 100_000 + 1_000 * i for i, c in enumerate(m.COUNTIES)}
+    indigenous = {c: 500 + 10 * i for i, c in enumerate(m.COUNTIES)}
+    indigenous["花蓮縣"] = 30_000        # a fifth of the county, as in life
+    population[m.NATIONAL] = sum(population.values())
+    indigenous[m.NATIONAL] = sum(indigenous.values())
+    return population, indigenous
+
+
+def synthetic_buildings():
+    """Temples and churches by county: Hualien and Taitung church-heavy, the
+    west temple-heavy, Hsinchu City an artefact of many small churches."""
+    out = {}
+    for i, c in enumerate(m.COUNTIES):
+        out[c] = {m.TEMPLES: 500.0 + 4 * i, m.CHURCHES: 60.0}
+    out["花蓮縣"][m.CHURCHES] = 400.0
+    out["臺東縣"][m.CHURCHES] = 350.0
+    out["新竹市"][m.CHURCHES] = 2000.0
+    out[m.NATIONAL] = {k: sum(out[c][k] for c in m.COUNTIES) for k in (m.TEMPLES, m.CHURCHES)}
+    return out
+
+
+def register_grid(month_line, name_col, head_rows, rows):
+    """A sheet the way statis.moi.gov.tw writes one: a title, the month, the
+    header rows, then one row per area with its name in ``name_col``."""
+    grid = [["1.1-title"], [month_line]] + head_rows
+    for name, figures in rows:
+        row = [""] * (name_col + 1)
+        row[name_col] = name
+        grid.append(row + figures)
+    return grid
+
+
+POPULATION_ROWS = [("總計  Total", ["36197", "368", "7781", "143598", "9923990", "23224721", "100"]),
+                   ("臺 灣 省 Taiwan Province", ["25110", "200", "3530", "58999", "2800523",
+                                              "6837917", "29.44"])]
+POPULATION_ROWS += [(f"{c} X", ["1", "1", "1", "1", "1", str(1_000_000 + i), "1"])
+                    for i, c in enumerate(m.COUNTIES)]
+POPULATION_ROWS[0] = ("總計  Total", ["36197", "368", "7781", "143598", "9923990",
+                                     str(sum(1_000_000 + i for i in range(22))), "100"])
+POPULATION_GRID = register_grid(
+    "中華民國115年8月底 End of  Aug. 2026", 0,
+    [["區域別", "土地面積 (平方公里)", "鄉鎮市區數", "村里數", "編組鄰數", "戶數", "人口數",
+      "占總人口比率(%)", "男性人口數"],
+     ["Locality", "Area(Km²)", "Townships", "Villages", "Neighborhoods", "Households",
+      "Persons", "Proportion", "Male"]],
+    POPULATION_ROWS)
+
+INDIGENOUS_ROWS = [("總計  Total", [str(sum(1000 + i for i in range(22))), "1", "1"]),
+                   ("臺 灣 省 Taiwan Province", ["5", "1", "1"])]
+INDIGENOUS_ROWS += [(f"{c} X", [str(1000 + i), "1", "1"]) for i, c in enumerate(m.COUNTIES)]
+INDIGENOUS_GRID = register_grid(
+    "中華民國115年8月底 End of  Aug. 2026", 1,
+    [["區域別\n Locality", "", "原住民人數 Grand-Total", "", "", "平地原住民人數 In Plains"],
+     ["", "", "合計", "男性", "女性", "合計"],
+     ["", "", "Total", "Male", "Female", "Total"],
+     ["115年 1 -12月"]],
+    INDIGENOUS_ROWS)
+
+BUILDINGS_GRID = [["06-01 臺閩地區各宗教教務概況"], [""], ["單位：個；人"],
+                  ["年底及區域別", "", "寺廟教(會)堂數\nNo. of temple", "", "",
+                   "信徒人數(依各宗教皈依之規定)\nNo. of"],
+                  ["", "", "合計", "寺廟", "教(會)堂", "信徒人數"],
+                  ["End of Year & Locality", "", "Total", "Temples", "Churches", "Followers"],
+                  ["一一四年 2025", "15252", "15252", str(22 * 500), str(22 * 130), "932735"],
+                  ["臺 灣 省", "Taiwan Prov.", "7783", "6434", "1349", "474941"]]
+BUILDINGS_GRID += [[c, "X", "630", "500", "130", "1"] for c in m.COUNTIES]
+
+
+class Records(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        language = quiet(m.read_language, LANGUAGE_TEXT)
+        hakka = quiet(m.read_hakka, HAKKA_TEXT)
+        identity = quiet(m.read_identity, HAKKA_TEXT)
+        population, indigenous = synthetic_register()
+        cls.records = quiet(m.build, language, hakka, identity, population, indigenous,
+                            (2026, 7), synthetic_buildings(), 2025)
+        cls.by_name = {r["name"]: r for r in cls.records}
+
+    def test_22_records_named_for_the_shapes_with_aliases(self):
+        self.assertEqual(len(self.records), 22)
+        self.assertIn("Matsu Islands", self.by_name)
+        self.assertIn("Lienchiang County", self.by_name["Matsu Islands"]["aliases"])
+        self.assertIn("Taipei County", self.by_name["New Taipei"]["aliases"])
+        for r in self.records:
+            self.assertEqual(r["country"], "TWN")
+            self.assertEqual(r["level"], "admin1")
+
+    def test_language_is_a_list_and_the_estimates_are_estimates(self):
+        for r in self.records:
+            self.assertIsInstance(r["language"], list, r["name"])
+            self.assertTrue(common.is_estimate(r["ethnicity"]), r["name"])
+            self.assertTrue(common.is_estimate(r["religion"]), r["name"])
+            self.assertNotIn("backtest", r["ethnicity"])
+            self.assertNotIn("backtest", r["religion"])
+            self.assertEqual(r["language_year"], 2020)
+            self.assertIn("aged 6 and over", r["language_basis"])
+
+    def test_every_composition_sums_to_100(self):
+        for r in self.records:
+            self.assertLess(abs(sum(x["pct"] for x in r["language"]) - 100.0), 0.31, r["name"])
+            for field in ("ethnicity", "religion"):
+                total = sum(x["pct"] for x in r[field]["estimate"])
+                self.assertAlmostEqual(total, 100.0, places=6, msg=f"{r['name']} {field}")
+
+    def test_the_ethnicity_arithmetic_is_the_registers_and_the_surveys(self):
+        hualien = self.by_name["Hualien County"]["ethnicity"]
+        shares = {x["group"]: x["pct"] for x in hualien["estimate"]}
+        population, indigenous = synthetic_register()
+        self.assertAlmostEqual(shares[m.INDIGENOUS],
+                               round(indigenous["花蓮縣"] / population["花蓮縣"] * 100, 1), 0)
+        self.assertAlmostEqual(shares[m.HAKKA], 34.2, delta=0.11)
+        self.assertGreater(shares[m.HOKLO], shares[m.MAINLANDER])
+        self.assertEqual(hualien["method"], m.ETHNICITY_METHOD)
+
+    def test_the_church_heavy_counties_are_tilted_towards_christianity_within_the_bound(self):
+        hualien = {x["group"]: x["pct"] for x in self.by_name["Hualien County"]["religion"]["estimate"]}
+        changhua = {x["group"]: x["pct"] for x in self.by_name["Changhua County"]["religion"]["estimate"]}
+        self.assertGreater(hualien["Christianity"], changhua["Christianity"])
+        self.assertLessEqual(hualien["Christianity"], m.CAPS["Christianity"] + 0.05)
+        prior, none = m.prior_shares()
+        self.assertAlmostEqual(hualien["No religion"], none, delta=0.11)   # one rounding step
+
+    def test_a_bound_is_recorded_when_hit(self):
+        hsinchu = self.by_name["Hsinchu"]["religion"]
+        self.assertIn("Christianity", hsinchu.get("capped", []))
+        self.assertLessEqual({x["group"]: x["pct"] for x in hsinchu["estimate"]}["Christianity"],
+                             m.CAPS["Christianity"] + 0.05)
+        self.assertEqual(hsinchu["tilt"][m.CHURCHES], m.TILT_BOUND)
+        self.assertIn("2,000 churches", hsinchu["note"])
+
+    def test_the_temple_traditions_move_together(self):
+        changhua = {x["group"]: x["pct"] for x in self.by_name["Changhua County"]["religion"]["estimate"]}
+        prior, _ = m.prior_shares()
+        self.assertAlmostEqual(changhua["Buddhism"] / changhua["Taoism"],
+                               prior["Buddhism"] / prior["Taoism"], delta=0.02)
+
+    def test_notes_open_with_what_the_figure_is_and_stay_short(self):
+        for r in self.records:
+            self.assertTrue(r["ethnicity"]["note"].startswith("Modelled from"))
+            self.assertTrue(r["religion"]["note"].startswith("Modelled from"))
+            self.assertTrue(r["language_note"].startswith("2020 census"))
+            self.assertLess(len(r["religion"]["note"]), 1100, r["name"])
+            self.assertLess(len(r["ethnicity"]["note"]), 900, r["name"])
+
+    def test_the_decision_and_the_sources_are_on_every_record(self):
+        for r in self.records:
+            self.assertIn(m.DECISION, r["ethnicity"]["note"])
+            fields = {s["field"] for s in r["sources"]}
+            self.assertEqual(fields, {"language", "ethnicity", "ethnicity/population", "religion"})
+
+
+class Workbooks(unittest.TestCase):
+    def test_sheets_are_named_for_a_month_or_a_year(self):
+        self.assertEqual(m.sheet_date(" 2025"), (2025, 12))
+        self.assertEqual(m.sheet_date(" Aug., 2026"), (2026, 8))
+        self.assertIsNone(m.sheet_date("年月monthly"))
+        self.assertIsNone(m.sheet_date("2025(區域別)"))
+
+    def test_the_latest_month_wins_over_the_latest_year(self):
+        grids = {"年月monthly": [], " Aug., 2026": [["a"]], " 2025": [["b"]], " 2024": [["c"]]}
+        name, grid, when = m.latest_sheet(grids)
+        self.assertEqual((name, grid, when), (" Aug., 2026", [["a"]], (2026, 8)))
+
+    def test_the_yearbook_county_sheet_is_selected_by_pattern(self):
+        grids = {"歷年Yearly": [], "2025(區域別)": [["a"]], "2025(宗教別)": [["b"]],
+                 "2024(區域別)": [["c"]]}
+        name, _, when = m.latest_sheet(grids, m.COUNTY_SHEET)
+        self.assertEqual((name, when), ("2025(區域別)", (2025, 12)))
+        with self.assertRaises(SystemExit):
+            m.latest_sheet({"歷年Yearly": [], "2025(宗教別)": []}, m.COUNTY_SHEET)
+
+    def test_the_population_sheet_reads_人口數_and_not_男性人口數(self):
+        table = m.read_columns(POPULATION_GRID, {"value": "人口數"}, "population")
+        self.assertEqual(table["新北市"]["value"], 1_000_000)
+        self.assertEqual(table["連江縣"]["value"], 1_000_021)
+        self.assertEqual(table[m.NATIONAL]["value"], sum(1_000_000 + i for i in range(22)))
+        self.assertNotIn("臺灣省", table)
+        self.assertEqual(m.sheet_month(POPULATION_GRID, "x"), (2026, 8))
+
+    def test_the_indigenous_sheet_names_its_areas_in_the_second_column(self):
+        table = m.read_columns(INDIGENOUS_GRID, {"value": "原住民人數"}, "indigenous")
+        self.assertEqual(table["臺北市"]["value"], 1001)
+        self.assertEqual(len(table), 23)
+
+    def test_the_yearbook_sheet_reads_temples_and_churches_with_the_year_row_as_the_nation(self):
+        table = m.read_columns(BUILDINGS_GRID, {m.TEMPLES: "寺廟", m.CHURCHES: "教(會)堂"},
+                               "buildings", year_row_is_national=True)
+        self.assertEqual(table["新北市"], {m.TEMPLES: 500, m.CHURCHES: 130})
+        self.assertEqual(table[m.NATIONAL], {m.TEMPLES: 11000, m.CHURCHES: 2860})
+
+    def test_counties_that_do_not_sum_to_the_total_refuse(self):
+        grid = [row[:] for row in BUILDINGS_GRID]
+        grid[6][3] = "10999"
+        with self.assertRaises(SystemExit) as cm:
+            m.read_columns(grid, {m.TEMPLES: "寺廟"}, "buildings", year_row_is_national=True)
+        self.assertIn("sums to", str(cm.exception))
+
+    def test_a_missing_column_refuses(self):
+        with self.assertRaises(SystemExit):
+            m.read_columns(BUILDINGS_GRID, {"x": "佛教"}, "buildings", year_row_is_national=True)
 
 
 class Placement(unittest.TestCase):
