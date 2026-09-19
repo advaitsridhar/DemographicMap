@@ -1,3 +1,6 @@
-page: https://www.data.go.kr/data/15100022/fileData.do
-  192,211 bytes
-  0 matching link(s)
+xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
+usage: probe_links.py [-h] [--match MATCH] [--head] [--limit LIMIT]
+                      [--timeout TIMEOUT] [--check CHECK] [--accept ACCEPT]
+                      [--find FIND] [--raw RAW]
+                      url [url ...]
+probe_links.py: error: argument --find: expected one argument
