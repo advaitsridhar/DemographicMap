@@ -1,53 +1,614 @@
-page: https://jumin.mois.go.kr/statMonth.do
-  81,218 bytes
-  44 distinct match(es) for '(?:downloadCsv[^;]{0,400}|<input[^>]{0,200}|<form[^>]{0,200}|<select[^>]{0,120}|ajax[^;]{0,240})'
-    <form action="statMonth.do" name="search" method="post"
-    <form name="formXlsDown" id="formXlsDown" method="post"
-    <input class="i_check" id="generation" type="checkbox" name="generation" value="generation" checked
-    <input class="i_check" id="sex1" type="checkbox" name="gender" value="gender" checked
-    <input class="i_check" id="sex2" type="checkbox" name="genderPer" value="genderPer" checked
-    <input class="i_radio"  type="radio" value="month"  id="searchYearMonth" name="searchYearMonth" checked  
-    <input class="i_radio"  type="radio" value="year"  id="searchYearMonth" name="searchYearMonth"  
-    <input class="i_radio" id="down1" type="radio" value="1" name="state" checked/
-    <input class="i_radio" id="down2" type="radio" value="2" name="state" /
-    <input class="i_radio" id="down3" type="radio" value="3" name="state" /
-    <input type="hidden" value="" name="sltOrgLvl2"
-    <input type="hidden" value="" name="sltUndefType"
-    <input type="hidden" value="08" name="searchMonthEnd"
-    <input type="hidden" value="08" name="searchMonthStart"
-    <input type="hidden" value="1" name="sltOrderType"
-    <input type="hidden" value="1" name="sltOrgType"
-    <input type="hidden" value="2026" id="nowYear" name="nowYear"
-    <input type="hidden" value="2026" name="searchYearEnd"
-    <input type="hidden" value="2026" name="searchYearStart"
-    <input type="hidden" value="20260801" id="startOrtnDe" name="startOrtnDe"
-    <input type="hidden" value="20260831" id="endOrtnDe" name="endOrtnDe"
-    <input type="hidden" value="A" name="sltOrgLvl1"
-    <input type="hidden" value="ASC" name="sltOrderValue"
-    <input type="hidden" value="gender" name="gender"
-    <input type="hidden" value="genderPer" name="genderPer"
-    <input type="hidden" value="generation" name="generation"
-    <input type="hidden" value="month" name="category"
-    <input type="reset" value="초기화" class="btn_reset" onclick="return goReset();"
-    <input type="submit" value="검색" class="btn_search" onclick="return goSearch();"
-    <select id="register" name="sltUndefType"
-    <select name="searchMonthEnd" id="searchMonthEnd"
-    <select name="searchMonthStart" id="searchMonthStart"
-    <select name="searchYearEnd" id="searchYearEnd"
-    <select name="searchYearStart" id="searchYearStart"
-    <select name="sltOrderType" id="sltOrderType" title="행정기관코드"
-    <select name="sltOrderValue" id="sltOrderValue"
-    <select name="sltOrgLvl1" id="sltOrgLvl1" onchange="selectSikunkunm();"
-    <select name="sltOrgLvl2" id="sltOrgLvl2" 
-    <select name="stateMobile" title="조회 연도 선택"
-    ajax({
-				type: "post",
-				url : "selectHangkikcdListAjax.do
-    ajax로 지역가져오는 곳
-		function selectSidonm(){			
-			$.ajax({
-				type: "post",
-				url : "selectHangkikcdListAjax.do
-    downloadCsv.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=1").submit()
-    downloadCsv.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=2").submit()
-    downloadCsv.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=3").submit()
+page: https://query.wikidata.org/sparql?format=json&query=SELECT%20%3Fitem%20%3Fko%20%3Fpop%20%3Ftime%20WHERE%20%7B%20%3Fitem%20wdt%3AP131%20%3Fp%20.%20%3Fp%20wdt%3AP131%20wd%3AQ884%20.%20%3Fitem%20p%3AP1082%20%3Fst%20.%20%3Fst%20ps%3AP1082%20%3Fpop%20%3B%20pq%3AP585%20%3Ftime%20.%20FILTER%28YEAR%28%3Ftime%29%20%3D%202023%29%20%3Fitem%20rdfs%3Alabel%20%3Fko%20.%20FILTER%28LANG%28%3Fko%29%20%3D%20%22ko%22%29%20%7D%20ORDER%20BY%20%3Fko%20LIMIT%20400
+  32,127 bytes
+{
+  "head" : {
+    "vars" : [ "item", "ko", "pop", "time" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50203"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "61976"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-09-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "가평군"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q20398"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "546291"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-10-25T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "강남구"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50348"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "458824"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "강동구"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42056"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "210456"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "강릉시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50349"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "288735"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "강북구"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42097"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "248244"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-10-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "경주시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50353"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "482692"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "관악구"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42067"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "152160"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "광양시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42067"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "152160"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "광양시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50355"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "335854"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "광진구"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50359"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "227701"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "금천구"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42077"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "81644"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "김제시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42078"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "137515"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "김천시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42084"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "732086"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-11-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "남양주시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42084"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "732376"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-09-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "남양주시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50368"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "498976"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "노원구"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42088"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "115925"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "논산시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q20927"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "2376044"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "대구광역시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50374"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "307070"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "도봉구"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50385"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "379186"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "동작구"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50388"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "363862"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "마포구"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42094"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "214534"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "목포시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42094"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "214534"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "목포시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50242"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "23298"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "무주군"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50243"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "37886"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "보성군"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50243"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "37886"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "보성군"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42099"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "781119"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "부천시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42103"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "183858"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "서귀포시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q20395"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "408098"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "서초구"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q42108"
+      },
+      "pop" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "918771"
+      },
+      "time" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime",
+        "type" : "literal",
+        "value" : "2023-01-01T00:00:00Z"
+      },
+      "ko" : {
+        "xml:lang" : "ko",
+        "type" : "literal",
+        "value" : "성남시"
+      }
+    }, {
+      "item" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q50415"
+      },
+      "pop" : {
+        "datatype" : "h
