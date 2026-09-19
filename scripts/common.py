@@ -278,7 +278,10 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
         "religion": "Spain's census does not ask religion (CIS survey data exists instead).",
     },
     "CHN": {
-        "religion": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead.",
+        "religion": "China's census does not ask religion; it records the 56 official "
+                    "nationalities (minzu) instead. The China Family Panel Studies asked "
+                    "it in 2012 and supports province-level figures for five provinces "
+                    "(Shanghai, Liaoning, Henan, Gansu, Guangdong), which carry them.",
     },
     # Ireland asks about language twice and neither answer is a composition.
     # Census 2022 publishes "Speakers of foreign languages" -- a count of only

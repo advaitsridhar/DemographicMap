@@ -8,3 +8,5 @@ openpyxl>=3.1       # censusindia.gov.in publishes its tables as .xlsx
 pypdf>=5.0          # Nepal's census publishes caste, language and religion only as a report PDF
 pdfplumber>=0.11    # Pakistan's census tables store their row labels apart from the figures; only word coordinates put them back together
 xlrd>=2.0            # Romania and other offices publish census tables as legacy .xls; xlrd 2.x reads that format and only it
+kagglehub[pandas-datasets]>=1.0   # scripts/probe_kaggle.py: a Kaggle re-upload of survey microdata, read on the runner
+pyreadstat>=1.2     # Stata and SPSS variable labels, which is how survey microdata says what a column means

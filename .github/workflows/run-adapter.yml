@@ -83,6 +83,10 @@ jobs:
           # and scripts/probe_estat.py scrubs it out of everything it prints,
           # because a probe's product is a log that gets committed.
           ESTAT_API: ${{ secrets.ESTAT_API }}
+          # Kaggle, for scripts/probe_kaggle.py and any adapter that reads a
+          # dataset there. A public dataset may download without them.
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
 
         # xargs rather than an unquoted expansion: the command is a dispatch
         # input, and a URL with a query string carries "&", which bash reads as
