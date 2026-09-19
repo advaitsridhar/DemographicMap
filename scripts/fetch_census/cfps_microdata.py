@@ -140,6 +140,47 @@ def check_against_paper(table: dict[int, dict[str, Any]]) -> None:
         f"shares within {SHARE_TOLERANCE} points")
 
 
+def diagnose(root: Path) -> None:
+    """Which reading of the 2012 file reproduces the paper's Table 2?
+
+    The first run refused: Liaoning came out at 2,810 respondents against the
+    paper's 2,939. Rather than guess which rule differs -- the weight column,
+    whether rows without a weight count, whether non-answers sit in the
+    denominator -- every combination is printed against the paper.
+    """
+    import pandas as pd
+    path = root / "cfps2012adult_201906.dta"
+    weights = ["rswt_natcs12", "rswt_rescs12", "rswt_natpn1012", "rswt_respn1012"]
+    df = pd.read_stata(str(path), columns=["provcd", "qm601", *weights],
+                       convert_categoricals=False)
+    by_name = {name: (shares, n) for name, _, shares, n in PAPER_TABLE}
+    for code in sorted(SELF_REPRESENTATIVE):
+        name = PROVINCES[code]
+        printed, n_printed = by_name[name]
+        prov = df[df["provcd"] == code]
+        valid = prov[prov["qm601"].isin(list(CODES))]
+        log(f"  {name}: paper n={n_printed}; rows in province={len(prov)}, "
+            f"valid answers={len(valid)}, answered at all (incl. DK/refused)="
+            f"{int((prov['qm601'] > -10).sum())}, "
+            f"with each weight>0: "
+            + ", ".join(f"{w[5:]}={int((valid[w] > 0).sum())}" for w in weights))
+        target = dict(zip(PAPER_GROUPS, printed))
+
+        def score(sub, w=None):
+            tot = len(sub) if w is None else sub[w].sum()
+            got = {g: 0.0 for g in PAPER_GROUPS}
+            for k, g in CODES.items():
+                part = sub[sub["qm601"] == k]
+                got[g] = (len(part) if w is None else part[w].sum()) / tot * 100
+            return max(abs(got[g] - target[g]) for g in PAPER_GROUPS), got
+
+        for label, w, sub in [("unweighted, all valid", None, valid)] + [
+                (f"{w[5:]} (rows with it)", w, valid[valid[w] > 0]) for w in weights]:
+            gap, got = score(sub, w)
+            log(f"      {label:32} n={len(sub):>5}  max |diff|={gap:5.2f}  "
+                + " ".join(f"{g[:4]}={got[g]:.1f}" for g in PAPER_GROUPS))
+
+
 def download() -> Path:
     os.environ.setdefault("TQDM_DISABLE", "1")
     import kagglehub
@@ -208,9 +249,14 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--root", default=None, help="an already-extracted copy of the bundle")
+    ap.add_argument("--diagnose", action="store_true",
+                    help="print every reading of 2012 against the paper's Table 2, write nothing")
     args = ap.parse_args()
     log(f"cfps_microdata: {DATASET}")
     root = Path(args.root) if args.root else download()
+    if args.diagnose:
+        diagnose(root)
+        return 0
     year, records = build(root)
     log(f"  {len(records)} provinces written from the {year} wave")
     write_json(PROCESSED / OUT, records)
