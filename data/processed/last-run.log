@@ -1,2 +1,16 @@
-probe_page: https://jumin.mois.go.kr/statMonth.do?tableId=month&sltOrgType=1&sltOrgLvl1=A&sltOrgLvl2=A&searchYearStart=2023&searchMonthStart=12&searchYearEnd=2023&searchMonthEnd=12&sltUndefType=Y&gender=N&sum=N
-  5 lines of text, 0 mentioning 종로구, 수원시, 총인구수, 행정구역, 2023년
+page: https://jumin.mois.go.kr/index.jsp
+  20,486 bytes
+  6 distinct match(es) for '(?:action=[^]{0,80}|name=(?:tableId|sltOrgType|sltOrgLvl1|sltOrgLvl2|searchYearStart|searchMonthStart|sltUndefType|gender|sum|xlsStats|xlsPath)[^>]{0,120}|downloadCsv[A-Za-z]*|statMonth[A-Za-z]*.do|/[A-Za-z]+.do)'
+    /commonSelectBoardList.do
+    /openapi.do
+    /ppltMoveVideoPop.do
+    /statMonth.do
+    /subview.do
+    statMonth.do
+page: https://jumin.mois.go.kr/statMonth.do
+  81,218 bytes
+  4 distinct match(es) for '(?:action=[^]{0,80}|name=(?:tableId|sltOrgType|sltOrgLvl1|sltOrgLvl2|searchYearStart|searchMonthStart|sltUndefType|gender|sum|xlsStats|xlsPath)[^>]{0,120}|downloadCsv[A-Za-z]*|statMonth[A-Za-z]*.do|/[A-Za-z]+.do)'
+    /admdLgdnChngPopup.do
+    action="
+    downloadCsv
+    statMonth.do
