@@ -1,47 +1,81 @@
-cfps_microdata: edjngfebav/cfps201420162020-china-family-panel-studies
-Downloading to /home/runner/.cache/kagglehub/datasets/edjngfebav/cfps201420162020-china-family-panel-studies/2.archive...
-Extracting files...
-  unweighted 2012 tabulation reproduces the report's Table 2: sample sizes within 0.9%, every share within 0.20 points
-  2012 weighted, for comparison with the paper's unweighted table:
-      Liaoning Province        n= 2810  No religion 92.0, Buddhism 4.9, Protestant 1.9
-      Shanghai Municipality    n= 2284  No religion 89.2, Buddhism 8.3, Protestant 1.9
-      Henan Province           n= 3688  No religion 86.5, Buddhism 5.9, Protestant 5.7
-      Guangdong                n= 2825  No religion 92.5, Buddhism 6.0, Protestant 1.1
-      Gansu Province           n= 3756  No religion 89.4, Buddhism 5.9, Islam 3.4
-  2020: cfps2020person_202306.dta lacks qm601_s_1 or rswt_natcs20n (The following columns were not found in the Stata data set: qm601_s_1); not the affiliation question
-  2016: 33,244 adult rows, 32 provinces with answers
-  every province, weighted shares with weighted n, then unweighted n (only the five self-representative ones, marked *, are written):
-   * Gansu Province                       n= 3786 (unweighted  4096)  No religion 82.5, Buddhism 9.4, Islam 4.8, Protestant 2.2
-   * Henan Province                       n= 3530 (unweighted  3897)  No religion 82.8, Buddhism 7.9, Protestant 7.0, Islam 1.2
-   * Guangdong                            n= 2865 (unweighted  3062)  No religion 86.3, Buddhism 11.3, Protestant 1.2, Taoism 1.0
-   * Liaoning Province                    n= 2775 (unweighted  2966)  No religion 89.5, Buddhism 6.9, Protestant 2.2, Islam 0.8
-   * Shanghai Municipality                n= 1839 (unweighted  1997)  No religion 79.3, Buddhism 16.6, Protestant 2.1, Roman Catholic 1.0
-     Sichuan Province                     n= 1676 (unweighted  1834)  No religion 84.9, Buddhism 14.4, Other religions 0.3, Roman Catholic 0.2
-     Hebei Province                       n= 1653 (unweighted  1861)  No religion 92.5, Buddhism 3.1, Protestant 2.4, Roman Catholic 1.3
-     Shandong Province                    n= 1433 (unweighted  1551)  No religion 94.2, Buddhism 3.9, Protestant 1.1, Taoism 0.4
-     Shanxi Province                      n= 1295 (unweighted  1411)  No religion 90.3, Buddhism 7.8, Protestant 1.7, Other religions 0.2
-     Guizhou Province                     n=  907 (unweighted   990)  No religion 93.4, Buddhism 3.9, Roman Catholic 1.3, Other religions 0.9
-     Hunan Province                       n=  874 (unweighted   947)  No religion 91.7, Buddhism 5.7, Taoism 1.1, Protestant 0.7
-     Yunnan Province                      n=  856 (unweighted   921)  No religion 79.1, Buddhism 15.2, Islam 3.2, Protestant 2.1
-     Heilongjiang Province                n=  836 (unweighted   913)  No religion 90.4, Buddhism 4.8, Protestant 4.2, Islam 0.5
-     Shaanxi Province                     n=  727 (unweighted   776)  No religion 94.9, Buddhism 3.1, Protestant 1.0, Islam 0.6
-     Jiangsu Province                     n=  681 (unweighted   722)  No religion 78.9, Buddhism 17.4, Protestant 3.5, Roman Catholic 0.3
-     Guangxi Zhuang Autonomous Region     n=  680 (unweighted   742)  No religion 88.9, Buddhism 4.8, Taoism 3.6, Other religions 2.1
-     Zhejiang Province                    n=  651 (unweighted   722)  No religion 77.1, Buddhism 18.5, Protestant 2.8, Islam 0.8
-     Anhui Province                       n=  629 (unweighted   687)  No religion 82.8, Buddhism 10.1, Protestant 4.2, Other religions 1.6
-     Jiangxi Province                     n=  602 (unweighted   663)  No religion 89.9, Buddhism 8.7, Protestant 0.4, Taoism 0.4
-     Jilin Province                       n=  559 (unweighted   610)  No religion 88.4, Buddhism 8.1, Protestant 3.0, Other religions 0.5
-     Hubei Province                       n=  468 (unweighted   510)  No religion 91.5, Buddhism 4.9, Protestant 2.1, Roman Catholic 0.6
-     Fujian Province                      n=  357 (unweighted   393)  Buddhism 55.5, No religion 33.6, Protestant 3.8, Other religions 3.5
-     Chongqing Municipality               n=  292 (unweighted   321)  No religion 96.3, Buddhism 3.0, Protestant 0.5, Other religions 0.2
-     Beijing Municipality                 n=  281 (unweighted   311)  No religion 90.9, Buddhism 4.6, Islam 3.9, Protestant 0.6
-     Tianjin Municipality                 n=  201 (unweighted   214)  No religion 97.9, Buddhism 1.0, Roman Catholic 0.7, Protestant 0.4
-     Xinjiang Uyghur Autonomous Region    n=   41 (unweighted    44)  No religion 95.3, Protestant 4.2, Buddhism 0.4
-     Inner Mongolia Autonomous Region     n=   19 (unweighted    23)  No religion 69.4, Buddhism 30.6
-     Ningxia Hui Autonomous Region        n=   13 (unweighted    15)  No religion 66.7, Protestant 28.6, Buddhism 4.7
-     Hainan Province                      n=   10 (unweighted    11)  No religion 100.0
-     Qinghai Province                     n=    7 (unweighted     7)  No religion 100.0
-     Tibet Autonomous Region              n=    5 (unweighted     5)  No religion 100.0
-                                       -9 n=    2 (unweighted     2)  No religion 100.0
-  5 provinces written from the 2016 wave
-  wrote data/processed/cfps_microdata_province.json (15 kB)
+indonesia: ethnicity by province (2010 census) and religion by province and regency, read from the Indonesian Wikipedia
+    Kabupaten Banggai: shares add to 84.38; not read
+    Kabupaten Banggai Kepulauan: shares add to 61.79; not read
+    Kabupaten Banggai Laut: shares add to 90.03; not read
+    Kabupaten Banyuasin: shares add to 97.33; not read
+    Kabupaten Belitung Timur: religion figure carries no citation; not read
+    Kabupaten Bima: shares add to 99.35; not read
+    Kabupaten Bolaang Mongondow: shares add to 102.00; not read
+    Kabupaten Bolaang Mongondow Utara: shares add to 101.00; not read
+    Kabupaten Buol: shares add to 93.42; not read
+    Kabupaten Enrekang: shares add to 99.04; not read
+    Kabupaten Flores Timur: no religion in the infobox
+    Kabupaten Garut: religion figure carries no citation; not read
+    Kabupaten Gorontalo Utara: shares add to 96.02; not read
+    Kabupaten Grobogan: shares add to 100.82; not read
+    Kabupaten Jember: shares add to 101.88; not read
+    Kabupaten Jeneponto: unknown faith label(s) ['Penghayat']; not read
+    Kabupaten Karo: unknown faith label(s) ['Pemena']; not read
+    Kabupaten Kepulauan Meranti: religion figure carries no citation; not read
+    Kabupaten Kolaka Timur: shares add to 96.56; not read
+    Kabupaten Kolaka Utara: shares add to 98.80; not read
+    Kabupaten Konawe: shares add to 97.91; not read
+    Kabupaten Konawe Kepulauan: shares add to 98.51; not read
+    Kabupaten Konawe Selatan: shares add to 98.27; not read
+    Kota Balikpapan: shares add to 101.10; not read
+    Kota Baubau: shares add to 98.66; not read
+    Kota Bukittinggi: religion figure carries no citation; not read
+    Kota Cimahi: religion figure carries no citation; not read
+    Kota Metro: unknown faith label(s) ['Konfusianisme']; not read
+    Kota Pagar Alam: religion figure carries no citation; not read
+    Kota Palu: shares add to 84.95; not read
+    Kota Pangkalpinang: shares add to 96.09; not read
+    Kota Pariaman: religion figure carries no citation; not read
+    Kota Payakumbuh: religion figure carries no citation; not read
+    Kota Pematangsiantar: religion figure carries no citation; not read
+    Kota Prabumulih: religion figure carries no citation; not read
+    Kota Sabang: shares add to 98.66; not read
+    Kota Sawahlunto: religion figure carries no citation; not read
+    Kota Tual: shares add to 80.79; not read
+    Kabupaten Lampung Tengah: shares add to 98.84; not read
+    Kabupaten Lampung Timur: shares add to 98.13; not read
+    Kabupaten Lebak: unknown faith label(s) ['Sunda Wiwitan']; not read
+    Kabupaten Lingga: religion figure carries no citation; not read
+    Kabupaten Lumajang: religion figure carries no citation; not read
+    Kabupaten Magelang: unknown faith label(s) ['Kejawen']; not read
+  [id] 'Kabupaten Mahakam Hulu': nothing (missingtitle)
+    Kabupaten Maluku Tenggara: shares add to 55.37; not read
+    Kabupaten Mempawah: shares add to 79.42; not read
+    Kabupaten Mesuji: shares add to 98.35; not read
+    Kabupaten Minahasa Utara: shares add to 103.00; not read
+    Kabupaten Morowali: shares add to 96.18; not read
+    Kabupaten Morowali Utara: religion figure carries no citation; not read
+    Kabupaten Muara Enim: shares add to 99.36; not read
+    Kabupaten Musi Rawas: religion figure carries no citation; not read
+    Kabupaten Nias Utara: unknown faith label(s) ['Kepercayaan Terhadap Tuhan YME']; not read
+    Kabupaten Ogan Ilir: religion figure carries no citation; not read
+    Kabupaten Ogan Komering Ulu: religion figure carries no citation; not read
+    Kabupaten Pacitan: religion figure carries no citation; not read
+    Kabupaten Pangandaran: religion figure carries no citation; not read
+    Kabupaten Parigi Moutong: shares add to 90.79; not read
+    Kabupaten Pasaman: religion figure carries no citation; not read
+    Kabupaten Pesisir Barat: religion figure carries no citation; not read
+    Kabupaten Pringsewu: shares add to 97.53; not read
+    Kabupaten Probolinggo: religion figure carries no citation; not read
+    Kabupaten Rejang Lebong: shares add to 99.36; not read
+    Kabupaten Sampang: religion figure carries no citation; not read
+    Kabupaten Seram Bagian Timur: shares add to 96.70; not read
+    Kabupaten Sigi: shares add to 65.24; not read
+    Kabupaten Sinjai: shares add to 0.06; not read
+    Kabupaten Solok Selatan: shares add to 99.27; not read
+    Kabupaten Soppeng: religion figure carries no citation; not read
+    Kabupaten Sukabumi: religion figure carries no citation; not read
+    Kabupaten Takalar: no religion in the infobox
+    Kabupaten Tojo Una-Una: religion figure carries no citation; not read
+    Kabupaten Tulang Bawang: shares add to 101.55; not read
+    Kabupaten Wonogiri: shares add to 99.19; not read
+    Kabupaten Yahukimo: unknown faith label(s) ['Februari']; not read
+  regencies: 437 read; by kind of source: bps 103, census2010 59, dukcapil 257, jakarta 1, kemenag 6, other 11
+  not read (76): Central Sulawesi/Banggai, Central Sulawesi/Banggai Kepulauan, Central Sulawesi/Banggai Laut, South Sumatra/Banyu Asin, Bangka-Belitung Islands/Belitung Timur, West Nusa Tenggara/Bima, North Sulawesi/Bolaang Mongondow, North Sulawesi/Bolaang Mongondow Utara, Central Sulawesi/Buol, South Sulawesi/Enrekang, East Nusa Tenggara/Flores Timur, West Java/Garut, Gorontalo/Gorontalo Utara, Central Java/Grobogan, East Java/Jember, South Sulawesi/Jeneponto, North Sumatra/Karo, Riau/Kepulauan Meranti, Southeast Sulawesi/Kolaka Timur, Southeast Sulawesi/Kolaka Utara, Southeast Sulawesi/Konawe, Southeast Sulawesi/Konawe Kepulauan, Southeast Sulawesi/Konawe Selatan, East Kalimantan/Kota Balikpapan, Southeast Sulawesi/Kota Baubau, West Sumatra/Kota Bukittinggi, West Java/Kota Cimahi, Lampung/Kota Metro, South Sumatra/Kota Pagar Alam, Central Sulawesi/Kota Palu, Bangka-Belitung Islands/Kota Pangkal Pinang, West Sumatra/Kota Pariaman, West Sumatra/Kota Payakumbuh, North Sumatra/Kota Pematang Siantar, South Sumatra/Kota Prabumulih, Aceh/Kota Sabang, West Sumatra/Kota Sawah Lunto, Maluku/Kota Tual, Lampung/Lampung Tengah, Lampung/Lampung Timur, Banten/Lebak, Riau Islands/Lingga, East Java/Lumajang, Central Java/Magelang, East Kalimantan/Mahakam Hulu (Kabupaten Mahakam Hulu), Maluku/Maluku Tenggara, West Kalimantan/Mempawah, Lampung/Mesuji, North Sulawesi/Minahasa Utara, Central Sulawesi/Morowali, Central Sulawesi/Morowali Utara, South Sumatra/Muara Enim, South Sumatra/Musi Rawas, North Sumatra/Nias Utara, South Sumatra/Ogan Ilir, South Sumatra/Ogan Komering Ulu, East Java/Pacitan, West Java/Pangandaran, Central Sulawesi/Parigi Moutong, West Sumatra/Pasaman, Lampung/Pesisir Barat, Lampung/Pringsewu, East Java/Probolinggo, Bengkulu/Rejang Lebong, East Java/Sampang, Maluku/Seram Bagian Timur, Central Sulawesi/Sigi, South Sulawesi/Sinjai, West Sumatra/Solok Selatan, South Sulawesi/Soppeng, West Java/Sukabumi, South Sulawesi/Takalar, Central Sulawesi/Tojo Una-Una, Lampung/Tulangbawang, Central Java/Wonogiri, Papua/Yahukimo
+  wrote data/processed/indonesia.json (721 kB)
+  wrote 437 records to indonesia.json

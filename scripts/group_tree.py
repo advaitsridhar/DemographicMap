@@ -126,6 +126,10 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
         # apart, and folding one into the other would invent a share. Yumasam
         # is the Limbu faith, 2.0% of Sikkim.
         "Adim dhamm", "Yumasam",
+        # Indonesia's named indigenous religions as its regencies' figures
+        # carry them: Marapu of Sumba, Aluk Todolo of the Toraja, Ugamo
+        # Malim (Parmalim) of the Toba Batak, Kaharingan of the Dayak.
+        "Marapu", "Aluk Todolo", "Ugamo Malim", "Kaharingan",
     ),
     "Other and new religions": (
         "Zoroastrianism", "Yazidi", "Jedi", "Eckankar", "Wicca",
@@ -965,6 +969,14 @@ ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
     "Scheduled ethnic groups (census category)": (
         "Scheduled ethnic groups",
     ),
+    # Thailand's census counts the upland peoples of the north and west as
+    # one row, "hill tribe languages" (ชาวเขา): Karen, Hmong, Mien, Lahu,
+    # Akha, Lisu, Lua, Khmu and Mlabri together. Half of them the tree files
+    # as Tibeto-Burman and the rest as Hmong-Mien or Austroasiatic, so the
+    # row is kept as the state's category and filed by where they live.
+    "Hill tribes (census category)": (
+        "Hill tribe languages (census category)", "Hill tribes", "Hill tribe",
+    ),
 }
 
 # The answers that name a country rather than a people. Where the country has
@@ -975,6 +987,9 @@ ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
     "Settler-nation identities": (
         "American", "Canadian", "Australian", "New Zealander", "Brazilian",
         "Mexican", "Cuban", "Argentine", "Singaporean", "South African",
+        # Japan's census counts Peruvian nationals, most of them of Japanese
+        # descent, which is exactly why a passport says nothing of ancestry.
+        "Peruvian",
     ),
     "Other national identities": (
         "Belgian", "Yugoslavian", "Sri Lankan", "Iranian national",
@@ -1018,7 +1033,7 @@ ETHNIC_ANCESTRY: dict[str, tuple[str, ...]] = {
         "Han and Sinitic peoples", "Japanese peoples", "Korean peoples",
         "Mongolic and Siberian peoples", "Mainland Southeast Asian peoples",
         "Malay and Indonesian peoples", "Philippine peoples",
-        "Asian (census category)",
+        "Asian (census category)", "Hill tribes (census category)",
     ),
     "Indigenous American ancestry": (
         "Indigenous peoples of North America",
@@ -1476,6 +1491,33 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Khmu is Khmuic, Phu Thai and Lue are Tai.
         "Katong", "Katang", "Khmou", "Khmu", "Makong", "Phouthay",
         "Phu Thai", "Lue", "Tai",
+        # Viet Nam's 54 recognised groups, spelled as its census prints
+        # them. Every one of them is a people of the mainland, which is the
+        # axis this branch uses, so the placement is certain even where the
+        # language family is argued over. Several are listed here because
+        # the shape rules read them wrongly otherwise: "Thái" (the Tai of
+        # the north-west) is not the Thai nationality, "Gia Rai" is not
+        # the Himalayan Rai, "Sán Chay" and "Sán Dìu" are not the San of
+        # the Kalahari, "Cờ Lao" is not Lao, and "Rơ Măm" is not a
+        # Mesoamerican Mam.
+        "Thái", "Thai (Viet Nam)", "Gia Rai", "Ê Đê", "Ba Na", "Xơ Đăng",
+        "Sán Chay", "Cơ Ho", "Sán Dìu", "Hrê", "Ra Glai", "Mnông", "Thổ",
+        "Xtiêng", "Stiêng", "Khơ Mú", "Bru-Vân Kiều", "Bru - Vân Kiều",
+        "Cơ Tu", "Giáy", "Tà Ôi", "Mạ", "Giẻ Triêng", "Giẻ-Triêng", "Co",
+        "Chơ Ro", "Xinh Mun", "Hà Nhì", "Chu Ru", "Lào", "La Chí", "Kháng",
+        "Phù Lá", "La Hủ", "La Ha", "Pà Thẻn", "Lự", "Lô Lô", "Chứt",
+        "Mảng", "Cờ Lao", "Bố Y", "Cống", "Si La", "Pu Péo", "Rơ Măm",
+        "Brâu", "Ơ Đu", "Mông", "H'Mông", "Dao",
+        # ...and the spellings the 2019 results volume prints.
+        "Raglay", "Gié Triêng", "Bru Vân Kiều", "Cơ Lao",
+        # Thailand's four regional Tai groups as the Ethnolinguistic Maps of
+        # Thailand name them, spelled out here because the bare "Thai" is
+        # also a nationality (Japan's census counts Thai nationals) and the
+        # nationality entry wins; a Central Thai is a people, not a passport.
+        # Kuy is Katuic like Katang; Mien is the other half of Hmong-Mien;
+        # "Lao and Vietnamese" is the 2000 census's one row for the two.
+        "Central Thai", "Northern Thai", "Southern Thai", "Kuy", "Mien",
+        "Lao and Vietnamese",
     ),
     "Malagasy peoples": ("Sihanaka", "Masikoro", "Antesaka", "Antandroy",
                          # The rest of Madagascar's eighteen.
@@ -1524,6 +1566,10 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     ),
     "Himalayan and Tibeto-Burman peoples": (
         "Ngalop", "Sharchop",
+        # Thailand's 2000 census counts "Burmese and Peguan" (Mon) speakers
+        # as one row; it sits where the tree already keeps Mon and Burmese
+        # would sit as a people.
+        "Burmese and Mon",
         # Nepal's janajati: the Kiranti (Rai) groups of the eastern hills
         # and the Bhote (Tibetan-descended) groups of the north, which the
         # census lists one by one where a summary writes "Rai" or "Bhote".
@@ -1617,11 +1663,41 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # census asks about religion there, and the honest answer is to say the
     # category is not an ancestry rather than to pick one for it.
     "Unclassified ethnicity answers": ("Hindou", "Musulman"),
-    "Han and Sinitic peoples": ("Hui",),
+    # Viet Nam's Hoa are its Han Chinese, and the Ngái its Hakka-speaking
+    # Chinese of the north-east; the census counts them as two groups. The
+    # Thai Chinese are Thailand's, the Ethnolinguistic Maps' own label.
+    "Han and Sinitic peoples": ("Hui", "Hoa", "Ngái", "Thai Chinese",
+                                # BPS's Tionghoa, the 2010 census's own group.
+                                "Chinese Indonesian"),
     # The Austronesian peoples of maritime south-east Asia that Indonesia,
     # Malaysia and Myanmar name beyond the tree's existing list.
     "Malay and Indonesian peoples": ("Banjarese", "Bantenese", "Sasak",
-                                     "Moken"),
+                                     "Moken",
+                                     # The peoples BPS's 2010 census names by
+                                     # province, and its regional bundles
+                                     # ("asal Sulawesi", "asal Sumatera
+                                     # Selatan"): every one Austronesian.
+                                     # East Nusa Tenggara's bundle holds the
+                                     # Alor-Pantar speakers too, a twentieth
+                                     # of it; Maluku's is not placed, its
+                                     # northern peoples being Papuan.
+                                     "Makassarese", "Cirebonese", "Nias",
+                                     "Lampung", "Gayo", "Aneuk Jamee",
+                                     "Singkil", "Devayan", "Mentawai",
+                                     "Rejang", "Serawai", "Minahasan",
+                                     "Gorontalo", "Torajan", "Kutai", "Paser",
+                                     "Butonese", "Berau", "Mandar",
+                                     "Florenese", "Mamuju", "Palembang",
+                                     "East Nusa Tenggara peoples",
+                                     "Bima and Sumbawa peoples",
+                                     "Other Sulawesi peoples",
+                                     "Central Sulawesi peoples",
+                                     "Southeast Sulawesi peoples",
+                                     "South Sumatra peoples",
+                                     "Other Sumatra peoples", "Jambi peoples",
+                                     "Riau peoples", "Other Java peoples",
+                                     "Other Kalimantan peoples",
+                                     "Other indigenous Bengkulu peoples"),
     "Philippine peoples": ("Tinananen", "Kabayukan"),
     # Poland's ethnographic regions, which its census counts as separate
     # declarations of ethnicity beside Silesian and Kashubian.
@@ -1723,6 +1799,9 @@ LANGUAGE_VARIANTS: dict[str, str] = {
     "Bicol": "Bikol", "Ilokano": "Ilocano",
     # Vietnam and China name the majority by its own ethnonym.
     "Kinh": "Vietnamese", "Putonghua": "Mandarin", "Guoyu": "Mandarin",
+    # Hong Kong's census names two Min and Chaoshan varieties by their
+    # older romanisations: Fukien is Hokkien, Chiu Chau is Teochew.
+    "Fukien": "Hokkien", "Chiu Chau": "Teochew",
     # One language, two registers' spellings of it. Russia's neighbours
     # transliterate from Russian, Nepal and India from Devanagari, and the
     # Pacific registers write the island where the reference works write the

@@ -4548,9 +4548,16 @@ class GapReasons(unittest.TestCase):
         return entity
 
     def test_a_gap_country_gets_a_reason_and_no_command(self):
-        entity = self.annotate("VNM")
+        # Iran, since Indonesia left the gaps on 19 September 2026.
+        entity = self.annotate("IRN")
         self.assertIn("by province", entity["gap_reason"])
         self.assertNotIn("adapter_hint", entity)
+
+    def test_viet_nam_left_the_gaps_when_its_provincial_table_was_found(self):
+        # The 2019 volume's Table 2 crosses ethnic group with province; the
+        # earlier reason ("no provincial table exists") is no longer true.
+        self.assertNotIn("VNM", be.ADAPTER_GAPS)
+        self.assertIn("fetch_census.vietnam", be.adapter_hint("VNM"))
 
     def test_an_ordinary_country_gets_a_command_and_no_reason(self):
         entity = self.annotate("USA")
@@ -4561,10 +4568,14 @@ class GapReasons(unittest.TestCase):
         self.assertIn("us_acs", be.adapter_hint("USA"))
         self.assertNotIn("USA", be.ADAPTER_GAPS)
 
-    def test_the_three_documented_gaps_carry_a_reason(self):
-        for iso3 in ("IDN", "VNM", "THA"):
+    def test_the_documented_gaps_carry_a_reason(self):
+        # Indonesia and Viet Nam were here until 19 September 2026, when
+        # each was read from what its statistical office's refusal left
+        # reachable; both carry a command now.
+        for iso3 in ("THA",):
             self.assertIn(iso3, be.ADAPTER_GAPS)
             self.assertGreater(len(be.ADAPTER_GAPS[iso3]), 40)
+        self.assertIn("indonesia", be.ADAPTER_HINTS["IDN"])
 
     def test_a_gap_reason_is_prose_rather_than_a_command(self):
         # A hint is rendered inside <code> and run; a reason is not.

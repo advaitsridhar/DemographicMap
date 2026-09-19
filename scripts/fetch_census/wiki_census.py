@@ -217,8 +217,12 @@ def main() -> int:
         # itself a search: a runner dispatch costs minutes, and surveying six
         # candidates one per dispatch is most of an hour.
         for title in args.inspect:
-            lang, _, page = title.partition(":") if title[:3] in ("en:", "ro:", "hu:", "id:", "ru:") else ("en", "", title)
-            found = tables(fetch(page or title, lang))
+            # Any edition, named by its code: "th:กลุ่มชาติพันธุ์ในประเทศไทย".
+            # A title's own colon ("Category:...") never follows two or
+            # three lowercase letters at the start, so the prefix is safe.
+            m = re.match(r"([a-z]{2,3}):(.+)", title)
+            lang, page = (m.group(1), m.group(2)) if m else ("en", title)
+            found = tables(fetch(page, lang))
             log(f"  {len(found)} table(s)")
             for n, t in enumerate(found):
                 if not t:

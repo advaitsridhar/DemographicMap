@@ -227,8 +227,10 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Australia | ABS 2021 Census `C21_G14`, `C21_G08`, `C21_G13` | state, LGA | Ancestry is multi-response (up to two per person), so shares are of responses and exceed 100%. No ethnicity question exists. There is no state-level table: the states are read off the LGA table's own `STATE` dimension. Population is the religion table's total, which is the region's counted persons. Language used at home (G13) is held at the Total of its proficiency and sex dimensions; its "Other Languages Total" row sits beside every language under it and is found by arithmetic, and only categories marked "... Total" can be parents in the code tree, because "Speaks English only" is coded `1` and is no parent of `1403` Afrikaans. |
 | Poland | GUS NSP 2021 final tables (three workbooks: przynależność wyznaniowa, narodowo-etniczna, język używany w domu) | voivodeship, powiat | Religion is a seven-level classification tree, cut once: Christian branches at level 5, other religions at level 4, no religion at level 3, and the fifth of Poland that declined to answer at level 2, kept as "Not stated". National-ethnic identification and home language allow two answers and are carried as multi-response; identifications and languages without an English name are summed as Other. Column A of every sheet is empty. |
 | Malaysia | DOSM OpenDOSM `population_state` / `population_district` CSV | state, district | Annual population estimates by ethnicity carried forward from Census 2020, in thousands; the latest year is read and the records say "estimate". The non-citizen row is DOSM's own category of the resident population and is kept. |
+| Malaysia (religion) | DOSM Kawasanku dashboard, `kawasanku_admin_barmeter.parquet` (storage.dosm.gov.my), built on MyCensus 2020 | state, district | Religion is a census question but OpenDOSM's catalogue has no religion table; the dashboard DOSM built on the 2020 census carries the six-category shares (Islam, Buddhism, Christianity, Hinduism, other religions, no religion) for the country, 16 states and 160 districts as unrounded percentages, and the state rows equal the census's published state table to the decimal. Counts are those shares applied to each area's 2020 population from the OpenDOSM series and rounded, and the note says so; the census's "unknown" answers are not separated from the last two categories. The country row is checked against DOSM's Key Findings figures (63.5 / 18.7 / 9.1 / 6.1 / 2.7) and states and districts, weighted, against their parent. Language: the census has never asked it (policy entry `MYS`). `scripts/fetch_census/malaysia_religion.py`. |
 | Kenya | KNBS 2019 Census Volume IV, Table 2.30 (openAFRICA mirror) | county | Religion for all 47 counties, replacing the Afrobarometer survey rows; ethnicity stays Afrobarometer's. KNBS's own site fails TLS verification (incomplete chain) and this project does not turn verification off. |
 | Thailand | NSO 2000 Population and Housing Census, provincial final reports (`web.nso.go.th/pop2000/finalrep/`), transcribed in the Wikipedia article *Nationality, religion, and language data for the provinces of Thailand* | province | Buddhist, Muslim and Christian shares for 2000 as printed, read through the MediaWiki API because the NSO's own hosts refuse this client; the rest of 100% is one 'Other or not stated' group; an N/A is absent, not zero. 76 of 77 provinces: Bueng Kan was carved out of Nong Khai in 2011 and has no 2000 row. Nationality is citizenship and is not read as ethnicity; the 'linguistic minorities' cells name a few languages and not the rest, so language stays a gap. `scripts/fetch_census/thailand.py`. |
+| Thailand (ethnicity) | NSO 2000 Population and Housing Census, language spoken at home, the 'linguistic minorities' cell of the same provincial reports and the same Wikipedia transcription; Suwilai Premsrirat et al., *Ethnolinguistic Maps of Thailand* (Mahidol University Institute of Language and Culture, 2004) for the regional Tai groups and the national figures, as transcribed in *Demographics of Thailand* | province | By the map owner's decision of 19 September 2026, and every province a `modelled` estimate, never a list: the census's minorities as printed under its own category names, everyone else assigned to the region's Tai group (Central Thai, Isan (Lao), Northern Thai, Southern Thai). The run prints the national composition the provinces imply beside the maps' figures; no backtest is possible. 76 of 77 provinces, Bueng Kan having no 2000 row. See "Thailand: ethnicity from secondary sources, by the owner's decision". `scripts/fetch_census/thailand_ethnicity.py`. |
 | Kazakhstan | Bureau of National Statistics, 2021 National Population Census, religious affiliation by region, transcribed in the Wikipedia article *Religion in Kazakhstan* | region | The percent columns are read (one count in the article is mistyped; its percent is not). The article lists 16 regions and omits Shymkent (a city of republican significance since 2018); the boundary file draws the 2017 layout in which Shymkent sits inside South Kazakhstan Region, so the article's Turkistan Region is deliberately not matched to that shape and South Kazakhstan stays a visible gap: 15/16. `scripts/fetch_census/wiki_census.py`. |
 | Kazakhstan (ethnicity) | Bureau of National Statistics, *Population by ethnic groups of the Republic of Kazakhstan at the start of 2025* (series 18, 27 March 2025), workbook committed under `data/raw/kazakhstan/` because the Bureau's site offers no file link | region, district | Register-based population at 1 January 2025 carried forward from the 2021 census, 73 ethnic rows, and the record says it is not a census count. The workbook's 20 regions are summed into the 16 shapes of the 2017 layout (Abai into East Kazakhstan, Jetisu into Almaty Region, Ulytau into Karaganda, Shymkent into South Kazakhstan), exact because these are counts, and every column is checked against its own total. Districts keep the Bureau's Cyrillic name with a transliteration as alias; `RENAMED` declares the shapes the boundary file still draws under a superseded name (Zelenovskiy for Bäiterek, Tselinniy for Gabit Musrepov, and so on). Almaty and Shymkent get their city totals as their one second-level shape; Astana has none. 173 of 174 district shapes filled; the boundary file draws Jambyl's Zhualy district twice and the second copy stays empty. `scripts/fetch_census/kazakhstan.py`. |
 | Cambodia | NIS General Population Census of Cambodia 2019, religion by province, transcribed in the Wikipedia article *Religion in Cambodia* (2008 and 2019 columns; 2019 read) | province | Buddhism, Islam, Christianity, Others as printed; 25/25 with four spellings declared as aliases (Bantey Meanchey, Kratie, Takeo, Tbong Khmum). `scripts/fetch_census/wiki_census.py`. |
@@ -238,6 +240,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Zimbabwe | ZIMSTAT, 2022 Population and Housing Census Report: Table 2.14(c) (religion by province, both sexes) and Table 2.17 (mother tongue by province) | province | Replaces the Afrobarometer survey rows for religion on all 10 provinces and adds mother tongue; ethnicity stays the survey's, since the report prints it for the country only (Table 2.15). Comma-thousand counts read as text; each religion row sums to its printed total, each language row sums across provinces to its printed total, and each province's languages sum to the printed province total. The mother-tongue table covers 13,913,253 of 15,178,957 residents and the page does not state its age floor. `scripts/fetch_census/zimbabwe.py`. |
 | Burkina Faso | INSD, 5e RGPH 2019, *Volume des tableaux statistiques*, Tableau I.22 (population résidente par région selon la religion, en %, with each region's population) | region | Replaces the Afrobarometer survey rows for religion on all 13 regions. Shares to one decimal applied to the region's printed population; the thirteen populations must equal the printed national 18,171,751 and the national shares rebuilt from the regions must agree with the printed ones. The volume prints the principal language spoken by milieu only and no ethnicity, so those fields are untouched. `scripts/fetch_census/burkina.py`. |
 | South Korea | Hankook Research, *2025 Religion Perception Survey* (Weekly Report No. 358-3, 3 December 2025), page 8: religion by residence region, the religion question pooled from the 22 waves of the biweekly "Yeoron sok-ui Yeoron" web panel, January to November 2025 (23,000 adults aged 18 and over, weighted by region, sex and age) | province | A survey, not a census, and the map's one stated exception to the rule that a figure coarser than the shape is not spread: the report's seven residence regions cover the seventeen provinces, and each province carries its region's figure by the map owner's decision, with the note naming the region and how many provinces share it. Whole percentages, 2025 column; "other religions" is the printed "has a religion" less Protestant, Catholic and Buddhist. Lowest authority for Korea: the 2015 census (KOSIS, keyed API) replaces it when read. `scripts/fetch_census/korea_survey.py`. |
+| Japan | 2020 Population Census, 人口等基本集計, population by nationality (e-Stat `0003445244`); NHK/ISSP 2018 "Religion" survey (放送研究と調査, April 2019) as a national prior; Agency for Cultural Affairs 宗教統計調査 believers by prefecture (e-Stat `0003282963`, 2025年度) as a relative signal | prefecture | By the map owner's decision of 19 September 2026, and labelled throughout. Ethnicity is **nationality** (`ethnicity_basis: "nationality"`): a census count of passports, with Japanese nationals of every ancestry in one row. Religion and language are `modelled` estimates, never lists: religion is the survey's national shares tilted by each prefecture's adherent pattern, capped and with no backtest; language is each nationality assigned its majority home language. See "Japan, resolved by the owner's decision". `scripts/fetch_census/japan.py`. |
 | Czechia | ČSÚ SLDB 2021 open data (`sldb2021_narodnost.csv`, `sldb2021_vira.csv`, `sldb2021_jazyk1.csv`) | kraj, okres | Nationality is voluntary and allows two answers; the file counts every declaration and has no not-stated row, so it is carried as multi-response. Religious belief partitions the population across 78 rows, registered churches and write-in beliefs alike; a written "catholic" is kept apart from the Roman Catholic Church's count and a written "atheism" counts with no religious belief. Mother tongue is read from the single-mother-tongue file, and people with two mother tongues or a language outside its thirteen are the total less its rows, kept as one labelled bar. Okresy are named in Czech where geoBoundaries has English (Praha-východ / Prague-East), carried as aliases; the okres-to-kraj table is in the adapter because the rows do not carry it. |
 | Croatia | DZS Popis 2021 final results, workbook `popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx` (sheets 1, 2, 4) | županija, grad/općina | One layout for all three tables: a bilingual header (Croatian over English) with a count and a percent column per category, read from the header rather than declared; county rows interleaved with their towns and municipalities; a dash is zero. Each table partitions the population, Other, Not declared and Unknown included, and a row that does not sum to its total stops the build. Counties are named as geoBoundaries names them in English, with the Croatian as an alias; units are composed as the bureau writes them, type first ("Grad Samobor", "Općina Bibinje"). The workbook lists the City of Zagreb by its 17 city districts, which are skipped, the city coming from its own county row. The boundary file's spellings (a dozen typos, Istria's bilingual names, two islands each drawn as one town) are declared as aliases; 545 shapes for 556 units, 543 matched. |
 | Bosnia and Herzegovina | BHAS Popis 2013, Book 2 workbooks `K2_T2_B` (ethnicity), `K2_T5_B` (religion), `K2_T6_B` (mother tongue) under `popis.gov.ba/popis2013/doc/Knjiga2/BOS/` | entity, canton | One layout for all three: Level, Area (Bosnian over English), Sex, Total, then the categories; the Total row of each territory is read and matched by its Bosnian name. The two entities and Brčko District are published at both levels, since geoBoundaries draws Republika Srpska and Brčko as their own second-level shapes beside the ten cantons: 3/3 and 12/12. The bureau's 'Islamska' and 'Muslimanska' religion columns are summed into Islam (both are Islam; the build refuses a group beside its parent) and the note says so; ethnonyms given as a religion, and 'Orthodox' given as an ethnicity, are kept and marked. A row that does not sum to its Total refuses. Republika Srpska's institute published a different reading of the same count; these are the Agency's figures. `scripts/fetch_census/bosnia.py`. |
@@ -4305,73 +4308,121 @@ holds all seven hundred of them. That is a true statement and not a language
 breakdown, so Indonesia stays the gap it was: what is missing there is religion
 by regency, and that still needs the BPS key.
 
-### Viet Nam: collected, and published only for the whole country
+### Viet Nam: collected, published by province in the Vietnamese volume, and read from it
 
 Viet Nam's 2019 Population and Housing Census asked religion. Its questionnaire,
-reproduced on page 330 of the results volume, puts it plainly:
+reproduced on page 330 of the English results volume, puts it plainly:
 
 > 7. Does [NAME] follow any faith/religion? IF YES: What is [NAME]'s
 > faith/religion?
 
-And it asked ethnicity, in the question above it. So this is not a country that
-declines to count these things. It is a country that publishes the count for
-itself and not for its provinces, which is a different gap and wants a
-different word.
+And it asked ethnicity, in the question above it. An earlier pass of this
+project read the English volume and concluded that the office publishes both
+counts for the country and not for its provinces. That was true of the English
+volume and wrong about the census, and this entry keeps the record of both.
 
-**Getting to the report at all.** The statistics office does not answer this
-project from a GitHub runner, and the three refusals are not the same refusal:
+**The English volume, and what it showed.** The statistics office did not
+answer this project from a GitHub runner in early September 2026 --
+`www.gso.gov.vn` timed out, `www.nso.gov.vn` (the office was restructured into a
+National Statistics Office in 2025) reset the connection -- and the English
+`Results - 2019 Population and Housing Census_full.pdf` (380 pages, 6.8 MB) was
+read from UNFPA, the census's technical partner and the body named on its title
+page. In it, Table 2 (ethnic group) and Table 3 (religion) are national, and
+Table 5, whose caption reads "BY AGE GROUP, SEX, ETHNIC, URBAN, RURAL,
+SOCIO-ECONOMIC REGION AND PROVINCE, CITY", stacks an ethnic-group block and a
+province block under the same age columns rather than crossing them. That
+reading stands: the English volume prints no ethnic group by province.
 
-* `www.gso.gov.vn` **times out** -- no response, on two different paths, in two
-  separate runs, while every other host in the same run answered.
-* `www.nso.gov.vn` and `nso.gov.vn` **reset the connection**. The General
-  Statistics Office was restructured into a National Statistics Office in 2025,
-  so this is the current host: it resolves, it is up, and it closes the socket
-  on this client.
-* `www2.gso.gov.vn` **does not resolve** -- but that one is a fact about a
-  hostname this project guessed at, not about Viet Nam. It is recorded here
-  because a guess that fails looks exactly like a source that is missing.
+**What changed on 19 September 2026.** The owner decided that Viet Nam's
+provincial ethnicity was to be read from whichever route yields it -- the
+office's own files, a Kaggle dataset, or the Vietnamese Wikipedia's
+transcription, in that order, secondary sources included and named as such.
+`scripts/fetch_census/vietnam.py --probe` asked all three in one runner
+dispatch, and the log of each is committed on the branch:
 
-The report is reachable anyway, from the body named on its own title page:
-UNFPA provided the technical assistance for the census and hosts
-`Results - 2019 Population and Housing Census_full.pdf`, 6.8 MB and 380 pages.
-That is a co-publisher rather than a mirror, which is why it is usable where
-`citypopulation.de` would not be.
+* `www.gso.gov.vn` no longer resolves at all (*Name or service not known*).
+  `www.nso.gov.vn` now answers a plain client with 200, where it reset the
+  socket two weeks earlier, and its WordPress uploads keep the old paths.
+  `tongdieutradanso.vn`, the census's own site, answers a 444-byte stub.
+* Kaggle's catalogue, searched with the owner's token, lists nothing for Viet
+  Nam under "vietnam census", "vietnam ethnic", "vietnam population province",
+  "vietnam religion", "dân tộc" or "tổng điều tra dân số" -- every hit is the
+  1994 US adult-income set, a real-estate scrape, or the CIA Factbook.
+* The Vietnamese Wikipedia's province articles carry 2009 prose ("tính đến ngày
+  1 tháng 4 năm 2009 ... dân tộc Kinh chiếm đông nhất với 1.161.533 người") and
+  no 2019 table; "Các dân tộc Việt Nam" holds the national 2019 table with, per
+  group, its three or four largest provinces, which is not a composition of any
+  province. But the article for Điện Biên cites, for "dân tộc Mông ... 228.279
+  người, chiếm 38,1%", the URL of the *Vietnamese* results volume on
+  gso.gov.vn. That citation is what said the table existed.
 
-**What the report contains.** Its narrative body extracts as mojibake --
-`dŚĞ ϮϬϭϵ WŽƉƵůĂƚŝŽŶ` for "The 2019 Population", a font carrying no usable
-character map -- but Part III's data tables are set in a different font and
-decode cleanly. In those tables:
+**The Vietnamese volume.** "Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm
+2019" (Nhà xuất bản Thống kê, 2020; 842 pages, 9.5 MB) is at
+`https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf`,
+the same path the citation gave on the old host. Its contents page settles
+what the English one left open:
 
-| Table | Breakdown |
-| --- | --- |
-| 2 | Population by ethnic group, urban/rural and sex — **national** |
-| 3 | Population by religion, urban/rural and sex — **national** |
-| 5 | Population by age group and sex, for ethnic groups **and then** for provinces |
-| 13, 18 | Two indicators, same stacked shape |
+| Biểu / Table | Breakdown | Pages |
+| --- | --- | --- |
+| 2 | Dân số theo dân tộc, thành thị/nông thôn, giới tính, vùng kinh tế - xã hội **và tỉnh/thành phố** -- population by ethnic group, urban/rural, sex, socio-economic region **and province/city** | 43-209 |
+| 3 | Dân số theo tôn giáo, thành thị/nông thôn, giới tính -- population by religion, urban/rural, sex; **national** | 210 |
 
-The word "religion" appears on five of the 380 pages: Table 3, and four pages
-of questionnaire. There is no religion-by-province table to miss.
+Table 2 is nested, not crossed: the country, then each of the six regions,
+then each of the 63 provinces, and under every unit all 54 groups in the
+office's order (Kinh, Tày, Thái, Hoa, Khmer, Mường, Nùng, Mông, Dao, Gia Rai,
+Ngái, Ê Đê, Ba Na, Xơ Đăng, Sán Chay, Cơ Ho, Chăm, Sán Dìu, Hrê, Mnông, Raglay,
+Xtiêng, Bru Vân Kiều, Thổ, Giáy, Cơ Tu, Gié Triêng, Mạ, Khơ Mú, Co, Tà Ôi,
+Chơ Ro, Kháng, Xinh Mun, Hà Nhì, Chu Ru, Lào, La Chí, La Ha, Phù Lá, La Hủ,
+Lự, Lô Lô, Chứt, Mảng, Pà Thẻn, Cơ Lao, Cống, Bố Y, Si La, Pu Péo, Brâu, Ơ Đu,
+Rơ Măm), then "Người nước ngoài" (foreign nationals) and "Không xác định"
+(undetermined). A first scan of the volume, which looked for a minority named
+beside three provinces on one page, found nothing, because a page of a nested
+table names one province and fifty rows; the second scan, which looked for
+many ethnonyms beside any one province, found 79 such pages. The word
+"religion" leads to Table 3 alone, so **religion stays unwritten** for the
+provinces: it was collected, and it is published for the country only.
 
-Table 5 looks at first like the cross-tabulation this map needs, because its
-caption reads "BY AGE GROUP, SEX, ETHNIC, URBAN, RURAL, SOCIO-ECONOMIC REGION
-AND PROVINCE, CITY". It is not. Page 198 prints a section header --
+**Reading it.** The volume prints a space as the thousands separator, and the
+narrative pages of the English edition extract as mojibake; these table pages
+extract cleanly through pypdf, with the row label first and then its figures.
+Every row carries nine: Total, Male and Female for the whole, the urban and the
+rural population. The reader tries every split of a row's digit groups into
+nine numbers and keeps the one where Male plus Female equals Total three times
+over and urban plus rural equals the whole -- the constraint this entry banked
+in September for exactly this table, taken from `south_africa.py`. A row with
+no single such reading refuses the run. Units are told from groups by name:
+the volume prints its country and regions bilingually ("TOÀN QUỐC - ENTIRE
+COUNTRY", "Đồng bằng sông Hồng - Red River Delta"), which cost one refused run
+before either half was accepted, and the first page's heading "Biểu - Table 2"
+cost another, its trailing digit having been read as a one-figure row.
 
-```
-P r o v i n c e ,  c i t y
-Ha Noi        2 133 354  1 133 036  1 000 318
-Ha Giang        296 271    151 900    144 371
-```
+The checks it passes, each of which would have refused the run: the rows under
+every one of the 70 units add to the unit's printed total; the 63 provinces add
+to 96,208,984 people and 82,085,826 Kinh, the published national figures, to
+the person, and the volume's own national row agrees; every province is read
+once. Điện Biên comes out at Mông 228,279 (38.1%), the figure the Wikipedia
+article cited from this volume.
 
--- and repeats the same age-group columns for provinces after finishing the
-ethnic groups. Two breakdowns stacked under one title, not crossed. The caption
-could not settle that and reading the rows could, which is the only reason this
-entry can say so.
+**What is written.** `data/processed/vietnam_province.json`: for each of the 63
+provinces the population and sex ratio from the unit row, and an ethnicity
+composition with counts -- every group at 0.05% of the province or more, and
+"Other ethnic groups" for the rest together with foreign nationals and the
+undetermined, shares re-rounded to one decimal so each province adds to exactly
+100. The map draws 64 shapes for Viet Nam; the sixty-fourth is Côn Đảo, the
+island district of Bà Rịa–Vũng Tàu that the boundary file separates, and no
+row of the volume is for it, so it stays a gap by design. Every one of the 54
+groups is placed in the ethnicity tree under "Mainland Southeast Asian peoples"
+except the Hoa and the Ngái, who are Viet Nam's Han and Hakka-speaking Chinese
+and sit with the Sinitic peoples. Several had to be named there explicitly
+because the tree's shape rules read them as something else: Thái as the Thai
+nationality, Gia Rai as the Himalayan Rai, Sán Chay and Sán Dìu as the San of
+the Kalahari, Cờ Lao as Lao, Rơ Măm as a Mesoamerican Mam.
 
-One thing is banked for whenever a provincial table does surface: Viet Nam
-prints its figures with **a space as the thousands separator**, and every row
-carries Total, Male and Female. That is the South African problem exactly, and
-the arithmetic reader in `scripts/fetch_census/south_africa.py` transfers to it
-with `Total == Male + Female` as the constraint that picks the right reading.
+The 53-minorities survey of 2019 ("Kết quả điều tra thu thập thông tin về thực
+trạng kinh tế - xã hội của 53 dân tộc thiểu số năm 2019", GSO with the
+Committee for Ethnic Minority Affairs) is on the same host and was also
+reached; its first file is the 103-page narrative volume, its tables are by
+group and region rather than by province, and nothing was read from it.
 
 ### Thailand: a language table that cannot be a composition
 
@@ -4415,7 +4466,7 @@ seriousness:
 The fourth point is the one that answers the original question. It is not only
 that `nso.go.th` will not serve this client: by the account of the people who
 compiled this dataset, Thailand has made census language data public **once**,
-for 2000. So Thailand is a gap about publication, like Viet Nam, rather than a
+for 2000. So Thailand is a gap about publication, as Viet Nam was until its Vietnamese volume was read, rather than a
 gap about access -- and the access problem is real too.
 
 **Religion, later.** The 2000 census did publish religion by province, in a
@@ -4430,6 +4481,95 @@ would replace it the day the office serves one. The article's nationality
 columns are citizenship and are not read as ethnicity, and its "linguistic
 minorities" cells are the partial list the paragraphs above describe, so
 language keeps its gap.
+
+### Thailand: ethnicity from secondary sources, by the owner's decision
+
+Everything the section above measured still holds: the census does not ask
+ethnicity, the office's hosts answer 418 and 403, and the one public
+language file is not a composition. What changed is a decision. On **19
+September 2026** the map's owner decided that Thailand's 77 provinces should
+carry what secondary sources can say about ethnicity, with stated modelling
+and honest labels: a real count as a composition, anything estimated as a
+`modelled` estimate with its method on the record.
+`scripts/fetch_census/thailand_ethnicity.py` is that decision, and the
+sources were measured in the order the decision named them.
+
+**(a) The Ethnolinguistic Maps of Thailand** (แผนที่ภาษาของกลุ่มชาติพันธุ์ต่าง ๆ
+ในประเทศไทย, Suwilai Premsrirat et al., Mahidol University Institute of
+Language and Culture, 2004) are the standard secondary source, and their
+per-province tables are not where a clean client can read them. Measured
+from the runner: the Sirindhorn Anthropology Centre's ethnic-groups database
+(`ethnicity.sac.or.th`, the database the centre's front page links to)
+answers **403**; `www.lc.mahidol.ac.th` serves a certificate that is **not
+valid for its own hostname**, which this project does not step around;
+`langrevival.mahidol.ac.th` answers **403**; `www.sac.or.th` itself serves
+its news and nothing tabular. What Wikipedia carries of the maps is national:
+*Demographics of Thailand* transcribes ten groups (Central Thai 20.0 million,
+Lao 15.2, Kam Mueang 6.0, Pak Tai 4.5, Northern Khmer 1.4, Yawi 1.4, Nyaw
+0.5, Phu Thai 0.5, Karen 0.4, Kuy 0.4), and *Ethnic groups in Thailand*
+transcribes the 2011 CERD country report's table by language family, which
+counts 16.1 million Tai and 1.9 million Austroasiatic and then writes
+"cannot specify ethnicity/number 32,888,000". Neither has a province in it.
+The Thai edition's *กลุ่มชาติพันธุ์ในประเทศไทย* does not exist, and its
+*ภาษาในประเทศไทย* and *ประชากรศาสตร์ไทย* carry no ethnicity table.
+
+**(b) Kaggle** was searched from the runner (`scripts/probe_kaggle.py
+--search`, through the kagglesdk client with the owner's token in the
+environment) for "thailand census", "thailand population province",
+"thailand language" and "thailand ethnic": 41 datasets listed, none of them
+Thailand's census or anything by province -- the US Adult income set, road
+accidents, tourism, a Thai text corpus, the World Factbook.
+
+**(c) Wikipedia's provincial articles** were surveyed through the API.
+*Northern Khmer people* carries the Khmer share of nine provinces for 1990
+and 2000, which is the same 2000 census figure the list article already
+holds; *Isan people* and *Languages of Thailand* carry no table at all.
+
+So there is no per-province ethnolinguistic table to transcribe, and the
+province figure is a **model**, built from the one per-province thing the
+census did count. The list article's "Linguistic minorities in 2000" column
+-- the cell `thailand.py` leaves unread -- transcribes, from each provincial
+final report, the share speaking each minority language at home: "Khmer
+(47.2%)" for Surin, "Malay (66.1%), Chinese (3.0%)" for Yala, "Hill tribe
+languages (63.0%)" for Mae Hong Son. The adapter reads those as printed,
+under the census's own category names ("Hill tribe languages", "Burmese and
+Peguan", "Laotian and Vietnamese" are kept as the rows they are), drops and
+names in the note anything printed below 0.1%, and assigns everyone else --
+whom the census counted as speaking Thai -- to the regional Tai group the
+maps give for the province's region: Northern Thai in the eight
+upper-northern provinces, Isan (Lao) in the twenty of the northeast,
+Southern Thai in the fourteen of the south, Central Thai in the other 35.
+Every province's shares sum to 100 by construction. The method is named
+`tier1-census-home-language-plus-regional-assignment`, the two inputs are on
+the record, and the note says what the model cannot do: separate the Tai
+groups the maps count apart (Thai Khorat, Phu Thai, Nyaw, Kaleung, Phuan,
+Lue, Shan), name the Austroasiatic peoples the census did not (Kuy, So, Bru,
+Mon), or see the Thai Chinese, who are a tenth or more of the country by
+descent and a few hundred thousand by home language.
+
+**The national check**, printed by the run. The 76 provinces weighted by the
+December 2024 populations in *Provinces of Thailand* (the 2000 totals sit
+behind the same 418) imply Central Thai 43.6%, Isan 30.1, Southern Thai 11.7,
+Northern Thai 7.9, Malay 2.7, Khmer 2.3, hill tribe languages 1.4; the maps'
+figures against the 2000 census population of 60,916,441 are 32.8, 25.0, 7.4,
+9.8, 2.3, 2.3. The census-counted rows agree; the regional remainders run
+high, because the maps' ten largest groups are 82.6% of the population and
+the remainders are all of it, and by most in the centre and south where the
+Chinese-descended and the smaller Tai groups live. That gap is the assumption
+showing, and it is why the figure is an estimate and is labelled one. **No
+backtest is possible**: no provincial ethnicity figure exists to hide and
+predict, and the record says so rather than carrying one.
+
+The labels the model writes are placed in the tree where they are certain:
+Central, Northern and Southern Thai beside Isan under Mainland Southeast
+Asian peoples (spelled out, because the bare "Thai" is also the nationality
+Japan's census counts, and that entry wins), Kuy and Mien with them, "Burmese
+and Mon" where the tree keeps Mon, Thai Chinese under Han and Sinitic
+peoples, and the census's "hill tribe languages" row as a census category of
+its own under East and Southeast Asian ancestry, since its peoples are half
+Tibeto-Burman and half not. Bueng Kan, carved out of Nong Khai in 2011, has
+no 2000 row and stays empty here as it does for religion. Thailand stays in
+`ADAPTER_GAPS`, and its reason now names the model.
 
 ### Wikipedia transcriptions: what was measured and left
 
@@ -4730,6 +4870,95 @@ And the route that worked is worth keeping: **a saved page beat six probes.**
 `data.tuik.gov.tr` timed out, its `GetKategori` path answered 3,685 bytes of
 fragment, MEDAS answered 66 kB with zero links, and none of that settled
 anything. One right-click on a rendered page settled all of it.
+
+### Japan, resolved by the owner's decision
+
+Everything the section above measured still holds: the census asks
+nationality and none of the three, and the Agency for Cultural Affairs'
+adherent table counts memberships against the prefecture where a
+corporation is registered. What changed is a decision. On **19 September
+2026** the map's owner decided that Japan's 47 prefectures should carry what
+secondary sources can say, the way Korea's provinces carry a pollster's
+survey by the decision of 11 September, provided each figure is labelled for
+what it is. `scripts/fetch_census/japan.py` is that decision, and the `JPN`
+entry left `NOT_COLLECTED_POLICY` the same day, because the build's guard
+(`check_no_estimate_on_policy_field`) refuses an estimate on a declared
+field, and rightly. The substance of the three declarations now lives in the
+adapter's notes, on every prefecture, instead of in one line in `common.py`.
+
+**What was read.** Two e-Stat tables and one survey report, all through the
+runner (`ESTAT_API` in its environment, scrubbed from every log line):
+
+* **`0003445244`**, 令和２年国勢調査 人口等基本集計, 外国人 男女，国籍別人口 --
+  全国，都道府県，市区町村. Its 国籍 dimension carries 総数, 外国人, thirteen
+  nationalities (韓国，朝鮮; 中国; フィリピン; タイ; インドネシア; ベトナム;
+  インド; ネパール; イギリス; アメリカ; ブラジル; ペルー; その他), 日本人, and
+  日本人・外国人の別「不詳」. Read at `lvArea=1-2` (the country and the 47
+  prefectures) for both sexes. **Ethnicity is this table, as a list, under
+  `ethnicity_basis: "nationality"`**, because it is a census count and the
+  map's rule is that a count is written as one. The note on every prefecture
+  says the census counts nationality and not ethnicity, that "Japanese"
+  holds naturalised citizens and people of any ancestry, and how many people
+  the census recorded as neither Japanese nor foreign (left out of the
+  denominator, and printed). The reader refuses to write unless the 47
+  prefectures reproduce the table's own 全国 row exactly, that row reproduces
+  the Statistics Bureau's published national figures (foreign population
+  2,402,460 and the ten nationalities the 結果の概要 prints, in `PUBLISHED`),
+  and the national composition rebuilt from the prefectures sits within half
+  a point of the published one.
+* **`0003282963`**, the same 宗教統計調査 table the section above measured,
+  at 2025年度 (31 December 2024): 信者 by 宗教系統 for the country and the 47
+  prefectures. 175,054,047 believers, 1.39 per person. Used as a **relative
+  signal only** -- the reader refuses it if it ever sums to fewer than the
+  people, because then it would be a different table.
+* **NHK's ISSP 2018 "Religion" round**, reported by Toshiyuki Kobayashi in
+  放送研究と調査 (April 2019, pp. 52-72; fieldwork 27 October to 4 November
+  2018, 2,400 adults aged 18 and over by drop-off/pick-up, 1,466 valid
+  responses). The question is "ふだん信仰している宗教がありますか", with the
+  instruction that a religion kept only for weddings and funerals does not
+  count. Page 53: Buddhism 31%, Shinto 3%, Christianity 1%, any religion 36%
+  (so other is 1%), no religion 62%, and the remaining 2% no answer. Unchanged
+  from 2008. `nhk.or.jp` served the runner nothing -- the page came back
+  empty and the PDF as zero bytes -- and the report was read through the
+  Internet Archive's copy of the PDF at the same URL.
+
+**What is modelled, and how.** Religion on every prefecture is `modelled`,
+method `tier1-national-prior-tilted-by-adherents`: the survey's four
+affiliated shares, each multiplied by the prefecture's tilt ratio (the
+tradition's share of the prefecture's reported believers over its share of
+the nation's, clipped to between 1/3 and 3), rescaled to the survey's
+affiliated total, with no religion held at the survey's national figure
+because nothing gives it by prefecture, and the 2% no-answer left out. Two
+absolute bounds stop the signal's known artefacts passing through: Christianity
+at most 5% (Nagasaki, Japan's most Christian prefecture, is a few percent by
+the churches' own counts and comes out at 3.1) and Shinto at most 9% (three
+times the national self-identification). Three prefectures hit a bound --
+Okinawa, whose corporations report 90% of its believers as Shinto, Kyoto and
+Nagano -- and their notes say so. The record carries the ratios under `tilt`
+and the bound groups under `capped`; the log prints the five prefectures the
+tilt moves furthest from the prior. **No backtest exists and none is
+claimed**: there is no prefecture-level self-identification figure to score
+against, so the estimate has no `backtest` key and its note says why.
+
+Language is `modelled`, method `tier1-nationality-to-language`: the same
+nationality composition with every person given the majority home language
+of their nationality (Japanese, Korean, Mandarin, Filipino, Thai, Indonesian,
+Vietnamese, Hindi for Indians -- a plurality, and the note says so -- Nepali,
+English for British and Americans, Portuguese, Spanish, other). The note
+states the assumption and which way it errs: a Korean national born in Osaka
+and a Brazilian of Japanese descent speak Japanese at home more often than it
+allows, and naturalised citizens' families are counted the other way. A
+language under a twentieth of a point folds into "Other languages" rather
+than printing as 0.0%.
+
+**What remains unknowable.** Whether anyone in a given prefecture identifies
+with a religion: the model puts the survey's 63% no-religion on Okinawa and
+on Nara alike, and that is the survey's national figure repeated, not a
+finding. Any ethnicity of a Japanese national -- Ainu, Ryukyuan, Japan-born
+Korean who has naturalised, nikkei returnee -- all "Japanese". Any language
+anyone actually speaks at home. The Statistics Bureau's own 不詳 row, 2.2
+million people in 2020 whose nationality the census could not establish,
+which is left out of every denominator and printed on every note.
 
 ### Brazil: the table that answered was the wrong table
 
@@ -5193,6 +5422,78 @@ custody is to register with ISSS, download the public-release files, and run
 the adapter with ``--root`` pointing at them: it runs the same self-check,
 writes the same output, and the source then cites ISSS rather than Kaggle.
 The microdata never enters the repository either way.
+
+## Hong Kong: a census of its own, one shape under China
+
+Hong Kong is one first-level shape on this map, drawn under China because
+geoBoundaries folds the Special Administrative Region into the state that
+administers it. Its census is not China's. The Census and Statistics
+Department counts the territory every ten years and asks two of the three
+questions the mainland census does not -- ethnicity and usual spoken
+language -- and does not ask the third, religion, which stays declared not
+collected under the China policy. Before this the shape carried Wikidata's
+population and nothing else, with the China policy's religion sentence and
+two `not_available` markers saying a source had not been read.
+
+The source is the *2021 Population Census -- Main Results* (C&SD, December
+2022), which the Department publishes on `census2021.gov.hk` twice over: as a
+354-page bilingual PDF, and beside it as one workbook of the same tables,
+161 sheets, one per table. The workbook is what
+`scripts/fetch_census/hongkong_census.py` reads, and it is worth saying why.
+The PDF sets each table without ruling lines, so pdfplumber finds no table on
+its pages at all (the runner's probe of the two pages reported "0 table(s)"),
+and a text reader prints the Chinese row labels, the figures and the English
+labels as three separate runs, which is the Pakistan problem all over again.
+The workbook has none of that: each row is its Chinese label with the figures
+beside it and the English label alone on the row beneath, and the reader
+pairs them.
+
+Two sheets are read. **Table 3.9 (3)** is *Population by sex, ethnicity and
+age group, 2021*, the both-sexes block: Chinese 6,793,502 (91.6%), then the
+619,568 non-Chinese as the census prints them -- Filipino 201,291 (2.7%),
+Indonesian 142,065 (1.9%), Indian 42,569, Nepalese 29,701, Pakistani 24,385,
+Other South Asian 5,314 (Bangladeshi and Sri Lankan, by the table's note),
+Thai 12,972, Japanese 10,291, Korean 8,700, Other Asian 10,574, White 61,582
+(0.8%) and Others 70,124 (0.9%). "South Asian" is printed above its four
+detail rows and is their sum, so it is not written; "Others", which the note
+says includes people who reported more than one ethnicity, is written as
+"Other ethnic groups". **Table 3.13** is *Population aged 5 and over by usual
+spoken language and place of birth, 2021*, and its Total column is the whole
+composition: Cantonese 6,328,947 (88.2%), English 330,782 (4.6%), Putonghua
+165,451 (2.3%), Fukien 60,864, Hakka 41,514, Chiu Chau 37,621, Other Chinese
+dialects 64,572, Filipino (Tagalog) 29,413, Indonesian (Bahasa Indonesia)
+24,244, Japanese 8,704 and Others 87,015 (1.2%), of 7,179,127 people aged 5
+and over who are not mute. That basis is written in `language_basis` and in
+the note, because it is not the population: a person's usual spoken language
+is the one language they usually speak at home, and the 233,943 people
+between the two totals are the under-fives, who are not asked, and the
+mute, whom the table's note excludes.
+
+The language table a reader meets first is not this one. Table 3.12,
+*Proportion of population aged 5 and over able to speak selected
+languages/dialects*, is the table the report's text cites for Cantonese, and
+its "as the usual spoken language" column carries the same 88.2 -- but its
+rows are eleven selected languages, not everyone, and its point is the other
+two columns, which say that 58.7% can speak English and 54.2% Putonghua. Those
+are abilities, and they add to well over 100. Read as a composition it would
+have left 2% of the population nowhere and called Filipino's 0.4% a share of
+speakers rather than of homes.
+
+Every figure is checked as it is read, and the checks are the report's own.
+The ethnicity leaves must sum to the printed 7,413,070 and the South Asian
+detail to the printed 101,969; the language rows must sum to the printed
+7,179,127; every share computed from a count must agree with the share the
+census prints beside it; and the two figures the report states in prose --
+91.6% Chinese (paragraph 3.18) and 88.2% Cantonese (paragraph 3.24) -- must
+come out of the arithmetic. Any of those failing is a refusal, since a
+workbook that has moved a column is the same file with the wrong answer in
+it. Fukien and Chiu Chau are the census's romanisations of Hokkien and
+Teochew and are registered as such in `scripts/group_tree.py`; every other
+label already had a place. The build sandbox cannot reach `census2021.gov.hk`
+(the egress proxy refuses the connection), so the adapter runs on the
+workflow runner like the rest; the owner's copy of the PDF on Google Drive
+was read first, and confirmed the figures the workbook then supplied, but the
+Department's URL is what is cited.
 
 ## Derived values: what follows without reading more
 

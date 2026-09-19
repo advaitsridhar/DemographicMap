@@ -1,0 +1,176 @@
+[
+  {
+    "id": "CHN-hong-kong-special-administrative-region",
+    "level": "admin1",
+    "name": "Hong Kong Special Administrative Region",
+    "parent": "CHN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": [
+      {
+        "group": "Cantonese",
+        "pct": 88.2,
+        "count": 6328947
+      },
+      {
+        "group": "English",
+        "pct": 4.6,
+        "count": 330782
+      },
+      {
+        "group": "Putonghua",
+        "pct": 2.3,
+        "count": 165451
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.2,
+        "count": 87015
+      },
+      {
+        "group": "Other Chinese dialects",
+        "pct": 0.9,
+        "count": 64572
+      },
+      {
+        "group": "Fukien",
+        "pct": 0.8,
+        "count": 60864
+      },
+      {
+        "group": "Hakka",
+        "pct": 0.6,
+        "count": 41514
+      },
+      {
+        "group": "Chiu Chau",
+        "pct": 0.5,
+        "count": 37621
+      },
+      {
+        "group": "Filipino (Tagalog)",
+        "pct": 0.4,
+        "count": 29413
+      },
+      {
+        "group": "Indonesian (Bahasa Indonesia)",
+        "pct": 0.3,
+        "count": 24244
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.1,
+        "count": 8704
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 91.6,
+        "count": 6793502
+      },
+      {
+        "group": "Filipino",
+        "pct": 2.7,
+        "count": 201291
+      },
+      {
+        "group": "Indonesian",
+        "pct": 1.9,
+        "count": 142065
+      },
+      {
+        "group": "Other ethnic groups",
+        "pct": 0.9,
+        "count": 70124
+      },
+      {
+        "group": "White",
+        "pct": 0.8,
+        "count": 61582
+      },
+      {
+        "group": "Indian",
+        "pct": 0.6,
+        "count": 42569
+      },
+      {
+        "group": "Nepalese",
+        "pct": 0.4,
+        "count": 29701
+      },
+      {
+        "group": "Pakistani",
+        "pct": 0.3,
+        "count": 24385
+      },
+      {
+        "group": "Thai",
+        "pct": 0.2,
+        "count": 12972
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.1,
+        "count": 10291
+      },
+      {
+        "group": "Korean",
+        "pct": 0.1,
+        "count": 8700
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 10574
+      },
+      {
+        "group": "Other South Asian",
+        "pct": 0.1,
+        "count": 5314
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Census and Statistics Department, Hong Kong SAR, 2021 Population Census: Main Results (December 2022), Table 3.9",
+        "url": "https://www.census2021.gov.hk/doc/pub/21c-main-results.xlsx",
+        "license": "Hong Kong Government; reproduction permitted with acknowledgement of the Census and Statistics Department as the source"
+      },
+      {
+        "field": "language",
+        "name": "Census and Statistics Department, Hong Kong SAR, 2021 Population Census: Main Results (December 2022), Table 3.13",
+        "url": "https://www.census2021.gov.hk/doc/pub/21c-main-results.xlsx",
+        "license": "Hong Kong Government; reproduction permitted with acknowledgement of the Census and Statistics Department as the source"
+      }
+    ],
+    "country": "CHN",
+    "aliases": [
+      "Hong Kong",
+      "Hong Kong SAR",
+      "Xianggang",
+      "香港"
+    ],
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Census and Statistics Department, Hong Kong SAR, 2021 Population Census: Main Results (December 2022), Table 3.9 (population by sex, ethnicity and age group), both sexes, read from the Department's workbook of the report's tables (https://www.census2021.gov.hk/doc/pub/21c-main-results.pdf is the report). Ethnicity as reported by the person; the census's 'South Asian' is the sum of Indian, Nepalese, Pakistani and 'Other South Asian' (Bangladeshi and Sri Lankan) and is not repeated; 'Other ethnic groups' is the census's 'Others', which includes people reporting more than one ethnicity. Hong Kong's own census, not China's: the mainland census records the 56 official nationalities and is not taken in the Special Administrative Region.",
+    "language_year": 2021,
+    "language_basis": "usual spoken language, population aged 5 and over",
+    "language_note": "Census and Statistics Department, Hong Kong SAR, 2021 Population Census: Main Results (December 2022), Table 3.13 (population aged 5 and over by usual spoken language and place of birth), the Total column, read from the Department's workbook of the report's tables. Usual spoken language is the language a person usually speaks at home, one per person, for the population aged 5 and over, excluding mute persons -- not the share able to speak a language, which the report's Table 3.12 gives and which adds to more than 100. Labels as the census prints them; 'Other languages' is its 'Others'."
+  }
+]

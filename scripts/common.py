@@ -183,17 +183,17 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # questionnaire alone -- see docs/SOURCES.md. The catalogue is the reason
     # each of these three is a declaration and not a gap: the API was asked, it
     # answered, and what it holds is not a composition.
-    "JPN": {
-        "ethnicity": "Japan's census collects nationality, not ethnicity. The eight tables in e-Stat carrying the word for ethnic group are museum holdings and prison nationality counts.",
-        "religion": "Japan's census does not ask religion. The one official religion statistic counts adherents as religious bodies report them -- 175.1 million against 123.8 million people, and from 0.5 to 3.2 times a prefecture's population depending on where the corporations are registered.",
-        # The third field, added for the same reason as the other two: the
-        # Kokusei Chosa asks name, sex, date of birth, marital status,
-        # nationality, household relationship, dwelling, employment, industry,
-        # occupation and commuting. There is no language question, so the 47
-        # prefectures' empty language field was reading as "not fetched yet"
-        # when it is "never asked".
-        "language": "Japan's census does not ask language; it records nationality instead. The only mother-tongue tables e-Stat holds count schoolchildren who need help with Japanese.",
-    },
+    # Japan carried all three fields here until 19 September 2026, and the
+    # facts have not changed: the Kokusei Chosa asks nationality and not
+    # religion, ethnicity or language, and the one official religion
+    # statistic counts memberships as religious bodies report them. What
+    # changed is the owner's decision that day that the prefectures should
+    # carry what secondary sources can say, labelled for what it is, the way
+    # Korea's provinces carry a survey. scripts/fetch_census/japan.py writes
+    # that -- nationality as a census composition under ethnicity_basis
+    # "nationality", religion and language as modelled estimates whose notes
+    # hold the substance of the declarations that used to sit here -- and an
+    # entry here would make check_no_estimate_on_policy_field refuse it.
     "IND": {
         "ethnicity": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead.",
     },
@@ -435,6 +435,12 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
         "ethnicity": "Tunisia's census does not ask ethnicity.",
     },
     "KOR": {"ethnicity": "South Korea's census does not collect ethnicity."},
+    # Read off the census's own questionnaire: MyCensus 2020's demographic
+    # module asks sex, age, marital status, ethnic group, citizenship and
+    # religion, and no census round has asked language or mother tongue.
+    # Ethnicity and religion are real compositions on the 16 states and the
+    # districts; language was reading as "not fetched yet" on all of them.
+    "MYS": {"language": "Malaysia's census asks ethnic group, citizenship and religion but has never asked language or mother tongue, and DOSM publishes no language composition."},
     "NLD": {"ethnicity": "The Netherlands records migration background, not ethnicity.",
             "language": "The Netherlands has had no questionnaire census since 1971 and no register records language."},
     "SWE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity.",

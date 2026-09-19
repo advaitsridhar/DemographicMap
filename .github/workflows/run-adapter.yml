@@ -87,6 +87,9 @@ jobs:
           # dataset there. A public dataset may download without them.
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          # The owner's Kaggle API token (the newer single-token form kagglehub and
+          # the kaggle package read as KAGGLE_API_TOKEN). Never printed by anything.
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API }}
 
         # xargs rather than an unquoted expansion: the command is a dispatch
         # input, and a URL with a query string carries "&", which bash reads as

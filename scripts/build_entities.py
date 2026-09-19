@@ -62,12 +62,39 @@ ADAPTER_FILES = [
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
     "korea_survey_province.json",
+    # Thailand's ethnicity, by the same decision as Japan's below: a model
+    # built from the 2000 census's home-language minorities and a regional
+    # assignment, every province a modelled estimate. Its religion file
+    # (thailand_province.json) is a census transcription and sits lower.
+    "thailand_ethnicity.json",
+    # Japan, by the owner's decision of 19 September 2026: nationality read
+    # from the 2020 census as a composition, religion and language as
+    # modelled estimates. Part survey and part model, so it sits with the
+    # surveys, below every census file.
+    "japan_prefecture.json",
     # And CFPS 2012 for five Chinese provinces: a survey where the census
     # asks nothing, transcribed from the paper that reports it.
     "cfps_survey_province.json",
     # The same survey's newer wave, tabulated from its public-release file
     # and checked against that paper: it replaces the 2012 figure where read.
     "cfps_microdata_province.json",
+    # Viet Nam's 2019 census, ethnicity by province from Table 2 of the
+    # office's own Vietnamese results volume: a census count.
+    "vietnam_province.json",
+    # Indonesia, by the owner's decision of 19 September 2026: the 2010
+    # census's ethnicity by province as its provinces' Wikipedia articles
+    # transcribe it, and religion by province and regency from the registry
+    # or BPS figure each place's article cites. Part census transcription
+    # and part registry, so it sits with the surveys, below every census
+    # file read from its office.
+    "indonesia.json",
+    # Hong Kong's own census, one shape under China: ethnicity and usual
+    # spoken language from the 2021 Main Results workbook.
+    "hongkong_census.json",
+    # China's census ethnicity by province, the tables the provinces'
+    # Wikipedia articles transcribe: a census transcription, so above the
+    # surveys, and it touches a field the surveys do not carry.
+    "china_wiki_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
@@ -114,6 +141,9 @@ ADAPTER_FILES = [
     "kazakhstan_region.json", "cambodia_province.json",
     "kazakhstan_oblast.json", "kazakhstan_district.json",
     "malaysia_state.json", "malaysia_district.json",
+    # After both: the same 16 states and the districts, religion only, from
+    # the 2020 census; its gaps never displace the ethnicity above.
+    "malaysia_religion.json",
     "poland_voivodeship.json", "poland_powiat.json",
     "czechia_kraj.json", "czechia_okres.json",
     "croatia_county.json", "croatia_unit.json",
@@ -164,7 +194,9 @@ ADAPTER_HINTS: dict[str, str] = {
            "home language) by voivodeship and powiat: "
            "python -m scripts.fetch_census.poland",
     "MYS": "DOSM population estimates by ethnicity, OpenDOSM CSV by state and "
-           "district: python -m scripts.fetch_census.malaysia --level both",
+           "district: python -m scripts.fetch_census.malaysia --level both; "
+           "religion from the 2020 census as DOSM's Kawasanku dashboard publishes "
+           "it by state and district: python -m scripts.fetch_census.malaysia_religion",
     "CZE": "ČSÚ SLDB 2021 open data (nationality, religious belief, mother tongue) "
            "by kraj and okres: python -m scripts.fetch_census.czechia",
     "HRV": "DZS Popis 2021 workbook (ethnicity, religion, mother tongue) by "
@@ -175,6 +207,8 @@ ADAPTER_HINTS: dict[str, str] = {
            "(python -m scripts.fetch_census.kazakhstan)",
     "KHM": "2019 census religion by province, transcribed on Wikipedia: "
            "python -m scripts.fetch_census.wiki_census --country KHM",
+    "VNM": "2019 census Table 2 (population by ethnic group and province) from the "
+           "office's own results volume: python -m scripts.fetch_census.vietnam",
     "PER": "INEI 2017 census profile book (religion, mother tongue) by department, "
            "read from the PDF's word positions: python -m scripts.fetch_census.peru",
     "MLI": "INSTAT RGPH5 2022 thematic report on cultural characteristics (religion, "
@@ -186,10 +220,19 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.burkina",
     "CHN": "CFPS 2012 (religion) for the five provinces the survey sampled on their "
            "own, transcribed from Lu Yunfeng's report: "
-           "python -m scripts.fetch_census.cfps_survey",
+           "python -m scripts.fetch_census.cfps_survey; census ethnicity by "
+           "province, transcribed in each province's Wikipedia article: "
+           "python -m scripts.fetch_census.china_wiki. Hong Kong SAR carries "
+           "ethnicity and usual spoken language from its own 2021 Population "
+           "Census (C&SD Main Results, Tables 3.9 and 3.13): "
+           "python -m scripts.fetch_census.hongkong_census",
     "KOR": "Hankook Research 2025 pooled survey (religion) by residence region, each "
            "of the seven regions' figure carried by its provinces: "
            "python -m scripts.fetch_census.korea_survey",
+    "JPN": "2020 census nationality by prefecture (as ethnicity, labelled nationality), "
+           "religion modelled from NHK's 2018 ISSP survey tilted by the Agency for "
+           "Cultural Affairs' adherent counts, language modelled from nationality; "
+           "needs ESTAT_API: python -m scripts.fetch_census.japan",
     "AGO": "INE Censo 2024 final report (ethnic group, mother tongue, religion) by "
            "province, read from the PDF's word coordinates: "
            "python -m scripts.fetch_census.angola",
@@ -202,6 +245,10 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.germany",
     "CAN": "Statistics Canada 2021 Census Profile (religion, visible minority, language): "
            "python -m scripts.fetch_census.statcan",
+    "IDN": "2010 census ethnicity by province and the registry or BPS religion "
+           "figure by province and regency, as the Indonesian Wikipedia transcribes "
+           "them (BPS itself refuses automated readers and its API needs a key): "
+           "python -m scripts.fetch_census.indonesia",
     "BRA": "IBGE SIDRA 2022 census (population, cor ou raça, religion): "
            "python -m scripts.fetch_census.ibge_sidra --level municipality",
     "AUS": "ABS 2021 Census (religion, ancestry): "
@@ -229,16 +276,15 @@ ADAPTER_HINTS: dict[str, str] = {
 # not, and saying so is the point of the map rather than an admission against
 # it. Kept short here; docs/SOURCES.md carries what was actually tried.
 ADAPTER_GAPS: dict[str, str] = {
-    "IDN": "BPS publishes religion by regency, but its API needs a free "
-           "registered key and its other hosts refuse automated readers. The "
-           "data exists and is not reachable without that key.",
-    "VNM": "The 2019 census asked both religion and ethnicity, and publishes "
-           "each for the country as a whole rather than by province. No "
-           "provincial table exists to fetch.",
     "THA": "The statistical office refuses automated readers on every host "
            "tried. Religion by province is the 2000 census, read from its "
            "provincial final reports as transcribed on Wikipedia; language was "
-           "made public once, for 2000, in a file that is not a composition.",
+           "made public once, for 2000, in a file that is not a composition. "
+           "Ethnicity is not asked, and by the owner's decision of 19 September "
+           "2026 every province carries a modelled estimate instead: the 2000 "
+           "census's home-language minorities as printed, the rest assigned to "
+           "the region's Tai group as the Ethnolinguistic Maps of Thailand name "
+           "it, labelled as a model on every record.",
     "IRN": "The 2016 census asked religion and the Statistical Centre publishes "
            "it by province, but amar.org.ir ends the TLS handshake before a "
            "standard client can read a page (an EOF in the protocol, measured "

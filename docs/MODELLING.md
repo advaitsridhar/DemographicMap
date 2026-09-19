@@ -325,6 +325,52 @@ the country does not collect (`check_no_estimate_on_policy_field` is fatal),
 no estimate rolls into a parent, and the field-level diff against the previous
 build gained three real compositions and lost none.
 
+**Japan is the first Tier 1 case applied under an owner's decision rather
+than for a geometric reason**, and the first whose assumption is about people.
+On 19 September 2026 the owner decided that the 47 prefectures, which had
+carried `not_collected` for all three fields on the strength of the census
+questionnaire, should carry what secondary sources can say; the `JPN` entry
+left `NOT_COLLECTED_POLICY` that day so that section 0's second rule and the
+guard that enforces it stay exactly as strict for everyone else.
+`scripts/fetch_census/japan.py` writes three different things and labels each:
+nationality from the 2020 census as a real composition under
+`ethnicity_basis: "nationality"`; religion as `modelled` from a national
+self-identification prior (NHK's ISSP 2018 round: Buddhism 31, Shinto 3,
+Christianity 1, other 1, no religion 62, no answer 2) tilted by the Agency for
+Cultural Affairs' adherent counts used only as a relative signal, clipped to a
+threefold ratio, with Christianity held under 5% and Shinto under 9% and no
+religion fixed at the national figure; and language as `modelled` by
+assigning each nationality its majority home language
+(`tier1-nationality-to-language`). It is a Tier 1 case in the section 5 sense
+-- a national figure disaggregated under a stated assumption -- and it is
+published only because the assumption, the inputs and the bounds are on every
+record. What section 7 demands it cannot have: **no backtest is possible**,
+because no prefecture-level self-identification figure exists to hide and
+predict, so the estimate carries no `backtest` key and says so rather than
+inventing one. `docs/SOURCES.md`, "Japan, resolved by the owner's decision",
+records what was read.
+
+**Thailand's ethnicity is the second case under the same decision**, and a
+different shape of model. The census asks no ethnicity question, the
+Ethnolinguistic Maps of Thailand that would answer it by province are behind
+hosts that refuse a clean client, and Kaggle holds nothing; what the census
+did count per province, and what Wikipedia transcribes from every 2000
+provincial report, is the share speaking each minority language at home.
+`scripts/fetch_census/thailand_ethnicity.py` reads those as printed under the
+census's own category names and assigns everyone else -- counted as
+speaking Thai -- to the regional Tai group the maps give for the province's
+region (`tier1-census-home-language-plus-regional-assignment`). Every one of
+the 76 provinces is `modelled`, never a list, even Surin, whose Khmer 47.2%
+is a census figure, because the other 52.8% is an assignment and a
+composition is one thing. The run prints the national composition the
+provinces imply beside the maps' national figures: the census-counted rows
+agree (Khmer 2.3 against 2.3, Malay 2.7 against 2.3) and the regional
+remainders run high (Central Thai 43.6 against 32.8, Southern Thai 11.7
+against 7.4), which is the assumption showing and the reason the figure is
+an estimate. As with Japan, **no backtest is possible** and the record says
+so. `docs/SOURCES.md`, "Thailand: ethnicity from secondary sources, by the
+owner's decision", records what was measured and where each source failed.
+
 ## 8. Recommendation
 
 Build **Tier 0 and the geometric half of Tier 1** — the residual and the

@@ -19,6 +19,12 @@ download; a private or gated one will not, and this says so.
 
 Usage:
     python -m scripts.probe_kaggle owner/dataset --terms prov,relig,宗教
+    python -m scripts.probe_kaggle --search "thailand census" --search "thailand language"
+
+``--search`` lists what Kaggle's catalogue returns for a phrase -- handle,
+title, size, licence, files -- and downloads nothing. It is how a dataset
+is found before its handle is probed: the catalogue can only be searched
+from a host that reaches Kaggle, which the build sandbox is not.
 """
 from __future__ import annotations
 
@@ -44,6 +50,50 @@ def download(handle: str) -> Path:
     creds = bool(os.environ.get("KAGGLE_USERNAME")) and bool(os.environ.get("KAGGLE_KEY"))
     log(f"probe_kaggle: {handle} ({'with' if creds else 'without'} credentials)")
     return Path(kagglehub.dataset_download(handle))
+
+
+def search(phrase: str, limit: int) -> int:
+    """List the datasets Kaggle's catalogue returns for a phrase.
+
+    Through kagglesdk, which kagglehub already depends on and which reads
+    the same credentials (KAGGLE_API_TOKEN, or KAGGLE_USERNAME and
+    KAGGLE_KEY) from the environment. Nothing about them is printed.
+    """
+    from kagglesdk import KaggleClient
+    from kagglesdk.datasets.types.dataset_api_service import ApiListDatasetsRequest
+    log(f"probe_kaggle: search {phrase!r}")
+    shown = 0
+    with KaggleClient() as client:
+        token = ""
+        page = 1
+        while shown < limit:
+            req = ApiListDatasetsRequest()
+            req.search = phrase
+            req.page = page
+            if token:
+                req.page_token = token
+            resp = client.datasets.dataset_api_client.list_datasets(req)
+            rows = list(resp.datasets or [])
+            if not rows:
+                break
+            for ds in rows:
+                if shown >= limit:
+                    break
+                shown += 1
+                files = [f.name for f in (ds.files or [])][:8]
+                log(f"  {ds.ref}")
+                log(f"      {ds.title!r}; {ds.subtitle!r}")
+                log(f"      {ds.total_bytes:,} bytes; licence {ds.license_name!r}; "
+                    f"usability {ds.usability_rating}; updated {ds.last_updated}; "
+                    f"{ds.download_count} downloads")
+                if files:
+                    log(f"      files: {files}")
+            token = resp.next_page_token or ""
+            page += 1
+            if not token and len(rows) < 20:
+                break
+    log(f"  {shown} dataset(s) listed")
+    return 0
 
 
 def listing(root: Path) -> list[Path]:
@@ -142,7 +192,13 @@ def probe(path: Path, terms: list[str], rows: int, max_values: int) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("dataset", help="owner/dataset as Kaggle names it")
+    ap.add_argument("dataset", nargs="?", default=None,
+                    help="owner/dataset as Kaggle names it")
+    ap.add_argument("--search", action="append", default=[], metavar="PHRASE",
+                    help="list the catalogue's answers for a phrase instead of "
+                         "probing a dataset; repeatable")
+    ap.add_argument("--limit", type=int, default=40,
+                    help="datasets to list per --search phrase")
     ap.add_argument("--terms", default="prov,relig,宗教,信仰,weight",
                     help="comma-separated words to match in column names and labels")
     ap.add_argument("--rows", type=int, default=20000, help="rows to sample per file")
@@ -150,6 +206,16 @@ def main() -> int:
                     help="count a column's values when it has at most this many")
     ap.add_argument("--only", default=None, help="regex on the file path; others are listed only")
     args = ap.parse_args()
+    if args.search:
+        try:
+            for phrase in args.search:
+                search(phrase, args.limit)
+        except Exception as e:
+            log(f"probe_kaggle: search failed: {type(e).__name__}: {str(e)[:300]}")
+            return 1
+        return 0
+    if not args.dataset:
+        ap.error("a dataset handle or --search is needed")
     terms = [t.strip() for t in args.terms.split(",") if t.strip()]
     try:
         root = download(args.dataset)

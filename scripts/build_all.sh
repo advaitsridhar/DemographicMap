@@ -79,17 +79,37 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.burkina
   # A survey, read from one page of the pollster's own report.
   soft python3 -m scripts.fetch_census.korea_survey
+  # Japan by the owner's decision: census nationality read, religion and
+  # language modelled; two e-Stat calls, needs ESTAT_API.
+  soft python3 -m scripts.fetch_census.japan
   # Five Chinese provinces from a survey, transcribed; no network.
   soft python3 -m scripts.fetch_census.cfps_survey
   # Its newer wave from the public-release file on Kaggle; needs egress.
   soft python3 -m scripts.fetch_census.cfps_microdata
+  # Viet Nam's 2019 census, Table 2 of the office's 842-page results
+  # volume on nso.gov.vn; needs egress.
+  soft python3 -m scripts.fetch_census.vietnam
+  # Hong Kong's 2021 census: ethnicity and usual spoken language from the
+  # C&SD Main Results workbook; needs egress.
+  soft python3 -m scripts.fetch_census.hongkong_census
+  # Census ethnicity for the 31 divisions, one MediaWiki API call each.
+  soft python3 -m scripts.fetch_census.china_wiki
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.
   soft python3 -m scripts.fetch_census.thailand
+  # Thailand's ethnicity by the owner's decision: modelled from the same
+  # article's home-language cells and a regional assignment; two API calls.
+  soft python3 -m scripts.fetch_census.thailand_ethnicity
   # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).
   soft python3 -m scripts.fetch_census.wiki_census
   # Reads the committed BNS workbook under data/raw/kazakhstan; no network.
   soft python3 -m scripts.fetch_census.kazakhstan
   soft python3 -m scripts.fetch_census.malaysia --level both
+  # One DOSM dashboard parquet (religion, 2020 census) plus the two population
+  # CSVs above for the count base; needs pyarrow.
+  soft python3 -m scripts.fetch_census.malaysia_religion
+  # Indonesia: 2010 census ethnicity by province and registry/BPS religion by
+  # province and regency, read from the Indonesian Wikipedia (~550 API calls).
+  soft python3 -m scripts.fetch_census.indonesia
   soft python3 -m scripts.fetch_census.poland
   # Three ČSÚ open-data CSVs, 170 MB between them; no key.
   soft python3 -m scripts.fetch_census.czechia
