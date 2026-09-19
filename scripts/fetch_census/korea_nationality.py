@@ -54,8 +54,17 @@ national total, if a unit's shares do not make 100 within
 if the national foreign share is more than ``NATIONAL_TOLERANCE`` points
 from the Ministry's published national total (``PUBLISHED``).
 
+**Getting the files.** Neither host answers a runner reliably: data.go.kr's
+file endpoint times out about as often as it answers, and the resident
+register's form drops a connection every few requests. So what a run reads
+is kept under ``data/raw/korea`` -- the .gitignore admits it -- and a later
+run reads the copy. ``--fetch-only`` asks for whatever is not there yet and
+stops, so a run that reaches a host banks the file even if another host is
+down that minute; the reader itself then needs no network at all.
+
 Usage:
     python -m scripts.fetch_census.korea_nationality
+    python -m scripts.fetch_census.korea_nationality --fetch-only         # bank the sources
     python -m scripts.fetch_census.korea_nationality --inspect            # the MOJ zip
     python -m scripts.fetch_census.korea_nationality --inspect <url>      # any zipped CSV
 """
@@ -875,9 +884,28 @@ def main() -> int:
     ap.add_argument("--width", type=int, default=8)
     ap.add_argument("--encoding", default=ENCODING)
     ap.add_argument("--register", default=MOIS_URL, help="the resident register's form URL")
+    ap.add_argument("--fetch-only", action="store_true",
+                    help="fetch whatever is not yet under data/raw/korea and stop")
     args = ap.parse_args()
     if args.inspect:
         inspect(args.inspect, args.rows, args.width, args.encoding)
+        return 0
+    if args.fetch_only:
+        # Each source on its own, so one host being down this minute does not
+        # throw away what another just answered: the runner commits
+        # data/raw either way, and the next run reads the copies.
+        failed = []
+        for what, fetch in (("the Ministry of Justice's district file", fetch_moj),
+                            ("the resident register", lambda: fetch_register(args.register)),
+                            ("the Ministry's national table", fetch_national)):
+            try:
+                fetch()
+                log(f"  have {what}")
+            except Exception as exc:
+                log(f"  {what} did not answer: {exc}")
+                failed.append(what)
+        if failed:
+            raise SystemExit(f"korea_nationality: still missing {', '.join(failed)}")
         return 0
     log(f"korea_nationality: {MOJ_SOURCE}")
     units = read_moj(fetch_moj())
