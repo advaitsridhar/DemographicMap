@@ -353,6 +353,22 @@ predict, so the estimate carries no `backtest` key and says so rather than
 inventing one. `docs/SOURCES.md`, "Japan, resolved by the owner's decision",
 records what was read.
 
+**South Korea left `NOT_COLLECTED_POLICY` the same day and is not a Tier 1
+case at all**, which is the distinction worth keeping in view. Its
+seventeen provinces and 228 districts had carried "the census does not
+collect ethnicity", and that is still true; what changed is that the owner
+decided the ethnicity field should carry the thing the state *does* count.
+Every Korean national is on the resident register and every foreigner
+staying over ninety days registers by country of nationality, so
+`scripts/fetch_census/korea_nationality.py` writes 245 units from two
+registers read at 31 December 2023, under `ethnicity_basis: "nationality"`
+and with nothing estimated: no model, no assumption, no bounds to state,
+and `is_estimate` false on all 245. An entry leaving the policy table
+because a count was found is the opposite of one leaving so a model can be
+written, and section 0's second rule is untouched by it. `docs/SOURCES.md`,
+"South Korea: nationality as ethnicity, by the owner's decision", records
+what was read and what the registers do not reach.
+
 **Taiwan is a Tier 1 case under the same decision, and the largest.** Its 22
 counties and cities, 23.6 million people, carried nothing for any of the
 three fields: the census asks language and not the other two, and no
@@ -374,9 +390,11 @@ county alike -- the assumption that makes the whole thing an estimate, since
 it says nothing about where mainlanders settled. Religion is `modelled`
 (`tier1-national-prior-tilted-by-religious-buildings`) from Pew's 2023
 national self-identification survey tilted by the Ministry of the Interior's
-registry of temples and churches by county, used only as a relative signal
-with the same threefold clip, absolute bounds on Christianity and "other",
-and no religion held at the national figure. **No backtest is possible** for
+registry of temples and churches by county -- a two-way signal, since the
+yearbook splits temples by tradition only nationally: churches tilt
+Christianity and temples the three temple traditions together -- used only
+as a relative signal with the same threefold clip, absolute bounds on
+Christianity and "other", and no religion held at the national figure. **No backtest is possible** for
 either estimate, since no county-level self-identification figure exists,
 and neither record carries a `backtest` key. `docs/SOURCES.md`, "Taiwan,
 resolved by the owner's decision", records what was read and where each

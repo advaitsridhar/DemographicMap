@@ -21,6 +21,14 @@ data/raw/*
 # application with no file link to fetch it from, and it is 380 KB.
 !data/raw/kazakhstan/
 !data/raw/kazakhstan/*.xlsx
+# Korea's two registers, for a different reason: both hosts do have a file
+# to fetch, and both answer a GitHub runner about one request in two (the
+# rest end in a connect timeout), so a run that has once read them keeps
+# what it read. A 75 KB zip and eighteen one-kilobyte CSVs, under the
+# Korea Open Government License.
+!data/raw/korea/
+!data/raw/korea/*.zip
+!data/raw/korea/*.csv
 # Nepal's NPHC 2021 report, for the same reason: the census portal serves a
 # certificate that is not valid for its own hostname, so there is no verified
 # route to re-fetch it, and without the report the build cannot re-derive

@@ -50,16 +50,21 @@ ratio, and they are composed under a stated assumption:
 affiliation by county. The national prior is Pew Research Center's 2023
 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other
 12%, no religion 27%, don't know 2%). The county signal is the Ministry of
-the Interior's registry of religious buildings -- temples by tradition and
-churches by county, from the 內政統計年報 -- used only *relatively*: each
-tradition's share of a county's registered buildings over its share of the
-nation's, clipped to a threefold ratio, scales the survey's share for that
-tradition; the affiliated shares are rescaled to the survey's affiliated
-total and "no religion" is held at the national figure, because nothing
-gives it by county. Absolute bounds stop the signal's artefacts (a county
-with many small churches) passing through. **No backtest is possible** --
-no county-level self-identification figure exists to score against -- so
-the estimate carries no ``backtest`` key and says so.
+the Interior's registry of religious buildings from the 內政統計年報 (table
+06-01, 宗教教務概況): registered temples and churches by county. The
+yearbook splits temples by tradition (道教, 佛教, 一貫道 ...) only
+nationally, and the registry that would do it by county
+(religion.moi.gov.tw) answers nothing, so the signal is two-way: churches
+tilt Christianity, temples tilt Buddhism, Taoism and the other traditions
+together. It is used only *relatively*: a county's church (temple) share
+of its registered buildings over the nation's, clipped to a threefold
+ratio, scales the survey's share; the affiliated shares are rescaled to the
+survey's affiliated total and "no religion" is held at the national figure,
+because nothing gives it by county. Absolute bounds stop the signal's
+artefacts passing through -- a city with few temples for its size has a
+high church share whether or not it has many Christians. **No backtest is
+possible** -- no county-level self-identification figure exists to score
+against -- so the estimate carries no ``backtest`` key and says so.
 
 Every per-unit note is short, by the owner's instruction: what the figure
 is and where from, then the caveat. The method is written out here and in
@@ -417,17 +422,48 @@ def grids_of(blob: bytes) -> dict[str, Grid]:
     return xlsx_grids(blob) if blob[:2] == b"PK" else xls_grids(blob)
 
 
-def latest_sheet(grids: dict[str, Grid]) -> tuple[str, Grid]:
-    """The sheet named for the latest year, or the last sheet when none is:
-    a 'monthly' sheet is the national series and is never it."""
-    years = [(int(name.strip()), name) for name in grids if name.strip().isdigit()]
-    if years:
-        name = max(years)[1]
-        return name, grids[name]
-    named = [name for name in grids if "monthly" not in name.lower()]
-    if not named:
-        raise SystemExit("taiwan: the MOI workbook has no sheet of counties")
-    return named[-1], grids[named[-1]]
+MONTHS = {m: i for i, m in enumerate(("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug",
+                                      "sep", "oct", "nov", "dec"), 1)}
+SHEET_YEAR = re.compile(r"^\s*(\d{4})\s*$")
+SHEET_MONTH = re.compile(r"^\s*([A-Za-z]{3})[A-Za-z]*\.?,?\s*(\d{4})\s*$")
+
+
+def sheet_date(name: str) -> tuple[int, int] | None:
+    """' 2025' -> (2025, 12); ' Aug., 2026' -> (2026, 8); anything else None.
+
+    The monthly bulletin's workbooks carry one sheet per year of December
+    figures and one for the latest month, named that way; 'monthly' is the
+    national series and is never a sheet of counties.
+    """
+    found = SHEET_YEAR.match(name)
+    if found:
+        return int(found.group(1)), 12
+    found = SHEET_MONTH.match(name)
+    if found and found.group(1).lower() in MONTHS:
+        return int(found.group(2)), MONTHS[found.group(1).lower()]
+    return None
+
+
+def latest_sheet(grids: dict[str, Grid], select: re.Pattern[str] | None = None
+                 ) -> tuple[str, Grid, tuple[int, int]]:
+    """The sheet for the latest month or year among those named for one, with
+    that date. ``select`` narrows the names to a pattern whose first group is
+    the year (the yearbook names its county sheets '2025(區域別)')."""
+    dated: dict[str, tuple[int, int]] = {}
+    for name in grids:
+        if select is not None:
+            found = select.match(name)
+            if found:
+                dated[name] = (int(found.group(1)), 12)
+        else:
+            when = sheet_date(name)
+            if when:
+                dated[name] = when
+    if not dated:
+        raise SystemExit(f"taiwan: the MOI workbook has no sheet named for a month or year "
+                         f"among {list(grids)}")
+    name = max(dated, key=lambda n: dated[n])
+    return name, grids[name], dated[name]
 
 
 def sheet_month(grid: Grid, name: str) -> tuple[int, int]:
@@ -440,38 +476,90 @@ def sheet_month(grid: Grid, name: str) -> tuple[int, int]:
     raise SystemExit(f"taiwan: sheet {name!r} does not say which month it is")
 
 
-def read_by_county(blob: bytes, column: str, what: str) -> tuple[dict[str, int], tuple[int, int]]:
-    """{official name: value in the first column headed ``column``} for the 22
-    counties and 總計 from the latest sheet, and the month it is for."""
-    name, grid = latest_sheet(grids_of(blob))
-    when = sheet_month(grid, name)
-    head_row = next((i for i, row in enumerate(grid[:10])
-                     if any(cell.replace(" ", "").startswith("區域別") for cell in row)), None)
-    if head_row is None:
+CJK = re.compile(r"[一-鿿]")
+ROC_YEAR_ROW = re.compile(r"^[一二三四五六七八九○〇零\d]+\s*年")
+
+
+def area_of(row: list[str]) -> str:
+    """The county a row is for: its Chinese name sits in the first cell, or in
+    the second when the first is blank (table 1.4) or English (the yearbook)."""
+    return county_of(" ".join(row[:2]))
+
+
+def heads_and_body(grid: Grid, what: str) -> tuple[list[list[str]], list[list[str]]]:
+    """The header rows (from the one naming 區域別 to the first row of figures)
+    and the rows after them.
+
+    The bulletin's headers span one to three rows: the population table puts
+    區域別 and 人口數 on one line, the indigenous table puts 原住民人數 above
+    合計 above Total, the yearbook 年底及區域別 above 合計/寺廟/教(會)堂.
+    """
+    top = next((i for i, row in enumerate(grid[:12]) if any("區域別" in cell for cell in row)),
+               None)
+    if top is None:
         raise SystemExit(f"taiwan: the {what} sheet has no header row naming 區域別")
-    head = grid[head_row]
-    matches = [i for i, cell in enumerate(head) if cell.replace(" ", "").startswith(column)]
-    if not matches:
-        raise SystemExit(f"taiwan: the {what} sheet has no column headed {column!r}")
-    col = matches[0]
-    out: dict[str, int] = {}
-    for row in grid[head_row + 1:]:
+    end = next((i for i in range(top + 1, len(grid))
+                if area_of(grid[i]) in COUNTIES or area_of(grid[i]) == NATIONAL
+                or ROC_YEAR_ROW.match(grid[i][0] if grid[i] else "")), len(grid))
+    return grid[top:end], grid[end:]
+
+
+def column_headed(heads: list[list[str]], mark: str, what: str) -> int:
+    """The first column with a header cell that is ``mark``, or ``mark``
+    followed by something other than a Chinese character (an English
+    rendering, a newline, a parenthesis): 人口數 and not 男性人口數, 寺廟 and
+    not 寺廟教(會)堂數."""
+    width = max(len(row) for row in heads)
+    for col in range(width):
+        for row in heads:
+            cell = re.sub(r"\s+", "", row[col]) if col < len(row) else ""
+            if cell == mark or (cell.startswith(mark) and not CJK.match(cell[len(mark)])):
+                return col
+    raise SystemExit(f"taiwan: the {what} sheet has no column headed {mark!r}")
+
+
+def read_columns(grid: Grid, columns: dict[str, str], what: str, *,
+                 year_row_is_national: bool = False) -> dict[str, dict[str, int]]:
+    """{official name: {key: figure}} for the 22 counties and 總計, each key
+    the first column headed as ``columns`` says, the counties checked to sum
+    to the total. The yearbook writes its national row against the year
+    ('一一四年 2025') rather than 總計."""
+    heads, body = heads_and_body(grid, what)
+    cols = {key: column_headed(heads, mark, what) for key, mark in columns.items()}
+    out: dict[str, dict[str, int]] = {}
+    for row in body:
         if not row:
             continue
-        area = county_of(row[0])
+        area = area_of(row)
+        if year_row_is_national and ROC_YEAR_ROW.match(row[0]):
+            area = NATIONAL
         if (area in COUNTIES or area == NATIONAL) and area not in out:
-            try:
-                out[area] = int(float(row[col].replace(",", "")))
-            except (IndexError, ValueError):
-                raise SystemExit(f"taiwan: {what}: {area} has no figure under {column!r}")
+            figures: dict[str, int] = {}
+            for key, col in cols.items():
+                try:
+                    figures[key] = int(float(row[col].replace(",", "")))
+                except (IndexError, ValueError):
+                    raise SystemExit(f"taiwan: {what}: {area} has no figure under "
+                                     f"{columns[key]!r}")
+            out[area] = figures
     missing = [c for c in COUNTIES if c not in out]
     if missing or NATIONAL not in out:
         raise SystemExit(f"taiwan: the {what} sheet lacks {missing or [NATIONAL]}")
-    summed = sum(out[c] for c in COUNTIES)
-    if summed != out[NATIONAL]:
-        raise SystemExit(f"taiwan: {what}: the counties sum to {summed:,} against the "
-                         f"sheet's own {out[NATIONAL]:,}")
-    return out, when
+    for key in columns:
+        summed = sum(out[c][key] for c in COUNTIES)
+        if summed != out[NATIONAL][key]:
+            raise SystemExit(f"taiwan: {what}: {columns[key]} sums to {summed:,} over the "
+                             f"counties against the sheet's own {out[NATIONAL][key]:,}")
+    return out
+
+
+def read_by_county(blob: bytes, column: str, what: str) -> tuple[dict[str, int], tuple[int, int]]:
+    """{official name: value in the first column headed ``column``} for the 22
+    counties and 總計 from the latest sheet, and the month it is for."""
+    name, grid, _ = latest_sheet(grids_of(blob))
+    when = sheet_month(grid, name)
+    table = read_columns(grid, {"value": column}, what)
+    return {area: figures["value"] for area, figures in table.items()}, when
 
 
 def read_population(blob: bytes) -> tuple[dict[str, int], tuple[int, int]]:
@@ -479,9 +567,9 @@ def read_population(blob: bytes) -> tuple[dict[str, int], tuple[int, int]]:
 
 
 def read_indigenous(blob: bytes) -> tuple[dict[str, int], tuple[int, int]]:
-    """Table 1.4's first 合計 is the grand total of indigenous persons, the
-    plains and mountain totals following it."""
-    return read_by_county(blob, "合計", "indigenous")
+    """Table 1.4's 原住民人數 (Grand-Total) is every registered indigenous
+    person; the plains, mountain and Pingpu counts follow it."""
+    return read_by_county(blob, "原住民人數", "indigenous")
 
 
 def inspect(urls: list[str], rows: int) -> None:
@@ -502,89 +590,37 @@ def inspect(urls: list[str], rows: int) -> None:
 # ---------------------------------------------------------------------------
 BUILDINGS_PAGE_URL = "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy"
 BUILDINGS_URL = MOI_REPORTS + "331030.xlsx"       # 內政統計年報 6-01 宗教教務概況
-BUILDINGS_SOURCE = ("Ministry of the Interior, 內政統計年報 (statistical yearbook), table 宗教教務概況: "
-                    "registered temples by tradition and churches by county and city")
-BUILDINGS_YEAR = 2024
-ROC_YEAR = re.compile(r"(?:中華民國|民國)\s*(\d{2,3})\s*年")
+BUILDINGS_SOURCE = ("Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 "
+                    "宗教教務概況: registered temples and churches by county and city")
+TEMPLES, CHURCHES = "Temples", "Churches"
+# Which building count moves which tradition. The yearbook counts temples by
+# tradition only nationally (its 宗教別 sheet: 道教 9,824 of 12,397 in 2025,
+# 佛教 2,277, 一貫道 243 ...), so by county the signal is temples against
+# churches, and the three temple traditions move together.
+SIGNAL: dict[str, str] = {"Buddhism": TEMPLES, "Taoism": TEMPLES, "Other religions": TEMPLES,
+                          "Christianity": CHURCHES}
+COUNTY_SHEET = re.compile(r"^\s*(\d{4})\s*\(區域別\)\s*$")
 
 
-def read_buildings(blob: bytes) -> tuple[dict[str, dict[str, float]], str]:
-    """{official name: {prior group: registered buildings}} for the 22 counties
-    and 總計 from the yearbook's latest sheet, and the year it is for.
+def read_buildings(blob: bytes) -> tuple[dict[str, dict[str, float]], int]:
+    """{official name: {"Temples": n, "Churches": n}} for the 22 counties and
+    總計 from the yearbook's latest county sheet ('2025(區域別)'), and its year.
 
-    The sheet's header names the traditions; the reader takes the first
-    column headed 佛教 as Buddhist temples, 道教 as Taoist temples, every column
-    headed 教會 or 教堂 (or 基督教/天主教) as churches, and the temple total less
-    Buddhist and Taoist as the other traditions' temples.
+    The sheet has one row per county with the registered buildings in three
+    columns, 合計, 寺廟 and 教(會)堂, and a followers column that counts temple
+    followers only; the national row is written against the year. The 宗教別
+    sheet beside it splits the national totals by tradition and is not read.
     """
-    name, grid = latest_sheet(grids_of(blob))
-    year = None
-    for row in grid[:8]:
-        for cell in row[:6]:
-            found = ROC_YEAR.search(cell)
-            if found:
-                year = int(found.group(1)) + 1911
-                break
-        if year:
-            break
-    head_rows = [i for i, row in enumerate(grid[:12])
-                 if any(cell.replace(" ", "").startswith("區域別") for cell in row)]
-    if not head_rows:
-        raise SystemExit("taiwan: the buildings sheet has no header row naming 區域別")
-    top = head_rows[0]
-    # Column heads may span two or three rows; each column's head is the
-    # text of every header row at that position, joined.
-    width = max(len(row) for row in grid[top:top + 4])
-    heads = ["".join(grid[r][c].replace(" ", "") if c < len(grid[r]) else ""
-                     for r in range(top, min(top + 4, len(grid))))
-             for c in range(width)]
-
-    def first(*marks: str) -> int | None:
-        for i, head in enumerate(heads):
-            if any(m in head for m in marks):
-                return i
-        return None
-
-    temples = first("寺廟總計", "寺廟合計", "寺廟數")
-    if temples is None:
-        temples = first("寺廟")
-    buddhist, taoist = first("佛教"), first("道教")
-    churches = [i for i, head in enumerate(heads)
-                if ("教會" in head or "教堂" in head or "基督教" in head or "天主教" in head)
-                and "總計" not in head and "合計" not in head]
-    if temples is None or buddhist is None or taoist is None or not churches:
-        raise SystemExit(f"taiwan: the buildings sheet's heads are not the expected ones: {heads}")
-
-    def number(row: list[str], i: int) -> float:
-        try:
-            return float(row[i].replace(",", "") or 0)
-        except (IndexError, ValueError):
-            return 0.0
-
-    out: dict[str, dict[str, float]] = {}
-    for row in grid[top + 1:]:
-        if not row:
-            continue
-        area = county_of(row[0])
-        if (area in COUNTIES or area == NATIONAL) and area not in out:
-            t, b, d = number(row, temples), number(row, buddhist), number(row, taoist)
-            c = sum(number(row, i) for i in churches)
-            if t < b + d:
-                raise SystemExit(f"taiwan: {area}: {t:.0f} temples but {b:.0f} Buddhist and "
-                                 f"{d:.0f} Taoist")
-            out[area] = {"Buddhism": b, "Taoism": d, "Christianity": c,
-                         "Other religions": t - b - d}
-    missing = [c for c in COUNTIES if c not in out]
-    if missing or NATIONAL not in out:
-        raise SystemExit(f"taiwan: the buildings sheet lacks {missing or [NATIONAL]}")
-    for g in out[NATIONAL]:
-        summed = sum(out[c][g] for c in COUNTIES)
-        if abs(summed - out[NATIONAL][g]) > 0.5:
-            raise SystemExit(f"taiwan: buildings: {g} sums to {summed:.0f} over the counties "
-                             f"against the sheet's {out[NATIONAL][g]:.0f}")
-    as_of = f"the end of {year}" if year else "the yearbook's latest year"
-    log(f"  buildings ({as_of}): " + ", ".join(f"{g} {v:,.0f}" for g, v in out[NATIONAL].items()))
-    return out, as_of
+    name, grid, (year, _) = latest_sheet(grids_of(blob), COUNTY_SHEET)
+    table = read_columns(grid, {TEMPLES: "寺廟", CHURCHES: "教(會)堂"}, "buildings",
+                         year_row_is_national=True)
+    out = {area: {k: float(v) for k, v in figures.items()} for area, figures in table.items()}
+    for area, figures in out.items():
+        if figures[TEMPLES] + figures[CHURCHES] <= 0:
+            raise SystemExit(f"taiwan: buildings: {area} has no registered temple or church")
+    log(f"  buildings (sheet {name!r}, end of {year}): {out[NATIONAL][TEMPLES]:,.0f} temples, "
+        f"{out[NATIONAL][CHURCHES]:,.0f} churches")
+    return out, year
 
 
 PRIOR_YEAR = 2023
@@ -635,28 +671,31 @@ def prior_shares() -> tuple[dict[str, float], float]:
 
 def tilt(prior: dict[str, float], none: float, national: dict[str, float],
          unit: dict[str, float], *, bound: float = TILT_BOUND,
-         caps: dict[str, float] | None = None
+         caps: dict[str, float] | None = None, signal: dict[str, str] | None = None
          ) -> tuple[dict[str, float], dict[str, float], list[str]]:
     """The prior's affiliated part, tilted by a unit's signal relative to the nation's.
 
     ``prior`` is the survey's affiliated shares, ``none`` its no-religion
-    share; ``national`` and ``unit`` are building counts by the same groups.
-    Returns the tilted shares (affiliated groups plus "No religion", summing
-    to ``sum(prior) + none``), the clipped ratios, and the groups a cap held.
+    share; ``national`` and ``unit`` are building counts, by the prior's
+    groups or, with ``signal`` mapping each group to a count, by whatever the
+    counts are of (temples and churches). Returns the tilted shares
+    (affiliated groups plus "No religion", summing to ``sum(prior) + none``),
+    the clipped ratios by count, and the groups a cap held.
     """
     caps = CAPS if caps is None else caps
-    nat_total = sum(national[g] for g in prior)
-    unit_total = sum(unit[g] for g in prior)
+    keys = list(dict.fromkeys((signal or {}).get(g, g) for g in prior))
+    nat_total = sum(national[k] for k in keys)
+    unit_total = sum(unit[k] for k in keys)
     if nat_total <= 0 or unit_total <= 0:
         raise ValueError("a signal with no buildings cannot tilt anything")
     ratios: dict[str, float] = {}
-    for g in prior:
-        nat_share = national[g] / nat_total
-        unit_share = unit[g] / unit_total
+    for k in keys:
+        nat_share = national[k] / nat_total
+        unit_share = unit[k] / unit_total
         raw = (unit_share / nat_share) if nat_share > 0 else 1.0
-        ratios[g] = min(max(raw, 1.0 / bound), bound)
+        ratios[k] = min(max(raw, 1.0 / bound), bound)
     target = sum(prior.values())
-    raw_shares = {g: prior[g] * ratios[g] for g in prior}
+    raw_shares = {g: prior[g] * ratios[(signal or {}).get(g, g)] for g in prior}
     scale = target / sum(raw_shares.values())
     shares = {g: v * scale for g, v in raw_shares.items()}
     held: list[str] = []
@@ -742,36 +781,38 @@ def ethnicity_estimate(name: str, indigenous: int, population: int, when: tuple[
                     note=note)
 
 
-def religion_estimate(name: str, buildings: dict[str, dict[str, float]], as_of: str
+def religion_estimate(name: str, buildings: dict[str, dict[str, float]], year: int
                       ) -> tuple[dict[str, Any], float, list[str], dict[str, float]]:
     prior, none = prior_shares()
     national, unit = buildings[NATIONAL], buildings[name]
-    shares, ratios, held = tilt(prior, none, national, unit)
+    shares, ratios, held = tilt(prior, none, national, unit, signal=SIGNAL)
     rows = hundred(shares)
     moved = distance(shares, dict(prior, **{"No religion": none}))
-    ratio_text = ", ".join(f"{g} x{ratios[g]:.2f}" for g in PRIOR)
     held_text = ("" if not held else
                  f"; {' and '.join(held)} came out above the bound of "
                  f"{', '.join(f'{CAPS[g]:.0f}%' for g in held)} and "
                  f"{'were' if len(held) > 1 else 'was'} held there, the rest rescaled")
-    total = int(sum(unit.values()))
     note = (
         f"Modelled from Pew Research Center's {PRIOR_YEAR} survey of Taiwanese adults "
         f"(Buddhist {PRIOR['Buddhism']:.0f}%, Daoist {PRIOR['Taoism']:.0f}%, Christian "
         f"{PRIOR['Christianity']:.0f}%, other {PRIOR['Other religions']:.0f}%, no religion "
         f"{PRIOR_NONE:.0f}%, don't know {PRIOR_NO_ANSWER:.0f}% left out) tilted by the Ministry "
-        f"of the Interior's count of this county's {total:,} registered temples and churches at "
-        f"{as_of}. No census or survey gives religion by county, so this is a model, not a "
-        "count: each tradition's share of the county's buildings over its share of the "
-        f"nation's, clipped to 1/{TILT_BOUND:.0f}-{TILT_BOUND:.0f} ({ratio_text}), scales the "
-        f"survey's share, and no religion is held at the national figure{held_text}. It sits "
-        f"{moved:.1f} points from the prior; no backtest is possible, because no county-level "
-        f"self-identification figure exists. Written by the map owner's decision of {DECISION}.")
+        f"of the Interior's count of this county's {unit[TEMPLES]:,.0f} registered temples and "
+        f"{unit[CHURCHES]:,.0f} churches at the end of {year}. No census or survey gives "
+        "religion by county, so this is a model, not a count: the county's church share of "
+        "its buildings over the nation's scales the survey's Christian share and its temple "
+        "share the Buddhist, Daoist and other shares together (the register splits temples by "
+        f"tradition only nationally), each clipped to 1/{TILT_BOUND:.0f}-{TILT_BOUND:.0f} "
+        f"(temples x{ratios[TEMPLES]:.2f}, churches x{ratios[CHURCHES]:.2f}), and no religion "
+        f"is held at the national figure{held_text}. It sits {moved:.1f} points from the prior; "
+        "no backtest is possible, because no county-level self-identification figure exists. "
+        f"Written by the map owner's decision of {DECISION}.")
     est = estimate(MODELLED, rows, method=RELIGION_METHOD,
                    inputs=[f"pew-east-asia-{PRIOR_YEAR}-taiwan",
-                           f"moi-religious-buildings-{name}", "moi-religious-buildings-national"],
+                           f"moi-religious-buildings-{name}-{year}",
+                           f"moi-religious-buildings-national-{year}"],
                    note=note)
-    est["tilt"] = {g: round(ratios[g], 3) for g in PRIOR}
+    est["tilt"] = {k: round(v, 3) for k, v in ratios.items()}
     if held:
         est["capped"] = held
     return est, moved, held, shares
@@ -779,7 +820,7 @@ def religion_estimate(name: str, buildings: dict[str, dict[str, float]], as_of: 
 
 def build(language: dict[str, dict[str, Any]], hakka: dict[str, dict[str, Any]],
           identity: dict[str, float], population: dict[str, int], indigenous: dict[str, int],
-          when: tuple[int, int], buildings: dict[str, dict[str, float]], buildings_as_of: str,
+          when: tuple[int, int], buildings: dict[str, dict[str, float]], buildings_year: int,
           ) -> list[dict[str, Any]]:
     year, month = when
     prior, none = prior_shares()
@@ -799,14 +840,14 @@ def build(language: dict[str, dict[str, Any]], hakka: dict[str, dict[str, Any]],
         {"field": "religion", "name": PRIOR_SOURCE, "url": PRIOR_URL, "year": PRIOR_YEAR,
          "license": PRIOR_LICENCE},
         {"field": "religion", "name": BUILDINGS_SOURCE, "url": BUILDINGS_PAGE_URL,
-         "year": BUILDINGS_YEAR, "license": MOI_LICENCE},
+         "year": buildings_year, "license": MOI_LICENCE},
     ]
     records = []
     moved: list[tuple[float, str, list[str], dict[str, float]]] = []
     for chinese, (name, aliases) in COUNTIES.items():
         rows = [{"group": g, "pct": p} for g, p in language[chinese]["main"].items() if p > 0]
         rows.sort(key=lambda r: (-r["pct"], r["group"]))
-        religion, dist, held, tilted = religion_estimate(chinese, buildings, buildings_as_of)
+        religion, dist, held, tilted = religion_estimate(chinese, buildings, buildings_year)
         moved.append((dist, name, held, tilted))
         records.append(record(
             f"{ISO3}-{slugify(name)}", name, level="admin1", parent=ISO3, country=ISO3,
@@ -823,7 +864,9 @@ def build(language: dict[str, dict[str, Any]], hakka: dict[str, dict[str, Any]],
     log("  religion: the five counties the tilt moves furthest from the national prior:")
     for dist, name, held, tilted in moved[:5]:
         top = ", ".join(f"{g} {tilted[g]:.1f}" for g in PRIOR)
-        log(f"      {name:18} {dist:5.1f} points  {top}"
+        signal = buildings[next(c for c, (n, _) in COUNTIES.items() if n == name)]
+        log(f"      {name:18} {dist:5.1f} points  {top}  "
+            f"({signal[TEMPLES]:.0f} temples, {signal[CHURCHES]:.0f} churches)"
             + (f"  (held at the bound: {', '.join(held)})" if held else ""))
     capped = [name for _, name, held, _ in moved if held]
     log(f"  religion: {len(capped)} counties hit a bound"
@@ -875,8 +918,9 @@ def main() -> int:
     if when != when_indigenous:
         raise SystemExit(f"taiwan: population is for {when} and the indigenous count for "
                          f"{when_indigenous}; the two must be the same month")
-    buildings, as_of = read_buildings(blob_of(args.buildings_xls, BUILDINGS_URL))
-    records = build(language, hakka, identity, population, indigenous, when, buildings, as_of)
+    buildings, buildings_year = read_buildings(blob_of(args.buildings_xls, BUILDINGS_URL))
+    records = build(language, hakka, identity, population, indigenous, when, buildings,
+                    buildings_year)
     if len(records) != 22:
         raise SystemExit(f"taiwan: expected 22 counties and cities, built {len(records)}")
     write_json(PROCESSED / OUT, records)

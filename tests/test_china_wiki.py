@@ -409,6 +409,23 @@ class TheChineseEdition(unittest.TestCase):
         rec = cw.build_one("X", [("zh", "X", TRANSPOSED, True), ("en", "X", TRANSPOSED, True)])
         self.assertIn("en.wikipedia.org", rec["sources"][0]["url"])
 
+    def test_the_census_rows_a_list_page_prints_beside_the_nationalities(self):
+        # Inner Mongolia's page prints its total as 人口总数, and Yunnan's
+        # breaks 外国人加入中国籍 over two lines; neither is a nationality
+        # and neither is a refusal.
+        page = NUMBERED.replace("!合计", "!人口总数").replace(
+            "![[其他民族]]", "![[外国人 加入中国籍]]")
+        rec = read(page, "Yunnan Province", "zh")
+        rows = by_group(rec)
+        self.assertEqual(rows["Other ethnic groups"]["count"], 10_565_030)
+        self.assertIn("外国人 加入中国籍", rec["ethnicity_note"])
+
+    def test_the_section_heading_names_the_census_before_a_header_column_does(self):
+        page = NUMBERED.replace("== 2020年第七次人口普查 ==",
+                                "== [[中华人民共和国第六次全国人口普查|2010年人口普查]] ==")
+        page = page.replace("!占该民族人口<br>比例（%）", "!较2000年增长")
+        self.assertEqual(read(page, "X", "zh")["ethnicity_year"], 2010)
+
     def test_a_numbered_table_is_read_from_its_nationality_column(self):
         # Yunnan's list page numbers its rows, and prints three shares of
         # which only the share of the whole province is the composition.

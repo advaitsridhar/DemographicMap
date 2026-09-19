@@ -74,7 +74,11 @@ def fetch(url: str, key: str | None, header: str | None) -> tuple[int, str]:
                            f"Bearer {key}" if header == "Authorization" else key)
     try:
         with urllib.request.urlopen(request, timeout=60) as response:
-            return response.status, response.read(6000).decode("utf-8", "replace")
+            # The whole body. This read 6,000 bytes for a long time, which is
+            # less than one catalogue page of ten datasets with their
+            # descriptions, so every page came back as cut-off JSON, and three
+            # walks reported the catalogue as throttling them from page one.
+            return response.status, response.read(8_000_000).decode("utf-8", "replace")
     except urllib.error.HTTPError as exc:
         return exc.code, exc.read(1500).decode("utf-8", "replace")
     except Exception as exc:                       # noqa: BLE001 - report anything
@@ -116,7 +120,8 @@ def describe(body: str) -> str:
     return f"  JSON scalar: {parsed!r}"
 
 
-def catalogue(terms: list[str], key: str | None) -> list[dict[str, Any]]:
+def catalogue(terms: list[str], key: str | None, throttle: float = THROTTLE,
+              per_page: int | None = None) -> list[dict[str, Any]]:
     """Datasets whose name or description mentions every term.
 
     The v2 list endpoint pages ten at a time and the probe above establishes
@@ -128,8 +133,9 @@ def catalogue(terms: list[str], key: str | None) -> list[dict[str, Any]]:
     while page <= MAX_PAGES:
         data = None
         for attempt in range(4):
-            time.sleep(THROTTLE * (attempt + 1))
-            status, body = fetch(f"{V2}/datasets?page={page}", key, "x-api-key")
+            time.sleep(throttle * (attempt + 1))
+            url = f"{V2}/datasets?page={page}" + (f"&perPage={per_page}" if per_page else "")
+            status, body = fetch(url, key, "x-api-key")
             if status != 200:
                 log(f"  page {page}: HTTP {status} (attempt {attempt + 1})")
                 continue
@@ -137,10 +143,13 @@ def catalogue(terms: list[str], key: str | None) -> list[dict[str, Any]]:
                 data = json.loads(body).get("data") or {}
                 break
             except json.JSONDecodeError:
-                # Throttled. The body is an HTML notice, not an error status,
-                # so backing off and retrying is the only way to tell this from
-                # having actually run off the end of the list.
-                log(f"  page {page}: throttled (attempt {attempt + 1}); backing off")
+                # Not JSON: a throttle notice (HTML, not an error status) or a
+                # body this reader cut short. Backing off and retrying is the
+                # only way to tell a throttle from the end of the list; the
+                # log shows how the body starts and ends so a cut-off one is
+                # recognisable as such.
+                log(f"  page {page}: not JSON (attempt {attempt + 1}); backing off; "
+                    f"{len(body)} bytes, starts {body[:60]!r}, ends {body[-40:]!r}")
         if data is None:
             log(f"  page {page}: giving up after 4 attempts")
             break
@@ -194,6 +203,17 @@ def main() -> int:
                     help="dump the first few list pages verbatim")
     ap.add_argument("--catalogue", action="store_true",
                     help="walk the dataset list and sample the best match")
+    ap.add_argument("--throttle", type=float, default=THROTTLE,
+                    help="seconds between catalogue pages; the host throttles a "
+                         "walk at the default, so a full walk wants 3 or more")
+    ap.add_argument("--per-page", type=int, default=None,
+                    help="ask the list endpoint for this many per page, to see "
+                         "whether it honours the parameter")
+    ap.add_argument("--skip-endpoints", action="store_true",
+                    help="do not probe the four endpoints first: those four "
+                         "requests are what trips the throttle before a walk")
+    ap.add_argument("--sample", action="append", default=[],
+                    help="a dataset id to fetch metadata and rows for directly")
     args = ap.parse_args()
 
     name, key = find_key()
@@ -204,7 +224,11 @@ def main() -> int:
             f"if one answers, no key is needed; if all reject, the secret is under "
             f"a name not in that list and the workflow needs updating.")
 
-    for label, template in ENDPOINTS:
+    for dataset_id in args.sample:
+        log(f"\n=== sampling {dataset_id}")
+        sample(dataset_id, key)
+
+    for label, template in ([] if args.skip_endpoints else ENDPOINTS):
         url = template.format(query=urllib.parse.quote(args.search))
         log(f"\n=== {label}\n    {url}")
         status, body = fetch(url, None, None)
@@ -232,8 +256,8 @@ def main() -> int:
     if args.catalogue:
         terms = [t for t in args.search.lower().split() if len(t) > 2]
         log(f"\n=== searching the catalogue for {terms}")
-        matches = catalogue(terms, key)
-        for entry in matches[:15]:
+        matches = catalogue(terms, key, args.throttle, args.per_page)
+        for entry in matches:
             log(f"  {entry.get('datasetId')}  {entry.get('name')}")
         if matches:
             first = matches[0]

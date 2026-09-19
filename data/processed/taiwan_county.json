@@ -1,0 +1,3514 @@
+[
+  {
+    "id": "TWN-new-taipei",
+    "level": "admin1",
+    "name": "New Taipei",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4035947,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 29.8
+        },
+        {
+          "group": "No religion",
+          "pct": 27.5
+        },
+        {
+          "group": "Taoism",
+          "pct": 25.5
+        },
+        {
+          "group": "Other religions",
+          "pct": 12.8
+        },
+        {
+          "group": "Christianity",
+          "pct": 4.4
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-新北市-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 939 registered temples and 129 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.08, churches x0.65), and no religion is held at the national figure. It sits 2.7 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.082,
+        "Churches": 0.645
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 78.0
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 21.6
+      },
+      {
+        "group": "Hakka",
+        "pct": 0.2
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 76.3
+        },
+        {
+          "group": "Hakka",
+          "pct": 16.7
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 5.4
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 1.6
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-新北市-2026-08",
+        "moi-register-population-新北市-2026-08",
+        "hakka-survey-2021-新北市",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 66,300 people of indigenous status among 4,035,947 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 16.7% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "New Taipei City",
+      "Taipei County"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-taipei",
+    "level": "admin1",
+    "name": "Taipei",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2421830,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "No religion",
+          "pct": 27.5
+        },
+        {
+          "group": "Christianity",
+          "pct": 25.0
+        },
+        {
+          "group": "Buddhism",
+          "pct": 20.8
+        },
+        {
+          "group": "Taoism",
+          "pct": 17.8
+        },
+        {
+          "group": "Other religions",
+          "pct": 8.9
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-臺北市-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 280 registered temples and 564 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x0.41, churches x3.00), and no religion is held at the national figure; Christianity came out above the bound of 25% and was held there, the rest rescaled. It sits 17.9 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 0.408,
+        "Churches": 3.0
+      },
+      "capped": [
+        "Christianity"
+      ]
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 84.1
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 15.4
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.3
+      },
+      {
+        "group": "Hakka",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 76.4
+        },
+        {
+          "group": "Hakka",
+          "pct": 17.4
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 5.4
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 0.8
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-臺北市-2026-08",
+        "moi-register-population-臺北市-2026-08",
+        "hakka-survey-2021-臺北市",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 19,908 people of indigenous status among 2,421,830 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 17.4% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Taipei City"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-taoyuan",
+    "level": "admin1",
+    "name": "Taoyuan",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2357912,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "No religion",
+          "pct": 27.5
+        },
+        {
+          "group": "Buddhism",
+          "pct": 25.1
+        },
+        {
+          "group": "Taoism",
+          "pct": 21.5
+        },
+        {
+          "group": "Christianity",
+          "pct": 15.2
+        },
+        {
+          "group": "Other religions",
+          "pct": 10.7
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-桃園市-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 312 registered temples and 174 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x0.79, churches x1.91), and no religion is held at the national figure. It sits 8.0 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 0.79,
+        "Churches": 1.913
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 84.8
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 12.5
+      },
+      {
+        "group": "Hakka",
+        "pct": 2.4
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 52.5
+        },
+        {
+          "group": "Hakka",
+          "pct": 39.9
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 3.9
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 3.7
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-桃園市-2026-08",
+        "moi-register-population-桃園市-2026-08",
+        "hakka-survey-2021-桃園市",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 91,915 people of indigenous status among 2,357,912 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 39.9% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Taoyuan City",
+      "Taoyuan County"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-taichung",
+    "level": "admin1",
+    "name": "Taichung",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2866851,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 29.4
+        },
+        {
+          "group": "No religion",
+          "pct": 27.5
+        },
+        {
+          "group": "Taoism",
+          "pct": 25.2
+        },
+        {
+          "group": "Other religions",
+          "pct": 12.6
+        },
+        {
+          "group": "Christianity",
+          "pct": 5.3
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-臺中市-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 988 registered temples and 164 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.06, churches x0.76), and no religion is held at the national figure. It sits 1.8 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.055,
+        "Churches": 0.761
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 66.8
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 32.2
+      },
+      {
+        "group": "Hakka",
+        "pct": 0.8
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 75.7
+        },
+        {
+          "group": "Hakka",
+          "pct": 17.5
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 5.3
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 1.5
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-臺中市-2026-08",
+        "moi-register-population-臺中市-2026-08",
+        "hakka-survey-2021-臺中市",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 43,203 people of indigenous status among 2,866,851 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 17.5% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Taichung City",
+      "Taichung County"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-tainan",
+    "level": "admin1",
+    "name": "Tainan",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1846409,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 30.1
+        },
+        {
+          "group": "No religion",
+          "pct": 27.5
+        },
+        {
+          "group": "Taoism",
+          "pct": 25.8
+        },
+        {
+          "group": "Other religions",
+          "pct": 12.9
+        },
+        {
+          "group": "Christianity",
+          "pct": 3.7
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-臺南市-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 1,664 registered temples and 190 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.10, churches x0.55), and no religion is held at the national figure. It sits 3.4 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.104,
+        "Churches": 0.547
+      }
+    },
+    "language": [
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 50.3
+      },
+      {
+        "group": "Mandarin",
+        "pct": 49.5
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 86.3
+        },
+        {
+          "group": "Hakka",
+          "pct": 7.1
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 6.0
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 0.6
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-臺南市-2026-08",
+        "moi-register-population-臺南市-2026-08",
+        "hakka-survey-2021-臺南市",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 11,614 people of indigenous status among 1,846,409 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 7.1% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Tainan City",
+      "Tainan County"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-kaohsiung",
+    "level": "admin1",
+    "name": "Kaohsiung",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2707022,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 29.1
+        },
+        {
+          "group": "No religion",
+          "pct": 27.6
+        },
+        {
+          "group": "Taoism",
+          "pct": 25.0
+        },
+        {
+          "group": "Other religions",
+          "pct": 12.5
+        },
+        {
+          "group": "Christianity",
+          "pct": 5.8
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-高雄市-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 1,503 registered temples and 277 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.04, churches x0.83), and no religion is held at the national figure. It sits 1.3 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.039,
+        "Churches": 0.831
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 55.5
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 43.2
+      },
+      {
+        "group": "Hakka",
+        "pct": 1.0
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 78.2
+        },
+        {
+          "group": "Hakka",
+          "pct": 14.7
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 5.5
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 1.6
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-高雄市-2026-08",
+        "moi-register-population-高雄市-2026-08",
+        "hakka-survey-2021-高雄市",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 42,358 people of indigenous status among 2,707,022 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 14.7% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Kaohsiung City",
+      "Kaohsiung County"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-keelung",
+    "level": "admin1",
+    "name": "Keelung",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 357905,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 28.1
+        },
+        {
+          "group": "No religion",
+          "pct": 27.6
+        },
+        {
+          "group": "Taoism",
+          "pct": 24.1
+        },
+        {
+          "group": "Other religions",
+          "pct": 12.1
+        },
+        {
+          "group": "Christianity",
+          "pct": 8.1
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-基隆市-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 229 registered temples and 61 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x0.97, churches x1.12), and no religion is held at the national figure. It sits 1.0 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 0.972,
+        "Churches": 1.124
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 69.7
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 29.9
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 0.2
+      },
+      {
+        "group": "Hakka",
+        "pct": 0.1
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 79.0
+        },
+        {
+          "group": "Hakka",
+          "pct": 12.5
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 5.6
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 2.9
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-基隆市-2026-08",
+        "moi-register-population-基隆市-2026-08",
+        "hakka-survey-2021-基隆市",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 10,464 people of indigenous status among 357,905 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 12.5% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Keelung City"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-hsinchu",
+    "level": "admin1",
+    "name": "Hsinchu",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 455783,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 29.5
+        },
+        {
+          "group": "No religion",
+          "pct": 27.6
+        },
+        {
+          "group": "Taoism",
+          "pct": 25.3
+        },
+        {
+          "group": "Other religions",
+          "pct": 12.7
+        },
+        {
+          "group": "Christianity",
+          "pct": 4.9
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-新竹市-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 163 registered temples and 25 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.07, churches x0.71), and no religion is held at the national figure. It sits 2.2 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.067,
+        "Churches": 0.71
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 85.0
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 13.2
+      },
+      {
+        "group": "Hakka",
+        "pct": 1.6
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 64.0
+        },
+        {
+          "group": "Hakka",
+          "pct": 30.3
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 4.5
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 1.2
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-新竹市-2026-08",
+        "moi-register-population-新竹市-2026-08",
+        "hakka-survey-2021-新竹市",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 5,665 people of indigenous status among 455,783 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 30.3% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Hsinchu City"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-chiayi",
+    "level": "admin1",
+    "name": "Chiayi",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 261453,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "No religion",
+          "pct": 27.5
+        },
+        {
+          "group": "Buddhism",
+          "pct": 26.5
+        },
+        {
+          "group": "Taoism",
+          "pct": 22.7
+        },
+        {
+          "group": "Christianity",
+          "pct": 12.0
+        },
+        {
+          "group": "Other religions",
+          "pct": 11.3
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-嘉義市-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 149 registered temples and 62 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x0.87, churches x1.57), and no religion is held at the national figure. It sits 4.8 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 0.869,
+        "Churches": 1.57
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 51.7
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 48.1
+      },
+      {
+        "group": "Hakka",
+        "pct": 0.1
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 84.4
+        },
+        {
+          "group": "Hakka",
+          "pct": 9.1
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 5.9
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 0.6
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-嘉義市-2026-08",
+        "moi-register-population-嘉義市-2026-08",
+        "hakka-survey-2021-嘉義市",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 1,537 people of indigenous status among 261,453 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 9.1% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Chiayi City"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-yilan-county",
+    "level": "admin1",
+    "name": "Yilan County",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 448065,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 30.1
+        },
+        {
+          "group": "No religion",
+          "pct": 27.5
+        },
+        {
+          "group": "Taoism",
+          "pct": 25.8
+        },
+        {
+          "group": "Other religions",
+          "pct": 12.9
+        },
+        {
+          "group": "Christianity",
+          "pct": 3.7
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-宜蘭縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 663 registered temples and 76 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.10, churches x0.55), and no religion is held at the national figure. It sits 3.4 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.104,
+        "Churches": 0.549
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 52.6
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 46.7
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.3
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 0.3
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 82.1
+        },
+        {
+          "group": "Hakka",
+          "pct": 7.6
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 5.8
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 4.5
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-宜蘭縣-2026-08",
+        "moi-register-population-宜蘭縣-2026-08",
+        "hakka-survey-2021-宜蘭縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 20,038 people of indigenous status among 448,065 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 7.7% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Yilan"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-hsinchu-county",
+    "level": "admin1",
+    "name": "Hsinchu County",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 598316,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "No religion",
+          "pct": 27.6
+        },
+        {
+          "group": "Buddhism",
+          "pct": 25.5
+        },
+        {
+          "group": "Taoism",
+          "pct": 21.8
+        },
+        {
+          "group": "Christianity",
+          "pct": 14.2
+        },
+        {
+          "group": "Other religions",
+          "pct": 10.9
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-新竹縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 198 registered temples and 102 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x0.81, churches x1.82), and no religion is held at the national figure. It sits 7.1 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 0.812,
+        "Churches": 1.816
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 83.7
+      },
+      {
+        "group": "Hakka",
+        "pct": 11.5
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 4.3
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 0.3
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hakka",
+          "pct": 67.8
+        },
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 26.3
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 4.0
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 1.9
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-新竹縣-2026-08",
+        "moi-register-population-新竹縣-2026-08",
+        "hakka-survey-2021-新竹縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 23,860 people of indigenous status among 598,316 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 67.8% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-miaoli-county",
+    "level": "admin1",
+    "name": "Miaoli County",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 529282,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 30.4
+        },
+        {
+          "group": "No religion",
+          "pct": 27.6
+        },
+        {
+          "group": "Taoism",
+          "pct": 26.1
+        },
+        {
+          "group": "Other religions",
+          "pct": 13.0
+        },
+        {
+          "group": "Christianity",
+          "pct": 2.9
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-苗栗縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 381 registered temples and 33 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.13, churches x0.43), and no religion is held at the national figure. It sits 4.3 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.132,
+        "Churches": 0.426
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 62.9
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 18.5
+      },
+      {
+        "group": "Hakka",
+        "pct": 18.1
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 0.3
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hakka",
+          "pct": 62.5
+        },
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 32.8
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 2.4
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 2.3
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-苗栗縣-2026-08",
+        "moi-register-population-苗栗縣-2026-08",
+        "hakka-survey-2021-苗栗縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 12,826 people of indigenous status among 529,282 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 62.5% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Miaoli"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-changhua-county",
+    "level": "admin1",
+    "name": "Changhua County",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1201686,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 30.6
+        },
+        {
+          "group": "No religion",
+          "pct": 27.6
+        },
+        {
+          "group": "Taoism",
+          "pct": 26.2
+        },
+        {
+          "group": "Other religions",
+          "pct": 13.1
+        },
+        {
+          "group": "Christianity",
+          "pct": 2.5
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-彰化縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 886 registered temples and 66 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.15, churches x0.37), and no religion is held at the national figure. It sits 4.7 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.145,
+        "Churches": 0.37
+      }
+    },
+    "language": [
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 60.1
+      },
+      {
+        "group": "Mandarin",
+        "pct": 39.7
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 85.5
+        },
+        {
+          "group": "Hakka",
+          "pct": 7.8
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 6.0
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 0.7
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-彰化縣-2026-08",
+        "moi-register-population-彰化縣-2026-08",
+        "hakka-survey-2021-彰化縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 7,744 people of indigenous status among 1,201,686 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 7.8% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Changhua"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-nantou-county",
+    "level": "admin1",
+    "name": "Nantou County",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 466401,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 28.5
+        },
+        {
+          "group": "No religion",
+          "pct": 27.6
+        },
+        {
+          "group": "Taoism",
+          "pct": 24.4
+        },
+        {
+          "group": "Other religions",
+          "pct": 12.2
+        },
+        {
+          "group": "Christianity",
+          "pct": 7.3
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-南投縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 488 registered temples and 115 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.00, churches x1.02), and no religion is held at the national figure. It sits 0.1 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 0.996,
+        "Churches": 1.019
+      }
+    },
+    "language": [
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 52.7
+      },
+      {
+        "group": "Mandarin",
+        "pct": 45.5
+      },
+      {
+        "group": "Hakka",
+        "pct": 0.8
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 0.7
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 75.9
+        },
+        {
+          "group": "Hakka",
+          "pct": 12.3
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 6.5
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 5.3
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-南投縣-2026-08",
+        "moi-register-population-南投縣-2026-08",
+        "hakka-survey-2021-南投縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 30,438 people of indigenous status among 466,401 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 12.3% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Nantou"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-yunlin-county",
+    "level": "admin1",
+    "name": "Yunlin County",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 646458,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 30.7
+        },
+        {
+          "group": "No religion",
+          "pct": 27.5
+        },
+        {
+          "group": "Taoism",
+          "pct": 26.4
+        },
+        {
+          "group": "Other religions",
+          "pct": 13.2
+        },
+        {
+          "group": "Christianity",
+          "pct": 2.2
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-雲林縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 815 registered temples and 33 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.18, churches x0.33), and no religion is held at the national figure. It sits 5.0 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.182,
+        "Churches": 0.333
+      }
+    },
+    "language": [
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 63.3
+      },
+      {
+        "group": "Mandarin",
+        "pct": 36.2
+      },
+      {
+        "group": "Hakka",
+        "pct": 0.3
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 84.9
+        },
+        {
+          "group": "Hakka",
+          "pct": 8.5
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 6.0
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 0.6
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-雲林縣-2026-08",
+        "moi-register-population-雲林縣-2026-08",
+        "hakka-survey-2021-雲林縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 3,816 people of indigenous status among 646,458 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 8.5% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Yunlin"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-chiayi-county",
+    "level": "admin1",
+    "name": "Chiayi County",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 469622,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 30.2
+        },
+        {
+          "group": "No religion",
+          "pct": 27.6
+        },
+        {
+          "group": "Taoism",
+          "pct": 25.9
+        },
+        {
+          "group": "Other religions",
+          "pct": 12.9
+        },
+        {
+          "group": "Christianity",
+          "pct": 3.4
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-嘉義縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 713 registered temples and 74 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.11, churches x0.50), and no religion is held at the national figure. It sits 3.7 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.115,
+        "Churches": 0.502
+      }
+    },
+    "language": [
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 66.7
+      },
+      {
+        "group": "Mandarin",
+        "pct": 32.8
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 84.4
+        },
+        {
+          "group": "Hakka",
+          "pct": 8.3
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 5.9
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 1.4
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-嘉義縣-2026-08",
+        "moi-register-population-嘉義縣-2026-08",
+        "hakka-survey-2021-嘉義縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 6,480 people of indigenous status among 469,622 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 8.3% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-pingtung-county",
+    "level": "admin1",
+    "name": "Pingtung County",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 778014,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 30.0
+        },
+        {
+          "group": "No religion",
+          "pct": 27.5
+        },
+        {
+          "group": "Taoism",
+          "pct": 25.7
+        },
+        {
+          "group": "Other religions",
+          "pct": 12.8
+        },
+        {
+          "group": "Christianity",
+          "pct": 4.0
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-屏東縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 1,141 registered temples and 140 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.10, churches x0.58), and no religion is held at the national figure. It sits 3.2 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.096,
+        "Churches": 0.584
+      }
+    },
+    "language": [
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 51.5
+      },
+      {
+        "group": "Mandarin",
+        "pct": 40.5
+      },
+      {
+        "group": "Hakka",
+        "pct": 6.4
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 1.4
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 64.2
+        },
+        {
+          "group": "Hakka",
+          "pct": 23.1
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 8.2
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 4.5
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-屏東縣-2026-08",
+        "moi-register-population-屏東縣-2026-08",
+        "hakka-survey-2021-屏東縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 63,747 people of indigenous status among 778,014 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 23.1% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Pingtung"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-taitung-county",
+    "level": "admin1",
+    "name": "Taitung County",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 207626,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "No religion",
+          "pct": 27.5
+        },
+        {
+          "group": "Christianity",
+          "pct": 25.0
+        },
+        {
+          "group": "Buddhism",
+          "pct": 20.8
+        },
+        {
+          "group": "Taoism",
+          "pct": 17.8
+        },
+        {
+          "group": "Other religions",
+          "pct": 8.9
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-臺東縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 222 registered temples and 282 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x0.54, churches x2.99), and no religion is held at the national figure; Christianity came out above the bound of 25% and was held there, the rest rescaled. It sits 17.9 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 0.542,
+        "Churches": 2.989
+      },
+      "capped": [
+        "Christianity"
+      ]
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 69.6
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 23.0
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 6.4
+      },
+      {
+        "group": "Hakka",
+        "pct": 0.7
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.4
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 38.4
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 38.4
+        },
+        {
+          "group": "Hakka",
+          "pct": 20.5
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 2.7
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-臺東縣-2026-08",
+        "moi-register-population-臺東縣-2026-08",
+        "hakka-survey-2021-臺東縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 79,668 people of indigenous status among 207,626 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 20.6% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Taitung"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-hualien-county",
+    "level": "admin1",
+    "name": "Hualien County",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 310777,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "No religion",
+          "pct": 27.5
+        },
+        {
+          "group": "Christianity",
+          "pct": 25.0
+        },
+        {
+          "group": "Buddhism",
+          "pct": 20.8
+        },
+        {
+          "group": "Taoism",
+          "pct": 17.8
+        },
+        {
+          "group": "Other religions",
+          "pct": 8.9
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-花蓮縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 194 registered temples and 260 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x0.53, churches x3.00), and no religion is held at the national figure; Christianity came out above the bound of 25% and was held there, the rest rescaled. It sits 17.9 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 0.526,
+        "Churches": 3.0
+      },
+      "capped": [
+        "Christianity"
+      ]
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 77.5
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 15.8
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 4.1
+      },
+      {
+        "group": "Hakka",
+        "pct": 2.3
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.3
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hakka",
+          "pct": 34.2
+        },
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 32.9
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 30.6
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 2.3
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-花蓮縣-2026-08",
+        "moi-register-population-花蓮縣-2026-08",
+        "hakka-survey-2021-花蓮縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 95,088 people of indigenous status among 310,777 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 34.2% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Hualien"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-penghu",
+    "level": "admin1",
+    "name": "Penghu",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 106529,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 30.2
+        },
+        {
+          "group": "No religion",
+          "pct": 27.6
+        },
+        {
+          "group": "Taoism",
+          "pct": 25.9
+        },
+        {
+          "group": "Other religions",
+          "pct": 12.9
+        },
+        {
+          "group": "Christianity",
+          "pct": 3.4
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-澎湖縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 192 registered temples and 20 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.11, churches x0.50), and no religion is held at the national figure. It sits 3.7 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.114,
+        "Churches": 0.504
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 52.3
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 47.6
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 83.8
+        },
+        {
+          "group": "Hakka",
+          "pct": 9.5
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 5.9
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 0.8
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-澎湖縣-2026-08",
+        "moi-register-population-澎湖縣-2026-08",
+        "hakka-survey-2021-澎湖縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 874 people of indigenous status among 106,529 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 9.5% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Penghu County"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-kinmen",
+    "level": "admin1",
+    "name": "Kinmen",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 137208,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 30.8
+        },
+        {
+          "group": "No religion",
+          "pct": 27.5
+        },
+        {
+          "group": "Taoism",
+          "pct": 26.4
+        },
+        {
+          "group": "Other religions",
+          "pct": 13.2
+        },
+        {
+          "group": "Christianity",
+          "pct": 2.1
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-金門縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 210 registered temples and 4 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.21, churches x0.33), and no religion is held at the national figure. It sits 5.0 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.207,
+        "Churches": 0.333
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 64.9
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 34.9
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 77.0
+        },
+        {
+          "group": "Hakka",
+          "pct": 16.5
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 5.4
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 1.1
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-金門縣-2026-08",
+        "moi-register-population-金門縣-2026-08",
+        "hakka-survey-2021-金門縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 1,434 people of indigenous status among 137,208 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 16.5% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Kinmen County"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  },
+  {
+    "id": "TWN-matsu-islands",
+    "level": "admin1",
+    "name": "Matsu Islands",
+    "parent": "TWN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13625,
+      "year": 2026,
+      "source": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+      "note": "registered population at the end of 8/2026"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Buddhism",
+          "pct": 30.7
+        },
+        {
+          "group": "No religion",
+          "pct": 27.6
+        },
+        {
+          "group": "Taoism",
+          "pct": 26.3
+        },
+        {
+          "group": "Other religions",
+          "pct": 13.2
+        },
+        {
+          "group": "Christianity",
+          "pct": 2.2
+        }
+      ],
+      "method": "tier1-national-prior-tilted-by-religious-buildings",
+      "inputs": [
+        "pew-east-asia-2023-taiwan",
+        "moi-religious-buildings-連江縣-2025",
+        "moi-religious-buildings-national-2025"
+      ],
+      "note": "Modelled from Pew Research Center's 2023 survey of Taiwanese adults (Buddhist 28%, Daoist 24%, Christian 7%, other 12%, no religion 27%, don't know 2% left out) tilted by the Ministry of the Interior's count of this county's 67 registered temples and 4 churches at the end of 2025. No census or survey gives religion by county, so this is a model, not a count: the county's church share of its buildings over the nation's scales the survey's Christian share and its temple share the Buddhist, Daoist and other shares together (the register splits temples by tradition only nationally), each clipped to 1/3-3 (temples x1.16, churches x0.33), and no religion is held at the national figure. It sits 4.9 points from the prior; no backtest is possible, because no county-level self-identification figure exists. Written by the map owner's decision of 19 September 2026.",
+      "tilt": {
+        "Temples": 1.161,
+        "Churches": 0.333
+      }
+    },
+    "language": [
+      {
+        "group": "Mandarin",
+        "pct": 91.6
+      },
+      {
+        "group": "Other languages",
+        "pct": 5.2
+      },
+      {
+        "group": "Taiwanese Hokkien",
+        "pct": 3.1
+      },
+      {
+        "group": "Taiwanese indigenous languages",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Hoklo Taiwanese",
+          "pct": 76.0
+        },
+        {
+          "group": "Hakka",
+          "pct": 16.0
+        },
+        {
+          "group": "Mainland Chinese (waishengren)",
+          "pct": 5.3
+        },
+        {
+          "group": "Taiwanese indigenous peoples",
+          "pct": 2.7
+        }
+      ],
+      "method": "tier1-register-counts-plus-survey-share-plus-uniform-split",
+      "inputs": [
+        "moi-register-indigenous-連江縣-2026-08",
+        "moi-register-population-連江縣-2026-08",
+        "hakka-survey-2021-連江縣",
+        "hakka-survey-2021-identity-national"
+      ],
+      "note": "Modelled from three official figures: the household register's 363 people of indigenous status among 13,625 registered residents at the end of 8/2026 (Ministry of the Interior), the Hakka Affairs Council's 2021 survey estimate that 16.0% of the county meets the Hakka Basic Act definition, and the same survey's national single-identification ratio of Hoklo to mainlander (71.3 : 5.0), which splits the rest of every county alike. No Taiwanese census asks ethnicity, so this is a model, not a count: the Hoklo-mainlander split is a national assumption, the Hakka share is a survey of registered residents, and a person can be both Hakka and indigenous. Written by the map owner's decision of 19 September 2026."
+    },
+    "sources": [
+      {
+        "field": "language",
+        "name": "DGBAS, 109年人口及住宅普查總報告統計結果 (2020 Population and Housing Census, final results release, 30 November 2022), Table 2-5: main language currently used, resident population of ROC nationality aged 6 and over, by county and city",
+        "url": "https://www.dgbas.gov.tw/News_Content.aspx?n=3602&s=230162",
+        "year": 2020,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.4 現住原住民人數: registered indigenous persons by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity/population",
+        "name": "Ministry of the Interior, 內政統計月報 (monthly bulletin), table 1.1 土地面積、村里鄰、戶數暨現住人口: registered population by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menum",
+        "year": 2026,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Hakka Affairs Council, 110年全國客家人口暨語言基礎資料調查研究 (2021 National Survey of Hakka Population and Language, report of May 2022): share of each county's registered population meeting the Hakka Basic Act definition (Figure 8), and the national single self-identification of ethnic group (Table 4-1); 63,111 telephone interviews, 15 March to 6 November 2021, weighted to the December 2020 register",
+        "url": "https://www.hakka.gov.tw/File/Attach/37585/File_96737.pdf",
+        "year": 2021,
+        "license": "Hakka Affairs Council report, cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Pew Research Center, 'Religion and Spirituality in East Asian Societies' (17 June 2024), religious composition of Taiwanese adults surveyed in 2023",
+        "url": "https://www.pewresearch.org/religion/2024/06/17/religious-landscape-and-change-in-east-asia/",
+        "year": 2023,
+        "license": "(c) Pew Research Center; figures cited for research with attribution"
+      },
+      {
+        "field": "religion",
+        "name": "Ministry of the Interior, 內政統計年報 (statistical yearbook), table 06-01 宗教教務概況: registered temples and churches by county and city",
+        "url": "https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy",
+        "year": 2025,
+        "license": "Open Government Data License, Taiwan (version 1.0)"
+      }
+    ],
+    "country": "TWN",
+    "aliases": [
+      "Lienchiang County",
+      "Lienchiang",
+      "Matsu"
+    ],
+    "language_year": 2020,
+    "language_basis": "main language currently used (目前主要使用語言), resident population of ROC nationality aged 6 and over",
+    "language_note": "2020 census (DGBAS results release, Table 2-5): the main language currently used, one answer per person, for residents of ROC nationality aged 6 and over. The census also recorded a secondary language, which is not read: Hokkien is the second language of about half the country. Written by the map owner's decision of 19 September 2026."
+  }
+]

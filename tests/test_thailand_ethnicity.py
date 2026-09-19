@@ -266,8 +266,12 @@ class TreeAndBuild(unittest.TestCase):
     def test_registered_with_the_surveys_and_after_the_religion_file_is_not_required(self):
         files = be.ADAPTER_FILES
         self.assertIn("thailand_ethnicity.json", files)
-        self.assertEqual(files[files.index("korea_survey_province.json") + 1],
-                         "thailand_ethnicity.json")
+        # After Korea's survey (and the nationality file that sits with it),
+        # before every census file.
+        self.assertGreater(files.index("thailand_ethnicity.json"),
+                           files.index("korea_survey_province.json"))
+        self.assertLess(files.index("thailand_ethnicity.json"),
+                        files.index("japan_prefecture.json"))
 
     def test_thailand_stays_a_documented_gap_that_names_the_model(self):
         self.assertIn("THA", be.ADAPTER_GAPS)

@@ -807,76 +807,79 @@ early version read the canton rows only, missed that row, and fell back to
 comparing the canton sum with itself, which cannot fail; the adapter now
 refuses to run if the national row is absent.
 
-### Singapore's planning areas: three tables, three populations
+### Singapore's planning areas: the census, read from data.gov.sg
 
-The planning-area tables come from the census and household-survey releases
-rather than the Table Builder API, so they sit as CSV extracts in
-`data/raw/singapore/`. They do **not** describe the same population:
+The Department of Statistics publishes the census's planning-area tables on
+**data.gov.sg**, whose datastore serves them as rows to anyone. Its own site,
+`singstat.gov.sg`, answers the runner 403, and the Table Builder API that
+`singstat.py` uses carries nothing below the five planning regions (its
+catalogue was searched from here three ways: only the annual M810771 series
+answers to "planning region"). `--fetch` reads each table into a CSV in
+`data/raw/singapore/` and the adapter reads the CSVs, so a build without
+network still runs and what was served is committed beside the code that read
+it.
 
-| Field | Source | Base | Total |
-|---|---|---|---:|
-| Ethnicity | General Household Survey 2015 | all residents | 3,902,690 |
-| Religion | Census 2020 | residents aged 15 and over | 3,459,093 |
-| Language | Census 2020 | residents aged 5 and over | 3,596,284 |
+| Field | Source | Base | Total | Areas |
+|---|---|---|---:|---:|
+| Ethnicity | Census 2020, by planning area and subzone | all residents | 4,044,210 | 55 |
+| Religion | Census 2020 | residents aged 15 and over | 3,459,093 | 30 |
+| Language | Census 2020 | residents aged 5 and over | 3,596,284 | 30 |
+| Religion | Census 2010 | residents aged 15 and over | 3,105,748 | 35 |
+| Language | Census 2010 | residents aged 5 and over | 3,399,054 | 35 |
 
-Each field therefore carries its own year and its own note naming whose shares
-these are. Presenting them as one profile of one population would be wrong in
-three directions at once, and the totals make the difference visible.
+The three fields do **not** describe the same population, so each carries its
+own note naming whose shares these are. Presenting them as one profile would
+be wrong in three directions at once, and the totals make the difference
+visible.
 
-**`na` is not zero.** The releases suppress cells too small to publish, and
-several planning areas are industrial or military with under a hundred
-residents. A suppressed cell reads as missing, an explicit `-` as nil, and an
-area whose breakdown is entirely suppressed keeps its published population while
-the composition becomes an explicit gap saying it was withheld. The
-reconciliation check flagged exactly this for Lim Chu Kang, Pioneer and Tuas
-before it was handled.
+An earlier version of this adapter read ethnicity from the General Household
+Survey 2015 (3,902,690 residents, 41 areas) because that was the extract to
+hand. The census table replaces it: same geography, one census year across all
+three fields, and a count for every area including the ones the survey
+suppressed.
 
-Coverage differs by table: ethnicity reaches 41 planning areas, religion and
-language 30 each — those two releases bucket the remainder into an "Others" row
-that matches no shape on the map. It is not joined to anything, but its size is
-read: 25,756 residents aged 15 and over (religion) and 25,353 aged 5 and over
-(language) are all the 25 unlisted areas hold between them.
+**`-` is not zero.** The census prints `-` for nil or negligible, and several
+planning areas are industrial or military with under a hundred residents. An
+area whose every group is `-` while its own total survives -- Boon Lay's 40
+residents, Tengah's 10 -- has a count and a withheld breakdown, not forty
+people of no race; it keeps its published population and its composition
+becomes an explicit gap saying so. An area whose total is itself `-` carries no
+figure at all and says that too.
+
+**Five areas fall back to the 2010 census.** The 2020 religion and language
+releases list 30 planning areas and bucket the rest into an "Others" row that
+matches no shape on the map (25,756 residents aged 15 and over; 25,353 aged 5
+and over). The 2010 census listed 35, so Changi, Mandai, Newton, Rochor and
+Singapore River have a religion and a language row of their own a decade
+earlier. Those are used, stamped `2010`, with the note saying which census and
+why -- a decade-old count of a place is a count, where the newer release gives
+nothing at all. The regions are summed from the 2020 rows only, so a region is
+one census and no area is counted twice.
 
 **The five regions are summed from their areas.** The map's own roll-up
-(`roll_up_parents`) refused every region, and was right to: 14 of the 55
-shapes carry no ethnicity and 25 no religion or language, and a sum over part
-of a territory is refused on principle. What the roll-up cannot know is that
-those shapes are empty. The adapter can: the URA's Master Plan says which
+(`roll_up_parents`) refused every region, and was right to: a sum over part of
+a territory is refused on principle. What the roll-up cannot know is that the
+missing shapes are empty. The adapter can: the URA's Master Plan says which
 areas make each region (declared in `REGIONS`, and the boundary file's geometry
-places the 55 shapes identically), and the 49 area totals of the 2015 survey
-reconcile with its national row to within 20 people, so an area with no
-published count holds nobody it counted. Each region's ethnicity is the sum of
-its areas' 2015 rows over their own totals; religion and language are the sum
-of the 2020 rows the census lists for it. The SingStat Table Builder has no
-census planning-area table (its catalogue was searched from here: only the
-annual M810771 series answers to "planning region"), and data.gov.sg's
-catalogue throttles a walk and ignores its own query parameter, and singstat.gov.sg answers the runner with 403 (both probed from the runner, logs in the "Data: scripts.probe_datagovsg" and "Data: scripts.probe_links ...cop2020-sr1" commits), so the region
-rows are summed rather than read. Each note names the areas the release left
-out and what they hold: for religion and language, the areas inside the 2020
-"Others" row are 2.9% of the Central Region's 2015 residents (Museum, Newton,
-Orchard, Rochor, Singapore River, Southern Islands), 0.6% of the North's
-(Central Water Catchment, Lim Chu Kang, Mandai, Sungei Kadut), 0.4% of the
-East's (Changi, Paya Lebar), 0.1% of the West's (Boon Lay, Pioneer, Tengah,
-Tuas, Western Water Catchment) and under 0.1% of the North-East's
-(North-Eastern Islands, Seletar). A national shortfall beyond the rounding
-tolerance would be written into the note in a sentence; beyond 1% the regions
-are refused, because then the areas do not partition the country.
+places the 55 shapes identically), and the area totals reconcile with each
+table's national row, so an area with no published count holds nobody the
+census counted. Each note names the areas the release left out and what they
+hold. A national shortfall beyond the rounding tolerance is written into the
+note in a sentence; beyond 1% the regions are refused, because then the areas
+do not partition the country.
 
-**Every one of the 55 shapes carries a record**, and the 14 with no breakdown
-say why. Eight have a 2015 count too small to publish a breakdown of: Boon Lay
-(30 residents), Central Water Catchment (10), Lim Chu Kang (90), North-Eastern
-Islands (60), Paya Lebar (40), Pioneer (100), Tengah (10) and Tuas (70) — the
-count is carried as their population and the composition says how few people
-that is. Six have no count at all: Changi Bay, Marina East, Marina South,
-Simpang, Straits View and Western Islands are "na" in the 2015 survey and
-absent from the 2020 planning-area tables, which is how the Department writes
-an area with nobody in it, or too few to report; their records carry no
-figure and say so. The eleven populated areas the 2020 release leaves out
-(Changi, Mandai, Museum, Newton, Orchard, Rochor, Seletar, Singapore River,
-Southern Islands, Sungei Kadut, Western Water Catchment) keep their 2015
-ethnicity and say, with their 2015 count, that their religion and language sit
-inside the census's "Others" row. No join failed: all 55 area names in the
-extracts match the boundary file's, which writes them in capitals.
+**Every one of the 55 shapes carries a record.** 42 have a census ethnic
+composition; 35 have religion and language (30 from 2020, five from 2010). The
+rest say why they are blank: a count too small for the Department to publish a
+breakdown of, or no count anywhere, which is how it writes an area with nobody
+living in it. No join failed: all 55 area names in the tables match the
+boundary file's, which writes them in capitals.
+
+Other routes, measured and closed: Wikipedia's planning-area articles carry no
+demographic tables at all (six of seven probed have none; Bedok's only table
+lists housing estates), and Kaggle has no planning-area composition -- six
+searches return resale-flat prices, a 2015 population-by-dwelling table and
+national ethnic-group series.
 
 ### Singapore, and two things the figures are not
 
@@ -3731,16 +3734,22 @@ Scotland -- would in any case need saying on any map that combined them.
 
 ### China: 1.4 billion people, and three closed routes
 
-China carries a population on all 33 of its provinces and a composition on
-four. Those four -- Xinjiang, Tibet, Guangxi and Ningxia -- are **hand-compiled
+*Historical: written when China carried a composition on four provinces. The
+census's ethnicity tables were later read for all 31 divisions through the
+copies Wikipedia keeps of them (see "China: ethnicity for 31 divisions"
+below) and religion for five provinces from the CFPS survey. The three routes
+measured here are still closed; what changed is that a fourth was found.*
+
+China carried a population on all 33 of its provinces and a composition on
+four. Those four -- Xinjiang, Tibet, Guangxi and Ningxia -- were **hand-compiled
 rows in `data/curated/admin1_seed.json`**, which is what that file exists for.
-There has never been a China adapter, and it is worth saying plainly that this
-is not a broken join: the join works, 27 provinces matching by name and 5 by
+There had never been a China adapter, and it is worth saying plainly that this
+was not a broken join: the join works, 27 provinces matching by name and 5 by
 prefix, and the only one that reached nothing was Guangdong, drawn under its
 capital city's name and now declared in `MISSPELLED`.
 
-So the gap is real and the question is whether it can be filled. Three routes
-were measured, and all three are closed:
+So the gap was real and the question was whether it could be filled. Three
+routes were measured, and all three are closed:
 
 * **The USCB subnational series does not carry China.** `scripts/probe_hdx.py`
   enumerates all 34 datasets that organization publishes -- the route that
@@ -5549,6 +5558,58 @@ the adapter with ``--root`` pointing at them: it runs the same self-check,
 writes the same output, and the source then cites ISSS rather than Kaggle.
 The microdata never enters the repository either way.
 
+## China: ethnicity for 31 divisions, from the census tables Wikipedia transcribes
+
+China's census records the 56 official nationalities (民族) and the National
+Bureau of Statistics tabulates every first-level division's composition. The
+tabulations sit on `stats.gov.cn`, which answers an automated reader 403 (the
+closed route above, not circumvented). What is reachable is the copy: a
+division's Wikipedia article transcribes its census table under
+"Demographics", "Ethnic groups" or 民族, and the English article *List of
+Chinese administrative divisions by ethnic group* tabulates the 2020 census
+for every division by region, a count and a share for the region's ten or so
+largest nationalities and a 2020 Census row of totals. `china_wiki.py` reads
+all three -- each division's English and Chinese article, its Chinese
+"民族构成列表" page, and the list -- through the MediaWiki API, the way
+`wiki_census.py` reads Kazakhstan and Cambodia, and each record names the
+census as its source and the article as the copy it was read from.
+
+What the reader does is written at the top of the adapter; the decisions that
+matter are these. A table counts as a census composition when its first
+column is nationalities, names Han and at least one other of the 56, and its
+caption or heading says which census; a time series or a table with no
+population column is passed over. Among the tables an article carries the
+latest census wins, then the division's own article over the list, then the
+one with more nationalities. Where every row prints a count the shares are
+recomputed from the counts, because the transcribed shares are where the
+slips are (Shandong's table gave its 310,738 "other" as 0.003%); otherwise
+the printed shares are read and a shortfall of up to five points is written
+as the remainder. Shares must add to 100 within 0.3 or the division is
+refused with the sum in the log; they are then re-rounded to one decimal by
+largest remainder. The census's residual row (其他民族, "Others") is written
+as "Other ethnic groups" and the rows for people of no recognised
+nationality (未识别民族) fold into it, which the note says. "Yao" is written
+"Yao (China)" because the tree's bare Yao is the Bantu people of Malawi.
+
+The run of 19 September 2026 wrote **31 of 31 divisions**, none refused: 30
+from the 2020 census and Inner Mongolia from 2010 (its English article
+carries the 2010 table and no 2020 one has been transcribed; the note says
+so). Fourteen were read from the list of divisions (the municipalities, Hebei,
+Jiangsu, Zhejiang, Anhui, Fujian, Jiangxi, Henan, Hubei, Yunnan, Tibet,
+Shaanxi, Gansu), ten from their Chinese article (Shanxi, Liaoning, Jilin,
+Hunan, Hainan, Chongqing, Sichuan, Guizhou, Qinghai, Ningxia), Guangdong from
+its Chinese 民族构成列表 (57 groups), and Heilongjiang, Shandong, Guangxi and
+Xinjiang from their English articles. Beijing is the cross-check: the city's
+own 2010 census communique (bjstats, read earlier in this project) printed
+Han 95.9% of 19,612,000 with Manchu 336,000, Hui 249,000, Mongol 77,000,
+Korean 37,000 and Tujia 24,000; the 2020 table reads Han 95.2% of 21,893,095
+with Manchu 469,995, Hui 274,112, Mongol 123,340, Korean 32,984 and Tujia
+29,580 -- the same ordering and the same magnitudes a decade on. Hong Kong and
+Macau come from their own censuses (below) and are not in this file.
+
+Religion is not asked by the census and stays under the policy; language is
+not published by division and stays a gap.
+
 ## Hong Kong: a census of its own, one shape under China
 
 Hong Kong is one first-level shape on this map, drawn under China because
@@ -5752,6 +5813,11 @@ people who use Hakka at home at all.
   registered population from table 1.1 of the same bulletin. Both are the
   register, both are the same month, and the reader refuses them if their
   months differ or their counties do not sum to their own totals. The
+  workbooks (`statis.moi.gov.tw/micst/report/321010.xlsx` and `321040.xlsx`)
+  carry one sheet per year and one for the latest month, and the run read
+  the end of August 2026: 639,340 people of indigenous status among
+  23,224,721 registered residents (2.75%); Taitung 38.4%, Hualien 30.6%,
+  Pingtung 8.2%, Nantou 6.5%, Taipei 0.8%. The
   Council of Indigenous Peoples publishes the same count by people and
   county (台閩縣市原住民族人口-按性別族別, July 2026: 638,466, Amis 238,027)
   from the same register; it was read and agrees, and the Ministry's table
@@ -5792,20 +5858,38 @@ Wikipedia attributes to the State Department's religious-freedom report
 Yiguandao 2.2, Catholic 1.4) could not be read at its source and is not
 used. The county signal is the Ministry of the Interior's yearbook table
 宗教教務概況 (內政統計年報, section 6, table 01, `statis.moi.gov.tw`
-report 331030): registered temples by tradition and churches by county.
-Used only *relatively*, as for Japan: each tradition's share of a county's
-buildings over its share of the nation's, clipped to between 1/3 and 3,
-scales the survey's share; the four affiliated shares are rescaled to the
-survey's affiliated total; no religion is held at the national 27.6%
-because nothing gives it by county; Christianity and "other" are bounded at
-25% absolutely, so a county of village churches or one-room halls cannot
-come out mostly Christian on a building count. Buddhist temples tilt
-Buddhism, Taoist temples Taoism, churches Christianity, every other
-registered tradition "other". The record carries the ratios under `tilt`
-and any bound group under `capped`; the run log prints the five counties
-the tilt moves furthest from the prior. **No backtest exists and none is
-claimed**: there is no county-level self-identification figure to score
-against, so the estimate has no `backtest` key and its note says why.
+report 331030): registered temples and churches by county, from the
+workbook's latest county sheet (`2025(區域別)`, the end of 2025). The
+workbook splits temples by tradition (道教 9,824 of 12,397, 佛教 2,277,
+一貫道 243 ...) only in its national 宗教別 sheet, and the registry that
+would do it by county (`religion.moi.gov.tw`, the source of the open-data
+XML) answers nothing from the runner, so the signal is two-way: churches
+tilt Christianity, temples tilt Buddhism, Taoism and the other traditions
+together, and within a county those three keep the prior's proportions.
+Used only *relatively*, as for Japan: the county's church (temple) share of
+its registered buildings over the nation's (18.7% churches nationally),
+clipped to between 1/3 and 3, scales the survey's share; the four
+affiliated shares are rescaled to the survey's affiliated total; no
+religion is held at the national 27.6% because nothing gives it by county;
+Christianity and "other" are bounded at 25% absolutely. The bound is the
+model's admission of what the signal cannot tell apart: a church share is
+high where there are many Christians (Hualien, Taitung) and where there are
+few temples for the size of the city (Taipei, two churches for every
+temple), and the building count alone does not say which. The record
+carries the ratios under `tilt` (keyed `Temples` and `Churches`) and any
+bound group under `capped`; the run log prints the five counties the tilt
+moves furthest from the prior. In the run of 19 September 2026 (buildings
+at the end of 2025) they were Taipei (280 temples, 564 churches), Taitung
+(222, 282) and Hualien (194, 260), each 17.9 points from the prior with
+Christianity held at the bound, then Taoyuan (8.0 points, Christianity
+15.2%) and Hsinchu County (7.1, 14.2%); the temple-heavy west moves two to
+three points the other way (Yunlin: Christianity 2.2%, Taoism 26.4%).
+Taitung and Hualien are the counties where a third of residents hold
+indigenous status and most indigenous Taiwanese are Christian, so their
+bound is likely near the truth; Taipei's is the artefact the bound exists
+for, and its record says so. **No backtest exists and none is claimed**:
+there is no county-level self-identification figure to score against, so
+the estimate has no `backtest` key and its note says why.
 
 **What remains unknowable.** Whether anyone in a given county has a
 religion: the model repeats Pew's national 27.6% no-religion on Hualien and
@@ -6415,6 +6499,152 @@ census beside its series, which reads Catholics at 11% against the census's
 citation of a small part with attribution and forbids redistribution; seven
 rows of one table are read from the PDF at the pollster's own URL, and the
 PDF is not stored.
+
+### South Korea: nationality as ethnicity, by the owner's decision
+
+Korea's census asks no ethnicity question, and the seventeen provinces and
+228 districts said so (`NOT_COLLECTED_POLICY["KOR"]`, "South Korea's census
+does not collect ethnicity") for as long as the map read only what a census
+asks. What the state does count is **nationality**: every Korean national is
+on the resident register, and every foreigner staying more than ninety days
+registers with the immigration office under Article 31 of the Immigration
+Act, by country of nationality. On **19 September 2026** the map's owner
+decided that Korea's ethnicity field should carry that count as a real
+composition under `ethnicity_basis: "nationality"`, the way Japan's
+prefectures carry their census's nationality table. The `KOR` entry left
+`NOT_COLLECTED_POLICY` that day; the substance of the declaration (no
+ethnicity question is asked) is now the second sentence of every row's
+note. `scripts/fetch_census/korea_nationality.py` is the decision, and it is
+a count, not a model: nothing in it estimates anything.
+
+**What was read**, all from the runner, no key. Neither host answers a
+runner reliably -- data.go.kr's file endpoint times out about as often as
+it answers, and the register's form drops a connection every few requests
+-- so every file a run reaches is kept under `data/raw/korea`, which
+.gitignore admits, and a later run reads the copy;
+`--fetch-only` asks for whatever is still missing and stops, so a run that
+reaches one host banks its file while another is down. With all three
+banked the reader needs no network at all.
+
+* **Foreign residents.** The Ministry of Justice's *registered foreign
+  residents by city/county/district and nationality* (법무부_시군구별 국적별
+  등록외국인 체류현황, data.go.kr dataset 15108413,
+  `https://www.data.go.kr/data/15108413/fileData.do`), a zip of two cp949
+  CSVs, 2022 and 2023, served without a key from the portal's file endpoint
+  (`fileDownload.do?atchFileId=FILE_000000002903067`). The 2023 file, at 31
+  December 2023, has 500 rows -- 250 units by sex, the districts of a city
+  that has them (수원시 장안구 ...) listed separately -- and 201 columns: 시도,
+  시군구, 성별, a total, and 196 nationalities from 한국계중국인 to 기타. The
+  reader sums the sexes and a city's districts into the city, and refuses a
+  row whose nationalities do not add up to its printed total; the 250 fold
+  into 229 units, which are the 228 shapes and Yeonggwang-gun. Sejong has
+  no 시군구 at all and the file writes a bare "0" for it.
+* **Koreans.** The Ministry of the Interior and Safety's resident
+  registration population (주민등록 인구통계) for December 2023, from the
+  Ministry's own site (`https://jumin.mois.go.kr/statMonth.do`). The site
+  serves the table only through a form: a dozen fields posted to
+  `downloadCsv.do?searchYearMonth=month&xlsStats=1` (the runner's probe of
+  the page printed them; `scripts/probe_post.py` exists to make that one
+  request) come back as a cp949 CSV of "행정구역 (code)", 총인구수 and 세대수.
+  One request with the province level "A" lists the seventeen provinces and
+  the national row (51,325,329 at December 2023); one request per province
+  lists its districts, with a city's own districts beside the city. What
+  tells a city's district from a district of a province is that it names
+  three levels -- "충청북도 청주시 상당구" against "충청북도 영동군"
+  -- and not the code: 증평군, split off from 괴산군 in 2003, is
+  4374500000, a county of its own with a non-zero fifth digit sitting
+  beside 영동군 at 4374000000, and reading the code as a parent's dropped
+  its 37,484 people out of North Chungcheong. Sejong is a province that is
+  one city: the register repeats its name a level down, and the Ministry of
+  Justice's file writes a bare "0" in the 시군구 column for it, so both
+  are keyed by the province's name and meet. The listing reads 228 district
+  rows, one per shape, and Sejong's. data.go.kr's copy of the same table
+  (dataset 3033301) is offered on application only, and its file endpoint
+  never answered the runner (`Connection timed out`, four times).
+* **The national check.** The Ministry's *registered foreign residents by
+  nationality by year* (연도별 등록외국인 국적(지역)별 현황, data.go.kr
+  dataset 15100019), a 53 KB cp949 CSV of 년, 국적지역 and 등록외국인 수,
+  2011 to 2025, 195 nationalities for 2023. The portal's file endpoint
+  timed out on it fifteen times running while handing over the district
+  zip on request, so the dataset page's own download servlet is tried
+  beside it and whichever answers is kept.
+
+**What the labels mean.** "Korean" is everyone on the resident register,
+naturalised citizens and people of any ancestry included. "Korean-Chinese"
+is the immigration statistics' own category 한국계 중국인 -- Chinese
+nationals of Korean descent, the 조선족 -- which the Ministry lists apart
+from other Chinese nationals and the map keeps apart, because folding it
+into "Chinese" would hide the largest foreign community in the country;
+"Chinese" is every other Chinese national. Nationalities with at least
+10,000 registered residents nationally are named (adjectives, singular:
+Vietnamese, Thai, Uzbek, Nepalese, Filipino, Cambodian, Indonesian,
+American, Burmese, Sri Lankan, Mongolian, Japanese, Russian, Kazakh ...);
+the rest are "Other nationalities". A nationality above the threshold that
+the label table does not know is a refusal, not a silent fold. Cambodian,
+Malaysian, East Timorese, Hong Konger and Ghanaian joined the group tree's
+"Other national identities" node under "Stated as a nationality"; the rest
+were already placed.
+
+**What is not counted, said on every row.** Registered foreigners are those
+who registered under the Immigration Act. Overseas Koreans of foreign
+nationality living in Korea on a domestic residence report (국내거소신고,
+the F-4 status, some half a million people, most of them Korean-Chinese)
+are a separate register and are not in the file, nor are short-term
+visitors or the undocumented; the resident register counts Koreans, not
+foreigners. So the foreign share is of *registered* foreign residents and
+runs below the share of all foreigners present, and the Korean-Chinese
+figure in particular is the registered part of that community.
+
+**The shapes.** All 228 districts are matched. geoBoundaries CGAZ draws
+twenty of them under the wrong province or under the country itself --
+Seoul's Eunpyeong-gu under Gyeonggi; Incheon's Seo-gu, Gyeyang-gu and
+Ganghwa-gun under Gyeonggi and Ongjin-gun under the country; Gwangju's
+Dong-gu, Seo-gu, Nam-gu and Gwangsan-gu under South Jeolla; Busan's
+Gangseo-gu and Gijang-gun under South Gyeongsang and Yeongdo-gu under the
+country; Daegu's Dalseong-gun and Gunwi-gun under North Gyeongsang;
+Daejeon's Dong-gu under North Chungcheong; Gyeongbuk's Uljin-gun under
+Gangwon; Jeonnam's Sinan-gun under the country. Each of those rows names the
+province the shape is drawn under as its `parent_name`, because that is the
+only way the join finds a Dong-gu among six, and its note says which
+province it is actually part of; the province rows sum the districts by
+their real province. Jeonnam's Yeonggwang-gun has no shape at all and counts
+in South Jeolla only. Cities with districts (Suwon, Seongnam, Goyang, Yongin,
+Ansan, Anyang, Cheongju, Cheonan, Jeonju, Pohang, Changwon) are one shape
+each and are summed from the file's district rows.
+
+**Checks.** The reader refuses to write anything if a row's nationalities
+do not sum to its printed total, if the seventeen provinces are not the
+seventeen the file is known to write, if the register's districts do not
+sum to its province row or its provinces to its national row, if a unit's
+shares do not make 100 within 0.3 points, if any of the 228 shapes has no
+row, or if a nationality above the naming threshold has no label. The
+national check is the last of them: the district file must sit within half
+a point of the Ministry's own published national figure, and the run of 19
+September 2026 found them identical -- **1,348,626** registered foreigners
+either way, 2.56% against 51,325,329 resident-registered Koreans, and every
+named nationality agreeing to the person (Vietnamese 227,930, Uzbek 55,239,
+Thai 40,062, Sri Lankan 28,258, Taiwanese 17,704). The two files are the
+same register counted at the same date, one by district and one by
+nationality, so no caveat sentence was needed on the rows.
+
+**What it comes to.** Seventeen provinces and all 228 districts, each a
+count. Nationally 97.4% Korean; the most foreign districts are Yeongam-gun
+in South Jeolla at 13.6% (the Samho shipyard), Eumseong-gun at 11.6% and
+Jincheon-gun at 8.0% in North Chungcheong, Pocheon-si at 9.3%, Seoul's
+Jung-gu at 7.9% and Ansan-si at 7.7%. Korean-Chinese are the largest
+foreign group in Seoul's south-west -- 3.8% of Yeongdeungpo-gu and of
+Guro-gu -- and 2.9% of Ansan.
+
+**Also found, and not used.** The Ministry of the Interior and Safety's
+annual *foreign residents by local government* (지방자치단체 외국인주민 현황,
+1 November 2023: `https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000014&nttId=113261`,
+a 4.2 MB xlsx), which counts foreign nationals of both registers -- the
+F-4 residence-report population included -- by district and by some twenty
+nationalities, beside the resident-registered Koreans. It would put the
+Korean-Chinese at their full size. `mois.go.kr` answered the runner about
+one request in two (`Connection timed out` on the rest), and the two
+registers above answered every time, so the registers were read first; the
+xlsx is the next pass.
 
 ### The African census sweep: reached, and not
 

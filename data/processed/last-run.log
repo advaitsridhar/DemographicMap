@@ -1,68 +1,36 @@
-probe_page: https://www.data.go.kr/data/3033301/fileData.do
-  retry 1/4 after 2s :: https://www.data.go.kr/data/3033301/fileData.do :: <urlopen error timed out>
-  retry 2/4 after 4s :: https://www.data.go.kr/data/3033301/fileData.do :: <urlopen error timed out>
-  retry 3/4 after 8s :: https://www.data.go.kr/data/3033301/fileData.do :: <urlopen error timed out>
-  retry 4/4 after 16s :: https://www.data.go.kr/data/3033301/fileData.do :: <urlopen error timed out>
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
-    super().connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
-    self.sock = self._create_connection(
-                ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
-    raise exceptions[0]
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
-    sock.connect(sa)
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 636, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error timed out>
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 157, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 145, in main
-    body = http_get(args.url)
-           ^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 657, in http_get
-    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 4 retries: https://www.data.go.kr/data/3033301/fileData.do
+korea_nationality: Ministry of Justice (Korea Immigration Service), registered foreign residents by city/county/district and nationality at 31 December 2023 (시군구별 국적(지역)별 등록외국인 체류현황, data.go.kr dataset 15108413)
+  cached moj_registered_foreigners_by_district_2022_2023.zip (0.1 MB)
+  2023 시군구별 국적(지역)별 등록외국인 체류 현황.csv: 322,310 bytes
+  229 units in 17 provinces
+  register: 17 provinces listed
+    서울특별시: 26 rows
+    부산광역시: 17 rows
+    대구광역시: 10 rows
+    인천광역시: 11 rows
+    광주광역시: 6 rows
+    대전광역시: 6 rows
+    울산광역시: 6 rows
+    세종특별자치시: 2 rows
+    경기도: 49 rows
+    강원특별자치도: 19 rows
+    충청북도: 16 rows
+    충청남도: 18 rows
+    전라북도: 17 rows
+    전라남도: 23 rows
+    경상북도: 25 rows
+    경상남도: 24 rows
+    제주특별자치도: 3 rows
+  register: 247 rows, 51,325,329 nationally
+  fetched moj_registered_foreigners_by_nationality_by_year.csv (53,370 bytes)
+  published: 195 nationalities for 2023
+  national: 1,348,626 registered foreigners against 51,325,329 Koreans (2.56%)
+  published: the Ministry's national table gives 1,348,626 registered foreigners (2.56%) against the district file's 1,348,626 (2.56%)
+      Vietnamese         districts   227,930  national   227,930  (0.0% apart)
+      Uzbek              districts    55,239  national    55,239  (0.0% apart)
+      Thai               districts    40,062  national    40,062  (0.0% apart)
+      Taiwanese          districts    17,704  national    17,704  (0.0% apart)
+      Sri Lankan         districts    28,258  national    28,258  (0.0% apart)
+  named: Korean-Chinese, Vietnamese, Chinese, Nepalese, Uzbek, Cambodian, Indonesian, Filipino, Thai, Burmese, American, Mongolian, Sri Lankan, Japanese, Bangladeshi, Kazakh, Russian, Taiwanese, Pakistani, Indian
+  South Jeolla 영광군 (Yeonggwang-gun): no shape; counted in the province only
+  17 provinces, 228 districts
+  wrote data/processed/korea_nationality.json (1240 kB)

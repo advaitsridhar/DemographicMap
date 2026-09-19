@@ -62,6 +62,13 @@ ADAPTER_FILES = [
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
     "korea_survey_province.json",
+    # Korea's nationality, by the owner's decision of 19 September 2026: the
+    # immigration register's foreign residents by country of nationality
+    # against the resident register's Koreans, written on the ethnicity
+    # field under ethnicity_basis "nationality". A count, so it would sit
+    # with the census files; it is here because it fills a field the
+    # survey above does not touch, and nothing below it writes Korea.
+    "korea_nationality.json",
     # Thailand's ethnicity, by the same decision as Japan's below: a model
     # built from the 2000 census's home-language minorities and a regional
     # assignment, every province a modelled estimate. Its religion file
@@ -240,7 +247,11 @@ ADAPTER_HINTS: dict[str, str] = {
            "and 10): python -m scripts.fetch_census.macau_census",
     "KOR": "Hankook Research 2025 pooled survey (religion) by residence region, each "
            "of the seven regions' figure carried by its provinces: "
-           "python -m scripts.fetch_census.korea_survey",
+           "python -m scripts.fetch_census.korea_survey. Nationality as ethnicity "
+           "(labelled nationality) for the 17 provinces and the districts, the "
+           "Ministry of Justice's registered foreigners by country against the "
+           "resident register's Koreans at the end of 2023: "
+           "python -m scripts.fetch_census.korea_nationality",
     "TWN": "2020 census main language by county (DGBAS Table 2-5), ethnicity modelled from "
            "the household register's indigenous count, the Hakka Affairs Council's 2021 "
            "survey and a uniform Hoklo-mainlander split, religion modelled from Pew's 2023 "
