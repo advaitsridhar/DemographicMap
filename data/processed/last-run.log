@@ -1,4 +1,33 @@
 cfps_microdata: edjngfebav/cfps201420162020-china-family-panel-studies
 Downloading to /home/runner/.cache/kagglehub/datasets/edjngfebav/cfps201420162020-china-family-panel-studies/2.archive...
 Extracting files...
-cfps_microdata: 2012 Liaoning Province: 2810 respondents against the paper's 2939; the province code mapping or the non-answer rule is wrong
+  Liaoning Province: paper n=2939; rows in province=3069, valid answers=2939, answered at all (incl. DK/refused)=2939, with each weight>0: natcs12=2810, rescs12=484, natpn1012=2805, respn1012=482
+      unweighted, all valid            n= 2939  max |diff|= 0.05  Budd=5.5 Taoi=0.0 Isla=0.8 Prot=2.1 Roma=0.1 No r=91.3 Othe=0.1
+      natcs12 (rows with it)           n= 2810  max |diff|= 0.67  Budd=4.9 Taoi=0.0 Isla=0.9 Prot=1.9 Roma=0.1 No r=92.0 Othe=0.3
+      rescs12 (rows with it)           n=  484  max |diff|= 2.50  Budd=3.9 Taoi=0.0 Isla=0.7 Prot=1.5 Roma=0.1 No r=93.8 Othe=0.0
+      natpn1012 (rows with it)         n= 2805  max |diff|= 0.69  Budd=5.0 Taoi=0.0 Isla=0.8 Prot=1.9 Roma=0.1 No r=92.0 Othe=0.2
+      respn1012 (rows with it)         n=  482  max |diff|= 2.32  Budd=4.0 Taoi=0.0 Isla=0.7 Prot=1.6 Roma=0.1 No r=93.6 Othe=0.0
+  Shanghai Municipality: paper n=2362; rows in province=2388, valid answers=2365, answered at all (incl. DK/refused)=2366, with each weight>0: natcs12=2284, rescs12=310, natpn1012=2283, respn1012=310
+      unweighted, all valid            n= 2365  max |diff|= 0.04  Budd=10.4 Taoi=0.1 Isla=0.0 Prot=1.9 Roma=0.7 No r=86.7 Othe=0.1
+      natcs12 (rows with it)           n= 2284  max |diff|= 2.47  Budd=8.3 Taoi=0.0 Isla=0.0 Prot=1.9 Roma=0.4 No r=89.2 Othe=0.3
+      rescs12 (rows with it)           n=  310  max |diff|= 3.25  Budd=7.6 Taoi=0.0 Isla=0.4 Prot=1.9 Roma=0.1 No r=90.0 Othe=0.1
+      natpn1012 (rows with it)         n= 2283  max |diff|= 2.11  Budd=8.4 Taoi=0.0 Isla=0.0 Prot=2.0 Roma=0.4 No r=88.8 Othe=0.3
+      respn1012 (rows with it)         n=  310  max |diff|= 2.79  Budd=7.8 Taoi=0.0 Isla=0.4 Prot=2.1 Roma=0.1 No r=89.5 Othe=0.1
+  Henan Province: paper n=3874; rows in province=4346, valid answers=3860, answered at all (incl. DK/refused)=3861, with each weight>0: natcs12=3688, rescs12=1938, natpn1012=3681, respn1012=1935
+      unweighted, all valid            n= 3860  max |diff|= 0.22  Budd=6.2 Taoi=0.1 Isla=1.3 Prot=5.6 Roma=0.4 No r=86.2 Othe=0.2
+      natcs12 (rows with it)           n= 3688  max |diff|= 0.52  Budd=5.9 Taoi=0.1 Isla=1.1 Prot=5.7 Roma=0.4 No r=86.5 Othe=0.2
+      rescs12 (rows with it)           n= 1938  max |diff|= 2.01  Budd=6.6 Taoi=0.2 Isla=1.8 Prot=3.6 Roma=0.2 No r=87.4 Othe=0.3
+      natpn1012 (rows with it)         n= 3681  max |diff|= 0.61  Budd=6.0 Taoi=0.1 Isla=1.1 Prot=5.5 Roma=0.4 No r=86.6 Othe=0.2
+      respn1012 (rows with it)         n= 1935  max |diff|= 1.82  Budd=6.5 Taoi=0.2 Isla=1.8 Prot=3.8 Roma=0.2 No r=87.2 Othe=0.3
+  Guangdong: paper n=2869; rows in province=3512, valid answers=2894, answered at all (incl. DK/refused)=2895, with each weight>0: natcs12=2825, rescs12=1346, natpn1012=2820, respn1012=1344
+      unweighted, all valid            n= 2894  max |diff|= 0.17  Budd=6.3 Taoi=0.3 Isla=0.0 Prot=0.8 Roma=0.2 No r=92.3 Othe=0.0
+      natcs12 (rows with it)           n= 2825  max |diff|= 0.34  Budd=6.0 Taoi=0.2 Isla=0.0 Prot=1.1 Roma=0.2 No r=92.5 Othe=0.0
+      rescs12 (rows with it)           n= 1346  max |diff|= 1.82  Budd=4.4 Taoi=0.1 Isla=0.0 Prot=1.5 Roma=0.3 No r=93.6 Othe=0.0
+      natpn1012 (rows with it)         n= 2820  max |diff|= 0.39  Budd=5.8 Taoi=0.2 Isla=0.0 Prot=1.2 Roma=0.2 No r=92.6 Othe=0.0
+      respn1012 (rows with it)         n= 1344  max |diff|= 2.05  Budd=4.1 Taoi=0.2 Isla=0.0 Prot=1.6 Roma=0.3 No r=93.7 Othe=0.0
+  Gansu Province: paper n=3873; rows in province=4615, valid answers=3871, answered at all (incl. DK/refused)=3871, with each weight>0: natcs12=3756, rescs12=478, natpn1012=3742, respn1012=478
+      unweighted, all valid            n= 3871  max |diff|= 0.06  Budd=8.2 Taoi=1.0 Isla=3.4 Prot=0.3 Roma=0.1 No r=87.0 Othe=0.0
+      natcs12 (rows with it)           n= 3756  max |diff|= 2.36  Budd=5.9 Taoi=0.6 Isla=3.4 Prot=0.6 Roma=0.0 No r=89.4 Othe=0.0
+      rescs12 (rows with it)           n=  478  max |diff|= 1.70  Budd=8.2 Taoi=1.1 Isla=1.7 Prot=0.5 Roma=0.0 No r=88.3 Othe=0.2
+      natpn1012 (rows with it)         n= 3742  max |diff|= 1.79  Budd=6.4 Taoi=0.7 Isla=3.7 Prot=0.4 Roma=0.0 No r=88.6 Othe=0.0
+      respn1012 (rows with it)         n=  478  max |diff|= 1.86  Budd=8.2 Taoi=0.9 Isla=1.5 Prot=0.6 Roma=0.0 No r=88.5 Othe=0.2
