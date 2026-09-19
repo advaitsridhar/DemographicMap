@@ -136,8 +136,10 @@ class Build(unittest.TestCase):
             self.assertEqual(eth["status"], common.MODELLED)
             self.assertEqual(eth["method"], m.METHOD)
             self.assertEqual(len(eth["inputs"]), 2)
-            self.assertIn("MODELLED, not read", eth["note"])
-            self.assertIn("not evidence of what any census says", eth["note"])
+            self.assertTrue(eth["note"].startswith("Modelled from the 2000 census"), eth["note"])
+            self.assertIn("a model, not a count", eth["note"])
+            # Short: the method lives in the docs, not in every row.
+            self.assertLess(len(eth["note"]), 1000, rec["id"])
             self.assertEqual(eth["census_year"], 2000)
 
     def test_every_province_sums_to_a_hundred(self):

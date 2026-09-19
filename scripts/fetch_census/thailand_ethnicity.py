@@ -195,26 +195,19 @@ def note_for(name: str, group: str, shares: dict[str, float], rest: float,
     counted = (", ".join(f"{g} {p:.1f}%" for g, p in sorted(shares.items(), key=lambda kv: -kv[1]))
                or "no minority at or above 0.1%")
     unnamed = (f"; {', '.join(below)} printed below 0.1% and not carried" if below else "")
+    # One sentence saying what the figure is, then the caveats, short. The
+    # method in full is in docs/SOURCES.md and docs/MODELLING.md; a paragraph
+    # repeated 76 times was, in the owner's words, "so annoying".
     return (
-        "MODELLED, not read: Thailand's census does not ask ethnicity, and this figure is "
-        "not evidence of what any census says about it. It is built from two things. "
-        f"(1) The 2000 Population and Housing Census's language-spoken-at-home table for "
-        f"{name}, as the provincial final report prints it and the Wikipedia article "
-        f"'{PAGE}' transcribes it: {counted}{unnamed} -- the census's own categories "
-        "('Hill tribe languages', 'Burmese and Peguan', 'Laotian and Vietnamese') kept as "
-        f"printed. (2) Everyone else, {rest:.1f}%, nearly all of them counted by the census "
-        "as speaking Thai, assigned to the regional Tai group the Ethnolinguistic Maps of "
-        f"Thailand ({MAPS_YEAR}) give for this province's region: {group}. That step is the "
-        "model, and it is wrong in known ways: the census counted Isan, Northern and "
-        "Southern Thai as Thai, so that share is a region's remainder and not a count; it "
-        "cannot separate the Tai groups the maps count apart (Thai Khorat, Phu Thai, Nyaw, "
-        "Kaleung, Phuan, Lue, Shan) or the Austroasiatic ones the census did not name (Kuy, "
-        "So, Bru, Mon); and it counts the Thai Chinese, a tenth or more of the population "
-        "by descent and a few hundred thousand by home language, as Thai. No backtest is "
-        "possible: no provincial ethnicity figure exists to score against. Written by the "
-        f"map owner's decision of {DECISION} that Thailand's provinces should carry stated "
-        "models rather than stay blank; a census or survey figure replaces it when one is "
-        "read.")
+        f"Modelled from the 2000 census's language-spoken-at-home table for {name} "
+        f"({counted}{unnamed}) with the remaining {rest:.1f}%, whom the census counted as "
+        f"Thai speakers, assigned to the regional Tai group the Ethnolinguistic Maps of "
+        f"Thailand ({MAPS_YEAR}) give for this region: {group}. Thailand's census does not "
+        "ask ethnicity, so this is a model, not a count: the regional share cannot "
+        "separate the Tai groups the maps count apart, and the Thai Chinese, a tenth or "
+        "more of the population by descent, are counted as Thai. Transcribed by the "
+        f"Wikipedia article '{PAGE}'; owner's decision of {DECISION}; a census or survey "
+        "figure replaces it when one is read.")
 
 
 def build(wikitext: str) -> list[dict[str, Any]]:
