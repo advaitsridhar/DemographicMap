@@ -1,22 +1,202 @@
 inspect: https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003669729&fileDetailSn=1&insertDataPrcus=N (53,370 bytes)
 
-=== -: 2,865 rows, 3 columns
-  first columns: ['년', '국적지역', '등록외국인 수']
-  last columns: ['년', '국적지역', '등록외국인 수']
-  ['2011', '중국', '147301'] ... ['2011', '중국', '147301']
-  ['2011', '한국계중국인', '389398'] ... ['2011', '한국계중국인', '389398']
-  ['2011', '베트남', '110564'] ... ['2011', '베트남', '110564']
-  ['2011', '필리핀', '38366'] ... ['2011', '필리핀', '38366']
-  ['2011', '인도네시아', '29573'] ... ['2011', '인도네시아', '29573']
-  ['2011', '태국', '25977'] ... ['2011', '태국', '25977']
-  ['2011', '우즈베키스탄', '24380'] ... ['2011', '우즈베키스탄', '24380']
-  ['2011', '타이완', '21381'] ... ['2011', '타이완', '21381']
-  ['2011', '몽골', '21278'] ... ['2011', '몽골', '21278']
-  ['2011', '일본', '21126'] ... ['2011', '일본', '21126']
-  ['2011', '스리랑카', '20483'] ... ['2011', '스리랑카', '20483']
-  ['2011', '캄보디아', '16784'] ... ['2011', '캄보디아', '16784']
-  ['2011', '네팔', '12603'] ... ['2011', '네팔', '12603']
-  ['2011', '방글라데시', '10561'] ... ['2011', '방글라데시', '10561']
-  column 0 '년': 15 distinct; [('2011', 187), ('2012', 184), ('2013', 188), ('2014', 192), ('2015', 189), ('2016', 190), ('2017', 187), ('2018', 191), ('2019', 192), ('2020', 191), ('2021', 193), ('2022', 191), ('2023', 195), ('2024', 197), ('2025', 197)]
-  column 1 '국적지역': 219 distinct; [('중국', 15), ('한국계중국인', 15), ('베트남', 15), ('필리핀', 15), ('인도네시아', 15), ('태국', 12), ('우즈베키스탄', 15), ('타이완', 15), ('몽골', 15), ('일본', 15), ('스리랑카', 15), ('캄보디아', 15), ('네팔', 15), ('방글라데시', 15), ('파키스탄', 15), ('미얀마', 15), ('인도', 15), ('키르기스스탄', 6), ('카자흐스탄', 15), ('사우디아라비아', 15), ('말레이시아', 15), ('이란', 15), ('티모르민주공화국', 14), ('홍콩', 15), ('터키', 11), ('싱가포르', 15), ('라오스', 15), ('이라크', 15), ('요르단', 15), ('아프가니스탄', 15), ('이스라엘', 15), ('타지키스탄', 15), ('아랍에미리트연합', 15), ('시리아', 15), ('예멘공화국', 14), ('오만', 15), ('레바논', 15), ('팔레스타인', 15), ('투르크메니스탄', 15), ('브루나이', 15), ('쿠웨이트', 15), ('마카오', 15), ('부탄', 15), ('키프로스', 15), ('카타르', 15), ('바레인', 14), ('홍콩거주난민', 10), ('몰디브', 15), ('미국', 15), ('캐나다', 15), ('브라질', 15), ('멕시코', 15), ('페루', 15), ('콜롬비아', 15), ('아르헨티나', 15), ('과테말라', 15), ('칠레', 15), ('에콰도르', 15), ('파라과이', 15), ('베네수엘라', 15), ('엘살바도르', 15), ('볼리비아', 15), ('도미니카공화국', 15), ('코스타리카', 15), ('온두라스', 15), ('파나마', 15), ('우루과이', 15), ('아이티', 15), ('자메이카', 15), ('벨리즈', 15)]
-  column 2 '등록외국인 수': 1123 distinct; [('147301', 1), ('389398', 1), ('110564', 1), ('38366', 1), ('29573', 1), ('25977', 1), ('24380', 1), ('21381', 1), ('21278', 1), ('21126', 1), ('20483', 1), ('16784', 1), ('12603', 1), ('10561', 1), ('8215', 1), ('5606', 1), ('5363', 1), ('1985', 1), ('1237', 1), ('1164', 1), ('1155', 1), ('623', 2), ('600', 3), ('550', 2), ('493', 4), ('479', 2), ('235', 4), ('203', 4), ('200', 2), ('172', 7), ('122', 4), ('87', 5), ('58', 12), ('56', 2), ('54', 13), ('44', 15), ('23', 24), ('19', 14), ('18', 24), ('14', 23), ('13', 17), ('12', 36), ('8', 38), ('1', 114), ('26466', 1), ('6572', 1), ('586', 1), ('390', 1), ('222', 4), ('120', 4), ('79', 9), ('78', 6), ('66', 7), ('51', 7), ('49', 8), ('36', 9), ('35', 13), ('25', 19), ('15', 22), ('7', 42), ('6', 39), ('3', 80), ('2', 105), ('4748', 1), ('3771', 1), ('2227', 1), ('2126', 2), ('1610', 1), ('906', 1), ('758', 1)]
+=== sampling d_d4be7f8ba23ba93e5d59564d1dfb5eaa
+
+  --- metadata: HTTP 200
+      https://api-production.data.gov.sg/v2/public/api/datasets/d_d4be7f8ba23ba93e5d59564d1dfb5eaa/metadata
+  JSON object, keys: ['code', 'data', 'errorMsg']
+  data scalars: {"datasetId": "d_d4be7f8ba23ba93e5d59564d1dfb5eaa", "createdAt": "2024-10-24T19:14:03+08:00", "name": "Resident Population Aged 15 Years and Over by Planning Area and Religion (Census of Population 2010)", "description": "Source: SINGAPORE DEPARTMENT OF STATISTICS\r\n\r\nData Last Updated: 24/03/2016\r\n\r\nUpdate Frequency: 10 years\r\n\r\nSurvey period: Census of Population 2010\r\n\r\nFootnotes
+  data keys: ['collectionIds', 'columnMetadata', 'contactEmails', 'createdAt', 'datasetId', 'datasetSize', 'description', 'format', 'lastUpdatedAt', 'managedBy', 'name']
+
+  --- datastore rows: HTTP 200
+      https://data.gov.sg/api/action/datastore_search?resource_id=d_d4be7f8ba23ba93e5d59564d1dfb5eaa&limit=3
+  JSON object, keys: ['result', 'success']
+  result scalars: {"resource_id": "d_d4be7f8ba23ba93e5d59564d1dfb5eaa", "total": 37, "limit": 3}
+  result keys: ['_links', 'fields', 'limit', 'records', 'resource_id', 'total']
+  result.records: 3 items; first:
+    {"_id": 1, "Number": "Total", "Total": "3105748", "NoReligion": "527553", "Buddhism": "1032879", "Taoism": "339149", "Islam": "457435", "Hinduism": "157854", "Sikhism": "10744", "Christianity_Catholic": "219133", "Christianity_OtherChristians": "350111", "OtherReligions": "10891"}
+
+  --- api-open rows: HTTP 201
+      https://api-open.data.gov.sg/v1/public/api/datasets/d_d4be7f8ba23ba93e5d59564d1dfb5eaa/poll-download
+      {"code":0,"data":{"status":"DOWNLOAD_SUCCESS","url":"https://s3.ap-southeast-1.amazonaws.com/table-downloads-ingest.data.gov.sg/d_d4be7f8ba23ba93e5d59564d1dfb5eaa/496a20e75262237f26695df5e3200ee8fd48378b9b6b21570aad36e0a
+
+=== sampling d_c3ed3269adea97f53092d70c4d6d9682
+
+  --- metadata: HTTP 200
+      https://api-production.data.gov.sg/v2/public/api/datasets/d_c3ed3269adea97f53092d70c4d6d9682/metadata
+  JSON object, keys: ['code', 'data', 'errorMsg']
+  data scalars: {"datasetId": "d_c3ed3269adea97f53092d70c4d6d9682", "createdAt": "2024-10-24T19:14:03+08:00", "name": "Resident Population Aged 5 Years and Over by Planning Area and Language Most Frequently Spoken at Home (Census of Population 2010)", "description": "Source: SINGAPORE DEPARTMENT OF STATISTICS\r\n\r\nData Last Updated: 24/03/2016\r\n\r\nUpdate Frequency: 10 years\r\n\r\nSurvey period: Census of Po
+  data keys: ['collectionIds', 'columnMetadata', 'contactEmails', 'createdAt', 'datasetId', 'datasetSize', 'description', 'format', 'lastUpdatedAt', 'managedBy', 'name']
+
+  --- datastore rows: HTTP 200
+      https://data.gov.sg/api/action/datastore_search?resource_id=d_c3ed3269adea97f53092d70c4d6d9682&limit=3
+  JSON object, keys: ['result', 'success']
+  result scalars: {"resource_id": "d_c3ed3269adea97f53092d70c4d6d9682", "total": 37, "limit": 3}
+  result keys: ['_links', 'fields', 'limit', 'records', 'resource_id', 'total']
+  result.records: 3 items; first:
+    {"_id": 1, "Number": "Total", "Total": "3399054", "English": "1097443", "Mandarin": "1211505", "ChineseDialects": "487031", "Malay": "414475", "Tamil": "110667", "OtherIndianLanguages": "40334", "Others": "37600"}
+
+  --- api-open rows: HTTP 201
+      https://api-open.data.gov.sg/v1/public/api/datasets/d_c3ed3269adea97f53092d70c4d6d9682/poll-download
+      {"code":0,"data":{"status":"DOWNLOAD_SUCCESS","url":"https://s3.ap-southeast-1.amazonaws.com/table-downloads-ingest.data.gov.sg/d_c3ed3269adea97f53092d70c4d6d9682/d9b93620d4aeb978ea7fd842c5195db3062ea06ab558cc8ca1b230c55
+
+=== sampling d_fb887ade66d2fe8d248d18dd350a119d
+
+  --- metadata: HTTP 200
+      https://api-production.data.gov.sg/v2/public/api/datasets/d_fb887ade66d2fe8d248d18dd350a119d/metadata
+  JSON object, keys: ['code', 'data', 'errorMsg']
+  data scalars: {"datasetId": "d_fb887ade66d2fe8d248d18dd350a119d", "createdAt": "2024-10-24T19:14:12+08:00", "name": "Resident Population by Planning Area/Subzone, Ethnic Group and Sex (Census of Population 2010)", "description": "Source: SINGAPORE DEPARTMENT OF STATISTICS\r\n\r\nData Last Updated: 24/03/2016\r\n\r\nUpdate Frequency: 10 years\r\n\r\nSurvey period: Census of Population 2010\r\n\r\nFootnotes: Note
+  data keys: ['collectionIds', 'columnMetadata', 'contactEmails', 'createdAt', 'datasetId', 'datasetSize', 'description', 'format', 'lastUpdatedAt', 'managedBy', 'name']
+
+  --- datastore rows: HTTP 200
+      https://data.gov.sg/api/action/datastore_search?resource_id=d_fb887ade66d2fe8d248d18dd350a119d&limit=3
+  JSON object, keys: ['result', 'success']
+  result scalars: {"resource_id": "d_fb887ade66d2fe8d248d18dd350a119d", "total": 228, "limit": 3}
+  result keys: ['_links', 'fields', 'limit', 'records', 'resource_id', 'total']
+  result.records: 3 items; first:
+    {"_id": 1, "Number": "Total", "Total_Total": "3771721", "Total_Males": "1861133", "Total_Females": "1910588", "Chinese_Total": "2793980", "Chinese_Males": "1370083", "Chinese_Females": "1423897", "Malays_Total": "503868", "Malays_Males": "250885", "Malays_Females": "252983", "Indians_Total": "348119", "Indians_Males": "180327", "Indians_Females": "167792", "Others_Total": "125754", "Others_Males": "59838", "Others_Females": "65916"}
+
+  --- api-open rows: HTTP 201
+      https://api-open.data.gov.sg/v1/public/api/datasets/d_fb887ade66d2fe8d248d18dd350a119d/poll-download
+      {"code":0,"data":{"status":"DOWNLOAD_SUCCESS","url":"https://s3.ap-southeast-1.amazonaws.com/table-downloads-ingest.data.gov.sg/d_fb887ade66d2fe8d248d18dd350a119d/457423a2f0795f51bbfee0f87fa8ff0ea7f96751ab5679d8191575d03
+
+=== searching the catalogue for ['planning', 'area']
+  page 1: 10 datasets, totalRowCount=4615, pages=462
+  page 463: empty (1 in a row)
+  page 464: empty (2 in a row)
+  page 465: empty (3 in a row)
+  read 464 page(s), 4615 datasets, 114 matching ['planning', 'area']
+  d_e7ae90176a68945837ad67892b898466  Resident Population by Planning Area/Subzone of Residence, Ethnic Group and Sex (Census of Population 2020)
+  d_d95ae740c0f8961a0b10435836660ce0  Resident Population by Planning Area/Subzone of Residence, Age Group and Sex (Census of Population 2020)
+  d_e2e2421777b5c2b6aff5db721d3dfabc  Resident Households by Planning Area and Monthly Household Income from Work (General Household Survey 2015)
+  d_7f243956483d5901f237e6f87b096636  Resident Population by Planning Area/Subzone of Residence and Type of Dwelling (Census of Population 2020)
+  d_4e150bbd35c3145ea43019212c7b46c2  Resident Households by Planning Area of Residence and Monthly Household Income from Work (Census of Population 2020)
+  d_0fb04e9e94b62c4b45aeed46a0def3fd  Resident Population by Planning Area/Subzone and Age Group (Census of Population 2010)
+  d_bf4d24df9129d5a8ff8cf82e20959ee0  Master Plan 2019 Region Boundary (No Sea) (GEOJSON)
+  d_fb887ade66d2fe8d248d18dd350a119d  Resident Population by Planning Area/Subzone, Ethnic Group and Sex (Census of Population 2010)
+  d_9e035622439b5d25a63d7ea0699c9451  Resident Population by Planning Area/Subzone of Residence, Age Group and Floor Area of Residence (Census of Population 2020)
+  d_0ef47f84a0776b27010b242038ea2c6b  Resident Households by Planning Area of Residence and Household Size (Census Of Population 2020)
+  d_1ca435a3b62aafa6857d96368971765b  Resident Households by Planning Area of Residence and Tenancy (Census Of Population 2020)
+  d_ce59c90c5be03d5de14cea4dbf57295d  Resident Households by Planning Area and Household Size (Census of Population 2010)
+  d_d8cf1d22b2c0cc96883c3846f6f1a087  Resident Students Aged 5 Years and Over by Planning Area and Usual Mode of Transport to School (Census of Population 2010)
+  d_90215b2256c68fe94a058cb931d29591  Resident Population Aged 15 Years and Over by Planning Area of Residence and Highest Qualification Attained (Census of Population 2020)
+  d_0df2274bb51639b2ebdfe89a302f8cdc  Resident Population Aged 15 Years and Over by Planning Area of Residence, Marital Status and Sex (Census of Population 2020)
+  d_ec3b9f67889aaca1e710a63901bb92d8  Resident Population by Planning Area/Subzone, Ethnic Group and Sex (General Household Survey 2015)
+  d_00f89f978f9f9a4b30509c9d25d3982a  Resident Working Persons Aged 15 Years and Over by Planning Area and Travelling Time to Work (Census of Population 2010)
+  d_ea524796fa06e39a70aed4a2c617175e  Resident Students Aged 5 Years and Over by Planning Area and Travelling Time to School (Census of Population 2010)
+  d_7dd573b7e1c4cae2c0c70559037d0e4e  Resident Students Aged 5 Years and Over by Planning Area and Level of Education Attending (Census of Population 2010)
+  d_c3ed3269adea97f53092d70c4d6d9682  Resident Population Aged 5 Years and Over by Planning Area and Language Most Frequently Spoken at Home (Census of Population 2010)
+  d_235d7a3b5bc3840f9c0b5a659252f6f8  Resident Population Aged 15 Years and Over by Planning Area, Marital Status and Sex (Census of Population 2010)
+  d_d4be7f8ba23ba93e5d59564d1dfb5eaa  Resident Population Aged 15 Years and Over by Planning Area and Religion (Census of Population 2010)
+  d_474090009224568420360c985b7e4891  Resident Households by Planning Area and Monthly Household Income from Work (Census of Population 2010)
+  d_b50749597cb4d0ce3b62574c977f2324  Resident Working Persons Aged 15 Years and Over by Planning Area and Occupation (Census of Population 2010)
+  d_daab6e1f628186abf4c02214b99a0eb9  Resident Working Persons Aged 15 Years and Over by Planning Area and Industry (Census of Population 2010)
+  d_4ce0038f7ac689652350bb91b7fb92ed  Master Plan 2025 Region Boundary (No Sea)
+  d_2cc750190544007400b2cfd5d7f53209  Master Plan 2025 Planning Area Boundary (No Sea)
+  d_a1636a40f8c76011be0f5640d1354c54  Resident Working Persons Aged 15 Years and Over by Planning Area and Usual Mode of Transport to Work (Census of Population 2010)
+  d_96958152e0dd18b503f5c351eac5232e  Resident Households by Planning Area and Type of Dwelling (Census of Population 2010)
+  d_d59ed9cc61560544973393078baf74b0  Resident Working Persons Aged 15 Years and Over by Planning Area and Gross Monthly Income from Work (Census of Population 2010)
+  d_4dfd6c43ee078800ae73f60b73dd207b  Resident Population Aged 15 Years and Over by Planning Area, Economic Status and Sex (Census of Population 2010)
+  d_0034746f51f894e005e846550bff78fa  Resident Population Aged 15 Years and Over by Planning Area and Highest Qualification Attained (Census of Population 2010)
+  d_4f8798e1ec5067db54e708eb7e3c8060  Resident Population Aged 15 Years and Over by Planning Area and Language Literate In (Census of Population 2010)
+  d_d50983a131441ec2ea11c411579830a2  Resident Households by Planning Area and Tenancy (Census of Population 2010)
+  d_c01346b80252e51694650f3803a18400  Resident Households by Planning Area and Household Structure (Census of Population 2010)
+  d_4765db0e87b9c86336792efe8a1f7a66  Master Plan 2019 Planning Area Boundary (No Sea)
+  d_0145fb635a7112d530c4edb0e814b8a9  Resident Households by Planning Area of Residence and Presence of At Least One Member with Difficulty in Performing Basic Activities (Census of Population 2020)
+  d_2d6793de474551149c438ba349a108fd  Resident Households by Planning Area of Residence and Monthly Household Income from Work (Census Of Population 2020)
+  d_ce1804c655566f5089fff370bec37c2d  Resident Households by Planning Area of Residence and Household Structure (Census of Population 2020)
+  d_a9b684696b39023c4b12f13e57aa2dfd  Employed Residents Aged 15 Years and Over by Planning Area of Residence and Industry (Census of Population 2020)
+  d_21d8b67788ed8ef5705aa4bd5ec66b4b  Resident Population Aged 5 Years and Over by Planning Area of Residence, Level of Difficulty in Performing Basic Activity in Specific Domain and Age Group (Census of Population 2020)
+  d_8ec1d0f5a86e5492f98e8598d6d258d1  Employed Residents Aged 15 Years and Over by Planning Area of Workplace and Travelling Time to Work (Census of Population 2020)
+  d_8386cc526b491fcdf806b9ef6a328b7a  Resident Working Persons Aged 15 Years and Over by Planning Area and Usual Mode of Transport to Work (General Household Survey 2015)
+  d_e9b1f437263fceebc0c1f0e60cd7b0f0  Resident Population Aged 15 Years and Over by Planning Area of Residence, Labour Force Status and Sex (Census of Population 2020)
+  d_5b38192e9c6f8d2c5f38c70939c76e71  Employed Residents Aged 15 Years and Over by Planning Area of Workplace, Usual Mode of Transport to Work and Planning Region of Residence (Census of Population 2020)
+  d_37d0383e7b6df800e353b424214e531f  Average Monthly Household Electricity Consumption by URA Planning Area & Dwelling Type, 2012
+  d_efbe5b66aa388ada40e0b23d0b108512  Employed Residents Aged 15 Years and Over by Planning Area of Residence and Gross Monthly Income from Work (Census of Population 2020)
+  d_634194a40f36e5bc11a942ab0164fa9d  Average Monthly Household Electricity Consumption by URA Planning Area & Dwelling Type, 2009
+  d_e9dd87933f70bf2e8e977773a9c33fd0  Average Monthly Household Electricity Consumption by URA Planning Area & Dwelling Type, 2010
+  d_ae8f6f7e9184361a187dd335fa04b684  Resident Population by Planning Area/Subzone and Type of Dwelling (General Household Survey 2015)
+  d_c75a76bd20f3bacfea92172020e39ff5  Hexagonal grids of radius 1000m
+  d_47bc139c876e5a75f06e41e2ee62cfbc  Resident Population Aged 15 Years and Over by Planning Area, Economic Status and Sex (General Household Survey 2015)
+  d_e675592504191d21e0b8687981bb3fe7  Hexagonal grids of radius 100m
+  d_f68e309cf17d4b562ab6cefc1b9cf998  Average Monthly Household Electricity Consumption by URA Planning Area & Dwelling Type, 2011
+  d_f7059fd0402a0af5963c4d11bbaf413d  Average Monthly Household Electricity Consumption by URA Region& Dwelling Type, 2009
+  d_50548a3a8084d32a16d68b2ea0e282c0  Resident Working Persons Aged 15 Years and Over by Planning Area and Travelling Time to Work (General Household Survey 2015)
+  d_d31528e9725c0e4bffa62ae51ff75a11  Hexagonal grids of radius 300m
+  d_59e8149ed5e250b85f0a2e8a0eb0a999  Average Monthly Household Electricity Consumption by URA Region& Dwelling Type, 2011
+  d_c9395d6106de082d220fb6a8ff6b423b  Average Monthly Household Electricity Consumption by URA Region& Dwelling Type, 2010
+  d_08a7ff002b1d5b30a298cc27a46e8ae5  Resident Population Aged 15 Years and Over by Planning Area and Highest Qualification Attained (General Household Survey 2015)
+  d_a7d2fb6c9337cd8a8bb886dd9fde186e  Hexagonal grids of radius 400m
+  d_e9fa58fcb4b3df98dde245591b17e254  Average Monthly Household Electricity Consumption by URA Region& Dwelling Type, 2012
+  d_fb816f574a53c0b6e945a74c74271cf6  Hexagonal grids of radius 40m
+  d_bb771c5189ce18007621533dd36142bb  Resident Working Persons Aged 15 Years and Over by Planning Area and Gross Monthly Income from Work (General Household Survey 2015)
+  d_47db177174ba5899aa9cee08797d9171  Average Monthly Household Electricity Consumption by URA Planning Area & Dwelling Type, 2013
+  d_c087309e1cec43d7547adf4b98dd0c75  Hexagonal grids of radius 500m
+  d_c287c8be114bfa7d055b27ab2c87de83  Private Residential Property Transactions in Core Central Region, Quarterly
+  d_448eb9464bde22a85d6e9efff8489906  Master Plan 1998 Planning Area Boundary (No Sea)
+  d_64530b45dd5c5dd6d7950e84874da8be  Average Monthly Household Electricity Consumption by URA Region& Dwelling Type, 2013
+  d_47b2f76fe0f169cca490f33fead655ec  Master Plan 1998 Region Boundary (No Sea)
+  d_d35b35312e9207ec234fdd15114845d3  Master Plan 1998 Subzone Boundary (No Sea)
+  d_1a7823f3d31e7db4b426833833762bab  Private Residential Property Transactions in Outside Central Region, Quarterly
+  d_34437d9d8d5b900b4424394413635b05  Resident Households by Planning Area and Household Structure (General Household Survey 2015)
+  d_962495f413f039655f14cb8a59f44317  Resident Working Persons Aged 15 Years and Over by Planning Area and Industry (General Household Survey 2015)
+  d_94bc18bda846d024fef8fe53b337305d  Resident Students Aged 5 Years and Over by Planning Area and Travelling Time to School (General Household Survey 2015)
+  d_8875065080a40948e18cb591c242d33d  Resident Students Aged 5 Years and Over by Planning Area and Usual Mode of Transport to School (General Household Survey 2015)
+  d_45c131f9c746f15d91fe84f261abcc4a  Resident Working Persons Aged 15 Years and Over by Planning Area and Occupation (General Household Survey 2015)
+  d_773f010a4eaae0ce6d81cbe78d251642  Master Plan 2008 Planning Area Boundary (No Sea)
+  d_db9b98d7b681a83009baab639605a1ba  Master Plan 2008 Region Boundary (No Sea)
+  d_c50f318157e6f327c639ad6b18a7bd63  Master Plan 2008 Subzone Boundary (No Sea)
+  d_8594ae9ff96d0c708bc2af633048edfb  Master Plan 2019 Subzone Boundary (No Sea) (GEOJSON)
+  d_28feff20a3500b31589c8adb057b7199  Master Plan 2014 Planning Area Boundary (No Sea)
+  d_159356190eb5995137855711bca63f4f  Master Plan 2014 Region Boundary (No Sea)
+  d_024fa45f9f57a699954ebd241c36316d  Hexagonal grids of radius 800m
+  d_36689851a66d2ab3ad04c0d671c5f1f5  Hexagonal grids of radius 600m
+  d_3c0dc686af45c42cddce3b70777a0ce7  Hexagonal grids of radius 200m
+  d_226cacceceff94f0c8b814962a5307c9  Master Plan 2014 Subzone Boundary (No Sea)
+  d_5785799d63a9da091f4e0b456291eeb8  Private Residential Property Transactions in Rest of Central Region, Quarterly
+  d_530099f2c0a37ed367bb94a66c9100af  Resident Population by Planning Area/Subzone, Age Group and Sex (General Household Survey 2015)
+  d_d876df5461b5fa36443b32fa529bed56  Resident Students Aged 5 Years and Over by Planning Area and Level of Education Attending (General Household Survey 2015)
+  d_3c4dc32382bdc23189428af2126dd188  Singapore Residents By Planning Region, Age Group And Sex, End June, Annual
+  d_e01919cab3a2fcfe9351af9f71bd49fd  Resident Population Aged 15 Years and Over by Planning Area, Marital Status and Sex (General Household Survey 2015)
+  d_63449f74c83eb941f87c2172f08d299c  Employed Residents Aged 15 Years and Over by Planning Area of Residence and Occupation (Census of Population 2020)
+  d_669dcba39b1e29413019860ba35582dc  Resident Households by Planning Area and Household Size (General Household Survey 2015)
+  d_9ebad44ae5f9dff4ccc577a59ac4b208  Employed Residents Aged 15 Years and Over by Planning Area of Residence and Travelling Time to Work (Census of Population 2020)
+  d_9eaccc6cc0f257cfd74d5c1ceb0fb663  Resident Students Aged 5 Years and Over by Planning Area of Residence and Usual Mode of Transport to School (Census of Population 2020)
+  d_b19c5bc4f6916b5481f6531918440fe6  Resident Students Aged 5 Years and Over by Planning Area of Residence and Level of Education Attending (Census of Population 2020)
+  d_66ddd6e816c3ae99502a325bd04d480f  Employed Residents Aged 15 Years and Over by Planning Area of Workplace and Industry (Census of Population 2020)
+  d_58c5248e96531fe39a9b2caee6ed19d8  Resident Population Aged 5 Years and Over by Planning Area and Language Most Frequently Spoken at Home (General Household Survey 2015)
+  d_e12ec38ee49d89d9cbdf0d7ea6a49365  Employed Residents Aged 15 Years and Over by Planning Area of Workplace, Highest Qualification Attained and Sex (Census of Population 2020)
+  d_a58564fbed922609a0f79af96069dd9b  Resident Population Aged 15 Years and Over by Planning Area of Residence and Religion (Census of Population 2020)
+  d_b1d2b5ad0bf24c1cf40c2edcf57f6004  Resident Households by Planning Area and Tenancy (General Household Survey 2015)
+  d_21f546492a87dec38391fc72eb4c7890  Resident Population Aged 5 Years and Over by Planning Area of Residence and Language Most / Second Most Frequently Spoken at Home (Census of Population 2020)
+  d_6fce8e61bf5c5ce7ad36f770cb0faf78  Resident Students Aged 5 Years and Over by Planning Area of Residence and Travelling Time to School (Census of Population 2020)
+  d_a9c214d2534f2da9587ae3bb481f3b85  Employed Residents Aged 15 Years and Over by Planning Area of Workplace and Occupation (Census of Population 2020)
+  d_388f9c61f437a588b47b008a012d13fa  Resident Households by Planning Area of Residence and Type of Dwelling (Census of Population 2020)
+  d_2917c3a947cd8d8af80dbec6b587281c  Resident Households by Planning Area and Type of Dwelling (General Household Survey 2015)
+  d_18f1b1597c10ef1c347d56e8f66f3d68  Resident Population Aged 15 Years and Over by Planning Area of Residence and Language Literate In (Census of Population 2020)
+  d_be89529e906103da82ff06adec019f17  Employed Residents Aged 15 Years and Over by Planning Area of Workplace and Gross Monthly Income from Work (Census of Population 2020)
+  d_22063c84778e6535b92b4d8f93fd2525  Employed Residents Aged 15 Years and Over by Planning Area of Workplace, Age Group and Sex (Census of Population 2020)
+  d_1f8f5ec7201964e365c77551cab99503  Employed Residents Aged 15 Years and Over by Planning Area of Residence and Usual Mode of Transport to Work (Census of Population 2020)
+  d_f6ddbf6228d561454e27dd158846c688  Employed Residents Aged 15 Years and Over by Planning Area of Workplace and Usual Mode of Transport to Work (Census of Population 2020)
+  d_a4cf4987cc7eba7c10764d6b9b801dc0  Resident Population Aged 15 Years and Over by Planning Area and Language Literate In (General Household Survey 2015)
+  d_609f4027e7fdc33251db12f4d3f38d4f  Resident Population Aged 15 Years and Over by Planning Area and Religion (General Household Survey 2015)
+
+=== sampling 'Resident Population by Planning Area/Subzone of Residence, Ethnic Group and Sex (Census of Population 2020)' (d_e7ae90176a68945837ad67892b898466)
+
+  --- metadata: HTTP 200
+      https://api-production.data.gov.sg/v2/public/api/datasets/d_e7ae90176a68945837ad67892b898466/metadata
+  JSON object, keys: ['code', 'data', 'errorMsg']
+  data scalars: {"datasetId": "d_e7ae90176a68945837ad67892b898466", "createdAt": "2024-10-22T13:24:17+08:00", "name": "Resident Population by Planning Area/Subzone of Residence, Ethnic Group and Sex (Census of Population 2020)", "description": "Source: SINGAPORE DEPARTMENT OF STATISTICS\r\n\r\nData Last Updated: 18/06/2021\r\n\r\nUpdate Frequency: 10 years\r\n\r\nSurvey period: Census of Population 2020\r\n\r\nFo
+  data keys: ['collectionIds', 'columnMetadata', 'contactEmails', 'createdAt', 'datasetId', 'datasetSize', 'description', 'format', 'lastUpdatedAt', 'managedBy', 'name']
+
+  --- datastore rows: HTTP 200
+      https://data.gov.sg/api/action/datastore_search?resource_id=d_e7ae90176a68945837ad67892b898466&limit=3
+  JSON object, keys: ['result', 'success']
+  result scalars: {"resource_id": "d_e7ae90176a68945837ad67892b898466", "total": 388, "limit": 3}
+  result keys: ['_links', 'fields', 'limit', 'records', 'resource_id', 'total']
+  result.records: 3 items; first:
+    {"_id": 1, "Number": "Total", "Total_Total": "4044210", "Total_Males": "1977560", "Total_Females": "2066650", "Chinese_Total": "3006770", "Chinese_Males": "1461340", "Chinese_Females": "1545430", "Malays_Total": "545500", "Malays_Males": "271330", "Malays_Females": "274170", "Indians_Total": "362270", "Indians_Males": "185570", "Indians_Females": "176710", "Others_Total": "129670", "Others_Males": "59320", "Others_Females": "70350"}
+
+  --- api-open rows: HTTP 201
+      https://api-open.data.gov.sg/v1/public/api/datasets/d_e7ae90176a68945837ad67892b898466/poll-download
+      {"code":0,"data":{"status":"DOWNLOAD_SUCCESS","url":"https://s3.ap-southeast-1.amazonaws.com/table-downloads-ingest.data.gov.sg/d_e7ae90176a68945837ad67892b898466/4105b71568b5b025cd22b85498360077e49b2a9ad0c42d594c30b1c84
