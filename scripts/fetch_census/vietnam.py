@@ -48,16 +48,22 @@ USER_AGENT = ("Mozilla/5.0 (compatible; DemographicMap/1.0; "
 # Route (a): the office's own files, and the co-publisher that mirrored the
 # English volume. Each is asked for its headers only.
 OFFICE_URLS = [
-    "https://www.gso.gov.vn/",
     "https://www.nso.gov.vn/",
-    "https://www.gso.gov.vn/en/data-and-statistics/2020/11/completed-results-of-the-2019-viet-nam-population-and-housing-census/",
-    "https://www.gso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
-    "https://www.gso.gov.vn/wp-content/uploads/2020/07/01-Bao-cao-53-dan-toc-thieu-so-2019_ban-in.pdf",
+    "https://www.nso.gov.vn/du-lieu-va-so-lieu-thong-ke/2020/11/ket-qua-toan-bo-tong-dieu-tra-dan-so-va-nha-o-nam-2019/",
+    "https://www.nso.gov.vn/en/data-and-statistics/2020/11/completed-results-of-the-2019-viet-nam-population-and-housing-census/",
+    "https://www.nso.gov.vn/?s=k%E1%BA%BFt+qu%E1%BA%A3+to%C3%A0n+b%E1%BB%99+t%E1%BB%95ng+%C4%91i%E1%BB%81u+tra+d%C3%A2n+s%E1%BB%91+2019",
+    "https://www.nso.gov.vn/?s=53+d%C3%A2n+t%E1%BB%99c+thi%E1%BB%83u+s%E1%BB%91+2019",
+    "https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf",
+    "https://www.nso.gov.vn/wp-content/uploads/2020/07/01-Bao-cao-53-dan-toc-thieu-so-2019_ban-in.pdf",
     "http://tongdieutradanso.vn/",
-    "https://vietnam.unfpa.org/en/publications/results-2019-population-and-housing-census",
-    "https://vietnam.unfpa.org/en/publications",
-    "https://data.vietnam.opendevelopmentmekong.net/api/3/action/package_search?q=ethnic+province&rows=10",
+    "https://data.vietnam.opendevelopmentmekong.net/api/3/action/package_show?id=population-and-distribution-of-ethnic-minorities-in-vietnam",
+    "https://data.vietnam.opendevelopmentmekong.net/api/3/action/package_show?id=thong-tin-dan-s-dan-t-c-thi-u-s-2015",
+    "https://data.vietnam.opendevelopmentmekong.net/api/3/action/package_search?q=d%C3%A2n+t%E1%BB%99c+2019&rows=10",
 ]
+# A page of a PDF that crosses province with ethnic group names a minority
+# and several provinces together; the contents pages name the tables.
+PDF_ROW_TERMS = ["Tày", "Nùng"]
+PDF_PROVINCE_TERMS = ["Hà Giang", "Lạng Sơn", "Cao Bằng", "Sơn La"]
 
 # Route (b): what to ask Kaggle's catalogue for.
 KAGGLE_SEARCHES = ["vietnam census", "vietnam ethnic", "vietnam population province",
@@ -66,24 +72,21 @@ KAGGLE_SEARCHES = ["vietnam census", "vietnam ethnic", "vietnam population provi
 # Route (c): the Vietnamese articles most likely to hold the table, and a
 # handful of province articles whose "Dân cư" section may carry one.
 WIKI_INSPECT = [
-    ("vi", "Danh sách các dân tộc Việt Nam theo tỉnh thành"),
     ("vi", "Các dân tộc Việt Nam"),
-    ("vi", "Danh sách các dân tộc Việt Nam"),
-    ("vi", "Dân số Việt Nam"),
-    ("vi", "Hà Giang"),
-    ("vi", "Sơn La"),
-    ("vi", "Đắk Lắk"),
-    ("vi", "Trà Vinh"),
-    ("vi", "Lạng Sơn"),
-    ("vi", "Thành phố Hồ Chí Minh"),
-    ("en", "Hà Giang province"),
-    ("en", "Ethnic groups in Vietnam"),
+    ("vi", "Người Tày"),
+    ("vi", "Người Mường"),
+    ("vi", "Người Việt"),
+    ("vi", "Người Khmer (Việt Nam)"),
+    ("vi", "Bắc Kạn (tỉnh)"),
+    ("vi", "Lào Cai"),
+    ("vi", "Cao Bằng"),
+    ("vi", "Thái Nguyên"),
+    ("vi", "Điện Biên"),
+    ("vi", "Hòa Bình"),
 ]
 WIKI_SEARCHES = [
-    ("vi", '"dân tộc" tỉnh 2019 Tày Nùng Mông Kinh bảng'),
-    ("vi", '"Tổng điều tra dân số" 2019 "dân tộc" tỉnh thành'),
-    ("vi", 'dân tộc thiểu số theo tỉnh 2019'),
-    ("en", 'Vietnam province ethnic groups 2019 census table'),
+    ("vi", 'insource:"Tày" insource:"Nùng" insource:"Hà Giang" insource:"Lạng Sơn" insource:2019 insource:"Dao"'),
+    ("vi", '"dân tộc" "tỉnh" 2019 "Kinh" "Tày" "Nùng" "Mông" "Dao" "Hà Giang" "Cao Bằng" "Lạng Sơn"'),
 ]
 
 
@@ -119,25 +122,91 @@ def get(url: str, timeout: int = 30, limit: int = 300_000) -> str:
     return ""
 
 
+def pdf_pages(blob: bytes) -> list[str]:
+    import io
+    from pypdf import PdfReader
+    reader = PdfReader(io.BytesIO(blob))
+    log(f"      {len(reader.pages)} pages")
+    return [(page.extract_text() or "") for page in reader.pages]
+
+
+def search_pdf(url: str, limit: int = 80_000_000) -> None:
+    """Which pages of a PDF cross ethnic group with province, and what the
+    contents pages promise about ethnicity."""
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT,
+                                               "Accept": "application/pdf,*/*"})
+    try:
+        with urllib.request.urlopen(req, timeout=300) as resp:
+            blob = resp.read(limit)
+    except Exception as exc:  # noqa: BLE001
+        log(f"      !! {type(exc).__name__}: {str(exc)[:100]}")
+        return
+    log(f"      {len(blob):,} bytes")
+    if not blob.startswith(b"%PDF"):
+        log(f"      not a PDF: starts {blob[:60]!r}")
+        return
+    try:
+        pages = pdf_pages(blob)
+    except Exception as exc:  # noqa: BLE001
+        log(f"      !! cannot read: {type(exc).__name__}: {str(exc)[:100]}")
+        return
+    for n, page in enumerate(pages[:30], 1):
+        for line in page.splitlines():
+            if re.search(r"dân tộc|ethnic|tôn giáo|religion", line, re.IGNORECASE):
+                log(f"      p{n} contents: {line.strip()[:150]}")
+    shown = 0
+    for n, page in enumerate(pages, 1):
+        if all(t in page for t in PDF_ROW_TERMS) \
+                and sum(t in page for t in PDF_PROVINCE_TERMS) >= 3:
+            shown += 1
+            if shown <= 6:
+                body = "\n".join(line.rstrip() for line in page.splitlines() if line.strip())
+                log(f"      -- page {n} crosses ethnic group with province:\n{body[:1800]}")
+    log(f"      {shown} page(s) name {PDF_ROW_TERMS} beside three or more provinces")
+
+
 def probe_office() -> None:
     log("== route (a): the office and its co-publisher")
+    pdfs: list[str] = []
     for url in OFFICE_URLS:
-        if "unfpa.org" in url or "opendevelopmentmekong" in url:
-            html = get(url)
-            for href in sorted(set(re.findall(r'href="([^"]+)"', html))):
-                if re.search(r"\.pdf|\.xlsx?|census|dieu-tra|dan-so|ethnic|dan-toc",
-                             href, re.IGNORECASE):
-                    log(f"      -> {href[:140]}")
-            if "opendevelopmentmekong" in url and html:
-                try:
-                    for pkg in json.loads(html).get("result", {}).get("results", []):
-                        log(f"      pkg {pkg.get('name')}: {pkg.get('title', '')[:80]}")
-                        for res in pkg.get("resources", [])[:6]:
-                            log(f"          {res.get('format', '?'):6} {res.get('url', '')[:120]}")
-                except json.JSONDecodeError:
-                    log("      (not JSON)")
-        else:
+        if url.lower().endswith(".pdf"):
             head(url)
+            pdfs.append(url)
+            continue
+        html = get(url)
+        if "opendevelopmentmekong" in url and html:
+            try:
+                data = json.loads(html).get("result", {})
+            except json.JSONDecodeError:
+                log("      (not JSON)")
+                continue
+            for pkg in (data.get("results") if isinstance(data, dict) and "results" in data
+                        else [data]):
+                log(f"      pkg {pkg.get('name')}: {pkg.get('title', '')[:80]}")
+                notes = " ".join(str(pkg.get("notes", "")).split())
+                log(f"          notes: {notes[:600]}")
+                for res in pkg.get("resources", [])[:8]:
+                    log(f"          {res.get('format', '?'):6} {res.get('name', '')[:60]!r} "
+                        f"{res.get('url', '')}")
+                    if str(res.get("format", "")).upper() == "CSV":
+                        body = get(res.get("url", ""), limit=2500)
+                        for line in body.splitlines()[:8]:
+                            log(f"              {line[:200]}")
+            continue
+        for href in sorted(set(re.findall(r'href="([^"]+)"', html))):
+            if re.search(r"\.pdf|\.xlsx?|\.zip|dieu-tra|dan-so|dan-toc|census|ethnic",
+                         href, re.IGNORECASE) and "nso.gov.vn" in href:
+                log(f"      -> {href[:160]}")
+                if href.lower().endswith(".pdf") and re.search(
+                        r"toan-bo|dan-toc|53|ket-qua|results", href, re.IGNORECASE):
+                    pdfs.append(href)
+    seen: set[str] = set()
+    for url in pdfs:
+        if url in seen:
+            continue
+        seen.add(url)
+        log(f"  PDF {url}")
+        search_pdf(url)
 
 
 def kaggle_auth() -> dict[str, str]:
@@ -220,6 +289,10 @@ def probe_wiki(rows_shown: int = 3) -> None:
             continue
         found = tables(text)
         log(f"  [{lang}] {title!r}: {len(text):,} bytes, {len(found)} table(s)")
+        for t in found:
+            for row in t:
+                if any(c.strip() in ("Mường", "Tày") for c in row[:3]):
+                    log(f"     full row: {[c.strip()[:700] for c in row]}")
         for n, t in enumerate(found):
             if not t:
                 continue
@@ -243,11 +316,15 @@ def main() -> int:
     ap.add_argument("--probe", action="store_true",
                     help="reconnoitre the three routes and write nothing")
     ap.add_argument("--rows", type=int, default=3, help="sample rows per table, with --probe")
+    ap.add_argument("--routes", default="abc", help="which routes to probe: any of a, b, c")
     args = ap.parse_args()
     if args.probe:
-        probe_office()
-        probe_kaggle()
-        probe_wiki(args.rows)
+        if "a" in args.routes:
+            probe_office()
+        if "b" in args.routes:
+            probe_kaggle()
+        if "c" in args.routes:
+            probe_wiki(args.rows)
         return 0
     raise SystemExit("vietnam: the reader is not built yet; run --probe first")
 
