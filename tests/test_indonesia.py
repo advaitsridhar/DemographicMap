@@ -296,19 +296,19 @@ class InfoboxReligion(unittest.TestCase):
         out, printed = quiet(m.read_religion, UNCITED, "Kabupaten Nowhere")
         self.assertIsNone(out)
         self.assertIn("no citation", printed)
-        # A reference by a name the page never defines: kept where the name
-        # says what it cites, refused where it does not.
+        # A reference by a name the page never defines is no citation.
         garut = UNCITED.replace("[[Hindu]]}}", '[[Hindu]]<ref name="DUKCAPIL"/>}}')
-        reading, printed = quiet(m.read_religion, garut, "Kabupaten Garut")
-        self.assertEqual((reading["kind"], reading["year"], reading["broken"]),
-                         ("dukcapil", None, "dukcapil"))
-        fields = m.religion_fields(reading, "Kabupaten Garut")
-        self.assertIn("defined nowhere", fields["religion_note"])
-        self.assertIsNone(fields["religion_year"])      # record() drops a None field
-        nameless = UNCITED.replace("[[Hindu]]}}", '[[Hindu]]<ref name="AGAMA"/>}}')
-        out, printed = quiet(m.read_religion, nameless, "Kabupaten Nowhere")
+        out, printed = quiet(m.read_religion, garut, "Kabupaten Garut")
         self.assertIsNone(out)
-        self.assertIn("['agama'] defined nowhere", printed)
+        self.assertIn("['dukcapil'] defined nowhere", printed)
+        # A citation with no year in it dates nothing, and is not read.
+        undated = UNCITED.replace("[[Hindu]]}}", '[[Hindu]]<ref>{{cite web|url=https://'
+                                  'sumsel.bps.go.id/indicator/108/637/1/jumlah-penduduk-'
+                                  'menurut-agama.html|title=Jumlah Penduduk Menurut Agama'
+                                  '|accessdate=26 Januari 2021}}</ref>}}')
+        out, printed = quiet(m.read_religion, undated, "Kabupaten Banyuasin")
+        self.assertIsNone(out)
+        self.assertIn("no year", printed)
 
     def test_a_table_whose_rows_miss_its_total_uses_the_rows(self):
         off = SUMUT.replace("12.930.319", "12.900.000")

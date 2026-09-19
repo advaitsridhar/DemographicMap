@@ -528,22 +528,15 @@ def read_religion(wikitext: str, title: str) -> dict[str, Any] | None:
         return None
     definitions = ref_definitions(wikitext)
     cites = citations(value, definitions)
-    broken = ""
     if not cites:
-        # A reference used by a name the page never defines is a broken
-        # citation. Where the name itself says what was cited -- DUKCAPIL,
-        # KEMENAG, BPS -- that much is kept and the record says the
-        # reference is broken; a name that says nothing is no citation.
+        # A reference used by a name the page never defines is a citation
+        # to nothing: it has no year and no table behind it, whatever the
+        # name suggests.
         missing = unresolved(value, definitions)
-        named = [n for n in missing if re.search(r"dukcapil|capil|kemenag|bps|sp2010", n)]
-        if named:
-            cites = [f"<broken reference named {named[0]!r}>"]
-            broken = named[0]
-        else:
-            log(f"    {title}: religion figure carries no citation"
-                + (f" (named references {missing} defined nowhere)" if missing else "")
-                + "; not read")
-            return None
+        log(f"    {title}: religion figure carries no citation"
+            + (f" (named references {missing} defined nowhere)" if missing else "")
+            + "; not read")
+        return None
     rows, why, remark = religion_shares(religion_items(value))
     if why:
         log(f"    {title}: {why}; not read")
@@ -553,10 +546,16 @@ def read_religion(wikitext: str, title: str) -> dict[str, Any] | None:
     kind, year, what = described[0]
     years = [d[1] for d in described if d[1]]
     year = year or (max(years) if years else None)
+    if year is None:
+        # A composition with no year is a claim the map cannot date, and an
+        # editor's access date is when the page was read, not when the
+        # office counted. Not read, rather than stamped with a guess.
+        log(f"    {title}: the citation carries no year; not read")
+        return None
     if remark:
         log(f"    {title}: {remark}")
     return {"rows": rows, "kind": kind, "year": year, "cited": what,
-            "all": [d[2] for d in described], "broken": broken, "remark": remark}
+            "all": [d[2] for d in described], "remark": remark}
 
 
 def religion_fields(reading: dict[str, Any], title: str) -> dict[str, Any]:
@@ -567,10 +566,7 @@ def religion_fields(reading: dict[str, Any], title: str) -> dict[str, Any]:
     when = f" for {reading['year']}" if reading["year"] else ""
     sentences = [f"Population by religion{when} from {EXPLAINED[kind]}, as the Indonesian "
                  f"Wikipedia article '{title}' cites it.", CAVEAT[kind]]
-    if reading.get("broken"):
-        sentences.append(f"The article's reference, named '{reading['broken']}', is defined "
-                         "nowhere on the page, so the source is known by that name only.")
-    elif reading.get("remark"):
+    if reading.get("remark"):
         sentences.append(reading["remark"])
     note = " ".join(sentences)
     source = {"census2010": "BPS, 2010 Population Census, population by religion",
