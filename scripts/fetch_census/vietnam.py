@@ -132,10 +132,15 @@ PROVINCES: dict[str, list[str]] = {
 }
 # The volume's other units: the country and the six socio-economic
 # regions. Read and checked like a province, and not written.
-COUNTRY = ["Toàn quốc", "Cả nước", "Tổng số", "Việt Nam", "Total", "Whole country"]
+COUNTRY = ["Toàn quốc", "Cả nước", "Tổng số", "Việt Nam", "Total", "Whole country",
+           "Entire country"]
 REGIONS = ["Đồng bằng sông Hồng", "Trung du và miền núi phía Bắc",
            "Bắc Trung Bộ và Duyên hải miền Trung", "Tây Nguyên", "Đông Nam Bộ",
-           "Đồng bằng sông Cửu Long"]
+           "Đồng bằng sông Cửu Long",
+           "Red River Delta", "Northern Midlands and Mountains", "Northern midlands and "
+           "mountain areas", "North Central and Central Coastal Areas", "North Central area "
+           "and Central coastal area", "Central Highlands", "South East", "Southeast",
+           "Mekong River Delta", "Mekong Delta"]
 # The 54 groups as the 2019 list spells them, with the spellings the
 # volume or the literature also use; matched after folding, so "Gié
 # Triêng", "Giẻ Triêng" and "Gié-Triêng" are one key. A row with any other
@@ -224,20 +229,31 @@ def label_of(text: str) -> str:
 
 
 def classify(label: str) -> tuple[str, str]:
-    """("province", name) | ("country", key) | ("region", key) | ("group", key)."""
-    key = fold(UNIT_PREFIX.sub("", label))
-    if key in PROVINCE_KEYS:
-        return "province", PROVINCE_KEYS[key]
-    if key in COUNTRY_KEYS:
-        return "country", key
-    if key in REGION_KEYS:
-        return "region", key
-    key = fold(label)
-    if key in GROUP_KEYS:
-        return "group", key
-    raise SystemExit(f"vietnam: the row label {label!r} is neither a unit nor one of "
-                     "the 54 groups this reader knows; the table changed or the "
-                     "text extraction garbled it")
+    """("province", name) | ("country", key) | ("region", key) | ("group", key)
+    | ("other", key).
+
+    The volume prints its units bilingually -- "TOÀN QUỐC - ENTIRE COUNTRY",
+    "Đồng bằng sông Hồng - Red River Delta" -- so the whole label is tried
+    first (a province's own name can hold a dash: "Bà Rịa - Vũng Tàu") and
+    then each half. A label that is none of these and not one of the 54
+    groups is a unit this reader does not name: it is read and checked like
+    the others, logged, and never written; if it was a province in an
+    unexpected spelling, the count of provinces refuses the run and the log
+    says which label to add.
+    """
+    parts = [label, *[p.strip() for p in re.split(r"\s[-–]\s", label) if p.strip()]]
+    for part in parts:
+        key = fold(UNIT_PREFIX.sub("", part))
+        if key in PROVINCE_KEYS:
+            return "province", PROVINCE_KEYS[key]
+        if key in COUNTRY_KEYS:
+            return "country", key
+        if key in REGION_KEYS:
+            return "region", key
+    for part in parts:
+        if fold(part) in GROUP_KEYS:
+            return "group", fold(part)
+    return "other", fold(label)
 
 
 def is_table_2(page: str) -> bool:
@@ -270,6 +286,9 @@ def parse(pages: list[str]) -> list[dict[str, Any]]:
                     raise SystemExit(f"vietnam: {current['name']!r} prints {label!r} twice")
                 current["groups"][label] = n[0]
                 continue
+            if kind == "other":
+                log(f"  page {number}: {label!r} is a unit this reader does not name; "
+                    "read and checked, not written")
             current = {"kind": kind, "name": key, "label": label, "total": n[0],
                        "male": n[1], "female": n[2], "groups": {}, "page": number}
             units.append(current)

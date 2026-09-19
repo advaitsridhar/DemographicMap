@@ -58,15 +58,24 @@ class Labels(unittest.TestCase):
         self.assertEqual(v.classify("TOÀN QUỐC")[0], "country")
         self.assertEqual(v.classify("Đồng bằng sông Cửu Long")[0], "region")
 
+    def test_a_bilingual_unit_label_is_read_by_either_half(self):
+        self.assertEqual(v.classify("TOÀN QUỐC - ENTIRE COUNTRY")[0], "country")
+        self.assertEqual(v.classify("Đồng bằng sông Hồng - Red River Delta")[0], "region")
+        self.assertEqual(v.classify("Bà Rịa - Vũng Tàu"), ("province", "Bà Rịa–Vũng Tàu"))
+        self.assertEqual(v.classify("Bru - Vân Kiều")[0], "group")
+
     def test_groups_match_across_the_spellings_in_use(self):
         for label in ("Gié Triêng", "Giẻ Triêng", "Gié-Triêng", "Raglay", "Ra Glai",
                       "H'Mông", "Mông", "Bru Vân Kiều", "Ê  Đê", "Không xác định"):
             self.assertEqual(v.classify(v.label_of(label))[0], "group", label)
 
-    def test_an_unknown_label_refuses(self):
-        with self.assertRaises(SystemExit) as cm:
-            v.classify("Quận Ba Đình")
-        self.assertIn("neither a unit nor", str(cm.exception))
+    def test_an_unknown_label_is_a_unit_of_its_own_and_never_a_group(self):
+        self.assertEqual(v.classify("Vùng khác - Some region")[0], "other")
+        page = PAGE_A.replace(" Hà Nội 8 053 663", " Vùng khác - Some region 8 053 663")
+        units = v.parse([page])
+        self.assertEqual([u["kind"] for u in units], ["other"])
+        self.assertEqual(units[0]["groups"]["Kinh"], 7945411)
+        self.assertEqual(v.build(units), [])
 
     def test_the_sixty_three_provinces_are_listed_once_each(self):
         self.assertEqual(len(v.PROVINCES), 63)
