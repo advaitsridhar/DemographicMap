@@ -359,6 +359,71 @@ function thePartialListAppliesWhenTheStyleLoadsAfterIt() {
                          "the declared list reaches the layer once it exists");
 }
 
+/* An estimate is drawn as figures, with its caveat in one sentence.
+ *
+ * The first rendering treated an estimate as a gap and printed its whole note
+ * -- a paragraph per panel, three panels per unit -- with the shares folded
+ * away under it. The owner's words: "why don't you just publish the estimates
+ * with a note? that giant block of text is so annoying". So: the same stacked
+ * bar and list a reading gets, a badge naming the status, the note's first
+ * sentence in the open, and the rest behind the "i" where every other
+ * composition keeps its note.
+ */
+function estimatesAreDrawnAsFiguresWithOneSentence() {
+  const rendered = [];
+  const container = {
+    set innerHTML(html) { rendered.push(html); },
+    get innerHTML() { return rendered[rendered.length - 1] || ""; },
+    scrollTop: 0,
+    querySelectorAll: () => [],
+  };
+  // palette.js reads the page's theme stamp to pick a categorical colour, and
+  // the harness has no page: give it a bare element that has none stamped.
+  const context = vm.createContext({
+    window: {}, console,
+    document: { documentElement: { getAttribute: () => null } },
+    matchMedia: () => ({ matches: false }),
+  });
+  context.window.matchMedia = context.matchMedia;
+  vm.runInContext(source("data.js"), context);
+  vm.runInContext(source("palette.js"), context);
+  context.window.DataStore = { country: () => null, get: () => null, children: () => [] };
+  vm.runInContext(source("dashboard.js"), context);
+
+  const first = "Modelled from the 2000 census home-language table.";
+  const rest = "The Tai groups are assigned by region and cannot be separated, and the Thai Chinese are counted as Thai.";
+  context.window.Dashboard.render({
+    id: "THA-TEST", level: "admin1", name: "Amnat Charoen", country: "THA",
+    ethnicity: { status: "modelled", census_year: 2000,
+                 estimate: [{ group: "Isan (Lao)", pct: 97.5 }, { group: "Khmer", pct: 2.5 }],
+                 note: `${first} ${rest}` },
+  }, container);
+  const html = container.innerHTML;
+
+  assert.ok(html.includes('class="stack-bar"'), "an estimate gets the stacked bar a reading gets");
+  assert.ok(/Isan \(Lao\)<\/span>\s*<span class="pct">97\.5%/.test(html),
+            "the estimate's shares are listed like a reading's");
+  assert.ok(/chip-estimate[^>]*>[^<]*Modelled</.test(html), "the badge names the status");
+  assert.ok(html.includes(`class="estimate-why">${first}<`), "the note's first sentence is in the open");
+  // The rest of the note appears exactly once, and only inside the "i".
+  const at = html.indexOf(rest);
+  assert.ok(at > 0 && html.indexOf(rest, at + 1) === -1, "the rest of the note is printed once");
+  assert.ok(html.lastIndexOf("data-info-text=", at) > html.lastIndexOf("</h3>", at),
+            "and that once is behind the heading's info button");
+  assert.ok(!/<div class="gap-note">[^]*?Modelled/.test(html) || !html.includes(`<strong>Estimated, not published.</strong> ${first}`),
+            "the estimate is not also printed as a gap paragraph");
+  assert.ok(/class="panel-year">2000</.test(html), "the estimate's own year is shown");
+
+  // An estimate with no shares is still a gap that says why.
+  rendered.length = 0;
+  context.window.Dashboard.render({
+    id: "THA-TEST-2", level: "admin1", name: "Nowhere", country: "THA",
+    ethnicity: { status: "modelled", estimate: [], note: "Nothing could be modelled here." },
+  }, container);
+  assert.ok(container.innerHTML.includes('class="gap-note"'), "no shares, so a gap note");
+  assert.ok(container.innerHTML.includes("Nothing could be modelled here."));
+}
+
 function estimatesAreGapsInTheBrowser() {
   // An estimate is a gap that carries a guess. gapStatus() falls through to
   // "present" for a status it has not seen, so an unregistered "modelled"
@@ -392,5 +457,6 @@ function estimatesAreGapsInTheBrowser() {
   groundInNoUnitReadsAsLandRatherThanSea();
   thePartialListAppliesWhenTheStyleLoadsAfterIt();
   estimatesAreGapsInTheBrowser();
+  estimatesAreDrawnAsFiguresWithOneSentence();
   console.log("frontend regression tests passed");
 })().catch((error) => { console.error(error); process.exitCode = 1; });

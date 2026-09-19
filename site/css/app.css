@@ -632,6 +632,11 @@ dialog p, dialog li { font-size: .8rem; line-height: 1.6; color: var(--ink-secon
   border: 1px solid var(--hairline); border-radius: 999px;
 }
 .chip-basis-partial { color: var(--status-serious); border-color: var(--status-serious); }
+/* An estimate's badge sits before the one sentence that says what it is;
+   the badge takes the status colour the map paints the unit in. */
+.estimate-line { display: flex; gap: .45rem; align-items: baseline; font-size: .72rem;
+  color: var(--ink-secondary); line-height: 1.45; }
+.chip-estimate { flex: none; background: transparent; }
 
 /* A heading that carries an "i" has to lay the two out on one line without the
    button inheriting the heading's letter-spacing. */

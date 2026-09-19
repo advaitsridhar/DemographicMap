@@ -247,21 +247,63 @@ window.Dashboard = (function () {
     return note ? `${note} ${said}` : said;
   }
 
+  /* An estimate's shares, or null when the value is not an estimate.
+   *
+   * An estimate is a gap in the data model -- its shares sit under `estimate`,
+   * never under the field, so nothing that sums or ranks readings can mistake
+   * it for one. On the page it is a set of figures with a caveat, and it is
+   * drawn as figures: the same bar and list a reading gets, a badge that says
+   * "modelled" or "derived", and one sentence of the note in the open. The
+   * whole note stays behind the "i". Printing it in full under every panel
+   * was the owner's complaint: "that giant block of text is so annoying".
+   */
+  function estimateRows(value) {
+    if (!value || typeof value !== "object" || !Array.isArray(value.estimate)) return null;
+    const status = gapStatus(value);
+    if (status !== "modelled" && status !== "derived") return null;
+    const rows = value.estimate.filter((r) => r && r.group && typeof r.pct === "number");
+    return rows.length ? rows : null;
+  }
+
+  /** The first sentence of a note, which is where an adapter says what the
+   *  figure is; the rest is how it was built and belongs behind the "i". */
+  function firstSentence(text) {
+    if (!text) return "";
+    const m = /^.*?[.!?](?=\s|$)/s.exec(text.trim());
+    const first = m ? m[0] : text.trim();
+    return first.length > 220 ? first.slice(0, 217).trimEnd() + "…" : first;
+  }
+
+  function estimateLine(value, note) {
+    const meta = window.Palette.status(gapStatus(value));
+    const word = gapStatus(value) === "derived" ? "Derived" : "Modelled";
+    return `<p class="basis-line estimate-line">` +
+      `<span class="chip-basis chip-estimate" style="color:${meta.color};border-color:${meta.color}"` +
+      ` title="${esc(meta.label)}">${meta.icon} ${word}</span> ` +
+      `<span class="estimate-why">${esc(firstSentence(note))}</span></p>`;
+  }
+
   function compositionPanel(title, value, note, year) {
+    const est = estimateRows(value);
+    if (est) {
+      note = value.note || note;
+      year = value.census_year || value.year || year;
+    }
     // A reference year only belongs on a value. Printing one beside "not
     // collected" implies a measurement that was never taken.
-    const showYear = year && !isGap(value);
+    const showYear = year && (est || !isGap(value));
     const parts = [`<section class="panel"><div class="panel-head">` +
-                   `<h3>${esc(title)}${infoDot(noteFor(title, value, note),
+                   `<h3>${esc(title)}${infoDot(noteFor(title, est || value, note),
                                    `About the ${title.toLowerCase()} figures`)}</h3>` +
                    (showYear ? `<span class="panel-year">${esc(year)}</span>` : "") + `</div>`];
 
-    if (isGap(value)) {
+    if (isGap(value) && !est) {
       parts.push(gapBlock(value, title));
       return parts.join("") + "</section>";
     }
+    if (est) parts.push(estimateLine(value, note));
 
-    const squared = toHundred(value);
+    const squared = toHundred(est || value);
     const value2 = squared.rows;
     const { shown } = foldGroups(value2);
     const total = shown.reduce((sum, r) => sum + r.pct, 0);
