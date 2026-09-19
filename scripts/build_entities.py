@@ -67,6 +67,12 @@ ADAPTER_FILES = [
     # assignment, every province a modelled estimate. Its religion file
     # (thailand_province.json) is a census transcription and sits lower.
     "thailand_ethnicity.json",
+    # Taiwan, by the owner's decision of 19 September 2026: the 2020 census's
+    # main home language as a composition, ethnicity and religion as modelled
+    # estimates from register counts, a survey and a building registry. Part
+    # census and part model, so it sits with the surveys, below every census
+    # file read from an office.
+    "taiwan_county.json",
     # Japan, by the owner's decision of 19 September 2026: nationality read
     # from the 2020 census as a composition, religion and language as
     # modelled estimates. Part survey and part model, so it sits with the
@@ -235,6 +241,11 @@ ADAPTER_HINTS: dict[str, str] = {
     "KOR": "Hankook Research 2025 pooled survey (religion) by residence region, each "
            "of the seven regions' figure carried by its provinces: "
            "python -m scripts.fetch_census.korea_survey",
+    "TWN": "2020 census main language by county (DGBAS Table 2-5), ethnicity modelled from "
+           "the household register's indigenous count, the Hakka Affairs Council's 2021 "
+           "survey and a uniform Hoklo-mainlander split, religion modelled from Pew's 2023 "
+           "survey tilted by the Ministry of the Interior's temple and church registry: "
+           "python -m scripts.fetch_census.taiwan",
     "JPN": "2020 census nationality by prefecture (as ethnicity, labelled nationality), "
            "religion modelled from NHK's 2018 ISSP survey tilted by the Agency for "
            "Cultural Affairs' adherent counts, language modelled from nationality; "

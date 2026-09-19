@@ -211,8 +211,73 @@ SAMPLE_2015 = """== 民族 ==
 """
 
 
+LIST = """== Northern ==
+{| class="wikitable"
+! rowspan=2 | Ethnic groups !! colspan=2 | Beijing !! colspan=2 | Tianjin !! colspan=2 | Inner Mongolia* (Western leagues)
+|-
+! Number !! % !! Number !! % !! Number !! %
+|-
+| [[Han Chinese|Han]] || 20,845,166 || 95.2 || 13,422,528 || 96.8 || 11,884,860 || 88.2
+|-
+| [[Manchu]] || 469,995 || 2.1 || 128,430 || 0.9 || 125,724 || 0.9
+|-
+| [[Mongols|Mongol]] || 123,340 || 0.6 || 41,736 || 0.3 || 1,276,842 || 9.5
+|-
+| [[Hui people|Hui (Muslim)]] || 274,112 || 1.3 || 166,920 || 1.2 || 145,492 || 1.1
+|-
+| [[Miao people|Miao]] || 18,054 || 0.1 || 12,975 || 0.1 || 5,081 ||
+|-
+| Undistinguished || 1,000 || || 500 || || 200 ||
+|-
+! 2020 Census
+| 21,893,095 || 13,866,009 || 13,480,216
+|}
+"""
+
+NUMBERED = """== 2020年第七次人口普查 ==
+数据来自《中国人口普查年鉴·2020》
+{| class="wikitable sortable" style="text-align: right;"
+|+
+!序号
+!民族
+!人口数
+!占全省少数民族<br>人口比例（%）
+!占全省人口<br>比例（%）
+!占该民族人口<br>比例（%）
+|-
+|
+!合计
+|47,209,277
+|
+|100.00000
+|3.35
+|-
+|1
+![[汉族]]
+|31,573,245
+|
+|66.87932
+|2.46
+|-
+|2
+![[彝族]]
+|5,071,002
+|32.4
+|10.74153
+|51.7
+|-
+|3
+![[其他民族]]
+|10,565,030
+|67.6
+|22.37915
+|1.0
+|}
+"""
+
+
 def read(wikitext: str, name: str = "X", lang: str = "en") -> dict:
-    rec = cw.build_one(name, [(lang, "X", wikitext)])
+    rec = cw.build_one(name, [(lang, "X", wikitext, True)])
     assert rec is not None
     return rec
 
@@ -333,16 +398,78 @@ class TheChineseEdition(unittest.TestCase):
         self.assertIn("folded in", rec["ethnicity_note"])
 
     def test_the_later_census_wins_whichever_edition_carries_it(self):
-        rec = cw.build_one("Hebei Province", [("en", "Hebei", TITLE_IN_CELL),
-                                              ("zh", "河北省", UNLISTED)])
+        rec = cw.build_one("Hebei Province", [("en", "Hebei", TITLE_IN_CELL, True),
+                                              ("zh", "河北省", UNLISTED, True)])
         self.assertEqual(rec["ethnicity_year"], 2020)
         self.assertIn("zh.wikipedia.org", rec["sources"][0]["url"])
         # The same year: the table naming more nationalities is read...
-        rec = cw.build_one("X", [("en", "X", TRANSPOSED), ("zh", "X", TRADITIONAL)])
+        rec = cw.build_one("X", [("en", "X", TRANSPOSED, True), ("zh", "X", TRADITIONAL, True)])
         self.assertIn("zh.wikipedia.org", rec["sources"][0]["url"])
         # ...and on a full tie the English article is.
-        rec = cw.build_one("X", [("zh", "X", TRANSPOSED), ("en", "X", TRANSPOSED)])
+        rec = cw.build_one("X", [("zh", "X", TRANSPOSED, True), ("en", "X", TRANSPOSED, True)])
         self.assertIn("en.wikipedia.org", rec["sources"][0]["url"])
+
+    def test_a_numbered_table_is_read_from_its_nationality_column(self):
+        # Yunnan's list page numbers its rows, and prints three shares of
+        # which only the share of the whole province is the composition.
+        rec = read(NUMBERED, "Yunnan Province", "zh")
+        self.assertEqual(rec["ethnicity_year"], 2020)
+        rows = by_group(rec)
+        self.assertEqual(rows["Han Chinese"]["count"], 31_573_245)
+        self.assertEqual(rows["Yi"]["pct"], 10.7)
+        self.assertEqual(rows["Other ethnic groups"]["pct"], 22.4)
+        self.assertEqual(cw.columns(["序号", "民族", "人口数", "占全省少数民族人口比例（%）",
+                                     "占全省人口比例（%）", "占该民族人口比例（%）"], 2020),
+                         (2, 4))
+
+
+class TheListOfDivisions(unittest.TestCase):
+    def test_a_division_is_read_from_its_column_pair_and_the_census_total(self):
+        rec = cw.build_one("Tianjin Municipality", [("en", "List", LIST, False)], "Tianjin")
+        self.assertEqual(rec["ethnicity_year"], 2020)
+        rows = by_group(rec)
+        self.assertEqual(rows["Han Chinese"]["count"], 13_422_528)
+        self.assertEqual(rows["Han Chinese"]["pct"], 96.8)
+        self.assertEqual(rows["Hui"]["count"], 166_920)
+        self.assertNotIn("Hui (Muslim)", rows)
+        # 13,866,009 less the five nationalities listed (13,772,589) is the
+        # remainder, with the undistinguished folded in.
+        self.assertEqual(rows["Other ethnic groups"]["count"], 13_866_009 - 13_772_589)
+        self.assertEqual(sum(r["count"] for r in rec["ethnicity"]), 13_866_009)
+        self.assertIn("largest nationalities", rec["ethnicity_note"])
+        self.assertIn("Undistinguished", rec["ethnicity_note"])
+
+    def test_beijing_from_the_list_carries_the_2010_communique_for_comparison(self):
+        rec = cw.build_one("Beijing Municipality", [("en", "List", LIST, False)], "Beijing")
+        self.assertEqual(by_group(rec)["Han Chinese"]["pct"], 95.2)
+        self.assertIn("For comparison", rec["ethnicity_note"])
+
+    def test_a_half_of_inner_mongolia_is_not_the_region(self):
+        self.assertIsNone(cw.build_one("Inner Mongolia Autonomous Region",
+                                       [("en", "List", LIST, False)], "Inner Mongolia"))
+        self.assertEqual(cw.division_columns(["Ethnic groups", "Guangxi*", "Tibet*",
+                                              "Inner Mongolia* (4 Eastern leagues)"]),
+                         {"Guangxi": 1, "Tibet Autonomous Region": 2})
+
+    def test_a_divisions_own_table_beats_the_list_on_the_same_census(self):
+        rec = cw.build_one("Tianjin Municipality",
+                           [("en", "List", LIST, False), ("en", "Tianjin", TRANSPOSED, True)],
+                           "Tianjin")
+        self.assertEqual(rec["sources"][0]["url"], "https://en.wikipedia.org/wiki/Tianjin")
+        # ...but not an older one.
+        rec = cw.build_one("Tianjin Municipality",
+                           [("en", "List", LIST, False), ("en", "Tianjin", AFTER_TEMPLATE, True)],
+                           "Tianjin")
+        self.assertEqual(rec["ethnicity_year"], 2020)
+
+    def test_a_table_that_refuses_gives_way_to_the_next(self):
+        twice = TRANSPOSED.replace("[[Manchu]]", "[[Han Chinese]]")   # Han listed twice
+        rec = cw.build_one("Tianjin Municipality",
+                           [("en", "List", LIST, False), ("en", "Tianjin", twice, True)],
+                           "Tianjin")
+        self.assertEqual(rec["sources"][0]["url"], "https://en.wikipedia.org/wiki/List")
+        with self.assertRaises(SystemExit):
+            cw.build_one("X", [("en", "X", twice, True)])
 
 
 class CountsBeatPrintedShares(unittest.TestCase):
@@ -369,13 +496,13 @@ class Refusals(unittest.TestCase):
             read(wrong)
 
     def test_an_article_without_the_table_is_not_written(self):
-        self.assertIsNone(cw.build_one("X", [("en", "X", "== Demographics ==\nProse only.\n")]))
+        self.assertIsNone(cw.build_one("X", [("en", "X", "== Demographics ==\nProse only.\n", True)]))
 
     def test_a_time_series_is_not_a_composition(self):
-        self.assertIsNone(cw.build_one("X", [("en", "X", SERIES)]))
+        self.assertIsNone(cw.build_one("X", [("en", "X", SERIES, True)]))
 
     def test_a_table_that_is_not_a_census_is_passed_over(self):
-        self.assertIsNone(cw.build_one("X", [("zh", "X", SAMPLE_2015)]))
+        self.assertIsNone(cw.build_one("X", [("zh", "X", SAMPLE_2015, True)]))
 
     def test_a_nationality_listed_twice_is_refused(self):
         twice = PLAIN.replace("[[Manchu]] || 452,765 || 1.83%", "[[Mongols|Mongol]] || 452,765 || 1.83%")

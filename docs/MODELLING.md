@@ -353,6 +353,35 @@ predict, so the estimate carries no `backtest` key and says so rather than
 inventing one. `docs/SOURCES.md`, "Japan, resolved by the owner's decision",
 records what was read.
 
+**Taiwan is a Tier 1 case under the same decision, and the largest.** Its 22
+counties and cities, 23.6 million people, carried nothing for any of the
+three fields: the census asks language and not the other two, and no
+Wikipedia table gave a composition. On 19 September 2026 the owner decided
+they should carry what official sources can say, labelled for what it is.
+`scripts/fetch_census/taiwan.py` writes one real composition and two
+estimates. Language is the 2020 census's *main language currently used*
+(DGBAS results release, Table 2-5), a single-answer question over residents
+of ROC nationality aged 6 and over, written as a list under a
+`language_basis` that says so; the reader rebuilds the national row from
+the counties and refuses a table that disagrees by more than half a point.
+Ethnicity is `modelled` (`tier1-register-counts-plus-survey-share-plus-uniform-split`)
+from the household register's count of people holding indigenous status
+over the same month's registered population (a count), the Hakka Affairs
+Council's 2021 survey share of each county meeting the Hakka Basic Act
+definition (a survey), and the remainder split between Hoklo and mainlander
+in the same survey's national single-identification ratio applied to every
+county alike -- the assumption that makes the whole thing an estimate, since
+it says nothing about where mainlanders settled. Religion is `modelled`
+(`tier1-national-prior-tilted-by-religious-buildings`) from Pew's 2023
+national self-identification survey tilted by the Ministry of the Interior's
+registry of temples and churches by county, used only as a relative signal
+with the same threefold clip, absolute bounds on Christianity and "other",
+and no religion held at the national figure. **No backtest is possible** for
+either estimate, since no county-level self-identification figure exists,
+and neither record carries a `backtest` key. `docs/SOURCES.md`, "Taiwan,
+resolved by the owner's decision", records what was read and where each
+route failed.
+
 **Thailand's ethnicity is the second case under the same decision**, and a
 different shape of model. The census asks no ethnicity question, the
 Ethnolinguistic Maps of Thailand that would answer it by province are behind

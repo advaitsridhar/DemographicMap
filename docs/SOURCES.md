@@ -2725,10 +2725,10 @@ Having a workbook is not having the fields. Of the largest remaining:
 * **Sudan** — `Nationality_CensusGeog` holds two columns, "Born outside Sudan
   and South Sudan" and "Unknown", together 1.8% of the population. Not a
   composition.
-* **Indonesia** — already recorded above, and worth repeating because it was
-  briefly mistaken for an opening: its workbook carries a four-bucket first
-  language split and no religion or ethnicity. The BPS key is still what
-  Indonesia needs.
+* **Indonesia** — its workbook carries a four-bucket first language split
+  and no religion or ethnicity, and was briefly mistaken for an opening. What
+  Indonesia carries now came from elsewhere: see *Indonesia: what BPS's
+  refusal left reachable* below.
 
 ### Colombia: an answer people gave, and a sheet that adds up and is not read
 
@@ -3959,87 +3959,144 @@ What would open Nigeria: a published MICS or DHS tabulation by state, from
 either office; or an explicit decision that this map may carry weighted survey
 estimates, labelled as such, and the machinery to compute them.
 
-### Indonesia: published, and not fetchable
+### Indonesia: what BPS's refusal left reachable, read from the provinces' own pages
 
-Indonesia is 284 million people and the largest population this map still has
-no subnational religion for. The data exists: BPS publishes *Population by
-Regency/Municipality and Religion* on each provincial site, one table covering
-that province's kabupaten. It could not be fetched, and the reason is worth
-recording precisely, because "unreachable" has meant four different things
-here and only one of them was about Indonesia.
+Indonesia is 284 million people, 34 provinces and 518 second-level shapes on
+this map, and until 19 September 2026 every one of them carried nothing. The
+reason is kept below, because "unreachable" has meant four different things in
+this file and only one of them was about Indonesia. On that day the owner
+decided the country was to be resolved from every reachable official and
+secondary source, each figure cited for what it is, and this section says what
+that produced: `scripts/fetch_census/indonesia.py`, writing
+`data/processed/indonesia.json`, 491 records.
 
-* `bps.go.id`, `www.bps.go.id` and the provincial `*.bps.go.id` sites answer
-  **HTTP 403** to a request carrying this project's User-Agent. Not a
-  certificate problem -- their DigiCert and Google chains are valid and cover
-  the hosts. The block is deliberate, and getting past it means claiming to be
-  a browser, which is circumventing a refusal rather than reading a
-  publication. This project does not do that.
-* `webapi.bps.go.id` **works**. It answered
-  `{"status":"Error","message":"Parameter Key is Missing."}` -- reachable,
-  functioning, and wanting a free registered key. This is BPS's own sanctioned
-  programmatic interface and is the route to take when a key exists.
-* `sp2010.bps.go.id`, the 2010 census service, is reachable and serves **one
-  identical 52,849-byte HTML document at every URL**. Its root, a table path, a
-  topic path, `/static/js/app.js`, `/static/css/app.css` and a deliberately
-  nonsense path all return the same bytes. Its apparent navigation and script
-  list are that document's own template, so searching it for an API endpoint
-  searches the same page again. There is nothing behind it to read.
-* `satudata.kemenag.go.id` (Ministry of Religion) and `data.go.id` time out.
-* HDX carries Indonesia's subnational **population** but not religion, so the
-  mirror that made Bangladesh possible does not help here.
+**What was measured about BPS, and still holds.**
 
-The honest state is therefore: the census exists, is public, and is not
-available to an automated reader without a key. Indonesia stays an explicit
-gap until one exists -- 284 million people uncoloured, with the reason written
-down, rather than a figure assembled from somewhere it should not have come
-from.
+* `bps.go.id`, `www.bps.go.id` and every provincial and regency `*.bps.go.id`
+  host answer **HTTP 403** to a clean client -- a deliberate block, not a
+  certificate problem, and getting past it would mean claiming to be a
+  browser. This project does not do that.
+* `webapi.bps.go.id` works and answers `Parameter Key is Missing`: BPS's own
+  sanctioned interface, wanting a free registered key that has not been
+  supplied. That stays the right route the day a key exists.
+* `sp2010.bps.go.id`, the 2010 census service, serves one identical 52,849-byte
+  page at every URL. There is nothing behind it to read.
+* `satudata.kemenag.go.id` and `data.go.id` time out. HDX carries Indonesia's
+  subnational population and no religion. Kaggle's catalogue, searched on the
+  runner for "indonesia ethnic", "sensus penduduk 2010 suku", "indonesia
+  census", "indonesia religion", "penduduk agama kabupaten" and "indonesia
+  province demographics", holds a five-accent speech corpus, a 2.8 KB
+  "Indonesian Demography" file and a 1.6 KB "Religion in Indonesia" file, and
+  no census table. GitHub's code search finds no mirror of the BPS tables.
 
-Re-confirmed on 11 September 2026 against a *regency* site rather than a
-provincial one: `metrokota.bps.go.id` answers **HTTP 403** to the runner
-exactly as the provincial hosts do, so the block is the estate's and not one
-tier of it. Two further probes that day were wasted and are recorded so the
-next reader does not repeat them: `data.humdata.org`'s search page is rendered
-in the browser, and its CKAN API returns JSON, so `probe_links` -- which
-extracts links from HTML -- reports "0 matching links" for both and that is a
-fact about the tool, not about HDX. The HDX bullet above already stood on a
-real check.
+**What is reachable: the Indonesian Wikipedia, through the MediaWiki API.**
+Both language editions were inspected article by article (`wiki_census
+--inspect`, a dozen dispatches in the branch's run-log history), and the
+Indonesian one carries two things the office does not let a reader fetch.
 
-**What the owner's manual downloads showed.** Five BPS CSVs were supplied on
-the same day, and they resolve two questions.
+*Ethnicity by province -- the 2010 census, transcribed.* BPS published
+*Kewarganegaraan, Suku Bangsa, Agama, dan Bahasa Sehari-hari Penduduk
+Indonesia: Hasil Sensus Penduduk 2010* (2011), and each province's Indonesian
+article (`Sumatera Utara`, `Jawa Tengah`, `Nusa Tenggara Timur`, ...)
+transcribes that province's column as a table headed "No | Suku | Jumlah 2010
+| %" -- with the header written six different ways across the articles: a
+count and a percentage; two censuses side by side (Jambi, Jawa Barat); the
+percentages of four censuses before the 2010 count (Jakarta); a citation
+falling out of the caption into a row of its own (Kalimantan Timur, Utara).
+The reader finds the table by its content, reads the counts, recomputes the
+shares against the table's own total, and treats the printed percentages as a
+check. **32 of the 34 provinces** carry such a table, `ethnicity_year` 2010;
+`Kepulauan Bangka Belitung` and `Sulawesi Barat` do not, in either edition,
+and stay empty for the field with a note saying so.
 
-* *Jumlah Penduduk Menurut Kecamatan dan Agama yang dianut, 2025* is the right
-  table in the right shape -- counts, six religions, at **sub-district** level,
-  finer than the kabupaten this section is waiting for. The copy supplied
-  covers one kota: Metro, in Lampung, five kecamatan and 173,746 people against
-  ~7,200 kecamatan and 284 million. It confirms the table is published per
-  regency and is reachable by a person in a browser; it does not make the
-  estate reachable by a reader.
-* The four language tables are **not** usable, and the reason is about the
-  question rather than the coverage. *Bahasa yang Pertama Kali Dikuasai* is a
-  clean three-way partition of all 38 provinces summing to 100.00, but its
-  categories are Bahasa Indonesia / Bahasa Daerah / Bahasa Asing -- a *kind* of
-  language, not a language. Knowing that Central Java is 92.84% "a regional
-  language" is not knowing it is Javanese, and this map's language field holds
-  named groups. *Kemampuan Berbahasa Indonesia* measures a skill rather than a
-  composition; *Penggunaan Bahasa Daerah* by age has no geography; the same by
-  province is a binary use/do-not-use, a different question again. The owner
-  decided on 11 September 2026 to leave Indonesia's language field an explicit
-  gap rather than fill it with a composition of language types.
+The labels are BPS's and not all of them are peoples. Beside Jawa, Sunda and
+Batak the census tabulates regional bundles -- "asal Sulawesi lainnya", "asal
+NTT", "asal Sumatera Selatan", "Asli Papua" -- and those are carried under a
+regional label (`Other Sulawesi peoples`, `East Nusa Tenggara peoples`,
+`Papuan`) rather than invented into a people. The group tree places each under
+the Austronesian peoples they are, and `Chinese Indonesian` under the Han and
+Sinitic peoples; `Moluccan`, whose northern peoples are Papuan, is left
+unplaced. One row is carried against its label: Nusa Tenggara Timur's article
+prints 14.5% "asal Kalimantan", a share of Kalimantan migrants that no census
+of the province supports and that is the size of the Sikka, Ende, Nagekeo and
+Kedang peoples the table otherwise omits; it is kept in `Other ethnic groups`
+with the article's wording in the note. Banten's article folds the census's
+Bantenese into its Sunda row -- 4.66 million people nationally, nearly all of
+them in Banten -- and its note says so; the national check below is how that
+was found.
 
-**The route that would work.** BPS publishes the religion table per province,
-one table covering that province's kabupaten, and a person in a browser can
-download it -- which is how the Metro file arrived. Thirty-four downloads would
-close a 284-million-person gap at kabupaten level without a key and without
-pretending to be a browser. That is a smaller ask than it looks and it is the
-first thing to try if the WebAPI key does not materialise.
+Tables that needed a decision have it written into the province's note in one
+sentence. Riau's prints a total of 6,407,842 under rows adding to 5,499,561,
+which is what the 2010 census counted (5,538,367); the rows are the
+denominator. Kalimantan Tengah's, Sumatera Selatan's, Jawa Barat's,
+Kalimantan Barat's and Kalimantan Timur's rows miss their printed totals by
+0.3%, 0.7%, 0.1%, 0.3% and two people; the rows are the denominator there too.
+Aceh's, Kepulauan Riau's and Yogyakarta's have no total row and the rows' sum
+stands as one. Kalimantan Timur's table is for the province as it is since
+Kalimantan Utara left it in 2012, and the two are checked against the 2010
+population as a pair.
 
-Two of those bullets were mistakes before they were findings, and both are the
-same mistake. `sp2010.bps.go.id` was described in this repository as serving
-the 2010 tables in plain HTML before anyone had checked that it served
-anything; and `bps.go.id` was first recorded as unreachable on the strength of
-a 403 from a sandbox whose egress proxy blocks it, exactly as `bbs.gov.bd` was.
-A source is only as absent as the search behind it, and a search is only as
-good as the thing it actually fetched.
+*The national check.* The English article *Ethnic groups in Indonesia*
+transcribes BPS's national table (Javanese 95,217,022 of 236,728,379, 40.22%).
+Summed over the 32 provinces read, the Javanese counts come to **95,107,968,
+99.89% of the census figure**, the two provinces without a table accounting
+for most of the rest; the run refuses below 97% and, between 97% and 99.5%,
+publishes with the ratio on every province's note. Every province's shares
+add to 100 within 0.3. The other large groups, logged beside their national
+figures on every run: Batak 99.8%, Madurese 99.0%, Betawi 99.0%, Minangkabau
+100.2%, Banjar 98.7%, Balinese 98.3%, Dayak 100.1%, Sasak 99.4%, Makassarese
+97.1% -- and Sundanese 112.2% against Bantenese 1.6%, which is Banten's table
+above.
+
+*Religion by regency and province -- the infobox, and what it cites.* Each
+kabupaten, kota and province article carries a religion composition in its
+infobox, a percentage per faith with a citation, in one of two layouts (a
+`{{ublist}}` of "98,62% [[Islam]]" items with the Christian split as a
+`{{Tree list}}`, or a `<br>`-separated "[[Islam]] 70,84%" list with the split
+dashed). The citation is nearly always one of four things, and the record says
+which, with the year it carries: the Ministry of Home Affairs' civil-registry
+visualisation (*Visualisasi Data Kependudukan*, Dukcapil, which records the
+religion on every resident's identity card -- a registry count, not a census
+answer), a provincial or regency BPS table of population by religion, the
+Ministry of Religious Affairs' count of adherents, or the 2010 census itself
+(`sp2010.bps.go.id` table 321, cited by URL although the host no longer serves
+it). Where several are cited the most census-like names the source and the
+latest year among them dates it; a citation with no year in its title, path
+or date field dates nothing and is not read.
+
+Read on 19 September 2026: **457 of the 513 regency shapes** (five of the 518
+are water or forest polygons with no article), by kind of source: Dukcapil
+registry 251, BPS table 120, 2010 census 67, other regional government 11,
+Kemenag 7, the Jakarta statistics office 1; the years run from 2010 to 2026,
+149 of them 2024. **32 of the 34 provinces**: Papua and Papua Barat were
+divided in 2022 and their articles now describe the smaller provinces that
+kept the names, so their province-level figure is not read and their
+regencies' are. Not read, 56: 23 whose citation carries no year, 26 whose
+figure carries no citation (eight of them a reference by a name the page
+never defines), five whose faith list the reader could not parse ("Budha
+danHindu", "Hindu/Buddha"), and two with no religion in the infobox
+(`Flores Timur`, `Takalar`). A list that stops short of 100 carries the rest
+as `Other or not stated`; one that overruns by up to three points -- ten
+regencies, Bolaang Mongondow's Protestant share printed above its Christian
+total -- is carried as printed with the overrun in the note, by the owner's
+instruction that a small disagreement is published with a sentence rather
+than refused. The 550 requests are spaced, because the runner is shared and
+the API answered 429 to the first unspaced run.
+
+*Language* is not written. The 2010 volume's "bahasa sehari-hari" by province
+is transcribed nowhere this reader can reach; the Indonesian *Demografi
+Indonesia* carries the national column only (Javanese 68.0 million, Indonesian
+42.7, Sundanese 32.4), and the four-bucket language-type tables the owner
+supplied on 11 September remain what they were, a kind of language and not a
+language.
+
+**What this is and is not.** The ethnicity is a census count, transcribed.
+The religion is a real composition on every row it is written, but of mixed
+kind and vintage -- the 2010 census on 67 regencies, a 2014-2026 registry or
+statistical table on the rest -- and each row's `religion_year` and two- or
+three-sentence note say which. Nothing here is a model. What would still
+improve it: the WebAPI key, which would replace 457 transcriptions with BPS's
+own *Jumlah Penduduk Menurut Kabupaten/Kota dan Agama* series in one vintage.
 
 ### The U.S. Census Bureau's subnational series: one reader, many countries
 
@@ -4348,8 +4405,10 @@ no religion and no ethnicity, only a language sheet whose composition is
 "first language: Indonesian / regional / foreign / sign" -- four buckets that
 reconcile exactly to the total but name no actual language, since "regional"
 holds all seven hundred of them. That is a true statement and not a language
-breakdown, so Indonesia stays the gap it was: what is missing there is religion
-by regency, and that still needs the BPS key.
+breakdown. Religion by regency and ethnicity by province came from the
+provinces' own Wikipedia articles instead, on 19 September 2026 (see
+*Indonesia: what BPS's refusal left reachable*); BPS's own series still needs
+the key.
 
 ### Viet Nam: collected, published by province in the Vietnamese volume, and read from it
 
@@ -5632,6 +5691,131 @@ there is none. The build sandbox cannot reach `dsec.gov.mo` (the egress
 proxy refuses the connection), so the adapter runs on the workflow runner;
 it reads only the report's pages 36 to 80, finding the three pages by title,
 because extracting all 147 costs the runner most of an hour.
+
+### Taiwan, resolved by the owner's decision
+
+Taiwan's 22 counties and cities, 23.6 million people, carried nothing for
+religion, ethnicity or language -- the largest wholly blank country on the
+map. The census asks language and not the other two; the one Wikipedia table
+measured earlier (languages used at home by division) is multi-response and
+was rightly not read. On **19 September 2026** the map's owner decided that
+Taiwan, like Japan the same day, should carry what official and secondary
+sources can say, each figure labelled for what it is: a count as a
+composition, everything else as a `modelled` estimate. `NOT_COLLECTED_POLICY`
+never had a `TWN` entry, so nothing had to leave it. `scripts/fetch_census/taiwan.py`
+is that decision, and this is what it read, what it modelled, and what it
+could not reach.
+
+**What the sandbox could not do.** Every Taiwanese host answered nothing at
+all from the build sandbox (`curl` returns no status), so every read below
+went through the runner. From the runner, `census.dgbas.gov.tw` answers 403,
+`religion.moi.gov.tw` (the temple and church registry, and the XML the open
+data portal links for datasets 8203 and 8204) times out on every request,
+`state.gov` answers 403 and its archived copy is a script shell, and
+`ws.dgbas.gov.tw` sends its certificate without the intermediate above it --
+which the earlier attempt recorded as a refusal, and which `probe_pdf --aia`
+repairs the way `scripts/probe_tls.py` documents, with full verification.
+The historical yearbook workbooks on `ws.moi.gov.tw` (`y06-01.xls` and
+neighbours) answer a 307 to an error page; the historical monthly workbooks
+beside them read fine but stop at December 2016. The current tables are on
+`statis.moi.gov.tw`, whose menu is built by a script from an array of report
+ids and whose files are static under `micst/report/<type><id>.xlsx`.
+
+**Language, read.** The DGBAS results release of the 2020 census
+(109年人口及住宅普查總報告統計結果, 30 November 2022, the PDF linked from
+`dgbas.gov.tw/News_Content.aspx?n=3602&s=230162`) prints on page 32 Table
+2-5, 6歲以上本國籍常住人口使用語言情形: for the country, the regions and every
+county, the *main* language currently used -- 國語, 閩南語, 客語, 原住民族語,
+其他 -- as a single-answer composition of residents of ROC nationality aged 6
+and over, and beside it the secondary language, which is not read. This is
+the newer of the two censuses that asked (the 2010 census published only a
+multiple-response table) and it is a composition, so it is written as a
+list under `language_basis` "main language currently used, resident
+population of ROC nationality aged 6 and over", 原住民族語 as "Taiwanese
+indigenous languages" (placed under a new Formosan branch of the Austronesian
+family; Yami is Batanic and is deliberately not listed under it). Nationally:
+Mandarin 66.4, Hokkien 31.7, Hakka 1.5, indigenous 0.2, other 0.2, of
+21,784,369 people. The reader refuses the table unless the 22 counties' base
+populations sum to the printed total exactly and the national row rebuilt
+from them, weighted by those bases, sits within half a point of the printed
+one (it sits within 0.03). Hsinchu County is 11.5% Hakka-speaking and Miaoli
+18.1; Hualien and Taitung 4.1 and 6.4 indigenous-language; Lienchiang 5.2
+"other", which is Matsu's Eastern Min. The 2010 census's own table, by
+contrast, has Hakka at 56% of Hsinchu County -- that was the share of
+people who use Hakka at home at all.
+
+**Ethnicity, modelled.** Three official figures, and one assumption:
+
+* *Indigenous*: the household register's count of people holding indigenous
+  status by county, from the Ministry of the Interior's current monthly
+  bulletin (內政統計月報 table 1.4, 現住原住民人口數), over the same month's
+  registered population from table 1.1 of the same bulletin. Both are the
+  register, both are the same month, and the reader refuses them if their
+  months differ or their counties do not sum to their own totals. The
+  Council of Indigenous Peoples publishes the same count by people and
+  county (台閩縣市原住民族人口-按性別族別, July 2026: 638,466, Amis 238,027)
+  from the same register; it was read and agrees, and the Ministry's table
+  is cited because its population sits beside it.
+* *Hakka*: the Hakka Affairs Council's 110年全國客家人口暨語言基礎資料調查研究
+  (2021; `hakka.gov.tw/File/Attach/37585/File_96737.pdf`, 481 pages),
+  Figure 8, page 12: for each county, the December 2020 registered
+  population and the share meeting the Hakka Basic Act definition (Hakka
+  descent or connection, and self-identification as Hakka), from 63,111
+  telephone interviews weighted to the register. Nationally 19.82%, 4,669,192
+  people; Hsinchu County 67.8, Miaoli 62.5, Taoyuan 39.9, Hualien 34.2,
+  Hsinchu City 30.3. The reader checks that the counties' populations and
+  Hakka counts sum to the report's totals and that each county's count over
+  its population reproduces its printed share.
+* *The rest*: Table 4-1 of the same report, page 116, the national *single*
+  self-identification in 2021: Hoklo 71.3, Hakka 15.7, mainlander 5.0,
+  indigenous 3.0, "Taiwanese" only 3.8, other 0.1, don't know 1.0. Every
+  county's remainder after indigenous and Hakka is split Hoklo : mainlander
+  in the ratio 71.3 : 5.0, the 4.9% who chose "Taiwanese", other or no answer
+  spread over both. **This is uniform and therefore an assumption**: it says
+  nothing about where the 1949 migrants and their descendants settled, and
+  it is why every county is `modelled`
+  (`tier1-register-counts-plus-survey-share-plus-uniform-split`) even
+  though two of its four parts are official counts. The Hakka share is of
+  registered residents and the indigenous count of the same, and a person
+  can be both. Labels: "Taiwanese indigenous peoples" (a new node under East
+  and Southeast Asian ancestry holding the sixteen recognised peoples),
+  "Hakka", "Hoklo Taiwanese", "Mainland Chinese (waishengren)".
+
+**Religion, modelled.** No census or register counts affiliation. The
+national prior is Pew Research Center's *Religion and Spirituality in East
+Asian Societies* (17 June 2024; adults surveyed in 2023), read from Pew's
+own page on the runner: Buddhist 28%, Daoist 24%, Christian 7% (the three
+groups Pew names with the unaffiliated sum to 62%), other 12%, no religion
+27%, don't know 2% (left out and the rest scaled). A 2021 figure that
+Wikipedia attributes to the State Department's religious-freedom report
+(folk beliefs 27.9, none 23.9, Buddhism 19.8, Taoism 18.7, Protestant 5.5,
+Yiguandao 2.2, Catholic 1.4) could not be read at its source and is not
+used. The county signal is the Ministry of the Interior's yearbook table
+宗教教務概況 (內政統計年報, section 6, table 01, `statis.moi.gov.tw`
+report 331030): registered temples by tradition and churches by county.
+Used only *relatively*, as for Japan: each tradition's share of a county's
+buildings over its share of the nation's, clipped to between 1/3 and 3,
+scales the survey's share; the four affiliated shares are rescaled to the
+survey's affiliated total; no religion is held at the national 27.6%
+because nothing gives it by county; Christianity and "other" are bounded at
+25% absolutely, so a county of village churches or one-room halls cannot
+come out mostly Christian on a building count. Buddhist temples tilt
+Buddhism, Taoist temples Taoism, churches Christianity, every other
+registered tradition "other". The record carries the ratios under `tilt`
+and any bound group under `capped`; the run log prints the five counties
+the tilt moves furthest from the prior. **No backtest exists and none is
+claimed**: there is no county-level self-identification figure to score
+against, so the estimate has no `backtest` key and its note says why.
+
+**What remains unknowable.** Whether anyone in a given county has a
+religion: the model repeats Pew's national 27.6% no-religion on Hualien and
+on Taipei alike. Where mainlanders and their descendants live: the model
+gives every county the same Hoklo-mainlander ratio, and the veterans'
+villages of Taoyuan and the mountain counties' plains townships are not in
+it. Any identity the register does not hold: new immigrants and their
+children, who are in the Hoklo-mainlander remainder. Which of the sixteen
+peoples an indigenous person belongs to, which the Council's table gives and
+the composition does not carry.
 
 ## Derived values: what follows without reading more
 
