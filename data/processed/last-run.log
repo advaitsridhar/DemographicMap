@@ -1,31 +1,14 @@
-probe_page: https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EC%99%B8%EA%B5%AD%EC%9D%B8
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 157, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 145, in main
-    body = http_get(args.url)
-           ^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 643, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 404: Not Found
+inspect: https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000007644704&fileDetailSn=1&insertDataPrcus=N (2,568,139 bytes)
+
+=== -: 3,620 rows, 230 columns
+  first columns: ['행정기관코드', '기준연월', '시도명', '시군구명', '읍면동명', '계']
+  last columns: ['105세여자', '106세여자', '107세여자', '108세여자', '109세여자', '110세이상 여자']
+  ['1111051500', '2026-08-31', '서울특별시', '종로구', '청운효자동', '10592'] ... ['0', '0', '0']
+  ['1111053000', '2026-08-31', '서울특별시', '종로구', '사직동', '8828'] ... ['0', '0', '0']
+  ['1111054000', '2026-08-31', '서울특별시', '종로구', '삼청동', '2029'] ... ['0', '0', '0']
+  ['1111055000', '2026-08-31', '서울특별시', '종로구', '부암동', '8862'] ... ['0', '0', '0']
+  ['1111056000', '2026-08-31', '서울특별시', '종로구', '평창동', '16921'] ... ['0', '0', '0']
+  ['1111057000', '2026-08-31', '서울특별시', '종로구', '무악동', '7696'] ... ['0', '0', '0']
+  column 0 '행정기관코드': 3619 distinct; [('1111051500', 1), ('1111053000', 1), ('1111054000', 1), ('1111055000', 1), ('1111056000', 1), ('1111057000', 1), ('1111058000', 1), ('1111060000', 1), ('1111061500', 1), ('1111063000', 1), ('1111064000', 1), ('1111065000', 1), ('1111067000', 1), ('1111068000', 1), ('1111069000', 1), ('1111070000', 1), ('1111071000', 1), ('1114052000', 1), ('1114054000', 1), ('1114055000', 1), ('1114057000', 1), ('1114058000', 1), ('1114059000', 1), ('1114060500', 1), ('1114061500', 1), ('1114062500', 1), ('1114063500', 1), ('1114064500', 1), ('1114065000', 1), ('1114066500', 1), ('1114067000', 1), ('1114068000', 1), ('1117051000', 1), ('1117052000', 1), ('1117053000', 1), ('1117055500', 1), ('1117056000', 1), ('1117057000', 1), ('1117058000', 1), ('1117059000', 1), ('1117062500', 1), ('1117063000', 1), ('1117064000', 1), ('1117065000', 1), ('1117066000', 1), ('1117068500', 1), ('1117069000', 1), ('1117070000', 1), ('1120052000', 1), ('1120053500', 1), ('1120054000', 1), ('1120055000', 1), ('1120056000', 1), ('1120057000', 1), ('1120058000', 1), ('1120059000', 1), ('1120061500', 1), ('1120062000', 1), ('1120064500', 1), ('1120065000', 1), ('1120066000', 1), ('1120067000', 1), ('1120069000', 1), ('1120072000', 1), ('1120079000', 1), ('1121571000', 1), ('1121573000', 1), ('1121574000', 1), ('1121575000', 1), ('1121576000', 1)]
+  column 1 '기준연월': 1 distinct; [('2026-08-31', 3619)]
+  column 2 '시도명': 16 distinct; [('서울특별시', 427), ('전남광주통합특별시', 419), ('부산광역시', 206), ('대구광역시', 152), ('인천광역시', 162), ('대전광역시', 82), ('울산광역시', 55), ('세종특별자치시', 25), ('경기도', 604), ('충청북도', 153), ('충청남도', 210), ('경상북도', 334), ('경상남도', 310), ('제주특별자치도', 43), ('강원특별자치도', 194), ('전북특별자치도', 243)]
