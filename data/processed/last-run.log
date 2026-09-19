@@ -1,68 +1,134 @@
-probe_page: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=1
-  retry 1/4 after 2s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=1 :: <urlopen error timed out>
-  retry 2/4 after 4s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=1 :: <urlopen error timed out>
-  retry 3/4 after 8s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=1 :: <urlopen error timed out>
-  retry 4/4 after 16s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=1 :: <urlopen error timed out>
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
-    super().connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
-    self.sock = self._create_connection(
-                ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
-    raise exceptions[0]
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
-    sock.connect(sa)
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 630, in http_get
-    with opener(req, timeout=timeout) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error timed out>
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 157, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 145, in main
-    body = http_get(args.url)
-           ^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 651, in http_get
-    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
-RuntimeError: GET failed after 4 retries: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=1
+== route (a): the office and its co-publisher
+  !! URLError: <urlopen error [Errno -2] Name or service not known>  https://www.gso.gov.vn/
+  200 text/html; charset=UTF-8                            ?  https://www.nso.gov.vn/
+  !! URLError: <urlopen error [Errno -2] Name or service not known>  https://www.gso.gov.vn/en/data-and-statistics/2020/11/completed-results-of-the-2019-viet-nam-population-and-housing-census/
+  !! URLError: <urlopen error [Errno -2] Name or service not known>  https://www.gso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf
+  !! URLError: <urlopen error [Errno -2] Name or service not known>  https://www.gso.gov.vn/wp-content/uploads/2020/07/01-Bao-cao-53-dan-toc-thieu-so-2019_ban-in.pdf
+  200 text/html                                         444  http://tongdieutradanso.vn/
+  404 https://vietnam.unfpa.org/en/publications/results-2019-population-and-housing-census
+  200 text/html; charset=UTF-8                        75835  https://vietnam.unfpa.org/en/publications
+      -> https://vietnam.unfpa.org/sites/default/files/pub-pdf/2025-04/0.%20Report_VIE_final.pdf
+      -> https://vietnam.unfpa.org/sites/default/files/pub-pdf/2025-06/swp25-layout-en-v250609-web_0.pdf
+      -> https://vietnam.unfpa.org/sites/default/files/pub-pdf/2025-07/EVAWC_Mid-term%20review%20report_final.pdf
+      -> https://vietnam.unfpa.org/sites/default/files/pub-pdf/2025-09/2025_Orange%20Book_v15%20%281%29%20%281%29.pdf
+      -> https://vietnam.unfpa.org/sites/default/files/pub-pdf/2025-12/CVA.VN_.25.6.1.pdf
+      -> https://vietnam.unfpa.org/sites/default/files/pub-pdf/2025-12/Insight%20Brief_EVAWC%20Cybercrime%20Convention%20Seminar_ENG.pdf
+      -> https://vietnam.unfpa.org/sites/default/files/pub-pdf/2date26-date3/ENDLINE%20EVALUATION%20REPORT%20-%20EN.pdf
+      -> https://vietnam.unfpa.org/sites/default/files/pub-pdf/2date26-date4/Factsheet%20EN_1.pdf
+      -> https://vietnam.unfpa.org/sites/default/files/pub-pdf/2date26-date8/0.%20Guidelines%20on%20facilitating%20the%20training%20on%20youth%20proa
+  200 application/json;charset=utf-8                 154071  https://data.vietnam.opendevelopmentmekong.net/api/3/action/package_search?q=ethnic+province&rows=10
+      pkg ethnic-family-of-lao-pdr: Ethnic Family of Lao PDR
+      pkg d-i-gia-dinh-cac-dan-t-c-vi-t-nam: Great Family of Vietnamese Ethnic Minorities
+          HTML   https://web.archive.org/web/20190322165811/http://bandantoc.daklak.gov.vn/dan-toc-thieu-so/ai-gia-inh-cac-dan-toc-viet-n
+      pkg remark-on-indigenous-ethnic-minority-communal-land-rights-policy-and-achievements: Remark on Indigenous ethnic minority communal land rights: policy and achievemen
+          PDF    https://data.opendevelopmentcambodia.net/dataset/bafdb88f-1907-4f2c-96e3-a5b905beb1f1/resource/90f5454e-8c5f-4821-87be-8
+          PDF    https://data.opendevelopmentcambodia.net/dataset/bafdb88f-1907-4f2c-96e3-a5b905beb1f1/resource/5de0da43-74b5-4c01-a5ee-8
+      pkg thong-tin-dan-s-dan-t-c-thi-u-s-2015: Ethnic minority population information in 2015
+          CSV    https://data.opendevelopmentmekong.net/dataset/da23b1ad-f4f9-40e6-a338-fd38f52ad771/resource/8304b069-ff66-4691-ab86-f91
+          CSV    https://data.opendevelopmentmekong.net/dataset/da23b1ad-f4f9-40e6-a338-fd38f52ad771/resource/c6defde9-e628-4dd3-8056-1b2
+      pkg population-and-distribution-of-ethnic-minorities-in-vietnam: Population and distribution of ethnic minorities in Vietnam
+          CSV    https://data.opendevelopmentmekong.net/dataset/7c1e8da0-e461-4e93-bc8b-d747f4a9befc/resource/add12953-8c14-4e01-9e9a-048
+          CSV    https://data.opendevelopmentmekong.net/dataset/7c1e8da0-e461-4e93-bc8b-d747f4a9befc/resource/9f59950a-ba93-453c-b9e7-46b
+          CSV    https://data.opendevelopmentmekong.net/dataset/7c1e8da0-e461-4e93-bc8b-d747f4a9befc/resource/02cddaca-9f26-4dad-8e1a-033
+          CSV    https://data.opendevelopmentmekong.net/dataset/7c1e8da0-e461-4e93-bc8b-d747f4a9befc/resource/c692b2b3-b10a-422a-8e74-e00
+          CSV    https://data.opendevelopmentmekong.net/dataset/7c1e8da0-e461-4e93-bc8b-d747f4a9befc/resource/056993f0-a440-43f3-a8f5-132
+          CSV    https://data.opendevelopmentmekong.net/dataset/7c1e8da0-e461-4e93-bc8b-d747f4a9befc/resource/be5f4847-1f18-430c-8e3d-32a
+      pkg impacts-of-land-and-forest-policies-on-the-livelihoods-of-ethnic-minorities: Impacts of land and forest policies on the livelihoods of ethnic minorities
+          PDF    https://data.opendevelopmentmekong.net/dataset/c5ee8e5e-90a9-4b95-8f45-19ca807490fe/resource/530d5820-3b8f-4648-a5b8-97d
+      pkg piloting-khumban-phathana-in-sekong-province: Piloting Khumban Phathana in Sekong Province
+          PDF    https://data.opendevelopmentmekong.net/dataset/72b1cf7c-5282-4560-be2e-75437dda17f9/resource/7492b03a-7463-4bef-b7e3-64a
+      pkg c-i-cach-doanh-nghi-p-lam-nghi-p-nha-nu-c-va-b-o-v-quy-n-s-d-ng-d-t-c-a-dan-t-c-thi-u-s-vi-t-nam: Reform of State-Owned Forest Enterprises and Ethnic Minority Land Tenure Securit
+          PDF    https://data.opendevelopmentmekong.net/dataset/dc947925-543b-41a8-96c6-55bbd7044037/resource/16c68a31-8623-4de5-95b7-196
+          PPTX   https://data.opendevelopmentmekong.net/dataset/dc947925-543b-41a8-96c6-55bbd7044037/resource/3c6c9136-dfb9-42fb-aa96-787
+      pkg titan-mineral-group-co-ltd: License No. 532 on authorizing Titan Mineral Group Co. Ltd, to conduct metallic 
+          PDF    https://data.opendevelopmentmekong.net/dataset/bbe7449d-1f4e-462c-a869-f09aeeed3699/resource/186d1af1-bb27-476a-a92d-b90
+      pkg lessons-learnt-of-communal-land-titling-for-indigenous-community-in-la-in-village-ratanakiri-provin: Lessons learnt of communal land titling for indigenous community in La In villag
+          PDF    https://data.opendevelopmentcambodia.net/en/dataset/167bdc18-70f1-425c-b8c3-4d5b7d05dba4/resource/cdf19eff-2f0a-4912-aeb
+          PDF    https://data.opendevelopmentcambodia.net/en/dataset/167bdc18-70f1-425c-b8c3-4d5b7d05dba4/resource/f17e8696-e6b6-40aa-881
+== route (b): Kaggle's catalogue (with credentials)
+  search 'vietnam census': 13 datasets
+    ayessa/salary-prediction-classification                 471,055  Salary Prediction Classification
+    vivamoto/us-adult-income-update                       1,334,930  Census Income Data Set
+      files: HTTPError: HTTP Error 404: Not Found
+    julianacorts/us-census-of-adults-1994                   725,451  US Census of Adults 1994
+      files: HTTPError: HTTP Error 404: Not Found
+    aguado/uci-adult-data-set-1994                          719,361  UCI Adult Data Set 1994
+    mlbysoham/adult-dataset                                 478,897  Adult Dataset
+    dskagglemt/census-income-data-from-various-country      478,897  Census Income Data from various country
+      files: HTTPError: HTTP Error 404: Not Found
+    sumaiaparveenshupti/us-hate-crime-dataset-20102019-multiple-sources       40,112  US Hate Crime Dataset 2010-2019 (Multiple Sources)
+    mohamedziauddin/mh-work-hour-prediction                 453,136  MH : Work Hour Prediction
+    mexwell/us-country-demographics                         343,499  👨‍👩‍👧 US Country Demographics
+    rishabhrathore055/census-income-uci-machine-learning      767,035  Census Income - UCI Machine Learning
+      files: HTTPError: HTTP Error 404: Not Found
+    saumyajana/income-data                                  719,361  Income data
+    ruicarvalhosilva/adultdata                              478,895  adultData
+  search 'vietnam ethnic': 2 datasets
+    lucafrance/the-world-factbook-by-cia                  4,940,588  The World Factbook by CIA
+    sumaiaparveenshupti/us-hate-crime-dataset-20102019-multiple-sources       40,112  US Hate Crime Dataset 2010-2019 (Multiple Sources)
+  search 'vietnam population province': 1 datasets
+    cresht2606/vietnam-real-estate-datasets-catalyst      5,576,146  Vietnam Real Estate Datasets - Catalyst
+  search 'vietnam religion': 3 datasets
+    sumaiaparveenshupti/us-hate-crime-dataset-20102019-multiple-sources       40,112  US Hate Crime Dataset 2010-2019 (Multiple Sources)
+    lodetomasi1995/income-classification                    470,427  Income classification
+    mohamedziauddin/mh-work-hour-prediction                 453,136  MH : Work Hour Prediction
+  search 'dân tộc': 0 datasets
+  search 'tổng điều tra dân số': 0 datasets
+== route (c): Wikipedia
+  [vi] search '"dân tộc" tỉnh 2019 Tày Nùng Mông Kinh bảng': Hà Nội; Bắc Kạn (tỉnh); Thái Nguyên; Tuyên Quang; Lào Cai; Phố Bảng; Lạng Sơn; Cao Bằng; Hà Giang; Điện Biên; Đắk Lắk; Danh sách Di sản văn hóa phi vật thể quốc gia (Việt Nam)
+  [vi] search '"Tổng điều tra dân số" 2019 "dân tộc" tỉnh thành': Hà Nội; Biểu tình Tây Nguyên 2004; Người Mường; Madagascar; Người Giẻ Triêng; Người Mảng; Người Brâu; Người Si La; Người Sán Chay; Người Ơ Đu; Người Cờ Lao; Người Kháng
+  [vi] search 'dân tộc thiểu số theo tỉnh 2019': Các dân tộc tại Việt Nam; Dân tộc thiểu số ở Ba Lan; Các dân tộc ở Campuchia; Người Việt; Trung Quốc; H'Mông; Bộ Dân tộc và Tôn giáo; Đài Loan; Danh sách ngôn ngữ chính thức theo quốc gia; Hồ Chí Minh; Người Sán Dìu; Đà Nẵng
+  [en] search 'Vietnam province ethnic groups 2019 census table': Ethnic groups in Asia; Hòa Bình province; Ethnic groups in Thailand; Islam in Vietnam; Lao people; Ethnic origins of people in Canada; Kra–Dai-speaking peoples; Demographics of Toronto; Lai Châu province; Viet people; Demographics of Ontario; Tây Ninh province
+  [vi] 'Danh sách các dân tộc Việt Nam theo tỉnh thành': 0 bytes, 0 table(s)
+  [vi] 'Các dân tộc Việt Nam': 35,940 bytes, 1 table(s)
+     -- table 0: 58 rows x 7 cols; header ['Hệ', 'Nhóm', 'Dân tộc', 'Tên gọi khác', 'Phần trăm dân số', 'Dân số', 'Phân bổ']
+        ['Hệ Nam Á', 'Việt-Mường', 'Kinh', 'Việt', '85,32%', '82.085.826', 'Khắp Việt Nam']
+        ['Mường', 'Mol, Mual', '1,51%', '1.452.095', 'Hòa Bình (549.026 ngườ']
+        ['Thổ', 'Kẹo, Mọn, Họ, Cuối, Đa', '0,1%', '91.430', 'Nghệ An (71.420 người)']
+  [vi] 'Danh sách các dân tộc Việt Nam': 0 bytes, 0 table(s)
+  [vi] 'Dân số Việt Nam': 0 bytes, 0 table(s)
+  [vi] 'Hà Giang': 62,691 bytes, 1 table(s)
+     -- table 0: 3 rows x 1 cols; header ['colspan= "4" style= "b']
+        ['width= "50%" valign= "', 'width= "50%" valign= "', 'valign= "top" style= "']
+        ['']
+  [vi] 'Sơn La': 40,724 bytes, 1 table(s)
+     -- table 0: 2 rows x 1 cols; header ['Danh sách các đơn vị h']
+        ['', '', '', '']
+  [vi] 'Đắk Lắk': 88,525 bytes, 3 table(s)
+     -- table 0: 2 rows x 1 cols; header ['Danh sách các đơn vị h']
+        ['', '', '', '']
+     -- table 1: 38 rows x 6 cols; header ['width= "1%" |Stt', 'width= "3%" |Mã trường', 'width= "35%" |Tên trườ', 'width= "1%" |Stt', 'width= "3%" |Mã trường', 'width= "35%" |Tên trườ']
+        ['1', '001', 'Sở Giáo dục – Đào tạo ', '38', '038', 'Trung học Phổ thông Lê']
+        ['2', '002', 'Trung học Phổ thông Bu', '39', '039', 'Trung học Phổ thông Tr']
+        ['3', '003', 'Trung học Phổ thông Ch', '40', '040', 'Trung học Phổ thông Lê']
+     -- table 2: 20 rows x 2 cols; header ['Dân tộc', 'Thành phần dân tộc tỉn']
+        ['Đắk Lắk', 'Phú Yên', 'Tổng cộng']
+        ['Dân số', '%', 'Dân số', '%', 'Dân số', '%']
+        ['', '', '', '', '', '', '']
+     ~ Theo thống kê của tổng cục thống kê [[Việt Nam]], tính đến ngày 1 tháng 4 năm 2009, toàn tỉnh Đắk Lắk có 47 dân tộc cùng người nước ngoài sinh sống. Trong đó dân tộc [[Người Kinh|Kinh]] chiếm đông nhất với 1.161.533 người, thứ 2 là [[Người Ê Đê]] có 298.534 người, thứ 3 là [[Người Nùng]] có 71.461 người, thứ 4 là [[Người Tày]] có 51.285 người. Cùng các dân tộc ít người khác như [[M'nông]] có 40.34
+  [vi] 'Trà Vinh': 509 bytes, 0 table(s)
+  [vi] 'Lạng Sơn': 55,777 bytes, 1 table(s)
+     -- table 0: 2 rows x 1 cols; header ['Danh sách các đơn vị h']
+        ['', '', '', '']
+  [vi] 'Thành phố Hồ Chí Minh': 199,719 bytes, 3 table(s)
+     -- table 0: 2 rows x 1 cols; header ['Danh sách các đơn vị h']
+        ['', '', '', '']
+     -- table 1: 62 rows x 3 cols; header ['Tên', 'Địa chỉ', 'Website']
+        ['Bảo tàng Áo Dài', 'Phường Long Phước', '[https://baotangaodai.']
+        ['Bảo tàng Chiến dịch Hồ', 'Phường Sài Gòn', '']
+        ['Bảo tàng Chứng tích ch', 'Phường Xuân Hoà', '[https://baotangchungt']
+     -- table 2: 5 rows x 3 cols; header ['Tên dịch vụ', 'Phạm vi hoạt động', 'Website']
+        ['Buýt đường sông Thành ', 'Qua các trạm dọc sông ', '[https://saigonwaterbu']
+        ['Xe buýt công cộng', 'Toàn thành phố', '[http://buyttphcm.com.']
+        ['Xe buýt hai tầng', 'Một số phường trung tâ', '']
+     ~ | dân tộc = [[Người Việt|Kinh]], [[Người Hoa (Việt Nam)|Hoa]], [[người Khmer (Việt Nam)|Khmer]],...{{efn|Vào thời điểm năm 2009, thành phố Hồ Chí Minh có số dân 11.162.864 người và là nơi sinh sống của [[các dân tộc Việt Nam|52 dân tộc Việt Nam]]. Trong số đó, người Kinh là dân tộc có số dân đông nhất, 6.699
+  [en] 'Hà Giang province': 46,231 bytes, 1 table(s)
+     -- table 0: 12 rows x 5 cols; header ['width=20%|Name', 'width=15%|Division typ', 'width=15%|Population (', 'width=10%|Area (km 2 )', 'width=40%|Towns (huyện']
+        ['Hà Giang', 'City (thành phố)', '44,567', '174', 'Wards (phường): Trần P']
+        ['Bắc Mê District', 'District (huyện)', '40,822', '844', 'Yên Phú, Đường Âm, Đườ']
+        ['Bắc Quang District', 'District (huyện)', '103,064', '1,084', 'Việt Quang, Vĩnh Tuy, ']
+  [en] 'Ethnic groups in Vietnam': 23,572 bytes, 1 table(s)
+     -- table 0: 56 rows x 8 cols; header ['Group', 'People', 'Percentage of populati', '2009 census', '2019 census', 'Growth rate (per year)', 'Distribution (2019 Cen', 'Note']
+        ['', 'Total', '', 'align=right | 85,846,9', '96,208,984', '#expr:10*ln(96208984/8', '', '']
+        ['1. Vietic', 'Kinh', '#expr:82085826/9620898', 'align=right | 73,594,4', '82,085,826', '#expr:10*ln(82085826/7', 'Throughout Vietnam', 'Also called Viet, the ']
+        ['Chứt', '#expr:7513/96208984*10', 'align=right | 6,022', '7,513', '#expr:10*ln(7513/6022)', 'Quảng Bình (6,572 peop', 'Chứt consists of five ']
