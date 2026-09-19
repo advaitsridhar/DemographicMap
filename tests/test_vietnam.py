@@ -87,6 +87,13 @@ class Parsing(unittest.TestCase):
         self.assertEqual(u["groups"]["Không xác định"], 26476)
         self.assertEqual(len(u["groups"]), 8)
 
+    def test_the_table_s_first_page_heading_is_not_a_row(self):
+        # "Biểu - Table 2" ends in a digit; a row ends in nine figures.
+        first = PAGE_A.replace("Biểu - Table 2 (Tiếp theo - Continued)", "Biểu - Table 2")
+        self.assertEqual([u["name"] for u in v.parse([first])], ["Hà Nội"])
+        self.assertIsNone(v.ROW.match("Biểu - Table 2"))
+        self.assertIsNone(v.ROW.match("Biểu 2: Dân số theo dân tộc 2"))
+
     def test_a_page_of_another_table_is_left_alone(self):
         other = PAGE_A.replace("Table 2", "Table 1").replace("Ethnic group", "Administration")
         self.assertEqual(v.parse([other]), [])

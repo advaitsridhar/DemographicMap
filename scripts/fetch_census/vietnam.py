@@ -165,8 +165,11 @@ PROVINCE_KEYS = {fold(k): name for name, others in PROVINCES.items() for k in [n
 COUNTRY_KEYS = {fold(k) for k in COUNTRY}
 REGION_KEYS = {fold(k) for k in REGIONS}
 GROUP_KEYS = {fold(k) for k in GROUPS}
+# A row is a label and then at least nine tokens of digits or dashes: nine
+# figures, each of one or more groups. Fewer is a heading -- the table's
+# first page is headed "Biểu - Table 2", and that trailing 2 is not a figure.
 ROW = re.compile(r"^\s*(?P<label>[^\d]*?[^\W\d][^\d]*?)\s+"
-                 r"(?P<tail>(?:(?:\d{1,3}|-)\s+)*(?:\d{1,3}|-))\s*$")
+                 r"(?P<tail>(?:(?:\d{1,3}|-)\s+){8,}(?:\d{1,3}|-))\s*$")
 
 
 def figures(tokens: list[str]) -> list[int]:
