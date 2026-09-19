@@ -1,11 +1,31 @@
-page: https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000014&nttId=113261
-  136,128 bytes
-  4 matching link(s)
-  - 2023 지방자치단체 외국인주민 현황 통계표.(23.11.1.기준).xlsx &nbsp;[ 4.2 MB ]
-    https://www.mois.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_001342087_xe2er&amp;fileSn=0
-  - 2023 지방자치단체 외국인주민 현황 설명자료(수정).hwpx &nbsp;[ 1.4 MB ]
-    https://www.mois.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_001342087_xe2er&amp;fileSn=1
-  - 2023 지방자치단체 외국인주민 현황 설명자료(수정).pdf &nbsp;[ 2.5 MB ]
-    https://www.mois.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_001342087_xe2er&amp;fileSn=2
-  - 4. (참고) 출입국.외국인 통계연보와 차이점 안내 (2).png &nbsp;[ 184.2 KB ]
-    https://www.mois.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_001342087_xe2er&amp;fileSn=3
+probe_post: https://jumin.mois.go.kr/downloadCsv.do?searchYearMonth=month&xlsStats=1
+  14 field(s): tableId, category, sltOrgType, sltOrgLvl1, sltOrgLvl2, searchYearStart, searchMonthStart, searchYearEnd, searchMonthEnd, sltUndefType, sltOrderType, sltOrderValue, searchYearMonth, nowYear
+  200 text/html;charset=utf-8 size=1,053
+  27 non-blank line(s) decoded as cp949
+  <!DOCTYPE html>
+  <html lang="ko">
+  	<head>
+  		<meta charset="utf-8"/>
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  		<title> �삤瑜섑럹�씠吏�</title>
+  	</head>
+  	<body>
+  					<div id="content_main">
+  						<div class="error_list ty2">
+  							<div>
+  								<p>�삁�긽�븯吏� 紐삵븳 �삤瑜섍�� <span>諛쒖깮�븯����뒿�땲�떎.</span></p>
+  								<ul>
+  									<li>諛⑸Ц�븯�떆�젮�뒗 �럹�씠吏��쓽 二쇱냼媛� �옒紐� �엯�젰�릺�뿀嫄곕굹, 蹂�寃� �삉�뒗 �궘�젣�릺�뼱 <span class="under">�슂泥��븯�떊 �럹�씠吏�瑜� 李얠쓣 �닔 �뾾�뒿�땲�떎.</span></li>
+  									<li><strong>�깉濡� 怨좎묠(F5)</strong>�쓣 �븯�떆嫄곕굹 �럹�씠吏� �솗�씤 �썑 <span>�떎�떆 �젒�냽�빐 二쇱떆湲� 諛붾엻�땲�떎.</span></li>
+  								</ul>
+  								<ul>
+  									<li>String index out of range: 2</li>
+  								</ul>
+  								<p class="btn_area mt40"><a href="#" onClick="history.back()" class="btn_fclose">�씠�쟾�럹�씠吏�</a><a href="/" class="type1 ty3">硫붿씤�쑝濡�</a></p>
+  							</div>
+  						</div>
+  					</div>
+  				</div>
+  				<!-- //content -->
+  	</body>
+  </html>
