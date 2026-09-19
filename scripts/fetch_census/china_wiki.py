@@ -18,8 +18,14 @@ Both the English and the Chinese article of every division are read,
 because neither edition carries the table for all 31: the English
 articles keep 2000 and 2010 tables for the north and 2020 for a handful,
 the Chinese ones a 2020 table for thirteen provinces and nothing for the
-municipalities. Where an article listed in ``EXTRA`` carries the table for
-a division whose own articles do not, it is read too.
+municipalities. The Chinese "民族构成列表" page of each division is tried
+beside them (``EXTRA``), and behind all of those stands the English "List
+of Chinese administrative divisions by ethnic group", which tabulates the
+2020 census for every division by region -- a count and a share per
+division for the region's ten or so largest nationalities and a "2020
+Census" row of totals -- so a division whose own articles carry no table
+is still read from the census, with everyone the table does not name as
+the remainder.
 
 What the reader does with an article:
 
@@ -29,7 +35,9 @@ What the reader does with an article:
   56 -- and whose caption, header or preceding prose says which census it
   is; a time series (a "Year" column) and a table with no population or
   share column are passed over, and among what is left the latest census
-  wins, then the table with more nationalities, then the English one;
+  wins, then the division's own articles over the list of divisions, then
+  the table with more nationalities, then the English one; a table that
+  cannot be read without guessing is logged and the next one tried;
 * where every row prints a count and the table also prints its total or
   its remainder ("Others"), the shares are computed from the counts,
   because a transcribed share is where the slips are (Shandong's table
@@ -142,9 +150,23 @@ DIVISIONS: list[tuple[str, str, str]] = [
     ("Xinjiang Uyghur Autonomous Region", "Xinjiang", "新疆维吾尔自治区"),
 ]
 
-# Articles beyond a division's own that carry its census table, as
-# "lang:Title". Filled from what an --inspect --article run found.
-EXTRA: dict[str, list[str]] = {}
+# Articles beyond a division's own that may carry its census table, as
+# "lang:Title", read with the same standing as the division's own. The
+# Chinese edition keeps a "民族构成列表" page for some provinces -- every
+# nationality with its count from the census yearbook -- under the
+# province's name, so every division's is tried and a missing page is
+# logged and costs nothing; Yunnan's sits under the shorter title.
+EXTRA: dict[str, list[str]] = {name: [f"zh:{zh}民族构成列表"] for name, _, zh in DIVISIONS}
+EXTRA["Yunnan Province"].append("zh:云南民族")
+
+# The English list article that tabulates the 2020 census for every
+# division: six regional tables of a column pair (count, share) per
+# division and a "2020 Census" row with the totals. It is the fallback
+# for a division whose own articles carry no table, ranked below them
+# because its rows are the region's ten largest nationalities rather than
+# the division's own. Inner Mongolia is split there into western and
+# eastern leagues, which is not the census's layout, and is not read.
+LIST_ARTICLE = ("en", "List of Chinese administrative divisions by ethnic group")
 
 # Beijing's 2010 communique, for the cross-check: resident population and
 # the five largest nationalities, in persons, as the bureau printed them
@@ -220,7 +242,7 @@ RESIDUAL_WORDS = re.compile(
     r"other ethnicit(y|ies)|other minority groups?|all others?|other groups?|"
     r"other peoples?|其他|其他民族|其它|其它民族|其余民族)$", re.I)
 TOTAL_WORDS = re.compile(r"^(total|all|population|total population|合计|总计|总人口|全部|全省|"
-                         r"全区|全市)$", re.I)
+                         r"全区|全市|(19|20)\d\d census( total)?|census (19|20)\d\d)$", re.I)
 SUBTOTAL_WORDS = re.compile(
     r"^((all |ethnic |national )?minorit(y|ies)( nationalities| groups| ethnic groups)?|"
     r"non-han|non han|少数民族|各少数民族|少数民族人口)$", re.I)
@@ -383,16 +405,21 @@ def oriented(rows: list[list[str]]) -> list[list[str]]:
 
     Heilongjiang's and Guangxi's tables run the other way -- nationalities
     across the header, "Population" and "Percentage" as the rows -- and are
-    transposed here so one reader serves both.
+    transposed here so one reader serves both. A table that numbers its
+    rows (序号 | 民族 | 人口数 ...) has the serial column dropped so the
+    nationality is again the first cell.
     """
     if not rows or not rows[0]:
         return rows
-    down = sum(1 for r in rows if r and ethnonym(r[0]))
+    downs = [sum(1 for r in rows if len(r) > c and ethnonym(r[c])) for c in range(3)]
+    label = max(range(3), key=lambda c: downs[c])
     across = sum(1 for c in rows[0] if ethnonym(c))
-    if across > down and across >= 2:
+    if across > downs[label] and across >= 2:
         width = max(len(r) for r in rows)
         padded = [r + [""] * (width - len(r)) for r in rows]
         return [list(col) for col in zip(*padded)]
+    if label:
+        return [r[label:] for r in rows if len(r) > label]
     return rows
 
 
@@ -423,6 +450,9 @@ def year_of(t: dict[str, Any]) -> int | None:
 SHARE_WORDS = ("%", "percent", "share", "proportion", "比例", "占", "百分比", "比重")
 COUNT_WORDS = ("population", "number", "persons", "people", "count", "total",
                "人口", "人数")
+# A share of the minorities alone, or of the nationality's national
+# population, is a share column that is not the composition.
+NOT_THE_SHARE = ("minorit", "少数民族", "该民族", "全国")
 
 
 def columns(header: list[str], year: int | None) -> tuple[int | None, int | None]:
@@ -431,14 +461,15 @@ def columns(header: list[str], year: int | None) -> tuple[int | None, int | None
     A table with both years side by side ("Population 2010 | % 2010 |
     Population 2020 | % 2020") yields the columns of the chosen year;
     otherwise the first "population"/"number"/"total" column and the first
-    "%"/"percent"/"share"/"proportion" column. "Male" and "Female" are
-    neither.
+    "%"/"percent"/"share"/"proportion" column that is a share of the whole
+    population. "Male" and "Female" are neither.
     """
     counts, shares = [], []
     for i, cell in enumerate(header):
         c = simplified(cell).lower()
         if any(w in c for w in SHARE_WORDS):
-            shares.append(i)
+            if not any(w in c for w in NOT_THE_SHARE):
+                shares.append(i)
         elif any(w in c for w in COUNT_WORDS) or re.fullmatch(r"(19|20)\d\d(\s+census)?", c):
             counts.append(i)
     if year and len(counts) > 1:
@@ -572,11 +603,103 @@ def composition(read: dict[str, Any], where: str) -> tuple[list[dict[str, Any]],
     return out, how
 
 
-def candidates(found: list[dict[str, Any]], lang: str, title: str,
-               where: str) -> list[dict[str, Any]]:
+def division_columns(header: list[str]) -> dict[str, int]:
+    """{division's English title: header column} for a table of divisions.
+
+    The list article's tables put a division per column pair, "Guangxi*"
+    with the autonomous regions starred and Inner Mongolia split in two
+    parenthesised halves, which are not read: a half is not the census's
+    figure for the region.
+    """
+    out: dict[str, int] = {}
+    for i, cell in enumerate(header):
+        name = cell.replace("*", "").strip()
+        if not name or "(" in name:
+            continue
+        for _, en, _ in DIVISIONS:
+            if en == name or en.startswith(name + " "):
+                out[en] = i
+    return out
+
+
+def read_list_table(t: dict[str, Any], column: int, where: str) -> dict[str, Any]:
+    """One division's column pair of a table of divisions -> as read_table.
+
+    The header names the divisions once each; the row beneath it is
+    "Number | %" per division, so a division's count sits at 2c-1 and its
+    share at 2c in a nationality row, and its total at c in the census
+    row, whose label ("2020 Census") is also the year.
+    """
+    rows = t["rows"]
+    groups: dict[str, tuple[float | None, float | None]] = {}
+    residual_count, residual_pct, saw_residual = 0.0, 0.0, False
+    folded: list[str] = []
+    total_count: float | None = None
+    year: int | None = None
+    ci, si = 2 * column - 1, 2 * column
+    for row in rows[1:]:
+        if not row:
+            continue
+        what = kind(row[0])
+        if what == "total":
+            total_count = number(row[column]) if column < len(row) else None
+            m = re.search(r"(19|20)\d\d", row[0])
+            year = int(m.group(0)) if m else year
+            continue
+        count = number(row[ci]) if ci < len(row) else None
+        pct = number(row[si]) if si < len(row) else None
+        if what == "group":
+            if count is None:
+                raise SystemExit(f"china_wiki: {where}: {row[0]!r} prints no count: {row}")
+            label = ethnonym(row[0]) or row[0]
+            if label in groups:
+                raise SystemExit(f"china_wiki: {where}: {label!r} appears twice in the table")
+            groups[label] = (count, pct)
+        elif what in ("residual", "unlisted"):
+            saw_residual = True
+            residual_count += count or 0.0
+            residual_pct += pct or 0.0
+            if what == "unlisted":
+                folded.append(row[0].strip())
+        elif what == "other" and count is not None:
+            raise SystemExit(f"china_wiki: {where}: row {row[0]!r} prints a figure and "
+                             f"is not a nationality, a residual or a total: {row}")
+    if not groups or total_count is None:
+        raise SystemExit(f"china_wiki: {where}: the table of divisions has no census "
+                         f"total for it")
+    listed = sum(c for c, _ in groups.values()) + residual_count
+    if listed > total_count * 1.005:
+        raise SystemExit(f"china_wiki: {where}: the nationalities listed add to "
+                         f"{listed:,.0f} against a total of {total_count:,.0f}")
+    # The rows are the region's largest nationalities, not everyone: the
+    # rest of the population is the remainder.
+    rest = total_count - listed
+    groups[RESIDUAL] = (residual_count + rest, None)
+    return {"groups": groups, "total": total_count, "year": year, "folded": folded,
+            "has_counts": True, "has_shares": True, "remainder": rest}
+
+
+def candidates(found: list[dict[str, Any]], lang: str, title: str, where: str,
+               en_title: str, own: bool) -> list[dict[str, Any]]:
     """The ethnic tables of one article that name a census and can be read."""
     out = []
     for t in found:
+        if t["rows"] and (by_division := division_columns(t["rows"][0])):
+            if en_title not in by_division:
+                continue
+            total = next((r for r in t["rows"] if r and kind(r[0]) == "total"), None)
+            m = re.search(r"(19|20)\d\d", total[0]) if total else None
+            year = int(m.group(0)) if m else None
+            n = sum(1 for r in t["rows"][1:] if r and kind(r[0]) == "group")
+            tag = (f"[{lang}] {title!r}: table of divisions under {t['section']!r}, "
+                   f"year {year}, {n} nationalities")
+            if year not in SOURCES:
+                log(f"  {where}: {tag}; not a census year, passed over")
+                continue
+            log(f"  {where}: {tag}")
+            out.append({"table": t, "year": year, "lang": lang, "title": title, "n": n,
+                        "own": own, "column": by_division[en_title]})
+            continue
         if not is_ethnic_table(t):
             continue
         year = year_of(t)
@@ -592,16 +715,16 @@ def candidates(found: list[dict[str, Any]], lang: str, title: str,
             log(f"  {where}: {tag}; no population or share column, passed over")
             continue
         log(f"  {where}: {tag}")
-        out.append({"table": t, "year": year, "lang": lang, "title": title, "n": n})
+        out.append({"table": t, "year": year, "lang": lang, "title": title, "n": n,
+                    "own": own})
     return out
 
 
-def choose(found: list[dict[str, Any]]) -> dict[str, Any] | None:
-    """The latest census, then the fuller table, then the English article."""
-    if not found:
-        return None
-    found.sort(key=lambda c: (c["year"], c["n"], c["lang"] == "en"), reverse=True)
-    return found[0]
+def ranked(found: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """The latest census first, then a division's own articles before the
+    list of divisions, then the fuller table, then the English article."""
+    return sorted(found, key=lambda c: (c["year"], c["own"], c["n"], c["lang"] == "en"),
+                  reverse=True)
 
 
 # ---------------------------------------------------------------------------
@@ -642,26 +765,47 @@ def check_beijing(rows: list[dict[str, Any]], year: int) -> str:
             f"communiques gave Han 95.9%, Manchu 336,000, Hui 249,000: {urls}.")
 
 
-def build_one(name: str, articles: list[tuple[str, str, str]]) -> dict[str, Any] | None:
-    """One division from its articles, each (lang, title, wikitext)."""
+def build_one(name: str, articles: list[tuple[str, str, str, bool]],
+              en_title: str = "") -> dict[str, Any] | None:
+    """One division from its articles, each (lang, title, wikitext, own).
+
+    The best table is read first; one that cannot be read without guessing
+    is logged and the next is tried, so a division is refused only when
+    every table it has refuses.
+    """
     found: list[dict[str, Any]] = []
-    for lang, title, wikitext in articles:
-        found += candidates(tables_with_context(wikitext), lang, title, name)
-    chosen = choose(found)
-    if chosen is None:
+    for lang, title, wikitext, own in articles:
+        found += candidates(tables_with_context(wikitext), lang, title, name, en_title, own)
+    if not found:
         log(f"  {name}: no census ethnic table in "
-            + ", ".join(f"[{lang}] {title!r}" for lang, title, _ in articles))
+            + ", ".join(f"[{lang}] {title!r}" for lang, title, _, _ in articles))
         return None
+    order = ranked(found)
+    for chosen in order:
+        try:
+            read = (read_list_table(chosen["table"], chosen["column"], name)
+                    if "column" in chosen else read_table(chosen["table"], name))
+            rows, how = composition(read, name)
+            break
+        except SystemExit as e:
+            log(f"  {name}: {e}" + ("; trying the next table" if chosen is not order[-1]
+                                     else ""))
+    else:
+        raise SystemExit(f"china_wiki: {name}: every table refused")
     t, year, lang, title = chosen["table"], chosen["year"], chosen["lang"], chosen["title"]
-    read = read_table(t, name)
-    rows, how = composition(read, name)
     from common import slugify
     source = SOURCES[year]
     url = f"https://{lang}.wikipedia.org/wiki/{urllib.parse.quote(title.replace(' ', '_'))}"
     note = (f"{source}, resident population of {name}, as the {EDITION_NAMES.get(lang, lang)} "
             f"Wikipedia article {title!r} transcribes it"
             + (f" (table {t['caption']!r})" if t["caption"] else "") + f". {how}")
-    if RESIDUAL in read["groups"]:
+    if "remainder" in read:
+        note += (f" The table lists the region's largest nationalities; the "
+                 f"{read['remainder']:,.0f} residents it does not name are written as "
+                 f"{RESIDUAL!r} with its own residual rows"
+                 + (" (" + " and ".join(repr(f) for f in read["folded"]) + ")"
+                    if read["folded"] else "") + ".")
+    elif RESIDUAL in read["groups"]:
         note += (f" {RESIDUAL!r} is the census's own remainder row"
                  + (", with its " + " and ".join(repr(f) for f in read["folded"])
                     + " row folded in" if read["folded"] else "") + ".")
@@ -768,16 +912,24 @@ def main() -> int:
     log(f"china_wiki: {len(chosen)} divisions from the {' and '.join(editions)} Wikipedia "
         f"through the MediaWiki API")
     records, missing, refused = [], [], []
+    shared: dict[tuple[str, str], str] = {}
     for name, en, zh in chosen:
-        titles = [(lang, t) for lang, t in (("en", en), ("zh", zh)) if lang in editions]
-        titles += [article(spec) for spec in EXTRA.get(name, [])]
-        texts = [(lang, title, fetch(title, lang)) for lang, title in titles]
+        titles = [(lang, t, True) for lang, t in (("en", en), ("zh", zh)) if lang in editions]
+        titles += [(*article(spec), True) for spec in EXTRA.get(name, [])
+                   if article(spec)[0] in editions]
+        if LIST_ARTICLE[0] in editions:
+            titles.append((*LIST_ARTICLE, False))
+        texts = []
+        for lang, title, own in titles:
+            if (lang, title) not in shared or own:
+                shared[(lang, title)] = fetch(title, lang)
+            texts.append((lang, title, shared[(lang, title)], own))
         if args.inspect:
-            for lang, title, text in texts:
+            for lang, title, text, _ in texts:
                 inspect(name, title, lang, text, args.rows, args.raw)
             continue
         try:
-            rec = build_one(name, texts)
+            rec = build_one(name, texts, en)
         except SystemExit as e:
             log(f"  {name}: refused -- {e}")
             refused.append(name)
