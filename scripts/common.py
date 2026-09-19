@@ -435,6 +435,12 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
         "ethnicity": "Tunisia's census does not ask ethnicity.",
     },
     "KOR": {"ethnicity": "South Korea's census does not collect ethnicity."},
+    # Read off the census's own questionnaire: MyCensus 2020's demographic
+    # module asks sex, age, marital status, ethnic group, citizenship and
+    # religion, and no census round has asked language or mother tongue.
+    # Ethnicity and religion are real compositions on the 16 states and the
+    # districts; language was reading as "not fetched yet" on all of them.
+    "MYS": {"language": "Malaysia's census asks ethnic group, citizenship and religion but has never asked language or mother tongue, and DOSM publishes no language composition."},
     "NLD": {"ethnicity": "The Netherlands records migration background, not ethnicity.",
             "language": "The Netherlands has had no questionnaire census since 1971 and no register records language."},
     "SWE": {"ethnicity": "Sweden records country of birth and citizenship, not ethnicity.",

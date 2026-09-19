@@ -104,6 +104,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # Reads the committed BNS workbook under data/raw/kazakhstan; no network.
   soft python3 -m scripts.fetch_census.kazakhstan
   soft python3 -m scripts.fetch_census.malaysia --level both
+  # One DOSM dashboard parquet (religion, 2020 census) plus the two population
+  # CSVs above for the count base; needs pyarrow.
+  soft python3 -m scripts.fetch_census.malaysia_religion
   soft python3 -m scripts.fetch_census.poland
   # Three ČSÚ open-data CSVs, 170 MB between them; no key.
   soft python3 -m scripts.fetch_census.czechia

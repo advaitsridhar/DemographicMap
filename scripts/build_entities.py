@@ -134,6 +134,9 @@ ADAPTER_FILES = [
     "kazakhstan_region.json", "cambodia_province.json",
     "kazakhstan_oblast.json", "kazakhstan_district.json",
     "malaysia_state.json", "malaysia_district.json",
+    # After both: the same 16 states and the districts, religion only, from
+    # the 2020 census; its gaps never displace the ethnicity above.
+    "malaysia_religion.json",
     "poland_voivodeship.json", "poland_powiat.json",
     "czechia_kraj.json", "czechia_okres.json",
     "croatia_county.json", "croatia_unit.json",
@@ -184,7 +187,9 @@ ADAPTER_HINTS: dict[str, str] = {
            "home language) by voivodeship and powiat: "
            "python -m scripts.fetch_census.poland",
     "MYS": "DOSM population estimates by ethnicity, OpenDOSM CSV by state and "
-           "district: python -m scripts.fetch_census.malaysia --level both",
+           "district: python -m scripts.fetch_census.malaysia --level both; "
+           "religion from the 2020 census as DOSM's Kawasanku dashboard publishes "
+           "it by state and district: python -m scripts.fetch_census.malaysia_religion",
     "CZE": "ČSÚ SLDB 2021 open data (nationality, religious belief, mother tongue) "
            "by kraj and okres: python -m scripts.fetch_census.czechia",
     "HRV": "DZS Popis 2021 workbook (ethnicity, religion, mother tongue) by "
