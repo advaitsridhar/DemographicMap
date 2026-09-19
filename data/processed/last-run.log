@@ -1,10 +1,6 @@
-page: https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000014&pageIndex=2
-  unreachable: URLError: <urlopen error timed out>
-page: https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000014&pageIndex=3
-  unreachable: URLError: <urlopen error timed out>
-page: https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000013&pageIndex=2
-  unreachable: URLError: <urlopen error timed out>
-page: https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000013&pageIndex=3
-  unreachable: URLError: <urlopen error timed out>
-page: https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000014&searchWrd=%EC%99%B8%EA%B5%AD%EC%9D%B8%EC%A3%BC%EB%AF%BC
-  unreachable: URLError: <urlopen error timed out>
+xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
+usage: probe_links.py [-h] [--match MATCH] [--head] [--limit LIMIT]
+                      [--timeout TIMEOUT] [--check CHECK] [--accept ACCEPT]
+                      [--find FIND] [--raw RAW]
+                      url [url ...]
+probe_links.py: error: argument --find: expected one argument
