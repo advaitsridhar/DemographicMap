@@ -86,6 +86,8 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # Hong Kong's 2021 census: ethnicity and usual spoken language from the
   # C&SD Main Results workbook; needs egress.
   soft python3 -m scripts.fetch_census.hongkong_census
+  # Census ethnicity for the 31 divisions, one MediaWiki API call each.
+  soft python3 -m scripts.fetch_census.china_wiki
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.
   soft python3 -m scripts.fetch_census.thailand
   # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).

@@ -71,6 +71,10 @@ ADAPTER_FILES = [
     # Hong Kong's own census, one shape under China: ethnicity and usual
     # spoken language from the 2021 Main Results workbook.
     "hongkong_census.json",
+    # China's census ethnicity by province, the tables the provinces'
+    # Wikipedia articles transcribe: a census transcription, so above the
+    # surveys, and it touches a field the surveys do not carry.
+    "china_wiki_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
@@ -189,7 +193,9 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.burkina",
     "CHN": "CFPS 2012 (religion) for the five provinces the survey sampled on their "
            "own, transcribed from Lu Yunfeng's report: "
-           "python -m scripts.fetch_census.cfps_survey. Hong Kong SAR carries "
+           "python -m scripts.fetch_census.cfps_survey; census ethnicity by "
+           "province, transcribed in each province's Wikipedia article: "
+           "python -m scripts.fetch_census.china_wiki. Hong Kong SAR carries "
            "ethnicity and usual spoken language from its own 2021 Population "
            "Census (C&SD Main Results, Tables 3.9 and 3.13): "
            "python -m scripts.fetch_census.hongkong_census",
