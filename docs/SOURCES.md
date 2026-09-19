@@ -4944,11 +4944,32 @@ runner (`ESTAT_API` in its environment, scrubbed from every log line):
   holds naturalised citizens and people of any ancestry, and how many people
   the census recorded as neither Japanese nor foreign (left out of the
   denominator, and printed). The reader refuses to write unless the 47
-  prefectures reproduce the table's own 全国 row exactly, that row reproduces
-  the Statistics Bureau's published national figures (foreign population
-  2,402,460 and the ten nationalities the 結果の概要 prints, in `PUBLISHED`),
-  and the national composition rebuilt from the prefectures sits within half
-  a point of the published one.
+  prefectures reproduce the table's own 全国 row exactly, the thirteen
+  nationalities its foreign total, and the total the census's published
+  126,146,099.
+* **The Statistics Bureau's 結果の概要** for the same tabulation
+  (`stat.go.jp/data/kokusei/2020/kekka/pdf/outline_01.pdf`, 30 November
+  2021, 60 pages), read by the runner's `probe_pdf`. The first attempt at
+  this adapter refused because the table's national row did not reproduce
+  eight per-nationality "published" counts -- which no probe had read; they
+  had been written from memory, and were wrong. What the 概要 actually prints
+  in section IV (pages 33 and 35) is a **different universe from the
+  table**: its headline counts are 不詳補完値, in which the 2,202,484 people
+  the census recorded as neither Japanese nor foreign are allocated to one
+  or the other, so it puts foreign nationals at 2,747,137 (2.2% of
+  126,146,099) where the table records 2,402,460 (1.9% of those recorded);
+  the imputation sends 344,677 of the unstated to "foreign", a far higher
+  share than among the recorded. Section VII (page 48) prints the
+  nationalities themselves, but the probe's page cap stopped at section IV
+  and, by the owner's instruction that day ("why don't you just publish the
+  estimates with a note?"), no second probe was spent. The reader now
+  enforces what it read -- the published total exactly, the imputed
+  Japanese and foreign summing to it, the imputed foreign share within half
+  a point of the recorded one (it is 0.24 points over) -- and publishes the
+  table with that difference stated in one sentence on every prefecture's
+  `ethnicity_note`, instead of holding 47 prefectures back over a summary.
+  The composition is of recorded nationalities, so its foreign share runs
+  about a quarter of a point low nationally against the Bureau's headline.
 * **`0003282963`**, the same 宗教統計調査 table the section above measured,
   at 2025年度 (31 December 2024): 信者 by 宗教系統 for the country and the 47
   prefectures. 175,054,047 believers, 1.39 per person. Used as a **relative
@@ -4974,12 +4995,15 @@ affiliated total, with no religion held at the survey's national figure
 because nothing gives it by prefecture, and the 2% no-answer left out. Two
 absolute bounds stop the signal's known artefacts passing through: Christianity
 at most 5% (Nagasaki, Japan's most Christian prefecture, is a few percent by
-the churches' own counts and comes out at 3.1) and Shinto at most 9% (three
-times the national self-identification). Three prefectures hit a bound --
-Okinawa, whose corporations report 90% of its believers as Shinto, Kyoto and
-Nagano -- and their notes say so. The record carries the ratios under `tilt`
-and the bound groups under `capped`; the log prints the five prefectures the
-tilt moves furthest from the prior. **No backtest exists and none is
+the churches' own counts and comes out at 3.2, its tilt ratio at the 3.0
+clip) and Shinto at most 9% (three times the national self-identification).
+Three prefectures hit a bound -- Okinawa, whose corporations report 90% of
+its believers as Shinto, Kyoto and Nagano -- and their notes say so. The
+record carries the ratios under `tilt` and the bound groups under `capped`;
+the log prints the five prefectures the tilt moves furthest from the prior,
+which on the 19 September run were Okinawa (9.9 points), Kyoto (6.9), Nagano
+(5.9), Miyagi (5.4) and Yamanashi (5.2), every one of them a Shinto-heavy
+registration count pulling Shinto up and Buddhism down. **No backtest exists and none is
 claimed**: there is no prefecture-level self-identification figure to score
 against, so the estimate has no `backtest` key and its note says why.
 

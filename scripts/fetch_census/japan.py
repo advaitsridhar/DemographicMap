@@ -113,7 +113,7 @@ CODE_TOTAL, CODE_FOREIGN, CODE_UNKNOWN = "0", "1", "3"
 # read from 令和２年国勢調査 人口等基本集計結果 結果の概要 (30 November 2021),
 # section IV, pages 33 and 35 (the runner's probe of PUBLISHED_URL). They are
 # a different universe from the table: the 概要's headline counts are 不詳補完値,
-# in which the 2,202,419 people recorded as neither Japanese nor foreign are
+# in which the 2,202,484 people recorded as neither Japanese nor foreign are
 # allocated to one or the other, so its foreign population is 2,747,137 where
 # the table records 2,402,460. The total population is the same count in both
 # and must match exactly, or the table is the wrong thing; the imputed
