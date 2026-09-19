@@ -1,81 +1,45 @@
-
-===== page: 'Nationality, religion, and language data for the provinces of Thailand', 30,739 bytes of wikitext
-  1 table(s)
---- table 1: 77 rows ---
-  province name | % Thai nationals in 1970 | % Thai nationals in 2000 | Buddhist % in 1990 | Buddhist % in 2000 | Muslim % in 1990 | Muslim % in 2000 | Christian % in 1990 | Christian % in 2000 | Linguistic minorities in 1990 | Linguistic minorities in 2000
-  Amnat Charoen | N/A | 99.8% | N/A | 98.8% | N/A | 0.1% | N/A | N/A | N/A | N/A
-  Ang Thong | 99.4% | 99.8% | 99.0% | 98.1% | 1.0% | 1.4% | N/A | N/A | N/A | N/A
-  Phra Nakhon Si Ayutthaya | 99.4% | 99.8% | 94.9% | 94.3% | 4.8% | 4.8% | N/A | N/A | Malay-Yawi (0.1%), Laotian and Vietnamese (0.3%), Japanese (<0.1%), Khmer (<0.1%) | Malay-Yawi (<0.1%), Laotian and Vietnamese (<0.1%), Japanese (0.02%), Khmer (0.02%)
-  Bangkok | 94.8% | 99.0% | 95.1% | 94.5% | 4.0% | 4.1% | 0.7% | 1.0% | English (0.1%), Indian languages (0.1%), Japanese (<0.1%) | English (0.7%), Indian languages (0.1%), Japanese (0.1%)
-  Buriram | 99.7% | 99.8% | 99.7% | 99.4% | 0.1% | 0.1% | N/A | N/A | Khmer (0.3%), Laotian and Vietnamese (0.8%) | Khmer (27.6%), Laotian and Vietnamese (0.1%)
-  Chachoengsao | 98.9% | 99.8% | 93.6% | 92.7% | 5.9% | 6.4% | 0.5% | 0.6% | N/A | N/A
-  Chai Nat | 99.2% | 99.8% | 99.8% | 99.5% | 0.1% | 0.3% | N/A | N/A | N/A | N/A
-  Chaiyaphum | 99.8% | 99.9% | 99.8% | 99.4% | 0.1% | 0.1% | N/A | N/A | N/A | N/A
-  Chanthaburi | 99.2% | 99.8% | 98.4% | 97.9% | 0.1% | 0.2% | 1.5% | 1.8% | Khmer (0.6%) | Khmer (1.6%)
-  Chiang Mai | 99.4% | 96.6% | 95.7% | 92.2% | N/A | N/A | 3.3% | 6.0% | Hill tribe languages (9.7%) | Hill tribe languages (13.4%)
-  Chiang Rai | 99.5% | 92.0% | 95.1% | 90.6% | 0.3% | 0.3% | N/A | N/A | Hill tribe languages (3.4%) | Hill tribe languages (12.5%)
-  Chonburi | 98.2% | 99.4% | 98.5% | 96.9% | 1.0% | 1.6% | 0.5% | 0.9% | N/A | N/A
-  Chumpon | 99.1% | 99.2% | 99.5% | 98.9% | 0.3% | 0.7% | N/A | N/A | N/A | N/A
-  Kalasin | 99.7% | 99.8% | 99.8% | 99.5 | 0.1% | 0.1% | N/A | N/A | N/A | N/A
-  Kamphaeng Phet | 99.6% | 99.8% | 99.5% | 99.0% | N/A | N/A | 0.3% | 0.3 | Hill tribe languages (1.1%) | Hill tribe languages (<0.1%)
-  Kanchanaburi | 98.0% | 96.0% | 99.6% | 99.0% | 0.1% | 0.3% | 0.2% | 0.6% | Burmese and Peguan (1.4%), Hill tribe languages (1.4%) | Burmese and Peguan (2.9%), Hill tribe languages (2.1%)
-  Khon Kaen | 99.6% | 99.8% | 99.7% | 99.4% | 0.1% | 0.1% | N/A | N/A | N/A | N/A
-  Krabi | 99.6% | 99.8% | 64.2% | 65.2% | 35.6% | 34.7% | N/A | N/A | Malay (0.2%) | Malay (0.2%)
-  Lampang | 99.6% | 99.8% | 99.0% | 98.7% | N/A | N/A | 0.6% | 0.9% | Hill tribe languages (0.8%) | Hill tribe languages (1.0%)
-  Lamphun | 99.8% | 99.8% | 99.7% | 99.5 | 0.1% | 0.2% | N/A | N/A | Hill tribe languages (4.7%) | Hill tribe languages (6.0%)
-  Loei | 99.7% | 99.4% | 99.5% | 99.4% | 0.1% | 0.1% | 0.3% | 0.4% | N/A | N/A
-  Lopburi | 99.6% | 99.8% | 99.8% | 99.5% | 0.1% | 0.2% | N/A | N/A | N/A | N/A
-  Mae Hong Son | 99.6% | 94.0% | 83.1% | 74.9% | 0.4% | 0.6% | N/A | N/A | Hill tribe languages (51.1%) | Hill tribe languages (63.0%)
-  Maha Sarakham | 99.8% | 99.9% | 99.8% | 99.8% | 0.1% | 0.1% | N/A | N/A | Khmer (0.2%) | Khmer (0.3%)
-  Mukdahan | N/A | 99.2% | 98.9% | 98.8% | 0.1% | 0.2% | N/A | N/A | Laotian and Vietnamese (0.7%) | Laotian and Vietnamese (0.7%)
-  Nakhon Nayok | 99.2% | 99.8% | 94.8% | 93.5% | 4.9% | 5.9% | N/A | N/A | N/A | N/A
-  Nakhon Pathom | 98.5% | 99.8% | 98.8% | 98.8% | 0.1% | 0.2% | 1.1% | 0.8% | N/A | N/A
-  Nakhon Phanom | 99.0% | 99.5% | 99.1% | 98.9% | 0.1% | 0.1% | N/A | N/A | Laotian and Vietnamese (0.5%) | Laotian and Vietnamese (0.2%)
-  Nakhon Ratchasima | 99.5% | 99.8% | 99.6% | 99.1% | 0.1% | 0.1% | N/A | N/A | Khmer (0.1%) | Khmer (0.2%)
-  Nakhon Sawan | 99.2% | 99.4% | 99.6% | 99.2% | 0.1% | 0.5% | N/A | N/A | N/A | N/A
-  Nakhon Si Thamarrat | 99.4% | 99.9% | 94.3% | 93.1% | 5.6% | 6.2% | N/A | N/A | Malay (1.4%), Chinese (1.4%) | Malay (2.9%), Chinese (2.1%)
-  Nan | 99.7% | 99.7% | 98.4% | 95.8% | N/A | N/A | 0.5% | 1.0% | Hill tribe languages (3.1%) | Hill tribe languages (10.5%)
-  Narathiwat | 99.0% | 99.8% | 20.5% | 17.9% | 79.2% | 82.0% | N/A | N/A | Malay (77.9%), Chinese (0.7%) | Malay (80.4%), Chinese (0.3%)
-  Nonthaburi | 98.8% | 99.6% | 95.1% | 95.2% | 4.4% | 4.0% | N/A | N/A | Burmese and Peguan (0.1%), Malay (0.1%) | Burmese and Peguan (0.2%), Malay (<0.1%)
-  Nong Bau Lam Phu | N/A | 99.9% | N/A | 99.9% | N/A | N/A | N/A | N/A | N/A | N/A
-  Nong Khai | 98.0% | 99.5% | 99.5% | 99.1% | 0.1% | 0.1% | N/A | N/A | N/A | N/A
-  Pathum Thani | 98.8% | 99.7% | 96.8% | 96.3% | 2.8% | 2.9% | N/A | N/A | Malay (1.1%) | Malay (0.1%)
-  Pattani | 99.4% | 99.9% | 21.4% | 19.2% | 78.4% | 80.7% | N/A | N/A | Malay (70.5%), Chinese (0.3%) | Malay (76.6%), Chinese (1.0%)
-  Phayao | N/A | 99.6% | 98.6% | 97.9% | N/A | N/A | 0.7% | 0.8% | Hill tribe languages (1.5%) | Hill tribe languages (2.6%)
-  Phangnga | 99.3% | 97.8% | 77.0% | 76.3% | 22.8% | 23.2% | N/A | N/A | Burmese and Peguan (0.1%) | Burmese and Peguan (1.7%)
-  Phatthalung | 99.6% | 99.9% | 91.3% | 88.3% | 8.6% | 11.1% | N/A | N/A | Malay (0.2%) | Malay (0.1%)
-  Phetchabun | 99.6% | 99.8% | 99.3% | 99.1% | N/A | N/A | 0.4% | 0.3% | Hill tribe languages (0.9%) | Hill tribe languages (1.0%)
-  Phetchaburi | 99.2% | 99.7% | 97.8% | 97.1% | 2.2% | 2.5% | N/A | N/A | Hill tribe languages (0.1%) | Hill tribe languages (0.1%)
-  Phichit | 99.4% | 99.9% | 99.7% | 99.2% | 0.1% | 0.1% | N/A | N/A | N/A | N/A
-  Phitsanulok | 99.4% | 99.8% | 99.4% | 99.3% | 0.1% | 0.1% | 0.2% | 0.3% | Hill tribe languages (0.4%) | Hill tribe languages (0.7%)
-  Phrae | 99.7% | 99.9% | 99.6% | 99.0% | 0.1% | 0.1% | N/A | N/A | Hill tribe languages (1.0%) | Hill tribe languages (1.9%)
-  Phuket | 98.7% | 98.5% | 82.8% | 81.6% | 16.9% | 17.1% | N/A | N/A | Malay (0.5%) | Malay (0.7%)
-  Prachuap Khiri Khan | 99.0% | 99.3% | 98.9% | 98.3% | 0.1% | 1.0% | N/A | N/A | Hill tribe languages (0.2%), Burmese and Peguan (0.1%) | Hill tribe languages (0.1%), Burmese and Peguan (<0.1%)
-  Prachin Buri | 99.4% | 99.8% | 99.6% | 98.8% | 0.1% | 0.2% | 0.3% | 0.5% | Khmer (1.8%) | Khmer (0.1%)
-  Ranong | 98.7% | 93.4% | 88.5% | 88.5% | 11.0% | 10.9% | N/A | N/A | Malay (1.1%), Burmese and Peguan (2.43%) | Malay (0.5%), Burmese and Peguan (7.0%)
-  Ratchaburi | 98.8% | 99.3% | 98.9% | 98.3% | N/A | N/A | 0.9% | 1.2% | Hill tribe languages (0.5%), Burmese and Peguan (0.4%), Laotian and Vietnamese (0.5%) | Hill tribe languages (1.1%), Burmese and Peguan (0.6%), Laotian and Vietnamese (0.5%)
-  Rayong | 99.1% | 99.7% | 98.8% | 98.4% | 1.1% | 1.1% | N/A | N/A | Japanese (<0.1%) | Japanese (0.1%)
-  Roi Et | 99.8% | 99.9% | 99.7% | 99.4% | 0.1% | 0.1% | N/A | N/A | Khmer (0.4%) | Khmer (0.5%)
-  Sa Kaeo | N/A | 99.7% | N/A | 99.4% | N/A | 0.2% | N/A | 0.3% | N/A | Khmer (1.9%)
-  Sakon Nakhon | 99.4% | 99.8% | 96.8% | 96.8% | 0.1% | 0.1% | N/A | N/A | Laotian and Vietnamese (0.3%) | Laotian and Vietnamese (0.1%)
-  Samutprakan | 98.4% | 99.8% | 98.0% | 97.7% | 1.3% | 1.5% | N/A | N/A | Chinese (0.4%) | Chinese (0.5%)
-  Samut Sakhon | 98.6% | 99.0% | 99.7% | 98.9% | 0.1% | 0.3% | 0.2% | 0.2% | Burmese and Peguan (1.9%) | Burmese and Peguan (0.6%)
-  Samut Songkhram | 98.8% | 99.6% | 99.1% | 98.3% | 0.2% | 0.4% | N/A | N/A | N/A | N/A
-  Saraburi | 99.2% | 99.6% | 99.6% | 97.7% | 0.4% | 0.3% | N/A | N/A | Laotian and Vietnamese (0.2%), Hill tribe languages (<0.1%) | Laotian and Vietnamese (<0.1%), Hill tribe languages (1.8%)
-  Sing Buri | 99.3% | 99.8% | 99.4% | 99.2% | 0.2% | 0.4% | N/A | N/A | N/A | N/A
-  Sisaket | 99.8% | 99.9% | 99.6% | 99.4% | 0.1% | 0.1% | N/A | N/A | Khmer (30.2%) | Khmer (26.2%)
-  Songkhla | 98.3% | 99.8% | 78.8% | 76.6% | 21.0% | 23.2% | N/A | N/A | Malay (5.5%) | Malay (4.6%)
-  Satun | 99.5% | 99.9% | 32.7% | 31.9% | 67.1% | 67.8% | N/A | N/A | Malay (2.8%) | Malay (9.9%)
-  Sukhothai | 99.5% | 99.6% | 99.5% | 99.8% | 0.1% | 0.1% | N/A | N/A | Hill tribe languages (0.5%) | Hill tribe languages (0.2%)
-  Suphan Buri | 99.0% | 99.8% | 99.9% | 99.2% | 0.1% | 0.1% | 0.1% | 0.2% | Laotian and Vietnamese (0.3%) | Laotian and Vietnamese (0.8%)
-  Surat Thani | 99.1% | 99.7% | 98.2% | 97.3% | 1.6% | 2.0% | 0.1% | 0.2% | Chinese (0.1%) | Chinese (0.1%)
-  Surin | 99.7% | 99.5% | 99.8% | 99.3% | 0.1% | 0.1% | N/A | N/A | Khmer (63.4%) | Khmer (47.2%)
-  Tak | 99.5% | 93.3% | 96.6% | 95.1% | 0.4% | 1.2% | N/A | N/A | Burmese and Peguan (0.3%), Hill tribe languages (18.1%) | Burmese and Peguan (2.6%), Hill tribe languages (24.3%)
-  Trat | 99.5% | 97.0% | 97.3% | 97.0% | 2.5% | 2.8% | N/A | N/A | Burmese and Peguan (0.1%), Khmer (0.4%) | Burmese and Peguan (0.3%), Khmer (2.1%)
-  Trang | 99.1% | 99.8% | 86.7% | 86.0% | 13.1% | 13.7% | N/A | N/A | N/A | N/A
-  Ubon Ratchathani | 99.4% | 99.7% | 99.3% | 99.4% | 0.1% | 0.1% | N/A | N/A | Khmer (0.8%) | Khmer (0.3%)
-  Udon Thani | 99.5% | 99.8% | 99.4% | 99.4% | 0.1% | 0.1% | N/A | N/A | N/A | N/A
-  Uthai Thani | 99.6% | 99.9% | 99.8% | 99.6% | 0.1% | 0.2% | N/A | N/A | Hill tribe languages (0.8%) | Hill tribe languages (0.5%)
-  Uttaradit | 99.5% | 99.7% | 99.6% | 99.2% | 0.1% | 0.1% | 0.1% | 0.3% | Laotian and Vietnamese (0.1%) | Laotian and Vietnamese (0.3%)
-  Yala | 97.3% | 99.8% | 35.9% | 31.0% | 63.8% | 68.9% | N/A | N/A | Malay (62.4%), Chinese (4.4%) | Malay (66.1%), Chinese (3.0%)
-  Yasothon | N/A | 99.9% | 99.1% | 98.7% | 0.1% | 0.1% | N/A | N/A | N/A | N/A
+page: https://www.sac.or.th/databases/ethnic-groups/
+  unreachable: HTTPError: HTTP Error 403: Forbidden
+page: https://ethnicity.sac.or.th/
+  unreachable: HTTPError: HTTP Error 403: Forbidden
+page: https://www.lc.mahidol.ac.th/
+  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lc.mahidol.ac.th'. (_ssl.c:1016)>
+page: https://langrevival.mahidol.ac.th/
+  unreachable: HTTPError: HTTP Error 403: Forbidden
+page: https://www.sac.or.th/
+  416,812 bytes
+  17 matching link(s)
+  - ข่าวประชาสัมพันธ์ SAC podcase series มานุษยวิทยากับกฎหมายชาติพันธุ์ EP
+    https://www.sac.or.th/portal/th/news/detail/406
+  - ข่าวประชาสัมพันธ์ ประกาศกำหนดจำนวนสมาชิก และกำหนดระยะเวลาเลือกสมาชิก ข
+    https://www.sac.or.th/portal/th/news/detail/405
+  - ข่าวประชาสัมพันธ์ SAC podcase series มานุษยวิทยากับกฎหมายชาติพันธุ์ EP
+    https://www.sac.or.th/portal/th/news/detail/404
+  - ข่าวประชาสัมพันธ์ ถาม-ตอบ การขึ้นทะเบียนกลุ่มชาติพันธุ์ ข่าวประชาสัมพั
+    https://www.sac.or.th/portal/th/news/detail/400
+  - บทความ เมื่อ ‘รัฐ’ รุกคืบบ้านปางแดงใน: บทสะท้อนอัตลักษณ์ อารมณ์ และควา
+    https://www.sac.or.th/portal/th/article/detail/840
+  - บทความ ปฏิสัมพันธ์ทางวัฒนธรรม (Interculturalism) ชาติพันธุ์ อัตลักษณ์ 
+    https://www.sac.or.th/portal/th/article/detail/834
+  - ข่าวประชาสัมพันธ์ ประกาศบัญชีรายชื่อกลุ่มชาติพันธุ์ในประเทศไทย และกำหน
+    https://www.sac.or.th/portal/th/news/detail/399
+  - ข่าวประชาสัมพันธ์ ขอเชิญเสนอรายชื่อบุคคล เพื่อรับการสรรหาเป็นกรรมการผู
+    https://www.sac.or.th/portal/th/news/detail/394
+  - ข่าวประชาสัมพันธ์ ขอเชิญองค์กรพัฒนาเอกชนเสนอรายชื่อบุคคล เพื่อสรรหาเป็
+    https://www.sac.or.th/portal/th/news/detail/393
+  - ข่าวประชาสัมพันธ์ เสวนาเนื่องในโอกาส 244 ปี กรุงรัตนโกสินทร์ หัวข้อ “โ
+    https://www.sac.or.th/portal/th/news/detail/389
+  - กิจกรรม “ความท้าทายและความหวังของเยาวชนกลุ่มชาติพันธุ์ ในมิติการศึกษาแ
+    https://www.sac.or.th/portal/th/activity/detail/567
+  - กิจกรรม อ่านจารึกไทยให้โลกอ่านได้: การพัฒนามาตรฐานการถ่ายถอดจารึกภาษาไ
+    https://www.sac.or.th/portal/th/activity/detail/564
+  - กิจกรรม “โลกทัศน์ชาติพันธุ์ของสยามสมัยต้นรัตนโกสินทร์: หลักฐานจาก สัพะ
+    https://www.sac.or.th/portal/th/activity/detail/556
+  - กลุ่มชาติพันธุ์ในประเทศไทย
+    https://ethnicity.sac.or.th?tokens=
+  - งานวิจัยชาติพันธุ์
+    https://ethnicredb.sac.or.th?tokens=
+  - แผนที่วัฒนธรรมสาครบุรี
+    https://db.sac.or.th/samutsakhon/ethno-map/?tokens=
+  - ดูทั้งหมด '); var $nav_alt = $(owl_nav_alt_html); $nav_alt.appendTo(ev
+    https://www.sac.or.th/
