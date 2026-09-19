@@ -267,7 +267,7 @@ class Records(unittest.TestCase):
                 note = r[field]["note"]
                 self.assertTrue(note.startswith("Modelled from"), note[:80])
                 self.assertIn(m.DECISION, note)
-                self.assertIn("not evidence of what any census says", note)
+                self.assertIn("a model, not a count", note)
                 # Short: the first sentence says what it is, the caveats after
                 # it, not a paragraph.
                 self.assertLess(len(note), 1300, f"{r['name']} {field} note is {len(note)}")
