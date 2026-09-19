@@ -1523,6 +1523,15 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # "Lao and Vietnamese" is the 2000 census's one row for the two.
         "Central Thai", "Northern Thai", "Southern Thai", "Kuy", "Mien",
         "Lao and Vietnamese",
+        # China's census nationalities of the south, as the provinces'
+        # tables print them: the Tai-Kadai peoples (Bouyei, Dong, Sui,
+        # Mulao, Maonan, Gelao, the Li of Hainan, the Dai of Yunnan), the
+        # Hmong-Mien She and Yao, and the Gin, who are Viet Nam's Kinh on
+        # the Guangxi coast. The Yao are written with the country because
+        # the bare "Yao" above is the Bantu people of Malawi and
+        # Mozambique, and the tree cannot tell the two apart by name.
+        "Bouyei", "Dong", "Sui", "Mulao", "Maonan", "Gelao", "Li", "Dai",
+        "She", "Yao (China)", "Gin",
     ),
     "Malagasy peoples": ("Sihanaka", "Masikoro", "Antesaka", "Antandroy",
                          # The rest of Madagascar's eighteen.
@@ -1544,6 +1553,11 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # that the census counts in the hundreds.
         "Bayad", "Buriad", "Dariganga", "Durvud", "Zakhchin",
         "Ulch", "Uilta", "Negidal", "Oroch", "Kerek",
+        # China's north-eastern and north-western nationalities: the
+        # Tungusic Manchu, Xibe, Hezhen (the Nanai above) and Oroqen, and
+        # the Mongolic Daur, Tu (Monguor), Dongxiang and Bonan.
+        "Manchu", "Xibe", "Hezhen", "Oroqen", "Daur", "Tu", "Dongxiang",
+        "Bonan",
     ),
     "Central African peoples": (
         "Oubanguiens",
@@ -1602,6 +1616,18 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # and Monipuri, whom the Bureau lists under the Meitei homeland's
         # name rather than the people's.
         "Tripura", "Monipuri", "Koch", "Barman", "Dalu",
+        # China's Tibeto-Burman nationalities of Yunnan, Sichuan, Guizhou,
+        # Hunan and Tibet, as the census tables print them: the Loloish Yi,
+        # Hani and Jino, the Qiangic Qiang and Pumi, the Burmish Achang,
+        # the Nungish Nu and Derung, the Bodish Monba, the Tani Lhoba, the
+        # Nakhi, the Tujia and the Bai (whose language is Sino-Tibetan and
+        # argued over between the Loloish and Sinitic sides; the people are
+        # Yunnan's, beside the Yi). Jingpo is the Chinese name of the
+        # Kachin above; De'ang is the Palaung and Blang the Bulang, whom
+        # this node already keeps beside the Wa.
+        "Yi", "Hani", "Jino", "Qiang", "Pumi", "Achang", "Nu", "Derung",
+        "Monba", "Lhoba", "Nakhi", "Tujia", "Bai", "Jingpo", "De'ang",
+        "Blang",
     ),
     "Arab peoples": ("Iraki", "Rashaida", "Sahraoui", "Sahrawi"),
     # Suriname's census names the community by where its ancestors came from.
@@ -1718,7 +1744,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     "Caucasian peoples": ("Shapsug",),
     "Armenian peoples": ("Hemshin",),
     "Turkic peoples": ("Soyot", "Teleut", "Chulym", "Kumandin", "Chelkan",
-                       "Tubalar"),
+                       "Tubalar",
+                       # The Salar of Qinghai, whose language is Oghuz.
+                       "Salar"),
     "Horn of Africa peoples": ("Orma", "Borana", "Bilen", "Tigre"),
     # Kondo is the Bureau's spelling of Khond, whose Kui is Dravidian.
     "Dravidian peoples": ("Bharatha", "Kondo"),
