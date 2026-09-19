@@ -1,4 +1,14 @@
-page: https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1
-  unreachable: HTTPError: HTTP Error 403: Forbidden
-page: https://www.singstat.gov.sg/find-data/search-by-theme/population/geographic-distribution/latest-data
-  unreachable: HTTPError: HTTP Error 403: Forbidden
+japan: nationality from e-Stat 0003445244, believers from 0003282963, prior from NHK/ISSP 2018
+  e-Stat 0003445244: 816 values
+  e-Stat 0003282963: 240 values
+  nationality: the 47 prefectures reproduce the table's national row; total 126,146,099 is the published one; the imputed foreign share is +0.24 points from the recorded one (stated on every prefecture)
+  believers: 175,054,047 against 126,146,099 people, 1.39 per person; used as a relative signal only
+  prior (no answer left out): no religion 63.3, Buddhism 31.6, Shinto 3.1, Christianity 1.0, Other religions 1.0
+  religion: the five prefectures the tilt moves furthest from the national prior:
+      Okinawa Prefecture       9.9 points  Buddhism 22.0, Shinto 9.0, Christianity 5.0, Other religions 0.8  (held at the bound: Shinto, Christianity)
+      Kyoto Prefecture         6.9 points  Buddhism 25.1, Shinto 9.0, Christianity 0.7, Other religions 1.9  (held at the bound: Shinto)
+      Nagano                   5.9 points  Buddhism 26.1, Shinto 9.0, Christianity 0.8, Other religions 0.8  (held at the bound: Shinto)
+      Miyagi                   5.4 points  Buddhism 26.9, Shinto 8.4, Christianity 0.8, Other religions 0.6
+      Yamanashi                5.2 points  Buddhism 27.3, Shinto 8.2, Christianity 0.6, Other religions 0.6
+  religion: 3 prefectures hit a bound: Okinawa Prefecture, Kyoto Prefecture, Nagano
+  wrote data/processed/japan_prefecture.json (399 kB)
