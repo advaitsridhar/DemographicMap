@@ -78,6 +78,9 @@ ADAPTER_FILES = [
     # The same survey's newer wave, tabulated from its public-release file
     # and checked against that paper: it replaces the 2012 figure where read.
     "cfps_microdata_province.json",
+    # Viet Nam's 2019 census, ethnicity by province from Table 2 of the
+    # office's own Vietnamese results volume: a census count.
+    "vietnam_province.json",
     # Hong Kong's own census, one shape under China: ethnicity and usual
     # spoken language from the 2021 Main Results workbook.
     "hongkong_census.json",
@@ -192,6 +195,8 @@ ADAPTER_HINTS: dict[str, str] = {
            "(python -m scripts.fetch_census.kazakhstan)",
     "KHM": "2019 census religion by province, transcribed on Wikipedia: "
            "python -m scripts.fetch_census.wiki_census --country KHM",
+    "VNM": "2019 census Table 2 (population by ethnic group and province) from the "
+           "office's own results volume: python -m scripts.fetch_census.vietnam",
     "PER": "INEI 2017 census profile book (religion, mother tongue) by department, "
            "read from the PDF's word positions: python -m scripts.fetch_census.peru",
     "MLI": "INSTAT RGPH5 2022 thematic report on cultural characteristics (religion, "
@@ -258,9 +263,6 @@ ADAPTER_GAPS: dict[str, str] = {
     "IDN": "BPS publishes religion by regency, but its API needs a free "
            "registered key and its other hosts refuse automated readers. The "
            "data exists and is not reachable without that key.",
-    "VNM": "The 2019 census asked both religion and ethnicity, and publishes "
-           "each for the country as a whole rather than by province. No "
-           "provincial table exists to fetch.",
     "THA": "The statistical office refuses automated readers on every host "
            "tried. Religion by province is the 2000 census, read from its "
            "provincial final reports as transcribed on Wikipedia; language was "

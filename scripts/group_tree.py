@@ -1504,6 +1504,8 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Phù Lá", "La Hủ", "La Ha", "Pà Thẻn", "Lự", "Lô Lô", "Chứt",
         "Mảng", "Cờ Lao", "Bố Y", "Cống", "Si La", "Pu Péo", "Rơ Măm",
         "Brâu", "Ơ Đu", "Mông", "H'Mông", "Dao",
+        # ...and the spellings the 2019 results volume prints.
+        "Raglay", "Gié Triêng", "Bru Vân Kiều", "Cơ Lao",
         # Thailand's four regional Tai groups as the Ethnolinguistic Maps of
         # Thailand name them, spelled out here because the bare "Thai" is
         # also a nationality (Japan's census counts Thai nationals) and the
