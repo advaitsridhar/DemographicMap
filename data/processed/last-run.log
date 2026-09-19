@@ -1,33 +1,21 @@
-page: https://www.mycensus.gov.my/
-  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
-page: https://www.mycensus.gov.my/index.php/census-product/publication/census-2020
-  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
-page: https://www.dosm.gov.my/portal-main/release-content/key-findings-population-and-housing-census-of-malaysia-2020
-  100,112 bytes
-  13 matching link(s)
-  - ← back
-    https://www.dosm.gov.my/portal-main/release-content/key-findings-population-and-housing-census-of-malaysia-2020
-  - ← back
-    https://www.dosm.gov.my/portal-main/release-content/key-findings-population-and-housing-census-of-malaysia-2020#a
-  - Agriculture Census
-    https://www.dosm.gov.my/portal-main/release-subthemes/agriculture-census
+page: https://www.dosm.gov.my/portal-main/release-content2?id=key-findings-population-and-housing-census-of-malaysia-2020&type=data
+  97,012 bytes
+  1 matching link(s)
   - Metadata Guideline
     https://www.dosm.gov.my/assets/documents/Metadata_Guideline.pdf
-  - Census & Surveys
-    https://www.dosm.gov.my/portal-main/census-surveys-category
-  - Overview
-    https://www.dosm.gov.my/portal-main/release-content?id=key-findings-population-and-housing-census-of-malaysia-2020
-  - Infographic
-    https://www.dosm.gov.my/portal-main/release-content2?id=key-findings-population-and-housing-census-of-malaysia-2020&type=infographic
-  - Data
-    https://www.dosm.gov.my/portal-main/release-content2?id=key-findings-population-and-housing-census-of-malaysia-2020&type=data
-  - Publication
-    https://www.dosm.gov.my/portal-main/release-content2?id=key-findings-population-and-housing-census-of-malaysia-2020&type=publication
-  - Press Statement
-    https://www.dosm.gov.my/portal-main/release-content2?id=key-findings-population-and-housing-census-of-malaysia-2020&type=press_statement
-  - Technical Notes / Methodology
-    https://www.dosm.gov.my/portal-main/release-content2?id=key-findings-population-and-housing-census-of-malaysia-2020&type=technical_notes
-  - Release Archive
-    https://www.dosm.gov.my/portal-main/release-archive?id=key-findings-population-and-housing-census-of-malaysia-2020
-  - TOP
-    https://www.dosm.gov.my/portal-main/release-content/key-findings-population-and-housing-census-of-malaysia-2020#top
+  checking https://www.dosm.gov.my/assets/documents/Metadata_Guideline.pdf
+    200 application/pdf size=44367
+page: https://www.dosm.gov.my/portal-main/release-content2?id=key-findings-population-and-housing-census-of-malaysia-2020&type=publication
+  97,026 bytes
+  1 matching link(s)
+  - Metadata Guideline
+    https://www.dosm.gov.my/assets/documents/Metadata_Guideline.pdf
+  checking https://www.dosm.gov.my/assets/documents/Metadata_Guideline.pdf
+    200 application/pdf size=44367
+page: https://www.dosm.gov.my/portal-main/release-content2?id=key-findings-population-and-housing-census-of-malaysia-2020&type=press_statement
+  97,034 bytes
+  1 matching link(s)
+  - Metadata Guideline
+    https://www.dosm.gov.my/assets/documents/Metadata_Guideline.pdf
+  checking https://www.dosm.gov.my/assets/documents/Metadata_Guideline.pdf
+    200 application/pdf size=44367
