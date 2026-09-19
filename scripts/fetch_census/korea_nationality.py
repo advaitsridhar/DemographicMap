@@ -67,6 +67,7 @@ import csv
 import io
 import re
 import sys
+import urllib.parse
 import zipfile
 from collections import Counter
 from pathlib import Path
@@ -95,12 +96,20 @@ ENCODING = "cp949"
 COL_SIDO, COL_SIGUNGU, COL_SEX, COL_TOTAL = "시도", "시군구", "성별", "총합계"
 
 # --- the Ministry of the Interior and Safety: the resident register --------
-MOIS_DATASET = "https://www.data.go.kr/data/3033301/fileData.do"
-MOIS_URL = ""    # settled by the runner's probe of the dataset; see main()
+# The Ministry's resident-register site serves its monthly table through a
+# form: a dozen fields posted to downloadCsv.do come back as a cp949 CSV of
+# "행정구역 (code)", 총인구수 and 세대수. One request with the province
+# level set to "A" lists the seventeen provinces and the national row; one
+# request per province lists its districts. The data.go.kr copy of the
+# same table (dataset 3033301) is offered on application only.
+MOIS_DATASET = "https://jumin.mois.go.kr/statMonth.do"
+MOIS_URL = "https://jumin.mois.go.kr/downloadCsv.do?searchYearMonth=month&xlsStats=1"
 MOIS_SOURCE = ("Ministry of the Interior and Safety, resident registration population by "
-               "city/county/district at 31 December 2023 (주민등록 인구통계, "
-               "data.go.kr dataset 3033301)")
+               "city/county/district at December 2023 (주민등록 인구통계, jumin.mois.go.kr, "
+               "주민등록 인구 및 세대현황, 2023년 12월)")
 MOIS_LICENCE = MOJ_LICENCE
+REGISTER_YEAR, REGISTER_MONTH = "2023", "12"
+ALL = "A"
 
 # The Ministry of Justice's published national figure for the same date, to
 # be read on the runner from the Ministry's own release; the national row
@@ -389,39 +398,65 @@ def read_moj(table: list[list[str]]) -> dict[tuple[str, str], dict[str, int]]:
     return {k: dict(v) for k, v in out.items()}
 
 
-def read_register(table: list[list[str]]) -> dict[tuple[str, str], int]:
-    """{(province, first word of the 시군구): Korean nationals} from the
-    resident register's monthly file, whose first column is the
-    administrative area as "시도 시군구 (code)" and whose total is the column
-    headed 총인구수 (or 인구수 for a single month)."""
+AREA = re.compile(r"^(.*?)\s*\((\d{10})\)\s*$")
+
+
+def register_rows(table: list[list[str]]) -> list[tuple[str, str, int]]:
+    """(area name, ten-digit code, population) for every row of one of the
+    register's CSVs, whose first column is "행정구역 (code)" and whose
+    population is the column headed 총인구수."""
     header = table[0]
-    i_area = next((i for i, h in enumerate(header) if "행정구역" in h or "지역" in h), 0)
-    totals = [i for i, h in enumerate(header)
-              if re.search(r"(총인구수|_?인구수|총 ?인구)", h) and "남" not in h and "여" not in h]
+    i_area = next((i for i, h in enumerate(header) if "행정구역" in h), 0)
+    totals = [i for i, h in enumerate(header) if "총인구수" in h]
     if not totals:
-        raise SystemExit(f"korea_nationality: no population column in {header[:8]}")
-    i_total = totals[0]
-    out: dict[tuple[str, str], int] = {}
+        raise SystemExit(f"korea_nationality: no 총인구수 column in {header[:6]}")
+    out = []
     for row in table[1:]:
-        if len(row) <= max(i_area, i_total):
+        if len(row) <= max(i_area, totals[0]):
             continue
-        area = re.sub(r"\s*\([^)]*\)\s*$", "", row[i_area]).strip()
-        words = area.split()
-        if not words or words[0] not in SIDO:
+        found = AREA.match(row[i_area].strip())
+        if not found:
             continue
-        province = SIDO[words[0]]
-        if len(words) == 1:
-            key = (province, "")            # the province's own row
-        else:
-            key = (province, words[1])
-        count = number(row[i_total])
-        if len(words) > 2:
-            # A district of a city (수원시 장안구): the city's own row is
-            # also in the file and already carries it.
-            continue
-        if key in out:
-            raise SystemExit(f"korea_nationality: {area} appears twice in the register")
-        out[key] = count
+        out.append((" ".join(found.group(1).split()), found.group(2), number(row[totals[0]])))
+    return out
+
+
+def read_register(tables: list[list[list[str]]]) -> dict[tuple[str, str], int]:
+    """{(province, district as the register writes it): Korean nationals},
+    with the province's own row under (province, "") and the national row
+    under ("", ""), from the register's province listing and its per-province
+    listings.
+
+    A city's own districts (수원시 장안구, code 41111) are listed beside the
+    city (41110) and are skipped: the city's row already carries them, and
+    it is the city the boundary file draws. They are told from an ordinary
+    district by their code -- the parent's code, with the fifth digit
+    zeroed, is itself a row in the same listing -- since names alone do not
+    say (Seoul's 광진구 is 11215 and has no parent 11210).
+    """
+    out: dict[tuple[str, str], int] = {}
+    for table in tables:
+        rows = register_rows(table)
+        codes = {code for _, code, _ in rows}
+        for area, code, count in rows:
+            words = area.split()
+            if code[2:] == "00000000":
+                key = ("", "") if words[0] == "전국" else (SIDO[words[0]], "")
+                if words[0] != "전국" and words[0] not in SIDO:
+                    raise SystemExit(f"korea_nationality: unknown province {area!r}")
+            else:
+                if code[5:] != "00000":
+                    continue                        # an 읍면동
+                if code[4] != "0" and code[:4] + "000000" in codes:
+                    continue                        # a district of a city
+                if words[0] not in SIDO:
+                    raise SystemExit(f"korea_nationality: {area!r} names no province")
+                if len(words) < 2:
+                    raise SystemExit(f"korea_nationality: {area!r} names no district")
+                key = (SIDO[words[0]], words[1])
+            if key in out and out[key] != count:
+                raise SystemExit(f"korea_nationality: {area} appears twice in the register")
+            out[key] = count
     return out
 
 
@@ -499,8 +534,10 @@ def check(units: dict[tuple[str, str], dict[str, int]], register: dict[tuple[str
                              f"{parts:,} against the province's own {koreans[province]:,}")
     national: dict[str, int] = dict(sum((Counter(v) for v in provinces.values()), Counter()))
     national["koreans"] = sum(koreans.values())
-    if ("", "") in register or any(k[0] == "" for k in register):
-        pass
+    if ("", "") in register and register[("", "")] != national["koreans"]:
+        raise SystemExit(f"korea_nationality: the provinces' Koreans sum to "
+                         f"{national['koreans']:,} against the register's national "
+                         f"{register[('', '')]:,}")
     foreign_total = national["__total__"]
     share = foreign_total / (foreign_total + national["koreans"]) * 100
     if PUBLISHED:
@@ -644,13 +681,73 @@ def fetch_moj() -> list[list[str]]:
     return rows_of(found[name])
 
 
-def fetch_register(url: str) -> list[list[str]]:
-    blob = http_get(url, binary=True)
-    assert isinstance(blob, bytes)
-    found = members(blob)
-    name = max(found, key=lambda n: len(found[n]))
-    log(f"  {name}: {len(found[name]):,} bytes")
-    return rows_of(found[name])
+def register_fields(level1: str, level2: str = ALL) -> list[tuple[str, str]]:
+    """The form's fields for one month, as its page posts them (the runner's
+    probe of statMonth.do printed the inputs): the province level, the
+    district level ("A" for every district of the province), the month at
+    both ends of the range, and the register's default of every resident
+    (sltUndefType blank)."""
+    return [
+        ("tableId", "month"), ("category", "month"), ("searchYearMonth", "month"),
+        ("sltOrgType", "1"), ("sltOrgLvl1", level1), ("sltOrgLvl2", level2),
+        ("searchYearStart", REGISTER_YEAR), ("searchMonthStart", REGISTER_MONTH),
+        ("searchYearEnd", REGISTER_YEAR), ("searchMonthEnd", REGISTER_MONTH),
+        ("sltUndefType", ""), ("sltOrderType", "1"), ("sltOrderValue", "ASC"),
+        ("nowYear", "2026"),
+    ]
+
+
+def post_csv(url: str, fields: list[tuple[str, str]], *, retries: int = 3,
+             timeout: int = 180) -> list[list[str]]:
+    """POST a form and read the CSV it answers with, cp949 as the site writes
+    it whatever its header claims. A body that is not a CSV (the site's
+    error page is HTML) is a refusal, printed."""
+    import time
+    import urllib.request
+    from common import USER_AGENT
+    data = urllib.parse.urlencode(fields).encode()
+    delay = 3.0
+    last: Exception | None = None
+    for attempt in range(retries + 1):
+        try:
+            req = urllib.request.Request(url, data=data, headers={
+                "User-Agent": USER_AGENT,
+                "Content-Type": "application/x-www-form-urlencoded"})
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                blob = resp.read()
+                ctype = resp.headers.get("Content-Type", "")
+            break
+        except Exception as exc:  # pragma: no cover - network shape varies
+            last = exc
+            if attempt < retries:
+                log(f"  retry {attempt + 1}/{retries} after {delay:.0f}s :: {last}")
+                time.sleep(delay)
+                delay *= 2
+    else:
+        raise SystemExit(f"korea_nationality: the register did not answer: {last}")
+    if b"<html" in blob[:400].lower() or "html" in ctype:
+        text = blob.decode(ENCODING, "replace")
+        reason = re.findall(r"<li>([^<]{0,120})</li>", text)
+        raise SystemExit(f"korea_nationality: the register answered a page, not a CSV: "
+                         f"{reason[-1:] or text[:200]!r}")
+    return rows_of(blob)
+
+
+def fetch_register(url: str) -> list[list[list[str]]]:
+    """The province listing, then every province's district listing."""
+    provinces = post_csv(url, register_fields(ALL))
+    listed = [(area, code) for area, code, _ in register_rows(provinces) if area != "전국"]
+    log(f"  register: {len(listed)} provinces listed")
+    if len(listed) != 17:
+        raise SystemExit(f"korea_nationality: the register lists {len(listed)} provinces: "
+                         f"{[a for a, _ in listed]}")
+    tables = [provinces]
+    for area, code in listed:
+        table = post_csv(url, register_fields(code))
+        rows = register_rows(table)
+        log(f"    {area}: {len(rows)} rows")
+        tables.append(table)
+    return tables
 
 
 def main() -> int:
@@ -661,18 +758,16 @@ def main() -> int:
     ap.add_argument("--rows", type=int, default=8)
     ap.add_argument("--width", type=int, default=8)
     ap.add_argument("--encoding", default=ENCODING)
-    ap.add_argument("--register", default=MOIS_URL, help="the resident register file's URL")
+    ap.add_argument("--register", default=MOIS_URL, help="the resident register's form URL")
     args = ap.parse_args()
     if args.inspect:
         inspect(args.inspect, args.rows, args.width, args.encoding)
         return 0
-    if not args.register:
-        raise SystemExit("korea_nationality: no resident register URL is known yet")
     log(f"korea_nationality: {MOJ_SOURCE}")
     units = read_moj(fetch_moj())
     log(f"  {len(units)} units in 17 provinces")
     register = read_register(fetch_register(args.register))
-    log(f"  register: {len(register)} rows")
+    log(f"  register: {len(register)} rows, {register.get(('', ''), 0):,} nationally")
     records = build(units, register)
     log(f"  {sum(1 for r in records if r['level'] == 'admin1')} provinces, "
         f"{sum(1 for r in records if r['level'] == 'admin2')} districts")

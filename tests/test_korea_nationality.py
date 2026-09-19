@@ -107,6 +107,64 @@ class ReadingTheMinistrysFile(unittest.TestCase):
         self.assertEqual(list(m.members(b"a,b\r\n1,2\r\n")), ["-"])
 
 
+class ReadingTheRegister(unittest.TestCase):
+    """The resident register's CSVs as jumin.mois.go.kr's form answers them:
+    the province listing, then a province's districts with the districts
+    of a city listed beside the city."""
+
+    HEADER = ["행정구역", "2023년12월_총인구수", "2023년12월_세대수"]
+
+    def test_provinces_and_the_national_row(self):
+        table = [self.HEADER,
+                 ["전국  (1000000000)", "51,325,329", "23,914,851"],
+                 ["서울특별시  (1100000000)", "9,386,034", "4,469,417"],
+                 ["강원특별자치도  (5100000000)", "1,527,807", "760,635"]]
+        out = m.read_register([table])
+        self.assertEqual(out[("", "")], 51_325_329)
+        self.assertEqual(out[("Seoul", "")], 9_386_034)
+        self.assertEqual(out[("Gangwon", "")], 1_527_807)
+
+    def test_a_citys_own_districts_are_skipped_and_a_gu_with_an_odd_code_is_not(self):
+        gyeonggi = [self.HEADER,
+                    ["경기도  (4100000000)", "13,630,821", "5,978,724"],
+                    ["경기도 수원시 (4111000000)", "1,190,000", "1"],
+                    ["경기도 수원시 장안구 (4111100000)", "270,000", "1"],
+                    ["경기도 수원시 권선구 (4111300000)", "370,000", "1"],
+                    ["경기도 가평군 (4182000000)", "62,000", "1"]]
+        seoul = [self.HEADER,
+                 ["서울특별시  (1100000000)", "9,386,034", "1"],
+                 ["서울특별시 광진구 (1121500000)", "335,000", "1"],
+                 ["서울특별시 종로구 (1111000000)", "140,000", "1"]]
+        out = m.read_register([gyeonggi, seoul])
+        self.assertEqual(out[("Gyeonggi", "수원시")], 1_190_000)
+        self.assertNotIn(("Gyeonggi", "장안구"), out)
+        self.assertEqual([k for k in out if k[1] == "권선구"], [])
+        self.assertEqual(out[("Gyeonggi", "가평군")], 62_000)
+        self.assertEqual(out[("Seoul", "광진구")], 335_000)
+        self.assertEqual(out[("Seoul", "종로구")], 140_000)
+
+    def test_a_row_without_a_code_is_ignored_and_an_unknown_province_refused(self):
+        table = [self.HEADER, ["합계", "1", "1"], ["평안남도 평양시 (9911000000)", "1", "1"]]
+        with self.assertRaises(SystemExit):
+            m.read_register([table])
+        self.assertEqual(m.read_register([[self.HEADER, ["합계", "1", "1"]]]), {})
+
+    def test_the_form_fields_name_the_month_and_the_level(self):
+        fields = dict(m.register_fields("4100000000"))
+        self.assertEqual(fields["sltOrgLvl1"], "4100000000")
+        self.assertEqual(fields["sltOrgLvl2"], "A")
+        self.assertEqual((fields["searchYearStart"], fields["searchMonthStart"]), ("2023", "12"))
+        self.assertEqual((fields["searchYearEnd"], fields["searchMonthEnd"]), ("2023", "12"))
+
+    def test_the_provinces_must_sum_to_the_national_row(self):
+        units = every_unit()
+        table = m.read_moj(moj_rows(units))
+        register = register_for(units)
+        register[("", "")] = sum(v for (p, w), v in register.items() if p and not w) + 1
+        with self.assertRaises(SystemExit):
+            m.build(table, register)
+
+
 class TheDistrictTable(unittest.TestCase):
     def test_every_shape_is_named_once_and_nothing_else_is(self):
         shapes = json.loads((ROOT / "site" / "data" / "admin2" / "KOR.json").read_text())
