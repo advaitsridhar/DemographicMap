@@ -5194,6 +5194,78 @@ the adapter with ``--root`` pointing at them: it runs the same self-check,
 writes the same output, and the source then cites ISSS rather than Kaggle.
 The microdata never enters the repository either way.
 
+## Hong Kong: a census of its own, one shape under China
+
+Hong Kong is one first-level shape on this map, drawn under China because
+geoBoundaries folds the Special Administrative Region into the state that
+administers it. Its census is not China's. The Census and Statistics
+Department counts the territory every ten years and asks two of the three
+questions the mainland census does not -- ethnicity and usual spoken
+language -- and does not ask the third, religion, which stays declared not
+collected under the China policy. Before this the shape carried Wikidata's
+population and nothing else, with the China policy's religion sentence and
+two `not_available` markers saying a source had not been read.
+
+The source is the *2021 Population Census -- Main Results* (C&SD, December
+2022), which the Department publishes on `census2021.gov.hk` twice over: as a
+354-page bilingual PDF, and beside it as one workbook of the same tables,
+161 sheets, one per table. The workbook is what
+`scripts/fetch_census/hongkong_census.py` reads, and it is worth saying why.
+The PDF sets each table without ruling lines, so pdfplumber finds no table on
+its pages at all (the runner's probe of the two pages reported "0 table(s)"),
+and a text reader prints the Chinese row labels, the figures and the English
+labels as three separate runs, which is the Pakistan problem all over again.
+The workbook has none of that: each row is its Chinese label with the figures
+beside it and the English label alone on the row beneath, and the reader
+pairs them.
+
+Two sheets are read. **Table 3.9 (3)** is *Population by sex, ethnicity and
+age group, 2021*, the both-sexes block: Chinese 6,793,502 (91.6%), then the
+619,568 non-Chinese as the census prints them -- Filipino 201,291 (2.7%),
+Indonesian 142,065 (1.9%), Indian 42,569, Nepalese 29,701, Pakistani 24,385,
+Other South Asian 5,314 (Bangladeshi and Sri Lankan, by the table's note),
+Thai 12,972, Japanese 10,291, Korean 8,700, Other Asian 10,574, White 61,582
+(0.8%) and Others 70,124 (0.9%). "South Asian" is printed above its four
+detail rows and is their sum, so it is not written; "Others", which the note
+says includes people who reported more than one ethnicity, is written as
+"Other ethnic groups". **Table 3.13** is *Population aged 5 and over by usual
+spoken language and place of birth, 2021*, and its Total column is the whole
+composition: Cantonese 6,328,947 (88.2%), English 330,782 (4.6%), Putonghua
+165,451 (2.3%), Fukien 60,864, Hakka 41,514, Chiu Chau 37,621, Other Chinese
+dialects 64,572, Filipino (Tagalog) 29,413, Indonesian (Bahasa Indonesia)
+24,244, Japanese 8,704 and Others 87,015 (1.2%), of 7,179,127 people aged 5
+and over who are not mute. That basis is written in `language_basis` and in
+the note, because it is not the population: a person's usual spoken language
+is the one language they usually speak at home, and the 233,943 people
+between the two totals are the under-fives, who are not asked, and the
+mute, whom the table's note excludes.
+
+The language table a reader meets first is not this one. Table 3.12,
+*Proportion of population aged 5 and over able to speak selected
+languages/dialects*, is the table the report's text cites for Cantonese, and
+its "as the usual spoken language" column carries the same 88.2 -- but its
+rows are eleven selected languages, not everyone, and its point is the other
+two columns, which say that 58.7% can speak English and 54.2% Putonghua. Those
+are abilities, and they add to well over 100. Read as a composition it would
+have left 2% of the population nowhere and called Filipino's 0.4% a share of
+speakers rather than of homes.
+
+Every figure is checked as it is read, and the checks are the report's own.
+The ethnicity leaves must sum to the printed 7,413,070 and the South Asian
+detail to the printed 101,969; the language rows must sum to the printed
+7,179,127; every share computed from a count must agree with the share the
+census prints beside it; and the two figures the report states in prose --
+91.6% Chinese (paragraph 3.18) and 88.2% Cantonese (paragraph 3.24) -- must
+come out of the arithmetic. Any of those failing is a refusal, since a
+workbook that has moved a column is the same file with the wrong answer in
+it. Fukien and Chiu Chau are the census's romanisations of Hokkien and
+Teochew and are registered as such in `scripts/group_tree.py`; every other
+label already had a place. The build sandbox cannot reach `census2021.gov.hk`
+(the egress proxy refuses the connection), so the adapter runs on the
+workflow runner like the rest; the owner's copy of the PDF on Google Drive
+was read first, and confirmed the figures the workbook then supplied, but the
+Department's URL is what is cited.
+
 ## Derived values: what follows without reading more
 
 `docs/MODELLING.md` measures what modelling the blank regions could and could

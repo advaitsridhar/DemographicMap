@@ -68,6 +68,9 @@ ADAPTER_FILES = [
     # The same survey's newer wave, tabulated from its public-release file
     # and checked against that paper: it replaces the 2012 figure where read.
     "cfps_microdata_province.json",
+    # Hong Kong's own census, one shape under China: ethnicity and usual
+    # spoken language from the 2021 Main Results workbook.
+    "hongkong_census.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
@@ -186,7 +189,10 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.burkina",
     "CHN": "CFPS 2012 (religion) for the five provinces the survey sampled on their "
            "own, transcribed from Lu Yunfeng's report: "
-           "python -m scripts.fetch_census.cfps_survey",
+           "python -m scripts.fetch_census.cfps_survey. Hong Kong SAR carries "
+           "ethnicity and usual spoken language from its own 2021 Population "
+           "Census (C&SD Main Results, Tables 3.9 and 3.13): "
+           "python -m scripts.fetch_census.hongkong_census",
     "KOR": "Hankook Research 2025 pooled survey (religion) by residence region, each "
            "of the seven regions' figure carried by its provinces: "
            "python -m scripts.fetch_census.korea_survey",

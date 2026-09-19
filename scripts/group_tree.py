@@ -1723,6 +1723,9 @@ LANGUAGE_VARIANTS: dict[str, str] = {
     "Bicol": "Bikol", "Ilokano": "Ilocano",
     # Vietnam and China name the majority by its own ethnonym.
     "Kinh": "Vietnamese", "Putonghua": "Mandarin", "Guoyu": "Mandarin",
+    # Hong Kong's census names two Min and Chaoshan varieties by their
+    # older romanisations: Fukien is Hokkien, Chiu Chau is Teochew.
+    "Fukien": "Hokkien", "Chiu Chau": "Teochew",
     # One language, two registers' spellings of it. Russia's neighbours
     # transliterate from Russian, Nepal and India from Devanagari, and the
     # Pacific registers write the island where the reference works write the
