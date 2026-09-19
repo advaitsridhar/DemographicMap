@@ -4548,8 +4548,9 @@ class GapReasons(unittest.TestCase):
         return entity
 
     def test_a_gap_country_gets_a_reason_and_no_command(self):
-        entity = self.annotate("IDN")
-        self.assertIn("by regency", entity["gap_reason"])
+        # Iran, since Indonesia left the gaps on 19 September 2026.
+        entity = self.annotate("IRN")
+        self.assertIn("by province", entity["gap_reason"])
         self.assertNotIn("adapter_hint", entity)
 
     def test_viet_nam_left_the_gaps_when_its_provincial_table_was_found(self):
