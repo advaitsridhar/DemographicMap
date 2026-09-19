@@ -2407,13 +2407,24 @@ class SingaporePlanningAreas(unittest.TestCase):
         with self.assertRaises(SystemExit):
             self.sa.check("language", self.table({}, {}, 1))
 
-    def test_the_three_tables_keep_separate_years(self):
-        # 2015 survey, 2020 census aged 15+, 2020 census aged 5+. Sharing one
-        # year would imply a single profile of a single population.
-        self.assertEqual(set(self.sa.CONTROLS), {"ethnicity", "religion", "language"})
-        self.assertNotEqual(self.sa.CONTROLS["religion"], self.sa.CONTROLS["language"])
+    def test_the_three_tables_keep_separate_bases(self):
+        # One census, three bases: all residents, aged 15 and over, aged 5 and
+        # over. Sharing one note would imply a single profile of a single
+        # population, and the three totals differ by half a million people.
+        self.assertEqual(set(self.sa.MAIN), {"ethnicity", "religion", "language"})
+        self.assertEqual(len({self.sa.CONTROLS[k] for k in self.sa.MAIN}), 3)
         self.assertIn("aged 15 and over", self.sa.NOTES["religion"])
         self.assertIn("aged 5 and over", self.sa.NOTES["language"])
+
+    def test_the_older_census_is_a_fallback_and_says_its_own_year(self):
+        # The 2010 tables fill the areas the 2020 release folds into "Others".
+        # They are not part of the main three: a region summed over both would
+        # mix two censuses and count an area twice.
+        for field, back in self.sa.FALLBACK.items():
+            self.assertNotIn(back, self.sa.MAIN)
+            self.assertEqual(self.sa.YEAR[back], 2010)
+            self.assertEqual(self.sa.YEAR[field], 2020)
+            self.assertIn("Census 2010", self.sa.NOTES[back])
 
     def test_the_language_categories_are_exhaustive(self):
         # The six top-level languages partition the base; Tamil is split out of

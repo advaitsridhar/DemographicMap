@@ -25,9 +25,9 @@ def table(rows: dict[str, tuple[float | None, dict[str, float]]], *,
 
 # The East Region is the small one: Bedok, Changi, Changi Bay, Pasir Ris,
 # Paya Lebar and Tampines. Here Bedok and Tampines carry every table, Changi
-# only the 2015 survey, Paya Lebar a 2015 count with no breakdown, and Changi
-# Bay nothing at all.
-GHS = {
+# only the ethnic-group table and the 2010 census, Paya Lebar a count with no
+# breakdown, and Changi Bay nothing at all.
+PEOPLE = {
     "Bedok": (1000, {"Chinese": 700, "Malay": 200, "Indian": 100}),
     "Tampines": (3000, {"Chinese": 2000, "Malay": 800, "Indian": 200}),
     "Changi": (100, {"Chinese": 60, "Malay": 30, "Indian": 10}),
@@ -38,12 +38,19 @@ CENSUS = {
     "Bedok": (800, {"Buddhist": 400, "Muslim": 200, "No religion": 200}),
     "Tampines": (2400, {"Buddhist": 1200, "Muslim": 800, "No religion": 400}),
 }
+# The 2010 census listed Changi, which the 2020 release folds into "Others".
+CENSUS_2010 = {
+    "Bedok": (700, {"Buddhist": 350, "Muslim": 200, "No religion": 150}),
+    "Changi": (80, {"Buddhist": 40, "Muslim": 30, "No religion": 10}),
+}
 
 
 def east_tables() -> dict[str, sg.Table]:
-    return {"ethnicity": table(GHS, national=4140),
+    return {"ethnicity": table(PEOPLE, national=4140),
             "religion": table(CENSUS, national=3320, others=120),
-            "language": table(CENSUS, national=3320, others=120)}
+            "language": table(CENSUS, national=3320, others=120),
+            "religion_2010": table(CENSUS_2010, national=3000),
+            "language_2010": table(CENSUS_2010, national=3000)}
 
 
 class TheRegions(unittest.TestCase):
@@ -63,10 +70,10 @@ class TheRegions(unittest.TestCase):
         self.assertEqual(by_group["Chinese"]["count"], 2760)
         # Paya Lebar's 40 are in the base with no group of their own.
         self.assertEqual(by_group["Chinese"]["pct"], round(100 * 2760 / 4140, 1))
-        self.assertEqual(field["ethnicity_year"], 2015)
+        self.assertEqual(field["ethnicity_year"], 2020)
         note = field["ethnicity_note"]
-        self.assertTrue(note.startswith("Summed from the General Household Survey "
-                                        "2015 rows of the 3 planning areas"))
+        self.assertTrue(note.startswith("Summed from the Census of Population "
+                                        "2020 rows of the 3 planning areas"), note)
         self.assertIn("Paya Lebar (40 residents) has a count but no published "
                       "breakdown", note)
         self.assertIn("Changi Bay and Pasir Ris have no published residents.", note)
@@ -81,9 +88,9 @@ class TheRegions(unittest.TestCase):
         self.assertEqual(by_group["Buddhist"]["pct"], 50.0)
         note = field["religion_note"]
         self.assertIn("shares of adults", note)
-        # 140 of the region's 4,140 residents in 2015 sit in the Others row.
+        # 140 of the region's 4,140 residents sit in the Others row.
         self.assertIn("folds Changi and Paya Lebar into an 'Others' row", note)
-        self.assertIn("140 residents in 2015, 3.4% of the region", note)
+        self.assertIn("140 residents in 2020, 3.4% of the region", note)
         self.assertLessEqual(note.count(". "), 3, "a note is three sentences at most")
 
     def test_a_small_national_shortfall_is_said_not_refused(self):
@@ -137,7 +144,7 @@ class TheEmptyAreas(unittest.TestCase):
         row = self.rows["Paya Lebar"]
         self.assertEqual(row["population"]["value"], 40)
         self.assertIn("counted 40 residents here, too few", row["ethnicity"]["note"])
-        self.assertIn("this one (40 residents in 2015) is among the 53 it folds into "
+        self.assertIn("this one (40 residents in 2020) is among the 53 it folds into "
                       "an 'Others' row of 120 residents aged 15 and over",
                       row["religion"]["note"])
 
@@ -145,13 +152,28 @@ class TheEmptyAreas(unittest.TestCase):
         row = self.rows["Changi Bay"]
         for field in ("population", "ethnicity", "religion", "language"):
             self.assertEqual(row[field]["status"], sg.NOT_AVAILABLE)
-            self.assertIn("marks it 'na'", row[field]["note"])
+            self.assertIn("marks it '-'", row[field]["note"])
 
-    def test_a_populated_area_outside_the_release_says_where_its_people_are(self):
+    def test_an_area_the_2020_release_folds_away_falls_back_to_2010(self):
+        # Changi has no 2020 religion row and a 2010 one. A decade-old count is
+        # a count, and it is stamped 2010 rather than passed off as the census
+        # beside it.
         row = self.rows["Changi"]
         self.assertIsInstance(row["ethnicity"], list)
-        self.assertIn("(100 residents in 2015)", row["religion"]["note"])
-        self.assertEqual(row["religion_year"] if "religion_year" in row else None, None)
+        self.assertIsInstance(row["religion"], list)
+        self.assertEqual(row["religion_year"], 2010)
+        self.assertIn("Census 2010", row["religion_note"])
+        self.assertIn("folds this area into its 'Others' row", row["religion_note"])
+        by_group = {r["group"]: r["pct"] for r in row["religion"]}
+        self.assertEqual(by_group["Buddhist"], 50.0)
+        self.assertEqual(row["sources"][-1]["year"], 2010)
+
+    def test_an_area_no_census_ever_listed_says_so(self):
+        # Pasir Ris is in no table here: no 2020 row, no 2010 row, but the
+        # ethnic-group table would have counted it.
+        rows = {r["name"]: r for r in sg.area_rows(east_tables())}
+        note = rows["Pasir Ris"]["religion"]["note"]
+        self.assertIn("marks it '-'", note)
 
 
 class TheExtracts(unittest.TestCase):
@@ -174,6 +196,16 @@ class TheExtracts(unittest.TestCase):
             self.assertEqual(got.others, 10)
             self.assertEqual(set(got.totals), {"Bedok"})
 
+    def test_the_2010_tables_are_not_summed_into_a_region(self):
+        # A region is one census. The 2010 rows fill areas the 2020 release
+        # folds away; summing them into a region would mix two censuses in one
+        # composition and double-count Bedok.
+        rows = sg.region_rows(east_tables(), {"ethnicity": 0.0, "religion": 0.0,
+                                              "language": 0.0})
+        east = next(r for r in rows if r["name"] == "East Region")
+        self.assertEqual(east["religion_year"], 2020)
+        self.assertIn("2 planning areas", east["religion_note"])
+
     def test_the_committed_extracts_partition_the_country(self):
         if not sg.ETHNICITY_CSV.exists():
             self.skipTest("extracts not present")
@@ -189,8 +221,10 @@ class TheExtracts(unittest.TestCase):
         areas = [r for r in rows if r["level"] == "admin2"]
         self.assertEqual(len(areas), 55)
         # The sum of the regions is the country: every published count lands
-        # in exactly one region.
-        for field, control in sg.CONTROLS.items():
+        # in exactly one region. The 2010 tables fill areas, not regions, so
+        # they are not part of this.
+        for field in sg.MAIN:
+            control = sg.CONTROLS[field]
             summed = sum(row["count"] for region in regions for row in region[field])
             self.assertLess(control - summed, 0.01 * control, field)
 

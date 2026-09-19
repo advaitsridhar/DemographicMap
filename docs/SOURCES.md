@@ -807,76 +807,79 @@ early version read the canton rows only, missed that row, and fell back to
 comparing the canton sum with itself, which cannot fail; the adapter now
 refuses to run if the national row is absent.
 
-### Singapore's planning areas: three tables, three populations
+### Singapore's planning areas: the census, read from data.gov.sg
 
-The planning-area tables come from the census and household-survey releases
-rather than the Table Builder API, so they sit as CSV extracts in
-`data/raw/singapore/`. They do **not** describe the same population:
+The Department of Statistics publishes the census's planning-area tables on
+**data.gov.sg**, whose datastore serves them as rows to anyone. Its own site,
+`singstat.gov.sg`, answers the runner 403, and the Table Builder API that
+`singstat.py` uses carries nothing below the five planning regions (its
+catalogue was searched from here three ways: only the annual M810771 series
+answers to "planning region"). `--fetch` reads each table into a CSV in
+`data/raw/singapore/` and the adapter reads the CSVs, so a build without
+network still runs and what was served is committed beside the code that read
+it.
 
-| Field | Source | Base | Total |
-|---|---|---|---:|
-| Ethnicity | General Household Survey 2015 | all residents | 3,902,690 |
-| Religion | Census 2020 | residents aged 15 and over | 3,459,093 |
-| Language | Census 2020 | residents aged 5 and over | 3,596,284 |
+| Field | Source | Base | Total | Areas |
+|---|---|---|---:|---:|
+| Ethnicity | Census 2020, by planning area and subzone | all residents | 4,044,210 | 55 |
+| Religion | Census 2020 | residents aged 15 and over | 3,459,093 | 30 |
+| Language | Census 2020 | residents aged 5 and over | 3,596,284 | 30 |
+| Religion | Census 2010 | residents aged 15 and over | 3,105,748 | 35 |
+| Language | Census 2010 | residents aged 5 and over | 3,399,054 | 35 |
 
-Each field therefore carries its own year and its own note naming whose shares
-these are. Presenting them as one profile of one population would be wrong in
-three directions at once, and the totals make the difference visible.
+The three fields do **not** describe the same population, so each carries its
+own note naming whose shares these are. Presenting them as one profile would
+be wrong in three directions at once, and the totals make the difference
+visible.
 
-**`na` is not zero.** The releases suppress cells too small to publish, and
-several planning areas are industrial or military with under a hundred
-residents. A suppressed cell reads as missing, an explicit `-` as nil, and an
-area whose breakdown is entirely suppressed keeps its published population while
-the composition becomes an explicit gap saying it was withheld. The
-reconciliation check flagged exactly this for Lim Chu Kang, Pioneer and Tuas
-before it was handled.
+An earlier version of this adapter read ethnicity from the General Household
+Survey 2015 (3,902,690 residents, 41 areas) because that was the extract to
+hand. The census table replaces it: same geography, one census year across all
+three fields, and a count for every area including the ones the survey
+suppressed.
 
-Coverage differs by table: ethnicity reaches 41 planning areas, religion and
-language 30 each — those two releases bucket the remainder into an "Others" row
-that matches no shape on the map. It is not joined to anything, but its size is
-read: 25,756 residents aged 15 and over (religion) and 25,353 aged 5 and over
-(language) are all the 25 unlisted areas hold between them.
+**`-` is not zero.** The census prints `-` for nil or negligible, and several
+planning areas are industrial or military with under a hundred residents. An
+area whose every group is `-` while its own total survives -- Boon Lay's 40
+residents, Tengah's 10 -- has a count and a withheld breakdown, not forty
+people of no race; it keeps its published population and its composition
+becomes an explicit gap saying so. An area whose total is itself `-` carries no
+figure at all and says that too.
+
+**Five areas fall back to the 2010 census.** The 2020 religion and language
+releases list 30 planning areas and bucket the rest into an "Others" row that
+matches no shape on the map (25,756 residents aged 15 and over; 25,353 aged 5
+and over). The 2010 census listed 35, so Changi, Mandai, Newton, Rochor and
+Singapore River have a religion and a language row of their own a decade
+earlier. Those are used, stamped `2010`, with the note saying which census and
+why -- a decade-old count of a place is a count, where the newer release gives
+nothing at all. The regions are summed from the 2020 rows only, so a region is
+one census and no area is counted twice.
 
 **The five regions are summed from their areas.** The map's own roll-up
-(`roll_up_parents`) refused every region, and was right to: 14 of the 55
-shapes carry no ethnicity and 25 no religion or language, and a sum over part
-of a territory is refused on principle. What the roll-up cannot know is that
-those shapes are empty. The adapter can: the URA's Master Plan says which
+(`roll_up_parents`) refused every region, and was right to: a sum over part of
+a territory is refused on principle. What the roll-up cannot know is that the
+missing shapes are empty. The adapter can: the URA's Master Plan says which
 areas make each region (declared in `REGIONS`, and the boundary file's geometry
-places the 55 shapes identically), and the 49 area totals of the 2015 survey
-reconcile with its national row to within 20 people, so an area with no
-published count holds nobody it counted. Each region's ethnicity is the sum of
-its areas' 2015 rows over their own totals; religion and language are the sum
-of the 2020 rows the census lists for it. The SingStat Table Builder has no
-census planning-area table (its catalogue was searched from here: only the
-annual M810771 series answers to "planning region"), and data.gov.sg's
-catalogue throttles a walk and ignores its own query parameter, and singstat.gov.sg answers the runner with 403 (both probed from the runner, logs in the "Data: scripts.probe_datagovsg" and "Data: scripts.probe_links ...cop2020-sr1" commits), so the region
-rows are summed rather than read. Each note names the areas the release left
-out and what they hold: for religion and language, the areas inside the 2020
-"Others" row are 2.9% of the Central Region's 2015 residents (Museum, Newton,
-Orchard, Rochor, Singapore River, Southern Islands), 0.6% of the North's
-(Central Water Catchment, Lim Chu Kang, Mandai, Sungei Kadut), 0.4% of the
-East's (Changi, Paya Lebar), 0.1% of the West's (Boon Lay, Pioneer, Tengah,
-Tuas, Western Water Catchment) and under 0.1% of the North-East's
-(North-Eastern Islands, Seletar). A national shortfall beyond the rounding
-tolerance would be written into the note in a sentence; beyond 1% the regions
-are refused, because then the areas do not partition the country.
+places the 55 shapes identically), and the area totals reconcile with each
+table's national row, so an area with no published count holds nobody the
+census counted. Each note names the areas the release left out and what they
+hold. A national shortfall beyond the rounding tolerance is written into the
+note in a sentence; beyond 1% the regions are refused, because then the areas
+do not partition the country.
 
-**Every one of the 55 shapes carries a record**, and the 14 with no breakdown
-say why. Eight have a 2015 count too small to publish a breakdown of: Boon Lay
-(30 residents), Central Water Catchment (10), Lim Chu Kang (90), North-Eastern
-Islands (60), Paya Lebar (40), Pioneer (100), Tengah (10) and Tuas (70) — the
-count is carried as their population and the composition says how few people
-that is. Six have no count at all: Changi Bay, Marina East, Marina South,
-Simpang, Straits View and Western Islands are "na" in the 2015 survey and
-absent from the 2020 planning-area tables, which is how the Department writes
-an area with nobody in it, or too few to report; their records carry no
-figure and say so. The eleven populated areas the 2020 release leaves out
-(Changi, Mandai, Museum, Newton, Orchard, Rochor, Seletar, Singapore River,
-Southern Islands, Sungei Kadut, Western Water Catchment) keep their 2015
-ethnicity and say, with their 2015 count, that their religion and language sit
-inside the census's "Others" row. No join failed: all 55 area names in the
-extracts match the boundary file's, which writes them in capitals.
+**Every one of the 55 shapes carries a record.** 42 have a census ethnic
+composition; 35 have religion and language (30 from 2020, five from 2010). The
+rest say why they are blank: a count too small for the Department to publish a
+breakdown of, or no count anywhere, which is how it writes an area with nobody
+living in it. No join failed: all 55 area names in the tables match the
+boundary file's, which writes them in capitals.
+
+Other routes, measured and closed: Wikipedia's planning-area articles carry no
+demographic tables at all (six of seven probed have none; Bedok's only table
+lists housing estates), and Kaggle has no planning-area composition -- six
+searches return resale-flat prices, a 2015 population-by-dwelling table and
+national ethnic-group series.
 
 ### Singapore, and two things the figures are not
 
