@@ -76,17 +76,8 @@ Extracting files...
       rswt_rescs12  -- 个人横截面权数:全国再抽样样本  [21027 distinct in 22136 sampled]
       rswt_natpn1012  -- 个人面板权数:全国总样本  [29993 distinct in 34392 sampled]
       rswt_respn1012  -- 个人面板权数:全国再抽样样本  [19277 distinct in 22106 sampled]
-  == cfps2012adult_201906_data.xlsx
-    1744 columns
-    5 matching columns:
-      provcd  [29 distinct in 35719 sampled]
-      rswt_natcs12  [32745 distinct in 34447 sampled]
-      rswt_rescs12  [21027 distinct in 22136 sampled]
-      rswt_natpn1012  [29993 distinct in 34392 sampled]
-      rswt_respn1012  [19277 distinct in 22106 sampled]
-  == cfps2012adult_201906_labels.xlsx
-    5 columns
-    no column or label matches ['宗教', 'relig', '信仰', 'provcd', 'prov', 'rswt', 'weight', '权重']
+  -- cfps2012adult_201906_data.xlsx: a spreadsheet twin of a Stata file, skipped
+  -- cfps2012adult_201906_labels.xlsx: a spreadsheet twin of a Stata file, skipped
   == cfps2014adult_201906.dta
     1191 columns
     12 matching columns:
@@ -102,17 +93,8 @@ Extracting files...
       qm601a_s_5  -- 信仰5  [4 distinct in 31597 sampled]  -8.0=不适用:31585, 5.0=基督教的上帝:7, 6.0=祖先:4, 3.0=安拉:1
       qm601a_s_6  -- 信仰6  [3 distinct in 31597 sampled]  -8.0=不适用:31590, 6.0=祖先:6, 3.0=安拉:1
       qm603  -- 宗教重要性  [6 distinct in 31597 sampled]  3.0=不重要:24395, 2.0=有点重要:4855, 1.0=很重要:2261, -1.0=不知道:73, -2.0=拒绝回答:9, -8.0=不适用:4
-  == cfps2014adult_201906_data.xlsx
-    1191 columns
-    5 matching columns:
-      provcd14  [29 distinct in 37147 sampled]
-      rswt_natcs14  [24075 distinct in 34731 sampled]
-      rswt_rescs14  [17642 distinct in 22506 sampled]
-      rswt_natpn1014  [23671 distinct in 34730 sampled]
-      rswt_respn1014  [17715 distinct in 22505 sampled]
-  == cfps2014adult_201906_labels.xlsx
-    5 columns
-    no column or label matches ['宗教', 'relig', '信仰', 'provcd', 'prov', 'rswt', 'weight', '权重']
+  -- cfps2014adult_201906_data.xlsx: a spreadsheet twin of a Stata file, skipped
+  -- cfps2014adult_201906_labels.xlsx: a spreadsheet twin of a Stata file, skipped
   == cfps2016adult_201906.dta
     1095 columns
     9 matching columns:
@@ -125,17 +107,8 @@ Extracting files...
       qm601_s_2  -- 信仰  [6 distinct in 33244 sampled]  -8.0=不适用:33215, 2.0=道教:20, 1.0=佛教:4, 4.0=基督教（新教）:2, 5.0=天主教:2, 3.0=伊斯兰教（回教）:1
       qm603  -- 宗教重要性  [6 distinct in 33244 sampled]  3.0=不重要:24906, 2.0=有点重要:5937, 1.0=很重要:2346, -1.0=不知道:43, -9.0=缺失:11, -2.0=拒绝回答:1
       qn4004  -- 是否是宗教信仰团体成员  [4 distinct in 33244 sampled]  0.0=否:32358, 1.0=是:869, -9.0=缺失:11, -1.0=不知道:6
-  == cfps2016adult_201906_data.xlsx
-    1095 columns
-    5 matching columns:
-      rswt_natcs16  [23064 distinct in 33797 sampled]
-      rswt_rescs16  [16889 distinct in 21981 sampled]
-      rswt_natpn1016  [23337 distinct in 33795 sampled]
-      rswt_respn1016  [17068 distinct in 21980 sampled]
-      provcd16  [32 distinct in 36892 sampled]
-  == cfps2016adult_201906_labels.xlsx
-    5 columns
-    no column or label matches ['宗教', 'relig', '信仰', 'provcd', 'prov', 'rswt', 'weight', '权重']
+  -- cfps2016adult_201906_data.xlsx: a spreadsheet twin of a Stata file, skipped
+  -- cfps2016adult_201906_labels.xlsx: a spreadsheet twin of a Stata file, skipped
   == cfps2018person_202012.dta
     1371 columns
     4 matching columns:
@@ -143,6 +116,16 @@ Extracting files...
       rswt_natpn1018n  -- CFPS2018个人面板权数（标准化）  [27157 distinct in 27358 sampled]
       provcd18  -- 2018年省国标码  [31 distinct in 37104 sampled]
       qn4004  -- 是否是宗教信仰团体成员  [5 distinct in 33097 sampled]  0.0=否:31750, 1.0=是:961, -8.0=不适用:370, -1.0=不知道:14, -2.0=拒绝回答:2
-  == cfps2018person_202012_data.xlsx
-    1371 columns
-    3 matching columns:
+  -- cfps2018person_202012_data.xlsx: a spreadsheet twin of a Stata file, skipped
+  -- cfps2018person_202012_labels.xlsx: a spreadsheet twin of a Stata file, skipped
+  == cfps2020person_202306.dta
+    1312 columns
+    6 matching columns:
+      rswt_natcs20n  -- CFPS2020个人横截面权数（标准化）-无回答权数  [24985 distinct in 25609 sampled]
+      rswt_natpn1020n  -- CFPS2020个人面板权数（标准化）-无回答权数  [19116 distinct in 20611 sampled]
+      rswtps_natcs20n  -- CFPS2020个人横截面权数（标准化）-事后分层权数  [24936 distinct in 25609 sampled]
+      rswtps_natpn1020n  -- CFPS2020个人面板权数（标准化）-事后分层权数  [19320 distinct in 20611 sampled]
+      provcd20  -- 2020年省国标码  [32 distinct in 28530 sampled]
+      qn4004  -- 是否是宗教信仰团体成员  [5 distinct in 25082 sampled]  0.0=否:24128, 1.0=是:561, -8.0=不适用:369, -1.0=不知道:23, -2.0=拒绝回答:1
+  -- cfps2020person_202306_data.xlsx: a spreadsheet twin of a Stata file, skipped
+  -- cfps2020person_202306_labels.xlsx: a spreadsheet twin of a Stata file, skipped
