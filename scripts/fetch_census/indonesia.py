@@ -100,6 +100,8 @@ NATIONAL_PAGE = "Ethnic groups in Indonesia"
 POPULATION_PAGE = "Demografi Indonesia"
 SUM_TOLERANCE = 0.3          # a province's ethnic shares, against 100
 RELIGION_TOLERANCE = 0.6     # an infobox's religion shares, against 100
+SHORTFALL = 5.0              # below this much short of 100, the rest is a remainder row
+REMAINDER = "Other or not stated"
 NATIONAL_TOLERANCE = 0.005   # the Javanese sum, against the census
 
 # The map's province name -> the Indonesian article, and the other spellings
@@ -182,6 +184,7 @@ REGENCY_TITLES: dict[str, str] = {
     "Kota Jakarta Selatan": "Kota Administrasi Jakarta Selatan",
     "Kota Jakarta Timur": "Kota Administrasi Jakarta Timur",
     "Kota Jakarta Utara": "Kota Administrasi Jakarta Utara",
+    "Mahakam Hulu": "Kabupaten Mahakam Ulu",
 }
 
 # BPS's row label, lower-cased and with "suku" and the footnote star
@@ -258,8 +261,13 @@ RELIGION_LABELS: dict[str, str] = {
     "penghayat kepercayaan": "Kepercayaan (traditional belief)",
     "aliran kepercayaan": "Kepercayaan (traditional belief)",
     "kepercayaan lainnya": "Kepercayaan (traditional belief)",
+    "penghayat": "Kepercayaan (traditional belief)",
+    "kepercayaan terhadap tuhan yme": "Kepercayaan (traditional belief)",
+    "kepercayaan terhadap tuhan yang maha esa": "Kepercayaan (traditional belief)",
+    "konfusianisme": "Confucianism",
     "marapu": "Marapu", "aluk todolo": "Aluk Todolo", "ugamo malim": "Ugamo Malim",
-    "kaharingan": "Kaharingan", "parmalim": "Ugamo Malim",
+    "kaharingan": "Kaharingan", "parmalim": "Ugamo Malim", "pemena": "Pemena",
+    "sunda wiwitan": "Sunda Wiwitan", "kejawen": "Kejawen",
     "lainnya": "Other religion", "lain-lain": "Other religion",
     "agama lainnya": "Other religion", "konghucu dan kepercayaan": "Other religion",
     "kepercayaan dan lainnya": "Other religion", "kepercayaan/lainnya": "Other religion",
@@ -342,7 +350,12 @@ def infobox_param(wikitext: str, key: str) -> str | None:
 
 
 REF = re.compile(r"<ref\b([^>/]*)(?:/>|>(.*?)</ref>)", re.S | re.I)
-REF_NAME = re.compile(r'name\s*=\s*"?([^"/>]+?)"?\s*$', re.I)
+REF_NAME = re.compile(r"""name\s*=\s*["']?([^"'/>]+?)["']?\s*$""", re.I)
+
+
+def ref_name(attrs: str) -> str | None:
+    m = REF_NAME.search(attrs.strip())
+    return m.group(1).strip().lower() if m else None
 
 
 def ref_definitions(wikitext: str) -> dict[str, str]:
@@ -350,23 +363,32 @@ def ref_definitions(wikitext: str) -> dict[str, str]:
     out: dict[str, str] = {}
     for m in REF.finditer(wikitext):
         body = m.group(2)
-        name = REF_NAME.search(m.group(1).strip())
+        name = ref_name(m.group(1))
         if body and name:
-            out.setdefault(name.group(1).strip(), body)
+            out.setdefault(name, body)
     return out
 
 
 def citations(value: str, definitions: dict[str, str]) -> list[str]:
-    """The bodies of the references attached to one infobox value, in order."""
+    """The bodies of the references attached to one infobox value, in order.
+
+    A reference used by name and defined nowhere on the page is a citation
+    to nothing, and is listed as such by ``unresolved``.
+    """
     out: list[str] = []
     for m in REF.finditer(value):
         body = m.group(2)
-        name = REF_NAME.search(m.group(1).strip())
+        name = ref_name(m.group(1))
         if not body and name:
-            body = definitions.get(name.group(1).strip(), "")
+            body = definitions.get(name, "")
         if body:
             out.append(body)
     return out
+
+
+def unresolved(value: str, definitions: dict[str, str]) -> list[str]:
+    return [ref_name(m.group(1)) or "?" for m in REF.finditer(value)
+            if not m.group(2) and (ref_name(m.group(1)) or "") not in definitions]
 
 
 def cite_field(body: str, field: str) -> str:
@@ -394,42 +416,48 @@ def describe_citation(body: str) -> tuple[str, int | None, str]:
     return kind, year, title or url or body[:80]
 
 
-PCT_ITEM = re.compile(
-    r"(?<![\d,.])(\d{1,3}(?:[.,]\d{1,2})?)\s*%?\s*"
-    r"(\[\[[^\]]+\]\]|[A-Za-z][A-Za-z' /-]*?)(?=\s*(?:\||\*|\}\}|<|$|\d))")
+PERCENT = re.compile(r"(?<![\d,.])(\d{1,3}(?:[.,]\d{1,2})?)\s*%?")
+LINK = re.compile(r"\[\[([^\]]+)\]\]")
 
 
 def religion_items(value: str) -> list[tuple[str, float]]:
-    """(label as printed, percentage) for each faith in an infobox value."""
+    """(label as printed, percentage) for each faith in an infobox value.
+
+    Two layouts are in use -- a ``{{ublist}}`` of "98,62% [[Islam]]" items
+    with the Christian split as a ``{{Tree list}}``, and a ``<br>``-separated
+    list of "[[Islam]] 70,84%" with the split marked by dashes. Each is cut
+    into items at its separators and an item is read whichever way round it
+    is written.
+    """
     text = REF.sub("", value)
-    text = re.sub(r"\{\{\s*ublist\b[^|}]*(\|item_style=[^|}]*)?", " ", text, flags=re.I)
-    text = re.sub(r"\{\{\s*Tree list(?:/end)?\s*\}\}", " ", text, flags=re.I)
-    text = re.sub(r"<[^>]+>", " ", text)
+    # A citation whose <ref> tag lost its bracket leaks into the value.
+    text = re.sub(r"\{\{\s*cite[^{}]*\}\}", " ", text, flags=re.I)
+    text = re.sub(r"ref\s+name\s*=[^>]*>", " ", text)
+    text = re.sub(r"\{\{\s*ublist\b[^|}]*", " ", text, flags=re.I)
+    text = re.sub(r"\{\{\s*Tree list(?:/end)?\s*\}\}", "|", text, flags=re.I)
+    text = text.replace("{{", " ").replace("}}", " ")
+    text = re.sub(r"<[^>]+>", "|", text)
     text = text.replace("&nbsp;", " ")
+    # A piped link carries the separator inside it; resolve links to their
+    # display text before the value is cut at pipes.
+    text = LINK.sub(lambda m: m.group(1).split("|")[-1], text)
     out: list[tuple[str, float]] = []
-    for m in PCT_ITEM.finditer(text):
-        label = link_text(m.group(2))
+    for piece in re.split(r"\||\n|(?:^|\s)\*+(?=\s)", text):
+        piece = piece.strip().lstrip("*-—–• ").strip()
+        if not piece or piece.lower().startswith("item_style"):
+            continue
+        m = PERCENT.search(piece)
+        if not m:
+            continue
+        label = link_text(piece[:m.start()] + " " + piece[m.end():])
         if label:
             out.append((label, float(m.group(1).replace(",", "."))))
-    if not out:
-        # The other order some articles use: "[[Islam]] 96,92%".
-        for m in LABEL_FIRST.finditer(text):
-            label = link_text(m.group(1))
-            if label:
-                out.append((label, float(m.group(2).replace(",", "."))))
     return out
 
 
-LABEL_FIRST = re.compile(
-    r"(\[\[[^\]]+\]\]|[A-Za-z][A-Za-z' ]*?)\s*[:=]?\s*(\d{1,3}(?:[.,]\d{1,2})?)\s*%")
-
-
 def link_text(label: str) -> str:
-    label = label.strip()
-    if label.startswith("[["):
-        inner = label[2:-2]
-        label = inner.split("|")[-1] if "|" in inner else inner
-    return label.strip(" .;:")
+    """The label an item names, its markup and punctuation gone."""
+    return " ".join(label.replace("[[", " ").replace("]]", " ").split()).strip(" .;:<>=()")
 
 
 def religion_shares(items: list[tuple[str, float]]) -> tuple[list[dict[str, Any]], str | None]:
@@ -456,8 +484,12 @@ def religion_shares(items: list[tuple[str, float]]) -> tuple[list[dict[str, Any]
     if not rows:
         return [], "no faiths"
     total = sum(rows.values())
-    if abs(total - 100.0) > RELIGION_TOLERANCE:
+    if total > 100.0 + RELIGION_TOLERANCE or total < 100.0 - SHORTFALL:
         return [], f"shares add to {total:.2f}"
+    if total < 100.0 - RELIGION_TOLERANCE:
+        # An infobox that lists the faiths it lists and stops: the rest is
+        # published as the remainder, the way wiki_census does.
+        rows[REMAINDER] = round(100.0 - total, 2)
     out = [{"group": g, "pct": round(p, 2)} for g, p in rows.items()]
     out.sort(key=lambda r: (-r["pct"], r["group"]))
     return out, None
@@ -470,9 +502,13 @@ def read_religion(wikitext: str, title: str) -> dict[str, Any] | None:
     if not value:
         log(f"    {title}: no religion in the infobox")
         return None
-    cites = citations(value, ref_definitions(wikitext))
+    definitions = ref_definitions(wikitext)
+    cites = citations(value, definitions)
     if not cites:
-        log(f"    {title}: religion figure carries no citation; not read")
+        missing = unresolved(value, definitions)
+        log(f"    {title}: religion figure carries no citation"
+            + (f" (named references {missing} defined nowhere)" if missing else "")
+            + "; not read")
         return None
     rows, why = religion_shares(religion_items(value))
     if why:
@@ -568,14 +604,16 @@ def ethnic_label(province: str, key: str) -> str | None:
     return label
 
 
-def table_rows(rows: list[list[str]], name_col: int) -> list[tuple[str, int]]:
-    """(name as printed, count) for every row that carries a count.
+def table_rows(rows: list[list[str]], name_col: int) -> list[tuple[str, int, bool]]:
+    """(name as printed, count, numbered) for every row that carries a count.
 
     The count is the last integer-looking cell after the name, which is the
     2010 figure whether the table prints one census or two, and whether the
-    percentages come before it (Jakarta) or after.
+    percentages come before it (Jakarta) or after. ``numbered`` says whether
+    the row carries a serial number before its name, which the total row
+    does not.
     """
-    out: list[tuple[str, int]] = []
+    out: list[tuple[str, int, bool]] = []
     for row in rows:
         if len(row) <= name_col:
             continue
@@ -587,21 +625,28 @@ def table_rows(rows: list[list[str]], name_col: int) -> list[tuple[str, int]]:
         name = cells[name_col]
         if name.startswith("*"):
             continue                     # a sub-row of the group above it
-        out.append((name, numbers[-1]))
+        numbered = name_col > 0 and bool(re.fullmatch(r"\d+\.?", cells[name_col - 1]))
+        out.append((name, numbers[-1], numbered))
     return out
 
 
-def split_total(rows: list[tuple[str, int]], province: str, title: str
+def split_total(rows: list[tuple[str, int, bool]], province: str, title: str
                 ) -> tuple[list[tuple[str, int]], int | None]:
-    """The group rows apart from the total row, found by its name or, when a
-    spanning cell has pushed the name out of its column, by being the sum
-    of every other row."""
+    """The group rows apart from the total row.
+
+    The total is the row named as one ('Total', 'Provinsi Jambi'), or the
+    unnumbered row named after the province -- unnumbered, because Aceh,
+    Bali and Lampung are peoples as well as provinces and their own row is
+    numbered like any other -- or, when a spanning cell has pushed the name
+    out of its column, the row that is the sum of every other.
+    """
     body: list[tuple[str, int]] = []
     total: int | None = None
-    for name, count in rows:
+    for name, count, numbered in rows:
         key = normalise_label(name)
-        if (key.startswith("total") or key.startswith("provinsi") or key == "jumlah"
-                or key == title.lower() or key == province.lower()):
+        named = key.startswith("total") or key.startswith("provinsi") or key == "jumlah"
+        after_province = key in (title.lower(), province.lower()) and not numbered
+        if named or after_province:
             total = count
         else:
             body.append((name, count))

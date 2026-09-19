@@ -129,7 +129,8 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
         # Indonesia's named indigenous religions as its regencies' figures
         # carry them: Marapu of Sumba, Aluk Todolo of the Toraja, Ugamo
         # Malim (Parmalim) of the Toba Batak, Kaharingan of the Dayak.
-        "Marapu", "Aluk Todolo", "Ugamo Malim", "Kaharingan",
+        "Marapu", "Aluk Todolo", "Ugamo Malim", "Kaharingan", "Pemena",
+        "Sunda Wiwitan", "Kejawen",
     ),
     "Other and new religions": (
         "Zoroastrianism", "Yazidi", "Jedi", "Eckankar", "Wicca",

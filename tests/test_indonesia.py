@@ -126,6 +126,14 @@ TORAJA = """{{Dati II
 }}
 """
 
+# The other layout: label first, <br>-separated, the Christian split dashed,
+# and a citation whose <ref> tag lost its bracket.
+BANGGAI = """{{Dati II
+| nama = Kabupaten Banggai
+| agama = [[Islam]] 70,84%<br> [[Kristen]] 17,24%<br>- [[Protestan]] 15,61%<br>- [[Katolik]] 1,63%<br> [[Hindu]] 11,08%<br> [[Agama Buddha|Buddha]] 0,83%<br> Lainnya 0,01%<ref name="BANGGAI2020">{{cite web|url=https://banggaikab.bps.go.id/publication/2020/02/28/x/kabupaten-banggai-dalam-angka-2020.html|title=Kabupaten Banggai Dalam Angka 2020}}</ref> ref name="AGAMA">{{cite web|url=https://sp2010.bps.go.id/x|title=Penduduk|accessdate=16 Februari 2020}}</ref>
+}}
+"""
+
 UNCITED = """{{Dati II
 | nama = Kabupaten Nowhere
 | agama = {{ublist |90,00% [[Islam]] |10,00% [[Hindu]]}}
@@ -259,6 +267,21 @@ class InfoboxReligion(unittest.TestCase):
         self.assertIn("Aluk Todolo", {r["group"] for r in reading["rows"]})
         note = m.religion_fields(reading, "Kabupaten Tana Toraja")["religion_note"]
         self.assertNotIn("not a census count", note)
+
+    def test_label_first_layout_and_a_broken_reference_tag(self):
+        reading = m.read_religion(BANGGAI, "Kabupaten Banggai")
+        rows = {r["group"]: r["pct"] for r in reading["rows"]}
+        self.assertEqual(rows, {"Islam": 70.84, "Protestantism": 15.61, "Catholicism": 1.63,
+                                "Hinduism": 11.08, "Buddhism": 0.83, "Other religion": 0.01})
+        self.assertEqual((reading["kind"], reading["year"]), ("bps", 2020))
+
+    def test_a_short_list_gets_a_remainder_and_an_overrun_is_refused(self):
+        rows, why = m.religion_shares([("Islam", 97.0), ("Hindu", 2.0)])
+        self.assertIsNone(why)
+        self.assertEqual(rows[-1], {"group": m.REMAINDER, "pct": 1.0})
+        rows, why = m.religion_shares([("Islam", 70.86), ("Kristen", 24.88),
+                                       ("Protestan", 24.97), ("Katolik", 0.91), ("Hindu", 5.25)])
+        self.assertIn("102.00", why)
 
     def test_uncited_figure_is_not_read(self):
         out, printed = quiet(m.read_religion, UNCITED, "Kabupaten Nowhere")
