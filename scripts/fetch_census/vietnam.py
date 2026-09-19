@@ -140,7 +140,11 @@ REGIONS = ["Đồng bằng sông Hồng", "Trung du và miền núi phía Bắc"
            "Red River Delta", "Northern Midlands and Mountains", "Northern midlands and "
            "mountain areas", "North Central and Central Coastal Areas", "North Central area "
            "and Central coastal area", "Central Highlands", "South East", "Southeast",
-           "Mekong River Delta", "Mekong Delta"]
+           "Mekong River Delta", "Mekong Delta",
+           # ...and the English half the volume prints for the central region,
+           # which wraps onto its own line and so arrives without its
+           # Vietnamese half.
+           "North and South Central Coast"]
 # The 54 groups as the 2019 list spells them, with the spellings the
 # volume or the literature also use; matched after folding, so "Gié
 # Triêng", "Giẻ Triêng" and "Gié-Triêng" are one key. A row with any other

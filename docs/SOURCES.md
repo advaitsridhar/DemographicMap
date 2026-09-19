@@ -4308,73 +4308,121 @@ holds all seven hundred of them. That is a true statement and not a language
 breakdown, so Indonesia stays the gap it was: what is missing there is religion
 by regency, and that still needs the BPS key.
 
-### Viet Nam: collected, and published only for the whole country
+### Viet Nam: collected, published by province in the Vietnamese volume, and read from it
 
 Viet Nam's 2019 Population and Housing Census asked religion. Its questionnaire,
-reproduced on page 330 of the results volume, puts it plainly:
+reproduced on page 330 of the English results volume, puts it plainly:
 
 > 7. Does [NAME] follow any faith/religion? IF YES: What is [NAME]'s
 > faith/religion?
 
-And it asked ethnicity, in the question above it. So this is not a country that
-declines to count these things. It is a country that publishes the count for
-itself and not for its provinces, which is a different gap and wants a
-different word.
+And it asked ethnicity, in the question above it. An earlier pass of this
+project read the English volume and concluded that the office publishes both
+counts for the country and not for its provinces. That was true of the English
+volume and wrong about the census, and this entry keeps the record of both.
 
-**Getting to the report at all.** The statistics office does not answer this
-project from a GitHub runner, and the three refusals are not the same refusal:
+**The English volume, and what it showed.** The statistics office did not
+answer this project from a GitHub runner in early September 2026 --
+`www.gso.gov.vn` timed out, `www.nso.gov.vn` (the office was restructured into a
+National Statistics Office in 2025) reset the connection -- and the English
+`Results - 2019 Population and Housing Census_full.pdf` (380 pages, 6.8 MB) was
+read from UNFPA, the census's technical partner and the body named on its title
+page. In it, Table 2 (ethnic group) and Table 3 (religion) are national, and
+Table 5, whose caption reads "BY AGE GROUP, SEX, ETHNIC, URBAN, RURAL,
+SOCIO-ECONOMIC REGION AND PROVINCE, CITY", stacks an ethnic-group block and a
+province block under the same age columns rather than crossing them. That
+reading stands: the English volume prints no ethnic group by province.
 
-* `www.gso.gov.vn` **times out** -- no response, on two different paths, in two
-  separate runs, while every other host in the same run answered.
-* `www.nso.gov.vn` and `nso.gov.vn` **reset the connection**. The General
-  Statistics Office was restructured into a National Statistics Office in 2025,
-  so this is the current host: it resolves, it is up, and it closes the socket
-  on this client.
-* `www2.gso.gov.vn` **does not resolve** -- but that one is a fact about a
-  hostname this project guessed at, not about Viet Nam. It is recorded here
-  because a guess that fails looks exactly like a source that is missing.
+**What changed on 19 September 2026.** The owner decided that Viet Nam's
+provincial ethnicity was to be read from whichever route yields it -- the
+office's own files, a Kaggle dataset, or the Vietnamese Wikipedia's
+transcription, in that order, secondary sources included and named as such.
+`scripts/fetch_census/vietnam.py --probe` asked all three in one runner
+dispatch, and the log of each is committed on the branch:
 
-The report is reachable anyway, from the body named on its own title page:
-UNFPA provided the technical assistance for the census and hosts
-`Results - 2019 Population and Housing Census_full.pdf`, 6.8 MB and 380 pages.
-That is a co-publisher rather than a mirror, which is why it is usable where
-`citypopulation.de` would not be.
+* `www.gso.gov.vn` no longer resolves at all (*Name or service not known*).
+  `www.nso.gov.vn` now answers a plain client with 200, where it reset the
+  socket two weeks earlier, and its WordPress uploads keep the old paths.
+  `tongdieutradanso.vn`, the census's own site, answers a 444-byte stub.
+* Kaggle's catalogue, searched with the owner's token, lists nothing for Viet
+  Nam under "vietnam census", "vietnam ethnic", "vietnam population province",
+  "vietnam religion", "dân tộc" or "tổng điều tra dân số" -- every hit is the
+  1994 US adult-income set, a real-estate scrape, or the CIA Factbook.
+* The Vietnamese Wikipedia's province articles carry 2009 prose ("tính đến ngày
+  1 tháng 4 năm 2009 ... dân tộc Kinh chiếm đông nhất với 1.161.533 người") and
+  no 2019 table; "Các dân tộc Việt Nam" holds the national 2019 table with, per
+  group, its three or four largest provinces, which is not a composition of any
+  province. But the article for Điện Biên cites, for "dân tộc Mông ... 228.279
+  người, chiếm 38,1%", the URL of the *Vietnamese* results volume on
+  gso.gov.vn. That citation is what said the table existed.
 
-**What the report contains.** Its narrative body extracts as mojibake --
-`dŚĞ ϮϬϭϵ WŽƉƵůĂƚŝŽŶ` for "The 2019 Population", a font carrying no usable
-character map -- but Part III's data tables are set in a different font and
-decode cleanly. In those tables:
+**The Vietnamese volume.** "Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm
+2019" (Nhà xuất bản Thống kê, 2020; 842 pages, 9.5 MB) is at
+`https://www.nso.gov.vn/wp-content/uploads/2019/12/Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf`,
+the same path the citation gave on the old host. Its contents page settles
+what the English one left open:
 
-| Table | Breakdown |
-| --- | --- |
-| 2 | Population by ethnic group, urban/rural and sex — **national** |
-| 3 | Population by religion, urban/rural and sex — **national** |
-| 5 | Population by age group and sex, for ethnic groups **and then** for provinces |
-| 13, 18 | Two indicators, same stacked shape |
+| Biểu / Table | Breakdown | Pages |
+| --- | --- | --- |
+| 2 | Dân số theo dân tộc, thành thị/nông thôn, giới tính, vùng kinh tế - xã hội **và tỉnh/thành phố** -- population by ethnic group, urban/rural, sex, socio-economic region **and province/city** | 43-209 |
+| 3 | Dân số theo tôn giáo, thành thị/nông thôn, giới tính -- population by religion, urban/rural, sex; **national** | 210 |
 
-The word "religion" appears on five of the 380 pages: Table 3, and four pages
-of questionnaire. There is no religion-by-province table to miss.
+Table 2 is nested, not crossed: the country, then each of the six regions,
+then each of the 63 provinces, and under every unit all 54 groups in the
+office's order (Kinh, Tày, Thái, Hoa, Khmer, Mường, Nùng, Mông, Dao, Gia Rai,
+Ngái, Ê Đê, Ba Na, Xơ Đăng, Sán Chay, Cơ Ho, Chăm, Sán Dìu, Hrê, Mnông, Raglay,
+Xtiêng, Bru Vân Kiều, Thổ, Giáy, Cơ Tu, Gié Triêng, Mạ, Khơ Mú, Co, Tà Ôi,
+Chơ Ro, Kháng, Xinh Mun, Hà Nhì, Chu Ru, Lào, La Chí, La Ha, Phù Lá, La Hủ,
+Lự, Lô Lô, Chứt, Mảng, Pà Thẻn, Cơ Lao, Cống, Bố Y, Si La, Pu Péo, Brâu, Ơ Đu,
+Rơ Măm), then "Người nước ngoài" (foreign nationals) and "Không xác định"
+(undetermined). A first scan of the volume, which looked for a minority named
+beside three provinces on one page, found nothing, because a page of a nested
+table names one province and fifty rows; the second scan, which looked for
+many ethnonyms beside any one province, found 79 such pages. The word
+"religion" leads to Table 3 alone, so **religion stays unwritten** for the
+provinces: it was collected, and it is published for the country only.
 
-Table 5 looks at first like the cross-tabulation this map needs, because its
-caption reads "BY AGE GROUP, SEX, ETHNIC, URBAN, RURAL, SOCIO-ECONOMIC REGION
-AND PROVINCE, CITY". It is not. Page 198 prints a section header --
+**Reading it.** The volume prints a space as the thousands separator, and the
+narrative pages of the English edition extract as mojibake; these table pages
+extract cleanly through pypdf, with the row label first and then its figures.
+Every row carries nine: Total, Male and Female for the whole, the urban and the
+rural population. The reader tries every split of a row's digit groups into
+nine numbers and keeps the one where Male plus Female equals Total three times
+over and urban plus rural equals the whole -- the constraint this entry banked
+in September for exactly this table, taken from `south_africa.py`. A row with
+no single such reading refuses the run. Units are told from groups by name:
+the volume prints its country and regions bilingually ("TOÀN QUỐC - ENTIRE
+COUNTRY", "Đồng bằng sông Hồng - Red River Delta"), which cost one refused run
+before either half was accepted, and the first page's heading "Biểu - Table 2"
+cost another, its trailing digit having been read as a one-figure row.
 
-```
-P r o v i n c e ,  c i t y
-Ha Noi        2 133 354  1 133 036  1 000 318
-Ha Giang        296 271    151 900    144 371
-```
+The checks it passes, each of which would have refused the run: the rows under
+every one of the 70 units add to the unit's printed total; the 63 provinces add
+to 96,208,984 people and 82,085,826 Kinh, the published national figures, to
+the person, and the volume's own national row agrees; every province is read
+once. Điện Biên comes out at Mông 228,279 (38.1%), the figure the Wikipedia
+article cited from this volume.
 
--- and repeats the same age-group columns for provinces after finishing the
-ethnic groups. Two breakdowns stacked under one title, not crossed. The caption
-could not settle that and reading the rows could, which is the only reason this
-entry can say so.
+**What is written.** `data/processed/vietnam_province.json`: for each of the 63
+provinces the population and sex ratio from the unit row, and an ethnicity
+composition with counts -- every group at 0.05% of the province or more, and
+"Other ethnic groups" for the rest together with foreign nationals and the
+undetermined, shares re-rounded to one decimal so each province adds to exactly
+100. The map draws 64 shapes for Viet Nam; the sixty-fourth is Côn Đảo, the
+island district of Bà Rịa–Vũng Tàu that the boundary file separates, and no
+row of the volume is for it, so it stays a gap by design. Every one of the 54
+groups is placed in the ethnicity tree under "Mainland Southeast Asian peoples"
+except the Hoa and the Ngái, who are Viet Nam's Han and Hakka-speaking Chinese
+and sit with the Sinitic peoples. Several had to be named there explicitly
+because the tree's shape rules read them as something else: Thái as the Thai
+nationality, Gia Rai as the Himalayan Rai, Sán Chay and Sán Dìu as the San of
+the Kalahari, Cờ Lao as Lao, Rơ Măm as a Mesoamerican Mam.
 
-One thing is banked for whenever a provincial table does surface: Viet Nam
-prints its figures with **a space as the thousands separator**, and every row
-carries Total, Male and Female. That is the South African problem exactly, and
-the arithmetic reader in `scripts/fetch_census/south_africa.py` transfers to it
-with `Total == Male + Female` as the constraint that picks the right reading.
+The 53-minorities survey of 2019 ("Kết quả điều tra thu thập thông tin về thực
+trạng kinh tế - xã hội của 53 dân tộc thiểu số năm 2019", GSO with the
+Committee for Ethnic Minority Affairs) is on the same host and was also
+reached; its first file is the 103-page narrative volume, its tables are by
+group and region rather than by province, and nothing was read from it.
 
 ### Thailand: a language table that cannot be a composition
 
