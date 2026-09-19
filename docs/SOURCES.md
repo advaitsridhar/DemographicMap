@@ -6517,7 +6517,14 @@ ethnicity question is asked) is now the second sentence of every row's
 note. `scripts/fetch_census/korea_nationality.py` is the decision, and it is
 a count, not a model: nothing in it estimates anything.
 
-**What was read**, all from the runner, no key:
+**What was read**, all from the runner, no key. Neither host answers a
+runner reliably -- data.go.kr's file endpoint times out about as often as
+it answers, and the register's form drops a connection every few requests
+-- so every file a run reaches is kept under `data/raw/korea`, which
+.gitignore admits, and a later run reads the copy;
+`--fetch-only` asks for whatever is still missing and stops, so a run that
+reaches one host banks its file while another is down. With all three
+banked the reader needs no network at all.
 
 * **Foreign residents.** The Ministry of Justice's *registered foreign
   residents by city/county/district and nationality* (법무부_시군구별 국적별
@@ -6529,7 +6536,9 @@ a count, not a model: nothing in it estimates anything.
   that has them (수원시 장안구 ...) listed separately -- and 201 columns: 시도,
   시군구, 성별, a total, and 196 nationalities from 한국계중국인 to 기타. The
   reader sums the sexes and a city's districts into the city, and refuses a
-  row whose nationalities do not add up to its printed total.
+  row whose nationalities do not add up to its printed total; the 250 fold
+  into 229 units, which are the 228 shapes and Yeonggwang-gun. Sejong has
+  no 시군구 at all and the file writes a bare "0" for it.
 * **Koreans.** The Ministry of the Interior and Safety's resident
   registration population (주민등록 인구통계) for December 2023, from the
   Ministry's own site (`https://jumin.mois.go.kr/statMonth.do`). The site
@@ -6552,6 +6561,13 @@ a count, not a model: nothing in it estimates anything.
   rows, one per shape, and Sejong's. data.go.kr's copy of the same table
   (dataset 3033301) is offered on application only, and its file endpoint
   never answered the runner (`Connection timed out`, four times).
+* **The national check.** The Ministry's *registered foreign residents by
+  nationality by year* (연도별 등록외국인 국적(지역)별 현황, data.go.kr
+  dataset 15100019), a 53 KB cp949 CSV of 년, 국적지역 and 등록외국인 수,
+  2011 to 2025, 195 nationalities for 2023. The portal's file endpoint
+  timed out on it fifteen times running while handing over the district
+  zip on request, so the dataset page's own download servlet is tried
+  beside it and whichever answers is kept.
 
 **What the labels mean.** "Korean" is everyone on the resident register,
 naturalised citizens and people of any ancestry included. "Korean-Chinese"
@@ -6601,7 +6617,23 @@ do not sum to its printed total, if the seventeen provinces are not the
 seventeen the file is known to write, if the register's districts do not
 sum to its province row or its provinces to its national row, if a unit's
 shares do not make 100 within 0.3 points, if any of the 228 shapes has no
-row, or if a nationality above the naming threshold has no label.
+row, or if a nationality above the naming threshold has no label. The
+national check is the last of them: the district file must sit within half
+a point of the Ministry's own published national figure, and the run of 19
+September 2026 found them identical -- **1,348,626** registered foreigners
+either way, 2.56% against 51,325,329 resident-registered Koreans, and every
+named nationality agreeing to the person (Vietnamese 227,930, Uzbek 55,239,
+Thai 40,062, Sri Lankan 28,258, Taiwanese 17,704). The two files are the
+same register counted at the same date, one by district and one by
+nationality, so no caveat sentence was needed on the rows.
+
+**What it comes to.** Seventeen provinces and all 228 districts, each a
+count. Nationally 97.4% Korean; the most foreign districts are Yeongam-gun
+in South Jeolla at 13.6% (the Samho shipyard), Eumseong-gun at 11.6% and
+Jincheon-gun at 8.0% in North Chungcheong, Pocheon-si at 9.3%, Seoul's
+Jung-gu at 7.9% and Ansan-si at 7.7%. Korean-Chinese are the largest
+foreign group in Seoul's south-west -- 3.8% of Yeongdeungpo-gu and of
+Guro-gu -- and 2.9% of Ansan.
 
 **Also found, and not used.** The Ministry of the Interior and Safety's
 annual *foreign residents by local government* (지방자치단체 외국인주민 현황,
