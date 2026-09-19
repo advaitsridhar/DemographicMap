@@ -1,14 +1,46 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_csvzip.py", line 107, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_csvzip.py", line 77, in main
-    dialect = csv.Sniffer().sniff(sample, delimiters=",;\t") if sample else csv.excel
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/csv.py", line 189, in sniff
-    raise Error("Could not determine delimiter")
-_csv.Error: Could not determine delimiter
-75,486 bytes
-member: 2023 ╜├▒║▒╕║░ ▒╣└√(┴÷┐¬)║░ ╡ε╖╧┐▄▒╣└╬ ├╝╖∙ ╟÷╚▓.csv (322,310 bytes)
+page: https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=행정안전부+외국인주민&dType=FILE
+  429,634 bytes
+  10 matching link(s)
+  - 행정안전부 _지역별(행정동) 성별 주민등록 인구증감
+    https://www.data.go.kr/data/3033254/fileData.do
+  - 서울특별시_ 외국인주민 (연령별) 통계
+    https://www.data.go.kr/data/15047025/fileData.do
+  - 서울특별시_ 외국인주민 (국적별) 통계
+    https://www.data.go.kr/data/15047033/fileData.do
+  - 서울특별시_ 외국인주민 총괄 통계
+    https://www.data.go.kr/data/15047032/fileData.do
+  - 서울특별시_ 외국인주민 자녀(연령별) 통계
+    https://www.data.go.kr/data/15047031/fileData.do
+  - 행정안전부 _문화_외국인관광도시민박업
+    https://www.data.go.kr/data/15044966/fileData.do
+  - 서울특별시_ 외국인주민 (체류기간별) 통계
+    https://www.data.go.kr/data/15047024/fileData.do
+  - 서울특별시_ 외국인주민 (국적취득 후 경과기간별) 통계
+    https://www.data.go.kr/data/15047030/fileData.do
+  - 제주특별자치도_체류자격별 외국인 주민 현황
+    https://www.data.go.kr/data/15045324/fileData.do
+  - 제주특별자치도_국적별 외국인 등록현황
+    https://www.data.go.kr/data/15045325/fileData.do
+page: https://www.data.go.kr/tcs/dss/selectDataSetList.do?keyword=행정안전부+주민등록+인구&dType=FILE
+  431,278 bytes
+  10 matching link(s)
+  - 행정안전부 _지역별(행정동) 성별 연령별 주민등록 인구수
+    https://www.data.go.kr/data/15097972/fileData.do
+  - 행정안전부 _지역별 연령별 주민등록 인구현황
+    https://www.data.go.kr/data/3033304/fileData.do
+  - 행정안전부 _지역별(법정동) 성별 연령별 주민등록 인구수
+    https://www.data.go.kr/data/15099158/fileData.do
+  - 행정안전부 _지역별(행정동) 성별 주민등록 인구증감
+    https://www.data.go.kr/data/3033254/fileData.do
+  - 행정안전부 _지역별 주민등록 성별 인구현황
+    https://www.data.go.kr/data/3033301/fileData.do
+  - 행정안전부 _지역별 주민등록 인구 평균연령
+    https://www.data.go.kr/data/3033255/fileData.do
+  - 행정안전부 _지역별(행정동) 세대원수별 주민등록 세대수
+    https://www.data.go.kr/data/15097974/fileData.do
+  - 행정안전부 _지역별(법정동) 성별 주민등록 인구증감
+    https://www.data.go.kr/data/15100123/fileData.do
+  - 행정안전부 _지역별(행정동) 성별 주민등록 평균연령
+    https://www.data.go.kr/data/15099157/fileData.do
+  - 행정안전부 _지역별(법정동) 세대원수별 주민등록 세대수
+    https://www.data.go.kr/data/15099159/fileData.do
