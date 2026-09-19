@@ -1,60 +1,6 @@
-page: https://data.gov.tw/dataset/8203
-  513,933 bytes
-  4 matching link(s)
-  - XML
-    https://religion.moi.gov.tw/Report/temple.xml
-  - 全國宗教資訊系統資料-法人教會
-    https://data.gov.tw/dataset/8204
-  - 查看全部
-    https://data.gov.tw/applications?name=全國宗教資訊系統資料-寺廟
-  - 資料集清單下載區
-    https://data.gov.tw/datasets/datasets_download
-  checking https://religion.moi.gov.tw/Report/temple.xml
-    URLError: <urlopen error timed out>
-  checking https://data.gov.tw/dataset/8204
-    200 text/html;charset=utf-8 size=None
-  checking https://data.gov.tw/applications?name=全國宗教資訊系統資料-寺廟
-    200 text/html;charset=utf-8 size=None
-  checking https://data.gov.tw/datasets/datasets_download
-    200 text/html;charset=utf-8 size=None
-page: https://data.gov.tw/dataset/8204
-  513,740 bytes
-  4 matching link(s)
-  - XML
-    https://religion.moi.gov.tw/Report/church.xml
-  - 全國宗教資訊系統資料-寺廟
-    https://data.gov.tw/dataset/8203
-  - 查看全部
-    https://data.gov.tw/applications?name=全國宗教資訊系統資料-法人教會
-  - 資料集清單下載區
-    https://data.gov.tw/datasets/datasets_download
-  checking https://religion.moi.gov.tw/Report/church.xml
-    URLError: <urlopen error timed out>
-  checking https://data.gov.tw/dataset/8203
-    200 text/html;charset=utf-8 size=None
-  checking https://data.gov.tw/applications?name=全國宗教資訊系統資料-法人教會
-    200 text/html;charset=utf-8 size=None
-  checking https://data.gov.tw/datasets/datasets_download
-    200 text/html;charset=utf-8 size=None
-page: https://www.moi.gov.tw/cp.aspx?n=5590
-  107,088 bytes
-  2 matching link(s)
-  - 內政統計月報
-    https://www.moi.gov.tw/cl.aspx?n=4412
-  - 內政統計年報
-    https://www.moi.gov.tw/cl.aspx?n=4404
-  checking https://www.moi.gov.tw/cl.aspx?n=4412
-    200 text/html; charset=utf-8 size=105988
-  checking https://www.moi.gov.tw/cl.aspx?n=4404
-    200 text/html; charset=utf-8 size=105606
-page: https://www.moi.gov.tw/cp.aspx?n=15798
-  98,719 bytes
-  2 matching link(s)
-  - 宗教輔導
-    https://religion.moi.gov.tw/
-  - 宗教輔導
-    https://religion.moi.gov.tw/Law/List?ci=0
-  checking https://religion.moi.gov.tw/
-    URLError: <urlopen error timed out>
-  checking https://religion.moi.gov.tw/Law/List?ci=0
-    URLError: <urlopen error timed out>
+xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
+usage: probe_links.py [-h] [--match MATCH] [--head] [--limit LIMIT]
+                      [--timeout TIMEOUT] [--check CHECK] [--accept ACCEPT]
+                      [--find FIND] [--raw RAW]
+                      url [url ...]
+probe_links.py: error: argument --find: expected one argument
