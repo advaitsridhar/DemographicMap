@@ -288,6 +288,29 @@ class InfoboxReligion(unittest.TestCase):
         out, printed = quiet(m.read_religion, UNCITED, "Kabupaten Nowhere")
         self.assertIsNone(out)
         self.assertIn("no citation", printed)
+        # A reference by a name the page never defines: kept where the name
+        # says what it cites, refused where it does not.
+        garut = UNCITED.replace("[[Hindu]]}}", '[[Hindu]]<ref name="DUKCAPIL"/>}}')
+        reading, printed = quiet(m.read_religion, garut, "Kabupaten Garut")
+        self.assertEqual((reading["kind"], reading["year"], reading["broken"]),
+                         ("dukcapil", None, "dukcapil"))
+        fields = m.religion_fields(reading, "Kabupaten Garut")
+        self.assertIn("never defines", fields["religion_note"])
+        self.assertIsNone(fields["religion_year"])      # record() drops a None field
+        nameless = UNCITED.replace("[[Hindu]]}}", '[[Hindu]]<ref name="AGAMA"/>}}')
+        out, printed = quiet(m.read_religion, nameless, "Kabupaten Nowhere")
+        self.assertIsNone(out)
+        self.assertIn("['agama'] defined nowhere", printed)
+
+    def test_a_table_whose_rows_miss_its_total_uses_the_rows(self):
+        off = SUMUT.replace("12.930.319", "12.900.000")
+        (counts, total), printed = quiet(m.read_ethnicity, off, "North Sumatra",
+                                         "Sumatera Utara")
+        self.assertEqual(total, 12_930_319)
+        self.assertIn("the rows' sum is the denominator", printed)
+        far = SUMUT.replace("12.930.319", "11.000.000")
+        with self.assertRaises(SystemExit):
+            m.read_ethnicity(far, "North Sumatra", "Sumatera Utara")
 
     def test_shares_that_do_not_add_up_are_refused(self):
         rows, why = m.religion_shares([("Islam", 80.0), ("Hindu", 10.0)])

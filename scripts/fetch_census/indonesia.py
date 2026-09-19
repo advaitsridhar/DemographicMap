@@ -99,6 +99,7 @@ LICENCE = "Official statistics; compilation CC BY-SA 4.0"
 NATIONAL_PAGE = "Ethnic groups in Indonesia"
 POPULATION_PAGE = "Demografi Indonesia"
 SUM_TOLERANCE = 0.3          # a province's ethnic shares, against 100
+TOTAL_TOLERANCE = 0.01       # a table's rows against its own printed total
 RELIGION_TOLERANCE = 0.6     # an infobox's religion shares, against 100
 SHORTFALL = 5.0              # below this much short of 100, the rest is a remainder row
 REMAINDER = "Other or not stated"
@@ -433,7 +434,7 @@ def religion_items(value: str) -> list[tuple[str, float]]:
     # A citation whose <ref> tag lost its bracket leaks into the value.
     text = re.sub(r"\{\{\s*cite[^{}]*\}\}", " ", text, flags=re.I)
     text = re.sub(r"ref\s+name\s*=[^>]*>", " ", text)
-    text = re.sub(r"\{\{\s*ublist\b[^|}]*", " ", text, flags=re.I)
+    text = re.sub(r"\{\{\s*(?:ublist|unbulleted list|plainlist)\b[^|}]*", " ", text, flags=re.I)
     text = re.sub(r"\{\{\s*Tree list(?:/end)?\s*\}\}", "|", text, flags=re.I)
     text = text.replace("{{", " ").replace("}}", " ")
     text = re.sub(r"<[^>]+>", "|", text)
@@ -504,12 +505,22 @@ def read_religion(wikitext: str, title: str) -> dict[str, Any] | None:
         return None
     definitions = ref_definitions(wikitext)
     cites = citations(value, definitions)
+    broken = ""
     if not cites:
+        # A reference used by a name the page never defines is a broken
+        # citation. Where the name itself says what was cited -- DUKCAPIL,
+        # KEMENAG, BPS -- that much is kept and the record says the
+        # reference is broken; a name that says nothing is no citation.
         missing = unresolved(value, definitions)
-        log(f"    {title}: religion figure carries no citation"
-            + (f" (named references {missing} defined nowhere)" if missing else "")
-            + "; not read")
-        return None
+        named = [n for n in missing if re.search(r"dukcapil|capil|kemenag|bps|sp2010", n)]
+        if named:
+            cites = [f"<broken reference named {named[0]!r}>"]
+            broken = named[0]
+        else:
+            log(f"    {title}: religion figure carries no citation"
+                + (f" (named references {missing} defined nowhere)" if missing else "")
+                + "; not read")
+            return None
     rows, why = religion_shares(religion_items(value))
     if why:
         log(f"    {title}: {why}; not read")
@@ -522,12 +533,15 @@ def read_religion(wikitext: str, title: str) -> dict[str, Any] | None:
     explained = dict((k, e) for k, _, e in SOURCE_KINDS).get(
         kind, "a source that is neither the census nor a registry")
     return {"rows": rows, "kind": kind, "year": year, "cited": what, "explained": explained,
-            "all": [d[2] for d in described]}
+            "all": [d[2] for d in described], "broken": broken}
 
 
 def religion_fields(reading: dict[str, Any], title: str) -> dict[str, Any]:
     cited = "; ".join(dict.fromkeys(reading["all"]))
-    when = f" for {reading['year']}" if reading["year"] else ""
+    when = f" for {reading['year']}" if reading["year"] else ", year not stated"
+    if reading.get("broken"):
+        cited = (f"a reference named '{reading['broken']}' that the article never defines, "
+                 f"so the source is known only by that name")
     note = (f"Shares as the Indonesian Wikipedia article '{title}' gives them in its "
             f"infobox, citing {cited}. The figure is from {reading['explained']}{when}"
             + (", not a census count." if reading["kind"] not in ("census2010",) else "."))
@@ -687,11 +701,16 @@ def read_ethnicity(wikitext: str, province: str, title: str
     summed = sum(counts.values())
     if total is None:
         log(f"    {province}: no total row; the rows' sum {summed:,} stands as the total")
-        total = summed
-    elif abs(summed - total) > SUM_TOLERANCE / 100 * total:
+    elif abs(summed - total) > TOTAL_TOLERANCE * total:
         raise SystemExit(f"indonesia: {province}: rows add to {summed:,} against the table's "
                          f"total {total:,} ({100 * summed / total:.2f}%)")
-    return counts, total
+    elif summed != total:
+        # Central Kalimantan's rows add to 0.3% more than its printed total:
+        # a transcription slip in one or the other. The rows are the figures
+        # carried, so they are the denominator, and the slip is on record.
+        log(f"    {province}: rows add to {summed:,} against the table's total {total:,} "
+            f"({100 * summed / total:.2f}%); the rows' sum is the denominator")
+    return counts, summed
 
 
 def ethnic_rows(counts: dict[str, int], total: int) -> list[dict[str, Any]]:
