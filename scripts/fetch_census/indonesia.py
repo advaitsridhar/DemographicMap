@@ -618,6 +618,8 @@ def ethnic_label(province: str, key: str) -> str | None:
     label = RESIDUAL_BY_PROVINCE.get((province, key)) or ETHNIC_LABELS.get(key)
     if label is None and "(" in key:
         label = ETHNIC_LABELS.get(re.sub(r"\s*\(.*?\)\s*", " ", key).strip())
+    if label is None and key.startswith("asli papua"):
+        label = "Papuan"       # "Asli Papua", "Asli Papua Barat dan ...": the native peoples
     return label
 
 
@@ -670,15 +672,26 @@ def split_total(rows: list[tuple[str, int, bool]], province: str, title: str
     if total is None and len(body) > 2:
         biggest = max(body, key=lambda r: r[1])
         rest = sum(c for _, c in body) - biggest[1]
-        if rest and abs(biggest[1] - rest) <= SUM_TOLERANCE / 100 * rest:
+        if rest and abs(biggest[1] - rest) <= TOTAL_TOLERANCE * rest:
             total = biggest[1]
             body.remove(biggest)
+    # A row whose name is a number is the total row with its name pushed
+    # out of its column; if it was not the sum of the rest it is dropped
+    # here rather than refused as an unknown people.
+    body = [(name, count) for name, count in body if not as_count(name)]
     return body, total
 
 
-def read_ethnicity(wikitext: str, province: str, title: str
+def read_ethnicity(wikitext: str, province: str, title: str, expected: int | None = None
                    ) -> tuple[dict[str, int], int] | None:
-    """{label: count} for the province and the table's total, or None."""
+    """{label: count} for the province and the denominator, or None.
+
+    ``expected`` is the province's 2010 census population. Riau's table
+    prints a total that is not the sum of its rows and not the 2010
+    population either (6.4 million against 5.5), while its rows add to
+    what the census counted; where the rows fit the census and the printed
+    total does not, the rows win and the slip is on record.
+    """
     found = ethnic_table(wikitext)
     if not found:
         log(f"    {province}: no 2010 ethnic table in '{title}'")
@@ -705,8 +718,12 @@ def read_ethnicity(wikitext: str, province: str, title: str
     if total is None:
         log(f"    {province}: no total row; the rows' sum {summed:,} stands as the total")
     elif abs(summed - total) > TOTAL_TOLERANCE * total:
-        raise SystemExit(f"indonesia: {province}: rows add to {summed:,} against the table's "
-                         f"total {total:,} ({100 * summed / total:.2f}%)")
+        if expected and fits(summed, expected) and not fits(total, expected):
+            log(f"    {province}: the table's total {total:,} is not the 2010 population "
+                f"{expected:,}; its rows add to {summed:,}, which is, and stand as the total")
+        else:
+            raise SystemExit(f"indonesia: {province}: rows add to {summed:,} against the "
+                             f"table's total {total:,} ({100 * summed / total:.2f}%)")
     elif summed != total:
         # Central Kalimantan's rows add to 0.3% more than its printed total:
         # a transcription slip in one or the other. The rows are the figures
@@ -714,6 +731,12 @@ def read_ethnicity(wikitext: str, province: str, title: str
         log(f"    {province}: rows add to {summed:,} against the table's total {total:,} "
             f"({100 * summed / total:.2f}%); the rows' sum is the denominator")
     return counts, summed
+
+
+def fits(total: int, expected: int) -> bool:
+    """Whether a table's population is the 2010 census's, allowing for the
+    respondents a census tabulation of ethnicity leaves out."""
+    return 0.85 * expected <= total <= 1.03 * expected
 
 
 def ethnic_rows(counts: dict[str, int], total: int) -> list[dict[str, Any]]:
@@ -791,18 +814,17 @@ def province_records(fetch_page=fetch) -> tuple[list[dict[str, Any]], dict[str, 
         fields: dict[str, Any] = {}
         sources: list[dict[str, str]] = []
         if wikitext and province not in NO_ETHNIC_TABLE:
-            found = read_ethnicity(wikitext, province, resolved)
+            expected = populations.get(resolved) or populations.get(title)
+            if province in SPLIT_2012:
+                # North Kalimantan left East Kalimantan in 2012, and each
+                # article's table is for the province as it now is while the
+                # 2010 population is for the province as it was. Their two
+                # tables add to it; the check is over the pair.
+                expected = None
+            found = read_ethnicity(wikitext, province, resolved, expected)
             if found:
                 counts, total = found
-                expected = populations.get(resolved) or populations.get(title)
-                if province in SPLIT_2012:
-                    # North Kalimantan left East Kalimantan in 2012, and each
-                    # article's table is for the province as it now is
-                    # while the 2010 population is for the province as it
-                    # was. Their two tables add to it; the check is over
-                    # the pair.
-                    expected = None
-                if expected and not 0.85 * expected <= total <= 1.03 * expected:
+                if expected and not fits(total, expected):
                     raise SystemExit(f"indonesia: {province}: the ethnic table's total "
                                      f"{total:,} is not the 2010 population {expected:,}")
                 rows = ethnic_rows(counts, total)

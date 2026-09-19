@@ -311,6 +311,12 @@ class InfoboxReligion(unittest.TestCase):
         far = SUMUT.replace("12.930.319", "11.000.000")
         with self.assertRaises(SystemExit):
             m.read_ethnicity(far, "North Sumatra", "Sumatera Utara")
+        # Riau's case: the printed total is not the census population and
+        # the rows are, so the rows stand.
+        (counts, total), printed = quiet(m.read_ethnicity, far, "North Sumatra",
+                                         "Sumatera Utara", 12_982_204)
+        self.assertEqual(total, 12_930_319)
+        self.assertIn("stand as the total", printed)
 
     def test_shares_that_do_not_add_up_are_refused(self):
         rows, why = m.religion_shares([("Islam", 80.0), ("Hindu", 10.0)])
