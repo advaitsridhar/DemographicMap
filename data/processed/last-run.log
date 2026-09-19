@@ -1,55 +1,101 @@
-probe_post: https://jumin.mois.go.kr/downloadCsv.do?searchYearMonth=month&xlsStats=1
-  14 field(s): tableId, category, sltOrgType, sltOrgLvl1, sltOrgLvl2, searchYearStart, searchMonthStart, searchYearEnd, searchMonthEnd, sltUndefType, sltOrderType, sltOrderValue, searchYearMonth, nowYear
-  200 application/octet-stream;charset=utf-8 size=2,573
-  disposition: attachment; filename="202312_202312_%EC%A3%BC%EB%AF%BC%EB%93%B1%EB%A1%9D%EC%9D%B8%EA%B5%AC%EB%B0%8F%EC%84%B8%EB%8C%80%ED%98%84%ED%99%A9_%EC%9B%94%EA%B0%84.csv";
-  50 non-blank line(s) decoded as cp949
-  "행정구역","2023년12월_총인구수","2023년12월_세대수"
-  "경기도  (4100000000)","13,630,821","5,978,724"
-  "경기도 수원시 (4111000000)","1,197,257","537,078"
-  "경기도 수원시 장안구 (4111100000)","270,849","119,900"
-  "경기도 수원시 권선구 (4111300000)","366,167","163,796"
-  "경기도 수원시 팔달구 (4111500000)","197,213","98,505"
-  "경기도 수원시 영통구 (4111700000)","363,028","154,877"
-  "경기도 성남시 (4113000000)","919,747","409,602"
-  "경기도 성남시 수정구 (4113100000)","235,942","116,390"
-  "경기도 성남시 중원구 (4113300000)","210,848","101,034"
-  "경기도 성남시 분당구 (4113500000)","472,957","192,178"
-  "경기도 의정부시 (4115000000)","464,213","209,891"
-  "경기도 안양시 (4117000000)","544,660","227,627"
-  "경기도 안양시 만안구 (4117100000)","230,664","101,831"
-  "경기도 안양시 동안구 (4117300000)","313,996","125,796"
-  "경기도 부천시 (4119000000)","779,968","344,096"
-  "경기도 광명시 (4121000000)","280,197","115,114"
-  "경기도 평택시 (4122000000)","591,022","279,835"
-  "경기도 동두천시 (4125000000)","88,626","43,366"
-  "경기도 안산시 (4127000000)","629,308","288,567"
-  "경기도 안산시 상록구 (4127100000)","334,867","153,212"
-  "경기도 안산시 단원구 (4127300000)","294,441","135,355"
-  "경기도 고양시 (4128000000)","1,074,907","464,380"
-  "경기도 고양시 덕양구 (4128100000)","496,438","220,682"
-  "경기도 고양시 일산동구 (4128500000)","291,597","127,885"
-  "경기도 고양시 일산서구 (4128700000)","286,872","115,813"
-  "경기도 과천시 (4129000000)","81,000","29,194"
-  "경기도 구리시 (4131000000)","187,093","80,450"
-  "경기도 남양주시 (4136000000)","732,265","304,768"
-  "경기도 오산시 (4137000000)","229,656","104,437"
-  "경기도 시흥시 (4139000000)","519,715","228,474"
-  "경기도 군포시 (4141000000)","261,229","113,032"
-  "경기도 의왕시 (4143000000)","158,870","64,402"
-  "경기도 하남시 (4145000000)","329,861","141,764"
-  "경기도 용인시 (4146000000)","1,075,566","435,340"
-  "경기도 용인시 처인구 (4146100000)","261,488","117,863"
-  "경기도 용인시 기흥구 (4146300000)","436,656","174,971"
-  "경기도 용인시 수지구 (4146500000)","377,422","142,506"
-  "경기도 파주시 (4148000000)","497,753","220,158"
-  "경기도 이천시 (4150000000)","222,098","103,793"
-  "경기도 안성시 (4155000000)","189,034","91,026"
-  "경기도 김포시 (4157000000)","486,172","204,594"
-  "경기도 화성시 (4159000000)","944,342","404,623"
-  "경기도 광주시 (4161000000)","391,377","170,845"
-  "경기도 양주시 (4163000000)","268,026","117,518"
-  "경기도 포천시 (4165000000)","143,323","72,876"
-  "경기도 여주시 (4167000000)","114,412","55,514"
-  "경기도 연천군 (4180000000)","41,584","21,943"
-  "경기도 가평군 (4182000000)","62,302","32,606"
-  "경기도 양평군 (4183000000)","125,238","61,811"
+key found in $DEMOGRAPHICMAP (100 characters). Its value is never printed.
+
+=== sampling d_a58564fbed922609a0f79af96069dd9b
+
+  --- metadata: HTTP 200
+      https://api-production.data.gov.sg/v2/public/api/datasets/d_a58564fbed922609a0f79af96069dd9b/metadata
+  JSON object, keys: ['code', 'data', 'errorMsg']
+  data scalars: {"datasetId": "d_a58564fbed922609a0f79af96069dd9b", "createdAt": "2024-10-22T13:31:11+08:00", "name": "Resident Population Aged 15 Years and Over by Planning Area of Residence and Religion (Census of Population 2020)", "description": "Source: SINGAPORE DEPARTMENT OF STATISTICS\r\n\r\nData Last Updated: 18/06/2021\r\n\r\nUpdate Frequency: 10 years\r\n\r\nSurvey period: Census of Population 2020\r\n
+  data keys: ['collectionIds', 'columnMetadata', 'contactEmails', 'createdAt', 'datasetId', 'datasetSize', 'description', 'format', 'lastUpdatedAt', 'managedBy', 'name']
+
+  --- datastore rows: HTTP 200
+      https://data.gov.sg/api/action/datastore_search?resource_id=d_a58564fbed922609a0f79af96069dd9b&limit=3
+  JSON object, keys: ['result', 'success']
+  result scalars: {"resource_id": "d_a58564fbed922609a0f79af96069dd9b", "total": 32, "limit": 3}
+  result keys: ['_links', 'fields', 'limit', 'records', 'resource_id', 'total']
+  result.records: 3 items; first:
+    {"_id": 1, "Number": "Total", "Total": "3459093", "NoReligion": "692528", "Buddhism": "1074159", "Taoism1": "303960", "Islam": "539251", "Hinduism": "172963", "Sikhism": "12051", "Christianity_Catholic": "242681", "Christianity_OtherChristians": "411674", "OtherReligions": "9827"}
+
+  --- api-open rows: HTTP 201
+      https://api-open.data.gov.sg/v1/public/api/datasets/d_a58564fbed922609a0f79af96069dd9b/poll-download
+      {"code":0,"data":{"status":"DOWNLOAD_SUCCESS","url":"https://s3.ap-southeast-1.amazonaws.com/table-downloads-ingest.data.gov.sg/d_a58564fbed922609a0f79af96069dd9b/314e8691529776207b33e4e6f4106fb181cf47bcd2560a61b753bd507
+
+=== sampling d_21f546492a87dec38391fc72eb4c7890
+
+  --- metadata: HTTP 200
+      https://api-production.data.gov.sg/v2/public/api/datasets/d_21f546492a87dec38391fc72eb4c7890/metadata
+  JSON object, keys: ['code', 'data', 'errorMsg']
+  data scalars: {"datasetId": "d_21f546492a87dec38391fc72eb4c7890", "createdAt": "2024-10-22T13:31:12+08:00", "name": "Resident Population Aged 5 Years and Over by Planning Area of Residence and Language Most / Second Most Frequently Spoken at Home (Census of Population 2020)", "description": "Source: SINGAPORE DEPARTMENT OF STATISTICS\r\n\r\nData Last Updated: 18/06/2021\r\n\r\nUpdate Frequency: 10 years\r\n\r\n
+  data keys: ['collectionIds', 'columnMetadata', 'contactEmails', 'createdAt', 'datasetId', 'datasetSize', 'description', 'format', 'lastUpdatedAt', 'managedBy', 'name']
+
+  --- datastore rows: HTTP 200
+      https://data.gov.sg/api/action/datastore_search?resource_id=d_21f546492a87dec38391fc72eb4c7890&limit=3
+  JSON object, keys: ['result', 'success']
+  result scalars: {"resource_id": "d_21f546492a87dec38391fc72eb4c7890", "total": 32, "limit": 3}
+  result keys: ['_links', 'fields', 'limit', 'records', 'resource_id', 'total']
+  result.records: 3 items; first:
+    {"_id": 1, "Number": "Total", "Total": "3596284", "English_Total": "1735242", "English_EnglishOnly": "229429", "English_EnglishandMandarin": "973515", "English_EnglishandChineseDialect": "125507", "English_EnglishandMalay": "233779", "English_EnglishandTamil": "88059", "English_EnglishandOtherIndianLanguage": "44949", "English_EnglishandOtherLanguage": "40004", "Mandarin_Total1": "1075172", "Mandarin_MandarinOnly": "239997", "Mandarin_MandarinandEnglish": "528934", "Mandarin_MandarinandChineseDialect": "301328", "ChineseDialects_Total1": "313258", "ChineseDialects_ChineseDialectOnly": "91759",
+
+  --- api-open rows: HTTP 201
+      https://api-open.data.gov.sg/v1/public/api/datasets/d_21f546492a87dec38391fc72eb4c7890/poll-download
+      {"code":0,"data":{"status":"DOWNLOAD_SUCCESS","url":"https://s3.ap-southeast-1.amazonaws.com/table-downloads-ingest.data.gov.sg/d_21f546492a87dec38391fc72eb4c7890/fd4645018308ab0fe33aa4d75b5cb58f43990de4913840ae258912a51
+
+=== sampling d_609f4027e7fdc33251db12f4d3f38d4f
+
+  --- metadata: HTTP 200
+      https://api-production.data.gov.sg/v2/public/api/datasets/d_609f4027e7fdc33251db12f4d3f38d4f/metadata
+  JSON object, keys: ['code', 'data', 'errorMsg']
+  data scalars: {"datasetId": "d_609f4027e7fdc33251db12f4d3f38d4f", "createdAt": "2024-01-12T11:42:34+08:00", "name": "Resident Population Aged 15 Years and Over by Planning Area and Religion (General Household Survey 2015)", "description": "Source: SINGAPORE DEPARTMENT OF STATISTICS\r\n\r\nData Last Updated: 23/03/2016\r\n\r\nUpdate Frequency: 10 years\r\n\r\nSurvey period: General Household Survey 2015\r\n\r\nF
+  data keys: ['collectionIds', 'columnMetadata', 'contactEmails', 'createdAt', 'datasetId', 'datasetSize', 'description', 'format', 'lastUpdatedAt', 'managedBy', 'name']
+
+  --- datastore rows: HTTP 200
+      https://data.gov.sg/api/action/datastore_search?resource_id=d_609f4027e7fdc33251db12f4d3f38d4f&limit=3
+  JSON object, keys: ['result', 'success']
+  result scalars: {"resource_id": "d_609f4027e7fdc33251db12f4d3f38d4f", "total": 30, "limit": 3}
+  result keys: ['_links', 'fields', 'limit', 'records', 'resource_id', 'total']
+  result.records: 3 items; first:
+    {"_id": 1, "Thousands": "Total", "Total": "3275.9", "NoReligion": "604.5", "Buddhism": "1087.3", "Taoism1": "326.4", "Islam": "459.8", "Hinduism": "162.5", "Sikhism": "11.5", "Christianity_Catholic": "220.9", "Christianity_OtherChristians": "395.2", "OtherReligions": "7.9"}
+
+  --- api-open rows: HTTP 201
+      https://api-open.data.gov.sg/v1/public/api/datasets/d_609f4027e7fdc33251db12f4d3f38d4f/poll-download
+      {"code":0,"data":{"status":"DOWNLOAD_SUCCESS","url":"https://s3.ap-southeast-1.amazonaws.com/table-downloads-ingest.data.gov.sg/d_609f4027e7fdc33251db12f4d3f38d4f/275e8365a87ff2626da8ab7fdb10a7870f7caccafe40ef65c6710668e
+
+=== sampling d_58c5248e96531fe39a9b2caee6ed19d8
+
+  --- metadata: HTTP 200
+      https://api-production.data.gov.sg/v2/public/api/datasets/d_58c5248e96531fe39a9b2caee6ed19d8/metadata
+  JSON object, keys: ['code', 'data', 'errorMsg']
+  data scalars: {"datasetId": "d_58c5248e96531fe39a9b2caee6ed19d8", "createdAt": "2024-01-12T11:42:32+08:00", "name": "Resident Population Aged 5 Years and Over by Planning Area and Language Most Frequently Spoken at Home (General Household Survey 2015)", "description": "Source: SINGAPORE DEPARTMENT OF STATISTICS\r\n\r\nData Last Updated: 09/03/2016\r\n\r\nUpdate Frequency: 10 years\r\n\r\nSurvey period: General 
+  data keys: ['collectionIds', 'columnMetadata', 'contactEmails', 'createdAt', 'datasetId', 'datasetSize', 'description', 'format', 'lastUpdatedAt', 'managedBy', 'name']
+
+  --- datastore rows: HTTP 200
+      https://data.gov.sg/api/action/datastore_search?resource_id=d_58c5248e96531fe39a9b2caee6ed19d8&limit=3
+  JSON object, keys: ['result', 'success']
+  result scalars: {"resource_id": "d_58c5248e96531fe39a9b2caee6ed19d8", "total": 30, "limit": 3}
+  result keys: ['_links', 'fields', 'limit', 'records', 'resource_id', 'total']
+  result.records: 3 items; first:
+    {"_id": 1, "Thousands": "Total", "Total": "3530.5", "English": "1303", "Mandarin": "1231.9", "ChineseDialects": "430.3", "Malay": "378.7", "Tamil": "117.1", "OtherIndianLanguages": "37.3", "Others": "32.4"}
+
+  --- api-open rows: HTTP 201
+      https://api-open.data.gov.sg/v1/public/api/datasets/d_58c5248e96531fe39a9b2caee6ed19d8/poll-download
+      {"code":0,"data":{"status":"DOWNLOAD_SUCCESS","url":"https://s3.ap-southeast-1.amazonaws.com/table-downloads-ingest.data.gov.sg/d_58c5248e96531fe39a9b2caee6ed19d8/873e2b0bc25991cecb77d34c4ae79138d527066a63de5b33774347f92
+
+=== sampling d_18f1b1597c10ef1c347d56e8f66f3d68
+
+  --- metadata: HTTP 200
+      https://api-production.data.gov.sg/v2/public/api/datasets/d_18f1b1597c10ef1c347d56e8f66f3d68/metadata
+  JSON object, keys: ['code', 'data', 'errorMsg']
+  data scalars: {"datasetId": "d_18f1b1597c10ef1c347d56e8f66f3d68", "createdAt": "2024-10-22T13:31:07+08:00", "name": "Resident Population Aged 15 Years and Over by Planning Area of Residence and Language Literate In (Census of Population 2020)", "description": "Source: SINGAPORE DEPARTMENT OF STATISTICS\r\n\r\nData Last Updated: 18/06/2021\r\n\r\nUpdate Frequency: 10 years\r\n\r\nSurvey period: Census of Populat
+  data keys: ['collectionIds', 'columnMetadata', 'contactEmails', 'createdAt', 'datasetId', 'datasetSize', 'description', 'format', 'lastUpdatedAt', 'managedBy', 'name']
+
+  --- datastore rows: HTTP 200
+      https://data.gov.sg/api/action/datastore_search?resource_id=d_18f1b1597c10ef1c347d56e8f66f3d68&limit=3
+  JSON object, keys: ['result', 'success']
+  result scalars: {"resource_id": "d_18f1b1597c10ef1c347d56e8f66f3d68", "total": 32, "limit": 3}
+  result keys: ['_links', 'fields', 'limit', 'records', 'resource_id', 'total']
+  result.records: 3 items; first:
+    {"_id": 1, "Number": "Total", "Total": "3459093", "NotLiterate": "99212", "Literate": "3359881", "OneLanguageOnly_EnglishOnly": "362469", "OneLanguageOnly_ChineseOnly": "438279", "OneLanguageOnly_MalayOnly": "45753", "OneLanguageOnly_TamilOnly": "9600", "OneLanguageOnly_Non_OfficialLanguageOnly": "5998", "TwoLanguagesOnly_EnglishandChineseOnly": "1584180", "TwoLanguagesOnly_EnglishandMalayOnly": "465744", "TwoLanguagesOnly_EnglishandTamilOnly": "123308", "TwoLanguagesOnly_EnglishandNon_OfficialLanguageOnly": "78208", "TwoLanguagesOnly_OtherTwoLanguagesOnly": "8107", "ThreeorMoreLanguages_Engli
+
+  --- api-open rows: HTTP 201
+      https://api-open.data.gov.sg/v1/public/api/datasets/d_18f1b1597c10ef1c347d56e8f66f3d68/poll-download
+      {"code":0,"data":{"status":"DOWNLOAD_SUCCESS","url":"https://s3.ap-southeast-1.amazonaws.com/table-downloads-ingest.data.gov.sg/d_18f1b1597c10ef1c347d56e8f66f3d68/567500d2c3d73083d21cf7ed83244931faa13abf4859ec02e9ecbf5a9
