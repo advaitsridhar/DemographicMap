@@ -1,3 +1,73 @@
-page: https://www.data.go.kr/tcs/dss/selectFileDataDownload.do?publicDataPk=15097972&publicDataDetailPk=uddi:5beebd9e-8733-44f8-817f-9cfa03548b7a
-  9,974 bytes
-{"dataSetFileDetailInfo":{"rn":"","searchCondition1":"","searchCondition2":"","searchCondition3":"","searchCondition1Array":null,"searchCondition2Array":null,"searchCondition3Array":null,"searchKeyword1":"","searchKeyword2":"","searchKeyword3":"","searchKeywordFrom1":"","searchKeywordTo1":"","searchDataName":"","searchInsttCode":"","searchStartDate":"","searchEndDate":"","searchKeywordFrom2":"","searchKeywordTo2":"","searchUseYn":"","searchOrder":"","pageIndex":1,"pageUnit":10,"pageSize":10,"firstIndex":1,"lastIndex":1,"recordCountPerPage":10,"excelFileNm":"","excelSheetNm":"","atachFileYn":"N","success":false,"deleteFileSnArray":null,"currentMenuId":"","tabGubun":"","popupRn":"","popupSearchCondition1":"","popupSearchCondition2":"","popupSearchCondition3":"","popupSearchCondition4":"","popupSearchKeyword1":"","popupSearchKeyword2":"","popupSearchKeyword3":"","popupSearchKeyword4":"","popupSearchKeywordFrom1":"","popupSearchKeywordTo1":"","popupSearchKeywordFrom2":"","popupSearchKeywordTo2":"","popupSearchUseYn":"","popupSearchCustomGubunCode":"","publicDataPk":"15097972","publicDataDetailPk":"uddi:5beebd9e-8733-44f8-817f-9cfa03548b7a","beforeDetailPk":null,"publicDataHistSn":1,"publicHistDataAt":null,"prePublicDataHistSn":0,"orgDataPk":null,"stdPublicDataPk":"","dataType":null,"processSttusCode":null,"processResultCode":null,"processTyResultCode":null,"processResultDc":null,"processSttusTyCode":null,"processSttusDc":null,"confmDate":null,"confmDt":"2026-09-08 17:42:18.000","confmId":null,"confmNm":null,"portalOpnAt":null,"publicDataSj":"행정안전부_지역별(행정동) 성별 연령별 주민등록 인구수","publicDataEngSj":"Ministry of Public Administration and Security_ Number of resident registration population by region (administrative dong) by gender and age","publicDataDc":"행정동(읍면동)별 성별 연령별 주민등록 인구에 대한 데이터로, 행정동은 주민들이 거주하는 지역을 행정 능률과 주민 편의를 위하여 구분한 행정구역 단위를 말합니다.<br/><br/>주민등록 인구 및 세대 등 을 기반으로 선거, 교육, 조세, 복지, 교통, 지역 개발 등 다양한 분야에 적시성 있는 통계를 제공하고 있습니다. 이러한 통계는 국가 행정 및 정책 수립에 필요한 기초 자료로 활용되고 있습니다.<br/><br/>주민등록 인구통계는 행정안전부 주민등록 인구통계 홈페이지(https://jumin.mois.go.kr), 공공데이터포털(https://data.go.kr), 국가통계포털(KOSIS) 등에서 확인 및 다운로드가 가능합니다.","kwrd":"인구수,성별,연령별,인구,주민등록","brmCode":"B1000220140124000225470","brmUpperCode":null,"dataHoldBasis":"","provdTrgetSe":"PROV01","provdReqstRegistAt":"N","provdReqstSn":"","mgahaDataYn":"N","coreDataAt":"N","registTy":"RETY02","colctMth":"","dataLimit":"","publicDataTyCode":"PR0051","publicDataTyDetailCode":"DATY03","insttCode":"1741000","jrsdMiryfcCode":"1741000","pchrgAt":"N","dataCpyrhtensureAt":"N","usePrmisnEnnc":"N","useScopeCode":"COEX07","useScopeResn":null,"rsrchPblictnAt":"N","rsrchPblictnUseScopeCode":null,"ctLevyUnitCode":"COUN01","ctLevyUnitNm":"","infoPrcuseAmount":0,"nextRegistPrarnde":"2026-10-10","dataRegistCycle":"RECY02","dataRegistCycleNm":null,"aiTypeYn":"N","registerId":null,"registDt":"2026-09-02 09:43:04.000","updusrId":null,"updtDt":"2026-09-02 09:43:04.000","inqireCo":84023,"deleteAt":"N","deleteResnCode":null,"registerNm":null,"updusrNm":null,"kwrdEn":"population,gender,By age,population,Resident registration","dataHoldBasisEn":"","searchCondition4":"","searchCondition5":"","searchCondition6":"","searchCondition7":"","startDt":null,"endDt":null,"startDt2":null,"endDt2":null,"seExclDeletion":null,"publicDataTyCodeNm":null,"publicDataTyDetailCodeNm":null,"useScopeCodeNm":null,"rsrchPblictnUseScopeCodeNm":null,"jrsdMiryfcCodeNm":null,"insttCodeNm":null,"processSttusCodeNm":null,"processResultCodeNm":null,"brmCdNm":null,"brmCodeNm":"일반공공행정 - 국가통계","brmUpperCodeNm":null,"insttNm":"행정안전부","processSttusTyCodeNm":null,"processTyResultCodeNm":null,"ctLevyUnitCodeNm":null,"mberAuthorNm":null,"reprsntchargerNm":null,"reprsntchargerPsitnDept":null,"encReprsntchargerTelno":null,"telNo":null,"reprsntchargerEmail":null,"atchFileId":null,"seqNo":"1","atchFileTyCode":"DATD01","fileDetailSn":null,"cnt":0,"gubn":null,"dlbrtCode":null,"fileUseAt":null,"atchFileTyCount":null,"changefileAt":null,"qlitySeq":null,"publicDataTy":null,"s
+probe_page: https://www.data.go.kr/data/15097972/fileData.do
+  2244 lines of text, 25 mentioning 파일데이터명, 설명, 확장자, 등록일, 갱신, 기준, 전체
+        8  회원가입
+        9  전체메뉴
+       10  전체메뉴 열기
+       11  공공데이터
+       77  품질관리
+       78  전체메뉴 닫기
+       79  DATA.GO.KR 공공데이터포털
+      115  오픈데이터 포럼
+      116  전체메뉴 닫기
+      117  홈
+      149  기본 정보
+      150  파일데이터명
+      151  행정안전부_지역별(행정동) 성별 연령별 주민등록 인구수_20260831
+      165  상세 및 제공정보
+      166  설명
+      167  행정동(읍면동)별 성별 연령별 주민등록 인구에 대한 데이터로, 행정동은 주민들이 거주하는 지역을 행정 능률과 주민 편의를 위하여 구분한 행정구역 단위를 말합니다.
+      172  컬럼 정의서 다운로드
+      173  데이터 항목 표로 항목명, 항목명(영문명), 항목 설명, 도메인분류, 데이터타입, 최대길이, 표현방식, 단위, 생성출처(정보시스템명, DB명, Table명), 코드로 구성되어있습니다.
+      174  항목명
+      175  항목명(영문명)
+      176  항목 설명
+      177  도메인분류
+      194  -
+      195  기준연월
+      196  CRTR_YM
+      228  Registered Resident(Total)
+      229  주민등록인구(전체)
+      230  수량_수
+     2028  텍스트
+     2029  확장자
+     2030  CSV
+     2031  전체 행
+     2032  3619
+     2041  30948
+     2042  등록일
+     2043  2026-09-02
+     2054  무료
+     2055  비용부과기준 및 단위
+     2056  건
+     2076  기본 정보
+     2077  파일데이터명
+     2078  행정안전부_지역별(행정동) 성별 연령별 주민등록 인구수_20260831
+     2093  상세 및 제공정보
+     2094  설명
+     2095  행정동(읍면동)별 성별 연령별 주민등록 인구에 대한 데이터로, 행정동은 주민들이 거주하는 지역을 행정 능률과 주민 편의를 위하여 구분한 행정구역 단위를 말합니다.
+     2099  텍스트
+     2100  확장자
+     2101  XML, JSON
+     2102  전체 행
+     2103  3619
+     2112  350
+     2113  등록일
+     2114  2026-09-02
+     2125  무료
+     2126  비용부과기준 및 단위
+     2127  건
+     2139  오픈API 에러코드 안내
+     2140  오픈 API에 대한 에러코드를 에러메시지, 에러코드, 설명 순으로 안내하는 표입니다.
+     2141  에러메시지
+     2142  에러코드
+     2143  설명
+     2144  APPLICATION_ERROR
+     2174  인증 에러
+     2175  오픈 API에 대한 인증 에러코드를 에러메시지, 에러코드, 설명 순으로 안내하는 표입니다.
+     2176  에러메시지
+     2177  에러코드
+     2178  설명
+     2179  SERVICE_ACCESS_DENIED_ERROR
+     2186  31
+     2187  API 인증키의 사용 기한이 만료되었습니다. 공공데이터포털에서 이용 기간을 확인하거나 갱신해 주세요.
+     2188  닫기
