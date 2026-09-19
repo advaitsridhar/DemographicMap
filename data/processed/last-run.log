@@ -1,56 +1,342 @@
 page: https://statis.moi.gov.tw/micst/webMain.aspx?k=menum
   10,803 bytes
-  10 matching link(s)
-  - English
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menume
-  - 1戶政、2民政
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menum#0
-  - 3合作及人民團體
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menum#1
-  - 4地政
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menum#2
-  - 5警政
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menum#3
-  - 6移民
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menum#4
-  - 7消防
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menum#5
-  - 8國土管理
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menum#6
-  - 9國家公園
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menum#7
-  - XLSX
-    javascript:linkreprot(1,\'' + lrpt[lwj][2] + '\',\'' + lrpt[lwj][3] + '\',\'' + lrpt[lwj][5] + '\')
-page: https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy
-  12,023 bytes
-  15 matching link(s)
-  - English
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuye
-  - 1民政
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#0
-  - 2戶政
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#1
-  - 3役政
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#2
-  - 4合作及人民團體
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#3
-  - 5地政
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#4
-  - 6宗教及禮制
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#5
-  - 7警政
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#6
-  - 8移民
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#7
-  - 9消防
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#8
-  - 10國土管理
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#9
-  - 11國家公園
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#10
-  - 12空中勤務
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#11
-  - 13建築研究
-    https://statis.moi.gov.tw/micst/webMain.aspx?k=menuy#12
-  - XLSX
-    javascript:linkreprot(1,\'' + lrpt[lwj][2] + '\',\'' + lrpt[lwj][3] + '\',\'' + lrpt[lwj][5] + '\')
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>內政統計月報</title>
+
+	<link href="css/bootstrap.mintmp1409151.css" rel="stylesheet">
+	<style type="text/css">
+		@charset "utf-8";
+
+		body {
+			padding: 0;
+			margin: 0;
+			overflow-x: hidden;
+			font-family: "Microsoft JhengHei", Arial;
+			word-wrap: break-word;
+			word-break: break-all;
+		}
+
+		header {}
+
+		.header_pic {
+			position: relative;
+			z-index: 0;
+		}
+
+		.header_pic img {
+			width: auto;
+			height: auto;
+			max-height: 100%;
+			max-width: 100%;
+		}
+
+		.logo {
+			position: absolute;
+			top: -20px;
+		}
+
+		.logo img {
+			width: auto;
+			height: auto;
+			max-height: 100%;
+			max-width: 100%;
+		}
+
+		.title_top {
+			font-size: 2em;
+			font-weight: bold;
+			text-align: center;
+			vertical-align: middle;
+
+		}
+
+		.center_bg {
+			/*background:#f7f7f7;*/
+			margin-bottom: 30px;
+		}
+
+		.footer {
+			text-align: center;
+			padding: 33px;
+		}
+
+		.footer_bg {
+			background-color: #e9e9e9;
+		}
+
+		.mainbox {
+			height: 300px;
+			overflow: auto;
+		}
+
+		@media (max-width: 767.98px) {
+			.mainbox {
+				height: auto;
+			}
+		}
+
+		.linehead {
+			background-color: #e9ae27;
+			font-weight: 800;
+			line-height: 1.8em;
+		}
+
+		.linehref {
+			font-size: 1em;
+			line-height: 0.8em;
+		}
+
+		.liner {
+			background-color: #f7f7f7;
+			font-weight: 800;
+		}
+
+		.line1 {
+			background-color: #f7f7f7;
+			line-height: 1.8em;
+		}
+
+		.line2 {
+			background-color: #FFFFFF;
+			line-height: 1.8em;
+		}
+
+
+		.item0 {
+			text-align: center;
+		}
+
+		a {
+			color: #113285;
+		}
+	</style>
+
+
+
+</head>
+</head>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/stcom.js"></script>
+<script type="text/javascript" src="js/sdcom.js"></script>
+
+<body class="month_bg">
+
+	<div class="container-fluid center_bg datacls">
+		<div class="container">
+			<div class="title_top"><h1 class="h3">--- 內政統計月報 ---</h1></div>
+			<div align=right><a title="English(轉跳)" href="webMain.aspx?k=menume">English</a></div>
+			<!-- <div align=right>English</div> -->
+			<div align=center class="liner">【<a title="1戶政、2民政" href="#0">1戶政、2民政</a>】 【<a title="合作及人民團體"
+					href="#1">3合作及人民團體</a>】 【<a title="4地政" href="#2">4地政</a>】 【<a title="5警政" href="#3">5警政</a>】 【<a
+					title="6移民" href="#4">6移民</a>】 【<a title="7消防" href="#5">7消防</a>】 【<a title="8國土管理"
+					href="#6">8國土管理</a>】 【<a title="9國家公園" href="#7">9國家公園</a>】</div>
+			<div align=center class="line1">1.僅提供近10年資料，以前年度資料請至「歷史內政統計月報」查詢。
+2.本網站資料有修正者，請以最新資料為準。
+3.各項<a href="https://ws.moi.gov.tw/001/Upload/400/relfile/0/4413/65a0a7cc-cb81-4555-99fb-8f6c876dd0d3/%E5%90%8D%E8%A9%9E%E5%AE%9A%E7%BE%A9.pdf">【名詞定義】</a></div>
+			<div class="mainbox"></div>
+		</div>
+
+
+</body>
+
+<script>
+	var lhtml;
+	var lhtml;
+	var lwi, lwj, lwk;
+	var lcnt;
+	var lmark;
+	var ljson = $.parseJSON(getAjax(2, "webMain.aspx?sys=8022&funid=menumS&p01=1", ""));
+	var lrpt = [
+
+		[0, 0, 0, 0, 1, "【1戶政、2民政】", ""]
+		, [0, 1, 32, 1010, 1, "1.1-土地面積、村里鄰、戶數暨現住人口數", ""]
+		, [0, 1, 32, 1020, 1, "1.2-現住人口出生、死亡、結婚、離婚登記", ""]
+		, [0, 1, 32, 1030, 1, "1.3-現住人口遷入、遷出登記", ""]
+		, [0, 1, 32, 1040, 1, "1.4-現住原住民人口數", ""]
+		, [0, 1, 32, 1050, 1, "1.5-現住人口按三段、六歲年齡組分", ""]
+		, [0, 1, 32, 1060, 1, "1.6-現住人口按五歲年齡組分", ""]
+		, [0, 1, 32, 1070, 1, "1.7-鄉鎮市區人口及按都會區統計", ""]
+		, [0, 1, 32, 1080, 1, "1.8-現住原住民人口按五歲年齡組分", ""]
+		, [0, 1, 32, 1090, 1, "1.9-縣市各月現住人口", ""]
+		, [0, 1, 32, 1100, 1, "1.10-年底各鄉鎮市區人口數", ""]
+		, [0, 1, 32, 1110, 1, "1.11-歷年單齡人口數、人口年齡中位數", ""]
+		, [0, 1, 32, 1120, 1, "1.12-戶政管理及便民服務案件", ""]
+		, [0, 1, 32, 1130, 1, "1.13-國籍別結離婚登記", ""]
+		, [0, 2, 32, 1000, 1, "各縣市外裔、外籍與大陸、港澳配偶人數<br><a title='104年11月以前(另外分頁)' href='https://www.ris.gov.tw/app/portal/346' target='_blank'>‧104年11月以前</a> - 戶政司人口統計資料<br><a title='104年12月起(另外分頁)' href='http://www.immigration.gov.tw/lp.asp?ctNode=29699&CtUnit=16434&BaseDSD=7&mp=1' target='_blank'>‧104年12月起</a> - 移民署網頁/業務統計/統計資料", ""]
+		, [1, 0, 32, 1000, 1, "【3合作及人民團體】", ""]
+		, [1, 1, 32, 3010, 3, "3.1-合作事業概況", ""]
+		, [1, 1, 32, 3020, 2, "3.2-全國性人民團體數", ""]
+		, [2, 0, 32, 1000, 1, "【4地政】", ""]
+		, [2, 1, 32, 4010, 1, "4.1-辦理土地登記及標示變更登記", ""]
+		, [2, 1, 32, 4020, 1, "4.2-辦理土地所有權登記", ""]
+		, [2, 1, 32, 4030, 1, "4.3-辦理土地他項權利登記", ""]
+		, [2, 1, 32, 4040, 1, "4.4-辦理建物登記及標示變更登記", ""]
+		, [2, 1, 32, 4050, 1, "4.5-辦理建物所有權登記", ""]
+		, [2, 1, 32, 4060, 1, "4.6-辦理建物他項權利登記", ""]
+		, [2, 1, 32, 4070, 1, "4.7-測量案件", ""]
+		, [2, 1, 32, 4080, 3, "4.8-都市地價指數", ""]
+		, [2, 1, 32, 4090, 1, "4.9-土地建物其他登記及核發謄本", ""]
+		, [2, 1, 32, 4100, 1, "4.10-外國人地權管理", ""]
+		, [2, 1, 32, 4110, 1, "4.11-不動產經紀業統計", ""]
+		, [2, 1, 32, 4120, 1, "4.12-不動產估價師及開業人數", ""]
+		, [3, 0, 32, 1000, 1, "【5警政】[<a title='警政統計資料-警政署網頁(另外分頁)' href='https://www.npa.gov.tw/ch/app/folder/593/' target='_blank'>警政統計資料-警政署網頁</a>]", ""]
+		, [3, 1, 32, 5010, 1, "5.1-警察機關受(處)理刑事案件", ""]
+		, [3, 1, 32, 5020, 1, "5.2-警察機關查獲少年嫌疑犯人數", ""]
+		, [3, 1, 32, 5030, 1, "5.3-警察機關檢肅毒品統計", ""]
+		, [3, 1, 32, 5040, 1, "5.4-警察機關處理違反社會秩序維護法案件", ""]
+		, [3, 1, 32, 5050, 1, "5.5-警察機關處理侵害智慧財產權", ""]
+		, [3, 1, 32, 5060, 1, "5.6-警察機關處理集會遊行發生數", ""]
+		, [3, 1, 32, 5070, 1, "5.7-警察機關處理經濟案件", ""]
+		, [3, 1, 32, 5080, 1, "5.8-警察機關查獲槍砲彈藥刀械數量", ""]
+		, [3, 1, 32, 5090, 1, "5.9-警察機關受(處)理跟蹤騷擾案件", ""]
+		, [4, 0, 32, 1000, 1, "【6移民】[<a  title='移民統計資料-移民署網頁(另外分頁)' href='https://www.immigration.gov.tw/5385/7344/7350/8883/' target='_blank'>移民統計資料-移民署網頁</a>]", ""]
+		, [4, 1, 32, 6010, 1, "6.1-實際入國(境)人數－按性別、年齡及身分分", ""]
+		, [4, 1, 32, 6020, 1, "6.2-實際入國(境)人數－按入國(境)地點分", ""]
+		, [4, 1, 32, 6030, 1, "6.3-實際出國(境)人數－按性別、年齡及身分分", ""]
+		, [4, 1, 32, 6040, 1, "6.4-實際出國(境)人數－按出國(境)地點分", ""]
+		, [4, 1, 32, 6050, 1, "6.5-外僑居留人數", ""]
+		, [4, 1, 32, 6060, 1, "6.6-查處違法外來人口", ""]
+		, [4, 1, 32, 6070, 1, "6.7-大陸地區配偶申請來臺團聚通過訪查及面(訪)談", ""]
+		, [4, 1, 32, 6080, 1, "6.8-新住民發展基金核定補助", ""]
+		, [4, 1, 32, 6090, 1, "6.9-移民輔導成果", ""]
+		, [4, 1, 32, 6100, 1, "6.10-外來人口居留人數", ""]
+		, [4, 1, 32, 6110, 1, "6.11-外來人口停留人數", ""]
+		, [4, 1, 32, 6120, 1, "6.12-外來人口逾期居留人數", ""]
+		, [4, 1, 32, 6130, 1, "6.13-外來人口逾期停留人數", ""]
+		, [4, 1, 32, 6140, 1, "6.14-大陸地區人民來臺人數統計", ""]
+		, [4, 1, 32, 6150, 1, "6.15-小三通大陸人士往返金馬澎人數統計", ""]
+		, [5, 0, 32, 1000, 1, "【7消防】[<a  title='消防統計資料 -消防署網頁(另外分頁)' href='https://www.nfa.gov.tw/cht/index.php?code=list&ids=220' target='_blank'>消防統計資料 -消防署網頁</a>]", ""]
+		, [5, 1, 32, 7010, 1, "7.1-消防安全設備查察處理", ""]
+		, [5, 1, 32, 7020, 1, "7.2-火災次數按起火處所分", ""]
+		, [5, 1, 32, 7030, 1, "7.3-火災次數按起火原因分", ""]
+		, [5, 1, 32, 7040, 1, "7.4-火災次數按類別及時間分", ""]
+		, [5, 1, 32, 7050, 1, "7.5-火災死傷人數及財物損失", ""]
+		, [5, 1, 32, 7060, 1, "7.6-起火建築物", ""]
+		, [5, 1, 32, 7070, 1, "7.7-火災出動人員、車輛及裝備", ""]
+		, [5, 1, 32, 7080, 1, "7.8-消防緊急救護服務", ""]
+		, [5, 1, 32, 7090, 1, "7.9-消防緊急救護急救處置", ""]
+		, [6, 0, 32, 1000, 1, "【8國土管理】[<a   title='國土管理署網頁(另外分頁)' href='https://www.nlma.gov.tw/ch/titlelist/stats' target='_blank'>國土管理統計資料-國土管理署網頁</a>]", ""]
+		, [6, 1, 32, 8010, 1, "8.1-核發建築物建造執照按用途別分", ""]
+		, [6, 1, 32, 8020, 1, "8.2-核發建築物建造執照按構造別分", ""]
+		, [6, 1, 32, 8030, 1, "8.3-核發建築物拆除執照按用途別分", ""]
+		, [6, 1, 32, 8040, 1, "8.4-核發建築物拆除執照按構造別分", ""]
+		, [6, 1, 32, 8050, 1, "8.5-核發建築物使用執照按用途別分", ""]
+		, [6, 1, 32, 8060, 1, "8.6-核發建築物使用執照按構造別分", ""]
+		, [6, 1, 32, 8070, 1, "8.7-核發建築物使用執照按高度別分", ""]
+		, [6, 1, 32, 8080, 1, "8.8-核發建築物使用執照按層數別分", ""]
+		, [6, 1, 32, 8090, 1, "8.9-核發建築物使用執照按使用分區別分", ""]
+		, [6, 1, 32, 8100, 1, "8.10-建築物開工統計按用途別分", ""]
+		, [6, 1, 32, 8110, 1, "8.11-建築物開工統計按構造別分", ""]
+		, [7, 0, 32, 1000, 1, "【9國家公園】[<a   title='國家公園署網頁(另外分頁)' href='https://www.nps.gov.tw/ch/filedownload/bizstats' target='_blank'>國家公園統計資料-國家公園署網頁</a>]", ""]
+		, [7, 1, 32, 8120, 1, "9.1-國家公園遊憩據點遊客人次及車輛次", ""]
+
+
+
+
+	];
+
+	lhtml = '<table summary="內政統計月報" width="100%" align=center border="2">';
+
+
+
+	for (lwj = 0; lwj < lrpt.length; lwj++) {
+		if (lrpt[lwj][1] == 0) {
+			lhtml += '<tr class=linehead><th><a name="' + lrpt[lwj][0] + '"></a>' + lrpt[lwj][5] + '</th><th class="item0">最新資料期</th><th class="item0">下次發布日期</th></tr>';
+			lcnt = 0;
+		} else {
+			lhtml += '<tr class=line' + (lcnt % 2 + 1) + '>';
+			lcnt += 1;
+			lhtml += '<td width=80% ';
+			if (lrpt[lwj][1] != 1) {
+				lhtml += ' colspan=3 ';
+			}
+			lhtml += '>' + lrpt[lwj][5];
+
+			if (lrpt[lwj][1] == 1 && lrpt[lwj][5].indexOf("XLS") < 0) {
+				lhtml += '  (<a title="下載XLSX" href="javascript:linkreprot(1,\'' + lrpt[lwj][2] + '\',\'' + lrpt[lwj][3] + '\',\'' + lrpt[lwj][5] + '\')">XLSX</a>';
+				lhtml += '、<a  title="下載ODF" href="javascript:linkreprot(2,\'' + lrpt[lwj][2] + '\',\'' + lrpt[lwj][3] + '\',\'' + lrpt[lwj][5] + '\')">ODF</a>) ';
+			}
+			lhtml += '</td>';
+			if (lrpt[lwj][1] == 1) {
+				lmark = 0;
+				for (lwk = 0; lwk < ljson.length; lwk++) {
+					if (lrpt[lwj][2] == ljson[lwk]["types"] && lrpt[lwj][3] == ljson[lwk]["rptid"] && lrpt[lwj][4] == ljson[lwk]["cycle"]) {
+						lhtml += '<th class="item0" title="最新資料期">' + getfmt(ljson[lwk]["ymt"]) + '</th>';
+						lhtml += '<th class="item0" title="下次發布日期">' + getfmt(ljson[lwk]["nxtisudt"]) + '</th>';
+						lmark = 1;
+						break;
+					}
+
+				}
+				if (lmark == 0) {
+					lhtml += '<td></td><td></td>';
+				}
+			}
+
+			lhtml += '</tr>';
+		}
+	}
+	lhtml += '</table>';
+
+	$(".mainbox").html(lhtml);
+	resize1();
+
+	function getfmt(lsou) {
+		var lrtn = "";
+		var lsou2 = getInt(lsou);
+		if (lsou2 <= 0) {
+			return "";
+		} else if (lsou2 > 1000000) {
+			return getInt(lsou / 10000) + '年' + (getInt(lsou / 100) % 100) + '月' + (lsou % 100) + '日';
+		} else {
+			if (lsou % 100 == 0) {
+				return getInt(lsou / 100) + '年';
+			} else {
+				return getInt(lsou / 100) + '年' + (lsou % 100) + '月';
+			}
+		}
+	}
+
+
+	function linkreprot(lkind, ltype, lrptid, lrptnm) {
+		var lurl = ltype + lrptid;
+		var ldate = new Date();
+		if (lkind <= 1) {
+			lurl += ".xlsx";
+		} else {
+			lurl += ".ods";
+		}
+		lurl += "?r=" + (ldate.getTime() % 100000 + ldate.getMilliseconds() * 100);
+		getAjax(1, gMainPgm + "?sys=99981&kind=" + (lkind + 5) + "&cycle=1&funid=" + lurl + "&funnm=" + lrptnm, "");
+		var subwin = window.open("report/" + lurl, "_blank");
+
+	}
+	function resize1() {
+
+		const $mainbox = $(".mainbox");
+		const windowWidth = window.innerWidth;
+		if (windowWidth < 768) {
+			// 小於 md：移除高度
+			$mainbox.css("height", "");
+		} else {
+			// 否則設定高度
+			$mainbox.height(window.innerHeight - $mainbox.position().top - 30);
+		}
+	}
+	$(window).resize(function () {
+		resize1();
+	});
+
+</script>
+
+</html>
