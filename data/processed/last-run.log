@@ -1,23 +1,92 @@
-probe_pdf: https://www.nhk.or.jp/bunken/research/yoron/pdf/20190401_7.pdf
-  0 bytes
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 164, in fetch_text
-    reader = PdfReader(io.BytesIO(blob))
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 151, in __init__
-    self._initialize_stream(stream)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 175, in _initialize_stream
-    self.read(stream)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 688, in read
-    self._basic_validation(stream)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 761, in _basic_validation
-    raise EmptyFileError("Cannot read an empty file")
-pypdf.errors.EmptyFileError: Cannot read an empty file
+probe_estat: ESTAT_API found, 40 characters
+
+== metadata for 0003282963
+  getMetaInfo?statsDataId=0003282963
+    table: 0003282963 | [00401101] 宗教統計調査 | 文化庁 | 全国社寺教会等宗教団体・教師・信者数　（２）都道府県別　教師・信者数 | survey 202404-202503 | area 該当なし (no area dimension) | 18977 cells
+      TITLE_SPEC.TABLE_NAME: 全国社寺教会等宗教団体・教師・信者数　（２）都道府県別　教師・信者数
+      TITLE_SPEC.TABLE_EXPLANATION: 教師中（外国人）、（外国人計）は、外国人教師・宣教師で全教師数の内数である。
+      STATISTICS_NAME_SPEC.TABULATION_CATEGORY: 宗教統計調査
+    class cat01 = 都道府県 (48 codes)
+      00000  全国   (level 1)
+      01000  北海道   (level 2)
+      02000  青森県   (level 2)
+      03000  岩手県   (level 2)
+      04000  宮城県   (level 2)
+      05000  秋田県   (level 2)
+      06000  山形県   (level 2)
+      07000  福島県   (level 2)
+      08000  茨城県   (level 2)
+      09000  栃木県   (level 2)
+      10000  群馬県   (level 2)
+      11000  埼玉県   (level 2)
+      12000  千葉県   (level 2)
+      13000  東京都   (level 2)
+      14000  神奈川県   (level 2)
+      15000  新潟県   (level 2)
+      16000  富山県   (level 2)
+      17000  石川県   (level 2)
+      18000  福井県   (level 2)
+      19000  山梨県   (level 2)
+      20000  長野県   (level 2)
+      21000  岐阜県   (level 2)
+      22000  静岡県   (level 2)
+      23000  愛知県   (level 2)
+      24000  三重県   (level 2)
+      25000  滋賀県   (level 2)
+      26000  京都府   (level 2)
+      27000  大阪府   (level 2)
+      28000  兵庫県   (level 2)
+      29000  奈良県   (level 2)
+      30000  和歌山県   (level 2)
+      31000  鳥取県   (level 2)
+      32000  島根県   (level 2)
+      33000  岡山県   (level 2)
+      34000  広島県   (level 2)
+      35000  山口県   (level 2)
+      36000  徳島県   (level 2)
+      37000  香川県   (level 2)
+      38000  愛媛県   (level 2)
+      39000  高知県   (level 2)
+      40000  福岡県   (level 2)
+      41000  佐賀県   (level 2)
+      42000  長崎県   (level 2)
+      43000  熊本県   (level 2)
+      44000  大分県   (level 2)
+      45000  宮崎県   (level 2)
+      46000  鹿児島県   (level 2)
+      47000  沖縄県   (level 2)
+    class cat02 = 教師・信者数 (6 codes)
+      140  計   (level 1)
+      150  計(外国人計)   (level 1)
+      100  男   (level 2)
+      110  男(外国人)   (level 2)
+      120  女   (level 2)
+      130  女(外国人)   (level 2)
+    class cat03 = 宗教法人に係わる教師と信者 (2 codes)
+      100  教師   (level 1 unit 人)
+      110  信者   (level 1 unit 人)
+    class cat04 = 宗教系統 (5 codes)
+      100  総数   (level 1)
+      110  神道系   (level 1)
+      120  仏教系   (level 1)
+      130  キリスト教系   (level 1)
+      140  諸教   (level 1)
+    class time = 時間軸(年度次) (18 codes)
+      2025100000  2025年度   (level 1)
+      2024100000  2024年度   (level 1)
+      2023100000  2023年度   (level 1)
+      2022100000  2022年度   (level 1)
+      2021100000  2021年度   (level 1)
+      2020100000  2020年度   (level 1)
+      2019100000  2019年度   (level 1)
+      2018100000  2018年度   (level 1)
+      2017100000  2017年度   (level 1)
+      2016100000  2016年度   (level 1)
+      2015100000  2015年度   (level 1)
+      2014100000  2014年度   (level 1)
+      2013100000  2013年度   (level 1)
+      2012100000  2012年度   (level 1)
+      2011100000  2011年度   (level 1)
+      2010100000  2010年度   (level 1)
+      2009100000  2009年度   (level 1)
+      2008100000  2008年度   (level 1)
