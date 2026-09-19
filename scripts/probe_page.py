@@ -111,7 +111,10 @@ def decode(body: bytes, override: str | None = None) -> str:
         r'charset\s*=\s*["\']?\s*([a-z0-9_-]+)', head)), None)
     if declared in ("gb2312", "gbk", "gb_2312-80", "x-gbk"):
         declared = "gb18030"
-    for name in [c for c in (declared, "utf-8") if c]:
+    # Strict decoding in turn, so a page that declares nothing and is not
+    # UTF-8 -- Beijing's communique declares its charset nowhere in its
+    # first 4 KB -- is tried as GB18030 before anything is replaced.
+    for name in [c for c in (declared, "utf-8", "gb18030") if c]:
         try:
             return body.decode(name)
         except (UnicodeDecodeError, LookupError):
