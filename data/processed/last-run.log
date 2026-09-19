@@ -1,7 +1,4 @@
-page: https://www.data.go.kr/data/15108413/fileData.do
-  157,203 bytes
-  4 distinct match(es) for '(fileDownload.do|fileDataDown|atchFileId|selectFileDataDownload|publicDataDetailPk|.xlsx|.csv)[^<]{0,300}'
-    "csv
-    atchFileId
-    fileDataDown
-    publicDataDetailPk
+page: https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1
+  unreachable: HTTPError: HTTP Error 403: Forbidden
+page: https://www.singstat.gov.sg/find-data/search-by-theme/population/geographic-distribution/latest-data
+  unreachable: HTTPError: HTTP Error 403: Forbidden
