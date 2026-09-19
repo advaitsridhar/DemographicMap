@@ -1,17 +1,53 @@
-page: https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000014&pageIndex=2
-  137,929 bytes
-  7 matching link(s)
-  - 주민등록 인구통계
-    https://jumin.mois.go.kr/index.jsp
-  - 주민등록,인감
-    https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardList.do?bbsId=BBSMSTR_000000000052
-  - - 주민등록번호 변경제도
-    https://www.mois.go.kr/frt/sub/a06/b06/IDCardChange/screen.do
-  - - 주민등록증
-    https://www.mois.go.kr/frt/sub/a06/b06/IDCard/screen.do
-  - - 재외국민 주민등록
-    https://www.mois.go.kr/frt/sub/a06/b06/foreignIDCard/screen.do
-  - 2024 지방자치단체 외국인주민 현황(&#039;24.11.1. 기준)
-    https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do;jsessionid=6IvlwcgVhwmDOIWnwxYet0RXqEiRUaneiOYhkPwo.node50?bbsId=BBSMSTR_000000000014&amp;nttId=121226
-  - 주민등록번호변경위원회
-    http://www.rrncc.go.kr/
+page: https://jumin.mois.go.kr/statMonth.do
+  81,218 bytes
+  44 distinct match(es) for '(?:downloadCsv[^;]{0,400}|<input[^>]{0,200}|<form[^>]{0,200}|<select[^>]{0,120}|ajax[^;]{0,240})'
+    <form action="statMonth.do" name="search" method="post"
+    <form name="formXlsDown" id="formXlsDown" method="post"
+    <input class="i_check" id="generation" type="checkbox" name="generation" value="generation" checked
+    <input class="i_check" id="sex1" type="checkbox" name="gender" value="gender" checked
+    <input class="i_check" id="sex2" type="checkbox" name="genderPer" value="genderPer" checked
+    <input class="i_radio"  type="radio" value="month"  id="searchYearMonth" name="searchYearMonth" checked  
+    <input class="i_radio"  type="radio" value="year"  id="searchYearMonth" name="searchYearMonth"  
+    <input class="i_radio" id="down1" type="radio" value="1" name="state" checked/
+    <input class="i_radio" id="down2" type="radio" value="2" name="state" /
+    <input class="i_radio" id="down3" type="radio" value="3" name="state" /
+    <input type="hidden" value="" name="sltOrgLvl2"
+    <input type="hidden" value="" name="sltUndefType"
+    <input type="hidden" value="08" name="searchMonthEnd"
+    <input type="hidden" value="08" name="searchMonthStart"
+    <input type="hidden" value="1" name="sltOrderType"
+    <input type="hidden" value="1" name="sltOrgType"
+    <input type="hidden" value="2026" id="nowYear" name="nowYear"
+    <input type="hidden" value="2026" name="searchYearEnd"
+    <input type="hidden" value="2026" name="searchYearStart"
+    <input type="hidden" value="20260801" id="startOrtnDe" name="startOrtnDe"
+    <input type="hidden" value="20260831" id="endOrtnDe" name="endOrtnDe"
+    <input type="hidden" value="A" name="sltOrgLvl1"
+    <input type="hidden" value="ASC" name="sltOrderValue"
+    <input type="hidden" value="gender" name="gender"
+    <input type="hidden" value="genderPer" name="genderPer"
+    <input type="hidden" value="generation" name="generation"
+    <input type="hidden" value="month" name="category"
+    <input type="reset" value="초기화" class="btn_reset" onclick="return goReset();"
+    <input type="submit" value="검색" class="btn_search" onclick="return goSearch();"
+    <select id="register" name="sltUndefType"
+    <select name="searchMonthEnd" id="searchMonthEnd"
+    <select name="searchMonthStart" id="searchMonthStart"
+    <select name="searchYearEnd" id="searchYearEnd"
+    <select name="searchYearStart" id="searchYearStart"
+    <select name="sltOrderType" id="sltOrderType" title="행정기관코드"
+    <select name="sltOrderValue" id="sltOrderValue"
+    <select name="sltOrgLvl1" id="sltOrgLvl1" onchange="selectSikunkunm();"
+    <select name="sltOrgLvl2" id="sltOrgLvl2" 
+    <select name="stateMobile" title="조회 연도 선택"
+    ajax({
+				type: "post",
+				url : "selectHangkikcdListAjax.do
+    ajax로 지역가져오는 곳
+		function selectSidonm(){			
+			$.ajax({
+				type: "post",
+				url : "selectHangkikcdListAjax.do
+    downloadCsv.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=1").submit()
+    downloadCsv.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=2").submit()
+    downloadCsv.do?searchYearMonth="+$("input[name=category]").val()+"&xlsStats=3").submit()
