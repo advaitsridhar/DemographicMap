@@ -136,8 +136,17 @@ DISTRICT_TYPE = "2"
 # the wrong thing; a smaller difference is published and stated on every
 # row, by the owner's instruction.
 MOJ_NATIONAL_DATASET = "https://www.data.go.kr/data/15100019/fileData.do"
+# The portal offers the same file by two routes -- its file endpoint, and
+# the download servlet the dataset page's own button calls -- and each times
+# out about as often as it answers. Both are tried, shortest first, rather
+# than spending five ninety-second waits on one of them.
 MOJ_NATIONAL_URL = ("https://www.data.go.kr/cmm/cmm/fileDownload.do"
                     "?atchFileId=FILE_000000003669729&fileDetailSn=1&insertDataPrcus=N")
+MOJ_NATIONAL_URLS = (
+    MOJ_NATIONAL_URL,
+    "https://www.data.go.kr/tcs/dss/selectFileDataDownload.do?publicDataPk=15100019"
+    "&publicDataDetailPk=uddi:ca4a9b96-e429-4272-bfc9-b6e0ef198841",
+)
 MOJ_NATIONAL_FILE = KEEP / "moj_registered_foreigners_by_nationality_by_year.csv"
 MOJ_NATIONAL_SOURCE = ("Ministry of Justice, registered foreign residents by nationality by "
                        "year (연도별 등록외국인 국적(지역)별 현황, data.go.kr dataset 15100019)")
@@ -866,13 +875,39 @@ def fetch_register(url: str) -> list[list[list[str]]]:
 
 
 def fetch_national() -> list[list[str]]:
-    blob = download(MOJ_NATIONAL_URL, MOJ_NATIONAL_FILE, timeout=90).read_bytes()
-    table = rows_of(blob)
-    if not table or COL_YEAR not in table[0][0]:
-        MOJ_NATIONAL_FILE.unlink()
-        raise SystemExit(f"korea_nationality: {MOJ_NATIONAL_URL} answered {len(blob):,} bytes "
-                         "that are not the national table; the copy is discarded")
-    return table
+    """The Ministry's national by-year table, from the kept copy or from
+    whichever of the portal's two download routes answers.
+
+    The file is 53 KB and both routes time out about half the time, so each
+    is given a short wait and the other is tried rather than one being
+    waited on five times over. What answers is kept, and a later run reads
+    the copy.
+    """
+    if MOJ_NATIONAL_FILE.exists() and MOJ_NATIONAL_FILE.stat().st_size > 0:
+        log(f"  cached {MOJ_NATIONAL_FILE.name} "
+            f"({MOJ_NATIONAL_FILE.stat().st_size / 1e3:.0f} kB)")
+        return rows_of(MOJ_NATIONAL_FILE.read_bytes())
+    last = ""
+    for url in MOJ_NATIONAL_URLS:
+        try:
+            blob = http_get(url, binary=True, cache=False, retries=2, timeout=45)
+        except Exception as exc:  # pragma: no cover - network shape varies
+            log(f"  {url.split('?')[0]} did not answer: {exc}")
+            last = str(exc)
+            continue
+        assert isinstance(blob, bytes)
+        table = rows_of(blob)
+        if not table or COL_YEAR not in table[0][0]:
+            log(f"  {url.split('?')[0]} answered {len(blob):,} bytes that are not the "
+                f"national table: {table[0][:4] if table else blob[:60]!r}")
+            last = "not the national table"
+            continue
+        MOJ_NATIONAL_FILE.parent.mkdir(parents=True, exist_ok=True)
+        MOJ_NATIONAL_FILE.write_bytes(blob)
+        log(f"  fetched {MOJ_NATIONAL_FILE.name} ({len(blob):,} bytes)")
+        return table
+    raise SystemExit("korea_nationality: neither download route served the Ministry's "
+                     f"national table: {last}")
 
 
 def main() -> int:
