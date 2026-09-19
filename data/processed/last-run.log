@@ -1,6 +1,6 @@
-page: https://www.data.go.kr/data/15108413/fileData.do
-  157,203 bytes
-  3 distinct match(es) for '(?:fileDownload.do|fileDataDown|atchFileId|selectFileDataDownload|publicDataDetailPk|fileDetailSn)[^<]{0,300}'
+page: https://www.data.go.kr/data/3033301/fileData.do
+  156,409 bytes
+  2 distinct match(es) for '(?:fileDownload.do|fileDataDown|atchFileId|selectFileDataDownload|publicDataDetailPk|fileDetailSn)[^<]{0,300}'
     atchFileId: $('#limitAtchFileId').val(),
     				fileDetailSn: $('#limitFileDetailSn').val()
     			},
@@ -11,7 +11,5 @@ page: https://www.data.go.kr/data/15108413/fileData.do
     					alert('처리 중 오류가 발생했습니다. 다시 시도해 주십시오.');
     				}
 					closeFileLimitMod
-    fileDataDown('15108413', 'uddi:315657b3-088d-4e34-88bc-bb4dbb58a00a', '','1', '1')">
-              다운로드
-    publicDataDetailPk" name="publicDataDetailPk" value="uddi:315657b3-088d-4e34-88bc-bb4dbb58a00a" />
+    publicDataDetailPk" name="publicDataDetailPk" value="uddi:77279257-02b1-4ca0-9e09-efefd780a88e_201907191550" />
     
