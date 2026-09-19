@@ -82,3 +82,6 @@ package-lock.json
 .idea/
 .vscode/
 *.swp
+
+# Claude Code session state: agent worktrees and local settings, never project content.
+.claude/
