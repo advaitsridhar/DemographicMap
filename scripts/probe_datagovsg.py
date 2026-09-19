@@ -74,7 +74,11 @@ def fetch(url: str, key: str | None, header: str | None) -> tuple[int, str]:
                            f"Bearer {key}" if header == "Authorization" else key)
     try:
         with urllib.request.urlopen(request, timeout=60) as response:
-            return response.status, response.read(6000).decode("utf-8", "replace")
+            # The whole body. This read 6,000 bytes for a long time, which is
+            # less than one catalogue page of ten datasets with their
+            # descriptions, so every page came back as cut-off JSON, and three
+            # walks reported the catalogue as throttling them from page one.
+            return response.status, response.read(8_000_000).decode("utf-8", "replace")
     except urllib.error.HTTPError as exc:
         return exc.code, exc.read(1500).decode("utf-8", "replace")
     except Exception as exc:                       # noqa: BLE001 - report anything
@@ -139,10 +143,13 @@ def catalogue(terms: list[str], key: str | None, throttle: float = THROTTLE,
                 data = json.loads(body).get("data") or {}
                 break
             except json.JSONDecodeError:
-                # Throttled. The body is an HTML notice, not an error status,
-                # so backing off and retrying is the only way to tell this from
-                # having actually run off the end of the list.
-                log(f"  page {page}: throttled (attempt {attempt + 1}); backing off")
+                # Not JSON: a throttle notice (HTML, not an error status) or a
+                # body this reader cut short. Backing off and retrying is the
+                # only way to tell a throttle from the end of the list; the
+                # log shows how the body starts and ends so a cut-off one is
+                # recognisable as such.
+                log(f"  page {page}: not JSON (attempt {attempt + 1}); backing off; "
+                    f"{len(body)} bytes, starts {body[:60]!r}, ends {body[-40:]!r}")
         if data is None:
             log(f"  page {page}: giving up after 4 attempts")
             break
