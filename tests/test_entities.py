@@ -2386,20 +2386,26 @@ class SingaporePlanningAreas(unittest.TestCase):
         self.assertEqual(self.sa.cell("1,234"), 1234.0)
         self.assertEqual(self.sa.cell(" 90 "), 90.0)
 
+    def table(self, counts, totals, national):
+        table = self.sa.Table()
+        table.counts, table.totals, table.national = counts, totals, national
+        return table
+
     def test_a_wholly_suppressed_breakdown_is_not_a_reconciliation_failure(self):
         # Lim Chu Kang publishes 90 residents and suppresses every category.
-        self.sa.check("ethnicity", {"Lim Chu Kang": {}}, {"Lim Chu Kang": 90.0},
-                      self.sa.CONTROLS["ethnicity"])
+        self.sa.check("ethnicity", self.table({"Lim Chu Kang": {}}, {"Lim Chu Kang": 90.0},
+                                              self.sa.CONTROLS["ethnicity"]))
 
     def test_categories_that_miss_their_row_total_still_fail(self):
         with self.assertRaises(SystemExit) as caught:
-            self.sa.check("religion", {"Bedok": {"Buddhist": 10.0}},
-                          {"Bedok": 1000.0}, self.sa.CONTROLS["religion"])
+            self.sa.check("religion", self.table({"Bedok": {"Buddhist": 10.0}},
+                                                 {"Bedok": 1000.0},
+                                                 self.sa.CONTROLS["religion"]))
         self.assertIn("Bedok", str(caught.exception))
 
     def test_a_wrong_national_total_is_refused(self):
         with self.assertRaises(SystemExit):
-            self.sa.check("language", {}, {}, 1)
+            self.sa.check("language", self.table({}, {}, 1))
 
     def test_the_three_tables_keep_separate_years(self):
         # 2015 survey, 2020 census aged 15+, 2020 census aged 5+. Sharing one
@@ -4633,6 +4639,49 @@ class SiteFreshness(unittest.TestCase):
             if (be.PROCESSED / filename).exists():
                 self.assertIn(filename, stamped)
                 self.assertEqual(len(stamped[filename]), 12)
+
+
+class EstimatesAreIndexedButNotCounted(unittest.TestCase):
+    """The group index classifies an estimate's groups without counting them.
+
+    Thailand's 76 provinces carry a modelled ethnicity and nothing read. The
+    index skipped every estimate, so "Central Thai" and "Isan (Lao)" had no
+    entry, no parent and no hue, and the map painted the whole country "not
+    yet classified" with the estimates switched on. An estimate is still not
+    a figure: its units go under ``estimated_units`` and never under
+    ``units`` or ``own_units``.
+    """
+
+    def index(self):
+        read = {"id": "THA-A", "country": "THA", "level": "admin1",
+                "ethnicity": [{"group": "Khmer", "pct": 100.0}]}
+        guessed = {"id": "THA-B", "country": "THA", "level": "admin1",
+                   "ethnicity": common.estimate(
+                       common.MODELLED, [{"group": "Central Thai", "pct": 90.0},
+                                         {"group": "Khmer", "pct": 10.0}],
+                       method="t", inputs=["i"], note="Modelled.")}
+        return be.group_index([], {"THA": [read, guessed]}, {})["ethnicity"]
+
+    def test_an_estimate_only_group_is_in_the_index_with_its_place(self):
+        groups = {g["name"]: g for g in self.index()["groups"]}
+        self.assertIn("Central Thai", groups)
+        self.assertEqual(groups["Central Thai"]["parent"],
+                         "Mainland Southeast Asian peoples")
+        self.assertEqual(groups["Central Thai"]["units"], 0)
+        self.assertEqual(groups["Central Thai"]["own_units"], 0)
+        self.assertEqual(groups["Central Thai"]["estimated_units"], 1)
+        self.assertEqual(groups["Central Thai"]["labels"], ["Central Thai"])
+
+    def test_a_read_group_is_counted_once_and_its_estimate_apart(self):
+        groups = {g["name"]: g for g in self.index()["groups"]}
+        self.assertEqual(groups["Khmer"]["units"], 1)
+        self.assertEqual(groups["Khmer"]["own_units"], 1)
+        self.assertEqual(groups["Khmer"]["estimated_units"], 1)
+        self.assertEqual(groups["Khmer"]["countries"], ["THA"])
+        # The parent rolls both up the same way.
+        parent = groups["Mainland Southeast Asian peoples"]
+        self.assertEqual(parent["units"], 1)
+        self.assertEqual(parent["estimated_units"], 1)
 
 
 class DerivedValues(unittest.TestCase):

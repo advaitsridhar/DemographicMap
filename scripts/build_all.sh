@@ -86,6 +86,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.cfps_survey
   # Its newer wave from the public-release file on Kaggle; needs egress.
   soft python3 -m scripts.fetch_census.cfps_microdata
+  # Macau's 2021 census: nationality and usual language from DSEC's
+  # Detailed Results PDF; needs egress.
+  soft python3 -m scripts.fetch_census.macau_census
   # Viet Nam's 2019 census, Table 2 of the office's 842-page results
   # volume on nso.gov.vn; needs egress.
   soft python3 -m scripts.fetch_census.vietnam

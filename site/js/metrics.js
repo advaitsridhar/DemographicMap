@@ -8,7 +8,25 @@
 window.Metrics = (function () {
   "use strict";
 
-  const { isGap, gapStatus, valueOf } = window.Fmt;
+  const { gapStatus, valueOf, compositionOf, isEstimate } = window.Fmt;
+
+  /* The rows a metric may read from one field.
+   *
+   * `estimates` is the opt-in from docs/MODELLING.md section 6: an estimate
+   * is a gap everywhere in this module unless the caller passes true, and
+   * only the paint path and its readout do. tally(), dominant() and the
+   * share functions default to false, so nothing that counts, sums or ranks
+   * ever sees a guess.
+   */
+  function rowsOf(record, field, estimates) {
+    return compositionOf(record[field], { estimates: Boolean(estimates) });
+  }
+
+  /** The word the readout adds after a figure that is an estimate: its
+   *  status, which is the same word the coverage map and the panel use. */
+  function estimateTag(record, field) {
+    return isEstimate(record[field]) ? ` (${record[field].status})` : "";
+  }
 
   function topGroups(records, field, limit) {
     // Which groups are worth offering for the "share of group" facet: the ones
@@ -114,10 +132,10 @@ window.Metrics = (function () {
     return trail[Math.max(0, Math.min(index, trail.length - 1))];
   }
 
-  function tally(record, field, tier) {
-    const value = record[field];
+  function tally(record, field, tier, estimates) {
+    const value = rowsOf(record, field, estimates);
     const out = new Map();
-    if (!Array.isArray(value)) return out;
+    if (!value) return out;
     const want = Number(tier) || 2;
     for (const row of value) {
       if (typeof row.pct !== "number") continue;
@@ -128,13 +146,13 @@ window.Metrics = (function () {
     return out;
   }
 
-  function shareOf(record, field, group) {
-    return shareDetail(record, field, group).value;
+  function shareOf(record, field, group, estimates) {
+    return shareDetail(record, field, group, estimates).value;
   }
 
-  function shareDetail(record, field, group) {
-    const value = record[field];
-    if (!Array.isArray(value)) return { value: null, approximate: false };
+  function shareDetail(record, field, group, estimates) {
+    const value = rowsOf(record, field, estimates);
+    if (!value) return { value: null, approximate: false };
     // Summed, not found: one canonical group can be several rows of a record.
     // The US reports Protestant, Catholic, Orthodox, Latter-day Saints and
     // Jehovah's Witnesses where Australia reports one "Christianity" row, so
@@ -181,9 +199,9 @@ window.Metrics = (function () {
    * group and its real share, and says what fraction of the population the
    * list covers. What stops is the single claim this map cannot support.
    */
-  function leads(record, field, pct) {
-    const value = record[field];
-    if (!Array.isArray(value)) return false;
+  function leads(record, field, pct, estimates) {
+    const value = rowsOf(record, field, estimates);
+    if (!value) return false;
     let total = 0;
     for (const row of value) {
       if (typeof row.pct === "number") total += row.pct;
@@ -229,8 +247,8 @@ window.Metrics = (function () {
    * only thing a unit reports, because then it is the whole answer; the readout
    * says so either way.
    */
-  function dominant(record, field, level) {
-    const totals = tally(record, field, level || 2);
+  function dominant(record, field, level, estimates) {
+    const totals = tally(record, field, level || 2, estimates);
     if (!totals.size) return null;
     let best = null;
     let bestResidual = null;
@@ -246,7 +264,7 @@ window.Metrics = (function () {
     const found = best || bestResidual;
     // The same arithmetic as `largestShare`, and for the stronger reason: this
     // one paints the unit a colour that names a group.
-    return found && leads(record, field, found.pct) ? found : null;
+    return found && leads(record, field, found.pct, estimates) ? found : null;
   }
 
   const METRICS = {
@@ -269,15 +287,18 @@ window.Metrics = (function () {
       note: "Each unit takes the colour of its largest group and the shade of " +
             "that group's share, from 25% up. Categories are each country's own, " +
             "so a border can be a change of question rather than of population.",
+      // `opts.estimates` is the only way an estimate's rows reach the map:
+      // the paint path and the hover readout pass it, nothing else does.
       evaluate(record, opts) {
-        const top = dominant(record, opts.field, opts.depth);
+        const top = dominant(record, opts.field, opts.depth, opts.estimates);
         return top ? top.group : null;
       },
       display(record, opts) {
-        const top = dominant(record, opts.field, opts.depth);
+        const top = dominant(record, opts.field, opts.depth, opts.estimates);
         if (!top) return "—";
         return `${top.group} ${window.Fmt.pct(top.pct)}` +
-               (top.residual ? " (no group named)" : "");
+               (top.residual ? " (no group named)" : "") +
+               estimateTag(record, opts.field);
       },
     },
     coverage: {
@@ -340,10 +361,12 @@ window.Metrics = (function () {
             "hue, rather than a colour-per-group map that colour-blind readers " +
             "cannot separate.",
       evaluate(record, opts) {
-        return opts.group ? shareOf(record, opts.field, opts.group) : null;
+        return opts.group ? shareOf(record, opts.field, opts.group, opts.estimates) : null;
       },
       display(record, opts) {
-        return opts.group ? formatDetail(shareDetail(record, opts.field, opts.group)) : "—";
+        if (!opts.group) return "—";
+        const shown = formatDetail(shareDetail(record, opts.field, opts.group, opts.estimates));
+        return shown + (shown !== "—" ? estimateTag(record, opts.field) : "");
       },
       format: (n) => window.Fmt.pct(n),
     },
@@ -392,13 +415,31 @@ window.Metrics = (function () {
     const metric = METRICS[metricKey] || METRICS.coverage;
     const Palette = window.Palette;
     const out = new Map();
+    // The units whose colour came from an estimate's rows rather than a
+    // reading. The map hatches these; the legend gives each kind one line,
+    // so the count is kept by status. Only ever filled when the caller
+    // passed `opts.estimates`, and only on the two maps that read a
+    // composition's rows. The coverage map draws an estimate in its own
+    // status colour, and population or median age never look at the field
+    // at all -- a head count that was read must not be hatched because the
+    // religion beside it was modelled.
+    const readsEstimates = Boolean(opts.estimates) &&
+      (metric.kind === "group" || Boolean(metric.needsGroup));
+    const estimated = new Set();
+    const estimatedBy = {};
+    const noteEstimate = (record) => {
+      if (!readsEstimates || !isEstimate(record[opts.field])) return;
+      estimated.add(record.id);
+      const status = record[opts.field].status;
+      estimatedBy[status] = (estimatedBy[status] || 0) + 1;
+    };
 
     if (metric.kind === "status") {
       for (const record of records) {
         const state = metric.evaluate(record, opts);
         out.set(record.id, Palette.status(state).color);
       }
-      return { colors: out, legend: statusLegend(), metric };
+      return { colors: out, estimated, legend: statusLegend(), metric };
     }
 
     if (metric.kind === "group") {
@@ -415,8 +456,9 @@ window.Metrics = (function () {
       // brown: the data is all there and none of it is visible.
       const leaders = [];
       for (const record of records) {
-        const top = dominant(record, opts.field, opts.depth);
+        const top = dominant(record, opts.field, opts.depth, opts.estimates);
         if (!top) { missing += 1; leaders.push(null); continue; }
+        noteEstimate(record);
         leaders.push(top);
       }
       const span = spanOf(leaders.map((t) => t && t.pct), opts.spread,
@@ -442,12 +484,14 @@ window.Metrics = (function () {
         .sort((a, b) => b.units - a.units || a.name.localeCompare(b.name));
       return {
         colors: out,
+        estimated,
         legend: {
           type: "group",
           items,
           shown: Math.min(items.length, 12),
           missing,
           missingColor: Palette.neutral(),
+          estimated: estimatedBy,
           unplaced,
           unplacedColor: Palette.unplaced(),
           floor: span.floor,
@@ -465,7 +509,7 @@ window.Metrics = (function () {
       if (Number.isFinite(value)) values.push(value);
     }
     if (!values.length) {
-      return { colors: out, legend: { type: "empty", metric }, metric };
+      return { colors: out, estimated, legend: { type: "empty", metric }, metric };
     }
 
     // A share-of-one-group map is drawn in that group's own colour, so the
@@ -506,6 +550,7 @@ window.Metrics = (function () {
         out.set(record.id,
                 groupHue ? Palette.group(groupHue, value, share.floor, share.top)
                          : Palette.sequential(project(value)));
+        noteEstimate(record);
       } else {
         // Neutral grey, not a status colour: on a sequential map the status
         // palette would read as a value at one end of the ramp.
@@ -516,8 +561,10 @@ window.Metrics = (function () {
 
     return {
       colors: out,
+      estimated,
       legend: {
         type: "ramp",
+        estimated: estimatedBy,
         stops: groupHue
           ? Palette.groupRamp(groupHue, 11, share.floor, share.top)
           : Palette.ramp(),

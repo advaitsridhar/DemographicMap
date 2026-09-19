@@ -130,7 +130,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -143,13 +143,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Ang Mo Kio"
+      "planning_area": "Ang Mo Kio",
+      "planning_region": "North-East Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -283,7 +284,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -296,13 +297,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Bedok"
+      "planning_area": "Bedok",
+      "planning_region": "East Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -365,14 +367,14 @@
         "count": 3217
       },
       {
-        "group": "Sikh",
-        "pct": 0.2,
-        "count": 146
-      },
-      {
         "group": "Other religion",
         "pct": 0.2,
         "count": 189
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 146
       }
     ],
     "language": [
@@ -436,7 +438,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -449,13 +451,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Bishan"
+      "planning_area": "Bishan",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -483,19 +486,19 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (30 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (30 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 survey published a resident count for this area (30) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+      "note": "The 2015 survey counted 30 residents here, too few for the Department of Statistics to publish a breakdown without identifying people."
     },
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -508,7 +511,8 @@
       }
     ],
     "codes": {
-      "planning_area": "Boon Lay"
+      "planning_area": "Boon Lay",
+      "planning_region": "West Region"
     }
   },
   {
@@ -571,14 +575,14 @@
         "count": 8125
       },
       {
-        "group": "Sikh",
-        "pct": 0.3,
-        "count": 377
-      },
-      {
         "group": "Other religion",
         "pct": 0.3,
         "count": 380
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 377
       }
     ],
     "language": [
@@ -642,7 +646,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -655,13 +659,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Bukit Batok"
+      "planning_area": "Bukit Batok",
+      "planning_region": "West Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -795,7 +800,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -808,13 +813,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Bukit Merah"
+      "planning_area": "Bukit Merah",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -948,7 +954,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -961,13 +967,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Bukit Panjang"
+      "planning_area": "Bukit Panjang",
+      "planning_region": "West Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -1101,7 +1108,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -1114,13 +1121,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Bukit Timah"
+      "planning_area": "Bukit Timah",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -1148,19 +1156,19 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (10 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (10 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 survey published a resident count for this area (10) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+      "note": "The 2015 survey counted 10 residents here, too few for the Department of Statistics to publish a breakdown without identifying people."
     },
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -1173,7 +1181,8 @@
       }
     ],
     "codes": {
-      "planning_area": "Central Water Catchment"
+      "planning_area": "Central Water Catchment",
+      "planning_region": "North Region"
     }
   },
   {
@@ -1201,11 +1210,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (2,530 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (2,530 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": [
       {
@@ -1231,7 +1240,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -1244,10 +1253,63 @@
       }
     ],
     "codes": {
-      "planning_area": "Changi"
+      "planning_area": "Changi",
+      "planning_region": "East Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Changi-Bay",
+    "level": "admin2",
+    "name": "Changi Bay",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "sources": [
+      {
+        "field": "ethnicity/population",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Changi Bay",
+      "planning_region": "East Region"
+    }
   },
   {
     "id": "SGP-A-Choa-Chu-Kang",
@@ -1309,14 +1371,14 @@
         "count": 8605
       },
       {
-        "group": "Sikh",
-        "pct": 0.2,
-        "count": 319
-      },
-      {
         "group": "Other religion",
         "pct": 0.2,
         "count": 320
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 319
       }
     ],
     "language": [
@@ -1380,7 +1442,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -1393,13 +1455,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Choa Chu Kang"
+      "planning_area": "Choa Chu Kang",
+      "planning_region": "West Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -1462,14 +1525,14 @@
         "count": 3398
       },
       {
-        "group": "Sikh",
-        "pct": 0.4,
-        "count": 356
-      },
-      {
         "group": "Other religion",
         "pct": 0.4,
         "count": 303
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.4,
+        "count": 356
       }
     ],
     "language": [
@@ -1533,7 +1596,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -1546,13 +1609,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Clementi"
+      "planning_area": "Clementi",
+      "planning_region": "West Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -1686,7 +1750,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -1699,13 +1763,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Downtown Core"
+      "planning_area": "Downtown Core",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -1768,14 +1833,14 @@
         "count": 2892
       },
       {
-        "group": "Sikh",
-        "pct": 0.2,
-        "count": 193
-      },
-      {
         "group": "Other religion",
         "pct": 0.2,
         "count": 180
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.2,
+        "count": 193
       }
     ],
     "language": [
@@ -1839,7 +1904,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -1852,13 +1917,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Geylang"
+      "planning_area": "Geylang",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -1992,7 +2058,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -2005,13 +2071,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Hougang"
+      "planning_area": "Hougang",
+      "planning_region": "North-East Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -2145,7 +2212,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -2158,13 +2225,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Jurong East"
+      "planning_area": "Jurong East",
+      "planning_region": "West Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -2227,14 +2295,14 @@
         "count": 7769
       },
       {
-        "group": "Sikh",
-        "pct": 0.3,
-        "count": 666
-      },
-      {
         "group": "Other religion",
         "pct": 0.3,
         "count": 620
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 666
       }
     ],
     "language": [
@@ -2298,7 +2366,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -2311,13 +2379,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Jurong West"
+      "planning_area": "Jurong West",
+      "planning_region": "West Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -2451,7 +2520,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -2464,13 +2533,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Kallang"
+      "planning_area": "Kallang",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -2498,19 +2568,19 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (90 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (90 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 survey published a resident count for this area (90) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+      "note": "The 2015 survey counted 90 residents here, too few for the Department of Statistics to publish a breakdown without identifying people."
     },
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -2523,7 +2593,8 @@
       }
     ],
     "codes": {
-      "planning_area": "Lim Chu Kang"
+      "planning_area": "Lim Chu Kang",
+      "planning_region": "North Region"
     }
   },
   {
@@ -2551,11 +2622,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (2,120 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (2,120 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": [
       {
@@ -2581,7 +2652,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -2594,10 +2665,115 @@
       }
     ],
     "codes": {
-      "planning_area": "Mandai"
+      "planning_area": "Mandai",
+      "planning_region": "North Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Marina-East",
+    "level": "admin2",
+    "name": "Marina East",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "sources": [
+      {
+        "field": "ethnicity/population",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Marina East",
+      "planning_region": "Central Region"
+    }
+  },
+  {
+    "id": "SGP-A-Marina-South",
+    "level": "admin2",
+    "name": "Marina South",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "sources": [
+      {
+        "field": "ethnicity/population",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Marina South",
+      "planning_region": "Central Region"
+    }
   },
   {
     "id": "SGP-A-Marine-Parade",
@@ -2730,7 +2906,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -2743,13 +2919,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Marine Parade"
+      "planning_area": "Marine Parade",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -2777,11 +2954,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (380 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (380 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": [
       {
@@ -2802,7 +2979,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -2815,9 +2992,10 @@
       }
     ],
     "codes": {
-      "planning_area": "Museum"
+      "planning_area": "Museum",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015
   },
   {
@@ -2845,11 +3023,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (6,920 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (6,920 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": [
       {
@@ -2875,7 +3053,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -2888,9 +3066,10 @@
       }
     ],
     "codes": {
-      "planning_area": "Newton"
+      "planning_area": "Newton",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015
   },
   {
@@ -2918,19 +3097,19 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (60 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (60 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 survey published a resident count for this area (60) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+      "note": "The 2015 survey counted 60 residents here, too few for the Department of Statistics to publish a breakdown without identifying people."
     },
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -2943,7 +3122,8 @@
       }
     ],
     "codes": {
-      "planning_area": "North-Eastern Islands"
+      "planning_area": "North-Eastern Islands",
+      "planning_region": "North-East Region"
     }
   },
   {
@@ -3077,7 +3257,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -3090,13 +3270,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Novena"
+      "planning_area": "Novena",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -3124,11 +3305,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (920 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (920 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": [
       {
@@ -3154,7 +3335,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -3167,9 +3348,10 @@
       }
     ],
     "codes": {
-      "planning_area": "Orchard"
+      "planning_area": "Orchard",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015
   },
   {
@@ -3303,7 +3485,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -3316,13 +3498,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Outram"
+      "planning_area": "Outram",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -3385,14 +3568,14 @@
         "count": 4566
       },
       {
-        "group": "Sikh",
-        "pct": 0.4,
-        "count": 491
-      },
-      {
         "group": "Other religion",
         "pct": 0.4,
         "count": 515
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.4,
+        "count": 491
       }
     ],
     "language": [
@@ -3456,7 +3639,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -3469,13 +3652,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Pasir Ris"
+      "planning_area": "Pasir Ris",
+      "planning_region": "East Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -3503,19 +3687,19 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (40 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (40 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 survey published a resident count for this area (40) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+      "note": "The 2015 survey counted 40 residents here, too few for the Department of Statistics to publish a breakdown without identifying people."
     },
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -3528,7 +3712,8 @@
       }
     ],
     "codes": {
-      "planning_area": "Paya Lebar"
+      "planning_area": "Paya Lebar",
+      "planning_region": "East Region"
     }
   },
   {
@@ -3556,19 +3741,19 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (100 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (100 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 survey published a resident count for this area (100) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+      "note": "The 2015 survey counted 100 residents here, too few for the Department of Statistics to publish a breakdown without identifying people."
     },
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -3581,7 +3766,8 @@
       }
     ],
     "codes": {
-      "planning_area": "Pioneer"
+      "planning_area": "Pioneer",
+      "planning_region": "West Region"
     }
   },
   {
@@ -3715,7 +3901,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -3728,13 +3914,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Punggol"
+      "planning_area": "Punggol",
+      "planning_region": "North-East Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -3868,7 +4055,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -3881,13 +4068,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Queenstown"
+      "planning_area": "Queenstown",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -4021,7 +4209,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -4034,13 +4222,14 @@
       }
     ],
     "codes": {
-      "planning_area": "River Valley"
+      "planning_area": "River Valley",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -4068,11 +4257,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (14,590 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (14,590 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": [
       {
@@ -4098,7 +4287,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -4111,9 +4300,10 @@
       }
     ],
     "codes": {
-      "planning_area": "Rochor"
+      "planning_area": "Rochor",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015
   },
   {
@@ -4141,11 +4331,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (270 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (270 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": [
       {
@@ -4166,7 +4356,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -4179,9 +4369,10 @@
       }
     ],
     "codes": {
-      "planning_area": "Seletar"
+      "planning_area": "Seletar",
+      "planning_region": "North-East Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015
   },
   {
@@ -4315,7 +4506,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -4328,13 +4519,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Sembawang"
+      "planning_area": "Sembawang",
+      "planning_region": "North Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -4468,7 +4660,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -4481,13 +4673,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Sengkang"
+      "planning_area": "Sengkang",
+      "planning_region": "North-East Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -4550,14 +4743,14 @@
         "count": 5316
       },
       {
-        "group": "Sikh",
-        "pct": 0.3,
-        "count": 340
-      },
-      {
         "group": "Other religion",
         "pct": 0.3,
         "count": 266
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 340
       }
     ],
     "language": [
@@ -4621,7 +4814,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -4634,14 +4827,67 @@
       }
     ],
     "codes": {
-      "planning_area": "Serangoon"
+      "planning_area": "Serangoon",
+      "planning_region": "North-East Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
+  },
+  {
+    "id": "SGP-A-Simpang",
+    "level": "admin2",
+    "name": "Simpang",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "sources": [
+      {
+        "field": "ethnicity/population",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Simpang",
+      "planning_region": "North Region"
+    }
   },
   {
     "id": "SGP-A-Singapore-River",
@@ -4668,11 +4914,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (2,720 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (2,720 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": [
       {
@@ -4698,7 +4944,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -4711,9 +4957,10 @@
       }
     ],
     "codes": {
-      "planning_area": "Singapore River"
+      "planning_area": "Singapore River",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015
   },
   {
@@ -4741,11 +4988,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (1,480 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (1,480 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": [
       {
@@ -4771,7 +5018,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -4784,10 +5031,63 @@
       }
     ],
     "codes": {
-      "planning_area": "Southern Islands"
+      "planning_area": "Southern Islands",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015
+  },
+  {
+    "id": "SGP-A-Straits-View",
+    "level": "admin2",
+    "name": "Straits View",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "sources": [
+      {
+        "field": "ethnicity/population",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Straits View",
+      "planning_region": "Central Region"
+    }
   },
   {
     "id": "SGP-A-Sungei-Kadut",
@@ -4814,11 +5114,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (850 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (850 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": [
       {
@@ -4839,7 +5139,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -4852,9 +5152,10 @@
       }
     ],
     "codes": {
-      "planning_area": "Sungei Kadut"
+      "planning_area": "Sungei Kadut",
+      "planning_region": "North Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015
   },
   {
@@ -4988,7 +5289,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -5001,13 +5302,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Tampines"
+      "planning_area": "Tampines",
+      "planning_region": "East Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -5141,7 +5443,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -5154,13 +5456,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Tanglin"
+      "planning_area": "Tanglin",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -5188,19 +5491,19 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (10 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (10 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 survey published a resident count for this area (10) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+      "note": "The 2015 survey counted 10 residents here, too few for the Department of Statistics to publish a breakdown without identifying people."
     },
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -5213,7 +5516,8 @@
       }
     ],
     "codes": {
-      "planning_area": "Tengah"
+      "planning_area": "Tengah",
+      "planning_region": "West Region"
     }
   },
   {
@@ -5347,7 +5651,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -5360,13 +5664,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Toa Payoh"
+      "planning_area": "Toa Payoh",
+      "planning_region": "Central Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -5394,19 +5699,19 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (70 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (70 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "The 2015 survey published a resident count for this area (70) but suppressed the ethnic breakdown, as it does for cells too small to report without identifying people."
+      "note": "The 2015 survey counted 70 residents here, too few for the Department of Statistics to publish a breakdown without identifying people."
     },
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -5419,7 +5724,60 @@
       }
     ],
     "codes": {
-      "planning_area": "Tuas"
+      "planning_area": "Tuas",
+      "planning_region": "West Region"
+    }
+  },
+  {
+    "id": "SGP-A-Western-Islands",
+    "level": "admin2",
+    "name": "Western Islands",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "No resident count is published for this area: the General Household Survey 2015 marks it 'na' and the Census 2020 planning-area tables do not list it, which is how the Department of Statistics writes an area with nobody living in it, or too few to report."
+    },
+    "sources": [
+      {
+        "field": "ethnicity/population",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020
+      }
+    ],
+    "codes": {
+      "planning_area": "Western Islands",
+      "planning_region": "West Region"
     }
   },
   {
@@ -5447,11 +5805,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "The Census 2020 religion release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes religion for the 30 largest planning areas only; this one (900 residents in 2015) is among the 25 it folds into an 'Others' row of 25,756 residents aged 15 and over."
     },
     "language": {
       "status": "not_available",
-      "note": "The Census 2020 language release covers 30 planning areas and groups the remainder into an 'Others' bucket that matches no single area."
+      "note": "Census 2020 publishes language for the 30 largest planning areas only; this one (900 residents in 2015) is among the 25 it folds into an 'Others' row of 25,353 residents aged 5 and over."
     },
     "ethnicity": [
       {
@@ -5472,7 +5830,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -5485,9 +5843,10 @@
       }
     ],
     "codes": {
-      "planning_area": "Western Water Catchment"
+      "planning_area": "Western Water Catchment",
+      "planning_region": "West Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015
   },
   {
@@ -5550,14 +5909,14 @@
         "count": 9868
       },
       {
-        "group": "Sikh",
-        "pct": 0.3,
-        "count": 683
-      },
-      {
         "group": "Other religion",
         "pct": 0.3,
         "count": 612
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 683
       }
     ],
     "language": [
@@ -5621,7 +5980,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -5634,13 +5993,14 @@
       }
     ],
     "codes": {
-      "planning_area": "Woodlands"
+      "planning_area": "Woodlands",
+      "planning_region": "North Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
     "language_year": 2020
   },
   {
@@ -5774,7 +6134,7 @@
     ],
     "sources": [
       {
-        "field": "ethnicity",
+        "field": "ethnicity/population",
         "name": "General Household Survey 2015, Singapore Department of Statistics",
         "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
         "year": 2015
@@ -5787,13 +6147,774 @@
       }
     ],
     "codes": {
-      "planning_area": "Yishun"
+      "planning_area": "Yishun",
+      "planning_region": "North Region"
     },
-    "ethnicity_note": "General Household Survey 2015. Singapore's CMIO classification records a single race per person, taken from the father's; it is an administrative category rather than a self-described one.",
+    "ethnicity_note": "General Household Survey 2015, all residents. CMIO records one administrative race per person, taken from the father's.",
     "ethnicity_year": 2015,
-    "religion_note": "Census 2020, residents aged 15 and over -- not the whole population, so these are shares of adults.",
+    "religion_note": "Census 2020, residents aged 15 and over -- shares of adults, not of the whole population.",
     "religion_year": 2020,
-    "language_note": "Census 2020: the language most frequently spoken at home, among residents aged 5 and over. It is the single most-used language, not everything a person speaks -- Singapore is widely bilingual, and the same census records second languages separately.",
+    "language_note": "Census 2020, the language most often spoken at home by residents aged 5 and over -- one language per person, in a widely bilingual country.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-R-Central-Region",
+    "level": "admin1",
+    "name": "Central Region",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 29.3,
+        "count": 222597
+      },
+      {
+        "group": "No religion",
+        "pct": 23.7,
+        "count": 180309
+      },
+      {
+        "group": "Other Christian",
+        "pct": 16.6,
+        "count": 125973
+      },
+      {
+        "group": "Catholic",
+        "pct": 8.7,
+        "count": 66382
+      },
+      {
+        "group": "Muslim",
+        "pct": 8.3,
+        "count": 63088
+      },
+      {
+        "group": "Taoist",
+        "pct": 7.9,
+        "count": 60136
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.8,
+        "count": 36162
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.4,
+        "count": 2895
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.4,
+        "count": 3140
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 55.1,
+        "count": 415437
+      },
+      {
+        "group": "Mandarin",
+        "pct": 25.1,
+        "count": 189128
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 11.2,
+        "count": 84536
+      },
+      {
+        "group": "Malay",
+        "pct": 4.8,
+        "count": 35840
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.3,
+        "count": 17095
+      },
+      {
+        "group": "Other languages",
+        "pct": 1.0,
+        "count": 7531
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.6,
+        "count": 4600
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 79.1,
+        "count": 743370
+      },
+      {
+        "group": "Indian",
+        "pct": 9.3,
+        "count": 86970
+      },
+      {
+        "group": "Malay",
+        "pct": 7.3,
+        "count": 68430
+      },
+      {
+        "group": "Other",
+        "pct": 4.4,
+        "count": 41160
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015,
+        "note": "Summed from the planning-area rows."
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020,
+        "note": "Summed from the planning-area rows."
+      }
+    ],
+    "codes": {
+      "planning_region": "Central Region"
+    },
+    "ethnicity_note": "Summed from the General Household Survey 2015 rows of the 19 planning areas it lists for this region: 939,890 residents. Marina East, Marina South and Straits View have no published residents.",
+    "ethnicity_year": 2015,
+    "religion_note": "Summed from the Census of Population 2020 rows of the 13 planning areas it lists for this region: 760,678 residents aged 15 and over, so shares of adults. The census folds Museum, Newton, Orchard, Rochor, Singapore River and Southern Islands into an 'Others' row that cannot be split by region, so they are not included: 27,010 residents in 2015, 2.9% of the region. Marina East, Marina South and Straits View have no published residents.",
+    "religion_year": 2020,
+    "language_note": "Summed from the Census of Population 2020 rows of the 13 planning areas it lists for this region: 754,170 residents aged 5 and over, the language most often spoken at home. The census folds Museum, Newton, Orchard, Rochor, Singapore River and Southern Islands into an 'Others' row that cannot be split by region, so they are not included: 27,010 residents in 2015, 2.9% of the region. Marina East, Marina South and Straits View have no published residents.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-R-East-Region",
+    "level": "admin1",
+    "name": "East Region",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 28.2,
+        "count": 168011
+      },
+      {
+        "group": "Muslim",
+        "pct": 21.8,
+        "count": 130051
+      },
+      {
+        "group": "No religion",
+        "pct": 18.2,
+        "count": 108217
+      },
+      {
+        "group": "Other Christian",
+        "pct": 12.2,
+        "count": 72460
+      },
+      {
+        "group": "Taoist",
+        "pct": 7.7,
+        "count": 45756
+      },
+      {
+        "group": "Catholic",
+        "pct": 7.5,
+        "count": 44451
+      },
+      {
+        "group": "Hindu",
+        "pct": 3.9,
+        "count": 23238
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.4,
+        "count": 2252
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 1514
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 51.6,
+        "count": 318630
+      },
+      {
+        "group": "Mandarin",
+        "pct": 25.5,
+        "count": 157442
+      },
+      {
+        "group": "Malay",
+        "pct": 12.6,
+        "count": 77556
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 7.8,
+        "count": 48244
+      },
+      {
+        "group": "Tamil",
+        "pct": 1.3,
+        "count": 8027
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.7,
+        "count": 4405
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.5,
+        "count": 3371
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 69.1,
+        "count": 479460
+      },
+      {
+        "group": "Malay",
+        "pct": 18.6,
+        "count": 129130
+      },
+      {
+        "group": "Indian",
+        "pct": 8.5,
+        "count": 59060
+      },
+      {
+        "group": "Other",
+        "pct": 3.7,
+        "count": 25760
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015,
+        "note": "Summed from the planning-area rows."
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020,
+        "note": "Summed from the planning-area rows."
+      }
+    ],
+    "codes": {
+      "planning_region": "East Region"
+    },
+    "ethnicity_note": "Summed from the General Household Survey 2015 rows of the 4 planning areas it lists for this region: 693,440 residents. Paya Lebar (40 residents together) has a count but no published breakdown, so it is in the base and in no group. Changi Bay has no published residents.",
+    "ethnicity_year": 2015,
+    "religion_note": "Summed from the Census of Population 2020 rows of the 3 planning areas it lists for this region: 595,950 residents aged 15 and over, so shares of adults. The census folds Changi and Paya Lebar into an 'Others' row that cannot be split by region, so they are not included: 2,570 residents in 2015, 0.4% of the region. Changi Bay has no published residents.",
+    "religion_year": 2020,
+    "language_note": "Summed from the Census of Population 2020 rows of the 3 planning areas it lists for this region: 617,675 residents aged 5 and over, the language most often spoken at home. The census folds Changi and Paya Lebar into an 'Others' row that cannot be split by region, so they are not included: 2,570 residents in 2015, 0.4% of the region. Changi Bay has no published residents.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-R-North-Region",
+    "level": "admin1",
+    "name": "North Region",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 32.3,
+        "count": 158505
+      },
+      {
+        "group": "Muslim",
+        "pct": 23.2,
+        "count": 113919
+      },
+      {
+        "group": "No religion",
+        "pct": 16.6,
+        "count": 81436
+      },
+      {
+        "group": "Taoist",
+        "pct": 8.4,
+        "count": 41081
+      },
+      {
+        "group": "Other Christian",
+        "pct": 7.9,
+        "count": 38816
+      },
+      {
+        "group": "Hindu",
+        "pct": 6.0,
+        "count": 29711
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.1,
+        "count": 25047
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 1669
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 1164
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 39.4,
+        "count": 204839
+      },
+      {
+        "group": "Mandarin",
+        "pct": 34.8,
+        "count": 180913
+      },
+      {
+        "group": "Malay",
+        "pct": 14.3,
+        "count": 74286
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 6.9,
+        "count": 36092
+      },
+      {
+        "group": "Tamil",
+        "pct": 3.2,
+        "count": 16429
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.8,
+        "count": 3939
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.7,
+        "count": 3674
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 66.6,
+        "count": 354190
+      },
+      {
+        "group": "Malay",
+        "pct": 20.1,
+        "count": 106680
+      },
+      {
+        "group": "Indian",
+        "pct": 10.5,
+        "count": 55580
+      },
+      {
+        "group": "Other",
+        "pct": 2.9,
+        "count": 15320
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015,
+        "note": "Summed from the planning-area rows."
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020,
+        "note": "Summed from the planning-area rows."
+      }
+    ],
+    "codes": {
+      "planning_region": "North Region"
+    },
+    "ethnicity_note": "Summed from the General Household Survey 2015 rows of the 5 planning areas it lists for this region: 531,860 residents. Central Water Catchment and Lim Chu Kang (100 residents together) have a count but no published breakdown, so they are in the base and in no group. Simpang has no published residents.",
+    "ethnicity_year": 2015,
+    "religion_note": "Summed from the Census of Population 2020 rows of the 3 planning areas it lists for this region: 491,348 residents aged 15 and over, so shares of adults. The census folds Central Water Catchment, Lim Chu Kang, Mandai and Sungei Kadut into an 'Others' row that cannot be split by region, so they are not included: 3,070 residents in 2015, 0.6% of the region. Simpang has no published residents.",
+    "religion_year": 2020,
+    "language_note": "Summed from the Census of Population 2020 rows of the 3 planning areas it lists for this region: 520,172 residents aged 5 and over, the language most often spoken at home. The census folds Central Water Catchment, Lim Chu Kang, Mandai and Sungei Kadut into an 'Others' row that cannot be split by region, so they are not included: 3,070 residents in 2015, 0.6% of the region. Simpang has no published residents.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-R-North-East-Region",
+    "level": "admin1",
+    "name": "North-East Region",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 33.6,
+        "count": 263702
+      },
+      {
+        "group": "No religion",
+        "pct": 21.1,
+        "count": 165145
+      },
+      {
+        "group": "Other Christian",
+        "pct": 11.6,
+        "count": 91042
+      },
+      {
+        "group": "Muslim",
+        "pct": 10.7,
+        "count": 84079
+      },
+      {
+        "group": "Taoist",
+        "pct": 9.5,
+        "count": 74306
+      },
+      {
+        "group": "Catholic",
+        "pct": 8.2,
+        "count": 64020
+      },
+      {
+        "group": "Hindu",
+        "pct": 4.8,
+        "count": 37295
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 2568
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2,
+        "count": 1956
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 50.1,
+        "count": 418088
+      },
+      {
+        "group": "Mandarin",
+        "pct": 31.7,
+        "count": 264594
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 8.8,
+        "count": 73193
+      },
+      {
+        "group": "Malay",
+        "pct": 5.9,
+        "count": 49529
+      },
+      {
+        "group": "Tamil",
+        "pct": 2.4,
+        "count": 19993
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.6,
+        "count": 4852
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.5,
+        "count": 4547
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 80.5,
+        "count": 672100
+      },
+      {
+        "group": "Malay",
+        "pct": 8.7,
+        "count": 72940
+      },
+      {
+        "group": "Indian",
+        "pct": 8.3,
+        "count": 68890
+      },
+      {
+        "group": "Other",
+        "pct": 2.5,
+        "count": 20550
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015,
+        "note": "Summed from the planning-area rows."
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020,
+        "note": "Summed from the planning-area rows."
+      }
+    ],
+    "codes": {
+      "planning_region": "North-East Region"
+    },
+    "ethnicity_note": "Summed from the General Household Survey 2015 rows of the 6 planning areas it lists for this region: 834,510 residents. North-Eastern Islands (60 residents together) has a count but no published breakdown, so it is in the base and in no group.",
+    "ethnicity_year": 2015,
+    "religion_note": "Summed from the Census of Population 2020 rows of the 5 planning areas it lists for this region: 784,113 residents aged 15 and over, so shares of adults. The census folds North-Eastern Islands and Seletar into an 'Others' row that cannot be split by region, so they are not included: 330 residents in 2015, 0.0% of the region.",
+    "religion_year": 2020,
+    "language_note": "Summed from the Census of Population 2020 rows of the 5 planning areas it lists for this region: 834,797 residents aged 5 and over, the language most often spoken at home. The census folds North-Eastern Islands and Seletar into an 'Others' row that cannot be split by region, so they are not included: 330 residents in 2015, 0.0% of the region.",
+    "language_year": 2020
+  },
+  {
+    "id": "SGP-R-West-Region",
+    "level": "admin1",
+    "name": "West Region",
+    "parent": "SGP",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Buddhist",
+        "pct": 31.8,
+        "count": 254408
+      },
+      {
+        "group": "No religion",
+        "pct": 18.9,
+        "count": 151172
+      },
+      {
+        "group": "Muslim",
+        "pct": 18.3,
+        "count": 146338
+      },
+      {
+        "group": "Taoist",
+        "pct": 10.1,
+        "count": 81073
+      },
+      {
+        "group": "Other Christian",
+        "pct": 9.9,
+        "count": 79115
+      },
+      {
+        "group": "Hindu",
+        "pct": 5.6,
+        "count": 44803
+      },
+      {
+        "group": "Catholic",
+        "pct": 5.0,
+        "count": 40063
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3,
+        "count": 2010
+      },
+      {
+        "group": "Sikh",
+        "pct": 0.3,
+        "count": 2266
+      }
+    ],
+    "language": [
+      {
+        "group": "English",
+        "pct": 43.0,
+        "count": 363241
+      },
+      {
+        "group": "Mandarin",
+        "pct": 32.9,
+        "count": 277648
+      },
+      {
+        "group": "Malay",
+        "pct": 11.2,
+        "count": 94438
+      },
+      {
+        "group": "Chinese dialects",
+        "pct": 8.2,
+        "count": 69019
+      },
+      {
+        "group": "Tamil",
+        "pct": 3.2,
+        "count": 27210
+      },
+      {
+        "group": "Other languages",
+        "pct": 0.8,
+        "count": 6761
+      },
+      {
+        "group": "Other Indian languages",
+        "pct": 0.7,
+        "count": 5803
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Chinese",
+        "pct": 72.0,
+        "count": 650610
+      },
+      {
+        "group": "Malay",
+        "pct": 15.9,
+        "count": 143750
+      },
+      {
+        "group": "Indian",
+        "pct": 9.3,
+        "count": 84430
+      },
+      {
+        "group": "Other",
+        "pct": 2.7,
+        "count": 24040
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "General Household Survey 2015, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2015,
+        "note": "Summed from the planning-area rows."
+      },
+      {
+        "field": "religion/language",
+        "name": "Census of Population 2020, Singapore Department of Statistics",
+        "url": "https://www.singstat.gov.sg/publications/reference/cop2020/cop2020-sr1",
+        "year": 2020,
+        "note": "Summed from the planning-area rows."
+      }
+    ],
+    "codes": {
+      "planning_region": "West Region"
+    },
+    "ethnicity_note": "Summed from the General Household Survey 2015 rows of the 7 planning areas it lists for this region: 903,010 residents. Boon Lay, Pioneer, Tengah and Tuas (210 residents together) have a count but no published breakdown, so they are in the base and in no group. Western Islands has no published residents.",
+    "ethnicity_year": 2015,
+    "religion_note": "Summed from the Census of Population 2020 rows of the 6 planning areas it lists for this region: 801,249 residents aged 15 and over, so shares of adults. The census folds Boon Lay, Pioneer, Tengah, Tuas and Western Water Catchment into an 'Others' row that cannot be split by region, so they are not included: 1,110 residents in 2015, 0.1% of the region. Western Islands has no published residents.",
+    "religion_year": 2020,
+    "language_note": "Summed from the Census of Population 2020 rows of the 6 planning areas it lists for this region: 844,119 residents aged 5 and over, the language most often spoken at home. The census folds Boon Lay, Pioneer, Tengah, Tuas and Western Water Catchment into an 'Others' row that cannot be split by region, so they are not included: 1,110 residents in 2015, 0.1% of the region. Western Islands has no published residents.",
     "language_year": 2020
   }
 ]

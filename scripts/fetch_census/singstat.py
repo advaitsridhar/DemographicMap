@@ -23,7 +23,9 @@ office published directly.
 
 Religion, ethnicity and language are all collected by Singapore's census, but
 none is published by planning region in this series, so each is an explicit
-``not_available`` naming what is missing rather than a bare blank.
+``not_available`` naming what is missing rather than a bare blank. The
+planning-area adapter (``singapore_areas.py``) sums the census's area rows into
+these same five regions, and the build lets its figures fill these gaps.
 
 Usage:
     python -m scripts.fetch_census.singstat

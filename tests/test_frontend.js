@@ -328,6 +328,7 @@ function thePartialListAppliesWhenTheStyleLoadsAfterIt() {
     setFilter(id, filter) { filters.set(id, filter); }
     getZoom() { return 2; }
     setStyle(style) { styleLayers = style.layers; }
+    hasImage() { return false; } addImage() {}
     setLayoutProperty() {} setLayerZoomRange() {} setPaintProperty() {}
     setMinZoom() {} setZoom() {} easeTo() {} resize() {}
   }
@@ -359,6 +360,71 @@ function thePartialListAppliesWhenTheStyleLoadsAfterIt() {
                          "the declared list reaches the layer once it exists");
 }
 
+/* An estimate is drawn as figures, with its caveat in one sentence.
+ *
+ * The first rendering treated an estimate as a gap and printed its whole note
+ * -- a paragraph per panel, three panels per unit -- with the shares folded
+ * away under it. The owner's words: "why don't you just publish the estimates
+ * with a note? that giant block of text is so annoying". So: the same stacked
+ * bar and list a reading gets, a badge naming the status, the note's first
+ * sentence in the open, and the rest behind the "i" where every other
+ * composition keeps its note.
+ */
+function estimatesAreDrawnAsFiguresWithOneSentence() {
+  const rendered = [];
+  const container = {
+    set innerHTML(html) { rendered.push(html); },
+    get innerHTML() { return rendered[rendered.length - 1] || ""; },
+    scrollTop: 0,
+    querySelectorAll: () => [],
+  };
+  // palette.js reads the page's theme stamp to pick a categorical colour, and
+  // the harness has no page: give it a bare element that has none stamped.
+  const context = vm.createContext({
+    window: {}, console,
+    document: { documentElement: { getAttribute: () => null } },
+    matchMedia: () => ({ matches: false }),
+  });
+  context.window.matchMedia = context.matchMedia;
+  vm.runInContext(source("data.js"), context);
+  vm.runInContext(source("palette.js"), context);
+  context.window.DataStore = { country: () => null, get: () => null, children: () => [] };
+  vm.runInContext(source("dashboard.js"), context);
+
+  const first = "Modelled from the 2000 census home-language table.";
+  const rest = "The Tai groups are assigned by region and cannot be separated, and the Thai Chinese are counted as Thai.";
+  context.window.Dashboard.render({
+    id: "THA-TEST", level: "admin1", name: "Amnat Charoen", country: "THA",
+    ethnicity: { status: "modelled", census_year: 2000,
+                 estimate: [{ group: "Isan (Lao)", pct: 97.5 }, { group: "Khmer", pct: 2.5 }],
+                 note: `${first} ${rest}` },
+  }, container);
+  const html = container.innerHTML;
+
+  assert.ok(html.includes('class="stack-bar"'), "an estimate gets the stacked bar a reading gets");
+  assert.ok(/Isan \(Lao\)<\/span>\s*<span class="pct">97\.5%/.test(html),
+            "the estimate's shares are listed like a reading's");
+  assert.ok(/chip-estimate[^>]*>[^<]*Modelled</.test(html), "the badge names the status");
+  assert.ok(html.includes(`class="estimate-why">${first}<`), "the note's first sentence is in the open");
+  // The rest of the note appears exactly once, and only inside the "i".
+  const at = html.indexOf(rest);
+  assert.ok(at > 0 && html.indexOf(rest, at + 1) === -1, "the rest of the note is printed once");
+  assert.ok(html.lastIndexOf("data-info-text=", at) > html.lastIndexOf("</h3>", at),
+            "and that once is behind the heading's info button");
+  assert.ok(!/<div class="gap-note">[^]*?Modelled/.test(html) || !html.includes(`<strong>Estimated, not published.</strong> ${first}`),
+            "the estimate is not also printed as a gap paragraph");
+  assert.ok(/class="panel-year">2000</.test(html), "the estimate's own year is shown");
+
+  // An estimate with no shares is still a gap that says why.
+  rendered.length = 0;
+  context.window.Dashboard.render({
+    id: "THA-TEST-2", level: "admin1", name: "Nowhere", country: "THA",
+    ethnicity: { status: "modelled", estimate: [], note: "Nothing could be modelled here." },
+  }, container);
+  assert.ok(container.innerHTML.includes('class="gap-note"'), "no shares, so a gap note");
+  assert.ok(container.innerHTML.includes("Nothing could be modelled here."));
+}
+
 function estimatesAreGapsInTheBrowser() {
   // An estimate is a gap that carries a guess. gapStatus() falls through to
   // "present" for a status it has not seen, so an unregistered "modelled"
@@ -373,6 +439,18 @@ function estimatesAreGapsInTheBrowser() {
   assert.strictEqual(Fmt.gapStatus(guess), "modelled");
   assert.strictEqual(Fmt.isGap({ status: "derived", estimate: [] }), true);
   assert.strictEqual(Fmt.valueOf(guess), null, "nothing reads the guess as a value");
+  // The one door to an estimate's rows, and it is shut unless opened by name.
+  assert.strictEqual(Fmt.compositionOf(guess), null, "closed by default");
+  assert.strictEqual(Fmt.compositionOf(guess, { estimates: false }), null);
+  assert.strictEqual(Fmt.compositionOf(guess, { estimates: true }), guess.estimate,
+                     "opened only by an explicit opt-in");
+  assert.strictEqual(Fmt.compositionOf({ status: "not_available" }, { estimates: true }), null,
+                     "an ordinary gap has no rows to read whatever the caller asks");
+  const rows = [{ group: "A", pct: 100 }];
+  assert.strictEqual(Fmt.compositionOf(rows), rows, "a real composition is itself either way");
+  assert.strictEqual(Fmt.compositionOf(rows, { estimates: true }), rows);
+  assert.strictEqual(Fmt.isEstimate(guess), true);
+  assert.strictEqual(Fmt.isEstimate(rows), false);
   const Palette = context.window.Palette;
   assert.strictEqual(Palette.status("modelled").label, "Estimated, not published");
   assert.strictEqual(Palette.status("derived").label, "Derived from published figures");
@@ -380,6 +458,243 @@ function estimatesAreGapsInTheBrowser() {
                         "an estimate is not painted as an ordinary gap");
   assert.notStrictEqual(Palette.status("modelled").color, Palette.status("present").color,
                         "an estimate is not painted as a reading");
+}
+
+/* An estimate is painted only when asked, and counted never.
+ *
+ * Before this, an estimate was drawn as the gap colour on every view, so a
+ * reader could not tell that one existed without opening the panel. Now the
+ * two maps that read shares -- most populous group, share of one group --
+ * colour it by its rows when the caller opts in by name, and the paint
+ * result names the unit so the map can hatch it and the legend can say so.
+ * Everything that counts, sums or ranks still calls the same functions with
+ * the opt-in off, and this pins that they never see the guess.
+ */
+function estimatesPaintOnlyWhenAskedAndNeverCount() {
+  const context = vm.createContext({
+    window: { matchMedia: () => ({ matches: false }) },
+    document: { documentElement: { getAttribute: () => "light" } },
+    console,
+  });
+  vm.runInContext(source("data.js"), context);
+  vm.runInContext(source("palette.js"), context);
+  vm.runInContext(source("metrics.js"), context);
+  context.window.Metrics.setGroupIndex(data("groups.json"));
+  const M = context.window.Metrics;
+  const P = context.window.Palette;
+  const plain = (value) => JSON.parse(JSON.stringify(value));
+
+  const read = { id: "R", religion: [{ group: "Buddhism", pct: 93 },
+                                     { group: "Islam", pct: 5 },
+                                     { group: "Christianity", pct: 2 }] };
+  // Bueng Kan's shape, as site/data carries it.
+  const modelled = { id: "E", religion: {
+    status: "modelled", method: "tier1-split", note: "n",
+    estimate: [{ group: "Buddhism", pct: 99.1 },
+               { group: "Other or not stated", pct: 0.8 },
+               { group: "Islam", pct: 0.1 }] } };
+  const derived = { id: "D", religion: {
+    status: "derived", note: "n",
+    estimate: [{ group: "Roman Catholic", pct: 90 }, { group: "Other", pct: 10 }] } };
+  const blank = { id: "B", religion: { status: "not_available" } };
+  const records = [read, modelled, derived, blank];
+  const hue = M.hueOf("religion", "Buddhism");
+  assert.ok(hue, "the index places Buddhism");
+
+  // Most populous group, estimates on: the estimate takes its leader's colour.
+  const on = M.paint(records, "group", { field: "religion", depth: "2", estimates: true });
+  assert.strictEqual(on.colors.get("E"), P.group(hue, 99.1, 25, 100),
+                     "an estimate paints by its leading group when estimates are on");
+  assert.deepStrictEqual(plain(Array.from(on.estimated)).sort(), ["D", "E"],
+                         "the paint result names every unit coloured from an estimate");
+  assert.deepStrictEqual(plain(on.legend.estimated), { modelled: 1, derived: 1 },
+                         "and the legend is told how many of each kind");
+  assert.strictEqual(on.legend.missing, 1, "the ordinary gap is still a gap");
+  assert.strictEqual(on.colors.get("B"), P.neutral());
+
+  // Estimates off: the same unit is the gap it also is.
+  const off = M.paint(records, "group", { field: "religion", depth: "2", estimates: false });
+  assert.strictEqual(off.colors.get("E"), P.neutral(),
+                     "an estimate paints as a gap when estimates are off");
+  assert.strictEqual(off.estimated.size, 0);
+  assert.deepStrictEqual(plain(off.legend.estimated), {},
+                         "no estimate line when none was painted");
+  assert.strictEqual(off.legend.missing, 3);
+  // And the default is off: nothing that forgets the flag can paint a guess.
+  const silent = M.paint(records, "group", { field: "religion", depth: "2" });
+  assert.strictEqual(silent.colors.get("E"), P.neutral());
+  assert.strictEqual(silent.estimated.size, 0);
+
+  // A read unit is untouched either way.
+  assert.strictEqual(on.colors.get("R"), off.colors.get("R"));
+  assert.strictEqual(on.colors.get("R"), P.group(hue, 93, 25, 100));
+  assert.ok(!on.estimated.has("R"), "a reading is never marked as an estimate");
+
+  // Share of one group: the derived unit answers for Christianity through
+  // its Roman Catholic row; the modelled one has no such row and stays out.
+  const share = M.paint(records, "group_share",
+                        { field: "religion", group: "Christianity", estimates: true });
+  assert.strictEqual(share.colors.get("D"),
+                     P.group(M.hueOf("religion", "Christianity"), 90, 0, 100));
+  assert.deepStrictEqual(plain(Array.from(share.estimated)), ["D"]);
+  assert.deepStrictEqual(plain(share.legend.estimated), { derived: 1 });
+  const shareOff = M.paint(records, "group_share",
+                           { field: "religion", group: "Christianity", estimates: false });
+  assert.strictEqual(shareOff.colors.get("D"), P.neutral());
+  assert.deepStrictEqual(plain(shareOff.legend.estimated), {});
+  assert.strictEqual(shareOff.colors.get("R"), share.colors.get("R"));
+
+  // The readout says what the map painted, and says what it is -- in the
+  // status's own word, the one the coverage map and the panel use.
+  assert.strictEqual(
+    M.METRICS.group.display(modelled, { field: "religion", depth: "2", estimates: true }),
+    "Buddhism 99% (modelled)");
+  assert.strictEqual(
+    M.METRICS.group_share.display(derived, { field: "religion", group: "Christianity",
+                                             estimates: true }),
+    "90% (derived)");
+  assert.strictEqual(
+    M.METRICS.group.display(modelled, { field: "religion", depth: "2" }), "—");
+  assert.strictEqual(
+    M.METRICS.group.display(read, { field: "religion", depth: "2", estimates: true }),
+    "Buddhism 93%");
+
+  // The coverage map keeps the status colours, hatch-free.
+  const status = M.paint(records, "coverage", { field: "religion", estimates: true });
+  assert.strictEqual(status.colors.get("E"), P.status("modelled").color);
+  assert.strictEqual(status.colors.get("D"), P.status("derived").color);
+  assert.strictEqual(status.estimated.size, 0, "a status colour needs no hatch");
+
+  // A read head count is not hatched because the religion beside it was
+  // modelled: the app passes the field and the flag on every view, and only
+  // the two maps that read a composition's rows may act on them.
+  const counted = records.map((r) => ({ ...r, population: { value: 400000 } }));
+  const heads = M.paint(counted, "population", { field: "religion", estimates: true });
+  assert.ok(Number.isFinite(400000) && heads.colors.get("E") !== P.neutral(),
+            "the population is painted");
+  assert.strictEqual(heads.estimated.size, 0, "and nothing on it is marked as an estimate");
+  assert.deepStrictEqual(plain(heads.legend.estimated), {});
+
+  // Nothing that counts has changed its mind, in either mode.
+  for (const guess of [modelled, derived]) {
+    assert.strictEqual(M.tally(guess, "religion", 2).size, 0, "tally ignores an estimate");
+    assert.strictEqual(M.dominant(guess, "religion", 2), null, "dominant ignores an estimate");
+    assert.strictEqual(M.shareOf(guess, "religion", "Buddhism"), null);
+    assert.strictEqual(M.shareOf(guess, "religion", "Christianity"), null);
+    assert.strictEqual(M.largestShare(guess, "religion"), null);
+  }
+  assert.deepStrictEqual(plain(M.topGroups(records, "religion")),
+                         ["Buddhism", "Islam", "Christianity"],
+                         "the group picker's tally never sees an estimate's rows");
+}
+
+/* The hatch is a layer of its own, switched by feature-state, and it must
+ * outlive a restyle.
+ *
+ * MapLibre will not read feature-state into `fill-pattern`, so the hatch is
+ * a second fill over the colour with a constant pattern and an opacity the
+ * state switches. Three things have to hold or the rendering lies: the flag
+ * is written false as well as true (state persists, and a unit that stops
+ * being an estimate must lose its hatch); the pattern image is added on
+ * every style load, because a theme change rebuilds the style without its
+ * images; and the flag is re-applied with the colour after that rebuild.
+ */
+function estimatesAreHatchedAndTheHatchSurvivesARestyle() {
+  const listeners = new Map();
+  const states = new Map();
+  const images = new Map();
+  let styleLayers = [];
+  const features = [
+    { id: "E", properties: { shapeID: "E", shapeGroup: "THA" } },
+    { id: "R", properties: { shapeID: "R", shapeGroup: "THA" } },
+  ];
+  class Map_ {
+    constructor(options) { styleLayers = options.style.layers; }
+    on(event, callback) { listeners.set(event, callback); }
+    once(event, callback) { if (event === "idle") callback(); }
+    addControl() {}
+    getLayer(id) { return styleLayers.find((l) => l.id === id); }
+    getSource() { return {}; }
+    querySourceFeatures() { return features; }
+    setFeatureState(target, state) {
+      states.set(target.id, Object.assign(states.get(target.id) || {}, state));
+    }
+    hasImage(id) { return images.has(id); }
+    addImage(id, image, options) { images.set(id, { image, options }); }
+    setStyle(style) {
+      // As MapLibre does with diff off: a new style, no images, then the
+      // style.load event.
+      styleLayers = style.layers;
+      images.clear();
+      listeners.get("style.load")();
+    }
+    setFilter() {} getZoom() { return 5; }
+    setLayoutProperty() {} setLayerZoomRange() {} setPaintProperty() {}
+    setMinZoom() {} setZoom() {} easeTo() {} resize() {}
+  }
+  const drawn = [];
+  const pixels = { width: 16, height: 16, data: new Uint8ClampedArray(16 * 16 * 4) };
+  const canvas = {
+    width: 0, height: 0,
+    getContext: () => ({ clearRect() {}, beginPath() {}, moveTo() {}, lineTo() {},
+                         stroke() { drawn.push(this.strokeStyle); },
+                         getImageData: () => pixels }),
+  };
+  const context = vm.createContext({
+    window: {
+      maplibregl: { Map: Map_, NavigationControl: class {}, ScaleControl: class {},
+                    Popup: class {}, addProtocol() {} },
+      pmtiles: { Protocol: class { constructor() { this.tile = () => {}; } } },
+    },
+    document: { documentElement: {}, getElementById: () => ({}), createElement: () => canvas },
+    console,
+    getComputedStyle: () => ({ getPropertyValue: () => "" }),
+  });
+  vm.runInContext(source("map.js"), context);
+  const worldMap = context.window.WorldMap;
+  worldMap.init({});
+  listeners.get("style.load")();
+
+  // The pattern exists as soon as the style does, drawn at twice the size.
+  assert.ok(images.has("estimate-hatch"), "the hatch image is added when the style loads");
+  assert.strictEqual(images.get("estimate-hatch").options.pixelRatio, 2);
+  assert.strictEqual(images.get("estimate-hatch").image, pixels,
+                     "added as pixels: addImage does not take a canvas element");
+  assert.strictEqual(drawn.length, 2, "two strokes: a dark edge and a light core");
+
+  // One hatch layer per level, over the colour and under the borders,
+  // carrying the pattern and an opacity that feature-state switches.
+  const order = styleLayers.map((l) => l.id);
+  for (const level of ["admin0", "admin1", "admin2"]) {
+    const layer = styleLayers.find((l) => l.id === `${level}-estimate`);
+    assert.ok(layer, `${level} has a hatch layer`);
+    assert.strictEqual(layer.paint["fill-pattern"], "estimate-hatch");
+    assert.ok(JSON.stringify(layer.paint["fill-opacity"]).includes('["feature-state","estimate"]'),
+              `${level}'s hatch is switched by feature-state`);
+    assert.ok(order.indexOf(`${level}-estimate`) > order.indexOf(`${level}-fill`),
+              `${level}'s hatch sits over its colour`);
+    assert.ok(order.indexOf(`${level}-estimate`) < order.indexOf(`${level}-line`),
+              `${level}'s hatch sits under its borders`);
+  }
+
+  // The flag travels with the colour, and is written false as well as true.
+  const colors = new Map([["E", "#123456"], ["R", "#654321"]]);
+  worldMap.applyColors("admin1", colors, new Set(["E"]));
+  assert.strictEqual(states.get("E").estimate, true, "an estimated unit is flagged");
+  assert.strictEqual(states.get("E").color, "#123456", "and keeps its colour");
+  assert.strictEqual(states.get("R").estimate, false, "a read unit is flagged off, not left unset");
+  worldMap.applyColors("admin1", colors, new Set());
+  assert.strictEqual(states.get("E").estimate, false,
+                     "turning estimates off takes the hatch away");
+
+  // A restyle -- the theme toggle -- loses the images and the states, and
+  // must get both back from module state.
+  worldMap.applyColors("admin1", colors, new Set(["E"]));
+  states.clear();
+  worldMap.restyle();
+  assert.ok(images.has("estimate-hatch"), "the hatch image is added again after a restyle");
+  assert.strictEqual(states.get("E").estimate, true, "the flag is re-applied with the colour");
+  assert.strictEqual(states.get("R").estimate, false);
 }
 
 (async () => {
@@ -392,5 +707,8 @@ function estimatesAreGapsInTheBrowser() {
   groundInNoUnitReadsAsLandRatherThanSea();
   thePartialListAppliesWhenTheStyleLoadsAfterIt();
   estimatesAreGapsInTheBrowser();
+  estimatesAreDrawnAsFiguresWithOneSentence();
+  estimatesPaintOnlyWhenAskedAndNeverCount();
+  estimatesAreHatchedAndTheHatchSurvivesARestyle();
   console.log("frontend regression tests passed");
 })().catch((error) => { console.error(error); process.exitCode = 1; });

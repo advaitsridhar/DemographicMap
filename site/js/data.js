@@ -218,6 +218,31 @@ window.Fmt = (function () {
     return value;
   }
 
+  const ESTIMATE_STATUSES = new Set(["derived", "modelled"]);
+
+  /** A gap that carries a guess: a registered estimate status with its rows. */
+  function isEstimate(value) {
+    return value != null && typeof value === "object" && !Array.isArray(value) &&
+           ESTIMATE_STATUSES.has(value.status) && Array.isArray(value.estimate);
+  }
+
+  /* The rows of a composition field, and the one place an estimate's rows
+   * can be read as if they were one.
+   *
+   * A real composition is a list and comes back as it is. An estimate is a
+   * dict, and its `estimate` array comes back only when the caller says
+   * `{estimates: true}` -- otherwise null, the same answer as for any other
+   * gap. Every consumer that must never see an estimate (tally, dominant,
+   * the filter's counts, the panel's totals) calls this with the default and
+   * so cannot; the paint path opts in by name, which is what makes the
+   * opt-in greppable.
+   */
+  function compositionOf(value, { estimates = false } = {}) {
+    if (Array.isArray(value)) return value;
+    if (estimates && isEstimate(value)) return value.estimate;
+    return null;
+  }
+
   const compact = new Intl.NumberFormat(undefined, { notation: "compact", maximumFractionDigits: 1 });
   const plain = new Intl.NumberFormat();
 
@@ -253,5 +278,5 @@ window.Fmt = (function () {
       .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
 
-  return { isGap, gapStatus, valueOf, number, pct, pct1, escape };
+  return { isGap, gapStatus, valueOf, isEstimate, compositionOf, number, pct, pct1, escape };
 })();

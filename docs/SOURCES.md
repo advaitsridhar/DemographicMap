@@ -245,8 +245,8 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Croatia | DZS Popis 2021 final results, workbook `popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx` (sheets 1, 2, 4) | županija, grad/općina | One layout for all three tables: a bilingual header (Croatian over English) with a count and a percent column per category, read from the header rather than declared; county rows interleaved with their towns and municipalities; a dash is zero. Each table partitions the population, Other, Not declared and Unknown included, and a row that does not sum to its total stops the build. Counties are named as geoBoundaries names them in English, with the Croatian as an alias; units are composed as the bureau writes them, type first ("Grad Samobor", "Općina Bibinje"). The workbook lists the City of Zagreb by its 17 city districts, which are skipped, the city coming from its own county row. The boundary file's spellings (a dozen typos, Istria's bilingual names, two islands each drawn as one town) are declared as aliases; 545 shapes for 556 units, 543 matched. |
 | Bosnia and Herzegovina | BHAS Popis 2013, Book 2 workbooks `K2_T2_B` (ethnicity), `K2_T5_B` (religion), `K2_T6_B` (mother tongue) under `popis.gov.ba/popis2013/doc/Knjiga2/BOS/` | entity, canton | One layout for all three: Level, Area (Bosnian over English), Sex, Total, then the categories; the Total row of each territory is read and matched by its Bosnian name. The two entities and Brčko District are published at both levels, since geoBoundaries draws Republika Srpska and Brčko as their own second-level shapes beside the ten cantons: 3/3 and 12/12. The bureau's 'Islamska' and 'Muslimanska' religion columns are summed into Islam (both are Islam; the build refuses a group beside its parent) and the note says so; ethnonyms given as a religion, and 'Orthodox' given as an ethnicity, are kept and marked. A row that does not sum to its Total refuses. Republika Srpska's institute published a different reading of the same count; these are the Agency's figures. `scripts/fetch_census/bosnia.py`. |
 | Switzerland | FSO structural survey 2024, main languages | canton | Main languages for all 26 cantons. A person may name up to three, so shares exceed 100%. |
-| Singapore | Census 2020 + GHS 2015 planning-area tables | planning area |Ethnicity, religion and language for the planning areas, on three different bases. |
-| Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
+| Singapore | Census 2020 + GHS 2015 planning-area tables | planning area, planning region | Ethnicity, religion and language for the planning areas, on three different bases; the five regions summed from their areas' published rows, each note naming what the release left out. All 55 shapes carry a record: the 14 with no breakdown say how few people the survey counted there, or that it counted none. |
+| Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are not published in this series; the planning-area adapter supplies them. |
 | Finland | Statistics Finland table `11rl` (PxWeb) | region | Mother tongue for all 19 regions, from the population register at 31 December. One language is recorded per resident, so shares are of everyone rather than of the people who answered a question. |
 | Estonia | Statistics Estonia table `RV0222U` (PxWeb) | county | Ethnic nationality for all 15 counties, from the population register on 1 January — a register count, not a census answer. |
 | Latvia | Central Statistical Bureau table `IRE031` (PxWeb) | municipality, state city | Ethnicity for all 42 municipalities and state cities, from the population register. "Other ethnicities" also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular. |
@@ -833,8 +833,50 @@ before it was handled.
 
 Coverage differs by table: ethnicity reaches 41 planning areas, religion and
 language 30 each — those two releases bucket the remainder into an "Others" row
-that matches no shape on the map, and it is dropped rather than joined to
-anything.
+that matches no shape on the map. It is not joined to anything, but its size is
+read: 25,756 residents aged 15 and over (religion) and 25,353 aged 5 and over
+(language) are all the 25 unlisted areas hold between them.
+
+**The five regions are summed from their areas.** The map's own roll-up
+(`roll_up_parents`) refused every region, and was right to: 14 of the 55
+shapes carry no ethnicity and 25 no religion or language, and a sum over part
+of a territory is refused on principle. What the roll-up cannot know is that
+those shapes are empty. The adapter can: the URA's Master Plan says which
+areas make each region (declared in `REGIONS`, and the boundary file's geometry
+places the 55 shapes identically), and the 49 area totals of the 2015 survey
+reconcile with its national row to within 20 people, so an area with no
+published count holds nobody it counted. Each region's ethnicity is the sum of
+its areas' 2015 rows over their own totals; religion and language are the sum
+of the 2020 rows the census lists for it. The SingStat Table Builder has no
+census planning-area table (its catalogue was searched from here: only the
+annual M810771 series answers to "planning region"), and data.gov.sg's
+catalogue throttles a walk and ignores its own query parameter, and singstat.gov.sg answers the runner with 403 (both probed from the runner, logs in the "Data: scripts.probe_datagovsg" and "Data: scripts.probe_links ...cop2020-sr1" commits), so the region
+rows are summed rather than read. Each note names the areas the release left
+out and what they hold: for religion and language, the areas inside the 2020
+"Others" row are 2.9% of the Central Region's 2015 residents (Museum, Newton,
+Orchard, Rochor, Singapore River, Southern Islands), 0.6% of the North's
+(Central Water Catchment, Lim Chu Kang, Mandai, Sungei Kadut), 0.4% of the
+East's (Changi, Paya Lebar), 0.1% of the West's (Boon Lay, Pioneer, Tengah,
+Tuas, Western Water Catchment) and under 0.1% of the North-East's
+(North-Eastern Islands, Seletar). A national shortfall beyond the rounding
+tolerance would be written into the note in a sentence; beyond 1% the regions
+are refused, because then the areas do not partition the country.
+
+**Every one of the 55 shapes carries a record**, and the 14 with no breakdown
+say why. Eight have a 2015 count too small to publish a breakdown of: Boon Lay
+(30 residents), Central Water Catchment (10), Lim Chu Kang (90), North-Eastern
+Islands (60), Paya Lebar (40), Pioneer (100), Tengah (10) and Tuas (70) — the
+count is carried as their population and the composition says how few people
+that is. Six have no count at all: Changi Bay, Marina East, Marina South,
+Simpang, Straits View and Western Islands are "na" in the 2015 survey and
+absent from the 2020 planning-area tables, which is how the Department writes
+an area with nobody in it, or too few to report; their records carry no
+figure and say so. The eleven populated areas the 2020 release leaves out
+(Changi, Mandai, Museum, Newton, Orchard, Rochor, Seletar, Singapore River,
+Southern Islands, Sungei Kadut, Western Water Catchment) keep their 2015
+ethnicity and say, with their 2015 count, that their religion and language sit
+inside the census's "Others" row. No join failed: all 55 area names in the
+extracts match the boundary file's, which writes them in capitals.
 
 ### Singapore, and two things the figures are not
 
@@ -859,7 +901,8 @@ which would bias the result downwards.
 
 Religion, ethnicity and language are all collected by Singapore's census, but
 none is published by planning region in this annual series, so each is an
-explicit `not_available` naming what is missing.
+explicit `not_available` naming what is missing — filled, in the build, by the
+planning-area adapter's region rows summed from the census tables (above).
 
 The adapter calls the API and falls back to a payload committed under
 `data/raw/singapore/` when the host is unreachable, which is what lets the build
@@ -4901,11 +4944,32 @@ runner (`ESTAT_API` in its environment, scrubbed from every log line):
   holds naturalised citizens and people of any ancestry, and how many people
   the census recorded as neither Japanese nor foreign (left out of the
   denominator, and printed). The reader refuses to write unless the 47
-  prefectures reproduce the table's own 全国 row exactly, that row reproduces
-  the Statistics Bureau's published national figures (foreign population
-  2,402,460 and the ten nationalities the 結果の概要 prints, in `PUBLISHED`),
-  and the national composition rebuilt from the prefectures sits within half
-  a point of the published one.
+  prefectures reproduce the table's own 全国 row exactly, the thirteen
+  nationalities its foreign total, and the total the census's published
+  126,146,099.
+* **The Statistics Bureau's 結果の概要** for the same tabulation
+  (`stat.go.jp/data/kokusei/2020/kekka/pdf/outline_01.pdf`, 30 November
+  2021, 60 pages), read by the runner's `probe_pdf`. The first attempt at
+  this adapter refused because the table's national row did not reproduce
+  eight per-nationality "published" counts -- which no probe had read; they
+  had been written from memory, and were wrong. What the 概要 actually prints
+  in section IV (pages 33 and 35) is a **different universe from the
+  table**: its headline counts are 不詳補完値, in which the 2,202,484 people
+  the census recorded as neither Japanese nor foreign are allocated to one
+  or the other, so it puts foreign nationals at 2,747,137 (2.2% of
+  126,146,099) where the table records 2,402,460 (1.9% of those recorded);
+  the imputation sends 344,677 of the unstated to "foreign", a far higher
+  share than among the recorded. Section VII (page 48) prints the
+  nationalities themselves, but the probe's page cap stopped at section IV
+  and, by the owner's instruction that day ("why don't you just publish the
+  estimates with a note?"), no second probe was spent. The reader now
+  enforces what it read -- the published total exactly, the imputed
+  Japanese and foreign summing to it, the imputed foreign share within half
+  a point of the recorded one (it is 0.24 points over) -- and publishes the
+  table with that difference stated in one sentence on every prefecture's
+  `ethnicity_note`, instead of holding 47 prefectures back over a summary.
+  The composition is of recorded nationalities, so its foreign share runs
+  about a quarter of a point low nationally against the Bureau's headline.
 * **`0003282963`**, the same 宗教統計調査 table the section above measured,
   at 2025年度 (31 December 2024): 信者 by 宗教系統 for the country and the 47
   prefectures. 175,054,047 believers, 1.39 per person. Used as a **relative
@@ -4931,12 +4995,15 @@ affiliated total, with no religion held at the survey's national figure
 because nothing gives it by prefecture, and the 2% no-answer left out. Two
 absolute bounds stop the signal's known artefacts passing through: Christianity
 at most 5% (Nagasaki, Japan's most Christian prefecture, is a few percent by
-the churches' own counts and comes out at 3.1) and Shinto at most 9% (three
-times the national self-identification). Three prefectures hit a bound --
-Okinawa, whose corporations report 90% of its believers as Shinto, Kyoto and
-Nagano -- and their notes say so. The record carries the ratios under `tilt`
-and the bound groups under `capped`; the log prints the five prefectures the
-tilt moves furthest from the prior. **No backtest exists and none is
+the churches' own counts and comes out at 3.2, its tilt ratio at the 3.0
+clip) and Shinto at most 9% (three times the national self-identification).
+Three prefectures hit a bound -- Okinawa, whose corporations report 90% of
+its believers as Shinto, Kyoto and Nagano -- and their notes say so. The
+record carries the ratios under `tilt` and the bound groups under `capped`;
+the log prints the five prefectures the tilt moves furthest from the prior,
+which on the 19 September run were Okinawa (9.9 points), Kyoto (6.9), Nagano
+(5.9), Miyagi (5.4) and Yamanashi (5.2), every one of them a Shinto-heavy
+registration count pulling Shinto up and Buddhism down. **No backtest exists and none is
 claimed**: there is no prefecture-level self-identification figure to score
 against, so the estimate has no `backtest` key and its note says why.
 
@@ -5495,6 +5562,77 @@ workflow runner like the rest; the owner's copy of the PDF on Google Drive
 was read first, and confirmed the figures the workbook then supplied, but the
 Department's URL is what is cited.
 
+### Macau
+
+Macau is the other Special Administrative Region drawn under China, and like
+Hong Kong it runs a census of its own: the Statistics and Census Service
+(DSEC) counts the territory every ten years with a by-census between, and
+asks nationality, ethnicity and usual language, which the mainland census
+does not. Before this the shape carried Wikidata's population and nothing
+else, with the China policy's religion sentence and two `not_available`
+markers.
+
+**Religion is not asked, and that is measured rather than assumed.** The
+runner's probe searched the whole of DSEC's *Detailed Results of 2021
+Population Census* (revised version, October 2022, 147 pages,
+`https://www.dsec.gov.mo/getAttachment/6cb29f2f-524a-488f-aed3-4d7207bb109e/E_CEN_PUB_2021_Y.aspx`)
+and of the *2016 Population By-census Detailed Results* (133 pages,
+`https://www.dsec.gov.mo/getAttachment/e20c6bab-ada4-4f83-9349-e72605674a42/E_ICEN_PUB_2016_Y.aspx`)
+for religion, religious, Buddhis- and Catholic: zero pages in each. The
+2021 report's own account of its questionnaire lists what the long form
+collects -- ethnicity, nationality, place of previous residence, education,
+employment and earnings -- and religion is not among them. So Macau's
+religion stays `not_collected` under the China policy, and nothing is
+written for it; the religious-affiliation figures that circulate for Macau
+are surveys, not DSEC's.
+
+`scripts/fetch_census/macau_census.py` reads two statistical tables of the
+2021 report, both sexes, the Total row. **Table 6**, *Population by gender,
+age group and nationality*: Chinese 608,379 (89.2%), Filipino 33,896
+(5.0%), Other Asian countries 26,640 (3.9%), Portuguese 8,991 (1.3%) and
+Others 4,164 (0.6%), of 682,070. It is carried as the ethnicity field under
+`ethnicity_basis: "nationality"`, the way Japan's prefectures carry their
+census, because a passport is not an ancestry. The census does have an
+ethnicity table (Table 7) and it is the poorer answer: Chinese 609,863
+(89.4%), Portuguese 5,162, Chinese and Portuguese 6,668, Chinese and
+non-Portuguese 1,498, Portuguese and others 1,191, and then one "Others" of
+57,688 (8.5%) holding every other people in the territory, where the
+nationality table at least names the Filipinos. The Vietnamese, whom the
+report's text puts at 1.8% of the population, are inside "Other Asian
+countries" in both; the table does not print them apart. That column is
+written as "Other Asian nationality" and registered in `scripts/group_tree.py`
+under "Other national identities", because the prefix rule would otherwise
+have filed it as East and Southeast Asian ancestry, which the Nepalese,
+Indian and Burmese nationals in it are not; the census's "Others" is written
+as "Other nationalities", already a residual. **Table 10**, *Population by
+gender, age group and usual language*: Cantonese 537,981 (81.0%), Mandarin
+31,405 (4.7%), Other Chinese dialects 36,032 (5.4%), Portuguese 3,949
+(0.6%), English 23,635 (3.6%), Tagalog 19,154 (2.9%) and Others 11,626
+(1.8%), of the 663,782 people aged 3 and over, which `language_basis`
+states. Usual language is the one language a person mostly uses at home.
+
+The PDF is what makes the reader what it is. pypdf runs a table row together
+with a space for every thousands separator -- `MF 682 070 608 379 33 896 26
+640 8 991 4 164` -- so a row is not a list of figures until it is cut into
+as many as the table has columns, and the text does not say where. Every
+cut is tried and the one kept is the one in which the Total column equals
+the sum of the others; a row with no such cut, or two, is refused. The
+checks are then the report's own: each table's Total must be the population
+the census publishes (682,070, section 1.1; 663,782, Principal
+Characteristics page 40); the language counts must agree, count for count,
+with the same table as the report prints it a second time on page 40, and
+its "Chinese" row there must be the three Chinese columns together; each
+composition must sum to 100 within three tenths. Two softer checks follow
+the owner's rule that a small disagreement with a secondary figure is a
+sentence in the note and not a refusal: the shares printed beside the
+counts on page 40, and the shares the report's prose states (Chinese
+nationality 89.2%, Cantonese 81.0%), are held against the computed shares
+within a tenth, and a difference is written into the note. On the 2021 file
+there is none. The build sandbox cannot reach `dsec.gov.mo` (the egress
+proxy refuses the connection), so the adapter runs on the workflow runner;
+it reads only the report's pages 36 to 80, finding the three pages by title,
+because extracting all 147 costs the runner most of an hour.
+
 ## Derived values: what follows without reading more
 
 `docs/MODELLING.md` measures what modelling the blank regions could and could
@@ -5581,7 +5719,10 @@ were filled and eleven were not:
   Hyderabad, so a sum over them would have counted 31.7 million people across a
   third of the state. It now has 32 gaps out of 33 and a state figure summed
   from the census's own ten district rows, which is the honest form of the same
-  arithmetic.
+  arithmetic. Singapore's regions are the same shape of answer: the shapes the
+  roll-up saw as missing are uninhabited, which the adapter knows from the
+  survey's own totals and the roll-up cannot, so the adapter sums them itself
+  (see the Singapore section).
 
 **Percentages are recomputed against the denominator the children used, not
 against population.** Mexico publishes indigenous-language shares of the

@@ -269,7 +269,10 @@ deliberately:
 - **Never** rolled into a parent by `roll_up_parents`. A modelled child must
   not become evidence for its parent, or the estimate launders itself into
   something that looks read.
-- Off by default, behind an explicit control that names what it is showing.
+- Shown by default, hatched, behind an explicit control ("Show estimates")
+  that turns them back into gaps — the owner's decision of 19 September 2026,
+  reversing the earlier "off by default", because the distinct rendering does
+  the work of honesty and a hidden estimate could not be told from a blank.
 - Carried into the downloadable data with the status intact.
 
 ---

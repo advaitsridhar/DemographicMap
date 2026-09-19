@@ -78,6 +78,9 @@ ADAPTER_FILES = [
     # The same survey's newer wave, tabulated from its public-release file
     # and checked against that paper: it replaces the 2012 figure where read.
     "cfps_microdata_province.json",
+    # Macau's own census, one shape under China: nationality (as ethnicity,
+    # labelled nationality) and usual language from DSEC's 2021 results.
+    "macau_census.json",
     # Viet Nam's 2019 census, ethnicity by province from Table 2 of the
     # office's own Vietnamese results volume: a census count.
     "vietnam_province.json",
@@ -225,7 +228,10 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.china_wiki. Hong Kong SAR carries "
            "ethnicity and usual spoken language from its own 2021 Population "
            "Census (C&SD Main Results, Tables 3.9 and 3.13): "
-           "python -m scripts.fetch_census.hongkong_census",
+           "python -m scripts.fetch_census.hongkong_census. Macau SAR carries "
+           "nationality (as ethnicity, labelled nationality) and usual language "
+           "from its own 2021 Population Census (DSEC Detailed Results, Tables 6 "
+           "and 10): python -m scripts.fetch_census.macau_census",
     "KOR": "Hankook Research 2025 pooled survey (religion) by residence region, each "
            "of the seven regions' figure carried by its provinces: "
            "python -m scripts.fetch_census.korea_survey",
@@ -2912,10 +2918,34 @@ def group_index(admin0: list[dict[str, Any]],
         per_level: dict[str, dict[str, dict[str, Any]]] = {
             name: {} for name, _ in levels}
 
+        # An estimate's groups are indexed too -- placed in the tree, given a
+        # hue and a tier -- but tallied apart, under ``estimated_units``, so
+        # that "76 units hold a figure" never counts a model as a figure. Left
+        # out, Thailand's 76 modelled provinces painted "not yet classified":
+        # the map could read the estimate but had no entry to classify it by.
+        estimated: dict[str, int] = {}
+
         for level_name, sources in levels:
           for iso3, rows in sources:
             for record in rows:
                 value = record.get(field)
+                if is_estimate(value):
+                    table = canonical_groups.lookup(field)
+                    guessed: set[str] = set()
+                    for row in value.get("estimate") or ():
+                        if not isinstance(row, dict) or \
+                           not isinstance(row.get("pct"), (int, float)):
+                            continue
+                        raw = row.get("group", "")
+                        name = table.get(canonical_groups.key(raw), raw)
+                        labels.setdefault(name, set()).add(raw)
+                        guessed.add(name)
+                    rolled_est: set[str] = set()
+                    for name in guessed:
+                        rolled_est.update(canonical_groups.ancestry(field, name))
+                    for name in rolled_est:
+                        estimated[name] = estimated.get(name, 0) + 1
+                    continue
                 if not isinstance(value, list):
                     continue
                 code = iso3 or record.get("country") or record.get("id", "")
@@ -2977,7 +3007,7 @@ def group_index(admin0: list[dict[str, Any]],
         # parent nobody spells -- Christianity across Poland, Sino-Tibetan
         # languages anywhere -- is still a group a reader can pick, and it has
         # to be in the list to be picked.
-        names = set(units) | set(rolled_up)
+        names = set(units) | set(rolled_up) | set(estimated)
         kids = canonical_groups.children(field)
         index[field] = {
             "groups": [
@@ -2990,6 +3020,9 @@ def group_index(admin0: list[dict[str, Any]],
                  # What sources actually wrote under this exact name, which is
                  # a different and smaller thing for any parent.
                  "own_units": units.get(name, 0),
+                 # Units whose figure for this group is a model or a
+                 # derivation, not a reading: counted here and nowhere above.
+                 "estimated_units": estimated.get(name, 0),
                  "parent": canonical_groups.parent_of(field, name),
                  "children": [k for k in kids.get(name, []) if k in names],
                  "depth": len(canonical_groups.ancestry(field, name)) - 1,
