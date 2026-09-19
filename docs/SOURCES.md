@@ -5123,6 +5123,73 @@ is already ambiguous. These are the one class where a declaration would have
 declaration that does nothing is worse than the gap it claims to close,
 because it reads as though the question has been settled.
 
+## China: religion for five provinces, from a survey the census does not run
+
+China's census does not ask religion, and every province said so. The China
+Family Panel Studies (CFPS, Peking University's Institute of Social Science
+Survey) asked a religion module in its 2012 wave, and Lu Yunfeng's report on
+it -- *当代中国宗教状况报告——基于 CFPS (2012) 调查数据*, 世界宗教文化 2014 no. 1,
+pp. 11-25, reached through the Internet Archive from the CASS Institute of
+World Religions' site -- prints self-declared affiliation of adults by
+province for the five provinces the survey drew as independent,
+self-representative subsamples of 1,600 households each: **Shanghai,
+Liaoning, Henan, Gansu, Guangdong**. The paper is explicit (p. 12) that only
+those five support province-level inference; the other twenty provinces came
+from one pooled frame and are not read. Six regions were not surveyed at all
+-- Xinjiang, Tibet, Qinghai, Inner Mongolia, Ningxia, Hainan -- so the
+national figure understates Islam and Tibetan Buddhism, and is not written.
+
+The PDF is InDesign's vector outlines with no text layer; nothing parses it,
+so Table 2 is transcribed in `scripts/fetch_census/cfps_survey.py` from the
+rendered page and each column is checked to sum to 100. Shanghai: Buddhism
+10.4%, Protestant 1.9%, Roman Catholic 0.7%, Taoism 0.1%, no religion 86.7%,
+n = 2,362. Henan is the province where Protestantism reaches 5.6%, Gansu where
+Islam reaches 3.4%. Affiliation, not practice: the same paper finds about 1%
+of respondents in any religious organisation. Registered after the Korea
+survey as the lowest-authority file for China; the twenty-eight other
+provinces keep the policy statement, which now says the survey exists.
+
+### The microdata, and what checking it against the paper taught
+
+A Kaggle re-upload of the public-release files (2012 through 2020) exists.
+`scripts/probe_kaggle.py` read what it holds on the runner -- the only place
+that reaches Kaggle -- before anything was written: 2012 and 2016 carry the
+seven-answer affiliation question (`qm601`), 2014 asked instead which deities
+a person believes in, and 2018 and 2020 ask only about membership of a
+religious organisation. So 2016 is the newest comparable wave, and
+`scripts/fetch_census/cfps_microdata.py` tabulates it by province with the
+wave's cross-sectional individual weight, `rswt_natcs16`.
+
+**The adapter checks itself against the paper before writing, and the check
+found something.** Tabulating the 2012 file and comparing it with Table 2, the
+first run refused: Liaoning came out at 2,810 respondents against the paper's
+2,939. A diagnose mode tried every reading, and the answer is that **the
+paper's table is unweighted** -- an unweighted tabulation reproduces all five
+provinces within 0.20 points and their sample sizes within 0.9% (the 201906
+re-release adds or drops a few rows), while no weighting comes within half a
+point. Shanghai's Buddhism is 10.4% unweighted and 8.3% with the weight. The
+check is therefore the unweighted one, which is what proves the province
+codes; what is written is weighted, which is what the weights are for and is
+valid within a self-representative province; and the note says the paper's
+figure is unweighted, so a reader comparing the two sees a method and not a
+disagreement.
+
+Written from 2016, weighted: Shanghai no religion 79.3%, Buddhism 16.6%,
+Protestant 2.1%, Roman Catholic 1.0% (n = 1,839 with a weight); Henan
+Protestant 7.0%; Gansu Islam 4.8%. Every province's shares are in the run log
+with their sample sizes, and the twenty that are not written show why they
+are not: Fujian is 55% Buddhist on 357 respondents, Tibet has five. The 2016
+stem asks which religion a person *believes in* where 2012 asked which they
+*belong to*, and takes more than one answer, of which the first is counted;
+shares rose in every province between the waves, and the wording is part of
+why. The 2012 file (`cfps_survey_province.json`) stays as the lower-authority
+row, so removing the Kaggle-derived file leaves the five provinces on the
+published table.
+
+Provenance: CFPS is distributed by Peking University's ISSS under a data-use
+agreement; the Kaggle bundle is a third party's re-upload whose standing is
+not verified here. Only aggregate shares are kept.
+
 ## Derived values: what follows without reading more
 
 `docs/MODELLING.md` measures what modelling the blank regions could and could

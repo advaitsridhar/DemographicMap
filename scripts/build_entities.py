@@ -62,6 +62,12 @@ ADAPTER_FILES = [
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
     "korea_survey_province.json",
+    # And CFPS 2012 for five Chinese provinces: a survey where the census
+    # asks nothing, transcribed from the paper that reports it.
+    "cfps_survey_province.json",
+    # The same survey's newer wave, tabulated from its public-release file
+    # and checked against that paper: it replaces the 2012 figure where read.
+    "cfps_microdata_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
@@ -178,6 +184,9 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.zimbabwe",
     "BFA": "INSD RGPH 2019 table volume (religion) by region: "
            "python -m scripts.fetch_census.burkina",
+    "CHN": "CFPS 2012 (religion) for the five provinces the survey sampled on their "
+           "own, transcribed from Lu Yunfeng's report: "
+           "python -m scripts.fetch_census.cfps_survey",
     "KOR": "Hankook Research 2025 pooled survey (religion) by residence region, each "
            "of the seven regions' figure carried by its provinces: "
            "python -m scripts.fetch_census.korea_survey",

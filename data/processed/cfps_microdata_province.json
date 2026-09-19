@@ -1,0 +1,326 @@
+[
+  {
+    "id": "CHN-liaoning-province",
+    "level": "admin1",
+    "name": "Liaoning Province",
+    "parent": "CHN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 89.5
+      },
+      {
+        "group": "Buddhism",
+        "pct": 6.9
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.2
+      },
+      {
+        "group": "Islam",
+        "pct": 0.8
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.3
+      },
+      {
+        "group": "Taoism",
+        "pct": 0.2
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "China Family Panel Studies 2016 adult questionnaire, religious affiliation (qm601) by province, tabulated with the wave's cross-sectional individual weight (rswt_natcs16) from the public-release file",
+        "url": "https://www.kaggle.com/datasets/edjngfebav/cfps201420162020-china-family-panel-studies",
+        "license": "CFPS is distributed by Peking University's Institute of Social Science Survey under a data-use agreement; the file was read from a third-party re-upload on Kaggle and only aggregate shares are kept"
+      }
+    ],
+    "country": "CHN",
+    "religion_year": 2016,
+    "religion_note": "China Family Panel Studies 2016 adult questionnaire, religious affiliation (qm601) by province, tabulated with the wave's cross-sectional individual weight (rswt_natcs16) from the public-release file. A survey of adults, not a census: China's census does not ask religion. Self-declared affiliation, 2,775 respondents in this province, which CFPS draws as an independent, self-representative subsample -- one of five provinces (Shanghai, Liaoning, Henan, Gansu, Guangdong) for which the survey supports province-level inference; the other provinces are not written. Weighted by rswt_natcs16, counting the 2,775 respondents who carry it. The same reading of the 2012 file, unweighted, reproduces Table 2 of Lu Yunfeng's report (https://web.archive.org/web/20140809051625/http://iwr.cass.cn/zjwh/201403/W020140303370398758556.pdf) within 0.5 points in every share, which is how the province codes are known to be right; that published table is unweighted, so it and this figure differ by the weight and not by the data. The 2016 questionnaire asks which religion a person believes in (信仰) where 2012 asked which they belong to (属于), and allows more than one answer, of which the first is counted; shares rose in every province between the two waves, and part of that rise is the wording. Affiliation, not practice."
+  },
+  {
+    "id": "CHN-shanghai-municipality",
+    "level": "admin1",
+    "name": "Shanghai Municipality",
+    "parent": "CHN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 79.3
+      },
+      {
+        "group": "Buddhism",
+        "pct": 16.6
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.1
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 1.0
+      },
+      {
+        "group": "Taoism",
+        "pct": 0.9
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "China Family Panel Studies 2016 adult questionnaire, religious affiliation (qm601) by province, tabulated with the wave's cross-sectional individual weight (rswt_natcs16) from the public-release file",
+        "url": "https://www.kaggle.com/datasets/edjngfebav/cfps201420162020-china-family-panel-studies",
+        "license": "CFPS is distributed by Peking University's Institute of Social Science Survey under a data-use agreement; the file was read from a third-party re-upload on Kaggle and only aggregate shares are kept"
+      }
+    ],
+    "country": "CHN",
+    "religion_year": 2016,
+    "religion_note": "China Family Panel Studies 2016 adult questionnaire, religious affiliation (qm601) by province, tabulated with the wave's cross-sectional individual weight (rswt_natcs16) from the public-release file. A survey of adults, not a census: China's census does not ask religion. Self-declared affiliation, 1,839 respondents in this province, which CFPS draws as an independent, self-representative subsample -- one of five provinces (Shanghai, Liaoning, Henan, Gansu, Guangdong) for which the survey supports province-level inference; the other provinces are not written. Weighted by rswt_natcs16, counting the 1,839 respondents who carry it. The same reading of the 2012 file, unweighted, reproduces Table 2 of Lu Yunfeng's report (https://web.archive.org/web/20140809051625/http://iwr.cass.cn/zjwh/201403/W020140303370398758556.pdf) within 0.5 points in every share, which is how the province codes are known to be right; that published table is unweighted, so it and this figure differ by the weight and not by the data. The 2016 questionnaire asks which religion a person believes in (信仰) where 2012 asked which they belong to (属于), and allows more than one answer, of which the first is counted; shares rose in every province between the two waves, and part of that rise is the wording. Affiliation, not practice."
+  },
+  {
+    "id": "CHN-henan-province",
+    "level": "admin1",
+    "name": "Henan Province",
+    "parent": "CHN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 82.8
+      },
+      {
+        "group": "Buddhism",
+        "pct": 7.9
+      },
+      {
+        "group": "Protestant",
+        "pct": 7.0
+      },
+      {
+        "group": "Islam",
+        "pct": 1.2
+      },
+      {
+        "group": "Taoism",
+        "pct": 0.5
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.4
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.2
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "China Family Panel Studies 2016 adult questionnaire, religious affiliation (qm601) by province, tabulated with the wave's cross-sectional individual weight (rswt_natcs16) from the public-release file",
+        "url": "https://www.kaggle.com/datasets/edjngfebav/cfps201420162020-china-family-panel-studies",
+        "license": "CFPS is distributed by Peking University's Institute of Social Science Survey under a data-use agreement; the file was read from a third-party re-upload on Kaggle and only aggregate shares are kept"
+      }
+    ],
+    "country": "CHN",
+    "religion_year": 2016,
+    "religion_note": "China Family Panel Studies 2016 adult questionnaire, religious affiliation (qm601) by province, tabulated with the wave's cross-sectional individual weight (rswt_natcs16) from the public-release file. A survey of adults, not a census: China's census does not ask religion. Self-declared affiliation, 3,530 respondents in this province, which CFPS draws as an independent, self-representative subsample -- one of five provinces (Shanghai, Liaoning, Henan, Gansu, Guangdong) for which the survey supports province-level inference; the other provinces are not written. Weighted by rswt_natcs16, counting the 3,530 respondents who carry it. The same reading of the 2012 file, unweighted, reproduces Table 2 of Lu Yunfeng's report (https://web.archive.org/web/20140809051625/http://iwr.cass.cn/zjwh/201403/W020140303370398758556.pdf) within 0.5 points in every share, which is how the province codes are known to be right; that published table is unweighted, so it and this figure differ by the weight and not by the data. The 2016 questionnaire asks which religion a person believes in (信仰) where 2012 asked which they belong to (属于), and allows more than one answer, of which the first is counted; shares rose in every province between the two waves, and part of that rise is the wording. Affiliation, not practice."
+  },
+  {
+    "id": "CHN-guangdong",
+    "level": "admin1",
+    "name": "Guangdong",
+    "parent": "CHN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 86.3
+      },
+      {
+        "group": "Buddhism",
+        "pct": 11.3
+      },
+      {
+        "group": "Protestant",
+        "pct": 1.2
+      },
+      {
+        "group": "Taoism",
+        "pct": 1.0
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.2
+      },
+      {
+        "group": "Other religions",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "China Family Panel Studies 2016 adult questionnaire, religious affiliation (qm601) by province, tabulated with the wave's cross-sectional individual weight (rswt_natcs16) from the public-release file",
+        "url": "https://www.kaggle.com/datasets/edjngfebav/cfps201420162020-china-family-panel-studies",
+        "license": "CFPS is distributed by Peking University's Institute of Social Science Survey under a data-use agreement; the file was read from a third-party re-upload on Kaggle and only aggregate shares are kept"
+      }
+    ],
+    "country": "CHN",
+    "religion_year": 2016,
+    "religion_note": "China Family Panel Studies 2016 adult questionnaire, religious affiliation (qm601) by province, tabulated with the wave's cross-sectional individual weight (rswt_natcs16) from the public-release file. A survey of adults, not a census: China's census does not ask religion. Self-declared affiliation, 2,865 respondents in this province, which CFPS draws as an independent, self-representative subsample -- one of five provinces (Shanghai, Liaoning, Henan, Gansu, Guangdong) for which the survey supports province-level inference; the other provinces are not written. Weighted by rswt_natcs16, counting the 2,865 respondents who carry it. The same reading of the 2012 file, unweighted, reproduces Table 2 of Lu Yunfeng's report (https://web.archive.org/web/20140809051625/http://iwr.cass.cn/zjwh/201403/W020140303370398758556.pdf) within 0.5 points in every share, which is how the province codes are known to be right; that published table is unweighted, so it and this figure differ by the weight and not by the data. The 2016 questionnaire asks which religion a person believes in (信仰) where 2012 asked which they belong to (属于), and allows more than one answer, of which the first is counted; shares rose in every province between the two waves, and part of that rise is the wording. Affiliation, not practice."
+  },
+  {
+    "id": "CHN-gansu-province",
+    "level": "admin1",
+    "name": "Gansu Province",
+    "parent": "CHN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 82.5
+      },
+      {
+        "group": "Buddhism",
+        "pct": 9.4
+      },
+      {
+        "group": "Islam",
+        "pct": 4.8
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.2
+      },
+      {
+        "group": "Taoism",
+        "pct": 1.0
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.2
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "China Family Panel Studies 2016 adult questionnaire, religious affiliation (qm601) by province, tabulated with the wave's cross-sectional individual weight (rswt_natcs16) from the public-release file",
+        "url": "https://www.kaggle.com/datasets/edjngfebav/cfps201420162020-china-family-panel-studies",
+        "license": "CFPS is distributed by Peking University's Institute of Social Science Survey under a data-use agreement; the file was read from a third-party re-upload on Kaggle and only aggregate shares are kept"
+      }
+    ],
+    "country": "CHN",
+    "religion_year": 2016,
+    "religion_note": "China Family Panel Studies 2016 adult questionnaire, religious affiliation (qm601) by province, tabulated with the wave's cross-sectional individual weight (rswt_natcs16) from the public-release file. A survey of adults, not a census: China's census does not ask religion. Self-declared affiliation, 3,786 respondents in this province, which CFPS draws as an independent, self-representative subsample -- one of five provinces (Shanghai, Liaoning, Henan, Gansu, Guangdong) for which the survey supports province-level inference; the other provinces are not written. Weighted by rswt_natcs16, counting the 3,786 respondents who carry it. The same reading of the 2012 file, unweighted, reproduces Table 2 of Lu Yunfeng's report (https://web.archive.org/web/20140809051625/http://iwr.cass.cn/zjwh/201403/W020140303370398758556.pdf) within 0.5 points in every share, which is how the province codes are known to be right; that published table is unweighted, so it and this figure differ by the weight and not by the data. The 2016 questionnaire asks which religion a person believes in (信仰) where 2012 asked which they belong to (属于), and allows more than one answer, of which the first is counted; shares rose in every province between the two waves, and part of that rise is the wording. Affiliation, not practice."
+  }
+]

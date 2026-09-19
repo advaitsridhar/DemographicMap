@@ -1,11 +1,47 @@
-romania: National Institute of Statistics of Romania, Recensamantul Populatiei si al Locuintelor 2011, Volume 2: Populatia stabila -- structura etnica si confesionala
-  vol2_t1.xls: 136,704 bytes from the Archive capture of 2019-04-04
-  ethnicity table: 2 unrecognised headings: * NUMAR REDUS DE CAZURI DE OBSERVARE (MAI MIC DE 3), POPULATIA DUPA ETNIE LA RECENSAMINTELE DIN PERIOADA 1930-2011 - JUDETE
-  vol2_t12.xls: 178,688 bytes from the Archive capture of 2019-04-04
-  ethnicity: every county's groups add up to its printed population
-  religion: every county's groups add up to its printed population
-  42 counties with ethnicity, 42 with religion
-  most Hungarians: Harghita at 82.9% (257,707 people) -- Harghita and Covasna are the two counties with a Hungarian majority, so this should be one of them
-  wrote data/processed/romania_county.json (245 kB)
-  wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/romania_county.json (238 kB)
-  42 counties with ethnicity and religion, 2011 census
+cfps_microdata: edjngfebav/cfps201420162020-china-family-panel-studies
+Downloading to /home/runner/.cache/kagglehub/datasets/edjngfebav/cfps201420162020-china-family-panel-studies/2.archive...
+Extracting files...
+  unweighted 2012 tabulation reproduces the report's Table 2: sample sizes within 0.9%, every share within 0.20 points
+  2012 weighted, for comparison with the paper's unweighted table:
+      Liaoning Province        n= 2810  No religion 92.0, Buddhism 4.9, Protestant 1.9
+      Shanghai Municipality    n= 2284  No religion 89.2, Buddhism 8.3, Protestant 1.9
+      Henan Province           n= 3688  No religion 86.5, Buddhism 5.9, Protestant 5.7
+      Guangdong                n= 2825  No religion 92.5, Buddhism 6.0, Protestant 1.1
+      Gansu Province           n= 3756  No religion 89.4, Buddhism 5.9, Islam 3.4
+  2020: cfps2020person_202306.dta lacks qm601_s_1 or rswt_natcs20n (The following columns were not found in the Stata data set: qm601_s_1); not the affiliation question
+  2016: 33,244 adult rows, 32 provinces with answers
+  every province, weighted shares with weighted n, then unweighted n (only the five self-representative ones, marked *, are written):
+   * Gansu Province                       n= 3786 (unweighted  4096)  No religion 82.5, Buddhism 9.4, Islam 4.8, Protestant 2.2
+   * Henan Province                       n= 3530 (unweighted  3897)  No religion 82.8, Buddhism 7.9, Protestant 7.0, Islam 1.2
+   * Guangdong                            n= 2865 (unweighted  3062)  No religion 86.3, Buddhism 11.3, Protestant 1.2, Taoism 1.0
+   * Liaoning Province                    n= 2775 (unweighted  2966)  No religion 89.5, Buddhism 6.9, Protestant 2.2, Islam 0.8
+   * Shanghai Municipality                n= 1839 (unweighted  1997)  No religion 79.3, Buddhism 16.6, Protestant 2.1, Roman Catholic 1.0
+     Sichuan Province                     n= 1676 (unweighted  1834)  No religion 84.9, Buddhism 14.4, Other religions 0.3, Roman Catholic 0.2
+     Hebei Province                       n= 1653 (unweighted  1861)  No religion 92.5, Buddhism 3.1, Protestant 2.4, Roman Catholic 1.3
+     Shandong Province                    n= 1433 (unweighted  1551)  No religion 94.2, Buddhism 3.9, Protestant 1.1, Taoism 0.4
+     Shanxi Province                      n= 1295 (unweighted  1411)  No religion 90.3, Buddhism 7.8, Protestant 1.7, Other religions 0.2
+     Guizhou Province                     n=  907 (unweighted   990)  No religion 93.4, Buddhism 3.9, Roman Catholic 1.3, Other religions 0.9
+     Hunan Province                       n=  874 (unweighted   947)  No religion 91.7, Buddhism 5.7, Taoism 1.1, Protestant 0.7
+     Yunnan Province                      n=  856 (unweighted   921)  No religion 79.1, Buddhism 15.2, Islam 3.2, Protestant 2.1
+     Heilongjiang Province                n=  836 (unweighted   913)  No religion 90.4, Buddhism 4.8, Protestant 4.2, Islam 0.5
+     Shaanxi Province                     n=  727 (unweighted   776)  No religion 94.9, Buddhism 3.1, Protestant 1.0, Islam 0.6
+     Jiangsu Province                     n=  681 (unweighted   722)  No religion 78.9, Buddhism 17.4, Protestant 3.5, Roman Catholic 0.3
+     Guangxi Zhuang Autonomous Region     n=  680 (unweighted   742)  No religion 88.9, Buddhism 4.8, Taoism 3.6, Other religions 2.1
+     Zhejiang Province                    n=  651 (unweighted   722)  No religion 77.1, Buddhism 18.5, Protestant 2.8, Islam 0.8
+     Anhui Province                       n=  629 (unweighted   687)  No religion 82.8, Buddhism 10.1, Protestant 4.2, Other religions 1.6
+     Jiangxi Province                     n=  602 (unweighted   663)  No religion 89.9, Buddhism 8.7, Protestant 0.4, Taoism 0.4
+     Jilin Province                       n=  559 (unweighted   610)  No religion 88.4, Buddhism 8.1, Protestant 3.0, Other religions 0.5
+     Hubei Province                       n=  468 (unweighted   510)  No religion 91.5, Buddhism 4.9, Protestant 2.1, Roman Catholic 0.6
+     Fujian Province                      n=  357 (unweighted   393)  Buddhism 55.5, No religion 33.6, Protestant 3.8, Other religions 3.5
+     Chongqing Municipality               n=  292 (unweighted   321)  No religion 96.3, Buddhism 3.0, Protestant 0.5, Other religions 0.2
+     Beijing Municipality                 n=  281 (unweighted   311)  No religion 90.9, Buddhism 4.6, Islam 3.9, Protestant 0.6
+     Tianjin Municipality                 n=  201 (unweighted   214)  No religion 97.9, Buddhism 1.0, Roman Catholic 0.7, Protestant 0.4
+     Xinjiang Uyghur Autonomous Region    n=   41 (unweighted    44)  No religion 95.3, Protestant 4.2, Buddhism 0.4
+     Inner Mongolia Autonomous Region     n=   19 (unweighted    23)  No religion 69.4, Buddhism 30.6
+     Ningxia Hui Autonomous Region        n=   13 (unweighted    15)  No religion 66.7, Protestant 28.6, Buddhism 4.7
+     Hainan Province                      n=   10 (unweighted    11)  No religion 100.0
+     Qinghai Province                     n=    7 (unweighted     7)  No religion 100.0
+     Tibet Autonomous Region              n=    5 (unweighted     5)  No religion 100.0
+                                       -9 n=    2 (unweighted     2)  No religion 100.0
+  5 provinces written from the 2016 wave
+  wrote data/processed/cfps_microdata_province.json (15 kB)
