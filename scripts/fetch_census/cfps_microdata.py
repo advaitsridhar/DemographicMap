@@ -21,11 +21,23 @@ printed in the log with their sample sizes, so a reader can see them, and
 are not written: a figure the survey says it cannot support is not a figure.
 
 **The reader checks itself against the published table.** Before anything
-is written, the 2012 file is tabulated the same way and compared with Table
-2 of that report, which prints the five provinces' shares and sample sizes.
-The unweighted counts must match exactly -- which proves the province code
-mapping -- and the weighted shares within half a point, which proves the
-weight. If either fails, nothing is written.
+is written, the 2012 file is tabulated and compared with Table 2 of that
+report, which prints the five provinces' shares and sample sizes. The
+report's table turns out to be *unweighted*: an unweighted tabulation of the
+2012 file reproduces every province within a quarter of a point, and no
+weighting comes closer than half a point (Shanghai's Buddhism is 10.4%
+unweighted and 8.3% with the cross-sectional weight). So the check is the
+unweighted one, which proves the province codes and the non-answer rule,
+with the sample sizes allowed to differ by the few respondents the 201906
+re-release adds or drops. If it fails, nothing is written.
+
+**What is written is weighted.** The cross-sectional individual weight
+(``rswt_natcs``) is what CFPS publishes for population estimates, and within
+a self-representative province it is valid for the province; respondents
+who carry no weight -- entrants since the 2010 baseline -- are not in it,
+and the sample size in each note counts only those who are. The note says
+that the paper's own figure is unweighted, so a reader who compares the two
+sees a method and not a disagreement.
 
 Provenance: CFPS is produced and distributed by Peking University's
 Institute of Social Science Survey under a data-use agreement; the Kaggle
@@ -82,23 +94,29 @@ PROVINCES: dict[int, str] = {
     64: "Ningxia Hui Autonomous Region", 65: "Xinjiang Uyghur Autonomous Region",
 }
 SELF_REPRESENTATIVE = {31, 21, 41, 62, 44}
-SHARE_TOLERANCE = 0.5     # points, against the paper's printed shares
+SHARE_TOLERANCE = 0.5     # points, unweighted 2012 against the paper's printed shares
+N_TOLERANCE = 0.01        # the 201906 re-release differs from the 2013 one by a few rows
 
 
-def tabulate(rows: list[tuple[int, int, float]]) -> dict[int, dict[str, Any]]:
-    """{province code: {"n": unweighted, "shares": {group: weighted %}}}.
+def tabulate(rows: list[tuple[int, int, float]], *, weighted: bool = True
+             ) -> dict[int, dict[str, Any]]:
+    """{province code: {"n": respondents counted, "shares": {group: %}}}.
 
     ``rows`` are (province, answer code, weight). A negative answer code is a
     non-answer (missing, refused, not applicable, don't know) and is left
     out of both the count and the denominator, as the paper's tables do.
+    Weighted, a respondent with no positive weight is left out too;
+    unweighted, every valid answer counts once.
     """
     n: dict[int, int] = defaultdict(int)
     weight: dict[int, dict[str, float]] = defaultdict(lambda: defaultdict(float))
     for prov, code, w in rows:
-        if code not in CODES or w is None or w <= 0:
+        if code not in CODES:
+            continue
+        if weighted and (w is None or w <= 0):
             continue
         n[prov] += 1
-        weight[prov][CODES[code]] += w
+        weight[prov][CODES[code]] += w if weighted else 1.0
     out = {}
     for prov in n:
         total = sum(weight[prov].values())
@@ -119,25 +137,35 @@ def read_wave(root: Path, stem: str, prov_col: str, ans_col: str, w_col: str
 
 
 def check_against_paper(table: dict[int, dict[str, Any]]) -> None:
-    """The 2012 tabulation must reproduce the report's Table 2, or nothing is written."""
+    """The unweighted 2012 tabulation must reproduce the report's Table 2.
+
+    ``table`` is tabulate(..., weighted=False). Sample sizes may differ by
+    the re-release's few rows; shares may not differ by more than half a
+    point. Either failing means the province codes or the non-answer rule
+    are wrong, and nothing is written.
+    """
     by_name = {name: (shares, n) for name, _, shares, n in PAPER_TABLE}
+    worst_n = worst_share = 0.0
     for code in sorted(SELF_REPRESENTATIVE):
         name = PROVINCES[code]
         printed, n_printed = by_name[name]
         got = table.get(code)
         if got is None:
             raise SystemExit(f"cfps_microdata: 2012 has no rows for {name}")
-        if got["n"] != n_printed:
+        drift = abs(got["n"] - n_printed) / n_printed
+        if drift > N_TOLERANCE:
             raise SystemExit(f"cfps_microdata: 2012 {name}: {got['n']} respondents "
                              f"against the paper's {n_printed}; the province code mapping "
                              "or the non-answer rule is wrong")
+        worst_n = max(worst_n, drift)
         for group, pct in zip(PAPER_GROUPS, printed):
-            mine = got["shares"].get(group, 0.0)
-            if abs(mine - pct) > SHARE_TOLERANCE:
-                raise SystemExit(f"cfps_microdata: 2012 {name} {group}: {mine} against the "
-                                 f"paper's {pct}; the weight is wrong")
-    log("  2012 tabulation reproduces the report's Table 2: sample sizes exactly, "
-        f"shares within {SHARE_TOLERANCE} points")
+            gap = abs(got["shares"].get(group, 0.0) - pct)
+            if gap > SHARE_TOLERANCE:
+                raise SystemExit(f"cfps_microdata: 2012 {name} {group}: "
+                                 f"{got['shares'].get(group, 0.0)} against the paper's {pct}")
+            worst_share = max(worst_share, gap)
+    log(f"  unweighted 2012 tabulation reproduces the report's Table 2: sample sizes "
+        f"within {worst_n:.1%}, every share within {worst_share:.2f} points")
 
 
 def diagnose(root: Path) -> None:
@@ -191,7 +219,14 @@ def build(root: Path) -> tuple[int, list[dict[str, Any]]]:
     from common import slugify
     # Self-check first, on the wave the paper printed.
     y2012 = [w for w in WAVES if w[0] == 2012][0]
-    check_against_paper(tabulate(read_wave(root, *y2012[1:])))
+    rows2012 = read_wave(root, *y2012[1:])
+    check_against_paper(tabulate(rows2012, weighted=False))
+    w2012 = tabulate(rows2012, weighted=True)
+    log("  2012 weighted, for comparison with the paper's unweighted table:")
+    for code in sorted(SELF_REPRESENTATIVE):
+        top = sorted(w2012[code]["shares"].items(), key=lambda kv: -kv[1])[:3]
+        log(f"      {PROVINCES[code]:24} n={w2012[code]['n']:>5}  "
+            + ", ".join(f"{g} {p}" for g, p in top))
     # Then the newest wave that is there and carries the question.
     for year, stem, prov_col, ans_col, w_col in WAVES:
         if not (root / f"{stem}.dta").exists():
@@ -205,19 +240,21 @@ def build(root: Path) -> tuple[int, list[dict[str, Any]]]:
         break
     else:
         raise SystemExit("cfps_microdata: no wave carries the affiliation question")
-    table = tabulate(rows)
+    table = tabulate(rows, weighted=True)
+    plain = tabulate(rows, weighted=False)
     log(f"  {year}: {len(rows):,} adult rows, {len(table)} provinces with answers")
-    log("  every province, weighted shares and unweighted n (only the five "
-        "self-representative ones are written):")
+    log("  every province, weighted shares with weighted n, then unweighted n "
+        "(only the five self-representative ones, marked *, are written):")
     for code in sorted(table, key=lambda c: -table[c]["n"]):
         mark = "*" if code in SELF_REPRESENTATIVE else " "
         top = sorted(table[code]["shares"].items(), key=lambda kv: -kv[1])[:4]
-        log(f"   {mark} {PROVINCES.get(code, code):36} n={table[code]['n']:>5}  "
+        log(f"   {mark} {PROVINCES.get(code, code):36} n={table[code]['n']:>5} "
+            f"(unweighted {plain.get(code, {}).get('n', 0):>5})  "
             + ", ".join(f"{g} {p}" for g, p in top))
     src = [{"field": "religion",
             "name": (f"China Family Panel Studies {year} adult questionnaire, religious "
                      f"affiliation (qm601) by province, tabulated with the wave's "
-                     f"cross-sectional individual weight from the public-release file"),
+                     f"cross-sectional individual weight ({w_col}) from the public-release file"),
             "url": KAGGLE_URL,
             "license": ("CFPS is distributed by Peking University's Institute of Social "
                         "Science Survey under a data-use agreement; the file was read from "
@@ -238,10 +275,13 @@ def build(root: Path) -> tuple[int, list[dict[str, Any]]]:
                 f"respondents in this province, which CFPS draws as an independent, "
                 f"self-representative subsample -- one of five provinces (Shanghai, "
                 f"Liaoning, Henan, Gansu, Guangdong) for which the survey supports "
-                f"province-level inference; the other provinces are not written. The "
-                f"same reading of the 2012 file reproduces the published Table 2 of "
-                f"Lu Yunfeng's report ({PAPER_URL}) exactly in sample size and within "
-                f"{SHARE_TOLERANCE} points in every share. Affiliation, not practice.")))
+                f"province-level inference; the other provinces are not written. "
+                f"Weighted by {w_col}, counting the {t['n']:,} respondents who carry it. "
+                f"The same reading of the 2012 file, unweighted, reproduces Table 2 of "
+                f"Lu Yunfeng's report ({PAPER_URL}) within {SHARE_TOLERANCE} points in "
+                f"every share, which is how the province codes are known to be right; "
+                f"that published table is unweighted, so it and this figure differ by "
+                f"the weight and not by the data. Affiliation, not practice.")))
     return year, out
 
 

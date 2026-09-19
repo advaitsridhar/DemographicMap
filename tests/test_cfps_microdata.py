@@ -17,9 +17,22 @@ class Tabulate(unittest.TestCase):
         self.assertEqual(t[31]["shares"], {"Buddhism": 50.0, "No religion": 50.0})
         self.assertEqual(t[21], {"n": 1, "shares": {"Protestant": 100.0}})
 
-    def test_a_missing_weight_is_left_out(self):
-        t = m.tabulate([(31, 1, None), (31, 6, 1.0)])
-        self.assertEqual(t[31], {"n": 1, "shares": {"No religion": 100.0}})
+    def test_a_missing_weight_is_left_out_only_when_weighing(self):
+        rows = [(31, 1, None), (31, 6, 1.0)]
+        self.assertEqual(m.tabulate(rows), {31: {"n": 1, "shares": {"No religion": 100.0}}})
+        self.assertEqual(m.tabulate(rows, weighted=False),
+                         {31: {"n": 2, "shares": {"Buddhism": 50.0, "No religion": 50.0}}})
+
+    def test_the_self_check_allows_the_re_release_s_few_rows(self):
+        by_name = {name: (shares, n) for name, _, shares, n in m.PAPER_TABLE}
+        table = {}
+        for code in m.SELF_REPRESENTATIVE:
+            shares, n = by_name[m.PROVINCES[code]]
+            table[code] = {"n": n + 3, "shares": dict(zip(m.PAPER_GROUPS, shares))}
+        m.check_against_paper(table)   # three rows more is the re-release, not an error
+        table[31]["n"] = by_name["Shanghai Municipality"][1] + 300
+        with self.assertRaises(SystemExit):
+            m.check_against_paper(table)
 
     def test_the_self_check_refuses_a_wrong_count(self):
         table = {code: {"n": 1, "shares": {"No religion": 100.0}}
