@@ -1,4 +1,72 @@
 vietnam: General Statistics Office of Viet Nam, Kết quả toàn bộ Tổng điều tra dân số và nhà ở năm 2019 (Completed Results of the 2019 Viet Nam Population and Housing Census), Table 2: population by ethnic group, urban/rural, sex, socio-economic region and province/city, 1 April 2019
   fetched Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf (9.5 MB)
   842 pages
-vietnam: the row label 'TOÀN QUỐC - ENTIRE COUNTRY' is neither a unit nor one of the 54 groups this reader knows; the table changed or the text extraction garbled it
+  page 51: 'North and South Central Coast' is a unit this reader does not name; read and checked, not written
+  Table 2: {'country': 1, 'region': 5, 'province': 63} units on pages 44-208
+  56 row labels: ['Ba Na', 'Bru Vân Kiều', 'Brâu', 'Bố Y', 'Chu Ru', 'Chăm', 'Chơ Ro', 'Chứt', 'Co', 'Cơ Ho', 'Cơ Lao', 'Cơ Tu', 'Cống', 'Dao', 'Gia Rai', 'Giáy', 'Gié Triêng', 'Hoa', 'Hrê', 'Hà Nhì', 'Khmer', 'Kháng', 'Không xác định', 'Khơ Mú', 'Kinh', 'La Chí', 'La Ha', 'La Hủ', 'Lào', 'Lô Lô', 'Lự', 'Mnông', 'Mông', 'Mường', 'Mạ', 'Mảng', 'Ngái', 'Người nước ngoài', 'Nùng', 'Phù Lá', 'Pu Péo', 'Pà Thẻn', 'Raglay', 'Rơ Măm', 'Si La', 'Sán Chay', 'Sán Dìu', 'Thái', 'Thổ', 'Tà Ôi', 'Tày', 'Xinh Mun', 'Xtiêng', 'Xơ Đăng', 'Ê Đê', 'Ơ Đu']
+  provinces add to 96,208,984 people and 82,085,826 Kinh; published 96,208,984 and 82,085,826; the volume's national row agrees
+    Hà Nội             8,053,663  Kinh 98.6, Mường 0.8, Tày 0.2
+    Hà Giang             854,679  Mông 34.3, Tày 22.6, Dao 14.9
+    Cao Bằng             530,341  Tày 40.8, Nùng 29.8, Mông 11.7
+    Bắc Kạn              313,905  Tày 52.6, Dao 17.9, Kinh 12.0
+    Tuyên Quang          784,811  Kinh 43.2, Tày 26.2, Dao 13.4
+    Lào Cai              730,420  Kinh 33.8, Mông 25.1, Tày 14.8
+    Điện Biên            598,856  Mông 38.1, Thái 35.7, Kinh 17.4
+    Lai Châu             460,196  Thái 31.0, Mông 24.0, Kinh 15.9
+    Sơn La             1,248,415  Thái 53.6, Kinh 16.2, Mông 16.0
+    Yên Bái              821,030  Kinh 42.7, Tày 18.3, Mông 13.0
+    Hòa Bình             854,131  Mường 64.3, Kinh 25.7, Thái 4.0
+    Thái Nguyên        1,286,751  Kinh 70.1, Tày 11.7, Nùng 6.3
+    Lạng Sơn             781,655  Nùng 42.9, Tày 36.1, Kinh 16.1
+    Quảng Ninh         1,320,324  Kinh 87.7, Dao 5.6, Tày 3.1
+    Bắc Giang          1,803,950  Kinh 85.7, Nùng 5.3, Tày 3.3
+    Phú Thọ            1,463,726  Kinh 82.9, Mường 14.9, Dao 1.1
+    Vĩnh Phúc          1,151,154  Kinh 95.2, Sán Dìu 4.0, Tày 0.2
+    Bắc Ninh           1,368,840  Kinh 94.4, Tày 1.8, Mường 1.1
+    Hải Dương          1,892,254  Kinh 99.4, Tày 0.1, Thái 0.1
+    Hải Phòng          2,028,514  Kinh 99.6, Tày 0.1, Thái 0.1
+    Hưng Yên           1,252,731  Kinh 99.1, Tày 0.2, Thái 0.2
+    Thái Bình          1,860,447  Kinh 99.8, Tày 0.1, Other ethnic groups 0.1
+    Hà Nam               852,800  Kinh 99.8, Mường 0.1, Tày 0.0
+    Nam Định           1,780,393  Kinh 99.8, Other ethnic groups 0.2
+    Ninh Bình            982,487  Kinh 97.0, Mường 2.8, Tày 0.1
+    Thanh Hóa          3,640,128  Kinh 81.8, Mường 10.3, Thái 6.8
+    Nghệ An            3,327,791  Kinh 85.2, Thái 10.2, Thổ 2.2
+    Hà Tĩnh            1,288,866  Kinh 99.7, Thái 0.1, Mường 0.1
+    Quảng Bình           895,430  Kinh 97.1, Bru Vân Kiều 2.1, Chứt 0.7
+    Quảng Trị            632,375  Kinh 86.3, Bru Vân Kiều 11.0, Tà Ôi 2.6
+    Thừa Thiên Huế     1,128,620  Kinh 95.1, Tà Ôi 3.1, Cơ Tu 1.5
+    Đà Nẵng            1,134,310  Kinh 99.5, Cơ Tu 0.2, Hoa 0.1
+    Quảng Nam          1,495,812  Kinh 90.6, Cơ Tu 3.7, Xơ Đăng 3.2
+    Quảng Ngãi         1,231,697  Kinh 84.8, Hrê 10.8, Co 2.7
+    Bình Định          1,486,918  Kinh 97.2, Ba Na 1.5, Hrê 0.7
+    Phú Yên              872,964  Kinh 93.1, Ê Đê 2.9, Chăm 2.6
+    Khánh Hòa          1,231,107  Kinh 94.1, Raglay 4.5, Cơ Ho 0.5
+    Ninh Thuận           590,467  Kinh 75.6, Raglay 11.9, Chăm 11.4
+    Bình Thuận         1,230,808  Kinh 92.1, Chăm 3.2, Raglay 1.4
+    Kon Tum              540,438  Kinh 45.1, Xơ Đăng 24.6, Ba Na 12.7
+    Gia Lai            1,513,847  Kinh 53.8, Gia Rai 30.4, Ba Na 12.5
+    Đắk Lắk            1,869,322  Kinh 64.3, Ê Đê 18.8, Nùng 4.1
+    Đắk Nông             622,168  Kinh 67.5, Mnông 8.1, Mông 5.6
+    Lâm Đồng           1,296,906  Kinh 74.3, Cơ Ho 13.5, Mạ 3.0
+    Bình Phước           994,679  Kinh 80.3, Xtiêng 9.7, Tày 2.5
+    Tây Ninh           1,169,165  Kinh 98.3, Khmer 0.8, Chăm 0.3
+    Bình Dương         2,426,561  Kinh 95.0, Khmer 2.7, Hoa 0.7
+    Đồng Nai           3,097,107  Kinh 93.6, Hoa 2.8, Khmer 0.8
+    Bà Rịa–Vũng Tàu    1,148,313  Kinh 97.8, Hoa 0.8, Chơ Ro 0.7
+    Ho Chi Minh        8,993,082  Kinh 94.8, Hoa 4.3, Khmer 0.6
+    Long An            1,688,547  Kinh 99.1, Khmer 0.6, Hoa 0.2
+    Tiền Giang         1,764,185  Kinh 99.8, Hoa 0.1, Khmer 0.1
+    Bến Tre            1,288,463  Kinh 99.7, Hoa 0.2, Khmer 0.1
+    Trà Vinh           1,009,168  Kinh 67.8, Khmer 31.5, Hoa 0.7
+    Vĩnh Long          1,022,791  Kinh 97.4, Khmer 2.2, Hoa 0.4
+    Đồng Tháp          1,599,504  Kinh 99.9, Hoa 0.0, Other ethnic groups 0.1
+    An Giang           1,908,352  Kinh 95.1, Khmer 4.0, Chăm 0.6
+    Kiên Giang         1,723,067  Kinh 86.3, Khmer 12.2, Hoa 1.4
+    Cần Thơ            1,235,171  Kinh 97.5, Khmer 1.6, Hoa 0.9
+    Hậu Giang            733,017  Kinh 96.8, Khmer 2.5, Hoa 0.7
+    Sóc Trăng          1,199,653  Kinh 64.6, Khmer 30.2, Hoa 5.2
+    Bạc Liêu             907,236  Kinh 90.1, Khmer 8.2, Hoa 1.7
+    Cà Mau             1,194,476  Kinh 97.2, Khmer 2.2, Hoa 0.5
+  wrote data/processed/vietnam_province.json (294 kB)
+  wrote 63 provinces to vietnam_province.json
