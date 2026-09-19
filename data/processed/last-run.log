@@ -1,10 +1,29 @@
-ethnicity: fetching
-  ethnicity_planning_area_census2020.csv: 388 rows, 16 columns, from data.gov.sg d_e7ae90176a68945837ad67892b898466
-religion: fetching
-  religion_planning_area_census2020_datagovsg.csv: 32 rows, 11 columns, from data.gov.sg d_a58564fbed922609a0f79af96069dd9b
-language: fetching
-  language_planning_area_census2020_datagovsg.csv: 32 rows, 29 columns, from data.gov.sg d_21f546492a87dec38391fc72eb4c7890
-religion_2010: fetching
-  religion_planning_area_census2010.csv: 37 rows, 11 columns, from data.gov.sg d_d4be7f8ba23ba93e5d59564d1dfb5eaa
-language_2010: fetching
-  language_planning_area_census2010.csv: 37 rows, 9 columns, from data.gov.sg d_c3ed3269adea97f53092d70c4d6d9682
+korea_nationality: Ministry of Justice (Korea Immigration Service), registered foreign residents by city/county/district and nationality at 31 December 2023 (시군구별 국적(지역)별 등록외국인 체류현황, data.go.kr dataset 15108413)
+  cached moj_registered_foreigners_by_district_2022_2023.zip (0.1 MB)
+  2023 시군구별 국적(지역)별 등록외국인 체류 현황.csv: 322,310 bytes
+  229 units in 17 provinces
+  register: 17 provinces listed
+    서울특별시: 26 rows
+    부산광역시: 17 rows
+    대구광역시: 10 rows
+    인천광역시: 11 rows
+    광주광역시: 6 rows
+    대전광역시: 6 rows
+    울산광역시: 6 rows
+    세종특별자치시: 2 rows
+  retry 1/3 after 3s :: Remote end closed connection without response
+    경기도: 49 rows
+    강원특별자치도: 19 rows
+    충청북도: 16 rows
+    충청남도: 18 rows
+    전라북도: 17 rows
+  retry 1/3 after 3s :: Remote end closed connection without response
+    전라남도: 23 rows
+  retry 1/3 after 3s :: Remote end closed connection without response
+  retry 2/3 after 6s :: Remote end closed connection without response
+    경상북도: 25 rows
+    경상남도: 24 rows
+  retry 1/3 after 3s :: Remote end closed connection without response
+  retry 2/3 after 6s :: Remote end closed connection without response
+    제주특별자치도: 3 rows
+korea_nationality: '세종특별자치시' names no district
