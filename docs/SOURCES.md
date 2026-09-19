@@ -5692,6 +5692,131 @@ proxy refuses the connection), so the adapter runs on the workflow runner;
 it reads only the report's pages 36 to 80, finding the three pages by title,
 because extracting all 147 costs the runner most of an hour.
 
+### Taiwan, resolved by the owner's decision
+
+Taiwan's 22 counties and cities, 23.6 million people, carried nothing for
+religion, ethnicity or language -- the largest wholly blank country on the
+map. The census asks language and not the other two; the one Wikipedia table
+measured earlier (languages used at home by division) is multi-response and
+was rightly not read. On **19 September 2026** the map's owner decided that
+Taiwan, like Japan the same day, should carry what official and secondary
+sources can say, each figure labelled for what it is: a count as a
+composition, everything else as a `modelled` estimate. `NOT_COLLECTED_POLICY`
+never had a `TWN` entry, so nothing had to leave it. `scripts/fetch_census/taiwan.py`
+is that decision, and this is what it read, what it modelled, and what it
+could not reach.
+
+**What the sandbox could not do.** Every Taiwanese host answered nothing at
+all from the build sandbox (`curl` returns no status), so every read below
+went through the runner. From the runner, `census.dgbas.gov.tw` answers 403,
+`religion.moi.gov.tw` (the temple and church registry, and the XML the open
+data portal links for datasets 8203 and 8204) times out on every request,
+`state.gov` answers 403 and its archived copy is a script shell, and
+`ws.dgbas.gov.tw` sends its certificate without the intermediate above it --
+which the earlier attempt recorded as a refusal, and which `probe_pdf --aia`
+repairs the way `scripts/probe_tls.py` documents, with full verification.
+The historical yearbook workbooks on `ws.moi.gov.tw` (`y06-01.xls` and
+neighbours) answer a 307 to an error page; the historical monthly workbooks
+beside them read fine but stop at December 2016. The current tables are on
+`statis.moi.gov.tw`, whose menu is built by a script from an array of report
+ids and whose files are static under `micst/report/<type><id>.xlsx`.
+
+**Language, read.** The DGBAS results release of the 2020 census
+(109年人口及住宅普查總報告統計結果, 30 November 2022, the PDF linked from
+`dgbas.gov.tw/News_Content.aspx?n=3602&s=230162`) prints on page 32 Table
+2-5, 6歲以上本國籍常住人口使用語言情形: for the country, the regions and every
+county, the *main* language currently used -- 國語, 閩南語, 客語, 原住民族語,
+其他 -- as a single-answer composition of residents of ROC nationality aged 6
+and over, and beside it the secondary language, which is not read. This is
+the newer of the two censuses that asked (the 2010 census published only a
+multiple-response table) and it is a composition, so it is written as a
+list under `language_basis` "main language currently used, resident
+population of ROC nationality aged 6 and over", 原住民族語 as "Taiwanese
+indigenous languages" (placed under a new Formosan branch of the Austronesian
+family; Yami is Batanic and is deliberately not listed under it). Nationally:
+Mandarin 66.4, Hokkien 31.7, Hakka 1.5, indigenous 0.2, other 0.2, of
+21,784,369 people. The reader refuses the table unless the 22 counties' base
+populations sum to the printed total exactly and the national row rebuilt
+from them, weighted by those bases, sits within half a point of the printed
+one (it sits within 0.03). Hsinchu County is 11.5% Hakka-speaking and Miaoli
+18.1; Hualien and Taitung 4.1 and 6.4 indigenous-language; Lienchiang 5.2
+"other", which is Matsu's Eastern Min. The 2010 census's own table, by
+contrast, has Hakka at 56% of Hsinchu County -- that was the share of
+people who use Hakka at home at all.
+
+**Ethnicity, modelled.** Three official figures, and one assumption:
+
+* *Indigenous*: the household register's count of people holding indigenous
+  status by county, from the Ministry of the Interior's current monthly
+  bulletin (內政統計月報 table 1.4, 現住原住民人口數), over the same month's
+  registered population from table 1.1 of the same bulletin. Both are the
+  register, both are the same month, and the reader refuses them if their
+  months differ or their counties do not sum to their own totals. The
+  Council of Indigenous Peoples publishes the same count by people and
+  county (台閩縣市原住民族人口-按性別族別, July 2026: 638,466, Amis 238,027)
+  from the same register; it was read and agrees, and the Ministry's table
+  is cited because its population sits beside it.
+* *Hakka*: the Hakka Affairs Council's 110年全國客家人口暨語言基礎資料調查研究
+  (2021; `hakka.gov.tw/File/Attach/37585/File_96737.pdf`, 481 pages),
+  Figure 8, page 12: for each county, the December 2020 registered
+  population and the share meeting the Hakka Basic Act definition (Hakka
+  descent or connection, and self-identification as Hakka), from 63,111
+  telephone interviews weighted to the register. Nationally 19.82%, 4,669,192
+  people; Hsinchu County 67.8, Miaoli 62.5, Taoyuan 39.9, Hualien 34.2,
+  Hsinchu City 30.3. The reader checks that the counties' populations and
+  Hakka counts sum to the report's totals and that each county's count over
+  its population reproduces its printed share.
+* *The rest*: Table 4-1 of the same report, page 116, the national *single*
+  self-identification in 2021: Hoklo 71.3, Hakka 15.7, mainlander 5.0,
+  indigenous 3.0, "Taiwanese" only 3.8, other 0.1, don't know 1.0. Every
+  county's remainder after indigenous and Hakka is split Hoklo : mainlander
+  in the ratio 71.3 : 5.0, the 4.9% who chose "Taiwanese", other or no answer
+  spread over both. **This is uniform and therefore an assumption**: it says
+  nothing about where the 1949 migrants and their descendants settled, and
+  it is why every county is `modelled`
+  (`tier1-register-counts-plus-survey-share-plus-uniform-split`) even
+  though two of its four parts are official counts. The Hakka share is of
+  registered residents and the indigenous count of the same, and a person
+  can be both. Labels: "Taiwanese indigenous peoples" (a new node under East
+  and Southeast Asian ancestry holding the sixteen recognised peoples),
+  "Hakka", "Hoklo Taiwanese", "Mainland Chinese (waishengren)".
+
+**Religion, modelled.** No census or register counts affiliation. The
+national prior is Pew Research Center's *Religion and Spirituality in East
+Asian Societies* (17 June 2024; adults surveyed in 2023), read from Pew's
+own page on the runner: Buddhist 28%, Daoist 24%, Christian 7% (the three
+groups Pew names with the unaffiliated sum to 62%), other 12%, no religion
+27%, don't know 2% (left out and the rest scaled). A 2021 figure that
+Wikipedia attributes to the State Department's religious-freedom report
+(folk beliefs 27.9, none 23.9, Buddhism 19.8, Taoism 18.7, Protestant 5.5,
+Yiguandao 2.2, Catholic 1.4) could not be read at its source and is not
+used. The county signal is the Ministry of the Interior's yearbook table
+宗教教務概況 (內政統計年報, section 6, table 01, `statis.moi.gov.tw`
+report 331030): registered temples by tradition and churches by county.
+Used only *relatively*, as for Japan: each tradition's share of a county's
+buildings over its share of the nation's, clipped to between 1/3 and 3,
+scales the survey's share; the four affiliated shares are rescaled to the
+survey's affiliated total; no religion is held at the national 27.6%
+because nothing gives it by county; Christianity and "other" are bounded at
+25% absolutely, so a county of village churches or one-room halls cannot
+come out mostly Christian on a building count. Buddhist temples tilt
+Buddhism, Taoist temples Taoism, churches Christianity, every other
+registered tradition "other". The record carries the ratios under `tilt`
+and any bound group under `capped`; the run log prints the five counties
+the tilt moves furthest from the prior. **No backtest exists and none is
+claimed**: there is no county-level self-identification figure to score
+against, so the estimate has no `backtest` key and its note says why.
+
+**What remains unknowable.** Whether anyone in a given county has a
+religion: the model repeats Pew's national 27.6% no-religion on Hualien and
+on Taipei alike. Where mainlanders and their descendants live: the model
+gives every county the same Hoklo-mainlander ratio, and the veterans'
+villages of Taoyuan and the mountain counties' plains townships are not in
+it. Any identity the register does not hold: new immigrants and their
+children, who are in the Hoklo-mainlander remainder. Which of the sixteen
+peoples an indigenous person belongs to, which the Council's table gives and
+the composition does not carry.
+
 ## Derived values: what follows without reading more
 
 `docs/MODELLING.md` measures what modelling the blank regions could and could

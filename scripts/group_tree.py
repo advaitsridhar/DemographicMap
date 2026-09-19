@@ -387,6 +387,16 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
     ),
     "Tai-Kadai languages": ("Thai", "Lao", "Shan", "Zhuang", "Isan"),
     "Hmong-Mien languages": ("Hmong", "Miao", "Mien", "Yao"),
+    # Taiwan's indigenous languages, the Austronesian family's own branches
+    # outside Malayo-Polynesian. The census counts them as one category
+    # (原住民族語), which is the label the map writes; the peoples' languages
+    # are named so a finer table can be placed. Yami (Tao) is Batanic and so
+    # Malayo-Polynesian, and is deliberately not listed here.
+    "Formosan languages": (
+        "Taiwanese indigenous languages", "Amis", "Atayal", "Paiwan", "Bunun",
+        "Rukai", "Puyuma", "Tsou", "Saisiyat", "Thao", "Kavalan", "Truku",
+        "Sakizaya", "Seediq", "Saaroa", "Kanakanavu",
+    ),
     "Malayo-Polynesian languages": (
         "Malay", "Indonesian", "Javanese", "Sundanese", "Madurese",
         "Minangkabau", "Buginese", "Balinese", "Acehnese", "Batak",
@@ -519,7 +529,7 @@ LANGUAGE_FAMILY: dict[str, tuple[str, ...]] = {
         "Adamawa-Ubangi languages",
     ),
     "Austronesian languages": ("Malayo-Polynesian languages",
-                               "Oceanic languages"),
+                               "Oceanic languages", "Formosan languages"),
     "Turkic languages": ("Turkic languages",),
     "Uralic languages": ("Uralic languages",),
     "Caucasian languages": ("Kartvelian languages",
@@ -853,6 +863,15 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Sama", "Bajau", "Badjao", "Iban", "Kadazan", "Melanau", "Murut",
         "Bidayuh", "Orang Asli", "Sangir/Sangil", "Molbog",
     ),
+    # Taiwan's sixteen recognised indigenous peoples, Austronesian all, as
+    # the Council of Indigenous Peoples names them; the map writes the
+    # register's one category and the peoples are here for a finer table.
+    "Taiwanese indigenous peoples": (
+        "Indigenous Taiwanese", "Taiwanese aborigines", "Amis", "Atayal",
+        "Paiwan", "Bunun", "Rukai", "Puyuma", "Tsou", "Saisiyat", "Yami",
+        "Tao", "Thao", "Kavalan", "Truku", "Taroko", "Sakizaya", "Seediq",
+        "Saaroa", "Hla'alua", "Kanakanavu",
+    ),
     "Philippine peoples": (
         "Filipino", "Tagalog", "Cebuano", "Ilocano", "Ilonggo", "Bikol/Bicol",
         "Bisaya/Binisaya", "Boholano", "Pangasinan", "Waray", "Kapampangan",
@@ -1038,6 +1057,7 @@ ETHNIC_ANCESTRY: dict[str, tuple[str, ...]] = {
         "Han and Sinitic peoples", "Japanese peoples", "Korean peoples",
         "Mongolic and Siberian peoples", "Mainland Southeast Asian peoples",
         "Malay and Indonesian peoples", "Philippine peoples",
+        "Taiwanese indigenous peoples",
         "Asian (census category)", "Hill tribes (census category)",
     ),
     "Indigenous American ancestry": (
