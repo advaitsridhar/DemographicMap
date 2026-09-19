@@ -93,8 +93,9 @@ TOTAL_POPULATION = 682_070
 POPULATION_AGED_3_AND_OVER = 663_782
 
 # The two tables, by their titles, and their columns after Total in the
-# order printed. The PDF pages are 68 and 72 in the October 2022 revision;
-# they are found by title within this window rather than assumed.
+# order printed. They are pages 66 and 70 of the October 2022 revision (the
+# principal-characteristics page is 40), found by title within this window
+# rather than assumed.
 NATIONALITY_TITLE = "POPULATION BY GENDER, AGE GROUP AND NATIONALITY"
 LANGUAGE_TITLE = "POPULATION BY GENDER, AGE GROUP AND USUAL LANGUAGE"
 NATIONALITY_COLUMNS = ["Chinese", "Filipino", "Other Asian countries", "Portuguese", "Others"]
