@@ -45,17 +45,55 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
+import os
 from pathlib import Path
 from typing import Any
 
 from ._shared import (
     NOT_AVAILABLE, PROCESSED, RAW, gap, log, measure, record, shares, write_json,
 )
+from common import http_get  # noqa: E402
 
 RAW_DIR = RAW / "singapore"
 ETHNICITY_CSV = RAW_DIR / "ethnicity_planning_area_ghs2015.csv"
 RELIGION_CSV = RAW_DIR / "religion_planning_area_census2020.csv"
 LANGUAGE_CSV = RAW_DIR / "language_planning_area_census2020.csv"
+
+# Where the extracts come from. singstat.gov.sg answers an automated reader
+# 403, but the Department publishes the same census tables on data.gov.sg,
+# whose datastore serves them as rows without a key. ``--fetch`` reads each
+# table listed here into its CSV, paging 500 rows at a time, and the CSV is
+# what the adapter reads afterwards -- so a build without network still runs,
+# and what was read is committed beside the code that read it.
+DATAGOVSG = "https://data.gov.sg/api/action/datastore_search"
+DATAGOVSG_PAGE = "https://data.gov.sg/datasets/{id}/view"
+DATASETS: dict[str, tuple[str, Path]] = {
+    # Resident Population by Planning Area/Subzone of Residence, Ethnic Group
+    # and Sex (Census of Population 2020): every area and subzone.
+    "ethnicity": ("d_e7ae90176a68945837ad67892b898466",
+                  RAW_DIR / "ethnicity_planning_area_census2020.csv"),
+    # Resident Population Aged 15 Years and Over by Planning Area of Residence
+    # and Religion (Census of Population 2020).
+    "religion": ("d_a58564fbed922609a0f79af96069dd9b",
+                 RAW_DIR / "religion_planning_area_census2020_datagovsg.csv"),
+    # Resident Population Aged 5 Years and Over by Planning Area of Residence
+    # and Language Most / Second Most Frequently Spoken at Home (Census 2020).
+    "language": ("d_21f546492a87dec38391fc72eb4c7890",
+                 RAW_DIR / "language_planning_area_census2020_datagovsg.csv"),
+    # The 2010 census's religion and language tables by planning area list a
+    # few more areas than the 2020 release does (37 rows against 32), so they
+    # are fetched beside it to see which, and whether an area the 2020 release
+    # folds into "Others" had a row of its own a decade earlier.
+    "religion_2010": ("d_d4be7f8ba23ba93e5d59564d1dfb5eaa",
+                      RAW_DIR / "religion_planning_area_census2010.csv"),
+    "language_2010": ("d_c3ed3269adea97f53092d70c4d6d9682",
+                      RAW_DIR / "language_planning_area_census2010.csv"),
+}
+# The key data.gov.sg issues, under whichever name the workflow stores it. The
+# datastore answers without one; it is sent when present and never printed.
+KEY_VARS = ("DEMOGRAPHICMAP", "DATA_GOV_SG_KEY", "DATAGOVSG_API_KEY",
+            "DATA_GOV_SG_API_KEY", "DATAGOVSG_KEY", "DATA_GOV_SG_TOKEN")
 
 DOS = "Singapore Department of Statistics"
 GHS = f"General Household Survey 2015, {DOS}"
@@ -143,6 +181,37 @@ BASIS = {
     "religion": "residents aged 15 and over, so shares of adults",
     "language": "residents aged 5 and over, the language most often spoken at home",
 }
+
+
+def fetch_extract(dataset_id: str, path: Path) -> int:
+    """Read one datastore table into a CSV, every row, columns as served."""
+    key = next((os.environ[name] for name in KEY_VARS if os.environ.get(name)), None)
+    headers = {"x-api-key": key} if key else None
+    page, offset, fields, records = 500, 0, None, []
+    while True:
+        url = f"{DATAGOVSG}?resource_id={dataset_id}&limit={page}&offset={offset}"
+        body = http_get(url, cache=False, headers=headers)
+        payload = json.loads(body)
+        if not payload.get("success"):
+            raise SystemExit(f"data.gov.sg refused {dataset_id}: {str(payload)[:200]}")
+        result = payload["result"]
+        if fields is None:
+            fields = [f["id"] for f in result.get("fields", []) if f.get("id") != "_id"]
+        batch = result.get("records") or []
+        records.extend(batch)
+        if len(batch) < page or len(records) >= int(result.get("total") or 0):
+            break
+        offset += page
+    if not fields or not records:
+        raise SystemExit(f"data.gov.sg served no rows for {dataset_id}")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(records)
+    log(f"  {path.name}: {len(records)} rows, {len(fields)} columns, from "
+        f"data.gov.sg {dataset_id}")
+    return len(records)
 
 
 def cell(value: str | None) -> float | None:
@@ -445,7 +514,20 @@ def build() -> list[dict[str, Any]]:
 
 
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--fetch", action="store_true",
+                    help="read the census tables from data.gov.sg into the "
+                         "extracts first (needs network)")
+    ap.add_argument("--fetch-only", action="store_true",
+                    help="fetch the extracts and stop, so what was served is "
+                         "committed before the adapter is pointed at it")
+    args = ap.parse_args()
+    if args.fetch or args.fetch_only:
+        for kind, (dataset_id, path) in DATASETS.items():
+            log(f"{kind}: fetching")
+            fetch_extract(dataset_id, path)
+        if args.fetch_only:
+            return 0
     rows = build()
     areas = [r for r in rows if r["level"] == "admin2"]
     regions = [r for r in rows if r["level"] == "admin1"]
