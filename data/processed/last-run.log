@@ -1,14 +1,17 @@
-japan: nationality from e-Stat 0003445244, believers from 0003282963, prior from NHK/ISSP 2018
-  e-Stat 0003445244: 816 values
-  e-Stat 0003282963: 240 values
-  nationality: the 47 prefectures reproduce the table's national row; total 126,146,099 is the published one; the imputed foreign share is +0.24 points from the recorded one (stated on every prefecture)
-  believers: 175,054,047 against 126,146,099 people, 1.39 per person; used as a relative signal only
-  prior (no answer left out): no religion 63.3, Buddhism 31.6, Shinto 3.1, Christianity 1.0, Other religions 1.0
-  religion: the five prefectures the tilt moves furthest from the national prior:
-      Okinawa Prefecture       9.9 points  Buddhism 22.0, Shinto 9.0, Christianity 5.0, Other religions 0.8  (held at the bound: Shinto, Christianity)
-      Kyoto Prefecture         6.9 points  Buddhism 25.1, Shinto 9.0, Christianity 0.7, Other religions 1.9  (held at the bound: Shinto)
-      Nagano                   5.9 points  Buddhism 26.1, Shinto 9.0, Christianity 0.8, Other religions 0.8  (held at the bound: Shinto)
-      Miyagi                   5.4 points  Buddhism 26.9, Shinto 8.4, Christianity 0.8, Other religions 0.6
-      Yamanashi                5.2 points  Buddhism 27.3, Shinto 8.2, Christianity 0.6, Other religions 0.6
-  religion: 3 prefectures hit a bound: Okinawa Prefecture, Kyoto Prefecture, Nagano
-  wrote data/processed/japan_prefecture.json (399 kB)
+page: https://www.data.go.kr/data/15108413/fileData.do
+  157,203 bytes
+  3 distinct match(es) for '(?:fileDownload.do|fileDataDown|atchFileId|selectFileDataDownload|publicDataDetailPk|fileDetailSn)[^<]{0,300}'
+    atchFileId: $('#limitAtchFileId').val(),
+    				fileDetailSn: $('#limitFileDetailSn').val()
+    			},
+    			success: function(res) {
+    				if (res.success) {
+    					alert("인증이 완료되었습니다. 다시 다운로드 시도해주세요.");		
+    				} else {
+    					alert('처리 중 오류가 발생했습니다. 다시 시도해 주십시오.');
+    				}
+					closeFileLimitMod
+    fileDataDown('15108413', 'uddi:315657b3-088d-4e34-88bc-bb4dbb58a00a', '','1', '1')">
+              다운로드
+    publicDataDetailPk" name="publicDataDetailPk" value="uddi:315657b3-088d-4e34-88bc-bb4dbb58a00a" />
+    
