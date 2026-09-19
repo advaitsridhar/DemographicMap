@@ -1,139 +1,69 @@
-== https://storage.dosm.gov.my/dashboards/kawasanku_admin_barmeter.parquet
-   shape (3717, 5); columns ['area_type', 'area', 'chart', 'variable', 'value']
-   dtypes {'area_type': 'str', 'area': 'str', 'chart': 'str', 'variable': 'str', 'value': 'float64'}
-   area_type: ['country', 'district', 'state']
-   area: 173 distinct, e.g. ['Alor Gajah', 'Asajaya', 'Bachok', 'Bagan Datuk', 'Baling', 'Bandar Baharu', 'Barat Daya', 'Batang Padang', 'Batu Pahat', 'Bau', 'Beaufort', 'Belaga']
-   chart: ['agegroup', 'ethnicity', 'marital', 'nationality', 'religion', 'sex']
-   variable: ['atheist', 'buddhist', 'bumi', 'child', 'chinese', 'christian', 'divorced', 'elderly', 'female', 'foreign', 'hindu', 'indian', 'local', 'male', 'married', 'muslim', 'never_married', 'other', 'widowed', 'working']
-   religion rows: 1062
-   area_type=country: 1 areas
-   area_type=district: 160 areas
-   area_type=state: 16 areas
-   area_type=state | area=Johor | chart=religion | variable=muslim | value=59.72259562507638
-   area_type=state | area=Johor | chart=religion | variable=christian | value=3.029326602937399
-   area_type=state | area=Johor | chart=religion | variable=buddhist | value=28.700716019024007
-   area_type=state | area=Johor | chart=religion | variable=hindu | value=7.050879498811622
-   area_type=state | area=Johor | chart=religion | variable=other | value=0.8068494414752335
-   area_type=state | area=Johor | chart=religion | variable=atheist | value=0.6896328126753573
-   area_type=state | area=Kedah | chart=religion | variable=muslim | value=78.47418654263083
-   area_type=state | area=Kedah | chart=religion | variable=christian | value=0.7634791151655675
-   area_type=state | area=Kedah | chart=religion | variable=buddhist | value=12.384942106860802
-   area_type=state | area=Kedah | chart=religion | variable=hindu | value=5.885728199933659
-   area_type=state | area=Kedah | chart=religion | variable=other | value=0.4605365325671486
-   area_type=state | area=Kedah | chart=religion | variable=atheist | value=2.0311275028419926
-   area_type=state | area=Kelantan | chart=religion | variable=muslim | value=95.52368450561534
-   area_type=state | area=Kelantan | chart=religion | variable=christian | value=0.3821476250222455
-   area_type=state | area=Kelantan | chart=religion | variable=buddhist | value=2.8298450042705694
-   area_type=state | area=Kelantan | chart=religion | variable=hindu | value=0.2131658503956204
-   area_type=state | area=Kelantan | chart=religion | variable=other | value=0.184490831525338
-   area_type=state | area=Kelantan | chart=religion | variable=atheist | value=0.866666183170888
-   area_type=state | area=Melaka | chart=religion | variable=muslim | value=68.87837680834271
-   area_type=state | area=Melaka | chart=religion | variable=christian | value=2.632338035391636
-   area_type=state | area=Melaka | chart=religion | variable=buddhist | value=19.20188536379188
-   area_type=state | area=Melaka | chart=religion | variable=hindu | value=5.2722880367938405
-   area_type=state | area=Melaka | chart=religion | variable=other | value=0.4853629906212566
-   area_type=state | area=Melaka | chart=religion | variable=atheist | value=3.5297487650586725
-   area_type=state | area=Negeri Sembilan | chart=religion | variable=muslim | value=62.63094033704063
-   area_type=state | area=Negeri Sembilan | chart=religion | variable=christian | value=2.6103065566420605
-   area_type=state | area=Negeri Sembilan | chart=religion | variable=buddhist | value=19.85734690918304
-   area_type=state | area=Negeri Sembilan | chart=religion | variable=hindu | value=13.129784478663703
-   area_type=state | area=Negeri Sembilan | chart=religion | variable=other | value=0.815517669549507
-   area_type=state | area=Negeri Sembilan | chart=religion | variable=atheist | value=0.95610404892106
-   area_type=state | area=Pahang | chart=religion | variable=muslim | value=76.50404230516654
-   area_type=state | area=Pahang | chart=religion | variable=christian | value=1.5185116524591606
-   area_type=state | area=Pahang | chart=religion | variable=buddhist | value=13.553552295457475
-   area_type=state | area=Pahang | chart=religion | variable=hindu | value=3.708237630357665
-   area_type=state | area=Pahang | chart=religion | variable=other | value=0.653932803157177
-   area_type=state | area=Pahang | chart=religion | variable=atheist | value=4.061723313401978
-   area_type=state | area=Perak | chart=religion | variable=muslim | value=57.852935909305984
-   area_type=state | area=Perak | chart=religion | variable=christian | value=3.028235513759589
-   area_type=state | area=Perak | chart=religion | variable=buddhist | value=24.154691369252347
-   area_type=state | area=Perak | chart=religion | variable=hindu | value=9.68886328389638
-   area_type=state | area=Perak | chart=religion | variable=other | value=1.2527438451531845
-   area_type=state | area=Perak | chart=religion | variable=atheist | value=4.022530078632522
-   area_type=state | area=Perlis | chart=religion | variable=muslim | value=87.79998946943503
-   area_type=state | area=Perlis | chart=religion | variable=christian | value=0.5862014497077769
-   area_type=state | area=Perlis | chart=religion | variable=buddhist | value=9.19634238376889
-   area_type=state | area=Perlis | chart=religion | variable=hindu | value=1.27033715358829
-   area_type=state | area=Perlis | chart=religion | variable=other | value=0.1842848868841813
-   area_type=state | area=Perlis | chart=religion | variable=atheist | value=0.9628446566158274
-   area_type=state | area=Pulau Pinang | chart=religion | variable=muslim | value=45.51739393991628
-   area_type=state | area=Pulau Pinang | chart=religion | variable=christian | value=4.329164763374043
-   area_type=state | area=Pulau Pinang | chart=religion | variable=buddhist | value=37.62388639425881
-   area_type=state | area=Pulau Pinang | chart=religion | variable=hindu | value=8.381439952195036
-   area_type=state | area=Pulau Pinang | chart=religion | variable=other | value=2.414667850299212
-   area_type=state | area=Pulau Pinang | chart=religion | variable=atheist | value=1.7334470999566192
-   area_type=state | area=Sabah | chart=religion | variable=muslim | value=69.59244292928628
-   area_type=state | area=Sabah | chart=religion | variable=christian | value=24.679352460011376
-   area_type=state | area=Sabah | chart=religion | variable=buddhist | value=5.0673265502217895
-   area_type=state | area=Sabah | chart=religion | variable=hindu | value=0.1447297797316883
-   area_type=state | area=Sabah | chart=religion | variable=other | value=0.1103315944114649
-   area_type=state | area=Sabah | chart=religion | variable=atheist | value=0.4058166863373976
-   area_type=state | area=Sarawak | chart=religion | variable=muslim | value=34.175443630111054
-   area_type=state | area=Sarawak | chart=religion | variable=christian | value=50.11470539928442
-   area_type=state | area=Sarawak | chart=religion | variable=buddhist | value=12.82479315737157
-   area_type=state | area=Sarawak | chart=religion | variable=hindu | value=0.1394234041399907
-   area_type=state | area=Sarawak | chart=religion | variable=other | value=0.5464859474168768
-   area_type=state | area=Sarawak | chart=religion | variable=atheist | value=2.199148461676089
-   area_type=state | area=Selangor | chart=religion | variable=muslim | value=61.10188074127058
-   area_type=state | area=Selangor | chart=religion | variable=christian | value=4.919376480375865
-   area_type=state | area=Selangor | chart=religion | variable=buddhist | value=21.625143346348946
-   area_type=state | area=Selangor | chart=religion | variable=hindu | value=10.309499439767942
-   area_type=state | area=Selangor | chart=religion | variable=other | value=1.256529666564347
-   area_type=state | area=Selangor | chart=religion | variable=atheist | value=0.787570325672325
-   area_type=state | area=Terengganu | chart=religion | variable=muslim | value=97.33122216035636
-   area_type=state | area=Terengganu | chart=religion | variable=christian | value=0.2547327394209354
-   area_type=state | area=Terengganu | chart=religion | variable=buddhist | value=2.0342079621380846
-   area_type=state | area=Terengganu | chart=religion | variable=hindu | value=0.2438578786191536
-   area_type=state | area=Terengganu | chart=religion | variable=other | value=0.0366265311804008
-   area_type=state | area=Terengganu | chart=religion | variable=atheist | value=0.0993527282850779
-   area_type=state | area=W.P. Kuala Lumpur | chart=religion | variable=muslim | value=45.28689599780436
-   area_type=state | area=W.P. Kuala Lumpur | chart=religion | variable=christian | value=6.442370562309295
-   area_type=state | area=W.P. Kuala Lumpur | chart=religion | variable=buddhist | value=32.26956902536284
-   area_type=state | area=W.P. Kuala Lumpur | chart=religion | variable=hindu | value=8.219818052663017
-   area_type=state | area=W.P. Kuala Lumpur | chart=religion | variable=other | value=1.7680635604849777
-   area_type=state | area=W.P. Kuala Lumpur | chart=religion | variable=atheist | value=6.013282801375502
-   area_type=state | area=W.P. Labuan | chart=religion | variable=muslim | value=77.228763666947
-   area_type=state | area=W.P. Labuan | chart=religion | variable=christian | value=13.791000841042894
-   area_type=state | area=W.P. Labuan | chart=religion | variable=buddhist | value=8.069806560134566
-   area_type=state | area=W.P. Labuan | chart=religion | variable=hindu | value=0.6433978132884777
-   area_type=state | area=W.P. Labuan | chart=religion | variable=other | value=0.1976450798990748
-   area_type=state | area=W.P. Labuan | chart=religion | variable=atheist | value=0.069386038687973
-   area_type=state | area=W.P. Putrajaya | chart=religion | variable=muslim | value=97.18869617772567
-   area_type=state | area=W.P. Putrajaya | chart=religion | variable=christian | value=0.8058460467757002
-   area_type=state | area=W.P. Putrajaya | chart=religion | variable=buddhist | value=0.4880862987857365
-   area_type=state | area=W.P. Putrajaya | chart=religion | variable=hindu | value=1.0549257339609164
-   area_type=state | area=W.P. Putrajaya | chart=religion | variable=other | value=0.0897419461182029
-   area_type=state | area=W.P. Putrajaya | chart=religion | variable=atheist | value=0.3727037966337612
-   area_type=district | area=Alor Gajah | chart=religion | variable=muslim | value=76.69877604709733
-   area_type=district | area=Alor Gajah | chart=religion | variable=christian | value=1.0876016618810054
-   area_type=district | area=Alor Gajah | chart=religion | variable=buddhist | value=11.34281910200677
-   area_type=district | area=Alor Gajah | chart=religion | variable=hindu | value=7.490896549511541
-   area_type=district | area=Alor Gajah | chart=religion | variable=other | value=0.4339177721811386
-   area_type=district | area=Alor Gajah | chart=religion | variable=atheist | value=2.9459888673222223
-   area_type=district | area=Asajaya | chart=religion | variable=muslim | value=88.34136761292626
-   area_type=district | area=Asajaya | chart=religion | variable=christian | value=7.974766410759983
-   area_type=district | area=Asajaya | chart=religion | variable=buddhist | value=3.56186395286556
-   area_type=district | area=Asajaya | chart=religion | variable=hindu | value=0.0029756591084925
-   area_type=district | area=Asajaya | chart=religion | variable=other | value=0.1071237279057311
-   area_type=district | area=Asajaya | chart=religion | variable=atheist | value=0.0119026364339701
-   area_type=district | area=Bachok | chart=religion | variable=muslim | value=98.63371649458318
-   area_type=district | area=Bachok | chart=religion | variable=christian | value=0.1017242256243324
-   area_type=district | area=Bachok | chart=religion | variable=buddhist | value=1.006434057270739
-   area_type=district | area=Bachok | chart=religion | variable=hindu | value=0.0635776410152077
-   area_type=district | area=Bachok | chart=religion | variable=other | value=0.0114439753827373
-   area_type=district | area=Bachok | chart=religion | variable=atheist | value=0.1831036061237983
-   area_type=district | area=Bagan Datuk | chart=religion | variable=muslim | value=56.86295826538624
-   area_type=district | area=Bagan Datuk | chart=religion | variable=christian | value=1.0448752793380442
-   area_type=district | area=Bagan Datuk | chart=religion | variable=buddhist | value=18.31732801836081
-   area_type=district | area=Bagan Datuk | chart=religion | variable=hindu | value=21.50147973666727
-   area_type=district | area=Bagan Datuk | chart=religion | variable=other | value=0.3708401280425198
-   area_type=district | area=Bagan Datuk | chart=religion | variable=atheist | value=1.9025185722051097
-== https://storage.dosm.gov.my/dashboards/kawasanku_admin_barmeter_callout.parquet
-   shape (531, 5); columns ['area_type', 'area', 'chart', 'variable', 'value']
-   dtypes {'area_type': 'str', 'area': 'str', 'chart': 'str', 'variable': 'str', 'value': 'float64'}
-   area_type: ['country', 'district', 'state']
-   area: 173 distinct, e.g. ['Alor Gajah', 'Asajaya', 'Bachok', 'Bagan Datuk', 'Baling', 'Bandar Baharu', 'Barat Daya', 'Batang Padang', 'Batu Pahat', 'Bau', 'Beaufort', 'Belaga']
-   chart: ['tooltip']
-   variable: ['female', 'male', 'total']
-   religion rows: 0
+  [en] 'Bangka Belitung Islands': 40,675 bytes of wikitext
+  1 table(s)
+  -- table 0: 11 rows, 8 columns
+     header: ['Kode Wilayah', 'Name of City or Regency', 'Area in km 2', "Pop'on Census 2010", "Pop'n Census 2020", "Pop'n Estimate mid 2025", 'Capital', 'HDI 2021 Estimates']
+     row   : ['19.01', 'Bangka Regency', '3,016.85', '277,204', '326,265', '341,760', 'Sungailiat', '0.725 (High)']
+     row   : ['19.04', 'Central Bangka Regency (Bang', '2,259.98', '161,228', '198,946', '211,989', 'Koba', '0.709 (High)']
+     row   : ['19.03', 'South Bangka Regency (Bangka', '3,607.08', '172,528', '198,189', '219,904', 'Toboali', '0.670 (Medium)']
+     row   : ['19.05', 'West Bangka Regency (Bangka ', '2,853.41', '175,150', '204,612', '220,242', 'Mentok', '0.696 (Medium)']
+     row   : ['19.71', 'Pangkalpinang City', '104.54', '174,758', '218,569', '233,466', 'Pangkalpinang', '0.786 (High)']
+     row   : ['', 'Total Bangka', '11,841.86', '960,868', '1,146,581', '1,227,361', '', '']
+     row   : ['19.02', 'Belitung Regency', '2,269.36', '155,965', '182,079', '194,392', 'Tanjungpandan', '0.726 (High)']
+     row   : ['19.06', 'East Belitung Regency (Belit', '2,506.91', '106,463', '127,018', '133,443', 'Manggar', '0.714 (High)']
+     row   : ['', 'Total Belitung', '4,776.27', '262,428', '309,097', '327,835', '', '']
+     row   : ['', 'Total Province', '16,618.13', '1,223,396', '1,455,678', '1,555,196', '', '']
+  [en] 'West Sulawesi': 18,485 bytes of wikitext
+  1 table(s)
+  -- table 0: 8 rows, 8 columns
+     header: ['Regency', 'Islam', 'Protestant', 'Catholic', 'Hinduism', 'Buddhism', 'Confucianism /Konghucu', 'Folk']
+     row   : ['Majene', '99.75%', '0.10%', '0.10%', '0.02%', '0.03%', '0.00%', '0.00%']
+     row   : ['Mamasa', '20.29%', '70.80%', '4.35%', '2.92%', '0.01%', '0.01%', '1.62%']
+     row   : ['Mamuju', '81.61%', '16.61%', '0.87%', '0.88%', '0.02%', '0.01%', '0.00%']
+     row   : ['Central Mamuju', '80.24%', '12.90%', '2.18%', '4.57%', '0.10%', '0.01%', '0.01%']
+     row   : ['Pasangkayu', '86.98%', '6.99%', '1.83%', '4.19%', '0.01%', '0.01%', '0.00%']
+     row   : ['Polewali Mandar', '96.00%', '2.77%', '1.00%', '0.19%', '0.04%', '0.00%', '0.00%']
+     row   : ['West Sulawesi', '82.22%', '14.82%', '1.47%', '1.25%', '0.04%', '0.01%', '0.19%']
+  [en] 'East Nusa Tenggara': 58,044 bytes of wikitext
+  1 table(s)
+  -- table 0: 26 rows, 9 columns
+     header: ['Kode Wilayah', 'Name of City or Regency', 'Statute (including year when', 'Area in km 2', "Pop'n 2010 Census", "Pop'n 2020 Census", "Pop'n mid 2025 Estimate", 'Capital', 'HDI 2022 estimate']
+     row   : ['53.71', 'Kupang City', '', 'formatnum: 158.89', 'formatnum: 336239', 'formatnum: 442758', 'formatnum: 482730', 'Kupang', '0.8020 (Very High)']
+     row   : ['53.01', 'Kupang Regency', 'UU 69/1958', 'formatnum: 5130.66', 'formatnum: 304548', 'formatnum: 366383', 'formatnum: 383390', 'Oelamasi', '0.6504 (Medium)']
+     row   : ['53.02', 'South Central Timor Regency ', 'UU 69/1958', 'formatnum: 3931.75', 'formatnum: 441155', 'formatnum: 455410', 'formatnum: 488000', 'Soe', '0.6273 (Medium)']
+     row   : ['53.03', 'North Central Timor Regency ', 'UU 69/1958', 'formatnum: 2622.29', 'formatnum: 229803', 'formatnum: 259829', 'formatnum: 279640', 'Kefamenanu', '0.6426 (Medium)']
+     row   : ['53.04', 'Belu Regency', 'UU 69/1958', 'formatnum: 1126.77', 'formatnum: 188163', 'formatnum: 217973', 'formatnum: 240390', 'Atambua', '0.6322 (Medium)']
+     row   : ['53.14', 'Rote Ndao Regency', 'UU 9/2002', 'formatnum: 1277.26', 'formatnum: 119908', 'formatnum: 143764', 'formatnum: 155370', 'Baa', '0.6321 (Medium)']
+     row   : ['53.21', 'Malaka Regency', 'UU 3/2013', 'formatnum: 1109.00', 'formatnum: 164134', 'formatnum: 183898', 'formatnum: 196010', 'Betun', '0.6134 (Medium)']
+     row   : ['', 'Southeastern (Timor) group', '', 'formatnum: 15356.62', 'formatnum: 1783950', 'formatnum: 2070015', 'formatnum: 2225530', '']
+     row   : ['53.05', 'Alor Regency (a) (Alor Archi', 'UU 69/1958', 'formatnum: 2918.75', 'formatnum: 190026', 'formatnum: 211872', 'formatnum: 228500', 'Kalabahi', '0.6226 (Medium)']
+     row   : ['53.13', 'Lembata Regency (Lomblen)', 'UU 52/1999', 'formatnum: 1263.77', 'formatnum: 117829', 'formatnum: 135930', 'formatnum: 145270', 'Lewoleba', '0.6547 (Medium)']
+     row   : ['53.06', 'East Flores Regency (Flores ', 'UU 69/1958', 'formatnum: 1741.06', 'formatnum: 232605', 'formatnum: 276896', 'formatnum: 296760', 'Larantuka', '0.6493 (Medium)']
+     row   : ['53.07', 'Sikka Regency', 'UU 69/1958', 'formatnum: 1669.71', 'formatnum: 300328', 'formatnum: 321953', 'formatnum: 345320', 'Maumere', '0.6606 (Medium)']
+     row   : ['53.08', 'Ende Regency', 'UU 69/1958', 'formatnum: 2084.08', 'formatnum: 260605', 'formatnum: 270763', 'formatnum: 284170', 'Ende', '0.6797 (Medium)']
+     row   : ['53.16', 'Nagekeo Regency', 'UU 2/2007', 'formatnum: 1397.97', 'formatnum: 130120', 'formatnum: 159732', 'formatnum: 170670', 'Mbay', '0.6622 (Medium)']
+     row   : ['53.09', 'Ngada Regency', 'UU 69/1958', 'formatnum: 1736.74', 'formatnum: 142393', 'formatnum: 165254', 'formatnum: 176460', 'Bajawa', '0.6826 (Medium)']
+     row   : ['53.19', 'East Manggarai Regency (Mang', 'UU 36/2007', 'formatnum: 2389.50', 'formatnum: 252744', 'formatnum: 275603', 'formatnum: 301530', 'Borong', '0.623 (Medium)']
+     row   : ['53.10', 'Manggarai Regency (Manggarai', 'UU 69/1958', 'formatnum: 1343.34', 'formatnum: 292451', 'formatnum: 312855', 'formatnum: 340150', 'Ruteng', '0.6583 (Medium)']
+     row   : ['53.15', 'West Manggarai Regency (c) (', 'UU 8/2003', 'formatnum: 3120.03', 'formatnum: 221703', 'formatnum: 256317', 'formatnum: 281690', 'Labuan Bajo', '0.6492 (Medium)']
+     row   : ['', 'Northern (Flores) group', '', 'formatnum: 19664.92', 'formatnum: 2140804', 'formatnum: 2387175', 'formatnum: 2570520', '', '']
+     row   : ['53.11', 'East Sumba Regency (Sumba Ti', 'UU 69/1958', 'formatnum: 7000.50', 'formatnum: 227732', 'formatnum: 244820', 'formatnum: 262975', 'Waingapu', '0.6617 (Medium)']
+     row   : ['53.12', 'West Sumba Regency (Sumba Ba', 'UU 69/1958', 'formatnum: 737.42', 'formatnum: 111993', 'formatnum: 145097', 'formatnum: 160170', 'Waikabubak', '0.6443 (Medium)']
+     row   : ['53.17', 'Central Sumba Regency (Sumba', 'UU 3/2007', 'formatnum: 1789.69', 'formatnum: 62485', 'formatnum: 85482', 'formatnum: 94187', 'Waibakul', '0.6271 (Medium)']
+     row   : ['53.18', 'Southwest Sumba Regency (Sum', 'UU 16/2007', 'formatnum: 1381.94', 'formatnum: 284903', 'formatnum: 303650', 'formatnum: 335500', 'Tambolaka', '0.6315 (Medium)']
+     row   : ['53.20', 'Sabu Raijua Regency', 'UU 52/2008', 'formatnum: 459.58', 'formatnum: 72960', 'formatnum: 89327', 'formatnum: 96259', 'West Savu', '0.5790 (Low)']
+     row   : ['', 'Southwestern (Sumba) group', '', 'formatnum: 11369.13', 'formatnum: 760073', 'formatnum: 869376', 'formatnum: 949091', '', '']
+  [en] 'North Kalimantan': 25,280 bytes of wikitext
+  1 table(s)
+  -- table 0: 8 rows, 6 columns
+     header: ['rowspan=2|Kode Wilayah', 'rowspan=2|Name of City or Re', 'rowspan=2| Area (km 2 )', 'colspan=3|Population', 'rowspan=2|Capital', 'rowspan=2|HDI 2018 Estimates']
+     row   : ['2010 Census', '2020 Census', 'mid 2025 Estimate']
+     row   : ['65.01', 'Bulungan Regency', 'formatnum: 13720', 'formatnum: 112663', 'formatnum: 151844', 'formatnum: 162400', 'Tanjung Selor', '0.712 (High)']
+     row   : ['65.02', 'Malinau Regency', 'formatnum: 38902', 'formatnum: 62580', 'formatnum: 82510', 'formatnum: 87490', 'Malinau', '0.717 (High)']
+     row   : ['65.03', 'Nunukan Regency', 'formatnum: 12550', 'formatnum: 140841', 'formatnum: 199090', 'formatnum: 213980', 'Nunukan', '0.656 (Medium)']
+     row   : ['65.04', 'Tana Tidung Regency', 'formatnum: 3481', 'formatnum: 15202', 'formatnum: 25584', 'formatnum: 28820', 'Tideng Pale', '0.670 (Medium)']
+     row   : ['65.71', 'Tarakan City', 'formatnum: 248', 'formatnum: 193370', 'formatnum: 242756', 'formatnum: 256670', 'Tarakan City', '0.756 (High)']
+     row   : ['', 'Totals', 'formatnum: 69901', 'formatnum: 524656', 'formatnum: 701784', 'formatnum: 749370', 'Tanjung Selor', '0.705 (High)']
+  [id] 'Suku Kaili': 11,076 bytes of wikitext
+  0 table(s)
+  [id] 'Orang Kalimantan': 0 bytes of wikitext
+  0 table(s)
