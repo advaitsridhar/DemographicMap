@@ -229,6 +229,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Malaysia | DOSM OpenDOSM `population_state` / `population_district` CSV | state, district | Annual population estimates by ethnicity carried forward from Census 2020, in thousands; the latest year is read and the records say "estimate". The non-citizen row is DOSM's own category of the resident population and is kept. |
 | Kenya | KNBS 2019 Census Volume IV, Table 2.30 (openAFRICA mirror) | county | Religion for all 47 counties, replacing the Afrobarometer survey rows; ethnicity stays Afrobarometer's. KNBS's own site fails TLS verification (incomplete chain) and this project does not turn verification off. |
 | Thailand | NSO 2000 Population and Housing Census, provincial final reports (`web.nso.go.th/pop2000/finalrep/`), transcribed in the Wikipedia article *Nationality, religion, and language data for the provinces of Thailand* | province | Buddhist, Muslim and Christian shares for 2000 as printed, read through the MediaWiki API because the NSO's own hosts refuse this client; the rest of 100% is one 'Other or not stated' group; an N/A is absent, not zero. 76 of 77 provinces: Bueng Kan was carved out of Nong Khai in 2011 and has no 2000 row. Nationality is citizenship and is not read as ethnicity; the 'linguistic minorities' cells name a few languages and not the rest, so language stays a gap. `scripts/fetch_census/thailand.py`. |
+| Thailand (ethnicity) | NSO 2000 Population and Housing Census, language spoken at home, the 'linguistic minorities' cell of the same provincial reports and the same Wikipedia transcription; Suwilai Premsrirat et al., *Ethnolinguistic Maps of Thailand* (Mahidol University Institute of Language and Culture, 2004) for the regional Tai groups and the national figures, as transcribed in *Demographics of Thailand* | province | By the map owner's decision of 19 September 2026, and every province a `modelled` estimate, never a list: the census's minorities as printed under its own category names, everyone else assigned to the region's Tai group (Central Thai, Isan (Lao), Northern Thai, Southern Thai). The run prints the national composition the provinces imply beside the maps' figures; no backtest is possible. 76 of 77 provinces, Bueng Kan having no 2000 row. See "Thailand: ethnicity from secondary sources, by the owner's decision". `scripts/fetch_census/thailand_ethnicity.py`. |
 | Kazakhstan | Bureau of National Statistics, 2021 National Population Census, religious affiliation by region, transcribed in the Wikipedia article *Religion in Kazakhstan* | region | The percent columns are read (one count in the article is mistyped; its percent is not). The article lists 16 regions and omits Shymkent (a city of republican significance since 2018); the boundary file draws the 2017 layout in which Shymkent sits inside South Kazakhstan Region, so the article's Turkistan Region is deliberately not matched to that shape and South Kazakhstan stays a visible gap: 15/16. `scripts/fetch_census/wiki_census.py`. |
 | Kazakhstan (ethnicity) | Bureau of National Statistics, *Population by ethnic groups of the Republic of Kazakhstan at the start of 2025* (series 18, 27 March 2025), workbook committed under `data/raw/kazakhstan/` because the Bureau's site offers no file link | region, district | Register-based population at 1 January 2025 carried forward from the 2021 census, 73 ethnic rows, and the record says it is not a census count. The workbook's 20 regions are summed into the 16 shapes of the 2017 layout (Abai into East Kazakhstan, Jetisu into Almaty Region, Ulytau into Karaganda, Shymkent into South Kazakhstan), exact because these are counts, and every column is checked against its own total. Districts keep the Bureau's Cyrillic name with a transliteration as alias; `RENAMED` declares the shapes the boundary file still draws under a superseded name (Zelenovskiy for Bäiterek, Tselinniy for Gabit Musrepov, and so on). Almaty and Shymkent get their city totals as their one second-level shape; Astana has none. 173 of 174 district shapes filled; the boundary file draws Jambyl's Zhualy district twice and the second copy stays empty. `scripts/fetch_census/kazakhstan.py`. |
 | Cambodia | NIS General Population Census of Cambodia 2019, religion by province, transcribed in the Wikipedia article *Religion in Cambodia* (2008 and 2019 columns; 2019 read) | province | Buddhism, Islam, Christianity, Others as printed; 25/25 with four spellings declared as aliases (Bantey Meanchey, Kratie, Takeo, Tbong Khmum). `scripts/fetch_census/wiki_census.py`. |
@@ -4431,6 +4432,95 @@ would replace it the day the office serves one. The article's nationality
 columns are citizenship and are not read as ethnicity, and its "linguistic
 minorities" cells are the partial list the paragraphs above describe, so
 language keeps its gap.
+
+### Thailand: ethnicity from secondary sources, by the owner's decision
+
+Everything the section above measured still holds: the census does not ask
+ethnicity, the office's hosts answer 418 and 403, and the one public
+language file is not a composition. What changed is a decision. On **19
+September 2026** the map's owner decided that Thailand's 77 provinces should
+carry what secondary sources can say about ethnicity, with stated modelling
+and honest labels: a real count as a composition, anything estimated as a
+`modelled` estimate with its method on the record.
+`scripts/fetch_census/thailand_ethnicity.py` is that decision, and the
+sources were measured in the order the decision named them.
+
+**(a) The Ethnolinguistic Maps of Thailand** (แผนที่ภาษาของกลุ่มชาติพันธุ์ต่าง ๆ
+ในประเทศไทย, Suwilai Premsrirat et al., Mahidol University Institute of
+Language and Culture, 2004) are the standard secondary source, and their
+per-province tables are not where a clean client can read them. Measured
+from the runner: the Sirindhorn Anthropology Centre's ethnic-groups database
+(`ethnicity.sac.or.th`, the database the centre's front page links to)
+answers **403**; `www.lc.mahidol.ac.th` serves a certificate that is **not
+valid for its own hostname**, which this project does not step around;
+`langrevival.mahidol.ac.th` answers **403**; `www.sac.or.th` itself serves
+its news and nothing tabular. What Wikipedia carries of the maps is national:
+*Demographics of Thailand* transcribes ten groups (Central Thai 20.0 million,
+Lao 15.2, Kam Mueang 6.0, Pak Tai 4.5, Northern Khmer 1.4, Yawi 1.4, Nyaw
+0.5, Phu Thai 0.5, Karen 0.4, Kuy 0.4), and *Ethnic groups in Thailand*
+transcribes the 2011 CERD country report's table by language family, which
+counts 16.1 million Tai and 1.9 million Austroasiatic and then writes
+"cannot specify ethnicity/number 32,888,000". Neither has a province in it.
+The Thai edition's *กลุ่มชาติพันธุ์ในประเทศไทย* does not exist, and its
+*ภาษาในประเทศไทย* and *ประชากรศาสตร์ไทย* carry no ethnicity table.
+
+**(b) Kaggle** was searched from the runner (`scripts/probe_kaggle.py
+--search`, through the kagglesdk client with the owner's token in the
+environment) for "thailand census", "thailand population province",
+"thailand language" and "thailand ethnic": 41 datasets listed, none of them
+Thailand's census or anything by province -- the US Adult income set, road
+accidents, tourism, a Thai text corpus, the World Factbook.
+
+**(c) Wikipedia's provincial articles** were surveyed through the API.
+*Northern Khmer people* carries the Khmer share of nine provinces for 1990
+and 2000, which is the same 2000 census figure the list article already
+holds; *Isan people* and *Languages of Thailand* carry no table at all.
+
+So there is no per-province ethnolinguistic table to transcribe, and the
+province figure is a **model**, built from the one per-province thing the
+census did count. The list article's "Linguistic minorities in 2000" column
+-- the cell `thailand.py` leaves unread -- transcribes, from each provincial
+final report, the share speaking each minority language at home: "Khmer
+(47.2%)" for Surin, "Malay (66.1%), Chinese (3.0%)" for Yala, "Hill tribe
+languages (63.0%)" for Mae Hong Son. The adapter reads those as printed,
+under the census's own category names ("Hill tribe languages", "Burmese and
+Peguan", "Laotian and Vietnamese" are kept as the rows they are), drops and
+names in the note anything printed below 0.1%, and assigns everyone else --
+whom the census counted as speaking Thai -- to the regional Tai group the
+maps give for the province's region: Northern Thai in the eight
+upper-northern provinces, Isan (Lao) in the twenty of the northeast,
+Southern Thai in the fourteen of the south, Central Thai in the other 35.
+Every province's shares sum to 100 by construction. The method is named
+`tier1-census-home-language-plus-regional-assignment`, the two inputs are on
+the record, and the note says what the model cannot do: separate the Tai
+groups the maps count apart (Thai Khorat, Phu Thai, Nyaw, Kaleung, Phuan,
+Lue, Shan), name the Austroasiatic peoples the census did not (Kuy, So, Bru,
+Mon), or see the Thai Chinese, who are a tenth or more of the country by
+descent and a few hundred thousand by home language.
+
+**The national check**, printed by the run. The 76 provinces weighted by the
+December 2024 populations in *Provinces of Thailand* (the 2000 totals sit
+behind the same 418) imply Central Thai 43.6%, Isan 30.1, Southern Thai 11.7,
+Northern Thai 7.9, Malay 2.7, Khmer 2.3, hill tribe languages 1.4; the maps'
+figures against the 2000 census population of 60,916,441 are 32.8, 25.0, 7.4,
+9.8, 2.3, 2.3. The census-counted rows agree; the regional remainders run
+high, because the maps' ten largest groups are 82.6% of the population and
+the remainders are all of it, and by most in the centre and south where the
+Chinese-descended and the smaller Tai groups live. That gap is the assumption
+showing, and it is why the figure is an estimate and is labelled one. **No
+backtest is possible**: no provincial ethnicity figure exists to hide and
+predict, and the record says so rather than carrying one.
+
+The labels the model writes are placed in the tree where they are certain:
+Central, Northern and Southern Thai beside Isan under Mainland Southeast
+Asian peoples (spelled out, because the bare "Thai" is also the nationality
+Japan's census counts, and that entry wins), Kuy and Mien with them, "Burmese
+and Mon" where the tree keeps Mon, Thai Chinese under Han and Sinitic
+peoples, and the census's "hill tribe languages" row as a census category of
+its own under East and Southeast Asian ancestry, since its peoples are half
+Tibeto-Burman and half not. Bueng Kan, carved out of Nong Khai in 2011, has
+no 2000 row and stays empty here as it does for religion. Thailand stays in
+`ADAPTER_GAPS`, and its reason now names the model.
 
 ### Wikipedia transcriptions: what was measured and left
 

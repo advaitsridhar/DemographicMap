@@ -350,6 +350,27 @@ predict, so the estimate carries no `backtest` key and says so rather than
 inventing one. `docs/SOURCES.md`, "Japan, resolved by the owner's decision",
 records what was read.
 
+**Thailand's ethnicity is the second case under the same decision**, and a
+different shape of model. The census asks no ethnicity question, the
+Ethnolinguistic Maps of Thailand that would answer it by province are behind
+hosts that refuse a clean client, and Kaggle holds nothing; what the census
+did count per province, and what Wikipedia transcribes from every 2000
+provincial report, is the share speaking each minority language at home.
+`scripts/fetch_census/thailand_ethnicity.py` reads those as printed under the
+census's own category names and assigns everyone else -- counted as
+speaking Thai -- to the regional Tai group the maps give for the province's
+region (`tier1-census-home-language-plus-regional-assignment`). Every one of
+the 76 provinces is `modelled`, never a list, even Surin, whose Khmer 47.2%
+is a census figure, because the other 52.8% is an assignment and a
+composition is one thing. The run prints the national composition the
+provinces imply beside the maps' national figures: the census-counted rows
+agree (Khmer 2.3 against 2.3, Malay 2.7 against 2.3) and the regional
+remainders run high (Central Thai 43.6 against 32.8, Southern Thai 11.7
+against 7.4), which is the assumption showing and the reason the figure is
+an estimate. As with Japan, **no backtest is possible** and the record says
+so. `docs/SOURCES.md`, "Thailand: ethnicity from secondary sources, by the
+owner's decision", records what was measured and where each source failed.
+
 ## 8. Recommendation
 
 Build **Tier 0 and the geometric half of Tier 1** — the residual and the

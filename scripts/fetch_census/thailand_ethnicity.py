@@ -51,13 +51,19 @@ as Thai. A minority the report printed below 0.1% is named in the note and
 not carried as a share.
 
 **The check.** The national composition the 76 modelled provinces imply,
-weighted by population, is printed beside the maps' national figures. It
-agrees where the census counted (Khmer, Malay) and disagrees where the model
-assigns (Southern Thai comes out above the maps' 4.5 million, Central Thai
-below 20), which is the assumption showing, and is the reason the figure is
-an estimate. The population weights are the December 2024 figures the
-article *Provinces of Thailand* carries -- the 2000 provincial totals sit
-behind the same hosts as everything else the NSO publishes.
+weighted by population, is printed beside the maps' national figures read
+against the 2000 census population. Measured on the first run: it agrees
+where the census counted (Khmer 2.3% against the maps' 2.3, Malay 2.7
+against 2.3) and disagrees where the model assigns -- Central Thai 43.6%
+against 32.8, Isan 30.1 against 25.0, Southern Thai 11.7 against 7.4,
+Northern Thai 7.9 against 9.8. The maps' ten largest groups account for
+82.6% of the 2000 population and the model's regional remainders for all of
+it, so the remainders run high, and by most where the Thai Chinese and the
+smaller Tai groups live; that is the assumption showing, and it is the
+reason the figure is an estimate. The population weights are the December
+2024 figures the article *Provinces of Thailand* carries -- the 2000
+provincial totals sit behind the same hosts as everything else the NSO
+publishes.
 
 **Bueng Kan** was carved out of Nong Khai in 2011 and has no 2000 row, so it
 stays empty, as it does for religion.
