@@ -130,9 +130,39 @@ def pdf_pages(blob: bytes) -> list[str]:
     return [(page.extract_text() or "") for page in reader.pages]
 
 
-def search_pdf(url: str, limit: int = 80_000_000) -> None:
-    """Which pages of a PDF cross ethnic group with province, and what the
-    contents pages promise about ethnicity."""
+MAIN_PDF = ("https://www.nso.gov.vn/wp-content/uploads/2019/12/"
+            "Ket-qua-toan-bo-Tong-dieu-tra-dan-so-va-nha-o-2019.pdf")
+ETHNONYMS = ["Tày", "Thái", "Mường", "Khmer", "Hoa", "Nùng", "Mông", "Dao",
+             "Gia Rai", "Ê Đê", "Ba Na", "Sán Chay", "Chăm", "Cơ Ho", "Xơ Đăng"]
+FAITHS = ["Phật giáo", "Công giáo", "Tin lành", "Cao Đài", "Hòa Hảo"]
+PROVINCES = ["Hà Nội", "Hà Giang", "Cao Bằng", "Lạng Sơn", "Sơn La", "Điện Biên",
+             "Đắk Lắk", "Trà Vinh", "Hồ Chí Minh", "An Giang", "Cà Mau", "Lào Cai"]
+
+
+def page_rows(blob: bytes, number: int) -> str:
+    """One page with its rows rebuilt from word coordinates, the way
+    probe_pdf --layout does for a whole file."""
+    import io
+    import pdfplumber
+    out = []
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+        page = pdf.pages[number - 1]
+        words = page.extract_words(use_text_flow=False, keep_blank_chars=False)
+        rows: list[tuple[float, list[tuple[float, str]]]] = []
+        for w in sorted(words, key=lambda w: (round(w["top"], 1), w["x0"])):
+            top = round(w["top"], 1)
+            if rows and abs(rows[-1][0] - top) <= 2.0:
+                rows[-1][1].append((w["x0"], w["text"]))
+            else:
+                rows.append((top, [(w["x0"], w["text"])]))
+        for _top, cells in rows:
+            out.append("  ".join(t for _x, t in sorted(cells)))
+    return "\n".join(out)
+
+
+def search_pdf(url: str, limit: int = 80_000_000, full: int = 2) -> None:
+    """Which pages of the volume cross ethnic group (or religion) with a
+    province, and what the contents pages promise."""
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT,
                                                "Accept": "application/pdf,*/*"})
     try:
@@ -150,19 +180,30 @@ def search_pdf(url: str, limit: int = 80_000_000) -> None:
     except Exception as exc:  # noqa: BLE001
         log(f"      !! cannot read: {type(exc).__name__}: {str(exc)[:100]}")
         return
-    for n, page in enumerate(pages[:30], 1):
-        for line in page.splitlines():
-            if re.search(r"dân tộc|ethnic|tôn giáo|religion", line, re.IGNORECASE):
-                log(f"      p{n} contents: {line.strip()[:150]}")
-    shown = 0
-    for n, page in enumerate(pages, 1):
-        if all(t in page for t in PDF_ROW_TERMS) \
-                and sum(t in page for t in PDF_PROVINCE_TERMS) >= 3:
+    for n in (5, 6, 7, 8):
+        if n <= len(pages):
+            body = "\n".join(line.rstrip() for line in pages[n - 1].splitlines() if line.strip())
+            log(f"      -- contents page {n}:\n{body[:3500]}")
+    for label, terms, need in (("ethnic", ETHNONYMS, 6), ("religion", FAITHS, 4)):
+        hits: list[tuple[int, list[str]]] = []
+        for n, page in enumerate(pages, 1):
+            if sum(t in page for t in terms) >= need:
+                hits.append((n, [pv for pv in PROVINCES if pv in page]))
+        log(f"      {len(hits)} page(s) name {need}+ {label} terms; "
+            f"{sum(1 for _n, pv in hits if pv)} of them beside a province")
+        compact = [f"p{n}{'[' + ','.join(pv) + ']' if pv else ''}" for n, pv in hits]
+        log("      " + " ".join(compact)[:3000])
+        shown = 0
+        for n, pv in hits:
+            if not pv or shown >= full:
+                continue
             shown += 1
-            if shown <= 6:
-                body = "\n".join(line.rstrip() for line in page.splitlines() if line.strip())
-                log(f"      -- page {n} crosses ethnic group with province:\n{body[:1800]}")
-    log(f"      {shown} page(s) name {PDF_ROW_TERMS} beside three or more provinces")
+            body = "\n".join(line.rstrip() for line in pages[n - 1].splitlines() if line.strip())
+            log(f"      -- page {n} ({label}), pypdf text:\n{body[:2500]}")
+            try:
+                log(f"      -- page {n} ({label}), rows by coordinate:\n{page_rows(blob, n)[:3500]}")
+            except Exception as exc:  # noqa: BLE001
+                log(f"      (rows failed: {type(exc).__name__}: {str(exc)[:80]})")
 
 
 def probe_office() -> None:
@@ -316,7 +357,9 @@ def main() -> int:
     ap.add_argument("--probe", action="store_true",
                     help="reconnoitre the three routes and write nothing")
     ap.add_argument("--rows", type=int, default=3, help="sample rows per table, with --probe")
-    ap.add_argument("--routes", default="abc", help="which routes to probe: any of a, b, c")
+    ap.add_argument("--routes", default="abc",
+                    help="which routes to probe: a (office pages), b (Kaggle), "
+                         "c (Wikipedia), p (scan the results volume for the tables)")
     args = ap.parse_args()
     if args.probe:
         if "a" in args.routes:
@@ -325,6 +368,9 @@ def main() -> int:
             probe_kaggle()
         if "c" in args.routes:
             probe_wiki(args.rows)
+        if "p" in args.routes:
+            log(f"== route (a): the results volume {MAIN_PDF}")
+            search_pdf(MAIN_PDF, full=args.rows)
         return 0
     raise SystemExit("vietnam: the reader is not built yet; run --probe first")
 
