@@ -62,6 +62,11 @@ ADAPTER_FILES = [
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
     "korea_survey_province.json",
+    # Thailand's ethnicity, by the same decision as Japan's below: a model
+    # built from the 2000 census's home-language minorities and a regional
+    # assignment, every province a modelled estimate. Its religion file
+    # (thailand_province.json) is a census transcription and sits lower.
+    "thailand_ethnicity.json",
     # Japan, by the owner's decision of 19 September 2026: nationality read
     # from the 2020 census as a composition, religion and language as
     # modelled estimates. Part survey and part model, so it sits with the
@@ -259,7 +264,12 @@ ADAPTER_GAPS: dict[str, str] = {
     "THA": "The statistical office refuses automated readers on every host "
            "tried. Religion by province is the 2000 census, read from its "
            "provincial final reports as transcribed on Wikipedia; language was "
-           "made public once, for 2000, in a file that is not a composition.",
+           "made public once, for 2000, in a file that is not a composition. "
+           "Ethnicity is not asked, and by the owner's decision of 19 September "
+           "2026 every province carries a modelled estimate instead: the 2000 "
+           "census's home-language minorities as printed, the rest assigned to "
+           "the region's Tai group as the Ethnolinguistic Maps of Thailand name "
+           "it, labelled as a model on every record.",
     "IRN": "The 2016 census asked religion and the Statistical Centre publishes "
            "it by province, but amar.org.ir ends the TLS handshake before a "
            "standard client can read a page (an EOF in the protocol, measured "

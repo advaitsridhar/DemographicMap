@@ -93,6 +93,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.china_wiki
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.
   soft python3 -m scripts.fetch_census.thailand
+  # Thailand's ethnicity by the owner's decision: modelled from the same
+  # article's home-language cells and a regional assignment; two API calls.
+  soft python3 -m scripts.fetch_census.thailand_ethnicity
   # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).
   soft python3 -m scripts.fetch_census.wiki_census
   # Reads the committed BNS workbook under data/raw/kazakhstan; no network.

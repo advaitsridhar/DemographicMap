@@ -965,6 +965,14 @@ ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
     "Scheduled ethnic groups (census category)": (
         "Scheduled ethnic groups",
     ),
+    # Thailand's census counts the upland peoples of the north and west as
+    # one row, "hill tribe languages" (ชาวเขา): Karen, Hmong, Mien, Lahu,
+    # Akha, Lisu, Lua, Khmu and Mlabri together. Half of them the tree files
+    # as Tibeto-Burman and the rest as Hmong-Mien or Austroasiatic, so the
+    # row is kept as the state's category and filed by where they live.
+    "Hill tribes (census category)": (
+        "Hill tribe languages (census category)", "Hill tribes", "Hill tribe",
+    ),
 }
 
 # The answers that name a country rather than a people. Where the country has
@@ -1021,7 +1029,7 @@ ETHNIC_ANCESTRY: dict[str, tuple[str, ...]] = {
         "Han and Sinitic peoples", "Japanese peoples", "Korean peoples",
         "Mongolic and Siberian peoples", "Mainland Southeast Asian peoples",
         "Malay and Indonesian peoples", "Philippine peoples",
-        "Asian (census category)",
+        "Asian (census category)", "Hill tribes (census category)",
     ),
     "Indigenous American ancestry": (
         "Indigenous peoples of North America",
@@ -1496,6 +1504,14 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "Phù Lá", "La Hủ", "La Ha", "Pà Thẻn", "Lự", "Lô Lô", "Chứt",
         "Mảng", "Cờ Lao", "Bố Y", "Cống", "Si La", "Pu Péo", "Rơ Măm",
         "Brâu", "Ơ Đu", "Mông", "H'Mông", "Dao",
+        # Thailand's four regional Tai groups as the Ethnolinguistic Maps of
+        # Thailand name them, spelled out here because the bare "Thai" is
+        # also a nationality (Japan's census counts Thai nationals) and the
+        # nationality entry wins; a Central Thai is a people, not a passport.
+        # Kuy is Katuic like Katang; Mien is the other half of Hmong-Mien;
+        # "Lao and Vietnamese" is the 2000 census's one row for the two.
+        "Central Thai", "Northern Thai", "Southern Thai", "Kuy", "Mien",
+        "Lao and Vietnamese",
     ),
     "Malagasy peoples": ("Sihanaka", "Masikoro", "Antesaka", "Antandroy",
                          # The rest of Madagascar's eighteen.
@@ -1544,6 +1560,10 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     ),
     "Himalayan and Tibeto-Burman peoples": (
         "Ngalop", "Sharchop",
+        # Thailand's 2000 census counts "Burmese and Peguan" (Mon) speakers
+        # as one row; it sits where the tree already keeps Mon and Burmese
+        # would sit as a people.
+        "Burmese and Mon",
         # Nepal's janajati: the Kiranti (Rai) groups of the eastern hills
         # and the Bhote (Tibetan-descended) groups of the north, which the
         # census lists one by one where a summary writes "Rai" or "Bhote".
@@ -1638,8 +1658,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # category is not an ancestry rather than to pick one for it.
     "Unclassified ethnicity answers": ("Hindou", "Musulman"),
     # Viet Nam's Hoa are its Han Chinese, and the Ngái its Hakka-speaking
-    # Chinese of the north-east; the census counts them as two groups.
-    "Han and Sinitic peoples": ("Hui", "Hoa", "Ngái"),
+    # Chinese of the north-east; the census counts them as two groups. The
+    # Thai Chinese are Thailand's, the Ethnolinguistic Maps' own label.
+    "Han and Sinitic peoples": ("Hui", "Hoa", "Ngái", "Thai Chinese"),
     # The Austronesian peoples of maritime south-east Asia that Indonesia,
     # Malaysia and Myanmar name beyond the tree's existing list.
     "Malay and Indonesian peoples": ("Banjarese", "Bantenese", "Sasak",
