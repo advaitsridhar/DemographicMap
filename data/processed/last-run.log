@@ -1,7 +1,6 @@
-korea_nationality: Ministry of Justice (Korea Immigration Service), registered foreign residents by city/county/district and nationality at 31 December 2023 (시군구별 국적(지역)별 등록외국인 체류현황, data.go.kr dataset 15108413)
   cached moj_registered_foreigners_by_district_2022_2023.zip (0.1 MB)
   2023 시군구별 국적(지역)별 등록외국인 체류 현황.csv: 322,310 bytes
-  229 units in 17 provinces
+  have the Ministry of Justice's district file
   register: 17 provinces listed
     서울특별시: 26 rows
     부산광역시: 17 rows
@@ -20,24 +19,11 @@ korea_nationality: Ministry of Justice (Korea Immigration Service), registered f
     경상북도: 25 rows
     경상남도: 24 rows
     제주특별자치도: 3 rows
-  register: 247 rows, 51,325,329 nationally
+  have the resident register
   retry 1/4 in 2s :: <urlopen error timed out>
   retry 2/4 in 4s :: <urlopen error timed out>
   retry 3/4 in 8s :: <urlopen error timed out>
   retry 4/4 in 16s :: <urlopen error timed out>
   retry 5/4 in 32s :: <urlopen error timed out>
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/korea_nationality.py", line 897, in <module>
-    sys.exit(main())
-             ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/korea_nationality.py", line 887, in main
-    published = read_national(fetch_national())
-                              ^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/korea_nationality.py", line 860, in fetch_national
-    blob = download(MOJ_NATIONAL_URL, MOJ_NATIONAL_FILE, timeout=90).read_bytes()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 714, in download
-    raise RuntimeError(f"download failed: {url}")
-RuntimeError: download failed: https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003669729&fileDetailSn=1&insertDataPrcus=N
+  the Ministry's national table did not answer: download failed: https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003669729&fileDetailSn=1&insertDataPrcus=N
+korea_nationality: still missing the Ministry's national table
