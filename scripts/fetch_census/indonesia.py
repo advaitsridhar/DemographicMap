@@ -152,6 +152,9 @@ PROVINCES: dict[str, tuple[str, list[str]]] = {
 # The article describes a province the 2022 division left smaller than the
 # shape the map draws, so its infobox figure is for a different population.
 DIVIDED_2022 = {"Papua", "West Papua"}
+# North Kalimantan was carved out of East Kalimantan in 2012; the map draws
+# both, and each article's 2010 table is for its present extent.
+SPLIT_2012 = {"East Kalimantan", "North Kalimantan"}
 # Provinces whose article carries no 2010 ethnic table, in either edition.
 NO_ETHNIC_TABLE = {"Bangka-Belitung Islands", "West Sulawesi"}
 
@@ -782,6 +785,7 @@ def province_records(fetch_page=fetch) -> tuple[list[dict[str, Any]], dict[str, 
     records: list[dict[str, Any]] = []
     javanese: dict[str, int] = {}
     read_counts: dict[str, int] = {}
+    totals: dict[str, int] = {}
     for province, (title, aliases) in PROVINCES.items():
         wikitext, resolved = fetch_page(title, "id")
         fields: dict[str, Any] = {}
@@ -791,6 +795,13 @@ def province_records(fetch_page=fetch) -> tuple[list[dict[str, Any]], dict[str, 
             if found:
                 counts, total = found
                 expected = populations.get(resolved) or populations.get(title)
+                if province in SPLIT_2012:
+                    # North Kalimantan left East Kalimantan in 2012, and each
+                    # article's table is for the province as it now is
+                    # while the 2010 population is for the province as it
+                    # was. Their two tables add to it; the check is over
+                    # the pair.
+                    expected = None
                 if expected and not 0.85 * expected <= total <= 1.03 * expected:
                     raise SystemExit(f"indonesia: {province}: the ethnic table's total "
                                      f"{total:,} is not the 2010 population {expected:,}")
@@ -804,6 +815,7 @@ def province_records(fetch_page=fetch) -> tuple[list[dict[str, Any]], dict[str, 
                                 "url": "https://id.wikipedia.org/wiki/" + resolved.replace(" ", "_"),
                                 "license": LICENCE})
                 javanese[province] = counts.get("Javanese", 0)
+                totals[province] = total
                 for label, n in counts.items():
                     read_counts[label] = read_counts.get(label, 0) + n
         elif province in NO_ETHNIC_TABLE:
@@ -824,6 +836,11 @@ def province_records(fetch_page=fetch) -> tuple[list[dict[str, Any]], dict[str, 
         records.append(record(f"{ISO3}-{slugify(province)}", province, level="admin1",
                               parent=ISO3, country=ISO3, aliases=aliases, sources=sources,
                               **fields))
+    kalimantan = sum(totals.get(p, 0) for p in SPLIT_2012)
+    expected = populations.get("Kalimantan Timur")
+    if kalimantan and expected and not 0.85 * expected <= kalimantan <= 1.03 * expected:
+        raise SystemExit(f"indonesia: East and North Kalimantan's tables add to {kalimantan:,} "
+                         f"against the 2010 population {expected:,}")
     check_national(national, read_counts, javanese)
     return records, javanese
 
