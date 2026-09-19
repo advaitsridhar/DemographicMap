@@ -1,8 +1,6 @@
-page: https://www.data.go.kr/data/15100022/fileData.do
-  192,211 bytes
-  5 distinct match(es) for '(fileDownload.do|fileDataDown|atchFileId|selectFileDataDownload|publicDataDetailPk|.xlsx|.csv)[^<]{0,300}'
-    "csv
-    atchFileId
-    fileDataDown
-    fileDownload.do
-    publicDataDetailPk
+page: https://www.mois.go.kr/frt/sub/a05/foreigner/screen.do
+  122,430 bytes
+  3 distinct match(es) for 'href=[^>]*(bbs|Board|file|File|xls|nttId)[^>]{0,200}'
+    Board
+    bbs
+    nttId
