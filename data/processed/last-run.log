@@ -1,436 +1,624 @@
-china_wiki: 31 divisions from the English Wikipedia through the MediaWiki API
-  'Beijing': 258,451 bytes of wikitext
-== Beijing Municipality ('Beijing'): 4 tables
-         table 0: 1 rows; section 'Administrative divisions'; caption 'Administrative divisions of Beijing'; year 2010
-         header: ['']
-         table 1: 19 rows; section 'Administrative divisions'; caption ''; year 2020
-         header: ['Division', 'Area in km 2', 'Total population 2020', 'Urban area population 2020', 'Seat', 'Postal code', 'Subdivisionsdate=September 201']
-         table 2: 18 rows; section 'Administrative divisions'; caption 'Divisions in Chinese'; year 2010
-         header: ['English', 'Chinese', 'Pinyin']
-         table 3: 24 rows; section 'Economy'; caption 'Historical GDP of Beijing for 1978–present (SNA2008) (purchasing power parity of Chinese Yuan, as international dollar based on IMF WEO October&nbsp;2022)'; year 2022
-         header: ['Year', 'CNY (millions)', 'USD (millions)', "PPP (Int'l$) (millions)", 'Real growth (%)', 'CNY per capita*', 'USD per capita*', "PPP (Int'l$.) per capita*", 'Reference index: USD 1 to CNY', "Reference index: Int'l$. 1 to "]
-  'Tianjin': 145,163 bytes of wikitext
-== Tianjin Municipality ('Tianjin'): 3 tables
-         table 0: 20 rows; section 'Administrative divisions'; caption 'Administrative divisions of Tianjin'; year None
-         header: ['']
-         table 1: 19 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Divisions in Chinese and varie']
-         table 2: 13 rows; section 'Economy'; caption ''; year None
-         header: ['Skyscrapers in Tianjin', 'Meters', 'Feet']
-  'Hebei': 66,259 bytes of wikitext
-== Hebei Province ('Hebei'): 4 tables
-         table 0: 5 rows; section 'Geography'; caption 'Average daily maximum and minimum temperatures for selected locations in Hebei Province, China'; year None
-         header: ['City', 'July (°C)', 'July (°F)', 'January (°C)', 'January (°F)']
-         table 1: 12 rows; section 'Administrative divisions'; caption ''; year 2020
-         header: ['Division code', 'Division', 'Area (km 2 )', 'Population (2020)', 'Seat', 'Districts', 'Counties', 'Autonomous counties', 'County-level cities']
-         table 2: 13 rows; section 'Administrative divisions'; caption ''; year 2020
-         header: ['#', 'City', '2020 Urban Area', '2010 Urban Area', '2020 City Population']
-  ETHNIC table 3: 7 rows; section 'Demographics'; caption ''; year 2000
-         header: ['Ethnic groups in Hebei, 2000 c']
-         prose : 'The population in Hebei is mostly Han Chinese. There are 55 ethnic minorities in Hebei, representing 4.27% of the total population. The largest ethnic groups are Manchu (2.1 million people), Hui (600,'
-         row   : ['Nationality', 'Population', 'Percentage']
-         row   : ['Han Chinese', '63,781,603', '95.65%']
-         row   : ['Manchu', '2,118,711', '3.18%']
-         row   : ['Hui', '542,639', '0.78%']
-         row   : ['Mongol', '169,887', '0.26%']
-         row   : ['Zhuang', '20,832', '0.031%']
-  'Shanxi': 120,909 bytes of wikitext
-== Shanxi Province ('Shanxi'): 5 tables
-         table 0: 8 rows; section 'Aviation'; caption ''; year None
-         header: ['Taiyuan Wusu International Air', 'TYN', '太原武宿国际机场']
-  ETHNIC table 1: 5 rows; section 'Demographics'; caption 'Ethnic groups in Shanxi, 2000 census'; year 2000
-         header: ['Ethnic group', 'Population', 'Percentage']
-         prose : 'The population is mostly Han Chinese with minorities of Mongol, Manchu, and the Hui.'
-         row   : ['Han Chinese', '32,368,083', '99.68%']
-         row   : ['Hui', '61,690', '0.19%']
-         row   : ['Manchu', '13,665', '0.042%']
-         row   : ['Mongol', '9,446', '0.029%']
-         table 2: 15 rows; section 'Administration'; caption 'Administrative divisions of Shanxi'; year None
-         header: ['']
-         table 3: 14 rows; section 'Administration'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 4: 24 rows; section 'Administration'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-  'Inner Mongolia': 108,928 bytes of wikitext
-== Inner Mongolia Autonomous Region ('Inner Mongolia'): 7 tables
-         table 0: 6 rows; section 'Climate crisis'; caption 'Average daily maximum and minimum temperatures for some locations in Inner Mongolia of China'; year None
-         header: ['City', 'July (°C)', 'July (°F)', 'January (°C)', 'January (°F)']
-         table 1: 16 rows; section 'Administrative divisions'; caption 'Administrative divisions of Inner Mongolia'; year None
-         header: ['']
-         table 2: 15 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Mo']
-         table 3: 22 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-  ETHNIC table 4: 7 rows; section 'Demographics'; caption 'Ethnic groups in Inner Mongolia, 2010 census'; year 2010
-         header: ['Ethnicity', 'Population', 'Percentage']
-         prose : 's in cities as migrant labourers; howev Inter-marriage between Mongol and non-Mongol populations is very common, particularly in areas where Mongols are in regular contact with other groups. There was little cultural stigma within Mongol fa'
-         row   : ['Han', '19,650,687', '79.54%']
-         row   : ['Mongol', '4,226,093', '17.11%']
-         row   : ['Manchu', '452,765', '1.83%']
-         row   : ['Daur', '121,483', '0.49%']
-         row   : ['Evenks', '26,139', '0.11%']
-         row   : ['Oroqen people', '8,464', '0.07%']
-         table 5: 8 rows; section 'Demographics'; caption ''; year 2020
-         header: ['Year', 'Population', 'colspan=2|Han Chinese', 'colspan=2|Mongol', 'colspan=2|Manchu']
-         table 6: 16 rows; section 'Demographics'; caption 'Territories with Mongol majorities and near-majoritiesdate=March 2020'; year 2020
-         header: ['Name of banner', 'Mongol population', 'Percentage']
-  'Liaoning': 69,602 bytes of wikitext
-== Liaoning Province ('Liaoning'): 4 tables
-         table 0: 19 rows; section 'Administrative divisions'; caption 'Administrative divisions of Liaoning'; year None
-         header: ['']
-         table 1: 17 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 32 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-  ETHNIC table 3: 9 rows; section 'Demographics'; caption ''; year 2000
-         header: ['Ethnic groups in Liaoning, 200']
-         prose : 'The population of Liaoning is mostly Han Chinese with minorities of Manchus, Mongols, Hui, Koreans and Xibe. Liaoning has both the highest absolute number and highest percentage of Manchus in all of C'
-         row   : ['Nationality', 'Population', 'Percentage']
-         row   : ['Han Chinese', '35,105,991', '83.94%']
-         row   : ['Manchu', '5,385,287', '12.88%']
-         row   : ['Mongol', '669,972', '1.60%']
-         row   : ['Hui', '264,407', '0.632%']
-         row   : ['Koreans', '241,052', '0.576%']
-         row   : ['Xibe', '132,615', '0.317%']
-         row   : ['Excludes members of the People']
-  'Jilin': 46,340 bytes of wikitext
-== Jilin Province ('Jilin'): 4 tables
-         table 0: 14 rows; section 'Administrative divisions'; caption 'Administrative divisions of Jilin'; year None
-         header: ['']
-         table 1: 12 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 30 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Demographics'; caption ''; year 2000
-         header: ['Ethnic groups in Jilin (2000 c', 'Ethnic Groups', 'Population', 'Percentage', 'Han Chinese', '24,348,815', '90.85%', 'Koreans', '1,145,688', '4.27%', 'Manchu', '993,112', '3.71%', 'Mongol', '172,026', '0.64%', 'Hui', '125,620', '0.47%']
-  'Heilongjiang': 70,631 bytes of wikitext
-== Heilongjiang Province ('Heilongjiang'): 5 tables
-         table 0: 5 rows; section 'Climate'; caption 'Average daily maximum and minimum temperatures for some locations in Heilongjiang province of China'; year None
-         header: ['City', 'July (°C)', 'July (°F)', 'January (°C)', 'January (°F)']
-         table 1: 18 rows; section 'Administrative divisions'; caption 'Administrative divisions of Heilongjiang'; year None
-         header: ['']
-         table 2: 16 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 3: 39 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 4: 4 rows; section 'Ethnic groups'; caption 'Ethnic composition of Heilongjiang Province (Seventh National Population Census, 2020)'; year 2020
-         header: ['Ethnic group', 'Han Chinese', 'Manchu', 'Korean', 'Mongol', 'Hui', 'Daur', 'Xibe', 'Zhuang', 'Miao', 'Hezhen', 'Other minorities']
-  'Shanghai': 240,710 bytes of wikitext
-== Shanghai Municipality ('Shanghai'): 6 tables
-         table 0: 6 rows; section 'Structure'; caption 'Current leaders of the Shanghai Municipal Government'; year None
-         header: ['', '25px', '25px', '25px', '25px']
-         table 1: 2 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions of Sh']
-         table 2: 14 rows; section 'Administrative divisions'; caption ''; year 2022
-         header: ['Division code', 'Division', 'Area (km 2 )', 'Total population 2022', 'Seat', 'Postal code']
-         table 3: 11 rows; section 'Economy'; caption ''; year 2020
-         header: ['City', 'Area km 2', 'Population (2020)', 'GDP (CN¥)', 'GDP (US$)']
-         table 4: 5 rows; section 'Economy'; caption 'Economy of Shanghai since the reform and opening up'; year 2019
-         header: ['Year', '1978', '1980', '1983', '1986', '1990', '1993', '1996', '2000', '2003', '2006', '2010', '2013', '2016', '2017', '2018', '2019']
-         table 5: 1 rows; section 'Consulates and consulates general'; caption ''; year None
-         header: ['', '', '', '']
-  'Jiangsu': 86,080 bytes of wikitext
-== Jiangsu Province ('Jiangsu'): 7 tables
-         table 0: 18 rows; section 'Administrative divisions'; caption 'Administrative divisions of Jiangsu'; year None
-         header: ['']
-         table 1: 16 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 41 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['No.', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Religion'; caption ''; year 2010
-         header: ['']
-         table 4: 4 rows; section 'Culture'; caption ''; year None
-         header: ['Group', 'Wuyue', 'colspan=2 | Lower Yangtze', 'Central Plains']
-         table 5: 4 rows; section 'Double First Class Universities in Jiangsu'; caption ''; year None
-         header: ['Jiangsu (16)', 'Nanjing (13)', '']
-         table 6: 34 rows; section 'Twin Provinces'; caption ''; year None
-         header: ['Country', 'State/Province', 'Time']
-  'Zhejiang': 97,937 bytes of wikitext
-== Zhejiang Province ('Zhejiang'): 5 tables
-         table 0: 16 rows; section 'Administrative divisions'; caption 'Administrative divisions of Zhejiang'; year None
-         header: ['']
-         table 1: 14 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 36 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 24 rows; section 'Economy'; caption ''; year 2023
-         header: ['Historical GDP of Zhejiang for']
-         table 4: 1 rows; section 'Religion'; caption ''; year 2020
-         header: ['']
-  'Anhui': 58,064 bytes of wikitext
-== Anhui Province ('Anhui'): 3 tables
-         table 0: 20 rows; section 'Administrative divisions'; caption 'Administrative divisions of Anhui'; year None
-         header: ['']
-         table 1: 19 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 26 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year None
-         header: ['#', 'City', 'Urban area', 'District area', 'City proper', 'Census date']
-  'Fujian': 105,436 bytes of wikitext
-== Fujian Province ('Fujian'): 5 tables
-         table 0: 14 rows; section 'Administrative divisions'; caption 'Administrative divisions of Fujian'; year None
-         header: ['']
-         table 1: 12 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 24 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 24 rows; section 'Economy'; caption ''; year 2017
-         header: ['Historical GDP of Fujian for 1']
-         table 4: 1 rows; section 'Religion'; caption ''; year 2010
-         header: ['']
-  'Jiangxi': 56,262 bytes of wikitext
-== Jiangxi Province ('Jiangxi'): 5 tables
-         table 0: 15 rows; section 'Administrative divisions'; caption 'Administrative divisions of Jiangxi'; year None
-         header: ['']
-         table 1: 14 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 29 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year None
-         header: ['#', 'City', 'style ="background-color: #aaa', 'style ="background-color: #aaf', 'style ="background-color: #ffa', 'Census date']
-         table 3: 21 rows; section 'Economy'; caption "Historical GDP of Jiangxi Province for 1978 –present (SNA2008; purchasing power parity of Chinese Yuan, as Int'l. dollar based on IMF WEO October 2017)"; year 2017
-         header: ['align=center rowspan=3| year', 'align=center colspan=4| GDP', 'align=center colspan=3| GDP pe', 'align=center colspan=2| Refere']
-         table 4: 1 rows; section 'Religion'; caption ''; year 2009
-         header: ['']
-  'Shandong': 194,030 bytes of wikitext
-== Shandong Province ('Shandong'): 6 tables
-         table 0: 17 rows; section 'Climate'; caption 'Average temperature in Shandong (°C)'; year None
-         header: ['', 'Spring', 'Summer', 'Fall', 'Winter', '']
-         table 1: 33 rows; section 'Economy'; caption ''; year None
-         header: ['align=center colspan=10 | Hist']
-  ETHNIC table 2: 7 rows; section 'Ethnicity'; caption 'Ethnic groups in Shandong according to the 2020 Chinese census'; year 2020
-         header: ['Ethnicity', 'Male', 'Female', 'Total population', 'Percentage']
-         prose : 'ident population was 101.527 million, of which 100.622 mill In addition, there are considerable Korean diaspora in Shandong; for example, Qingdao has a Korean population of over 100,000, accounting for about 7.19% of total Koreans in China.'
-         row   : ['Han', '50,981,231', '49,641,263', '100,622,494', '99.109%']
-         row   : ['Hui', '279,413', '272,802', '552,215', '0.544%']
-         row   : ['Mongol', '19,360', '18,294', '37,654', '0.037%']
-         row   : ['Zang (Tibetan)', '1,851', '2,501', '4,352', '0.004%']
-         row   : ['Other ethnic groups', '151,076', '159,662', '310,738', '0.003%']
-         row   : ['Total', '51,432,931', '50,094,522', '101,527,453', '100%']
-         table 3: 21 rows; section 'Current divisions'; caption 'Administrative divisions of Shandong'; year 2019
-         header: ['']
-         table 4: 19 rows; section 'Current divisions'; caption ''; year 2019
-         header: ['Administrative divisions in Ch']
-         table 5: 52 rows; section 'Current divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2023
-         header: ['#', 'City', 'style ="background-color: #aaa', 'style ="background-color: #aaf', 'style ="background-color: #ffa', 'Census date']
-  'Henan': 89,555 bytes of wikitext
-== Henan Province ('Henan'): 3 tables
-         table 0: 24 rows; section 'Administrative divisions'; caption 'Administrative divisions of Henan'; year None
-         header: ['']
-         table 1: 21 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 42 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year None
-         header: ['#', 'City', 'style ="background-color: #aaa', 'style ="background-color: #aaf', 'style ="background-color: #ffa', 'Census date']
-  'Hubei': 66,979 bytes of wikitext
-== Hubei Province ('Hubei'): 4 tables
-         table 0: 23 rows; section 'Administrative divisions'; caption 'Administrative divisions of Hubei'; year None
-         header: ['']
-         table 1: 20 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 39 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year None
-         header: ['#', 'City', 'style ="background-color: #aaa', 'style ="background-color: #aaf', 'style ="background-color: #ffa', 'Census date']
-         table 3: 1 rows; section 'Religion'; caption ''; year 2009
-         header: ['']
-  'Hunan': 84,991 bytes of wikitext
-== Hunan Province ('Hunan'): 4 tables
-         table 0: 18 rows; section 'Administrative divisions'; caption 'Administrative divisions of Hunan'; year None
-         header: ['']
-         table 1: 17 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 33 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year None
-         header: ['#', 'City', 'style ="background-color: #aaa', 'style ="background-color: #aaf', 'style ="background-color: #ffa', 'Census date']
-         table 3: 27 rows; section 'Economy'; caption ''; year 2017
-         header: ['align=center colspan=10 | Hist']
-  'Guangdong': 103,187 bytes of wikitext
-== Guangdong ('Guangdong'): 2 tables
-         table 0: 13 rows; section 'Economy'; caption 'Historical Nominal GDP of Guangdong in the main years(current price, economic census in 2023) Intl.dollar]] based on IMF WEO April 2026'; year 2026
-         header: ['align=center rowspan=3| year', 'align=center colspan=4| GDP', 'align=center colspan=4| GDP pe', 'align=center colspan=3| Refere']
-         table 1: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Guangdong', 'kind = cities', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', 'city_1 = Guangzhou', 'pop_1 = 13,154,200', 'city_2 = Shenzhen', 'pop_2 = 13,026,600', 'city_3 = Dongguan', 'pop_3 = 6,850,300', 'city_4 = Shantou', 'pop_4 = 2,796,400', 'city_5 = Zhuhai', 'pop_5 = 2,779,800', 'city_6 = Huizhou', 'pop_6 = 2,396,400', 'city_7 = Foshan', 'pop_7 = 1,872,500', 'city_8 = Jiangmen', 'pop_8 = 1,386,500', 'city_9 = Zhanjiang', 'pop_9 = 917,800', 'city_10 = Jieyang', 'pop_10 = 860,000', 'city_11 = Maoming', 'pop_11 = 849,700', 'city_12 = Zhaoqing', 'pop_12 = 820,600', 'city_13 = Chaozhou', 'pop_13 = 775,800', 'city_14 = Shaoguan', 'pop_14 = 647,300', 'city_15 = Puning', 'pop_15 = 619,100', 'city_16 = Zhongshan', 'pop_16 = 572,000', 'city_17 = Qingyuan', 'pop_17 = 534,200', 'city_18 = Yangjiang', 'pop_18 = 507,800', 'city_19 = Meizhou', 'pop_19 = 469,500', 'city_20 = Gaozhou', 'pop_20 = 364,400']
-  'Guangxi': 79,870 bytes of wikitext
-== Guangxi Zhuang Autonomous Region ('Guangxi'): 6 tables
-         table 0: 9 rows; section 'Geography'; caption ''; year None
-         header: ['Xi River system schematic (ita']
-         table 1: 18 rows; section 'Administrative divisions'; caption 'Administrative divisions of Guangxi'; year None
-         header: ['']
-         table 2: 17 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Zh']
-         table 3: 24 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 4: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Guangxi', 'kind = cities', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', 'city_1 = Nanning', 'pop_1 = 3,614,200', 'city_2 = Liuzhou', 'pop_2 = 1,830,800', 'city_3 = Guilin', 'pop_3 = 946,400', 'city_4 = Yulin, Guangxi!Yulin', 'pop_4 = 756,300', 'city_5 = Wuzhou', 'pop_5 = 629,300', 'city_6 = Beihai', 'pop_6 = 497,600', 'city_7 = Guigang', 'pop_7 = 426,700', 'city_8 = Qinzhou', 'pop_8 = 375,000', 'city_9 = Hechi', 'pop_9 = 357,000', 'city_10 = Laibin', 'pop_10 = 331,600', 'city_11 = Baise', 'pop_11 = 271,000', 'city_12 = Fangchenggang', 'pop_12 = 248,000', 'city_13 = Beiliu', 'pop_13 = 234,000', 'city_14 = Guiping', 'pop_14 = 209,500', 'city_15 = Hezhou', 'pop_15 = 203,000', 'city_16 = Chongzuo', 'pop_16 = 191,000', 'city_17 = Cenxi', 'pop_17 = 178,000', 'city_18 = Jingxi, Guangxi!Jing', 'pop_18 = 165,000', 'city_19 = Dongxing, Guangxi!Do', 'pop_19 = 99,500', 'city_20 = Pingxiang, Guangxi!P', 'pop_20 = 79,600']
-         table 5: 4 rows; section 'Ethnic groups'; caption 'Ethnic makeup of the Guanxi Zhuang Autonomous Region (2020 Seventh National Census)'; year 2020
-         header: ['Ethnicity', 'Han Chinese', 'Zhuang', 'Yao', 'Miao', 'Dong', 'Mulao', 'Maonan', 'Hui', 'Bouyei', 'Gin', 'Other nationalities']
-  'Hainan': 143,108 bytes of wikitext
-== Hainan Province ('Hainan'): 5 tables
-         table 0: 24 rows; section 'Subdivisions'; caption 'Administrative divisions of Hainan'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 22 rows; section 'Subdivisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 10 rows; section 'Subdivisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Eligible countries'; caption ''; year None
-         header: ['']
-         table 4: 30 rows; section 'International partnerships'; caption ''; year None
-         header: ['Sister state/province', 'Sovereign country', 'Date of Establishing Sisterhoo']
-  'Chongqing': 167,923 bytes of wikitext
-== Chongqing Municipality ('Chongqing'): 8 tables
-         table 0: 1 rows; section 'Municipality status'; caption ''; year 2010
-         header: ['x350px', '#404FD9#979FEA Former Prefectu', '#404FD9 Districts composing th']
-         table 1: 41 rows; section 'Administrative divisions'; caption 'Administrative divisions of Chongqing'; year 1997
-         header: ['']
-         table 2: 42 rows; section 'Administrative divisions'; caption ''; year 1997
-         header: ['Divisions in Chinese and varie']
-         table 3: 20 rows; section 'Administrative divisions'; caption 'Population by urban areas of districts'; year 1997
-         header: ['#', 'City', 'style ="background-color: #aaa', 'style ="background-color: #aaf', 'Census date']
-         table 4: 1 rows; section 'Administrative divisions'; caption 'Districts'; year 1997
-         header: ['Pinyin name', 'Previous associationa', 'Banan', 'Chongqing', 'Beibei', 'Bishan', 'Changshou', 'Dadukou', 'Dazu', 'Fuling', 'Fuling', 'Hechuan', 'Chongqing', 'Jiangjin', 'Jiulongpo', 'Kaizhou', 'Wanxian', 'Liangjiang', 'Chongqing', 'Liangping', 'Wanxian', "Nan'an", 'Chongqing', 'Nanchuan', 'Fuling', 'Qianjiang', 'Qianjiang', 'Shapingba', 'Chongqing', 'Tongliang', 'Tongnan', 'Qijiang', 'Rongchang', 'Wanzhou', '| Wanxian', 'Wulong', 'Fuling', 'Yongchuan', 'Chongqing', 'Yuzhong']
-         table 5: 1 rows; section 'Administrative divisions'; caption 'Counties'; year 1997
-         header: ['Pinyin name', 'Previous associationa', 'Chengkou', 'Wanxian', 'Dianjiang', 'Fuling', 'Fengdu', 'Fengjie', 'Wanxian', 'Wushan', 'Wuxi', 'Yunyang', 'Zhong']
-         table 6: 5 rows; section 'Administrative divisions'; caption 'Autonomous counties'; year 1997
-         header: ['Pinyin name', 'Previous associationa']
-         table 7: 13 rows; section 'Consulates'; caption ''; year None
-         header: ['Consulate', 'Date', 'Consular District', 'refh']
-  'Sichuan': 122,615 bytes of wikitext
-== Sichuan Province ('Sichuan'): 4 tables
-         table 0: 26 rows; section 'Administrative divisions'; caption 'Administrative divisions of Sichuan'; year None
-         header: ['']
-         table 1: 23 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 37 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'kind = cities', 'country = Sichuan', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', 'city_1 = Chengdu', 'pop_1 = 8,379,700', 'city_2 = Luzhou', 'pop_2 = 1,619,700', 'city_3 = Mianyang', 'pop_3 = 1,402,000', 'city_4 = Nanchong', 'pop_4 = 1,370,000', 'city_5 = Yibin', 'pop_5 = 1,295,900', 'city_6 = Zigong', 'pop_6 = 1,164,000', 'city_7 = Dazhou', 'pop_7 = 908,400', 'city_8 = Leshan', 'pop_8 = 812,000', 'city_9 = Deyang', 'pop_9 = 662,100', 'city_10 = Panzhihua', 'pop_10 = 659,400', 'city_11 = Neijiang', 'pop_11 = 654,100', 'city_12 = Xichang', 'pop_12 = 577,300', 'city_13 = Meishan', 'pop_13 = 552,000', 'city_14 = Suining', 'pop_14 = 544,300', 'city_15 = Guangyuan', 'pop_15 = 535,300', 'city_16 = Bazhong', 'pop_16 = 458,000', "city_17 = Guang'an", 'pop_17 = 371,700', 'city_18 = Jianyang, Sichuan!Ji', 'pop_18 = 368,000', 'city_19 = Jiangyou', 'pop_19 = 356,500', 'city_20 = Guanghan', 'pop_20 = 338,600']
-  'Guizhou': 83,857 bytes of wikitext
-== Guizhou Province ('Guizhou'): 4 tables
-         table 0: 14 rows; section 'Administrative divisions'; caption 'Administrative divisions of Guizhou'; year None
-         header: ['']
-         table 1: 12 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 16 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Guizhou', 'kind = cities', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', 'city_1 = Guiyang', 'pop_1 = 2,922,400', 'city_2 = Zunyi', 'pop_2 = 1,060,000', 'city_3 = Anshun', 'pop_3 = 464,900', 'city_4 = Bijie', 'pop_4 = 447,300', 'city_5 = Tongren', 'pop_5 = 414,200', 'city_6 = Kaili City!Kaili', 'pop_6 = 409,100', 'city_7 = Liupanshui', 'pop_7 = 359,700', 'city_8 = Xingyi, Guizhou!Xingy', 'pop_8 = 334,100', 'city_9 = Duyun', 'pop_9 = 328,400', 'city_10 = Renhuai', 'pop_10 = 250,300', 'city_11 = Panzhou', 'pop_11 = 216,000', 'city_12 = Qingzhen', 'pop_12 = 202,600', 'city_13 = Chishui City!Chishui', 'pop_13 = 146,700', 'city_14 = Xingren', 'pop_14 = 137,100', 'city_15 = Fuquan, Guizhou!Fuqu', 'pop_15 = 134,000']
-  'Yunnan': 146,764 bytes of wikitext
-== Yunnan Province ('Yunnan'): 4 tables
-         table 0: 20 rows; section 'Administrative divisions'; caption 'Administrative divisions of Yunnan'; year None
-         header: ['']
-         table 1: 18 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 2: 27 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture and county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Yunnan', 'kind = cities', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', 'city_1 = Kunming', 'pop_1 = 3,979,700', 'city_2 = Qujing', 'pop_2 = 792,500', 'city_3 = Yuxi', 'pop_3 = 384,700', 'city_4 = Baoshan, Yunnan!Baosh', 'pop_4 = 355,500', 'city_5 = Zhaotong', 'pop_5 = 319,800', 'city_6 = Chuxiong City!Chuxion', 'pop_6 = 319,000', 'city_7 = Dali City!Dali', 'pop_7 = 313,800', 'city_8 = Mengzi City!Mengzi', 'pop_8 = 293,200', 'city_9 = Xuanwei', 'pop_9 = 290,100', 'city_10 = Anning, Yunnan!Annin', 'pop_10 = 272,500', 'city_11 = Wenshan City!Wenshan', 'pop_11 = 234,400', "city_12 = Pu'er City!Pu'er", 'pop_12 = 228,000', 'city_13 = Kaiyuan, Yunnan!Kaiy', 'pop_13 = 202,200', 'city_14 = Gejiu', 'pop_14 = 202,000', 'city_15 = Lincang', 'pop_15 = 195,200', 'city_16 = Lijiang', 'pop_16 = 189,300', 'city_17 = Jinghong', 'pop_17 = 186,300', 'city_18 = Tengchong', 'pop_18 = 180,000', 'city_19 = Ruili', 'pop_19 = 176,000', 'city_20 = Mile City!Mile', 'pop_20 = 171,800']
-  'Tibet Autonomous Region': 82,194 bytes of wikitext
-== Tibet Autonomous Region ('Tibet Autonomous Region'): 4 tables
-         table 0: 11 rows; section 'Administrative divisions'; caption 'Administrative divisions of Tibet Autonomous Region'; year None
-         header: ['']
-         table 1: 10 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ti']
-         table 2: 9 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 9 rows; section 'Economy'; caption 'Development of GDP'; year None
-         header: ['Year', 'GDP in billions of yuan']
-  'Shaanxi': 54,713 bytes of wikitext
-== Shaanxi Province ('Shaanxi'): 5 tables
-         table 0: 6 rows; section 'Name'; caption ''; year None
-         header: ['Language', 'Pronunciation']
-         table 1: 15 rows; section 'Administrative divisions'; caption 'Administrative divisions of Shaanxi'; year None
-         header: ['']
-         table 2: 13 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 3: 18 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 4: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Shaanxi', 'kind = cities', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', "city_1 = Xi'an", 'pop_1 = 5,866,100', 'city_2 = Xianyang', 'pop_2 = 1,023,100', 'city_3 = Baoji', 'pop_3 = 893,200', 'city_4 = Yulin, Shaanxi!Yulin', 'pop_4 = 631,100', 'city_5 = Hanzhong', 'pop_5 = 569,500', 'city_6 = Weinan', 'pop_6 = 551,600', "city_7 = Yan'an", 'pop_7 = 416,700', 'city_8 = Tongchuan', 'pop_8 = 413,300', 'city_9 = Ankang', 'pop_9 = 350,700', 'city_10 = Shangluo', 'pop_10 = 262,500', 'city_11 = Xingping', 'pop_11 = 225,800', 'city_12 = Shenmu', 'pop_12 = 211,800', 'city_13 = Hancheng', 'pop_13 = 173,200', 'city_14 = Yangling District!Ya', 'pop_14 = 154,900', 'city_15 = Huayin', 'pop_15 = 115,500', 'city_16 = Binzhou, Shaanxi!Bin', 'pop_16 = 114,100']
-  'Gansu': 70,508 bytes of wikitext
-== Gansu Province ('Gansu'): 5 tables
-         table 0: 19 rows; section 'Administrative divisions'; caption 'Administrative divisions of Gansu'; year None
-         header: ['']
-         table 1: 16 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 2: 19 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Gansu', 'kind = cities', 'class = info', 'stat_ref = Source: China Urban', 'list_by_pop =', 'city_1 = Lanzhou', 'pop_1 = 2,460,700', 'city_2 = Tianshui', 'pop_2 = 696,600', 'city_3 = Baiyin', 'pop_3 = 406,500', 'city_4 = Jiuquan', 'pop_4 = 389,100', 'city_5 = Wuwei, Gansu!Wuwei', 'pop_5 = 339,000', 'city_6 = Pingliang', 'pop_6 = 300,000', 'city_7 = Zhangye', 'pop_7 = 270,300', 'city_8 = Linxia City!Linxia', 'pop_8 = 245,800', 'city_9 = Jiayuguan City!Jiayug', 'pop_9 = 231,800', 'city_10 = Dingxi', 'pop_10 = 209,200', 'city_11 = Qingyang, Gansu!Qing', 'pop_11 = 207,700', 'city_12 = Jinchang', 'pop_12 = 171,500', 'city_13 = Longnan', 'pop_13 = 168,500', 'city_14 = Dunhuang', 'pop_14 = 120,400', 'city_15 = Huating, Gansu!Huati', 'pop_15 = 89,800', 'city_16 = Yumen City!Yumen', 'pop_16 = 77,300', 'city_17 = Hezuo', 'pop_17 = 72,600']
-         table 4: 1 rows; section 'Religion'; caption ''; year None
-         header: ['']
-  'Qinghai': 55,614 bytes of wikitext
-== Qinghai Province ('Qinghai'): 4 tables
-         table 0: 12 rows; section 'Administrative divisions'; caption 'Administrative divisions of Qinghai'; year None
-         header: ['']
-         table 1: 11 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 8 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Religion'; caption ''; year None
-         header: ['']
-  'Ningxia': 46,946 bytes of wikitext
-== Ningxia Hui Autonomous Region ('Ningxia'): 3 tables
-         table 0: 9 rows; section 'Administrative divisions'; caption 'Administrative divisions of Ningxia'; year None
-         header: ['']
-         table 1: 8 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Ch']
-         table 2: 8 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-  'Xinjiang': 263,633 bytes of wikitext
-== Xinjiang Uyghur Autonomous Region ('Xinjiang'): 11 tables
-         table 0: 34 rows; section 'Administrative divisions'; caption 'Administrative divisions of Xinjiang'; year None
-         header: ['']
-         table 1: 29 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions in Uy']
-         table 2: 34 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 73 rows; section 'Mountain passes'; caption 'Mountain passes bordering Xinjiang'; year None
-         header: ['width=125pt| 山口', 'width=125pt| Mountain Pass', 'width=200pt| Coordinate', 'Elev.', 'Appendix']
-         table 4: 5 rows; section 'Structure'; caption 'Current leaders of the Xinjiang Regional Government'; year None
-         header: ['', '25x25px', '27x27px', '27x27px', '25x25px']
-         table 5: 7 rows; section 'Economy'; caption 'Development of GDP'; year None
-         header: ['Year', 'GDP in billions of Yuan']
-  ETHNIC table 6: 16 rows; section 'Demographics'; caption ''; year 2002
-         header: ['Ethnic group', 'Estimated population 1933']
-         prose : 'ten have relatively-fair skin, hair and In 2002, there were 9,632,600 males (growth rate of 1.0 percent) and 9,419,300 females (growth rate of 2.2 percent). The population overall growth rate was 1.09 percent, with 1.63 percent of birth rat'
-         row   : ['Uyghurs', '2,900,173 (77.75%)']
-         row   : ['Kazakhs', '318,716 (8.55%)']
-         row   : ['Han Chinese', '202,239 (5.41%)']
-         row   : ['Hui', '92,146 (2.47%)']
-         row   : ['Kyrgyz', '65,248 (1.75%)']
-         row   : ['Mongols', '63,018 (1.69%)']
-         row   : ['Taranchis', '41,307 (1.11%)']
-         row   : ['Russians', '13,408 (0.36%)']
-         row   : ['Sibes', '9,203 (0.25%)']
-         row   : ['Tajiks', '8,867 (0.24%)']
-         row   : ['Uzbeks', '7,966 (0.21%)']
-         row   : ['Tatars', '4,601 (0.12%)']
-         row   : ['Solons', '2,489 (0.07%)']
-         row   : ['Manchus', '670 (0.02%)']
-         row   : ['Total', '3,730,051']
-         table 7: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Xinjiang', 'kind = cities', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', 'city_1 = Ürümqi', 'pop_1 = 2,864,700', 'city_2 = Korla', 'pop_2 = 489,900', 'city_3 = Aksu City!Aksu', 'pop_3 = 460,900', 'city_4 = Karamay', 'pop_4 = 452,500', 'city_5 = Yining', 'pop_5 = 372,600', 'city_6 = Changji', 'pop_6 = 361,700', 'city_7 = Shihezi', 'pop_7 = 338,200', 'city_8 = Kashgar', 'pop_8 = 330,000', 'city_9 = Hami', 'pop_9 = 245,700', 'city_10 = Hotan', 'pop_10 = 217,900', 'city_11 = Bole, Xinjiang!Bole', 'pop_11 = 204,400', 'city_12 = Wujiaqu', 'pop_12 = 187,000', 'city_13 = Kuytun', 'pop_13 = 174,700', 'city_14 = Fukang', 'pop_14 = 109,200', 'city_15 = Wusu', 'pop_15 = 100,900', 'city_16 = Tacheng', 'pop_16 = 97,600', 'city_17 = Aral, Xinjiang!Aral', 'pop_17 = 96,000', 'city_18 = Turpan', 'pop_18 = 86,200', 'city_19 = Beitun, Xinjiang!Bei', 'pop_19 = 79,800', 'city_20 = Artush', 'pop_20 = 78,300']
-  ETHNIC table 8: 24 rows; section 'Demographics'; caption 'Ethnic groups in Xinjiang'; year 2020
-         header: ['2020 Chinese census']
-         prose : "=GXj4a3gss8wC&pg=PA242 242] 3.6 million In general, Uyghurs are the majority in Southwestern Xinjiang, including the prefectures of Kashgar, Khotan, Kizilsu and Aksu (about 80 percent of Xinjiang's Uyghurs live in those four prefectures) as"
-         row   : ['Nationality', 'Population', 'Percentage']
-         row   : ['Uyghur', '11,624,257', '44.96 percent']
-         row   : ['Han', '10,920,098', '42.24 percent']
-         row   : ['Kazakh', '1,539,636', '5.96 percent']
-         row   : ['Hui', '1,102,928', '4.27 percent']
-         row   : ['Kirghiz', '199,264', '0.77 percent']
-         row   : ['Mongols', '169,143', '0.65 percent']
-         row   : ['Dongxiang', '72,036', '0.28 percent']
-         row   : ['Tajiks', '50,238', '0.19 percent']
-         row   : ['Xibe', '34,105', '0.13 percent']
-         row   : ['Manchu', '20,915', '0.080 percent']
-         row   : ['Tujia', '15,787', '0.086 percent']
-         row   : ['Tibetan', '18,276', '0.071 percent']
-         row   : ['Uzbek', '12,301', '0.048 percent']
-         row   : ['Miao', '12,220', '0.047 percent']
-         row   : ['Russian', '8,024', '0.031 percent']
-         row   : ['Yi', '7,752', '0.030 percent']
-         row   : ['Zhuang', '5,727', '0.022 percent']
-         row   : ['Daur', '5,447', '0.021 percent']
-         row   : ['Tatar', '5,183', '0.024 percent']
-         row   : ['Tu', '3,827', '0.015 percent']
-         row   : ['Salar', '3,266', '0.013 percent']
-         row   : ['Other', '11,764', '0.046 percent']
-         table 9: 22 rows; section 'Demographics'; caption "Major ethnic groups in Xinjiang by region (2018 data)Does not include members of the People's Liberation Army in active service. P = Prefecture; AP = Autonomous prefecture; PLC = Prefecture-level city; DACLC = Directly administered county-level city."; year 2018
-         header: ['', 'Uyghurs (%)', 'Han (%)', 'Kazakhs (%)', 'others (%)']
-         table 10: 12 rows; section 'Demographics'; caption 'Vital statistics'; year 2000
-         header: ['Year', 'Population', 'Live births', 'Deaths', 'Natural change', 'Crude birth rate (per 1000)', 'Crude death rate (per 1000)', 'Natural change (per 1000)']
+probe_pdf: https://www.census2021.gov.hk/doc/pub/21c-main-results.pdf
+  8,175,747 bytes
+  354 pages
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/YWGZMV+ClearfaceStd-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(96555, 0, 140103407858576), '/LastChar': 121, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [250, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 0, 0, 250, 0, 0, 0, 0, 0, 0, 0, 0, 611, 667, 611, 0, 667, 722, 333, 0, 667, 556, 778, 0, 0, 556, 0, 611, 556, 556, 611, 0, 0, 0, 556, 0, 0, 0, 0, 0, 0, 0, 444, 500, 444, 500, 444, 278, 500, 556, 278, 0, 0, 278, 833, 556, 500, 500, 0, 389, 389, 333, 556, 444, 0, 0, 444]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/YWGZMV+ClearfaceStd-Regular', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(96555, 0, 140103407858576), '/LastChar': 117, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [250, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 778, 0, 0, 0, 0, 611, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 444, 0, 0, 0, 444, 0, 0, 0, 278, 0, 0, 278, 0, 556, 0, 0, 0, 0, 389, 333, 556]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
+probe_pdf: 354 pages, 13 mention ['3.13', 'Nepalese']
+=== front matter ===
+؈
+Main Results
+
+
+༔dሗᑌഖj
+
+=== pages mentioning ['3.13', 'Nepalese'] (first 8) ===
+
+--- page 10 ----------------------------------------------------
+統計表一覽 List of Tables
+2021 年人口普查 viii 2021 Population Census
+主要結果  Main Results
+香港特別行政區 政府統計處             Census and Statistics Department, Hong Kong Special Administrative Region
+   頁數
+Page
+表 3.11 2011 年、2016 年及 2021 年按
+性別及年齡組別劃分的 15 歲及
+以上從未結婚的人口比例
+ Table 3.11 Proportion of never married population
+aged 15 and over by sex and age group,
+2011, 2016 and 2021
+50
+表 3.11A 2011 年、2016 年及 2021 年按
+性別及年齡組別劃分的 15 歲及
+以上 從未結婚的人口比例 （不
+包括外籍 家庭傭工）
+ Table 3.11A Proportion of never married population
+aged 15 and over (excluding foreign
+domestic helpers) by sex and age group,
+2011, 2016 and 2021
+52
+表 3.12 2011 年、2016 年及 2021 年 5
+歲及以上人口能說選定語言／
+方言的比例
+ Table 3.12 Proportion of population aged 5 and
+over able to speak selected
+languages/dialects, 2011, 2016 and
+2021
+54
+表 3.13 2021 年按慣用交談 語言及出生
+地點劃分的 5 歲及以上人口
+ Table 3.13 Population aged 5 and over by usual
+spoken language and place of birth,
+2021
+55
+表 3.14 2016 年及 2021 年按出生地點劃
+分的 5 歲及以上人口能閲讀選
+定語言的比例
+ Table 3.14 Proportion of population aged 5 and
+over able to read selected languages by
+place of birth, 2016 and 2021
+56
+表 3.15 2016 年及 2021 年按出生地點劃
+分的 5 歲及以上人口能書寫選
+定語言的比例
+ Table 3.15 Proportion of population aged 5 and
+over able to write selected languages by
+place of birth, 2016 and 2021
+57
+表 3.16 2021 年按在港居住年期及出生
+地點劃分的人口
+ Table 3.16 Population by duration of residence in
+Hong Kong and place of birth, 2021
+58
+表 3.17 2021 年按年齡組別及性別劃分
+的在過去 5 年內移居香港的 5
+歲及以上人口
+ Table 3.17 Population aged 5 and over having
+moved into Hong Kong during the past
+5 years by age group and sex, 2021
+59
+表 3.18 2021 年按 5 年前居住地區及性
+別劃分的在過去 5 年內移居香
+港的 5 歲及以上人口
+ Table 3.18 Population aged 5 and over having
+moved into Hong Kong during the past
+5 years by area of residence 5 years ago
+and sex, 2021
+60
+表 3.19 2021 年按性別、年齡組別及是
+否需要長期照顧劃分的 居於家
+庭住戶的 60 歲及以上人口
+ Table 3.19 Population aged 60 and over living in
+domestic households by sex, age group
+and whether with long-term care needs,
+2021
+61
+
+--- page 35 ----------------------------------------------------
+2021 年人口普查 9 2021 Population Census
+主要結果  Main Results
+香港特別行政區 政府統計處             Census and Statistics Department, Hong Kong Special Administrative Region
+2. 摘要   2. Summary
+2.1 本報告的第 3 至 10 章就本港住
+戶及人口作出詳盡的分析。 本章 概述重
+要結果。為方便參考，一些主要統計數
+字載列於 本章章末。
+ 2.1 Chapters 3 to 10 of this report provide a
+detailed analysis on the households and population of
+Hong Kong.  Salient findings are highlighted in this
+chapter.  For ease of reference, key statistics  are listed
+at the end of this chapter.
+人口特徵   Demographic characteristics
+2.2 2021 年 人口普查 結果顯示，
+20 21 年 年 中的居港人口數目為
+7 413 070 人，其中 7 334 652 人為常住
+居民及 78 418 人為流動居民。
+（表 3.1）
+ 2.2 Results of the 2021 Population Census show
+that the Hong Kong Resident Population in mid -2021
+was 7 413 070.  Among them, 7 334 652 were Usual
+Residents and 78 418 were Mobile Residents.
+(Table 3.1)
+2.3 在過去 60 年內，本港人口由
+1961 年的 313 萬 人 倍升至 2021 年的
+7 41 萬 人 。 在 60 年代及 70 年代人口的增
+長較快 ， 其後增長速度放緩 ，人口平均
+每年增長率從 1981 年 至 1986 年 的
+1. 5% 跌至 2016 年至 2021 年的 0. 2% 。
+（圖 3.1）
+ 2.3 The population had more than doubled over
+the past 60 years from 3.13 million in 1961 to 7. 41
+million in 2021.  The growth of the population was
+faster in the 1960s and 1970s.  Population growth
+slowed down afterwards , with the average annual
+population growth rate dropp ing from 1.5% for 19 81-
+1986 to 0.2% for 2016-2021.  (Chart 3.1)
+2.4 隨著生育率下降和死亡情況改
+善，人口持續 高齡 化。年齡中位數由
+1961 年的 23.2  歲上升至 2021 年的
+4 6 . 3  歲。  （表 3.3）
+ 2.4 The population continued to grow old as a
+result of fertility decline and mortality improvement.
+The median age of the population increased from 23.2
+in 1961 to reach 46.3 in 2021.  (Table 3.3)
+2.5 人口的性別結構可按性別比率
+顯示。性別比率是指男性人口數目與每
+千名女性人口相對的比率。人口的整體
+性別比率由 1961 年的 1 056 增至 1981 年
+的 1 093， 但這比率自 1981 年 起 開始下
+降，至 2021 年 時為 839 。 撇除外籍家庭
+傭工後，性別比率由 1981 年的 1 096 下
+降至 2021 年的 910。   （表 3.4）
+ 2.5 The sex composition of a population can be
+measured by the sex ratio, which is defined as the
+number of males per 1  000 females in the population.
+The overall sex ratio for the population increased from
+1 056 in 1961 to 1 093 in 1981.  However, it started to
+decline since then , dropping  to 839 in 2021 .  After
+excluding foreign domestic helpers, the sex ratio
+declined from 1 096 in 1981 to 910 in 2021.
+(Table 3.4)
+2.6 在香港出生的人口比例在過去
+10 年 均維持於 6 成左右 。 不過 ，在其他
+地方（不包括中國內地 ／ 澳門 ／ 台灣）
+出生的人口比例則由 2011 年的 7.4 % 增
+ 2.6 The proportion of population born in Hong
+Kong remained at about 60% throughout the last 10
+years.  However, the proportion of population who
+were born elsewhere (excluding those born in the
+
+--- page 51 ----------------------------------------------------
+2021 年人口普查 25 2021 Population Census
+主要結果  Main Results
+香港特別行政區 政府統計處                                              Census and Statistics Department, Hong Kong Special Administrative Region
+3. 人口特徵   3. Demographic Characteristics
+統計 範圍   Coverage
+3.1 在不同的人口普查／中期人口
+統計中， 香港人口 是會因應當時人口的
+居住和流動模式以不同的人口定義和概
+念而編製。自 2001 年人口普查起，人口
+普查／中期人口統計 是 採用 了 「居 住 人
+口」 的 方法點算居港人口。 有關這個點
+算方法及在 2001 年以前進行的人口普查
+／中期人口統計所採用的點算方法，請
+參閱第 1 章「統計範圍」 。
+ 3.1 To tie in with the current residency and
+mobility patterns at the time of enumeration, the Hong
+Kong population was measured on various definitions
+and concepts in different population
+censuses/by-censuses.  S ince the 2001 Population
+Census, the Hong Kong Resident Population was
+enumerated under the “resident population” approach.
+For details about this enumeration approach  and the
+enumeration approaches  adopted in population
+censuses/by-censuses conducted pri or to 2001, p lease
+refer to “Coverage” in Chapter 1.
+人口增長情況   Population growth
+3.2 2021 年人口普查 結果顯示，
+2021 年 年中 的居港人口數目為
+7 413 070 人，其中 7 334 652 人為常住
+居民 及 78 418 人為流動居民。
+（表  3.1）
+ 3.2 Results of t he 2021 Population Census
+show that the Hong Kong Resident Population in mid-
+2021 was 7 413 070.  Among them, 7 334 652 were
+Usual Residents and 78 418 were Mobile Residents.
+(Table 3.1)
+3.3 在過去 60 年內，本港人口 的增
+幅超過一倍， 由 1961 年 的 313 萬人上 升
+至 2021 年 的 741 萬人 。人口數目於
+1981 年以前的時間是以相對急速的步伐
+上升，其後 20 年仍以相對 較快的速度增
+長，但最近 20 年的升幅顯著放緩。
+（圖  3.1）
+ 3.3 The population had more than  doubled
+over the past 60 years from 3.13 million in 1961 to
+7.41 million in 2021 .  The growth of the population
+was relatively rapid during the early period till 1981.
+The population continued to increase at a relatively
+fast pace in the next 20 years but at a much moderated
+rate in the recent 20 years.  (Chart 3.1)
+年齡結構   Age structure
+3.4 隨 着 生育率下降和死亡情況改
+善，本港人口的年齡結構在過去 60 年有
+顯著的改變。雖然本港人口由 1961 年的
+313  萬人上升至 2021 年的 741 萬人，但
+15 歲以下兒童數目則由 1961 年的
+1 28 萬人降至 2021 年的 81 萬人，15 歲
+以下 兒童佔總人口的比例亦由 40.8 % 大
+幅下降至 10.9 % 。少年兒童撫養比率
+ 3.4 The age structure of Hong Kong population
+has changed significantly in the past 60  years as a
+result of fertility decline and mortality improvement.
+Despite the fact that the population increased from
+3.13 million in 1961 to 7.41 million in 2021 , the
+number of children aged under 15 decreased from
+1.28 million in 1961 to 0.81 million in 2021 .  As a
+result, their proportion in the total population dropped
+
+--- page 53 ----------------------------------------------------
+人口特徵 Demographic Characteristics
+2021 年人口普查 27 2021 Population Census
+主要結果  Main Results
+香港特別行政區 政府統計處                                              Census and Statistics Department, Hong Kong Special Administrative Region
+大量外籍家庭傭工（其中大部分是女
+性） ； （丙）中國 內地新來港人士中，不
+少是香港男士的妻子；及（丁）女性的
+壽命較男性長。   （表  3.4 ）
+girls; (b) there are a large number of foreign domestic
+helpers, who are mostly female s; (c) for the new
+arrivals from the mainland of China, many are wives
+of Hong Kong men; and (d) females live longer than
+males.  (Table 3.4)
+3.9 15 歲以下兒童的性別比率由
+1961 年的 1 083 下降至 1971 年的
+1  047 ，然後回升至 1981 年的 1 079 。自
+1991 年起，這性別比率 變化不大，徘徊
+於 1 062 至 1 084 之 間。較為 顯著的改變
+出現在 25 至 44 歲及 45 至 64 歲這兩年
+齡組別。 在 25 至 44 歲人口中， 性別比
+率由 1981 年的 1 223 持續下跌至 2016
+年的 707，及後回升至 2021 年的 731 。
+在 45 至 64 歲人口中，性別比率由 1991
+年的 1 144 持續下跌至 2021 年的 806 。
+性別比率持續下降 主要是大量的女性外
+籍家庭傭工及 中國 內地新來港人士所
+致。 撇 除外籍家庭傭工後， 2021 年的 25
+至 44 歲人口的性別比率是 905 ，而 45
+至 64 歲的則是 849。   （表 3.4 ）
+ 3.9 For children aged under 15, the sex ratio
+declined from 1  083 in 1961 to 1 047 in 1971, and
+then rebounded to 1  079 in 1981.  Since 1991, the
+sex ratio remained stable at 1 062 - 1 084.  However,
+relatively more significant changes occurred in the age
+groups of 25-44 and 45-64 .  Among persons aged
+25-44, the sex ratio dropped continuously starting
+from 1  223 in 1981 to 707 in 2016, and then
+rebounded to 731 in 2021.   For persons aged 45- 64,
+the sex ratio dropped continuously from 1 144 in 1991
+to 806 in 2021.  The influx of fem ale foreign
+domestic helpers and new arrivals from the mainland
+of China contributed mainly to the persistent fall  in
+the sex ratios .  After excluding foreign domestic
+helpers, t he sex ratio in 2021 became 905 for those
+aged 25-44 and 849 for those aged 45-64.
+(Table 3.4)
+3.10 由 於 女性傾向較男性長壽， 65
+歲及以上的年齡組別的性別比率持續低
+於 1 000 。   （表  3.4）
+ 3.10 As females tend to live longer than males,
+the sex ratio of those aged 65 and over remained at
+below 1 000.  (Table 3.4)
+3.11 在 2021 年，按年齡及國籍劃分
+的性別比率顯示一些有趣的社會現象。
+45 至 64 歲的美國、英國、澳洲 、 尼泊
+爾 及 巴基斯坦 籍 人口的性別比率 較 高。
+25 至 64 歲的印尼、菲律賓 及泰國籍人
+口 的性別比率偏低，反映出當中包括外
+籍家庭傭工，而她們大部分是介乎 25 至
+64 歲的女性。  （表 3.5）
+ 3.11 A breakdown of the sex ratio by age and
+nationality in 2021 reflects some interesting social
+phenomenon.  High sex ratio s were found for the
+population of the American, British, Australian,
+Nepalese and Pakistani nationalities aged 45-64 .
+The very low sex ratios for the population of the
+Indonesian, Filipino and Thai nationalities aged 25-64
+obviously reflect the presence of foreign domestic
+helpers, the majority of whom were females aged 25-
+64.  (Table 3.5)
+出生地點   Place of birth
+3.12 人口遷移雖然是香港人口轉變
+的一個重要部分，但在香港出生的人口
+比例仍十分高。 2011 年 、 2016 年 及 2021
+的數字 為 6 成左右。以人數而言， 在香
+ 3.12 Although migration is an important
+element of population change in Hong Kong, the
+proportion of population born in Hong Kong is still
+high.  It was around 60% in 2011, 2016 and 2021
+
+--- page 54 ----------------------------------------------------
+人口特徵 Demographic Characteristics
+2021 年人口普查 28 2021 Population Census
+主要結果  Main Results
+香港特別行政區 政府統計處                                              Census and Statistics Department, Hong Kong Special Administrative Region
+港出生的人口 由 2011 年的 428 萬人增至
+2016 年的 445  萬，再增至 2021 年的
+457  萬人。在中國內地 ／ 澳門／ 台灣出
+生的人口 由 2011 年的 227 萬輕微降至
+2021 年的 221 萬，其比例在期間則由
+32.1 %  下 降至 29.9 %。另一方面，在其他
+地方出生的人口由 2011 年的 53 萬增加
+至 2021 年的 62 萬，因此所佔人口比例
+亦由 7.4 % 增至 8.4% 。這是由於期間大
+量外籍家庭傭工來港工作。   （表 3.6）
+and the number of such persons increased from 4.28
+million in 2011 to 4.45 million in 2016, and further to
+4.57 million in 2021.  The number of persons born in
+the mainland of China / Macao  / Taiwan dropped
+slightly from 2.27 million in 2011 to 2.21 million in
+2021.  Their proportion dropped from 32.1 % to
+29.9% during the period.  On the other hand, the
+number of persons who were born elsewhere
+increased from 0.53 million in 2011 to 0.62 million in
+2021; hence their proportion in the population
+increased from 7.4% to 8.4%.  This was mainly
+attributed to the lar ge number of foreign domestic
+helpers who came to work in Hong Kong during the
+period.  (Table 3.6)
+3.13 在 2021 年，65 歲及以上 的人
+口中， 44.1% 男性和 42.1 % 女性是在香
+港出生的。在香港出生的人口比例 大致
+上 隨年齡組別愈年輕而愈高，唯獨 25 至
+44 歲在香港出生的人口比例較 45 至 64
+歲的相應比例低。這是由於 25 至 44 歲
+的人口包括了大量外籍家庭傭工 。 至於
+15 歲以下人口，在香港出生的男女 分 別
+佔 92.4% 及 90.8% ， 合計比例於過去 10
+年 間由 87.0% 上 升至 91.6 %。
+（表  3.7 ）
+ 3.13 In 2021, among the population aged 65 and
+over, 44.1% of males and 42.1% of females were born
+in Hong Kong.  Among successively younger age
+groups, the proportions of the population born in
+Hong Kong increased in general .  However, the
+proportion of the population born in Hong Kong for
+those aged 25 -44 was lower than that for those aged
+45-64, as the population aged 25 -44 included a large
+number of foreign domestic helpers.   For persons
+aged under 15, 92.4% of males and 90.8% of females
+were born in Hong Kong , whereas the overall
+proportion increased from 87.0% to 91.6% over the
+past 10 years.  (Table 3.7)
+國籍   Nationality
+3.14 在 2021 年，有 90.9 % 的人口
+（ 即 674 萬人 ） 是中國籍，而永久居留
+地是香港；另外， 1.1 % 人口的國籍是中
+國籍，而永久居留地不是香港。餘下較
+多居港人口的國籍是 菲律賓 、 印尼 及英
+國。   （表 3 .8）
+ 3.14 In 2021, 90.9% of the population (or 6.74
+million people) were of Chinese nationality with place
+of domicile being Hong Kong.  Besides, 1.1% of the
+population were of Chinese nationality but with place
+of domicile other than Hong Kong.  Other nationality
+groups of significant sizes included Filipino,
+Indonesian and British.  (Table 3.8)
+3.15 在 37 243 名英國籍人口中，
+31. 9 %  是 在香港出生。此外，亦有
+33.9 % 的尼泊爾籍人口 及 35.6% 的巴基
+斯坦籍人口 是 在香港出生。   （表 3 .8）
+ 3.15 Of the 37  243 persons of British
+nationality, 31.9% were born in Hong Kong.  There
+were also 33.9% of persons of Nepalese nationality
+and 35.6% of persons of Pakistani nationality born in
+Hong Kong.  (Table 3.8)
+
+--- page 57 ----------------------------------------------------
+人口特徵 Demographic Characteristics
+2021 年人口普查 31 2021 Population Census
+主要結果  Main Results
+香港特別行政區 政府統計處                                              Census and Statistics Department, Hong Kong Special Administrative Region
+女性為高，尤其是在年長人口中男性的
+比率更高；因此，寡婦數目一向比鰥夫
+為多。第二，香港男性傾向與較自己年
+輕的女性結婚，從而加快男性因較高死
+亡率引致的寡居效應。第三，婚姻統計
+數據亦顯示在過去數年間，鰥夫比寡婦
+較可能再婚。   （表 3 .10）
+male mortality rates have always been higher than the
+female mortality rates, especially so at the elder ages;
+thus the number of widows would always out -number
+the number of widowers.  Secondly, men in Hong
+Kong tend to marry wives who are younger than
+themselves, thereby hastening the mortality effect in
+bringing about widowhood.  Thirdly, marriage
+statistics also reveal that in the past few years
+widowers were more likely than widows to get
+remarried.  (Table 3.10)
+慣用 交談 語言   Usual spoken language
+3.24 廣州話是家中最常用的交談 語
+言。在 2021 年，88.2% 的 5 歲及以上人
+口在家裏用廣州話交談，另外有 5.5 %  的
+人口報稱能說這種語言。換言之，
+93.7 % 的 5 歲及以上人口能說廣州話，
+較 2011 年及 2016 年的水平輕微下降。
+（表  3.12）
+ 3.24 Cantonese was the most commonly used
+spoken language at home.  88.2% of the population
+aged 5 and over  spoke Cantonese at home  in 2021 .
+Another 5.5% claimed that they could speak
+Cantonese as another language.  In other words,
+93.7% of the population aged 5 and over could speak
+Cantonese, slightly decreased when compared with
+2011 and 2016.  (Table 3.12)
+3.25 香港人口能說多於一種語言的
+能力有所增進。能說英語（不論是作為
+慣用 交談語言或是其他 交談語言）的 5
+歲及以上 人口比例，由 2011 年的
+46.1 % ，增至 2016 年的 53.2% ，並進一
+步上升至 2021 年的 58.7 %。能說普通話
+的 5 歲及以上人口比例，亦由 2011 年的
+47.8 %  增至 2021 年的 54.2 %。
+（表  3.12）
+ 3.25 The ability of the population to speak more
+than one language has improved.  The proportion of
+the population aged 5 and over who could speak
+English, either as the usual spoken language or as
+another spoken language, increased from 46.1 % in
+2011 to 53.2% in 2016 and further to 58.7% in 2021.
+The proportion of the population aged 5 and over who
+could speak Putonghua also increased from 47.8% in
+2011 to 54.2% in 2021.  (Table 3.12)
+3.26 在香港出生的 5 歲及以上 人口
+中， 97.0% 以廣州話為慣用交談 語言。
+而在中國 內地／澳門／台灣出生的 5 歲
+及以上 人口中，只有 85.7 % 以廣州話為
+慣用 交談語言，其他大 部分 在家裏用普
+通話或其他中國方言交談。
+（表  3.13）
+ 3.26 Among persons aged 5 and over who were
+born in Hong Kong, 97.0% used Cantonese as their
+usual spoken language.  However, among persons
+aged 5 and over who were born in the mainland of
+China / Macao / Taiwan, only 85.7% used Cantonese
+as their usual spoken language, and most of the
+remaining spoke Putonghua or other Chinese dialects
+at home.  (Table 3.13)
+閱讀 ／書寫 語言的能力   Ability to read/write languages
+3.27 閱讀／書寫語言的能力是由  3.27 The ability to read /write languages was a
+
+--- page 67 ----------------------------------------------------
+人口特徵 Demographic Characteristics
+2021 年人口普查 41 2021 Population Census
+主要結果  Main Results
+香港特別行政區 政府統計處                                              Census and Statistics Department, Hong Kong Special Administrative Region
+表 3.5 2021 年按國籍及年齡組別劃分的性別比率(1)
+Table 3.5 Sex ratio(1) by nationality and age group, 2021
+  年齡組別
+Age group
+ 國籍
+Nationality
+0 – 14
+15 – 24
+25 – 44
+45 – 64
+65+
+合計
+Overall
+ 中國
+Chinese
+ 永久居留地是香港
+Place of domicile -
+ Hong Kong
+1 073 1 076 943 850 889 923
+ 永久居留地不是香港
+Place of domicile -
+ other than Hong Kong
+552 522 221 625 805 352
+ 菲律賓
+Filipino
+1 117 558 29 68 414 60
+ 印尼
+Indonesian
+875 67 7 14 331 13
+ 英國
+British
+847 862 1 227 1 907 1 616 1 295
+ 印度
+Indian
+881 1 061 615 1 023 904 782
+ 尼泊爾
+Nepalese
+1 085 692 826 1 415 742 951
+ 巴基斯坦
+Pakistani
+1 274 859 1 050 1 141 1 486 1 081
+ 美國
+American
+1 118 568 836 2 140 1 938 1 062
+ 泰國
+Thai
+1 062 498 226 156 50 164
+ 澳洲
+Australian
+733 1 505 957 1 513 1 492 1 116
+ 日本
+Japanese
+932 1 607 636 734 1 122 804
+ 其他
+Others
+873 876 747 927 1 346 853
+ 合計
+Overall
+1 062 1 028 731 806 887 839
+註釋： (1) 在各年齡組別中，男性數目與每千名女性相對的
+比率。
+ Note : (1) The number of males per 1 000 females in the respective age
+groups.
+
+--- page 70 ----------------------------------------------------
+人口特徵 Demographic Characteristics
+2021 年人口普查 44 2021 Population Census
+主要結果  Main Results
+香港特別行政區 政府統計處                                              Census and Statistics Department, Hong Kong Special Administrative Region
+表 3.8 2021 年按國籍及出生地點劃分的人口
+Table 3.8 Population  by nationality and place of birth, 2021
+  出生地點
+Place of birth
+  香港
+Hong Kong
+中國內地／
+澳門／ 台灣
+The mainland of
+China / Macao /
+Taiwan
+其他地方
+Elsewhere
+總計
+Total
+ 國籍
+Nationality
+數目
+Number
+百分比
+%
+數目
+Number
+百分比
+%
+數目
+Number
+百分比
+%
+數目
+Number
+百分比
+%
+ 中國
+Chinese
+ 永久居留地是香港
+Place of domicile -
+ Hong Kong
+4 513 071 98.6 2 138 237 96.6 85 544 13.7 6 736 852 90.9
+ 永久居留地不是香港
+Place of domicile -
+ other than Hong Kong
+7 087 0.2 74 139 3.3 1 612 0.3 82 838 1.1
+ 菲律賓
+Filipino
+5 843 0.1 54 0.0 197 462 31.6 203 359 2.7
+ 印尼
+Indonesian
+761 0.0 64 0.0 144 929 23.2 145 754 2.0
+ 英國
+British
+11 871 0.3 283 0.0 25 089 4.0 37 243 0.5
+ 印度
+Indian
+4 959 0.1 25 0.0 27 812 4.5 32 796 0.4
+ 尼泊爾
+Nepalese
+9 066 0.2 6 0.0 17 707 2.8 26 779 0.4
+ 巴基斯坦
+Pakistani
+6 467 0.1 26 0.0 11 685 1.9 18 178 0.2
+ 美國
+American
+2 067 0.0 273 0.0 11 703 1.9 14 043 0.2
+ 泰國
+Thai
+534 0.0 14 0.0 13 290 2.1 13 838 0.2
+ 澳洲
+Australian
+2 071 0.0 107 0.0 9 595 1.5 11 773 0.2
+ 日本
+Japanese
+1 697 0.0 71 0.0 9 718 1.6 11 486 0.2
+ 其他
+Others
+9 340 0.2 563 0.0 68 228 10.9 78 131 1.1
+ 總計
+Total
+4 574 834 100.0 2 213 862 100.0 624 374 100.0 7 413 070 100.0
+
+... and 5 further pages match; re-run with a narrower --terms to see them.
