@@ -1,33 +1,47 @@
 cfps_microdata: edjngfebav/cfps201420162020-china-family-panel-studies
 Downloading to /home/runner/.cache/kagglehub/datasets/edjngfebav/cfps201420162020-china-family-panel-studies/2.archive...
 Extracting files...
-  Liaoning Province: paper n=2939; rows in province=3069, valid answers=2939, answered at all (incl. DK/refused)=2939, with each weight>0: natcs12=2810, rescs12=484, natpn1012=2805, respn1012=482
-      unweighted, all valid            n= 2939  max |diff|= 0.05  Budd=5.5 Taoi=0.0 Isla=0.8 Prot=2.1 Roma=0.1 No r=91.3 Othe=0.1
-      natcs12 (rows with it)           n= 2810  max |diff|= 0.67  Budd=4.9 Taoi=0.0 Isla=0.9 Prot=1.9 Roma=0.1 No r=92.0 Othe=0.3
-      rescs12 (rows with it)           n=  484  max |diff|= 2.50  Budd=3.9 Taoi=0.0 Isla=0.7 Prot=1.5 Roma=0.1 No r=93.8 Othe=0.0
-      natpn1012 (rows with it)         n= 2805  max |diff|= 0.69  Budd=5.0 Taoi=0.0 Isla=0.8 Prot=1.9 Roma=0.1 No r=92.0 Othe=0.2
-      respn1012 (rows with it)         n=  482  max |diff|= 2.32  Budd=4.0 Taoi=0.0 Isla=0.7 Prot=1.6 Roma=0.1 No r=93.6 Othe=0.0
-  Shanghai Municipality: paper n=2362; rows in province=2388, valid answers=2365, answered at all (incl. DK/refused)=2366, with each weight>0: natcs12=2284, rescs12=310, natpn1012=2283, respn1012=310
-      unweighted, all valid            n= 2365  max |diff|= 0.04  Budd=10.4 Taoi=0.1 Isla=0.0 Prot=1.9 Roma=0.7 No r=86.7 Othe=0.1
-      natcs12 (rows with it)           n= 2284  max |diff|= 2.47  Budd=8.3 Taoi=0.0 Isla=0.0 Prot=1.9 Roma=0.4 No r=89.2 Othe=0.3
-      rescs12 (rows with it)           n=  310  max |diff|= 3.25  Budd=7.6 Taoi=0.0 Isla=0.4 Prot=1.9 Roma=0.1 No r=90.0 Othe=0.1
-      natpn1012 (rows with it)         n= 2283  max |diff|= 2.11  Budd=8.4 Taoi=0.0 Isla=0.0 Prot=2.0 Roma=0.4 No r=88.8 Othe=0.3
-      respn1012 (rows with it)         n=  310  max |diff|= 2.79  Budd=7.8 Taoi=0.0 Isla=0.4 Prot=2.1 Roma=0.1 No r=89.5 Othe=0.1
-  Henan Province: paper n=3874; rows in province=4346, valid answers=3860, answered at all (incl. DK/refused)=3861, with each weight>0: natcs12=3688, rescs12=1938, natpn1012=3681, respn1012=1935
-      unweighted, all valid            n= 3860  max |diff|= 0.22  Budd=6.2 Taoi=0.1 Isla=1.3 Prot=5.6 Roma=0.4 No r=86.2 Othe=0.2
-      natcs12 (rows with it)           n= 3688  max |diff|= 0.52  Budd=5.9 Taoi=0.1 Isla=1.1 Prot=5.7 Roma=0.4 No r=86.5 Othe=0.2
-      rescs12 (rows with it)           n= 1938  max |diff|= 2.01  Budd=6.6 Taoi=0.2 Isla=1.8 Prot=3.6 Roma=0.2 No r=87.4 Othe=0.3
-      natpn1012 (rows with it)         n= 3681  max |diff|= 0.61  Budd=6.0 Taoi=0.1 Isla=1.1 Prot=5.5 Roma=0.4 No r=86.6 Othe=0.2
-      respn1012 (rows with it)         n= 1935  max |diff|= 1.82  Budd=6.5 Taoi=0.2 Isla=1.8 Prot=3.8 Roma=0.2 No r=87.2 Othe=0.3
-  Guangdong: paper n=2869; rows in province=3512, valid answers=2894, answered at all (incl. DK/refused)=2895, with each weight>0: natcs12=2825, rescs12=1346, natpn1012=2820, respn1012=1344
-      unweighted, all valid            n= 2894  max |diff|= 0.17  Budd=6.3 Taoi=0.3 Isla=0.0 Prot=0.8 Roma=0.2 No r=92.3 Othe=0.0
-      natcs12 (rows with it)           n= 2825  max |diff|= 0.34  Budd=6.0 Taoi=0.2 Isla=0.0 Prot=1.1 Roma=0.2 No r=92.5 Othe=0.0
-      rescs12 (rows with it)           n= 1346  max |diff|= 1.82  Budd=4.4 Taoi=0.1 Isla=0.0 Prot=1.5 Roma=0.3 No r=93.6 Othe=0.0
-      natpn1012 (rows with it)         n= 2820  max |diff|= 0.39  Budd=5.8 Taoi=0.2 Isla=0.0 Prot=1.2 Roma=0.2 No r=92.6 Othe=0.0
-      respn1012 (rows with it)         n= 1344  max |diff|= 2.05  Budd=4.1 Taoi=0.2 Isla=0.0 Prot=1.6 Roma=0.3 No r=93.7 Othe=0.0
-  Gansu Province: paper n=3873; rows in province=4615, valid answers=3871, answered at all (incl. DK/refused)=3871, with each weight>0: natcs12=3756, rescs12=478, natpn1012=3742, respn1012=478
-      unweighted, all valid            n= 3871  max |diff|= 0.06  Budd=8.2 Taoi=1.0 Isla=3.4 Prot=0.3 Roma=0.1 No r=87.0 Othe=0.0
-      natcs12 (rows with it)           n= 3756  max |diff|= 2.36  Budd=5.9 Taoi=0.6 Isla=3.4 Prot=0.6 Roma=0.0 No r=89.4 Othe=0.0
-      rescs12 (rows with it)           n=  478  max |diff|= 1.70  Budd=8.2 Taoi=1.1 Isla=1.7 Prot=0.5 Roma=0.0 No r=88.3 Othe=0.2
-      natpn1012 (rows with it)         n= 3742  max |diff|= 1.79  Budd=6.4 Taoi=0.7 Isla=3.7 Prot=0.4 Roma=0.0 No r=88.6 Othe=0.0
-      respn1012 (rows with it)         n=  478  max |diff|= 1.86  Budd=8.2 Taoi=0.9 Isla=1.5 Prot=0.6 Roma=0.0 No r=88.5 Othe=0.2
+  unweighted 2012 tabulation reproduces the report's Table 2: sample sizes within 0.9%, every share within 0.20 points
+  2012 weighted, for comparison with the paper's unweighted table:
+      Liaoning Province        n= 2810  No religion 92.0, Buddhism 4.9, Protestant 1.9
+      Shanghai Municipality    n= 2284  No religion 89.2, Buddhism 8.3, Protestant 1.9
+      Henan Province           n= 3688  No religion 86.5, Buddhism 5.9, Protestant 5.7
+      Guangdong                n= 2825  No religion 92.5, Buddhism 6.0, Protestant 1.1
+      Gansu Province           n= 3756  No religion 89.4, Buddhism 5.9, Islam 3.4
+  2020: cfps2020person_202306.dta lacks qm601_s_1 or rswt_natcs20n (The following columns were not found in the Stata data set: qm601_s_1); not the affiliation question
+  2016: 33,244 adult rows, 32 provinces with answers
+  every province, weighted shares with weighted n, then unweighted n (only the five self-representative ones, marked *, are written):
+   * Gansu Province                       n= 3786 (unweighted  4096)  No religion 82.5, Buddhism 9.4, Islam 4.8, Protestant 2.2
+   * Henan Province                       n= 3530 (unweighted  3897)  No religion 82.8, Buddhism 7.9, Protestant 7.0, Islam 1.2
+   * Guangdong                            n= 2865 (unweighted  3062)  No religion 86.3, Buddhism 11.3, Protestant 1.2, Taoism 1.0
+   * Liaoning Province                    n= 2775 (unweighted  2966)  No religion 89.5, Buddhism 6.9, Protestant 2.2, Islam 0.8
+   * Shanghai Municipality                n= 1839 (unweighted  1997)  No religion 79.3, Buddhism 16.6, Protestant 2.1, Roman Catholic 1.0
+     Sichuan Province                     n= 1676 (unweighted  1834)  No religion 84.9, Buddhism 14.4, Other religions 0.3, Roman Catholic 0.2
+     Hebei Province                       n= 1653 (unweighted  1861)  No religion 92.5, Buddhism 3.1, Protestant 2.4, Roman Catholic 1.3
+     Shandong Province                    n= 1433 (unweighted  1551)  No religion 94.2, Buddhism 3.9, Protestant 1.1, Taoism 0.4
+     Shanxi Province                      n= 1295 (unweighted  1411)  No religion 90.3, Buddhism 7.8, Protestant 1.7, Other religions 0.2
+     Guizhou Province                     n=  907 (unweighted   990)  No religion 93.4, Buddhism 3.9, Roman Catholic 1.3, Other religions 0.9
+     Hunan Province                       n=  874 (unweighted   947)  No religion 91.7, Buddhism 5.7, Taoism 1.1, Protestant 0.7
+     Yunnan Province                      n=  856 (unweighted   921)  No religion 79.1, Buddhism 15.2, Islam 3.2, Protestant 2.1
+     Heilongjiang Province                n=  836 (unweighted   913)  No religion 90.4, Buddhism 4.8, Protestant 4.2, Islam 0.5
+     Shaanxi Province                     n=  727 (unweighted   776)  No religion 94.9, Buddhism 3.1, Protestant 1.0, Islam 0.6
+     Jiangsu Province                     n=  681 (unweighted   722)  No religion 78.9, Buddhism 17.4, Protestant 3.5, Roman Catholic 0.3
+     Guangxi Zhuang Autonomous Region     n=  680 (unweighted   742)  No religion 88.9, Buddhism 4.8, Taoism 3.6, Other religions 2.1
+     Zhejiang Province                    n=  651 (unweighted   722)  No religion 77.1, Buddhism 18.5, Protestant 2.8, Islam 0.8
+     Anhui Province                       n=  629 (unweighted   687)  No religion 82.8, Buddhism 10.1, Protestant 4.2, Other religions 1.6
+     Jiangxi Province                     n=  602 (unweighted   663)  No religion 89.9, Buddhism 8.7, Protestant 0.4, Taoism 0.4
+     Jilin Province                       n=  559 (unweighted   610)  No religion 88.4, Buddhism 8.1, Protestant 3.0, Other religions 0.5
+     Hubei Province                       n=  468 (unweighted   510)  No religion 91.5, Buddhism 4.9, Protestant 2.1, Roman Catholic 0.6
+     Fujian Province                      n=  357 (unweighted   393)  Buddhism 55.5, No religion 33.6, Protestant 3.8, Other religions 3.5
+     Chongqing Municipality               n=  292 (unweighted   321)  No religion 96.3, Buddhism 3.0, Protestant 0.5, Other religions 0.2
+     Beijing Municipality                 n=  281 (unweighted   311)  No religion 90.9, Buddhism 4.6, Islam 3.9, Protestant 0.6
+     Tianjin Municipality                 n=  201 (unweighted   214)  No religion 97.9, Buddhism 1.0, Roman Catholic 0.7, Protestant 0.4
+     Xinjiang Uyghur Autonomous Region    n=   41 (unweighted    44)  No religion 95.3, Protestant 4.2, Buddhism 0.4
+     Inner Mongolia Autonomous Region     n=   19 (unweighted    23)  No religion 69.4, Buddhism 30.6
+     Ningxia Hui Autonomous Region        n=   13 (unweighted    15)  No religion 66.7, Protestant 28.6, Buddhism 4.7
+     Hainan Province                      n=   10 (unweighted    11)  No religion 100.0
+     Qinghai Province                     n=    7 (unweighted     7)  No religion 100.0
+     Tibet Autonomous Region              n=    5 (unweighted     5)  No religion 100.0
+                                       -9 n=    2 (unweighted     2)  No religion 100.0
+  5 provinces written from the 2016 wave
+  wrote data/processed/cfps_microdata_province.json (14 kB)
