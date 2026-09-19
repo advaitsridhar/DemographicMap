@@ -72,6 +72,11 @@ window.Palette = (function () {
     not_available: { color: "#fab219", icon: "▲", label: "Not yet available" },
     not_collected: { color: "#ec835a", icon: "◼", label: "Not collected" },
     not_applicable:{ color: "#898781", icon: "–", label: "Not applicable" },
+    // Estimates. Neither is a family colour and neither is the neutral: a
+    // reader must be able to tell "nobody counted" from "somebody guessed",
+    // and both of those from "this was read".
+    derived:       { color: "#4f9c8c", icon: "◐", label: "Derived from published figures" },
+    modelled:      { color: "#9b72cf", icon: "◌", label: "Estimated, not published" },
   };
 
   const NEUTRAL = { light: "#d8d6ce", dark: "#33332f" };

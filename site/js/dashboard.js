@@ -32,10 +32,21 @@ window.Dashboard = (function () {
       (status === "not_collected"
         ? `This country does not collect ${fieldLabel.toLowerCase()}.`
         : `No ${fieldLabel.toLowerCase()} figure has been fetched for this unit yet.`);
+    // An estimate carries its shares under `estimate`, never under the
+    // field, so nothing above this line can mistake it for a reading. It is
+    // shown here, after the sentence that says what it is, and nowhere else.
+    const rows = value && Array.isArray(value.estimate) ? value.estimate : [];
+    const shown = rows.filter((r) => r && r.group && typeof r.pct === "number").slice(0, 12);
+    const table = shown.length
+      ? `<details class="estimate"><summary>${esc(meta.label)}: ${shown.length} groups</summary>
+        <table><tbody>${shown.map((r) =>
+          `<tr><td>${esc(r.group)}</td><td>${window.Fmt.pct1(r.pct)}</td></tr>`).join("")}
+        </tbody></table></details>`
+      : "";
     return `<div class="gap-note">
       <span class="gap-icon" style="color:${meta.color}" aria-hidden="true">${meta.icon}</span>
       <span><strong>${esc(meta.label)}.</strong> ${esc(note)}</span>
-    </div>`;
+    </div>${table}`;
   }
 
   /* A fact tile, and the sentence that says how to read it.

@@ -359,6 +359,29 @@ function thePartialListAppliesWhenTheStyleLoadsAfterIt() {
                          "the declared list reaches the layer once it exists");
 }
 
+function estimatesAreGapsInTheBrowser() {
+  // An estimate is a gap that carries a guess. gapStatus() falls through to
+  // "present" for a status it has not seen, so an unregistered "modelled"
+  // dict would be painted as read data -- which is the one thing
+  // docs/MODELLING.md says an estimate must never do.
+  const context = vm.createContext({ window: {}, console });
+  vm.runInContext(source("data.js"), context);
+  vm.runInContext(source("palette.js"), context);
+  const Fmt = context.window.Fmt;
+  const guess = { status: "modelled", estimate: [{ group: "A", pct: 60 }], note: "n" };
+  assert.strictEqual(Fmt.isGap(guess), true, "a modelled value is a gap");
+  assert.strictEqual(Fmt.gapStatus(guess), "modelled");
+  assert.strictEqual(Fmt.isGap({ status: "derived", estimate: [] }), true);
+  assert.strictEqual(Fmt.valueOf(guess), null, "nothing reads the guess as a value");
+  const Palette = context.window.Palette;
+  assert.strictEqual(Palette.status("modelled").label, "Estimated, not published");
+  assert.strictEqual(Palette.status("derived").label, "Derived from published figures");
+  assert.notStrictEqual(Palette.status("modelled").color, Palette.status("not_available").color,
+                        "an estimate is not painted as an ordinary gap");
+  assert.notStrictEqual(Palette.status("modelled").color, Palette.status("present").color,
+                        "an estimate is not painted as a reading");
+}
+
 (async () => {
   await concurrentLoadsAreIndexedOnce();
   await deepSearchWaitsForTheSecondShard();
@@ -368,5 +391,6 @@ function thePartialListAppliesWhenTheStyleLoadsAfterIt() {
   aLeaderIsOnlyNamedWhenNothingMissingCouldBeatIt();
   groundInNoUnitReadsAsLandRatherThanSea();
   thePartialListAppliesWhenTheStyleLoadsAfterIt();
+  estimatesAreGapsInTheBrowser();
   console.log("frontend regression tests passed");
 })().catch((error) => { console.error(error); process.exitCode = 1; });

@@ -42,8 +42,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import canonical_groups
 import group_tree
 from common import (  # noqa: E402
-    NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, ROOT, apply_collection_policy,
-    gap, is_gap, known_as, log, measure, read_json, repair, respell, write_json,
+    DERIVED, MODELLED, NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, ROOT,
+    apply_collection_policy, collection_gap, estimate, gap, is_estimate, is_gap,
+    known_as, log, measure, read_json, repair, respell, write_json,
 )
 
 SITE_DATA = ROOT / "site" / "data"
@@ -1093,6 +1094,14 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
             entity.setdefault("sources", []).extend(value or [])
             continue
         if is_gap(value) and not is_gap(entity.get(key)):
+            continue
+        # Among gaps, an estimate is the more informative one, so a bare
+        # marker from a later file does not displace it. A policy statement
+        # does: "the country does not count this" is the stronger claim, and
+        # the one an estimate must never stand in front of.
+        if (is_gap(value) and is_estimate(entity.get(key))
+                and not (isinstance(value, dict)
+                         and value.get("status") == NOT_COLLECTED)):
             continue
         entity[key] = value
     # After the copy, not before it: a satellite the row does supply has just
@@ -2396,6 +2405,365 @@ def check_shape_gaps(admin1: dict[str, list[dict[str, Any]]],
             + "\n  - ".join(problems))
 
 
+
+# ---------------------------------------------------------------------------
+# Derived values: what follows from published figures without reading more
+# ---------------------------------------------------------------------------
+#
+# docs/MODELLING.md measures what modelling the blank regions could and could
+# not do, and this is the part it recommends building: the cases that are
+# arithmetic or geometry, where the assumption is about shapes and not about
+# people. Everything written here is an estimate in common.py's sense -- a gap
+# that carries a guess -- and so is invisible to every pass that wants a real
+# value: the choropleth, the parent sums, the group index, the filter counts.
+# The one exception is a pooled union, which is a sum of published rows and is
+# written the way roll_up_field writes a sum.
+
+# A shape the boundary file draws once where a source publishes it in parts.
+# Namibia split Kavango into East and West in 2013 and CGAZ still draws one
+# Kavango; Afrobarometer surveys each half and Wikidata counts each. Pooled,
+# the parts describe the shape exactly. Pooling is done within one source file
+# at a time, so a survey's respondents are never added to a census's people.
+SHAPE_IS_UNION_OF: dict[tuple[str, str], tuple[str, ...]] = {
+    ("NAM", "Kavango"): ("Kavango East", "Kavango West"),
+    ("GRD", "Southern Grenadine Islands"): ("Carriacou Island", "Petite Martinique"),
+}
+
+# A source row that covers ground the boundary file has since divided. Bueng
+# Kan was carved from Nong Khai in 2011; the 2000 census row for Nong Khai
+# counted both. Giving the new unit the old row's shares assumes the parent
+# was uniform inside, which docs/MODELLING.md measures to be false in about
+# 45% of countries -- so the copy is an estimate, says so on its face, and the
+# row's own shape keeps the published row untouched.
+ROW_COVERS_SHAPES: dict[tuple[str, str], tuple[str, ...]] = {
+    ("THA", "Nong Khai Province"): ("Bueng Kan Province",),
+}
+
+# How far a residual's people may differ from the unit's published population
+# before the subtraction is refused as describing something else.
+RESIDUAL_TOLERANCE = 0.03
+
+
+def whole_hundred(shares: Sequence[tuple[str, float]]) -> list[dict[str, Any]]:
+    """Shares to one decimal that sum to exactly 100.0, by largest remainder."""
+    total = sum(max(v, 0.0) for _, v in shares)
+    if total <= 0:
+        return []
+    tenths = [(g, max(v, 0.0) / total * 1000) for g, v in shares]
+    floors = [int(v) for _, v in tenths]
+    order = sorted(range(len(tenths)), key=lambda i: -(tenths[i][1] - floors[i]))
+    for i in order[:1000 - sum(floors)]:
+        floors[i] += 1
+    return [{"group": g, "pct": floors[i] / 10} for i, (g, _) in enumerate(tenths)]
+
+
+def shares_of(rows: Any) -> list[tuple[str, float]]:
+    """(group, pct) for every entry that carries both."""
+    return [(e["group"], float(e["pct"])) for e in (rows or [])
+            if isinstance(e, dict) and e.get("group")
+            and isinstance(e.get("pct"), (int, float))]
+
+
+def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
+              filename: str) -> dict[str, Any]:
+    """One row for a shape, from the rows a source publishes for its parts.
+
+    Counts are summed where every part carries them; otherwise the shares are
+    weighted by the parts' populations; otherwise the field is left out and
+    the log says so. A survey's counts are respondents and a census's are
+    people, and both pool correctly because the parts come from one file.
+    """
+    pooled: dict[str, Any] = {
+        "id": f"{iso3}-POOL-{norm(name)}-{norm(filename)}",
+        "level": parts[0].get("level") or "admin1", "name": name,
+        "parent": parts[0].get("parent") or iso3, "country": iso3,
+        "_source": filename, "sources": []}
+    seen: set[tuple[Any, ...]] = set()
+    for part in parts:
+        for src in part.get("sources", []) or []:
+            key = (src.get("name"), src.get("url"), src.get("field"))
+            if key not in seen:
+                seen.add(key)
+                pooled["sources"].append(src)
+    pops = [published(p.get("population")) for p in parts]
+    if all(v is not None for v in pops):
+        first = dict(parts[0]["population"])
+        first["value"] = int(round(sum(v for v in pops if v is not None)))
+        years = {vintage(p.get("population")) for p in parts}
+        if len(years) != 1:
+            first.pop("year", None)
+        pooled["population"] = first
+    names = " and ".join(p["name"] for p in parts)
+    for field in ROLLUP_FIELDS:
+        lists = [p.get(field) for p in parts]
+        if not all(isinstance(v, list) and shares_of(v) for v in lists):
+            continue
+        totals: dict[str, float] = defaultdict(float)
+        counted = all(all(isinstance(e.get("count"), (int, float)) for e in v)
+                      for v in lists)
+        if counted:
+            for v in lists:
+                for e in v:
+                    totals[e["group"]] += float(e["count"])
+            whole = sum(totals.values())
+            if whole <= 0:
+                continue
+            rows = whole_hundred([(g, c / whole * 100) for g, c in totals.items()])
+            for row in rows:
+                row["count"] = int(round(totals[row["group"]]))
+            basis = "their published counts"
+        elif all(v is not None for v in pops):
+            for v, w in zip(lists, pops):
+                for g, pct in shares_of(v):
+                    totals[g] += pct * (w or 0.0)
+            whole = sum(v for v in pops if v is not None)
+            if whole <= 0:
+                continue
+            rows = whole_hundred([(g, c / whole) for g, c in totals.items()])
+            basis = "their populations"
+        else:
+            log(f"  union {iso3} {name}: {field} not pooled from {filename} -- "
+                f"the parts carry neither counts nor populations to weigh by")
+            continue
+        pooled[field] = rows
+        pooled[f"{field}_note"] = (
+            f"Pooled from the rows published for {names}, weighted by {basis}; "
+            f"the boundary file draws them as one unit.")
+        for satellite in ("year", "basis"):
+            values = {p.get(f"{field}_{satellite}") for p in parts}
+            if len(values) == 1 and None not in values:
+                pooled[f"{field}_{satellite}"] = values.pop()
+    return pooled
+
+
+def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """Replace each declared union's parts with one row named for the shape."""
+    done: list[str] = []
+    for (iso3, shape_name), part_names in SHAPE_IS_UNION_OF.items():
+        rows = adapters.get(iso3, [])
+        # Matched the way the shapes are: Afrobarometer writes "Kavango East"
+        # and Wikidata "Kavango East Region", and norm() reads those alike.
+        wanted = {norm(p): p for p in part_names}
+        by_file: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
+        for row in rows:
+            part = wanted.get(norm(row.get("name")))
+            if part and part not in by_file[row["_source"]]:
+                by_file[row["_source"]][part] = row
+        if not by_file:
+            log(f"  union {iso3} {shape_name}: no source publishes any of "
+                + ", ".join(part_names))
+        for filename, found in sorted(by_file.items()):
+            missing = [p for p in part_names if p not in found]
+            if missing:
+                log(f"  union {iso3} {shape_name}: {filename} lacks "
+                    f"{', '.join(missing)}, not pooled")
+                continue
+            pooled = pool_rows(shape_name, [found[p] for p in part_names], iso3, filename)
+            for p in part_names:
+                rows.remove(found[p])
+            rows.append(pooled)
+            done.append(f"{iso3} {shape_name} from {' + '.join(part_names)} ({filename})")
+    return done
+
+
+def estimate_from(src: dict[str, Any], target: str, iso3: str) -> dict[str, Any] | None:
+    """A row for ``target`` carrying ``src``'s compositions as estimates."""
+    copy: dict[str, Any] = {
+        "id": f"{src.get('id') or norm(src['name'])}-SPLIT-{norm(target)}",
+        "level": src.get("level") or "admin1", "name": target,
+        "parent": src.get("parent") or iso3, "country": iso3,
+        "_source": src["_source"], "sources": list(src.get("sources", []) or [])}
+    written = False
+    for field in ROLLUP_FIELDS:
+        shares = src.get(field)
+        if not (isinstance(shares, list) and shares_of(shares)):
+            continue
+        if collection_gap(iso3, field) is not None:
+            log(f"  split {iso3} {src['name']} -> {target}: {field} is declared "
+                f"not collected, no estimate written")
+            continue
+        year = src.get(f"{field}_year")
+        when = f" in {year}" if year else ""
+        copy[field] = estimate(
+            MODELLED, shares, method="tier1-split",
+            inputs=[src.get("id") or src["name"]],
+            note=(f"No source has been read for {target}. This is the {field} "
+                  f"composition published for {src['name']}{when}, which then "
+                  f"included this ground, applied here on the assumption that the "
+                  f"old unit was uniform inside. It is an estimate, not a published "
+                  f"figure, and not evidence of what the census says about {target}."))
+        written = True
+    return copy if written else None
+
+
+def split_declared_rows(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """Add a row, as estimates, for each shape a declared source row covers."""
+    done: list[str] = []
+    for (iso3, row_name), targets in ROW_COVERS_SHAPES.items():
+        rows = adapters.get(iso3, [])
+        sources = [r for r in rows if r.get("name") == row_name]
+        if not sources:
+            log(f"  split {iso3} {row_name}: no source publishes it")
+            continue
+        for src in sources:
+            have = {r.get("name") for r in rows if r["_source"] == src["_source"]}
+            for target in targets:
+                if target in have:
+                    log(f"  split {iso3} {row_name} -> {target}: {src['_source']} "
+                        f"publishes {target} itself, not copied")
+                    continue
+                copy = estimate_from(src, target, iso3)
+                if copy is None:
+                    log(f"  split {iso3} {row_name} -> {target}: {src['_source']} "
+                        f"carries nothing to copy")
+                    continue
+                rows.append(copy)
+                done.append(f"{iso3} {target} from {row_name} ({src['_source']}): "
+                            + ", ".join(f for f in ROLLUP_FIELDS if f in copy))
+    return done
+
+
+def inherit_single_unit(admin0: list[dict[str, Any]],
+                        admin1_by_country: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """A country drawn as one first-level unit gives that unit its own row.
+
+    The unit's ground is the country's, so the national figure describes it
+    exactly. Written as derived rather than as a reading, because nothing was
+    read for the unit and a derived value never rolls back up into the
+    country it came from.
+    """
+    done: list[str] = []
+    nations = {c["id"]: c for c in admin0}
+    for iso3, rows in sorted(admin1_by_country.items()):
+        if len(rows) != 1 or rows[0].get("disputed"):
+            continue
+        unit, nation = rows[0], nations.get(iso3)
+        if nation is None:
+            continue
+        for field in ROLLUP_FIELDS:
+            shares, current = nation.get(field), unit.get(field)
+            if not (isinstance(shares, list) and shares_of(shares)):
+                continue
+            if not (isinstance(current, dict) and current.get("status") == NOT_AVAILABLE):
+                continue
+            unit[field] = estimate(
+                DERIVED, shares, method="tier0-single-unit", inputs=[iso3],
+                note=(f"{nation.get('name', iso3)} is drawn as a single first-level "
+                      f"unit, so this is the country's own {field} figure: it "
+                      f"describes exactly this ground and no more. Derived from the "
+                      f"national row, not separately published for the unit."))
+            done.append(f"{iso3} {unit['name']} {field}")
+    return done
+
+
+def source_names(entity: dict[str, Any], field: str) -> set[str]:
+    return {s.get("name") for s in entity.get("sources", []) or []
+            if s.get("name") and field in str(s.get("field") or "").split("/")}
+
+
+def residual(nation: dict[str, Any], known: list[dict[str, Any]],
+             target: dict[str, Any], field: str
+             ) -> tuple[str | None, list[dict[str, Any]] | None]:
+    """The one missing unit's composition by subtraction, or why not.
+
+    Each refusal is a way the subtraction would describe something other than
+    the unit. Different sources: the national figure and the units' were
+    counted by different people, so their difference is mostly the
+    disagreement between them. Populations that do not add up: the same, with
+    the arithmetic visible. Labels the national figure lacks: the units are
+    answering a finer question, and a group the parent never named cannot be
+    subtracted from it. A negative share: the inputs contradict each other. A
+    residual whose people do not match the unit's own: whatever is left over,
+    it is not this unit.
+    """
+    own = source_names(nation, field)
+    theirs: set[str] = set().union(*(source_names(r, field) for r in known))
+    if not own or not theirs or not (own & theirs):
+        return (f"the national figure ({', '.join(sorted(own)) or 'no named source'}) "
+                f"and the units' ({', '.join(sorted(theirs)) or 'no named source'}) "
+                f"come from different sources; a difference between them is not a unit",
+                None)
+    nat_pop = published(nation.get("population"))
+    pops = {r["id"]: published(r.get("population")) for r in [*known, target]}
+    if nat_pop is None or any(v is None for v in pops.values()):
+        return "not every unit and the country has a published population to weigh by", None
+    total = sum(v for v in pops.values() if v is not None)
+    if abs(total - nat_pop) > RESIDUAL_TOLERANCE * nat_pop:
+        return (f"the units' populations sum to {total:,.0f} against a national "
+                f"{nat_pop:,.0f}", None)
+    labels = {g for g, _ in shares_of(nation.get(field))}
+    foreign = {g for r in known for g, _ in shares_of(r[field])} - labels
+    if foreign:
+        return (f"the units name groups the national figure does not "
+                f"({', '.join(sorted(foreign)[:4])})", None)
+    counts = {g: pct / 100 * nat_pop for g, pct in shares_of(nation.get(field))}
+    for r in known:
+        for g, pct in shares_of(r[field]):
+            counts[g] -= pct / 100 * (pops[r["id"]] or 0.0)
+    own_pop = pops[target["id"]] or 0.0
+    negative = [g for g, c in counts.items() if c < -RESIDUAL_TOLERANCE * own_pop]
+    if negative:
+        return f"the subtraction goes negative for {', '.join(sorted(negative)[:4])}", None
+    left = sum(max(c, 0.0) for c in counts.values())
+    if own_pop <= 0 or abs(left - own_pop) > RESIDUAL_TOLERANCE * own_pop:
+        return (f"the residual is {left:,.0f} people against the unit's published "
+                f"{own_pop:,.0f}", None)
+    return None, whole_hundred([(g, c / left * 100) for g, c in counts.items()])
+
+
+def residual_child(admin0: list[dict[str, Any]],
+                   admin1_by_country: dict[str, list[dict[str, Any]]]
+                   ) -> tuple[list[str], list[str]]:
+    """Fill the one unit a country's own arithmetic determines, or say why not."""
+    filled: list[str] = []
+    refused: list[str] = []
+    nations = {c["id"]: c for c in admin0}
+    for iso3, rows in sorted(admin1_by_country.items()):
+        nation = nations.get(iso3)
+        if nation is None or len(rows) < 2 or any(r.get("disputed") for r in rows):
+            continue
+        for field in ROLLUP_FIELDS:
+            if not (isinstance(nation.get(field), list) and shares_of(nation[field])):
+                continue
+            blank = [r for r in rows if isinstance(r.get(field), dict)
+                     and r[field].get("status") == NOT_AVAILABLE]
+            known = [r for r in rows if isinstance(r.get(field), list)]
+            if len(blank) != 1 or len(known) != len(rows) - 1:
+                continue
+            target = blank[0]
+            where = f"{iso3} {target['name']} {field}"
+            why, shares = residual(nation, known, target, field)
+            if why or not shares:
+                refused.append(f"{where}: {why or 'nothing left over'}")
+                continue
+            target[field] = estimate(
+                DERIVED, shares, method="tier0-residual",
+                inputs=[iso3, *(r["id"] for r in known)],
+                note=(f"No source has been read for {target['name']}. The national "
+                      f"{field} figure and every other first-level unit's come from "
+                      f"the same source and their populations agree, so this is the "
+                      f"difference: the national count less the other units', share "
+                      f"by share. Derived by subtraction, not separately published."))
+            filled.append(where)
+    return filled, refused
+
+
+def check_no_estimate_on_policy_field(*tables: dict[str, list[dict[str, Any]]]) -> None:
+    """An estimate on a field the country does not count is fatal.
+
+    It would not fill a gap in what this map has read; it would manufacture a
+    statistic about a category the state declined to enumerate. Every pass
+    that writes an estimate checks the policy first, and this checks them.
+    """
+    bad = [f"{iso3} {entity.get('name')} {field}"
+           for table in tables for iso3, rows in table.items() for entity in rows
+           for field in ROLLUP_FIELDS
+           if is_estimate(entity.get(field)) and collection_gap(iso3, field) is not None]
+    if bad:
+        raise SystemExit("estimates were written on fields the country does not "
+                         "collect: " + ", ".join(bad[:10]))
+
+
 def add_known_as(index: dict[str, list[dict[str, Any]]],
                  entities: Sequence[dict[str, Any]]) -> int:
     """Index each shape's declared alternative names, under two rules.
@@ -2649,6 +3017,10 @@ def main() -> int:
     countries = primary_country_profiles(country_profiles)
     cities = read_json(PROCESSED / "cities.json", {"by_country": {}, "by_admin1": {}})
     adapters = load_adapters()
+    for line in pool_declared_unions(adapters):
+        log(f"  union pooled: {line}")
+    for line in split_declared_rows(adapters):
+        log(f"  split written as estimates: {line}")
     curated_rows, provenance = load_curated()
     country_detail = load_country_detail()
 
@@ -3064,6 +3436,21 @@ def main() -> int:
 
     # Last, so a curated country row is the last word on the field it names.
     apply_country_detail(admin0, country_detail)
+
+    # -- derived values ------------------------------------------------------
+    # After the country row is final and before the bare fields are explained:
+    # these are gaps that carry a guess, and say_why_empty leaves a gap with a
+    # note alone. Nothing here rolls up, because an estimate is not a list.
+    inherited = inherit_single_unit(admin0, admin1_by_country)
+    if inherited:
+        log(f"  {len(inherited)} single-unit countries handed their row down: "
+            + ", ".join(inherited[:6]))
+    derived, refused = residual_child(admin0, admin1_by_country)
+    if derived:
+        log(f"  {len(derived)} units derived by subtraction: " + ", ".join(derived))
+    for line in refused:
+        log(f"  not derived -- {line}")
+    check_no_estimate_on_policy_field(admin1_by_country, admin2_by_country)
 
     # -- every bare field says why -------------------------------------------
     # Last of all, after the policy and the parent sums have had their turn:

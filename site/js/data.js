@@ -192,7 +192,12 @@ window.DataStore = (function () {
 window.Fmt = (function () {
   "use strict";
 
-  const GAP_STATUSES = new Set(["not_available", "not_collected", "not_applicable"]);
+  // An estimate ("derived", "modelled") is a gap that carries a guess. It is
+  // listed here so that everything asking "is there a real value" hears no:
+  // gapStatus() falls through to "present" for a status it does not know,
+  // and an unregistered estimate would be painted as read data.
+  const GAP_STATUSES = new Set(["not_available", "not_collected", "not_applicable",
+                                "derived", "modelled"]);
 
   function isGap(value) {
     return value == null || (typeof value === "object" && !Array.isArray(value) &&

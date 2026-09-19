@@ -4624,6 +4624,229 @@ class SiteFreshness(unittest.TestCase):
                 self.assertEqual(len(stamped[filename]), 12)
 
 
+class DerivedValues(unittest.TestCase):
+    """What follows from published figures by arithmetic or geometry.
+
+    docs/MODELLING.md: an estimate is a gap that carries a guess. These pin
+    the two properties that make that safe -- it is a gap to every consumer,
+    and it is never written where the country does not count the field -- and
+    the arithmetic of each step."""
+
+    def test_an_estimate_is_a_gap_everywhere(self):
+        value = common.estimate(common.MODELLED, [{"group": "A", "pct": 60.0},
+                                                 {"group": "B", "pct": 40.0}],
+                                method="test", inputs=["x"], note="a guess")
+        self.assertTrue(common.is_gap(value))
+        self.assertTrue(common.is_estimate(value))
+        self.assertEqual(value["estimate"], [{"group": "A", "pct": 60.0},
+                                             {"group": "B", "pct": 40.0}])
+        # Not a list, so no reader that expects a composition finds one.
+        self.assertNotIsInstance(value, list)
+        with self.assertRaises(ValueError):
+            common.estimate(common.NOT_AVAILABLE, [{"group": "A", "pct": 1}],
+                            method="m", inputs=[], note="n")
+        with self.assertRaises(ValueError):
+            common.estimate(common.DERIVED, [{"group": "A", "pct": 1}],
+                            method="m", inputs=[], note="")
+
+    def test_a_bare_gap_never_displaces_an_estimate_but_a_policy_does(self):
+        guess = common.estimate(common.MODELLED, [{"group": "A", "pct": 100.0}],
+                                method="m", inputs=[], note="n")
+        entity = {"religion": guess, "sources": []}
+        be.merge_adapter(entity, {"religion": common.gap(common.NOT_AVAILABLE),
+                                  "sources": []})
+        self.assertIs(entity["religion"], guess)
+        be.merge_adapter(entity, {"religion": common.gap(common.NOT_COLLECTED, "never asked"),
+                                  "sources": []})
+        self.assertEqual(entity["religion"]["status"], common.NOT_COLLECTED)
+        entity["religion"] = guess
+        be.merge_adapter(entity, {"religion": [{"group": "B", "pct": 100.0}],
+                                  "sources": []})
+        self.assertIsInstance(entity["religion"], list)
+
+    def test_whole_hundred_sums_to_exactly_one_hundred(self):
+        rows = be.whole_hundred([("a", 33.333), ("b", 33.333), ("c", 33.334)])
+        self.assertAlmostEqual(sum(r["pct"] for r in rows), 100.0, places=9)
+        self.assertEqual([r["pct"] for r in rows], [33.3, 33.3, 33.4])
+        rows = be.whole_hundred([("a", 1.0), ("b", 1.0), ("c", 1.0)])
+        self.assertAlmostEqual(sum(r["pct"] for r in rows), 100.0, places=9)
+        self.assertEqual(be.whole_hundred([("a", 0.0)]), [])
+
+    def union_parts(self, counted=True, populations=True):
+        def row(name, a, b, pop):
+            out = {"id": name, "level": "admin1", "name": name, "country": "NAM",
+                   "_source": "afro.json",
+                   "sources": [{"name": "Afro", "field": "religion", "url": "u"}],
+                   "religion": [{"group": "A", "pct": a, "count": a}
+                                if counted else {"group": "A", "pct": a},
+                                {"group": "B", "pct": b, "count": b}
+                                if counted else {"group": "B", "pct": b}]}
+            out["population"] = ({"value": pop, "year": 2020, "source": "s"}
+                                 if populations else common.gap(common.NOT_AVAILABLE))
+            return out
+        # One part under the survey's name and one under Wikidata's, because
+        # the two files spell them differently and both must pool.
+        return [row("Kavango East", 75.0, 25.0, 300),
+                row("Kavango West Region", 25.0, 75.0, 100)]
+
+    def test_a_declared_union_pools_its_parts_into_one_row(self):
+        adapters = {"NAM": self.union_parts()}
+        done = be.pool_declared_unions(adapters)
+        self.assertEqual(len(done), 1)
+        self.assertEqual([r["name"] for r in adapters["NAM"]], ["Kavango"])
+        pooled = adapters["NAM"][0]
+        # Counts summed: A = 75 + 25 = 100 of 200, B the same.
+        self.assertEqual({r["group"]: r["pct"] for r in pooled["religion"]},
+                         {"A": 50.0, "B": 50.0})
+        self.assertEqual(pooled["population"]["value"], 400)
+        self.assertEqual(pooled["population"]["year"], 2020)
+        self.assertIn("Pooled from the rows published for Kavango East and Kavango West",
+                      pooled["religion_note"])
+        self.assertEqual(len(pooled["sources"]), 1)
+
+    def test_a_union_without_counts_weighs_by_population(self):
+        adapters = {"NAM": self.union_parts(counted=False)}
+        be.pool_declared_unions(adapters)
+        pooled = adapters["NAM"][0]
+        # 300 people at 75% A and 100 at 25% A: (225 + 25) / 400.
+        self.assertEqual({r["group"]: r["pct"] for r in pooled["religion"]},
+                         {"A": 62.5, "B": 37.5})
+
+    def test_a_union_with_neither_counts_nor_populations_leaves_the_field(self):
+        adapters = {"NAM": self.union_parts(counted=False, populations=False)}
+        be.pool_declared_unions(adapters)
+        self.assertNotIn("religion", adapters["NAM"][0])
+
+    def test_a_union_missing_a_part_in_a_file_is_not_pooled(self):
+        parts = self.union_parts()[:1]
+        adapters = {"NAM": parts}
+        self.assertEqual(be.pool_declared_unions(adapters), [])
+        self.assertEqual([r["name"] for r in adapters["NAM"]], ["Kavango East"])
+
+    def test_a_declared_split_copies_shares_as_an_estimate(self):
+        src = {"id": "THA-NK", "level": "admin1", "name": "Nong Khai Province",
+               "country": "THA", "_source": "thailand_province.json",
+               "sources": [{"name": "NSO", "field": "religion"}],
+               "religion": [{"group": "Buddhism", "pct": 99.1},
+                            {"group": "Other or not stated", "pct": 0.9}],
+               "religion_year": 2000,
+               "population": {"value": 900000, "year": 2000}}
+        adapters = {"THA": [src]}
+        done = be.split_declared_rows(adapters)
+        self.assertEqual(len(done), 1)
+        names = [r["name"] for r in adapters["THA"]]
+        self.assertEqual(names, ["Nong Khai Province", "Bueng Kan Province"])
+        copy = adapters["THA"][1]
+        self.assertTrue(common.is_estimate(copy["religion"]))
+        self.assertEqual(copy["religion"]["status"], common.MODELLED)
+        self.assertEqual(copy["religion"]["estimate"],
+                         [{"group": "Buddhism", "pct": 99.1},
+                          {"group": "Other or not stated", "pct": 0.9}])
+        self.assertIn("in 2000", copy["religion"]["note"])
+        self.assertIn("not a published figure", copy["religion"]["note"])
+        # The old row's population covered both units, so the copy has none.
+        self.assertNotIn("population", copy)
+        # And the source row itself is untouched.
+        self.assertIsInstance(src["religion"], list)
+
+    def test_a_split_never_writes_an_estimate_on_a_not_collected_field(self):
+        # Pakistan declares ethnicity not collected. A split that would copy
+        # ethnicity into a Pakistani unit must write nothing for it.
+        self.assertIsNotNone(common.collection_gap("PAK", "ethnicity"))
+        src = {"id": "x", "name": "Somewhere", "country": "PAK", "_source": "f",
+               "sources": [], "ethnicity": [{"group": "A", "pct": 100.0}]}
+        self.assertIsNone(be.estimate_from(src, "Elsewhere", "PAK"))
+
+    def test_the_build_refuses_an_estimate_on_a_policy_field(self):
+        guess = common.estimate(common.MODELLED, [{"group": "A", "pct": 100.0}],
+                                method="m", inputs=[], note="n")
+        with self.assertRaises(SystemExit):
+            be.check_no_estimate_on_policy_field(
+                {"PAK": [{"name": "Somewhere", "ethnicity": guess}]})
+        be.check_no_estimate_on_policy_field(
+            {"PAK": [{"name": "Somewhere", "religion": guess}]})
+
+    def test_a_single_unit_country_hands_its_row_down_as_derived(self):
+        nation = {"id": "MCO", "name": "Monaco",
+                  "religion": [{"group": "Roman Catholic", "pct": 90.0},
+                               {"group": "Other", "pct": 10.0}]}
+        unit = {"id": "MCO-1", "name": "Monaco",
+                "religion": common.gap(common.NOT_AVAILABLE),
+                "ethnicity": common.gap(common.NOT_COLLECTED, "never asked")}
+        done = be.inherit_single_unit([nation], {"MCO": [unit]})
+        self.assertEqual(done, ["MCO Monaco religion"])
+        self.assertEqual(unit["religion"]["status"], common.DERIVED)
+        self.assertEqual(unit["religion"]["estimate"][0]["group"], "Roman Catholic")
+        self.assertEqual(unit["religion"]["inputs"], ["MCO"])
+        # A policy statement is never overwritten.
+        self.assertEqual(unit["ethnicity"]["status"], common.NOT_COLLECTED)
+        # Two units: no unit is the country.
+        other = {"id": "MCO-2", "name": "B", "religion": common.gap(common.NOT_AVAILABLE)}
+        unit["religion"] = common.gap(common.NOT_AVAILABLE)
+        self.assertEqual(be.inherit_single_unit([nation], {"MCO": [unit, other]}), [])
+
+    def same_source_country(self):
+        src = [{"name": "Census", "field": "religion"}]
+        nation = {"id": "XXX", "name": "X", "sources": src,
+                  "population": {"value": 1000},
+                  "religion": [{"group": "A", "pct": 62.0}, {"group": "B", "pct": 38.0}]}
+        known = [{"id": "u1", "name": "U1", "sources": src, "population": {"value": 300},
+                  "religion": [{"group": "A", "pct": 50.0}, {"group": "B", "pct": 50.0}]},
+                 {"id": "u2", "name": "U2", "sources": src, "population": {"value": 300},
+                  "religion": [{"group": "A", "pct": 50.0}, {"group": "B", "pct": 50.0}]}]
+        blank = {"id": "u3", "name": "U3", "sources": [], "population": {"value": 400},
+                 "religion": common.gap(common.NOT_AVAILABLE)}
+        return nation, known, blank
+
+    def test_a_residual_fires_when_the_arithmetic_closes(self):
+        nation, known, blank = self.same_source_country()
+        filled, refused = be.residual_child([nation], {"XXX": [*known, blank]})
+        self.assertEqual(filled, ["XXX U3 religion"])
+        self.assertEqual(refused, [])
+        # A: 620 - 150 - 150 = 320 of 400; B: 380 - 300 = 80 of 400.
+        self.assertEqual(blank["religion"]["status"], common.DERIVED)
+        self.assertEqual({r["group"]: r["pct"] for r in blank["religion"]["estimate"]},
+                         {"A": 80.0, "B": 20.0})
+        self.assertEqual(blank["religion"]["inputs"], ["XXX", "u1", "u2"])
+
+    def test_a_residual_refuses_different_sources(self):
+        nation, known, blank = self.same_source_country()
+        nation["sources"] = [{"name": "Factbook", "field": "religion"}]
+        filled, refused = be.residual_child([nation], {"XXX": [*known, blank]})
+        self.assertEqual(filled, [])
+        self.assertIn("different sources", refused[0])
+        self.assertEqual(blank["religion"]["status"], common.NOT_AVAILABLE)
+
+    def test_a_residual_refuses_when_the_subtraction_goes_negative(self):
+        nation, known, blank = self.same_source_country()
+        nation["religion"] = [{"group": "A", "pct": 20.0}, {"group": "B", "pct": 80.0}]
+        # A: 200 - 300 < 0.
+        filled, refused = be.residual_child([nation], {"XXX": [*known, blank]})
+        self.assertEqual(filled, [])
+        self.assertIn("goes negative", refused[0])
+
+    def test_a_residual_refuses_populations_that_do_not_add_up(self):
+        nation, known, blank = self.same_source_country()
+        nation["population"] = {"value": 1500}
+        filled, refused = be.residual_child([nation], {"XXX": [*known, blank]})
+        self.assertEqual(filled, [])
+        self.assertIn("against a national", refused[0])
+
+    def test_a_residual_refuses_a_finer_question_than_the_national_one(self):
+        nation, known, blank = self.same_source_country()
+        known[0]["religion"] = [{"group": "A1", "pct": 50.0}, {"group": "B", "pct": 50.0}]
+        filled, refused = be.residual_child([nation], {"XXX": [*known, blank]})
+        self.assertEqual(filled, [])
+        self.assertIn("A1", refused[0])
+
+    def test_a_residual_never_rolls_back_up(self):
+        # A derived child is not a list, so a parent summed from its children
+        # cannot include it: the estimate cannot launder itself into evidence.
+        nation, known, blank = self.same_source_country()
+        be.residual_child([nation], {"XXX": [*known, blank]})
+        self.assertFalse(isinstance(blank["religion"], list))
+
+
 class DeclaredSecondNames(unittest.TestCase):
     """ALSO_KNOWN_AS joins a shape under a name that is not its own.
 

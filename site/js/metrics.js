@@ -537,7 +537,7 @@ window.Metrics = (function () {
   function statusLegend() {
     return {
       type: "status",
-      items: ["present", "not_available", "not_collected"].map((key) => {
+      items: ["present", "derived", "modelled", "not_available", "not_collected"].map((key) => {
         const s = window.Palette.status(key);
         return { color: s.color, icon: s.icon, label: s.label };
       }),
