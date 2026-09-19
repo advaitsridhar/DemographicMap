@@ -1,2 +1,25 @@
-page: https://www.immigration.go.kr/immigration/index.do
-  unreachable: URLError: <urlopen error timed out>
+thailand_ethnicity: modelled from NSO, 2000 Population and Housing Census, provincial final reports (home language) and the 2004 Ethnolinguistic Maps' regional groups, by the owner's decision of 19 September 2026
+  'Nationality, religion, and language data for the provinces of Thailand': 30,739 bytes of wikitext
+  76 provinces modelled
+  regional groups: Central Thai 35, Isan (Lao) 19, Northern Thai 8, Southern Thai 14
+  'Provinces of Thailand': 49,210 bytes of wikitext
+  national composition the 76 provinces imply, weighted by the December 2024 populations, beside the Ethnolinguistic Maps' national figures (2004) read against the 2000 census population of 60,916,441:
+      group                                     modelled      maps
+      Central Thai                                 43.6%     32.8%
+      Isan (Lao)                                   30.1%     25.0%
+      Southern Thai                                11.7%      7.4%
+      Northern Thai                                 7.9%      9.8%
+      Malay                                         2.7%      2.3%
+      Khmer                                         2.3%      2.3%
+      Hill tribe languages (census category)        1.4%         -
+      English                                       0.1%         -
+      Burmese and Mon                               0.1%         -
+      Chinese                                       0.1%         -
+      Indian                                        0.0%         -
+      Japanese                                      0.0%         -
+      Lao and Vietnamese                            0.0%         -
+      Nyaw                                             -      0.8%   (inside a regional remainder here)
+      Phu Thai                                         -      0.8%   (inside a regional remainder here)
+      Karen                                            -      0.7%   (inside a regional remainder here)
+      Kuy                                              -      0.7%   (inside a regional remainder here)
+  wrote data/processed/thailand_ethnicity.json (206 kB)
