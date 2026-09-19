@@ -486,13 +486,14 @@ def religion_estimate(code: str, believers: dict[str, dict[str, int]]
                  f"; {' and '.join(held)} came out above the bound and "
                  f"{'were' if len(held) > 1 else 'was'} held there, the rest rescaled")
     note = (
-        "MODELLED, not read: no census or survey gives religion for this prefecture, and "
-        "this is not evidence of what any census says. It is NHK's ISSP 2018 national "
-        f"self-identification survey (Buddhism {PRIOR['Buddhism']:.0f}%, Shinto "
+        "Modelled from NHK's ISSP 2018 national self-identification survey (Buddhism "
+        f"{PRIOR['Buddhism']:.0f}%, Shinto "
         f"{PRIOR['Shinto']:.0f}%, Christianity {PRIOR['Christianity']:.0f}%, other "
         f"{PRIOR['Other religions']:.0f}%, no religion {PRIOR_NONE:.0f}%, no answer "
         f"{PRIOR_NO_ANSWER:.0f}% left out) tilted by the Agency for Cultural Affairs' "
-        f"宗教統計調査 believers by prefecture at {BELIEVERS_ASOF}, a membership count of "
+        f"宗教統計調査 believers by prefecture at {BELIEVERS_ASOF}. No census or survey gives "
+        "religion for this prefecture, so this is a model, not a count. The believer "
+        "count is a membership count of "
         f"{believers[NATIONAL][TRADITION_TOTAL]:,} in a country of 126 million that is used "
         "only relatively: each tradition's share of this prefecture's "
         f"{believers[code][TRADITION_TOTAL]:,} reported believers over its share of the "
@@ -530,13 +531,13 @@ def language_estimate(code: str, row: dict[str, int], ethnicity_id: str) -> dict
     rows = hundred(by_language)
     japanese_share = by_language["Japanese"] / sum(by_language.values()) * 100
     note = (
-        "MODELLED, not read: Japan's census does not ask language, and this is not evidence "
-        "of what any census says. It is this prefecture's 2020 census nationality "
-        "composition with everyone assigned their nationality's majority home language "
+        "Modelled from this prefecture's 2020 census nationality composition, with "
+        "everyone assigned their nationality's majority home language "
         "(Chinese to Mandarin, Filipino to Filipino, Brazilian to Portuguese, Peruvian to "
         "Spanish, Indian to Hindi, a plurality not a majority, British and American to "
         f"English), so Japanese at {japanese_share:.1f}% is simply the share holding Japanese "
-        "nationality. That understates Japanese-speaking among Japan-born Koreans and "
+        "nationality. Japan's census does not ask language, so this is a model, not a "
+        "count. It understates Japanese-speaking among Japan-born Koreans and "
         "Brazilians of Japanese descent, overstates it among naturalised citizens' "
         "families, and says nothing of Ainu or Ryukyuan; no backtest is possible, because "
         f"no prefecture-level language figure exists. Written by the map owner's decision "

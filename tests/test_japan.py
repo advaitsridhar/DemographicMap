@@ -265,7 +265,7 @@ class Records(unittest.TestCase):
         for r in self.records:
             for field in ("religion", "language"):
                 note = r[field]["note"]
-                self.assertTrue(note.startswith("MODELLED, not read"))
+                self.assertTrue(note.startswith("Modelled from"), note[:80])
                 self.assertIn(m.DECISION, note)
                 self.assertIn("not evidence of what any census says", note)
                 # Short: the first sentence says what it is, the caveats after
