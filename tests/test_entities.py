@@ -2386,20 +2386,26 @@ class SingaporePlanningAreas(unittest.TestCase):
         self.assertEqual(self.sa.cell("1,234"), 1234.0)
         self.assertEqual(self.sa.cell(" 90 "), 90.0)
 
+    def table(self, counts, totals, national):
+        table = self.sa.Table()
+        table.counts, table.totals, table.national = counts, totals, national
+        return table
+
     def test_a_wholly_suppressed_breakdown_is_not_a_reconciliation_failure(self):
         # Lim Chu Kang publishes 90 residents and suppresses every category.
-        self.sa.check("ethnicity", {"Lim Chu Kang": {}}, {"Lim Chu Kang": 90.0},
-                      self.sa.CONTROLS["ethnicity"])
+        self.sa.check("ethnicity", self.table({"Lim Chu Kang": {}}, {"Lim Chu Kang": 90.0},
+                                              self.sa.CONTROLS["ethnicity"]))
 
     def test_categories_that_miss_their_row_total_still_fail(self):
         with self.assertRaises(SystemExit) as caught:
-            self.sa.check("religion", {"Bedok": {"Buddhist": 10.0}},
-                          {"Bedok": 1000.0}, self.sa.CONTROLS["religion"])
+            self.sa.check("religion", self.table({"Bedok": {"Buddhist": 10.0}},
+                                                 {"Bedok": 1000.0},
+                                                 self.sa.CONTROLS["religion"]))
         self.assertIn("Bedok", str(caught.exception))
 
     def test_a_wrong_national_total_is_refused(self):
         with self.assertRaises(SystemExit):
-            self.sa.check("language", {}, {}, 1)
+            self.sa.check("language", self.table({}, {}, 1))
 
     def test_the_three_tables_keep_separate_years(self):
         # 2015 survey, 2020 census aged 15+, 2020 census aged 5+. Sharing one

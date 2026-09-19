@@ -245,8 +245,8 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Croatia | DZS Popis 2021 final results, workbook `popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx` (sheets 1, 2, 4) | županija, grad/općina | One layout for all three tables: a bilingual header (Croatian over English) with a count and a percent column per category, read from the header rather than declared; county rows interleaved with their towns and municipalities; a dash is zero. Each table partitions the population, Other, Not declared and Unknown included, and a row that does not sum to its total stops the build. Counties are named as geoBoundaries names them in English, with the Croatian as an alias; units are composed as the bureau writes them, type first ("Grad Samobor", "Općina Bibinje"). The workbook lists the City of Zagreb by its 17 city districts, which are skipped, the city coming from its own county row. The boundary file's spellings (a dozen typos, Istria's bilingual names, two islands each drawn as one town) are declared as aliases; 545 shapes for 556 units, 543 matched. |
 | Bosnia and Herzegovina | BHAS Popis 2013, Book 2 workbooks `K2_T2_B` (ethnicity), `K2_T5_B` (religion), `K2_T6_B` (mother tongue) under `popis.gov.ba/popis2013/doc/Knjiga2/BOS/` | entity, canton | One layout for all three: Level, Area (Bosnian over English), Sex, Total, then the categories; the Total row of each territory is read and matched by its Bosnian name. The two entities and Brčko District are published at both levels, since geoBoundaries draws Republika Srpska and Brčko as their own second-level shapes beside the ten cantons: 3/3 and 12/12. The bureau's 'Islamska' and 'Muslimanska' religion columns are summed into Islam (both are Islam; the build refuses a group beside its parent) and the note says so; ethnonyms given as a religion, and 'Orthodox' given as an ethnicity, are kept and marked. A row that does not sum to its Total refuses. Republika Srpska's institute published a different reading of the same count; these are the Agency's figures. `scripts/fetch_census/bosnia.py`. |
 | Switzerland | FSO structural survey 2024, main languages | canton | Main languages for all 26 cantons. A person may name up to three, so shares exceed 100%. |
-| Singapore | Census 2020 + GHS 2015 planning-area tables | planning area |Ethnicity, religion and language for the planning areas, on three different bases. |
-| Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are collected but not published at this geography. |
+| Singapore | Census 2020 + GHS 2015 planning-area tables | planning area, planning region | Ethnicity, religion and language for the planning areas, on three different bases; the five regions summed from their areas' published rows, each note naming what the release left out. All 55 shapes carry a record: the 14 with no breakdown say how few people the survey counted there, or that it counted none. |
+| Singapore | SingStat Table Builder M810771 | planning region | Resident population, sex ratio and a derived median age for the 5 regions. Religion, ethnicity and language are not published in this series; the planning-area adapter supplies them. |
 | Finland | Statistics Finland table `11rl` (PxWeb) | region | Mother tongue for all 19 regions, from the population register at 31 December. One language is recorded per resident, so shares are of everyone rather than of the people who answered a question. |
 | Estonia | Statistics Estonia table `RV0222U` (PxWeb) | county | Ethnic nationality for all 15 counties, from the population register on 1 January — a register count, not a census answer. |
 | Latvia | Central Statistical Bureau table `IRE031` (PxWeb) | municipality, state city | Ethnicity for all 42 municipalities and state cities, from the population register. "Other ethnicities" also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular. |
@@ -833,8 +833,50 @@ before it was handled.
 
 Coverage differs by table: ethnicity reaches 41 planning areas, religion and
 language 30 each — those two releases bucket the remainder into an "Others" row
-that matches no shape on the map, and it is dropped rather than joined to
-anything.
+that matches no shape on the map. It is not joined to anything, but its size is
+read: 25,756 residents aged 15 and over (religion) and 25,353 aged 5 and over
+(language) are all the 25 unlisted areas hold between them.
+
+**The five regions are summed from their areas.** The map's own roll-up
+(`roll_up_parents`) refused every region, and was right to: 14 of the 55
+shapes carry no ethnicity and 25 no religion or language, and a sum over part
+of a territory is refused on principle. What the roll-up cannot know is that
+those shapes are empty. The adapter can: the URA's Master Plan says which
+areas make each region (declared in `REGIONS`, and the boundary file's geometry
+places the 55 shapes identically), and the 49 area totals of the 2015 survey
+reconcile with its national row to within 20 people, so an area with no
+published count holds nobody it counted. Each region's ethnicity is the sum of
+its areas' 2015 rows over their own totals; religion and language are the sum
+of the 2020 rows the census lists for it. The SingStat Table Builder has no
+census planning-area table (its catalogue was searched from here: only the
+annual M810771 series answers to "planning region"), and data.gov.sg's
+catalogue throttles a walk and ignores its own query parameter, and singstat.gov.sg answers the runner with 403 (both probed from the runner, logs in the "Data: scripts.probe_datagovsg" and "Data: scripts.probe_links ...cop2020-sr1" commits), so the region
+rows are summed rather than read. Each note names the areas the release left
+out and what they hold: for religion and language, the areas inside the 2020
+"Others" row are 2.9% of the Central Region's 2015 residents (Museum, Newton,
+Orchard, Rochor, Singapore River, Southern Islands), 0.6% of the North's
+(Central Water Catchment, Lim Chu Kang, Mandai, Sungei Kadut), 0.4% of the
+East's (Changi, Paya Lebar), 0.1% of the West's (Boon Lay, Pioneer, Tengah,
+Tuas, Western Water Catchment) and under 0.1% of the North-East's
+(North-Eastern Islands, Seletar). A national shortfall beyond the rounding
+tolerance would be written into the note in a sentence; beyond 1% the regions
+are refused, because then the areas do not partition the country.
+
+**Every one of the 55 shapes carries a record**, and the 14 with no breakdown
+say why. Eight have a 2015 count too small to publish a breakdown of: Boon Lay
+(30 residents), Central Water Catchment (10), Lim Chu Kang (90), North-Eastern
+Islands (60), Paya Lebar (40), Pioneer (100), Tengah (10) and Tuas (70) — the
+count is carried as their population and the composition says how few people
+that is. Six have no count at all: Changi Bay, Marina East, Marina South,
+Simpang, Straits View and Western Islands are "na" in the 2015 survey and
+absent from the 2020 planning-area tables, which is how the Department writes
+an area with nobody in it, or too few to report; their records carry no
+figure and say so. The eleven populated areas the 2020 release leaves out
+(Changi, Mandai, Museum, Newton, Orchard, Rochor, Seletar, Singapore River,
+Southern Islands, Sungei Kadut, Western Water Catchment) keep their 2015
+ethnicity and say, with their 2015 count, that their religion and language sit
+inside the census's "Others" row. No join failed: all 55 area names in the
+extracts match the boundary file's, which writes them in capitals.
 
 ### Singapore, and two things the figures are not
 
@@ -859,7 +901,8 @@ which would bias the result downwards.
 
 Religion, ethnicity and language are all collected by Singapore's census, but
 none is published by planning region in this annual series, so each is an
-explicit `not_available` naming what is missing.
+explicit `not_available` naming what is missing — filled, in the build, by the
+planning-area adapter's region rows summed from the census tables (above).
 
 The adapter calls the API and falls back to a payload committed under
 `data/raw/singapore/` when the host is unreachable, which is what lets the build
@@ -5652,7 +5695,10 @@ were filled and eleven were not:
   Hyderabad, so a sum over them would have counted 31.7 million people across a
   third of the state. It now has 32 gaps out of 33 and a state figure summed
   from the census's own ten district rows, which is the honest form of the same
-  arithmetic.
+  arithmetic. Singapore's regions are the same shape of answer: the shapes the
+  roll-up saw as missing are uninhabited, which the adapter knows from the
+  survey's own totals and the roll-up cannot, so the adapter sums them itself
+  (see the Singapore section).
 
 **Percentages are recomputed against the denominator the children used, not
 against population.** Mexico publishes indigenous-language shares of the
