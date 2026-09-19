@@ -7,6 +7,7 @@ The fixtures are the tables and infobox values as the runner printed them
 """
 
 import io
+import re
 import sys
 import unittest
 from contextlib import redirect_stderr, redirect_stdout
@@ -166,7 +167,7 @@ def quiet(fn, *args, **kwargs):
 
 class EthnicTables(unittest.TestCase):
     def test_plain_table_is_read_and_shares_recomputed(self):
-        counts, total = m.read_ethnicity(GOVERNORS + SUMUT, "North Sumatra", "Sumatera Utara")
+        counts, total, _ = m.read_ethnicity(GOVERNORS + SUMUT, "North Sumatra", "Sumatera Utara")
         self.assertEqual(total, 12_930_319)
         self.assertEqual(counts["Batak"], 5_785_716)
         self.assertEqual(counts["Chinese Indonesian"], 340_320)
@@ -178,7 +179,7 @@ class EthnicTables(unittest.TestCase):
         self.assertAlmostEqual(sum(r["pct"] for r in rows), 100.0, delta=m.SUM_TOLERANCE)
 
     def test_two_census_table_reads_the_2010_column_and_spanned_total(self):
-        counts, total = m.read_ethnicity(JAMBI, "Jambi", "Jambi")
+        counts, total, _ = m.read_ethnicity(JAMBI, "Jambi", "Jambi")
         self.assertEqual(total, 3_069_768)
         self.assertEqual(counts["Javanese"], 893_156)
         self.assertEqual(counts["Jambi peoples"], 1_337_521)
@@ -186,20 +187,20 @@ class EthnicTables(unittest.TestCase):
         self.assertEqual(counts["South Sumatra peoples"], 57_663)
 
     def test_sub_rows_skipped_and_kalimantan_row_carried_as_residual(self):
-        counts, total = m.read_ethnicity(NTT, "East Nusa Tenggara", "Nusa Tenggara Timur")
+        counts, total, _ = m.read_ethnicity(NTT, "East Nusa Tenggara", "Nusa Tenggara Timur")
         self.assertEqual(total, 4_672_648)
         self.assertEqual(counts["East Nusa Tenggara peoples"], 3_793_242)
         self.assertNotIn("Atoni", counts)
         self.assertEqual(counts["Other ethnic groups"], 678_090 + 97_239)
 
     def test_caption_row_before_the_header(self):
-        counts, total = m.read_ethnicity(KALTIM, "East Kalimantan", "Kalimantan Timur")
+        counts, total, _ = m.read_ethnicity(KALTIM, "East Kalimantan", "Kalimantan Timur")
         self.assertEqual(total, 2_971_203)
         self.assertEqual(counts["Dayak"], 177_823)
         self.assertEqual(counts["Kutai"], 1_268_911)
 
     def test_percentages_before_the_count(self):
-        counts, total = m.read_ethnicity(JAKARTA, "Jakarta Special Capital Region",
+        counts, total, _ = m.read_ethnicity(JAKARTA, "Jakarta Special Capital Region",
                                          "Daerah Khusus Ibukota Jakarta")
         self.assertEqual(total, 9_547_541)
         self.assertEqual(counts["Betawi"], 2_700_722)
@@ -222,13 +223,16 @@ class EthnicTables(unittest.TestCase):
         self.assertEqual(national["Javanese"], 95_217_022)
         self.assertEqual(m.census_populations(POPULATIONS)["Jambi"], 3_092_265)
 
-    def test_national_check_refuses_a_short_javanese_sum(self):
+    def test_national_check_remarks_on_a_little_and_refuses_a_lot(self):
         national = {"Javanese": 95_217_022}
         with self.assertRaises(SystemExit):
             quiet(m.check_national, national, {}, {"Central Java": 31_560_859})
-        _, printed = quiet(m.check_national, national, {"Sundanese": 1},
-                           {"Central Java": 94_900_000})
+        remark, printed = quiet(m.check_national, national, {"Sundanese": 1},
+                                {"Central Java": 94_900_000})
         self.assertIn("national check", printed)
+        self.assertEqual(remark, "")
+        remark, printed = quiet(m.check_national, national, {}, {"Central Java": 94_000_000})
+        self.assertIn("98.7% of the census's national figure", remark)
 
 
 class InfoboxReligion(unittest.TestCase):
@@ -244,7 +248,8 @@ class InfoboxReligion(unittest.TestCase):
         self.assertEqual(reading["year"], 2019)
         fields = m.religion_fields(reading, "Kabupaten Cilacap")
         self.assertIn("BPS", fields["religion_source"]["name"])
-        self.assertIn("not a census count", fields["religion_note"])
+        self.assertIn("not the census", fields["religion_note"])
+        self.assertLessEqual(fields["religion_note"].count(". "), 2)
 
     def test_named_reference_defined_elsewhere_and_the_better_citation_wins(self):
         reading = m.read_religion(MANADO, "Kota Manado")
@@ -266,7 +271,7 @@ class InfoboxReligion(unittest.TestCase):
         self.assertEqual(reading["year"], 2010)
         self.assertIn("Aluk Todolo", {r["group"] for r in reading["rows"]})
         note = m.religion_fields(reading, "Kabupaten Tana Toraja")["religion_note"]
-        self.assertNotIn("not a census count", note)
+        self.assertIn("A census count.", note)
 
     def test_label_first_layout_and_a_broken_reference_tag(self):
         reading = m.read_religion(BANGGAI, "Kabupaten Banggai")
@@ -276,13 +281,16 @@ class InfoboxReligion(unittest.TestCase):
         self.assertEqual((reading["kind"], reading["year"]), ("bps", 2020))
 
     def test_a_short_list_gets_a_remainder_and_an_overrun_is_refused(self):
-        rows, why = m.religion_shares([("Islam", 97.0), ("Hindu", 2.0)])
+        rows, why, remark = m.religion_shares([("Islam", 97.0), ("Hindu", 2.0)])
         self.assertIsNone(why)
         self.assertEqual(rows[-1], {"group": m.REMAINDER, "pct": 1.0})
-        rows, why = m.religion_shares([("Islam", 70.86), ("Kristen", 24.88),
+        rows, why, remark = m.religion_shares([("Islam", 70.86), ("Kristen", 24.88),
                                        ("Protestan", 24.97), ("Katolik", 0.91), ("Hindu", 5.25)])
-        self.assertIn("shares add to 10", why)
-        self.assertEqual(rows, [])
+        self.assertIsNone(why)
+        self.assertIn("add to 102.0%", remark)
+        self.assertEqual(rows[0], {"group": "Islam", "pct": 70.86})
+        rows, why, remark = m.religion_shares([("Islam", 90.0), ("Hindu", 20.0)])
+        self.assertIn("shares add to 110", why)
 
     def test_uncited_figure_is_not_read(self):
         out, printed = quiet(m.read_religion, UNCITED, "Kabupaten Nowhere")
@@ -295,7 +303,7 @@ class InfoboxReligion(unittest.TestCase):
         self.assertEqual((reading["kind"], reading["year"], reading["broken"]),
                          ("dukcapil", None, "dukcapil"))
         fields = m.religion_fields(reading, "Kabupaten Garut")
-        self.assertIn("never defines", fields["religion_note"])
+        self.assertIn("defined nowhere", fields["religion_note"])
         self.assertIsNone(fields["religion_year"])      # record() drops a None field
         nameless = UNCITED.replace("[[Hindu]]}}", '[[Hindu]]<ref name="AGAMA"/>}}')
         out, printed = quiet(m.read_religion, nameless, "Kabupaten Nowhere")
@@ -304,25 +312,25 @@ class InfoboxReligion(unittest.TestCase):
 
     def test_a_table_whose_rows_miss_its_total_uses_the_rows(self):
         off = SUMUT.replace("12.930.319", "12.900.000")
-        (counts, total), printed = quiet(m.read_ethnicity, off, "North Sumatra",
+        (counts, total, _), printed = quiet(m.read_ethnicity, off, "North Sumatra",
                                          "Sumatera Utara")
         self.assertEqual(total, 12_930_319)
-        self.assertIn("the rows' sum is the denominator", printed)
+        self.assertIn("the rows are the denominator", printed)
         far = SUMUT.replace("12.930.319", "11.000.000")
         with self.assertRaises(SystemExit):
             m.read_ethnicity(far, "North Sumatra", "Sumatera Utara")
         # Riau's case: the printed total is not the census population and
         # the rows are, so the rows stand.
-        (counts, total), printed = quiet(m.read_ethnicity, far, "North Sumatra",
+        (counts, total, _), printed = quiet(m.read_ethnicity, far, "North Sumatra",
                                          "Sumatera Utara", 12_982_204)
         self.assertEqual(total, 12_930_319)
-        self.assertIn("stand as the total", printed)
+        self.assertIn("are the denominator", printed)
 
     def test_shares_that_do_not_add_up_are_refused(self):
-        rows, why = m.religion_shares([("Islam", 80.0), ("Hindu", 10.0)])
+        rows, why, remark = m.religion_shares([("Islam", 80.0), ("Hindu", 5.0)])
         self.assertEqual(rows, [])
         self.assertIn("add to", why)
-        rows, why = m.religion_shares([("Islam", 90.0), ("Jedi", 10.0)])
+        rows, why, remark = m.religion_shares([("Islam", 90.0), ("Jedi", 10.0)])
         self.assertIn("Jedi", why)
 
 
@@ -353,6 +361,10 @@ class Records(unittest.TestCase):
         self.assertEqual(sumut["ethnicity_year"], 2010)
         self.assertEqual(sumut["ethnicity"][0]["group"], "Batak")
         self.assertEqual(sumut["religion"][0]["group"], "Protestantism")
+        # Notes are short: what the figure is and where from, then caveats,
+        # three sentences at most.
+        for key in ("ethnicity_note", "religion_note"):
+            self.assertLessEqual(len(re.findall(r"\. [A-Z]", sumut[key])) + 1, 3, sumut[key])
         self.assertEqual(sumut["aliases"], ["Sumatera Utara"])
         self.assertEqual({s["field"] for s in sumut["sources"]}, {"ethnicity", "religion"})
         self.assertEqual(by_name["Bali"]["ethnicity"]["status"], "not_available")

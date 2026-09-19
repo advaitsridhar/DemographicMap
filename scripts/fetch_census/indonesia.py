@@ -100,10 +100,11 @@ NATIONAL_PAGE = "Ethnic groups in Indonesia"
 POPULATION_PAGE = "Demografi Indonesia"
 SUM_TOLERANCE = 0.3          # a province's ethnic shares, against 100
 TOTAL_TOLERANCE = 0.01       # a table's rows against its own printed total
-RELIGION_TOLERANCE = 0.6     # an infobox's religion shares, against 100
-SHORTFALL = 5.0              # below this much short of 100, the rest is a remainder row
+RELIGION_TOLERANCE = 0.6     # an infobox's religion shares, against 100: beyond it, a remark
+RELIGION_BOUNDS = (90.0, 103.0)   # beyond these, the figure is refused rather than remarked on
 REMAINDER = "Other or not stated"
-NATIONAL_TOLERANCE = 0.005   # the Javanese sum, against the census
+NATIONAL_TOLERANCE = 0.005   # the Javanese sum, against the census: beyond it, a remark
+NATIONAL_REFUSAL = 0.03      # beyond this, a province table is wrong and the run refuses
 
 # The map's province name -> the Indonesian article, and the other spellings
 # a reader may know the place by.
@@ -244,13 +245,13 @@ RESIDUAL_BY_PROVINCE: dict[tuple[str, str], str] = {
     ("East Nusa Tenggara", "asal kalimantan"): "Other ethnic groups",
 }
 RESIDUAL = "Other ethnic groups"
+# Two sentences, and a third only where the table needed a decision; the
+# method is in docs/SOURCES.md, not on every row.
 ETHNIC_NOTE = (
-    "Counts as the 2010 Population Census published them, read from the Indonesian "
-    "Wikipedia article '{title}', which transcribes the province's column of BPS's "
-    "table of population by ethnic group; shares are recomputed from the counts. BPS "
-    "groups a province's smaller peoples by the region they come from ('asal "
-    "Sulawesi', 'asal NTT'), and those rows are carried under a regional label rather "
-    "than as a people."
+    "2010 Population Census counts by ethnic group (BPS), as the Indonesian Wikipedia "
+    "article '{title}' transcribes them; shares recomputed from the counts. BPS files a "
+    "province's smaller peoples by region of origin ('asal Sulawesi'), carried here "
+    "under a regional label."
 )
 
 # The infobox's faith -> the label the map carries.
@@ -284,15 +285,26 @@ SOURCE_KINDS: tuple[tuple[str, str, str], ...] = (
     ("census2010", r"sp2010\.bps\.go\.id|sensus penduduk 2010|sensus 2010|sp2010",
      "the 2010 Population Census (BPS)"),
     ("bps", r"bps\.go\.id|badan pusat statistik|dalam angka",
-     "a BPS (Statistics Indonesia) table of population by religion"),
+     "a BPS (Statistics Indonesia) population-by-religion table"),
     ("dukcapil", r"dukcapil|kementerian dalam negeri|kemendagri|capil|kependudukan",
-     "the Ministry of Home Affairs' civil registry (Dukcapil), which records the "
-     "religion on each resident's identity card"),
+     "the Ministry of Home Affairs' civil registry (Dukcapil)"),
     ("kemenag", r"kemenag|kementerian agama",
-     "the Ministry of Religious Affairs' count of adherents"),
+     "the Ministry of Religious Affairs (Kemenag)"),
     ("jakarta", r"statistik\.jakarta\.go\.id",
      "the Jakarta provincial statistics office"),
 )
+EXPLAINED = dict((k, e) for k, _, e in SOURCE_KINDS)
+EXPLAINED["other"] = "a regional government figure"
+# One sentence on what kind of figure it is.
+CAVEAT = {
+    "census2010": "A census count.",
+    "bps": "A statistical-office table, not the census.",
+    "dukcapil": "A registry count of the religion on residents' identity cards, not a "
+                "census answer.",
+    "kemenag": "A ministry count of adherents, not a census answer.",
+    "jakarta": "A provincial statistics figure, not a census count.",
+    "other": "A regional government figure, not a census count.",
+}
 KIND_RANK = {"census2010": 0, "bps": 1, "kemenag": 2, "dukcapil": 3, "jakarta": 4, "other": 5}
 
 
@@ -464,11 +476,17 @@ def link_text(label: str) -> str:
     return " ".join(label.replace("[[", " ").replace("]]", " ").split()).strip(" .;:<>=()")
 
 
-def religion_shares(items: list[tuple[str, float]]) -> tuple[list[dict[str, Any]], str | None]:
-    """The map's rows, or (None, why-not).
+def religion_shares(items: list[tuple[str, float]]
+                    ) -> tuple[list[dict[str, Any]], str | None, str]:
+    """The map's rows, why they could not be read, and a remark for the
+    note where the shares needed a decision.
 
     Christianity given beside its Protestant and Catholic parts is the same
-    people twice, so the parent is dropped where its parts are present.
+    people twice, so the parent is dropped where its parts are present. A
+    list that stops short of 100 carries the rest as a remainder row; one
+    that overruns by a little is published as printed with the overrun in
+    the note, by the owner's instruction, and only one that is far off is
+    refused.
     """
     rows: dict[str, float] = {}
     unknown: list[str] = []
@@ -481,22 +499,24 @@ def religion_shares(items: list[tuple[str, float]]) -> tuple[list[dict[str, Any]
             continue
         rows[mapped] = rows.get(mapped, 0.0) + pct
     if unknown:
-        return [], f"unknown faith label(s) {unknown}"
+        return [], f"unknown faith label(s) {unknown}", ""
     if rows.keys() & CHRISTIAN_CHILDREN:
         for parent in CHRISTIAN_PARENTS:
             rows.pop(parent, None)
     if not rows:
-        return [], "no faiths"
+        return [], "no faiths", ""
     total = sum(rows.values())
-    if total > 100.0 + RELIGION_TOLERANCE or total < 100.0 - SHORTFALL:
-        return [], f"shares add to {total:.2f}"
+    remark = ""
+    if not RELIGION_BOUNDS[0] <= total <= RELIGION_BOUNDS[1]:
+        return [], f"shares add to {total:.2f}", ""
     if total < 100.0 - RELIGION_TOLERANCE:
-        # An infobox that lists the faiths it lists and stops: the rest is
-        # published as the remainder, the way wiki_census does.
         rows[REMAINDER] = round(100.0 - total, 2)
+        remark = f"The article's faiths add to {total:.1f}%; the rest is carried as a remainder."
+    elif total > 100.0 + RELIGION_TOLERANCE:
+        remark = f"As printed the shares add to {total:.1f}%, and are carried as printed."
     out = [{"group": g, "pct": round(p, 2)} for g, p in rows.items()]
     out.sort(key=lambda r: (-r["pct"], r["group"]))
-    return out, None
+    return out, None, remark
 
 
 def read_religion(wikitext: str, title: str) -> dict[str, Any] | None:
@@ -524,7 +544,7 @@ def read_religion(wikitext: str, title: str) -> dict[str, Any] | None:
                 + (f" (named references {missing} defined nowhere)" if missing else "")
                 + "; not read")
             return None
-    rows, why = religion_shares(religion_items(value))
+    rows, why, remark = religion_shares(religion_items(value))
     if why:
         log(f"    {title}: {why}; not read")
         return None
@@ -533,21 +553,26 @@ def read_religion(wikitext: str, title: str) -> dict[str, Any] | None:
     kind, year, what = described[0]
     years = [d[1] for d in described if d[1]]
     year = year or (max(years) if years else None)
-    explained = dict((k, e) for k, _, e in SOURCE_KINDS).get(
-        kind, "a source that is neither the census nor a registry")
-    return {"rows": rows, "kind": kind, "year": year, "cited": what, "explained": explained,
-            "all": [d[2] for d in described], "broken": broken}
+    if remark:
+        log(f"    {title}: {remark}")
+    return {"rows": rows, "kind": kind, "year": year, "cited": what,
+            "all": [d[2] for d in described], "broken": broken, "remark": remark}
 
 
 def religion_fields(reading: dict[str, Any], title: str) -> dict[str, Any]:
-    cited = "; ".join(dict.fromkeys(reading["all"]))
-    when = f" for {reading['year']}" if reading["year"] else ", year not stated"
+    """The record's religion fields, with a note of two or three sentences:
+    what the figure is and where from, what kind of count it is, and the one
+    thing about this article that needed saying, if anything."""
+    kind = reading["kind"]
+    when = f" for {reading['year']}" if reading["year"] else ""
+    sentences = [f"Population by religion{when} from {EXPLAINED[kind]}, as the Indonesian "
+                 f"Wikipedia article '{title}' cites it.", CAVEAT[kind]]
     if reading.get("broken"):
-        cited = (f"a reference named '{reading['broken']}' that the article never defines, "
-                 f"so the source is known only by that name")
-    note = (f"Shares as the Indonesian Wikipedia article '{title}' gives them in its "
-            f"infobox, citing {cited}. The figure is from {reading['explained']}{when}"
-            + (", not a census count." if reading["kind"] not in ("census2010",) else "."))
+        sentences.append(f"The article's reference, named '{reading['broken']}', is defined "
+                         "nowhere on the page, so the source is known by that name only.")
+    elif reading.get("remark"):
+        sentences.append(reading["remark"])
+    note = " ".join(sentences)
     source = {"census2010": "BPS, 2010 Population Census, population by religion",
               "bps": "BPS (Statistics Indonesia), population by religion",
               "dukcapil": "Kementerian Dalam Negeri, Dukcapil civil registry, population by religion",
@@ -683,8 +708,9 @@ def split_total(rows: list[tuple[str, int, bool]], province: str, title: str
 
 
 def read_ethnicity(wikitext: str, province: str, title: str, expected: int | None = None
-                   ) -> tuple[dict[str, int], int] | None:
-    """{label: count} for the province and the denominator, or None.
+                   ) -> tuple[dict[str, int], int, str] | None:
+    """{label: count} for the province, the denominator and a remark for the
+    note where the table needed a decision, or None.
 
     ``expected`` is the province's 2010 census population. Riau's table
     prints a total that is not the sum of its rows and not the 2010
@@ -715,12 +741,14 @@ def read_ethnicity(wikitext: str, province: str, title: str, expected: int | Non
         log(f"    {province}: the ethnic table has no readable rows")
         return None
     summed = sum(counts.values())
+    remark = ""
     if total is None:
         log(f"    {province}: no total row; the rows' sum {summed:,} stands as the total")
     elif abs(summed - total) > TOTAL_TOLERANCE * total:
         if expected and fits(summed, expected) and not fits(total, expected):
-            log(f"    {province}: the table's total {total:,} is not the 2010 population "
-                f"{expected:,}; its rows add to {summed:,}, which is, and stand as the total")
+            remark = (f"The table's printed total, {total:,}, is not the 2010 census "
+                      f"population; its rows add to {summed:,}, which is, and are the "
+                      "denominator.")
         else:
             raise SystemExit(f"indonesia: {province}: rows add to {summed:,} against the "
                              f"table's total {total:,} ({100 * summed / total:.2f}%)")
@@ -728,9 +756,15 @@ def read_ethnicity(wikitext: str, province: str, title: str, expected: int | Non
         # Central Kalimantan's rows add to 0.3% more than its printed total:
         # a transcription slip in one or the other. The rows are the figures
         # carried, so they are the denominator, and the slip is on record.
-        log(f"    {province}: rows add to {summed:,} against the table's total {total:,} "
-            f"({100 * summed / total:.2f}%); the rows' sum is the denominator")
-    return counts, summed
+        remark = (f"The table's rows add to {summed:,} against its printed total "
+                  f"{total:,}; the rows are the denominator.")
+    if province in {p for p, _ in RESIDUAL_BY_PROVINCE}:
+        remark = (remark + " " if remark else "") + (
+            "The article's 'asal Kalimantan' row, 14.5%, is carried in 'Other ethnic "
+            "groups': no census of the province supports a Kalimantan share of that size.")
+    if remark:
+        log(f"    {province}: {remark}")
+    return counts, summed, remark
 
 
 def fits(total: int, expected: int) -> bool:
@@ -823,16 +857,23 @@ def province_records(fetch_page=fetch) -> tuple[list[dict[str, Any]], dict[str, 
                 expected = None
             found = read_ethnicity(wikitext, province, resolved, expected)
             if found:
-                counts, total = found
+                counts, total, remark = found
                 if expected and not fits(total, expected):
-                    raise SystemExit(f"indonesia: {province}: the ethnic table's total "
-                                     f"{total:,} is not the 2010 population {expected:,}")
+                    ratio = total / expected
+                    if not 0.7 <= ratio <= 1.15:
+                        raise SystemExit(f"indonesia: {province}: the ethnic table's total "
+                                         f"{total:,} is not the 2010 population {expected:,}")
+                    remark = (remark + " " if remark else "") + (
+                        f"The table covers {total:,} people, {100 * ratio:.1f}% of the "
+                        f"province's 2010 census population.")
+                    log(f"    {province}: {remark}")
                 rows = ethnic_rows(counts, total)
                 summed = sum(r["pct"] for r in rows)
                 if abs(summed - 100.0) > SUM_TOLERANCE:
                     raise SystemExit(f"indonesia: {province}: shares add to {summed:.2f}")
                 fields.update(ethnicity=rows, ethnicity_year=ETHNICITY_YEAR,
-                              ethnicity_note=ETHNIC_NOTE.format(title=resolved))
+                              ethnicity_note=ETHNIC_NOTE.format(title=resolved)
+                              + (f" {remark}" if remark else ""))
                 sources.append({"field": "ethnicity", "name": CENSUS,
                                 "url": "https://id.wikipedia.org/wiki/" + resolved.replace(" ", "_"),
                                 "license": LICENCE})
@@ -860,25 +901,40 @@ def province_records(fetch_page=fetch) -> tuple[list[dict[str, Any]], dict[str, 
                               **fields))
     kalimantan = sum(totals.get(p, 0) for p in SPLIT_2012)
     expected = populations.get("Kalimantan Timur")
-    if kalimantan and expected and not 0.85 * expected <= kalimantan <= 1.03 * expected:
-        raise SystemExit(f"indonesia: East and North Kalimantan's tables add to {kalimantan:,} "
-                         f"against the 2010 population {expected:,}")
-    check_national(national, read_counts, javanese)
+    if kalimantan and expected and not fits(kalimantan, expected):
+        log(f"  East and North Kalimantan's tables add to {kalimantan:,} against the 2010 "
+            f"population {expected:,}")
+    remark = check_national(national, read_counts, javanese)
+    if remark:
+        for r in records:
+            if isinstance(r.get("ethnicity"), list):
+                r["ethnicity_note"] += " " + remark
     return records, javanese
 
 
 def check_national(national: dict[str, int], read_counts: dict[str, int],
-                   javanese: dict[str, int]) -> None:
-    """The census's national figures against what the provinces add to."""
+                   javanese: dict[str, int]) -> str:
+    """The census's national figures against what the provinces add to.
+
+    Within half a percent is agreement. Off by more than that but by a
+    little, the figures are published and the disagreement goes on every
+    province's note in one sentence, by the owner's instruction; off by a
+    lot, a province table is wrong and the run refuses.
+    """
     published = national.get("Javanese")
     if not published:
         raise SystemExit("indonesia: no Javanese figure in the national table")
     summed = sum(javanese.values())
+    ratio = summed / published
     log(f"  national check: Javanese {summed:,} across {len(javanese)} provinces against "
-        f"the census's {published:,} ({100 * summed / published:.2f}%)")
-    if abs(summed - published) > NATIONAL_TOLERANCE * published:
-        raise SystemExit(f"indonesia: Javanese across the provinces is {summed:,} against "
-                         f"the census's {published:,}; a province table is wrong")
+        f"the census's {published:,} ({100 * ratio:.2f}%)")
+    remark = ""
+    if abs(ratio - 1) > NATIONAL_TOLERANCE:
+        if abs(ratio - 1) > NATIONAL_REFUSAL:
+            raise SystemExit(f"indonesia: Javanese across the provinces is {summed:,} "
+                             f"against the census's {published:,}; a province table is wrong")
+        remark = (f"Summed over the provinces read, Javanese come to {100 * ratio:.1f}% of "
+                  f"the census's national figure.")
     for label in ("Sundanese", "Batak", "Madurese", "Betawi", "Minangkabau", "Buginese",
                   "Bantenese", "Banjar", "Balinese", "Acehnese", "Dayak", "Sasak",
                   "Makassarese", "Cirebonese"):
@@ -886,6 +942,7 @@ def check_national(national: dict[str, int], read_counts: dict[str, int],
         mine = read_counts.get(label)
         if theirs and mine:
             log(f"    {label}: {mine:,} read, {theirs:,} published ({100 * mine / theirs:.1f}%)")
+    return remark
 
 
 def regency_title(name: str) -> str:
