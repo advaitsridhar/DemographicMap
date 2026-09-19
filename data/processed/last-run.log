@@ -1,204 +1,84 @@
-probe_xlsx: https://www.census2021.gov.hk/doc/pub/21c-main-results.xlsx
-  1,005,709 bytes
-  161 sheet(s): 索引 Index, KeyStat1, KeyStat2, KeyStat3, KeyStat4, KeyStat5, Table 3.1, Table 3.2 (1), Table 3.2 (2), Table 3.3, Table 3.4, Table 3.5, Table 3.6, Table 3.7, Table 3.8, Table 3.9 (1), Table 3.9 (2), Table 3.9 (3), Table 3.10, Table 3.10A, Table 3.11, Table 3.11A, Table 3.12, Table 3.13, Table 3.14, Table 3.15, Table 3.16, Table 3.17, Table 3.18, Table 3.19, Table 3.20, Table 3.21, Table 4.1, Table 4.2, Table 4.3, Table 4.4, Table 4.5, Table 4.6, Table 4.7, Table 4.8, Table 4.9, Table 4.9A, Table 4.10, Table 4.11, Table 4.12, Table 4.13, Table 4.13A, Table 5.1, Table 5.2, Table 5.3 (1), Table 5.3 (2), Table 5.4, Table 5.5, Table 5.6, Table 5.7 (1), Table 5.7 (2), Table 5.7 (3), Table 5.8, Table 5.9 (1), Table 5.9 (2), Table 5.10, Table 5.11 (1), Table 5.11 (2), Table 5.12, Table 5.13, Table 5.14, Table 6.1, Table 6.2, Table 6.3, Table 6.3A, Table 6.4, Table 6.4A, Table 6.5, Table 6.5A, Table 6.6, Table 6.7, Table 6.8 (1), Table 6.8 (2), Table 6.9, Table 6.10 (1), Table 6.10 (2), Table 6.11, Table 6.11A, Table 6.12, Table 6.13 (1), Table 6.13 (2), Table 6.14, Table 6.14A, Table 6.15, Table 6.16, Table 6.17, Table 6.18, Table 6.19 (1), Table 6.19 (2), Table 6.20, Table 6.21, Table 6.22, Table 6.23, Table 6.24, Table 6.25, Table 7.1, Table 7.2 (1), Table 7.2 (2), Table 7.3, Table 7.4, Table 7.5, Table 7.6, Table 7.7, Table 7.8, Table 7.9, Table 7.10, Table 7.11, Table 7.12, Table 7.13, Table 7.14, Table 7.15, Table 8.1, Table 8.2, Table 8.3, Table 8.4, Table 8.5, Table 8.6, Table 8.7, Table 8.8, Table 8.9 (1), Table 8.9 (2), Table 8.10, Table 8.11, Table 8.12, Table 9.1, Table 9.2, Table 9.3, Table 9.4, Table 9.5, Table 9.6, Table 9.7, Table 9.8, Table 9.9, Table 9.10, Table 9.11, Table 9.12, Table 9.13, Table 9.14, Table 9.15, Table 9.16, Table 9.17, Table 9.18, Table 9.19, Table 9.20, Table 9.21, Table 10.1, Table 10.1A, Table 10.2, Table 10.2A, Table 10.3 (1), Table 10.3 (2), Table 10.4, Table 10.5, Table 10.6, Table 10.7, Table 10.8
+probe_estat: ESTAT_API found, 40 characters
 
---- sheet 'Table 3.9 (1)' (47 rows x 15 cols) --------------------
-  表3.9 |  |  |  |  | 2021年按性別、種族及年齡組別劃分的人口 |  |  |  |  |  |  |  |  | 索引 Index
-  Table 3.9 |  |  |  |  | Population by sex, ethnicity a
-  
-   |  |  |  |  |  | 年齡組別
-   |  |  |  |  |  | Age group
-   |  |  |  |  |  | 0 – 14 | 15 – 24 | 25 – 44 | 45 – 64 | 65+ | 總計 Total
-   | 性別 | 種族 |  |  |  | 數目 | 數目 | 數目 | 數目 | 數目 | 數目 | 百分比[1]
-   | Sex | Ethnicity |  |  |  | Number | Number | Number | Number | Number | Number | %[1]
-  
-   | 男
-   | Male
-   |  | 華人 |  |  |  | 386032 | 283171 | 863851 | 1034564 | 670882 | 3238500 | 95.7
-   |  | Chinese
-   |  | 非華人
-   |  | Non-Chinese
-   |  |  | 菲律賓人 |  |  | 1685 | 1547 | 3365 | 3533 | 916 | 11046 | 0.3
-   |  |  | Filipino
-   |  |  | 印尼人 |  |  | 199 | 454 | 671 | 290 | 401 | 2015 | 0.1
-   |  |  | Indonesian
-   |  |  | 南亞裔人士 |  |  | 9819 | 6704 | 18157 | 11384 | 3042 | 49106 | 1.5
-   |  |  | South Asian
-   |  |  |  | 印度人 |  | 3224 | 2377 | 7754 | 4621 | 1414 | 19390 | 0.6
-   |  |  |  | Indian
-   |  |  |  | 尼泊爾人 |  | 3013 | 1565 | 5431 | 3842 | 821 | 14672 | 0.4
-   |  |  |  | Nepalese
-   |  |  |  | 巴基斯坦人 |  | 3163 | 2629 | 4092 | 2357 | 703 | 12944 | 0.4
-   |  |  |  | Pakistani
-   |  |  |  | 其他南亞裔人士[2] |  | 419 | 133 | 880 | 564 | 104 | 2100 | 0.1
-   |  |  |  | Other South Asian[2]
-   |  |  | 泰國人 |  |  | 197 | 237 | 499 | 1002 | 124 | 2059 | 0.1
-   |  |  | Thai
-   |  |  | 日本人 |  |  | 761 | 329 | 1314 | 1585 | 530 | 4519 | 0.1
-   |  |  | Japanese
-   |  |  | 韓國人 |  |  | 578 | 277 | 1133 | 1011 | 321 | 3320 | 0.1
-   |  |  | Korean
-   |  |  | 其他亞洲人 |  |  | 300 | 472 | 1530 | 712 | 452 | 3466 | 0.1
-   |  |  | Other Asian
-   |  |  | 白人 |  |  | 4185 | 1977 | 12083 | 13720 | 3334 | 35299 | 1
-   |  |  | White
-   |  |  | 其他[3] |  |  | 12243 | 4449 | 9416 | 4493 | 2336 | 32937 | 1
-   |  |  | Others[3]
-   |  |  | 小計 |  |  | 29967 | 16446 | 48168 | 37730 | 11456 | 143767 | 4.3
-   |  |  | Sub-total
-   |  | 小計 |  |  |  | 415999 | 299617 | 912019 | 1072294 | 682338 | 3382267 | 100
-   |  | Sub-total
-  
-  
-
---- sheet 'Table 3.9 (2)' (47 rows x 15 cols) --------------------
-  表3.9 |  |  |  |  | 2021年按性別、種族及年齡組別劃分的人口（續） |  |  |  |  |  |  |  |  | 索引 Index
-  Table 3.9 |  |  |  |  | Population by sex, ethnicity a
-  
-   |  |  |  |  |  | 年齡組別
-   |  |  |  |  |  | Age group
-   |  |  |  |  |  | 0 – 14 | 15 – 24 | 25 – 44 | 45 – 64 | 65+ | 總計 Total
-   | 性別 | 種族 |  |  |  | 數目 | 數目 | 數目 | 數目 | 數目 | 數目 | 百分比[1]
-   | Sex | Ethnicity |  |  |  | Number | Number | Number | Number | Number | Number | %[1]
-  
-   | 女
-   | Female
-   |  | 華人 |  |  |  | 361711 | 267728 | 951606 | 1219766 | 754191 | 3555002 | 88.2
-   |  | Chinese
-   |  | 非華人
-   |  | Non-Chinese
-   |  |  | 菲律賓人 |  |  | 1557 | 2598 | 130661 | 53114 | 2315 | 190245 | 4.7
-   |  |  | Filipino
-   |  |  | 印尼人 |  |  | 156 | 4529 | 112180 | 22421 | 764 | 140050 | 3.5
-   |  |  | Indonesian
-   |  |  | 南亞裔人士 |  |  | 10116 | 7862 | 22006 | 9967 | 2912 | 52863 | 1.3
-   |  |  | South Asian
-   |  |  |  | 印度人 |  | 3697 | 2661 | 11022 | 4449 | 1350 | 23179 | 0.6
-   |  |  |  | Indian
-   |  |  |  | 尼泊爾人 |  | 2789 | 2047 | 6449 | 2785 | 959 | 15029 | 0.4
-   |  |  |  | Nepalese
-   |  |  |  | 巴基斯坦人 |  | 3209 | 2895 | 3249 | 1738 | 350 | 11441 | 0.3
-   |  |  |  | Pakistani
-   |  |  |  | 其他南亞裔人士[2] |  | 421 | 259 | 1286 | 995 | 253 | 3214 | 0.1
-   |  |  |  | Other South Asian[2]
-   |  |  | 泰國人 |  |  | 175 | 458 | 1730 | 6335 | 2215 | 10913 | 0.3
-   |  |  | Thai
-   |  |  | 日本人 |  |  | 1004 | 111 | 2007 | 2184 | 466 | 5772 | 0.1
-   |  |  | Japanese
-   |  |  | 韓國人 |  |  | 576 | 479 | 2505 | 1600 | 220 | 5380 | 0.1
-   |  |  | Korean
-   |  |  | 其他亞洲人 |  |  | 736 | 502 | 3374 | 1872 | 624 | 7108 | 0.2
-   |  |  | Other Asian
-   |  |  | 白人 |  |  | 5305 | 2065 | 10890 | 6536 | 1487 | 26283 | 0.7
-   |  |  | White
-   |  |  | 其他[3] |  |  | 10503 | 5165 | 10811 | 6726 | 3982 | 37187 | 0.9
-   |  |  | Others[3]
-   |  |  | 小計 |  |  | 30128 | 23769 | 296164 | 110755 | 14985 | 475801 | 11.8
-   |  |  | Sub-total
-   |  | 小計 |  |  |  | 391839 | 291497 | 1247770 | 1330521 | 769176 | 4030803 | 100
-   |  | Sub-total
-  
-  
-
---- sheet 'Table 3.9 (3)' (58 rows x 15 cols) --------------------
-  表3.9 |  |  |  |  | 2021年按性別、種族及年齡組別劃分的人口（續） |  |  |  |  |  |  |  |  | 索引 Index
-  Table 3.9 |  |  |  |  | Population by sex, ethnicity a
-  
-   |  |  |  |  |  | 年齡組別
-   |  |  |  |  |  | Age group
-   |  |  |  |  |  | 0 – 14 | 15 – 24 | 25 – 44 | 45 – 64 | 65+ | 總計 Total
-   | 性別 | 種族 |  |  |  | 數目 | 數目 | 數目 | 數目 | 數目 | 數目 | 百分比[1]
-   | Sex | Ethnicity |  |  |  | Number | Number | Number | Number | Number | Number | %[1]
-  
-   | 合計
-   | Both sexes
-   |  | 華人 |  |  |  | 747743 | 550899 | 1815457 | 2254330 | 1425073 | 6793502 | 91.6
-   |  | Chinese
-   |  | 非華人
-   |  | Non-Chinese
-   |  |  | 菲律賓人 |  |  | 3242 | 4145 | 134026 | 56647 | 3231 | 201291 | 2.7
-   |  |  | Filipino
-   |  |  | 印尼人 |  |  | 355 | 4983 | 112851 | 22711 | 1165 | 142065 | 1.9
-   |  |  | Indonesian
-   |  |  | 南亞裔人士 |  |  | 19935 | 14566 | 40163 | 21351 | 5954 | 101969 | 1.4
-   |  |  | South Asian
-   |  |  |  | 印度人 |  | 6921 | 5038 | 18776 | 9070 | 2764 | 42569 | 0.6
-   |  |  |  | Indian
-   |  |  |  | 尼泊爾人 |  | 5802 | 3612 | 11880 | 6627 | 1780 | 29701 | 0.4
-   |  |  |  | Nepalese
-   |  |  |  | 巴基斯坦人 |  | 6372 | 5524 | 7341 | 4095 | 1053 | 24385 | 0.3
-   |  |  |  | Pakistani
-   |  |  |  | 其他南亞裔人士[2] |  | 840 | 392 | 2166 | 1559 | 357 | 5314 | 0.1
-   |  |  |  | Other South Asian[2]
-   |  |  | 泰國人 |  |  | 372 | 695 | 2229 | 7337 | 2339 | 12972 | 0.2
-   |  |  | Thai
-   |  |  | 日本人 |  |  | 1765 | 440 | 3321 | 3769 | 996 | 10291 | 0.1
-   |  |  | Japanese
-   |  |  | 韓國人 |  |  | 1154 | 756 | 3638 | 2611 | 541 | 8700 | 0.1
-   |  |  | Korean
-   |  |  | 其他亞洲人 |  |  | 1036 | 974 | 4904 | 2584 | 1076 | 10574 | 0.1
-   |  |  | Other Asian
-   |  |  | 白人 |  |  | 9490 | 4042 | 22973 | 20256 | 4821 | 61582 | 0.8
-   |  |  | White
-   |  |  | 其他[3] |  |  | 22746 | 9614 | 20227 | 11219 | 6318 | 70124 | 0.9
-   |  |  | Others[3]
-   |  |  | 小計 |  |  | 60095 | 40215 | 344332 | 148485 | 26441 | 619568 | 8.4
-   |  |  | Sub-total
-   |  | 總計 |  |  |  | 807838 | 591114 | 2159789 | 2402815 | 1451514 | 7413070 | 100
-   |  | Total
-  
-  
-  註釋：
-  [1] |  |  |  |  | 數字顯示在性別組別的總人數中所佔的百分比。
-  [2] |  |  |  |  | 「其他南亞裔人士」包括「孟加拉人」及「斯里蘭卡人」。
-  [3] |  |  |  |  | 數字包括報稱有多於一個種族的人士。
-  Notes :
-  [1] |  |  |  |  | Figures represent the percenta
-  [2] |  |  |  |  | “Other South Asian” include “B
-  [3] |  |  |  |  | Figures include persons who re
-  
-  
-  
-
---- sheet 'Table 3.13' (40 rows x 14 cols) --------------------
-  表3.13 |  |  | 2021年按慣用交談語言及出生地點劃分的5歲及以上人口[1] |  |  |  |  |  |  |  |  |  | 索引 Index
-  Table 3.13 |  |  | Population[1] aged 5 and over 
-  
-   |  |  |  | 出生地點
-   |  |  |  | Place of birth
-   |  |  |  | 香港 |  | 中國內地／澳門／台灣 |  | 其他地方 |  | 總計
-   |  |  |  | Hong Kong |  | The mainland of China / Macao  |  | Elsewhere |  | Total
-   | 慣用交談語言 |  |  | 數目 | 百分比 | 數目 | 百分比 | 數目 | 百分比 | 數目 | 百分比
-   | Usual spoken language |  |  | Number | % | Number | % | Number | % | Number | %
-  
-   | 廣州話 |  |  | 4222634 | 97 | 1890477 | 85.7 | 215836 | 34.8 | 6328947 | 88.2
-   | Cantonese
-   | 英語 |  |  | 62678 | 1.4 | 8675 | 0.4 | 259429 | 41.8 | 330782 | 4.6
-   | English
-   | 普通話 |  |  | 28436 | 0.7 | 123220 | 5.6 | 13795 | 2.2 | 165451 | 2.3
-   | Putonghua
-   | 福建話 |  |  | 5332 | 0.1 | 54274 | 2.5 | 1258 | 0.2 | 60864 | 0.8
-   | Fukien
-   | 客家話 |  |  | 5628 | 0.1 | 34882 | 1.6 | 1004 | 0.2 | 41514 | 0.6
-   | Hakka
-   | 潮州話 |  |  | 3534 | 0.1 | 33475 | 1.5 | 612 | 0.1 | 37621 | 0.5
-   | Chiu Chau
-   | 其他中國方言 |  |  | 4114 | 0.1 | 59871 | 2.7 | 587 | 0.1 | 64572 | 0.9
-   | Other Chinese dialects
-   | 菲律賓語 |  |  | 997 | 0 | 78 | 0 | 28338 | 4.6 | 29413 | 0.4
-   | Filipino (Tagalog)
-   | 印尼語 |  |  | 129 | 0 | 481 | 0 | 23634 | 3.8 | 24244 | 0.3
-   | Indonesian (Bahasa Indonesia)
-   | 日本語 |  |  | 1170 | 0 | 150 | 0 | 7384 | 1.2 | 8704 | 0.1
-   | Japanese
-   | 其他語言 |  |  | 17880 | 0.4 | 626 | 0 | 68509 | 11 | 87015 | 1.2
-   | Others
-   | 總計 |  |  | 4352532 | 100 | 2206209 | 100 | 620386 | 100 | 7179127 | 100
-   | Total
-  
-  
-  註釋：
-  [1] |  |  | 數字不包括失去語言能力的人士。
-  Note :
-  [1] |  |  | Figures exclude mute persons.
-
+== metadata for 0003445097
+  getMetaInfo?statsDataId=0003445097
+    table: 0003445097 | [00200521] 国勢調査 | 総務省 | 総人口・総世帯数・男女・年齢・配偶関係 男女，年齢（5歳階級），国籍総数か日本人別人口－全国，都道府県，21大都市，特別区，人口50万以上の市 | survey 202010 | area 全国 (Japan as a whole) | 19008 cells
+      TITLE_SPEC.TABLE_CATEGORY: 総人口・総世帯数・男女・年齢・配偶関係
+      TITLE_SPEC.TABLE_NAME: 男女，年齢（5歳階級），国籍総数か日本人別人口－全国，都道府県，21大都市，特別区，人口50万以上の市
+      STATISTICS_NAME_SPEC.TABULATION_CATEGORY: 令和２年国勢調査
+      STATISTICS_NAME_SPEC.TABULATION_SUB_CATEGORY1: 人口等基本集計　（主な内容：男女・年齢・配偶関係，世帯の構成，住居の状態，母子・父子世帯，国籍など）
+    class tab = 表章事項 (1 codes)
+      2020_01  人口   (unit 人)
+    class cat01 = 国籍総数か日本人 (2 codes)
+      0  国籍総数   (level 1)
+      1  うち日本人   (level 1)
+    class cat02 = 男女 (3 codes)
+      0  総数   (level 1)
+      1  男   (level 1)
+      2  女   (level 1)
+    class cat03 = 年齢 (32 codes)
+      00  総数   (level 1)
+      01  0～4歳   (level 1)
+      02  5～9歳   (level 1)
+      03  10～14歳   (level 1)
+      04  15～19歳   (level 1)
+      05  20～24歳   (level 1)
+      06  25～29歳   (level 1)
+      07  30～34歳   (level 1)
+      08  35～39歳   (level 1)
+      09  40～44歳   (level 1)
+      10  45～49歳   (level 1)
+      11  50～54歳   (level 1)
+      12  55～59歳   (level 1)
+      13  60～64歳   (level 1)
+      14  65～69歳   (level 1)
+      15  70～74歳   (level 1)
+      16  75～79歳   (level 1)
+      17  80～84歳   (level 1)
+      18  85～89歳   (level 1)
+      19  90～94歳   (level 1)
+      20  95～99歳   (level 1)
+      21  100～104歳   (level 1)
+      22  105～109歳   (level 1)
+      23  110歳以上   (level 1)
+      24  年齢「不詳」   (level 1)
+      R1  （再掲）15歳未満   (level 1)
+      R2  （再掲）15～64歳   (level 1)
+      R3  （再掲）65歳以上   (level 1)
+      R4  （再掲）75歳以上   (level 1)
+      R5  （再掲）85歳以上   (level 1)
+      ... and 2 more
+    class area = 全国～人口50万以上の市 (99 codes)
+      00000  全国   (level 1)
+      01000  北海道   (level 2)
+      01100  札幌市   (level 4)
+      02000  青森県   (level 2)
+      03000  岩手県   (level 2)
+      04000  宮城県   (level 2)
+      04100  仙台市   (level 4)
+      05000  秋田県   (level 2)
+      06000  山形県   (level 2)
+      07000  福島県   (level 2)
+      08000  茨城県   (level 2)
+      09000  栃木県   (level 2)
+      09201  宇都宮市   (level 4)
+      10000  群馬県   (level 2)
+      11000  埼玉県   (level 2)
+      11100  さいたま市   (level 4)
+      11203  川口市   (level 4)
+      12000  千葉県   (level 2)
+      12100  千葉市   (level 4)
+      12204  船橋市   (level 4)
+      13000  東京都   (level 2)
+      13100  特別区部   (level 4)
+      13101  千代田区   (level 4)
+      13102  中央区   (level 4)
+      13103  港区   (level 4)
+      13104  新宿区   (level 4)
+      13105  文京区   (level 4)
+      13106  台東区   (level 4)
+      13107  墨田区   (level 4)
+      13108  江東区   (level 4)
+      ... and 69 more
+    class time = 時間軸（年次） (1 codes)
+      2020000000  2020年   (level 1)
