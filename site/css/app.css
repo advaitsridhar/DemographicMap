@@ -392,6 +392,27 @@ html, body {
 .legend-item { display: flex; align-items: center; gap: .45rem; color: var(--ink-secondary); }
 .legend-swatch { width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--border-ring); flex: none; }
 .legend-icon { font-size: .78rem; width: 1em; text-align: center; flex: none; }
+/* The key to a hatched unit: the same two-tone diagonal the map draws, over
+   the grey that stands for any group colour in the share ramp. */
+.legend-swatch-hatched {
+  background:
+    repeating-linear-gradient(135deg, rgba(0,0,0,.55) 0 1.6px, rgba(255,255,255,.85) 1.6px 2.3px,
+                              rgba(0,0,0,.55) 2.3px 3px, transparent 3px 6px),
+    #6b6b6b;
+}
+
+/* A single on/off choice, laid out like the option rows around it so the
+   panel keeps one rhythm: the name on the first line, the sentence under it. */
+.check-row {
+  display: grid; grid-template-columns: auto 1fr; column-gap: .5rem; align-items: center;
+  padding: .4rem .5rem; border-radius: var(--radius-sm); cursor: pointer;
+  color: var(--ink-secondary);
+}
+.check-row:hover { background: var(--surface-sunken); }
+.check-row input { margin: 0; accent-color: var(--accent); }
+.check-row input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.check-row .check-name { font-size: .82rem; font-weight: 600; color: var(--ink-primary); }
+.check-row .check-hint { grid-column: 2; font-size: .69rem; color: var(--ink-muted); line-height: 1.4; }
 
 .map-status {
   position: absolute; top: 12px; left: 50%; transform: translateX(-50%);

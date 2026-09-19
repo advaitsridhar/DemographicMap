@@ -16,6 +16,8 @@
     depthSection: document.getElementById("depth-section"),
     spreadSection: document.getElementById("spread-section"),
     spreadOptions: document.getElementById("spread-options"),
+    estimatesSection: document.getElementById("estimates-section"),
+    estimatesToggle: document.getElementById("estimates-toggle"),
     depthOptions: document.getElementById("depth-options"),
     groupSection: document.getElementById("group-section"),
     groupSearch: document.getElementById("group-search"),
@@ -61,6 +63,12 @@
     // actually on screen. Absolute by default, because a shade that means the
     // same thing everywhere is the more honest starting point.
     spread: "absolute",
+    // Whether a unit with no read figure but an estimate is coloured by the
+    // estimate -- hatched, so it cannot pass for a reading -- or left as the
+    // gap it also is. On by default: the hatch does the work of honesty,
+    // and off by default hid that an estimate existed at all
+    // (docs/MODELLING.md, section 6).
+    estimates: estimatesDefault(),
     // Which parents the group tree is showing the children of. Expanding is
     // per field, because the fields are three different trees.
     openBranches: {},
@@ -141,6 +149,24 @@
     return window.innerWidth > 900;
   }
 
+  /* Whether estimates start shown. On unless this viewer turned them off. */
+  function estimatesDefault() {
+    try {
+      return localStorage.getItem("wdm-estimates") !== "off";
+    } catch (err) {
+      return true;
+    }
+  }
+
+  function setEstimates(on) {
+    state.estimates = Boolean(on);
+    els.estimatesToggle.checked = state.estimates;
+    try {
+      localStorage.setItem("wdm-estimates", state.estimates ? "on" : "off");
+    } catch (err) { /* private mode: the choice just does not persist */ }
+    refreshColors();
+  }
+
   function setPanel(open) {
     state.panelOpen = open;
     els.filters.hidden = !open;
@@ -199,6 +225,10 @@
       "the censuses that only ever say Roman Catholic. Open a family to pick " +
       "one of its parts instead. Blank on the map means the figure is " +
       "missing at that level, never that the share is zero.",
+    estimates:
+      "A hatched unit has no read figure: its colour is what an estimate " +
+      "says, and the panel says how it was made. Estimates never count in " +
+      "a group's totals. Untick to draw them as gaps.",
   };
 
   let infoOpen = null;
@@ -411,6 +441,11 @@
       refreshColors();
     });
 
+    els.estimatesToggle.checked = state.estimates;
+    els.estimatesToggle.addEventListener("change", () => {
+      setEstimates(els.estimatesToggle.checked);
+    });
+
     renderDepths();
     wireChoice(els.depthOptions, (value) => {
       state.depth = value;
@@ -504,6 +539,10 @@
     // The shading choice belongs to the two maps that draw a share: the
     // most-populous-group map and a single group's share.
     els.spreadSection.hidden = !(metric.kind === "group" || metric.needsGroup);
+    // So does the estimates control: those are the two maps that can read
+    // an estimate's rows. The coverage map already draws an estimate in its
+    // own status colour, and the other metrics never see one.
+    els.estimatesSection.hidden = !(metric.kind === "group" || metric.needsGroup);
     els.groupSection.hidden = !metric.needsGroup;
     if (metric.needsGroup) {
       renderGroupList();
@@ -915,6 +954,28 @@
   // Written to both the panel and the on-map copy: only one of them is visible
   // at a time, and which one depends on a button the reader may press at any
   // moment.
+  /* One line per kind of estimate on screen, and none when none was painted,
+   * so the key never mentions a rendering the map is not using.
+   *
+   * The swatch is the hatch over a grey stand-in for any group colour -- the
+   * same grey the share ramp uses -- and the icon and the words are the
+   * palette's own status entries, so an estimate is called the same thing
+   * here, on the coverage map and in the panel. One short line each: the
+   * method and the inputs are in the panel, where there is room for them.
+   */
+  function estimateLegendHTML(legend) {
+    const counts = (legend && legend.estimated) || {};
+    return Object.keys(counts).filter((status) => counts[status]).map((status) => {
+      const s = window.Palette.status(status);
+      const n = counts[status];
+      return `<div class="legend-item legend-estimate">
+         <span class="legend-icon" style="color:${s.color}" aria-hidden="true">${s.icon}</span>
+         <span class="legend-swatch legend-swatch-hatched" aria-hidden="true"></span>
+         <span>${esc(s.label)} — hatched, ${number(n)} unit${n === 1 ? "" : "s"}</span>
+       </div>`;
+    }).join("");
+  }
+
   function renderLegend(legend) {
     let html;
     if (!legend || legend.type === "empty") {
@@ -958,6 +1019,7 @@
                <button class="info" type="button" data-info-text="These units have a figure and a group name, but the name is not placed in the tree yet, so the map cannot say which family it belongs to. It is drawn in its own colour rather than left blank, because the data is there -- only the classification is missing.">i</button>
              </div>`
           : "") +
+        estimateLegendHTML(legend) +
         (legend.missing
           ? `<div class="legend-item">
                <span class="legend-swatch" style="background:${legend.missingColor}"></span>
@@ -979,6 +1041,7 @@
          <div class="legend-ends"><span>${esc(legend.low)}</span><span>${esc(legend.high)}</span></div>` +
         (legend.fitted
           ? `<p class="legend-fitted-note">Fitted to the range on screen.</p>` : "") +
+        estimateLegendHTML(legend) +
         (legend.missing
           ? `<div class="legend-item">
                <span class="legend-swatch" style="background:${legend.missingColor}"></span>
@@ -999,9 +1062,10 @@
     const result = window.Metrics.paint(records, state.metric,
                                         { field: state.field, group: state.group,
                                           depth: state.depth, spread: state.spread,
+                                          estimates: state.estimates,
                                           inView: (record) =>
                                             window.WorldMap.inView(record.point) });
-    window.WorldMap.applyColors(levelId, result.colors);
+    window.WorldMap.applyColors(levelId, result.colors, result.estimated);
     renderLegend(result.legend);
     updateLevelNote(level, records.length);
   }
@@ -1080,7 +1144,10 @@
     const bits = [];
     if (record) {
       const metric = window.Metrics.METRICS[state.metric];
-      const opts = { field: state.field, group: state.group, depth: state.depth };
+      // The readout reads what the map painted, estimates included, and the
+      // display functions append the status word wherever that is what it is.
+      const opts = { field: state.field, group: state.group, depth: state.depth,
+                     estimates: state.estimates };
       const value = metric.evaluate(record, opts);
       if (metric.kind === "status") {
         const s = window.Palette.status(value);
