@@ -78,6 +78,7 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+import time
 import urllib.parse
 from pathlib import Path
 from typing import Any
@@ -249,6 +250,14 @@ SMALL_UNKNOWN = 0.01
 RESIDUAL_BY_PROVINCE: dict[tuple[str, str], str] = {
     ("East Nusa Tenggara", "asal kalimantan"): "Other ethnic groups",
 }
+# What a province's table does that its note has to say. Banten's folds the
+# census's Bantenese (4.66 million nationally, nearly all of them in Banten)
+# into its Sunda row, which is why the national check reads Sundanese at
+# 112% of the census figure and Bantenese at 2%.
+PROVINCE_REMARKS: dict[str, str] = {
+    "Banten": "The article's 'Sunda' row folds the census's Bantenese, 4.66 million "
+              "nationally, into Sundanese; the two are not separated here.",
+}
 RESIDUAL = "Other ethnic groups"
 # Two sentences, and a third only where the table needed a decision; the
 # method is in docs/SOURCES.md, not on every row.
@@ -317,12 +326,31 @@ KIND_RANK = {"census2010": 0, "bps": 1, "kemenag": 2, "dukcapil": 3, "jakarta": 
 # Fetching
 # ---------------------------------------------------------------------------
 
+PAUSE = 0.4            # seconds between requests: 550 articles, and the API is shared
+BACKOFF = (60, 120, 240)   # after http_get's own retries have failed on a 429
+
+
 def fetch(title: str, lang: str = "id") -> tuple[str, str]:
-    """The article's wikitext and the title it resolved to (after redirects)."""
+    """The article's wikitext and the title it resolved to (after redirects).
+
+    The MediaWiki API answers 429 when a client asks too fast, and the
+    runner is shared with other probes; requests are spaced, and a refusal
+    that outlasts http_get's own retries waits a minute or more and asks
+    again before giving up.
+    """
     q = urllib.parse.urlencode({"action": "parse", "page": title, "prop": "wikitext",
                                 "format": "json", "formatversion": "2", "redirects": "1"})
     api = API if lang == "id" else EN_API
-    data = http_json(f"{api}?{q}", timeout=90)
+    time.sleep(PAUSE)
+    for wait in (*BACKOFF, None):
+        try:
+            data = http_json(f"{api}?{q}", timeout=90)
+            break
+        except RuntimeError as exc:
+            if wait is None:
+                raise
+            log(f"  [{lang}] {title!r}: {exc}; waiting {wait}s")
+            time.sleep(wait)
     parsed = data.get("parse") or {}
     text = parsed.get("wikitext") or ""
     if not text:
@@ -413,7 +441,7 @@ def unresolved(value: str, definitions: dict[str, str]) -> list[str]:
 
 
 def cite_field(body: str, field: str) -> str:
-    m = re.search(r"\|\s*" + field + r"\s*=\s*([^|}]*)", body, re.I)
+    m = re.search(r"\|\s*" + re.escape(field) + r"\s*=\s*([^|}]*)", body, re.I)
     return " ".join(m.group(1).split()) if m else ""
 
 
@@ -433,6 +461,11 @@ def describe_citation(body: str) -> tuple[str, int | None, str]:
         # forgets it; the archive timestamp is not a year and is skipped.
         path = re.sub(r"web\.archive\.org/web/\d+/", "", url)
         years = [int(y) for y in re.findall(r"\b(20[0-2]\d)\b", path)]
+    if not years:
+        # The citation's own date of publication; never its access date,
+        # which is when the editor read it.
+        dated = " ".join(cite_field(body, f) for f in ("year", "date", "publication-date"))
+        years = [int(y) for y in re.findall(r"\b(20[0-2]\d)\b", dated)]
     year = max(years) if years else (2010 if kind == "census2010" else None)
     return kind, year, title or url or body[:80]
 
@@ -458,7 +491,7 @@ def religion_items(value: str) -> list[tuple[str, float]]:
     text = re.sub(r"\{\{\s*Tree list(?:/end)?\s*\}\}", "|", text, flags=re.I)
     text = text.replace("{{", " ").replace("}}", " ")
     text = re.sub(r"<[^>]+>", "|", text)
-    text = text.replace("&nbsp;", " ")
+    text = re.sub(r"&nbsp;|[   ]", " ", text)
     # A piped link carries the separator inside it; resolve links to their
     # display text before the value is cut at pipes.
     text = LINK.sub(lambda m: m.group(1).split("|")[-1], text)
@@ -770,6 +803,8 @@ def read_ethnicity(wikitext: str, province: str, title: str, expected: int | Non
         remark = join(remark, "The article's 'asal Kalimantan' row, 14.5%, is carried in "
                       "'Other ethnic groups': no census of the province supports a "
                       "Kalimantan share of that size.")
+    if province in PROVINCE_REMARKS:
+        remark = join(remark, PROVINCE_REMARKS[province])
     if remark:
         log(f"    {province}: {remark}")
     return counts, summed, remark
