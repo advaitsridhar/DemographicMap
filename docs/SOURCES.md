@@ -5495,6 +5495,77 @@ workflow runner like the rest; the owner's copy of the PDF on Google Drive
 was read first, and confirmed the figures the workbook then supplied, but the
 Department's URL is what is cited.
 
+### Macau
+
+Macau is the other Special Administrative Region drawn under China, and like
+Hong Kong it runs a census of its own: the Statistics and Census Service
+(DSEC) counts the territory every ten years with a by-census between, and
+asks nationality, ethnicity and usual language, which the mainland census
+does not. Before this the shape carried Wikidata's population and nothing
+else, with the China policy's religion sentence and two `not_available`
+markers.
+
+**Religion is not asked, and that is measured rather than assumed.** The
+runner's probe searched the whole of DSEC's *Detailed Results of 2021
+Population Census* (revised version, October 2022, 147 pages,
+`https://www.dsec.gov.mo/getAttachment/6cb29f2f-524a-488f-aed3-4d7207bb109e/E_CEN_PUB_2021_Y.aspx`)
+and of the *2016 Population By-census Detailed Results* (133 pages,
+`https://www.dsec.gov.mo/getAttachment/e20c6bab-ada4-4f83-9349-e72605674a42/E_ICEN_PUB_2016_Y.aspx`)
+for religion, religious, Buddhis- and Catholic: zero pages in each. The
+2021 report's own account of its questionnaire lists what the long form
+collects -- ethnicity, nationality, place of previous residence, education,
+employment and earnings -- and religion is not among them. So Macau's
+religion stays `not_collected` under the China policy, and nothing is
+written for it; the religious-affiliation figures that circulate for Macau
+are surveys, not DSEC's.
+
+`scripts/fetch_census/macau_census.py` reads two statistical tables of the
+2021 report, both sexes, the Total row. **Table 6**, *Population by gender,
+age group and nationality*: Chinese 608,379 (89.2%), Filipino 33,896
+(5.0%), Other Asian countries 26,640 (3.9%), Portuguese 8,991 (1.3%) and
+Others 4,164 (0.6%), of 682,070. It is carried as the ethnicity field under
+`ethnicity_basis: "nationality"`, the way Japan's prefectures carry their
+census, because a passport is not an ancestry. The census does have an
+ethnicity table (Table 7) and it is the poorer answer: Chinese 609,863
+(89.4%), Portuguese 5,162, Chinese and Portuguese 6,668, Chinese and
+non-Portuguese 1,498, Portuguese and others 1,191, and then one "Others" of
+57,688 (8.5%) holding every other people in the territory, where the
+nationality table at least names the Filipinos. The Vietnamese, whom the
+report's text puts at 1.8% of the population, are inside "Other Asian
+countries" in both; the table does not print them apart. That column is
+written as "Other Asian nationality" and registered in `scripts/group_tree.py`
+under "Other national identities", because the prefix rule would otherwise
+have filed it as East and Southeast Asian ancestry, which the Nepalese,
+Indian and Burmese nationals in it are not; the census's "Others" is written
+as "Other nationalities", already a residual. **Table 10**, *Population by
+gender, age group and usual language*: Cantonese 537,981 (81.0%), Mandarin
+31,405 (4.7%), Other Chinese dialects 36,032 (5.4%), Portuguese 3,949
+(0.6%), English 23,635 (3.6%), Tagalog 19,154 (2.9%) and Others 11,626
+(1.8%), of the 663,782 people aged 3 and over, which `language_basis`
+states. Usual language is the one language a person mostly uses at home.
+
+The PDF is what makes the reader what it is. pypdf runs a table row together
+with a space for every thousands separator -- `MF 682 070 608 379 33 896 26
+640 8 991 4 164` -- so a row is not a list of figures until it is cut into
+as many as the table has columns, and the text does not say where. Every
+cut is tried and the one kept is the one in which the Total column equals
+the sum of the others; a row with no such cut, or two, is refused. The
+checks are then the report's own: each table's Total must be the population
+the census publishes (682,070, section 1.1; 663,782, Principal
+Characteristics page 40); the language counts must agree, count for count,
+with the same table as the report prints it a second time on page 40, and
+its "Chinese" row there must be the three Chinese columns together; each
+composition must sum to 100 within three tenths. Two softer checks follow
+the owner's rule that a small disagreement with a secondary figure is a
+sentence in the note and not a refusal: the shares printed beside the
+counts on page 40, and the shares the report's prose states (Chinese
+nationality 89.2%, Cantonese 81.0%), are held against the computed shares
+within a tenth, and a difference is written into the note. On the 2021 file
+there is none. The build sandbox cannot reach `dsec.gov.mo` (the egress
+proxy refuses the connection), so the adapter runs on the workflow runner;
+it reads only the report's pages 36 to 80, finding the three pages by title,
+because extracting all 147 costs the runner most of an hour.
+
 ## Derived values: what follows without reading more
 
 `docs/MODELLING.md` measures what modelling the blank regions could and could

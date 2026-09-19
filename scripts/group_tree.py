@@ -998,6 +998,10 @@ ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
         "Congolese (Kinshasa)", "Congolese (Brazzaville)", "Chadian",
         "Pakistani", "Indian", "Bangladeshi", "Sri Lankan", "Nepalese",
         "Burmese", "Thai", "Indonesian", "Filipino national",
+        # Macau's census counts nationality and prints one column for the
+        # Asian nationalities it does not name -- Vietnamese, Indonesian,
+        # Burmese, Nepalese, Indian -- which no single ancestry holds.
+        "Other Asian nationality",
     ),
 }
 

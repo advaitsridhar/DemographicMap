@@ -78,6 +78,9 @@ ADAPTER_FILES = [
     # The same survey's newer wave, tabulated from its public-release file
     # and checked against that paper: it replaces the 2012 figure where read.
     "cfps_microdata_province.json",
+    # Macau's own census, one shape under China: nationality (as ethnicity,
+    # labelled nationality) and usual language from DSEC's 2021 results.
+    "macau_census.json",
     # Viet Nam's 2019 census, ethnicity by province from Table 2 of the
     # office's own Vietnamese results volume: a census count.
     "vietnam_province.json",
@@ -225,7 +228,10 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.china_wiki. Hong Kong SAR carries "
            "ethnicity and usual spoken language from its own 2021 Population "
            "Census (C&SD Main Results, Tables 3.9 and 3.13): "
-           "python -m scripts.fetch_census.hongkong_census",
+           "python -m scripts.fetch_census.hongkong_census. Macau SAR carries "
+           "nationality (as ethnicity, labelled nationality) and usual language "
+           "from its own 2021 Population Census (DSEC Detailed Results, Tables 6 "
+           "and 10): python -m scripts.fetch_census.macau_census",
     "KOR": "Hankook Research 2025 pooled survey (religion) by residence region, each "
            "of the seven regions' figure carried by its provinces: "
            "python -m scripts.fetch_census.korea_survey",
