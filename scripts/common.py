@@ -434,7 +434,14 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
         "religion": "Tunisia's census (2014, 2024) carries no religion question; the national figure is an estimate, not a count, and the only subnational figures are survey estimates.",
         "ethnicity": "Tunisia's census does not ask ethnicity.",
     },
-    "KOR": {"ethnicity": "South Korea's census does not collect ethnicity."},
+    # South Korea carried "the census does not collect ethnicity" here until
+    # 19 September 2026, when the map's owner decided that Korea's
+    # ethnicity field carries nationality -- Korean nationals and
+    # registered foreign residents by country of nationality, which the
+    # state does count -- as a real composition under ethnicity_basis
+    # "nationality", the way Japan's prefectures do. The substance of the
+    # old declaration (no ethnicity question is asked) now lives in every
+    # row's note, written by scripts/fetch_census/korea_nationality.py.
     # Read off the census's own questionnaire: MyCensus 2020's demographic
     # module asks sex, age, marital status, ethnic group, citizenship and
     # religion, and no census round has asked language or mother tongue.

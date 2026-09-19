@@ -1021,6 +1021,11 @@ ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
         # Asian nationalities it does not name -- Vietnamese, Indonesian,
         # Burmese, Nepalese, Indian -- which no single ancestry holds.
         "Other Asian nationality",
+        # Korea's immigration register counts these by passport, and each
+        # is a country of more than one people: Malaysian and Hong Konger
+        # are not "Chinese", Cambodian and East Timorese are not one
+        # ancestry a census names, Ghanaian is a dozen.
+        "Cambodian", "Malaysian", "East Timorese", "Hong Konger", "Ghanaian",
     ),
 }
 

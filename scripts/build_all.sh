@@ -79,6 +79,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.burkina
   # A survey, read from one page of the pollster's own report.
   soft python3 -m scripts.fetch_census.korea_survey
+  # Korea's nationality as ethnicity, by the owner's decision: two register
+  # files from data.go.kr, no key.
+  soft python3 -m scripts.fetch_census.korea_nationality
   # Taiwan by the owner's decision: census main language read, ethnicity and
   # religion modelled; two DGBAS/Hakka PDFs and three MOI tables, no key.
   soft python3 -m scripts.fetch_census.taiwan
