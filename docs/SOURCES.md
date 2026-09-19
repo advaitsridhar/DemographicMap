@@ -3731,16 +3731,22 @@ Scotland -- would in any case need saying on any map that combined them.
 
 ### China: 1.4 billion people, and three closed routes
 
-China carries a population on all 33 of its provinces and a composition on
-four. Those four -- Xinjiang, Tibet, Guangxi and Ningxia -- are **hand-compiled
+*Historical: written when China carried a composition on four provinces. The
+census's ethnicity tables were later read for all 31 divisions through the
+copies Wikipedia keeps of them (see "China: ethnicity for 31 divisions"
+below) and religion for five provinces from the CFPS survey. The three routes
+measured here are still closed; what changed is that a fourth was found.*
+
+China carried a population on all 33 of its provinces and a composition on
+four. Those four -- Xinjiang, Tibet, Guangxi and Ningxia -- were **hand-compiled
 rows in `data/curated/admin1_seed.json`**, which is what that file exists for.
-There has never been a China adapter, and it is worth saying plainly that this
-is not a broken join: the join works, 27 provinces matching by name and 5 by
+There had never been a China adapter, and it is worth saying plainly that this
+was not a broken join: the join works, 27 provinces matching by name and 5 by
 prefix, and the only one that reached nothing was Guangdong, drawn under its
 capital city's name and now declared in `MISSPELLED`.
 
-So the gap is real and the question is whether it can be filled. Three routes
-were measured, and all three are closed:
+So the gap was real and the question was whether it could be filled. Three
+routes were measured, and all three are closed:
 
 * **The USCB subnational series does not carry China.** `scripts/probe_hdx.py`
   enumerates all 34 datasets that organization publishes -- the route that
@@ -5548,6 +5554,58 @@ custody is to register with ISSS, download the public-release files, and run
 the adapter with ``--root`` pointing at them: it runs the same self-check,
 writes the same output, and the source then cites ISSS rather than Kaggle.
 The microdata never enters the repository either way.
+
+## China: ethnicity for 31 divisions, from the census tables Wikipedia transcribes
+
+China's census records the 56 official nationalities (民族) and the National
+Bureau of Statistics tabulates every first-level division's composition. The
+tabulations sit on `stats.gov.cn`, which answers an automated reader 403 (the
+closed route above, not circumvented). What is reachable is the copy: a
+division's Wikipedia article transcribes its census table under
+"Demographics", "Ethnic groups" or 民族, and the English article *List of
+Chinese administrative divisions by ethnic group* tabulates the 2020 census
+for every division by region, a count and a share for the region's ten or so
+largest nationalities and a 2020 Census row of totals. `china_wiki.py` reads
+all three -- each division's English and Chinese article, its Chinese
+"民族构成列表" page, and the list -- through the MediaWiki API, the way
+`wiki_census.py` reads Kazakhstan and Cambodia, and each record names the
+census as its source and the article as the copy it was read from.
+
+What the reader does is written at the top of the adapter; the decisions that
+matter are these. A table counts as a census composition when its first
+column is nationalities, names Han and at least one other of the 56, and its
+caption or heading says which census; a time series or a table with no
+population column is passed over. Among the tables an article carries the
+latest census wins, then the division's own article over the list, then the
+one with more nationalities. Where every row prints a count the shares are
+recomputed from the counts, because the transcribed shares are where the
+slips are (Shandong's table gave its 310,738 "other" as 0.003%); otherwise
+the printed shares are read and a shortfall of up to five points is written
+as the remainder. Shares must add to 100 within 0.3 or the division is
+refused with the sum in the log; they are then re-rounded to one decimal by
+largest remainder. The census's residual row (其他民族, "Others") is written
+as "Other ethnic groups" and the rows for people of no recognised
+nationality (未识别民族) fold into it, which the note says. "Yao" is written
+"Yao (China)" because the tree's bare Yao is the Bantu people of Malawi.
+
+The run of 19 September 2026 wrote **31 of 31 divisions**, none refused: 30
+from the 2020 census and Inner Mongolia from 2010 (its English article
+carries the 2010 table and no 2020 one has been transcribed; the note says
+so). Fourteen were read from the list of divisions (the municipalities, Hebei,
+Jiangsu, Zhejiang, Anhui, Fujian, Jiangxi, Henan, Hubei, Yunnan, Tibet,
+Shaanxi, Gansu), ten from their Chinese article (Shanxi, Liaoning, Jilin,
+Hunan, Hainan, Chongqing, Sichuan, Guizhou, Qinghai, Ningxia), Guangdong from
+its Chinese 民族构成列表 (57 groups), and Heilongjiang, Shandong, Guangxi and
+Xinjiang from their English articles. Beijing is the cross-check: the city's
+own 2010 census communique (bjstats, read earlier in this project) printed
+Han 95.9% of 19,612,000 with Manchu 336,000, Hui 249,000, Mongol 77,000,
+Korean 37,000 and Tujia 24,000; the 2020 table reads Han 95.2% of 21,893,095
+with Manchu 469,995, Hui 274,112, Mongol 123,340, Korean 32,984 and Tujia
+29,580 -- the same ordering and the same magnitudes a decade on. Hong Kong and
+Macau come from their own censuses (below) and are not in this file.
+
+Religion is not asked by the census and stays under the policy; language is
+not published by division and stays a gap.
 
 ## Hong Kong: a census of its own, one shape under China
 
