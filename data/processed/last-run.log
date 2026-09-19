@@ -1,45 +1,15 @@
-page: https://www.sac.or.th/databases/ethnic-groups/
-  unreachable: HTTPError: HTTP Error 403: Forbidden
-page: https://ethnicity.sac.or.th/
-  unreachable: HTTPError: HTTP Error 403: Forbidden
-page: https://www.lc.mahidol.ac.th/
-  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.lc.mahidol.ac.th'. (_ssl.c:1016)>
-page: https://langrevival.mahidol.ac.th/
-  unreachable: HTTPError: HTTP Error 403: Forbidden
-page: https://www.sac.or.th/
-  416,812 bytes
-  17 matching link(s)
-  - ข่าวประชาสัมพันธ์ SAC podcase series มานุษยวิทยากับกฎหมายชาติพันธุ์ EP
-    https://www.sac.or.th/portal/th/news/detail/406
-  - ข่าวประชาสัมพันธ์ ประกาศกำหนดจำนวนสมาชิก และกำหนดระยะเวลาเลือกสมาชิก ข
-    https://www.sac.or.th/portal/th/news/detail/405
-  - ข่าวประชาสัมพันธ์ SAC podcase series มานุษยวิทยากับกฎหมายชาติพันธุ์ EP
-    https://www.sac.or.th/portal/th/news/detail/404
-  - ข่าวประชาสัมพันธ์ ถาม-ตอบ การขึ้นทะเบียนกลุ่มชาติพันธุ์ ข่าวประชาสัมพั
-    https://www.sac.or.th/portal/th/news/detail/400
-  - บทความ เมื่อ ‘รัฐ’ รุกคืบบ้านปางแดงใน: บทสะท้อนอัตลักษณ์ อารมณ์ และควา
-    https://www.sac.or.th/portal/th/article/detail/840
-  - บทความ ปฏิสัมพันธ์ทางวัฒนธรรม (Interculturalism) ชาติพันธุ์ อัตลักษณ์ 
-    https://www.sac.or.th/portal/th/article/detail/834
-  - ข่าวประชาสัมพันธ์ ประกาศบัญชีรายชื่อกลุ่มชาติพันธุ์ในประเทศไทย และกำหน
-    https://www.sac.or.th/portal/th/news/detail/399
-  - ข่าวประชาสัมพันธ์ ขอเชิญเสนอรายชื่อบุคคล เพื่อรับการสรรหาเป็นกรรมการผู
-    https://www.sac.or.th/portal/th/news/detail/394
-  - ข่าวประชาสัมพันธ์ ขอเชิญองค์กรพัฒนาเอกชนเสนอรายชื่อบุคคล เพื่อสรรหาเป็
-    https://www.sac.or.th/portal/th/news/detail/393
-  - ข่าวประชาสัมพันธ์ เสวนาเนื่องในโอกาส 244 ปี กรุงรัตนโกสินทร์ หัวข้อ “โ
-    https://www.sac.or.th/portal/th/news/detail/389
-  - กิจกรรม “ความท้าทายและความหวังของเยาวชนกลุ่มชาติพันธุ์ ในมิติการศึกษาแ
-    https://www.sac.or.th/portal/th/activity/detail/567
-  - กิจกรรม อ่านจารึกไทยให้โลกอ่านได้: การพัฒนามาตรฐานการถ่ายถอดจารึกภาษาไ
-    https://www.sac.or.th/portal/th/activity/detail/564
-  - กิจกรรม “โลกทัศน์ชาติพันธุ์ของสยามสมัยต้นรัตนโกสินทร์: หลักฐานจาก สัพะ
-    https://www.sac.or.th/portal/th/activity/detail/556
-  - กลุ่มชาติพันธุ์ในประเทศไทย
-    https://ethnicity.sac.or.th?tokens=
-  - งานวิจัยชาติพันธุ์
-    https://ethnicredb.sac.or.th?tokens=
-  - แผนที่วัฒนธรรมสาครบุรี
-    https://db.sac.or.th/samutsakhon/ethno-map/?tokens=
-  - ดูทั้งหมด '); var $nav_alt = $(owl_nav_alt_html); $nav_alt.appendTo(ev
-    https://www.sac.or.th/
+
+===== page: 'Demographics of Thailand', 79,206 bytes of wikitext
+  15 table(s)
+--- table 12: 11 rows ---
+  Language | Speakers | Language Family
+  Central Thai | formatnum:20.0 million | Tai-Kadai
+  Lao | formatnum:15.2 million | Tai-Kadai
+  Kam Mueang | formatnum:6.0 million | Tai-Kadai
+  Pak Tai | formatnum:4.5 million | Tai-Kadai
+  Northern Khmer | formatnum:1.4 million | Austroasiatic
+  Yawi | formatnum:1.4 million | Austronesian
+  Ngaw (Nyaw) | formatnum:0.5 million | Tai-Kadai
+  Phu Thai | formatnum:0.5 million | Tai-Kadai
+  Karen | formatnum:0.4 million | Sino-Tibetan
+  Kuy | formatnum:0.4 million | Austroasiatic
