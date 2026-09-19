@@ -11,19 +11,33 @@ korea_nationality: Ministry of Justice (Korea Immigration Service), registered f
     대전광역시: 6 rows
     울산광역시: 6 rows
     세종특별자치시: 2 rows
-  retry 1/3 after 3s :: Remote end closed connection without response
     경기도: 49 rows
     강원특별자치도: 19 rows
     충청북도: 16 rows
     충청남도: 18 rows
     전라북도: 17 rows
-  retry 1/3 after 3s :: Remote end closed connection without response
     전라남도: 23 rows
-  retry 1/3 after 3s :: Remote end closed connection without response
-  retry 2/3 after 6s :: Remote end closed connection without response
     경상북도: 25 rows
     경상남도: 24 rows
-  retry 1/3 after 3s :: Remote end closed connection without response
-  retry 2/3 after 6s :: Remote end closed connection without response
     제주특별자치도: 3 rows
-korea_nationality: '세종특별자치시' names no district
+  register: 247 rows, 51,325,329 nationally
+  retry 1/4 in 2s :: <urlopen error timed out>
+  retry 2/4 in 4s :: <urlopen error timed out>
+  retry 3/4 in 8s :: <urlopen error timed out>
+  retry 4/4 in 16s :: <urlopen error timed out>
+  retry 5/4 in 32s :: <urlopen error timed out>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/korea_nationality.py", line 897, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/korea_nationality.py", line 887, in main
+    published = read_national(fetch_national())
+                              ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/korea_nationality.py", line 860, in fetch_national
+    blob = download(MOJ_NATIONAL_URL, MOJ_NATIONAL_FILE, timeout=90).read_bytes()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 714, in download
+    raise RuntimeError(f"download failed: {url}")
+RuntimeError: download failed: https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003669729&fileDetailSn=1&insertDataPrcus=N
