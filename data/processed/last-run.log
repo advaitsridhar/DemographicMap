@@ -1,4 +1,34 @@
-probe_xlsx: https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000007631564&fileDetailSn=1&insertDataPrcus=N
-  430,227 bytes
-  not a workbook: BadZipFile: File is not a zip file
+page: https://www.data.go.kr/js/biz/datset/script_fileDetail.js
+  13,459 bytes
+  12 distinct match(es) for '(?:fileDataDown|fileDownload|selectFileData|atchFileId|location.href)[^;]{0,300}'
+    atchFileId: atchFileId,
+            fileDetailSn: fileDetailSn,
+            publicDataTyCode: 'PR0051',
+            url: '/tcs/dss/selectFileDataDownload.do'
+        }, fileDetailObj.fn_fileDataDownCb)
+    fileDataDown(url,publicDataPk, publicDataDetailPk) {
 
+    $.ajax({
+        url: url,
+        data: {publicDataPk: publicDataPk,
+                publicDataDetailPk: publicDataDetailPk},
+        success	: function(data) {
+            let jsonObj = JSON.parse(data)
+    fileDataDown: function(publicDataPk, publicDataDetailPk, atchFileId, fileDetailSn, publicDataHistSn) {
+        if(publicDataHistSn > 1) {
+            fileDetailObj.fn_checkUpdtDt()
+    fileDataDownCb)
+
+        $(".recommend-after-download").slideDown()
+    fileDataDownCb: function(data) {
+        let jsonObj = JSON.parse(data)
+    fileDataDownload(jsonObj.atchFileId, jsonObj.fileDetailSn, jsonObj.dataSetFileDetailInfo.dataNm)
+    fileDataDownload(jsonObj.atchFileId, jsonObj.fileDetailSn, jsonObj.dataSetFileDetailInfo.publicDataSj)
+    location.href = "/uim/login/loginView.do"
+    location.href = '/uim/login/loginView.do'
+    location.href = '/uim/login/loginView.do'
+                return
+    location.href = jsonObj.linkUrl
+    selectFileDataApplyReqForm.do" + "?publicDataPk=" + jsonObj.publicDataPk + "&publicDataDetailPk=" + jsonObj.publicDataDetailPk)
+        } else {
+            alert(jsonObj.errorDc)
