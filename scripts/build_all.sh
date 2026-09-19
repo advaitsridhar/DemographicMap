@@ -79,6 +79,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   soft python3 -m scripts.fetch_census.burkina
   # A survey, read from one page of the pollster's own report.
   soft python3 -m scripts.fetch_census.korea_survey
+  # Japan by the owner's decision: census nationality read, religion and
+  # language modelled; two e-Stat calls, needs ESTAT_API.
+  soft python3 -m scripts.fetch_census.japan
   # Five Chinese provinces from a survey, transcribed; no network.
   soft python3 -m scripts.fetch_census.cfps_survey
   # Its newer wave from the public-release file on Kaggle; needs egress.

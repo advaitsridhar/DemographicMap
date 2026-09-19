@@ -325,6 +325,31 @@ the country does not collect (`check_no_estimate_on_policy_field` is fatal),
 no estimate rolls into a parent, and the field-level diff against the previous
 build gained three real compositions and lost none.
 
+**Japan is the first Tier 1 case applied under an owner's decision rather
+than for a geometric reason**, and the first whose assumption is about people.
+On 19 September 2026 the owner decided that the 47 prefectures, which had
+carried `not_collected` for all three fields on the strength of the census
+questionnaire, should carry what secondary sources can say; the `JPN` entry
+left `NOT_COLLECTED_POLICY` that day so that section 0's second rule and the
+guard that enforces it stay exactly as strict for everyone else.
+`scripts/fetch_census/japan.py` writes three different things and labels each:
+nationality from the 2020 census as a real composition under
+`ethnicity_basis: "nationality"`; religion as `modelled` from a national
+self-identification prior (NHK's ISSP 2018 round: Buddhism 31, Shinto 3,
+Christianity 1, other 1, no religion 62, no answer 2) tilted by the Agency for
+Cultural Affairs' adherent counts used only as a relative signal, clipped to a
+threefold ratio, with Christianity held under 5% and Shinto under 9% and no
+religion fixed at the national figure; and language as `modelled` by
+assigning each nationality its majority home language
+(`tier1-nationality-to-language`). It is a Tier 1 case in the section 5 sense
+-- a national figure disaggregated under a stated assumption -- and it is
+published only because the assumption, the inputs and the bounds are on every
+record. What section 7 demands it cannot have: **no backtest is possible**,
+because no prefecture-level self-identification figure exists to hide and
+predict, so the estimate carries no `backtest` key and says so rather than
+inventing one. `docs/SOURCES.md`, "Japan, resolved by the owner's decision",
+records what was read.
+
 ## 8. Recommendation
 
 Build **Tier 0 and the geometric half of Tier 1** — the residual and the

@@ -238,6 +238,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Zimbabwe | ZIMSTAT, 2022 Population and Housing Census Report: Table 2.14(c) (religion by province, both sexes) and Table 2.17 (mother tongue by province) | province | Replaces the Afrobarometer survey rows for religion on all 10 provinces and adds mother tongue; ethnicity stays the survey's, since the report prints it for the country only (Table 2.15). Comma-thousand counts read as text; each religion row sums to its printed total, each language row sums across provinces to its printed total, and each province's languages sum to the printed province total. The mother-tongue table covers 13,913,253 of 15,178,957 residents and the page does not state its age floor. `scripts/fetch_census/zimbabwe.py`. |
 | Burkina Faso | INSD, 5e RGPH 2019, *Volume des tableaux statistiques*, Tableau I.22 (population résidente par région selon la religion, en %, with each region's population) | region | Replaces the Afrobarometer survey rows for religion on all 13 regions. Shares to one decimal applied to the region's printed population; the thirteen populations must equal the printed national 18,171,751 and the national shares rebuilt from the regions must agree with the printed ones. The volume prints the principal language spoken by milieu only and no ethnicity, so those fields are untouched. `scripts/fetch_census/burkina.py`. |
 | South Korea | Hankook Research, *2025 Religion Perception Survey* (Weekly Report No. 358-3, 3 December 2025), page 8: religion by residence region, the religion question pooled from the 22 waves of the biweekly "Yeoron sok-ui Yeoron" web panel, January to November 2025 (23,000 adults aged 18 and over, weighted by region, sex and age) | province | A survey, not a census, and the map's one stated exception to the rule that a figure coarser than the shape is not spread: the report's seven residence regions cover the seventeen provinces, and each province carries its region's figure by the map owner's decision, with the note naming the region and how many provinces share it. Whole percentages, 2025 column; "other religions" is the printed "has a religion" less Protestant, Catholic and Buddhist. Lowest authority for Korea: the 2015 census (KOSIS, keyed API) replaces it when read. `scripts/fetch_census/korea_survey.py`. |
+| Japan | 2020 Population Census, 人口等基本集計, population by nationality (e-Stat `0003445244`); NHK/ISSP 2018 "Religion" survey (放送研究と調査, April 2019) as a national prior; Agency for Cultural Affairs 宗教統計調査 believers by prefecture (e-Stat `0003282963`, 2025年度) as a relative signal | prefecture | By the map owner's decision of 19 September 2026, and labelled throughout. Ethnicity is **nationality** (`ethnicity_basis: "nationality"`): a census count of passports, with Japanese nationals of every ancestry in one row. Religion and language are `modelled` estimates, never lists: religion is the survey's national shares tilted by each prefecture's adherent pattern, capped and with no backtest; language is each nationality assigned its majority home language. See "Japan, resolved by the owner's decision". `scripts/fetch_census/japan.py`. |
 | Czechia | ČSÚ SLDB 2021 open data (`sldb2021_narodnost.csv`, `sldb2021_vira.csv`, `sldb2021_jazyk1.csv`) | kraj, okres | Nationality is voluntary and allows two answers; the file counts every declaration and has no not-stated row, so it is carried as multi-response. Religious belief partitions the population across 78 rows, registered churches and write-in beliefs alike; a written "catholic" is kept apart from the Roman Catholic Church's count and a written "atheism" counts with no religious belief. Mother tongue is read from the single-mother-tongue file, and people with two mother tongues or a language outside its thirteen are the total less its rows, kept as one labelled bar. Okresy are named in Czech where geoBoundaries has English (Praha-východ / Prague-East), carried as aliases; the okres-to-kraj table is in the adapter because the rows do not carry it. |
 | Croatia | DZS Popis 2021 final results, workbook `popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx` (sheets 1, 2, 4) | županija, grad/općina | One layout for all three tables: a bilingual header (Croatian over English) with a count and a percent column per category, read from the header rather than declared; county rows interleaved with their towns and municipalities; a dash is zero. Each table partitions the population, Other, Not declared and Unknown included, and a row that does not sum to its total stops the build. Counties are named as geoBoundaries names them in English, with the Croatian as an alias; units are composed as the bureau writes them, type first ("Grad Samobor", "Općina Bibinje"). The workbook lists the City of Zagreb by its 17 city districts, which are skipped, the city coming from its own county row. The boundary file's spellings (a dozen typos, Istria's bilingual names, two islands each drawn as one town) are declared as aliases; 545 shapes for 556 units, 543 matched. |
 | Bosnia and Herzegovina | BHAS Popis 2013, Book 2 workbooks `K2_T2_B` (ethnicity), `K2_T5_B` (religion), `K2_T6_B` (mother tongue) under `popis.gov.ba/popis2013/doc/Knjiga2/BOS/` | entity, canton | One layout for all three: Level, Area (Bosnian over English), Sex, Total, then the categories; the Total row of each territory is read and matched by its Bosnian name. The two entities and Brčko District are published at both levels, since geoBoundaries draws Republika Srpska and Brčko as their own second-level shapes beside the ten cantons: 3/3 and 12/12. The bureau's 'Islamska' and 'Muslimanska' religion columns are summed into Islam (both are Islam; the build refuses a group beside its parent) and the note says so; ethnonyms given as a religion, and 'Orthodox' given as an ethnicity, are kept and marked. A row that does not sum to its Total refuses. Republika Srpska's institute published a different reading of the same count; these are the Agency's figures. `scripts/fetch_census/bosnia.py`. |
@@ -4730,6 +4731,95 @@ And the route that worked is worth keeping: **a saved page beat six probes.**
 `data.tuik.gov.tr` timed out, its `GetKategori` path answered 3,685 bytes of
 fragment, MEDAS answered 66 kB with zero links, and none of that settled
 anything. One right-click on a rendered page settled all of it.
+
+### Japan, resolved by the owner's decision
+
+Everything the section above measured still holds: the census asks
+nationality and none of the three, and the Agency for Cultural Affairs'
+adherent table counts memberships against the prefecture where a
+corporation is registered. What changed is a decision. On **19 September
+2026** the map's owner decided that Japan's 47 prefectures should carry what
+secondary sources can say, the way Korea's provinces carry a pollster's
+survey by the decision of 11 September, provided each figure is labelled for
+what it is. `scripts/fetch_census/japan.py` is that decision, and the `JPN`
+entry left `NOT_COLLECTED_POLICY` the same day, because the build's guard
+(`check_no_estimate_on_policy_field`) refuses an estimate on a declared
+field, and rightly. The substance of the three declarations now lives in the
+adapter's notes, on every prefecture, instead of in one line in `common.py`.
+
+**What was read.** Two e-Stat tables and one survey report, all through the
+runner (`ESTAT_API` in its environment, scrubbed from every log line):
+
+* **`0003445244`**, 令和２年国勢調査 人口等基本集計, 外国人 男女，国籍別人口 --
+  全国，都道府県，市区町村. Its 国籍 dimension carries 総数, 外国人, thirteen
+  nationalities (韓国，朝鮮; 中国; フィリピン; タイ; インドネシア; ベトナム;
+  インド; ネパール; イギリス; アメリカ; ブラジル; ペルー; その他), 日本人, and
+  日本人・外国人の別「不詳」. Read at `lvArea=1-2` (the country and the 47
+  prefectures) for both sexes. **Ethnicity is this table, as a list, under
+  `ethnicity_basis: "nationality"`**, because it is a census count and the
+  map's rule is that a count is written as one. The note on every prefecture
+  says the census counts nationality and not ethnicity, that "Japanese"
+  holds naturalised citizens and people of any ancestry, and how many people
+  the census recorded as neither Japanese nor foreign (left out of the
+  denominator, and printed). The reader refuses to write unless the 47
+  prefectures reproduce the table's own 全国 row exactly, that row reproduces
+  the Statistics Bureau's published national figures (foreign population
+  2,402,460 and the ten nationalities the 結果の概要 prints, in `PUBLISHED`),
+  and the national composition rebuilt from the prefectures sits within half
+  a point of the published one.
+* **`0003282963`**, the same 宗教統計調査 table the section above measured,
+  at 2025年度 (31 December 2024): 信者 by 宗教系統 for the country and the 47
+  prefectures. 175,054,047 believers, 1.39 per person. Used as a **relative
+  signal only** -- the reader refuses it if it ever sums to fewer than the
+  people, because then it would be a different table.
+* **NHK's ISSP 2018 "Religion" round**, reported by Toshiyuki Kobayashi in
+  放送研究と調査 (April 2019, pp. 52-72; fieldwork 27 October to 4 November
+  2018, 2,400 adults aged 18 and over by drop-off/pick-up, 1,466 valid
+  responses). The question is "ふだん信仰している宗教がありますか", with the
+  instruction that a religion kept only for weddings and funerals does not
+  count. Page 53: Buddhism 31%, Shinto 3%, Christianity 1%, any religion 36%
+  (so other is 1%), no religion 62%, and the remaining 2% no answer. Unchanged
+  from 2008. `nhk.or.jp` served the runner nothing -- the page came back
+  empty and the PDF as zero bytes -- and the report was read through the
+  Internet Archive's copy of the PDF at the same URL.
+
+**What is modelled, and how.** Religion on every prefecture is `modelled`,
+method `tier1-national-prior-tilted-by-adherents`: the survey's four
+affiliated shares, each multiplied by the prefecture's tilt ratio (the
+tradition's share of the prefecture's reported believers over its share of
+the nation's, clipped to between 1/3 and 3), rescaled to the survey's
+affiliated total, with no religion held at the survey's national figure
+because nothing gives it by prefecture, and the 2% no-answer left out. Two
+absolute bounds stop the signal's known artefacts passing through: Christianity
+at most 5% (Nagasaki, Japan's most Christian prefecture, is a few percent by
+the churches' own counts and comes out at 3.1) and Shinto at most 9% (three
+times the national self-identification). Three prefectures hit a bound --
+Okinawa, whose corporations report 90% of its believers as Shinto, Kyoto and
+Nagano -- and their notes say so. The record carries the ratios under `tilt`
+and the bound groups under `capped`; the log prints the five prefectures the
+tilt moves furthest from the prior. **No backtest exists and none is
+claimed**: there is no prefecture-level self-identification figure to score
+against, so the estimate has no `backtest` key and its note says why.
+
+Language is `modelled`, method `tier1-nationality-to-language`: the same
+nationality composition with every person given the majority home language
+of their nationality (Japanese, Korean, Mandarin, Filipino, Thai, Indonesian,
+Vietnamese, Hindi for Indians -- a plurality, and the note says so -- Nepali,
+English for British and Americans, Portuguese, Spanish, other). The note
+states the assumption and which way it errs: a Korean national born in Osaka
+and a Brazilian of Japanese descent speak Japanese at home more often than it
+allows, and naturalised citizens' families are counted the other way. A
+language under a twentieth of a point folds into "Other languages" rather
+than printing as 0.0%.
+
+**What remains unknowable.** Whether anyone in a given prefecture identifies
+with a religion: the model puts the survey's 63% no-religion on Okinawa and
+on Nara alike, and that is the survey's national figure repeated, not a
+finding. Any ethnicity of a Japanese national -- Ainu, Ryukyuan, Japan-born
+Korean who has naturalised, nikkei returnee -- all "Japanese". Any language
+anyone actually speaks at home. The Statistics Bureau's own 不詳 row, 2.2
+million people in 2020 whose nationality the census could not establish,
+which is left out of every denominator and printed on every note.
 
 ### Brazil: the table that answered was the wrong table
 

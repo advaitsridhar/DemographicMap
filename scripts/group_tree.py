@@ -975,6 +975,9 @@ ETHNIC_NATIONALITY: dict[str, tuple[str, ...]] = {
     "Settler-nation identities": (
         "American", "Canadian", "Australian", "New Zealander", "Brazilian",
         "Mexican", "Cuban", "Argentine", "Singaporean", "South African",
+        # Japan's census counts Peruvian nationals, most of them of Japanese
+        # descent, which is exactly why a passport says nothing of ancestry.
+        "Peruvian",
     ),
     "Other national identities": (
         "Belgian", "Yugoslavian", "Sri Lankan", "Iranian national",

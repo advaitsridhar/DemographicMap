@@ -62,6 +62,11 @@ ADAPTER_FILES = [
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
     "korea_survey_province.json",
+    # Japan, by the owner's decision of 19 September 2026: nationality read
+    # from the 2020 census as a composition, religion and language as
+    # modelled estimates. Part survey and part model, so it sits with the
+    # surveys, below every census file.
+    "japan_prefecture.json",
     # And CFPS 2012 for five Chinese provinces: a survey where the census
     # asks nothing, transcribed from the paper that reports it.
     "cfps_survey_province.json",
@@ -202,6 +207,10 @@ ADAPTER_HINTS: dict[str, str] = {
     "KOR": "Hankook Research 2025 pooled survey (religion) by residence region, each "
            "of the seven regions' figure carried by its provinces: "
            "python -m scripts.fetch_census.korea_survey",
+    "JPN": "2020 census nationality by prefecture (as ethnicity, labelled nationality), "
+           "religion modelled from NHK's 2018 ISSP survey tilted by the Agency for "
+           "Cultural Affairs' adherent counts, language modelled from nationality; "
+           "needs ESTAT_API: python -m scripts.fetch_census.japan",
     "AGO": "INE Censo 2024 final report (ethnic group, mother tongue, religion) by "
            "province, read from the PDF's word coordinates: "
            "python -m scripts.fetch_census.angola",
