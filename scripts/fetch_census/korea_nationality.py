@@ -230,7 +230,10 @@ DISTRICTS: dict[str, dict[str, str]] = {
         "중구": "Jung-gu [Central District]", "남구": "Nam-gu [South District]",
         "동구": "Dong-gu [East District]", "북구": "Buk-gu", "울주군": "Ulju-gun",
     },
-    "Sejong": {"세종특별자치시": "Sejong-si", "세종시": "Sejong-si"},
+    # Sejong is a province that is one city: it has no 시군구 at all, so the
+    # Ministry's file writes a bare "0" in that column and the register
+    # repeats the province's own name a level down.
+    "Sejong": {"세종특별자치시": "Sejong-si"},
     "Gyeonggi": {
         "수원시": "Suwon-si", "성남시": "Seongnam-si", "고양시": "Goyang-si",
         "용인시": "Yongin-si", "안산시": "Ansan-si", "안양시": "Anyang-si",
@@ -410,7 +413,11 @@ def read_moj(table: list[list[str]]) -> dict[tuple[str, str], dict[str, int]]:
         if sum(counts.values()) != total:
             raise SystemExit(f"korea_nationality: {sido} {row[i_gu]} {row[i_sex]}: nationalities "
                              f"sum to {sum(counts.values()):,} against a printed {total:,}")
-        key = (SIDO[sido], row[i_gu].split()[0])
+        gu = row[i_gu].split()
+        # Sejong has no 시군구 and the file writes a zero in that column; the
+        # unit is the province itself, keyed by the province's name so that
+        # the register's row for the same ground matches it.
+        key = (SIDO[sido], gu[0] if gu and gu[0] != "0" else sido)
         unit = out.setdefault(key, Counter())
         unit.update(counts)
         unit["__total__"] += total
@@ -446,18 +453,19 @@ def read_register(tables: list[list[list[str]]]) -> dict[tuple[str, str], int]:
     under ("", ""), from the register's province listing and its per-province
     listings.
 
-    A city's own districts (수원시 장안구, code 41111) are listed beside the
-    city (41110) and are skipped: the city's row already carries them, and
-    it is the city the boundary file draws. They are told from an ordinary
-    district by their code -- the parent's code, with the fifth digit
-    zeroed, is itself a row in the same listing -- since names alone do not
-    say (Seoul's 광진구 is 11215 and has no parent 11210).
+    A city's own districts (수원시 장안구, code 4111100000) are listed beside
+    the city (4111000000) and are skipped: the city's row already carries
+    them, and it is the city the boundary file draws. They are told from an
+    ordinary district by naming three levels -- province, city, district --
+    where a district of a province names two, and Sejong, a province that is
+    one city, names one. The codes do not say it: 증평군 is 4374500000, a
+    county of its own with a non-zero fifth digit sitting beside 영동군 at
+    4374000000, and reading the code as a parent's dropped a county of
+    37,484 people out of North Chungcheong.
     """
     out: dict[tuple[str, str], int] = {}
     for table in tables:
-        rows = register_rows(table)
-        codes = {code for _, code, _ in rows}
-        for area, code, count in rows:
+        for area, code, count in register_rows(table):
             words = area.split()
             if code[2:] == "00000000":
                 key = ("", "") if words[0] == "전국" else (SIDO[words[0]], "")
@@ -466,13 +474,17 @@ def read_register(tables: list[list[list[str]]]) -> dict[tuple[str, str], int]:
             else:
                 if code[5:] != "00000":
                     continue                        # an 읍면동
-                if code[4] != "0" and code[:4] + "000000" in codes:
+                if len(words) > 2:
                     continue                        # a district of a city
                 if words[0] not in SIDO:
                     raise SystemExit(f"korea_nationality: {area!r} names no province")
-                if len(words) < 2:
+                # Sejong's one district is the city itself, and the register
+                # writes the province's name again a level down rather than a
+                # district name; every other district row names its province
+                # and then itself.
+                if len(words) < 2 and SIDO[words[0]] != "Sejong":
                     raise SystemExit(f"korea_nationality: {area!r} names no district")
-                key = (SIDO[words[0]], words[1])
+                key = (SIDO[words[0]], words[1] if len(words) > 1 else words[0])
             if key in out and out[key] != count:
                 raise SystemExit(f"korea_nationality: {area} appears twice in the register")
             out[key] = count

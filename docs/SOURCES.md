@@ -6539,11 +6539,19 @@ a count, not a model: nothing in it estimates anything.
   request) come back as a cp949 CSV of "행정구역 (code)", 총인구수 and 세대수.
   One request with the province level "A" lists the seventeen provinces and
   the national row (51,325,329 at December 2023); one request per province
-  lists its districts, with a city's own districts beside the city, told
-  apart by their code because a name does not say (Seoul's 광진구 is 11215
-  and has no parent 11210). data.go.kr's copy of the same table (dataset
-  3033301) is offered on application only, and its file endpoint never
-  answered the runner (`Connection timed out`, four times).
+  lists its districts, with a city's own districts beside the city. What
+  tells a city's district from a district of a province is that it names
+  three levels -- "충청북도 청주시 상당구" against "충청북도 영동군"
+  -- and not the code: 증평군, split off from 괴산군 in 2003, is
+  4374500000, a county of its own with a non-zero fifth digit sitting
+  beside 영동군 at 4374000000, and reading the code as a parent's dropped
+  its 37,484 people out of North Chungcheong. Sejong is a province that is
+  one city: the register repeats its name a level down, and the Ministry of
+  Justice's file writes a bare "0" in the 시군구 column for it, so both
+  are keyed by the province's name and meet. The listing reads 228 district
+  rows, one per shape, and Sejong's. data.go.kr's copy of the same table
+  (dataset 3033301) is offered on application only, and its file endpoint
+  never answered the runner (`Connection timed out`, four times).
 
 **What the labels mean.** "Korean" is everyone on the resident register,
 naturalised citizens and people of any ancestry included. "Korean-Chinese"

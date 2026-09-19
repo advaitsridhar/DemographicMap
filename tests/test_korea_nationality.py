@@ -48,12 +48,14 @@ def every_unit(male_scale=1):
     i = 0
     for province, table in m.DISTRICTS.items():
         for word, shape in table.items():
-            if word == "세종시" or (word == "군위군" and province == "North Gyeongsang"):
+            if word == "군위군" and province == "North Gyeongsang":
                 continue
             i += 1
             counts = [30 + i, 20, 10, 5, 4, 3, 1, 2]
-            units[(korean_of[province], word)] = ([c * male_scale for c in counts],
-                                                  [c for c in counts])
+            # Sejong has no 시군구 and the Ministry writes a zero there.
+            sigungu = "0" if province == "Sejong" else word
+            units[(korean_of[province], sigungu)] = ([c * male_scale for c in counts],
+                                                     [c for c in counts])
     units[("전라남도", "영광군")] = ([10, 5, 3, 1, 1, 1, 0, 1], [8, 4, 2, 1, 1, 0, 0, 1])
     return units
 
@@ -63,7 +65,8 @@ def register_for(units):
     rows as the exact sums."""
     out = {}
     for (sido, gu), _ in units.items():
-        out[(m.SIDO[sido], gu.split()[0])] = 10_000
+        word = gu.split()[0]
+        out[(m.SIDO[sido], sido if word == "0" else word)] = 10_000
     for province in set(m.SIDO.values()):
         out[(province, "")] = sum(v for (p, w), v in out.items() if p == province and w)
     return out
@@ -82,6 +85,17 @@ class ReadingTheMinistrysFile(unittest.TestCase):
         self.assertEqual(suwon["한국계중국인"], 7)
         self.assertEqual(suwon["베트남"], 8)
         self.assertEqual(suwon["__total__"], 20)
+
+    def test_sejong_has_no_sigungu_and_the_file_writes_a_zero(self):
+        # Sejong is a province that is one city. The Ministry's 2023 file
+        # writes "0" in the 시군구 column for it, and the unit is keyed by
+        # the province's name so the register's row for the same ground --
+        # which repeats the province's name a level down -- matches it.
+        table = moj_rows({("세종특별자치시", "0"):
+                          ([3, 2, 1, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0])})
+        units = m.read_moj(table)
+        self.assertEqual(set(units), {("Sejong", "세종특별자치시")})
+        self.assertEqual(units[("Sejong", "세종특별자치시")]["__total__"], 7)
 
     def test_a_row_whose_nationalities_do_not_make_its_total_is_refused(self):
         table = moj_rows({("서울특별시", "종로구"): ([1, 1, 1, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0])})
@@ -142,6 +156,32 @@ class ReadingTheRegister(unittest.TestCase):
         self.assertEqual(out[("Gyeonggi", "가평군")], 62_000)
         self.assertEqual(out[("Seoul", "광진구")], 335_000)
         self.assertEqual(out[("Seoul", "종로구")], 140_000)
+
+    def test_a_county_whose_code_looks_like_a_city_district_is_kept(self):
+        # 증평군 (4374500000) is a county of its own, split off from
+        # 괴산군 in 2003, and its code has a non-zero fifth digit sitting
+        # beside 영동군 at 4374000000. Reading the code as a parent's
+        # dropped its 37,484 people out of North Chungcheong; what tells a
+        # city's district from a county is that it names three levels.
+        chungbuk = [self.HEADER,
+                    ["충청북도  (4300000000)", "1,593,469", "1"],
+                    ["충청북도 청주시 (4311000000)", "852,189", "1"],
+                    ["충청북도 청주시 상당구 (4311100000)", "200,575", "1"],
+                    ["충청북도 영동군 (4374000000)", "44,195", "1"],
+                    ["충청북도 증평군 (4374500000)", "37,484", "1"]]
+        out = m.read_register([chungbuk])
+        self.assertEqual(out[("North Chungcheong", "증평군")], 37_484)
+        self.assertEqual(out[("North Chungcheong", "영동군")], 44_195)
+        self.assertEqual(out[("North Chungcheong", "청주시")], 852_189)
+        self.assertNotIn(("North Chungcheong", "상당구"), out)
+
+    def test_sejong_is_a_province_that_is_one_district(self):
+        table = [self.HEADER,
+                 ["세종특별자치시  (3600000000)", "386,525", "1"],
+                 ["세종특별자치시  (3611000000)", "386,525", "1"]]
+        out = m.read_register([table])
+        self.assertEqual(out[("Sejong", "")], 386_525)
+        self.assertEqual(out[("Sejong", "세종특별자치시")], 386_525)
 
     def test_a_row_without_a_code_is_ignored_and_an_unknown_province_refused(self):
         table = [self.HEADER, ["합계", "1", "1"], ["평안남도 평양시 (9911000000)", "1", "1"]]
