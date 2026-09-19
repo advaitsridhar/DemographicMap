@@ -37,6 +37,9 @@ def log(msg: str) -> None:
 
 
 def download(handle: str) -> Path:
+    # The download's progress bar is thousands of carriage-returned updates,
+    # which the runner's log keeps every one of.
+    os.environ.setdefault("TQDM_DISABLE", "1")
     import kagglehub
     creds = bool(os.environ.get("KAGGLE_USERNAME")) and bool(os.environ.get("KAGGLE_KEY"))
     log(f"probe_kaggle: {handle} ({'with' if creds else 'without'} credentials)")
@@ -111,7 +114,7 @@ def probe(path: Path, terms: list[str], rows: int, max_values: int) -> None:
     var_labels, value_labels = labels_of(path) if path.suffix in {".dta", ".sav"} else ({}, {})
     log(f"    {len(cols)} columns")
     pattern = re.compile("|".join(re.escape(t) for t in terms), re.IGNORECASE)
-    hits = [c for c in cols if pattern.search(c) or pattern.search(var_labels.get(c, ""))]
+    hits = [c for c in cols if pattern.search(c) or pattern.search(var_labels.get(c) or "")]
     if not hits:
         log(f"    no column or label matches {terms}")
         return
@@ -122,7 +125,7 @@ def probe(path: Path, terms: list[str], rows: int, max_values: int) -> None:
         log(f"    (sample failed: {type(e).__name__}: {str(e)[:120]})")
         df = None
     for c in hits[:60]:
-        label = var_labels.get(c, "")
+        label = var_labels.get(c) or ""
         line = f"      {c}" + (f"  -- {label}" if label else "")
         if df is not None and c in df.columns:
             vals = df[c].dropna()
