@@ -1479,6 +1479,23 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Khmu is Khmuic, Phu Thai and Lue are Tai.
         "Katong", "Katang", "Khmou", "Khmu", "Makong", "Phouthay",
         "Phu Thai", "Lue", "Tai",
+        # Viet Nam's 54 recognised groups, spelled as its census prints
+        # them. Every one of them is a people of the mainland, which is the
+        # axis this branch uses, so the placement is certain even where the
+        # language family is argued over. Several are listed here because
+        # the shape rules read them wrongly otherwise: "Thái" (the Tai of
+        # the north-west) is not the Thai nationality, "Gia Rai" is not
+        # the Himalayan Rai, "Sán Chay" and "Sán Dìu" are not the San of
+        # the Kalahari, "Cờ Lao" is not Lao, and "Rơ Măm" is not a
+        # Mesoamerican Mam.
+        "Thái", "Thai (Viet Nam)", "Gia Rai", "Ê Đê", "Ba Na", "Xơ Đăng",
+        "Sán Chay", "Cơ Ho", "Sán Dìu", "Hrê", "Ra Glai", "Mnông", "Thổ",
+        "Xtiêng", "Stiêng", "Khơ Mú", "Bru-Vân Kiều", "Bru - Vân Kiều",
+        "Cơ Tu", "Giáy", "Tà Ôi", "Mạ", "Giẻ Triêng", "Giẻ-Triêng", "Co",
+        "Chơ Ro", "Xinh Mun", "Hà Nhì", "Chu Ru", "Lào", "La Chí", "Kháng",
+        "Phù Lá", "La Hủ", "La Ha", "Pà Thẻn", "Lự", "Lô Lô", "Chứt",
+        "Mảng", "Cờ Lao", "Bố Y", "Cống", "Si La", "Pu Péo", "Rơ Măm",
+        "Brâu", "Ơ Đu", "Mông", "H'Mông", "Dao",
     ),
     "Malagasy peoples": ("Sihanaka", "Masikoro", "Antesaka", "Antandroy",
                          # The rest of Madagascar's eighteen.
@@ -1620,7 +1637,9 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # census asks about religion there, and the honest answer is to say the
     # category is not an ancestry rather than to pick one for it.
     "Unclassified ethnicity answers": ("Hindou", "Musulman"),
-    "Han and Sinitic peoples": ("Hui",),
+    # Viet Nam's Hoa are its Han Chinese, and the Ngái its Hakka-speaking
+    # Chinese of the north-east; the census counts them as two groups.
+    "Han and Sinitic peoples": ("Hui", "Hoa", "Ngái"),
     # The Austronesian peoples of maritime south-east Asia that Indonesia,
     # Malaysia and Myanmar name beyond the tree's existing list.
     "Malay and Indonesian peoples": ("Banjarese", "Bantenese", "Sasak",
