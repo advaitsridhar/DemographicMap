@@ -6497,6 +6497,112 @@ citation of a small part with attribution and forbids redistribution; seven
 rows of one table are read from the PDF at the pollster's own URL, and the
 PDF is not stored.
 
+### South Korea: nationality as ethnicity, by the owner's decision
+
+Korea's census asks no ethnicity question, and the seventeen provinces and
+228 districts said so (`NOT_COLLECTED_POLICY["KOR"]`, "South Korea's census
+does not collect ethnicity") for as long as the map read only what a census
+asks. What the state does count is **nationality**: every Korean national is
+on the resident register, and every foreigner staying more than ninety days
+registers with the immigration office under Article 31 of the Immigration
+Act, by country of nationality. On **19 September 2026** the map's owner
+decided that Korea's ethnicity field should carry that count as a real
+composition under `ethnicity_basis: "nationality"`, the way Japan's
+prefectures carry their census's nationality table. The `KOR` entry left
+`NOT_COLLECTED_POLICY` that day; the substance of the declaration (no
+ethnicity question is asked) is now the second sentence of every row's
+note. `scripts/fetch_census/korea_nationality.py` is the decision, and it is
+a count, not a model: nothing in it estimates anything.
+
+**What was read**, all from the runner, no key:
+
+* **Foreign residents.** The Ministry of Justice's *registered foreign
+  residents by city/county/district and nationality* (법무부_시군구별 국적별
+  등록외국인 체류현황, data.go.kr dataset 15108413,
+  `https://www.data.go.kr/data/15108413/fileData.do`), a zip of two cp949
+  CSVs, 2022 and 2023, served without a key from the portal's file endpoint
+  (`fileDownload.do?atchFileId=FILE_000000002903067`). The 2023 file, at 31
+  December 2023, has 500 rows -- 250 units by sex, the districts of a city
+  that has them (수원시 장안구 ...) listed separately -- and 201 columns: 시도,
+  시군구, 성별, a total, and 196 nationalities from 한국계중국인 to 기타. The
+  reader sums the sexes and a city's districts into the city, and refuses a
+  row whose nationalities do not add up to its printed total.
+* **Koreans.** The Ministry of the Interior and Safety's resident
+  registration population (주민등록 인구통계) for December 2023, from the
+  Ministry's own site (`https://jumin.mois.go.kr/statMonth.do`). The site
+  serves the table only through a form: a dozen fields posted to
+  `downloadCsv.do?searchYearMonth=month&xlsStats=1` (the runner's probe of
+  the page printed them; `scripts/probe_post.py` exists to make that one
+  request) come back as a cp949 CSV of "행정구역 (code)", 총인구수 and 세대수.
+  One request with the province level "A" lists the seventeen provinces and
+  the national row (51,325,329 at December 2023); one request per province
+  lists its districts, with a city's own districts beside the city, told
+  apart by their code because a name does not say (Seoul's 광진구 is 11215
+  and has no parent 11210). data.go.kr's copy of the same table (dataset
+  3033301) is offered on application only, and its file endpoint never
+  answered the runner (`Connection timed out`, four times).
+
+**What the labels mean.** "Korean" is everyone on the resident register,
+naturalised citizens and people of any ancestry included. "Korean-Chinese"
+is the immigration statistics' own category 한국계 중국인 -- Chinese
+nationals of Korean descent, the 조선족 -- which the Ministry lists apart
+from other Chinese nationals and the map keeps apart, because folding it
+into "Chinese" would hide the largest foreign community in the country;
+"Chinese" is every other Chinese national. Nationalities with at least
+10,000 registered residents nationally are named (adjectives, singular:
+Vietnamese, Thai, Uzbek, Nepalese, Filipino, Cambodian, Indonesian,
+American, Burmese, Sri Lankan, Mongolian, Japanese, Russian, Kazakh ...);
+the rest are "Other nationalities". A nationality above the threshold that
+the label table does not know is a refusal, not a silent fold. Cambodian,
+Malaysian, East Timorese, Hong Konger and Ghanaian joined the group tree's
+"Other national identities" node under "Stated as a nationality"; the rest
+were already placed.
+
+**What is not counted, said on every row.** Registered foreigners are those
+who registered under the Immigration Act. Overseas Koreans of foreign
+nationality living in Korea on a domestic residence report (국내거소신고,
+the F-4 status, some half a million people, most of them Korean-Chinese)
+are a separate register and are not in the file, nor are short-term
+visitors or the undocumented; the resident register counts Koreans, not
+foreigners. So the foreign share is of *registered* foreign residents and
+runs below the share of all foreigners present, and the Korean-Chinese
+figure in particular is the registered part of that community.
+
+**The shapes.** All 228 districts are matched. geoBoundaries CGAZ draws
+twenty of them under the wrong province or under the country itself --
+Seoul's Eunpyeong-gu under Gyeonggi; Incheon's Seo-gu, Gyeyang-gu and
+Ganghwa-gun under Gyeonggi and Ongjin-gun under the country; Gwangju's
+Dong-gu, Seo-gu, Nam-gu and Gwangsan-gu under South Jeolla; Busan's
+Gangseo-gu and Gijang-gun under South Gyeongsang and Yeongdo-gu under the
+country; Daegu's Dalseong-gun and Gunwi-gun under North Gyeongsang;
+Daejeon's Dong-gu under North Chungcheong; Gyeongbuk's Uljin-gun under
+Gangwon; Jeonnam's Sinan-gun under the country. Each of those rows names the
+province the shape is drawn under as its `parent_name`, because that is the
+only way the join finds a Dong-gu among six, and its note says which
+province it is actually part of; the province rows sum the districts by
+their real province. Jeonnam's Yeonggwang-gun has no shape at all and counts
+in South Jeolla only. Cities with districts (Suwon, Seongnam, Goyang, Yongin,
+Ansan, Anyang, Cheongju, Cheonan, Jeonju, Pohang, Changwon) are one shape
+each and are summed from the file's district rows.
+
+**Checks.** The reader refuses to write anything if a row's nationalities
+do not sum to its printed total, if the seventeen provinces are not the
+seventeen the file is known to write, if the register's districts do not
+sum to its province row or its provinces to its national row, if a unit's
+shares do not make 100 within 0.3 points, if any of the 228 shapes has no
+row, or if a nationality above the naming threshold has no label.
+
+**Also found, and not used.** The Ministry of the Interior and Safety's
+annual *foreign residents by local government* (지방자치단체 외국인주민 현황,
+1 November 2023: `https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000014&nttId=113261`,
+a 4.2 MB xlsx), which counts foreign nationals of both registers -- the
+F-4 residence-report population included -- by district and by some twenty
+nationalities, beside the resident-registered Koreans. It would put the
+Korean-Chinese at their full size. `mois.go.kr` answered the runner about
+one request in two (`Connection timed out` on the rest), and the two
+registers above answered every time, so the registers were read first; the
+xlsx is the next pass.
+
 ### The African census sweep: reached, and not
 
 One runner pass over ten statistical offices, for the countries whose

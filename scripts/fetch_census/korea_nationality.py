@@ -73,7 +73,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, measure, record, write_json
+from ._shared import PROCESSED, RAW, download, http_get, log, measure, record, write_json
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import slugify  # noqa: E402
@@ -88,6 +88,11 @@ MOJ_DATASET = "https://www.data.go.kr/data/15108413/fileData.do"
 MOJ_URL = ("https://www.data.go.kr/cmm/cmm/fileDownload.do"
            "?atchFileId=FILE_000000002903067&fileDetailSn=1&insertDataPrcus=N")
 MOJ_MEMBER = "2023"
+# Both hosts answer a runner about one request in two, the rest ending in
+# a connect timeout, so what a run reads is kept under data/raw/korea (the
+# .gitignore admits it) and a later run reads the copy.
+KEEP = RAW / "korea"
+MOJ_FILE = KEEP / "moj_registered_foreigners_by_district_2022_2023.zip"
 MOJ_SOURCE = ("Ministry of Justice (Korea Immigration Service), registered foreign residents "
               "by city/county/district and nationality at 31 December 2023 "
               "(시군구별 국적(지역)별 등록외국인 체류현황, data.go.kr dataset 15108413)")
@@ -671,8 +676,11 @@ def inspect(url: str, rows: int, width: int, encoding: str) -> None:
 
 
 def fetch_moj() -> list[list[str]]:
-    blob = http_get(MOJ_URL, binary=True)
-    assert isinstance(blob, bytes)
+    blob = download(MOJ_URL, MOJ_FILE, timeout=90).read_bytes()
+    if not zipfile.is_zipfile(io.BytesIO(blob)):
+        MOJ_FILE.unlink()
+        raise SystemExit(f"korea_nationality: {MOJ_URL} answered {len(blob):,} bytes that are "
+                         "not the zip; the copy is discarded")
     found = members(blob)
     name = next((n for n in found if MOJ_MEMBER in n), None)
     if name is None:
@@ -697,14 +705,17 @@ def register_fields(level1: str, level2: str = ALL) -> list[tuple[str, str]]:
     ]
 
 
-def post_csv(url: str, fields: list[tuple[str, str]], *, retries: int = 3,
-             timeout: int = 180) -> list[list[str]]:
+def post_csv(url: str, fields: list[tuple[str, str]], *, keep: Path | None = None,
+             retries: int = 3, timeout: int = 45) -> list[list[str]]:
     """POST a form and read the CSV it answers with, cp949 as the site writes
     it whatever its header claims. A body that is not a CSV (the site's
-    error page is HTML) is a refusal, printed."""
+    error page is HTML) is a refusal, printed. With ``keep``, the answer is
+    written there and a file already there is read instead of asking."""
     import time
     import urllib.request
     from common import USER_AGENT
+    if keep is not None and keep.exists() and keep.stat().st_size > 0:
+        return rows_of(keep.read_bytes())
     data = urllib.parse.urlencode(fields).encode()
     delay = 3.0
     last: Exception | None = None
@@ -730,12 +741,20 @@ def post_csv(url: str, fields: list[tuple[str, str]], *, retries: int = 3,
         reason = re.findall(r"<li>([^<]{0,120})</li>", text)
         raise SystemExit(f"korea_nationality: the register answered a page, not a CSV: "
                          f"{reason[-1:] or text[:200]!r}")
-    return rows_of(blob)
+    table = rows_of(blob)
+    if keep is not None and register_rows(table):
+        keep.parent.mkdir(parents=True, exist_ok=True)
+        keep.write_bytes(blob)
+    return table
+
+
+def kept(level1: str) -> Path:
+    return KEEP / f"jumin_{REGISTER_YEAR}{REGISTER_MONTH}_{level1}.csv"
 
 
 def fetch_register(url: str) -> list[list[list[str]]]:
     """The province listing, then every province's district listing."""
-    provinces = post_csv(url, register_fields(ALL))
+    provinces = post_csv(url, register_fields(ALL), keep=kept(ALL))
     listed = [(area, code) for area, code, _ in register_rows(provinces) if area != "전국"]
     log(f"  register: {len(listed)} provinces listed")
     if len(listed) != 17:
@@ -743,7 +762,7 @@ def fetch_register(url: str) -> list[list[list[str]]]:
                          f"{[a for a, _ in listed]}")
     tables = [provinces]
     for area, code in listed:
-        table = post_csv(url, register_fields(code))
+        table = post_csv(url, register_fields(code), keep=kept(code))
         rows = register_rows(table)
         log(f"    {area}: {len(rows)} rows")
         tables.append(table)
