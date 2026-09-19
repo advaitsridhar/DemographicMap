@@ -374,9 +374,11 @@ county alike -- the assumption that makes the whole thing an estimate, since
 it says nothing about where mainlanders settled. Religion is `modelled`
 (`tier1-national-prior-tilted-by-religious-buildings`) from Pew's 2023
 national self-identification survey tilted by the Ministry of the Interior's
-registry of temples and churches by county, used only as a relative signal
-with the same threefold clip, absolute bounds on Christianity and "other",
-and no religion held at the national figure. **No backtest is possible** for
+registry of temples and churches by county -- a two-way signal, since the
+yearbook splits temples by tradition only nationally: churches tilt
+Christianity and temples the three temple traditions together -- used only
+as a relative signal with the same threefold clip, absolute bounds on
+Christianity and "other", and no religion held at the national figure. **No backtest is possible** for
 either estimate, since no county-level self-identification figure exists,
 and neither record carries a `backtest` key. `docs/SOURCES.md`, "Taiwan,
 resolved by the owner's decision", records what was read and where each

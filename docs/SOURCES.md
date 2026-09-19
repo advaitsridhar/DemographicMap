@@ -5810,6 +5810,11 @@ people who use Hakka at home at all.
   registered population from table 1.1 of the same bulletin. Both are the
   register, both are the same month, and the reader refuses them if their
   months differ or their counties do not sum to their own totals. The
+  workbooks (`statis.moi.gov.tw/micst/report/321010.xlsx` and `321040.xlsx`)
+  carry one sheet per year and one for the latest month, and the run read
+  the end of August 2026: 639,340 people of indigenous status among
+  23,224,721 registered residents (2.75%); Taitung 38.4%, Hualien 30.6%,
+  Pingtung 8.2%, Nantou 6.5%, Taipei 0.8%. The
   Council of Indigenous Peoples publishes the same count by people and
   county (台閩縣市原住民族人口-按性別族別, July 2026: 638,466, Amis 238,027)
   from the same register; it was read and agrees, and the Ministry's table
@@ -5850,20 +5855,38 @@ Wikipedia attributes to the State Department's religious-freedom report
 Yiguandao 2.2, Catholic 1.4) could not be read at its source and is not
 used. The county signal is the Ministry of the Interior's yearbook table
 宗教教務概況 (內政統計年報, section 6, table 01, `statis.moi.gov.tw`
-report 331030): registered temples by tradition and churches by county.
-Used only *relatively*, as for Japan: each tradition's share of a county's
-buildings over its share of the nation's, clipped to between 1/3 and 3,
-scales the survey's share; the four affiliated shares are rescaled to the
-survey's affiliated total; no religion is held at the national 27.6%
-because nothing gives it by county; Christianity and "other" are bounded at
-25% absolutely, so a county of village churches or one-room halls cannot
-come out mostly Christian on a building count. Buddhist temples tilt
-Buddhism, Taoist temples Taoism, churches Christianity, every other
-registered tradition "other". The record carries the ratios under `tilt`
-and any bound group under `capped`; the run log prints the five counties
-the tilt moves furthest from the prior. **No backtest exists and none is
-claimed**: there is no county-level self-identification figure to score
-against, so the estimate has no `backtest` key and its note says why.
+report 331030): registered temples and churches by county, from the
+workbook's latest county sheet (`2025(區域別)`, the end of 2025). The
+workbook splits temples by tradition (道教 9,824 of 12,397, 佛教 2,277,
+一貫道 243 ...) only in its national 宗教別 sheet, and the registry that
+would do it by county (`religion.moi.gov.tw`, the source of the open-data
+XML) answers nothing from the runner, so the signal is two-way: churches
+tilt Christianity, temples tilt Buddhism, Taoism and the other traditions
+together, and within a county those three keep the prior's proportions.
+Used only *relatively*, as for Japan: the county's church (temple) share of
+its registered buildings over the nation's (18.7% churches nationally),
+clipped to between 1/3 and 3, scales the survey's share; the four
+affiliated shares are rescaled to the survey's affiliated total; no
+religion is held at the national 27.6% because nothing gives it by county;
+Christianity and "other" are bounded at 25% absolutely. The bound is the
+model's admission of what the signal cannot tell apart: a church share is
+high where there are many Christians (Hualien, Taitung) and where there are
+few temples for the size of the city (Taipei, two churches for every
+temple), and the building count alone does not say which. The record
+carries the ratios under `tilt` (keyed `Temples` and `Churches`) and any
+bound group under `capped`; the run log prints the five counties the tilt
+moves furthest from the prior. In the run of 19 September 2026 (buildings
+at the end of 2025) they were Taipei (280 temples, 564 churches), Taitung
+(222, 282) and Hualien (194, 260), each 17.9 points from the prior with
+Christianity held at the bound, then Taoyuan (8.0 points, Christianity
+15.2%) and Hsinchu County (7.1, 14.2%); the temple-heavy west moves two to
+three points the other way (Yunlin: Christianity 2.2%, Taoism 26.4%).
+Taitung and Hualien are the counties where a third of residents hold
+indigenous status and most indigenous Taiwanese are Christian, so their
+bound is likely near the truth; Taipei's is the artefact the bound exists
+for, and its record says so. **No backtest exists and none is claimed**:
+there is no county-level self-identification figure to score against, so
+the estimate has no `backtest` key and its note says why.
 
 **What remains unknowable.** Whether anyone in a given county has a
 religion: the model repeats Pew's national 27.6% no-religion on Hualien and
