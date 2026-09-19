@@ -1,264 +1,68 @@
-probe_pdf: https://www.dsec.gov.mo/getAttachment/6cb29f2f-524a-488f-aed3-4d7207bb109e/E_CEN_PUB_2021_Y.aspx
-  44,394,225 bytes
-  147 pages
-probe_pdf: 149 pages, 26 mention ['Nationality', 'Usual']
-=== front matter ===
-DETAILED RESULTS OF 
-2021 POPULATION CENSUS 
-(Revised Version) 
-Fur
-ther information can be obtained from the 
-Documentation and Information Centre of the Statistics and Census Service 
-Alameda Dr. Carlos d´Assumpção, No. 411 - 417, 
-Dynasty Plaza, 17th floor, Macao 
-T
-el: 8399 5311 
-Fax: 2830 7825 
-E-mail: info@dsec.gov.mo
-Website: https://www.dsec.gov.mo 
-Official Statistics 
-Reproduction of these data is allowed provided the source is quoted 
- Scan the QR code to download the latest data
+probe_page: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=2
+  retry 1/4 after 2s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=2 :: <urlopen error timed out>
+  retry 2/4 after 4s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=2 :: <urlopen error timed out>
+  retry 3/4 after 8s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=2 :: <urlopen error timed out>
+  retry 4/4 after 16s :: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=2 :: <urlopen error timed out>
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
+    self.send(msg)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
+    self.connect()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
+    super().connect()
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
+    raise exceptions[0]
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
 
+During handling of the above exception, another exception occurred:
 
-=== pages mentioning ['Nationality', 'Usual'] (first 14) ===
+Traceback (most recent call last):
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 630, in http_get
+    with opener(req, timeout=timeout) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
 
---- page 3 ----------------------------------------------------
-Analysis of Results
-1. T
-otal Population and Principal Demographic Characteris tics
-1.1 Total Population ..................................... .......................................................................... 5
-1.2 Age and Gender Structures .............................................................................................. 6
-1.3 Place of Birth .................................................................................................................... 9
-1.4 Nationality and Ethnicity ................................................................................................ 10
-1.5 Marital Status ................................................................................................................. 11
-1.6 Education Level .............................................................................................................. 13
-– Educational Attainment .......................................................................................... 13
-– School Attendance .................................................................................................. 16
-– Literacy .................................................................................................................... 16
-1.7 Language Skills ............................................................................................................... 16
+The above exception was the direct cause of the following exception:
 
---- page 10 ----------------------------------------------------
-Chart 8: Distribution of Population by Place of Birth
-Regarding the local population, 49.5% (281,381) of them were born in Macao, an increase of 2.9
-percentage points from 46.6% in 2011, and those born in mainland China accounted for 42.5% (241,909).
-Analysed by age, 69.5% of the local population aged below 40 were born in Macao, whereas the majority of
-those aged 40 and above were born in mainland China, at 61.9%.
-1.4  Nationality and Ethnicity
-In terms of nationality, 89.2% (608,379) of the total population were of Chinese nationality, down by 3.1
-p
-ercentage points from 2011. The population of Portuguese nationality increased by 3,971 from ten years
-ago to 8,991, and its proportion in the total population rose by 0.4 percentage points to 1.3%. In the light of
-economic development, there was an increase in the number of people coming from other places to work in
-Macao compared to 2011, and the composition of the population became more diverse. The proportion of
-population of other nationalities (64,700) grew by 2.7 percentage points to 9.5%; Filipinos and Vietnamese
-comprised 5.0% and 1.8% of the total population respectively.
-Analysed by ethnicity, the population of Chinese ethnicity totalled 609,863, taking up 89.4% of the total
-
---- page 16 ----------------------------------------------------
-groups recorded a rise, with the rate for the elderly population (aged 65 and above) rising markedly by 17.4
-percentage points over 2011 to 89.9%.
-Meanwhile, the proportion of those aged 15 and above who cannot read or write was just 1.9%, a drop
-of 2.0 percentage points from 2011. The corresponding share for females was 2.6%, higher than that for males
-(1.0%); yet, the gap between them narrowed compared to 2011.
-1.7  Language Skills
- Of the population aged 3 and above, 81.0% used Cantonese as their usual language, a fall of 2.3
-perce
-ntage points over 2011; 5.4% used other Chinese dialects and 4.7% used Mandarin, both down by 0.3
-percentage points. With an increase in incoming migrants from other countries/territories, the proportion of
-those who used English as their usual language expanded notably by 1.3 percentage points from ten years
-ago to 3.6%.
-Regarding the overall language skills, 86.2% of the population were fluent in Cantonese, down by 3.8
-percentage points from 2011; those who were fluent in Mandarin and English took up 45.0% and 22.7%
-respectively, up by 3.6 percentage points and 1.6 percentage points. Besides, the proportion of those who
-spoke fluent Portuguese nudged down by 0.1 percentage point to 2.3%.
-Detailed Results of 2021 Population Census
-
---- page 40 ----------------------------------------------------
-Characteristics
-2021 2011
-No. Structure (%)  No. Structure (%)
-Population aged 3 and above 663 782 539 131
-Usual language
-Chinese 605 418 91.2 506 993 94.0
-Cantonese 537 981 81.0 449 274 83.3
-Mandarin 31 405 4.7 27 129 5.0
-Other Chinese dialects 36 032 5.4 30 590 5.7
-Portuguese 3 949 0.6 4 022 0.7
-English 23 635 3.6 12 155 2.3
-
---- page 45 ----------------------------------------------------
-of Macao - Revision 1 (CAM-Rev. 1).
- Labour force participation rate
-The pr
-oportion of the economically active population to the population aged 16 and above.
- Length of residence in Macao
-Number
- of complete years since an individual has established his or her usual residence in Macao. Any
-period of continuous absence from Macao for six months or more has to be deducted in reckoning the period.
- Literacy rate
-Percen
-tage share of individuals aged 15 and above who are able to read and write, with understanding,
-simple statements on their everyday life.
- Local population
-
---- page 46 ----------------------------------------------------
- Nationality
-Status
- of being a national of a country.
- Non-relative household
-Compos
-ed of household members who are unrelated to each other, e.g. person from the same
-hometown, colleague or friend. It also includes households with only live-in domestic helpers.
-      ...
- Overall dependency ratio
-Percen
-tage share of the populations aged 0-14 and aged 65 and above to the population aged 15-64.
- Place of previous residence
-Countr
-y or territory outside Macao where an individual had lived for at least 6 months before staying in
-Macao as the place of usual residence.
- Place of usual residence
-Place w
-here an individual usually lives during the reference period. If an individual stayed mostly in
-Macao during the 6 months before or after the census moment, his/her place of usual residence would be
-Macao; otherwise, it would be of other country or territory.
- Relative household
-Compos
-ed of household members who are related to each other, including spouse, children, parents,
-siblings, etc. It may or may not include other unrelated persons living together (e.g. domestic helpers). This
-type of household may consist of the following:
-
---- page 47 ----------------------------------------------------
-– Owner-occupied unit (property of household head/household members)
-– Rental unit
-– Employer-provided
-– Others
- Total population
-Su
-m of usual population and mobile population.
-Detailed Results of 2021 Population Census47
-
---- page 48 ----------------------------------------------------
-Apart from the abovementioned conditions, individuals who fulfil the following conditions will also be
-considered as unemployed:
-– have neither a job nor job attachment to the employer, and have sought work, but unable to start
-work immediately due to temporary illness or childbirth; or
-– have neither a job nor job attachment to the employer, and available to work immediately, but
-have not sought work because they will resume work on an agreed date or after 30 days.
- Usual language
-The lan
-guage an individual mostly used at home.
- Usual population
-Indivi
-duals staying in Macao for at least three months during the six months before or after the census
-moment.
- Youth dependency ratio
-Percen
-tage share of the population aged 0-14 to the population aged 15-64.
-
---- page 52 ----------------------------------------------------
-collects basic information of the population such as gender and year and month of birth. Meanwhile,
-households of one-seventh of the building units selected at random were required to answer the long-form
-questionnaire, which collects detailed information such as ethnicity, nationality, place of previous residence,
-education, employment and earnings.
-As regards questionnaire content, questions about disability were removed from this round of Census to
-reduce response burden, given that data on people with disabilities from the “System for Classification,
-Registration and Certification of Disability” are fairly comprehensive. In view of population ageing, questions
-on caregivers of individuals aged 60 and above with self-care disability were added to the Census.
-With the popularisation and rapid development of information technology, relevant technology was
-
---- page 56 ----------------------------------------------------
-1-4 years 19 698 553 2.81
-5-9 years 38 034 991 2.61
-10-14 years 30 546 474 1.55
-15-19 years 26 619 747 2.81
-20-24 years 21 749 241 1.11
-≧25 years 146 978 1 085 0.74
-Usual language
-Cantonese 537 981 1 480 0.28
-Mandarin 31 405 1 164 3.71
-Other Chinese dialects 36 032 1 176 3.26
-Portuguese 3 949 276 6.99
-English 23 635 1 819 7.70
-Educational attainment
-
---- page 59 ----------------------------------------------------
-2 Population in parishes of Santo António, São Lázaro and São Lourenço by gender
-and age group ........................................................................................................................................ 62
-3 Population in parishes of Sé and Nossa Senhora de Fátima by gender and age group ......................... 63
-4 Population in the islands by gender and age group ............................................................................... 64
-Other demographic characteristics
-5 Population by gender, age group and place of birth .............................................................................. 65
-6 Population by gender, age group and nationality .................................................................................. 66
-7 Population by gender, age group and ethnicity ..................................................................................... 67
-8 Population by gender, age group and marital status ............................................................................. 68
-9 Population by gender, age group and educational attainment .............................................................. 69
-10 Population by gender, age group and usual language ........................................................................... 70
-11 Population by gender, age group and language skills ............................................................................ 71
-Economic activity status
-12 Economically active and inactive population by gender and age group ................................................ 72
-13 Economically active and inactive population by marital status ............................................................. 73
-14 Economically active and inactive population by educational attainment.............................................. 74
-15 Employed population by gender, age group and status in employment ............................................... 75
-
---- page 60 ----------------------------------------------------
-24 Local population in parishes of Santo António, São Lázaro and São Lourenço
-by gender and age group ....................................................................................................................... 84
-25 Local population in parishes of Sé and Nossa Senhora de Fátima by gender and age group ................ 85
-26 Local population in the islands by gender and age group ...................................................................... 86
-Other characteristics of local population
-27 Local population by gender, age group and place of birth ..................................................................... 87
-28 Local population by gender, age group and nationality ......................................................................... 88
-29 Local population by gender, age group and ethnicity ............................................................................ 89
-30 Local population by gender, age group and marital status .................................................................... 90
-31 Local population by gender, age group and educational attainment .................................................... 91
-32 Land-based local population attending school by age group and educational attainment ................... 92
-33 Local population with tertiary education by academic discipline and type of degree .......................... 93
-34 Local population with tertiary education by gender, age group and number of degrees
-obtained  ............................................................................................................................................... 94
-35 Local population by gender, age group and the ability to read and write ............................................. 95
-36 Local population by gender, age group and usual language .................................................................. 96
-37 Local population by gender, age group and language skills ................................................................... 97
-38 Migration flows of land-based local population by gender ................................................................... 98
-Economic activity status of local population
-39 Local economically active and inactive population by gender and age group ....................................... 99
-40 Local employed population by industry and employment earnings in July 2021 ................................ 100
-41 Local employed population by occupation and employment earnings in July 2021 ........................... 101
-
---- page 61 ----------------------------------------------------
-46 Non-Macao born land-based local population by length of residence in Macao and
-place of birth ........................................................................................................................................ 106
-Population by statistical district
-47 Demographic indicators by statistical district ...................................................................................... 107
-48 Demographic indicators for local population by statistical district ...................................................... 108
-49 Land-based population by statistical district and place of birth .......................................................... 109
-50 Land-based population by statistical district and nationality .............................................................. 110
-51 Land-based population by statistical district and educational attainment .......................................... 111
-52 Land-based population by statistical district and marital status .......................................................... 112
-53 Land-based economically active and inactive population by statistical district .................................. 113
-54 Land-based employed population by statistical district and status in employment............................ 114
-55 Land-based employed population by statistical district and industry ................................................. 115
-56 Land-based employed population by statistical district and occupation ............................................. 118
-57 Non-Macao born land-based local population by statistical district and length of
-residence in Macao .............................................................................................................................. 122
-Usual population
-58 Usual population by gender, age group and parish ............................................................................. 123
-59 Usual population by gender, age group and place of birth .................................................................. 124
-60 Usual population by gender, age group and nationality ...................................................................... 125
-61 Usual population by gender, age group and ethnicity ......................................................................... 126
-62 Usual population by gender, age group and educational attainment .................................................. 127
-63 Usual population by gender, age group and marital status ................................................................. 128
-64 Local usual population by gender, age group and parish ..................................................................... 129
-Detailed Results of 2021 Population Census59
-
---- page 68 ----------------------------------------------------
-6 POPULATION BY GENDER, AGE GROUP AND NATIONALITY
-Total Chinese Filipino Other Asian countries Portuguese Others
-MF 682 070 608 379 33 896 26 640 8 991 4 164
-M 320 285 291 118 12 193 9 716 4 695 2 563
-F 361 785 317 261 21 703 16 924 4 296 1 601
-MF 32 464 31 041  480  126  632  185
-M 16 863 16 162  238  48  305  110
-
-... and 12 further pages match; re-run with a narrower --terms to see them.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 157, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_page.py", line 145, in main
+    body = http_get(args.url)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 651, in http_get
+    raise RuntimeError(f"GET failed after {retries} retries: {url}") from last
+RuntimeError: GET failed after 4 retries: https://religion.moi.gov.tw/ChartReport/Index?ci=1&cid=2
