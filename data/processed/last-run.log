@@ -1,2014 +1,526 @@
-china_wiki: 31 divisions from the en Wikipedia through the MediaWiki API
-  [en] 'Beijing': 258,451 bytes of wikitext
-== Beijing Municipality ([en] 'Beijing'): 4 tables
-         table 0: 1 rows; section 'Administrative divisions'; caption 'Administrative divisions of Beijing'; year 2010
+china_wiki: 31 divisions from the zh Wikipedia through the MediaWiki API
+  [zh] '北京市': 128,470 bytes of wikitext
+== Beijing Municipality ([zh] '北京市'): 6 tables
+         table 0: 6 rows; section '四至及地理中心'; caption ''; year None
+         header: ['方位', '位置', '经纬度']
+         table 1: 22 rows; section '现代'; caption ''; year 2022
+         header: ['北京市行政区划图']
+         table 2: 6 rows; section '四大机构'; caption '北京市四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 北京市委员会 书记', '25 北京市人民代表大会 常务委员会 主任', '25 北京市人民政府 市长', '25 中国人民政治协商会议 北京市委员会 主席']
+         table 3: 19 rows; section '人口'; caption '北京市各区人口数据（2024年末）'; year 2024
+         header: ['区划名称', '! colspan=3 | 常住人口', '! rowspan=2 | 户籍人口 （万人）']
+         table 4: 1 rows; section '宗教'; caption ''; year 2010
          header: ['']
-         table 1: 19 rows; section 'Administrative divisions'; caption ''; year 2020
-         header: ['Division', 'Area in km 2', 'Total population 2020', 'Urban area population 2020', 'Seat', 'Postal code', 'Subdivisionsdate=September 201']
-         table 2: 18 rows; section 'Administrative divisions'; caption 'Divisions in Chinese'; year 2010
-         header: ['English', 'Chinese', 'Pinyin']
-         table 3: 24 rows; section 'Economy'; caption 'Historical GDP of Beijing for 1978–present (SNA2008) (purchasing power parity of Chinese Yuan, as international dollar based on IMF WEO October&nbsp;2022)'; year 2022
-         header: ['Year', 'CNY (millions)', 'USD (millions)', "PPP (Int'l$) (millions)", 'Real growth (%)', 'CNY per capita*', 'USD per capita*', "PPP (Int'l$.) per capita*", 'Reference index: USD 1 to CNY', "Reference index: Int'l$. 1 to "]
-   infobox: | demographics_type1 = [[List of ethnic groups in China|Ethnic groups]]
-   infobox: | demographics1_footnotes =
-   infobox: | demographics1_title1 = [[Han Chinese|Han]]
-   infobox: | demographics1_info5 = 0.7%
-   infobox: | demographics_type2 = [[Gross domestic product|GDP]] {{normal|(2025)}}
-   infobox: | demographics2_title1 = Municipality
-   infobox: | demographics2_info1 = [[CN¥]] 5,207 billion ([[List of Chinese provincial-level divisions by GDP|13th]])
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥ 239,000 ([[List of Chinese provincial-level divisions by GDP per capita|1st]])
-   infobox: | demographics1_info1 = 95%
-   section "People's Republic of China":
-      In the final phases of the [[Chinese Civil War]], the [[People's Liberation Army]] seized control of the city peacefully on 31&nbsp;January 1949 in the course of the [[Pingjin Campaign]]. On 1&nbsp;October that year, [[Mao Zedong]] announced the creation of th
-      In the 1950s, the city began to expand beyond the old walled city and its surrounding neighborhoods, with heavy industries in [[Shijingshan District|the west]] and residential neighborhoods in [[Hepingli Subdistrict, Beijing|the north]]. Many areas of the [[Be
-      During the [[Cultural Revolution]] from 1966 to 1976, the [[Red Guard (China)|Red Guard]] movement began in Beijing and the city's government fell victim to one of the first purges. By the autumn of 1966, all city schools were shut down and over a million Red 
-      In April 1976, a large public gathering of Beijing residents in Tiananmen Square, protesting against the [[Gang of Four]] and the Cultural Revolution, [[1976 Tiananmen incident|was forcefully suppressed]]. In October 1976, the Gang was arrested in [[Zhongnanha
-      Since the early 1980s, the urban area of Beijing has expanded greatly with the completion of the 2nd Ring Road in 1981 and the subsequent addition of the [[3rd Ring Road (Beijing)|3rd]], [[4th Ring Road|4th]], [[5th Ring Road|5th]] and [[6th Ring Road|6th]] ri
-      In terms of international connectedness, as of 2024, Beijing was one of eight cities worldwide that was classified as an "Alpha+" city by the [[Globalization and World Cities Research Network]].
-      <gallery mode="packed">
-      File:Mao Proclaiming New China.JPG|On 1 October 1949, [[Mao Zedong]] announced the [[Proclamation of the People's Republic of China|founding of the People's Republic of China]]
-      File:1967-11 1967年 北京大学大字报.jpg|College students hang  political posters during [[Culture Revolution]]
-      File:Beijing-1978 Huabiao Tiananmen Square Paul Burns.jpg|[[Tian'anmen Square]] in 1978
-      File:2008 Summer Olympics opening ceremony - Fireworks.jpg|Fireworks illuminate the [[Beijing National Stadium|National Stadium]] ("Bird's Nest") during the opening ceremony of the [[2008 Summer Olympics]], Beijing.
-      </gallery>
-   section 'Demographics':
-      {{Main|Demographics of Beijing}}
-      {{Historical populations
-      |type=China
-      |percentages = pagr
-      |1953|276,8149
-      |1964|756,8495
-      |1982|923,0687
-      |1990|10,819,407
-      |2000|13,569,194
-      |2010|19,612,368
-      |2020|21,893,095
-      |footnote = Population size may be affected by changes on administrative divisions.
-      |}}
-      In 2024, Beijing had a total population of 21.83 million within the municipality, of which 19.26 million (88.2 percent) resided in urban districts or suburban townships and 2.57 million (11.8) lived in rural villages. The encompassing [[metropolitan area]] was
-      Within China, the city ranked [[List of cities in China by population|second in urban population]] after Shanghai and the [[Direct-controlled municipalities of China|third in municipal population]] after Shanghai and Chongqing. Beijing also ranks among the mos
-      About 13 million of the city's residents in 2013 had local [[Hukou system|''hukou'' permits]], which entitles them to permanent residence in Beijing. The remaining 8 million residents had ''hukou'' permits elsewhere and were not eligible to receive some social
-      The population increased in 2013 by 455,000 or about 7% from the previous year and continued a decade-long trend of rapid growth. The total population in 2004 was 14.213 million. The population gains are driven largely by migration. The population's [[rate of 
-      Working age people account for nearly 73.6% of the population. Compared to 2004, residents age 0–14 as a proportion of the population dropped from 9.95% to 9.92% in 2013, but again increased to 12.1% in 2021. Residents over the age of 65 declined from 11.12% t
-      According to the 2010 census, nearly 96% of Beijing's population are ethnic [[Han Chinese]]. Of the 800,000 ethnic minority population living in the capital, [[Manchu people|Manchu]] (336,000), [[Hui people in Beijing|Hui]] (249,000), [[Korean people in Beijin
-      In 2017 the Chinese government implemented population controls for Beijing and Shanghai to fight what it called the "big city disease" which includes congestion, pollution, and shortages of education and health care services. From this policy, Beijing's popula
-  [en] 'Tianjin': 145,163 bytes of wikitext
-== Tianjin Municipality ([en] 'Tianjin'): 3 tables
-         table 0: 19 rows; section 'Administrative divisions'; caption 'Administrative divisions of Tianjin'; year 2018
-         header: ['Division code', 'Division', 'Area in km 2 date=September 20', 'Total population 2010', 'Urban area population 2010', 'Seat', 'Postal code', 'Subdivisionsdate=September 201']
-         table 1: 18 rows; section 'Administrative divisions'; caption 'Divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 2: 13 rows; section 'Economy'; caption ''; year None
-         header: ['Skyscrapers in Tianjin', 'Meters', 'Feet']
-   infobox: | demographics_type2 = GDP(2025)
-   infobox: | demographics2_title1 = Municipality
-   infobox: | demographics2_info1 = [[CN¥]] 1,85 billion ([[List of Chinese provincial-level divisions by GDP|24th]])<br />[[US$]] 266 billion
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥ 133,420 ([[List of Chinese provincial-level divisions by GDP per capita|6th]]) <br /> US$ 19,153
-   section 'Demographics':
-      {{Historical populations
-      |type=China
-      |1953|2693831
-      |1982|7764141
-      |1990|8785402
-      |2000|9848731
-      |2010|12938224
-      |2020|13866009
-      |footnote = Population size may be affected by changes on administrative divisions.
-      |}}
-      At the end of 2009, the population of Tianjin Municipality was 12.28&nbsp;million, of which 9.8&nbsp;million owned and lived in Tianjin ''[[Hukou system|hukou]]'' (permanent residences). Among permanent residents of Tianjin, 5.99&nbsp;million lived in urban ar
-      The encompassing [[metropolitan area]] was estimated by the [[OECD]] (Organization for Economic Cooperation and Development) to have, {{As of|2010|lc=y}}, a population of 15.4 million.
-      The majority of Tianjin residents are [[Han Chinese]]. People from 51 out of the 55 minor Chinese ethnic groups live in Tianjin. [[List of ethnic groups in China|Minorities]] with higher populations in the city include [[Hui people|Hui]], [[Koreans|Korean]], [
-      {| class="wikitable"
-      |-
-      ! style="text-align:center;" colspan="3"| Ethnic groups in Tianjin, 2000 census
-      |-
-      ! [[List of ethnic groups in China|Ethnicity]] !! Population !! Percentage
-      |-
-      | [[Han Chinese|Han]] || 9,581,775 || 97.29%
-      |-
-      | [[Hui people|Hui]] || 172,357 || 1.75%
-      |-
-      | [[Manchu people|Manchu]] || 56,548 || 0.57%
-      |-
-      | [[Mongols]] || 11,331 || 0.12%
-      |-
-      | [[Korean people|Korean]] || 11,041 || 0.11%
-      |-
-      | [[Zhuang people|Zhuang]] || 4,055 || 0.041%
-      |-
-      | [[Tujia people|Tujia]] || 3,677 || 0.037%
-      |}
-      The graph above excludes members of the [[People's Liberation Army]] in active service.
-   section 'Notable people from Tianjin':
-      * [[Hou Baolin]] (1917{{ndash}}1993; [[xiangsheng]] performer)
-      * [[Xia Baolong]] (1952{{ndash}}; Chinese politician and member of the [[National People's Congress Environment Protection and Resources Conservation Committee]])
-      * [[Zhang Boli (physician)|Zhang Boli]] (1948{{ndash}}; [[traditional Chinese medicine]] practitioner)
-      * [[Qin Gang]] (1966{{ndash}}; former Chinese Ambassador to the United States and current Chinese foreign minister)
-      * [[Yu Genwei]] (1974{{ndash}}; professional football midfielder; manager)
-      * [[Wang Hao (diver)|Wang Hao]] (1992{{ndash}}; diver who is a world champion)
-      * [[Liu Huan]] (1963{{ndash}}; modern singer and songwriter; professor of western music at the [[University of International Business and Economics (Beijing)|Beijing University of International Business and Economics]])
-      * [[Li Ruihuan]] (1934{{ndash}}; Chairman of the Chinese People's Political Consultative Conference from 1993 to 2003)
-      * [[Wen Jiabao]] (1942{{ndash}}; [[Premier of the People's Republic of China|premier of China]] from 2003 to 2013)
-      * [[Hao Jingfang]] (1987{{ndash}}; science-fiction writer)
-      * [[Harry Kingman]] (1892{{ndash}}1982; the only major league baseball player born in China)
-      * [[Robert Ya Fu Lee]] (1913–1986; actor)
-      * [[Ching Chun Li]] (1912–2003); human geneticist
-      * [[Eric Liddell]] (1902{{ndash}}1945; Olympic gold medalist)
-      * [[Gao Lingwei]] (1870{{ndash}}1940; former [[premier of the Republic of China]] 1923–1924)
-      * [[Gao Lingwen]] (1862–1945; founder of Tianjin's first public school)
-      * [[Adeline Yen Mah]] (1937{{ndash}}; Chinese-born American author of ''Falling Leaves'' and ''Chinese Cinderella: The Secret Story of an Unwanted Daughter'')
-      * [[Lemon Zhang|Zhang Meng]] (1988{{ndash}}; actress)
-      * [[Yu Min (physicist)|Yu Min]] (1926{{ndash}}2019; nuclear physicist who is referred to as "the father of [[Test No. 6|Chinese Hydrogen Bomb]]")
-      * [[Zhang Pengxiang]] (1980{{ndash}}; chess grandmaster)
-      * [[Liu Ping (sprinter)|Liu Ping]] (1984{{ndash}}; [[Paralympic Games|Paralympic]] gold medalist sprinter)
-      * [[Chang Po-ling]] (1876{{ndash}}1951; founder of [[Nankai University]])
-      * [[Wang Qiang (tennis)|Wang Qiang]] (1992{{ndash}}; Chinese professional female tennis player)
-      * [[Zhou Ruchang]] (1918{{ndash}}2012; Chinese [[Redology|Redologist]] and calligrapher)
-      * [[Shao Fang Sheng]] (1917–2009; Chinese artist)
-      * [[Peng Shuai]] (1986{{ndash}}; Chinese professional female tennis player)
-      * [[Zhang Shuai (tennis)|Zhang Shuai]] (1989{{ndash}}; Chinese professional female tennis player)
-      * [[Lubert Stryer]] (1938{{ndash}}2024; American professor of biochemistry)
-      * [[Lam Suet]] (1964{{ndash}}; actor from Hong Kong)
-      * [[Hu Xianxu]] (2000{{ndash}}; Chinese actor)
-      * [[Wu Ma|Fung Wang-yuen (Wu Ma)]] (1942{{ndash}}2014; actor, director, producer, and writer for movies)
-      * [[Tan Xue]] (1984{{ndash}}; Olympic and world champion fencer)
-      * [[Zhao Yanming]] (1981{{ndash}}; professional football goalkeeper)
-      * [[Sun Yaoting]] (1902{{ndash}}1992; last surviving imperial [[eunuch]] from China)
-      * [[Shang Yi]] (1979{{ndash}}; professional football midfielder and sports commentator)
-      * [[Yang Yi (translator)|Yang Yi]] (1919–2023; translated ''[[Wuthering Heights]]'' into Chinese)
-      * [[Chen Yibing]] (1984{{ndash}}; world champion and Olympic gold medal-winning gymnast)
-      * [[Xu Yifan]] (1988{{ndash}}; professional tennis player)
-      * [[Yu Ying-shih]] (1930{{ndash}}2021; historian and [[Sinology|Sinologist]])
-      * [[Duan Yingying]] (1989{{ndash}}; Chinese professional female tennis player)
-      * [[Cui Yongyuan]] (1963{{ndash}}; television personality)
-      * [[Ed Young (illustrator)|Ed Tse-chun Young]] (1931{{ndash}}2023; award-winning Chinese-American children's book writer and illustrator)
-      * [[Huo Yuanjia]] (1868{{ndash}}1910; Chinese martial artist and co-founder of the [[Chin Woo Athletic Association]])
-      * [[Zhang Yuxuan]] (1994{{ndash}}; professional female tennis player)
-      * [[An Zhongxin]] (1971{{ndash}}; Olympic silver medalist for softball)
-  [en] 'Hebei': 66,259 bytes of wikitext
-== Hebei Province ([en] 'Hebei'): 4 tables
-         table 0: 5 rows; section 'Geography'; caption 'Average daily maximum and minimum temperatures for selected locations in Hebei Province, China'; year None
-         header: ['City', 'July (°C)', 'July (°F)', 'January (°C)', 'January (°F)']
-         table 1: 12 rows; section 'Administrative divisions'; caption ''; year 2020
-         header: ['Division code', 'Division', 'Area (km 2 )', 'Population (2020)', 'Seat', 'Districts', 'Counties', 'Autonomous counties', 'County-level cities']
-         table 2: 13 rows; section 'Administrative divisions'; caption ''; year 2020
-         header: ['#', 'City', '2020 Urban Area', '2010 Urban Area', '2020 City Population']
-  ETHNIC table 3: 6 rows; section 'Demographics'; caption 'Ethnic groups in Hebei, 2000 census'; year 2000
-         header: ['Nationality', 'Population', 'Percentage']
-         prose : 'The population in Hebei is mostly Han Chinese. There are 55 ethnic minorities in Hebei, representing 4.27% of the total population. The largest ethnic groups are Manchu (2.1 million people), Hui (600,'
-         row   : ['Han Chinese', '63,781,603', '95.65%']
-         row   : ['Manchu', '2,118,711', '3.18%']
-         row   : ['Hui', '542,639', '0.78%']
-         row   : ['Mongol', '169,887', '0.26%']
-         row   : ['Zhuang', '20,832', '0.031%']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl|[[Han Chinese|Han]]: 96%|[[Manchu]]: 3%|[[Hui people|Hui]]: 0.8%|[[Mongol]]: 0.3%}}
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = [[Jilu Mandarin]], [[Beijing dialect|Beijing Mandarin]], [[Jin Chinese|Jin]]
-   infobox: | demographics_type2 = [[Gross domestic product|GDP]] {{nobold|(2025)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CNY|4,931 billion}} ([[List of Chinese provincial-level divisions by GDP|13th]]; US$690 billion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CNY|66,936}} ([[List of Chinese provincial-level divisions by GDP per capita|26th]]; US$9,371)
-   section "People's Republic of China":
-      The capital was also moved from [[Baoding]] to the new city of [[Shijiazhuang]], and, for a short period, to [[Tianjin]]. On July 28, 1976, [[Tangshan]] was struck by the [[Tangshan earthquake]], the deadliest earthquake of the 20th century, killing over 240,0
-      Today, Hebei, along with [[Beijing]] and [[Tianjin]] municipalities which it includes, make up the [[Jing-Jin-Ji]] megalopolis region. With a population of 130 million, it is about six times the size of the [[New York metropolitan area]] and is one of the larg
-   section 'Demographics':
-      The population in Hebei is mostly [[Han Chinese]]. There are 55 ethnic minorities in Hebei, representing 4.27% of the total population. The largest ethnic groups are [[Manchu]] (2.1 million people), [[Hui people|Hui]] (600,000 people), and [[Mongol]] (180,000 
-      {| class="wikitable"
-      ! colspan="3" align="center" | Ethnic groups in Hebei, 2000 census
-      |-
-      ! [[Nationalities of China|Nationality]] !! Population !! Percentage
-      |-
-      | [[Han Chinese]] || 63,781,603 || 95.65%
-      |-
-      | [[Manchu]] || 2,118,711 || 3.18%
-      |-
-      | [[Hui people|Hui]] || 542,639 || 0.78%
-      |-
-      | [[Mongol]] || 169,887 || 0.26%
-      |-
-      | [[Zhuang people|Zhuang]] || 20,832 || 0.031%
-      |}
-      In 2019, the [[birth rate]] was 10.83 births per 1,000 people, while the [[death rate]] was 6.12 deaths per 1,000 people. The male population is 37,679,003 (50.50%), the female population is 36,931,232 (49.50%). The gender ratio of the total population was 102
-   section 'Notable people':
-      *[[Zu Chongzhi]] (429–500) – astronomer, mathematician, politician, inventor, and writer known for calculating [[pi]] to an accuracy that was not surpassed for 800 years
-      *[[Feng Dao]] (881–954) – inventor, printer, and politician
-      *[[Zhang Fei]] (?–221) – military general during the [[Eastern Han dynasty]] and [[Three Kingdoms period]] who became [[Blood brother|sworn brothers]] with [[Liu Bei]] and [[Guan Yu]]
-      *[[Xia Gengqi]] (born 1933) – [[curator]] in the [[Collections of the Palace Museum|Beijing Palace Museum]]
-      *[[Qin Shi Huang]] (259 BC–210 BC) – founder of the [[Qin dynasty]] and the [[Emperor of China|first emperor of a unified China]]（Born in Hebei）
-      *[[Guo Jingjing]] (born 1981) – [[Olympic Games|Olympic]] gold medalist diver and world champion
-      *[[Jing Ke]] (?–227 BC) – retainer of [[Crown Prince Dan]], assassin who attempted to murder [[Qin Shi Huang]]
-      * [[Jizi (artist)|Jizi]] (1942–2015) – ink painter
-      *[[Zhao Lirong]] (1928–2000) – Singer, film actress, and [[Ping opera]] performer
-      *[[Deng Lun]] (born 1992) – actor who gained popularity from the [[xianxia novel|xianxia]] drama, ''[[Ashes of Love (TV series)|Ashes of Love]]''
-      *[[Joseph Jiang Mingyuan]] (1931 – 2008) – Bishop of the [[Roman Catholic Diocese of Zhaoxian]]
-      *[[Yan Yuan (Qing dynasty)|Yan Yuan]] (1635–1704) – Confucian philosopher
-      *[[Zheng Yuanjie]] (born 1955) – Children's books author, and founder and writer of ''King of Fairy Tales''
-      *[[Zhao Liying|Zanilia Zhao]] (born 1987) – television actress
-      *[[Zhao Yun]] or Zhao Zilong (?–229) – military general who lived during the same period as Zhang Fei
-      *[[cmn:柳哲生|Liu Zhesheng]] (柳哲生, 1914–1991) – ace-fighter pilot of [[Development of Chinese Nationalist air force (1937–1945)#Chinese-American volunteer and/or former provincial/warlord air force pilots|Nationalist Air Force of China]], a veteran of the [[Secon
-  [en] 'Shanxi': 120,909 bytes of wikitext
-== Shanxi Province ([en] 'Shanxi'): 5 tables
-         table 0: 8 rows; section 'Aviation'; caption ''; year None
-         header: ['Taiyuan Wusu International Air', 'TYN', '太原武宿国际机场']
-  ETHNIC table 1: 5 rows; section 'Demographics'; caption 'Ethnic groups in Shanxi, 2000 census'; year 2000
-         header: ['Ethnic group', 'Population', 'Percentage']
-         prose : 'The population is mostly Han Chinese with minorities of Mongol, Manchu, and the Hui.'
-         row   : ['Han Chinese', '32,368,083', '99.68%']
-         row   : ['Hui', '61,690', '0.19%']
-         row   : ['Manchu', '13,665', '0.042%']
-         row   : ['Mongol', '9,446', '0.029%']
-         table 2: 14 rows; section 'Administration'; caption 'Administrative divisions of Shanxi'; year 2010
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2010', 'Seat', 'Divisions']
-         table 3: 13 rows; section 'Administration'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin', 'Jin Romanization']
-         table 4: 24 rows; section 'Administration'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl|[[Han Chinese|Han]]{{snd}}99.7%|[[Hui people|Hui]]{{snd}}0.2%}}
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = {{hlist|[[Jin Chinese|Jin]]|[[Central Plains Mandarin]]|[[Jilu Mandarin]]}}
-   infobox: | demographics_type2 = [[Gross domestic product|GDP]] {{normal|(2023)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CNY|2,570 billion}} ([[List of Chinese provincial-level divisions by GDP|20th]]; US$365 billion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CNY|73,984}} ([[List of Chinese provincial-level divisions by GDP per capita|15th]]; US$10,499)
-   section "People's Republic of China (1949–present)":
-      During the [[Cultural Revolution]] (1966–1976), political upheaval and institutional disruption significantly affected the province's administrative, educational, and industrial systems, Shanxi was affected by the "Destroy the Four Olds" campaign, though the f
-      Following the introduction of economic reforms in the late 1970s, Shanxi experienced slower diversification compared with coastal regions, as its economy remained heavily dependent on coal and state-owned enterprises. In the 1990s and 2000s, the rapid expansio
-   section 'Demographics':
-      {| class="wikitable"
-      |+ Ethnic groups in Shanxi, 2000 census
-      |-
-      ! [[List of ethnic groups in China|Ethnic group]] !! Population !! Percentage
-      |-
-      | [[Han Chinese]] || 32,368,083 || 99.68%
-      |-
-      | [[Hui people|Hui]] || 61,690 || 0.19%
-      |-
-      | [[Manchu]] || 13,665 || 0.042%
-      |-
-      | [[Mongol]] || 9,446 || 0.029%
-      |}
-      In 2004, the [[birth rate]] was 12.36 births/1,000 population, while the [[death rate]] was 6.11 deaths/1,000 population. The [[human sex ratio|sex ratio]] was 105.5 males/100 females.
-   section 'Notable people':
-      {{Main category|People from Shanxi}}
-   section "The People's Republic of China":
-      *[[Kang Sheng]] (1898–1975), senior CCP official and the head of intelligence and security apparatus during the Mao era
-      *[[Xu Xiangqian]] (1901–1990), senior CCP military commander and one of the Ten Marshals of the People's Liberation Army
-      *[[Zhao Shuli]] (1906–1970), a writer whose works shaped modern rural literature and socialist realism in North China
-      *[[Bo Yibo]] (1908–2007), Vice Premier of the State Council of the People's Republic of China, one of the Eight Immortals of the CCP
-      *[[Chen Yonggui]] (1914–1986), Vice Premier of the People's Republic of China during the Cultural Revolution
-      *[[Hua Guofeng]] (1921–2008), Chairman of the CCP and Premier of the People's Republic of China
-      *[[Chao-Li Chi]] (1927–2010), Chinese-American actor and dancer
-      *[[Ji Chaozhu]] (1929–2020), Under-secretary General of the [[United Nations]]
-      *[[Bo Xilai]] (1949–), a politician who served as Minister of Commerce and as Party Secretary of Chongqing
-      *[[Ling Jihua]] (1956–), Director of the General Office of the CCP and was a key political aide to [[Hu Jintao]]
-      *[[Gu Kailai]] (1958–), a lawyer and businesswoman, wife of Bo Xilai
-      *[[Liu Wang]] (1958–), astronaut
-      *[[Jing Haipeng]] (1966–), astronaut
-      *[[Jia Zhangke]] (1970–), film director whose works have won major international awards
-      *[[Li Bingbing]] (1973–), actress and producer who has appeared in major international film productions
-      *[[Chai Jing]] (1976–), investigative journalist and television host, widely known for her work in Chinese broadcast journalism and public-interest reporting
-      *[[Zhao Tao]] (1977–), actress whose performances in independent cinema have been widely recognized at major international film festivals
-      *[[Tan Jing]] (1977–), solo singer in the [[CPC Central Military Commission Political Department Song and Dance Troupe]]
-  [en] 'Inner Mongolia': 108,928 bytes of wikitext
-== Inner Mongolia Autonomous Region ([en] 'Inner Mongolia'): 7 tables
-         table 0: 6 rows; section 'Climate crisis'; caption 'Average daily maximum and minimum temperatures for some locations in Inner Mongolia of China'; year None
-         header: ['City', 'July (°C)', 'July (°F)', 'January (°C)', 'January (°F)']
-         table 1: 15 rows; section 'Administrative divisions'; caption 'Administrative divisions of Inner Mongolia'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 2: 14 rows; section 'Administrative divisions'; caption 'Administrative divisions in Mongolian, Chinese, and varieties of romanisations'; year 1990
-         header: ['English', 'Mongolian', 'SASM/GNC Mongolian Pinyin', 'Mongolian Transcription', 'Chinese', 'Pinyin']
-         table 3: 22 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-  ETHNIC table 4: 7 rows; section 'Demographics'; caption 'Ethnic groups in Inner Mongolia, 2010 census'; year 2010
-         header: ['Ethnicity', 'Population', 'Percentage']
-         prose : 's in cities as migrant labourers; howev Inter-marriage between Mongol and non-Mongol populations is very common, particularly in areas where Mongols are in regular contact with other groups. There was little cultural stigma within Mongol fa'
-         row   : ['Han', '19,650,687', '79.54%']
-         row   : ['Mongol', '4,226,093', '17.11%']
-         row   : ['Manchu', '452,765', '1.83%']
-         row   : ['Daur', '121,483', '0.49%']
-         row   : ['Evenks', '26,139', '0.11%']
-         row   : ['Oroqen people', '8,464', '0.07%']
-  ETHNIC table 5: 8 rows; section 'Demographics'; caption ''; year 2020
-         header: ['Year', 'Population', 'Han Chinese', 'Mongol', 'Manchu']
-         prose : 's in cities as migrant labourers; howev Inter-marriage between Mongol and non-Mongol populations is very common, particularly in areas where Mongols are in regular contact with other groups. There was little cultural stigma within Mongol fa'
-         row   : ['Population', '6,100,104', '12,348,638', '19,274,281', '21,456,500', '23,323,347', '24,706,321', '24,049,155']
-         row   : ['Han Chinese', '5,119,928', '10,743,456', '16,277,616', '17,290,000', '18,465,586', '19,650,687', '18,935,537']
-         row   : ['Mongol', '83.9%', '87.0%', '84.4%', '80.6%', '79.2%', '79.5%', '78.7%']
-         row   : ['Manchu', '888,235', '1,384,535', '2,489,378', '3,379,700', '3,995,349', '4,226,093', '4,247,815']
-         row   : ['', '14.6%', '11.2%', '12.9%', '15.8%', '17.1%', '17.1%', '17.7%']
-         row   : ['', '18,354', '50,960', '237,149', '', '499,911', '452,765', '']
-         row   : ['', '0.3%', '0.4%', '1.2%', '', '2.3%', '1.83%', '']
-         table 6: 16 rows; section 'Demographics'; caption 'Territories with Mongol majorities and near-majoritiesdate=March 2020'; year 2020
-         header: ['Name of banner', 'Mongol population', 'Percentage']
-   infobox: | demographics_type1              = Demographics
-   infobox: | demographics1_title1            = Ethnic composition
-   infobox: | demographics1_info1             = {{ubl|[[Han Chinese|Han]]{{snd}}78.7%|[[Mongols in China|Mongol]]{{snd}}17.7%|Others{{snd}}3.6%}}
-   infobox: | demographics1_title2            = Languages and dialects
-   infobox: | demographics1_info2             = {{hlist|[[Mandarin Chinese]]|[[Mongolian language|Mongolian]]|[[Oirat language|Oirat]]|[[Buryat language|Buryat]]|[[Dagur language|Dagur]]|[[Evenki language|Evenki]]|[[Jin Chinese|Jin]]}}
-   infobox: | demographics_type2   = [[Gross domestic product|GDP]] {{normal|(2023)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CNY|2,463 billion}} ([[List of Chinese provincial-level divisions by GDP|21st]]; US$349 billion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CNY|102,677}} ([[List of Chinese provincial-level divisions by GDP per capita|8th]]; US$14,571)
-   section "People's Republic of China":
-      The Communist movement gradually gained momentum as part of the Third Communist International in Inner Mongolia during the Japanese period. By the end of WWII, the Inner Mongolian faction of the Comintern had a functional militia and actively opposed the attem
-      During the [[Cultural Revolution]], the administration of Ulanhu was purged, and a wave of repressions was initiated against the Mongol population of the autonomous region. Among the victims in Inner Mongolia, 75 per cent were Mongols, even though they only co
-      Inner Mongolia was underdeveloped until the early 2000s, when huge [[Mining industry of China|mineral deposits]] including [[Coal in China|coal]] (such as Dongsheng Coalfield) and [[Rare earth industry in China|rare earth metals]] were discovered.{{Rp|page=47}
-      On 31 August 2020, [[2020 Inner Mongolia protests|protests]] broke out in ethnic Mongol communities due to plans by the government to phase out Mongol-only medium teaching to be replaced with bilingual medium teaching.
-   section 'Demographics':
-      {{Main||Mongols#Subgroups|Mongols in China|List of ethnic groups in China}}
-      [[File:Hohhot Muslim Quarter.jpg|thumb|200px|[[Muslim]]-themed Street in [[Hohhot]]]]
-      {{Historical populations
-      |title       = Historical population
-      | percentages = pagr
-      |footnote    = Established in 1947 from dissolution of [[Xing'an Province]], [[Chahar Province|Qahar Province]], parts of [[Rehe Province]], and [[Suiyuan|Suiyuan Province]]; parts of [[Ningxia|Ningxia Province]] were incorporated into Inner Mongolia AR.
-      |1954 |6,100,104
-      |1964 |12,348,638
-      |1982 |19,274,279
-      |1990 |21,456,798
-      |2000 |23,323,347
-      |2010
-      |24,706,321
-      |2020
-      |24,049,155
-      [[File:Inner Mongolia County-Level Ethnicity Map (2020 data).svg|thumb|[[County-level divisions of China|County-level]] ethnicity map of Inner Mongolia as of 2020]]
-      When the autonomous region was established in 1947, Han Chinese comprised 83.6% of the population, while the Mongols comprised 14.8% of the population. By 2020, the percentage of Han Chinese had dropped to 78.7%. While the Hetao region along the Yellow River h
-      Mongols are the second largest ethnic group, comprising 17.7% of the population as of the 2020 census. They include many diverse Mongolian-speaking groups; groups such as the [[Buryats]] and the [[Oirats]] are also officially considered to be Mongols in China.
-      Inter-marriage between Mongol and non-Mongol populations is very common, particularly in areas where Mongols are in regular contact with other groups. There was little cultural stigma within Mongol families for marrying outside the ethnic group, and in urban c
-      {| class="wikitable sortable floatright"
-      |+ Ethnic groups in Inner Mongolia, 2010 census
-      |-
-      ! [[Ethnicities of China|Ethnicity]] !! Population !! Percentage
-      |-
-      | [[Han Chinese|Han]] || 19,650,687 || 79.54%
-      |-
-      | [[Mongols in China|Mongol]] || 4,226,093 || 17.11%
-      |-
-      | [[Manchu people|Manchu]] || 452,765 || 1.83%
-      |-
-      | [[Daur people|Daur]] || 121,483 || 0.49%
-      |-
-      | [[Evenks]] || 26,139 || 0.11%
-      |-
-      | [[Oroqen people]]|| 8,464 || 0.07%
-      |-
-      |}
-      {| class="wikitable sortable"
-      |+
-      !Year!!Population
-      !colspan=2|[[Han Chinese]]
-      !colspan=2|[[Mongols in China|Mongol]]
-      !colspan=2|[[Manchu people|Manchu]]
-      |-align="right"
-      !1953
-  [en] 'Liaoning': 69,602 bytes of wikitext
-== Liaoning Province ([en] 'Liaoning'): 4 tables
-         table 0: 18 rows; section 'Administrative divisions'; caption 'Administrative divisions of Liaoning'; year 2010
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2010', 'Seat', 'Divisions']
-         table 1: 16 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 2: 32 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-  ETHNIC table 3: 8 rows; section 'Demographics'; caption 'Ethnic groups in Liaoning, 2000 census'; year 2000
-         header: ['Nationality', 'Population', 'Percentage']
-         prose : 'The population of Liaoning is mostly Han Chinese with minorities of Manchus, Mongols, Hui, Koreans and Xibe. Liaoning has both the highest absolute number and highest percentage of Manchus in all of C'
-         row   : ['Han Chinese', '35,105,991', '83.94%']
-         row   : ['Manchu', '5,385,287', '12.88%']
-         row   : ['Mongol', '669,972', '1.60%']
-         row   : ['Hui', '264,407', '0.632%']
-         row   : ['Koreans', '241,052', '0.576%']
-         row   : ['Xibe', '132,615', '0.317%']
-         row   : ['Excludes members of the People']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_footnotes = <!-- for references: use
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = [[CN¥]] 3,021 billion ([[List of Chinese provincial-level divisions by GDP|16th]])
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥ 72,107  ([[List of Chinese provincial-level divisions by GDP per capita|19th]])
-   section 'Demographics':
-      {{Historical populations
-      |title    = Historical population
-      |footnote  = Liaoning Province was known as Fengtian Province until 1929.<br />Shenyang: part of Liaoning Province until 1947; dissolved in 1954 and incorporated into Liaoning Province.<br />Dalian (Lüda): part of Liaoning Province until 1947; dissolved in 195
-      |1912 |12,133,000
-      |1928 |15,233,000
-      |1936–37 |15,254,000
-      |1947 |10,007,000
-      |1954 |18,545,147
-      |1964 |26,946,200
-      |1982 |35,721,693
-      |1990 |39,459,697
-      |2000 |41,824,412
-      |2010 |43,746,323
-      |2020 |42,591,407
-      {| class="wikitable"
-      !colspan="3" align="center"| Ethnic groups in Liaoning, 2000 census
-      |-
-      ! Nationality !! Population !! Percentage
-      |-
-      | [[Han Chinese]] || 35,105,991 || 83.94%
-      |-
-      | [[Manchu]] || 5,385,287 || 12.88%
-      |-
-      | [[Mongol]] || 669,972 || 1.60%
-      |-
-      | [[Hui people|Hui]] || 264,407 || 0.632%
-      |-
-      | [[Koreans]] || 241,052 || 0.576%
-      |-
-      | [[Xibe people|Xibe]] || 132,615 || 0.317%
-      |-
-      | colspan="3" style="text-align: center;" | Excludes members of the [[People's Liberation Army]] in active service.<br /> '''Source:'''
-      |}
-  [en] 'Jilin': 46,340 bytes of wikitext
-== Jilin Province ([en] 'Jilin'): 4 tables
-         table 0: 13 rows; section 'Administrative divisions'; caption 'Administrative divisions of Jilin'; year 2010
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2010', 'Seat', 'Divisions']
-         table 1: 11 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 2: 30 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-  ETHNIC table 3: 1 rows; section 'Demographics'; caption ''; year 2000
-         header: ['Ethnic groups in Jilin (2000 c', 'Ethnic Groups', 'Population', 'Percentage', 'Han Chinese', '24,348,815', '90.85%', 'Koreans', '1,145,688', '4.27%', 'Manchu', '993,112', '3.71%', 'Mongol', '172,026', '0.64%', 'Hui', '125,620', '0.47%']
-         prose : 'Jilin is inhabited by Han Chinese, Manchus, Hui, Mongols and Xibe. Most ethnic Koreans live in the Yanbian Korean Autonomous Prefecture. The Manchu people were once the majority in the area of Jilin, '
-         row   : ['Ethnic Groups']
-         row   : ['Population']
-         row   : ['Percentage']
-         row   : ['Han Chinese']
-         row   : ['24,348,815']
-         row   : ['90.85%']
-         row   : ['Koreans']
-         row   : ['1,145,688']
-         row   : ['4.27%']
-         row   : ['Manchu']
-         row   : ['993,112']
-         row   : ['3.71%']
-         row   : ['Mongol']
-         row   : ['172,026']
-         row   : ['0.64%']
-         row   : ['Hui']
-         row   : ['125,620']
-         row   : ['0.47%']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_footnotes = <!-- for references: use
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = [[CN¥]] 1,497 billion ([[List of Chinese provincial-level divisions by GDP|26th]])
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥ 64,618 ([[List of Chinese provincial-level divisions by GDP per capita|27th]])
-   section 'Demographics':
-      {{Historical populations
-      |title       = Historical population
-      |1912  |5,580,000
-      |1928 |7,635,000
-      |1936–37 |7,354,000
-      |1947 |6,465,000
-      |1954 |11,290,073
-      |1964 |15,668,663
-      |1982 |22,560,053
-      |1990 |24,658,721
-      |2000 |26,802,191
-      |2010 |27,462,297
-      |2020 |24,073,453
-      Jilin is inhabited by [[Han Chinese]], [[Manchu]]s, [[Hui people|Hui]], [[Mongol]]s and [[Xibe people|Xibe]]. Most ethnic Koreans live in the [[Yanbian Korean Autonomous Prefecture]]. The [[Manchu people]] were once the majority in the area of Jilin, making it
-      {| class="wikitable" style="text-align:right;"
-      !colspan="3"| Ethnic groups in Jilin (2000 census)</tr>
-      ! [[Nationalities of China|Ethnic Groups]] !! Population !! Percentage</tr>
-      |align="left"| [[Han Chinese]]    || 24,348,815 || 90.85%</tr>
-      |align="left"| [[Koreans]] || 1,145,688 || 4.27%</tr>
-      |align="left"| [[Manchu]]         ||    993,112 ||  3.71%</tr>
-      |align="left"| [[Mongol]]         ||    172,026 ||  0.64%</tr>
-      |align="left"| [[Hui people|Hui]] ||    125,620 ||  0.47%</tr>
-      |}
-  [en] 'Heilongjiang': 70,631 bytes of wikitext
-== Heilongjiang Province ([en] 'Heilongjiang'): 5 tables
-         table 0: 5 rows; section 'Climate'; caption 'Average daily maximum and minimum temperatures for some locations in Heilongjiang province of China'; year None
-         header: ['City', 'July (°C)', 'July (°F)', 'January (°C)', 'January (°F)']
-         table 1: 17 rows; section 'Administrative divisions'; caption 'Administrative divisions of Heilongjiang'; year 2010
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2010', 'Density (per km 2 )', 'Seat', 'Divisions']
-         table 2: 15 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 3: 39 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-  ETHNIC table 4: 4 rows; section 'Ethnic groups'; caption 'Ethnic composition of Heilongjiang Province (Seventh National Population Census, 2020)'; year 2020
-         header: ['Ethnic group', 'Han Chinese', 'Manchu', 'Korean', 'Mongol', 'Hui', 'Daur', 'Xibe', 'Zhuang', 'Miao', 'Hezhen', 'Other minorities']
-         prose : 'he Daur population decreased by 6,607 (−16.4%), with no change in proportion. * The Xibe population decreased by 1,349 (−17.73%), with no change in proportion. * The Hezhen population increased by 192 (+5.31%), with no change in proportion.'
-         row   : ['Han Chinese', '30,728,612', '96.48', '—']
-         row   : ['Manchu', '583,807', '1.83', '52.06']
-         row   : ['Korean', '270,123', '0.85', '24.09']
-         row   : ['Mongol', '112,210', '0.35', '10.01']
-         row   : ['Hui', '75,464', '0.24', '6.73']
-         row   : ['Daur', '33,670', '0.11', '3.00']
-         row   : ['Xibe', '6,259', '0.02', '0.56']
-         row   : ['Zhuang', '3,890', '0.01', '0.35']
-         row   : ['Miao', '3,852', '0.01', '0.34']
-         row   : ['Hezhen', '3,805', '0.01', '0.34']
-         row   : ['Other minorities', '28,396', '0.09', '2.53']
-   infobox: | demographics_type1              = Demographics
-   infobox: | demographics1_footnotes         = <!-- for references: use
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = [[CN¥]] 1,687,810 billion ([[List of Chinese provincial-level divisions by GDP|25th]])
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥ 55,980 ([[List of Chinese provincial-level divisions by GDP per capita|30th]])
-   section 'Demographics':
-      [[File:China_Heilongjiang_pop_SbA5y_pyramid2019.png|thumbnail|Heilongjiang [[population pyramid]] in 2019]]
-      {{Historical populations
-      |title       = Historical population
-      |footnote    = Established in 1923; dissolved in 1932 and incorporated into [[Manchukuo]] / Heilongjiang Province (present).<br />Harbin part of Heilongjiang Province until 1947–1949 and 1953–1954.<br />Dongsheng SAR dissolved in 1932 and incorporated into Man
-      |1912 |2,029,000
-      |1928 |3,725,000
-      |1936–37 |3,751,000
-      |1947 |2,844,000
-      |1954 |11,897,309
-      |1964 |20,118,271
-      |1982 |32,665,546
-      |1990 |35,214,873
-      |2000 |36,237,576
-      |2010 |38,312,224
-      |2020 |31,850,088
-      By the end of 2022, Heilongjiang Province had a permanent resident population of 30.99 million.
-      This represented a decrease of 260,000 from the previous year.
-      The urban population was 20.52 million, and the rural population was 10.47 million.
-      The urbanization rate reached 66.2%, up 0.5 percentage points from the previous year.
-      * Ages 0–14: 9.3% of the total population
-      * Ages 65 and above: 17.8% of the total population
-      According to the 2021 Statistical Bulletin, the province's total permanent population was 31.25 million, a decrease of 460,000 compared with 2020.
-      Based on the [[Seventh National Population Census of the People's Republic of China|Seventh National Population Census]] (2020), the total permanent population of Heilongjiang was 31,850,088.
-      Compared with the Sixth Census (2010) figure of 38,313,991, the province's population declined by 6,463,903 over ten years (−16.87%), with an average annual growth rate of −1.83%.
-      * Males: 15,952,468 (50.09%)
-      * Females: 15,897,620 (49.91%)
-      * Sex ratio (females = 100): 100.35
-      * Ages 0–14: 3,286,466 (10.32%)
-      * Ages 15–59: 21,167,932 (66.46%)
-      * Ages 60 and above: 7,395,690 (23.22%), including 4,972,868 aged 65+ (15.61%)
-      * Urban residents: 20,897,694 (65.61%)
-      * Rural residents: 10,952,394 (34.39%)
-      In 2020, the birth rate was 3.35‰, the death rate was 8.23‰, and the natural growth rate was −4.48‰.
-      Heilongjiang's demographic profile is characterized by a low birth rate, low death rate, and a high level of population aging. In addition, out-migration has contributed to a continuous population decline since 2014.
-   section 'Ethnic groups':
-      Among the province's permanent residents, the Han population numbers 30,728,612, accounting for 96.48% of the total; all ethnic minorities together total 1,121,476, or 3.52%.
-      Compared with the 2010 Sixth National Population Census, the Han population decreased by 6,210,569 people (−16.81%) but their proportion rose by 0.07 percentage points. Minority populations decreased by 253,334 (−18.43%), and their proportion declined by 0.07 
-      * The [[Manchu people|Manchu]] population decreased by 164,213 (−21.95%), down 0.12 percentage points in proportion.
-      * The [[Korean Chinese]] population decreased by 57,683 (−17.6%), down 0.01 percentage points.
-      * The [[Mongols in China|Mongol]] population decreased by 13,273 (−10.58%), but their proportion rose by 0.02 percentage points.
-      * The [[Hui people|Hui]] population decreased by 26,285 (−25.83%), down 0.03 percentage points.
-      * The [[Daur people|Daur]] population decreased by 6,607 (−16.4%), with no change in proportion.
-      * The [[Xibe people|Xibe]] population decreased by 1,349 (−17.73%), with no change in proportion.
-      * The [[Hezhe people|Hezhen]] population increased by 192 (+5.31%), with no change in proportion.
-      {{clear}}
-      {| class="wikitable" style="margin: 1em auto 1em auto; text-align:right"
-      |+ Ethnic composition of Heilongjiang Province (Seventh National Population Census, 2020)
-      |-
-      ! Ethnic group
-      ! width="55" | [[Han Chinese]] !! width="55" | [[Manchu]] !! width="55" | [[Korean Chinese|Korean]] !! width="55" | [[Mongol]] !! width="55" | [[Hui]] !! width="55" | [[Daur people|Daur]] !! width="55" | [[Xibe people|Xibe]] !! width="55" | [[Zhuang people|Zhu
-      |-
-      ! Population
-      | 30,728,612 || 583,807 || 270,123 || 112,210 || 75,464 || 33,670 || 6,259 || 3,890 || 3,852 || 3,805 || 28,396
-      |-
-      ! Share of total population (%)
-      | 96.48 || 1.83 || 0.85 || 0.35 || 0.24 || 0.11 || 0.02 || 0.01 || 0.01 || 0.01 || 0.09
-      |-
-      ! Share among minorities (%)
-      | — || 52.06 || 24.09 || 10.01 || 6.73 || 3.00 || 0.56 || 0.35 || 0.34 || 0.34 || 2.53
-      |}
-   section 'Notable people':
-  [en] 'Shanghai': 240,710 bytes of wikitext
-== Shanghai Municipality ([en] 'Shanghai'): 6 tables
-         table 0: 6 rows; section 'Structure'; caption 'Current leaders of the Shanghai Municipal Government'; year None
-         header: ['', '25px', '25px', '25px', '25px']
-         table 1: 2 rows; section 'Administrative divisions'; caption ''; year None
-         header: ['Administrative divisions of Sh']
-         table 2: 14 rows; section 'Administrative divisions'; caption ''; year 2022
-         header: ['Division code', 'Division', 'Area (km 2 )', 'Total population 2022', 'Seat', 'Postal code']
-         table 3: 11 rows; section 'Economy'; caption ''; year 2020
-         header: ['City', 'Area km 2', 'Population (2020)', 'GDP (CN¥)', 'GDP (US$)']
-         table 4: 5 rows; section 'Economy'; caption 'Economy of Shanghai since the reform and opening up'; year 2019
-         header: ['Year', '1978', '1980', '1983', '1986', '1990', '1993', '1996', '2000', '2003', '2006', '2010', '2013', '2016', '2017', '2018', '2019']
-         table 5: 1 rows; section 'Consulates and consulates general'; caption ''; year None
+         table 5: 2 rows; section '友好城市'; caption ''; year None
+         header: ['与北京市结为友好城市的城市']
+  [zh] '天津市': 85,149 bytes of wikitext
+== Tianjin Municipality ([zh] '天津市'): 3 tables
+         table 0: 6 rows; section '政治'; caption '天津市四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 天津市委员会 书记', '25 天津市人民代表大会 常务委员会 主任', '25 天津市人民政府 市长', '25 中国人民政治协商会议 天津市委员会 主席']
+         table 1: 22 rows; section '行政区划'; caption ''; year None
+         header: ['天津市行政区划图']
+         table 2: 2 rows; section '友好城市'; caption ''; year None
+         header: ['天津友好城市']
+  [zh] '河北省': 35,265 bytes of wikitext
+== Hebei Province ([zh] '河北省'): 4 tables
+         table 0: 6 rows; section '四至及中心'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 24 rows; section '行政区划'; caption ''; year None
+         header: ['河北省行政区划图']
+  ETHNIC table 2: 6 rows; section '民族'; caption '河北民族分布（2010）'; year 2010
+         header: ['民族', '人口數', '百分比']
+         prose : ''
+         row   : ['汉族', '68,861,333', '95.83%']
+         row   : ['满族', '2,169,311', '3.02%']
+         row   : ['回族', '570,170', '0.79%']
+         row   : ['蒙古族', '180,849', '0.25%']
+         row   : ['壮族', '17,295', '0.02%']
+         table 3: 6 rows; section '地方首长'; caption '河北省四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 河北省委员会 书记', '25 河北省人民代表大会 常务委员会 主任', '25 河北省人民政府 省长', '25 中国人民政治协商会议 河北省委员会 主席']
+  [zh] '山西省': 35,897 bytes of wikitext
+== Shanxi Province ([zh] '山西省'): 3 tables
+         table 0: 6 rows; section '四至及地理中心'; caption ''; year None
+         header: ['方位', '位置', '经纬度']
+         table 1: 15 rows; section '行政区划'; caption ''; year 2020
+         header: ['山西省行政区划图', '区划代码', '区划名称', '面积土地面积为第二次全国土地调查结果数据。 （平方公里）', '常住人口常住人口为2020年山西省第七次全国人口普查主要数据', '政府驻地', '县级行政区划']
+         table 2: 8 rows; section '人口'; caption '山西民族分佈（2020）'; year 2020
+         header: ['民族', '人口數', '百分比']
+  [zh] '内蒙古自治区': 154,582 bytes of wikitext
+== Inner Mongolia Autonomous Region ([zh] '内蒙古自治区'): 5 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 19 rows; section '行政区划'; caption ''; year None
+         header: ['内蒙古自治区行政区划图']
+         table 2: 8 rows; section '人口'; caption '历次人口普查内蒙古自治区数据'; year None
+         header: ['年份', '总人口', '汉族人口', '蒙古族人口', '其他民族人口']
+         table 3: 11 rows; section '民族'; caption '中国2010年人口普查 內蒙古自治区分民族人口'; year 2010
+         header: ['民族', '人口數', '百分比']
+         table 4: 7 rows; section '政治'; caption '内蒙古自治区四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 内蒙古自治区委员会', '25 内蒙古自治区 人民代表大会 常务委员会', '25 内蒙古自治区 人民政府', '25 中国人民政治协商会议 内蒙古自治区委员会']
+  [zh] '辽宁省': 36,654 bytes of wikitext
+== Liaoning Province ([zh] '辽宁省'): 4 tables
+         table 0: 6 rows; section '四至及中心'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 21 rows; section '行政区划'; caption ''; year None
+         header: ['辽宁省行政区划图']
+  ETHNIC table 2: 4 rows; section '民族'; caption '辽宁省民族构成（2020年第七次全国人口普查）'; year 2020
+         header: ['民族名称', '汉族', '满族', '蒙古族', '朝鮮族', '回族', '锡伯族', '苗族', '土家族', '侗族', '壮族', '其他民族']
+         prose : '省人口超过10万的少数民族有：满族（508.6万，是全国满族人口最多的省份）、蒙古族（67.78万）、回族（21.64万）、朝鲜族（22.92万）、和锡伯族（12.76万）。与2010年第六次全国人口普查相比，汉族人口减少933,557人，下降2.52% 由于各民族长期生活在一起，形成了大杂居小聚居的特点。早在1950年代就建立的阜新和喀左两个蒙古族自治县，而在改革开放之后又建立了新宾、清原等8个满族自治县。由於歷史原因，遼寧省是全國滿族人的主要聚居區和滿族文化的重要發祥地。'
+         row   : ['汉族', '36,169,617', '84.92', '－']
+         row   : ['满族', '5,085,984', '11.94', '79.20']
+         row   : ['蒙古族', '677,760', '1.59', '10.55']
+         row   : ['朝鮮族', '229,158', '0.54', '3.57']
+         row   : ['回族', '216,379', '0.51', '3.37']
+         row   : ['锡伯族', '127,561', '0.30', '1.99']
+         row   : ['苗族', '14,378', '0.03', '0.22']
+         row   : ['土家族', '10,080', '0.02', '0.16']
+         row   : ['侗族', '7,606', '0.02', '0.12']
+         row   : ['壮族', '7,536', '0.02', '0.12']
+         row   : ['其他民族', '45,348', '0.11', '0.71']
+         table 3: 7 rows; section '政治'; caption '辽宁省四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 辽宁省委员会', '25 辽宁省人民代表大会 常务委员会', '25 辽宁省 人民政府', '25 中国人民政治协商会议 辽宁省委员会']
+  [zh] '吉林省': 43,969 bytes of wikitext
+== Jilin Province ([zh] '吉林省'): 7 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 17 rows; section '行政区划'; caption ''; year None
+         header: ['吉林省行政区划图']
+         table 2: 9 rows; section '人口'; caption '吉林省人口变化'; year 2021
+         header: ['年份', '年末总人口数（万人）']
+  ETHNIC table 3: 4 rows; section '民族'; caption '吉林省民族构成（2020年第七次全国人口普查）'; year 2020
+         header: ['民族名称', '汉族', '朝鲜族', '满族', '蒙古族', '回族', '苗族', '锡伯族', '土家族', '维吾尔族', '壮族', '其他民族']
+         prose : '、四平居多；蒙古族（17万）和锡伯族（3168人）主要分布在西部的白城和松原。 2020年全省常住人口中，汉族人口为21,985,839人，占91.33%；各少数民族人口为2,087,614人，占8.67%。与2010年第六次全国人口普查相比，汉族人口减少3,281,271人，下降12.99%，占总人口比例下降0.71个百分点；各少数民族人口减少98,091人，下降4.49%，占总人口比例增加0.71个百分点。其中，朝鲜族人口减少100,002人，下降9.61%，占总人口比例'
+         row   : ['汉族', '21,985,839', '91.33', '－']
+         row   : ['朝鲜族', '940,165', '3.91', '45.04']
+         row   : ['满族', '831,418', '3.45', '39.83']
+         row   : ['蒙古族', '169,449', '0.70', '8.12']
+         row   : ['回族', '104,595', '0.43', '5.01']
+         row   : ['苗族', '5,788', '0.02', '0.28']
+         row   : ['锡伯族', '4,238', '0.02', '0.20']
+         row   : ['土家族', '4,232', '0.02', '0.20']
+         row   : ['维吾尔族', '3,733', '0.02', '0.18']
+         row   : ['壮族', '3,518', '0.01', '0.17']
+         row   : ['其他民族', '20,478', '0.09', '0.98']
+         table 4: 26 rows; section '普通高校'; caption '公立本科院校'; year None
+         header: ['学校名称', '所在地', '办学层次']
+         table 5: 13 rows; section '普通高校'; caption '民营本科院校与独立院校'; year None
+         header: ['学校名称', '所在地', '办学层次']
+         table 6: 21 rows; section '普通高校'; caption '高职专科院校'; year None
+         header: ['学校名称', '所在地', '办学层次']
+  [zh] '黑龙江省': 41,263 bytes of wikitext
+== Heilongjiang Province ([zh] '黑龙江省'): 6 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 21 rows; section '行政区划'; caption ''; year None
+         header: ['黑龙江省行政区划图']
+         table 2: 5 rows; section '人口'; caption '历年人口数据（口径为常住人口）'; year 2021
+         header: ['年份', '年末常住人口/万人', '出生率/‰', '死亡率/‰', '来源']
+  ETHNIC table 3: 4 rows; section '民族'; caption '黑龙江省民族构成（2020年第七次全国人口普查）'; year 2020
+         header: ['民族名称', '汉族', '满族', '朝鮮族', '蒙古族', '回族', '达斡尔族', '锡伯族', '壮族', '苗族', '赫哲族', '其他民族']
+         prose : '。省内有杜尔伯特蒙古族自治县，齐齐哈尔有梅里斯达斡尔族区，此外有若干民族乡等。 全省常住人口中，汉族人口为30,728,612人，占96.48%；各少数民族人口为1,121,476人，占3.52%。与2010年第六次全国人口普查相比，汉族人口减少6,210,569人，下降16.81%，占总人口比例增加0.07个百分点；各少数民族人口减少253,334人，下降18.43%，占总人口比例下降0.07个百分点。其中，满族人口减少164,213人，下降21.95%，占总人口比例下降0'
+         row   : ['汉族', '30,728,612', '96.48', '－']
+         row   : ['满族', '583,807', '1.83', '52.06']
+         row   : ['朝鮮族', '270,123', '0.85', '24.09']
+         row   : ['蒙古族', '112,210', '0.35', '10.01']
+         row   : ['回族', '75,464', '0.24', '6.73']
+         row   : ['达斡尔族', '33,670', '0.11', '3.00']
+         row   : ['锡伯族', '6,259', '0.02', '0.56']
+         row   : ['壮族', '3,890', '0.01', '0.35']
+         row   : ['苗族', '3,852', '0.01', '0.34']
+         row   : ['赫哲族', '3,805', '0.01', '0.34']
+         row   : ['其他民族', '28,396', '0.09', '2.53']
+         table 4: 21 rows; section '经济'; caption '2024黑龙江企业100强名单前20名'; year 2024
+         header: ['排名', '企业']
+         table 5: 7 rows; section '政治'; caption '黑龙江省四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 黑龙江省委员会', '25 黑龙江省人民代表大会 常务委员会', '25 黑龙江省人民政府', '25 中国人民政治协商会议 黑龙江省委员会']
+  [zh] '上海市': 181,319 bytes of wikitext
+== Shanghai Municipality ([zh] '上海市'): 9 tables
+         table 0: 7 rows; section '政权结构'; caption '上海市四大机构现任领导人'; year None
+         header: ['机构 首长', '25 中国共产党 上海市委员会', '25 上海市 人民代表大會 常务委员会', '25 上海市 人民政府', '25 中国人民 政治协商会议 上海市委员会']
+         table 1: 22 rows; section '行政区划'; caption ''; year 2016
+         header: ['上海市行政区划图']
+         table 2: 4 rows; section '经济'; caption '上海市自改革開放以來經濟數據变化'; year 2024
+         header: ['年份', '1978', '1980', '1983', '1986', '1990', '1993', '1996', '1998', '2000', '2003', '2006', '2008', '2010', '2013', '2016', '2017', '2019', '2022', '2023', '2024']
+         table 3: 25 rows; section '经济'; caption '上海市商品房平均銷售價格列表（元/平方米）'; year None
+         header: ['年份', '商品房', '增長率（%）', '住宅商品房', '增長率（%）', '別墅、高檔公寓', '增長率（%）']
+         table 4: 19 rows; section '人口'; caption '上海市各区（县）人口数据'; year 2020
+         header: ['区划名称', '! colspan=3 |常住人口（2020年11月）', '! rowspan=2 |户籍人口 （2010年末）']
+         table 5: 4 rows; section '体育'; caption ''; year 2012
+         header: ['队伍', '联盟', '运动', '主场', '成立年份']
+         table 6: 1 rows; section '旅游'; caption ''; year 2022
+         header: ['', '']
+         table 7: 1 rows; section '参见'; caption ''; year None
          header: ['', '', '', '']
-   infobox: | demographics_type2 = [[Gross domestic product|GDP]] (nominal) {{normal|(2025)}}
-   infobox: | demographics2_title1 = Municipality
-   infobox: | demographics2_info1 = [[CN¥]] 5,67 billion ([[List of Chinese provincial-level divisions by GDP|9th]])
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥ 228,280 ([[List of Chinese provincial-level divisions by GDP per capita|2nd]])
-   section "People's Republic era":
-      On 27 May 1949, the [[People's Liberation Army]] took control of Shanghai through the [[Shanghai Campaign]]. Under the new People's Republic of China (PRC), Shanghai was one of only three municipalities not merged into neighboring provinces (the others being [
-      [[File:1967-12 1967年 上海市南京路.jpg|thumb|right|upright|[[Nanjing Road]], 1967, during the [[Cultural Revolution]]]]
-      After the war, Shanghai's economy was restored. From 1949 to 1952, the city's agricultural and industrial output increased by 51.5% and 94.2%, respectively. As the industrial center of China with the most skilled industrial workers, Shanghai became a center fo
-      In 1990, [[Deng Xiaoping]] permitted Shanghai to initiate economic reforms, which reintroduced foreign capital to the city and developed the Pudong district, resulting in the birth of [[Lujiazui]]. That year, China's central government designated Shanghai as t
-   section 'Demographics':
-      {{main|Demographics of Shanghai}}
-      {{Historical population
-      | source = [[Census in China]]
-      |[[1953 Chinese census|1953]] |5258210
-      |[[1964 Chinese census|1964]] |6423017
-      |[[1982 Chinese census|1982]] |6320829
-      |[[1990 Chinese census|1990]] |8348299
-      |[[2000 Chinese census|2000]] |14489919
-      |[[2010 Chinese census|2010]] |20555098
-      |[[2020 Chinese census|2020]] |22209380
-      |align = right
-      }}
-      {{As of|2023||df=US}}, Shanghai had a population of 24,874,500, including 14,801,700 (59.5%) [[hukou]] holders (registered locally). {{As of|2022||df=US}}, 89.3% of Shanghai's population lives in urban areas, and 10.7% live in rural areas. Based on the populat
-      According to the Shanghai Municipal Statistics Bureau, about 157,900 residents in Shanghai are foreigners, including 28,900 Japanese, 21,900 Americans, and 20,800 Koreans. The actual number of foreign citizens in the city is probably much higher. Shanghai is a
-      Shanghai has a [[life expectancy]] of 83.18 years for the city's registered population, the highest life expectancy of [[List of cities in China by life expectancy|all cities in mainland China]]. This has also caused the city to [[Aging of China|experience pop
-  [en] 'Jiangsu': 86,080 bytes of wikitext
-== Jiangsu Province ([en] 'Jiangsu'): 7 tables
-         table 0: 17 rows; section 'Administrative divisions'; caption 'Administrative divisions of Jiangsu'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 15 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin', 'Wu Romanization', 'Jiang–Huai (Langjin Pinin)']
-         table 2: 41 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['No.', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Religion'; caption ''; year 2010
+         table 8: 1 rows; section '外部链接'; caption ''; year None
+         header: ['', '', '']
+  [zh] '江苏省': 61,108 bytes of wikitext
+== Jiangsu Province ([zh] '江苏省'): 6 tables
+         table 0: 6 rows; section '四至及中心'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 20 rows; section '现行政区'; caption ''; year None
+         header: ['江苏省行政区划图']
+         table 2: 18 rows; section '过江通道'; caption ''; year None
+         header: ['名称', '类型', '通车时间']
+         table 3: 6 rows; section '旅游'; caption '国家重点风景名胜区'; year None
+         header: ['位置', '风景名胜区', '简介']
+         table 4: 1 rows; section '伊斯兰教'; caption ''; year None
          header: ['']
-         table 4: 4 rows; section 'Culture'; caption ''; year None
-         header: ['Group', 'Wuyue', 'Lower Yangtze', 'Central Plains']
-         table 5: 4 rows; section 'Double First Class Universities in Jiangsu'; caption ''; year None
-         header: ['Jiangsu (16)', 'Nanjing (13)', '']
-         table 6: 34 rows; section 'Twin Provinces'; caption ''; year None
-         header: ['Country', 'State/Province', 'Time']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl|[[Han Chinese|Han]]: 99.6% | [[Hui people|Hui]]: 0.2% (160,800)}}
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = {{hlist|[[Standard Chinese]] | [[Central Plains Mandarin]] | [[Lower Yangtze Mandarin]] | [[Wu Chinese]]}}
-   infobox: | demographics_type2   = [[Gross domestic product|GDP]] {{normal|(2025)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CN¥}}14.24 trillion ([[List of Chinese provincial-level divisions by GDP|2nd]]; US$2.04 trillion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CN¥}}167,970 ([[List of Chinese provincial-level divisions by GDP per capita|3rd]]; US$24,113)
-   section 'Demographics':
-      {{Historical populations
-      |title = Historical population
-      |footnote = Shanghai was part of Jiangsu Province until 1927. <br /> Nanjing part of Jiangsu Province until 1927; dissolved in 1952 and incorporated into Jiangsu Province.
-      |1912 |32,283,000
-      |1928 |34,126,000
-      |1936–37 |36,469,000
-      |1947 |36,080,000
-      |1954 |41,252,192
-      |1964 |44,504,608
-      |1982 |60,521,114
-      |1990 |67,056,519
-      |2000 |73,043,577
-      |2010 |78,659,903
-      }}
-      The majority of Jiangsu residents are ethnic [[Han Chinese]]. Other minorities include the [[Hui people|Hui]] and the [[Manchu]]s. In 2021, 73.94 percent of the province lived in urban areas, while 26.06 lived in rural areas.
-      ; Demographic indicators in 2021
-      Population: 85.05 million (urban: 62.89 million; rural: 39.421 million)<br />
-      [[Birth rate]]: 5.65 per 1000<br />
-      [[Death rate]]: 6.77 per 1000<br />
-      [[Human sex ratio|Sex ratio]]: 103.05 males per 100 females<br />
-      [[Literacy rate]]: 96.94%
-  [en] 'Zhejiang': 97,937 bytes of wikitext
-== Zhejiang Province ([en] 'Zhejiang'): 5 tables
-         table 0: 15 rows; section 'Administrative divisions'; caption 'Administrative divisions of Zhejiang'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 13 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin', 'Wu Romanization']
-         table 2: 36 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 23 rows; section 'Economy'; caption "Historical GDP of Zhejiang for 1978–present (purchasing power parity of Chinese Yuan, as Int'l. dollar based on IMF WEO April 2023)"; year 2023
-         header: ['year', 'GDP', 'GDP per capita (GDPpc) based o', 'Reference index']
-         table 4: 1 rows; section 'Religion'; caption ''; year 2020
+         table 5: 29 rows; section '国际友好省份'; caption ''; year None
+         header: ['国家', '省州', '结交时间']
+  [zh] '浙江省': 172,886 bytes of wikitext
+== Zhejiang Province ([zh] '浙江省'): 7 tables
+         table 0: 12 rows; section '气候特征'; caption '1971-2000年浙江各地市平均氣溫(℃)'; year 2000
+         header: ['城市', '一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月', '全年']
+         table 1: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 2: 1 rows; section '宗教'; caption ''; year 2015
          header: ['']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl|[[Han Chinese|Han]]: 99.2% | [[She (ethnic group)|She]]: 0.4%}}
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = [[Wu Chinese|Wu]], [[Huizhou Chinese|Huizhou]], [[Lower Yangtze Mandarin|Jianghuai Mandarin]], [[Southern Min]] (in [[Cangnan County]] and [[Pingyang County]])
-   infobox: | demographics_type2   = [[Gross domestic product|GDP]] {{normal|(2025)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{ubl|{{CNY|9.45 trillion}} ([[List of Chinese provincial-level divisions by GDP|4th]]; US$1.36 trillion) }}
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{ubl|{{CNY|146,428}} ([[List of Chinese provincial-level divisions by GDP per capita|5th]]; US$21,020) }}
-   section "People's Republic era":
-      During the [[Cultural Revolution]] (1966–76), Zhejiang was in chaos and disunity and its economy was stagnant, especially during the high tide (1966–69) of the revolution. The agricultural policy favoring grain production at the expense of industrial and cash 
-      Zhejiang benefited less from central government investment than some other provinces due to its lack of natural resources, a location vulnerable to potential flooding from the sea and an economic base at the national average. Zhejiang, however, has been an epi
-   section 'Demographics':
-      [[File:She ethnic county, townships and towns in Zhejiang.png|thumb|150px|She ethnic county, townships and towns in Zhejiang]]
-      Han Chinese make up the vast majority of the population and the largest Han subgroup are the [[Wuyue people|speakers of Wu varieties of Chinese]]. There are also 400,000 members of [[List of Chinese ethnic groups|ethnic minorities]], including approximately 20
-      {{Historical populations
-      |title       = Historical population
-      |align = none | cols = 2
-      |1912  |21,440,000
-      |1928 |20,643,000
-      |1936–37|21,231,000
-      |1947 |19,959,000
-      |1954|22,865,747
-      |1964|28,318,573
-      |1982|38,884,603
-      |1990|41,445,930
-      |2000|45,930,651
-      |2010|54,426,891
-      |2020|64,567,588
-      }}
-   section 'Notable people':
-      {{Main category|People from Zhejiang}}
-      * [[Wang Yangming]]: Ming dynasty philosopher
-      * [[Su Shi]]: Poet and writer from the Song era, also known as a government official who contributed to the maintenance of West Lake.
-  [en] 'Anhui': 58,064 bytes of wikitext
-== Anhui Province ([en] 'Anhui'): 3 tables
-         table 0: 19 rows; section 'Administrative divisions'; caption 'Administrative divisions of Anhui'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 18 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin', 'Jiang–Huai (Langjin Pinin)']
-         table 2: 26 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year None
-         header: ['#', 'City', 'Urban area', 'District area', 'City proper', 'Census date']
-   infobox: | demographics_type1       = Demographics
-   infobox: | demographics1_title1     = Ethnic composition
-   infobox: | demographics1_info1      = {{ubl|[[Han Chinese|Han]] (99%)|[[Hui people|Hui]] (0.6%)}}
-   infobox: | demographics1_title2     = Languages and dialects
-   infobox: | demographics1_info2      = [[Lower Yangtze Mandarin]], [[Central Plains Mandarin]], [[Gan Chinese|Gan]], [[Wu Chinese|Wu]], [[Huizhou Chinese|Huizhou]]
-   infobox: | demographics_type2       = [[Gross domestic product|GDP]] <span style="font-weight: normal;">{{small|(2024)}}</span>
-   infobox: | demographics2_title1     = Total
-   infobox: | demographics2_info1      = [[CN¥]] 5,062 billion ([[List of Chinese provincial-level divisions by GDP|11th]])
-   infobox: | demographics2_title2     = Per capita
-   infobox: | demographics2_info2      = CN¥ 82,694 ([[List of Chinese provincial-level divisions by GDP per capita|13th]])
-   section 'Demographics':
-      {{Historical populations
-      |title       = Historical population
-      |1912  |16,229,000
-      |1928 |21,715,000
-      |1936–37 |23,354,000
-      |1947 |22,462,000
-      |1954 |30,343,637
-      |1964 |31,241,657
-      |1982 |49,665,724
-      |1990 |56,180,813
-      |2000 |58,999,948
-      |2010 |59,500,510
-      |2020 |61,027,171}}
-      [[Han Chinese]] make up the vast majority of the population. The [[Huizhou Chinese]]-speaking Hui and [[She (ethnic group)|She]] are the two largest [[List of Chinese ethnic groups|minorities]].
-      Anhui has a highly unbalanced gender ratio. According to a 2009 study published in the ''[[British Medical Journal]]'', in the 1–4 age group, there are 138 boys for every 100 girls, making it among the most unbalanced of provinces in China.
-   section 'Notable people':
-      <!---♦♦♦ Only add a person to this list if they already have their own article on the English Wikipedia ♦♦♦--->
-      <!---♦♦♦ Please keep the list in alphabetical order by LAST NAME ♦♦♦--->
-      *[[Xia Jun (economist)|Xia Jun]], economist, telecom researcher and university professor
-      *[[Qiu Jianliang]], professional kickboxer
-      *[[Fang Bian]], sanshou fighter and professional kickboxer
-      *[[Lu Su]] (172–217), military general and politician serving under the warlord [[Sun Quan]] during the late [[Eastern Han dynasty]]. Main in here.
-      *[[Ouyang Feng (kickboxer)|Ouyang Feng]], sanshou fighter and professional kickboxer
-      *[[Yang Rong (businessman)|Yang Rong]], automotive tycoon
-      *[[Deng Linlin]], artistic gymnast
-  [en] 'Fujian': 105,436 bytes of wikitext
-== Fujian Province ([en] 'Fujian'): 5 tables
-         table 0: 13 rows; section 'Administrative divisions'; caption 'Administrative divisions of Fujian'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 11 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin', 'Fuzhou BUC', 'Hokkien POJ']
-         table 2: 24 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 23 rows; section 'Economy'; caption "Historical GDP of Fujian for 1952 –present (SNA2008) (purchasing power parity of Chinese Yuan, as Int'l.dollar based on IMF WEO October 2017)"; year 2017
-         header: ['year', 'GDP', 'GDP per capita (GDPpc) based o', 'Reference index']
-         table 4: 1 rows; section 'Religion'; caption ''; year 2010
+         table 3: 6 rows; section '政权构成'; caption '浙江省四大党政机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 浙江省委员会 书记', '25 浙江省人民代表大会 常务委员会 主任', '25 浙江省 人民政府 省长', '25 中国人民政治协商会议 浙江省委员会 主席']
+         table 4: 18 rows; section '行政区划'; caption ''; year None
+         header: ['浙江省行政区划图']
+         table 5: 15 rows; section '经济'; caption '2018年部分经济数据'; year 2018
+         header: ['地级市', 'GDP (亿人民币)', '第一产业 (亿人民币)', '第二产业 (亿人民币)', '第三产业 (亿人民币)', '规模以上', '人均生产总值 (人民币)', '社会消费品', '出口总额', '财政总收入', '城镇居民人均', '农村居民人均']
+         table 6: 21 rows; section '支柱产业'; caption '2024浙江省百强企业榜前20名'; year 2024
+         header: ['排名', '企业', '行政区']
+  [zh] '安徽省': 45,069 bytes of wikitext
+== Anhui Province ([zh] '安徽省'): 6 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 22 rows; section '行政区划'; caption ''; year None
+         header: ['安徽省行政区划图']
+         table 2: 8 rows; section '人口'; caption '近年安徽省常住人口数据'; year None
+         header: ['年份', '人口总数（万人）', '出生率（‰）', '死亡率（‰）', '自然增长率（‰）']
+         table 3: 22 rows; section '工业'; caption '2017年全省规模以上工业企业主要产品产量及增速'; year 2017
+         header: ['产品名称', '单 位', '绝对数', '比上年增长（%）']
+         table 4: 12 rows; section '对外贸易'; caption '2017年全省出口主要分类及地区分布'; year 2017
+         header: ['指 标', '绝对数（亿美元）', '比上年增长（%）']
+         table 5: 7 rows; section '政治'; caption '安徽省四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 安徽省委员会', '25 安徽省人民代表大会 常务委员会', '25 安徽省人民政府', '25 中国人民政治协商会议 安徽省委员会']
+  [zh] '福建省': 23,783 bytes of wikitext
+== Fujian Province ([zh] '福建省'): 3 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 17 rows; section '行政区划'; caption ''; year None
+         header: ['福建省行政区划图']
+         table 2: 1 rows; section '宗教'; caption ''; year 2009
          header: ['']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_footnotes = <!-- for references: use
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CN¥|6.02 trillion}} ([[List of Chinese provincial-level divisions by GDP|8th]]; US$864 billion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥144,920 ([[List of Chinese provincial-level divisions by GDP per capita|4th]]; US$20,804)
-   section "People's Republic of China":
-      [[File:Republic of China edcp location map (disputed territories) Fukien 1945.svg|thumb|left|Historical location of Fujian in the [[Republic of China (1912–1949)|Republican era]]]]
-      After the [[Chinese Civil War]], the [[People's Republic of China]] unified the country and took over most of Fujian, excluding the [[Kinmen|Quemoy]] and [[Matsu Island]]s.
-      In its early days, Fujian's development was relatively slow in comparison to other coastal provinces due to potential conflicts with Kuomintang-controlled Taiwan. Today, the province has the highest forest coverage rate while enjoying a high growth rate in the
-      Development has been accompanied by a large influx of population from the overpopulated areas to Fujian's north and west, and much of the farmland and forest, as well as cultural heritage sites such as the temples of king Wuzhu, have given way to ubiquitous hi
-      In 2023, the [[Central Committee of the Chinese Communist Party]] and the [[State Council of China]] jointly proposed making Fujian a [[Fujian Demonstration Zone|demonstration zone]] in [[Cross-strait relations|cross-strait]] integration between Taiwan and mai
-   section "Chairpersons of Fujian People's Congress":
-      # [[Liao Zhigao]] ({{lang|zh|廖志高}}): 1979–1982
-      # Hu Hong ({{lang|zh|胡宏}}): 1982–1985
-      # Cheng Xu ({{lang|zh|程序}}): 1985–1993
-      # [[Chen Guangyi]] ({{lang|zh|陈光毅}}): 1993–1994
-      # [[Jia Qinglin]] ({{lang|zh|贾庆林}}): 1994–1998
-      # Yuan Qitong ({{lang|zh|袁启彤}}): 1998–2002
-      # [[Song Defu (politician)|Song Defu]] ({{lang|zh|宋德福}}): 2002–2005
-      # [[Lu Zhangong]] ({{lang|zh|卢展工}}): 2005–2010
-      # [[Sun Chunlan]] ({{lang|zh|孙春兰}}): 2010–2013
-      # [[You Quan]] ({{lang|zh|尤权}}): 2013–2018
-      # [[Yu Weiguo]] ({{lang|zh|于伟国}}): 2018–2021
-      # [[Yin Li (politician)|Yin Li]] ({{lang|zh|尹力}}): 2021–2023
-      # [[Zhou Zuyi]] ({{lang|zh|周祖翼}}): 2023–present
-   section 'Demographics':
-      [[File:She ethnic townships in Fujian.png|thumb|upright=0.7|The ethnic townships in Fujian]]
-      As of 1832, the province was described as having an estimated "population of fourteen millions." In 2021, Fujian's population was estimated to be 41.87 million, with an urbanization rate of 69.7%.
-      Fujianese who are legally classified as Han Chinese make up 98% of the population. Various [[Min Chinese speakers]] make up the largest subgroups classified as Han Chinese in Fujian, such as [[Fuzhou people|Fuzhounese people]], [[Putian people]], [[Hoklo peopl
-      The [[Hakka people|Hakka]], a Chinese [[Han Chinese subgroups|sub-branch]] with their own distinct identity, mostly live in the southwestern parts of Fujian. The [[She (ethnic group)|She]], an ethnic group scattered over mountainous regions in the north, is th
-      Many ethnic Chinese around the world (especially in [[Southeast Asia]]) trace their ancestries to the Fujianese branches of the [[Hoklo people|Hoklo]] and [[Teochew people|Teochew]] peoples. Descendants of [[Southern Min]]-speaking emigrants make up the majori
-  [en] 'Jiangxi': 56,262 bytes of wikitext
-== Jiangxi Province ([en] 'Jiangxi'): 5 tables
-         table 0: 14 rows; section 'Administrative divisions'; caption 'Administrative divisions of Jiangxi'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 13 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin', 'Gan Romanization']
-         table 2: 29 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year None
-         header: ['#', 'City', 'style ="background-color: #aaa', 'style ="background-color: #aaf', 'style ="background-color: #ffa', 'Census date']
-         table 3: 21 rows; section 'Economy'; caption "Historical GDP of Jiangxi Province for 1978 –present (SNA2008; purchasing power parity of Chinese Yuan, as Int'l. dollar based on IMF WEO October 2017)"; year 2017
-         header: ['year', 'GDP', 'GDP per capita (GDPpc) based o', 'Reference index']
-         table 4: 1 rows; section 'Religion'; caption ''; year 2009
+  [zh] '江西省': 40,903 bytes of wikitext
+== Jiangxi Province ([zh] '江西省'): 5 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 15 rows; section '行政区划'; caption ''; year 2020
+         header: ['江西省行政区划图', '区划代码', '区划名称', '面积土地面积为第二次全国土地调查结果数据。 （平方公里）', '常住人口常住人口为2020年第七次全国人口普查数据。 （20', '政府驻地', '县级行政区划']
+         table 2: 7 rows; section '中华人民共和国时期'; caption '江西省四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 江西省委员会', '25 江西省人民代表大会 常务委员会', '25 江西省人民政府', '25 中国人民政治协商会议 江西省委员会']
+         table 3: 23 rows; section '铁路'; caption ''; year None
+         header: ['铁路名称', '铁路起点', '铁路终点', '江西境内途径', '备注']
+         table 4: 30 rows; section '公路'; caption ''; year None
+         header: ['公路编号', '公路名称', '公路起点', '公路终点', '江西境内途径', '备注']
+  [zh] '山东省': 155,698 bytes of wikitext
+== Shandong Province ([zh] '山东省'): 7 tables
+         table 0: 6 rows; section '地形'; caption '山东省四至及地理中心'; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 17 rows; section '气候'; caption '山東各地年、季、月平均氣溫（℃）'; year None
+         header: ['', '春', '夏', '秋', '冬', '']
+         table 2: 23 rows; section '现况'; caption ''; year None
+         header: ['山东省行政区划图']
+         table 3: 23 rows; section '概况'; caption '1952年至今的山东省GDP数据 (SNA2008) (国际元基于IMF WEO2017年10月WEO]] data; Exchange rate of CN¥ to US$ is according to State Administration of Foreign Exchange, published in the China Statistical Yearbook.'; year 2017
+         header: ['年份', 'GDP', '人均 GDP (GDPpc) 基于年中人口']
+         table 4: 46 rows; section '公路'; caption '山东省境内主要的高速公路（2014-2030）'; year 2014
+         header: ['纵线一', '沈海高速公路', '烟台-日照（鲁苏界）']
+         table 5: 1 rows; section '公路'; caption '山东省主要国道'; year 2014
+         header: ['国道', '北京-平潭]]、北京-珠海]]、烟台-上海]]、秦皇岛-深圳']
+         table 6: 3 rows; section '山东方言'; caption '钱增怡和李荣的山东方言分区'; year None
+         header: ['东区', '西区']
+  [zh] '河南省': 48,767 bytes of wikitext
+== Henan Province ([zh] '河南省'): 4 tables
+         table 0: 25 rows; section '行政区划'; caption ''; year None
+         header: ['河南省行政区划图']
+         table 1: 3 rows; section '人口与姓氏'; caption '河南省下辖地级市人口数据（2008年末）／单位：百万'; year 2008
+         header: ['区划', '郑州', '开封', '洛阳', '平顶山', '安阳', '鹤壁', '新乡', '焦作', '濮阳', '许昌', '漯河', '三门峡', '南阳', '商丘', '信阳', '周口', '驻马店', '济源']
+         table 2: 7 rows; section '教育'; caption '河南省本科院校'; year 2018
+         header: ['郑州大学', '河南大学', '商丘学院', '华北水利水电大学', '河南农业大学', '河南理工大学']
+         table 3: 6 rows; section '地方首长'; caption '河南省四大机构现任领导人'; year None
+         header: ['机构与职务', '25 中国共产党 河南省委员会 书记', '25 河南省人民代表大会 常务委员会 主任', '25 河南省 人民政府 省长', '25 中国人民政治协商会议 河南省委员会 主席']
+  [zh] '湖北省': 29,424 bytes of wikitext
+== Hubei Province ([zh] '湖北省'): 8 tables
+         table 0: 24 rows; section '行政区划'; caption '湖北省行政区划图'; year 2020
+         header: ['区划代码', '区划名称', '面积土地面积为第二次全国土地调查结果数据。 （平方公里）', '常住人口常住人口为2020年第七次全国人口普查数据。 （20', '政府驻地', '县级行政区划']
+         table 1: 20 rows; section '人口'; caption '各地区人口 单位：人、%'; year None
+         header: ['地区', '常住人口', '比重']
+         table 2: 1 rows; section '宗教'; caption ''; year 2009
          header: ['']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_footnotes = <!-- for references: use
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = CN¥3.42 trillion ([[List of Chinese provincial-level divisions by GDP|15th]]; US$ 480.26 billion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥75,862 ([[List of Chinese provincial-level divisions by GDP per capita|21st]]; US$ 10,652)
-   section 'Demographics':
-      [[File:She ethnic townships in Jiangxi.png|thumb|150px|She ethnic townships in Jiangxi]]
-      The population of Jiangxi according [[2020 Chinese census]] is 45.18 million. 99.73% of that is [[Han Chinese]], predominantly [[Gan-speaking people|Gan]] and [[Hakka people|Hakka]]. [[Ganzhou]], Jiangxi's largest city, has an especially large number of Hakka.
-      Jiangxi and [[Henan]] both have the most unbalanced gender ratios of all Chinese provinces. Based on a 2009 ''[[British Medical Journal]]'' study, the ratio is over 140 boys for every 100 girls in the 1–4 age group.{{Update inline|date=December 2024}}
-      {{Historical populations
-      |title       = Historical population
-      |align = none | cols = 2
-      |footnote    =
-      |1912  |23,988,000
-      |1928 |20,323,000
-      |1936-37 |15,805,000
-      |1947 |12,507,000
-      |1954 |16,772,865
-      |1964 |21,068,019
-      |1982 |33,184,827
-      |1990 |37,710,281
-      |2000 |40,397,598
-      |2010 |44,567,475
-      }}
-      In 2019 the most-common surname in Jiangxi was [[Liu (surname)|Liú]] (刘), the only province where this was the case. Overall Liu is the fourth-most common surname in the country.
-  [en] 'Shandong': 194,030 bytes of wikitext
-== Shandong Province ([en] 'Shandong'): 6 tables
-         table 0: 17 rows; section 'Climate'; caption 'Average temperature in Shandong (°C)'; year None
-         header: ['', 'Spring', 'Summer', 'Fall', 'Winter', '']
-         table 1: 32 rows; section 'Economy'; caption "Historical GDP of Shandong Province, 1952–present (SNA2008) (purchasing power parity of Chinese Yuan, as Int'l.dollar based on IMF WEO October 2017WEO]] data; Exchange rate of CN¥ to US$ is according to State Administration of Foreign Exchange, published in the China Statistical Yearbook."; year 2017
-         header: ['year', 'GDP', 'GDP per capita (GDPpc) based o', 'Reference index']
-  ETHNIC table 2: 7 rows; section 'Ethnicity'; caption 'Ethnic groups in Shandong according to the 2020 Chinese census'; year 2020
-         header: ['Ethnicity', 'Male', 'Female', 'Total population', 'Percentage']
-         prose : 'ident population was 101.527 million, of which 100.622 mill In addition, there are considerable Korean diaspora in Shandong; for example, Qingdao has a Korean population of over 100,000, accounting for about 7.19% of total Koreans in China.'
-         row   : ['Han', '50,981,231', '49,641,263', '100,622,494', '99.109%']
-         row   : ['Hui', '279,413', '272,802', '552,215', '0.544%']
-         row   : ['Mongol', '19,360', '18,294', '37,654', '0.037%']
-         row   : ['Zang (Tibetan)', '1,851', '2,501', '4,352', '0.004%']
-         row   : ['Other ethnic groups', '151,076', '159,662', '310,738', '0.003%']
-         row   : ['Total', '51,432,931', '50,094,522', '101,527,453', '100%']
-         table 3: 20 rows; section 'Current divisions'; caption 'Administrative divisions of Shandong'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population (2020)', 'Seat', 'Divisions']
-         table 4: 18 rows; section 'Current divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year 2019
-         header: ['English', 'Chinese', 'Pinyin']
-         table 5: 52 rows; section 'Current divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2023
-         header: ['#', 'City', 'style ="background-color: #aaa', 'style ="background-color: #aaf', 'style ="background-color: #ffa', 'Census date']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl|[[Han Chinese|Han]]{{snd}}99.3%|[[Hui]]{{snd}}0.6%}}
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = [[Jiaoliao Mandarin]], [[Jilu Mandarin]], [[Zhongyuan Mandarin]]
-   infobox: | demographics_type2   = [[Gross domestic product|GDP]] {{normal|(2025)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CNY|10.31 trillion ([[List of Chinese provincial-level divisions by GDP|3rd]])}} (US$1.48 trillion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CNY|101,446 ([[List of Chinese provincial-level divisions by GDP per capita|11th]])}} (US$14,563)
-   section "In People's Republic":
-      Shandong suffrered heavily during the [[Great Chinese Famine]] of 1959–62, about six million people starved to death. On 25 August 1966, a confrontation known as the "Qingdao Incident" broke out between cadres and workers on one side and students from three ma
-      Mao died in 1976, ending the era of restless political movement in China, two years later, the new leadership launched the [[Reform and Opening Up]]. Shandong, especially the eastern coastal region—experienced significant economic development. By 1986, for the
-      In 1996, Shandong became the first province in China to achieve full electrification of all households. In 1999, [[Zhanhua County]], the province's last officially designated impoverished county, was declared poverty-free. In 2004, Shandong overtook [[Guangdon
-      [[File:青岛港大港.jpg|thumb|Benefited from its coast, Shandong experienced rapid economic growth after 1978. Ports like [[Qingdao Port|Qingdao]], [[Yantai Port|Yantai]], and [[Rizhao port|Rizhao]] are constantly ranked top 50 in the world [[List of busiest containe
-      In August and September 2008, Qingdao, as a partner city of [[Beijing]], hosted the [[sailing]] competitions of the [[2008 Summer Olympics|29th Summer Olympic Games]] and the [[2008 Summer Paralympics|13th Summer Paralympic Games]].
-      In 2009, Jinan hosted the [[11th National Games of the People's Republic of China]]. On 16 July 2010, German Chancellor [[Angela Merkel]] visited China, during which both sides agreed to support the establishment of the [[Sino-German Ecopark]] within the [[Qin
-      In 2011, the development plan for the [[Shandong Peninsula|Shandong Peninsula Blue Economic Zone]] was officially approved. On 3 June 2014, the [[State Council of the People's Republic of China|State Council]] formally approved the establishment of the nationa
-      In August 2019, the State Council approved the establishment of the China (Shandong) Pilot Free Trade Zone, which includes three areas: Jinan, Qingdao, and Yantai. By 2020, the total population of the [[Shandong Peninsula|Shandong Peninsula urban agglomeration
-   section 'Demographics':
-      {{See also|Shandong people}}{{Historical populations
-      |title       = Historical population
-      |footnote    = Qingdao was part of Shandong Province until 1929; dissolved in 1949 and incorporated into Shandong Province.<br />Weihai, also known as Weihaiwei. Established in 1930, dissolved in 1945, and incorporated into Shandong Province.
-      |1912 |30,989,000
-      |1928 |28,672,000
-      |1936-37|38,100,000
-      |1947|38,865,000
-      |1954|48,876,548
-      |1964|55,519,038
-      |1982 |74,419,054
-      |1990 |84,392,827
-      |2000 |89,971,789
-      |2010|95,793,065
-      |2020|101,527,453
-      Accurate population statistics for [[Shandong Province]] began during the [[Han dynasty]], and its development since then can be divided into four stages. In 2 AD, the population in the area of present-day Shandong Province was over 12 million, and it exceeded
-      According to the 2010 national census, 8.3287 million people had attained a [[university]] level of education, 13.3226 million had a [[high school]] education, 38.4682 million had a [[junior high school]] education, and 23.9124 million had a [[primary school]]
-      By the end of 2014, there were 2.615 million people aged over 80 in the province, and 5,932 people aged over 100. The average life expectancy was 73.42 years in 2000, 76.46 years in 2010, and was projected to reach 78 years in 2016. In 2009, [[Laizhou]] was re
-      Among the 16 prefecture-level cities, two had populations exceeding 10 million: [[Linyi]] with 11.018 million, and [[Qingdao]] with 10.072 million. Among the total resident population, 51.433 million were male (50.66%) and 50.095 million were female (49.34%). 
-      Shandong citizens are also known to have the tallest average height of any Chinese province. As of 2010, 16-18-year-old male students in Yantai measured {{convert|176.4|cm|ftin}} while female students measured {{convert|164|cm|ftin|abbr=on}}.
-      id:lightgrey value:gray(0.9)
-      id:darkgrey  value:gray(0.7)
-      id:sfondo value:rgb(1,1,1)
-      id:barra value:rgb(0.7,0.9,0.7)
-      ImageSize  = width:1000 height:350
-      PlotArea   = left:50 bottom:30 top:30 right:50
-      Period =from:0 till:110000000
-      ScaleMajor = gridcolor:darkgrey increment:50000000 start:50000000
-      ScaleMinor = gridcolor:white increment:250000 start:0
-      bar:1833
-      bar:1834
-      bar:1835
-      bar:1836
-      bar:1837
-      bar:1838
-      bar:1839
-      bar:1840 text:1840
-      bar:1841
-      bar:1842
-      bar:1843
-      bar:1844
-      bar:1845
-      bar:1846
-      bar:1847
-      bar:1848
-      bar:1849
-   section 'Ethnicity':
-      As of March 2015, there were 55 ethnic minority groups in Shandong Province, with a total resident population of 720,000, accounting for 0.75% of the province's total population. Among them, the Hui ethnic group numbered 540,000, accounting for 75% of the tota
-      On 21 May 2021, the main data of [[Seventh National Population Census of the People's Republic of China|the seventh national population census]] in Shandong Province was released. The data showed that the total resident population was 101.527 million, of which
-      In addition, there are considerable [[Korean diaspora]] in Shandong; for example, [[Qingdao]] has a Korean population of over 100,000, accounting for about 7.19% of total [[Koreans in China]].
-      {| class="wikitable"
-      |+Ethnic groups in Shandong according to the [[2020 Chinese census]]
-      !Ethnicity
-      !Male
-      !Female
-      !Total population
-      !Percentage
-      |-
-      |[[Han people|Han]]
-      |50,981,231
-      |49,641,263
-      |100,622,494
-      |99.109%
-      |-
-      |[[Hui people|Hui]]
-      |279,413
-      |272,802
-      |552,215
-      |0.544%
-      |-
-      |[[Mongols in China|Mongol]]
-      |19,360
-      |18,294
-      |37,654
-      |0.037%
-      |-
-      |[[Tibetans|Zang]] (Tibetan)
-      |1,851
-      |2,501
-      |4,352
-      |0.004%
-      |-
-      |Other ethnic groups
-      |151,076
-      |159,662
-      |310,738
-      |0.003%
-      |-
-      |Total
-      |51,432,931
-      |50,094,522
-      |101,527,453
-  [en] 'Henan': 89,555 bytes of wikitext
-== Henan Province ([en] 'Henan'): 3 tables
-         table 0: 23 rows; section 'Administrative divisions'; caption 'Administrative divisions of Henan'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 20 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 2: 42 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year None
-         header: ['#', 'City', 'style ="background-color: #aaa', 'style ="background-color: #aaf', 'style ="background-color: #ffa', 'Census date']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl|[[Han Chinese|Han]]: 98.6%|Others: 1.4%}}
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = {{hlist|[[Central Plains Mandarin]] | [[Jin Chinese|Jin]]}}
-   infobox: | demographics_type2 = [[Gross domestic product|GDP]] {{normal|(2023)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CNY|5,913 billion ([[List of Chinese provincial-level divisions by GDP|6th]])}} {{bi|left=1|{{nwr|(US$839 billion)}}}}
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CNY|60,073 ([[List of Chinese provincial-level divisions by GDP per capita|25th]])}} {{bi|left=1|{{nwr|(US$8,525)}}}}
-   section 'Conquests by Northern Peoples':
-      In 1127, the [[Jurchen people|Jurchens]], a people from the northeast, captured [[Kaifeng]] and [[Jingkang incident|took the Song emperor prisoner]]. In 1194, the Yellow River [[Changes in the course of the Yellow River|changed its course]], flowing southward 
-      Due to heavy casualties and mass migration caused by warfare and flooding, the Ming court under the [[Hongwu Emperor|Hongwu]] reign organized large-scale, compulsory resettlement from [[Shanxi]] to Henan. In 1368, the prefectures of [[Weihui]] (衛輝), [[Zhangdef
-      The wars of the late Ming and early [[Qing dynasty|Qing]] (circa 1630–1662) once again devastated Henan. During the [[Kangxi Emperor|Kangxi]] reign, the province's agricultural economy recovered, and it gradually regained its status as a major population cente
-      On September 30, 1887, a major Yellow River dike breach occurred at Xiayun Shibao in Zhengzhou (present-day Shiqiao Village, [[Huayuankou, Henan|Huayuankou]] Town, Huiji District). The disaster claimed over two million lives (with estimates ranging from 930,00
-   section 'Demographics':
-      {{See also|Category:People from Henan}}
-      {{Historical populations
-      |title       = Historical population
-      |1912  |28,518,000
-      |1928 |30,566,000
-      |1936–37 |34,290,000
-      |1947 |29,654,000
-      |1954 |44,214,594
-      |1964 |50,325,511
-      |1982 |74,422,739
-      |1990 |85,509,535
-      |2000 |91,236,854
-      |2010 |94,023,567
-      }}
-      With a population of approximately 98.2&nbsp;million, Henan is the third most populous Chinese province after Guangdong and Shandong. It is the fifth most populous sub-national division in the world. If it were a country by itself, it would be the twelfth most
-      Henan exhibits demographic statistics indicative of a late stage in the demographic transition model. It has a birth rate of 7.06, decreasing from 9.24 in 2020 and 12.70 in 2015, while an aging population possibly explains an uptick in the death rate to 8.00 f
-      Henan hosts an urban population of 57.01 million, a 58% urbanization rate, below that of China’s national average of 67%. It is a jump from 2014 when the urban population was 43.45 million. This urbanization process can be mostly attributed to internal migrati
-   section 'Population composition':
-      98.8% of the population is [[Han Chinese|Han]]. Populations of [[Mongols]] and [[Manchus]] exist in scattered rural communities, and urban centers. Along with [[Jiangxi]], Henan has one of the most unbalanced gender ratios in China. As a result of the Chinese 
-  [en] 'Hubei': 66,979 bytes of wikitext
-== Hubei Province ([en] 'Hubei'): 4 tables
-         table 0: 22 rows; section 'Administrative divisions'; caption 'Administrative divisions of Hubei'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 19 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 2: 39 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year None
-         header: ['#', 'City', 'style ="background-color: #aaa', 'style ="background-color: #aaf', 'style ="background-color: #ffa', 'Census date']
-         table 3: 1 rows; section 'Religion'; caption ''; year 2009
+         table 3: 2 rows; section '高等教育'; caption ''; year None
+         header: ['武汉大学', '华中科技大学', '武汉理工大学', '中国地质大学（武汉）']
+         table 4: 1 rows; section '高等教育'; caption ''; year None
+         header: ['中国人民解放军海军工程大学', '中国人民解放军空军预警学院', '中国人民解放军火箭军指挥学院', '中国人民解放军信息支援部队工程大学']
+         table 5: 6 rows; section '高等教育'; caption ''; year None
+         header: ['湖北大学', '长江大学', '江汉大学', '三峡大学', '武汉科技大学', '湖北工业大学', '湖北大学知行学院', '湖北第二师范学院']
+         table 6: 7 rows; section '地方首长'; caption '湖北省四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 湖北省委员会', '25 湖北省人民代表大会 常务委员会', '25 湖北省人民政府', '25 中国人民政治协商会议 湖北省委员会']
+         table 7: 2 rows; section '友好省州关系'; caption ''; year None
+         header: ['与湖北省结为友好城市的省州']
+  [zh] '湖南省': 38,728 bytes of wikitext
+== Hunan Province ([zh] '湖南省'): 5 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 21 rows; section '行政区划'; caption ''; year None
+         header: ['湖南省行政区划图']
+         table 2: 9 rows; section '人口'; caption '近年湖南省常住人口数据'; year None
+         header: ['年份', '出生率（‰）', '死亡率（‰）', '自然增长率（‰）', '出生人口（万人）', '死亡人口（万人）', '自然增长人口（万人）']
+  ETHNIC table 3: 4 rows; section '民族'; caption '湖南省民族构成（2020年第七次全国人口普查）'; year 2020
+         header: ['民族名称', '汉族', '土家族', '苗族', '侗族', '瑶族', '白族', '回族', '壮族', '维吾尔族', '彝族', '其他民族']
+         prose : '湖南是一个以漢族為主的多民族省份，全国56个民族，都有居民在境内生活。少数民族总人口达680万人（名列全国第6位，次于广西、云南、贵州、新疆和辽宁），约占总人口的10.21%。少数民族中人口较多的是土家族（264万）、苗族（192万）、侗族（84万）、瑶族（70万）、白族（13万）、回族（9.7万）、壮族（2.4万）、蒙古族（1.6万）、满族（8206）、维吾尔族（7939）等。少数民族分布在全省'
+         row   : ['汉族', '59,759,648', '89.94', '－']
+         row   : ['土家族', '2,713,005', '4.08', '40.58']
+         row   : ['苗族', '2,027,034', '3.05', '30.32']
+         row   : ['侗族', '865,518', '1.30', '12.95']
+         row   : ['瑶族', '749,872', '1.13', '11.22']
+         row   : ['白族', '118,638', '0.18', '1.77']
+         row   : ['回族', '82,786', '0.12', '1.24']
+         row   : ['壮族', '45,495', '0.07', '0.68']
+         row   : ['维吾尔族', '11,076', '0.02', '0.17']
+         row   : ['彝族', '9,797', '0.01', '0.15']
+         row   : ['其他民族', '61,995', '0.09', '0.93']
+         table 4: 7 rows; section '地方首长'; caption '湖南省四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 湖南省委员会', '25 湖南省人民代表大会 常务委员会', '25 湖南省人民政府', '25 中国人民政治协商会议 湖南省委员会']
+  [zh] '广东省': 52,300 bytes of wikitext
+== Guangdong ([zh] '广东省'): 10 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 29 rows; section '行政區劃'; caption ''; year 1988
+         header: ['廣東省行政區劃圖']
+         table 2: 7 rows; section '地方首长'; caption '广东省四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 广东省委员会', '25 广东省 人民代表大会 常务委员会', '25 广东省 人民政府', '25 中国人民 政治协商会议 广东省委员会']
+         table 3: 8 rows; section '人口'; caption '历次中國全國人口普查广东省人口数'; year None
+         header: ['年份', '普查内容', '人口数', '占总人口比重', '各省（区、市）位次']
+         table 4: 4 rows; section '人口'; caption '2024 年末广东省常住人口结构'; year 2024
+         header: ['年龄段', '占比']
+         table 5: 7 rows; section '人口'; caption '近年广东省常住人口情况'; year None
+         header: ['年份', '年末常住人口（万人）', '出生人口（万人）', '死亡人口（万人）', '出生率', '死亡率']
+         table 6: 7 rows; section '粵語'; caption '广东省内粤语分区'; year None
+         header: ['分区', '使用市县（区）', '代表口音']
+         table 7: 5 rows; section '客家话'; caption '广东省内客家话分区'; year None
+         header: ['分区', '使用市县（区）', '代表口音']
+         table 8: 5 rows; section '閩語'; caption '广东省内闽語分区'; year None
+         header: ['分区', '使用市县（区）', '代表口音']
+         table 9: 24 rows; section '球队'; caption ''; year None
+         header: ['球队', '城市', '项目', '联赛']
+  [zh] '广西壮族自治区': 65,258 bytes of wikitext
+== Guangxi Zhuang Autonomous Region ([zh] '广西壮族自治区'): 6 tables
+         table 0: 8 rows; section '水文'; caption '西江水系图示 （倾斜字体表示河流不在广西境内）'; year None
+         header: ['', '', '', '贺江', '西江']
+         table 1: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 2: 7 rows; section '政治'; caption '广西壮族自治区四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 广西壮族自治区委员会', '25 广西壮族自治区人民代表大会 常务委员会', '25 广西壮族自治区 人民政府', '25 中国人民政治协商会议 广西壮族自治区委员会']
+         table 3: 20 rows; section '行政区划'; caption ''; year None
+         header: ['广西壮族自治区行政区划图']
+  ETHNIC table 4: 4 rows; section '民族'; caption '广西壮族自治区民族构成（2020年第七次全国人口普查）'; year 2020
+         header: ['民族名称', '汉族', '壮族', '瑶族', '苗族', '侗族', '仫佬族', '毛南族', '回族', '布依族', '京族', '其他民族']
+         prose : '下降0.35个百分点；各少数民族人口增加1,700,315人，增长9.94%，占总人口比例增加0.35个百分点。其中，壮族人口增加1,273,534人，增长8.81%，占 全区户籍人口中，汉族人口为3201.90万人，占62.06%，比2000年增加287万人，增长9.87%；各少数民族人口为1957.56万人，占37.94%，比2000年增加148.19万人，增长8.19%，其中壮族人口为1658.72万人，占32.15%，比2000年增加105.61万人，增长6.80%。'
+         row   : ['汉族', '31,318,824', '62.48', '－']
+         row   : ['壮族', '15,721,956', '31.36', '83.59']
+         row   : ['瑶族', '1,683,038', '3.36', '8.95']
+         row   : ['苗族', '578,122', '1.15', '3.07']
+         row   : ['侗族', '362,580', '0.72', '1.93']
+         row   : ['仫佬族', '180,185', '0.36', '0.96']
+         row   : ['毛南族', '73,199', '0.15', '0.39']
+         row   : ['回族', '35,347', '0.07', '0.19']
+         row   : ['布依族', '31,303', '0.06', '0.17']
+         row   : ['京族', '29,326', '0.06', '0.16']
+         row   : ['其他民族', '112,924', '0.23', '0.60']
+         table 5: 9 rows; section '民族传统文化节日活动'; caption '广西重大节庆'; year None
+         header: ['名称', '创办时间', '举办时间', '内容']
+  [zh] '海南省': 51,068 bytes of wikitext
+== Hainan Province ([zh] '海南省'): 9 tables
+         table 0: 5 rows; section '仅陆地'; caption ''; year None
+         header: ['四至', '位置', '经纬度']
+         table 1: 5 rows; section '海南岛'; caption ''; year None
+         header: ['四至', '位置', '经纬度']
+         table 2: 29 rows; section '行政区划'; caption ''; year None
+         header: ['海南省行政区划图']
+         table 3: 7 rows; section '政权结构'; caption '海南省五大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 海南省委员会', '25 海南省人民代表大会 常务委员会', '25 海南省人民政府', '25 中国人民政治协商会议 海南省委员会', '25 海南省监察委员会']
+         table 4: 13 rows; section '经济'; caption '海南生态省建设10年前后经济和环境数据比较一览表'; year 2008
+         header: ['指 标', '1998年', '2008年', '增长率（％）', '备 注']
+  ETHNIC table 5: 4 rows; section '民族'; caption '海南省民族构成（2020年第七次全国人口普查）'; year 2020
+         header: ['民族名称', '汉族', '黎族', '苗族', '壮族', '回族', '瑶族', '满族', '土家族', '布依族', '侗族', '其他民族']
+         prose : '少数民族方面，黎族（127.74万人）、苗族（6.1万人）、壯族（5万人）、回族（8372人）。黎、苗、回族，大多数聚居在中部、南部的琼中、保亭、白沙、陵水、乐东、昌江等县和三亚市、五指山市；汉族人口主要聚集在东北部、北部和沿海地区。根据2001年户籍人口数，汉族(多數為閩民系，另含臨高人)占总人口的82.6%，黎族占15.84%，苗族(實際上為瑤族)占0.82%，壮族(不含臨高人)占0.67%，'
+         row   : ['汉族', '8,498,241', '84.30', '－']
+         row   : ['黎族', '1,355,074', '13.44', '85.60']
+         row   : ['苗族', '87,733', '0.87', '5.54']
+         row   : ['壮族', '61,000', '0.61', '3.85']
+         row   : ['回族', '17,089', '0.17', '1.08']
+         row   : ['瑶族', '10,000', '0.10', '0.63']
+         row   : ['满族', '9,825', '0.10', '0.62']
+         row   : ['土家族', '8,273', '0.08', '0.52']
+         row   : ['布依族', '6,800', '0.07', '0.43']
+         row   : ['侗族', '5,398', '0.05', '0.34']
+         row   : ['其他民族', '21,799', '0.22', '1.38']
+         table 6: 2 rows; section '高等院校'; caption ''; year None
+         header: ['', '']
+         table 7: 2 rows; section '中等学校'; caption ''; year None
+         header: ['', '']
+         table 8: 24 rows; section '省级友好关系'; caption ''; year None
+         header: ['省级友城', '主权国家', '缔结年月']
+  [zh] '重庆市': 97,543 bytes of wikitext
+== Chongqing Municipality ([zh] '重庆市'): 7 tables
+         table 0: 6 rows; section '正职领导人'; caption '重庆市四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 重庆市委员会 书记', '25 重庆市人民代表大会 常务委员会 主任', '25 重庆市人民政府 市长', '25 中国人民政治协商会议 重庆市委员会 主席']
+         table 1: 3 rows; section '市委常委'; caption ''; year None
+         header: ['党委领导', '政府领导', '省军区', '其他党委常委']
+         table 2: 3 rows; section '中华人民共和国成立后'; caption ''; year 1996
+         header: ['', '200x200像素', '200px', '200px', '200px']
+         table 3: 45 rows; section '现行区划'; caption ''; year None
+         header: ['重庆市行政区划图']
+  ETHNIC table 4: 4 rows; section '人口'; caption '重庆市民族构成（2020年第七次全国人口普查）'; year 2020
+         header: ['民族名称', '汉族', '土家族', '苗族', '彝族', '壮族', '回族', '布依族', '侗族', '仡佬族', '满族', '其他民族']
+         prose : '只有800万人，占重慶全市人口不到1/4，其中城市人口641万人，城鎮化率82.7％。到2017年末，重庆市的人口总数达到3075万，全市城镇人口1970.68万人，城镇化率64.08％。2020年11月1日中华人民共和国第七次全国人口普查的数据显示，重庆市人口总数为3 重庆人口以汉族为主体，此外有土家族、苗族、回族、满族、彝族、壮族等49个少数民族。少数民族人口总数为175万人，其中土家族人口最多，有113万人，其次苗族约52万人，主要集中分布在重庆东南部原黔江地区各区县。'
+         row   : ['汉族', '29,883,369', '93.23', '－']
+         row   : ['土家族', '1,546,988', '4.83', '71.26']
+         row   : ['苗族', '512,933', '1.60', '23.63']
+         row   : ['彝族', '15,901', '0.05', '0.73']
+         row   : ['壮族', '10,616', '0.03', '0.49']
+         row   : ['回族', '10,032', '0.03', '0.46']
+         row   : ['布依族', '9,558', '0.03', '0.44']
+         row   : ['侗族', '7,757', '0.02', '0.36']
+         row   : ['仡佬族', '7,660', '0.02', '0.35']
+         row   : ['满族', '6,396', '0.02', '0.29']
+         row   : ['其他民族', '42,949', '0.13', '1.98']
+         table 5: 17 rows; section '驻渝外交机构'; caption ''; year 1998
+         header: ['领事机构名称', '成立时间', '领区', '办公处', '邮政编码']
+         table 6: 7 rows; section '参见'; caption ''; year None
+         header: ['歷史', '概况 | 抗日战争以前 | 抗日战争时期 | 1949年后']
+  [zh] '四川省': 72,540 bytes of wikitext
+== Sichuan Province ([zh] '四川省'): 4 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 29 rows; section '行政区划'; caption ''; year None
+         header: ['四川省行政区划图']
+  ETHNIC table 2: 4 rows; section '民族'; caption '四川省民族构成（2020年第七次全国人口普查）'; year 2020
+         header: ['民族名称', '汉族', '彝族', '藏族', '羌族', '苗族', '回族', '土家族', '蒙古族', '满族', '壮族', '其他民族']
+         prose : '四川省的主要民族为汉族，包括巴蜀人、土广东、老湖广三大族群，其中巴蜀人是四川的主体族群，占总人口的95％，主要聚居在四川盆地。除汉族外其它民族虽然只占四川省总人口的5％，但总数达422万人，居中国第8位。有彝族、藏族、羌族、苗族、回族、蒙古族、土家族、傈僳族、满族、纳西族、布依族、白族、壮族、傣族等14个世居少数民族。其中人数较多的少数民族依次是：彝族（212万）、藏族（127万）、羌族（30万）'
+         row   : ['汉族', '77,986,638', '93.20', '－']
+         row   : ['彝族', '3,191,470', '3.81', '56.11']
+         row   : ['藏族', '1,604,629', '1.92', '28.21']
+         row   : ['羌族', '294,664', '0.35', '5.18']
+         row   : ['苗族', '182,569', '0.22', '3.21']
+         row   : ['回族', '111,280', '0.13', '1.96']
+         row   : ['土家族', '87,912', '0.11', '1.55']
+         row   : ['蒙古族', '42,993', '0.05', '0.76']
+         row   : ['满族', '24,450', '0.03', '0.43']
+         row   : ['壮族', '23,631', '0.03', '0.42']
+         row   : ['其他民族', '124,630', '0.15', '2.19']
+         table 3: 23 rows; section '对外交流'; caption ''; year 2023
+         header: ['省級行政區', '姐妹行政區', '缔约日期']
+  [zh] '贵州省': 26,886 bytes of wikitext
+== Guizhou Province ([zh] '贵州省'): 4 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 16 rows; section '行政区划'; caption ''; year None
+         header: ['贵州省行政区划图']
+  ETHNIC table 2: 4 rows; section '民族'; caption '贵州省民族构成（2020年第七次全国人口普查）'; year 2020
+         header: ['民族名称', '汉族', '苗族', '布依族', '土家族', '侗族', '彝族', '未定族称人口', '仡佬族', '水族', '白族', '其他民族']
+         prose : '83.45万人，占2.4%）、仡佬族（49.52万，占1.4%）、水族（34.87万，占1.0%）、回族（18.48万，占0.53%）、白族（17.95万，占0. 2009年末，贵州少数民族人口占全省总人口的39%。全省有3个民族自治州、11个民族自治县，地级行政区划单位占全省的30%，县级行政区划单位46个，占全省的52.3%；少数民族自治地区国土面积9.78万平方公里，占全省国土面积的55.5%。还有253个民族乡。千百年来，各民族和睦相处，共同创造了多姿多彩的贵州文化。'
+         row   : ['汉族', '24,511,882', '63.56', '－']
+         row   : ['苗族', '4,506,912', '11.69', '32.08']
+         row   : ['布依族', '2,710,606', '7.03', '19.29']
+         row   : ['土家族', '1,696,664', '4.40', '12.08']
+         row   : ['侗族', '1,650,871', '4.28', '11.75']
+         row   : ['彝族', '959,302', '2.49', '6.83']
+         row   : ['未定族称人口', '698,234', '1.81', '4.97']
+         row   : ['仡佬族', '550,322', '1.43', '3.92']
+         row   : ['水族', '371,367', '0.96', '2.64']
+         row   : ['白族', '214,802', '0.56', '1.53']
+         row   : ['其他民族', '691,186', '1.79', '4.92']
+         table 3: 7 rows; section '地方首长'; caption '贵州省四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 贵州省委员会', '25 贵州省人民代表大会 常务委员会', '25 贵州省人民政府', '25 中国人民政治协商会议 贵州省委员会']
+  [zh] '云南省': 48,831 bytes of wikitext
+== Yunnan Province ([zh] '云南省'): 0 tables
+  [zh] '西藏自治区': 36,464 bytes of wikitext
+== Tibet Autonomous Region ([zh] '西藏自治区'): 3 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 14 rows; section '行政区划'; caption ''; year None
+         header: ['西藏自治区行政区划图']
+         table 2: 7 rows; section '政治'; caption '西藏自治区四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 西藏自治区委员会', '25 西藏自治区人民代表大会 常务委员会', '25 西藏自治区人民政府', '25 中国人民政治协商会议 西藏自治区委员会']
+  [zh] '陕西省': 28,922 bytes of wikitext
+== Shaanxi Province ([zh] '陕西省'): 4 tables
+         table 0: 5 rows; section '四至'; caption '陕西省四至'; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 15 rows; section '行政区划'; caption ''; year 2020
+         header: ['陕西省行政区划图', '区划代码', '区划名称', '面积土地面积为第二次全国土地调查结果数据。 （平方公里）', '常住人口常住人口为2020年第七次全国人口普查数据。 （20', '电话区号', '政府驻地', '县级行政区划']
+         table 2: 1 rows; section '宗教'; caption ''; year 2009
          header: ['']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = [[Southwestern Mandarin]], [[Lower Yangtze Mandarin]], [[Gan Chinese|Gan]], [[Xiang Chinese|Xiang]]
-   infobox: | demographics_type2 = [[Gross domestic product|GDP]] {{nobold|(2024)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CNY|6,001 billion}} ([[List of Chinese provincial-level divisions by GDP|7th]]; US$842 billion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CNY|102,832}} ([[List of Chinese provincial-level divisions by GDP per capita|9th]]; US$14,439)
-   section 'Demographics':
-      {{Historical populations
-      |title       = Historical population
-      |footnote    = Wuhan (Hankou) part of Hubei Province until 1927; dissolved in 1949 and incorporated into Hubei Province.
-      |1912  |29,590,000
-      |1928 |26,699,000
-      |1936–37 |25,516,000
-      |1947 |20,976,000
-      |1952 |21,470,000
-      |1954 |27,789,693
-      |1964 |33,709,344
-      |1982 |47,804,150
-      |1990 |53,969,210
-      |2000 |59,508,870
-      |2010 |57,237,740
-      |2020 |57,752,557
-      }}
-      [[Han Chinese]] form the dominant ethnic group in Hubei. A considerable [[Hmong people|Miao]] and [[Tujia people|Tujia]] population live in the southwestern part of the province, especially in [[Enshi Tujia and Miao Autonomous Prefecture]].
-      On October 18, 2009, Chinese officials began to relocate 330,000 residents from the Hubei and [[Henan]] provinces that will be affected by the Danjiangkou Reservoir on the [[Han River (Hanshui)|Han river]]. The reservoir is part of the larger [[South-North Wat
-      {{clear}}
-  [en] 'Hunan': 84,991 bytes of wikitext
-== Hunan Province ([en] 'Hunan'): 4 tables
-         table 0: 17 rows; section 'Administrative divisions'; caption 'Administrative divisions of Hunan'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 16 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin', 'Xiang Romanization']
-         table 2: 33 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year None
-         header: ['#', 'City', 'style ="background-color: #aaa', 'style ="background-color: #aaf', 'style ="background-color: #ffa', 'Census date']
-         table 3: 26 rows; section 'Economy'; caption "Historical GDP of Hunan Province for 1952 –present (SNA2008) (purchasing power parity of Chinese Yuan, as Int'l. dollar based on IMF WEO October 2017)"; year 2017
-         header: ['year', 'GDP', 'GDP per capita (GDPpc) based o', 'Reference index']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl|[[Han Chinese|Han]]&nbsp;– 90%|[[Tujia people|Tujia]]&nbsp;– 4%|[[Hmong people|Miao]]&nbsp;– 3%|[[Kam people|Dong]]&nbsp;– 1%|[[Yao people (Asia)|Yao]]&nbsp;– 1%|Other peoples&nbsp;– 1%}}
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = {{hlist|[[Xiang Chinese|Xiang]]|[[Gan Chinese|Gan]]|[[Southwestern Mandarin]]|[[Xiangnan Tuhua]]| [[Waxiang Chinese|Waxiang]]|[[Hakka Chinese|Hakka]]|[[Yue Chinese|Yue]]|[[Xong language|Xong]]|[[Tujia language|Tujia]]|[[Iu Mien language|Mien]]|[[Kam language|Gam]]}}
-   infobox: | demographics_type2 = [[Gross domestic product|GDP]] {{normal|(2025)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CNY|5,530 billion}} ([[List of Chinese provincial-level divisions by GDP|10th]]; US$790 billion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CNY|84,583}} ([[List of Chinese provincial-level divisions by GDP per capita|14th]]; US$11,900)
-   section 'Demographics':
-      [[File:Ethnic minorities areas in Hunan.png|thumb|upright=0.9|Ethnic minority-inhabited areas in Hunan|alt=|left]]
-      {{Historical populations
-      |title       = Historical population
-      |1912  |27,617,000
-      |1928 |31,501,000
-      |1936-37 |28,294,000
-      |1947 |25,558,000
-      |1954 |33,226,954
-      |1964 |37,182,286
-      |1982 |54,008,851
-      |1990 |60,659,754
-      |2000 |63,274,173
-      |2010 |65,683,722
-      |2020|66444864
-      }}
-      As of the 2000 [[census]], the population of Hunan is 64,400,700 consisting of forty-one [[List of Chinese ethnic groups|ethnic group]]s. Its population grew 6.17% (3,742,700) from its 1990 levels. According to the census, 89.79% (57,540,000) identified themse
-      In Hunan, ethnic minority languages are spoken in the following prefectures.
-      *[[Xiangxi Tujia and Miao Autonomous Prefecture]]: [[Qo Xiong language]], [[Tujia language]]
-      *[[Huaihua]]: [[Qo Xiong language]], [[Dong language (China)|Dong language]], [[Hm Nai language]], [[Hmu language]]
-      *[[Shaoyang]]: [[Maojia dialect|Maojia language]], [[Hm Nai language]], [[Pa-Hng language]], [[Badong Yao language]]
-      *[[Yongzhou]]: [[Iu Mien language|Mien language]], [[Biao Min language]]
-      *[[Chenzhou]]: [[Dzao Min language]]
-      {{Pie chart
-      |caption = Religion in Hunan{{refn|group=note|The data was collected by the Chinese General Social Survey (CGSS) of 2009 and by the Chinese Spiritual Life Survey (CSLS) of 2007, reported and assembled by Xiuhua Wang (2015) in order to confront the proportion o
-      |label1 = [[Chinese Buddhism]]，[[Taoism|Taoist traditions]] and [[Chinese folk religion]]s
-      |value1 = 20.19
-      |color1 = FireBrick
-      |label2 = [[Christianity]]
-      |value2 = 0.77
-      |color2 = DodgerBlue
-      |label3 = Other religions or not religious people{{refn|group=note|This may include:
-      * [[Buddhism|Buddhists]];
-      * [[Confucianism|Confucians]];
-      * [[Chinese folk religion|Deity worshippers]];
-      * [[Taoism|Taoists]];
-      * Members of [[Chinese salvationist religions|folk religious sects]];
-      * Small minorities of [[Muslim]]s;
-      * And people not bounded to, nor practicing any, institutional or diffuse religion.}}
-      |value3 = 79.04
-      |color3 = Honeydew
-      }}
-   section 'Notable people':
-      {{see also|:Category:People from Hunan}}
-      During the late [[Qing dynasty|late Qing Era]], Hunan emerged as the epicenter of revolution and reform in China, giving rise to many of the nation's most renowned scholars, politicians, and military leaders, including the most influential and controversial fi
-      Hunanese were pioneers in embracing foreign ideas, as seen in the works of 19th-century thinkers like [[Wei Yuan]] (魏源). As the saying goes among Chinese historians: "Hunanese shaped half of modern Chinese history" (一部中国近代史，半部由湖南写就). Their profound and endurin
-      * [[Zhou Dunyi]] (1017–1073), Chinese scholar and philosopher
-      * [[Wang Fuzhi]] (1619–1692), Chinese essayist, historian, and philosopher of the late Ming, early Qing dynasties.
-      * [[Zeng Guofan]] (1811–1872)
-      * [[Zuo Zongtang]] (1812–1885), or General Tso, Chinese statesman and military leader of the late Qing dynasty.
-      * [[Taqibu]] (1816–1855)
-      * [[Huang Xing]] (1874–1916)
-      * [[Cai E]] (1882–1916), Chinese revolutionary leader, General and Governor of [[Yunnan]] (1911–1913)
-      * [[Jiang Xiaowan]] (?–1922), interpreter
-      * [[Mao Zedong]] (1893–1976)
-      * [[He Long]] (1896–1969)
-      * [[Peng Dehuai]] (1898–1974)
-      * [[Liu Shaoqi]] (1898–1969)
-      * [[Ma Ying-jeou]] (born 1950)
-      * [[Yuet-ching Lee]] (1918–1997), Hong Kong actress{{citation needed|date=March 2021}}
-      * [[Ted Hui]] (born 1982), Hong Kong politician{{citation needed|date=March 2021}}
-      * [[Martin Cao]] (born 1993), racing driver
-      * [[Zhou Chengzhou]] (born 1982), Chinese film director and artist
-      * [[Lexie Liu]] (born 1998), singer
-      * [[Jackson Yee]] (born 2000), actor and singer
-  [en] 'Guangdong': 103,187 bytes of wikitext
-== Guangdong ([en] 'Guangdong'): 2 tables
-         table 0: 13 rows; section 'Economy'; caption 'Historical Nominal GDP of Guangdong in the main years(current price, economic census in 2023) Intl.dollar]] based on IMF WEO April 2026'; year 2026
-         header: ['year', 'GDP', 'GDP per capita (GDPpc) based o', 'Reference index']
-         table 1: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Guangdong', 'kind = cities', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', 'city_1 = Guangzhou', 'pop_1 = 13,154,200', 'city_2 = Shenzhen', 'pop_2 = 13,026,600', 'city_3 = Dongguan', 'pop_3 = 6,850,300', 'city_4 = Shantou', 'pop_4 = 2,796,400', 'city_5 = Zhuhai', 'pop_5 = 2,779,800', 'city_6 = Huizhou', 'pop_6 = 2,396,400', 'city_7 = Foshan', 'pop_7 = 1,872,500', 'city_8 = Jiangmen', 'pop_8 = 1,386,500', 'city_9 = Zhanjiang', 'pop_9 = 917,800', 'city_10 = Jieyang', 'pop_10 = 860,000', 'city_11 = Maoming', 'pop_11 = 849,700', 'city_12 = Zhaoqing', 'pop_12 = 820,600', 'city_13 = Chaozhou', 'pop_13 = 775,800', 'city_14 = Shaoguan', 'pop_14 = 647,300', 'city_15 = Puning', 'pop_15 = 619,100', 'city_16 = Zhongshan', 'pop_16 = 572,000', 'city_17 = Qingyuan', 'pop_17 = 534,200', 'city_18 = Yangjiang', 'pop_18 = 507,800', 'city_19 = Meizhou', 'pop_19 = 469,500', 'city_20 = Gaozhou', 'pop_20 = 364,400']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CNY|14.58&nbsp;trillion}} ([[List of Chinese provincial-level divisions by GDP|1st]];&nbsp;US$2.04&nbsp;trillion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CNY| 113,769 |link=no}} ([[List of Chinese provincial-level divisions by GDP per capita|7th]];&nbsp;US$15,928)
-   section 'Demographics':
-      {{Historical populations
-      |title       = Historical population
-      |footnote    = Hainan was part of Guangdong until 1988.<br />Guangzhou was part of Guangdong until 1947; dissolved in 1954 and incorporated into Guangdong.
-      |1912  |28,011,000
-      |1928 |32,428,000
-      |1936–37 |32,453,000
-      |1947 |27,210,000
-      |1954 |34,770,059
-      |1964 |42,800,849
-      |1982 |59,299,220
-      |1990 |62,829,236
-      |2000 |85,225,007
-      |2010 |104,303,132
-      |2020|126,012,510
-      |2024|127,060,000
-      }}
-      Guangdong officially became the [[List of People's Republic of China administrative divisions by population|most populous province]] in 2005. Official statistics had traditionally placed Guangdong as the fourth-most populous province of China with about 80&nbs
-      {|
-      |{{Largest cities
-      |country = Guangdong
-      |kind = cities
-      |stat_ref = Source: ''China Urban Construction Statistical Yearbook 2018'' Urban Population and Urban Temporary Population
-      |list_by_pop =
-      |class = info
-      |city_1 = Guangzhou
-      |pop_1 = 13,154,200
-      |city_2 = Shenzhen
-      |pop_2 = 13,026,600
-      |city_3 = Dongguan
-      |pop_3 = 6,850,300
-      |city_4 = Shantou
-      |pop_4 = 2,796,400
-      |city_5 = Zhuhai
-      |pop_5 = 2,779,800
-      |city_6 = Huizhou
-      |pop_6 = 2,396,400
-      |city_7 = Foshan
-      |pop_7 = 1,872,500
-      |city_8 = Jiangmen
-      |pop_8 = 1,386,500
-      |city_9 = Zhanjiang
-      |pop_9 = 917,800
-      |city_10 = Jieyang
-      |pop_10 = 860,000
-      |city_11 = Maoming
-   section 'Languages and ethnicities':
-      The majority of the province's population is [[Han Chinese]], though the Han population is so diverse that the province has been called the "treasure trove of regional languages" ({{lang|zh|方言寶庫}}). Within the Han Chinese, the largest subgroup in Guangdong are
-  [en] 'Guangxi': 79,870 bytes of wikitext
-== Guangxi Zhuang Autonomous Region ([en] 'Guangxi'): 6 tables
-         table 0: 8 rows; section 'Geography'; caption 'Xi River system schematic (italics indicates rivers outside Guangxi)'; year None
-         header: ['', '', '', 'He River (贺江)', 'Xi River']
-         table 1: 17 rows; section 'Administrative divisions'; caption 'Administrative divisions of Guangxi'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 2: 16 rows; section 'Administrative divisions'; caption 'Administrative divisions in Zhuang, Chinese, and varieties of romanizations'; year None
-         header: ['English', 'Zhuang', 'Chinese', 'Pinyin']
-         table 3: 24 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 4: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Guangxi', 'kind = cities', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', 'city_1 = Nanning', 'pop_1 = 3,614,200', 'city_2 = Liuzhou', 'pop_2 = 1,830,800', 'city_3 = Guilin', 'pop_3 = 946,400', 'city_4 = Yulin, Guangxi!Yulin', 'pop_4 = 756,300', 'city_5 = Wuzhou', 'pop_5 = 629,300', 'city_6 = Beihai', 'pop_6 = 497,600', 'city_7 = Guigang', 'pop_7 = 426,700', 'city_8 = Qinzhou', 'pop_8 = 375,000', 'city_9 = Hechi', 'pop_9 = 357,000', 'city_10 = Laibin', 'pop_10 = 331,600', 'city_11 = Baise', 'pop_11 = 271,000', 'city_12 = Fangchenggang', 'pop_12 = 248,000', 'city_13 = Beiliu', 'pop_13 = 234,000', 'city_14 = Guiping', 'pop_14 = 209,500', 'city_15 = Hezhou', 'pop_15 = 203,000', 'city_16 = Chongzuo', 'pop_16 = 191,000', 'city_17 = Cenxi', 'pop_17 = 178,000', 'city_18 = Jingxi, Guangxi!Jing', 'pop_18 = 165,000', 'city_19 = Dongxing, Guangxi!Do', 'pop_19 = 99,500', 'city_20 = Pingxiang, Guangxi!P', 'pop_20 = 79,600']
-  ETHNIC table 5: 4 rows; section 'Ethnic groups'; caption 'Ethnic makeup of the Guanxi Zhuang Autonomous Region (2020 Seventh National Census)'; year 2020
-         header: ['Ethnicity', 'Han Chinese', 'Zhuang', 'Yao', 'Miao', 'Dong', 'Mulao', 'Maonan', 'Hui', 'Bouyei', 'Gin', 'Other nationalities']
-         prose : 'and western regions. High concentration The autonomous region also has sizable populations of indigenous Yao, Miao, Kam, Mulam, Maonan, Hui, Bouyei, Gin, Yi, Sui and Gelao peoples. Other ethnic minorities in Guangxi include the Manchu, Mong'
-         row   : ['Han Chinese', '31,318,824', '62.48', '－']
-         row   : ['Zhuang', '15,721,956', '31.36', '83.59']
-         row   : ['Yao', '1,683,038', '3.36', '8.95']
-         row   : ['Miao', '578,122', '1.15', '3.07']
-         row   : ['Dong', '362,580', '0.72', '1.93']
-         row   : ['Mulao', '180,185', '0.36', '0.96']
-         row   : ['Maonan', '73,199', '0.15', '0.39']
-         row   : ['Hui', '35,347', '0.07', '0.19']
-         row   : ['Bouyei', '31,303', '0.06', '0.17']
-         row   : ['Gin', '29,326', '0.06', '0.16']
-         row   : ['Other nationalities', '112,924', '0.23', '0.60']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl|[[Han people|Han]] – 62%|[[Zhuang people|Zhuang]] – 31%|[[Yao people (Asia)|Yao]] – 3%|[[Miao people|Miao]] –  1%|[[Dong people|Dong]] – 0.7%|[[Mulao people|Mulao]] – 0.4%|[[Maonan people|Maonan]] – 0.2%}}
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = [[Standard Zhuang|Zhuang]], [[Yue Chinese|Yue languages]] (mainly [[Cantonese]]), [[Southwestern Mandarin]], [[Pinghua]]
-   infobox: | chunom = 區自治民族壯廣西
-   section 'Demographics':
-      {{Historical populations
-      |title       = Historical population
-      |1912  |7,879,000
-      |1928 |13,648,000
-      |1936–37 |13,385,000
-      |1947 |14,636,000
-      |1954 |19,560,822
-      |1964 |20,845,017
-      |1982 |36,420,960
-      |1990 |42,245,765
-      |2000 |43,854,538
-      |2010
-      |46,026,629
-      |2020
-      |50,126,804
-      {|
-      |{{Largest cities
-      |country = Guangxi
-      |kind = cities
-      |stat_ref = Source: ''China Urban Construction Statistical Yearbook 2018'' Urban Population and Urban Temporary Population
-      |list_by_pop =
-      |class = info
-      |city_1 = Nanning
-      |pop_1 = 3,614,200
-      |city_2 = Liuzhou
-      |pop_2 = 1,830,800
-      |city_3 = Guilin
-      |pop_3 = 946,400
-      |city_4 = Yulin, Guangxi{{!}}Yulin
-      |pop_4 = 756,300
-      |city_5 = Wuzhou
-      |pop_5 = 629,300
-      |city_6 = Beihai
-      |pop_6 = 497,600
-      |city_7 = Guigang
-      |pop_7 = 426,700
-      |city_8 = Qinzhou
-      |pop_8 = 375,000
-      |city_9 = Hechi
-      |pop_9 = 357,000
-      |city_10 = Laibin
-      |pop_10 = 331,600
-      |city_11 = Baise
-      |pop_11 = 271,000
-      |city_12 = Fangchenggang
-   section 'Ethnic groups':
-      Guangxi has over 16 million [[Zhuang people|Zhuangs]], the largest minority ethnicity in China. Over 90&nbsp;percent of Zhuang in China live in Guangxi, especially in the central and western regions. High concentrations of Zhuang people can be found in [[Nanni
-      {| class="wikitable" style="margin: 1em auto 1em auto; text-align:right"
-      |+ Ethnic makeup of the Guanxi Zhuang Autonomous Region (2020 Seventh National Census)
-      |-
-      ! Ethnicity
-      ! width="55" | [[Han Chinese]] !! width="55" | [[Zhuang people|Zhuang]] !! width="55" | [[Yao people (Asia)|Yao]] !! width="55" | [[Miao people|Miao]] !! width="55" | [[Kam people|Dong]] !! width="55" | [[Mulao people|Mulao]] !! width="55" | [[Maonan people|Ma
-      |-
-      ! Population
-      | 31,318,824 || 15,721,956 || 1,683,038 || 578,122 || 362,580 || 180,185 || 73,199 || 35,347 || 31,303 || 29,326 || 112,924
-      |-
-      ! Percentage (%)
-      | 62.48 || 31.36 || 3.36 || 1.15 || 0.72 || 0.36 || 0.15 || 0.07 || 0.06 || 0.06 || 0.23
-      |-
-      ! Proportion of minority population (%)
-      | － || 83.59 || 8.95 || 3.07 || 1.93 || 0.96 || 0.39 || 0.19 || 0.17 || 0.16 || 0.60
-      |}
-  [en] 'Hainan': 143,108 bytes of wikitext
-== Hainan Province ([en] 'Hainan'): 5 tables
-         table 0: 24 rows; section 'Subdivisions'; caption 'Administrative divisions of Hainan'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 21 rows; section 'Subdivisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin', 'Hainanese Romanzation']
-         table 2: 10 rows; section 'Subdivisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Eligible countries'; caption ''; year None
+         table 3: 7 rows; section '政治机构'; caption '陕西省四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 陕西省委员会', '25 陕西省人民代表大会 常务委员会', '25 陕西省 人民政府', '25 中国人民政治协商会议 陕西省委员会']
+  [zh] '甘肃省': 23,564 bytes of wikitext
+== Gansu Province ([zh] '甘肃省'): 0 tables
+  [zh] '青海省': 20,792 bytes of wikitext
+== Qinghai Province ([zh] '青海省'): 5 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 1: 15 rows; section '行政区划'; caption ''; year None
+         header: ['青海省行政区划图']
+  ETHNIC table 2: 4 rows; section '人口'; caption '青海省民族构成（2020年第七次全国人口普查）'; year 2020
+         header: ['民族名称', '汉族', '藏族', '回族', '土族', '撒拉族', '蒙古族', '东乡族', '土家族', '满族', '保安族', '其他民族']
+         prose : '* 撒拉族，共107,089人，佔全省總人口的1.9%。 * 蒙古族，共99,815人，佔全省總人口的1.77%。 * 其他少數民族，共22,529人，佔全省總人口的0.4%。'
+         row   : ['汉族', '2,993,534', '50.53', '－']
+         row   : ['藏族', '1,509,608', '25.48', '51.52']
+         row   : ['回族', '946,273', '15.97', '32.29']
+         row   : ['土族', '200,362', '3.38', '6.84']
+         row   : ['撒拉族', '128,779', '2.17', '4.39']
+         row   : ['蒙古族', '102,447', '1.73', '3.50']
+         row   : ['东乡族', '14,459', '0.24', '0.49']
+         row   : ['土家族', '11,891', '0.20', '0.41']
+         row   : ['满族', '7,915', '0.13', '0.27']
+         row   : ['保安族', '1,425', '0.02', '0.05']
+         row   : ['其他民族', '7,264', '0.12', '0.25']
+         table 3: 1 rows; section '宗教'; caption ''; year 2022
          header: ['']
-         table 4: 30 rows; section 'International partnerships'; caption ''; year None
-         header: ['Sister state/province', 'Sovereign country', 'Date of Establishing Sisterhoo']
-   infobox: | demographics_type1      = Demographics
-   infobox: | demographics1_footnotes = <!-- for references: use
-   infobox: | demographics2_title1    = Total
-   infobox: | demographics2_info1     = {{CNY|755 billion}} ([[List of Chinese provincial-level divisions by GDP|28th]]; US$107 billion)
-   infobox: | demographics2_title2    = Per capita
-   infobox: | demographics2_info2     = {{CNY|72,958}} ([[List of Chinese provincial-level divisions by GDP per capita|17th]]; US$10,353
-   infobox: | ethnic_groups           = [[Han Chinese|Han]], [[Li Chinese|Li]], [[Hmong people|Miao]], [[Zhuang people|Zhuang]], [[Utsul]]
-   section "People's Republic of China":
-      [[File:爱情海酒店 - panoramio.jpg|thumb|A beachside resort in [[Sanya]], the second largest city in Hainan]]
-      On 1 May 1950, under the People's Republic of China, the Hainan Special Administrative Region became an Administrative Region Office ({{lang|zh-hans|海南行政区公署}}), a branch of the Guangdong provincial government. During the mid-1980s, when Hainan Island was still
-      On 1 October 1984, it became the Hainan Administrative Region ({{lang|zh-hans|海南行政区}}), with its own People's Government. In 1988, when the island was made a separate province, it was designated a [[Special economic zones of China|Special Economic Zone]] in an
-      The central government funds were deemed insufficient by the Hainan authorities for the construction of the island's other infrastructure (e.g. water works, power stations, telecommunications) and had taken a very liberal interpretation of the economic and tra
-      In June 2020, China announced a master plan for [[Hainan Free Trade Port]] system. Announced by state-owned media Xinhua News Agency, Hainan will "basically establish a free trade port system by 2025 and become more mature by 2035." [[South China Morning Post]
-      In July 2025, Chinese officials announced that the Hainan Free Trade Port will launch island-wide independent customs operations on December 18, 2025.
-   section 'Demographics':
-      [[File:Linguistic Map of Hainan.svg|thumb|Distribution of languages and dialects in Hainan:
-      {{legend|#fde9eb|[[Hainanese]]}}
-      {{legend|#28e0d9|[[Danzhou dialect]]}}
-      {{legend|#e075e1|[[Be languages]] (Lincheng dialect)}}
-      {{legend|#f19adb|Be languages (Qiongshan dialect)}}
-      {{legend|#06a457|[[Hlai languages|Li/Hlai languages]] (Ha dialect)}}
-      {{legend|#abc959|Li/Hlai languages (Qi dialect)}}
-      {{legend|#6eb76c|Li/Hlai languages (Run dialect)}}
-      {{legend|#84bf44|Li/Hlai languages (Meifu dialect)}}
-      {{legend|#ff7e00|Li/Hlai languages ([[Jiamao language]])}}
-      {{legend|#ff0000|[[Kim Mun language]] of [[Mienic languages]]}}
-      {{legend|#fff600|[[Junjiahua]]}}
-      {{legend|#97a6e5|[[Cun language]]}}
-      {{legend|#838383|Hainanese hakka}}
-      <small>The following languages are not marked: {{ill|Fuma dialect|lt=Fuma dialect|zh|富馬話|v=sup}}, [[Tsat language]], [[Maihua]], and [[Tanka dialect]].</small>
-      ]]
-      [[File:Hainan ethnolinguistic 1967.png|right|thumb|Historical ethnolinguistic groups on Hainan, 1967 map. The dark green region is dominated by the [[Hainanese]] varieties of [[Min Chinese]], while people in the light green region mainly speak [[Hlai languages
-      The population density of Hainan is low compared to most coastal Chinese provinces.
-      In 2000, the ethnic groups of Hainan included the Han-Chinese [[Hainan people|Hainanese]], who are the majority (84% of the population) and speak the Min language, the [[Li people|Li (Hlai)]] (14.7% of the population); the [[Miao people|Miao]] (0.7%) and the [
-      The Li people mainly reside in the nine cities and counties in the middle and southern part of Hainan – the cities of Sanya, [[Wuzhishan City|Wuzhishan]] and Dongfang, the Li autonomous counties of [[Baisha Li Autonomous County|Baisha]], Lingshui, Ledong, [[Ch
-      [[File:Haikou skyline 2 - 2009 09 07.jpg|thumb|right|[[Haikou]], the capital of the province as seen looking south from [[Evergreen Park (Haikou)|Evergreen Park]], a large park located on the north shore of the city]]
-      Although they are indigenous to the island and do not speak a Chinese language, the [[Ong-Be language|Limgao (Ong-Be)]] people near the capital are counted as Han Chinese by the Chinese government.
-  [en] 'Chongqing': 167,923 bytes of wikitext
-== Chongqing Municipality ([en] 'Chongqing'): 8 tables
-         table 0: 1 rows; section 'Municipality status'; caption ''; year 2010
-         header: ['x350px', '#404FD9#979FEA Former Prefectu', '#404FD9 Districts composing th']
-         table 1: 40 rows; section 'Administrative divisions'; caption 'Administrative divisions of Chongqing'; year 2010
-         header: ['Division code', 'Division', 'Area in km 2', 'Total population 2010', 'Urban area population 2010', 'Seat', 'Postal code', 'Subdivisions']
-         table 2: 41 rows; section 'Administrative divisions'; caption 'Divisions in Chinese and varieties of romanizations'; year 1997
-         header: ['English', 'Chinese', 'Hanyu Pinyin', 'Sichuanese Pinyin']
-         table 3: 20 rows; section 'Administrative divisions'; caption 'Population by urban areas of districts'; year 1997
-         header: ['#', 'City', 'style ="background-color: #aaa', 'style ="background-color: #aaf', 'Census date']
-         table 4: 1 rows; section 'Administrative divisions'; caption 'Districts'; year 1997
-         header: ['Pinyin name', 'Previous associationa', 'Banan', 'Chongqing', 'Beibei', 'Bishan', 'Changshou', 'Dadukou', 'Dazu', 'Fuling', 'Fuling', 'Hechuan', 'Chongqing', 'Jiangjin', 'Jiulongpo', 'Kaizhou', 'Wanxian', 'Liangjiang', 'Chongqing', 'Liangping', 'Wanxian', "Nan'an", 'Chongqing', 'Nanchuan', 'Fuling', 'Qianjiang', 'Qianjiang', 'Shapingba', 'Chongqing', 'Tongliang', 'Tongnan', 'Qijiang', 'Rongchang', 'Wanzhou', '| Wanxian', 'Wulong', 'Fuling', 'Yongchuan', 'Chongqing', 'Yuzhong']
-         table 5: 1 rows; section 'Administrative divisions'; caption 'Counties'; year 1997
-         header: ['Pinyin name', 'Previous associationa', 'Chengkou', 'Wanxian', 'Dianjiang', 'Fuling', 'Fengdu', 'Fengjie', 'Wanxian', 'Wushan', 'Wuxi', 'Yunyang', 'Zhong']
-         table 6: 5 rows; section 'Administrative divisions'; caption 'Autonomous counties'; year 1997
-         header: ['Pinyin name', 'Previous associationa']
-         table 7: 13 rows; section 'Consulates'; caption ''; year None
-         header: ['Consulate', 'Date', 'Consular District', 'refh']
-   infobox: | demographics_type2      = GDP<span style="font-weight: normal;">{{small|(2025)}}</span>
-   infobox: | demographics2_title1    = [[Direct-administered municipality|Municipality]]
-   infobox: | demographics2_info1     = [[CN¥]] 3,376 billion ([[List of Chinese provincial-level divisions by GDP|17th]])<br />[[US$]] 484.6 billion
-   infobox: | demographics2_title2    = Per capita
-   infobox: | demographics2_info2     = CN¥ 105,315 ([[List of Chinese provincial-level divisions by GDP per capita|10th]]) <br /> US$ 15,118
-   section 'Demographics':
-      ===Population===
-      [[File:Jiefangbei (People's Liberation Monument).jpg|thumb|left|Jiefangbei (People's Liberation Monument), the landmark and center of Chongqing]]
-      {{Historical populations
-      |type=China
-      |1949|1003000
-      |1979|6301000
-      |1983|13890000
-      |1996|15297000
-      |1997*|28753000
-      |2000|28488200
-      |2005|27980000
-      |2008|28390000
-      |2012|28846170
-      |2013|29700000
-      |2014|29914000
-      |2015|30170000
-      |footnote = <nowiki>*</nowiki>Population size in 1997 was affected by expansion of administrative divisions.
-      }}
-      According to the [[2020 Chinese census|2020 national census]], Chongqing has a population of 32,054,159, accounting for around 2.27% of the national total. This makes it the [[List of largest cities|most populous city proper in the world]]. {{As of|2010}}, the
-      In 2020, Chongqing surpassed Shanghai as China's largest municipality by urban population. {{As of|2021}}, 70.4% of Chongqing's population is estimated to be urban, and 29.6% rural. {{As of|2024}}, Chongqing had an urban population of 23.01 million.
-      The Census also lists the male percentage as 50.55% and the female percentage as 49.55%. In terms of age distribution, of the total population, 15.91% were age 0–14, 62.22% were 15–64, and 21.87% were 65 and over. Of the population's highest education level ac
-   section 'Notable people':
-      {{Main category|People from Chongqing}}
-      * [[Ba Manzi]]: legendary hero of [[Ba (state)|Ba kingdom]] in [[Zhou dynasty]]
-      * [[Gan Ning]]: general serving under warlord [[Sun Quan]] in the last years of [[Han dynasty]]
-      * [[Yan Yan (Three Kingdoms)|Yan Yan]]: loyal general during [[Three Kingdoms]] period
-      * [[Lanxi Daolong]]: famous Buddhism monk and philosopher in [[Song dynasty]] who went to Japan and established the [[Kenchō-ji]]
-      * [[Qin Liangyu]]: popular heroine in [[Ming dynasty]] who fought against [[Manchus]]
-      * [[Nie Rongzhen]]: marshal of the [[People's Liberation Army]] of China
-      * [[Liu Bocheng]]: an early leader of Chinese communist party during [[Second Sino-Japanese War|Anti-Japanese War]]
-      * [[Lu Zuofu]]: notable industrialist and businessman who was the founder of the Minsheng Shipping Company
-      * [[Liu Yongqing]]: wife of the former president and Communist Party general secretary [[Hu Jintao]]
-      * [[Xia Peisu]]: computer scientist
-      * [[Huang Qian]]: [[chess]] player
-      * [[Tian Liang]]: Olympic diving gold medalist
-      * [[Li Yundi]]: pianist
-      * [[Karry Wang]]: member of the pop band [[TFBoys]] and actor
-      * [[Roy Wang]]: singer-songwriter and member of [[TFBoys]], also an actor and television host
-      * [[Li Hua (artist, born 1980)|Li Hua]]: artist who studied in Europe
-      * [[Xiao Zhan]]: actor, singer, and member of the boy group [[X Nine]]
-      * [[Pan Wenhua]]: military general regarded as a born military prodigy
-      * [[Zhou Zhennan]]: leader of C-pop group [[R1SE]]
-      * [[Shi Tingmao]]: Olympic diving gold medalist
-      * [[Chen Zihan]]: actress
-      * [[Shuguang Zhang]]: biochemist
-      * [[Xia Li]]: professional wrestler signed with [[Total Nonstop Action Wrestling|TNA]]
-      * [[Feng Timo]]: singer, pop star and Internet personality
-      * [[Domee Shi]]: Chinese Canadian animator, director and screenwriter
-      * [[Ryan Chen]]: Chinese Trump impersonator
-  [en] 'Sichuan': 122,615 bytes of wikitext
-== Sichuan Province ([en] 'Sichuan'): 4 tables
-         table 0: 25 rows; section 'Administrative divisions'; caption 'Administrative divisions of Sichuan'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 22 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin', 'Sichuanese Romanzation']
-         table 2: 37 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'kind = cities', 'country = Sichuan', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', 'city_1 = Chengdu', 'pop_1 = 8,379,700', 'city_2 = Luzhou', 'pop_2 = 1,619,700', 'city_3 = Mianyang', 'pop_3 = 1,402,000', 'city_4 = Nanchong', 'pop_4 = 1,370,000', 'city_5 = Yibin', 'pop_5 = 1,295,900', 'city_6 = Zigong', 'pop_6 = 1,164,000', 'city_7 = Dazhou', 'pop_7 = 908,400', 'city_8 = Leshan', 'pop_8 = 812,000', 'city_9 = Deyang', 'pop_9 = 662,100', 'city_10 = Panzhihua', 'pop_10 = 659,400', 'city_11 = Neijiang', 'pop_11 = 654,100', 'city_12 = Xichang', 'pop_12 = 577,300', 'city_13 = Meishan', 'pop_13 = 552,000', 'city_14 = Suining', 'pop_14 = 544,300', 'city_15 = Guangyuan', 'pop_15 = 535,300', 'city_16 = Bazhong', 'pop_16 = 458,000', "city_17 = Guang'an", 'pop_17 = 371,700', 'city_18 = Jianyang, Sichuan!Ji', 'pop_18 = 368,000', 'city_19 = Jiangyou', 'pop_19 = 356,500', 'city_20 = Guanghan', 'pop_20 = 338,600']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl|[[Han Chinese|Han]]{{snd}}95%|[[Yi people|Yi]]{{snd}}2.6%|[[Tibetan people|Tibetan]]{{snd}}1.5%|[[Qiang people|Qiang]]{{snd}}0.4%|Others{{snd}}0.5%}}
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = {{hlist|[[Southwestern Mandarin]] ([[Sichuanese (language)|Sichuanese]])|[[Khams Tibetan]]|[[Hakka Chinese]]}}
-   infobox: |demographics_type2   = [[Gross domestic product|GDP]] {{normal|(2024)}}
-   infobox: |demographics2_title1 = Total
-   infobox: |demographics2_info1 = {{CNY|6,469 billion}} ([[List of Chinese provincial-level divisions by GDP|5th]]; US$908 billion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CNY|77,333}} ([[List of Chinese provincial-level divisions by GDP per capita|20th]]; US$10,859)
-   section "People's Republic of China":
-      The People's Republic of China was founded in 1949, and it split Sichuan into four areas and separated Chongqing municipality. Sichuan was reconstituted in 1952, with Chongqing added in 1954, while the former [[Xikang]] province was split between [[Tibet Auton
-      The province was deeply affected by the [[Great Chinese Famine]] of 1959–1961, during which period some 9.4 million people (13.07% of the population at the time) died.
-      In 1978, when [[Deng Xiaoping]] took power, Sichuan was one of the first provinces to experiment with the market economic enterprise.
-      From 1955 until 1997, Sichuan had been China's most populous province; the population hit the 100 million mark shortly after the 1982 census figure of 99,730,000. This changed in 1997 when the [[Sub-provincial city]] of Chongqing as well as the three surroundi
-      In 1997, when Sichuan split, the sum of the two parts was recorded to be 114,720,000 people. As of 2010, Sichuan ranks as both the [[List of Chinese administrative divisions by area|3rd largest]] (the largest among Chinese [[List of People's Republic of China 
-      On 12 May 2008, [[2008 Sichuan earthquake|an earthquake]] with a magnitude of 7.9/8.0 hit just {{cvt|79|km}} northwest of the provincial capital of Chengdu. Official figures recorded a death toll of over 87,000 people, and millions of people were left homeless
-   section 'Demographics':
-      [[File:Yi-Minority.JPG|thumb|right|The [[Yi people|Yi]] are the largest ethnic minority group in Sichuan.]]
-      {{Historical Populations
-      |title       = Historical population
-      |width       = 16em
-      |state       = collapsed
-      |footnote    = Chongqing was part of Sichuan Province until 1939 and 1954 to 1997.<br />[[Xikang|Xikang Province]] dissolved in 1955 and parts were incorporated into Sichuan Province.
-      |1912 |48,130,000
-      |1928 |47,992,000
-      |1936–37 |52,706,000
-      |1947 |47,437,000
-      |1954 |62,303,999
-      |1964 |67,956,490
-      |1982 |99,713,310
-      |1990 |107,218,173
-      |2000 |82,348,296
-      |2010
-      |80,418,200
-      |2020
-      |83,674,866
-      }}
-      The majority of the province's population is [[Han Chinese]] (95% of the provincial population), who are found scattered throughout the region except for the far western areas. Thus, significant minorities of [[Tibetan people|Tibetan]], [[Yi people|Yi]], [[Qia
-      Sichuan was China's [[List of Chinese administrative divisions by population|most populous province]] before [[Chongqing]] became a directly controlled municipality; it is currently the fourth most populous, after Guangdong, Shandong, and Henan. As of 1832, Si
-      {|
-      |{{Largest cities
-      |kind = cities
-      |country = Sichuan
-      |stat_ref = Source: ''China Urban Construction Statistical Yearbook 2018'' Urban Population and Urban Temporary Population
-      |list_by_pop =
-      |class = info
-      |city_1 = Chengdu
-      |pop_1 = 8,379,700
-      |city_2 = Luzhou
-      |pop_2 = 1,619,700
-      |city_3 = Mianyang
-      |pop_3 = 1,402,000
-      |city_4 = Nanchong
-      |pop_4 = 1,370,000
-      |city_5 = Yibin
-      |pop_5 = 1,295,900
-      |city_6 = Zigong
-      |pop_6 = 1,164,000
-      |city_7 = Dazhou
-      |pop_7 = 908,400
-      |city_8 = Leshan
-      |pop_8 = 812,000
-  [en] 'Guizhou': 83,857 bytes of wikitext
-== Guizhou Province ([en] 'Guizhou'): 4 tables
-         table 0: 13 rows; section 'Administrative divisions'; caption 'Administrative divisions of Guizhou'; year 2010
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2010', 'Seat', 'Divisions']
-         table 1: 11 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 2: 16 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Guizhou', 'kind = cities', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', 'city_1 = Guiyang', 'pop_1 = 2,922,400', 'city_2 = Zunyi', 'pop_2 = 1,060,000', 'city_3 = Anshun', 'pop_3 = 464,900', 'city_4 = Bijie', 'pop_4 = 447,300', 'city_5 = Tongren', 'pop_5 = 414,200', 'city_6 = Kaili City!Kaili', 'pop_6 = 409,100', 'city_7 = Liupanshui', 'pop_7 = 359,700', 'city_8 = Xingyi, Guizhou!Xingy', 'pop_8 = 334,100', 'city_9 = Duyun', 'pop_9 = 328,400', 'city_10 = Renhuai', 'pop_10 = 250,300', 'city_11 = Panzhou', 'pop_11 = 216,000', 'city_12 = Qingzhen', 'pop_12 = 202,600', 'city_13 = Chishui City!Chishui', 'pop_13 = 146,700', 'city_14 = Xingren', 'pop_14 = 137,100', 'city_15 = Fuquan, Guizhou!Fuqu', 'pop_15 = 134,000']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_footnotes = <!-- for references: use
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = [[CN¥]] 2,356 billion ([[List of Chinese provincial-level divisions by GDP|22nd]])
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥ 61,066 ([[List of Chinese provincial-level divisions by GDP per capita|28th]])
-   section 'Demographics':
-      {{see also|List of unrecognized ethnic groups of Guizhou}}
-      {{Historical populations
-      |title       = Historical population
-      | percentages = pagr
-      |1912
-      |9,665,000
-      |1928
-      |14,746,000
-      |1936–37
-      |9,919,000
-      |1947
-      |10,174,000
-      |1954
-      |15,037,310
-      |1964
-      |17,140,521
-      |1982
-      |28,552,997
-      |1990
-      |32,391,066
-      |2000
-      |35,247,695
-      |2010
-      |34,746,468
-      |2020
-      |38,562,148
-      }}
-      In 1832, the population was estimated at five million.
-      Guizhou is demographically one of China's most diverse provinces. Minority groups account for more than 37% of the population and they include [[Miao people|Miao]] (including [[Gha-Mu people|Gha-Mu]] and [[A-Hmao]]), [[Yao people (Asia)|Yao]], [[Yi people|Yi]]
-      {{multiple image
-      | align             = center
-      | direction         = horizontal
-      | width             = 150
-      | image1            = Ethnic minorities areas in Guizhou.png
-      | caption1          = Major autonomous areas within Guizhou, excluding [[Hui people|Hui]].
-      | image2            = Longhorn Miao China.jpg
-      | caption2          = The long-horn tribe, one of the small branches of [[Miao people|Miao]] living in the twelve villages near [[Zhijin County]], Guizhou. The wooden horns remain daily attire for most women.
-      | total_width       =
-      | alt1              =
-      | image3            = 1 zhaoxing 2015.jpg
-      | caption3          = The [[Kam people|Dong]] village of [[Zhaoxing, Guizhou|Zhaoxing]]
-      }}
-      {|
-      |{{Largest cities
-      |country = Guizhou
-   section 'Notable people':
-      * [[Shi Jinmo]] (1881–1969), founder of medical colleges
-      * [[Sun Yafang]] (1955–), engineer, business executive and former Chairwoman of [[Huawei]] from 1999 to 2018
-      * [[Chuan He]] (1972–), biologist
-      * [[Huang Xiaoyun]] (1998–), singer and actress
-      * [[Zhou Shen]] (1992–), singer
-      * [[Bi Gan (filmmaker)|Bi Gan]] (1989–), director
-  [en] 'Yunnan': 146,764 bytes of wikitext
-== Yunnan Province ([en] 'Yunnan'): 4 tables
-         table 0: 19 rows; section 'Administrative divisions'; caption 'Administrative divisions of Yunnan'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 18 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 2: 27 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture and county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Yunnan', 'kind = cities', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', 'city_1 = Kunming', 'pop_1 = 3,979,700', 'city_2 = Qujing', 'pop_2 = 792,500', 'city_3 = Yuxi', 'pop_3 = 384,700', 'city_4 = Baoshan, Yunnan!Baosh', 'pop_4 = 355,500', 'city_5 = Zhaotong', 'pop_5 = 319,800', 'city_6 = Chuxiong City!Chuxion', 'pop_6 = 319,000', 'city_7 = Dali City!Dali', 'pop_7 = 313,800', 'city_8 = Mengzi City!Mengzi', 'pop_8 = 293,200', 'city_9 = Xuanwei', 'pop_9 = 290,100', 'city_10 = Anning, Yunnan!Annin', 'pop_10 = 272,500', 'city_11 = Wenshan City!Wenshan', 'pop_11 = 234,400', "city_12 = Pu'er City!Pu'er", 'pop_12 = 228,000', 'city_13 = Kaiyuan, Yunnan!Kaiy', 'pop_13 = 202,200', 'city_14 = Gejiu', 'pop_14 = 202,000', 'city_15 = Lincang', 'pop_15 = 195,200', 'city_16 = Lijiang', 'pop_16 = 189,300', 'city_17 = Jinghong', 'pop_17 = 186,300', 'city_18 = Tengchong', 'pop_18 = 180,000', 'city_19 = Ruili', 'pop_19 = 176,000', 'city_20 = Mile City!Mile', 'pop_20 = 171,800']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic groups
-   infobox: | demographics1_info1 = {{Plainlist|
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = {{ubl|[[Southwestern Mandarin]]|25 [[#Languages|minority languages]]}}
-   infobox: | demographics_type2 = [[Gross domestic product|GDP]] {{normal|(2023)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = [[CN¥]]3,002 billion {{nwr|(US$426 billion;}} [[List of Chinese provincial-level divisions by GDP|18th]])
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥64,107 {{nwr|(US$9,097;}} [[List of Chinese provincial-level divisions by GDP per capita|23rd]])
-   section 'Demographics':
-      {{Historical populations
-      |title = Historical population
-      |1912 |9,468,000
-      |1928 |13,821,000
-      |1936–37 |12,042,000
-      |1947 |9,066,000
-      |1954 |17,472,737
-      |1964 |20,509,525
-      |1982 |32,553,817
-      |1990 |36,972,610
-      |2000 |42,360,089
-      |2010
-      |45,966,239
-      |2020
-      |47,209,277
-      }}
-      <!-- ; Total population : 43.33 million (2002)
-      ; Population growth rate : 10.6%
-      ; Average life expectancy : 65.1 years (male), 67.7 years (female) (1995) -->
-      According to Yunnan government statistics, there are approximately 2.5 million overseas Chinese whose ancestral homeland is from Yunnan.
-      {|
-      | {{Largest cities
-      |country = Yunnan
-      |kind = cities
-      |stat_ref = Source: ''China Urban Construction Statistical Yearbook 2018'' Urban Population and Urban Temporary Population
-      |list_by_pop =
-      |class = info
-      |city_1 = Kunming
-      |pop_1 = 3,979,700
-      |city_2 = Qujing
-      |pop_2 = 792,500
-      |city_3 = Yuxi
-      |pop_3 = 384,700
-      |city_4 = Baoshan, Yunnan{{!}}Baoshan
-      |pop_4 = 355,500
-      |city_5 = Zhaotong
-      |pop_5 = 319,800
-      |city_6 = Chuxiong City{{!}}Chuxiong
-      |pop_6 = 319,000
-      |city_7 = Dali City{{!}}Dali
-      |pop_7 = 313,800
-      |city_8 = Mengzi City{{!}}Mengzi
-      |pop_8 = 293,200
-      |city_9 = Xuanwei
-      |pop_9 = 290,100
-   section 'Ethnicity':
-      [[File:Ethnic minorities areas in Yunnan.png|thumb|Major autonomous areas within Yunnan (excluding [[Hui people|Hui]])]]
-      Yunnan is noted for a very high level of ethnic diversity. It has the highest number of ethnic groups among the provinces and autonomous regions in China. Among the country's [[Ethnic minorities in China|56 recognised ethnic groups]], twenty-five are found in 
-      Ethnic groups are widely distributed in the province. Some twenty-five minorities live in compact communities, each of which has a population of more than five thousand. Ten ethnic minorities living in border areas and river valleys include the [[Hui people|Hu
-  [en] 'Tibet Autonomous Region': 82,194 bytes of wikitext
-== Tibet Autonomous Region ([en] 'Tibet Autonomous Region'): 4 tables
-         table 0: 10 rows; section 'Administrative divisions'; caption 'Administrative divisions of Tibet Autonomous Region'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 9 rows; section 'Administrative divisions'; caption 'Administrative divisions in Tibetan, Chinese, and varieties of romanizations'; year None
-         header: ['English', 'Tibetan', 'Tibetan Pinyin', 'Wylie transliteration', 'Chinese', 'Pinyin']
-         table 2: 9 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 9 rows; section 'Economy'; caption 'Development of GDP'; year None
-         header: ['Year', 'GDP in billions of yuan']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_footnotes = <!-- for references: use
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = [[CN¥]] 303.2 billion ([[List of Chinese provincial-level divisions by GDP|31st]])
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥ 81,502 ([[List of Chinese provincial-level divisions by GDP per capita|16th]])
-   section 'Demographics':
-      {{Further|Chinese settlements in Tibet}}{{Historical populations
-      |title       = Historical population
-      |footnote    = [[Xikang|Xikang Province]] / Chuanbian SAR was established in 1923 from parts of [[Tibet under Qing rule|Tibet]] / [[Lifan Yuan]]; dissolved in 1955 and parts were incorporated into Tibet AR.
-      |1912  |1,160,000
-      |1928 |372,000
-      |1936–37 |372,000
-      |1947 |1,000,000
-      |1954 |1,273,969
-      |1964 |1,251,225
-      |1982 |1,892,393
-      |1990 |2,196,010
-      |2000 |2,616,329
-      |2010 |3,002,166
-      |2020 |3,648,100
-      }}
-      In 2024, only 39.7 percent of Tibet's population was urban, with 60.3 being rural, amongst the lowest in China, though this is significantly up from 22.6 percent in 2011.
-      In 2020 the Tibetan population was three million. The ethnic [[Tibetans]], comprising 86.0% of the population, mainly adhere to [[Tibetan Buddhism]] and [[Bön]], although there is an [[Tibetan Muslims|ethnic Tibetan Muslim community]]. Other Muslim ethnic grou
-      Historically, the population of Tibet consisted of primarily ethnic Tibetans. According to tradition the original ancestors of the Tibetan people, as represented by the six red bands in the Tibetan flag, are: the Se, Mu, Dong, Tong, Dru and Ra. Other tradition
-      According to the [[Encyclopædia Britannica Eleventh Edition]] published between 1910 and 1911, the population of Lhasa was about 30,000, and the permanent population also included Chinese families (about 2,000). Most [[Han Chinese|Han people]] in the TAR (12.2
-  [en] 'Shaanxi': 54,713 bytes of wikitext
-== Shaanxi Province ([en] 'Shaanxi'): 5 tables
-         table 0: 6 rows; section 'Name'; caption ''; year None
-         header: ['Language', 'Pronunciation']
-         table 1: 14 rows; section 'Administrative divisions'; caption 'Administrative divisions of Shaanxi'; year 2010
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2010', 'Seat', 'Divisions']
-         table 2: 12 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 3: 18 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 4: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Shaanxi', 'kind = cities', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', "city_1 = Xi'an", 'pop_1 = 5,866,100', 'city_2 = Xianyang', 'pop_2 = 1,023,100', 'city_3 = Baoji', 'pop_3 = 893,200', 'city_4 = Yulin, Shaanxi!Yulin', 'pop_4 = 631,100', 'city_5 = Hanzhong', 'pop_5 = 569,500', 'city_6 = Weinan', 'pop_6 = 551,600', "city_7 = Yan'an", 'pop_7 = 416,700', 'city_8 = Tongchuan', 'pop_8 = 413,300', 'city_9 = Ankang', 'pop_9 = 350,700', 'city_10 = Shangluo', 'pop_10 = 262,500', 'city_11 = Xingping', 'pop_11 = 225,800', 'city_12 = Shenmu', 'pop_12 = 211,800', 'city_13 = Hancheng', 'pop_13 = 173,200', 'city_14 = Yangling District!Ya', 'pop_14 = 154,900', 'city_15 = Huayin', 'pop_15 = 115,500', 'city_16 = Binzhou, Shaanxi!Bin', 'pop_16 = 114,100']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl|[[Han Chinese|Han]]{{snd}}99.5%|Others{{snd}}0.5%}}
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = {{hlist|[[Central Plains Mandarin]]|[[Jin Chinese]]}}
-   infobox: | demographics_type2 = GDP {{normal|(2023)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CNY|3,779 billion}} ([[List of Chinese provincial-level divisions by GDP|14th]]; US$479 billion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CNY|85,448}} {{nwr|([[List of Chinese provincial-level divisions by GDP per capita|12th]]; US$12,126)}}
-   section 'Demographics':
-      Nearly all the people in Shaanxi are ethnic [[Han Chinese]], with pockets of [[Hui people|Hui]] population in the northwestern region (adjacent to Ningxia). Shaanxi province is one of the centers of ancient Chinese civilization. The central part of Shaanxi, kn
-      {{Historical populations
-      |title = Historical population
-      |align = none
-      |cols = 2
-      |footnote = Xi'an part of Shaanxi Province until 1947; dissolved in 1954 and incorporated into Shaanxi Province.
-      |1912 |9,364,000
-      |1928 |11,802,000
-      |1936–37 |9,780,000
-      |1947 |10,011,000
-      |1954 |15,881,281
-      |1964 |20,766,915
-      |1982 |28,904,423
-      |1990 |32,882,403
-      |2000 |35,365,072
-      |2010 |37,327,378
-      |2020|39,528,999
-      }}
-      {|
-      |{{Largest cities
-      |country = Shaanxi
-      |kind = cities
-      |stat_ref = Source: ''China Urban Construction Statistical Yearbook 2018'' Urban Population and Urban Temporary Population
-      |list_by_pop =
-      |class = info
-      |city_1 = Xi'an
-      |pop_1 = 5,866,100
-      |city_2 = Xianyang
-      |pop_2 = 1,023,100
-      |city_3 = Baoji
-      |pop_3 = 893,200
-      |city_4 = Yulin, Shaanxi{{!}}Yulin
-      |pop_4 = 631,100
-      |city_5 = Hanzhong
-      |pop_5 = 569,500
-      |city_6 = Weinan
-      |pop_6 = 551,600
-      |city_7 = Yan'an
-      |pop_7 = 416,700
-      |city_8 = Tongchuan
-      |pop_8 = 413,300
-      |city_9 = Ankang
-      |pop_9 = 350,700
-      |city_10 = Shangluo
-      |pop_10 = 262,500
-  [en] 'Gansu': 70,508 bytes of wikitext
-== Gansu Province ([en] 'Gansu'): 5 tables
-         table 0: 18 rows; section 'Administrative divisions'; caption 'Administrative divisions of Gansu'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 16 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 2: 19 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Gansu', 'kind = cities', 'class = info', 'stat_ref = Source: China Urban', 'list_by_pop =', 'city_1 = Lanzhou', 'pop_1 = 2,460,700', 'city_2 = Tianshui', 'pop_2 = 696,600', 'city_3 = Baiyin', 'pop_3 = 406,500', 'city_4 = Jiuquan', 'pop_4 = 389,100', 'city_5 = Wuwei, Gansu!Wuwei', 'pop_5 = 339,000', 'city_6 = Pingliang', 'pop_6 = 300,000', 'city_7 = Zhangye', 'pop_7 = 270,300', 'city_8 = Linxia City!Linxia', 'pop_8 = 245,800', 'city_9 = Jiayuguan City!Jiayug', 'pop_9 = 231,800', 'city_10 = Dingxi', 'pop_10 = 209,200', 'city_11 = Qingyang, Gansu!Qing', 'pop_11 = 207,700', 'city_12 = Jinchang', 'pop_12 = 171,500', 'city_13 = Longnan', 'pop_13 = 168,500', 'city_14 = Dunhuang', 'pop_14 = 120,400', 'city_15 = Huating, Gansu!Huati', 'pop_15 = 89,800', 'city_16 = Yumen City!Yumen', 'pop_16 = 77,300', 'city_17 = Hezuo', 'pop_17 = 72,600']
-         table 4: 1 rows; section 'Religion'; caption ''; year None
-         header: ['']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl|[[Han Chinese|Han]]: 91%|[[Hui people|Hui]]: 5%|[[Dongxiang people|Dongxiang]]: 2%|[[Tibetan people|Tibetan]]: 2%}}
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = {{hlist|[[Central Plains Mandarin]]|[[Lanyin Mandarin]]|[[Amdo Tibetan]]}}
-   infobox: | demographics_type2 = [[Gross domestic product|GDP]] {{normal|(2025)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CN¥|1,369.75 billion}} ([[List of Chinese provincial-level divisions by GDP|27th]]; US$191.76 billion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CN¥|55,897}} ([[List of Chinese provincial-level divisions by GDP per capita|31st]]; US$7,825)
-   section 'Demographics':
-      [[File:Lanzhou-037.JPG|thumb|[[Lanzhou]] city]]
-      {{Historical populations
-      |title       = Historical population
-      |footnote    = Ningxia Province/AR was part of Gansu Province until 1929 and 1954–1958.
-      |1912  |4,990,000
-      |1928 |6,281,000
-      |1936–37 |6,716,000
-      |1947 |7,091,000
-      |1954 |12,928,102
-      |1964 |12,630,569
-      |1982 |19,569,261
-      |1990 |22,371,141
-      |2000 |25,124,282
-      |2010 |25,575,254
-      |2020 |25,019,831
-      |2023 (est.)| 24,650,000
-      }}
-      Gansu province is home to a little more than 25 million people. As of 2020, 47.7% of the population was rural, but much relocation in recent years has reduced this. Gansu is 89.4% [[Han Chinese|Han]] and also has [[Hui people|Hui]], [[Tibetan people|Tibetan]],
-      {|
-      |{{Largest cities
-      |country = Gansu
-      |kind = cities
-      |class = info
-      |stat_ref = Source: ''China Urban Construction Statistical Yearbook 2018'' Urban Population and Urban Temporary Population
-      |list_by_pop =
-      |city_1 = Lanzhou
-      |pop_1 = 2,460,700
-      |city_2 = Tianshui
-      |pop_2 = 696,600
-      |city_3 = Baiyin
-      |pop_3 = 406,500
-      |city_4 = Jiuquan
-      |pop_4 = 389,100
-      |city_5 = Wuwei, Gansu{{!}}Wuwei
-      |pop_5 = 339,000
-      |city_6 = Pingliang
-      |pop_6 = 300,000
-      |city_7 = Zhangye
-      |pop_7 = 270,300
-      |city_8 = Linxia City{{!}}Linxia
-      |pop_8 = 245,800
-      |city_9 = Jiayuguan City{{!}}Jiayuguan
-      |pop_9 = 231,800
-      |city_10 = Dingxi
-      |pop_10 = 209,200
-  [en] 'Qinghai': 55,614 bytes of wikitext
-== Qinghai Province ([en] 'Qinghai'): 4 tables
-         table 0: 11 rows; section 'Administrative divisions'; caption 'Administrative divisions of Qinghai'; year 2010
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2010', 'Seat', 'Divisions']
-         table 1: 10 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin']
-         table 2: 8 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 1 rows; section 'Religion'; caption ''; year None
-         header: ['']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_footnotes = <!-- for references: use
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = [[CN¥]] 412.2 billion ([[List of Chinese provincial-level divisions by GDP|30th]])
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥ 69,567 ([[List of Chinese provincial-level divisions by GDP per capita|24th]])
-   section 'Demographics':
-      {{Historical populations
-      |title=Historical population
-      |1912|368,000
-      |1928|619,000
-      |1936–37|1,196,000
-      |1947|1,308,000
-      |1954|1,676,534
-      |1964|2,145,604
-      |1982|3,895,706
-      |1990|4,456,946
-      |2000|4,822,963
-      |2010|5,626,722
-      |2020|5,923,957
-      }}
-   section 'Ethnicity':
-      There are over 37 recognized ethnic groups among Qinghai's population of 5.6 million, with [[Han Chinese|Han]] population standing at 50.5% of the total population and [[Ethnic minorities in China|ethnic minorities]] making up 49.5% of the population. In 2010,
-  [en] 'Ningxia': 46,946 bytes of wikitext
-== Ningxia Hui Autonomous Region ([en] 'Ningxia'): 3 tables
-         table 0: 8 rows; section 'Administrative divisions'; caption 'Administrative divisions of Ningxia'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 7 rows; section 'Administrative divisions'; caption 'Administrative divisions in Chinese and varieties of romanizations'; year None
-         header: ['English', 'Chinese', 'Pinyin', "Xiao'erjing"]
-         table 2: 8 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_title1 = Ethnic composition
-   infobox: | demographics1_info1 = {{ubl|[[Han Chinese|Han]]{{snd}}62%|[[Hui people|Hui]]{{snd}}38%}}
-   infobox: | demographics1_title2 = Languages and dialects
-   infobox: | demographics1_info2 = {{hlist|[[Lanyin Mandarin]]|[[Central Plains Mandarin]]}}
-   infobox: | demographics_type2 = [[Gross domestic product|GDP]] {{normal|(2025)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = {{CN¥|569.6 billion}} ([[List of Chinese provincial-level divisions by GDP|29th]]; US$79.8&nbsp;billion)
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = {{CN¥|77,981}} ([[List of Chinese provincial-level divisions by GDP per capita|20th]]; US$10,917)
-   section 'Demographics':
-      {{Historical populations
-      |title       = Historical population
-      |footnote    = Ningxia Province/AR was part of Gansu 1914–1929 and 1954–1958<br />In 1947 parts of Ningxia Province/AR were incorporated into Inner Mongolia AR.
-      |1912 |303,000
-      |1928 |1,450,000
-      |1936–37 |978,000
-      |1947 |759,000
-      |1982 |3,895,578
-      |1990 |4,655,451
-      |2000 |5,486,393
-      |2010
-      |6,301,350
-      |2020
-      |7,202,654
-      }}
-   section 'Notable people':
-      * [[Emma Gao]], winemaker
-      * [[Zhang Jin (physical chemist)|Zhang Jin]], physical chemist and nanotechnologist
-  [en] 'Xinjiang': 263,633 bytes of wikitext
-== Xinjiang Uyghur Autonomous Region ([en] 'Xinjiang'): 11 tables
-         table 0: 33 rows; section 'Administrative divisions'; caption 'Administrative divisions of Xinjiang'; year 2020
-         header: ['Division code', 'Division', 'Area in km 2', 'Population 2020', 'Seat', 'Divisions']
-         table 1: 28 rows; section 'Administrative divisions'; caption 'Administrative divisions in Uyghur, Chinese and varieties of romanizations'; year None
-         header: ['English', 'Uyghur', 'SASM / GNC Uyghur Pinyin', 'Chinese', 'Pinyin']
-         table 2: 34 rows; section 'Administrative divisions'; caption 'Population by urban areas of prefecture & county cities'; year 2020
-         header: ['#', 'Cities', '2020 Urban area', '2010 Urban area', '2020 City proper']
-         table 3: 73 rows; section 'Mountain passes'; caption 'Mountain passes bordering Xinjiang'; year None
-         header: ['山口', 'Mountain Pass', 'Coordinate', 'Elev.', 'Appendix']
-         table 4: 5 rows; section 'Structure'; caption 'Current leaders of the Xinjiang Regional Government'; year None
-         header: ['', '25x25px', '27x27px', '27x27px', '25x25px']
-         table 5: 7 rows; section 'Economy'; caption 'Development of GDP'; year None
-         header: ['Year', 'GDP in billions of Yuan']
-  ETHNIC table 6: 16 rows; section 'Demographics'; caption ''; year 2002
-         header: ['Ethnic group', 'Estimated population 1933']
-         prose : 'ten have relatively-fair skin, hair and In 2002, there were 9,632,600 males (growth rate of 1.0 percent) and 9,419,300 females (growth rate of 2.2 percent). The population overall growth rate was 1.09 percent, with 1.63 percent of birth rat'
-         row   : ['Uyghurs', '2,900,173 (77.75%)']
-         row   : ['Kazakhs', '318,716 (8.55%)']
-         row   : ['Han Chinese', '202,239 (5.41%)']
-         row   : ['Hui', '92,146 (2.47%)']
-         row   : ['Kyrgyz', '65,248 (1.75%)']
-         row   : ['Mongols', '63,018 (1.69%)']
-         row   : ['Taranchis', '41,307 (1.11%)']
-         row   : ['Russians', '13,408 (0.36%)']
-         row   : ['Sibes', '9,203 (0.25%)']
-         row   : ['Tajiks', '8,867 (0.24%)']
-         row   : ['Uzbeks', '7,966 (0.21%)']
-         row   : ['Tatars', '4,601 (0.12%)']
-         row   : ['Solons', '2,489 (0.07%)']
-         row   : ['Manchus', '670 (0.02%)']
-         row   : ['Total', '3,730,051']
-         table 7: 1 rows; section 'Demographics'; caption ''; year 2018
-         header: ['{{Largest cities', 'country = Xinjiang', 'kind = cities', 'stat_ref = Source: China Urban', 'list_by_pop =', 'class = info', 'city_1 = Ürümqi', 'pop_1 = 2,864,700', 'city_2 = Korla', 'pop_2 = 489,900', 'city_3 = Aksu City!Aksu', 'pop_3 = 460,900', 'city_4 = Karamay', 'pop_4 = 452,500', 'city_5 = Yining', 'pop_5 = 372,600', 'city_6 = Changji', 'pop_6 = 361,700', 'city_7 = Shihezi', 'pop_7 = 338,200', 'city_8 = Kashgar', 'pop_8 = 330,000', 'city_9 = Hami', 'pop_9 = 245,700', 'city_10 = Hotan', 'pop_10 = 217,900', 'city_11 = Bole, Xinjiang!Bole', 'pop_11 = 204,400', 'city_12 = Wujiaqu', 'pop_12 = 187,000', 'city_13 = Kuytun', 'pop_13 = 174,700', 'city_14 = Fukang', 'pop_14 = 109,200', 'city_15 = Wusu', 'pop_15 = 100,900', 'city_16 = Tacheng', 'pop_16 = 97,600', 'city_17 = Aral, Xinjiang!Aral', 'pop_17 = 96,000', 'city_18 = Turpan', 'pop_18 = 86,200', 'city_19 = Beitun, Xinjiang!Bei', 'pop_19 = 79,800', 'city_20 = Artush', 'pop_20 = 78,300']
-  ETHNIC table 8: 23 rows; section 'Demographics'; caption 'Ethnic groups in Xinjiang 2020 Chinese census'; year 2020
-         header: ['Nationality', 'Population', 'Percentage']
-         prose : "=GXj4a3gss8wC&pg=PA242 242] 3.6 million In general, Uyghurs are the majority in Southwestern Xinjiang, including the prefectures of Kashgar, Khotan, Kizilsu and Aksu (about 80 percent of Xinjiang's Uyghurs live in those four prefectures) as"
-         row   : ['Uyghur', '11,624,257', '44.96 percent']
-         row   : ['Han', '10,920,098', '42.24 percent']
-         row   : ['Kazakh', '1,539,636', '5.96 percent']
-         row   : ['Hui', '1,102,928', '4.27 percent']
-         row   : ['Kirghiz', '199,264', '0.77 percent']
-         row   : ['Mongols', '169,143', '0.65 percent']
-         row   : ['Dongxiang', '72,036', '0.28 percent']
-         row   : ['Tajiks', '50,238', '0.19 percent']
-         row   : ['Xibe', '34,105', '0.13 percent']
-         row   : ['Manchu', '20,915', '0.080 percent']
-         row   : ['Tujia', '15,787', '0.086 percent']
-         row   : ['Tibetan', '18,276', '0.071 percent']
-         row   : ['Uzbek', '12,301', '0.048 percent']
-         row   : ['Miao', '12,220', '0.047 percent']
-         row   : ['Russian', '8,024', '0.031 percent']
-         row   : ['Yi', '7,752', '0.030 percent']
-         row   : ['Zhuang', '5,727', '0.022 percent']
-         row   : ['Daur', '5,447', '0.021 percent']
-         row   : ['Tatar', '5,183', '0.024 percent']
-         row   : ['Tu', '3,827', '0.015 percent']
-         row   : ['Salar', '3,266', '0.013 percent']
-         row   : ['Other', '11,764', '0.046 percent']
-  ETHNIC table 9: 22 rows; section 'Demographics'; caption "Major ethnic groups in Xinjiang by region (2018 data)Does not include members of the People's Liberation Army in active service. P = Prefecture; AP = Autonomous prefecture; PLC = Prefecture-level city; DACLC = Directly administered county-level city."; year 2018
-         header: ['', 'Uyghurs (%)', 'Han (%)', 'Kazakhs (%)', 'others (%)']
-         prose : "=GXj4a3gss8wC&pg=PA242 242] 3.6 million In general, Uyghurs are the majority in Southwestern Xinjiang, including the prefectures of Kashgar, Khotan, Kizilsu and Aksu (about 80 percent of Xinjiang's Uyghurs live in those four prefectures) as"
-         row   : ['Uyghurs (%)', '51.14', '12.85', '15.59', '76.96', '20.01', '4.89', '14.76', '36.38', '80.08', '66.24', '92.56', '96.96', '17.95', '26.30', '4.25', '1.42', '1.09', '3.66', '67.49', '0.05', '0.07']
-         row   : ['Han (%)', '34.41', '71.21', '74.67', '16.84', '65.49', '72.28', '63.27', '53.31', '18.56', '6.29', '6.01', '2.85', '40.09', '35.21', '54.66', '39.85', '94.13', '91.96', '31.73', '96.29', '95.96']
-         row   : ['Kazakhs (%)', '6.90', '2.77', '4.05', '0.05', '10.04', '10.34', '10.41', '0.11', '0.01', '0.03', '< 0.005', '< 0.005', '27.16', '21.57', '26.66', '52.76', '0.63', '< 0.005', '< 0.005', '0.10', '0.00']
-         row   : ['others (%)', '7.55', '13.16', '5.69', '6.15', '4.46', '12.49', '11.56', '10.20', '1.36', '27.44', '1.42', '0.19', '14.80', '16.91', '14.43', '5.97', '4.15', '4.38', '0.78', '3.55', '3.97']
-         table 10: 12 rows; section 'Demographics'; caption 'Vital statistics'; year 2000
-         header: ['Year', 'Population', 'Live births', 'Deaths', 'Natural change', 'Crude birth rate (per 1000)', 'Crude death rate (per 1000)', 'Natural change (per 1000)']
-   infobox: | demographics_type1 = Demographics
-   infobox: | demographics1_footnotes =
-   infobox: | demographics1_title1 = Ethnic<br />{{pad|0.5em}}composition<br />{{pad|0.5em}}([[2020 Chinese census|2020 census]])
-   infobox: | demographics1_info1 = {{unbulleted list|44.96% [[Uyghurs|Uyghur]]|42.24% [[Han Chinese|Han]]|12.80% other}}
-   infobox: | demographics1_title2 = {{nowrap|Languages}}
-   infobox: | demographics1_info2 = Two [[linguae francae]], [[Standard Chinese|Chinese]] and [[Uyghur language|Uyghur]]
-   infobox: | demographics_type2 = [[Gross domestic product|GDP]] {{normal|(2025)}}
-   infobox: | demographics2_title1 = Total
-   infobox: | demographics2_info1 = [[CN¥]] 2,146 billion ([[List of Chinese provincial-level divisions by GDP|23rd]])
-   infobox: | demographics2_title2 = Per capita
-   infobox: | demographics2_info2 = CN¥ 81,577 ([[List of Chinese provincial-level divisions by GDP per capita|15th]])
-   section "People's Republic of China":
-      {{see also|Incorporation of Xinjiang into the People's Republic of China|Migration to Xinjiang}}
-      During the final stages of the [[Chinese Civil War]], the [[People's Liberation Army]] (PLA) held a decisive advantage, while the [[National Revolutionary Army|Nationalist Army]] suffered successive defeats. After the [[First Field Army]], commanded by [[Peng 
-      That same year, the [[Soviet Union]] ordered the [[Three Districts Economic Commission]] insurgents to halt their advance into [[Ürümqi|Dihua]] (now Ürümqi) and surrender to the People's Republic of China. On 25 September, the First Army Corps of the First Fie
-      On 13 September 1955, the 21st meeting of the Standing Committee of the [[1st National People's Congress]] decided to change the status of Xinjiang from a province to an administrative area. On 1 October, the Xinjiang Uygur Autonomous Region was established, a
-      That year (the first modern census in China was taken in 1953), Uyghurs were 73 percent of Xinjiang's total population of 5.11 million.{{sfnp|Bovingdon|2010|p=199}} Although Xinjiang has been designated a "Uygur Autonomous Region" since 1955, more than 50 perc
-      [[Land Reform Movement (China)|Land reform]] and [[Collective farming|collectivization]] occurred in Uyghur agricultural areas at the same general pace as in most of China.{{Rp|page=134}} Hunger in Xinjiang was not as great as elsewhere in China during the [[G
-      In 1980, China allowed the United States to establish electronic listening stations in Xinjiang so the United States could monitor Soviet rocket launches in central Asia in exchange for the United States authorizing the sale of [[Dual-use technology|dual-use]]
-      The [[reform and opening up]] since the late 1970s has exacerbated uneven regional development, more Uyghurs have migrated to Xinjiang's cities and some Han have migrated to Xinjiang for economic advancement. [[Paramount leader|Chinese leader]] [[Deng Xiaoping
-      Increased ethnic contact and labor competition has coincided with Uyghur [[Terrorism in China#Xinjiang|terrorism]] since the 1990s, such as the [[1997 Ürümqi bus bombings]].{{sfnp|Hopper|Webber|2009|pp=173–175}}
-      In 2000, Uyghurs made up 45 percent of Xinjiang's population and 13 percent of Ürümqi's population. With nine percent of Xinjiang's population, Ürümqi accounts for 25 percent of the region's GDP; many rural Uyghurs have migrated to the city for work in its [[L
-      Xinjiang has 81 [[public library|public libraries]] and 23 museums, compared to none in 1949. It has [[List of newspapers in China#Xinjiang|98 newspapers]] in 44 languages, compared with four in 1952. According to official statistics, the ratio of doctors, med
-      The ongoing [[Xinjiang conflict]] includes the 2007 [[Xinjiang raid]], a thwarted 2008 suicide-bombing attempt on a [[China Southern Airlines]] flight, the [[2008 Kashgar attack]] which killed 16 police officers four days before the [[2008 Summer Olympics|Beij
-      In 2014, [[Chinese Communist Party]] (CCP) leadership in Xinjiang commenced a [[People's War]] against the "Three Evil Forces" of separatism, terrorism, and extremism. They deployed two hundred thousand party cadres to Xinjiang and the launched the [[Civil Ser
-      Chinese authorities have operated internment camps to indoctrinate Uyghurs and other Muslims as part of the People's War since at least 2017. The camps have been criticized by a number of governments and human-rights organizations for patterns of [[Persecution
-      In 2021, authorities sentenced [[Sattar Sawut]] and [[Shirzat Bawudun]]—former heads of Xinjiang's education and justice departments respectively—both to [[Death sentence with reprieve|death with a two-year reprieve]] on separatism and bribery charges. Such a 
-      Xi Jinping made a four-day visit to Xinjiang in July 2022 where [[Kompas TV]] had documented groups of Uyghurs welcoming his arrival. Xi called on local officials to do more in preserving ethnic minority culture and following an inspection of the [[Xinjiang Pr
-      In April 2026, the government of Xinjiang announced the establishment of new county named [[Caohu]].
-   section 'Demographics':
-      {{Further|Migration to Xinjiang|Turkic settlement of the Tarim Basin}}
-      {{Historical populations
-      |title = Historical population
-      |1912  |2,098,000
-      |1928 |2,552,000
-      |1936–37 |4,360,000
-      |1947 |4,047,000
-      |1954 |4,873,608
-      |1964 |7,270,067
-      |1982 |13,081,681
-      |1990 |15,155,778
-      |2000 |18,459,511
-      |2010 |21,813,334
-      |2020 | 25,852,345
-      The earliest Tarim mummies, dated to 1800 BC, are of a [[Caucasian race|Caucasoid]] physical type. East Asian migrants arrived in the eastern portions of the Tarim Basin about 3000 years ago and the Uyghur peoples appeared after the collapse of the Orkhon Uygh
-      The Islamization of Xinjiang started around 1000 AD. Xinjiang Muslim [[Turkic peoples]] contain Uyghurs, Kazaks, Kyrgyz, [[Tatars]], [[Uzbeks]]; Muslim [[Iranian peoples]] comprise Tajiks, [[Tajiks of Xinjiang|Sarikolis]] / [[Wakhi people|Wakhis]] (often confl
-      The Han Chinese of Xinjiang arrived at different times from different directions and social backgrounds. There are now descendants of criminals and officials who had been exiled from China during the second half of the 18th and the first half of the 19th centu
-      [[File:Xinjiang County-Level Ethnicity Map (2018 data).svg|thumb|left|[[County-level division|County-level]] ethnicity map of Xinjiang as of 2018]]
-      In 2002, there were 9,632,600 males (growth rate of 1.0 percent) and 9,419,300 females (growth rate of 2.2 percent). The population overall growth rate was 1.09 percent, with 1.63 percent of [[birth rate]] and 0.54 percent [[mortality rate]].
-      [[File:Khotan-mercado-chicas-d01.jpg|thumb|right|Three Uyghur girls at a Sunday market in the oasis city [[Khotan]]]]
-      {| class="wikitable floatright"
-      |-
-      ! Ethnic group
-      ! Estimated population<br />1933
-      |-
-      | [[Uyghurs]]
-      | align="right" |2,900,173 (77.75%)
-      |-
-      | [[Kazakhs]]
-      | align="right" |318,716 (8.55%)
-      |-
-      | [[Han Chinese]]
-      | align="right"|202,239 (5.41%)
-      |-
-      | [[Hui people|Hui]]
-      | align="right"|92,146 (2.47%)
-      |-
-      | [[Kyrgyz people|Kyrgyz]]
-      | align="right"|65,248 (1.75%)
-      |-
-      | [[Mongols]]
-      | align="right"|63,018 (1.69%)
-      |-
-      | [[Taranchi]]s
-      | align="right"|41,307 (1.11%)
+         table 4: 7 rows; section '地方首长'; caption '青海省四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 青海省委员会', '25 青海省人民代表大会 常务委员会', '25 青海省人民政府', '25 中国人民政治协商会议 青海省委员会']
+  [zh] '宁夏回族自治区': 56,489 bytes of wikitext
+== Ningxia Hui Autonomous Region ([zh] '宁夏回族自治区'): 4 tables
+         table 0: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+  ETHNIC table 1: 4 rows; section '人口'; caption '宁夏回族自治区民族构成（2020年第七次全国人口普查）'; year 2020
+         header: ['民族名称', '汉族', '回族', '满族', '苗族', '蒙古族', '土家族', '布依族', '壮族', '藏族', '彝族', '其他民族']
+         prose : '2022年末全区常住人口728万人，比上年末增加3万人。 其中城镇常住人口483万人，占常住人口比重（常住人口城镇化率）为66.34%，比上年末提高0.3个百分点。'
+         row   : ['汉族', '4,612,964', '64.05', '－']
+         row   : ['回族', '2,523,581', '35.04', '97.45']
+         row   : ['满族', '28,016', '0.39', '1.08']
+         row   : ['苗族', '11,090', '0.15', '0.43']
+         row   : ['蒙古族', '9,499', '0.13', '0.37']
+         row   : ['土家族', '3,215', '0.04', '0.12']
+         row   : ['布依族', '2,480', '0.03', '0.10']
+         row   : ['壮族', '1,583', '0.02', '0.06']
+         row   : ['藏族', '1,481', '0.02', '0.06']
+         row   : ['彝族', '1,411', '0.02', '0.05']
+         row   : ['其他民族', '7,334', '0.10', '0.28']
+         table 2: 9 rows; section '行政区划'; caption ''; year 2020
+         header: ['行政区划图', '区划代码', '区划名称', '面积土地面积为第二次全国土地调查结果数据。 （平方公里）', '常住人口常住人口为2020年第七次全国人口普查数据。 （20', '政府驻地', '县级行政区划']
+         table 3: 7 rows; section '主要领导'; caption '宁夏回族自治区四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 宁夏回族自治区委员会', '25 宁夏回族自治区人民代表大会 常务委员会', '25 宁夏回族自治区人民政府', '25 中国人民政治协商会议 宁夏回族自治区委员会']
+  [zh] '新疆维吾尔自治区': 64,213 bytes of wikitext
+== Xinjiang Uyghur Autonomous Region ([zh] '新疆维吾尔自治区'): 6 tables
+         table 0: 2 rows; section '山口'; caption ''; year None
+         header: ['接壤新疆的山口']
+         table 1: 5 rows; section '四至'; caption ''; year None
+         header: ['方位', '地点', '坐标']
+         table 2: 34 rows; section '行政区划'; caption ''; year 2020
+         header: ['区划代码', '区划名称 维吾尔文', '面积第二次全国土地调查]]结果数据。 （平方公里）', '常住人口常住人口为2020年第七次全国人口普查数据。 （20', '政府驻地', '县级行政区划', '边境管理区 范围']
+         table 3: 19 rows; section '民族'; caption '新疆民族分佈（2015） 根据2015年底人口抽查统计'; year 2015
+         header: ['民族', '人口數', '百分比']
+  ETHNIC table 4: 20 rows; section '民族'; caption '2000 年新疆主要民族分地区统计'; year 2000
+         header: ['', '维吾尔族', '汉族', '哈萨克族', '其他']
+         prose : '隆年间多次起義，最终于1757年被乾隆消滅）時民族變動較大。清朝時最大型的新疆 根據2019年的人口統計，新疆的人口組成如右表所示。维吾尔族在新疆西部和南部佔絕大多数，包括喀什地区、和田地区、克孜勒苏柯尔克孜自治州和阿克苏地区，以及新疆东部的吐鲁番市等地区。汉族在新疆东部、中部和北部占大多数，包括乌鲁木齐、克拉玛依、石河子3市和昌吉回族自治州、博尔塔拉蒙古自治州、巴音郭楞蒙古自治州、伊犁哈萨克自治州（特别是奎屯市）以及哈密市。哈萨克族多分佈在新疆北部，在伊犁哈萨克自治州等地較'
+         row   : ['维吾尔族', '45.2%', '12.8%', '13.8%', '70.0%', '18.4%', '3.9%', '12.5%', '32.7%', '71.9%', '64.0%', '89.3%', '96.4%', '16.1%', '0.5%', '27.2%', '4.1%', '1.8%', '1.2%', '']
+         row   : ['汉族', '41.6%', '75.3%', '78.1%', '23.3%', '68.9%', '75.1%', '67.2%', '57.5%', '26.6%', '6.4%', '9.2%', '3.3%', '44.4%', '94.6%', '32.4%', '58.6%', '40.9%', '94.5%', '']
+         row   : ['哈萨克族', '5.7%', '2.3%', '3.7%', '<0.1%', '8.8%', '8.0%', '9.1%', '<0.1%', '<0.1%', '<0.1%', '<0.1%', '<0.1%', '25.6%', '1.8%', '22.6%', '24.2%', '51.4%', '0.6%', '']
+         row   : ['其他', '7.5%', '9.6%', '4.5%', '6.6%', '3.9%', '13.0%', '11.1%', '9.7%', '1.4%', '29.6%', '1.5%', '0.2%', '13.9%', '3.1%', '17.8%', '13.1%', '5.9%', '3.7%', '']
+         table 5: 7 rows; section '主要领导人'; caption '新疆维吾尔自治区四大机构现任领导人'; year None
+         header: ['机构', '25 中国共产党 新疆维吾尔自治区 委员会', '25 新疆维吾尔自治区 人民代表大会 常务委员会', '25 新疆维吾尔自治区 人民政府', '25 中国人民 政治协商会议 新疆维吾尔自治区 委员会']
