@@ -5,8 +5,11 @@ provinces the survey can speak for.
 The China Family Panel Studies asks adults "请问您属于什么宗教?" with seven
 answers -- Buddhism, Taoism, Islam, Protestant, Catholic, none, other -- in
 its 2012 and 2016 waves (2014 asked instead which deities a person believes
-in, which is a different question and is not read; 2018 asks only about
-membership of a religious organisation). A re-upload of the public-release
+in, which is a different question and is not read; 2018 and 2020 ask only
+about membership of a religious organisation). The 2016 stem is "您信仰什么
+宗教" -- believe in, where 2012 said belong to -- and takes more than one
+answer; the first is counted, and the note says so, because shares rose in
+every province between the waves and the wording is part of why. A re-upload of the public-release
 files sits on Kaggle. This reads the newest wave that carries the
 affiliation question, weights each answer by the wave's cross-sectional
 individual weight, and writes one row per province.
@@ -281,7 +284,13 @@ def build(root: Path) -> tuple[int, list[dict[str, Any]]]:
                 f"Lu Yunfeng's report ({PAPER_URL}) within {SHARE_TOLERANCE} points in "
                 f"every share, which is how the province codes are known to be right; "
                 f"that published table is unweighted, so it and this figure differ by "
-                f"the weight and not by the data. Affiliation, not practice.")))
+                f"the weight and not by the data. "
+                + ("The 2016 questionnaire asks which religion a person believes in "
+                   "(信仰) where 2012 asked which they belong to (属于), and allows more "
+                   "than one answer, of which the first is counted; shares rose in every "
+                   "province between the two waves, and part of that rise is the wording. "
+                   if year == 2016 else "")
+                + "Affiliation, not practice.")))
     return year, out
 
 
