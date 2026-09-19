@@ -48,10 +48,13 @@ bundle is a third party's re-upload and its standing is not verified here.
 What is written is aggregate shares by province, not microdata, and the
 source note says where they came from.
 
-Usage (on a machine that reaches Kaggle; kagglehub reads KAGGLE_USERNAME and
-KAGGLE_KEY from the environment, and this public bundle needs neither):
+Usage. Without arguments the Kaggle re-upload is downloaded (on a machine
+that reaches Kaggle; this public bundle needs no credentials) and the source
+says so. With ``--root``, the files are taken to be the public release
+obtained from ISSS by a registered user, the source cites ISSS, and the
+microdata never enters the repository -- only this adapter's output does:
     python -m scripts.fetch_census.cfps_microdata
-    python -m scripts.fetch_census.cfps_microdata --root /path/to/extracted   # already downloaded
+    python -m scripts.fetch_census.cfps_microdata --root ~/cfps   # the ISSS release
 """
 
 from __future__ import annotations
@@ -69,6 +72,30 @@ from .cfps_survey import TABLE as PAPER_TABLE, GROUPS as PAPER_GROUPS, URL as PA
 OUT = "cfps_microdata_province.json"
 DATASET = "edjngfebav/cfps201420162020-china-family-panel-studies"
 KAGGLE_URL = f"https://www.kaggle.com/datasets/{DATASET}"
+# Where ISSS distributes the files to registered users. Given --root, the
+# files are taken to have come from there, and the source says so.
+ISSS_URL = "https://www.isss.pku.edu.cn/cfps/"
+
+# The source, by where the files came from. The figures are the same either
+# way; what differs is the chain of custody, and the note says which.
+PROVENANCE = {
+    "kaggle": {
+        "where": "read from a third-party re-upload on Kaggle",
+        "url": KAGGLE_URL,
+        "license": ("CFPS is distributed by Peking University's Institute of Social "
+                    "Science Survey under a data-use agreement; the file was read from "
+                    "a third-party re-upload on Kaggle and only aggregate shares are "
+                    "kept"),
+    },
+    "isss": {
+        "where": "obtained from the Institute of Social Science Survey, Peking "
+                 "University, under its data-use agreement",
+        "url": ISSS_URL,
+        "license": ("CFPS public-release file, Institute of Social Science Survey, "
+                    "Peking University, used under its data-use agreement; only "
+                    "aggregate shares are kept and the microdata is not redistributed"),
+    },
+}
 
 # The answer codes CFPS uses for affiliation, in the map's canonical words.
 CODES = {1: "Buddhism", 2: "Taoism", 3: "Islam", 4: "Protestant",
@@ -128,10 +155,27 @@ def tabulate(rows: list[tuple[int, int, float]], *, weighted: bool = True
     return out
 
 
+def wave_file(root: Path, stem: str) -> Path | None:
+    """The wave's Stata file, by its release name or any later re-release.
+
+    ISSS names a file for its wave and release month -- cfps2016adult_201906
+    -- and a later release changes the suffix. The wave and questionnaire
+    are the stem's first part, so that is what is matched.
+    """
+    exact = root / f"{stem}.dta"
+    if exact.exists():
+        return exact
+    prefix = stem.split("_")[0]
+    found = sorted(root.rglob(f"{prefix}_*.dta")) + sorted(root.rglob(f"{prefix}.dta"))
+    return found[-1] if found else None
+
+
 def read_wave(root: Path, stem: str, prov_col: str, ans_col: str, w_col: str
               ) -> list[tuple[int, int, float]]:
     import pandas as pd
-    path = root / f"{stem}.dta"
+    path = wave_file(root, stem)
+    if path is None:
+        raise FileNotFoundError(f"{stem}.dta")
     df = pd.read_stata(str(path), columns=[prov_col, ans_col, w_col],
                        convert_categoricals=False)
     df = df.dropna(subset=[prov_col, ans_col])
@@ -218,8 +262,9 @@ def download() -> Path:
     return Path(kagglehub.dataset_download(DATASET))
 
 
-def build(root: Path) -> tuple[int, list[dict[str, Any]]]:
+def build(root: Path, provenance: str = "kaggle") -> tuple[int, list[dict[str, Any]]]:
     from common import slugify
+    where = PROVENANCE[provenance]
     # Self-check first, on the wave the paper printed.
     y2012 = [w for w in WAVES if w[0] == 2012][0]
     rows2012 = read_wave(root, *y2012[1:])
@@ -232,7 +277,7 @@ def build(root: Path) -> tuple[int, list[dict[str, Any]]]:
             + ", ".join(f"{g} {p}" for g, p in top))
     # Then the newest wave that is there and carries the question.
     for year, stem, prov_col, ans_col, w_col in WAVES:
-        if not (root / f"{stem}.dta").exists():
+        if wave_file(root, stem) is None:
             log(f"  {year}: {stem}.dta is not in the bundle")
             continue
         try:
@@ -257,12 +302,10 @@ def build(root: Path) -> tuple[int, list[dict[str, Any]]]:
     src = [{"field": "religion",
             "name": (f"China Family Panel Studies {year} adult questionnaire, religious "
                      f"affiliation (qm601) by province, tabulated with the wave's "
-                     f"cross-sectional individual weight ({w_col}) from the public-release file"),
-            "url": KAGGLE_URL,
-            "license": ("CFPS is distributed by Peking University's Institute of Social "
-                        "Science Survey under a data-use agreement; the file was read from "
-                        "a third-party re-upload on Kaggle and only aggregate shares are "
-                        "kept")}]
+                     f"cross-sectional individual weight ({w_col}) from the public-release "
+                     f"file {where['where']}"),
+            "url": where["url"],
+            "license": where["license"]}]
     out = []
     for code in sorted(SELF_REPRESENTATIVE):
         t = table[code]
@@ -297,7 +340,9 @@ def build(root: Path) -> tuple[int, list[dict[str, Any]]]:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--root", default=None, help="an already-extracted copy of the bundle")
+    ap.add_argument("--root", default=None,
+                    help="a directory holding the CFPS public-release .dta files obtained "
+                         "from ISSS; the source then cites ISSS rather than Kaggle")
     ap.add_argument("--diagnose", action="store_true",
                     help="print every reading of 2012 against the paper's Table 2, write nothing")
     args = ap.parse_args()
@@ -306,7 +351,7 @@ def main() -> int:
     if args.diagnose:
         diagnose(root)
         return 0
-    year, records = build(root)
+    year, records = build(root, "isss" if args.root else "kaggle")
     log(f"  {len(records)} provinces written from the {year} wave")
     write_json(PROCESSED / OUT, records)
     return 0

@@ -5188,7 +5188,11 @@ published table.
 
 Provenance: CFPS is distributed by Peking University's ISSS under a data-use
 agreement; the Kaggle bundle is a third party's re-upload whose standing is
-not verified here. Only aggregate shares are kept.
+not verified here. Only aggregate shares are kept. The clean chain of
+custody is to register with ISSS, download the public-release files, and run
+the adapter with ``--root`` pointing at them: it runs the same self-check,
+writes the same output, and the source then cites ISSS rather than Kaggle.
+The microdata never enters the repository either way.
 
 ## Derived values: what follows without reading more
 

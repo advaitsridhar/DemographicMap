@@ -54,3 +54,18 @@ class Tabulate(unittest.TestCase):
         self.assertEqual({m.PROVINCES[c] for c in m.SELF_REPRESENTATIVE},
                          {"Shanghai Municipality", "Liaoning Province", "Henan Province",
                           "Gansu Province", "Guangdong"})
+
+    def test_the_source_names_where_the_file_came_from(self):
+        self.assertIn("Kaggle", m.PROVENANCE["kaggle"]["where"])
+        self.assertIn("Institute of Social Science Survey", m.PROVENANCE["isss"]["where"])
+        self.assertEqual(m.PROVENANCE["isss"]["url"], m.ISSS_URL)
+        self.assertNotIn("Kaggle", m.PROVENANCE["isss"]["license"])
+
+    def test_a_later_release_of_a_wave_is_found_by_its_stem(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "cfps2016adult_202301.dta").write_bytes(b"")
+            self.assertEqual(m.wave_file(root, "cfps2016adult_201906").name,
+                             "cfps2016adult_202301.dta")
+            self.assertIsNone(m.wave_file(root, "cfps2020person_202306"))
