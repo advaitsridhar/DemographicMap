@@ -4466,7 +4466,7 @@ seriousness:
 The fourth point is the one that answers the original question. It is not only
 that `nso.go.th` will not serve this client: by the account of the people who
 compiled this dataset, Thailand has made census language data public **once**,
-for 2000. So Thailand is a gap about publication, like Viet Nam, rather than a
+for 2000. So Thailand is a gap about publication, as Viet Nam was until its Vietnamese volume was read, rather than a
 gap about access -- and the access problem is real too.
 
 **Religion, later.** The 2000 census did publish religion by province, in a
