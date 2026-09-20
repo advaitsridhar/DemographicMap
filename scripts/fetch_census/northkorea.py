@@ -38,6 +38,13 @@ read rather than merely what is believed. Nationality is not written onto the
 ethnicity field here: Table 5 has no geography, and the Maldives entry settles
 the principle -- a passport is not an ethnic group.
 
+This file writes no composition, and it does not copy the declaration either.
+It marks the three fields ``not_available`` with a line saying the census asks
+none of them, which is the one form ``apply_collection_policy`` replaces, so
+the wording every North Korean unit shows is always the policy's current one.
+What it does insist on is that the declaration exists: without it these 190
+units would say only that nobody had fetched a figure, and the run refuses.
+
 **What is written instead.** Every one of North Korea's 11 first-level and 179
 second-level units carried ``not_available`` for population before this, and
 the census counts them all. Table 2, *Population by Sex and by Urban-Rural, by
@@ -319,6 +326,12 @@ GAINED_PARENT_NOTE = (
 PYONGYANG_NOTE = (
     " This shape is the city proper: the report's nineteen districts less "
     "Unjong, which the boundary file draws as a unit of its own.")
+
+NO_COMPOSITION = (
+    "The 2008 census asks none of the three: its 53 questions carry no "
+    "religion, ethnicity or language question, and no table of its 53 is "
+    "one. The one question on its form about who a person is asks "
+    "nationality, and its answer is published for the country only.")
 
 REPORT_SPELLS_IT = (
     " The report writes the name {label!r}; the spelling here is the "
@@ -649,14 +662,26 @@ def slug(name: str) -> str:
 
 
 def build(shaped: dict[str, dict[str, County]]) -> list[dict[str, Any]]:
+    # The three fields are left to the country's own declaration rather than
+    # copied into 190 rows. `apply_collection_policy` replaces a noted
+    # not_available with the policy's own marker at build time, so improving
+    # the declaration improves every unit at once; a not_collected written
+    # here would stand instead, and go stale the next time the wording is
+    # sharpened -- which is how 64 Bangladeshi zilas once lost their evidence.
+    # What this adapter insists on is that the declaration exists: it writes
+    # no composition for North Korea and would otherwise leave 190 units
+    # saying only that nobody has fetched one.
     fields = ("religion", "ethnicity", "language")
-    declared = {f: collection_gap("PRK", f) for f in fields}
-    for field, marker in declared.items():
-        if marker is None:
+    for field in fields:
+        if collection_gap("PRK", field) is None:
             raise SystemExit(
                 f"northkorea: NOT_COLLECTED_POLICY has no {field} entry for "
-                "PRK; this adapter writes the country's own declaration and "
-                "will not invent one")
+                "PRK, so nothing would say why these 190 units have no "
+                f"{field}; this adapter reads the census that establishes it "
+                "and will not write around a missing declaration")
+    declared = {f: gap(NOT_AVAILABLE, NO_COMPOSITION) for f in fields}
+    log("  religion, ethnicity and language: left to NOT_COLLECTED_POLICY"
+        "['PRK'], which the build writes onto every row")
 
     out: list[dict[str, Any]] = []
     for shape in sorted(shaped):

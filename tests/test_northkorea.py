@@ -377,15 +377,32 @@ class TheRecords(unittest.TestCase):
             self.assertEqual(row["aliases"], [label])
             self.assertIn(label, row["population_note"])
 
-    def test_the_three_fields_carry_the_countrys_own_declaration(self):
-        # Not a marker of this adapter's own: the country row and its
-        # counties disagreeing about whether the question was asked is the
-        # drift NOT_COLLECTED_POLICY exists to prevent.
+    def test_the_three_fields_yield_to_the_countrys_own_declaration(self):
+        # Written as a noted not_available, which is the one form
+        # apply_collection_policy replaces: a not_collected of this adapter's
+        # own would stand, and go stale the next time the declaration is
+        # sharpened.
         for field in ("religion", "ethnicity", "language"):
-            declared = common.collection_gap("PRK", field)
-            self.assertEqual(declared["status"], common.NOT_COLLECTED)
+            self.assertEqual(common.collection_gap("PRK", field)["status"],
+                             common.NOT_COLLECTED)
             for row in self.rows:
-                self.assertEqual(row[field], declared)
+                self.assertEqual(row[field]["status"], common.NOT_AVAILABLE)
+                self.assertIn("asks none of the three", row[field]["note"])
+                replaced = dict(row)
+                common.apply_collection_policy(replaced, "PRK")
+                self.assertEqual(replaced[field],
+                                 common.collection_gap("PRK", field))
+
+    def test_a_country_with_no_declaration_is_refused(self):
+        # This adapter writes no composition, so without the declaration its
+        # 190 units would say only that nobody had fetched one.
+        saved = common.NOT_COLLECTED_POLICY.pop("PRK")
+        try:
+            with self.assertRaises(SystemExit) as caught:
+                nk.build(nk.regroup(read()))
+            self.assertIn("missing declaration", str(caught.exception))
+        finally:
+            common.NOT_COLLECTED_POLICY["PRK"] = saved
 
     def test_every_row_says_what_its_figure_is_and_what_it_leaves_out(self):
         for row in self.rows:
