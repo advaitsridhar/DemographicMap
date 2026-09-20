@@ -522,9 +522,9 @@ def check_bases(language_totals, religion_totals) -> None:
                          f"reader was written against {NATIONAL_BASE:,}; the release has "
                          "changed and the notes' arithmetic with it")
     log(f"  both 2015 tables count the same {base:,.0f} people, municipality by "
-        f"municipality: {NATIONAL_POPULATION_2015 - base:,} below the volume's own "
+        f"municipality: {NATIONAL_POPULATION_2015 - base:,.0f} below the volume's own "
         f"total population ({NATIONAL_POPULATION_2015:,}) and "
-        f"{base - NATIONAL_PRIVATE_HOUSEHOLDS_2015:,} above its private-household "
+        f"{base - NATIONAL_PRIVATE_HOUSEHOLDS_2015:,.0f} above its private-household "
         f"population ({NATIONAL_PRIVATE_HOUSEHOLDS_2015:,}), which no footnote explains")
 
 
