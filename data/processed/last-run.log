@@ -1,279 +1,569 @@
-== route (x): lsb.gov.la's own file store, through the WordPress API
-  404 Not Found  https://www.lsb.gov.la/wp-json/wp/v2/media?per_page=100&page=1
-== route (x): the statistics portals
-  !! URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.  https://laosis.lsb.gov.la/
-  !! URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.  https://laosis.lsb.gov.la/tabulation/public/
-  !! URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.  http://laosis.lsb.gov.la/
-  !! URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid f  https://www.decide.la/
-  200 text/html; charset=UTF-8                       4000  http://www.decide.la/
-  !! URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid f  https://decide.la/
-  -- laosis with the intermediate certificate its server omits
-  aia !! SSLError: [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1016)  https://laosis.lsb.gov.la/
-  aia !! SSLError: [SSL: DH_KEY_TOO_SMALL] dh key too small (_ssl.c:1016)  https://laosis.lsb.gov.la/tabulation/public/
-== route (x): every page of UNFPA Laos's publication list
-  200 text/html; charset=UTF-8                      70702  https://lao.unfpa.org/en/publications?page=0
-    /en/publications/cefm-your-future-your-choice-say-no-child-marriage
-    /en/publications/coverage-unfpa-programme-lao-pdr-updated-q3-2entity26
-    /en/publications/guideline-self-administration-sayana%C2%AE-press-dmpa-sc
-    /en/publications/male-engagement-maternal-healthcare-booklet
-    /en/publications/pamphlet-self-administration-sayana%C2%AE-press
-    /en/publications/unfpa-lao-pdr-annual-report-2entity25
-    /en/publications/unfpa-lao-pdr-newsletter-april-june-2entity26
-    /en/publications/unfpa-lao-pdr-newsletter-january-march-2entity26
-    /en/publications/unfpa-lao-pdr-newsletter-october-december-2025
-  200 text/html; charset=UTF-8                      70665  https://lao.unfpa.org/en/publications?page=1
-    /en/publications/2nd-national-conference-population-and-development-towards-harnessing-demographic
-    /en/publications/9-25-call-action-investing-people-securing-lao-pdrs-future
-    /en/publications/gender-and-economic-development-report
-    /en/publications/inequality-cuts-deep-lao-pdr-women-and-girls-poor-rural-areas-ethnic-minorities-and
-    /en/publications/newsletter-partnership-census-october-2025
-    /en/publications/newsletter-unfpa-lao-pdr-july-september-2025
-    /en/publications/recaps-16doa-and-international-day-person-disabilities-2025
-    /en/publications/uneven-progress-ongoing-struggle-womens-rights-lao-pdr
-    /en/publications/what-technology-facilitated-gender-based-violence-tfgbv
-  200 text/html; charset=UTF-8                      70890  https://lao.unfpa.org/en/publications?page=2
-    /en/publications/6th-brief-2025-population-and-housing-census-lao-pdr
-    /en/publications/futures-design-lao-pdr-crossroads-change
-    /en/publications/human-rights-and-indicative-state-obligations-underpinning-sexual-and-reproductive
-    /en/publications/lnob-mapping-2025
-    /en/publications/newsletter-unfpa-lao-pdr-april-june-2entity25
-    /en/publications/nodeentityentity-ways-census-data-will-be-used-lao-pdr
-    /en/publications/promise-generation-towards-demographic-dividend-empower-educate-employ-and-engage
-    /en/publications/unfpa-lao-pdr-annual-report-2024
-    /en/publications/we-need-your-support-5th-population-and-housing-census-2025
-  200 text/html; charset=UTF-8                      67973  https://lao.unfpa.org/en/publications?page=3
-    /en/publications/family-planning
-    /en/publications/gonorrhea
-    /en/publications/lao-social-indicator-survey-iii-lsis-iii-2023
-    /en/publications/life-saving-impact-through-high-quality-education
-    /en/publications/sexually-transmitted-infections
-    /en/publications/unfpa-coverage-mapping-lao-pdr-december-2024
-    /en/publications/unfpa-lao-pdr-newsletter-january-%E2%80%93-march-2025
-    /en/publications/unfpa-lao-pdr-november-december-2024-newsletter
-    /en/publications/what-varicella-and-how-can-it-be-prevented
-  200 text/html; charset=UTF-8                      71250  https://lao.unfpa.org/en/publications?page=4
-    /en/publications/5th-brief-5th-population-and-housing-census-lao-pdr-november-2024
-    /en/publications/bi-monthly-newsletter-july-august-2024
-    /en/publications/minimum-initial-service-package-misp-2024
-    /en/publications/tf-gbv-preliminary-findings
-    /en/publications/understanding-pathways-adolescent-pregnancy-lao-pdr
-    /en/publications/unfpa-coverage-mapping-lao-pdr-2017-2024
-    /en/publications/unfpa-lao-pdr-april-june-2024-newsletter
-    /en/publications/unfpa-lao-pdr-january-march-2024-newsletter
-    /en/publications/unfpa-lao-pdr-september-october-2024-newsletter
-  200 text/html; charset=UTF-8                      75052  https://lao.unfpa.org/en/publications?page=5
-    /en/publications/4th-brief-5th-population-and-housing-census-2025-lao-pdr
-    /en/publications/first-synthesized-analysis-available-vital-statistics-lao-pdr
-    /en/publications/lao-pdr-fp2030-commitment
-    /en/publications/lao-pdr-mpdsr-situational-analysis
-    /en/publications/law-lao-young-pioneer-%E0%BA%81%E0%BA%BB%E0%BA%94%E0%BB%9D%E0%BA%B2%E0%BA%8D%E0%BA%A7%E0%BB%88%E0%BA%B2%E0%BA%94%E0%BB%89%E0%BA%A7%E0%BA%8D%E0%
-    /en/publications/ncpd-proceedings-report
-    /en/publications/understanding-pathways-adolescent-pregnancy-southeast-asia-0
-    /en/publications/unfpa-assessment-lao-pdrs%C2%A0health-management-information-system-hmis
-    /en/publications/unfpa-lao-pdr-november-december-2023-newsletter
-== route (x): Open Development Laos, by phrase
-  200 application/json;charset=utf-8               181821  https://data.laos.opendevelopmentmekong.net/api/3/action/package_search?q=Lao+population+census+2015&rows=15
-  'Lao population census 2015': 103 dataset(s)
-    lao-population-and-housing-census-2015-general-demographic             Lao Population and Housing Census 2015
-        SHP      https://data.laos.opendevelopmentmekong.net/lo/dataset/7256198a-89af-411a-a850-9ccd1eca88a4/resource/476e5d08-c7ef-4647-
-        XLSX     https://data.laos.opendevelopmentmekong.net/lo/dataset/7256198a-89af-411a-a850-9ccd1eca88a4/resource/130665a5-1e64-477a-
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Census_2015 u_pop_density/wms?service=WMS&request=GetCapa
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_water_source_main/wms?service=WM
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_energy_cooking_type_main/wms?ser
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_eth_cat/wms?service=WMS&request=
-    4-2015                                                                 Provisional Report of the 4th Lao Population and Housing Census 2015
-        PDF      http://lao.unfpa.org/sites/default/files/pub-pdf/Final%20report-editting-English1.pdf
-    iv-2015                                                                Results of Population and Housing Census 2015 
-        PDF      https://data.opendevelopmentmekong.net/dataset/4a2c03e0-2402-4691-b2fd-56277fc95c31/resource/0be5dd3f-8f9e-4bfe-9f75-bbd
-        PDF      https://data.opendevelopmentmekong.net/dataset/4a2c03e0-2402-4691-b2fd-56277fc95c31/resource/9c4bb87b-4749-41cd-994b-91e
-    population-census-lao-pdr-20051                                        Population Census Lao PDR 2005
-        PDF      https://data.opendevelopmentmekong.net/dataset/af8f9e99-8d9b-484b-9301-321da2051ae7/resource/9f24c10c-6234-47fe-a7c7-409
-    socioeconomic-atlas-of-the-lao-pdr-2015                                Socio-Economic Atlas of the Lao PDR 2015 
-        PDF      https://data.opendevelopmentmekong.net/dataset/459e00fe-8f6a-43ac-b5b5-4ddd0f3bd131/resource/8188b9dd-48c8-4bda-8faa-b93
-        PDF      https://data.opendevelopmentmekong.net/dataset/459e00fe-8f6a-43ac-b5b5-4ddd0f3bd131/resource/c07be772-8ce6-4c21-85b8-103
-    lao-pdr-launches-the-final-report-of-the-4th-lao-population-and-housin Lao PDR launches the final report of the 4th Lao Population and Housin
-        HTML     http://web.archive.org/web/20191209093322/https://lao.unfpa.org/en/news/lao-pdr-launches-final-report-4th-lao-population
-    myanmar-population-density-2015                                        Myanmar - Population density (2015)
-        TIFF     https://energydata.info/dataset/c683246b-9133-40f7-b667-ea1720b8d392/resource/c6de0f57-adfd-48ca-aa86-954501030b1b/downl
-    census-results-in-brief-laos-population-census-2005-and-1995           Census results in brief (Laos population census 2005 and 1995)
-        PDF      https://data.opendevelopmentmekong.net/dataset/126050ca-c1b1-4fd9-a6f4-53b9c499ca87/resource/f54fadc4-8dca-4c0a-a9a8-a6a
-    country-analysis-report-lao-pdr-2015                                   Country analysis report: Lao PDR 2015
-        PDF      https://data.opendevelopmentmekong.net/dataset/5e189b3f-dd6a-43ba-8876-26c4036b1404/resource/44b8a793-c839-4bdf-be7e-e74
-    cambodian-population-and-poverty-rate-2015                             Cambodian population and poverty rate 2015
-        SHP      https://data.opendevelopmentmekong.net/dataset/65e551f2-d4ca-4a0c-b19b-ce049e030f14/resource/ca606980-dbab-4a08-8b83-4c4
-        KML      https://data.opendevelopmentmekong.net/dataset/65e551f2-d4ca-4a0c-b19b-ce049e030f14/resource/9f3e9d67-ebe7-4ffe-bf26-92b
-        GeoJSON  https://data.opendevelopmentmekong.net/dataset/65e551f2-d4ca-4a0c-b19b-ce049e030f14/resource/db027641-22c9-4728-bb7a-663
-        CSV      https://data.opendevelopmentmekong.net/dataset/65e551f2-d4ca-4a0c-b19b-ce049e030f14/resource/9fc89789-c27f-46b5-a5c9-e63
-        JPEG     https://data.opendevelopmentmekong.net/dataset/65e551f2-d4ca-4a0c-b19b-ce049e030f14/resource/3cb9e753-c8ce-402f-a718-e3e
-        DB_TABLE https://data.opendevelopmentmekong.net/datastore/dump/bf8987c5-5faa-4a51-ae97-a1cd62f4db6a
-    lao-census-of-agriculture-2010-11-highlights                           Lao census of agriculture 2010/11 highlights
-        PDF      https://data.opendevelopmentmekong.net/dataset/6dbf2be8-9334-4fff-888a-61f2c79a0598/resource/5b6adae9-78b1-4031-a690-fdc
-    lao-population-and-education-2019                                      Lao Population and Education 2019
-        XLSX     https://data.opendevelopmentmekong.net/dataset/20afba3a-0b40-412c-bb55-db2f230e8b6d/resource/ee1427ba-776f-4a02-a498-9a6
-        SHP      https://data.opendevelopmentmekong.net/dataset/20afba3a-0b40-412c-bb55-db2f230e8b6d/resource/aa78f952-d0fe-4da6-9296-16f
-        DB_TABLE https://data.opendevelopmentmekong.net/datastore/dump/e6789063-fae3-4845-94ab-13d947a61ca3
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/Lao_Population_and_Education_2019/wms?service=WMS&request=GetC
-    world-population-dashboard-lao-people-s-democratic-republic            World Population Dashboard Lao People's Democratic Republic
-        HTML     https://www.unfpa.org/data/world-population/LA
-    foot-and-mouth-disease-status-in-lao-pdr-2015                          Foot and mouth disease status in Lao PDR 2015
-        PDF      https://data.opendevelopmentmekong.net/dataset/ecea3db3-9bec-4442-96a0-ff87b65e066b/resource/8e8419b9-ee1b-47b5-99cd-990
-    poverty-in-laos-by-district-2015                                       Poverty in Laos by district (2015)
-        GeoJSON  https://data.opendevelopmentmekong.net/lo/dataset/0073f53b-4852-4463-ba8d-32bdef6f5476/resource/d6156852-a57e-4908-8db4-
-        KML      https://data.opendevelopmentmekong.net/lo/dataset/0073f53b-4852-4463-ba8d-32bdef6f5476/resource/29cb8291-ad44-434a-95c8-
-        SHP      https://data.opendevelopmentmekong.net/lo/dataset/0073f53b-4852-4463-ba8d-32bdef6f5476/resource/28599013-ba3e-4dbc-9d74-
-        DB_TABLE https://data.opendevelopmentmekong.net/lo/datastore/dump/b718b847-be8b-4350-8386-026f1729aaf5
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/district_pov/wms?service=WMS&request=GetCapabilities&layers=OD
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/poverty-in-laos-by-district-2015/wms?service=WMS&request=GetCa
-  200 application/json;charset=utf-8               213177  https://data.laos.opendevelopmentmekong.net/api/3/action/package_search?q=census+2015+ethnic&rows=15
-  'census 2015 ethnic': 232 dataset(s)
-    the-ethnic-rights-protection-law-2015                                  The Ethnic Rights Protection Law 2015
-        PDF      https://data.opendevelopmentmyanmar.net/en/dataset/5c047cd5-676a-4ed0-a7da-d90bebe75035/resource/5a969988-7470-4786-b412
-        PDF      https://data.opendevelopmentmyanmar.net/en/dataset/5c047cd5-676a-4ed0-a7da-d90bebe75035/resource/0a2ea7cd-1951-40a1-875c
-    thong-tin-dan-s-dan-t-c-thi-u-s-2015                                   Ethnic minority population information in 2015
-        CSV      https://data.opendevelopmentmekong.net/dataset/da23b1ad-f4f9-40e6-a338-fd38f52ad771/resource/8304b069-ff66-4691-ab86-f91
-        CSV      https://data.opendevelopmentmekong.net/dataset/da23b1ad-f4f9-40e6-a338-fd38f52ad771/resource/c6defde9-e628-4dd3-8056-1b2
-    lao-population-and-housing-census-2015-general-demographic             Lao Population and Housing Census 2015
-        SHP      https://data.laos.opendevelopmentmekong.net/lo/dataset/7256198a-89af-411a-a850-9ccd1eca88a4/resource/476e5d08-c7ef-4647-
-        XLSX     https://data.laos.opendevelopmentmekong.net/lo/dataset/7256198a-89af-411a-a850-9ccd1eca88a4/resource/130665a5-1e64-477a-
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Census_2015 u_pop_density/wms?service=WMS&request=GetCapa
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_water_source_main/wms?service=WM
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_energy_cooking_type_main/wms?ser
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_eth_cat/wms?service=WMS&request=
-    s-li-u-v-ph-n-va-nam-gi-i-cac-dan-t-c-vi-t-nam-nam-2015                Figures on Ethnic Minority Women and Men in Vietnam 2015
-        PDF      https://data.opendevelopmentmekong.net/dataset/9d2be231-be75-4938-bdec-078a3a9fb730/resource/8cff48a7-cf9d-4f4f-ac0d-07d
-        PDF      https://data.opendevelopmentmekong.net/dataset/9d2be231-be75-4938-bdec-078a3a9fb730/resource/58b2b419-5ca3-4ee3-8ccc-c9f
-    iv-2015                                                                Results of Population and Housing Census 2015 
-        PDF      https://data.opendevelopmentmekong.net/dataset/4a2c03e0-2402-4691-b2fd-56277fc95c31/resource/0be5dd3f-8f9e-4bfe-9f75-bbd
-        PDF      https://data.opendevelopmentmekong.net/dataset/4a2c03e0-2402-4691-b2fd-56277fc95c31/resource/9c4bb87b-4749-41cd-994b-91e
-    figures-on-ethnic-minority-women-and-men-in-vietnam-2015-2019-from-the Figures on ethnic minority women and men in Vietnam 2015-2019. From th
-        PDF      https://data.opendevelopmentmekong.net/en/dataset/de972d91-a98c-434a-a51b-1700110dfc6d/resource/c21cb486-b159-4af9-af2f-
-        PDF      https://data.opendevelopmentmekong.net/en/dataset/de972d91-a98c-434a-a51b-1700110dfc6d/resource/580939a9-f328-47e4-b532-
-    number-of-communes-in-ethnic-minority-areas-divided-by-proportion-of-s Number of communes in ethnic minority areas divided by proportion of s
-        CSV      https://data.opendevelopmentmekong.net/dataset/859f39f0-4069-420e-bb48-0a7aa31b328b/resource/b896a8a0-5eff-44bc-8c2e-5e1
-        CSV      https://data.opendevelopmentmekong.net/dataset/859f39f0-4069-420e-bb48-0a7aa31b328b/resource/3fdcba94-1270-4e72-8d8e-ee5
-    4-2015                                                                 Provisional Report of the 4th Lao Population and Housing Census 2015
-        PDF      http://lao.unfpa.org/sites/default/files/pub-pdf/Final%20report-editting-English1.pdf
-    54-dan-t-c-vi-sao-khac-bi-t-b-n-c-p-nh-t-nam-2018                      54 Ethnic groups: Why the difference? – 2018 edition
-                 https://mdri.org.vn/publications/54-ethnic-groups-why-the-difference-2018-edition-2/
-                 http://mdri.org.vn/vi/an-pham/54-dan-toc-vi-sao-khac-biet-ban-cap-nhat-nam-2018/
-    decree-no-75-2015-nd-cp-on-mechanism-and-policy-of-forest-development- Decree No. 75/2015/ND-CP on mechanism and policy of forest development
-        DOC      https://data.opendevelopmentmekong.net/dataset/08036ead-99dd-44fc-b09e-b9031849f9c7/resource/63419150-8a1f-443d-af2e-f2e
-        DOC      https://data.opendevelopmentmekong.net/dataset/08036ead-99dd-44fc-b09e-b9031849f9c7/resource/85a8cc7e-f6d4-4adb-8bfb-66f
-    deciphering-myanmar-s-ethnic-landscape-a-brief-historical-and-ethnic-d Deciphering Myanmar's Ethnic Landscape:A Brief Historical and Ethnic D
-        PDF      https://data.opendevelopmentmyanmar.net/en/dataset/126e3c16-a714-4219-bd5f-4262bae41ebc/resource/48f97581-fb1b-4266-869a
-    decision-407-qd-tctk-plan-survey-to-collect-information-on-current-soc Decision 407/QĐ-TCTK - Survey plan to collect information on current s
-        PDF      http://csdl.ubdt.gov.vn/noidung/vanbandt/Lists/UBDTVanBanDen/Attachments/12981/407Q%C4%90-TCTK.PDF
-    decision-no-1557-qd-ttg-approving-a-number-of-mdg-indicators-for-ethni Decision No. 1557/QD-TTg approving a number of MDG indicators for ethn
-        PDF      https://data.opendevelopmentmekong.net/dataset/3c19445a-4add-430c-a2d1-afebfbd28801/resource/8390e3cd-7a8c-45a5-b16e-416
-    overview-of-social-economic-situation-results-from-analyses-of-the-sur Overview of social economic situation - Results from analyses of the s
-        PDF      https://data.opendevelopmentmekong.net/dataset/cff13cb9-e74b-4c6c-bc26-96aed4db3534/resource/98ec3939-4690-4683-9707-593
-        PDF      https://data.opendevelopmentmekong.net/dataset/cff13cb9-e74b-4c6c-bc26-96aed4db3534/resource/18e1f87c-3f9b-47fd-91b2-422
-    brief-information-ethnic-groups-in-vietnam-evidence-from-the-2009-popu Brief information: Ethnic groups in Vietnam: Evidence from the 2009 Po
-        PDF      https://data.opendevelopmentmekong.net/dataset/0da73b7b-46ae-4230-ab44-c513006cb3c3/resource/056d404a-6c5e-4d70-8d3b-b57
-        PDF      https://data.opendevelopmentmekong.net/dataset/0da73b7b-46ae-4230-ab44-c513006cb3c3/resource/5e75c790-2c9e-4b06-ac98-639
-  200 application/json;charset=utf-8                46323  https://data.laos.opendevelopmentmekong.net/api/3/action/package_search?q=LSIS&rows=15
-  'LSIS': 5 dataset(s)
-    lao-social-indicator-survey-lsis-2011-12                               Lao Social Indicator Survey (LSIS) 2011-12
-        PDF      https://data.opendevelopmentmekong.net/dataset/898743f5-c48f-41ca-a99e-4fc7d03fe542/resource/d714c887-f140-4cf8-9fd7-e64
-        PDF      https://data.opendevelopmentmekong.net/dataset/898743f5-c48f-41ca-a99e-4fc7d03fe542/resource/45208be8-312f-4c23-871c-862
-    lsis-ii-2017                                                           Lao Social Indicator Survey II, Summary Survey Findings Report and Sta
-        PDF      https://data.opendevelopmentmekong.net/dataset/b4a30d05-7752-4a06-89d5-fec94b5900df/resource/bb792872-5b8b-4454-93cc-670
-    2017-lao-social-indicator-survey-ii-to-provide-data-for-the-sdgs       2017 Lao Social Indicator Survey II to Provide data for the SDGs
-        HTML     http://54.92.12.252/news_entries/66/2017-Lao-Social-Indicator-Survey-(LSIS)-II-to-Provide-Data-for-the-SDGs
-    lao-social-indicator-survey-ii-201718                                  Lao Social Indicator Survey II 2017
-        PDF      https://lao.unfpa.org/sites/default/files/pub-pdf/Lao%20Social%20Inndicator%20Survey%20II%202017-18%20%28English%29_0.pd
-    lao-national-survey-on-womens-health-and-life-experiences-2014-a-study Lao National Survey on Women's Health and Life Experiences 2014: A Stu
-        PDF      https://data.opendevelopmentmekong.net/dataset/6a7c03d0-a0fa-4303-a26c-91f58d5e894e/resource/92388650-66d1-4037-8a47-93f
-  200 application/json;charset=utf-8               126848  https://data.laos.opendevelopmentmekong.net/api/3/action/package_search?q=Lao+social+indicator+survey&rows=15
-  'Lao social indicator survey': 43 dataset(s)
-    lao-social-indicator-survey-ii-201718                                  Lao Social Indicator Survey II 2017
-        PDF      https://lao.unfpa.org/sites/default/files/pub-pdf/Lao%20Social%20Inndicator%20Survey%20II%202017-18%20%28English%29_0.pd
-    lao-social-indicator-survey-lsis-2011-12                               Lao Social Indicator Survey (LSIS) 2011-12
-        PDF      https://data.opendevelopmentmekong.net/dataset/898743f5-c48f-41ca-a99e-4fc7d03fe542/resource/d714c887-f140-4cf8-9fd7-e64
-        PDF      https://data.opendevelopmentmekong.net/dataset/898743f5-c48f-41ca-a99e-4fc7d03fe542/resource/45208be8-312f-4c23-871c-862
-    2017-lao-social-indicator-survey-ii-to-provide-data-for-the-sdgs       2017 Lao Social Indicator Survey II to Provide data for the SDGs
-        HTML     http://54.92.12.252/news_entries/66/2017-Lao-Social-Indicator-Survey-(LSIS)-II-to-Provide-Data-for-the-SDGs
-    lsis-ii-2017                                                           Lao Social Indicator Survey II, Summary Survey Findings Report and Sta
-        PDF      https://data.opendevelopmentmekong.net/dataset/b4a30d05-7752-4a06-89d5-fec94b5900df/resource/bb792872-5b8b-4454-93cc-670
-    laos-social-media-survey-overview                                      Laos Social Media Survey Overview
-        PDF      https://data.opendevelopmentmekong.net/dataset/55b01657-12b9-45ae-b86e-a59e95dac515/resource/d875b226-7b95-43ac-ba23-4e9
-    lao-national-survey-on-womens-health-and-life-experiences-2014-a-study Lao National Survey on Women's Health and Life Experiences 2014: A Stu
-        PDF      https://data.opendevelopmentmekong.net/dataset/6a7c03d0-a0fa-4303-a26c-91f58d5e894e/resource/92388650-66d1-4037-8a47-93f
-    13-----                                                                 Economic, social and environmental assessments of industrial plantati
-        PDF      https://data.opendevelopmentmekong.net/dataset/bbc6b40f-3155-4f5a-8e56-52b83d053e20/resource/f8fe7424-1a3c-47cc-a1a7-e0e
-    cambodian-mental-health-survey                                         Cambodian mental health survey (2012)
-        PDF      https://data.opendevelopmentmekong.net/dataset/ea6c4e3b-8ac3-4072-bbea-2b5c6dbb931a/resource/1e89d234-2fdf-4af5-a009-8ea
-    open-budget-survey-lmcs-2021                                           Open Budget Survey (LMCs) - 2021
-        XLSX     https://data.opendevelopmentmekong.net/dataset/7407fd6f-6cde-47b7-9f0d-4cffcbdc09d4/resource/682eff83-27da-4266-b752-57a
-        PDF      https://data.opendevelopmentmekong.net/dataset/7407fd6f-6cde-47b7-9f0d-4cffcbdc09d4/resource/ccae0385-1db0-4563-baa5-908
-    myanmar-inter-censal-survey-2019                                       Myanmar Inter-Censal Survey 2019
-        XLSX     https://data.opendevelopmentmyanmar.net/my/dataset/4c4bdbfa-bb08-4830-8b66-76c624f8fc69/resource/af8812b5-563d-4071-b9cd
-    xu-hu-ng-lao-d-ng-va-xa-h-i-vi-t-nam-2009-10                           Labour and social trends in Vietnam 2009/10
-        PDF      https://data.opendevelopmentmekong.net/dataset/91d5c05e-24f5-470e-b7a6-2714ddda69ae/resource/4c873e22-ca91-405f-9786-447
-    the-2014-establishment-survey-on-the-use-of-information                The 2014 establishment survey on the use of information and communicat
-        PDF      https://data.opendevelopmentmekong.net/dataset/8e12a995-2750-415d-8ed5-feb41002477d/resource/d314daba-bb98-4a36-8510-8e8
-    lao-it-service-market-2012                                             Lao IT Service Market 2012
-        PDF      https://data.opendevelopmentmekong.net/dataset/95e6054d-c88f-4817-86e8-6718263644bd/resource/221331f2-6bfe-4bfd-a9b1-080
-    violence-against-children-in-lao-pdr                                   Violence Against Children in Lao PDR
-        PDF      https://data.opendevelopmentmekong.net/dataset/7af5c90a-8269-4f8f-ac52-dc0e4d12fe59/resource/6a27e229-bb2d-4111-afee-9cd
-    human-development-reports-lao-people-s-democratic-republic             Human Development Reports: Lao People's Democratic Republic
-        HTML     http://hdr.undp.org/en/countries/profiles/LAO
-  200 application/json;charset=utf-8               149178  https://data.laos.opendevelopmentmekong.net/api/3/action/package_search?q=population+province+Laos&rows=15
-  'population province Laos': 383 dataset(s)
-    laos-population-and-poverty-rate-2019                                  Laos Population and Poverty Rate 2019
-        SHP      https://data.opendevelopmentmekong.net/lo/dataset/93800e70-28a7-40ac-8b66-7ab981b01c06/resource/ae2ec5a8-d2bc-44a9-a092-
-        DB_TABLE https://data.opendevelopmentmekong.net/lo/datastore/dump/0651c868-dab1-448c-83e5-6eb7a0d2f155
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/laos_population_and_poverty_rate_2019/wms?service=WMS&request=
-    poverty-in-laos-by-province-2015                                       Poverty in Laos by province 2015
-        GeoJSON  https://data.opendevelopmentmekong.net/dataset/74937edc-5da1-4d7d-b09b-5b030f13d7cc/resource/33f485ed-057f-421c-966c-b97
-        SHP      https://data.opendevelopmentmekong.net/dataset/74937edc-5da1-4d7d-b09b-5b030f13d7cc/resource/a559aea3-3e77-4367-ae4a-fb2
-        KML      https://data.opendevelopmentmekong.net/dataset/74937edc-5da1-4d7d-b09b-5b030f13d7cc/resource/f4111ec9-7fe6-4aa8-8bed-e07
-        DB_TABLE https://data.opendevelopmentmekong.net/datastore/dump/37741811-6ea6-4211-bdc5-df9aef56e376
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/province_pov/wms?service=WMS&request=GetCapabilities&layers=OD
-    population-diversity-and-rice-in-laos                                  Population diversity and rice in Laos
-        PDF      https://data.opendevelopmentmekong.net/dataset/288ad39a-bd9b-4473-93e0-9d46218e2575/resource/62a3a195-de48-4c7a-bc6c-ad8
-    laos-administrative-boundaries-country-province-and-district           Laos Administrative Boundaries (Country, Province and District)
-        SHP      https://data.opendevelopmentmekong.net/dataset/0a5fd837-f91f-47a5-b355-cc694aeed9eb/resource/320fc6b0-106e-4c92-ab1b-e48
-        SHP      https://data.opendevelopmentmekong.net/dataset/0a5fd837-f91f-47a5-b355-cc694aeed9eb/resource/df68c593-bf55-4b45-a9b1-9e9
-        SHP      https://data.opendevelopmentmekong.net/dataset/0a5fd837-f91f-47a5-b355-cc694aeed9eb/resource/91aad1f8-5406-4824-9405-344
-        DB_TABLE https://data.opendevelopmentmekong.net/datastore/dump/0b12a7b2-65f2-488a-a21e-f556ca9e8cf1
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/lao_admbnda_adm2_ngd_20191112/wms?service=WMS&request=GetCapab
-        DB_TABLE https://data.opendevelopmentmekong.net/datastore/dump/aeeb1bed-e4c5-4f8f-a0bf-513b9ad33990
-    census-results-in-brief-laos-population-census-2005-and-1995           Census results in brief (Laos population census 2005 and 1995)
-        PDF      https://data.opendevelopmentmekong.net/dataset/126050ca-c1b1-4fd9-a6f4-53b9c499ca87/resource/f54fadc4-8dca-4c0a-a9a8-a6a
-    annual-population-density-from-1961-to-2013-for-thailand-myanmar-laos- Annual Population Density from 1961 to 2013 for Thailand, Myanmar, Lao
-        XLSX     https://data.opendevelopmentmekong.net/dataset/2bc7a224-4378-42b4-92be-f5326a3d6346/resource/7d767e42-480e-4dae-9c84-406
-    population-density-from-1995-to-2013-thailand-myanmar-laos-vietnam-and Population density from 1995 to 2000 Thailand, Myanmar, Laos, Vietnam 
-        CSV      https://data.opendevelopmentmekong.net/dataset/48a8bc94-8d18-4394-9051-1bb8188fa0bd/resource/55606a86-a8c6-42a8-b2aa-8a5
-    the-geography-of-security-coercion-comparative-advantage-and-populatio The Geography of Security: Coercion, Comparative Advantage and Populat
-        HTML     http://web.archive.org/web/20190326062011/https://kyotoreview.org/issue-25/geography-security-coercion-comparative-advan
-        HTML     http://web.archive.org/web/20190326061842/https://kyotoreview.org/thai/geography-security-coercion-comparative-advantage
-    land-concessions-land-tenure-and-livelihood-change-plantation-developm Land concessions, land tenure, and livelihood change: Plantation devel
-        PDF      https://data.opendevelopmentmekong.net/dataset/51fbf949-8770-46ce-8f3a-cf4df6aecd0d/resource/d88bf574-1493-44fa-8907-be8
-    poverty-in-laos-by-district-2015                                       Poverty in Laos by district (2015)
-        GeoJSON  https://data.opendevelopmentmekong.net/lo/dataset/0073f53b-4852-4463-ba8d-32bdef6f5476/resource/d6156852-a57e-4908-8db4-
-        KML      https://data.opendevelopmentmekong.net/lo/dataset/0073f53b-4852-4463-ba8d-32bdef6f5476/resource/29cb8291-ad44-434a-95c8-
-        SHP      https://data.opendevelopmentmekong.net/lo/dataset/0073f53b-4852-4463-ba8d-32bdef6f5476/resource/28599013-ba3e-4dbc-9d74-
-        DB_TABLE https://data.opendevelopmentmekong.net/lo/datastore/dump/b718b847-be8b-4350-8386-026f1729aaf5
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/district_pov/wms?service=WMS&request=GetCapabilities&layers=OD
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/poverty-in-laos-by-district-2015/wms?service=WMS&request=GetCa
-    lao-s-agricultural-statistics-year-book-2013-2019                      Lao’s Agricultural Statistics Year book 2013 - 2019
-        XLSX     https://data.laos.opendevelopmentmekong.net/en/dataset/d57237c1-7918-4660-811b-95f6c6462dba/resource/5ee08033-ea4d-4ccd-
-    lao-access-to-electricity                                              Laos - Access to electricity
-        HTML     http://web.archive.org/web/20180625072705/https://tradingeconomics.com/laos/access-to-electricity-percent-of-total-popul
-    land-degradetion-in-laos-materiality-and-discourses                    Land degradetion in Laos: materiality and discourses
-        PDF      https://data.opendevelopmentmekong.net/dataset/a6793373-4221-4d0b-baf7-c9caefcd1830/resource/cb6f5ecf-a329-4f4e-9c0c-13e
-    gms-major-urban-areas-laos                                             GMS Major Urban Areas [Laos]
-        SHP      https://data.opendevelopmentmekong.net/lo/dataset/66a5a9fa-db95-470e-9515-3b09c85dadca/resource/1fd24307-800c-4194-8178-
-        GeoJSON  https://data.opendevelopmentmekong.net/lo/dataset/66a5a9fa-db95-470e-9515-3b09c85dadca/resource/da080ecc-e0b2-4fef-9714-
-        KML      https://data.opendevelopmentmekong.net/lo/dataset/66a5a9fa-db95-470e-9515-3b09c85dadca/resource/e2b026f9-33f5-4335-9fc5-
-        CSV      https://data.opendevelopmentmekong.net/lo/dataset/66a5a9fa-db95-470e-9515-3b09c85dadca/resource/12f3c978-23d5-4497-a399-
-        DB_TABLE https://data.opendevelopmentmekong.net/lo/datastore/dump/5bbd5603-4958-4c6c-8c93-da28c695491f
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/LA_UrbanAreas/wms?service=WMS&request=GetCapabilities&layers=O
-    laos-administrative-boundaries-village                                 Laos Administrative Boundaries (Village)
-        SHP      https://data.opendevelopmentmekong.net/dataset/dc001fe1-96ae-4bac-a38e-46a3adecbd46/resource/40b3b17a-160e-4df1-9204-b24
-        DB_TABLE https://data.opendevelopmentmekong.net/datastore/dump/94ac01e5-f4ca-414c-b5f7-1a34634ab5f3
-        WMS      https://data.opendevelopmentmekong.net/geoserver/ODMekong/data/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3
-== route (x): the 2005 volume
-  200 application/pdf                               2286402  https://data.opendevelopmentmekong.net/dataset/af8f9e99-8d9b-484b-9301-321da2051ae7/resource/9f24c10c-6234-47fe-a7c7-409c5dea994d/download
-  200 application/octet-stream                      2286402  https://data.opendevelopmentmekong.net/dataset/126050ca-c1b1-4fd9-a6f4-53b9c499ca87/resource/f54fadc4-8dca-4c0a-a9a8-a6a12f88657c/download
+probe_pdf: https://inetl-ip.gov.tl/wp-content/uploads/2025/04/Final-Main-Report_TLPHC-Census_WEB.pdf
+  4,533,965 bytes
+  204 pages
+probe_pdf: 205 pages, printing [12, 13, 14, 166, 167, 168, 169, 170, 186, 187, 188, 189, 190, 191, 193]
+
+--- page 12 ----------------------------------------------------
+List of tables
+Table 3.1: Population trend indicators, 2004-2022a .............................................................................. 23
+Table 3.2: Population trend indicators, 2015-2020, by municipalitya ................................................... 24
+Table 3.3: Percentage of population aged 3-29 years attending school, by broad age group, and by sex
+.............................................................................................................................................................. 33
+Table 3.4: Population born in Timor-Leste: municipality of birth, municipality of usual residence, net
+internal life-time migration (in thousands) and net internal life-time migration ratio .......................... 40
+Table 3.5: Population, by age group, and by sex, Timorese or foreign country of citizenship ............. 42
+Table 3.6: Main labour force status categories and indicators, by sex ................................................. 46
+Table 3.7: Non-working population of working age, by reason for not working, and by sex (in thousands
+and percentages) .................................................................................................................................... 53
+Table 3.8: Occupied housing units, by type of drinking water source, and by urban/rural location (in
+percentages) .......................................................................................................................................... 66
+Table 3.9: Toilet facilities, by type of toilet facility, and by toilet-sharing status (in percentages) ...... 69
+Table 4.1: Population, by municipality, administrative post, suco, and by urban/rural location, sex ... 70
+Table 4.2: Private households, by municipality, administrative post, suco, and by urban/rural location;
+population in private households, by municipality, administrative post, suco, and by urban/rural
+location, sex .......................................................................................................................................... 79
+Table 4.3: Population, by municipality, and by sex; sex ratio and area size and population density, by
+municipality .......................................................................................................................................... 87
+Table 4.4: Population in private households, by municipality of usual residence, and by sex,
+municipality of birth ............................................................................................................................. 88
+Table 4.5: Population, by urban/rural location, age, and by municipality, sex ..................................... 89
+Table 4.6: Population 14 years and over in private households, by urban/rural location, age, and by sex,
+marital status ......................................................................................................................................... 98
+Table 4.7: Population in private households
+
+--- page 13 ----------------------------------------------------
+Table 4.12: Population in private households aged 3-29 years, by municipality, age, and by sex, school
+attendance status ................................................................................................................................. 109
+Table 4.13: Population in private households aged 10 years and over, by five-year age group, and by
+sex, labour force status ........................................................................................................................ 116
+Table 4.14: Population in private households outside the labour force aged 10 years and over, by sex,
+five-year age group, and by reason for not working ........................................................................... 116
+Table 4.15: Female population in private households aged 15 years and over who had a live birth in the
+last five years, by municipality, urban/rural location, and by type of assistance during last delivery 117
+Table 4.16: Female population in private households aged 15 years and over, by sex of children born
+alive, five-year age group, and by number of children ever born alive .............................................. 118
+Table 4.17: Population in private households, by sex, age, and by relation to head of household ..... 119
+Table 4.18: Population, by municipality, urban/rural location, and by broad type of living quarters 122
+Table 4.19: Population, by municipality, urban/rural location, and by broad type of living quarters 123
+Table 4.20: Population in private households, by municipality, urban/rural location, and by broad type
+of housing unit, presence of basic facilities or type of housing unit ................................................... 124
+Table 4.21: Occupied housing units, by urban/rural location, construction material of outer walls, and
+by broad type of housing unit, presence of basic facilities ................................................................. 125
+Table 4.22: Conventional dwellings by municipality, and by urban/rural location, occupancy status
+............................................................................................................................................................ 133
+Table 4.23: Occupied housing units, by urban/rural location, main source of drinking water, time to get
+water, and by broad type of housing unit, type of housing unit .......................................................... 133
+Table 4.24: Occupied housing units, by urban/rural location, type of toilet, sharing status of toilet
+facility, type of sewage disposal, and by broad type of housing unit, type of housing unit ............... 136
+xii
+[317 words in 24 rows]
+
+--- page 14 ----------------------------------------------------
+List of figures
+Figure 2.1: Census organisation structure ............................................................................................... 7
+Figure 2.2: Census logo and mascot ..................................................................................................... 14
+Figure 3.1: Population size, 2004-2022 (in thousands) a ...................................................................... 23
+Figure 3.2: Population, by sex, and by five-year age group (in thousands)a ......................................... 25
+Figure 3.3: Age-specific sex ratios, by five-year age groupa ................................................................ 27
+Figure 3.4: Sex ratio, by municipalitya ................................................................................................. 27
+Figure 3.5: Dependency ratio, by municipalitya ................................................................................... 28
+Figure 3.6: Population density, by municipalitya .................................................................................. 29
+Figure 3.7: Percentage of population living in an urban area, by municipalitya ................................... 29
+Figure 3.8: Average number of children ever born by women 15 years and over, by five-year age group
+.............................................................................................................................................................. 30
+Figure 3.9: Percentage of women aged 15 years and over who are childless, by five-year age group . 31
+Figure 3.10: Literacy rate of population aged ten years and over, by five-year age group, and by sex 32
+Figure 3.11: Literacy rate of population aged ten years and over, by municipality .............................. 32
+Figure 3.12: Percentage of population aged 3-29 years attending school, by age, and by sex ............. 35
+Figure 3.13: Population, by religion (in percentages) ........................................................................... 35
+Figure 3.14: Population aged five years and over with a disability, by type of disability, and by sex (in
+thousands) ............................................................................................................................................. 38
+Figure 3.15: Age-specific disability prevalence rate by sex (in percentages) ....................................... 38
+Figure 3.16: Female population aged 15 years and over who had a live birth in the last five years, by
+type of assistance during last deliverya,b ............................................................................................... 39
+Figure 3.17: Percentage of live births in the five years before the census assisted by a skilled birth
+attendant, by municipality ..................................................................................................................... 39
+Figure 3.18: Net internal life-time migration ratio, by municipality ..........................
+
+--- page 166 ----------------------------------------------------
+Annex III Questionnaire for private house-
+holds
+The Population and Housing Census 2022 used CAPI for data collection. This annex provides the digital
+questionnaire application used for enumerating housing units and private households. The following colour
+coding is applied in the questionnaire:
+• Black font is used for numbers and labels of variables, and codes and labels of values.
+• Blue font is used for questions that were asked to respondents
+• Green font is used for instructions to enumerators and questions that were answered by enumerators
+• Red font is used for instructions to the programmer of the questionnaire application.
+Module DW - Dwelling identification information
+DW 1 Municipality 01 Aileu
+Automatically generated from map 02 Ainaro
+(suppressed) 03 Atauro
+04 Baucau
+05 Bobonaro
+06 Covalima
+07 Dili
+08 Ermera
+09 Lautém
+10 Liquiçá
+11 Manatuto
+12 Manufahi
+13 Oecusse
+14 Viqueque
+DW 2 Administrative post
+Automatically generated from map (suppressed)
+DW 3 Suco
+Automatically generated from map (suppressed)
+DW 4 Aldeia
+Automatically generated from map (suppressed)
+DW 5 Enumeration area
+Automatically generated from map (suppressed)
+DW 6 Census building number
+Automatically generated from map (suppressed)
+150
+[188 words in 35 rows]
+
+--- page 167 ----------------------------------------------------
+DW 7 Building purpose 01 For habitation purposes only
+For what purpose or purposes is this (occupied or vacant)
+building used? 02 For non-habitation purposes only End
+03 For habitation and non-habitation
+purposes combined
+04 Collective living quarters only End
+05 Building does not exist anymore End
+DW 8 Dwelling number
+Automatically generated from map (suppressed)
+Module PR - Administrative information
+PR 1 Type of residence 01 Urban
+02 Rural
+Automatically generated from map (suppressed)
+PR 2 Enumerator name
+Automatically generated (suppressed)
+PR 3 Enumerator code
+Automatically generated (suppressed)
+PR 4 Building latitude
+Automatically generated (suppressed)
+PR 5 Building longitude
+Automatically generated (suppressed)
+PR 6 Field supervisor code
+Automatically generated (suppressed)
+PR 7 Date enumeration start
+Automatically generated (suppressed)
+PR 8 Time stamp enumeration start
+Automatically generated (suppressed)
+PR 9 GPS Latitude
+Automatically generated (suppressed)
+PR 10 GPS Longitude
+Automatically generated (suppressed)
+PR 10a GPS altitude
+Automatically generated (suppressed)
+PR 11 GPS Accuracy
+Automatically generated (suppressed)
+151
+[157 words in 36 rows]
+
+--- page 168 ----------------------------------------------------
+P R 1 2 InA te r v ie w s ta tu s 00000000 12345678 STFVSNCR ta r te d
+u to m a tic a lly g e n e r a te d ( s u p p r e s s e d ) e m p o r a r y n o - c o n ta c t
+in a l n o - c o n ta c t
+a c a n t
+e a s o n a l u s e
+o t o b je c t o f c e n s u s
+o m p le te d
+e fu s a l
+P R 1 3 AA p p lic a tio n v e r s io ne
+u to m a tic a lly g e n r a te d ( s u p p r e s s e d )
+152
+[162 words in 11 rows]
+
+--- page 169 ----------------------------------------------------
+Module A - Building and dwelling information
+A0A Time stamp A start
+Automatically generated (suppressed)
+A 1 Type of building 01 Detached house
+What is the type of building in which this 02 Semi-detached house (house is
+dwelling is situated? attached at one side to another
+house)
+03 Row house (house is attached to
+two adjoining houses)
+04 Apartment building (flat)
+05 Building not intended for human
+habitation
+06 Shelter, tent, shack
+07 Other structure
+A 2 Condition of dwelling 01 No repair needed
+What is the general condition of this 02 In need of minor repair
+dwelling? 03 In need of moderate repair
+04 In need of serious repair
+05 Irreparable
+A 3 Wall material 01 Concrete / brick
+What is the main construction material of 02 Wood
+the external walls of this dwelling? 03 Bamboo
+04 Corrugated iron / zinc
+05 Clay / soil
+06 Palm trunk (bebak)
+07 Rock
+08 Other
+A 4 Roof material 01 Concrete
+What is the main construction material of 02 Corrugated iron / zinc
+the roof of this dwelling? 03 Tiles
+04 Asbestos
+05 Bamboo
+06 Palm leaves / tali tahan / thatch /
+grass
+07 Other
+A 5 Can contact be established
+Is there someone to inquire about the 01 Yes Go to A7
+enumeration of the household? 02 No
+153
+[220 words in 39 rows]
+
+--- page 170 ----------------------------------------------------
+A 6 Vacancy status 01 Yes, there are people living in the
+Are there people living in the dwelling or dwelling, but no one present now
+End
+not? 02 No one living in the dwelling
+09 Don't know
+A 7 Introduction
+Hello, I am ..............., an enumerator with the Timor-Leste Census [Show your PHC
+Identification card]. I am working in this area for four weeks to collect information
+about the Timor-Leste population. Can I please ask you the census questions about
+your household and dwelling?
+All information you share with me will be kept strictly confidential and will not be
+shared with anyone not working on the Timor-Leste Census.
+01 Continue
+A 8 Can interview start 01 Yes, interview can start
+Can the census interview be conducted with 02 No, need to come back another
+a household member? time End
+03 No, refuse to cooperate
+A 9 Occupancy status 01 Inhabited by person(s) who are
+What is the occupancy status of this object of the census
+dwelling? 02 Inhabited by diplomatic staff or
+foreign military personnel End
+03 Dwelling for seasonal use or as a
+second home only
+If A9=1
+A10 Number of households ELSE END
+How many households were living in this Accept 1-3
+dwelling on census night (midnight, 4 to 5
+September 2022)?
+Explain that a household is
+- a group of two or more persons living
+together, who share food, income and
+other necessities of living; or
+- a single person living alone without sharing
+these.
+A11 Time stamp A end
+Automatically generated (suppressed)
+154
+[258 words in 37 rows]
+
+--- page 186 ----------------------------------------------------
+If E 0 E < 54 ,
+E 3 2 L ite r a c y g o to E 3
+C a n < N a m e > r e a d a n d w r ite a s h o r t le tte r to 0 1 Y e s
+a fr ie n d in a n y la n g u a g e ? 0 2 N o G o to E 3 4
+E 3 3 L ite r a c y la n g u a g e s a T e tu n
+In w h ic h o f th e fo llo w in g la n g u a g e s is b P o r tu g u e s e
+< N a m e > a b le to r e a d a n d w r ite a s h o r t le tte r c B a h a s a In d o n e s ia
+to a fr ie n d ? d E n g lis h
+If E 0 E < 37 ,
+E 3 4 E v e r a tte n d e d e d u c a tio n 0 1 Y e s g o to E 5
+D id < N a m e > e v e r a tte n d e d u c a tio n ? 0 2 N o G o to E 4 2
+0 9 D o n 't k n o w G o to E 4 2
+E 3 5 H ig h e s t a tte n d e d e d u c a tio n le v e l 0 0 K in d e r g a r te n G o to E 3 8
+W h a t is th e h ig h e s t e d u c a tio n a l le v e l th a t 0 1 P r im a r y
+< N a m e > e v e r a tte n d e d ? 0 2 P r e - s e c o n d a r y
+0 3 S e c o n d a r y g e n e r a l
+0 4 S e c o n d a r y te c h n ic a l
+0 5 P o ly te c h n ic / d ip lo m a
+0 6 U n iv e r s ity b a c h e lo r
+0 7 U n iv e r s ity m a s te r
+0 8 U n iv e r s ity P h D
+0 9 D o n 't k n o w G o to E 3 8
+170
+[504 words in 23 rows]
+
+--- page 187 ----------------------------------------------------
+E 36 Highest attained education grade 00 No class completed at this level
+What grade/year did <Name> complete at 01 Class 1
+<Highest education level attended>? 02 Class 2
+If the first grade/year at this level was not 03 Class 3
+completed, select 'No class completed at this 04 Class 4
+level' 05 Class 5
+06 Class 6
+07 Class 7
+08 Class 8
+09 Class 9
+10 Class 1
+11 Class 2
+12 Class 3
+13 Year 1
+14 Year 2
+15 Year 3
+16 Year 4
+...
+00 No class completed at this level
+01 Class 1
+02 Class 2
+03 Class 3
+04 Class 4
+05 Class 5
+06 Class 6
+00 No class completed at this level
+07 Class 7
+08 Class 8
+09 Class 9
+00 No class completed at this level
+10 Class 1
+11 Class 2
+12 Class 3
+00 No year completed at this level
+13 Year 1
+14 Year 2
+15 Year 3
+00 No year completed at this level
+13 Year 1
+14 Year 2
+15 Year 3
+16 Year 4
+17 Year 5
+00 No year completed at this level
+18 Year 1
+19 Year 2
+20 Year 3
+21 Year 4
+00 No year completed at this level
+18 Year 1
+19 Year 2
+20 Year 3
+21 Year 4
+22 Year 5
+171
+[226 words in 55 rows]
+
+--- page 188 ----------------------------------------------------
+If E 3 5 > = 4
+E 3 7 F ie ld o f s tu d y c o m p le te d
+a n d E 3 5 < = 8
+W h a t w a s th e fie ld o f s tu d y in th is
+y e a r /g r a d e o f s tu d y ?
+If d o n 't k n o w , w r ite 'D o n 't k n o w '
+If E 0 E < 3 ,
+E 3 8 C u r r e n tly a tte n d in g s c h o o l 0 1 Y e s g o to E 5 7
+Is < N a m e > c u r r e n tly a tte n d in g s c h o o l? 0 2 N o G o to E 4 2
+E 3 9 L e v e l o f e d u c a tio n 0 0 K in d e r g a r te n G o to E 4 1
+0 1 P r im a r y
+W h a t le v e l o f e d u c a tio n is < N a m e > c u r r e n tly 0 2 P r e - s e c o n d a r y
+a tte n d in g ? 0 3 S e c o n d a r y g e n e r a l
+0 4 S e c o n d a r y te c h n ic a l
+0 5 P o ly te c h n ic / d ip lo m a
+0 6 U n iv e r s ity b a c h e lo r
+0 7 U n iv e r s ity m a s te r
+0 8 U n iv e r s ity P h D
+0 9 D o n 't k n o w G o to E 4 1
+172
+[376 words in 20 rows]
+
+--- page 189 ----------------------------------------------------
+E 40 Grade/year of level 01 Class 1
+What grade/year is <Name> currently 02 Class 2
+attending in <Highest education level 03 Class 3
+attending now>? 04 Class 4
+If the first grade/year at this level was not 05 Class 5
+completed, select 'No class completed at this
+06 Class 6
+level'
+07 Class 7
+08 Class 8
+09 Class 9
+10 Class 1
+11 Class 2
+12 Class 3
+13 Year 1
+14 Year 2
+15 Year 3
+16 Year 4
+17 Year 5
+... ...
+00 No class completed at this level
+01 Class 1
+02 Class 2
+03 Class 3
+04 Class 4
+05 Class 5
+06 Class 6
+00 No class completed at this level
+07 Class 7
+08 Class 8
+09 Class 9
+00 No class completed at this level
+10 Class 1
+11 Class 2
+12 Class 3
+00 No year completed at this level
+13 Year 1
+14 Year 2
+15 Year 3
+00 No year completed at this level
+13 Year 1
+14 Year 2
+15 Year 3
+16 Year 4
+17 Year 5
+00 No year completed at this level
+18 Year 1
+19 Year 2
+20 Year 3
+21 Year 4
+00 No year completed at this level
+18 Year 1
+19 Year 2
+20 Year 3
+21 Year 4
+22 Year 5
+173
+[224 words in 57 rows]
+
+--- page 190 ----------------------------------------------------
+E 41 Type of school 01 Public school
+What type of school or educational institute is 02 Private school
+<Name> currently attending? 03 Community school
+09 Don't know
+If E0E>=12
+E 42 Training/courses outside education
+Is <Name> currently following any technical 01 Yes
+or vocational training or course, outside the 02 No
+formal secondary, polytechnic or university 09 Don't know
+education?
+If E0E < 10,
+E43A Farming go to E57
+In the week of 29 August to 4 September, did 01 Yes
+<Name> do any farming or growing food in a 02 No
+plot or kitchen garden?
+E43B Animal production
+In the week of 29 August to 4 September, did 01 Yes
+<Name> raise or tend any farm animals, 02 No
+chickens or poultry?
+E43C Fishing
+In the week of 29 August to 4 September, did 01 Yes
+<Name> do any fishing, shellfish collection or 02 No
+aquaculture?
+If E43A = 1
+E 44 Sale or self-consumption or E43B = 1
+Were the farming, animal and/or fishing 01 Only for sale or E43C = 1
+products that <Name> then produced used 02 Mainly for sale
+only for sale, mainly for sale, mainly for own 03 Mainly for own family consumption
+family consumption or only for own family 04 Only for own family consumption
+consumption?
+If E44 = 3
+E 45 Main subsistence produce or E44 = 4
+What was the main farm or fish product
+<Name> produced for own family
+consumption in the week of 29 August to 4
+September?
+E 46 Employment
+In the week of 29 August to 4 September, did 01 Yes Go to E49
+<Name> do any (other) work to generate an 02 No
+income, even if only for 1 hour, e.g. paid job,
+own business, casual, part-time, odd jobs,
+making things to sell, offering services for
+pay?
+174
+[303 words in 44 rows]
+
+--- page 191 ----------------------------------------------------
+E 47 Absence from job
+Did <Name> have a paid job or business 01 Yes Go to E49
+activity, but was temporarily absent, e.g. 02 No
+because of illness, vacation, pregnancy,
+etc.?
+E 48 Family business 01 Yes
+In the week of 29 August to 4 September, did 02 No If E44 >=3
+<Name> help without pay in a family or E44=n.a.,
+business? go to E53
+E 49 Occupation
+What kind of work does <Name> usually do
+in <his/her> job/activity for pay or profit that
+<he/she> had during this week of 29 August
+to 4 September?
+Describe in detail the type of work or
+occupation, e.g. growing rice/vegetables,
+plumber, street food seller, car mechanic,
+primary school teacher, bank teller, cleaner,
+etc.
+If the person had more than one job, record
+information for the main job/activity, that is
+the one on which most income was
+generated
+E 50 Status in employment
+In the main job, does <Name> work as a ...? 01 Employee
+02 Self-employed with employees
+Employee: person receiving income that
+is independent from the profit of the 03 Self-employed without employees
+work. 04 Helper in a family business or
+Self-employed: person for whom the farm, working without pay
+income is derived from the profit of the 05 Paid apprentice, trainee, intern
+work.
+Contributing family worker: person who
+is not paid for helping in the family
+business or farm.
+E 51 Industry
+What is the main activity of the
+business/enterprise/organisation where
+<Name> worked in the week of 29 August to
+4 September: what are the main goods or
+services produced?
+Give full details, e.g. growing vegetables,
+market sale of fruits, car repair, secondary
+school teaching, banking services,
+supermarket sales, policing, road
+construction, house cleaning, etc...)
+175
+[286 words in 47 rows]
+
+--- page 193 ----------------------------------------------------
+If E 0 E < 57 ,
+E 5 9 D iffic u lty s e e in g g o to E 7
+D o e s < N a m e > h a v e d iffic u lty s e e in g , e v e n if 0 1 N o - n o d iffic u lty
+w e a r in g g la s s e s ? 0 2 Y e s – s o m e d iffic u lty
+It is im p o r ta n t fo r p e r s o n s w ith d is a b ilitie s th a t 0 3 Y e s – a lo t o f d iffic u lty
+th e y a r e in c lu d e d in th e c e n s u s . M a k e s u r e 0 4 C a n n o t s e e a t a ll
+th a t th e q u e s tio n s o n d is a b ility a r e p r o p e r ly
+a s k e d . Ac lw a y s r e a d o u t a ll 4 a n s w e r
+P e o p le w ith a d is a b ility c a n n o t b e a s s is te d b y a te g o r ie s
+th e g o v e r n m e n t if g o o d d a ta a b o u t th e m a r e
+n o t a v a ila b le .
+E 6 0 D iffic u lty h e a r in g
+D o e s < N a m e > h a v e d iffic u lty h e a r in g , e v e n if 0 1 N o - n o d iffic u lty
+u s in g a h e a r in g a id ? 0 2 Y e s – s o m e d iffic u lty
+A lw a y s r e a d o u t a ll 4 a n s w e r 0 3 Y e s – a lo t o f d iffic u lty
+c a te g o r ie s 0 4 C a n n o t h e a r a t a ll
+E 6 1 D iffic u lty w a lk in g
+D o e s < N a m e > h a v e d iffic u lty w a lk in g o r 0 1 N o - n o d iffic u lty
+c lim b in g s te p s ? 0 2 Y e s – s o m e d iffic u lty
+A lw a y s r e a d o u t a ll 4 a n s w e r 0 3 Y e s – a lo t o f d iffic u lty
+c a te g o r ie s 0 4 C a n n o t w a lk a t a ll
+E 6 2 D iffic u lty r e m e m b e r in g
+D o e s < N a m e > h a v e d iffic u lty r e m e m b e r in g o r 0 1 N o - n o d iffic u lty
+c o n c e n tr a tin g ? 0 2 Y e s – s o m e d iffic u lty
+A lw a y s r e a d o u t a ll 4 a n s w e r 0 3 Y e s – a lo t o f d iffic u lty
+c a te g o r ie s 0 4 C a n n o t d o a t a ll
+E 6 3 D iffic u lty w ith s e lf- c a r e
+D o e s < N a m e > h a v e d iffic u lty s e lf- c a r e , s u c h 0 1 N o - n o d iffic u lty
+a s w a s h in g a ll o v e r o r d r e s s in g ? 0 2 Y e s – s o m e d iffic u lty
+A lw a y s r e a d o u t a ll 4 a n s w e r 0 3 Y e s – a lo t o f d iffic u lty
+c a te g o r ie s 0 4 C a n n o t d o a t a ll
+E 6 4 D iffic u lty w ith c o m m u n ic a tin g
+0 1 N o - n o d iffic u lty
+B e c a u s e o f a p h y s ic a l, m e n ta l o r e m o tio n a l
+0 2 Y e s – s o m e d iffic u lty
+h e a lth c o n d itio n , d o e s < N a m e > h a v e d iffic u lty
+0 3 Y e s – a lo t o f d iffic u lty
+c o m m u n ic a tin g , fo r e x a m p le u n d e r s ta n d in g
+0 4 C a n n o t c o m m u n ic a te a t a ll
+o th e r s o r o th e r s u n d e r s ta n d in g < N a m e > ?
+A lw a y s r e a d o u t a ll 4 a n s w e r
+c a te g o r ie s
+177
+[1110 words in 43 rows]
