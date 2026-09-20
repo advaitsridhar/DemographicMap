@@ -1397,14 +1397,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 4 districts in Western where the boundary file draws 3: Delta Fly has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 79349,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 106,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -1421,17 +1426,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Western",
     "parent_aliases": [
       "Western Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 4 districts in Western where the boundary file draws 3 -- Delta Fly has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-western-north-fly-district",
@@ -1445,14 +1451,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 4 districts in Western where the boundary file draws 3: Delta Fly has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 62850,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 106,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -1469,17 +1480,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Western",
     "parent_aliases": [
       "Western Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 4 districts in Western where the boundary file draws 3 -- Delta Fly has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-western-south-fly-district",
@@ -1493,14 +1505,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 4 districts in Western where the boundary file draws 3: Delta Fly has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 59152,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 106,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -1517,17 +1534,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Western",
     "parent_aliases": [
       "Western Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 4 districts in Western where the boundary file draws 3 -- Delta Fly has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-gulf-kerema-district",
@@ -2135,14 +2153,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 3 districts in Northern where the boundary file draws 2: Popondetta has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 99762,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 110,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -2159,17 +2182,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Northern",
     "parent_aliases": [
       "Northern (Oro) Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 3 districts in Northern where the boundary file draws 2 -- Popondetta has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-northern-sohe-district",
@@ -2183,14 +2207,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 3 districts in Northern where the boundary file draws 2: Popondetta has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 86547,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -2207,17 +2236,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Northern",
     "parent_aliases": [
       "Northern (Oro) Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 3 districts in Northern where the boundary file draws 2 -- Popondetta has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-southern-highlands-ialibu-pangia-district",
@@ -4067,14 +4097,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 10 districts in Morobe where the boundary file draws 9: Wau/Waria has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 101568,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -4091,17 +4126,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Morobe",
     "parent_aliases": [
       "Morobe Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 10 districts in Morobe where the boundary file draws 9 -- Wau/Waria has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-morobe-finschafen-district",
@@ -4115,14 +4151,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 10 districts in Morobe where the boundary file draws 9: Wau/Waria has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 54672,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -4139,17 +4180,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Morobe",
     "parent_aliases": [
       "Morobe Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 10 districts in Morobe where the boundary file draws 9 -- Wau/Waria has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-morobe-huon-district",
@@ -4163,14 +4205,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 10 districts in Morobe where the boundary file draws 9: Wau/Waria has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 77564,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -4187,17 +4234,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Morobe",
     "parent_aliases": [
       "Morobe Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 10 districts in Morobe where the boundary file draws 9 -- Wau/Waria has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-morobe-kabwum-district",
@@ -4211,14 +4259,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 10 districts in Morobe where the boundary file draws 9: Wau/Waria has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 43472,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -4235,17 +4288,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Morobe",
     "parent_aliases": [
       "Morobe Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 10 districts in Morobe where the boundary file draws 9 -- Wau/Waria has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-morobe-lae-district",
@@ -4259,14 +4313,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 10 districts in Morobe where the boundary file draws 9: Wau/Waria has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 148934,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -4283,17 +4342,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Morobe",
     "parent_aliases": [
       "Morobe Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 10 districts in Morobe where the boundary file draws 9 -- Wau/Waria has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-morobe-markham-district",
@@ -4307,14 +4367,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 10 districts in Morobe where the boundary file draws 9: Wau/Waria has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 62495,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -4331,17 +4396,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Morobe",
     "parent_aliases": [
       "Morobe Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 10 districts in Morobe where the boundary file draws 9 -- Wau/Waria has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-morobe-menyamya-district",
@@ -4355,14 +4421,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 10 districts in Morobe where the boundary file draws 9: Wau/Waria has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 87209,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -4379,17 +4450,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Morobe",
     "parent_aliases": [
       "Morobe Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 10 districts in Morobe where the boundary file draws 9 -- Wau/Waria has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-morobe-nawae-district",
@@ -4403,14 +4475,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 10 districts in Morobe where the boundary file draws 9: Wau/Waria has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 44556,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -4427,17 +4504,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Morobe",
     "parent_aliases": [
       "Morobe Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 10 districts in Morobe where the boundary file draws 9 -- Wau/Waria has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-morobe-tawae-siassi-district",
@@ -4451,14 +4529,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 10 districts in Morobe where the boundary file draws 9: Wau/Waria has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 54340,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 108,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -4475,17 +4558,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "Morobe",
     "parent_aliases": [
       "Morobe Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 10 districts in Morobe where the boundary file draws 9 -- Wau/Waria has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-madang-bogia-district",
@@ -5741,14 +5825,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 3 districts in West New Britain where the boundary file draws 2: Nakanai has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 74265,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 107,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -5765,17 +5854,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "West New Britain",
     "parent_aliases": [
       "West New Britain Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 3 districts in West New Britain where the boundary file draws 2 -- Nakanai has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-west-new-britain-talasea-district",
@@ -5789,14 +5879,19 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "No 2024 figure is written for this district. The census tabulates 3 districts in West New Britain where the boundary file draws 2: Nakanai has been carved out since 2011 and the office's booklet does not say from which district, so every one of this province's shapes may have lost ground to it. A count put on the wrong one would be invisible, so none is put."
+      "value": 189999,
+      "unit": "persons",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "median_age": {
       "status": "not_available"
     },
     "sex_ratio": {
-      "status": "not_available"
+      "value": 112,
+      "unit": "males_per_100_females",
+      "year": 2011,
+      "source": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census"
     },
     "religion": {
       "status": "not_available",
@@ -5813,17 +5908,18 @@
     "sources": [
       {
         "field": "population/sex_ratio",
-        "name": "2024 National Population Census: Final Figures, National Statistical Office of Papua New Guinea",
-        "url": "https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf",
-        "year": 2024,
-        "license": "None stated -- National Statistical Office publication, cited as such"
+        "name": "UN OCHA Common Operational Dataset, Papua New Guinea subnational population statistics (COD-PS), from the National Statistical Office's 2011 National Population and Housing Census",
+        "url": "https://data.humdata.org/dataset/cod-ps-png",
+        "year": 2011,
+        "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)"
       }
     ],
     "country": "PNG",
     "parent_name": "West New Britain",
     "parent_aliases": [
       "West New Britain Province"
-    ]
+    ],
+    "population_note": "Counted by the 2011 National Population and Housing Census, as UN OCHA's Common Operational Dataset tabulates it by district. The 2024 census counts 3 districts in West New Britain where the boundary file draws 2 -- Nakanai has been carved out since 2011 and the office's booklet does not say from which -- so no 2024 figure can be placed on this shape, and the 2011 census is the most recent count of the district as drawn. The country grew about 40% between the two censuses, so this is not comparable with the 2024 counts its neighbours carry."
   },
   {
     "id": "PNG-autonomous-region-of-bougainville-central-bougainville-district",
