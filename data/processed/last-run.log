@@ -1,39 +1,98 @@
-  CDX: 189 archived PDF captures, 25 of the 25 files wanted
-  Khentii: 18._Khentii.pdf 2,592,202 bytes, captured 20220119201206
-    ! no page of this capture names what is wanted
-  Khentii: 18._Khentii.pdf 2,592,179 bytes, captured 20240519155414
-    ! no page of this capture names what is wanted
-  Khentii: 18._Khentii.pdf 976,697 bytes, captured 20240417144954
-incorrect startxref pointer(4)
-parsing for Object Streams
-Object 40555 0 not defined.
-    ! PdfReadError: Invalid object in /Pages
-  Khentii: 18._Khentii.pdf 976,624 bytes, captured 20201001044646
-incorrect startxref pointer(4)
-parsing for Object Streams
-Object 40555 0 not defined.
-    ! PdfReadError: Invalid object in /Pages
-  Khentii: Khentii.pdf 15,914,198 bytes, captured 20241009133407
-  retry 1/4 after 2s :: https://web.archive.org/web/20241009133407id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Khentii.pdf :: <urlopen error [Errno 110] Connection timed out>
-    ! no page of this capture names what is wanted
-  Khentii: Khentii.pdf 15,530,959 bytes, captured 20220109210133
-    ! no page of this capture names what is wanted
-  Khentii: Khentii.pdf 13,961,069 bytes, captured 20231022175636
-  retry 1/4 after 2s :: https://web.archive.org/web/20231022175636id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 110] Connection timed out>
-  retry 2/4 after 4s :: https://web.archive.org/web/20231022175636id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 104] Connection reset by peer>
-    ! no page of this capture names what is wanted
-  Khentii: Khentii.pdf 13,958,733 bytes, captured 20221109115634
-  retry 1/4 after 2s :: https://web.archive.org/web/20221109115634id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 110] Connection timed out>
-  retry 2/4 after 4s :: https://web.archive.org/web/20221109115634id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 104] Connection reset by peer>
-    ! no page of this capture names what is wanted
-  Khentii: Khentii.pdf 13,958,725 bytes, captured 20210815085319
-    ! no page of this capture names what is wanted
-  Khentii: Khentii.pdf 981,901 bytes, captured 20240425013024
-  retry 1/4 after 2s :: https://web.archive.org/web/20240425013024id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 110] Connection timed out>
-  retry 2/4 after 4s :: https://web.archive.org/web/20240425013024id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 104] Connection reset by peer>
-incorrect startxref pointer(4)
-parsing for Object Streams
-Object 2046 0 not defined.
-    ! PdfReadError: Invalid object in /Pages
-  ! Khentii: no capture of ['18._Khentii.pdf', 'Khentii.pdf'] could be read
-  0 of 23 files in /home/runner/work/DemographicMap/DemographicMap/data/raw/mongolia
+  [id] 'Kabupaten Merauke' -> 'Kabupaten Merauke': 33,425 bytes
+     |penduduk = 255168
+     |penduduktahun = 31 Desember [[2024]]
+     |pendudukref = <ref name="DUKCAPIL"/><ref name="MERAUKE"/>
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |{{Tree list}} * 63,23% [[Kekristenan]] ** 40,42% [[Katolik]] ** 22,81% [[Protestan]] {{Tree list/end}} |36,55% [[Islam]] |0,12% [[Hindu]] |0,10% [[Agama Buddha|Buddha]]<ref name="MERAUKE"/>}}
+     |bahasa = [[Bahasa Indonesia|Indonesia]] (resmi){{br}}[[Bahasa Marind|Marind]], [[Bahasa Jawa|Jawa]], [[Bahasa Kei|Kei]]
+     -> bps 2024: Catholicism 40.42, Islam 36.55, Protestantism 22.81, Hinduism 0.12, Buddhism 0.1
+  [id] 'Kabupaten Jayapura' -> 'Kabupaten Jayapura': 6,743 bytes
+     |penduduk = 203772
+     |penduduktahun = 31 Desember [[2024]]
+     |pendudukref = <ref name="DUKCAPIL"/>
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |{{Tree list}} * 74,21% [[Kekristenan]] ** 68,00% [[Protestan]] ** 6,21% [[Katolik]] {{Tree list/end}} |25,57% [[Islam]] |0,11% [[Agama Buddha|Buddha]] |0,10% [[Hindu]] |0,01% Lainnya<ref name="DUKCAPIL"/>}}
+     -> dukcapil 2024: Protestantism 68.0, Islam 25.57, Catholicism 6.21, Buddhism 0.11, Hinduism 0.1, Other religion 0.01
+  [id] 'Kabupaten Kepulauan Yapen' -> 'Kabupaten Kepulauan Yapen': 7,344 bytes
+     |penduduk = 116214
+     |penduduktahun = 31 Desember [[2024]]
+     |pendudukref = <ref name="DUKCAPIL"/>
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |{{Tree list}} * 84,80% [[Kekristenan]] ** 83,61% [[Protestan]] ** 1,19% [[Katolik]] {{Tree list/end}} |15,15% [[Islam]] |0,04% [[Agama Hindu|Hindu]] |0,01% [[Agama Buddha|Buddha]]<ref name="DUKCAPIL"/>}}
+     -> dukcapil 2024: Protestantism 83.61, Islam 15.15, Catholicism 1.19, Hinduism 0.04, Buddhism 0.01
+  [id] 'Kota Jayapura' -> 'Kota Jayapura': 20,656 bytes
+     | penduduk = 404799
+     | penduduktahun = 31 Desember [[2024]]
+     | population_rank = 34
+     | pendudukref = <ref name="DUKCAPIL"/><ref name="JP">{{cite web|url=https://jayapurakota.bps.go.id/publication/2021/02/26/97fbc97aaac3a20d63353a75/kota-jayapura-dalam-angka-2021.html|title=Kota Jayapura Dalam Angka 2021|publisher=BPS Kota Jayapura|accessdate=27 Desember 2021|page=43|format=pdf}}</ref>
+     | kepadatan = auto
+     | agama = {{ublist |item_style=white-space; |{{Tree list}} * 55,88% [[Kekristenan]] ** 49,62% [[Protestan]] ** 6,26% [[Katolik]] {{Tree list/end}} |43,69% [[Islam]] |0,27% [[Agama Buddha|Buddha]] |0,16% [[Hindu]]<ref name="DUKCAPIL"/>}}
+     -> dukcapil 2024: Protestantism 49.62, Islam 43.69, Catholicism 6.26, Buddhism 0.27, Hinduism 0.16
+  [id] 'Kabupaten Mamberamo Tengah' -> 'Kabupaten Mamberamo Tengah': 7,424 bytes
+     |penduduk = 50128
+     |penduduktahun= 31 Desember [[2024]]
+     |pendudukref = <ref name="DUKCAPIL"/>
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |{{Tree list}} * 99,33% [[Kekristenan]] ** 95,31% [[Protestan]] ** 4,02% [[Katolik]] {{Tree list/end}} |0,66% [[Islam]]<ref name="DUKCAPIL"/>}}
+     -> dukcapil 2024: Protestantism 95.31, Catholicism 4.02, Islam 0.66
+  [id] 'Kabupaten Pegunungan Bintang' -> 'Kabupaten Pegunungan Bintang': 14,111 bytes
+     |penduduk = 114151
+     |penduduktahun = 30 Juni [[2024]]
+     |pendudukref = <ref name="DUKCAPIL">{{cite web|url=https://gis.dukcapil.kemendagri.go.id/peta/|title=Visualisasi Data Kependudukan - Kementerian Dalam Negeri 2024|website=www.dukcapil.kemendagri.go.id|accessdate=12 Oktober 2024}}</ref><ref name=PAPUA>{{cite web|url=https://papua.bps.go.id/publication/2018/08/16/3fa9d91a0d61a9b44dff23cd/provinsi-papua-dalam-angka-2018.html|title=Provinsi Papua Dala
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |{{Tree list}} * 98,19% [[Kekristenan]] ** 69,13% [[Protestan]] ** 29,06% [[Katolik]] {{Tree list/end}} |0,95% [[Islam]] |0,86% Kepercayaan<ref name="DUKCAPIL"/>}}
+     -> dukcapil 2024: Protestantism 69.13, Catholicism 29.06, Islam 0.95, Kepercayaan (traditional belief) 0.86
+  [id] 'Kabupaten Puncak' -> 'Kabupaten Puncak': 25,624 bytes
+     |penduduk = 177226
+     |penduduktahun = 31 Desember [[2023]]
+     |pendudukref = <ref name="DUKCAPIL">{{cite web|url=https://gis.dukcapil.kemendagri.go.id/peta/|title=Visualisasi Data Kependudukan - Kementerian Dalam Negeri 2023|website=www.dukcapil.kemendagri.go.id|accessdate=9 April 2024}}</ref><ref name=PAPUA>{{cite web|url=https://papua.bps.go.id/publication/2018/08/16/3fa9d91a0d61a9b44dff23cd/provinsi-papua-dalam-angka-2018.html|title=Provinsi Papua Dalam A
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |{{Tree list}} * 98,72% [[Kekristenan]] ** 98,71% [[Protestan]] ** 1,01% [[Katolik]] {{Tree list/end}} |0,28% [[Islam]]<ref name="DUKCAPIL"/>}}
+     -> dukcapil 2023: Protestantism 98.71, Catholicism 1.01, Islam 0.28
+  [id] 'Kabupaten Puncak Jaya' -> 'Kabupaten Puncak Jaya': 11,206 bytes
+     |penduduk = 220393
+     |penduduktahun = 31 Desember [[2024]]
+     |pendudukref = <ref name="DUKCAPIL"/>
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |{{Tree list}} * 98,82% [[Kekristenan]] ** 98,19% [[Protestan]] ** 0,63% [[Katolik]] {{Tree list/end}} |1,17% [[Islam]] |0,01% [[Hindu]]/[[Buddha]]<ref name="DUKCAPIL"/>}}
+    Kabupaten Puncak Jaya: unknown faith label(s) ['Hindu/Buddha']; not read
+  [id] 'Kota Sorong' -> 'Kota Sorong': 29,300 bytes
+     |penduduk = 286028
+     |penduduktahun = 31 Desember 2024
+     |population_rank = 50
+     |pendudukref = <ref name="DUKCAPIL"/>
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |{{Tree list}} * 54,92% [[Kristen]] ** 47,37% [[Protestan]] ** 7,55% [[Katolik]] {{Tree list/end}} |44,80% [[Islam]] |0,19% [[Agama Buddha|Buddha]] |0,08% [[Hindu]] |0,01% Lainnya<ref name="DUKCAPIL">{{cite web|url=https://gis.dukcapil.kemendagri.go.id/peta/|title=Visualisasi Data Kependudukan - Kementerian Dalam Negeri 2024|website=www.dukcapil.kemendagr
+     -> dukcapil 2024: Protestantism 47.37, Islam 44.8, Catholicism 7.55, Buddhism 0.19, Hinduism 0.08, Other religion 0.01
+  [id] 'Kabupaten Manokwari' -> 'Kabupaten Manokwari': 14,350 bytes
+     | pendudukref = <ref name="MANOKWARI">{{cite news|url=https://manokwarikab.bps.go.id/publication/2023/02/28/647b6f02d4ff25b8f2486f79/kabupaten-manokwari-dalam-angka-2023.html|title=Kabupaten Manokwari Dalam Angka 2023|website=www.manokwarikab.bps.go.id|work=BPS Kab. Manokwari|date=2021-02-26|accessdate=17 Oktober 2022|pages=8, 59|format=pdf}}</ref>
+     | penduduk = 203191
+     | penduduktahun = 31 Desember [[2023]]
+     | kepadatan = auto
+     | agama = {{ublist |item_style=white-space; |{{Tree list}} * 61,93% [[Kekristenan|Kristen]] ** 55,92% [[Protestan]] ** 6,01% [[Katolik]] {{Tree list/end}} |37,78% [[Islam]] |0,19% [[Hindu]] |0,10% [[Agama Buddha|Buddha]]<ref name="DUKCAPIL"/>}}
+     | bahasa = [[Bahasa Indonesia|Indonesia]], [[Bahasa Papua|Papua]]
+     -> dukcapil 2023: Protestantism 55.92, Islam 37.78, Catholicism 6.01, Hinduism 0.19, Buddhism 0.1
+  [id] 'Kabupaten Manokwari Selatan' -> 'Kabupaten Manokwari Selatan': 8,557 bytes
+     |penduduk = 39189
+     |penduduktahun = 30 Juni [[2025]]
+     |pendudukref = <ref name="PABAR"/>
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |{{Tree list}} * 80,24% [[Kekristenan]] ** 79,06% [[Protestan]] ** 1,18% [[Katolik]] {{Tree list/end}} |19,74% [[Islam]] |0,01% [[Hindu]] |0,01% Lainnya<ref name="DUKCAPIL"/>}}
+     |bahasa = [[Bahasa Indonesia|Indonesia]] dan bahasa daerah
+     -> dukcapil 2023: Protestantism 79.06, Islam 19.74, Catholicism 1.18, Hinduism 0.01, Other religion 0.01
+  [id] 'Kabupaten Pegunungan Arfak' -> 'Kabupaten Pegunungan Arfak': 8,937 bytes
+     |penduduk = 40396
+     |penduduktahun = 31 Desember [[2023]]
+     |pendudukref = <ref name="DUKCAPIL"/><ref name="ARFAK">{{cite web|url=https://pegununganarfakkab.bps.go.id/publication/2020/04/27/7fc746355edaa6a0320beed5/kabupaten-pegunungan-arfak-dalam-angka-2020.html|title=Kabupaten Pegunungan Arfak Dalam Angka 2020|website=www.pegununganarfakkab.bps.go.id|accessdate=2 September 2020|format=pdf|archive-date=2022-07-02|archive-url=https://web.archive.org/web/20
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |{{Tree list}} * 99,13% [[Kekristenan|Kristen]] ** 98,62% [[Protestan]] ** 0,51% [[Katolik]] {{Tree list/end}} |0,85% [[Islam]] |0,02% Lainnya<ref name="DUKCAPIL"/>}}
+     |bahasa = [[Bahasa Indonesia|Indonesia]], [[Bahasa Papua|Papua]]
+     -> dukcapil 2023: Protestantism 98.62, Islam 0.85, Catholicism 0.51, Other religion 0.02
+  [id] 'Kabupaten Sorong Selatan' -> 'Kabupaten Sorong Selatan': 9,127 bytes
+     |penduduk = 56979
+     |penduduktahun = 31 Desember [[2024]]
+     |pendudukref = <ref name="DUKCAPIL"/>
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |{{Tree list}} * 74,12% [[Kristen]] ** 72,36% [[Protestan]] ** 1,76% [[Katolik]] {{Tree list/end}} |25,80% [[Islam]] |0,07% [[Hindu]] |0,01% Lainnya<ref name="DUKCAPIL"/>}}
+     |bahasa = [[Bahasa Indonesia|Indonesia]], Fkour, Imiyan, Kais, Kokoda, Puragi-Saga<ref>{{cite web|url=https://petabahasa.kemdikbud.go.id/provinsi.php?idp=Papua%20Barat|title= Bahasa di Provinsi Papua Barat|website=petabahasa.kemdikbud.go.id|accessdate=14 Desember 2023}}</ref>
+     -> dukcapil 2024: Protestantism 72.36, Islam 25.8, Catholicism 1.76, Hinduism 0.07, Other religion 0.01
