@@ -403,9 +403,25 @@ def citations(fragment: str, definitions: dict[str, str]) -> list[str]:
     return out
 
 
+# A citation template's parameter names are in the language of the edition
+# it sits in: bg.wikipedia's {{Цитат уеб}} takes заглавие and уеб_адрес.
+# Reading only the English names left every Bulgarian citation looking like
+# a bare body with no title and no URL, which is also what its source line
+# on the record would have said.
+FIELD_NAMES = {
+    "title": ("title", "trans-title", "заглавие", "наслов", "názov", "titlu",
+              "cím", "naslov"),
+    "url": ("url", "уеб_адрес", "адрес", "адреса"),
+    "date": ("year", "date", "publication-date", "година", "дата", "rok"),
+}
+
+
 def cite_field(body: str, field: str) -> str:
-    m = re.search(r"\|\s*" + re.escape(field) + r"\s*=\s*([^|}]*)", body, re.I)
-    return " ".join(m.group(1).split()) if m else ""
+    for name in FIELD_NAMES.get(field, (field,)):
+        m = re.search(r"\|\s*" + re.escape(name) + r"\s*=\s*([^|}]*)", body, re.I)
+        if m and m.group(1).strip():
+            return " ".join(m.group(1).split())
+    return ""
 
 
 def describe_citation(body: str) -> tuple[str, int | None, str]:
@@ -433,8 +449,20 @@ def describe_citation(body: str) -> tuple[str, int | None, str]:
     if not years:
         # The citation's own date of publication; never its access date,
         # which is when the editor read it.
-        dated = " ".join(cite_field(body, f) for f in ("year", "date", "publication-date"))
+        dated = cite_field(body, "date")
         years = [int(y) for y in re.findall(r"\b(19\d\d|20[0-4]\d)\b", dated)]
+    if not years:
+        # A citation template in the local language: the Bulgarian articles
+        # use {{Цитат уеб}}, whose parameters are заглавие and уеб_адрес, so
+        # the fields read above are all empty and a well-dated citation
+        # looks undated -- every one of Bulgaria's 28 mother-tongue tables
+        # was refused for it. What is scanned instead is the whole citation
+        # with the editor's own dates taken out of it, which is the one
+        # thing in there that is not the figure's date.
+        stripped = re.sub(r"\|\s*[^|=}]*(access|archive|достъп|посетен|"
+                          r"abruf|consult)[^|=}]*=[^|}]*", " ", body, flags=re.I)
+        years = [int(y) for y in
+                 re.findall(r"(?<!\d)(19\d\d|20[0-4]\d)(?!\d)", stripped)]
     if not years and "=" not in body:
         # A bare external link, "[url The census of 2011, volume 3]", which
         # is how half of these articles cite. It has no fields to read, so
@@ -606,6 +634,9 @@ def find_table(wikitext: str, spec: Composition) -> tuple[list[list[str]], str, 
 PIXELS = re.compile(r"^\d+\s*px$", re.I)
 
 
+SOFT_BREAK = re.compile(r"-\s+")
+
+
 def label_for(label: str, labels: dict[str, str]) -> tuple[str | None, str]:
     """(the map's name for this row, the key it was found under).
 
@@ -618,8 +649,11 @@ def label_for(label: str, labels: dict[str, str]) -> tuple[str | None, str]:
     a label this reader already knows: an unknown label stays unknown and
     is reported rather than whittled into a guess.
     """
-    words = [w for w in " ".join(label.lower().split()).split(" ")
-             if not PIXELS.match(w)]
+    # A cell that breaks a long word over two lines leaves the hyphen
+    # behind: Bulgaria's "Не се само- определят" is one word, hyphenated by
+    # the table's width and by nothing else.
+    label = SOFT_BREAK.sub("", " ".join(label.lower().split()))
+    words = [w for w in label.split(" ") if not PIXELS.match(w)]
     whole = " ".join(words)
     if whole in labels:
         return labels[whole], whole
@@ -1039,12 +1073,17 @@ BG_PROVINCE = (
                 header=r"численост.*дял", value=-1, width=4,
                 labels=BG_ETHNICITY, skip=TOTALS),
 )
+# No width here, unlike the provinces: a municipality's table is two
+# columns wide where it prints one census and four where it prints two, and
+# the last figure in a row is the newest share either way. What keeps a
+# 2001 table from being read as 2011 is not the width but ``unique`` -- a
+# section holding more than one of these refuses the unit.
 BG_MUNICIPALITY = (
     Composition(field="religion", section=r"вероизповед|религи",
-                header=r"численост.*дял", value=-1, width=2, unique=True,
+                header=r"численост.*дял", value=-1, unique=True,
                 labels=BG_RELIGION, skip=TOTALS),
     Composition(field="ethnicity", section=r"етнически|етнос",
-                header=r"численост.*дял", value=-1, width=2, unique=True,
+                header=r"численост.*дял", value=-1, unique=True,
                 labels=BG_ETHNICITY, skip=TOTALS),
 )
 

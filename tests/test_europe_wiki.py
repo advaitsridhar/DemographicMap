@@ -406,3 +406,31 @@ class TheYearInAUrl(unittest.TestCase):
         self.assertIsNone(self.year(
             "{{cite web|url=http://miris.eurac.edu/do/blob.html?serial=1039432230349"
             "|title=Minorities}}"))
+
+
+class ACitationInAnotherLanguage(unittest.TestCase):
+    """bg.wikipedia's {{Цитат уеб}} takes заглавие and уеб_адрес.
+
+    Reading only the English parameter names left every Bulgarian citation
+    looking like a bare body with no title and no URL, and all 28 provinces'
+    mother-tongue tables were refused as undated.
+    """
+
+    CITE = ("{{Цитат уеб| уеб_адрес = http://www.nsi.bg/Census/MotherTongue.htm "
+            "| заглавие = Население към 1.03.2001 г. по области и майчин език "
+            "| дата_на_достъп = 2024-05-01}}")
+
+    def test_the_localised_title_is_found_and_dated(self):
+        kind, year, cited = m.describe_citation(self.CITE)
+        self.assertEqual(year, 2001)
+        self.assertTrue(cited.startswith("Население"))
+
+    def test_the_access_date_is_still_never_the_year(self):
+        kind, year, _ = m.describe_citation(
+            "{{Цитат уеб| уеб_адрес = http://www.nsi.bg/x | заглавие = Население "
+            "| дата_на_достъп = 2024-05-01}}")
+        self.assertIsNone(year)
+
+    def test_a_word_hyphenated_by_the_table_width_is_one_word(self):
+        self.assertEqual(m.label_for("Не се само- определят", m.BG_ETHNICITY)[0],
+                         "Not declared")

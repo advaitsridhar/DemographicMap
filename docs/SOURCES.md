@@ -5651,6 +5651,206 @@ Tibeto-Burman and half not. Bueng Kan, carved out of Nong Khai in 2011, has
 no 2000 row and stays empty here as it does for religion. Thailand stays in
 `ADAPTER_GAPS`, and its reason now names the model.
 
+### Europe, unit by unit, from the article each place has of its own
+
+The owner's decision of 20 September 2026: the method that filled every
+Indonesian regency's religion -- read what a place's own article publishes
+about who lives there, take it only where the article cites something and
+the citation can be dated, and leave a stated reason where it cannot -- turned
+on Europe at the first and second level. `scripts/fetch_census/europe_wiki.py`
+is that reader.
+
+#### The measurement it started from
+
+Of the 55 European countries and territories this map draws shapes for, at
+admin1 and admin2 together:
+
+* **already filled from a statistical office, and untouched by this**:
+  Poland (16 voivodeships, 380 powiats, all three fields), Czechia (14 + 77,
+  all three), Croatia (21 + 545, all three), Bosnia (3 + 12, all three),
+  Ireland (4 + 166, religion and ethnicity), Germany (16 + 38, religion),
+  the United Kingdom (4 + 216, religion and ethnicity, language in England
+  and Wales), Romania's 42 counties (religion and ethnicity), Russia's 83
+  subjects (language and ethnicity), Ukraine's 27 oblasts (language and
+  ethnicity), Latvia's and Estonia's first level (ethnicity), Switzerland's
+  and Finland's (language).
+* **deliberately empty, and untouched**: France, Spain, Sweden, Austria,
+  Belgium, Slovenia, Luxembourg, Iceland, the Netherlands and Greece each
+  carry a `not_collected` declaration on at least one field, because their
+  census does not ask it. Those are not gaps to fill.
+* **empty, at both levels, in all three fields**: Hungary (19 + 198),
+  Bulgaria (28 + 265), Serbia (25 + 145), Slovakia (8 + 79), Moldova
+  (37 + 37), Lithuania (10 + 60), Albania (12 + 36), North Macedonia
+  (8 + 84), Kosovo (7 + 38), Montenegro (23 + 23), Malta (68), Cyprus
+  (6 + 609), Andorra, Liechtenstein, San Marino, the Vatican -- and, at the
+  second level only, Romania's 3,235 communes, Ukraine's 494 raions,
+  Russia's 2,326 rayons, Latvia's 589 parishes, Estonia's 214 and Belarus's
+  118 raions.
+
+Ranked by the population sitting behind the gap, the largest reachable ones
+were Bulgaria, Serbia, Slovakia, Moldova, North Macedonia and Montenegro,
+and those are the six this reader covers. Hungary was measured and refused;
+see below.
+
+#### The rules, which are Indonesia's
+
+A figure with no citation is not read. A figure whose citation cannot be
+dated is not read. What kind of source the citation is goes on the record,
+because a census count, an office's estimate and a third-party compilation
+of census results are three different things wearing the same numbers.
+Every refusal returns a reason and the reason goes onto the record, so a
+gap says which kind of gap it is.
+
+Europe needed three things Indonesia did not.
+
+**The composition is in a section, not in an infobox.** No European infobox
+carries one. The article says what a table counts in the heading above it
+and almost never repeats it in the table's own header -- Blagoevgrad's
+ethnic table opens "Численост | Дял (в %)" and nothing else. So the reader
+finds a section by its heading, then the table under it whose header is the
+one it was written against; the heading is permissive and the header is
+exact, and an article that has been reorganised is refused rather than read
+wrong.
+
+**A census year printed in the table may date it when the citation cannot.**
+Half of these articles cite a bare link to the office's results site, with
+no year in the title. The year is very often glued to a word in the URL
+instead -- `popis2022.stat.gov.rs`, `census2011.statistics.sk`,
+`publikacije.stat.gov.rs/G2023/` -- and a word boundary finds none of them,
+which is why every Serbian district was at first refused for want of a date
+its citation carried all along. A year may now touch letters and not digits,
+so "G2023" gives 2023 and "G20234001.pdf" and "serial=1039432230349" give
+nothing. Where the citation still has no year and the table's own header
+prints one -- "počet (2011)", "2002 | 2021" -- that is used, because it is
+printed with the figures by the same hand and is not an editor's access
+date. The note on the record says which of the two dated the figure.
+
+**A list of languages is not a composition.** Many of these articles name
+the languages spoken in a place and give a share for none of them. The
+reader has no row to read there and writes nothing; there is a test for it.
+
+#### Joining a boundary file's spelling to a country's own
+
+Three of these six countries have a boundary file that cannot be used as
+written, and each fails differently.
+
+* **Slovakia** has lost every letter outside ASCII from its 79 district
+  names: Banská Štiavnica is "Banskk vtiavnica", Bánovce nad Bebravou is
+  "Bonovce nad Bebra*". The substitutions are not a codepage -- the same
+  letter comes back as "s" in one name and "k" in the next -- so nothing can
+  be decoded. What survives is every letter that was ASCII and where it sat,
+  so a spelling matches a district when its ASCII letters are the same
+  letters in the same places, a letter spelled outside ASCII may be
+  anything, and "*" ends the comparison. Full-length matches are made first,
+  so the shape that really is Galanta claims it before "Gala" -- which is
+  Šaľa -- is left with one candidate. All 79 join, and a spelling still
+  fitting two names would be refused and named rather than guessed at.
+* **Serbia and Montenegro** have dropped the diacritics and spelled đ as
+  "dj", which makes "Arandjelovac" a letter longer than Aranđelovac, so the
+  positional match cannot see it. Folding both sides to plain letters is
+  exact instead of positional.
+* **North Macedonia** has spelled the Cyrillic out in English digraphs:
+  Bogdanci is "Bogdantsi", Aračinovo is "Arachinovo", Češinovo-Obleševo is
+  "Cheshinovo - Obleshevo". Each digraph collapses to the letter it stands
+  for, on both sides equally, and 79 of the 84 join; the other five are the
+  municipalities abolished in 2013, which the file still draws and which
+  still have articles of their own, so they are named in the spec.
+
+The candidate names themselves are never invented here. They come from a
+Wikipedia category, or -- for Serbia, which has no category listing its
+units -- from the links of the list article that does, read out of the
+wikitext because a rendered table prints a link's display text and throws
+the title away.
+
+#### What each country gave, and what it did not
+
+* **Slovakia**, from sk.wikipedia, the 2011 census's nationality and
+  religion tables. The kraj and okres articles carry them under
+  "Národnostné zloženie" and "Náboženské zloženie". Most okres articles
+  print the table and cite nothing at all for it, and those are refused:
+  the reason on the record says so by name. A bucket naming two peoples at
+  once -- "rusínska a ukrajinská", "česká a moravská" -- is one bucket and
+  not two rows, because splitting it would be inventing the split.
+* **Serbia**, from en.wikipedia, ethnicity only. That is what the district
+  and municipality articles carry; the Serbian edition adds religion at the
+  district level in a table whose cells hold a count and a share inside one
+  pair of brackets, which is a second reader and is not written.
+* **North Macedonia**, from en.wikipedia, the 2021 census's ethnicity
+  beside the 2002 one in a single four-column table. A row carrying only
+  the newer pair -- "persons for whom data are taken from administrative
+  sources" is such a row -- would be read from the wrong column, so a row
+  that does not carry the table's full width is dropped and the note says
+  how many were and that what they hold is inside the remainder.
+* **Moldova**, from en.wikipedia, ethnicity by district. Most district
+  articles put the citation in the infobox and not beside the table, and
+  a reference elsewhere in an article is not a citation for this table;
+  those are refused. Chișinău, Bălți, Bender and Gagauzia are not
+  districts, are on no list of them, and carry that as their reason.
+* **Montenegro**, from en.wikipedia, ethnicity and religion by
+  municipality.
+* **Bulgaria**, from bg.wikipedia, because the English article of a
+  province carries one religion table from the 2001 census and nothing
+  else, while the Bulgarian article carries mother tongue, religion and
+  ethnicity each under its own heading. The article is reached by its
+  interlanguage link from the English title rather than by a
+  transliteration invented here.
+
+Three things the Bulgarian articles do that would otherwise have been read
+wrong, and each is now a rule with a test:
+
+1. A province's ethnic table has one "Други" cell spanning the seven
+   peoples under it, and flattening that hands the first of them over as
+   "Други Руснаци" -- two labels in one cell with one pair of figures
+   between them and nothing saying which of the two they belong to. The
+   outer label wins wherever the first word is itself a label, because the
+   outer one is the residual and a residual cannot overstate a people. A
+   flag template's alt text is still dropped from the front of a label,
+   because a country's name is not a label.
+2. A municipality prints its ethnic composition once per census under one
+   heading, with nothing in either header to say which is which. Reading
+   "the first table" would date half of them wrong, so a section holding
+   more than one table of the same kind refuses the unit and says so.
+3. These tables are very often cited to `pop-stat.mashke.org`, one person's
+   compilation of Eastern European census results, whose page titles say
+   "2011 census". Every one of them would have been recorded as a census
+   count read from the office that took it. It is its own kind of citation
+   now, ranked below a statistical office, and the caveat on the record
+   says a compilation republished the figure.
+
+Bulgaria's mother-tongue table is the 2001 census and is written as 2001.
+The Bulgarian articles have not been brought forward to 2011 for that
+field, and a 2001 figure called 2001 is a figure while one called 2011
+would be a mistake.
+
+#### The measured negatives
+
+* **Hungary** -- neither edition carries a composition at either level. The
+  English article of a county has headings "Demographics", "2011 census",
+  "2001 census" and "Ethnicity", and a table under none of them; its eleven
+  tables are election results, district lists, roads and railways. The
+  Hungarian article of a county is the same, at 108,000 bytes, and the
+  article of a járás is a stub with one table of its settlements. 9.9
+  million people, the largest European gap this method does not reach.
+* **Belarus** -- the English article of a region carries four tables under
+  "Demographics" and all four are vital statistics: population by year,
+  birth and death rates, life expectancy, marriages and divorces. No
+  composition at either level. (Belarus's language now comes from CLEAR
+  Global's HDX file, by another adapter.)
+* **Albania** -- the county articles do carry a religion table, the 2011 and
+  2023 censuses side by side, and it is cited to `pop-stat.mashke.org` and
+  to nothing else. It is also a table with its own subtotals in it ("Total
+  Muslim", "Total Christian", "Total Non-religious") sitting beside their
+  parts, which is the double-count this project refuses. Not read.
+* **Kosovo** -- the municipality articles do carry an ethnicity in the
+  infobox, as a `{{ubl}}` of two lines ("98.45% Albanians, 1.55% Other"),
+  and the citation for it is attached to the population parameter above
+  rather than to the composition. Indonesia's rule is that a reference
+  elsewhere in the infobox is not a citation for this value, and the rule
+  is kept.
+* **Lithuania, Latvia, Estonia, Cyprus, Malta, Andorra, Liechtenstein, San
+  Marino** -- the county and municipality articles carry population series
+  and no composition.
+
 ### Wikipedia transcriptions: what was measured and left
 
 `scripts/probe_wikitable.py` prints an article's tables compactly, and one
