@@ -146,6 +146,24 @@ MUNICIPALITIES: dict[str, list[str]] = {
                 "RAEOA", "Região Administrativa Especial de Oé-Cusse Ambeno"],
     "Viqueque": [],
 }
+# Administrative posts the census and the boundary file spell differently.
+# The same seven places, not seven judgement calls: each pair differs by a
+# vowel, a hyphen or a metathesis ("Fohorem" against "Forohem", "Lequidoe"
+# against "Liquidoe"), and each sits in the same municipality in both. The
+# alias is declared so the row joins; where the two sources name genuinely
+# different ground -- Hatulia split in two, Lore newly carved -- no alias is
+# written and the row stays visibly unjoined, which is the whole point of
+# declaring these one at a time rather than matching on distance.
+POST_ALIASES: dict[str, list[str]] = {
+    "Lequidoe": ["Liquidoe"],                 # Aileu
+    "Hato-Udo": ["Hatu-Udo", "Hatudo"],       # Ainaro
+    "Hato-Buiico": ["Hatu-Builico", "Hato-Builico", "Hatubuilico"],
+    "Fohorem": ["Forohem", "Fohoren"],        # Cova Lima
+    "Maucatar": ["Maukatar", "Maucatar-Fatumea"],
+    "Barique": ["Barique/Natarbora", "Barique-Natarbora", "Natarbora"],
+    "Fatuberlio": ["Fatuberliu"],             # Manufahi
+}
+
 # The fourteenth municipality of 2022, which the boundary file has no shape
 # for: Atauro was an administrative post of Dili until 2022 and the shapes
 # are the older set. Its 2022 population is summed into Dili's; see the
@@ -715,6 +733,7 @@ def build(language, language_totals, religion, religion_totals,
             level="admin2", parent="TLS", country="TLS",
             parent_name=shape_parent,
             parent_aliases=list(MUNICIPALITIES.get(shape_parent, [])),
+            aliases=POST_ALIASES.get(post, []),
             codes={"municipality": shape_parent,
                    "census_municipality_2022": parent},
             population=measure(
