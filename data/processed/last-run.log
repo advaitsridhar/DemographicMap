@@ -1,15 +1,36 @@
-  CDX: 174 archived PDF captures, 24 of the 25 files wanted
+  CDX: 189 archived PDF captures, 25 of the 25 files wanted
+  Khentii: 18._Khentii.pdf 2,592,202 bytes, captured 20220119201206
+    ! no page of this capture names what is wanted
+  Khentii: 18._Khentii.pdf 2,592,179 bytes, captured 20240519155414
+    ! no page of this capture names what is wanted
+  Khentii: 18._Khentii.pdf 976,697 bytes, captured 20240417144954
+incorrect startxref pointer(4)
+parsing for Object Streams
+Object 40555 0 not defined.
+    ! PdfReadError: Invalid object in /Pages
+  Khentii: 18._Khentii.pdf 976,624 bytes, captured 20201001044646
+incorrect startxref pointer(4)
+parsing for Object Streams
+Object 40555 0 not defined.
+    ! PdfReadError: Invalid object in /Pages
   Khentii: Khentii.pdf 15,914,198 bytes, captured 20241009133407
+  retry 1/4 after 2s :: https://web.archive.org/web/20241009133407id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Khentii.pdf :: <urlopen error [Errno 110] Connection timed out>
     ! no page of this capture names what is wanted
   Khentii: Khentii.pdf 15,530,959 bytes, captured 20220109210133
     ! no page of this capture names what is wanted
   Khentii: Khentii.pdf 13,961,069 bytes, captured 20231022175636
+  retry 1/4 after 2s :: https://web.archive.org/web/20231022175636id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 110] Connection timed out>
+  retry 2/4 after 4s :: https://web.archive.org/web/20231022175636id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 104] Connection reset by peer>
     ! no page of this capture names what is wanted
   Khentii: Khentii.pdf 13,958,733 bytes, captured 20221109115634
+  retry 1/4 after 2s :: https://web.archive.org/web/20221109115634id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 110] Connection timed out>
+  retry 2/4 after 4s :: https://web.archive.org/web/20221109115634id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 104] Connection reset by peer>
     ! no page of this capture names what is wanted
   Khentii: Khentii.pdf 13,958,725 bytes, captured 20210815085319
     ! no page of this capture names what is wanted
   Khentii: Khentii.pdf 981,901 bytes, captured 20240425013024
+  retry 1/4 after 2s :: https://web.archive.org/web/20240425013024id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 110] Connection timed out>
+  retry 2/4 after 4s :: https://web.archive.org/web/20240425013024id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 104] Connection reset by peer>
 incorrect startxref pointer(4)
 parsing for Object Streams
 Object 2046 0 not defined.
