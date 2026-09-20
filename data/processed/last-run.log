@@ -1,8 +1,54 @@
-probe_pdf: https://web.archive.org/web/20210306152600id_/https://www.1212.mn/BookLibraryDownload.ashx?url=Arkhangai_XAOCT_Negdsen_dun.pdf&ln=Mn
+probe_pdf: https://web.archive.org/web/20210120004147id_/https://1212.mn/BookLibraryDownload.ashx?url=Bayan-Ulgii_XAOCT_Negdsen_Dun.pdf&ln=Mn
   1,048,576 bytes
-  0 pages
-probe_pdf: 1 pages, 0 mention ['суурьшилт']
-=== front matter ===
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pdfminer/pdfdocument.py", line 716, in __init__
+    pos = self.find_xref(parser)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pdfminer/pdfdocument.py", line 981, in find_xref
+    raise PDFNoValidXRef("Unexpected EOF")
+pdfminer.pdfdocument.PDFNoValidXRef: Unexpected EOF
 
+During handling of the above exception, another exception occurred:
 
-=== pages mentioning ['суурьшилт'] (first 4) ===
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pdfplumber/pdf.py", line 50, in __init__
+    self.doc = PDFDocument(PDFParser(stream), password=password or "")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pdfminer/pdfdocument.py", line 722, in __init__
+    newxref.load(parser)
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pdfminer/pdfdocument.py", line 234, in load
+    (_, obj) = parser.nextobject()
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pdfminer/psparser.py", line 582, in nextobject
+    (pos, token) = self.nexttoken()
+                   ^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pdfminer/psparser.py", line 488, in nexttoken
+    changed_stream = self.fillbuf()
+                     ^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pdfminer/psparser.py", line 199, in fillbuf
+    raise PSEOF("Unexpected EOF")
+pdfminer.psexceptions.PSEOF: Unexpected EOF
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
+    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 163, in fetch_text
+    return laid_out(blob, boxes=boxes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 65, in laid_out
+    with pdfplumber.open(io.BytesIO(blob)) as pdf:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pdfplumber/pdf.py", line 107, in open
+    return cls(
+           ^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pdfplumber/pdf.py", line 52, in __init__
+    raise PdfminerException(e)
+pdfplumber.utils.exceptions.PdfminerException: Unexpected EOF
