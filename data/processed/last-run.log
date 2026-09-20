@@ -1,4 +1,22 @@
-png: the 2024 census head count and the 2011 census's provincial religion
-  fetched 2024-final-figures.pdf (7.9 MB)
-  fetched 2011-national-report.pdf (11.5 MB)
-png: Table 1 is missing ['Western Highlands']
+northkorea: Central Bureau of Statistics, DPR Korea, 2008 Population Census -- National Report (Pyongyang, 2009), Table 2
+  fetched dprk-2008-census-report.pdf (1.4 MB)
+  278 pages
+  Table 2 on pages [24, 25, 26, 27, 28]
+  Table 1: the whole population is 24,052,231, 702,372 above Table 2's 23,349,859
+  Table 2: 10 first-level areas, 208 city/district/county rows; every area equals its own rows and the ten equal the 23,349,859 printed for DPR Korea
+  the 702,372 Table 2 does not place are 662,349 men and 40,023 women, which is why a sex ratio here runs above the census's own
+  regrouped to 11 shapes and 179 counties: Nampo taken out of South Phyongan, Kangnam/Junghwa/Sangwon moved to North Hwanghae, Chongjin and Hamhung added up, Pyongyang left as the city
+  check: 11 shapes and 179 counties, each shape the sum of its own, all of them 23,349,859 -- Table 2's own DPR Korea row, and 702,372 short of the 24,052,231 Table 1 counts
+    Jagang            1,299,830  18 counties
+    Kangwon           1,477,582  17 counties
+    Nampo               983,660  6 counties
+    North Hamgyong    2,327,362  16 counties
+    North Hwanghae    2,353,149  21 counties
+    North Pyongan     2,728,662  25 counties
+    Pyongyang         3,015,811  3 counties
+    Ryanggang           719,269  12 counties
+    South Hamgyong    3,066,013  20 counties
+    South Hwanghae    2,310,485  20 counties
+    South Pyongan     3,068,036  21 counties
+  wrote data/processed/northkorea_county.json (556 kB)
+  wrote 190 records to northkorea_county.json
