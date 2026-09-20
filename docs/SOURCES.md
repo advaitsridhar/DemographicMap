@@ -6879,13 +6879,14 @@ and nutrition of children and women.
 So the declaration stands, and `scripts/common.py` now says what was read.
 
 **What the 2008 census does publish by province** — recorded here so the next
-reader does not search the report again. Of the 53 tables, **32 cross a
+reader does not search the report again. Of the 53 tables, **33 cross a
 province** and one goes below it:
 
 * population and households — Table 2 (by **city/district/county** and
-  province, the only table below the first level), 4 (5-year age group by sex,
-  urban/rural), 6 (relationship to head and marital status), 8 (marital status
-  15+), 12 (heads of households), 13 (households by type and size);
+  province, the only table below the first level), 3 (localities and their
+  population by size-class), 4 (5-year age group by sex, urban/rural),
+  6 (relationship to head and marital status), 8 (marital status 15+),
+  12 (heads of households), 13 (households by type and size);
 * fertility and mortality — 14 (live births in the past year and women by age),
   15 (the same by educational attainment), 16 (by class of labour), 17 (deaths
   by age and sex), 18 (maternal deaths by place of death);
@@ -6901,8 +6902,8 @@ province** and one goes below it:
   (floor area), 49 (rooms), 50 (water supply), 51 (toilet facility), 52
   (heating system), 53 (cooking fuel).
 
-The remaining 21 tables are national: 1, 3, 5, 7, 9, 10, 11, 21, 22, 25, 26,
-27, 31, 33, 35, 37, 39, 42, 43, 44 and 45. Nothing anywhere in the round is a
+The remaining 20 tables are national: 1, 5, 7, 9, 10, 11, 21, 22, 25, 26, 27,
+31, 33, 35, 37, 39, 42, 43, 44 and 45. Nothing anywhere in the round is a
 religion, ethnicity or language table, at any level.
 
 **What was filled.** Table 2, so all 190 units carry a head count and a sex
