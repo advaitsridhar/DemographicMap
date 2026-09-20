@@ -1,34 +1,13 @@
-probe_pdf: https://mics-surveys-prod.s3.amazonaws.com/MICS6/East%20Asia%20and%20the%20Pacific/Korea,%20Democratic%20People's%20Republic%20of/2017/Survey%20findings/Korea%20DPR%202017%20MICS_English.pdf
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
-    blob = fetch_blob(url, aia=aia)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
-    with urllib.request.urlopen(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 403: Forbidden
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  https://nso.mn/en
+    63,708 chars
+    0 distinct match(es) for '[-a-zA-Z0-9_./]*(api|API)[-a-zA-Z0-9_./]*'
+  https://data.nso.mn/
+    44,405 chars
+    2 distinct match(es) for '[-a-zA-Z0-9_./]*(api|API)[-a-zA-Z0-9_./]*'
+      //fonts.googleapis.com
+      //fonts.googleapis.com/css2
+  https://metadata.nso.mn/
+    25,993 chars
+    0 distinct match(es) for '[-a-zA-Z0-9_./]*(api|API)[-a-zA-Z0-9_./]*'
