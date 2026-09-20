@@ -100,7 +100,7 @@ LANGUAGE_SOURCE = (f"{CENSUS_2015}, Volume 2 priority table 12: population by "
                    "mother tongue and municipality")
 RELIGION_SOURCE = (f"{CENSUS_2015}, Volume 2 priority table 11: population by "
                    "municipality, urban/rural location, sex and religion")
-POPULATION_SOURCE = (f"{CENSUS_2022} Main Report, basic table 4.01: population by "
+POPULATION_SOURCE = (f"{CENSUS_2022}, Main Report basic table 4.01: population by "
                      "municipality, administrative post, suco and urban/rural "
                      "location, sex")
 LICENCE = "Official statistics of INETL, I.P., cited as published"
@@ -176,6 +176,12 @@ RELIGION_BREAKDOWN = {"male", "female", "urban", "rural"}
 # population; the language shares are the fifteen the map's own country row
 # carries, which are these counts over this base.
 NATIONAL_BASE = 1_179_654
+# What the same volume's table 1 counts, which is not the same thing and is
+# worth saying out loud: the 2015 census's total population, and the part of
+# it living in private households. Tables 11 and 12 sit between the two and
+# the workbooks print no footnote saying which people they leave out.
+NATIONAL_POPULATION_2015 = 1_183_643
+NATIONAL_PRIVATE_HOUSEHOLDS_2015 = 1_178_340
 NATIONAL_CATHOLIC_PCT = 97.6
 NATIONAL_LANGUAGE_PCT = {
     "Tetun Prasa": 30.6, "Mambai": 16.6, "Makasai": 10.5, "Tetun Terik": 6.1,
@@ -502,7 +508,10 @@ def check_bases(language_totals, religion_totals) -> None:
                          f"reader was written against {NATIONAL_BASE:,}; the release has "
                          "changed and the notes' arithmetic with it")
     log(f"  both 2015 tables count the same {base:,.0f} people, municipality by "
-        "municipality")
+        f"municipality: {NATIONAL_POPULATION_2015 - base:,} below the volume's own "
+        f"total population ({NATIONAL_POPULATION_2015:,}) and "
+        f"{base - NATIONAL_PRIVATE_HOUSEHOLDS_2015:,} above its private-household "
+        f"population ({NATIONAL_PRIVATE_HOUSEHOLDS_2015:,}), which no footnote explains")
 
 
 def check_published(language_counts, religion_country, population_country) -> None:
@@ -588,9 +597,9 @@ def language_note(name: str, counts, total: float) -> str:
             f"table 12 of the census's own Volume 2 priority tables: {total:,.0f} people, "
             f"one tongue each, the municipality's rows adding to that figure exactly. ")
     if small:
-        text += (f"{named} of the census's 38 tongues were spoken here and "
-                 f"{small} of them by under 0.05% of the municipality, which are counted "
-                 "in the base and not shown. ")
+        text += (f"{named} of the census's {len(counts)} tongues had a speaker here, and "
+                 f"{small} of those are spoken by fewer than one person in two thousand: "
+                 "they are counted in the base without being given a row of their own. ")
     text += ("The 2022 census asked the question again -- and allowed two answers rather "
              "than one -- but has published no table of it below the country.")
     return text
@@ -734,18 +743,22 @@ def run() -> int:
 # only these two tables can answer.
 # ---------------------------------------------------------------------------
 
-DISTRIBUTION_XLS = f"{BASE}/2023/03/1_2015-V2-Population-Household-Distribution.xls"
-DISTRIBUTION_PAGE = ("https://inetl-ip.gov.tl/2023/03/09/population-distribution-by-"
-                     "administrative-area-volume-2-population-and-household-distribution/")
+ALDEIA_XLS = f"{BASE}/2023/03/7_2015-V2-Aldeia-populations.xls"
+ALDEIA_PAGE = ("https://inetl-ip.gov.tl/2023/03/09/"
+               "census-2015-priority-table-population-by-aldeia-populations/")
 
 
 def units_2015(path) -> dict[str, dict[str, list[str]]]:
     """{municipality: {administrative post: [suco, ...]}} as the 2015 volume
-    lists them, from whichever of its sheets carries the three levels.
+    lists them, from its table 20 -- one sheet per municipality, every
+    administrative post, suco and aldeia of it in a single column.
 
-    The 2015 workbook indents rather than using a column per level, so a row's
-    level is read from how deep its label is: this is reconnaissance and is
-    never used to write a figure.
+    Nothing in the text says which level a row is: the sheet indents, and the
+    indentation is the only mark. So the levels are recovered from the figures
+    instead, which is what the census guarantees and the whitespace does not.
+    A unit's count is the sum of the units under it, so a row is a child of the
+    nearest row above it that still has room for it. Reconnaissance only: no
+    figure written by this module comes from here.
     """
     import xlrd
     book = xlrd.open_workbook(str(path))
@@ -753,37 +766,44 @@ def units_2015(path) -> dict[str, dict[str, list[str]]]:
     for sheet in book.sheets():
         grid = [[sheet.cell_value(r, c) for c in range(sheet.ncols)]
                 for r in range(sheet.nrows)]
-        found: dict[str, dict[str, list[str]]] = {}
-        municipality = post = ""
+        title = tidy(at(grid[0], 0)) if grid else ""
+        stack: list[list[Any]] = []      # [label, room left]
+        posts: dict[str, list[str]] = {}
+        total = 0.0
         for row in grid:
-            raw = str(at(row, 0) or "")
-            label = tidy(raw)
-            if not label or not any(c.isalpha() for c in label):
+            label, value = tidy(at(row, 0)), number(at(row, 1))
+            if not label or value is None or not any(c.isalpha() for c in label):
                 continue
-            depth = len(raw) - len(raw.lstrip())
-            key = fold(label)
-            if key in COUNTRY_LABELS:
+            if label.lower() == "total" and not total:
+                total = value
                 continue
-            if key in MUNICIPALITY_KEYS and depth == 0:
-                municipality = MUNICIPALITY_KEYS[key]
-                found.setdefault(municipality, {})
-                post = ""
-            elif municipality and depth and depth <= 3:
-                post = label
-                found[municipality].setdefault(post, [])
-            elif municipality and post and depth > 3:
-                found[municipality][post].append(label)
-        posts = sum(len(v) for v in found.values())
-        log(f"  sheet {sheet.name!r}: {len(found)} municipalities, {posts} posts")
-        if posts > sum(len(v) for v in out.values()):
-            out = found
+            if not total:
+                continue
+            while stack and stack[-1][1] + 0.5 < value:
+                stack.pop()
+            depth = len(stack)
+            if depth == 0:
+                posts.setdefault(label, [])
+            elif depth == 1 and stack[0][0] in posts:
+                posts[stack[0][0]].append(label)
+            if stack:
+                stack[-1][1] -= value
+            stack.append([label, value])
+        if not posts:
+            continue
+        name = next((MUNICIPALITY_KEYS[fold(w)] for w in title.replace(",", " ").split()
+                     if fold(w) in MUNICIPALITY_KEYS), sheet.name)
+        out[name] = posts
+        log(f"  sheet {sheet.name!r} ({title[:60]!r}) -> {name}: "
+            f"{len(posts)} posts, {sum(len(v) for v in posts.values())} sucos, "
+            f"total {total:,.0f}")
     return out
 
 
 def probe() -> int:
     log("== the 2015 volume's administrative areas")
-    old = units_2015(download(DISTRIBUTION_XLS,
-                              RAW / "timor" / DISTRIBUTION_XLS.rsplit("/", 1)[-1]))
+    old = units_2015(download(ALDEIA_XLS,
+                              RAW / "timor" / ALDEIA_XLS.rsplit("/", 1)[-1]))
     log("== the 2022 main report's basic table 4.01")
     grid = xlsx_grid(download(POPULATION_XLSX,
                               RAW / "timor" / POPULATION_XLSX.rsplit("/", 1)[-1]),
