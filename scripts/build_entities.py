@@ -107,6 +107,13 @@ ADAPTER_FILES = [
     # Hong Kong's own census, one shape under China: ethnicity and usual
     # spoken language from the 2021 Main Results workbook.
     "hongkong_census.json",
+    # Laos's 18 provinces and 148 districts: ethno-linguistic category and
+    # religion summed from the 2015 census's own 8,500-village indicator
+    # table, which the Lao Statistics Bureau releases through Open
+    # Development Laos. A census count, read below the level it is published
+    # at and added up. Language is not here: the census does not ask it, and
+    # NOT_COLLECTED_POLICY says so.
+    "laos_province.json", "laos_district.json",
     # China's census ethnicity by province, the tables the provinces'
     # Wikipedia articles transcribe: a census transcription, so above the
     # surveys, and it touches a field the surveys do not carry.
@@ -241,6 +248,10 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.wiki_census --country KHM",
     "VNM": "2019 census Table 2 (population by ethnic group and province) from the "
            "office's own results volume: python -m scripts.fetch_census.vietnam",
+    "LAO": "2015 census ethno-linguistic category and religion, summed from the Lao "
+           "Statistics Bureau's own village indicator table on Open Development Laos "
+           "(8,500 villages) to the 18 provinces and 148 districts: "
+           "python -m scripts.fetch_census.laos --level both",
     "TLS": "INETL's 2015 census Volume 2 priority tables 11 and 12 (religion, mother "
            "tongue) by municipality, with the 2022 main report's basic table 4.01 for "
            "population down to the administrative post: "

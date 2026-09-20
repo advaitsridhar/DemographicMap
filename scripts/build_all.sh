@@ -106,6 +106,10 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # administrative post from the 2022 main report; three files from
   # inetl-ip.gov.tl, needs egress.
   soft python3 -m scripts.fetch_census.timor
+  # Laos: the 2015 census's 8,500-village indicator table from Open
+  # Development Laos, summed to 18 provinces and 148 districts; one 4.5 MB
+  # workbook, needs egress.
+  soft python3 -m scripts.fetch_census.laos --level both
   # Census ethnicity for the 31 divisions, one MediaWiki API call each.
   soft python3 -m scripts.fetch_census.china_wiki
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.

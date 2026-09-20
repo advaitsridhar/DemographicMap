@@ -197,6 +197,22 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "IND": {
         "ethnicity": "India does not collect ethnicity. Scheduled Caste / Scheduled Tribe shares and mother tongue are collected instead.",
     },
+    # Laos asks ethnicity and religion and is here for the third field only.
+    # Measured rather than assumed, the way Bhutan's declaration was: the 2015
+    # results volume runs 282 pages, the words "mother tongue" appear on none
+    # of them, and "language" appears on six -- the questionnaire's own
+    # wording, the enumerators recruited for their ethnic language skills, and
+    # why Lao migrants choose Thailand. None of its tables is a language
+    # table. Nor is the census's ethno-linguistic categorisation one: the
+    # Socio-Economic Atlas, which defines it, says the term "indicates a
+    # categorization based on a common ethnicity through self-identification
+    # mainly based on language" -- an ethnicity answer sorted by linguists,
+    # not a language anybody was asked to speak, and it is published here on
+    # the ethnicity field. The 8,500-village indicator table the provinces and
+    # districts are read from carries 68 indicators and no language column.
+    "LAO": {
+        "language": "Laos's census does not ask language or mother tongue. The 4th Population and Housing Census 2015 asked 63 questions in 10 parts, among them ethnicity and religion; its 282-page results volume prints no language or mother-tongue table and never uses the words \"mother tongue\", and neither the Socio-Economic Atlas of the Lao PDR 2015 nor the village indicator table behind it carries a language variable. The ten ethno-linguistic categories the census does publish are a classification of the ethnic group a person named, which the map carries on the ethnicity field.",
+    },
     # Read off the census's own account of its questionnaire, not inferred
     # from a file that happened to lack the column. The Population and Housing
     # Census 2022 National Report (Volume I) describes the form it was
