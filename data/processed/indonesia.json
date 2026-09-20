@@ -6019,6 +6019,81 @@
     "population_note": "Total population for 2021 from a BPS (Statistics Indonesia) population-by-religion table, as the Indonesian Wikipedia article 'Kabupaten Banggai Laut' cites it."
   },
   {
+    "id": "IDN-bangka-belitung-islands-bangka-barat",
+    "level": "admin2",
+    "name": "Bangka Barat",
+    "parent": "IDN-bangka-belitung-islands",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 217859,
+      "year": 2024,
+      "source": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 92.73
+      },
+      {
+        "group": "Buddhism",
+        "pct": 3.63
+      },
+      {
+        "group": "Confucianism",
+        "pct": 1.7
+      },
+      {
+        "group": "Protestantism",
+        "pct": 1.42
+      },
+      {
+        "group": "Catholicism",
+        "pct": 0.51
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Kementerian Dalam Negeri, Dukcapil civil registry, population by religion (2024)",
+        "url": "https://id.wikipedia.org/wiki/Kabupaten_Bangka_Barat",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population",
+        "url": "https://id.wikipedia.org/wiki/Kabupaten_Bangka_Barat",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Bangka-Belitung Islands",
+    "country": "IDN",
+    "aliases": [],
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Bangka Barat' cites it. A registry count of the religion on residents' identity cards, not a census answer.",
+    "population_note": "Total population for 2024 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Bangka Barat' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
+  },
+  {
     "id": "IDN-bangka-belitung-islands-bangka-selatan",
     "level": "admin2",
     "name": "Bangka Selatan",
@@ -6092,6 +6167,81 @@
     "religion_year": 2023,
     "religion_note": "Population by religion for 2023 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Bangka Selatan' cites it. A registry count of the religion on residents' identity cards, not a census answer.",
     "population_note": "Total population for 2024 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Bangka Selatan' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
+  },
+  {
+    "id": "IDN-bangka-belitung-islands-bangka-tengah",
+    "level": "admin2",
+    "name": "Bangka Tengah",
+    "parent": "IDN-bangka-belitung-islands",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 209117,
+      "year": 2024,
+      "source": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 88.43
+      },
+      {
+        "group": "Confucianism",
+        "pct": 3.54
+      },
+      {
+        "group": "Buddhism",
+        "pct": 2.92
+      },
+      {
+        "group": "Catholicism",
+        "pct": 2.54
+      },
+      {
+        "group": "Protestantism",
+        "pct": 2.54
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.03
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Kementerian Dalam Negeri, Dukcapil civil registry, population by religion (2023)",
+        "url": "https://id.wikipedia.org/wiki/Kabupaten_Bangka_Tengah",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population",
+        "url": "https://id.wikipedia.org/wiki/Kabupaten_Bangka_Tengah",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Bangka-Belitung Islands",
+    "country": "IDN",
+    "aliases": [],
+    "religion_year": 2023,
+    "religion_note": "Population by religion for 2023 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Bangka Tengah' cites it. A registry count of the religion on residents' identity cards, not a census answer.",
+    "population_note": "Total population for 2024 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Bangka Tengah' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
   },
   {
     "id": "IDN-east-java-bangkalan",
@@ -18011,6 +18161,79 @@
     "population_note": "Total population for 2024 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kota Administrasi Jakarta Selatan' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
   },
   {
+    "id": "IDN-jakarta-special-capital-region-kota-jakarta-timur",
+    "level": "admin2",
+    "name": "Kota Jakarta Timur",
+    "parent": "IDN-jakarta-special-capital-region",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3314396,
+      "year": 2023,
+      "source": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 88.76
+      },
+      {
+        "group": "Protestantism",
+        "pct": 8.06
+      },
+      {
+        "group": "Catholicism",
+        "pct": 2.56
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.45
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.17
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Kementerian Dalam Negeri, Dukcapil civil registry, population by religion (2023)",
+        "url": "https://id.wikipedia.org/wiki/Kota_Administrasi_Jakarta_Timur",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population",
+        "url": "https://id.wikipedia.org/wiki/Kota_Administrasi_Jakarta_Timur",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Jakarta Special Capital Region",
+    "country": "IDN",
+    "aliases": [
+      "Jakarta Timur"
+    ],
+    "religion_year": 2023,
+    "religion_note": "Population by religion for 2023 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kota Administrasi Jakarta Timur' cites it. A registry count of the religion on residents' identity cards, not a census answer.",
+    "population_note": "Total population for 2023 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kota Administrasi Jakarta Timur' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
+  },
+  {
     "id": "IDN-jakarta-special-capital-region-kota-jakarta-utara",
     "level": "admin2",
     "name": "Kota Jakarta Utara",
@@ -26763,6 +26986,73 @@
     "religion_year": 2025,
     "religion_note": "Population by religion for 2025 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Minahasa Selatan' cites it. A registry count of the religion on residents' identity cards, not a census answer.",
     "population_note": "Total population for 2025 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Minahasa Selatan' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
+  },
+  {
+    "id": "IDN-north-sulawesi-minahasa-tenggara",
+    "level": "admin2",
+    "name": "Minahasa Tenggara",
+    "parent": "IDN-north-sulawesi",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 122190,
+      "year": 2025,
+      "source": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Protestantism",
+        "pct": 80.93
+      },
+      {
+        "group": "Islam",
+        "pct": 18.02
+      },
+      {
+        "group": "Catholicism",
+        "pct": 1.04
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "BPS, 2010 Population Census, population by religion (2010)",
+        "url": "https://id.wikipedia.org/wiki/Kabupaten_Minahasa_Tenggara",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population",
+        "url": "https://id.wikipedia.org/wiki/Kabupaten_Minahasa_Tenggara",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "North Sulawesi",
+    "country": "IDN",
+    "aliases": [],
+    "religion_year": 2010,
+    "religion_note": "Population by religion for 2010 from the 2010 Population Census (BPS), as the Indonesian Wikipedia article 'Kabupaten Minahasa Tenggara' cites it. A census count.",
+    "population_note": "Total population for 2025 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Minahasa Tenggara' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
   },
   {
     "id": "IDN-north-sulawesi-minahasa-utara",
@@ -37177,5 +37467,469 @@
     "religion_year": 2010,
     "religion_note": "Population by religion for 2010 from the 2010 Population Census (BPS), as the Indonesian Wikipedia article 'Kabupaten Yalimo' cites it. A census count.",
     "population_note": "Total population for 2024 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Yalimo' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
+  },
+  {
+    "id": "IDN-west-sumatra-kota-bukittinggi",
+    "level": "admin2",
+    "name": "Kota Bukittinggi",
+    "parent": "IDN-west-sumatra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 97.4
+      },
+      {
+        "group": "Protestantism",
+        "pct": 1.65
+      },
+      {
+        "group": "Catholicism",
+        "pct": 0.84
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.1
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat, Buku Data Kependudukan Semester II 2023, tabel Agama - Jenis Kelamin (2023)",
+        "url": "https://data.sumbarprov.go.id/dataset/buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "West Sumatra",
+    "country": "IDN",
+    "aliases": [],
+    "religion_year": 2023,
+    "religion_note": "Population by religion for 2023 from Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat, read from 'Buku Data Kependudukan Semester II 2023, tabel Agama - Jenis Kelamin' on the data.sumbarprov.go.id open-data portal; shares computed from the counts. A registry count of the religion on residents' identity cards, not a census answer. The workbook heads its Christian columns in the reverse of the order it prints them in, which is corrected here against the province's other regencies."
+  },
+  {
+    "id": "IDN-west-sumatra-kota-pariaman",
+    "level": "admin2",
+    "name": "Kota Pariaman",
+    "parent": "IDN-west-sumatra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.69
+      },
+      {
+        "group": "Protestantism",
+        "pct": 0.19
+      },
+      {
+        "group": "Catholicism",
+        "pct": 0.11
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat, Buku Data Kependudukan Semester II 2023, tabel Agama - Jenis Kelamin (2023)",
+        "url": "https://data.sumbarprov.go.id/dataset/buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "West Sumatra",
+    "country": "IDN",
+    "aliases": [],
+    "religion_year": 2023,
+    "religion_note": "Population by religion for 2023 from Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat, read from 'Buku Data Kependudukan Semester II 2023, tabel Agama - Jenis Kelamin' on the data.sumbarprov.go.id open-data portal; shares computed from the counts. A registry count of the religion on residents' identity cards, not a census answer. The workbook heads its Christian columns in the reverse of the order it prints them in, which is corrected here against the province's other regencies."
+  },
+  {
+    "id": "IDN-west-sumatra-kota-payakumbuh",
+    "level": "admin2",
+    "name": "Kota Payakumbuh",
+    "parent": "IDN-west-sumatra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 98.89
+      },
+      {
+        "group": "Protestantism",
+        "pct": 0.58
+      },
+      {
+        "group": "Catholicism",
+        "pct": 0.46
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.07
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat, Buku Data Kependudukan Semester II 2023, tabel Agama - Jenis Kelamin (2023)",
+        "url": "https://data.sumbarprov.go.id/dataset/buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "West Sumatra",
+    "country": "IDN",
+    "aliases": [],
+    "religion_year": 2023,
+    "religion_note": "Population by religion for 2023 from Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat, read from 'Buku Data Kependudukan Semester II 2023, tabel Agama - Jenis Kelamin' on the data.sumbarprov.go.id open-data portal; shares computed from the counts. A registry count of the religion on residents' identity cards, not a census answer. The workbook heads its Christian columns in the reverse of the order it prints them in, which is corrected here against the province's other regencies."
+  },
+  {
+    "id": "IDN-west-sumatra-kota-sawah-lunto",
+    "level": "admin2",
+    "name": "Kota Sawah Lunto",
+    "parent": "IDN-west-sumatra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.33
+      },
+      {
+        "group": "Protestantism",
+        "pct": 0.49
+      },
+      {
+        "group": "Catholicism",
+        "pct": 0.18
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat, Buku Data Kependudukan Semester II 2023, tabel Agama - Jenis Kelamin (2023)",
+        "url": "https://data.sumbarprov.go.id/dataset/buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "West Sumatra",
+    "country": "IDN",
+    "aliases": [],
+    "religion_year": 2023,
+    "religion_note": "Population by religion for 2023 from Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat, read from 'Buku Data Kependudukan Semester II 2023, tabel Agama - Jenis Kelamin' on the data.sumbarprov.go.id open-data portal; shares computed from the counts. A registry count of the religion on residents' identity cards, not a census answer. The workbook heads its Christian columns in the reverse of the order it prints them in, which is corrected here against the province's other regencies."
+  },
+  {
+    "id": "IDN-west-sumatra-pasaman",
+    "level": "admin2",
+    "name": "Pasaman",
+    "parent": "IDN-west-sumatra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.55
+      },
+      {
+        "group": "Protestantism",
+        "pct": 0.39
+      },
+      {
+        "group": "Catholicism",
+        "pct": 0.06
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat, Buku Data Kependudukan Semester II 2023, tabel Agama - Jenis Kelamin (2023)",
+        "url": "https://data.sumbarprov.go.id/dataset/buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "West Sumatra",
+    "country": "IDN",
+    "aliases": [],
+    "religion_year": 2023,
+    "religion_note": "Population by religion for 2023 from Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat, read from 'Buku Data Kependudukan Semester II 2023, tabel Agama - Jenis Kelamin' on the data.sumbarprov.go.id open-data portal; shares computed from the counts. A registry count of the religion on residents' identity cards, not a census answer. The workbook heads its Christian columns in the reverse of the order it prints them in, which is corrected here against the province's other regencies."
+  },
+  {
+    "id": "IDN-east-kalimantan-kota-samarinda",
+    "level": "admin2",
+    "name": "Kota Samarinda",
+    "parent": "IDN-east-kalimantan",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 91.33
+      },
+      {
+        "group": "Protestantism",
+        "pct": 5.08
+      },
+      {
+        "group": "Catholicism",
+        "pct": 2.53
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.93
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.1
+      },
+      {
+        "group": "Confucianism",
+        "pct": 0.03
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Kanwil Kementerian Agama Provinsi Kalimantan Timur, Data Jumlah Pemeluk Agama per Kabupaten/Kota Prov. Kaltim Tahun 2023 (2023)",
+        "url": "https://data.kaltimprov.go.id/dataset/data-jumlah-pemeluk-agama-provinsi-kaltim-tahun-2021",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "East Kalimantan",
+    "country": "IDN",
+    "aliases": [],
+    "religion_year": 2023,
+    "religion_note": "Population by religion for 2023 from Kanwil Kementerian Agama Provinsi Kalimantan Timur, read from 'Data Jumlah Pemeluk Agama per Kabupaten/Kota Prov. Kaltim Tahun 2023' on the data.kaltimprov.go.id open-data portal; shares computed from the counts. A ministry count of adherents, not a census answer."
+  },
+  {
+    "id": "IDN-bengkulu-lebong",
+    "level": "admin2",
+    "name": "Lebong",
+    "parent": "IDN-bengkulu",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 99.58
+      },
+      {
+        "group": "Protestantism",
+        "pct": 0.32
+      },
+      {
+        "group": "Catholicism",
+        "pct": 0.09
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Dinas Kependudukan dan Pencatatan Sipil Provinsi Bengkulu, Data Jumlah Penduduk Provinsi Bengkulu Menurut Agama Tahun 2024 (2024)",
+        "url": "https://data.bengkuluprov.go.id/dataset/data-jumlah-penduduk-menurut-agama-tahun-2024",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Bengkulu",
+    "country": "IDN",
+    "aliases": [],
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from Dinas Kependudukan dan Pencatatan Sipil Provinsi Bengkulu, read from 'Data Jumlah Penduduk Provinsi Bengkulu Menurut Agama Tahun 2024' on the data.bengkuluprov.go.id open-data portal; shares computed from the counts. A registry count of the religion on residents' identity cards, not a census answer."
+  },
+  {
+    "id": "IDN-banten-kota-tangerang-selatan",
+    "level": "admin2",
+    "name": "Kota Tangerang Selatan",
+    "parent": "IDN-banten",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 89.35
+      },
+      {
+        "group": "Protestantism",
+        "pct": 5.9
+      },
+      {
+        "group": "Catholicism",
+        "pct": 3.55
+      },
+      {
+        "group": "Buddhism",
+        "pct": 0.97
+      },
+      {
+        "group": "Hinduism",
+        "pct": 0.22
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Dinas Kependudukan dan Pencatatan Sipil Kota Tangerang Selatan, Jumlah Penduduk Menurut Kecamatan dan Agama, Data Konsolidasi Bersih 2021 (2021)",
+        "url": "https://data.tangerangselatankota.go.id/dataset/jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-tahun-2021",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Banten",
+    "country": "IDN",
+    "aliases": [],
+    "religion_year": 2021,
+    "religion_note": "Population by religion for 2021 from Dinas Kependudukan dan Pencatatan Sipil Kota Tangerang Selatan, read from 'Jumlah Penduduk Menurut Kecamatan dan Agama, Data Konsolidasi Bersih 2021' on the data.tangerangselatankota.go.id open-data portal; shares computed from the counts. A registry count of the religion on residents' identity cards, not a census answer."
   }
 ]
