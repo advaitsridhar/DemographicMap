@@ -1,92 +1,18 @@
   CDX: 174 archived PDF captures, 24 of the 25 files wanted
-  Hovsgel: Khuvsgul_XAOCT_Negdsen_Dun.pdf 11,288,972 bytes, captured 20220109212818
-    33 pages kept, 139,145 chars -> khuvsgul.txt
   Khentii: Khentii.pdf 15,914,198 bytes, captured 20241009133407
-  retry 1/4 after 2s :: https://web.archive.org/web/20241009133407id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Khentii.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/20241009133407id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Khentii.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 3/4 after 8s :: https://web.archive.org/web/20241009133407id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Khentii.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 4/4 after 16s :: https://web.archive.org/web/20241009133407id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Khentii.pdf :: <urlopen error [Errno 111] Connection refused>
     ! no page of this capture names what is wanted
   Khentii: Khentii.pdf 15,530,959 bytes, captured 20220109210133
-  retry 1/4 after 2s :: https://web.archive.org/web/20220109210133id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/20220109210133id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 3/4 after 8s :: https://web.archive.org/web/20220109210133id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 4/4 after 16s :: https://web.archive.org/web/20220109210133id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-    ! RuntimeError: GET failed after 4 retries: https://web.archive.org/web/20220109210133id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn
+    ! no page of this capture names what is wanted
   Khentii: Khentii.pdf 13,961,069 bytes, captured 20231022175636
     ! no page of this capture names what is wanted
   Khentii: Khentii.pdf 13,958,733 bytes, captured 20221109115634
     ! no page of this capture names what is wanted
   Khentii: Khentii.pdf 13,958,725 bytes, captured 20210815085319
-  retry 1/4 after 2s :: https://web.archive.org/web/20210815085319id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/20210815085319id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 3/4 after 8s :: https://web.archive.org/web/20210815085319id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 4/4 after 16s :: https://web.archive.org/web/20210815085319id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-    ! RuntimeError: GET failed after 4 retries: https://web.archive.org/web/20210815085319id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn
+    ! no page of this capture names what is wanted
   Khentii: Khentii.pdf 981,901 bytes, captured 20240425013024
 incorrect startxref pointer(4)
 parsing for Object Streams
 Object 2046 0 not defined.
     ! PdfReadError: Invalid object in /Pages
   ! Khentii: no capture of ['18._Khentii.pdf', 'Khentii.pdf'] could be read
-  Khovd: Khovd.pdf 19,493,308 bytes, captured 20220109211355
-    30 pages kept, 167,712 chars -> khovd.txt
-  Orkhon: Orkhon_XAOCT_Negdsen_Dun.pdf 18,025,478 bytes, captured 20220109210128
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UNJFJE+ArialMT', '/Encoding': IndirectObject(59, 0, 140176453628752), '/FirstChar': 27, '/FontDescriptor': IndirectObject(61, 0, 140176453628752), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [556, 556, 278, 556, 556]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/TJUZVG+ArialNarrow', '/Encoding': IndirectObject(62, 0, 140176453628752), '/FirstChar': 22, '/FontDescriptor': IndirectObject(64, 0, 140176453628752), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [273, 456, 456, 456, 228, 456, 273, 456, 456, 456]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/TJUZVG+Arial-BoldMT', '/Encoding': IndirectObject(65, 0, 140176453628752), '/FirstChar': 27, '/FontDescriptor': IndirectObject(67, 0, 140176453628752), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [556, 556, 278, 556, 556]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/TJUZVG+Arial-BoldMT', '/Encoding': IndirectObject(68, 0, 140176453628752), '/FirstChar': 26, '/FontDescriptor': IndirectObject(67, 0, 140176453628752), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [556, 889, 556, 278, 556, 556]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XCVSZY+Arial-Mon', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(223, 0, 140176453628752), '/LastChar': 53, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [212, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/MJGEBU+DINPro-Medium', '/Encoding': IndirectObject(313, 0, 140176453628752), '/FirstChar': 1, '/FontDescriptor': IndirectObject(4443, 0, 140176453628752), '/LastChar': 173, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [553, 485, 568, 530, 533, 663, 628, 700, 711, 711, 533, 533, 533, 533, 533, 533, 560, 652, 629, 629, 625, 578, 879, 628, 564, 240, 681, 565, 690, 646, 813, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 485, 568, 812, 583, 667, 440, 545, 556, 741, 518, 531, 533, 533, 471, 503, 533, 471, 426, 278, 842, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 587, 0, 0, 537, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 583]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/YLJDNW+DINPro-Light', '/Encoding': IndirectObject(314, 0, 140176453628752), '/FirstChar': 23, '/FontDescriptor': IndirectObject(4232, 0, 140176453628752), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [657, 657, 671, 631, 652, 680, 680, 602, 532]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UGZQJE+Arial#2320Mon', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(1374, 0, 140176453628752), '/LastChar': 53, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [212, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 513, 0, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/SDAEHI+MyriadPro-Regular', '/Encoding': IndirectObject(1375, 0, 140176453628752), '/FirstChar': 31, '/FontDescriptor': IndirectObject(1377, 0, 140176453628752), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [500]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/MJGEBU+DINPro-Medium', '/Encoding': IndirectObject(1378, 0, 140176453628752), '/FirstChar': 1, '/FontDescriptor': IndirectObject(4443, 0, 140176453628752), '/LastChar': 127, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [539, 628, 565, 611, 655, 485, 426, 711, 812, 541, 741, 646, 587, 583, 440, 556, 583, 537, 489, 503, 471, 485, 553, 568, 518, 667, 530, 240, 568, 471, 578, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 690]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/YVTZNW+Mn_Pragmatica', '/Encoding': IndirectObject(4043, 0, 140176453628752), '/FirstChar': 17, '/FontDescriptor': IndirectObject(4045, 0, 140176453628752), '/LastChar': 44, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [577, 751, 610, 910, 784, 623, 758, 678, 804, 753, 775, 1080, 775, 661, 710, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 329]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-    42 pages kept, 831,528 chars -> orkhon.txt
-  Selenge: Selenge_XAOCT_Negdsen_dun.pdf 12,318,015 bytes, captured 20241009132049
-  retry 1/4 after 2s :: https://web.archive.org/web/20241009132049id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Selenge_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/20241009132049id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Selenge_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 3/4 after 8s :: https://web.archive.org/web/20241009132049id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Selenge_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 4/4 after 16s :: https://web.archive.org/web/20241009132049id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Selenge_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-    ! RuntimeError: GET failed after 4 retries: https://web.archive.org/web/20241009132049id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Selenge_XAOCT_Negdsen_dun.pdf&ln=Mn
-  Selenge: Selenge_XAOCT_Negdsen_dun.pdf 11,949,891 bytes, captured 20220109213429
-    25 pages kept, 106,619 chars -> selenge.txt
-  Sükhbaatar: Sukhbaatar_XAOCT_Negdsen_dun.pdf 17,772,552 bytes, captured 20220109211214
-    36 pages kept, 157,027 chars -> sukhbaatar.txt
-  Töv: Tuv_XAOCT_Negdsen%20dun..pdf 29,933,159 bytes, captured 20220109210239
-  retry 1/4 after 2s :: https://web.archive.org/web/20220109210239id_/https://1212.mn/BookLibraryDownload.ashx?url=Tuv_XAOCT_Negdsen%20dun..pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/20220109210239id_/https://1212.mn/BookLibraryDownload.ashx?url=Tuv_XAOCT_Negdsen%20dun..pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 3/4 after 8s :: https://web.archive.org/web/20220109210239id_/https://1212.mn/BookLibraryDownload.ashx?url=Tuv_XAOCT_Negdsen%20dun..pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 4/4 after 16s :: https://web.archive.org/web/20220109210239id_/https://1212.mn/BookLibraryDownload.ashx?url=Tuv_XAOCT_Negdsen%20dun..pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-    54 pages kept, 703,772 chars -> tuv.txt
-  Ulaanbaatar: Ulaanbaatar_XAOCT_Negdsen_dun.pdf 10,512,725 bytes, captured 20240226042140
-  retry 1/4 after 2s :: https://web.archive.org/web/20240226042140id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Ulaanbaatar_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/20240226042140id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Ulaanbaatar_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 3/4 after 8s :: https://web.archive.org/web/20240226042140id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Ulaanbaatar_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 4/4 after 16s :: https://web.archive.org/web/20240226042140id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Ulaanbaatar_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-    ! RuntimeError: GET failed after 4 retries: https://web.archive.org/web/20240226042140id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Ulaanbaatar_XAOCT_Negdsen_dun.pdf&ln=Mn
-  Ulaanbaatar: Ulaanbaatar_XAOCT_Negdsen_dun.pdf 10,512,725 bytes, captured 20240226042143
-  retry 1/4 after 2s :: https://web.archive.org/web/20240226042143id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Ulaanbaatar_XAOCT_Negdsen_dun.pdf&ln=Mn :: HTTP Error 503: Service Unavailable
-    33 pages kept, 153,117 chars -> ulaanbaatar.txt
-  Uvs: Uvs_XAOCT_Negdsen_Dun.pdf 6,644,189 bytes, captured 20220809094701
-  retry 1/4 after 2s :: https://web.archive.org/web/20220809094701id_/https://1212.mn/BookLibraryDownload.ashx?url=Uvs_XAOCT_Negdsen_Dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/20220809094701id_/https://1212.mn/BookLibraryDownload.ashx?url=Uvs_XAOCT_Negdsen_Dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-    29 pages kept, 134,379 chars -> uvs.txt
-  Zavkhan: Zavkhan_XAOCT_Negdsen_dun.pdf 8,035,068 bytes, captured 20241009140445
-  retry 1/4 after 2s :: https://web.archive.org/web/20241009140445id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Zavkhan_XAOCT_Negdsen_dun.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/20241009140445id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Zavkhan_XAOCT_Negdsen_dun.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 3/4 after 8s :: https://web.archive.org/web/20241009140445id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Zavkhan_XAOCT_Negdsen_dun.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 4/4 after 16s :: https://web.archive.org/web/20241009140445id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Zavkhan_XAOCT_Negdsen_dun.pdf :: <urlopen error [Errno 111] Connection refused>
-    35 pages kept, 154,973 chars -> zavkhan.txt
-  Ömnögovi: Umnugovi_XAOCT_Negdsen_Dun.pdf 9,156,047 bytes, captured 20241009132028
-  retry 1/4 after 2s :: https://web.archive.org/web/20241009132028id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Umnugovi_XAOCT_Negdsen_Dun.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/20241009132028id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Umnugovi_XAOCT_Negdsen_Dun.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 3/4 after 8s :: https://web.archive.org/web/20241009132028id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Umnugovi_XAOCT_Negdsen_Dun.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 4/4 after 16s :: https://web.archive.org/web/20241009132028id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Umnugovi_XAOCT_Negdsen_Dun.pdf :: <urlopen error [Errno 111] Connection refused>
-    24 pages kept, 113,155 chars -> umnugovi.txt
-  Övörkhangai: Uvurkhangai_XAOCT_Negdsen_dun.pdf 6,758,205 bytes, captured 20220809094614
-  retry 1/4 after 2s :: https://web.archive.org/web/20220809094614id_/https://1212.mn/BookLibraryDownload.ashx?url=Uvurkhangai_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/20220809094614id_/https://1212.mn/BookLibraryDownload.ashx?url=Uvurkhangai_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-    33 pages kept, 154,284 chars -> uvurkhangai.txt
-  11 of 23 files in /home/runner/work/DemographicMap/DemographicMap/data/raw/mongolia
+  0 of 23 files in /home/runner/work/DemographicMap/DemographicMap/data/raw/mongolia
