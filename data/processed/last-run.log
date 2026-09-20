@@ -1,228 +1,603 @@
-probe_pdf: https://unstats.un.org/unsd/demographic/sources/census/wphc/North_Korea/Final%20national%20census%20report.pdf
-  1,423,964 bytes
-  278 pages
-probe_pdf: 278 pages, printing [26, 27, 28, 29]
+page: http://web.archive.org/cdx/search/cdx?url=nso.gov.pg&matchType=domain&collapse=urlkey&fl=original,mimetype,statuscode&filter=original:.*([Pp]rovinc|[Cc]ensus|[Ww]ard).*&limit=600
+  60,106 bytes
+https://www.nso.gov.pg/11-homepage/9-final-figures-census-2011 text/html 404
+https://www.nso.gov.pg/11-homepage/9-final-figures-census-2011?highlight=WyJjZW5zdXMiXQ== text/html 404
+http://www.nso.gov.pg/2000_Census text/html 301
+http://www.nso.gov.pg:80/2000_Census/_derived/census.htm_cmp_tilt000_vbtn.gif image/gif 200
+http://www.nso.gov.pg:80/2000_Census/_derived/census.htm_cmp_tilt000_vbtn_p.gif image/gif 200
+http://www.nso.gov.pg:80/2000_Census/census.htm text/html 200
+http://www.nso.gov.pg/2000Census/census text/html 301
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/ text/html 200
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/Captions/Subtitles text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/census/ text/html 200
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/census/feed/ application/rss+xml 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/census/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/embed/ text/html 200
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/embed/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.afrikaans text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.albanian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.arabic text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.audio-player text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.belarusian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.bulgarian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.captions-chapters text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.captions-subtitles text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.catalan text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.chinese text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.chinese-simplified text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.chinese-traditional text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.croatian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.czech text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.danish text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.download-file text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.dutch text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.english text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.estonian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.filipino text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.finnish text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.french text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.fullscreen text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.galician text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.german text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.greek text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.haitian-creole text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.hebrew text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.hindi text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.hungarian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.icelandic text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.indonesian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.install-flash text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.irish text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.italian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.japanese text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.korean text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.latvian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.lithuanian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.live-broadcast text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.macedonian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.malay text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.maltese text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.mute text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.none text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.norwegian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.pause text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.persian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.play text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.polish text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.portuguese text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.romanian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.russian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.serbian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.slovak text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.slovenian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.spanish text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.swahili text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.swedish text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.tagalog text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.thai text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.time-help-text text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.time-slider text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.turkish text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.ukrainian text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.unmute text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.video-player text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.vietnamese text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.volume-help-text text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.volume-slider text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.welsh text/html 404
+https://www.nso.gov.pg/2019/03/11/census-2020-ministerial-statement/mejs.yiddish text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/ text/html 200
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/Captions/Subtitles text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/census-launching/ text/html 200
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/census-launching/feed/ application/rss+xml 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/census-launching/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/embed/ text/html 200
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/embed/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.afrikaans text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.albanian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.arabic text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.audio-player text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.belarusian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.bulgarian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.captions-chapters text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.captions-subtitles text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.catalan text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.chinese text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.chinese-simplified text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.chinese-traditional text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.croatian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.czech text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.danish text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.download-file text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.dutch text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.english text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.estonian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.filipino text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.finnish text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.french text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.fullscreen text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.galician text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.german text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.greek text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.haitian-creole text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.hebrew text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.hindi text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.hungarian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.icelandic text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.indonesian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.install-flash text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.irish text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.italian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.japanese text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.korean text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.latvian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.lithuanian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.live-broadcast text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.macedonian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.malay text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.maltese text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.mute text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.none text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.norwegian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.pause text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.persian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.play text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.polish text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.portuguese text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.romanian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.russian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.serbian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.slovak text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.slovenian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.spanish text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.swahili text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.swedish text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.tagalog text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.thai text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.time-help-text text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.time-slider text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.turkish text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.ukrainian text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.unmute text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.video-player text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.vietnamese text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.volume-help-text text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.volume-slider text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.welsh text/html 404
+https://www.nso.gov.pg/2020/05/14/pngs-5th-national-population-and-housing-census-launched/mejs.yiddish text/html 404
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/ text/html 200
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/Captions/Subtitles warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/census_deferal/ text/html 200
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/census_deferal/embed/ text/html 200
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/census_deferal/embed/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/census_deferal/feed/ application/rss+xml 200
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/census_deferal/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/embed/ text/html 200
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/embed/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/feed/ application/rss+xml 200
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/j9u.Mae0ROy warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.afrikaans warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.albanian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.arabic warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.audio-player warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.belarusian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.bulgarian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.captions-chapters warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.captions-subtitles warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.catalan warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.chinese warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.chinese-simplified warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.chinese-traditional warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.croatian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.czech warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.danish warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.download-file warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.dutch warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.english warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.estonian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.filipino warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.finnish warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.french warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.fullscreen warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.galician warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.german warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.greek warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.haitian-creole warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.hebrew warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.hindi warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.hungarian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.icelandic warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.indonesian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.install-flash warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.irish warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.italian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.japanese warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.korean warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.latvian text/html 404
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.lithuanian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.live-broadcast warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.macedonian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.malay warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.maltese warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.mute warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.none warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.norwegian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.pause warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.persian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.play warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.polish warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.portuguese warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.romanian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.russian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.serbian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.slovak warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.slovenian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.spanish warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.swahili warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.swedish warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.tagalog warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.thai warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.time-help-text warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.time-slider warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.turkish warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.ukrainian warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.unmute warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.video-player warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.vietnamese warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.volume-help-text warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.volume-slider warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.welsh warc/revisit -
+https://www.nso.gov.pg/2021/07/09/deferral-of-the-2021-national-population-and-housing-census/mejs.yiddish warc/revisit -
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/ text/html 200
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/Captions/Subtitles text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/day1-pilot-census-training_fb/ text/html 200
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/day1-pilot-census-training_fb/embed/ text/html 200
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/day1-pilot-census-training_fb/embed/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/day1-pilot-census-training_fb/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/embed/ text/html 200
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/embed/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/feed/ application/rss+xml 200
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.afrikaans text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.albanian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.arabic text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.audio-player text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.belarusian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.bulgarian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.captions-chapters text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.captions-subtitles text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.catalan text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.chinese text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.chinese-simplified text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.chinese-traditional text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.croatian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.czech text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.danish text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.download-file text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.dutch text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.english text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.estonian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.filipino text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.finnish text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.french text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.fullscreen text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.galician text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.german text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.greek text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.haitian-creole text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.hebrew text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.hindi text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.hungarian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.icelandic text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.indonesian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.install-flash text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.irish text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.italian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.japanese text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.korean text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.latvian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.lithuanian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.live-broadcast text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.macedonian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.malay text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.maltese text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.mute text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.none text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.norwegian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.pause text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.persian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.play text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.polish text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.portuguese text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.romanian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.russian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.serbian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.slovak text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.slovenian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.spanish text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.swahili text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.swedish text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.tagalog text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.thai text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.time-help-text text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.time-slider text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.turkish text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.ukrainian text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.unmute text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.video-player text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.vietnamese text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.volume-help-text text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.volume-slider text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.welsh text/html 404
+https://www.nso.gov.pg/2023/10/10/training-for-pilot-census-enumeration-morobe/mejs.yiddish text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/ text/html 200
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/Captions/Subtitles text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/embed/ text/html 200
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/embed/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/feed/ application/rss+xml 200
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.afrikaans text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.albanian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.arabic text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.audio-player text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.belarusian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.bulgarian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.captions-chapters text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.captions-subtitles text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.catalan text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.chinese text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.chinese-simplified text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.chinese-traditional text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.croatian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.czech text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.danish text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.download-file text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.dutch text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.english text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.estonian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.filipino text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.finnish text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.french text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.fullscreen text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.galician text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.german text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.greek text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.haitian-creole text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.hebrew text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.hindi text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.hungarian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.icelandic text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.indonesian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.install-flash text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.irish text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.italian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.japanese text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.korean text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.latvian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.lithuanian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.live-broadcast text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.macedonian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.malay text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.maltese text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.mute text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.none text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.norwegian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.pause text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.persian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.play text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.polish text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.portuguese text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.romanian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.russian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.serbian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.slovak text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.slovenian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.spanish text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.swahili text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.swedish text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.tagalog text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.thai text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.time-help-text text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.time-slider text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.turkish text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.ukrainian text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.unmute text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.video-player text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.vietnamese text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.volume-help-text text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.volume-slider text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.welsh text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/mejs.yiddish text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/milne-bay-pilot-training/ text/html 200
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/milne-bay-pilot-training/embed/ text/html 200
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/milne-bay-pilot-training/embed/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2023/10/13/pilot-census-enumeration-in-milne-bay-province/milne-bay-pilot-training/j9u.Mae0ROy text/html 404
+https://www.nso.gov.pg/2023/11/24/moa-signing-madang-provincial-administration-national-statistical-office/ text/html 200
+https://www.nso.gov.pg/2023/11/24/moa-signing-madang-provincial-administration-national-statistical-office/embed/ text/html 200
+https://www.nso.gov.pg/2023/11/24/moa-signing-madang-provincial-administration-national-statistical-office/feed/ application/rss+xml 200
+https://www.nso.gov.pg/2024/02/20/national-statistical-office-signs-mou-with-jiwaka-provincial-administrations/ text/html 200
+https://www.nso.gov.pg/2024/02/20/national-statistical-office-signs-mou-with-jiwaka-provincial-administrations/embed/ text/html 200
+https://www.nso.gov.pg/2024/02/20/national-statistical-office-signs-mou-with-jiwaka-provincial-administrations/feed/ application/rss+xml 200
+https://www.nso.gov.pg/2024/04/23/jiwaka-province-host-highlands-regional-census-workshop/ text/html 200
+https://www.nso.gov.pg/2024/04/23/jiwaka-province-host-highlands-regional-census-workshop/embed/ text/html 200
+https://www.nso.gov.pg/2024/04/23/jiwaka-province-host-highlands-regional-census-workshop/feed/ application/rss+xml 200
+https://www.nso.gov.pg/2025/03/20/correcting-misinformation-on-census-materials/ text/html 200
+https://www.nso.gov.pg/2025/03/20/correcting-misinformation-on-census-materials/embed/ text/html 200
+https://www.nso.gov.pg/2025/03/20/correcting-misinformation-on-census-materials/?utm_source=chatgpt.com text/html 200
+https://www.nso.gov.pg/33-news-and-updates/86-census-2020-ministerial-statement text/html 404
+http://www.nso.gov.pg/71-household-income-n-expenditure-census-2009-2010 unk 302
+http://www.nso.gov.pg/71-household-income-n-expenditure-census-2009-2010?tmpl=component&print=1&layout=default&page= unk 302
+https://www.nso.gov.pg/category/census/ text/html 200
+https://www.nso.gov.pg/category/census/Captions/Subtitles warc/revisit -
+https://www.nso.gov.pg/category/census/feed/ application/rss+xml 200
+https://www.nso.gov.pg/category/census/j9u.Mae0ROy warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.afrikaans warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.albanian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.arabic warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.audio-player warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.belarusian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.bulgarian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.captions-chapters warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.captions-subtitles warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.catalan warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.chinese warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.chinese-simplified warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.chinese-traditional warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.croatian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.czech warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.danish warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.download-file warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.dutch warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.english warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.estonian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.filipino text/html 404
+https://www.nso.gov.pg/category/census/mejs.finnish warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.french warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.fullscreen warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.galician warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.german warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.greek warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.haitian-creole warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.hebrew warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.hindi warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.hungarian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.icelandic warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.indonesian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.install-flash warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.irish warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.italian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.japanese warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.korean warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.latvian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.lithuanian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.live-broadcast warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.macedonian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.malay warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.maltese warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.mute warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.none warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.norwegian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.pause warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.persian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.play warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.polish warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.portuguese warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.romanian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.russian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.serbian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.slovak warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.slovenian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.spanish warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.swahili warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.swedish warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.tagalog warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.thai warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.time-help-text warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.time-slider warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.turkish warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.ukrainian warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.unmute warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.video-player warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.vietnamese warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.volume-help-text warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.volume-slider warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.welsh warc/revisit -
+https://www.nso.gov.pg/category/census/mejs.yiddish text/html 404
+https://www.nso.gov.pg/category/census/page/2/ text/html 404
+https://www.nso.gov.pg/category/census/page/2/Captions/Subtitles warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/j9u.Mae0ROy warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.afrikaans warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.albanian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.arabic warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.audio-player warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.belarusian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.bulgarian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.captions-chapters warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.captions-subtitles warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.catalan warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.chinese warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.chinese-simplified warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.chinese-traditional warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.croatian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.czech warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.danish text/html 404
+https://www.nso.gov.pg/category/census/page/2/mejs.download-file warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.dutch warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.english warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.estonian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.filipino warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.finnish warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.french warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.fullscreen warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.galician warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.german warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.greek warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.haitian-creole warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.hebrew warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.hindi warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.hungarian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.icelandic warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.indonesian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.install-flash warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.irish warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.italian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.japanese warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.korean warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.latvian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.lithuanian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.live-broadcast warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.macedonian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.malay warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.maltese warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.mute warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.none warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.norwegian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.pause warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.persian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.play warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.polish warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.portuguese warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.romanian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.russian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.serbian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.slovak warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.slovenian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.spanish text/html 404
+https://www.nso.gov.pg/category/census/page/2/mejs.swahili warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.swedish warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.tagalog warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.thai warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.time-help-text warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.time-slider warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.turkish warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.ukrainian warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.unmute warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.video-player warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.vietnamese warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.volume-help-text warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.volume-slider warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.welsh warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/mejs.yiddish warc/revisit -
+https://www.nso.gov.pg/category/census/page/2/?et_blog text/html 200
+https://www.nso.gov.pg/category/census/page/3/ text/html 404
+https://www.nso.gov.pg/category/census/page/3/?et_blog text/html 200
+https://www.nso.gov.pg/category/census2020/ text/html 200
+https://www.nso.gov.pg/category/census2020/Captions/Subtitles warc/revisit -
+https://www.nso.gov.pg/category/census2020/feed/ application/rss+xml 200
+https://www.nso.gov.pg/category/census2020/j9u.Mae0ROy warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.afrikaans warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.albanian warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.arabic warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.audio-player warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.belarusian warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.bulgarian warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.captions-chapters warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.captions-subtitles warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.catalan warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.chinese warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.chinese-simplified warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.chinese-traditional warc/revisit -
+https://www.nso.gov.pg/category/census2020/mejs.croatian warc/revisit -
 
---- page 26 ----------------------------------------------------
-2008 Census of Population of DPR Korea
-20
-Table 2.  Population by Sex and by Urban-Rural,  by City/District/County and Province
-Province and
-City/District/
-County
-All Areas Urban Rural
-Both Sexes Male Female Both Sexes Male Female Both Sexes Male Female
-Songgan   92 952   43 738   49 214   72 116   33 966   38 150   20 836   9 772   11 064
-Janggang   54 601   26 013   28 588   23 196   11 001   12 195   31 405   15 012   16 393
-Hwaphyong   42 183   20 092   22 091   18 569   8 850   9 719   23 614   11 242   12 372
-Junggang   41 022   19 344   21 678   18 793   8 829   9 964   22 229   10 515   11 714
-Jasong   50 939   24 216   26 723   25 407   12 042   13 365   25 532   12 174   13 358
-Sijung   41 842   19 840   22 002   11 257   5 229   6 028   30 585   14 611   15 974
-Wiwon   60 245   28 637   31 608   19 297   9 070   10 227   40 948   19 567   21 381
-Chosan   43 614   20 866   22 748   12 136   5 748   6 388   31 478   15 118   16 360
-Usi   42 919   20 176   22 743   17 138   8 095   9 043   25 781   12 081   13 700
-Kophung   31 572   15 095   16 477   10 589   5 019   5 570   20 983   10 076   10 907
-Songwon   38 051   17 999   20 052   10 818   5 037   5 781   27 233   12 962   14 271
-Tongsin   47 460   22 285   25 175   8 737   4 086   4 651   38 723   18 199   20 524
-Ryongrim   32 727   15 442   17 285   7 327   3 404   3 923   25 400   12 038   13 362
-North Phyongan
-Total  2 728 662  1 291 443  1 437 219  1 431 936   677 207   754 729  1 296 726   614 236   682 490
-Sinuiju City   359 341   170 004   189 337   334 031   158 139   175 892   25 310   11 865   13 445
-Jongju City   189 742   89 494   100 248   102 659   48 423   54 236   87 083   41 071   46 012
-Kusong City   196 515   93 212   103 303   155 181   73 677   81 504   41 334   19 535   21 799
-Pyokdong   35 601   16 945   18 656   8 525   4 031   4 494   27 076   12 914   14 162
-Phihyon   110 637   52 901   57 736   48 812   23 460   25 352   61 825   29 441   32 384
-Ryongchon   135 634   64 061   71 573   69 151   32 745   36 406   66 483   31 316   35 167
-Yomju   113 620   53 665   59 955   44 561   21 078   23 483   69 059   32 587   36 472
-Cholwon   85 525   40 409   45 116   29 054   13 691   15 363   56 471   26 718   29 753
-Tongrim   104 614   49 410   55 204   49 151   23 169   25 982   55 463   26 241   29 222
-Sonchon   126 350   59 741   66 609   31 847   14 920   16 927   94 503   44 821   49 682
-Kwaksan   97 660   46 235   51 425   22 739   10 724   12 015   74 921   35 511   39 410
-Unjon   101 130   47 566   53 564   25 912   12 217   13 695   75 218   35 349   39 869
-Pakchon   98 128   46 093   52 035   29 277   13 581   15 696   68 851   32 512   36 339
-Nyongbyon   113 852   54 007   59 845   29 998   14 090   15 908   83 854   39 917   43 937
-Kujang   139 337   65 457   73 880   91 900   43 034   48 866   47 437   22 423   25 014
-Hyangsan   52 350   24 705   27 645   22 657   10 628   12 029   29 693   14 077   15 616
-Unsan   102 928   48 907   54 021   36 482   17 291   19 191   66 446   31 616   34 830
-Thaechon   108 894   51 712   57 182   30 802   14 576   16 226   78 092   37 136   40 956
-Chonma   50 462   23 979   26 483   22 662   10 724   11 938   27 800   13 255   14 545
-Uiju   110 018   52 185   57 833   57 229   27 113   30 116   52 789   25 072   27 717
-Sakju   159 707   75 791   83 916   119 101   56 411   62 690   40 606   19 380   21 226
-Taegwan   69 565   33 374   36 191   38 274   18 478   19 796   31 291   14 896   16 395
-Changsong   26 577   12 574   14 003   13 187   6 228   6 959   13 390   6 346   7 044
-Tongchang   28 665   13 527   15 138   10 031   4 692   5 339   18 634   8 835   9 799
-Sindo   11 810   5 489   6 321   8 713   4 087   4 626   3 097   1 402   1 695
-South Phyongan
-Total  4 051 696  1 928 935  2 122 761  2 629 943  1 253 805  1 376 138  1 421 753   675 130   746 623
-Phyongsong City   284 386   138 687   145 699   236 583   115 817   120 766   47 803   22 870   24 933
-Nampho City   366 815   176 767   190 048   310 864   150 091   160 773   55 951   26 676   29 275
-Anju City   240 117   113 526   126 591   167 646   79 187   88 459   72 471   34 339   38 132
-Kaechon City   319 554   151 088   168 466   262 389   124 222   138 167   57 165   26 866   30 299
-Sunchon City   297 317   141 806   155 511   250 738   119 727   131 011   46 579   22 079   24 500
-Tokchon City   237 133   112 373   124 760   210 571   99 655   110 916   26 562   12 718   13 844
-
---- page 27 ----------------------------------------------------
-2008 Census of Population of DPR Korea
-21
-Table 2.  Population by Sex and by Urban-Rural,  by City/District/County and Province
-Province and
-City/District/
-County
-All Areas Urban Rural
-Both Sexes Male Female Both Sexes Male Female Both Sexes Male Female
-Taedong   129 761   61 953   67 808   50 380   24 023   26 357   79 381   37 930   41 451
-Jungsan   113 613   54 292   59 321   23 578   11 203   12 375   90 035   43 089   46 946
-Onchon   149 851   71 236   78 615   83 934   39 882   44 052   65 917   31 354   34 563
-Ryonggang   58 930   27 817   31 113   20 045   9 434   10 611   38 885   18 383   20 502
-Taean   77 219   37 265   39 954   66 261   31 924   34 337   10 958   5 341   5 617
-Kangso   191 356   90 625   100 731   119 848   57 005   62 843   71 508   33 620   37 888
-Chollima   139 489   66 145   73 344   102 436   48 478   53 958   37 053   17 667   19 386
-Phyongwon   179 492   85 096   94 396   51 909   24 486   27 423   127 583   60 610   66 973
-Sukchon   178 509   84 552   93 957   41 377   19 466   21 911   137 132   65 086   72 046
-Mundok   147 191   69 164   78 027   44 159   20 699   23 460   103 032   48 465   54 567
-Songchon   149 809   71 246   78 563   82 938   39 431   43 507   66 871   31 815   35 056
-Sinyang   59 115   28 112   31 003   28 120   13 410   14 710   30 995   14 702   16 293
-Yangdok   61 355   29 037   32 318   19 212   9 056   10 156   42 143   19 981   22 162
-Unsan   206 407   98 067   108 340   142 695   67 964   74 731   63 712   30 103   33 609
-Pukchang   139 498   66 412   73 086   111 223   52 901   58 322   28 275   13 511   14 764
-Maengsan   48 155   23 071   25 084   13 642   6 506   7 136   34 513   16 565   17 948
-Hoechang   89 959   42 284   47 675   56 286   26 439   29 847   33 673   15 845   17 828
-Nyongwon   30 427   14 603   15 824   11 537   5 505   6 032   18 890   9 098   9 792
-Taehung   32 915   15 584   17 331   14 362   6 776   7 586   18 553   8 808   9 745
-Chongnam   73 290   34 338   38 952   64 404   30 141   34 263   8 886   4 197   4 689
-Tukjang   50 033   23 789   26 244   42 806   20 377   22 429   7 227   3 412   3 815
-North Hwanghae
-Total  2 113 672  1 003 112  1 110 560   972 632   461 240   511 392  1 141 040   541 872   599 168
-Sariwon City   307 764   147 135   160 629   271 434   130 181   141 253   36 330   16 954   19 376
-Songrim City   128 831   60 634   68 197   95 878   45 035   50 843   32 953   15 599   17 354
-Kaesong City   308 440   146 145   162 295   192 578   90 653   101 925   115 862   55 492   60 370
-Jangphung   69 104   32 991   36 113   15 832   7 473   8 359   53 272   25 518   27 754
-Hwangju   155 215   73 318   81 897   35 678   16 699   18 979   119 537   56 619   62 918
-Yonthan   73 032   34 796   38 236   21 709   10 313   11 396   51 323   24 483   26 840
-Pongsan   124 745   58 668   66 077   33 063   15 588   17 475   91 682   43 080   48 602
-Unpha   110 988   51 914   59 074   39 645   18 511   21 134   71 343   33 403   37 940
-Rinsan    73 626   35 094   38 532   18 938   9 049   9 889   54 688   26 045   28 643
-Sohung   100 887   47 616   53 271   29 383   13 810   15 573   71 504   33 806   37 698
-Suan   76 890   36 709   40 181   22 615   10 734   11 881   54 275   25 975   28 300
-Yonsan   66 568   31 543   35 025   32 976   15 597   17 379   33 592   15 946   17 646
-Sinphyong   63 727   30 234   33 493   32 519   15 252   17 267   31 208   14 982   16 226
-Koksan   120 693   57 252   63 441   16 301   7 755   8 546   104 392   49 497   54 895
-Sinkye   78 573   37 153   41 420   24 183   11 294   12 889   54 390   25 859   28 531
-Phyongsan   123 646   59 480   64 166   57 601   28 087   29 514   66 045   31 393   34 652
-Kumchon   68 216   32 494   35 722   16 035   7 552   8 483   52 181   24 942   27 239
-Thosan   62 727   29 936   32 791   16 264   7 657   8 607   46 463   22 279   24 184
-South Hwanghae
-Total  2 310 485  1 090 956  1 219 529   821 954   388 804   433 150  1 488 531   702 152   786 379
-Haeju City   273 300   131 554   141 746   241 599   116 594   125 005   31 701   14 960   16 741
-Kangryong    106 827   50 342   56 485   38 729   18 180   20 549   68 098   32 162   35 936
-Ongjin   152 878   71 997   80 881   66 263   30 991   35 272   86 615   41 006   45 609
-Thaethan   64 258   30 351   33 907   17 351   8 178   9 173   46 907   22 173   24 734
-Jangyon   91 422   42 885   48 537   43 542   20 234   23 308   47 880   22 651   25 229
-Samchon   86 042   40 596   45 446   26 734   12 482   14 252   59 308   28 114   31 194
-
---- page 28 ----------------------------------------------------
-2008 Census of Population of DPR Korea
-22
-Table 2.  Population by Sex and by Urban-Rural,  by City/District/County and Province
-Province and
-City/District/
-County
-All Areas Urban Rural
-Both Sexes Male Female Both Sexes Male Female Both Sexes Male Female
-Songhwa   44 274   20 917   23 357   13 936   6 623   7 313   30 338   14 294   16 044
-Unryul   107 997   50 759   57 238   33 947   15 813   18 134   74 050   34 946   39 104
-Unchon   95 597   44 864   50 733   20 164   9 480   10 684   75 433   35 384   40 049
-Anak   125 924   58 870   67 054   28 314   13 288   15 026   97 610   45 582   52 028
-Sinchon   141 407   66 406   75 001   33 702   15 733   17 969   107 705   50 673   57 032
-Jaeryong   125 631   59 212   66 419   39 387   18 686   20 701   86 244   40 526   45 718
-Sinwon   83 161   38 970   44 191   26 321   12 261   14 060   56 840   26 709   30 131
-Pongchon   79 740   37 795   41 945   18 273   8 639   9 634   61 467   29 156   32 311
-Paechon   159 825   75 598   84 227   40 316   18 953   21 363   119 509   56 645   62 864
-Yonan   158 845   75 005   83 840   28 097   13 039   15 058   130 748   61 966   68 782
-Chongdan   142 607   67 478   75 129   34 045   16 165   17 880   108 562   51 313   57 249
-Ryongchon   90 102   42 324   47 778   28 052   13 182   14 870   62 050   29 142   32 908
-Kwail   89 895   42 213   47 682   22 519   10 540   11 979   67 376   31 673   35 703
-Phyoksong   90 753   42 820   47 933   20 663   9 743   10 920   70 090   33 077   37 013
-Pyongyang
-Total  3 255 288  1 549 778  1 705 510  2 823 414  1 347 210  1 476 204   431 874   202 568   229 306
-Central Dist.   131 333   66 371   64 962   131 333   66 371   64 962   -   -   -
-Mangyongdae Dist.   321 690   153 551   168 139   315 955   150 794   165 161   5 735   2 757   2 978
-Sonkyo Dist.   148 209   68 976   79 233   148 209   68 976   79 233   -   -   -
-Phyongchon Dist.   181 142   86 225   94 917   181 142   86 225   94 917   -   -   -
-Tongdaewon Dist.   143 561   69 566   73 995   143 561   69 566   73 995   -   -   -
-Ryongsong Dist.   195 891   93 106   102 785   195 891   93 106   102 785   -   -   -
-Unjong Dist.   47 569   23 831   23 738   47 569   23 831   23 738   -   -   -
-Taesong Dist.   115 739   55 922   59 817   115 739   55 922   59 817   -   -   -
-Moranbong Dist.   143 404   68 129   75 275   143 404   68 129   75 275   -   -   -
-Sosong Dist.   147 138   70 556   76 582   147 138   70 556   76 582   -   -   -
-Pothonggang Dist.   105 180   50 423   54 757   105 180   50 423   54 757   -   -   -
-Taedonggang Dist.   207 081   99 444   107 637   207 081   99 444   107 637   -   -   -
-Sadong Dist.   140 869   66 600   74 269   101 285   47 904   53 381   39 584   18 696   20 888
-Hyongjesan Dist.   160 032   75 785   84 247   145 772   69 087   76 685   14 260   6 698   7 562
-Sunan Dist.   91 791   43 143   48 648   44 229   20 810   23 419   47 562   22 333   25 229
-Samsok Dist.   62 790   29 695   33 095   31 755   15 068   16 687   31 035   14 627   16 408
-Sungho Dist.   85 624   40 044   45 580   59 291   27 744   31 547   26 333   12 300   14 033
-Ryokpho Dist.   82 548   38 432   44 116   60 922   28 366   32 556   21 626   10 066   11 560
-Rakrang Dist.   282 681   134 766   147 915   255 620   121 443   134 177   27 061   13 323   13 738
-Kangnam    69 279   32 144   37 135   19 254   9 053   10 201   50 025   23 091   26 934
-Junghwa    77 367   36 156   41 211   26 771   12 550   14 221   50 596   23 606   26 990
-Sangwon    92 831   43 021   49 810   35 941   16 764   19 177   56 890   26 257   30 633
-Kangdong   221 539   103 892   117 647   160 372   75 078   85 294   61 167   28 814   32 353
-Note:  Includes all individuals living in private households and  institutional living quarters
-
---- page 29 ----------------------------------------------------
-2008 Census of Population of DPR Korea
-23
-Table 3.  Number of  Localities and Population  by Population Size-Class of Locality
-Province and Size-Class of Locality  Number of
-Localities
-Population by Sex
-Both  Sexes Male Female
-DPR Korea
- Total  3 339  23 349 859  11 059 489   12 290 370
-  1 000 000+   1  2 581 076  1 233 765   1 347 311
-  500 000 -  999 999   2  1 318 502    626 908     691 594
-  100 000 - 499 999     20  4 312 264  2 054 063   2 258 201
-  30 000 - 99 999     23  1 064 274    501 125     563 149
-  20 000 -29 999     63  1 507 828    711 581     796 247
-  15 000 -19 999     57    982 107    463 353     518 754
-  10 000 - 14 999    130  1 570 910    740 937     829 973
-  7 500 - 9 999    123  1 049 416    494 816     554 600
-  5 000 - 7 499    290  1 728 052    814 365     913 687
-  4 000 - 4 999    373  1 667 033    787 873     879 160
-  3 000 - 3 999    605  2 088 857    986 412   1 102 445
-  2 000 - 2 999    969  2 425 182  1 145 821   1 279 361
-  1 000 - 1 999    636  1 017 433    481 102     536 331
-  <1 000     47  36 925  17 368   19 557
-Ryanggang
- Total   182    719 269    338 705     380 564
-  1 000 000+    -  -  -   -
-  500 000 -  999 999    -  -  -   -
-  100 000 - 499 999   1    174 015  82 604   91 411
-  30 000 - 99 999    -  -  -   -
-  20 000 -29 999    -  -  -   -
-  15 000 -19 999   1  16 704   7 833    8 871
-  10 000 - 14 999   6  67 035  31 466   35 569
-  7 500 - 9 999   8  70 082  32 796   37 286
-  5 000 - 7 499     14  81 978  38 398   43 580
-  4 000 - 4 999   7  31 479  14 746   16 733
-  3 000 - 3 999     18  63 011  29 470   33 541
-  2 000 - 2 999     41    100 740  47 563   53 177
-  1 000 - 1 999     65  99 145  46 807   52 338
-  <1 000     21  15 080   7 022    8 058
-North Hamgyong
-  Total   310  2 327 362  1 100 172   1 227 190
-  1 000 000+    -  -  -   -
-  500 000 -  999 999    1   614 892    292 741    322 151
-  100 000 - 499 999    2   313 621   147 910   165 711
-  30 000 - 99 999   1  92 494  43 364   49 130
-  20 000 -29 999   4  86 752  41 169   45 583
-  15 000 -19 999   9    146 685  69 116   77 569
-  10 000 - 14 999     16    201 180  94 755     106 425
-  7 500 - 9 999     10  87 881  41 663   46 218
-  5 000 - 7 499     25    155 520  73 363   82 157
-  4 000 - 4 999     35    159 356  75 084   84 272
-  3 000 - 3 999     30  99 595  47 141   52 454
-  2 000 - 2 999    103    253 001    119 071     133 930
-  1 000 - 1 999     72    114 535  53 919   60 616
-  <1 000   2   1 850  876   974
