@@ -1,130 +1,20 @@
-page: https://stats-nsi-stable.pacificdata.org/rest/dataflow/SPC
-  357,137 bytes
-  127 distinct match(es) for 'Dataflow.id=.[A-Z_0-9]+'
-    Dataflow id="DF_ADBKI
-    Dataflow id="DF_AGRICULTURAL_PRODUCTION
-    Dataflow id="DF_AGRICULTURE_HIES
-    Dataflow id="DF_BOP
-    Dataflow id="DF_BP50
-    Dataflow id="DF_BP50_1
-    Dataflow id="DF_BP50_2
-    Dataflow id="DF_BP50_3
-    Dataflow id="DF_BP50_4
-    Dataflow id="DF_BP50_5
-    Dataflow id="DF_BP50_6
-    Dataflow id="DF_BP50_7
-    Dataflow id="DF_CIVIL_REGISTRATION
-    Dataflow id="DF_CLIMATE_CHANGE
-    Dataflow id="DF_COMMODITY_PRICES
-    Dataflow id="DF_COVID
-    Dataflow id="DF_COVID_VACCINATION
-    Dataflow id="DF_CPI
-    Dataflow id="DF_CROPS
-    Dataflow id="DF_CURRENCIES
-    Dataflow id="DF_CYBERLAW
-    Dataflow id="DF_DIGITAL_DEVELOPMENT
-    Dataflow id="DF_DISABILITY
-    Dataflow id="DF_ECOLEAD
-    Dataflow id="DF_EDUCATION
-    Dataflow id="DF_EGOV
-    Dataflow id="DF_EMPLOYED
-    Dataflow id="DF_EMPLOYED_FTPT
-    Dataflow id="DF_EMPLOYED_HHCOMP
-    Dataflow id="DF_EMPLOYED_OCCUPATION
-    Dataflow id="DF_EMPLOYED_SECTOR
-    Dataflow id="DF_EMPRATES
-    Dataflow id="DF_ENERGY
-    Dataflow id="DF_ENV_TAXES
-    Dataflow id="DF_FISHING_LOCATION_HIES
-    Dataflow id="DF_FISHING_METHOD_HIES
-    Dataflow id="DF_FOOD_NUTRIENTS
-    Dataflow id="DF_FOOD_SECURITY_HIES_1
-    Dataflow id="DF_FOOD_SECURITY_HIES_2
-    Dataflow id="DF_FOOD_SECURITY_HIES_3
-    Dataflow id="DF_FOOD_SECURITY_PHC_1
-    Dataflow id="DF_FOOD_SECURITY_PHC_2
-    Dataflow id="DF_FOOD_SECURITY_PHC_3
-    Dataflow id="DF_GFS
-    Dataflow id="DF_GWG
-    Dataflow id="DF_HEALTH
-    Dataflow id="DF_HEALTH_FACILITIES
-    Dataflow id="DF_HHCOUNTS
-    Dataflow id="DF_HHEXP
-    Dataflow id="DF_HHHEAD
-    Dataflow id="DF_HRMI
-    Dataflow id="DF_IMFFAS
-    Dataflow id="DF_IMTS
-    Dataflow id="DF_KAVA
-    Dataflow id="DF_KEYFACTS
-    Dataflow id="DF_LABEMP
-    Dataflow id="DF_LAND_USE
-    Dataflow id="DF_LIVESTOCK
-    Dataflow id="DF_MARITAL_STATUS
-    Dataflow id="DF_METEO_MONITOR_NET
-    Dataflow id="DF_MICS
-    Dataflow id="DF_NATIONAL_ACCOUNTS
-    Dataflow id="DF_NCSI
-    Dataflow id="DF_NEET
-    Dataflow id="DF_NMDI
-    Dataflow id="DF_NMDI_DEV
-    Dataflow id="DF_NMDI_EDU
-    Dataflow id="DF_NMDI_FIS
-    Dataflow id="DF_NMDI_HEA
-    Dataflow id="DF_NMDI_INF
-    Dataflow id="DF_NMDI_OTH
-    Dataflow id="DF_NMDI_POP
-    Dataflow id="DF_OLYMPICS
-    Dataflow id="DF_OVERSEAS_VISITORS
-    Dataflow id="DF_PACCOMTRADE_KI_HS2022
-    Dataflow id="DF_PACCOMTRADE_TO_HS2017
-    Dataflow id="DF_PACCOMTRADE_TV_HS2022
-    Dataflow id="DF_PAM
-    Dataflow id="DF_POCKET
-    Dataflow id="DF_POP_AGE
-    Dataflow id="DF_POP_COAST
-    Dataflow id="DF_POP_DENSITY
-    Dataflow id="DF_POP_LECZ
-    Dataflow id="DF_POP_PROJ
-    Dataflow id="DF_POP_SEX
-    Dataflow id="DF_POP_URBAN
-    Dataflow id="DF_POWER_GEN
-    Dataflow id="DF_PRISON
-    Dataflow id="DF_PUBLIC_DEBT
-    Dataflow id="DF_RESERVES
-    Dataflow id="DF_REVENUE
-    Dataflow id="DF_SAM_CATCH
-    Dataflow id="DF_SDG
-    Dataflow id="DF_SDG_01
-    Dataflow id="DF_SDG_02
-    Dataflow id="DF_SDG_03
-    Dataflow id="DF_SDG_04
-    Dataflow id="DF_SDG_05
-    Dataflow id="DF_SDG_06
-    Dataflow id="DF_SDG_07
-    Dataflow id="DF_SDG_08
-    Dataflow id="DF_SDG_09
-    Dataflow id="DF_SDG_10
-    Dataflow id="DF_SDG_11
-    Dataflow id="DF_SDG_12
-    Dataflow id="DF_SDG_13
-    Dataflow id="DF_SDG_14
-    Dataflow id="DF_SDG_15
-    Dataflow id="DF_SDG_16
-    Dataflow id="DF_SDG_17
-    Dataflow id="DF_SOCECO
-    Dataflow id="DF_STRI
-    Dataflow id="DF_TOURISM_ARRIVALS
-    Dataflow id="DF_TOURISM_EARNINGS
-    Dataflow id="DF_TRADE_FOOD
-    Dataflow id="DF_TRADE_ICT
-    Dataflow id="DF_TRADE_SERVICES
-    Dataflow id="DF_UIS
-    Dataflow id="DF_UPU
-    Dataflow id="DF_VAW
-    Dataflow id="DF_VITAL
-    Dataflow id="DF_WASH
-    Dataflow id="DF_WASTE
-    Dataflow id="DF_WBDAI
-    Dataflow id="DF_WBWDI
-    Dataflow id="DF_WBWGI
-    Dataflow id="DF_YOUTH_PARL
+page: https://nso.mn/en
+  63,708 bytes
+  6 distinct match(es) for 'https?://[a-zA-Z0-9.-]+[.]mn[a-zA-Z0-9/_.-]*'
+    https://data.nso.mn
+    https://iaac.mn/
+    https://metadata.nso.mn
+    https://www.1212.mn
+    https://www.1212.mn/en/terms_of_use
+    https://www.1212.mn/images/logo.png
+page: https://nso.mn/mn
+  63,677 bytes
+  6 distinct match(es) for 'https?://[a-zA-Z0-9.-]+[.]mn[a-zA-Z0-9/_.-]*'
+    https://data.nso.mn
+    https://iaac.mn/
+    https://metadata.nso.mn
+    https://www.1212.mn
+    https://www.1212.mn/images/logo.png
+    https://www.1212.mn/mn/terms_of_use
+page: https://www.1212.mn/en
+  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
