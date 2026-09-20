@@ -1,22 +1,15 @@
 /home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
   certs = pkcs7.load_der_pkcs7_certificates(blob)
-  https://nso.mn/_next/static/chunks/main-app-39d5fee3178c2fe7.js
-    529 chars
-    0 distinct match(es) for 'https?://[a-zA-Z0-9._-]+[a-zA-Z0-9]'
-  https://nso.mn/_next/static/chunks/app/layout-c5ded9c4f17a20db.js
-    13,648 chars
-    0 distinct match(es) for 'https?://[a-zA-Z0-9._-]+[a-zA-Z0-9]'
-  https://nso.mn/_next/static/chunks/9185-1728d5cf8a80b848.js
-    33,756 chars
-    1 distinct match(es) for 'https?://[a-zA-Z0-9._-]+[a-zA-Z0-9]'
-      http://localhost
-  https://nso.mn/_next/static/chunks/3392-2da6f28da79efec1.js
-    22,002 chars
-    0 distinct match(es) for 'https?://[a-zA-Z0-9._-]+[a-zA-Z0-9]'
-  https://nso.mn/_next/static/chunks/9304-8d5d436fe7c94e16.js
-    22,629 chars
-    0 distinct match(es) for 'https?://[a-zA-Z0-9._-]+[a-zA-Z0-9]'
-  https://nso.mn/_next/static/chunks/8536-954c6ced45b4f121.js
-    9,934 chars
-    1 distinct match(es) for 'https?://[a-zA-Z0-9._-]+[a-zA-Z0-9]'
-      http://www.w3.org
+  https://nso.mn/api/Sector?type=json
+    unreachable: HTTPError: HTTP Error 404: Not Found
+  https://www.1212.mn/api/Sector?type=json
+    unreachable: HTTPError: HTTP Error 404: Not Found
+  https://opendata.nso.mn/api/Sector?type=json
+    unreachable: gaierror: [Errno -2] Name or service not known
+  https://api.nso.mn/api/Sector?type=json
+    unreachable: gaierror: [Errno -2] Name or service not known
+  https://data.nso.mn/api/Sector?type=json
+    6,234 chars
+    <!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/css/d5a5a9907db65512.css" data-precedence="next"/><link rel="stylesheet" href="/_next/static/css/ecfecee9bb8a5499.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-d4455b836afe1b8d.js"/><script src="/_next/static/chunks/fd9d1056-5d42441820cdcd7d.js" async=""></script><script src="/_next/static/chunks/2117-6c37379626ea5748.js" async=""></script><script src="/_next/static/chunks/main-app-8aeafa261489059b.js" async=""></script><script src="/_next/static/chunks/3448-c3ab3851a8577eb9.js" async=""></script><script src="/_next/static/chunks/8667-29050c6d34989a3e.js" async=""></script><script src="/_next/static/chunks/7617-9e9e8fa31532d8df.js" 
+  https://opendata.1212.mn/api/Sector?type=json
+    unreachable: gaierror: [Errno -2] Name or service not known
