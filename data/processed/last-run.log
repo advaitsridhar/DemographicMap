@@ -1,8 +1,64 @@
-  https://www.nso.gov.pg/wpfd_file/02_2022_png_sdes_demographic-characteristics/
-    62,744 chars
-    1 distinct match(es) for 'https://www.nso.gov.pg/download/[a-zA-Z0-9/?=&%._~-]+'
-      https://www.nso.gov.pg/download/146/indicators/4394/02_2022_png_sdes_demographic-characteristics.xlsx
-  https://www.nso.gov.pg/wpfd_file/01_2022_png_sdes_population/
-    62,591 chars
-    1 distinct match(es) for 'https://www.nso.gov.pg/download/[a-zA-Z0-9/?=&%._~-]+'
-      https://www.nso.gov.pg/download/146/indicators/4393/01_2022_png_sdes_population.xlsx
+probe_xlsx: https://www.nso.gov.pg/download/146/indicators/4394/02_2022_png_sdes_demographic-characteristics.xlsx
+  34,609 bytes
+  5 sheet(s): T2.1, T2.2, T2.3, T2.4, T2.5
+
+--- sheet 'T2.1' (7 rows x 12 cols) --------------------
+  Table 2.1 - Percentage distrib
+  Area | Both Sexes |  | Male | Female
+   | Number ('000) 1 | Percent
+  Total | 2411.784 | 100 | 84.25041380156763 | 15.749627661515293
+  Urban | 356.249 | 100 | 78.95797602238883 | 21.042023977611166
+  Rural | 2055.536 | 100 | 85.16761564866779 | 14.832384351332205
+
+--- sheet 'T2.2' (20 rows x 11 cols) --------------------
+  Table 2.2 - Percent distributi
+  Relationship to Household Head | Total |  |  | Urban |  |  | Rural
+   | Both Sexes | Male | Female | Both Sexes | Male | Female | Both Sexes | Male | Female
+  Total ('000) 1 | 12353.43 | 6385.994 | 5967.436 | 2055.041 | 1061.543 | 993.498 | 10298.389 | 5324.451 | 4973.938
+  Per cent | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100
+  Head | 19.52319315364235 | 31.81866440839124 | 6.365330101571261 | 17.335371897689633 | 26.49793743635444 | 7.5452592758113255 | 19.959782059116236 | 32.8794649438975 | 6.129650188643284
+
+--- sheet 'T2.3' (47 rows x 22 cols) --------------------
+  Table 2.3 - Percent distributi
+  Area and Age Group | Both Sexes |  |  |  |  |  |  | Male |  |  |  |  |  |  | Female
+   | Total |  | Never married | Married/living together | Separated | Divorced | Widowed | Total |  | Never married | Married/living together | Separated | Divorced | Widowed | Total |  | Never married | Married/living together | Separated | Divorced | Widowed
+   | Number ('000) 1 | Percent |  |  |  |  |  | Number ('000) 1 | Percent |  |  |  |  |  | Number ('000) 1 | Percent
+  Total | 9378.171 | 100 | 44.34812502352538 | 48.1531740037583 | 2.977702155356306 | 0.9795086909803628 | 3.541490126379653 | 4821.79 | 100 | 50.285620070554714 | 45.7095186642305 | 1.7530004417446634 | 0.6270700300096023 | 1.6248115326465897 | 4556.381 | 100 | 38.06474919459106 | 50.73919411041351 | 4.273742691842495 | 1.3524768890046728 | 5.569815166905489
+  10 - 14 | 1469.331 | 100 | 99.95984567126128 | 0.04015432873872531 | - | - | - | 782.384 | 100 | 99.92458945990715 | 0.07541054009284444 | - | - | - | 686.947 | 100 | 100 | - | - | - | -
+
+--- sheet 'T2.4' (21 rows x 10 cols) --------------------
+  Table 2.4 - Percent distributi
+  Religion | Total |  |  | Urban |  |  | Rural
+   | Both Sexes | Male | Female | Both Sexes | Male | Female | Both Sexes | Male | Female
+  Total ('000) 1 | 12353.43 | 6385.994 | 5967.436 | 2055.041 | 1061.543 | 993.498 | 10298.389 | 5324.451 | 4973.938
+  Percent | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100
+  Roman Catholic | 25.755810329600763 | 25.97719321377377 | 25.518899574289527 | 20.62542791117063 | 20.98916388690802 | 20.236779540572805 | 26.77957688333583 | 26.971644588334083 | 26.573954078237406
+
+--- sheet 'T2.5' (10 rows x 11 cols) --------------------
+  Table 2.5 - Percentage distrib
+  Area | Children 0-18 years old |  | Living Status of Father |  |  | Living Status of Mother
+   | Total ('000) 1 | Percent | Alive | Dead | Don't know | Alive |  |  | Dead | Don't know
+   |  |  |  |  |  | Total | Part of the household | Not part of the household
+  Total | 5568.375 | 100 | 94.66029137764608 | 5.219009136417716 | 0.12068152737558085 | 97.42449098704739 | 87.37913664219813 | 10.04537230340988 | 2.547170404292096 | *
+  Urban | 832.488 | 100 | 95.03392241089361 | 4.762591172485369 | 0.2033662947694141 | 97.20692670645103 | 87.33447208848656 | 9.872454617964463 | 2.79295317169737 | -
+
+probe_xlsx: https://www.nso.gov.pg/download/146/indicators/4393/01_2022_png_sdes_population.xlsx
+  15,059 bytes
+  2 sheet(s): T1.1, T1.2
+
+--- sheet 'T1.1' (22 rows x 12 cols) --------------------
+  Table 1.1 - Percentage distrib
+  Age Group | Total |  |  | Urban |  |  | Rural
+   | Both Sexes | Male | Female | Both Sexes | Male | Female | Both Sexes | Male | Female
+  Total ('000) 1 | 12353 | 6386 | 5967 | 2055 | 1062 | 993 | 10298 | 5324 | 4974
+  (Percent) | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100
+  0 - 4 | 11.1371821429352 | 11.291241426158559 | 10.972333846563249 | 9.475723355397776 | 9.566922866054412 | 9.3781769062444 | 11.468725836633283 | 11.635002369258352 | 11.290731810488992
+
+--- sheet 'T1.2' (7 rows x 10 cols) --------------------
+  Table 1.2 - Total population b
+  Area | Age Group 1 |  |  |  | Total Dependency Ratio | Child Dependency Ratio | Old Age Dependency Ratio
+   | Total ('000) | < 15 ('000) | 15 - 64 ('000) | ≥ 65 ('000)
+  Total | 12353 | 4445 | 7484 | 425 | 65.07215392838054 | 59.393372528059864 | 5.678781400320684
+  Urban | 2055 | 654 | 1332 | 69 | 54.27927927927928 | 49.0990990990991 | 5.18018018018018
+  Rural | 10298 | 3791 | 6152 | 356 | 67.40897269180755 | 61.622236671001296 | 5.786736020806242
+
