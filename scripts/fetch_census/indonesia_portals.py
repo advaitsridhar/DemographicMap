@@ -100,7 +100,7 @@ FAITHS: dict[str, str] = {
 # The pair whose order the workbooks disagree about.
 PAIR = ("Protestantism", "Catholicism")
 # A row of the table that is the whole province, or an arithmetic footer.
-NOT_A_UNIT = re.compile(r"^(total|jumlah|provinsi|prov\.?|%|sumber)\b", re.I)
+NOT_A_UNIT = re.compile(r"^(?:%|(?:total|jumlah|provinsi|prov\.?|sumber)\b)", re.I)
 
 
 class Source(NamedTuple):
@@ -114,6 +114,7 @@ class Source(NamedTuple):
     publisher: str
     title: str
     reader: str              # which of the shapes below the file has
+    native: str = ""         # the province as the table writes it: a row, not a unit
     sums_to: str | None = None   # a table by kecamatan is summed to this unit
 
 
@@ -130,6 +131,7 @@ SOURCES: tuple[Source, ...] = (
         publisher="Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat",
         title="Buku Data Kependudukan Semester II 2023, tabel Agama - Jenis Kelamin",
         reader="wide_xlsx",
+        native="Sumatera Barat",
     ),
     Source(
         key="kaltim",
@@ -144,6 +146,7 @@ SOURCES: tuple[Source, ...] = (
         publisher="Kanwil Kementerian Agama Provinsi Kalimantan Timur",
         title="Data Jumlah Pemeluk Agama per Kabupaten/Kota Prov. Kaltim Tahun 2023",
         reader="wide_xlsx",
+        native="Kalimantan Timur",
     ),
     Source(
         key="bengkulu",
@@ -158,6 +161,7 @@ SOURCES: tuple[Source, ...] = (
         publisher="Dinas Kependudukan dan Pencatatan Sipil Provinsi Bengkulu",
         title="Data Jumlah Penduduk Provinsi Bengkulu Menurut Agama Tahun 2024",
         reader="wide_xlsx",
+        native="Provinsi Bengkulu",
     ),
     Source(
         key="tangsel",
@@ -174,6 +178,7 @@ SOURCES: tuple[Source, ...] = (
         publisher="Dinas Kependudukan dan Pencatatan Sipil Kota Tangerang Selatan",
         title="Jumlah Penduduk Menurut Kecamatan dan Agama, Data Konsolidasi Bersih 2021",
         reader="wide_csv",
+        native="Kota Tangerang Selatan",
         sums_to="Kota Tangerang Selatan",
     ),
 )
@@ -229,15 +234,15 @@ def is_total_column(header: str) -> bool:
     return bool(re.search(r"\((?:jml|jumlah)\)\s*$", clean(header), re.I))
 
 
-def rows_from_grid(grid: list[list[Any]], label_column_names: Iterable[str]
-                   ) -> list[tuple[str, dict[str, int]]]:
+def rows_from_grid(grid: list[list[Any]], label_column_names: Iterable[str],
+                   skip: str = "") -> list[tuple[str, dict[str, int]]]:
     """(unit, {faith: count}) for a table whose faiths are its columns.
 
     The header is found by content -- the first row holding a cell that names
     a faith -- because these workbooks put a title, a blank and sometimes a
     numbered "(1) (2) (3)" row above it, and no two of them the same way.
     """
-    wanted = {clean(n).lower() for n in label_column_names}
+    wanted = [clean(n).lower() for n in label_column_names]
     header_at = None
     for i, row in enumerate(grid):
         if sum(1 for cell in row if faith_of(cell)) >= 2:
@@ -246,10 +251,14 @@ def rows_from_grid(grid: list[list[Any]], label_column_names: Iterable[str]
     if header_at is None:
         raise SystemExit("indonesia_portals: no header row naming two faiths")
     header = grid[header_at]
-    label_at = next((j for j, cell in enumerate(header)
-                     if clean(cell).lower() in wanted), None)
+    label_at = None
+    for name in wanted:                       # in priority order, see LABELS
+        label_at = next((j for j, cell in enumerate(header)
+                         if clean(cell).lower() == name), None)
+        if label_at is not None:
+            break
     if label_at is None:
-        raise SystemExit(f"indonesia_portals: no {sorted(wanted)} column in {header}")
+        raise SystemExit(f"indonesia_portals: no unit column in {header}")
     # Where a faith has both halves and a total, the total is redundant; where
     # it has only a total, that is the figure.
     columns: dict[int, str] = {}
@@ -268,7 +277,7 @@ def rows_from_grid(grid: list[list[Any]], label_column_names: Iterable[str]
     out: list[tuple[str, dict[str, int]]] = []
     for row in grid[header_at + 1:]:
         unit = clean(row[label_at]) if label_at < len(row) else ""
-        if not unit or NOT_A_UNIT.match(unit):
+        if not unit or NOT_A_UNIT.match(unit) or (skip and normal(unit) == normal(skip)):
             continue
         counts: dict[str, int] = {}
         for j, faith in columns.items():
@@ -280,29 +289,33 @@ def rows_from_grid(grid: list[list[Any]], label_column_names: Iterable[str]
     return out
 
 
-LABELS = ("wilayah", "kabupaten / kota", "kabupaten/kota", "kabupaten", "kecamatan",
-          "provinsi / kabupaten", "nama kecamatan", "wilayah/kecamatan", "no.",
-          "kabupaten / kota ", "provinsi/kabupaten")
+# Where the unit's name is, most particular first. "No." is deliberately last:
+# three of these four sheets have a row number in their first column, and the
+# East Kalimantan one headed "No. | Kabupaten / Kota" gave ten regencies named
+# 1 to 10 when the first matching column won.
+LABELS = ("kabupaten / kota", "kabupaten/kota", "provinsi / kabupaten",
+          "provinsi/kabupaten", "wilayah/kecamatan", "nama kecamatan",
+          "wilayah", "kabupaten", "kecamatan", "no.")
 
 
-def read_wide_xlsx(payload: bytes) -> list[tuple[str, dict[str, int]]]:
+def read_wide_xlsx(payload: bytes, skip: str = "") -> list[tuple[str, dict[str, int]]]:
     from openpyxl import load_workbook
     book = load_workbook(io.BytesIO(payload), read_only=True, data_only=True)
     sheet = book[book.sheetnames[0]]
     grid = [list(row) for row in sheet.iter_rows(values_only=True)]
     book.close()
-    return rows_from_grid(grid, LABELS)
+    return rows_from_grid(grid, LABELS, skip)
 
 
-def read_wide_csv(payload: bytes) -> list[tuple[str, dict[str, int]]]:
+def read_wide_csv(payload: bytes, skip: str = "") -> list[tuple[str, dict[str, int]]]:
     text = payload.decode("utf-8-sig", "replace")
     sample = text[:4000]
     delimiter = ";" if sample.count(";") > sample.count(",") else ","
     grid = [row for row in csv.reader(io.StringIO(text), delimiter=delimiter)]
-    return rows_from_grid(grid, LABELS)
+    return rows_from_grid(grid, LABELS, skip)
 
 
-READERS: dict[str, Callable[[bytes], list[tuple[str, dict[str, int]]]]] = {
+READERS: dict[str, Callable[..., list[tuple[str, dict[str, int]]]]] = {
     "wide_xlsx": read_wide_xlsx,
     "wide_csv": read_wide_csv,
 }
@@ -318,7 +331,7 @@ def refresh(source: Source) -> list[tuple[str, dict[str, int]]]:
     and faith, so a later reading can be diffed against this one."""
     payload = fetch(source.url)
     log(f"  {source.key}: {len(payload):,} bytes from {source.host}")
-    rows = READERS[source.reader](payload)
+    rows = READERS[source.reader](payload, source.native)
     RAWDIR.mkdir(parents=True, exist_ok=True)
     with csv_path(source).open("w", encoding="utf-8", newline="") as fh:
         writer = csv.writer(fh)
