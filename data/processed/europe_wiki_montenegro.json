@@ -196,14 +196,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "'Cetinje' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "'Cetinje' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "sources": [],
     "parent_name": "MNE",
@@ -616,18 +616,53 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "'Podgorica' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "'Podgorica' is none of the names on the country's own list of units; there is no article to read for it"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Montenegrin",
+        "pct": 54.54
+      },
+      {
+        "group": "Serbian",
+        "pct": 30.84
+      },
+      {
+        "group": "Other",
+        "pct": 8.23
+      },
+      {
+        "group": "Bosniak",
+        "pct": 2.62
+      },
+      {
+        "group": "Romani",
+        "pct": 1.91
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.99
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.87
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Monstat, Popis stanovništva, domaćinstava i stanova (2023), as the en.wikipedia article 'Podgorica Capital City' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Podgorica_Capital_City",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "MNE",
-    "country": "MNE"
+    "country": "MNE",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a population census, as the en.wikipedia article 'Podgorica Capital City' transcribes and cites it. A census count."
   },
   {
     "id": "MNE-admin1-rožaje-municipality",
@@ -1001,14 +1036,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "'Cetinje' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "'Cetinje' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "sources": [],
     "parent_name": "Cetinje Municipality",
@@ -1421,18 +1456,53 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "'Podgorica' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "'Podgorica' is none of the names on the country's own list of units; there is no article to read for it"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Montenegrin",
+        "pct": 54.54
+      },
+      {
+        "group": "Serbian",
+        "pct": 30.84
+      },
+      {
+        "group": "Other",
+        "pct": 8.23
+      },
+      {
+        "group": "Bosniak",
+        "pct": 2.62
+      },
+      {
+        "group": "Romani",
+        "pct": 1.91
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.99
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.87
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Monstat, Popis stanovništva, domaćinstava i stanova (2023), as the en.wikipedia article 'Podgorica Capital City' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Podgorica_Capital_City",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Podgorica Municipality",
-    "country": "MNE"
+    "country": "MNE",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a population census, as the en.wikipedia article 'Podgorica Capital City' transcribes and cites it. A census count."
   },
   {
     "id": "MNE-admin2-rožaje-municipality",

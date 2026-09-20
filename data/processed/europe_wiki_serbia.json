@@ -27,7 +27,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "'Belgrade' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "sources": [],
     "parent_name": "SRB",
@@ -61,7 +61,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
+      "note": "the table in the article counts a population this shape does not have, so the article is about some other place; it is not read"
     },
     "sources": [],
     "parent_name": "SRB",
@@ -93,13 +93,40 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 83.3
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 7.0
+      },
+      {
+        "group": "Vlach",
+        "pct": 5.1
+      },
+      {
+        "group": "Romani",
+        "pct": 3.0
+      },
+      {
+        "group": "Other",
+        "pct": 1.5
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Braničevo District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Brani%C4%8Devo_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Braničevo District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-central-banat-district",
@@ -127,13 +154,48 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 73.4
+      },
+      {
+        "group": "Hungarian",
+        "pct": 10.0
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 6.8
+      },
+      {
+        "group": "Romani",
+        "pct": 3.7
+      },
+      {
+        "group": "Other",
+        "pct": 2.9
+      },
+      {
+        "group": "Romanian",
+        "pct": 2.0
+      },
+      {
+        "group": "Slovak",
+        "pct": 1.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Central Banat District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Central_Banat_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Central Banat District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-jablanica-district",
@@ -161,13 +223,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 89.1
+      },
+      {
+        "group": "Romani",
+        "pct": 5.7
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 4.1
+      },
+      {
+        "group": "Other",
+        "pct": 1.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Jablanica District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Jablanica_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Jablanica District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-kolubara-district",
@@ -195,13 +280,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 93.2
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 4.0
+      },
+      {
+        "group": "Romani",
+        "pct": 2.1
+      },
+      {
+        "group": "Other",
+        "pct": 0.6
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Kolubara District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Kolubara_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Kolubara District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-macva-district",
@@ -229,13 +337,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 93.1
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 4.5
+      },
+      {
+        "group": "Romani",
+        "pct": 1.3
+      },
+      {
+        "group": "Other",
+        "pct": 1.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Mačva District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ma%C4%8Dva_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Mačva District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-moravica-district",
@@ -263,13 +394,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 94.1
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 4.8
+      },
+      {
+        "group": "Other",
+        "pct": 0.6
+      },
+      {
+        "group": "Romani",
+        "pct": 0.4
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Moravica District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Moravica_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Moravica District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-nisava-district",
@@ -297,13 +451,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 90.4
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 5.5
+      },
+      {
+        "group": "Romani",
+        "pct": 2.8
+      },
+      {
+        "group": "Other",
+        "pct": 1.2
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Nišava District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ni%C5%A1ava_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Nišava District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-north-backa-district",
@@ -331,13 +508,48 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Hungarian",
+        "pct": 35.6
+      },
+      {
+        "group": "Serbian",
+        "pct": 30.4
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 13.5
+      },
+      {
+        "group": "Croatian",
+        "pct": 6.6
+      },
+      {
+        "group": "Bunjevac",
+        "pct": 5.7
+      },
+      {
+        "group": "Other",
+        "pct": 5.6
+      },
+      {
+        "group": "Romani",
+        "pct": 2.5
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'North Bačka District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/North_Ba%C4%8Dka_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'North Bačka District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-north-banat-district",
@@ -365,13 +577,40 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 44.0
+      },
+      {
+        "group": "Hungarian",
+        "pct": 43.0
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 7.0
+      },
+      {
+        "group": "Romani",
+        "pct": 3.6
+      },
+      {
+        "group": "Other",
+        "pct": 2.4
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'North Banat District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/North_Banat_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'North Banat District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-pcinja-district",
@@ -399,13 +638,44 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 57.8
+      },
+      {
+        "group": "Albanian",
+        "pct": 29.3
+      },
+      {
+        "group": "Romani",
+        "pct": 5.6
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 4.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 2.5
+      },
+      {
+        "group": "Other",
+        "pct": 0.9
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Pčinja District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/P%C4%8Dinja_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Pčinja District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-pirot-district",
@@ -433,13 +703,40 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 80.0
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 7.9
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 5.6
+      },
+      {
+        "group": "Romani",
+        "pct": 5.5
+      },
+      {
+        "group": "Other",
+        "pct": 1.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Pirot District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Pirot_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Pirot District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-podunavlje-district",
@@ -467,13 +764,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 92.0
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 5.1
+      },
+      {
+        "group": "Romani",
+        "pct": 1.9
+      },
+      {
+        "group": "Other",
+        "pct": 0.9
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Podunavlje District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Podunavlje_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Podunavlje District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-pomoravlje-district",
@@ -501,13 +821,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 92.3
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 5.0
+      },
+      {
+        "group": "Other",
+        "pct": 1.3
+      },
+      {
+        "group": "Romani",
+        "pct": 1.3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Pomoravlje District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Pomoravlje_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Pomoravlje District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-rasina-district",
@@ -535,13 +878,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 94.5
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 3.4
+      },
+      {
+        "group": "Romani",
+        "pct": 1.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.8
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Rasina District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Rasina_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Rasina District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-raska-district",
@@ -630,13 +996,52 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 73.5
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 8.5
+      },
+      {
+        "group": "Hungarian",
+        "pct": 5.8
+      },
+      {
+        "group": "Other",
+        "pct": 5.0
+      },
+      {
+        "group": "Slovak",
+        "pct": 3.2
+      },
+      {
+        "group": "Romani",
+        "pct": 1.6
+      },
+      {
+        "group": "Croatian",
+        "pct": 1.1
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 1.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'South Bačka District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/South_Ba%C4%8Dka_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'South Bačka District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-south-banat-district",
@@ -664,13 +1069,52 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 72.0
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 7.1
+      },
+      {
+        "group": "Romanian",
+        "pct": 5.3
+      },
+      {
+        "group": "Slovak",
+        "pct": 4.2
+      },
+      {
+        "group": "Hungarian",
+        "pct": 3.3
+      },
+      {
+        "group": "Romani",
+        "pct": 3.2
+      },
+      {
+        "group": "Other",
+        "pct": 3.0
+      },
+      {
+        "group": "Macedonian",
+        "pct": 1.7
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'South Banat District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/South_Banat_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'South Banat District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-sumadija-district",
@@ -698,13 +1142,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 93.6
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 4.7
+      },
+      {
+        "group": "Other",
+        "pct": 1.0
+      },
+      {
+        "group": "Romani",
+        "pct": 0.7
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Šumadija District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/%C5%A0umadija_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Šumadija District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-syrmia-district",
@@ -732,13 +1199,48 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "'Syrmia District' is none of the names on the country's own list of units; there is no article to read for it"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 84.3
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 6.1
+      },
+      {
+        "group": "Other",
+        "pct": 2.3
+      },
+      {
+        "group": "Slovak",
+        "pct": 2.2
+      },
+      {
+        "group": "Croatian",
+        "pct": 2.0
+      },
+      {
+        "group": "Romani",
+        "pct": 1.9
+      },
+      {
+        "group": "Hungarian",
+        "pct": 1.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Srem District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Srem_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Srem District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-toplica-district",
@@ -766,13 +1268,36 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 90.6
+      },
+      {
+        "group": "Romani",
+        "pct": 4.8
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 3.8
+      },
+      {
+        "group": "Other",
+        "pct": 0.7
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Toplica District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Toplica_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Toplica District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-west-backa-district",
@@ -800,13 +1325,52 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 66.3
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 9.9
+      },
+      {
+        "group": "Hungarian",
+        "pct": 7.7
+      },
+      {
+        "group": "Other",
+        "pct": 5.4
+      },
+      {
+        "group": "Croatian",
+        "pct": 4.9
+      },
+      {
+        "group": "Rusyn",
+        "pct": 2.4
+      },
+      {
+        "group": "Romani",
+        "pct": 1.8
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 1.5
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'West Bačka District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/West_Ba%C4%8Dka_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'West Bačka District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-zajecar-district",
@@ -834,13 +1398,40 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 87.4
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 6.0
+      },
+      {
+        "group": "Vlach",
+        "pct": 3.2
+      },
+      {
+        "group": "Romani",
+        "pct": 1.7
+      },
+      {
+        "group": "Other",
+        "pct": 1.6
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Zaječar District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Zaje%C4%8Dar_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Zaječar District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin1-zlatibor-district",
@@ -868,13 +1459,40 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 78.6
+      },
+      {
+        "group": "Bosniak",
+        "pct": 13.9
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 5.0
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 1.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.8
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Zlatibor District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Zlatibor_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SRB",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a national statistical office, as the en.wikipedia article 'Zlatibor District' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-ada-municipality",
@@ -975,13 +1593,60 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 96.83
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 1.48
+      },
+      {
+        "group": "Other",
+        "pct": 1.14
+      },
+      {
+        "group": "Romani",
+        "pct": 0.32
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.09
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.04
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.03
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.03
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.02
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.02
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Aleksandrovac' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Aleksandrovac",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Rasina District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Aleksandrovac' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate. The table's groups add to 98.5%; the rest is carried as a remainder."
   },
   {
     "id": "SRB-admin2-aleksinac-municipality",
@@ -1009,13 +1674,84 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Slovenians']"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 91.71
+      },
+      {
+        "group": "Romani",
+        "pct": 3.73
+      },
+      {
+        "group": "Other",
+        "pct": 3.63
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.19
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.13
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.1
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.09
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.09
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.07
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.06
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.04
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.04
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.03
+      },
+      {
+        "group": "Gorani",
+        "pct": 0.03
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.03
+      },
+      {
+        "group": "Russian",
+        "pct": 0.03
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Aleksinac' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Aleksinac",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Nisava District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Aleksinac' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-alibunar-municipality",
@@ -2201,15 +2937,15 @@
     "sources": [
       {
         "field": "ethnicity",
-        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2018), as the en.wikipedia article 'Čačak' transcribes it",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Čačak' transcribes it",
         "url": "https://en.wikipedia.org/wiki/%C4%8Ca%C4%8Dak",
         "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Moravica District",
     "country": "SRB",
-    "ethnicity_year": 2018,
-    "ethnicity_note": "Population by ethnicity for 2018 from a national statistical office, as the en.wikipedia article 'Čačak' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Čačak' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-cajetina-municipality",
@@ -2271,13 +3007,48 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 95.75
+      },
+      {
+        "group": "Other",
+        "pct": 1.94
+      },
+      {
+        "group": "Romani",
+        "pct": 1.84
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.22
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.13
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.07
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.05
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Ćićevac' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/%C4%86i%C4%87evac",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Rasina District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Ćićevac' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-coka-municipality",
@@ -2446,13 +3217,68 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 93.15
+      },
+      {
+        "group": "Vlach",
+        "pct": 2.96
+      },
+      {
+        "group": "Other",
+        "pct": 2.11
+      },
+      {
+        "group": "Romani",
+        "pct": 1.05
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.16
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.09
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.09
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.09
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.09
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.08
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.07
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.06
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Despotovac' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Despotovac",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Pomoravlje District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Despotovac' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-dimitrovgrad-municipality",
@@ -2514,13 +3340,56 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 92.12
+      },
+      {
+        "group": "Romani",
+        "pct": 6.6
+      },
+      {
+        "group": "Other",
+        "pct": 1.03
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.09
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.04
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.04
+      },
+      {
+        "group": "Russian",
+        "pct": 0.03
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.03
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.02
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Doljevac' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Doljevac",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Nisava District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Doljevac' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-gadzin-han-municipality",
@@ -2548,13 +3417,52 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 95.03
+      },
+      {
+        "group": "Romani",
+        "pct": 3.1
+      },
+      {
+        "group": "Other",
+        "pct": 1.68
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.05
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.04
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.04
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.04
+      },
+      {
+        "group": "Russian",
+        "pct": 0.04
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Gadžin Han' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Gad%C5%BEin_Han",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Nisava District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Gadžin Han' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-golubac-municipality",
@@ -2582,13 +3490,60 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 90.94
+      },
+      {
+        "group": "Vlach",
+        "pct": 5.09
+      },
+      {
+        "group": "Other",
+        "pct": 2.3
+      },
+      {
+        "group": "Romani",
+        "pct": 0.62
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.56
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.16
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.11
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.08
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.07
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.06
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Golubac' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Golubac",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Branicevo District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Golubac' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-gornji-milanovac-municipality",
@@ -2652,7 +3607,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "labels this reader has no entry for: ['Slovenians']"
+      "note": "the shares add to 47433.00, which is not a composition"
     },
     "sources": [],
     "parent_name": "Syrmia District",
@@ -2752,13 +3707,88 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Slovenians']"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 95.89
+      },
+      {
+        "group": "Other",
+        "pct": 2.13
+      },
+      {
+        "group": "Romani",
+        "pct": 1.06
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.19
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.15
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.11
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.09
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.08
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.06
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.06
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.04
+      },
+      {
+        "group": "Gorani",
+        "pct": 0.03
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.03
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.03
+      },
+      {
+        "group": "Russian",
+        "pct": 0.02
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.02
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.02
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Jagodina' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Jagodina",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Pomoravlje District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Jagodina' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-kanjiza-municipality",
@@ -2897,13 +3927,56 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Romanians (self-declared)']"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 85.65
+      },
+      {
+        "group": "Other",
+        "pct": 8.01
+      },
+      {
+        "group": "Vlach",
+        "pct": 3.82
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 1.14
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.76
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.2
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.17
+      },
+      {
+        "group": "Romani",
+        "pct": 0.17
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.08
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Kladovo' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Kladovo",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Bor District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the en.wikipedia article 'Kladovo' transcribes and cites it. A census count."
   },
   {
     "id": "SRB-admin2-knic-municipality",
@@ -2931,13 +4004,48 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 98.9
+      },
+      {
+        "group": "Other",
+        "pct": 0.78
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.15
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.06
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.04
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.04
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.03
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Knić' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Kni%C4%87",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Sumadija District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Knić' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-knjazevac-municipality",
@@ -2965,13 +4073,64 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 94.08
+      },
+      {
+        "group": "Other",
+        "pct": 2.81
+      },
+      {
+        "group": "Romani",
+        "pct": 2.51
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.13
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.07
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.07
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.06
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.06
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.05
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.05
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Knjaževac' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Knja%C5%BEevac",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Zajecar District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Knjaževac' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-koceljeva-municipality",
@@ -2999,13 +4158,52 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 92.22
+      },
+      {
+        "group": "Romani",
+        "pct": 6.47
+      },
+      {
+        "group": "Other",
+        "pct": 1.1
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.05
+      },
+      {
+        "group": "Russian",
+        "pct": 0.05
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.04
+      },
+      {
+        "group": "Gorani",
+        "pct": 0.04
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.04
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Koceljeva' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Koceljeva",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Macva District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Koceljeva' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-kosjeric-municipality",
@@ -3506,13 +4704,48 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 92.93
+      },
+      {
+        "group": "Romani",
+        "pct": 5.01
+      },
+      {
+        "group": "Other",
+        "pct": 1.66
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.14
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.1
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.08
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.07
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Lajkovac' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Lajkovac",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Kolubara District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Lajkovac' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-lapovo-municipality",
@@ -3642,13 +4875,48 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 95.23
+      },
+      {
+        "group": "Other",
+        "pct": 3.18
+      },
+      {
+        "group": "Romani",
+        "pct": 1.25
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.13
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.09
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.06
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.05
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Ljig' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ljig",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Kolubara District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Ljig' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-ljubovija-municipality",
@@ -3676,13 +4944,44 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 93.6
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 4.98
+      },
+      {
+        "group": "Romani",
+        "pct": 1.33
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.03
+      },
+      {
+        "group": "Russian",
+        "pct": 0.03
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.02
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Ljubovija' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ljubovija",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Macva District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Ljubovija' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-loznica-city",
@@ -3778,13 +5077,56 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Romanians (self-declared)']"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 78.51
+      },
+      {
+        "group": "Vlach",
+        "pct": 13.07
+      },
+      {
+        "group": "Other",
+        "pct": 6.82
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.37
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.36
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.3
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.27
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.18
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.12
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Majdanpek' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Majdanpek",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Bor District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the en.wikipedia article 'Majdanpek' transcribes and cites it. A census count."
   },
   {
     "id": "SRB-admin2-mali-idjos-municipality",
@@ -3999,13 +5341,44 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 93.74
+      },
+      {
+        "group": "Romani",
+        "pct": 5.27
+      },
+      {
+        "group": "Other",
+        "pct": 0.82
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.07
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.05
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.04
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Merošina' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Mero%C5%A1ina",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Nisava District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Merošina' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-mionica-municipality",
@@ -4033,13 +5406,52 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 95.97
+      },
+      {
+        "group": "Romani",
+        "pct": 2.45
+      },
+      {
+        "group": "Other",
+        "pct": 1.27
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.08
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.05
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.04
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.04
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Mionica' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Mionica",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Kolubara District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Mionica' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-negotin-municipality",
@@ -4067,13 +5479,56 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Vlachs of Serbia (Vlachs)', 'Romanians (self-declared)']"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 79.5
+      },
+      {
+        "group": "Vlach",
+        "pct": 9.13
+      },
+      {
+        "group": "Other",
+        "pct": 8.86
+      },
+      {
+        "group": "Romani",
+        "pct": 1.19
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.74
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.16
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.13
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.09
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Negotin' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Negotin",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Bor District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the en.wikipedia article 'Negotin' transcribes and cites it. A census count."
   },
   {
     "id": "SRB-admin2-nis-city",
@@ -4370,13 +5825,88 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Slovenians']"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 83.16
+      },
+      {
+        "group": "Other",
+        "pct": 4.05
+      },
+      {
+        "group": "Hungarian",
+        "pct": 3.94
+      },
+      {
+        "group": "Romani",
+        "pct": 3.43
+      },
+      {
+        "group": "Slovak",
+        "pct": 2.77
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.75
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.4
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.35
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.33
+      },
+      {
+        "group": "German",
+        "pct": 0.2
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.2
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.15
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.09
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.06
+      },
+      {
+        "group": "Bunjevac",
+        "pct": 0.04
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.04
+      },
+      {
+        "group": "Russian",
+        "pct": 0.04
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Odžaci' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Od%C5%BEaci",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "West Backa District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Odžaci' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-opovo-municipality",
@@ -4438,13 +5968,44 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 96.47
+      },
+      {
+        "group": "Romani",
+        "pct": 1.82
+      },
+      {
+        "group": "Other",
+        "pct": 1.56
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.06
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.05
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.05
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Osečina' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ose%C4%8Dina",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Kolubara District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Osečina' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-pancevo-city",
@@ -4540,13 +6101,68 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 91.1
+      },
+      {
+        "group": "Romani",
+        "pct": 5.11
+      },
+      {
+        "group": "Other",
+        "pct": 2.51
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.4
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.21
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.17
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.11
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.11
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.11
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.06
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.06
+      },
+      {
+        "group": "Russian",
+        "pct": 0.06
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Pećinci' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Pe%C4%87inci",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Syrmia District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Pećinci' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-petrovac-na-mlavi-municipality",
@@ -4576,7 +6192,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "'Petrovac-na-Mlavi' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "sources": [],
     "parent_name": "Branicevo District",
@@ -4678,7 +6294,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "labels this reader has no entry for: ['Vlachs/Romanians', 'Slovenians']"
+      "note": "labels this reader has no entry for: ['Vlachs/Romanians']"
     },
     "sources": [],
     "parent_name": "Branicevo District",
@@ -5021,7 +6637,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "'Raska' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "the article has no section matching 'ethnic|^demograph|^population'"
     },
     "sources": [],
     "parent_name": "Raska District",
@@ -5053,13 +6669,40 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 96.34
+      },
+      {
+        "group": "Romani",
+        "pct": 2.13
+      },
+      {
+        "group": "Other",
+        "pct": 1.38
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.12
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.03
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Ražanj' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ra%C5%BEanj",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Nisava District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Ražanj' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-rekovac-municipality",
@@ -5121,13 +6764,68 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 86.29
+      },
+      {
+        "group": "Other",
+        "pct": 4.77
+      },
+      {
+        "group": "Croatian",
+        "pct": 3.16
+      },
+      {
+        "group": "Romani",
+        "pct": 2.39
+      },
+      {
+        "group": "Hungarian",
+        "pct": 2.15
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.49
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.28
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.1
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.1
+      },
+      {
+        "group": "German",
+        "pct": 0.09
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.09
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.07
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Ruma' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ruma",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Syrmia District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Ruma' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-sabac-city",
@@ -5363,13 +7061,84 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 77.94
+      },
+      {
+        "group": "Slovak",
+        "pct": 6.25
+      },
+      {
+        "group": "Other",
+        "pct": 5.65
+      },
+      {
+        "group": "Croatian",
+        "pct": 5.11
+      },
+      {
+        "group": "Rusyn",
+        "pct": 3.0
+      },
+      {
+        "group": "Romani",
+        "pct": 0.6
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.52
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.44
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.14
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.08
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.08
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.07
+      },
+      {
+        "group": "Russian",
+        "pct": 0.05
+      },
+      {
+        "group": "German",
+        "pct": 0.04
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.03
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Šid' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/%C5%A0id",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Syrmia District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Šid' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-sjenica-municipality",
@@ -5916,13 +7685,88 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 82.86
+      },
+      {
+        "group": "Slovak",
+        "pct": 7.92
+      },
+      {
+        "group": "Other",
+        "pct": 3.97
+      },
+      {
+        "group": "Croatian",
+        "pct": 2.03
+      },
+      {
+        "group": "Romani",
+        "pct": 1.81
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.31
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.27
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.2
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.19
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.13
+      },
+      {
+        "group": "Russian",
+        "pct": 0.08
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.07
+      },
+      {
+        "group": "German",
+        "pct": 0.04
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.04
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.03
+      },
+      {
+        "group": "Gorani",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.02
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Stara Pazova' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Stara_Pazova",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Syrmia District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Stara Pazova' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-subotica-city",
@@ -6079,13 +7923,48 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 97.15
+      },
+      {
+        "group": "Other",
+        "pct": 1.54
+      },
+      {
+        "group": "Romani",
+        "pct": 1.1
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.06
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.06
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.04
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.04
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Svrljig' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Svrljig",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Nisava District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Svrljig' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-temerin-municipality",
@@ -6240,15 +8119,15 @@
     "sources": [
       {
         "field": "ethnicity",
-        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2022), as the en.wikipedia article 'Trgovište' transcribes it",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2023), as the en.wikipedia article 'Trgovište' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Trgovi%C5%A1te",
         "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Pcinja District",
     "country": "SRB",
-    "ethnicity_year": 2022,
-    "ethnicity_note": "Population by ethnicity for 2022 from a population census, as the en.wikipedia article 'Trgovište' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a population census, as the en.wikipedia article 'Trgovište' transcribes and cites it. A census count."
   },
   {
     "id": "SRB-admin2-trstenik-municipality",
@@ -6276,13 +8155,64 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 97.35
+      },
+      {
+        "group": "Other",
+        "pct": 1.25
+      },
+      {
+        "group": "Romani",
+        "pct": 0.8
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.2
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.11
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.08
+      },
+      {
+        "group": "Gorani",
+        "pct": 0.07
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.04
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.03
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.03
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.03
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Trstenik, Serbia' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Trstenik%2C_Serbia",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Rasina District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Trstenik, Serbia' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-tutin-municipality",
@@ -6375,13 +8305,52 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 94.58
+      },
+      {
+        "group": "Romani",
+        "pct": 3.84
+      },
+      {
+        "group": "Other",
+        "pct": 1.09
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.22
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.09
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.06
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.06
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.06
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Ub, Serbia' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ub%2C_Serbia",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Kolubara District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Ub, Serbia' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-uzice-city",
@@ -6508,13 +8477,60 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 97.45
+      },
+      {
+        "group": "Other",
+        "pct": 1.39
+      },
+      {
+        "group": "Romani",
+        "pct": 0.63
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.17
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.11
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.07
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.07
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.04
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.04
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.03
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Varvarin' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Varvarin",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Rasina District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Varvarin' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-velika-plana-municipality",
@@ -6627,13 +8643,40 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Romanians (self-declared)']"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 92.51
+      },
+      {
+        "group": "Other",
+        "pct": 3.49
+      },
+      {
+        "group": "Vlach",
+        "pct": 2.17
+      },
+      {
+        "group": "Romani",
+        "pct": 1.47
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.37
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Veliko Gradište' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Veliko_Gradi%C5%A1te",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Branicevo District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Veliko Gradište' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-vladicin-han-municipality",
@@ -6726,13 +8769,60 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 96.2
+      },
+      {
+        "group": "Other",
+        "pct": 2.22
+      },
+      {
+        "group": "Romani",
+        "pct": 1.04
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.14
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.11
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.08
+      },
+      {
+        "group": "Bunjevac",
+        "pct": 0.07
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.06
+      },
+      {
+        "group": "Slovak",
+        "pct": 0.04
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.04
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Vladimirci' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Vladimirci",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Macva District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Vladimirci' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-vlasotince-municipality",
@@ -7153,13 +9243,76 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Slovenians']"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 86.26
+      },
+      {
+        "group": "Other",
+        "pct": 6.14
+      },
+      {
+        "group": "Vlach",
+        "pct": 4.8
+      },
+      {
+        "group": "Romani",
+        "pct": 1.27
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.34
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.3
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.25
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.16
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.15
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.12
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.07
+      },
+      {
+        "group": "Gorani",
+        "pct": 0.05
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.05
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.04
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2011), as the en.wikipedia article 'Zaječar' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Zaje%C4%8Dar",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Zajecar District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a national statistical office, as the en.wikipedia article 'Zaječar' transcribes and cites it. A statistical-office figure, which may be a census table or an estimate."
   },
   {
     "id": "SRB-admin2-zitiste-municipality",
