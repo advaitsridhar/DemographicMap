@@ -403,7 +403,17 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     },
     "IRN": {
         "ethnicity": "Iran's census does not ask ethnicity; the 2016 census asked religion in the state's recognised categories, not ethnic group.",
-        "language": "Iran's census does not ask language.",
+        # Language is deliberately absent, by the owner's decision of 20
+        # September 2026. Iran's census does not ask it -- that remains true,
+        # and every ALI record says so in its own note -- but this table means
+        # something stronger than "the census does not ask": it means no value
+        # may ever be written, and check_no_estimate_on_policy_field enforces
+        # that as fatal. The Atlas of the Languages of Iran did measure
+        # language, at 21,152 settlements, so a figure here is a reading of
+        # somebody's fieldwork rather than a statistic manufactured about a
+        # category the state declined to enumerate, which is what the guard
+        # exists to stop. The nineteen provinces the atlas has not reached
+        # take their stated reason from ADAPTER_GAPS["IRN"] instead.
     },
     "GRC": {
         "religion": "Greece's census has not asked religion since 1951; the 2021 census records citizenship and country of birth.",

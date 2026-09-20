@@ -517,11 +517,31 @@ class ItIsRegistered(unittest.TestCase):
         self.assertIn("twelve of the thirty-one", reason)
         self.assertNotIn("IRN", be.ADAPTER_HINTS)
 
-    def test_the_census_declaration_it_must_not_contradict(self):
+    def test_language_is_not_in_the_policy_table_but_the_fact_still_is(self):
+        """The fact and the table mean different things, and only one moved.
+
+        NOT_COLLECTED_POLICY does not say "the census does not ask" -- it says
+        *no value may ever be written here*, and
+        check_no_estimate_on_policy_field makes that fatal. A language entry
+        for Iran therefore refused the atlas outright, which is why it is gone
+        (owner's decision, 20 September 2026). What must not go with it is the
+        fact itself: Iran's census really does not ask language, and a reader
+        who is shown a figure is owed that. So this pins both halves -- the
+        table is silent, and every record still says it.
+        """
         import common
-        self.assertEqual(
-            common.NOT_COLLECTED_POLICY["IRN"]["language"],
-            "Iran's census does not ask language.")
+        self.assertNotIn("language", common.NOT_COLLECTED_POLICY["IRN"])
+        # Ethnicity is untouched: nobody has measured it independently, so
+        # the stronger declaration is still the right one there.
+        self.assertIn("ethnicity", common.NOT_COLLECTED_POLICY["IRN"])
+        self.assertIn("no Iranian census has ever asked it",
+                      be.ADAPTER_GAPS["IRN"])
+        records = json.loads(PROCESSED.read_text())
+        self.assertTrue(records)
+        for record in records:
+            with self.subTest(unit=record["name"]):
+                self.assertIn("Iran's census does not ask language",
+                              record["language"]["note"])
 
 
 class TheSourceFilesAreCommitted(unittest.TestCase):
