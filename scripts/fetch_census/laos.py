@@ -189,13 +189,85 @@ def probe_wiki(rows_shown: int = 3) -> None:
                 log(f"        {[c.strip()[:24] for c in row[:9]]}")
 
 
+# ---------------------------------------------------------------------------
+# The census volume itself.
+# ---------------------------------------------------------------------------
+
+CENSUS_PDF = "https://lao.unfpa.org/sites/default/files/pub-pdf/PHC-ENG-FNAL-WEB_0.pdf"
+
+PROVINCE_TERMS = ["Vientiane Capital", "Phongsaly", "Luangnamtha", "Luang Namtha",
+                  "Oudomxay", "Bokeo", "Luangprabang", "Luang Prabang", "Huaphanh",
+                  "Houaphan", "Xayabury", "Xayaboury", "Xiengkhuang", "Xiangkhouang",
+                  "Borikhamxay", "Bolikhamxai", "Khammuane", "Khammouane",
+                  "Savannakhet", "Saravane", "Salavan", "Sekong", "Xekong",
+                  "Champasack", "Champasak", "Attapeu", "Xaysomboun", "Xaisomboun"]
+ETHNONYMS = ["Khmou", "Khmu", "Hmong", "Phouthay", "Makong", "Katang", "Leu", "Lue",
+             "Akha", "Katu", "Ta-oy", "Taoy", "Brao", "Oy", "Ngouan", "Ngae", "Suay",
+             "Harak", "Yrou", "Triang", "Lavy", "Lamed", "Musur", "Iumien", "Sila",
+             "Hor", "Lolo", "Pako", "Nhaheun", "Cheng", "Toum", "Phong", "Thene"]
+FAITHS = ["Buddhis", "Christian", "Bahai", "Baha'i", "Islam", "Muslim",
+          "Animis", "No religion", "Religion"]
+LANGUAGE_TERMS = ["Mother tongue", "mother tongue", "Language spoken", "Lao-Tai",
+                  "Mon-Khmer", "Chine-Tibet", "Sino-Tibetan", "Hmong-Mien",
+                  "Hmong-Iewmien", "ethno-linguistic", "Ethno-linguistic"]
+
+
+def page_texts(path: Path) -> list[str]:
+    from pypdf import PdfReader
+    reader = PdfReader(str(path))
+    log(f"  {len(reader.pages)} pages")
+    return [(page.extract_text() or "") for page in reader.pages]
+
+
+def probe_volume(samples: int = 2, contents: str = "") -> None:
+    """Which pages of the census volume cross one of the three fields with a
+    province, and what its contents pages promise."""
+    log(f"== route (p): the census volume {CENSUS_PDF}")
+    pages = page_texts(download(CENSUS_PDF, RAW / "laos" / "PHC-ENG-FNAL-WEB_0.pdf"))
+    wanted = [int(n) for n in contents.split(",") if n.strip().isdigit()]
+    for n in wanted:
+        if 1 <= n <= len(pages):
+            body = "\n".join(line.rstrip() for line in pages[n - 1].splitlines()
+                             if line.strip())
+            log(f"  -- page {n}:\n{body[:4000]}")
+    for label, terms, need in (("ethnic", ETHNONYMS, 5), ("religion", FAITHS, 3),
+                               ("language", LANGUAGE_TERMS, 2)):
+        hits = [(n, [pv for pv in PROVINCE_TERMS if pv in page])
+                for n, page in enumerate(pages, 1)
+                if sum(t in page for t in terms) >= need]
+        log(f"  {len(hits)} page(s) name {need}+ {label} terms; "
+            f"{sum(1 for _n, pv in hits if pv)} of them beside a province")
+        log("    " + " ".join(f"p{n}{'[' + ','.join(sorted(set(pv))[:3]) + ']' if pv else ''}"
+                              for n, pv in hits)[:2500])
+        shown = 0
+        for n, pv in hits:
+            if not pv or shown >= samples:
+                continue
+            shown += 1
+            body = "\n".join(line.rstrip() for line in pages[n - 1].splitlines()
+                             if line.strip())
+            log(f"  -- page {n} ({label}):\n{body[:3000]}")
+    # Every line that looks like a table caption, which is the volume's own
+    # index of what it crosses with what.
+    captions = sorted({" ".join(m.group(0).split())
+                       for page in pages
+                       for m in re.finditer(r"Table\s+[\dA-Z][\d.\-A-Z]*\s*:?[^\n]{0,140}",
+                                            page)})
+    log(f"  {len(captions)} distinct table captions:")
+    for cap in captions:
+        log(f"    {cap[:170]}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--probe", action="store_true")
     ap.add_argument("--routes", default="afhw",
-                    help="a (pages), f (candidate files), h (HDX), w (Wikipedia)")
+                    help="a (pages), f (candidate files), h (HDX), w (Wikipedia), "
+                         "p (scan the census volume)")
     ap.add_argument("--rows", type=int, default=3)
+    ap.add_argument("--contents", default="",
+                    help="with route p: page numbers to print whole")
     args = ap.parse_args()
     if not args.probe:
         raise SystemExit("laos: no reader yet; run with --probe")
@@ -207,6 +279,8 @@ def main() -> int:
         probe_hdx()
     if "w" in args.routes:
         probe_wiki(args.rows)
+    if "p" in args.routes:
+        probe_volume(args.rows, args.contents)
     return 0
 
 
