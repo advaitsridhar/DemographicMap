@@ -1,0 +1,97 @@
+#!/usr/bin/env python3
+"""Mongolia: ethnicity, religion and language by aimag and soum.
+
+Work in progress; ``--probe`` is the reconnaissance and writes nothing.
+
+The National Statistical Office's statistical database used to be
+``opendata.1212.mn``; that hostname no longer resolves. ``nso.mn`` and
+``www.1212.mn`` now serve one Next.js application whose own links name
+``data.nso.mn`` (the database) and ``metadata.nso.mn``. Every ``*.nso.mn``
+and ``*.1212.mn`` host sends its leaf certificate without the Sectigo
+intermediate above it, so a plain urllib client fails them with *unable to
+get local issuer certificate*; ``common.http_get(..., aia=True)`` completes
+the chain from the certificate's own Authority Information Access extension
+and verifies, which is what every request here uses.
+
+Usage:
+    python -m scripts.fetch_census.mongolia --probe --get https://data.nso.mn/
+    python -m scripts.fetch_census.mongolia --probe --post https://data.nso.mn/api/Data
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+import urllib.parse
+import urllib.request
+from pathlib import Path
+from typing import Any
+
+from ._shared import log
+from common import http_get  # noqa: E402
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+BYTES = 3000
+AGENT = "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)"
+
+
+def fetch(url: str, *, limit: int = BYTES, headers: dict[str, str] | None = None) -> str | None:
+    try:
+        body = http_get(url, cache=False, retries=1, timeout=60, aia=True, headers=headers)
+    except Exception as exc:                # noqa: BLE001 - the probe's product is the reason
+        log(f"  {url}\n    unreachable: {type(exc).__name__}: {exc}")
+        return None
+    text = body if isinstance(body, str) else body.decode("utf-8", "replace")
+    log(f"  {url}\n    {len(text):,} chars")
+    log("    " + text[:limit].replace("\n", "\n    "))
+    return text
+
+
+def post(url: str, payload: dict[str, Any], *, limit: int = BYTES) -> str | None:
+    from probe_tls import verified_opener          # noqa: PLC0415
+    blob = json.dumps(payload).encode()
+    req = urllib.request.Request(url, data=blob, headers={
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": AGENT,
+    })
+    opener = verified_opener(urllib.parse.urlsplit(url).hostname or "")
+    try:
+        with opener.open(req, timeout=120) as resp:
+            text = resp.read().decode("utf-8", "replace")
+            log(f"  POST {url} {payload}\n    {resp.status} {len(text):,} chars")
+    except Exception as exc:                       # noqa: BLE001
+        log(f"  POST {url} {payload}\n    failed: {type(exc).__name__}: {exc}")
+        return None
+    log("    " + text[:limit].replace("\n", "\n    "))
+    return text
+
+
+def probe(args: argparse.Namespace) -> int:
+    for url in args.get or []:
+        fetch(url, limit=args.bytes)
+    payload = dict(kv.split("=", 1) for kv in (args.field or []))
+    for url in args.post or []:
+        post(url, payload, limit=args.bytes)
+    return 0
+
+
+def run() -> int:
+    raise SystemExit("mongolia: no data route settled yet; run with --probe")
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--probe", action="store_true")
+    ap.add_argument("--get", action="append")
+    ap.add_argument("--post", action="append")
+    ap.add_argument("--field", action="append", help="NAME=VALUE for a POST body")
+    ap.add_argument("--bytes", type=int, default=BYTES)
+    args = ap.parse_args()
+    return probe(args) if args.probe else run()
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
