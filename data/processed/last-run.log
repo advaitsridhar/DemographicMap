@@ -1,82 +1,12 @@
-probe_pdf: https://www.nso.gov.pg/download/51/population-housing/2152/png-national-report-2011-census.pdf
-  11,520,210 bytes
-  100 pages
-probe_pdf: 100 pages, printing [94, 95, 96, 97, 98, 99, 100]
-
---- page 94 ----------------------------------------------------
-Papua New Guinea 2011 National Report
-94
-APPENDIX
-Appendix 3 – 2011 Census Form
-
---- page 95 ----------------------------------------------------
-Papua New Guinea 2011 National Report
-95
-Appendix 4 – PNG 2011 Census Products
-PNG 2011 Census Final Figures – summary data for persons and households at national, provincial, district
-and statistical LLG area level.
-Price: K 20.00
-PNG 2011 Census Unit Register – a listing of all Census Units (villages) in a province along with the number
-of households and persons by sex.
-Price: K20.00 per province
-PNG 2011 Census Ward Population Profile – a listing of all wards by local level government (LLG) areas and
-districts in each province along with the number of households and persons by sex.
-Price: K30.00 per region
-PNG 2011 Census Basic Tables – a set of 31 cross-classified tables covering the main census topics at
-national and provincial level for all sectors, urban sector and rural sector.
-Price: K40.00 per set
-PNG 2011 Census Table Retrieval System (TRS) – a CD-ROM containing the basic tables at national and
-provincial level and by urban/rural sector, and at district and statistical LLG area level, along with software
-which allows users to select, retrieve, display, print and copy the table(s) for geographic level(s) of their
-choice.
-Price: K2,000.00
-PNG Census 2011 Community Profile System (CPS) – a CD-ROM containing basic population counts by age
-and sex and a statistical profile for all geographic levels from Census Unit upwards, along with software
-which allows users to retrieve, display and print the profile for any geographic area or aggregation of areas.
-Price: K2,000.00
-PNG Census 2011 Provincial Report – an easy to read commentary with accompanying statistical tables and
-graphs, designed to inform users of the key findings of the census at provincial level, and to assist in the
-interpretation of the findings.
-Price: K40.00 per province
-PNG Census 2011 National Report – an easy to read commentary with accompanying statistical tables and
-graphs, designed to inform users of the key findings of the census at the national level, and to assist in the
-interpretation of the findings.
-Price: K50.00
-PNG Census 2011 Thematic Mapping System (TMS) – a CD-ROM containing map layers and statistical
-indicators for all geographic levels, which allows users to create thematic maps from census data using their
-own mapping software.
-Price: K2,000.00
-PNG Census 2011 User Service – a data service whereby NSO will prepare specialized tables to a user’s
-specifications.
-Price: on application
-For more information, or to purchase any of the products, contact:
-National Statistical Office
-PO Box 337
-Waigani, NCD
-Papua New Guinea
-Telephone: +675 301 1200 or +675 301 1229    Facsimile: +675 325 1869 or +675 301 1253
-Website address: www.nso.gov.pg
-
---- page 96 ----------------------------------------------------
-Papua New Guinea 2011 National Report
-96
-APPENDIX
-
---- page 97 ----------------------------------------------------
-
-
---- page 98 ----------------------------------------------------
-
-
---- page 99 ----------------------------------------------------
-
-
---- page 100 ----------------------------------------------------
-National Statistical Office
-PO Box 337
-Waigani, NCD
-Papua New Guinea
-Telephone: +675 301 1200 or +675 301 1229
-Facsimile: +675 325 1869 or +675 301 1253
-Website address: www.nso.gov.pg
-Copyright © National Statistical Office 2015. All Rights Reserved
+  https://archive.org/advancedsearch.php?q=papua+new+guinea+census+report&fl[]=identifier&fl[]=title&fl[]=year&rows=60&page=1&output=json
+    1,419 chars
+    {"responseHeader":{"status":0,"QTime":82,"params":{"query":"((text:papua OR text:papua OR text__reviews:papua)(text:new OR text:new OR text__reviews:new)(text:guinea OR text:guinea OR text__reviews:guinea)(text:census OR text:census OR text__reviews:census)(text:report OR text:report OR text__reviews:report)) OR (text:&quot;papua new guinea census report&quot; OR text:&quot;papua new guinea census report&quot; OR text__reviews:&quot;papua new guinea census report&quot;)","qin":"papua new guinea census report","fields":"identifier,title,year","wt":"json","rows":60,"start":0}},"response":{"numFound":6,"start":0,"docs":[{"identifier":"cia-readingroom-document-cia-rdp88t00096r000600720010-7","title":"CIA Reading Room cia-rdp88t00096r000600720010-7: WESTERN SAHARA: SCENARIOS FOR A DIPLOMATIC SOLUTION","year":1987},{"identifier":"wia-news_2014-10-12","title":"WIA News 2014-10-12","year":2014},{"identifier":"VOA_Africa_20181024_160000","title":"VOA [Voice of America] Africa : October 24, 2018 12:00PM-01:00PM EDT","year":2018},{"identifier":"VOA_Africa_20181024_180000","title":"VOA [Voice of America] Africa : October 24, 2018 02:00PM-03:00PM EDT","year":2018},{"identifier":"MediaMonarchyEpisode167","title":"media monarchy episode167","year":2010},{"identifier":"cia-readingroom-document-cia-rdp08-00534r000100180001-3","title":"CIA Reading Room cia-rdp08-00534r000100180001-3: FACTBOOK 1982","year":1982}]}}
+  retry 1/1 after 2s :: https://nada.nso.gov.pg/ :: <urlopen error [Errno -2] Name or service not known>
+  https://nada.nso.gov.pg/
+    unreachable: RuntimeError: GET failed after 1 retries: https://nada.nso.gov.pg/
+  retry 1/1 after 2s :: https://microdata.nso.gov.pg/ :: <urlopen error [Errno -2] Name or service not known>
+  https://microdata.nso.gov.pg/
+    unreachable: RuntimeError: GET failed after 1 retries: https://microdata.nso.gov.pg/
+  retry 1/1 after 2s :: https://png.prism.spc.int/ :: <urlopen error [Errno -2] Name or service not known>
+  https://png.prism.spc.int/
+    unreachable: RuntimeError: GET failed after 1 retries: https://png.prism.spc.int/
