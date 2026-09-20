@@ -104,7 +104,7 @@ COMPOSITION = re.compile(
     r"limba|език|мова|language|religio|ethnic|nationalit|faith|мов|"
     r"anyanyelv|kalba|valoda|keel|usk|rahvus|tautyb|tautīb|"
     r"demogra|населен|становништв|composition|населення|popula|"
-    r"вероисповед|склад|состав|склау|fe[j]?e|besim|gjuh|struktur",
+    r"вероисповед|вероизповед|изповед|роден\s+език|склад|состав|fe[j]?e|besim|gjuh|struktur",
     re.I)
 
 HEADING = re.compile(r"^\s*(=+)\s*(.+?)\s*\1\s*$", re.M)
