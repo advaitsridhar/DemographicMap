@@ -1,21 +1,32 @@
-probe_pdf: https://web.archive.org/web/2021id_/https://pngnri.org/atlasNRI/images/ubes/P01_themeInd01.pdf
-  360,887 bytes
-  1 pages
-probe_pdf: 1 pages, 0 mention ['religion', 'Religion', 'Catholic', 'Church']
-=== front matter ===
-Universal Basic Education - Access Rate
-Districts of Western Province 2019
-Source: Magury, Key 2019 UBE Indicators for PNG's 
-             province and district profile. Spatial data 
-            compiled from PNG NSO census data
-NORTH FLY District Name
-0% - 20%
-21% - 40%
-41% - 60%
-61% - 80%
-81% - 100%
-Legend
-Produced by PNG National Research Institute, 2021
-Locality Map
-
-=== pages mentioning ['religion', 'Religion', 'Catholic', 'Church'] (first 4) ===
+png: the 2024 census head count and the 2011 census's provincial religion
+  fetched 2024-final-figures.pdf (7.9 MB)
+  fetched 2011-national-report.pdf (11.5 MB)
+  2024 Table 1: 22 provinces adding to 10,185,363, the printed national total
+  2024 Provincial Snapshots: 96 districts across 22 provinces
+  2011 Summary Indicators: 22 provinces, and the three the report names in prose (Bougainville, Morobe, Northern) agree with it
+  religion coverage: one denomination per province, describing 19.7% of Hela at the least and 68.4% of Autonomous Region of Bougainville at the most; all 22 below 95.0%, so every panel says what share it describes
+    Hela                               Evangelical Alliance    19.7%
+    Southern Highlands                 Roman Catholic          19.7%
+    National Capital District          United Church           23.0%
+    Western Highlands                  Evangelical Lutheran    26.0%
+    Enga                               Evangelical Lutheran    26.4%
+    Jiwaka                             Roman Catholic          29.6%
+    Gulf                               United Church           30.1%
+    New Ireland                        Roman Catholic          31.3%
+    Chimbu                             Roman Catholic          34.4%
+    Western                            Evangelical Alliance    37.1%
+    Madang                             Evangelical Lutheran    38.4%
+    Manus                              Roman Catholic          38.5%
+    Eastern Highlands                  Seventh Day Adventist   39.6%
+    Central                            United Church           40.0%
+    West Sepik                         Roman Catholic          40.4%
+    East New Britain                   Roman Catholic          42.8%
+    East Sepik                         Roman Catholic          43.0%
+    Milne Bay                          United Church           54.9%
+    West New Britain                   Roman Catholic          55.3%
+    Northern                           Anglican                60.6%
+    Morobe                             Evangelical Lutheran    67.0%
+    Autonomous Region of Bougainville  Roman Catholic          68.4%
+  districts: 71 shapes carry the 2024 count; 16 in 4 provinces (Morobe, Northern, West New Britain, Western) are left with a reason
+  wrote data/processed/png.json (365 kB)
+  wrote 109 records (22 provinces, 87 districts)
