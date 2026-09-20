@@ -1,7 +1,787 @@
-page: https://www.deps.gov.bn/
-  213,138 bytes
-  0 matching link(s)
-page: https://deps.mofe.gov.bn/publication/
-  unreachable: HTTPError: HTTP Error 404: Not Found
-page: https://deps.mofe.gov.bn/publications/
-  unreachable: HTTPError: HTTP Error 404: Not Found
+probe_pdf: https://inetl-ip.gov.tl/wp-content/uploads/2025/04/Final-Main-Report_TLPHC-Census_WEB.pdf
+  4,533,965 bytes
+  204 pages
+probe_pdf: 204 pages, 9 mention ['mother']
+=== front matter ===
+Timor-Leste
+Population and Housing 
+Census 2022
+Main Report
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Title:  
+Timor-Leste Population and Housing Census 2022 Main Report  
+ 
+Design, Typesetting 
+Timor-Leste National Institute of Statistics (INETL) 
+ 
+Copyright © Timor-Leste National Institute of Statistics 2023 
+All right reserved 
+INETL/01 
+ 
+The Timor-Leste National Institute of Statistics (INETL) 
+Dili, May 2023 
+  
+ 
+ 
+ii 
+Foreword 
+The Population and Housing Census 2022 is the fourth census to be 
+conducted since independence in 2002 and the first -ever digital census for 
+Timor-Leste. The 2022 census was postponed from 2020 due to the COVID-
+19 outbreak. Previous censuses were conducted in 2015, 2010 and 2004, that 
+is every five years. However, the next census will take place after ten years 
+in line with international recommendations. The 2022 census collected 
+information on population and housing characteristics, as guided by 
+international principles and recommendations. The results will provide disaggregated data for indicators to 
+be used in monitoring the implementation of the Timor -Leste Strategic Development Plan 2011 -2030. It 
+will also contribute to measuring progress towards reachi ng the targets of the globally agreed Sustainable 
+Development Goals. 
+ 
+The results in this report are presented for basic tables and selected indicators, mostly down to municipality 
+level. More census results will be published in the second half of 2023, followed by in-depth census analyses 
+on various themes. 
+ 
+I would like to express my deepest gratitude to everyone who contributed to the success of the census. The 
+implementation led by the Timor-Leste National Institute of Statistics  (INETL) under the Ministr y of 
+Finance is outstanding. The technical and financial support provided by UNFPA and others that include 
+UNICEF, WFP, UN Women, UNDP and the Australian Department for Foreign Affairs and Trade through 
+Australian Bureau of Statistics is very much appreciated. 
+ 
+I sincerely sincere hope that these census results and the future publications on basic and thematic analyses 
+will be used widely to evaluate current development programmes and also assist in formulating our future 
+policies and programmes. 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+iii 
+ 
+ 
+  
+
+ 
+ 
+v 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+vi 
+Acknowledgements  
+The Timor-Leste National Institute of Statistics  (INETL), formerly the 
+General Directorate of Statistics , implemented the Population and Housing 
+Census 2022 under the slogan ‘Our census, our future be part of it’. 
+The census was largely financed by the Government of Timor-Leste through 
+the Ministry of Finance. Additional financial and material support in form of 
+tablets and power banks, was provided by UNFPA, UN Women, UNDP, 
+UNICEF and WFP. I would like to express my sincere gratitude for the 
+unwaivering support towards the census. 
+I would like to acknowledge the invaluable technical support provided by UNFPA t hroughout the census 
+process. The support provided during field staff training by UN Women is also acknowledged. 
+Let me also thank a team of independent international monitors from the Australian Bureau of Statistics, 
+who worked with us throughout the enum eration period, their feedback from the field was valuable and 
+timely. 
+I would like to further express my appreciation to all members of the Census Technical Committee for their 
+advice and guidance in the census. The Census Publication Commission led a successful implementation 
+of the census publicity campaign to ensure that the stakeholders , including the general public , were 
+informed about the census. 
+Special thanks go to each and every enumerator and supervisor who worked tirelessly, visiting households 
+across the country to collect the census information. They worked for long hours and also at odd hours in 
+trying to collect the information. 
+Finally, I would like to commend the work of all staff from INETL headquarters and municipality offices, 
+who continue to work for the success of the 2022 census project. I am grateful to the people of Timor-Leste 
+for their cooperation, without which a successful census would not have been possible. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+vii 
+ 
+ 
+ 
+ 
+Administrative map of Timor -Leste 
+ 
+ 
+
+ 
+ 
+ix 
+Table of content  
+Foreword ................................................................................................................................................. ii 
+Preface ................................................................................................................................................... iv 
+Acknowledgements ................................................................................................................................ vi 
+Administrative map of Timor-Leste .................................................................................................... viii 
+List of tables ........................................................................................................................................... xi 
+List of figures ....................................................................................................................................... xiii 
+Abbreviations ........................................................................................................................................ xv 
+1 Introduction and background ............................................................................................................. 1 
+1.1 Characteristics and objectives of a census ............................................................................... 1 
+1.1.1 What is a census? ........................................................................................................ 1 
+1.1.2 Why conducting a census? .......................................................................................... 1 
+1.2 The Timor-Leste census over time .......................................................................................... 2 
+1.3 Content and structure of the report .......................................................................................... 3 
+2 Census organisation and method-ology ............................................................................................. 5 
+2.1 Census organisation ................................................................................................................. 5 
+2.1.1 Institutional setting ...................................................................................................... 5 
+2.1.2 Organisational structure .............................................................................................. 6 
+2.2 Census methodology ............................................................................................................... 7 
+2.2.1 General methodological features................................................................................. 7 
+2.2.2 Questionnaire development ......................................................................................... 8 
+2.2.3 Computer-assisted personal interviewing ................................................................. 10 
+2.2.4 Census mapping and geospatial data......................................................................... 12 
+2.2.5 Census publicity and communication ....................................................................... 13 
+2.2.6 Data processing ......................................................................................................... 14 
+2.2.7 Tabulation ................................................................................................................. 16 
+2.3 Implementation of census operations .................................................................................... 17 
+2.3.1 Census timeline ......................................................................................................... 17 
+2.3.2 Recruitment of census staff ....................................................................................... 17 
+2.3.3 Training ..................................................................................................................... 18 
+2.3.4 Census enumeration .................................................................................................. 18 
+2.4 Data limitations ..................................................................................................................... 19 
+2.5 Post Enumeration Survey ...................................................................................................... 21 
+2.5.1 Introduction ............................................................................................................... 21 
+2.5.2 PES methodology ...................................................................................................... 21 
+2.5.3 PES implementation .................................................................................................. 22 
+3 Census results .................................................................................................................................. 23 
+3.1 Population .............................................................................................................................. 23 
+3.1.1 Population trends....................................................................................................... 23 
+3.1.2 Age and sex composition .......................................................................................... 24 
+ 
+ 
+x 
+3.1.3 Population density ..................................................................................................... 28 
+
+=== pages mentioning ['mother'] (first 25) ===
+
+--- page 54 ----------------------------------------------------
+38
+Figure 3.14: Population aged five years and over with a disability, by type of disability, and by sex (in
+thousands)
+Figure 3.15: Age-specific disability prevalence rate by sex (in percentages)
+3.2.4 Assistance during delivery
+Each delivery should be assisted by a skilled birth attendant and should take place in a hygienic, healthy
+and safe environment to guarantee the health of the mother and the new-born child. The importance of
+skilled birth assistance is reflected in the fact that the ‘proportion of births atten ded by skilled health
+personnel’ is an indicator to monitor progress towards reaching Target 3.1 (By 2030, reduce the global
+maternal mortality ratio to less than 70 per 100,000 live births ) for SDG 3 (Ensure healthy lives and
+promote well -being). The indi cator is also closely linked to Target 3.2. on preventing deaths of
+newborns and children under age five.11
+The 2022 census included a question on  assistance during the last delivery of women who ever had a
+live birth. The question allowed recording more than one type of birth attendant. For women who had
+a live birth in the last five years before the cens us, this resulted in the recording of, on average, 1.4
+11 By 2030, end preventable deaths of newborns and children under 5 years of age, with all countries aiming to
+reduce neonatal mortality to at least as low as 12 per 1,000 live births and under-5 mortality to at least as low as
+25 per 1,000 live births.
+
+--- page 135 ----------------------------------------------------
+119
+Table 4.17: Population in private households, by sex, age, and by relation to head of household
+Age Total Head of household Spouse
+(husband/wife) Daughter/son Adopted child or
+stepchild
+Daughter in-
+law/son-in-law Mother/father Sister/brother Father-in-
+law/mother-in-law
+Sister-in-
+law/brother-in-Law Grandchild Grandparent Other relative Live-in domestic
+servant Other non relative
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13) (14) (15) (16)
+Total 1,340,925 250,270 178,879 665,720 18,615 34,336 9,872 38,785 3,064 5,383 93,860 1,607 38,352 572 1,610
+0-4 159,862 0 0 113,228 1,298 0 0 315 0 0 43,071 0 1,897 0 53
+0 28,702 0 0 18,746 143 0 0 40 0 0 9,361 0 399 0 13
+1 29,435 0 0 20,000 195 0 0 68 0 0 8,776 0 384 0 12
+2 34,083 0 0 24,285 272 0 0 55 0 0 9,059 0 404 0 8
+3 33,971 0 0 24,879 303 0 0 70 0 0 8,341 0 369 0 9
+4 33,671 0 0 25,318 385 0 0 82 0 0 7,534 0 341 0 11
+5-9 159,582 0 0 11 2,408 0 0 474 0 0 26,058 0 1,533 0 26
+5 32,893 0 0 25,529 421 0 0 67 0 0 6,552 0 318 0 6
+6 33,310 0 0 26,305 469 0 0 82 0 0 6,120 0 329 0 5
+7 32,908 0 0 26,703 535 0 0 96 0 0 5,267 0 299 0 8
+8 30,359 0 0 25,185 479 0 0 93 0 0 4,307 0 293 0 -
+9 30,112 0 0 25,361 504 0 0 136 0 0 3,812 0 294 0 5
+10 -14 147,511 72 10 128,211 3,018 27 0 1,332 0 0 12,807 0 1,993 4 37
+10 29,293 0 0 25,054 504 0 0 149 0 0 3,270 0 312 0 4
+11 27,839 8 0 24,075 554 0 0 156 0 0 2,722 0 319 0 5
+12 30,855 25 0 26,860 671 0 0 273 0 0 2,617 0 402 0 7
+13 28,855 15 0 25,278 601 0 0 315 0 0 2,191 0 448 0 7
+14 30,669 24 10 26,944 688 27 0 439 0 0 2,007 0 512 4 14
+15 -19 157,451 991 1,401 129,213 3,966 1,820 0 6,260 0 661 6,987 0 5,896 83 173
+15 31,830 56 39 27,656 781 61 0 652 0 59 1,859 0 644 5 18
+16 32,423 87 106 27,830 768 160 0 881 0 98 1,624 0 847 6 16
+17 30,524 146 186 25,606 772 270 0 1,075 0 113 1,330 0 980 1
+
+--- page 136 ----------------------------------------------------
+120
+Table 17 : Continued
+Age Total Head of household Spouse
+(husband/wife) Daughter/son Adopted child or
+stepchild
+Daughter in-
+law/son-in-law Mother/father Sister/brother Father-in-
+law/mother-in-law
+Sister-in-
+law/brother-in-Law Grandchild Grandparent Other relative Live-in domestic
+servant Other non relative
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13) (14) (15) (16)
+Male 680,781 205,735 1,880 355,198 10,045 13,651 2,560 20,407 1,005 2,554 48,359 460 17,908 160 859
+0-4 81,855 0 0 58,047 653 0 0 164 0 0 21,986 0 980 0 25
+0 14,830 0 0 9,685 70 0 0 19 0 0 4,846 0 206 0 4
+1 15,126 0 0 10,286 106 0 0 37 0 0 4,478 0 212 0 7
+2 17,342 0 0 12,399 132 0 0 33 0 0 4,577 0 197 0 4
+3 17,309 0 0 12,668 159 0 0 36 0 0 4,275 0 166 0 5
+4 17,248 0 0 13,009 186 0 0 39 0 0 3,810 0 199 0 5
+5-9 81,773 0 0 66,236 1,174 0 0 226 0 0 13,340 0 786 0 11
+5 16,767 0 0 13,017 207 0 0 39 0 0 3,341 0 160 0 -
+6 16,978 0 0 13,448 221 0 0 36 0 0 3,098 0 171 0 4
+7 16,952 0 0 13,744 258 0 0 46 0 0 2,741 0 161 - -
+8 15,513 0 0 12,926 230 0 0 37 0 0 2,171 0 148 - -
+9 15,563 0 0 13,101 258 0 0 68 0 0 1,989 0 146 - -
+10 -14 75,563 39 0 65,787 1,582 17 0 671 0 - 6,440 0 1,005 - 20
+10 15,015 0 0 12,864 266 0 0 78 0 0 1,628 0 176 - -
+11 14,411 5 0 12,470 321 0 0 78 0 0 1,369 0 164 - 4
+12 15,761 13 0 13,718 338 0 0 148 0 0 1,318 0 223 - -
+13 14,626 7 0 12,845 299 0 0 159 0 0 1,114 0 199 - -
+14 15,750 14 0 13,890 358 17 0 208 0 - 1,011 0 243 - 7
+15 -19 80,268 610 - 67,778 2,064 246 0 2,982 0 304 3,634 0 2,569 14 65
+15 16,044 32 0 14,022 385 13 0 299 0 - 966 0 287 - 8
+16 16,603 49 0 14,393 392 18 0 442 0 47 840 0 416 0 6
+17 15,607 81 0 13,355 419 23 0 549 0 52 696 0 414 4 14
+18 16,049 154 - 13,377 425 62 0 731 0 59 612 - 612 - 14
+19 15,965 294 - 12,631 443 130 0 961 - 116 520 0 840 6 23
+20-24 67,096 5,10
+
+--- page 137 ----------------------------------------------------
+121
+Table 17 : Continued
+Age Total Head of household Spouse
+(husband/wife) Daughter/son Adopted child or
+stepchild
+Daughter in-
+law/son-in-law Mother/father Sister/brother Father-in-
+law/mother-in-law
+Sister-in-
+law/brother-in-Law Grandchild Grandparent Other relative Live-in domestic
+servant Other non relative
+(1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13) (14) (15) (16)
+Female 660,144 44,535 176,999 310,522 8,570 20,685 7,312 18,378 2,059 2,829 45,501 1,147 20,444 412 751
+0-4 78,007 0 0 55,181 645 0 0 151 0 0 21,085 0 917 0 28
+0 13,872 0 0 9,061 73 0 0 21 0 0 4,515 0 193 0 9
+1 14,309 0 0 9,714 89 0 0 31 0 0 4,298 0 172 0 5
+2 16,741 0 0 11,886 140 0 0 22 0 0 4,482 0 207 0 4
+3 16,662 0 0 12,211 144 0 0 34 0 0 4,066 0 203 0 4
+4 16,423 0 0 12,309 199 0 0 43 0 0 3,724 0 142 0 6
+5-9 77,809 0 0 62,847 1,234 0 0 248 0 0 12,718 0 747 0 15
+5 16,126 0 0 12,512 214 0 0 28 0 0 3,211 - 158 0 -
+6 16,332 0 0 12,857 248 0 0 46 0 0 3,022 - 158 0 -
+7 15,956 0 0 12,959 277 0 0 50 0 0 2,526 0 138 0 6
+8 14,846 0 0 12,259 249 0 0 56 0 0 2,136 - 145 0 -
+9 14,549 0 0 12,260 246 0 0 68 0 0 1,823 0 148 0 4
+10 -14 71,948 33 10 62,424 1,436 10 0 661 0 0 6,367 0 988 - 17
+10 14,278 0 0 12,190 238 0 0 71 0 0 1,642 - 136 0 -
+11 13,428 - 0 11,605 233 0 0 78 0 0 1,353 - 155 0 -
+12 15,094 12 0 13,142 333 0 0 125 0 0 1,299 0 179 0 4
+13 14,229 8 0 12,433 302 0 0 156 0 0 1,077 0 249 0 4
+14 14,919 10 10 13,054 330 10 0 231 0 0 996 0 269 - 7
+15 -19 77,183 381 1,399 61,435 1,902 1,574 0 3,278 0 357 3,353 0 3,327 69 108
+15 15,786 24 39 13,634 396 48 0 353 0 29 893 0 357 - 10
+16 15,820 38 106 13,437 376 142 0 439 0 51 784 0 431 6 10
+17 14,917 65 186 12,251 353 247 0 526 0 61 634 0 566 15 13
+18 15,187 89 361 11,606 392 437 0 790 0 94 555 0 821 18 24
+19 15,473 165 707 10,507 385 700 0 1,170 0 122 487 0 1
+
+--- page 179 ----------------------------------------------------
+163
+D 5 01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+13
+14
+D 6
+a
+b
+c
+D 7A Calculate <age>
+D 7
+01
+02
+D 8
+Set D7A to <age>
+D 9
+01
+02
+If Don't know, assign random
+day
+Other non-relative
+Is it correct that <Name>'s age was <age>
+on the night of 4 to 5 September 2022?
+Yes
+No
+Other members
+Yes
+No
+What was <Name>'s age on the night of 4 to
+5 September 2022?
+Record age at last birthday. If under 1, write
+'0'
+Did the household have any other usual
+household members on the night of 4 to 5
+September 2022?
+Grandchild
+Grandparent
+Mother/father
+Sister/brother
+Father-in-law/mother-in-law
+Sister-in-law/brother-in-Law
+Head of household
+Spouse (husband/wife)
+Daughter/son
+Adopted child or stepchild
+What is <Name>'s relationship to the head
+of household?
+Date of birth
+What was <Name>'s day of birth?
+If month of birth is unknown, tick button
+for 'Unknown'
+What was <Name>'s month of birth?
+Relationship to head of household
+Go to D9
+Go to D1B
+Skip if
+D6b/c is DK
+Other relative
+Live-in domestic servant
+Daughter-in-law/son-in-law
+If day of birth is unknown, tick button
+for 'Unknown'
+Age calculated
+Automatically generated (suppressed)
+Age calculated is correct
+Age
+What was <Name>'s year of birth?
+If year of birth is unknown, tick button
+for 'Unknown'
+
+--- page 181 ----------------------------------------------------
+165
+E 0A
+E 0B
+E 0C
+E 0D
+E 0E
+E 1
+E 2 01
+02
+03
+E 3 01
+02
+03
+04
+05
+E 4
+99
+E 5
+01
+02
+E 6
+98
+E 7 01
+02
+Who is <Name>'s partner (married or in
+consensual union)?
+List household members aged >= 14
+Is <Name>'s biological mother still alive?
+Yes
+No
+Spouse/partner is not usual
+member of this household
+No HH female
+14+older than
+<Name>, go
+to E10
+Go to E10
+Mother still alive
+Partner
+If E0E<14,
+go to E7
+Place on census night In this household
+Elsewhere in Timor-LesteWhere did <Name> stay on the night of 4 to
+5 September 2022? Abroad
+Module E - Individual information
+Time stamp E start
+Automatically generated (suppressed)
+Individual number Transferred from D1B
+First name Transferred from D2
+Gender Transferred from D4
+Member providing information
+Who is the person who provides information
+about <Name>?
+List household members aged >= 10
+Age Transferred from D8
+Go to E5
+Is <Name> currently living with a partner on a
+permanent basis? Yes
+No Go to E7
+What is <Name>'s age at first marriage?
+Never married
+Married
+Widowed
+Divorced
+Separated
+Don't know
+Marital status
+What is <Name>'s marital status?
+If HH size =
+1, go to E7
+If E3=2, go
+to E6
+Living with a partner
+Age at first marriage
+If age at first marriage is unknown, tick
+button for 'Unknown'
+
+--- page 182 ----------------------------------------------------
+166
+E 8 01
+02
+E 9
+E 10 01
+02
+E 11 01
+02
+E 12
+E 13
+01
+02
+09
+E 14 a
+b
+c
+d
+e
+f
+E 15
+01
+02
+09
+E 16 01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+...
+36
+Yes
+Yes
+Is <Name>'s mother living in this household? No
+If HH size =
+1, go to E10
+List household members: other person,
+gender=2/3, age 14+ years older than
+person
+No HH male
+14+older than
+<Name>, go
+to E13
+Father individual number
+Who is <Name>'s father?
+Is <Name>'s biological father still alive?
+No Go to E13
+Father living in household Yes
+Is <Name>'s father living in this household? No Go to E13
+List household members: other person,
+gender=1/3, age 14+ years older than
+person
+If HH size =
+1, go to E13
+Father still alive
+Who is <Name>'s mother?
+Go to E10
+Mother living in household
+Mother individual number
+Go to E18
+Go to
+E21
+If E0E >= 6,
+go to E16
+Place of registration
+Where has <Name>'s birth been registered?
+Tick any answer that is mentioned
+Yes
+No
+In the civil registration office
+In hospital
+At suco administration
+In church
+In other place
+Go to E16
+Country of birth
+What was <Name>'s country of birth?
+Timor-Leste
+Angola
+Other country
+Australia
+Bangladesh
+Brazil
+India
+Indonesia
+Ireland
+...
+Don't know Go to E15
+If a=1 or
+b=1 or
+c=1, go
+to E16
+Don't know
+Birth certificate
+Does <Name> have a birth certificate from
+the civil authority?
+Yes
+No
+Birth registration
+Has <Name>'s birth ever been registered?
+Don't know
+Canada
+Cape Verde
+China
+Cuba
+
+--- page 192 ----------------------------------------------------
+176
+E 52
+E 53
+01
+02
+E 54 01
+02
+09
+E 55
+01
+02
+03
+04
+05
+06
+07
+08
+09
+10
+E 56
+E 57 01
+02
+03
+04
+05
+06
+07
+08
+09
+E 58 a
+b
+c
+d
+e
+f
+... ...
+XX
+Available for work
+If a job would be available or a business
+could be started, would <Name> be able to
+start working within two weeks?
+Yes
+No
+Atauran
+Bahasa Indonesia
+Other language
+Select at least one and no more than two
+languages from the list
+Adabe
+What languages did <Name> learn as a
+child?
+Tetun Prasa
+Tetun Terik
+Islam
+Buddhism
+Hinduism
+Indigenous religion
+Other
+Portugese
+No religion
+No answer
+Don't know
+Has <Name> actively been looking for work
+in the past month or try to start a new
+business?
+Mother tongues
+What is <Name>'s religion?
+Hours work employment
+Christianity - Protestantism /
+Evangelicalism
+Yes
+No
+Was a seasonal worker
+Did not want to work
+Thought no work was available
+Other reason
+Christianity - Catholicism
+Go to
+E57
+If E53 = 1,
+go to E57
+Go to E57
+Attended education
+Took care of the home / family
+Was disabled, ill, in bad health
+Other reason of jobless
+Specify other reason mentioned for not
+working
+Reason of jobless
+What was the main reason <Name> was not
+working for pay or profit in the week of 29
+August to 4 September?
+Religion
+Lived from own financial means
+Was pensioner/retired/old age
+Farming, tending animals or fishing
+to produce food for the family
+Looking for work
+How many hours does <Name> usually work
+per week in this job?
+
+--- page 200 ----------------------------------------------------
+184
+H0A
+H 1
+01
+02
+H1B
+H 2
+H 3
+H 4 01
+02
+03
+H 5 02
+03
+04
+05
+06
+07
+08
+09
+10
+11
+12
+13
+14
+H 6
+Module H - Former household member information
+Time stamp H start
+Automatically generated (suppressed)
+Former household members living abroad
+Are there any persons who were members
+of this household that now live abroad?
+This refers to a relative who lived in this
+household during the last ten years  before
+moving abroad and not to a relative who
+lives elsewhere in Timor-Leste.
+Yes
+No Go to H14
+Last name former member
+What is the last name of <Former
+member>?
+Gender former member Male
+Individual former member number
+Automatically generated (suppressed)
+First name former member
+What is the first name of the former
+household member who currently lives
+abroad?
+What is <Former member>'s gender? Female
+Other
+Age former member
+What is <Former member>'s age?
+Sister/brother
+Father-in-law/mother-in-law
+Sister-in-law/brother-in-Law
+Grandchild
+Grandparent
+Other relative
+Live-in domestic servant
+Other non-relative
+If less than 1 year, write '0'
+Relationship to the head
+What is <Former member>'s relationship to
+the current head of household?
+Spouse (husband/wife)
+Daughter/son
+Adopted child or stepchild
+Daughter-in-law/son-in-law
+Mother/father
