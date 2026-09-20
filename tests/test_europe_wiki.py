@@ -434,3 +434,29 @@ class ACitationInAnotherLanguage(unittest.TestCase):
     def test_a_word_hyphenated_by_the_table_width_is_one_word(self):
         self.assertEqual(m.label_for("Не се само- определят", m.BG_ETHNICITY)[0],
                          "Not declared")
+
+
+class TwoWaysASectionCanBeEmpty(unittest.TestCase):
+    """A heading with no table at all is a different fact from a heading with
+    a table this reader does not know, and a reader of the map should not
+    have to guess which happened.
+
+    Montenegro's municipality articles have a Demographics heading with prose
+    under it and the only table on the page is the council's party seats.
+    """
+
+    def why(self, body):
+        _, _, why = m.find_table(body, ETHNIC)
+        return why
+
+    def test_a_heading_with_no_table_says_the_article_publishes_none(self):
+        self.assertIn("no table in it at all", self.why(
+            "== Obyvateľstvo ==\nV okrese žije veľa ľudí.\n"))
+
+    def test_a_heading_with_a_table_of_another_kind_says_so(self):
+        self.assertIn("header this reader does not know", self.why(
+            '== Obyvateľstvo ==\n{| class="wikitable"\n! strana !! kreslá\n|-\n'
+            "| SNS || 12\n|-\n| SaS || 5\n|}\n"))
+
+    def test_no_heading_at_all_names_the_pattern(self):
+        self.assertIn("no section matching", self.why("== Doprava ==\nCesty.\n"))

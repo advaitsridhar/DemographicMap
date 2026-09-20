@@ -125,6 +125,155 @@ ADMIN1_FILE = re.compile(r"admin_?1(?!\d).*\.csv$", re.I)
 YEAR = re.compile(r"(1[89]\d\d|20\d\d)")
 
 
+# ---------------------------------------------------------------------------
+# What CLEAR Global calls a unit, against what the boundary file calls it
+# ---------------------------------------------------------------------------
+
+# CLEAR Global names its first-level units in whatever the source study used,
+# and the boundary file names them in English. Where the two disagree the
+# build's matcher does not silently fail -- it does something worse. Its
+# prefix pass joined "Papua Barat" to the shape called Papua, because "Papua"
+# starts "Papua Barat" and no row was named Papua to out-rank it; West Papua's
+# composition would have been painted on the province next door while West
+# Papua itself stayed empty. "Kepulauan Riau" reached Riau and "Maluku Utara"
+# reached Maluku the same way; those two were caught only because a row really
+# was named Riau and really was named Maluku, so the collision rule refused
+# them both. The one with no rival got through.
+#
+# Measured against the boundary files in this repository, 96 of 662 rows
+# reached no shape at all and three reached the wrong one. So the names are
+# declared here rather than guessed there. Each entry is a spelling or a
+# translation of the same place -- Indonesian against English, Swahili against
+# English, French against English, one transliteration of Arabic against
+# another -- and every right-hand side is a name that exists in this repo's
+# own admin1 file for that country, which is what makes the table checkable.
+#
+# What is deliberately NOT here:
+#   * Botswana's Gaborone, Francistown, Lobatse, Selibe Phikwe and Jwaneng.
+#     They are towns with their own row in CLEAR Global's file and no
+#     first-level shape at all in the boundary file. There is nothing to join
+#     them to, and inventing one would put a city's languages on a district.
+#   * Tanzania's Songwe, split out of Mbeya in 2016, after the boundary file.
+#   * Kyrgyzstan's Bishkek (city), for the same reason as Botswana's towns.
+#   * Ukraine, Ethiopia, Benin, Mali, Nepal, Namibia, Niger, Sierra Leone and
+#     South Africa, whose 24 unmatched rows would gain nothing: each of those
+#     countries already carries language from its own census, and this file is
+#     first in ADAPTER_FILES precisely so that a census beats it. Aliasing them
+#     would add 24 chances to mis-match in exchange for no figure.
+# Each of those stays an honest gap, which is the cheaper mistake.
+BOUNDARY_ALIASES: dict[str, dict[str, str]] = {
+    # Indonesian against English, both directions of the compass word.
+    "IDN": {
+        "Sumatera Utara": "North Sumatra",
+        "Sumatera Barat": "West Sumatra",
+        "Sumatera Selatan": "South Sumatra",
+        "Kepulauan Bangka Belitung": "Bangka-Belitung Islands",
+        "Kepulauan Riau": "Riau Islands",
+        "Dki Jakarta": "Jakarta Special Capital Region",
+        "Jawa Barat": "West Java",
+        "Jawa Tengah": "Central Java",
+        "Jawa Timur": "East Java",
+        "Daerah Istimewa Yogyakarta": "Special Region of Yogyakarta",
+        "Nusa Tenggara Barat": "West Nusa Tenggara",
+        "Nusa Tenggara Timur": "East Nusa Tenggara",
+        "Kalimantan Barat": "West Kalimantan",
+        "Kalimantan Tengah": "Central Kalimantan",
+        "Kalimantan Selatan": "South Kalimantan",
+        "Kalimantan Timur": "East Kalimantan",
+        "Kalimantan Utara": "North Kalimantan",
+        "Sulawesi Utara": "North Sulawesi",
+        "Sulawesi Tengah": "Central Sulawesi",
+        "Sulawesi Selatan": "South Sulawesi",
+        "Sulawesi Tenggara": "Southeast Sulawesi",
+        "Sulawesi Barat": "West Sulawesi",
+        "Maluku Utara": "North Maluku",
+        "Papua Barat": "West Papua",
+    },
+    # Two transliterations of the same Arabic names.
+    "IRQ": {
+        "Al-Najaf": "An-Najaf",
+        "Al-Qadissiya": "Al-Qadisiyah",
+        "Kerbala": "Karbala",
+        "Ninewa": "Ninawa",
+        "Thi Qar": "Dhi Qar",
+        "Wassit": "Wasit",
+    },
+    # English against the French the boundary file keeps, and it keeps it
+    # inconsistently: three departments carry "Departement de/du" and three
+    # carry the English word "Department" after the French name.
+    "HTI": {
+        "West": "Departement de l'Ouest",
+        "North": "Departement du Nord",
+        "South-East": "Departement du Sud-Est",
+        "North-East": "Nord-Est Department",
+        "North-West": "Nord-Ouest Department",
+        "South": "Sud Department",
+    },
+    "COD": {
+        "Bas-Uele": "Lower Uele",
+        "Haut-Uele": "Upper Uele",
+        "Nord-Kivu": "North Kivu",
+        "Sud-Kivu": "South Kivu",
+    },
+    # "Bantey" is the boundary file's own misspelling of Banteay.
+    "KHM": {
+        "Banteay Meanchey": "Bantey Meanchey",
+        "Ratanak Kiri": "Ratanakiri Province",
+        "Tboung Khmum": "Tbong Khmum",
+    },
+    # The boundary file uses the initials. BARMM is not quite ARMM -- it
+    # replaced it in 2019 and took in Cotabato City and 63 barangays of North
+    # Cotabato -- but it is the same region in the same place under a new
+    # charter, and the alternative is leaving the whole of Muslim Mindanao
+    # blank. The difference is one of vintage, which the record already states.
+    "PHL": {
+        "National Capital Region (NCR)": "NCR",
+        "Cordillera Administrative Region (CAR)": "CAR",
+        "Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)": "ARMM",
+    },
+    "SOM": {
+        "Hiraan": "Hiiraan",
+        "Middle Shabelle": "Middle Shebelle",
+        "Lower Shabelle": "Lower Shebelle",
+    },
+    "KGZ": {"Chui": "Chuy Region"},
+    "SLV": {
+        "La Paz": "Departamento de La Paz",
+        "Santa Ana": "Departamento de Santa Ana",
+    },
+    "MAR": {
+        "Fes-Meknes": "Fez-Meknes",
+        "Tanger-Tetouan-Al Hoceima": "Tangier-Tetouan-Al Hoceima",
+    },
+    # The Gambia names its regions twice over: CLEAR Global uses the region
+    # name and the boundary file uses the town each region is administered
+    # from. Central River is one region in the boundary file's vintage and two
+    # in CLEAR Global's, North and South, so each half is declared against the
+    # town that administers it.
+    "GMB": {
+        "Upper River": "Basse",
+        "West Coast": "Brikama",
+        "North Bank": "Kerewan",
+        "Lower River": "Mansakonko",
+        "Central River North": "Kuntaur",
+        "Central River South": "Janjanbureh",
+    },
+    # Swahili against English, for the five Zanzibar and Pemba regions.
+    "TZA": {
+        "Kaskazini Unguja": "Zanzibar North",
+        "Kusini Unguja": "Zanzibar South & Central",
+        "Mjini Magharibi": "Zanzibar Urban/West",
+        "Kaskazini Pemba": "North Pemba",
+        "Kusini Pemba": "South Pemba",
+    },
+    "MUS": {
+        "Plaine Wilhems": "Plaines Wilhems",
+        "Rodriguez Island": "Rodrigues",
+    },
+    "COG": {"Point-Noire": "Pointe-Noire"},
+}
+
+
 def get(path: str, **params: object) -> Any:
     url = f"{API}/{path}?" + urllib.parse.urlencode(params)
     request = urllib.request.Request(url, headers=HEADERS)
@@ -346,10 +495,12 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
         f"Licence: {terms}.")
 
     records = []
+    aliases = BOUNDARY_ALIASES.get(iso, {})
     for code, unit in sorted(kept.items()):
         records.append(record(
             f"{iso}-CG-{code}", unit["name"], level="admin1", parent=iso,
             country=iso,
+            aliases=aliases.get(unit["name"]) and [aliases[unit["name"]]],
             language=unit["shares"],
             language_year=year,
             language_note=note,

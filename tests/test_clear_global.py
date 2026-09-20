@@ -243,3 +243,81 @@ class Written(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TheBoundaryAliases(unittest.TestCase):
+    """Every declared alias must name a shape that exists, and buy something."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.root = Path(__file__).resolve().parent.parent
+        cls.admin1 = cls.root / "site" / "data" / "admin1"
+
+    def shapes(self, iso):
+        import json
+        path = self.admin1 / f"{iso}.json"
+        if not path.exists():
+            self.skipTest(f"no built admin1 file for {iso}")
+        return {s["name"] for s in json.loads(path.read_text())}
+
+    def test_every_alias_names_a_shape_that_exists(self):
+        # The point of declaring a name rather than letting the matcher guess
+        # is that a declaration can be checked. An alias naming a shape this
+        # repository does not have is a typo that would fail silently: the row
+        # would fall back to the prefix pass, which is the behaviour the table
+        # exists to stop.
+        import unicodedata
+        def flat(s):
+            s = unicodedata.normalize("NFKD", s)
+            return "".join(c for c in s if not unicodedata.combining(c)).lower()
+        for iso, table in cg.BOUNDARY_ALIASES.items():
+            names = {flat(n) for n in self.shapes(iso)}
+            for source_name, shape_name in table.items():
+                with self.subTest(iso=iso, name=source_name):
+                    self.assertIn(
+                        flat(shape_name), names,
+                        f"{iso}: {source_name!r} is aliased to {shape_name!r}, "
+                        f"which is not a shape in site/data/admin1/{iso}.json")
+
+    def test_no_two_units_of_one_country_are_aliased_to_one_shape(self):
+        # Two rows on one shape is the collision the build refuses, and a
+        # refusal loses both. Declaring one is a way of asking for that, so it
+        # is a mistake in the table rather than a fact about the country.
+        for iso, table in cg.BOUNDARY_ALIASES.items():
+            targets = list(table.values())
+            with self.subTest(iso=iso):
+                self.assertEqual(
+                    len(targets), len(set(targets)),
+                    f"{iso}: two source units are aliased to the same shape")
+
+    def test_an_alias_is_never_the_name_it_already_has(self):
+        # An alias equal to the row's own name buys nothing: the exact pass
+        # would already have matched it. One here means the table was written
+        # against a guess rather than against the boundary file.
+        for iso, table in cg.BOUNDARY_ALIASES.items():
+            for source_name, shape_name in table.items():
+                with self.subTest(iso=iso, name=source_name):
+                    self.assertNotEqual(source_name.lower(), shape_name.lower())
+
+    def test_the_written_file_carries_the_aliases_it_declares(self):
+        # The table only matters if it reaches the records. This is the test
+        # that would have failed while the adapter had the table and the
+        # output did not.
+        import json
+        path = self.root / "data" / "processed" / "clear_global_language.json"
+        if not path.exists():
+            self.skipTest("clear_global_language.json has not been written")
+        records = json.loads(path.read_text())
+        declared = sum(len(t) for t in cg.BOUNDARY_ALIASES.values())
+        carried = 0
+        for rec in records:
+            want = cg.BOUNDARY_ALIASES.get(rec["parent"], {}).get(rec["name"])
+            if want is not None:
+                self.assertEqual(rec.get("aliases"), [want], rec["name"])
+                carried += 1
+        # Not every declared alias need appear -- a country whose file CLEAR
+        # Global refused writes no records at all -- but most must, or the
+        # table is describing a file this adapter is not producing.
+        self.assertGreater(carried, declared * 0.8,
+                           f"only {carried} of {declared} declared aliases "
+                           f"reached the written file")

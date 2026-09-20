@@ -607,12 +607,14 @@ def find_table(wikitext: str, spec: Composition) -> tuple[list[list[str]], str, 
     section = re.compile(spec.section, re.I)
     header = re.compile(spec.header, re.I)
     seen = False
+    tabled = False
     found: list[tuple[list[list[str]], str]] = []
     for name, body in sections(wikitext):
         if not section.search(name):
             continue
         seen = True
         for table in tables(body):
+            tabled = tabled or len(table) >= 3
             if len(table) < 3:
                 continue
             first = " ".join(" ".join(row) for row in table[:2])
@@ -626,9 +628,18 @@ def find_table(wikitext: str, spec: Composition) -> tuple[list[list[str]], str, 
         return found[0][0], found[0][1], ""
     if not seen:
         return [], "", f"the article has no section matching {spec.section!r}"
-    return [], "", ("the section is there and holds no table whose header this "
-                    "reader knows; the article has been reorganised or carries "
-                    "a different table")
+    if not tabled:
+        # Worth separating from the refusal below, because they are
+        # different facts about the article and a reader of the map should
+        # not have to guess which happened. Montenegro's municipality
+        # articles have a Demographics heading with prose under it and the
+        # only table on the page is the council's party seats.
+        return [], "", ("the article has a section where a composition would "
+                        "go and prints no table in it at all; this unit's "
+                        "article publishes no composition")
+    return [], "", ("the section is there and holds a table whose header this "
+                    "reader does not know; the article has been reorganised "
+                    "or carries a different table")
 
 
 PIXELS = re.compile(r"^\d+\s*px$", re.I)
