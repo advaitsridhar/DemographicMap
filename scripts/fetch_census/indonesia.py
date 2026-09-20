@@ -1197,6 +1197,65 @@ def regency_record(name: str, province: str, fields: dict[str, Any],
                   sources=sources, **fields)
 
 
+def hapi_by_province() -> dict[str, dict[str, dict[str, Any]]]:
+    """HAPI's regency head counts, keyed by the province name this map uses.
+
+    HAPI names a province in Indonesian where this map names it in English,
+    and PROVINCES already holds both -- the article title and the aliases --
+    so the join is a lookup rather than a second table to keep in step. All
+    34 match; a province that stopped matching would silently lose its
+    regencies, so the count is logged.
+    """
+    from . import indonesia_hapi                   # noqa: PLC0415 -- optional
+
+    lookup: dict[str, str] = {}
+    for english, (title, aliases) in PROVINCES.items():
+        for name in [english, title, *aliases]:
+            lookup[re.sub(r"[^a-z]", "", name.lower())] = english
+    out: dict[str, dict[str, dict[str, Any]]] = {}
+    unknown: set[str] = set()
+    for row in indonesia_hapi.committed():
+        english = lookup.get(re.sub(r"[^a-z]", "", row["admin1_name"].lower()))
+        if not english:
+            unknown.add(row["admin1_name"])
+            continue
+        out.setdefault(english, {})[row["admin2_name"]] = row
+    if unknown:
+        log(f"  hapi: {len(unknown)} province name(s) match none of this map's: "
+            f"{', '.join(sorted(unknown))}")
+    if out:
+        log(f"  hapi: {sum(len(v) for v in out.values())} regency head counts "
+            f"available across {len(out)} provinces, as a last resort")
+    return out
+
+
+def hapi_fields(row: dict[str, Any], name: str, why: str) -> dict[str, Any]:
+    """The population fields for a regency filled from HAPI.
+
+    The licence is on the record rather than only in the docs, because this
+    one is not open and a reader of the map should be able to see that
+    without going looking for it.
+    """
+    from . import indonesia_hapi                   # noqa: PLC0415 -- optional
+
+    year = int(row["year"])
+    return {
+        "population": measure(int(row["population"]), year=year,
+                              source=indonesia_hapi.PUBLISHER),
+        "population_note": (
+            f"Total population for {year} from {indonesia_hapi.PUBLISHER}, "
+            f"served through UN OCHA's Humanitarian API. Used because the "
+            f"article route found none: {why}. {indonesia_hapi.CAVEAT} "
+            f"{indonesia_hapi.TERMS}"),
+        "population_source": {
+            "field": "population",
+            "name": indonesia_hapi.PUBLISHER,
+            "url": indonesia_hapi.DATASET,
+            "license": indonesia_hapi.LICENCE,
+        },
+    }
+
+
 def portal_records(known: dict[str, dict[str, dict[str, float]]],
                    unread: dict[str, dict[str, str]]) -> list[dict[str, Any]]:
     """The regencies the infobox could not answer for, from the provincial and
@@ -1244,7 +1303,8 @@ def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
     unread: dict[str, dict[str, str]] = {}
     refusals: dict[str, int] = {}
     known: dict[str, dict[str, dict[str, float]]] = {}
-    counted = uninhabited = 0
+    counted = uninhabited = from_hapi = 0
+    hapi = hapi_by_province()
     for shape in shapes("admin2"):
         name, province = shape["name"], provinces.get(shape["parent"], "")
         if not province:
@@ -1279,6 +1339,14 @@ def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
             counted += 1
             fields.update(population_fields(head, resolved))
             sources.append(fields.pop("population_source"))
+        elif (last := hapi.get(province, {}).get(name)):
+            # Last resort, and only ever into an empty field: the article
+            # route is a count for 2023-2025 and this is a projection for
+            # 2020 under a licence that is not open, so it fills a regency
+            # that has nothing and never replaces one that has something.
+            from_hapi += 1
+            fields.update(hapi_fields(last, name, why))
+            sources.append(fields.pop("population_source"))
         else:
             refusals[why] = refusals.get(why, 0) + 1
             fields["population"] = gap(
@@ -1294,6 +1362,10 @@ def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
         f"regencies, and say so: {', '.join(sorted(NOT_REGENCIES))}")
     for why, n in sorted(refusals.items(), key=lambda kv: -kv[1]):
         log(f"    {n} without one because {why}")
+    if from_hapi:
+        log(f"  {from_hapi} of those filled from HAPI instead -- a 2020 "
+            f"projection under a licence that is not open; see "
+            f"scripts/fetch_census/indonesia_hapi.py")
     flat = sorted(f"{prov}/{name}" for prov, names in unread.items() for name in names)
     if flat:
         log(f"  the infobox does not answer for {len(flat)}: {', '.join(flat)}")

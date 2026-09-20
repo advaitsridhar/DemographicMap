@@ -583,6 +583,43 @@ class Records(unittest.TestCase):
             if "not read" in line or "does not answer" in line:
                 self.assertNotIn("Hutan", line, line)
 
+    def test_hapi_only_ever_fills_and_never_replaces(self):
+        """The last-resort head count must not touch a regency that has one.
+
+        HAPI's figures are a 2020 projection under a licence that is not
+        open; the article route's are a registry count for 2023 to 2025. A
+        rule that let the projection win anywhere would be replacing a better
+        figure with a worse one, and would be doing it under a licence the
+        project would rather not lean on at all.
+        """
+        pages = {("Kabupaten Cilacap", "id"): CILACAP}
+        regencies, _ = quiet(m.regency_records,
+                             lambda title, lang="id": (pages.get((title, lang), ""),
+                                                       title))
+        by_name = {r["name"]: r for r in regencies}
+        cilacap = by_name.get("Kabupaten Cilacap") or by_name["Cilacap"]
+        # Cilacap's article carries a cited, dated count, so that is what
+        # lands -- not HAPI's, whatever HAPI holds for it.
+        self.assertEqual(cilacap["population"]["value"], 2_037_899)
+        self.assertEqual(cilacap["population"]["year"], 2024)
+        self.assertIn("Dukcapil", cilacap["population"]["source"])
+        self.assertNotIn("UNFPA", cilacap["population"]["source"])
+
+    def test_a_hapi_record_carries_its_licence_and_its_vintage(self):
+        from scripts.fetch_census import indonesia_hapi as hapi
+        row = {"population": "95303", "year": "2020",
+               "admin2_name": "Simeulue", "admin2_code": "ID1101",
+               "resource_hdx_id": "8f6f09d2-95f7-42dc-b6f1-aead319607f3"}
+        fields = m.hapi_fields(row, "Simeulue", "the article prints no head count")
+        self.assertEqual(fields["population"]["value"], 95_303)
+        self.assertEqual(fields["population"]["year"], 2020)
+        self.assertEqual(fields["population_source"]["license"], hapi.LICENCE)
+        self.assertIn("humanitarian use only", fields["population_source"]["license"])
+        for phrase in ("projection, not a count", "owner's decision",
+                       "humanitarian use only", "marks it as not open",
+                       "the article prints no head count"):
+            self.assertIn(phrase, fields["population_note"], phrase)
+
     def test_a_lake_says_it_is_a_lake(self):
         """Five shapes at this level are lakes, a forest and two reservoirs.
 
