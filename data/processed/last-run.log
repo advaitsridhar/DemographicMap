@@ -1,60 +1,7 @@
-probe_ckan: 26 host(s), timeout 12s
-  https://sumsel.kemenag.go.id/ -> 0  timeout after 12s
-  http://sumsel.kemenag.go.id/ -> 0  timeout after 12s
-  https://jatim.kemenag.go.id/ -> 0  timeout after 12s
-  http://jatim.kemenag.go.id/ -> 0  timeout after 12s
-  https://sulsel.kemenag.go.id/ -> 0  timeout after 12s
-  http://sulsel.kemenag.go.id/ -> 0  timeout after 12s
-  https://jabar.kemenag.go.id/ -> 0  timeout after 12s
-  http://jabar.kemenag.go.id/ -> 0  timeout after 12s
-  https://sumbar.kemenag.go.id/ -> 0  timeout after 12s
-  http://sumbar.kemenag.go.id/ -> 0  timeout after 12s
-  https://babel.kemenag.go.id/ -> 0  timeout after 12s
-  http://babel.kemenag.go.id/ -> 0  timeout after 12s
-  https://lampung.kemenag.go.id/ -> 200 text/html "Kanwil Kementerian Agama Provinsi Lampung | Portal Resmi"
-    /api/3/action/status_show -> 404 application/json { "message": "" }
-    /api/action/status_show -> 404 application/json { "message": "" }
-  https://ntt.kemenag.go.id/ -> 0  timeout after 12s
-  http://ntt.kemenag.go.id/ -> 0  timeout after 12s
-  https://sulteng.kemenag.go.id/ -> 200 text/html "Berita Kanwil Kemenag Sulawesi Tengah"
-    /api/3/action/status_show -> 204 text/html
-    /api/action/status_show -> 204 text/html
-  https://riau.kemenag.go.id/ -> 0  timeout after 12s
-  http://riau.kemenag.go.id/ -> 0  timeout after 12s
-  https://sultra.kemenag.go.id/ -> 0  timeout after 12s
-  http://sultra.kemenag.go.id/ -> 0  timeout after 12s
-  https://jakarta.kemenag.go.id/ -> 0  DNS: no such host
-  https://kalteng.kemenag.go.id/ -> 0  timeout after 12s
-  http://kalteng.kemenag.go.id/ -> 0  timeout after 12s
-  https://sumut.kemenag.go.id/ -> 0  timeout after 12s
-  http://sumut.kemenag.go.id/ -> 0  timeout after 12s
-  https://kaltim.kemenag.go.id/ -> 0  timeout after 12s
-  http://kaltim.kemenag.go.id/ -> 0  timeout after 12s
-  https://jateng.kemenag.go.id/ -> 200 text/html "Halaman Utama Website Kantor Wilayah Kementerian Agama Provinsi Jawa Tengah - Kantor Wilayah Kemente"
-    /api/3/action/status_show -> 404 text/html <!doctype html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, init
-    /api/action/status_show -> 404 text/html <!doctype html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, init
-  https://banten.kemenag.go.id/ -> 0  timeout after 12s
-  http://banten.kemenag.go.id/ -> 0  timeout after 12s
-  https://malut.kemenag.go.id/ -> 0  timeout after 12s
-  http://malut.kemenag.go.id/ -> 0  timeout after 12s
-  https://diy.kemenag.go.id/ -> 0  timeout after 12s
-  http://diy.kemenag.go.id/ -> 0  timeout after 12s
-  https://bengkulu.kemenag.go.id/ -> 0  timeout after 12s
-  http://bengkulu.kemenag.go.id/ -> 0  timeout after 12s
-  https://kepri.kemenag.go.id/ -> 0  timeout after 12s
-  http://kepri.kemenag.go.id/ -> 0  timeout after 12s
-  https://sulbar.kemenag.go.id/ -> 200 text/html "Sulbar Kemenag"
-    /api/3/action/status_show -> 404 application/json { "message": "" }
-    /api/action/status_show -> 404 application/json { "message": "" }
-  https://sulut.kemenag.go.id/ -> 200 text/html "Kementerian Agama Republik Indonesia"
-    /api/3/action/status_show -> 200 text/html
-    /api/action/status_show -> 200 text/html
-  https://gorontalo.kemenag.go.id/ -> 0  timeout after 12s
-  http://gorontalo.kemenag.go.id/ -> 0  timeout after 12s
-  https://data.kemenag.go.id/ -> 503 text/html 2,000 bytes
-    /api/3/action/status_show -> 503 text/html <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dt
-    /api/action/status_show -> 503 text/html <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dt
-  https://satudata.kemenag.go.id/ -> 200 text/html "Portal Satu Data - Kemenag"
-    /api/3/action/status_show -> 0  timeout after 12s
-    /api/action/status_show -> 0  timeout after 12s
-probe_ckan: 7 of 26 answered; 0 speak CKAN: none
+  https://data.humdata.org/api/3/action/package_show?id=cod-ps-idn
+    12,884 chars
+    [license_title @1467] ...9", "has_geodata": false, "has_showcases": false, "id": "7e00297b-7b5b-4a98-932d-509f298fd8a8", "is_requestdata_type": false, "isopen": false, "last_modified": "2023-04-04T20:06:03.783706", "license_id": "hdx-other", "license_other": "humanitarian use only", "license_title": "Other", "maintainer": "05caa6be-d22f-4547-8e57-60dbfae21f29", "metadata_created": "2020-12-21T11:44:01.611040", "metadata_modified": "2025-04-10T14:26:35.710256", "methodology": "Other", "methodology_other": "Projections from 2010 census performed by UNFPA...
+    [license_id @1398] ...resource", "dataset_source": "UNFPA", "due_date": "2021-12-31T23:59:59", "has_geodata": false, "has_showcases": false, "id": "7e00297b-7b5b-4a98-932d-509f298fd8a8", "is_requestdata_type": false, "isopen": false, "last_modified": "2023-04-04T20:06:03.783706", "license_id": "hdx-other", "license_other": "humanitarian use only", "license_title": "Other", "maintainer": "05caa6be-d22f-4547-8e57-60dbfae21f29", "metadata_created": "2020-12-21T11:44:01.611040", "metadata_modified": "2025-04-10T14:26:35.710256", "methodology": "Other...
+    [dataset_source @1150] ...88\r\nWadung Kedungombo\tID3388\r\n", "cod_level": "cod-enhanced", "creator_user_id": "9429fda5-d84f-42e4-890d-e03bf8297f7b", "data_update_frequency": "365", "dataset_date": "[2020-01-01T00:00:00 TO 2020-12-31T23:59:59]", "dataset_preview": "first_resource", "dataset_source": "UNFPA", "due_date": "2021-12-31T23:59:59", "has_geodata": false, "has_showcases": false, "id": "7e00297b-7b5b-4a98-932d-509f298fd8a8", "is_requestdata_type": false, "isopen": false, "last_modified": "2023-04-04T20:06:03.783706", "license_id": "hdx-other", ...
+    [dataset_date @1049] ...ID1688\r\nDanau\tID1888\r\nDanau\tID7188\r\nDanau Toba\tID1288\r\nHutan\tID3399\r\nWaduk Cirata\tID3288\r\nWadung Kedungombo\tID3388\r\n", "cod_level": "cod-enhanced", "creator_user_id": "9429fda5-d84f-42e4-890d-e03bf8297f7b", "data_update_frequency": "365", "dataset_date": "[2020-01-01T00:00:00 TO 2020-12-31T23:59:59]", "dataset_preview": "first_resource", "dataset_source": "UNFPA", "due_date": "2021-12-31T23:59:59", "has_geodata": false, "has_showcases": false, "id": "7e00297b-7b5b-4a98-932d-509f298fd8a8", "is_requestdata_ty...
+    [caveats @175] ...{"help": "https://data.humdata.org/api/3/action/help_show?name=package_show", "success": true, "result": {"archived": false, "batch": "42497919-e79d-43a3-97c7-ddc5b1b6b378", "caveats": "The [Indonesia - Subnational Administrative Boundaries](https://data.humdata.org/dataset/indonesia-administrative-boundary-polygons-lines-and-places-levels-0-4b) Administrative Boundaries dataset (COD-AB) includes 17 uninhabited features (comprising lakes,...
