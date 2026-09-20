@@ -1,27 +1,4 @@
-probe_pdf: https://web.archive.org/web/20230930115000id_/https://deps.mofe.gov.bn/DEPD%20Documents%20Library/DOS/POP/2021/ANNEX%20A.pdf
-  1,048,576 bytes
-EOF marker not found
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 164, in fetch_text
-    reader = PdfReader(io.BytesIO(blob))
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 151, in __init__
-    self._initialize_stream(stream)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 175, in _initialize_stream
-    self.read(stream)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 689, in read
-    self._find_eof_marker(stream)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 802, in _find_eof_marker
-    line = read_previous_line(stream)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_utils.py", line 380, in read_previous_line
-    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
-pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+laos: Lao Statistics Bureau, 4th Population and Housing Census 2015, village indicator table (population, ethno-linguistic category and religion for each of 8,500 villages), released through Open Development Laos
+  fetched lao-population-census-2015.xlsx (4.5 MB)
+  8,499 village rows
+laos: village 803060 (B. Phou don mai) names the province 'Xaignabouly', which is none of the 18 this reader knows; add it to PROVINCES or to the Vientiane table
