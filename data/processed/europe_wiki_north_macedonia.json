@@ -25,13 +25,56 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article has no section matching '^demographics?$|^population$|^ethnic'"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 85.22
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 6.75
+      },
+      {
+        "group": "Serbian",
+        "pct": 2.77
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 1.62
+      },
+      {
+        "group": "Albanian",
+        "pct": 1.09
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.84
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.6
+      },
+      {
+        "group": "Romani",
+        "pct": 0.59
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.52
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Aerodrom Municipality, Skopje' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Aerodrom_Municipality%2C_Skopje",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Skopje",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the en.wikipedia article 'Aerodrom Municipality, Skopje' transcribes and cites it. A census count. 1 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 93.2%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-arachinovo",
@@ -231,13 +274,52 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Bogdantsi Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 90.82
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 4.03
+      },
+      {
+        "group": "Serbian",
+        "pct": 3.75
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.67
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.52
+      },
+      {
+        "group": "Romani",
+        "pct": 0.16
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.04
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Bogdanci Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Bogdanci_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Southeast",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the en.wikipedia article 'Bogdanci Municipality' transcribes and cites it. A census count. 2 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 96.0%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-bogovinje",
@@ -399,13 +481,44 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Brvenitsa Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Albanian",
+        "pct": 54.06
+      },
+      {
+        "group": "Macedonian",
+        "pct": 41.88
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 3.51
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.29
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.22
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.04
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Brvenica Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Brvenica_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Polog",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the en.wikipedia article 'Brvenica Municipality' transcribes and cites it. A census count. 3 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 96.5%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-butel",
@@ -512,7 +625,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching '^demographics?$|^population$|^ethnic'"
+      "note": "the shares add to 88.58, which is not a composition"
     },
     "sources": [],
     "parent_name": "Skopje",
@@ -755,13 +868,40 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Cheshinovo - Obleshevo Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 95.61
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 4.22
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.15
+      },
+      {
+        "group": "Not stated",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2002), as the en.wikipedia article 'Češinovo-Obleševo Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/%C4%8Ce%C5%A1inovo-Oble%C5%A1evo_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "East",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Population by ethnicity for 2002 from a population census, as the en.wikipedia article 'Češinovo-Obleševo Municipality' transcribes and cites it. A census count. 2 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 95.8%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-chucher-sandevo",
@@ -789,13 +929,52 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Chucher - Sandevo Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 54.7
+      },
+      {
+        "group": "Serbian",
+        "pct": 21.0
+      },
+      {
+        "group": "Albanian",
+        "pct": 13.3
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 8.45
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 1.22
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.91
+      },
+      {
+        "group": "Romani",
+        "pct": 0.25
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.17
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Čučer-Sandevo Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/%C4%8Cu%C4%8Der-Sandevo_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Skopje",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the en.wikipedia article 'Čučer-Sandevo Municipality' transcribes and cites it. A census count. 2 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 91.5%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-debar",
@@ -900,13 +1079,44 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Debartsa Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 89.54
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 8.58
+      },
+      {
+        "group": "Albanian",
+        "pct": 1.59
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.21
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.05
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.03
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Debarca Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Debarca_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Southwest",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the en.wikipedia article 'Debarca Municipality' transcribes and cites it. A census count. 3 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 91.4%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-delchevo",
@@ -1787,13 +1997,44 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Jegunovtse Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 53.36
+      },
+      {
+        "group": "Albanian",
+        "pct": 39.15
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 5.82
+      },
+      {
+        "group": "Serbian",
+        "pct": 1.0
+      },
+      {
+        "group": "Romani",
+        "pct": 0.55
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.12
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Jegunovce Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Jegunovce_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Polog",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the en.wikipedia article 'Jegunovce Municipality' transcribes and cites it. A census count. 3 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 94.2%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-karbintsi",
@@ -1823,7 +2064,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the en.wikipedia article 'Karbintsi Municipality', which is where this country publishes its compositions, does not exist"
+      "note": "the shares add to 89.24, which is not a composition"
     },
     "sources": [],
     "parent_name": "East",
@@ -1932,13 +2173,56 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Kavadartsi Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 89.59
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 6.79
+      },
+      {
+        "group": "Romani",
+        "pct": 2.04
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.66
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.38
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.35
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.08
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.08
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.03
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2002), as the en.wikipedia article 'Kavadarci Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Kavadarci_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Vardar",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Population by ethnicity for 2002 from a population census, as the en.wikipedia article 'Kavadarci Municipality' transcribes and cites it. A census count. 1 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 93.2%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-kichevo",
@@ -2659,13 +2943,40 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Makedonska Kamenitsa Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 92.79
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 6.7
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.25
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.13
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.13
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Makedonska Kamenica Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Makedonska_Kamenica_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "East",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the en.wikipedia article 'Makedonska Kamenica Municipality' transcribes and cites it. A census count. 4 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 93.3%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-makedonski-brod",
@@ -2981,13 +3292,44 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Novatsi Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 91.65
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 5.82
+      },
+      {
+        "group": "Albanian",
+        "pct": 1.74
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.6
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.15
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.04
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Novaci Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Novaci_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Pelagonia",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the en.wikipedia article 'Novaci Municipality' transcribes and cites it. A census count. 2 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 94.2%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-novo-selo",
@@ -3217,13 +3559,52 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Petrovets Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 50.37
+      },
+      {
+        "group": "Bosniak",
+        "pct": 18.59
+      },
+      {
+        "group": "Albanian",
+        "pct": 18.32
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 6.63
+      },
+      {
+        "group": "Serbian",
+        "pct": 3.57
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.27
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.71
+      },
+      {
+        "group": "Romani",
+        "pct": 0.54
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Petrovec Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Petrovec_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Skopje",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the en.wikipedia article 'Petrovec Municipality' transcribes and cites it. A census count. 2 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 93.4%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-plasnitsa",
@@ -3251,13 +3632,40 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Plasnitsa Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Turkish",
+        "pct": 97.13
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 2.32
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.31
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.22
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.02
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Plasnica Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Plasnica_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Southwest",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the en.wikipedia article 'Plasnica Municipality' transcribes and cites it. A census count. 2 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 97.7%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-prilep",
@@ -3426,13 +3834,40 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Rankovtse Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 88.17
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 7.16
+      },
+      {
+        "group": "Romani",
+        "pct": 4.13
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.4
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.14
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Rankovce Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Rankovce_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Northeast",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the en.wikipedia article 'Rankovce Municipality' transcribes and cites it. A census count. 2 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 92.8%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-resen",
@@ -3921,7 +4356,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the en.wikipedia article 'Strumitsa Municipality', which is where this country publishes its compositions, does not exist"
+      "note": "the shares add to 87.04, which is not a composition"
     },
     "sources": [],
     "parent_name": "Southeast",
@@ -4099,13 +4534,48 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Teartse Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Albanian",
+        "pct": 83.1
+      },
+      {
+        "group": "Macedonian",
+        "pct": 11.95
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 2.25
+      },
+      {
+        "group": "Turkish",
+        "pct": 2.16
+      },
+      {
+        "group": "Romani",
+        "pct": 0.28
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.14
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.12
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Tearce Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Tearce_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Polog",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the en.wikipedia article 'Tearce Municipality' transcribes and cites it. A census count. 2 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 97.8%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-tetovo",
@@ -4455,13 +4925,48 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Vinitsa Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 82.41
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 9.99
+      },
+      {
+        "group": "Romani",
+        "pct": 5.14
+      },
+      {
+        "group": "Turkish",
+        "pct": 1.2
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.61
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.53
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.12
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2002), as the en.wikipedia article 'Vinica Municipality, North Macedonia' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Vinica_Municipality%2C_North_Macedonia",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "East",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Population by ethnicity for 2002 from a population census, as the en.wikipedia article 'Vinica Municipality, North Macedonia' transcribes and cites it. A census count. 2 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 90.0%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-vraneshtitsa",
@@ -4491,7 +4996,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the en.wikipedia article 'Vraneshtitsa Municipality', which is where this country publishes its compositions, does not exist"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "sources": [],
     "parent_name": "Southwest",
@@ -4721,12 +5226,39 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the en.wikipedia article 'Zrnovtsi Municipality', which is where this country publishes its compositions, does not exist"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 95.16
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 3.94
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.66
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.14
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2002), as the en.wikipedia article 'Zrnovci Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Zrnovci_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "East",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2002,
+    "ethnicity_note": "Population by ethnicity for 2002 from a population census, as the en.wikipedia article 'Zrnovci Municipality' transcribes and cites it. A census count. 2 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 96.1%; the rest is carried as a remainder."
   }
 ]
