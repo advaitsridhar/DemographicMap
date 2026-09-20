@@ -364,6 +364,42 @@ def probe_2005() -> None:
         head(url)
 
 
+ODM_DATASETS = [
+    "lao-population-and-housing-census-2015-general-demographic",
+    "iv-2015", "4-2015", "socioeconomic-atlas-of-the-lao-pdr-2015",
+    "population-census-lao-pdr-20051",
+    "census-results-in-brief-laos-population-census-2005-and-1995",
+    "lsis-ii-2017", "lao-social-indicator-survey-ii-201718",
+    "lao-population-and-education-2019", "ethnic-family-of-lao-pdr",
+]
+
+
+def probe_datasets() -> None:
+    """Every resource of the datasets the phrase search named, whole: a CKAN
+    listing truncates a URL and a truncated URL cannot be fetched."""
+    log("== route (d): Open Development Laos, dataset by dataset")
+    for name in ODM_DATASETS:
+        url = ("https://data.laos.opendevelopmentmekong.net/api/3/action/package_show?"
+               + urllib.parse.urlencode({"id": name}))
+        body = get(url, limit=4_000_000)
+        if not body:
+            continue
+        try:
+            pkg = json.loads(body).get("result") or {}
+        except json.JSONDecodeError:
+            log("      not JSON")
+            continue
+        log(f"  == {name}: {str(pkg.get('title', ''))[:100]}")
+        notes = " ".join(str(pkg.get("notes") or "").split())
+        if notes:
+            log(f"     notes: {notes[:500]}")
+        for res in pkg.get("resources", []):
+            log(f"     {str(res.get('format', '?')):9} {str(res.get('name', ''))[:70]}")
+            log(f"         {res.get('url', '')}")
+            if res.get("datastore_active"):
+                log(f"         datastore_active, id {res.get('id')}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -387,6 +423,8 @@ def main() -> int:
         probe_wiki(args.rows)
     if "p" in args.routes:
         probe_volume(args.rows, args.contents)
+    if "d" in args.routes:
+        probe_datasets()
     if "x" in args.routes:
         probe_wordpress()
         probe_portals()
