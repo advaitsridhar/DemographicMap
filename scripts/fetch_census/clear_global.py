@@ -122,6 +122,12 @@ UNKNOWN_UNIT = re.compile(r"\bunknown\b|\blevel \d+ unknown\b", re.I)
 # different and untrue reason for the same refusal. They have a first-level
 # file; it is the wrong shape, and the header test is what should say so.
 ADMIN1_FILE = re.compile(r"admin_?1(?!\d).*\.csv$", re.I)
+# The same, one level down. CLEAR Global ships an admin2 file beside the
+# admin1 one on most of these datasets -- Somalia 217 districts, Kyrgyzstan
+# 627 -- and it was left unread until now.
+ADMIN2_FILE = re.compile(r"admin_?2(?!\d).*\.csv$", re.I)
+# What the file writes in location_level, per level. Both spellings appear.
+LEVEL_NAMES = {1: ("1", "admin1"), 2: ("2", "admin2")}
 YEAR = re.compile(r"(1[89]\d\d|20\d\d)")
 
 
@@ -344,6 +350,16 @@ def reference_year(package: dict[str, Any], rows: list[dict[str, str]]) -> int |
     return catalogue_year or (min(file_years) if file_years else None)
 
 
+def level_resource(package: dict[str, Any], level: int
+                   ) -> dict[str, Any] | None:
+    """The file for one level, found by name. See admin1_resource."""
+    pattern = ADMIN1_FILE if level == 1 else ADMIN2_FILE
+    for resource in package.get("resources", []) or ():
+        if pattern.search(str(resource.get("name", ""))):
+            return resource
+    return None
+
+
 def admin1_resource(package: dict[str, Any]) -> dict[str, Any] | None:
     """The first-level file, found by name rather than by uuid.
 
@@ -361,7 +377,7 @@ def read_csv(body: str) -> tuple[list[dict[str, str]], list[str]]:
     return list(reader), list(reader.fieldnames or [])
 
 
-def compose(rows: list[dict[str, str]]
+def compose(rows: list[dict[str, str]], level: int = 1
             ) -> tuple[dict[str, dict[str, Any]], list[str], list[str]]:
     """{unit code: {name, shares, total}}, and the units dropped, with reasons.
 
@@ -380,7 +396,7 @@ def compose(rows: list[dict[str, str]]
     """
     units: dict[str, dict[str, Any]] = {}
     for row in rows:
-        if str(row.get("location_level", "")).strip() not in ("1", "admin1"):
+        if str(row.get("location_level", "")).strip() not in LEVEL_NAMES[level]:
             continue
         code = (row.get("location_code") or "").strip()
         name = (row.get("location_name") or "").strip()
@@ -424,8 +440,22 @@ def signature(unit: dict[str, Any]) -> tuple[tuple[str, float], ...]:
     return tuple(sorted((r["group"], r["pct"]) for r in unit["shares"]))
 
 
-def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
-    """One country's first-level records, or none with the reason logged."""
+def country_records(package: dict[str, Any], level: int = 1
+                    ) -> list[dict[str, Any]]:
+    """One country's records at one level, or none with the reason logged.
+
+    The second level is read exactly like the first and joined differently.
+    CLEAR Global's table has no parent column, and its P-codes cannot be cut
+    to one reliably: Somalia's SO2301 does sit under SO23, but Kyrgyzstan
+    zero-pads a region to thirteen characters (KG06000000000) where a
+    district of it is KG06246000000, and no single prefix rule holds across
+    the publisher. So no parent is claimed, and none needs to be:
+    ``build_entities.match_admin2`` matches a parentless row only against a
+    district name that is unique country-wide and refuses it where the name
+    repeats. An unmatched row is a visible gap; that refusal is the same
+    principle, applied by the code that owns the join rather than guessed at
+    here.
+    """
     iso = iso3(package)
     stub = str(package.get("name", ""))
     log(f"  {stub} ({iso or '?'}): {package.get('title')}")
@@ -433,9 +463,9 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
     if not iso:
         log("    refused: the catalogue gives no ISO3 for this dataset")
         return []
-    resource = admin1_resource(package)
+    resource = level_resource(package, level)
     if resource is None:
-        log("    refused: no first-level file on this dataset")
+        log(f"    refused: no level-{level} file on this dataset")
         return []
     try:
         body = fetch(str(resource.get("url")))
@@ -450,7 +480,7 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
         log(f"      its columns are: {', '.join(columns)}")
         return []
 
-    kept, refused, unnamed = compose(rows)
+    kept, refused, unnamed = compose(rows, level)
     for line in unnamed[:4]:
         log(f"    dropped {line}")
     for line in refused[:8]:
@@ -495,11 +525,14 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
         f"Licence: {terms}.")
 
     records = []
-    aliases = BOUNDARY_ALIASES.get(iso, {})
+    # Aliases are a first-level table: they reconcile region names to the
+    # boundary file's, and there is no second-level equivalent. A district
+    # joins on its own name or not at all.
+    aliases = BOUNDARY_ALIASES.get(iso, {}) if level == 1 else {}
     for code, unit in sorted(kept.items()):
         records.append(record(
-            f"{iso}-CG-{code}", unit["name"], level="admin1", parent=iso,
-            country=iso,
+            f"{iso}-CG-{code}", unit["name"], level=f"admin{level}",
+            parent=iso, country=iso,
             aliases=aliases.get(unit["name"]) and [aliases[unit["name"]]],
             language=unit["shares"],
             language_year=year,
@@ -508,7 +541,8 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
                       "url": DATASET_PAGE.format(stub=stub),
                       "license": terms}],
         ))
-    log(f"    {len(records)} unit(s) written, {len(refused)} not a composition, "
+    log(f"    level {level}: {len(records)} unit(s) written, "
+        f"{len(refused)} not a composition, "
         f"{len(unnamed)} unnamed, year {year}, "
         f"{methodology or 'methodology not stated'}")
     return records
@@ -550,6 +584,8 @@ def main() -> int:
                     help="list the publisher's datasets and their licences")
     ap.add_argument("--only", default="",
                     help="comma-separated ISO3s to write, rather than all")
+    ap.add_argument("--level", type=int, default=0, choices=(0, 1, 2),
+                    help="read only this level; 0 (the default) reads both")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
@@ -564,20 +600,26 @@ def main() -> int:
         return 0
 
     only = {x.upper() for x in args.only.split(",") if x}
+    levels = [1] if args.level == 1 else ([2] if args.level == 2 else [1, 2])
     log(f"clear_global: {len(packages)} dataset(s) from {PUBLISHER} on HDX")
     records: list[dict[str, Any]] = []
     written: list[str] = []
+    counts = {1: 0, 2: 0}
     for package in sorted(packages, key=lambda p: str(p.get("name"))):
         if only and iso3(package) not in only:
             continue
-        got = country_records(package)
+        got: list[dict[str, Any]] = []
+        for level in levels:
+            at_level = country_records(package, level)
+            counts[level] += len(at_level)
+            got += at_level
         if got:
             written.append(f"{iso3(package)}:{len(got)}")
         records += got
     if not records:
         raise SystemExit("clear_global: nothing usable was read; writing nothing")
-    log(f"  {len(records)} first-level units in {len(written)} countries: "
-        f"{', '.join(written)}")
+    log(f"  {counts[1]} first-level and {counts[2]} second-level units "
+        f"in {len(written)} countries: {', '.join(written)}")
     write_json(args.out or PROCESSED / OUT, records)
     return 0
 

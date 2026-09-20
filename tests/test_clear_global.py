@@ -312,9 +312,19 @@ class TheBoundaryAliases(unittest.TestCase):
         carried = 0
         for rec in records:
             want = cg.BOUNDARY_ALIASES.get(rec["parent"], {}).get(rec["name"])
-            if want is not None:
-                self.assertEqual(rec.get("aliases"), [want], rec["name"])
-                carried += 1
+            if want is None:
+                continue
+            if rec["level"] != "admin1":
+                # The table reconciles *region* names to the boundary file's
+                # and there is no second-level equivalent, so a district is
+                # never aliased -- it joins on its own name or not at all.
+                # Iraq has a Najaf district inside its Najaf governorate and
+                # the names collide, which is what found this: the district
+                # must not quietly inherit the governorate's declaration.
+                self.assertIsNone(rec.get("aliases"), rec["name"])
+                continue
+            self.assertEqual(rec.get("aliases"), [want], rec["name"])
+            carried += 1
         # Not every declared alias need appear -- a country whose file CLEAR
         # Global refused writes no records at all -- but most must, or the
         # table is describing a file this adapter is not producing.
