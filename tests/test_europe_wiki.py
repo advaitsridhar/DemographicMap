@@ -543,3 +543,23 @@ class TheYearOfTheColumnRead(unittest.TestCase):
         note = m.field_fields(got, spec, m.SPECS["BGR"], "T", "bg")["ethnicity_note"]
         self.assertIn("2011", note)
         self.assertIn("The citation is for 2001", note)
+
+
+class ANoteNeverSaysBothThings(unittest.TestCase):
+    """Where a citation carries a year and the table's header carries
+    another, the note must not also claim the citation carries none."""
+
+    def test_the_two_sentences_are_exclusive(self):
+        spec = next(f for f in m.BG_PROVINCE if f.field == "ethnicity")
+        got, _ = m.read_field(TheYearOfTheColumnRead.TABLE, spec,
+                              m.SPECS["BGR"], "T", "bg")
+        note = m.field_fields(got, spec, m.SPECS["BGR"], "T", "bg")["ethnicity_note"]
+        self.assertIn("The citation is for 2001", note)
+        self.assertNotIn("The citation carries no year", note)
+
+    def test_an_undated_citation_still_says_so(self):
+        undated = "<ref>[https://statistics.sk/tabulky.html Výsledky]</ref>"
+        got, _ = m.read_field(sk(SK_RELIGION, cite=undated), RELIGION, SVK,
+                              "T", "sk")
+        note = m.field_fields(got, RELIGION, SVK, "T", "sk")["religion_note"]
+        self.assertIn("The citation carries no year", note)

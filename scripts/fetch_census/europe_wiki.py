@@ -1485,7 +1485,11 @@ def field_fields(reading: dict[str, Any], spec: Composition, country: Country,
         f"'{title}' transcribes and cites it.",
         CAVEAT[reading["kind"]],
     ]
-    if reading["dated"] != "its citation":
+    if reading["dated"] != "its citation" and "The citation is for" not in reading["remark"]:
+        # Only where the citation really is undated. Where it carries a year
+        # and the table's header carries another, the remark below already
+        # says both and which one the record holds, and this sentence said
+        # the opposite of it.
         sentences.append("The citation carries no year; the figures are dated "
                          "by the year printed in the table's own header.")
     if reading["remark"]:
