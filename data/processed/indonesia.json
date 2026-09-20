@@ -38886,6 +38886,162 @@
     "aliases": []
   },
   {
+    "id": "IDN-central-sulawesi-morowali-utara",
+    "level": "admin2",
+    "name": "Morowali Utara",
+    "parent": "IDN-central-sulawesi",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Islam",
+          "pct": 63.4
+        },
+        {
+          "group": "Protestantism",
+          "pct": 32.7
+        },
+        {
+          "group": "Hinduism",
+          "pct": 2.9
+        },
+        {
+          "group": "Catholicism",
+          "pct": 1.0
+        },
+        {
+          "group": "Buddhism",
+          "pct": 0.0
+        },
+        {
+          "group": "Kepercayaan (traditional belief)",
+          "pct": 0.0
+        },
+        {
+          "group": "Other religion",
+          "pct": 0.0
+        }
+      ],
+      "method": "nearest regencies in the province",
+      "inputs": [
+        "IDN-central-sulawesi-poso",
+        "IDN-central-sulawesi-morowali",
+        "IDN-central-sulawesi-sigi"
+      ],
+      "note": "No composition was read for this regency, and Central Sulawesi's own figures cannot supply one: the regencies already published inside it hold more Hinduism than its own figures leave room for (58,140 people). This is instead the average of the 3 regencies of Central Sulawesi whose centroids are nearest to it (Poso, Morowali, Sigi) -- an assumption that a regency resembles what is around it, not a measurement of anyone here, and nearest by distance rather than by sharing a border."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "The nearest regencies of the same province, as the Indonesian Wikipedia publishes them",
+        "url": "https://id.wikipedia.org/wiki/Sulawesi_Tengah",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Central Sulawesi",
+    "country": "IDN",
+    "aliases": []
+  },
+  {
+    "id": "IDN-central-sulawesi-tojo-una-una",
+    "level": "admin2",
+    "name": "Tojo Una-Una",
+    "parent": "IDN-central-sulawesi",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Islam",
+          "pct": 65.7
+        },
+        {
+          "group": "Protestantism",
+          "pct": 26.3
+        },
+        {
+          "group": "Hinduism",
+          "pct": 6.5
+        },
+        {
+          "group": "Catholicism",
+          "pct": 1.2
+        },
+        {
+          "group": "Buddhism",
+          "pct": 0.3
+        },
+        {
+          "group": "Kepercayaan (traditional belief)",
+          "pct": 0.0
+        },
+        {
+          "group": "Other religion",
+          "pct": 0.0
+        }
+      ],
+      "method": "nearest regencies in the province",
+      "inputs": [
+        "IDN-central-sulawesi-banggai",
+        "IDN-central-sulawesi-poso",
+        "IDN-central-sulawesi-morowali"
+      ],
+      "note": "No composition was read for this regency, and Central Sulawesi's own figures cannot supply one: the regencies already published inside it hold more Hinduism than its own figures leave room for (58,140 people). This is instead the average of the 3 regencies of Central Sulawesi whose centroids are nearest to it (Banggai, Poso, Morowali) -- an assumption that a regency resembles what is around it, not a measurement of anyone here, and nearest by distance rather than by sharing a border."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "The nearest regencies of the same province, as the Indonesian Wikipedia publishes them",
+        "url": "https://id.wikipedia.org/wiki/Sulawesi_Tengah",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Central Sulawesi",
+    "country": "IDN",
+    "aliases": []
+  },
+  {
     "id": "IDN-east-java-lumajang",
     "level": "admin2",
     "name": "Lumajang",
@@ -39912,6 +40068,84 @@
     "aliases": []
   },
   {
+    "id": "IDN-north-sumatra-kota-pematang-siantar",
+    "level": "admin2",
+    "name": "Kota Pematang Siantar",
+    "parent": "IDN-north-sumatra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Islam",
+          "pct": 72.6
+        },
+        {
+          "group": "Protestantism",
+          "pct": 21.3
+        },
+        {
+          "group": "Catholicism",
+          "pct": 3.3
+        },
+        {
+          "group": "Buddhism",
+          "pct": 2.7
+        },
+        {
+          "group": "Hinduism",
+          "pct": 0.1
+        },
+        {
+          "group": "Confucianism",
+          "pct": 0.0
+        },
+        {
+          "group": "Ugamo Malim",
+          "pct": 0.0
+        }
+      ],
+      "method": "nearest regencies in the province",
+      "inputs": [
+        "IDN-north-sumatra-simalungun",
+        "IDN-north-sumatra-kota-tebing-tinggi",
+        "IDN-north-sumatra-serdang-bedagai"
+      ],
+      "note": "No composition was read for this regency, and North Sumatra's own figures cannot supply one: the regencies already published inside it hold more Islam than its own figures leave room for (313,752 people). This is instead the average of the 3 regencies of North Sumatra whose centroids are nearest to it (Simalungun, Kota Tebing Tinggi, Serdang Bedagai) -- an assumption that a regency resembles what is around it, not a measurement of anyone here, and nearest by distance rather than by sharing a border."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "The nearest regencies of the same province, as the Indonesian Wikipedia publishes them",
+        "url": "https://id.wikipedia.org/wiki/Sumatera_Utara",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "North Sumatra",
+    "country": "IDN",
+    "aliases": []
+  },
+  {
     "id": "IDN-riau-kepulauan-meranti",
     "level": "admin2",
     "name": "Kepulauan Meranti",
@@ -39995,6 +40229,84 @@
       }
     ],
     "parent_name": "Riau",
+    "country": "IDN",
+    "aliases": []
+  },
+  {
+    "id": "IDN-riau-islands-lingga",
+    "level": "admin2",
+    "name": "Lingga",
+    "parent": "IDN-riau-islands",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Islam",
+          "pct": 80.4
+        },
+        {
+          "group": "Protestantism",
+          "pct": 9.8
+        },
+        {
+          "group": "Buddhism",
+          "pct": 7.1
+        },
+        {
+          "group": "Catholicism",
+          "pct": 2.5
+        },
+        {
+          "group": "Confucianism",
+          "pct": 0.2
+        },
+        {
+          "group": "Hinduism",
+          "pct": 0.0
+        },
+        {
+          "group": "Kepercayaan (traditional belief)",
+          "pct": 0.0
+        }
+      ],
+      "method": "nearest regencies in the province",
+      "inputs": [
+        "IDN-riau-islands-kota-tanjung-pinang",
+        "IDN-riau-islands-bintan",
+        "IDN-riau-islands-kota-batam"
+      ],
+      "note": "No composition was read for this regency, and Riau Islands's own figures cannot supply one: the regencies already published inside it hold more Protestantism than its own figures leave room for (12,056 people). This is instead the average of the 3 regencies of Riau Islands whose centroids are nearest to it (Kota Tanjung Pinang, Bintan, Kota Batam) -- an assumption that a regency resembles what is around it, not a measurement of anyone here, and nearest by distance rather than by sharing a border."
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "The nearest regencies of the same province, as the Indonesian Wikipedia publishes them",
+        "url": "https://id.wikipedia.org/wiki/Kepulauan_Riau",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Riau Islands",
     "country": "IDN",
     "aliases": []
   },
