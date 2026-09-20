@@ -85,7 +85,7 @@ import urllib.parse
 import urllib.request
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, log, record, write_json
+from ._shared import PROCESSED, log, record, write_json
 
 API = "https://data.humdata.org/api/3/action"
 ORG = "clear"
@@ -115,7 +115,13 @@ MIN_UNITS = 2
 MIN_PCT = 0.05
 
 UNKNOWN_UNIT = re.compile(r"\bunknown\b|\blevel \d+ unknown\b", re.I)
-ADMIN1_FILE = re.compile(r"admin_?1\D*\.csv$", re.I)
+# "clearglobal_language_use_SOM_admin1.csv" in the 2025 release and
+# "th_lang_admin1_v01.csv" in the older one. The version suffix matters: a
+# pattern that required the name to end at "admin1" missed the four older
+# files and reported "no first-level file on this dataset", which is a
+# different and untrue reason for the same refusal. They have a first-level
+# file; it is the wrong shape, and the header test is what should say so.
+ADMIN1_FILE = re.compile(r"admin_?1(?!\d).*\.csv$", re.I)
 YEAR = re.compile(r"(1[89]\d\d|20\d\d)")
 
 
@@ -206,8 +212,19 @@ def read_csv(body: str) -> tuple[list[dict[str, str]], list[str]]:
     return list(reader), list(reader.fieldnames or [])
 
 
-def compose(rows: list[dict[str, str]]) -> tuple[dict[str, dict[str, Any]], list[str]]:
-    """{unit code: {name, shares, total}}, and the units refused, with reasons.
+def compose(rows: list[dict[str, str]]
+            ) -> tuple[dict[str, dict[str, Any]], list[str], list[str]]:
+    """{unit code: {name, shares, total}}, and the units dropped, with reasons.
+
+    The dropped ones come back in two lists, because they are two different
+    findings and only one of them is evidence about the file. A unit whose
+    shares do not add to one says this table may not be a composition at all,
+    and enough of those condemn the country's file. A unit the file declines
+    to name -- a DHS extract's "level 1 unknown" -- says only that the study
+    could not place some of its respondents, which is normal and is not a
+    reason to throw away the regions it did place. Sudan was refused whole on
+    that confusion: two named states and one "sudan: level 1 unknown", and
+    a third of the rows unnamed read as a third of the rows broken.
 
     ``total`` is kept as the file gave it, before rounding, because it is the
     evidence for whether this is a composition at all.
@@ -231,11 +248,12 @@ def compose(rows: list[dict[str, str]]) -> tuple[dict[str, dict[str, Any]], list
         unit["counts"][language] = unit["counts"].get(language, 0.0) + value
 
     kept: dict[str, dict[str, Any]] = {}
+    unnamed: list[str] = []
     refused: list[str] = []
     for code, unit in units.items():
         name = unit["name"]
         if UNKNOWN_UNIT.search(name) or code.upper().endswith("XXX"):
-            refused.append(f"{name} ({code}): the file does not say which unit this is")
+            unnamed.append(f"{name} ({code}): the file does not say which unit this is")
             continue
         total = sum(unit["counts"].values())
         if abs(total - 1.0) > TOLERANCE:
@@ -250,7 +268,7 @@ def compose(rows: list[dict[str, str]]) -> tuple[dict[str, dict[str, Any]], list
             refused.append(f"{name} ({code}): no language reaches 0.05%")
             continue
         kept[code] = {"name": name, "shares": shares, "total": total}
-    return kept, refused
+    return kept, refused, unnamed
 
 
 def signature(unit: dict[str, Any]) -> tuple[tuple[str, float], ...]:
@@ -283,7 +301,9 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
         log(f"      its columns are: {', '.join(columns)}")
         return []
 
-    kept, refused = compose(rows)
+    kept, refused, unnamed = compose(rows)
+    for line in unnamed[:4]:
+        log(f"    dropped {line}")
     for line in refused[:8]:
         log(f"    dropped {line}")
     if len(refused) > 8:
@@ -333,16 +353,13 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
             language=unit["shares"],
             language_year=year,
             language_note=note,
-            religion=gap(NOT_AVAILABLE,
-                         "CLEAR Global's language files do not carry religion."),
-            ethnicity=gap(NOT_AVAILABLE,
-                          "CLEAR Global's language files do not carry ethnicity."),
             sources=[{"field": "language", "name": source_name,
                       "url": DATASET_PAGE.format(stub=stub),
                       "license": terms}],
         ))
-    log(f"    {len(records)} unit(s) written, {len(refused)} dropped, "
-        f"year {year}, {methodology or 'methodology not stated'}")
+    log(f"    {len(records)} unit(s) written, {len(refused)} not a composition, "
+        f"{len(unnamed)} unnamed, year {year}, "
+        f"{methodology or 'methodology not stated'}")
     return records
 
 

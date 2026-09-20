@@ -52,8 +52,17 @@ BOUNDARIES = RAW / "boundaries"
 
 # Adapter outputs, in increasing order of authority: later files win.
 ADAPTER_FILES = [
-    # First, which is lowest authority: Afrobarometer is a survey and every
-    # other file here is a count. Ethiopia, Mali and South Africa already carry
+    # First of all, because it is a secondary tabulation of other people's
+    # studies rather than a study: CLEAR Global's language files. Each one
+    # names the source it was built from -- an IPUMS extract of a census, a
+    # DHS or MICS round, an Afrobarometer round, a humanitarian needs
+    # assessment -- and several of those sources are on this map already in
+    # their own right. Where they are, the original must win, which is what
+    # this position buys: 660 first-level units in 46 countries, filling a
+    # language field no one else here fills and overwriting none.
+    "clear_global_language.json",
+    # Then Afrobarometer, a survey where every other file below is a count.
+    # Ethiopia, Mali and South Africa already carry
     # census figures and must keep them, and because merge_adapter works field
     # by field this still fills a field a census left empty without touching
     # one it filled.
