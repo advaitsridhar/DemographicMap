@@ -462,10 +462,40 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "VEN": {
         "religion": "Venezuela's 2011 census asked indigenous and Afro-descendant self-recognition and not religion; no census since 1961 has carried a religion question.",
     },
+    # Measured against the census's own form and its own 53 tables, after the
+    # three notes here had stood for a while as an assertion with nothing
+    # behind them. North Korea is not a country without a census: the 2008
+    # round was enumerated over 1-15 October by about 35,000 enumerators with
+    # UNFPA support, and the Central Bureau of Statistics' National Report was
+    # published -- 278 pages, served by the UN Statistics Division, with all
+    # three questionnaires printed as annexes.
+    #
+    # What the form asks: 53 questions, H1-H14 on the household and the
+    # dwelling, P1-P29 on the person, M1-M10 on deaths in the household. One
+    # of the 53 asks who a person is, P7, "What is ____'s nationality?",
+    # answered 1 Korean or 2 Others.
+    #
+    # What the round publishes: Tables 1 to 53, and Table 5 is the only one
+    # carrying P7 -- national, by age and sex, 23,349,326 Koreans against 533
+    # people of other nationalities. Over the text of all 278 pages,
+    # *religio*, *ethnic*, *mother tongue*, *language*, *church*, *Buddhis*,
+    # *Christian*, *Chondo*, *Confucian* and *faith* match two pages: Table
+    # 22's definition of literacy ("read and write a simple message in any
+    # language") and one line of Table 37's occupation list ("Religious
+    # professionals", 103 people). Neither is a composition.
+    #
+    # And there is no survey standing in for the census, which is the question
+    # Afghanistan's entry below exists to answer: the CBS's Socio-Economic,
+    # Demographic and Health Survey 2014, 167 pages, matches none of those
+    # words on any page.
+    #
+    # Nationality is not carried onto the ethnicity field, for the Maldives'
+    # reason: a passport is not an ethnic group, and Table 5 has no geography
+    # to put one on in any case.
     "PRK": {
-        "religion": "North Korea's only modern census, 2008, asked no religion question, and the state publishes no other figures.",
-        "ethnicity": "North Korea's 2008 census asked no ethnicity question.",
-        "language": "North Korea's 2008 census asked no language question.",
+        "religion": "North Korea's census does not ask religion. Its 2008 questionnaire has 53 questions -- H1 to H14 on the household, P1 to P29 on the person, M1 to M10 on deaths -- and none of them is about religion; in the 278 pages of the National Report the word occurs once, as the occupation 'religious professionals', 103 people, in Table 37. No table of the 53 is a religion table and the state publishes no other figures.",
+        "ethnicity": "North Korea's census does not ask ethnicity. The one question on its form about who a person is, P7, asks nationality -- 1 Korean or 2 Others -- and the only table built from it, Table 5, is national: 23,349,326 Koreans and 533 people of other nationalities, by age and by sex. Nationality is not ethnicity, and nothing in the round crosses either with a province.",
+        "language": "North Korea's census does not ask language. In the 278 pages of the 2008 National Report 'mother tongue' appears nowhere and 'language' appears once, in Table 22's definition of literacy -- the ability to read and write a simple message in any language -- which counts an ability and records no language. No table of the 53 is a language table.",
     },
     "SYR": {
         "religion": "Syria's census has not asked religion since 1960; the 2004 census asked nationality (citizenship) only, as the US Census Bureau workbook's dictionary confirms.",

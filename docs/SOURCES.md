@@ -254,6 +254,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
 | Timor-Leste | INETL, Census 2015 Volume 2 priority tables 12 (mother tongue by municipality) and 11 (religion by municipality); Census 2022 Main Report basic table 4.01 (population by municipality, administrative post and suco) | municipality, administrative post | Mother tongue and religion for all 13 municipalities, stamped 2015 because the 2022 round asked both questions (E57 and E58 of its questionnaire) and has published neither below the country. The 2015 tables are a partition — 38 tongues, one per person, adding to each municipality's own total to the person — and their national column is exactly the fifteen-entry language list the map's country row already carried. Both tables count 1,179,654 people, 3,989 below the volume's own total population and 1,314 above its private-household population, unexplained by any footnote. Population is 2022, with Atauro (a municipality of its own since 2022, an administrative post of Dili before) summed back into Dili, which is the division the boundary file draws. The 67 administrative posts carry population and a stated gap for each composition; no table in either round goes below the municipality and INETL's REDATAM dashboard, served from a bare address, timed out. Ethnicity is `not_collected` (policy entry `TLS`): the 2022 questionnaire runs E1 to E77 without asking it. `scripts/fetch_census/timor.py`. |
 | Lao PDR | Lao Statistics Bureau, 4th Population and Housing Census 2015, village indicator table (`lao-population-census-2015.xlsx`, 8,499 villages x 75 columns) released through Open Development Laos; category definitions from Table 1 of the *Socio-Economic Atlas of the Lao PDR 2015* (LSB with CDE Bern); national controls from the census's own English results volume on UNFPA Laos | province, district | Ethnicity and religion for all 18 provinces and all 148 districts, where the results volume publishes both for the country only — its Tables 3.4, 3.5, P2.7 and P2.9 are national and none of its thirty province tables crosses either field. Each village's published percentage is turned back into people by its own published population and summed; shares are recomputed against the unit and re-rounded to add to 100. Ethnicity is the census's ten **ethno-linguistic categories**, not its 49 groups, and the Atlas's "Lao" is not the census's Lao: it puts the Lao of Huaphanh, Xiengkhuang, Borikhamxay, Vientiane province and Hinboun in "Tai-Thay", so the villages give Lao 43.7% and Tai-Thay 18.3% where Table 3.4 prints Lao 53.2% — together the volume's Lao-Tai family, 62.4%, which is where the check is made. Religion has five categories and a residual of 33.3%: the census counts a religion only where it has written doctrines, so the animist beliefs of most non-Lao-Tai people sit in "No religion or not stated" beside the 1.8% who stated nothing, and both residuals are marked so neither can lead a unit. The 8,499 villages weigh 6,481,625 people, 0.16% under the published 6,492,228; sex ratio 995.7 females per 1,000 males against 994.7. The two Vientianes are settled by an explicit table and carry no aliases; seven district names romanise differently in the two files and are declared. Language is `not_collected` (policy entry `LAO`): 282 pages with no language table and no occurrence of "mother tongue". `scripts/fetch_census/laos.py`. |
+| North Korea | Central Bureau of Statistics, DPR Korea, *2008 Population Census — National Report* (Pyongyang, 2009), Table 2 (population by sex and urban/rural, by city/district/county and province), read from the UN Statistics Division's copy | province, county | **Population and sex ratio only, and a documented declaration for the other three.** All 11 first-level units and all 179 counties carried nothing at all before this; Table 2 counts every one of them. The report's geography is October 2008 and the boundary file's is after the 2010 changes, so four differences are settled by summing the report's own rows over the units the file draws, never by splitting one: Nampo is the six South Phyongan rows the file puts inside it (983,660) and South Pyongan its printed total less them; Kangnam, Junghwa and Sangwon move from Pyongyang to North Hwanghae; Chongjin City is the seven districts the report itself marks as its parts and Hamhung City the six it marks plus Hungnam; the Pyongyang shape is the city's remaining eighteen districts, Unjong and Kangdong being drawn separately. Each of the ten first-level areas equals its own county rows, the eleven shapes equal 23,349,859, and that is Table 2's own DPR Korea row — 702,372 below Table 1's 24,052,231, the difference being 662,349 men and 40,023 women living in military camps, whom no table of the report places in a province, so every sex ratio here runs above the census's own. Eight county names and both Phyongans are written differently in the two files and are declared, among them a Cholwon in North Phyongan where the county is Cholsan and a second Ryongchon in South Hwanghae where it is Ryongyon — the report's own slips, settled by the two lists closing with every other name in the province matching outright, and corrected nowhere. Religion, ethnicity and language are `not_collected` (policy entry `PRK`): the questionnaire's 53 questions ask none of them, and its one question about who a person is asks nationality. `scripts/fetch_census/northkorea.py`. |
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts. The census measured all 77; the boundary file is what fails, drawing 75 shapes whose names do not all sit on the right ground, and the 9 shapes that therefore carry nothing each say so and name the province total that holds their people. |
@@ -6785,6 +6786,143 @@ anybody was asked to speak, and this map publishes it on the ethnicity field
 for that reason. Publishing it a second time as language would be the
 mis-match this project ranks below a gap — Pakistan's ethnicity row, in the
 mirror.
+
+### North Korea: 53 questions, one of which asks who you are
+
+`NOT_COLLECTED_POLICY["PRK"]` declared religion, ethnicity **and** language,
+and the declaration reached all 11 provinces and all 179 counties, so every
+North Korean unit on the map said `not_collected` with a reason. What it did
+not have was a measurement: the country had no section here, only its name in
+a list, and the three notes said what the census does not ask without ever
+saying what was read to find out. Every other declaration this project makes
+is backed by a page count and a term search. This one now is.
+
+The check could have gone the other way and was run as though it would. North
+Korea is not a country without a census. The **2008 Population Census** was
+enumerated from 1 to 15 October 2008 by about 35,000 enumerators and nearly
+8,000 team supervisors, under Cabinet Declaration No. 33 of October 2006, with
+financial and technical support from UNFPA, and the **National Report**
+(Central Bureau of Statistics, Pyongyang, 2009) was published — 278 pages,
+53 tables, and all three questionnaires printed as annexes. The UN Statistics
+Division serves it at
+`unstats.un.org/unsd/demographic/sources/census/wphc/North_Korea/Final national census report.pdf`,
+which is what was read; the directory above it answers 403 to an automated
+reader, and the one other DPRK file it serves, the one-page preliminary
+results, was found by name.
+
+**The form.** Annex 2, the CPF 2 questionnaire, is printed whole. It runs
+**53 questions**: H1 to H14 on the household and the dwelling unit (members,
+type of household, class of labour of the head, dwelling type, occupancy,
+floor area, rooms, water tap, water source, toilet, heating installed,
+heating used, cooking fuel), P1 to P29 on the person, and M1 to M10 on deaths
+in the household in the twelve months before the census. **Exactly one of the
+53 asks who a person is:**
+
+> **P7  What is ____'s nationality?**  1 Korean  2 Others
+
+The rest of Module 2 is household membership, where the person is registered,
+relationship to the head, sex, date of birth, the four disability questions,
+schooling and educational attainment, the post-secondary certificate and field
+of study, usual activity, household economic activity and hours, industry,
+occupation, class of labour, marital status, age at first marriage and births
+in the past year. There is no religion question, no ethnicity question and
+nothing about mother tongue or language. Annex 1 (CPF 1) is a listing form —
+building, dwelling unit, household, name of head, address, counts — and Annex
+3 (CPF 2-B) the shorter form for institutional living quarters. The Concepts
+and Definitions section defines dwelling unit, household, head of household,
+household member, institutional living quarters, institutional population,
+nuclear and extended household, and class of labour, and defines none of the
+three.
+
+**The tables.** The List of Tables runs **Table 1 to Table 53**, and the one
+table built on P7 is:
+
+> **Table 5.  Population by Nationality, by 5-year age Group and by Sex** —
+> 23,349,859 people, of whom **23,349,326 Koreans** and **533 of other
+> nationalities**, and that is the whole of it. By age and by sex, and by
+> nothing else.
+
+Nationality is not written onto the ethnicity field. The Maldives entry above
+settles the principle — a passport is not an ethnic group — and here the point
+is moot twice over: Table 5 has no geography to put a composition on, and the
+Scope and Coverage section says the enumeration covered "all Korean citizens
+living in DPRK and people of other nationalities who have already acquired
+Korean citizenship", so the 533 are the residue of a question about papers.
+
+Searched over the text of all 278 pages for *religio*, *ethnic*, *mother
+tongue*, *language*, *church*, *Buddhis*, *Christian*, *Chondo*, *Confucian*
+and *faith*, **two pages match**, and neither is a table of anything:
+
+* page 109, the note under **Table 22**: "Literacy refers to the ability of an
+  individual to read and write a simple message in **any language**." That
+  counts an ability and never records which language — the Maldives' ED1, in
+  the mirror.
+* page 200, one line of **Table 37**'s occupation list: "**Religious
+  professionals** 103", 36 men and 67 women, between *Legal professionals* and
+  *Archivists librarians and related professionals*. An occupation with a
+  hundred people in it is not a religion composition, and publishing it as one
+  would be the mis-match this project ranks below a gap.
+
+*Ethnic* and *mother tongue* occur on no page of the report at all.
+
+**And there is no survey standing in for it,** which is the question
+Afghanistan's entry asks of any country in this position. The Central Bureau
+of Statistics' own **Socio-Economic, Demographic and Health Survey 2014**
+(December, Juche 104 (2015), 167 pages, served by `dprkorea.un.org`) matches
+*religio*, *ethnic*, *mother tongue*, *language* and *nationality* on **zero
+of its 167 pages**. The 2017 MICS, run by the same bureau with UNICEF, is the
+one thing left unread: `unicef.org/eap` and the MICS repository on S3 both
+answer **403** to a standard client and ReliefWeb's API answers **410 Gone**.
+No User-Agent was spoofed to get past either, and its subject is the health
+and nutrition of children and women.
+
+So the declaration stands, and `scripts/common.py` now says what was read.
+
+**What the 2008 census does publish by province** — recorded here so the next
+reader does not search the report again. Of the 53 tables, **32 cross a
+province** and one goes below it:
+
+* population and households — Table 2 (by **city/district/county** and
+  province, the only table below the first level), 4 (5-year age group by sex,
+  urban/rural), 6 (relationship to head and marital status), 8 (marital status
+  15+), 12 (heads of households), 13 (households by type and size);
+* fertility and mortality — 14 (live births in the past year and women by age),
+  15 (the same by educational attainment), 16 (by class of labour), 17 (deaths
+  by age and sex), 18 (maternal deaths by place of death);
+* migration — 19 (residence five years ago), 20 (migrants by province of
+  origin and province of destination);
+* education — 23 (literacy status), 24 (currently attending school by level
+  and single year of age), 28 (highest educational attainment), 29
+  (post-secondary certificate type), 30 (field of study);
+* work — 32 (usual activity status), 34 (usual activity by attainment), 36
+  (major industry group), 38 (major occupation group), 40 (household economic
+  activities), 41 (hours worked);
+* housing — 46 (dwelling type by household size), 47 (occupancy status), 48
+  (floor area), 49 (rooms), 50 (water supply), 51 (toilet facility), 52
+  (heating system), 53 (cooking fuel).
+
+The remaining 21 tables are national: 1, 3, 5, 7, 9, 10, 11, 21, 22, 25, 26,
+27, 31, 33, 35, 37, 39, 42, 43, 44 and 45. Nothing anywhere in the round is a
+religion, ethnicity or language table, at any level.
+
+**What was filled.** Table 2, so all 190 units carry a head count and a sex
+ratio — see *North Korea* in the subnational sources table above and
+`scripts/fetch_census/northkorea.py`. Two things about those figures are worth
+keeping here rather than in 190 notes. The report writes its thousands
+separator as a space, so a row's nine figures are told apart by the
+publisher's own arithmetic — males and females adding to both sexes in each of
+the three blocks, urban and rural adding to all areas in each of the three
+columns, six equations that leave exactly one reading of the row and refuse it
+if they leave none or two. And Table 2's universe is the civilian one: it
+comes to **23,349,859** where **Table 1 counts 24,052,231**, and the 702,372
+between them — 662,349 men and 40,023 women — are the people living in
+military camps, whom the report allocates to no province. The census's own
+preliminary results sheet is where that gets its name, printing a civilian
+sub-total "living in regular households and in institutional living quarters"
+against a total that "includes population living in military camps", 702,373
+apart on the manual tallies the final figures replaced. So every sex ratio
+here — 1,111 females per 1,000 males for the country against the 1,052 implied
+by Table 1 — is a ratio among civilians, and every row says so.
 
 ### The Maldives: one question about who you are, and its answer is a passport
 
