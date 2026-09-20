@@ -18,7 +18,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-from ._shared import RAW, download, http_json, log  # noqa: F401
+from ._shared import RAW, download, http_get, http_json, log  # noqa: F401
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_wikitable import tables  # noqa: E402
@@ -258,6 +258,112 @@ def probe_volume(samples: int = 2, contents: str = "") -> None:
         log(f"    {cap[:170]}")
 
 
+# ---------------------------------------------------------------------------
+# --routes x: the routes left after the national report proved to hold no
+# provincial cross -- the office's own file store, its statistics portal, the
+# 2005 volume, and the survey.
+# ---------------------------------------------------------------------------
+
+WP_HOST = "https://www.lsb.gov.la"
+PORTALS = [
+    "https://laosis.lsb.gov.la/",
+    "https://laosis.lsb.gov.la/tabulation/public/",
+    "http://laosis.lsb.gov.la/",
+    "https://www.decide.la/",
+    "http://www.decide.la/",
+    "https://decide.la/",
+]
+PDFS_2005 = [
+    "https://data.opendevelopmentmekong.net/dataset/af8f9e99-8d9b-484b-9301-"
+    "321da2051ae7/resource/9f24c10c-6234-47fe-a7c7-409c5dea994d/download",
+    "https://data.opendevelopmentmekong.net/dataset/126050ca-c1b1-4fd9-a6f4-"
+    "53b9c499ca87/resource/f54fadc4-8dca-4c0a-a9a8-a6a12f88657c/download",
+]
+UNFPA_PAGES = [f"https://lao.unfpa.org/en/publications?page={n}" for n in range(0, 6)]
+ODM_QUERIES = ["Lao population census 2015", "census 2015 ethnic", "LSIS",
+               "Lao social indicator survey", "population province Laos"]
+
+
+def probe_wordpress() -> None:
+    """The office's site is WordPress, so its own REST API lists every file it
+    has ever uploaded -- which no link on the rendered page has to point at."""
+    log("== route (x): lsb.gov.la's own file store, through the WordPress API")
+    for page in range(1, 8):
+        url = f"{WP_HOST}/wp-json/wp/v2/media?per_page=100&page={page}"
+        body = get(url, limit=4_000_000)
+        if not body:
+            break
+        try:
+            items = json.loads(body)
+        except json.JSONDecodeError:
+            log(f"      not JSON: {' '.join(body[:200].split())!r}")
+            break
+        if not isinstance(items, list) or not items:
+            break
+        log(f"  page {page}: {len(items)} item(s)")
+        for item in items:
+            src = str(item.get("source_url", ""))
+            if re.search(r"\.(pdf|xlsx?|csv|zip)$", src, re.IGNORECASE):
+                title = (item.get("title") or {}).get("rendered", "")
+                log(f"    {str(item.get('date', ''))[:10]}  {src[:150]}")
+                log(f"        {' '.join(str(title).split())[:140]}")
+        if len(items) < 100:
+            break
+
+
+def probe_portals() -> None:
+    log("== route (x): the statistics portals")
+    for url in PORTALS:
+        get(url, limit=4000)
+    log("  -- laosis with the intermediate certificate its server omits")
+    for url in ("https://laosis.lsb.gov.la/", "https://laosis.lsb.gov.la/tabulation/public/"):
+        try:
+            body = http_get(url, cache=False, retries=0, timeout=60, aia=True)
+            assert isinstance(body, str)
+            log(f"  aia 200 {len(body):>8}  {url}")
+            log(f"      {' '.join(body[:600].split())}")
+        except Exception as exc:  # noqa: BLE001
+            log(f"  aia !! {type(exc).__name__}: {str(exc)[:140]}  {url}")
+
+
+def probe_unfpa() -> None:
+    log("== route (x): every page of UNFPA Laos's publication list")
+    seen: set[str] = set()
+    for url in UNFPA_PAGES:
+        body = get(url)
+        if not body:
+            continue
+        for href in sorted(set(re.findall(r'href="([^"]+)"', body))):
+            if "/publications/" in href and href not in seen:
+                seen.add(href)
+                log(f"    {href[:160]}")
+
+
+def probe_odm() -> None:
+    log("== route (x): Open Development Laos, by phrase")
+    for query in ODM_QUERIES:
+        url = ("https://data.laos.opendevelopmentmekong.net/api/3/action/package_search?"
+               + urllib.parse.urlencode({"q": query, "rows": "15"}))
+        body = get(url, limit=2_000_000)
+        if not body:
+            continue
+        try:
+            result = json.loads(body).get("result", {})
+        except json.JSONDecodeError:
+            continue
+        log(f"  {query!r}: {result.get('count', 0)} dataset(s)")
+        for pkg in result.get("results", [])[:15]:
+            log(f"    {str(pkg.get('name', ''))[:70]:70} {str(pkg.get('title', ''))[:70]}")
+            for res in pkg.get("resources", [])[:6]:
+                log(f"        {str(res.get('format', '?')):8} {str(res.get('url', ''))[:120]}")
+
+
+def probe_2005() -> None:
+    log("== route (x): the 2005 volume")
+    for url in PDFS_2005:
+        head(url)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -281,6 +387,12 @@ def main() -> int:
         probe_wiki(args.rows)
     if "p" in args.routes:
         probe_volume(args.rows, args.contents)
+    if "x" in args.routes:
+        probe_wordpress()
+        probe_portals()
+        probe_unfpa()
+        probe_odm()
+        probe_2005()
     return 0
 
 
