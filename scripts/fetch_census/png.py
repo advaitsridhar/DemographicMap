@@ -70,12 +70,12 @@ the shapes are written and their totals must add to the province's printed
 total. In four provinces the 2024 layout has one district more than the
 boundary file draws -- Western's Delta Fly, Northern's Popondetta, Morobe's
 Wau/Waria, West New Britain's Nakanai -- and the booklet does not say which
-district each was carved from, so **no 2024 figure** is written for any of
-those four provinces' district shapes: a count on the wrong one would be
-invisible.
-That is 71 of 87 shapes filled from the 2024 census. The other 16 carry the
-2011 census instead, read from UN OCHA's Common Operational Dataset, which is
-tabulated on the 2011 district layout -- the layout the boundary file draws.
+district each was carved from. Which one is established from the two censuses
+instead -- see ``CARVED`` and ``check_carved_unions`` -- and the new district
+is summed into the shape it came out of, the same union the four above are.
+The 2011 census, tabulated on the layout the boundary file draws, is what
+makes that test possible: it comes from UN OCHA's Common Operational Dataset
+and is committed under ``data/raw/png/``. All 87 shapes carry the 2024 count.
 
 **Self-checks**, each of which refuses the run rather than writing:
 
@@ -184,19 +184,43 @@ UNIONS: dict[str, tuple[str, ...]] = {
     "Komo/Magarima District": ("Komo Hulia", "Magarima"),
     "National Capital District": ("Moresby North West", "Moresby North East",
                                   "Moresby South"),
+    # The four established below, where the shape keeps the name of the
+    # district it was and gains the one carved out of it.
+    "Middle Fly District": ("Middle Fly", "Delta Fly"),
+    "Ijivitari District": ("Ijivitari", "Popondetta"),
+    "Bulolo District": ("Bulolo", "Wau/Waria"),
+    "Talasea District": ("Talasea", "Nakanai"),
 }
 
-# Districts of the 2024 layout that no shape of the boundary file's 2011
-# layout corresponds to, with the province each appears in. The booklet does
-# not say which district each was carved from, so the whole of that province's
-# district level is left unwritten -- see the module docstring.
-NEW_DISTRICTS: dict[str, str] = {
-    "Delta Fly": "Western",
-    "Popondetta": "Northern",
-    "Wau/Waria": "Morobe",
-    "Nakanai": "West New Britain",
+# Four districts of the 2024 layout correspond to no 2011 shape at all: each
+# was carved out of one of its province's 2011 districts after the boundary
+# file was drawn, and the booklet does not say which. Which one is *established*
+# here rather than assumed, and `check_carved_unions` re-runs the establishing
+# test on every run -- so a later edition whose figures stopped supporting one
+# of these would refuse rather than quietly summing into the wrong shape.
+#
+# shape -> (province, the district carved out of it, what establishes it)
+CARVED: dict[str, tuple[str, str, str]] = {
+    "Middle Fly District": (
+        "Western", "Delta Fly",
+        "no other assignment is arithmetically possible: putting Delta Fly's "
+        "76,097 on North Fly or South Fly needs that district to have grown "
+        "184% or 167% since 2011 and Middle Fly to have lost half its people"),
+    "Ijivitari District": (
+        "Northern", "Popondetta",
+        "Popondetta Urban LLG is one of Ijivitari's five in the office's own "
+        "2011 ward tables, and the alternative has Ijivitari losing 45% of its "
+        "people while its province gained 47%"),
+    "Bulolo District": (
+        "Morobe", "Wau/Waria",
+        "Wau Rural and Waria Rural are both Bulolo LLGs in the office's own "
+        "2011 ward tables, and every other district of Morobe would have to "
+        "have grown by between 104% and 259%"),
+    "Talasea District": (
+        "West New Britain", "Nakanai",
+        "the alternative puts Kandrian/Gloucester at +262% and Talasea at -47% "
+        "against a province that grew 39%"),
 }
-REDRAWN = sorted(set(NEW_DISTRICTS.values()))
 
 # How the 2011 Summary Indicators abbreviate a denomination, and the label
 # this map carries it under. An abbreviation absent from here refuses the run
@@ -257,6 +281,9 @@ UNION_NOTE = ("Counted by the 2024 National Population Census and summed from "
               "{rest}")
 UNION_REST = (" -- which together cover it and nothing else, every other district "
               "of {province} having a shape of its own.")
+CARVED_WHY = (" {new} was carved out of this district after the boundary file "
+              "was drawn and the census booklet does not say from which, so "
+              "where it came from is established rather than published: {why}.")
 RELIGION_NOTE = (
     "{group} was the largest denomination in this province at the 2011 "
     "census, with {pct}% of its citizen population -- and it is the only "
@@ -608,14 +635,15 @@ def slug(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
 
 
-def place_districts(province: str, districts: list[Unit]
-                    ) -> tuple[dict[str, Unit], list[str]]:
+def place_districts(province: str, districts: list[Unit]) -> dict[str, Unit]:
     """The province's districts on the boundary file's shapes, or nothing.
 
-    Returns ``{shape name: unit}`` and the districts that reach no shape. A
-    province where anything is left over is returned empty, because the
-    leftover's ground came out of one of the shapes and the booklet does not
-    say which.
+    Returns ``{shape name: unit}``. A district that belongs to no declared
+    union takes the shape of its own name, so a *new* district the census
+    starts tabulating lands on a shape name the boundary file does not draw
+    and the caller's count check refuses the province -- which is what should
+    happen, since its ground came out of one of the shapes and the booklet
+    does not say which.
     """
     by_name = {d.name: d for d in districts}
     placed: dict[str, Unit] = {}
@@ -633,10 +661,7 @@ def place_districts(province: str, districts: list[Unit]
         shape = DISTRICT_ALIASES.get(name, f"{name} District")
         placed[shape] = unit
         used.add(name)
-    left = sorted(n for n in by_name if n in NEW_DISTRICTS)
-    if left:
-        return {}, left
-    return placed, []
+    return placed
 
 
 def province_record(name: str, unit: Unit, religion: tuple[str, float] | None,
@@ -668,32 +693,25 @@ def province_record(name: str, unit: Unit, religion: tuple[str, float] | None,
 
 
 def district_record(province: str, shape: str, unit: Unit | None,
-                    reason: str, cod: Unit | None = None) -> dict[str, Any]:
+                    reason: str) -> dict[str, Any]:
     fields: dict[str, Any] = {}
-    if unit is None and cod is not None:
-        # The 2024 booklet cannot be placed on this shape; the 2011 census can,
-        # because the shape is the one 2011 drew. The year goes on the figure,
-        # so a reader sees which census it is without reading the note.
-        fields["population"] = measure(cod.total, year=CENSUS_2011,
-                                       source=COD_PS, unit="persons")
-        fields["sex_ratio"] = measure(cod.ratio, year=CENSUS_2011,
-                                      source=COD_PS,
-                                      unit="males_per_100_females")
-        fields["population_note"] = reason
-    elif unit is not None:
+    if unit is not None:
         fields["population"] = measure(unit.total, year=CENSUS_2024,
                                        source=FINAL_FIGURES, unit="persons")
         fields["sex_ratio"] = measure(unit.ratio, year=CENSUS_2024,
                                       source=FINAL_FIGURES,
                                       unit="males_per_100_females")
-        fields["population_note"] = (
-            UNION_NOTE.format(
-                n=len(unit.parts), parts=", ".join(unit.parts),
-                rest=(UNION_REST.format(province=province)
-                      if SHAPES[province] > 1 else
-                      ", which are the whole of it: the boundary file draws "
-                      "this province as one shape."))
-            if unit.parts else DISTRICT_NOTE)
+        note = (UNION_NOTE.format(
+                    n=len(unit.parts), parts=", ".join(unit.parts),
+                    rest=(UNION_REST.format(province=province)
+                          if SHAPES[province] > 1 else
+                          ", which are the whole of it: the boundary file draws "
+                          "this province as one shape."))
+                if unit.parts else DISTRICT_NOTE)
+        if shape in CARVED:
+            _, carved, why = CARVED[shape]
+            note += CARVED_WHY.format(new=carved, why=why)
+        fields["population_note"] = note
     else:
         fields["population"] = gap(NOT_AVAILABLE, reason)
     return record(
@@ -703,13 +721,12 @@ def district_record(province: str, shape: str, unit: Unit | None,
         religion=gap(NOT_AVAILABLE, DISTRICT_RELIGION_GAP),
         language=collection_gap("PNG", "language"),
         ethnicity=collection_gap("PNG", "ethnicity"),
-        sources=[{"field": "population/sex_ratio", "name": COD_PS,
-                  "url": COD_PS_URL, "year": CENSUS_2011,
-                  "license": COD_PS_LICENCE}
-                 if unit is None and cod is not None else
-                 {"field": "population/sex_ratio", "name": FINAL_FIGURES,
+        sources=[{"field": "population/sex_ratio", "name": FINAL_FIGURES,
                   "url": FINAL_FIGURES_URL, "year": CENSUS_2024,
-                  "license": LICENCE}],
+                  "license": LICENCE}]
+                + ([{"field": "population", "name": COD_PS, "url": COD_PS_URL,
+                     "year": CENSUS_2011, "license": COD_PS_LICENCE}]
+                   if shape in CARVED else []),
         **fields)
 
 
@@ -751,15 +768,6 @@ COD_PS_FILES = {1: "png_admpop_adm1_2011_v2.csv", 2: "png_admpop_adm2_2011_v2.cs
 # The census's own published headline, which the file has to reproduce.
 NATIONAL_2011 = 7_275_324
 
-COD_NOTE = (
-    "Counted by the 2011 National Population and Housing Census, as UN OCHA's "
-    "Common Operational Dataset tabulates it by district. The 2024 census "
-    "counts {n} districts in {province} where the boundary file draws {m} -- "
-    "{new} has been carved out since 2011 and the office's booklet does not "
-    "say from which -- so no 2024 figure can be placed on this shape, and the "
-    "2011 census is the most recent count of the district as drawn. The "
-    "country grew about 40% between the two censuses, so this is not "
-    "comparable with the 2024 counts its neighbours carry.")
 
 
 def read_cod_ps(level: int) -> dict[str, Unit]:
@@ -834,6 +842,80 @@ def cod_districts() -> dict[str, Unit]:
         f"own figure; each province's add to its own row; and the caveat's two "
         f"combined provinces are separate in these tables")
     return districts
+
+
+def growth(province: str, snapshots: list[Unit], cod: dict[str, Unit],
+           carved_onto: dict[str, str]) -> dict[str, float]:
+    """Each 2011 shape's growth to 2024, given an assignment of the carved
+    districts. Returns percentages, and raises where a shape has no 2011 row."""
+    now: dict[str, float] = {}
+    for unit in snapshots:
+        shape = DISTRICT_ALIASES.get(unit.name, f"{unit.name} District")
+        shape = carved_onto.get(unit.name, shape)
+        now[shape] = now.get(shape, 0.0) + unit.total
+    out: dict[str, float] = {}
+    for shape, total in now.items():
+        was = cod.get(shape)
+        if was is None or not was.total:
+            raise SystemExit(f"png: {province}'s {shape} has no 2011 row to "
+                             f"check the carved union against")
+        out[shape] = 100.0 * (total - was.total) / was.total
+    return out
+
+
+def check_carved_unions(provinces: dict[str, Unit], snapshots: dict[str, list[Unit]],
+                        cod: dict[str, Unit]) -> None:
+    """Re-establish, from the two censuses, that each carved district came out
+    of the shape ``CARVED`` says it did.
+
+    The test is the one that established them. A district the 2024 booklet
+    tabulates and the 2011 shapes do not contain came out of exactly one of
+    its province's shapes, so there are as many candidate assignments as the
+    province has shapes; the right one is the assignment under which no shape
+    grew wildly out of step with its province. It is not a close call: for
+    Delta Fly the two rejected assignments need North Fly or South Fly to have
+    grown 184% or 167% while Middle Fly lost half its people, and for Nakanai
+    the rejected one needs Kandrian/Gloucester at +262% and Talasea at -47%.
+
+    Declared assignment must be the unique best -- strictly better than every
+    alternative on the worst deviation from the province's own growth -- and
+    must leave no shape shrinking while its province grows. Either failing
+    refuses the run, because a sum onto the wrong shape is exactly the
+    mis-match this project ranks above an empty cell.
+    """
+    for shape, (province, carved, _why) in sorted(CARVED.items()):
+        units = snapshots[province]
+        own = provinces[province]
+        was = sum(cod[DISTRICT_ALIASES.get(u.name, f"{u.name} District")].total
+                  for u in units if u.name != carved
+                  and DISTRICT_ALIASES.get(u.name, f"{u.name} District") in cod)
+        rate = 100.0 * (own.total - was) / was if was else 0.0
+        scores: dict[str, float] = {}
+        for candidate in sorted(
+                {DISTRICT_ALIASES.get(u.name, f"{u.name} District")
+                 for u in units if u.name != carved}):
+            rates = growth(province, units, cod, {carved: candidate})
+            scores[candidate] = max(abs(r - rate) for r in rates.values())
+        best = min(scores, key=lambda k: (scores[k], k))
+        runner = min((k for k in scores if k != best),
+                     key=lambda k: (scores[k], k), default=None)
+        if best != shape:
+            raise SystemExit(
+                f"png: {carved} is declared as carved out of {shape}, but the "
+                f"two censuses fit {best} better ({scores[best]:.0f} against "
+                f"{scores[shape]:.0f} points of deviation from {province}'s own "
+                f"{rate:+.0f}%). The declaration in CARVED is wrong, or the "
+                f"figures have changed.")
+        shrinking = sorted(k for k, v in growth(province, units, cod,
+                                                {carved: shape}).items() if v < 0)
+        if shrinking:
+            raise SystemExit(
+                f"png: summing {carved} into {shape} leaves {', '.join(shrinking)} "
+                f"smaller in 2024 than in 2011 while {province} grew {rate:+.0f}%")
+        log(f"    {carved} -> {shape}: {scores[shape]:.0f} points of deviation "
+            f"from {province}'s {rate:+.0f}%, against "
+            + (f"{scores[runner]:.0f} for the next best ({runner})"
+               if runner else "no alternative"))
 
 
 def fetch_cod_ps() -> int:
@@ -951,28 +1033,10 @@ def build() -> list[dict[str, Any]]:
                for name in PROVINCES]
     report_coverage(religion)
 
-    districts_2011 = cod_districts()
-    written = dated_2011 = 0
+    check_carved_unions(provinces, snapshots, cod_districts())
+    written = 0
     for province in PROVINCES:
-        placed, left = place_districts(province, snapshots[province])
-        if left:
-            shapes = REDRAWN_SHAPES.get(province)
-            if shapes is None:
-                raise SystemExit(
-                    f"png: {province} has districts with no shape ({left}) and is "
-                    f"not among the provinces declared redrawn ({REDRAWN})")
-            reason = COD_NOTE.format(
-                n=len(snapshots[province]), m=len(shapes), province=province,
-                new=" and ".join(left))
-            for shape in shapes:
-                cod = districts_2011.get(shape)
-                if cod is None:
-                    raise SystemExit(
-                        f"png: {shape} is drawn in {province} and the COD's "
-                        f"2011 file has no district of that name")
-                records.append(district_record(province, shape, None, reason, cod))
-                dated_2011 += 1
-            continue
+        placed = place_districts(province, snapshots[province])
         if len(placed) != SHAPES[province]:
             raise SystemExit(
                 f"png: {province}'s districts land on {len(placed)} shapes where "
@@ -986,9 +1050,9 @@ def build() -> list[dict[str, Any]]:
             records.append(district_record(province, shape, unit, ""))
             written += 1
 
-    log(f"  districts: {written} shapes carry the 2024 count; {dated_2011} in "
-        f"{len(REDRAWN)} provinces ({', '.join(REDRAWN)}) carry the 2011 one, "
-        f"the 2024 layout having a district more than the map draws in each")
+    log(f"  districts: all {written} shapes carry the 2024 count, {len(CARVED)} "
+        f"of them summed with the district carved out of them since 2011 "
+        f"({', '.join(new for _, new, _ in CARVED.values())})")
     log("  the rest of each province was looked for here, and is not published:")
     for route, answer in ROUTES:
         log(f"    {route}\n      -> {answer}")

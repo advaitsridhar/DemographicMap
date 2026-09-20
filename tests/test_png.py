@@ -293,10 +293,9 @@ class PlacingDistrictsOnShapes(unittest.TestCase):
         return png.Unit(name, total, total - half, half)
 
     def test_a_shape_whose_name_names_its_two_districts_is_their_sum(self):
-        placed, left = png.place_districts("Hela", [
+        placed = png.place_districts("Hela", [
             self.unit("Komo Hulia", 77_114), self.unit("Koroba Kopiago", 130_425),
             self.unit("Tari/Pori", 102_081), self.unit("Magarima", 56_186)])
-        self.assertEqual(left, [])
         self.assertEqual(sorted(placed), ["Komo/Magarima District",
                                           "Koroba/Kopiago District",
                                           "Tari/Pori District"])
@@ -306,7 +305,7 @@ class PlacingDistrictsOnShapes(unittest.TestCase):
         self.assertEqual(placed["Tari/Pori District"].parts, ())
 
     def test_a_summed_shape_says_what_was_summed(self):
-        placed, _ = png.place_districts("Hela", [
+        placed = png.place_districts("Hela", [
             self.unit("Komo Hulia", 77_114), self.unit("Koroba Kopiago", 130_425),
             self.unit("Tari/Pori", 102_081), self.unit("Magarima", 56_186)])
         note = png.district_record(
@@ -316,21 +315,33 @@ class PlacingDistrictsOnShapes(unittest.TestCase):
         self.assertIn("Hela", note)
 
     def test_a_renamed_district_reaches_its_shape(self):
-        placed, _ = png.place_districts("Western Highlands", [
+        placed = png.place_districts("Western Highlands", [
             self.unit("Dei", 91_051), self.unit("Hagen Central", 160_914),
             self.unit("Mul/Baiyer", 110_252), self.unit("Tambul/Nebilyer", 100_349)])
         self.assertIn("Mt Hagen District", placed)
         self.assertEqual(len(placed), png.SHAPES["Western Highlands"])
 
-    def test_a_province_with_a_district_no_shape_draws_is_left_whole(self):
-        # Delta Fly has been carved out since 2011 and the booklet does not
-        # say from which district, so none of Western's three shapes is
-        # written -- a count on the wrong one would be invisible.
-        placed, left = png.place_districts("Western", [
+    def test_a_carved_district_is_summed_into_the_shape_it_came_from(self):
+        # Delta Fly was carved out of Middle Fly after the boundary file was
+        # drawn; the shape carries both, so Western still lands on three.
+        placed = png.place_districts("Western", [
             self.unit("Middle Fly", 39_676), self.unit("North Fly", 102_633),
             self.unit("South Fly", 81_613), self.unit("Delta Fly", 76_097)])
-        self.assertEqual(placed, {})
-        self.assertEqual(left, ["Delta Fly"])
+        self.assertEqual(len(placed), png.SHAPES["Western"])
+        self.assertEqual(placed["Middle Fly District"].total, 39_676 + 76_097)
+        self.assertEqual(placed["Middle Fly District"].parts,
+                         ("Middle Fly", "Delta Fly"))
+
+    def test_a_district_no_shape_draws_lands_on_a_name_the_file_does_not_have(self):
+        # The guard for the next carve-out: an undeclared district takes a
+        # shape name of its own, so the province lands on one shape too many
+        # and build() refuses it rather than guessing a parent.
+        placed = png.place_districts("Western", [
+            self.unit("Middle Fly", 39_676), self.unit("North Fly", 102_633),
+            self.unit("South Fly", 81_613), self.unit("Delta Fly", 76_097),
+            self.unit("Wipim", 20_000)])
+        self.assertGreater(len(placed), png.SHAPES["Western"])
+        self.assertIn("Wipim District", placed)
 
 
 
@@ -351,24 +362,26 @@ class TheTwentyElevenCount(unittest.TestCase):
             for shape in shapes:
                 self.assertIn(shape, districts, f"{province}/{shape}")
 
-    def test_the_record_carries_the_2011_year_licence_and_reason(self):
-        districts, _ = quiet(png.cod_districts)
-        note = png.COD_NOTE.format(n=4, m=3, province="Western", new="Delta Fly")
-        row = png.district_record("Western", "Middle Fly District", None, note,
-                                  districts["Middle Fly District"])
-        self.assertEqual(row["population"]["value"], 79_349)
-        self.assertEqual(row["population"]["year"], png.CENSUS_2011)
-        self.assertEqual(row["sex_ratio"]["year"], png.CENSUS_2011)
-        self.assertIn("Common Operational Dataset", row["population"]["source"])
-        source, = row["sources"]
-        self.assertIn("CC BY-IGO", source["license"])
-        self.assertEqual(source["year"], png.CENSUS_2011)
+    def test_a_carved_shape_says_the_evidence_and_cites_both_censuses(self):
+        placed = png.place_districts("Western", [
+            png.Unit("Middle Fly", 39_676, 20_000, 19_676),
+            png.Unit("North Fly", 102_633, 52_000, 50_633),
+            png.Unit("South Fly", 81_613, 42_000, 39_613),
+            png.Unit("Delta Fly", 76_097, 39_000, 37_097)])
+        row = png.district_record("Western", "Middle Fly District",
+                                  placed["Middle Fly District"], "")
+        self.assertEqual(row["population"]["value"], 39_676 + 76_097)
+        self.assertEqual(row["population"]["year"], png.CENSUS_2024)
         self.assertIn("Delta Fly", row["population_note"])
-        self.assertIn("2011", row["population_note"])
-        # It is not comparable with the neighbours' 2024 counts, and says so.
-        self.assertIn("40%", row["population_note"])
+        self.assertIn("established rather than published",
+                      row["population_note"])
+        # The 2011 census is what established it, so it is cited too.
+        fields = {src["field"]: src for src in row["sources"]}
+        self.assertEqual(fields["population/sex_ratio"]["year"], png.CENSUS_2024)
+        self.assertIn("CC BY-IGO", fields["population"]["license"])
+        self.assertEqual(fields["population"]["year"], png.CENSUS_2011)
 
-    def test_a_2024_district_still_carries_2024(self):
+    def test_an_uncarved_district_cites_2024_alone(self):
         row = png.district_record("Hela", "Tari/Pori District",
                                   png.Unit("Tari/Pori", 102_081, 52_000, 50_081),
                                   "")
@@ -376,7 +389,7 @@ class TheTwentyElevenCount(unittest.TestCase):
         source, = row["sources"]
         self.assertEqual(source["year"], png.CENSUS_2024)
 
-    def test_a_shape_with_neither_count_is_still_a_stated_gap(self):
+    def test_a_shape_with_no_count_is_still_a_stated_gap(self):
         row = png.district_record("Hela", "Nowhere District", None, "because.")
         self.assertEqual(row["population"]["status"], "not_available")
         self.assertEqual(row["population"]["note"], "because.")
@@ -387,13 +400,17 @@ class WhatIsDeclared(unittest.TestCase):
         self.assertEqual(sum(png.SHAPES.values()), 87)
         self.assertEqual(set(png.SHAPES), set(png.PROVINCES))
 
-    def test_every_redrawn_province_lists_all_of_its_shapes(self):
-        self.assertEqual(sorted(png.REDRAWN_SHAPES), png.REDRAWN)
-        for province, shapes in png.REDRAWN_SHAPES.items():
-            self.assertEqual(len(shapes), png.SHAPES[province], province)
+    def test_every_carved_district_is_declared_as_a_union_of_its_shape(self):
+        for shape, (province, carved, why) in png.CARVED.items():
+            self.assertIn(shape, png.UNIONS, shape)
+            self.assertEqual(png.UNIONS[shape][-1], carved, shape)
+            self.assertIn(province, png.PROVINCES, shape)
+            # The evidence is carried, because the assignment is established
+            # rather than published and the note has to say how.
+            self.assertGreater(len(why), 60, shape)
 
-    def test_sixteen_shapes_are_the_ones_left_without_a_count(self):
-        self.assertEqual(sum(len(s) for s in png.REDRAWN_SHAPES.values()), 16)
+    def test_no_shape_is_left_without_a_count(self):
+        self.assertEqual(sum(png.SHAPES.values()), 87)
 
     def test_a_union_only_ever_joins_districts_of_one_province(self):
         # Every part of a declared union must be a district name, never a
