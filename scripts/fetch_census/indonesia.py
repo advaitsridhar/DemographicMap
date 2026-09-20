@@ -84,8 +84,8 @@ from pathlib import Path
 from typing import Any
 
 from . import indonesia_portals as portals
-from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure,
-                      record, write_json)
+from ._shared import (NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, http_json,
+                      log, measure, record, write_json)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import slugify  # noqa: E402
@@ -164,7 +164,36 @@ NO_ETHNIC_TABLE = {"Bangka-Belitung Islands", "West Sulawesi"}
 
 # The boundary file's admin2 layer has five polygons that are water or forest,
 # not regencies, and they have no article to read.
-NOT_REGENCIES = {"Hutan", "Wadung Kedungombo", "Waduk Cirata", "Danau", "Danau Toba"}
+# Five of the shapes the boundary file draws at this level are not regencies
+# and nobody lives in them. That is not a guess from their names: UN OCHA's
+# COD-PS catalogue entry for Indonesia says the boundary set "includes 17
+# uninhabited features (comprising lakes, reservoirs, and a park) that are
+# not represented in this dataset", and lists these among the eight it names
+# at admin2 -- Danau ID1388/ID1688/ID1888/ID7188, Danau Toba ID1288, Hutan
+# ID3399, Waduk Cirata ID3288, Wadung Kedungombo ID3388.
+#
+# They were skipped in silence, so each fell through to the build's generic
+# "nothing was read for this unit", which is true and is the wrong reason: it
+# reads as a regency awaiting data. Each now gets a record that says what the
+# shape is. There is no composition to find and no head count to look for.
+NOT_REGENCIES: dict[str, str] = {
+    "Danau": "a lake",
+    "Danau Toba": "Lake Toba",
+    "Hutan": "a forest",
+    "Waduk Cirata": "the Cirata reservoir",
+    "Wadung Kedungombo": "the Kedungombo reservoir",
+}
+COD_AB_CAVEAT = ("UN OCHA Common Operational Dataset, Indonesia subnational "
+                 "population statistics (COD-PS), catalogue caveat on the "
+                 "uninhabited features of the matching boundary set")
+COD_AB_URL = "https://data.humdata.org/dataset/cod-ps-idn"
+UNINHABITED = (
+    "This shape is {what}, not a regency, and nobody lives in it. The "
+    "boundary file draws it at the same level as Indonesia's regencies and "
+    "cities; UN OCHA's population dataset for the same boundaries names it "
+    "as one of seventeen uninhabited features -- lakes, reservoirs and a "
+    "park -- that carry no population, and publishes no row for it. There is "
+    "no composition to be missing here.")
 # Where the boundary file's spelling is not the article's, or the regency has
 # been renamed since the shapes were drawn.
 REGENCY_TITLES: dict[str, str] = {
@@ -674,8 +703,15 @@ POPULATION_KINDS: dict[str, str] = {
 }
 
 
-def read_population(wikitext: str, title: str) -> dict[str, Any] | None:
-    """The infobox's head count with its year and citation, or None.
+def read_population(wikitext: str,
+                    title: str) -> tuple[dict[str, Any] | None, str]:
+    """The infobox's head count with its year and citation, and why not.
+
+    Returns ``(reading, "")`` when the count is read and ``(None, reason)``
+    when it is refused. The reason is written onto the record, because a
+    refusal that leaves a bare gap tells a reader of the map nothing: 44
+    regencies carried an empty population field and not one of them said
+    whether the figure was missing, uncited or undated.
 
     This exists because of a refusal. The regency compositions are
     percentages and nothing else -- not one of the 491 articles prints a
@@ -694,20 +730,34 @@ def read_population(wikitext: str, title: str) -> dict[str, Any] | None:
     """
     value = infobox_param(wikitext, "penduduk")
     if not value:
-        return None
+        return None, "the article's infobox carries no head count at all"
     definitions = ref_definitions(wikitext)
+    # The year is written under either of two names. The infobox template
+    # accepts both, and reading only one of them refused a figure that was
+    # there and dated -- Banyuwangi's 1,785,316 for 30 June 2024 is under
+    # "tahun populasi", not "penduduktahun".
+    dated = (infobox_param(wikitext, "penduduktahun")
+             or infobox_param(wikitext, "tahun populasi") or "")
     # The count's own reference lives in a parameter of its own, which is
-    # where nearly every article puts it; a few attach it to the value.
-    cites = citations(value, definitions) + citations(
-        infobox_param(wikitext, "pendudukref") or "", definitions)
+    # where nearly every article puts it; a few attach it to the value, and a
+    # few to the year beside it -- Musi Rawas Utara writes
+    # "penduduktahun = 2023<ref name=DUKCAPIL>...". A reference on the year
+    # that dates the count is a reference for the count: it is the same
+    # snapshot, and it is the one the editor put there for it. A reference
+    # anywhere *else* in the infobox is not, and is still not read.
+    cites = (citations(value, definitions)
+             + citations(infobox_param(wikitext, "pendudukref") or "", definitions)
+             + citations(dated, definitions))
     if not cites:
         log(f"    {title}: the head count carries no citation; not read")
-        return None
+        return None, ("the article prints a head count and cites nothing for "
+                      "it; an uncited figure is not read")
     text = REF.sub("", value).replace("[[", " ").replace("]]", " ")
     m = HEAD_COUNT.search(text)
     if not m:
         log(f"    {title}: no head count in {' '.join(text.split())[:60]!r}; not read")
-        return None
+        return None, ("the infobox's population parameter holds no number this "
+                      "reader can take as a head count")
     total = int(re.sub(r"[.\u00a0 ]", "", m.group(1)))
     # In citation order, not by rank. ``read_religion`` ranks because several
     # references may each describe the one composition and the best of them
@@ -721,18 +771,20 @@ def read_population(wikitext: str, title: str) -> dict[str, Any] | None:
     if kind not in POPULATION_KINDS:
         log(f"    {title}: the head count cites {kind}, which does not "
             f"publish one; not read")
-        return None
+        return None, (f"the head count's citation is {EXPLAINED.get(kind, kind)}, "
+                      f"which does not publish a head count for a regency; a "
+                      f"reference the page never defines reads as one of these")
     # "31 Desember [[2024]]" -- the date the count is *as of*, which is the
     # year that describes it. The citation's own year is the fallback, and it
     # is a worse one: an editor updates the figure more often than the
     # reference beside it.
-    asof = re.findall(r"\b(19\d\d|20[0-2]\d)\b",
-                      infobox_param(wikitext, "penduduktahun") or "")
+    asof = re.findall(r"\b(19\d\d|20[0-2]\d)\b", dated)
     year = int(asof[-1]) if asof else described[0][1]
     if year is None:
         log(f"    {title}: the head count carries no year; not read")
-        return None
-    return {"total": total, "year": year, "kind": kind}
+        return None, ("neither the head count nor its citation carries a year, "
+                      "so there is no date the figure is as of")
+    return {"total": total, "year": year, "kind": kind}, ""
 
 
 def population_fields(reading: dict[str, Any], title: str) -> dict[str, Any]:
@@ -1185,11 +1237,23 @@ def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
     kinds: dict[str, int] = {}
     unread: dict[str, dict[str, str]] = {}
+    refusals: dict[str, int] = {}
     known: dict[str, dict[str, dict[str, float]]] = {}
-    counted = 0
+    counted = uninhabited = 0
     for shape in shapes("admin2"):
         name, province = shape["name"], provinces.get(shape["parent"], "")
-        if name in NOT_REGENCIES or not province:
+        if not province:
+            continue
+        if name in NOT_REGENCIES:
+            why = UNINHABITED.format(what=NOT_REGENCIES[name])
+            records.append(regency_record(
+                name, province,
+                {field: gap(NOT_COLLECTED, why) for field in
+                 ("religion", "ethnicity", "language")}
+                | {"population": gap(NOT_COLLECTED, why)},
+                [{"field": "religion/ethnicity/language/population",
+                  "name": COD_AB_CAVEAT, "url": COD_AB_URL}]))
+            uninhabited += 1
             continue
         title = regency_title(name)
         wikitext, resolved = fetch_page(title, "id")
@@ -1205,15 +1269,26 @@ def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
         known.setdefault(province, {})[name] = {r["group"]: r["pct"] for r in reading["rows"]}
         fields = religion_fields(reading, resolved)
         sources = [fields.pop("religion_source")]
-        head = read_population(wikitext, resolved)
+        head, why = read_population(wikitext, resolved)
         if head:
             counted += 1
             fields.update(population_fields(head, resolved))
             sources.append(fields.pop("population_source"))
+        else:
+            refusals[why] = refusals.get(why, 0) + 1
+            fields["population"] = gap(
+                NOT_AVAILABLE,
+                f"No head count is published for this regency here: "
+                f"{why}. The Indonesian Wikipedia article "
+                f"'{resolved}' is what was read.")
         records.append(regency_record(name, province, fields, sources, resolved))
     log(f"  regencies: {len(records)} read from the infobox; by kind of source: "
         + ", ".join(f"{k} {v}" for k, v in sorted(kinds.items())))
     log(f"  regencies with a head count: {counted} of {len(records)}")
+    log(f"  {uninhabited} shapes at this level are uninhabited features, not "
+        f"regencies, and say so: {', '.join(sorted(NOT_REGENCIES))}")
+    for why, n in sorted(refusals.items(), key=lambda kv: -kv[1]):
+        log(f"    {n} without one because {why}")
     flat = sorted(f"{prov}/{name}" for prov, names in unread.items() for name in names)
     if flat:
         log(f"  the infobox does not answer for {len(flat)}: {', '.join(flat)}")

@@ -410,8 +410,9 @@ class InfoboxPopulation(unittest.TestCase):
     """
 
     def test_count_year_and_registry_named(self):
-        head, printed = quiet(m.read_population, CILACAP, "Kabupaten Cilacap")
+        (head, why), printed = quiet(m.read_population, CILACAP, "Kabupaten Cilacap")
         self.assertEqual(head, {"total": 2_037_899, "year": 2024, "kind": "dukcapil"})
+        self.assertEqual(why, "")
         fields = m.population_fields(head, "Kabupaten Cilacap")
         self.assertEqual(fields["population"]["value"], 2_037_899)
         self.assertEqual(fields["population"]["year"], 2024)
@@ -420,19 +421,29 @@ class InfoboxPopulation(unittest.TestCase):
         self.assertEqual(fields["population_source"]["field"], "population")
 
     def test_year_falls_back_to_the_citation_when_the_infobox_gives_none(self):
-        head, printed = quiet(m.read_population, MANADO, "Kota Manado")
+        (head, _), printed = quiet(m.read_population, MANADO, "Kota Manado")
         self.assertEqual(head["total"], 459_409)
         self.assertEqual(head["year"], 2023)
 
     def test_separators_and_the_as_of_date_win_over_the_citation(self):
-        head, printed = quiet(m.read_population, PUNCAK_JAYA, "Kabupaten Puncak Jaya")
+        (head, _), printed = quiet(m.read_population, PUNCAK_JAYA,
+                                   "Kabupaten Puncak Jaya")
         self.assertEqual(head, {"total": 220_393, "year": 2024, "kind": "dukcapil"})
 
-    def test_no_count_and_an_uncited_count_are_both_none(self):
-        head, printed = quiet(m.read_population, SURABAYA, "Kota Surabaya")
+    def test_no_count_and_an_uncited_count_are_both_refused_with_a_reason(self):
+        """A refusal has to say which of the two it is.
+
+        Both end with no population on the record, and they are not the same
+        fact about the place: one article prints no head count at all, the
+        other prints one and cites nothing for it. A bare gap says neither.
+        """
+        (head, why), printed = quiet(m.read_population, SURABAYA, "Kota Surabaya")
         self.assertIsNone(head)
-        head, printed = quiet(m.read_population, UNCITED_COUNT, "Kabupaten Contoh")
+        self.assertIn("no head count at all", why)
+        (head, why), printed = quiet(m.read_population, UNCITED_COUNT,
+                                     "Kabupaten Contoh")
         self.assertIsNone(head)
+        self.assertIn("cites nothing for it", why)
         self.assertIn("no citation", printed)
 
     def test_a_joint_hindu_buddhist_bucket_is_one_other_row(self):
@@ -538,7 +549,8 @@ class Records(unittest.TestCase):
         # of their provinces and write only the ones no article answered for.
         cilacap = by_regency["Kabupaten Cilacap"] if "Kabupaten Cilacap" in by_regency \
             else by_regency["Cilacap"]
-        self.assertEqual(sum(1 for r in regencies if r["religion_year"] == 2019), 1)
+        self.assertEqual(sum(1 for r in regencies
+                             if r.get("religion_year") == 2019), 1)
         bukittinggi = by_regency["Kota Bukittinggi"]
         self.assertEqual(bukittinggi["religion_year"], 2023)
         self.assertEqual(bukittinggi["religion"][0]["group"], "Islam")
@@ -557,8 +569,32 @@ class Records(unittest.TestCase):
         self.assertEqual({s["field"] for s in cilacap["sources"]},
                          {"religion", "population"})
         self.assertIn("not read", printed)
-        self.assertNotIn("Hutan", printed)
         self.assertNotIn("Kabupaten Cilacap", printed)
+        # Hutan is named as an uninhabited feature, never as a regency the
+        # reader failed on: the two are different facts and the log says which.
+        self.assertIn("uninhabited features", printed)
+        for line in printed.splitlines():
+            if "not read" in line or "does not answer" in line:
+                self.assertNotIn("Hutan", line, line)
+
+    def test_a_lake_says_it_is_a_lake(self):
+        """Five shapes at this level are lakes, a forest and two reservoirs.
+
+        Skipped in silence they fell through to the build's generic "nothing
+        was read for this unit", which reads as a regency awaiting data. UN
+        OCHA's catalogue entry for the matching boundary set names them as
+        uninhabited and publishes no row for any of them.
+        """
+        regencies, _ = quiet(m.regency_records, lambda title, lang="id": ("", title))
+        by_name = {r["name"]: r for r in regencies}
+        for name in ("Hutan", "Danau", "Waduk Cirata"):
+            self.assertIn(name, by_name, sorted(by_name)[:8])
+            unit = by_name[name]
+            for field in ("religion", "ethnicity", "language", "population"):
+                self.assertEqual(unit[field]["status"], "not_collected", field)
+                self.assertIn("nobody lives in it", unit[field]["note"])
+        self.assertIn("a forest", by_name["Hutan"]["religion"]["note"])
+        self.assertIn("reservoir", by_name["Waduk Cirata"]["religion"]["note"])
 
     def test_regency_titles(self):
         self.assertEqual(m.regency_title("Kota Medan"), "Kota Medan")
