@@ -1,62 +1,8 @@
-png: the 2024 census head count and the 2011 census's provincial religion
-  cached 2024-final-figures.pdf (7.9 MB)
-  cached 2011-national-report.pdf (11.5 MB)
-  2024 Table 1: 22 provinces adding to 10,185,363, the printed national total
-  2024 Provincial Snapshots: 96 districts across 22 provinces
-  2011 Summary Indicators: 22 provinces, and the three the report names in prose (Bougainville, Morobe, Northern) agree with it
-  religion coverage: one denomination per province, describing 19.7% of Hela at the least and 68.4% of Autonomous Region of Bougainville at the most; all 22 below 95.0%, so every panel says what share it describes
-    Hela                               Evangelical Alliance    19.7%
-    Southern Highlands                 Roman Catholic          19.7%
-    National Capital District          United Church           23.0%
-    Western Highlands                  Evangelical Lutheran    26.0%
-    Enga                               Evangelical Lutheran    26.4%
-    Jiwaka                             Roman Catholic          29.6%
-    Gulf                               United Church           30.1%
-    New Ireland                        Roman Catholic          31.3%
-    Chimbu                             Roman Catholic          34.4%
-    Western                            Evangelical Alliance    37.1%
-    Madang                             Evangelical Lutheran    38.4%
-    Manus                              Roman Catholic          38.5%
-    Eastern Highlands                  Seventh Day Adventist   39.6%
-    Central                            United Church           40.0%
-    West Sepik                         Roman Catholic          40.4%
-    East New Britain                   Roman Catholic          42.8%
-    East Sepik                         Roman Catholic          43.0%
-    Milne Bay                          United Church           54.9%
-    West New Britain                   Roman Catholic          55.3%
-    Northern                           Anglican                60.6%
-    Morobe                             Evangelical Lutheran    67.0%
-    Autonomous Region of Bougainville  Roman Catholic          68.4%
-  COD 2011: 87 districts add to 7,275,324, the census's own figure; each province's add to its own row; and the caveat's two combined provinces are separate in these tables
-    Wau/Waria -> Bulolo District: 46 points of deviation from Morobe's +48%, against 56 for the next best (Lae District)
-    Popondetta -> Ijivitari District: 11 points of deviation from Northern's +47%, against 106 for the next best (Sohe District)
-    Delta Fly -> Middle Fly District: 14 points of deviation from Western's +49%, against 118 for the next best (South Fly District)
-    Nakanai -> Talasea District: 7 points of deviation from West New Britain's +39%, against 222 for the next best (Kandrian/Gloucester District)
-  districts: all 87 shapes carry the 2024 count, 4 of them summed with the district carved out of them since 2011 (Delta Fly, Popondetta, Wau/Waria, Nakanai)
-  the rest of each province was looked for here, and is not published:
-    2011 National Report, all 100 pp
-      -> religion on pp. 26-30 (the one provincial row), 32-34 (Table 2.4 and Figures 2.1-2.2, country only) and 85; no provincial table
-    2011 National Report, Appendix 4 (p. 95)
-      -> the provincial tables are priced products -- Provincial Report K40 a province, 31 Basic Tables K40 a set, Table Retrieval System CD-ROM K2,000 -- and none of them is a download
-    nso.gov.pg sitemap, all 289 published files
-      -> no provincial census report; nothing below the province carries religion
-    2024 Final Figures (35 pp), 2011 Final Figures booklet (40 pp), ward tables (35 pp), 2021 provincial estimates (2 pp)
-      -> religion on zero pages of any of them
-    2000 National Report, three copies
-      -> one 22,359,391-byte scan, 109 pp, zero extractable characters
-    DHS StatCompiler API (api.dhsprogram.com)
-      -> 2.2 MB of indicators and no religion composition among them; religion is a DHS background characteristic, never an indicator
-    DHS 2016-18 final report FR364 (519 pp)
-      -> religion on 6 pages, crossed with province on none
-    DHS microdata
-      -> 30 files named by the API, served only to a registered account; not attempted
-    2022 SDES thematic workbooks
-      -> sheet T2.4 is religion by Total/Urban/Rural and sex -- a 321-cluster national survey with no provincial estimates
-    spc.int PRISM, via the Internet Archive
-      -> the 2000 census page links no tables; popdemog.htm has three national rates (christian / non-christian / none)
-    Wikipedia (Religion in PNG, province articles)
-      -> national denominations only; no province article has a religion table
-    pngnri.org via the Internet Archive (1,108 PDFs)
-      -> atlas sheets of education and development indicators, not census tables
-  wrote data/processed/png.json (371 kB)
-  wrote 109 records (22 provinces, 87 districts)
+  https://data.humdata.org/api/3/action/package_show?id=cod-ps-idn
+    12,884 chars
+    5 distinct match(es) for 'https://[a-zA-Z0-9:/?&=%._~-]+idn[a-zA-Z0-9._~-]*[.](csv|xlsx)'
+      https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/615f2158-a0fd-45f1-8c91-0f0ccb8470b5/download/idn_admpop_adm0_2020_v2.csv
+      https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/6bc3236b-11c8-41cf-a4aa-7c2be36cc010/download/idn_adminboundaries_tabulardata.xlsx
+      https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/83022e0f-8156-4eb4-8a02-b804f3268500/download/idn_admpop_2020_v2.xlsx
+      https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/8f6f09d2-95f7-42dc-b6f1-aead319607f3/download/idn_admpop_adm2_2020_v3.csv
+      https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/a7cabb5c-7a17-44ec-ae60-1481594e5857/download/idn_admpop_adm1_2020_v2.csv
