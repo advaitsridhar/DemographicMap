@@ -37,7 +37,8 @@ BYTES = 3000
 AGENT = "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)"
 
 
-def fetch(url: str, *, limit: int = BYTES, headers: dict[str, str] | None = None) -> str | None:
+def fetch(url: str, *, limit: int = BYTES, find: str | None = None,
+          headers: dict[str, str] | None = None) -> str | None:
     try:
         body = http_get(url, cache=False, retries=1, timeout=60, aia=True, headers=headers)
     except Exception as exc:                # noqa: BLE001 - the probe's product is the reason
@@ -45,7 +46,14 @@ def fetch(url: str, *, limit: int = BYTES, headers: dict[str, str] | None = None
         return None
     text = body if isinstance(body, str) else body.decode("utf-8", "replace")
     log(f"  {url}\n    {len(text):,} chars")
-    log("    " + text[:limit].replace("\n", "\n    "))
+    if find:
+        import re                                  # noqa: PLC0415
+        hits = sorted({m.group(0) for m in re.finditer(find, text)})
+        log(f"    {len(hits)} distinct match(es) for {find!r}")
+        for hit in hits[:200]:
+            log(f"      {hit}")
+    else:
+        log("    " + text[:limit].replace("\n", "\n    "))
     return text
 
 
@@ -71,7 +79,7 @@ def post(url: str, payload: dict[str, Any], *, limit: int = BYTES) -> str | None
 
 def probe(args: argparse.Namespace) -> int:
     for url in args.get or []:
-        fetch(url, limit=args.bytes)
+        fetch(url, limit=args.bytes, find=args.find)
     payload = dict(kv.split("=", 1) for kv in (args.field or []))
     for url in args.post or []:
         post(url, payload, limit=args.bytes)
@@ -88,6 +96,7 @@ def main() -> int:
     ap.add_argument("--get", action="append")
     ap.add_argument("--post", action="append")
     ap.add_argument("--field", action="append", help="NAME=VALUE for a POST body")
+    ap.add_argument("--find", help="print the distinct matches of this regex instead of the body")
     ap.add_argument("--bytes", type=int, default=BYTES)
     args = ap.parse_args()
     return probe(args) if args.probe else run()
