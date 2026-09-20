@@ -4027,6 +4027,31 @@ The first reason alone settles it. Both are recorded because the adapter that
 reads the PNG file logs its licence on every run rather than writing one
 down, and this is what that habit is for.
 
+**And an API key does not change it.** The owner supplied an app identifier
+for HDX's Humanitarian API (hapi.humdata.org), which is a standardised
+read-only service over a subset of the same material and wants base64 of
+"appname:email". It works -- `scripts/probe_hapi.py`, reading the identifier
+from the `DEMOGRAPHIC_MAP` secret and scrubbing it from everything it prints,
+because the identifier has an email address inside it and a probe's product
+is a committed log. One thing was wrong with the secret and it is worth
+recording: it held 54 characters where base64 of a 40-byte string is 56, so
+the `==` padding had been lost somewhere on the way in, and HAPI answered
+`403 Invalid app identifier` for that and nothing else.
+
+With it working, HAPI serves Indonesia's second-level population at
+`/api/v2/geography-infrastructure/baseline-population?location_code=IDN&admin_level=2`,
+by five-year age band and sex. Every row names the resource it came from,
+and for Indonesia that is `8f6f09d2-95f7-42dc-b6f1-aead319607f3` -- which the
+CKAN catalogue names as `idn_admpop_adm2_2020_v3.csv` in `cod-ps-idn`. It is
+the same file, under the same "humanitarian use only" licence. A credential
+is access, not permission, and this one changes nothing about Indonesia.
+
+What it does change is the rest of the world: HAPI covers **249 locations**,
+and a country whose COD-PS is openly licensed -- Papua New Guinea's is CC
+BY-IGO 3.0 -- is reachable through one well-formed request instead of a
+resource uuid that rotates. The licence still has to be read per country from
+the CKAN entry, because HAPI does not carry one.
+
 **Five shapes at this level are not regencies.** The same catalogue entry
 says the matching boundary set "includes 17 uninhabited features (comprising
 lakes, reservoirs, and a park) that are not represented in this dataset", and
