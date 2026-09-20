@@ -57,11 +57,12 @@ ADAPTER_FILES = [
     # census figures and must keep them, and because merge_adapter works field
     # by field this still fills a field a census left empty without touching
     # one it filled.
-    "afrobarometer_region.json",
-    # Round 8, for language alone: Round 9 does not ask it, and Africa is
-    # emptier of language than of anything else on this map. Beside Round 9
-    # rather than after it -- neither touches a field the other writes.
+    # Round 8 *before* Round 9, which is lower authority, because Round 9 is
+    # two years newer and reaches 442 regions in 39 countries against Round
+    # 8's 356 in 34. Round 8 is here to fill a region Round 9 is short of, not
+    # to overwrite one it holds; a later file wins, so it goes first.
     "afrobarometer_r8_language.json",
+    "afrobarometer_region.json",
     # Korea's pooled web-panel survey is the same kind of thing: a survey
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.

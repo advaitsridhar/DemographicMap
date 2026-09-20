@@ -6613,7 +6613,19 @@ class ASurveyIsNotACount(unittest.TestCase):
 
     def test_the_survey_ranks_below_every_census_adapter(self):
         """A 40-respondent estimate must never overwrite a counted figure."""
-        self.assertEqual(be.ADAPTER_FILES[0], "afrobarometer_region.json")
+        survey = ["afrobarometer_r8_language.json", "afrobarometer_region.json"]
+        self.assertEqual(be.ADAPTER_FILES[:len(survey)], survey)
+
+    def test_round_eight_ranks_below_round_nine(self):
+        """Round 8 fills what Round 9 is short of; it never overwrites it.
+
+        Round 9 is two years newer and reaches 442 regions in 39 countries
+        against Round 8's 356 in 34, so where both hold a region the newer
+        round must win. A later file wins, so Round 8 goes first.
+        """
+        files = be.ADAPTER_FILES
+        self.assertLess(files.index("afrobarometer_r8_language.json"),
+                        files.index("afrobarometer_region.json"))
 
     def test_congo_brazzaville_is_not_the_other_congo(self):
         ab = self.adapter()

@@ -80,8 +80,11 @@ OUT = "afrobarometer_r8_language.json"
 # them: Round 9 covers both and is newer, but the release is not committed and
 # re-extracting means having the 52 MB file again, so the two fields that might
 # later rescue a region Round 9 had too few respondents for are taken now.
+# withinwt_hh, the household-level weight, because that is the one Round 9's
+# committed extract carries and two readings of one programme must weight the
+# same way. The release offers withinwt_ea beside it, the older EA-level one.
 COLUMNS = {"country": "COUNTRY", "region": "REGION", "language": "Q2",
-           "religion": "Q98A", "ethnicity": "Q81", "weight": "withinwt_ea"}
+           "religion": "Q98A", "ethnicity": "Q81", "weight": "withinwt_hh"}
 
 # What the questionnaire calls a non-answer. "Other" is deliberately absent:
 # it is an answer, and appears below under its own label.
@@ -378,8 +381,7 @@ def main() -> int:
                      "and should be read as indicative.")
         records.append(record(
             f"{iso}-AB8-{region}", region, level="admin1", parent=iso,
-            country=iso, language=rows, language_year=2020,
-            language_note=note,
+            country=iso, language=rows, language_note=note,
             sources=[{"field": "language", "name": SOURCE, "url": URL,
                       "year": 2020, "license": LICENCE}]))
     # A country the round records nothing for still gets a stated reason, on

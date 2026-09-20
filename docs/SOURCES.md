@@ -6023,10 +6023,10 @@ each resting on a named fact about the questionnaire.
 ## Afrobarometer: the first sampled source, and the rules that keep it honest
 
 Every other figure on this map is a count. Afrobarometer Round 9 is a survey of
-**53,444 people across 39 African countries**, and it carries exactly the three
+**53,444 people across 39 African countries**, and it carries exactly the four
 things this map wants: the region a respondent was interviewed in, Q95 "What is
-your religion, if any?", and Q84a "What is your ethnic community, cultural group
-or tribe?". For **36 of those countries there is nothing else at all**, which is
+your religion, if any?", Q84a "What is your ethnic community, cultural group
+or tribe?" and Q2 "Language spoken in home". For **36 of those countries there is nothing else at all**, which is
 why it is here.
 
 It is also, on its own terms, a national instrument. A region is a sampling
@@ -6087,20 +6087,60 @@ label is deliberately left alone: **Faith of Unity** is a Ugandan new religious
 movement rather than a Christian denomination, and it keeps its own name rather
 than being folded on a guess.
 
-### Round 8, for language alone
+### Language, and the round each region's figure comes from
 
-Round 9 does not ask what language people speak. Round 8 does -- Q2, "Language
-spoken in home", coded to 458 named languages -- and language is the field
-Africa was emptiest of here: before this, three African countries carried a
-language composition at first level (Mali, South Africa, Zimbabwe), all three
-from a census. **Thirty-one do now.** 48,084 interviews, 34 countries, 457
-regions; 396 clear the 25-respondent floor.
+**Round 9 asks about language and this file once said it did not.** The claim
+was not a reading of the questionnaire; it was an artefact of how Round 9 was
+first read here -- by *column position* out of the published workbook, five
+columns, and Q2 was not among them. Nothing reported a missing question,
+because nothing had looked for one. The SPSS release, whose variables are
+named, is now the source for Round 9, and `--extract` reads it.
 
-The sampling rules are Round 9's, imported from its module rather than
-restated, so two readings of one survey programme cannot drift apart.
-`scripts/fetch_census/afrobarometer_r8.py`.
+Round 9 carries **Q2 "Language spoken in home" for all 442 regions it
+publishes, in all 39 countries**. So language comes from Round 9, like
+religion and ethnicity.
 
-**Two defects in the release, both found by checking rather than trusting.**
+Round 8 stays, for the one thing it is still good for: a region Round 9 is
+short of. It is registered **before** Round 9 in `ADAPTER_FILES`, which is
+lower authority, so a later file wins and Round 9 takes any region both hold.
+Round 8 is 48,084 interviews over 34 countries and 356 shapes; Round 9 is
+53,444 over 39 and 442, two years newer. `scripts/fetch_census/afrobarometer_r8.py`
+and `scripts/fetch_census/afrobarometer.py`.
+
+Language at first level in Africa went from **three countries to thirty-one**
+-- before this only Mali, South Africa and Zimbabwe had it, all from a census.
+
+**What the eight rounds hold**, measured rather than assumed, and the reason
+only the newest two are read:
+
+| | years | interviews | countries | regions n>=25 | religion | ethnicity | language |
+|---|---|---:|---:|---:|---:|---:|---:|
+| R2 | 2002-03 | 24,301 | 16 | 147 | 147 | -- | 147 |
+| R3 | 2005-06 | 25,397 | 18 | 190 | 190 | 190 | 190 |
+| R4 | 2008-09 | 27,713 | 20 | 224 | 224 | 224 | 224 |
+| R5 | 2011-13 | 51,587 | 35 | 416 | 416 | 330 | 416 |
+| R6 | 2014-15 | 53,935 | 36 | 403 | 403 | 403 | 403 |
+| R7 | 2016-18 | 45,823 | 34 | 349 | 349 | 336 | 349 |
+| R8 | 2019-21 | 48,084 | 34 | 396 | 396 | 383 | 396 |
+| **R9** | **2021-23** | **53,444** | **39** | **442** | **433** | **423** | **442** |
+
+Round 9's countries are a **superset** of every earlier round's once renames
+are resolved -- eSwatini/Swaziland, Cape Verde/Cabo Verde, Cote d'Ivoire/Côte
+d'Ivoire are the same places. Only three countries appear in an earlier round
+and not in Round 9, all in Round 6 (2014-15): **Burundi** (17 strata against
+18 shapes, nothing on the map today), **Egypt** (16 strata against 27
+governorates, nothing on the map today) and **Algeria** (7 macro-regions
+against 48 shapes, which is the coarser-than-the-map case and would be
+published for nothing). Burundi and Egypt are worth reading and are not read
+yet.
+
+The apparent "Round 7 adds 161 regions Round 9 lacks" that a first pass
+produced was an artefact of region *renames* between rounds counting as
+distinct places, not new coverage. It is recorded here because it is the kind
+of number that looks like a finding.
+
+**Two defects in the Round 8 release, both found by checking rather than
+trusting.**
 The SPSS file's REGION value-label table holds **427 of the 454** labels its
 own codebook lists, and the 27 it omits are almost all of Tanzania -- codes
 740 to 770, every region of a 29-region country, which read as "740.0" until

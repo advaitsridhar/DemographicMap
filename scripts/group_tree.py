@@ -205,6 +205,10 @@ RELIGION_PATTERNS: tuple[tuple[str, tuple[str, ...]], ...] = (
         # the Trinity: Protestant by descent, which is the axis this tree
         # files a confession on.
         "Unitarian",
+        # Afrobarometer Round 9 codes the Religious Society of Friends as
+        # "Quaker / Friends". "Quaker" alone is matched: "Friends" on its own
+        # is too common a word to key a confession on.
+        "Quaker",
         "Brethren", "Iglesia", "Ministries", "Mission", "Church", "Christ",
         "Christian", "Gospel", "Assembly of God", "Assemblies of God",
     )),
@@ -338,25 +342,30 @@ LANGUAGE_BRANCH: dict[str, tuple[str, ...]] = {
         "Duala", "Ewondo", "Fang", "Bulu", "Kituba", "Mongo", "Lomongo",
         "Ganda", "Gikuyu", "Luba-Kasai", "Mwani", "Rundi (Kirundi)",
         "Kinyarwanda (Rwanda)", "Bobangi", "Babango", "Mpiemo",
-        "Nyankole", "Soga", "Fipa", "Kota", "Ciyao",
+        "Nyankole", "Soga", "Fipa", "Kota", "Ciyao", "Mijikenda", "Jaruo",
     ),
     # Tiv and Berom are Benue-Congo rather than Volta-Niger proper; this tree
     # does not separate the two at branch level and Bantu already occupies the
     # other half of Benue-Congo, so they sit with their nearest neighbours
     # here and take the right family colour.
     "Volta-Niger languages": ("Yoruba", "Igbo", "Ewe", "Fon", "Edo", "Idoma",
-                              "Igala", "Nupe", "Gun", "Aja", "Tiv", "Berom"),
+                              "Igala", "Nupe", "Gun", "Aja", "Tiv", "Berom",
+                              "Urhobo", "Ibibio", "Efik", "Esan", "Tarok"),
     "Kwa languages": ("Akan", "Twi", "Fante", "Ga", "Baoulé", "Anyi",
                       "Guang", "Dangme", "Gonja"),
+    # Gio is Dan under Liberia's name for it and Lorma is Loma: both Mande,
+    # not Kru, although Liberia's Kru languages sit beside them.
     "Mande languages": ("Bambara", "Malinke", "Maninka", "Dioula", "Jula",
                         "Soninke", "Mende", "Kpelle", "Susu", "Vai", "Bozo",
-                        "Dan", "Mano"),
+                        "Dan", "Mano", "Gio", "Lorma", "Loma"),
     "Atlantic languages": ("Wolof", "Fula", "Fulfulde", "Pulaar", "Serer",
                            "Diola", "Jola", "Temne", "Balanta", "Manjak",
-                           "Kissi"),
+                           "Kissi", "Gola"),
     "Gur languages": ("Mooré", "More", "Dagbani", "Dagaare", "Gurma",
                       "Senufo", "Lobiri", "Kabiyé", "Bwamu", "Bariba",
-                      "Moba", "Mampruli", "Ditammari", "Kulango"),
+                      "Moba", "Mampruli", "Ditammari", "Kulango",
+                      "Karaboro", "Dagaari", "Frafra", "Farefare",
+                      "Likpakpaln", "Konkomba", "Tem"),
     # Two Niger-Congo branches the tree had no member of until Afrobarometer
     # Round 8's language question brought Liberia's and the Niger delta's.
     "Kru languages": ("Kru", "Krahn", "Grebo", "Klao", "Bassa (Liberia)"),
@@ -1322,7 +1331,10 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         # Gawar-bati at Arandu.
         "Palula", "Dameli", "Gawar-bati",
     ),
-    "Nilo-Saharan languages": ("Songhai", "Zarma", "Kanuri", "Fur", "Gula"),
+    # Dendi is Songhay, spoken along the Niger in Benin -- not Volta-Niger,
+    # which is where its neighbours on the same questionnaire sit.
+    "Nilo-Saharan languages": ("Songhai", "Zarma", "Kanuri", "Fur", "Gula",
+                               "Dendi"),
     "Gur languages": ("Gurma", "Bwamu", "Lobi", "Dagara",
                       "Gurunsi", "Minianka", "Kassena", "Konkomba"),
     # Central African Republic: the Ubangian languages its census lists, which
@@ -1912,6 +1924,11 @@ LANGUAGE_VARIANTS: dict[str, str] = {
     # variants do not chain.
     "Sonrhaï": "Songhai",
     "Kisii": "Gusii", "Kabyè": "Kabiyé",
+    # Round 9's own spellings. "Tem, Kotokoli" is one language under two
+    # names, comma-joined by the questionnaire; "Kijaruo" and "MijiKenda"
+    # carry the Bantu ki-/mi- class prefix the tree files them without.
+    "MijiKenda": "Mijikenda", "Kijaruo": "Jaruo", "Kpèlè": "Kpelle",
+    "Dagari": "Dagaari", "Tem, Kotokoli": "Tem",
     "Baatonum": "Bariba", "Ajagbé": "Aja", "Yacouba": "Dan",
     "Tigirigna": "Tigrinya", "Themne": "Temne", "Sénoufo": "Senufo",
     "Somaligna": "Somali", "Oromiffa": "Oromo", "Afarigna": "Afar",
