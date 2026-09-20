@@ -1,82 +1,67 @@
-  CDX: 159 archived PDF captures, 22 of the 22 books
-  Arkhangai: arkhangai.txt already read
-  Bayan-Ölgii: bayan-ulgii.txt already read
-  Bayankhongor: bayankhongor.txt already read
-  Bulgan: Bulgan_XAOCT_Negdsen_dun.pdf 14,423,783 bytes, captured 20220109214647
-    28 pages kept, 48,988 chars -> bulgan.txt
-  Darkhan-Uul: darkhan-uul.txt already read
-  Dornod: dornod.txt already read
-  Dornogovi: dornogovi.txt already read
-  Dundgovi: Dundgovi.pdf 14,032,735 bytes, captured 20220809094728
-EOF marker not found
-    ! PdfStreamError: Stream has ended unexpectedly
-  Dundgovi: Dundgovi.pdf 1,039,224 bytes, captured 20210120010822
-EOF marker not found
-    ! PdfStreamError: Stream has ended unexpectedly
-  ! Dundgovi: no capture of Dundgovi.pdf could be read
-  Govi-Altai: Govi-Altai_XAOCT_Negdsen%20dun.pdf 3,143,463 bytes, captured 20220809094737
-    23 pages kept, 44,580 chars -> govi-altai.txt
-  Govisumber: Govisumber_XAOCT_Negdsen_dun.pdf 8,403,007 bytes, captured 20220109214011
-  retry 1/4 after 2s :: https://web.archive.org/web/20220109214011id_/https://1212.mn/BookLibraryDownload.ashx?url=Govisumber_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/20220109214011id_/https://1212.mn/BookLibraryDownload.ashx?url=Govisumber_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 3/4 after 8s :: https://web.archive.org/web/20220109214011id_/https://1212.mn/BookLibraryDownload.ashx?url=Govisumber_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-  retry 4/4 after 16s :: https://web.archive.org/web/20220109214011id_/https://1212.mn/BookLibraryDownload.ashx?url=Govisumber_XAOCT_Negdsen_dun.pdf&ln=Mn :: <urlopen error [Errno 111] Connection refused>
-    ! RuntimeError: GET failed after 4 retries: https://web.archive.org/web/20220109214011id_/https://1212.mn/BookLibraryDownload.ashx?url=Govisumber_XAOCT_Negdsen_dun.pdf&ln=Mn
-  Govisumber: Govisumber_XAOCT_Negdsen_dun.pdf 7,291,196 bytes, captured 20221109115853
-    28 pages kept, 45,683 chars -> govisumber.txt
-  Hovsgel: Khuvsgul_XAOCT_Negdsen_Dun.pdf 11,288,972 bytes, captured 20220109212818
-    33 pages kept, 54,585 chars -> khuvsgul.txt
-  Khentii: Khentii.pdf 15,914,198 bytes, captured 20241009133407
-  retry 1/4 after 2s :: https://web.archive.org/web/20241009133407id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Khentii.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 2/4 after 4s :: https://web.archive.org/web/20241009133407id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Khentii.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 3/4 after 8s :: https://web.archive.org/web/20241009133407id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Khentii.pdf :: <urlopen error [Errno 111] Connection refused>
-  retry 4/4 after 16s :: https://web.archive.org/web/20241009133407id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Khentii.pdf :: <urlopen error [Errno 111] Connection refused>
-    ! RuntimeError: GET failed after 4 retries: https://web.archive.org/web/20241009133407id_/https://www2.1212.mn/BookLibraryDownload.ashx?ln=Mn&url=Khentii.pdf
-  Khentii: Khentii.pdf 15,530,959 bytes, captured 20220109210133
-    ! no page of this capture names ethnic group or religion
-  Khentii: Khentii.pdf 13,961,069 bytes, captured 20231022175636
-  retry 1/4 after 2s :: https://web.archive.org/web/20231022175636id_/https://www2.1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn :: <urlopen error [Errno 104] Connection reset by peer>
-    ! no page of this capture names ethnic group or religion
-  Khentii: Khentii.pdf 13,958,733 bytes, captured 20221109115634
-    ! no page of this capture names ethnic group or religion
-  Khentii: Khentii.pdf 13,958,725 bytes, captured 20210815085319
-    ! no page of this capture names ethnic group or religion
-  Khentii: Khentii.pdf 981,901 bytes, captured 20240425013024
-incorrect startxref pointer(4)
-parsing for Object Streams
-Object 2046 0 not defined.
-    ! PdfReadError: Invalid object in /Pages
-  ! Khentii: no capture of Khentii.pdf could be read
-  Khovd: Khovd.pdf 19,493,308 bytes, captured 20220109211355
-  retry 1/4 after 2s :: https://web.archive.org/web/20220109211355id_/https://1212.mn/BookLibraryDownload.ashx?url=Khovd.pdf&ln=Mn :: HTTP Error 503: Service Unavailable
-    30 pages kept, 70,717 chars -> khovd.txt
-  Orkhon: Orkhon_XAOCT_Negdsen_Dun.pdf 18,025,478 bytes, captured 20220109210128
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UNJFJE+ArialMT', '/Encoding': IndirectObject(59, 0, 140540476748240), '/FirstChar': 27, '/FontDescriptor': IndirectObject(61, 0, 140540476748240), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [556, 556, 278, 556, 556]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/TJUZVG+ArialNarrow', '/Encoding': IndirectObject(62, 0, 140540476748240), '/FirstChar': 22, '/FontDescriptor': IndirectObject(64, 0, 140540476748240), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [273, 456, 456, 456, 228, 456, 273, 456, 456, 456]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/TJUZVG+Arial-BoldMT', '/Encoding': IndirectObject(65, 0, 140540476748240), '/FirstChar': 27, '/FontDescriptor': IndirectObject(67, 0, 140540476748240), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [556, 556, 278, 556, 556]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/TJUZVG+Arial-BoldMT', '/Encoding': IndirectObject(68, 0, 140540476748240), '/FirstChar': 26, '/FontDescriptor': IndirectObject(67, 0, 140540476748240), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [556, 889, 556, 278, 556, 556]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/XCVSZY+Arial-Mon', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(223, 0, 140540476748240), '/LastChar': 53, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [212, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 513, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/MJGEBU+DINPro-Medium', '/Encoding': IndirectObject(313, 0, 140540476748240), '/FirstChar': 1, '/FontDescriptor': IndirectObject(4443, 0, 140540476748240), '/LastChar': 173, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [553, 485, 568, 530, 533, 663, 628, 700, 711, 711, 533, 533, 533, 533, 533, 533, 560, 652, 629, 629, 625, 578, 879, 628, 564, 240, 681, 565, 690, 646, 813, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 485, 568, 812, 583, 667, 440, 545, 556, 741, 518, 531, 533, 533, 471, 503, 533, 471, 426, 278, 842, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 587, 0, 0, 537, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 583]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/YLJDNW+DINPro-Light', '/Encoding': IndirectObject(314, 0, 140540476748240), '/FirstChar': 23, '/FontDescriptor': IndirectObject(4232, 0, 140540476748240), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [657, 657, 671, 631, 652, 680, 680, 602, 532]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/UGZQJE+Arial#2320Mon', '/Encoding': '/WinAnsiEncoding', '/FirstChar': 32, '/FontDescriptor': IndirectObject(1374, 0, 140540476748240), '/LastChar': 53, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [212, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 513, 0, 513, 0, 513]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/SDAEHI+MyriadPro-Regular', '/Encoding': IndirectObject(1375, 0, 140540476748240), '/FirstChar': 31, '/FontDescriptor': IndirectObject(1377, 0, 140540476748240), '/LastChar': 31, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [500]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/MJGEBU+DINPro-Medium', '/Encoding': IndirectObject(1378, 0, 140540476748240), '/FirstChar': 1, '/FontDescriptor': IndirectObject(4443, 0, 140540476748240), '/LastChar': 127, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [539, 628, 565, 611, 655, 485, 426, 711, 812, 541, 741, 646, 587, 583, 440, 556, 583, 537, 489, 503, 471, 485, 553, 568, 518, 667, 530, 240, 568, 471, 578, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 690]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-fontTools is required to fully parse the encoding of a CFF Type1 font in font dictionary {'/BaseFont': '/YVTZNW+Mn_Pragmatica', '/Encoding': IndirectObject(4043, 0, 140540476748240), '/FirstChar': 17, '/FontDescriptor': IndirectObject(4045, 0, 140540476748240), '/LastChar': 44, '/Subtype': '/Type1', '/Type': '/Font', '/Widths': [577, 751, 610, 910, 784, 623, 758, 678, 804, 753, 775, 1080, 775, 661, 710, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 329]}, but is not installed. Consider installing fontTools if you encounter encoding problems.
-    42 pages kept, 262,063 chars -> orkhon.txt
-  Selenge: Selenge_XAOCT_Negdsen_dun.pdf 12,318,015 bytes, captured 20241009132049
-    25 pages kept, 42,056 chars -> selenge.txt
-  Sükhbaatar: Sukhbaatar_XAOCT_Negdsen_dun.pdf 17,772,552 bytes, captured 20220109211214
-    36 pages kept, 61,818 chars -> sukhbaatar.txt
-  Töv: Tuv_XAOCT_Negdsen%20dun..pdf 29,933,159 bytes, captured 20220109210239
-    54 pages kept, 312,317 chars -> tuv.txt
-  Ulaanbaatar: Ulaanbaatar_XAOCT_Negdsen_dun.pdf 10,512,725 bytes, captured 20240226042140
-    33 pages kept, 66,159 chars -> ulaanbaatar.txt
-  Uvs: Uvs_XAOCT_Negdsen_Dun.pdf 6,644,189 bytes, captured 20220809094701
-    29 pages kept, 54,699 chars -> uvs.txt
-  Zavkhan: Zavkhan_XAOCT_Negdsen_dun.pdf 8,035,068 bytes, captured 20241009140445
-    35 pages kept, 61,568 chars -> zavkhan.txt
-  Ömnögovi: Umnugovi_XAOCT_Negdsen_Dun.pdf 9,156,047 bytes, captured 20241009132028
-    24 pages kept, 48,060 chars -> umnugovi.txt
-  Övörkhangai: Uvurkhangai_XAOCT_Negdsen_dun.pdf 6,758,205 bytes, captured 20220809094614
-    33 pages kept, 60,252 chars -> uvurkhangai.txt
-  20 of 22 books in /home/runner/work/DemographicMap/DemographicMap/data/raw/mongolia
+probe_pdf: https://web.archive.org/web/20220109210133id_/https://1212.mn/BookLibraryDownload.ashx?url=Khentii.pdf&ln=Mn
+  20,436,823 bytes
+  194 pages
+probe_pdf: 194 pages, 0 mention ['хүн']
+=== front matter ===
+ÕÝÍÒÈÉ ÀÉÌÀÃ
+Õ¯Í ÀÌ, ÎÐÎÍ ÑÓÓÖÍÛ 2010 ÎÍÛ ÓËÑÛÍ ÒÎÎËËÎÃÛÍ ÍÝÃÄÑÝÍ Ä¯Í:
+2012 îí
+ÕÝÍÒÈÉ ÀÉÌÃÈÉÍ 
+ÑÒÀÒÈÑÒÈÊÈÉÍ ÕÝËÒÝÑ
+ii iii
+DDC
+310’92
+X-822
+ISBN 978-99962-915-6-2
+ÌÎÍÃÎË ÓËÑÛÍ ¯ÍÄÝÑÍÈÉ ÑÒÀÒÈÑÒÈÊÈÉÍ ÕÎÐÎÎ
+Ìîíãîë óëñ, Óëààíáààòàð õîò
+Ñ¿õáààòàð ä¿¿ðýã, Áàãà òîéðóó, 
+Çàñãèéí ãàçðûí III áàéð
+http://www.nso.mn
+È-ìýéë: nso@magicnet.mn
+“ÃÝÐÝËÒ ÑÓÄÀÐ“ Õýâëýëèéí êîìïàíè
+ Óòàñ: 70162090 
+ii iii
+Õ¯Í ÀÌ, ÎÐÎÍ ÑÓÓÖÍÛ 2010 ÎÍÛ ÓËÑÛÍ ÒÎÎËËÎÃÛÍ ÍÝÃÄÑÝÍ Ä¯Í: 
+ÕÝÍÒÈÉ ÀÉÌÀÃ
+À Ã Ó ÓË ÃÀ
+Íýãäñýí ä¿í áè÷èõýä îðîëöîã÷èä .......................................................................................iv
+Õ¿ñíýãòèéí æàãñààëò ..............................................................................................................v
+Çóðãèéí æàãñààëò ..................................................................................................................vii
+Õàâñðàëò õ¿ñíýãòèéí æàãñààëò .............................................................................................ix
+Òîâ÷èëñîí ¿ãèéí òàéëáàð ....................................................................................................xii
+Òàëàðõàë ...................................................................................................................................1
+ªìíºõ ¿ã ..................................................................................................................................2
+Õýíòèé àéìãèéí òóõàé òàíèëöóóëãà......................................................................................3
+ÍÝÃÄ¯ÃÝÝÐ Á¯ËÝÃ.
+Õ¿í àì, îðîí ñóóöíû 2010 îíû óëñûí òîîëëîãûã çîõèîí áàéãóóëæ                     
+ÿâóóëñàí òóõàé........................................................................................................................11
+ÕÎ¨ÐÄÓÃÀÀÐ Á¯ËÝÃ.
+Õ¿í àìûí òîî, ºñºëò, íàñ õ¿éñèéí á¿òýö......................................................................... 25
+ÃÓÐÀÂÄÓÃÀÀÐ Á¯ËÝÃ.
+Õ¿í àìûí èðãýíèé õàðüÿàëàë, ¿íäýñ óãñàà, øàøèí ....................................................... 35
+ÄªÐªÂÄ¯ÃÝÝÐ Á¯ËÝÃ.
+Õ¿í àìûí ñóóðüøèë, íÿãòðàë ............................................................................................ 41
+ÒÀÂÄÓÃÀÀÐ Á¯ËÝÃ.
+Äîòîîä øèëæèõ õºäºëãººí, õîòæèëò .................................................................................45
+ÇÓÐÃÀÀÄÓÃÀÀÐ Á¯ËÝÃ.
+Áîëîâñðîë, áè÷èã ¿ñãèéí ìýäëýã .......................................................................................57
+ÄÎËÎÎÄÓÃÀÀÐ Á¯ËÝÃ.
+ªðõ, ãýð á¿ëèéí áàéäàë ......................................................................................................67
+ÍÀÉÌÄÓÃÀÀÐ Á¯ËÝÃ.
+Õºãæëèéí áýðõøýýëòýé èðãýäèéí òîî, á¿òýö....................................................................75  
+ÅÑÄ¯ÃÝÝÐ Á¯ËÝÃ.
+Ãàð óòàñ, èíòåðíåò õýðýãëýã÷èéí òîî, á¿òýö ....................................................................79
+ÀÐÀÂÄÓÃÀÀÐ Á¯ËÝÃ.
+Ýäèéí çàñãèéí èäýâõ ...........................................................................................................83
+ÀÐÂÀÍÍÝÃÄ¯ÃÝÝÐ Á¯ËÝÃ.
+Îðîí ñóóöíû òºðºë, íºõöºë ..............................................................................................97
+ÍÝÃÄÑÝÍ Ä¯ÃÍÝËÒ .............................................................................................................109
+ÕÀÂÑÐÀËÒ ...........................................................................................................................115
+Õ¿ì¿¿íä òºð ýðõýì, Òºðä õ¿ì¿¿í ýðäýíý
+Õ¯Í ÀÌ, ÎÐÎÍ ÑÓÓÖÍÛ 2010 ÎÍÛ ÓËÑÛÍ ÒÎÎËËÎÃÛÍ ÍÝÃÄÑÝÍ Ä¯Í: 
+ÕÝÍÒÈÉ ÀÉÌÀÃ
+iv v
+ÍÝÃÄÑÝÍ Ä¯Í ÁÈ×ÈÕÝÄ ÎÐÎËÖÎÃ×ÈÄ
+
+=== pages mentioning ['хүн'] (first 2) ===
