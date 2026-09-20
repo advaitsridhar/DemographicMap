@@ -235,6 +235,10 @@ BLOCKS: tuple[tuple[str, ...], ...] = (
      "Khamnigan", "Khoshuud", "Other ethnic groups",
      "Other nationals (Mongolian citizens)"),
 )
+# Two groups the English report spells differently from the way this file
+# carries them; every other column name is identical.
+REPORT_NAMES = {"Kazak": "Kazakh", "Hoshuud": "Khoshuud"}
+
 # The report's own national figures, for the checks. Table 3.2 for ethnicity;
 # Tables 3.9 and 3.10 for religion, where 59.4% of the population aged 15 and
 # over follow a religion and 87.1% of those are Buddhist.
@@ -470,6 +474,15 @@ def tokens_of(line: str) -> list[tuple[str, float, float]]:
     return out
 
 
+def plain(line: str) -> str:
+    """The row as words, without the boxes --fetch wrote beside them."""
+    return " ".join(t for t, _a, _b in tokens_of(line))
+
+
+def value_of(token: str) -> float | None:
+    return None if token in {"-", "--"} else float(token.rstrip("%").replace(",", "."))
+
+
 def figures(run: list[tuple[str, float, float]],
             width: int | None) -> list[float | None] | None:
     """A run of numeric words read as numbers.
@@ -477,35 +490,41 @@ def figures(run: list[tuple[str, float, float]],
     These books write a thousands separator as a space, so "46 192 37 611" is
     two numbers or four and nothing in the text says which. The gaps do: the
     space inside a number is a couple of points wide and the gap between two
-    columns is ten or more. When the caller knows how many columns the table
-    has, the widest ``width - 1`` gaps are taken as the column boundaries and
-    everything else is joined -- and the row is refused unless that split is
-    clean, the narrowest boundary gap strictly wider than the widest gap
-    inside a number. Without a width, every word is its own number, which is
-    right for a table of percentages and is all the callers that pass none
-    ever read.
+    columns is ten or more. Two words are joined only when both are plain
+    digits and the second is exactly three of them -- that is what a thousands
+    group looks like -- and only when the gap between them is on the near side
+    of the widest jump in this row's gaps, which is where the two kinds of gap
+    separate. A row of percentages has no joinable pair at all and is left
+    alone.
+
+    The run can also be longer than the table is wide, because these pages set
+    two tables side by side and one line of glyphs is a row of each. The
+    leading ``width`` numbers are this table's row; what follows belongs to
+    the table on the right and is left to the line's other run.
     """
-    if width is None or len(run) <= width:
-        return [None if t in {"-", "--"} else float(t.rstrip("%").replace(",", "."))
-                for t, _a, _b in run]
-    if any(a < 0 for _t, a, _b in run) or any(
-            "." in t or "," in t or t in {"-", "--"} for t, _a, _b in run):
+    if width is None or len(run) <= (width or 0):
+        return [value_of(t) for t, _a, _b in run]
+    if any(a < 0 for _t, a, _b in run):
         return None
-    gaps = sorted(((run[i + 1][1] - run[i][2], i) for i in range(len(run) - 1)),
-                  reverse=True)
-    boundaries = gaps[:width - 1]
-    if len(boundaries) < width - 1 or (len(gaps) > width - 1
-                                       and boundaries[-1][0] <= gaps[width - 1][0]):
-        return None
-    cut = {i for _gap, i in boundaries}
-    values: list[float | None] = []
-    digits = ""
+    gaps = [run[i + 1][1] - run[i][2] for i in range(len(run) - 1)]
+    joinable = [i for i, (text, _a, _b) in enumerate(run[:-1])
+                if text.isdigit() and run[i + 1][0].isdigit()
+                and len(run[i + 1][0]) == 3]
+    threshold = -1.0
+    if joinable:
+        ordered = sorted(gaps)
+        jumps = [(ordered[i + 1] / max(ordered[i], 0.5), ordered[i])
+                 for i in range(len(ordered) - 1)]
+        threshold = max(jumps)[1] if jumps else ordered[-1]
+    groups: list[list[str]] = []
     for i, (text, _a, _b) in enumerate(run):
-        digits += text
-        if i in cut or i == len(run) - 1:
-            values.append(float(digits))
-            digits = ""
-    return values if len(values) == width else None
+        if groups and i - 1 in joinable and gaps[i - 1] <= threshold:
+            groups[-1].append(text)
+        else:
+            groups.append([text])
+    if len(groups) < width:
+        return None
+    return [value_of("".join(g)) for g in groups[:width]]
 
 
 def rows_in(line: str, width: int | None = None
@@ -567,13 +586,18 @@ def read_report(text: str) -> dict[str, dict[str, float]]:
     """{aimag: {group: percent of the aimag's Mongolian citizens}}."""
     lines = text.splitlines()
     shares: dict[str, dict[str, float]] = {}
+    # The table prints Ulaanbaatar twice: once among the aimags and again at
+    # the foot, where the four regions are listed and the capital is its own
+    # region. The second is the same row, so each block takes each unit once.
+    done: set[tuple[str, int]] = set()
     seen = 0
     wanted: tuple[str, ...] | None = None
     for index, line in enumerate(lines):
-        if TRANSPOSE.search(line):
+        heading = plain(line)
+        if TRANSPOSE.search(heading):
             wanted = None
             continue
-        if MAIN_TABLE.search(line):
+        if MAIN_TABLE.search(heading):
             seen += 1
             wanted = BLOCKS[seen - 1] if seen <= len(BLOCKS) else None
             if wanted and seen <= 2:
@@ -583,8 +607,9 @@ def read_report(text: str) -> dict[str, dict[str, float]]:
             continue
         for label, values in rows_in(line):
             name = BY_ENGLISH.get(label.strip())
-            if name is None:
+            if name is None or (name, seen) in done:
                 continue
+            done.add((name, seen))
             # Block one prints a leading "Mongolian citizens-Total" of 100.0.
             if len(values) == len(wanted) + 1 and values[0] == 100.0:
                 values = values[1:]
@@ -605,21 +630,22 @@ def read_report(text: str) -> dict[str, dict[str, float]]:
 def check_block_header(lines: list[str], index: int, wanted: tuple[str, ...]) -> None:
     """The names printed over a block's columns must be the names read into it."""
     for line in lines[index:index + 8]:
-        hit = [t for t, _a, _b in tokens_of(line) if t in wanted]
+        hit = [REPORT_NAMES.get(t, t) for t, _a, _b in tokens_of(line)
+               if REPORT_NAMES.get(t, t) in wanted]
         if len(hit) == len(wanted):
             if hit == list(wanted):
                 return
             raise SystemExit(f"mongolia: Appendix Table 3.6 heads its columns {hit} "
                              f"where this reader expects {list(wanted)}")
-    raise SystemExit(f"mongolia: no header line at {lines[index]!r} names the columns "
-                     f"{list(wanted)}")
+    raise SystemExit(f"mongolia: no header line at {plain(lines[index])!r} names the "
+                     f"columns {list(wanted)}")
 
 
 def check_report(shares: dict[str, dict[str, float]]) -> None:
     missing = sorted(set(AIMAGS) - set(shares))
     if missing:
         raise SystemExit(f"mongolia: Appendix Table 3.6 gives no row for {missing}")
-    worst = ("", 0.0)
+    worst = ("", 100.0)
     for name, groups in sorted(shares.items()):
         total = sum(groups.values())
         if abs(total - 100.0) > abs(worst[1] - 100.0):
@@ -632,8 +658,8 @@ def check_report(shares: dict[str, dict[str, float]]) -> None:
         if largest < national:
             raise SystemExit(f"mongolia: no aimag reaches the national {group} share "
                              f"of {national}% (largest {largest}%)")
-    log(f"  Appendix Table 3.6: 22 aimags over 26 ethnic groups, each adding to 100 "
-        f"(furthest {worst[0]} at {worst[1]:.1f})")
+    log(f"  Appendix Table 3.6: {len(shares)} aimags over 26 ethnic groups, each "
+        f"adding to 100 (furthest {worst[0]} at {worst[1]:.2f})")
 
 
 # ---------------------------------------------------------------------------
@@ -690,15 +716,31 @@ def pick_status(lines: list[str]) -> tuple[float, float] | None:
 
 def pick_kinds(lines: list[str]) -> dict[str, float] | None:
     """The breakdown of the religious population, however the book lays it out:
-    the religions down the rows, or across the columns with a total beneath."""
+    the religions down the rows, or across the columns with a total beneath.
+
+    A row is kept by its label, and the same label reappears: "Бусад" heads a
+    residual in the ethnicity table, in the education table and in this one.
+    So each religion's latest reading replaces the one before it and the set
+    is tested after every row -- the first set of three or more that adds to
+    100 and names Buddhism or Islam is the table, and every book's religion
+    table is the one that satisfies that.
+    """
     rows: dict[str, float] = {}
     for line in lines:
         for label, values in rows_in(line):
-            group, value = RELIGION.get(group_key(label)), year_value(values)
-            if group and value is not None and group not in rows:
-                rows[group] = value
-    if len(rows) >= 3 and abs(sum(rows.values()) - 100.0) <= 1.5:
-        return rows
+            group = RELIGION.get(group_key(label))
+            if not group or len(values) not in (1, 2, 3, 6):
+                continue
+            value = year_value(values)
+            # A dash is nil, not a missing figure: several aimags have no
+            # Muslims at all and the table says so with a dash.
+            value = 0.0 if value is None and len(values) >= 6 else value
+            if value is None or not 0.0 <= value <= 100.0:
+                continue
+            rows[group] = value
+            if (len(rows) >= 3 and abs(sum(rows.values()) - 100.0) <= 1.5
+                    and ("Buddhism" in rows or "Islam" in rows)):
+                return dict(rows)
     return pick_kinds_across(lines)
 
 
@@ -744,14 +786,35 @@ def header_groups(line: str) -> tuple[list[str], bool] | None:
     return groups, has_total
 
 
-def block_rows(lines: list[str], width: int) -> tuple[dict[str, list[float | None]],
-                                                      list[float | None] | None]:
+def block_rows(lines: list[str], width: int, soums: dict[str, str],
+               refused: set[str] | None = None
+               ) -> tuple[dict[str, list[float | None]], list[float | None] | None]:
+    """The rows under one header: {label: figures}, and the unit's own line.
+
+    A row is kept only when its name folds to a soum of this aimag. These
+    pages set two tables side by side, so one line of glyphs is a row of each,
+    and without that test the education table's rows -- whose labels are ethnic
+    groups -- land in the soum table and its columns stop adding up. Names that
+    are neither a soum nor the aimag's own line go into ``refused``, which the
+    caller logs.
+    """
     rows: dict[str, list[float | None]] = {}
     total: list[float | None] | None = None
     misses = 0
+    hanging: tuple[str, list[float | None]] | None = None
     for line in lines:
         hits = [r for r in rows_in(line, width) if len(r[1]) == width]
         if not hits:
+            # A soum whose name is too long for its column is set over two
+            # lines -- "Чандмань-" and then "Өндөр" underneath -- and that
+            # second line is the end of the name above it, not a row.
+            tail = plain(line).strip()
+            if (hanging and tail and " " not in tail
+                    and not any(ch.isdigit() for ch in tail)
+                    and soum_key(hanging[0] + tail) in soums):
+                rows.setdefault(hanging[0] + tail, hanging[1])
+                hanging = None
+                continue
             misses += 1
             if misses > 10 and rows:
                 break
@@ -764,40 +827,61 @@ def block_rows(lines: list[str], width: int) -> tuple[dict[str, list[float | Non
                 continue
             if len(label) > 34 or any(ch.isdigit() for ch in label):
                 continue
+            if soum_key(label) not in soums:
+                if label.endswith("-"):
+                    hanging = (label, values)
+                elif refused is not None and group_key(label) not in ETHNIC:
+                    refused.add(label)
+                continue
             rows.setdefault(label, values)
     return rows, total
 
 
 def classify(block: dict[str, list[float | None]], total: list[float | None] | None,
              has_total: bool) -> str | None:
-    """"row shares" | "counts" | "column shares", or None when no arithmetic fits."""
+    """"row shares" | "counts" | "column shares", or None when no arithmetic fits.
+
+    Each shape is told by its own arithmetic and nothing else, so a table read
+    wrongly is refused rather than written:
+
+    * **row shares** -- every soum's own line opens with 100.0 and its groups
+      add to about that (about, because the book prints the rest of the groups
+      in a continued block);
+    * **column shares** -- the aimag's line is 100.0 in every column, because
+      each column is one group's distribution over the soums, and the soums add
+      to 100 down each column;
+    * **counts** -- every figure is a whole number and the soums add to the
+      aimag's own line in every column.
+    """
     values = [[v or 0.0 for v in row] for row in block.values()]
-    if not values:
+    if not values or len({len(row) for row in values}) != 1:
         return None
-    rest = [row[1:] if has_total else row for row in values]
-    if has_total:
-        if all(abs(row[0] - 100.0) < 0.05 for row in values) and all(
-                abs(sum(r) - 100.0) <= 2.0 for r in rest):
-            return "row shares"
-        if (total and all(abs((t or 0.0) - 100.0) < 0.05 for t in total)
-                and all(abs(row[0] - 100.0) > 0.05 for row in values)):
-            columns = [sum(row[i] for row in values) for i in range(len(values[0]))]
-            if all(abs(c - 100.0) <= 3.0 for c in columns if c):
-                return "column shares"
+    width = len(values[0])
+    columns = [sum(row[i] for row in values) for i in range(width)]
+    if (has_total and all(abs(row[0] - 100.0) < 0.05 for row in values)
+            and all(abs(sum(row[1:]) - 100.0) <= 2.0 for row in values)):
+        return "row shares"
+    if total and len(total) == width:
+        printed = [t or 0.0 for t in total]
+        if (all(abs(t - 100.0) < 0.05 for t in printed)
+                and not all(abs(row[0] - 100.0) < 0.05 for row in values)
+                and all(abs(c - 100.0) <= 3.0 for c in columns if c)):
+            return "column shares"
+        integral = all(float(v).is_integer() for row in values for v in row)
+        if integral and all(abs(c - t) <= max(3.0, 0.02 * t)
+                            for c, t in zip(columns, printed)):
+            return "counts"
     integral = all(float(v).is_integer() for row in values for v in row)
     if integral and has_total and all(
-            abs(row[0] - sum(row[1:])) <= max(2.0, 0.02 * row[0])
-            for row in values if row[0]):
+            row[0] + 2.0 >= sum(row[1:]) for row in values):
         return "counts"
-    if not has_total:
-        if all(abs(sum(r) - 100.0) <= 2.0 for r in rest):
-            return "row shares"
-        if integral:
-            return "counts"
+    if not has_total and all(abs(sum(row) - 100.0) <= 2.0 for row in values):
+        return "row shares"
     return None
 
 
-def read_soums(book: list[list[str]]) -> tuple[dict[str, dict[str, float]], str] | None:
+def read_soums(book: list[list[str]], soums: dict[str, str], refused: set[str]
+               ) -> tuple[dict[str, dict[str, float]], str] | None:
     """{soum label: {group: value}} and the shape the table came in.
 
     A block is a header line naming three or more ethnic groups followed by
@@ -813,20 +897,44 @@ def read_soums(book: list[list[str]]) -> tuple[dict[str, dict[str, float]], str]
             if not head:
                 continue
             groups, has_total = head
-            block, total = block_rows(page[i + 1:], len(groups) + (1 if has_total else 0))
-            if len(block) < 2:
+            read = best_block(page[i + 1:], groups, has_total, soums, refused)
+            if not read:
                 continue
-            kind = classify(block, total, has_total)
-            if not kind or (shape and kind != shape):
+            block, kind, total_column = read
+            if shape and kind != shape:
                 continue
             shape = kind
             for label, values in block.items():
-                figures = values[1:] if has_total else values
+                figures = values[1:] if total_column else values
                 into = merged.setdefault(label, {})
                 for group, value in zip(groups, figures):
                     if value:
                         into[group] = into.get(group, 0.0) + value
     return (merged, shape) if merged else None
+
+
+def best_block(lines: list[str], groups: list[str], has_total: bool,
+               soums: dict[str, str], refused: set[str]
+               ) -> tuple[dict[str, list[float | None]], str, bool] | None:
+    """The rows under a header, read as wide as the figures say they are.
+
+    Several books print the total column's heading over three baselines --
+    "Хөвсгөл", "аймгийн", "харьяат-", "Бүгд" around the line that names the
+    groups -- so the header alone does not say whether there is a total column
+    in front of the groups. Both widths are read and the one whose arithmetic
+    works is kept; where both work, the one that reads more soums.
+    """
+    options = [(len(groups) + 1, True)] if has_total else [
+        (len(groups) + 1, True), (len(groups), False)]
+    best: tuple[dict[str, list[float | None]], str, bool] | None = None
+    for width, total_column in options:
+        block, total = block_rows(lines, width, soums, refused)
+        if len(block) < 2:
+            continue
+        kind = classify(block, total, total_column)
+        if kind and (best is None or len(block) > len(best[0])):
+            best = (block, kind, total_column)
+    return best
 
 
 # ---------------------------------------------------------------------------
@@ -941,9 +1049,9 @@ NO_TABLE_GAP = (
 def build(report: dict[str, dict[str, float]],
           religion: dict[str, dict[str, float]],
           soums: dict[str, tuple[dict[str, dict[str, float]], str]],
-          gaps: dict[str, str]) -> list[dict[str, Any]]:
+          gaps: dict[str, str],
+          geometry: dict[str, dict[str, str]]) -> list[dict[str, Any]]:
     from common import slugify                       # noqa: PLC0415
-    geometry = shapes()
     out: list[dict[str, Any]] = []
     unmatched: list[str] = []
     placed = 0
@@ -1038,9 +1146,11 @@ def run() -> int:
     report = read_report(report_path.read_text(encoding="utf-8"))
     check_report(report)
 
+    geometry = shapes()
     religion: dict[str, dict[str, float]] = {}
     soums: dict[str, tuple[dict[str, dict[str, float]], str]] = {}
     gaps: dict[str, str] = {}
+    refused: dict[str, set[str]] = {}
     for aimag in AIMAGS:
         path = RAW_DIR / f"{raw_name(aimag)}.txt"
         if not path.exists():
@@ -1051,7 +1161,8 @@ def run() -> int:
         faith = read_religion(book)
         if faith:
             religion[aimag] = faith
-        table = read_soums(book)
+        refused[aimag] = set()
+        table = read_soums(book, geometry.get(aimag, {}), refused[aimag])
         if table:
             soums[aimag] = table
         top = ", ".join(f"{g} {v:.1f}" for g, v in sorted(
@@ -1060,8 +1171,12 @@ def run() -> int:
         log(f"    {aimag:14} {top:48} soums "
             f"{len(table[0]) if table else 0:>3} "
             f"({table[1] if table else 'no table found'})")
+    for aimag, names in sorted(refused.items()):
+        if names and aimag in soums:
+            log(f"    {aimag}: {len(names)} row label(s) in the soum table match no "
+                f"shape of this aimag and are left unwritten: {sorted(names)[:8]}")
     check_national(religion)
-    records = build(report, religion, soums, gaps)
+    records = build(report, religion, soums, gaps, geometry)
     write_json(PROCESSED / OUT, records)
     first = sum(1 for r in records if r["level"] == "admin1")
     log(f"  wrote {first} aimags and {len(records) - first} soums to {OUT}")
