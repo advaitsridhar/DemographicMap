@@ -76,11 +76,79 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the table in the article counts a population this shape does not have, so the article is about some other place; it is not read"
-    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 76.53
+      },
+      {
+        "group": "Hungarian",
+        "pct": 10.23
+      },
+      {
+        "group": "Not stated",
+        "pct": 10.01
+      },
+      {
+        "group": "Romani",
+        "pct": 2.35
+      },
+      {
+        "group": "Czech",
+        "pct": 0.45
+      },
+      {
+        "group": "Other",
+        "pct": 0.11
+      },
+      {
+        "group": "German",
+        "pct": 0.07
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.07
+      },
+      {
+        "group": "Polish",
+        "pct": 0.05
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.04
+      },
+      {
+        "group": "Russian",
+        "pct": 0.03
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      }
+    ],
     "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2020), as the sk.wikipedia article 'Banskobystrický kraj' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Banskobystrick%C3%BD_kraj",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
       {
         "field": "religion",
         "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2020), as the sk.wikipedia article 'Banskobystrický kraj' transcribes it",
@@ -90,6 +158,8 @@
     ],
     "parent_name": "SVK",
     "country": "SVK",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Population by ethnicity for 2020 from a population census, as the sk.wikipedia article 'Banskobystrický kraj' transcribes and cites it. A census count.",
     "religion_year": 2020,
     "religion_note": "Population by religion for 2020 from a population census, as the sk.wikipedia article 'Banskobystrický kraj' transcribes and cites it. A census count."
   },
@@ -115,14 +185,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "SVK",
@@ -148,20 +218,149 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['22px Rímskokatolícka cirkev', '21px Gréckokatolícka cirkev', '20px Pravoslávna cirkev', '18px Reformovaná kresťanská cirkev', '20px Evanjelická cirkev augsburského vyznania', '18px Apoštolská cirkev', '18px Evanjelická cirkev metodistická', '18px Kresťanské zbory', '18px Cirkev adventistov siedmeho dňa', '18px Cirkev bratská', '19px Bratská jednota baptistov', '10px Cirkev československá husitská', '18px Novoapoštolská cirkev', '18px Náboženská spoločnosť Jehovovi svedkovia', '20px Cirkev Ježiša Krista Svätých neskorších dní', '20px Ústredný zväz židovských náboženských obcí', '20px Bahájske spoločenstvo', '20px iné', '20px bez vyznania', '20px nezistené']"
-    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 51.36
+      },
+      {
+        "group": "Not stated",
+        "pct": 14.97
+      },
+      {
+        "group": "No religion",
+        "pct": 11.29
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 9.5
+      },
+      {
+        "group": "Reformed",
+        "pct": 5.53
+      },
+      {
+        "group": "Lutheran",
+        "pct": 3.69
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.67
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.68
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.37
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.2
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.04
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.01
+      }
+    ],
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Slovensko slovenská', 'Maďarsko maďarská', '22px rómska', 'Česko česká', 'Česko moravská', '22px rusínska', 'Ukrajina ukrajinská', 'Nemecko nemecká', 'Poľsko poľská', 'Rusko ruská', 'Bulharsko bulharská', 'Izrael židovská', 'Srbsko srbská', 'Chorvátsko chorvátska', '25px iná', '25px nezistená']"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 73.27
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.24
+      },
+      {
+        "group": "Hungarian",
+        "pct": 9.44
+      },
+      {
+        "group": "Romani",
+        "pct": 4.61
+      },
+      {
+        "group": "Czech",
+        "pct": 0.4
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.39
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.21
+      },
+      {
+        "group": "German",
+        "pct": 0.15
+      },
+      {
+        "group": "Other",
+        "pct": 0.15
+      },
+      {
+        "group": "Polish",
+        "pct": 0.04
+      },
+      {
+        "group": "Russian",
+        "pct": 0.04
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2020), as the sk.wikipedia article 'Košický kraj' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ick%C3%BD_kraj",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2020), as the sk.wikipedia article 'Košický kraj' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ick%C3%BD_kraj",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SVK",
-    "country": "SVK"
+    "country": "SVK",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Population by ethnicity for 2020 from a population census, as the sk.wikipedia article 'Košický kraj' transcribes and cites it. A census count.",
+    "religion_year": 2020,
+    "religion_note": "Population by religion for 2020 from a population census, as the sk.wikipedia article 'Košický kraj' transcribes and cites it. A census count."
   },
   {
     "id": "SVK-admin1-region-of-nitra",
@@ -185,7 +384,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
@@ -275,11 +474,79 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the table in the article counts a population this shape does not have, so the article is about some other place; it is not read"
-    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 82.05
+      },
+      {
+        "group": "Not stated",
+        "pct": 7.93
+      },
+      {
+        "group": "Romani",
+        "pct": 5.29
+      },
+      {
+        "group": "Rusyn",
+        "pct": 3.54
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.46
+      },
+      {
+        "group": "Czech",
+        "pct": 0.32
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.08
+      },
+      {
+        "group": "Polish",
+        "pct": 0.08
+      },
+      {
+        "group": "German",
+        "pct": 0.07
+      },
+      {
+        "group": "Russian",
+        "pct": 0.04
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0
+      }
+    ],
     "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2020), as the sk.wikipedia article 'Prešovský kraj' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Pre%C5%A1ovsk%C3%BD_kraj",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
       {
         "field": "religion",
         "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2023), as the sk.wikipedia article 'Prešovský kraj' transcribes it",
@@ -289,6 +556,8 @@
     ],
     "parent_name": "SVK",
     "country": "SVK",
+    "ethnicity_year": 2020,
+    "ethnicity_note": "Population by ethnicity for 2020 from a population census, as the sk.wikipedia article 'Prešovský kraj' transcribes and cites it. A census count.",
     "religion_year": 2023,
     "religion_note": "Population by religion for 2023 from a population census, as the sk.wikipedia article 'Prešovský kraj' transcribes and cites it. A census count."
   },
@@ -314,14 +583,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "sources": [],
     "parent_name": "SVK",
@@ -349,7 +618,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
@@ -384,14 +653,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "sources": [],
     "parent_name": "SVK",
@@ -419,18 +688,117 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "labels this reader has no entry for: ['Židovská obec', 'Budhizmus', 'Islam', 'Hinduizmus', 'ostatné kresťanské cirkvi', 'pohanstvo', 'ad hoc hnutia']"
     },
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['albánska', 'grécka', 'talianska', 'anglická', 'iránska', 'írska']"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 95.73
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.43
+      },
+      {
+        "group": "Romani",
+        "pct": 0.59
+      },
+      {
+        "group": "Czech",
+        "pct": 0.4
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.27
+      },
+      {
+        "group": "Other",
+        "pct": 0.15
+      },
+      {
+        "group": "German",
+        "pct": 0.07
+      },
+      {
+        "group": "Polish",
+        "pct": 0.06
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.06
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.04
+      },
+      {
+        "group": "Italian",
+        "pct": 0.03
+      },
+      {
+        "group": "Iranian",
+        "pct": 0.02
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.02
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.01
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.01
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "English",
+        "pct": 0.01
+      },
+      {
+        "group": "Greek",
+        "pct": 0.01
+      },
+      {
+        "group": "Irish",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.01
+      },
+      {
+        "group": "Russian",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2021), as the sk.wikipedia article 'Banská Štiavnica (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Bansk%C3%A1_%C5%A0tiavnica_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Region of Banská Bystrica",
-    "country": "SVK"
+    "country": "SVK",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the sk.wikipedia article 'Banská Štiavnica (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
   {
     "id": "SVK-admin2-district-of-bansks-bystrica",
@@ -454,18 +822,149 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "labels this reader has no entry for: ['Židovská obec', 'Budhizmus', 'Islam', 'Hinduizmus', 'ostatné kresťanské cirkvi', 'pohanstvo', 'ad hoc hnutia']"
     },
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['vietnamská', 'čínska', 'talianska', 'albánska', 'anglická', 'grécka', 'turecká', 'francúzska', 'írska', 'iránska', 'kanadská', 'kórejská']"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 93.25
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.78
+      },
+      {
+        "group": "Czech",
+        "pct": 0.68
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.18
+      },
+      {
+        "group": "Romani",
+        "pct": 0.18
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.12
+      },
+      {
+        "group": "Russian",
+        "pct": 0.11
+      },
+      {
+        "group": "German",
+        "pct": 0.06
+      },
+      {
+        "group": "Polish",
+        "pct": 0.06
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.04
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.03
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.02
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.02
+      },
+      {
+        "group": "Italian",
+        "pct": 0.02
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.02
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.02
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.01
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      },
+      {
+        "group": "English",
+        "pct": 0.01
+      },
+      {
+        "group": "French",
+        "pct": 0.01
+      },
+      {
+        "group": "Greek",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.01
+      },
+      {
+        "group": "Canadian",
+        "pct": 0.0
+      },
+      {
+        "group": "Iranian",
+        "pct": 0.0
+      },
+      {
+        "group": "Irish",
+        "pct": 0.0
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0
+      },
+      {
+        "group": "Silesian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2021), as the sk.wikipedia article 'Banská Bystrica (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Bansk%C3%A1_Bystrica_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Region of Banská Bystrica",
-    "country": "SVK"
+    "country": "SVK",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the sk.wikipedia article 'Banská Bystrica (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
   {
     "id": "SVK-admin2-district-of-bardejov",
@@ -524,14 +1023,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trenčín",
@@ -559,14 +1058,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Bratislava",
@@ -594,14 +1093,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Bratislava",
@@ -629,14 +1128,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Bratislava",
@@ -664,14 +1163,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Bratislava",
@@ -699,14 +1198,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Bratislava",
@@ -898,14 +1397,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Žilina",
@@ -933,14 +1432,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "sources": [],
     "parent_name": "Region of Žilina",
@@ -968,14 +1467,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Banská Bystrica",
@@ -1003,14 +1502,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Žilina",
@@ -1038,14 +1537,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "labels this reader has no entry for: ['Ostatná, nezistená']"
+      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
     },
     "sources": [],
     "parent_name": "Region of Trnava",
@@ -1073,14 +1572,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Nitra",
@@ -1178,14 +1677,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Banská Bystrica",
@@ -1213,14 +1712,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trnava",
@@ -1412,14 +1911,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "labels this reader has no entry for: ['Židovské náboženské obce', 'Unitarizmus']"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "labels this reader has no entry for: ['Slezania', 'Iná a Neuvedená']"
+      "note": "the shares add to 60583.00, which is not a composition"
     },
     "sources": [],
     "parent_name": "Region of Trenčín",
@@ -2462,14 +2961,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Banská Bystrica",
@@ -2497,14 +2996,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "sources": [],
     "parent_name": "Region of Žilina",
@@ -2532,14 +3031,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "sources": [],
     "parent_name": "Region of Nitra",
@@ -2723,14 +3222,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Žilina",
@@ -2758,14 +3257,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Banská Bystrica",
@@ -2793,14 +3292,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Bratislava",
@@ -2828,14 +3327,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Žilina",
@@ -3109,14 +3608,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trenčín",
@@ -3144,7 +3643,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
@@ -3179,14 +3678,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trenčín",
@@ -3214,7 +3713,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
@@ -3249,14 +3748,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Žilina",
@@ -3284,14 +3783,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trenčín",
@@ -3319,14 +3818,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Bratislava",
@@ -3354,14 +3853,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trnava",
@@ -3389,14 +3888,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Žilina",
@@ -3424,14 +3923,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Banská Bystrica",
@@ -3623,14 +4122,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trenčín",
@@ -3658,14 +4157,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trenčín",
@@ -3799,14 +4298,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trenčín",
@@ -3869,14 +4368,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Banská Bystrica",
@@ -3911,7 +4410,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
     },
     "sources": [],
     "parent_name": "Region of Košice",
@@ -3939,14 +4438,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "sources": [],
     "parent_name": "Region of Žilina",
@@ -4138,14 +4637,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "labels this reader has no entry for: ['Ostatná, nezistená']"
+      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
     },
     "sources": [],
     "parent_name": "Region of Bratislava",
@@ -4173,14 +4672,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trnava",
@@ -4208,14 +4707,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trnava",
@@ -5191,14 +5690,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Banská Bystrica",
@@ -5226,7 +5725,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
@@ -5425,14 +5924,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trenčín",
@@ -5460,14 +5959,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Trnava",
@@ -5495,14 +5994,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Žilina",
@@ -5530,14 +6029,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Žilina",
@@ -5565,14 +6064,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Banská Bystrica",
@@ -5764,14 +6263,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table"
     },
     "sources": [],
     "parent_name": "Region of Nitra",
@@ -5799,14 +6298,14 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'"
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "language": {
       "status": "not_available"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'"
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
     },
     "sources": [],
     "parent_name": "Region of Banská Bystrica",
