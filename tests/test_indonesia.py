@@ -165,6 +165,28 @@ def quiet(fn, *args, **kwargs):
     return out, buf.getvalue()
 
 
+# Puncak Jaya gives its Hindus and Buddhists in one bucket, and its head count
+# cites the registry by a name the page defines further down.
+PUNCAK_JAYA = """{{Dati II
+|nama = Kabupaten Puncak Jaya
+|penduduk = 220393
+|penduduktahun = 31 Desember [[2024]]
+|pendudukref = <ref name="DUKCAPIL"/>
+|agama = {{ublist |item_style=white-space; |{{Tree list}} * 98,82% [[Kekristenan]] ** 98,19% [[Protestan]] ** 0,63% [[Katolik]] {{Tree list/end}} |1,17% [[Islam]] |0,01% [[Hindu]]/[[Buddha]]<ref name="DUKCAPIL"/>}}
+}}
+Teks.<ref name="DUKCAPIL">{{cite web|url=https://gis.dukcapil.kemendagri.go.id/peta/|title=Visualisasi Data Kependudukan - Kementerian Dalam Negeri 2024}}</ref>
+"""
+
+# A head count with no reference at all, beside a cited composition.
+UNCITED_COUNT = """{{Dati II
+| nama = Kabupaten Contoh
+| penduduk = 123.456
+| penduduktahun = [[2024]]
+| agama = {{ublist |100,00% [[Islam]]<ref name="X">{{cite web|url=https://gis.dukcapil.kemendagri.go.id/peta/|title=Visualisasi Data Kependudukan 2024}}</ref>}}
+}}
+"""
+
+
 class EthnicTables(unittest.TestCase):
     def test_plain_table_is_read_and_shares_recomputed(self):
         counts, total, _ = m.read_ethnicity(GOVERNORS + SUMUT, "North Sumatra", "Sumatera Utara")
@@ -340,6 +362,52 @@ class InfoboxReligion(unittest.TestCase):
         self.assertIn("Jedi", why)
 
 
+
+class InfoboxPopulation(unittest.TestCase):
+    """The head count sitting one parameter above the faiths.
+
+    It is read because the regency compositions are percentages and nothing
+    else, so a province summed from them needs each regency's population as
+    the weight -- and the eleven shapes in Papua and West Papua that Wikidata
+    has no population for were exactly what refused those two sums.
+    """
+
+    def test_count_year_and_registry_named(self):
+        head, printed = quiet(m.read_population, CILACAP, "Kabupaten Cilacap")
+        self.assertEqual(head, {"total": 2_037_899, "year": 2024, "kind": "dukcapil"})
+        fields = m.population_fields(head, "Kabupaten Cilacap")
+        self.assertEqual(fields["population"]["value"], 2_037_899)
+        self.assertEqual(fields["population"]["year"], 2024)
+        self.assertIn("Dukcapil", fields["population"]["source"])
+        self.assertIn("identity card", fields["population_note"])
+        self.assertEqual(fields["population_source"]["field"], "population")
+
+    def test_year_falls_back_to_the_citation_when_the_infobox_gives_none(self):
+        head, printed = quiet(m.read_population, MANADO, "Kota Manado")
+        self.assertEqual(head["total"], 459_409)
+        self.assertEqual(head["year"], 2023)
+
+    def test_separators_and_the_as_of_date_win_over_the_citation(self):
+        head, printed = quiet(m.read_population, PUNCAK_JAYA, "Kabupaten Puncak Jaya")
+        self.assertEqual(head, {"total": 220_393, "year": 2024, "kind": "dukcapil"})
+
+    def test_no_count_and_an_uncited_count_are_both_none(self):
+        head, printed = quiet(m.read_population, SURABAYA, "Kota Surabaya")
+        self.assertIsNone(head)
+        head, printed = quiet(m.read_population, UNCITED_COUNT, "Kabupaten Contoh")
+        self.assertIsNone(head)
+        self.assertIn("no citation", printed)
+
+    def test_a_joint_hindu_buddhist_bucket_is_one_other_row(self):
+        reading, printed = quiet(m.read_religion, PUNCAK_JAYA, "Kabupaten Puncak Jaya")
+        self.assertIsNotNone(reading, printed)
+        rows = {r["group"]: r["pct"] for r in reading["rows"]}
+        self.assertEqual(rows["Other religion"], 0.01)
+        self.assertEqual(rows["Protestantism"], 98.19)
+        self.assertNotIn("Hinduism", rows)
+        self.assertNotIn("Buddhism", rows)
+
+
 class Records(unittest.TestCase):
     def test_province_and_regency_records_end_to_end(self):
         pages = {
@@ -386,6 +454,10 @@ class Records(unittest.TestCase):
         self.assertEqual(cilacap["parent_name"], "Central Java")
         self.assertEqual(cilacap["level"], "admin2")
         self.assertEqual(cilacap["religion_year"], 2019)
+        # The weight the roll-up needs, from the same infobox.
+        self.assertEqual(cilacap["population"]["value"], 2_037_899)
+        self.assertEqual({s["field"] for s in cilacap["sources"]},
+                         {"religion", "population"})
         self.assertIn("not read", printed)
         self.assertNotIn("Hutan", printed)
         self.assertNotIn("Kabupaten Cilacap", printed)
