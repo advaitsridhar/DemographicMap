@@ -1,2 +1,4 @@
-page: https://api.reliefweb.int/v1/reports?appname=demographicmap&query[value]=DPR+Korea+MICS+2017+Survey+Findings&fields[include][]=file&fields[include][]=title&limit=5
-  unreachable: HTTPError: HTTP Error 410: Gone
+png: the 2024 census head count and the 2011 census's provincial religion
+  fetched 2024-final-figures.pdf (7.9 MB)
+  fetched 2011-national-report.pdf (11.5 MB)
+png: row ' Province with 800,072. Table 1 below shows the population distribution for each' has 0 readings that add up; refusing to guess which is the census's
