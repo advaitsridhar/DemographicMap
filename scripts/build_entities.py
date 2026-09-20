@@ -163,6 +163,8 @@ ADAPTER_FILES = [
     "europe_wiki_north_macedonia.json",
     "europe_wiki_moldova.json",
     "europe_wiki_montenegro.json",
+    "europe_wiki_serbia.json",
+    "europe_wiki_bulgaria.json",
     # After Wikidata, which carries a population for North Korea's provinces
     # and for Pyongyang a 2015 estimate: this is the 2008 census's own Table 2,
     # for all 11 first-level units and all 179 counties, with the sex ratio
@@ -405,6 +407,29 @@ ADAPTER_HINTS: dict[str, str] = {
     "IND": "Census of India 2011 tables C-01 (religion) and C-16 (mother tongue): "
            "python -m scripts.fetch_census.india_census --level district && "
            "python -m scripts.fetch_census.india_language --level district",
+    # Europe, read from each unit's own Wikipedia article the way Indonesia's
+    # regencies were: the composition only where the article prints one with
+    # a citation that can be dated, and a stated reason everywhere else.
+    "SVK": "2011 census nationality and religion by kraj and okres, from the "
+           "tables the Slovak Wikipedia article of each unit transcribes: "
+           "python -m scripts.fetch_census.europe_wiki --country SVK",
+    "SRB": "Census ethnicity by district and municipality, from the table the "
+           "English Wikipedia article of each unit transcribes: "
+           "python -m scripts.fetch_census.europe_wiki --country SRB",
+    "MKD": "2021 census ethnicity by municipality, from the two-census table "
+           "the English Wikipedia article of each municipality transcribes: "
+           "python -m scripts.fetch_census.europe_wiki --country MKD",
+    "MDA": "Census ethnicity by district, from the table the English Wikipedia "
+           "article of each district transcribes: "
+           "python -m scripts.fetch_census.europe_wiki --country MDA",
+    "MNE": "Census ethnicity and religion by municipality, from the tables the "
+           "English Wikipedia article of each municipality transcribes: "
+           "python -m scripts.fetch_census.europe_wiki --country MNE",
+    "BGR": "Census mother tongue, religion and ethnicity by oblast and "
+           "obshtina, from the tables the Bulgarian Wikipedia article of each "
+           "unit transcribes (the English ones carry a 2001 religion table "
+           "and nothing else): "
+           "python -m scripts.fetch_census.europe_wiki --country BGR",
 }
 # Countries where no command would help, because the figures are not published
 # at this level -- or not published to an automated reader at all. A hint naming

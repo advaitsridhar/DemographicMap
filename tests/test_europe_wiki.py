@@ -317,3 +317,64 @@ class ThePatternIsNotUsedWhereThereIsAList(unittest.TestCase):
         self.assertIn("none of the names on the country's own list",
                       refused["Atlantis"])
         self.assertEqual(self.calls, [("Category:Municipalities of North Macedonia", "en")])
+
+
+class TwoLabelsInOneCell(unittest.TestCase):
+    """A spanning cell leaks the group it spans into the row under it.
+
+    Blagoevgrad's ethnic table has one "Drugi" cell spanning seven rows, and
+    the flattener hands the first of them over as "Drugi Rusnatsi" with one
+    pair of figures in it. Which of the two the figures belong to is not
+    something the table says, so the outer label wins: it is the residual,
+    and a residual cannot overstate a people.
+    """
+
+    def test_the_outer_label_of_a_spanning_cell_wins(self):
+        self.assertEqual(m.label_for("Други Руснаци", m.BG_ETHNICITY)[0], "Other")
+        self.assertEqual(m.label_for("Руснаци", m.BG_ETHNICITY)[0], "Russian")
+
+    def test_a_flag_is_still_dropped_from_the_front(self):
+        self.assertEqual(m.label_for("Slovensko slovenská", m.SK_ETHNICITY)[0],
+                         "Slovak")
+
+
+class TwoTablesUnderOneHeading(unittest.TestCase):
+    """Where a section prints the same table once per census and says so
+    nowhere in either header, nothing is read."""
+
+    SECTION = """== Етнически състав ==
+Преброяване.<ref>[http://pop-stat.mashke.org/bulgaria-ethnic-loc2011.htm Етнически състав 2011 census]</ref>
+{one}
+{two}
+"""
+    TABLE = """{{| class="wikitable"
+! !! Численост !! Дял (в %)
+|-
+| Общо || {total} || 100.00
+|-
+| Българи || 1 || {bulgarians}
+|-
+| Цигани || 1 || {roma}
+|}}
+"""
+
+    def table(self, total, bulgarians, roma):
+        return self.TABLE.format(total=total, bulgarians=bulgarians, roma=roma)
+
+    def test_one_table_is_read(self):
+        text = self.SECTION.format(one=self.table("17 994", "90.20", "9.80"), two="")
+        spec = next(f for f in m.BG_MUNICIPALITY if f.field == "ethnicity")
+        got, why = m.read_field(text, spec, m.SPECS["BGR"], "T", "bg")
+        self.assertEqual(why, "")
+        self.assertEqual(got["year"], 2011)
+        self.assertEqual(got["kind"], "compilation")
+        note = m.field_fields(got, spec, m.SPECS["BGR"], "T", "bg")["ethnicity_note"]
+        self.assertIn("third-party compilation", note)
+
+    def test_two_tables_refuse_the_unit(self):
+        text = self.SECTION.format(one=self.table("17 994", "90.20", "9.80"),
+                                   two=self.table("19 118", "80.91", "19.09"))
+        spec = next(f for f in m.BG_MUNICIPALITY if f.field == "ethnicity")
+        got, why = m.read_field(text, spec, m.SPECS["BGR"], "T", "bg")
+        self.assertIsNone(got)
+        self.assertIn("which census each is", why)

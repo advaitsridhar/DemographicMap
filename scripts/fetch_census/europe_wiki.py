@@ -333,6 +333,14 @@ def match_folded(spellings: list[str], official: list[str]
 # ---------------------------------------------------------------------------
 
 SOURCE_KINDS: tuple[tuple[str, str, str], ...] = (
+    # First, and before "census", because these pages carry census figures
+    # and say so in their titles: pop-stat.mashke.org is one person's
+    # compilation of Eastern European census results, not an office, and a
+    # record that called it a census would be claiming a provenance it does
+    # not have.
+    ("compilation", r"pop-stat\.mashke\.org|citypopulation\.de|"
+                    r"population statistics of eastern europe",
+     "a third-party compilation of census figures"),
     ("census", r"census|\bpopis\b|\bперепис|преброяван|recens[aă]m|s[čc][ií]tan|"
                r"n[ée]psz[áa]ml[áa]l|gjenerale e popullsis|surveys of population|"
                r"popullsis[ëe] dhe|\bпопис\b|censusresults",
@@ -348,13 +356,16 @@ SOURCE_KINDS: tuple[tuple[str, str, str], ...] = (
 EXPLAINED = dict((k, e) for k, _, e in SOURCE_KINDS)
 EXPLAINED["other"] = "a source this reader cannot classify"
 CAVEAT = {
+    "compilation": "A census figure as a third-party compilation republishes "
+                   "it, not read from the office that took the census.",
     "census": "A census count.",
     "office": "A statistical-office figure, which may be a census table or an estimate.",
     "registry": "A registry count of who is registered, not a census answer.",
     "ministry": "A ministry figure, not a census answer.",
     "other": "The citation does not say which kind of count this is.",
 }
-KIND_RANK = {"census": 0, "office": 1, "ministry": 2, "registry": 3, "other": 4}
+KIND_RANK = {"census": 0, "office": 1, "ministry": 2, "registry": 3,
+             "compilation": 4, "other": 5}
 
 REF_FULL = re.compile(r"<ref\b([^>/]*)(?:/>|>(.*?)</ref>)", re.S | re.I)
 REF_NAME = re.compile(r"""name\s*=\s*["']?([^"'/>]+?)["']?\s*$""", re.I)
@@ -452,6 +463,12 @@ class Composition:
     value: int
     labels: dict[str, str]
     skip: str = r"^$"
+    # Whether the section must hold exactly one table this reader
+    # recognises. Bulgaria's municipalities print their ethnic composition
+    # once per census under one heading, with nothing in the header to say
+    # which is which, so reading "the first one" would date half of them
+    # wrong. Where this is set, a second recognised table refuses the unit.
+    unique: bool = False
     # How many figures a row of this table carries. A table that prints two
     # censuses side by side has four -- count, share, count, share -- and a
     # row that carries fewer is a row about only one of them, where "the
@@ -553,6 +570,7 @@ def find_table(wikitext: str, spec: Composition) -> tuple[list[list[str]], str, 
     section = re.compile(spec.section, re.I)
     header = re.compile(spec.header, re.I)
     seen = False
+    found: list[tuple[list[list[str]], str]] = []
     for name, body in sections(wikitext):
         if not section.search(name):
             continue
@@ -562,7 +580,13 @@ def find_table(wikitext: str, spec: Composition) -> tuple[list[list[str]], str, 
                 continue
             first = " ".join(" ".join(row) for row in table[:2])
             if header.search(first):
-                return table, body, ""
+                found.append((table, body))
+    if found and spec.unique and len(found) > 1:
+        return [], "", (f"the article prints {len(found)} tables of this kind "
+                        f"under one heading, with nothing in their headers to "
+                        f"say which census each is; none is read")
+    if found:
+        return found[0][0], found[0][1], ""
     if not seen:
         return [], "", f"the article has no section matching {spec.section!r}"
     return [], "", ("the section is there and holds no table whose header this "
@@ -587,11 +611,23 @@ def label_for(label: str, labels: dict[str, str]) -> tuple[str | None, str]:
     """
     words = [w for w in " ".join(label.lower().split()).split(" ")
              if not PIXELS.match(w)]
-    for start in range(len(words)):
+    whole = " ".join(words)
+    if whole in labels:
+        return labels[whole], whole
+    # A spanning cell leaks the group it spans into the first row under it,
+    # so Blagoevgrad's Russians arrive as "Drugi Rusnatsi" -- the outer label
+    # "other" and the inner one "Russians" in one cell, with one pair of
+    # figures between them that belongs to whichever of the two the table
+    # meant. The outer one is the residual, which is the reading that cannot
+    # overstate a people, so it is preferred where the first word is itself
+    # a label.
+    if words and words[0] in labels:
+        return labels[words[0]], words[0]
+    for start in range(1, len(words)):
         key = " ".join(words[start:])
         if key in labels:
             return labels[key], key
-    return None, " ".join(words)
+    return None, whole
 
 
 def read_rows(table: list[list[str]], spec: Composition, decimal: str
@@ -935,6 +971,66 @@ ME_FIELDS = (
                 labels=BALKAN_RELIGION, skip=TOTALS),
 )
 
+# Bulgarian. The National Statistical Institute's own categories, as the
+# Bulgarian Wikipedia article of a province or a municipality transcribes
+# them. "Neotgovorili" and "Nepokazano" are the census's two ways of writing
+# the people who did not answer, and both are kept as their own bar.
+BG_ETHNICITY = {
+    "българи": "Bulgarian", "турци": "Turkish", "цигани": "Romani",
+    "роми": "Romani", "руснаци": "Russian", "арменци": "Armenian",
+    "власи": "Vlach", "македонци": "Macedonian", "гърци": "Greek",
+    "украинци": "Ukrainian", "евреи": "Jewish", "румънци": "Romanian",
+    "каракачани": "Karakachan", "татари": "Tatar", "сърби": "Serbian",
+    "албанци": "Albanian", "германци": "German", "поляци": "Polish",
+    "други": "Other", "друг": "Other", "друга": "Other",
+    "не се самоопределят": "Not declared",
+    "не се самоопределили": "Not declared",
+    "неотговорили": "Not stated", "не отговорили": "Not stated",
+    "непоказано": "Not stated", "не показано": "Not stated",
+}
+BG_LANGUAGE = {
+    "български": "Bulgarian", "турски": "Turkish", "цигански": "Romani",
+    "ромски": "Romani", "руски": "Russian", "арменски": "Armenian",
+    "гръцки": "Greek", "румънски": "Romanian", "украински": "Ukrainian",
+    "татарски": "Tatar", "други": "Other", "друг": "Other",
+    "не се самоопределят": "Not declared",
+    "неотговорили": "Not stated", "не отговорили": "Not stated",
+    "непоказано": "Not stated",
+}
+BG_RELIGION = {
+    "православие": "Orthodox", "православни": "Orthodox",
+    "източноправославно": "Orthodox",
+    "католицизъм": "Catholic", "католици": "Catholic",
+    "протестантство": "Protestant", "протестанти": "Protestant",
+    "ислям": "Islam", "мюсюлмани": "Islam",
+    "ислям сунитски": "Sunni Islam", "ислям шиитски": "Shia Islam",
+    "юдаизъм": "Judaism", "армено-григорианско": "Other Christian",
+    "друго": "Other religion", "други": "Other religion",
+    "нямат": "No religion", "нямам": "No religion", "без религия": "No religion",
+    "не се самоопределят": "Not declared",
+    "неотговорили": "Not stated", "не отговорили": "Not stated",
+    "непоказано": "Not stated",
+}
+BG_PROVINCE = (
+    Composition(field="language", section=r"^езици|роден език",
+                header=r"роден език", value=-1, width=2,
+                labels=BG_LANGUAGE, skip=TOTALS),
+    Composition(field="religion", section=r"вероизповед|религи",
+                header=r"численост.*дял", value=-1, width=4,
+                labels=BG_RELIGION, skip=TOTALS),
+    Composition(field="ethnicity", section=r"етнически|етнос",
+                header=r"численост.*дял", value=-1, width=4,
+                labels=BG_ETHNICITY, skip=TOTALS),
+)
+BG_MUNICIPALITY = (
+    Composition(field="religion", section=r"вероизповед|религи",
+                header=r"численост.*дял", value=-1, width=2, unique=True,
+                labels=BG_RELIGION, skip=TOTALS),
+    Composition(field="ethnicity", section=r"етнически|етнос",
+                header=r"численост.*дял", value=-1, width=2, unique=True,
+                labels=BG_ETHNICITY, skip=TOTALS),
+)
+
 RS_ETHNICITY = Composition(
     field="ethnicity",
     section=r"ethnic|^demograph|^population",
@@ -1028,6 +1124,30 @@ SPECS: dict[str, Country] = {
                   shape_trim=r"\s+(Municipality|Municipal\*|City)$",
                   article_trim=r",\s*Serbia$",
                   fields=(RS_ETHNICITY,)),
+        )),
+    # Bulgaria: the composition is in the Bulgarian edition and not in the
+    # English one, whose province articles carry a 2001 religion table and
+    # nothing else. The article is reached by its interlanguage link from
+    # the English title rather than by a transliteration invented here.
+    #
+    # Mother tongue is a province-level table and it is the 2001 census:
+    # the Bulgarian articles have not been brought forward to 2011 for that
+    # field, and a 2001 figure said to be 2001 is a figure, while one said
+    # to be 2011 would be a mistake.
+    "BGR": Country(
+        iso3="BGR", out="europe_wiki_bulgaria.json", decimal=".",
+        census="Национален статистически институт, Преброяване на населението "
+               "(National Statistical Institute of Bulgaria, Census of "
+               "Population and Housing)",
+        licence="Official statistics; compilation CC BY-SA 4.0",
+        levels=(
+            Level(level="admin1", lang="bg", via="en", match="folded",
+                  title="{name} Province",
+                  category="Category:Provinces of Bulgaria",
+                  article_trim=r"\s+Province$",
+                  fields=BG_PROVINCE),
+            Level(level="admin2", lang="bg", via="en",
+                  title="{name} Municipality", fields=BG_MUNICIPALITY),
         )),
     # Montenegro: the 23 municipalities the boundary file draws, at both
     # levels because it draws them at both.
