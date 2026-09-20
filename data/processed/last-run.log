@@ -1,7 +1,54 @@
-indonesia_hapi: regency head counts from UN OCHA's HAPI. Used by the owner's decision of 20 September 2026. The publisher's HDX entry licenses this dataset for humanitarian use only and marks it as not open; that is recorded here rather than omitted. Other (HDX): humanitarian use only; not an open licence
-  offset 0: 10,000 rows
-  offset 10,000: 10,000 rows
-  offset 20,000: 6,214 rows
-  26,214 rows for Indonesia at admin2
-  514 regencies also carry a row with no age band; those are used and the bands ignored, to avoid double counting
-  wrote /home/runner/work/DemographicMap/DemographicMap/data/raw/indonesia/hapi_admpop_adm2_2020.csv (514 regencies, 539,206,860 people)
+probe_hapi: 1 call(s); the app identifier is read from DEMOGRAPHIC_MAP and scrubbed from everything below
+  https://hapi.humdata.org/api/v2/geography-infrastructure/baseline-population?location_code=IDN&admin2_code=ID1101&limit=100
+    51 row(s)
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, r
