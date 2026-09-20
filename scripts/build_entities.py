@@ -167,6 +167,11 @@ ADAPTER_FILES = [
     # survey and now carry their census for the fields it publishes by region.
     "zimbabwe_province.json", "burkina_region.json",
     "thailand_province.json",
+    # Papua New Guinea's own office, two of its publications: the 2024
+    # census's head count for the 22 provinces and 71 of the 87 district
+    # shapes, and the 2011 census's one provincial religion figure. Nothing
+    # else writes PNG, so its place here is only by kind -- a census count.
+    "png.json",
     "kazakhstan_region.json", "cambodia_province.json",
     "kazakhstan_oblast.json", "kazakhstan_district.json",
     "malaysia_state.json", "malaysia_district.json",
@@ -256,6 +261,9 @@ ADAPTER_HINTS: dict[str, str] = {
            "tongue) by municipality, with the 2022 main report's basic table 4.01 for "
            "population down to the administrative post: "
            "python -m scripts.fetch_census.timor",
+    "PNG": "NSO 2024 census Final Figures (population, sex ratio by province and "
+           "district) and the 2011 National Report's Summary Indicators (each "
+           "province's largest denomination): python -m scripts.fetch_census.png",
     "PER": "INEI 2017 census profile book (religion, mother tongue) by department, "
            "read from the PDF's word positions: python -m scripts.fetch_census.peru",
     "MLI": "INSTAT RGPH5 2022 thematic report on cultural characteristics (religion, "

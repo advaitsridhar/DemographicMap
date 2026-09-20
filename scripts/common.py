@@ -213,6 +213,31 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "LAO": {
         "language": "Laos's census does not ask language or mother tongue. The 4th Population and Housing Census 2015 asked 63 questions in 10 parts, among them ethnicity and religion; its 282-page results volume prints no language or mother-tongue table and never uses the words \"mother tongue\", and neither the Socio-Economic Atlas of the Lao PDR 2015 nor the village indicator table behind it carries a language variable. The ten ethno-linguistic categories the census does publish are a classification of the ethnic group a person named, which the map carries on the ethnicity field.",
     },
+    # Papua New Guinea, read off its census's own account of its form rather
+    # than inferred from a table that happened to lack a column. Appendix 1 of
+    # the 2011 National Report lists what the fourth census collected --
+    # "age; sex, marital status, religion, migration, economic activity,
+    # occupation, industry, fertility, mortality and household income
+    # generating activities ... A total of 33 questions were asked using a
+    # one-page census questionnaire" -- and neither ethnicity nor language is
+    # among them. Religion is, and the provinces carry it (png.py).
+    #
+    # Language is the one that needs the careful wording, because the census
+    # does ask about languages: Table 4.6 is a literacy rate "by language",
+    # counting who can read and write English, Pidgin (Tok Pisin), Motu or
+    # Tokples -- the report's own glossary defines Tokples as "language of my
+    # place ... the local language of a traditional area belonging to a tribe
+    # or clan", which is to say every one of the 800-odd of them under one
+    # heading. Four abilities, three of them in lingua francas, and they
+    # overlap: they are not a composition of anybody's mother tongue, and
+    # turning them into one would be inventing a statistic. The Factbook's
+    # language vector for PNG ("Tok Pisin, English, Hiri Motu, some 839 living
+    # indigenous languages") is a list of what is spoken and carries a share
+    # for none of them.
+    "PNG": {
+        "ethnicity": "Papua New Guinea's census does not ask ethnicity. Appendix 1 of the National Statistical Office's 2011 National Report lists what the 33 questions of the one-page census form collected -- age, sex, marital status, religion, migration, economic activity, occupation, industry, fertility, mortality and household income-generating activities -- and ethnicity is not among them; the country has no national ethnic classification, its people being counted instead by province and by the language of their place. The 2024 census's Final Figures publish nothing of the kind either.",
+        "language": "Papua New Guinea's census does not ask mother tongue or language spoken at home. The one language question is literacy: the 2011 National Report's Table 4.6 gives the share of people aged 10 and over who can read and write English, Pidgin (Tok Pisin), Motu or Tokples -- 'language of my place', the report's own name for all 800-odd local languages together. Those four are overlapping abilities in three lingua francas and one residual, not a composition of what anybody speaks, so no language share is published for the country or for any province.",
+    },
     # Read off the census's own account of its questionnaire, not inferred
     # from a file that happened to lack the column. The Population and Housing
     # Census 2022 National Report (Volume I) describes the form it was

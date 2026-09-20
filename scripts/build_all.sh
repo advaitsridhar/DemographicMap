@@ -117,6 +117,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # Thailand's ethnicity by the owner's decision: modelled from the same
   # article's home-language cells and a regional assignment; two API calls.
   soft python3 -m scripts.fetch_census.thailand_ethnicity
+  # Papua New Guinea: two NSO PDFs, the 2024 census Final Figures (8 MB) and
+  # the 2011 National Report (12 MB), read with pypdf.
+  soft python3 -m scripts.fetch_census.png
   # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).
   soft python3 -m scripts.fetch_census.wiki_census
   # Reads the committed BNS workbook under data/raw/kazakhstan; no network.
