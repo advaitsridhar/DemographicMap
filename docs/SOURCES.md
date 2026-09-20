@@ -5777,7 +5777,14 @@ were written and every one of the rest carries a sentence saying why not.
 | Slovakia | okres | 79 | 20 | — | 26 |
 | North Macedonia | municipality | 84 | — | — | 66 |
 | Moldova | district, both levels | 37 + 37 | — | — | 3 + 3 |
-| Montenegro | municipality, both levels | 23 + 23 | 0 | — | 1 + 1 |
+| Montenegro | municipality, both levels | 23 + 23 | none † | — | 1 + 1 |
+
+An em dash means the field was not attempted for that country, and the list
+below says why. "none †" is a measured zero and a different thing: the
+reader was pointed at all 23 Montenegrin articles for religion, read every
+one of them, and none yielded a table it could cite and date -- 21 have a
+heading where a composition would go and print no table in it at all, one
+cites nothing for the table it prints, and one cites something undated.
 
 * **Slovakia**, from sk.wikipedia, the 2011 census's nationality and
   religion tables, which the kraj and okres articles carry under
