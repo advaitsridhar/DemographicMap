@@ -202,7 +202,8 @@ class TheProvincialReligionRow(unittest.TestCase):
         renamed = SUMMARY_28.replace("SDA", "Luth.Ren")
         with self.assertRaises(SystemExit) as caught:
             png.read_main_religion([renamed, SUMMARY_29])
-        self.assertIn("denominations", str(caught.exception))
+        self.assertIn("0 readings", str(caught.exception))
+        self.assertIn("Highlands Region", str(caught.exception))
 
     def test_a_missing_block_is_refused(self):
         with self.assertRaises(SystemExit):
@@ -221,6 +222,20 @@ Total 61.0 62.7 71.9 94.2 77.8 69.0
 """
         read = png.read_main_religion([chapter_4, SUMMARY_28, SUMMARY_29])
         self.assertEqual(read["Western"], ("Evangelical Alliance", 37.1))
+        self.assertEqual(len(read), 22)
+
+    def test_the_national_religion_row_is_not_read_as_a_block(self):
+        # Chapter 2 opens with the national Summary Indicators, whose row
+        # carries the same label and three columns -- the census years. It
+        # sits inside the window of the previous chapter's last block, so
+        # only the width tells it apart.
+        national = """Summary Indicators PNG, 1980, 1990, 2000 and 2011 Censuses
+R/Cath. R/Cath. R/Cath.
+Main religion (% of population) Total 26.0 27.6 28.4 na
+Male 26.1 27.8 28.5 na
+"""
+        read = png.read_main_religion([SUMMARY_28, national, SUMMARY_29])
+        self.assertEqual(read["Manus"], ("Roman Catholic", 38.5))
         self.assertEqual(len(read), 22)
 
     def test_the_labels_are_the_projects_canon(self):

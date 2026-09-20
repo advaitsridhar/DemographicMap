@@ -482,21 +482,47 @@ def read_snapshots(pages: list[str]) -> dict[str, list[Unit]]:
 # The 2011 National Report's provincial religion row
 # ---------------------------------------------------------------------------
 
+def read_religion_row(lines: list[str], row: int, width: int
+                      ) -> tuple[list[str], list[str]] | None:
+    """One "Main religion" row read as ``width`` denominations and shares.
+
+    The abbreviations sit either on the row itself or on the line above it,
+    and the figures either after the row's own "Total" or on the line below.
+    Returns None where the row does not read as exactly ``width`` of each,
+    which is how a row belonging to some other table is told from this one
+    rather than by where it sits on the page.
+    """
+    labels: list[str] = []
+    for line in (lines[row - 1] if row else "", lines[row]):
+        labels += [DENOMINATIONS[t] for t in line.split() if t in DENOMINATIONS]
+    if len(labels) != width:
+        return None
+    figures = re.findall(r"\d+\.\d", lines[row])
+    if len(figures) != width and row + 1 < len(lines):
+        figures = re.findall(r"\d+\.\d", lines[row + 1])
+    if len(figures) != width:
+        return None
+    return labels, figures
+
+
 def read_main_religion(pages: list[str]) -> dict[str, tuple[str, float]]:
     """The Summary Indicators row "Main religion (% of population)", per province.
 
     The report prints the provinces in four regional blocks, and prints those
-    blocks again for every chapter -- six Summary Indicators pages carry the
+    blocks again for every chapter: six Summary Indicators pages carry the
     Southern Region's column header, one per chapter, and only chapter 2's has
-    a religion row under it. So a block is found by its column header *and* by
-    the "Main religion" line that follows it before the next block begins, and
-    exactly one of its headers may qualify.
+    a religion row under it. Chapter 2 also opens with the *national* Summary
+    Indicators, whose religion row has the same label and three columns (the
+    four census years, one of them "na"). So neither the header alone nor the
+    label alone finds the row: a block is a column header, and under it before
+    the next header a "Main religion" row that reads as exactly as many
+    denominations and as many shares as the block has provinces. Exactly one
+    such reading may exist, or the run refuses.
 
     Each block heads its columns with the provinces' abbreviations and, above
     or beside the religion row, the abbreviated denomination for each; the
     figures follow the word Total. Both orderings the report uses are
-    accepted, and a block whose labels and figures do not both come to the
-    block's width refuses.
+    accepted.
     """
     lines = [line for page in pages for line in rows_of(page)]
     out: dict[str, tuple[str, float]] = {}
@@ -508,37 +534,23 @@ def read_main_religion(pages: list[str]) -> dict[str, tuple[str, float]]:
 
     for block, columns in BLOCKS:
         wanted = " ".join(abbr for abbr, _ in columns)
-        found: list[int] = []
+        found: list[tuple[list[str], list[str]]] = []
+        near: list[str] = []
         for header in (i for i in starts if lines[i].endswith(wanted)):
             stop = next((s for s in starts if s > header), len(lines))
-            row = next((i for i in range(header + 1, stop)
-                        if lines[i].startswith("Main religion")), None)
-            if row is not None:
-                found.append(row)
+            for row in range(header + 1, stop):
+                if not lines[row].startswith("Main religion"):
+                    continue
+                read = read_religion_row(lines, row, len(columns))
+                near.append(f"line {row}: {lines[row][:70]!r}")
+                if read is not None:
+                    found.append(read)
         if len(found) != 1:
-            raise SystemExit(f"png: the 2011 report has {len(found)} {block} "
-                             f"blocks with a 'Main religion' row; expected one")
-        religion = found[0]
-
-        labels: list[str] = []
-        for line in (lines[religion - 1], lines[religion]):
-            for token in line.split():
-                if token in DENOMINATIONS:
-                    labels.append(DENOMINATIONS[token])
-        unknown = [t for t in lines[religion - 1].split() + lines[religion].split()
-                   if re.match(r"^[A-Z][A-Za-z./]*$", t) and t not in DENOMINATIONS
-                   and t not in ("Main", "Total", "Male", "Female", "Citizen",
-                                 "Population")]
-        if len(labels) != len(columns):
-            raise SystemExit(f"png: {block} names {len(labels)} denominations for "
-                             f"{len(columns)} provinces; unknown tokens {unknown}")
-
-        figures = re.findall(r"\d+\.\d", lines[religion])
-        if len(figures) != len(columns):
-            figures = re.findall(r"\d+\.\d", lines[religion + 1])
-        if len(figures) != len(columns):
-            raise SystemExit(f"png: {block} gives {len(figures)} shares for "
-                             f"{len(columns)} provinces")
+            raise SystemExit(
+                f"png: the 2011 report gives {len(found)} readings of the {block} "
+                f"'Main religion' row at the block's own width of {len(columns)}; "
+                f"expected one. Rows tried: {near}")
+        labels, figures = found[0]
 
         for (abbr, province), label, share in zip(columns, labels, figures):
             pct = float(share)
