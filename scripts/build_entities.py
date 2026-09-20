@@ -52,8 +52,17 @@ BOUNDARIES = RAW / "boundaries"
 
 # Adapter outputs, in increasing order of authority: later files win.
 ADAPTER_FILES = [
-    # First, which is lowest authority: Afrobarometer is a survey and every
-    # other file here is a count. Ethiopia, Mali and South Africa already carry
+    # First of all, because it is a secondary tabulation of other people's
+    # studies rather than a study: CLEAR Global's language files. Each one
+    # names the source it was built from -- an IPUMS extract of a census, a
+    # DHS or MICS round, an Afrobarometer round, a humanitarian needs
+    # assessment -- and several of those sources are on this map already in
+    # their own right. Where they are, the original must win, which is what
+    # this position buys: 660 first-level units in 46 countries, filling a
+    # language field no one else here fills and overwriting none.
+    "clear_global_language.json",
+    # Then Afrobarometer, a survey where every other file below is a count.
+    # Ethiopia, Mali and South Africa already carry
     # census figures and must keep them, and because merge_adapter works field
     # by field this still fills a field a census left empty without touching
     # one it filled.
@@ -97,6 +106,20 @@ ADAPTER_FILES = [
     # modelled estimates. Part survey and part model, so it sits with the
     # surveys, below every census file.
     "japan_prefecture.json",
+    # Iran's languages, from the Atlas of the Languages of Iran: a linguist's
+    # field estimate of what is spoken in each settlement, rolled up to the
+    # province and the shahrestan by population. It sits here, among the
+    # models and the surveys and below every file read from a statistical
+    # office, because that is what it is -- a research atlas, not a count.
+    # Iran's census does not ask language at all, so no count of this field
+    # exists anywhere to rank it against, and these figures displace nothing:
+    # the not_collected declaration in common.py stays true and every record
+    # here is an estimate that says so on its face.
+    #
+    # Nothing else in this list writes an Iranian unit, so the position buys
+    # no precedence over anybody. It is a statement of kind, and the place to
+    # keep it if a count ever arrives.
+    "iran_ali_language.json",
     # And CFPS 2012 for five Chinese provinces: a survey where the census
     # asks nothing, transcribed from the paper that reports it.
     "cfps_survey_province.json",
@@ -141,6 +164,21 @@ ADAPTER_FILES = [
     # nine provinces have every regency counted, and eight of the nine sum
     # to within 2.5% of the province's own published population.
     "indonesia.json",
+    # Europe, by the owner's decision of 20 September 2026: religion,
+    # language and ethnicity read from each unit's own Wikipedia article at
+    # the first and second level, the way Indonesia's regencies were. A
+    # Wikipedia transcription ranks below any statistical office, so these
+    # sit here, above the surveys and below every census file read from the
+    # office that published it -- including Poland, Czechia, Croatia,
+    # Romania, Bosnia, Ireland, Germany, the UK, Russia and Ukraine, none of
+    # which these touch. Each country is its own file so that re-running one
+    # cannot drop another.
+    "europe_wiki_slovakia.json",
+    "europe_wiki_north_macedonia.json",
+    "europe_wiki_moldova.json",
+    "europe_wiki_montenegro.json",
+    "europe_wiki_serbia.json",
+    "europe_wiki_bulgaria.json",
     # After Wikidata, which carries a population for North Korea's provinces
     # and for Pyongyang a 2015 estimate: this is the 2008 census's own Table 2,
     # for all 11 first-level units and all 179 counties, with the sex ratio
@@ -383,6 +421,29 @@ ADAPTER_HINTS: dict[str, str] = {
     "IND": "Census of India 2011 tables C-01 (religion) and C-16 (mother tongue): "
            "python -m scripts.fetch_census.india_census --level district && "
            "python -m scripts.fetch_census.india_language --level district",
+    # Europe, read from each unit's own Wikipedia article the way Indonesia's
+    # regencies were: the composition only where the article prints one with
+    # a citation that can be dated, and a stated reason everywhere else.
+    "SVK": "2011 census nationality and religion by kraj and okres, from the "
+           "tables the Slovak Wikipedia article of each unit transcribes: "
+           "python -m scripts.fetch_census.europe_wiki --country SVK",
+    "SRB": "Census ethnicity by district and municipality, from the table the "
+           "English Wikipedia article of each unit transcribes: "
+           "python -m scripts.fetch_census.europe_wiki --country SRB",
+    "MKD": "2021 census ethnicity by municipality, from the two-census table "
+           "the English Wikipedia article of each municipality transcribes: "
+           "python -m scripts.fetch_census.europe_wiki --country MKD",
+    "MDA": "Census ethnicity by district, from the table the English Wikipedia "
+           "article of each district transcribes: "
+           "python -m scripts.fetch_census.europe_wiki --country MDA",
+    "MNE": "Census ethnicity and religion by municipality, from the tables the "
+           "English Wikipedia article of each municipality transcribes: "
+           "python -m scripts.fetch_census.europe_wiki --country MNE",
+    "BGR": "Census mother tongue, religion and ethnicity by oblast and "
+           "obshtina, from the tables the Bulgarian Wikipedia article of each "
+           "unit transcribes (the English ones carry a 2001 religion table "
+           "and nothing else): "
+           "python -m scripts.fetch_census.europe_wiki --country BGR",
 }
 # Countries where no command would help, because the figures are not published
 # at this level -- or not published to an automated reader at all. A hint naming
@@ -403,7 +464,17 @@ ADAPTER_GAPS: dict[str, str] = {
            "it by province, but amar.org.ir ends the TLS handshake before a "
            "standard client can read a page (an EOF in the protocol, measured "
            "on the runner), and this project does not turn verification off. "
-           "The data exists and is not reachable from here.",
+           "The data exists and is not reachable from here. Language is a "
+           "different kind of gap: no Iranian census has ever asked it, so "
+           "there is nothing withheld and nothing to fetch. Eleven provinces "
+           "and 96 counties carry a figure all the same -- a population-"
+           "weighted roll-up of the settlement estimates in the Atlas of the "
+           "Languages of Iran, marked as the atlas's field estimates and not "
+           "as anybody's count. The atlas is published province by province "
+           "and has reached twelve of the thirty-one; the rest of the country "
+           "is empty because those modules do not exist yet, and Kermanshah "
+           "is empty because its module reaches five of its fourteen counties "
+           "and under a fifth of its people.",
     "EGY": "CAPMAS collected religion in the 2017 census and has not published "
            "it, nationally or by governorate; the last published figures are "
            "the 2006 census, national only. The data exists and is withheld. "

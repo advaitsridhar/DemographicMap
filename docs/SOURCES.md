@@ -5536,6 +5536,13 @@ seriousness:
    available."* Its population column (65,981,659) is a later figure again, so
    the language shares and the denominator are twenty years apart.
 
+That verdict is now the reader's rather than this note's: CLEAR Global's whole
+catalogue was measured in September 2026 (see *CLEAR Global: the main
+household language* below), and `scripts/fetch_census/clear_global.py` refuses
+`th_lang_admin1_v01.csv` on its header, printing the columns above as its
+reason. The publisher's 2025 rewrite is a real composition and reaches 47
+countries; Thailand is not one of them, because its file was not rewritten.
+
 The fourth point is the one that answers the original question. It is not only
 that `nso.go.th` will not serve this client: by the account of the people who
 compiled this dataset, Thailand has made census language data public **once**,
@@ -5643,6 +5650,250 @@ its own under East and Southeast Asian ancestry, since its peoples are half
 Tibeto-Burman and half not. Bueng Kan, carved out of Nong Khai in 2011, has
 no 2000 row and stays empty here as it does for religion. Thailand stays in
 `ADAPTER_GAPS`, and its reason now names the model.
+
+### Europe, unit by unit, from the article each place has of its own
+
+The owner's decision of 20 September 2026: the method that filled every
+Indonesian regency's religion -- read what a place's own article publishes
+about who lives there, take it only where the article cites something and
+the citation can be dated, and leave a stated reason where it cannot -- turned
+on Europe at the first and second level. `scripts/fetch_census/europe_wiki.py`
+is that reader.
+
+#### The measurement it started from
+
+Of the 55 European countries and territories this map draws shapes for, at
+admin1 and admin2 together:
+
+* **already filled from a statistical office, and untouched by this**:
+  Poland (16 voivodeships, 380 powiats, all three fields), Czechia (14 + 77,
+  all three), Croatia (21 + 545, all three), Bosnia (3 + 12, all three),
+  Ireland (4 + 166, religion and ethnicity), Germany (16 + 38, religion),
+  the United Kingdom (4 + 216, religion and ethnicity, language in England
+  and Wales), Romania's 42 counties (religion and ethnicity), Russia's 83
+  subjects (language and ethnicity), Ukraine's 27 oblasts (language and
+  ethnicity), Latvia's and Estonia's first level (ethnicity), Switzerland's
+  and Finland's (language).
+* **deliberately empty, and untouched**: France, Spain, Sweden, Austria,
+  Belgium, Slovenia, Luxembourg, Iceland, the Netherlands and Greece each
+  carry a `not_collected` declaration on at least one field, because their
+  census does not ask it. Those are not gaps to fill.
+* **empty, at both levels, in all three fields**: Hungary (19 + 198),
+  Bulgaria (28 + 265), Serbia (25 + 145), Slovakia (8 + 79), Moldova
+  (37 + 37), Lithuania (10 + 60), Albania (12 + 36), North Macedonia
+  (8 + 84), Kosovo (7 + 38), Montenegro (23 + 23), Malta (68), Cyprus
+  (6 + 609), Andorra, Liechtenstein, San Marino, the Vatican -- and, at the
+  second level only, Romania's 3,235 communes, Ukraine's 494 raions,
+  Russia's 2,326 rayons, Latvia's 589 parishes, Estonia's 214 and Belarus's
+  118 raions.
+
+Ranked by the population sitting behind the gap, the largest reachable ones
+were Bulgaria, Serbia, Slovakia, Moldova, North Macedonia and Montenegro,
+and those are the six this reader covers. Hungary was measured and refused;
+see below.
+
+#### The rules, which are Indonesia's
+
+A figure with no citation is not read. A figure whose citation cannot be
+dated is not read. What kind of source the citation is goes on the record,
+because a census count, an office's estimate and a third-party compilation
+of census results are three different things wearing the same numbers.
+Every refusal returns a reason and the reason goes onto the record, so a
+gap says which kind of gap it is.
+
+Europe needed three things Indonesia did not.
+
+**The composition is in a section, not in an infobox.** No European infobox
+carries one. The article says what a table counts in the heading above it
+and almost never repeats it in the table's own header -- Blagoevgrad's
+ethnic table opens "Численост | Дял (в %)" and nothing else. So the reader
+finds a section by its heading, then the table under it whose header is the
+one it was written against; the heading is permissive and the header is
+exact, and an article that has been reorganised is refused rather than read
+wrong.
+
+**A census year printed in the table may date it when the citation cannot.**
+Half of these articles cite a bare link to the office's results site, with
+no year in the title. The year is very often glued to a word in the URL
+instead -- `popis2022.stat.gov.rs`, `census2011.statistics.sk`,
+`publikacije.stat.gov.rs/G2023/` -- and a word boundary finds none of them,
+which is why every Serbian district was at first refused for want of a date
+its citation carried all along. A year may now touch letters and not digits,
+so "G2023" gives 2023 and "G20234001.pdf" and "serial=1039432230349" give
+nothing. Where the citation still has no year and the table's own header
+prints one -- "počet (2011)", "2002 | 2021" -- that is used, because it is
+printed with the figures by the same hand and is not an editor's access
+date. The note on the record says which of the two dated the figure.
+
+**A list of languages is not a composition.** Many of these articles name
+the languages spoken in a place and give a share for none of them. The
+reader has no row to read there and writes nothing; there is a test for it.
+
+#### Joining a boundary file's spelling to a country's own
+
+Three of these six countries have a boundary file that cannot be used as
+written, and each fails differently.
+
+* **Slovakia** has lost every letter outside ASCII from its 79 district
+  names: Banská Štiavnica is "Banskk vtiavnica", Bánovce nad Bebravou is
+  "Bonovce nad Bebra*". The substitutions are not a codepage -- the same
+  letter comes back as "s" in one name and "k" in the next -- so nothing can
+  be decoded. What survives is every letter that was ASCII and where it sat,
+  so a spelling matches a district when its ASCII letters are the same
+  letters in the same places, a letter spelled outside ASCII may be
+  anything, and "*" ends the comparison. Full-length matches are made first,
+  so the shape that really is Galanta claims it before "Gala" -- which is
+  Šaľa -- is left with one candidate. All 79 join, and a spelling still
+  fitting two names would be refused and named rather than guessed at.
+* **Serbia and Montenegro** have dropped the diacritics and spelled đ as
+  "dj", which makes "Arandjelovac" a letter longer than Aranđelovac, so the
+  positional match cannot see it. Folding both sides to plain letters is
+  exact instead of positional.
+* **North Macedonia** has spelled the Cyrillic out in English digraphs:
+  Bogdanci is "Bogdantsi", Aračinovo is "Arachinovo", Češinovo-Obleševo is
+  "Cheshinovo - Obleshevo". Each digraph collapses to the letter it stands
+  for, on both sides equally, and 79 of the 84 join; the other five are the
+  municipalities abolished in 2013, which the file still draws and which
+  still have articles of their own, so they are named in the spec.
+
+The candidate names themselves are never invented here. They come from a
+Wikipedia category, or -- for Serbia, which has no category listing its
+units -- from the links of the list article that does, read out of the
+wikitext because a rendered table prints a link's display text and throws
+the title away.
+
+#### What each country gave, and what it did not
+
+Of the 754 European shapes this reader was pointed at, 456 field-values
+were written and every one of the rest carries a sentence saying why not.
+
+| country | level | shapes | religion | language | ethnicity |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Bulgaria | oblast | 28 | 22 | 24 | 24 |
+| Bulgaria | obshtina | 265 | 67 | — | 101 |
+| Serbia | district | 25 | — | — | 23 |
+| Serbia | municipality | 145 | — | — | 69 |
+| Slovakia | kraj | 8 | 3 | — | 3 |
+| Slovakia | okres | 79 | 20 | — | 26 |
+| North Macedonia | municipality | 84 | — | — | 66 |
+| Moldova | district, both levels | 37 + 37 | — | — | 3 + 3 |
+| Montenegro | municipality, both levels | 23 + 23 | none † | — | 1 + 1 |
+
+An em dash means the field was not attempted for that country, and the list
+below says why. "none †" is a measured zero and a different thing: the
+reader was pointed at all 23 Montenegrin articles for religion, read every
+one of them, and none yielded a table it could cite and date -- 21 have a
+heading where a composition would go and print no table in it at all, one
+cites nothing for the table it prints, and one cites something undated.
+
+* **Slovakia**, from sk.wikipedia, the 2011 census's nationality and
+  religion tables, which the kraj and okres articles carry under
+  "Národnostné zloženie" and "Náboženské zloženie". The commonest refusal
+  is that the article prints the table and cites nothing at all for it,
+  and the reason on the record says so by name. A bucket naming two peoples
+  at once -- "rusínska a ukrajinská", "česká a moravská" -- is one bucket
+  and not two rows, because splitting it would be inventing the split.
+* **Serbia**, from en.wikipedia, ethnicity: 23 of the 25 districts and 69
+  of the 145 municipalities. Of the municipalities refused, 38 have a
+  heading where a composition would go and a table of some other kind under
+  it, 21 print the table and cite nothing, and 13 print a table whose last
+  column is not a share.
+* **North Macedonia**, from en.wikipedia, the 2021 census's ethnicity
+  beside the 2002 one in a single four-column table, for 66 of the 84
+  municipalities.
+* **Moldova**, from en.wikipedia: 3 of 37. The district articles do carry
+  an ethnic table, and nearly all of them put the citation in the infobox
+  rather than beside it, which under this reader's rules is a citation for
+  the population and not for the composition. Chișinău, Bălți, Bender,
+  Gagauzia and Transnistria are not districts, are on no list of them, and
+  carry that as their reason.
+* **Montenegro**, 1 of 23, which is effectively a measured negative: the
+  municipality articles have a Demographics heading with prose under it and
+  the only table on the page is the council's party seats. Bar's two tables
+  cite nothing and Bijelo Polje's cite something undated.
+* **Bulgaria**, from bg.wikipedia, all three fields at the province level
+  and two at the municipal one. The English article of a province carries
+  one religion table from the 2001 census and nothing else, while the
+  Bulgarian article carries mother tongue, religion and ethnicity each
+  under its own heading. 38 of the 265 municipalities have no bg.wikipedia
+  article under the name the English one links to, and say so.
+
+  Which mark separates a fraction is declared once per country everywhere
+  else here and cannot be in Bulgaria: its provinces write "89.72" and its
+  municipalities write "64,81", in the same edition and under the same
+  heading. The declared mark is tried first and the other one after it, and
+  the arbiter is the check that would otherwise refuse the table -- only a
+  reading whose shares add to about a hundred is taken, and reading "64,81"
+  as six thousand adds to ten thousand. Before that, 110 municipalities were
+  refused over a comma.
+
+Three things the Bulgarian articles do that would otherwise have been read
+wrong, and each is now a rule with a test:
+
+1. A province's ethnic table has one "Други" cell spanning the seven
+   peoples under it, and flattening that hands the first of them over as
+   "Други Руснаци" -- two labels in one cell with one pair of figures
+   between them and nothing saying which of the two they belong to. The
+   outer label wins wherever the first word is itself a label, because the
+   outer one is the residual and a residual cannot overstate a people. A
+   flag template's alt text is still dropped from the front of a label,
+   because a country's name is not a label.
+2. A municipality prints its ethnic composition once per census under one
+   heading, with nothing in either header to say which is which. Reading
+   "the first table" would date half of them wrong, so a section holding
+   more than one table of the same kind refuses the unit and says so. That
+   refusal is most of why 164 of the 265 municipalities carry no ethnicity.
+3. These tables are very often cited to `pop-stat.mashke.org`, one person's
+   compilation of Eastern European census results, whose page titles say
+   "2011 census". Every one of them would have been recorded as a census
+   count read from the office that took it. It is its own kind of citation
+   now, ranked below a statistical office, and the caveat on the record
+   says a compilation republished the figure.
+
+Bulgaria's mother-tongue table is the 2001 census and is written as 2001.
+The Bulgarian articles have not been brought forward to 2011 for that
+field, and a 2001 figure called 2001 is a figure while one called 2011
+would be a mistake.
+
+#### The measured negatives
+
+* **Hungary** -- neither edition carries a composition at either level. The
+  English article of a county has headings "Demographics", "2011 census",
+  "2001 census" and "Ethnicity", and a table under none of them; its eleven
+  tables are election results, district lists, roads and railways. The
+  Hungarian article of a county is the same, at 108,000 bytes, and the
+  article of a járás is a stub with one table of its settlements. 9.9
+  million people, the largest European gap this method does not reach.
+* **Belarus** -- the English article of a region carries four tables under
+  "Demographics" and all four are vital statistics: population by year,
+  birth and death rates, life expectancy, marriages and divorces. No
+  composition at either level. (Belarus's language now comes from CLEAR
+  Global's HDX file, by another adapter.)
+* **Albania** -- the county articles do carry a religion table, the 2011 and
+  2023 censuses side by side, and it is cited to `pop-stat.mashke.org` and
+  to nothing else. It is also a table with its own subtotals in it ("Total
+  Muslim", "Total Christian", "Total Non-religious") sitting beside their
+  parts, which is the double-count this project refuses. Not read.
+* **Kosovo** -- the municipality articles do carry an ethnicity in the
+  infobox, as a `{{ubl}}` of two lines ("98.45% Albanians, 1.55% Other"),
+  and the citation for it is attached to the population parameter above
+  rather than to the composition. Indonesia's rule is that a reference
+  elsewhere in the infobox is not a citation for this value, and the rule
+  is kept.
+* **Lithuania, Latvia, Estonia, Cyprus, Malta, Andorra, Liechtenstein, San
+  Marino** -- the county and municipality articles carry population series
+  and no composition.
+
+None of these is a statement about the country's census. Hungary, Belarus,
+Albania, Kosovo and Lithuania all ask at least one of the three and publish
+it; what has been measured here is only that their units' Wikipedia
+articles do not carry it in a form that can be cited, dated and read. Where
+this reader wrote nothing for a unit it covered, the unit carries the
+reason, and the reasons are of six kinds: the article has no section where
+a composition would go; it has one and prints no table in it; it prints a
+table whose header this reader does not know; it prints the table and cites
+nothing; the citation carries no year and neither does the table; and the
+figures do not add to a composition.
 
 ### Wikipedia transcriptions: what was measured and left
 
@@ -7332,6 +7583,236 @@ Two consequences are handled rather than hidden:
   because a map that stays blank until the last byte reads as broken too. The
   default stays "Follow zoom", so nobody pays that cost without asking for it.
 
+## CLEAR Global: the main household language, 47 countries at the first level
+
+CLEAR Global (formerly Translators without Borders) publishes **55 datasets**
+on HDX under the organization `clear` — one per country, each named
+`<country>-languages`, each with a CSV per administrative level. The
+organization page carries a uuid rather than a name, and CKAN's
+`package_search` filters on `organization:<name>`: given the uuid it answers
+"0 dataset(s)", which is indistinguishable from a publisher with nothing in
+it. `scripts/probe_hdx.py --org` resolves the uuid through
+`organization_show` first for that reason, and prints each dataset's licence
+on its own line.
+
+**HAPI does not serve any of this.** The Humanitarian API's v2 endpoint list —
+affected-people, climate/rainfall, coordination-context,
+food-security-nutrition-poverty, geography-infrastructure/baseline-population
+and metadata — has no language, religion or ethnicity endpoint at all. The
+app identifier in `DEMOGRAPHIC_MAP` opens the standardised API over a subset
+of HDX, and language is not in that subset. The route to these files is the
+CKAN catalogue at `data.humdata.org/api/3/action/`, which needs no
+credential.
+
+### What the files are
+
+The August 2025 release rewrote them into one long table per level:
+
+    location_code, location_name, location_level, language_code,
+    language_name, language_rank, proportion_value, reliability_score,
+    dataset_name, url, source, datetime_published, date_creation,
+    representivity_rating
+
+One row is one language in one unit, and `proportion_value` is its share of
+that unit's population. The catalogue's own description of what is measured
+is "the main language spoken in the household by proportion of the
+population". That is a composition, and it is exactly the thing this map had
+for no part of fourteen of these countries.
+
+**It is not CLEAR Global's own survey.** Each file names the study it was
+tabulated from, and they are of very different kinds:
+
+* an IPUMS International extract of a national census — Iraq's is the **1997**
+  census, Kyrgyzstan's the 2009, Ukraine's the 2001, Guatemala's the 2002;
+* a DHS or MICS round — Haiti's is the 2016-17 Standard DHS;
+* an Afrobarometer round — Angola's is Round 9;
+* a humanitarian needs assessment — Somalia's is the 2022 Joint Multi-Cluster
+  Needs Assessment, DRC's a 2016 exercise the publisher itself grades
+  "Non-representative/indicative survey".
+
+The catalogue's `methodology` says which, and for a survey
+`methodology_other` grades it: "Representative survey at 95% confidence level
+and a 10% margin of error, or better" against the indicative one. Every
+record written here carries the study's name, its source, its date, that
+grading and the licence, in `language_note` and in `sources`, because a
+census microdata extract and an indicative assessment cannot be read as the
+same claim and a file that presented them as one would be lying about both.
+
+**Where the original is already here, the original wins.**
+`clear_global_language.json` is the *first* entry in `ADAPTER_FILES`, below
+even Afrobarometer. Several of these files are re-tabulations of studies this
+map reads directly, and a secondary tabulation must never overwrite the
+thing it was tabulated from.
+
+### The licences, as the catalogue states them
+
+**49 of the 55 are open.** `"license_id": "cc-by-sa"`, `"license_title":
+"Creative Commons Attribution Share-Alike (CC BY-SA)"`, `"isopen": true`. All
+47 datasets actually read here are in that group, and the string above is
+written verbatim onto every record's `sources[].license` and repeated in its
+`language_note`.
+
+**Six are not**, and the catalogue is not uniform even in how it says so:
+
+| dataset | `license_other` |
+| --- | --- |
+| `cameroon-languages` | Creative Commons, Attribution, Non-commercial, Share-alike |
+| `colombia-languages` | Creative Commons, Attribution, Non-commercial, Share-alike |
+| `ecuador-languages` | Creative Commons, Attribution, Non-commercial, Share-alike |
+| `venezuela-languages` | Creative Commons, Attribution, Non-commercial, Share-alike |
+| `india-languages` | Creative Commons Attribution Non-commercial Share-alike (CC-BY-NC-SA-4.0) |
+| `nicaragua-indigenous-languages` | Creative Commons, Attribution, Non-commercial, Share-alike 4.0 |
+
+All six carry `"license_id": "hdx-other"`, `"license_title": "Other"` and
+`"isopen": false`. **None of them is used, and not because of the licence.**
+All six are the pre-2025 wide format and fail the header test below on their
+own contents. That the non-commercial six are exactly the files the shape
+test rejects is a fact about this publisher's history, not an assumption: the
+licence of every dataset is read from the catalogue on every run and logged,
+the way `cod-ps-idn` taught this project to.
+
+### What is refused, and why
+
+`scripts/fetch_census/clear_global.py` recognises a file by its **header**,
+never by its name or its date, and eight datasets are refused:
+
+* **Seven are the pre-2025 wide format**: Cameroon, Colombia, Ecuador, India,
+  Nicaragua, Venezuela and Thailand. Their columns are one per language plus
+  literacy and population, and they are independent indicators rather than
+  parts of a whole. Thailand's, printed by the run's own log, is
+  `admin1_name;admin1_pcode;admin0_name;admin0_pcode;number_of_named_languages;main_language;main_language_share;Thai;Other;pop_total;...;data_confidence;notes`
+  — two language columns, Bangkok reading Thai 0.997 and Other 0.036, which is
+  103.3% of a city. The Thailand section above measured that in detail; the
+  reader now reaches the same verdict from the file rather than from a note.
+* **One has no first-level file at all**: `drc-languages`, the 2020 entry
+  superseded by `democratic-republic-of-the-congo-languages`, ships admin2
+  only.
+
+Within a file, three further rules, each of which drops a unit and says so in
+the log:
+
+* **A unit whose languages do not add to 1** (within 0.02) is dropped, and a
+  country where more than a fifth of its units fail that is not read at all.
+  This is the test that would catch a wide-format file even if its header
+  changed.
+* **A country whose units all carry the identical composition is refused.**
+  Haiti came within one row of it: seven of its ten regions read Haitian
+  100.0% and nothing else. Three do not, so Haiti is written — but had all ten
+  matched, the file would be a national figure copied down the column, which
+  is the fault that sank Egypt's language, and no amount of provenance makes
+  a constant into a measurement.
+* **A unit the file declines to name is dropped**, never matched to something
+  that resembles it. DHS-derived files carry rows like `west: level 2 unknown`
+  and `sudan: level 1 unknown`, meaning the study could not place some of its
+  respondents. That is ordinary, and it is counted separately from the
+  arithmetic failures: counting Sudan's one unnamed row among its broken ones
+  made a third of the country look broken and threw away two states that were
+  fine.
+
+A language whose share rounds to less than 0.05% is not written, so a unit's
+shares can add to slightly under 100 and the panel says which share of the
+population the record describes.
+
+### Admin 1 only, and why not admin 2
+
+The files carry admin2 rows too — Somalia 217 of them, Kyrgyzstan 627 — and
+this map would take them. They are not read, because **the table has no
+parent column.** The only route from a district to its region is the P-code
+prefix, and that is an inference, not a reading: Somalia's `SO2301` does sit
+under `SO23` and Iraq's `IQG15Q05` under `IQG15`, but Kyrgyzstan's
+first-level codes are zero-padded to thirteen characters
+(`KG06000000000`) where its districts are not (`KG06246000000`), so no one
+prefix rule holds across the publisher. A mis-parented district is an
+invisible error; a missing one is a visible gap. The districts wait for a
+pass that can establish the parent from a P-code register rather than guess
+it.
+
+### The names, declared rather than guessed
+
+A file of 662 rows is worth what reaches a shape, and the first measurement
+of that was unpleasant: **96 rows matched no shape at all, and three matched
+the wrong one.**
+
+The wrong ones are the part that matters. `build_entities.match_name` tries
+an exact name, then declared aliases, then a *unique* prefix, then unique
+containment. Its prefix pass joined CLEAR Global's `Papua Barat` to the shape
+called **Papua** — "Papua" starts "Papua Barat", and no row was named Papua
+to out-rank it — so West Papua's languages would have been painted on the
+province next door while West Papua itself stayed blank, with nothing on the
+map to say so. `Kepulauan Riau` reached **Riau** and `Maluku Utara` reached
+**Maluku** exactly the same way. Those two were caught, but only by accident:
+a row really was named Riau and a row really was named Maluku, so
+`resolve_collisions` saw two claims on one shape and refused both. The third
+had no rival and went through silently. *An unmatched row is a visible gap; a
+mis-matched one is invisible and worse* — and this was the mechanism by which
+a mis-match gets made.
+
+So the names are now **declared**, in `BOUNDARY_ALIASES` in
+`scripts/fetch_census/clear_global.py`: 68 entries over 14 countries, each
+one a spelling or a translation of the same place, and each right-hand side a
+name that exists in this repository's own `site/data/admin1/<ISO>.json`. That
+last point is what makes a declaration better than a guess — it can be
+checked, and `tests/test_clear_global.py` checks it, along with the rule that
+no two rows of one country may be declared onto one shape.
+
+| | CLEAR Global writes | the boundary file writes |
+| --- | --- | --- |
+| Indonesia (24) | `Sumatera Utara`, `Jawa Barat`, `Papua Barat` | North Sumatra, West Java, West Papua |
+| Iraq (6) | `Ninewa`, `Thi Qar`, `Kerbala` | Ninawa, Dhi Qar, Karbala |
+| Haiti (6) | `West`, `South-East` | Département de l'Ouest, Département du Sud-Est |
+| The Gambia (6) | `Upper River`, `West Coast` | Basse, Brikama — the town each region is run from |
+| Tanzania (5) | `Kaskazini Unguja`, `Mjini Magharibi` | Zanzibar North, Zanzibar Urban/West |
+| DR Congo (4) | `Bas-Uele`, `Nord-Kivu` | Lower Uele, North Kivu |
+| Cambodia (3) | `Banteay Meanchey` | Bantey Meanchey — the boundary file's own misspelling |
+| Philippines (3) | `National Capital Region (NCR)` | NCR |
+| Somalia (3) | `Middle Shabelle` | Middle Shebelle |
+| and El Salvador, Morocco, Mauritius, Kyrgyzstan, Congo (9 between them) | | |
+
+**What is deliberately not declared**, because a gap is the cheaper mistake:
+
+* **Botswana's Gaborone, Francistown, Lobatse, Selibe Phikwe and Jwaneng.**
+  They are towns with a row of their own and no first-level shape to join to.
+  Nothing is missing; there is nowhere to put them.
+* **Tanzania's Songwe**, split out of Mbeya in 2016, after the boundary file
+  was drawn, and **Kyrgyzstan's Bishkek (city)**, for Botswana's reason.
+* **Ukraine, Ethiopia, Benin, Mali, Nepal, Namibia, Niger, Sierra Leone and
+  South Africa** — 24 rows that would gain nothing. Each of those countries
+  already carries language from its own census, and this file sits first in
+  `ADAPTER_FILES` precisely so that a census beats it. Aliasing them would buy
+  24 fresh chances to mis-match and not one figure. (South Africa's row is
+  also spelled `Nothern Cape` in CLEAR Global's own file.)
+
+Declaring the 68 took the file from **553 rows reaching a shape to 620**.
+
+### What landed
+
+**662 first-level units in 47 countries are written; 620 reach a shape.** Of
+the 42 that do not, 31 find no shape and 11 are refused as collisions — two
+rows of one country claiming one boundary, which this build will not settle
+by guessing. Every one of those 42 is a stated gap.
+
+Of the 620, **252 land on a unit that has no language on this map from any
+other source.** The remaining 368 land under a census or an Afrobarometer
+round that outranks them, which is this file's position in `ADAPTER_FILES`
+working as intended: a secondary tabulation may fill a hole, never overwrite
+the thing it was tabulated from. So the honest measure of what this file adds
+is **252 units, not 662.**
+
+Fourteen countries had **no language at any level** here before, and 225 of
+those 252 are in them:
+
+| | | | |
+| --- | --- | --- | --- |
+| Indonesia 33 | Cambodia 25 | DR Congo 24 | Guatemala 22 |
+| Philippines 17 | Somalia 17 | Iraq 15 | Paraguay 15 |
+| El Salvador 14 | Armenia 11 | Haiti 10 | Bolivia 9 |
+| Kyrgyzstan 7 | Belarus 6 | | |
+
+Indonesia is the one worth naming: 33 of its 34 provinces, from the 2010
+census through IPUMS, on a map that had religion for all 514 regencies and
+language for none of them. Nine of those 33 would have arrived before the
+alias table; one of the nine would have been wrong.
+
 ## Collection policy
 
 The `not_collected` marker is asserted from these tables and nowhere else:
@@ -7369,7 +7850,10 @@ the Wikipedia transcriptions above, ended in declarations rather than files:
   standard client reads a page (`SSL: UNEXPECTED_EOF_WHILE_READING`, measured
   on the runner). Verification is not turned off for it. The country carries a
   `gap_reason` saying the data exists and is unreachable; ethnicity and
-  language were already declared not collected.
+  language were already declared not collected. The language declaration still
+  stands — no Iranian census has asked it — and eleven provinces carry a
+  figure from a research atlas instead, marked as one: see *Iran: language
+  from a research atlas, twelve provinces at a time* below.
 * **South Korea** -- the 2015 census asked religion and KOSIS publishes it by
   province, behind an API that needs a registered key; *Religion in South
   Korea* carries the national series only. Declared a gap at first; the
@@ -8482,3 +8966,301 @@ and leaves the directory traversable, and all thirty-six are in the repository.
   (96)** — the least populous county in each of those states. No reporting body
   had a congregation there. That is an absence of reported adherents, not a
   count of zero believers.
+
+## Iran: language from a research atlas, twelve provinces at a time
+
+Iran's census has never asked language. That declaration is in
+`NOT_COLLECTED_POLICY` and it is still true; nothing below changes it. What
+changed on 20 September 2026 is that the owner supplied twelve province files
+from the **Atlas of the Languages of Iran (ALI)**, and this map now carries a
+language figure for eleven provinces and 96 counties that is explicitly *not*
+a census: a linguist's field estimate, settlement by settlement, weighted up
+by population and labelled as an estimate on every record.
+
+### What ALI is
+
+ALI is a research atlas edited by Erik Anonby, Mortaza Taheri-Ardali et al.
+and published by the Geomatics and Cartographic Research Centre (GCRC) at
+Carleton University. Each province is a **separately authored, separately
+dated module**. For each settlement a named fieldworker records which
+languages are spoken and in what proportion — `Central Kurdish 100%`,
+`Turkic 80%; Southern Kurdish 20%`, `Khuzestāni Arabic 95%; Standard type
+Persian 5%`. Nobody was asked a question on a form; a linguist estimated what
+is spoken in a village.
+
+Row 1 of every file carries the licence, and it is reproduced here verbatim,
+on every record's source entry, and nowhere paraphrased:
+
+> (c) Atlas of the Languages of Iran (ALI) and Contributors, 2015-present.
+> Data are available under a CC BY (Attribution Only) licence.
+
+The files are committed under `data/raw/iran/` — 9 MB, CC BY, and un-ignored
+in `.gitignore` the way India's C-16 workbooks are. They were exported from
+the atlas's site by hand, one province at a time; `iranatlas.net` serves no
+file an adapter could ask for, so without them a clean checkout could not
+re-derive a single figure.
+
+### The twelve modules, each with its own date
+
+The years run from 2015 to 2024. There is no date for "ALI": a reader looking
+at Hormozgān is looking at a picture nine years older than Khuzestān's, and
+each record carries its own module's year, authors and URL from
+`data/raw/iran/ali_citations.json`. Publisher for all twelve: Ottawa: GCRC
+(Geomatics and Cartographic Research Centre), Carleton University. Series
+editors: Erik Anonby, Mortaza Taheri-Ardali, et al.
+
+| Province (ALI) | Year | Authors | Module |
+|---|---|---|---|
+| Chahār Mahāl va Bakhtiāri | 2015 | Taheri-Ardali, Mortaza, Erik Anonby, et al. | `language-distribution.chahar_mahal_va_bakhtiari` |
+| Hormozgān | 2015 | Mohebbi Bahmani, Hassan, Ali Rashidi, Erik Anonby, et al. | `language-distribution.hormozgan` |
+| Kordestān | 2016 | Mohammadirad, Masoud, Erik Anonby, et al. | `language-distribution.kordestan` |
+| Bushehr | 2017 | Nemati, Fatemeh, Shakiba Ghasemi, Erik Anonby, et al. | `language-distribution.bushehr` |
+| Ilām | 2017 | Gheitasi, Mojtaba, Erik Anonby, et al. | `language-distribution.ilam` |
+| Hamadān | 2021 | Izadi, Elham, Mehrdad Meshkinfam, Erik Anonby, et al. | `language-distribution.hamadan` |
+| Esfahān | 2022 | Talebi-Dastenaei, Mahnaz, Habib Borjian, Erik Anonby, et al. | `language-distribution.esfahan` |
+| Gilān | 2022 | Poshtvan, Hamideh, Erik Anonby, et al. | `language-distribution.gilan` |
+| Kermānshāh | 2022 | Fattahi, Mehdi, Erik Anonby, et al. | `language-distribution.kermanshah` |
+| Lorestān | 2023 | Taheri-Ardali, Mortaza, Erik Anonby, et al. | `language-distribution.lorestan` |
+| Khuzestān | 2024 | Bozorgmehr, Mansour, Erik Anonby, Nawal Bahrani, et al. | `language-distribution.khuzestan` |
+| Kohgiluyeh va Boyer Ahmad | 2024 | Bozorgmehr, Mansour, Erik Anonby, Mortaza Taheri-Ardali, et al. | `language-distribution.kohgiluyeh_va_boyer_ahmad` |
+
+All twelve are under `http://iranatlas.net/module/`, and the title in each
+case is *Language distribution in &lt;province&gt; Province, Iran*.
+
+**Publication and fieldwork are different events**, and each row says when the
+fieldwork was. Kordestān's module is 2016 and its rows cite field notes of
+2015; Kermānshāh's module is 2022 and every one of its rows cites field notes
+of 2017; Esfahān's is 2022 over rows citing 2007 to 2023. Where a tenth or
+more of a unit's weighted population sits behind notes taken three or more
+years before the module, the record's own method text says so.
+
+### The nesting rule, measured
+
+Each file is one table holding six kinds of row — a province row, shahrestan
+rows, bakhsh rows, city rows, dehestan rows and settlement rows — told apart
+by which name columns are filled. **They are nested, not siblings.** Summing
+every row in Kordestān's file gives 6,476,710 people in a province of
+1,493,645: the province row, the shahrestan rows and the bakhsh rows each
+account for the whole province again (1,493,645 apiece), and the dehestan rows
+account for its rural half a second time.
+
+The rule was established by measurement, not assumed. Across the nine files
+that fill their name columns (12,852 rows): **every one of the 11,900 rows
+carrying a `language_distribution_estimate` is a settlement row or a city
+row, and not one of the 948 province, shahrestan, bakhsh or dehestan rows
+carries one.** So:
+
+> A row contributes to a composition if and only if it carries a language
+> estimate.
+
+That rule needs no name columns, which matters: three of the twelve files
+(Khuzestān, Lorestān, Kohgiluyeh va Boyer Ahmad) and 493 rows of a fourth
+(Gilān) arrive with every column from `shahrestan_roman` downward left blank.
+The rule still reaches their settlements. What it cannot do there is say which
+shahrestan a settlement is in — so those three provinces get a province figure
+and **no county figures at all**, which is 46 of Iran's 431 county shapes left
+empty for a reason that is about the export rather than about the atlas.
+
+A weaker rule was tried first and rejected: "a row with coordinates, a local
+name or a language". It swept in 20 dehestan rows that carry a local name of
+their own — 248,696 people already counted in the settlements beneath them.
+
+### The weighting rule, tested rather than assumed
+
+A province's composition is its settlements' compositions weighted by how many
+people live in each, and the files give two census columns, 2011 and 2016,
+either of which may be blank. The rule is **weight by
+`population_2016_census` where there is one, by `population_2011_census`
+otherwise**, and it was tested before it was adopted:
+
+* Only Gilān's module carries 2016 figures at all — 2,411 rows of the 18,343
+  weighted rows in the whole set — so the two vintages meet in exactly one
+  province.
+* There the choice is immaterial and the fallback reaches the most people:
+  weighting Gilān on 2011 alone moves no group by more than 0.4 points and
+  covers 1,814,553 people; on 2016 alone, 1,820,106; on the rule as written,
+  1,850,164.
+
+**A settlement with a language and no population in either year cannot be
+weighted, and no weight is invented for it.** 2,809 of the 21,152 language
+rows are in that position. They are excluded, and every record says how many
+were excluded from it — 702 in Khuzestān, 467 in Esfahān, 396 in Lorestān, 62
+in Kordestān. Their own share of the population cannot be reported, because
+the figure that would report it is the one that is missing; what the record
+reports instead is the share of the unit's population the weighted rows do
+reach.
+
+### Coverage, and when a unit is a gap instead of a number
+
+For each unit the weighted population is measured against the unit's own
+total, taken in this order: the file's own aggregate row for that unit; then
+the population this map already holds for the shape (Wikidata, 2016), which is
+what Kohgiluyeh va Boyer Ahmad and Hamadān need, neither file carrying a
+province row; then the sum of the unit's own settlement and city rows, which
+agrees with the aggregate row within 2% in 83 of the 91 shahrestans that have
+both. A unit with no total at all would get no figure: a composition whose
+coverage cannot be measured is a claim about a population nobody counted.
+
+Below 60% the unit is left empty and says why. The threshold sits in an empty
+band, measured:
+
+| Province | Shape | Coverage | Weighted settlements | Largest group |
+|---|---|---:|---:|---|
+| Khuzestān | Khuzestan | 101.3% | 4,090 | Khuzestāni Arabic 33.7% |
+| Hamadān | Hamadan | 100.1% | 1,085 | Turkic 35.0% |
+| Kordestān | Kurdistan | 100.0% | 1,729 | Central Kurdish 78.7% |
+| Chahār Mahāl va Bakhtiāri | Chaharmahal and Bakhtiari | 99.8% | 797 | Bakhtiāri 58.2% |
+| Bushehr | Bushehr | 99.7% | 655 | Dashtesuni 21.9% |
+| Hormozgān | Hormozgan | 99.7% | 1,765 | Banderi of Bandar Abbās 19.8% |
+| Lorestān | Lorestan | 99.5% | 3,008 | Laki of Lorestan 27.9% |
+| Kohgiluyeh va Boyer Ahmad | Kohgiluyeh and Boyer-Ahmad | 99.4% | 1,660 | Boyerahmadi 39.4% |
+| Ilām | Ilam | 99.0% | 689 | Ēlāmi 33.7% |
+| Esfahān | Isfahan | 98.6% | 1,926 | Tehrāni type Persian 30.0% |
+| Gilān | Gilan | 73.1% | 2,618 | Standard type Persian 55.9% |
+| Kermānshāh | *left empty* | 18.6% | 792 | — |
+
+Nothing lands between 18.6% and 73.1%.
+
+**Kermānshāh is a gap with a stated reason.** Its module reaches five of the
+province's fourteen shahrestans — Eslām Ābād-e Gharb, Gilān-e Gharb, Dālāhu,
+Sar Pol-e Zahāb and Qasr-e Shirin — and 361,056 of its 1,945,227 people. The
+city of Kermanshah is not in the file at all. Those five counties carry
+figures; the province does not, because a provincial figure built on a fifth
+of the province would be a statement about somewhere else.
+
+Two counties are gaps for the same reason: **Rasht** (28.5% — the city of
+Rasht, 679,995 people, is refused below) and **Aran and Bidgol** (37.8% — the
+town of Ārān o Bidgol, 60,290 people, likewise).
+
+Khuzestān's 101.3% is the one figure above 100: the weighted settlements hold
+61,829 people more than the total the file's own province row prints. The
+atlas's settlement populations and its provincial total do not quite agree,
+neither was adjusted to the other, and the record says so.
+
+### Refusing a share string
+
+`language_distribution_estimate` parses as `<language> <number>%` joined by
+semicolons. 21,137 of the 21,152 rows parse and sum to exactly 100. The rest
+are not guessed at. Seven land between 100.001 and 100.5 — a rounding-scale
+language written on top of a partition that had already closed, such as
+Bandar-e Anzali's `Armenian 0.04%` — and are accepted and normalised. Eight
+are refused outright, and their people count against the unit's coverage so
+that a refusal shows as a smaller claim rather than as nothing:
+
+| Province | Place | People (2011) | Sums to | The string |
+|---|---|---:|---:|---|
+| Gilān | Rasht | 639,951 | 90.01% | `Standard type Persian 50%; Western Gilaki 30%; Turkic 10%; Armenian 0.01%` |
+| Esfahān | Ārān o Bidgol | 60,290 | 80% | `Kāshān area Persian 50%; Tehrāni type Persian 20%; Dehi of Kāshān 10%` |
+| Esfahān | Afus | 4,313 | 110% | `Esfahān Persian group 65%; Tehrāni type Persian 25%; Phereydnuli Georgian 10%; Khunsāri Persian 10%` |
+| Gilān | Siāh Bil-e Khoshābar | 423 | 90% | `Standard type Persian 60%; Central Tāleshi 25%; Turkic 5%` |
+| Hamadān | Sabz Ābād | 81 | 105% | `Standard type Persian 85%; Hamadan Province Persian 20%` |
+| Khuzestān | Āwān | 23 | 85% | `Standard type Persian 40%; Khuzestāni Arabic 35%; Amlei 10%` |
+| Esfahān | Tasfieh Khāneh-ye Āb-e Yazd | — | 90% | `Rudashti 49%; Esfahān Persian group 31%; Tehrāni type Persian 10%` |
+| Gilān | (unnamed) | — | 80% | `Southern Tāleshi 40%; Central Tāleshi 40%` |
+
+Normalising Rasht's 90% up to 100 would hand the missing tenth of a city of
+680,000 to Persian, Gilaki and Turkic in the proportions of the nine tenths
+that *were* estimated. That is a guess wearing a measurement's clothes, and
+the reason Gilān is published at 73.1% coverage with Rasht named in its note
+rather than at 100% with Rasht invented.
+
+`uninhabited 100%` is not a language and is excluded the same way: 338 rows,
+all in Gilān, 4,716 people between them by the 2011 column.
+
+### Romanisation, reconciled explicitly
+
+Names are reconciled by alias tables that can be read, never by matching on
+how alike two strings look. Diacritics are folded (`Gilān` → `Gilan`), which
+is transliteration; everything else is written down.
+
+Four provinces need an entry: `Esfahān` → Isfahan, `Kordestān` → Kurdistan,
+`Chahār Mahāl va Bakhtiāri` → Chaharmahal and Bakhtiari, `Kohgiluyeh va Boyer
+Ahmad` → Kohgiluyeh and Boyer-Ahmad. The other eight match on folding alone.
+
+At the second level, 79 of the 101 shahrestan names in these twelve files
+match a county shape on folding, and 22 need an alias — `Qorveh` → Ghorveh,
+`Dayyer` → Deyr, `Bashkard` → Bashagard, `Kabudrāhang` → Kabutarahang, nine of
+Esfahān's where the boundary file writes the Persian *o* as "and", and so on.
+Some boundary names carry a ` County` suffix (`Abdanan County`, `Mehran
+County`) and most do not; the suffix is folded away.
+
+Two shahrestans have no single shape and are left out rather than pushed onto
+a polygon that is not theirs:
+
+* **Abu Musā** (Hormozgān) — geoBoundaries draws no second-level shape for the
+  island; Hormozgan's twelve do not include it.
+* **Shirvān va Chardāvol** (Ilām) — the boundary file draws Chardavol and
+  Sirvan as two counties where ALI writes one, and there is no figure for
+  either apart.
+
+One more is a decision worth recording: Isfahan province has **two** shapes
+that fold to one name, `Isfahan` (a 0.2° polygon over the city) and `Isfahan
+County` (the 1.7° one around it). The shahrestan's figures go to the county.
+The city polygon is left empty, because a county's composition placed on the
+city inside it would be the mis-match that looks exactly like a right answer.
+
+Gilān writes one county two ways — `Rudsar` on 357 rows and `Rud Sar` on the
+town's own row. They are read as one unit; keeping them apart left Rudsar
+reading 73.6% covered when its settlements and its town together cover 99.4%.
+
+### What landed, and what it says
+
+**11 of Iran's 32 first-level shapes** and **96 of its 431 second-level
+shapes** carry a language figure. Every one is an `estimate` — a gap that
+carries a number — and its note says that nothing was read for the unit
+itself, that ALI is a research atlas's field estimates and that Iran's census
+does not ask language. 95 are `modelled`; 12 are `derived`, those being the
+units where the atlas's own total was available, every language row carried a
+population, nothing was refused and coverage reached 99% — eleven counties of
+Gilān and Sirik in Hormozgān.
+
+The counties by province: Isfahan 22, Gilan 15, Hormozgan 12, Kurdistan 10,
+Bushehr 9, Hamadan 9, Chaharmahal and Bakhtiari 7, Ilam 7, Kermanshah 5.
+
+Read against what is known of Iran, the figures hold up. Kordestān comes out
+78.7% Central Kurdish with Hōrāmi 7.8%, Southern Kurdish 7.3% and a Turkic
+4.1% concentrated in Bijār (28% there). Khuzestān is 33.7% Khuzestāni Arabic
+beside Persian 23.0% and Bakhtiāri 19.7%. Ilām is led by Ēlāmi, Lorestān by
+Laki and Northern Lori, Kohgiluyeh by Boyerahmadi, Chahār Mahāl by Bakhtiāri.
+
+**Gilān is the one that will surprise a reader, and it is the atlas's own
+reading.** ALI's Gilān module puts `Standard type Persian` ahead of Gilaki in
+almost every settlement: 60% against 40% in the commonest village string, 50%
+in Rasht, 70% in Lāhijān, Langerud, Rud Sar and Bandar-e Anzali. Rolled up,
+the province reads Standard type Persian 55.9% against 24% for the Gilaki
+varieties together (Western 11.8%, Eastern 9.2%, Gālesh 2.8%) and Tāleshi
+6.9%. That is what its authors recorded, settlement by settlement, and this
+map prints it rather than the expectation it contradicts.
+
+### What a roll-up cannot show
+
+Rounding a unit's composition to one decimal is this map's convention, and ALI
+records some languages at a hundredth of a percent of a single settlement.
+Judeo-Hamadāni is 0.001% of the city of Hamadān — five people, 0.0003% of the
+province. Judeo-Borujerdi is 0.01% of Vuriyerd; Jidi 0.005% of the city of
+Esfahān; Neo-Mandaic 0.0085% of Ahwāz; Armenian 0.01% of Rasht and 95% of
+Zarneh. All but the last are far below the 0.05% a share must reach to print
+as anything other than 0.0%, so they do not appear in these provincial
+figures. They are in the atlas's settlement files, which is where a reader who
+wants them should look. This is a property of rolling a composition up, not a
+judgement about the languages.
+
+One stray in the source is worth recording rather than silently cleaning:
+Morghdāri-ye Fadak in Borkhār, Esfahān, cites `field notes 2058`. The row
+carries no population, so it is excluded from the weighted sum in any case.
+
+### The nineteen provinces that are still empty
+
+ALI publishes province by province and has reached twelve of Iran's
+thirty-one. Alborz, Ardabil, East Azerbaijan, Fars, Golestan, Kerman, Markazi,
+Mazandaran, North Khorasan, Qazvin, Qom, Razavi Khorasan, Semnan, Sistan and
+Baluchestan, South Khorasan, Tehran, West Azerbaijan, Yazd and Zanjan carry no
+language figure, and the reason is not that anyone declined to publish: those
+modules do not exist yet. Iran's `gap_reason` says so, alongside the older
+fact that the 2016 census's religion tables are on a host that ends the TLS
+handshake before a standard client can read a page.
+
+Dropping another province's export into `data/raw/iran/` and adding its
+citation to `ali_citations.json` is all that is needed; the reader discovers
+files by glob and takes the province from the file's own `province_roman`
+column, so no code changes to add the thirteenth.

@@ -1,0 +1,6439 @@
+[
+  {
+    "id": "SVK-admin1-region-of-banská-bystrica",
+    "level": "admin1",
+    "name": "Region of Banská Bystrica",
+    "parent": "SVK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 54.77
+      },
+      {
+        "group": "No religion",
+        "pct": 16.64
+      },
+      {
+        "group": "Not stated",
+        "pct": 13.73
+      },
+      {
+        "group": "Lutheran",
+        "pct": 10.56
+      },
+      {
+        "group": "Reformed",
+        "pct": 1.62
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 0.84
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.53
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.39
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.35
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.34
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.18
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.02
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.02
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 76.53
+      },
+      {
+        "group": "Hungarian",
+        "pct": 10.23
+      },
+      {
+        "group": "Not stated",
+        "pct": 10.01
+      },
+      {
+        "group": "Romani",
+        "pct": 2.35
+      },
+      {
+        "group": "Czech",
+        "pct": 0.45
+      },
+      {
+        "group": "Other",
+        "pct": 0.11
+      },
+      {
+        "group": "German",
+        "pct": 0.07
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.07
+      },
+      {
+        "group": "Polish",
+        "pct": 0.05
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.04
+      },
+      {
+        "group": "Russian",
+        "pct": 0.03
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Banskobystrický kraj' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Banskobystrick%C3%BD_kraj",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Banskobystrický kraj' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Banskobystrick%C3%BD_kraj",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Banskobystrický kraj' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Banskobystrický kraj' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin1-region-of-bratislava",
+    "level": "admin1",
+    "name": "Region of Bratislava",
+    "parent": "SVK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin1-region-of-košice",
+    "level": "admin1",
+    "name": "Region of Košice",
+    "parent": "SVK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 51.36
+      },
+      {
+        "group": "Not stated",
+        "pct": 14.97
+      },
+      {
+        "group": "No religion",
+        "pct": 11.29
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 9.5
+      },
+      {
+        "group": "Reformed",
+        "pct": 5.53
+      },
+      {
+        "group": "Lutheran",
+        "pct": 3.69
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.67
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.68
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.37
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.2
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.04
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 73.27
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.24
+      },
+      {
+        "group": "Hungarian",
+        "pct": 9.44
+      },
+      {
+        "group": "Romani",
+        "pct": 4.61
+      },
+      {
+        "group": "Czech",
+        "pct": 0.4
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.39
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.21
+      },
+      {
+        "group": "German",
+        "pct": 0.15
+      },
+      {
+        "group": "Other",
+        "pct": 0.15
+      },
+      {
+        "group": "Polish",
+        "pct": 0.04
+      },
+      {
+        "group": "Russian",
+        "pct": 0.04
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Košický kraj' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ick%C3%BD_kraj",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Košický kraj' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ick%C3%BD_kraj",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košický kraj' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košický kraj' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin1-region-of-nitra",
+    "level": "admin1",
+    "name": "Region of Nitra",
+    "parent": "SVK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+    },
+    "sources": [],
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin1-region-of-prešov",
+    "level": "admin1",
+    "name": "Region of Prešov",
+    "parent": "SVK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 61.46
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 14.09
+      },
+      {
+        "group": "Not stated",
+        "pct": 9.62
+      },
+      {
+        "group": "No religion",
+        "pct": 5.52
+      },
+      {
+        "group": "Lutheran",
+        "pct": 4.54
+      },
+      {
+        "group": "Orthodox",
+        "pct": 3.63
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.37
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.32
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.27
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.09
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.06
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.02
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 82.05
+      },
+      {
+        "group": "Not stated",
+        "pct": 7.93
+      },
+      {
+        "group": "Romani",
+        "pct": 5.29
+      },
+      {
+        "group": "Rusyn",
+        "pct": 3.54
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.46
+      },
+      {
+        "group": "Czech",
+        "pct": 0.32
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.08
+      },
+      {
+        "group": "Polish",
+        "pct": 0.08
+      },
+      {
+        "group": "German",
+        "pct": 0.07
+      },
+      {
+        "group": "Russian",
+        "pct": 0.04
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Prešovský kraj' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Pre%C5%A1ovsk%C3%BD_kraj",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Prešovský kraj' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Pre%C5%A1ovsk%C3%BD_kraj",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Prešovský kraj' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Prešovský kraj' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
+  },
+  {
+    "id": "SVK-admin1-region-of-trenčín",
+    "level": "admin1",
+    "name": "Region of Trenčín",
+    "parent": "SVK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "sources": [],
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin1-region-of-trnava",
+    "level": "admin1",
+    "name": "Region of Trnava",
+    "parent": "SVK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+    },
+    "sources": [],
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin1-region-of-žilina",
+    "level": "admin1",
+    "name": "Region of Žilina",
+    "parent": "SVK",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "sources": [],
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-banskk-vtiavnica",
+    "level": "admin2",
+    "name": "District of Banskk vtiavnica",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "labels this reader has no entry for: ['Židovská obec', 'Budhizmus', 'Islam', 'Hinduizmus', 'pohanstvo', 'ad hoc hnutia']"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 95.73
+      },
+      {
+        "group": "Not stated",
+        "pct": 2.43
+      },
+      {
+        "group": "Romani",
+        "pct": 0.59
+      },
+      {
+        "group": "Czech",
+        "pct": 0.4
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.27
+      },
+      {
+        "group": "Other",
+        "pct": 0.15
+      },
+      {
+        "group": "German",
+        "pct": 0.07
+      },
+      {
+        "group": "Polish",
+        "pct": 0.06
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.06
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.04
+      },
+      {
+        "group": "Italian",
+        "pct": 0.03
+      },
+      {
+        "group": "Iranian",
+        "pct": 0.02
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.02
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.01
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.01
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "English",
+        "pct": 0.01
+      },
+      {
+        "group": "Greek",
+        "pct": 0.01
+      },
+      {
+        "group": "Irish",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.01
+      },
+      {
+        "group": "Russian",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2021), as the sk.wikipedia article 'Banská Štiavnica (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Bansk%C3%A1_%C5%A0tiavnica_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the sk.wikipedia article 'Banská Štiavnica (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2021, and that is the year on this record."
+  },
+  {
+    "id": "SVK-admin2-district-of-bansks-bystrica",
+    "level": "admin2",
+    "name": "District of Bansks Bystrica",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "labels this reader has no entry for: ['Židovská obec', 'Budhizmus', 'Islam', 'Hinduizmus', 'pohanstvo', 'ad hoc hnutia']"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 93.25
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.78
+      },
+      {
+        "group": "Czech",
+        "pct": 0.68
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.18
+      },
+      {
+        "group": "Romani",
+        "pct": 0.18
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.12
+      },
+      {
+        "group": "Russian",
+        "pct": 0.11
+      },
+      {
+        "group": "German",
+        "pct": 0.06
+      },
+      {
+        "group": "Polish",
+        "pct": 0.06
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.04
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.03
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.02
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.02
+      },
+      {
+        "group": "Italian",
+        "pct": 0.02
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.02
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.02
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.01
+      },
+      {
+        "group": "Austrian",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      },
+      {
+        "group": "English",
+        "pct": 0.01
+      },
+      {
+        "group": "French",
+        "pct": 0.01
+      },
+      {
+        "group": "Greek",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.01
+      },
+      {
+        "group": "Canadian",
+        "pct": 0.0
+      },
+      {
+        "group": "Iranian",
+        "pct": 0.0
+      },
+      {
+        "group": "Irish",
+        "pct": 0.0
+      },
+      {
+        "group": "Korean",
+        "pct": 0.0
+      },
+      {
+        "group": "Silesian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2021), as the sk.wikipedia article 'Banská Bystrica (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Bansk%C3%A1_Bystrica_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the sk.wikipedia article 'Banská Bystrica (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2021, and that is the year on this record."
+  },
+  {
+    "id": "SVK-admin2-district-of-bardejov",
+    "level": "admin2",
+    "name": "District of Bardejov",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+    },
+    "sources": [],
+    "parent_name": "Region of Prešov",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-bonovce-nad-bebra",
+    "level": "admin2",
+    "name": "District of Bonovce nad Bebra*",
+    "parent": "SVK-admin1-region-of-trenčín",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trenčín",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-bratislava-i",
+    "level": "admin2",
+    "name": "District of Bratislava I",
+    "parent": "SVK-admin1-region-of-bratislava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Bratislava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-bratislava-ii",
+    "level": "admin2",
+    "name": "District of Bratislava II",
+    "parent": "SVK-admin1-region-of-bratislava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Bratislava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-bratislava-iii",
+    "level": "admin2",
+    "name": "District of Bratislava III",
+    "parent": "SVK-admin1-region-of-bratislava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Bratislava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-bratislava-iv",
+    "level": "admin2",
+    "name": "District of Bratislava IV",
+    "parent": "SVK-admin1-region-of-bratislava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Bratislava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-bratislava-v",
+    "level": "admin2",
+    "name": "District of Bratislava V",
+    "parent": "SVK-admin1-region-of-bratislava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Bratislava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-brezno",
+    "level": "admin2",
+    "name": "District of Brezno",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 66.34
+      },
+      {
+        "group": "Not stated",
+        "pct": 12.3
+      },
+      {
+        "group": "No religion",
+        "pct": 12.12
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 4.06
+      },
+      {
+        "group": "Lutheran",
+        "pct": 3.72
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.39
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.32
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.26
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.21
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.18
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.07
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.03
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 87.15
+      },
+      {
+        "group": "Not stated",
+        "pct": 8.69
+      },
+      {
+        "group": "Romani",
+        "pct": 3.35
+      },
+      {
+        "group": "Czech",
+        "pct": 0.36
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.12
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.07
+      },
+      {
+        "group": "Other",
+        "pct": 0.06
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.05
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.04
+      },
+      {
+        "group": "Polish",
+        "pct": 0.04
+      },
+      {
+        "group": "German",
+        "pct": 0.03
+      },
+      {
+        "group": "Russian",
+        "pct": 0.02
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Brezno (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Brezno_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Brezno (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Brezno_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Brezno (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Brezno (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-bytca",
+    "level": "admin2",
+    "name": "District of Bytca",
+    "parent": "SVK-admin1-region-of-žilina",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Žilina",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-cadca",
+    "level": "admin2",
+    "name": "District of Cadca",
+    "parent": "SVK-admin1-region-of-žilina",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "sources": [],
+    "parent_name": "Region of Žilina",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-detva",
+    "level": "admin2",
+    "name": "District of Detva",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-dolne-kub",
+    "level": "admin2",
+    "name": "District of Dolne Kub",
+    "parent": "SVK-admin1-region-of-žilina",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Žilina",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-dunajskn-streda",
+    "level": "admin2",
+    "name": "District of Dunajskn Streda",
+    "parent": "SVK-admin1-region-of-trnava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Hungarian",
+        "pct": 87.09
+      },
+      {
+        "group": "Slovak",
+        "pct": 11.31
+      },
+      {
+        "group": "Romani",
+        "pct": 0.63
+      },
+      {
+        "group": "Czech",
+        "pct": 0.62
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 0.35
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2022), as the sk.wikipedia article 'Dunajská Streda (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Dunajsk%C3%A1_Streda_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Trnava",
+    "country": "SVK",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Population by ethnicity for 2022 from a population census, as the sk.wikipedia article 'Dunajská Streda (okres)' transcribes and cites it. A census count."
+  },
+  {
+    "id": "SVK-admin2-district-of-gala",
+    "level": "admin2",
+    "name": "District of Gala",
+    "parent": "SVK-admin1-region-of-nitra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Nitra",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-galanta",
+    "level": "admin2",
+    "name": "District of Galanta",
+    "parent": "SVK-admin1-region-of-trnava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+    },
+    "sources": [],
+    "parent_name": "Region of Trnava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-gelnica",
+    "level": "admin2",
+    "name": "District of Gelnica",
+    "parent": "SVK-admin1-region-of-košice",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
+    },
+    "sources": [],
+    "parent_name": "Region of Košice",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-giar-nad-hronom",
+    "level": "admin2",
+    "name": "District of Giar nad Hronom",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-hlohovec",
+    "level": "admin2",
+    "name": "District of Hlohovec",
+    "parent": "SVK-admin1-region-of-trnava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trnava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-humennn",
+    "level": "admin2",
+    "name": "District of Humennn",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 64.87
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 16.37
+      },
+      {
+        "group": "Not stated",
+        "pct": 9.18
+      },
+      {
+        "group": "No religion",
+        "pct": 4.7
+      },
+      {
+        "group": "Orthodox",
+        "pct": 3.32
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.58
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.28
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.23
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.23
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.2
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.02
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.01
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 83.96
+      },
+      {
+        "group": "Not stated",
+        "pct": 7.03
+      },
+      {
+        "group": "Rusyn",
+        "pct": 4.83
+      },
+      {
+        "group": "Romani",
+        "pct": 2.59
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.82
+      },
+      {
+        "group": "Czech",
+        "pct": 0.36
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.13
+      },
+      {
+        "group": "Other",
+        "pct": 0.11
+      },
+      {
+        "group": "Polish",
+        "pct": 0.05
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.04
+      },
+      {
+        "group": "Russian",
+        "pct": 0.04
+      },
+      {
+        "group": "German",
+        "pct": 0.02
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Humenné (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Humenn%C3%A9_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Humenné (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Humenn%C3%A9_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Prešov",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Humenné (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Humenné (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-ilava",
+    "level": "admin2",
+    "name": "District of Ilava",
+    "parent": "SVK-admin1-region-of-trenčín",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "labels this reader has no entry for: ['Unitarizmus']"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the shares add to 60583.00, which is not a composition"
+    },
+    "sources": [],
+    "parent_name": "Region of Trenčín",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-kermarok",
+    "level": "admin2",
+    "name": "District of Kermarok",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 79.07
+      },
+      {
+        "group": "Not stated",
+        "pct": 10.19
+      },
+      {
+        "group": "No religion",
+        "pct": 4.48
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 2.48
+      },
+      {
+        "group": "Lutheran",
+        "pct": 2.28
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.43
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.36
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.29
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.28
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.06
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.05
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.01
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 79.15
+      },
+      {
+        "group": "Romani",
+        "pct": 11.46
+      },
+      {
+        "group": "Not stated",
+        "pct": 8.31
+      },
+      {
+        "group": "Czech",
+        "pct": 0.25
+      },
+      {
+        "group": "Polish",
+        "pct": 0.2
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.19
+      },
+      {
+        "group": "German",
+        "pct": 0.15
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.07
+      },
+      {
+        "group": "Other",
+        "pct": 0.07
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.03
+      },
+      {
+        "group": "Russian",
+        "pct": 0.02
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Kežmarok (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ke%C5%BEmarok_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Kežmarok (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ke%C5%BEmarok_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Prešov",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Kežmarok (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Kežmarok (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-kolice-i",
+    "level": "admin2",
+    "name": "District of Kolice I",
+    "parent": "SVK-admin1-region-of-košice",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 42.4
+      },
+      {
+        "group": "Not stated",
+        "pct": 25.19
+      },
+      {
+        "group": "No religion",
+        "pct": 17.88
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 5.67
+      },
+      {
+        "group": "Lutheran",
+        "pct": 3.47
+      },
+      {
+        "group": "Reformed",
+        "pct": 2.06
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.36
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.61
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.57
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.33
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.22
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.22
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 72.02
+      },
+      {
+        "group": "Not stated",
+        "pct": 21.47
+      },
+      {
+        "group": "Hungarian",
+        "pct": 3.02
+      },
+      {
+        "group": "Romani",
+        "pct": 0.91
+      },
+      {
+        "group": "Czech",
+        "pct": 0.72
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.68
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.45
+      },
+      {
+        "group": "Other",
+        "pct": 0.26
+      },
+      {
+        "group": "German",
+        "pct": 0.16
+      },
+      {
+        "group": "Russian",
+        "pct": 0.09
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.06
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.06
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.04
+      },
+      {
+        "group": "Polish",
+        "pct": 0.03
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.03
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Košice I (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ice_I_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Košice I (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ice_I_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Košice",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice I (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košice I (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-kolice-ii",
+    "level": "admin2",
+    "name": "District of Kolice II",
+    "parent": "SVK-admin1-region-of-košice",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 46.12
+      },
+      {
+        "group": "Not stated",
+        "pct": 22.26
+      },
+      {
+        "group": "No religion",
+        "pct": 16.67
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 6.21
+      },
+      {
+        "group": "Lutheran",
+        "pct": 2.82
+      },
+      {
+        "group": "Reformed",
+        "pct": 1.88
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.7
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.24
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.52
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.36
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.17
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.04
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.02
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 71.73
+      },
+      {
+        "group": "Not stated",
+        "pct": 18.98
+      },
+      {
+        "group": "Romani",
+        "pct": 4.45
+      },
+      {
+        "group": "Hungarian",
+        "pct": 2.37
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.71
+      },
+      {
+        "group": "Czech",
+        "pct": 0.69
+      },
+      {
+        "group": "Other",
+        "pct": 0.42
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.26
+      },
+      {
+        "group": "German",
+        "pct": 0.12
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.08
+      },
+      {
+        "group": "Russian",
+        "pct": 0.08
+      },
+      {
+        "group": "Polish",
+        "pct": 0.06
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.03
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Košice II (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ice_II_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Košice II (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ice_II_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Košice",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice II (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košice II (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-kolice-iii",
+    "level": "admin2",
+    "name": "District of Kolice III",
+    "parent": "SVK-admin1-region-of-košice",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 44.56
+      },
+      {
+        "group": "Not stated",
+        "pct": 25.2
+      },
+      {
+        "group": "No religion",
+        "pct": 15.98
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 6.65
+      },
+      {
+        "group": "Lutheran",
+        "pct": 2.97
+      },
+      {
+        "group": "Reformed",
+        "pct": 1.92
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.19
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.59
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.43
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.24
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.19
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.06
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 81.89
+      },
+      {
+        "group": "Not stated",
+        "pct": 12.76
+      },
+      {
+        "group": "Hungarian",
+        "pct": 2.27
+      },
+      {
+        "group": "Romani",
+        "pct": 1.05
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.65
+      },
+      {
+        "group": "Czech",
+        "pct": 0.49
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.37
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "German",
+        "pct": 0.13
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.04
+      },
+      {
+        "group": "Polish",
+        "pct": 0.04
+      },
+      {
+        "group": "Russian",
+        "pct": 0.04
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.03
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Košice III (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ice_III_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Košice III (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ice_III_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Košice",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice III (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košice III (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
+  },
+  {
+    "id": "SVK-admin2-district-of-kolice-iv",
+    "level": "admin2",
+    "name": "District of Kolice IV",
+    "parent": "SVK-admin1-region-of-košice",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 46.81
+      },
+      {
+        "group": "Not stated",
+        "pct": 23.48
+      },
+      {
+        "group": "No religion",
+        "pct": 15.33
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 6.28
+      },
+      {
+        "group": "Lutheran",
+        "pct": 3.07
+      },
+      {
+        "group": "Reformed",
+        "pct": 2.26
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.12
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.6
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.47
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.31
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.14
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.11
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 74.87
+      },
+      {
+        "group": "Not stated",
+        "pct": 19.75
+      },
+      {
+        "group": "Hungarian",
+        "pct": 2.81
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.66
+      },
+      {
+        "group": "Czech",
+        "pct": 0.62
+      },
+      {
+        "group": "Romani",
+        "pct": 0.47
+      },
+      {
+        "group": "Other",
+        "pct": 0.27
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.22
+      },
+      {
+        "group": "German",
+        "pct": 0.1
+      },
+      {
+        "group": "Polish",
+        "pct": 0.07
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.05
+      },
+      {
+        "group": "Russian",
+        "pct": 0.04
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.02
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.02
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Košice IV (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ice_IV_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Košice IV (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ice_IV_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Košice",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice IV (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košice IV (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-komprno",
+    "level": "admin2",
+    "name": "District of Komprno",
+    "parent": "SVK-admin1-region-of-nitra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
+    },
+    "sources": [],
+    "parent_name": "Region of Nitra",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-kovice-okolie",
+    "level": "admin2",
+    "name": "District of Kovice - okolie",
+    "parent": "SVK-admin1-region-of-košice",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 68.32
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.15
+      },
+      {
+        "group": "Reformed",
+        "pct": 6.31
+      },
+      {
+        "group": "No religion",
+        "pct": 5.46
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 3.95
+      },
+      {
+        "group": "Lutheran",
+        "pct": 3.37
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.51
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.33
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.32
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.19
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.1
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.01
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 74.05
+      },
+      {
+        "group": "Hungarian",
+        "pct": 9.93
+      },
+      {
+        "group": "Not stated",
+        "pct": 8.51
+      },
+      {
+        "group": "Romani",
+        "pct": 6.46
+      },
+      {
+        "group": "German",
+        "pct": 0.4
+      },
+      {
+        "group": "Czech",
+        "pct": 0.27
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.12
+      },
+      {
+        "group": "Other",
+        "pct": 0.08
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.08
+      },
+      {
+        "group": "Polish",
+        "pct": 0.04
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Russian",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Košice-okolie (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ice-okolie_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Košice-okolie (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Ko%C5%A1ice-okolie_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Košice",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice-okolie (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košice-okolie (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-krupina",
+    "level": "admin2",
+    "name": "District of Krupina",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-kysucki-novi-mesto",
+    "level": "admin2",
+    "name": "District of Kysucki Novi Mesto",
+    "parent": "SVK-admin1-region-of-žilina",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "sources": [],
+    "parent_name": "Region of Žilina",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-levice",
+    "level": "admin2",
+    "name": "District of Levice",
+    "parent": "SVK-admin1-region-of-nitra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
+    },
+    "sources": [],
+    "parent_name": "Region of Nitra",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-levoca",
+    "level": "admin2",
+    "name": "District of Levoca",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 77.5
+      },
+      {
+        "group": "Not stated",
+        "pct": 10.76
+      },
+      {
+        "group": "No religion",
+        "pct": 5.27
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 4.42
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.78
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.33
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.32
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.29
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.23
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.06
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.02
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 85.28
+      },
+      {
+        "group": "Not stated",
+        "pct": 7.83
+      },
+      {
+        "group": "Romani",
+        "pct": 5.44
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.95
+      },
+      {
+        "group": "Czech",
+        "pct": 0.22
+      },
+      {
+        "group": "Other",
+        "pct": 0.09
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.06
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.04
+      },
+      {
+        "group": "Polish",
+        "pct": 0.03
+      },
+      {
+        "group": "German",
+        "pct": 0.02
+      },
+      {
+        "group": "Russian",
+        "pct": 0.02
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Levoča (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Levo%C4%8Da_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Levoča (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Levo%C4%8Da_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Prešov",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Levoča (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Levoča (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
+  },
+  {
+    "id": "SVK-admin2-district-of-liptovsk",
+    "level": "admin2",
+    "name": "District of Liptovsk",
+    "parent": "SVK-admin1-region-of-žilina",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Žilina",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-lucenec",
+    "level": "admin2",
+    "name": "District of Lucenec",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-malacky",
+    "level": "admin2",
+    "name": "District of Malacky",
+    "parent": "SVK-admin1-region-of-bratislava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Bratislava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-martin",
+    "level": "admin2",
+    "name": "District of Martin",
+    "parent": "SVK-admin1-region-of-žilina",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Žilina",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-medzilaborce",
+    "level": "admin2",
+    "name": "District of Medzilaborce",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Greek Catholic",
+        "pct": 50.35
+      },
+      {
+        "group": "Orthodox",
+        "pct": 27.21
+      },
+      {
+        "group": "Not stated",
+        "pct": 10.77
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 7.29
+      },
+      {
+        "group": "No religion",
+        "pct": 2.67
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.05
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.43
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.14
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.05
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.03
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Rusyn",
+        "pct": 42.47
+      },
+      {
+        "group": "Slovak",
+        "pct": 38.33
+      },
+      {
+        "group": "Not stated",
+        "pct": 9.86
+      },
+      {
+        "group": "Romani",
+        "pct": 5.97
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.52
+      },
+      {
+        "group": "Czech",
+        "pct": 0.39
+      },
+      {
+        "group": "Russian",
+        "pct": 0.15
+      },
+      {
+        "group": "Other",
+        "pct": 0.14
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.11
+      },
+      {
+        "group": "Polish",
+        "pct": 0.03
+      },
+      {
+        "group": "German",
+        "pct": 0.02
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Medzilaborce (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Medzilaborce_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Medzilaborce (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Medzilaborce_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Prešov",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Medzilaborce (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Medzilaborce (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
+  },
+  {
+    "id": "SVK-admin2-district-of-michalovce",
+    "level": "admin2",
+    "name": "District of Michalovce",
+    "parent": "SVK-admin1-region-of-košice",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 75.16
+      },
+      {
+        "group": "Hungarian",
+        "pct": 10.94
+      },
+      {
+        "group": "Not stated",
+        "pct": 9.11
+      },
+      {
+        "group": "Romani",
+        "pct": 3.57
+      },
+      {
+        "group": "Czech",
+        "pct": 0.33
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.33
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.29
+      },
+      {
+        "group": "Other",
+        "pct": 0.09
+      },
+      {
+        "group": "Polish",
+        "pct": 0.06
+      },
+      {
+        "group": "German",
+        "pct": 0.03
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.03
+      },
+      {
+        "group": "Russian",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Michalovce (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Michalovce_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Košice",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Michalovce (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record."
+  },
+  {
+    "id": "SVK-admin2-district-of-myjava",
+    "level": "admin2",
+    "name": "District of Myjava",
+    "parent": "SVK-admin1-region-of-trenčín",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trenčín",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-nitra",
+    "level": "admin2",
+    "name": "District of Nitra",
+    "parent": "SVK-admin1-region-of-nitra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "sources": [],
+    "parent_name": "Region of Nitra",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-nova-mesto-nad-va",
+    "level": "admin2",
+    "name": "District of Nova Mesto nad Va*",
+    "parent": "SVK-admin1-region-of-trenčín",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trenčín",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-nova-zkmky",
+    "level": "admin2",
+    "name": "District of Nova Zkmky",
+    "parent": "SVK-admin1-region-of-nitra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "sources": [],
+    "parent_name": "Region of Nitra",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-numestovo",
+    "level": "admin2",
+    "name": "District of Numestovo",
+    "parent": "SVK-admin1-region-of-žilina",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Žilina",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-partizonske",
+    "level": "admin2",
+    "name": "District of Partizonske",
+    "parent": "SVK-admin1-region-of-trenčín",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trenčín",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-pezinok",
+    "level": "admin2",
+    "name": "District of Pezinok",
+    "parent": "SVK-admin1-region-of-bratislava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Bratislava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-piertany",
+    "level": "admin2",
+    "name": "District of Piertany",
+    "parent": "SVK-admin1-region-of-trnava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trnava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-pilina",
+    "level": "admin2",
+    "name": "District of Pilina",
+    "parent": "SVK-admin1-region-of-žilina",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Žilina",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-poltcr",
+    "level": "admin2",
+    "name": "District of Poltcr",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-poprad",
+    "level": "admin2",
+    "name": "District of Poprad",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 61.2
+      },
+      {
+        "group": "Not stated",
+        "pct": 13.85
+      },
+      {
+        "group": "No religion",
+        "pct": 11.93
+      },
+      {
+        "group": "Lutheran",
+        "pct": 7.61
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 2.71
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.85
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.78
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.64
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.18
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.13
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.08
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.02
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.02
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 84.71
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.77
+      },
+      {
+        "group": "Romani",
+        "pct": 2.06
+      },
+      {
+        "group": "Czech",
+        "pct": 0.59
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.2
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.14
+      },
+      {
+        "group": "Other",
+        "pct": 0.12
+      },
+      {
+        "group": "German",
+        "pct": 0.11
+      },
+      {
+        "group": "Polish",
+        "pct": 0.1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.08
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.05
+      },
+      {
+        "group": "Russian",
+        "pct": 0.04
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Poprad (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Poprad_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Poprad (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Poprad_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Prešov",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Poprad (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Poprad (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-povacskn-bystrica",
+    "level": "admin2",
+    "name": "District of Povacskn Bystrica",
+    "parent": "SVK-admin1-region-of-trenčín",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trenčín",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-prchov",
+    "level": "admin2",
+    "name": "District of Prchov",
+    "parent": "SVK-admin1-region-of-trenčín",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trenčín",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-predov",
+    "level": "admin2",
+    "name": "District of Predov",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 84.82
+      },
+      {
+        "group": "Not stated",
+        "pct": 9.93
+      },
+      {
+        "group": "Romani",
+        "pct": 3.07
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.98
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.44
+      },
+      {
+        "group": "Czech",
+        "pct": 0.35
+      },
+      {
+        "group": "Other",
+        "pct": 0.12
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Polish",
+        "pct": 0.04
+      },
+      {
+        "group": "Russian",
+        "pct": 0.04
+      },
+      {
+        "group": "German",
+        "pct": 0.03
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.02
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Prešov (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Pre%C5%A1ov_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Prešov",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Prešov (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record."
+  },
+  {
+    "id": "SVK-admin2-district-of-prievidza",
+    "level": "admin2",
+    "name": "District of Prievidza",
+    "parent": "SVK-admin1-region-of-trenčín",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trenčín",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-revnca",
+    "level": "admin2",
+    "name": "District of Revnca",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+    },
+    "sources": [],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-rimavsk",
+    "level": "admin2",
+    "name": "District of Rimavsk",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-ronnava",
+    "level": "admin2",
+    "name": "District of Ronnava",
+    "parent": "SVK-admin1-region-of-košice",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+    },
+    "sources": [],
+    "parent_name": "Region of Košice",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-ruromberok",
+    "level": "admin2",
+    "name": "District of Ruromberok",
+    "parent": "SVK-admin1-region-of-žilina",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "sources": [],
+    "parent_name": "Region of Žilina",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-sabinov",
+    "level": "admin2",
+    "name": "District of Sabinov",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 76.99
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 9.6
+      },
+      {
+        "group": "Not stated",
+        "pct": 6.51
+      },
+      {
+        "group": "No religion",
+        "pct": 3.81
+      },
+      {
+        "group": "Lutheran",
+        "pct": 1.12
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.88
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.57
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.29
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.17
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.04
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.01
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.01
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 83.37
+      },
+      {
+        "group": "Romani",
+        "pct": 10.01
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.36
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.81
+      },
+      {
+        "group": "Czech",
+        "pct": 0.17
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.12
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.04
+      },
+      {
+        "group": "Polish",
+        "pct": 0.03
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.02
+      },
+      {
+        "group": "Other",
+        "pct": 0.02
+      },
+      {
+        "group": "Russian",
+        "pct": 0.02
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      },
+      {
+        "group": "German",
+        "pct": 0.01
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Sabinov (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Sabinov_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Sabinov (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Sabinov_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Prešov",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Sabinov (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Sabinov (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
+  },
+  {
+    "id": "SVK-admin2-district-of-senec",
+    "level": "admin2",
+    "name": "District of Senec",
+    "parent": "SVK-admin1-region-of-bratislava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 74.0
+      },
+      {
+        "group": "Hungarian",
+        "pct": 24.49
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 1.51
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2022), as the sk.wikipedia article 'Senec (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Senec_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Bratislava",
+    "country": "SVK",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Population by ethnicity for 2022 from a population census, as the sk.wikipedia article 'Senec (okres)' transcribes and cites it. A census count."
+  },
+  {
+    "id": "SVK-admin2-district-of-senica",
+    "level": "admin2",
+    "name": "District of Senica",
+    "parent": "SVK-admin1-region-of-trnava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trnava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-skalica",
+    "level": "admin2",
+    "name": "District of Skalica",
+    "parent": "SVK-admin1-region-of-trnava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trnava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-snina",
+    "level": "admin2",
+    "name": "District of Snina",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 47.2
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 20.23
+      },
+      {
+        "group": "Orthodox",
+        "pct": 19.92
+      },
+      {
+        "group": "Not stated",
+        "pct": 7.77
+      },
+      {
+        "group": "No religion",
+        "pct": 3.44
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.85
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.32
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.12
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.08
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.05
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.03
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 77.99
+      },
+      {
+        "group": "Rusyn",
+        "pct": 12.27
+      },
+      {
+        "group": "Not stated",
+        "pct": 6.38
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.58
+      },
+      {
+        "group": "Romani",
+        "pct": 1.15
+      },
+      {
+        "group": "Czech",
+        "pct": 0.36
+      },
+      {
+        "group": "Other",
+        "pct": 0.07
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.05
+      },
+      {
+        "group": "Polish",
+        "pct": 0.04
+      },
+      {
+        "group": "Russian",
+        "pct": 0.03
+      },
+      {
+        "group": "German",
+        "pct": 0.02
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.02
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Snina (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Snina_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Snina (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Snina_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Prešov",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Snina (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Snina (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-sobrance",
+    "level": "admin2",
+    "name": "District of Sobrance",
+    "parent": "SVK-admin1-region-of-košice",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 38.49
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 35.28
+      },
+      {
+        "group": "Not stated",
+        "pct": 7.05
+      },
+      {
+        "group": "Reformed",
+        "pct": 6.74
+      },
+      {
+        "group": "Orthodox",
+        "pct": 6.33
+      },
+      {
+        "group": "No religion",
+        "pct": 3.1
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.59
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.68
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.45
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.19
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.1
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 88.75
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.53
+      },
+      {
+        "group": "Romani",
+        "pct": 4.24
+      },
+      {
+        "group": "Rusyn",
+        "pct": 1.23
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.53
+      },
+      {
+        "group": "Czech",
+        "pct": 0.44
+      },
+      {
+        "group": "Other",
+        "pct": 0.09
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.07
+      },
+      {
+        "group": "Polish",
+        "pct": 0.05
+      },
+      {
+        "group": "Russian",
+        "pct": 0.02
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "German",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Sobrance (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Sobrance_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Sobrance (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Sobrance_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Košice",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Sobrance (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Sobrance (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-spieskn-novo-ves",
+    "level": "admin2",
+    "name": "District of Spieskn Novo Ves",
+    "parent": "SVK-admin1-region-of-košice",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 69.76
+      },
+      {
+        "group": "Not stated",
+        "pct": 11.33
+      },
+      {
+        "group": "No religion",
+        "pct": 10.41
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 2.97
+      },
+      {
+        "group": "Lutheran",
+        "pct": 1.8
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.32
+      },
+      {
+        "group": "Other Christian",
+        "pct": 1.28
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.74
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.27
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.05
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.05
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.01
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 85.9
+      },
+      {
+        "group": "Not stated",
+        "pct": 6.85
+      },
+      {
+        "group": "Romani",
+        "pct": 6.23
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.37
+      },
+      {
+        "group": "Czech",
+        "pct": 0.23
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.09
+      },
+      {
+        "group": "Other",
+        "pct": 0.09
+      },
+      {
+        "group": "German",
+        "pct": 0.07
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.07
+      },
+      {
+        "group": "Polish",
+        "pct": 0.04
+      },
+      {
+        "group": "Russian",
+        "pct": 0.03
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.02
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Spišská Nová Ves (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Spi%C5%A1sk%C3%A1_Nov%C3%A1_Ves_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Spišská Nová Ves (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Spi%C5%A1sk%C3%A1_Nov%C3%A1_Ves_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Košice",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Spišská Nová Ves (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Spišská Nová Ves (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-stark-lubovna",
+    "level": "admin2",
+    "name": "District of Stark Lubovna",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 59.77
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 29.17
+      },
+      {
+        "group": "Not stated",
+        "pct": 6.26
+      },
+      {
+        "group": "No religion",
+        "pct": 2.33
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.66
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.54
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.12
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.08
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.04
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.03
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.01
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 78.38
+      },
+      {
+        "group": "Romani",
+        "pct": 8.03
+      },
+      {
+        "group": "Rusyn",
+        "pct": 6.61
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.58
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.43
+      },
+      {
+        "group": "German",
+        "pct": 0.41
+      },
+      {
+        "group": "Czech",
+        "pct": 0.24
+      },
+      {
+        "group": "Polish",
+        "pct": 0.14
+      },
+      {
+        "group": "Other",
+        "pct": 0.07
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.04
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.03
+      },
+      {
+        "group": "Russian",
+        "pct": 0.02
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Stará Ľubovňa (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Star%C3%A1_%C4%BDubov%C5%88a_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Stará Ľubovňa (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Star%C3%A1_%C4%BDubov%C5%88a_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Prešov",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Stará Ľubovňa (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Stará Ľubovňa (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-stropkov",
+    "level": "admin2",
+    "name": "District of Stropkov",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 44.68
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 38.38
+      },
+      {
+        "group": "Not stated",
+        "pct": 7.52
+      },
+      {
+        "group": "Orthodox",
+        "pct": 6.55
+      },
+      {
+        "group": "No religion",
+        "pct": 1.93
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.49
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.15
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.12
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.07
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.05
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.05
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 79.88
+      },
+      {
+        "group": "Rusyn",
+        "pct": 6.57
+      },
+      {
+        "group": "Not stated",
+        "pct": 6.54
+      },
+      {
+        "group": "Romani",
+        "pct": 5.89
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.49
+      },
+      {
+        "group": "Czech",
+        "pct": 0.31
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Polish",
+        "pct": 0.08
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.04
+      },
+      {
+        "group": "German",
+        "pct": 0.03
+      },
+      {
+        "group": "Russian",
+        "pct": 0.03
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.02
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.01
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Stropkov (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Stropkov_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Stropkov (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Stropkov_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Prešov",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Stropkov (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Stropkov (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-svidnsk",
+    "level": "admin2",
+    "name": "District of Svidnsk",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Greek Catholic",
+        "pct": 33.79
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 28.68
+      },
+      {
+        "group": "Orthodox",
+        "pct": 19.21
+      },
+      {
+        "group": "Not stated",
+        "pct": 8.18
+      },
+      {
+        "group": "Lutheran",
+        "pct": 6.26
+      },
+      {
+        "group": "No religion",
+        "pct": 2.69
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.7
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.23
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.16
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.07
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.02
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.01
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 71.9
+      },
+      {
+        "group": "Rusyn",
+        "pct": 14.56
+      },
+      {
+        "group": "Not stated",
+        "pct": 7.62
+      },
+      {
+        "group": "Romani",
+        "pct": 3.98
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.2
+      },
+      {
+        "group": "Czech",
+        "pct": 0.23
+      },
+      {
+        "group": "Other",
+        "pct": 0.14
+      },
+      {
+        "group": "Russian",
+        "pct": 0.14
+      },
+      {
+        "group": "Polish",
+        "pct": 0.13
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.05
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.02
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.01
+      },
+      {
+        "group": "German",
+        "pct": 0.01
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.01
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Svidník (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Svidn%C3%ADk_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Svidník (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Svidn%C3%ADk_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Prešov",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Svidník (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Svidník (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
+  },
+  {
+    "id": "SVK-admin2-district-of-tarnovica",
+    "level": "admin2",
+    "name": "District of Tarnovica",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-topolcany",
+    "level": "admin2",
+    "name": "District of Topolcany",
+    "parent": "SVK-admin1-region-of-nitra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "sources": [],
+    "parent_name": "Region of Nitra",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-trebi-ov",
+    "level": "admin2",
+    "name": "District of Trebi ov",
+    "parent": "SVK-admin1-region-of-košice",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 46.15
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 20.83
+      },
+      {
+        "group": "Reformed",
+        "pct": 12.86
+      },
+      {
+        "group": "Not stated",
+        "pct": 9.21
+      },
+      {
+        "group": "No religion",
+        "pct": 6.87
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.66
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.23
+      },
+      {
+        "group": "Lutheran",
+        "pct": 0.72
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.18
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.17
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.1
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.01
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.01
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 59.91
+      },
+      {
+        "group": "Hungarian",
+        "pct": 26.53
+      },
+      {
+        "group": "Not stated",
+        "pct": 6.64
+      },
+      {
+        "group": "Romani",
+        "pct": 6.23
+      },
+      {
+        "group": "Czech",
+        "pct": 0.28
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.13
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.12
+      },
+      {
+        "group": "Other",
+        "pct": 0.07
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.02
+      },
+      {
+        "group": "Polish",
+        "pct": 0.02
+      },
+      {
+        "group": "German",
+        "pct": 0.01
+      },
+      {
+        "group": "Russian",
+        "pct": 0.01
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.01
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Trebišov (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Trebi%C5%A1ov_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Trebišov (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Trebi%C5%A1ov_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Košice",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Trebišov (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Trebišov (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-trencon",
+    "level": "admin2",
+    "name": "District of Trencon",
+    "parent": "SVK-admin1-region-of-trenčín",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trenčín",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-trnava",
+    "level": "admin2",
+    "name": "District of Trnava",
+    "parent": "SVK-admin1-region-of-trnava",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Trnava",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-turcianske-teplice",
+    "level": "admin2",
+    "name": "District of Turcianske Teplice",
+    "parent": "SVK-admin1-region-of-žilina",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Žilina",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-tvrdo",
+    "level": "admin2",
+    "name": "District of Tvrdo",
+    "parent": "SVK-admin1-region-of-žilina",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Žilina",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-velka-krta",
+    "level": "admin2",
+    "name": "District of Velka Krta",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-vranov-nad-toplou",
+    "level": "admin2",
+    "name": "District of Vranov nad Toplou",
+    "parent": "SVK-admin1-region-of-prešov",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 53.9
+      },
+      {
+        "group": "Greek Catholic",
+        "pct": 22.68
+      },
+      {
+        "group": "Lutheran",
+        "pct": 11.04
+      },
+      {
+        "group": "Not stated",
+        "pct": 7.02
+      },
+      {
+        "group": "No religion",
+        "pct": 3.38
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.87
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.48
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.35
+      },
+      {
+        "group": "Reformed",
+        "pct": 0.11
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.06
+      },
+      {
+        "group": "Judaism",
+        "pct": 0.01
+      },
+      {
+        "group": "Latter-day Saints",
+        "pct": 0.0
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 84.25
+      },
+      {
+        "group": "Romani",
+        "pct": 9.04
+      },
+      {
+        "group": "Not stated",
+        "pct": 5.83
+      },
+      {
+        "group": "Rusyn",
+        "pct": 0.31
+      },
+      {
+        "group": "Czech",
+        "pct": 0.24
+      },
+      {
+        "group": "Other",
+        "pct": 0.11
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.1
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.05
+      },
+      {
+        "group": "Polish",
+        "pct": 0.03
+      },
+      {
+        "group": "Russian",
+        "pct": 0.02
+      },
+      {
+        "group": "German",
+        "pct": 0.01
+      },
+      {
+        "group": "Moravian",
+        "pct": 0.01
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.0
+      },
+      {
+        "group": "Jewish",
+        "pct": 0.0
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Vranov nad Topľou (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Vranov_nad_Top%C4%BEou_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2011), as the sk.wikipedia article 'Vranov nad Topľou (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Vranov_nad_Top%C4%BEou_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "parent_name": "Region of Prešov",
+    "country": "SVK",
+    "ethnicity_year": 2011,
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Vranov nad Topľou (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_year": 2011,
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Vranov nad Topľou (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+  },
+  {
+    "id": "SVK-admin2-district-of-zlatc-moravce",
+    "level": "admin2",
+    "name": "District of Zlatc Moravce",
+    "parent": "SVK-admin1-region-of-nitra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
+    },
+    "sources": [],
+    "parent_name": "Region of Nitra",
+    "country": "SVK"
+  },
+  {
+    "id": "SVK-admin2-district-of-zvolen",
+    "level": "admin2",
+    "name": "District of Zvolen",
+    "parent": "SVK-admin1-region-of-banská-bystrica",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'"
+    },
+    "sources": [],
+    "parent_name": "Region of Banská Bystrica",
+    "country": "SVK"
+  }
+]

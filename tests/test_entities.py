@@ -6612,10 +6612,19 @@ class ASurveyIsNotACount(unittest.TestCase):
                 self.assertIn("survey estimates, not", joined)
 
     def test_the_survey_ranks_below_every_census_adapter(self):
-        """A 40-respondent estimate must never overwrite a counted figure."""
+        """A 40-respondent estimate must never overwrite a counted figure.
+
+        One file may sit above these and only one: CLEAR Global's language
+        tabulation, which is not a study at all but a re-tabulation of other
+        people's -- several of them these very Afrobarometer rounds. Where
+        this map holds the original, the original must win, so that file
+        ranks below the survey and the survey still ranks below every count.
+        """
         survey = ["afrobarometer_r56.json", "afrobarometer_r8_language.json",
                   "afrobarometer_region.json"]
-        self.assertEqual(be.ADAPTER_FILES[:len(survey)], survey)
+        secondary = ["clear_global_language.json"]
+        head = be.ADAPTER_FILES[:len(secondary) + len(survey)]
+        self.assertEqual(head, secondary + survey)
 
     def test_the_rounds_run_oldest_first(self):
         """Each round fills what the newer ones are short of, never the reverse.
