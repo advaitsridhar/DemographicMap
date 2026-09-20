@@ -1,14 +1,14 @@
-  https://api.dhsprogram.com/rest/dhs/indicators?countryIds=PG&perPage=3000
-    2,154,253 chars
-    [eligio @1115654] ...NCHW","DenominatorWeightedId":"ML_NSRC_N_NUM","DenominatorUnweightedId":"ML_NSRC_N_UNW","IndicatorSpecial1Id":"ML_NSRC_N_DKM","IndicatorSpecial2Id":"","IndicatorTotalId":"ML_NSRC_N_TOT"},{"IndicatorId":"ML_NSRC_N_REL","IndicatorOldId":"","Label":"Net source: Religious institution","Definition":"Percentage of mosquito nets received from religious institution","Level1":"Malaria","Level2":"Source of mosquito nets","Level3":"Nets","IndicatorOrder":124687090,"NumberScale":1,"Denominator":"Mosquito nets","MeasurementType":"Per...
-    [eligio @1115733] ...C_N_UNW","IndicatorSpecial1Id":"ML_NSRC_N_DKM","IndicatorSpecial2Id":"","IndicatorTotalId":"ML_NSRC_N_TOT"},{"IndicatorId":"ML_NSRC_N_REL","IndicatorOldId":"","Label":"Net source: Religious institution","Definition":"Percentage of mosquito nets received from religious institution","Level1":"Malaria","Level2":"Source of mosquito nets","Level3":"Nets","IndicatorOrder":124687090,"NumberScale":1,"Denominator":"Mosquito nets","MeasurementType":"Percent","IndicatorType":"I","ShortName":"Religious institution","TagIds":"","IsQu...
-    [eligio @1115960] ... of mosquito nets received from religious institution","Level1":"Malaria","Level2":"Source of mosquito nets","Level3":"Nets","IndicatorOrder":124687090,"NumberScale":1,"Denominator":"Mosquito nets","MeasurementType":"Percent","IndicatorType":"I","ShortName":"Religious institution","TagIds":"","IsQuickStat":0,"QuickStatOrder":"","SDRID":"MLNSRCNREL","DenominatorWeightedId":"ML_NSRC_N_NUM","DenominatorUnweightedId":"ML_NSRC_N_UNW","IndicatorSpecial1Id":"ML_NSRC_N_DKM","IndicatorSpecial2Id":"","IndicatorTotalId":"ML_NSRC_N_...
-    [eligio @1650002] ...STPSWNEI","DenominatorWeightedId":"DV_STPS_W_NUM","DenominatorUnweightedId":"DV_STPS_W_UNW","IndicatorSpecial1Id":"","IndicatorSpecial2Id":"","IndicatorTotalId":""},{"IndicatorId":"DV_STPS_W_RLG","IndicatorOldId":"","Label":"Sought help to stop violence from religious leader","Definition":"Percentage of women who have experienced physical or sexual violence who sought help to stop violence from religious leader","Level1":"Domestic Violence","Level2":"Sources for help to stop the violence","Level3":"Women","IndicatorOrder...
-    [eligio @1650141] ..."","IndicatorTotalId":""},{"IndicatorId":"DV_STPS_W_RLG","IndicatorOldId":"","Label":"Sought help to stop violence from religious leader","Definition":"Percentage of women who have experienced physical or sexual violence who sought help to stop violence from religious leader","Level1":"Domestic Violence","Level2":"Sources for help to stop the violence","Level3":"Women","IndicatorOrder":198503070,"NumberScale":1,"Denominator":"Ever-married women or never married women who ever had an intimate partner who have ever experie...
-    [eligio @1650507] ...omen","IndicatorOrder":198503070,"NumberScale":1,"Denominator":"Ever-married women or never married women who ever had an intimate partner who have ever experienced any physical or sexual violence","MeasurementType":"Percent","IndicatorType":"I","ShortName":"Religious leader","TagIds":"","IsQuickStat":0,"QuickStatOrder":"","SDRID":"DVSTPSWRLG","DenominatorWeightedId":"DV_STPS_W_NUM","DenominatorUnweightedId":"DV_STPS_W_UNW","IndicatorSpecial1Id":"","IndicatorSpecial2Id":"","IndicatorTotalId":""},{"IndicatorId":"DV_STPS_W...
-  https://api.dhsprogram.com/rest/dhs/surveycharacteristics?countryIds=PG&perPage=300
-    1,820 chars
-    [eligio] not present
-  https://api.dhsprogram.com/rest/dhs/surveys?countryIds=PG
-    893 chars
-    [eligio] not present
+  https://www.nso.gov.pg/wp-sitemap.xml
+    800 chars
+    <?xml version="1.0" encoding="UTF-8"?>
+    <?xml-stylesheet type="text/xsl" href="https://www.nso.gov.pg/wp-sitemap-index.xsl" ?>
+    <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-posts-post-1.xml</loc></sitemap><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-posts-page-1.xml</loc></sitemap><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-posts-wpfd_file-1.xml</loc></sitemap><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-taxonomies-category-1.xml</loc></sitemap><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-taxonomies-post_tag-1.xml</loc></sitemap><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-taxonomies-wpfd-category-1.xml</loc></sitemap><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-users-1.xml</loc></sitemap></sitemapindex>
+    
+  https://www.nso.gov.pg/sitemap_index.xml
+    unreachable: HTTPError: HTTP Error 404: Not Found
+  https://www.nso.gov.pg/sitemap.xml
+    800 chars
+    <?xml version="1.0" encoding="UTF-8"?>
+    <?xml-stylesheet type="text/xsl" href="https://www.nso.gov.pg/wp-sitemap-index.xsl" ?>
+    <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-posts-post-1.xml</loc></sitemap><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-posts-page-1.xml</loc></sitemap><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-posts-wpfd_file-1.xml</loc></sitemap><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-taxonomies-category-1.xml</loc></sitemap><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-taxonomies-post_tag-1.xml</loc></sitemap><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-taxonomies-wpfd-category-1.xml</loc></sitemap><sitemap><loc>https://www.nso.gov.pg/wp-sitemap-users-1.xml</loc></sitemap></sitemapindex>
+    
