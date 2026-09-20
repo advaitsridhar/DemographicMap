@@ -1215,6 +1215,17 @@ RESIDUAL: frozenset[str] = frozenset({
     "Indigenous languages, n.o.s.", "Indigenous languages, n.i.e.",
     "indigenous languages", "other languages/dialects",
     "other traditional religions", "other Mozambican languages",
+    # Laos's two residuals, in the words its census and the Socio-Economic
+    # Atlas use for them. The religion one is the reason this set exists at
+    # all: the Lao census counts a religion only where it has written
+    # doctrines, so the animist beliefs of most non-Lao-Tai people are
+    # recorded there beside the people who stated nothing, and it is the
+    # largest row in nine provinces and half the districts. A map that
+    # answered "which religion is largest in Xiangkhouang" with it would be
+    # answering a question nobody was asked. Both are written in title case
+    # by the adapter, and this set is matched exactly, so the lower-case
+    # "other or not stated" above does not cover the ethnicity one.
+    "No religion or not stated", "Other or not stated",
 })
 
 

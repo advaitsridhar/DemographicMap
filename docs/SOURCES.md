@@ -4821,6 +4821,13 @@ gaps are different things, so each is one named row.
   non-answer, because colouring a third of Laos "no religion" would answer a
   question nobody was asked.
 
+Both residuals are named in `RESIDUAL` in `scripts/canonical_groups.py`, which
+is what stops either leading a unit. That is not a formality here: the
+religion residual is the largest row in nine of the 18 provinces and in half
+the districts — 53.5% of Xiangkhouang against Buddhism's 44.6% — so without it
+the map would have shaded a third of the country for the absence of an answer
+and called it the province's religion.
+
 **The one disagreement, and where it comes from.** Summed over the villages,
 the Lao category is **43.7%** of the country where the volume's Table 3.4
 prints the Lao ethnic group at **53.2%**. That is not an arithmetic error and

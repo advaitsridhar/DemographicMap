@@ -256,6 +256,22 @@ class Records(unittest.TestCase):
 
 
 class Placed(unittest.TestCase):
+    def test_both_residuals_are_known_to_be_residuals(self):
+        # "No religion or not stated" is the largest row in nine provinces and
+        # in half the districts, and it is partly the absence of an answer, so
+        # the map must not colour those units for it.
+        import canonical_groups as cg
+        for field, label in (("ethnicity", L.ETHNIC_RESIDUAL),
+                             ("religion", L.RELIGION_RESIDUAL)):
+            rows = [{"group": label, "pct": 60.0},
+                    {"group": "Lao" if field == "ethnicity" else "Buddhism",
+                     "pct": 40.0}]
+            counts = cg.canonicalise(rows, field)
+            self.assertTrue(cg.is_residual(label), f"{field}: {label}")
+            real = {k: v for k, v in counts.items() if not cg.is_residual(k)}
+            self.assertEqual(max(real, key=real.get),
+                             "Lao" if field == "ethnicity" else "Buddhism")
+
     def test_every_label_written_reaches_a_top_grouping(self):
         import group_tree
         for field, labels in (("ethnicity", [*L.ETHNICITY.values(), L.ETHNIC_RESIDUAL]),
