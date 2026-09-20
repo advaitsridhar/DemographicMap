@@ -76,6 +76,7 @@ That is 71 of 87 shapes filled and 16 left with a reason.
 Usage:
     python -m scripts.fetch_census.png
     python -m scripts.fetch_census.png --probe
+    python -m scripts.fetch_census.png --get https://example.org/x --terms religion
 """
 
 from __future__ import annotations
@@ -761,13 +762,72 @@ def probe() -> int:
     return 0
 
 
+def get(url: str, *, limit: int = 3000, find: str | None = None,
+        terms: list[str] | None = None, context: int = 200) -> str | None:
+    """Fetch one URL and print what was asked of it -- reconnaissance, no writes.
+
+    The same shape as ``mongolia.py``'s ``--get``: a URL, and either a regex
+    whose distinct matches are printed (a CDX listing, a sitemap), or a list of
+    words whose surroundings are printed (an API's JSON), or neither, in which
+    case the first ``limit`` characters are. An unreachable host prints its
+    exception and the next URL is still tried, because the reason a route is
+    closed is the product of the run.
+    """
+    try:
+        body = http_get(url, cache=False, retries=1, timeout=120,
+                        headers={"Accept": "application/json, text/xml, */*"})
+    except Exception as exc:            # noqa: BLE001 - the probe's product is the reason
+        log(f"  {url}\n    unreachable: {type(exc).__name__}: {exc}")
+        return None
+    text = body if isinstance(body, str) else body.decode("utf-8", "replace")
+    log(f"  {url}\n    {len(text):,} chars")
+    if find:
+        hits = sorted({m.group(0) for m in re.finditer(find, text)})
+        log(f"    {len(hits)} distinct match(es) for {find!r}")
+        for hit in hits[:300]:
+            log(f"      {hit}")
+    elif terms:
+        for term in terms:
+            seen = 0
+            at = text.find(term)
+            while at >= 0 and seen < 12:
+                lo, hi = max(0, at - context), min(len(text), at + len(term) + context)
+                log(f"    [{term} @{at}] ...{text[lo:hi]}...")
+                seen += 1
+                at = text.find(term, at + 1)
+            if not seen:
+                log(f"    [{term}] not present")
+    else:
+        log("    " + text[:limit].replace("\n", "\n    "))
+    return text
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--probe", action="store_true",
                     help="report what the two publications hold, and write nothing")
+    ap.add_argument("--get", action="append",
+                    help="fetch this URL and print what --find or --terms asks "
+                         "of it, writing nothing")
+    ap.add_argument("--find",
+                    help="with --get, print the distinct matches of this regex")
+    ap.add_argument("--terms",
+                    help="with --get, comma-separated words whose surroundings "
+                         "to print")
+    ap.add_argument("--context", type=int, default=200,
+                    help="with --get --terms, characters either side")
+    ap.add_argument("--bytes", type=int, default=3000,
+                    help="with --get and neither --find nor --terms, how much "
+                         "of the body to print")
     ap.add_argument("--out", default=None, help="write somewhere other than the default")
     args = ap.parse_args()
+    if args.get:
+        for url in args.get:
+            get(url, limit=args.bytes, find=args.find,
+                terms=args.terms.split(",") if args.terms else None,
+                context=args.context)
+        return 0
     if args.probe:
         return probe()
     log("png: the 2024 census head count and the 2011 census's provincial religion")
