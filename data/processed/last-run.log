@@ -1,12 +1,7 @@
-probe_hapi: describing the secret, not printing it
-  DEMOGRAPHIC_MAP: 54 characters
-    looks like the encode endpoint's whole JSON reply: False
-    wrapped in quotes: False
-    whitespace inside it: False
-    after normalising: 54 characters
-    decodes to 40 characters, with a colon: True, with an @: True, in two parts: 2
-    (the decoded text itself is not printed: it carries an email address and this log is committed)
-probe_hapi: 1 call(s); the app identifier is read from DEMOGRAPHIC_MAP and scrubbed from everything below
+probe_hapi: 2 call(s); the app identifier is read from DEMOGRAPHIC_MAP and scrubbed from everything below
   https://hapi.humdata.org/api/v2/metadata/dataset?limit=2
-    refused: HTTP 403 Forbidden: {"error":"Invalid app identifier"}
-
+    2 row(s)
+    dataset_hdx_id='008e23ea-9d98-482e-bc1e-555b32b44715', dataset_hdx_stub='cod-ps-tjk', dataset_hdx_title='Tajikistan - Subnational Population Statistics', hdx_provider_stub='unfpa', hdx_provider_name='UNFPA', hdx_link='https://data.humdata.org/dataset/008e23ea-9d98-482e-bc1e-555b32b44715', hdx_api_link='https://data.humdata.org/api/action/package_show?id=008e23ea-9d98-482e-bc1e-555b32b44715', provider_hdx_link='https://data.humdata.org/organization/unfpa', provider_hdx_api_link='https://data.humdata.org/api/action/organization_show?id=unfpa'
+    dataset_hdx_id='01679d5e-9cf1-45a4-a212-662a2309780c', dataset_hdx_stub='cod-ps-ago', dataset_hdx_title='Angola - Subnational Population Statistics', hdx_provider_stub='unfpa', hdx_provider_name='UNFPA', hdx_link='https://data.humdata.org/dataset/01679d5e-9cf1-45a4-a212-662a2309780c', hdx_api_link='https://data.humdata.org/api/action/package_show?id=01679d5e-9cf1-45a4-a212-662a2309780c', provider_hdx_link='https://data.humdata.org/organization/unfpa', provider_hdx_api_link='https://data.humdata.org/api/action/organization_show?id=unfpa'
+  https://hapi.humdata.org/api/v2/population-social/population?location_code=IDN&admin_level=2&limit=3
+    refused: HTTP 404 Not Found: {"detail":"Not Found"}
