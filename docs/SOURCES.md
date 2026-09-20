@@ -4893,6 +4893,143 @@ count at village level is the better answer and was reached first. The Atlas's
 2005 half was not read either: this project carries one vintage per unit, and
 2015 is the later one.
 
+### Brunei: two fields by district, a third asked and never printed
+
+Brunei's Department of Economic Planning and Statistics ran the sixth
+Population and Housing Census (Banci Penduduk dan Perumahan, **BPP 2021**)
+through 2021 and reported it in *Report of the Population and Housing Census
+(BPP) 2021: Demographic, Household and Housing Characteristics*, October 2022.
+The report itself is 94 pages of narrative and charts. The figures are in its
+three annexes, which DEPS publishes both as PDFs and as one workbook:
+
+| | |
+|---|---|
+| Workbook | `wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx` |
+| Report | `wp-content/uploads/2025/11/RPT-2.pdf` (40 MB) |
+| Annexes | `ANNEX-A.pdf`, `ANNEX-B.pdf`, `ANNEX-C.pdf` |
+| Questionnaire | `Q_BPP2021.pdf` |
+
+all under `https://deps.mofe.gov.bn/`. `scripts/fetch_census/brunei.py` reads
+the workbook; the host answers an ordinary verified client, no key and no
+archive involved.
+
+**Finding them took a detour worth recording.** Every link the department's own
+pages print for the 2021 census points into
+`deps.mofe.gov.bn/DEPD Documents Library/DOS/POP/2021/`, the SharePoint library
+the old site served, and every one of those paths now redirects to a 404: the
+census report, the annexes, the workbook and the questionnaire alike. The files
+are all still there under `wp-content/uploads/`, and what found them was the
+site's own WordPress media API — `wp-json/wp/v2/media?search=annex`,
+`?search=table`, `?search=BPP` — which lists the real `source_url` of every
+upload. `data.gov.bn` answers a TLS hostname mismatch (its certificate is not
+valid for `data.gov.bn`), which is where this would otherwise have gone first;
+`brucensus.gov.bn`, the census's own site, times out. HDX has 84 Brunei
+datasets and not one composition: World Bank indicator mirrors, WorldPop
+rasters, HOT OSM extracts, ADB key indicators.
+
+**Race and religion, by district.** Table **A3** is Population by Race,
+District and Sex and table **A4** is Population by Religion, District and Sex,
+both for 2021, and between them they fill all four districts:
+
+| | Brunei Muara | Belait | Tutong | Temburong | Brunei |
+|---|---:|---:|---:|---:|---:|
+| Population | 318,530 | 65,531 | 47,210 | 9,444 | 440,715 |
+| Malay | 69.9% | 50.7% | 74.7% | 60.5% | 67.4% |
+| Chinese | 9.0% | 16.9% | 4.9% | 2.4% | 9.6% |
+| Others | 21.1% | 32.4% | 20.4% | 37.1% | 23.0% |
+| Islam | 84.5% | 70.3% | 84.2% | 75.5% | 82.1% |
+| Christianity | 6.3% | 10.7% | 2.4% | 12.8% | 6.7% |
+| Buddhism | 6.1% | 11.0% | 2.3% | 1.1% | 6.3% |
+| Other, none, or not stated | 3.2% | 7.9% | 11.0% | 10.7% | 4.9% |
+
+**What the state's categories are.** Brunei's race question (E09) offers three
+groups, and "Malay" is an administrative category rather than an ethnonym. The
+report's own definition: a Brunei Malay is "the persons belonging to one of the
+following ethnic groups of the Malay race, namely Brunei, Tutong, Belait,
+Kedayan, Dusun, Bisaya or Murut", and the questionnaire numbers those seven
+beneath it. Their shares are published for the country and nowhere else —
+Melayu Brunei 82.1% of the Malay total, Melayu Tutong 5.9%, Melayu Kedayan
+5.6%, the other four under 5% each — so the district rows carry the state's
+three groups and nothing here splits Malay or renames it. This is the same kind
+of category as Singapore's CMIO and Malaysia's bumiputera, described in those
+sections: a classification the state makes and administers, not a summary of
+how people describe themselves. "Others" is the report's residual, "the rest of
+the population not included in the Malay and Chinese racial groups"; in a
+country where 18.4% of those counted were temporary residents, it is largely
+foreign workers, and also the Malays of Malaysia and Indonesia, the Ibans, and
+everyone else.
+
+Religion (E10) offered Islam, Christianity, Buddhism, Hinduism and Others and
+the published table has four columns, because — the report says so plainly —
+"the other religions, unstated faiths and no religious beliefs were grouped
+into 'Others'". That welds a real answer to a non-answer, which this map's
+group tree has a place for: the bucket is carried as **Other, none, or not
+stated**, filed under "Not stated" beside the other labels that do the same,
+rather than as "Other religions", which would count the irreligious as
+adherents of something. Islam is the state religion, and at 82.1% nationally it
+leads every district.
+
+**The mukims carry a head count and a stated gap.** The map draws 38 mukims for
+Brunei and all 38 now have the census's population, from table **C1**,
+Population by Mukim, Residential Status and Sex. None has a composition, and
+that is what the annexes publish rather than what this reader managed:
+
+* **Annex A**, twelve tables, crosses race and religion with district, age and
+  residential status. Nothing below the district.
+* **Annex B**, sixteen tables, gives total population, households and occupied
+  living quarters by district, by mukim and by kampung. No composition of any
+  kind.
+* **Annex C**, ten tables, gives mukim and kampung by residential status and by
+  age group. Again no composition.
+
+So each mukim's `ethnicity` and `religion` say what the census counted there
+and which three annexes were read to establish that it counts no more.
+
+**Language is asked and never tabulated**, which is the Nigeria case above
+rather than the Bhutan one, and the difference is the whole point of the
+distinction. The BPP 2021 questionnaire has two language questions: **E26**,
+"Language(s) that you can read and write", marked *all that apply* — a set of
+overlapping proficiencies, not a composition — and **E27**, "Language mainly
+spoken at home", marked *only one that applies*, which is exactly a
+composition. Neither is reported. No table in any of the 38 in Annexes A, B and
+C has a language column, and the report's Concepts and Definitions defines
+race, religion, marital status, country of birth and nationality and says
+nothing about language. So Brunei is **not** in `NOT_COLLECTED_POLICY`: every
+Bruneian record carries `not_available` with that reason, because the census
+did ask and the answer was not printed.
+
+**Self-checks, and what they found.** The workbook's national column is checked
+against the figures the report prints in prose in its Executive Summary and
+chapter 1 — 297,016 Malays, 42,132 Chinese, 101,567 Others; 362,035 Muslims,
+29,462 Christians, 27,745 Buddhists, 21,473 Others; 440,715 people — which is a
+cross-check rather than a restatement, the two being different documents by the
+same office. Then each district's groups must sum to the district's own printed
+total, the four districts must sum to each national figure, the two tables must
+agree about how many people each district holds, and each district's mukims
+must sum to the district. All of them passed exactly, to the person, on the
+first run; nothing is rounded and nothing is derived. The percentages above are
+computed from those counts and match the Factbook figures already on Brunei's
+country row (Malay 67.4%, Muslim 82.1%), which is the same census reaching the
+map twice by different routes.
+
+**Two names, neither of them guessed.** geoBoundaries draws 38 mukims where the
+census counts 39, and the two differences are forced rather than chosen:
+
+* The census counts **Gadong A** and **Gadong B**; the boundary file draws one
+  **Gadong**. Brunei Muara has 18 census mukims and 17 shapes and every other
+  name matches outright, so the one shape is the two mukims. Their head counts
+  are added — 35,424 and 38,067 — and the record's note says so. Nothing else
+  in the file is summed.
+* The census writes **Bokok**; the boundary file writes **Bunkok**. Temburong
+  has five mukims in both and four of them are identical (Amo, Bangar, Batu
+  Apoi, Labu), so the fifth is one mukim under two spellings. It is declared as
+  an alias on the row, not left to a resemblance test, which would not have
+  made the match anyway.
+
+Brunei Muara is hyphenated in the boundary file and not in the census;
+"Brunei-Muara" is declared as an alias for the same reason. No join failed:
+4 districts and 38 mukims, every one reaching its shape.
+
 ### Thailand: a language table that cannot be a composition
 
 Thailand's National Statistical Office refuses this project from every host
