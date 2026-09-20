@@ -790,15 +790,15 @@
     "sources": [
       {
         "field": "ethnicity",
-        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2021), as the sk.wikipedia article 'Banská Štiavnica (okres)' transcribes it",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2023), as the sk.wikipedia article 'Banská Štiavnica (okres)' transcribes it",
         "url": "https://sk.wikipedia.org/wiki/Bansk%C3%A1_%C5%A0tiavnica_%28okres%29",
         "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Region of Banská Bystrica",
     "country": "SVK",
-    "ethnicity_year": 2021,
-    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the sk.wikipedia article 'Banská Štiavnica (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a population census, as the sk.wikipedia article 'Banská Štiavnica (okres)' transcribes and cites it. A census count."
   },
   {
     "id": "SVK-admin2-district-of-bansks-bystrica",
@@ -956,15 +956,15 @@
     "sources": [
       {
         "field": "ethnicity",
-        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2021), as the sk.wikipedia article 'Banská Bystrica (okres)' transcribes it",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2023), as the sk.wikipedia article 'Banská Bystrica (okres)' transcribes it",
         "url": "https://sk.wikipedia.org/wiki/Bansk%C3%A1_Bystrica_%28okres%29",
         "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Region of Banská Bystrica",
     "country": "SVK",
-    "ethnicity_year": 2021,
-    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the sk.wikipedia article 'Banská Bystrica (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+    "ethnicity_year": 2023,
+    "ethnicity_note": "Population by ethnicity for 2023 from a population census, as the sk.wikipedia article 'Banská Bystrica (okres)' transcribes and cites it. A census count."
   },
   {
     "id": "SVK-admin2-district-of-bardejov",
@@ -1542,13 +1542,40 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Hungarian",
+        "pct": 87.09
+      },
+      {
+        "group": "Slovak",
+        "pct": 11.31
+      },
+      {
+        "group": "Romani",
+        "pct": 0.63
+      },
+      {
+        "group": "Czech",
+        "pct": 0.62
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 0.35
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2022), as the sk.wikipedia article 'Dunajská Streda (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Dunajsk%C3%A1_Streda_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Region of Trnava",
-    "country": "SVK"
+    "country": "SVK",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Population by ethnicity for 2022 from a population census, as the sk.wikipedia article 'Dunajská Streda (okres)' transcribes and cites it. A census count."
   },
   {
     "id": "SVK-admin2-district-of-gala",
@@ -4642,13 +4669,32 @@
     "language": {
       "status": "not_available"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 74.0
+      },
+      {
+        "group": "Hungarian",
+        "pct": 24.49
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 1.51
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (2022), as the sk.wikipedia article 'Senec (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Senec_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Region of Bratislava",
-    "country": "SVK"
+    "country": "SVK",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Population by ethnicity for 2022 from a population census, as the sk.wikipedia article 'Senec (okres)' transcribes and cites it. A census count."
   },
   {
     "id": "SVK-admin2-district-of-senica",
