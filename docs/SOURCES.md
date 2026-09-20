@@ -5536,6 +5536,13 @@ seriousness:
    available."* Its population column (65,981,659) is a later figure again, so
    the language shares and the denominator are twenty years apart.
 
+That verdict is now the reader's rather than this note's: CLEAR Global's whole
+catalogue was measured in September 2026 (see *CLEAR Global: the main
+household language* below), and `scripts/fetch_census/clear_global.py` refuses
+`th_lang_admin1_v01.csv` on its header, printing the columns above as its
+reason. The publisher's 2025 rewrite is a real composition and reaches 47
+countries; Thailand is not one of them, because its file was not rewritten.
+
 The fourth point is the one that answers the original question. It is not only
 that `nso.go.th` will not serve this client: by the account of the people who
 compiled this dataset, Thailand has made census language data public **once**,
@@ -7331,6 +7338,164 @@ Two consequences are handled rather than hidden:
   map colours in as they arrive, with a counter saying how far along it is,
   because a map that stays blank until the last byte reads as broken too. The
   default stays "Follow zoom", so nobody pays that cost without asking for it.
+
+## CLEAR Global: the main household language, 47 countries at the first level
+
+CLEAR Global (formerly Translators without Borders) publishes **55 datasets**
+on HDX under the organization `clear` — one per country, each named
+`<country>-languages`, each with a CSV per administrative level. The
+organization page carries a uuid rather than a name, and CKAN's
+`package_search` filters on `organization:<name>`: given the uuid it answers
+"0 dataset(s)", which is indistinguishable from a publisher with nothing in
+it. `scripts/probe_hdx.py --org` resolves the uuid through
+`organization_show` first for that reason, and prints each dataset's licence
+on its own line.
+
+**HAPI does not serve any of this.** The Humanitarian API's v2 endpoint list —
+affected-people, climate/rainfall, coordination-context,
+food-security-nutrition-poverty, geography-infrastructure/baseline-population
+and metadata — has no language, religion or ethnicity endpoint at all. The
+app identifier in `DEMOGRAPHIC_MAP` opens the standardised API over a subset
+of HDX, and language is not in that subset. The route to these files is the
+CKAN catalogue at `data.humdata.org/api/3/action/`, which needs no
+credential.
+
+### What the files are
+
+The August 2025 release rewrote them into one long table per level:
+
+    location_code, location_name, location_level, language_code,
+    language_name, language_rank, proportion_value, reliability_score,
+    dataset_name, url, source, datetime_published, date_creation,
+    representivity_rating
+
+One row is one language in one unit, and `proportion_value` is its share of
+that unit's population. The catalogue's own description of what is measured
+is "the main language spoken in the household by proportion of the
+population". That is a composition, and it is exactly the thing this map had
+for no part of fourteen of these countries.
+
+**It is not CLEAR Global's own survey.** Each file names the study it was
+tabulated from, and they are of very different kinds:
+
+* an IPUMS International extract of a national census — Iraq's is the **1997**
+  census, Kyrgyzstan's the 2009, Ukraine's the 2001, Guatemala's the 2002;
+* a DHS or MICS round — Haiti's is the 2016-17 Standard DHS;
+* an Afrobarometer round — Angola's is Round 9;
+* a humanitarian needs assessment — Somalia's is the 2022 Joint Multi-Cluster
+  Needs Assessment, DRC's a 2016 exercise the publisher itself grades
+  "Non-representative/indicative survey".
+
+The catalogue's `methodology` says which, and for a survey
+`methodology_other` grades it: "Representative survey at 95% confidence level
+and a 10% margin of error, or better" against the indicative one. Every
+record written here carries the study's name, its source, its date, that
+grading and the licence, in `language_note` and in `sources`, because a
+census microdata extract and an indicative assessment cannot be read as the
+same claim and a file that presented them as one would be lying about both.
+
+**Where the original is already here, the original wins.**
+`clear_global_language.json` is the *first* entry in `ADAPTER_FILES`, below
+even Afrobarometer. Several of these files are re-tabulations of studies this
+map reads directly, and a secondary tabulation must never overwrite the
+thing it was tabulated from.
+
+### The licences, as the catalogue states them
+
+**49 of the 55 are open.** `"license_id": "cc-by-sa"`, `"license_title":
+"Creative Commons Attribution Share-Alike (CC BY-SA)"`, `"isopen": true`. All
+47 datasets actually read here are in that group, and the string above is
+written verbatim onto every record's `sources[].license` and repeated in its
+`language_note`.
+
+**Six are not**, and the catalogue is not uniform even in how it says so:
+
+| dataset | `license_other` |
+| --- | --- |
+| `cameroon-languages` | Creative Commons, Attribution, Non-commercial, Share-alike |
+| `colombia-languages` | Creative Commons, Attribution, Non-commercial, Share-alike |
+| `ecuador-languages` | Creative Commons, Attribution, Non-commercial, Share-alike |
+| `venezuela-languages` | Creative Commons, Attribution, Non-commercial, Share-alike |
+| `india-languages` | Creative Commons Attribution Non-commercial Share-alike (CC-BY-NC-SA-4.0) |
+| `nicaragua-indigenous-languages` | Creative Commons, Attribution, Non-commercial, Share-alike 4.0 |
+
+All six carry `"license_id": "hdx-other"`, `"license_title": "Other"` and
+`"isopen": false`. **None of them is used, and not because of the licence.**
+All six are the pre-2025 wide format and fail the header test below on their
+own contents. That the non-commercial six are exactly the files the shape
+test rejects is a fact about this publisher's history, not an assumption: the
+licence of every dataset is read from the catalogue on every run and logged,
+the way `cod-ps-idn` taught this project to.
+
+### What is refused, and why
+
+`scripts/fetch_census/clear_global.py` recognises a file by its **header**,
+never by its name or its date, and eight datasets are refused:
+
+* **Seven are the pre-2025 wide format**: Cameroon, Colombia, Ecuador, India,
+  Nicaragua, Venezuela and Thailand. Their columns are one per language plus
+  literacy and population, and they are independent indicators rather than
+  parts of a whole. Thailand's, printed by the run's own log, is
+  `admin1_name;admin1_pcode;admin0_name;admin0_pcode;number_of_named_languages;main_language;main_language_share;Thai;Other;pop_total;...;data_confidence;notes`
+  — two language columns, Bangkok reading Thai 0.997 and Other 0.036, which is
+  103.3% of a city. The Thailand section above measured that in detail; the
+  reader now reaches the same verdict from the file rather than from a note.
+* **One has no first-level file at all**: `drc-languages`, the 2020 entry
+  superseded by `democratic-republic-of-the-congo-languages`, ships admin2
+  only.
+
+Within a file, three further rules, each of which drops a unit and says so in
+the log:
+
+* **A unit whose languages do not add to 1** (within 0.02) is dropped, and a
+  country where more than a fifth of its units fail that is not read at all.
+  This is the test that would catch a wide-format file even if its header
+  changed.
+* **A country whose units all carry the identical composition is refused.**
+  Haiti came within one row of it: seven of its ten regions read Haitian
+  100.0% and nothing else. Three do not, so Haiti is written — but had all ten
+  matched, the file would be a national figure copied down the column, which
+  is the fault that sank Egypt's language, and no amount of provenance makes
+  a constant into a measurement.
+* **A unit the file declines to name is dropped**, never matched to something
+  that resembles it. DHS-derived files carry rows like `west: level 2 unknown`
+  and `sudan: level 1 unknown`, meaning the study could not place some of its
+  respondents. That is ordinary, and it is counted separately from the
+  arithmetic failures: counting Sudan's one unnamed row among its broken ones
+  made a third of the country look broken and threw away two states that were
+  fine.
+
+A language whose share rounds to less than 0.05% is not written, so a unit's
+shares can add to slightly under 100 and the panel says which share of the
+population the record describes.
+
+### Admin 1 only, and why not admin 2
+
+The files carry admin2 rows too — Somalia 217 of them, Kyrgyzstan 627 — and
+this map would take them. They are not read, because **the table has no
+parent column.** The only route from a district to its region is the P-code
+prefix, and that is an inference, not a reading: Somalia's `SO2301` does sit
+under `SO23` and Iraq's `IQG15Q05` under `IQG15`, but Kyrgyzstan's
+first-level codes are zero-padded to thirteen characters
+(`KG06000000000`) where its districts are not (`KG06246000000`), so no one
+prefix rule holds across the publisher. A mis-parented district is an
+invisible error; a missing one is a visible gap. The districts wait for a
+pass that can establish the parent from a P-code register rather than guess
+it.
+
+### What landed
+
+**662 first-level units in 47 countries.** Fourteen of them had **no language
+at any level** on this map before: Armenia (11), Belarus (6), Bolivia (9),
+Cambodia (25), DR Congo (25), El Salvador (14), Guatemala (22), Haiti (10),
+Indonesia (33), Iraq (15), Kyrgyzstan (8), Paraguay (15), Philippines (17)
+and Somalia (17) — 227 units. The other 33 countries already carry language
+from Afrobarometer or from their own census, and there this file fills only a
+region those sources are short of, because it ranks below them.
+
+Indonesia is the one worth naming: 33 provinces, from the 2010 census through
+IPUMS, on a map that had religion for all 514 regencies and language for
+none of them.
 
 ## Collection policy
 
