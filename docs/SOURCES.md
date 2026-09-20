@@ -4733,6 +4733,165 @@ leads no unit anywhere, so nothing is drawn in the unclassified colour for it;
 asserting a family for it would be a guess with nothing behind it, and this
 entry would rather carry one unplaced label than one invented classification.
 
+### Lao PDR: a census published only for the country, and its own village file
+
+Laos carried nothing below the country: 18 provinces and 148 districts, every
+one of them a bare `not_available` on all three fields, while the country row
+had the Factbook's figures — which for Laos are the 2015 census's, Lao 53.2%
+and Buddhist 64.7%.
+
+**What the results volume publishes, and what it does not.** The 4th
+Population and Housing Census was taken in March 2015 under Prime Ministerial
+Decree 89/PM; its questionnaire ran to 63 questions in 10 parts, and two of
+them were ethnicity (the 49 officially recognised groups) and religion. The
+Lao Statistics Bureau's English results volume, *Results of Population and
+Housing Census 2015* (282 pages), is not on `lsb.gov.la` — which serves a
+WordPress home page in Lao with no file links and answers 404 to
+`/wp-json/wp/v2/media` — but is on UNFPA Laos, the census's technical partner,
+at `lao.unfpa.org/sites/default/files/pub-pdf/PHC-ENG-FNAL-WEB_0.pdf`, 5.3 MB.
+Reading it settles the question the country row raises:
+
+| Table | Breakdown | Page |
+| --- | --- | --- |
+| 3.4 | Population by ethnic group — Lao 3,427,665 (53.2%), Khmou, Hmong, … | 37 |
+| 3.5 | Population by religion — Buddhist 4,201,993 (64.7%), Christian, … | 37 |
+| P2.7 | Total Lao citizen population by sex and **ethnicity**, all 49 groups | 121-122 |
+| P2.9 | Total population by sex and **religion**, six categories | 123 |
+
+All four are national. The volume's other appendix tables do cross province —
+with age, migration, literacy, schooling, economic activity, disability and
+housing, thirty of them — and not once with ethnicity or religion. So the
+first reading of Laos is the one Viet Nam's entry describes for its English
+volume: collected, and published for the country only.
+
+**The route that answers.** `scripts/fetch_census/laos.py --probe` asked the
+other places such a table might be, and the log of each is committed on the
+branch. `laosis.lsb.gov.la`, the Bureau's statistics portal, fails
+verification with *unable to get local issuer certificate* and then, with the
+intermediate its server omits supplied from the certificate's own AIA
+extension, with *DH_KEY_TOO_SMALL* — a handshake no current client will
+complete, and not something to be worked around. `decide.la` serves a
+certificate that is not valid for its own hostname. HDX has WorldPop rasters,
+the World Bank's indicator series and UNICEF's equity analysis, and no
+composition. What answers is **Open Development Laos**, the CKAN portal that
+carries LSB's own releases: the national open-data portal this project has
+learned to try early, the way Singapore was solved after `singstat.gov.sg`
+answered 403.
+
+Its dataset `lao-population-and-housing-census-2015-general-demographic` is
+the census's **village indicator table**: one row for each of 8,499 villages,
+75 columns, 4.5 MB, with a `Meta` sheet that names every column in Lao and
+English and gives the source as "Lao Population and Housing Census 2015" and
+the data owner as the Lao Statistics Bureau. Beside the province, district and
+village names in both scripts and the village's total population, it carries
+ten ethno-linguistic categories and five religions, each as a percentage of
+that village's people:
+
+* `u_eth_cat_lao_pct` … `u_eth_cat_mien_pct` — Lao, Tai-Thay, Khmuic,
+  Palaungic, Katuic, Bahnaric-Khmer, Vietic, Tibeto-Burman, Hmong, Mien;
+* `u_pop_buddhist_pct`, `u_pop_christian_pct`, `u_pop_bahai_pct`,
+  `u_pop_muslim_pct`, `u_pop_religion_other_pct`.
+
+**How it is read.** A percentage of a village is turned back into people by
+that village's own published population — the one figure in the table that is
+a count — and those counts are summed over the villages of each district and
+each province, the shares then recomputed against the unit's total and
+re-rounded by largest remainder so every unit adds to exactly 100. The sex
+ratio is handled the same way and for the same reason: a village's ratio is
+men per hundred women, so its two halves follow from it and the population,
+and the halves are summed rather than the ratios averaged.
+
+**What the residual holds.** Neither set of columns reaches 100, and the two
+gaps are different things, so each is one named row.
+
+* `Other or not stated` — what the ten categories leave. Nationally 1.8%,
+  against the volume's 1.2% "other and not stated" plus 0.7% foreign
+  population.
+* `No religion or not stated` — what the five religions leave, 33.3%
+  nationally. This one is a third of the country and needs its sentence: the
+  census counts a religion only where it has written doctrines, so the animist
+  beliefs of most non-Lao-Tai people — the *Satsana Phi*, the "religion of
+  spirits" — are not among the five and are recorded here, beside the 1.8% who
+  stated nothing. The census publishes 31.4% "no religion" and 1.8% "not
+  stated" for the country, which is this row's 33.3% to a tenth. The label is
+  the Socio-Economic Atlas's own wording for it, and the group tree files it
+  under "Not stated", beside the other labels that weld a real answer to a
+  non-answer, because colouring a third of Laos "no religion" would answer a
+  question nobody was asked.
+
+**The one disagreement, and where it comes from.** Summed over the villages,
+the Lao category is **43.7%** of the country where the volume's Table 3.4
+prints the Lao ethnic group at **53.2%**. That is not an arithmetic error and
+it was worth chasing: the ten categories are defined in Table 1 of the
+*Socio-Economic Atlas of the Lao PDR 2015* (LSB with the Centre for
+Development and Environment of the University of Bern, 123 pages, on the same
+portal), which is the publication this village table underlies, and its
+"Tai-Thay" category is *Phou Thay; Tai; Nyouan; Lue; Yang; Sek; Tai Neua; and
+Lao in Huaphanh, Xiengkhuang, Borikhamxay, Vientiane province and Hinboun
+district of Khammuane*. The Lao of those five areas are counted as Tai-Thay,
+which is the missing 9.5 points exactly; Lao 43.7% plus Tai-Thay 18.3% is the
+volume's Lao-Tai family, 62.4%. So the adapter checks at the family level, and
+logs both figures on every run so the difference stays on the record. Every
+row's note says it too, because a reader who knows the Factbook's "Lao 53.2%"
+would otherwise read the map as contradicting it.
+
+**The checks, each of which refuses the run rather than writing.** The 8,499
+villages add to 6,481,625 people, 0.16% under the census's published
+6,492,228 — the table is the household population and the census total
+includes the institutional one. The sex ratio comes to 995.7 females per 1,000
+males against the published 994.7 (3,237,458 women to 3,254,770 men); that
+check is also what would catch the workbook's ratio being the other way up,
+since a reversed reading gives 1,005.3 and fails. The four ethno-linguistic
+families come to Lao-Tai 62.0, Mon-Khmer 23.6, Hmong-Mien 9.7 and
+Chinese-Tibetan 2.9 against the volume's summary page 62.4 / 23.7 / 9.7 / 2.9;
+religion to Buddhist 64.7, Christian 1.7 and the residual 33.3 against 64.7 /
+1.7 / 33.2. Every province must be read, and the districts may not hold more
+people than their provinces do.
+
+**Names.** The record carries the boundary file's own spelling, because the
+boundary file's 148 district names are the list a census name is placed
+against — a match is an identity, not a nearest neighbour. Seventeen of the 18
+province names agree after the diacritics are folded away; the workbook writes
+Xaignabouli as "Xaignabouly". The two Vientianes are settled by a table of
+their own and by nothing loose: the capital is recognised by its qualifier,
+only a bare "Vientiane" is the province, and any other label beginning with
+the word is refused. That is not caution for its own sake —
+`scripts/build_entities.py` records the time Vientiane took Vientiane
+Province's 388,833 people over the prefecture's, which is the mis-match this
+project ranks below a gap. Seven district names romanise differently in the
+two files: Houaphan's Hiem/Huim, Kuan/Kuane and Xon/Sone, Khammouane's
+Nakay/Nakai, Phongsaly's Boontay/Boontai, Xiangkhouang's Mork/Morkmay and
+Phookood/Phoukoud. Each is declared as an alias rather than matched loosely,
+and each is an identity rather than a guess: in every one of those four
+provinces the number of census names the fold could not place equals the
+number of shapes left without a village, so the correspondence is forced.
+
+**What is written.** `data/processed/laos_province.json` (18 provinces) and
+`laos_district.json` (148 districts), each row with population, sex ratio, an
+ethnicity composition and a religion composition, all `_year` 2015. Every one
+of the 148 district shapes is filled. The leading category is Lao in seven
+provinces — 90.1% of Vientiane Capital, 84.7% of Champasak — Tai-Thay in four,
+Khmuic in three (59.1% of Oudomxay), Bahnaric-Khmer in Attapeu and Xekong,
+Tibeto-Burman in Luang Namtha and Phongsaly, and Hmong in Xaisomboun. Nine of
+the ten categories are placed in the ethnicity tree under "Mainland Southeast
+Asian peoples" and the tenth, Tibeto-Burman, under "Himalayan and
+Tibeto-Burman peoples" beside the Akha and Lahu it is made of; each is named
+there rather than left to the word rules, which read "Tai-Thay" through "Tai"
+and "Bahnaric-Khmer" through "Khmer" — right by luck — and reach Khmuic,
+Palaungic, Katuic and Vietic not at all.
+
+**Language is declared rather than left blank.** See *Laos: 282 pages, and no
+language question* under Collection policy.
+
+**What was measured and left.** The 5th Population and Housing Census was
+taken in 2025 and UNFPA Laos has published six briefs about it; no results
+volume and no table of either field has appeared, so 2015 remains the census
+on the map. The Lao Social Indicator Survey II (2017) and III (2023) are the
+MICS rounds and both tabulate by province; neither was read, because a census
+count at village level is the better answer and was reached first. The Atlas's
+2005 half was not read either: this project carries one vintage per unit, and
+2015 is the later one.
+
 ### Thailand: a language table that cannot be a composition
 
 Thailand's National Statistical Office refuses this project from every host
@@ -6444,6 +6603,40 @@ the Wikipedia transcriptions above, ended in declarations rather than files:
   and the survey that does not exist* below.
 * **Venezuela** -- the 2011 census asked indigenous and Afro-descendant
   self-recognition and not religion; `not_collected` for religion only.
+
+### Laos: 282 pages, and no language question
+
+Laos's 2015 census asked ethnicity and religion, and the map carries both for
+all 18 provinces and all 148 districts (see *Lao PDR: a census published only
+for the country, and its own village file*). The third field is declared
+`not_collected` rather than left blank, and the declaration is measured the
+way Bhutan's was — against the census's own output rather than against an
+empty response.
+
+* The English results volume runs 282 pages. The words **"mother tongue"
+  appear on none of them.** "Language" appears on six, and every occurrence is
+  prose: the content and language of the questionnaire being tested, the
+  enumerators recruited for their ethnic language skills so they could work in
+  ethnic communities, the similarity of language and culture that sends Lao
+  migrants to Thailand, and the compound "ethno-linguistic".
+* None of the volume's tables is a language table. Its Appendix 1 lists them
+  all, and they cross province with age, migration, literacy, schooling,
+  economic activity, disability and housing.
+* The village indicator table the provinces and districts are read from
+  carries 68 indicators for each of 8,499 villages, ethno-linguistic category
+  and religion among them, and no language variable.
+* The *Socio-Economic Atlas of the Lao PDR 2015*, the census's own thematic
+  atlas of 131 maps, has a section F "Ethnicity and Religion" — families,
+  categories, religions — and no language map.
+
+The obvious objection is the ethno-linguistic categorisation itself, and the
+Atlas answers it in as many words: the term "indicates a categorization based
+on a common ethnicity through self-identification mainly based on language".
+It is an ethnicity answer sorted by linguists after the fact, not a language
+anybody was asked to speak, and this map publishes it on the ethnicity field
+for that reason. Publishing it a second time as language would be the
+mis-match this project ranks below a gap — Pakistan's ethnicity row, in the
+mirror.
 
 ### The Maldives: one question about who you are, and its answer is a passport
 
