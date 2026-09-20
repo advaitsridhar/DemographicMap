@@ -285,9 +285,24 @@ DISTRICTS: dict[str, tuple[str, ...]] = {
     ),
 }
 # The workbook's spelling, folded, -> the boundary file's, inside one
-# province. Filled from what a run logged as unplaced, never from a guess
-# about which shape a name is nearest to.
-DISTRICT_ALIASES: dict[tuple[str, str], str] = {}
+# province. Seven of the 148 names romanise differently in the two files, and
+# each of these seven is an identity rather than a nearest match: in every one
+# of the four provinces concerned, the number of census names the fold could
+# not place equals the number of shapes left without a village, and each pair
+# is one Lao name written two ways -- Houaphan's Hiem/Huim, Kuan/Kuane and
+# Xon/Sone, Khammouane's Nakay/Nakai, Phongsaly's Boontay/Boontai, and
+# Xiangkhouang's Mork/Morkmay and Phookood/Phoukoud. Nothing here is a guess
+# about which shape a name is nearest to; a name with no such one-to-one
+# answer stays unplaced and is logged.
+DISTRICT_ALIASES: dict[tuple[str, str], str] = {
+    ("Houaphan", "huim"): "Hiem",
+    ("Houaphan", "kuane"): "Kuan",
+    ("Houaphan", "sone"): "Xon",
+    ("Khammouane", "nakai"): "Nakay",
+    ("Phongsaly", "boontai"): "Boontay",
+    ("Xiangkhouang", "morkmay"): "Mork",
+    ("Xiangkhouang", "phoukoud"): "Phookood",
+}
 # Words a district name may carry and a shape name does not.
 DISTRICT_NOISE = re.compile(r"\b(district|muang|city|municipality)\b", re.IGNORECASE)
 
