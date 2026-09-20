@@ -7,9 +7,17 @@ the whole article into a runner log to find out is wasteful, so this prints
 each table's rows with links, refs and styling stripped, one row per line,
 cells separated by " | ", and only the first N rows of each.
 
+A census table by region is often transcribed in the country's own Wikipedia
+long before the English one, and sometimes only there, so the language edition
+is an argument: ``--lang ro`` reads ro.wikipedia.org. ``--infobox`` prints the
+first infobox's parameters instead of the tables, which is where a European
+unit's article usually keeps whatever composition it has.
+
 Usage:
     python -m scripts.probe_wikitable "Religion in Cambodia" --rows 40
     python -m scripts.probe_wikitable "Religion in Kazakhstan" --table 1 --rows 60
+    python -m scripts.probe_wikitable --lang ro "Adamclisi, Constanta" --rows 40
+    python -m scripts.probe_wikitable --lang bg --infobox "Област Благоевград"
 """
 
 from __future__ import annotations
@@ -23,7 +31,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import http_json, log  # noqa: E402
 
-API = "https://en.wikipedia.org/w/api.php"
+API = "https://{lang}.wikipedia.org/w/api.php"
 LINK = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]*))?\]\]")
 REF = re.compile(r"<ref[^>]*/>|<ref[^>]*>.*?</ref>", re.S)
 TEMPLATE = re.compile(r"\{\{[^{}]*\}\}")
@@ -39,6 +47,34 @@ def plain(cell: str) -> str:
     cell = TAG.sub(" ", cell).replace("'''", "").replace("''", "")
     cell = ATTR.sub("", cell.strip())
     return " ".join(cell.split())
+
+
+def infobox_lines(wikitext: str) -> list[str]:
+    """Top-level ``| key = value`` entries of the article's first infobox.
+
+    A value runs until the next top-level parameter, so a multi-line list of
+    faiths comes back as one entry.
+    """
+    out: list[str] = []
+    depth = 0
+    current: list[str] | None = None
+    for line in wikitext.split("\n"):
+        opened = line.count("{{")
+        closed = line.count("}}")
+        if depth == 1 and line.lstrip().startswith("|") and "=" in line:
+            if current is not None:
+                out.append("\n".join(current))
+            current = [line]
+        elif current is not None and depth >= 1:
+            current.append(line)
+        depth += opened - closed
+        if depth <= 0 and current is not None:
+            out.append("\n".join(current))
+            current = None
+            depth = 0
+            if out:
+                break
+    return out
 
 
 def tables(wikitext: str) -> list[list[list[str]]]:
@@ -79,6 +115,9 @@ def main() -> int:
     ap.add_argument("--rows", type=int, default=30)
     ap.add_argument("--table", type=int, default=0, help="1-based; 0 means every table")
     ap.add_argument("--width", type=int, default=32, help="characters per cell")
+    ap.add_argument("--lang", default="en", help="Wikipedia language edition, e.g. ro, bg, sr")
+    ap.add_argument("--infobox", action="store_true",
+                    help="print the first infobox's parameters instead of the tables")
     args = ap.parse_args()
 
     for title in args.title:
@@ -89,12 +128,17 @@ def main() -> int:
 def show(title: str, args: argparse.Namespace) -> None:
     q = urllib.parse.urlencode({"action": "parse", "page": title, "prop": "wikitext",
                                 "format": "json", "formatversion": "2", "redirects": "1"})
-    data = http_json(f"{API}?{q}", timeout=90)
+    data = http_json(f"{API.format(lang=args.lang)}?{q}", timeout=90)
     parsed = data.get("parse") or {}
     wikitext = parsed.get("wikitext") or ""
     log(f"\n===== page: {parsed.get('title')!r}, {len(wikitext):,} bytes of wikitext")
     if not wikitext:
         log(f"  {data.get('error') or 'no wikitext'}")
+        return
+    if args.infobox:
+        for entry in infobox_lines(wikitext):
+            head, _, rest = entry.partition("=")
+            log(f"  {head.strip(' |')} = {' '.join(rest.split())[:args.width]}")
         return
     found = tables(wikitext)
     log(f"  {len(found)} table(s)")
