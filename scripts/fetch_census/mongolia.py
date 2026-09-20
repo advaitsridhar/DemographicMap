@@ -63,7 +63,8 @@ AGENT = "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)"
 CDX = ("http://web.archive.org/cdx/search/cdx?url=1212.mn&matchType=domain"
        "&output=text&limit=6000&fl=timestamp,original,length"
        "&filter=mimetype:application/pdf"
-       "&filter=original:.*(XAOCT|url=Khovd[.]pdf|url=Dundgovi[.]pdf|url=Khentii[.]pdf).*")
+       "&filter=original:.*(XAOCT|url=Khovd[.]pdf|url=Dundgovi[.]pdf|url=Khentii[.]pdf"
+       "|url=Census2020_Main_report_Eng[.]pdf).*")
 REPLAY = "https://web.archive.org/web/{timestamp}id_/{original}"
 
 # The 22 first-level units as site/data/admin1/MNG.json names them, and the
@@ -96,10 +97,18 @@ BOOKS: dict[str, str] = {
     "Övörkhangai": "Uvurkhangai_XAOCT_Negdsen_dun.pdf",
 }
 
-# A page is kept when it names one of these: ethnic group, religion, or the
-# sex ratio that heads the soum population tables.
+# A page of an aimag book is kept when it names one of these: ethnic group,
+# religion, or the sex ratio that heads the soum population tables.
 MARKERS = ("угсаа", "шашин", "шашны", "хүйсийн харьцаа", "хүйсийн харьцаагаар")
 MAX_PAGES = 70
+
+# The English national report, for Appendix Table 3.6 -- the percentage
+# distribution of each aimag's population by ethnicity, which is the one place
+# the census publishes an ethnic composition for all 22 first-level units at
+# once. Its pages are the ones naming that table.
+REPORT_EN = "Census2020_Main_report_Eng.pdf"
+REPORT_MARKERS = ("by ethnicity, and aimags", "continued table 3.6")
+REPORT_FILE = "national-report-en.txt"
 
 
 def key(aimag: str) -> str:
@@ -145,15 +154,15 @@ def captures() -> dict[str, list[tuple[str, str, int]]]:
     return found
 
 
-def keep_pages(blob: bytes) -> list[int]:
-    """The 1-based pages naming ethnic group, religion or the sex ratio."""
+def keep_pages(blob: bytes, markers: tuple[str, ...] = MARKERS) -> list[int]:
+    """The 1-based pages naming one of the markers."""
     import io                                        # noqa: PLC0415
     from pypdf import PdfReader                      # noqa: PLC0415
     reader = PdfReader(io.BytesIO(blob))
     out = []
     for number, page in enumerate(reader.pages, 1):
         text = (page.extract_text() or "").lower()
-        if any(marker in text for marker in MARKERS):
+        if any(marker in text for marker in markers):
             out.append(number)
     return out[:MAX_PAGES]
 
@@ -193,10 +202,12 @@ def fetch(only: list[str] | None = None) -> int:
     if missing:
         log(f"  ! no archived capture for {missing}")
     wrote = 0
-    for aimag, file in BOOKS.items():
+    for aimag, file in [("National report (English)", REPORT_EN), *BOOKS.items()]:
         if only and aimag not in only:
             continue
-        dest = RAW_DIR / f"{key(aimag)}.txt"
+        dest = (RAW_DIR / REPORT_FILE if file == REPORT_EN
+                else RAW_DIR / f"{key(aimag)}.txt")
+        markers = REPORT_MARKERS if file == REPORT_EN else MARKERS
         if dest.exists() and dest.stat().st_size > 2000 and not (only and aimag in only):
             log(f"  {aimag}: {dest.name} already read")
             wrote += 1
@@ -208,13 +219,13 @@ def fetch(only: list[str] | None = None) -> int:
                 blob = http_get(url, binary=True, cache=False, retries=4, timeout=900,
                                 headers={"Accept": "application/pdf,*/*"})
                 assert isinstance(blob, bytes)
-                numbers = keep_pages(blob)
+                numbers = keep_pages(blob, markers)
                 text = laid_out_pages(blob, numbers)
             except Exception as exc:                 # noqa: BLE001
                 log(f"    ! {type(exc).__name__}: {exc}")
                 continue
             if not numbers:
-                log("    ! no page of this capture names ethnic group or religion")
+                log("    ! no page of this capture names what is wanted")
                 continue
             header = (f"# {aimag}\n# {url}\n# archived {timestamp}, {size} bytes, "
                       f"pages kept: {numbers}\n")
@@ -224,7 +235,7 @@ def fetch(only: list[str] | None = None) -> int:
             break
         else:
             log(f"  ! {aimag}: no capture of {file} could be read")
-    log(f"  {wrote} of {len(BOOKS)} books in {RAW_DIR}")
+    log(f"  {wrote} of {len(BOOKS) + 1} files in {RAW_DIR}")
     return 0
 
 
