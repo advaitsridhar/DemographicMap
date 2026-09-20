@@ -36,9 +36,11 @@ them at exactly one mebibyte and a truncated PDF has no pages at all.
 the sex ratio, and writes them to ``data/raw/mongolia/``; the adapter reads
 those text files, so a build without network still runs and what was read is
 committed beside the code that read it. Rows are rebuilt from the glyphs'
-coordinates (as ``probe_pdf --layout`` does) because these books set their
-tables in two columns and a reader that takes pypdf's string order gets a
-page of figures followed by a page of labels.
+coordinates, and each word is written with the span it occupies the way
+``probe_pdf --boxes`` prints it: these books set their tables in two columns,
+so a reader that takes pypdf's string order gets a page of figures followed
+by a page of labels, and they write a thousands separator as a space, so
+only the gaps say whether "46 192 37 611" is two numbers or four.
 
 **The soum tables come in three shapes**, because 22 statistics departments
 wrote 22 books. Some print each soum's own composition in percentages, some
@@ -131,6 +133,9 @@ AIMAGS: dict[str, tuple[str, tuple[str, ...]]] = {
     "Govi-Altai": ("Govi-Altai", ("Govi-Altai_XAOCT_Negdsen%20dun.pdf",)),
     "Govisumber": ("Govisumber", ("Govisumber_XAOCT_Negdsen_dun.pdf",)),
     "Hovsgel": ("Khuvsgul", ("Khuvsgul_XAOCT_Negdsen_Dun.pdf",)),
+    # Khentii's 2020 book is not in the Archive: Khentii.pdf is that aimag's
+    # 2010 one and 18._Khentii.pdf, the only other candidate, names neither
+    # ethnic group nor religion on any of its pages.
     "Khentii": ("Khentii", ("18._Khentii.pdf", "Khentii.pdf")),
     "Khovd": ("Khovd", ("Khovd.pdf",)),
     "Orkhon": ("Orkhon", ("Orkhon_XAOCT_Negdsen_Dun.pdf",)),
@@ -565,11 +570,6 @@ def rows_in(line: str, width: int | None = None
         if values:
             out.append((label, values))
     return out
-
-
-def one_row(line: str) -> tuple[str, list[float | None]] | None:
-    rows = rows_in(line)
-    return rows[0] if rows else None
 
 
 def pages(text: str) -> list[list[str]]:

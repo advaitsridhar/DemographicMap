@@ -4958,8 +4958,10 @@ Two books are not under the XAOCT stem the other twenty share and were found
 by name: `dundgovi.pdf` and `Khentii.pdf`. `Khentii.pdf` turns out to be that
 aimag's **2010** book, typeset in a legacy Mongolian codepage that extracts as
 Latin-1 mojibake ("Õ¯Í ÀÌ, ÎÐÎÍ ÑÓÓÖÍÛ 2010 ÎÍÛ"); it is rejected by the
-test that a book must name 2020 somewhere, and no 2020 Khentii book is in the
-Archive under any name searched. `dundgovi.pdf` is 34 MB of scanned image
+test that a book must name 2020 somewhere. The only other Khentii candidate
+the Archive holds, `18._Khentii.pdf`, names neither ethnic group nor religion
+on any of its pages, so Khentii's 2020 book is not there under any name this
+project searched. `dundgovi.pdf` is 34 MB of scanned image
 with only its running heads in the text layer.
 
 `--fetch` keeps the pages of each book that name ethnic group, religion or
