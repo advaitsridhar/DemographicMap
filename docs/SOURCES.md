@@ -7841,7 +7841,10 @@ the Wikipedia transcriptions above, ended in declarations rather than files:
   standard client reads a page (`SSL: UNEXPECTED_EOF_WHILE_READING`, measured
   on the runner). Verification is not turned off for it. The country carries a
   `gap_reason` saying the data exists and is unreachable; ethnicity and
-  language were already declared not collected.
+  language were already declared not collected. The language declaration still
+  stands — no Iranian census has asked it — and eleven provinces carry a
+  figure from a research atlas instead, marked as one: see *Iran: language
+  from a research atlas, twelve provinces at a time* below.
 * **South Korea** -- the 2015 census asked religion and KOSIS publishes it by
   province, behind an API that needs a registered key; *Religion in South
   Korea* carries the national series only. Declared a gap at first; the
@@ -8954,3 +8957,301 @@ and leaves the directory traversable, and all thirty-six are in the repository.
   (96)** — the least populous county in each of those states. No reporting body
   had a congregation there. That is an absence of reported adherents, not a
   count of zero believers.
+
+## Iran: language from a research atlas, twelve provinces at a time
+
+Iran's census has never asked language. That declaration is in
+`NOT_COLLECTED_POLICY` and it is still true; nothing below changes it. What
+changed on 20 September 2026 is that the owner supplied twelve province files
+from the **Atlas of the Languages of Iran (ALI)**, and this map now carries a
+language figure for eleven provinces and 96 counties that is explicitly *not*
+a census: a linguist's field estimate, settlement by settlement, weighted up
+by population and labelled as an estimate on every record.
+
+### What ALI is
+
+ALI is a research atlas edited by Erik Anonby, Mortaza Taheri-Ardali et al.
+and published by the Geomatics and Cartographic Research Centre (GCRC) at
+Carleton University. Each province is a **separately authored, separately
+dated module**. For each settlement a named fieldworker records which
+languages are spoken and in what proportion — `Central Kurdish 100%`,
+`Turkic 80%; Southern Kurdish 20%`, `Khuzestāni Arabic 95%; Standard type
+Persian 5%`. Nobody was asked a question on a form; a linguist estimated what
+is spoken in a village.
+
+Row 1 of every file carries the licence, and it is reproduced here verbatim,
+on every record's source entry, and nowhere paraphrased:
+
+> (c) Atlas of the Languages of Iran (ALI) and Contributors, 2015-present.
+> Data are available under a CC BY (Attribution Only) licence.
+
+The files are committed under `data/raw/iran/` — 9 MB, CC BY, and un-ignored
+in `.gitignore` the way India's C-16 workbooks are. They were exported from
+the atlas's site by hand, one province at a time; `iranatlas.net` serves no
+file an adapter could ask for, so without them a clean checkout could not
+re-derive a single figure.
+
+### The twelve modules, each with its own date
+
+The years run from 2015 to 2024. There is no date for "ALI": a reader looking
+at Hormozgān is looking at a picture nine years older than Khuzestān's, and
+each record carries its own module's year, authors and URL from
+`data/raw/iran/ali_citations.json`. Publisher for all twelve: Ottawa: GCRC
+(Geomatics and Cartographic Research Centre), Carleton University. Series
+editors: Erik Anonby, Mortaza Taheri-Ardali, et al.
+
+| Province (ALI) | Year | Authors | Module |
+|---|---|---|---|
+| Chahār Mahāl va Bakhtiāri | 2015 | Taheri-Ardali, Mortaza, Erik Anonby, et al. | `language-distribution.chahar_mahal_va_bakhtiari` |
+| Hormozgān | 2015 | Mohebbi Bahmani, Hassan, Ali Rashidi, Erik Anonby, et al. | `language-distribution.hormozgan` |
+| Kordestān | 2016 | Mohammadirad, Masoud, Erik Anonby, et al. | `language-distribution.kordestan` |
+| Bushehr | 2017 | Nemati, Fatemeh, Shakiba Ghasemi, Erik Anonby, et al. | `language-distribution.bushehr` |
+| Ilām | 2017 | Gheitasi, Mojtaba, Erik Anonby, et al. | `language-distribution.ilam` |
+| Hamadān | 2021 | Izadi, Elham, Mehrdad Meshkinfam, Erik Anonby, et al. | `language-distribution.hamadan` |
+| Esfahān | 2022 | Talebi-Dastenaei, Mahnaz, Habib Borjian, Erik Anonby, et al. | `language-distribution.esfahan` |
+| Gilān | 2022 | Poshtvan, Hamideh, Erik Anonby, et al. | `language-distribution.gilan` |
+| Kermānshāh | 2022 | Fattahi, Mehdi, Erik Anonby, et al. | `language-distribution.kermanshah` |
+| Lorestān | 2023 | Taheri-Ardali, Mortaza, Erik Anonby, et al. | `language-distribution.lorestan` |
+| Khuzestān | 2024 | Bozorgmehr, Mansour, Erik Anonby, Nawal Bahrani, et al. | `language-distribution.khuzestan` |
+| Kohgiluyeh va Boyer Ahmad | 2024 | Bozorgmehr, Mansour, Erik Anonby, Mortaza Taheri-Ardali, et al. | `language-distribution.kohgiluyeh_va_boyer_ahmad` |
+
+All twelve are under `http://iranatlas.net/module/`, and the title in each
+case is *Language distribution in &lt;province&gt; Province, Iran*.
+
+**Publication and fieldwork are different events**, and each row says when the
+fieldwork was. Kordestān's module is 2016 and its rows cite field notes of
+2015; Kermānshāh's module is 2022 and every one of its rows cites field notes
+of 2017; Esfahān's is 2022 over rows citing 2007 to 2023. Where a tenth or
+more of a unit's weighted population sits behind notes taken three or more
+years before the module, the record's own method text says so.
+
+### The nesting rule, measured
+
+Each file is one table holding six kinds of row — a province row, shahrestan
+rows, bakhsh rows, city rows, dehestan rows and settlement rows — told apart
+by which name columns are filled. **They are nested, not siblings.** Summing
+every row in Kordestān's file gives 6,476,710 people in a province of
+1,493,645: the province row, the shahrestan rows and the bakhsh rows each
+account for the whole province again (1,493,645 apiece), and the dehestan rows
+account for its rural half a second time.
+
+The rule was established by measurement, not assumed. Across the nine files
+that fill their name columns (12,852 rows): **every one of the 11,900 rows
+carrying a `language_distribution_estimate` is a settlement row or a city
+row, and not one of the 948 province, shahrestan, bakhsh or dehestan rows
+carries one.** So:
+
+> A row contributes to a composition if and only if it carries a language
+> estimate.
+
+That rule needs no name columns, which matters: three of the twelve files
+(Khuzestān, Lorestān, Kohgiluyeh va Boyer Ahmad) and 493 rows of a fourth
+(Gilān) arrive with every column from `shahrestan_roman` downward left blank.
+The rule still reaches their settlements. What it cannot do there is say which
+shahrestan a settlement is in — so those three provinces get a province figure
+and **no county figures at all**, which is 46 of Iran's 431 county shapes left
+empty for a reason that is about the export rather than about the atlas.
+
+A weaker rule was tried first and rejected: "a row with coordinates, a local
+name or a language". It swept in 20 dehestan rows that carry a local name of
+their own — 248,696 people already counted in the settlements beneath them.
+
+### The weighting rule, tested rather than assumed
+
+A province's composition is its settlements' compositions weighted by how many
+people live in each, and the files give two census columns, 2011 and 2016,
+either of which may be blank. The rule is **weight by
+`population_2016_census` where there is one, by `population_2011_census`
+otherwise**, and it was tested before it was adopted:
+
+* Only Gilān's module carries 2016 figures at all — 2,411 rows of the 18,343
+  weighted rows in the whole set — so the two vintages meet in exactly one
+  province.
+* There the choice is immaterial and the fallback reaches the most people:
+  weighting Gilān on 2011 alone moves no group by more than 0.4 points and
+  covers 1,814,553 people; on 2016 alone, 1,820,106; on the rule as written,
+  1,850,164.
+
+**A settlement with a language and no population in either year cannot be
+weighted, and no weight is invented for it.** 2,809 of the 21,152 language
+rows are in that position. They are excluded, and every record says how many
+were excluded from it — 702 in Khuzestān, 467 in Esfahān, 396 in Lorestān, 62
+in Kordestān. Their own share of the population cannot be reported, because
+the figure that would report it is the one that is missing; what the record
+reports instead is the share of the unit's population the weighted rows do
+reach.
+
+### Coverage, and when a unit is a gap instead of a number
+
+For each unit the weighted population is measured against the unit's own
+total, taken in this order: the file's own aggregate row for that unit; then
+the population this map already holds for the shape (Wikidata, 2016), which is
+what Kohgiluyeh va Boyer Ahmad and Hamadān need, neither file carrying a
+province row; then the sum of the unit's own settlement and city rows, which
+agrees with the aggregate row within 2% in 83 of the 91 shahrestans that have
+both. A unit with no total at all would get no figure: a composition whose
+coverage cannot be measured is a claim about a population nobody counted.
+
+Below 60% the unit is left empty and says why. The threshold sits in an empty
+band, measured:
+
+| Province | Shape | Coverage | Weighted settlements | Largest group |
+|---|---|---:|---:|---|
+| Khuzestān | Khuzestan | 101.3% | 4,090 | Khuzestāni Arabic 33.7% |
+| Hamadān | Hamadan | 100.1% | 1,085 | Turkic 35.0% |
+| Kordestān | Kurdistan | 100.0% | 1,729 | Central Kurdish 78.7% |
+| Chahār Mahāl va Bakhtiāri | Chaharmahal and Bakhtiari | 99.8% | 797 | Bakhtiāri 58.2% |
+| Bushehr | Bushehr | 99.7% | 655 | Dashtesuni 21.9% |
+| Hormozgān | Hormozgan | 99.7% | 1,765 | Banderi of Bandar Abbās 19.8% |
+| Lorestān | Lorestan | 99.5% | 3,008 | Laki of Lorestan 27.9% |
+| Kohgiluyeh va Boyer Ahmad | Kohgiluyeh and Boyer-Ahmad | 99.4% | 1,660 | Boyerahmadi 39.4% |
+| Ilām | Ilam | 99.0% | 689 | Ēlāmi 33.7% |
+| Esfahān | Isfahan | 98.6% | 1,926 | Tehrāni type Persian 30.0% |
+| Gilān | Gilan | 73.1% | 2,618 | Standard type Persian 55.9% |
+| Kermānshāh | *left empty* | 18.6% | 792 | — |
+
+Nothing lands between 18.6% and 73.1%.
+
+**Kermānshāh is a gap with a stated reason.** Its module reaches five of the
+province's fourteen shahrestans — Eslām Ābād-e Gharb, Gilān-e Gharb, Dālāhu,
+Sar Pol-e Zahāb and Qasr-e Shirin — and 361,056 of its 1,945,227 people. The
+city of Kermanshah is not in the file at all. Those five counties carry
+figures; the province does not, because a provincial figure built on a fifth
+of the province would be a statement about somewhere else.
+
+Two counties are gaps for the same reason: **Rasht** (28.5% — the city of
+Rasht, 679,995 people, is refused below) and **Aran and Bidgol** (37.8% — the
+town of Ārān o Bidgol, 60,290 people, likewise).
+
+Khuzestān's 101.3% is the one figure above 100: the weighted settlements hold
+61,829 people more than the total the file's own province row prints. The
+atlas's settlement populations and its provincial total do not quite agree,
+neither was adjusted to the other, and the record says so.
+
+### Refusing a share string
+
+`language_distribution_estimate` parses as `<language> <number>%` joined by
+semicolons. 21,137 of the 21,152 rows parse and sum to exactly 100. The rest
+are not guessed at. Seven land between 100.001 and 100.5 — a rounding-scale
+language written on top of a partition that had already closed, such as
+Bandar-e Anzali's `Armenian 0.04%` — and are accepted and normalised. Eight
+are refused outright, and their people count against the unit's coverage so
+that a refusal shows as a smaller claim rather than as nothing:
+
+| Province | Place | People (2011) | Sums to | The string |
+|---|---|---:|---:|---|
+| Gilān | Rasht | 639,951 | 90.01% | `Standard type Persian 50%; Western Gilaki 30%; Turkic 10%; Armenian 0.01%` |
+| Esfahān | Ārān o Bidgol | 60,290 | 80% | `Kāshān area Persian 50%; Tehrāni type Persian 20%; Dehi of Kāshān 10%` |
+| Esfahān | Afus | 4,313 | 110% | `Esfahān Persian group 65%; Tehrāni type Persian 25%; Phereydnuli Georgian 10%; Khunsāri Persian 10%` |
+| Gilān | Siāh Bil-e Khoshābar | 423 | 90% | `Standard type Persian 60%; Central Tāleshi 25%; Turkic 5%` |
+| Hamadān | Sabz Ābād | 81 | 105% | `Standard type Persian 85%; Hamadan Province Persian 20%` |
+| Khuzestān | Āwān | 23 | 85% | `Standard type Persian 40%; Khuzestāni Arabic 35%; Amlei 10%` |
+| Esfahān | Tasfieh Khāneh-ye Āb-e Yazd | — | 90% | `Rudashti 49%; Esfahān Persian group 31%; Tehrāni type Persian 10%` |
+| Gilān | (unnamed) | — | 80% | `Southern Tāleshi 40%; Central Tāleshi 40%` |
+
+Normalising Rasht's 90% up to 100 would hand the missing tenth of a city of
+680,000 to Persian, Gilaki and Turkic in the proportions of the nine tenths
+that *were* estimated. That is a guess wearing a measurement's clothes, and
+the reason Gilān is published at 73.1% coverage with Rasht named in its note
+rather than at 100% with Rasht invented.
+
+`uninhabited 100%` is not a language and is excluded the same way: 338 rows,
+all in Gilān, 4,716 people between them by the 2011 column.
+
+### Romanisation, reconciled explicitly
+
+Names are reconciled by alias tables that can be read, never by matching on
+how alike two strings look. Diacritics are folded (`Gilān` → `Gilan`), which
+is transliteration; everything else is written down.
+
+Four provinces need an entry: `Esfahān` → Isfahan, `Kordestān` → Kurdistan,
+`Chahār Mahāl va Bakhtiāri` → Chaharmahal and Bakhtiari, `Kohgiluyeh va Boyer
+Ahmad` → Kohgiluyeh and Boyer-Ahmad. The other eight match on folding alone.
+
+At the second level, 79 of the 101 shahrestan names in these twelve files
+match a county shape on folding, and 22 need an alias — `Qorveh` → Ghorveh,
+`Dayyer` → Deyr, `Bashkard` → Bashagard, `Kabudrāhang` → Kabutarahang, nine of
+Esfahān's where the boundary file writes the Persian *o* as "and", and so on.
+Some boundary names carry a ` County` suffix (`Abdanan County`, `Mehran
+County`) and most do not; the suffix is folded away.
+
+Two shahrestans have no single shape and are left out rather than pushed onto
+a polygon that is not theirs:
+
+* **Abu Musā** (Hormozgān) — geoBoundaries draws no second-level shape for the
+  island; Hormozgan's twelve do not include it.
+* **Shirvān va Chardāvol** (Ilām) — the boundary file draws Chardavol and
+  Sirvan as two counties where ALI writes one, and there is no figure for
+  either apart.
+
+One more is a decision worth recording: Isfahan province has **two** shapes
+that fold to one name, `Isfahan` (a 0.2° polygon over the city) and `Isfahan
+County` (the 1.7° one around it). The shahrestan's figures go to the county.
+The city polygon is left empty, because a county's composition placed on the
+city inside it would be the mis-match that looks exactly like a right answer.
+
+Gilān writes one county two ways — `Rudsar` on 357 rows and `Rud Sar` on the
+town's own row. They are read as one unit; keeping them apart left Rudsar
+reading 73.6% covered when its settlements and its town together cover 99.4%.
+
+### What landed, and what it says
+
+**11 of Iran's 32 first-level shapes** and **96 of its 431 second-level
+shapes** carry a language figure. Every one is an `estimate` — a gap that
+carries a number — and its note says that nothing was read for the unit
+itself, that ALI is a research atlas's field estimates and that Iran's census
+does not ask language. 95 are `modelled`; 12 are `derived`, those being the
+units where the atlas's own total was available, every language row carried a
+population, nothing was refused and coverage reached 99% — eleven counties of
+Gilān and Sirik in Hormozgān.
+
+The counties by province: Isfahan 22, Gilan 15, Hormozgan 12, Kurdistan 10,
+Bushehr 9, Hamadan 9, Chaharmahal and Bakhtiari 7, Ilam 7, Kermanshah 5.
+
+Read against what is known of Iran, the figures hold up. Kordestān comes out
+78.7% Central Kurdish with Hōrāmi 7.8%, Southern Kurdish 7.3% and a Turkic
+4.1% concentrated in Bijār (28% there). Khuzestān is 33.7% Khuzestāni Arabic
+beside Persian 23.0% and Bakhtiāri 19.7%. Ilām is led by Ēlāmi, Lorestān by
+Laki and Northern Lori, Kohgiluyeh by Boyerahmadi, Chahār Mahāl by Bakhtiāri.
+
+**Gilān is the one that will surprise a reader, and it is the atlas's own
+reading.** ALI's Gilān module puts `Standard type Persian` ahead of Gilaki in
+almost every settlement: 60% against 40% in the commonest village string, 50%
+in Rasht, 70% in Lāhijān, Langerud, Rud Sar and Bandar-e Anzali. Rolled up,
+the province reads Standard type Persian 55.9% against 24% for the Gilaki
+varieties together (Western 11.8%, Eastern 9.2%, Gālesh 2.8%) and Tāleshi
+6.9%. That is what its authors recorded, settlement by settlement, and this
+map prints it rather than the expectation it contradicts.
+
+### What a roll-up cannot show
+
+Rounding a unit's composition to one decimal is this map's convention, and ALI
+records some languages at a hundredth of a percent of a single settlement.
+Judeo-Hamadāni is 0.001% of the city of Hamadān — five people, 0.0003% of the
+province. Judeo-Borujerdi is 0.01% of Vuriyerd; Jidi 0.005% of the city of
+Esfahān; Neo-Mandaic 0.0085% of Ahwāz; Armenian 0.01% of Rasht and 95% of
+Zarneh. All but the last are far below the 0.05% a share must reach to print
+as anything other than 0.0%, so they do not appear in these provincial
+figures. They are in the atlas's settlement files, which is where a reader who
+wants them should look. This is a property of rolling a composition up, not a
+judgement about the languages.
+
+One stray in the source is worth recording rather than silently cleaning:
+Morghdāri-ye Fadak in Borkhār, Esfahān, cites `field notes 2058`. The row
+carries no population, so it is excluded from the weighted sum in any case.
+
+### The nineteen provinces that are still empty
+
+ALI publishes province by province and has reached twelve of Iran's
+thirty-one. Alborz, Ardabil, East Azerbaijan, Fars, Golestan, Kerman, Markazi,
+Mazandaran, North Khorasan, Qazvin, Qom, Razavi Khorasan, Semnan, Sistan and
+Baluchestan, South Khorasan, Tehran, West Azerbaijan, Yazd and Zanjan carry no
+language figure, and the reason is not that anyone declined to publish: those
+modules do not exist yet. Iran's `gap_reason` says so, alongside the older
+fact that the 2016 census's religion tables are on a host that ends the TLS
+handshake before a standard client can read a page.
+
+Dropping another province's export into `data/raw/iran/` and adding its
+citation to `ali_citations.json` is all that is needed; the reader discovers
+files by glob and takes the province from the file's own `province_roman`
+column, so no code changes to add the thirteenth.
