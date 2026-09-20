@@ -1,135 +1,307 @@
-indonesia: ethnicity by province (2010 census) and religion by province and regency, read from the Indonesian Wikipedia
-    Aceh: no total row; the rows' sum 4,407,444 stands as the total
-    Banten: The article's 'Sunda' row folds the census's Bantenese, 4.66 million nationally, into Sundanese; the two are not separated here.
-    Central Kalimantan: The table's rows add to 2,214,365 against its printed total 2,207,367; the rows are the denominator.
-    East Kalimantan: The table's rows add to 2,971,205 against its printed total 2,971,203; the rows are the denominator.
-    East Nusa Tenggara: The article's 'asal Kalimantan' row, 14.5%, is carried in 'Other ethnic groups': no census of the province supports a Kalimantan share of that size.
-    Riau: The table's printed total, 6,407,842, is not the 2010 census population; its rows add to 5,499,561, which is, and are the denominator.
-    Riau Islands: no total row; the rows' sum 1,672,891 stands as the total
-    South Sumatra: The table's rows add to 7,485,042 against its printed total 7,434,042; the rows are the denominator.
-    Special Region of Yogyakarta: no total row; the rows' sum 3,451,008 stands as the total
-    West Java: The table's rows add to 42,922,426 against its printed total 42,982,865; the rows are the denominator.
-    West Kalimantan: The table's rows add to 4,385,356 against its printed total 4,397,162; the rows are the denominator.
-  national check: Javanese 95,107,968 across 32 provinces against the census's 95,217,022 (99.89%)
-    Sundanese: 41,161,964 read, 36,701,670 published (112.2%)
-    Batak: 8,446,015 read, 8,466,969 published (99.8%)
-    Madurese: 7,110,040 read, 7,179,356 published (99.0%)
-    Betawi: 6,742,910 read, 6,807,968 published (99.0%)
-    Minangkabau: 6,472,699 read, 6,462,713 published (100.2%)
-    Bantenese: 75,191 read, 4,657,784 published (1.6%)
-    Banjar: 4,075,509 read, 4,127,124 published (98.7%)
-    Balinese: 3,879,961 read, 3,946,416 published (98.3%)
-    Dayak: 3,012,300 read, 3,009,494 published (100.1%)
-    Sasak: 3,153,162 read, 3,173,127 published (99.4%)
-    Makassarese: 2,595,729 read, 2,672,590 published (97.1%)
-  provinces: 34; ethnicity on 32, religion on 32
-  hapi: 514 regency head counts available across 34 provinces, as a last resort
-    Kabupaten Bangka: the citation carries no year; not read
-    Kabupaten Banyuasin: the citation carries no year; not read
-    Kabupaten Banyuwangi: the head count carries no citation; not read
-    Kabupaten Barru: the head count carries no citation; not read
-    Kabupaten Belitung Timur: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
-    Kabupaten Bintan: the head count cites other, which does not publish one; not read
-    Kabupaten Boalemo: As printed the shares add to 101.0%, and are carried as printed.
-    Kabupaten Bolaang Mongondow: As printed the shares add to 102.0%, and are carried as printed.
-    Kabupaten Bolaang Mongondow Utara: As printed the shares add to 101.0%, and are carried as printed.
-    Kabupaten Bone Bolango: the head count carries no citation; not read
-    Kabupaten Flores Timur: no religion in the infobox
-    Kabupaten Garut: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
-    Kabupaten Grobogan: As printed the shares add to 100.8%, and are carried as printed.
-    Kabupaten Jember: As printed the shares add to 101.9%, and are carried as printed.
-    Kabupaten Jember: the head count carries no citation; not read
-    Kabupaten Karimun: the head count cites other, which does not publish one; not read
-    Kabupaten Kaur: the head count cites other, which does not publish one; not read
-    Kabupaten Kepulauan Anambas: the head count cites other, which does not publish one; not read
-    Kabupaten Kepulauan Meranti: religion figure carries no citation; not read
-    Kabupaten Kolaka Timur: the citation carries no year; not read
-    Kota Ambon: the head count carries no citation; not read
-    Kota Balikpapan: As printed the shares add to 101.1%, and are carried as printed.
-    Kota Bandar Lampung: the head count carries no citation; not read
-    Kota Banjar: the citation carries no year; not read
-    Kota Batam: the head count cites other, which does not publish one; not read
-    Kota Bekasi: the head count carries no citation; not read
-    Kota Bukittinggi: religion figure carries no citation; not read
-    Kota Cimahi: religion figure carries no citation; not read
-    Kota Denpasar: the head count cites other, which does not publish one; not read
-    Kota Depok: the head count carries no citation; not read
-    Kota Kupang: the citation carries no year; not read
-    Kota Lubuk Linggau: no head count in '245,287'; not read
-    Kota Pagar Alam: religion figure carries no citation; not read
-    Kota Palangka Raya: the citation carries no year; not read
-    Kota Pariaman: religion figure carries no citation; not read
-    Kota Payakumbuh: religion figure carries no citation; not read
-    Kota Pematangsiantar: religion figure carries no citation (named references ['agama'] defined nowhere); not read
-    Kota Prabumulih: religion figure carries no citation; not read
-    Kota Samarinda: the citation carries no year; not read
-    Kota Sawahlunto: religion figure carries no citation; not read
-    Kota Semarang: the citation carries no year; not read
-    Kota Tangerang Selatan: the citation carries no year; not read
-    Kota Tanjungpinang: the head count cites other, which does not publish one; not read
-    Kota Tidore Kepulauan: the citation carries no year; not read
-    Kota Tual: the head count carries no citation; not read
-    Kota Yogyakarta: the citation carries no year; not read
-    Kabupaten Lampung Utara: the citation carries no year; not read
-    Kabupaten Lebong: the citation carries no year; not read
-    Kabupaten Lingga: religion figure carries no citation (named references ['kepri'] defined nowhere); not read
-    Kabupaten Lumajang: religion figure carries no citation; not read
-    Kabupaten Luwu Utara: the citation carries no year; not read
-    Kabupaten Madiun: the head count carries no citation; not read
-    Kabupaten Pasangkayu: the citation carries no year; not read
-    Kabupaten Minahasa Utara: As printed the shares add to 103.0%, and are carried as printed.
-    Kabupaten Morowali Utara: religion figure carries no citation; not read
-    Kabupaten Muna: As printed the shares add to 101.8%, and are carried as printed.
-    Kabupaten Murung Raya: the head count carries no citation; not read
-    Kabupaten Musi Rawas: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
-    Kabupaten Natuna: the head count cites other, which does not publish one; not read
-    Kabupaten Ngawi: the citation carries no year; not read
-    Kabupaten Ogan Ilir: religion figure carries no citation; not read
-    Kabupaten Ogan Komering Ulu: religion figure carries no citation; not read
-    Kabupaten Pacitan: religion figure carries no citation; not read
-    Kabupaten Pangandaran: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
-    Kabupaten Pangkajene dan Kepulauan: the head count carries no citation; not read
-    Kabupaten Pasaman: religion figure carries no citation; not read
-    Kabupaten Pekalongan: the head count carries no citation; not read
-    Kabupaten Penukal Abab Lematang Ilir: the citation carries no year; not read
-    Kabupaten Pesawaran: the citation carries no year; not read
-    Kabupaten Pesisir Barat: religion figure carries no citation; not read
-    Kabupaten Pinrang: the citation carries no year; not read
-    Kabupaten Pohuwato: the citation carries no year; not read
-    Kabupaten Polewali Mandar: the head count carries no citation; not read
-    Kabupaten Ponorogo: the head count carries no citation; not read
-    Kabupaten Probolinggo: religion figure carries no citation (named references ['pas'] defined nowhere); not read
-    Kabupaten Sampang: religion figure carries no citation; not read
-    Kabupaten Sidenreng Rappang: the citation carries no year; not read
-    Kabupaten Sidoarjo: the citation carries no year; not read
-    Kabupaten Sijunjung: the head count carries no citation; not read
-    Kabupaten Soppeng: religion figure carries no citation; not read
-    Kabupaten Sukabumi: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
-    Kabupaten Takalar: no religion in the infobox
-    Kabupaten Tasikmalaya: the head count carries no citation; not read
-    Kabupaten Tegal: the head count carries no citation; not read
-    Kabupaten Tojo Una-Una: religion figure carries no citation; not read
-    Kabupaten Trenggalek: the head count carries no citation; not read
-    Kabupaten Tuban: the head count carries no citation; not read
-    Kabupaten Tulang Bawang: As printed the shares add to 101.5%, and are carried as printed.
-    Kabupaten Tulungagung: the head count carries no citation; not read
-    Kabupaten Wajo: the citation carries no year; not read
-    Kabupaten Wonogiri: The article's faiths add to 99.2%; the rest is carried as a remainder.
-    Kabupaten Wonogiri: the head count carries no citation; not read
-  regencies: 467 read from the infobox; by kind of source: bps 120, census2010 68, dukcapil 255, jakarta 1, kemenag 7, other 11
-  regencies with a head count: 431 of 467
-  5 shapes at this level are uninhabited features, not regencies, and say so: Danau, Danau Toba, Hutan, Waduk Cirata, Wadung Kedungombo
-  31 of those filled from HAPI instead -- a 2020 projection under a licence that is not open; see scripts/fetch_census/indonesia_hapi.py
-  the infobox does not answer for 51: Bangka-Belitung Islands/Bangka, Bangka-Belitung Islands/Belitung Timur, Banten/Kota Tangerang Selatan, Bengkulu/Lebong, Central Java/Kota Semarang, Central Kalimantan/Kota Palangka Raya, Central Sulawesi/Morowali Utara, Central Sulawesi/Tojo Una-Una, East Java/Lumajang, East Java/Ngawi, East Java/Pacitan, East Java/Probolinggo, East Java/Sampang, East Java/Sidoarjo, East Kalimantan/Kota Samarinda, East Nusa Tenggara/Flores Timur, East Nusa Tenggara/Kota Kupang, Gorontalo/Pohuwato, Lampung/Lampung Utara, Lampung/Pesawaran, Lampung/Pesisir Barat, North Maluku/Kota Tidore Kepulauan, North Sumatra/Kota Pematang Siantar, Riau Islands/Lingga, Riau/Kepulauan Meranti, South Sulawesi/Luwu Utara, South Sulawesi/Pinrang, South Sulawesi/Sidenreng Rappang, South Sulawesi/Soppeng, South Sulawesi/Takalar, South Sulawesi/Wajo, South Sumatra/Banyu Asin, South Sumatra/Kota Pagar Alam, South Sumatra/Kota Prabumulih, South Sumatra/Musi Rawas, South Sumatra/Ogan Ilir, South Sumatra/Ogan Komering Ulu, South Sumatra/Penukal Abab Lematang Ilir, Southeast Sulawesi/Kolaka Timur, Special Region of Yogyakarta/Kota Yogyakarta, West Java/Garut, West Java/Kota Banjar, West Java/Kota Cimahi, West Java/Pangandaran, West Java/Sukabumi, West Sulawesi/Mamuju Utara, West Sumatra/Kota Bukittinggi, West Sumatra/Kota Pariaman, West Sumatra/Kota Payakumbuh, West Sumatra/Kota Sawah Lunto, West Sumatra/Pasaman
-  sumbar: Christian columns checked on 14 units already read -- as printed 3.41 points of error, swapped 0.48; taking the swapped order
-  portals: sumbar (data.sumbarprov.go.id, 2023): 19 units, 5 of them unread -- Kota Bukittinggi, Kota Pariaman, Kota Payakumbuh, Kota Sawah Lunto, Pasaman
-  kaltim: Christian columns checked on 9 units already read -- as printed 0.26 points of error, swapped 17.57; taking the printed order
-  portals: kaltim (data.kaltimprov.go.id, 2023): 10 units, 1 of them unread -- Kota Samarinda
-  bengkulu: Christian columns checked on 9 units already read -- as printed 0.57 points of error, swapped 1.61; taking the printed order
-  portals: bengkulu (data.bengkuluprov.go.id, 2024): 10 units, 1 of them unread -- Lebong
-  tangsel: only 0 unit(s) to check the Christian columns against; read as the table heads them
-  portals: tangsel (data.tangerangselatankota.go.id, 2021): 1 units, 1 of them unread -- Kota Tangerang Selatan
-  regencies: 475 carry a composition, 8 of them from an open-data portal
-  still not read (43): Bangka-Belitung Islands/Bangka, Bangka-Belitung Islands/Belitung Timur, Central Java/Kota Semarang, Central Kalimantan/Kota Palangka Raya, Central Sulawesi/Morowali Utara, Central Sulawesi/Tojo Una-Una, East Java/Lumajang, East Java/Ngawi, East Java/Pacitan, East Java/Probolinggo, East Java/Sampang, East Java/Sidoarjo, East Nusa Tenggara/Flores Timur, East Nusa Tenggara/Kota Kupang, Gorontalo/Pohuwato, Lampung/Lampung Utara, Lampung/Pesawaran, Lampung/Pesisir Barat, North Maluku/Kota Tidore Kepulauan, North Sumatra/Kota Pematang Siantar, Riau Islands/Lingga, Riau/Kepulauan Meranti, South Sulawesi/Luwu Utara, South Sulawesi/Pinrang, South Sulawesi/Sidenreng Rappang, South Sulawesi/Soppeng, South Sulawesi/Takalar, South Sulawesi/Wajo, South Sumatra/Banyu Asin, South Sumatra/Kota Pagar Alam, South Sumatra/Kota Prabumulih, South Sumatra/Musi Rawas, South Sumatra/Ogan Ilir, South Sumatra/Ogan Komering Ulu, South Sumatra/Penukal Abab Lematang Ilir, Southeast Sulawesi/Kolaka Timur, Special Region of Yogyakarta/Kota Yogyakarta, West Java/Garut, West Java/Kota Banjar, West Java/Kota Cimahi, West Java/Pangandaran, West Java/Sukabumi, West Sulawesi/Mamuju Utara
-  wrote data/processed/indonesia.json (1191 kB)
-  wrote 509 records to indonesia.json
+
+===== page: 'Languages of Indonesia', 69,748 bytes of wikitext
+  2 table(s)
+--- table 1: 44 rows ---
+  Language | data-sort-type="number" | Number | % of total population | Branch | Year surveyed | Main areas where spoken
+  Indonesian | 210000000 | hex=00dbdb | Malayic | 2010 | Throughout Indonesia
+  Javanese | 84300000 | hex=00dbdb | Javanese | 2000 (census) | Throughout Java Island and several
+  Sundanese | 42000000 | hex=00dbdb | Sundanese | 2016 | West Java, Banten, Jakarta
+  Madurese | 13,600,000 | hex=00dbdb | Madurese | 2000 (census) | Madura Island (East Java)
+  Minangkabau | 5,500,000 | hex=00dbdb | Malayic | 2007 | West Sumatra, Riau, Jambi, Bengkul
+  Buginese | 5,000,000 | hex=00dbdb | South Sulawesi | 2000 (census) | South Sulawesi
+  Palembang Malay | 3,900,000 | hex=00dbdb | Malayic | 2000 (census) | South Sumatra
+  Banjarese | 3,500,000 | hex=00dbdb | Malayic | 2000 (census) | South Kalimantan, East Kalimantan,
+  Acehnese | 3,500,000 | hex=00dbdb | Chamic | 2000 (census) | Aceh
+  Balinese | 3,300,000 | hex=00dbdb | Bali-Sasak-Sumbawa | 2000 (census) | Bali Island and Lombok Island
+  Betawi | 2,700,000 | hex=00dbdb | Malay-based creole | 1993 | Jakarta
+  Sasak | 2,100,000 | hex=00dbdb0 | Bali-Sasak-Sumbawa | 1989 | Lombok Island (West Nusa Tenggara)
+  Batak Toba | 2,000,000 | hex=00dbdb | Northwest Sumatra–Barrier Islands | 1991 | North Sumatra, Riau, Riau Islands
+  ... 30 more rows
+--- table 2: 35 rows ---
+  English translations | one | two | three | four | water | person | house | dog | cat | coconut | day | new | we, us | I/me | you | yes | no | what | and
+  Indonesian | satu | dua | tiga | empat | air | orang | rumah | anjing | kucing | kelapa | hari | baru | kita/kami | saya/aku | Anda/kamu/kau | ya/iya | tidak | apa | dan
+  Minangkabau | cie' | duo | tigo | ampe' | aie | urang | rumah | anjiang | kuciang | karambia | hari | baru | awak | denai/ambo | awak/ang | iyo | indak | apo | jo
+  Palembang Malay | sikok | duo | tigo | empat | banyu | wong | rumah | anjing | kucing | kelapo | ari | baru | kito | aku/wong | kabba/kamu | iyo | dido | apo | dan
+  Betawi | atu' | dué | tigé | empat | aér | orang | ruméh | anjing | kucing | kelapé | ari | baru | kité | ane/gue/gua | ente/lu/loe | iye | kagak | apé | amé
+  Banjarese | asa | dua | talu | ampat | banyu | urang | rumah | hadupan | batingas | nyiur | hari | hanyar | kita | aku | kauw |  |  | apa | wan
+  Kutainese | satu | due | tige | empat | ranam | urang | rumah | koyok |  | nyiur | hari | beru | etam |  |  |  |  | apa | dengan
+  Manado Malay | satu | dua | tiga | ampa | aer | orang | ruma | anjing | kucing | kalapa | hari | baru | torang | kita/saya | ngana/torang | io | nda' | apa | deng
+  Ambonese Malay | satu | dua | tiga | ampa | air | orang | ruma | anjing | kucing | kalapa | hari | baru | katong | kita/saya | ngana | iyo | seng | apa | deng
+  Acehnese | sa | dua | lhèë | peuët | ië | ureuëng | rumoh | asèë | miong / miei | u | uroë | ban | geutanyoë | lon | droeneuh | nye | keun | peuë | ngon
+  Nias | sara | dua | tölu | öfa | idanö | niha | omo | asu | mao | banio | luo | bohou | ya'ita |  |  |  |  | hadia | ba
+  Toba Batak | sada | dua | tolu | opat | aek | halak | jabu | biang | huting | harambiri | ari | ibbaru | hita | au | ho | olo | daong | aha | dohot
+  Mandailing Batak | sada | dua | tolu | opat | aek | halak | bagas | asu |  | arambir | ari | baru | hita |  |  |  |  | aha | dohot
+  Lampung | say | ʁuwa | telu | ampat | way | jelema | nuwa | asu | kucing | nyiwi | ʁani | ampai | ʁam |  |  |  |  | api | jama
+  ... 21 more rows
+
+===== page: 'Indonesian language', 217,781 bytes of wikitext
+  28 table(s)
+--- table 1: 4 rows ---
+  English | Indonesian | Standard Malay
+  the gathering consisted of great p | perkumpulan itu terdiri dari orang | perhimpunan itu terdiri daripada o
+  It depends on people's stance on t | bermatjam2-lah pendirian orang ter | Ia bergantung kepada pendirian ora
+  there is a big crowd | ada keramaian besar | ada orang ramai
+--- table 2: 11 rows ---
+  English | Standard Indonesian | Jakartan Colloquial Indonesian
+  no, not | tidak | nggak
+  big | besar | gede
+  very | sekali | banget
+  just | saja | aja
+  how | bagaimana | gimana
+  like | seperti | kayak
+  want | ingin | pengen
+  make | membuat | membikin
+  say | mengatakan | bilang
+  give | memberi | kasi
+--- table 3: 27 rows ---
+  Language | 1 (one) | 2 (two) | 3 (three) | 4 (four) | 5 (five) | 6 (six) | 7 (seven) | 8 (eight ) | 9 (nine) | 10 (ten)
+  PAN, 4000 BCE | *isa | *DuSa | *telu | *Sepat | *lima | *enem | *pitu | *walu | *Siwa | *puluq
+  Indonesian | satu | dua | tiga | empat | lima | enam | tujuh | delapan | sembilan | sepuluh
+  Malay | satu | dua | tiga | empat | lima | enam | tujuh | lapan | sembilan | sepuluh
+  Amis | cecay | tusa | tulu | sepat | lima | enem | pitu | falu | siwa | pulu'
+  Balinese | besik/siki/esa | dua/kalih/ro | telu/tiga | (em)pat/pa(t)pat | lima | enem | pitu | kutus/wolu/ulung | sia/sanga | dasa
+  Sundanese | hiji | dua | tilu | opat | lima | genep | tujuh | dalapan | salapan | sapuluh
+  Tsou | coni | yuso | tuyu | sʉptʉ | eimo | nomʉ | pitu | voyu | sio | maskʉ
+  Tagalog | isá | dalawá | tatló | ápat | limá | ánim | pitó | waló | siyám | sampu
+  Ilocano | maysá | dua | talló | uppát | limá | inném | pitó | waló | siam | sangapúlo
+  Cebuano | usá | duhá | tuló | upat | limá | unom | pitó | waló | siyám | napulu
+  Hiligaynon | isá | duwá | tatló | apat | limá | anom | pitó | waló | siyám | pulo
+  Chamorro | maisa/håcha | hugua | tulu | fatfat | lima | gunum | fiti | guålu | sigua | månot/fulu
+  Malagasy | iray/isa | roa | telo | efatra | dimy | enina | fito | valo | sivy | folo
+  ... 13 more rows
+--- table 4: 9 rows ---
+  Context | Indonesian | Language other than Indonesian
+  Interethnic interaction | align=center|+ | 
+  Unfamiliarity | align=center|+ | 
+  Out-group relation | align=center|+ | 
+  Region |  | align=center|+
+  Ethnic identity |  | align=center|+
+  Family |  | align=center|+
+  Intimacy |  | align=center|+
+  Familiarity |  | align=center|+
+--- table 5: 5 rows ---
+   | Front | Central | Back
+  Close | /i/ |  | /u/
+  Close-Mid | /e/ | [e] | /ɘ/ | /o/ | [o]
+  Open-mid | [ɛ] | /ə/ | [ɔ]
+  Open |  | /a/ | 
+--- table 6: 8 rows ---
+  colspan=2| | Labial | Dental/ Alveolar | Palatal | Velar | Glottal
+  colspan=2| Nasal | m | n | ɲ | ŋ | 
+  rowspan=2| Plosive/ Affricate | voiceless | p | t̪ | t͡ʃ | k | (ʔ)
+  voiced | b | d | d͡ʒ | ɡ | 
+  rowspan=2| Fricative | voiceless | (f) | s | (ʃ) | (x) | h
+  voiced | (v) | (z) |  |  | 
+  colspan=2| Approximant | w | l | j |  | 
+  colspan=2| Trill |  | r |  |  | 
+--- table 7: 9 rows ---
+  Type of noun affixes | Affix | Example of root word | Example of derived word
+  Prefix | pə(r)- ~ pəng- | duduk (sit) | penduduk (population)
+   | kə- | hendak (want) | kehendak (desire)
+  Infix | əl | tunjuk (point) | telunjuk (index finger, command)
+   | əm | kelut (dishevelled) | kemelut (chaos, crisis)
+   | ər | gigi (teeth) | gerigi (toothed blade)
+  Suffix | -an | bangun (wake up, raise) | bangunan (building)
+  Circumfix | kə-...-an | raja (king) | kerajaan (kingdom)
+   | pə(r)-...-an pəng-...-an | kerja (work) | pekerjaan (occupation)
+--- table 8: 19 rows ---
+  Type of verb affixes | Affix | Example of root word | Example of derived word
+  rowspan=6|Prefix | bər- | ajar (teach) | belajar (to study)
+  məng- | tolong (help) | menolong (to help)
+  di- | ambil (take) | diambil (be taken)
+  məmpər- | panjang (length) | memperpanjang (to lengthen)
+  dipər- | dalam (deep) | diperdalam (be deepened)
+  tər- | makan (eat) | termakan (to have accidentally eat
+  rowspan=2|Suffix | -kan | letak (place, keep) | letakkan (keep, put)
+  -i | jauh (far) | jauhi (avoid)
+  rowspan=10|Circumfix | bər-...-an | pasang (pair) | berpasangan (in pairs)
+  bər-...-kan | dasar (base) | berdasarkan (based on)
+  məng-...-kan | pasti (sure) | memastikan (to make sure)
+  məng-...-i | teman (company) | menemani (to accompany)
+  məmpər-...-kan | guna (use) | mempergunakan (to utilise, to expl
+  ... 5 more rows
+--- table 9: 7 rows ---
+  Type of adjective affixes | Affix | Example of root word | Example of derived word
+  rowspan=2|Prefix | tər- | panas (hot) | terpanas (hottest)
+  sə- | baik (good) | sebaik (as good as)
+  rowspan=3|Infix | əl | serak (disperse) | selerak (messy)
+  əm | cerlang (radiant bright) | cemerlang (bright, excellent)
+  ər | sabut (husk) | serabut (dishevelled)
+  Circumfix | kə-...-an | barat (west) | kebaratan (westernized)
+--- table 10: 8 rows ---
+  Person | Respect | Singular | Plural
+  rowspan=2|1st person exclusive | Informal, Familiar | align=center| aku | rowspan=2 | I | kami | rowspan=2 | we (not including the 
+  Standard, Polite | saya
+  1st person inclusive | All | colspan=2 | | kita | we (including the listener)
+  rowspan=2| 2nd person | Familiar | kamu, engkau, kau | you | kalian | you all
+  Polite | Anda | Anda sekalian
+  3rd person | Familiar | align=center| dia, ia | s/he, it | mereka | they
+  Polite | align=center| beliau | s/he
+--- table 11: 4 rows ---
+  Pronoun | Enclitic | Possessed form
+  aku | -ku | mejaku (my table)
+  kamu | -mu | mejamu (your table)
+  ia | -nya | mejanya (his, her, their table)
+--- table 12: 5 rows ---
+  Pronoun | Indonesian | English
+  rowspan=2|ini | buku ini | This book, these books, the book(s
+  buku-buku ini | These books, (all) the books
+  rowspan=2| itu | kucing itu | That cat, those cats, the cat(s)
+  kucing-kucing itu | Those cats, the (various) cats
+--- table 13: 3 rows ---
+  Pronoun + yang | Example sentence | English meaning
+  Yang ini | Q: Anda mau membeli buku yang mana | Q: Which book do you wish to purch
+  Yang itu | Q: Kucing mana yang memakan tikusm | Q: Which cat ate your mouse?
+--- table 14: 4 rows ---
+  Indonesian | Gloss | English
+  Saya tidak tahu (Saya gak/ngga tah | I not know | I do not know
+  Ibu saya tidak senang (Ibu saya ga | mother I not be-happy | My mother is not happy
+  Itu bukan anjing saya | that be-not dog I | That is not my dog
+--- table 15: 8 rows ---
+  Indonesian | Gloss | English
+  Hutan hijau | forest green | (The) green forest
+  Hutan itu hijau | forest that green | That/the forest is green
+  Kereta yang merah | carriage which red | (The) carriage which is red = the 
+  Kereta merah | carriage red | Red carriage
+  Dia orang yang terkenal sekali | he/she person which famous very | He/she is a very famous person
+  Orang terkenal | person famous | Famous person
+  Orang ini terkenal sekali | person this famous very | This person is very famous
+--- table 16: 2 rows ---
+  Ellipses of pronoun (agent & objec | Literal English | Idiomatic English
+  Bisa dibantu? | Can + to be helped? | Can (I) help (you)?
+--- table 17: 2 rows ---
+  Ellipses of pronoun (understood ag | Literal English | Idiomatic English
+  Rumah ini dibeli lima tahun yang l | House this + be purchased five-yea | The house 'was purchased' five yea
+--- table 18: 14 rows ---
+  Measure word | Used for measuring | Literal translation | Example
+  buah | things (in general), large things, | 'fruit' | dua buah meja (two tables), lima b
+  ekor | animals | 'tail' | seekor ayam (a chicken), tiga ekor
+  orang | human beings | 'person' | seorang laki-laki (a man), enam or
+  biji | smaller rounded objects most fruit | 'grain' | sebiji/ sebutir telur (an egg), se
+  batang | long stiff things trees, walking s | 'trunk, rod' | sebatang tongkat (a stick)
+  həlai | things in thin layers or sheets pa | 'leaf' | sepuluh helai pakaian (ten cloths)
+  kəping keping | flat fragments, slabs of stone, pi | 'chip' | sekeping uang logam (a coin)
+  pucuk | letters, firearms, needles | 'sprout' | sepucuk senjata (a weapon)
+  bilah | things which cut lengthwise and th | 'blade' | sebilah kayu (a piece of wood)
+  bidanɡ | things shaped square or which can  | 'field' | sebidang tanah/lahan (an area)
+  potong | things that are cut bread | 'cut' | sepotong roti (slices of bread)
+  utas | nets, cords, ribbons | 'thread' | seutas tali (a rope)
+  carik | things easily torn, like paper | 'shred' | secarik kertas (a piece of paper)
+--- table 19: 8 rows ---
+  Phoneme | Obsolete spelling | Modern spelling
+  u | oe | u
+  tʃ | tj | c
+  dʒ | dj | j
+  j | j | y
+  ɲ | nj | ny
+  ʃ | sj | sy
+  x | ch | kh
+--- table 20: 4 rows ---
+  Majuscule Forms
+  A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+  Minuscule Forms
+  |a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+--- table 21: 27 rows ---
+  Letter | Name (in IPA) | Sound (in IPA) | English equivalent
+  Aa | a (/a/) | /a/ | a as in father
+  Bb | be (/be/) | /b/ | b as in bed
+  Cc | ce (/t͡ʃe/) | /t͡ʃ/ | ch as in check
+  Dd | de (/de/) | /d/ | d as in day
+  Ee | e (/e/) | /e/ | e as in red
+  Ff | ef (/ef/) | /f/ | f as in effort
+  Gg | ge (/ge/) | /ɡ/ | g as in gain
+  Hh | ha (/ha/) | /h/ | h as in harm
+  Ii | i (/i/) | /i/ | i as in police
+  Jj | je (/d͡ʒe/) | /d͡ʒ/ | j as in jam
+  Kk | ka (/ka/) | /k/ | k as in karma
+  Ll | el (/el/) | /l/ | l as in else
+  Mm | em (/em/) | /m/ | m as in empty
+  ... 13 more rows
+--- table 22: 9 rows ---
+  Digraph | Sound | English equivalent
+  ai | /aɪ/ | uy as in buy
+  au | /aʊ/ | ou as in ouch
+  oi | /oɪ/ | oy as in boy
+  ei | /eɪ/ | ey as in survey
+  kh | /x/ | ch as in loch
+  ng | /ŋ/ | ng as in sing
+  ny | /ɲ/ | Spanish ñ; similar to ny as in can
+  sy | /ʃ/ | sh as in shoe
+--- table 23: 10 rows ---
+  Language origin | Number of words
+  Dutch | 3280
+  English | 1610
+  Arabic | 1495
+  Sanskrit | 677
+  Chinese | 290
+  Portuguese | 131
+  Tamil | 131
+  Persian | 63
+  Hindi | 7
+--- table 24: 31 rows ---
+  Number | English | Indonesian | IPA
+  0 | zero | nol | 
+  1 | one | satu, se- (as a prefix) | ,
+  2 | two | dua | 
+  3 | three | tiga | 
+  4 | four | empat | 
+  5 | five | lima | 
+  6 | six | enam | 
+  7 | seven | tujuh | 
+  8 | eight | delapan | 
+  9 | nine | sembilan | 
+  10 | ten | sepuluh | 
+  11 | eleven | sebelas | 
+  12 | twelve | dua belas | 
+  ... 17 more rows
+--- table 25: 11 rows ---
+  Number | English | Indonesian | IPA
+  1st | first | pertama or kesatu | 
+  2nd | second | kedua | 
+  3rd | third | ketiga | 
+  4th | fourth | keempat | 
+  5th | fifth | kelima | 
+  6th | sixth | keenam | 
+  7th | seventh | ketujuh | 
+  8th | eighth | kedelapan | 
+  9th | ninth | kesembilan | 
+  10th | tenth | kesepuluh | 
+--- table 26: 8 rows ---
+  English | Indonesian | IPA
+  Monday | Senin | 
+  Tuesday | Selasa | 
+  Wednesday | Rabu | 
+  Thursday | Kamis | 
+  Friday | Jumat | 
+  Saturday | Sabtu | 
+  Sunday | Minggu | 
+--- table 27: 13 rows ---
+  English | Indonesian | IPA
+  January | Januari | 
+  February | Februari | 
+  March | Maret | 
+  April | April | 
+  May | Mei | 
+  June | Juni | 
+  July | Juli | 
+  August | Agustus | 
+  September | September | 
+  October | Oktober | 
+  November | November | 
+  December | Desember | 
+--- table 28: 67 rows ---
+  English | Indonesian | Spelling (in IPA)
+  Hello! | Halo! | 
+  Good morning! | Selamat pagi! | 
+  Good afternoon! | Selamat siang! | 
+  Good evening! or Good night! | Selamat malam! | 
+  Goodbye! | Selamat tinggal! | 
+  See you later! | Sampai jumpa lagi! | 
+  Thank you | Terima kasih (standard, formal) | 
+  Thanks | Makasih (colloquial) | 
+  You are welcome | Sama-sama or terima kasih kembali | or
+  Yes | Ya (standard) or iya (colloquial) | or
+  No | Tidak or tak or enggak (colloquial | or or
+  And | Dan | 
+  Or | Atau | 
+  ... 53 more rows
