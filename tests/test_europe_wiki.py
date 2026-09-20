@@ -221,6 +221,16 @@ class WhereTheArticleIs(unittest.TestCase):
         _, refused = m.match_spellings(["Atlantis"], list(m.SK_DISTRICTS))
         self.assertIn("none of the country's own unit names", refused["Atlantis"])
 
+    def test_a_digraph_romanisation_folds_to_the_letter_it_stands_for(self):
+        """North Macedonia's boundary file spells the Cyrillic out in English
+        digraphs, which is a longer string than the name it came from."""
+        self.assertEqual(m.folded("Bogdantsi"), m.folded("Bogdanci"))
+        self.assertEqual(m.folded("Arachinovo"), m.folded("Aračinovo"))
+        self.assertEqual(m.folded("Cheshinovo - Obleshevo"),
+                         m.folded("Češinovo-Obleševo"))
+        self.assertEqual(m.folded("Arandjelovac"), m.folded("Aranđelovac"))
+        self.assertNotEqual(m.folded("Bitola"), m.folded("Butel"))
+
     def test_the_extra_word_is_not_part_of_the_name(self):
         self.assertEqual(m.trimmed("Ada Municipality", r"\s+Municipality$"), "Ada")
         self.assertEqual(m.trimmed("Ada, Serbia", r",\s*Serbia$"), "Ada")
@@ -272,3 +282,38 @@ class WhatACitationIs(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ThePatternIsNotUsedWhereThereIsAList(unittest.TestCase):
+    """The boundary file's transliteration is never an article title when
+    the country's own list of names is available.
+
+    It was, at first, and that made the list dead code: every unit got
+    "{name} Municipality" built from the spelling in the boundary file, so
+    North Macedonia's reader asked for "Bogdantsi Municipality" while the
+    category had already said the article is "Bogdanci Municipality".
+    """
+
+    def setUp(self):
+        self.calls = []
+        self.members = m.category_members
+        m.category_members = lambda category, lang: (
+            self.calls.append((category, lang))
+            or ["Bogdanci Municipality", "Brvenica Municipality"])
+
+    def tearDown(self):
+        m.category_members = self.members
+
+    def test_a_listed_level_takes_its_titles_from_the_list(self):
+        level = m.Level(level="admin2", lang="en", title="{name} Municipality",
+                        match="folded",
+                        category="Category:Municipalities of North Macedonia",
+                        article_trim=r"\s+Municipality(,.*)?$",
+                        fields=(m.MK_ETHNICITY,))
+        titles, refused = m.article_titles(m.SPECS["MKD"], level,
+                                           ["Bogdantsi", "Brvenitsa", "Atlantis"])
+        self.assertEqual(titles, {"Bogdantsi": "Bogdanci Municipality",
+                                  "Brvenitsa": "Brvenica Municipality"})
+        self.assertIn("none of the names on the country's own list",
+                      refused["Atlantis"])
+        self.assertEqual(self.calls, [("Category:Municipalities of North Macedonia", "en")])

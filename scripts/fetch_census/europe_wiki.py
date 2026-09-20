@@ -34,6 +34,7 @@ import argparse
 import re
 import sys
 import time
+import unicodedata
 import urllib.parse
 from dataclasses import dataclass
 from pathlib import Path
@@ -243,6 +244,90 @@ def category_members(category: str, lang: str) -> list[str]:
             return out
 
 
+LINK_TARGET = re.compile(r"\[\[([^\]|#<>\[]+?)(?:\|[^\]]*)?\]\]")
+NOT_AN_ARTICLE = re.compile(r"^(file|image|category|template|help|wikipedia|"
+                            r"wikt|s|commons|:)\s*:", re.I)
+
+
+def link_targets(title: str, lang: str) -> list[str]:
+    """The articles one article links to, in order, without repeats.
+
+    Serbia has no category listing its municipalities -- the one that looks
+    like it holds them holds a single article, its own list -- so the list
+    is that article, and what it links to at each row is the municipality's
+    own page. Read from the wikitext rather than from the rendered table,
+    because a table cell prints a link's display text and throws the title
+    away, and the title is the whole point.
+    """
+    wikitext, _ = fetch(title, lang)
+    out: list[str] = []
+    seen: set[str] = set()
+    for m in LINK_TARGET.finditer(wikitext):
+        target = " ".join(m.group(1).split())
+        if not target or NOT_AN_ARTICLE.match(target) or target in seen:
+            continue
+        seen.add(target)
+        out.append(target)
+    return out
+
+
+# The Serbian, Croatian and Montenegrin alphabets romanise with diacritics
+# and one digraph, and a boundary file that has romanised them further
+# writes "Cacak" for Cacak and "Arandjelovac" for Arandelovac -- the second
+# a letter longer than the name it came from, which is why the positional
+# matcher above cannot be used here. Folding both sides to plain letters is
+# exact instead of positional, and it is a transliteration nobody has to
+# invent: it is the one the boundary file already used.
+DIGRAPHS = {"đ": "dj", "Đ": "dj", "ð": "dj", "ø": "o", "ł": "l", "ß": "ss",
+            "æ": "ae", "œ": "oe", "þ": "th"}
+# North Macedonia's boundary file goes further than dropping the diacritics:
+# it spells the Cyrillic out in English digraphs, so Bogdanci is
+# "Bogdantsi", Aracinovo is "Arachinovo" and Cesinovo-Oblesevo is
+# "Cheshinovo - Obleshevo". Collapsing each digraph to the one letter it
+# stands for makes the two spellings the same string, and it collapses the
+# same way on both sides, so nothing is decided by which side a name came
+# from. Two official names that met in the middle would be an ambiguity and
+# are refused rather than guessed at.
+COLLAPSE = (("shch", "s"), ("sh", "s"), ("ch", "c"), ("zh", "z"),
+            ("ts", "c"), ("kj", "k"), ("gj", "g"), ("dj", "d"))
+
+
+def folded(name: str) -> str:
+    """A name reduced to the letters a romanisation of it keeps."""
+    text = "".join(DIGRAPHS.get(c, c) for c in name)
+    text = unicodedata.normalize("NFKD", text)
+    text = "".join(c for c in text if not unicodedata.combining(c))
+    text = re.sub(r"[^0-9a-z]", "", text.casefold())
+    for digraph, letter in COLLAPSE:
+        text = text.replace(digraph, letter)
+    return text
+
+
+def match_folded(spellings: list[str], official: list[str]
+                 ) -> tuple[dict[str, str], dict[str, str]]:
+    """({spelling: official name}, {spelling: why it matched nothing}), by
+    folding both sides to plain letters and requiring them to be equal."""
+    index: dict[str, list[str]] = {}
+    for name in official:
+        index.setdefault(folded(name), []).append(name)
+    matched: dict[str, str] = {}
+    refused: dict[str, str] = {}
+    for spelling in spellings:
+        fits = index.get(folded(spelling), [])
+        if len(fits) == 1:
+            matched[spelling] = fits[0]
+        elif fits:
+            refused[spelling] = (
+                f"{spelling!r} romanises the same way as {len(fits)} of the "
+                f"country's own names ({', '.join(fits)}); it is not matched "
+                f"to any of them")
+        else:
+            refused[spelling] = (
+                f"{spelling!r} is none of the names on the country's own list "
+                f"of units; there is no article to read for it")
+    return matched, refused
+
+
 # ---------------------------------------------------------------------------
 # What a citation is, and what kind of count it describes
 # ---------------------------------------------------------------------------
@@ -399,6 +484,12 @@ class Level:
     # the article kept is the one the category named.
     category: str | None = None
     category_lang: str = ""
+    # ...or an article whose links are that list, where no category holds it.
+    links: str | None = None
+    # How a boundary file's spelling is joined to the country's own name:
+    # "positional" for a file that has lost its letters outside ASCII,
+    # "folded" for one that has romanised them.
+    match: str = "positional"
     shape_trim: str = ""
     article_trim: str = ""
 
@@ -411,6 +502,11 @@ class Country:
     census: str                      # what the articles are transcribing
     licence: str
     levels: tuple[Level, ...]
+    # A field this country's articles were searched for and do not carry in
+    # a form that can be read. It goes on every record as a gap with the
+    # reason, because a measured negative is a result: it says which kind of
+    # empty this is, and stops the next reader repeating the search.
+    declared: dict[str, str] | None = None
 
 
 # The share of a composition that may be missing before the rest is carried
@@ -812,7 +908,7 @@ BALKAN_RELIGION = {
 
 MK_ETHNICITY = Composition(
     field="ethnicity",
-    section=r"^demographics?$|^population$|^ethnic",
+    section=r"^demograph|^population|ethnic|^census",
     # " | 2002 | 2021 | | Number | % | Number | % " -- the two censuses the
     # article prints side by side, which is what makes the width check below
     # the thing that keeps a row of one census out of the other's column.
@@ -824,20 +920,28 @@ MK_ETHNICITY = Composition(
 
 MD_ETHNICITY = Composition(
     field="ethnicity",
-    section=r"^ethnic groups?$|^ethnicit",
+    section=r"ethnic|^demograph|^population",
     header=r"ethnic group",
     value=-1,
     labels=BALKAN_ETHNICITY,
     skip=TOTALS)
 
 ME_FIELDS = (
-    Composition(field="ethnicity", section=r"^ethnicit|^ethnic",
+    Composition(field="ethnicity", section=r"ethnic|^demograph|^population",
                 header=r"ethnicity|ethnic group", value=-1,
                 labels=BALKAN_ETHNICITY, skip=TOTALS),
-    Composition(field="religion", section=r"^religio",
+    Composition(field="religion", section=r"religio|^demograph|^population",
                 header=r"religion", value=-1,
                 labels=BALKAN_RELIGION, skip=TOTALS),
 )
+
+RS_ETHNICITY = Composition(
+    field="ethnicity",
+    section=r"ethnic|^demograph|^population",
+    header=r"ethnic(ity|\s+group)",
+    value=-1,
+    labels=BALKAN_ETHNICITY,
+    skip=TOTALS)
 
 SPECS: dict[str, Country] = {
     "SVK": Country(
@@ -861,9 +965,21 @@ SPECS: dict[str, Country] = {
         licence="Official statistics; compilation CC BY-SA 4.0",
         levels=(
             Level(level="admin2", lang="en",
-                  title="{name} Municipality",
+                  title="{name} Municipality", match="folded",
                   category="Category:Municipalities of North Macedonia",
                   article_trim=r"\s+Municipality(,.*)?$",
+                  # The boundary file draws the pre-2013 layout. Four of
+                  # these were merged into Kicevo in 2013 and one is a
+                  # translation rather than a transliteration ("and" for
+                  # "i"), so none of the five is in the present category,
+                  # and each still has an article of its own.
+                  titles={
+                      "Drugovo": "Drugovo Municipality",
+                      "Oslomej": "Oslomej Municipality",
+                      "Vraneshtitsa": "Vraneštica Municipality",
+                      "Zajas": "Zajas Municipality",
+                      "Mavrovo and Rostusha": "Mavrovo i Rostuše Municipality",
+                  },
                   fields=(MK_ETHNICITY,)),
         )),
     # Moldova: the districts, whose English articles carry an ethnic table of
@@ -877,13 +993,41 @@ SPECS: dict[str, Country] = {
         licence="Official statistics; compilation CC BY-SA 4.0",
         levels=(
             Level(level="admin1", lang="en", title="{name} District",
-                  category="Category:Districts of Moldova",
+                  category="Category:Districts of Moldova", match="folded",
                   article_trim=r"\s+District$",
                   fields=(MD_ETHNICITY,)),
             Level(level="admin2", lang="en", title="{name} District",
-                  category="Category:Districts of Moldova",
+                  category="Category:Districts of Moldova", match="folded",
                   article_trim=r"\s+District$",
                   fields=(MD_ETHNICITY,)),
+        )),
+    # Serbia: ethnicity, which is what the English article of a district and
+    # of a municipality carries and the only one of the three it does. The
+    # Serbian edition adds religion at the district level, in a table whose
+    # cells hold a count and a share inside one pair of brackets; that is a
+    # second reader and it is not written yet, so religion is a stated gap.
+    #
+    # No category lists Serbia's units -- the one that looks like it holds
+    # them holds its own list article and nothing else -- so the candidates
+    # are what that list article links to, and the join is by folding both
+    # sides to plain letters: the boundary file writes "Arandjelovac" where
+    # Serbia writes "Arandelovac", a letter shorter, so a positional match
+    # would fail on exactly the names a romanisation changes the length of.
+    "SRB": Country(
+        iso3="SRB", out="europe_wiki_serbia.json", decimal=".",
+        census="Републички завод за статистику, Попис становништва, "
+               "домаћинстава и станова (Statistical Office of the Republic of "
+               "Serbia, Census of Population, Households and Dwellings)",
+        licence="Official statistics; compilation CC BY-SA 4.0",
+        levels=(
+            Level(level="admin1", lang="en", title="{name}", match="folded",
+                  links="Administrative districts of Serbia",
+                  fields=(RS_ETHNICITY,)),
+            Level(level="admin2", lang="en", title="{name}", match="folded",
+                  links="Municipalities and cities of Serbia",
+                  shape_trim=r"\s+(Municipality|Municipal\*|City)$",
+                  article_trim=r",\s*Serbia$",
+                  fields=(RS_ETHNICITY,)),
         )),
     # Montenegro: the 23 municipalities the boundary file draws, at both
     # levels because it draws them at both.
@@ -892,11 +1036,11 @@ SPECS: dict[str, Country] = {
         census="Monstat, Popis stanovništva, domaćinstava i stanova",
         licence="Official statistics; compilation CC BY-SA 4.0",
         levels=(
-            Level(level="admin1", lang="en", title="{name}",
+            Level(level="admin1", lang="en", title="{name}", match="folded",
                   category="Category:Municipalities of Montenegro",
                   article_trim=r"\s+Municipality$",
                   shape_trim=r"\s+Municipality$", fields=ME_FIELDS),
-            Level(level="admin2", lang="en", title="{name}",
+            Level(level="admin2", lang="en", title="{name}", match="folded",
                   category="Category:Municipalities of Montenegro",
                   article_trim=r"\s+Municipality$",
                   shape_trim=r"\s+Municipality$", fields=ME_FIELDS),
@@ -943,27 +1087,33 @@ def article_titles(country: Country, level: Level, names: list[str]
     """
     titles: dict[str, str] = {}
     refused: dict[str, str] = dict(level.absent or {})
+    # Whether this level has a list of the country's own unit names to join
+    # against. Where it has, the pattern below is not used at all: it was
+    # used for every unit at first, which quietly made the list dead code
+    # and sent the reader to "Bogdantsi Municipality", the boundary file's
+    # transliteration, while the article is "Bogdanci Municipality" and the
+    # category had said so.
+    listed = bool(level.official or level.category or level.links)
     for name in names:
         if name in refused:
             continue
         if level.titles and name in level.titles:
             titles[name] = level.titles[name]
-        elif level.official:
-            continue          # settled below, in one pass over the whole level
-        else:
+        elif not listed:
             titles[name] = level.title.format(name=name)
     official = level.official
     article_of: dict[str, str] = {}
-    if level.category:
-        members = category_members(level.category,
-                                   level.category_lang or level.via or level.lang)
+    if level.category or level.links:
+        where = level.category_lang or level.via or level.lang
+        members = (category_members(level.category, where) if level.category
+                   else link_targets(level.links, where))
         for title in members:
             key = trimmed(title, level.article_trim)
             article_of.setdefault(key, title)
         official = tuple(article_of)
-        log(f"    {level.category}: {len(members)} article(s), "
+        log(f"    {level.category or level.links}: {len(members)} article(s), "
             f"{len(official)} distinct names")
-    if official:
+    if listed and official:
         prefix = level.strip or ""
         spellings: dict[str, str] = {}
         for name in names:
@@ -971,7 +1121,8 @@ def article_titles(country: Country, level: Level, names: list[str]
                 continue
             key = name[len(prefix):] if name.startswith(prefix) else name
             spellings[trimmed(key, level.shape_trim)] = name
-        matched, unmatched = match_spellings(list(spellings), list(official))
+        join = match_folded if level.match == "folded" else match_spellings
+        matched, unmatched = join(list(spellings), list(official))
         for spelling, name in matched.items():
             titles[spellings[spelling]] = (
                 article_of[name] if article_of else level.title.format(name=name))
@@ -1093,7 +1244,8 @@ def run(country: Country) -> list[dict[str, Any]]:
         read = {spec.field: 0 for spec in level.fields}
         for unit in units:
             name = unit["name"]
-            fields: dict[str, Any] = {}
+            fields: dict[str, Any] = {k: gap(NOT_AVAILABLE, why)
+                                      for k, why in (country.declared or {}).items()}
             sources: list[dict[str, str]] = []
             title = titles.get(name)
             if title is None:

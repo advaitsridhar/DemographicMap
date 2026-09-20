@@ -150,6 +150,19 @@ ADAPTER_FILES = [
     # nine provinces have every regency counted, and eight of the nine sum
     # to within 2.5% of the province's own published population.
     "indonesia.json",
+    # Europe, by the owner's decision of 20 September 2026: religion,
+    # language and ethnicity read from each unit's own Wikipedia article at
+    # the first and second level, the way Indonesia's regencies were. A
+    # Wikipedia transcription ranks below any statistical office, so these
+    # sit here, above the surveys and below every census file read from the
+    # office that published it -- including Poland, Czechia, Croatia,
+    # Romania, Bosnia, Ireland, Germany, the UK, Russia and Ukraine, none of
+    # which these touch. Each country is its own file so that re-running one
+    # cannot drop another.
+    "europe_wiki_slovakia.json",
+    "europe_wiki_north_macedonia.json",
+    "europe_wiki_moldova.json",
+    "europe_wiki_montenegro.json",
     # After Wikidata, which carries a population for North Korea's provinces
     # and for Pyongyang a 2015 estimate: this is the 2008 census's own Table 2,
     # for all 11 first-level units and all 179 counties, with the sex ratio
