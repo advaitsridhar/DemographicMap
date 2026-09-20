@@ -68,6 +68,14 @@ data/raw/*
 # Ireland and no way to re-derive it.
 !data/raw/northern_ireland/
 !data/raw/northern_ireland/*.xlsx
+# UN OCHA's Common Operational Dataset for Papua New Guinea: the 2011 census
+# by province and district. Two CSVs, 11 KB, CC BY-IGO. They are the only
+# count that can be placed on sixteen of the district shapes the map draws --
+# the 2024 booklet is tabulated on a later district layout -- so without them
+# a clean checkout has four provinces of empty districts and no way to
+# re-derive them offline. See scripts/fetch_census/png.py --fetch.
+!data/raw/png/
+!data/raw/png/*.csv
 # ...and the pages of Mongolia's 22 aimag census books that carry ethnic
 # group and religion, laid out as text. The books themselves are 300 MB of
 # scanned-quality PDF on the Internet Archive and the site that served them

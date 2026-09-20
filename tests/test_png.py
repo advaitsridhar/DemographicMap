@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import contextlib
+import io
 import sys
 import unittest
 from pathlib import Path
@@ -10,6 +12,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
 import common  # noqa: E402
 from fetch_census import png  # noqa: E402
+
+
+def quiet(fn, *args, **kwargs):
+    """Run it with its log captured, and hand back both.
+
+    ``log`` writes to stderr, which is where a run's account of itself
+    belongs; the capture has to follow it there.
+    """
+    out = io.StringIO()
+    with contextlib.redirect_stderr(out):
+        result = fn(*args, **kwargs)
+    return result, out.getvalue()
 
 # Two pages of the 2011 National Report's provincial Summary Indicators, as
 # pypdf extracts them: four regional blocks, and the religion row printed two
@@ -317,6 +331,55 @@ class PlacingDistrictsOnShapes(unittest.TestCase):
             self.unit("South Fly", 81_613), self.unit("Delta Fly", 76_097)])
         self.assertEqual(placed, {})
         self.assertEqual(left, ["Delta Fly"])
+
+
+
+class TheTwentyElevenCount(unittest.TestCase):
+    """The COD-PS tables, which carry the sixteen shapes the 2024 booklet
+    cannot be placed on."""
+
+    def test_the_committed_tables_reconcile_to_the_census(self):
+        districts, printed = quiet(png.cod_districts)
+        self.assertEqual(len(districts), 87)
+        self.assertEqual(sum(u.total for u in districts.values()),
+                         png.NATIONAL_2011)
+        self.assertIn("7,275,324", printed)
+
+    def test_every_redrawn_shape_has_a_2011_row_under_its_own_name(self):
+        districts, _ = quiet(png.cod_districts)
+        for province, shapes in png.REDRAWN_SHAPES.items():
+            for shape in shapes:
+                self.assertIn(shape, districts, f"{province}/{shape}")
+
+    def test_the_record_carries_the_2011_year_licence_and_reason(self):
+        districts, _ = quiet(png.cod_districts)
+        note = png.COD_NOTE.format(n=4, m=3, province="Western", new="Delta Fly")
+        row = png.district_record("Western", "Middle Fly District", None, note,
+                                  districts["Middle Fly District"])
+        self.assertEqual(row["population"]["value"], 79_349)
+        self.assertEqual(row["population"]["year"], png.CENSUS_2011)
+        self.assertEqual(row["sex_ratio"]["year"], png.CENSUS_2011)
+        self.assertIn("Common Operational Dataset", row["population"]["source"])
+        source, = row["sources"]
+        self.assertIn("CC BY-IGO", source["license"])
+        self.assertEqual(source["year"], png.CENSUS_2011)
+        self.assertIn("Delta Fly", row["population_note"])
+        self.assertIn("2011", row["population_note"])
+        # It is not comparable with the neighbours' 2024 counts, and says so.
+        self.assertIn("40%", row["population_note"])
+
+    def test_a_2024_district_still_carries_2024(self):
+        row = png.district_record("Hela", "Tari/Pori District",
+                                  png.Unit("Tari/Pori", 102_081, 52_000, 50_081),
+                                  "")
+        self.assertEqual(row["population"]["year"], png.CENSUS_2024)
+        source, = row["sources"]
+        self.assertEqual(source["year"], png.CENSUS_2024)
+
+    def test_a_shape_with_neither_count_is_still_a_stated_gap(self):
+        row = png.district_record("Hela", "Nowhere District", None, "because.")
+        self.assertEqual(row["population"]["status"], "not_available")
+        self.assertEqual(row["population"]["note"], "because.")
 
 
 class WhatIsDeclared(unittest.TestCase):
