@@ -166,6 +166,11 @@ ADAPTER_FILES = [
     # After both: the same 16 states and the districts, religion only, from
     # the 2020 census; its gaps never displace the ethnicity above.
     "malaysia_religion.json",
+    # Brunei's own census, one file for both levels: race and religion for the
+    # four districts, a head count and a stated gap for the 38 mukims. It
+    # overlaps nothing above -- no other adapter writes a Bruneian row -- so
+    # its place here is alphabetical company rather than precedence.
+    "brunei.json",
     "poland_voivodeship.json", "poland_powiat.json",
     "czechia_kraj.json", "czechia_okres.json",
     "croatia_county.json", "croatia_unit.json",
@@ -219,6 +224,11 @@ ADAPTER_HINTS: dict[str, str] = {
            "district: python -m scripts.fetch_census.malaysia --level both; "
            "religion from the 2020 census as DOSM's Kawasanku dashboard publishes "
            "it by state and district: python -m scripts.fetch_census.malaysia_religion",
+    "BRN": "DEPS's annex workbook for the BPP 2021 census: race and religion by "
+           "district (Tables A3 and A4), population by mukim (Table C1). Race and "
+           "religion are published for the four districts and nowhere below them, "
+           "and language is asked and never tabulated: "
+           "python -m scripts.fetch_census.brunei",
     "CZE": "ČSÚ SLDB 2021 open data (nationality, religious belief, mother tongue) "
            "by kraj and okres: python -m scripts.fetch_census.czechia",
     "HRV": "DZS Popis 2021 workbook (ethnicity, religion, mother tongue) by "

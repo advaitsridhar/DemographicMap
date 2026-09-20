@@ -121,6 +121,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # One DOSM dashboard parquet (religion, 2020 census) plus the two population
   # CSVs above for the count base; needs pyarrow.
   soft python3 -m scripts.fetch_census.malaysia_religion
+  # Brunei: one DEPS workbook, the BPP 2021 census annexes. Race and religion
+  # for the four districts, a head count for the 38 mukims; needs openpyxl.
+  soft python3 -m scripts.fetch_census.brunei
   # Indonesia: 2010 census ethnicity by province and registry/BPS religion by
   # province and regency, read from the Indonesian Wikipedia (~550 API calls).
   soft python3 -m scripts.fetch_census.indonesia
