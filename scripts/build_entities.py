@@ -149,6 +149,14 @@ ADAPTER_FILES = [
     # Ethnicity is a declaration rather than a gap -- the 2022 questionnaire
     # does not ask it -- and comes from NOT_COLLECTED_POLICY.
     "timor.json",
+    # Mongolia's 22 aimags and all 339 soums: ethnicity for every aimag from
+    # Appendix Table 3.6 of the 2020 census's English national report, religion
+    # for 18 of them from those aimags' own results books, and ethnicity for
+    # 204 soums from the tables of ethnic group by soum those books print. The
+    # soums with no figure carry the reason instead. Language is a declaration
+    # -- the 2020 questionnaire does not ask it -- and comes from
+    # NOT_COLLECTED_POLICY.
+    "mongolia.json",
     # Religion, population and mother tongue together: this one file reads
     # Table 9 and Table 11 of the same census. It used to be a pair, the
     # language half coming from the U.S. Census Bureau's tables of the 2017

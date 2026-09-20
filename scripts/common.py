@@ -210,6 +210,13 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # not a language anybody was asked to speak, and it is published here on
     # the ethnicity field. The 8,500-village indicator table the provinces and
     # districts are read from carries 68 indicators and no language column.
+    # Mongolia asks ethnic group of every citizen and religion of a ten per
+    # cent sample, and both are on the map (mongolia.py). Language is the one
+    # it does not ask, read off the questionnaire itself rather than inferred
+    # from a table that happened to lack a column.
+    "MNG": {
+        "language": "Mongolia's census does not ask language or mother tongue. The individual questionnaire of the 2020 Population and Housing Census, reproduced in the appendix of the National Statistics Office's national report, runs from \"What is your relationship with household head?\" through gender, age, birthplace, migration, disability, education, literacy, employment and marital status to question 29, \"Do you have a religion?\", and asks nothing about a language at all. In the report's 298 pages the word appears twice: in the definition of literacy -- \"a person who can read and write simple sentences in any languages was considered as literate\" -- and in a note on sign language among the Washington Group's questions on functional difficulty. Ethnic group and religion are both asked, and the aimags carry them.",
+    },
     "LAO": {
         "language": "Laos's census does not ask language or mother tongue. The 4th Population and Housing Census 2015 asked 63 questions in 10 parts, among them ethnicity and religion; its 282-page results volume prints no language or mother-tongue table and never uses the words \"mother tongue\", and neither the Socio-Economic Atlas of the Lao PDR 2015 nor the village indicator table behind it carries a language variable. The ten ethno-linguistic categories the census does publish are a classification of the ethnic group a person named, which the map carries on the ethnicity field.",
     },
