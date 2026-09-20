@@ -104,6 +104,7 @@ COMPOSITION = re.compile(
     re.I)
 
 HEADING = re.compile(r"^\s*(=+)\s*(.+?)\s*\1\s*$", re.M)
+REF = re.compile(r"<ref\b([^>/]*)(?:/>|>(.*?)</ref>)", re.S | re.I)
 
 
 def sections(wikitext: str) -> list[tuple[str, str]]:
@@ -156,6 +157,10 @@ def probe(spec: str, rows: int, width: int) -> None:
             say(f"    [{name}] {len(found)} table(s), not a composition: {flat[:70]}")
             continue
         say(f"    [{name}] {len(found)} table(s)")
+        for m in REF.finditer(body):
+            attrs, cite = m.group(1), m.group(2)
+            say(f"      ref{attrs.strip() and ' ' + attrs.strip() or ''}: "
+                f"{' '.join((cite or '').split())[:3 * width]}")
         for i, table in enumerate(found, 1):
             say(f"      table {i}: {len(table)} rows")
             for row in table[:rows]:
