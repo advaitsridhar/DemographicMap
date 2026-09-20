@@ -367,7 +367,13 @@ class Composition:
     value: int
     labels: dict[str, str]
     skip: str = r"^$"
-    remainder: str | None = None
+    # How many figures a row of this table carries. A table that prints two
+    # censuses side by side has four -- count, share, count, share -- and a
+    # row that carries fewer is a row about only one of them, where "the
+    # last number" is a share of the wrong year. Where this is set, such a
+    # row is dropped rather than read from the wrong column, and the note
+    # says how many were dropped.
+    width: int | None = None
 
 
 @dataclass(frozen=True)
@@ -392,6 +398,7 @@ class Level:
     # the article's title without the disambiguator Wikipedia appends -- and
     # the article kept is the one the category named.
     category: str | None = None
+    category_lang: str = ""
     shape_trim: str = ""
     article_trim: str = ""
 
@@ -467,6 +474,30 @@ def find_table(wikitext: str, spec: Composition) -> tuple[list[list[str]], str, 
                     "a different table")
 
 
+PIXELS = re.compile(r"^\d+\s*px$", re.I)
+
+
+def label_for(label: str, labels: dict[str, str]) -> tuple[str | None, str]:
+    """(the map's name for this row, the key it was found under).
+
+    A row's first cell often carries a flag before the label -- a {{flag}}
+    template or a [[File:...|22px]] link -- and what that resolves to in
+    wikitext is either the country's name or the image's size. Kosice
+    Region's table reads "Slovensko slovenska" and "22px romska" for rows
+    that are "slovenska" and "romska". So a size token is dropped outright,
+    and leading words are dropped one at a time only while what remains is
+    a label this reader already knows: an unknown label stays unknown and
+    is reported rather than whittled into a guess.
+    """
+    words = [w for w in " ".join(label.lower().split()).split(" ")
+             if not PIXELS.match(w)]
+    for start in range(len(words)):
+        key = " ".join(words[start:])
+        if key in labels:
+            return labels[key], key
+    return None, " ".join(words)
+
+
 def read_rows(table: list[list[str]], spec: Composition, decimal: str
               ) -> tuple[dict[str, float], list[str], str]:
     """({label: share}, the labels with no entry in the spec, why not).
@@ -479,6 +510,7 @@ def read_rows(table: list[list[str]], spec: Composition, decimal: str
     skip = re.compile(spec.skip, re.I)
     out: dict[str, float] = {}
     unknown: list[str] = []
+    short = 0
     for row in table:
         if not row:
             continue
@@ -489,11 +521,13 @@ def read_rows(table: list[list[str]], spec: Composition, decimal: str
             continue
         if skip.search(label):
             continue
+        if spec.width is not None and len(numbers) != spec.width:
+            short += 1
+            continue
         wanted = spec.value if spec.value >= 0 else len(numbers) + spec.value
         if not 0 <= wanted < len(numbers):
             continue
-        key = " ".join(label.lower().split())
-        mapped = spec.labels.get(key)
+        mapped, key = label_for(label, spec.labels)
         if mapped is None:
             unknown.append(label)
             continue
@@ -502,7 +536,7 @@ def read_rows(table: list[list[str]], spec: Composition, decimal: str
         return {}, unknown, f"labels this reader has no entry for: {unknown}"
     if not out:
         return {}, [], "the table holds no row this reader could read"
-    return out, [], ""
+    return out, [str(short)] if short else [], ""
 
 
 def shares_of(counts: dict[str, float]) -> tuple[list[dict[str, Any]], str, str]:
@@ -634,7 +668,17 @@ SK_ETHNICITY = {
     "nemecká": "German", "poľská": "Polish", "ruská": "Russian",
     "bulharská": "Bulgarian", "židovská": "Jewish", "chorvátska": "Croatian",
     "srbská": "Serbian", "rumunská": "Romanian", "rakúska": "Austrian",
+    "albánska": "Albanian", "grécka": "Greek", "talianska": "Italian",
+    "anglická": "English", "iránska": "Iranian", "írska": "Irish",
+    "vietnamská": "Vietnamese", "čínska": "Chinese", "turecká": "Turkish",
+    "francúzska": "French", "kanadská": "Canadian", "kórejská": "Korean",
+    "americká": "American", "holandská": "Dutch", "španielska": "Spanish",
+    "slovinská": "Slovene", "slezská": "Silesian", "slezania": "Silesian",
     "iná": "Other", "ostatné": "Other", "ostatná": "Other",
+    "ostatná, nezistená": "Other or not stated",
+    "iná a neuvedená": "Other or not stated",
+    "iná, nezistená": "Other or not stated",
+    "neuvedená": "Not stated", "nezistená národnosť": "Not stated",
     "nezistená": "Not stated", "nezistené": "Not stated",
     "iná a nezistená": "Other or not stated",
 }
@@ -733,18 +777,66 @@ SK_REGIONS = {
 SK_FIELDS = (
     Composition(
         field="ethnicity",
-        section=r"n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos",
+        section=r"n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra",
         header=r"n[áa]rodnos[ťt]",
         value=-1,
         labels=SK_ETHNICITY,
         skip=r"^(spolu|celkom|obyvate)"),
     Composition(
         field="religion",
-        section=r"n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie",
+        section=r"n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra",
         header=r"n[áa]bo[žz]enstvo|vyznanie",
         value=-1,
         labels=SK_RELIGION,
         skip=r"^(spolu|celkom|obyvate)"),
+)
+
+BALKAN_RELIGION = {
+    "eastern orthodox": "Orthodox", "orthodox": "Orthodox",
+    "orthodox christians": "Orthodox", "orthodox christianity": "Orthodox",
+    "roman catholic": "Catholic", "catholics": "Catholic", "catholic": "Catholic",
+    "protestants": "Protestant", "protestant": "Protestant",
+    "islam": "Islam", "muslims": "Islam", "muslim": "Islam",
+    "other christian": "Other Christian",
+    "other christian religions": "Other Christian",
+    "judaism": "Judaism", "jews": "Judaism",
+    "atheist": "Atheism", "atheists": "Atheism",
+    "agnostic": "Agnosticism", "agnostics": "Agnosticism",
+    "other": "Other religion", "others": "Other religion",
+    "undeclared": "Not declared", "not declared": "Not declared",
+    "unknown": "Not stated", "no answer": "Not stated",
+    "adherents of other religions": "Other religion",
+    "believers who do not belong to any religion": "Other religion",
+    "no religion": "No religion", "not religious": "No religion",
+}
+
+MK_ETHNICITY = Composition(
+    field="ethnicity",
+    section=r"^demographics?$|^population$|^ethnic",
+    # " | 2002 | 2021 | | Number | % | Number | % " -- the two censuses the
+    # article prints side by side, which is what makes the width check below
+    # the thing that keeps a row of one census out of the other's column.
+    header=r"number\s*\|?\s*%",
+    value=-1,
+    width=4,
+    labels=BALKAN_ETHNICITY,
+    skip=TOTALS)
+
+MD_ETHNICITY = Composition(
+    field="ethnicity",
+    section=r"^ethnic groups?$|^ethnicit",
+    header=r"ethnic group",
+    value=-1,
+    labels=BALKAN_ETHNICITY,
+    skip=TOTALS)
+
+ME_FIELDS = (
+    Composition(field="ethnicity", section=r"^ethnicit|^ethnic",
+                header=r"ethnicity|ethnic group", value=-1,
+                labels=BALKAN_ETHNICITY, skip=TOTALS),
+    Composition(field="religion", section=r"^religio",
+                header=r"religion", value=-1,
+                labels=BALKAN_RELIGION, skip=TOTALS),
 )
 
 SPECS: dict[str, Country] = {
@@ -758,6 +850,56 @@ SPECS: dict[str, Country] = {
             Level(level="admin2", lang="sk", title="{name} (okres)",
                   official=SK_DISTRICTS, strip="District of ",
                   fields=SK_FIELDS),
+        )),
+    # North Macedonia: the 2021 census, which the English article of each
+    # municipality prints beside the 2002 one in a four-column table. The
+    # regions are not here -- they have no such table -- and say so.
+    "MKD": Country(
+        iso3="MKD", out="europe_wiki_north_macedonia.json", decimal=".",
+        census="State Statistical Office of North Macedonia, Census of "
+               "Population, Households and Dwellings",
+        licence="Official statistics; compilation CC BY-SA 4.0",
+        levels=(
+            Level(level="admin2", lang="en",
+                  title="{name} Municipality",
+                  category="Category:Municipalities of North Macedonia",
+                  article_trim=r"\s+Municipality(,.*)?$",
+                  fields=(MK_ETHNICITY,)),
+        )),
+    # Moldova: the districts, whose English articles carry an ethnic table of
+    # percentages and cite the census the infobox is dated by. The four units
+    # that are not districts -- Chisinau, Balti, Bender, Gagauzia -- are not
+    # in the category and carry the reason instead.
+    "MDA": Country(
+        iso3="MDA", out="europe_wiki_moldova.json", decimal=".",
+        census="Biroul Naţional de Statistică, Recensământul Populaţiei şi al "
+               "Locuinţelor",
+        licence="Official statistics; compilation CC BY-SA 4.0",
+        levels=(
+            Level(level="admin1", lang="en", title="{name} District",
+                  category="Category:Districts of Moldova",
+                  article_trim=r"\s+District$",
+                  fields=(MD_ETHNICITY,)),
+            Level(level="admin2", lang="en", title="{name} District",
+                  category="Category:Districts of Moldova",
+                  article_trim=r"\s+District$",
+                  fields=(MD_ETHNICITY,)),
+        )),
+    # Montenegro: the 23 municipalities the boundary file draws, at both
+    # levels because it draws them at both.
+    "MNE": Country(
+        iso3="MNE", out="europe_wiki_montenegro.json", decimal=".",
+        census="Monstat, Popis stanovništva, domaćinstava i stanova",
+        licence="Official statistics; compilation CC BY-SA 4.0",
+        levels=(
+            Level(level="admin1", lang="en", title="{name}",
+                  category="Category:Municipalities of Montenegro",
+                  article_trim=r"\s+Municipality$",
+                  shape_trim=r"\s+Municipality$", fields=ME_FIELDS),
+            Level(level="admin2", lang="en", title="{name}",
+                  category="Category:Municipalities of Montenegro",
+                  article_trim=r"\s+Municipality$",
+                  shape_trim=r"\s+Municipality$", fields=ME_FIELDS),
         )),
 }
 
@@ -813,7 +955,8 @@ def article_titles(country: Country, level: Level, names: list[str]
     official = level.official
     article_of: dict[str, str] = {}
     if level.category:
-        members = category_members(level.category, level.lang)
+        members = category_members(level.category,
+                                   level.category_lang or level.via or level.lang)
         for title in members:
             key = trimmed(title, level.article_trim)
             article_of.setdefault(key, title)
@@ -882,12 +1025,16 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
     if not cites:
         return None, ("the article prints this table and cites nothing for it; "
                       "an uncited figure is not read")
-    counts, unknown, why = read_rows(table, spec, country.decimal)
+    counts, dropped, why = read_rows(table, spec, country.decimal)
     if why:
         return None, why
     rows, why, remark = shares_of(counts)
     if why:
         return None, why
+    if dropped:
+        remark = (f"{dropped[0]} row(s) of the table carry figures for only "
+                  f"one of the censuses it prints and are not read; what they "
+                  f"hold is inside the remainder. " + remark).strip()
     described = sorted((describe_citation(c) for c in cites),
                        key=lambda d: KIND_RANK[d[0]])
     kind, year, cited = described[0]
@@ -1008,7 +1155,11 @@ def fits_population(reading: dict[str, Any], unit: dict[str, Any], name: str,
     carries for the shape.
     """
     counted = sum(v for v in reading["counts"].values())
-    if counted <= 100:                    # percentages, not counts
+    if counted <= 101:
+        # Percentages, which have nothing to weigh. 101 and not 100 because
+        # a table of shares that adds to exactly 100 adds, in binary, to
+        # 100.00000000000001 -- which refused two Slovak regions whose
+        # figures were right.
         return True
     population = (unit.get("population") or {})
     total = population.get("value") if isinstance(population, dict) else None
