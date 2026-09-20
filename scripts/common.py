@@ -210,8 +210,40 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # not a language anybody was asked to speak, and it is published here on
     # the ethnicity field. The 8,500-village indicator table the provinces and
     # districts are read from carries 68 indicators and no language column.
+    # Mongolia asks ethnic group of every citizen and religion of a ten per
+    # cent sample, and both are on the map (mongolia.py). Language is the one
+    # it does not ask, read off the questionnaire itself rather than inferred
+    # from a table that happened to lack a column.
+    "MNG": {
+        "language": "Mongolia's census does not ask language or mother tongue. The individual questionnaire of the 2020 Population and Housing Census, reproduced in the appendix of the National Statistics Office's national report, runs from \"What is your relationship with household head?\" through gender, age, birthplace, migration, disability, education, literacy, employment and marital status to question 29, \"Do you have a religion?\", and asks nothing about a language at all. In the report's 298 pages the word appears twice: in the definition of literacy -- \"a person who can read and write simple sentences in any languages was considered as literate\" -- and in a note on sign language among the Washington Group's questions on functional difficulty. Ethnic group and religion are both asked, and the aimags carry them.",
+    },
     "LAO": {
         "language": "Laos's census does not ask language or mother tongue. The 4th Population and Housing Census 2015 asked 63 questions in 10 parts, among them ethnicity and religion; its 282-page results volume prints no language or mother-tongue table and never uses the words \"mother tongue\", and neither the Socio-Economic Atlas of the Lao PDR 2015 nor the village indicator table behind it carries a language variable. The ten ethno-linguistic categories the census does publish are a classification of the ethnic group a person named, which the map carries on the ethnicity field.",
+    },
+    # Papua New Guinea, read off its census's own account of its form rather
+    # than inferred from a table that happened to lack a column. Appendix 1 of
+    # the 2011 National Report lists what the fourth census collected --
+    # "age; sex, marital status, religion, migration, economic activity,
+    # occupation, industry, fertility, mortality and household income
+    # generating activities ... A total of 33 questions were asked using a
+    # one-page census questionnaire" -- and neither ethnicity nor language is
+    # among them. Religion is, and the provinces carry it (png.py).
+    #
+    # Language is the one that needs the careful wording, because the census
+    # does ask about languages: Table 4.6 is a literacy rate "by language",
+    # counting who can read and write English, Pidgin (Tok Pisin), Motu or
+    # Tokples -- the report's own glossary defines Tokples as "language of my
+    # place ... the local language of a traditional area belonging to a tribe
+    # or clan", which is to say every one of the 800-odd of them under one
+    # heading. Four abilities, three of them in lingua francas, and they
+    # overlap: they are not a composition of anybody's mother tongue, and
+    # turning them into one would be inventing a statistic. The Factbook's
+    # language vector for PNG ("Tok Pisin, English, Hiri Motu, some 839 living
+    # indigenous languages") is a list of what is spoken and carries a share
+    # for none of them.
+    "PNG": {
+        "ethnicity": "Papua New Guinea's census does not ask ethnicity. Appendix 1 of the National Statistical Office's 2011 National Report lists what the 33 questions of the one-page census form collected -- age, sex, marital status, religion, migration, economic activity, occupation, industry, fertility, mortality and household income-generating activities -- and ethnicity is not among them; the country has no national ethnic classification, its people being counted instead by province and by the language of their place. The 2024 census's Final Figures publish nothing of the kind either.",
+        "language": "Papua New Guinea's census does not ask mother tongue or language spoken at home. The one language question is literacy: the 2011 National Report's Table 4.6 gives the share of people aged 10 and over who can read and write English, Pidgin (Tok Pisin), Motu or Tokples -- 'language of my place', the report's own name for all 800-odd local languages together. Those four are overlapping abilities in three lingua francas and one residual, not a composition of what anybody speaks, so no language share is published for the country or for any province.",
     },
     # Read off the census's own account of its questionnaire, not inferred
     # from a file that happened to lack the column. The Population and Housing
@@ -437,10 +469,40 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "VEN": {
         "religion": "Venezuela's 2011 census asked indigenous and Afro-descendant self-recognition and not religion; no census since 1961 has carried a religion question.",
     },
+    # Measured against the census's own form and its own 53 tables, after the
+    # three notes here had stood for a while as an assertion with nothing
+    # behind them. North Korea is not a country without a census: the 2008
+    # round was enumerated over 1-15 October by about 35,000 enumerators with
+    # UNFPA support, and the Central Bureau of Statistics' National Report was
+    # published -- 278 pages, served by the UN Statistics Division, with all
+    # three questionnaires printed as annexes.
+    #
+    # What the form asks: 53 questions, H1-H14 on the household and the
+    # dwelling, P1-P29 on the person, M1-M10 on deaths in the household. One
+    # of the 53 asks who a person is, P7, "What is ____'s nationality?",
+    # answered 1 Korean or 2 Others.
+    #
+    # What the round publishes: Tables 1 to 53, and Table 5 is the only one
+    # carrying P7 -- national, by age and sex, 23,349,326 Koreans against 533
+    # people of other nationalities. Over the text of all 278 pages,
+    # *religio*, *ethnic*, *mother tongue*, *language*, *church*, *Buddhis*,
+    # *Christian*, *Chondo*, *Confucian* and *faith* match two pages: Table
+    # 22's definition of literacy ("read and write a simple message in any
+    # language") and one line of Table 37's occupation list ("Religious
+    # professionals", 103 people). Neither is a composition.
+    #
+    # And there is no survey standing in for the census, which is the question
+    # Afghanistan's entry below exists to answer: the CBS's Socio-Economic,
+    # Demographic and Health Survey 2014, 167 pages, matches none of those
+    # words on any page.
+    #
+    # Nationality is not carried onto the ethnicity field, for the Maldives'
+    # reason: a passport is not an ethnic group, and Table 5 has no geography
+    # to put one on in any case.
     "PRK": {
-        "religion": "North Korea's only modern census, 2008, asked no religion question, and the state publishes no other figures.",
-        "ethnicity": "North Korea's 2008 census asked no ethnicity question.",
-        "language": "North Korea's 2008 census asked no language question.",
+        "religion": "North Korea's census does not ask religion. Its 2008 questionnaire has 53 questions -- H1 to H14 on the household, P1 to P29 on the person, M1 to M10 on deaths -- and none of them is about religion; in the 278 pages of the National Report the word occurs once, as the occupation 'religious professionals', 103 people, in Table 37. No table of the 53 is a religion table and the state publishes no other figures.",
+        "ethnicity": "North Korea's census does not ask ethnicity. The one question on its form about who a person is, P7, asks nationality -- 1 Korean or 2 Others -- and the only table built from it, Table 5, is national: 23,349,326 Koreans and 533 people of other nationalities, by age and by sex. Nationality is not ethnicity, and nothing in the round crosses either with a province.",
+        "language": "North Korea's census does not ask language. In the 278 pages of the 2008 National Report 'mother tongue' appears nowhere and 'language' appears once, in Table 22's definition of literacy -- the ability to read and write a simple message in any language -- which counts an ability and records no language. No table of the 53 is a language table.",
     },
     "SYR": {
         "religion": "Syria's census has not asked religion since 1960; the 2004 census asked nationality (citizenship) only, as the US Census Bureau workbook's dictionary confirms.",

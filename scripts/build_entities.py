@@ -119,6 +119,12 @@ ADAPTER_FILES = [
     # surveys, and it touches a field the surveys do not carry.
     "china_wiki_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
+    # After Wikidata, which carries a population for North Korea's provinces
+    # and for Pyongyang a 2015 estimate: this is the 2008 census's own Table 2,
+    # for all 11 first-level units and all 179 counties, with the sex ratio
+    # beside it. It writes no composition -- the country asks none of the
+    # three, which this file's own reading of the report is what established.
+    "northkorea_county.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
     # says so in a generic sentence; this is the census itself.
@@ -143,6 +149,14 @@ ADAPTER_FILES = [
     # Ethnicity is a declaration rather than a gap -- the 2022 questionnaire
     # does not ask it -- and comes from NOT_COLLECTED_POLICY.
     "timor.json",
+    # Mongolia's 22 aimags and all 339 soums: ethnicity for every aimag from
+    # Appendix Table 3.6 of the 2020 census's English national report, religion
+    # for 18 of them from those aimags' own results books, and ethnicity for
+    # 204 soums from the tables of ethnic group by soum those books print. The
+    # soums with no figure carry the reason instead. Language is a declaration
+    # -- the 2020 questionnaire does not ask it -- and comes from
+    # NOT_COLLECTED_POLICY.
+    "mongolia.json",
     # Religion, population and mother tongue together: this one file reads
     # Table 9 and Table 11 of the same census. It used to be a pair, the
     # language half coming from the U.S. Census Bureau's tables of the 2017
@@ -167,6 +181,11 @@ ADAPTER_FILES = [
     # survey and now carry their census for the fields it publishes by region.
     "zimbabwe_province.json", "burkina_region.json",
     "thailand_province.json",
+    # Papua New Guinea's own office, two of its publications: the 2024
+    # census's head count for the 22 provinces and 71 of the 87 district
+    # shapes, and the 2011 census's one provincial religion figure. Nothing
+    # else writes PNG, so its place here is only by kind -- a census count.
+    "png.json",
     "kazakhstan_region.json", "cambodia_province.json",
     "kazakhstan_oblast.json", "kazakhstan_district.json",
     "malaysia_state.json", "malaysia_district.json",
@@ -256,6 +275,15 @@ ADAPTER_HINTS: dict[str, str] = {
            "tongue) by municipality, with the 2022 main report's basic table 4.01 for "
            "population down to the administrative post: "
            "python -m scripts.fetch_census.timor",
+    "PNG": "NSO 2024 census Final Figures (population, sex ratio by province and "
+           "district) and the 2011 National Report's Summary Indicators (each "
+           "province's largest denomination): python -m scripts.fetch_census.png",
+    "PRK": "The 2008 census's Table 2 (population by sex and urban/rural, by "
+           "city/district/county and province) from the UN Statistics Division's "
+           "copy of the CBS National Report: population and sex ratio only, "
+           "because the census asks none of the three -- its form's one question "
+           "about who a person is asks nationality: "
+           "python -m scripts.fetch_census.northkorea",
     "PER": "INEI 2017 census profile book (religion, mother tongue) by department, "
            "read from the PDF's word positions: python -m scripts.fetch_census.peru",
     "MLI": "INSTAT RGPH5 2022 thematic report on cultural characteristics (religion, "

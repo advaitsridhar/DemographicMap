@@ -110,6 +110,16 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # Development Laos, summed to 18 provinces and 148 districts; one 4.5 MB
   # workbook, needs egress.
   soft python3 -m scripts.fetch_census.laos --level both
+  # Mongolia: ethnic group and religion for the 22 aimags and ethnic group for
+  # the soums, from the 2020 census's national report and the 22 aimag results
+  # books. The books are read from the Internet Archive by --fetch, which needs
+  # egress and 300 MB of PDF; the adapter itself reads the text files --fetch
+  # left in data/raw/mongolia and needs nothing.
+  soft python3 -m scripts.fetch_census.mongolia
+  # North Korea: the 2008 census's Table 2, population and sex ratio for the
+  # 11 first-level units and all 179 counties, read from the UN Statistics
+  # Division's copy of the CBS National Report; one 1.4 MB PDF, needs egress.
+  soft python3 -m scripts.fetch_census.northkorea
   # Census ethnicity for the 31 divisions, one MediaWiki API call each.
   soft python3 -m scripts.fetch_census.china_wiki
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.
@@ -117,6 +127,9 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # Thailand's ethnicity by the owner's decision: modelled from the same
   # article's home-language cells and a regional assignment; two API calls.
   soft python3 -m scripts.fetch_census.thailand_ethnicity
+  # Papua New Guinea: two NSO PDFs, the 2024 census Final Figures (8 MB) and
+  # the 2011 National Report (12 MB), read with pypdf.
+  soft python3 -m scripts.fetch_census.png
   # Census tables that reach us only as Wikipedia transcriptions (KAZ, KHM).
   soft python3 -m scripts.fetch_census.wiki_census
   # Reads the committed BNS workbook under data/raw/kazakhstan; no network.

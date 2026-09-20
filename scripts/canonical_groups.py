@@ -1202,6 +1202,10 @@ RESIDUAL: frozenset[str] = frozenset({
     "other or not stated", "none or not stated", "Other and unspecified",
     "Other or unspecified", "other/not stated", "Other/not stated",
     "No ethnic group", "Unknown ethnicity", "Not declared",
+    # Mongolia's two residuals: the ethnic groups its census does not name
+    # because each has fewer than a hundred people in the country, and the
+    # Mongolian citizens it records under a foreign nationality.
+    "Other ethnic groups", "Other nationals (Mongolian citizens)",
     "Some other race (non-Hispanic)", "Other and unspecified languages",
     # A marker the source prints where it has nothing to report. It is not a
     # group at all, and until it was named here it read as one: grey on the

@@ -252,12 +252,15 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Estonia | Statistics Estonia table `RV0222U` (PxWeb) | county | Ethnic nationality for all 15 counties, from the population register on 1 January — a register count, not a census answer. |
 | Latvia | Central Statistical Bureau table `IRE031` (PxWeb) | municipality, state city | Ethnicity for all 42 municipalities and state cities, from the population register. "Other ethnicities" also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular. |
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
+| Mongolia | NSO, 2020 Population and Housing Census: the English national report's Appendix Table 3.6 (percentage distribution of population by ethnicity, and aimags and the capital) and the 22 aimag results books (“Хүн ам, орон сууцны 2020 оны улсын тооллогын НЭГДСЭН ДҮН”), chapter three, all read from the Internet Archive | aimag, soum | Ethnic group for all 22 aimags and religion for 18 of them; ethnic group for 204 of the 339 soums, the other 135 carrying the reason instead. The office's own database is gone -- opendata.1212.mn no longer resolves, web.nso.mn refuses the connection, www2.1212.mn's certificate has expired and answers plain HTTP with an empty body, and nso.mn and www.1212.mn are one Next.js application that names no API. Religion is a ten per cent sample of the population aged 15 and over and is labelled as such; “No religion” is an answer people gave, the census asking whether before asking which. The soum tables come in three shapes across the 22 books and each is told by its own arithmetic; every one is checked group by group against Appendix Table 3.6, and Khovd's is refused because it makes the aimag 39.5% Khalkh where the report has 29.8%. Language is `not_collected` (policy entry `MNG`): the 2020 individual questionnaire runs to question 29, “Do you have a religion?”, and asks about no language. `scripts/fetch_census/mongolia.py`. |
 | Timor-Leste | INETL, Census 2015 Volume 2 priority tables 12 (mother tongue by municipality) and 11 (religion by municipality); Census 2022 Main Report basic table 4.01 (population by municipality, administrative post and suco) | municipality, administrative post | Mother tongue and religion for all 13 municipalities, stamped 2015 because the 2022 round asked both questions (E57 and E58 of its questionnaire) and has published neither below the country. The 2015 tables are a partition — 38 tongues, one per person, adding to each municipality's own total to the person — and their national column is exactly the fifteen-entry language list the map's country row already carried. Both tables count 1,179,654 people, 3,989 below the volume's own total population and 1,314 above its private-household population, unexplained by any footnote. Population is 2022, with Atauro (a municipality of its own since 2022, an administrative post of Dili before) summed back into Dili, which is the division the boundary file draws. The 67 administrative posts carry population and a stated gap for each composition; no table in either round goes below the municipality and INETL's REDATAM dashboard, served from a bare address, timed out. Ethnicity is `not_collected` (policy entry `TLS`): the 2022 questionnaire runs E1 to E77 without asking it. `scripts/fetch_census/timor.py`. |
 | Lao PDR | Lao Statistics Bureau, 4th Population and Housing Census 2015, village indicator table (`lao-population-census-2015.xlsx`, 8,499 villages x 75 columns) released through Open Development Laos; category definitions from Table 1 of the *Socio-Economic Atlas of the Lao PDR 2015* (LSB with CDE Bern); national controls from the census's own English results volume on UNFPA Laos | province, district | Ethnicity and religion for all 18 provinces and all 148 districts, where the results volume publishes both for the country only — its Tables 3.4, 3.5, P2.7 and P2.9 are national and none of its thirty province tables crosses either field. Each village's published percentage is turned back into people by its own published population and summed; shares are recomputed against the unit and re-rounded to add to 100. Ethnicity is the census's ten **ethno-linguistic categories**, not its 49 groups, and the Atlas's "Lao" is not the census's Lao: it puts the Lao of Huaphanh, Xiengkhuang, Borikhamxay, Vientiane province and Hinboun in "Tai-Thay", so the villages give Lao 43.7% and Tai-Thay 18.3% where Table 3.4 prints Lao 53.2% — together the volume's Lao-Tai family, 62.4%, which is where the check is made. Religion has five categories and a residual of 33.3%: the census counts a religion only where it has written doctrines, so the animist beliefs of most non-Lao-Tai people sit in "No religion or not stated" beside the 1.8% who stated nothing, and both residuals are marked so neither can lead a unit. The 8,499 villages weigh 6,481,625 people, 0.16% under the published 6,492,228; sex ratio 995.7 females per 1,000 males against 994.7. The two Vientianes are settled by an explicit table and carry no aliases; seven district names romanise differently in the two files and are declared. Language is `not_collected` (policy entry `LAO`): 282 pages with no language table and no occurrence of "mother tongue". `scripts/fetch_census/laos.py`. |
+| North Korea | Central Bureau of Statistics, DPR Korea, *2008 Population Census — National Report* (Pyongyang, 2009), Table 2 (population by sex and urban/rural, by city/district/county and province), read from the UN Statistics Division's copy | province, county | **Population and sex ratio only, and a documented declaration for the other three.** All 11 first-level units and all 179 counties carried nothing at all before this; Table 2 counts every one of them. The report's geography is October 2008 and the boundary file's is after the 2010 changes, so four differences are settled by summing the report's own rows over the units the file draws, never by splitting one: Nampo is the six South Phyongan rows the file puts inside it (983,660) and South Pyongan its printed total less them; Kangnam, Junghwa and Sangwon move from Pyongyang to North Hwanghae; Chongjin City is the seven districts the report itself marks as its parts and Hamhung City the six it marks plus Hungnam; the Pyongyang shape is the city's remaining eighteen districts, Unjong and Kangdong being drawn separately. Each of the ten first-level areas equals its own county rows, the eleven shapes equal 23,349,859, and that is Table 2's own DPR Korea row — 702,372 below Table 1's 24,052,231, the difference being 662,349 men and 40,023 women living in military camps, whom no table of the report places in a province, so every sex ratio here runs above the census's own. Eight county names and both Phyongans are written differently in the two files and are declared, among them a Cholwon in North Phyongan where the county is Cholsan and a second Ryongchon in South Hwanghae where it is Ryongyon — the report's own slips, settled by the two lists closing with every other name in the province matching outright, and corrected nowhere. Religion, ethnicity and language are `not_collected` (policy entry `PRK`): the questionnaire's 53 questions ask none of them, and its one question about who a person is asks nationality. The adapter does not copy that declaration into its 190 rows — it marks the three `not_available` with a line saying the census asks none of them, which is the one form `apply_collection_policy` replaces, so sharpening the policy sharpens every unit at once. `scripts/fetch_census/northkorea.py`. |
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts. The census measured all 77; the boundary file is what fails, drawing 75 shapes whose names do not all sit on the right ground, and the 9 shapes that therefore carry nothing each say so and name the province total that holds their people. |
 | India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 734 of 735 district shapes carry figures. 637 are the census's own rows; 97 are shapes the census never enumerated and which carry their predecessor's shares as a stated estimate, with no head count, so nobody is counted twice. 75 more are districts that have since lost territory, and keep their 2011 figure under a caveat saying how much ground they have left. The one shape without figures is not a district at all. Telangana and Ladakh have state figures summed from the ten and two districts the census did enumerate, and Andhra Pradesh and Jammu and Kashmir carry the residual rather than the undivided state. |
+| Papua New Guinea | NSO, *2024 National Population Census -- Final Figures* (Table 1 and the 22 Provincial Snapshots) for population and sex ratio; *Papua New Guinea 2011 National Report* (2011 census), Summary Indicators row "Main religion (% of population)" | province, district | Fills a country that carried nothing at all: 22 provinces and 71 of 87 district shapes. Religion is **one group per province** -- the largest denomination and its share of the citizen population, which is the only provincial religion figure the office publishes; the full tables are in the 22 Provincial Reports it does not host, and the panel marks the record "describes N% of the population". Ethnicity and language are `not_collected` (policy entry `PNG`): the 2011 report's Appendix 1 lists the 33 questions of the one-page form and neither is among them, and the one language item is a literacy rate in English, Pidgin, Motu and Tokples. Both PDFs print their figures in kerned groups ("41 2 ,15 8" for 412,158), so a row is cut where males plus females make the total and the printed sex ratio holds. The 2024 layout has one district more than the boundary file draws in Western, Northern, Morobe and West New Britain and the booklet does not say which district it came out of, so those four provinces' 16 shapes carry the reason rather than a count. `scripts/fetch_census/png.py`. |
 | Bhutan | National Statistics Bureau, 2017 Population & Housing Census of Bhutan (PHCB), Table 2.1 — population distribution by gewog and town — in each of the twenty *Dzongkhag Series* volumes, with the *National Report* (288 pp, ISBN 978-99936-28-50-7) as the control. Indexed at `www.nsb.gov.bt/phcb`, which links the national report and the twenty volumes; the volumes are fetched as `nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_{Dzongkhag}.pdf`. Licence: none stated — NSB official publications, cited as such. | dzongkhag, gewog | **Population and sex ratio only**, for all 20 dzongkhags and 205 gewogs, each volume's own Table 2.1. Religion, language and ethnicity are `not_collected`, measured over the round's whole 1,798 pages rather than assumed — see below. The census's one identity-adjacent split is **citizenship** (Bhutanese against non-Bhutanese, published to gewog) and it is deliberately not read as ethnicity. Sex ratio is derived as females per 1,000 males from the Male and Female columns of the same row, and only where those two reach the Total printed beside them; a row that does not add up keeps its head count and publishes a gap naming the three figures. The publications disagree on the head count and the disagreement is reported rather than resolved: the twenty volumes come to **720,837**, the national report analyses **727,145**, and it says **735,553** were found in the country, the difference being 8,408 non-Bhutanese and tourists in hotels on census night about whom nothing else was collected. Each volume reconciles to its own printed total, gewog by gewog, so the dzongkhag's own figure is the one carried. Towns and thromdes are enumerated *beside* the gewogs, not inside them, and geoBoundaries draws none of them, so the gewog layer is short of its parent by the urban population — 37.8% of Bhutan — and every gewog record says so. **Thirty gewogs are drawn under a different name, not a different spelling** — Samtse's Tashicholing as "Sipsu", its Norgaygang as "Bara", Sarpang's Samtenling as "Bhur": the Nepali-origin names southern Bhutan carried before the renamings. They are paired by Wikidata's reference point for the gewog the census names falling inside the polygon the boundary file draws, with Wikidata's dzongkhag agreeing with the census's — a method measured first (98 of the 102 gewogs already matched by name have their own point inside their own polygon) and corroborated against the published list of all 205 gewogs with their Dzongkha. Six with no point are taken by elimination inside a dzongkhag where nothing else is left; four whose names repeat across dzongkhags (two Gakilings, two Norboogangs) are bound to a polygon by its id. Two earlier name pairings were wrong and are removed: Punakha's Barp was wearing a polygon 96% inside Samtse, Chhukha's Maedtabkha one 60% inside Tsirang, and those two polygons are Samtse's Norgaygang and Tsirang's Sergithang, which had no figures at all. 205 of 205 gewog shapes now carry the census's. `scripts/fetch_census/bhutan.py`. |
 
 ### New Zealand: the geography that already fitted
@@ -4902,6 +4905,202 @@ count at village level is the better answer and was reached first. The Atlas's
 2005 half was not read either: this project carries one vintage per unit, and
 2015 is the later one.
 
+### Mongolia: a statistical office that has moved, and 22 books on the Internet Archive
+
+Mongolia's 2020 Population and Housing Census asked ethnic group of every
+Mongolian citizen -- 33 groups where 2010 had 29 -- and asked religion, at
+question 29 of the individual form, of the ten per cent of households that
+got the long questionnaire. Before this it carried nothing on any of its 22
+aimags and nothing on any of its 339 soums: every field on every unit was a
+bare `not_available`, and the country row's Khalkh 83.8% and Buddhist 51.8%
+came from the Factbook.
+
+**The office's own database is gone.** `opendata.1212.mn`, the API the CRAN
+package NSO1212 is written against and the thing this task was pointed at
+first, no longer resolves at all. Nor does the rest of the old estate:
+
+| Host | What it answers now |
+| --- | --- |
+| `opendata.1212.mn` | *Name or service not known* |
+| `web.nso.mn` (the NADA microdata catalogue) | connection refused |
+| `www2.1212.mn` | HTTPS with a certificate that expired |
+| `www2.1212.mn` over plain HTTP | 200, and a body of zero bytes |
+| `nso.mn`, `www.1212.mn`, `data.nso.mn`, `metadata.nso.mn` | 200, and one Next.js application between them |
+
+The live hosts are reachable but carry nothing an automated reader can take:
+`nso.mn` and `www.1212.mn` serve the same single-page application, whose
+client bundle names no API at all because its pages are rendered on the
+server; `data.nso.mn` is the Ministry of Digital Development's "Data Nation"
+warehouse and answers `/api/...` with its own 404 page. Every `*.nso.mn` and
+`*.1212.mn` host also sends its leaf certificate without the Sectigo
+intermediate above it, so a plain urllib client fails them with *unable to
+get local issuer certificate*; `common.http_get(..., aia=True)` completes
+the chain from the certificate's own AIA extension and verifies, which is
+what the probe uses. None of this is a refusal of automated readers -- it is
+a site that has been replaced -- and it is written down rather than worked
+around.
+
+**What the office published, and where it survives.** Beside the national
+report, the NSO published a results book for each of the 21 aimags and the
+capital: *"<aimag> аймгийн хүн ам, орон сууцны 2020 оны улсын тооллогын
+НЭГДСЭН ДҮН"*, written by that aimag's own statistics department, chapter
+three of every one being "Улсын харьяалал, үндэс угсаа, шашин". They were
+served by an ASP.NET handler, `1212.mn/BookLibraryDownload.ashx?url=<file>&ln=Mn`,
+and the Internet Archive has all 22, the way it has Romania's 2011 census
+(*Romania — the census read through the Internet Archive*). One CDX query
+lists every capture of every book and `--fetch` takes the largest, because
+the Archive stored several of them twice -- once whole and once truncated at
+exactly 1,048,576 bytes, a download cut off at one mebibyte, which opens as
+a PDF of no pages. Where the largest capture is itself half-written or the
+Archive answers 503 for it, the next one down is tried.
+
+Two books are not under the XAOCT stem the other twenty share and were found
+by name: `dundgovi.pdf` and `Khentii.pdf`. `Khentii.pdf` turns out to be that
+aimag's **2010** book, typeset in a legacy Mongolian codepage that extracts as
+Latin-1 mojibake ("Õ¯Í ÀÌ, ÎÐÎÍ ÑÓÓÖÍÛ 2010 ÎÍÛ"); it is rejected by the
+test that a book must name 2020 somewhere. The only other Khentii candidate
+the Archive holds, `18._Khentii.pdf`, names neither ethnic group nor religion
+on any of its pages, so Khentii's 2020 book is not there under any name this
+project searched. `dundgovi.pdf` is 34 MB of scanned image
+with only its running heads in the text layer.
+
+`--fetch` keeps the pages of each book that name ethnic group, religion or
+the sex ratio and writes them to `data/raw/mongolia/`, so a build without
+network still runs and what was read is committed beside the code that read
+it. Each word is written with the span it occupies on the page, the way
+`probe_pdf --boxes` does, because these books write a thousands separator as
+a space: "Хэрлэн сум 46 192 37 611 49 173" is eight numbers or twelve and
+only the gaps say which -- the space inside a number is two or three points
+wide where the gap between two columns is ten or more.
+
+**The aimags' ethnicity is not from the books.** Appendix Table 3.6 of the
+English national report, *"Percentage distribution of population, by
+ethnicity, and aimags and the capital, region, 2020"*, gives all 22 units
+over 26 ethnic groups in the office's own English spellings, printed in three
+column blocks with the transposed Table 3.6a interleaved between them. It is
+read from the same Archive. Blocks one and two carry a clean header line and
+the reader checks the names against the ones it expects; the third's header
+is broken across three baselines -- "Tsaatan", "Uzbek" and "groups /" sit
+above "Eljigen Sartuul Tuva Khamnigan Khoshuud Other" -- so its column order
+is declared, and the check that it is right is that every aimag's 26 shares
+then add to exactly 100 and each group's largest aimag share exceeds its
+national one.
+
+**The aimags' religion is from the books.** Chapter three of each prints two
+tables: the share of the population aged 15 and over who follow a religion at
+all, and the breakdown of those who do. The composition written here is the
+first split by the second. Eighteen of the 22 were read. The four that were
+not are not a shrug:
+
+* **Darkhan-Uul** -- the book is whole and its chapter-three tables are
+  images. Its 558 kept lines contain no row of five figures at all.
+* **Dundgovi** -- the only capture that opens is the scan.
+* **Khentii** -- no 2020 book.
+* **Khovd** -- the book prints the breakdown of the religious population
+  (Buddhist 81.3%, Muslim 13.6%) and this reader could not find, on any page
+  it kept, the published share who follow a religion; the narrative says
+  60.6% and putting a sentence's number where a table's should go is not
+  something this file does.
+
+**Which soums the census published, and in three different shapes.** Most of
+the 22 books print a table of ethnic group by soum and no two departments
+agreed how. Some give each soum's own composition in percentages; some give
+counts; and some give the *distribution of each ethnic group across the
+soums*, a table whose columns add to 100 and not its rows. The third is still
+a composition once each column is weighted by the aimag's own group shares
+from Appendix Table 3.6, and the note on those soums says the figure is
+derived rather than transcribed. Each shape is told by its own arithmetic --
+rows opening at exactly 100.0, columns adding to the unit's own line, columns
+adding to 100 -- and a block whose arithmetic fits none of them is not read.
+
+Two things about these pages cost several readings before they were right,
+and both are in the tests:
+
+* **The headings are set in fragments.** Sükhbaatar prints "Дарь-" and
+  "Уриан-" on the line above the header and "ганга" and "хай" on the line
+  below, so the line that looks like the header names six groups where the
+  table has eight columns; a reader that trusts it hands every group the
+  column to its left, and Dariganga's 39% of the aimag is written as
+  Zakhchin's. The header is therefore assembled from the words of the lines
+  around it, grouped by the space each occupies across the page and joined in
+  reading order, which recovers those two names and Khuvsgul's four-line
+  "Хөвсгөл аймгийн харьяат-Бүгд".
+* **Whether there is a total column in front of the groups** is a question
+  about where the figures sit, not about the header: Dornod's second block
+  reads fourteen rows at either width, and the wrong one silently shifts
+  Barga and Uzemchin by one. It is settled by asking whether a row's first
+  figure begins to the left of the first group's heading.
+
+**Every soum table is then checked against a different document.** Where a
+book prints its aimag's own line, that line must be the composition Appendix
+Table 3.6 gives, group by group, to within a fifth of the group; where it
+prints each group's distribution over the soums, weighting that by the
+report's shares must reproduce the book's own column of each soum's share of
+the aimag. Khovd's table fails it -- the reader makes the aimag 39.5% Khalkh
+where the report has 29.8% -- and Khovd's seventeen soums are left unwritten
+with that sentence as their reason, because a composition read one column out
+of step is worse than none.
+
+**Joining a soum to a shape.** The boundary file romanises Mongolian in a
+scheme of its own, and not consistently: "Adaacag", "Aldarxaan",
+"Altanco'gc", "Bor-Ondor" against "O'ndor-Ulaan", "Herlen" in Dornod against
+"Xerlen" in Khentii, "Saintsagaan" against "Cagaandelger", "Xalx gol" and
+"Zamyn U'ud" where the name is one word. Names are compared on a folded key
+that both sides reduce to: apostrophes, hyphens and spaces dropped, kh and h
+read as x, ts and ch as c, sh as s, y as i. Doubled vowels are kept, because
+Khuvsgul has both Цагааннуур and Цагаан-Уур and collapsing them would make
+one name of two soums. Three aimags have a soum called Altai and every match
+is made inside one aimag, so none of the three is ambiguous. One row was left
+unwritten by name: Zavkhan's book prints Их-Уул twice, once as "Ихуул", and
+the second row for a shape already written is refused rather than merged.
+
+**What the self-checks found.** Appendix Table 3.6 reads for all 22 aimags
+and each one's 26 shares add to exactly 100. Khovd comes out Khalkh 28.1%,
+Zakhchin 25.3%, Kazakh 11.2%, Uriankhai 8.3%, Torguud 7.4%, Durvud 6.5%,
+which is the report's own sentence about Khovd to the tenth. Bayan-Ölgii --
+the aimag that looks nothing like the country, and the reason to check --
+comes out **Kazakh 91.0%, Uriankhai 5.6%, Durvud 0.9%, Khalkh 0.9%, Tuva
+0.8%** on ethnicity and **Islam 82.0%, no religion 11.3%, Buddhism 5.4%,
+shamanism 0.8%** on religion; no other aimag is above 3.5% Muslim, the next
+being Uvs. Uvs is Durvud 42.3% and Bayad 34.2%, which is where the report
+puts 41.8% of Mongolia's Durvuds and 44.3% of its Bayads. Across the 18
+aimags whose religion was read the Buddhist share runs from 5.4% to 86.3%,
+bracketing the national 51.7% (59.4% of the population aged 15 and over
+follow a religion, of whom 87.1% are Buddhist).
+
+**Mongolia's residual, and the two kinds of it.** The census asks whether a
+person follows a religion before asking which, so "No religion" here is an
+answer people gave and not a bucket welded to non-response -- unlike Laos's
+"No religion or not stated", it leads a unit honestly, and it does in nine
+aimags. The ethnicity question has two residuals and both are marked as
+residuals in `canonical_groups.RESIDUAL` so that neither can lead a unit:
+"Other ethnic groups", which is every group with fewer than a hundred people
+in the country, and "Other nationals (Mongolian citizens)", which is a
+citizenship and not an ancestry. Nineteen of the census's groups joined the
+tree under *Mongolic and Siberian peoples*; Тува, Халимаг and Балба are the
+Mongolian for Tuvan, Kalmyk and Nepali and are resolved as variants of names
+the tree already carried.
+
+**What is written.** `data/processed/mongolia.json`: 22 aimags, each with the
+census's ethnic composition, and 18 of them with its religion; 339 soums, of
+which 204 carry an ethnic composition and 135 carry a written reason instead.
+Every soum's religion is a gap that says the census published the answer for
+the aimag and that this aimag's book prints no religion table by soum. The
+base of every ethnic figure is Mongolian citizens, so the 22,418 foreign
+nationals the census counted are outside it, and a group under 0.05% of a
+unit is inside "Other ethnic groups".
+
+**Language is declared rather than left blank.** See *Mongolia: a
+questionnaire that runs to question 29* under Collection policy.
+
+**What was measured and left.** HDX carries Mongolia's boundaries and
+humanitarian datasets, not census tables, and was not read. The 2010 census's
+books are on the Archive too and were not read: this project carries one
+vintage per unit and 2020 is the later one. Nothing was taken from the
+narrative of any book -- several state the aimag's religious split in a
+sentence where the table is an image, and a sentence's number is not a
+table's.
+
 ### Brunei: two fields by district, a third asked and never printed
 
 Brunei's Department of Economic Planning and Statistics ran the sixth
@@ -6751,6 +6950,31 @@ the Wikipedia transcriptions above, ended in declarations rather than files:
 * **Venezuela** -- the 2011 census asked indigenous and Afro-descendant
   self-recognition and not religion; `not_collected` for religion only.
 
+### Mongolia: a questionnaire that runs to question 29
+
+Mongolia's 2020 census asked ethnic group and religion, and the map carries
+both for the aimags (see *Mongolia: a statistical office that has moved, and
+22 books on the Internet Archive*). Language is declared `not_collected`
+rather than left blank, and the declaration is read off the form rather than
+inferred from a table that happened to lack a column.
+
+* The individual questionnaire is reproduced in the appendix of the National
+  Statistics Office's English national report. It runs from "What is your
+  relationship with household head?" through gender, age, birthplace,
+  migration, disability, education, literacy, employment and marital status
+  to **question 29, "Do you have a religion?"** — whose answers are no
+  religion, Buddhism, Christianity, Islam, shamanism and other — and asks
+  about no language at any point.
+* In the report's 298 pages the word "language" appears twice, and neither is
+  a question: the definition of literacy, "a person who can read and write
+  simple sentences in **any languages** was considered as literate", and sign
+  language among the Washington Group's short set on functional difficulty.
+* None of the report's tables, and none of the tables in the 22 aimag results
+  books read for it, is a language table.
+
+Ethnic group is the question Mongolia does ask about who a person is, 33
+groups of it, and that is where this map carries the answer.
+
 ### Laos: 282 pages, and no language question
 
 Laos's 2015 census asked ethnicity and religion, and the map carries both for
@@ -6784,6 +7008,145 @@ anybody was asked to speak, and this map publishes it on the ethnicity field
 for that reason. Publishing it a second time as language would be the
 mis-match this project ranks below a gap — Pakistan's ethnicity row, in the
 mirror.
+
+### North Korea: 53 questions, one of which asks who you are
+
+`NOT_COLLECTED_POLICY["PRK"]` declared religion, ethnicity **and** language,
+and the declaration reached all 11 provinces and all 179 counties, so every
+North Korean unit on the map said `not_collected` with a reason. What it did
+not have was a measurement: the country had no section here, only its name in
+a list, and the three notes said what the census does not ask without ever
+saying what was read to find out. The declarations this project stands on are
+backed by a page count and a term search — Laos's 282 pages, Bhutan's 1,798,
+Timor-Leste's questionnaire running E1 to E77. This one now is too.
+
+The check could have gone the other way and was run as though it would. North
+Korea is not a country without a census. The **2008 Population Census** was
+enumerated from 1 to 15 October 2008 by about 35,000 enumerators and nearly
+8,000 team supervisors, under Cabinet Declaration No. 33 of October 2006, with
+financial and technical support from UNFPA, and the **National Report**
+(Central Bureau of Statistics, Pyongyang, 2009) was published — 278 pages,
+53 tables, and all three questionnaires printed as annexes. The UN Statistics
+Division serves it at
+`unstats.un.org/unsd/demographic/sources/census/wphc/North_Korea/Final national census report.pdf`,
+which is what was read; the directory above it answers 403 to an automated
+reader, so the one other DPRK file it serves, the one-page preliminary
+results, was reached by name rather than by listing.
+
+**The form.** Annex 2, the CPF 2 questionnaire, is printed whole. It runs
+**53 questions**: H1 to H14 on the household and the dwelling unit (members,
+type of household, class of labour of the head, dwelling type, occupancy,
+floor area, rooms, water tap, water source, toilet, heating installed,
+heating used, cooking fuel), P1 to P29 on the person, and M1 to M10 on deaths
+in the household in the twelve months before the census. **Exactly one of the
+53 asks who a person is:**
+
+> **P7  What is ____'s nationality?**  1 Korean  2 Others
+
+The rest of Module 2 is household membership, where the person is registered,
+relationship to the head, sex, date of birth, the four disability questions,
+schooling and educational attainment, the post-secondary certificate and field
+of study, usual activity, household economic activity and hours, industry,
+occupation, class of labour, marital status, age at first marriage and births
+in the past year. There is no religion question, no ethnicity question and
+nothing about mother tongue or language. Annex 1 (CPF 1) is a listing form —
+building, dwelling unit, household, name of head, address, counts — and Annex
+3 (CPF 2-B) the shorter form for institutional living quarters. The Concepts
+and Definitions section defines dwelling unit, household, head of household,
+household member, institutional living quarters, institutional population,
+nuclear and extended household, and class of labour, and defines none of the
+three.
+
+**The tables.** The List of Tables runs **Table 1 to Table 53**, and the one
+table built on P7 is:
+
+> **Table 5.  Population by Nationality, by 5-year age Group and by Sex** —
+> 23,349,859 people, of whom **23,349,326 Koreans** and **533 of other
+> nationalities**, and that is the whole of it. By age and by sex, and by
+> nothing else.
+
+Nationality is not written onto the ethnicity field. The Maldives entry above
+settles the principle — a passport is not an ethnic group — and here the point
+is moot twice over: Table 5 has no geography to put a composition on, and the
+Scope and Coverage section says the enumeration covered "all Korean citizens
+living in DPRK and people of other nationalities who have already acquired
+Korean citizenship", so the 533 are the residue of a question about papers.
+
+Searched over the text of all 278 pages for *religio*, *ethnic*, *mother
+tongue*, *language*, *church*, *Buddhis*, *Christian*, *Chondo*, *Confucian*
+and *faith*, **two pages match**, and neither is a table of anything:
+
+* page 109, the note under **Table 22**: "Literacy refers to the ability of an
+  individual to read and write a simple message in **any language**." That
+  counts an ability and never records which language — the Maldives' ED1, in
+  the mirror.
+* page 200, one line of **Table 37**'s occupation list: "**Religious
+  professionals** 103", 36 men and 67 women, between *Legal professionals* and
+  *Archivists librarians and related professionals*. An occupation with a
+  hundred people in it is not a religion composition, and publishing it as one
+  would be the mis-match this project ranks below a gap.
+
+*Ethnic* and *mother tongue* occur on no page of the report at all.
+
+**And there is no survey standing in for it,** which is the question
+Afghanistan's entry asks of any country in this position. The Central Bureau
+of Statistics' own **Socio-Economic, Demographic and Health Survey 2014**
+(December, Juche 104 (2015), 167 pages, served by `dprkorea.un.org`) matches
+*religio*, *ethnic*, *mother tongue*, *language* and *nationality* on **zero
+of its 167 pages**. The 2017 MICS, run by the same bureau with UNICEF, is the
+one thing left unread: `unicef.org/eap` and the MICS repository on S3 both
+answer **403** to a standard client and ReliefWeb's API answers **410 Gone**.
+No User-Agent was spoofed to get past either, and its subject is the health
+and nutrition of children and women.
+
+So the declaration stands, and `scripts/common.py` now says what was read.
+
+**What the 2008 census does publish by province** — recorded here so the next
+reader does not search the report again. Of the 53 tables, **33 cross a
+province** and one goes below it:
+
+* population and households — Table 2 (by **city/district/county** and
+  province, the only table below the first level), 3 (localities and their
+  population by size-class), 4 (5-year age group by sex, urban/rural),
+  6 (relationship to head and marital status), 8 (marital status 15+),
+  12 (heads of households), 13 (households by type and size);
+* fertility and mortality — 14 (live births in the past year and women by age),
+  15 (the same by educational attainment), 16 (by class of labour), 17 (deaths
+  by age and sex), 18 (maternal deaths by place of death);
+* migration — 19 (residence five years ago), 20 (migrants by province of
+  origin and province of destination);
+* education — 23 (literacy status), 24 (currently attending school by level
+  and single year of age), 28 (highest educational attainment), 29
+  (post-secondary certificate type), 30 (field of study);
+* work — 32 (usual activity status), 34 (usual activity by attainment), 36
+  (major industry group), 38 (major occupation group), 40 (household economic
+  activities), 41 (hours worked);
+* housing — 46 (dwelling type by household size), 47 (occupancy status), 48
+  (floor area), 49 (rooms), 50 (water supply), 51 (toilet facility), 52
+  (heating system), 53 (cooking fuel).
+
+The remaining 20 tables are national: 1, 5, 7, 9, 10, 11, 21, 22, 25, 26, 27,
+31, 33, 35, 37, 39, 42, 43, 44 and 45. Nothing anywhere in the round is a
+religion, ethnicity or language table, at any level.
+
+**What was filled.** Table 2, so all 190 units carry a head count and a sex
+ratio — see *North Korea* in the subnational sources table above and
+`scripts/fetch_census/northkorea.py`. Two things about those figures are worth
+keeping here rather than in 190 notes. The report writes its thousands
+separator as a space, so a row's nine figures are told apart by the
+publisher's own arithmetic — males and females adding to both sexes in each of
+the three blocks, urban and rural adding to all areas in each of the three
+columns, six equations that leave exactly one reading of the row and refuse it
+if they leave none or two. And Table 2's universe is the civilian one: it
+comes to **23,349,859** where **Table 1 counts 24,052,231**, and the 702,372
+between them — 662,349 men and 40,023 women — are the people living in
+military camps, whom the report allocates to no province. The census's own
+preliminary results sheet is where that gets its name, printing a civilian
+sub-total "living in regular households and in institutional living quarters"
+against a total that "includes population living in military camps", 702,373
+apart on the manual tallies the final figures replaced. So every sex ratio
+here — 1,111 females per 1,000 males for the country against the 1,052 implied
+by Table 1 — is a ratio among civilians, and every row says so.
 
 ### The Maldives: one question about who you are, and its answer is a passport
 
@@ -7195,6 +7558,165 @@ Both of them are on the map, from the 2015 round, so this is a declaration
 about one field and not a country written off. The evidence, and what was
 looked at to be sure of it, is under "Timor-Leste: two questions asked, a third
 that is not" above.
+
+### Papua New Guinea: one office, two publications, and one figure per province
+
+Papua New Guinea carried nothing at all below its own row before this: 22
+provinces and 87 districts of bare `not_available` on every field, and no
+`NOT_COLLECTED_POLICY` entry. The National Statistical Office
+(`www.nso.gov.pg`) answers an automated reader without complaint, and two of
+its publications are what the country now carries.
+
+**What its site holds.** The Population & Housing download category,
+`/download/51/population-housing/`, has ten files and no more: the 2024 census
+Final Figures, the 2011 and 2000 National Reports, the 2011 Final Figures
+brochure and booklet, and four regional "Census Figures by Wards" tables. A
+Wayback CDX listing of every PDF, XLS and CSV ever archived under
+`nso.gov.pg` (400 rows, the whole domain from 2004 to 2026) adds the DHS
+reports, the CPI and national-accounts series, the 2022 SDES thematic
+reports, the 2021 population estimates by province, and a great many job
+advertisements. **It does not add a single provincial census report.** That
+matters, because the 2011 National Report's own foreword says the release is
+"The National Report and the 22 Provincial Reports" -- so the provincial
+tables exist on paper and are not published anywhere this project could
+reach. The 2011 Final Figures booklet is on the list and answers **HTTP 415
+Unsupported Media Type**, and the 2000 National Report is a 22 MB scan with no
+text layer at all (109 pages, zero extractable characters).
+
+**The two files read.** `scripts/fetch_census/png.py` reads both with pypdf:
+
+| File | What it gives |
+| --- | --- |
+| `.../4310/2024-national-population-census-final-figures_web.pdf` (35 pp, Oct 2025) | Table 1: population, males, females and sex ratio for the 22 provinces. Twenty-two Provincial Snapshots: the same three counts for each of the 96 districts it lists. |
+| `.../2152/png-national-report-2011-census.pdf` (100 pp) | The Summary Indicators row "Main religion (% of population)" for each of the 22 provinces -- one denomination and one share. |
+
+Both are fetched with `Accept: application/pdf`. The office's download plugin
+negotiates on that header and hands a client that does not send it an HTML
+page, which is what the first run got and what pypdf refused; asking a server
+for the representation it publishes is not claiming to be a browser, and
+nothing here does that.
+
+**Religion, and why it is one row.** The 2011 census asked religion -- the
+report's glossary defines it, chapter 2 reports it, and Table 2.4 gives the
+country's Christian / non-Christian / no religion / not stated split with
+Figure 2.1's eleven denominations under it (Roman Catholic 26.0, Evangelical
+Lutheran 18.4, Seventh Day Adventist 12.9, Pentecostals 10.4, United Church
+10.3 …). For a **province** it publishes exactly one figure: the largest
+denomination and its share of the citizen population. A term sweep of all 100
+pages for *religion*, *Catholic*, *Lutheran* and *Adventist* returns 14
+pages, and none of them is a provincial religion table; the 2024 Final
+Figures mention religion on none of their 35.
+
+So each province carries a one-row composition -- Bougainville "Roman
+Catholic 68.4%", Morobe "Evangelical Lutheran 67.0%", Eastern Highlands
+"Seventh Day Adventist 39.6%" -- and the panel labels it for what it is
+without being told to: a composition that falls short of 100 draws the chip
+*describes 68.4% of the population*. Each record's note says the rest is not
+broken down and why. The denominational pattern is the real one the report
+describes: ten provinces lead Roman Catholic, four Evangelical Lutheran, four
+United Church, and Anglican, Seventh Day Adventist and Evangelical Alliance
+lead one or two each.
+
+**Reading a kerned figure.** Both PDFs are typeset so that pypdf reads a
+figure in groups -- Milne Bay's 412,158 comes out as `41 2 ,15 8`,
+Bougainville's 367,093 as `3 6 7,0 9 3` -- and a space inside a number is
+indistinguishable from the space between two numbers. The reader therefore
+does what `vietnam.py` does: take every digit on the row in order, try every
+cut of that string into the numbers the row is supposed to carry, and keep
+the one where the census's own arithmetic holds -- males plus females equal
+the total, and the printed sex ratio is 100 males per females. Across the 22
+province rows and the 96 district rows exactly one cut satisfies that every
+time; a row with none, or with two, refuses the run. The same files also read
+a capital away from its word ("T elefomin", "T awae/Siassi"), which is
+repaired before a name is matched.
+
+**Districts: 71 of 87, and why the other 16 are empty.** The boundary file
+draws the 87 districts of the 2011 layout; the 2024 booklet tabulates 96 in a
+later one, and says PNG now has 98. Where a province's 2024 districts still
+partition its shapes the shapes are written: name for name, under a declared
+alias where the spelling moved (Mendi for Mendi/Munihu, Hagen Central for Mt
+Hagen, Kainantu for Kainanatu, Karimui for Karimui/Nomane, Huon Gulf for
+Huon), or as a declared union where one shape's own name names the two
+districts that now cover it -- **Kairuku - Hiri** = Kairuku + Hiri-Koiari,
+**Lagaip/Pogera** = Lagaip + Pogera Paiela, **Komo/Magarima** = Komo Hulia +
+Magarima -- and the National Capital District, one shape holding the city's
+three Moresby seats. Each written province's districts must then add to the
+province's own printed total, and land on exactly as many shapes as the
+boundary file draws for it, or the run refuses.
+
+Four provinces have one 2024 district that no shape corresponds to: Western's
+**Delta Fly**, Northern's **Popondetta**, Morobe's **Wau/Waria** and West New
+Britain's **Nakanai**. Each was carved out since 2011 and the booklet does not
+say from which district, so any of that province's shapes may have lost
+ground to it. None of those four provinces' district shapes is written --
+16 in all, 3 + 2 + 9 + 2 -- and each of the 16 carries a record saying so and
+naming the district that cannot be placed. A count on the wrong one of them
+would be invisible, which is the failure this project ranks above an empty
+cell.
+
+**Ethnicity and language are declared, not left blank.** Appendix 1 of the
+2011 National Report lists what the census collected: "Basic demographic,
+social and economic information on age; sex, marital status, religion,
+migration, economic activity, occupation, industry, fertility, mortality and
+household income generating activities were collected. A total of 33
+questions were asked using a one-page census questionnaire." Neither
+ethnicity nor language is among them, and the report has no table of either.
+
+Language needs the careful wording, because the census does ask about
+languages -- and it asks the wrong question for this map. Table 4.6 is a
+**literacy rate by language**: the share of people aged 10 and over who can
+read and write English (48.9%), Pidgin (57.4%), Motu (4.7%) or Tokples
+(55.8%). Those are four overlapping abilities, three of them in lingua
+francas, and the fourth is the report's own catch-all: its glossary defines
+Tokples as "Pidgin word meaning 'language of my place'. The local language of
+a traditional area belonging to a tribe or clan" -- all 800-odd of them under
+one heading. They sum past 100 and describe nobody's mother tongue, and
+turning them into a composition would be inventing a statistic. Both fields
+are `not_collected` in `NOT_COLLECTED_POLICY["PNG"]`, which also fixes the
+country row, whose ethnicity was a bare `not_available` with the Factbook's
+free text ("Melanesian, Papuan, Negrito, Micronesian, Polynesian") beside it.
+
+The **2016-18 Demographic and Health Survey** does ask religion, in eleven
+categories, and it is provincially representative -- its Table 3.1 gives the
+weighted sample for all 22 provinces. It publishes religion for the country
+only (Roman Catholic 24.9% of women, Seventh Day Adventist 13.7%, Evangelical
+Lutheran 12.5%, United Church 10.4%), and no table in its 519 pages crosses
+it with province, so it would not fill a provincial gap either.
+
+**The regional routes, measured.** The Pacific Community is the obvious place
+to look for a Pacific census tabulation, and it was asked three ways.
+`pacificdata.org`, the Pacific Data Hub's CKAN, answers **403** at
+`/data/dataset` and at `/data/api/3/action/package_search` alike -- the
+"blocks browsers, serves the API" pattern does not hold here. `sdd.spc.int`
+serves its country page but puts an interstitial challenge on its root and
+**403** on its search. `microdata.pacificdata.org` answers **403**. What does
+answer is PDH.stat's SDMX service,
+`stats-nsi-stable.pacificdata.org/rest/dataflow/SPC`, which returns 357 KB
+listing **127 dataflows** -- and not one of them is religion, ethnicity or
+language: the population ones are `DF_POP_AGE`, `DF_POP_SEX`,
+`DF_POP_URBAN`, `DF_POP_DENSITY`, `DF_POP_PROJ`, `DF_POP_COAST`,
+`DF_POP_LECZ`, beside `DF_MARITAL_STATUS`, `DF_HHCOUNTS`, `DF_VITAL`, the
+SDG series and the rest. SPC's own digital library carries the same three PNG
+census documents the NSO hosts and no provincial report.
+
+HDX has **`cod-ps-png`**, OCHA's common operational dataset: the 2011 census
+population at admin levels 0 to 3, sourced from the NSO, on the same district
+layout the boundary file draws. It is a clean join and it is not used, because
+the 71 districts that are written carry the 2024 count and a 2011 figure
+beside them on the other 16 would put two censuses on one level. It remains
+the obvious way to fill those sixteen if the mixture is ever wanted. Nothing
+else on HDX carries PNG religion: a 50-row search returns airports, roads,
+conflict data, WorldPop rasters and the World Bank indicator mirrors.
+`pngnri.org`, the National Research Institute that publishes the *District
+and Provincial Profiles*, answers **403** to an automated reader.
+
+**What the file comes to.** `data/processed/png.json`: 22 provinces with the
+2024 census population and sex ratio and the 2011 census's main religion, and
+87 districts of which 71 carry the 2024 count and 16 carry the reason they do
+not. The provinces add to the printed 10,185,363; the 2024 booklet's own 2011
+comparison (7,275,324) is the whole population where the 2011 National
+Report's tables count 7,254,442 citizens in private dwellings, which is the
+universe every religion share here is a share of.
 
 ### The African census sweep: reached, and not
 
