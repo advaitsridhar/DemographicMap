@@ -1,0 +1,2959 @@
+[
+  {
+    "id": "BDI-AB6-Bubanza",
+    "level": "admin1",
+    "name": "Bubanza",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 67.7,
+        "count": 33
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 18.2,
+        "count": 8
+      },
+      {
+        "group": "Baptist",
+        "pct": 6.7,
+        "count": 3
+      },
+      {
+        "group": "Dutch Reformed",
+        "pct": 4.3,
+        "count": 2
+      },
+      {
+        "group": "Muslim",
+        "pct": 3.1,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 49
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 91.4,
+        "count": 43
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 4.6,
+        "count": 2
+      },
+      {
+        "group": "Tutsi",
+        "pct": 4.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 48 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 48 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 48 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Bujumbura Mairie",
+    "level": "admin1",
+    "name": "Bujumbura Mairie",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 46.1,
+        "count": 48
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 22.0,
+        "count": 22
+      },
+      {
+        "group": "Muslim",
+        "pct": 8.8,
+        "count": 9
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 6.1,
+        "count": 6
+      },
+      {
+        "group": "Sunni",
+        "pct": 4.4,
+        "count": 4
+      },
+      {
+        "group": "Methodist",
+        "pct": 3.8,
+        "count": 3
+      },
+      {
+        "group": "Anglican",
+        "pct": 3.1,
+        "count": 3
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 1.4,
+        "count": 1
+      },
+      {
+        "group": "Orthodox",
+        "pct": 1.1,
+        "count": 1
+      },
+      {
+        "group": "Christian",
+        "pct": 0.9,
+        "count": 0
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 0.9,
+        "count": 0
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.7,
+        "count": 0
+      },
+      {
+        "group": "Other",
+        "pct": 0.7,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 95.9,
+        "count": 100
+      },
+      {
+        "group": "Swahili",
+        "pct": 4.1,
+        "count": 4
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 49.0,
+        "count": 33
+      },
+      {
+        "group": "Tutsi",
+        "pct": 37.4,
+        "count": 25
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 7.7,
+        "count": 5
+      },
+      {
+        "group": "Other",
+        "pct": 4.2,
+        "count": 2
+      },
+      {
+        "group": "Twa",
+        "pct": 1.7,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 104 respondents. The survey names this stratum Bujumbura Marie.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 72 respondents.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 104 respondents. The survey names this stratum Bujumbura Marie.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Bujumbura Rural",
+    "level": "admin1",
+    "name": "Bujumbura Rural",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 56.5,
+        "count": 45
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 22.5,
+        "count": 18
+      },
+      {
+        "group": "Methodist",
+        "pct": 4.0,
+        "count": 3
+      },
+      {
+        "group": "Muslim",
+        "pct": 3.8,
+        "count": 3
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 3.5,
+        "count": 2
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 3.5,
+        "count": 2
+      },
+      {
+        "group": "Sunni",
+        "pct": 2.9,
+        "count": 2
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.0,
+        "count": 0
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.8,
+        "count": 0
+      },
+      {
+        "group": "Independent",
+        "pct": 0.8,
+        "count": 0
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.7,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 80
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 78.7,
+        "count": 59
+      },
+      {
+        "group": "Tutsi",
+        "pct": 14.4,
+        "count": 10
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 6.9,
+        "count": 5
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 80 respondents. The survey names this stratum Bujumbura.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 80 respondents. The survey names this stratum Bujumbura.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 80 respondents. The survey names this stratum Bujumbura.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Bururi",
+    "level": "admin1",
+    "name": "Bururi",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 39.0,
+        "count": 32
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 36.3,
+        "count": 30
+      },
+      {
+        "group": "Anglican",
+        "pct": 18.6,
+        "count": 15
+      },
+      {
+        "group": "Evangelical",
+        "pct": 2.7,
+        "count": 2
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 2.1,
+        "count": 1
+      },
+      {
+        "group": "Muslim",
+        "pct": 1.4,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 98.6,
+        "count": 83
+      },
+      {
+        "group": "Swahili",
+        "pct": 1.4,
+        "count": 1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 85.0,
+        "count": 70
+      },
+      {
+        "group": "Tutsi",
+        "pct": 12.4,
+        "count": 10
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 2.6,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 88 respondents.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 88 respondents.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 88 respondents.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Cankuzo",
+    "level": "admin1",
+    "name": "Cankuzo",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 82.0,
+        "count": 26
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 9.6,
+        "count": 3
+      },
+      {
+        "group": "Muslim",
+        "pct": 3.6,
+        "count": 1
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.4,
+        "count": 0
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 2.4,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 32
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Tutsi",
+        "pct": 50.6,
+        "count": 15
+      },
+      {
+        "group": "Hutu",
+        "pct": 49.4,
+        "count": 15
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 32 respondents. The survey names this stratum Cankuza. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 32 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 32 respondents. The survey names this stratum Cankuza. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Cibitoke",
+    "level": "admin1",
+    "name": "Cibitoke",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 42.6,
+        "count": 28
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 21.4,
+        "count": 14
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 14.8,
+        "count": 9
+      },
+      {
+        "group": "Muslim",
+        "pct": 7.4,
+        "count": 4
+      },
+      {
+        "group": "Sunni",
+        "pct": 7.4,
+        "count": 4
+      },
+      {
+        "group": "Methodist",
+        "pct": 6.5,
+        "count": 4
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 95.1,
+        "count": 63
+      },
+      {
+        "group": "Swahili",
+        "pct": 4.9,
+        "count": 3
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 95.2,
+        "count": 60
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 3.2,
+        "count": 2
+      },
+      {
+        "group": "Tutsi",
+        "pct": 1.5,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 72 respondents.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 72 respondents.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 72 respondents.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Gitega",
+    "level": "admin1",
+    "name": "Gitega",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 71.0,
+        "count": 75
+      },
+      {
+        "group": "Christian",
+        "pct": 19.3,
+        "count": 20
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 5.0,
+        "count": 5
+      },
+      {
+        "group": "Methodist",
+        "pct": 1.9,
+        "count": 1
+      },
+      {
+        "group": "Anglican",
+        "pct": 1.2,
+        "count": 1
+      },
+      {
+        "group": "Muslim",
+        "pct": 0.9,
+        "count": 1
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.7,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 106
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 85.0,
+        "count": 83
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 11.0,
+        "count": 10
+      },
+      {
+        "group": "Tutsi",
+        "pct": 3.9,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 104 respondents.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 112 respondents.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 104 respondents.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Karuzi",
+    "level": "admin1",
+    "name": "Karuzi",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 62.7,
+        "count": 39
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 19.9,
+        "count": 12
+      },
+      {
+        "group": "Christian",
+        "pct": 9.4,
+        "count": 5
+      },
+      {
+        "group": "Muslim",
+        "pct": 4.4,
+        "count": 2
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.0,
+        "count": 1
+      },
+      {
+        "group": "None",
+        "pct": 1.5,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 62
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 85.2,
+        "count": 53
+      },
+      {
+        "group": "Tutsi",
+        "pct": 11.7,
+        "count": 7
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 3.1,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 64 respondents. The survey names this stratum Karusi.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 64 respondents. The survey names this stratum Karusi.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 64 respondents. The survey names this stratum Karusi.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Kayanza",
+    "level": "admin1",
+    "name": "Kayanza",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 72.8,
+        "count": 61
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 14.7,
+        "count": 12
+      },
+      {
+        "group": "Muslim",
+        "pct": 4.5,
+        "count": 3
+      },
+      {
+        "group": "Baptist",
+        "pct": 2.8,
+        "count": 2
+      },
+      {
+        "group": "Christian",
+        "pct": 1.4,
+        "count": 1
+      },
+      {
+        "group": "Evangelical",
+        "pct": 1.4,
+        "count": 1
+      },
+      {
+        "group": "None",
+        "pct": 1.0,
+        "count": 0
+      },
+      {
+        "group": "Anglican",
+        "pct": 0.7,
+        "count": 0
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 0.7,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 84
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 73.5,
+        "count": 59
+      },
+      {
+        "group": "Tutsi",
+        "pct": 25.2,
+        "count": 20
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 1.3,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 88 respondents.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 88 respondents.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 88 respondents.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Kirundo",
+    "level": "admin1",
+    "name": "Kirundo",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 62.4,
+        "count": 56
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 18.1,
+        "count": 16
+      },
+      {
+        "group": "Muslim",
+        "pct": 5.0,
+        "count": 4
+      },
+      {
+        "group": "None",
+        "pct": 3.6,
+        "count": 3
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.3,
+        "count": 2
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 2.3,
+        "count": 2
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 1.8,
+        "count": 1
+      },
+      {
+        "group": "Christian",
+        "pct": 1.6,
+        "count": 1
+      },
+      {
+        "group": "Coptic",
+        "pct": 1.4,
+        "count": 1
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.8,
+        "count": 0
+      },
+      {
+        "group": "Methodist",
+        "pct": 0.8,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 90
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 81.0,
+        "count": 73
+      },
+      {
+        "group": "Tutsi",
+        "pct": 14.9,
+        "count": 13
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 2.1,
+        "count": 1
+      },
+      {
+        "group": "Twa",
+        "pct": 2.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 88 respondents.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 96 respondents.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 88 respondents.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Makamba",
+    "level": "admin1",
+    "name": "Makamba",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 42.5,
+        "count": 26
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 25.5,
+        "count": 15
+      },
+      {
+        "group": "Anglican",
+        "pct": 10.2,
+        "count": 6
+      },
+      {
+        "group": "Evangelical",
+        "pct": 9.5,
+        "count": 5
+      },
+      {
+        "group": "Other",
+        "pct": 3.2,
+        "count": 1
+      },
+      {
+        "group": "Methodist",
+        "pct": 2.5,
+        "count": 1
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 2.5,
+        "count": 1
+      },
+      {
+        "group": "Church of Christ",
+        "pct": 2.4,
+        "count": 1
+      },
+      {
+        "group": "Baptist",
+        "pct": 1.7,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 62
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 69.6,
+        "count": 42
+      },
+      {
+        "group": "Tutsi",
+        "pct": 28.4,
+        "count": 17
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 1.9,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 64 respondents.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 64 respondents.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 64 respondents.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Muramvya",
+    "level": "admin1",
+    "name": "Muramvya",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 90.8,
+        "count": 38
+      },
+      {
+        "group": "Methodist",
+        "pct": 7.2,
+        "count": 3
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 2.0,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 42
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 76.8,
+        "count": 33
+      },
+      {
+        "group": "Tutsi",
+        "pct": 23.2,
+        "count": 10
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 40 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 40 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 40 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Muyinga",
+    "level": "admin1",
+    "name": "Muyinga",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 52.2,
+        "count": 47
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 35.7,
+        "count": 32
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 4.3,
+        "count": 3
+      },
+      {
+        "group": "Muslim",
+        "pct": 3.4,
+        "count": 3
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.4,
+        "count": 2
+      },
+      {
+        "group": "Lutheran",
+        "pct": 1.1,
+        "count": 0
+      },
+      {
+        "group": "Christian",
+        "pct": 1.0,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 90
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 86.4,
+        "count": 78
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 6.6,
+        "count": 5
+      },
+      {
+        "group": "Tutsi",
+        "pct": 5.9,
+        "count": 5
+      },
+      {
+        "group": "Twa",
+        "pct": 1.1,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 88 respondents.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 96 respondents.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 88 respondents.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Mwaro",
+    "level": "admin1",
+    "name": "Mwaro",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 55.7,
+        "count": 21
+      },
+      {
+        "group": "Methodist",
+        "pct": 16.9,
+        "count": 6
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 13.0,
+        "count": 5
+      },
+      {
+        "group": "Anglican",
+        "pct": 6.2,
+        "count": 2
+      },
+      {
+        "group": "Evangelical",
+        "pct": 6.1,
+        "count": 2
+      },
+      {
+        "group": "Other",
+        "pct": 2.1,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 39
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 62.4,
+        "count": 22
+      },
+      {
+        "group": "Tutsi",
+        "pct": 26.2,
+        "count": 9
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 7.4,
+        "count": 2
+      },
+      {
+        "group": "Twa",
+        "pct": 3.9,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 40 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 40 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 40 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Ngozi",
+    "level": "admin1",
+    "name": "Ngozi",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 62.4,
+        "count": 61
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 19.4,
+        "count": 19
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 6.2,
+        "count": 6
+      },
+      {
+        "group": "Muslim",
+        "pct": 3.3,
+        "count": 3
+      },
+      {
+        "group": "Methodist",
+        "pct": 3.1,
+        "count": 3
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.3,
+        "count": 2
+      },
+      {
+        "group": "None",
+        "pct": 1.9,
+        "count": 1
+      },
+      {
+        "group": "Jehovah's Witness",
+        "pct": 1.5,
+        "count": 1
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 98
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 85.1,
+        "count": 79
+      },
+      {
+        "group": "Tutsi",
+        "pct": 12.8,
+        "count": 11
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 2.1,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 96 respondents.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 96 respondents.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 96 respondents.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Rutana",
+    "level": "admin1",
+    "name": "Rutana",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Pentecostal",
+        "pct": 30.6,
+        "count": 14
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 27.0,
+        "count": 12
+      },
+      {
+        "group": "Methodist",
+        "pct": 26.7,
+        "count": 12
+      },
+      {
+        "group": "Anglican",
+        "pct": 5.8,
+        "count": 2
+      },
+      {
+        "group": "Other",
+        "pct": 5.5,
+        "count": 2
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 2.5,
+        "count": 1
+      },
+      {
+        "group": "Atheist",
+        "pct": 2.0,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 48
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 90.0,
+        "count": 41
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 5.0,
+        "count": 2
+      },
+      {
+        "group": "Twa",
+        "pct": 2.7,
+        "count": 1
+      },
+      {
+        "group": "Tutsi",
+        "pct": 2.3,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 48 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 48 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 48 respondents. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "language_year": 2014
+  },
+  {
+    "id": "BDI-AB6-Ruyigi",
+    "level": "admin1",
+    "name": "Ruyigi",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Roman Catholic",
+        "pct": 69.1,
+        "count": 39
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 12.9,
+        "count": 7
+      },
+      {
+        "group": "Methodist",
+        "pct": 12.2,
+        "count": 7
+      },
+      {
+        "group": "Anglican",
+        "pct": 2.2,
+        "count": 1
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.2,
+        "count": 1
+      },
+      {
+        "group": "Seventh Day Adventist",
+        "pct": 1.4,
+        "count": 0
+      }
+    ],
+    "language": [
+      {
+        "group": "Kirundi",
+        "pct": 100.0,
+        "count": 57
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Hutu",
+        "pct": 82.2,
+        "count": 47
+      },
+      {
+        "group": "Tutsi",
+        "pct": 16.1,
+        "count": 9
+      },
+      {
+        "group": "No ethnic group",
+        "pct": 1.7,
+        "count": 0
+      }
+    ],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "ethnicity",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2012,
+        "license": "Afrobarometer data use policy"
+      },
+      {
+        "field": "language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2014,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI",
+    "religion_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 56 respondents. The survey names this stratum Ruyiga.",
+    "religion_year": 2014,
+    "ethnicity_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 64 respondents.",
+    "ethnicity_year": 2012,
+    "language_note": "Afrobarometer Round 6, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 56 respondents. The survey names this stratum Ruyiga.",
+    "language_year": 2014
+  },
+  {
+    "id": "EGY-AB5-Al Sharqia Governorate",
+    "level": "admin1",
+    "name": "Al Sharqia Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 100.0,
+        "count": 89
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 90 respondents. The survey names this stratum Al-Sharqia.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Alexandria Governorate",
+    "level": "admin1",
+    "name": "Alexandria Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 88.7,
+        "count": 61
+      },
+      {
+        "group": "Christian",
+        "pct": 11.3,
+        "count": 7
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 70 respondents. The survey names this stratum Alexandria.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Asyut Governorate",
+    "level": "admin1",
+    "name": "Asyut Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 82.9,
+        "count": 47
+      },
+      {
+        "group": "Christian",
+        "pct": 17.1,
+        "count": 9
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 59 respondents. The survey names this stratum Asyut.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Beheira Governorate",
+    "level": "admin1",
+    "name": "Beheira Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 89.1,
+        "count": 70
+      },
+      {
+        "group": "Orthodox",
+        "pct": 10.5,
+        "count": 8
+      },
+      {
+        "group": "Christian",
+        "pct": 0.4,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 80 respondents. The survey names this stratum Beheira.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Beni Suef Governorate",
+    "level": "admin1",
+    "name": "Beni Suef Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 97.7,
+        "count": 37
+      },
+      {
+        "group": "Sunni",
+        "pct": 2.3,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 40 respondents. The survey names this stratum Beni Suef. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Cairo Governorate",
+    "level": "admin1",
+    "name": "Cairo Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 90.3,
+        "count": 127
+      },
+      {
+        "group": "Christian",
+        "pct": 9.7,
+        "count": 13
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 140 respondents. The survey names this stratum Cairo.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Dakahlia Governorate",
+    "level": "admin1",
+    "name": "Dakahlia Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 95.7,
+        "count": 79
+      },
+      {
+        "group": "Sunni",
+        "pct": 2.9,
+        "count": 2
+      },
+      {
+        "group": "Christian",
+        "pct": 1.4,
+        "count": 1
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 75 respondents. The survey names this stratum Dakahlia.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Faiyum Governorate",
+    "level": "admin1",
+    "name": "Faiyum Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 91.0,
+        "count": 38
+      },
+      {
+        "group": "Christian",
+        "pct": 6.2,
+        "count": 2
+      },
+      {
+        "group": "Sunni",
+        "pct": 2.8,
+        "count": 1
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 37 respondents. The survey names this stratum Faiyum. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Gharbiyya Governorate",
+    "level": "admin1",
+    "name": "Gharbiyya Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 100.0,
+        "count": 67
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 60 respondents. The survey names this stratum Gharbia.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Giza Governorate",
+    "level": "admin1",
+    "name": "Giza Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 98.1,
+        "count": 93
+      },
+      {
+        "group": "Christian",
+        "pct": 1.4,
+        "count": 1
+      },
+      {
+        "group": "Orthodox",
+        "pct": 0.5,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 90 respondents. The survey names this stratum Giza.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Kafr el-Sheikh Governorate",
+    "level": "admin1",
+    "name": "Kafr el-Sheikh Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 90.0,
+        "count": 39
+      },
+      {
+        "group": "Christian",
+        "pct": 10.0,
+        "count": 4
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 40 respondents. The survey names this stratum Kafr el-Sheikh. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Minya Governate",
+    "level": "admin1",
+    "name": "Minya Governate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 86.5,
+        "count": 60
+      },
+      {
+        "group": "Christian",
+        "pct": 7.6,
+        "count": 5
+      },
+      {
+        "group": "Coptic",
+        "pct": 4.8,
+        "count": 3
+      },
+      {
+        "group": "Sunni",
+        "pct": 1.0,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 69 respondents. The survey names this stratum Minya.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Monufia Governorate",
+    "level": "admin1",
+    "name": "Monufia Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 91.8,
+        "count": 50
+      },
+      {
+        "group": "Christian",
+        "pct": 8.2,
+        "count": 4
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 50 respondents. The survey names this stratum Monufia.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Qalyubia Governorate",
+    "level": "admin1",
+    "name": "Qalyubia Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 93.3,
+        "count": 66
+      },
+      {
+        "group": "Christian",
+        "pct": 6.7,
+        "count": 4
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 70 respondents. The survey names this stratum Qalyubia.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Qena Governorate",
+    "level": "admin1",
+    "name": "Qena Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 84.5,
+        "count": 42
+      },
+      {
+        "group": "Christian",
+        "pct": 13.9,
+        "count": 6
+      },
+      {
+        "group": "Sunni",
+        "pct": 1.6,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 50 respondents. The survey names this stratum Qena.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Red Sea Governorate",
+    "level": "admin1",
+    "name": "Red Sea Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 93.4,
+        "count": 23
+      },
+      {
+        "group": "Sunni",
+        "pct": 4.6,
+        "count": 1
+      },
+      {
+        "group": "Christian",
+        "pct": 2.0,
+        "count": 0
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 40 respondents. The survey draws this shape as Al Bahr al Ahmar, Red Sea, summed here. Fewer than 50 respondents, so this share is imprecise and should be read as indicative.",
+    "religion_year": 2013
+  },
+  {
+    "id": "EGY-AB5-Sohag Governorate",
+    "level": "admin1",
+    "name": "Sohag Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Muslim",
+        "pct": 74.7,
+        "count": 46
+      },
+      {
+        "group": "Sunni",
+        "pct": 6.8,
+        "count": 4
+      },
+      {
+        "group": "Christian",
+        "pct": 6.7,
+        "count": 4
+      },
+      {
+        "group": "Coptic",
+        "pct": 6.3,
+        "count": 3
+      },
+      {
+        "group": "Orthodox",
+        "pct": 5.4,
+        "count": 3
+      }
+    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Afrobarometer asked about language here but coded every one of its 2,388 Egyptian respondents, across both rounds, to a single value. A variable with one value is a constant the field team entered rather than a composition anyone measured, so none is built from it."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "Afrobarometer did not ask about ethnicity in this country in either round that surveyed it."
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Afrobarometer Round 5 (2011-2013)",
+        "url": "https://www.afrobarometer.org/data/",
+        "year": 2013,
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "EGY",
+    "religion_note": "Afrobarometer Round 5, a nationally representative sample of citizens of voting age. Regional shares are survey estimates and not census counts: they carry sampling error, and regions with fewer than 25 respondents are omitted rather than estimated. This region: 60 respondents. The survey names this stratum Sohag.",
+    "religion_year": 2013
+  },
+  {
+    "id": "BDI-AB-Rumonge",
+    "level": "admin1",
+    "name": "Rumonge",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "Rumonge did not exist when either round was in the field: it was split from Bururi and Bujumbura Rural on 26 March 2015, and Afrobarometer interviewed in Burundi in November 2012 and October 2014. Neither round has a stratum for it, and dividing its parents' shares between them would be a guess about which side of a new border each respondent lived on."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Rumonge did not exist when either round was in the field: it was split from Bururi and Bujumbura Rural on 26 March 2015, and Afrobarometer interviewed in Burundi in November 2012 and October 2014. Neither round has a stratum for it, and dividing its parents' shares between them would be a guess about which side of a new border each respondent lived on."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "Rumonge did not exist when either round was in the field: it was split from Bururi and Bujumbura Rural on 26 March 2015, and Afrobarometer interviewed in Burundi in November 2012 and October 2014. Neither round has a stratum for it, and dividing its parents' shares between them would be a guess about which side of a new border each respondent lived on."
+    },
+    "sources": [
+      {
+        "field": "religion/ethnicity/language",
+        "name": "Afrobarometer Round 6 (2014-2015)",
+        "url": "https://www.afrobarometer.org/data/",
+        "license": "Afrobarometer data use policy"
+      }
+    ],
+    "country": "BDI"
+  }
+]

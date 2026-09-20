@@ -57,10 +57,17 @@ ADAPTER_FILES = [
     # census figures and must keep them, and because merge_adapter works field
     # by field this still fills a field a census left empty without touching
     # one it filled.
-    # Round 8 *before* Round 9, which is lower authority, because Round 9 is
-    # two years newer and reaches 442 regions in 39 countries against Round
-    # 8's 356 in 34. Round 8 is here to fill a region Round 9 is short of, not
-    # to overwrite one it holds; a later file wins, so it goes first.
+    # The three survey files run oldest first, which is lowest first: a
+    # later file wins, so each round is there to fill what the newer ones
+    # are short of and never to overwrite them.
+    # Rounds 5 and 6 first, and only for Burundi and Egypt -- the two
+    # countries Round 9 does not survey at all. Nothing else on the map
+    # writes to either today, so the order costs nothing; it is here because
+    # a survey ranks below a count whatever happens to be present.
+    "afrobarometer_r56.json",
+    # Then Round 8, for language alone. Round 9 is two years newer and
+    # reaches 442 regions in 39 countries against Round 8's 356 in 34, so
+    # Round 8 fills a region Round 9 is short of and overwrites none.
     "afrobarometer_r8_language.json",
     "afrobarometer_region.json",
     # Korea's pooled web-panel survey is the same kind of thing: a survey
@@ -306,6 +313,11 @@ ADAPTER_HINTS: dict[str, str] = {
            "shapes: python -m scripts.fetch_census.mali",
     "ZWE": "ZIMSTAT 2022 census report (religion, mother tongue) by province: "
            "python -m scripts.fetch_census.zimbabwe",
+    "BDI": "Afrobarometer, the only subnational source there is: religion and "
+           "language from Round 6 (2014) and ethnicity from Round 5 (2012), "
+           "which is the last round that asked it there. 17 of the 18 "
+           "provinces; Rumonge postdates both fieldworks: "
+           "python -m scripts.fetch_census.afrobarometer_r56",
     "BFA": "INSD RGPH 2019 table volume (religion) by region: "
            "python -m scripts.fetch_census.burkina",
     "CHN": "CFPS 2012 (religion) for the five provinces the survey sampled on their "
@@ -394,7 +406,10 @@ ADAPTER_GAPS: dict[str, str] = {
            "The data exists and is not reachable from here.",
     "EGY": "CAPMAS collected religion in the 2017 census and has not published "
            "it, nationally or by governorate; the last published figures are "
-           "the 2006 census, national only. The data exists and is withheld.",
+           "the 2006 census, national only. The data exists and is withheld. "
+           "17 of the 27 governorates carry a survey estimate instead, from "
+           "Afrobarometer Round 5 (2013), the last round that asked religion "
+           "in Egypt; this one was not among them.",
 }
 
 # Shapes an adapter deliberately will not fill, and why -- a fact about the

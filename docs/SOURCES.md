@@ -6127,17 +6127,88 @@ only the newest two are read:
 Round 9's countries are a **superset** of every earlier round's once renames
 are resolved -- eSwatini/Swaziland, Cape Verde/Cabo Verde, Cote d'Ivoire/Côte
 d'Ivoire are the same places. Only three countries appear in an earlier round
-and not in Round 9, all in Round 6 (2014-15): **Burundi** (17 strata against
-18 shapes, nothing on the map today), **Egypt** (16 strata against 27
-governorates, nothing on the map today) and **Algeria** (7 macro-regions
-against 48 shapes, which is the coarser-than-the-map case and would be
-published for nothing). Burundi and Egypt are worth reading and are not read
-yet.
+and not in Round 9: **Burundi**, **Egypt** and **Algeria**, all last surveyed
+in Round 6 (2014-15). Two of them are now read; see the section below.
 
 The apparent "Round 7 adds 161 regions Round 9 lacks" that a first pass
 produced was an artefact of region *renames* between rounds counting as
 distinct places, not new coverage. It is recorded here because it is the kind
 of number that looks like a finding.
+
+### Burundi and Egypt, and why Algeria is refused
+
+Three countries are in the earlier rounds and not in Round 9, and reading
+them turned up something that changes how the series has to be read: **the
+question is not which round is newest, but which is the newest round that
+*asks*.** Afrobarometer writes a real code, "Not asked in country", when a
+question is dropped from a national questionnaire, and reading that as a
+missing answer rather than a missing question would build a composition out
+of whatever codes remained.
+
+Counting substantive answers per country, field and round across Rounds 5 to
+9 -- all five merged releases, 260,000 interviews -- turns up exactly **two**
+places in the whole series where the newest round covering a country is
+silent on a field an older one asked:
+
+| | newest round covering it | asks? | round used | answers |
+|---|---|---|---|---:|
+| Burundi ethnicity | R6 (2014) | no, "Not asked in country" | **R5 (2012)** | 1,129 |
+| Egypt religion | R6 (2015) | no, "NOT ASKED IN THIS COUNTRY" | **R5 (2013)** | 1,190 |
+
+So `afrobarometer_r56.py` picks the round **per field**, not per country, and
+`choose()` re-derives the table above from the extract on every run rather
+than trusting it. Each field carries its own year, read from the round's own
+interview dates rather than from its title: Burundi's Round 6 fieldwork ran
+29 September to 10 October 2014, its Round 5 fieldwork 28 November to 10
+December 2012, and Egypt's Round 5 fieldwork 8 to 19 March 2013. Each falls
+inside one calendar year, so each row carries a real year and not a midpoint.
+
+**What this puts on the map.** Burundi had nothing at all; 17 of its 18
+provinces now carry religion, ethnicity and language. Egypt had nothing, and
+its census religion is collected and withheld; 17 of 27 governorates now
+carry a survey estimate. Four more governorates were interviewed and dropped
+under the 25-respondent floor (Damietta, Ismailia and Suez at 20, Luxor at
+10), and six were never sampled.
+
+The Egyptian figures are checkable against something known, and they check
+out: the Christian share is highest in **Sohag 18.5%, Asyut 17.1%, Qena 13.9%
+and Minya 12.4%** -- which are the four Upper Egypt governorates with the
+largest Coptic populations, in about the right order.
+
+**Egypt gets religion and nothing else.** Ethnicity is never asked there.
+Language *is* asked, and is refused anyway: both rounds code every one of
+2,388 Egyptian respondents to a single value -- "Arabic" in Round 5,
+"Egyptian Arabic" in Round 6. A variable with one value is a constant the
+field team entered, not a composition anyone measured, and publishing it
+would paint Egypt uniformly Arabic-speaking on a survey's authority and hide
+Nubian, Beja, Siwi and Domari behind it. Burundi's language question is not
+the same case and is published: its respondents could and did name a second
+language, and 8 of 1,200 said Swahili rather than Kirundi.
+
+**Rumonge**, Burundi's eighteenth province, has no stratum in either round
+because it did not exist: it was split from Bururi and Bujumbura Rural on 26
+March 2015, after both fieldworks. It carries that as its reason rather than
+the build's generic one.
+
+**Algeria is refused, and the first look said otherwise.** Round 6
+stratifies Algeria in 8 multi-wilaya regions ("North Middle Region") where
+the map draws 48 wilayas, which is plainly coarser than the shapes. Round 5
+*does* name wilayas -- 36 of them -- which looks usable until the allocation
+is read: **Oran, 1.6 million people, holds 10 interviews; Tamanghasset,
+200,000, holds 128.** And where the answer can be checked against something
+known, it fails. Tizi Ouzou is the heart of Kabylie and Tamazight is the
+language of the overwhelming majority there; Round 5 interviewed 10 people in
+it and recorded **no Amazigh speaker at all**, and neighbouring Béjaïa,
+equally Kabyle, comes out **15% Amazigh on 39 interviews** -- enough to clear
+the 25-respondent floor and be published. That is not an imprecise figure, it
+is a wrong one, and a wrong figure on a shape is worse than an empty shape:
+the empty one says it is empty. Algeria's provinces keep their existing
+`not_collected` reason, which is that the census does not ask.
+
+The two releases are 50 MB of microdata each and are not committed. What is
+committed is the seven columns the adapter reads, for those three countries
+only -- 7,192 rows, 21 KB, in
+`data/raw/afrobarometer/r56_extract.csv.gz`, reproducible with `--extract`.
 
 **Two defects in the Round 8 release, both found by checking rather than
 trusting.**
