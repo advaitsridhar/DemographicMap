@@ -5764,36 +5764,52 @@ the title away.
 
 #### What each country gave, and what it did not
 
+Of the 754 European shapes this reader was pointed at, 318 field-values
+were written and every one of the rest carries a sentence saying why not.
+
+| country | level | shapes | religion | language | ethnicity |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Bulgaria | oblast | 28 | 20 | 22 | 21 |
+| Bulgaria | obshtina | 265 | 21 | — | 17 |
+| Serbia | district | 25 | — | — | 23 |
+| Serbia | municipality | 145 | — | — | 69 |
+| Slovakia | kraj | 8 | 3 | — | 3 |
+| Slovakia | okres | 79 | 20 | — | 26 |
+| North Macedonia | municipality | 84 | — | — | 66 |
+| Moldova | district, both levels | 37 + 37 | — | — | 3 + 3 |
+| Montenegro | municipality, both levels | 23 + 23 | 0 | — | 1 + 1 |
+
 * **Slovakia**, from sk.wikipedia, the 2011 census's nationality and
-  religion tables. The kraj and okres articles carry them under
-  "Národnostné zloženie" and "Náboženské zloženie". Most okres articles
-  print the table and cite nothing at all for it, and those are refused:
-  the reason on the record says so by name. A bucket naming two peoples at
-  once -- "rusínska a ukrajinská", "česká a moravská" -- is one bucket and
-  not two rows, because splitting it would be inventing the split.
-* **Serbia**, from en.wikipedia, ethnicity only. That is what the district
-  and municipality articles carry; the Serbian edition adds religion at the
-  district level in a table whose cells hold a count and a share inside one
-  pair of brackets, which is a second reader and is not written.
+  religion tables, which the kraj and okres articles carry under
+  "Národnostné zloženie" and "Náboženské zloženie". The commonest refusal
+  is that the article prints the table and cites nothing at all for it,
+  and the reason on the record says so by name. A bucket naming two peoples
+  at once -- "rusínska a ukrajinská", "česká a moravská" -- is one bucket
+  and not two rows, because splitting it would be inventing the split.
+* **Serbia**, from en.wikipedia, ethnicity: 23 of the 25 districts and 69
+  of the 145 municipalities. Of the municipalities refused, 38 have a
+  heading where a composition would go and a table of some other kind under
+  it, 21 print the table and cite nothing, and 13 print a table whose last
+  column is not a share.
 * **North Macedonia**, from en.wikipedia, the 2021 census's ethnicity
-  beside the 2002 one in a single four-column table. A row carrying only
-  the newer pair -- "persons for whom data are taken from administrative
-  sources" is such a row -- would be read from the wrong column, so a row
-  that does not carry the table's full width is dropped and the note says
-  how many were and that what they hold is inside the remainder.
-* **Moldova**, from en.wikipedia, ethnicity by district. Most district
-  articles put the citation in the infobox and not beside the table, and
-  a reference elsewhere in an article is not a citation for this table;
-  those are refused. Chișinău, Bălți, Bender and Gagauzia are not
-  districts, are on no list of them, and carry that as their reason.
-* **Montenegro**, from en.wikipedia, ethnicity and religion by
-  municipality.
-* **Bulgaria**, from bg.wikipedia, because the English article of a
-  province carries one religion table from the 2001 census and nothing
-  else, while the Bulgarian article carries mother tongue, religion and
-  ethnicity each under its own heading. The article is reached by its
-  interlanguage link from the English title rather than by a
-  transliteration invented here.
+  beside the 2002 one in a single four-column table, for 66 of the 84
+  municipalities.
+* **Moldova**, from en.wikipedia: 3 of 37. The district articles do carry
+  an ethnic table, and nearly all of them put the citation in the infobox
+  rather than beside it, which under this reader's rules is a citation for
+  the population and not for the composition. Chișinău, Bălți, Bender,
+  Gagauzia and Transnistria are not districts, are on no list of them, and
+  carry that as their reason.
+* **Montenegro**, 1 of 23, which is effectively a measured negative: the
+  municipality articles have a Demographics heading with prose under it and
+  the only table on the page is the council's party seats. Bar's two tables
+  cite nothing and Bijelo Polje's cite something undated.
+* **Bulgaria**, from bg.wikipedia, all three fields at the province level
+  and two at the municipal one. The English article of a province carries
+  one religion table from the 2001 census and nothing else, while the
+  Bulgarian article carries mother tongue, religion and ethnicity each
+  under its own heading. 38 of the 265 municipalities have no bg.wikipedia
+  article under the name the English one links to, and say so.
 
 Three things the Bulgarian articles do that would otherwise have been read
 wrong, and each is now a rule with a test:
@@ -5809,7 +5825,8 @@ wrong, and each is now a rule with a test:
 2. A municipality prints its ethnic composition once per census under one
    heading, with nothing in either header to say which is which. Reading
    "the first table" would date half of them wrong, so a section holding
-   more than one table of the same kind refuses the unit and says so.
+   more than one table of the same kind refuses the unit and says so. That
+   refusal is most of why only 17 of 265 municipalities carry ethnicity.
 3. These tables are very often cited to `pop-stat.mashke.org`, one person's
    compilation of Eastern European census results, whose page titles say
    "2011 census". Every one of them would have been recorded as a census
@@ -5850,6 +5867,17 @@ would be a mistake.
 * **Lithuania, Latvia, Estonia, Cyprus, Malta, Andorra, Liechtenstein, San
   Marino** -- the county and municipality articles carry population series
   and no composition.
+
+None of these is a statement about the country's census. Hungary, Belarus,
+Albania, Kosovo and Lithuania all ask at least one of the three and publish
+it; what has been measured here is only that their units' Wikipedia
+articles do not carry it in a form that can be cited, dated and read. Where
+this reader wrote nothing for a unit it covered, the unit carries the
+reason, and the reasons are of six kinds: the article has no section where
+a composition would go; it has one and prints no table in it; it prints a
+table whose header this reader does not know; it prints the table and cites
+nothing; the citation carries no year and neither does the table; and the
+figures do not add to a composition.
 
 ### Wikipedia transcriptions: what was measured and left
 
