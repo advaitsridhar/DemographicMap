@@ -6794,8 +6794,9 @@ and the declaration reached all 11 provinces and all 179 counties, so every
 North Korean unit on the map said `not_collected` with a reason. What it did
 not have was a measurement: the country had no section here, only its name in
 a list, and the three notes said what the census does not ask without ever
-saying what was read to find out. Every other declaration this project makes
-is backed by a page count and a term search. This one now is.
+saying what was read to find out. The declarations this project stands on are
+backed by a page count and a term search — Laos's 282 pages, Bhutan's 1,798,
+Timor-Leste's questionnaire running E1 to E77. This one now is too.
 
 The check could have gone the other way and was run as though it would. North
 Korea is not a country without a census. The **2008 Population Census** was
@@ -6807,8 +6808,8 @@ financial and technical support from UNFPA, and the **National Report**
 Division serves it at
 `unstats.un.org/unsd/demographic/sources/census/wphc/North_Korea/Final national census report.pdf`,
 which is what was read; the directory above it answers 403 to an automated
-reader, and the one other DPRK file it serves, the one-page preliminary
-results, was found by name.
+reader, so the one other DPRK file it serves, the one-page preliminary
+results, was reached by name rather than by listing.
 
 **The form.** Annex 2, the CPF 2 questionnaire, is printed whole. It runs
 **53 questions**: H1 to H14 on the household and the dwelling unit (members,
