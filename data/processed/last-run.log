@@ -1,12 +1,92 @@
-
-=== HDX search: 'timor-leste census' ===
-    9 dataset(s), showing 9
-    xlsx  ocha-roap                    east-timor-other-0-0
-    xlsx  ocha-roap                    cod-ps-tls
-    -     heidelberg-institute-for-geoinformation-technology timor-leste-accessibility-indicators
-    -     worldpop                     worldpop-population-counts-for-timor-leste
-    -     meta                         timor-leste-high-resolution-population-density-maps-demographic-estimates
-    -     world-bank-group             world-bank-social-protection-and-labor-indicators-for-timor-leste
-    -     gem-foundation               timor-leste-level-1-exposure-data
-    -     copernicus                   tls-ghsl
-    -     wof                          whosonfirst-data-admin-tls
+== route (d): Open Development Laos, dataset by dataset
+  200 application/json;charset=utf-8                43522  https://data.laos.opendevelopmentmekong.net/api/3/action/package_show?id=lao-population-and-housing-census-2015-general-demographic
+  == lao-population-and-housing-census-2015-general-demographic: Lao Population and Housing Census 2015
+     SHP       
+         https://data.laos.opendevelopmentmekong.net/lo/dataset/7256198a-89af-411a-a850-9ccd1eca88a4/resource/476e5d08-c7ef-4647-90f7-b5b6e3c822f5/download/laos_population_census_2015.zip
+     XLSX      
+         https://data.laos.opendevelopmentmekong.net/lo/dataset/7256198a-89af-411a-a850-9ccd1eca88a4/resource/130665a5-1e64-477a-a756-51fa65eeec02/download/lao-population-census-2015.xlsx
+         datastore_active, id 130665a5-1e64-477a-a756-51fa65eeec02
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Census_2015 u_pop_density/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Census_2015 u_pop_density
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_water_source_main/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_water_source_main
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_energy_cooking_type_main/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_energy_cooking_type_main
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_eth_cat/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_eth_cat
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_hhs_head_f_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_hhs_head_f_pct
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_hhs_w_electricity_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_hhs_w_electricity_pct
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_hhs_with_disabled/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_hhs_with_disabled
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_hhs_with_farm_land_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_hhs_with_farm_land_pct
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_literacy_rate_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_literacy_rate_pct
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_literacy_sex_ratio/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_literacy_sex_ratio
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_pop_activity_unemployed/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_pop_activity_unemployed
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_pop_econ_active_pct/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_pop_econ_active_pct
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_poverty_incidence/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_poverty_incidence
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_sex_ratio/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_sex_ratio
+     WMS       
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Laos_Population_Census_2015 u_toilet_type_main/wms?service=WMS&request=GetCapabilities&layers=ODMekong:Laos_Population_Census_2015 u_toilet_type_main
+  200 application/json;charset=utf-8                 8847  https://data.laos.opendevelopmentmekong.net/api/3/action/package_show?id=iv-2015
+  == iv-2015: Results of Population and Housing Census 2015 
+     notes: This report consists of the 2015 population and housing census results, contained detailed and disaggregated information on demographic and socio-economic characteristics of the country’s population and households at national and provincial levels.
+     PDF       Results of Population and Housing Census 2015 
+         https://data.opendevelopmentmekong.net/dataset/4a2c03e0-2402-4691-b2fd-56277fc95c31/resource/0be5dd3f-8f9e-4bfe-9f75-bbddc5284146/download/phc-eng-fnal-web.pdf
+     PDF       ຜົນການສຳຫຼວດພົນລະເມືອງ ແລະ ທີ່ຢູ່ອາໄສທົ່ວປະເທດ ຄັ້ງທີ IV ປີ 2015
+         https://data.opendevelopmentmekong.net/dataset/4a2c03e0-2402-4691-b2fd-56277fc95c31/resource/9c4bb87b-4749-41cd-994b-91e2f72be321/download/phc-lao-fnal-web_0.pdf
+  200 application/json;charset=utf-8                 9720  https://data.laos.opendevelopmentmekong.net/api/3/action/package_show?id=4-2015
+  == 4-2015: Provisional Report of the 4th Lao Population and Housing Census 2015
+     notes: This report is the first to be generated from the 2015 Population and Housing Census. The main objective of this report is to disseminate some of the key results of the Census which are deemed of immediate importance to planners, policy makers and other data users. The report includes data on total number of households, total population and their distribution by geographical area and by sex. The report also includes information on number of villages in the country and their characteristics with 
+     PDF       Provisional Report of the 4th Lao Population and Housing Census 2015
+         http://lao.unfpa.org/sites/default/files/pub-pdf/Final%20report-editting-English1.pdf
+  200 application/json;charset=utf-8                11210  https://data.laos.opendevelopmentmekong.net/api/3/action/package_show?id=socioeconomic-atlas-of-the-lao-pdr-2015
+  == socioeconomic-atlas-of-the-lao-pdr-2015: Socio-Economic Atlas of the Lao PDR 2015 
+     notes: This latest atlas, developed by the Centre for Development and Environment (CDE) of the University of Bern, together with the Lao Statistics Bureau (LSB), combines statistical data from the last two Population and Housing Censuses of 2005 and 2015. Enhanced with detailed geographic information, the Atlas presents and makes available a wealth of socioeconomic information on a large set of highly detailed thematic maps, revealing both the status of 2015, as well as the observed dynamics over space
+     PDF       Socio-Economic Atlas of the Lao PDR 2015 [Lao version]
+         https://data.opendevelopmentmekong.net/dataset/459e00fe-8f6a-43ac-b5b5-4ddd0f3bd131/resource/8188b9dd-48c8-4bda-8faa-b9366ef3e2a7/download/socio-economic-atlas-of-the-lao-pdr-2015-lao.pdf
+     PDF       Socio-Economic Atlas of the Lao PDR 2015 [English]
+         https://data.opendevelopmentmekong.net/dataset/459e00fe-8f6a-43ac-b5b5-4ddd0f3bd131/resource/c07be772-8ce6-4c21-85b8-10344f9a15d4/download/lao-se-atlas-2015.pdf
+  200 application/json;charset=utf-8                 5659  https://data.laos.opendevelopmentmekong.net/api/3/action/package_show?id=population-census-lao-pdr-20051
+  == population-census-lao-pdr-20051: Population Census Lao PDR 2005
+     notes: This is a publication for population census of Lao PDR for 2005.
+     PDF       Population Census Lao PDR 2005
+         https://data.opendevelopmentmekong.net/dataset/af8f9e99-8d9b-484b-9301-321da2051ae7/resource/9f24c10c-6234-47fe-a7c7-409c5dea994d/download/lao-census-updatepopulation2005.pdf
+  200 application/json;charset=utf-8                 6868  https://data.laos.opendevelopmentmekong.net/api/3/action/package_show?id=census-results-in-brief-laos-population-census-2005-and-1995
+  == census-results-in-brief-laos-population-census-2005-and-1995: Census results in brief (Laos population census 2005 and 1995)
+     notes: A report summarising the results of the Laos Population Census in 2005 and comparing findings with the 1995 Census. The report provides data on population size and composition; population distribution and migration; household characteristics; education and literacy; economic activity; fertility; mortality; housing characteristics; and population projections.
+     PDF       Census results in brief (Laos population census 2005 and 1995)
+         https://data.opendevelopmentmekong.net/dataset/126050ca-c1b1-4fd9-a6f4-53b9c499ca87/resource/f54fadc4-8dca-4c0a-a9a8-a6a12f88657c/download/update-population-2005.pdf
+  200 application/json;charset=utf-8                10037  https://data.laos.opendevelopmentmekong.net/api/3/action/package_show?id=lsis-ii-2017
+  == lsis-ii-2017: Lao Social Indicator Survey II, Summary Survey Findings Report and Statistical Snapshots
+     notes: The Lao Social Indicator Survey (LSIS) II conducted in 2016-2017 is a nation-wide household based survey with a sample size of 23,400, covering all 18 provinces. It aims to generate data at provincial level disaggregated by age, residence, sex, wealth quantile and ethnic groups. This report is a summary report of key findings from LSISII as well as presenting some statistical snapshots. For the detail report, please kindly refer to the large report which provide details of data and information o
+     PDF       Lao Social Indicator Survey II, Summary Survey Findings Report and Sta
+         https://data.opendevelopmentmekong.net/dataset/b4a30d05-7752-4a06-89d5-fec94b5900df/resource/bb792872-5b8b-4454-93cc-6705d2cd58b4/download/summary-survey-findings-report-lsisii.pdf
+  200 application/json;charset=utf-8                10697  https://data.laos.opendevelopmentmekong.net/api/3/action/package_show?id=lao-social-indicator-survey-ii-201718
+  == lao-social-indicator-survey-ii-201718: Lao Social Indicator Survey II 2017
+     notes: The Lao Social Indicator Survey II (LSIS II) was carried out in 2017 by Lao Statistics Bureau (LSB) in collaboration with Ministry of Health and Ministry of Education and Sport, as part of the Global Multiple Indicator Cluster Survey (MICS) Programme. Technical support was provided by the United Nations Children’s Fund (UNICEF), with government funding and financial support of UNICEF and United Nations Population Fund (UNFPA), European Union (EU), Luxembourg Government, United States Agency for 
+     PDF       Lao Social Indicator Survey II 2017
+         https://lao.unfpa.org/sites/default/files/pub-pdf/Lao%20Social%20Inndicator%20Survey%20II%202017-18%20%28English%29_0.pdf
+  200 application/json;charset=utf-8                17576  https://data.laos.opendevelopmentmekong.net/api/3/action/package_show?id=lao-population-and-education-2019
+  == lao-population-and-education-2019: Lao Population and Education 2019
+     XLSX      
+         https://data.opendevelopmentmekong.net/dataset/20afba3a-0b40-412c-bb55-db2f230e8b6d/resource/ee1427ba-776f-4a02-a498-9a6abd73edc3/download/laos-population-and-education-2019.zip
+         datastore_active, id ee1427ba-776f-4a02-a498-9a6abd73edc3
+     SHP       
+         https://data.opendevelopmentmekong.net/dataset/20afba3a-0b40-412c-bb55-db2f230e8b6d/resource/aa78f952-d0fe-4da6-9296-16f9bc08960a/download/lao_population_and_education_2019.zip
+     DB_TABLE  Lao_Population_and_Education_2019 in Datastore via GeoServer
+         https://data.laos.opendevelopmentmekong.net/datastore/dump/e6789063-fae3-4845-94ab-13d947a61ca3
+         datastore_active, id e6789063-fae3-4845-94ab-13d947a61ca3
+     WMS       Lao_Population_and_Education_2019 Web Map Service in GeoServer
+         https://data.opendevelopmentmekong.net/geoserver/ODMekong/Lao_Population_and_Education_2019/wms?service=WMS&request=GetCapabilities&layers=ODMekong%3ALao_Population_and_Education_2019
+  200 application/json;charset=utf-8                 3598  https://data.laos.opendevelopmentmekong.net/api/3/action/package_show?id=ethnic-family-of-lao-pdr
+  == ethnic-family-of-lao-pdr: Ethnic Family of Lao PDR
+     notes: This dataset informs the locations of 4 ethno-linguistic families in Lao PDR, by the proportions of residents in the villages, districts and provinces.
