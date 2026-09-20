@@ -260,7 +260,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts. The census measured all 77; the boundary file is what fails, drawing 75 shapes whose names do not all sit on the right ground, and the 9 shapes that therefore carry nothing each say so and name the province total that holds their people. |
 | India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 734 of 735 district shapes carry figures. 637 are the census's own rows; 97 are shapes the census never enumerated and which carry their predecessor's shares as a stated estimate, with no head count, so nobody is counted twice. 75 more are districts that have since lost territory, and keep their 2011 figure under a caveat saying how much ground they have left. The one shape without figures is not a district at all. Telangana and Ladakh have state figures summed from the ten and two districts the census did enumerate, and Andhra Pradesh and Jammu and Kashmir carry the residual rather than the undivided state. |
-| Papua New Guinea | NSO, *2024 National Population Census -- Final Figures* (Table 1 and the 22 Provincial Snapshots) for population and sex ratio; *Papua New Guinea 2011 National Report* (2011 census), Summary Indicators row "Main religion (% of population)" | province, district | Fills a country that carried nothing at all: 22 provinces and 71 of 87 district shapes. Religion is **one group per province** -- the largest denomination and its share of the citizen population (19.7% to 68.4%, seventeen of the 22 under half), which is the only provincial religion figure published anywhere: Appendix 4 of the report prices the provincial tables at K40 a set and K2,000 a CD-ROM and the office publishes none of them, and a second search of the DHS API and report, the 2022 SDES, the 2000 census, the Archive's copy of the old PRISM site and Wikipedia found religion for the country and never for a province. Every panel says "describes N% of the population", and the run refuses if any province's single denomination ever reached the 95% at which it would stop saying so. Ethnicity and language are `not_collected` (policy entry `PNG`): the 2011 report's Appendix 1 lists the 33 questions of the one-page form and neither is among them, and the one language item is a literacy rate in English, Pidgin, Motu and Tokples. Both PDFs print their figures in kerned groups ("41 2 ,15 8" for 412,158), so a row is cut where males plus females make the total and the printed sex ratio holds. The 2024 layout has one district more than the boundary file draws in Western, Northern, Morobe and West New Britain and the booklet does not say which district it came out of, so those four provinces' 16 shapes carry the reason rather than a count. `scripts/fetch_census/png.py`. |
+| Papua New Guinea | NSO, *2024 National Population Census -- Final Figures* (Table 1 and the 22 Provincial Snapshots) for population and sex ratio; *Papua New Guinea 2011 National Report* (2011 census), Summary Indicators row "Main religion (% of population)"; UN OCHA COD-PS (the 2011 census by district) for the sixteen shapes the 2024 layout cannot be placed on | province, district | Fills a country that carried nothing at all: 22 provinces and all 87 district shapes. Religion is **one group per province** -- the largest denomination and its share of the citizen population (19.7% to 68.4%, seventeen of the 22 under half), which is the only provincial religion figure published anywhere: Appendix 4 of the report prices the provincial tables at K40 a set and K2,000 a CD-ROM and the office publishes none of them, and a second search of the DHS API and report, the 2022 SDES, the 2000 census, the Archive's copy of the old PRISM site and Wikipedia found religion for the country and never for a province. Every panel says "describes N% of the population", and the run refuses if any province's single denomination ever reached the 95% at which it would stop saying so. Ethnicity and language are `not_collected` (policy entry `PNG`): the 2011 report's Appendix 1 lists the 33 questions of the one-page form and neither is among them, and the one language item is a literacy rate in English, Pidgin, Motu and Tokples. Both PDFs print their figures in kerned groups ("41 2 ,15 8" for 412,158), so a row is cut where males plus females make the total and the printed sex ratio holds. The 2024 layout has one district more than the boundary file draws in Western, Northern, Morobe and West New Britain and the booklet does not say which district it came out of; which one is established from the two censuses -- every other assignment needs a district to have grown 104% to 262% or to have lost half its people while its province gained half -- and the new district is summed into the shape it came from, so all 87 carry the 2024 count. UN OCHA's COD-PS supplies the 2011 side of that test, committed under `data/raw/png/`. `scripts/fetch_census/png.py`. |
 | Bhutan | National Statistics Bureau, 2017 Population & Housing Census of Bhutan (PHCB), Table 2.1 — population distribution by gewog and town — in each of the twenty *Dzongkhag Series* volumes, with the *National Report* (288 pp, ISBN 978-99936-28-50-7) as the control. Indexed at `www.nsb.gov.bt/phcb`, which links the national report and the twenty volumes; the volumes are fetched as `nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_{Dzongkhag}.pdf`. Licence: none stated — NSB official publications, cited as such. | dzongkhag, gewog | **Population and sex ratio only**, for all 20 dzongkhags and 205 gewogs, each volume's own Table 2.1. Religion, language and ethnicity are `not_collected`, measured over the round's whole 1,798 pages rather than assumed — see below. The census's one identity-adjacent split is **citizenship** (Bhutanese against non-Bhutanese, published to gewog) and it is deliberately not read as ethnicity. Sex ratio is derived as females per 1,000 males from the Male and Female columns of the same row, and only where those two reach the Total printed beside them; a row that does not add up keeps its head count and publishes a gap naming the three figures. The publications disagree on the head count and the disagreement is reported rather than resolved: the twenty volumes come to **720,837**, the national report analyses **727,145**, and it says **735,553** were found in the country, the difference being 8,408 non-Bhutanese and tourists in hotels on census night about whom nothing else was collected. Each volume reconciles to its own printed total, gewog by gewog, so the dzongkhag's own figure is the one carried. Towns and thromdes are enumerated *beside* the gewogs, not inside them, and geoBoundaries draws none of them, so the gewog layer is short of its parent by the urban population — 37.8% of Bhutan — and every gewog record says so. **Thirty gewogs are drawn under a different name, not a different spelling** — Samtse's Tashicholing as "Sipsu", its Norgaygang as "Bara", Sarpang's Samtenling as "Bhur": the Nepali-origin names southern Bhutan carried before the renamings. They are paired by Wikidata's reference point for the gewog the census names falling inside the polygon the boundary file draws, with Wikidata's dzongkhag agreeing with the census's — a method measured first (98 of the 102 gewogs already matched by name have their own point inside their own polygon) and corroborated against the published list of all 205 gewogs with their Dzongkha. Six with no point are taken by elimination inside a dzongkhag where nothing else is left; four whose names repeat across dzongkhags (two Gakilings, two Norboogangs) are bound to a polygon by its id. Two earlier name pairings were wrong and are removed: Punakha's Barp was wearing a polygon 96% inside Samtse, Chhukha's Maedtabkha one 60% inside Tsirang, and those two polygons are Samtse's Norgaygang and Tsirang's Sergithang, which had no figures at all. 205 of 205 gewog shapes now carry the census's. `scripts/fetch_census/bhutan.py`. |
 
 ### New Zealand: the geography that already fitted
@@ -7709,7 +7709,7 @@ time; a row with none, or with two, refuses the run. The same files also read
 a capital away from its word ("T elefomin", "T awae/Siassi"), which is
 repaired before a name is matched.
 
-**Districts: 71 of 87, and why the other 16 are empty.** The boundary file
+**Districts: all 87, from the 2024 census.** The boundary file
 draws the 87 districts of the 2011 layout; the 2024 booklet tabulates 96 in a
 later one, and says PNG now has 98. Where a province's 2024 districts still
 partition its shapes the shapes are written: name for name, under a declared
@@ -7726,12 +7726,79 @@ boundary file draws for it, or the run refuses.
 Four provinces have one 2024 district that no shape corresponds to: Western's
 **Delta Fly**, Northern's **Popondetta**, Morobe's **Wau/Waria** and West New
 Britain's **Nakanai**. Each was carved out since 2011 and the booklet does not
-say from which district, so any of that province's shapes may have lost
-ground to it. None of those four provinces' district shapes is written --
-16 in all, 3 + 2 + 9 + 2 -- and each of the 16 carries a record saying so and
-naming the district that cannot be placed. A count on the wrong one of them
-would be invisible, which is the failure this project ranks above an empty
-cell.
+say from which district. **Which one is established rather than assumed**, and
+the new district is then summed into the shape it came out of -- the same kind
+of declared union as Kairuku - Hiri above, but earned instead of named.
+
+The test is arithmetic, and it is not close. A district the 2024 booklet
+tabulates and the 2011 shapes do not contain came out of exactly one of its
+province's shapes, so there are as many candidate assignments as the province
+has shapes; under the right one, no shape grew wildly out of step with its
+province. `check_carved_unions` re-runs it on every run and refuses unless the
+declared parent is the unique best fit and no shape ends up shrinking while its
+province grows:
+
+| carved district | summed into | deviation from the province's own growth | next best |
+|---|---|---:|---:|
+| Nakanai (159,530) | Talasea | 7 points | 222 (Kandrian/Gloucester) |
+| Popondetta (100,643) | Ijivitari | 11 points | 106 (Sohe) |
+| Delta Fly (76,097) | Middle Fly | 14 points | 118 (South Fly) |
+| Wau/Waria (100,622) | Bulolo | 46 points | 56 (Lae) |
+
+Putting Delta Fly on North Fly or South Fly needs that district to have grown
+184% or 167% since 2011 while Middle Fly lost half its people; putting Nakanai
+on Kandrian/Gloucester needs +262% there and -47% in Talasea; putting
+Popondetta on Sohe needs Ijivitari to have lost 45% of its people while Oro
+gained 47%.
+
+**Morobe is the thin one and the note says so.** Bulolo plus Wau/Waria comes
+to +93% against a province at +48%, which is high even for the country's
+historic goldfield, and the margin over the next-best assignment is 46 points
+against 56. What carries it is not the arithmetic alone but the office's own
+2011 ward tables: **Wau Rural and Waria Rural are both LLGs of Bulolo
+District**, so the district named after them came out of Bulolo. The same
+corroboration exists for Oro -- **Popondetta Urban LLG is one of Ijivitari's
+five**. For Delta Fly and Nakanai there is no LLG of that name and the
+arithmetic stands alone; there the alternatives are impossible rather than
+merely worse.
+
+Each of the four shapes says all of this on its own record, and cites both
+censuses: the 2024 booklet for the figure, the 2011 tables for the assignment.
+
+**The 2011 side of that test** is UN OCHA's **Common Operational Dataset for
+population statistics** (`cod-ps-png`, CC BY-IGO 3.0), which publishes the
+National Statistical Office's 2011 census by province, district and
+local-level government. The two CSVs the adapter reads are committed under
+`data/raw/png/` and refreshed with `--fetch`, which asks the HDX catalogue for
+them by name rather than writing down a download URL that carries a resource
+uuid and rotates. It is the office's own figures and not a third party's
+rework: the NSO's four regional *Census Figures by Wards* volumes (2014, K30
+each) reproduce all twenty of the province totals they cover **to the person**,
+and their district rows likewise -- Morobe 674,810, Bulolo 101,568.
+
+Three controls, all the publisher's own, and each refuses the run:
+
+* the 87 districts add to **7,275,324**, the census's published headline;
+* each province's districts add to that province's own row in the
+  first-level file, to the person;
+* `M_TL + F_TL == T_TL` on every row.
+
+All three hold. That matters because the dataset's own caveat says the first
+level "does not refer to the National Capital District or to the Autonomous
+Region of Bougainville", the one folded into Central and the other into North
+Solomons, and warns of "small differences in totals between administrative
+levels ... due to rounding". Neither is true of the `_v2` tables: both
+provinces have a row of their own, Central's four districts add to its own
+269,756 without Moresby's 364,125 among them, and every level reconciles
+exactly. The caveat describes an earlier edition. The adapter checks for
+those two rows rather than believing either the caveat or the arithmetic
+alone, because a republished edition that did fold them would put 364,125
+people in the wrong province in silence.
+
+The same dataset publishes a third level, **326 local-level governments**, and
+that is what supplies the LLG evidence above: it is where Wau Rural, Waria
+Rural and Popondetta Urban are each shown under their 2011 district. The map
+draws no admin-3 for Papua New Guinea, so no record is written from it.
 
 **Ethnicity and language are declared, not left blank.** Appendix 1 of the
 2011 National Report lists what the census collected: "Basic demographic,
