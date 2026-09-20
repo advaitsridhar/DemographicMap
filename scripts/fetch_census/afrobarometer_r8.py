@@ -105,6 +105,132 @@ ISO3 = {
     "Tunisia": "TUN", "Uganda": "UGA", "Zambia": "ZMB", "Zimbabwe": "ZWE",
 }
 
+# ---------------------------------------------------------------------------
+# Where a survey stratum sits on the map
+# ---------------------------------------------------------------------------
+
+# Afrobarometer's region name -> the name the boundary file draws. Three
+# different things live here and the distinction is the point:
+#
+#   * a spelling: "Huila" for Huíla, "Koulikoro" for the file's Koulikouro,
+#     "Souther Nations..." for SNNPR (the release's own typo), the French
+#     names of Cameroon's English-named regions. One stratum, one shape.
+#   * a stratum *finer* than the map, which is summed into the shape that
+#     contains it: Kweneng East and Kweneng West into Kweneng, Mfoundi
+#     (Yaoundé) into Centre, Songwe -- carved out of Mbeya in 2016, after
+#     these shapes were drawn -- back into Mbeya. Several strata mapping to
+#     one shape are added together, weighted, which is arithmetic and not an
+#     assumption.
+#   * a stratum the map has merged: Niger's file draws "Tahoua/Agadez" and
+#     "Zinder/Diffa" as single shapes, so all four strata land on two.
+#
+# What is *not* here is the opposite case -- a stratum coarser than the map --
+# which is declared in COARSER below and published for no shape at all,
+# because splitting it would mean assuming the composition is uniform inside
+# it, and this map does not do that quietly.
+REGIONS: dict[tuple[str, str], str] = {
+    # Angola, Benin, Guinea, Mali, Mauritius, Morocco: spelling and accents.
+    ("AGO", "Huila"): "Huíla", ("AGO", "Malange"): "Malanje",
+    ("AGO", "Uige"): "Uíge",
+    ("BEN", "ATACORA"): "Atakora", ("BEN", "COUFFO"): "Kouffo",
+    ("GIN", "BOKÉ"): "Boke", ("GIN", "LABÉ"): "Labe",
+    ("GIN", "N'ZÉRÉKORÉ"): "Nzerekore",
+    ("MLI", "Koulikoro"): "Koulikouro", ("MLI", "Ségou"): "Segou",
+    ("MUS", "Plaine Wilhems"): "Plaines Wilhems",
+    ("MUS", "Riviere du Rempart"): "Rivière du Rempart",
+    ("MAR", "BENI MELLAL-KHENIFRA"): "Béni Mellal-Khénifra",
+    ("MAR", "DERAA-TAFILALT"): "Drâa-Tafilalet",
+    ("MAR", "FES-MEKNES"): "Fez-Meknes",
+    ("MAR", "RABAT-SALE-KENITRA"): "Rabat-Salé-Kenitra",
+    ("MAR", "TANGIER-TETOUAN-HOCEIMA"): "Tangier-Tetouan-Al Hoceima",
+    # Ethiopia: two spellings and one typo in the release.
+    ("ETH", "Dire Dawa City Adminnistration"): "Dire Dawa",
+    ("ETH", "Harari"): "Hareri",
+    ("ETH", "Souther Nations, Nationalities & Peoples (SNNP)"): "SNNPR",
+    # Liberia: the file's counties carry the "Grand" the survey drops.
+    ("LBR", "Bassa"): "Grand Bassa", ("LBR", "Cape Mount"): "Grand Cape Mount",
+    # Malawi and Sierra Leone: the same three regions, named shorter.
+    ("MWI", "Center"): "Central Region", ("MWI", "North"): "Northern Region",
+    ("MWI", "South"): "Southern Region",
+    ("SLE", "WESTERN"): "Western Area",
+    # Cameroon: the survey names the regions in French, the file in English.
+    ("CMR", "Est"): "East", ("CMR", "Nord"): "North",
+    ("CMR", "Extreme- Nord"): "Far North", ("CMR", "Nord Ouest"): "North-West",
+    ("CMR", "Ouest"): "West", ("CMR", "Sud"): "South",
+    ("CMR", "Sud Ouest"): "South-West",
+    # ...and surveys its two big cities apart from the regions holding them.
+    ("CMR", "Mfoundi"): "Centre", ("CMR", "Wouri"): "Littoral",
+    # Namibia: Kavango was split in two in 2013 and Caprivi renamed Zambezi,
+    # both after the file's shapes were drawn.
+    ("NAM", "Kavango East"): "Kavango", ("NAM", "Kavango West"): "Kavango",
+    ("NAM", "Zambezi"): "Caprivi",
+    # Niger: the file draws two pairs as one shape each, and misspells Dosso.
+    ("NER", "AGADEZ"): "Tahoua/Agadez", ("NER", "TAHOUA"): "Tahoua/Agadez",
+    ("NER", "ZINDER"): "Zinder/Diffa", ("NER", "DIFFA"): "Zinder/Diffa",
+    ("NER", "DOSSO"): "Dossa",
+    # Togo: Lomé is surveyed apart from the Maritime region around it.
+    ("TGO", "LOME"): "Maritime Region",
+    # Tanzania: Zanzibar under its Swahili names, and Songwe, carved out of
+    # Mbeya in 2016, back into it.
+    ("TZA", "Mjini Magharibi"): "Zanzibar Urban/West",
+    ("TZA", "Unguja Kaskazini"): "Zanzibar North",
+    ("TZA", "Unguja Kusini"): "Zanzibar South & Central",
+    ("TZA", "Pemba Kaskazini"): "North Pemba",
+    ("TZA", "Pemba Kusini"): "South Pemba",
+    ("TZA", "Songwe"): "Mbeya",
+    # Botswana: sixteen survey districts over ten shapes. The five "Central"
+    # sub-districts and the two mining townships inside them are Central; the
+    # cities are the district that surrounds them.
+    ("BWA", "Central Bobonong"): "Central District",
+    ("BWA", "Central Boteti"): "Central District",
+    ("BWA", "Central Mahalapye"): "Central District",
+    ("BWA", "Central Serowe/Palapye"): "Central District",
+    ("BWA", "Central Tutume"): "Central District",
+    ("BWA", "Selibe Phikwe"): "Central District",
+    ("BWA", "Sowa"): "Central District",
+    ("BWA", "Francistown"): "North-East District",
+    ("BWA", "North East"): "North-East District",
+    ("BWA", "Gaborone"): "South-East District",
+    ("BWA", "Lobatse"): "South-East District",
+    ("BWA", "South East"): "South-East District",
+    ("BWA", "Barolong"): "Southern District",
+    ("BWA", "Ngwaketse"): "Southern District",
+    ("BWA", "Ngwaketse West"): "Southern District",
+    ("BWA", "Jwaneng"): "Southern District",
+    ("BWA", "Kweneng East"): "Kweneng District",
+    ("BWA", "Kweneng West"): "Kweneng District",
+    ("BWA", "Ngamiland East"): "North-West District",
+    ("BWA", "Ngamiland West"): "North-West District",
+    ("BWA", "Kgalagadi North"): "Kgalagadi District",
+    ("BWA", "Kgalagadi South"): "Kgalagadi District",
+    ("BWA", "Chobe"): "Chobe District", ("BWA", "Ghanzi"): "Ghanzi District",
+    ("BWA", "Kgatleng"): "Kgatleng District",
+    # Uganda: eleven sub-regions over the file's four regions.
+    ("UGA", "Acholi"): "Northern Region", ("UGA", "Lango"): "Northern Region",
+    ("UGA", "Karamoja"): "Northern Region",
+    ("UGA", "West Nile"): "Northern Region",
+    ("UGA", "Ankole"): "Western Region", ("UGA", "Kigezi"): "Western Region",
+    ("UGA", "Tooro"): "Western Region", ("UGA", "Bunyoro"): "Western Region",
+    ("UGA", "Buganda"): "Central Region", ("UGA", "Busoga"): "Eastern Region",
+    # Côte d'Ivoire: the survey uses the 31-region layout, the file the 14
+    # districts those regions make up.
+    ("CIV", "Agneby-Tiassa"): "Lagunes", ("CIV", "Gbeke"): "Valle Du Bandama",
+    ("CIV", "Gontougo"): "Zanzan", ("CIV", "Guemon"): "Montagnes",
+    ("CIV", "Tonkpi"): "Montagnes", ("CIV", "Gôh"): "Goh-Djiboua",
+    ("CIV", "Haut-Sassandra"): "Sassandra-Marahoue",
+    ("CIV", "Marahoue"): "Sassandra-Marahoue",
+    ("CIV", "Nawa"): "Bas-Sassandra", ("CIV", "Poro"): "Savanes",
+}
+
+# Countries whose survey stratum is *coarser* than the shapes the map draws.
+# Cabo Verde is surveyed in five strata over 22 municipalities, Sudan in six
+# macro-regions over 19 states, Tunisia in seven over 24 governorates. A
+# composition for "North West" is a fact about a seventh of Tunisia and not
+# about Jendouba, Béja, El Kef or Siliana, and spreading it over the four
+# would state something nobody measured. Nothing is written for them, and the
+# run says so rather than leaving the reader to notice.
+COARSER = {"CPV": (5, 22), "SDN": (6, 19), "TUN": (7, 24)}
+
 SOURCE = "Afrobarometer Round 8 (2019-2021)"
 URL = "https://www.afrobarometer.org/data/"
 LICENCE = "Afrobarometer data use policy"
@@ -205,20 +331,47 @@ def main() -> int:
     for country in sorted(silent):
         log(f"  {country}: the round records no language")
 
-    records: list[dict[str, Any]] = []
-    dropped = low = 0
+    # Strata that land on one shape are added together before anything is
+    # published: Kweneng East and Kweneng West are one shape's worth of
+    # people, and emitting them as two records would put the second on top of
+    # the first. The sample sizes add too, which is what the 25-respondent
+    # floor should be applied to -- a shape covered by two strata of 20 was
+    # interviewed 40 times.
+    merged: dict[tuple[str, str], dict[str, float]] = {}
+    merged_n: dict[tuple[str, str], int] = {}
+    strata: dict[tuple[str, str], list[str]] = {}
+    skipped_coarse: dict[str, int] = {}
     for (country, region), counts in sorted(tally.items()):
-        n = sample[(country, region)]
-        if n < MIN_SAMPLE:
-            dropped += 1
-            continue
         iso = ISO3.get(country)
         if not iso:
             raise SystemExit(f"afrobarometer_r8: no ISO3 for {country!r}")
+        if iso in COARSER:
+            skipped_coarse[iso] = skipped_coarse.get(iso, 0) + 1
+            continue
+        shape = REGIONS.get((iso, region), region)
+        key = (iso, shape)
+        cell = merged.setdefault(key, {})
+        for group, weight in counts.items():
+            cell[group] = cell.get(group, 0.0) + weight
+        merged_n[key] = merged_n.get(key, 0) + sample[(country, region)]
+        strata.setdefault(key, []).append(region)
+
+    records: list[dict[str, Any]] = []
+    dropped = low = 0
+    for (iso, shape), counts in sorted(merged.items()):
+        n = merged_n[(iso, shape)]
+        if n < MIN_SAMPLE:
+            dropped += 1
+            continue
+        region = shape
         rows = shares(counts)
         if not rows:
             continue
         note = f"{UNIVERSE} This region: {n} respondents."
+        parts = strata[(iso, shape)]
+        if parts != [shape]:
+            note += (f" The survey stratifies this shape as "
+                     f"{', '.join(sorted(parts))}, summed here.")
         if n < LOW_PRECISION:
             low += 1
             note += (" Fewer than 50 respondents, so this share is imprecise "
@@ -237,15 +390,19 @@ def main() -> int:
         iso = ISO3.get(country)
         if not iso:
             raise SystemExit(f"afrobarometer_r8: no ISO3 for {country!r}")
+        shape = REGIONS.get((iso, region), region)
         records.append(record(
-            f"{iso}-AB8-{region}", region, level="admin1", parent=iso,
+            f"{iso}-AB8-{shape}", shape, level="admin1", parent=iso,
             country=iso, language=gap(NOT_AVAILABLE, NO_LANGUAGE),
             sources=[{"field": "language", "name": SOURCE, "url": URL,
                       "year": 2020, "license": LICENCE}]))
     kept = sum(1 for r in records if isinstance(r.get("language"), list))
-    log(f"  {kept} regions carry a language composition, {dropped} dropped "
-        f"under {MIN_SAMPLE} respondents, {low} marked low precision, "
-        f"{len(records) - kept} carry a stated reason")
+    log(f"  {kept} shapes carry a language composition, {dropped} dropped "
+        f"under {MIN_SAMPLE} respondents, {low} marked low precision")
+    for iso, n in sorted(skipped_coarse.items()):
+        strat, shapes_drawn = COARSER[iso]
+        log(f"  {iso}: {n} strata not written -- the survey stratifies the "
+            f"country in {strat} where the map draws {shapes_drawn}")
     write_json(args.out or PROCESSED / OUT, records)
     log(f"  wrote {len(records)} records to {OUT}")
     return 0

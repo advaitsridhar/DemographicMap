@@ -58,6 +58,10 @@ ADAPTER_FILES = [
     # by field this still fills a field a census left empty without touching
     # one it filled.
     "afrobarometer_region.json",
+    # Round 8, for language alone: Round 9 does not ask it, and Africa is
+    # emptier of language than of anything else on this map. Beside Round 9
+    # rather than after it -- neither touches a field the other writes.
+    "afrobarometer_r8_language.json",
     # Korea's pooled web-panel survey is the same kind of thing: a survey
     # that fills provinces no census file reaches, and that a census file
     # later in this list replaces field by field.
