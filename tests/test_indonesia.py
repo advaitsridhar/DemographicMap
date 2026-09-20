@@ -667,3 +667,89 @@ class Classification(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TheProvinceResidual(unittest.TestCase):
+    """A province's own figures, less the regencies published inside it.
+
+    Measured against the regencies that are read, by leave-one-out: the
+    residual is a median 1.4 points off with the dominant group right 96.9%
+    of the time and a worst case of 17 points, where taking the neighbouring
+    regencies instead is 5.1 points off, 90.8% right, and 93.8 points at
+    worst. So this is the method, and it is arithmetic rather than a model.
+    """
+
+    def province(self, gaps, known, shares, pops):
+        return {"Aceh": {"all": list(known) + list(gaps), "gaps": list(gaps),
+                         "population": pops, "shares": shares}}
+
+    def known(self, rows):
+        return {name: {"religion": [{"group": g, "pct": p} for g, p in comp.items()]}
+                for name, comp in rows.items()}
+
+    def test_one_empty_regency_is_derived_and_exact(self):
+        """Two regencies of 100, the province 60/40, one of them 80/20."""
+        out, printed = quiet(
+            m.residual_records,
+            self.known({"A": {"Islam": 80.0, "Protestantism": 20.0}}),
+            self.province(["B"], ["A"], {"Islam": 60.0, "Protestantism": 40.0},
+                          {"A": 100, "B": 100}), {})
+        self.assertEqual(len(out), 1)
+        religion = out[0]["religion"]
+        self.assertEqual(religion["status"], "derived")
+        got = {r["group"]: r["pct"] for r in religion["estimate"]}
+        # 200 people, 60% Muslim = 120; A holds 80; B holds the other 40 of 100.
+        self.assertEqual(got, {"Islam": 40.0, "Protestantism": 60.0})
+        self.assertIn("only regency", religion["note"])
+        self.assertEqual(religion["method"], "province residual")
+
+    def test_several_empty_regencies_are_modelled_and_say_so(self):
+        out, _ = quiet(
+            m.residual_records,
+            self.known({"A": {"Islam": 80.0, "Protestantism": 20.0}}),
+            self.province(["B", "C"], ["A"], {"Islam": 60.0, "Protestantism": 40.0},
+                          {"A": 100, "B": 50, "C": 50}), {})
+        self.assertEqual(len(out), 2)
+        for record in out:
+            self.assertEqual(record["religion"]["status"], "modelled")
+            self.assertIn("assumes they do not differ", record["religion"]["note"])
+
+    def test_a_negative_group_is_refused(self):
+        """The read regencies already hold more Muslims than the province has.
+
+        That is not a small inconsistency to absorb -- it says the province
+        figure and the regency figures are describing different populations,
+        and there is no honest remainder to take. North Sumatra fails this
+        way for real, by 313,752 Muslims.
+        """
+        out, printed = quiet(
+            m.residual_records,
+            self.known({"A": {"Islam": 95.0, "Protestantism": 5.0}}),
+            self.province(["B"], ["A"], {"Islam": 40.0, "Protestantism": 60.0},
+                          {"A": 100, "B": 100}), {})
+        self.assertEqual(out, [])
+        self.assertIn("already hold more", printed)
+
+    def test_a_leftover_far_from_the_missing_population_is_refused(self):
+        """The province's figures describe 70% of it and the regencies 100%.
+
+        Subtracting one from the other then leaves 40 people where 100 live,
+        and the shares that come out of it are not this regency's even if
+        they normalise to something plausible. Central Sulawesi drifts 29%
+        this way for real.
+        """
+        out, printed = quiet(
+            m.residual_records,
+            self.known({"A": {"Islam": 50.0, "Protestantism": 50.0}}),
+            self.province(["B"], ["A"], {"Islam": 35.0, "Protestantism": 35.0},
+                          {"A": 100, "B": 100}), {})
+        self.assertEqual(out, [])
+        self.assertIn("the leftover is", printed)
+
+    def test_a_regency_with_no_head_count_stops_the_province(self):
+        out, printed = quiet(
+            m.residual_records,
+            self.known({"A": {"Islam": 100.0}}),
+            self.province(["B"], ["A"], {"Islam": 100.0}, {"A": None, "B": 100}), {})
+        self.assertEqual(out, [])
+        self.assertIn("without a head count", printed)
