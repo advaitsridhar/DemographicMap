@@ -17,13 +17,23 @@ table**, which LSB releases through Open Development Laos: one row for each of
 the country's 8,500-odd villages, with the province, district and village
 named in English and Lao, the village's total population, and 68 indicators
 derived from the census returns. Among them are the ten ethno-linguistic
-categories the census sorts its 49 groups into -- Lao, Tai Thai, Khmuic,
-Palaungic, Katuic, Bahnaric Khmer, Vietic, Tibeto-Burman, Hmong and Mien --
+categories the census sorts its 49 groups into -- Lao, Tai-Thay, Khmuic,
+Palaungic, Katuic, Bahnaric-Khmer, Vietic, Tibeto-Burman, Hmong and Mien --
 each as a percentage of the village's people, and five religions -- Buddhist,
 Christian, Bahai, Muslim and other -- the same way. The workbook's own Meta
 sheet names every column in Lao and English and gives the source as "Lao
 Population and Housing Census 2015" and the data owner as the Lao Statistics
 Bureau.
+
+Those ten categories are defined in Table 1 of the *Socio-Economic Atlas of
+the Lao PDR 2015* (LSB with the Centre for Development and Environment of the
+University of Bern), which is the publication this table underlies, and the
+definition matters: the Atlas's "Lao" is not the census's Lao ethnic group.
+Its Table 1 assigns the Lao of Huaphanh, Xiengkhuang, Borikhamxay, Vientiane
+province and Hinboun district of Khammuane to "Tai-Thay" instead, so the
+villages come to Lao 43.7% and Tai-Thay 18.3% where the volume's Table 3.4
+prints Lao 53.2%. The two together are the volume's Lao-Tai family, 62.4%,
+which is the level this reader checks at and the note on every row says so.
 
 So the composition written here is the census's, read at the level the census
 released it and added up. A percentage of a village is turned back into people
@@ -34,12 +44,17 @@ against the unit's total.
 **What the residual is.** The ten ethno-linguistic categories do not reach
 100: the rest is the census's own other-and-not-stated together with the
 foreign population, 1.2% and 0.7% of the country. The five religions do not
-reach 100 either, and the missing part is larger and has a known composition:
-nationally the census publishes no religion 31.4% and not stated 1.8%, and the
-five religions leave 33.3%. Both residuals are published as one row apiece --
-"Other or not stated" and "No religion or not stated" -- because neither can
-be split unit by unit, and the religion one is filed in the group tree beside
-the other labels that weld a real answer to a non-answer.
+reach 100 either, and the missing part is larger and has a known composition.
+The census defines a religion as a spiritual system with written doctrines, so
+the animist beliefs of most non-Lao-Tai people -- the Satsana Phi, the
+"religion of spirits" -- are not among the five and are recorded with the
+people who stated nothing; the Atlas says this in as many words and calls the
+result "no religion or not stated", which is the label used here. Nationally
+it is 33.3%, of which the census publishes 31.4% as no religion and 1.8% as
+not stated. Both residuals are published as one row apiece -- "Other or not
+stated" and "No religion or not stated" -- because neither can be split unit
+by unit, and the religion one is filed in the group tree beside the other
+labels that weld a real answer to a non-answer.
 
 **Language is not written, and is declared rather than left blank.** The 2015
 census asked no language or mother-tongue question: the results volume has no
@@ -120,11 +135,11 @@ COL_SEX_RATIO = "urpdeaa29"
 # Percentage of the village's population, in the workbook's order.
 ETHNICITY: dict[str, str] = {
     "urpetab69": "Lao",
-    "urpetab70": "Tai Thai",
+    "urpetab70": "Tai-Thay",
     "urpetab71": "Khmuic",
     "urpetab72": "Palaungic",
     "urpetab73": "Katuic",
-    "urpetab74": "Bahnaric Khmer",
+    "urpetab74": "Bahnaric-Khmer",
     "urpetab75": "Vietic",
     "urpetab76": "Tibeto-Burman",
     "urpetab77": "Hmong",
@@ -144,9 +159,9 @@ MIN_SHARE = 0.05            # below this share of the unit, a group joins the re
 # The four families the census reports its ten categories in, for the national
 # check against the volume's own summary page.
 FAMILY: dict[str, str] = {
-    "Lao": "Lao-Tai", "Tai Thai": "Lao-Tai",
+    "Lao": "Lao-Tai", "Tai-Thay": "Lao-Tai",
     "Khmuic": "Mon-Khmer", "Palaungic": "Mon-Khmer", "Katuic": "Mon-Khmer",
-    "Bahnaric Khmer": "Mon-Khmer", "Vietic": "Mon-Khmer",
+    "Bahnaric-Khmer": "Mon-Khmer", "Vietic": "Mon-Khmer",
     "Tibeto-Burman": "Chinese-Tibetan",
     "Hmong": "Hmong-Mien", "Mien": "Hmong-Mien",
 }
@@ -161,7 +176,15 @@ NATIONAL_MALE = 3_254_770
 POPULATION_TOLERANCE = 0.02      # the village table is the household population
 SEX_RATIO_TOLERANCE = 0.005
 SHARE_TOLERANCE = 1.0            # percentage points
-NATIONAL_ETHNIC = {"Lao": 53.2}
+# The check is at the family level and not at the category level, and the
+# reason is the Atlas's own Table 1. Its "Lao" category is not the census's
+# Lao ethnic group: the Lao of Huaphanh, Xiengkhuang, Borikhamxay, Vientiane
+# province and Hinboun district of Khammuane are put in "Tai-Thay" instead, so
+# the villages come to 43.7% Lao where Table 3.4 prints 53.2%. The two
+# together reproduce the volume's Lao-Tai family exactly, which is what this
+# checks; the run logs both figures every time so the difference stays on the
+# record rather than being quietly tolerated.
+NATIONAL_LAO_GROUP = 53.2        # Table 3.4, the Lao *ethnic group*
 NATIONAL_FAMILY = {"Lao-Tai": 62.4, "Mon-Khmer": 23.7, "Hmong-Mien": 9.7,
                    "Chinese-Tibetan": 2.9}
 NATIONAL_RELIGION = {"Buddhism": 64.7, "Christianity": 1.7,
@@ -575,8 +598,11 @@ def check(provinces: dict[str, dict], districts: dict[tuple[str, str], dict]) ->
                          ("religion", religion)):
         log(f"  {what:9} " + ", ".join(f"{k} {v:.1f}" for k, v in
                                        sorted(shares.items(), key=lambda kv: -kv[1])))
-    for what, got_shares, want_shares in (("ethnic group", ethnic, NATIONAL_ETHNIC),
-                                          ("ethno-linguistic family", families,
+    log(f"  the Atlas's Lao category is {ethnic.get('Lao', 0.0):.1f}% and its Tai-Thay "
+        f"{ethnic.get('Tai-Thay', 0.0):.1f}%, against {NATIONAL_LAO_GROUP:.1f}% for the "
+        "Lao ethnic group in Table 3.4: its Table 1 puts the Lao of Huaphanh, "
+        "Xiangkhouang, Bolikhamsai, Vientiane province and Hinboun in Tai-Thay")
+    for what, got_shares, want_shares in (("ethno-linguistic family", families,
                                            NATIONAL_FAMILY),
                                           ("religion", religion, NATIONAL_RELIGION)):
         for label, want_share in want_shares.items():
@@ -598,21 +624,34 @@ def check(provinces: dict[str, dict], districts: dict[tuple[str, str], dict]) ->
 # ---------------------------------------------------------------------------
 
 def note(field: str) -> str:
-    what = ("the ten ethno-linguistic categories the 2015 census sorts its 49 ethnic "
-            "groups into" if field == "ethnicity" else
-            "the five religions the 2015 census counts")
-    residual = (f"'{ETHNIC_RESIDUAL}' is the census's own other-and-not-stated together "
-                "with the foreign population, 1.9% of the country between them"
-                if field == "ethnicity" else
-                f"'{RELIGION_RESIDUAL}' is everything the five leave: the census "
-                "publishes 31.4% with no religion and 1.8% not stating one for the "
-                "country, and the two cannot be told apart unit by unit")
-    return (f"Shares of {what}, summed from the Lao Statistics Bureau's village "
-            "indicator table for the census -- each village's published percentage "
-            "turned back into people by its own published population, then added up "
-            f"over this unit. {residual}; a category under 0.05% of the unit is inside "
-            "it too. The census's English results volume prints this composition for "
-            "the country only.")
+    """What the figure is, where it came from, and the one thing about it that
+    would otherwise be read wrongly. The method is in docs/SOURCES.md."""
+    if field == "ethnicity":
+        what = ("the ten ethno-linguistic categories the 2015 census sorts the country's "
+                "49 ethnic groups into")
+        caveat = (
+            f"'{ETHNIC_RESIDUAL}' is the census's own other-and-not-stated together with "
+            "the foreign population, 1.9% of the country between them. 'Lao' here is the "
+            "category and not the ethnic group: Table 1 of the Socio-Economic Atlas of "
+            "the Lao PDR 2015, which defines these ten, puts the Lao of Huaphanh, "
+            "Xiangkhouang, Bolikhamsai, Vientiane province and Hinboun district into "
+            "'Tai-Thay', so nationally the two come to 43.7% and 18.3% where the census's "
+            "own ethnic-group table prints Lao 53.2%; together they are its Lao-Tai "
+            "family, 62.4%.")
+    else:
+        what = "the five religions the 2015 census counts"
+        caveat = (
+            f"'{RELIGION_RESIDUAL}' is everything the five leave, and it is large because "
+            "the census defines a religion as a spiritual system with written doctrines: "
+            "the animist beliefs of most non-Lao-Tai people are recorded in it, along "
+            "with 1.8% of the country who stated nothing. Nationally it is 33.3%, of "
+            "which the census publishes 31.4% as no religion.")
+    return (f"Shares of {what}, summed from the Lao Statistics Bureau's village indicator "
+            "table for the census -- each village's published percentage turned back into "
+            "people by its own published population, then added up over this unit. A "
+            f"category under 0.05% of the unit is inside the residual too. {caveat} The "
+            "census's English results volume prints this composition for the country "
+            "only.")
 
 
 def build(units: dict[Any, dict[str, Any]], level: str) -> list[dict[str, Any]]:
