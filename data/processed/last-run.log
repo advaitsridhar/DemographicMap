@@ -28,5 +28,30 @@ png: the 2024 census head count and the 2011 census's provincial religion
     Morobe                             Evangelical Lutheran    67.0%
     Autonomous Region of Bougainville  Roman Catholic          68.4%
   districts: 71 shapes carry the 2024 count; 16 in 4 provinces (Morobe, Northern, West New Britain, Western) are left with a reason
+  the rest of each province was looked for here, and is not published:
+    2011 National Report, all 100 pp
+      -> religion on pp. 26-30 (the one provincial row), 32-34 (Table 2.4 and Figures 2.1-2.2, country only) and 85; no provincial table
+    2011 National Report, Appendix 4 (p. 95)
+      -> the provincial tables are priced products -- Provincial Report K40 a province, 31 Basic Tables K40 a set, Table Retrieval System CD-ROM K2,000 -- and none of them is a download
+    nso.gov.pg sitemap, all 289 published files
+      -> no provincial census report; nothing below the province carries religion
+    2024 Final Figures (35 pp), 2011 Final Figures booklet (40 pp), ward tables (35 pp), 2021 provincial estimates (2 pp)
+      -> religion on zero pages of any of them
+    2000 National Report, three copies
+      -> one 22,359,391-byte scan, 109 pp, zero extractable characters
+    DHS StatCompiler API (api.dhsprogram.com)
+      -> 2.2 MB of indicators and no religion composition among them; religion is a DHS background characteristic, never an indicator
+    DHS 2016-18 final report FR364 (519 pp)
+      -> religion on 6 pages, crossed with province on none
+    DHS microdata
+      -> 30 files named by the API, served only to a registered account; not attempted
+    2022 SDES thematic workbooks
+      -> sheet T2.4 is religion by Total/Urban/Rural and sex -- a 321-cluster national survey with no provincial estimates
+    spc.int PRISM, via the Internet Archive
+      -> the 2000 census page links no tables; popdemog.htm has three national rates (christian / non-christian / none)
+    Wikipedia (Religion in PNG, province articles)
+      -> national denominations only; no province article has a religion table
+    pngnri.org via the Internet Archive (1,108 PDFs)
+      -> atlas sheets of education and development indicators, not census tables
   wrote data/processed/png.json (365 kB)
   wrote 109 records (22 provinces, 87 districts)
