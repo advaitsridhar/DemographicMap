@@ -38,6 +38,7 @@ AGENT = "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)"
 
 
 def fetch(url: str, *, limit: int = BYTES, find: str | None = None,
+          terms: list[str] | None = None, context: int = 200,
           headers: dict[str, str] | None = None) -> str | None:
     try:
         body = http_get(url, cache=False, retries=1, timeout=60, aia=True, headers=headers)
@@ -52,6 +53,17 @@ def fetch(url: str, *, limit: int = BYTES, find: str | None = None,
         log(f"    {len(hits)} distinct match(es) for {find!r}")
         for hit in hits[:200]:
             log(f"      {hit}")
+    elif terms:
+        for term in terms:
+            seen = 0
+            at = text.find(term)
+            while at >= 0 and seen < 12:
+                lo, hi = max(0, at - context), min(len(text), at + len(term) + context)
+                log(f"    [{term} @{at}] ...{text[lo:hi]}...")
+                seen += 1
+                at = text.find(term, at + 1)
+            if not seen:
+                log(f"    [{term}] not present")
     else:
         log("    " + text[:limit].replace("\n", "\n    "))
     return text
@@ -79,7 +91,9 @@ def post(url: str, payload: dict[str, Any], *, limit: int = BYTES) -> str | None
 
 def probe(args: argparse.Namespace) -> int:
     for url in args.get or []:
-        fetch(url, limit=args.bytes, find=args.find)
+        fetch(url, limit=args.bytes, find=args.find,
+              terms=args.terms.split(",") if args.terms else None,
+              context=args.context)
     payload = dict(kv.split("=", 1) for kv in (args.field or []))
     for url in args.post or []:
         post(url, payload, limit=args.bytes)
@@ -97,6 +111,8 @@ def main() -> int:
     ap.add_argument("--post", action="append")
     ap.add_argument("--field", action="append", help="NAME=VALUE for a POST body")
     ap.add_argument("--find", help="print the distinct matches of this regex instead of the body")
+    ap.add_argument("--terms", help="comma-separated words to print the surroundings of")
+    ap.add_argument("--context", type=int, default=200)
     ap.add_argument("--bytes", type=int, default=BYTES)
     args = ap.parse_args()
     return probe(args) if args.probe else run()
