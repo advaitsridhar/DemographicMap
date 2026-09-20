@@ -1,0 +1,248 @@
+"""Papua New Guinea's two census publications, and the guards on reading them."""
+
+from __future__ import annotations
+
+import sys
+import unittest
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+
+import common  # noqa: E402
+from fetch_census import png  # noqa: E402
+
+# Two pages of the 2011 National Report's provincial Summary Indicators, as
+# pypdf extracts them: four regional blocks, and the religion row printed two
+# different ways -- figures on the label's own line in three of them, on the
+# line below in the fourth.
+SUMMARY_28 = """Papua New Guinea 2011 National Report
+28
+Summary Indicators Provinces, 2011 Census
+Southern Region
+Citizen population Western Gulf Central NCD MBP Northern
+Female heads of households
+(% of household heads)
+Total 11.4 14.3 13.4 12.8 17.2 9.1
+Evan.All. U/Church U/Church U/Church U/Church Anglican
+Main religion (% of population) Total 37.1 30.1 40.0 23.0 54.9 60.6
+Male 36.8 30.4 40.1 22.9 55.4 60.7
+Citizen Population
+Highlands Region
+SHP Enga WHP Chimbu EHP Hela Jiwaka
+Female heads of households
+(% of household heads)
+Total 10.4 9.1 15.7 7.1 12.2 20.2 11.5
+R/Cath. Evan.Luth Evan.Luth R/Cath. SDA Evan.All R/Cath.
+Main religion (% of population) Total 19.7 26.4 26.0 34.4 39.6 19.7 29.6
+Male 20.0 26.6 26.3 34.7 39.3 19.4 29.8
+"""
+SUMMARY_29 = """Papua New Guinea 2011 National Report
+29
+Momase Region
+Citizen population Morobe Madang ESP WSP
+Female heads of households                     Total 12.9 11.2 17.0 14.0
+(% of household heads)
+Evan.Luth Evan.Luth R/Cath R/Cath.
+Main religion (% of population) Total 67.0 38.4 43.0 40.4
+Male 67.4 38.4 43.4 41.3
+Citizen Population New Guinea Islands Region
+Manus NIP ENBP WNBP AROB
+Female heads of households
+(% of household heads)
+Total 22.4 17.0 20.9 12.9 17.0
+Main religion (% of population) R/Cath. R/Cath. R/Cath. R/Cath. R/Cath.
+Total 38.5 31.3 42.8 55.3 68.4
+Male 38.7 31.3 42.9 55.3 68.3
+"""
+
+# One Provincial Snapshot of the 2024 booklet, with the office's kerning
+# intact: "41 2 ,15 8" is 412,158 and "T otal" is Total.
+SNAPSHOT = """2024 National Population Census Final Figures
+11
+05. MILNE BAY PROVINCE
+Population in brief
+41 2 ,1 5 8 216,985 1 9 5,1 7 3
+T otal Population Male Female
+Districts Total Male Female
+Alotau 149,806 79,618 7 0,18 8
+Samarai-Murua 82,930 43,679 39,251
+Kiriwina-Goodenough 94,002 48,759 45,243
+Esa'ala 85,420 44,929 40,491
+Proportion of PNG's total population  4.0%
+Annual growth rate since 2011 census 3.1%
+Sex Ratio (males per 100 females)  111
+District with highest population count Alotau
+"""
+
+
+class ReadingAKernedRow(unittest.TestCase):
+    """The office's PDFs break a figure into groups; the row's own arithmetic
+    is what says where one figure ends and the next begins."""
+
+    def test_the_national_row(self):
+        self.assertEqual(
+            png.split_figures("10,18 5, 3 6 3 5,336,546 4,848,817 110", 4, ratio=True),
+            (10_185_363, 5_336_546, 4_848_817, 110))
+
+    def test_a_province_row(self):
+        self.assertEqual(
+            png.split_figures("41 2 ,15 8 216,985 1 95,1 73 111", 4, ratio=True),
+            (412_158, 216_985, 195_173, 111))
+
+    def test_a_district_row(self):
+        self.assertEqual(png.split_figures("39,676 20,516 1 9,1 6 0", 3),
+                         (39_676, 20_516, 19_160))
+
+    def test_a_row_whose_sexes_do_not_add_up_is_refused(self):
+        # Males and females one short of the total: no cut of these digits
+        # satisfies the census's own arithmetic, so nothing is written.
+        with self.assertRaises(SystemExit):
+            png.split_figures("39,677 20,516 19,160", 3)
+
+    def test_a_row_with_no_digits_is_refused(self):
+        with self.assertRaises(SystemExit):
+            png.split_figures("District with highest population count", 3)
+
+    def test_a_capital_read_away_from_its_word_is_put_back(self):
+        self.assertEqual(png.unkern("T elefomin 63,479"), "Telefomin 63,479")
+        self.assertEqual(png.unkern("T awae/Siassi"), "Tawae/Siassi")
+
+
+class TheProvincialReligionRow(unittest.TestCase):
+    def setUp(self):
+        self.read = png.read_main_religion([SUMMARY_28, SUMMARY_29])
+
+    def test_every_province_is_read(self):
+        self.assertEqual(set(self.read), set(png.PROVINCES))
+
+    def test_the_denominations_come_out_as_the_report_abbreviates_them(self):
+        self.assertEqual(self.read["Autonomous Region of Bougainville"],
+                         ("Roman Catholic", 68.4))
+        self.assertEqual(self.read["Morobe"], ("Evangelical Lutheran", 67.0))
+        self.assertEqual(self.read["Northern"], ("Anglican", 60.6))
+        self.assertEqual(self.read["Eastern Highlands"],
+                         ("Seventh Day Adventist", 39.6))
+        self.assertEqual(self.read["Western"], ("Evangelical Alliance", 37.1))
+
+    def test_a_table_that_contradicts_the_reports_own_prose_is_refused(self):
+        # The report says in prose that Morobe is Evangelical Lutheran at 67%.
+        # A column read one place out would make it Roman Catholic, and that
+        # is the reading this check exists to stop.
+        moved = SUMMARY_29.replace("Evan.Luth Evan.Luth R/Cath R/Cath.",
+                                   "R/Cath. Evan.Luth Evan.Luth R/Cath.")
+        with self.assertRaises(SystemExit) as caught:
+            png.read_main_religion([SUMMARY_28, moved])
+        self.assertIn("prose", str(caught.exception))
+
+    def test_an_unknown_abbreviation_is_refused_not_dropped(self):
+        renamed = SUMMARY_28.replace("SDA", "Luth.Ren")
+        with self.assertRaises(SystemExit) as caught:
+            png.read_main_religion([renamed, SUMMARY_29])
+        self.assertIn("denominations", str(caught.exception))
+
+    def test_a_missing_block_is_refused(self):
+        with self.assertRaises(SystemExit):
+            png.read_main_religion([SUMMARY_28])
+
+    def test_the_labels_are_the_projects_canon(self):
+        import canonical_groups as cg
+        for label in set(png.DENOMINATIONS.values()):
+            self.assertTrue(cg.ancestry("religion", label), label)
+
+
+class TheProvincialSnapshot(unittest.TestCase):
+    def test_a_snapshots_districts_are_read_with_their_names(self):
+        province, districts = png.read_snapshot(SNAPSHOT)
+        self.assertEqual(province, "Milne Bay")
+        self.assertEqual([d.name for d in districts],
+                         ["Alotau", "Samarai-Murua", "Kiriwina-Goodenough", "Esa'ala"])
+        self.assertEqual(sum(d.total for d in districts), 412_158)
+        self.assertEqual(districts[0].ratio, 113)
+
+    def test_a_trailing_word_district_is_not_part_of_the_name(self):
+        page = SNAPSHOT.replace("Alotau 149,806", "Alotau District 149,806")
+        _, districts = png.read_snapshot(page)
+        self.assertEqual(districts[0].name, "Alotau")
+
+
+class PlacingDistrictsOnShapes(unittest.TestCase):
+    def unit(self, name, total):
+        half = total // 2
+        return png.Unit(name, total, total - half, half)
+
+    def test_a_shape_whose_name_names_its_two_districts_is_their_sum(self):
+        placed, left = png.place_districts("Hela", [
+            self.unit("Komo Hulia", 77_114), self.unit("Koroba Kopiago", 130_425),
+            self.unit("Tari/Pori", 102_081), self.unit("Magarima", 56_186)])
+        self.assertEqual(left, [])
+        self.assertEqual(sorted(placed), ["Komo/Magarima District",
+                                          "Koroba/Kopiago District",
+                                          "Tari/Pori District"])
+        self.assertEqual(placed["Komo/Magarima District"].total, 77_114 + 56_186)
+
+    def test_a_renamed_district_reaches_its_shape(self):
+        placed, _ = png.place_districts("Western Highlands", [
+            self.unit("Dei", 91_051), self.unit("Hagen Central", 160_914),
+            self.unit("Mul/Baiyer", 110_252), self.unit("Tambul/Nebilyer", 100_349)])
+        self.assertIn("Mt Hagen District", placed)
+        self.assertEqual(len(placed), png.SHAPES["Western Highlands"])
+
+    def test_a_province_with_a_district_no_shape_draws_is_left_whole(self):
+        # Delta Fly has been carved out since 2011 and the booklet does not
+        # say from which district, so none of Western's three shapes is
+        # written -- a count on the wrong one would be invisible.
+        placed, left = png.place_districts("Western", [
+            self.unit("Middle Fly", 39_676), self.unit("North Fly", 102_633),
+            self.unit("South Fly", 81_613), self.unit("Delta Fly", 76_097)])
+        self.assertEqual(placed, {})
+        self.assertEqual(left, ["Delta Fly"])
+
+
+class WhatIsDeclared(unittest.TestCase):
+    def test_the_shapes_declared_are_the_boundary_files_eighty_seven(self):
+        self.assertEqual(sum(png.SHAPES.values()), 87)
+        self.assertEqual(set(png.SHAPES), set(png.PROVINCES))
+
+    def test_every_redrawn_province_lists_all_of_its_shapes(self):
+        self.assertEqual(sorted(png.REDRAWN_SHAPES), png.REDRAWN)
+        for province, shapes in png.REDRAWN_SHAPES.items():
+            self.assertEqual(len(shapes), png.SHAPES[province], province)
+
+    def test_sixteen_shapes_are_the_ones_left_without_a_count(self):
+        self.assertEqual(sum(len(s) for s in png.REDRAWN_SHAPES.values()), 16)
+
+    def test_a_union_only_ever_joins_districts_of_one_province(self):
+        # Every part of a declared union must be a district name, never a
+        # shape name, or the sum would be of the wrong things.
+        for parts in png.UNIONS.values():
+            for part in parts:
+                self.assertNotIn(" District", part)
+
+
+class TheDeclarationsAboutWhatTheCensusAsks(unittest.TestCase):
+    def test_ethnicity_and_language_are_declared_not_collected(self):
+        for field in ("ethnicity", "language"):
+            marker = common.collection_gap("PNG", field)
+            self.assertIsNotNone(marker, field)
+            self.assertEqual(marker["status"], common.NOT_COLLECTED)
+
+    def test_religion_is_not_declared_because_the_census_asks_it(self):
+        self.assertIsNone(common.collection_gap("PNG", "religion"))
+
+    def test_the_language_declaration_says_what_is_asked_instead(self):
+        note = common.collection_policy("PNG", "language")
+        self.assertIn("literacy", note.lower())
+        self.assertIn("Tokples", note)
+
+    def test_the_ethnicity_declaration_names_the_questionnaire(self):
+        note = common.collection_policy("PNG", "ethnicity")
+        self.assertIn("33 questions", note)
+
+    def test_a_declaration_never_states_a_share(self):
+        # The rule the Maldives' "100% Islam" was written down to prevent.
+        for field in ("ethnicity", "language"):
+            self.assertNotIn("%", common.collection_policy("PNG", field))
+
+
+if __name__ == "__main__":
+    unittest.main()

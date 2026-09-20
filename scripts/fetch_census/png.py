@@ -85,7 +85,7 @@ import re
 from typing import Any, Iterable
 
 from ._shared import (
-    NOT_AVAILABLE, PROCESSED, RAW, collection_gap, dated, download, gap, log,
+    NOT_AVAILABLE, PROCESSED, RAW, collection_gap, dated, gap, http_get, log,
     measure, record, write_json,
 )
 
@@ -262,10 +262,34 @@ PROVINCE_RELIGION_GAP = (
 # Reading a PDF
 # ---------------------------------------------------------------------------
 
+def fetch_pdf(url: str, name: str) -> Any:
+    """The file itself, and not the page the download plugin would rather serve.
+
+    ``www.nso.gov.pg`` puts its publications behind a WordPress download
+    plugin that negotiates on the Accept header: a client that does not say it
+    wants a PDF is handed an HTML page (or, for the 2011 Final Figures
+    booklet, HTTP 415 Unsupported Media Type). Asking for ``application/pdf``
+    is asking the server for the representation it publishes, which is not the
+    same thing as claiming to be a browser, and nothing here does that.
+    """
+    path = RAW / "png" / name
+    if path.exists() and path.stat().st_size > 1_000_000:
+        log(f"  cached {path.name} ({path.stat().st_size / 1e6:.1f} MB)")
+        return path
+    blob = http_get(url, binary=True, timeout=300,
+                    headers={"Accept": "application/pdf,*/*"})
+    if not isinstance(blob, bytes) or not blob.startswith(b"%PDF"):
+        head = bytes(blob[:40]) if isinstance(blob, bytes) else str(blob)[:40]
+        raise SystemExit(f"png: {url} did not serve a PDF; it begins {head!r}")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(blob)
+    log(f"  fetched {path.name} ({len(blob) / 1e6:.1f} MB)")
+    return path
+
+
 def page_texts(url: str, name: str) -> list[str]:
     from pypdf import PdfReader  # noqa: PLC0415
-    path = download(url, RAW / "png" / name)
-    reader = PdfReader(str(path))
+    reader = PdfReader(str(fetch_pdf(url, name)))
     return [(page.extract_text() or "") for page in reader.pages]
 
 
