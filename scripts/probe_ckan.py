@@ -244,7 +244,9 @@ def main() -> int:
     ap.add_argument("--resources", action="store_true",
                     help="print each dataset's resources with their URLs")
     ap.add_argument("--rows", type=int, default=25)
-    ap.add_argument("--package", help="package_show this dataset on each host that answers")
+    ap.add_argument("--package", default="",
+                    help="package_show these datasets, comma-separated, on each host "
+                         "that answers; a name the host does not have is a logged 404")
     ap.add_argument("--datastore", help="datastore_search this resource id")
     ap.add_argument("--limit", type=int, default=5, help="datastore rows to print")
     ap.add_argument("--timeout", type=int, default=TIMEOUT)
@@ -252,6 +254,7 @@ def main() -> int:
     TIMEOUT = args.timeout
     queries = [q.replace("+", " ").strip() for q in args.query.split(",") if q.strip()]
     keep = re.compile(args.match, re.I) if args.match else None
+    packages = [n.strip() for n in args.package.split(",") if n.strip()]
 
     hosts = hosts_from(args)
     if not hosts:
@@ -268,8 +271,8 @@ def main() -> int:
         ckan.append(host)
         for query in queries:
             search(host, scheme, root, query, args.rows, keep, args.resources)
-        if args.package:
-            package(host, scheme, root, args.package)
+        for name in packages:
+            package(host, scheme, root, name)
         if args.datastore:
             datastore(host, scheme, root, args.datastore, args.limit)
     log(f"probe_ckan: {len(answered)} of {len(hosts)} answered; "
