@@ -1,6 +1,28 @@
-brunei: race and religion by district, population by mukim, BPP 2021
-  A3: national column matches the report Malay 297,016, Chinese 42,132, Others 101,567; the four districts sum to it and to 440,715 people
-  A4: national column matches the report Islam 362,035, Christianity 29,462, Buddhism 27,745, Other, none, or not stated 21,473; the four districts sum to it and to 440,715 people
-  C1: 39 mukims read; each district's mukims sum to its printed total
-  4 districts with race and religion; 38 mukims with a head count and a stated gap; language not published at any level
-  wrote data/processed/brunei.json (123 kB)
+timor: Population and Housing Census 2015, Instituto Nacional de Estatística de Timor-Leste (INETL, I.P.), formerly the Direção-Geral de Estatística, Volume 2 priority table 12: population by mother tongue and municipality
+  fetched 4_2015-V2-Language.xls (0.6 MB)
+  fetched 3_2015-V2-Nationality-Citizenship-Religion.xls (0.6 MB)
+  fetched Chapter-4-TLPHC-Census-report-Basic-tables.xlsx (0.5 MB)
+  sheet 2.12: 'Table 12 Population by mother tongue, age, urban/rural location and Municipality'
+  sheet 2.11: 'Table 11 Population by religion, urban/rural location, Municipality and sex'
+  sheet 4.01: 'Table 4.01: Population, by municipality, administrative post, suco, and by urban/rural location, sex'
+  38 mother tongues: ['Adabe', 'Atauran', 'Baikenu', 'Bekais', 'Bunak', 'Chinese', "Dadu'a", 'English', 'Fataluku', 'Galoli', 'Habun', 'Idalaka', 'Idate', 'Indonesian', 'Isni', 'Kairui', 'Kawaimina', 'Kemak', 'Lakalei', 'Lolein', 'Makalero', 'Makasai', 'Makuva', 'Malay', 'Mambai', 'Midiki', 'Nanaek', 'Naueti', 'Other language', 'Portuguese', 'Rahesuk', 'Raklungu', 'Resuk', "Sa'ani", 'Tetun Prasa', 'Tetun Terik', 'Tokodede', "Waima'a"]
+  mother tongue: 13 municipalities, 38 tongues each, every one adding to the table's own municipal total to the person
+  religion: 13 municipalities adding to 1,179,654, the country row to the person, and every religion column likewise
+  both 2015 tables count the same 1,179,654 people, municipality by municipality: 3,989.0 below the volume's own total population (1,183,643) and 1,314.0 above its private-household population (1,178,340), which no footnote explains
+  national check: Catholicism 97.57% against a published 97.6%, all 14 of the country row's named mother tongues reproduced to within a rounding step, and the 2022 table's country row the published 1,341,737
+  population 2022: 14 municipalities adding to 1,341,737, the published national figure, and 67 administrative posts each adding to the municipality they are in
+    Aileu        54,324  Catholic 92.1  |  Mambai 68.8, Tetun Prasa 29.2, Lolein 1.1
+    Ainaro       73,115  Catholic 99.0  |  Mambai 62.4, Tetun Prasa 29.0, Bunak 7.5
+    Baucau      134,878  Catholic 98.3  |  Makasai 60.3, Waima'a 16.7, Tetun Prasa 13.0
+    Bobonaro    106,639  Catholic 99.7  |  Kemak 44.3, Bunak 25.1, Tetun Prasa 23.2
+    Cova Lima    73,933  Catholic 99.6  |  Bunak 48.0, Tetun Terik 39.7, Tetun Prasa 6.6
+    Dili        335,033  Catholic 95.8  |  Tetun Prasa 82.5, Mambai 4.0, Makasai 2.9
+    Ermera      137,750  Catholic 99.2  |  Mambai 61.3, Tetun Prasa 18.9, Kemak 15.5
+    Lautém       70,022  Catholic 97.6  |  Fataluku 60.9, Makasai 14.3, Makalero 12.1
+    Liquiçá      83,658  Catholic 97.0  |  Tokodede 64.0, Mambai 18.3, Tetun Prasa 16.3
+    Manatuto     50,859  Catholic 98.5  |  Galoli 29.9, Idate 28.8, Tetun Terik 16.4
+    Manufahi     60,665  Catholic 96.3  |  Mambai 34.3, Tetun Prasa 26.5, Tetun Terik 24.8
+    Oecusse      80,685  Catholic 99.5  |  Baikenu 98.1, Tetun Prasa 1.5, Indonesian 0.1
+    Viqueque     80,176  Catholic 97.1  |  Makasai 42.3, Tetun Terik 25.4, Naueti 18.3
+  wrote data/processed/timor.json (306 kB)
+  wrote 13 municipalities and 67 administrative posts to timor.json
