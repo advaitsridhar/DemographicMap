@@ -1,46 +1,43 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-www.1212.mn:443
-  issuer: ((('countryName', 'GB'),), (('organizationName', 'Sectigo Limited'),), (('commonName', 'Sectigo Public Server Authentication CA DV R36'),))
-  notAfter: Dec  4 23:59:59 2026 GMT
-  CN=*.1212.mn
-  DNS:*.1212.mn
-  DNS:1212.mn
-  AIA caIssuers: http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
-www.1212.mn:443 -- completing the chain from AIA
-  added intermediate from http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
-    subject ['CN=Sectigo Public Server Authentication CA DV R36'] until Mar 21 23:59:59 2036 GMT
-  added intermediate from http://crt.sectigo.com/SectigoPublicServerAuthenticationRootR46.p7c
-    subject ['CN=Sectigo Public Server Authentication Root R46'] until Mar 21 23:59:59 2046 GMT
-    this is a self-signed root; chain complete
-  VERIFIED handshake ok, TLSv1.3
-
-page: https://www.1212.mn/en
-  200 text/html; charset=utf-8 63708 bytes
-  no links matched
-1212.mn:443
-  issuer: ((('countryName', 'GB'),), (('organizationName', 'Sectigo Limited'),), (('commonName', 'Sectigo Public Server Authentication CA DV R36'),))
-  notAfter: Dec  4 23:59:59 2026 GMT
-  CN=*.1212.mn
-  DNS:*.1212.mn
-  DNS:1212.mn
-  AIA caIssuers: http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
-1212.mn:443 -- completing the chain from AIA
-  added intermediate from http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
-    subject ['CN=Sectigo Public Server Authentication CA DV R36'] until Mar 21 23:59:59 2036 GMT
-  added intermediate from http://crt.sectigo.com/SectigoPublicServerAuthenticationRootR46.p7c
-    subject ['CN=Sectigo Public Server Authentication Root R46'] until Mar 21 23:59:59 2046 GMT
-    this is a self-signed root; chain complete
-  VERIFIED handshake ok, TLSv1.3
-
-page: https://www.1212.mn/en
-  200 text/html; charset=utf-8 63708 bytes
-  no links matched
-opendata.1212.mn:443
-  unreachable: gaierror: [Errno -2] Name or service not known
-opendata.1212.mn:443 -- completing the chain from AIA
-  cannot read the certificate: gaierror: [Errno -2] Name or service not known
-api.1212.mn:443
-  unreachable: TimeoutError: timed out
-api.1212.mn:443 -- completing the chain from AIA
-  cannot read the certificate: TimeoutError: timed out
+page: https://stats-nsi-stable.pacificdata.org/rest/dataflow/SPC
+  357,136 bytes
+  127 distinct match(es) for 'Dataflow.id=.[A-Z_0-9]+'
+    Dataflow id="DF_ADBKI
+    Dataflow id="DF_AGRICULTURAL_PRODUCTION
+    Dataflow id="DF_AGRICULTURE_HIES
+    Dataflow id="DF_BOP
+    Dataflow id="DF_BP50
+    Dataflow id="DF_BP50_1
+    Dataflow id="DF_BP50_2
+    Dataflow id="DF_BP50_3
+    Dataflow id="DF_BP50_4
+    Dataflow id="DF_BP50_5
+    Dataflow id="DF_BP50_6
+    Dataflow id="DF_BP50_7
+    Dataflow id="DF_CIVIL_REGISTRATION
+    Dataflow id="DF_CLIMATE_CHANGE
+    Dataflow id="DF_COMMODITY_PRICES
+    Dataflow id="DF_COVID
+    Dataflow id="DF_COVID_VACCINATION
+    Dataflow id="DF_CPI
+    Dataflow id="DF_CROPS
+    Dataflow id="DF_CURRENCIES
+    Dataflow id="DF_CYBERLAW
+    Dataflow id="DF_DIGITAL_DEVELOPMENT
+    Dataflow id="DF_DISABILITY
+    Dataflow id="DF_ECOLEAD
+    Dataflow id="DF_EDUCATION
+    Dataflow id="DF_EGOV
+    Dataflow id="DF_EMPLOYED
+    Dataflow id="DF_EMPLOYED_FTPT
+    Dataflow id="DF_EMPLOYED_HHCOMP
+    Dataflow id="DF_EMPLOYED_OCCUPATION
+    Dataflow id="DF_EMPLOYED_SECTOR
+    Dataflow id="DF_EMPRATES
+    Dataflow id="DF_ENERGY
+    Dataflow id="DF_ENV_TAXES
+    Dataflow id="DF_FISHING_LOCATION_HIES
+    Dataflow id="DF_FISHING_METHOD_HIES
+    Dataflow id="DF_FOOD_NUTRIENTS
+    Dataflow id="DF_FOOD_SECURITY_HIES_1
+    Dataflow id="DF_FOOD_SECURITY_HIES_2
+    Dataflow id="DF_FOOD_SECURITY_HIES_3
