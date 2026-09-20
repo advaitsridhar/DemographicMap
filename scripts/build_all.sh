@@ -101,6 +101,11 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # Hong Kong's 2021 census: ethnicity and usual spoken language from the
   # C&SD Main Results workbook; needs egress.
   soft python3 -m scripts.fetch_census.hongkong_census
+  # Timor-Leste: mother tongue and religion by municipality from the 2015
+  # census's Volume 2 priority tables, population by municipality and
+  # administrative post from the 2022 main report; three files from
+  # inetl-ip.gov.tl, needs egress.
+  soft python3 -m scripts.fetch_census.timor
   # Census ethnicity for the 31 divisions, one MediaWiki API call each.
   soft python3 -m scripts.fetch_census.china_wiki
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.

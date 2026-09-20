@@ -1380,13 +1380,24 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
                             "Kolami", "Kodagu", "Coorgi", "Konda", "Parji",
                             "Oraon", "Kudukh"),
     # Timor-Leste, whose census names every language of the country. The
-    # Austronesian ones and the Papuan ones are a settled split.
+    # Austronesian ones and the Papuan ones are a settled split: the country
+    # has a handful of Timor-Alor-Pantar languages and everything else it
+    # speaks is Austronesian. The second block is the rest of the 2015
+    # census's 38 mother tongues -- the Atauro varieties (Atauran, Dadu'a,
+    # Rahesuk, Raklungu, Resuk), the Kawaimina cluster and its members, the
+    # Idaté-Lakalei cluster, and the small tongues of Manatuto, Lautém and
+    # Dili. Sa'ani, the one the census names that the literature does not
+    # place on one side of the split or the other, is deliberately left
+    # unplaced rather than asserted into a family; see docs/SOURCES.md.
     "Malayo-Polynesian languages": (
         "Tetun", "Tetun Prasa", "Tetun Terik", "Baikenu", "Galoli", "Idate",
         "Kemak", "Mambai", "Midiki", "Naueti", "Tokodede", "Waima'a",
+        "Atauran", "Bekais", "Dadu'a", "Habun", "Idalaka", "Isni", "Kairui",
+        "Kawaimina", "Lakalei", "Lolein", "Makuva", "Nanaek", "Rahesuk",
+        "Raklungu", "Resuk",
         "Philippine languages", "Sasak", "Bantenese",
     ),
-    "Papuan languages": ("Bunak", "Fataluku", "Makasai", "Makalero"),
+    "Papuan languages": ("Bunak", "Fataluku", "Makasai", "Makalero", "Adabe"),
     "Oceanic languages": ("Futunian", "Marquesan", "Paumotu", "Tuamotuan",
                           "Nauruan"),
     "Creole languages": ("Norfolk", "Angolar", "Forro", "Lunguie", "Haitian"),

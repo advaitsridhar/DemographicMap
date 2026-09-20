@@ -130,6 +130,12 @@ ADAPTER_FILES = [
     "estonia_county.json", "latvia_municipality.json", "finland_region.json",
     "singapore_region.json", "singapore_planning_area.json",
     "srilanka_province.json", "srilanka_district.json",
+    # Timor-Leste's 13 municipalities and 65 administrative posts: mother
+    # tongue and religion from the 2015 census's own Volume 2 priority
+    # tables, population from the 2022 main report's basic table 4.01.
+    # Ethnicity is a declaration rather than a gap -- the 2022 questionnaire
+    # does not ask it -- and comes from NOT_COLLECTED_POLICY.
+    "timor.json",
     # Religion, population and mother tongue together: this one file reads
     # Table 9 and Table 11 of the same census. It used to be a pair, the
     # language half coming from the U.S. Census Bureau's tables of the 2017
@@ -225,6 +231,10 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.wiki_census --country KHM",
     "VNM": "2019 census Table 2 (population by ethnic group and province) from the "
            "office's own results volume: python -m scripts.fetch_census.vietnam",
+    "TLS": "INETL's 2015 census Volume 2 priority tables 11 and 12 (religion, mother "
+           "tongue) by municipality, with the 2022 main report's basic table 4.01 for "
+           "population down to the administrative post: "
+           "python -m scripts.fetch_census.timor",
     "PER": "INEI 2017 census profile book (religion, mother tongue) by department, "
            "read from the PDF's word positions: python -m scripts.fetch_census.peru",
     "MLI": "INSTAT RGPH5 2022 thematic report on cultural characteristics (religion, "
