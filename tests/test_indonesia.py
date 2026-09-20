@@ -177,6 +177,43 @@ PUNCAK_JAYA = """{{Dati II
 Teks.<ref name="DUKCAPIL">{{cite web|url=https://gis.dukcapil.kemendagri.go.id/peta/|title=Visualisasi Data Kependudukan - Kementerian Dalam Negeri 2024}}</ref>
 """
 
+DUKCAPIL_DEFINITION = (
+    'Teks.<ref name="DUKCAPIL">{{cite web|url=https://gis.dukcapil.kemendagri.go.id/peta/'
+    '|title=Visualisasi Data Kependudukan - Kementerian Dalam Negeri 2024}}</ref>\n')
+
+
+# The four the faith list defeated, as the articles write them. Not one is a
+# missing figure: a doubled percent sign, a third decimal place, and a link
+# abutting the word before it.
+BANGKA_BARAT = (
+    "{{Dati II\n|nama = Kabupaten Bangka Barat\n"
+    "|agama = {{ublist |item_style=white-space; |92,73% [[Islam]] "
+    "|3,63% [[Agama Buddha|Buddha]] |{{Tree list}} * 1,93%% [[Kristen]] "
+    "** 1,42% [[Protestan]] ** 0,51% [[Katolik]] {{Tree list/end}} "
+    "|1,70% [[Konghucu]] |0,01% [[Hindu]]<ref name=\"DUKCAPIL\"/>}}\n}}\n"
+    + DUKCAPIL_DEFINITION)
+
+JAKARTA_TIMUR = (
+    "{{Dati II\n|nama = Kota Administrasi Jakarta Timur\n"
+    "|agama = {{ublist |item_style=white-space; |88,76% [[Islam]] |{{Tree list}} "
+    "* 10,62% [[Kekristenan]] ** 8,06% [[Protestan]] ** 2,56% [[Katolik]] "
+    "{{Tree list/end}} |0,454% [[Agama Buddha|Buddha]] |0,17% [[Hindu]]"
+    "<ref name=\"AGAMA\"/>}}\n}}\n"
+    'Teks.<ref name="AGAMA">{{cite web|url=https://statistik.jakarta.go.id/'
+    'agama-penduduk-dki-jakarta-tahun-2020/|title=Agama Penduduk DKI Jakarta '
+    '2020}}</ref>\n')
+
+MINAHASA_TENGGARA = (
+    "{{Dati II\n|nama = Kabupaten Minahasa Tenggara\n"
+    "|agama = {{ublist |item_style=white-space; |{{Tree list}} * 81,97% [[Kristen]] "
+    "** 80,93% [[Protestan]] ** 1,04% [[Katolik]] {{Tree list/end}} |18,02% [[Islam]] "
+    "|0,01% [[Buddhisme|Budha]] dan[[Agama Hindu|Hindu]]<ref name=\"AGAMA\"/>}}\n}}\n"
+    'Teks.<ref name="AGAMA">{{cite web|url=https://sp2010.bps.go.id/index.php/site/'
+    'tabel?search-tabel=Penduduk+Menurut+Wilayah+dan+Agama+yang+Dianut&tid=321'
+    '|title=Penduduk Menurut Wilayah dan Agama yang Dianut di Kabupaten Minahasa '
+    'Tenggara}}</ref>\n')
+
+
 # A head count with no reference at all, beside a cited composition.
 UNCITED_COUNT = """{{Dati II
 | nama = Kabupaten Contoh
@@ -407,6 +444,54 @@ class InfoboxPopulation(unittest.TestCase):
         self.assertNotIn("Hinduism", rows)
         self.assertNotIn("Buddhism", rows)
 
+    def test_a_doubled_percent_sign_is_not_part_of_the_faith(self):
+        # "1,93%% [[Kristen]]" left "% Kristen" as the faith's name and
+        # refused Bangka Barat and Bangka Tengah outright.
+        reading, printed = quiet(m.read_religion, BANGKA_BARAT, "Kabupaten Bangka Barat")
+        self.assertIsNotNone(reading, printed)
+        rows = {r["group"]: r["pct"] for r in reading["rows"]}
+        self.assertEqual(rows["Islam"], 92.73)
+        self.assertEqual(rows["Protestantism"], 1.42)
+        self.assertEqual(rows["Confucianism"], 1.70)
+        self.assertNotIn("Christianity", rows)
+        self.assertAlmostEqual(sum(rows.values()), 100.0, delta=m.RELIGION_TOLERANCE)
+        self.assertEqual(reading["kind"], "dukcapil")
+
+    def test_a_third_decimal_place_stays_on_the_number(self):
+        # "0,454% [[Buddha]]" was cut at two decimals and the digit left over
+        # became the faith, "4% Buddha".
+        reading, printed = quiet(m.read_religion, JAKARTA_TIMUR,
+                                 "Kota Administrasi Jakarta Timur")
+        self.assertIsNotNone(reading, printed)
+        rows = {r["group"]: r["pct"] for r in reading["rows"]}
+        self.assertEqual(rows["Buddhism"], 0.45)
+        self.assertEqual(rows["Islam"], 88.76)
+        self.assertEqual((reading["kind"], reading["year"]), ("jakarta", 2020))
+
+    def test_a_link_abutting_its_neighbour_keeps_the_space(self):
+        # "[[Buddhisme|Budha]] dan[[Agama Hindu|Hindu]]" resolved to
+        # "Budha danHindu"; it is the joint bucket Puncak Jaya has, spelled
+        # the other way, and goes where that one goes.
+        reading, printed = quiet(m.read_religion, MINAHASA_TENGGARA,
+                                 "Kabupaten Minahasa Tenggara")
+        self.assertIsNotNone(reading, printed)
+        rows = {r["group"]: r["pct"] for r in reading["rows"]}
+        self.assertEqual(rows["Other religion"], 0.01)
+        self.assertEqual(rows["Protestantism"], 80.93)
+        self.assertNotIn("Hinduism", rows)
+        self.assertNotIn("Buddhism", rows)
+        self.assertEqual((reading["kind"], reading["year"]), ("census2010", 2010))
+
+    def test_reading_the_faiths_better_does_not_reach_the_citation_rules(self):
+        # Garut's figure hangs off <ref name="dukcapil"/> and the page defines
+        # no such reference -- the probe printed all five it does define -- so
+        # it is still a citation to nothing, and still not read.
+        garut = BANGKA_BARAT.replace(DUKCAPIL_DEFINITION, "Teks.\n")
+        out, printed = quiet(m.read_religion, garut, "Kabupaten Garut")
+        self.assertIsNone(out)
+        self.assertIn("['dukcapil'] defined nowhere", printed)
+
+
 
 class Records(unittest.TestCase):
     def test_province_and_regency_records_end_to_end(self):
@@ -447,8 +532,21 @@ class Records(unittest.TestCase):
         self.assertIn("2022", by_name["Papua"]["religion"].get("note", ""))
 
         regencies, printed = quiet(m.regency_records, fake_fetch)
-        self.assertEqual(len(regencies), 1)
-        cilacap = regencies[0]
+        by_regency = {r["name"]: r for r in regencies}
+        # One article is stubbed, so one regency is read from an infobox; the
+        # rest of what lands is the four portal tables, which cover every unit
+        # of their provinces and write only the ones no article answered for.
+        cilacap = by_regency["Kabupaten Cilacap"] if "Kabupaten Cilacap" in by_regency \
+            else by_regency["Cilacap"]
+        self.assertEqual(sum(1 for r in regencies if r["religion_year"] == 2019), 1)
+        bukittinggi = by_regency["Kota Bukittinggi"]
+        self.assertEqual(bukittinggi["religion_year"], 2023)
+        self.assertEqual(bukittinggi["religion"][0]["group"], "Islam")
+        self.assertIn("data.sumbarprov.go.id", bukittinggi["religion_note"])
+        self.assertEqual({s["field"] for s in bukittinggi["sources"]}, {"religion"})
+        self.assertEqual(by_regency["Kota Samarinda"]["religion_year"], 2023)
+        self.assertEqual(by_regency["Lebong"]["religion_year"], 2024)
+        self.assertEqual(by_regency["Kota Tangerang Selatan"]["religion_year"], 2021)
         self.assertEqual(cilacap["id"], "IDN-central-java-cilacap")
         self.assertEqual(cilacap["parent"], "IDN-central-java")
         self.assertEqual(cilacap["parent_name"], "Central Java")

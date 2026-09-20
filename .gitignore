@@ -76,6 +76,15 @@ data/raw/*
 # re-derive them offline. See scripts/fetch_census/png.py --fetch.
 !data/raw/png/
 !data/raw/png/*.csv
+# Four tables from Indonesia's Satu Data portals: population by religion for
+# every kabupaten and kota of West Sumatra, East Kalimantan and Bengkulu, and
+# for Kota Tangerang Selatan by kecamatan. Eight of the map's regency shapes
+# have no other figure at all -- BPS answers an automated reader 403 on every
+# host it owns -- and three of the four portals have already changed hostname,
+# certificate or catalogue once. Four CSVs, 12 KB, one row per unit and faith,
+# re-derivable with scripts/fetch_census/indonesia_portals.py --fetch.
+!data/raw/indonesia_portals/
+!data/raw/indonesia_portals/*.csv
 # ...and the pages of Mongolia's 22 aimag census books that carry ethnic
 # group and religion, laid out as text. The books themselves are 300 MB of
 # scanned-quality PDF on the Internet Archive and the site that served them

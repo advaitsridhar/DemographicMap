@@ -3983,7 +3983,7 @@ this file and only one of them was about Indonesia. On that day the owner
 decided the country was to be resolved from every reachable official and
 secondary source, each figure cited for what it is, and this section says what
 that produced: `scripts/fetch_census/indonesia.py`, writing
-`data/processed/indonesia.json`, 491 records.
+`data/processed/indonesia.json`, 504 records.
 
 **What was measured about BPS, and still holds.**
 
@@ -4079,22 +4079,40 @@ it). Where several are cited the most census-like names the source and the
 latest year among them dates it; a citation with no year in its title, path
 or date field dates nothing and is not read.
 
-Read: **458 of the 513 regency shapes** (five of the 518 are water or forest
-polygons with no article), by kind of source: Dukcapil registry 252, BPS table
-120, 2010 census 67, other regional government 11, Kemenag 7, the Jakarta
-statistics office 1; the years run from 2010 to 2026. **32 of the 34
+Read from the infobox: **462 of the 513 regency shapes** (five of the 518 are
+water or forest polygons with no article), by kind of source: Dukcapil registry
+255, BPS table 120, 2010 census 68, other regional government 11, Kemenag 7,
+the Jakarta statistics office 1; the years run from 2010 to 2026. Eight more
+come from the provinces' own open-data portals, below, for **470 in all**. **32 of the 34
 provinces**: Papua and Papua Barat were divided in 2022 and their articles now
 describe the smaller provinces that kept the names, so their province-level
 figure is not read and their regencies' are -- and since 20 September the
 province figure is summed from those regencies instead, which is the next
-paragraph. Not read, 55: those whose citation carries no year, those whose
-figure carries no citation (several of them a reference by a name the page
-never defines), and two with no religion in the infobox (`Flores Timur`,
-`Takalar`). One of the five the faith list once defeated has since been read:
-Puncak Jaya gives its Hindus and Buddhists in a single bucket, "0,01%
-Hindu/Buddha", and a bucket naming two faiths is now carried whole as `Other
-religion` rather than refused, because splitting it would be inventing the
-split. A list that stops short of 100 carries the rest
+paragraph. Not read from the infobox, 51: those whose citation carries no
+year, those whose figure carries no citation, and two with no religion in the
+infobox (`Flores Timur`, `Takalar`). Both refusals stand, and they were tested
+rather than assumed. Eight of the uncited attach their faiths to a reference
+by a name the page never defines -- `<ref name="dukcapil"/>` and nothing
+behind it -- so the probe printed every named reference each of those pages
+*does* define: Garut has five and none of them is it, Sukabumi two,
+Pangandaran five, Belitung Timur two, Musi Rawas and Probolinggo none at all,
+Lingga defines `dukcapil` and cites `KEPRI`, Kota Pematangsiantar defines
+`dukcapil agama` and cites `AGAMA`. The reference really is defined nowhere,
+so the figure really is uncited.
+
+The five the faith list once defeated have all since been read, and not one of
+them was a missing figure. Puncak Jaya gives its Hindus and Buddhists in a
+single bucket, "0,01% Hindu/Buddha", and a bucket naming two faiths is carried
+whole as `Other religion` rather than refused, because splitting it would be
+inventing the split; Minahasa Tenggara writes the same bucket
+`[[Buddhisme|Budha]] dan[[Agama Hindu|Hindu]]` with no space, which resolved
+to the faith "Budha danHindu", so a link now resolves with a space either side
+and "Budha" is normalised to "Buddha"; Bangka Barat and Bangka Tengah write
+their Christian share "1,93%%" and "5,08%%", and the second sign stayed on the
+label, where "% Kristen" is no faith; and Kota Jakarta Timur's "0,454%
+Buddha" was cut at two decimals, the digit left over becoming "4% Buddha".
+
+A list that stops short of 100 carries the rest
 as `Other or not stated`; one that overruns by up to three points -- ten
 regencies, Bolaang Mongondow's Protestant share printed above its Christian
 total -- is carried as printed with the overrun in the note, by the owner's
@@ -4114,7 +4132,9 @@ same registry: `|penduduk = 220393` with `|penduduktahun = 31 Desember 2024`.
 It is now read, under the rules the religion reader keeps and for the same
 reasons -- an uncited figure is not read, an undateable one is not read, and
 which of the two national counts it is, a registry's or a census's, goes in
-the record. **422 of the 458 regencies** carry one. Unlike the composition,
+the record. **426 of the 462 regencies read from an infobox** carry one; the
+eight read from a portal carry none, their tables giving a count per faith and
+the map taking the composition alone. Unlike the composition,
 the count takes its *first* citation rather than its most census-like: a head
 count is one number as of one date and the reference beside it is where it
 came from, so Kota Jayapura's 404,799 is the registry's figure for 31 December
@@ -4132,6 +4152,127 @@ own published population are: Aceh -0.1%, Jambi +2.5%, North Kalimantan
 Tenggara -0.5%, West Papua -0.9%. A registry total and a census total are
 different counts of the same people and the note on every such record says so.
 
+*The provinces' own open-data portals, and what the rest of them answered.*
+BPS refuses an automated reader on every host it owns, but Indonesia's **Satu
+Data** is federated: each province and many regencies run a portal of their
+own, a good number of them CKAN with the datastore open, and a portal often
+publishes the same office's tables. That is the pattern that solved Singapore
+after `singstat.gov.sg` answered 403, and until 20 September 2026 not one of
+these hosts had been tried. `scripts/probe_ckan.py` exists for it: it reports
+the HTTP status of every hostname given to it, then asks the ones that answer
+whether they speak CKAN and what their catalogue holds.
+
+110 hostnames were tried, in three sweeps. **47 answered at all; 11 speak
+CKAN; four hold a population-by-religion table with a kabupaten or kota row**,
+and those four fill **eight** of the 51 regencies the infobox could not be
+read for:
+
+| portal | CKAN | what it holds | fills |
+|---|---|---|---|
+| `data.sumbarprov.go.id` | 2.9.11 | Disdukcapil Sumbar, *Buku Data Kependudukan Semester II 2023*, sheet `AGAMA - JENIS KELAMIN`, all 19 kabupaten and kota | Kota Bukittinggi, Kota Pariaman, Kota Payakumbuh, Kota Sawah Lunto, Pasaman |
+| `data.kaltimprov.go.id` | yes | Kanwil Kemenag Kaltim, *Jumlah Pemeluk Agama per KabKot 2023*, all 10 | Kota Samarinda |
+| `data.bengkuluprov.go.id` | 2.9.11 | Disdukcapil Bengkulu, *Jumlah Penduduk Menurut Agama 2024*, all 10 | Lebong |
+| `data.tangerangselatankota.go.id` | 2.9.11 | the city's Disdukcapil, *Data Konsolidasi Bersih 2021* by kecamatan, summed to the city | Kota Tangerang Selatan |
+
+Three of the four are civil-registry counts (Dukcapil) and one, East
+Kalimantan's, is the Ministry of Religious Affairs counting adherents; each
+record says which, with its year, exactly as the infobox rows do. A portal
+figure is written **only where the infobox left the unit empty** -- most of
+each table's rows belong to regencies the map already carries, and a
+composition already held is not improved by a second one of another vintage.
+The four tables are committed under `data/raw/indonesia_portals/` as one row
+per unit and faith, so a build with no network still runs; `--fetch` re-reads
+them.
+
+*Which column is Protestant, measured rather than assumed.* Dukcapil's tables
+put a "Kristen" column -- the Protestant one, in its own usage -- beside a
+"Katolik" column. The West Sumatra workbook heads those two in the reverse of
+the order it prints them: the same office's Pasaman file on
+`data.pasamankab.go.id` gives the identical 2023 figures under the labels the
+other way round. `resolve_pair` decides it by measurement rather than by
+reading, scoring both assignments against every unit of the table the map
+already carries a composition for, and taking the winner only when it wins
+clearly. On West Sumatra the swapped reading wins over all 14 checkable
+regencies (0.48 points of mean error against 3.41) -- Kota Padang's 14,230 is
+1.52% of the city, which is the Protestant share Dukcapil's own visualisation
+publishes -- and on Bengkulu and East Kalimantan the printed order wins (0.57
+against 1.61, 0.26 against 17.57). A table with fewer than five units to score
+is read as printed and the log says so, which is Kota Tangerang Selatan's
+case; a table where neither reading is decisive refuses rather than guesses.
+
+*The rest of the hosts, which is most of the finding.* A measured negative is
+a result, and re-measuring it is waste, so the whole sweep is written down.
+
+* **Answered and speak CKAN, but hold no population-by-religion table with a
+  regency row:** `opendata.sumselprov.go.id` (2.9.5 -- 31 datasets match
+  "agama" and every one is a madrasah roll or a heritage register; the
+  province with the most gaps, seven, has nothing), `data.jatengprov.go.id`
+  (2.9.5, 1,869 matches, all of them one regency's or one kecamatan's and
+  none for Kota Semarang), `data.bantenprov.go.id` (2.11.4, 40 matches, all
+  heritage and library), `data.bukittinggikota.go.id` (2.11.4),
+  `data.payakumbuhkota.go.id` (2.10.1), `data.sawahluntokota.go.id` (2.11.3)
+  and `data.lampungutarakab.go.id` (2.9.11). All four of those last are
+  themselves gaps and all four answer `package_search?q=agama` with **zero**
+  datasets: three of them are filled by their province's workbook above, and
+  Lampung Utara, whose province answers a browser check instead of a reader,
+  is not.
+* **Answered, and not CKAN:** `satudata.sumselprov.go.id`,
+  `satudata.sulselprov.go.id`, `satudata.jakarta.go.id`,
+  `satudata.sultengprov.go.id`, `satudata.kalteng.go.id`,
+  `satudata.kepriprov.go.id`, `satudata.malutprov.go.id`,
+  `opendata.gorontaloprov.go.id`, `data.garutkab.go.id`,
+  `data.lumajangkab.go.id`, `data.pacitankab.go.id`, `data.takalarkab.go.id`,
+  `data.pesisirbaratkab.go.id`, `data.pangandarankab.go.id`,
+  `data.samarindakota.go.id`, `satudata.sidoarjokab.go.id`,
+  `data.wajokab.go.id`, `data.ngawikab.go.id` (an unconfigured CentOS test
+  page over HTTP, its certificate not valid for the name).
+* **Answered 403 to a clean client** -- a deliberate block, and this project
+  does not claim to be a browser to get round one: `data.jatimprov.go.id` and
+  `opendata.jatimprov.go.id` (East Java, six gaps), `data.jabarprov.go.id`,
+  `opendata.jabarprov.go.id` and `satudata.jabarprov.go.id` (West Java, five),
+  `data.sulselprov.go.id` (South Sulawesi, six; Cloudflare error 1000),
+  `data.lampungprov.go.id`, `data.banyuasinkab.go.id`,
+  `opendata.sukabumikab.go.id` and `data.cimahikota.go.id` (Cloudflare's "Just
+  a moment" interstitial), `data.mamujutengahkab.go.id`,
+  `data.mitrakab.go.id`, and `data.semarangkota.go.id`, whose page is headed
+  *Akses Terbatas - Khusus Indonesia*: the city restricts its open-data portal
+  to Indonesian addresses.
+* **Answered something else:** `data.sumselprov.go.id` serves *Dalam
+  Pemeliharaan* over HTTP and an expired certificate over HTTPS;
+  `data.sulbarprov.go.id` is *Under Maintenance*; `bappeda.jogjaprov.go.id`
+  503; `data.palangkaraya.go.id` refuses the connection;
+  `data.kupangkota.go.id` serves a certificate not valid for its own name,
+  which is Nepal's problem and has the same answer -- there is no verified
+  route, so there is no route.
+* **Timed out at both 10 and 12 seconds:** `data.babelprov.go.id`,
+  `data.sultraprov.go.id`, `data.sulutprov.go.id`,
+  `opendata.lampungprov.go.id`, `data.pinrangkab.go.id`,
+  `data.banjarkota.go.id`, `data.pesawarankab.go.id`,
+  `data.pohuwatokab.go.id`, and `data.jakarta.go.id`, which answers its home
+  page over HTTP in 139 kB and then times out on every API path.
+* **The Kemenag provincial offices**, a separate sweep of 26 hostnames
+  (`<prov>.kemenag.go.id` plus `data.` and `satudata.kemenag.go.id`), which
+  publish "jumlah pemeluk agama" tables on their own pages. **Seven answer and
+  not one speaks CKAN**: Lampung, Central Java, West Sulawesi and North
+  Sulawesi serve a news portal, Central Sulawesi answers 204 to every API
+  path, `data.kemenag.go.id` 503, and `satudata.kemenag.go.id` -- recorded
+  above as timing out -- now answers its home page and times out on every API
+  path beneath it. The other eighteen, among them every province with more
+  than one gap, time out at twelve seconds over both HTTP and HTTPS. The
+  ministry's figure reaches this map only where a provincial data portal
+  republishes it, which is East Kalimantan's case and no other's.
+* **Do not resolve at all** -- 53 of the 110, and the reason most of this map
+  of Indonesia is still empty. Among them every hostname tried for North
+  Sumatra, Riau, the Riau Islands, Central Kalimantan, East Nusa Tenggara,
+  Central Sulawesi, West Sulawesi, North Maluku, Yogyakarta and Gorontalo, and
+  the regency portals of Musi Rawas, Ogan Ilir, Ogan Komering Ulu, Penukal
+  Abab Lematang Ilir, Kota Pagar Alam, Kota Prabumulih, Bangka, Belitung
+  Timur, Kepulauan Meranti, Kolaka Timur, Kota Pematang Siantar, Kota Tidore
+  Kepulauan, Morowali Utara, Tojo Una-Una, Probolinggo, Sampang, Luwu Utara,
+  Sidenreng Rappang, Soppeng, Kota Pariaman and Kota Yogyakarta. The national
+  `satudata.go.id` and `katalog.data.go.id` do not resolve either;
+  `data.go.id` answers and its CKAN API paths 404.
+
 *Language* is not written. The 2010 volume's "bahasa sehari-hari" by province
 is transcribed nowhere this reader can reach; the Indonesian *Demografi
 Indonesia* carries the national column only (Javanese 68.0 million, Indonesian
@@ -4141,11 +4282,16 @@ language.
 
 **What this is and is not.** The ethnicity is a census count, transcribed.
 The religion is a real composition on every row it is written, but of mixed
-kind and vintage -- the 2010 census on 67 regencies, a 2014-2026 registry or
+kind and vintage -- the 2010 census on 68 regencies, a 2014-2026 registry or
 statistical table on the rest -- and each row's `religion_year` and two- or
-three-sentence note say which. Nothing here is a model. What would still
-improve it: the WebAPI key, which would replace 457 transcriptions with BPS's
-own *Jumlah Penduduk Menurut Kabupaten/Kota dan Agama* series in one vintage.
+three-sentence note say which. Nothing here is a model, and no unit carries a
+figure that was estimated from its province or its neighbours: **43 of the 513
+regencies have no religion at all**, and the run log names every one of them
+with the reason. What would still improve it: the WebAPI key, which would
+replace 462 transcriptions with BPS's own *Jumlah Penduduk Menurut
+Kabupaten/Kota dan Agama* series in one vintage -- and, short of that, the
+eleven provinces whose portals time out or do not resolve today, since four
+portals that do answer were enough to fill eight of the gaps.
 
 ### The U.S. Census Bureau's subnational series: one reader, many countries
 
@@ -5877,10 +6023,10 @@ each resting on a named fact about the questionnaire.
 ## Afrobarometer: the first sampled source, and the rules that keep it honest
 
 Every other figure on this map is a count. Afrobarometer Round 9 is a survey of
-**53,444 people across 39 African countries**, and it carries exactly the three
+**53,444 people across 39 African countries**, and it carries exactly the four
 things this map wants: the region a respondent was interviewed in, Q95 "What is
-your religion, if any?", and Q84a "What is your ethnic community, cultural group
-or tribe?". For **36 of those countries there is nothing else at all**, which is
+your religion, if any?", Q84a "What is your ethnic community, cultural group
+or tribe?" and Q2 "Language spoken in home". For **36 of those countries there is nothing else at all**, which is
 why it is here.
 
 It is also, on its own terms, a national instrument. A region is a sampling
@@ -5940,6 +6086,184 @@ Church among them, which is South Africa's largest single denomination. One
 label is deliberately left alone: **Faith of Unity** is a Ugandan new religious
 movement rather than a Christian denomination, and it keeps its own name rather
 than being folded on a guess.
+
+### Language, and the round each region's figure comes from
+
+**Round 9 asks about language and this file once said it did not.** The claim
+was not a reading of the questionnaire; it was an artefact of how Round 9 was
+first read here -- by *column position* out of the published workbook, five
+columns, and Q2 was not among them. Nothing reported a missing question,
+because nothing had looked for one. The SPSS release, whose variables are
+named, is now the source for Round 9, and `--extract` reads it.
+
+Round 9 carries **Q2 "Language spoken in home" for all 442 regions it
+publishes, in all 39 countries**. So language comes from Round 9, like
+religion and ethnicity.
+
+Round 8 stays, for the one thing it is still good for: a region Round 9 is
+short of. It is registered **before** Round 9 in `ADAPTER_FILES`, which is
+lower authority, so a later file wins and Round 9 takes any region both hold.
+Round 8 is 48,084 interviews over 34 countries and 356 shapes; Round 9 is
+53,444 over 39 and 442, two years newer. `scripts/fetch_census/afrobarometer_r8.py`
+and `scripts/fetch_census/afrobarometer.py`.
+
+Language at first level in Africa went from **three countries to thirty-one**
+-- before this only Mali, South Africa and Zimbabwe had it, all from a census.
+
+**What the eight rounds hold**, measured rather than assumed, and the reason
+only the newest two are read:
+
+| | years | interviews | countries | regions n>=25 | religion | ethnicity | language |
+|---|---|---:|---:|---:|---:|---:|---:|
+| R2 | 2002-03 | 24,301 | 16 | 147 | 147 | -- | 147 |
+| R3 | 2005-06 | 25,397 | 18 | 190 | 190 | 190 | 190 |
+| R4 | 2008-09 | 27,713 | 20 | 224 | 224 | 224 | 224 |
+| R5 | 2011-13 | 51,587 | 35 | 416 | 416 | 330 | 416 |
+| R6 | 2014-15 | 53,935 | 36 | 403 | 403 | 403 | 403 |
+| R7 | 2016-18 | 45,823 | 34 | 349 | 349 | 336 | 349 |
+| R8 | 2019-21 | 48,084 | 34 | 396 | 396 | 383 | 396 |
+| **R9** | **2021-23** | **53,444** | **39** | **442** | **433** | **423** | **442** |
+
+Round 9's countries are a **superset** of every earlier round's once renames
+are resolved -- eSwatini/Swaziland, Cape Verde/Cabo Verde, Cote d'Ivoire/Côte
+d'Ivoire are the same places. Only three countries appear in an earlier round
+and not in Round 9: **Burundi**, **Egypt** and **Algeria**, all last surveyed
+in Round 6 (2014-15). Two of them are now read; see the section below.
+
+The apparent "Round 7 adds 161 regions Round 9 lacks" that a first pass
+produced was an artefact of region *renames* between rounds counting as
+distinct places, not new coverage. It is recorded here because it is the kind
+of number that looks like a finding.
+
+### Burundi and Egypt, and why Algeria is refused
+
+Three countries are in the earlier rounds and not in Round 9, and reading
+them turned up something that changes how the series has to be read: **the
+question is not which round is newest, but which is the newest round that
+*asks*.** Afrobarometer writes a real code, "Not asked in country", when a
+question is dropped from a national questionnaire, and reading that as a
+missing answer rather than a missing question would build a composition out
+of whatever codes remained.
+
+Counting substantive answers per country, field and round across Rounds 5 to
+9 -- all five merged releases, 260,000 interviews -- turns up exactly **two**
+places in the whole series where the newest round covering a country is
+silent on a field an older one asked:
+
+| | newest round covering it | asks? | round used | answers |
+|---|---|---|---|---:|
+| Burundi ethnicity | R6 (2014) | no, "Not asked in country" | **R5 (2012)** | 1,129 |
+| Egypt religion | R6 (2015) | no, "NOT ASKED IN THIS COUNTRY" | **R5 (2013)** | 1,190 |
+
+So `afrobarometer_r56.py` picks the round **per field**, not per country, and
+`choose()` re-derives the table above from the extract on every run rather
+than trusting it. Each field carries its own year, read from the round's own
+interview dates rather than from its title: Burundi's Round 6 fieldwork ran
+29 September to 10 October 2014, its Round 5 fieldwork 28 November to 10
+December 2012, and Egypt's Round 5 fieldwork 8 to 19 March 2013. Each falls
+inside one calendar year, so each row carries a real year and not a midpoint.
+
+**What this puts on the map.** Burundi had nothing at all; 17 of its 18
+provinces now carry religion, ethnicity and language. Egypt had nothing, and
+its census religion is collected and withheld; 17 of 27 governorates now
+carry a survey estimate. Four more governorates were interviewed and dropped
+under the 25-respondent floor (Damietta, Ismailia and Suez at 20, Luxor at
+10), and six were never sampled.
+
+The Egyptian figures are checkable against something known, and they check
+out: the Christian share is highest in **Sohag 18.5%, Asyut 17.1%, Qena 13.9%
+and Minya 12.4%** -- which are the four Upper Egypt governorates with the
+largest Coptic populations, in about the right order.
+
+**Egypt gets religion and nothing else.** Ethnicity is never asked there.
+Language *is* asked, and is refused anyway: both rounds code every one of
+2,388 Egyptian respondents to a single value -- "Arabic" in Round 5,
+"Egyptian Arabic" in Round 6. A variable with one value is a constant the
+field team entered, not a composition anyone measured, and publishing it
+would paint Egypt uniformly Arabic-speaking on a survey's authority and hide
+Nubian, Beja, Siwi and Domari behind it. Burundi's language question is not
+the same case and is published: its respondents could and did name a second
+language, and 8 of 1,200 said Swahili rather than Kirundi.
+
+**Rumonge**, Burundi's eighteenth province, has no stratum in either round
+because it did not exist: it was split from Bururi and Bujumbura Rural on 26
+March 2015, after both fieldworks. It carries that as its reason rather than
+the build's generic one.
+
+**Algeria is refused, and the first look said otherwise.** Round 6
+stratifies Algeria in 8 multi-wilaya regions ("North Middle Region") where
+the map draws 48 wilayas, which is plainly coarser than the shapes. Round 5
+*does* name wilayas -- 36 of them -- which looks usable until the allocation
+is read: **Oran, 1.6 million people, holds 10 interviews; Tamanghasset,
+200,000, holds 128.** And where the answer can be checked against something
+known, it fails. Tizi Ouzou is the heart of Kabylie and Tamazight is the
+language of the overwhelming majority there; Round 5 interviewed 10 people in
+it and recorded **no Amazigh speaker at all**, and neighbouring Béjaïa,
+equally Kabyle, comes out **15% Amazigh on 39 interviews** -- enough to clear
+the 25-respondent floor and be published. That is not an imprecise figure, it
+is a wrong one, and a wrong figure on a shape is worse than an empty shape:
+the empty one says it is empty. Algeria's provinces keep their existing
+`not_collected` reason, which is that the census does not ask.
+
+The two releases are 50 MB of microdata each and are not committed. What is
+committed is the seven columns the adapter reads, for those three countries
+only -- 7,192 rows, 21 KB, in
+`data/raw/afrobarometer/r56_extract.csv.gz`, reproducible with `--extract`.
+
+**Two defects in the Round 8 release, both found by checking rather than
+trusting.**
+The SPSS file's REGION value-label table holds **427 of the 454** labels its
+own codebook lists, and the 27 it omits are almost all of Tanzania -- codes
+740 to 770, every region of a 29-region country, which read as "740.0" until
+they are filled. The codebook's list is transcribed to
+`data/raw/afrobarometer/r8_region_codebook.json` and fills what the file does
+not carry; the file wins where both have a label. Separately, the COUNTRY
+table names **37 countries where the round surveyed 34** -- the merge file's
+labels span the programme, not the round -- so Algeria, Madagascar and São
+Tomé and Príncipe carry a code and no respondents, and produce no records
+rather than empty ones.
+
+**Three kinds of mismatch between a survey stratum and a shape**, which are
+not the same thing and are not treated the same way:
+
+| | what it is | what is done |
+|---|---|---|
+| a spelling | Huila for Huíla, Koulikoro for the file's Koulikouro, Cameroon's regions in French against an English-named file, "Souther Nations..." (the release's own typo) for SNNPR | declared, one stratum to one shape |
+| **finer** than the map | Botswana's 16 survey districts over 10 shapes, Uganda's 11 sub-regions over 4, Côte d'Ivoire's regions over the districts they make up, Mfoundi (Yaoundé) inside Centre, Songwe -- carved out of Mbeya in 2016, after these shapes were drawn | summed into the shape that holds it, sample sizes included, so the 25-respondent floor applies to the shape |
+| **coarser** than the map | Cabo Verde surveyed in 5 strata over 22 municipalities, Sudan in 6 macro-regions over 19 states, Tunisia in 7 over 24 governorates | **published for no shape at all** |
+
+The last row is the one worth stating plainly. A composition for "North West"
+is a fact about a seventh of Tunisia and not about Jendouba, Béja, El Kef or
+Siliana; spreading it over the four would state something nobody measured. The
+run names the three countries and the counts rather than leaving a reader to
+notice. After the declarations, **356 of 356 shapes join by name**, up from 299
+of 396 before them.
+
+**The group tree gained two Niger-Congo branches** it had no member of -- Kru
+(Liberia's Kru, Krahn, Grebo, Bassa) and Ijoid (Ijaw) -- plus 22 members of
+branches it already had and 32 spellings folded into names already there
+(Haoussa to Hausa, Oromiffa to Oromo, Tigirigna to Tigrinya, Fongbé to Fon,
+one of them carrying a stray left-to-right mark from the questionnaire
+software). All 121 languages that lead a shape now resolve to a family; 44 did
+not before.
+
+Two foldings that would have been wrong, and are not made. **Ciyao is not
+folded to "Yao"**: that name already resolves to the Hmong-Mien Yao of
+southern China, and folding Malawi's Bantu Ciyao into it would put a
+Mozambican border district in the wrong language family -- the invisible
+mis-match this project ranks above an empty cell. And **variants do not
+chain**, so Sonrhaï maps to Songhai directly rather than to Songhay, which is
+itself a variant of it and silently resolved to nothing.
+
+"Other" (code 9995) is published as a named residual rather than dropped,
+because it is an answer and excluding it would inflate every named language
+beside it. Refusals, don't knows and missing values leave the denominator.
+
+The 52 MB release is not committed. What is committed is the six columns this
+reads, gzipped to 287 KB and re-derivable with `--extract`, plus the
+codebook's region list. Religion and ethnicity are extracted although nothing
+publishes them yet: Round 9 covers both and is newer, but re-extracting later
+would mean having the release again.
 
 ## One ISO code, several places
 

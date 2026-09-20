@@ -1,12 +1,20 @@
 #!/usr/bin/env python3
-"""Afrobarometer Round 9: religion and ethnicity by region, for 39 countries.
+"""Afrobarometer Round 9: religion, ethnicity and language by region, 39 countries.
 
 This is the first source on this map that is a **survey rather than a count**,
 and everything below follows from that. 53,444 people were interviewed across
-39 African countries; the questions are Q95 "What is your religion, if any?"
-and Q84a "What is your ethnic community, cultural group or tribe?", and every
-respondent carries the region they were interviewed in. That is exactly the
-shape this map wants, for 36 countries that have nothing at all.
+39 African countries; the questions are Q95 "What is your religion, if any?",
+Q84a "What is your ethnic community, cultural group or tribe?" and Q2
+"Language spoken in home", and every respondent carries the region they were
+interviewed in. That is exactly the shape this map wants, for 36 countries
+that have nothing at all.
+
+Language was added on 20 September 2026, and the reason it was not here from
+the start is worth recording: this module read the published *workbook* by
+column position, and the five columns it took did not include Q2. Nothing
+said the question was missing -- it simply was not extracted, and the
+docstring then said the round did not ask it. The SPSS release, whose
+variables are named, is now the source, and ``--extract`` reads it.
 
 What it is not is a census. Afrobarometer is designed to be representative
 **nationally**; a region is a sampling stratum, not an estimation domain. The
@@ -93,6 +101,45 @@ UNIVERSE = ("Afrobarometer Round 9, a nationally representative sample of "
             "than 25 respondents are omitted rather than estimated.")
 
 
+# The SPSS release's variables, which are named rather than counted from the
+# left. The workbook route below is kept because it was how this was first
+# read and the two agree exactly -- 1,010 of 1,010 country/region/field cells
+# identical -- but the release is what should be read: it carries Q2, eight
+# region labels the workbook's codebook omits, and 21 religion labels.
+SAV_COLUMNS = {"country": "COUNTRY", "region": "REGION", "ethnicity": "Q84A",
+               "religion": "Q95", "language": "Q2", "weight": "withinwt_hh"}
+# withinwt_hh, not withinwt_ea: the household-level weight is the one the
+# committed extract already carried, checked row by row against both.
+SAV_LABELS = {"COUNTRY": "country", "REGION": "region", "Q95": "religion",
+              "Q84A": "ethnicity", "Q2": "language"}
+
+
+def extract_sav(path: str) -> int:
+    """Re-derive the committed extract and its labels from the SPSS release."""
+    import pyreadstat                                # noqa: PLC0415 -- optional
+
+    log(f"afrobarometer: reading {path}")
+    frame, meta = pyreadstat.read_sav(path, usecols=list(SAV_COLUMNS.values()))
+    labels = {name: {str(int(k)): v for k, v in
+                     meta.variable_value_labels.get(name, {}).items()}
+              for name in SAV_LABELS}
+    HERE.mkdir(parents=True, exist_ok=True)
+    LABELS.write_text(json.dumps(labels, ensure_ascii=False, indent=1,
+                                 sort_keys=True), encoding="utf-8")
+    log("  labels: " + ", ".join(f"{k} {len(v)}" for k, v in labels.items()))
+    rows = 0
+    with gzip.open(EXTRACT, "wt", newline="", encoding="utf-8") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(list(SAV_COLUMNS))
+        for values in zip(*(frame[c] for c in SAV_COLUMNS.values())):
+            if values[0] != values[0]:               # no country
+                continue
+            writer.writerow(["" if v != v else v for v in values])
+            rows += 1
+    log(f"  wrote {EXTRACT} ({rows:,} rows)")
+    return rows
+
+
 def load_labels() -> dict[str, dict[str, str]]:
     return json.loads(LABELS.read_text(encoding="utf-8"))
 
@@ -159,8 +206,10 @@ def tabulate() -> tuple[dict[tuple[str, str], dict[str, dict[str, float]]],
                 weight = 1.0
             key = (country, region)
             sample[key] = sample.get(key, 0) + 1
-            cell = tally.setdefault(key, {"religion": {}, "ethnicity": {}})
-            for field, column in (("religion", "religion"), ("ethnicity", "ethnicity")):
+            cell = tally.setdefault(key, {"religion": {}, "ethnicity": {},
+                                          "language": {}})
+            for field in ("religion", "ethnicity", "language"):
+                column = field
                 value = code(row[column])
                 if value == NOT_ASKED:
                     never_asked.add((country, field))
@@ -176,13 +225,20 @@ def tabulate() -> tuple[dict[tuple[str, str], dict[str, dict[str, float]]],
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--extract", metavar="XLSX",
-                    help="re-derive the committed extract from the published workbook")
+    ap.add_argument("--extract", metavar="SAV",
+                    help="re-derive the committed extract and labels from the "
+                         "SPSS release")
+    ap.add_argument("--extract-xlsx", metavar="XLSX", dest="extract_xlsx",
+                    help="the older route, reading the published workbook by "
+                         "column position; writes no labels")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
     if args.extract:
-        extract(args.extract)
+        extract_sav(args.extract)
+        return 0
+    if args.extract_xlsx:
+        extract(args.extract_xlsx)
         return 0
 
     labels = load_labels()
@@ -203,7 +259,11 @@ def main() -> int:
             dropped += 1
             continue
         fields: dict[str, Any] = {}
-        for field, table in (("religion", labels["Q95"]), ("ethnicity", labels["Q84A"])):
+        for field, table in (("religion", labels["Q95"]),
+                             ("ethnicity", labels["Q84A"]),
+                             ("language", labels.get("Q2", {}))):
+            if field == "language" and not table:
+                continue                     # an extract taken before Q2 was read
             if (country, field) in never_asked:
                 fields[field] = gap(NOT_COLLECTED)
                 fields[f"{field}_note"] = (
@@ -229,7 +289,7 @@ def main() -> int:
             f"{iso}-AB9-{region}", name, level="admin1", parent=iso,
             country=iso,
             **fields,
-            sources=[{"field": "religion/ethnicity", "name": SOURCE,
+            sources=[{"field": "religion/ethnicity/language", "name": SOURCE,
                       "url": "https://www.afrobarometer.org/data/",
                       "license": "Afrobarometer data use policy"}],
         ))

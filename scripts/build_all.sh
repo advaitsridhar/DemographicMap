@@ -52,6 +52,7 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # and cannot fail on an unreachable host -- but it is still an adapter
   # and its output belongs in data/processed with the rest.
   soft python3 -m scripts.fetch_census.afrobarometer
+  soft python3 -m scripts.fetch_census.afrobarometer_r8
   soft python3 -m scripts.fetch_census.us_acs --level state
   soft python3 -m scripts.fetch_census.us_acs --level county
   soft python3 -m scripts.fetch_census.uk_nomis --level district

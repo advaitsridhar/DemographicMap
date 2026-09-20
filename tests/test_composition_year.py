@@ -48,14 +48,17 @@ PROCESSED = ROOT / "data" / "processed"
 # rows are a census with a year on it and two are a yearbook table that prints
 # none.
 UNDATED_BY_DESIGN: dict[str, dict[str, set[str] | None]] = {
-    # Round 9 was fielded across 2021-2023 and the committed five-column
-    # extract carries no interview date, so there is no per-country year to
-    # read. One stamp cannot describe the round, and taking one from the
-    # round's title would date Ghana's interviews by Zimbabwe's -- which is
-    # the fault this whole file exists to prevent, not a smaller version of
-    # it. Dating these means adding the interview-date column to the extract,
-    # which needs the 24 MB published workbook and an --extract run.
-    "afrobarometer_region.json": {"religion": None, "ethnicity": None},
+    # Round 9 was fielded across 2021-2023 and the committed extract carries
+    # no interview date, so there is no per-country year to read. One stamp
+    # cannot describe the round, and taking one from the round's title would
+    # date Ghana's interviews by Zimbabwe's -- which is the fault this whole
+    # file exists to prevent, not a smaller version of it. Dating these means
+    # adding the interview-date column to the extract and an --extract run.
+    "afrobarometer_region.json": {"religion": None, "ethnicity": None,
+                                  "language": None},
+    # Round 8, fielded 2019-2021, for the same reason. It once stamped 2020 on
+    # every row, which is a midpoint nobody was interviewed on.
+    "afrobarometer_r8_language.json": {"language": None},
     # Azad Jammu and Kashmir's languages are Table 15.33 of the AJ&K
     # Statistical Year Book 2023, and that table carries no year: the
     # marriages table above it on the same page is captioned "(2018 to 2022)"
