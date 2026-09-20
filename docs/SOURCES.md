@@ -4079,24 +4079,58 @@ it). Where several are cited the most census-like names the source and the
 latest year among them dates it; a citation with no year in its title, path
 or date field dates nothing and is not read.
 
-Read on 19 September 2026: **457 of the 513 regency shapes** (five of the 518
-are water or forest polygons with no article), by kind of source: Dukcapil
-registry 251, BPS table 120, 2010 census 67, other regional government 11,
-Kemenag 7, the Jakarta statistics office 1; the years run from 2010 to 2026,
-149 of them 2024. **32 of the 34 provinces**: Papua and Papua Barat were
-divided in 2022 and their articles now describe the smaller provinces that
-kept the names, so their province-level figure is not read and their
-regencies' are. Not read, 56: 23 whose citation carries no year, 26 whose
-figure carries no citation (eight of them a reference by a name the page
-never defines), five whose faith list the reader could not parse ("Budha
-danHindu", "Hindu/Buddha"), and two with no religion in the infobox
-(`Flores Timur`, `Takalar`). A list that stops short of 100 carries the rest
+Read: **458 of the 513 regency shapes** (five of the 518 are water or forest
+polygons with no article), by kind of source: Dukcapil registry 252, BPS table
+120, 2010 census 67, other regional government 11, Kemenag 7, the Jakarta
+statistics office 1; the years run from 2010 to 2026. **32 of the 34
+provinces**: Papua and Papua Barat were divided in 2022 and their articles now
+describe the smaller provinces that kept the names, so their province-level
+figure is not read and their regencies' are -- and since 20 September the
+province figure is summed from those regencies instead, which is the next
+paragraph. Not read, 55: those whose citation carries no year, those whose
+figure carries no citation (several of them a reference by a name the page
+never defines), and two with no religion in the infobox (`Flores Timur`,
+`Takalar`). One of the five the faith list once defeated has since been read:
+Puncak Jaya gives its Hindus and Buddhists in a single bucket, "0,01%
+Hindu/Buddha", and a bucket naming two faiths is now carried whole as `Other
+religion` rather than refused, because splitting it would be inventing the
+split. A list that stops short of 100 carries the rest
 as `Other or not stated`; one that overruns by up to three points -- ten
 regencies, Bolaang Mongondow's Protestant share printed above its Christian
 total -- is carried as printed with the overrun in the note, by the owner's
 instruction that a small disagreement is published with a sentence rather
 than refused. The 550 requests are spaced, because the runner is shared and
 the API answered 429 to the first unspaced run.
+
+*The head count, from the same infobox.* The regency compositions are
+percentages and nothing else -- not one of the 491 articles prints a count
+beside a faith -- so a province summed from its regencies has to price each
+one's shares against that regency's own population. Wikidata, which supplied
+those populations, had none for eleven of the shapes inside Papua and Papua
+Barat, and the build refused both provinces for it ("5 children have no
+population") while every regency under them carried a composition. The weight
+was in the same infobox as the shares, one parameter above them, citing the
+same registry: `|penduduk = 220393` with `|penduduktahun = 31 Desember 2024`.
+It is now read, under the rules the religion reader keeps and for the same
+reasons -- an uncited figure is not read, an undateable one is not read, and
+which of the two national counts it is, a registry's or a census's, goes in
+the record. **422 of the 458 regencies** carry one. Unlike the composition,
+the count takes its *first* citation rather than its most census-like: a head
+count is one number as of one date and the reference beside it is where it
+came from, so Kota Jayapura's 404,799 is the registry's figure for 31 December
+2024 and not the 2021 BPS yearbook it also cites.
+
+`indonesia.json` moved below `wikidata_admin2.json` in `ADAPTER_FILES` for it,
+because Wikidata's regency populations are the wrong number often enough to
+matter: it puts Kota Blitar's 132,018 on Kabupaten Blitar, which holds
+1,257,701, and Kota Sorong's 295,809 on Kabupaten Sorong, which holds 128,157
+-- the city's count on the regency that surrounds it, four times in East Java
+alone. The articles' figures agree with their provinces instead. Nine
+provinces have every regency counted, and their sums against the province's
+own published population are: Aceh -0.1%, Jambi +2.5%, North Kalimantan
++7.4%, Papua -1.0%, South Kalimantan +1.3%, West Kalimantan -0.5%, West Nusa
+Tenggara -0.5%, West Papua -0.9%. A registry total and a census total are
+different counts of the same people and the note on every such record says so.
 
 *Language* is not written. The 2010 volume's "bahasa sehari-hari" by province
 is transcribed nowhere this reader can reach; the Indonesian *Demografi

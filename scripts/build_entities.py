@@ -97,13 +97,6 @@ ADAPTER_FILES = [
     # Viet Nam's 2019 census, ethnicity by province from Table 2 of the
     # office's own Vietnamese results volume: a census count.
     "vietnam_province.json",
-    # Indonesia, by the owner's decision of 19 September 2026: the 2010
-    # census's ethnicity by province as its provinces' Wikipedia articles
-    # transcribe it, and religion by province and regency from the registry
-    # or BPS figure each place's article cites. Part census transcription
-    # and part registry, so it sits with the surveys, below every census
-    # file read from its office.
-    "indonesia.json",
     # Hong Kong's own census, one shape under China: ethnicity and usual
     # spoken language from the 2021 Main Results workbook.
     "hongkong_census.json",
@@ -119,6 +112,23 @@ ADAPTER_FILES = [
     # surveys, and it touches a field the surveys do not carry.
     "china_wiki_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
+    # Indonesia, by the owner's decision of 19 September 2026: the 2010
+    # census's ethnicity by province as its provinces' Wikipedia articles
+    # transcribe it, and religion by province and regency from the registry
+    # or BPS figure each place's article cites. Part census transcription
+    # and part registry, so it sits with the surveys, below every census
+    # file read from its office.
+    #
+    # After Wikidata, for the head count that comes with those faiths.
+    # Wikidata's regency populations are the wrong number often enough to
+    # matter: it puts Kota Blitar's 132,018 on Kabupaten Blitar, which holds
+    # 1,257,701, and Kota Sorong's 295,809 on Kabupaten Sorong, which holds
+    # 128,157 -- the city's count on the regency that surrounds it, four
+    # times in East Java alone. The articles' own figures, cited to the
+    # registry or to a BPS yearbook, agree with their provinces instead:
+    # nine provinces have every regency counted, and eight of the nine sum
+    # to within 2.5% of the province's own published population.
+    "indonesia.json",
     # After Wikidata, which carries a population for North Korea's provinces
     # and for Pyongyang a 2015 estimate: this is the 2008 census's own Table 2,
     # for all 11 first-level units and all 179 counties, with the sex ratio
@@ -2007,7 +2017,12 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                      f"check on this sum.")
     parent[f"{field}_note"] = (
         f"Summed from {'all ' if not left_out else ''}{len(children)} {level} "
-        f"division{'s' if many else ''};"
+        # The semicolon introduces the clause that follows it, so a sum that
+        # displaced a published figure -- which has no such clause, it names
+        # what it replaced at the end instead -- ends the sentence here.
+        # Indonesia read "...34 first-level divisions; Their populations
+        # total 281,547,223", a capital letter after a semicolon.
+        f"division{'s' if many else ''}{';' if not displaced else '.'}"
         + (" no source publishes this figure for the unit itself."
            if not displaced else "")
         # A unit with no published population of its own was filled because
