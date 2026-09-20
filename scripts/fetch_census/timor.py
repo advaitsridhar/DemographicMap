@@ -726,9 +726,110 @@ def run() -> int:
     return 0
 
 
+# ---------------------------------------------------------------------------
+# --probe: the 2015 and the 2022 lists of administrative posts, side by side.
+# Writes nothing. It exists because the two censuses do not name the same
+# units: 2022 lists 67 posts where 2015 listed 65, and which two are new --
+# and which older post each was cut out of -- is a question about sucos that
+# only these two tables can answer.
+# ---------------------------------------------------------------------------
+
+DISTRIBUTION_XLS = f"{BASE}/2023/03/1_2015-V2-Population-Household-Distribution.xls"
+DISTRIBUTION_PAGE = ("https://inetl-ip.gov.tl/2023/03/09/population-distribution-by-"
+                     "administrative-area-volume-2-population-and-household-distribution/")
+
+
+def units_2015(path) -> dict[str, dict[str, list[str]]]:
+    """{municipality: {administrative post: [suco, ...]}} as the 2015 volume
+    lists them, from whichever of its sheets carries the three levels.
+
+    The 2015 workbook indents rather than using a column per level, so a row's
+    level is read from how deep its label is: this is reconnaissance and is
+    never used to write a figure.
+    """
+    import xlrd
+    book = xlrd.open_workbook(str(path))
+    out: dict[str, dict[str, list[str]]] = {}
+    for sheet in book.sheets():
+        grid = [[sheet.cell_value(r, c) for c in range(sheet.ncols)]
+                for r in range(sheet.nrows)]
+        found: dict[str, dict[str, list[str]]] = {}
+        municipality = post = ""
+        for row in grid:
+            raw = str(at(row, 0) or "")
+            label = tidy(raw)
+            if not label or not any(c.isalpha() for c in label):
+                continue
+            depth = len(raw) - len(raw.lstrip())
+            key = fold(label)
+            if key in COUNTRY_LABELS:
+                continue
+            if key in MUNICIPALITY_KEYS and depth == 0:
+                municipality = MUNICIPALITY_KEYS[key]
+                found.setdefault(municipality, {})
+                post = ""
+            elif municipality and depth and depth <= 3:
+                post = label
+                found[municipality].setdefault(post, [])
+            elif municipality and post and depth > 3:
+                found[municipality][post].append(label)
+        posts = sum(len(v) for v in found.values())
+        log(f"  sheet {sheet.name!r}: {len(found)} municipalities, {posts} posts")
+        if posts > sum(len(v) for v in out.values()):
+            out = found
+    return out
+
+
+def probe() -> int:
+    log("== the 2015 volume's administrative areas")
+    old = units_2015(download(DISTRIBUTION_XLS,
+                              RAW / "timor" / DISTRIBUTION_XLS.rsplit("/", 1)[-1]))
+    log("== the 2022 main report's basic table 4.01")
+    grid = xlsx_grid(download(POPULATION_XLSX,
+                              RAW / "timor" / POPULATION_XLSX.rsplit("/", 1)[-1]),
+                     POPULATION_SHEET)
+    new: dict[str, dict[str, list[str]]] = {}
+    municipality = post = ""
+    for row in grid:
+        first, second, third = tidy(at(row, 0)), tidy(at(row, 1)), tidy(at(row, 2))
+        if first and fold(first) not in COUNTRY_LABELS:
+            municipality = first
+            new.setdefault(municipality, {})
+            post = ""
+        elif second and municipality:
+            post = second
+            new[municipality].setdefault(post, [])
+        elif third and municipality and post:
+            new[municipality][post].append(third)
+    for name, posts in new.items():
+        log(f"  {name}: {len(posts)} posts -- {sorted(posts)}")
+
+    log("== what changed between them")
+    old_posts = {fold(p): (m, p, sucos) for m, ps in old.items() for p, sucos in ps.items()}
+    new_posts = {fold(p): (m, p, sucos) for m, ps in new.items() for p, sucos in ps.items()}
+    log(f"  2015: {len(old_posts)} posts; 2022: {len(new_posts)} posts")
+    for key, (m, p, sucos) in sorted(new_posts.items()):
+        if key in old_posts:
+            continue
+        log(f"  new in 2022: {p!r} in {m}, {len(sucos)} sucos: {sorted(sucos)}")
+        for okey, (om, op, osucos) in sorted(old_posts.items()):
+            shared = sorted(set(map(fold, sucos)) & set(map(fold, osucos)))
+            if shared:
+                log(f"      {len(shared)} of them were in 2015's {op!r} ({om}), "
+                    f"which had {len(osucos)}")
+    for key, (m, p, sucos) in sorted(old_posts.items()):
+        if key not in new_posts:
+            log(f"  gone from 2022: {p!r} in {m}, {len(sucos)} sucos in 2015")
+    return 0
+
+
 def main() -> int:
-    argparse.ArgumentParser(description=__doc__).parse_args()
-    return run()
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--probe", action="store_true",
+                    help="print the 2015 and 2022 lists of administrative posts "
+                         "and what changed between them; writes nothing")
+    args = ap.parse_args()
+    return probe() if args.probe else run()
 
 
 if __name__ == "__main__":
