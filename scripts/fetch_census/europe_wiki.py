@@ -1418,12 +1418,32 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
     if not cites:
         return None, ("the article prints this table and cites nothing for it; "
                       "an uncited figure is not read")
-    counts, dropped, why = read_rows(table, spec, country.decimal)
-    if why:
-        return None, why
-    rows, why, remark = shares_of(counts)
-    if why:
-        return None, why
+    # Which mark separates a fraction is a fact about the country, except
+    # where it is not: Bulgaria's provinces write "89.72" and its
+    # municipalities write "64,81", in the same edition and under the same
+    # heading. So the declared mark is tried first and the other one after
+    # it, and the arbiter is the same check that would otherwise refuse the
+    # table -- only a reading whose shares add to about a hundred is
+    # accepted, and reading "64,81" as six thousand adds to ten thousand.
+    other = "," if country.decimal == "." else "."
+    counts: dict[str, float] = {}
+    for mark in (country.decimal, other):
+        counts, dropped, why = read_rows(table, spec, mark)
+        if why:
+            if mark == other or "no entry for" in why:
+                return None, why
+            continue
+        rows, bad, remark = shares_of(counts)
+        if not bad:
+            break
+        if mark == other:
+            return None, bad
+    else:
+        return None, bad
+    if mark != country.decimal:
+        remark = (f"The table writes a fraction with \"{mark}\" where this "
+                  f"country's articles usually write \".\"; read as shares, "
+                  f"they add to a hundred. " + remark).strip()
     if dropped:
         remark = (f"{dropped[0]} row(s) of the table carry figures for only "
                   f"one of the censuses it prints and are not read; what they "
@@ -1434,15 +1454,25 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
     years = [d[1] for d in described if d[1]]
     year = year or (max(years) if years else None)
     dated = "its citation"
-    if year is None:
-        header = " ".join(" ".join(row) for row in table[:2])
-        printed = [int(y) for y in re.findall(r"\b(19\d\d|20[0-4]\d)\b", header)]
-        if not printed:
-            return None, ("neither the citation nor the table's own header "
-                          "carries a year, so there is no date the figures "
-                          "are as of")
+    # The year the column read is printed under, where the table prints one.
+    # This is not a fallback for an undated citation but the better answer
+    # where both exist: Blagoevgrad's ethnic table prints 2001 and 2011 side
+    # by side and cites the 2001 release first, so the 2011 column -- which
+    # is the one read -- was being stamped 2001. A figure dated by the
+    # wrong census is worse than no figure.
+    header = " ".join(" ".join(row) for row in table[:2])
+    printed = [int(y) for y in re.findall(r"\b(19\d\d|20[0-4]\d)\b", header)]
+    if printed and spec.value == -1:
+        if year and max(printed) != year:
+            remark = (f"The citation is for {year}; the column read is the one "
+                      f"the table's own header labels {max(printed)}, and that "
+                      f"is the year on this record. " + remark).strip()
         year = max(printed)
         dated = "the table's own header"
+    if year is None:
+        return None, ("neither the citation nor the table's own header "
+                      "carries a year, so there is no date the figures "
+                      "are as of")
     return {"rows": rows, "year": year, "kind": kind, "cited": cited,
             "remark": remark, "dated": dated, "counts": counts}, ""
 

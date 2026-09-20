@@ -460,3 +460,86 @@ class TwoWaysASectionCanBeEmpty(unittest.TestCase):
 
     def test_no_heading_at_all_names_the_pattern(self):
         self.assertIn("no section matching", self.why("== Doprava ==\nCesty.\n"))
+
+
+class TheMarkThatSeparatesAFraction(unittest.TestCase):
+    """Which mark it is is a fact about the country, except where it is not.
+
+    Bulgaria's provinces write "89.72" and its municipalities write "64,81",
+    in the same edition and under the same heading, and 110 municipalities
+    were refused for it. The declared mark is tried first and the other one
+    after it, and the arbiter is the check that would otherwise refuse the
+    table: only a reading whose shares add to about a hundred is taken, and
+    reading "64,81" as six thousand adds to ten thousand.
+    """
+
+    TABLE = """== Вероизповедания ==
+Преброяване.<ref>{{Цитат уеб| уеб_адрес = http://pop-stat.mashke.org/x.htm
+| заглавие = Religious composition: 2011 census}}</ref>
+{| class="wikitable"
+! !! Численост !! Дял (в %)
+|-
+| Общо || 20 426 || 100,00
+|-
+| Православие || 13 240 || 64,81
+|-
+| Нямат || 827 || 4,04
+|-
+| Непоказано || 4 973 || 31,15
+|}
+"""
+
+    def test_a_comma_fraction_is_read_where_the_point_gives_no_composition(self):
+        spec = next(f for f in m.BG_MUNICIPALITY if f.field == "religion")
+        got, why = m.read_field(self.TABLE, spec, m.SPECS["BGR"], "T", "bg")
+        self.assertEqual(why, "")
+        self.assertEqual(got["rows"][0], {"group": "Orthodox", "pct": 64.81})
+        self.assertIn('writes a fraction with ","', got["remark"])
+        self.assertEqual(got["kind"], "compilation")
+
+
+class TheYearOfTheColumnRead(unittest.TestCase):
+    """Where a table prints two censuses and cites the older one first, the
+    figures read are the newer column's and the date must be the newer.
+
+    Blagoevgrad's ethnic table prints 2001 and 2011 side by side and cites
+    the 2001 release first, so the 2011 column -- which is the one read --
+    was being stamped 2001. A figure dated by the wrong census is worse
+    than no figure.
+    """
+
+    TABLE = """== Етнически състав ==
+Преброявания.<ref>{{Цитат уеб| уеб_адрес = http://www.nsi.bg/Census/Ethnos.htm
+| заглавие = Население към 1.03.2001 г. по области и етническа група}}</ref>
+{| class="wikitable"
+! !! colspan=2 | Численост !! colspan=2 | Дял (в %)
+|-
+! 2001 !! 2011 !! 2001 !! 2011
+|-
+| Общо || 341 173 || 323 552 || 100.00 || 100.00
+|-
+| Българи || 286 491 || 251 097 || 83.97 || 77.60
+|-
+| Турци || 31 857 || 17 027 || 9.33 || 5.26
+|-
+| Цигани || 12 405 || 9739 || 3.63 || 3.01
+|-
+| Неотговорили || 659 || 39 996 || 0.19 || 14.13
+|}
+"""
+
+    def test_the_header_year_of_the_column_read_is_the_record_s_year(self):
+        spec = next(f for f in m.BG_PROVINCE if f.field == "ethnicity")
+        got, why = m.read_field(self.TABLE, spec, m.SPECS["BGR"], "T", "bg")
+        self.assertEqual(why, "")
+        self.assertEqual(got["year"], 2011)
+        self.assertEqual(got["dated"], "the table's own header")
+        self.assertEqual(got["rows"][0], {"group": "Bulgarian", "pct": 77.6})
+
+    def test_a_citation_dated_otherwise_is_said_so_on_the_record(self):
+        spec = next(f for f in m.BG_PROVINCE if f.field == "ethnicity")
+        got, _ = m.read_field(self.TABLE, spec, m.SPECS["BGR"], "T", "bg")
+        self.assertIn("The citation is for 2001", got["remark"])
+        note = m.field_fields(got, spec, m.SPECS["BGR"], "T", "bg")["ethnicity_note"]
+        self.assertIn("2011", note)
+        self.assertIn("The citation is for 2001", note)
