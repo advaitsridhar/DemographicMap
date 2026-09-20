@@ -85,33 +85,37 @@ def organization(org: str, rows: int, match: str) -> None:
     The seed path below answers "what else does the publisher of this dataset
     I already read have"; this answers the same question when the starting
     point is an organization page rather than a dataset -- an HDX org URL
-    carries the uuid, and CKAN takes a uuid wherever it takes a name.
+    carries the uuid and nothing else.
+
+    The uuid has to be resolved to a name first. ``package_search`` filters on
+    ``organization:<name>``, and given a uuid it does not fail: it answers
+    "0 dataset(s)", which reads exactly like a publisher with nothing in it.
+    So the name comes from ``organization_show``, which takes either, and the
+    search is made with that.
     """
     print(f"=== HDX organization: {org} ===")
+    name = org
     try:
-        found = get("package_search", fq=f"organization:{org}", rows=rows)
-    except Exception as err:                        # noqa: BLE001 -- reported
-        print(f"    {type(err).__name__}: {err}")
-        try:
-            shown = get("organization_show", id=org, include_datasets="true")
-        except Exception as second:                 # noqa: BLE001 -- reported
-            print(f"    organization_show: {type(second).__name__}: {second}")
-            return
-        print(f"    organization_show: name={shown.get('name')!r} "
-              f"title={shown.get('title')!r} "
+        shown = get("organization_show", id=org)
+        name = str(shown.get("name") or org)
+        print(f"    name={name!r} title={shown.get('title')!r} "
               f"package_count={shown.get('package_count')}")
-        for pkg in shown.get("packages", []) or []:
-            print(f"      {pkg.get('name','?')}")
+    except Exception as err:                        # noqa: BLE001 -- reported
+        print(f"    organization_show: {type(err).__name__}: {err}")
+    try:
+        found = get("package_search", fq=f"organization:{name}", rows=rows)
+    except Exception as err:                        # noqa: BLE001 -- reported
+        print(f"    package_search: {type(err).__name__}: {err}")
         return
     results = found.get("results", []) or []
     print(f"    {found.get('count', 0)} dataset(s), showing {len(results)}")
     for package in sorted(results, key=lambda p: str(p.get("name", ""))):
-        name = str(package.get("name", "?"))
-        if match and match.lower() not in (name + " " +
+        stub = str(package.get("name", "?"))
+        if match and match.lower() not in (stub + " " +
                                            str(package.get("title", ""))).lower():
             continue
         print()
-        print(f"  {name}")
+        print(f"  {stub}")
         print(f"    title:   {package.get('title','?')}")
         print(f"    licence: {licence(package)}")
         groups = ", ".join(str(g.get("name", "")) for g in package.get("groups", ()))
