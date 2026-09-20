@@ -89,6 +89,15 @@ data/raw/*
 # with scripts/fetch_census/indonesia_hapi.py --fetch.
 !data/raw/indonesia/
 !data/raw/indonesia/*.csv
+# The Atlas of the Languages of Iran's settlement files, twelve provinces of
+# them, and the per-province citations that date and attribute each one. They
+# are CC BY, 9 MB, and there is no host this adapter can re-fetch them from:
+# they were exported from the atlas's own site by hand, one province at a
+# time, and iranatlas.net serves no file a script could ask for. Without them
+# a clean checkout has no Iranian language at all and no way to re-derive it.
+!data/raw/iran/
+!data/raw/iran/*.csv
+!data/raw/iran/*.json
 # ...and the pages of Mongolia's 22 aimag census books that carry ethnic
 # group and religion, laid out as text. The books themselves are 300 MB of
 # scanned-quality PDF on the Internet Archive and the site that served them

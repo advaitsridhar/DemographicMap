@@ -106,6 +106,20 @@ ADAPTER_FILES = [
     # modelled estimates. Part survey and part model, so it sits with the
     # surveys, below every census file.
     "japan_prefecture.json",
+    # Iran's languages, from the Atlas of the Languages of Iran: a linguist's
+    # field estimate of what is spoken in each settlement, rolled up to the
+    # province and the shahrestan by population. It sits here, among the
+    # models and the surveys and below every file read from a statistical
+    # office, because that is what it is -- a research atlas, not a count.
+    # Iran's census does not ask language at all, so no count of this field
+    # exists anywhere to rank it against, and these figures displace nothing:
+    # the not_collected declaration in common.py stays true and every record
+    # here is an estimate that says so on its face.
+    #
+    # Nothing else in this list writes an Iranian unit, so the position buys
+    # no precedence over anybody. It is a statement of kind, and the place to
+    # keep it if a count ever arrives.
+    "iran_ali_language.json",
     # And CFPS 2012 for five Chinese provinces: a survey where the census
     # asks nothing, transcribed from the paper that reports it.
     "cfps_survey_province.json",
@@ -450,7 +464,17 @@ ADAPTER_GAPS: dict[str, str] = {
            "it by province, but amar.org.ir ends the TLS handshake before a "
            "standard client can read a page (an EOF in the protocol, measured "
            "on the runner), and this project does not turn verification off. "
-           "The data exists and is not reachable from here.",
+           "The data exists and is not reachable from here. Language is a "
+           "different kind of gap: no Iranian census has ever asked it, so "
+           "there is nothing withheld and nothing to fetch. Eleven provinces "
+           "and 96 counties carry a figure all the same -- a population-"
+           "weighted roll-up of the settlement estimates in the Atlas of the "
+           "Languages of Iran, marked as the atlas's field estimates and not "
+           "as anybody's count. The atlas is published province by province "
+           "and has reached twelve of the thirty-one; the rest of the country "
+           "is empty because those modules do not exist yet, and Kermanshah "
+           "is empty because its module reaches five of its fourteen counties "
+           "and under a fifth of its people.",
     "EGY": "CAPMAS collected religion in the 2017 census and has not published "
            "it, nationally or by governorate; the last published figures are "
            "the 2006 census, national only. The data exists and is withheld. "
