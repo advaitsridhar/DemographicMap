@@ -1,81 +1,92 @@
-probe_xlsx: https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/418513f6-c45b-40fb-9151-61df45d5ee81/download/agama-jenis-kelamin.xlsx
-  6,372 bytes
-  1 sheet(s): Sheet1
-
---- sheet 'Sheet1' (? rows x ? cols) --------------------
-  AGAMA - JENIS KELAMIN
-  NO | WILAYAH | KODE | ISLAM(LK) | ISLAM(PR) | ISLAM(JML) | KATHOLIK(LK) | KATHOLIK(PR) | KATHOLIK(JML) | KRISTEN(LK) | KRISTEN(PR) | KRISTEN(JML) | HINDU(LK) | HINDU(PR) | HINDU(JML) | BUDHA(LK) | BUDHA(PR) | BUDHA(JML) | KHONGHUCU(LK) | KHONGHUCU(PR)
-   | SUMATERA BARAT | 13 | 2813101 | 2797660 | 5610761 | 45542 | 42281 | 87823 | 24384 | 23720 | 48104 | 48 | 39 | 87 | 1685 | 1601 | 3286 | 4 | 3
-  1 | PESISIR SELATAN | 1301 | 263976 | 263285 | 527261 | 495 | 420 | 915 | 97 | 98 | 195 | 5 | 4 | 9 | 1 | 0 | 1 | 0 | 0
-  2 | SOLOK | 1302 | 204483 | 203588 | 408071 | 182 | 146 | 328 | 12 | 11 | 23 | 0 | 2 | 2 | 0 | 0 | 0 | 0 | 0
-  3 | SIJUNJUNG | 1303 | 122457 | 120631 | 243088 | 486 | 459 | 945 | 140 | 160 | 300 | 5 | 2 | 7 | 1 | 1 | 2 | 0 | 0
-  4 | TANAH DATAR | 1304 | 189956 | 190322 | 380278 | 160 | 147 | 307 | 67 | 63 | 130 | 0 | 1 | 1 | 5 | 6 | 11 | 0 | 0
-  5 | PADANG PARIAMAN | 1305 | 227331 | 225762 | 453093 | 808 | 791 | 1599 | 273 | 244 | 517 | 3 | 2 | 5 | 2 | 2 | 4 | 0 | 0
-  6 | AGAM | 1306 | 263549 | 262294 | 525843 | 2000 | 1797 | 3797 | 257 | 219 | 476 | 0 | 0 | 0 | 5 | 2 | 7 | 0 | 0
-  7 | LIMA PULUH KOTA | 1307 | 197728 | 199082 | 396810 | 306 | 267 | 573 | 148 | 148 | 296 | 0 | 0 | 0 | 1 | 2 | 3 | 0 | 0
-  8 | PASAMAN | 1308 | 154355 | 153458 | 307813 | 602 | 606 | 1208 | 94 | 87 | 181 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-  9 | KEPULAUAN MENTAWAI | 1309 | 11161 | 10537 | 21698 | 23692 | 22001 | 45693 | 14282 | 13213 | 27495 | 0 | 1 | 1 | 1 | 2 | 3 | 0 | 0
-  10 | DHARMASRAYA | 1310 | 117855 | 114731 | 232586 | 2394 | 2073 | 4467 | 329 | 300 | 629 | 2 | 1 | 3 | 1 | 1 | 2 | 0 | 0
-  11 | SOLOK SELATAN | 1311 | 91775 | 89259 | 181034 | 706 | 625 | 1331 | 109 | 91 | 200 | 1 | 0 | 1 | 4 | 3 | 7 | 0 | 0
-  12 | PASAMAN BARAT | 1312 | 218518 | 216262 | 434780 | 4111 | 3687 | 7798 | 1418 | 1413 | 2831 | 0 | 0 | 0 | 6 | 3 | 9 | 0 | 0
-  13 | KOTA PADANG | 1371 | 452011 | 453468 | 905479 | 7182 | 7048 | 14230 | 5802 | 6323 | 12125 | 26 | 20 | 46 | 1512 | 1432 | 2944 | 3 | 3
-  14 | KOTA SOLOK | 1372 | 40980 | 40663 | 81643 | 270 | 263 | 533 | 155 | 143 | 298 | 0 | 0 | 0 | 1 | 3 | 4 | 0 | 0
-  15 | KOTA SAWAHLUNTO | 1373 | 34151 | 33770 | 67921 | 179 | 159 | 338 | 59 | 62 | 121 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-  16 | KOTA PADANG PANJANG | 1374 | 31114 | 30802 | 61916 | 221 | 201 | 422 | 182 | 166 | 348 | 0 | 0 | 0 | 20 | 24 | 44 | 1 | 0
-  17 | KOTA BUKITTINGGI | 1375 | 67592 | 67345 | 134937 | 1207 | 1085 | 2292 | 566 | 591 | 1157 | 2 | 3 | 5 | 74 | 69 | 143 | 0 | 0
-  18 | KOTA PAYAKUMBUH | 1376 | 72997 | 72148 | 145145 | 442 | 408 | 850 | 342 | 328 | 670 | 4 | 3 | 7 | 49 | 51 | 100 | 0 | 0
-  19 | KOTA PARIAMAN | 1377 | 51112 | 50253 | 101365 | 99 | 98 | 197 | 52 | 60 | 112 | 0 | 0 | 0 | 2 | 0 | 2 | 0 | 0
-
-probe_xlsx: https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/45ae12f7-aa7d-43fd-9346-293b19cfed79/download/agama-jenis-kelamin.xlsx
-  6,372 bytes
-  1 sheet(s): Sheet1
-
---- sheet 'Sheet1' (? rows x ? cols) --------------------
-  AGAMA - JENIS KELAMIN
-  NO | WILAYAH | KODE | ISLAM(LK) | ISLAM(PR) | ISLAM(JML) | KATHOLIK(LK) | KATHOLIK(PR) | KATHOLIK(JML) | KRISTEN(LK) | KRISTEN(PR) | KRISTEN(JML) | HINDU(LK) | HINDU(PR) | HINDU(JML) | BUDHA(LK) | BUDHA(PR) | BUDHA(JML) | KHONGHUCU(LK) | KHONGHUCU(PR)
-   | SUMATERA BARAT | 13 | 2813101 | 2797660 | 5610761 | 45542 | 42281 | 87823 | 24384 | 23720 | 48104 | 48 | 39 | 87 | 1685 | 1601 | 3286 | 4 | 3
-  1 | PESISIR SELATAN | 1301 | 263976 | 263285 | 527261 | 495 | 420 | 915 | 97 | 98 | 195 | 5 | 4 | 9 | 1 | 0 | 1 | 0 | 0
-  2 | SOLOK | 1302 | 204483 | 203588 | 408071 | 182 | 146 | 328 | 12 | 11 | 23 | 0 | 2 | 2 | 0 | 0 | 0 | 0 | 0
-  3 | SIJUNJUNG | 1303 | 122457 | 120631 | 243088 | 486 | 459 | 945 | 140 | 160 | 300 | 5 | 2 | 7 | 1 | 1 | 2 | 0 | 0
-  4 | TANAH DATAR | 1304 | 189956 | 190322 | 380278 | 160 | 147 | 307 | 67 | 63 | 130 | 0 | 1 | 1 | 5 | 6 | 11 | 0 | 0
-  5 | PADANG PARIAMAN | 1305 | 227331 | 225762 | 453093 | 808 | 791 | 1599 | 273 | 244 | 517 | 3 | 2 | 5 | 2 | 2 | 4 | 0 | 0
-  6 | AGAM | 1306 | 263549 | 262294 | 525843 | 2000 | 1797 | 3797 | 257 | 219 | 476 | 0 | 0 | 0 | 5 | 2 | 7 | 0 | 0
-  7 | LIMA PULUH KOTA | 1307 | 197728 | 199082 | 396810 | 306 | 267 | 573 | 148 | 148 | 296 | 0 | 0 | 0 | 1 | 2 | 3 | 0 | 0
-  8 | PASAMAN | 1308 | 154355 | 153458 | 307813 | 602 | 606 | 1208 | 94 | 87 | 181 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-  9 | KEPULAUAN MENTAWAI | 1309 | 11161 | 10537 | 21698 | 23692 | 22001 | 45693 | 14282 | 13213 | 27495 | 0 | 1 | 1 | 1 | 2 | 3 | 0 | 0
-  10 | DHARMASRAYA | 1310 | 117855 | 114731 | 232586 | 2394 | 2073 | 4467 | 329 | 300 | 629 | 2 | 1 | 3 | 1 | 1 | 2 | 0 | 0
-  11 | SOLOK SELATAN | 1311 | 91775 | 89259 | 181034 | 706 | 625 | 1331 | 109 | 91 | 200 | 1 | 0 | 1 | 4 | 3 | 7 | 0 | 0
-  12 | PASAMAN BARAT | 1312 | 218518 | 216262 | 434780 | 4111 | 3687 | 7798 | 1418 | 1413 | 2831 | 0 | 0 | 0 | 6 | 3 | 9 | 0 | 0
-  13 | KOTA PADANG | 1371 | 452011 | 453468 | 905479 | 7182 | 7048 | 14230 | 5802 | 6323 | 12125 | 26 | 20 | 46 | 1512 | 1432 | 2944 | 3 | 3
-  14 | KOTA SOLOK | 1372 | 40980 | 40663 | 81643 | 270 | 263 | 533 | 155 | 143 | 298 | 0 | 0 | 0 | 1 | 3 | 4 | 0 | 0
-  15 | KOTA SAWAHLUNTO | 1373 | 34151 | 33770 | 67921 | 179 | 159 | 338 | 59 | 62 | 121 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-  16 | KOTA PADANG PANJANG | 1374 | 31114 | 30802 | 61916 | 221 | 201 | 422 | 182 | 166 | 348 | 0 | 0 | 0 | 20 | 24 | 44 | 1 | 0
-  17 | KOTA BUKITTINGGI | 1375 | 67592 | 67345 | 134937 | 1207 | 1085 | 2292 | 566 | 591 | 1157 | 2 | 3 | 5 | 74 | 69 | 143 | 0 | 0
-  18 | KOTA PAYAKUMBUH | 1376 | 72997 | 72148 | 145145 | 442 | 408 | 850 | 342 | 328 | 670 | 4 | 3 | 7 | 49 | 51 | 100 | 0 | 0
-  19 | KOTA PARIAMAN | 1377 | 51112 | 50253 | 101365 | 99 | 98 | 197 | 52 | 60 | 112 | 0 | 0 | 0 | 2 | 0 | 2 | 0 | 0
-
-probe_xlsx: https://data.sawahluntokota.go.id/dataset/00634e10-ab39-45d7-97b2-a780a9b83d7b/resource/a0814a4c-dee3-480f-a1f6-5f3697ffa522/download/persentase-pemeluk-agama-di-kota-sawahlunto.xlsx
-  unreachable: HTTPError: HTTP Error 404: Not Found
-probe_xlsx: https://data.pasamankab.go.id/dataset/a7864d54-77da-4749-af34-83684f6e5f84/resource/241ffdf6-0b20-4e22-bdbe-59e8cfacc7b9/download/jumlah-penduduk-menurut-agama-dan-jenis-kelamin-di-kabupaten-pasaman-jiwa-2021-2023.xlsx
-  10,313 bytes
-  1 sheet(s): Sheet1
-
---- sheet 'Sheet1' (17 rows x 10 cols) --------------------
-  
-  JUMLAH PENDUDUK MENURUT AGAMA 
-  
-  AGAMA | 2021 |  | JUMLAH | 2022 |  | JUMLAH | 2023 |  | JUMLAH
-   | LAKI-LAKI | PEREMPUAN |  | LAKI-LAKI | PEREMPUAN |  | LAKI-LAKI | PEREMPUAN
-  (1) | (2) | (3) | (4) | (5) | (6) | (7) | (8) | (9) | (10)
-  ISLAM | 150620 | 149491 | 300111 | 151619 | 151042 | 302661 | 154355 | 153458 | 307813
-  KRISTEN | 589 | 582 | 1171 | 574 | 579 | 1153 | 602 | 606 | 1208
-  KATHOLIK | 83 | 79 | 162 | 93 | 86 | 179 | 94 | 87 | 181
-  HINDU | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-  BUDHA | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-  KONGHUCU | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-  KEPERCAYAAN | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-  JUMLAH | 151292 | 150152 | 301444 | 152286 | 151707 | 303993 | 155051 | 154151 | 309202
-  
-  
-  Sumber: Dinas Kependudukan dan
-
+probe_ckan: 39 host(s), timeout 12s
+  https://data.babelprov.go.id/ -> 0  timeout after 12s
+  http://data.babelprov.go.id/ -> 0  timeout after 12s
+  https://data.sultraprov.go.id/ -> 0  timeout after 12s
+  http://data.sultraprov.go.id/ -> 0  timeout after 12s
+  https://data.sulutprov.go.id/ -> 0  timeout after 12s
+  http://data.sulutprov.go.id/ -> 0  timeout after 12s
+  https://opendata.nttprov.go.id/ -> 0  DNS: no such host
+  https://satudata.nttprov.go.id/ -> 0  DNS: no such host
+  https://satudata.sultengprov.go.id/ -> 200 text/html "Satudata Sulteng"
+    /api/3/action/status_show -> 404 text/html <!DOCTYPE html> <!-- Error 404: Not Found Description: The server can not find the requested page --> <html lang
+    /api/action/status_show -> 404 text/html <!DOCTYPE html> <!-- Error 404: Not Found Description: The server can not find the requested page --> <html lang
+  https://opendata.sultengprov.go.id/ -> 0  DNS: no such host
+  https://data.riauprov.go.id/ -> 0  DNS: no such host
+  https://satudata.riau.go.id/ -> 0  DNS: no such host
+  https://opendata.riau.go.id/ -> 0  DNS: no such host
+  https://data.kaltengprov.go.id/ -> 0  DNS: no such host
+  https://satudata.kalteng.go.id/ -> 200 text/html "Satu Data"
+    /api/3/action/status_show -> 404 text/html <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>4
+    /api/action/status_show -> 404 text/html <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>4
+  https://satudata.sumutprov.go.id/ -> 0  DNS: no such host
+  https://opendata.sumutprov.go.id/ -> 0  DNS: no such host
+  https://dataku.jogjaprov.go.id/ -> 0  DNS: no such host
+  https://bappeda.jogjaprov.go.id/ -> 503 text/html 107 bytes
+    /api/3/action/status_show -> 503 text/html <html><body><h1>503 Service Unavailable</h1> No server is available to handle this request. </body></html>
+    /api/action/status_show -> 503 text/html <html><body><h1>503 Service Unavailable</h1> No server is available to handle this request. </body></html>
+  https://opendata.jogjaprov.go.id/ -> 0  DNS: no such host
+  https://satudata.kepriprov.go.id/ -> 200 text/html "Satu Data Kepulauan Riau"
+    /api/3/action/status_show -> 404 text/html <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not Found</h1></center> <hr><center>nginx</c
+    /api/action/status_show -> 404 text/html <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not Found</h1></center> <hr><center>nginx</c
+  https://opendata.kepriprov.go.id/ -> 0  DNS: no such host
+  https://satudata.gorontaloprov.go.id/ -> 0  DNS: no such host
+  https://opendata.gorontaloprov.go.id/ -> 200 text/html "Open Data Gorontalo"
+    /api/3/action/status_show -> 404 application/json { "message": "The route api/3/action/status_show could not be found.", "exception": "Symfony\\Component\\HttpKer
+    /api/action/status_show -> 404 application/json { "message": "The route api/action/status_show could not be found.", "exception": "Symfony\\Component\\HttpKerne
+  https://satudata.malutprov.go.id/ -> 200 text/html "Beranda - Satu Data Maluku Utara"
+    /api/3/action/status_show -> 404 application/json { "message": "The route api/3/action/status_show could not be found." }
+    /api/action/status_show -> 404 application/json { "message": "The route api/action/status_show could not be found." }
+  https://satudata.sulbarprov.go.id/ -> 0  DNS: no such host
+  https://opendata.lampungprov.go.id/ -> 0  timeout after 12s
+  http://opendata.lampungprov.go.id/ -> 0  timeout after 12s
+  https://satudata.jabarprov.go.id/ -> 403 text/html "Halaman Tidak Dapat Dibuka"
+    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width
+    /api/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width
+  https://opendata.sulselprov.go.id/ -> 0  DNS: no such host
+  https://data.semarangkota.go.id/ -> 403 text/html "Akses Terbatas - Khusus Indonesia"
+    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8" /> <title>Akses Terbatas - Khusus Indonesia</tit
+    /api/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8" /> <title>Akses Terbatas - Khusus Indonesia</tit
+  https://data.samarindakota.go.id/ -> 307 application/json 21 bytes
+    /api/3/action/status_show -> 404 application/json { "message": "", "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException", "file": "/
+    /api/action/status_show -> 404 application/json { "message": "", "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException", "file": "/
+  https://data.jogjakota.go.id/ -> 0  DNS: no such host
+  https://data.tangerangselatankota.go.id/ -> 200 text/html "Welcome - Portal Data Kota Tangerang Selatan"
+    /api/3/action/status_show -> 200 application/json CKAN 2.9.11
+    package_search q='agama' -> 200, 18 matches, 18 shown, printing those matching 'penduduk|pemeluk'
+      - jumlah-penduduk-menurut-kecamatan-dan-agama-di-kota-tangerang-selatan-tahun-2019: Jumlah Penduduk Menurut Kecamatan dan Agama di Kota Tangerang Selatan Data Konsolidasi Bersih (DKB) Tahun 2019  [1 res: csv]
+          CSV datastore=True 62334777-ea27-48d0-9333-8e1e5522bc90 https://data.tangerangselatankota.go.id/dataset/c282412e-9b58-4c38-b233-f8027e851686/resource/62334777-ea27-48d0-9333-8e1e5522bc90/download/1d.-data-jumlah-penduduk-per-kecamatan-menurut-agama-kota-tangerang-selatan-data-konsolidasi-ber.csv
+      - jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-tahun-2021: Jumlah Penduduk Menurut Kecamatan dan Agama di Kota Tangerang Selatan Data Konsolidasi Bersih (DKB) Tahun 2021  [1 res: csv]
+          CSV datastore=True 2575b89b-a403-4829-8aab-bdbff1785a4a https://data.tangerangselatankota.go.id/dataset/72e8d9bc-1c7d-491a-af72-77e8aa3fb18f/resource/2575b89b-a403-4829-8aab-bdbff1785a4a/download/1d.-jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-data-konsolidasi-bersi.csv
+      - jumlah-penduduk-perempuan-menurut-agama-dan-kecamatan-di-tangsel-tahun-2023: Jumlah Penduduk Perempuan Menurut Agama dan Kecamatan di Tangsel Tahun 2023  [1 res: xlsx]
+          XLSX datastore=False c4ce2f23-c84d-46ba-b8d7-cc5bc5a377a4 https://data.tangerangselatankota.go.id/dataset/6c3b5842-f7dc-4214-905c-13770b23c46d/resource/c4ce2f23-c84d-46ba-b8d7-cc5bc5a377a4/download/tabel-145.-jumlah-penduduk-perempuan-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahu.xlsx
+      - jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-tangsel-tahun-2023: Jumlah Penduduk Laki-Laki Menurut Agama dan Kecamatan di Tangsel Tahun 2023  [1 res: xlsx]
+          XLSX datastore=False f8b5f606-d344-4d6c-8b5d-151d3ab37443 https://data.tangerangselatankota.go.id/dataset/0b710695-97be-4aa3-a86e-f9fe70e06f4c/resource/f8b5f606-d344-4d6c-8b5d-151d3ab37443/download/tabel-144.-jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahu.xlsx
+      - jumlah-penduduk-perempuan-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahun-2022: Jumlah Penduduk Perempuan Menurut Agama dan Kecamatan di Kota Tangerang Selatan Tahun 2022  [1 res: csv]
+          CSV datastore=True 9ad320b5-aa4e-4702-affd-b20c6cfc7e63 https://data.tangerangselatankota.go.id/dataset/21b6e416-e01b-4242-8f82-50ee04e07e05/resource/9ad320b5-aa4e-4702-affd-b20c6cfc7e63/download/14q.-jumlah-penduduk-perempuan-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahun-2022.csv
+      - jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahun-2022: Jumlah Penduduk Laki-Laki Menurut Agama dan Kecamatan di Kota Tangerang Selatan Tahun 2022  [1 res: csv]
+          CSV datastore=True c707ee3e-13d3-4048-8cc9-9adf1b99992d https://data.tangerangselatankota.go.id/dataset/7314b73c-2be6-45e0-8155-f306bc87f0dd/resource/c707ee3e-13d3-4048-8cc9-9adf1b99992d/download/13q.-jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahun-2022.csv
+      - jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahun-2023: Jumlah Penduduk Laki-Laki Menurut Agama dan Kecamatan di Kota Tangerang Selatan Tahun 2023  [1 res: xlsx]
+          XLSX datastore=False 598148eb-cca6-4b77-baad-ca42ad8b9fbc https://data.tangerangselatankota.go.id/dataset/7f404416-1900-49d3-bc40-273dc97b1cdd/resource/598148eb-cca6-4b77-baad-ca42ad8b9fbc/download/tabel-144.-jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahu.xlsx
+      - jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-kota-tangsel-tahun-2023: Jumlah Penduduk Laki-Laki Menurut Agama dan Kecamatan di Kota Tangsel Tahun 2023  [1 res: xlsx]
+          XLSX datastore=False c2907c5d-447b-4b51-8a22-db04aa1ad0dd https://data.tangerangselatankota.go.id/dataset/a30bab2a-3d5b-4fb4-82fc-9ea4e5c86c9f/resource/c2907c5d-447b-4b51-8a22-db04aa1ad0dd/download/tabel-145.-jumlah-penduduk-perempuan-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahu.xlsx
+      (10 others not matching)
+  https://data.palangkaraya.go.id/ -> 0  ConnectionRefusedError: [Errno 111] Connection refused
+  http://data.palangkaraya.go.id/ -> 0  ConnectionRefusedError: [Errno 111] Connection refused
+  https://data.sidoarjokab.go.id/ -> 0  DNS: no such host
+  https://data.kupangkota.go.id/ -> 0  TLS: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'data.kupangkota.go.id'. (_ssl.c:1016)
+  http://data.kupangkota.go.id/ -> 0  TLS: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'data.kupangkota.go.id'. (_ssl.c:1016)
+  https://data.bukittinggikota.go.id/ -> 200 text/html "Welcome - Satu Data Bukittinggi"
+    /api/3/action/status_show -> 200 application/json CKAN 2.11.4
+    package_search q='agama' -> 200, 0 matches, 0 shown, printing those matching 'penduduk|pemeluk'
+  https://data.payakumbuhkota.go.id/ -> 200 text/html "Welcome - Open Data Kota Payakumbuh"
+    /api/3/action/status_show -> 200 application/json CKAN 2.10.1
+    package_search q='agama' -> 200, 0 matches, 0 shown, printing those matching 'penduduk|pemeluk'
+  https://data.pariamankota.go.id/ -> 0  DNS: no such host
+  https://data.sawahluntokota.go.id/ -> 200 text/html "Welcome - Satu Data Kota Sawahlunto"
+    /api/3/action/status_show -> 200 application/json CKAN 2.11.3
+    package_search q='agama' -> 200, 0 matches, 0 shown, printing those matching 'penduduk|pemeluk'
+  https://data.prabumulihkota.go.id/ -> 0  DNS: no such host
+  https://data.garutkab.go.id/ -> 200 text/html "Garut Satu Data"
+    /api/3/action/status_show -> 404 application/json { "message": "The route api/3/action/status_show could not be found.", "exception": "Symfony\\Component\\HttpKer
+    /api/action/status_show -> 404 application/json { "message": "The route api/action/status_show could not be found.", "exception": "Symfony\\Component\\HttpKerne
+probe_ckan: 14 of 39 answered; 4 speak CKAN: data.tangerangselatankota.go.id, data.bukittinggikota.go.id, data.payakumbuhkota.go.id, data.sawahluntokota.go.id
