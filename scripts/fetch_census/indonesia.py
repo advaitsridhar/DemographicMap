@@ -83,6 +83,7 @@ import urllib.parse
 from pathlib import Path
 from typing import Any
 
+from . import indonesia_portals as portals
 from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure,
                       record, write_json)
 
@@ -1127,11 +1128,64 @@ def regency_title(name: str) -> str:
     return name if name.startswith("Kota ") else f"Kabupaten {name}"
 
 
+def regency_shape_names(province: str) -> dict[str, dict[str, Any]]:
+    provinces = {s["id"]: s["name"] for s in shapes("admin1")}
+    return {s["name"]: s for s in shapes("admin2")
+            if provinces.get(s["parent"], "") == province
+            and s["name"] not in NOT_REGENCIES}
+
+
+def regency_record(name: str, province: str, fields: dict[str, Any],
+                   sources: list[dict[str, str]], resolved: str = "") -> dict[str, Any]:
+    short = re.sub(r"^(Kabupaten|Kota Administrasi)\s+", "", resolved) if resolved else name
+    return record(f"{ISO3}-{slugify(province)}-{slugify(name)}", name,
+                  level="admin2", parent=f"{ISO3}-{slugify(province)}",
+                  parent_name=province, country=ISO3,
+                  aliases=[short] if short != name else [],
+                  sources=sources, **fields)
+
+
+def portal_records(known: dict[str, dict[str, dict[str, float]]],
+                   unread: dict[str, dict[str, str]]) -> list[dict[str, Any]]:
+    """The regencies the infobox could not answer for, from the provincial and
+    regency open-data portals.
+
+    ``known`` is every regency already read, by province, which is what
+    ``resolve_pair`` scores a workbook's Christian columns against; ``unread``
+    is the ones still empty, by province, mapped to the reason they are. A
+    portal table covers a whole province and most of its units are already
+    read from their own articles; only the empty ones are written, because a
+    composition already carried is not improved by a second one of a different
+    vintage.
+    """
+    records: list[dict[str, Any]] = []
+    for source in portals.SOURCES:
+        names = regency_shape_names(source.province)
+        if not names:
+            log(f"  portals: {source.key}: no shapes under {source.province}")
+            continue
+        counts, swap = portals.readings(source, known.get(source.province, {}), names)
+        if not counts:
+            log(f"  portals: {source.key}: nothing committed under "
+                f"data/raw/indonesia_portals; run --fetch on the runner")
+            continue
+        wanted = unread.get(source.province, {})
+        filled = [n for n in counts if n in wanted]
+        log(f"  portals: {source.key} ({source.host}, {source.year}): {len(counts)} units, "
+            f"{len(filled)} of them unread -- {', '.join(sorted(filled)) or 'none'}")
+        for name in sorted(filled):
+            fields = portals.fields(source, counts[name], swap)
+            sources = [fields.pop("religion_source")]
+            records.append(regency_record(name, source.province, fields, sources))
+    return records
+
+
 def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
     provinces = {s["id"]: s["name"] for s in shapes("admin1")}
     records: list[dict[str, Any]] = []
     kinds: dict[str, int] = {}
-    unread: list[str] = []
+    unread: dict[str, dict[str, str]] = {}
+    known: dict[str, dict[str, dict[str, float]]] = {}
     counted = 0
     for shape in shapes("admin2"):
         name, province = shape["name"], provinces.get(shape["parent"], "")
@@ -1140,13 +1194,15 @@ def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
         title = regency_title(name)
         wikitext, resolved = fetch_page(title, "id")
         if not wikitext:
-            unread.append(f"{province}/{name} ({title})")
+            unread.setdefault(province, {})[name] = f"no article at '{title}'"
             continue
         reading = read_religion(wikitext, resolved)
         if not reading:
-            unread.append(f"{province}/{name}")
+            unread.setdefault(province, {})[name] = "the infobox figure is uncited, "\
+                                                    "undated or unreadable"
             continue
         kinds[reading["kind"]] = kinds.get(reading["kind"], 0) + 1
+        known.setdefault(province, {})[name] = {r["group"]: r["pct"] for r in reading["rows"]}
         fields = religion_fields(reading, resolved)
         sources = [fields.pop("religion_source")]
         head = read_population(wikitext, resolved)
@@ -1154,17 +1210,22 @@ def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
             counted += 1
             fields.update(population_fields(head, resolved))
             sources.append(fields.pop("population_source"))
-        short = re.sub(r"^(Kabupaten|Kota Administrasi)\s+", "", resolved)
-        records.append(record(f"{ISO3}-{slugify(province)}-{slugify(name)}", name,
-                              level="admin2", parent=f"{ISO3}-{slugify(province)}",
-                              parent_name=province, country=ISO3,
-                              aliases=[short] if short != name else [],
-                              sources=sources, **fields))
-    log(f"  regencies: {len(records)} read; by kind of source: "
+        records.append(regency_record(name, province, fields, sources, resolved))
+    log(f"  regencies: {len(records)} read from the infobox; by kind of source: "
         + ", ".join(f"{k} {v}" for k, v in sorted(kinds.items())))
     log(f"  regencies with a head count: {counted} of {len(records)}")
-    if unread:
-        log(f"  not read ({len(unread)}): {', '.join(unread)}")
+    flat = sorted(f"{prov}/{name}" for prov, names in unread.items() for name in names)
+    if flat:
+        log(f"  the infobox does not answer for {len(flat)}: {', '.join(flat)}")
+    from_portals = portal_records(known, unread)
+    for row in from_portals:
+        unread.get(row["parent_name"], {}).pop(row["name"], None)
+    records += from_portals
+    log(f"  regencies: {len(records)} carry a composition, {len(from_portals)} of them "
+        f"from an open-data portal")
+    still = sorted(f"{prov}/{name}" for prov, names in unread.items() for name in names)
+    if still:
+        log(f"  still not read ({len(still)}): {', '.join(still)}")
     return records
 
 
