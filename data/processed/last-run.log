@@ -1,228 +1,160 @@
-page: https://raw.githubusercontent.com/makhgal-ganbold/NSO1212/master/R/get_table.R
-  6,919 bytes
-#' @title Download a Database Table
-#'
-#' @description It downloads a database table containing statistical data from the open-data API supported by the National Statistical Office of Mongolia (NSO).
-#'
-#' @param tbl_id character string, Table identification number
-#' @param PERIOD character vector, Time
-#' @param CODE,CODE1,CODE2 character vector, Classification code (age, gender etc)
-#' @param try logical: Should the main body of the function be wrapped by the function \code{\link[base]{try}}? See details.
-#' @param timeout positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. You can not set it to less than 1 ms or 0.001 s.
-#'
-#' @details The NSO server returns "HTTP error 500" frequently. Due to the server error, it needs error handling. If \code{try} is \code{TRUE}, you must write code with error handling, as shown in the example.
-#'
-#' @return A data frame if the function is executed without error, but an object of class "try-error" containing the error message if it fails. The data frame has the following structure:
-#' \describe{
-#'  \item{TBL_ID}{Row number}
-#'  \item{Period}{Time}
-#'  \item{CODE}{Classification code}
-#'  \item{SCR_MN}{Classification name in Mongolian}
-#'  \item{SCR_ENG}{Classification name in English}
-#'  \item{CODE1}{Classification code}
-#'  \item{SCR_MN1}{Classification name in Mongolian}
-#'  \item{SCR_ENG1}{Classification name in English}
-#'  \item{CODE2}{Classification code}
-#'  \item{SCR_MN2}{Classification name in Mongolian}
-#'  \item{SCR_ENG2}{Classification name in English}
-#'  \item{DTVAL_CO}{Datum}
-#' }
-#' @export
-#'
-#' @importFrom httr POST
-#' @importFrom utils type.convert
-#'
-#' @examples
-#' nso.data <- get_table(
-#'   tbl_id = "DT_NSO_2400_015V2",
-#'   PERIOD = make_period(start = "201711", end = "202103", period = "M"),
-#'   CODE = c("10", "11"),
-#'   CODE1 = "11",
-#'   try = TRUE,  # to prevent a server error
-#'   timeout = 4
-#' )
-#' if (!inherits(nso.data, "try-error")) {
-#'   print(nso.data)
-#' }
-#' @seealso \link{all_tables}, \link{get_table_info}, \link{get_sector_info}
-#' @references \url{http://opendata.1212.mn/en/doc/Api/POST-api-Data}
+probe_pdf: https://unstats.un.org/unsd/demographic/sources/census/wphc/North_Korea/Final%20national%20census%20report.pdf
+  1,423,964 bytes
+  278 pages
+probe_pdf: 278 pages, printing [13, 14, 18, 7, 8]
 
-get_table <- function (tbl_id, PERIOD = NULL, CODE = NULL, CODE1 = NULL, CODE2 = NULL, try = FALSE, timeout = Inf) {
+--- page 13 ----------------------------------------------------
+2008 Census of Population of DPR Korea
+7
+Concepts and Definitions of Census Terms
+This section lists and explains the main concepts and definitions of terms as they were used
+in the collection of data during the 2008 Census.
+Dwelling unit
+Dwelling unit refers to a house or a flat that was designed and intended to be the living
+quarter of one household.   A dwelling unit ca n be a detached and independent physical
+structure or it can be a part of an apartment building.
+Household
+A household is a social unit consisting of one or more persons who sleep in the same
+dwelling unit and have a common arrangement for economic life and consumption of food.
+The persons who comprise a household are usua lly, but not always, re lated to one another
+by kinship.  Most often, a household consists of a family unit plus one or more other
+relatives.  A person who lives alone is also considered a household.
+ Head of household
+In regular households, the head of household is usually the person w ho is responsible for
+all members, who makes the major decisions ab out family affairs and who is usually the
+economic provider for the family.
+Household member
+A person who usually resides in  a household, whether registered  or not, is considered a
+household member for census purposes. More specifically a household member is:
+• A person who is registered as a member  of the household and living in that
+household as the census reference time
+• A person who is registered as a member  of the household but  living outside the
+country
+• A person who is temporarily registered a nd living in that household at the day of
+census
+• A person who is in the process of moving to another residence but whose registration
+still remains with the original household;
+• A person who is in the pr ocess of moving to another residence and whose
+registration has already been deleted at the ri/up/gu/dong office but still staying in
+the household at the time of the census.
+• A child who was born before October 1 2008 but still not registered in the office
+• A person who used to stay in the household but died after October 1 2008.
 
-  tbl_id <- toupper(tbl_id)
+--- page 14 ----------------------------------------------------
+2008 Census of Population of DPR Korea
+8
+Institutional or collective living quarters
+Institutional or collective living quarters are structurally separate and independent places of
+abode intended for habitation by large groups of individuals under one management.  They
+include:
+• Boarding houses, dormitories
+• Homes for the aged, sanatoria, rehabilitation centers
+• Orphanages, baby homes
+• Penal institutions, military camps
+Institutional population
+Institutional population refers to  all the persons who live (or temporarily) in institutional
+living quarters. However, officials and admi nistrative personnel of institutional living
+quarters are not included in the institutiona l population since they are enumerated as
+members of their regular households.
+Nuclear household
+A nuclear household is a type of househol d whose members comprise one and only one
+basic family unit, that is, a married couple with or without unmarri ed children; or, one
+parent and at least one unmarried child.  A nuclear household should not have a non-
+relative as member.
+Extended household
+An extended household is a type of househol d whose members comprise one or more
+nuclear families living together in one housing unit; or, one nuclear family with at least one
+other relative of the househol d head.  Like a nuclear household, an extended household
+should not have a nonrelative as member.
+Class of Labor
+Class of worker refers to one of the three cate gories into which the labor force is divided,
+namely:  farmer, official and worker.  Farm ers refer to persons who work in state or
+cooperative farms as agricultural worker.  Wo rkers are those who are employed in state
+enterprises and state organs doi ng skilled or unskilled labour .  Officials refer to those
+employed in state enterprises and state organs in senior positions engaging mainly in
+mental work.
 
-  # set query
+--- page 18 ----------------------------------------------------
+2008 Census of Population of DPR Korea
+12
+Table 50. Households  by Source of Water Supply,  by Province and by Urban-Rural .................... 252
+Table 51.  Households  by Type of Toilet Facility, by Province and by Urban-Rural ...................... 254
+Table 52. Households by Type of Heating System Used,  by Type of Occupied Dwelling Unit,
+by Province and by Urban-Rural ....................................................................................... 256
+Table 53.  Households by Type of Cooking Fuel Used  by Province and by Urban-Rural ............... 262
 
-  query <- list(tbl_id = tbl_id)
-  sapply(X = c("PERIOD", "CODE", "CODE1", "CODE2"), FUN = function (arg.name) {
-    arg <- get(arg.name)
-    if (!is.null(arg)) {
-      if (!is.vector(arg, mode = "character")) {
-        stop(paste0(arg.name, " is not a character vector."))
-      }
-      if (length(arg) == 1) {
-        arg <- c(arg, "")
-      }
-      query[[arg.name]] <<- arg
-    }
-  })
+--- page 7 ----------------------------------------------------
+2008 Census of Population of DPR Korea
+1
+Overview of the 2008 Census of Population
+Introduction
+The Democratic People’s Republic of Korea (DPRK)  is situated in the north eastern part of
+Asia.  It has a total land area of about 120 thousand square kilometers of which 80 percent are
+mountains.  Administratively, the entire country is divided into nine provinces and the capital
+city of Pyongyang.   Provinces are divided into cities (districts) and counties.  A county is
+further subdivided into sm aller geographic areas called ri, (gu, dong) and the county town
+called up.  Cities (districts), on the other hand, consist of administrative areas known as dong.
+In big cities, the dongs are grouped into administrative units called districts.  For purposes of
+the census, the ri/up/gu/dong was divided into smaller area s known as enumeration areas.
+Each enumeration area had an average of about 150 households if it was in the rural area; 180
+households if urban.
+The first modern census of the population of DPRK was conducted in 1993.  In 2008, the
+govemment of the DPR Korea launched its seco nd census of population after15 years.  The
+legal basis for the latest census was the Cabinet Declaration No. 33 which was enacted in
+October, 2006.
+The main objective of the 2008 Census of Populat ion was to make an accurate count of the
+total number of citizens of the country and to record their demographic, social and economic
+characteristics at every administrative level.   Th e data will be used for state administration of
+the country and for the formulation of policies that are relevant to the social and economic
+development of the nation.
+Structural Organization for the Census
+For the successful implementation of the census, a National Census Steering Committee
+(NCSC) was organized with counterpart committees at th e provincial and city/county
+administrative areas. It was headed by the Vi ce Premier and its members included the Vice
+Ministers of various ministri es.   The NCSC is both a po licy executing and a coordinating
+body.  It issued general direct ions and provided overall guida nce and supervision in the
+implementation of the census.  It coordinated the activities of different ministries in their role
+as cooperating agencies for the census.
+The Central Bureau of Statistics (CBS), the government agency responsible for the production
+of statistics on all aspects of the economy, was responsible for the planning and
+implementation of the population census.  All provincial and city/count y statistical offices
+were also involved in the implementation of the census in their respective areas.
+The manpower that carried out the enumera tion for the census was about 35,000 enumerators
+(EN) and nearly 8,000 team supervisors (TS).  They were recruited and trained specially for
+this purpose from the area of their assignment.  Some of the regular staff of the provincial and
+city/county statistical offices were also invol ved in the census as census area supervisors
+(CAS). The census area supervisors were re sponsible for organizing, coordinating and
+supervising data collection activities at county level.
 
-  expr = expression({
-
-    # get response
-
-    url <- "http://opendata.1212.mn/api/Data?type=json"
-    encode = "json"
-    if (is.infinite(timeout)) {
-      response <- httr::POST(url = url, body = query, encode = encode)
-    } else {
-      response <- httr::POST(url = url, body = query, encode = encode, httr::timeout(timeout))
-    }
-
-    # response <- httr::POST(
-    #   url = "http://opendata.1212.mn/api/Data?type=json",
-    #   body = paste0('{"tbl_id": "', tbl_id, '", "CODE": ["10", "11"], "CODE1": ["11"]}'),
-    #   httr::content_type("application/json")
-    # )
-
-    # check HTTP status code
-
-    if (response$status_code != 200) {
-      stop(paste0("HTTP status code: ", response$status_code))
-    }
-
-    # response to list
-
-    data.object <- jsonlite::parse_json(httr::content(response, as = "text", type = "application/json", encoding = "UTF-8"))
-
-    # Check response
-
-    if (data.object$Response != "success") {
-      stop("API Error")
-    }
-
-    # DataList to data frame
-
-    df <- as.data.frame(do.call(
-      what = rbind,
-      args = lapply(
-        X = data.object$DataList,
-        FUN = function(x) {
-          x[sapply(X = x, FUN = is.null)] <- NA # Replace NULL by NA
-          unlist(x) # convert a list to a vector
-        }
-      )
-    ))
-
-    # attempts to coerce variables into numeric
-
-    var.names <- names(df)
-    df[var.names] <- lapply(X = df[var.names], FUN = utils::type.convert, as.is = TRUE, numerals = "no.loss")
-
-    # result
-
-    df
-
-  })
-  if (try) {
-    return(try(expr = eval(expr), silent = TRUE))
-  }
-  eval(expr)
-
-}
-
-#' @describeIn get_table It is used to prepare values for the argument \code{PERIOD} of the function \link{get_table}.
-#' @param start,end The starting and stopping moments of a period have the following formats: "YYYY", "YYYYMM", "YYYYMMDD", "YYYYQQ". Notations YYYY, MM, DD, and QQ, respectively, indicate a date's year, month, day, and quarter. If necessary, write it as a number that has a leading zero.
-#' @param period One of the following letters: "Y" (default), "M", "D", and "Q" respectively represent periods yearly, monthly, daily, and quarterly. There is another value (F) that means no specific time period; you cannot use it for this function.
-#'
-#' @return A character vector that contains an API compatible period
-#'
-#' @export
-
-make_period <- function (start, end = NULL, period = "Y") {
-  if (is.null(end)) {
-    date <- Sys.Date()
-    if (period == "Y") {
-      end <- format(date, "%Y")
-    } else if (period == "M") {
-      end <- format(date, "%Y%m")
-    } else if (period == "D") {
-      end <- format(date, "%Y%m%d")
-    } else if (period == "Q") {
-      end <- paste0(format(date, "%Y"), sub(pattern = "Q", replacement = "0", x = quarters(date), fixed = TRUE))
-    }
-  }
-  if (period == "Y") {
-    start <- as.integer(substr(x = start, start = 1, stop = 4))
-    end <- as.integer(substr(x = end, start = 1, stop = 4))
-    return(as.character(start:end))
-  } else if (period == "M") {
-    start <- paste0(substr(x = start, start = 1, stop = 6), "15")
-    end <- paste0(substr(x = end, start = 1, stop = 6), "15")
-    return(format
-page: https://raw.githubusercontent.com/makhgal-ganbold/NSO1212/master/R/all_tables.R
-  2,767 bytes
-#' @title Brief Information about All Database Tables
-#'
-#' @description Brief information about all available database tables on the open-data API, which is supported by the National Statistical Office of Mongolia (NSO)
-#'
-#' @param try logical: Should the body of the function be wrapped by the function \code{\link[base]{try}}? See details.
-#' @param timeout positive numeric or \code{Inf}: The number of seconds to wait for a response from the NSO server. You can not set it to less than 1 ms or 0.001 s.
-#' @param na.rm logical: If \code{TRUE}, it removes empty rows in a data frame that is the result of this function.
-#'
-#' @details The NSO server returns "HTTP error 500" frequently. Due to the server error, it needs error handling. If \code{try} is \code{TRUE}, you must write code with error handling, as shown in the example.
-#'
-#' @return If the function is executed without error, it returns a data frame with brief information about all available database tables. Otherwise, it returns a class "try-error" object containing the error message. The data frame has the following structure:
-#' \describe{
-#'  \item{rownum}{Row number}
-#'  \item{list_id}{Sector number}
-#'  \item{tbl_id}{Table identification number}
-#'  \item{tbl_nm}{Table name in Mongolian}
-#'  \item{tbl_eng_nm}{Table name in English}
-#'  \item{unit_id}{Unit code}
-#'  \item{cd_nm}{Unit name in Mongolian}
-#'  \item{cd_eng_nm}{Unit name in English}
-#'  \item{strt_prd}{Start date}
-#'  \item{end_prd}{Finish date}
-#'  \item{prd_se}{Time frequency}
-#'  \item{lst_chn_de}{Last update date}
-#' }
-#' @export
-#'
-#' @importFrom jsonlite fromJSON
-#'
-#' @examples
-#' all.tables <- all_tables(try = TRUE, timeout = 4)
-#' if (!inherits(all.tables, "try-error")) {
-#'   str(all.tables)
-#' }
-#' @seealso \link{get_table}, \link{get_table_info}, \link{get_sector_info}
-#' @references \url{http://opendata.1212.mn/en/doc/Api/GET-api-Itms}
-
-all_tables <- function (try = FALSE, timeout = Inf, na.rm = FALSE) {
-
-  expr <- expression({
-    url <- "http://opendata.1212.mn/"
-    path <- "api/Itms"
-    query <- list(type = "json")
-    if (is.infinite(timeout)) {
-      response <- httr::GET(url = url, path = path, query = query)
-    } else {
-      response <- httr::GET(url = url, path = path, query = query, httr::timeout(timeout))
-    }
-    if (response$status_code != 200) {
-      stop(paste0("HTTP status code: ", response$status_code))
-    }
-    all.tables <- jsonlite::fromJSON(httr::content(response, as = "text", type = "application/json", encoding = "UTF-8"))
-    if (na.rm) {
-      all.tables <- stats::na.omit(all.tables)
-    }
-    all.tables
-  })
-  if (try) {
-    return(try(expr = eval(expr), silent = TRUE))
-  }
-  eval(expr)
-
-}
-
+--- page 8 ----------------------------------------------------
+2008 Census of Population of DPR Korea
+2
+The overall structure of the organization of the 2008 Census of Population is shown below.
+Census Enumerator
+Census Area Supervisor
+Director
+Provincial Statistics
+Office
+Dep’t of Population and
+Labor Statistics
+CBS
+Director
+City (District)/County
+Statistics Office
+Provincial Computer
+Center
+Provincial Census
+Steering Committee
+City/County Census
+Steering Committee
+Team Supervisor Head of ri/up/gu/dong
+Office
+Information and
+Technology Dep’t
+CBS
+Deputy Director General
+CBS
+National Census
+Steering Committee
+Deputy Director General
+CBS
