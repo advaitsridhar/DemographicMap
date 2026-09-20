@@ -767,6 +767,14 @@ def probe() -> int:
     for term in terms:
         hits = [n for n, page in enumerate(pages, 1) if term in page.lower()]
         log(f"  {term!r}: {len(hits)} of {len(pages)} pages {hits[:12]}")
+    # And the sheet that says what Table 2's universe leaves out, which the
+    # run itself never fetches: one page, the other DPRK file the Statistics
+    # Division serves.
+    sheet = page_texts(download(
+        PRELIM, RAW / "northkorea" / "dprk-2008-census-preliminary.pdf"))
+    for line in sheet[0].splitlines():
+        if "Total" in line or "military camps" in line:
+            log(f"  preliminary sheet: {' '.join(line.split())}")
     return 0
 
 
