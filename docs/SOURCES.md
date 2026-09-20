@@ -7683,19 +7683,91 @@ invisible error; a missing one is a visible gap. The districts wait for a
 pass that can establish the parent from a P-code register rather than guess
 it.
 
+### The names, declared rather than guessed
+
+A file of 662 rows is worth what reaches a shape, and the first measurement
+of that was unpleasant: **96 rows matched no shape at all, and three matched
+the wrong one.**
+
+The wrong ones are the part that matters. `build_entities.match_name` tries
+an exact name, then declared aliases, then a *unique* prefix, then unique
+containment. Its prefix pass joined CLEAR Global's `Papua Barat` to the shape
+called **Papua** — "Papua" starts "Papua Barat", and no row was named Papua
+to out-rank it — so West Papua's languages would have been painted on the
+province next door while West Papua itself stayed blank, with nothing on the
+map to say so. `Kepulauan Riau` reached **Riau** and `Maluku Utara` reached
+**Maluku** exactly the same way. Those two were caught, but only by accident:
+a row really was named Riau and a row really was named Maluku, so
+`resolve_collisions` saw two claims on one shape and refused both. The third
+had no rival and went through silently. *An unmatched row is a visible gap; a
+mis-matched one is invisible and worse* — and this was the mechanism by which
+a mis-match gets made.
+
+So the names are now **declared**, in `BOUNDARY_ALIASES` in
+`scripts/fetch_census/clear_global.py`: 68 entries over 14 countries, each
+one a spelling or a translation of the same place, and each right-hand side a
+name that exists in this repository's own `site/data/admin1/<ISO>.json`. That
+last point is what makes a declaration better than a guess — it can be
+checked, and `tests/test_clear_global.py` checks it, along with the rule that
+no two rows of one country may be declared onto one shape.
+
+| | CLEAR Global writes | the boundary file writes |
+| --- | --- | --- |
+| Indonesia (24) | `Sumatera Utara`, `Jawa Barat`, `Papua Barat` | North Sumatra, West Java, West Papua |
+| Iraq (6) | `Ninewa`, `Thi Qar`, `Kerbala` | Ninawa, Dhi Qar, Karbala |
+| Haiti (6) | `West`, `South-East` | Département de l'Ouest, Département du Sud-Est |
+| The Gambia (6) | `Upper River`, `West Coast` | Basse, Brikama — the town each region is run from |
+| Tanzania (5) | `Kaskazini Unguja`, `Mjini Magharibi` | Zanzibar North, Zanzibar Urban/West |
+| DR Congo (4) | `Bas-Uele`, `Nord-Kivu` | Lower Uele, North Kivu |
+| Cambodia (3) | `Banteay Meanchey` | Bantey Meanchey — the boundary file's own misspelling |
+| Philippines (3) | `National Capital Region (NCR)` | NCR |
+| Somalia (3) | `Middle Shabelle` | Middle Shebelle |
+| and El Salvador, Morocco, Mauritius, Kyrgyzstan, Congo (9 between them) | | |
+
+**What is deliberately not declared**, because a gap is the cheaper mistake:
+
+* **Botswana's Gaborone, Francistown, Lobatse, Selibe Phikwe and Jwaneng.**
+  They are towns with a row of their own and no first-level shape to join to.
+  Nothing is missing; there is nowhere to put them.
+* **Tanzania's Songwe**, split out of Mbeya in 2016, after the boundary file
+  was drawn, and **Kyrgyzstan's Bishkek (city)**, for Botswana's reason.
+* **Ukraine, Ethiopia, Benin, Mali, Nepal, Namibia, Niger, Sierra Leone and
+  South Africa** — 24 rows that would gain nothing. Each of those countries
+  already carries language from its own census, and this file sits first in
+  `ADAPTER_FILES` precisely so that a census beats it. Aliasing them would buy
+  24 fresh chances to mis-match and not one figure. (South Africa's row is
+  also spelled `Nothern Cape` in CLEAR Global's own file.)
+
+Declaring the 68 took the file from **553 rows reaching a shape to 620**.
+
 ### What landed
 
-**662 first-level units in 47 countries.** Fourteen of them had **no language
-at any level** on this map before: Armenia (11), Belarus (6), Bolivia (9),
-Cambodia (25), DR Congo (25), El Salvador (14), Guatemala (22), Haiti (10),
-Indonesia (33), Iraq (15), Kyrgyzstan (8), Paraguay (15), Philippines (17)
-and Somalia (17) — 227 units. The other 33 countries already carry language
-from Afrobarometer or from their own census, and there this file fills only a
-region those sources are short of, because it ranks below them.
+**662 first-level units in 47 countries are written; 620 reach a shape.** Of
+the 42 that do not, 31 find no shape and 11 are refused as collisions — two
+rows of one country claiming one boundary, which this build will not settle
+by guessing. Every one of those 42 is a stated gap.
 
-Indonesia is the one worth naming: 33 provinces, from the 2010 census through
-IPUMS, on a map that had religion for all 514 regencies and language for
-none of them.
+Of the 620, **252 land on a unit that has no language on this map from any
+other source.** The remaining 368 land under a census or an Afrobarometer
+round that outranks them, which is this file's position in `ADAPTER_FILES`
+working as intended: a secondary tabulation may fill a hole, never overwrite
+the thing it was tabulated from. So the honest measure of what this file adds
+is **252 units, not 662.**
+
+Fourteen countries had **no language at any level** here before, and 225 of
+those 252 are in them:
+
+| | | | |
+| --- | --- | --- | --- |
+| Indonesia 33 | Cambodia 25 | DR Congo 24 | Guatemala 22 |
+| Philippines 17 | Somalia 17 | Iraq 15 | Paraguay 15 |
+| El Salvador 14 | Armenia 11 | Haiti 10 | Bolivia 9 |
+| Kyrgyzstan 7 | Belarus 6 | | |
+
+Indonesia is the one worth naming: 33 of its 34 provinces, from the 2010
+census through IPUMS, on a map that had religion for all 514 regencies and
+language for none of them. Nine of those 33 would have arrived before the
+alias table; one of the nine would have been wrong.
 
 ## Collection policy
 
