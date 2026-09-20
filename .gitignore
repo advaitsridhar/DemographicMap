@@ -85,6 +85,10 @@ data/raw/*
 # re-derivable with scripts/fetch_census/indonesia_portals.py --fetch.
 !data/raw/indonesia_portals/
 !data/raw/indonesia_portals/*.csv
+# One row per regency, summed out of HAPI's age bands; re-derivable
+# with scripts/fetch_census/indonesia_hapi.py --fetch.
+!data/raw/indonesia/
+!data/raw/indonesia/*.csv
 # ...and the pages of Mongolia's 22 aimag census books that carry ethnic
 # group and religion, laid out as text. The books themselves are 300 MB of
 # scanned-quality PDF on the Internet Archive and the site that served them
