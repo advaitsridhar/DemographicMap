@@ -30,13 +30,27 @@ as gaps.
 
 **Religion as a one-row composition.** A province's record carries a single
 group -- "Roman Catholic 68.4%" for Bougainville -- because that is the whole
-of what the office publishes for a province. The panel says so by itself:
+of what the office publishes for a province. The shares run from 19.7%
+(Southern Highlands, Hela) to 68.4% (Bougainville), so for most provinces the
+record describes under half the people, and the panel says so by itself:
 shares that fall short of 100 draw the chip "describes 68.4% of the
-population". The rest of each province is not broken down anywhere this
-project could reach. The National Report's foreword says the full tables are
-in "the 22 Provincial Reports"; the office's Population & Housing download
-category holds ten files and none of them is a provincial report, and no
-mirror carries one (see docs/SOURCES.md).
+population". ``report_coverage`` prints every province's share into the run's
+log and refuses a run where any of them reached the threshold that chip stops
+at, because a lone denomination shown as a whole composition would be a quiet
+untruth.
+
+**The rest of each province is sold, not published.** Appendix 4 of the 2011
+National Report lists the census products and their prices: the *Provincial
+Report* at K40 a province, the *Basic Tables* -- "a set of 31 cross-classified
+tables covering the main census topics at national and provincial level" -- at
+K40 a set, the *Table Retrieval System* CD-ROM, which holds those tables down
+to district and LLG, at K2,000, and a *User Service* that will prepare a table
+"on application". None of them is a file. A second round of work looked for
+any of it elsewhere -- the office's own complete file list, the DHS
+StatCompiler API and its 519-page report, the 2022 SDES, the 2000 census, the
+Internet Archive's copy of the NSO's old PRISM site, Wikipedia -- and found
+religion published for Papua New Guinea as a country and never for a province.
+Every route and what it answered is in docs/SOURCES.md.
 
 **Reading the figures.** Both PDFs extract through pypdf with their thousands
 separators intact but their digits broken up by kerning -- Milne Bay's
@@ -245,19 +259,24 @@ REDRAWN_NOTE = (
     "district, so every one of this province's shapes may have lost ground to "
     "it. A count put on the wrong one would be invisible, so none is put.")
 RELIGION_NOTE = (
-    "{group} was the largest religious affiliation of this province's citizen "
-    "population at the 2011 census, at {pct}% -- the one religion figure the "
-    "National Statistical Office publishes for a province, in the Summary "
-    "Indicators of its 2011 National Report. The other {rest}% is not broken "
-    "down: the census asked religion and the office published the full "
-    "denominational table for the country alone, the provincial tables being "
-    "in the 22 Provincial Reports, which it does not host.")
+    "{group} was the largest denomination in this province at the 2011 "
+    "census, with {pct}% of its citizen population -- and it is the only "
+    "religion figure published for a province, the \"Main religion\" row of "
+    "the Summary Indicators in the National Statistical Office's 2011 National "
+    "Report. The remaining {rest}% is not a gap in the census but in what was "
+    "published: the office sells the provincial tables rather than publishing "
+    "them -- its Provincial Report at K40 a province and its 31 cross-"
+    "classified Basic Tables at K40 a set, on paper and CD-ROM -- and no "
+    "denominational breakdown for any province is online anywhere this project "
+    "could reach.")
 DISTRICT_RELIGION_GAP = (
     "The 2011 census asked religion, and the National Statistical Office "
     "publishes no answer below the province: its 2011 National Report gives "
     "each province one figure (its largest denomination) and the country the "
     "full table, and the 2024 census's Final Figures, the only district-level "
-    "release, carries no religion on any of its 35 pages.")
+    "release, carries no religion on any of its 35 pages. The district tables "
+    "exist in the office's priced Table Retrieval System CD-ROM, which is not "
+    "published online.")
 PROVINCE_RELIGION_GAP = (
     "The 2011 census asked religion, but the Summary Indicators of the "
     "National Statistical Office's 2011 National Report, the only provincial "
@@ -702,6 +721,38 @@ REDRAWN_SHAPES: dict[str, tuple[str, ...]] = {
 }
 
 
+# The share above which the dashboard stops calling a composition partial
+# (site/js/dashboard.js: a total under 95 draws "describes N% of the
+# population"). Every PNG province must sit below it, because every one of
+# them carries a single denomination and a reader has to be told so.
+PARTIAL_BELOW = 95.0
+
+
+def report_coverage(religion: dict[str, tuple[str, float]]) -> None:
+    """What share of each province the one published denomination describes.
+
+    The figure on a province is one denomination, so the record describes
+    between a fifth and two thirds of the people on it and the panel says so
+    by itself -- but only while every share stays under the threshold the
+    dashboard draws that chip at. A province that crept over it would show as
+    a complete composition of one group, which is the kind of quiet
+    mis-statement this project ranks worse than an empty cell, so the run
+    refuses rather than writing it.
+    """
+    covered = sorted(((pct, name) for name, (_, pct) in religion.items()))
+    over = [name for pct, name in covered if pct >= PARTIAL_BELOW]
+    if over:
+        raise SystemExit(f"png: {over} carry a single denomination at "
+                         f"{PARTIAL_BELOW}% or more, which the panel would show "
+                         f"as a whole composition; refusing to publish that")
+    log(f"  religion coverage: one denomination per province, describing "
+        f"{covered[0][0]}% of {covered[0][1]} at the least and "
+        f"{covered[-1][0]}% of {covered[-1][1]} at the most; all 22 below "
+        f"{PARTIAL_BELOW}%, so every panel says what share it describes")
+    for pct, name in covered:
+        log(f"    {name:34s} {religion[name][0]:22s} {pct:5.1f}%")
+
+
 def build() -> list[dict[str, Any]]:
     booklet = page_texts(FINAL_FIGURES_URL, "2024-final-figures.pdf")
     report = page_texts(NATIONAL_REPORT_URL, "2011-national-report.pdf")
@@ -711,6 +762,7 @@ def build() -> list[dict[str, Any]]:
 
     records = [province_record(name, provinces[name], religion.get(name))
                for name in PROVINCES]
+    report_coverage(religion)
 
     written = skipped = 0
     for province in PROVINCES:

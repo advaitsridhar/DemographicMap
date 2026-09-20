@@ -238,6 +238,20 @@ Male 26.1 27.8 28.5 na
         self.assertEqual(read["Manus"], ("Roman Catholic", 38.5))
         self.assertEqual(len(read), 22)
 
+    def test_every_province_is_described_by_less_than_the_whole_of_it(self):
+        # The panel draws "describes N% of the population" under 95%, and one
+        # denomination per province has to fall under it on all 22 or a
+        # reader is shown a partial composition as a complete one.
+        for province, (_, pct) in self.read.items():
+            self.assertLess(pct, png.PARTIAL_BELOW, province)
+        png.report_coverage(self.read)
+
+    def test_a_province_the_panel_would_call_complete_is_refused(self):
+        crept = dict(self.read, Manus=("Roman Catholic", 96.0))
+        with self.assertRaises(SystemExit) as caught:
+            png.report_coverage(crept)
+        self.assertIn("Manus", str(caught.exception))
+
     def test_the_labels_are_the_projects_canon(self):
         import canonical_groups as cg
         for label in set(png.DENOMINATIONS.values()):
@@ -344,6 +358,18 @@ class TheDeclarationsAboutWhatTheCensusAsks(unittest.TestCase):
     def test_the_ethnicity_declaration_names_the_questionnaire(self):
         note = common.collection_policy("PNG", "ethnicity")
         self.assertIn("33 questions", note)
+
+    def test_the_note_says_the_figure_is_the_largest_denomination(self):
+        note = png.RELIGION_NOTE.format(group="Roman Catholic", pct="40.0",
+                                        rest="60.0")
+        self.assertIn("largest denomination", note)
+        self.assertIn("40.0%", note)
+        # And what the other 60% is: unpublished, not uncounted.
+        self.assertIn("60.0%", note)
+        self.assertIn("sells", note)
+
+    def test_the_district_gap_names_what_holds_the_district_tables(self):
+        self.assertIn("Table Retrieval System", png.DISTRICT_RELIGION_GAP)
 
     def test_a_declaration_never_states_a_share(self):
         # The rule the Maldives' "100% Islam" was written down to prevent.
