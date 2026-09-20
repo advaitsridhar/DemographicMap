@@ -1,95 +1,289 @@
-probe_xlsx: https://data.humdata.org/dataset/c20e57ca-dae8-4c65-896b-bd4ba25ca0a6/resource/28df5ba6-40a6-4df0-886d-ee4c0817ba6b/download/equity-analysis_base-layer.xlsx
-  57,939 bytes
-  3 sheet(s): Dataset_Deprivations, Admin1_BaseLayer, Admin2_BaseLayer
-
---- sheet 'Dataset_Deprivations' (17 rows x 2 cols) --------------------
-  Index | Description
-  Base_Layer | The Base Layer Index is a composite meas
-  Deprivation | The Deprivation Index is a composite sta
-  Hazard | The Hazard Index is a composite indicato
-
---- sheet 'Admin1_BaseLayer' (19 rows x 18 cols) --------------------
-  PCODE | PROVINCE | Deprivation_Index | Hazard_Index | Base_Layer_Index | var_bl_girls | var_bl_boys | var_bl_0_4 | var_bl_5_9 | var_bl_10_14 | var_bl_15_17 | var_bl_15_19 | var_bl_Other | var_bl_LT | var_bl_MKH | var_bl_CT | var_bl_HMM | var_bl_HH_with_DSB
-  LA01 | Vientiane Capital | 4.7562436187823165 | 5.056375963692298 | 4.906309791237307 | 4.837627464112145 | 4.975350939417471 | 5.674848145735609 | 5.713862837167885 | 5.038099870817085 | 3.3377312764868505 | 4.386732732395052 | 6.549393997203533 | 6.2341361201268946 | 1.9037617225502725 | 5.446186597075585 | 3.475368042989016 | 4.175671405199873
-  LA02 | Phongsaly | 4.896148580992516 | 4.139346288050297 | 4.517747434521406 | 4.485971955241241 | 4.54959838074226 | 4.72741816072463 | 4.931053170109234 | 5.011816329982884 | 3.458609440573453 | 4.499254048589822 | 2.962909028122479 | 3.0003892334851656 | 3.1434061456891884 | 8.648456670693184 | 4.037571161219466 | 4.174972054914624
-  LA03 | Luangnamtha | 3.697691276023528 | 4.375901541123372 | 4.03679640857345 | 4.0036738402736445 | 4.0699961716110105 | 4.33222330735169 | 4.394063533127768 | 4.3231861651456835 | 3.1346107544774076 | 4.0259854294762 | 2.6389449014328816 | 2.8414815091335788 | 3.236005792964861 | 6.609942677000008 | 3.716510039587193 | 3.898648035451939
-
---- sheet 'Admin2_BaseLayer' (149 rows x 20 cols) --------------------
-  PCODE | D-CODE | Province | District | Deprivation_Index | Hazard_Index | Base_Layer_Index | var_bl_girls | var_bl_boys | var_bl_0_4 | var_bl_5_9 | var_bl_10_14 | var_bl_15_17 | var_bl_15_19 | var_bl_Other | var_bl_LT | var_bl_MKH | var_bl_CT | var_bl_HMM | var_bl_HH_with_DSB
-  LA01 | LA0101 | Vientiane Capital | Chanthabuly | 4.423428473676175 | 4.094488091525623 | 4.258958282600899 | 4.400641063792384 | 4.118720636600841 | 5.218335377559619 | 4.981635037017796 | 4.044790223032076 | 2.905607856680969 | 3.758427478457937 | 5.067184821787428 | 4.169348438467761 | 1.9882620664633988 | 4.864965297146821 | 2.7641105503490353 | 2.064282452963536
-  LA01 | LA0102 | Vientiane Capital | Sikhottabong | 4.6425227480638585 | 4.576220605933831 | 4.609371676998845 | 4.666697034297166 | 4.552291639481608 | 5.224873043346637 | 5.248034097396386 | 4.81483022049195 | 3.2478954007598313 | 4.224745087921338 | 5.114484148839365 | 4.913857831216387 | 2.1403026491549313 | 5.1879189945957815 | 3.0429650418509087 | 2.8168008806510425
-  LA01 | LA0103 | Vientiane Capital | Xaysetha | 4.85852584842696 | 4.4724636076040145 | 4.665494728015487 | 4.589827850713287 | 4.741594456261882 | 5.462566718045504 | 5.476582379243991 | 4.7086706370668425 | 3.1459288894090576 | 4.099693396139088 | 5.421350807941349 | 4.920918664280031 | 2.0783600877190995 | 5.212461836202567 | 3.071902329034924 | 3.091181867267312
-
-probe_xlsx: https://data.humdata.org/dataset/c20e57ca-dae8-4c65-896b-bd4ba25ca0a6/resource/a1c600e7-49ca-4097-8a79-fd03e69c1a0f/download/equity-analysis_deprivation-layer.xlsx
-  151,445 bytes
-  4 sheet(s): Dataset_Deprivations, Description_Deprivations, Admin1_Deprivations, Admin2_Deprivations
-
---- sheet 'Dataset_Deprivations' (36 rows x 5 cols) --------------------
-  Deprivations | Section | Data source | Data Disaggregation | Notes
-  Lack of birth registration | Child Protection | LSIS III, 2023 | Province (ADM1)
-  Exposure to violent discipline | Child Protection | LSIS III, 2023 | Province (ADM1)
-  Child labor and hazardous work | Child Protection | LSIS III, 2023 | Province (ADM1)
-
---- sheet 'Description_Deprivations' (93 rows x 4 cols) --------------------
-  Variable | Variable code | Variable index code | Index code
-  Children without birth registration (No. | var_DCA1A | var_DCA1_cdf | var_DC_cdf
-  Children without birth registration (%) | var_DCA1B
-  Children age 1-14 years who experienced  | var_DCB1A | var_DCB1_cdf
-
---- sheet 'Admin1_Deprivations' (19 rows x 147 cols) --------------------
-  PCODE | PROVINCE | var_DCA1A | var_DCA1B | var_DCB1A | var_DCB1B | var_DCC1A | var_DCC1B | var_DCD1A | var_DCD1B | var_DCE1A | var_DCE1B | var_DPA1A | var_DPA1B | var_DPB1A | var_DPB1B | var_DPB2A | var_DPB2B | var_DPB3A | var_DPB3B | var_DPB4A | var_DPB4B | var_DPC1A | var_DPC1B | var_DHA1A | var_DHA1B | var_DHB1A | var_DHB1B | var_DHB2A | var_DHB2B | var_DHC1A | var_DHC1B | var_DHD1A | var_DHD1B | var_DHD2A | var_DHD2B | var_DHE1A | var_DHE1B | var_DHE2A | var_DHE2B
-  LA01 | Vientiane Capital | 311 | 40.02574002574003 | 53.3 | 1318.1089999999997 | 13.3 | 312.949 | 10.9 | 47.088 | 9.8 | 76.146 | 5.075356453034978 | 52221.229035348355 | 71.9 | 2315.8990000000003 | 75.7 | 1051.473 | 73.4 | 1727.1020000000003 | 68.5 | 532.245 | 13.2 | 404.052 | 1.4000000000000057 | 3.7940000000000156 | 9 | 162.027 | 7 | 126.021 | 21 | 738.2453796256272 | 4991 | 27.138274155837095 | 6768 | 69.32295401003789 | 1142 | 7.632669429220693 | 2852 | 23.764686276143653
-  LA02 | Phongsaly | 129 | 37.94117647058823 | 58.3 | 481.558 | 16.7 | 110.55399999999999 | 39.7 | 42.479 | 8.5 | 28.900000000000002 | 7.77263724334191 | 15459.253745356946 | 72.5 | 442.25 | 94.4 | 287.92 | 91.9 | 608.378 | 93.6 | 318.24 | 19.7 | 192.075 | 35.5 | 51.12 | 31 | 140.182 | 10 | 45.22 | 183 | 1985.8257221657593 | 2648 | 44.08924408924409 | 1293 | 71.99331848552339 | 146 | 3.237250554323725 | 533 | 15.886736214605069
-  LA03 | Luangnamtha | 92 | 27.794561933534744 | 66.7 | 546.273 | 50.1 | 356.712 | 37.7 | 32.045 | 13.2 | 43.692 | 11.868835283055686 | 25163.27230579593 | 9.099999999999994 | 55.41899999999996 | 13.700000000000003 | 42.881000000000014 | 11.299999999999997 | 80.45599999999999 | 13.5 | 44.685 | 59.7 | 606.552 | 13.599999999999994 | 16.999999999999993 | 16 | 76.624 | 8 | 38.312 | 159 | 1754.9179922214653 | 1796 | 33.30860534124629 | 2740 | 67.68774703557312 | 104 | 2.145214521452145 | 379 | 8.905075187969924
-
---- sheet 'Admin2_Deprivations' (149 rows x 58 cols) --------------------
-  PCODE | D-CODE | Province | District | var_DPA1A | var_DPA1B | var_DHD1A | var_DHD1B | var_DHD2A | var_DHD2B | var_DHE1A | var_DHE1B | var_DHE2A | var_DHE2B | var_DED1A | var_DED1B | var_DEE1A | var_DEE1B | var_DEE2A | var_DEE2B | var_DEE3A | var_DEE3B | var_DWAC1A | var_DWAC1B | var_DWAC2A | var_DWAC2B | var_DWBD1A | var_DWBD1B | var_DWCC1A | var_DWCC1B | var_DWCC2A | var_DWCC2B | var_DNE1A | var_DNE1B | var_DNF1A | var_DNF1B | var_DPA1_cdf | var_DHD1_cdf | var_DHD2_cdf | var_DHE1_cdf
-  LA01 | LA0101 | Vientiane Capital | Chanthabuly | 3.19 | 2621.8377897264786 | 873 | 39.130434782608695 | 262 | 31.528279181708786 | -50 | -4.184100418410042 | 243 | 28.689492325855966 | 577 | 13.637437957929569 | 0.9 | 69 | 1.5 | 97 | 3.5 | 150 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6551 | 105.04912501824047 | 70 | 4.929577464788732 | 2.1519363554948674 | 8.122768096290418 | 5.140200780208456 | 1.7420314274082092
-  LA01 | LA0102 | Vientiane Capital | Sikhottabong | 4.45 | 6664.043399682872 | 542 | 71.88328912466844 | 36 | 50.70422535211267 | 81 | 3.9881831610044314 | 536 | 30.59360730593607 | 216 | 4.3522063268184565 | 0.7 | 82 | 4.1 | 321 | 7.6 | 318 | 1.4099999999999966 | 1.0010999999999977 | 0 | 0 | 0 | 0 | 1.4099999999999966 | 1.0010999999999977 | 0 | 0 | 2492 | 22.661859054513044 | 2 | 3.225806451612903 | 2.9785877475888256 | 9.193213547682276 | 4.68979126711546 | 6.466197776064945
-  LA01 | LA0103 | Vientiane Capital | Xaysetha | 3.68 | 5405.169133942855 | 817 | 42.7972760607648 | 333 | 86.49350649350649 | 121 | 5.475113122171946 | 561 | 33.815551537070526 | 1005 | 17.709251101321584 | 1.3 | 130 | 2.9 | 213 | 2.8 | 118 | 4.230000000000004 | 3.003300000000003 | 3.230000000000004 | 1.0013000000000012 | 0 | 0 | 4.230000000000004 | 3.003300000000003 | 6.450000000000003 | 1.999500000000001 | 3908 | 36.532002426742025 | 153 | 8.49056603773585 | 2.6756619881552446 | 8.200703645214094 | 6.835320911605307 | 7.630001300654126
-
---- page 193 ----------------------------------------------------
-If E 0 E < 57 ,
-E 5 9 D iffic u lty s e e in g g o to E 7
-D o e s < N a m e > h a v e d iffic u lty s e e in g , e v e n if 0 1 N o - n o d iffic u lty
-w e a r in g g la s s e s ? 0 2 Y e s – s o m e d iffic u lty
-It is im p o r ta n t fo r p e r s o n s w ith d is a b ilitie s th a t 0 3 Y e s – a lo t o f d iffic u lty
-th e y a r e in c lu d e d in th e c e n s u s . M a k e s u r e 0 4 C a n n o t s e e a t a ll
-th a t th e q u e s tio n s o n d is a b ility a r e p r o p e r ly
-a s k e d . Ac lw a y s r e a d o u t a ll 4 a n s w e r
-P e o p le w ith a d is a b ility c a n n o t b e a s s is te d b y a te g o r ie s
-th e g o v e r n m e n t if g o o d d a ta a b o u t th e m a r e
-n o t a v a ila b le .
-E 6 0 D iffic u lty h e a r in g
-D o e s < N a m e > h a v e d iffic u lty h e a r in g , e v e n if 0 1 N o - n o d iffic u lty
-u s in g a h e a r in g a id ? 0 2 Y e s – s o m e d iffic u lty
-A lw a y s r e a d o u t a ll 4 a n s w e r 0 3 Y e s – a lo t o f d iffic u lty
-c a te g o r ie s 0 4 C a n n o t h e a r a t a ll
-E 6 1 D iffic u lty w a lk in g
-D o e s < N a m e > h a v e d iffic u lty w a lk in g o r 0 1 N o - n o d iffic u lty
-c lim b in g s te p s ? 0 2 Y e s – s o m e d iffic u lty
-A lw a y s r e a d o u t a ll 4 a n s w e r 0 3 Y e s – a lo t o f d iffic u lty
-c a te g o r ie s 0 4 C a n n o t w a lk a t a ll
-E 6 2 D iffic u lty r e m e m b e r in g
-D o e s < N a m e > h a v e d iffic u lty r e m e m b e r in g o r 0 1 N o - n o d iffic u lty
-c o n c e n tr a tin g ? 0 2 Y e s – s o m e d iffic u lty
-A lw a y s r e a d o u t a ll 4 a n s w e r 0 3 Y e s – a lo t o f d iffic u lty
-c a te g o r ie s 0 4 C a n n o t d o a t a ll
-E 6 3 D iffic u lty w ith s e lf- c a r e
-D o e s < N a m e > h a v e d iffic u lty s e lf- c a r e , s u c h 0 1 N o - n o d iffic u lty
-a s w a s h in g a ll o v e r o r d r e s s in g ? 0 2 Y e s – s o m e d iffic u lty
-A lw a y s r e a d o u t a ll 4 a n s w e r 0 3 Y e s – a lo t o f d iffic u lty
-c a te g o r ie s 0 4 C a n n o t d o a t a ll
-E 6 4 D iffic u lty w ith c o m m u n ic a tin g
-0 1 N o - n o d iffic u lty
-B e c a u s e o f a p h y s ic a l, m e n ta l o r e m o tio n a l
-0 2 Y e s – s o m e d iffic u lty
-h e a lth c o n d itio n , d o e s < N a m e > h a v e d iffic u lty
-0 3 Y e s – a lo t o f d iffic u lty
-c o m m u n ic a tin g , fo r e x a m p le u n d e r s ta n d in g
-0 4 C a n n o t c o m m u n ic a te a t a ll
-o th e r s o r o th e r s u n d e r s ta n d in g < N a m e > ?
-A lw a y s r e a d o u t a ll 4 a n s w e r
-c a te g o r ie s
-177
-[1110 words in 43 rows]
+page: https://inetl-ip.gov.tl/census-population/
+  65,236 bytes
+  13 matching link(s)
+  - Skip to main content
+    https://inetl-ip.gov.tl/census-population/#main
+  - https://inetl-ip.gov.tl/wp-content/plugins/polylang/flags/us.png Engli
+    https://inetl-ip.gov.tl/census-population/
+  - Census Background and Objectives
+    https://inetl-ip.gov.tl/census-background-and-objectives/
+  - Census Methodology
+    https://inetl-ip.gov.tl/census-methodology/
+  - Census Concepts and Definitions
+    https://inetl-ip.gov.tl/census-concepts-and-definitions/
+  - The Different Phases of the Census
+    https://inetl-ip.gov.tl/the-different-phases-of-the-census/
+  - Census Best Practices
+    https://inetl-ip.gov.tl/census-concepts-and-definitions-2/
+  - Census Questionnaires
+    https://inetl-ip.gov.tl/census-questionnaires/
+  - Key Census Results
+    https://inetl-ip.gov.tl/key-census-results/
+  - Census Agriculture
+    https://inetl-ip.gov.tl/census-agriculture/
+  - Census Data Publication
+    https://inetl-ip.gov.tl/census-data-publication/
+  - Released Documents
+    https://inetl-ip.gov.tl/category/documents-publication/census-document-documents/document-census-population-documents/
+  - Census of Population
+    https://inetl-ip.gov.tl/category/documents-publication/census-document-documents/
+page: https://inetl-ip.gov.tl/category/documents-publication/census-document-documents/document-census-population-documents/
+  183,883 bytes
+  101 matching link(s)
+  - Skip to main content
+    https://inetl-ip.gov.tl/category/documents-publication/census-document-documents/document-census-population-documents/#main
+  - https://inetl-ip.gov.tl/wp-content/plugins/polylang/flags/us.png Engli
+    https://inetl-ip.gov.tl/category/documents-publication/census-document-documents/document-census-population-documents/
+  - Census Background and Objectives
+    https://inetl-ip.gov.tl/census-background-and-objectives/
+  - Census Methodology
+    https://inetl-ip.gov.tl/census-methodology/
+  - Census Concepts and Definitions
+    https://inetl-ip.gov.tl/census-concepts-and-definitions/
+  - The Different Phases of the Census
+    https://inetl-ip.gov.tl/the-different-phases-of-the-census/
+  - Census Best Practices
+    https://inetl-ip.gov.tl/census-concepts-and-definitions-2/
+  - Census Questionnaires
+    https://inetl-ip.gov.tl/census-questionnaires/
+  - Key Census Results
+    https://inetl-ip.gov.tl/key-census-results/
+  - Census Population
+    https://inetl-ip.gov.tl/census-population/
+  - Census Agriculture
+    https://inetl-ip.gov.tl/census-agriculture/
+  - Census Data Publication
+    https://inetl-ip.gov.tl/census-data-publication/
+  - Timor-Leste Population and Housing Census 2022 Preliminary Results
+    https://inetl-ip.gov.tl/2023/03/06/timor-leste-population-and-housing-census-2022-preliminary-results/
+  - Education Monograph 2015
+    https://inetl-ip.gov.tl/2023/03/06/education-monograph-2015/
+  - Census 2010-Analytical Report on Disability Vol.10
+    https://inetl-ip.gov.tl/2023/03/06/census-2010-analytical-report-on-disability-vol-10/
+  - Census 2015 Analytical Report on Mortality Volume 6.
+    https://inetl-ip.gov.tl/2023/03/07/1777/
+  - Census 2015 Analytical Report on Fertility Vol.5
+    https://inetl-ip.gov.tl/2023/03/07/1783/
+  - Census 2015 Analytical Report on Education Vol.11
+    https://inetl-ip.gov.tl/2023/03/07/census-2015-analytical-report-on-education-vol-11/
+  - Population and Housing Census 2015 Preliminary Results
+    https://inetl-ip.gov.tl/2023/03/09/population-and-housing-census-2015-preliminary-results/
+  - Census 2015 Priority Table Population and Household Distribution
+    https://inetl-ip.gov.tl/2023/03/09/population-distribution-by-administrative-area-volume-2-population-and-household-distribution/
+  - Census 2015 Priority Table Population By Nationality, Citizenship And 
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-nationality-citizenship-and-religion/
+  - Census 2015 Priority Table Population By Language
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-language/
+  - Census 2015 Priority Table Population By Marriage
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-marriage/
+  - Census 2015 Priority Table Population By Internal Migration
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-internal-migration/
+  - Census 2015 Priority Table By Aldeia Populations
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-aldeia-populations/
+  - Census 2015 Priority Table By Population Living Abroad
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-by-population-living-abroad/
+  - Census 2015 Summary of The Thematic Report Marital Status
+    https://inetl-ip.gov.tl/2023/03/09/sensus-2015-summary-of-the-thematic-report-marital-status/
+  - Census 2015 Summary of The Thematic Report Youth
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-summary-of-the-thematic-report-youth/
+  - Census 2015 Summary of The Thematic Report Labour Force
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-summary-of-the-thematic-report-labour-force/
+  - Census 2015 Priority Table Population By Education
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-education/
+  - Census 2015 Priority Table Population By Main Economic Activity
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-main-economic-activity/
+  - Census 2015 Priority Table Population By Occupation
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-occupation/
+  - Census 2015 Priority Table Population By Industrial Sector
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-industrial-sector/
+  - Census 2015 Priority Table Population By Employment Sector
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-employment-sector/
+  - Census 2015 Priority Table By Population Fertility
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-by-population-fertility/
+  - Census 2015 Priority Table Population By Birth Certification
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-birth-certification/
+  - Census 2015 Priority Table By Population Disability
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-by-population-disability/
+  - Census 2015 Priority Table Population By Housing Characteristics and A
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-housing-characteristics-and-amenities/
+  - Census 2015 Priority Table Population By Agriculture
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-population-by-agriculture/
+  - Census 2015 Priority Table By Population Mortality
+    https://inetl-ip.gov.tl/2023/03/09/census-2015-priority-table-by-population-mortality/
+  - Census 2015 Priority Table Households &#038; Population by 5 Year Age 
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-households-population-by-5-year-age-group/
+  - Census 2015 Priority Table Population by Broad Age Groups and Sex
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-broad-age-groups-and-sex/
+  - Census 2015 Priority Table Population By School Attendance
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-school-attendance/
+  - Census 2015 Priority Table Population By Level of Education
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-level-of-education/
+  - Census 2015 Priority Table Population By Main Economic Activity
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-main-economic-activity-2/
+  - Census 2015 Priority Table Population By Housing Characteristics Owner
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-housing-characteristics_ownership/
+  - Census 2015 Priority Table Population By Housing Characteristics Mater
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-housing-characteristics_material-for-walls/
+  - Census 2015 Priority Table Population By Housing Characteristics Mater
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-housing-characteristics_material-for-roofs/
+  - Census 2015 Priority Table Population By Housing Characteristics Mater
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-housing-characteristics_material-for-floors/
+  - Census 2015 Priority Table Population By Housing Characteristics Condi
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-housing-characteristics_condition/
+  - Census 2015 Priority Table Population By Housing Characteristics Numbe
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-housing-characteristics_number-of-rooms/
+  - Census 2015 Priority Table Population By Housing Characteristics Bathi
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-housing-characteristics_bathing-facilities/
+  - Census 2015 Priority Table Population By Housing Characteristics Human
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-housing-characteristics_human-waste-disposal/
+  - Census 2015 Priority Table Population By Housing Characteristics Human
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-housing-characteristics_human-waste-final-disposal/
+  - Census 2015 Priority Table Population By Housing Characteristics Kitch
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-housing-characteristics_kitchen-facilities/
+  - Census 2015 Priority Table Population By Household Amenities Cooking F
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-household-amenities_cooking-fuel/
+  - Census 2015 Priority Table Population By Household Amenities Lighting 
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-household-amenities_lighting-fuel/
+  - Census 2015 Priority Table Population By Household Amenities Drinking 
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-household-amenities_drinking-water/
+  - Census 2015 Priority Table Population By Household Amenities Asset Own
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-household-amenities_asset-ownership/
+  - Census 2015 Priority Table Population By Household Amenities Banking F
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-household-amenities_banking-facilities/
+  - Census 2015 Priority Table Population By Agriculture Level of Activity
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-agriculture_level-of-activity/
+  - Census 2015 Priority Table Population By Agriculture Livestock
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-agriculture_livestock/
+  - Census 2015 Priority Table Population By Agriculture Crops
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-agriculture_crops/
+  - Census 2015 Priority Table Population By Agriculture Technology
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-agriculture_technology/
+  - Census 2015 Priority Table Population By Agriculture Land Tenure
+    https://inetl-ip.gov.tl/2023/03/10/census-2015-priority-table-population-by-agriculture_land-tenure/
+  - Census 2015 Summary of The Thematic Report Gender
+    https://inetl-ip.gov.tl/2023/03/13/census-2015-summary-of-the-thematic-report-marital-status/
+  - Census 2015 Summary of The Thematic Report Fertility
+    https://inetl-ip.gov.tl/2023/03/13/census-2015-summary-of-the-thematic-report-fertility/
+  - Census 2015 Summary of The Thematic Report Mortality
+    https://inetl-ip.gov.tl/2023/03/13/census-2015-summary-of-the-thematic-report-fertility-2/
+  - 2015 Census Wall Chart
+    https://inetl-ip.gov.tl/2023/03/13/2015-census-wall-chart/
+  - Census Timor-Leste 2022 Population and Housing Questionnaire
+    https://inetl-ip.gov.tl/2023/04/19/census-timor-leste-2022-population-and-housing-questionnaire/
+  - Population and Housing Census Timor-Leste 2022, Post Enumeration Surve
+    https://inetl-ip.gov.tl/2023/04/19/population-and-housing-census-timor-leste-2022-post-enumeration-survey-questionnaire/
+  - Census 2015 Analytical Report on Agriculture and Fisheries Vol.12
+    https://inetl-ip.gov.tl/2023/05/08/census-2015-analytical-report-on-agriculture-and-fisheries-vol-12/
+  - Census 2015 Analytical Report on Gender Vol.13
+    https://inetl-ip.gov.tl/2023/05/08/census-2015-analytical-report-on-gender-vol-13/
+  - Census 2015 Analytical Report on Labour Force Vol.10
+    https://inetl-ip.gov.tl/2023/05/08/census-2015-analytical-report-on-labour-force-vol-10/
+  - Census 2015 Analytical Report on Marriage Vol.7
+    https://inetl-ip.gov.tl/2023/05/08/census-2015-analytical-report-on-marriage-vol-7/
+  - Census 2015 Analytical Report on Youth Vol.14
+    https://inetl-ip.gov.tl/2023/05/10/census-2015-analytical-report-on-youth-vol-14/
+  - Census 2015 Analytical Report on Housing Characteristics and Amenities
+    https://inetl-ip.gov.tl/2023/05/10/census-2015-analytical-report-on-housing-characteristics-and-amenities-vol-8/
+  - Census 2015 Analytical Report on Population Projection Vol.9
+    https://inetl-ip.gov.tl/2023/05/10/census-2015-analytical-report-on-population-projection-vol-9/
+  - Census 2015 Summary Of The Thematic Report Housing Characteristics &am
+    https://inetl-ip.gov.tl/2023/05/10/census-2015-summary-of-the-thematic-report-housing-characteristics-amenities/
+  - Main Report Timor-Leste Population and Housing Census 2022
+    https://inetl-ip.gov.tl/2023/05/18/main-report-timor-leste-population-and-housing-census-2022/
+  - Table Main Report, Timor-Leste Population and Housing Census 2022
+    https://inetl-ip.gov.tl/2023/05/18/table-main-report-timor-leste-population-and-housing-census-2022/
+  - 2022 Census Wall Chart
+    https://inetl-ip.gov.tl/2023/10/04/2022-census-wall-chart/
+  - Census 2022 Thematic Report -Education
+    https://inetl-ip.gov.tl/2024/05/14/census-2022-thematic-report-education/
+  - Census 2022 Thematic Report &#8211; Mortality
+    https://inetl-ip.gov.tl/2024/05/14/census-2022-thematic-report-mortality/
+  - Census 2022 Summary Report of Mortality
+    https://inetl-ip.gov.tl/2024/05/14/census-2022-summary-of-mortality-report/
+  - Census 2022 Thematic Report &#8211; Population Projection
+    https://inetl-ip.gov.tl/2024/05/14/census-2022-thematic-report-population-projection/
+  - Census 2022 Summary Report Fertility and Nuptuality
+    https://inetl-ip.gov.tl/2024/05/14/census-2022-summary-report-fertility-and-nuptuality/
+  - Census 2022 Thematic Report &#8211; Fertility
+    https://inetl-ip.gov.tl/2024/05/14/census-2022-thematic-report-fertility/
+  - Census 2022 Summary Report Migration Analytical
+    https://inetl-ip.gov.tl/2024/05/14/4034/
+  - Census 2022 Summary Report Population Projection
+    https://inetl-ip.gov.tl/2024/05/14/4039/
+  - Census 2022 Thematic Report &#8211; Evaluation of Age and Sex Data
+    https://inetl-ip.gov.tl/2024/05/14/census-2022-thematic-report-evaluation-of-age-and-sex-data/
+  - Census 2022 Thematic Report – Migration
+    https://inetl-ip.gov.tl/2024/05/14/census-2022-thematic-report-migration/
+  - Census 2022 Thematic Report Harnessing the Demographic Dividendfor Tim
+    https://inetl-ip.gov.tl/2024/09/20/census-2022-thematic-report-harnessing-the-demographic-dividendfor-timor-leste/
+  - Census 2022 Summary Finding: Harnessingthe Demographic Dividend for Ti
+    https://inetl-ip.gov.tl/2024/09/20/census-2022-summary-finding-harnessingthe-demographic-dividend-fortimor-leste/
+  - Census 2022 Thematic Report on Disability
+    https://inetl-ip.gov.tl/2024/09/20/census-2022-thematic-report-on-disability/
+  - Census 2022 Thematic Report of Children and Youth
+    https://inetl-ip.gov.tl/2024/09/20/census-2022-thematic-report-of-children-and-youth/
+  - Census 2022 Summary of the Analytical Report Disability
+    https://inetl-ip.gov.tl/2024/09/20/census-2022-summary-of-the-analytical-report-disability/
+  - Census 2022 Summary Analytical Report of the Children and Youth Naviga
+    https://inetl-ip.gov.tl/2024/09/20/census-2022-summary-analytical-report-of-the-children-and-youth-navigating/
+  - Census 2022 Thematic Report on Labour Force
+    https://inetl-ip.gov.tl/2024/12/03/census-2022-thematic-report-on-labour-force/
+  - Timor-Leste Population and Housing Census 2022 : Thematic Report on Ge
+    https://inetl-ip.gov.tl/2025/04/08/timor-leste-population-and-housing-census-2022-thematic-report-on-gender-2/
+  - Census of Population
+    https://inetl-ip.gov.tl/category/documents-publication/census-document-documents/
+page: https://inetl-ip.gov.tl/2023/10/04/2022-census-wall-chart/
+  73,200 bytes
+  26 matching link(s)
+  - Skip to main content
+    https://inetl-ip.gov.tl/2023/10/04/2022-census-wall-chart/#main
+  - https://inetl-ip.gov.tl/wp-content/plugins/polylang/flags/us.png Engli
+    https://inetl-ip.gov.tl/2023/10/04/2022-census-wall-chart/
+  - Census Background and Objectives
+    https://inetl-ip.gov.tl/census-background-and-objectives/
+  - Census Methodology
+    https://inetl-ip.gov.tl/census-methodology/
+  - Census Concepts and Definitions
+    https://inetl-ip.gov.tl/census-concepts-and-definitions/
+  - The Different Phases of the Census
+    https://inetl-ip.gov.tl/the-different-phases-of-the-census/
+  - Census Best Practices
+    https://inetl-ip.gov.tl/census-concepts-and-definitions-2/
+  - Census Questionnaires
+    https://inetl-ip.gov.tl/census-questionnaires/
+  - Key Census Results
+    https://inetl-ip.gov.tl/key-census-results/
+  - Census Population
+    https://inetl-ip.gov.tl/census-population/
+  - Census Agriculture
+    https://inetl-ip.gov.tl/census-agriculture/
+  - Census Data Publication
+    https://inetl-ip.gov.tl/census-data-publication/
+  - Wall-Chart-census-2022
+    https://inetl-ip.gov.tl/wp-content/uploads/2023/10/Wall-Chart-census-2022.pdf
+  - Census 2022
+    https://inetl-ip.gov.tl/category/documents-publication/census-document-documents/document-census-population-documents/census-2022-documents-en/
+  - Census Document
+    https://inetl-ip.gov.tl/category/documents-publication/census-document-documents/
+  - Document Census Population
+    https://inetl-ip.gov.tl/category/documents-publication/census-document-documents/document-census-population-documents/
+  - Census 2022 Summary Analytical Report of the Children and Youth Naviga
+    https://inetl-ip.gov.tl/2024/09/20/census-2022-summary-analytical-report-of-the-children-and-youth-navigating/
+  - Main Report Timor-Leste Population and Housing Census 2022
+    https://inetl-ip.gov.tl/2023/05/18/main-report-timor-leste-population-and-housing-census-2022/
+  - Census 2022 Summary Report Population Projection
+    https://inetl-ip.gov.tl/2024/05/14/4039/
+  - Census 2022 Thematic Report on Disability
+    https://inetl-ip.gov.tl/2024/09/20/census-2022-thematic-report-on-disability/
+  - Census 2022 Thematic Report &#8211; Fertility
+    https://inetl-ip.gov.tl/2024/05/14/census-2022-thematic-report-fertility/
+  - Timor-Leste Population and Housing Census 2022 Preliminary Results
+    https://inetl-ip.gov.tl/2023/03/06/timor-leste-population-and-housing-census-2022-preliminary-results/
+  - Census Timor-Leste 2022 Population and Housing Questionnaire
+    https://inetl-ip.gov.tl/2023/04/19/census-timor-leste-2022-population-and-housing-questionnaire/
+  - Census 2022 Thematic Report Harnessing the Demographic Dividendfor Tim
+    https://inetl-ip.gov.tl/2024/09/20/census-2022-thematic-report-harnessing-the-demographic-dividendfor-timor-leste/
+  - Census 2022 Thematic Report &#8211; Mortality
+    https://inetl-ip.gov.tl/2024/05/14/census-2022-thematic-report-mortality/
+  - Table Main Report, Timor-Leste Population and Housing Census 2022
+    https://inetl-ip.gov.tl/2023/05/18/table-main-report-timor-leste-population-and-housing-census-2022/
