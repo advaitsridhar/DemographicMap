@@ -1,53 +1,97 @@
-
-=== HDX search: 'papua-new-guinea-census' ===
-    6187 dataset(s), showing 50
-    xlsx  unpng                        papua-new-guinea-airports
-    -     ourairports                  ourairports-png
-    -     ocha-roap                    papua-new-guinea-roads
-    -     world-bank-group             world-bank-health-indicators-for-papua-new-guinea
-    xlsx  ocha-fiss                    cod-ab-png
-    xlsx  acled                        papua-new-guinea-acled-conflict-data
-    -     world-bank-group             world-bank-poverty-indicators-for-papua-new-guinea
-    -     adb                          png-key-indicators
-    -     world-bank-group             world-bank-education-indicators-for-papua-new-guinea
-    -     world-bank-group             world-bank-infrastructure-indicators-for-papua-new-guinea
-    xlsx  ocha-fiss                    cod-ps-png
-    -     ocha-roap                    papua-new-guinea-health
-    -     ocha-roap                    papua-new-guinea-contour-lines
-    -     world-bank-group             world-bank-environment-indicators-for-papua-new-guinea
-    xlsx  unpng                        papua-new-guinea-pcodes-and-coordinates
-    -     world-bank-group             world-bank-gender-indicators-for-papua-new-guinea
-    -     unesco                       unesco-data-for-papua-new-guinea
-    -     world-bank-group             world-bank-trade-indicators-for-papua-new-guinea
-    -     world-bank-group             world-bank-financial-sector-indicators-for-papua-new-guinea
-    -     world-bank-group             world-bank-climate-change-indicators-for-papua-new-guinea
-    -     healthsites                  papua-new-guinea-healthsites
-    -     hot                          hotosm_png_roads
-    -     world-bank-group             world-bank-social-development-indicators-for-papua-new-guinea
-    -     world-bank-group             world-bank-external-debt-indicators-for-papua-new-guinea
-    -     hot                          hotosm_png_waterways
-    -     world-health-organization    who-data-for-png
-    -     world-bank-group             world-bank-public-sector-indicators-for-papua-new-guinea
-    -     heidelberg-institute-for-geoinformation-technology papua-new-guinea-accessibility-indicators
-    -     world-bank-group             world-bank-aid-effectiveness-indicators-for-papua-new-guinea
-    -     worldpop                     worldpop-pregnancies-for-papua-new-guinea
-    -     worldpop                     worldpop-births-for-papua-new-guinea
-    -     worldpop                     worldpop-population-density-for-papua-new-guinea
-    -     ocha-roap                    papua-new-guinea-education
-    -     ocha-roap                    papua-new-guinea-water-courses
-    -     cerf                         cerf-allocations-png
-    xlsx  unpng                        papua-new-guinea-who-is-doing-what-where-in-papua-new-guinea-earthquake
-    -     ocha-roap                    papua-new-guinea-regions
-    -     geoboundaries                geoboundaries-admin-boundaries-for-papua-new-guinea
-    -     dhs                          dhs-subnational-data-for-papua-new-guinea
-    -     world-bank-group             world-bank-urban-development-indicators-for-papua-new-guinea
-    -     hot                          hotosm_png_buildings
-    -     heidelberg-institute-for-geoinformation-technology papua-new-guinea-road-surface-data
-    -     dhs                          dhs-data-for-papua-new-guinea
-    -     world-bank-group             world-bank-private-sector-indicators-for-papua-new-guinea
-    -     hot                          hotosm_png_airports
-    -     world-bank-group             world-bank-energy-and-mining-indicators-for-papua-new-guinea
-    -     hot                          hotosm_png_health_facilities
-    -     undp-human-development-reports-office hdro-data-for-papua-new-guinea
-    -     ifrc                         ifrc-appeals-data-for-papua-new-guinea
-    -     world-bank-group             world-bank-science-and-technology-indicators-for-papua-new-guinea
+page: https://pacificdata.org/data/api/3/action/package_search?q=papua+new+guinea+census+religion&rows=50
+  unreachable: HTTPError: HTTP Error 403: Forbidden
+page: https://pacificdata.org/data/api/3/action/package_search?q=png+census&rows=50
+  unreachable: HTTPError: HTTP Error 403: Forbidden
+page: https://stats-nsi-stable.pacificdata.org/rest/dataflow/SPC
+  357,136 bytes
+<?xml version="1.0" encoding="utf-8"?>
+<!--NSI Web Service v10.11.6.0-->
+<message:Structure xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:structure="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">
+  <message:Header>
+    <message:ID>IDREF502328</message:ID>
+    <message:Test>false</message:Test>
+    <message:Prepared>2026-09-20T10:05:56.867614+00:00</message:Prepared>
+    <message:Sender id="Unknown" />
+    <message:Receiver id="Unknown" />
+  </message:Header>
+  <message:Structures>
+    <structure:Dataflows>
+      <structure:Dataflow id="DF_ADBKI" agencyID="SPC" version="1.1" isFinal="false">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>INDICATOR</common:AnnotationTitle>
+            <common:AnnotationType>ROW_SECTION</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>TIME_PERIOD</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>GEO_PICT</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_ROW</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>FREQ=A,TIME_PERIOD_END=,LASTNPERIODS=5</common:AnnotationTitle>
+            <common:AnnotationType>DEFAULT</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>GEO_PICT:SPC:HCL_GEO_PACIFIC(1.0).HCL_GEO_PACIFIC</common:AnnotationTitle>
+            <common:AnnotationType>HIER_CONTEXT</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Selection of Asian Development Bank Key Indicators (ADB KI) for Pacific Island Countries and Territories</common:Name>
+        <common:Name xml:lang="fr">Sélection d'indicateurs clés de la Banque asiatique de développement (ADB KI) pour les pays et territoires insulaires du Pacifique</common:Name>
+        <common:Description xml:lang="en">This selection includes data related to SPC member countries and territories for some of the indicators available in the original database published by the Asian Development Bank.</common:Description>
+        <common:Description xml:lang="fr">Cette sélection comprend des données relatives aux pays et territoires membres de la CPS pour certains des indicateurs disponibles dans la base de données originale publiée par la Banque asiatique de développement.</common:Description>
+        <structure:Structure>
+          <Ref id="DSD_ADBKI" version="1.1" agencyID="SPC" package="datastructure" class="DataStructure" />
+        </structure:Structure>
+      </structure:Dataflow>
+      <structure:Dataflow id="DF_AGRICULTURAL_PRODUCTION" agencyID="SPC" version="1.0" isFinal="false">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>GEO_PICT</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_ROW</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>FREQ=A,TIME_PERIOD_START=2017,TIME_PERIOD_END=2026</common:AnnotationTitle>
+            <common:AnnotationType>DEFAULT</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>PDH.STAT,CLIMATE,CHANGE,INDICATORS,AGRICULTURE</common:AnnotationTitle>
+            <common:AnnotationType>TAGS</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>TIME_PERIOD</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_COLUMN</common:AnnotationType>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>AGRICULTURE_PRODUCTION_ITEM,AGRICULTURE_PRODUCTION_TYPE</common:AnnotationTitle>
+            <common:AnnotationType>LAYOUT_ROW_SECTION</common:AnnotationType>
+          </common:Annotation>
+        </common:Annotations>
+        <common:Name xml:lang="en">Agricultural production</common:Name>
+        <common:Name xml:lang="fr">Production agricole</common:Name>
+        <common:Description xml:lang="en">Dataset covering agricultural production and yield statistics, including crop and livestock products, with breakdowns by product type and production category</common:Description>
+        <common:Description xml:lang="fr">Jeu de données couvrant les statistiques de production et de rendement agricoles, incluant les produits végétaux et animaux, avec des ventilations par type de produit et catégorie de production.</common:Description>
+        <structure:Structure>
+          <Ref id="DSD_AGRICULTURAL_PRODUCTION" version="1.0" agencyID="SPC" package="datastructure" class="DataStructure" />
+        </structure:Structure>
+      </structure:Dataflow>
+      <structure:Dataflow id="DF_AGRICULTURE_HIES" agencyID="SPC" version="1.0" isFinal="false">
+        <common:Annotations>
+          <common:Annotation>
+            <common:AnnotationType>NonProductionDataflow</common:AnnotationType>
+            <common:AnnotationText xml:lang="en">true</common:AnnotationText>
+          </common:Annotation>
+          <common:Annotation>
+            <common:AnnotationTitle>INDICATOR</common:AnnotationTitle>
+            <common:AnnotationType>ROW_SECTION</common:Annotatio
