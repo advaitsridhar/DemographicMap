@@ -104,7 +104,9 @@ CDX = ("http://web.archive.org/cdx/search/cdx?url=1212.mn&matchType=domain"
        "&output=text&limit=8000&fl=timestamp,original,length"
        "&filter=mimetype:application/pdf"
        "&filter=original:.*(XAOCT|url=Khovd[.]pdf|url=dundgovi[.]pdf|url=Dundgovi[.]pdf"
-       "|url=Khentii[.]pdf|url=18[._]+Khentii[.]pdf"
+       # Khentii bare, because that aimag's 2020 book is not under the XAOCT
+       # stem and the Archive holds it, if at all, under a numbered name.
+       "|Khentii"
        "|url=Census2020_Main_report_Eng[.]pdf).*")
 REPLAY = "https://web.archive.org/web/{timestamp}id_/{original}"
 
