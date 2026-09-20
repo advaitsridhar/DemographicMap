@@ -1,7 +1,30 @@
-probe_hapi: 2 call(s); the app identifier is read from DEMOGRAPHIC_MAP and scrubbed from everything below
-  https://hapi.humdata.org/api/v2/metadata/dataset?limit=2
-    2 row(s)
-    dataset_hdx_id='008e23ea-9d98-482e-bc1e-555b32b44715', dataset_hdx_stub='cod-ps-tjk', dataset_hdx_title='Tajikistan - Subnational Population Statistics', hdx_provider_stub='unfpa', hdx_provider_name='UNFPA', hdx_link='https://data.humdata.org/dataset/008e23ea-9d98-482e-bc1e-555b32b44715', hdx_api_link='https://data.humdata.org/api/action/package_show?id=008e23ea-9d98-482e-bc1e-555b32b44715', provider_hdx_link='https://data.humdata.org/organization/unfpa', provider_hdx_api_link='https://data.humdata.org/api/action/organization_show?id=unfpa'
-    dataset_hdx_id='01679d5e-9cf1-45a4-a212-662a2309780c', dataset_hdx_stub='cod-ps-ago', dataset_hdx_title='Angola - Subnational Population Statistics', hdx_provider_stub='unfpa', hdx_provider_name='UNFPA', hdx_link='https://data.humdata.org/dataset/01679d5e-9cf1-45a4-a212-662a2309780c', hdx_api_link='https://data.humdata.org/api/action/package_show?id=01679d5e-9cf1-45a4-a212-662a2309780c', provider_hdx_link='https://data.humdata.org/organization/unfpa', provider_hdx_api_link='https://data.humdata.org/api/action/organization_show?id=unfpa'
-  https://hapi.humdata.org/api/v2/population-social/population?location_code=IDN&admin_level=2&limit=3
-    refused: HTTP 404 Not Found: {"detail":"Not Found"}
+  https://hapi.humdata.org/openapi.json
+    280,618 chars
+    27 distinct match(es) for '/api/v2/[a-z0-9/_-]+'
+      /api/v2/affected-people/humanitarian-needs
+      /api/v2/affected-people/idps
+      /api/v2/affected-people/refugees-persons-of-concern
+      /api/v2/affected-people/returnees
+      /api/v2/climate/rainfall
+      /api/v2/coordination-context/conflict-events
+      /api/v2/coordination-context/funding
+      /api/v2/coordination-context/national-risk
+      /api/v2/coordination-context/operational-presence
+      /api/v2/encode_app_identifier
+      /api/v2/food-security-nutrition-poverty/food-prices-market-monitor
+      /api/v2/food-security-nutrition-poverty/food-security
+      /api/v2/food-security-nutrition-poverty/poverty-rate
+      /api/v2/geography-infrastructure/baseline-population
+      /api/v2/metadata/admin1
+      /api/v2/metadata/admin2
+      /api/v2/metadata/currency
+      /api/v2/metadata/data-availability
+      /api/v2/metadata/dataset
+      /api/v2/metadata/location
+      /api/v2/metadata/org
+      /api/v2/metadata/org-type
+      /api/v2/metadata/resource
+      /api/v2/metadata/sector
+      /api/v2/metadata/wfp-commodity
+      /api/v2/metadata/wfp-market
+      /api/v2/util/version
