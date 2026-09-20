@@ -3985,6 +3985,60 @@ secondary source, each figure cited for what it is, and this section says what
 that produced: `scripts/fetch_census/indonesia.py`, writing
 `data/processed/indonesia.json`, 504 records.
 
+**The head counts, and the two shapes of gap under them.**
+
+The regency compositions are percentages and nothing else, so a province
+summed from its regencies needs each regency's population as the weight. 426
+of the 470 have one, read from the same infobox that carries the faiths. What
+the other 44 are is now on each record, because four different facts had been
+sharing one empty field:
+
+| | what the article does | read? |
+|---|---|---|
+| prints a head count, cites it, dates it | the 426 | yes |
+| prints one and **cites nothing for it** | Ponorogo 977,720; Tuban 1,272,898; Tasikmalaya 1,996,059; Kota Tual carries `{{butuh rujukan}}`, "citation needed" | no |
+| cites a reference **the page never defines** | `<ref name="KEPRI"/>` in Natuna, Bintan, Karimun, Tanjungpinang -- a broken reference, which reads as an unknown publisher because that is what it is | no |
+| prints one under a **second parameter name**, or puts the reference on the year | Banyuwangi, Jember, Barru, Maros, Tegal, Pangkajene use `tahun populasi` for the year; Musi Rawas Utara, Rejang Lebong and Temanggung attach the citation to `penduduktahun` | **now yes** |
+
+The last row was the reader's fault rather than the article's, and is fixed.
+The two before it are not, and an uncited figure stays unread: the rule that
+refuses them is the same one that refuses an uncited *composition*, and
+Indonesia's whole religion series rests on it.
+
+**Why UN OCHA's population file is not the answer, although it looks like it.**
+
+`cod-ps-idn` publishes `idn_admpop_adm2_2020_v3.csv`, a population for every
+second-level unit in the country, from the same publisher whose Papua New
+Guinea file fills all 87 of that country's districts here. It is not used,
+for two reasons found by asking the catalogue rather than assuming the family
+is uniform:
+
+* **The licence.** PNG's `cod-ps-png` is CC BY-IGO 3.0. Indonesia's is not:
+  the catalogue entry says `"license_id": "hdx-other"`, `"license_title":
+  "Other"`, `"license_other": "humanitarian use only"` and `"isopen":
+  false`. A public map is not humanitarian use, so the figures cannot be
+  republished here whatever they say.
+* **What the figures are.** `"methodology_other": "Projections from 2010
+  census performed by UNFPA"`, reference year 2020. They are projections, not
+  counts, and they would sit beside registry counts for 2024 in the same
+  province and be summed with them.
+
+The first reason alone settles it. Both are recorded because the adapter that
+reads the PNG file logs its licence on every run rather than writing one
+down, and this is what that habit is for.
+
+**Five shapes at this level are not regencies.** The same catalogue entry
+says the matching boundary set "includes 17 uninhabited features (comprising
+lakes, reservoirs, and a park) that are not represented in this dataset", and
+names eight at second level: `Danau` (ID1388, ID1688, ID1888, ID7188), `Danau
+Toba` (ID1288), `Hutan` (ID3399), `Waduk Cirata` (ID3288), `Wadung
+Kedungombo` (ID3388). Five of them are drawn on this map. They had been
+skipped in silence, so each fell through to the build's generic "nothing was
+read for this unit" -- true, and the wrong reason: it reads as a regency
+awaiting data, and one of them, `Danau`, was counted as West Sumatra's single
+missing composition. Each now carries a record saying it is a lake, a forest
+or a reservoir and that nobody lives in it.
+
 **What was measured about BPS, and still holds.**
 
 * `bps.go.id`, `www.bps.go.id` and every provincial and regency `*.bps.go.id`

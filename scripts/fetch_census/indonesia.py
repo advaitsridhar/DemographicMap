@@ -1228,6 +1228,11 @@ def portal_records(known: dict[str, dict[str, dict[str, float]]],
         for name in sorted(filled):
             fields = portals.fields(source, counts[name], swap)
             sources = [fields.pop("religion_source")]
+            # The table's own total is this regency's head count, and these
+            # eight had none at all: the shares are computed from counts, so
+            # the count is there to be read.
+            if "population_source" in fields:
+                sources.append(fields.pop("population_source"))
             records.append(regency_record(name, source.province, fields, sources))
     return records
 

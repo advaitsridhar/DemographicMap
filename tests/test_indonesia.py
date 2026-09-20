@@ -555,7 +555,13 @@ class Records(unittest.TestCase):
         self.assertEqual(bukittinggi["religion_year"], 2023)
         self.assertEqual(bukittinggi["religion"][0]["group"], "Islam")
         self.assertIn("data.sumbarprov.go.id", bukittinggi["religion_note"])
-        self.assertEqual({s["field"] for s in bukittinggi["sources"]}, {"religion"})
+        # The portal table prints counts, so its own total is a head count
+        # for a regency whose article gave none.
+        self.assertEqual({s["field"] for s in bukittinggi["sources"]},
+                         {"religion", "population"})
+        self.assertGreater(bukittinggi["population"]["value"], 0)
+        self.assertEqual(bukittinggi["population"]["year"], 2023)
+        self.assertIn("summed across the faiths", bukittinggi["population_note"])
         self.assertEqual(by_regency["Kota Samarinda"]["religion_year"], 2023)
         self.assertEqual(by_regency["Lebong"]["religion_year"], 2024)
         self.assertEqual(by_regency["Kota Tangerang Selatan"]["religion_year"], 2021)
