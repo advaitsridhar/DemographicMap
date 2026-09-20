@@ -392,20 +392,32 @@ def read_province_table(pages: list[str]) -> dict[str, Unit]:
         raise SystemExit(f"png: the booklet's national row is not "
                          f"{NATIONAL_2024}; this is not the 2024 Final Figures")
 
+    # Table 1 numbers its provinces 1 to 22 and the page's prose does not, so
+    # the enumerator is what tells a row from a sentence. Without it the
+    # paragraph above the table -- "... and Eastern Highlands Province with
+    # 800,072. Table 1 below shows ..." -- reads as Eastern Highlands's row
+    # and refuses the run.
     out: dict[str, Unit] = {}
+    seen: list[int] = []
     for line in lines:
-        body = re.sub(r"^\s*\d+\s*[.]\s*", "", line)
+        head = re.match(r"^\s*(\d{1,2})\s*[.]\s*(.+)$", line)
+        if not head:
+            continue
+        number, body = int(head.group(1)), head.group(2)
         for name in PROVINCES:
-            if body.startswith(name) and body[len(name):len(name) + 1] in (" ",):
+            if body.startswith(name) and body[len(name):len(name) + 1] == " ":
                 rest = body[len(name):]
                 if not re.search(r"\d", rest):
                     continue
                 total, male, female, _printed = split_figures(rest, 4, ratio=True)
                 out.setdefault(name, Unit(name, total, male, female))
+                seen.append(number)
                 break
     missing = sorted(set(PROVINCES) - set(out))
     if missing:
         raise SystemExit(f"png: Table 1 is missing {missing}")
+    if sorted(seen) != list(range(1, len(PROVINCES) + 1)):
+        raise SystemExit(f"png: Table 1's rows are numbered {sorted(seen)}, not 1..22")
     summed = sum(u.total for u in out.values())
     if summed != NATIONAL_2024[0]:
         raise SystemExit(f"png: the 22 provinces add to {summed:,}, not the "

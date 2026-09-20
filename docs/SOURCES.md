@@ -258,6 +258,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts. The census measured all 77; the boundary file is what fails, drawing 75 shapes whose names do not all sit on the right ground, and the 9 shapes that therefore carry nothing each say so and name the province total that holds their people. |
 | India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 734 of 735 district shapes carry figures. 637 are the census's own rows; 97 are shapes the census never enumerated and which carry their predecessor's shares as a stated estimate, with no head count, so nobody is counted twice. 75 more are districts that have since lost territory, and keep their 2011 figure under a caveat saying how much ground they have left. The one shape without figures is not a district at all. Telangana and Ladakh have state figures summed from the ten and two districts the census did enumerate, and Andhra Pradesh and Jammu and Kashmir carry the residual rather than the undivided state. |
+| Papua New Guinea | NSO, *2024 National Population Census -- Final Figures* (Table 1 and the 22 Provincial Snapshots) for population and sex ratio; *Papua New Guinea 2011 National Report* (2011 census), Summary Indicators row "Main religion (% of population)" | province, district | Fills a country that carried nothing at all: 22 provinces and 71 of 87 district shapes. Religion is **one group per province** -- the largest denomination and its share of the citizen population, which is the only provincial religion figure the office publishes; the full tables are in the 22 Provincial Reports it does not host, and the panel marks the record "describes N% of the population". Ethnicity and language are `not_collected` (policy entry `PNG`): the 2011 report's Appendix 1 lists the 33 questions of the one-page form and neither is among them, and the one language item is a literacy rate in English, Pidgin, Motu and Tokples. Both PDFs print their figures in kerned groups ("41 2 ,15 8" for 412,158), so a row is cut where males plus females make the total and the printed sex ratio holds. The 2024 layout has one district more than the boundary file draws in Western, Northern, Morobe and West New Britain and the booklet does not say which district it came out of, so those four provinces' 16 shapes carry the reason rather than a count. `scripts/fetch_census/png.py`. |
 | Bhutan | National Statistics Bureau, 2017 Population & Housing Census of Bhutan (PHCB), Table 2.1 — population distribution by gewog and town — in each of the twenty *Dzongkhag Series* volumes, with the *National Report* (288 pp, ISBN 978-99936-28-50-7) as the control. Indexed at `www.nsb.gov.bt/phcb`, which links the national report and the twenty volumes; the volumes are fetched as `nsb.gov.bt/wp-content/uploads/2026/08/PHCB2017_{Dzongkhag}.pdf`. Licence: none stated — NSB official publications, cited as such. | dzongkhag, gewog | **Population and sex ratio only**, for all 20 dzongkhags and 205 gewogs, each volume's own Table 2.1. Religion, language and ethnicity are `not_collected`, measured over the round's whole 1,798 pages rather than assumed — see below. The census's one identity-adjacent split is **citizenship** (Bhutanese against non-Bhutanese, published to gewog) and it is deliberately not read as ethnicity. Sex ratio is derived as females per 1,000 males from the Male and Female columns of the same row, and only where those two reach the Total printed beside them; a row that does not add up keeps its head count and publishes a gap naming the three figures. The publications disagree on the head count and the disagreement is reported rather than resolved: the twenty volumes come to **720,837**, the national report analyses **727,145**, and it says **735,553** were found in the country, the difference being 8,408 non-Bhutanese and tourists in hotels on census night about whom nothing else was collected. Each volume reconciles to its own printed total, gewog by gewog, so the dzongkhag's own figure is the one carried. Towns and thromdes are enumerated *beside* the gewogs, not inside them, and geoBoundaries draws none of them, so the gewog layer is short of its parent by the urban population — 37.8% of Bhutan — and every gewog record says so. **Thirty gewogs are drawn under a different name, not a different spelling** — Samtse's Tashicholing as "Sipsu", its Norgaygang as "Bara", Sarpang's Samtenling as "Bhur": the Nepali-origin names southern Bhutan carried before the renamings. They are paired by Wikidata's reference point for the gewog the census names falling inside the polygon the boundary file draws, with Wikidata's dzongkhag agreeing with the census's — a method measured first (98 of the 102 gewogs already matched by name have their own point inside their own polygon) and corroborated against the published list of all 205 gewogs with their Dzongkha. Six with no point are taken by elimination inside a dzongkhag where nothing else is left; four whose names repeat across dzongkhags (two Gakilings, two Norboogangs) are bound to a polygon by its id. Two earlier name pairings were wrong and are removed: Punakha's Barp was wearing a polygon 96% inside Samtse, Chhukha's Maedtabkha one 60% inside Tsirang, and those two polygons are Samtse's Norgaygang and Tsirang's Sergithang, which had no figures at all. 205 of 205 gewog shapes now carry the census's. `scripts/fetch_census/bhutan.py`. |
 
 ### New Zealand: the geography that already fitted
@@ -7195,6 +7196,165 @@ Both of them are on the map, from the 2015 round, so this is a declaration
 about one field and not a country written off. The evidence, and what was
 looked at to be sure of it, is under "Timor-Leste: two questions asked, a third
 that is not" above.
+
+### Papua New Guinea: one office, two publications, and one figure per province
+
+Papua New Guinea carried nothing at all below its own row before this: 22
+provinces and 87 districts of bare `not_available` on every field, and no
+`NOT_COLLECTED_POLICY` entry. The National Statistical Office
+(`www.nso.gov.pg`) answers an automated reader without complaint, and two of
+its publications are what the country now carries.
+
+**What its site holds.** The Population & Housing download category,
+`/download/51/population-housing/`, has ten files and no more: the 2024 census
+Final Figures, the 2011 and 2000 National Reports, the 2011 Final Figures
+brochure and booklet, and four regional "Census Figures by Wards" tables. A
+Wayback CDX listing of every PDF, XLS and CSV ever archived under
+`nso.gov.pg` (400 rows, the whole domain from 2004 to 2026) adds the DHS
+reports, the CPI and national-accounts series, the 2022 SDES thematic
+reports, the 2021 population estimates by province, and a great many job
+advertisements. **It does not add a single provincial census report.** That
+matters, because the 2011 National Report's own foreword says the release is
+"The National Report and the 22 Provincial Reports" -- so the provincial
+tables exist on paper and are not published anywhere this project could
+reach. The 2011 Final Figures booklet is on the list and answers **HTTP 415
+Unsupported Media Type**, and the 2000 National Report is a 22 MB scan with no
+text layer at all (109 pages, zero extractable characters).
+
+**The two files read.** `scripts/fetch_census/png.py` reads both with pypdf:
+
+| File | What it gives |
+| --- | --- |
+| `.../4310/2024-national-population-census-final-figures_web.pdf` (35 pp, Oct 2025) | Table 1: population, males, females and sex ratio for the 22 provinces. Twenty-two Provincial Snapshots: the same three counts for each of the 96 districts it lists. |
+| `.../2152/png-national-report-2011-census.pdf` (100 pp) | The Summary Indicators row "Main religion (% of population)" for each of the 22 provinces -- one denomination and one share. |
+
+Both are fetched with `Accept: application/pdf`. The office's download plugin
+negotiates on that header and hands a client that does not send it an HTML
+page, which is what the first run got and what pypdf refused; asking a server
+for the representation it publishes is not claiming to be a browser, and
+nothing here does that.
+
+**Religion, and why it is one row.** The 2011 census asked religion -- the
+report's glossary defines it, chapter 2 reports it, and Table 2.4 gives the
+country's Christian / non-Christian / no religion / not stated split with
+Figure 2.1's eleven denominations under it (Roman Catholic 26.0, Evangelical
+Lutheran 18.4, Seventh Day Adventist 12.9, Pentecostals 10.4, United Church
+10.3 …). For a **province** it publishes exactly one figure: the largest
+denomination and its share of the citizen population. A term sweep of all 100
+pages for *religion*, *Catholic*, *Lutheran* and *Adventist* returns 14
+pages, and none of them is a provincial religion table; the 2024 Final
+Figures mention religion on none of their 35.
+
+So each province carries a one-row composition -- Bougainville "Roman
+Catholic 68.4%", Morobe "Evangelical Lutheran 67.0%", Eastern Highlands
+"Seventh Day Adventist 39.6%" -- and the panel labels it for what it is
+without being told to: a composition that falls short of 100 draws the chip
+*describes 68.4% of the population*. Each record's note says the rest is not
+broken down and why. The denominational pattern is the real one the report
+describes: ten provinces lead Roman Catholic, four Evangelical Lutheran, four
+United Church, and Anglican, Seventh Day Adventist and Evangelical Alliance
+lead one or two each.
+
+**Reading a kerned figure.** Both PDFs are typeset so that pypdf reads a
+figure in groups -- Milne Bay's 412,158 comes out as `41 2 ,15 8`,
+Bougainville's 367,093 as `3 6 7,0 9 3` -- and a space inside a number is
+indistinguishable from the space between two numbers. The reader therefore
+does what `vietnam.py` does: take every digit on the row in order, try every
+cut of that string into the numbers the row is supposed to carry, and keep
+the one where the census's own arithmetic holds -- males plus females equal
+the total, and the printed sex ratio is 100 males per females. Across the 22
+province rows and the 96 district rows exactly one cut satisfies that every
+time; a row with none, or with two, refuses the run. The same files also read
+a capital away from its word ("T elefomin", "T awae/Siassi"), which is
+repaired before a name is matched.
+
+**Districts: 71 of 87, and why the other 16 are empty.** The boundary file
+draws the 87 districts of the 2011 layout; the 2024 booklet tabulates 96 in a
+later one, and says PNG now has 98. Where a province's 2024 districts still
+partition its shapes the shapes are written: name for name, under a declared
+alias where the spelling moved (Mendi for Mendi/Munihu, Hagen Central for Mt
+Hagen, Kainantu for Kainanatu, Karimui for Karimui/Nomane, Huon Gulf for
+Huon), or as a declared union where one shape's own name names the two
+districts that now cover it -- **Kairuku - Hiri** = Kairuku + Hiri-Koiari,
+**Lagaip/Pogera** = Lagaip + Pogera Paiela, **Komo/Magarima** = Komo Hulia +
+Magarima -- and the National Capital District, one shape holding the city's
+three Moresby seats. Each written province's districts must then add to the
+province's own printed total, and land on exactly as many shapes as the
+boundary file draws for it, or the run refuses.
+
+Four provinces have one 2024 district that no shape corresponds to: Western's
+**Delta Fly**, Northern's **Popondetta**, Morobe's **Wau/Waria** and West New
+Britain's **Nakanai**. Each was carved out since 2011 and the booklet does not
+say from which district, so any of that province's shapes may have lost
+ground to it. None of those four provinces' district shapes is written --
+16 in all, 3 + 2 + 9 + 2 -- and each of the 16 carries a record saying so and
+naming the district that cannot be placed. A count on the wrong one of them
+would be invisible, which is the failure this project ranks above an empty
+cell.
+
+**Ethnicity and language are declared, not left blank.** Appendix 1 of the
+2011 National Report lists what the census collected: "Basic demographic,
+social and economic information on age; sex, marital status, religion,
+migration, economic activity, occupation, industry, fertility, mortality and
+household income generating activities were collected. A total of 33
+questions were asked using a one-page census questionnaire." Neither
+ethnicity nor language is among them, and the report has no table of either.
+
+Language needs the careful wording, because the census does ask about
+languages -- and it asks the wrong question for this map. Table 4.6 is a
+**literacy rate by language**: the share of people aged 10 and over who can
+read and write English (48.9%), Pidgin (57.4%), Motu (4.7%) or Tokples
+(55.8%). Those are four overlapping abilities, three of them in lingua
+francas, and the fourth is the report's own catch-all: its glossary defines
+Tokples as "Pidgin word meaning 'language of my place'. The local language of
+a traditional area belonging to a tribe or clan" -- all 800-odd of them under
+one heading. They sum past 100 and describe nobody's mother tongue, and
+turning them into a composition would be inventing a statistic. Both fields
+are `not_collected` in `NOT_COLLECTED_POLICY["PNG"]`, which also fixes the
+country row, whose ethnicity was a bare `not_available` with the Factbook's
+free text ("Melanesian, Papuan, Negrito, Micronesian, Polynesian") beside it.
+
+The **2016-18 Demographic and Health Survey** does ask religion, in eleven
+categories, and it is provincially representative -- its Table 3.1 gives the
+weighted sample for all 22 provinces. It publishes religion for the country
+only (Roman Catholic 24.9% of women, Seventh Day Adventist 13.7%, Evangelical
+Lutheran 12.5%, United Church 10.4%), and no table in its 519 pages crosses
+it with province, so it would not fill a provincial gap either.
+
+**The regional routes, measured.** The Pacific Community is the obvious place
+to look for a Pacific census tabulation, and it was asked three ways.
+`pacificdata.org`, the Pacific Data Hub's CKAN, answers **403** at
+`/data/dataset` and at `/data/api/3/action/package_search` alike -- the
+"blocks browsers, serves the API" pattern does not hold here. `sdd.spc.int`
+serves its country page but puts an interstitial challenge on its root and
+**403** on its search. `microdata.pacificdata.org` answers **403**. What does
+answer is PDH.stat's SDMX service,
+`stats-nsi-stable.pacificdata.org/rest/dataflow/SPC`, which returns 357 KB
+listing **127 dataflows** -- and not one of them is religion, ethnicity or
+language: the population ones are `DF_POP_AGE`, `DF_POP_SEX`,
+`DF_POP_URBAN`, `DF_POP_DENSITY`, `DF_POP_PROJ`, `DF_POP_COAST`,
+`DF_POP_LECZ`, beside `DF_MARITAL_STATUS`, `DF_HHCOUNTS`, `DF_VITAL`, the
+SDG series and the rest. SPC's own digital library carries the same three PNG
+census documents the NSO hosts and no provincial report.
+
+HDX has **`cod-ps-png`**, OCHA's common operational dataset: the 2011 census
+population at admin levels 0 to 3, sourced from the NSO, on the same district
+layout the boundary file draws. It is a clean join and it is not used, because
+the 71 districts that are written carry the 2024 count and a 2011 figure
+beside them on the other 16 would put two censuses on one level. It remains
+the obvious way to fill those sixteen if the mixture is ever wanted. Nothing
+else on HDX carries PNG religion: a 50-row search returns airports, roads,
+conflict data, WorldPop rasters and the World Bank indicator mirrors.
+`pngnri.org`, the National Research Institute that publishes the *District
+and Provincial Profiles*, answers **403** to an automated reader.
+
+**What the file comes to.** `data/processed/png.json`: 22 provinces with the
+2024 census population and sex ratio and the 2011 census's main religion, and
+87 districts of which 71 carry the 2024 count and 16 carry the reason they do
+not. The provinces add to the printed 10,185,363; the 2024 booklet's own 2011
+comparison (7,275,324) is the whole population where the 2011 National
+Report's tables count 7,254,442 citizens in private dwellings, which is the
+universe every religion share here is a share of.
 
 ### The African census sweep: reached, and not
 
