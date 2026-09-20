@@ -1100,6 +1100,12 @@ SPECS: dict[str, Country] = {
         iso3="SVK", out="europe_wiki_slovakia.json", decimal=",",
         census="Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011",
         licence="Official statistics; compilation CC BY-SA 4.0",
+        declared={"language": (
+            "Slovakia's census asks mother tongue, and the Slovak Wikipedia "
+            "article of a region or a district carries the census's "
+            "nationality table and its religion table and not its "
+            "mother-tongue table. There is nothing here to read for this "
+            "field; the figures exist at the Statistical Office.")},
         levels=(
             Level(level="admin1", lang="sk", title="{name}",
                   titles=SK_REGIONS, fields=SK_FIELDS),
@@ -1115,6 +1121,20 @@ SPECS: dict[str, Country] = {
         census="State Statistical Office of North Macedonia, Census of "
                "Population, Households and Dwellings",
         licence="Official statistics; compilation CC BY-SA 4.0",
+        declared={
+            "language": (
+                "The one table a North Macedonian municipality's article "
+                "carries as a matter of course is the census's ethnicity. A "
+                "few also print mother tongue and religion, under headings "
+                "that differ from article to article and sometimes twice "
+                "over for two boundary eras, and this reader does not "
+                "attempt them."),
+            "religion": (
+                "The one table a North Macedonian municipality's article "
+                "carries as a matter of course is the census's ethnicity. A "
+                "few also print religion, under headings that differ from "
+                "article to article, and this reader does not attempt them."),
+        },
         levels=(
             Level(level="admin2", lang="en",
                   title="{name} Municipality", match="folded",
@@ -1143,6 +1163,15 @@ SPECS: dict[str, Country] = {
         census="Biroul Naţional de Statistică, Recensământul Populaţiei şi al "
                "Locuinţelor",
         licence="Official statistics; compilation CC BY-SA 4.0",
+        declared={
+            "religion": (
+                "A Moldovan district's article carries an ethnic table and "
+                "no religion table; several have a Religion heading with "
+                "nothing under it."),
+            "language": (
+                "A Moldovan district's article carries no mother-tongue "
+                "table, in either edition."),
+        },
         levels=(
             Level(level="admin1", lang="en", title="{name} District",
                   category="Category:Districts of Moldova", match="folded",
@@ -1171,6 +1200,18 @@ SPECS: dict[str, Country] = {
                "домаћинстава и станова (Statistical Office of the Republic of "
                "Serbia, Census of Population, Households and Dwellings)",
         licence="Official statistics; compilation CC BY-SA 4.0",
+        declared={
+            "religion": (
+                "The English article of a Serbian district or municipality "
+                "carries an ethnic table and no religion table. The Serbian "
+                "edition's district articles do carry one, in a table whose "
+                "cells hold a count and a share inside one pair of brackets "
+                "-- '112.084 (89,67%)' -- which this reader does not read."),
+            "language": (
+                "No Serbian unit article measured carries a mother-tongue "
+                "composition, in either edition, though the census asks the "
+                "question and publishes it by municipality."),
+        },
         levels=(
             Level(level="admin1", lang="en", title="{name}", match="folded",
                   links="Administrative districts of Serbia",
@@ -1219,6 +1260,10 @@ SPECS: dict[str, Country] = {
         iso3="MNE", out="europe_wiki_montenegro.json", decimal=".",
         census="Monstat, Popis stanovništva, domaćinstava i stanova",
         licence="Official statistics; compilation CC BY-SA 4.0",
+        declared={"language": (
+            "A Montenegrin municipality's article carries ethnicity and "
+            "religion and no mother-tongue table, though the census asks "
+            "the question and publishes it.")},
         levels=(
             Level(level="admin1", lang="en", title="{name}", match="folded",
                   category="Category:Municipalities of Montenegro",
@@ -1472,7 +1517,8 @@ def run(country: Country) -> list[dict[str, Any]]:
                 parent=country.iso3 if level.level == "admin1"
                 else f"{country.iso3}-admin1-{slugify(parent)}" if parent
                 else country.iso3,
-                parent_name=parent or None, country=country.iso3,
+                parent_name=parent if level.level == "admin2" else None,
+                country=country.iso3,
                 sources=sources, **fields))
         for field, n in read.items():
             log(f"  {country.iso3} {level.level}: {field}: {n} of {len(units)}")
