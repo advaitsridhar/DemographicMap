@@ -1,8 +1,10 @@
-  https://data.humdata.org/api/3/action/package_show?id=cod-ps-idn
-    12,884 chars
-    5 distinct match(es) for 'https://[a-zA-Z0-9:/?&=%._~-]+idn[a-zA-Z0-9._~-]*[.](csv|xlsx)'
-      https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/615f2158-a0fd-45f1-8c91-0f0ccb8470b5/download/idn_admpop_adm0_2020_v2.csv
-      https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/6bc3236b-11c8-41cf-a4aa-7c2be36cc010/download/idn_adminboundaries_tabulardata.xlsx
-      https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/83022e0f-8156-4eb4-8a02-b804f3268500/download/idn_admpop_2020_v2.xlsx
-      https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/8f6f09d2-95f7-42dc-b6f1-aead319607f3/download/idn_admpop_adm2_2020_v3.csv
-      https://data.humdata.org/dataset/7e00297b-7b5b-4a98-932d-509f298fd8a8/resource/a7cabb5c-7a17-44ec-ae60-1481594e5857/download/idn_admpop_adm1_2020_v2.csv
+Traceback (most recent call last):
+  File "<frozen runpy>", line 189, in _run_module_as_main
+  File "<frozen runpy>", line 159, in _get_module_details
+  File "<frozen importlib._bootstrap_external>", line 1074, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1004, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_ckan.py", line 230
+    global TIMEOUT                                  # noqa: PLW0603
+    ^^^^^^^^^^^^^^
+SyntaxError: name 'TIMEOUT' is used prior to global declaration
