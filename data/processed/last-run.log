@@ -1,92 +1,109 @@
-probe_ckan: 39 host(s), timeout 12s
-  https://data.babelprov.go.id/ -> 0  timeout after 12s
-  http://data.babelprov.go.id/ -> 0  timeout after 12s
-  https://data.sultraprov.go.id/ -> 0  timeout after 12s
-  http://data.sultraprov.go.id/ -> 0  timeout after 12s
-  https://data.sulutprov.go.id/ -> 0  timeout after 12s
-  http://data.sulutprov.go.id/ -> 0  timeout after 12s
-  https://opendata.nttprov.go.id/ -> 0  DNS: no such host
-  https://satudata.nttprov.go.id/ -> 0  DNS: no such host
-  https://satudata.sultengprov.go.id/ -> 200 text/html "Satudata Sulteng"
-    /api/3/action/status_show -> 404 text/html <!DOCTYPE html> <!-- Error 404: Not Found Description: The server can not find the requested page --> <html lang
-    /api/action/status_show -> 404 text/html <!DOCTYPE html> <!-- Error 404: Not Found Description: The server can not find the requested page --> <html lang
-  https://opendata.sultengprov.go.id/ -> 0  DNS: no such host
-  https://data.riauprov.go.id/ -> 0  DNS: no such host
-  https://satudata.riau.go.id/ -> 0  DNS: no such host
-  https://opendata.riau.go.id/ -> 0  DNS: no such host
-  https://data.kaltengprov.go.id/ -> 0  DNS: no such host
-  https://satudata.kalteng.go.id/ -> 200 text/html "Satu Data"
-    /api/3/action/status_show -> 404 text/html <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>4
-    /api/action/status_show -> 404 text/html <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>4
-  https://satudata.sumutprov.go.id/ -> 0  DNS: no such host
-  https://opendata.sumutprov.go.id/ -> 0  DNS: no such host
-  https://dataku.jogjaprov.go.id/ -> 0  DNS: no such host
-  https://bappeda.jogjaprov.go.id/ -> 503 text/html 107 bytes
-    /api/3/action/status_show -> 503 text/html <html><body><h1>503 Service Unavailable</h1> No server is available to handle this request. </body></html>
-    /api/action/status_show -> 503 text/html <html><body><h1>503 Service Unavailable</h1> No server is available to handle this request. </body></html>
-  https://opendata.jogjaprov.go.id/ -> 0  DNS: no such host
-  https://satudata.kepriprov.go.id/ -> 200 text/html "Satu Data Kepulauan Riau"
-    /api/3/action/status_show -> 404 text/html <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not Found</h1></center> <hr><center>nginx</c
-    /api/action/status_show -> 404 text/html <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not Found</h1></center> <hr><center>nginx</c
-  https://opendata.kepriprov.go.id/ -> 0  DNS: no such host
-  https://satudata.gorontaloprov.go.id/ -> 0  DNS: no such host
-  https://opendata.gorontaloprov.go.id/ -> 200 text/html "Open Data Gorontalo"
-    /api/3/action/status_show -> 404 application/json { "message": "The route api/3/action/status_show could not be found.", "exception": "Symfony\\Component\\HttpKer
-    /api/action/status_show -> 404 application/json { "message": "The route api/action/status_show could not be found.", "exception": "Symfony\\Component\\HttpKerne
-  https://satudata.malutprov.go.id/ -> 200 text/html "Beranda - Satu Data Maluku Utara"
-    /api/3/action/status_show -> 404 application/json { "message": "The route api/3/action/status_show could not be found." }
-    /api/action/status_show -> 404 application/json { "message": "The route api/action/status_show could not be found." }
-  https://satudata.sulbarprov.go.id/ -> 0  DNS: no such host
-  https://opendata.lampungprov.go.id/ -> 0  timeout after 12s
-  http://opendata.lampungprov.go.id/ -> 0  timeout after 12s
-  https://satudata.jabarprov.go.id/ -> 403 text/html "Halaman Tidak Dapat Dibuka"
-    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width
-    /api/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width
-  https://opendata.sulselprov.go.id/ -> 0  DNS: no such host
-  https://data.semarangkota.go.id/ -> 403 text/html "Akses Terbatas - Khusus Indonesia"
-    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8" /> <title>Akses Terbatas - Khusus Indonesia</tit
-    /api/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8" /> <title>Akses Terbatas - Khusus Indonesia</tit
-  https://data.samarindakota.go.id/ -> 307 application/json 21 bytes
-    /api/3/action/status_show -> 404 application/json { "message": "", "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException", "file": "/
-    /api/action/status_show -> 404 application/json { "message": "", "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException", "file": "/
-  https://data.jogjakota.go.id/ -> 0  DNS: no such host
-  https://data.tangerangselatankota.go.id/ -> 200 text/html "Welcome - Portal Data Kota Tangerang Selatan"
-    /api/3/action/status_show -> 200 application/json CKAN 2.9.11
-    package_search q='agama' -> 200, 18 matches, 18 shown, printing those matching 'penduduk|pemeluk'
-      - jumlah-penduduk-menurut-kecamatan-dan-agama-di-kota-tangerang-selatan-tahun-2019: Jumlah Penduduk Menurut Kecamatan dan Agama di Kota Tangerang Selatan Data Konsolidasi Bersih (DKB) Tahun 2019  [1 res: csv]
-          CSV datastore=True 62334777-ea27-48d0-9333-8e1e5522bc90 https://data.tangerangselatankota.go.id/dataset/c282412e-9b58-4c38-b233-f8027e851686/resource/62334777-ea27-48d0-9333-8e1e5522bc90/download/1d.-data-jumlah-penduduk-per-kecamatan-menurut-agama-kota-tangerang-selatan-data-konsolidasi-ber.csv
-      - jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-tahun-2021: Jumlah Penduduk Menurut Kecamatan dan Agama di Kota Tangerang Selatan Data Konsolidasi Bersih (DKB) Tahun 2021  [1 res: csv]
-          CSV datastore=True 2575b89b-a403-4829-8aab-bdbff1785a4a https://data.tangerangselatankota.go.id/dataset/72e8d9bc-1c7d-491a-af72-77e8aa3fb18f/resource/2575b89b-a403-4829-8aab-bdbff1785a4a/download/1d.-jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-data-konsolidasi-bersi.csv
-      - jumlah-penduduk-perempuan-menurut-agama-dan-kecamatan-di-tangsel-tahun-2023: Jumlah Penduduk Perempuan Menurut Agama dan Kecamatan di Tangsel Tahun 2023  [1 res: xlsx]
-          XLSX datastore=False c4ce2f23-c84d-46ba-b8d7-cc5bc5a377a4 https://data.tangerangselatankota.go.id/dataset/6c3b5842-f7dc-4214-905c-13770b23c46d/resource/c4ce2f23-c84d-46ba-b8d7-cc5bc5a377a4/download/tabel-145.-jumlah-penduduk-perempuan-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahu.xlsx
-      - jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-tangsel-tahun-2023: Jumlah Penduduk Laki-Laki Menurut Agama dan Kecamatan di Tangsel Tahun 2023  [1 res: xlsx]
-          XLSX datastore=False f8b5f606-d344-4d6c-8b5d-151d3ab37443 https://data.tangerangselatankota.go.id/dataset/0b710695-97be-4aa3-a86e-f9fe70e06f4c/resource/f8b5f606-d344-4d6c-8b5d-151d3ab37443/download/tabel-144.-jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahu.xlsx
-      - jumlah-penduduk-perempuan-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahun-2022: Jumlah Penduduk Perempuan Menurut Agama dan Kecamatan di Kota Tangerang Selatan Tahun 2022  [1 res: csv]
-          CSV datastore=True 9ad320b5-aa4e-4702-affd-b20c6cfc7e63 https://data.tangerangselatankota.go.id/dataset/21b6e416-e01b-4242-8f82-50ee04e07e05/resource/9ad320b5-aa4e-4702-affd-b20c6cfc7e63/download/14q.-jumlah-penduduk-perempuan-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahun-2022.csv
-      - jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahun-2022: Jumlah Penduduk Laki-Laki Menurut Agama dan Kecamatan di Kota Tangerang Selatan Tahun 2022  [1 res: csv]
-          CSV datastore=True c707ee3e-13d3-4048-8cc9-9adf1b99992d https://data.tangerangselatankota.go.id/dataset/7314b73c-2be6-45e0-8155-f306bc87f0dd/resource/c707ee3e-13d3-4048-8cc9-9adf1b99992d/download/13q.-jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahun-2022.csv
-      - jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahun-2023: Jumlah Penduduk Laki-Laki Menurut Agama dan Kecamatan di Kota Tangerang Selatan Tahun 2023  [1 res: xlsx]
-          XLSX datastore=False 598148eb-cca6-4b77-baad-ca42ad8b9fbc https://data.tangerangselatankota.go.id/dataset/7f404416-1900-49d3-bc40-273dc97b1cdd/resource/598148eb-cca6-4b77-baad-ca42ad8b9fbc/download/tabel-144.-jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahu.xlsx
-      - jumlah-penduduk-laki-laki-menurut-agama-dan-kecamatan-di-kota-tangsel-tahun-2023: Jumlah Penduduk Laki-Laki Menurut Agama dan Kecamatan di Kota Tangsel Tahun 2023  [1 res: xlsx]
-          XLSX datastore=False c2907c5d-447b-4b51-8a22-db04aa1ad0dd https://data.tangerangselatankota.go.id/dataset/a30bab2a-3d5b-4fb4-82fc-9ea4e5c86c9f/resource/c2907c5d-447b-4b51-8a22-db04aa1ad0dd/download/tabel-145.-jumlah-penduduk-perempuan-menurut-agama-dan-kecamatan-di-kota-tangerang-selatan-tahu.xlsx
-      (10 others not matching)
-  https://data.palangkaraya.go.id/ -> 0  ConnectionRefusedError: [Errno 111] Connection refused
-  http://data.palangkaraya.go.id/ -> 0  ConnectionRefusedError: [Errno 111] Connection refused
-  https://data.sidoarjokab.go.id/ -> 0  DNS: no such host
-  https://data.kupangkota.go.id/ -> 0  TLS: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'data.kupangkota.go.id'. (_ssl.c:1016)
-  http://data.kupangkota.go.id/ -> 0  TLS: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'data.kupangkota.go.id'. (_ssl.c:1016)
-  https://data.bukittinggikota.go.id/ -> 200 text/html "Welcome - Satu Data Bukittinggi"
-    /api/3/action/status_show -> 200 application/json CKAN 2.11.4
-    package_search q='agama' -> 200, 0 matches, 0 shown, printing those matching 'penduduk|pemeluk'
-  https://data.payakumbuhkota.go.id/ -> 200 text/html "Welcome - Open Data Kota Payakumbuh"
-    /api/3/action/status_show -> 200 application/json CKAN 2.10.1
-    package_search q='agama' -> 200, 0 matches, 0 shown, printing those matching 'penduduk|pemeluk'
-  https://data.pariamankota.go.id/ -> 0  DNS: no such host
-  https://data.sawahluntokota.go.id/ -> 200 text/html "Welcome - Satu Data Kota Sawahlunto"
-    /api/3/action/status_show -> 200 application/json CKAN 2.11.3
-    package_search q='agama' -> 200, 0 matches, 0 shown, printing those matching 'penduduk|pemeluk'
-  https://data.prabumulihkota.go.id/ -> 0  DNS: no such host
-  https://data.garutkab.go.id/ -> 200 text/html "Garut Satu Data"
-    /api/3/action/status_show -> 404 application/json { "message": "The route api/3/action/status_show could not be found.", "exception": "Symfony\\Component\\HttpKer
-    /api/action/status_show -> 404 application/json { "message": "The route api/action/status_show could not be found.", "exception": "Symfony\\Component\\HttpKerne
-probe_ckan: 14 of 39 answered; 4 speak CKAN: data.tangerangselatankota.go.id, data.bukittinggikota.go.id, data.payakumbuhkota.go.id, data.sawahluntokota.go.id
+probe_xlsx: https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/31b549ab-6cda-4d27-82c7-c991d1f9fde0/download/data-jumlah-pemeluk-agama-per-kabkot-prov.-kaltim-tahun-2023.xlsx
+  12,184 bytes
+  1 sheet(s): II.2 (2)
+
+--- sheet 'II.2 (2)' (36 rows x 9 cols) --------------------
+  No. | Kabupaten / Kota | Islam | Kristen | Katolik | Hindu | Buddha | Konghucu | Jumlah
+  1 | Kab. Paser | 276235 | 9857 | 9461 | 508 | 517 | 0 | 296578
+  2 | Kab. Kutai Kartanegara | 718148 | 42195 | 14806 | 2603 | 266 | 5 | 778023
+  3 | Kab. Berau | 230756 | 24772 | 16438 | 235 | 653 | 23 | 272877
+  4 | Kab. Kutai Barat | 83636 | 55203 | 36481 | 150 | 41 | 1 | 175512
+  5 | Kab. Kutai Timur | 347227 | 41591 | 34319 | 2491 | 132 | 6 | 425766
+  6 | Kab. Penajam Paser Utara | 182003 | 7154 | 2679 | 94 | 36 | 0 | 191966
+  7 | Kab. Mahakam Ulu | 8867 | 5534 | 22862 | 49 | 3 | 0 | 37315
+  8 | Kota Balikpapan | 656544 | 50424 | 13338 | 1395 | 5919 | 33 | 727653
+  9 | Kota Samarinda | 775993 | 43171 | 21475 | 828 | 7904 | 287 | 849658
+  10 | Kota Bontang | 167243 | 15212 | 3255 | 291 | 136 | 0 | 186137
+  TOTAL |  | 3446652 | 295113 | 175114 | 8644 | 15607 | 355 | 3941485
+  % |  | 0.874455186306684 | 0.074873556540238 | 0.04442843243092388 | 0.0021930820490246696 | 0.003959675097076356 | 9.006757605318808e-05 | 1
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+probe_xlsx: https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/ed8e4ed7-97c2-4c17-9976-d64f0a403fee/download/data-jumlah-pemeluk-agama-per-kabkot-prov.-kaltim-tahun-2022.xlsx
+  12,252 bytes
+  1 sheet(s): II.2 (2)
+
+--- sheet 'II.2 (2)' (36 rows x 9 cols) --------------------
+  No. | Kabupaten / Kota | Islam | Kristen | Katolik | Hindu | Buddha | Konghucu | Jumlah
+  1 | Kab. Paser | 272788 | 9769 | 9299 | 488 | 530 | 0 | 292874
+  2 | Kab. Kutai Kartanegara | 706546 | 41426 | 14400 | 2569 | 254 | 6 | 765201
+  3 | Kab. Berau | 224748 | 24263 | 15961 | 224 | 649 | 22 | 265867
+  4 | Kab. Kutai Barat | 82408 | 54238 | 36078 | 141 | 36 | 1 | 172902
+  5 | Kab. Kutai Timur | 345969 | 41996 | 34964 | 2522 | 133 | 6 | 425590
+  6 | Kab. Penajam Paser Utara | 179143 | 7046 | 2603 | 91 | 39 | 0 | 188922
+  7 | Kab. Mahakam Ulu | 8528 | 5422 | 22137 | 60 | 3 | 0 | 36150
+  8 | Kota Balikpapan | 648261 | 49750 | 13041 | 1390 | 5935 | 31 | 718408
+  9 | Kota Samarinda | 766265 | 42477 | 21141 | 825 | 7880 | 284 | 838872
+  10 | Kota Bontang | 167023 | 15248 | 3221 | 298 | 138 | 0 | 185928
+  TOTAL |  | 3401679 | 291635 | 172845 | 8608 | 15597 | 350 | 3890714
+  % |  | 0.8743071323155596 | 0.07495667890263844 | 0.044425007852029214 | 0.002212447381123362 | 0.004008775767121407 | 8.995778152801774e-05 | 1
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+probe_xlsx: https://data.bengkuluprov.go.id/dataset/b083eaf3-f243-45a4-ba88-23cacf0c9d3b/resource/59900063-393c-4a29-ada2-a8fc1dcbfa01/download/agama-jenis-kelamin-1.xlsx
+  7,852 bytes
+  1 sheet(s): Sheet1
+
+--- sheet 'Sheet1' (13 rows x 17 cols) --------------------
+  AGAMA - JENIS KELAMIN
+  NO | WILAYAH | KODE | ISLAM (L) | ISLAM (P) | KRISTEN (L) | KRISTEN (P) | KATHOLIK (L) | KATHOLIK (P) | HINDU (L) | HINDU (P) | BUDHA (L) | BUDHA (P) | KHONGHUCU (L) | KHONGHUCU (P) | KEPERCAYAAN (L) | KEPERCAYAAN (P)
+   | BENGKULU | 17 | 1082217 | 1038213 | 17437 | 16742 | 4198 | 4003 | 2198 | 2048 | 1041 | 986 | 5 | 6 | 38 | 38
+  1 | BENGKULU SELATAN | 17.01 | 90236 | 87243 | 783 | 787 | 186 | 178 | 4 | 7 | 10 | 6 | 0 | 0 | 0 | 0
+  2 | REJANG LEBONG | 17.02 | 147632 | 141519 | 1083 | 1082 | 672 | 638 | 26 | 20 | 253 | 284 | 2 | 3 | 22 | 27
+  3 | BENGKULU UTARA | 17.03 | 154586 | 148395 | 4738 | 4451 | 768 | 692 | 916 | 883 | 38 | 51 | 0 | 0 | 7 | 3
+  4 | KAUR | 17.04 | 70710 | 67030 | 225 | 185 | 38 | 32 | 90 | 64 | 4 | 4 | 0 | 0 | 0 | 0
+  5 | SELUMA | 17.05 | 110453 | 103968 | 1279 | 1227 | 156 | 139 | 675 | 660 | 3 | 5 | 0 | 0 | 0 | 0
+  6 | MUKOMUKO | 17.06 | 105013 | 99220 | 2707 | 2501 | 467 | 471 | 123 | 117 | 8 | 6 | 0 | 0 | 0 | 0
+  7 | LEBONG | 17.07 | 60198 | 57413 | 185 | 190 | 50 | 59 | 6 | 7 | 2 | 0 | 0 | 0 | 0 | 0
+  8 | KEPAHIANG | 17.08 | 78920 | 74118 | 320 | 319 | 105 | 96 | 87 | 82 | 44 | 41 | 0 | 0 | 2 | 2
+  9 | BENGKULU TENGAH | 17.09 | 65110 | 62508 | 686 | 660 | 244 | 222 | 160 | 128 | 14 | 12 | 0 | 0 | 2 | 2
+  10 | KOTA BENGKULU | 17.71 | 199359 | 196799 | 5431 | 5340 | 1512 | 1476 | 111 | 80 | 665 | 577 | 3 | 3 | 5 | 4
+
+probe_xlsx: https://data.bengkuluprov.go.id/dataset/192aeb53-6c0c-4aca-9c06-e879ce3861e6/resource/cc6c8dd4-639b-426f-bc80-76cdbf267c36/download/data-jumlah-penduduk-provinsi-bengkulu-menurut-agama-tahun-2024.xlsx
+  9,334 bytes
+  1 sheet(s): Sheet1
+
+--- sheet 'Sheet1' (12 rows x 26 cols) --------------------
+  Provinsi / kabupaten | Islam | Kristen | Katholik | Hindu | Budha | Konghucu | Kepercayaan terhadap Tuhan | Jumlah
+  Bengkulu Selatan | 175155 | 1597 | 351 | 17 | 15 | 0 | 2 | 177137
+  Rejang Lebong | 284467 | 2152 | 1314 | 38 | 559 | 3 | 49 | 288582
+  Bengkulu Utara | 297439 | 9026 | 1447 | 1761 | 90 | 0 | 10 | 309773
+  Kaur | 135879 | 405 | 79 | 162 | 8 | 0 | 0 | 136533
+  Seluma | 211940 | 2482 | 272 | 1324 | 10 | 0 | 0 | 216028
+  Mukomuko | 199327 | 5115 | 907 | 239 | 14 | 0 | 0 | 205602
+  Lebong | 115034 | 372 | 103 | 10 | 1 | 0 | 0 | 115520
+  Kepahiang | 150802 | 645 | 200 | 175 | 84 | 0 | 4 | 151910
+  Bengkulu Tengah | 124251 | 1308 | 466 | 282 | 28 | 0 | 4 | 126339
+  Kota Bengkulu | 385481 | 10638 | 2971 | 190 | 1239 | 6 | 8 | 400533
+  Provinsi Bengkulu | 2079775 | 33740 | 8110 | 4198 | 2048 | 9 | 77 | 2127957
+
