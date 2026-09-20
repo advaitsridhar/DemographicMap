@@ -1159,6 +1159,14 @@ def probe_infobox(titles: list[str], width: int) -> None:
     for title in titles:
         text, resolved = fetch(title)
         log(f"  [id] {title!r} -> {resolved!r}: {len(text):,} bytes")
+        # Every named reference the whole page defines. Eight of the unread
+        # regencies attach their faiths to a reference the page never defines
+        # -- <ref name="dukcapil"/> and nothing behind it -- and the question
+        # that settles is whether the definition is somewhere else on the page,
+        # hung off a different parameter. Printing the names answers it.
+        names = sorted(ref_definitions(text))
+        log(f"     named references defined on the page ({len(names)}): "
+            + (", ".join(names) if names else "none"))
         for entry in infobox_lines(text):
             if INFOBOX_KEYS.match(entry):
                 flat = " ".join(entry.split())

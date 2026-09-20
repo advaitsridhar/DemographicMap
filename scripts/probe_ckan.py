@@ -215,6 +215,7 @@ def hosts_from(args: argparse.Namespace) -> list[str]:
 
 
 def main() -> int:
+    global TIMEOUT                                  # noqa: PLW0603 - one knob, set once
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("hosts", nargs="*", help="hostnames, e.g. data.jabarprov.go.id")
@@ -226,8 +227,6 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=5, help="datastore rows to print")
     ap.add_argument("--timeout", type=int, default=TIMEOUT)
     args = ap.parse_args()
-
-    global TIMEOUT                                  # noqa: PLW0603
     TIMEOUT = args.timeout
 
     hosts = hosts_from(args)
