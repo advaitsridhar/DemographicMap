@@ -5764,13 +5764,13 @@ the title away.
 
 #### What each country gave, and what it did not
 
-Of the 754 European shapes this reader was pointed at, 318 field-values
+Of the 754 European shapes this reader was pointed at, 456 field-values
 were written and every one of the rest carries a sentence saying why not.
 
 | country | level | shapes | religion | language | ethnicity |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Bulgaria | oblast | 28 | 20 | 22 | 21 |
-| Bulgaria | obshtina | 265 | 21 | — | 17 |
+| Bulgaria | oblast | 28 | 22 | 24 | 24 |
+| Bulgaria | obshtina | 265 | 67 | — | 101 |
 | Serbia | district | 25 | — | — | 23 |
 | Serbia | municipality | 145 | — | — | 69 |
 | Slovakia | kraj | 8 | 3 | — | 3 |
@@ -5818,6 +5818,15 @@ cites nothing for the table it prints, and one cites something undated.
   under its own heading. 38 of the 265 municipalities have no bg.wikipedia
   article under the name the English one links to, and say so.
 
+  Which mark separates a fraction is declared once per country everywhere
+  else here and cannot be in Bulgaria: its provinces write "89.72" and its
+  municipalities write "64,81", in the same edition and under the same
+  heading. The declared mark is tried first and the other one after it, and
+  the arbiter is the check that would otherwise refuse the table -- only a
+  reading whose shares add to about a hundred is taken, and reading "64,81"
+  as six thousand adds to ten thousand. Before that, 110 municipalities were
+  refused over a comma.
+
 Three things the Bulgarian articles do that would otherwise have been read
 wrong, and each is now a rule with a test:
 
@@ -5833,7 +5842,7 @@ wrong, and each is now a rule with a test:
    heading, with nothing in either header to say which is which. Reading
    "the first table" would date half of them wrong, so a section holding
    more than one table of the same kind refuses the unit and says so. That
-   refusal is most of why only 17 of 265 municipalities carry ethnicity.
+   refusal is most of why 164 of the 265 municipalities carry no ethnicity.
 3. These tables are very often cited to `pop-stat.mashke.org`, one person's
    compilation of Eastern European census results, whose page titles say
    "2011 census". Every one of them would have been recorded as a census
