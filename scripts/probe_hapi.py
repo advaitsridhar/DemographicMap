@@ -33,6 +33,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import os
 import sys
@@ -47,12 +48,13 @@ from common import log  # noqa: E402
 
 BASE = "https://hapi.humdata.org/api/v2"
 KEY_VAR = "DEMOGRAPHIC_MAP"
+QUOTES = ("'", '"')
 TIMEOUT = 90
 USER_AGENT = ("DemographicMap/1.0 "
               "(+https://github.com/advaitsridhar/DemographicMap)")
 
 
-def key() -> str:
+def raw() -> str:
     value = (os.environ.get(KEY_VAR) or "").strip()
     if not value:
         raise SystemExit(
@@ -63,10 +65,64 @@ def key() -> str:
     return value
 
 
+def key() -> str:
+    """The identifier in the form HAPI wants, from what the secret holds.
+
+    The encode endpoint answers with a JSON object, not a bare string, so the
+    obvious thing to put in a secret is the whole reply; and the obvious
+    thing to paste from a browser is the quoted value. Both are recognised
+    here rather than costing a round trip and a 403 to find out, and a raw
+    "app:email" is encoded. Nothing about any of this is printed.
+    """
+    value = raw()
+    if value.startswith("{"):
+        try:
+            value = str(json.loads(value).get("encoded_app_identifier") or "").strip()
+        except ValueError:
+            pass
+    value = value.strip().strip('"').strip("'")
+    if ":" in value and "@" in value:            # not encoded at all
+        value = base64.b64encode(value.encode("utf-8")).decode("ascii")
+    return value
+
+
+def check() -> int:
+    """What is in the secret, described and never shown.
+
+    A 403 says the identifier is wrong and nothing else, and the one thing
+    that must not happen while finding out which way it is wrong is printing
+    it: it has an email address inside it and this log is committed in
+    public. So this prints properties, not content.
+    """
+    value = raw()
+    log(f"  {KEY_VAR}: {len(value)} characters")
+    log(f"    looks like the encode endpoint's whole JSON reply: "
+        f"{value.startswith('{')}")
+    quoted = value[:1] in QUOTES
+    log(f"    wrapped in quotes: {quoted}")
+    log(f"    whitespace inside it: {any(c.isspace() for c in value)}")
+    normalised = key()
+    log(f"    after normalising: {len(normalised)} characters")
+    try:
+        decoded = base64.b64decode(normalised + "=" * (-len(normalised) % 4),
+                                   validate=True).decode("utf-8")
+    except Exception as err:                                  # noqa: BLE001
+        log(f"    does not decode as base64 text: {type(err).__name__}")
+        return 0
+    log(f"    decodes to {len(decoded)} characters, "
+        f"with a colon: {':' in decoded}, with an @: {'@' in decoded}, "
+        f"in two parts: {len(decoded.split(':'))}")
+    log("    (the decoded text itself is not printed: it carries an email "
+        "address and this log is committed)")
+    return 0
+
+
 def scrub(text: str) -> str:
     """Anything printed, with the identifier taken out of it."""
     value = (os.environ.get(KEY_VAR) or "").strip()
-    return text.replace(value, f"<{KEY_VAR}>") if value else text
+    for secret in {value, key() if value else ""} - {""}:
+        text = text.replace(secret, f"<{KEY_VAR}>")
+    return text
 
 
 def call(path: str, params: dict[str, str]) -> Any:
@@ -114,9 +170,16 @@ def main() -> int:
     ap.add_argument("--params", action="append", default=[],
                     help="query string for the matching --path, e.g. "
                          "'location_code=IDN&admin_level=2&limit=5'")
+    ap.add_argument("--check", action="store_true",
+                    help="describe what the secret holds, without printing it")
     ap.add_argument("--rows", type=int, default=6)
     ap.add_argument("--width", type=int, default=400)
     args = ap.parse_args()
+    if args.check:
+        log("probe_hapi: describing the secret, not printing it")
+        check()
+        if not args.path:
+            return 0
     if not args.path:
         raise SystemExit("probe_hapi: give at least one --path")
     log(f"probe_hapi: {len(args.path)} call(s); the app identifier is read from "
