@@ -1,181 +1,141 @@
-clear_global: 55 dataset(s) from CLEAR Global (formerly Translators without Borders) on HDX
-  angola-languages (AGO): Angola: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    18 unit(s) written, 0 not a composition, 0 unnamed, year 2023, Other
-  armenia-languages (ARM): Armenia: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    11 unit(s) written, 0 not a composition, 0 unnamed, year 2011, Census
-  belarus-languages (BLR): Belarus: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    6 unit(s) written, 0 not a composition, 0 unnamed, year 2009, Census
-  benin-languages (BEN): Benin: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    12 unit(s) written, 0 not a composition, 0 unnamed, year 2013, Census
-  bolivia-plurinational-state-of-languages (BOL): Bolivia (Plurinational State of): Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    dropped bolivia,plurinationalstateof: level 1 unknown (BOLXXX): the file does not say which unit this is
-    9 unit(s) written, 0 not a composition, 1 unnamed, year 2012, Census
-  botswana-languages (BWA): Botswana: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    15 unit(s) written, 0 not a composition, 0 unnamed, year 2015, Other
-  burkina-faso-languages (BFA): Burkina Faso: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    13 unit(s) written, 0 not a composition, 0 unnamed, year 2023, Other
-  burundi-languages (BDI): Burundi: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    17 unit(s) written, 0 not a composition, 0 unnamed, year 2015, Other
-  cabo-verde-languages (CPV): Cabo Verde: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    dropped caboverde: level 1 unknown (CPVXXX): the file does not say which unit this is
-    4 unit(s) written, 0 not a composition, 1 unnamed, year 2022, Other
-  cambodia-languages (KHM): Cambodia: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    25 unit(s) written, 0 not a composition, 0 unnamed, year 2019, Census
-  cameroon-languages (CMR): Cameroon: Languages
-    licence: Other -- Creative Commons, Attribution, Non-commercial, Share-alike -- license_id='hdx-other', isopen=False
-    refused: CM_lang_admin1.csv is not the long format; it has no location_code, location_name, location_level, language_name, proportion_value
-      its columns are: admin1_name, admin1_pcode, admin0_name, admin0_pcode, number_of_named_languages, main_language, main_language_share, English, French, Akoose, Arabic, Bafaw-Balong, Bafia, Bafut, Baka, Bakossi, Mokpwe, Mungaka, Bamun, Bana, Bangolan, Basaa, Bati, Buduma, Bulu, Daba, Denya, Dii, Doyayo, Duala, Ejagham, Eton, Ewondo, South Fali, Fefe, Fufulde, Gbaya (north east), Gbaya (south west), Ghomala, South giziga, Gude, Gyele (Bagvele), Hausa, Kako, Karang (East Mbum), Kenyang, Kom, Koonzime, Kuo, Lamnso, Limbum, Mafa, Makaa, Mambila, Masana, Mbembe Tigon, Mbo, Medumba, Meta, Mofo Gudur (south mofu), Mundani, Musgu, Ngiemboon, Ngemba, Noone, Ntoumou, Nugunu, Oku, Tikar, Tunen, Tupuri, Vute, Wandala, Yamba, Yambeta, Yemba, Mundang, Mbum, Other, pop_total, pop_male, pop_female, literacy_all, literacy_male, literacy_female, language_data_yn, data_confidence, notes
-  colombia-languages (COL): Colombia: Languages
-    licence: Other -- Creative Commons, Attribution, Non-commercial, Share-alike -- license_id='hdx-other', isopen=False
-    refused: co_lang_admin1_v01.csv is not the long format; it has no location_code, location_name, location_level, language_name, proportion_value
-      its columns are: admin1_name, admin1_pcode, admin0_name, admin0_pcode, number_of_named_languages, main_language, main_language_share, Arhuaco, Malayo, Barí, Coconucan, Pijao, Awa-Cuaiquer, Cubeo, Curripaco, Embera, Guambiano, Cañamomo, Inga, Camsa, Kogi, Chibcha, Paéz, Piapoco, Puinave, Pasto, Saliba, Guahibo, Totoro, Ticuna, Tunebo, Woun Meu, Guajiro, Ocaina, Napo Lowland Quechua, Yukpa, Embera-Catio, Mokana, Kamkuamo, Spanish, English, French, Italian, German, Other, pop_total, pop_male, pop_female, literacy_all, literacy_male, literacy_female, language_data_yn, data_confidence, notes
-  congo-languages (COG): Congo: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    12 unit(s) written, 0 not a composition, 0 unnamed, year 2023, Other
-  democratic-republic-of-the-congo-languages (COD): Democratic Republic of the Congo: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    25 unit(s) written, 0 not a composition, 0 unnamed, year 2016, Other
-  drc-languages (COD): DRC: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    refused: no first-level file on this dataset
-  ecuador-languages (ECU): Ecuador: Languages
-    licence: Other -- Creative Commons, Attribution, Non-commercial, Share-alike -- license_id='hdx-other', isopen=False
-    refused: EC_lang_admin1.csv is not the long format; it has no location_code, location_name, location_level, language_name, proportion_value
-      its columns are: admin1_name, admin1_pcode, admin0_name, admin0_pcode, number_of_named_languages, main_language, main_language_share, Spanish, Achuar, Awa-Cuaiquer, Cofán, Chachi, Waorani, Quichua, Shuar, Secoya, Tsafiki, Shiwiar, Epena, Záparo, Andoa, Other, pop_total, pop_male, pop_female, literacy_all, literacy_male, literacy_female, language_data_yn, data_confidence, notes
-  el-salvador-languages (SLV): El Salvador: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    14 unit(s) written, 0 not a composition, 0 unnamed, year 2007, Census
-  eswatini-languages (SWZ): Eswatini: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    4 unit(s) written, 0 not a composition, 0 unnamed, year 2023, Other
-  ethiopia-languages (ETH): Ethiopia: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    13 unit(s) written, 0 not a composition, 0 unnamed, year 2007, Census
-  gambia-languages (GMB): Gambia: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    8 unit(s) written, 0 not a composition, 0 unnamed, year 2023, Other
-  ghana-languages (GHA): Ghana: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    16 unit(s) written, 0 not a composition, 0 unnamed, year 2012, Other
-  guatemala-languages (GTM): Guatemala: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    22 unit(s) written, 0 not a composition, 0 unnamed, year 2002, Census
-  guinea-languages (GIN): Guinea: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    8 unit(s) written, 0 not a composition, 0 unnamed, year 2014, Census
-  haiti-languages (HTI): Haiti: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    10 unit(s) written, 0 not a composition, 0 unnamed, year 2018, Other
-  india-languages (IND): India: Languages
-    licence: Other -- Creative Commons Attribution Non-commercial Share-alike (CC-BY-NC-SA-4.0) -- license_id='hdx-other', isopen=False
-    refused: in_lang_admin1_v01.csv is not the long format; it has no location_code, location_name, location_level, language_name, proportion_value
-      its columns are: admin1_name, admin1_pcode, admin0_name, admin0_pcode, state_code, number_of_named_languages, main_language, main_language_share, Assamese, Bengali, Bodo, Dogri, Gujarati, Hindi, Kannada, Kashmiri, Konkani, Maithili, Malayalam, Manipuri, Marathi, Nepali, Odia, Punjabi, Sanskrit, Santali, Sindhi, Tamil, Telugu, Urdu, Adi, Afghani, Anal, Angami, Ao, Arabic, Balti, Bhili, Bhotia, Bhumij, Bishnupuriya, Chakhesang, Chakru, Chang, Coorgi, Deori, Dimasa, English, Gadaba, Gangte, Garo, Gondi, Halabi, Halam, Hmar, Ho, Jatapu, Juang, Kabui, Karbi, Khandeshi, Kharia, Khasi, Khezha, Khiemnungan, Khond, Kinnauri, Kisan, Koch, Koda, Kolami, Kom, Konda, Konyak, Korku, Korwa, Koya, Kui, Kuki, Kurukh, Ladakhi, Lahauli, Lahnda, Lakher, Lalung, Lepcha, Liangmei, Limbu, Lotha, Lushai, Malto, Mao, Maram, Maring, Miri, Mishmi, Mogh, Monpa, Munda, Mundari, Nicobarese, Nissi, Nocte, Paite, Parji, Pawi, Phom, Pochury, Rabha, Rai, Rengma, Sangtam, Savara, Sema, Sherpa, Shina, Tamang, Tangkhul, Tangsa, Thado, Tibetan, Tripuri, Tulu, Vaiphei, Wancho, Yimchungre, Zeliang, Zemi, Zou, Other, pop_total, pop_male, pop_female, literacy_all, literacy_male, literacy_female, language_data_yn, data_confidence, notes
-  indonesia-languages (IDN): Indonesia: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    33 unit(s) written, 0 not a composition, 0 unnamed, year 2010, Census
-  iraq-languages (IRQ): Iraq: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    15 unit(s) written, 0 not a composition, 0 unnamed, year 1997, Census
-  kenya-languages (KEN): Kenya: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    47 unit(s) written, 0 not a composition, 0 unnamed, year 2023, Other
-  kyrgyzstan-languages (KGZ): Kyrgyzstan: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    8 unit(s) written, 0 not a composition, 0 unnamed, year 2009, Census
-  malawi-languages (MWI): Malawi: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    3 unit(s) written, 0 not a composition, 0 unnamed, year 1998, Census
-  mali-languages (MLI): Mali: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    10 unit(s) written, 0 not a composition, 0 unnamed, year 2009, Census
-  mauritius-languages (MUS): Mauritius: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    10 unit(s) written, 0 not a composition, 0 unnamed, year 2011, Census
-  morocco-languages (MAR): Morocco: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    10 unit(s) written, 0 not a composition, 0 unnamed, year 2014, Census
-  mozambique-languages (MOZ): Mozambique: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    11 unit(s) written, 0 not a composition, 0 unnamed, year 2024, Other
-  namibia-languages (NAM): Namibia: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    14 unit(s) written, 0 not a composition, 0 unnamed, year 2015, Other
-  nepal-languages (NPL): Nepal: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    7 unit(s) written, 0 not a composition, 0 unnamed, year 2023, Census
-  nicaragua-indigenous-languages (NIC): Nicaragua: Indigenous Languages
-    licence: Other -- Creative Commons, Attribution, Non-commercial, Share-alike 4.0 -- license_id='hdx-other', isopen=False
-    refused: ni_lang_v01_admin1.csv is not the long format; it has no location_code, location_name, location_level, language_name, proportion_value
-      its columns are: admin1_name, admin1_pcode, admin0_name, admin0_pcode, indigenous_language_share, indigenous_language_speakers, pop_total, data_confidence, notes
-  niger-languages (NER): Niger: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    8 unit(s) written, 0 not a composition, 0 unnamed, year 2023, Other
-  nigeria-languages (NGA): Nigeria: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-      the catalogue says 2022 and the file says [2022, 2023]; taking the catalogue's
-    37 unit(s) written, 0 not a composition, 0 unnamed, year 2022, Other
-  pakistan-languages (PAK): Pakistan: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    5 unit(s) written, 0 not a composition, 0 unnamed, year 2019, Other
-  paraguay-languages (PRY): Paraguay: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    dropped paraguay: level 1 unknown (PRYXXX): the file does not say which unit this is
-    15 unit(s) written, 0 not a composition, 1 unnamed, year 2002, Census
-  peru-languages (PER): Peru: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    25 unit(s) written, 0 not a composition, 0 unnamed, year 2017, Census
-  philippines-languages (PHL): Philippines: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    17 unit(s) written, 0 not a composition, 0 unnamed, year 2010, Census
-  senegal-languages (SEN): Senegal: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    dropped senegal: level 1 unknown (SENXXX): the file does not say which unit this is
-    12 unit(s) written, 0 not a composition, 1 unnamed, year 2013, Census
-  sierra-leone-languages (SLE): Sierra Leone: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    5 unit(s) written, 0 not a composition, 0 unnamed, year 2015, Census
-  somalia-languages (SOM): Somalia: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    17 unit(s) written, 0 not a composition, 0 unnamed, year 2022, Other
-  south-africa-languages (ZAF): South Africa: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    7 unit(s) written, 0 not a composition, 0 unnamed, year 2016, Census
-  sudan-languages (SDN): Sudan: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    dropped sudan: level 1 unknown (SDNXXX): the file does not say which unit this is
-    2 unit(s) written, 0 not a composition, 1 unnamed, year 2023, Other
-  thailand-languages (THA): Thailand: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    refused: th_lang_admin1_v01.csv is not the long format; it has no location_code, location_name, location_level, language_name, proportion_value
-      its columns are: admin1_name;admin1_pcode;admin0_name;admin0_pcode;number_of_named_languages;main_language;main_language_share;Thai;Other;pop_total;pop_male;pop_female;literacy_all;literacy_male;literacy_female;language_data_yn;data_confidence;notes
-  uganda-languages (UGA): Uganda: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    4 unit(s) written, 0 not a composition, 0 unnamed, year 2023, Other
-  ukraine-languages (UKR): Ukraine: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    27 unit(s) written, 0 not a composition, 0 unnamed, year 2001, Census
-  united-republic-of-tanzania-languages (TZA): United Republic of Tanzania: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    31 unit(s) written, 0 not a composition, 0 unnamed, year 2023, Other
-  venezuela-languages (VEN): Venezuela: Languages
-    licence: Other -- Creative Commons, Attribution, Non-commercial, Share-alike -- license_id='hdx-other', isopen=False
-    refused: VE_lang_admin1.csv is not the long format; it has no location_code, location_name, location_level, language_name, proportion_value
-      its columns are: admin1_name, admin1_pcode, admin0_name, admin0_pcode, number_of_named_indigenous_languages, main_indigenous_language, main_indigenous_language_share, belongs_to_indigenous_tribe_2011, indigenous_speaking_rate, speak_indigenous_language, Paraujano, Akawayo, Baniwa, Barawana, Barí, Chaima, Panare, Guahibo, Hodi, Kariña, Mapoyo, Yeral, Pemón, Piapoko, Piaroa, Maco, Puinave, Pumé, Cuiba, Sanuma, Sapé, Arutani, Warao, Warekena, Wayuu, Yanomami, Yabarana, Maquiritari, Yukpa, Japreria, Kubeo, Guanano, Makushi, Matako, Tukano, Wapishana, Kurripako, Sáliva, Waikerí, Kaketío, Ayoman, Timote, Gayón, Inga, Kechwa, Píritu, Jirajara, Cumanagoto, Arawak, Tunebo, Other, pop_total, pop_male, pop_female, literacy_all, literacy_male, literacy_female, literacy_indigenous_all, literacy_indigenous_male, literacy_indigenous_female, language_data_yn, data_confidence, notes, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
-  zambia-languages (ZMB): Zambia: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    10 unit(s) written, 0 not a composition, 0 unnamed, year 2000, Census
-  zimbabwe-languages (ZWE): Zimbabwe: Languages
-    licence: Creative Commons Attribution Share-Alike (CC BY-SA) -- license_id='cc-by-sa', isopen=True
-    10 unit(s) written, 0 not a composition, 0 unnamed, year 2023, Other
-  662 first-level units in 47 countries: AGO:18, ARM:11, BLR:6, BEN:12, BOL:9, BWA:15, BFA:13, BDI:17, CPV:4, KHM:25, COG:12, COD:25, SLV:14, SWZ:4, ETH:13, GMB:8, GHA:16, GTM:22, GIN:8, HTI:10, IDN:33, IRQ:15, KEN:47, KGZ:8, MWI:3, MLI:10, MUS:10, MAR:10, MOZ:11, NAM:14, NPL:7, NER:8, NGA:37, PAK:5, PRY:15, PER:25, PHL:17, SEN:12, SLE:5, SOM:17, ZAF:7, SDN:2, UGA:4, UKR:27, TZA:31, ZMB:10, ZWE:10
-  wrote data/processed/clear_global_language.json (1299 kB)
+SVK:
+  SVK admin1: 8 shapes, 8 with an article, 0 without
+    Region of Banská Bystrica: the ethnicity table counts 100 against a population of 607,581 (0%)
+    Region of Banská Bystrica: ethnicity: the table in the article counts a population this shape does not have, so the article is about some other place; it is not read
+    Region of Bratislava: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    Region of Bratislava: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    Region of Košice: ethnicity: labels this reader has no entry for: ['Slovensko slovenská', 'Maďarsko maďarská', '22px rómska', 'Česko česká', 'Česko moravská', '22px rusínska', 'Ukrajina ukrajinská', 'Nemecko nemecká', 'Poľsko poľská', 'Rusko ruská', 'Bulharsko bulharská', 'Izrael židovská', 'Srbsko srbská', 'Chorvátsko chorvátska', '25px iná', '25px nezistená']
+    Region of Košice: religion: labels this reader has no entry for: ['22px Rímskokatolícka cirkev', '21px Gréckokatolícka cirkev', '20px Pravoslávna cirkev', '18px Reformovaná kresťanská cirkev', '20px Evanjelická cirkev augsburského vyznania', '18px Apoštolská cirkev', '18px Evanjelická cirkev metodistická', '18px Kresťanské zbory', '18px Cirkev adventistov siedmeho dňa', '18px Cirkev bratská', '19px Bratská jednota baptistov', '10px Cirkev československá husitská', '18px Novoapoštolská cirkev', '18px Náboženská spoločnosť Jehovovi svedkovia', '20px Cirkev Ježiša Krista Svätých neskorších dní', '20px Ústredný zväz židovských náboženských obcí', '20px Bahájske spoločenstvo', '20px iné', '20px bez vyznania', '20px nezistené']
+    Region of Nitra: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
+    Region of Nitra: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    Region of Prešov: the ethnicity table counts 100 against a population of 810,075 (0%)
+    Region of Prešov: ethnicity: the table in the article counts a population this shape does not have, so the article is about some other place; it is not read
+    Region of Trenčín: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    Region of Trenčín: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    Region of Trnava: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
+    Region of Trnava: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    Region of Žilina: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    Region of Žilina: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+  SVK admin1: ethnicity: 0 of 8
+  SVK admin1: religion: 2 of 8
+  SVK admin2: 79 shapes, 79 with an article, 0 without
+    District of Banskk vtiavnica: ethnicity: labels this reader has no entry for: ['albánska', 'grécka', 'talianska', 'anglická', 'iránska', 'írska']
+    District of Banskk vtiavnica: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Bansks Bystrica: ethnicity: labels this reader has no entry for: ['vietnamská', 'čínska', 'talianska', 'albánska', 'anglická', 'grécka', 'turecká', 'francúzska', 'írska', 'iránska', 'kanadská', 'kórejská']
+    District of Bansks Bystrica: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Bardejov: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
+    District of Bardejov: religion: the article prints this table and cites nothing for it; an uncited figure is not read
+    District of Bonovce nad Bebra*: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Bonovce nad Bebra*: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Bratislava I: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Bratislava I: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Bratislava II: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Bratislava II: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Bratislava III: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Bratislava III: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Bratislava IV: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Bratislava IV: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Bratislava V: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Bratislava V: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Bytca: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Bytca: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Cadca: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Cadca: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Detva: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Detva: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Dolne Kub: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Dolne Kub: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Dunajskn Streda: ethnicity: labels this reader has no entry for: ['Ostatná, nezistená']
+    District of Dunajskn Streda: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Gala: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Gala: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Galanta: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
+    District of Galanta: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    District of Gelnica: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    District of Gelnica: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    District of Giar nad Hronom: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Giar nad Hronom: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Hlohovec: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Hlohovec: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Ilava: ethnicity: labels this reader has no entry for: ['Slezania', 'Iná a Neuvedená']
+    District of Ilava: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Komprno: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    District of Komprno: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    District of Krupina: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Krupina: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Kysucki Novi Mesto: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Kysucki Novi Mesto: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Levice: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Levice: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Liptovsk: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Liptovsk: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Lucenec: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Lucenec: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Malacky: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Malacky: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Martin: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Martin: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Michalovce: religion: the article prints this table and cites nothing for it; an uncited figure is not read
+    District of Myjava: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Myjava: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Nitra: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    District of Nitra: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Nova Mesto nad Va*: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Nova Mesto nad Va*: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Nova Zkmky: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    District of Nova Zkmky: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Numestovo: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Numestovo: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Partizonske: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Partizonske: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Pezinok: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Pezinok: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Piertany: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Piertany: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Pilina: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Pilina: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Poltcr: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Poltcr: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Povacskn Bystrica: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Povacskn Bystrica: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Prchov: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Prchov: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Predov: religion: the article prints this table and cites nothing for it; an uncited figure is not read
+    District of Prievidza: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Prievidza: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Revnca: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
+    District of Revnca: religion: the article prints this table and cites nothing for it; an uncited figure is not read
+    District of Rimavsk: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Rimavsk: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Ronnava: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Ronnava: religion: the article prints this table and cites nothing for it; an uncited figure is not read
+    District of Ruromberok: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Ruromberok: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Senec: ethnicity: labels this reader has no entry for: ['Ostatná, nezistená']
+    District of Senec: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Senica: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Senica: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Skalica: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Skalica: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Tarnovica: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Tarnovica: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Topolcany: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    District of Topolcany: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Trencon: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Trencon: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Trnava: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Trnava: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Turcianske Teplice: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Turcianske Teplice: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Tvrdo: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Tvrdo: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Velka Krta: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Velka Krta: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Zlatc Moravce: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Zlatc Moravce: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+    District of Zvolen: ethnicity: the article has no section matching 'n[áa]rodnostn[éeé] zlo[žz]enie|n[áa]rodnos'
+    District of Zvolen: religion: the article has no section matching 'n[áa]bo[žz]ensk[éeé] zlo[žz]enie|vierovyznanie'
+  SVK admin2: ethnicity: 22 of 79
+  SVK admin2: religion: 20 of 79
+  wrote data/processed/europe_wiki_slovakia.json (141 kB)
+wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/europe_wiki_slovakia.json (87 records)
