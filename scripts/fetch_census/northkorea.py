@@ -125,19 +125,19 @@ LICENCE = ("Central Bureau of Statistics, DPR Korea. Official publication; "
 # a re-read that drifts from it stops.
 CIVILIAN_TOTAL = 23_349_859
 
-# What Table 2 leaves out is established by the other DPRK file the Statistics
-# Division serves, the one-page preliminary results of the same census: a
-# civilian sub-total of 23,348,845 "living in regular households and in
-# institutional living quarters" against a total of 24,051,218 that "includes
-# population living in military camps". Those are the manual tallies and the
-# report's are the computerised figures, so the two civilian counts differ by
-# 1,014; what the sheet settles is the 702,373 between civilian and whole,
-# which no table of the report places in a province.
+# Table 1's All Ages row, the whole population the census counted, and the
+# only place in the report the figure appears. It is 702,372 above Table 2's,
+# and the census's own preliminary results say what the difference is: that
+# one-page sheet, the other DPRK file the Statistics Division serves, prints a
+# civilian sub-total "living in regular households and in institutional living
+# quarters" against a total that "includes population living in military
+# camps", 702,373 apart on the manual tallies the report's computerised
+# figures replaced.
+CENSUS_TOTAL = 24_052_231
+IN_CAMPS = CENSUS_TOTAL - CIVILIAN_TOTAL
+TABLE_ONE = "Total and Percent Distribution of Population by Sex and Sex-Ratio"
 PRELIM = ("https://unstats.un.org/unsd/demographic/sources/census/wphc/"
           "North_Korea/2008_North_Korea_Census.pdf")
-PRELIM_CIVILIAN = 23_348_845
-PRELIM_TOTAL = 24_051_218
-IN_CAMPS = PRELIM_TOTAL - PRELIM_CIVILIAN
 
 # ---------------------------------------------------------------------------
 # The geography. The left-hand side of every table below is the report's own
@@ -283,13 +283,16 @@ POPULATION_NOTE = (
     "The 2008 census count, Table 2 of the Central Bureau of Statistics' "
     "National Report, which counts private households and institutional "
     f"living quarters and comes to {CIVILIAN_TOTAL:,} for the country. The "
-    f"census's own preliminary results put the whole population {IN_CAMPS:,} "
-    "higher: those are the people living in military camps, whom no table of "
-    "the report places in a province.")
+    f"report's Table 1 counts {CENSUS_TOTAL:,}; the {IN_CAMPS:,} between them "
+    "are the people living in military camps, whom no table of the report "
+    "places in a province.")
 
 SEX_RATIO_NOTE = (
     "Females per 1,000 males, from the Male and Female columns of the same "
-    "Table 2 row, which add to the total printed beside them.")
+    "Table 2 row, which add to the total printed beside them. Like the head "
+    "count beside it, it leaves out the people in military camps, who are 94% "
+    "men by the difference between the report's first two tables, so a "
+    "ratio here runs above the census's own.")
 
 MERGED_NOTE = (
     " This shape is {parts} rows of the table added together -- {names} -- "
@@ -367,6 +370,45 @@ def table_pages(pages: list[str]) -> list[int]:
             f"{CAPTION!r}; the file at {REPORT} is not the National Report, "
             "or its text did not extract")
     return found
+
+
+def whole_population(pages: list[str]) -> tuple[int, int]:
+    """Table 1's All Ages row: the whole population, and its males.
+
+    What every row here says about military camps is arithmetic between the
+    report's first two tables, so it is read rather than asserted. Table 1 is
+    the only page of the 278 that carries the figure.
+    """
+    found = [n for n, page in enumerate(pages, 1) if TABLE_ONE in page
+             and "All Ages" in page]
+    if len(found) != 1:
+        raise SystemExit(
+            f"northkorea: {len(found)} pages of the report carry Table 1's "
+            "All Ages row, and exactly one should")
+    line = next((ln for ln in pages[found[0] - 1].splitlines()
+                 if ln.strip().startswith("All Ages")), None)
+    if line is None:
+        raise SystemExit("northkorea: Table 1 has no All Ages row")
+    # Three figures, then the percentages, which carry a decimal point and so
+    # cannot be mistaken for another group of thousands. The row saying
+    # Both Sexes = Male + Female is the check on having read them right.
+    tokens, numbers = line.split("All Ages", 1)[1].split(), []
+    while tokens and len(numbers) < 3:
+        digits, tokens = tokens[0], tokens[1:]
+        if not digits.isdigit():
+            raise SystemExit(f"northkorea: Table 1's All Ages row begins "
+                             f"{line.strip()[:60]!r}, which is not figures")
+        while tokens and tokens[0].isdigit() and len(tokens[0]) == 3:
+            digits, tokens = digits + tokens[0], tokens[1:]
+        numbers.append(int(digits))
+    people, males, females = numbers
+    if people != males + females:
+        raise SystemExit(
+            f"northkorea: Table 1's All Ages row reads {people:,} = "
+            f"{males:,} + {females:,}, which does not add up")
+    log(f"  Table 1: the whole population is {people:,}, "
+        f"{people - CIVILIAN_TOTAL:,} above Table 2's {CIVILIAN_TOTAL:,}")
+    return people, males
 
 
 def split_row(tokens: list[str], where: str) -> list[int]:
@@ -676,10 +718,8 @@ def check(records: list[dict[str, Any]]) -> None:
         raise SystemExit(f"northkorea: the 11 shapes come to {total:,} "
                          f"against Table 2's {CIVILIAN_TOTAL:,}")
     log(f"  check: 11 shapes and 179 counties, each shape the sum of its "
-        f"own, all of them {total:,} -- Table 2's own DPR Korea row. The "
-        f"census's preliminary sheet counts {PRELIM_CIVILIAN:,} civilians "
-        f"against {PRELIM_TOTAL:,} in all, so {IN_CAMPS:,} more people live "
-        "in military camps than any province table accounts for")
+        f"own, all of them {total:,} -- Table 2's own DPR Korea row, and "
+        f"{IN_CAMPS:,} short of the {CENSUS_TOTAL:,} Table 1 counts")
 
 
 def page_texts(path: Path) -> list[str]:
@@ -695,7 +735,17 @@ def run() -> int:
     pages = page_texts(pdf)
     numbers = table_pages(pages)
     log(f"  Table 2 on pages {numbers}")
+    people, males = whole_population(pages)
+    if people != CENSUS_TOTAL:
+        raise SystemExit(f"northkorea: Table 1 counts {people:,} where the "
+                         f"census published {CENSUS_TOTAL:,}")
     table = counties(rows(pages, numbers))
+    civilian_males = sum(f[1] for area in table.values()
+                         for f in area.values())
+    log(f"  the {IN_CAMPS:,} Table 2 does not place are "
+        f"{males - civilian_males:,} men and "
+        f"{IN_CAMPS - (males - civilian_males):,} women, which is why a sex "
+        "ratio here runs above the census's own")
     records = build(regroup(table))
     check(records)
     for row in records:

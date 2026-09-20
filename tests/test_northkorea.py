@@ -251,6 +251,35 @@ class ReadingTheTable(unittest.TestCase):
         self.assertIn("not the National Report", str(caught.exception))
 
 
+class TheWholePopulation(unittest.TestCase):
+    """Table 1, which is where the military camps show up as a number."""
+
+    PAGE = ("2008 Census of Population of DPR Korea\n14\n"
+            "Table 1.  Total and Percent Distribution of Population by Sex "
+            "and Sex-Ratio, by Single Year of Age\n"
+            "Age\nPopulation Percent Sex\nRatio Both Sexes Male Female Both\n"
+            "Sexes Male Female\n"
+            "All Ages  24 052 231  11 721 838  12 330 393 100.0 100.0 100.0 "
+            "95.1\n"
+            "0-4    1 710 039  872 173  837 866 7.1 7.4 6.8 104.1")
+
+    def test_the_all_ages_row_is_read_past_its_percentages(self):
+        people, males = nk.whole_population(["", self.PAGE])
+        self.assertEqual((people, males), (24_052_231, 11_721_838))
+        self.assertEqual(people - nk.CIVILIAN_TOTAL, nk.IN_CAMPS)
+
+    def test_a_row_whose_sexes_do_not_add_up_is_refused(self):
+        page = self.PAGE.replace("11 721 838", "11 721 000")
+        with self.assertRaises(SystemExit) as caught:
+            nk.whole_population(["", page])
+        self.assertIn("does not add up", str(caught.exception))
+
+    def test_a_report_without_table_1_is_refused(self):
+        with self.assertRaises(SystemExit) as caught:
+            nk.whole_population(["", "\n".join(table())])
+        self.assertIn("All Ages", str(caught.exception))
+
+
 class Regrouping(unittest.TestCase):
     def setUp(self):
         self.shaped = nk.regroup(read())
