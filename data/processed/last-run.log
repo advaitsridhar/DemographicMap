@@ -1,6 +1,20 @@
-page: https://web.archive.org/web/20100101000000id_/http://prism.spc.int/country/pg/stats/2000_Census/census.htm
-  unreachable: HTTPError: HTTP Error 503: Service Unavailable
-page: https://web.archive.org/web/20100101000000id_/http://prism.spc.int/country/pg/stats/Pop_Soc_%20Stats/Population/popdemog.htm
-  unreachable: HTTPError: HTTP Error 503: Service Unavailable
-page: https://web.archive.org/web/20100101000000id_/http://prism.spc.int/Country/PG/Stats.htm
-  unreachable: URLError: <urlopen error timed out>
+  https://www.nso.gov.pg/wpfd_file/png-national-report-2000-census/
+    62,657 chars
+    1 distinct match(es) for 'https://www.nso.gov.pg/download/[a-zA-Z0-9/?=&%._~-]+'
+      https://www.nso.gov.pg/download/51/population-housing/2151/png-national-report-2000-census.pdf
+  https://www.nso.gov.pg/wpfd_file/png-national-report-2000-census-2/
+    62,668 chars
+    1 distinct match(es) for 'https://www.nso.gov.pg/download/[a-zA-Z0-9/?=&%._~-]+'
+      https://www.nso.gov.pg/download/77/nso-digital-library/2247/png-national-report-2000-census-2.pdf
+  https://www.nso.gov.pg/wpfd_file/png-national-report-2000-census-3/
+    52,238 chars
+    1 distinct match(es) for 'https://www.nso.gov.pg/download/[a-zA-Z0-9/?=&%._~-]+'
+      https://www.nso.gov.pg/download/101/education/2876/png-national-report-2000-census-3.pdf
+  https://www.nso.gov.pg/wpfd_file/census-figures-by-wards-southern-region/
+    52,321 chars
+    1 distinct match(es) for 'https://www.nso.gov.pg/download/[a-zA-Z0-9/?=&%._~-]+'
+      https://www.nso.gov.pg/download/51/population-housing/2960/census-figures-by-wards-southern-region.pdf
+  https://www.nso.gov.pg/wpfd_file/png-final-figures-2011-booklet-2/
+    52,251 chars
+    1 distinct match(es) for 'https://www.nso.gov.pg/download/[a-zA-Z0-9/?=&%._~-]+'
+      https://www.nso.gov.pg/download/77/nso-digital-library/2246/png-final-figures-2011-booklet-2.pdf
