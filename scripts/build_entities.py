@@ -119,6 +119,12 @@ ADAPTER_FILES = [
     # surveys, and it touches a field the surveys do not carry.
     "china_wiki_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
+    # After Wikidata, which carries a population for North Korea's provinces
+    # and for Pyongyang a 2015 estimate: this is the 2008 census's own Table 2,
+    # for all 11 first-level units and all 179 counties, with the sex ratio
+    # beside it. It writes no composition -- the country asks none of the
+    # three, which this file's own reading of the report is what established.
+    "northkorea_county.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
     # says so in a generic sentence; this is the census itself.
@@ -264,6 +270,12 @@ ADAPTER_HINTS: dict[str, str] = {
     "PNG": "NSO 2024 census Final Figures (population, sex ratio by province and "
            "district) and the 2011 National Report's Summary Indicators (each "
            "province's largest denomination): python -m scripts.fetch_census.png",
+    "PRK": "The 2008 census's Table 2 (population by sex and urban/rural, by "
+           "city/district/county and province) from the UN Statistics Division's "
+           "copy of the CBS National Report: population and sex ratio only, "
+           "because the census asks none of the three -- its form's one question "
+           "about who a person is asks nationality: "
+           "python -m scripts.fetch_census.northkorea",
     "PER": "INEI 2017 census profile book (religion, mother tongue) by department, "
            "read from the PDF's word positions: python -m scripts.fetch_census.peru",
     "MLI": "INSTAT RGPH5 2022 thematic report on cultural characteristics (religion, "

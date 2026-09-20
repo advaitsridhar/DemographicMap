@@ -110,6 +110,10 @@ if [ "${WITH_CENSUS:-0}" = "1" ]; then
   # Development Laos, summed to 18 provinces and 148 districts; one 4.5 MB
   # workbook, needs egress.
   soft python3 -m scripts.fetch_census.laos --level both
+  # North Korea: the 2008 census's Table 2, population and sex ratio for the
+  # 11 first-level units and all 179 counties, read from the UN Statistics
+  # Division's copy of the CBS National Report; one 1.4 MB PDF, needs egress.
+  soft python3 -m scripts.fetch_census.northkorea
   # Census ethnicity for the 31 divisions, one MediaWiki API call each.
   soft python3 -m scripts.fetch_census.china_wiki
   # One MediaWiki API call; the NSO's own hosts refuse automated readers.
