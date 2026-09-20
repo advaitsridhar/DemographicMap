@@ -1,13 +1,19 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-  https://nso.mn/en
-    63,708 chars
-    0 distinct match(es) for '[-a-zA-Z0-9_./]*(api|API)[-a-zA-Z0-9_./]*'
-  https://data.nso.mn/
-    44,405 chars
-    2 distinct match(es) for '[-a-zA-Z0-9_./]*(api|API)[-a-zA-Z0-9_./]*'
-      //fonts.googleapis.com
-      //fonts.googleapis.com/css2
-  https://metadata.nso.mn/
-    25,993 chars
-    0 distinct match(es) for '[-a-zA-Z0-9_./]*(api|API)[-a-zA-Z0-9_./]*'
+probe_page: en.wikipedia.org East_New_Britain_Province
+  214 lines of text, 5 mentioning religion, Catholic, census, Lutheran, language
+       23  • Total
+       24  15,724 km 2 (6,071 sq mi)
+       25  Population (2011 census)
+       26  • Total
+       27  328,369
+       35  Website
+       36  www .eastnewbritain .gov .pg
+       37  East New Britain is a province of Papua New Guinea , consisting of the north-eastern part of the island of New Britain and the Duke of York Islands . The capital of the province is Kokopo , not far from the old capital of Rabaul , which was largely destroyed in a volcanic eruption in 1994. East New 
+       38  East New Britain has a dual economy: a cash economy operates side by side with the subsistence -farming sector. The main crops produced for export are cocoa and copra . Tourism continues to be an increasingly important sector of the provincial economy.
+       39  Languages
+       40  [ edit ]
+       41  There are sixteen Austronesian languages spoken in the province, of which Kuanua , spoken by the Tolai on the Gazelle Peninsula is the most widely spoken. Papuan languages are also spoken in the province, including the Baining , Taulil , Ata , Kol , Makolkol , and Sulka languages.
+       42  Districts and LLGs
+       43  [ edit ]
+       44  Each province in Papua New Guinea has one or more districts, and each district has one or more Local Level Government (LLG) areas. For census purposes, the LLG areas are subdivided into wards and those into census units. [ 3 ]
+       45  District
+       46  District Capital
