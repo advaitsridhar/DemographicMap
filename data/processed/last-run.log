@@ -1,10 +1,13 @@
-page: https://dprkorea.un.org/en/resources/publications
-  99,559 bytes
-  1 matching link(s)
-  - 2014 Socio-Economic, Demographic and Health Survey
-    https://dprkorea.un.org/en/10162-2014-socio-economic-demographic-and-health-survey
-page: https://dprk.un.org/en/resources/publications
-  99,559 bytes
-  1 matching link(s)
-  - 2014 Socio-Economic, Demographic and Health Survey
-    https://dprk.un.org/en/10162-2014-socio-economic-demographic-and-health-survey
+  http://www2.1212.mn/BookLibraryDownload.ashx?url=Govisumber_XAOCT_Negdsen_dun.pdf&ln=Mn
+    0 chars
+    
+/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
+  certs = pkcs7.load_der_pkcs7_certificates(blob)
+  https://www.1212.mn/BookLibraryDownload.ashx?url=Govisumber_XAOCT_Negdsen_dun.pdf&ln=Mn
+    unreachable: HTTPError: HTTP Error 404: Not Found
+  retry 1/1 after 2s :: http://www2.1212.mn/BookLibrary.aspx?ln=Mn :: HTTP Error 500: Internal Server Error
+  http://www2.1212.mn/BookLibrary.aspx?ln=Mn
+    unreachable: RuntimeError: GET failed after 1 retries: http://www2.1212.mn/BookLibrary.aspx?ln=Mn
+  retry 1/1 after 2s :: https://www2.1212.mn/BookLibrary.aspx?ln=Mn :: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)>
+  https://www2.1212.mn/BookLibrary.aspx?ln=Mn
+    unreachable: RuntimeError: GET failed after 1 retries: https://www2.1212.mn/BookLibrary.aspx?ln=Mn
