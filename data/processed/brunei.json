@@ -1,0 +1,2476 @@
+[
+  {
+    "id": "BRN-Brunei-Muara",
+    "level": "admin1",
+    "name": "Brunei Muara",
+    "parent": "BRN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 318530,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 84.5,
+        "count": 269074
+      },
+      {
+        "group": "Christianity",
+        "pct": 6.3,
+        "count": 20076
+      },
+      {
+        "group": "Buddhism",
+        "pct": 6.1,
+        "count": 19306
+      },
+      {
+        "group": "Other, none, or not stated",
+        "pct": 3.2,
+        "count": 10074
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 69.9,
+        "count": 222772
+      },
+      {
+        "group": "Others",
+        "pct": 21.1,
+        "count": 67236
+      },
+      {
+        "group": "Chinese",
+        "pct": 9.0,
+        "count": 28522
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity/religion/population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "ethnicity/religion/population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "country": "BRN",
+    "aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Brunei's 2021 census (BPP 2021), Table A3 of its annexes: population by race, district and sex. \"Malay\" is the state's administrative category and covers the seven groups the report names as ethnic groups of the Malay race -- Brunei, Tutong, Belait, Kedayan, Dusun, Bisaya and Murut -- which are published for the country only and are not split here. \"Others\" is the report's own residual, everyone outside Malay and Chinese, and in a country where 18.4% of those counted were temporary residents it is largely foreign workers.",
+    "religion_year": 2021,
+    "religion_note": "Brunei's 2021 census (BPP 2021), Table A4 of its annexes: population by religion, district and sex. Islam is the state religion. The census offered Islam, Christianity, Buddhism, Hinduism and Others and published four columns: the report states that other religions, unstated faiths and no religious belief were grouped into the last, which is why it is labelled for all three rather than as \"other religions\"."
+  },
+  {
+    "id": "BRN-Belait",
+    "level": "admin1",
+    "name": "Belait",
+    "parent": "BRN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 65531,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 70.3,
+        "count": 46072
+      },
+      {
+        "group": "Buddhism",
+        "pct": 11.0,
+        "count": 7235
+      },
+      {
+        "group": "Christianity",
+        "pct": 10.7,
+        "count": 7028
+      },
+      {
+        "group": "Other, none, or not stated",
+        "pct": 7.9,
+        "count": 5196
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 50.7,
+        "count": 33245
+      },
+      {
+        "group": "Others",
+        "pct": 32.4,
+        "count": 21218
+      },
+      {
+        "group": "Chinese",
+        "pct": 16.9,
+        "count": 11068
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity/religion/population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "ethnicity/religion/population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "country": "BRN",
+    "aliases": [],
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Brunei's 2021 census (BPP 2021), Table A3 of its annexes: population by race, district and sex. \"Malay\" is the state's administrative category and covers the seven groups the report names as ethnic groups of the Malay race -- Brunei, Tutong, Belait, Kedayan, Dusun, Bisaya and Murut -- which are published for the country only and are not split here. \"Others\" is the report's own residual, everyone outside Malay and Chinese, and in a country where 18.4% of those counted were temporary residents it is largely foreign workers.",
+    "religion_year": 2021,
+    "religion_note": "Brunei's 2021 census (BPP 2021), Table A4 of its annexes: population by religion, district and sex. Islam is the state religion. The census offered Islam, Christianity, Buddhism, Hinduism and Others and published four columns: the report states that other religions, unstated faiths and no religious belief were grouped into the last, which is why it is labelled for all three rather than as \"other religions\"."
+  },
+  {
+    "id": "BRN-Tutong",
+    "level": "admin1",
+    "name": "Tutong",
+    "parent": "BRN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 47210,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 84.2,
+        "count": 39763
+      },
+      {
+        "group": "Other, none, or not stated",
+        "pct": 11.0,
+        "count": 5192
+      },
+      {
+        "group": "Christianity",
+        "pct": 2.4,
+        "count": 1151
+      },
+      {
+        "group": "Buddhism",
+        "pct": 2.3,
+        "count": 1104
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 74.7,
+        "count": 35283
+      },
+      {
+        "group": "Others",
+        "pct": 20.4,
+        "count": 9609
+      },
+      {
+        "group": "Chinese",
+        "pct": 4.9,
+        "count": 2318
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity/religion/population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "ethnicity/religion/population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "country": "BRN",
+    "aliases": [],
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Brunei's 2021 census (BPP 2021), Table A3 of its annexes: population by race, district and sex. \"Malay\" is the state's administrative category and covers the seven groups the report names as ethnic groups of the Malay race -- Brunei, Tutong, Belait, Kedayan, Dusun, Bisaya and Murut -- which are published for the country only and are not split here. \"Others\" is the report's own residual, everyone outside Malay and Chinese, and in a country where 18.4% of those counted were temporary residents it is largely foreign workers.",
+    "religion_year": 2021,
+    "religion_note": "Brunei's 2021 census (BPP 2021), Table A4 of its annexes: population by religion, district and sex. Islam is the state religion. The census offered Islam, Christianity, Buddhism, Hinduism and Others and published four columns: the report states that other religions, unstated faiths and no religious belief were grouped into the last, which is why it is labelled for all three rather than as \"other religions\"."
+  },
+  {
+    "id": "BRN-Temburong",
+    "level": "admin1",
+    "name": "Temburong",
+    "parent": "BRN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9444,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "Islam",
+        "pct": 75.5,
+        "count": 7126
+      },
+      {
+        "group": "Christianity",
+        "pct": 12.8,
+        "count": 1207
+      },
+      {
+        "group": "Other, none, or not stated",
+        "pct": 10.7,
+        "count": 1011
+      },
+      {
+        "group": "Buddhism",
+        "pct": 1.1,
+        "count": 100
+      }
+    ],
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": [
+      {
+        "group": "Malay",
+        "pct": 60.5,
+        "count": 5716
+      },
+      {
+        "group": "Others",
+        "pct": 37.1,
+        "count": 3504
+      },
+      {
+        "group": "Chinese",
+        "pct": 2.4,
+        "count": 224
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity/religion/population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "ethnicity/religion/population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "country": "BRN",
+    "aliases": [],
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Brunei's 2021 census (BPP 2021), Table A3 of its annexes: population by race, district and sex. \"Malay\" is the state's administrative category and covers the seven groups the report names as ethnic groups of the Malay race -- Brunei, Tutong, Belait, Kedayan, Dusun, Bisaya and Murut -- which are published for the country only and are not split here. \"Others\" is the report's own residual, everyone outside Malay and Chinese, and in a country where 18.4% of those counted were temporary residents it is largely foreign workers.",
+    "religion_year": 2021,
+    "religion_note": "Brunei's 2021 census (BPP 2021), Table A4 of its annexes: population by religion, district and sex. Islam is the state religion. The census offered Islam, Christianity, Buddhism, Hinduism and Others and published four columns: the report states that other religions, unstated faiths and no religious belief were grouped into the last, which is why it is labelled for all three rather than as \"other religions\"."
+  },
+  {
+    "id": "BRN-Brunei-Muara-Berakas-A",
+    "level": "admin2",
+    "name": "Berakas A",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 28311,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 28,311 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 28,311 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Berakas-B",
+    "level": "admin2",
+    "name": "Berakas B",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 39284,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 39,284 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 39,284 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Burong-Pingai-Ayer",
+    "level": "admin2",
+    "name": "Burong Pingai Ayer",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1459,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 1,459 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 1,459 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Gadong",
+    "level": "admin2",
+    "name": "Gadong",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 73491,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 73,491 people here, the sum of its Gadong A and Gadong B (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 73,491 people here, the sum of its Gadong A and Gadong B (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Kianggeh",
+    "level": "admin2",
+    "name": "Kianggeh",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8102,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 8,102 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 8,102 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Kilanas",
+    "level": "admin2",
+    "name": "Kilanas",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 24981,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 24,981 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 24,981 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Kota-Batu",
+    "level": "admin2",
+    "name": "Kota Batu",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12676,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 12,676 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 12,676 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Lumapas",
+    "level": "admin2",
+    "name": "Lumapas",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8058,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 8,058 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 8,058 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Mentiri",
+    "level": "admin2",
+    "name": "Mentiri",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 39324,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 39,324 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 39,324 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Pangkalan-Batu",
+    "level": "admin2",
+    "name": "Pangkalan Batu",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 15860,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 15,860 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 15,860 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Peramu",
+    "level": "admin2",
+    "name": "Peramu",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1151,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 1,151 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 1,151 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Saba",
+    "level": "admin2",
+    "name": "Saba",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 827,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 827 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 827 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Sengkurong",
+    "level": "admin2",
+    "name": "Sengkurong",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 40972,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 40,972 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 40,972 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Serasa",
+    "level": "admin2",
+    "name": "Serasa",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 18569,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 18,569 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 18,569 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Sungai-Kebun",
+    "level": "admin2",
+    "name": "Sungai Kebun",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4282,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 4,282 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 4,282 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Sungai-Kedayan",
+    "level": "admin2",
+    "name": "Sungai Kedayan",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 241,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 241 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 241 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Brunei-Muara-Tamoi",
+    "level": "admin2",
+    "name": "Tamoi",
+    "parent": "BRN-Brunei-Muara",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 942,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 942 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 942 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Brunei Muara",
+    "parent_aliases": [
+      "Brunei-Muara",
+      "Brunei and Muara",
+      "Daerah Brunei Muara"
+    ],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Belait-Bukit-Sawat",
+    "level": "admin2",
+    "name": "Bukit Sawat",
+    "parent": "BRN-Belait",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 759,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 759 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 759 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Belait",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Belait-Kuala-Balai",
+    "level": "admin2",
+    "name": "Kuala Balai",
+    "parent": "BRN-Belait",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 16,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 16 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 16 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Belait",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Belait-Kuala-Belait",
+    "level": "admin2",
+    "name": "Kuala Belait",
+    "parent": "BRN-Belait",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 28793,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 28,793 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 28,793 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Belait",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Belait-Labi",
+    "level": "admin2",
+    "name": "Labi",
+    "parent": "BRN-Belait",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 727,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 727 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 727 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Belait",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Belait-Liang",
+    "level": "admin2",
+    "name": "Liang",
+    "parent": "BRN-Belait",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 16813,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 16,813 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 16,813 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Belait",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Belait-Melilas",
+    "level": "admin2",
+    "name": "Melilas",
+    "parent": "BRN-Belait",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 29,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 29 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 29 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Belait",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Belait-Seria",
+    "level": "admin2",
+    "name": "Seria",
+    "parent": "BRN-Belait",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 18313,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 18,313 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 18,313 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Belait",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Belait-Sukang",
+    "level": "admin2",
+    "name": "Sukang",
+    "parent": "BRN-Belait",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 81,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 81 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 81 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Belait",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Tutong-Keriam",
+    "level": "admin2",
+    "name": "Keriam",
+    "parent": "BRN-Tutong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8589,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 8,589 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 8,589 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Tutong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Tutong-Kiudang",
+    "level": "admin2",
+    "name": "Kiudang",
+    "parent": "BRN-Tutong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5063,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 5,063 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 5,063 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Tutong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Tutong-Lamunin",
+    "level": "admin2",
+    "name": "Lamunin",
+    "parent": "BRN-Tutong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3641,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 3,641 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 3,641 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Tutong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Tutong-Pekan-Tutong",
+    "level": "admin2",
+    "name": "Pekan Tutong",
+    "parent": "BRN-Tutong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9883,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 9,883 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 9,883 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Tutong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Tutong-Rambai",
+    "level": "admin2",
+    "name": "Rambai",
+    "parent": "BRN-Tutong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 980,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 980 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 980 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Tutong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Tutong-Tanjong-Maya",
+    "level": "admin2",
+    "name": "Tanjong Maya",
+    "parent": "BRN-Tutong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3772,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 3,772 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 3,772 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Tutong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Tutong-Telisai",
+    "level": "admin2",
+    "name": "Telisai",
+    "parent": "BRN-Tutong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13253,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 13,253 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 13,253 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Tutong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Tutong-Ukong",
+    "level": "admin2",
+    "name": "Ukong",
+    "parent": "BRN-Tutong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2029,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 2,029 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 2,029 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Tutong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Temburong-Amo",
+    "level": "admin2",
+    "name": "Amo",
+    "parent": "BRN-Temburong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1657,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 1,657 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 1,657 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Temburong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Temburong-Bangar",
+    "level": "admin2",
+    "name": "Bangar",
+    "parent": "BRN-Temburong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2112,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 2,112 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 2,112 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Temburong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Temburong-Batu-Apoi",
+    "level": "admin2",
+    "name": "Batu Apoi",
+    "parent": "BRN-Temburong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1355,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 1,355 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 1,355 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Temburong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  },
+  {
+    "id": "BRN-Temburong-Bokok",
+    "level": "admin2",
+    "name": "Bokok",
+    "parent": "BRN-Temburong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3812,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 3,812 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 3,812 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Temburong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": [
+      "Bunkok"
+    ]
+  },
+  {
+    "id": "BRN-Temburong-Labu",
+    "level": "admin2",
+    "name": "Labu",
+    "parent": "BRN-Temburong",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 508,
+      "unit": "persons",
+      "year": 2021,
+      "source": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available",
+      "note": "The 2021 census counted 508 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "language": {
+      "status": "not_available",
+      "note": "Not published. Brunei's 2021 census does ask language -- question E27, \"the language mainly spoken at home\", one answer per person, beside E26 on languages read and written -- and tabulates neither: none of the 38 tables in Annexes A, B and C of the census report carries a language column at any level, and the report's Concepts and Definitions defines race, religion, marital status, country of birth and nationality and not language. Asked and not published, which is a different thing from not asked."
+    },
+    "ethnicity": {
+      "status": "not_available",
+      "note": "The 2021 census counted 508 people in this mukim (Table C1 of the census annexes), but Brunei publishes race and religion by district only. Its mukim tables -- Annex B on population, households and occupied living quarters, Annex C on residential status and age -- carry no composition of any kind, and Annex A, which carries race and religion, stops at the four districts."
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Population and Housing Census (BPP) 2021, Department of Economic Planning and Statistics, Brunei Darussalam, annex tables A and C",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx",
+        "year": 2021
+      },
+      {
+        "field": "population",
+        "name": "Report of the Population and Housing Census (BPP) 2021: Demographic, Household and Housing Characteristics (the national figures the workbook is checked against)",
+        "url": "https://deps.mofe.gov.bn/wp-content/uploads/2025/11/RPT-2.pdf",
+        "year": 2021
+      }
+    ],
+    "parent_name": "Temburong",
+    "parent_aliases": [],
+    "country": "BRN",
+    "aliases": []
+  }
+]

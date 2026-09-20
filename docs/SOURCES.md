@@ -228,6 +228,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Poland | GUS NSP 2021 final tables (three workbooks: przynależność wyznaniowa, narodowo-etniczna, język używany w domu) | voivodeship, powiat | Religion is a seven-level classification tree, cut once: Christian branches at level 5, other religions at level 4, no religion at level 3, and the fifth of Poland that declined to answer at level 2, kept as "Not stated". National-ethnic identification and home language allow two answers and are carried as multi-response; identifications and languages without an English name are summed as Other. Column A of every sheet is empty. |
 | Malaysia | DOSM OpenDOSM `population_state` / `population_district` CSV | state, district | Annual population estimates by ethnicity carried forward from Census 2020, in thousands; the latest year is read and the records say "estimate". The non-citizen row is DOSM's own category of the resident population and is kept. |
 | Malaysia (religion) | DOSM Kawasanku dashboard, `kawasanku_admin_barmeter.parquet` (storage.dosm.gov.my), built on MyCensus 2020 | state, district | Religion is a census question but OpenDOSM's catalogue has no religion table; the dashboard DOSM built on the 2020 census carries the six-category shares (Islam, Buddhism, Christianity, Hinduism, other religions, no religion) for the country, 16 states and 160 districts as unrounded percentages, and the state rows equal the census's published state table to the decimal. Counts are those shares applied to each area's 2020 population from the OpenDOSM series and rounded, and the note says so; the census's "unknown" answers are not separated from the last two categories. The country row is checked against DOSM's Key Findings figures (63.5 / 18.7 / 9.1 / 6.1 / 2.7) and states and districts, weighted, against their parent. Language: the census has never asked it (policy entry `MYS`). `scripts/fetch_census/malaysia_religion.py`. |
+| Brunei | DEPS, Population and Housing Census (BPP) 2021, annex tables A3 (race by district), A4 (religion by district) and C1 (population by mukim), read from the department's own annex workbook `wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx` | district, mukim | Race and religion for all 4 districts, 440,715 people, checked against the figures the census report prints in prose and reconciling to the person at every level. "Malay" is the state's administrative group, defined by the report as covering Brunei, Tutong, Belait, Kedayan, Dusun, Bisaya and Murut, whose shares are published for the country only; the religion residual pools other faiths, unstated answers and no religious belief, so it is carried as "Other, none, or not stated". All 38 mukims carry the census head count and a gap naming the three annexes that put no composition below the district; Gadong is the sum of the census's Gadong A and Gadong B, which the boundary file draws as one, and Bokok carries the file's spelling Bunkok as an alias. Language is asked (question E27, the language mainly spoken at home) and never tabulated, so it is `not_available` with that reason rather than `not_collected`. `scripts/fetch_census/brunei.py`. |
 | Kenya | KNBS 2019 Census Volume IV, Table 2.30 (openAFRICA mirror) | county | Religion for all 47 counties, replacing the Afrobarometer survey rows; ethnicity stays Afrobarometer's. KNBS's own site fails TLS verification (incomplete chain) and this project does not turn verification off. |
 | Thailand | NSO 2000 Population and Housing Census, provincial final reports (`web.nso.go.th/pop2000/finalrep/`), transcribed in the Wikipedia article *Nationality, religion, and language data for the provinces of Thailand* | province | Buddhist, Muslim and Christian shares for 2000 as printed, read through the MediaWiki API because the NSO's own hosts refuse this client; the rest of 100% is one 'Other or not stated' group; an N/A is absent, not zero. 76 of 77 provinces: Bueng Kan was carved out of Nong Khai in 2011 and has no 2000 row. Nationality is citizenship and is not read as ethnicity; the 'linguistic minorities' cells name a few languages and not the rest, so language stays a gap. `scripts/fetch_census/thailand.py`. |
 | Thailand (ethnicity) | NSO 2000 Population and Housing Census, language spoken at home, the 'linguistic minorities' cell of the same provincial reports and the same Wikipedia transcription; Suwilai Premsrirat et al., *Ethnolinguistic Maps of Thailand* (Mahidol University Institute of Language and Culture, 2004) for the regional Tai groups and the national figures, as transcribed in *Demographics of Thailand* | province | By the map owner's decision of 19 September 2026, and every province a `modelled` estimate, never a list: the census's minorities as printed under its own category names, everyone else assigned to the region's Tai group (Central Thai, Isan (Lao), Northern Thai, Southern Thai). The run prints the national composition the provinces imply beside the maps' figures; no backtest is possible. 76 of 77 provinces, Bueng Kan having no 2000 row. See "Thailand: ethnicity from secondary sources, by the owner's decision". `scripts/fetch_census/thailand_ethnicity.py`. |
@@ -251,6 +252,8 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Estonia | Statistics Estonia table `RV0222U` (PxWeb) | county | Ethnic nationality for all 15 counties, from the population register on 1 January — a register count, not a census answer. |
 | Latvia | Central Statistical Bureau table `IRE031` (PxWeb) | municipality, state city | Ethnicity for all 42 municipalities and state cities, from the population register. "Other ethnicities" also holds people who selected none and people who did not indicate one, so it is not a count of anyone in particular. |
 | Sri Lanka | Census of Population and Housing 2024, tables A1–A3 | province, district | Population, sex ratio, religion and ethnicity for all 25 districts and 9 provinces. |
+| Timor-Leste | INETL, Census 2015 Volume 2 priority tables 12 (mother tongue by municipality) and 11 (religion by municipality); Census 2022 Main Report basic table 4.01 (population by municipality, administrative post and suco) | municipality, administrative post | Mother tongue and religion for all 13 municipalities, stamped 2015 because the 2022 round asked both questions (E57 and E58 of its questionnaire) and has published neither below the country. The 2015 tables are a partition — 38 tongues, one per person, adding to each municipality's own total to the person — and their national column is exactly the fifteen-entry language list the map's country row already carried. Both tables count 1,179,654 people, 3,989 below the volume's own total population and 1,314 above its private-household population, unexplained by any footnote. Population is 2022, with Atauro (a municipality of its own since 2022, an administrative post of Dili before) summed back into Dili, which is the division the boundary file draws. The 67 administrative posts carry population and a stated gap for each composition; no table in either round goes below the municipality and INETL's REDATAM dashboard, served from a bare address, timed out. Ethnicity is `not_collected` (policy entry `TLS`): the 2022 questionnaire runs E1 to E77 without asking it. `scripts/fetch_census/timor.py`. |
+| Lao PDR | Lao Statistics Bureau, 4th Population and Housing Census 2015, village indicator table (`lao-population-census-2015.xlsx`, 8,499 villages x 75 columns) released through Open Development Laos; category definitions from Table 1 of the *Socio-Economic Atlas of the Lao PDR 2015* (LSB with CDE Bern); national controls from the census's own English results volume on UNFPA Laos | province, district | Ethnicity and religion for all 18 provinces and all 148 districts, where the results volume publishes both for the country only — its Tables 3.4, 3.5, P2.7 and P2.9 are national and none of its thirty province tables crosses either field. Each village's published percentage is turned back into people by its own published population and summed; shares are recomputed against the unit and re-rounded to add to 100. Ethnicity is the census's ten **ethno-linguistic categories**, not its 49 groups, and the Atlas's "Lao" is not the census's Lao: it puts the Lao of Huaphanh, Xiengkhuang, Borikhamxay, Vientiane province and Hinboun in "Tai-Thay", so the villages give Lao 43.7% and Tai-Thay 18.3% where Table 3.4 prints Lao 53.2% — together the volume's Lao-Tai family, 62.4%, which is where the check is made. Religion has five categories and a residual of 33.3%: the census counts a religion only where it has written doctrines, so the animist beliefs of most non-Lao-Tai people sit in "No religion or not stated" beside the 1.8% who stated nothing, and both residuals are marked so neither can lead a unit. The 8,499 villages weigh 6,481,625 people, 0.16% under the published 6,492,228; sex ratio 995.7 females per 1,000 males against 994.7. The two Vientianes are settled by an explicit table and carry no aliases; seven district names romanise differently in the two files and are declared. Language is `not_collected` (policy entry `LAO`): 282 pages with no language table and no occurrence of "mother tongue". `scripts/fetch_census/laos.py`. |
 | Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts. The census measured all 77; the boundary file is what fails, drawing 75 shapes whose names do not all sit on the right ground, and the 9 shapes that therefore carry nothing each say so and name the province total that holds their people. |
@@ -4535,6 +4538,507 @@ Committee for Ethnic Minority Affairs) is on the same host and was also
 reached; its first file is the 103-page narrative volume, its tables are by
 group and region rather than by province, and nothing was read from it.
 
+### Timor-Leste: two questions asked, a third that is not, and a census ten years apart from its own population
+
+Timor-Leste carried nothing on any of its 13 municipalities or 65
+administrative posts: every field on every unit a bare `not_available`, and the
+country row itself had no ethnicity at all. It now carries mother tongue and
+religion on all 13 municipalities, a population on those and on the
+administrative posts, and an ethnicity that is a sourced declaration rather
+than a blank -- at the country level and at every level below it.
+
+**The office answers.** `inetl-ip.gov.tl` -- the Instituto Nacional de
+Estatística de Timor-Leste, the Direção-Geral de Estatística until 2022 --
+served a plain client 200 on every request this work made, and the files are
+its own. `statistics.gov.tl`, the host the older literature cites, no longer
+resolves (*Temporary failure in name resolution*). The one thing that did not
+answer is INETL's own **REDATAM population dashboard**, linked from every page
+of the site as `http://20.6.104.113/redatam/` -- a bare address over plain HTTP,
+which timed out on the runner. That matters because REDATAM tabulates the
+microdata to any geography, and it is the only route that would have put
+religion or mother tongue on an administrative post.
+
+**The 2022 census asked both questions and has published neither below the
+country.** Its questionnaire is reproduced in full as Annex III of the main
+report (`Final-Main-Report_TLPHC-Census_WEB.pdf`, 204 pages), and the two
+questions sit next to each other:
+
+> **E 57 Religion.** What is \<Name\>'s religion?
+> 01 Christianity - Catholicism / 02 Christianity - Protestantism /
+> Evangelicalism / 03 Islam / 04 Buddhism / 05 Hinduism / 06 Indigenous
+> religion / 07 Other / 08 No religion / 09 No answer
+>
+> **E 58 Mother tongues.** What languages did \<Name\> learn as a child?
+> *Select at least one and no more than two languages from the list.*
+
+What the 2022 round published of them is one table: basic table 4.07, religion
+by five-year age group and sex, **for the country**. Its 24 basic tables include
+no mother-tongue table at any geography, and the census's thematic reports so
+far are education, labour force, mortality, fertility, migration, population
+projection, disability, gender, and children and youth. So the newest published
+composition for any Timorese municipality is the 2015 one, and that is what the
+map carries, stamped 2015.
+
+**Ethnicity: measured, and declared.** The task was to settle whether the census
+asks it at all. It does not. The individual module of the 2022 questionnaire
+runs from E1 to E77 without a break -- member providing information, place on
+census night, marital status, parents, birth registration, country and
+municipality of birth, internal migration, first and second citizenship,
+literacy, education, labour force, religion, mother tongues, the six Washington
+Group disability questions, children ever born, birth attendance -- and not one
+of the 77 asks ethnicity, race, tribe or ancestry. Timor-Leste is therefore in
+`NOT_COLLECTED_POLICY`, which fixes the country row and propagates to every
+unit below it.
+
+The Factbook's Timor-Leste "Ethnic groups" line, which the country row used to
+hold as a note beside an empty field, reads "Austronesian (Malayo-Polynesian)
+(includes Tetun, Mambai, Tokodede, Galoli, Kemak, Baikeno), Melanesian-Papuan
+(includes Bunak, Fataluku, Bakasai), small Chinese minority". That is the
+census's mother-tongue list sorted into two language families, with no shares
+attached to either. The map carries those tongues, counted, on the language
+field, which is the question that was actually asked; publishing the same
+division again under ethnicity is the relabelling this project refuses for
+Pakistan and refuses here.
+
+**The two 2015 tables.** Volume 2 of the 2015 census is published as a numbered
+series of priority tables, one workbook each, from the office's Census
+Population page:
+
+| File | Sheet | Table |
+| --- | --- | --- |
+| `4_2015-V2-Language.xls` | `2.12` | Table 12, population by mother tongue, urban/rural location **and municipality** |
+| `3_2015-V2-Nationality-Citizenship-Religion.xls` | `2.11` | Table 11, population by religion, urban/rural location, **municipality** and sex |
+| `1_2015-V2-Population-Household-Distribution.xls` | `2.1.a` | Table 1.a, total population and private households by municipality |
+| `7_2015-V2-Aldeia-populations.xls` | `2.20a`-`2.20m` | Table 20, every administrative post, suco and aldeia, one sheet per municipality |
+
+Table 12 puts 38 mother tongues down the side and the country, urban, rural and
+the 13 municipalities across the top: Tetun Prasa, Tetun Terik, Adabe, Atauran,
+Baikenu, Bekais, Bunak, Dadu'a, Fataluku, Galoli, Habun, Idalaka, Idate, Isni,
+Kairui, Kawaimina, Kemak, Lakalei, Lolein, Makalero, Sa'ani, Makasai, Makuva,
+Mambai, Midiki, Nanaek, Naueti, Rahesuk, Raklungu, Resuk, Tokodede, Waima'a,
+and then Portuguese, Indonesian, English, Malay, Chinese and Other. Every
+municipality's 38 rows add to its own column total to the person, so in 2015
+the question took one answer per person and the table is a partition -- which
+the 2022 question, allowing two answers, would not be.
+
+Table 11 stacks its units instead: the country, urban and rural, then each
+municipality, each followed by a male and a female row, against Catholicism,
+Protestantism/Evangelicalism, Islam, Buddhism, Hinduism, Traditional and Other.
+There is no "no religion" and no "not stated" column, so those answers are
+inside "Other", which is why "Other religion" is published here as a religion
+and not as a residual.
+
+**Reading them.** Both sheets are legacy `.xls` and both do two things a reader
+has to survive. They print a column-numbering row -- `-1.0`, `-2.0`, `-3.0` --
+whose every cell is a number under a label that is also a number, so nothing but
+the absence of a letter tells it from a row of figures. And they stack headers:
+table 11 writes "Municipality, urban/rural location, sex | Total | Religion"
+over the seven religion names, so the Total column is headed a row above the
+religions, and the first run refused on not finding it there. The religion
+columns are matched by what their heading starts with once folded, because the
+sheet breaks the second one across a line as "Protestantism/ Evangelicalism".
+The exclave is "SAR1 of Oecusse" in one workbook and "SAR1 OF OECUSSE" in the
+other, the 1 being a footnote marker, so the name fold drops digits as well as
+case and accents; Lautém is "Lautem" in one and "LAUTÉM" in the other.
+
+**What the self-checks found.** Every one of them passed, and each would have
+refused the run:
+
+* the 38 mother tongues of each of the 13 municipalities add to that
+  municipality's own printed total, to the person;
+* the seven religions of each municipality add to its own printed total, the 13
+  municipalities add to the country row's 1,179,654, and every religion column
+  adds to the country row's figure for it, all to the person;
+* the two tables count the same people municipality by municipality, so the
+  religion and the language shares on a unit are shares of one population;
+* **against the office's own published figures**: Catholicism comes out at
+  97.57% of the country where the 2022 main report says Catholicism "was
+  reported for 97.6" percent of the population in 2015; and all fourteen of the
+  named mother tongues in the map's own country row -- Tetun Prasa 30.6, Mambai
+  16.6, Makasai 10.5, Tetun Terik 6.1, Baikenu 5.9, Kemak 5.8, Bunak 5.5,
+  Tokodede 4.0, Fataluku 3.5, Waima'a 1.8, Galoli 1.4, Naueti 1.4, Idate 1.2,
+  Midiki 1.2 -- are reproduced from this table to within a rounding step. The
+  country row's language list *is* this table's national column, so the
+  municipalities and the country now agree because they are the same census;
+* the 2022 population table's 14 municipalities add to 1,341,737, the published
+  national figure, and its 67 administrative posts each add to the municipality
+  they sit in.
+
+**The base is 1,179,654, and the volume does not say why.** Tables 11 and 12
+both count 1,179,654 people. The same volume's table 1 counts 1,183,643 in
+total and 1,178,340 in private households, so the base of the two composition
+tables sits between the two -- 3,989 below the census's whole population and
+1,314 above its private-household population -- and neither workbook prints a
+footnote saying which people it leaves out. The difference is 0.34% of the
+country and is spread across all 13 municipalities rather than sitting in one,
+so it is stated rather than explained away. Each municipality's own base is in
+its notes.
+
+**Population comes from the 2022 census, and Atauro is why that needs saying.**
+The main report's basic table 4.01 gives the population of every municipality,
+administrative post and suco in 2022, with a label column per level, and it is
+the only table in either round that reaches below the municipality. It counts
+**14** municipalities: Atauro, an island that was an administrative post of
+Dili, became a municipality of its own in 2022. The boundary file draws the 13
+of 2015, so the figure written on Dili is Dili's 324,738 plus Atauro's 10,295 --
+a sum of two published counts over a division the census itself states, not an
+apportionment -- and Dili's population note says so. Atauro's administrative
+post is written under Dili for the same reason. The 2015 compositions need no
+such treatment: in 2015 Atauro was inside Dili and its people are in Dili's
+column already.
+
+**67 posts against 65.** `scripts/fetch_census/timor.py --probe` is the
+reconnaissance that settled this, and its log is on the branch. It reads the
+2015 volume's table 20 -- which puts administrative post, suco and aldeia in
+one column and marks the level by indentation, the one mark a reader should not
+trust -- and recovers the levels from the arithmetic instead, each unit's count
+being the sum of the units beneath it. Comparing that with basic table 4.01
+suco by suco: two municipalities were re-divided. Ermera's **Hatulia** is
+**Hatulia A** and **Hatulia B**, whose eight and five sucos are the old post's
+twelve with Hatulia Vila spelled Hatolia Vila. **Lautém** has six posts where it
+had five, the new one being **Lore**. Ainaro's Hato-Builico is spelled
+Hato-Buiico in 2022 and is otherwise the same three sucos.
+
+The rows written are the 67 the 2022 census names, not a re-division of them.
+A row that finds no shape is a gap the coordinator sees; a row silently joined
+to a shape covering different ground is the mis-match this project treats as
+worse, so every administrative post of Ermera and of Lautém carries a sentence
+in its population note saying that the 2022 division is not the 2015 one.
+
+**What each unit carries.** `data/processed/timor.json`:
+
+* **13 municipalities** -- mother tongue and religion from 2015 with counts and
+  shares, a 2022 population, and the ethnicity declaration. Oecusse is 98.1%
+  Baikenu, Lautém 60.9% Fataluku, Baucau 60.3% Makasai, Liquiçá 64.0% Tokodede,
+  Cova Lima 48.0% Bunak, Manatuto 29.9% Galoli, and Dili 82.5% Tetun Prasa;
+  Mambai leads Aileu, Ainaro, Ermera and Manufahi, Kemak leads Bobonaro and
+  Makasai leads Viqueque. That regional pattern is what the map had nothing of
+  for this country. Catholicism runs from 92.1% in Aileu to 99.7% in Bobonaro.
+* **67 administrative posts** -- the 2022 population, and religion and mother
+  tongue as gaps that say what was asked of which source: no census publishes
+  either below the municipality, and the dashboard that would have is
+  unreachable.
+
+A mother tongue spoken by under 0.05% of a municipality is counted in that
+municipality's base and given no row of its own, so a municipality's shares add
+to a shade under 100 rather than to a residual row that would mean something
+different from the census's own "Other" column, which is published.
+
+**The group tree.** The 2015 list is the whole language inventory of the
+country, and Timor-Leste's split between Austronesian and Papuan is settled, so
+`scripts/group_tree.py` gains Adabe under **Papuan languages** beside Bunak,
+Fataluku, Makasai and Makalero, and Atauran, Bekais, Dadu'a, Habun, Idalaka,
+Isni, Kairui, Kawaimina, Lakalei, Lolein, Makuva, Nanaek, Rahesuk, Raklungu and
+Resuk under **Malayo-Polynesian languages** beside the twelve already there.
+One label is deliberately left unplaced: **Sa'ani**, which the census names and
+which the literature does not settle on one side of that split or the other. It
+leads no unit anywhere, so nothing is drawn in the unclassified colour for it;
+asserting a family for it would be a guess with nothing behind it, and this
+entry would rather carry one unplaced label than one invented classification.
+
+### Lao PDR: a census published only for the country, and its own village file
+
+Laos carried nothing below the country: 18 provinces and 148 districts, every
+one of them a bare `not_available` on all three fields, while the country row
+had the Factbook's figures — which for Laos are the 2015 census's, Lao 53.2%
+and Buddhist 64.7%.
+
+**What the results volume publishes, and what it does not.** The 4th
+Population and Housing Census was taken in March 2015 under Prime Ministerial
+Decree 89/PM; its questionnaire ran to 63 questions in 10 parts, and two of
+them were ethnicity (the 49 officially recognised groups) and religion. The
+Lao Statistics Bureau's English results volume, *Results of Population and
+Housing Census 2015* (282 pages), is not on `lsb.gov.la` — which serves a
+WordPress home page in Lao with no file links and answers 404 to
+`/wp-json/wp/v2/media` — but is on UNFPA Laos, the census's technical partner,
+at `lao.unfpa.org/sites/default/files/pub-pdf/PHC-ENG-FNAL-WEB_0.pdf`, 5.3 MB.
+Reading it settles the question the country row raises:
+
+| Table | Breakdown | Page |
+| --- | --- | --- |
+| 3.4 | Population by ethnic group — Lao 3,427,665 (53.2%), Khmou, Hmong, … | 37 |
+| 3.5 | Population by religion — Buddhist 4,201,993 (64.7%), Christian, … | 37 |
+| P2.7 | Total Lao citizen population by sex and **ethnicity**, all 49 groups | 121-122 |
+| P2.9 | Total population by sex and **religion**, six categories | 123 |
+
+All four are national. The volume's other appendix tables do cross province —
+with age, migration, literacy, schooling, economic activity, disability and
+housing, thirty of them — and not once with ethnicity or religion. So the
+first reading of Laos is the one Viet Nam's entry describes for its English
+volume: collected, and published for the country only.
+
+**The route that answers.** `scripts/fetch_census/laos.py --probe` asked the
+other places such a table might be, and the log of each is committed on the
+branch. `laosis.lsb.gov.la`, the Bureau's statistics portal, fails
+verification with *unable to get local issuer certificate* and then, with the
+intermediate its server omits supplied from the certificate's own AIA
+extension, with *DH_KEY_TOO_SMALL* — a handshake no current client will
+complete, and not something to be worked around. `decide.la` serves a
+certificate that is not valid for its own hostname. HDX has WorldPop rasters,
+the World Bank's indicator series and UNICEF's equity analysis, and no
+composition. What answers is **Open Development Laos**, the CKAN portal that
+carries LSB's own releases: the national open-data portal this project has
+learned to try early, the way Singapore was solved after `singstat.gov.sg`
+answered 403.
+
+Its dataset `lao-population-and-housing-census-2015-general-demographic` is
+the census's **village indicator table**: one row for each of 8,499 villages,
+75 columns, 4.5 MB, with a `Meta` sheet that names every column in Lao and
+English and gives the source as "Lao Population and Housing Census 2015" and
+the data owner as the Lao Statistics Bureau. Beside the province, district and
+village names in both scripts and the village's total population, it carries
+ten ethno-linguistic categories and five religions, each as a percentage of
+that village's people:
+
+* `u_eth_cat_lao_pct` … `u_eth_cat_mien_pct` — Lao, Tai-Thay, Khmuic,
+  Palaungic, Katuic, Bahnaric-Khmer, Vietic, Tibeto-Burman, Hmong, Mien;
+* `u_pop_buddhist_pct`, `u_pop_christian_pct`, `u_pop_bahai_pct`,
+  `u_pop_muslim_pct`, `u_pop_religion_other_pct`.
+
+**How it is read.** A percentage of a village is turned back into people by
+that village's own published population — the one figure in the table that is
+a count — and those counts are summed over the villages of each district and
+each province, the shares then recomputed against the unit's total and
+re-rounded by largest remainder so every unit adds to exactly 100. The sex
+ratio is handled the same way and for the same reason: a village's ratio is
+men per hundred women, so its two halves follow from it and the population,
+and the halves are summed rather than the ratios averaged.
+
+**What the residual holds.** Neither set of columns reaches 100, and the two
+gaps are different things, so each is one named row.
+
+* `Other or not stated` — what the ten categories leave. Nationally 1.8%,
+  against the volume's 1.2% "other and not stated" plus 0.7% foreign
+  population.
+* `No religion or not stated` — what the five religions leave, 33.3%
+  nationally. This one is a third of the country and needs its sentence: the
+  census counts a religion only where it has written doctrines, so the animist
+  beliefs of most non-Lao-Tai people — the *Satsana Phi*, the "religion of
+  spirits" — are not among the five and are recorded here, beside the 1.8% who
+  stated nothing. The census publishes 31.4% "no religion" and 1.8% "not
+  stated" for the country, which is this row's 33.3% to a tenth. The label is
+  the Socio-Economic Atlas's own wording for it, and the group tree files it
+  under "Not stated", beside the other labels that weld a real answer to a
+  non-answer, because colouring a third of Laos "no religion" would answer a
+  question nobody was asked.
+
+Both residuals are named in `RESIDUAL` in `scripts/canonical_groups.py`, which
+is what stops either leading a unit. That is not a formality here: the
+religion residual is the largest row in nine of the 18 provinces and in half
+the districts — 53.5% of Xiangkhouang against Buddhism's 44.6% — so without it
+the map would have shaded a third of the country for the absence of an answer
+and called it the province's religion.
+
+**The one disagreement, and where it comes from.** Summed over the villages,
+the Lao category is **43.7%** of the country where the volume's Table 3.4
+prints the Lao ethnic group at **53.2%**. That is not an arithmetic error and
+it was worth chasing: the ten categories are defined in Table 1 of the
+*Socio-Economic Atlas of the Lao PDR 2015* (LSB with the Centre for
+Development and Environment of the University of Bern, 123 pages, on the same
+portal), which is the publication this village table underlies, and its
+"Tai-Thay" category is *Phou Thay; Tai; Nyouan; Lue; Yang; Sek; Tai Neua; and
+Lao in Huaphanh, Xiengkhuang, Borikhamxay, Vientiane province and Hinboun
+district of Khammuane*. The Lao of those five areas are counted as Tai-Thay,
+which is the missing 9.5 points exactly; Lao 43.7% plus Tai-Thay 18.3% is the
+volume's Lao-Tai family, 62.4%. So the adapter checks at the family level, and
+logs both figures on every run so the difference stays on the record. Every
+row's note says it too, because a reader who knows the Factbook's "Lao 53.2%"
+would otherwise read the map as contradicting it.
+
+**The checks, each of which refuses the run rather than writing.** The 8,499
+villages add to 6,481,625 people, 0.16% under the census's published
+6,492,228 — the table is the household population and the census total
+includes the institutional one. The sex ratio comes to 995.7 females per 1,000
+males against the published 994.7 (3,237,458 women to 3,254,770 men); that
+check is also what would catch the workbook's ratio being the other way up,
+since a reversed reading gives 1,005.3 and fails. The four ethno-linguistic
+families come to Lao-Tai 62.0, Mon-Khmer 23.6, Hmong-Mien 9.7 and
+Chinese-Tibetan 2.9 against the volume's summary page 62.4 / 23.7 / 9.7 / 2.9;
+religion to Buddhist 64.7, Christian 1.7 and the residual 33.3 against 64.7 /
+1.7 / 33.2. Every province must be read, and the districts may not hold more
+people than their provinces do.
+
+**Names.** The record carries the boundary file's own spelling, because the
+boundary file's 148 district names are the list a census name is placed
+against — a match is an identity, not a nearest neighbour. Seventeen of the 18
+province names agree after the diacritics are folded away; the workbook writes
+Xaignabouli as "Xaignabouly". The two Vientianes are settled by a table of
+their own and by nothing loose: the capital is recognised by its qualifier,
+only a bare "Vientiane" is the province, and any other label beginning with
+the word is refused. That is not caution for its own sake —
+`scripts/build_entities.py` records the time Vientiane took Vientiane
+Province's 388,833 people over the prefecture's, which is the mis-match this
+project ranks below a gap. Seven district names romanise differently in the
+two files: Houaphan's Hiem/Huim, Kuan/Kuane and Xon/Sone, Khammouane's
+Nakay/Nakai, Phongsaly's Boontay/Boontai, Xiangkhouang's Mork/Morkmay and
+Phookood/Phoukoud. Each is declared as an alias rather than matched loosely,
+and each is an identity rather than a guess: in every one of those four
+provinces the number of census names the fold could not place equals the
+number of shapes left without a village, so the correspondence is forced.
+
+**What is written.** `data/processed/laos_province.json` (18 provinces) and
+`laos_district.json` (148 districts), each row with population, sex ratio, an
+ethnicity composition and a religion composition, all `_year` 2015. Every one
+of the 148 district shapes is filled. The leading category is Lao in seven
+provinces — 90.1% of Vientiane Capital, 84.7% of Champasak — Tai-Thay in four,
+Khmuic in three (59.1% of Oudomxay), Bahnaric-Khmer in Attapeu and Xekong,
+Tibeto-Burman in Luang Namtha and Phongsaly, and Hmong in Xaisomboun. Nine of
+the ten categories are placed in the ethnicity tree under "Mainland Southeast
+Asian peoples" and the tenth, Tibeto-Burman, under "Himalayan and
+Tibeto-Burman peoples" beside the Akha and Lahu it is made of; each is named
+there rather than left to the word rules, which read "Tai-Thay" through "Tai"
+and "Bahnaric-Khmer" through "Khmer" — right by luck — and reach Khmuic,
+Palaungic, Katuic and Vietic not at all.
+
+**Language is declared rather than left blank.** See *Laos: 282 pages, and no
+language question* under Collection policy.
+
+**What was measured and left.** The 5th Population and Housing Census was
+taken in 2025 and UNFPA Laos has published six briefs about it; no results
+volume and no table of either field has appeared, so 2015 remains the census
+on the map. The Lao Social Indicator Survey II (2017) and III (2023) are the
+MICS rounds and both tabulate by province; neither was read, because a census
+count at village level is the better answer and was reached first. The Atlas's
+2005 half was not read either: this project carries one vintage per unit, and
+2015 is the later one.
+
+### Brunei: two fields by district, a third asked and never printed
+
+Brunei's Department of Economic Planning and Statistics ran the sixth
+Population and Housing Census (Banci Penduduk dan Perumahan, **BPP 2021**)
+through 2021 and reported it in *Report of the Population and Housing Census
+(BPP) 2021: Demographic, Household and Housing Characteristics*, October 2022.
+The report itself is 94 pages of narrative and charts. The figures are in its
+three annexes, which DEPS publishes both as PDFs and as one workbook:
+
+| | |
+|---|---|
+| Workbook | `wp-content/uploads/2025/11/EXCEL-TABLE-A-C.xlsx` |
+| Report | `wp-content/uploads/2025/11/RPT-2.pdf` (40 MB) |
+| Annexes | `ANNEX-A.pdf`, `ANNEX-B.pdf`, `ANNEX-C.pdf` |
+| Questionnaire | `Q_BPP2021.pdf` |
+
+all under `https://deps.mofe.gov.bn/`. `scripts/fetch_census/brunei.py` reads
+the workbook; the host answers an ordinary verified client, no key and no
+archive involved.
+
+**Finding them took a detour worth recording.** Every link the department's own
+pages print for the 2021 census points into
+`deps.mofe.gov.bn/DEPD Documents Library/DOS/POP/2021/`, the SharePoint library
+the old site served, and every one of those paths now redirects to a 404: the
+census report, the annexes, the workbook and the questionnaire alike. The files
+are all still there under `wp-content/uploads/`, and what found them was the
+site's own WordPress media API — `wp-json/wp/v2/media?search=annex`,
+`?search=table`, `?search=BPP` — which lists the real `source_url` of every
+upload. `data.gov.bn` answers a TLS hostname mismatch (its certificate is not
+valid for `data.gov.bn`), which is where this would otherwise have gone first;
+`brucensus.gov.bn`, the census's own site, times out. HDX has 84 Brunei
+datasets and not one composition: World Bank indicator mirrors, WorldPop
+rasters, HOT OSM extracts, ADB key indicators.
+
+**Race and religion, by district.** Table **A3** is Population by Race,
+District and Sex and table **A4** is Population by Religion, District and Sex,
+both for 2021, and between them they fill all four districts:
+
+| | Brunei Muara | Belait | Tutong | Temburong | Brunei |
+|---|---:|---:|---:|---:|---:|
+| Population | 318,530 | 65,531 | 47,210 | 9,444 | 440,715 |
+| Malay | 69.9% | 50.7% | 74.7% | 60.5% | 67.4% |
+| Chinese | 9.0% | 16.9% | 4.9% | 2.4% | 9.6% |
+| Others | 21.1% | 32.4% | 20.4% | 37.1% | 23.0% |
+| Islam | 84.5% | 70.3% | 84.2% | 75.5% | 82.1% |
+| Christianity | 6.3% | 10.7% | 2.4% | 12.8% | 6.7% |
+| Buddhism | 6.1% | 11.0% | 2.3% | 1.1% | 6.3% |
+| Other, none, or not stated | 3.2% | 7.9% | 11.0% | 10.7% | 4.9% |
+
+**What the state's categories are.** Brunei's race question (E09) offers three
+groups, and "Malay" is an administrative category rather than an ethnonym. The
+report's own definition: a Brunei Malay is "the persons belonging to one of the
+following ethnic groups of the Malay race, namely Brunei, Tutong, Belait,
+Kedayan, Dusun, Bisaya or Murut", and the questionnaire numbers those seven
+beneath it. Their shares are published for the country and nowhere else —
+Melayu Brunei 82.1% of the Malay total, Melayu Tutong 5.9%, Melayu Kedayan
+5.6%, the other four under 5% each — so the district rows carry the state's
+three groups and nothing here splits Malay or renames it. This is the same kind
+of category as Singapore's CMIO and Malaysia's bumiputera, described in those
+sections: a classification the state makes and administers, not a summary of
+how people describe themselves. "Others" is the report's residual, "the rest of
+the population not included in the Malay and Chinese racial groups"; in a
+country where 18.4% of those counted were temporary residents, it is largely
+foreign workers, and also the Malays of Malaysia and Indonesia, the Ibans, and
+everyone else.
+
+Religion (E10) offered Islam, Christianity, Buddhism, Hinduism and Others and
+the published table has four columns, because — the report says so plainly —
+"the other religions, unstated faiths and no religious beliefs were grouped
+into 'Others'". That welds a real answer to a non-answer, which this map's
+group tree has a place for: the bucket is carried as **Other, none, or not
+stated**, filed under "Not stated" beside the other labels that do the same,
+rather than as "Other religions", which would count the irreligious as
+adherents of something. Islam is the state religion, and at 82.1% nationally it
+leads every district.
+
+**The mukims carry a head count and a stated gap.** The map draws 38 mukims for
+Brunei and all 38 now have the census's population, from table **C1**,
+Population by Mukim, Residential Status and Sex. None has a composition, and
+that is what the annexes publish rather than what this reader managed:
+
+* **Annex A**, twelve tables, crosses race and religion with district, age and
+  residential status. Nothing below the district.
+* **Annex B**, sixteen tables, gives total population, households and occupied
+  living quarters by district, by mukim and by kampung. No composition of any
+  kind.
+* **Annex C**, ten tables, gives mukim and kampung by residential status and by
+  age group. Again no composition.
+
+So each mukim's `ethnicity` and `religion` say what the census counted there
+and which three annexes were read to establish that it counts no more.
+
+**Language is asked and never tabulated**, which is the Nigeria case above
+rather than the Bhutan one, and the difference is the whole point of the
+distinction. The BPP 2021 questionnaire has two language questions: **E26**,
+"Language(s) that you can read and write", marked *all that apply* — a set of
+overlapping proficiencies, not a composition — and **E27**, "Language mainly
+spoken at home", marked *only one that applies*, which is exactly a
+composition. Neither is reported. No table in any of the 38 in Annexes A, B and
+C has a language column, and the report's Concepts and Definitions defines
+race, religion, marital status, country of birth and nationality and says
+nothing about language. So Brunei is **not** in `NOT_COLLECTED_POLICY`: every
+Bruneian record carries `not_available` with that reason, because the census
+did ask and the answer was not printed.
+
+**Self-checks, and what they found.** The workbook's national column is checked
+against the figures the report prints in prose in its Executive Summary and
+chapter 1 — 297,016 Malays, 42,132 Chinese, 101,567 Others; 362,035 Muslims,
+29,462 Christians, 27,745 Buddhists, 21,473 Others; 440,715 people — which is a
+cross-check rather than a restatement, the two being different documents by the
+same office. Then each district's groups must sum to the district's own printed
+total, the four districts must sum to each national figure, the two tables must
+agree about how many people each district holds, and each district's mukims
+must sum to the district. All of them passed exactly, to the person, on the
+first run; nothing is rounded and nothing is derived. The percentages above are
+computed from those counts and match the Factbook figures already on Brunei's
+country row (Malay 67.4%, Muslim 82.1%), which is the same census reaching the
+map twice by different routes.
+
+**Two names, neither of them guessed.** geoBoundaries draws 38 mukims where the
+census counts 39, and the two differences are forced rather than chosen:
+
+* The census counts **Gadong A** and **Gadong B**; the boundary file draws one
+  **Gadong**. Brunei Muara has 18 census mukims and 17 shapes and every other
+  name matches outright, so the one shape is the two mukims. Their head counts
+  are added — 35,424 and 38,067 — and the record's note says so. Nothing else
+  in the file is summed.
+* The census writes **Bokok**; the boundary file writes **Bunkok**. Temburong
+  has five mukims in both and four of them are identical (Amo, Bangar, Batu
+  Apoi, Labu), so the fifth is one mukim under two spellings. It is declared as
+  an alias on the row, not left to a resemblance test, which would not have
+  made the match anyway.
+
+Brunei Muara is hyphenated in the boundary file and not in the census;
+"Brunei-Muara" is declared as an alias for the same reason. No join failed:
+4 districts and 38 mukims, every one reaching its shape.
+
 ### Thailand: a language table that cannot be a composition
 
 Thailand's National Statistical Office refuses this project from every host
@@ -6247,6 +6751,40 @@ the Wikipedia transcriptions above, ended in declarations rather than files:
 * **Venezuela** -- the 2011 census asked indigenous and Afro-descendant
   self-recognition and not religion; `not_collected` for religion only.
 
+### Laos: 282 pages, and no language question
+
+Laos's 2015 census asked ethnicity and religion, and the map carries both for
+all 18 provinces and all 148 districts (see *Lao PDR: a census published only
+for the country, and its own village file*). The third field is declared
+`not_collected` rather than left blank, and the declaration is measured the
+way Bhutan's was — against the census's own output rather than against an
+empty response.
+
+* The English results volume runs 282 pages. The words **"mother tongue"
+  appear on none of them.** "Language" appears on six, and every occurrence is
+  prose: the content and language of the questionnaire being tested, the
+  enumerators recruited for their ethnic language skills so they could work in
+  ethnic communities, the similarity of language and culture that sends Lao
+  migrants to Thailand, and the compound "ethno-linguistic".
+* None of the volume's tables is a language table. Its Appendix 1 lists them
+  all, and they cross province with age, migration, literacy, schooling,
+  economic activity, disability and housing.
+* The village indicator table the provinces and districts are read from
+  carries 68 indicators for each of 8,499 villages, ethno-linguistic category
+  and religion among them, and no language variable.
+* The *Socio-Economic Atlas of the Lao PDR 2015*, the census's own thematic
+  atlas of 131 maps, has a section F "Ethnicity and Religion" — families,
+  categories, religions — and no language map.
+
+The obvious objection is the ethno-linguistic categorisation itself, and the
+Atlas answers it in as many words: the term "indicates a categorization based
+on a common ethnicity through self-identification mainly based on language".
+It is an ethnicity answer sorted by linguists after the fact, not a language
+anybody was asked to speak, and this map publishes it on the ethnicity field
+for that reason. Publishing it a second time as language would be the
+mis-match this project ranks below a gap — Pakistan's ethnicity row, in the
+mirror.
+
 ### The Maldives: one question about who you are, and its answer is a passport
 
 The Maldives was empty at all three levels -- one country row of Factbook prose,
@@ -6645,6 +7183,18 @@ Korean-Chinese at their full size. `mois.go.kr` answered the runner about
 one request in two (`Connection timed out` on the rest), and the two
 registers above answered every time, so the registers were read first; the
 xlsx is the next pass.
+
+### Timor-Leste: the questionnaire itself, all 77 questions of it
+
+Timor-Leste's declaration is read off the instrument rather than off an absent
+table. INETL reproduces the 2022 questionnaire in full as Annex III of the
+census main report, and its individual module runs from E1 to E77 with no
+ethnicity, race, tribe or ancestry question anywhere in it -- religion is E57
+and mother tongues is E58, and those two are the country's identity variables.
+Both of them are on the map, from the 2015 round, so this is a declaration
+about one field and not a country written off. The evidence, and what was
+looked at to be sure of it, is under "Timor-Leste: two questions asked, a third
+that is not" above.
 
 ### The African census sweep: reached, and not
 

@@ -107,6 +107,13 @@ ADAPTER_FILES = [
     # Hong Kong's own census, one shape under China: ethnicity and usual
     # spoken language from the 2021 Main Results workbook.
     "hongkong_census.json",
+    # Laos's 18 provinces and 148 districts: ethno-linguistic category and
+    # religion summed from the 2015 census's own 8,500-village indicator
+    # table, which the Lao Statistics Bureau releases through Open
+    # Development Laos. A census count, read below the level it is published
+    # at and added up. Language is not here: the census does not ask it, and
+    # NOT_COLLECTED_POLICY says so.
+    "laos_province.json", "laos_district.json",
     # China's census ethnicity by province, the tables the provinces'
     # Wikipedia articles transcribe: a census transcription, so above the
     # surveys, and it touches a field the surveys do not carry.
@@ -130,6 +137,12 @@ ADAPTER_FILES = [
     "estonia_county.json", "latvia_municipality.json", "finland_region.json",
     "singapore_region.json", "singapore_planning_area.json",
     "srilanka_province.json", "srilanka_district.json",
+    # Timor-Leste's 13 municipalities and 65 administrative posts: mother
+    # tongue and religion from the 2015 census's own Volume 2 priority
+    # tables, population from the 2022 main report's basic table 4.01.
+    # Ethnicity is a declaration rather than a gap -- the 2022 questionnaire
+    # does not ask it -- and comes from NOT_COLLECTED_POLICY.
+    "timor.json",
     # Religion, population and mother tongue together: this one file reads
     # Table 9 and Table 11 of the same census. It used to be a pair, the
     # language half coming from the U.S. Census Bureau's tables of the 2017
@@ -160,6 +173,11 @@ ADAPTER_FILES = [
     # After both: the same 16 states and the districts, religion only, from
     # the 2020 census; its gaps never displace the ethnicity above.
     "malaysia_religion.json",
+    # Brunei's own census, one file for both levels: race and religion for the
+    # four districts, a head count and a stated gap for the 38 mukims. It
+    # overlaps nothing above -- no other adapter writes a Bruneian row -- so
+    # its place here is alphabetical company rather than precedence.
+    "brunei.json",
     "poland_voivodeship.json", "poland_powiat.json",
     "czechia_kraj.json", "czechia_okres.json",
     "croatia_county.json", "croatia_unit.json",
@@ -213,6 +231,11 @@ ADAPTER_HINTS: dict[str, str] = {
            "district: python -m scripts.fetch_census.malaysia --level both; "
            "religion from the 2020 census as DOSM's Kawasanku dashboard publishes "
            "it by state and district: python -m scripts.fetch_census.malaysia_religion",
+    "BRN": "DEPS's annex workbook for the BPP 2021 census: race and religion by "
+           "district (Tables A3 and A4), population by mukim (Table C1). Race and "
+           "religion are published for the four districts and nowhere below them, "
+           "and language is asked and never tabulated: "
+           "python -m scripts.fetch_census.brunei",
     "CZE": "ČSÚ SLDB 2021 open data (nationality, religious belief, mother tongue) "
            "by kraj and okres: python -m scripts.fetch_census.czechia",
     "HRV": "DZS Popis 2021 workbook (ethnicity, religion, mother tongue) by "
@@ -225,6 +248,14 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.wiki_census --country KHM",
     "VNM": "2019 census Table 2 (population by ethnic group and province) from the "
            "office's own results volume: python -m scripts.fetch_census.vietnam",
+    "LAO": "2015 census ethno-linguistic category and religion, summed from the Lao "
+           "Statistics Bureau's own village indicator table on Open Development Laos "
+           "(8,500 villages) to the 18 provinces and 148 districts: "
+           "python -m scripts.fetch_census.laos --level both",
+    "TLS": "INETL's 2015 census Volume 2 priority tables 11 and 12 (religion, mother "
+           "tongue) by municipality, with the 2022 main report's basic table 4.01 for "
+           "population down to the administrative post: "
+           "python -m scripts.fetch_census.timor",
     "PER": "INEI 2017 census profile book (religion, mother tongue) by department, "
            "read from the PDF's word positions: python -m scripts.fetch_census.peru",
     "MLI": "INSTAT RGPH5 2022 thematic report on cultural characteristics (religion, "

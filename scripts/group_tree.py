@@ -154,7 +154,14 @@ RELIGION_TRADITION: dict[str, tuple[str, ...]] = {
                    "other or none", "none or refused",
                    "other and unaffiliated", "other or unaffiliated",
                    "agnostics and other", "not applicable", "undeclared",
-                   "No Data", "No religion data"),
+                   "No Data", "No religion data",
+                   # Laos's residual, in the words the Socio-Economic Atlas
+                   # uses for it. The census counts a religion only where it
+                   # has written doctrines, so the animist beliefs of most
+                   # non-Lao-Tai people fall in here beside the 1.8% who
+                   # stated nothing -- a third of the country, and not a
+                   # statement that any of them has no religion.
+                   "No religion or not stated"),
 }
 
 # The Philippines names 82 churches in its 2020 census and Northern Ireland
@@ -1113,6 +1120,9 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     # another, and colouring 2,484 municipalities for it would say nothing.
     "Not Afro-descendant",
     "Other Africa", "Other West Africa", "Other Asian", "Other European",
+    # Laos: what its ten ethno-linguistic categories leave, which is the
+    # census's own other-and-not-stated together with the foreign population.
+    "Other or not stated",
     # The drawer each census keeps for everyone it did not name, in the
     # words it keeps it in.
     "Other ethnic group", "Other ethnicities", "Other tribe",
@@ -1380,13 +1390,24 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
                             "Kolami", "Kodagu", "Coorgi", "Konda", "Parji",
                             "Oraon", "Kudukh"),
     # Timor-Leste, whose census names every language of the country. The
-    # Austronesian ones and the Papuan ones are a settled split.
+    # Austronesian ones and the Papuan ones are a settled split: the country
+    # has a handful of Timor-Alor-Pantar languages and everything else it
+    # speaks is Austronesian. The second block is the rest of the 2015
+    # census's 38 mother tongues -- the Atauro varieties (Atauran, Dadu'a,
+    # Rahesuk, Raklungu, Resuk), the Kawaimina cluster and its members, the
+    # Idaté-Lakalei cluster, and the small tongues of Manatuto, Lautém and
+    # Dili. Sa'ani, the one the census names that the literature does not
+    # place on one side of the split or the other, is deliberately left
+    # unplaced rather than asserted into a family; see docs/SOURCES.md.
     "Malayo-Polynesian languages": (
         "Tetun", "Tetun Prasa", "Tetun Terik", "Baikenu", "Galoli", "Idate",
         "Kemak", "Mambai", "Midiki", "Naueti", "Tokodede", "Waima'a",
+        "Atauran", "Bekais", "Dadu'a", "Habun", "Idalaka", "Isni", "Kairui",
+        "Kawaimina", "Lakalei", "Lolein", "Makuva", "Nanaek", "Rahesuk",
+        "Raklungu", "Resuk",
         "Philippine languages", "Sasak", "Bantenese",
     ),
-    "Papuan languages": ("Bunak", "Fataluku", "Makasai", "Makalero"),
+    "Papuan languages": ("Bunak", "Fataluku", "Makasai", "Makalero", "Adabe"),
     "Oceanic languages": ("Futunian", "Marquesan", "Paumotu", "Tuamotuan",
                           "Nauruan"),
     "Creole languages": ("Norfolk", "Angolar", "Forro", "Lunguie", "Haitian"),
@@ -1548,6 +1569,18 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # "Lao and Vietnamese" is the 2000 census's one row for the two.
         "Central Thai", "Northern Thai", "Southern Thai", "Kuy", "Mien",
         "Lao and Vietnamese",
+        # Laos counts its people in ten ethno-linguistic categories rather
+        # than by naming each of the 49 groups, and those categories are what
+        # its census releases below the country. Nine of the ten are peoples
+        # of the mainland -- the two Tai-Kadai ones, the five Mon-Khmer ones
+        # and the two Hmong-Mien ones; the tenth, Tibeto-Burman, is with the
+        # Akha and Lahu it is made of, under the Himalayan and Tibeto-Burman
+        # peoples. Each is named here rather than left to the word rules,
+        # which read "Tai-Thay" through "Tai" and "Bahnaric-Khmer" through
+        # "Khmer" -- right by luck, and luck is not a placement -- and which
+        # reach Khmuic, Palaungic, Katuic and Vietic not at all.
+        "Tai-Thay", "Khmuic", "Palaungic", "Katuic", "Bahnaric-Khmer",
+        "Vietic",
         # China's census nationalities of the south, as the provinces'
         # tables print them: the Tai-Kadai peoples (Bouyei, Dong, Sui,
         # Mulao, Maonan, Gelao, the Li of Hainan, the Dai of Yunnan), the
@@ -1610,6 +1643,12 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     ),
     "Himalayan and Tibeto-Burman peoples": (
         "Ngalop", "Sharchop",
+        # The tenth of Laos's ethno-linguistic categories, which is the Akha,
+        # Singsily, Lahu, Sila, Hanyi, Lolo and Ho -- every one of them
+        # already filed here under its own name. Named rather than left to
+        # the word rules, which would read it through "Burman" and put the
+        # uplands of Phongsaly under the Bamar of Myanmar.
+        "Tibeto-Burman",
         # Thailand's 2000 census counts "Burmese and Peguan" (Mon) speakers
         # as one row; it sits where the tree already keeps Mon and Burmese
         # would sit as a people.
