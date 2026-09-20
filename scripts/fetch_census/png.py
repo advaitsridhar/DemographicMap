@@ -721,6 +721,43 @@ REDRAWN_SHAPES: dict[str, tuple[str, ...]] = {
 }
 
 
+# Where the rest of each province was looked for, and what came back. This is
+# printed by every run: a gap that says why it is a gap has to say it where
+# the run's reader is, and not only in docs/SOURCES.md.
+ROUTES: tuple[tuple[str, str], ...] = (
+    ("2011 National Report, all 100 pp",
+     "religion on pp. 26-30 (the one provincial row), 32-34 (Table 2.4 and "
+     "Figures 2.1-2.2, country only) and 85; no provincial table"),
+    ("2011 National Report, Appendix 4 (p. 95)",
+     "the provincial tables are priced products -- Provincial Report K40 a "
+     "province, 31 Basic Tables K40 a set, Table Retrieval System CD-ROM "
+     "K2,000 -- and none of them is a download"),
+    ("nso.gov.pg sitemap, all 289 published files",
+     "no provincial census report; nothing below the province carries religion"),
+    ("2024 Final Figures (35 pp), 2011 Final Figures booklet (40 pp), "
+     "ward tables (35 pp), 2021 provincial estimates (2 pp)",
+     "religion on zero pages of any of them"),
+    ("2000 National Report, three copies",
+     "one 22,359,391-byte scan, 109 pp, zero extractable characters"),
+    ("DHS StatCompiler API (api.dhsprogram.com)",
+     "2.2 MB of indicators and no religion composition among them; religion "
+     "is a DHS background characteristic, never an indicator"),
+    ("DHS 2016-18 final report FR364 (519 pp)",
+     "religion on 6 pages, crossed with province on none"),
+    ("DHS microdata", "30 files named by the API, served only to a registered "
+     "account; not attempted"),
+    ("2022 SDES thematic workbooks",
+     "sheet T2.4 is religion by Total/Urban/Rural and sex -- a 321-cluster "
+     "national survey with no provincial estimates"),
+    ("spc.int PRISM, via the Internet Archive",
+     "the 2000 census page links no tables; popdemog.htm has three national "
+     "rates (christian / non-christian / none)"),
+    ("Wikipedia (Religion in PNG, province articles)",
+     "national denominations only; no province article has a religion table"),
+    ("pngnri.org via the Internet Archive (1,108 PDFs)",
+     "atlas sheets of education and development indicators, not census tables"),
+)
+
 # The share above which the dashboard stops calling a composition partial
 # (site/js/dashboard.js: a total under 95 draws "describes N% of the
 # population"). Every PNG province must sit below it, because every one of
@@ -795,6 +832,9 @@ def build() -> list[dict[str, Any]]:
 
     log(f"  districts: {written} shapes carry the 2024 count; {skipped} in "
         f"{len(REDRAWN)} provinces ({', '.join(REDRAWN)}) are left with a reason")
+    log("  the rest of each province was looked for here, and is not published:")
+    for route, answer in ROUTES:
+        log(f"    {route}\n      -> {answer}")
     return records
 
 

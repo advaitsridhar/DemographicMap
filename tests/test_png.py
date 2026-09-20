@@ -368,6 +368,20 @@ class TheDeclarationsAboutWhatTheCensusAsks(unittest.TestCase):
         self.assertIn("60.0%", note)
         self.assertIn("sells", note)
 
+    def test_the_run_says_what_every_route_answered(self):
+        # A measured negative is only a result while the measurement is on
+        # the run that produced it.
+        asked = " ".join(route for route, _ in png.ROUTES)
+        for host in ("DHS", "SDES", "sitemap", "Archive", "Wikipedia",
+                     "Appendix 4", "2000 National Report"):
+            self.assertIn(host, asked, host)
+        self.assertEqual(len({route for route, _ in png.ROUTES}),
+                         len(png.ROUTES))
+        for route, answer in png.ROUTES:
+            # "Not available" on its own is the state this project exists to
+            # prevent, so every route names what came back.
+            self.assertGreater(len(answer), 30, route)
+
     def test_the_district_gap_names_what_holds_the_district_tables(self):
         self.assertIn("Table Retrieval System", png.DISTRICT_RELIGION_GAP)
 
