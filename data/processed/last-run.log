@@ -1,106 +1,72 @@
-probe_ckan: 4 host(s), timeout 30s
-  https://data.sumbarprov.go.id/ -> 200 text/html "Portal Data Sumbar"
+probe_ckan: 36 host(s), timeout 12s
+  https://data.lumajangkab.go.id/ -> 200 text/html "SATU DATA KABUPATEN LUMAJANG"
+    /api/3/action/status_show -> 404 text/html <!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <title>404 Page Not Found</title> <style type="text/css">
+    /api/action/status_show -> 404 text/html <!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <title>404 Page Not Found</title> <style type="text/css">
+  https://data.ngawikab.go.id/ -> 0  TLS: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'data.ngawikab.go.id'. (_ssl.c:1016)
+  http://data.ngawikab.go.id/ -> 200 text/html "HTTP Server Test Page powered by CentOS-WebPanel.com"
+    /api/3/action/status_show -> 404 text/html <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>404 Not Found</title> </head><body> <h1>Not Found
+    /api/action/status_show -> 404 text/html <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>404 Not Found</title> </head><body> <h1>Not Found
+  https://data.pacitankab.go.id/ -> 200 text/html "Portal Data Statistik Sektoral Kabupaten Pacitan"
+    /api/3/action/status_show -> 200 text/html
+    /api/action/status_show -> 200 text/html
+  https://data.probolinggokab.go.id/ -> 0  DNS: no such host
+  https://data.sampangkab.go.id/ -> 0  DNS: no such host
+  https://satudata.sidoarjokab.go.id/ -> 200 text/html "Satu Data"
+    /api/3/action/status_show -> 404 application/json { "message": "The route api/3/action/status_show could not be found." }
+    /api/action/status_show -> 404 application/json { "message": "The route api/action/status_show could not be found." }
+  https://data.luwuutarakab.go.id/ -> 0  DNS: no such host
+  https://data.pinrangkab.go.id/ -> 0  timeout after 12s
+  http://data.pinrangkab.go.id/ -> 0  timeout after 12s
+  https://data.sidrapkab.go.id/ -> 0  DNS: no such host
+  https://data.soppengkab.go.id/ -> 0  DNS: no such host
+  https://data.takalarkab.go.id/ -> 200 text/html "Portal Satudata - Kabupaten Takalar"
+    /api/3/action/status_show -> 200 text/html
+    /api/action/status_show -> 200 text/html
+  https://data.wajokab.go.id/ -> 200 text/html "Index of /"
+    /api/3/action/status_show -> 404 text/html <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html><head> <title>404 Not F
+    /api/action/status_show -> 404 text/html <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html><head> <title>404 Not F
+  https://opendata.sukabumikab.go.id/ -> 403 text/html "Just a moment..."
+    /api/3/action/status_show -> 404 application/json {"detail":"Not Found"}
+    /api/action/status_show -> 404 application/json {"detail":"Not Found"}
+  https://data.cimahikota.go.id/ -> 403 text/html "Just a moment..."
+    /api/3/action/status_show -> 403 text/html <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/htm
+    /api/action/status_show -> 403 text/html <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/htm
+  https://data.banjarkota.go.id/ -> 0  timeout after 12s
+  http://data.banjarkota.go.id/ -> 0  timeout after 12s
+  https://data.pangandarankab.go.id/ -> 200 text/html "Admin"
+    /api/3/action/status_show -> 404 application/json {"detail":"Not Found"}
+    /api/action/status_show -> 404 application/json {"detail":"Not Found"}
+  https://data.lampungutarakab.go.id/ -> 200 text/html "Welcome - Portal Satu Data Lampung Utara"
     /api/3/action/status_show -> 200 application/json CKAN 2.9.11
-    package_show 'buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat' -> 200: BUKU DATA KEPENDUDUKAN SEMESTER II TAHUN 2023 PROV. SUMATERA BARAT
-      metadata_modified: 2024-05-30T02:52:05.236001
-      author: Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat
-      organization: Dinas Kependudukan dan Pencatatan Sipil
-      resource 0e3e4a5c-956e-4770-b0b3-825f7a130666 [XLSX] datastore=True DISABILITAS - USIA SEKOLAH.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/0e3e4a5c-956e-4770-b0b3-825f7a130666/download/disabilitas-usia-sekolah.xlsx
-      resource c387481d-e66d-416e-8264-0ec97a499b23 [XLSX] datastore=True DISABILITAS - JENIS KELAMIN.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/c387481d-e66d-416e-8264-0ec97a499b23/download/disabilitas-jenis-kelamin.xlsx
-      resource 71525c21-b607-4ea4-9bcb-ed3685dfd664 [XLSX] datastore=True GOLONGAN DARAH - JENIS KELAMIN.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/71525c21-b607-4ea4-9bcb-ed3685dfd664/download/golongan-darah-jenis-kelamin.xlsx
-      resource 42ab0a95-1b27-4598-a6d9-adb4593702b1 [XLSX] datastore=True PEKERJAAN - USIA PRODUKTIF.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/42ab0a95-1b27-4598-a6d9-adb4593702b1/download/pekerjaan-usia-produktif.xlsx
-      resource 7a1a0815-abda-402f-ae6f-497a954f703a [XLSX] datastore=True PEKERJAAN - JENIS KELAMIN.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/7a1a0815-abda-402f-ae6f-497a954f703a/download/pekerjaan-jenis-kelamin.xlsx
-      resource f85bef24-ed88-4251-b7c0-cb6806d69fab [XLSX] datastore=True PENDIDIKAN - JENIS KELAMIN.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/f85bef24-ed88-4251-b7c0-cb6806d69fab/download/pendidikan-jenis-kelamin.xlsx
-      resource 418513f6-c45b-40fb-9151-61df45d5ee81 [XLSX] datastore=True AGAMA - JENIS KELAMIN.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/418513f6-c45b-40fb-9151-61df45d5ee81/download/agama-jenis-kelamin.xlsx
-      resource 9f0d3481-1a91-4c2a-a6f2-498b9a44ef59 [XLSX] datastore=True STATUS KAWIN - PEKERJAAN.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/9f0d3481-1a91-4c2a-a6f2-498b9a44ef59/download/status-kawin-pekerjaan.xlsx
-      resource a3129814-f6aa-45b8-ae15-b05b0a51ec06 [XLSX] datastore=True STATUS KAWIN - KELOMPOK UMUR.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/a3129814-f6aa-45b8-ae15-b05b0a51ec06/download/status-kawin-kelompok-umur.xlsx
-      resource 152d78fb-dd2b-479a-a0dc-9a5e97354d39 [XLSX] datastore=True STATUS KAWIN - AGAMA.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/152d78fb-dd2b-479a-a0dc-9a5e97354d39/download/status-kawin-agama.xlsx
-      resource 819e29d4-41d9-429a-a066-be2f4f42b312 [XLSX] datastore=True STATUS KAWIN - JENIS KELAMIN.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/819e29d4-41d9-429a-a066-be2f4f42b312/download/status-kawin-jenis-kelamin.xlsx
-      resource 10173ef3-2f5c-4c87-b965-7ab20b007291 [XLSX] datastore=True USIA SEKOLAH.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/10173ef3-2f5c-4c87-b965-7ab20b007291/download/usia-sekolah.xlsx
-      resource be80ecec-d954-4fb5-9f60-cb556d1a6f06 [XLSX] datastore=True USIA MUDA, USIA PRODUKTIF DAN USIA TUA.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/be80ecec-d954-4fb5-9f60-cb556d1a6f06/download/usia-muda-usia-produktif-dan-usia-tua.xlsx
-      resource 1836ecaf-d521-43e0-b7bc-22f9dbc62978 [XLSX] datastore=True UMUR TUNGGAL.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/1836ecaf-d521-43e0-b7bc-22f9dbc62978/download/umur-tunggal.xlsx
-      resource e73c6550-30a1-45e3-abf3-0fcc7c285289 [XLSX] datastore=True STRUKTUR UMUR.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/e73c6550-30a1-45e3-abf3-0fcc7c285289/download/struktur-umur.xlsx
-      resource f4c8a6e3-50bb-4661-9d06-0b8567b577d3 [XLSX] datastore=True STATUS HUBUNGAN KELUARGA.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/f4c8a6e3-50bb-4661-9d06-0b8567b577d3/download/status-hubungan-keluarga.xlsx
-      resource e487a844-aef3-44f2-b775-e89d07b9176b [XLSX] datastore=True KEPALA KELUARGA - STATUS KAWIN KEL. UMUR.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/e487a844-aef3-44f2-b775-e89d07b9176b/download/kepala-keluarga-status-kawin-kel.-umur.xlsx
-      resource cf77cfbc-3878-4826-942a-4109e2aaa35d [XLSX] datastore=True KEPALA KELUARGA - UMUR TUNGGAL.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/cf77cfbc-3878-4826-942a-4109e2aaa35d/download/kepala-keluarga-umur-tunggal.xlsx
-      resource e871c367-a105-4994-9199-111a1dc7a841 [XLSX] datastore=True KEPALA KELUARGA - STATUS KAWIN.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/e871c367-a105-4994-9199-111a1dc7a841/download/kepala-keluarga-status-kawin.xlsx
-      resource c3c6a63a-d848-408a-ab5f-a411ff4239d1 [XLSX] datastore=True KEPALA KELUARGA - PENDIDIKAN.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/c3c6a63a-d848-408a-ab5f-a411ff4239d1/download/kepala-keluarga-pendidikan.xlsx
-      resource 04a70a85-2cad-4338-abb4-0eb047322db4 [XLSX] datastore=True KEPALA KELUARGA - JENIS KELAMIN.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/04a70a85-2cad-4338-abb4-0eb047322db4/download/kepala-keluarga-jenis-kelamin.xlsx
-      resource 975a34ee-4c82-44c4-a660-2b23f415de50 [XLSX] datastore=True KEPADATAN PENDUDUK.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/975a34ee-4c82-44c4-a660-2b23f415de50/download/kepadatan-penduduk.xlsx
-      resource 6f91f52b-1907-41cb-986b-cfb2153bd1f9 [XLSX] datastore=True JUMLAH PENDUDUK - TINGKAT RW DAN RT.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/6f91f52b-1907-41cb-986b-cfb2153bd1f9/download/jumlah-penduduk-tingkat-rw-dan-rt.xlsx
-      resource 8ce4ce89-00ec-4718-9d77-98fd52204ec6 [XLSX] datastore=True KEPEMILIKAN KK.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/8ce4ce89-00ec-4718-9d77-98fd52204ec6/download/kepemilikan-kk.xlsx
-      resource 947a3808-5336-4235-a901-11720511f079 [XLSX] datastore=True JUMLAH PENDUDUK - JENIS KELAMIN.xlsx
-        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/947a3808-5336-4235-a901-11720511f079/download/jumlah-penduduk-jenis-kelamin.xlsx
-    package_show 'data-jumlah-pemeluk-agama-provinsi-kaltim-tahun-2021' -> 404 {"help": "https://data.sumbarprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Not found"}, "success": false}
-    package_show 'data-jumlah-penduduk-menurut-agama-tahun-2024' -> 404 {"help": "https://data.sumbarprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Not found"}, "success": false}
-    package_show 'jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-tahun-2021' -> 404 {"help": "https://data.sumbarprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Not found"}, "success": false}
-  https://data.kaltimprov.go.id/ -> 200 text/html "SATU DATA KALTIM"
-    /api/3/action/status_show -> 200 application/json CKAN ?
-    package_show 'buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat' -> 404 {"help": "https://data.kaltimprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Tidak ditemukan"}, "success": false}
-    package_show 'data-jumlah-pemeluk-agama-provinsi-kaltim-tahun-2021' -> 200: Data Jumlah Pemeluk Agama Prov. Kaltim Tahun 2021-2023
-      notes: Merupakan Data Jumlah Pemeluk Agama Provinsi Kaltim Tahun 2021-2022 ###Meliputi Variabel * Pemeluk Agama Islam : Islam adalah agama yang mengatur manusia agar menjadi selamat, sejahtera, aman, damai, dan menyerahkan diri kepada Allah, patuh dan tunduk kepada-Nya serta mau beribadah dengan penuh kesa
-      metadata_modified: 2025-05-05T01:18:53.696062
-      license_title: Creative Commons Non-Commercial (Any)
-      author: Kanwil Kementerian Agama Provinsi Kalimanatan Timur
-      organization: Kanwil Kementerian Agama Prov. Kaltim
-      resource bf80365e-937f-4616-9111-7faa910991d9 [XLSX] datastore=True Data Jumlah Pemeluk Agama Prov. Kaltim Tahun 2021-2023.xlsx
-        https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/bf80365e-937f-4616-9111-7faa910991d9/download/data-jumlah-pemeluk-agama-prov.-kaltim-tahun-2021-2023.xlsx
-      resource 05f8fa71-5b64-44d8-ad40-85ca618e9ecd [CSV] datastore=True Data Jumlah Pemeluk Agama Prov. Kaltim Tahun 2021-2022.csv
-        https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/05f8fa71-5b64-44d8-ad40-85ca618e9ecd/download/data-jumlah-pemeluk-agama-prov.-kaltim-tahun-2021-2022.csv
-      resource c33cae6b-5d6c-488c-8bb4-c063ab95bab0 [XLSX] datastore=True Data Jumlah Pemeluk Agama per KabKot Prov. Kaltim Tahun 2021.xlsx
-        https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/c33cae6b-5d6c-488c-8bb4-c063ab95bab0/download/data-jumlah-pemeluk-agama-per-kabkot-prov.-kaltim-tahun-2021.xlsx
-      resource ed8e4ed7-97c2-4c17-9976-d64f0a403fee [XLSX] datastore=True Data Jumlah Pemeluk Agama per KabKot Prov. Kaltim Tahun 2022.xlsx
-        https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/ed8e4ed7-97c2-4c17-9976-d64f0a403fee/download/data-jumlah-pemeluk-agama-per-kabkot-prov.-kaltim-tahun-2022.xlsx
-      resource 31b549ab-6cda-4d27-82c7-c991d1f9fde0 [XLSX] datastore=True Data Jumlah Pemeluk Agama per KabKot Prov. Kaltim Tahun 2023.xlsx
-        https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/31b549ab-6cda-4d27-82c7-c991d1f9fde0/download/data-jumlah-pemeluk-agama-per-kabkot-prov.-kaltim-tahun-2023.xlsx
-    package_show 'data-jumlah-penduduk-menurut-agama-tahun-2024' -> 404 {"help": "https://data.kaltimprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Tidak ditemukan"}, "success": false}
-    package_show 'jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-tahun-2021' -> 404 {"help": "https://data.kaltimprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Tidak ditemukan"}, "success": false}
-  https://data.bengkuluprov.go.id/ -> 200 text/html "Selamat datang - Bengkulu Portal Data"
-    /api/3/action/status_show -> 403 application/json {"help": "API Security Endpoint", "success": false, "error": {"__type": "Authorization Error", "message": "RBAC Policy:
-    /api/action/status_show -> 200 application/json CKAN 2.9.11
-    package_show 'buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat' -> 404 {"help": "https://data.bengkuluprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Tidak ditemukan"}, "success": false}
-    package_show 'data-jumlah-pemeluk-agama-provinsi-kaltim-tahun-2021' -> 404 {"help": "https://data.bengkuluprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Tidak ditemukan"}, "success": false}
-    package_show 'data-jumlah-penduduk-menurut-agama-tahun-2024' -> 200: DATA JUMLAH PENDUDUK MENURUT AGAMA DI PROVINSI BENGKULU TAHUN 2024
-      notes: Agama merupakan sistem ajaran, ritual, dan organisasi yang lebih luas yang mengaitkan manusia dengan hal-hal transendental, sementara kepercayaan adalah sikap batin dan keyakinan personal terhadap kebenaran suatu ajaran atau hal tertentu, yang bisa lebih sempit dan fokus pada nilai-nilai moral atau 
-      metadata_modified: 2025-08-26T03:21:47.295989
-      organization: Dinas Kependudukan dan Pencatatan Sipil Provinsi Bengkulu
-      resource cc6c8dd4-639b-426f-bc80-76cdbf267c36 [XLSX] datastore=True DATA JUMLAH PENDUDUK PROVINSI BENGKULU MENURUT AGAMA TAHUN 2024.xlsx
-        https://data.bengkuluprov.go.id/dataset/192aeb53-6c0c-4aca-9c06-e879ce3861e6/resource/cc6c8dd4-639b-426f-bc80-76cdbf267c36/download/data-jumlah-penduduk-provinsi-bengkulu-menurut-agama-tahun-2024.xlsx
-    package_show 'jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-tahun-2021' -> 404 {"help": "https://data.bengkuluprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Tidak ditemukan"}, "success": false}
-  https://data.tangerangselatankota.go.id/ -> 200 text/html "Welcome - Portal Data Kota Tangerang Selatan"
-    /api/3/action/status_show -> 200 application/json CKAN 2.9.11
-    package_show 'buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat' -> 404 {"help": "https://data.tangerangselatankota.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Not found"}, "success": false}
-    package_show 'data-jumlah-pemeluk-agama-provinsi-kaltim-tahun-2021' -> 404 {"help": "https://data.tangerangselatankota.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Not found"}, "success": false}
-    package_show 'data-jumlah-penduduk-menurut-agama-tahun-2024' -> 404 {"help": "https://data.tangerangselatankota.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Not found"}, "success": false}
-    package_show 'jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-tahun-2021' -> 200: Jumlah Penduduk Menurut Kecamatan dan Agama di Kota Tangerang Selatan Data Konsolidasi Bersih (DKB) Tahun 2021
-      metadata_modified: 2022-10-20T06:45:21.016912
-      license_title: Creative Commons Attribution
-      author: Dinas Kependudukan dan Pencatatan Sipil
-      organization: Dinas Kependudukan dan Pencatatan Sipil
-      resource 2575b89b-a403-4829-8aab-bdbff1785a4a [CSV] datastore=True Tahun 2021 - Jumlah Penduduk Menurut Kecamatan dan di Agama Kota Tangerang Selat
-        https://data.tangerangselatankota.go.id/dataset/72e8d9bc-1c7d-491a-af72-77e8aa3fb18f/resource/2575b89b-a403-4829-8aab-bdbff1785a4a/download/1d.-jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-data-konsolidasi-bersi.csv
-probe_ckan: 4 of 4 answered; 4 speak CKAN: data.sumbarprov.go.id, data.kaltimprov.go.id, data.bengkuluprov.go.id, data.tangerangselatankota.go.id
+    package_search q='agama' -> 200, 19 matches, 19 shown, printing those matching 'penduduk|pemeluk'
+      (19 others not matching)
+  https://data.pesawarankab.go.id/ -> 0  timeout after 12s
+  http://data.pesawarankab.go.id/ -> 0  timeout after 12s
+  https://data.pesisirbaratkab.go.id/ -> 200 text/html "Selamat Datang di Portal Open Data - Pemerintah Kabupaten Pesisir Barat"
+    /api/3/action/status_show -> 404 text/html <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+    /api/action/status_show -> 404 text/html <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+  https://data.banyuasinkab.go.id/ -> 403 text/html "Just a moment..."
+    /api/3/action/status_show -> 403 text/html <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/htm
+    /api/action/status_show -> 403 text/html <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/htm
+  https://data.musirawaskab.go.id/ -> 0  DNS: no such host
+  https://data.oganilirkab.go.id/ -> 0  DNS: no such host
+  https://data.okukab.go.id/ -> 0  DNS: no such host
+  https://data.palikab.go.id/ -> 0  DNS: no such host
+  https://data.pagaralamkota.go.id/ -> 0  DNS: no such host
+  https://data.bangkakab.go.id/ -> 0  DNS: no such host
+  https://data.belitungtimurkab.go.id/ -> 0  DNS: no such host
+  https://data.meranti.go.id/ -> 0  DNS: no such host
+  https://data.kolakatimurkab.go.id/ -> 0  DNS: no such host
+  https://data.pematangsiantar.go.id/ -> 0  DNS: no such host
+  https://data.tidorekota.go.id/ -> 0  DNS: no such host
+  https://data.morowaliutarakab.go.id/ -> 0  DNS: no such host
+  https://data.tojounaunakab.go.id/ -> 0  DNS: no such host
+  https://data.pohuwatokab.go.id/ -> 0  timeout after 12s
+  http://data.pohuwatokab.go.id/ -> 0  timeout after 12s
+  https://data.mamujutengahkab.go.id/ -> 403 text/html "Attention Required! | Cloudflare"
+    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]--> <!--[if IE 7]> <html class
+    /api/action/status_show -> 403 text/html <!DOCTYPE html> <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]--> <!--[if IE 7]> <html class
+  https://data.mitrakab.go.id/ -> 403 text/html "Attention Required! | Cloudflare"
+    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]--> <!--[if IE 7]> <html class
+    /api/action/status_show -> 403 text/html <!DOCTYPE html> <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]--> <!--[if IE 7]> <html class
+probe_ckan: 14 of 36 answered; 1 speak CKAN: data.lampungutarakab.go.id
