@@ -1,46 +1,484 @@
-  http://web.archive.org/cdx/search/cdx?url=1212.mn&matchType=domain&output=text&limit=6000&fl=original&filter=mimetype:application/pdf&filter=original:.*(XAOCT|Negdsen|negdsen).*
-    12,448 chars
-    21 distinct match(es) for 'url=[a-zA-Z0-9%._-]+[.]pdf'
-      url=Arkhangai_XAOCT_Negdsen_dun.pdf
-      url=Bayan-Ulgii_XAOCT_Negdsen_Dun.pdf
-      url=Bayankhongor_XAOCT_Negdsen_dun.pdf
-      url=Bosoo_bichig_summary_XAOCT.pdf
-      url=Bulgan_XAOCT_Negdsen_dun.pdf
-      url=Darkhan-Uul_XAOCT_Negdsen%20dun.pdf
-      url=Dornod_XAOCT_Negdsen_Dun.pdf
-      url=Dornogovi_XAOCT_Negdsen_Dun.pdf
-      url=Govi-Altai_XAOCT_Negdsen%20dun.pdf
-      url=Govi-Altai_XAOCT_Negdsen_Dun.pdf
-      url=Govisumber_XAOCT_Negdsen_dun.pdf
-      url=Khuvsgul_XAOCT_Negdsen_Dun.pdf
-      url=Orkhon_XAOCT_Negdsen_Dun.pdf
-      url=Selenge_XAOCT_Negdsen_dun.pdf
-      url=Sukhbaatar_XAOCT_Negdsen_dun.pdf
-      url=Tuv_XAOCT_Negdsen%20dun..pdf
-      url=Ulaanbaatar_XAOCT_Negdsen_dun.pdf
-      url=Umnugovi_XAOCT_Negdsen_Dun.pdf
-      url=Uvs_XAOCT_Negdsen_Dun.pdf
-      url=Uvurkhangai_XAOCT_Negdsen_dun.pdf
-      url=Zavkhan_XAOCT_Negdsen_dun.pdf
-  http://web.archive.org/cdx/search/cdx?url=1212.mn&matchType=domain&output=text&limit=6000&fl=original&filter=mimetype:application/pdf&filter=original:.*(Khovd|Uvs|Dundgovi|Khentii|Uvurkhangai|Hovd).*
-    7,843 chars
-    19 distinct match(es) for 'url=[a-zA-Z0-9%._-]+[.]pdf'
-      url=11._Summary_report_Dundgovi.pdf
-      url=13._Summary_report_Uvurkhangai.pdf
-      url=18._Khentii.pdf
-      url=21._Summary_report_Khovd.pdf
-      url=22._Summary_report_Uvs.pdf
-      url=4.Summary%20report_Khentii.pdf
-      url=Dundgovi.pdf
-      url=Dundgovi_2019.pdf
-      url=Hovd_2016.pdf
-      url=Khentii.pdf
-      url=Khentii_2019.pdf
-      url=Khovd.pdf
-      url=Khovd_2019.pdf
-      url=Uvs.pdf
-      url=Uvs_2016.pdf
-      url=Uvs_XAOCT_Negdsen_Dun.pdf
-      url=Uvurkhangai.pdf
-      url=Uvurkhangai_2019.pdf
-      url=Uvurkhangai_XAOCT_Negdsen_dun.pdf
+probe_pdf: https://web.archive.org/web/20210831093935id_/https://www.1212.mn/BookLibraryDownload.ashx?url=Census2020_Main_report_Eng.pdf&ln=En&fbclid=IwAR0_jZpxt7rOc0qwNRbA_NgqNN2X7X2_SQuSafmUoKnht2bsP-JgxA3tGPk
+  10,505,496 bytes
+  298 pages
+probe_pdf: 299 pages, 20 mention ['TABLE3.2', 'TABLE3.9', 'TABLE3.10', 'Buriad', 'Shamanism']
+=== front matter ===
+
+
+=== pages mentioning ['TABLE3.2', 'TABLE3.9', 'TABLE3.10', 'Buriad', 'Shamanism'] (first 10) ===
+
+--- page 8 ----------------------------------------------------
+2020 POPULATION AND HOUSING CENSUS OF MONGOLIA
+NATIONAL REPORT
+LIST OF FIGURES
+FIGURE 1.1. STRUCTURE FOR MANAGEMENT AND ORGANIZATION OF THE POPULATION AND
+HOUSING CENSUS 2020 ..................................................................................................37
+FIGURE 2.1. POPULATION OF MONGOLIA, 2020 .................................................................................41
+FIGURE 2.2. AVERAGE ANNUAL GROWTH RATE BETWEEN CENSUSES 1918-2020, BY
+PERCENTAGE ...................................................................................................................42
+FIGURE 2.3. POPULATION AGE STRUCTURE, BY PERCENTAGE, 1989, 2000, 2010, 2020 .................44
+FIGURE 2.4. POPULATION -PYRAMID, 2010, 2020 ...............................................................................45
+FIGURE 3.1. POPULATION BY CITIZENSHIP, 2020 ...............................................................................51
+FIGURE 3.2. POPULATION BY ETHNICITIES, BY PERCENTAGE, 2020 ...............................................54
+FIGURE 3.3. DISTRIBUTION OF THE KAZAKHS, BY AIMAGS AND THE CAPITAL, 2020 ....................54
+FIGURE 3.4. DISTRIBUTION OF THE DURVUDS, BY AIMAGS AND THE CAPITAL, 2020 ....................54
+FIGURE 3.5. DISTRIBUTION OF BAYADS, BY AIMAGS AND THE CAPITAL, 2020 ...............................55
+FIGURE 3.6. DISTRIBUTION OF BURIADS, BY AIMAGS AND THE CAPITAL, 2020 ............................55
+FIGURE 3.7. PERCENTAGE DISTRIBUTION OF POPULATION BY ETHNICITY IN URBAN AND RURAL,
+2020 ...................................................................................................................................55
+FIGURE 3.8. PERCENTAGE DISTRIBUTION OF FOREIGN CITIZENS AGED 6 AND ABOVE, BY
+EDUCATION LEVEL, 2010, 2020 .......................................................................................60
+FIGURE 3.9. PERCENTAGE DISTRIBUTION OF FOREIGN CITIZENSHIP, BY ECONOMIC ACTIVITIES,
+2010, 2020 .........................................................................................................................61
+FIGURE 4.1. POPULATION DISTRIBUTION BY SOUM, 2020 ...............................................................67
+FIGURE 4.2. POPULATION DENSITY BY AIMAG AND THE CAPITAL CITY, 2020 ..................................71
+FIGURE 4.3. INTERNAL MIGRATION TO ULAANBAATAR BY REGIONS (MIGRATION IN AND OUT-
+FLOW BY THOUS. PEOPLE) 2010, 2020 ...........................................................................73
+FIGURE 5.1. MIGRATION SINCE BIRTH, 2020 .....................................................................................78
+FIGURE 5.2. INTERNAL MIGRATION IN THE PAST FIVE YEARS, 2020 ................................................78
+FIGURE 5.3. INTERNAL MIGRATION IN THE PAST YEAR, 2020 ..........................................................79
+FIGURE 5.4. PERCENTAGE DISTRIBUTION OF INTER-AIMAG/CAPITAL CITY MIGRANTS, 2010,
+2020 ...................................................................................................................................79
+FIGURE 5.5. PERCENTAGE DISTRIBUTION OF INTER-REGION MIGRANTS, 2010, 2020...................79
+FIGURE 5.6 NET MIGRATION RATE BY REGION, 2010, 2020 .............................................................86
+FIGURE 5.7 MIGRANTS IN THE PAST YEAR, BY AGE GROUPS AND SEX, 2010, 2020 .......................87
+FIGURE 6.1. AGE AND GENDER PYRAMID FOR POPULATION WITH HIGHER EDUCATION, 2010,
+2020 ...................................................................................................................................96
+8
+[302 words in 37 rows]
+
+--- page 20 ----------------------------------------------------
+20-24
+15-19
+10-14
+5-9
+other dwelling
+0-4
+200 000150 000100 000 50 000 50 000 100 000150 000200 000
+546 979 342 409 8 039
+household household household
+EDUCATION LEVEL DISABILITY
+HOUSEHOLDS
+for population aged 10 and over by percentage
+aged 15 or less aged 15-64 aged 65 and more
+Total Households
+897 427 3311..55% 6644..44% 44..11%
+29.2 28.3%
+26.5
+22.5%
+Other 20.2%
+203 317 ETHNICITY lacinhcet
+17.1
+Khalkh Kazakh yradnoces Durvud Total
+13.7 12.0%
+Extended dna
+83.8% noitacude 3.8% 2.6%
+family¹ loohcs househol8d.2 %
+lanoitacoV
+4.7
+4 . 9 yramirP 3.9
+137 826 laicepS rehgiH
+Ba y d Buriad other 897 427 5.7%
+536 309 cisaB hgiH 3.1%
+2.0% oN 1.4% 6.4% Multiple
+Single 19 975 Ulaanbaatar
+Nuclear person Composite² 2020
+Literacy rate of the population aged 15 and over
+¹Two or more interrelated families living as one household 98..7% 1..3%
+Literate Illiterate
+²People who share their residence with unrelated individuals
+INTERNET USE
+SETTLEMENT AND MIGRATION POPULATION
+EDUCATION LEVEL SETTLEMENT, DISABILITY by soums
+HOUSEHOLDS
+32% 68% 46%
+of which: frequently when necessary
+26.7%
+for population aged 10 and over by percentage 38.0%
+Scale 1:9 000 000
+Total Households
+897 427
+29.2 28.3%
+26.5 Yes No
+22.5%
+Other 20.2%
+Rural population Urban population in Ulaanbaatar 64.7% 35.3%
+203 317 lacinhcet
+17.1
+yradnoces
+13.7 12.0%
+Extended
+SHARE OF dna MIGRATION
+
+--- page 21 ----------------------------------------------------
+OVERALL RESULT SUMMARY
+POPULATION, GROWTH, AGE AND SEX STRUCTURE
+According to the Population and Housing Census 2020, the population of Mongolia reached
+3 296 866. As of 2020, the population has grown five times since 1918 and by 2.2 percent on annual
+average since 2010. In all aimags and the capital city, the average annual population growth between the
+censuses was increased from the previous census.
+The current census indicates some changes in the age structure of the population compared to
+2010, and the increased share of population aged 0-9 years in the total population is caused from the
+increased birth rate since 2011. However, the low share of age group 15-29 in the population is caused
+from the decreased birth rate started in the early 1990s to 2006.
+The sex ratio was steadily declining from 100.4 in 1979 to 98.1 in 2010 and 96.6 in 2020, and indicating
+a higher proportion of women in the total population. In the past 3 decades, the median age of the
+population raised almost by 10 years, 18.8 to 27.9, because of a decrease in birth and an increase in life
+expectancy.
+The demographic dependency was 55.3 in 2020, which was decreased by 29.6 percentage points from
+1989 and increased by 10.3 percentage points from 2010. The country’s socio-economic development
+can be positively impacted by delivery of a long-term policy and programs while taking advantage of
+the prominent proportion of working age population or the demographic window, especially by creating
+more employment opportunities.
+CITIZENSHIP, ETHNICITY AND RELIGION
+Khalkh ethnic group accounts for 83.8 percent of the population, which is an increase of 1.4 percentage
+points from the previous census. The percentage of Kazakh ethnic group in the total population is 3.8
+percent, second only to the Khalkhs. The proportion of Durvud, Bayad, and Buriad ethnic groups have
+been declining since 2010. In terms of the location, the Khalkh ethnic group is prevalent in all aimags
+and the capital city. Bayan-Ulgii (0.9 percent), Uvs (13.6 percent) and Khovd (28.1 percent) have the
+lowest percentage of Khalkh ethnic group in the total population of the aimags respectively. In contrast,
+in Bayankhongor, Gobi-Altai, Dundgovi, Zavkhan and Uvurkhangai aimags, more than 99 percent of the
+aimag population are Khalkhs.
+The number of foreign nationals residing in Mongolia for 6 months or more increased by 37.4
+percent or 6 098 people from 2010 to 22 418. The number of stateless persons has decreased from 71
+to 37 since 2010. Residents of the People's Republic of China (PRC) and the Russian Federation (Russia)
+account for 53.3 percent of all foreign nationals residing in the country. Compared to the Population and
+Housing Census 2010, the proportion of Chinese nationals permanently residing in Mongolia decreased
+by 11.3 percentage points and the Russian nationals by 3.4 percentage points, whereas the proportion
+of US nationals increased by 6.6 percentage points.
+Comparing foreign nationals permanently residing in Mongolia to the previous census, the
+proportion of population aged 0-14 increased by 9.9 percentage points and population aged 55 and
+over by 5.0 percentage points respectively. Approximately 70 percent of foreign nationals residing in
+Mongolia are those aged 25 and over or of working age. Therefore, 57.4 percent have higher education
+and predominantly engaged in other service activities, wholesale and retail trade, car and motorcycle
+maintenance, and education.
+According to the recent census, 59.4 percent of the population aged 15 and over are religious, and
+40.6 percent are atheists. Out of the total religious population, 87.1 percent is Buddhist. While a large
+21
+[587 words in 44 rows]
+
+--- page 52 ----------------------------------------------------
+2020 POPULATION AND HOUSING CENSUS OF MONGOLIA
+NATIONAL REPORT
+ETHNICITY
+The last census enables a widespread and extensively study of population ethnicity. In the census
+results, ethnic groups which has population less than 100 persons was categorized as “other”. Khalkh
+ethnic group makes 83.8 percent of Mongolian population, increased by 1.4 percentage points from the
+previous census, and followed by Kazakhs, 3.8 percent. The percentage of Durvuds, Bayads, and Buriads
+declined from 2010.
+TABLE 3.2. POPULATION AND ETHNIC GROUPS, BY PERCENTAGE, 2010, 2020
+2010* 2020*
+Ethnicity
+Number of person Percentage Number of person Percentage
+MONGOLIAN CITIZEN TOTAL 2 631 117 100.0 3 174 565 100.0
+Khalkh 2 168 141 82.4 2 659 985 83.8
+Kazakh 101 526 3.9 120 999 3.8
+Durvud 72 403 2.8 83 719 2.6
+Bayad 56 573 2.2 63 775 2.0
+Buriad 45087 1.7 43 661 1.4
+Zakhchin 32 845 1.2 37 407 1.2
+Dariganga 27 412 1.0 36 419 1.1
+Uriankhai 26 654 1.0 29 021 0.9
+Darkhad 21 558 0.8 24 549 0.8
+Uuld 15 520 0.6 14 666 0.5
+Khotgoid 15 460 0.6 8 583 0.3
+Torguud 14 176 0.5 15 596 0.5
+Khoton 11 304 0.4 12 057 0.4
+Myangad 6 592 0.3 8 125 0.2
+Tuva 5 169 0.2 2 354 0.1
+Barga 2 989 0.1 2 832 0.1
+Uzemchin 2 577 0.1 2 308 0.1
+Eljigen 1 340 0.1 1 034 0.0
+Sartuul 1 286 0.0 2 023 0.1
+Khamnigan 537 0.0 384 0.0
+Tsaatan (Dukha) 282 0.0 208 0.0
+Uzbek (Chantuu) 260 0.0 202 0.0
+Kharchin 152 0.0 154 0.0
+Tsakhar 132 0.0 - -
+Khoshuud - - 382 0.0
+Other 601 0.0 143 0.0
+Other nationals
+541 0.0 3 979 0.1
+(Mongolian citizen who are foreign)
+Explanation: *Mongolian citizens living abroad not included
+Children aged 0-14 take up more than 60 percent among Khotgoid, Tuva, Tsaatan (Dukha), and
+Khoshuuds, is associated with high birth rates. More than 25 percent of Buriad, Dariganga, Uzemchin,
+Sartuul, Khamnigan, and Kharchin people who are above 45 years old shows the population of these
+groups are aging.
+52
+[345 words in 48 rows]
+
+--- page 53 ----------------------------------------------------
+CHAPTER 3
+CITIZENSHIP, ETHNICITY AND RELIGION
+TABLE 3.3. ETHNICITY BY AGE GROUPS AND PERCENTAGE, 2020
+Age group
+Ethnicity Total
+0-14 15-24 25-34 35-44 45-54 55+
+MONGOLIAN CITIZENS 100.0 32.2 13.8 17.1 14.2 11.0 11.7
+Khalkh 100.0 32.4 13.6 17.1 14.3 11.0 11.6
+Kazak 100.0 35.9 17.1 16.7 12.2 9.1 9.0
+Durvud 100.0 29.8 14.5 17.8 14.1 11.9 11.9
+Buriad 100.0 29.6 14.4 17.7 13.9 11.7 12.7
+Bayad 100.0 27.4 11.8 17.4 14.4 12.0 17.0
+Dariganga 100.0 29.8 15.7 17.5 14.0 10.6 12.4
+Uriankhai 100.0 22.9 12.1 19.5 16.6 13.2 15.7
+Zakhchin 100.0 29.1 14.6 17.7 13.8 11.7 13.1
+Darkhad 100.0 30.4 15.7 18.3 13.2 11.1 11.3
+Torguud 100.0 30.3 14.0 16.1 14.0 11.9 13.7
+Uuld 100.0 71.5 13.4 4.5 3.8 3.3 3.5
+Khoton 100.0 28.6 12.9 17.9 14.7 11.3 14.6
+Myangad 100.0 39.9 17.4 14.9 10.3 9.1 8.4
+Barga 100.0 28.7 18.4 16.0 15.5 10.7 10.7
+Uzemchin 100.0 65.6 13.4 7.1 4.7 4.3 4.9
+Kharchin 100.0 29.3 8.5 23.9 13.8 10.3 14.2
+Tsakhar 100.0 27.4 11.8 20.2 11.8 12.2 16.6
+Khotgoid 100.0 31.5 16.9 12.9 14.8 13.1 10.8
+Eljigen 100.0 19.8 14.1 18.0 18.2 13.8 16.1
+Tsaatan (Dukha) 100.0 18.7 17.7 18.8 14.6 13.0 17.2
+Sartuul 100.0 75.0 14.4 1.5 1.9 4.3 2.9
+Tuva 100.0 25.7 17.3 21.3 15.4 8.4 11.9
+Khorchin 100.0 46.8 13.6 3.9 7.8 7.8 20.1
+Uzbek (Chantuu) 100.0 71.5 14.6 3.7 3.9 3.4 2.9
+Other 100.0 23.1 9.1 14.0 17.4 14.7 21.7
+Other nationals (Mongolian citizen
+100.0 20.2 16.1 21.7 15.2 12.4 14.4
+who are foreign)
+Khalkhs are living in every aimags and the city. In Bayankhongor, Govi-Altai, Dundgovi, Zavkhan, and
+Uvurkhangai aimags, more than 99 percent of the populations is Khalkhs, but takes up only 0.9 percent
+in Bayan-Ulgii, 13.6 percent in Uvs, and 28.1 percent in Khovd. Khovd is a home to many ethnicities
+which consists of Khalkh (28.1 percent), Zakhchin (25.3 percent), Kazakh (11.2 percent), Uriankhai (8.3
+percent), Torguud (7.4 percent), Durvud (6.5 percent), Uuld (6.1 percent), and Myangad (5.3 percent). In
+terms of regions, percentages of population living in the western part of Mongolia are Khalkh (41.0),
+Kazakh (25.8), Durvud (10.4), Bayad (7.1), and Zakhchin (5.6). While 77.7 percent of the total Kazakhs
+is living in Bayal-Ulgii, 41.8 percent of the Durvuds, 44.3 percent of the Bayads, 47.9 percent of the
+Khotons, and 86.7 percent of the Eljigens are residing Uvs aimag.
+In Khangai region, the Khalkhs constitute 91.8 percent of the population, the Darkhads 3.5
+percent, and the Khotgoids 1.3 percent. 91.6 percent of the population in the Central region is the
+Khalkhs,Darkhads 81.2 percents residing in Khuvsgul, 1.9 percent is the Bayads, and 1.8 percent is the
+Durvuds. The Khalkhs take up 73.8 percent of the people in the eastern region, the Darigangas take 12.1
+percent, and the Buriads constitutes 10.2 percent. 67.2 percent of the Darigangas, and 7.0 percent of
+the Uzemchins are living in Sukhbaatar aimag. The Bargas and the Uzemchins in Dornod aimag where
+they mostly live, make up 2.3 and 2.1 percent of the population, and they represent 67.3 and 73.7 percent
+of their ethnic groups. /See the Appendix B Table 3.6/
+53
+[517 words in 53 rows]
+
+--- page 54 ----------------------------------------------------
+2020 POPULATION AND HOUSING CENSUS OF MONGOLIA
+NATIONAL REPORT
+The Khalkhs, the Kazakhs, the Durvuds, the Bayads, and the Buriads are the ethnic groups that
+make up higher percentages in the total population.
+FIGURE 3.2. POPULATION BY ETHNICITIES, BY PERCENTAGE, 2020
+KHALKH KAZAKH DURVUD BAYAD BURIAD
+83.8% 3.8% 2.6% 2.0% 1.4%
+FIGURE 3.3. DISTRIBUTION OF THE KAZAKHS, BY AIMAGS AND THE CAPITAL, 2020
+The Kazakhs mostly live in Bayan-Ulgii, Khovd,
+Selenge, Tuv, Khentii aimags and Ulaanbaatar.
+FIGURE 3.4. DISTRIBUTION OF THE DURVUDS, BY AIMAGS AND THE CAPITAL, 2020
+The Durvuds sparsely reside in every aimag,
+and constitutes 41.8 percent of the population in
+Uvs, and 34.3 percent in Ulaanbaatar.
+54
+[110 words in 15 rows]
+
+--- page 55 ----------------------------------------------------
+CHAPTER 3
+CITIZENSHIP, ETHNICITY AND RELIGION
+FIGURE 3.5. DISTRIBUTION OF BAYADS, BY AIMAGS AND THE CAPITAL, 2020
+44.3 percent of Bayads live in Uvs aimag, 33.9
+percent in Ulaanbaatar, and Bayads also live in
+Orkhon, Bulgan, Selenge, Tuv, and Darkhan-Uul
+aimags.
+FIGURE 3.6. DISTRIBUTION OF BURIADS, BY AIMAGS AND THE CAPITAL, 2020
+38.7 percent of Buriad live in Dornod, 37.5
+percent in Ulaanbaatar and 12.6 percent in Khentii
+aimag. The Buriads also settled in the northern
+provinces of Mongolia, such as Khuvsgul, Selenge,
+Orkhon, Darkhan-Uul, Khentii, and Dornod.
+The following figure shows that population belonging to the Darkhad, Tuva, Khotgoid, Uzbek
+(Chantuu), Hamnigan, Eljigen, Khoshuud, and Tsaatan (Dukha) ethnic groups live mainly in the rural
+areas.
+FIGURE 3.7. PERCENTAGE DISTRIBUTION OF POPULATION BY ETHNICITY IN URBAN AND RURAL, 2020
+Urban Rural
+Kharchin 79.2 20.8
+Sartuul 75.1 24.9
+Khalkh 70.8 29.2
+Uuld 65.5 34.5
+Durvud 63.5 36.5
+Bayad 60.5 39.5
+Myangad 60.4 39.6
+Buriad 56.1 43.9
+Torguud 55.4 44.6
+Zakhchin 52.2 47.8
+Uriankhai 52.1 47.9
+Dariganga 51.6 48.4
+Khoton 50.8 49.2
+Uzemchin 48.3 51.7
+Barga 48.1 51.9
+Kazakh 42.0 58.0
+Darkhad 28.1 71.9
+Tuva 27.2 72.8
+Khotgoid 27.1 72.9
+Uzbek (Chantuu) 24.8 75.2
+Khamnigan 18.8 81.2
+Eljigen 12.6 87.4
+Hoshuud 10.5 89.5
+Tsaatan (Dukha) 10.1 89.9
+Other ethnics 68.8 31.2
+Other nations (Mongolian citizens) 55.2 44.8
+0 20 40 60 80 100
+55
+[222 words in 46 rows]
+
+--- page 56 ----------------------------------------------------
+2020 POPULATION AND HOUSING CENSUS OF MONGOLIA
+NATIONAL REPORT
+TABLE 3.4. PERCENTAGE DISTRIBUTION OF POPULATION AGED 10 AND ABOVE, BY ETHNICITY AND EDUCATION
+LEVEL, 2020
+Educational level
+Population
+Technical Non-
+Ethnicity aged 10 or Specialized Upper Lower
+Higher and Primary educated
+above secondary secondary secondary
+vocational
+MONGOLIAN
+100.0 26.5 4.7 3.9 29.2 17.1 13.7 4.9
+CITIZENS-TOTAL
+Khalkh 100.0 27.1 4.7 3.8 29.8 16.6 13.2 4.8
+Kazakh 100.0 21.2 3.2 4.2 22.3 21.7 20.4 7.0
+Durvud 100.0 24.7 4.7 4.6 28.6 18.3 13.9 5.2
+Bayad 100.0 26.9 4.6 3.9 27.0 17.7 14.7 5.2
+Buriad 100.0 28.1 5.8 4.0 29.5 18.2 10.6 3.8
+Zakhchin 100.0 24.5 4.8 3.6 29.5 18.6 13.9 5.1
+Dariganga 100.0 24.7 6.1 6.4 24.6 20.7 12.9 4.6
+Uriankhai 100.0 19.9 4.1 4.3 29.6 21.1 15.7 5.3
+Darkhad 100.0 14.3 2.5 2.4 24.5 22.8 25.3 8.2
+Uuld 100.0 32.0 5.5 3.5 27.8 14.7 12.3 4.2
+Khotgoid 100.0 7.9 2.0 2.2 12.0 20.0 38.8 17.1
+Torguud 100.0 28.9 6.3 3.9 29.9 14.9 12.0 4.1
+Khoton 100.0 12.9 2.7 7.5 21.2 23.8 23.2 8.7
+Myangad 100.0 23.4 4.8 4.5 29.9 20.1 12.3 5.0
+Tuva 100.0 11.5 2.9 7.2 15.8 22.2 30.1 10.3
+Barga 100.0 20.8 5.7 6.4 26.6 21.8 13.1 5.6
+Uzemchin 100.0 18.7 4.3 7.0 25.1 24.2 15.6 5.1
+Eljigen 100.0 19.6 3.8 6.5 25.7 18.8 15.5 10.1
+Sartuul 100.0 24.2 5.8 5.4 30.2 17.1 12.7 4.6
+Khamnigan 100.0 12.9 2.6 3.7 28.0 27.7 20.3 4.8
+Tsaatan (Dukha) 100.0 4.9 2.0 0.0 17.6 19.6 30.4 25.5
+Uzbek (Chantuu) 100.0 14.3 1.7 2.3 27.4 21.7 22.3 10.3
+Kharchin 100.0 27.8 3.5 2.6 19.1 15.7 20.9 10.4
+Hoshuud 100.0 3.9 3.0 2.0 13.3 23.6 39.4 14.8
+Other 100.0 31.8 5.3 2.3 28.8 15.2 12.1 4.5
+Other nationals
+(Mongolian 100.0 17.8 3.3 4.2 27.0 20.6 20.1 7.0
+citizens)
+According to the table, education level of the Bayads, the Khalkhs, the Kharchins, the Buriads, the
+Torguuds, and the Uulds is 0.4-5.5 percentage points higher than the nation’s average, but the other
+ethnics are 1.8-22.6 percentage points lower than it.
+56
+[336 words in 46 rows]
+
+--- page 57 ----------------------------------------------------
+CHAPTER 3
+CITIZENSHIP, ETHNICITY AND RELIGION
+TABLE 3.5. PERCENTAGE DITRIBUTION POPULATION AGED 15 AND ABOVE, BY ETHNICITY AND EMPLOYMENT
+STATUS, 2020
+Paid
+Short-term
+Employed Permanent Fixed-term apprentices, Dependent
+Ethnicity and casual
+population employees employees trainees and contractors
+employees
+interns
+MONGOLIAN CITIZENS-
+100.0 60.3 5.3 1.0 0.0 0.5
+TOTAL
+Khalkh 100.0 61.5 5.5 1.0 0.0 0.5
+Kazakh 100.0 49.3 2.7 0.9 0.0 0.2
+Durvud 100.0 57.9 5.4 0.8 0.0 0.5
+Bayad 100.0 53.8 4.9 0.6 0.0 0.4
+Buriad 100.0 60.5 6.0 1.0 0.0 0.5
+Zakhchin 100.0 57.6 4.5 0.8 0.0 0.3
+Dariganga 100.0 52.5 3.9 0.4 0.0 0.4
+Uriankhai 100.0 53.6 4.0 1.1 0.0 0.4
+Darkhad 100.0 33.2 2.7 0.6 0.0 0.3
+Uuld 100.0 62.6 5.5 0.7 0.0 0.5
+Khotgoid 100.0 34.5 4.4 0.5 0.0 0.1
+Torguud 100.0 66.4 5.4 0.8 0.0 0.4
+Khoton 100.0 39.7 4.0 0.8 0.0 0.5
+Myangad 100.0 57.5 5.4 0.7 0.0 0.5
+Tuva 100.0 42.9 6.5 0.7 0.0 0.5
+Barga 100.0 54.1 4.5 1.1 0.1 0.5
+Uzemchin 100.0 58.9 3.6 0.7 0.0 1.1
+Eljigen 100.0 33.6 4.0 0.0 0.0 0.0
+Sartuul 100.0 60.3 6.3 1.2 0.0 0.5
+Khamnigan 100.0 39.6 2.8 0.0 0.0 0.0
+Tsaatan (Dukha) 100.0 28.6 0.0 7.1 0.0 0.0
+Uzbek (Chantuu) 100.0 33.3 4.2 1.4 0.0 0.0
+Kharchin 100.0 71.4 14.3 0.0 0.0 0.0
+Hoshuud 100.0 22.0 6.0 2.0 0.0 0.0
+Other 100.0 55.8 1.9 0.0 0.0 1.9
+Other nationals
+100.0 46.6 4.1 0.5 0.0 0.4
+(Mongolian citizens)
+57
+[236 words in 43 rows]
+
+--- page 58 ----------------------------------------------------
+2020 POPULATION AND HOUSING CENSUS OF MONGOLIA
+NATIONAL REPORT
+TABLE 3.5.1 PERCENTAGE DISTRIBUTION OF POPULATION AGED 15 AND ABOVE, BY ETHNICITY AND
+EMPLOYMENT STATUS, 2020 /CONTINUED/
+Own-account
+Owner-
+workers in
+Employer in operators of Contributing
+Employers in household market
+Ethnicity household market corporations family
+corporations enterprises
+enterprises without workers
+without
+employees
+employees
+MONGOLIAN CITIZENS-
+0.4 0.2 0.3 26.1 5.9
+TOTAL
+Khalkh 0.5 0.2 0.3 25.2 5.3
+Kazakh 0.2 0.1 0.2 33.6 12.8
+Durvud 0.3 0.2 0.2 27.9 6.8
+Bayad 0.4 0.2 0.2 31.7 7.8
+Buriad 0.4 0.2 0.3 27.5 3.6
+Zakhchin 0.2 0.1 0.6 30.1 5.8
+Dariganga 0.3 0.2 0.2 27.9 14.2
+Uriankhai 0.2 0.2 0.3 32.0 8.2
+Darkhad 0.1 0.1 0.1 40.2 22.7
+Uuld 0.5 0.1 0.2 22.2 7.7
+Khotgoid 0.2 0.2 0.0 38.2 21.9
+Torguud 0.4 0.2 0.2 20.6 5.6
+Khoton 0.1 0.1 0.2 43.2 11.4
+Myangad 0.2 0.2 0.3 30.2 5.0
+Tuva 0.0 0.0 0.0 38.3 11.1
+Barga 0.4 0.1 0.4 30.9 7.9
+Uzemchin 0.3 0.4 0.1 29.4 5.5
+Eljigen 0.2 0.0 0.0 43.6 18.6
+Sartuul 0.2 0.4 0.0 27.8 3.3
+Khamnigan 0.0 0.7 0.7 54.8 1.4
+Tsaatan (Dukha) 0.0 0.0 0.0 50.0 14.3
+Uzbek (Chantuu) 1.4 1.4 0.0 54.2 4.1
+Kharchin 0.0 0.0 0.0 14.3 0.0
+Hoshuud 0.0 0.0 2.0 56.0 12.0
+Other 0.0 0.0 0.0 34.6 5.8
+Other nationals
+0.5 0.1 0.1 42.0 5.7
+(Mongolian citizens)
+According to the table, paid employment (full-time, temporary, casual workers, apprentices and
+contractors) among the Khoshuuds, the Tsaatsans (Dukha), the Darkhads, the Eljigens, the Uzbek
+(Chantuu), and the Khotgoids is 40 percent lower than the total population, but the family business and
+unpaid family production and service are relatively higher. Majority of the above-mentioned ethnics are
+employed in the agricultural sector, associated with the places they live, the rural areas. /see the Table
+3.7, Appendix B/
+FOREIGN CITIZENS
+
+... and 10 further pages match; re-run with a narrower --terms to see them.
