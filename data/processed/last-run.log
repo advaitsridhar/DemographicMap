@@ -1,27 +1,275 @@
-probe_pdf: https://web.archive.org/web/20240412141125id_/https://deps.mofe.gov.bn/DEPD%20Documents%20Library/DOS/POP/2021/ANNEX%20C.pdf
-  1,048,576 bytes
-EOF marker not found
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 164, in fetch_text
-    reader = PdfReader(io.BytesIO(blob))
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 151, in __init__
-    self._initialize_stream(stream)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 175, in _initialize_stream
-    self.read(stream)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 689, in read
-    self._find_eof_marker(stream)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_reader.py", line 802, in _find_eof_marker
-    line = read_previous_line(stream)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/site-packages/pypdf/_utils.py", line 380, in read_previous_line
-    raise PdfStreamError(STREAM_TRUNCATED_PREMATURELY)
-pypdf.errors.PdfStreamError: Stream has ended unexpectedly
+probe_pdf: https://deps.mofe.gov.bn/wp-content/uploads/2025/11/ANNEX-C.pdf
+  2,284,478 bytes
+  90 pages
+probe_pdf: 90 pages, 2 mention ['Religion', 'Race', 'Ugama', 'Bangsa']
+=== front matter ===
+Jadual Tajuk Muka Surat
+Table Title Page
+C1 Penduduk mengikut Mukim, Taraf Penduduk dan Jantina, 2021
+Population by Mukim, Residential Status and Sex, 2021
+(a) Daerah Brunei Muara/Brunei Muara District 153
+(b) Daerah Belait/Belait District 154
+(c) Daerah Tutong/Tutong District 155
+(d) Daerah Temburong/Temburong District 156
+C2 Penduduk mengikut Mukim dan Kampung/Kawasan, Taraf Penduduk dan Jantina, 2021 - Daerah Brunei Muara
+Population by Mukim and Kampung/Areas, Residential Status and Sex, 2021 - Brunei Muara District
+(a) Mukim Kianggeh 157
+(b) Mukim Sungai Kedayan 158
+(c) Mukim Saba 159
+(d) Mukim Sungai Kebun 160
+(e) Mukim Burong Pingai Ayer 161
+(f) Mukim Peramu 162
+(g) Mukim Tamoi 163
+(h) Mukim Berakas A 164
+(i) Mukim Berakas B 165
+(j) Mukim Gadong A 166
+(k) Mukim Gadong B 167
+(l) Mukim Kota Batu 168
+(m) Mukim Lumapas 169
+(n) Mukim Kilanas 170
+(o) Mukim Sengkurong 171
+(p) Mukim Pangkalan Batu 172
+(q) Mukim Mentiri 173
+(r) Mukim Serasa 174
+Jadual Tajuk Muka Surat
+Table Title Page
+C3 Penduduk mengikut Mukim dan Kampung/Kawasan, Taraf Penduduk dan Jantina, 2021 - Daerah Belait
+Population by Mukim and Kampung/Areas, Residential Status and Sex, 2021 - Belait District
+(a) Mukim  Kuala Belait 175
+(b) Mukim  Seria 176
+(c) Mukim  Liang 177
+(d) Mukim  Kuala Balai 178
+(e) Mukim  Labi 179
+(f) Mukim  Bukit Sawat 180
+(g) Mukim  Sukang 181
+(h) Mukim  Melilas 182
+C4 Penduduk mengikut Mukim dan Kampung/Kawasan, Taraf Penduduk dan Jantina, 2021 - Daerah Tutong
+Population by Mukim and Kampung/Areas, Residential Status and Sex, 2021 - Tutong District
+(a) Mukim  Pekan Tutong 183
+(b) Mukim  Keriam 184
+(c) Mukim  Telisai 185
+(d) Mukim  Tanjong Maya 186
+(e) Mukim  Kiudang 187
+(f) Mukim  Lamunin 188
+(g) Mukim  Ukong 189
+(h) Mukim  Rambai 190
+C5 Penduduk mengikut Mukim dan Kampung/Kawasan, Taraf Penduduk dan Jantina, 2021 - Daerah Temburong
+Population by Mukim and Kampung/Areas, Residential Status and Sex, 2021 - Temburong District
+(a) Mukim  Bangar 191
+(b) Mukim  Amo 192
+(c) Mukim  Labu 193
+(d) Mukim  Batu Apoi 194
+(e) Mukim  Bokok 195
+Jadual Tajuk Muka Surat
+Table Title Page
+C6 Penduduk mengikut Mukim, Kumpulan Umur dan Jantina, 2021
+Population by Mukim, Age Group and Sex, 2021
+(a) Daerah Brunei Muara/Brunei Muara District 196
+(b) Daerah Belait/Belait District 197
+(c) Daerah Tutong/Tutong District 198
+(d) Daerah Temburong/Temburong District 199
+C7 Penduduk mengikut Mukim dan Kampung/Kawasan, Kumpulan Umur dan Jantina, 2021 - Daerah Brunei Muara
+Population by Mukim and Kampung/Areas,  Age Group and Sex, 2021 - Brunei Muara District
+(a) Mukim Kianggeh 200
+(b) Mukim Sungai Kedayan 201
+(c) Mukim Saba 202
+(d) Mukim Sungai Kebun 203
+(e) Mukim Burong Pingai Ayer 204
+(f) Mukim Peramu 205
+(g) Mukim Tamoi 206
+(h) Mukim Berakas A 207
+(i) Mukim Berakas B 208
+(j) Mukim Gadong A 209
+(k) Mukim Gadong B 210
+(l) Mukim Kota Batu 211
+(m) Mukim Lumapas 212
+(n) Mukim Kilanas 213
+(o) Mukim Sengkurong 214
+(p) Mukim Pangkalan Batu 215
+(q) Mukim Mentiri 216
+(r) Mukim Serasa 217
+Jadual Tajuk Muka Surat
+Table Title Page
+C8 Penduduk mengikut Mukim dan Kampung/Kawasan, Kumpulan Umur dan Jantina, 2021 - Daerah Belait
+Population by Mukim and Kampung/Areas,  Age Group and Sex, 2021 - Belait District
+(a) Mukim  Kuala Belait 218
+(b) Mukim  Seria 219
+(c) Mukim  Liang 220
+(d) Mukim  Kuala Balai 221
+(e) Mukim  Labi 222
+(f) Mukim  Bukit Sawat 223
+(g) Mukim  Sukang 224
+(h) Mukim  Melilas 225
+C9 Penduduk mengikut Mukim dan Kampung/Kawasan, Kumpulan Umur dan Jantina, 2021 - Daerah Tutong
+Population by Mukim and Kampung/Areas,  Age Group and Sex, 2021  - Tutong District
+(a) Mukim  Pekan Tutong 226
+(b) Mukim  Keriam 227
+(c) Mukim  Telisai 228
+(d) Mukim  Tanjong Maya 229
+(e) Mukim  Kiudang 230
+(f) Mukim  Lamunin 231
+(g) Mukim  Ukong 232
+(h) Mukim  Rambai 233
+C10 Penduduk mengikut Mukim dan Kampung/Kawasan, Kumpulan Umur dan Jantina, 2021 - Daerah Temburong
+Population by Mukim and Kampung/Areas,  Age Group and Sex, 2021  - Temburong District
+(a) Mukim  Bangar 234
+(b) Mukim  Amo 235
+(c) Mukim  Labu 236
+(d) Mukim  Batu Apoi 237
+(e) Mukim  Bokok 238
+Daerah dan Mukim
+District and Mukim Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan
+Persons Males Females Persons Males Females Persons Males Females Persons Males Females
+Brunei Muara 318,530 167,650 150,880 241,255 121,119 120,136 13,715 6,160 7,555 63,560 40,371 23,189
+  Kianggeh 8,102 4,164 3,938 3,229 1,556 1,673 628 279 349 4,245 2,329 1,916
+  Sungai Kedayan 241 165 76 79 45 34 9 3 6 153 117 36
+  Saba 827 426 401 729 369 360 63 35 28 35 22 13
+  Sungai Kebun 4,282 2,304 1,978 3,792 1,989 1,803 287 171 116 203 144 59
+  Burong Pingai Ayer 1,459 734 725 1,309 654 655 109 64 45 41 16 25
+  Peramu 1,151 590 561 1,027 515 512 81 45 36 43 30 13
+  Tamoi 942 467 475 825 413 412 80 37 43 37 17 20
+  Berakas A 28,311 15,535 12,776 19,676 9,914 9,762 946 381 565 7,689 5,240 2,449
+  Berakas B 39,284 20,336 18,948 30,206 15,112 15,094 1,562 642 920 7,516 4,582 2,934
+  Gadong A 35,424 17,877 17,547 30,347 15,163 15,184 1,184 549 635 3,893 2,165 1,728
+  Gadong B 38,067 19,910 18,157 24,125 12,032 12,093 2,041 935 1,106 11,901 6,943 4,958
+  Kota Batu 12,676 6,610 6,066 8,807 4,440 4,367 1,335 622 713 2,534 1,548 986
+  Lumapas 8,058 4,137 3,921 7,396 3,755 3,641 191 75 116 471 307 164
+  Kilanas 24,981 13,558 11,423 15,637 7,795 7,842 1,522 687 835 7,822 5,076 2,746
+  Sengkurong 40,972 22,083 18,889 30,160 15,171 14,989 1,421 612 809 9,391 6,300 3,091
+  Pangkalan Batu 15,860 8,479 7,381 13,023 6,517 6,506 583 275 308 2,254 1,687 567
+  Mentiri 39,324 20,024 19,300 35,631 17,885 17,746 1,173 513 660 2,520 1,626 894
+  Serasa 18,569 10,251 8,318 15,257 7,794 7,463 500 235 265 2,812 2,222 590
+Sumber : Laporan Banci Penduduk dan Perumahan (BPP) 2021: Ciri-ciri Demografi, Isirumah dan Perumahan
+Source : Report of the Population and Housing Census (BPP) 2021:  Demographic, Household and Housing Characteristics
+Brunei Citizens Permanent Residents Temporary Residents
+Rakyat Brunei Penduduk Tetap Penduduk Sementara
+Total
+Jumlah
+(a)  DAERAH BRUNEI MUARA / BRUNEI MUARA DISTRICT
+Jadual C1: Penduduk mengikut Mukim, Taraf Penduduk dan Jantina, 2021
+Table C1 : Population by Mukim, Residential Status and Sex, 2021
+153
+Daerah dan Mukim
+District and Mukim Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan
+Persons Males Females Persons Males Females Persons Males Females Persons Males Females
+Belait 65,531 34,914 30,617 43,343 22,205 21,138 9,802 4,662 5,140 12,386 8,047 4,339
+  Kuala Belait 28,793 15,728 13,065 17,617 9,026 8,591 3,982 1,897 2,085 7,194 4,805 2,389
+  Seria 18,313 9,438 8,875 11,720 6,024 5,696 3,566 1,692 1,874 3,027 1,722 1,305
+  Liang 16,813 8,774 8,039 13,131 6,693 6,438 1,913 908 1,005 1,769 1,173 596
+  Kuala Balai 16 5 11 8 2 6 6 2 4 2 1 1
+  Labi 727 419 308 320 158 162 226 113 113 181 148 33
+  Bukit Sawat 759 490 269 476 263 213 71 30 41 212 197 15
+  Sukang 81 45 36 47 26 21 33 18 15 1 1 0
+  Melilas 29 15 14 24 13 11 5 2 3 0 0 0
+Sumber : Laporan Banci Penduduk dan Perumahan (BPP) 2021: Ciri-ciri Demografi, Isirumah dan Perumahan
+Source : Report of the Population and Housing Census (BPP) 2021:  Demographic, Household and Housing Characteristics
+Temporary Residents
+Penduduk Sementara
+Total Brunei Citizens Permanent Residents
+Jumlah Rakyat Brunei Penduduk Tetap
+(b)  DAERAH BELAIT / BELAIT DISTRICT
+Jadual C1: Penduduk mengikut Mukim, Taraf Penduduk dan Jantina, 2021
+Table C1 : Population by Mukim, Residential Status and Sex, 2021
+154
+Daerah dan Mukim
+District and Mukim Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan
+Persons Males Females Persons Males Females Persons Males Females Persons Males Females
+Tutong 47,210 24,599 22,611 41,348 20,819 20,529 1,410 620 790 4,452 3,160 1,292
+  Pekan Tutong 9,883 5,211 4,672 7,890 3,944 3,946 305 113 192 1,688 1,154 534
+  Keriam 8,589 4,484 4,105 7,548 3,820 3,728 193 82 111 848 582 266
+  Telisai 13,253 6,865 6,388 12,227 6,191 6,036 332 151 181 694 523 171
+  Tanjong Maya 3,772 1,979 1,793 3,237 1,636 1,601 169 72 97 366 271 95
+  Kiudang 5,063 2,672 2,391 4,371 2,174 2,197 168 83 85 524 415 109
+  Lamunin 3,641 1,872 1,769 3,310 1,689 1,621 97 38 59 234 145 89
+  Ukong 2,029 1,042 987 1,936 979 957 30 18 12 63 45 18
+  Rambai 980 474 506 829 386 443 116 63 53 35 25 10
+Sumber : Laporan Banci Penduduk dan Perumahan (BPP) 2021: Ciri-ciri Demografi, Isirumah dan Perumahan
+Source : Report of the Population and Housing Census (BPP) 2021:  Demographic, Household and Housing Characteristics
+Rakyat Brunei Penduduk Tetap Penduduk Sementara
+Total
+Jumlah
+Brunei Citizens Permanent Residents Temporary Residents
+Jadual C1: Penduduk mengikut Mukim, Taraf Penduduk dan Jantina, 2021
+Table C1 : Population by Mukim, Residential Status and Sex, 2021
+(c)  DAERAH TUTONG / TUTONG DISTRICT
+155
+Daerah dan Mukim
+District and Mukim Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan
+Persons Males Females Persons Males Females Persons Males Females Persons Males Females
+Temburong 9,444 5,031 4,413 7,723 4,006 3,717 907 459 448 814 566 248
+  Bangar 2,112 1,186 926 1,674 888 786 109 49 60 329 249 80
+  Amo 1,657 888 769 1,175 606 569 328 175 153 154 107 47
+  Labu 508 274 234 466 251 215 8 1 7 34 22 12
+  Batu Apoi 1,355 718 637 999 520 479 222 112 110 134 86 48
+  Bokok 3,812 1,965 1,847 3,409 1,741 1,668 240 122 118 163 102 61
+Sumber : Laporan Banci Penduduk dan Perumahan (BPP) 2021: Ciri-ciri Demografi, Isirumah dan Perumahan
+
+=== pages mentioning ['Religion', 'Race', 'Ugama', 'Bangsa'] (first 130) ===
+
+--- page 16 ----------------------------------------------------
+(h) MUKIM BERAKAS A
+Mukim dan Kampung/Kawasan
+Mukim and Kampung/Area Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan
+Persons Males Females Persons Males Females Persons Males Females Persons Males Females
+Mukim Berakas A 28,311 15,535 12,776 19,676 9,914 9,762 946 381 565 7,689 5,240 2,449
+ Kg Jaya Setia 939 505 434 655 312 343 25 9 16 259 184 75
+ Kg Jaya Bakti 402 252 150 235 114 121 3 1 2 164 137 27
+ Kg Burong Pingai Berakas 586 318 268 440 219 221 12 4 8 134 95 39
+ Kg Orang Kaya Besar Imas 1,059 603 456 737 367 370 42 23 19 280 213 67
+ Kg Pancha Delima 1,548 819 729 1,109 551 558 42 16 26 397 252 145
+ Kg Pengiran Siraja Muda Delima Satu 2,740 1,672 1,068 1,245 608 637 77 32 45 1,418 1,032 386
+ Kg Serusop 1,573 897 676 1,069 544 525 42 19 23 462 334 128
+ Kg Lambak A 4,471 2,454 2,017 2,888 1,426 1,462 184 62 122 1,399 966 433
+ Kg Lambak B 3,760 2,164 1,596 2,066 1,039 1,027 243 121 122 1,451 1,004 447
+ Kg Lambak Kiri 2,521 1,309 1,212 2,153 1,100 1,053 57 21 36 311 188 123
+ STKRJ Lambak Kiri 2,296 1,137 1,159 2,174 1,084 1,090 45 15 30 77 38 39
+ Kg Terunjing 881 480 401 599 297 302 43 17 26 239 166 73
+ Perkhemahan Berakas 2,650 1,366 1,284 2,476 1,313 1,163 41 4 37 133 49 84
+ Kawasan Jabatan-Jabatan dan Perumahan Kerajaan 734 371 363 432 219 213 16 3 13 286 149 137
+ Lapangan Terbang Antarabangsa Brunei 20 20 0 20 20 0 0 0 0 0 0 0
+ KgPulaie 405 249 156 238 120 118 32 17 15 135 112 23
+ Kg Anggerek Desa 1,726 919 807 1,140 581 559 42 17 25 544 321 223
+Pulaie
+Sumber : Laporan Banci Penduduk dan Perumahan (BPP) 2021: Ciri-ciri Demografi, Isirumah dan Perumahan
+Source : Report of the Population and Housing Census (BPP) 2021:  Demographic, Household and Housing Characteristics
+DAERAH BRUNEI MUARA / BRUNEI MUARA DISTRICT
+Table C2 : Population by Mukim and Kampung/Areas, Residential Status and Sex, 2021
+Brunei Citizens
+Penduduk Tetap Penduduk Sementara
+Temporary ResidentsTotal
+Jadual C2 : Penduduk mengikut Mukim dan Kampung/Kawasan, Taraf Penduduk dan Jantina, 2021
+Permanent Residents
+Jumlah Rakyat Brunei
+164
+
+--- page 59 ----------------------------------------------------
+(h) MUKIM BERAKAS A
+Mukim dan Kampung/Kawasan
+Mukim and Kampung/Area Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan Orang Lelaki Perempuan
+Persons Males Females Persons Males Females Persons Males Females Persons Males Females Persons Males Females
+Mukim Berakas A 28,311 15,535 12,776 5,842 3,033 2,809 3,899 2,121 1,778 16,897 9,633 7,264 1,673 748 925
+ Kg Jaya Setia 939 505 434 203 99 104 147 68 79 544 317 227 45 21 24
+ Kg Jaya Bakti 402 252 150 48 33 15 52 31 21 274 182 92 28 6 22
+ Kg Burong Pingai Berakas 586 318 268 99 47 52 63 36 27 374 219 155 50 16 34
+ Kg Orang Kaya Besar Imas 1,059 603 456 213 118 95 159 79 80 630 381 249 57 25 32
+ Kg Pancha Delima 1,548 819 729 338 159 179 224 129 95 925 498 427 61 33 28
+ Kg Pengiran Siraja Muda Delima Satu 2,740 1,672 1,068 258 124 134 386 228 158 1,976 1,277 699 120 43 77
+ Kg Serusop 1,573 897 676 329 191 138 261 150 111 928 529 399 55 27 28
+ Kg Lambak A 4,471 2,454 2,017 839 428 411 575 298 277 2,745 1,586 1,159 312 142 170
+ Kg Lambak B 3,760 2,164 1,596 544 289 255 451 264 187 2,469 1,475 994 296 136 160
+ Kg Lambak Kiri 2,521 1,309 1,212 611 321 290 375 208 167 1,321 680 641 214 100 114
+ STKRJ Lambak Kiri 2,296 1,137 1,159 492 249 243 321 158 163 1,199 596 603 284 134 150
+ Kg Terunjing 881 480 401 181 79 102 135 73 62 527 312 215 38 16 22
+ Perkhemahan Berakas 2,650 1,366 1,284 1,136 597 539 348 183 165 1,160 583 577 6 3 3
+ Kawasan Jabatan-Jabatan dan Perumahan Kerajaan 734 371 363 176 93 83 85 42 43 468 235 233 5 1 4
+ Lapangan Terbang Antarabangsa Brunei 20 20 0 0 0 0 6 6 0 14 14 0 0 0 0
+ Kg Pulaie 405 249 156 71 33 38 64 37 27 252 172 80 18 7 11
+ Kg Anggerek Desa 1,726 919 807 304 173 131 247 131 116 1,091 577 514 84 38 46
+Sumber : Laporan Banci Penduduk dan Perumahan (BPP) 2021: Ciri-ciri Demografi, Isirumah dan Perumahan
+Source : Report of the Population and Housing Census (BPP) 2021:  Demographic, Household and Housing Characteristics
+Total
+Table C7 : Population by Mukim and Kampung/Areas, Age group and Sex, 2021
+DAERAH BRUNEI MUARA / BRUNEI MUARA DISTRICT
+Jumlah 00-14 15-24 25-64 65+
+Jadual C7 : Penduduk mengikut Mukim dan Kampung/Kawasan, Kumpulan Umur dan Jantina, 2021
+207
