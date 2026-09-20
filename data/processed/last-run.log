@@ -1,4 +1,9 @@
-usage: mongolia.py [-h] [--probe] [--get GET] [--post POST] [--field FIELD]
-                   [--find FIND] [--terms TERMS] [--context CONTEXT]
-                   [--bytes BYTES]
-mongolia.py: error: unrecognized arguments: ]+XAOCT[^ ]*
+png: the 2024 census head count and the 2011 census's provincial religion
+  fetched 2024-final-figures.pdf (7.9 MB)
+  fetched 2011-national-report.pdf (11.5 MB)
+  2024 Table 1: 22 provinces adding to 10,185,363, the printed national total
+  2024 Provincial Snapshots: 96 districts across 22 provinces
+  2011 Summary Indicators: 22 provinces, and the three the report names in prose (Bougainville, Morobe, Northern) agree with it
+  districts: 71 shapes carry the 2024 count; 16 in 4 provinces (Morobe, Northern, West New Britain, Western) are left with a reason
+  wrote data/processed/png.json (352 kB)
+  wrote 109 records (22 provinces, 87 districts)
