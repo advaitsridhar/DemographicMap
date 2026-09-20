@@ -208,6 +208,21 @@ class TheProvincialReligionRow(unittest.TestCase):
         with self.assertRaises(SystemExit):
             png.read_main_religion([SUMMARY_28])
 
+    def test_the_same_block_in_another_chapter_is_not_a_second_reading(self):
+        # The report heads these columns once per chapter -- six Summary
+        # Indicators pages carry the Southern Region's -- and only chapter
+        # 2's has a religion row beneath it.
+        chapter_4 = """Summary Indicators Provinces, 2011 Census
+Southern Region
+Citizen population Western Gulf Central NCD MBP Northern
+Literacy rate
+(% of population aged 10 years and over)
+Total 61.0 62.7 71.9 94.2 77.8 69.0
+"""
+        read = png.read_main_religion([chapter_4, SUMMARY_28, SUMMARY_29])
+        self.assertEqual(read["Western"], ("Evangelical Alliance", 37.1))
+        self.assertEqual(len(read), 22)
+
     def test_the_labels_are_the_projects_canon(self):
         import canonical_groups as cg
         for label in set(png.DENOMINATIONS.values()):

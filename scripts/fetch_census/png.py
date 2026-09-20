@@ -485,26 +485,40 @@ def read_snapshots(pages: list[str]) -> dict[str, list[Unit]]:
 def read_main_religion(pages: list[str]) -> dict[str, tuple[str, float]]:
     """The Summary Indicators row "Main religion (% of population)", per province.
 
-    The report prints the provinces in four regional blocks. Each block heads
-    its columns with the provinces' abbreviations and, above or beside the
-    religion row, the abbreviated denomination for each; the figures follow
-    the word Total. Both orderings the report uses are accepted, and a block
-    whose labels and figures do not both come to the block's width refuses.
+    The report prints the provinces in four regional blocks, and prints those
+    blocks again for every chapter -- six Summary Indicators pages carry the
+    Southern Region's column header, one per chapter, and only chapter 2's has
+    a religion row under it. So a block is found by its column header *and* by
+    the "Main religion" line that follows it before the next block begins, and
+    exactly one of its headers may qualify.
+
+    Each block heads its columns with the provinces' abbreviations and, above
+    or beside the religion row, the abbreviated denomination for each; the
+    figures follow the word Total. Both orderings the report uses are
+    accepted, and a block whose labels and figures do not both come to the
+    block's width refuses.
     """
     lines = [line for page in pages for line in rows_of(page)]
     out: dict[str, tuple[str, float]] = {}
+    # Where any block's columns are headed, so one block's window stops where
+    # the next one starts rather than reading into it.
+    starts = sorted({i for _, columns in BLOCKS
+                     for i, ln in enumerate(lines)
+                     if ln.endswith(" ".join(a for a, _ in columns))})
 
     for block, columns in BLOCKS:
         wanted = " ".join(abbr for abbr, _ in columns)
-        headers = [i for i, ln in enumerate(lines) if ln.endswith(wanted)]
-        if len(headers) != 1:
-            raise SystemExit(f"png: the 2011 report has {len(headers)} column "
-                             f"headers reading {wanted!r}; expected exactly one")
-        header = headers[0]
-        religion = next((i for i in range(header, min(header + 60, len(lines)))
-                         if lines[i].startswith("Main religion")), None)
-        if religion is None:
-            raise SystemExit(f"png: {block} has no 'Main religion' row")
+        found: list[int] = []
+        for header in (i for i in starts if lines[i].endswith(wanted)):
+            stop = next((s for s in starts if s > header), len(lines))
+            row = next((i for i in range(header + 1, stop)
+                        if lines[i].startswith("Main religion")), None)
+            if row is not None:
+                found.append(row)
+        if len(found) != 1:
+            raise SystemExit(f"png: the 2011 report has {len(found)} {block} "
+                             f"blocks with a 'Main religion' row; expected one")
+        religion = found[0]
 
         labels: list[str] = []
         for line in (lines[religion - 1], lines[religion]):
