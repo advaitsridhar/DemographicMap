@@ -139,18 +139,23 @@ MUNICIPALITIES: dict[str, list[str]] = {
 ATAURO = "Atauro"
 ATAURO_PARENT = "Dili"
 
-# The religion columns of table 11, in the order the sheet prints them, mapped
-# to the labels the group tree places. "Traditional" is the census's own word
-# for what its 2022 questionnaire calls an indigenous religion.
-RELIGIONS: dict[str, str] = {
-    "Catholicism": "Catholic",
-    "Protestantism/ Evangelicalism": "Protestant/Evangelical",
-    "Islam": "Muslim",
-    "Buddhism": "Buddhism",
-    "Hinduism": "Hinduism",
-    "Traditional": "Traditional religion",
-    "Other": "Other religion",
-}
+# The religion columns of table 11, mapped to the labels the group tree
+# places. A column is recognised by what its heading starts with once folded,
+# not by the whole string: the sheet writes the second one across a line break
+# as "Protestantism/ Evangelicalism", and a reader keyed on the exact text
+# would break on a re-release that closed the space. "Traditional" is the
+# census's own word for what its 2022 questionnaire calls an indigenous
+# religion.
+RELIGIONS: tuple[tuple[str, str], ...] = (
+    ("catholicism", "Catholic"),
+    ("protestantism", "Protestant/Evangelical"),
+    ("islam", "Muslim"),
+    ("buddhism", "Buddhism"),
+    ("hinduism", "Hinduism"),
+    ("traditional", "Traditional religion"),
+    ("other", "Other religion"),
+)
+RELIGION_LABELS = [label for _prefix, label in RELIGIONS]
 # Table 11 has no "no religion" and no "not stated" column: in 2015 those
 # answers are inside "Other", which is why "Other" is published as a religion
 # rather than as a residual.
@@ -211,6 +216,16 @@ def tidy(text: Any) -> str:
     return " ".join(str(text).replace("’", "'").split())
 
 
+def at(row: list[Any], index: int) -> Any:
+    """``row[index]``, or None where the row stops short of it.
+
+    A sheet's rows are not all the same length -- the footnote under table 12
+    is one cell wide against the table's seventeen -- and a reader that indexes
+    blind fails on the footnote rather than skipping it.
+    """
+    return row[index] if 0 <= index < len(row) else None
+
+
 def number(value: Any) -> float | None:
     """A cell as a count, or None where it holds no number."""
     if value is None or value == "":
@@ -260,7 +275,7 @@ def read_language(grid: list[list[Any]]) -> tuple[dict[str, dict[str, float]],
     country is the table's own totals row and is kept for the check, not
     written.
     """
-    title = tidy(grid[0][0]) if grid else ""
+    title = tidy(at(grid[0], 0)) if grid else ""
     columns: dict[int, str] = {}
     header = -1
     for index, row in enumerate(grid[:8]):
@@ -279,11 +294,14 @@ def read_language(grid: list[list[Any]]) -> tuple[dict[str, dict[str, float]],
     counts: dict[str, dict[str, float]] = {name: {} for name in MUNICIPALITIES}
     totals: dict[str, float] = {}
     for row in grid[header + 1:]:
-        label = tidy(row[0])
-        if not label:
+        label = tidy(at(row, 0))
+        # A row whose label carries no letter at all is the sheet's column
+        # numbering -- "-1.0", "-2.0", ... -- and every one of its cells is a
+        # number, so nothing else here would tell it from a row of figures.
+        if not label or not any(c.isalpha() for c in label):
             continue
         key = fold(label)
-        values = {name: number(row[i]) for i, name in columns.items()}
+        values = {name: number(at(row, i)) for i, name in columns.items()}
         if any(v is None for v in values.values()):
             continue                      # a footnote or a spacer, not a row of figures
         if key in COUNTRY_LABELS:
@@ -312,12 +330,17 @@ def read_religion(grid: list[list[Any]]) -> tuple[dict[str, dict[str, float]],
     when its label is a name this reader knows; "Male", "Female", "Urban" and
     "Rural" are a breakdown of whatever came above and are skipped.
     """
-    title = tidy(grid[0][0]) if grid else ""
+    title = tidy(at(grid[0], 0)) if grid else ""
     columns: dict[int, str] = {}
     header = -1
     for index, row in enumerate(grid[:8]):
-        found = {i: RELIGIONS[label] for i, cell in enumerate(row)
-                 if (label := tidy(cell)) in RELIGIONS}
+        found: dict[int, str] = {}
+        for i, cell in enumerate(row):
+            key = fold(tidy(cell))
+            label = next((name for prefix, name in RELIGIONS
+                          if key.startswith(prefix)), None)
+            if label and label not in found.values():
+                found[i] = label
         if len(found) == len(RELIGIONS):
             columns, header = found, index
             break
@@ -325,21 +348,28 @@ def read_religion(grid: list[list[Any]]) -> tuple[dict[str, dict[str, float]],
         seen = sorted({tidy(c) for row in grid[:8] for c in row if tidy(c)})
         raise SystemExit(f"timor: sheet {RELIGION_SHEET} has no row naming all "
                          f"{len(RELIGIONS)} religion columns; its first rows hold {seen}")
-    total_column = next((i for i, cell in enumerate(grid[header])
-                         if tidy(cell).lower() == "total"), None)
+    # The Total column is headed a row above the religions -- the sheet stacks
+    # "Municipality ... | Total | Religion" over the seven names -- so it is
+    # looked for across the head of the sheet and not in the religion row.
+    total_column = next(
+        (i for row in grid[:header + 1] for i, cell in enumerate(row)
+         if tidy(cell).lower() == "total" and i not in columns), None)
     if total_column is None:
-        raise SystemExit(f"timor: sheet {RELIGION_SHEET} header names no Total column")
+        raise SystemExit(f"timor: sheet {RELIGION_SHEET} names no Total column in the "
+                         f"{header + 1} rows above and including its religion header")
 
     counts: dict[str, dict[str, float]] = {}
     totals: dict[str, float] = {}
     country: dict[str, float] = {}
     for row in grid[header + 1:]:
-        label = tidy(row[0])
-        if not label or label.lower() in RELIGION_BREAKDOWN:
+        label = tidy(at(row, 0))
+        if not label or not any(c.isalpha() for c in label):
+            continue                      # the sheet's column numbering
+        if label.lower() in RELIGION_BREAKDOWN:
             continue
         key = fold(label)
-        values = {name: number(row[i]) for i, name in columns.items()}
-        printed = number(row[total_column])
+        values = {name: number(at(row, i)) for i, name in columns.items()}
+        printed = number(at(row, total_column))
         if printed is None or any(v is None for v in values.values()):
             continue                      # a footnote row
         if key in COUNTRY_LABELS:
@@ -375,7 +405,7 @@ def read_population(grid: list[list[Any]]) -> tuple[dict[str, float],
     row's level is read from which column holds its name and never from
     indentation or from a name list.
     """
-    title = tidy(grid[0][0]) if grid else ""
+    title = tidy(at(grid[0], 0)) if grid else ""
     total_column = None
     for row in grid[:8]:
         labels = [tidy(c).lower() for c in row]
@@ -390,8 +420,9 @@ def read_population(grid: list[list[Any]]) -> tuple[dict[str, float],
     country = 0.0
     current = ""
     for row in grid:
-        first, second, third = (tidy(row[0]), tidy(row[1]), tidy(row[2]))
-        value = number(row[total_column]) if total_column < len(row) else None
+        first, second, third = (tidy(at(row, 0)), tidy(at(row, 1)),
+                                tidy(at(row, 2)))
+        value = number(at(row, total_column))
         if value is None:
             continue
         if third:
@@ -446,7 +477,7 @@ def check_religion(counts, totals, country) -> None:
             raise SystemExit(f"timor: {name}'s religions add to {added:,.0f} and the "
                              f"table's own total for it is {totals[name]:,.0f} "
                              f"({added - totals[name]:+,.0f})")
-    for label in RELIGIONS.values():
+    for label in RELIGION_LABELS:
         summed = sum(f[label] for f in counts.values())
         if abs(summed - country[label]) > 0.5:
             raise SystemExit(f"timor: the municipalities' {label} adds to {summed:,.0f} "
@@ -474,14 +505,19 @@ def check_bases(language_totals, religion_totals) -> None:
         "municipality")
 
 
-def check_published(language_counts, religion_country) -> None:
+def check_published(language_counts, religion_country, population_country) -> None:
     """Against the office's own published national figures.
 
-    Two of them. The 2022 main report says Catholicism was reported for 97.6
-    percent of the population in 2015. And the fifteen-entry language list the
-    map's country row already carries -- Tetun Prasa 30.6, Mambai 16.6, and so
-    on -- is this table's national column over this base, which is the whole
-    reason the country row and these municipalities can sit beside each other.
+    Three of them, and they are the point of this function: the checks above
+    only say that each sheet is internally consistent, which a sheet of the
+    wrong year would also be.
+
+    The 2022 main report says Catholicism was reported for 97.6 percent of the
+    population in 2015. The fifteen-entry language list the map's country row
+    already carries -- Tetun Prasa 30.6, Mambai 16.6, and so on -- is this
+    table's national column over this base, which is the whole reason the
+    country row and these municipalities can sit beside each other. And the
+    2022 census counted 1,341,737 people.
     """
     base = religion_country["Total"]
     catholic = 100.0 * religion_country["Catholic"] / base
@@ -498,9 +534,13 @@ def check_published(language_counts, religion_country) -> None:
     if wrong:
         raise SystemExit("timor: the mother-tongue table does not reproduce the national "
                          "shares this map's country row carries -- " + "; ".join(wrong))
+    if abs(population_country - NATIONAL_POPULATION_2022) > 0.5:
+        raise SystemExit(f"timor: the 2022 table's country row is {population_country:,.0f}, "
+                         f"where the census published {NATIONAL_POPULATION_2022:,}")
     log(f"  national check: Catholicism {catholic:.2f}% against a published {NATIONAL_CATHOLIC_PCT}%, "
-        f"and all {len(NATIONAL_LANGUAGE_PCT)} of the country row's named mother tongues "
-        "reproduced to within a rounding step")
+        f"all {len(NATIONAL_LANGUAGE_PCT)} of the country row's named mother tongues "
+        f"reproduced to within a rounding step, and the 2022 table's country row the "
+        f"published {NATIONAL_POPULATION_2022:,}")
 
 
 def check_population(municipalities, posts, country) -> None:
@@ -508,9 +548,6 @@ def check_population(municipalities, posts, country) -> None:
     if abs(summed - country) > 0.5:
         raise SystemExit(f"timor: the 2022 municipalities add to {summed:,.0f} against the "
                          f"sheet's own country row of {country:,.0f}")
-    if abs(country - NATIONAL_POPULATION_2022) > 0.5:
-        raise SystemExit(f"timor: the 2022 table's country row is {country:,.0f}, where the "
-                         f"census published {NATIONAL_POPULATION_2022:,}")
     for name, total in municipalities.items():
         mine = sum(v for _post, parent, v in posts if parent == name)
         if abs(mine - total) > 0.5:
@@ -671,7 +708,7 @@ def run() -> int:
     check_language(language, language_totals)
     check_religion(religion, religion_totals, religion_country)
     check_bases(language_totals, religion_totals)
-    check_published(language, religion_country)
+    check_published(language, religion_country, country_2022)
     check_population(population, posts, country_2022)
 
     rows = build(language, language_totals, religion, religion_totals, population, posts)
