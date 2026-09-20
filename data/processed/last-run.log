@@ -1,461 +1,106 @@
-probe_ckan: 3 host(s), timeout 30s
-  https://opendata.sumselprov.go.id/ -> 200 text/html "Welcome - Open Data Provinsi Sumatera Selatan"
-    /api/3/action/status_show -> 200 application/json CKAN 2.9.5
-    package_search q='kependudukan' -> 200, 37 matches, 37 shown, printing those matching 'agama|kependudukan'
-      - persentase-pemanfaatan-data-kependudukan: Persentase Pemanfaatan data kependudukan  [1 res: xlsx]
-          XLSX datastore=True 978f2594-c23b-4a1f-b039-40f4cfc4c3da https://opendata.sumselprov.go.id/dataset/4c71b31b-3dcc-406f-a8ec-0d88e397dd71/resource/978f2594-c23b-4a1f-b039-40f4cfc4c3da/download/persentase-pemanfaatan-data-kependudukan-2025.xlsx
-      - cakupan-pengelolaan-profil-kependudukan: Cakupan Pengelolaan Profil Kependudukan  [1 res: xlsx]
-          XLSX datastore=True 1e2ab765-19cf-4026-92ac-9cdef759dd03 https://opendata.sumselprov.go.id/dataset/089b783c-ab54-4a7b-b538-456094546e35/resource/1e2ab765-19cf-4026-92ac-9cdef759dd03/download/cakupan-pengelolaan-profil-kependudukan-2025.xlsx
-      - persentase-kepemilikan-identitas-kependudukan-digital: Persentase Kepemilikan Identitas Kependudukan Digital  [1 res: xlsx]
-          XLSX datastore=True 5f77cb38-fd03-4c68-adc0-75134549ec9e https://opendata.sumselprov.go.id/dataset/d07fb976-2d25-4fa5-a21e-300f4914249a/resource/5f77cb38-fd03-4c68-adc0-75134549ec9e/download/persentase-kepemilikan-identitas-kependudukan-digital-2025.xlsx
-      - indeks-kepuasan-masyarakat-terhadap-layanan-administrasi-kependudukan: Indeks Kepuasan Masyarakat terhadap Layanan Administrasi Kependudukan  [1 res: xlsx]
-          XLSX datastore=True 824b8b14-a3cb-42cb-b10c-3d2893759cfc https://opendata.sumselprov.go.id/dataset/9780cd1f-7902-4ab5-8cc6-3a6c955ca761/resource/824b8b14-a3cb-42cb-b10c-3d2893759cfc/download/indeks-kepuasan-masyarakat-terhadap-layanan-administrasi-kependudukan-2025.xlsx
-      - penyajian-data-kependudukan-skala-provinsi-dalam-satu-tahun: Penyajian Data Kependudukan Skala Provinsi dalam Satu Tahun  [2 res: xlsx]
-          XLSX datastore=True 14a9d08d-2862-4c3e-bd96-d8d1ee5dd0b0 https://opendata.sumselprov.go.id/dataset/7db3718f-8055-4233-8367-5a5c87f2979b/resource/14a9d08d-2862-4c3e-bd96-d8d1ee5dd0b0/download/penyajian-data-kependudukan-skala-provinsi-dalam-satu-tahun-2024.xlsx
-          XLSX datastore=True 0d79a26b-ad0a-421e-8d7b-8f6f8d5f0c94 https://opendata.sumselprov.go.id/dataset/7db3718f-8055-4233-8367-5a5c87f2979b/resource/0d79a26b-ad0a-421e-8d7b-8f6f8d5f0c94/download/penyajian-data-kependudukan-skala-provinsi-dalam-satu-tahun-2025.xlsx
-      - jumlah-perangkat-daerah-yang-telah-memanfaatkan-data-kependudukan-berdasarkan-perjanjian-kerja-sama: Jumlah Perangkat Daerah yang telah memanfaatkan Data Kependudukan berdasarkan Perjanjian Kerja Sama  [1 res: xlsx]
-          XLSX datastore=True cc9164fe-440e-4e4d-9383-a8e1f43f192a https://opendata.sumselprov.go.id/dataset/cb32c5d7-8b78-41ab-b395-c77924935101/resource/cc9164fe-440e-4e4d-9383-a8e1f43f192a/download/jumlah-perangkat-daerah-yang-telah-memanfaatkan-data-kependudukan-berdasarkan-perjanjian-kerja-.xlsx
-      - jumlah-dokumen-hasil-fasilitasi-kebijakan-kesejahteraan-rakyat-bidang-pemberdayaan-perempuan: Jumlah dokumen hasil fasilitasi, koordinasi, sinkronisasi, evaluasi, dan capaian kinerja kebijakan kesejahtera  [1 res: xlsx]
-          XLSX datastore=True ab3ef424-654d-4dcd-be8e-40d45619b771 https://opendata.sumselprov.go.id/dataset/137aaf70-88e3-441e-a6ad-bd8d107b9fdf/resource/ab3ef424-654d-4dcd-be8e-40d45619b771/download/jumlah-dokumen-hasil-fasilitasi-koordinasi-sinkronisasi-evaluasi-dan-capaian-kinerja-kebijakan-.xlsx
-      (30 others not matching)
-    package_search q='dukcapil' -> 200, 11 matches, 11 shown, printing those matching 'agama|kependudukan'
-      (11 others not matching)
-    package_search q='penduduk menurut agama' -> 200, 21 matches, 21 shown, printing those matching 'agama|kependudukan'
-      - jumlah-sekolah-guru-dan-murid-raudatul-athfal-ra-di-bawah-kementerian-agama1: Jumlah Sekolah, Guru, dan Murid Raudatul Athfal (RA) di Bawah Kementerian Agama Menurut Kabupaten/Kota di Prov  [6 res: xlsx]
-          XLSX datastore=True e7183622-c770-4558-a236-15fdc464be3c https://opendata.sumselprov.go.id/dataset/9f017d56-f969-41c3-b24e-f7a483e33cf9/resource/e7183622-c770-4558-a236-15fdc464be3c/download/4.1.2_2022.xlsx
-          XLSX datastore=True bfb6e51d-9afc-4996-a3d4-0830383b23f6 https://opendata.sumselprov.go.id/dataset/9f017d56-f969-41c3-b24e-f7a483e33cf9/resource/bfb6e51d-9afc-4996-a3d4-0830383b23f6/download/4.1.2_2023.xlsx
-          XLSX datastore=True 834482ee-ebaa-4333-b205-161e9361067d https://opendata.sumselprov.go.id/dataset/9f017d56-f969-41c3-b24e-f7a483e33cf9/resource/834482ee-ebaa-4333-b205-161e9361067d/download/4.1.2_2021.xlsx
-          XLSX datastore=True 90a194da-b034-49b1-b099-99a4460be322 https://opendata.sumselprov.go.id/dataset/9f017d56-f969-41c3-b24e-f7a483e33cf9/resource/90a194da-b034-49b1-b099-99a4460be322/download/4.1.2_2019.xlsx
-          XLSX datastore=True 15a01787-74fa-435e-b96e-6106d6e03f69 https://opendata.sumselprov.go.id/dataset/9f017d56-f969-41c3-b24e-f7a483e33cf9/resource/15a01787-74fa-435e-b96e-6106d6e03f69/download/4.1.2_2018.xlsx
-          XLSX datastore=True 040a86eb-5346-4fb2-bbac-ee0d9d0c9dc1 https://opendata.sumselprov.go.id/dataset/9f017d56-f969-41c3-b24e-f7a483e33cf9/resource/040a86eb-5346-4fb2-bbac-ee0d9d0c9dc1/download/4.1.2_2017.xlsx
-      - jumlah-sekolah-guru-dan-murid-madrasah-ibtidaiyah-mi-di-bawah-kementerian-agama: Jumlah Sekolah, Guru, dan Murid Madrasah Ibtidaiyah (MI) di Bawah Kementerian Agama Menurut Kabupaten/Kota di   [7 res: xlsx]
-          XLSX datastore=True 937d779a-ebf9-4a1a-9d9b-966ac3a5f759 https://opendata.sumselprov.go.id/dataset/d73fa98d-20f5-490d-b3c0-09f2b23cda44/resource/937d779a-ebf9-4a1a-9d9b-966ac3a5f759/download/4.1.4_2022.xlsx
-          XLSX datastore=True 3553dc88-8b2b-42be-b4a3-9e88aaa2efc1 https://opendata.sumselprov.go.id/dataset/d73fa98d-20f5-490d-b3c0-09f2b23cda44/resource/3553dc88-8b2b-42be-b4a3-9e88aaa2efc1/download/4.1.4_2023.xlsx
-          XLSX datastore=True 201dd43a-6bf0-41e2-aae1-527eb60c4a8b https://opendata.sumselprov.go.id/dataset/d73fa98d-20f5-490d-b3c0-09f2b23cda44/resource/201dd43a-6bf0-41e2-aae1-527eb60c4a8b/download/4.1.4_2021.xlsx
-          XLSX datastore=True ed6d7ebd-4fa2-4837-82ed-3e4f29cda894 https://opendata.sumselprov.go.id/dataset/d73fa98d-20f5-490d-b3c0-09f2b23cda44/resource/ed6d7ebd-4fa2-4837-82ed-3e4f29cda894/download/4.1.4_2020.xlsx
-          XLSX datastore=True ec46fa17-0f88-49a3-9f41-38a14b1c9948 https://opendata.sumselprov.go.id/dataset/d73fa98d-20f5-490d-b3c0-09f2b23cda44/resource/ec46fa17-0f88-49a3-9f41-38a14b1c9948/download/4.1.4_2019.xlsx
-          XLSX datastore=True 94418cab-277c-4376-8b11-7b219389ad3d https://opendata.sumselprov.go.id/dataset/d73fa98d-20f5-490d-b3c0-09f2b23cda44/resource/94418cab-277c-4376-8b11-7b219389ad3d/download/4.1.4_2018.xlsx
-          XLSX datastore=True fb6a5592-e0e2-4eb3-a35d-e849fb09eb9a https://opendata.sumselprov.go.id/dataset/d73fa98d-20f5-490d-b3c0-09f2b23cda44/resource/fb6a5592-e0e2-4eb3-a35d-e849fb09eb9a/download/4.1.4_2017.xlsx
-      - jumlah-sekolah-guru-dan-murid-madrasah-tsanawiyah-mts-di-bawah-kementerian-agama: Jumlah Sekolah, Guru, dan Murid Madrasah Tsanawiyah (MTs) di Bawah Kementerian Agama Menurut Kabupaten/Kota di  [7 res: xlsx]
-          XLSX datastore=True 48295218-987d-49e8-b13b-7bd4451a4064 https://opendata.sumselprov.go.id/dataset/f680215f-769a-4b51-858c-182683d32774/resource/48295218-987d-49e8-b13b-7bd4451a4064/download/4.1.6_2023.xlsx
-          XLSX datastore=True 7306e892-99fc-4d67-8b58-a5bf6bdf4493 https://opendata.sumselprov.go.id/dataset/f680215f-769a-4b51-858c-182683d32774/resource/7306e892-99fc-4d67-8b58-a5bf6bdf4493/download/4.1.6_2022.xlsx
-          XLSX datastore=True b3e26d95-1414-4b65-a9dc-954350616ee6 https://opendata.sumselprov.go.id/dataset/f680215f-769a-4b51-858c-182683d32774/resource/b3e26d95-1414-4b65-a9dc-954350616ee6/download/4.1.6_2021.xlsx
-          XLSX datastore=True 6a1e51c3-65ac-4607-9659-5cf0a75be730 https://opendata.sumselprov.go.id/dataset/f680215f-769a-4b51-858c-182683d32774/resource/6a1e51c3-65ac-4607-9659-5cf0a75be730/download/4.1.6_2020.xlsx
-          XLSX datastore=True 5f0986ae-85b0-4a5d-ac7b-f2684af1a11c https://opendata.sumselprov.go.id/dataset/f680215f-769a-4b51-858c-182683d32774/resource/5f0986ae-85b0-4a5d-ac7b-f2684af1a11c/download/4.1.6_2019.xlsx
-          XLSX datastore=True dd8b287f-0879-4cb3-b3a5-2463c07c9a5a https://opendata.sumselprov.go.id/dataset/f680215f-769a-4b51-858c-182683d32774/resource/dd8b287f-0879-4cb3-b3a5-2463c07c9a5a/download/4.1.6_2018.xlsx
-          XLSX datastore=True 656eda9a-241b-4473-8b69-0ded0f9809e1 https://opendata.sumselprov.go.id/dataset/f680215f-769a-4b51-858c-182683d32774/resource/656eda9a-241b-4473-8b69-0ded0f9809e1/download/4.1.6_2017.xlsx
-      (18 others not matching)
-  https://data.bantenprov.go.id/ -> 200 text/html "Selamat datang - Satu Data Provinsi Banten"
-    /api/3/action/status_show -> 200 application/json CKAN 2.11.4
-    package_search q='kependudukan' -> 200, 36 matches, 36 shown, printing those matching 'agama|kependudukan'
-      - data-kependudukan-berbasis-keluarga: Data Kependudukan Berbasis Keluarga  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False c4ed1216-754c-48b9-bdbd-df5369a8ef6e https://data.bantenprov.go.id/dataset/f3ea7615-a40d-4669-b537-14d1895ad23f/resource/c4ed1216-754c-48b9-bdbd-df5369a8ef6e/download/data_kependudukan_berbasis_keluarga.xlsx
-          CSV datastore=True 8b83be18-cca5-4704-91ad-f560a86bbd68 https://data.bantenprov.go.id/dataset/f3ea7615-a40d-4669-b537-14d1895ad23f/resource/8b83be18-cca5-4704-91ad-f560a86bbd68/download/data_kependudukan_berbasis_keluarga.xlsx-data.csv
-          PDF datastore=False 19c4c2e3-34d4-44ef-b41e-ac010709bcc4 https://data.bantenprov.go.id/dataset/f3ea7615-a40d-4669-b537-14d1895ad23f/resource/19c4c2e3-34d4-44ef-b41e-ac010709bcc4/download/pdf-version.pdf
-      - dokumen-penyediaan-data-kependudukan-provinsi: Dokumen Penyediaan Data Kependudukan Provinsi  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False 1b332e8f-229e-4ebc-b63d-7b0ea0a9c8ac https://data.bantenprov.go.id/dataset/40fb3edf-6acb-4f37-abd5-5df1263c1aad/resource/1b332e8f-229e-4ebc-b63d-7b0ea0a9c8ac/download/dokumen_penyediaan_data_kependudukan_provinsi.xlsx
-          CSV datastore=True 9a67f0e5-2fb9-4ee0-a41a-2303587241bc https://data.bantenprov.go.id/dataset/40fb3edf-6acb-4f37-abd5-5df1263c1aad/resource/9a67f0e5-2fb9-4ee0-a41a-2303587241bc/download/dokumen_penyediaan_data_kependudukan_provinsi.xlsx-data.csv
-          PDF datastore=False d0b010b8-601d-460d-bd84-cc00660cc6ce https://data.bantenprov.go.id/dataset/40fb3edf-6acb-4f37-abd5-5df1263c1aad/resource/d0b010b8-601d-460d-bd84-cc00660cc6ce/download/pdf-version.pdf
-      - dokumen-hasil-pemanfaatan-data-kependudukan: Dokumen Hasil Pemanfaatan Data Kependudukan  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False 2473bbeb-f61d-4e8f-b286-3e3acc578f40 https://data.bantenprov.go.id/dataset/2f8518bb-44f7-4530-9531-b32d948bc0e0/resource/2473bbeb-f61d-4e8f-b286-3e3acc578f40/download/dokumen_hasil_pemanfaatan_data_kependudukan.xlsx
-          CSV datastore=True 77d76ecb-f0ce-4f05-a246-0ab6e862d48b https://data.bantenprov.go.id/dataset/2f8518bb-44f7-4530-9531-b32d948bc0e0/resource/77d76ecb-f0ce-4f05-a246-0ab6e862d48b/download/dokumen_hasil_pemanfaatan_data_kependudukan.xlsx-data.csv
-          PDF datastore=False cbdc85bd-46d3-4287-bc88-958b1052b403 https://data.bantenprov.go.id/dataset/2f8518bb-44f7-4530-9531-b32d948bc0e0/resource/cbdc85bd-46d3-4287-bc88-958b1052b403/download/pdf-version.pdf
-      - laporan-hasil-fasilitasi-penyelenggaraan-urusan-administrasi-kependudukan: Laporan Hasil Fasilitasi Penyelenggaraan Urusan Administrasi Kependudukan  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False 286a9fb4-3ca9-41c8-96eb-36b4d1a9cc45 https://data.bantenprov.go.id/dataset/f351b909-3cc9-4629-b750-5b0e47c243f7/resource/286a9fb4-3ca9-41c8-96eb-36b4d1a9cc45/download/laporan_hasil_fasilitasi_penyelenggaraan_urusan_administrasi_kependudukan.xlsx
-          CSV datastore=True 12535f90-97b3-41c8-b8a3-5395d313fd0f https://data.bantenprov.go.id/dataset/f351b909-3cc9-4629-b750-5b0e47c243f7/resource/12535f90-97b3-41c8-b8a3-5395d313fd0f/download/laporan_hasil_fasilitasi_penyelenggaraan_urusan_administrasi_kependudukan.xlsx-data.csv
-          PDF datastore=False 3742ebbe-6dda-49a8-a182-cd3a30d3a3bc https://data.bantenprov.go.id/dataset/f351b909-3cc9-4629-b750-5b0e47c243f7/resource/3742ebbe-6dda-49a8-a182-cd3a30d3a3bc/download/pdf-version.pdf
-      - laporan-hasil-sosialisasi-penyelenggaraan-urusan-administrasi-kependudukan: Laporan Hasil Sosialisasi Penyelenggaraan Urusan Administrasi Kependudukan  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False eedfb4b2-59f8-4b07-b167-8f4f7b6ccf94 https://data.bantenprov.go.id/dataset/81c67dfb-d8e4-4f8d-a036-fab1ecffbc38/resource/eedfb4b2-59f8-4b07-b167-8f4f7b6ccf94/download/laporan_hasil_sosialisasi_penyelenggaraan_urusan_administrasi_kependudukan.xlsx
-          CSV datastore=True e44c11c2-8513-41e9-8501-1882ad7d8c5a https://data.bantenprov.go.id/dataset/81c67dfb-d8e4-4f8d-a036-fab1ecffbc38/resource/e44c11c2-8513-41e9-8501-1882ad7d8c5a/download/laporan_hasil_sosialisasi_penyelenggaraan_urusan_administrasi_kependudukan.xlsx-data.csv
-          PDF datastore=False e3ee8f02-b400-4268-b00b-f6989fb8ae5e https://data.bantenprov.go.id/dataset/81c67dfb-d8e4-4f8d-a036-fab1ecffbc38/resource/e3ee8f02-b400-4268-b00b-f6989fb8ae5e/download/pdf-version.pdf
-      - pelaksanaan-penyusunan-kajian-dampak-kependudukan-beserta-model-solusi-strategis-sebagai-p-1e8c3: Pelaksanaan Penyusunan Kajian Dampak Kependudukan Beserta Model Solusi Strategis Sebagai Peringatan Dini Dampa  [3 res: csv,pdf,xlsx]
-          XLSX datastore=True 344bf78c-225f-4093-947e-eb536be6a951 https://data.bantenprov.go.id/dataset/d0ad0233-585b-4c38-bf47-f6fe8370c843/resource/344bf78c-225f-4093-947e-eb536be6a951/download/pelaksanaan-penyusunan-kajian-dampak-kependudukan-beserta-model-solusi-strategis-sebagai-pering.xlsx
-          CSV datastore=True eb3a6be5-74e2-429b-8f95-eea373429ef6 https://data.bantenprov.go.id/dataset/d0ad0233-585b-4c38-bf47-f6fe8370c843/resource/eb3a6be5-74e2-429b-8f95-eea373429ef6/download/csv-retry.csv
-          PDF datastore=False ac3af536-2bd8-44d9-97ee-a0957e6ed944 https://data.bantenprov.go.id/dataset/d0ad0233-585b-4c38-bf47-f6fe8370c843/resource/ac3af536-2bd8-44d9-97ee-a0957e6ed944/download/pdf-retry.pdf
-      - urusan-pemerintahan-bidang-administrasi-kependudukan-dan-pencatatan-sipil: URUSAN PEMERINTAHAN BIDANG ADMINISTRASI KEPENDUDUKAN DAN PENCATATAN SIPIL  [5 res: csv]
-          CSV datastore=True 81f66dcf-0f30-44d6-b1d9-e1272785af0f https://data.bantenprov.go.id/dataset/d6f12361-df11-48ea-8528-1be2ed8ff51d/resource/81f66dcf-0f30-44d6-b1d9-e1272785af0f/download/urusan-pemerintahan-bidang-administrasi-kependudukan-dan-pencatatan-sipil_2018.csv
-          CSV datastore=True 63a3e506-f651-4037-8bd7-3f4b8e7241eb https://data.bantenprov.go.id/dataset/d6f12361-df11-48ea-8528-1be2ed8ff51d/resource/63a3e506-f651-4037-8bd7-3f4b8e7241eb/download/urusan-pemerintahan-bidang-administrasi-kependudukan-dan-pencatatan-sipil_2019.csv
-          CSV datastore=True 39d2347a-4b6d-4a25-a1b9-be992310c0ba https://data.bantenprov.go.id/dataset/d6f12361-df11-48ea-8528-1be2ed8ff51d/resource/39d2347a-4b6d-4a25-a1b9-be992310c0ba/download/urusan-pemerintahan-bidang-administrasi-kependudukan-dan-pencatatan-sipil_2020.csv
-          CSV datastore=True 3d6498dd-82f5-4154-b4ac-ccc95841bd34 https://data.bantenprov.go.id/dataset/d6f12361-df11-48ea-8528-1be2ed8ff51d/resource/3d6498dd-82f5-4154-b4ac-ccc95841bd34/download/urusan-pemerintahan-bidang-administrasi-kependudukan-dan-pencatatan-sipil_2021.csv
-          CSV datastore=True ba79806c-8baf-4581-b6b5-ab8ff8975a97 https://data.bantenprov.go.id/dataset/d6f12361-df11-48ea-8528-1be2ed8ff51d/resource/ba79806c-8baf-4581-b6b5-ab8ff8975a97/download/urusan-pemerintahan-bidang-administrasi-kependudukan-dan-pencatatan-sipil_2022.csv
-      - laporan-hasil-konsultasi-penyelenggaraan-pengelolaan-infomasi-administrasi-kependudukan: Laporan Hasil Konsultasi Penyelenggaraan Pengelolaan Infomasi Administrasi Kependudukan  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False 5578769c-1d14-42fe-9b6c-35ea79f5550e https://data.bantenprov.go.id/dataset/3099fbed-092d-4b5a-9747-b9e00093d114/resource/5578769c-1d14-42fe-9b6c-35ea79f5550e/download/laporan_hasil_konsultasi_penyelenggaraan_pengelolaan_infomasi_administrasi_kependudukan.xlsx
-          CSV datastore=True a26ef3a7-ea44-48ed-ab26-5e7f05db8ae9 https://data.bantenprov.go.id/dataset/3099fbed-092d-4b5a-9747-b9e00093d114/resource/a26ef3a7-ea44-48ed-ab26-5e7f05db8ae9/download/laporan_hasil_konsultasi_penyelenggaraan_pengelolaan_infomasi_administrasi_kependudukan.xlsx-dat.csv
-          PDF datastore=False 5423f6ed-7cab-4d3e-916e-c083e211ad93 https://data.bantenprov.go.id/dataset/3099fbed-092d-4b5a-9747-b9e00093d114/resource/5423f6ed-7cab-4d3e-916e-c083e211ad93/download/pdf-version.pdf
-      - anak-telantar-yang-mendapat-fasilitas-pembuatan-nomor-induk-kependudukan: Anak Telantar yang Mendapat Fasilitas Pembuatan Nomor Induk Kependudukan  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False b592be98-b9d2-41a0-b9c1-87e014837768 https://data.bantenprov.go.id/dataset/826e9e49-a033-4972-8ed1-2f9eb5c432de/resource/b592be98-b9d2-41a0-b9c1-87e014837768/download/anak_telantar_yang_mendapat_fasilitas_pembuatan_nomor_induk_kependudukan.xlsx
-          CSV datastore=True e055fb54-d093-43e5-8c25-064308da4412 https://data.bantenprov.go.id/dataset/826e9e49-a033-4972-8ed1-2f9eb5c432de/resource/e055fb54-d093-43e5-8c25-064308da4412/download/anak_telantar_yang_mendapat_fasilitas_pembuatan_nomor_induk_kependudukan.xlsx-data.csv
-          PDF datastore=False f3ea3fb3-2c7c-4f47-886b-ff38fb34ade8 https://data.bantenprov.go.id/dataset/826e9e49-a033-4972-8ed1-2f9eb5c432de/resource/f3ea3fb3-2c7c-4f47-886b-ff38fb34ade8/download/pdf-version.pdf
-      - penyandang-disabilitas-terlantar-yang-mendapat-fasilitas-pembuatan-nomor-induk-kependudukan: Penyandang Disabilitas Terlantar Yang Mendapat Fasilitas Pembuatan Nomor Induk Kependudukan  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False 88dbd7a4-66ae-4272-b495-88ebe8065397 https://data.bantenprov.go.id/dataset/f5530bda-001d-45dc-8e0e-410b0d878ac0/resource/88dbd7a4-66ae-4272-b495-88ebe8065397/download/penyandang_disabilitas_terlantar_yang_mendapat_fasilitas_pembuatan_nomor_induk_kependudukan.xlsx
-          CSV datastore=True e4b0d21e-f8fc-4d81-855a-6b8c144d3156 https://data.bantenprov.go.id/dataset/f5530bda-001d-45dc-8e0e-410b0d878ac0/resource/e4b0d21e-f8fc-4d81-855a-6b8c144d3156/download/penyandang_disabilitas_terlantar_yang_mendapat_fasilitas_pembuatan_nomor_induk_kependudukan.xlsx.csv
-          PDF datastore=False e82408fa-7afa-4f22-9b8e-c75dbce28949 https://data.bantenprov.go.id/dataset/f5530bda-001d-45dc-8e0e-410b0d878ac0/resource/e82408fa-7afa-4f22-9b8e-c75dbce28949/download/pdf-version.pdf
-      - laporan-hasil-pembinaan-dan-pengawasan-tekait-pengelolaan-informasi-administrasi-kependudukan: Laporan Hasil Pembinaan Dan Pengawasan Tekait Pengelolaan Informasi Administrasi Kependudukan  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False ece3470e-0ae1-4a61-835b-c45d87243341 https://data.bantenprov.go.id/dataset/3fb0cd94-3b18-4f21-90c9-8b4ee571f882/resource/ece3470e-0ae1-4a61-835b-c45d87243341/download/laporan_hasil_pembinaan_dan_pengawasan_tekait_pengelolaan_informasi_administrasi_kependudukan.xlsx
-          CSV datastore=True 891660da-cb7f-423a-bc5a-158199c792a5 https://data.bantenprov.go.id/dataset/3fb0cd94-3b18-4f21-90c9-8b4ee571f882/resource/891660da-cb7f-423a-bc5a-158199c792a5/download/laporan_hasil_pembinaan_dan_pengawasan_tekait_pengelolaan_informasi_administrasi_kependudukan.xl.csv
-          PDF datastore=False cc639bcb-d115-44ec-819f-5b53b1b69f58 https://data.bantenprov.go.id/dataset/3fb0cd94-3b18-4f21-90c9-8b4ee571f882/resource/cc639bcb-d115-44ec-819f-5b53b1b69f58/download/pdf-version.pdf
-      - dokumen-penyusunan-profil-data-perkembangan-dan-proyeksi-kependudukan-serta-kebutuhan-lain: Dokumen Penyusunan Profil Data Perkembangan Dan Proyeksi Kependudukan Serta Kebutuhan Lain  [3 res: csv,pdf,xlsx]
-          XLSX datastore=False e6ec3c7b-0d5e-4b7c-aa2b-c6b34056ace8 https://data.bantenprov.go.id/dataset/a54a32d6-415b-4f8c-9282-39951e7d2e80/resource/e6ec3c7b-0d5e-4b7c-aa2b-c6b34056ace8/download/dokumen_penyusunan_profil_data_perkembangan_dan_proyeksi_kependudukan_serta_kebutuhan_lain.xlsx
-          CSV datastore=True 8a408a31-c7c6-4283-94bd-c37a804eb946 https://data.bantenprov.go.id/dataset/a54a32d6-415b-4f8c-9282-39951e7d2e80/resource/8a408a31-c7c6-4283-94bd-c37a804eb946/download/dokumen_penyusunan_profil_data_perkembangan_dan_proyeksi_kependudukan_serta_kebutuhan_lain.xlsx-.csv
-          PDF datastore=False c1148aa5-143b-4bc5-a0d7-3074f368df3b https://data.bantenprov.go.id/dataset/a54a32d6-415b-4f8c-9282-39951e7d2e80/resource/c1148aa5-143b-4bc5-a0d7-3074f368df3b/download/pdf-version.pdf
-      - gelandangan-dan-pengemis-yang-mendapat-fasilitas-pembuatan-nomor-induk-kependudukan-kartu--ad092: Gelandangan Dan Pengemis Yang Mendapat Fasilitas Pembuatan Nomor Induk Kependudukan Kartu Tanda Penduduk  [3 res: csv,pdf,xlsx]
-          XLSX datastore=True ab3cffc1-19ed-4f07-bccc-43da9b4301fb https://data.bantenprov.go.id/dataset/16ff6d90-7061-4ac1-b6a5-73b53c65b028/resource/ab3cffc1-19ed-4f07-bccc-43da9b4301fb/download/gelandangan-dan-pengemis-yang-mendapat-fasilitas-pembuatan-nomor-induk-kependudukan-kartu-tanda.xlsx
-          CSV datastore=True 7f93ac33-ab10-46d3-97ff-5f64a25732fd https://data.bantenprov.go.id/dataset/16ff6d90-7061-4ac1-b6a5-73b53c65b028/resource/7f93ac33-ab10-46d3-97ff-5f64a25732fd/download/csv-retry.csv
-          PDF datastore=False f0017e91-2b5e-4288-b9b1-876f9954e683 https://data.bantenprov.go.id/dataset/16ff6d90-7061-4ac1-b6a5-73b53c65b028/resource/f0017e91-2b5e-4288-b9b1-876f9954e683/download/pdf-retry.pdf
-      - lanjut-usia-telantar-yang-mendapat-fasilitas-pembuatan-nomor-induk-kependudukan-bagi-lanju-9c488: Lanjut Usia Telantar Yang Mendapat Fasilitas Pembuatan Nomor Induk Kependudukan Bagi Lanjut Usia Terlantar  [3 res: csv,pdf,xlsx]
-          XLSX datastore=True a22a65bd-05f0-4cb4-ab13-b01a654d3311 https://data.bantenprov.go.id/dataset/b09bd16c-4800-45bf-98fe-e4fa97ff5ec5/resource/a22a65bd-05f0-4cb4-ab13-b01a654d3311/download/lanjut-usia-telantar-yang-mendapat-fasilitas-pembuatan-nomor-induk-kependudukan-bagi-lanjut-usi.xlsx
-          CSV datastore=True 66d687fc-714d-425d-a236-bf5881e47dda https://data.bantenprov.go.id/dataset/b09bd16c-4800-45bf-98fe-e4fa97ff5ec5/resource/66d687fc-714d-425d-a236-bf5881e47dda/download/csv-retry.csv
-          PDF datastore=False 353af602-5362-4d60-8a71-353f19a186cd https://data.bantenprov.go.id/dataset/b09bd16c-4800-45bf-98fe-e4fa97ff5ec5/resource/353af602-5362-4d60-8a71-353f19a186cd/download/pdf-retry.pdf
-      - pelaksanaan-advokasi-dan-sosialisasi-pembentukan-rumah-data-kependudukan-di-kampung-kb-unt-8e725: Pelaksanaan Advokasi Dan Sosialisasi Pembentukan Rumah Data Kependudukan Di Kampung Kb Untuk Memperkuat Integr  [3 res: csv,pdf,xlsx]
-          XLSX datastore=True 0b39ae83-24b8-401f-9596-f812a7203e41 https://data.bantenprov.go.id/dataset/34460189-15d7-4909-89b0-c462a222a76d/resource/0b39ae83-24b8-401f-9596-f812a7203e41/download/pelaksanaan-advokasi-dan-sosialisasi-pembentukan-rumah-data-kependudukan-di-kampung-kb-untuk-me.xlsx
-          CSV datastore=True e99a7024-c09b-4859-b54f-88f9ee2952bb https://data.bantenprov.go.id/dataset/34460189-15d7-4909-89b0-c462a222a76d/resource/e99a7024-c09b-4859-b54f-88f9ee2952bb/download/csv-retry.csv
-          PDF datastore=False ad1787e4-4e38-4ca2-84b6-65637a16db8b https://data.bantenprov.go.id/dataset/34460189-15d7-4909-89b0-c462a222a76d/resource/ad1787e4-4e38-4ca2-84b6-65637a16db8b/download/pdf-retry.pdf
-      (21 others not matching)
-    package_search q='dukcapil' -> 200, 2 matches, 2 shown, printing those matching 'agama|kependudukan'
-      (2 others not matching)
-    package_search q='penduduk menurut agama' -> 200, 29 matches, 29 shown, printing those matching 'agama|kependudukan'
-      (29 others not matching)
-  https://data.jatengprov.go.id/ -> 500 text/html "Database Exception (#HY000)"
-    /api/3/action/status_show -> 200 application/json CKAN 2.9.5
-    package_search q='kependudukan' -> 200, 3393 matches, 60 shown, printing those matching 'agama|kependudukan'
-      - profil-kependudukan: Profil Kependudukan  [1 res: pdf]
-          PDF datastore=False baef5927-8883-45d5-8a2d-83aff5f84110 https://opendata.klaten.go.id/dataset/a3582d27-24cf-4b9a-ab61-dbd2998b0e5b/resource/baef5927-8883-45d5-8a2d-83aff5f84110/download/buku-profil-kependudukan-2021.pdf
-      - statistik-kependudukan-kecamatan-karangawen-tahun-2015: STATISTIK KEPENDUDUKAN  [1 res: xlsx]
-          XLSX datastore=False 730b717a-fdd6-43b8-8cec-39a70d427779 http://103.47.60.179/dataset/243a1f19-773d-4ebd-b3cf-967b4aed1ca0/resource/730b717a-fdd6-43b8-8cec-39a70d427779/download/statistik-kependudukan-kecamatan-karangawen-tahun-2015.xlsx
-      - parameterkependudukantahun2022: Parameter Kependudukan  [1 res: word]
-          word datastore=False 67c1dd2f-a82a-4ced-acf6-0e00d17d28a3 https://data.cilacapkab.go.id/dataset/79b72fec-1b8d-429d-ac1f-b2e53d009152/resource/67c1dd2f-a82a-4ced-acf6-0e00d17d28a3/download/parameter-kependudukan-2022.doc
-      - sop-layanan-kependudukan: SOP Layanan Kependudukan  [1 res: doc]
-          DOC datastore=False 0c238332-a3ad-4ec6-9c85-1f3583b7f38c https://opendata.karanganyarkab.go.id/dataset/5b865121-ca60-4d82-9fb3-e5fca43fd70e/resource/0c238332-a3ad-4ec6-9c85-1f3583b7f38c/download/sop-layanan-kependudukan.doc
-      - data-kependudukan-kabupaten-wonogiri: DATA KEPENDUDUKAN KABUPATEN WONOGIRI  [1 res: word]
-          word datastore=False b664ee44-ed42-40bf-b718-da6906fde5c1 http://103.30.181.240/dataset/733944c7-ed73-4381-a033-2f725f32a43e/resource/b664ee44-ed42-40bf-b718-da6906fde5c1/download/data-kependudukan-kabupaten-wonogiri.docx
-      - kependudukan_dan_catatan_sipil: Kependudukan dan Catatan Sipil  [1 res: csv]
-          CSV datastore=False c4823d7b-fd20-48cb-abc2-34355afac694 http://data.sragenkab.go.id/dataset/29b12e39-b2c7-4405-93a6-28f2456df0d7/resource/c4823d7b-fd20-48cb-abc2-34355afac694/download/kependudukan_dan_catatan_sipil.csv
-      - bab-xii-kependudukan-2018: BAB XII KEPENDUDUKAN 2018  [1 res: xlsx]
-          XLSX datastore=False cf1194ed-12ff-4e5e-b566-15d17934ebf3 http://103.108.187.4/dataset/192c1606-4220-4895-8b87-8c0f2d9a058f/resource/cf1194ed-12ff-4e5e-b566-15d17934ebf3/download/bab-xii-kependudukan.xlsx
-      - bab-xii-kependudukan: BAB XII KEPENDUDUKAN  [1 res: xlsx]
-          XLSX datastore=False 3aa36860-0e1c-4f09-8dbe-fb41f279df56 http://103.108.187.4/dataset/156667e5-9f0e-42f7-83e9-4258021efcbf/resource/3aa36860-0e1c-4f09-8dbe-fb41f279df56/download/bab-xii-kependudukan.xlsx
-      - profilkependudukan2022: Profil Kependudukan Kabupaten Cilacap  [1 res: pdf]
-          PDF datastore=False 49e8491b-f3a1-453e-a3ab-939be9ea8e0d https://data.cilacapkab.go.id/dataset/004b12dc-7bc8-40bd-8423-a5206160e4e2/resource/49e8491b-f3a1-453e-a3ab-939be9ea8e0d/download/profil-kependudukan-2022.pdf
-      - data-agregat-kependudukan-semester-ii-tahun-2017: Data Agregat Kependudukan  [1 res: pdf]
-          PDF datastore=False ee61ea0e-7487-4432-a2d1-d7fff0421169 http://dinpendukcapil.purbalinggakab.go.id/wp-content/uploads/2018/10/agregat-1-2018.pdf
-      - profil-kependudukan-tahun-2024: PROFIL KEPENDUDUKAN TAHUN 2024  [1 res: pdf]
-          PDF datastore=False 3ff80049-a276-4e27-99b7-445263fc2567 https://data.cilacapkab.go.id/dataset/340411bf-7db1-466d-951c-78ceb5fd248d/resource/3ff80049-a276-4e27-99b7-445263fc2567/download/buku-profil-perkembangan-kependudukan-tahun-2024_compressed-1.pdf
-      - buku-profil-kependudukan: BUKU PROFIL KEPENDUDUKAN  [1 res: pdf]
-          PDF datastore=False cab07356-133e-4e15-8680-b451d2db7d32 http://opendata.blorakab.go.id/dataset/263d5d97-d117-419f-ae1f-120acbdb1c6d/resource/cab07356-133e-4e15-8680-b451d2db7d32/download/buku-profile-2017.pdf
-      - layanan-dokumen-kependudukan: Layanan Dokumen Kependudukan  [2 res: png]
-          PNG datastore=False 12d5ce55-15e9-468a-a929-b41959d16a91 https://opendata.karanganyarkab.go.id/dataset/629344b4-dc82-40c1-bec4-7e2477da4d55/resource/12d5ce55-15e9-468a-a929-b41959d16a91/download/daftar-2.png
-          PNG datastore=False d46a01ee-2640-41a6-8199-d7f436bc24f7 https://opendata.karanganyarkab.go.id/dataset/629344b4-dc82-40c1-bec4-7e2477da4d55/resource/d46a01ee-2640-41a6-8199-d7f436bc24f7/download/daftar-3.png
-      - sop-perubahan-data-kependudukan: SOP PERUBAHAN DATA KEPENDUDUKAN  [0 res: ]
-      - data-bidang-kependudukan: Data Bidang Kependudukan  [1 res: csv]
-          CSV datastore=False 1cf9c775-5592-4b58-9f79-b775e50417e6 http://data.pekalongankab.go.id/dataset/1d4f9234-3476-46ad-a33d-9795998a243c/resource/1cf9c775-5592-4b58-9f79-b775e50417e6/download/data-pendudk-per-juni.csv
-      - kondidi-kependudukan-kota-semarang: Kondisi Kependudukan Kota Semarang  [1 res: csv]
-          CSV datastore=False 19e1b2c7-680e-4c88-b961-d3b5f10e6986 http://satudata.semarangkota.go.id/adm/file/20170802082337JUMLAHPENDUDUKKOTASEMARANG.xlsx
-      - data-kependudukan-2019: Data kependudukan Januari 2019  [1 res: xlsx]
-          XLSX datastore=False 91d6a29f-614d-4de6-ad4c-5ef7634fe035 http://data.pekalongankab.go.id/dataset/bf79c60b-e83d-4869-b782-31d1dceda422/resource/91d6a29f-614d-4de6-ad4c-5ef7634fe035/download/data-kependudukan-jan19.xlsx
-      - data-kependudukan-februari-2019: Data kependudukan Februari 2019  [1 res: xlsx]
-          XLSX datastore=False d2d79051-e9b9-42b6-b901-3167d34b8644 http://data.pekalongankab.go.id/dataset/7f11bcd2-b8a1-420c-94af-fd53f1739852/resource/d2d79051-e9b9-42b6-b901-3167d34b8644/download/data-kependudukan-feb19.xlsx
-      - data-kependudukan-maret-2019: Data kependudukan Maret 2019  [1 res: xlsx]
-          XLSX datastore=False 1c7fea7e-d741-40df-9e94-c41c03819f8e http://data.pekalongankab.go.id/dataset/6a1614ca-cfa7-4afb-9a8b-0518db4b8c0b/resource/1c7fea7e-d741-40df-9e94-c41c03819f8e/download/data-kependudukan-mar19.xlsx
-      - kependudukan-kec-buaran-tahun-2017: Kependudukan Kec. Buaran  [1 res: xlsx]
-          XLSX datastore=False 02a95e71-5712-4e2d-8884-56256c2c0f2f http://data.pekalongankab.go.id/dataset/55ae637f-462a-4dea-9124-8548657f0f26/resource/02a95e71-5712-4e2d-8884-56256c2c0f2f/download/kependudukan-2017.xlsx
-      - data-kependudukan-april-2019: Data Kependudukan April 2019  [0 res: ]
-      - data-kependudukan-juni-2019: Data Kependudukan Juni 2019  [0 res: ]
-      - kependudukan-lkpj-2015: KEPENDUDUKAN LKPJ 2015  [1 res: pdf]
-          PDF datastore=False c70c92a7-afdc-4f2e-b56c-c30824954a8e http://satudata.semarangkota.go.id/adm/file/201708101419494.1.10.UrusanWajibKependudukan---Final14Maret2016.pdf
-      - data-kependudukan-dispermasdesdukcapil: Data Kependudukan Dispermasdesdukcapil 2017  [47 res: xls,xlsx]
-          XLS datastore=False 3bb69d3a-dca4-4ff1-a809-851f40bd6000 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/3bb69d3a-dca4-4ff1-a809-851f40bd6000/download/01.-jumlah-jiwa-per-kab.xls
-          XLS datastore=False 35128acf-065d-42fc-9f04-4815a4e3cdae https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/35128acf-065d-42fc-9f04-4815a4e3cdae/download/01.-jumlah-jiwa-per-kec.xls
-          XLS datastore=False e8569e1c-09ae-4b0c-aa34-cfce0b2efd5b https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/e8569e1c-09ae-4b0c-aa34-cfce0b2efd5b/download/02.-jumlah-penduduk-berdasarkan-kelompok-umur-per-kab.xls
-          XLS datastore=False 8be3346e-d2e2-4399-b36c-b84de2ebc458 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/8be3346e-d2e2-4399-b36c-b84de2ebc458/download/03.-jumlah-kepala-keluarga-riil-dan-kepemilikan-kartu-keluarga-per-kab.xls
-          XLS datastore=False f3bda34b-2400-4712-abdf-18900a56b946 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/f3bda34b-2400-4712-abdf-18900a56b946/download/04.-jumlah-kepala-keluarga-berdasarkan-umur-per-kab.xls
-          XLS datastore=False a1b291c1-fec8-4c65-a006-f484b3cfa259 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/a1b291c1-fec8-4c65-a006-f484b3cfa259/download/05.-jumlah-kepala-keluarga-berdasarkan-pendidikan-per-kab.xls
-          XLS datastore=False 67004315-a5ab-4a0e-808f-08ffe3b1f67e https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/67004315-a5ab-4a0e-808f-08ffe3b1f67e/download/06.-jumlah-kepala-keluarga-berdasarkan-status-kawin-per-kab.xls
-          XLS datastore=False 01c1fd86-04e7-4344-b28b-c818f5daae83 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/01c1fd86-04e7-4344-b28b-c818f5daae83/download/07.-jumlah-kepala-keluarga-berdasarkan-pekerjaan-per-kab.xls
-          XLS datastore=False 11e20cfe-b442-42d5-84c7-aa6706e518a3 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/11e20cfe-b442-42d5-84c7-aa6706e518a3/download/08.-wajib-ktp-dan-kepemilikan-ktp-per-kab.xls
-          XLS datastore=False 98feb5e6-76af-4c83-8016-f6ccf3c217ff https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/98feb5e6-76af-4c83-8016-f6ccf3c217ff/download/09.-perpindahan-dan-kedatangan-dan-penduduk-per-kab.xls
-          XLS datastore=False 647bee9f-82a3-49e1-a4af-cf3e794cd6d3 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/647bee9f-82a3-49e1-a4af-cf3e794cd6d3/download/10.-perpindahan-dan-kedatangan-dan-penduduk-luar-negeri-per-kab.xls
-          XLS datastore=False f741a991-48e1-493e-a89f-81befb01bd16 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/f741a991-48e1-493e-a89f-81befb01bd16/download/11.-jumlah-penduduk-berdasarkan-pendidikan-per-kab.xls
-          XLS datastore=False 313229f6-101f-4666-9a5b-d82c27a0d64d https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/313229f6-101f-4666-9a5b-d82c27a0d64d/download/12.-jumlah-penduduk-yang-bekerja-berdasarkan-pendidikan-per-kab.xls
-          XLS datastore=False 11d0905d-f914-45b9-8388-2bc4235bda07 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/11d0905d-f914-45b9-8388-2bc4235bda07/download/13.-jumlah-penduduk-yang-tidak-bekerja-berdasarkan-pendidikan-per-kab.xls
-          XLS datastore=False f043f1e4-a741-4db2-8242-a717cf887106 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/f043f1e4-a741-4db2-8242-a717cf887106/download/14.-jumlah-penduduk-berdasarkan-pendidikan-dan-umur-per-kab.xls
-          XLS datastore=False 45079ee9-306d-4212-b273-b4fe43f8f873 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/45079ee9-306d-4212-b273-b4fe43f8f873/download/15.-jumlah-penduduk-berdasarkan-pekerjaan-per-kab.xls
-          XLS datastore=False 18fc4ef6-9f11-4c16-bdb8-768de6cabe72 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/18fc4ef6-9f11-4c16-bdb8-768de6cabe72/download/16.-jumlah-penduduk-usia-produktif-yang-bekerja-per-kab.xls
-          XLS datastore=False 57ff2c96-e816-4e99-adac-0731c79a4282 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/57ff2c96-e816-4e99-adac-0731c79a4282/download/17.-jumlah-penduduk-usia-produktif-yang-tidak-bekerja-per-kab.xls
-          XLS datastore=False 9ab95eaf-b291-44b7-8b24-8bc6a62f2d6a https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/9ab95eaf-b291-44b7-8b24-8bc6a62f2d6a/download/18.-jumlah-penduduk-berdasarkan-golongan-darah-per-kab.xls
-          XLS datastore=False 5ca938ea-40c9-403c-8032-9180b5ef369b https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/5ca938ea-40c9-403c-8032-9180b5ef369b/download/19.-jumlah-penduduk-berdasarkan-agama-per-kab.xls
-          XLS datastore=False ef8688ed-d73c-4473-829d-a0593b2d9128 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/ef8688ed-d73c-4473-829d-a0593b2d9128/download/20.-jumlah-penduduk-berdasarkan-status-kawin-per-kab.xls
-          XLS datastore=False 71d7faa8-935f-4d05-9afa-bab15d745aa0 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/71d7faa8-935f-4d05-9afa-bab15d745aa0/download/21.-jumlah-penduduk-sudah-atau-pernah-kawin-berdasarkan-umur-per-kab.xls
-          XLS datastore=False 320f4e1b-a697-42e7-bda9-474b9cce3e6e https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/320f4e1b-a697-42e7-bda9-474b9cce3e6e/download/22.-jumlah-penduduk-berdasarkan-disabilitas-per-kab.xls
-          XLS datastore=False 2a82a7e2-ebc3-4d3a-b545-4949c2dc06b9 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/2a82a7e2-ebc3-4d3a-b545-4949c2dc06b9/download/23.-jumlah-kepemilikan-paspor-per-kab.xls
-          XLS datastore=False 6802095c-fffe-4eef-9421-99f5c5a0da84 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/6802095c-fffe-4eef-9421-99f5c5a0da84/download/24.-jumlah-penduduk-terlantar-per-kab.xls
-          XLS datastore=False aca40903-b5b3-4c97-9be1-0cd8b5a63155 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/aca40903-b5b3-4c97-9be1-0cd8b5a63155/download/25.-jumlah-penduduk-komunitas-terpencil-per-kab.xls
-          XLS datastore=False 89af6351-392b-47f9-a62f-3d46d9d2d97d https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/89af6351-392b-47f9-a62f-3d46d9d2d97d/download/26.-jumlah-penduduk-pemegang-pas-lintas-batas-per-kab.xls
-          XLS datastore=False 91a26f89-3d93-4c8d-963e-743477d07053 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/91a26f89-3d93-4c8d-963e-743477d07053/download/27.-jumlah-penduduk-wna-per-kab.xls
-          XLS datastore=False 417f9931-81e3-407e-8874-7f70c5fb14a5 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/417f9931-81e3-407e-8874-7f70c5fb14a5/download/28.-jumlah-kepemilikan-akta-pencatatan-sipil-per-kab.xls
-          XLS datastore=False 28bc710e-6daa-461b-bb2b-943a064d0dd0 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/28bc710e-6daa-461b-bb2b-943a064d0dd0/download/29.-jumlah-penerbitan-akta-kelahiran-berdasarkan-domisili-per-kab.xls
-          XLS datastore=False 6305a6cd-257f-402e-a0cb-8c4270478615 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/6305a6cd-257f-402e-a0cb-8c4270478615/download/30.-jumlah-penerbitan-akta-kelahiran-berdasarkan-waktu-lapor-per-kab.xls
-          XLS datastore=False 1c70ba58-ca9a-4a4a-af14-9990ea45d4c6 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/1c70ba58-ca9a-4a4a-af14-9990ea45d4c6/download/31.-jumlah-penerbitan-akta-kelahiran-berdasarkan-umur-per-kab.xls
-          XLS datastore=False b1e3205b-c063-499a-bd9b-7495b04ddeac https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/b1e3205b-c063-499a-bd9b-7495b04ddeac/download/32.-jumlah-kepemilikan-akta-kelahiran-berdasarkan-umur-per-kab.xls
-          XLS datastore=False b851dc1a-9f0c-4f6c-b07b-1a32ad64a354 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/b851dc1a-9f0c-4f6c-b07b-1a32ad64a354/download/33.-jumlah-penerbitan-akta-perkawinan-berdasarkan-agama-per-kab.xls
-          XLS datastore=False 585b8fd7-6d79-4f13-9d4d-317707750a4c https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/585b8fd7-6d79-4f13-9d4d-317707750a4c/download/34.-jumlah-penerbitan-akta-perkawinan-berdasarkan-domisili-per-kab.xls
-          XLS datastore=False d3be8831-79ca-4495-a2e8-287756239647 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/d3be8831-79ca-4495-a2e8-287756239647/download/35.-jumlah-penerbitan-akta-perkawinan-berdasarkan-waktu-lapor-per-kab.xls
-          XLS datastore=False 6c1c262b-e731-4189-bde4-223d41fdb404 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/6c1c262b-e731-4189-bde4-223d41fdb404/download/36.-jumlah-penerbitan-akta-perceraian-berdasarkan-domisili-per-kab.xls
-          XLS datastore=False dbfce123-89c5-42ea-8127-a23e31121089 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/dbfce123-89c5-42ea-8127-a23e31121089/download/37.-jumlah-penerbitan-akta-perceraian-berdasarkan-waktu-lapor-per-kab.xls
-          XLS datastore=False 4edeb960-cfcc-4583-8132-14b4f7af4d09 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/4edeb960-cfcc-4583-8132-14b4f7af4d09/download/38.-jumlah-penerbitan-akta-kematian-berdasarkan-domisili-per-kab.xls
-          XLS datastore=False c9ffcb99-bedc-4962-b117-16724dc80c19 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/c9ffcb99-bedc-4962-b117-16724dc80c19/download/39.-jumlah-penerbitan-akta-kematian-berdasarkan-waktu-lapor-per-kab.xls
-          XLS datastore=False 244a733b-9df9-4177-a045-7242e93a0a55 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/244a733b-9df9-4177-a045-7242e93a0a55/download/45.-laporan-pendaftaran-penduduk.xls
-          XLS datastore=False a1b0a9ad-fd95-4ccb-a69f-8544afb92cfa https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/a1b0a9ad-fd95-4ccb-a69f-8544afb92cfa/download/46.-laporan-pencatatan-peristiwa-penting.xls
-          XLSX datastore=False 4e2b12b4-708f-4287-a8c5-a5cd97c04c9e https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/4e2b12b4-708f-4287-a8c5-a5cd97c04c9e/download/juml-penduduk-2016.xlsx
-          XLS datastore=False 9fe0bc8f-412d-44ca-84b5-e66775f0169c https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/9fe0bc8f-412d-44ca-84b5-e66775f0169c/download/01.-jumlah-jiwa-per-kab-tahun-2018-semester-1.xls
-          XLS datastore=False 07132f6d-ffb0-4620-9d34-a7a798935ce0 https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/07132f6d-ffb0-4620-9d34-a7a798935ce0/download/01.-jumlah-jiwa-per-kec-tahun-2018-semester-1.xls
-          XLS datastore=False 57f777fd-6c92-440e-88fe-994a0130f97d https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/57f777fd-6c92-440e-88fe-994a0130f97d/download/01.-jumlah-jiwa-per-kab-tahun-2017-semester-2.xls
-          XLS datastore=False ca5582f8-2028-472a-b914-b29573e8544c https://data.jatengprov.go.id/dataset/52b05a96-843c-47cd-a3b9-d128c38cb5d8/resource/ca5582f8-2028-472a-b914-b29573e8544c/download/01.-jumlah-jiwa-per-kec-tahun-2017-semester-2.xls
-      - rata-rata-kepemilikan-dokumen-kependudukan: Rata-rata kepemilikan dokumen kependudukan  [1 res: xlsx]
-          XLSX datastore=False 84ee057b-8589-43d1-8654-4d5a11176415 https://data.kuduskab.go.id/dataset/58087149-39e2-4f48-a696-be7def305248/resource/84ee057b-8589-43d1-8654-4d5a11176415/download/21.-rata-rata-kepemilikan-dokumen-kependudukan.xlsx
-      - ketersediaan-database-kependudukan-skala-kabupatenn: Ketersediaan database kependudukan skala kabupaten  [2 res: xlsx]
-          XLSX datastore=True 8f1b0ca4-0ec4-414c-8d84-819116a813e1 https://data.kuduskab.go.id/dataset/1f996b56-45b0-49b2-938d-43731e2a3106/resource/8f1b0ca4-0ec4-414c-8d84-819116a813e1/download/8.-ketersediaan-database-kependudukan-skala-kabupaten.xlsx
-          XLSX datastore=True 50a89a01-d1cf-4068-b185-5491a37d3ea4 https://data.kuduskab.go.id/dataset/1f996b56-45b0-49b2-938d-43731e2a3106/resource/50a89a01-d1cf-4068-b185-5491a37d3ea4/download/3.-ketersediaan-database-kependudukan-skala-kabupaten.xlsx
-      - jumlah-registrasi-identitas-kependudukan-digital: Jumlah Registrasi Identitas Kependudukan Digital  [2 res: xlsx]
-          XLSX datastore=True c5eec8df-df97-43f4-9891-c11f00bccab7 https://data.kuduskab.go.id/dataset/f3d09127-c867-488c-9cc0-c5f6101db01e/resource/c5eec8df-df97-43f4-9891-c11f00bccab7/download/jml-registrasi-ikd.xlsx
-          XLSX datastore=True 7ddb11e0-cde9-48da-9781-0e986359ec99 https://data.kuduskab.go.id/dataset/f3d09127-c867-488c-9cc0-c5f6101db01e/resource/7ddb11e0-cde9-48da-9781-0e986359ec99/download/metadata-penduduk-wajib-ktp-el-1.xlsx
-      - data-agregat-kependudukan-kota-surakarta: Data Agregat Kependudukan Kota Surakarta  [8 res: ?,csv]
-          CSV datastore=False 042b6771-92ed-46de-a08e-4f40096492d6 https://dispendukcapil.surakarta.go.id/data-agregat-kependudukan-tahun-2017-semester-i/
-           datastore=False 7657caf7-3416-40a8-9a33-62d3b1baf870 https://dispendukcapil.surakarta.go.id/data-agregat-kependudukan-tahun-2017-semester-ii/
-           datastore=False 740a2f49-ad7d-4b52-a132-9211d6d6ec82 https://dispendukcapil.surakarta.go.id/data-agregat-kependudukan-tahun-2018-semester-i/
-           datastore=False 4db5f098-dac7-4c28-b803-4f8da38cbd1a https://dispendukcapil.surakarta.go.id/data-agregat-kependudukan-tahun-2018-semester-ii/
-           datastore=False 25656c93-4fa3-4817-a3a9-7b4e317c841a https://dispendukcapil.surakarta.go.id/buku-agregrat-kependudukan-semester-1-tahun-2019/
-           datastore=False 88976202-3531-42f1-889f-000e519bbb76 https://dispendukcapil.surakarta.go.id/dkb-semester-2-tahun-2019/
-           datastore=False 64e28e63-1cb8-4e4a-831b-a5b18d8d460a https://dispendukcapil.surakarta.go.id/buku-agregrat-kependudukan-semester-1-tahun-2020/
-           datastore=False e7eb9601-5eaf-4178-97ca-c023fd52dff8 https://dispendukcapil.surakarta.go.id/buku-agregat-kependudukan-semester-1-tahun-2021/
-      - rekap-kependudukan-kec-karangdadap-20181: REKAP KEPENDUDUKAN KEC. KARANGDADAP 2018  [1 res: pdf]
-          PDF datastore=False a36a9f57-545e-4963-a8e2-8b7d80481468 http://data.pekalongankab.go.id/dataset/efa27359-1679-4175-816c-7aa12be5b0e4/resource/a36a9f57-545e-4963-a8e2-8b7d80481468/download/5f-cc4c-46fe-8312-59dac6a1befe.pdf
-      - rekap-kependudukan-kec-karangdadap-2018: REKAP KEPENDUDUKAN KEC. KARANGDADAP 2018  [1 res: pdf]
-          PDF datastore=False 0b74525f-cc4c-46fe-8312-59dac6a1befe http://data.pekalongankab.go.id/dataset/f4bdd27a-5865-44bb-9295-a5093666a2b4/resource/0b74525f-cc4c-46fe-8312-59dac6a1befe/download/lap.kependudukan-kec.karangdadap-2018.pdf
-      - rekap-kependudukan-2021-kec-karangdadap: REKAP KEPENDUDUKAN 2021 KEC.KARANGDADAP  [2 res: pdf]
-          PDF datastore=False d4e3fe09-fbb6-4bf8-b261-d868f4f78241 https://data.pekalongankab.go.id/id/dataset/563b1108-a85e-4115-89c0-af43e04c6ef9/resource/d4e3fe09-fbb6-4bf8-b261-d868f4f78241/download/rekap-kependudukan-2021-kec.karangdadap.pdf
-          PDF datastore=False be2ebab6-6e27-4006-b6cc-5e1313593122 https://data.pekalongankab.go.id/id/dataset/563b1108-a85e-4115-89c0-af43e04c6ef9/resource/be2ebab6-6e27-4006-b6cc-5e1313593122/download/rekap-kependudukan-2021-kec.karangdadap.pdf
-      - demografi-kependudukan_jumlah-penduduk-2021: Demografi Kependudukan_Jumlah Penduduk 2021  [1 res: xlsx]
-          XLSX datastore=False d819e645-810c-415e-b2df-d5cd7db31677 https://opendata.karanganyarkab.go.id/dataset/1685f2de-f666-4064-af47-c8f0c14cde7c/resource/d819e645-810c-415e-b2df-d5cd7db31677/download/2021-data-jumlah-penduduk.xls
-      - rekap-kependudukan-2020-kec-karangdadap: REKAP KEPENDUDUKAN 2020 KEC.KARANGDADAP  [1 res: pdf]
-          PDF datastore=False e974ba17-4d8b-4769-a5d3-e34e8bd8f94e https://data.pekalongankab.go.id/id/dataset/0890e223-9bdf-4cd3-8abf-cf1fdd48f119/resource/e974ba17-4d8b-4769-a5d3-e34e8bd8f94e/download/rekap-kependudukan-2020-kec.karangdadap.pdf
-      - buku-data-kependudukan-tahun-2019: Buku Data Kependudukan Tahun 2019  [0 res: ]
-      - demografi-kependudukan_usia-penduduk-2021: Demografi Kependudukan_Usia Penduduk 2021  [1 res: xlsx]
-          XLSX datastore=False 9db6641d-063b-44e7-918a-50886aaccc2e https://opendata.karanganyarkab.go.id/dataset/d19d99db-6411-4df9-91e8-049944c6df1a/resource/9db6641d-063b-44e7-918a-50886aaccc2e/download/2021-data-usia.xls
-      - demografi-kependudukan_agama-penduduk-2021: Demografi Kependudukan_Agama Penduduk 2021  [1 res: xlsx]
-          XLSX datastore=False 99c97234-1809-4fc4-baec-5a1b65bb85aa https://opendata.karanganyarkab.go.id/dataset/5f01bcf5-19dd-4223-a7d7-446a1ab38b55/resource/99c97234-1809-4fc4-baec-5a1b65bb85aa/download/2021-data-status-perkawinan.xls
-      - data-kependudukan-kec-karangdadap-20171: Data Kependudukan Kec.Karangdadap 2017  [1 res: pdf]
-          PDF datastore=False 9a26f3ed-6f4d-4beb-839e-f96b885c8c03 http://data.pekalongankab.go.id/dataset/bf5a892f-e74f-4ef4-9b26-ae250cd489cb/resource/9a26f3ed-6f4d-4beb-839e-f96b885c8c03/download/data-kependudukan-kec.karangdadap-2017.pdf
-      - data-kependudukan-dan-catatan-sipil: Data Kependudukan dan Catatan Sipil  [1 res: xlsx]
-          XLSX datastore=False a75685d9-51bd-407f-89b6-85870c16ccae http://opendata.tegalkota.go.id/dataset/797df46d-b074-4062-9b56-a445dc2d98f6/resource/a75685d9-51bd-407f-89b6-85870c16ccae/download/5.-urusan-kependudukan-dan-catatan-sipil.xlsx
-      - data-kependudukan-kec-karangdadap-2017: Data Kependudukan Kec.Karangdadap 2017  [1 res: pdf]
-          PDF datastore=False 4233d36b-c214-41b3-9e33-736ed511c4fb http://data.pekalongankab.go.id/dataset/4969c99e-634b-4aad-aad6-106f9cf40dba/resource/4233d36b-c214-41b3-9e33-736ed511c4fb/download/lap.kependudukan-kec.karangdadap-2017.pdf
-      - dinas-kependudukan-dan-pencatatan-sipil: DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL  [1 res: rar]
-          RAR datastore=False ddbd80ff-b640-4ef6-968d-e6930420722e http://satudata.semarangkota.go.id/adm/file/20170726151332DINASKEPENDUDUKANDANPENCATATANSIPIL.rar
-      - data-dukcapil-dispermasdesdukcapil: Data Kependudukan Dispermasdesdukcapil Tahun 2018  [30 res: xls,xlsx]
-          XLS datastore=False c269d292-2fce-434f-be7f-ad25c6da9d8c https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/c269d292-2fce-434f-be7f-ad25c6da9d8c/download/01_jumlah_jiwa_kab.xlsx
-          XLS datastore=False cdef6e21-d147-44b0-af50-b4b434883b8f https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/cdef6e21-d147-44b0-af50-b4b434883b8f/download/01_jumlah_jiwa_kel.xls
-          XLS datastore=False 5019bebf-3789-418b-ab8e-f9c7bb31137a https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/5019bebf-3789-418b-ab8e-f9c7bb31137a/download/02_jumlah_penduduk_kelompok_umur_kab.xls
-          XLS datastore=False 10b80bea-c01c-4ac0-a341-6b0390fa93ef https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/10b80bea-c01c-4ac0-a341-6b0390fa93ef/download/03_jumlah_kk_kepemilikan_kk_kab.xls
-          XLSX datastore=False b80f04ae-1c2c-4228-ab65-0c34dc43c41b https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/b80f04ae-1c2c-4228-ab65-0c34dc43c41b/download/04_jumlah_kk_umur_kab.xls
-          XLS datastore=False 453e0e29-a3fe-45eb-aba4-db5cd6096589 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/453e0e29-a3fe-45eb-aba4-db5cd6096589/download/05_jumlah_kk_pendidikan_kab.xls
-          XLS datastore=False 3f4b9602-bb6f-4e98-89a0-97e12fc2ff9e https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/3f4b9602-bb6f-4e98-89a0-97e12fc2ff9e/download/06_jumlah_kk_stat_kawin_kab.xls
-          XLS datastore=False d7c4cf18-bdab-4871-ad61-fd1afa1cae9f https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/d7c4cf18-bdab-4871-ad61-fd1afa1cae9f/download/07_jumlah_kk_pekerjaan_kab.xls
-          XLS datastore=False 21eea79e-635c-496b-b02f-8a3a9ac80fc1 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/21eea79e-635c-496b-b02f-8a3a9ac80fc1/download/08_wajib_ktp_kepemilikan_ktp_kab.xls
-          XLSX datastore=False 909b7737-7f9b-4313-b41e-cf22131b00b8 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/909b7737-7f9b-4313-b41e-cf22131b00b8/download/09_pindah_datang_kab.xls
-          XLSX datastore=False d4ccbc74-dc6e-406d-9a9a-cc137818863b https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/d4ccbc74-dc6e-406d-9a9a-cc137818863b/download/10_pindah_datang_ln_kab.xls
-          XLSX datastore=False a13fe6ae-727e-4317-b619-790700594c35 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/a13fe6ae-727e-4317-b619-790700594c35/download/11_jumlah_penduduk_pendidikan_kab.xls
-          XLSX datastore=False 5c66db4b-1d06-4379-ba65-251c1dd3ca42 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/5c66db4b-1d06-4379-ba65-251c1dd3ca42/download/12_jumlah_penduduk_kerja_pendidikan_kab.xls
-          XLSX datastore=False 3be2b828-9f10-4d3f-a9c5-ac3b90cb9817 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/3be2b828-9f10-4d3f-a9c5-ac3b90cb9817/download/13_jumlah_penduduk_tidak_kerja_pendidikan_kab.xls
-          XLSX datastore=False dcc6d7d6-2057-4364-bcb3-3a6dfbb5ae4d https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/dcc6d7d6-2057-4364-bcb3-3a6dfbb5ae4d/download/14_jumlah_penduduk_pendidikan_umur_kab.xls
-          XLSX datastore=False 25fc300d-8e6b-4d73-9ba6-a61e4b405bdb https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/25fc300d-8e6b-4d73-9ba6-a61e4b405bdb/download/15_jumlah_penduduk_pekerjaan_kab.xls
-          XLS datastore=False 0174dfe0-135a-41ef-988f-1979cedc1093 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/0174dfe0-135a-41ef-988f-1979cedc1093/download/16_jumlah_penduduk_usia_produktif_kerja_kab.xls
-          XLSX datastore=False b2bdfeb9-b1f9-43c9-97b9-ae4e7c43ba45 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/b2bdfeb9-b1f9-43c9-97b9-ae4e7c43ba45/download/17_jumlah_penduduk_usia_produktif_tdk_kerja_kab.xls
-          XLS datastore=False 4a5c197d-0b56-4c85-ad4c-c5fc14c60861 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/4a5c197d-0b56-4c85-ad4c-c5fc14c60861/download/18_jumlah_penduduk_gol_darah_kab.xls
-          XLS datastore=False 646e85b7-d497-419c-84c4-d6cfdba8c930 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/646e85b7-d497-419c-84c4-d6cfdba8c930/download/19_jumlah_penduduk_agama_kab.xls
-          XLS datastore=False 11f2cc0e-c61b-4d24-8105-4792d2863d6a https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/11f2cc0e-c61b-4d24-8105-4792d2863d6a/download/20_jumlah_penduduk_stat_kawin_kab.xls
-          XLS datastore=False 9ce2813b-5860-4b2f-9266-29b619ce7ecd https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/9ce2813b-5860-4b2f-9266-29b619ce7ecd/download/21_jumlah_penduduk_kawin_umur_kab.xls
-          XLS datastore=False 29152ffd-e886-4838-ab50-9b60ed05f9f2 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/29152ffd-e886-4838-ab50-9b60ed05f9f2/download/22_jumlah_penduduk_disabilitas_kab.xls
-          XLS datastore=False 6f0bb0e4-0320-4de5-9c65-497a9fc381c2 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/6f0bb0e4-0320-4de5-9c65-497a9fc381c2/download/23_jumlah_kepemilikan_paspor_kab.xls
-          XLSX datastore=False 68d73e64-b3d6-4456-b761-7bb7e892dc2f https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/68d73e64-b3d6-4456-b761-7bb7e892dc2f/download/24_jumlah_penduduk_terlantar_kab.xls
-          XLSX datastore=False 5ff4cbf8-28e7-4d3a-a853-2c0c66f1dc70 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/5ff4cbf8-28e7-4d3a-a853-2c0c66f1dc70/download/25_jumlah_penduduk_komunitas_terpencil_kab.xls
-          XLSX datastore=False 5c0b282a-2682-49ba-be2a-52e3e93e132f https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/5c0b282a-2682-49ba-be2a-52e3e93e132f/download/26_jumlah_penduduk_pemegang_plb_kab.xls
-          XLS datastore=False acb4e792-0cf0-445a-bc14-b0ac8aa2d64b https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/acb4e792-0cf0-445a-bc14-b0ac8aa2d64b/download/27_jumlah_penduduk_wna_kab.xls
-          XLSX datastore=False 02231a18-0a29-4b0f-9756-2ad1844b0711 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/02231a18-0a29-4b0f-9756-2ad1844b0711/download/28_jumlah_kepemilikan_akta_kab.xls
-          XLSX datastore=False 8496caa7-b4b6-4221-879c-42ba3bcd89b6 https://data.jatengprov.go.id/dataset/fd537042-a4c7-4bb9-b442-225d914c4640/resource/8496caa7-b4b6-4221-879c-42ba3bcd89b6/download/29_jumlah_penerbitan_akta_lahir_domisili_kab-1.xls
-      - persentase-rata-rata-kepemilikan-dokumen-administrasi-kependudukan: Persentase rata-rata kepemilikan dokumen administrasi kependudukan  [1 res: xlsx]
-          XLSX datastore=False eb99e8db-9312-434e-8f8e-410b37f1706d https://data.kuduskab.go.id/dataset/1eae9007-2d42-4be2-abe5-dde6895c96ce/resource/eb99e8db-9312-434e-8f8e-410b37f1706d/download/22.-persentase-rata-rata-kepemilikan-dokumen-administrasi-kependudukan.xlsx
-      - perkembangan-ketersediaan-database-kependudukan-skala-provinsi-tahun-2017-2021: Data Administrasi Kependudukan dan Pencatatan Sipil - Perkembangan Ketersediaan Database Kependudukan Skala Pr  [1 res: xlsx]
-          XLSX datastore=False b88d8d8f-086a-4005-a8e3-4e08502d9cd6 https://docs.google.com/spreadsheets/d/10Flgts1yzB1sENd-w7aFjbA4sdwf2SF4/edit#gid=1688546494
-      - parameter_kependudukan_2022: PARAMETER KEPENDUDUKAN KABUPATEN CILACAP TAHUN 2022  [1 res: pdf]
-          PDF datastore=False 48ba0a4e-1b91-4ae5-9012-560e956ba1ad http://data.cilacapkab.go.id/dataset/a6e971bd-221d-478c-ba9a-7f1e7f91c493/resource/48ba0a4e-1b91-4ae5-9012-560e956ba1ad/download/parameter-kependudukan-kabupaten-cilacap-tahun-2022.pdf
-      - rkt-dinas-kependudukan-dan-pencatatan-sipil-2018: RKT Dinas Kependudukan dan Pencatatan Sipil 2018  [1 res: pdf]
-          PDF datastore=False 604458f9-effb-42cf-b3a0-9ffe6adb2dda https://e-sakip.semarangkota.go.id/public/uploads/file/1QyQzQ0eBxBev3LCiUjOTXr21IebBt0xk4bYJQ0R.pdf
-      - data-kependudukan-kecamatan-plantungan-tahun-2019: Data Kependudukan Kecamatan Plantungan Tahun 2019  [1 res: xlsx]
-          XLSX datastore=False c922bf2c-a608-43ac-8a53-aad40668cb69 http://data.kendalkab.go.id/id/dataset/daf2aef7-5f96-4eaf-b380-126549314702/resource/c922bf2c-a608-43ac-8a53-aad40668cb69/download/data-kependudukan.xlsx
-      - indikator-kependudukan-kabupaten-pemalang-tahun-2017: Indikator Kependudukan Kabupaten Pemalang Tahun 2017  [1 res: jpeg]
-          JPEG datastore=False 2fae315e-c38a-416c-bdc1-f38cb252541d https://pemalangkab.bps.go.id/backend/images/Indikator-Kependudukan-Kab-Pemalang-Tahun-2017-ind.JPG
-      - rekapitulasi-pelayanan-konsultasi-kependudukan-tahun-2018: Rekapitulasi Pelayanan Konsultasi Kependudukan Tahun 2018  [1 res: word]
-          word datastore=False 9ea341cb-15e6-4b06-bb12-522d651502b0 http://103.30.181.240/dataset/1f5fdbc2-ffde-4bec-acbd-aa25eb539111/resource/9ea341cb-15e6-4b06-bb12-522d651502b0/download/rekapitulasi-konsultasi-pelayanan-kependudukan.docx
-      - administrasi-kependudukan-dan-pencatatan-sipil-2018: Administrasi Kependudukan Dan Pencatatan Sipil - 2018  [1 res: xls]
-          XLS datastore=False ca4b1330-d360-4147-abf5-b93102695422 https://opendata.patikab.go.id/dataset/c11d3db9-72fa-4ef6-8386-fd28d3f390f6/resource/ca4b1330-d360-4147-abf5-b93102695422/download/administrasi-kependudukan-dan-pencatatan-sipil-_pendukcapilsipd_2018_20180809-1.xls
-      - gdpk_2021: PENYUSUNAN Grand Design Pembangunan Kependudukan TAHUN 2021  [1 res: pdf]
-          PDF datastore=False 0e7c50ba-d897-4607-af21-ec2eba30abce http://data.cilacapkab.go.id/dataset/97bc9a0f-1963-4aa9-a6c9-739bbebf2b73/resource/0e7c50ba-d897-4607-af21-ec2eba30abce/download/penyusunan-gdpk-tahun-2021.pdf
-      - mari-berpindah-ke-identitas-kependudukan-digital: Mari Berpindah Ke Identitas Kependudukan Digital  [1 res: png]
-          PNG datastore=False 835aebf0-48d7-4fcb-b41e-3fc24bb5eac0 https://opendata.karanganyarkab.go.id/dataset/3a5acd79-5930-4de4-b984-4053d3feb48f/resource/835aebf0-48d7-4fcb-b41e-3fc24bb5eac0/download/identitas-kependudukan-digital.png
-      - kependudukan-dan-ketenagakerjaan-di-kecamatan-demak-2019: KEPENDUDUKAN DAN KETENAGAKERJAAN DI KECAMATAN DEMAK 2019  [0 res: ]
-      - ringkasan-dpa-dinas-kependudukan-dan-pencatatan-sipil: Ringkasan DPA Dinas Kependudukan dan Pencatatan Sipil  [1 res: pdf]
-          PDF datastore=False 1d266a5e-4340-4256-972f-87c4a2952670 http://data.kuduskab.go.id/dataset/26014dde-ee4c-446b-a90c-2fab834432cb/resource/1d266a5e-4340-4256-972f-87c4a2952670/download/11.dukcapil.pdf
-      - gdpk: Penyususn Grand Design Pembangunan Kependudukan Tahun 2021  [1 res: word]
-          word datastore=False 27e3fd6e-ac6e-40a2-bd8a-8a0450854a0e http://data.cilacapkab.go.id/dataset/e1382430-1ca0-407c-8343-a9f772f07c25/resource/27e3fd6e-ac6e-40a2-bd8a-8a0450854a0e/download/penyusunan-gdpk-tahun-2021.docx
-      - uu-24-tahun-2013-tentang-administrasi-kependudukan: UU 24 Tahun 2013 tentang Administrasi Kependudukan  [1 res: docx]
-          DOCX datastore=False 02ad1986-be8f-436d-91a6-2e98741dcd88 https://data.jatengprov.go.id/dataset/0285c025-ec6b-40c9-aa4a-554355301010/resource/02ad1986-be8f-436d-91a6-2e98741dcd88/download/uu-24-tahun-2013-tentang-administrasi-kependudukan.pdf
-      - data-statistik-dinas-kependudukan-dan-pencatatan-sipil: DATA STATISTIK DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL  [1 res: exel]
-          exel datastore=False 947d09ec-cfd9-44ad-bfc2-5982c360b7ad https://data.jatengprov.go.id/dataset/d91eb424-c609-4ddb-8ba4-bcbfecff7665/resource/947d09ec-cfd9-44ad-bfc2-5982c360b7ad/download/dinas-kependudukan-dan-pencatatan-sipil.xlsx
-      - buku-data-kependudukan-semester-i-2023: Buku Data Kependudukan Semester I 2023  [1 res: pdf]
-          PDF datastore=False 8095be96-c83e-4de8-ae5a-551e7c2ffcda https://opendata.karanganyarkab.go.id/dataset/fbb2423e-dcab-4cec-a035-c826c482624b/resource/8095be96-c83e-4de8-ae5a-551e7c2ffcda/download/buku-data-semester-1-2023.pdf
-      - statistik-kependudukan-kabupaten-wonogiri-tahun-2021: Statistik Kependudukan Kabupaten Wonogiri Tahun 2021  [1 res: xlsx]
-          XLSX datastore=False 4fe75fe5-b8a2-4d5d-9582-e54b508bab08 http://103.30.181.240/dataset/72527e04-dbf0-4dc2-a483-bf9a825f362c/resource/4fe75fe5-b8a2-4d5d-9582-e54b508bab08/download/8.-statistik-ketenagakerjaan-kabupaten-wonogiri-tahun-2020-dan-2021.xlsx
-      - demografi-kependudukan_tingkat-pendidikan-penduduk-2021: Demografi Kependudukan_Tingkat Pendidikan Penduduk 2021  [1 res: xlsx]
-          XLSX datastore=False 9b086a49-e4bb-4622-af14-2145dd2103de https://opendata.karanganyarkab.go.id/dataset/7b6d423a-6800-41be-94e5-cda1cdc0cb16/resource/9b086a49-e4bb-4622-af14-2145dd2103de/download/2021-data-pendidikan.xls
-      - demografi-kependudukan_status-perkawinan-penduduk-2021: Demografi Kependudukan_Status Perkawinan Penduduk 2021  [1 res: xlsx]
-          XLSX datastore=False 56a625f4-a382-4cdf-80ad-73c100035476 https://opendata.karanganyarkab.go.id/dataset/1adb1b08-03ce-4c46-b657-b86ab84f06ec/resource/56a625f4-a382-4cdf-80ad-73c100035476/download/2021-data-status-perkawinan.xls
-    package_search q='dukcapil' -> 200, 78 matches, 60 shown, printing those matching 'agama|kependudukan'
-      - dokumen-pelaksanaan-anggaran-dinas-kependudukan-dan-pencatatan-sipil-tahun-2022: Dokumen Pelaksanaan Anggaran Dinas Kependudukan dan Pencatatan Sipil Tahun 2022  [1 res: pdf]
-          PDF datastore=False 98dbded5-0a84-42bc-83b9-a761a2ecf352 https://data.kuduskab.go.id/dataset/c8cf4713-0177-417c-a9ce-a6ba9c40a37a/resource/98dbded5-0a84-42bc-83b9-a761a2ecf352/download/10.-dinas-dukcapil.pdf
-      - rka-dinas-kependudukan-dan-pencatatan-sipil-tahun-20221: RKA Dinas Kependudukan dan Pencatatan Sipil Tahun 2022  [1 res: pdf]
-          PDF datastore=False dac3b403-b9c6-4abc-adbb-804b968757d6 https://data.kuduskab.go.id/dataset/2e6941ea-63a1-4ca3-a682-c96fab8e8df5/resource/dac3b403-b9c6-4abc-adbb-804b968757d6/download/10.dinas-dukcapil.pdf
-      - ringkasan-dpa-dinas-kependudukan-dan-pencatatan-sipil: Ringkasan DPA Dinas Kependudukan dan Pencatatan Sipil  [1 res: pdf]
-          PDF datastore=False 1d266a5e-4340-4256-972f-87c4a2952670 http://data.kuduskab.go.id/dataset/26014dde-ee4c-446b-a90c-2fab834432cb/resource/1d266a5e-4340-4256-972f-87c4a2952670/download/11.dukcapil.pdf
-      (57 others not matching)
-    package_search q='penduduk menurut agama' -> 200, 5557 matches, 60 shown, printing those matching 'agama|kependudukan'
-      - jumlah-penduduk-menurut-agama: JUMLAH PENDUDUK MENURUT AGAMA  [2 res: .xlsx,csv]
-          CSV datastore=False eb521c81-2def-42ef-908c-4842032592fc http://103.78.143.59/dataset/b10576dd-cc1f-4311-bb11-40556db0f2fb/resource/eb521c81-2def-42ef-908c-4842032592fc/download/jumlah-penduduk-menurut-agama-dirinci-menurut-desa-tahun-2015.csv
-          .xlsx datastore=False 3edb8621-8356-4d31-b279-032a082243ba http://103.78.143.59/dataset/b10576dd-cc1f-4311-bb11-40556db0f2fb/resource/3edb8621-8356-4d31-b279-032a082243ba/download/jumlah-penduduk-menurut-agama-dirinci-menurut-desa-tahun-2015.xlsx
-      - jumlah-penduduk-menurut-agama2: JUMLAH PENDUDUK MENURUT AGAMA  [1 res: xlsx]
-          XLSX datastore=False 0b949820-b579-4b2a-93c7-b7ed4b0c3b78 https://opendata.karanganyarkab.go.id/dataset/674274da-0a8d-48f2-b92d-ba906f46c1c5/resource/0b949820-b579-4b2a-93c7-b7ed4b0c3b78/download/jumlah-penduduk-menurut-agama.xlsx
-      - jumlah-penduduk-menurut-agama1: JUMLAH PENDUDUK MENURUT AGAMA  [0 res: ]
-      - komposisi_penduduk_menurut_agama_16494: Komposisi Penduduk Menurut Agama  [0 res: ]
-      - komposisi_penduduk_menurut_agama_16493: Komposisi Penduduk Menurut Agama  [0 res: ]
-      - komposisi_penduduk_menurut_agama_16492: Komposisi Penduduk Menurut Agama  [0 res: ]
-      - komposisi_penduduk_menurut_agama_16491: Komposisi Penduduk Menurut Agama  [0 res: ]
-      - komposisi_penduduk_menurut_agama_1649: Komposisi Penduduk Menurut Agama  [0 res: ]
-      - penduduk-menurut-agama-yang-dianut: Penduduk menurut Agama yang dianut  [0 res: ]
-      - data-jumlah-penduduk-berdasarkan-agama-jumlah-menurut-agama: Data Jumlah Penduduk Berdasarkan Agama Jumlah menurut agama  [1 res: json]
-          JSON datastore=False dc9303e8-95e9-4f1a-bf6b-97d3e43685f2 http://satudata.purworejokab.go.id/api/79153/0/jumlah-menurut-agama.json
-      - jumlah-penduduk-menurut-agama-di-kecamatan-banyuputih-2017: Jumlah Penduduk Menurut Agama di Kecamatan Banyuputih  [2 res: csv,xlsx]
-          XLSX datastore=False ee86024d-7d9c-40f7-b61e-45830a6ae963 http://data.batangkab.go.id/dataset/265a068f-6bfb-4066-a852-dea71cd6f92e/resource/ee86024d-7d9c-40f7-b61e-45830a6ae963/download/jumlah-penduduk-menurut-agama-di-kecamatan-banyuputih-2017.xlsx
-          CSV datastore=False f29cc0e7-9e6b-46a1-ba47-c05ed75b1285 http://data.batangkab.go.id/dataset/265a068f-6bfb-4066-a852-dea71cd6f92e/resource/f29cc0e7-9e6b-46a1-ba47-c05ed75b1285/download/jumlah-penduduk-menurut-agama-di-kecamatan-banyuputih-2017.csv
-      - jumlah-penduduk-menurut-agama-yang-dianut-di-kecamatan-demak-tahun-2020: JUMLAH PENDUDUK MENURUT AGAMA YANG DIANUT  [1 res: xlsx]
-          XLSX datastore=False 1a48fb5d-bb4b-445e-845e-4e79bca961ec http://103.47.60.179/dataset/9c76d850-0778-4d68-b053-fde5717e8d17/resource/1a48fb5d-bb4b-445e-845e-4e79bca961ec/download/jumlah-penduduk-menurut-agama-yang-dianut-di-kecamatan-demak-tahun-2020.xlsx
-      - jumlah-penduduk-menurut-agama-yang-dianut: Jumlah Penduduk menurut Agama yang dianut  [0 res: ]
-      - jumlah-penduduk-kabupaten-pati-menurut-agama-2025: Jumlah Penduduk Kabupaten Pati Menurut Agama, 2025  [1 res: xlsx]
-          XLSX datastore=False 9d3ad233-d429-48fd-b10f-dc35457893a6 https://opendata.patikab.go.id/dataset/41a88c14-acc4-46a0-91b7-8780e77b6bdb/resource/9d3ad233-d429-48fd-b10f-dc35457893a6/download/jumlah-penduduk-kabupaten-pati-menurut-agama-2025.xlsx
-      - banyaknya-penduduk-dirinci-menurut-agama-tahun-2017: Banyaknya Penduduk Dirinci Menurut Agama Tahun 2017  [1 res: pdf]
-          PDF datastore=False 2f915ba5-545e-49f5-b48c-b5adfc7ceffe http://satudata.semarangkota.go.id/adm/file/20181030144216BanyaknyaPendudukDirinciMenurutAgamaTahun2017.pdf
-      - presentase-penduduk-dirinci-menurut-agama-yang-dianut-di-kecamata-demak-tahun-2020: PRESENTASE PENDUDUK DIRINCI MENURUT AGAMA YANG DIANUT  [1 res: xlsx]
-          XLSX datastore=False 9c74fdf3-ef26-4b33-af52-fdf4b743c620 http://103.47.60.179/dataset/1f89b547-8150-424a-9335-db5a4a7d2743/resource/9c74fdf3-ef26-4b33-af52-fdf4b743c620/download/presentase-penduduk-dirinci-menurut-agama-yang-dianut-di-kecamata-demak-tahun-2020.xlsx
-      - jumlah-penduduk-menurut-agama-tahun-2020: Jumlah Penduduk Menurut Agama Tahun 2020  [1 res: xlsx]
-          XLSX datastore=False 60869ffd-57e1-4490-ace0-78e0ae5fa9cf http://data.kuduskab.go.id/dataset/8c52528c-ccd6-41da-9334-bf308f269246/resource/60869ffd-57e1-4490-ace0-78e0ae5fa9cf/download/jumlah-penduduk-menurut-agama-tahun-2020.xlsx
-      - jumlah-penduduk-menurut-agama-di-kecamatan-bandar-2017: Jumlah Penduduk Menurut Agama di Kecamatan Bandar  [1 res: xlsx]
-          XLSX datastore=False 2ff3b5d8-a2e3-4b2b-be7d-c374ab0a72cf http://data.batangkab.go.id/dataset/8333f1c6-4f74-449a-a95c-b0cb51ad29df/resource/2ff3b5d8-a2e3-4b2b-be7d-c374ab0a72cf/download/jumlah-penduduk-menurut-agama-di-kecamatan-bandar-2017.xlsx
-      - jumlah-penduduk-menurut-agama-di-kecamatan-wonokerto: Jumlah Penduduk Menurut Agama di Kecamatan Wonokerto  [2 res: csv,xlsx]
-          XLSX datastore=False ffb840b9-c44c-44a7-ab14-b1912568ddd5 http://data.pekalongankab.go.id/dataset/423175de-75ad-4f13-9b3f-3ee75002f225/resource/ffb840b9-c44c-44a7-ab14-b1912568ddd5/download/jumlah-penduduk-menurut-agama-di-kecamatan-wonokerto-tahun-2017.xlsx
-          CSV datastore=False 06164de9-e335-499b-8030-8cb9abbb65b7 http://data.pekalongankab.go.id/dataset/423175de-75ad-4f13-9b3f-3ee75002f225/resource/06164de9-e335-499b-8030-8cb9abbb65b7/download/jumlah-penduduk-menurut-agama-di-kecamatan-wonokerto-tahun-2017.csv
-      - jumlah-penduduk-menurut-agama-di-kecamatan-talun: Jumlah Penduduk Menurut Agama di Kecamatan Talun  [2 res: csv,xlsx]
-          XLSX datastore=False aeb02556-2896-48cb-9844-fa1e16d67656 http://data.pekalongankab.go.id/dataset/ebaed4e6-0cc5-452e-902a-b938970e0608/resource/aeb02556-2896-48cb-9844-fa1e16d67656/download/jumlah-penduduk-menurut-agama-di-kecamatan-talun-tahun-2017.xlsx
-          CSV datastore=False 5766c46b-b568-462d-9a99-23fc7531315f http://data.pekalongankab.go.id/dataset/ebaed4e6-0cc5-452e-902a-b938970e0608/resource/5766c46b-b568-462d-9a99-23fc7531315f/download/jumlah-penduduk-menurut-agama-di-kecamatan-talun-tahun-2017.csv
-      - jumlah-penduduk-menurut-agama-di-kecamatan-kesesi: Jumlah Penduduk Menurut Agama di Kecamatan Kesesi  [2 res: csv,xlsx]
-          XLSX datastore=False ef83d75a-70bf-4571-99c4-d9fd8a450bdd http://data.pekalongankab.go.id/dataset/19a532cb-f345-4607-ae16-cb8a1c224bc6/resource/ef83d75a-70bf-4571-99c4-d9fd8a450bdd/download/jumlah-penduduk-menurut-agama-di-kecamatan-kesesi-tahun-2017.xlsx
-          CSV datastore=False ee5aea59-a713-4c6b-a094-af7a6d8f7d34 http://data.pekalongankab.go.id/dataset/19a532cb-f345-4607-ae16-cb8a1c224bc6/resource/ee5aea59-a713-4c6b-a094-af7a6d8f7d34/download/jumlah-penduduk-menurut-agama-di-kecamatan-kesesi-tahun-2017.csv
-      - jumlah-penduduk-menurut-agama-di-kecamatan-paninggaran: Jumlah Penduduk Menurut Agama di Kecamatan Paninggaran  [2 res: csv,xlsx]
-          XLSX datastore=False 9a66747c-210a-469b-9a36-ea57fc815006 http://data.pekalongankab.go.id/dataset/098e9f47-3146-4843-930b-bd2c9ff0ac2d/resource/9a66747c-210a-469b-9a36-ea57fc815006/download/jumlah-penduduk-menurut-agama-di-kecamatan-paninggaran-tahun-2017.xlsx
-          CSV datastore=False 23358f9f-6eee-47a8-a6bd-68d1ba2adb5b http://data.pekalongankab.go.id/dataset/098e9f47-3146-4843-930b-bd2c9ff0ac2d/resource/23358f9f-6eee-47a8-a6bd-68d1ba2adb5b/download/jumlah-penduduk-menurut-agama-di-kecamatan-paninggaran-tahun-2017.csv
-      - jumlah-penduduk-menurut-agama-di-kecamatan-sragi: Jumlah Penduduk Menurut Agama di Kecamatan Sragi  [2 res: csv,xlsx]
-          XLSX datastore=False a361a536-6c78-49dd-a5bf-c60fe58bb874 http://data.pekalongankab.go.id/dataset/84bde799-d685-46e3-8de8-6f95d3eeded8/resource/a361a536-6c78-49dd-a5bf-c60fe58bb874/download/jumlah-penduduk-menurut-agama-di-kecamatan-sragi-tahun-2017.xlsx
-          CSV datastore=False f232171b-6192-4e86-b8d6-b56f64a7ec8f http://data.pekalongankab.go.id/dataset/84bde799-d685-46e3-8de8-6f95d3eeded8/resource/f232171b-6192-4e86-b8d6-b56f64a7ec8f/download/jumlah-penduduk-menurut-agama-di-kecamatan-sragi-tahun-2017.csv
-      - jumlah-penduduk-kecamatan-tirto-menurut-agama: Jumlah Penduduk Kecamatan Tirto Menurut Agama  [2 res: csv]
-          CSV datastore=False f9b8a0b6-fffb-453e-8d84-407db8d1cf99 http://data.pekalongankab.go.id/dataset/029ecc3c-ba73-4940-a7e1-bd6e31c79f13/resource/f9b8a0b6-fffb-453e-8d84-407db8d1cf99/download/jumlah-penduduk-kecamatan-tirto-menurut-agama-tahun-2016.csv
-          CSV datastore=False bb40c880-7b5c-40ff-bcf8-21b24c7301ef http://data.pekalongankab.go.id/dataset/029ecc3c-ba73-4940-a7e1-bd6e31c79f13/resource/bb40c880-7b5c-40ff-bcf8-21b24c7301ef/download/jumlah-penduduk-kecamatan-tirto-menurut-agama-tahun-2017.csv
-      - banyaknya-penduduk-menurut-kecamatan-dan-agama: Banyaknya Penduduk Menurut Kecamatan dan Agama  [1 res: csv]
-          CSV datastore=False 495c8a87-8f6a-4552-b648-bf3933a00e9e http://103.105.190.59/dataset/1e6698f6-fced-4cc2-8e29-746f0ec24fd7/resource/495c8a87-8f6a-4552-b648-bf3933a00e9e/download/data-banyaknya-penduduk-menurut-kecamatan-dan-agama-2017.csv
-      - jumlah-penduduk-menurut-agama-kecamatan-limpung-2016: Jumlah Penduduk Menurut Agama Kecamatan Limpung, 2016  [1 res: csv]
-          CSV datastore=False e064d4cb-3c47-471b-aec8-e4e413b0b66b http://103.78.143.59/dataset/4b07e3a4-d077-4905-bd19-07741f971a2b/resource/e064d4cb-3c47-471b-aec8-e4e413b0b66b/download/jumlah-penduduk-menurut-agama-di-kecamatan-limpung-2016.csv
-      - data-jumlah-penduduk-menurut-agama-tahun-2015: Data jumlah penduduk menurut Agama Tahun 2015  [1 res: xlxs]
-          xlxs datastore=False 4b10db65-4e53-4881-99a0-00c61a434314 http://103.30.181.240/dataset/83477dac-cffc-430a-b64b-3871b93d561f/resource/4b10db65-4e53-4881-99a0-00c61a434314/download/data-jumlah-penduduk-menurut-agama-yang-dianut.xlsx
-      - jumlah-penduduk-meut-agama-yang-dianut-di-kecamatan-karangawen-2021: Jumlah Penduduk Menurut Agama yang dianut  [1 res: xlsx]
-          XLSX datastore=False 3c3cb395-60db-4dfb-a939-b368726bc203 http://103.47.60.179/dataset/4e8bb58a-eba3-44ba-b21c-c3e359d3d9d3/resource/3c3cb395-60db-4dfb-a939-b368726bc203/download/jumlah-penduduk-menurut-agama-yang-dianut-di-kecamatan-karangawen-2021.xlsx
-      - jumlah-penduduk-menurut-agama-di-kecamatan-petungkriyono: Jumlah Penduduk Menurut Agama di Kecamatan Petungkriyono  [2 res: csv,xlsx]
-          XLSX datastore=False 2abdc0fe-afd6-49e2-89b3-17a242e7ec59 http://data.pekalongankab.go.id/dataset/62aee08e-0647-4b74-a911-61117c17ca68/resource/2abdc0fe-afd6-49e2-89b3-17a242e7ec59/download/jumlah-penduduk-menurut-agama-di-kecamatan-petungkriyono-tahun-2017.xlsx
-          CSV datastore=False dd6a2ced-ea42-49e3-9da5-898bb2bc6559 http://data.pekalongankab.go.id/dataset/62aee08e-0647-4b74-a911-61117c17ca68/resource/dd6a2ced-ea42-49e3-9da5-898bb2bc6559/download/jumlah-penduduk-rumah-tangga-dan-rata-rata-banyaknya-art-di-kecamatan-petungkriyono-tahun-2017.csv
-      - jumlah-penduduk-menurut-agama-di-kecamatan-karangdadap: Jumlah Penduduk Menurut Agama di Kecamatan Karangdadap  [0 res: ]
-      - jumlah-penduduk-menurut-agama-di-kecamatan-kandangserang: Jumlah Penduduk Menurut Agama di Kecamatan Kandangserang  [0 res: ]
-      - jumlah-penduduk-menurut-agama-di-kecamatan-karanganyar: Jumlah Penduduk Menurut Agama di Kecamatan Karanganyar  [0 res: ]
-      - jumlah-penduduk-menurut-agama-di-kecamatan-kajen: Jumlah Penduduk Menurut Agama di Kecamatan Kajen  [0 res: ]
-      - jumlah-penduduk-menurut-agama-di-kecamatan-bojong: Jumlah Penduduk Menurut Agama di Kecamatan Bojong  [0 res: ]
-      - jumlah-penduduk-menurut-agama-di-kecamatan-wonopringgo: Jumlah Penduduk Menurut Agama di Kecamatan Wonopringgo  [0 res: ]
-      - jumlah-penduduk-menurut-agama-di-kabupaten-pekalongan1: Jumlah Penduduk Menurut Agama di Kabupaten Pekalongan  [1 res: xlsx]
-          XLSX datastore=False 067441bb-5e1a-4eee-b95b-9ee7ec546e86 http://data.pekalongankab.go.id/dataset/7f597e81-0a35-428f-ab39-a6ccfdb79895/resource/067441bb-5e1a-4eee-b95b-9ee7ec546e86/download/jumlah-penduduk-menurut-agama-di-kabupaten-pekalongan-tahun-2017.xlsx
-      - jumlah-penduduk-menurut-agama-di-kabupaten-pekalongan: Jumlah Penduduk Menurut Agama di Kabupaten Pekalongan  [1 res: xlsx]
-          XLSX datastore=False 0ef60d89-79ae-40be-87dc-5f79851d41c4 http://data.pekalongankab.go.id/dataset/b20fafc9-ab8e-4ed1-a393-783f189ae3a6/resource/0ef60d89-79ae-40be-87dc-5f79851d41c4/download/jumlah-penduduk-menurut-agama-di-kabupaten-pekalongan-tahun-2017.xlsx
-      - data-jumlah-penduduk-kabupaten-wonosobo-menurut-agama-tahun-2003-2016: Data Jumlah Penduduk Kabupaten Wonosobo Menurut Agama  [1 res: csv]
-          CSV datastore=False fc43a270-6961-4713-8c26-0cd9f82ef6c6 http://180.250.141.230/dataset/2ec147e1-52ec-42b6-be85-656e6701df17/resource/fc43a270-6961-4713-8c26-0cd9f82ef6c6/download/data-jumlah-penduduk-kabupaten-wonosobo-menurut-agama-2003-2016.csv
-      - jumlah-penduduk-menuruang-dianut-di-kecamatan-karangawen-2021: Jumlah Penduduk Menurut Agama yang dianut  [1 res: xlsx]
-          XLSX datastore=False 052632cb-bc3e-41fe-a402-1f360d3f9d47 http://103.47.60.179/dataset/8de95607-f387-41ed-b94b-ce8796c1b806/resource/052632cb-bc3e-41fe-a402-1f360d3f9d47/download/jumlah-penduduk-menurut-agama-yang-dianut-di-kecamatan-karangawen-2021.xlsx
-      - 3my896_8l3i6_2gvk: Penduduk Menurut Agama yang Dianut [Tahun 2019]  [3 res: csv,json,xlsx]
-          JSON datastore=False ea1f3d74-bb67-4767-943c-cdf3d4720b36 https://data.rembangkab.go.id/dataset/f937f8c7-4ae0-4524-9a56-cb9df0d9688a/resource/ea1f3d74-bb67-4767-943c-cdf3d4720b36/download/209_2019.json
-          XLSX datastore=False 8941fedb-4b47-47df-8532-88656eef13df https://data.rembangkab.go.id/dataset/f937f8c7-4ae0-4524-9a56-cb9df0d9688a/resource/8941fedb-4b47-47df-8532-88656eef13df/download/209_2019.xlsx
-          CSV datastore=False 3a15418e-b473-4568-a247-069af303d5e6 https://data.rembangkab.go.id/dataset/f937f8c7-4ae0-4524-9a56-cb9df0d9688a/resource/3a15418e-b473-4568-a247-069af303d5e6/download/209_2019.csv
-      - xa2734_i5uaq_9v0c: Penduduk Menurut Agama yang Dianut [Tahun 2017]  [3 res: csv,json,xlsx]
-          JSON datastore=False a96c3172-1c64-43be-a933-4af08af2665c https://data.rembangkab.go.id/dataset/e8b4d28f-067a-4d84-a1ba-baa217dc647f/resource/a96c3172-1c64-43be-a933-4af08af2665c/download/209_2017.json
-          XLSX datastore=False cd8045a2-a7e5-4128-88cb-f0a02261275c https://data.rembangkab.go.id/dataset/e8b4d28f-067a-4d84-a1ba-baa217dc647f/resource/cd8045a2-a7e5-4128-88cb-f0a02261275c/download/209_2017.xlsx
-          CSV datastore=False 562919c0-0dc7-4780-b430-eba426aac578 https://data.rembangkab.go.id/dataset/e8b4d28f-067a-4d84-a1ba-baa217dc647f/resource/562919c0-0dc7-4780-b430-eba426aac578/download/209_2017.csv
-      - 2zmnk6_fq985_l1t5: Penduduk Menurut Agama yang Dianut [Tahun 2018]  [3 res: csv,json,xlsx]
-          JSON datastore=False 44f37404-81ca-483c-b950-cf15c4e3ef5d https://data.rembangkab.go.id/dataset/e86e749b-5770-49dc-8d23-5bd7bd13f661/resource/44f37404-81ca-483c-b950-cf15c4e3ef5d/download/209_2018.json
-          XLSX datastore=False 77a91d19-9dbc-410e-aedd-9a4e68f0f50f https://data.rembangkab.go.id/dataset/e86e749b-5770-49dc-8d23-5bd7bd13f661/resource/77a91d19-9dbc-410e-aedd-9a4e68f0f50f/download/209_2018.xlsx
-          CSV datastore=False 3bf32bd3-8a97-49c9-83f8-eee69ab81186 https://data.rembangkab.go.id/dataset/e86e749b-5770-49dc-8d23-5bd7bd13f661/resource/3bf32bd3-8a97-49c9-83f8-eee69ab81186/download/209_2018.csv
-      - w2t7jf_ugs02_v7tq: Penduduk Menurut Agama yang Dianut [Tahun 2014]  [3 res: csv,json,xlsx]
-          JSON datastore=False 5950c754-b903-43bf-b11a-3d5464965413 https://data.rembangkab.go.id/dataset/c7cc883f-5a3f-4d11-922e-07d614ad7fc2/resource/5950c754-b903-43bf-b11a-3d5464965413/download/209_2014.json
-          XLSX datastore=False f88a7286-b118-4bd1-905e-c9fdf25b5069 https://data.rembangkab.go.id/dataset/c7cc883f-5a3f-4d11-922e-07d614ad7fc2/resource/f88a7286-b118-4bd1-905e-c9fdf25b5069/download/209_2014.xlsx
-          CSV datastore=False 6cd485d2-f46d-444c-bcbb-30d30b554127 https://data.rembangkab.go.id/dataset/c7cc883f-5a3f-4d11-922e-07d614ad7fc2/resource/6cd485d2-f46d-444c-bcbb-30d30b554127/download/209_2014.csv
-      - pcmx0l_nzkvt_xmev: Penduduk Menurut Agama yang Dianut [Tahun 2016]  [3 res: csv,json,xlsx]
-          JSON datastore=False 37e8145f-0b9b-4380-b323-d1f4d95882b8 https://data.rembangkab.go.id/dataset/8c2b21a6-7c0c-4e0f-9b6e-fc7e657bd0b4/resource/37e8145f-0b9b-4380-b323-d1f4d95882b8/download/209_2016.json
-          XLSX datastore=False 92700e05-3f62-401e-b97a-f36a19394f0a https://data.rembangkab.go.id/dataset/8c2b21a6-7c0c-4e0f-9b6e-fc7e657bd0b4/resource/92700e05-3f62-401e-b97a-f36a19394f0a/download/209_2016.xlsx
-          CSV datastore=False 597ff4d5-65ee-4234-a302-c85cfbc81b80 https://data.rembangkab.go.id/dataset/8c2b21a6-7c0c-4e0f-9b6e-fc7e657bd0b4/resource/597ff4d5-65ee-4234-a302-c85cfbc81b80/download/209_2016.csv
-      - wab8y3_wcpk9_g97e: Penduduk Menurut Agama yang Dianut [Tahun 2010]  [3 res: csv,json,xlsx]
-          JSON datastore=False dc9a2943-4115-40eb-bbd2-b39417dfa265 https://data.rembangkab.go.id/dataset/642929ca-1cc7-48b3-99e4-9efef6b7dee4/resource/dc9a2943-4115-40eb-bbd2-b39417dfa265/download/209_2010.json
-          XLSX datastore=False a0631e26-9465-4e77-b4c2-3eafb4dbc027 https://data.rembangkab.go.id/dataset/642929ca-1cc7-48b3-99e4-9efef6b7dee4/resource/a0631e26-9465-4e77-b4c2-3eafb4dbc027/download/209_2010.xlsx
-          CSV datastore=False 29a24829-1fa0-4ce1-b536-38be1444c8ff https://data.rembangkab.go.id/dataset/642929ca-1cc7-48b3-99e4-9efef6b7dee4/resource/29a24829-1fa0-4ce1-b536-38be1444c8ff/download/209_2010.csv
-      - yrjs8l_gq42u_nvwt: Penduduk Menurut Agama yang Dianut [Tahun 2014]  [3 res: csv,json,xlsx]
-          JSON datastore=False 29843977-16f4-4842-9d11-54f6d9ec215c https://data.rembangkab.go.id/dataset/60347d80-5e0b-4806-b08f-7d13eb6ed7b4/resource/29843977-16f4-4842-9d11-54f6d9ec215c/download/209_2014.json
-          XLSX datastore=False 023578f2-ab88-42f6-812f-f12d4851eb90 https://data.rembangkab.go.id/dataset/60347d80-5e0b-4806-b08f-7d13eb6ed7b4/resource/023578f2-ab88-42f6-812f-f12d4851eb90/download/209_2014.xlsx
-          CSV datastore=False 48f23232-b354-406d-818a-d66a855017b4 https://data.rembangkab.go.id/dataset/60347d80-5e0b-4806-b08f-7d13eb6ed7b4/resource/48f23232-b354-406d-818a-d66a855017b4/download/209_2014.csv
-      - jumlah-penduduk-menurut-agama-dirinci-menurut-desa-tahun-2014: JUMLAH PENDUDUK MENURUT AGAMA DIRINCI MENURUT DESA TAHUN 2014  [2 res: csv,xlsx]
-          CSV datastore=False db509c74-10dd-470b-82ef-6cc9db9cd424 http://data.batangkab.go.id/dataset/e7aece86-1eed-423d-8948-39c9489e42ab/resource/db509c74-10dd-470b-82ef-6cc9db9cd424/download/jumlah-penduduk-menurut-agama.csv
-          XLSX datastore=False fe88bc93-a49e-405e-931c-169fec0bf25a http://data.batangkab.go.id/dataset/e7aece86-1eed-423d-8948-39c9489e42ab/resource/fe88bc93-a49e-405e-931c-169fec0bf25a/download/jumlah-penduduk-menurut-agama-dirinci-menurut-desa-tahun-2014.xlsx
-      - jumlah-penduduk-berdasarkan-agama: Jumlah Penduduk Berdasarkan Agama  [1 res: xls]
-          XLS datastore=False 4d33489a-6944-4028-868c-669cb2ac830f http://opendata.karanganyarkab.go.id/dataset/2d2d9060-3231-4f28-b684-eb15209f6b1d/resource/4d33489a-6944-4028-868c-669cb2ac830f/download/jumlah-penduduk-berdasarkan-agama.xls
-      - penduduk_agama_15853: Jumlah Penduduk Berdasarkan Agama  [0 res: ]
-      - penduduk_agama_15852: Jumlah Penduduk Berdasarkan Agama  [0 res: ]
-      - penduduk_agama_15851: Jumlah Penduduk Berdasarkan Agama  [0 res: ]
-      - penduduk_agama_1585: JUMLAH PENDUDUK BERDASARKAN AGAMA  [0 res: ]
-      - jumlah-penduduk-berdasarkan-agama-per-kecamatan: Jumlah Penduduk Berdasarkan Agama  [2 res: csv,xlsx]
-          CSV datastore=False d3de9434-9c98-4634-9e4c-1a2b4ebf17a1 https://data.purbalinggakab.go.id/dataset/8ea3bb1b-d820-4571-8a00-031080b98899/resource/d3de9434-9c98-4634-9e4c-1a2b4ebf17a1/download/tahun-2015-semester-2-jumlah-penduduk-berdasarkan-agama.csv
-          XLSX datastore=False 35107176-374e-4c09-9f6c-6a116194b103 https://data.purbalinggakab.go.id/dataset/8ea3bb1b-d820-4571-8a00-031080b98899/resource/35107176-374e-4c09-9f6c-6a116194b103/download/19.-jumlah-penduduk-berdasarkan-agama-per-kec.xlsx
-      - banyaknya-pemeluk-agama-per-kelurahan-kota-salatiga: Penduduk Berdasarkan Pemeluk Agama  [1 res: csv]
-          CSV datastore=False b19cafe3-7951-48af-81bb-fd8ef9b603a4 http://data.salatiga.go.id/en/dataset/e9486e97-f65a-4448-8e71-b0abe15eb1b9/resource/b19cafe3-7951-48af-81bb-fd8ef9b603a4/download/banyaknya-pemeluk-agama-per-kelurahan-kota-salatiga-tahun-2017.csv
-      - jumlahpendudukmenurutstrukturagamatahun20202021: Jumlah Penduduk Menurut Struktur Agama Tahun 2020 2021  [1 res: xls]
-          XLS datastore=False 21d27c40-18e0-4430-a059-ff28ae102e43 http://data.cilacapkab.go.id/dataset/7f4d87b7-4cd2-4878-a276-fcbbd19ae355/resource/21d27c40-18e0-4430-a059-ff28ae102e43/download/jumlah-penduduk-menurut-struktur-agama-tahun-2020-2021.xlsx
-      - jumlah-penduduk-berdasarkan-agama-2019: Jumlah penduduk berdasarkan agama 2019  [1 res: pdf]
-          PDF datastore=False 337d0a70-8c29-4aff-affa-9aae2a874cde http://data.grobogan.go.id/dataset/e2325653-48b8-4c65-9301-77752c1b007a/resource/337d0a70-8c29-4aff-affa-9aae2a874cde/download/19_jumlah_penduduk_agama_kec_201902.pdf
-      - jumlah-penduduk-sesuai-agama-2019: JUMLAH PENDUDUK SESUAI AGAMA 2019  [2 res: csv,xlsx]
-          XLSX datastore=False add88b4a-6c48-42a9-9235-2a9dd24c1886 http://103.146.199.34/dataset/e13ba638-0901-4a69-a1af-0fc87466c619/resource/add88b4a-6c48-42a9-9235-2a9dd24c1886/download/jml-penduduk-sesuai-agama-2019.xlsx
-          CSV datastore=False 02853890-8031-4cad-9384-c6f31efe887b http://103.146.199.34/dataset/e13ba638-0901-4a69-a1af-0fc87466c619/resource/02853890-8031-4cad-9384-c6f31efe887b/download/jml-penduduk-sesuai-agama-2019.xlsx
-      - jumlah-penduduk-menurut-agama-di-kecamatan-blado-2017: Jumlah Penduduk Menurut Agama di Kecamatan Blado, 2017  [2 res: csv,xlsx]
-          XLSX datastore=False 1cda678f-aeac-46cc-85d7-d3e306cfec26 http://data.batangkab.go.id/dataset/f4f57055-f34f-4e29-8984-45c56f13999f/resource/1cda678f-aeac-46cc-85d7-d3e306cfec26/download/jumlah-penduduk-menurut-agama-di-kecamatan-blado-2017.xlsx
-          CSV datastore=False 7cbe43c7-1201-4b92-ba1d-5e0271567764 http://data.batangkab.go.id/dataset/f4f57055-f34f-4e29-8984-45c56f13999f/resource/7cbe43c7-1201-4b92-ba1d-5e0271567764/download/jumlah-penduduk-menurut-agama-di-kecamatan-blado-2017.csv
-      - jumlah-penduduk-menurut-agama-di-kecamatan-bawang-2017: Jumlah Penduduk Menurut Agama di Kecamatan Bawang, 2017  [2 res: csv,xlsx]
-          XLSX datastore=False 7dd2f826-9b06-4d82-94ea-edccfe5d030b http://103.146.199.34/dataset/6e1e1e91-a2e9-4b30-8417-e24f8037dacc/resource/7dd2f826-9b06-4d82-94ea-edccfe5d030b/download/jumlah-penduduk-menurut-agama-di-kecamatan-bawang-2017.xlsx
-          CSV datastore=False 164eab6e-10fa-4779-8e4a-3a1206d4d57e http://103.146.199.34/dataset/6e1e1e91-a2e9-4b30-8417-e24f8037dacc/resource/164eab6e-10fa-4779-8e4a-3a1206d4d57e/download/jumlah-penduduk-menurut-agama-di-kecamatan-bawang-2017.csv
-      - demografi-kependudukan_agama-penduduk-2021: Demografi Kependudukan_Agama Penduduk 2021  [1 res: xlsx]
-          XLSX datastore=False 99c97234-1809-4fc4-baec-5a1b65bb85aa https://opendata.karanganyarkab.go.id/dataset/5f01bcf5-19dd-4223-a7d7-446a1ab38b55/resource/99c97234-1809-4fc4-baec-5a1b65bb85aa/download/2021-data-status-perkawinan.xls
-probe_ckan: 3 of 3 answered; 3 speak CKAN: opendata.sumselprov.go.id, data.bantenprov.go.id, data.jatengprov.go.id
+probe_ckan: 4 host(s), timeout 30s
+  https://data.sumbarprov.go.id/ -> 200 text/html "Portal Data Sumbar"
+    /api/3/action/status_show -> 200 application/json CKAN 2.9.11
+    package_show 'buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat' -> 200: BUKU DATA KEPENDUDUKAN SEMESTER II TAHUN 2023 PROV. SUMATERA BARAT
+      metadata_modified: 2024-05-30T02:52:05.236001
+      author: Dinas Kependudukan dan Pencatatan Sipil Provinsi Sumatera Barat
+      organization: Dinas Kependudukan dan Pencatatan Sipil
+      resource 0e3e4a5c-956e-4770-b0b3-825f7a130666 [XLSX] datastore=True DISABILITAS - USIA SEKOLAH.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/0e3e4a5c-956e-4770-b0b3-825f7a130666/download/disabilitas-usia-sekolah.xlsx
+      resource c387481d-e66d-416e-8264-0ec97a499b23 [XLSX] datastore=True DISABILITAS - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/c387481d-e66d-416e-8264-0ec97a499b23/download/disabilitas-jenis-kelamin.xlsx
+      resource 71525c21-b607-4ea4-9bcb-ed3685dfd664 [XLSX] datastore=True GOLONGAN DARAH - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/71525c21-b607-4ea4-9bcb-ed3685dfd664/download/golongan-darah-jenis-kelamin.xlsx
+      resource 42ab0a95-1b27-4598-a6d9-adb4593702b1 [XLSX] datastore=True PEKERJAAN - USIA PRODUKTIF.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/42ab0a95-1b27-4598-a6d9-adb4593702b1/download/pekerjaan-usia-produktif.xlsx
+      resource 7a1a0815-abda-402f-ae6f-497a954f703a [XLSX] datastore=True PEKERJAAN - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/7a1a0815-abda-402f-ae6f-497a954f703a/download/pekerjaan-jenis-kelamin.xlsx
+      resource f85bef24-ed88-4251-b7c0-cb6806d69fab [XLSX] datastore=True PENDIDIKAN - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/f85bef24-ed88-4251-b7c0-cb6806d69fab/download/pendidikan-jenis-kelamin.xlsx
+      resource 418513f6-c45b-40fb-9151-61df45d5ee81 [XLSX] datastore=True AGAMA - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/418513f6-c45b-40fb-9151-61df45d5ee81/download/agama-jenis-kelamin.xlsx
+      resource 9f0d3481-1a91-4c2a-a6f2-498b9a44ef59 [XLSX] datastore=True STATUS KAWIN - PEKERJAAN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/9f0d3481-1a91-4c2a-a6f2-498b9a44ef59/download/status-kawin-pekerjaan.xlsx
+      resource a3129814-f6aa-45b8-ae15-b05b0a51ec06 [XLSX] datastore=True STATUS KAWIN - KELOMPOK UMUR.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/a3129814-f6aa-45b8-ae15-b05b0a51ec06/download/status-kawin-kelompok-umur.xlsx
+      resource 152d78fb-dd2b-479a-a0dc-9a5e97354d39 [XLSX] datastore=True STATUS KAWIN - AGAMA.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/152d78fb-dd2b-479a-a0dc-9a5e97354d39/download/status-kawin-agama.xlsx
+      resource 819e29d4-41d9-429a-a066-be2f4f42b312 [XLSX] datastore=True STATUS KAWIN - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/819e29d4-41d9-429a-a066-be2f4f42b312/download/status-kawin-jenis-kelamin.xlsx
+      resource 10173ef3-2f5c-4c87-b965-7ab20b007291 [XLSX] datastore=True USIA SEKOLAH.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/10173ef3-2f5c-4c87-b965-7ab20b007291/download/usia-sekolah.xlsx
+      resource be80ecec-d954-4fb5-9f60-cb556d1a6f06 [XLSX] datastore=True USIA MUDA, USIA PRODUKTIF DAN USIA TUA.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/be80ecec-d954-4fb5-9f60-cb556d1a6f06/download/usia-muda-usia-produktif-dan-usia-tua.xlsx
+      resource 1836ecaf-d521-43e0-b7bc-22f9dbc62978 [XLSX] datastore=True UMUR TUNGGAL.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/1836ecaf-d521-43e0-b7bc-22f9dbc62978/download/umur-tunggal.xlsx
+      resource e73c6550-30a1-45e3-abf3-0fcc7c285289 [XLSX] datastore=True STRUKTUR UMUR.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/e73c6550-30a1-45e3-abf3-0fcc7c285289/download/struktur-umur.xlsx
+      resource f4c8a6e3-50bb-4661-9d06-0b8567b577d3 [XLSX] datastore=True STATUS HUBUNGAN KELUARGA.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/f4c8a6e3-50bb-4661-9d06-0b8567b577d3/download/status-hubungan-keluarga.xlsx
+      resource e487a844-aef3-44f2-b775-e89d07b9176b [XLSX] datastore=True KEPALA KELUARGA - STATUS KAWIN KEL. UMUR.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/e487a844-aef3-44f2-b775-e89d07b9176b/download/kepala-keluarga-status-kawin-kel.-umur.xlsx
+      resource cf77cfbc-3878-4826-942a-4109e2aaa35d [XLSX] datastore=True KEPALA KELUARGA - UMUR TUNGGAL.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/cf77cfbc-3878-4826-942a-4109e2aaa35d/download/kepala-keluarga-umur-tunggal.xlsx
+      resource e871c367-a105-4994-9199-111a1dc7a841 [XLSX] datastore=True KEPALA KELUARGA - STATUS KAWIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/e871c367-a105-4994-9199-111a1dc7a841/download/kepala-keluarga-status-kawin.xlsx
+      resource c3c6a63a-d848-408a-ab5f-a411ff4239d1 [XLSX] datastore=True KEPALA KELUARGA - PENDIDIKAN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/c3c6a63a-d848-408a-ab5f-a411ff4239d1/download/kepala-keluarga-pendidikan.xlsx
+      resource 04a70a85-2cad-4338-abb4-0eb047322db4 [XLSX] datastore=True KEPALA KELUARGA - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/04a70a85-2cad-4338-abb4-0eb047322db4/download/kepala-keluarga-jenis-kelamin.xlsx
+      resource 975a34ee-4c82-44c4-a660-2b23f415de50 [XLSX] datastore=True KEPADATAN PENDUDUK.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/975a34ee-4c82-44c4-a660-2b23f415de50/download/kepadatan-penduduk.xlsx
+      resource 6f91f52b-1907-41cb-986b-cfb2153bd1f9 [XLSX] datastore=True JUMLAH PENDUDUK - TINGKAT RW DAN RT.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/6f91f52b-1907-41cb-986b-cfb2153bd1f9/download/jumlah-penduduk-tingkat-rw-dan-rt.xlsx
+      resource 8ce4ce89-00ec-4718-9d77-98fd52204ec6 [XLSX] datastore=True KEPEMILIKAN KK.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/8ce4ce89-00ec-4718-9d77-98fd52204ec6/download/kepemilikan-kk.xlsx
+      resource 947a3808-5336-4235-a901-11720511f079 [XLSX] datastore=True JUMLAH PENDUDUK - JENIS KELAMIN.xlsx
+        https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/947a3808-5336-4235-a901-11720511f079/download/jumlah-penduduk-jenis-kelamin.xlsx
+    package_show 'data-jumlah-pemeluk-agama-provinsi-kaltim-tahun-2021' -> 404 {"help": "https://data.sumbarprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Not found"}, "success": false}
+    package_show 'data-jumlah-penduduk-menurut-agama-tahun-2024' -> 404 {"help": "https://data.sumbarprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Not found"}, "success": false}
+    package_show 'jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-tahun-2021' -> 404 {"help": "https://data.sumbarprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Not found"}, "success": false}
+  https://data.kaltimprov.go.id/ -> 200 text/html "SATU DATA KALTIM"
+    /api/3/action/status_show -> 200 application/json CKAN ?
+    package_show 'buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat' -> 404 {"help": "https://data.kaltimprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Tidak ditemukan"}, "success": false}
+    package_show 'data-jumlah-pemeluk-agama-provinsi-kaltim-tahun-2021' -> 200: Data Jumlah Pemeluk Agama Prov. Kaltim Tahun 2021-2023
+      notes: Merupakan Data Jumlah Pemeluk Agama Provinsi Kaltim Tahun 2021-2022 ###Meliputi Variabel * Pemeluk Agama Islam : Islam adalah agama yang mengatur manusia agar menjadi selamat, sejahtera, aman, damai, dan menyerahkan diri kepada Allah, patuh dan tunduk kepada-Nya serta mau beribadah dengan penuh kesa
+      metadata_modified: 2025-05-05T01:18:53.696062
+      license_title: Creative Commons Non-Commercial (Any)
+      author: Kanwil Kementerian Agama Provinsi Kalimanatan Timur
+      organization: Kanwil Kementerian Agama Prov. Kaltim
+      resource bf80365e-937f-4616-9111-7faa910991d9 [XLSX] datastore=True Data Jumlah Pemeluk Agama Prov. Kaltim Tahun 2021-2023.xlsx
+        https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/bf80365e-937f-4616-9111-7faa910991d9/download/data-jumlah-pemeluk-agama-prov.-kaltim-tahun-2021-2023.xlsx
+      resource 05f8fa71-5b64-44d8-ad40-85ca618e9ecd [CSV] datastore=True Data Jumlah Pemeluk Agama Prov. Kaltim Tahun 2021-2022.csv
+        https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/05f8fa71-5b64-44d8-ad40-85ca618e9ecd/download/data-jumlah-pemeluk-agama-prov.-kaltim-tahun-2021-2022.csv
+      resource c33cae6b-5d6c-488c-8bb4-c063ab95bab0 [XLSX] datastore=True Data Jumlah Pemeluk Agama per KabKot Prov. Kaltim Tahun 2021.xlsx
+        https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/c33cae6b-5d6c-488c-8bb4-c063ab95bab0/download/data-jumlah-pemeluk-agama-per-kabkot-prov.-kaltim-tahun-2021.xlsx
+      resource ed8e4ed7-97c2-4c17-9976-d64f0a403fee [XLSX] datastore=True Data Jumlah Pemeluk Agama per KabKot Prov. Kaltim Tahun 2022.xlsx
+        https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/ed8e4ed7-97c2-4c17-9976-d64f0a403fee/download/data-jumlah-pemeluk-agama-per-kabkot-prov.-kaltim-tahun-2022.xlsx
+      resource 31b549ab-6cda-4d27-82c7-c991d1f9fde0 [XLSX] datastore=True Data Jumlah Pemeluk Agama per KabKot Prov. Kaltim Tahun 2023.xlsx
+        https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/31b549ab-6cda-4d27-82c7-c991d1f9fde0/download/data-jumlah-pemeluk-agama-per-kabkot-prov.-kaltim-tahun-2023.xlsx
+    package_show 'data-jumlah-penduduk-menurut-agama-tahun-2024' -> 404 {"help": "https://data.kaltimprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Tidak ditemukan"}, "success": false}
+    package_show 'jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-tahun-2021' -> 404 {"help": "https://data.kaltimprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Tidak ditemukan"}, "success": false}
+  https://data.bengkuluprov.go.id/ -> 200 text/html "Selamat datang - Bengkulu Portal Data"
+    /api/3/action/status_show -> 403 application/json {"help": "API Security Endpoint", "success": false, "error": {"__type": "Authorization Error", "message": "RBAC Policy:
+    /api/action/status_show -> 200 application/json CKAN 2.9.11
+    package_show 'buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat' -> 404 {"help": "https://data.bengkuluprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Tidak ditemukan"}, "success": false}
+    package_show 'data-jumlah-pemeluk-agama-provinsi-kaltim-tahun-2021' -> 404 {"help": "https://data.bengkuluprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Tidak ditemukan"}, "success": false}
+    package_show 'data-jumlah-penduduk-menurut-agama-tahun-2024' -> 200: DATA JUMLAH PENDUDUK MENURUT AGAMA DI PROVINSI BENGKULU TAHUN 2024
+      notes: Agama merupakan sistem ajaran, ritual, dan organisasi yang lebih luas yang mengaitkan manusia dengan hal-hal transendental, sementara kepercayaan adalah sikap batin dan keyakinan personal terhadap kebenaran suatu ajaran atau hal tertentu, yang bisa lebih sempit dan fokus pada nilai-nilai moral atau 
+      metadata_modified: 2025-08-26T03:21:47.295989
+      organization: Dinas Kependudukan dan Pencatatan Sipil Provinsi Bengkulu
+      resource cc6c8dd4-639b-426f-bc80-76cdbf267c36 [XLSX] datastore=True DATA JUMLAH PENDUDUK PROVINSI BENGKULU MENURUT AGAMA TAHUN 2024.xlsx
+        https://data.bengkuluprov.go.id/dataset/192aeb53-6c0c-4aca-9c06-e879ce3861e6/resource/cc6c8dd4-639b-426f-bc80-76cdbf267c36/download/data-jumlah-penduduk-provinsi-bengkulu-menurut-agama-tahun-2024.xlsx
+    package_show 'jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-tahun-2021' -> 404 {"help": "https://data.bengkuluprov.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Tidak ditemukan"}, "success": false}
+  https://data.tangerangselatankota.go.id/ -> 200 text/html "Welcome - Portal Data Kota Tangerang Selatan"
+    /api/3/action/status_show -> 200 application/json CKAN 2.9.11
+    package_show 'buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat' -> 404 {"help": "https://data.tangerangselatankota.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Not found"}, "success": false}
+    package_show 'data-jumlah-pemeluk-agama-provinsi-kaltim-tahun-2021' -> 404 {"help": "https://data.tangerangselatankota.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Not found"}, "success": false}
+    package_show 'data-jumlah-penduduk-menurut-agama-tahun-2024' -> 404 {"help": "https://data.tangerangselatankota.go.id/api/3/action/help_show?name=package_show", "error": {"__type": "Not Found Error", "message": "Not found"}, "success": false}
+    package_show 'jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-tahun-2021' -> 200: Jumlah Penduduk Menurut Kecamatan dan Agama di Kota Tangerang Selatan Data Konsolidasi Bersih (DKB) Tahun 2021
+      metadata_modified: 2022-10-20T06:45:21.016912
+      license_title: Creative Commons Attribution
+      author: Dinas Kependudukan dan Pencatatan Sipil
+      organization: Dinas Kependudukan dan Pencatatan Sipil
+      resource 2575b89b-a403-4829-8aab-bdbff1785a4a [CSV] datastore=True Tahun 2021 - Jumlah Penduduk Menurut Kecamatan dan di Agama Kota Tangerang Selat
+        https://data.tangerangselatankota.go.id/dataset/72e8d9bc-1c7d-491a-af72-77e8aa3fb18f/resource/2575b89b-a403-4829-8aab-bdbff1785a4a/download/1d.-jumlah-penduduk-menurut-kecamatan-dan-di-agama-kota-tangerang-selatan-data-konsolidasi-bersi.csv
+probe_ckan: 4 of 4 answered; 4 speak CKAN: data.sumbarprov.go.id, data.kaltimprov.go.id, data.bengkuluprov.go.id, data.tangerangselatankota.go.id
