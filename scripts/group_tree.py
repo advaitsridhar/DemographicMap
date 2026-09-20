@@ -1286,6 +1286,10 @@ def _invert(table: dict[str, tuple[str, ...]]) -> dict[str, str]:
 # answer a gap stays legible as such.
 LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     "Bantu languages": (
+        # CLEAR Global, DR Congo, Namibia, Uganda, Kenya and Malawi, at district level.
+        "Yombe", "Tetela", "Nande", "Songe", "Budja (C.37)", "Dengese",
+        "Bangala", "Bembe", "Havu", "Mashi", "Lambya", "Tooro", "Embu",
+        "Diriku-Shambyu",
         "Ovambo", "Herero", "Kwangali", "Lozi", "Yeyi", "Mbukushu",
         "Ngombe", "Teke", "Punu", "Kongo", "Luba", "Bemba", "Tonga",
         "Chokwe", "Ngangela", "Kwanyama", "Nyaneka", "Zaramo", "Korekore",
@@ -1306,7 +1310,10 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         "Myene", "Duma", "Makaa", "Mbochi", "Sangha", "Eshira", "Bakweri",
         "Bafia", "Bamum", "Batanga", "Yaka",
     ),
-    "Mande languages": ("Mandingo", "Dogon",
+    "Mande languages": (
+        # CLEAR Global, Guinea and Sierra Leone.
+        "Manenkan", "Western Maninkakan", "Kono (Guinea)", "Toma",
+        "Kuranko", "Kono (Sierra Leone)","Mandingo", "Dogon",
                         # Mali and Burkina Faso.
                         "Khassonke", "Samogo", "Dafing", "Marka", "Bissa",
                         "Bobo"),
@@ -1345,11 +1352,15 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     # which is where its neighbours on the same questionnaire sit.
     "Nilo-Saharan languages": ("Songhai", "Zarma", "Kanuri", "Fur", "Gula",
                                "Dendi"),
-    "Gur languages": ("Gurma", "Bwamu", "Lobi", "Dagara",
+    "Gur languages": (
+        # CLEAR Global, Benin and Ghana.
+        "Kusaal", "Yom", "Biali", "Waama", "Talni", "Mamara Senoufo","Gurma", "Bwamu", "Lobi", "Dagara",
                       "Gurunsi", "Minianka", "Kassena", "Konkomba"),
     # Central African Republic: the Ubangian languages its census lists, which
     # the tree reached only through the "Banda" and "Gbaya" cover terms.
     "Adamawa-Ubangi languages": (
+        # CLEAR Global, Nigeria.
+        "Chamba Donga", "Longuda",
         "Yakoma", "Nzakara", "Gbanziri", "Langbashe", "Sere", "Mandjia",
         "Gbanu", "Bokoto", "Suma", "Kare", "Dakpa", "Langba", "Ndi",
         "Tongo", "Gbaguiri", "Mboundjia", "Issongo", "Bofi", "Gbadok",
@@ -1370,11 +1381,16 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         # (Ethiopia)" in full, because Karo is also a Batak people.
         "Konta", "Karo (Ethiopia)",
     ),
-    "Cushitic languages": ("Alaba-K'abeena", "Qebena", "Werji", "Burji",
+    "Cushitic languages": (
+        # CLEAR Global, Somalia and Kenya: Benaadir and Maay are Somali varieties, Borana and Orma Oromo ones.
+        "Benaadir", "Maay", "Borana", "Orma","Alaba-K'abeena", "Qebena", "Werji", "Burji",
                            # Timbaaro, counted with Kambaata beside it.
                            "Timbara", "Timbaro"),
     # The Peruvian Amazon, which the census names by the people.
-    "Indigenous languages of the Americas": ("Ashaninka", "Awajun",
+    "Indigenous languages of the Americas": (
+        # CLEAR Global, Peru, Bolivia and Guatemala: Quechuan, and nine Mayan languages Guatemala's districts are led by.
+        "Quechuan", "K'iche'", "Q'eqchi'", "Ixil", "Kaqchikel",
+        "Q'anjob'al", "Chuj", "Achi", "Popti'", "Poqomchi'","Ashaninka", "Awajun",
                                              "Aguaruna"),
     # Russia's federal subjects. The Andic and Tsezic languages of Dagestan,
     # which the Russian census lists one by one beside Avar: every one of
@@ -1442,6 +1458,12 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     # place on one side of the split or the other, is deliberately left
     # unplaced rather than asserted into a family; see docs/SOURCES.md.
     "Malayo-Polynesian languages": (
+        # CLEAR Global, Indonesia and the Philippines: regional languages at district level, Priangan (Sundanese) and Iloko the commonest.
+        "Priangan", "Iloko", "Makasar", "Bangka", "Djambi", "Musi",
+        "Mandar", "Uab Meto", "Pampanga", "Nuclear Malayic", "Bima", "Li'o",
+        "Duri", "Indramayu", "Iban", "Selayar", "Sika", "Kailibo Aklanon",
+        "Yakan", "Ibatan", "Capiznon", "Tuwali Ifugao", "Kalinga",
+        "Masbatenyo", "Romblomanon", "Surigaonon", "Sama-Bajaw",
         "Tetun", "Tetun Prasa", "Tetun Terik", "Baikenu", "Galoli", "Idate",
         "Kemak", "Mambai", "Midiki", "Naueti", "Tokodede", "Waima'a",
         "Atauran", "Bekais", "Dadu'a", "Habun", "Idalaka", "Isni", "Kairui",
@@ -1452,7 +1474,9 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     "Papuan languages": ("Bunak", "Fataluku", "Makasai", "Makalero", "Adabe"),
     "Oceanic languages": ("Futunian", "Marquesan", "Paumotu", "Tuamotuan",
                           "Nauruan"),
-    "Creole languages": ("Norfolk", "Angolar", "Forro", "Lunguie", "Haitian"),
+    "Creole languages": (
+        # CLEAR Global, Cape Verde.
+        "Kabuverdianu","Norfolk", "Angolar", "Forro", "Lunguie", "Haitian"),
     # The band the US Virgin Islands writes, filed where the ACS's "Spanish
     # or Spanish Creole" and "French, Haitian, or Cajun" already sit.
     "Romance languages": ("Aragonese", "French or French Creole"),
@@ -1522,7 +1546,39 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     # a language this map can place in no family -- and not that either has
     # been shown to be alone in the world.
     "Language isolates": ("Yukaghir", "Yug"),
-    "Austroasiatic languages": ("Khmou", "Makong"),
+    "Austroasiatic languages": (
+        # CLEAR Global, Cambodia: "Khmeric" is the file's name for the branch Khmer heads, and it leads 134 districts.
+        "Khmeric", "Tampuan","Khmou", "Makong"),
+    # CLEAR Global, Namibia's file names Nyamal; it is a Pilbara language and belongs here rather than with its neighbours in that file.
+    "Indigenous languages of Australia": (
+        "Nyamal",
+    ),
+    # CLEAR Global, Benin: the Gbe cluster as its districts report it, plus the Ede (Yoruboid) varieties beside them.
+    "Kwa languages": (
+        "Ede Nago", "Weme Gbe", "Gbe", "Ayizo Gbe", "Kotafon Gbe",
+        "Saxwe Gbe", "Ede Idaca", "Maxi Gbe", "Ifè", "Ci Gbe", "Gen",
+        "Ede Cabe", "Tofin Gbe",
+    ),
+    # CLEAR Global, Sierra Leone and Senegal.
+    "Atlantic languages": (
+        "Timne", "Sereer",
+    ),
+    # CLEAR Global, Nigeria's north-east at district level.
+    "Chadic languages": (
+        "Bacama", "Marghic", "Cibak", "Karekare", "Kilba-South Margi",
+    ),
+    # CLEAR Global, Nigeria's delta.
+    "Ijoid languages": (
+        "Southeast Ijo",
+    ),
+    # CLEAR Global, DR Congo (Ituri).
+    "Central Sudanic languages": (
+        "Lendu",
+    ),
+    # CLEAR Global, Namibia.
+    "Khoisan languages": (
+        "Hai//om-Akhoe",
+    ),
 }
 
 ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
