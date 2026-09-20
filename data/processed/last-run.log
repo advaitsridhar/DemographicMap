@@ -1,61 +1,34 @@
-page: https://www.nso.gov.pg/statistics/population/
-  237,624 bytes
-  16 matching link(s)
-  - Census &amp; Surveys
-    https://www.nso.gov.pg/census-surveys/
-  - Demographic and Health Survey
-    https://www.nso.gov.pg/census-surveys/demographic-and-health-survey/
-  - Household and Income Expenditure Survey
-    https://www.nso.gov.pg/census-surveys/household-and-income-expenditure-survey/
-  - Population &#038; Housing
-    https://www.nso.gov.pg/census-surveys/national-population-housing-census/
-  - Population Data Collection and Assessment
-    https://www.nso.gov.pg/census-surveys/population-data-collection-and-assessment/
-  - Download Final Figures
-    https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf
-  - {{#if file_custom_icon}} {{else}} {{/if}} {{{crop_title}}}
-    https://www.nso.gov.pg/statistics/population/{{linkdownload}}
-  - 2024 National Population Census - Final Figures
-    https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures.pdf
-  - PNG National Report 2011 Census
-    https://www.nso.gov.pg/download/51/population-housing/2152/png-national-report-2011-census.pdf
-  - PNG National Report 2000 Census
-    https://www.nso.gov.pg/download/51/population-housing/2151/png-national-report-2000-census.pdf
-  - PNG Final Figures 2011 - Brochure
-    https://www.nso.gov.pg/download/51/population-housing/1841/png-final-figures-2011-brochure.pdf
-  - PNG Final Figures 2011 - Booklet
-    https://www.nso.gov.pg/download/51/population-housing/1842/png-final-figures-2011-booklet.pdf
-  - Census Figures by Wards - Southern Region
-    https://www.nso.gov.pg/download/51/population-housing/2960/census-figures-by-wards-southern-region.pdf
-  - Census Figures by Wards - Momase Region
-    https://www.nso.gov.pg/download/51/population-housing/2962/census-figures-by-wards-momase-region.pdf
-  - Census Figures by Wards - Islands Region
-    https://www.nso.gov.pg/download/51/population-housing/2959/census-figures-by-wards-islands-region.pdf
-  - Census Figures by Wards - Highlands Region
-    https://www.nso.gov.pg/download/51/population-housing/2961/census-figures-by-wards-highlands-region.pdf
-page: https://www.nso.gov.pg/census-surveys/national-population-housing-census/
-  231,976 bytes
-  5 matching link(s)
-  - Statistics
-    https://www.nso.gov.pg/census-surveys/national-population-housing-census/
-  - Census &amp; Surveys
-    https://www.nso.gov.pg/census-surveys/
-  - Demographic and Health Survey
-    https://www.nso.gov.pg/census-surveys/demographic-and-health-survey/
-  - Household and Income Expenditure Survey
-    https://www.nso.gov.pg/census-surveys/household-and-income-expenditure-survey/
-  - Population Data Collection and Assessment
-    https://www.nso.gov.pg/census-surveys/population-data-collection-and-assessment/
-page: https://www.nso.gov.pg/documents/
-  361,969 bytes
-  5 matching link(s)
-  - Census &amp; Surveys
-    https://www.nso.gov.pg/census-surveys/
-  - Demographic and Health Survey
-    https://www.nso.gov.pg/census-surveys/demographic-and-health-survey/
-  - Household and Income Expenditure Survey
-    https://www.nso.gov.pg/census-surveys/household-and-income-expenditure-survey/
-  - Population &#038; Housing
-    https://www.nso.gov.pg/census-surveys/national-population-housing-census/
-  - Population Data Collection and Assessment
-    https://www.nso.gov.pg/census-surveys/population-data-collection-and-assessment/
+probe_pdf: https://www.unicef.org/eap/sites/unicef.org.eap/files/2018-06/2017%20DPRK%20MICS%20Survey%20Findings%20Report_July%202018.pdf
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
+    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
+    blob = fetch_blob(url, aia=aia)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
+    with urllib.request.urlopen(req, timeout=90) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
