@@ -1,6 +1,2 @@
-  http://web.nso.mn/nada/index.php/catalog/PHC
-    unreachable: ConnectionRefusedError: [Errno 111] Connection refused
-  http://web.nso.mn/
-    unreachable: ConnectionRefusedError: [Errno 111] Connection refused
-  https://web.nso.mn/nada/index.php/catalog
-    unreachable: ConnectionRefusedError: [Errno 111] Connection refused
+probe_page: en.wikipedia.org Bayan-Olgii_Province
+  6 lines of text, 0 mentioning Kazakh, ethnic, 1212, census, religion
