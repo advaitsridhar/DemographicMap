@@ -727,8 +727,17 @@ class TheProvinceResidual(unittest.TestCase):
             self.known({"A": {"Islam": 95.0, "Protestantism": 5.0}}),
             self.province(["B"], ["A"], {"Islam": 40.0, "Protestantism": 60.0},
                           {"A": 100, "B": 100}), {})
-        self.assertEqual(out, [])
-        self.assertIn("already hold more", printed)
+        self.assertIn("hold more Islam than its own figures leave room for", printed)
+        # The residual is refused; the weaker method takes over rather than
+        # forcing a regency with no Muslims in it.
+        self.assertEqual(len(out), 1)
+        religion = out[0]["religion"]
+        self.assertEqual(religion["status"], "modelled")
+        self.assertEqual(religion["method"], "nearest regencies in the province")
+        self.assertEqual({r["group"]: r["pct"] for r in religion["estimate"]},
+                         {"Islam": 95.0, "Protestantism": 5.0})
+        self.assertIn("cannot supply one", religion["note"])
+        self.assertIn("rather than by sharing a border", religion["note"])
 
     def test_a_leftover_far_from_the_missing_population_is_refused(self):
         """The province's figures describe 70% of it and the regencies 100%.
@@ -743,8 +752,11 @@ class TheProvinceResidual(unittest.TestCase):
             self.known({"A": {"Islam": 50.0, "Protestantism": 50.0}}),
             self.province(["B"], ["A"], {"Islam": 35.0, "Protestantism": 35.0},
                           {"A": 100, "B": 100}), {})
-        self.assertEqual(out, [])
-        self.assertIn("the leftover is", printed)
+        self.assertIn("out", printed)
+        self.assertEqual(len(out), 1)
+        self.assertEqual(out[0]["religion"]["status"], "modelled")
+        self.assertEqual(out[0]["religion"]["method"],
+                         "nearest regencies in the province")
 
     def test_a_regency_with_no_head_count_stops_the_province(self):
         out, printed = quiet(

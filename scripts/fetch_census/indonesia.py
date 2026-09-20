@@ -103,6 +103,8 @@ LICENCE = "Official statistics; compilation CC BY-SA 4.0"
 # remainder of, because that is the only published thing behind it.
 RESIDUAL_SOURCE = ("Badan Pusat Statistik and Kementerian Agama province figures, "
                    "less the regencies published inside them")
+NEIGHBOUR_SOURCE = ("The nearest regencies of the same province, as the "
+                    "Indonesian Wikipedia publishes them")
 NATIONAL_PAGE = "Ethnic groups in Indonesia"
 POPULATION_PAGE = "Demografi Indonesia"
 SUM_TOLERANCE = 0.3          # a province's ethnic shares, against 100
@@ -1312,6 +1314,77 @@ RESIDUAL_SLACK = 0.10          # of the missing regencies' own population
 RESIDUAL_NEGATIVE = 0.005      # of the province's population
 
 
+def neighbour_records(known: dict[str, dict[str, Any]], province: str,
+                      info: dict[str, Any], refused: str) -> list[dict[str, Any]]:
+    """The nearest read regencies of the same province, where the residual
+    contradicts itself.
+
+    Three provinces do contradict themselves: the compositions published for
+    the regencies inside them account for more Muslims, Hindus or Protestants
+    than the province's own figures leave room for, so there is no remainder
+    to take and forcing one would mean writing a regency with no Muslims in
+    North Sumatra. This is the weaker method the residual was chosen over,
+    kept for exactly the case the residual cannot serve. Measured the same
+    way, by leave-one-out against the regencies that are read:
+
+        province residual         median 1.4 points off, dominant group 96.9%
+        three nearest in-province median 4.0 points off, dominant group 92.8%
+        the province itself       median 4.0 points off, dominant group 89.5%
+
+    The three nearest are taken rather than the province as a whole because
+    they are no worse on the median and better on the group a reader actually
+    sees -- the one the map colours the shape by.
+
+    Nearest is by the centroid the boundary file gives each shape, inside the
+    province only. It is not adjacency: two regencies either side of a bay
+    are near each other here and do not touch. The note says so, because a
+    reader should not be told this is a neighbour when it is a distance.
+    """
+    points = info.get("points", {})
+    read = [n for n in info["all"] if n not in info["gaps"] and n in known]
+    out: list[dict[str, Any]] = []
+    for name in sorted(info["gaps"]):
+        here = points.get(name)
+        near = [n for n in read if points.get(n)]
+        if here and near:
+            near.sort(key=lambda n: (points[n][0] - here[0]) ** 2
+                                    + (points[n][1] - here[1]) ** 2)
+            near = near[:3]
+        else:
+            near = read[:3]
+        if not near:
+            continue
+        pooled: dict[str, float] = {}
+        for other in near:
+            for row in known[other]["religion"]:
+                pooled[row["group"]] = pooled.get(row["group"], 0.0) + \
+                    row["pct"] / len(near)
+        rows = shares(pooled)
+        if not rows:
+            continue
+        out.append(regency_record(
+            name, province,
+            {"religion": estimate(
+                MODELLED, rows, method="nearest regencies in the province",
+                inputs=[f"{ISO3}-{slugify(province)}-{slugify(n)}" for n in near],
+                note=(f"No composition was read for this regency, and "
+                      f"{province}'s own figures cannot supply one: "
+                      f"{refused}. This is instead the average of the "
+                      f"{len(near)} regencies of {province} whose centroids "
+                      f"are nearest to it ({', '.join(near)}) -- an "
+                      f"assumption that a regency resembles what is around "
+                      f"it, not a measurement of anyone here, and nearest by "
+                      f"distance rather than by sharing a border."))},
+            [{"field": "religion", "name": NEIGHBOUR_SOURCE,
+              "url": "https://id.wikipedia.org/wiki/"
+                     + PROVINCES[province][0].replace(" ", "_"),
+              "license": LICENCE}]))
+    if out:
+        log(f"    {province}: {len(out)} regency(ies) from the nearest read "
+            f"regencies instead (modelled)")
+    return out
+
+
 def residual_records(known: dict[str, dict[str, Any]],
                      provinces: dict[str, dict[str, Any]],
                      hapi: dict[str, dict[str, dict[str, Any]]]
@@ -1366,14 +1439,19 @@ def residual_records(known: dict[str, dict[str, Any]],
         negative = {g: v for g, v in left.items() if v < -RESIDUAL_NEGATIVE * whole}
         total = sum(v for v in left.values() if v > 0)
         drift = total / missing - 1 if missing else 1.0
+        refused = ""
         if negative:
-            log(f"    {province}: refused, the regencies already hold more "
-                + ", ".join(f"{g} than the province leaves room for "
-                            f"({v:,.0f})" for g, v in sorted(negative.items())))
-            continue
-        if abs(drift) > RESIDUAL_SLACK:
-            log(f"    {province}: refused, the leftover is {total:,.0f} against "
-                f"{missing:,} people in the empty regencies ({drift:+.1%})")
+            refused = ("the regencies already published inside it hold more "
+                       + " and more ".join(
+                           f"{g} than its own figures leave room for "
+                           f"({-v:,.0f} people)"
+                           for g, v in sorted(negative.items())))
+        elif abs(drift) > RESIDUAL_SLACK:
+            refused = (f"what is left over comes to {total:,.0f} people where "
+                       f"{missing:,} live, {abs(drift):.0%} out")
+        if refused:
+            log(f"    {province}: no residual -- {refused}")
+            out += neighbour_records(known, province, info, refused)
             continue
         rows = shares({g: v for g, v in left.items() if v > 0})
         if not rows:
@@ -1515,9 +1593,14 @@ def regency_records(fetch_page=fetch,
         name = shape["name"]
         if not province or name in NOT_REGENCIES:
             continue
-        info = shaped.setdefault(province, {"all": [], "gaps": [],
+        info = shaped.setdefault(province, {"all": [], "gaps": [], "points": {},
                                             "population": {}, "shares": {}})
         info["all"].append(name)
+        spot = shape.get("point")
+        if isinstance(spot, dict) and spot.get("lat") is not None:
+            info["points"][name] = (spot["lat"], spot["lon"])
+        elif isinstance(spot, (list, tuple)) and len(spot) == 2:
+            info["points"][name] = (spot[1], spot[0])
         if name not in by_name:
             info["gaps"].append(name)
         found = by_name.get(name)
