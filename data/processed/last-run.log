@@ -1,9 +1,46 @@
-png: the 2024 census head count and the 2011 census's provincial religion
-  fetched 2024-final-figures.pdf (7.9 MB)
-  fetched 2011-national-report.pdf (11.5 MB)
-  2024 Table 1: 22 provinces adding to 10,185,363, the printed national total
-  2024 Provincial Snapshots: 96 districts across 22 provinces
-  2011 Summary Indicators: 22 provinces, and the three the report names in prose (Bougainville, Morobe, Northern) agree with it
-  districts: 71 shapes carry the 2024 count; 16 in 4 provinces (Morobe, Northern, West New Britain, Western) are left with a reason
-  wrote data/processed/png.json (352 kB)
-  wrote 109 records (22 provinces, 87 districts)
+  http://web.archive.org/cdx/search/cdx?url=1212.mn&matchType=domain&output=text&limit=6000&fl=original&filter=mimetype:application/pdf&filter=original:.*(XAOCT|Negdsen|negdsen).*
+    12,448 chars
+    21 distinct match(es) for 'url=[a-zA-Z0-9%._-]+[.]pdf'
+      url=Arkhangai_XAOCT_Negdsen_dun.pdf
+      url=Bayan-Ulgii_XAOCT_Negdsen_Dun.pdf
+      url=Bayankhongor_XAOCT_Negdsen_dun.pdf
+      url=Bosoo_bichig_summary_XAOCT.pdf
+      url=Bulgan_XAOCT_Negdsen_dun.pdf
+      url=Darkhan-Uul_XAOCT_Negdsen%20dun.pdf
+      url=Dornod_XAOCT_Negdsen_Dun.pdf
+      url=Dornogovi_XAOCT_Negdsen_Dun.pdf
+      url=Govi-Altai_XAOCT_Negdsen%20dun.pdf
+      url=Govi-Altai_XAOCT_Negdsen_Dun.pdf
+      url=Govisumber_XAOCT_Negdsen_dun.pdf
+      url=Khuvsgul_XAOCT_Negdsen_Dun.pdf
+      url=Orkhon_XAOCT_Negdsen_Dun.pdf
+      url=Selenge_XAOCT_Negdsen_dun.pdf
+      url=Sukhbaatar_XAOCT_Negdsen_dun.pdf
+      url=Tuv_XAOCT_Negdsen%20dun..pdf
+      url=Ulaanbaatar_XAOCT_Negdsen_dun.pdf
+      url=Umnugovi_XAOCT_Negdsen_Dun.pdf
+      url=Uvs_XAOCT_Negdsen_Dun.pdf
+      url=Uvurkhangai_XAOCT_Negdsen_dun.pdf
+      url=Zavkhan_XAOCT_Negdsen_dun.pdf
+  http://web.archive.org/cdx/search/cdx?url=1212.mn&matchType=domain&output=text&limit=6000&fl=original&filter=mimetype:application/pdf&filter=original:.*(Khovd|Uvs|Dundgovi|Khentii|Uvurkhangai|Hovd).*
+    7,843 chars
+    19 distinct match(es) for 'url=[a-zA-Z0-9%._-]+[.]pdf'
+      url=11._Summary_report_Dundgovi.pdf
+      url=13._Summary_report_Uvurkhangai.pdf
+      url=18._Khentii.pdf
+      url=21._Summary_report_Khovd.pdf
+      url=22._Summary_report_Uvs.pdf
+      url=4.Summary%20report_Khentii.pdf
+      url=Dundgovi.pdf
+      url=Dundgovi_2019.pdf
+      url=Hovd_2016.pdf
+      url=Khentii.pdf
+      url=Khentii_2019.pdf
+      url=Khovd.pdf
+      url=Khovd_2019.pdf
+      url=Uvs.pdf
+      url=Uvs_2016.pdf
+      url=Uvs_XAOCT_Negdsen_Dun.pdf
+      url=Uvurkhangai.pdf
+      url=Uvurkhangai_2019.pdf
+      url=Uvurkhangai_XAOCT_Negdsen_dun.pdf
