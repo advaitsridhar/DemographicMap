@@ -49,12 +49,26 @@ counts over a partition the census itself states, not an apportionment. The
 2015 compositions need no such treatment: in 2015 Atauro was part of Dili and
 its people are in Dili's column already.
 
-**The 65 administrative posts** get the 2022 population and a stated gap for
-each composition: no published table crosses religion or mother tongue with
-anything below the municipality, in either census round. INETL's own REDATAM
-dashboard, which would tabulate the microdata to any geography, is served from
-a bare address (``http://20.6.104.113/redatam/``) that timed out on the
-runner.
+**The administrative posts** get the 2022 population and a stated gap for each
+composition: no published table crosses religion or mother tongue with anything
+below the municipality, in either census round. INETL's own REDATAM dashboard,
+which would tabulate the microdata to any geography, is served from a bare
+address (``http://20.6.104.113/redatam/``) that timed out on the runner.
+
+The 2022 census divides the country into **67** posts where the 2015 round
+divided it into 65, and the rows here are the 67 the census names, not a
+re-division of them into something else. ``--probe`` is what established the
+difference: it reads the 2015 volume's table 20 -- one sheet per municipality,
+post, suco and aldeia in a single column, the level marked by indentation and
+recovered instead from the arithmetic, since each unit's count is the sum of
+the units under it -- and compares it with basic table 4.01 suco by suco. Two
+municipalities changed. Ermera's Hatulia is Hatulia A and Hatulia B, whose
+eight and five sucos are the old post's twelve with its Hatulia Vila spelled
+Hatolia Vila; Lautém has six posts where it had five, the new one being Lore.
+Every post of those two
+municipalities says so in its population note, because a boundary file drawn on
+the older division is the one case where a row here could be joined to a shape
+covering different ground.
 
 Usage:
     python -m scripts.fetch_census.timor
@@ -639,6 +653,26 @@ POST_RELIGION_GAP = (
     "4.07). INETL's REDATAM dashboard, which tabulates the microdata to any geography, is "
     "served from a bare address that did not answer.")
 
+POST_POPULATION_NOTE = ("The 2022 census's count for the administrative post, from basic "
+                        "table 4.01 of the main report.")
+# Where the 2022 census's division of a municipality is not the 2015 one, and
+# so not the division a boundary file of the older set draws. Established by
+# ``--probe``, which reads the 2015 volume's table 20 and the 2022 basic table
+# 4.01 and compares them suco by suco: 67 posts against 65. Only these two
+# municipalities changed, and a row of one of them is the only row here that a
+# boundary file can join to a shape covering different ground -- which is said
+# on the row rather than left to be discovered.
+CHANGED_DIVISION = {
+    "Ermera": ("The 2022 census divides Ermera into six administrative posts where the "
+               "2015 round divided it into five: the twelve sucos of the old Hatulia are "
+               "Hatulia A's eight and Hatulia B's five here. A boundary drawn on the "
+               "older division has one shape where this file has two."),
+    "Lautém": ("The 2022 census divides Lautém into six administrative posts -- Iliomar, "
+               "Lautém, Lore, Lospalos, Luro and Tutuala -- where the 2015 round named no "
+               "Lore. A boundary drawn on the older division covers more ground than "
+               "whichever of these rows it is joined to."),
+}
+
 
 def build(language, language_totals, religion, religion_totals,
           population, posts) -> list[dict[str, Any]]:
@@ -683,9 +717,11 @@ def build(language, language_totals, religion, religion_totals,
             parent_aliases=list(MUNICIPALITIES.get(shape_parent, [])),
             codes={"municipality": shape_parent,
                    "census_municipality_2022": parent},
-            population=measure(int(people), year=POPULATION_YEAR, source=POPULATION_SOURCE,
-                               note="The 2022 census's count for the administrative post, "
-                                    "from basic table 4.01 of the main report."),
+            population=measure(
+                int(people), year=POPULATION_YEAR, source=POPULATION_SOURCE,
+                note=" ".join([POST_POPULATION_NOTE,
+                               *([CHANGED_DIVISION[shape_parent]]
+                                 if shape_parent in CHANGED_DIVISION else [])])),
             language=gap(NOT_AVAILABLE, POST_LANGUAGE_GAP),
             religion=gap(NOT_AVAILABLE, POST_RELIGION_GAP),
             ethnicity=collection_gap("TLS", "ethnicity"),

@@ -89,8 +89,8 @@ POSTS_2022 = {
     "Bobonaro": [("Maliana", 120)],
     "Covalima": [("Suai", 120)],
     "Dili": [("Vera Cruz", 60), ("Cristo Rei", 60)],
-    "Ermera": [("Gleno", 120)],
-    "Lautém": [("Lospalos", 120)],
+    "Ermera": [("Gleno", 60), ("Hatulia A", 60)],
+    "Lautém": [("Lospalos", 60), ("Lore", 60)],
     "Liquiçá": [("Liquiçá", 120)],
     "Manatuto": [("Manatuto", 120)],
     "Manufahi": [("Same", 120)],
@@ -363,8 +363,19 @@ class TheRecords(unittest.TestCase):
         self.assertTrue(note.startswith("Mother tongue as the 2015 census counted it"))
         self.assertIn("Volume 2 priority tables", note)
 
+    def test_a_post_of_a_re_divided_municipality_says_so(self):
+        # Ermera and Lautém are divided differently in 2022 than in 2015, and
+        # a boundary file of the older set is the one thing a row here could
+        # be joined to that covers different ground.
+        for name in ("Gleno", "Hatulia A", "Lospalos", "Lore"):
+            if name not in self.posts:
+                continue
+            note = self.posts[name]["population"]["note"]
+            self.assertIn("2015", note, name)
+        self.assertNotIn("2015", self.posts["Viqueque"]["population"]["note"])
+
     def test_a_post_carries_a_stated_gap_and_not_a_bare_one(self):
-        post = self.posts["Lospalos"]
+        post = self.posts["Viqueque"]
         for field in ("language", "religion"):
             self.assertEqual(post[field]["status"], common.NOT_AVAILABLE)
             self.assertIn("below the municipality", post[field]["note"])

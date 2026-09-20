@@ -4535,6 +4535,204 @@ Committee for Ethnic Minority Affairs) is on the same host and was also
 reached; its first file is the 103-page narrative volume, its tables are by
 group and region rather than by province, and nothing was read from it.
 
+### Timor-Leste: two questions asked, a third that is not, and a census ten years apart from its own population
+
+Timor-Leste carried nothing on any of its 13 municipalities or 65
+administrative posts: every field on every unit a bare `not_available`, and the
+country row itself had no ethnicity at all. It now carries mother tongue and
+religion on all 13 municipalities, a population on those and on the
+administrative posts, and an ethnicity that is a sourced declaration rather
+than a blank -- at the country level and at every level below it.
+
+**The office answers.** `inetl-ip.gov.tl` -- the Instituto Nacional de
+Estatística de Timor-Leste, the Direção-Geral de Estatística until 2022 --
+served a plain client 200 on every request this work made, and the files are
+its own. `statistics.gov.tl`, the host the older literature cites, no longer
+resolves (*Temporary failure in name resolution*). The one thing that did not
+answer is INETL's own **REDATAM population dashboard**, linked from every page
+of the site as `http://20.6.104.113/redatam/` -- a bare address over plain HTTP,
+which timed out on the runner. That matters because REDATAM tabulates the
+microdata to any geography, and it is the only route that would have put
+religion or mother tongue on an administrative post.
+
+**The 2022 census asked both questions and has published neither below the
+country.** Its questionnaire is reproduced in full as Annex III of the main
+report (`Final-Main-Report_TLPHC-Census_WEB.pdf`, 204 pages), and the two
+questions sit next to each other:
+
+> **E 57 Religion.** What is \<Name\>'s religion?
+> 01 Christianity - Catholicism / 02 Christianity - Protestantism /
+> Evangelicalism / 03 Islam / 04 Buddhism / 05 Hinduism / 06 Indigenous
+> religion / 07 Other / 08 No religion / 09 No answer
+>
+> **E 58 Mother tongues.** What languages did \<Name\> learn as a child?
+> *Select at least one and no more than two languages from the list.*
+
+What the 2022 round published of them is one table: basic table 4.07, religion
+by five-year age group and sex, **for the country**. Its 24 basic tables include
+no mother-tongue table at any geography, and the census's thematic reports so
+far are education, labour force, mortality, fertility, migration, population
+projection, disability, gender, and children and youth. So the newest published
+composition for any Timorese municipality is the 2015 one, and that is what the
+map carries, stamped 2015.
+
+**Ethnicity: measured, and declared.** The task was to settle whether the census
+asks it at all. It does not. The individual module of the 2022 questionnaire
+runs from E1 to E77 without a break -- member providing information, place on
+census night, marital status, parents, birth registration, country and
+municipality of birth, internal migration, first and second citizenship,
+literacy, education, labour force, religion, mother tongues, the six Washington
+Group disability questions, children ever born, birth attendance -- and not one
+of the 77 asks ethnicity, race, tribe or ancestry. Timor-Leste is therefore in
+`NOT_COLLECTED_POLICY`, which fixes the country row and propagates to every
+unit below it.
+
+The Factbook's Timor-Leste "Ethnic groups" line, which the country row used to
+hold as a note beside an empty field, reads "Austronesian (Malayo-Polynesian)
+(includes Tetun, Mambai, Tokodede, Galoli, Kemak, Baikeno), Melanesian-Papuan
+(includes Bunak, Fataluku, Bakasai), small Chinese minority". That is the
+census's mother-tongue list sorted into two language families, with no shares
+attached to either. The map carries those tongues, counted, on the language
+field, which is the question that was actually asked; publishing the same
+division again under ethnicity is the relabelling this project refuses for
+Pakistan and refuses here.
+
+**The two 2015 tables.** Volume 2 of the 2015 census is published as a numbered
+series of priority tables, one workbook each, from the office's Census
+Population page:
+
+| File | Sheet | Table |
+| --- | --- | --- |
+| `4_2015-V2-Language.xls` | `2.12` | Table 12, population by mother tongue, urban/rural location **and municipality** |
+| `3_2015-V2-Nationality-Citizenship-Religion.xls` | `2.11` | Table 11, population by religion, urban/rural location, **municipality** and sex |
+| `1_2015-V2-Population-Household-Distribution.xls` | `2.1.a` | Table 1.a, total population and private households by municipality |
+| `7_2015-V2-Aldeia-populations.xls` | `2.20a`-`2.20m` | Table 20, every administrative post, suco and aldeia, one sheet per municipality |
+
+Table 12 puts 38 mother tongues down the side and the country, urban, rural and
+the 13 municipalities across the top: Tetun Prasa, Tetun Terik, Adabe, Atauran,
+Baikenu, Bekais, Bunak, Dadu'a, Fataluku, Galoli, Habun, Idalaka, Idate, Isni,
+Kairui, Kawaimina, Kemak, Lakalei, Lolein, Makalero, Sa'ani, Makasai, Makuva,
+Mambai, Midiki, Nanaek, Naueti, Rahesuk, Raklungu, Resuk, Tokodede, Waima'a,
+and then Portuguese, Indonesian, English, Malay, Chinese and Other. Every
+municipality's 38 rows add to its own column total to the person, so in 2015
+the question took one answer per person and the table is a partition -- which
+the 2022 question, allowing two answers, would not be.
+
+Table 11 stacks its units instead: the country, urban and rural, then each
+municipality, each followed by a male and a female row, against Catholicism,
+Protestantism/Evangelicalism, Islam, Buddhism, Hinduism, Traditional and Other.
+There is no "no religion" and no "not stated" column, so those answers are
+inside "Other", which is why "Other religion" is published here as a religion
+and not as a residual.
+
+**Reading them.** Both sheets are legacy `.xls` and both do two things a reader
+has to survive. They print a column-numbering row -- `-1.0`, `-2.0`, `-3.0` --
+whose every cell is a number under a label that is also a number, so nothing but
+the absence of a letter tells it from a row of figures. And they stack headers:
+table 11 writes "Municipality, urban/rural location, sex | Total | Religion"
+over the seven religion names, so the Total column is headed a row above the
+religions, and the first run refused on not finding it there. The religion
+columns are matched by what their heading starts with once folded, because the
+sheet breaks the second one across a line as "Protestantism/ Evangelicalism".
+The exclave is "SAR1 of Oecusse" in one workbook and "SAR1 OF OECUSSE" in the
+other, the 1 being a footnote marker, so the name fold drops digits as well as
+case and accents; Lautém is "Lautem" in one and "LAUTÉM" in the other.
+
+**What the self-checks found.** Every one of them passed, and each would have
+refused the run:
+
+* the 38 mother tongues of each of the 13 municipalities add to that
+  municipality's own printed total, to the person;
+* the seven religions of each municipality add to its own printed total, the 13
+  municipalities add to the country row's 1,179,654, and every religion column
+  adds to the country row's figure for it, all to the person;
+* the two tables count the same people municipality by municipality, so the
+  religion and the language shares on a unit are shares of one population;
+* **against the office's own published figures**: Catholicism comes out at
+  97.57% of the country where the 2022 main report says Catholicism "was
+  reported for 97.6" percent of the population in 2015; and all fourteen of the
+  named mother tongues in the map's own country row -- Tetun Prasa 30.6, Mambai
+  16.6, Makasai 10.5, Tetun Terik 6.1, Baikenu 5.9, Kemak 5.8, Bunak 5.5,
+  Tokodede 4.0, Fataluku 3.5, Waima'a 1.8, Galoli 1.4, Naueti 1.4, Idate 1.2,
+  Midiki 1.2 -- are reproduced from this table to within a rounding step. The
+  country row's language list *is* this table's national column, so the
+  municipalities and the country now agree because they are the same census;
+* the 2022 population table's 14 municipalities add to 1,341,737, the published
+  national figure, and its 67 administrative posts each add to the municipality
+  they sit in.
+
+**The base is 1,179,654, and the volume does not say why.** Tables 11 and 12
+both count 1,179,654 people. The same volume's table 1 counts 1,183,643 in
+total and 1,178,340 in private households, so the base of the two composition
+tables sits between the two -- 3,989 below the census's whole population and
+1,314 above its private-household population -- and neither workbook prints a
+footnote saying which people it leaves out. The difference is 0.34% of the
+country and is spread across all 13 municipalities rather than sitting in one,
+so it is stated rather than explained away. Each municipality's own base is in
+its notes.
+
+**Population comes from the 2022 census, and Atauro is why that needs saying.**
+The main report's basic table 4.01 gives the population of every municipality,
+administrative post and suco in 2022, with a label column per level, and it is
+the only table in either round that reaches below the municipality. It counts
+**14** municipalities: Atauro, an island that was an administrative post of
+Dili, became a municipality of its own in 2022. The boundary file draws the 13
+of 2015, so the figure written on Dili is Dili's 324,738 plus Atauro's 10,295 --
+a sum of two published counts over a division the census itself states, not an
+apportionment -- and Dili's population note says so. Atauro's administrative
+post is written under Dili for the same reason. The 2015 compositions need no
+such treatment: in 2015 Atauro was inside Dili and its people are in Dili's
+column already.
+
+**67 posts against 65.** `scripts/fetch_census/timor.py --probe` is the
+reconnaissance that settled this, and its log is on the branch. It reads the
+2015 volume's table 20 -- which puts administrative post, suco and aldeia in
+one column and marks the level by indentation, the one mark a reader should not
+trust -- and recovers the levels from the arithmetic instead, each unit's count
+being the sum of the units beneath it. Comparing that with basic table 4.01
+suco by suco: two municipalities were re-divided. Ermera's **Hatulia** is
+**Hatulia A** and **Hatulia B**, whose eight and five sucos are the old post's
+twelve with Hatulia Vila spelled Hatolia Vila. **Lautém** has six posts where it
+had five, the new one being **Lore**. Ainaro's Hato-Builico is spelled
+Hato-Buiico in 2022 and is otherwise the same three sucos.
+
+The rows written are the 67 the 2022 census names, not a re-division of them.
+A row that finds no shape is a gap the coordinator sees; a row silently joined
+to a shape covering different ground is the mis-match this project treats as
+worse, so every administrative post of Ermera and of Lautém carries a sentence
+in its population note saying that the 2022 division is not the 2015 one.
+
+**What each unit carries.** `data/processed/timor.json`:
+
+* **13 municipalities** -- mother tongue and religion from 2015 with counts and
+  shares, a 2022 population, and the ethnicity declaration. Oecusse is 98.1%
+  Baikenu, Lautém 60.9% Fataluku, Baucau 60.3% Makasai, Liquiçá 64.0% Tokodede,
+  Cova Lima 48.0% Bunak, Manatuto 29.9% Galoli, and Dili 82.5% Tetun Prasa;
+  Mambai leads Aileu, Ainaro, Ermera and Manufahi, Kemak leads Bobonaro and
+  Makasai leads Viqueque. That regional pattern is what the map had nothing of
+  for this country. Catholicism runs from 92.1% in Aileu to 99.7% in Bobonaro.
+* **67 administrative posts** -- the 2022 population, and religion and mother
+  tongue as gaps that say what was asked of which source: no census publishes
+  either below the municipality, and the dashboard that would have is
+  unreachable.
+
+A mother tongue spoken by under 0.05% of a municipality is counted in that
+municipality's base and given no row of its own, so a municipality's shares add
+to a shade under 100 rather than to a residual row that would mean something
+different from the census's own "Other" column, which is published.
+
+**The group tree.** The 2015 list is the whole language inventory of the
+country, and Timor-Leste's split between Austronesian and Papuan is settled, so
+`scripts/group_tree.py` gains Adabe under **Papuan languages** beside Bunak,
+Fataluku, Makasai and Makalero, and Atauran, Bekais, Dadu'a, Habun, Idalaka,
+Isni, Kairui, Kawaimina, Lakalei, Lolein, Makuva, Nanaek, Rahesuk, Raklungu and
+Resuk under **Malayo-Polynesian languages** beside the twelve already there.
+One label is deliberately left unplaced: **Sa'ani**, which the census names and
+which the literature does not settle on one side of that split or the other. It
+leads no unit anywhere, so nothing is drawn in the unclassified colour for it;
+asserting a family for it would be a guess with nothing behind it, and this
+entry would rather carry one unplaced label than one invented classification.
+
 ### Thailand: a language table that cannot be a composition
 
 Thailand's National Statistical Office refuses this project from every host
@@ -6645,6 +6843,18 @@ Korean-Chinese at their full size. `mois.go.kr` answered the runner about
 one request in two (`Connection timed out` on the rest), and the two
 registers above answered every time, so the registers were read first; the
 xlsx is the next pass.
+
+### Timor-Leste: the questionnaire itself, all 77 questions of it
+
+Timor-Leste's declaration is read off the instrument rather than off an absent
+table. INETL reproduces the 2022 questionnaire in full as Annex III of the
+census main report, and its individual module runs from E1 to E77 with no
+ethnicity, race, tribe or ancestry question anywhere in it -- religion is E57
+and mother tongues is E58, and those two are the country's identity variables.
+Both of them are on the map, from the 2015 round, so this is a declaration
+about one field and not a country written off. The evidence, and what was
+looked at to be sure of it, is under "Timor-Leste: two questions asked, a third
+that is not" above.
 
 ### The African census sweep: reached, and not
 
