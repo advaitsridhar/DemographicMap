@@ -68,6 +68,13 @@ data/raw/*
 # Ireland and no way to re-derive it.
 !data/raw/northern_ireland/
 !data/raw/northern_ireland/*.xlsx
+# ...and the pages of Mongolia's 22 aimag census books that carry ethnic
+# group and religion, laid out as text. The books themselves are 300 MB of
+# scanned-quality PDF on the Internet Archive and the site that served them
+# is gone; what is kept here is the few pages the adapter reads, so a build
+# without network still runs. See scripts/fetch_census/mongolia.py --fetch.
+!data/raw/mongolia/
+!data/raw/mongolia/*.txt
 data/processed/http_cache/
 
 # Intermediate tiling artefacts
