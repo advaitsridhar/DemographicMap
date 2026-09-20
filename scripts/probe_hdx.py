@@ -11,12 +11,23 @@ organization from that rather than assuming one, and then lists every dataset
 that organization publishes -- with the ISO3 the adapter would need, whether a
 workbook is actually attached, and whether this map already has the country.
 
+``--org`` asks the same question of any publisher, starting from the uuid an
+HDX organization page carries rather than from a dataset already read, and
+prints **the licence the catalogue states for each one**. That is not a
+convenience. The COD-PS series is one publisher and two licences -- Papua New
+Guinea CC BY-IGO 3.0, Indonesia "humanitarian use only" with ``isopen:
+false`` -- so a licence read once for a family is a guess about the rest of
+it, and a figure republished on that guess is a figure published without
+permission.
+
 Read-only, and the output is the log. HDX blocks its HTML pages behind a
 challenge but serves the API, which is why this asks the API.
 
 Usage:
     python -m scripts.probe_hdx
     python -m scripts.probe_hdx --seed 809dfb22-77f4-482c-8560-79b07d20fc15
+    python -m scripts.probe_hdx --org 707b1f6d-5595-453f-8da7-01770b76e178
+    python -m scripts.probe_hdx --dataset thailand-languages
 """
 
 from __future__ import annotations
@@ -50,6 +61,68 @@ def workbooks(package: dict) -> list[str]:
             or str(r.get("name", "")).lower().endswith((".xlsx", ".xls"))]
 
 
+def licence(package: dict) -> str:
+    """A dataset's licence as the catalogue states it, never as assumed.
+
+    The reason this is printed on every line rather than looked up once for
+    the family: `cod-ps-png` is CC BY-IGO 3.0 and `cod-ps-idn`, same
+    publisher and same series, is `"license_other": "humanitarian use only"`
+    with `"isopen": false`. A credential is access and not permission, and a
+    publisher is not a licence.
+    """
+    bits = [f"license_id={package.get('license_id') or '-'!r}",
+            f"license_title={package.get('license_title') or '-'!r}",
+            f"isopen={package.get('isopen')}"]
+    other = (package.get("license_other") or "").strip().replace("\n", " ")
+    if other:
+        bits.append(f"license_other={other[:120]!r}")
+    return "  ".join(bits)
+
+
+def organization(org: str, rows: int, match: str) -> None:
+    """Every dataset one publisher has, with its licence and its resources.
+
+    The seed path below answers "what else does the publisher of this dataset
+    I already read have"; this answers the same question when the starting
+    point is an organization page rather than a dataset -- an HDX org URL
+    carries the uuid, and CKAN takes a uuid wherever it takes a name.
+    """
+    print(f"=== HDX organization: {org} ===")
+    try:
+        found = get("package_search", fq=f"organization:{org}", rows=rows)
+    except Exception as err:                        # noqa: BLE001 -- reported
+        print(f"    {type(err).__name__}: {err}")
+        try:
+            shown = get("organization_show", id=org, include_datasets="true")
+        except Exception as second:                 # noqa: BLE001 -- reported
+            print(f"    organization_show: {type(second).__name__}: {second}")
+            return
+        print(f"    organization_show: name={shown.get('name')!r} "
+              f"title={shown.get('title')!r} "
+              f"package_count={shown.get('package_count')}")
+        for pkg in shown.get("packages", []) or []:
+            print(f"      {pkg.get('name','?')}")
+        return
+    results = found.get("results", []) or []
+    print(f"    {found.get('count', 0)} dataset(s), showing {len(results)}")
+    for package in sorted(results, key=lambda p: str(p.get("name", ""))):
+        name = str(package.get("name", "?"))
+        if match and match.lower() not in (name + " " +
+                                           str(package.get("title", ""))).lower():
+            continue
+        print()
+        print(f"  {name}")
+        print(f"    title:   {package.get('title','?')}")
+        print(f"    licence: {licence(package)}")
+        groups = ", ".join(str(g.get("name", "")) for g in package.get("groups", ()))
+        print(f"    groups:  {groups or '-'}")
+        print(f"    updated: {package.get('last_modified') or package.get('metadata_modified','?')}")
+        items = package.get("resources", []) or []
+        print(f"    {len(items)} resource(s):")
+        for r in items:
+            print(f"      {str(r.get('format','?')):<6} {str(r.get('name','?'))[:80]}")
+
+
 def resources(name: str) -> None:
     """Every resource on one dataset, whatever its format.
 
@@ -67,6 +140,7 @@ def resources(name: str) -> None:
         return
     print(f"    title: {package.get('title','?')}")
     print(f"    org:   {(package.get('organization') or {}).get('name','?')}")
+    print(f"    licence: {licence(package)}")
     notes = (package.get("notes") or "").strip().replace("\n", " ")
     if notes:
         print(f"    notes: {notes[:400]}")
@@ -130,9 +204,19 @@ def main() -> int:
     ap.add_argument("--seed", default=SEED,
                     help="a dataset id the adapter already uses")
     ap.add_argument("--rows", type=int, default=300)
+    ap.add_argument("--org", default="",
+                    help="an HDX organization name or uuid; list its datasets, "
+                         "each with the licence the catalogue states")
+    ap.add_argument("--match", default="",
+                    help="with --org, only datasets whose name or title "
+                         "contains this")
     ap.add_argument("--dataset", default="",
                     help="an HDX dataset name; list its resources and stop")
     args = ap.parse_args()
+
+    if args.org:
+        organization(args.org, args.rows, args.match)
+        return 0
 
     if args.dataset:
         resources(args.dataset)
