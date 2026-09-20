@@ -1,80 +1,254 @@
-probe_xlsx: https://data.laos.opendevelopmentmekong.net/lo/dataset/7256198a-89af-411a-a850-9ccd1eca88a4/resource/130665a5-1e64-477a-a756-51fa65eeec02/download/lao-population-census-2015.xlsx
-  4,468,692 bytes
-  2 sheet(s): Census, Meta
+probe_pdf: https://lao.unfpa.org/sites/default/files/pub-pdf/Lao%20Social%20Inndicator%20Survey%20II%202017-18%20%28English%29_0.pdf
+  22,843,389 bytes
+  626 pages
+probe_pdf: 627 pages, 5 mention ['Ethnicity', 'Religion', 'Ethnic']
+=== front matter ===
+[0 words in 0 rows]
 
---- sheet 'Meta' (74 rows x 8 cols) --------------------
-  Code | Short label | Label Lao | Label English | Description Lao | Description English | Source | Data owner
-  urcne | ur_name_en | ຊື່ແຂວງເປັນພາສາອັງກິດ | Province name in English |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urid | urid | ລະຫັດແຂວງ | Province Code |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  uscne | us_name_en | ຊື່ເມືອງເປັນພາສາອັງກິດ | District name in English |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  usid | usid | ລະຫັດເມືອງ | District Code |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  uucne | uu_name_en | ຊື່ບ້ານເປັນພາສາອັງກິດ | Village name in English |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  uuid | uuid | ລະຫັດບ້ານ | Village code |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  unpdeaa01 | u_pop_total | ຈຳນວນພົນລະເມືອງລວມ | Total village population |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urhdeaa37 | u_hh_size_avg | ຂະໜາດສະເລ່ຍຂອງຄົວເຮືອນ | Average household size (Persons) | ຂະໜາດສະເລ່ຍຂອງຄົວເຮືອນ ໝາຍເຖິງຈຳນວນ ພົນລະເມືອງທັງໝົດທີ່ດຳລົງຊີວິດໃນຄົວເຮືອນສ່ວນບຸກຄົນ ຫານໃ | The average household size relates to the number of the total population living in private | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urhdeaa38 | u_hhs_head_f_pct | ອັດຕາສ່ວນຂອງຄົວເຮືອນທີ່ມີຫົວໜ້າຄົວເຮືອນເປັນແມ່ຍິງ | Percentage of female-headed households | ຄົວເຮືອນທີ່ມີຫົວໜ້າຄົວເຮືອນເປັນແມ່ຍິງ ໝາຍເຖິງ ຈຳນວນຄົວເຮືອນທີ່ມີຫົວໜ້າຄົວເຮືອນເປັນແມ່ຍິງທັ | The female-headed households relate to the total number of female-headed private household | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpdeaa29 | u_sex_ratio | ອັດຕາສ່ວນເພດ | Sex ratio | ຈຳນວນຜູ້ຊາຍຕໍ່ແມ່ຍິງ 100 ຄົນ | Number of males per 100 females | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpdeaa30 | u_sex_ratio_5u | ອັດຕາສ່ວນເພດຂອງພົນລະເມືອງທີ່ມີອາຍຸ 5 ປີລົງມາ | Sex ratio of population aged 5 years and younger | ຈຳນວນຜູຊາຍອາຍຸ 5 ປີລົງມາຕໍ່ ແມ່ຍິງ 100 ຄົນທີ່ມີອາຍຸ 5 ປີລົງມາ | Number of males aged 5 years or younger per 100 females aged 5 years or younger | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpdeaa31 | u_pop_5u_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ມີອາຍຸ 5 ປີລົງມາ | Percentage of population aged 5 years and younger | ຈຳນວນພົນລະເມືອງລວມທີ່ມີອາຍຸ 5 ປີລົງມາຕໍ່ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງ ລວມທັງໝົດ | The total number of persons aged 5 years and younger as percentage of the total population | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpdeaa32 | u_pop_65_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ມີອາຍຸ 65 ປີຂື້ນໄປ | Percentage of population aged 65 years and older | ຈຳນວນພົນລະເມືອງລວມທີ່ມີອາຍຸແຕ່ 65 ປີຂື້ັ້ນໄປ ຕໍ່ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະ ເມືອງທັງໝົດ | The total number of persons aged 65 years and older as percentage of the total population. | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpdeaa33 | u_pop_married_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງ 15 ປີ ຂື້ນໄປທີ່ແຕ່ງງານແລ້ວ | Percentage of married population | ຈຳນວນພົນລະເມືອງທີ່ມີອາຍຸແຕ່ 15 ປີ ຂື້ນໄປທີ່ແຕ່ງງານແລ້ວ ຕໍ່ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທັງໝົດ | The total married population aged 15 years and older as percentage of the total population | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpdeaa34 | u_pop_widowed_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງ 15 ປີ ຂື້ນໄປທີ່ເປັນໝາຍ | Percentage of widowed population | ຈຳນວນພົນລະເມືອງລວມອາຍຸ 15 ປີຂື້ນໄປທີ່ເປັນໝ້າຍ ຕໍ່ອັດຕາສ່ວນຮ້ອຍຂອງພົນ ລະເມືອງທັງໝົດທີ່ມີອາຍ | The total widowed population aged 15 years and older as percentage of the total population | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpdeaa35 | u_pop_not_married_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງ 15 ປີ ຂື້ນໄປທີບໍ່ເຄີຍແຕ່ງງານ | Percentage of never married population | ຈຳນວນພົນລະເມືອງລວມທີ່ມີອາຍຸ 15 ປີຂື້ນໄປທີ່ບໍ່ເຄີຍແຕ່ງງານ ຕໍ່ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທັງໝ | The total never married population aged 15 years and older as percentage of the total popu | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpdeaa36 | u_pop_divorced_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງ 15 ປີ ຂື້ນໄປທີຢ່າຮ້າງ | Percentage of divorced population | ຈຳນວນພົນລະເມືອງລວມອາຍຸ 15 ປີຂື້ນໄປທີ່ຢ່າຮ້າງ ຕໍ່ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທັງໝົດທີ່ມີອາຍຸ  | The total divorced population aged 15 years and older as percentage of the total populatio | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpdeaa39 | u_dependency_ratio | ອັດຕາການເອື່ອຍອີງ | Dependency ratio | ອັດຕາການເອື່ອຍອີງໝາຍເຖິງ ຈຳນວນການຄົນທີ່ບໍ່ສາມາດເຮັດວຽກໄດ້ (ເດັກນ້ອຍອາຍຸ 0-14 ປີ ແລະ ຜູ້ສູງ | The dependency ratio relates to the number of economically dependent (children from 0-14 y | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpdeaa40 | u_pop_density | ຄວາມໜາແໜ້ນຂອງພົນລະເມືອງ | Population density (Persons/km2) | ຈຳນວນເນື້ອທີ່ຂອງບ້ານທັງໝົດ ຫານໃຫ້ຈຳນວນປະຊາກອນທັງໝົດໃນບ້ານ | The number of people divided by the estimated area of the village (population per km2). | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa73 | u_literacy_rate_pct | ອັດຕາການຮູ້ໜັງສືຂອງພົນລະເມືອງອາຍຸ 15 ປີ ຂື້ນໄປ | Percentage of literate population | ການຮູ້ໜັງສືຂອງພົນລະເມືອງໝາຍເຖິງ ຈຳນວນປະຊາກອນທັງໝົດທີ່ມີອາຍຸ 15 ປີຂື້ນໄປ ທີ່ສາມາດອ່ານ ແລະ ຂ | The literate population relates to number of those aged 15 years and older who can read an | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa76 | u_literacy_sex_ratio | ອັດຕາສ່ວນເພດຂອງການຮູ້ໜັງສື | Sex ratio of literate population | ຈຳນວນຜູ້ຊາຍທີ່ຮູ້ໜັງສື ຕໍ່ແມ່ຍິງທີ່ຮູ້ໜັງສື 100 ຄົນ | Number of literate male per 100 literate female. | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa77 | u_pop_comp_primary_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງ ທີ່ສຳເລັດການສຶກສາຊັ້ນປະຖົມ ແຕ່ ປໍ1 ຫາປໍ6 | Percentage of population who completed primary school (grades 1-6) | ຈຳນວນພົນລະເມືອງທີ່ມີອາຍຸ 6 ປີ ຂື້ນໄປ ແລະ ສຳເລັດການສຶກສາໃນຊັ້ນປະຖົມ ຕໍ່ອັດຕາສ່ວນຮ້ອຍຂອງຈຳນວ | Population aged 6 years and older who completed primary school as percentage of the total  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa78 | u_pop_comp_low_secondary_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງ ທີ່ສຳເລັດການສຶກສາຊັ້ນມັດທະຍົມຕົ້ນ ແຕ່ ມ1 ຫາ ມ3 | Percentage of population who completed lower secondary school (grades 1-3) | ຈຳນວນພົນລະເມືອງທີ່ມີອາຍຸ 6 ປີ ຂື້ນໄປ ແລະ ສຳເລັດການສຶກສາໃນຊັ້ນມັດທະຍົມຕອນຕົ້ນ ຕໍ່ອັດຕາສ່ວນຮ | Population aged 6 years and older who completed lower secondary school as percentage of th | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa79 | u_pop_comp_high_secondary_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງ ທີ່ສຳເລັດການສຶກສາຊັ້ນມັດທະຍົມປາຍ ແຕ່ ມ4 ຫາ ມ6 | Percentage of population who completed higher secondary school (grades 4-6) | ໝາຍເຖິງ ຈຳນວນພົນລະເມືອງທີ່ມີອາຍຸ 6 ປີ ຂື້ນໄປ ແລະ ສຳເລັດການສຶກສາໃນຊັ້ນມັດທະຍົມຕອນປາຍ ຕໍ່ອັດ | Population aged 6 years and older who completed higher secondary school as percentage of t | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa80 | u_pop_comp_primary_sex_ratio | ອັດຕາສ່ວນເພດຂອງພົນລະເມືອງ ທີ່ສຳເລັດການສຶກສາຊັ້ນປະຖົມ ແຕ່ປໍ1 ຫາ ປໍ6 | Sex ratio of population who completed primary school (grades 1-6) | ໝາຍເຖິງ ຈຳນວນພົນລະເມືອງຊາຍທີ່ມີອາຍຸ 6 ປີຂື້ນໄປ ທີ່ສຳເລັດການສຶກສາໃນຊັ້ນປະຖົມ ຕໍ່ອັດຕາສ່ວນຮ້ | Male population aged 6 years and older who completed primary school as percentage of the f | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa81 | u_pop_comp_low_secondary_sex_ratio | ອັດຕາສ່ວນເພດຂອງພົນລະເມືອງ ທີ່ສຳເລັດການສຶກສາຊັ້ນມັດທະຍົມຕົ້ນແຕ່ມໍ1 ຫາ ມໍ3 | Sex ratio of population who completed lower secondary school (grades 1-3) | ຈຳນວນພົນລະເມືອງຊາຍທີ່ມີອາຍຸ 6 ປີຂື້ນໄປ ທີ່ສຳເລັດການສຶກສາໃນຊັ້ນປະຖົມ ຕໍ່ອັດຕາສ່ວນຮ້ອຍຂອງພົນ | Male population aged 6 years and older who completed lower secondary school as percentage  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa82 | u_pop_comp_high_secondary_sex_ratio | ອັດຕາສ່ວນເພດຂອງພົນລະເມືອງ ທີ່ສຳເລັດການສຶກສາຊັ້ນມັດທະຍົມປາຍແຕ່ມໍ4 ຫາ ມໍ6 | Sex ratio of population who completed higher secondary school (grades 4-6) | ຈຳນວນພົນລະເມືອງຊາຍທີ່ມີອາຍຸ 6 ປີຂື້ນໄປ ທີ່ສເລັດການສຶກສາໃນຊັ້ນປະຖົມ ຕໍ່ອັດຕາສ່ວນຮ້ອຍຂອງພົນລ | Male population aged 6 years and older who completed higher secondary school as percentage | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa89 | u_pop_attend_school_6_pct | ອັດຕາການເຂົ້າໂຮງຮຽນຂອງພົນລະເມືອງອາຍຸ 6 ປີ | Percentage of school attendance among 6-year-old population | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງອາຍຸ 6 ປີທີ່ເຂົ້າໂຮງຮຽນຕໍ່ ຈຳນວນພົນລະເມືອງອາຍຸ 6 ປີ ທັງໝົດ | School attendance among 6-year-old population as percentage of the total population aged 6 | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa90 | u_pop_attend_school_10_pct | ອັດຕາການເຂົ້າໂຮງຮຽນຂອງພົນລະເມືອງອາຍຸ 10 ປີ | Percentage of school attendance among 10-year-old population | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງອາຍຸ 10 ປີທີ່ເຂົ້າໂຮງຮຽນຕໍ່ ຈຳນວນພົນລະເມືອງອາຍຸ 10 ປີ ທັງໝົດ | School attendance among 10-year-old population as percentage of the total population aged  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa91 | u_pop_attend_school_15_pct | ອັດຕາການເຂົ້າໂຮງຮຽນຂອງພົນລະເມືອງອາຍຸ 15 ປີ | Percentage of school attendance among 15-year-old population | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງອາຍຸ 15 ປີທີ່ເຂົ້າໂຮງຮຽນຕໍ່ ຈຳນວນພົນລະເມືອງອາຍຸ 15 ປີ ທັງໝົດ | School attendance among 15-year-old population as percentage of the total population aged  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa94 | u_pop_attend_school_6_sex_ratio | ອັດຕາສ່ວນເພດ ຂອງການເຂົ້າໂຮງຮຽນຂອງພົນລະເມືອງທີ່ມີອາຍຸ 6 ປີ | Sex ratio among 6-year-old population attending school | ຈຳນວນເດັກນ້ອຍຊາຍອາຍຸ 6 ປີທີ່ເຂົ້າໂຮງຮຽນຫານໃຫ້ຈຳນວນເດັກນ້ອຍຍິງອາຍຸ 6 ປີທີ່ເຂົ້າໂຮງຮຽນ | Number of boys aged 6 years attending school divided by the number of girls aged 6 years a | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa95 | u_pop_attend_school_10_sex_ratio | ອັດຕາສ່ວນເພດ ຂອງການເຂົ້າໂຮງຮຽນຂອງພົນລະເມືອງທີ່ມີອາຍຸ 10 ປີ | Sex ratio among 10-year-old population attending school | ຈຳນວນເດັກນ້ອຍຊາຍອາຍຸ 10 ປີທີ່ເຂົ້າໂຮງຮຽນຫານໃຫ້ຈຳນວນເດັກນ້ອຍຍິງອາຍຸ 10 ປີທີ່ເຂົ້າໂຮງຮຽນ | Number of boys aged 10 years attending school divided by the number of girls aged 10 years | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpedaa96 | u_pop_attend_school_15_sex_ratio | ອັດຕາສ່ວນເພດ ຂອງການເຂົ້າໂຮງຮຽນຂອງພົນລະເມືອງທີ່ມີອາຍຸ 15 ປີ | Sex ratio among 15-year-old population attending school | ຈຳນວນເດັກນ້ອຍຊາຍອາຍຸ 15 ປີທີ່ເຂົ້າໂຮງຮຽນຫານໃຫ້ຈຳນວນເດັກນ້ອຍຍິງອາຍຸ 15 ປີທີ່ເຂົ້າໂຮງຮຽນ | Number of boys aged 15 years attending school divided by the number of girls aged 15 years | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  unhheab04 | u_hhs_with_disabled | ຈຳນວນຄົວເຮືອນທີ່ມີຄົນພິການ | Number of households with disabled persons |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urhheab24 | u_hhs_disabled_pct | ອັດຕາສ່ວນຮ້ອຍຂອງຄົວເຮືອນທີ່ມີຄົນພິການ | Percentage of households with disabled people |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpheab22 | u_women_1st_child_avg_age | ອາຍຸສະເລ່ຍຂອງແມ່ຍິງໃນເວລາເກີດລູກຜູ້ທຳອິດ | Average age of women at first child delivery |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  unpetab53 | u_pop_eth_cat_palau | ຈຳນວນພົນລະເມືອງທີ່ເວົ້າພາສາປາລູກິດ | Population of ethno-linguistic category Palaungic |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  unpetab54 | u_pop_eth_cat_katu | ຈຳນວນພົນລະເມືອງທີ່ເວົ້າພາສາກາຕິກ | Population of ethno-linguistic category Katuic |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  unpetab55 | u_pop_eth_eth_cat_bahnaric_khmer | ຈຳນວນພົນລະເມືອງທີ່ເວົ້າພາສາບານາຣິກ-ກາມຸ | Population of ethno-linguistic category Bahnaric Khmer |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  unpetab56 | u_pop_eth_cat_vietic | ຈຳນວນພົນລະເມືອງທີ່ເວົ້າພາສາເວຍຕິກ | Population of ethno-linguistic category Vietic |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  unpetab57 | u_pop_eth_cat_tibeto_burman | ຈຳນວນພົນລະເມືອງທີ່ເວົ້າພາສາຕີເບດ-ເບີເມນ | Population of ethno-linguistic category Tibeto-Burman |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  unpetab58 | u_pop_eth_cat_hmong | ຈຳນວນພົນລະເມືອງທີ່ເວົ້າພາສາມົ້ງ | Population of ethno-linguistic category Hmong |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  unpetab59 | u_pop_eth_cat_mien | ຈຳນວນພົນລະເມືອງທີ່ເວົ້າພາສາມຽນ | Population of ethno-linguistic category Mien |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpetab69 | u_eth_cat_lao_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ເວົ້າພາສາລາວ | Percentage of population of ethno-linguistic category Lao |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpetab70 | u_eth_cat_tai_thaipct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ເວົ້າພາສາໄຕໄທ | Percentage of population of ethno-linguistic category Tai Thai |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpetab71 | u_eth_cat_khmu_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ເວົ້າພາສາຄະມຸ | Percentage of population of ethno-linguistic category Khmuic |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpetab72 | u_eth_cat_palau_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ເວົ້າພາສາປາລັງກິດ | Percentage of population of ethno-linguistic category Palaungic |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpetab73 | u_eth_cat_katu_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ເວົ້າພາສາກາຕິກ | Percentage of population of ethno-linguistic category Katuic |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpetab74 | u_eth_cat_bahnaric_khmer_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ເວົ້າພາສາບານາຣິກຄະແມ | Percentage of population of ethno-linguistic category Bahnaric Khmer |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpetab75 | u_eth_cat_vietic_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ເວົ້າພາສາວຽດຕິກ | Percentage of population of ethno-linguistic category Vietic |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpetab76 | u_eth_cat_tibeto_burman_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ເວົ້າພາສາຕີເບດ-ບາເມນ | Percentage of population of ethno-linguistic category Tibeto-Burman |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpetab77 | u_eth_cat_hmong_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ເວົ້າພາສາມົ້ງ | Percentage of population of ethno-linguistic category Hmong |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpetab78 | u_eth_cat_mien_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ເວົ້າພາສາມຽນ | Percentage of population of ethno-linguistic category Mien |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpreab34 | u_pop_buddhist_pct | ອັດຕາສ່ວນຮ້ອຍຂອງປະຊາກອນທີ່ຖືສາດສະໜາພຸດ | Percentage of Buddhists |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpreab35 | u_pop_christian_pct | ອັດຕາສ່ວນຮ້ອຍຂອງປະຊາກອນທີ່ຖືສາດສະໜາຄຣິກສະຕຽນ | Percentage of Christians |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpreab36 | u_pop_bahai_pct | ອັດຕາສ່ວນຮ້ອຍຂອງປະຊາກອນທີ່ຖືສາດສະໜາບາຮາຍ | Percentage of Bahai-follower |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpreab37 | u_pop_muslim_pct | ອັດຕາສ່ວນຮ້ອຍຂອງປະຊາກອນທີ່ຖືສາດສະໜາມຸດສະລິມ | Percentage of Muslims |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpreab38 | u_pop_religion_other_pct | ອັດຕາສ່ວນຮ້ອຍຂອງປະຊາກອນທີ່ຖືສາດສະໜາອື່ນໆ | Percentage of follower of another religion |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  unpecab88 | u_pop_activity_unemployed | ຈຳນວນພົນລະເມືອງທີ່ເຮັດວຽກທີ່ບໍ່ແມ່ນລູກຈ້າງ | Population with main activity unemployed |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  unpecac02 | u_pop_econ_active | ພົນລະເມືອງທີ່ເຮັດວຽກເສດຖະກິດ | Population of economically active persons |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urhecac23 | u_hhs_with_farm_land_pct | ອັດສ່ວນຮ້ອຍຂອງຄົວເຮືອນທີ່ມີດິນກະສິກຳ | Percentage of households with farmland | ຈຳນວນຄົວເຮືອນທີ່ມີດິນກະສິກຳ ຕໍ່ອັດຕາສ່ວນຮ້ອຍຂອງຈຳນວນຄົວເຮືອນທັງໝົດ | Number of households which are operating agricultural land as percentage of the total numb | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpecac09 | u_pop_econ_active_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ເຮັດວຽກເສດຖະກິດຕໍ່ຈຳນວນປະຊາກອນລວມ | Percentage of economically active population | ຈຳນວນພົນລະເມືອງອາຍຸ 10 ປີຂື້ນໄປທີ່ເຮັດວຽກເສດຖະກິດຕໍ່ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທັງໝົດທີ່ມີອ | Number of economically active persons aged 10 years and older as percent of the total popu | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpecac12 | u_pop_econ_active_sex_ratio | ອັດຕາສ່ວນເພດຂອງພົນລະເມືອງທີ່ເຮັດວຽກເສດຖະກິດ | Sex ratio of economically active population | ຈຳນວນພົນລະເມືອງຊາຍອາຍຸ 10 ປີທັງໝົດທີ່ເຮັດວຽກເສດຖະກິດຫານໃຫ້ຈຳນວນພົນລະເມືອງຍິງອາຍຸ 10 ປີຂື້ນ | Total number of economically active male aged 10 years and older divided by the total numb | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpecac22 | u_pop_activity_non_farm_pct | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ເຮັດວຽກທີ່ບໍ່ແມ່ນກະສິກຳ | Percentage of population with main activity non-farm sector | ຈຳນວນພົນລະເມືອງອາຍຸ 10 ປີຂື້ນໄປທີ່ເຮັດວຽກໃນຂະແໜງການອື່ນທີ່ບໍ່ແມ່ນກະສິກຳ ຕໍ່ອັດຕາສ່ວນຮ້ອຍຂອ | Number of persons (aged 10 and older) who are active in sector other than agriculture as p | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urppoac26 | u_poverty_incidence | ອັດຕາຄວາມທຸກຍາກ | Incidence of poverty | ອັດຕາສ່ວນຮ້ອຍຂອງພົນລະເມືອງທີ່ດຳລົງຊີວິດຢູ່ໄຕ້ເສັ້ນຄວາມທຸກຍາກ | Percent of population living below the poverty line | Estimates based on LECS V & Lao Population and Housing Census 2015 | Center for Development and Environment (CDE), University of Bern, Switzerland
-  ucvliga49 | u_roof_type_main | ປະເພດຂອງຫຼັງຄາເຮືອນຕົ້ນຕໍ | Main roof type | 1 = ກະເບື້ອງ/ຊີແຟັກ/ຄອນກີດ; 2 = ສັງກະສີ; 3 = ໄມ້; 4 = ໄມ້ໄຜ່; 5 = ຫຍ້າ; 6 = ອື່ນໆ; 99 = ບໍ | 1 = tile/ CPAC/ Concrete; 2 = zinc; 3 = wood; 4 = bamboo; 5 = grass; 6 = other; 99 = not s | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  ucvliga50 | u_floor_type_main | ປະເພດຂອງພື້ນເຮືອນຕົ້ນຕໍ | Main floor type | 1 = ກະໂລ; 2 = ຄອນກີຣດ; 3 = ໄມ້; 4 = ໄມ້ໄຜ່; 5 = ອື່ນໆ; 99 = ບໍ່ບອກ | 1 = ceramic/ tile; 2 = concrete; 3 = wood; 4 = bamboo; 5 = other; 99 = not stated | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  ucvliga51 | u_wall_type_main | ປະເພດຝາເຮືອນຕົ້ນຕໍ | Main wall type | 1 = ດິນຈີ່/ຄອນກີຣດ; 2 = ໄມ້; 3 = ໄມ້ໄຜ່; 4 = ອື່ນໆ; 99 = ບໍ່ບອກ | 1 = brick/ concrete; 2 = wood; 3 = bamboo; 4 = other; 99 = not stated | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  ucvliga52 | u_water_source_main | ປະເພດແຫຼ່ງນ້ຳໃຊ້ຕົ້ນຕໍ | Main water source | 1 = ນ້ຳປະປາ; 2 = ນ້ຳສ້າງມີຝາປິດ; 3 = ນ້ຳສ້າງບໍ່ມີຝາປິດ; 4 = ແມ່ນ້ຳ/ ໜອງ/ ເຂື່ອນ; 5 = ນ້ຳພູ | 1 = pipe water; 2 = well borehole protected; 3 = well borehole unprotected; 4 = river/ str | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  ucvliga54 | u_toilet_type_main | ປະເພດວິດຖ່າຍຕົ້ນຕໍ | Main type of toilet |  | 1 =Flush/Pour flush; 2 = Pit Latrine ventilated; 3 =Pit Latrine other; 4 =Composting toile | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  ucvliga56 | u_energy_cooking_type_main | ແຫຼ່ງພະລັງງານຕົ້ນຕໍສຳລັບແຕ່ງກິນ | Main type of energy source for cooking | 1 = ໄຟຟ້າ; 2 = ນ້ຳມັນ; 3 = ໄມ້; 4 = ຖ່ານ; 5 = ຖ່ານຫີນ; 6 = ຂີ້ເລື່ອຍ; 7 = ແກັດ; 8 = ອື່ນໆ; | 1 = electricity; 2 = paraffin fuel; 3 = wood; 4 = coal; 5 = charcoal; 6 = sawdust; 7 = gas | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  unsliga58 | u_living_area_per_person | ຂະໜາດເນື້ອທີ່ທີ່ຢູ່ອາໃສສະເລ່ຍຕໍ່ຄົນ | Average living area per person | ໝາຍເຖິງ ເນື້ອທີ່ຢູ່ອາໃສທັງໝົດຫານໃຫ້ຈຳນວນພົນລະເມືອງທັງໝົດ | Total living area  divided by the total number of persons | Lao Population and Housing Census 2015 | Lao Statistics Bureau
-  urpliga95 | u_hhs_w_electricity_pct | ອັດຕາສ່ວນຮ້ອຍຂອງຄົວເຮືອນທີ່ມີໄຟຟ້າໃຊ້ | Percentage of households having electricity |  |  | Lao Population and Housing Census 2015 | Lao Statistics Bureau
 
+[0 words in 0 rows]
+
+
+The Lao Social Indicator Survey II (LSIS II) was carried out in 2017 by Lao Statistics Bureau (LSB) in collaboration with
+Ministry of Health and Ministry of Education and Sport, as part of the Global Multiple Indicator Cluster Survey (MICS)
+Programme. Technical support was provided by the United Nations Children’s Fund (UNICEF), with government funding
+and financial support of UNICEF and United Nations Population Fund (UNFPA), European Union (EU), Luxembourg
+Government, United States Agency for International (USAID), Swiss Development Cooperation (SDC), World Food
+Programme (WFP), and United Nations Development Programmes (UNDP), World Health Organisation (WHO) and
+Japanese International Cooperation Agency (JICA). USAID provided technical support for the data collection and
+analysis on anaemia.
+The Global MICS Programme was developed by UNICEF in the 1990s as an international multi-purpose household
+survey programme to support countries in collecting internationally comparable data on a wide range of indicators on
+the situation of children and women. MICS surveys measure key indicators that allow countries to generate data for use
+in policies, programmes, and national development plans, and to monitor progress towards the Sustainable
+Development Goals (SDGs) and other internationally agreed upon commitments. The LSIS II presents up-to date
+information for assessing the situation of children, women and men as well as to provide data for monitoring progress
+towards existing strategies and action plans including the 8th National Socio-Economic Development Plan (NSEDP)
+2016-2020, update the status of the provincial social development indicators and track the graduation of the country
+from the category of Least Developed Country by 2020.
+The objective of this report is to facilitate the timely dissemination and use of results from the LSIS II. The report
+contains detailed information on the methodology of the survey, and tables following MICS standard and templates.
+For more information on the Global MICS Programme, please go to mics.unicef.org.
+Suggested citation:
+Lao Statistics Bureau. 2018. Lao Social Indicator Survey II 2017, Survey Findings Report. Vientiane, Lao PDR: Lao
+Statistics Bureau and UNICEF.
+II
+[326 words in 24 rows]
+
+
+Summary table of survey implementation and the survey population,
+Lao Social Indicator Survey II, 2017
+Survey sample and implementation
+Sample frame 2015 Population and Housing Questionnaires Household
+Census Women (age 15-49)
+Men (age 15-49)
+- Updated December, 2016 to February, Children under five
+2017 Children age 5-17
+Water Quality Testing
+Interviewer training June, 2017 Fieldwork July-November, 2017
+Survey sample
+Households Children under five
+- Sampled 23, 299 - Eligible 11, 812
+- Occupied 22, 443 - Mothers/caretakers interviewed 11, 720
+- Interviewed 22, 287 - Response rate (Per cent) 99.2
+- Response rate (Per cent) 99.3
+Women (age 15-49) Children age 5-17
+- Eligible for interviews 26, 103 - Eligible 15, 494
+- Interviewed 25, 305 - Mothers/caretakers interviewed 15, 435
+- Response rate (Per cent) 96.9 - Response rate (Per cent) 99.6
+Men (age 15-49) Water Quality Testing
+The Lao Social Indicator Survey II (LSIS II) was carried out in 2017 by Lao Statistics Bureau (LSB) in collaboration with - Eligible for interviews 12, 694 - Eligible 3, 495
+Ministry of Health and Ministry of Education and Sport, as part of the Global Multiple Indicator Cluster Survey (MICS) - Interviewed 12, 017 - Interviewed 3, 346
+Programme. Technical support was provided by the United Nations Children’s Fund (UNICEF), with government funding - Response rate (Per cent) 94.7 - Response rate (Per cent) 95.7
+and financial support of UNICEF and United Nations Population Fund (UNFPA), European Union (EU), Luxembourg
+Government, United States Agency for International (USAID), Swiss Development Cooperation (SDC), World Food
+Programme (WFP), and United Nations Development Programmes (UNDP), World Health Organisation (WHO) and Survey population
+
+=== pages mentioning ['Ethnicity', 'Religion', 'Ethnic'] (first 14) ===
+
+--- page 14 ----------------------------------------------------
+UN United Nations
+UNGASS United Nations General Assembly Special Session on HIV/AIDS Foreword
+UNICEF United Nations Children’s Fund
+USAID-ICF United States Agency for International Development – Inner City Fund
+The Lao Social Indicator Survey (LSIS) II conducted in 2016-2017 is a nation-wide household based survey
+WASH Water, Sanitation and Hygiene
+with a sample size of 23,400, covering all 18 provinces. It aims to generate data at provincial level
+WG Washington Group on Disability Statistics
+disaggregated by age, residence, sex, wealth quantile and ethnic groups.
+WHO World Health Organization
+LSIS II followed the Sixth global round of the Multiple Cluster Indicator Survey programme (MICS6) platform
+and modules focusing to generate the new data requirements of the SDGs. LSIS II includes 6 questionnaires:
+1 for household including salt testing; 1 for women 15-49 years of age; 1 for men 15-49 years of age; 1 for
+children 5-17 years of age; 1 for children under five (administered to their mothers or care takers) including
+anthropometry; and 1 for water quality testing of source and household drinking water. The specific add-on
+questionnaires of abortion have been included in the women questionnaires as well as anemia testing for
+children 6 to 59 months and women 15-49 years.
+LSIS II provides up-to-date information needed for the selection of data on key social development indicators
+to monitor the Sustainable Development Goals (SDGs) especially key inputs for the ongoing Voluntary
+National Report on SDG, 2018. This will provide a baseline for the 8th National Socio-Economic
+Development Plan (NSEDP) and provincial development plans including the inputs for upcoming Mid-Term
+Review of the 8th NSEDP, and support the country’s graduation from Least Developed Country by 2020.
+On this occasion, on behalf of the Lao Government and, in particular, the Steering Committee, I would like to
+express my sincere thanks to all government agencies, international organizations for their valuable support
+to the conduct of the LSIS II. We hope this report will serve as a useful source of information and data for
+evidence based planning policies, decision-making and in-depth research a
+
+--- page 47 ----------------------------------------------------
+Table SR.2.3 shows how the household populations in areas and regions are distributed according to household wealth
+quintiles.
+Table SR.2.3: Wealth quintiles
+Percent distribution of the household population by wealth index quintile, according to area of residence, regions and Province, Lao
+PDR, 2017
+Wealth index quintile
+Number of household
+Poorest Second Middle Fourth Richest Total members
+Total 20.0 20.0 20.0 20.0 20.0 100.0 104,851
+Area
+Urban 2.1 7.0 14.9 28.0 48.0 100.0 32,178
+Rural 27.9 25.8 22.2 16.5 7.6 100.0 72,674
+Rural with road 23.2 26.2 23.6 18.2 8.8 100.0 61,970
+Rural without road 55.2 23.1 14.4 6.5 0.8 100.0 10,704
+Region
+North 29.7 23.5 18.8 16.9 11.2 100.0 32,908 4
+Central 13.4 15.8 18.2 23.3 29.3 100.0 51,211
+South 20.9 24.8 26.5 16.6 11.1 100.0 20,732
+Province
+Vientiane Capital 0.3 1.1 7.6 26.4 64.6 100.0 12,633
+Phongsaly 56.3 21.1 12.2 6.5 4.0 100.0 3,166
+Luangnamtha 23.2 29.8 22.1 15.5 9.4 100.0 2,952
+Oudomxay 34.2 30.0 15.0 11.3 9.6 100.0 5,525
+Bokeo 17.1 15.6 21.5 26.3 19.5 100.0 3,025
+Luangprabang 30.2 21.0 20.9 17.2 10.7 100.0 7,427
+Huaphanh 42.1 34.1 13.0 6.3 4.5 100.0 4,697
+Xayabury 10.9 14.7 24.4 31.2 18.8 100.0 6,116
+Xiengkhuang 16.9 26.1 23.4 22.1 11.5 100.0 4,314
+Vientiane 8.7 16.3 25.0 29.4 20.6 100.0 7,257
+Borikhamxay 4.0 14.6 23.0 25.6 32.7 100.0 4,521
+Khammuane 14.5 26.5 23.6 19.6 15.8 100.0 6,346
+Savannakhet 27.6 19.1 17.1 20.3 15.8 100.0 14,535
+Saravane 36.8 30.1 16.2 9.8 7.0 100.0 6,554
+Sekong 36.5 36.1 12.7 9.0 5.7 100.0 1,931
+Champasack 7.6 18.1 36.9 23.3 14.2 100.0 10,043
+Attapeu 20.9 30.0 22.2 13.4 13.5 100.0 2,204
+Xaysomboune 22.1 32.6 30.5 10.6 4.2 100.0 1,606
+4.3 HOUSEHOLD COMPOSITION
+Table SR.3.1, as well as Tables SR.5, provide basic information on the households, female respondents age 15-49, male
+respondents 15-49, children age 5-17, and children under-5. Both unweighted and weighted numbers are presented.
+Such information is essential for the interpretation of findings presented later in the report and provide background
+information on the representativeness of the survey sample. The remaining tables in this report are presented only
+numbers.1
+with weighted
+Table SR.3.1 provides basic background information on the
+
+--- page 293 ----------------------------------------------------
+8.3 PARENTAL INVOLVEMENT
+ytirap rof 3RAN 98.0 90.1 32.1 82.1 89.0 58.0 18.0 - 60.1 09.0 49.0 72.1 )57.1( 85.0 38.0 89.0 71.1 20.1
+yradnoces
+)IPG( reppU loohcs
+detsujda Parental involvement in their children’s education is widely accepted to have a positive effect on their child’s learning
+redneG
+xedni
+performance. For instance, reading activities at home have significant positive influences on reading achievement,
+skills.8
+language comprehension and expressive language Research also shows that parental involvement in their child’s
+5.71 2.73 2.26 3.86 5.37 8.58 0.73 )*( 4.84 3.91 5.82 3.82 6.82 9.7 7.91 9.53 6.55 4.47
+ten ecnadnetta ,)RAN(
+yradnoces attainment.9
+literacy practices is a positive long-term predictor of later educational
+loohcs reppU loohcs 2,1latot
+detsujda
+oitar
+yradnoces Beyond learning activities at home, parental involvement that occurs in school (like participating in school meetings,
+talking with teachers, attending school meetings and volunteering in schools) can also benefit a student’s
+4.81 6.53 4.65 8.95 2.47 7.19 2.14 )*( 0.74 4.02 3.92 1.52 )1.12( 8.9 5.12 3.63 4.15 8.37
+ten ecnadnetta ,)RAN(
+yradnoces performance.10
+reppU reppU loohcs Research studies have shown that, in the primary school age range, the impact of parental involvement
+detsujda syob
+oitar in school activities can even be much bigger than differences associated with variations in the quality of schools,
+group.11
+regardless of social class and ethnic
+4.61 0.93 2.96 8.67 6.27 9.77 3.33 - 0.05 3.81 6.72 9.13 )9.63( 7.5 8.71 4.53 2.06 1.57
+ten ecnadnetta ,)RAN(
+yradnoces
+reppU loohcs The PR module included in the Questionnaire for children age 5-17 years was developed and tested for inclusion in
+detsujda slrig
+oitar 5).12
+MICS6. The work is described in detail in MICS Methodological Papers (Paper No.
+Table LN.3.1 represents percentages of children aged between 7 and 14, whose household adult member received a
+ytirap rof 3RAN 89.0 40.1 80.1 80.1 10.1 01.1 )*( - 70.1 10.1 19.0 08.0 )89.0( 29.0 99.0 70.1 01.1 50.1
+report card, involvement of adult (parent) in school management such as if a school has a governing body, if a parent
+yradnoces
+)IPG( loohcs
+rewol
+detsujda attended a
+
+--- page 294 ----------------------------------------------------
+8.3 PARENTAL INVOLVEMENT
+Parental involvement in their children’s education is widely accepted to have a positive effect on their child’s learning
+performance. For instance, reading activities at home have significant positive influences on reading achievement,
+skills.8
+language comprehension and expressive language Research also shows that parental involvement in their child’s
+attainment.9
+literacy practices is a positive long-term predictor of later educational
+Beyond learning activities at home, parental involvement that occurs in school (like participating in school meetings,
+talking with teachers, attending school meetings and volunteering in schools) can also benefit a student’s
+performance.10
+Research studies have shown that, in the primary school age range, the impact of parental involvement
+in school activities can even be much bigger than differences associated with variations in the quality of schools,
+group.11
+regardless of social class and ethnic
+The PR module included in the Questionnaire for children age 5-17 years was developed and tested for inclusion in
+5).12
+MICS6. The work is described in detail in MICS Methodological Papers (Paper No.
+Table LN.3.1 represents percentages of children aged between 7 and 14, whose household adult member received a
+report card, involvement of adult (parent) in school management such as if a school has a governing body, if a parent
+attended a meeting called by the governing body, and parental involvement in school activities such as school
+celebration, sports event, and discussion with teachers on children’s progress.
+In Table LN.3.2, reasons for children who are aged between 7 and 14 who are unable to attend class due to a school-
+related reasons are presented including natural and man-made disaster, teacher strike and teacher absenteeism.
+Lastly, Table LN.3.3 shows learning environment at home among children aged between 7 and 14 i.e., percentage of
+children with 3 or more books to read, percentage of children who have homework, percentage whose teachers use
+8 the language also spoken at home, and percentage of children who receive help with homework.
+8
+Gest SD, Freeman NR, Domitrovich CE, Welsh JA. Shared book 
+
+--- page 491 ----------------------------------------------------
+HOUSEHOLD CHARACTERISTICS HC
+HC1A. What is the religion of (name of the head of the BUDDHIST .......................................................... 1
+household from HL2)? CHRISTIANITY .................................................. 2
+ISLAM .................................................................. 3
+ANIMIST .............................................................. 4
+OTHER RELIGION
+(specify) _______________________________ 6
+NO RELIGION ..................................................... 7
+HC2. To what ethnic group does (name of the head of ETHNIC GROUP CODE .......................... __ __
+the household from HL2) belong?
+OTHER (specify) ________________________ 96
+HC3. How many rooms do members of this household
+usually use for sleeping? NUMBER OF ROOMS ................................. __ __
+HC4. Main material of the dwelling floor. NATURAL FLOOR
+EARTH / SAND .............................................. 11
+Record observation. DUNG .............................................................. 12
+RUDIMENTARY FLOOR
+If observation is not possible, ask the respondent to WOOD PLANKS ............................................. 21
+determine the material of the dwelling floor. PALM / BAMBOO .......................................... 22
+FINISHED FLOOR
+PARQUET OR POLISHED WOOD ............... 31
+VINYL OR ASPHALT STRIPS ...................... 32
+CERAMIC TILES ........................................... 33
+CEMENT ......................................................... 34
+CARPET .......................................................... 35
+OTHER (specify) ________________________ 96
+HC5. Main material of the roof. NATURAL ROOFING
+NO ROOF ........................................................ 11
+Record observation. THATCH / PALM LEAF ................................ 12
+RUDIMENTARY ROOFING
+PALM / BAMBOO .......................................... 22
+WOOD PLANKS ............................................. 23
+FINISHED ROOFING
+METAL / TIN .................................................. 31
+WOOD ............................................................. 32
+CALAMINE / CEMENT FIBRE ..................... 33
+CERAMIC TILES ..........................
