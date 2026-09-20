@@ -532,8 +532,21 @@ class Records(unittest.TestCase):
         self.assertIn("2022", by_name["Papua"]["religion"].get("note", ""))
 
         regencies, printed = quiet(m.regency_records, fake_fetch)
-        self.assertEqual(len(regencies), 1)
-        cilacap = regencies[0]
+        by_regency = {r["name"]: r for r in regencies}
+        # One article is stubbed, so one regency is read from an infobox; the
+        # rest of what lands is the four portal tables, which cover every unit
+        # of their provinces and write only the ones no article answered for.
+        cilacap = by_regency["Kabupaten Cilacap"] if "Kabupaten Cilacap" in by_regency \
+            else by_regency["Cilacap"]
+        self.assertEqual(sum(1 for r in regencies if r["religion_year"] == 2019), 1)
+        bukittinggi = by_regency["Kota Bukittinggi"]
+        self.assertEqual(bukittinggi["religion_year"], 2023)
+        self.assertEqual(bukittinggi["religion"][0]["group"], "Islam")
+        self.assertIn("data.sumbarprov.go.id", bukittinggi["religion_note"])
+        self.assertEqual({s["field"] for s in bukittinggi["sources"]}, {"religion"})
+        self.assertEqual(by_regency["Kota Samarinda"]["religion_year"], 2023)
+        self.assertEqual(by_regency["Lebong"]["religion_year"], 2024)
+        self.assertEqual(by_regency["Kota Tangerang Selatan"]["religion_year"], 2021)
         self.assertEqual(cilacap["id"], "IDN-central-java-cilacap")
         self.assertEqual(cilacap["parent"], "IDN-central-java")
         self.assertEqual(cilacap["parent_name"], "Central Java")

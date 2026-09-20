@@ -191,6 +191,9 @@ ALIASES: dict[str, str] = {
     "kota sawahlunto": "Kota Sawah Lunto",
     "kota pematangsiantar": "Kota Pematang Siantar",
     "banyuasin": "Banyu Asin",
+    # The regency is Mahakam Ulu in its own province's tables and Mahakam Hulu
+    # in the boundary file; ulu and hulu are the same word.
+    "mahakam ulu": "Mahakam Hulu",
 }
 
 
@@ -497,8 +500,12 @@ def fields(source: Source, counts: dict[str, int], swap: bool) -> dict[str, Any]
     """The religion fields for one record: the composition, its year, a note of
     two or three sentences and the dataset it came from."""
     total = sum(counts.values())
+    # A faith the registry counts a handful of people in rounds to 0.00% at
+    # the two decimals every other row on this map carries, and a row printed
+    # as 0.0% says less than no row at all. Kota Pariaman's two Buddhists of
+    # 101,680 are dropped; the shares still add to 100.00.
     rows = [{"group": g, "pct": round(100.0 * v / total, 2)}
-            for g, v in counts.items() if v]
+            for g, v in counts.items() if v and 100.0 * v / total >= 0.005]
     rows.sort(key=lambda r: (-r["pct"], r["group"]))
     sentences = [
         f"Population by religion for {source.year} from {source.publisher}, "
