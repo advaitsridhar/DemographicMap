@@ -1,20 +1,198 @@
-/home/runner/work/DemographicMap/DemographicMap/scripts/probe_tls.py:157: UserWarning: PKCS#7 certificates could not be parsed as DER, falling back to parsing as BER. In the future, this may become an exception. Error details: ValueError: error parsing asn1 value: ParseError { kind: InvalidSetOrdering, location: ["ContentInfo::content", "SignedData::certificates", 2] }
-  certs = pkcs7.load_der_pkcs7_certificates(blob)
-data.nso.mn:443
-  issuer: ((('countryName', 'GB'),), (('organizationName', 'Sectigo Limited'),), (('commonName', 'Sectigo Public Server Authentication CA DV R36'),))
-  notAfter: Dec 30 23:59:59 2026 GMT
-  CN=*.nso.mn
-  DNS:*.nso.mn
-  DNS:nso.mn
-  AIA caIssuers: http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
-data.nso.mn:443 -- completing the chain from AIA
-  added intermediate from http://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt
-    subject ['CN=Sectigo Public Server Authentication CA DV R36'] until Mar 21 23:59:59 2036 GMT
-  added intermediate from http://crt.sectigo.com/SectigoPublicServerAuthenticationRootR46.p7c
-    subject ['CN=Sectigo Public Server Authentication Root R46'] until Mar 21 23:59:59 2046 GMT
-    this is a self-signed root; chain complete
-  VERIFIED handshake ok, TLSv1.2
+probe_pdf: https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf
+  7,861,439 bytes
+  35 pages
+probe_pdf: 35 pages, printing [6, 7, 8, 29, 30, 31]
 
-page: https://data.nso.mn/
-  200 text/html; charset=utf-8 44405 bytes
-  no links matched
+--- page 6 ----------------------------------------------------
+3
+1. PAPUA NEW GUINEA OVERVIEW
+Papua New Guinea’s population has passed the 10 million mark. The 2024 National Population
+Census counted 10,185,363 people in PNG on Census night.
+This represents an increase of 40% (2,910,039 people) in PNG’s population count since 2011
+(7 ,275,324)
+The average annual growth rate over the past 13 years, since the 2011 Census, was 2.6%.
+Annual growth rate since the 2011 Census is higher (3.1%) but is likely to be artificially inflated
+because of non-demographic factors such as higher undercounting in 2000 and improvements to
+the 2011 and 2024 Census coverage methods.
+More males than females were counted in PNG on Census night (52.4% and 47 .6% of the total
+population, respectively). This represents approximately 110 males to every 100 females.
+The average number of people per household was 5 for PNG.
+Since the first official census in 1980, five years after independence, there have been an additional
+7 .2 million people added from 3.0 million in the last 44 years
+Figure 1: PNG’s population growth trend from 1966 to 2024.
+1960 1980 2000 2020
+1 0,18 5,3 63
+2024
+7 ,275,324
+2011
+10M
+8M
+6M
+4M
+2M
+5,1 90,7 86
+2000
+3,761,954
+1990
+3,010,727
+1980
+2,489,935
+1971
+2,184,991
+1966
+
+--- page 7 ----------------------------------------------------
+2024 National Population Census Final Figures
+4
+2. PROVINCIAL OVERVIEW
+Population Size
+Of the 22 provinces that make up PNG, Morobe recorded the highest, nearing a million mark, and
+Eastern Highlands Province with 800,072. T able 1 below shows the population distribution for each
+province.
+T able 1: Population by sex, sex ratio and province, 2024
+Province Persons Males Females Sex Ratio
+Papua New Guinea 10,18 5, 3 6 3 5,336,546 4,848,817 110
+1.  Western 300,019 156,603 143,416 109
+2. Gulf 203,545 106,948 96,597 111
+3. Central 373,779 198,877 174,902 114
+4. National Capital District 756,754 403,291 353,463 114
+5. Milne Bay 41 2 ,15 8 216,985 1 95,1 73 111
+6. Northern 273,950 144,626 129,324 112
+7 .  Southern Highlands 602,085 311,380 290,705 107
+8. Enga 489,971 256,586 233,385 110
+9. Western Highlands 462,566 237 ,582 224,984 106
+10. Chimbu 458,406 242,663 215,743 112
+11. Eastern Highlands 800,072 4 1 7, 2 7 3 382,799 109
+12. Hela 365,806 194,762 171,044 114
+13. Jiwaka 455,208 2 3 7,0 5 1 218, 157 109
+14. Morobe 997 ,545 526,505 471,040 112
+15. Madang 761,15 4 401,885 359,269 112
+16. East Sepik 631,791 321,593 310, 198 104
+17 . West Sepik 362,721 189,334 173,387 109
+18. Manus 69,560 36,232 33,328 109
+19. New Ireland 2 3 7,7 8 0 125,634 11 2 ,1 4 6 112
+20. East New Britain 434,757 226,079 208,678 108
+21. West New Britain 368,643 1 95,180 173,463 113
+22.  Autonomous Region of Bougainville 3 6 7,0 9 3 189,477 1 7 7, 6 1 6 107
+Population Distribution by Region
+PNG is divided into 4 Regions. The Highlands Region (35.7%) has the highest percentage of PNG’s
+population, followed by Momase (27%), then the Southern and Islands Regions.
+Population Distribution by Province
+At the provincial level, Morobe has the highest percentage (9.8%), followed by Eastern Highlands
+Province (7 .9%), Madang (7 .5%) and National Capital District (7 .4%).
+
+--- page 8 ----------------------------------------------------
+5
+Sex Ratio
+The sex ratio recorded at the national level (more males than females) was reflected in each province.
+Males outnumbered females in all provinces with the National Capital District, Central and Hela
+recording the highest sex ratio of 114 males for every 100 females. West New Britain has a sex ratio of
+113. The sex ratio in all other provinces varied between 104 (East Sepik) and 112 (Northern, Chimbu,
+Morobe, and Madang)
+Provincial Growth Rates
+The fastest growing provinces (between 2011 and 2024) were Western, National Capital District,
+Milne Bay, and Madang, each recording more than 3% average annual growth rate since 2011.
+T able 2: Provincial population growth rates (2011-2024)
+Province 2011 2024 Growth rate (%)
+01 Western  201,351 300,019 3.1
+02 Gulf  15 8,1 97 203,545 2.0
+03 Central  269,756 373,779 2.5
+04 National Capital District 364, 125 756,754 5.7
+05 Milne Bay  276,512 41 2 ,15 8 3.1
+06 Northern  186,309 273,950 3.0
+07 Southern Highlands  510,245 602,085 1.3
+08 Enga  432,045 489,971 1.0
+09 Western Highlands  362,850 462,566 1.9
+10 Chimbu  376,473 458,406 1.5
+11 Eastern Highlands  579,825 800,072 2.5
+12 Hela  249,449 365,806 3.0
+13 Jiwaka  343,987 455,208 2.2
+14 Morobe  674,810 997 ,545 3.0
+15 Madang  493,906 761,15 4 3.4
+16 East Sepik   450,530 631,791 2.6
+17 West Sepik  248,411 362,721 2.9
+18 Manus   60,485   69,560 1.1
+19 New Ireland  194,067 2 3 7,7 8 0 1.6
+20 East New Britain  328,369 434,757 2.2
+21 West New Britain  264,264 368,643 2.6
+22 Autonomous Region of
+Bougainville
+249,358 3 6 7,0 9 3 3.0
+
+--- page 29 ----------------------------------------------------
+2024 National Population Census Final Figures
+26
+20. AUTONOMOUS REGION OF
+ BOUGAINVILLE
+Population in brief
+3 6 7,0 9 3 189,477 1 7 7,6 1 6
+T otal Population Male Female
+Districts Total Male Female
+North Bougainville 153,530 78,693 74,837
+Central Bougainville 98,067 50,934 47 ,133
+South Bougainville 115,496 59,850 55,646
+Proportion of PNG’s total population  3.6%
+Annual growth rate since 2011 census 3.0%
+Sex Ratio (males per 100 females)  107
+Population density (persons per km2 ) 39
+District with highest population count North Bougainville
+Population Distribution by District
+42%
+North
+Bougainville
+31%
+South
+Bougainville
+27%
+Central
+Bougainville
+
+--- page 30 ----------------------------------------------------
+27
+21. HELA PROVINCE
+Population in brief
+365,806 194,762 171,044
+T otal Population Male Female
+Districts Total Male Female
+Komo Hulia 7 7,11 4 41,050 36,064
+Koroba Kopiago 130,425 69,892 60,533
+Tari/Pori 102,081 54,735 4 7, 3 4 6
+Magarima 5 6,186 29,085 27 , 101
+Proportion of PNG’s total population  3.6%
+Annual growth rate since 2011 census 3.0%
+Sex Ratio (males per 100 females)  114
+Population density (persons per km2 ) 34
+District with highest population count Koroba Kopiago
+Population Distribution by District
+36%
+Koroba Kopiago
+21%
+Komo Hulia
+15%
+Magarima
+28%
+Tari/Pori
+
+--- page 31 ----------------------------------------------------
+2024 National Population Census Final Figures
+28
+22. JIWAKA PROVINCE
+Population in brief
+455,208 2 3 7,0 5 1 218,157
+T otal Population Male Female
+Districts Total Male Female
+Anglimp/South Waghi 281,824 146,328 135,496
+Jimi 7 7,74 4 41,608 36, 136
+North Waghi 95,640 4 9,115 46,525
+Proportion of PNG’s total population  4.5%
+Annual growth rate since 2011 census 2.2%
+Sex Ratio (males per 100 females)  109
+Population density (persons per km2 ) 94
+District with highest population count Anglimp / South Waghi
+Population Distribution by District
+62%
+Anglimp/South Waghi
+17%
+Jimi
+21%
+North Waghi
