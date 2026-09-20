@@ -75,6 +75,70 @@ District with highest population count Alotau
 """
 
 
+# Table 1 of the 2024 booklet, with the prose that surrounds it on the page.
+TABLE_1 = """2024 National Population Census Final Figures
+2. PROVINCIAL OVERVIEW
+Of the 22 provinces that make up PNG, Morobe recorded the highest, nearing a million mark, and
+Eastern Highlands Province with 800,072. T able 1 below shows the population distribution for each
+province.
+T able 1: Population by sex, sex ratio and province, 2024
+Province Persons Males Females Sex Ratio
+Papua New Guinea 10,18 5, 3 6 3 5,336,546 4,848,817 110
+1.  Western 300,019 156,603 143,416 109
+2. Gulf 203,545 106,948 96,597 111
+3. Central 373,779 198,877 174,902 114
+4. National Capital District 756,754 403,291 353,463 114
+5. Milne Bay 41 2 ,15 8 216,985 1 95,1 73 111
+6. Northern 273,950 144,626 129,324 112
+7 .  Southern Highlands 602,085 311,380 290,705 107
+8. Enga 489,971 256,586 233,385 110
+9. Western Highlands 462,566 237 ,582 224,984 106
+10. Chimbu 458,406 242,663 215,743 112
+11. Eastern Highlands 800,072 4 1 7, 2 7 3 382,799 109
+12. Hela 365,806 194,762 171,044 114
+13. Jiwaka 455,208 2 3 7,0 5 1 218, 157 109
+14. Morobe 997 ,545 526,505 471,040 112
+15. Madang 761,15 4 401,885 359,269 112
+16. East Sepik 631,791 321,593 310, 198 104
+17 . West Sepik 362,721 189,334 173,387 109
+18. Manus 69,560 36,232 33,328 109
+19. New Ireland 2 3 7,7 8 0 125,634 11 2 ,1 4 6 112
+20. East New Britain 434,757 226,079 208,678 108
+21. West New Britain 368,643 1 95,180 173,463 113
+22.  Autonomous Region of Bougainville 3 6 7,0 9 3 189,477 1 7 7, 6 1 6 107
+Population Distribution by Region
+At the provincial level, Morobe has the highest percentage (9.8%), followed by Eastern Highlands
+Province (7 .9%), Madang (7 .5%) and National Capital District (7 .4%).
+"""
+
+
+class TheProvinceTable(unittest.TestCase):
+    def setUp(self):
+        self.read = png.read_province_table([TABLE_1])
+
+    def test_all_twenty_two_provinces_are_read(self):
+        self.assertEqual(set(self.read), set(png.PROVINCES))
+        self.assertEqual(sum(u.total for u in self.read.values()), 10_185_363)
+
+    def test_a_longer_name_is_not_eaten_by_a_shorter_one(self):
+        # "Western Highlands" starts with "Western". Taking the shorter name
+        # first read row 9 as a second Western and lost the province.
+        self.assertEqual(self.read["Western"].total, 300_019)
+        self.assertEqual(self.read["Western Highlands"].total, 462_566)
+
+    def test_the_prose_around_the_table_is_not_read_as_a_row(self):
+        # The paragraph above ends "... Eastern Highlands Province with
+        # 800,072. Table 1 below shows ...", which is not a row.
+        self.assertEqual(self.read["Eastern Highlands"].male, 417_273)
+
+    def test_a_file_that_is_not_the_2024_final_figures_is_refused(self):
+        moved = TABLE_1.replace("10,18 5, 3 6 3 5,336,546 4,848,817 110",
+                                "10,185,364 5,336,547 4,848,817 110")
+        with self.assertRaises(SystemExit) as caught:
+            png.read_province_table([moved])
+        self.assertIn("2024 Final Figures", str(caught.exception))
+
+
 class ReadingAKernedRow(unittest.TestCase):
     """The office's PDFs break a figure into groups; the row's own arithmetic
     is what says where one figure ends and the next begins."""

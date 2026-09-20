@@ -404,7 +404,10 @@ def read_province_table(pages: list[str]) -> dict[str, Unit]:
         if not head:
             continue
         number, body = int(head.group(1)), head.group(2)
-        for name in PROVINCES:
+        # Longest name first: "Western Highlands" starts with "Western", and
+        # taking the shorter one read row 9 as a second Western and lost the
+        # province. The same rule picks a snapshot's heading.
+        for name in sorted(PROVINCES, key=len, reverse=True):
             if body.startswith(name) and body[len(name):len(name) + 1] == " ":
                 rest = body[len(name):]
                 if not re.search(r"\d", rest):
