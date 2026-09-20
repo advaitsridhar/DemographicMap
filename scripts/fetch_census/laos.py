@@ -196,8 +196,10 @@ PROVINCES: dict[str, tuple[str, ...]] = {
     "Savannakhet": ("Savannakhét",),
     "Vientiane": (),
     "Vientiane Capital": (),
-    "Xaignabouli": ("Xayabury", "Xayaboury", "Sayaboury", "Sainyabuli",
-                    "Xaiyabouli", "Xayabouly", "Xaignabouri"),
+    # The workbook's own spelling is "Xaignabouly"; the boundary file's is
+    # "Xaignabouli", and the rest are what this province is called elsewhere.
+    "Xaignabouli": ("Xaignabouly", "Xayabury", "Xayaboury", "Sayaboury",
+                    "Sainyabuli", "Xaiyabouli", "Xayabouly", "Xaignabouri"),
     "Xaisomboun": ("Xaysomboun", "Xiasomboun", "Saysomboun"),
     "Xekong": ("Sekong", "Xe Kong"),
     "Xiangkhouang": ("Xiengkhuang", "Xieng Khouang", "Xiengkhouang",
@@ -442,13 +444,13 @@ def gather(rows: list[dict[str, Any]]) -> tuple[dict[str, dict],
     provinces: dict[str, dict[str, Any]] = {}
     districts: dict[tuple[str, str], dict[str, Any]] = {}
     unplaced: dict[str, float] = {}
+    unknown: dict[str, int] = {}
     for village in rows:
         province = province_of(village["province_label"])
         if province is None:
-            raise SystemExit(
-                f"laos: village {village['village']} ({village['village_name']}) names "
-                f"the province {village['province_label']!r}, which is none of the 18 "
-                "this reader knows; add it to PROVINCES or to the Vientiane table")
+            label = village["province_label"]
+            unknown[label] = unknown.get(label, 0) + 1
+            continue
         add(provinces.setdefault(province, blank_unit(province, province)), village)
         district = district_of(province, village["district_label"])
         if district is None:
@@ -457,6 +459,11 @@ def gather(rows: list[dict[str, Any]]) -> tuple[dict[str, dict],
             continue
         add(districts.setdefault((province, district),
                                  blank_unit(district, province)), village)
+    if unknown:
+        listed = ", ".join(f"{label!r} ({n} villages)" for label, n in sorted(unknown.items()))
+        raise SystemExit(f"laos: {len(unknown)} province name(s) none of the 18 this "
+                         f"reader knows: {listed}. Add each to PROVINCES, or to the "
+                         "Vientiane table if it is one of those two.")
     notes = [f"{key} ({people:,.0f} people)" for key, people in sorted(unplaced.items())]
     return provinces, districts, notes
 
