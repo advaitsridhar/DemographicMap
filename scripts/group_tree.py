@@ -702,6 +702,13 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         "Other native language", "Foreign language", "Other Foreign Language",
         "Other Ethiopian Language", "Other Indian languages", "Esperanto",
         "Latin", "Sanskrit", "Other language", "Other languages, n.i.e.",
+        # The Atlas of the Languages of Iran writes these where a settlement
+        # has no single answer. "mixed" is the atlas declining to give one
+        # variety, not a language called mixed, and "unknown" is its own
+        # gap; both belong with the other answers-that-are-not-languages so
+        # that a unit led by one reads as unclassified rather than as
+        # speaking something the tree has failed to place.
+        "mixed", "unknown",
     ),
 }
 
@@ -1305,6 +1312,9 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
                         "Bobo"),
     "Indo-Aryan languages": (
         "Halabi", "Avadhi",
+        # ALI, Iran: an Indo-Aryan island on the Hormozgān coast,
+        # which is why it is not filed with its Iranian neighbours.
+        "Kholosi",
         # Nepal's Indo-Aryan mother tongues. The far-western ones are Nepali
         # as a district speaks it -- Baitadeli is the speech of Baitadi,
         # Bajhangi of Bajhang -- and sit beside Doteli and Achhami, which the
@@ -1378,7 +1388,11 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     # Siberia and the Altai, likewise: each of these is a Turkic language
     # that Russia publishes separately from the Altai proper.
     "Turkic languages": ("Teleut", "Kumandin", "Chelkan", "Tubalar",
-                         "Chulym", "Soyot", "Tofalar", "Tofa"),
+                         "Chulym", "Soyot", "Tofalar", "Tofa",
+                         # ALI, Iran: the Qashqai of Fars and Esfahan, whom
+                         # the atlas records as Turkic-speaking among the
+                         # Iranian varieties all around them.
+                         "Ghashghāi"),
     "Uralic languages": ("Votic", "Nganasan", "Enets", "Selkup",
                          "Livonian"),
     "Sinitic languages": ("Dungan",),
@@ -1444,7 +1458,62 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
     "Romance languages": ("Aragonese", "French or French Creole"),
     "Germanic languages": ("Limburgish",
                            "Limburgish, Limburgan, Limburger"),
-    "Iranian languages": ("Ezidian", "Ezdiki"),
+    # -- The Atlas of the Languages of Iran, twelve provinces.
+    #
+    # ALI names a variety at the grain it surveyed, far finer than any
+    # census: "Kalhuri" and "Hōrāmi" rather than Kurdish, "Bakhtiāri" and
+    # "Northern Lori" rather than Luri, and around a hundred Persian Gulf
+    # and Hormozgān varieties with no census name at all. Left unplaced
+    # each one had no family, so it rendered in the reserved "not yet
+    # classified" colour -- 6 of 11 Iranian provinces and 52 of 96 counties
+    # on the build of 20 September 2026.
+    #
+    # They are placed at their *family* and no deeper. Filing "Kalhuri"
+    # under a Kurdish node or "Dashtesuni" under a Luri one would be this
+    # map asserting a sub-classification of Iranian that ALI does not
+    # publish as a hierarchy and no census supports; the rule at the top of
+    # this file is that a contested placement gets stated rather than
+    # forced. The family is what the atlas does establish -- these are the
+    # Iranian languages of Iran, which is the book's subject.
+    #
+    # Thirty-four further ALI labels need no entry: they carry a root the
+    # pattern rules already find ("Central Kurdish", "Eastern Gilaki",
+    # "Tehrāni type Persian", "Khuzestāni Arabic"). Four more are not
+    # Iranian and are placed with their own families instead -- Ghashghāi
+    # under Turkic, Kholosi under Indo-Aryan -- while "mixed" and "unknown"
+    # are answers rather than languages.
+    "Iranian languages": (
+        "Ezidian", "Ezdiki",
+        "Ahrami", "Amlei", "Anāraki", "Ardestān group", "Arkawāzi",
+        "Ashkanuni", "Ashomi", "Bahmei", "Bakhtiāri",
+        "Banderi of Bandar Abbās", "Banzarki", "Bardesuni", "Bastaki",
+        "Batui", "Bayray", "Biyābānaki group", "Borborudi", "Bordekhuni",
+        "Borzāvand group", "Boyerahmadi", "Buchiri", "Bushehri",
+        "Bālā Gerēvei", "Bāuyi", "Bēbehōni", "Central Caspian",
+        "Central Tāleshi", "Central Tāti", "Chahvāzi", "Chardāweli",
+        "Dashtesuni", "Dashtini", "Dashtiyāti", "Dehi of Kāshān",
+        "Dehkordi", "Dehyashti", "Desfili", "Dilomi", "Doshmanziyāri",
+        "Esfahāni", "Evazi", "Falāvarjuni group", "Farāmarzi", "Fini",
+        "Gargui of Esfahān", "Gargui of Zavvāreh", "Gawdei", "Gazi",
+        "Genāvei", "Ghahfarrokhi", "Ghomshei", "Glangli", "Golpāyeguni",
+        "Gāpelei", "Gāvbandi", "Gōrāni", "Hazāragi", "Hemedāni", "Heshnizi",
+        "Hinimini", "Hormozgān Pahlavāni", "Hormuzi", "Hōrāmi", "Jami",
+        "Jansi", "Jirandeh group", "Jāshk Shahrichi", "Kalhuri", "Kanguni",
+        "Kemeshki", "Kerman Rudbāri", "Kermāshāni Laki", "Keshmi",
+        "Khamiri", "Khenesiri", "Khezeli of Kārazān",
+        "Khezeli of Āsemān Ābād", "Khormuji", "Khāyizi", "Koroshi", "Korta",
+        "Koshkonāri", "Kupāi", "Kurdali", "Laki", "Laki of Lorestan",
+        "Lenjāni", "Lori-Bakhtiāri of Esfahan Province", "Lāmerdi", "Lāri",
+        "Malegshay", "Meyma group", "Minowi", "Mobārakei", "Molki Gāl",
+        "Mārzi Gāl", "Mēnjōi", "Natanzi", "Nejebbādi",
+        "North-Central Tāleshi", "Northern Lori", "Northern Tāleshi",
+        "Nāini", "Qanavāti", "Rudashti", "Rudoni", "Rukhonei", "Rumezi",
+        "Rural Chārmahāli", "Ruydari", "Rārikī", "Semiromi", "Shahrichi",
+        "Shuhāni", "Shushtari", "Shērwāni", "Silākhori", "Southern Lori",
+        "Southern Tāleshi", "Tangesiri", "Tayyebi", "Tiruni", "Tsorumi",
+        "Tudeshki", "Tāghuni", "Urban Chārmahāli", "Urjeni",
+        "Varnosfāderāni", "Vuriyerdi", "Ēlāmi",
+    ),
     "Semitic languages": ("Hassaniya",),
     "Surmic and Koman languages": ("Majang", "Messengo", "Fadashi"),
     # Two small families with no relative anywhere else in this table.

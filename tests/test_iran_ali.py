@@ -571,3 +571,52 @@ class TheSourceFilesAreCommitted(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class EveryLabelHasAFamily(unittest.TestCase):
+    """A variety with no family renders in the "not yet classified" colour.
+
+    This is not caught by ``check_classified``: that walks site/data and its
+    ``leader`` skips an estimate-shaped value, so a whole country of modelled
+    compositions is invisible to it. Iran was invisible that way -- correct
+    on the map and grey on it -- until the atlas's labels were placed.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+        import group_tree
+        cls.gt = group_tree
+        cls.labels = sorted({
+            share["group"]
+            for record in json.loads(PROCESSED.read_text())
+            for share in record["language"]["estimate"]})
+
+    def test_every_label_the_adapter_writes_carries_a_hue(self):
+        unplaced = [name for name in self.labels
+                    if not self.gt.hue("language", name)]
+        self.assertEqual(
+            unplaced, [],
+            f"{len(unplaced)} of {len(self.labels)} ALI labels have no family "
+            f"and would render unclassified")
+
+    def test_the_varieties_land_under_Iranian_and_not_somewhere_convenient(self):
+        # A label placed in the wrong family is worse than one left out: it
+        # would colour a Kurdish county as though it spoke something else.
+        for name in ("Kalhuri", "Hōrāmi", "Bakhtiāri", "Northern Lori",
+                     "Dashtesuni", "Banderi of Bandar Abbās", "Laki",
+                     "Central Tāleshi", "Boyerahmadi"):
+            with self.subTest(name=name):
+                self.assertIn("Iranian languages",
+                              self.gt.ancestry("language", name))
+
+    def test_the_four_that_are_not_Iranian_are_not_filed_as_Iranian(self):
+        # Ghashghāi is Turkic and Kholosi Indo-Aryan, both spoken inside the
+        # atlas's Iranian survey area; "mixed" and "unknown" are answers.
+        self.assertIn("Turkic languages", self.gt.ancestry("language", "Ghashghāi"))
+        self.assertIn("Indo-Aryan languages", self.gt.ancestry("language", "Kholosi"))
+        for name in ("mixed", "unknown"):
+            with self.subTest(name=name):
+                trail = self.gt.ancestry("language", name)
+                self.assertIn("Unclassified language answers", trail)
+                self.assertNotIn("Iranian languages", trail)
