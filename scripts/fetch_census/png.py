@@ -30,13 +30,27 @@ as gaps.
 
 **Religion as a one-row composition.** A province's record carries a single
 group -- "Roman Catholic 68.4%" for Bougainville -- because that is the whole
-of what the office publishes for a province. The panel says so by itself:
+of what the office publishes for a province. The shares run from 19.7%
+(Southern Highlands, Hela) to 68.4% (Bougainville), so for most provinces the
+record describes under half the people, and the panel says so by itself:
 shares that fall short of 100 draw the chip "describes 68.4% of the
-population". The rest of each province is not broken down anywhere this
-project could reach. The National Report's foreword says the full tables are
-in "the 22 Provincial Reports"; the office's Population & Housing download
-category holds ten files and none of them is a provincial report, and no
-mirror carries one (see docs/SOURCES.md).
+population". ``report_coverage`` prints every province's share into the run's
+log and refuses a run where any of them reached the threshold that chip stops
+at, because a lone denomination shown as a whole composition would be a quiet
+untruth.
+
+**The rest of each province is sold, not published.** Appendix 4 of the 2011
+National Report lists the census products and their prices: the *Provincial
+Report* at K40 a province, the *Basic Tables* -- "a set of 31 cross-classified
+tables covering the main census topics at national and provincial level" -- at
+K40 a set, the *Table Retrieval System* CD-ROM, which holds those tables down
+to district and LLG, at K2,000, and a *User Service* that will prepare a table
+"on application". None of them is a file. A second round of work looked for
+any of it elsewhere -- the office's own complete file list, the DHS
+StatCompiler API and its 519-page report, the 2022 SDES, the 2000 census, the
+Internet Archive's copy of the NSO's old PRISM site, Wikipedia -- and found
+religion published for Papua New Guinea as a country and never for a province.
+Every route and what it answered is in docs/SOURCES.md.
 
 **Reading the figures.** Both PDFs extract through pypdf with their thousands
 separators intact but their digits broken up by kerning -- Milne Bay's
@@ -76,6 +90,7 @@ That is 71 of 87 shapes filled and 16 left with a reason.
 Usage:
     python -m scripts.fetch_census.png
     python -m scripts.fetch_census.png --probe
+    python -m scripts.fetch_census.png --get https://example.org/x --terms religion
 """
 
 from __future__ import annotations
@@ -244,19 +259,24 @@ REDRAWN_NOTE = (
     "district, so every one of this province's shapes may have lost ground to "
     "it. A count put on the wrong one would be invisible, so none is put.")
 RELIGION_NOTE = (
-    "{group} was the largest religious affiliation of this province's citizen "
-    "population at the 2011 census, at {pct}% -- the one religion figure the "
-    "National Statistical Office publishes for a province, in the Summary "
-    "Indicators of its 2011 National Report. The other {rest}% is not broken "
-    "down: the census asked religion and the office published the full "
-    "denominational table for the country alone, the provincial tables being "
-    "in the 22 Provincial Reports, which it does not host.")
+    "{group} was the largest denomination in this province at the 2011 "
+    "census, with {pct}% of its citizen population -- and it is the only "
+    "religion figure published for a province, the \"Main religion\" row of "
+    "the Summary Indicators in the National Statistical Office's 2011 National "
+    "Report. The remaining {rest}% is not a gap in the census but in what was "
+    "published: the office sells the provincial tables rather than publishing "
+    "them -- its Provincial Report at K40 a province and its 31 cross-"
+    "classified Basic Tables at K40 a set, on paper and CD-ROM -- and no "
+    "denominational breakdown for any province is online anywhere this project "
+    "could reach.")
 DISTRICT_RELIGION_GAP = (
     "The 2011 census asked religion, and the National Statistical Office "
     "publishes no answer below the province: its 2011 National Report gives "
     "each province one figure (its largest denomination) and the country the "
     "full table, and the 2024 census's Final Figures, the only district-level "
-    "release, carries no religion on any of its 35 pages.")
+    "release, carries no religion on any of its 35 pages. The district tables "
+    "exist in the office's priced Table Retrieval System CD-ROM, which is not "
+    "published online.")
 PROVINCE_RELIGION_GAP = (
     "The 2011 census asked religion, but the Summary Indicators of the "
     "National Statistical Office's 2011 National Report, the only provincial "
@@ -701,6 +721,75 @@ REDRAWN_SHAPES: dict[str, tuple[str, ...]] = {
 }
 
 
+# Where the rest of each province was looked for, and what came back. This is
+# printed by every run: a gap that says why it is a gap has to say it where
+# the run's reader is, and not only in docs/SOURCES.md.
+ROUTES: tuple[tuple[str, str], ...] = (
+    ("2011 National Report, all 100 pp",
+     "religion on pp. 26-30 (the one provincial row), 32-34 (Table 2.4 and "
+     "Figures 2.1-2.2, country only) and 85; no provincial table"),
+    ("2011 National Report, Appendix 4 (p. 95)",
+     "the provincial tables are priced products -- Provincial Report K40 a "
+     "province, 31 Basic Tables K40 a set, Table Retrieval System CD-ROM "
+     "K2,000 -- and none of them is a download"),
+    ("nso.gov.pg sitemap, all 289 published files",
+     "no provincial census report; nothing below the province carries religion"),
+    ("2024 Final Figures (35 pp), 2011 Final Figures booklet (40 pp), "
+     "ward tables (35 pp), 2021 provincial estimates (2 pp)",
+     "religion on zero pages of any of them"),
+    ("2000 National Report, three copies",
+     "one 22,359,391-byte scan, 109 pp, zero extractable characters"),
+    ("DHS StatCompiler API (api.dhsprogram.com)",
+     "2.2 MB of indicators and no religion composition among them; religion "
+     "is a DHS background characteristic, never an indicator"),
+    ("DHS 2016-18 final report FR364 (519 pp)",
+     "religion on 6 pages, crossed with province on none"),
+    ("DHS microdata", "30 files named by the API, served only to a registered "
+     "account; not attempted"),
+    ("2022 SDES thematic workbooks",
+     "sheet T2.4 is religion by Total/Urban/Rural and sex -- a 321-cluster "
+     "national survey with no provincial estimates"),
+    ("spc.int PRISM, via the Internet Archive",
+     "the 2000 census page links no tables; popdemog.htm has three national "
+     "rates (christian / non-christian / none)"),
+    ("Wikipedia (Religion in PNG, province articles)",
+     "national denominations only; no province article has a religion table"),
+    ("pngnri.org via the Internet Archive (1,108 PDFs)",
+     "atlas sheets of education and development indicators, not census tables"),
+)
+
+# The share above which the dashboard stops calling a composition partial
+# (site/js/dashboard.js: a total under 95 draws "describes N% of the
+# population"). Every PNG province must sit below it, because every one of
+# them carries a single denomination and a reader has to be told so.
+PARTIAL_BELOW = 95.0
+
+
+def report_coverage(religion: dict[str, tuple[str, float]]) -> None:
+    """What share of each province the one published denomination describes.
+
+    The figure on a province is one denomination, so the record describes
+    between a fifth and two thirds of the people on it and the panel says so
+    by itself -- but only while every share stays under the threshold the
+    dashboard draws that chip at. A province that crept over it would show as
+    a complete composition of one group, which is the kind of quiet
+    mis-statement this project ranks worse than an empty cell, so the run
+    refuses rather than writing it.
+    """
+    covered = sorted(((pct, name) for name, (_, pct) in religion.items()))
+    over = [name for pct, name in covered if pct >= PARTIAL_BELOW]
+    if over:
+        raise SystemExit(f"png: {over} carry a single denomination at "
+                         f"{PARTIAL_BELOW}% or more, which the panel would show "
+                         f"as a whole composition; refusing to publish that")
+    log(f"  religion coverage: one denomination per province, describing "
+        f"{covered[0][0]}% of {covered[0][1]} at the least and "
+        f"{covered[-1][0]}% of {covered[-1][1]} at the most; all 22 below "
+        f"{PARTIAL_BELOW}%, so every panel says what share it describes")
+    for pct, name in covered:
+        log(f"    {name:34s} {religion[name][0]:22s} {pct:5.1f}%")
+
+
 def build() -> list[dict[str, Any]]:
     booklet = page_texts(FINAL_FIGURES_URL, "2024-final-figures.pdf")
     report = page_texts(NATIONAL_REPORT_URL, "2011-national-report.pdf")
@@ -710,6 +799,7 @@ def build() -> list[dict[str, Any]]:
 
     records = [province_record(name, provinces[name], religion.get(name))
                for name in PROVINCES]
+    report_coverage(religion)
 
     written = skipped = 0
     for province in PROVINCES:
@@ -742,6 +832,9 @@ def build() -> list[dict[str, Any]]:
 
     log(f"  districts: {written} shapes carry the 2024 count; {skipped} in "
         f"{len(REDRAWN)} provinces ({', '.join(REDRAWN)}) are left with a reason")
+    log("  the rest of each province was looked for here, and is not published:")
+    for route, answer in ROUTES:
+        log(f"    {route}\n      -> {answer}")
     return records
 
 
@@ -761,13 +854,72 @@ def probe() -> int:
     return 0
 
 
+def get(url: str, *, limit: int = 3000, find: str | None = None,
+        terms: list[str] | None = None, context: int = 200) -> str | None:
+    """Fetch one URL and print what was asked of it -- reconnaissance, no writes.
+
+    The same shape as ``mongolia.py``'s ``--get``: a URL, and either a regex
+    whose distinct matches are printed (a CDX listing, a sitemap), or a list of
+    words whose surroundings are printed (an API's JSON), or neither, in which
+    case the first ``limit`` characters are. An unreachable host prints its
+    exception and the next URL is still tried, because the reason a route is
+    closed is the product of the run.
+    """
+    try:
+        body = http_get(url, cache=False, retries=1, timeout=120,
+                        headers={"Accept": "application/json, text/xml, */*"})
+    except Exception as exc:            # noqa: BLE001 - the probe's product is the reason
+        log(f"  {url}\n    unreachable: {type(exc).__name__}: {exc}")
+        return None
+    text = body if isinstance(body, str) else body.decode("utf-8", "replace")
+    log(f"  {url}\n    {len(text):,} chars")
+    if find:
+        hits = sorted({m.group(0) for m in re.finditer(find, text)})
+        log(f"    {len(hits)} distinct match(es) for {find!r}")
+        for hit in hits[:300]:
+            log(f"      {hit}")
+    elif terms:
+        for term in terms:
+            seen = 0
+            at = text.find(term)
+            while at >= 0 and seen < 12:
+                lo, hi = max(0, at - context), min(len(text), at + len(term) + context)
+                log(f"    [{term} @{at}] ...{text[lo:hi]}...")
+                seen += 1
+                at = text.find(term, at + 1)
+            if not seen:
+                log(f"    [{term}] not present")
+    else:
+        log("    " + text[:limit].replace("\n", "\n    "))
+    return text
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--probe", action="store_true",
                     help="report what the two publications hold, and write nothing")
+    ap.add_argument("--get", action="append",
+                    help="fetch this URL and print what --find or --terms asks "
+                         "of it, writing nothing")
+    ap.add_argument("--find",
+                    help="with --get, print the distinct matches of this regex")
+    ap.add_argument("--terms",
+                    help="with --get, comma-separated words whose surroundings "
+                         "to print")
+    ap.add_argument("--context", type=int, default=200,
+                    help="with --get --terms, characters either side")
+    ap.add_argument("--bytes", type=int, default=3000,
+                    help="with --get and neither --find nor --terms, how much "
+                         "of the body to print")
     ap.add_argument("--out", default=None, help="write somewhere other than the default")
     args = ap.parse_args()
+    if args.get:
+        for url in args.get:
+            get(url, limit=args.bytes, find=args.find,
+                terms=args.terms.split(",") if args.terms else None,
+                context=args.context)
+        return 0
     if args.probe:
         return probe()
     log("png: the 2024 census head count and the 2011 census's provincial religion")

@@ -83,7 +83,8 @@ import urllib.parse
 from pathlib import Path
 from typing import Any
 
-from ._shared import NOT_AVAILABLE, PROCESSED, gap, http_json, log, record, write_json
+from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure,
+                      record, write_json)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import slugify  # noqa: E402
@@ -290,6 +291,12 @@ RELIGION_LABELS: dict[str, str] = {
     "lainnya": "Other religion", "lain-lain": "Other religion",
     "agama lainnya": "Other religion", "konghucu dan kepercayaan": "Other religion",
     "kepercayaan dan lainnya": "Other religion", "kepercayaan/lainnya": "Other religion",
+    # A bucket naming two faiths at once is not two rows: the article gives
+    # Puncak Jaya's Hindus and Buddhists together as 0.01%, and splitting
+    # that would be inventing the split. It goes where "Konghucu dan
+    # kepercayaan" already goes, for the same reason.
+    "hindu/buddha": "Other religion", "buddha/hindu": "Other religion",
+    "hindu dan buddha": "Other religion", "buddha dan hindu": "Other religion",
 }
 CHRISTIAN_PARENTS = {"Christianity"}
 CHRISTIAN_CHILDREN = {"Protestantism", "Catholicism"}
@@ -622,6 +629,105 @@ def religion_fields(reading: dict[str, Any], title: str) -> dict[str, Any]:
         "religion_source": {"field": "religion", "name": source,
                             "url": "https://id.wikipedia.org/wiki/" + title.replace(" ", "_"),
                             "license": LICENCE},
+    }
+
+
+# ---------------------------------------------------------------------------
+# The head count, read from the same infobox as the faiths
+# ---------------------------------------------------------------------------
+
+# A count written with dots or spaces as thousands separators, or bare.
+HEAD_COUNT = re.compile(r"(\d{1,3}(?:[.\u00a0 ]\d{3})+|\d{4,9})")
+# What the count is, per kind of citation. Kemenag counts adherents and never
+# a population, so a head count citing it is not one of these and is refused
+# with the rest of "other".
+POPULATION_KINDS: dict[str, str] = {
+    "census2010": "BPS, 2010 Population Census, total population",
+    "bps": "BPS (Statistics Indonesia), total population",
+    "dukcapil": "Kementerian Dalam Negeri, Dukcapil civil registry, "
+                "registered population",
+    "jakarta": "Jakarta provincial statistics office, total population",
+}
+
+
+def read_population(wikitext: str, title: str) -> dict[str, Any] | None:
+    """The infobox's head count with its year and citation, or None.
+
+    This exists because of a refusal. The regency compositions are
+    percentages and nothing else -- not one of the 491 articles prints a
+    count beside a faith -- so summing a province out of its regencies means
+    pricing each regency's percentages against that regency's population, and
+    Wikidata has none for eleven of the shapes inside Papua and West Papua.
+    The build therefore refused both provinces ("5 children have no
+    population") while every regency under them carried a composition. The
+    weight was sitting in the same infobox as the shares, one parameter
+    above them, and citing the same registry.
+
+    The rules are the ones ``read_religion`` keeps, and for the same reasons:
+    a figure with no citation is not read, and a figure the citation cannot
+    date is not read. A registry total and a census total are different
+    counts, so which it is goes in the record.
+    """
+    value = infobox_param(wikitext, "penduduk")
+    if not value:
+        return None
+    definitions = ref_definitions(wikitext)
+    # The count's own reference lives in a parameter of its own, which is
+    # where nearly every article puts it; a few attach it to the value.
+    cites = citations(value, definitions) + citations(
+        infobox_param(wikitext, "pendudukref") or "", definitions)
+    if not cites:
+        log(f"    {title}: the head count carries no citation; not read")
+        return None
+    text = REF.sub("", value).replace("[[", " ").replace("]]", " ")
+    m = HEAD_COUNT.search(text)
+    if not m:
+        log(f"    {title}: no head count in {' '.join(text.split())[:60]!r}; not read")
+        return None
+    total = int(re.sub(r"[.\u00a0 ]", "", m.group(1)))
+    # In citation order, not by rank. ``read_religion`` ranks because several
+    # references may each describe the one composition and the best of them
+    # should be named; a head count is one number as of one date, and the
+    # reference the article puts first beside it is the one it came from.
+    # Kota Jayapura cites the registry and then a 2021 BPS yearbook, and its
+    # 404,799 is the registry's figure for 31 December 2024, not the
+    # yearbook's for 2021.
+    described = [describe_citation(c) for c in cites]
+    kind = described[0][0]
+    if kind not in POPULATION_KINDS:
+        log(f"    {title}: the head count cites {kind}, which does not "
+            f"publish one; not read")
+        return None
+    # "31 Desember [[2024]]" -- the date the count is *as of*, which is the
+    # year that describes it. The citation's own year is the fallback, and it
+    # is a worse one: an editor updates the figure more often than the
+    # reference beside it.
+    asof = re.findall(r"\b(19\d\d|20[0-2]\d)\b",
+                      infobox_param(wikitext, "penduduktahun") or "")
+    year = int(asof[-1]) if asof else described[0][1]
+    if year is None:
+        log(f"    {title}: the head count carries no year; not read")
+        return None
+    return {"total": total, "year": year, "kind": kind}
+
+
+def population_fields(reading: dict[str, Any], title: str) -> dict[str, Any]:
+    """The record's population fields: the count, its year, and one sentence
+    saying which of the two national counts it is."""
+    name = POPULATION_KINDS[reading["kind"]]
+    registry = reading["kind"] == "dukcapil"
+    note = (f"Total population for {reading['year']} from {EXPLAINED[reading['kind']]}, "
+            f"as the Indonesian Wikipedia article '{title}' cites it."
+            + (" A registry counts the people holding an identity card for the "
+               "regency, which is not the same number as a census count."
+               if registry else ""))
+    return {
+        "population": measure(reading["total"], year=reading["year"], source=name),
+        "population_note": note,
+        "population_source": {"field": "population", "name": name,
+                              "url": "https://id.wikipedia.org/wiki/"
+                                     + title.replace(" ", "_"),
+                              "license": LICENCE},
     }
 
 
@@ -1003,6 +1109,7 @@ def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
     kinds: dict[str, int] = {}
     unread: list[str] = []
+    counted = 0
     for shape in shapes("admin2"):
         name, province = shape["name"], provinces.get(shape["parent"], "")
         if name in NOT_REGENCIES or not province:
@@ -1017,16 +1124,22 @@ def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
             unread.append(f"{province}/{name}")
             continue
         kinds[reading["kind"]] = kinds.get(reading["kind"], 0) + 1
-        rf = religion_fields(reading, resolved)
-        source = rf.pop("religion_source")
+        fields = religion_fields(reading, resolved)
+        sources = [fields.pop("religion_source")]
+        head = read_population(wikitext, resolved)
+        if head:
+            counted += 1
+            fields.update(population_fields(head, resolved))
+            sources.append(fields.pop("population_source"))
         short = re.sub(r"^(Kabupaten|Kota Administrasi)\s+", "", resolved)
         records.append(record(f"{ISO3}-{slugify(province)}-{slugify(name)}", name,
                               level="admin2", parent=f"{ISO3}-{slugify(province)}",
                               parent_name=province, country=ISO3,
                               aliases=[short] if short != name else [],
-                              sources=[source], **rf))
+                              sources=sources, **fields))
     log(f"  regencies: {len(records)} read; by kind of source: "
         + ", ".join(f"{k} {v}" for k, v in sorted(kinds.items())))
+    log(f"  regencies with a head count: {counted} of {len(records)}")
     if unread:
         log(f"  not read ({len(unread)}): {', '.join(unread)}")
     return records
