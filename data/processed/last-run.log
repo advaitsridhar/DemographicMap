@@ -1,7 +1,7 @@
-probe_hapi: 2 call(s); the app identifier is read from DEMOGRAPHIC_MAP and scrubbed from everything below
-  https://hapi.humdata.org/api/v2/metadata/resource?hdx_id=8f6f09d2-95f7-42dc-b6f1-aead319607f3
-    510 row(s)
-    resource_hdx_id='02034152-ff42-41e4-b72e-a0b3d6a2623c', dataset_hdx_id='72d37c2a-5ca4-4af0-b59e-201f6e1aa33a', name='grc-rainfall-subnat-5ytd.csv', format='csv', update_date='2026-09-03T12:40:52', is_hxl=False, download_url='https://data.humdata.org/dataset/72d37c2a-5ca4-4af0-b59e-201f6e1aa33a/resource/02034152-ff42-41e4-b72e-a0b3d6a2623c/download/grc-rainfall-subnat-5ytd.csv', hapi_updated_date='2026-09-07T01:33:17.350664', dataset_hdx_stub='grc-rainfall-subnational', dataset_hdx_title='Greece: Rainfall Indicators at Subnational Level', dataset_hdx_provider_stub='wfp', dataset_hdx_provider_name='WFP - World Food Programme', hdx_link='https://data.humdata.org/dataset/72d37c2a-5ca4-4af0-b59e-201f6e1aa33a/resource/02034152-ff42-41e4-b72e-a0b3d6a2623c', hdx_api_link='https://data.humdata.org/api/action/resource_show?id=02034152-ff42-41e4-b72e-a0b3d6a2623c', dataset_hdx_link='https://data.hu
-  https://hapi.humdata.org/api/v2/metadata/location?limit=1000
-    249 row(s)
-    id=1, code='AFG', name='Afghanistan', has_hrp=True, in_gho=True, from_cods=True, reference_period_start='2004-01-26T00:00:00'
+indonesia_hapi: regency head counts from UN OCHA's HAPI. Used by the owner's decision of 20 September 2026. The publisher's HDX entry licenses this dataset for humanitarian use only and marks it as not open; that is recorded here rather than omitted. Other (HDX): humanitarian use only; not an open licence
+  offset 0: 10,000 rows
+  offset 10,000: 10,000 rows
+  offset 20,000: 6,214 rows
+  26,214 rows for Indonesia at admin2
+  514 regencies also carry a row with no age band; those are used and the bands ignored, to avoid double counting
+  wrote /home/runner/work/DemographicMap/DemographicMap/data/raw/indonesia/hapi_admpop_adm2_2020.csv (514 regencies, 539,206,860 people)
