@@ -1,10 +1,117 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 189, in _run_module_as_main
-  File "<frozen runpy>", line 159, in _get_module_details
-  File "<frozen importlib._bootstrap_external>", line 1074, in get_code
-  File "<frozen importlib._bootstrap_external>", line 1004, in source_to_code
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_ckan.py", line 230
-    global TIMEOUT                                  # noqa: PLW0603
-    ^^^^^^^^^^^^^^
-SyntaxError: name 'TIMEOUT' is used prior to global declaration
+  [id] 'Kabupaten_Bangka_Barat' -> 'Kabupaten Bangka Barat': 34,418 bytes
+     named references defined on the page (3): babar, dukcapil, ipm
+     |penduduk = 217859
+     |penduduktahun = 31 Desember [[2024]]
+     |pendudukref = <ref name="DUKCAPIL"/>
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |92,73% [[Islam]] |3,63% [[Agama Buddha|Buddha]] |{{Tree list}} * 1,93%% [[Kristen]] ** 1,42% [[Protestan]] ** 0,51% [[Katolik]] {{Tree list/end}} |1,70% [[Konghucu]] |0,01% [[Hindu]]<ref name="DUKCAPIL"/>}}
+    Kabupaten Bangka Barat: unknown faith label(s) ['% Kristen']; not read
+  [id] 'Kabupaten_Bangka_Tengah' -> 'Kabupaten Bangka Tengah': 8,040 bytes
+     named references defined on the page (3): bangkatengah, dukcapil, ipm
+     | penduduk = 209117
+     | penduduktahun = 30 Juni [[2024]]
+     | pendudukref = <ref name="DUKCAPIL"/>
+     | kepadatan = auto
+     | agama = {{ublist |item_style=white-space; |88,43% [[Islam]] |{{Tree list}} * 5,08%% [[Kristen]] ** 2,54% [[Protestan]] ** 2,54% [[Katolik]] {{Tree list/end}} |3,54% [[Konghucu]] |2,92% [[Agama Buddha|Buddha]] |0,03% [[Hindu]]<ref name="DUKCAPIL"/>}}
+    Kabupaten Bangka Tengah: unknown faith label(s) ['% Kristen']; not read
+  [id] 'Kota_Administrasi_Jakarta_Timur' -> 'Kota Administrasi Jakarta Timur': 19,892 bytes
+     named references defined on the page (4): agama, dukcapil, ipm, jaktim
+     | penduduk = 3314396
+     | penduduktahun = 31 Desember [[2023]]
+     | pendudukref = <ref name="DUKCAPIL"/><ref name = JAKTIM>{{cite web|url = https://jakarta.bps.go.id/publication/2019/08/16/eea4f4b387c3024bb4a3a7fc/provinsi-dki-jakarta-dalam-angka-2019.html|title = Provinsi DKI Jakarta Dalam Angka 2019|website = jakarta.bps.go.id|publisher = BPS DKI Jakarta|access-date= 19 Februari 2020|archive-date = 2020-04-24|archive-url = https://web.archive.org/web/20200424230456/https://jakarta.bps.go.id/publication/2019/08/16/eea4f4b387c3024bb4a3a7fc/provinsi-dki-jakarta-dalam-angka-2019.html|url-status = live}}</ref>
+     | kepadatan = auto
+     | agama = {{ublist |item_style=white-space; |88,76% [[Islam]] |{{Tree list}} * 10,62% [[Kekristenan]] ** 8,06% [[Protestan]] ** 2,56% [[Katolik]] {{Tree list/end}} |0,454% [[Agama Buddha|Buddha]] |0,17% [[Hindu]]<ref name="DUKCAPIL"/><ref name = "AGAMA">{{cite web|url =https://statistik.jakarta.go.id/agama-penduduk-dki-jakarta-tahun-2020/|title =Agama Penduduk DKI Jakarta 2020|website =www.statistik.jakarta.go.id|access-date=2 September 2023|archive-date =2023-09-02|archive-url =https://web.archive.org/web/20230902074602/https://statistik.jakarta.go.id/agama-penduduk-dki-jakarta-tahun-2020/|url-status =live}}</ref>}}
+     | bahasa = [[bahasa Indonesia|Indonesia]], [[bahasa Betawi|Betawi]], [[Bahasa Jawa|Jawa]], [[Rumpun bahasa Batak|Batak]], [[bahasa Sunda|Sunda]]
+    Kota Administrasi Jakarta Timur: unknown faith label(s) ['4% Buddha']; not read
+  [id] 'Kabupaten_Minahasa_Tenggara' -> 'Kabupaten Minahasa Tenggara': 17,470 bytes
+     named references defined on the page (6): agama, apbd, depdagri, dukcapil, ipm, mitra
+     |penduduk = 122190
+     |penduduktahun = 30 Juni [[2025]]
+     |pendudukref = <ref name="DUKCAPIL"/>
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |{{Tree list}} * 81,97% [[Kristen]] ** 80,93% [[Protestan]] ** 1,04% [[Katolik]] {{Tree list/end}} |18,02% [[Islam]] |0,01% [[Buddhisme|Budha]] dan[[Agama Hindu|Hindu]]<ref name="DUKCAPIL"/><ref name="AGAMA">{{cite web|url=https://sp2010.bps.go.id/index.php/site/tabel?search-tabel=Penduduk+Menurut+Wilayah+dan+Agama+yang+Dianut&tid=321&search-wilayah=Kabupaten+Minahasa+Tenggara&wid=7109000000&lang=id|last=|first=|title=Penduduk Menurut Wilayah dan Agama yang Dianut dinKabupaten Minahasa Tenggara|website=www.sp2010.bps.go.id|access-date=7 Juni 2020|archive-date=2023-03-14|archive-url=https://web.archive.org/web/20230314110755/https://sensus.bps.go.id/main/index/sp2010|url-status=live}}</ref>}}
+    Kabupaten Minahasa Tenggara: unknown faith label(s) ['Budha danHindu']; not read
+  [id] 'Kabupaten_Flores_Timur' -> 'Kabupaten Flores Timur': 18,799 bytes
+     named references defined on the page (13): agama, apbd, bencana, bencana2, bupati, dana, dau2024, dukcapil, flores, flores timur, geo, geografi, ipm
+     | population_total = 289881
+     | population_as_of = 31 Desember 2024
+     | population_footnotes = <ref name="DUKCAPIL"/>
+     | population_density_km2 = auto
+    Kabupaten Flores Timur: no religion in the infobox
+  [id] 'Kabupaten_Takalar' -> 'Kabupaten Takalar': 13,970 bytes
+     named references defined on the page (6): :100, :23787, :31, :34, :35, :36
+     | penduduk = 304856
+     | penduduktahun = [[2021]]
+     | kepadatan =
+     | Suku Bangsa = Makassar
+    Kabupaten Takalar: no religion in the infobox
+  [id] 'Kabupaten_Garut' -> 'Kabupaten Garut': 45,225 bytes
+     named references defined on the page (5): :0, geoportalmenlhk, kabupaten garut, pr-19-aug-depan, pr-25-okt-
+     | penduduk = 2716950
+     | penduduktahun = [[2025]]
+     | pendudukref = {{sfn|Badan Pusat Statistik|2022|pp = 145}}
+     | kepadatan =
+     | agama = {{ublist |item_style=white-space; |98,83% [[Islam]] |{{Tree list}} * 1,14% [[Kekristenan]] ** 1,08% [[Protestan]] ** 0,06% [[Katolik]] {{Tree list/end}} |0,01% [[Agama Buddha|Buddha]] |0,01% [[Hindu]] |0,01% Lainnya<ref name="DUKCAPIL"/>}}
+     | bahasa = [[Bahasa Sunda Garut|Sunda]]<br>[[Bahasa Indonesia|Indonesia]]
+    Kabupaten Garut: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
+  [id] 'Kabupaten_Sukabumi' -> 'Kabupaten Sukabumi': 25,049 bytes
+     named references defined on the page (2): bps2021, suku
+     | pendudukref = <ref name="bps2021"/>
+     | penduduk = 2806664
+     | penduduktahun = 2022
+     | kepadatan = auto
+     | population_density_rank =
+     | population_rank =
+     | agama = {{ublist |item_style=white-space; |95,14% [[Islam]] |{{Tree list}} * 4,32% [[Kekristenan]] ** 3,40% [[Protestan]] ** 0,92% [[Katolik]] {{Tree list/end}} |0,47% [[Agama Buddha|Buddha]] |0,06% [[Hindu]] |0,01% Lainnya<ref name="DUKCAPIL"/>}}
+     | bahasa = [[Bahasa Indonesia|Indonesia]] (resmi)<br>[[Bahasa Sunda|Sunda]]
+    Kabupaten Sukabumi: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
+  [id] 'Kabupaten_Pangandaran' -> 'Kabupaten Pangandaran': 22,090 bytes
+     named references defined on the page (5): :0, :1, bps2021, ipm, tak semua warga pangandaran gunakan bahasa sunda dalam kesehariannya
+     | pendudukref = <ref name="bps2021"/>
+     | penduduk = 423667
+     | penduduktahun = 2020
+     | kepadatan = 424,57
+     |agama = {{ublist |item_style=white-space; |99,90% [[Islam]] |{{Tree list}} * 0,13% [[Kekristenan]] ** 0,11% [[Protestan]] ** 0,02% [[Katolik]] {{Tree list/end}} |0,01% [[Agama Buddha|Buddha]] |0,01% [[Hindu]] |0,01% Lainnya<ref name="DUKCAPIL"/>}}
+     | bahasa = [[bahasa Indonesia|Indonesia]] (resmi)<br>[[bahasa Sunda|Sunda]] ([[Bahasa Sunda Pangandaran|Dialek Pangandaran]]) <br> [[Bahasa Jawa|Jawa]] ([[Bahasa Jawa Banyumasan|Dialek Banyumasan]])<ref <ref name="Tak Semua Warga Pangandaran Gunakan Bahasa Sunda dalam Kesehariannya">{{Cite web |url=https://www.detik.com/jabar/budaya/d-6601867/tak-semua-warga-pangandaran-gunakan-bahasa-sunda-dalam-kesehariannya|title=Salinan arsip |access-date=2024-05-13 |archive-date=2022-10-13|archive-url=https://web.archive.org/web/20221013084756/https://www.detik.com/jabar/budaya/d-6601867/tak-semua-warga-pangandaran-gunakan-bahasa-sunda-dalam-kesehariannya|url-status=live }}</ref>
+    Kabupaten Pangandaran: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
+  [id] 'Kabupaten_Musi_Rawas' -> 'Kabupaten Musi Rawas': 7,258 bytes
+     named references defined on the page (0): none
+     | penduduk = 414010
+     | penduduktahun = (2023)<ref>{{Cite web |url=https://musirawaskab.bps.go.id/backend/pdf_publikasi/ddamura2016wtr.pdf |title=Salinan arsip |access-date=2017-05-01 |archive-date=2021-09-17 |archive-url=https://web.archive.org/web/20210917110732/https://musirawaskab.bps.go.id/backend/pdf_publikasi/ddamura2016wtr.pdf |url-status=live }}</ref>
+     | kepadatan =
+     | agama = [[Islam]] 89,03%<br> [[Kristen]] 9,62%<br>- [[Protestan]] 7,68%<br>- [[Katolik]] 1,94%<br> [[Buddha]] 0,72%<br> [[Hindu]] 0,60%<br> [[Konghucu]] 0,01%<br> Lainnya 0,02%<ref name="DUKCAPIL"/>
+    Kabupaten Musi Rawas: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
+  [id] 'Kabupaten_Belitung_Timur' -> 'Kabupaten Belitung Timur': 22,117 bytes
+     named references defined on the page (2): :0, ipm
+     | penduduk = 132121
+     | penduduktahun = [[2024]]
+     | pendudukref = <ref name="DUKCAPIL"/>
+     | kepadatan = 51
+     | agama = [[Islam]] 95,78%<br> [[Buddha]] 2,44%<br> [[Kristen]] 1,64%<br>- [[Protestan]] 1,31%<br>- [[Katolik]] 0,33%<br> [[Konghucu]] 0,14%<ref name="DUKCAPIL"/>
+    Kabupaten Belitung Timur: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
+  [id] 'Kabupaten_Probolinggo' -> 'Kabupaten Probolinggo': 46,617 bytes
+     named references defined on the page (0): none
+     | penduduk = 1174890
+     | penduduktahun = 2023
+     | kepadatan =
+     | agama = {{ublist |item_style=white-space; |92,82% [[Islam]] |3,60% [[Hindu]] |{{Tree list}} * 3,01% [[Kekristenan|Kristen]] ** 1,51% [[Protestan]] ** 1,50% [[Katolik]] {{Tree list/end}} |0,50% [[Agama Buddha|Buddha]] |0,04% [[Konghucu]] |0,03% [[Keyakinan|Kepercayaan]]<ref name="PAS"/>}}
+     | bahasa = [[Bahasa Indonesia|Indonesia]] (resmi)<br>[[Bahasa Madura|Madura]] (dominan) <br>– [[Bahasa Madura Probolinggo|Madura Probolinggo]]<br>[[Bahasa Jawa|Jawa]]<br>– [[Bahasa Jawa Probolinggo|Jawa Probolinggo]]<br>– [[Bahasa Tengger|Jawa Tengger]]
+    Kabupaten Probolinggo: religion figure carries no citation (named references ['pas'] defined nowhere); not read
+  [id] 'Kabupaten_Lingga' -> 'Kabupaten Lingga': 10,560 bytes
+     named references defined on the page (5): :0, :1, dukcapil, ipm, kecamatan
+     |penduduk = 101472
+     |penduduktahun = 31 Desember [[2025]]
+     |pendudukref = <ref name="KEPRI"/>
+     |kepadatan = auto
+     |agama = {{ublist |item_style=white-space; |92,22% [[Islam]] |4,77% [[Agama Buddha|Buddha]] |{{Tree list}} * 2,98% [[Kekristenan]] ** 1,87% [[Protestan]] ** 1,11% [[Katolik]] {{Tree list/end}} |0,02% [[Agama Konghucu|Konghucu]] |0,01% Lainnya<ref name="KEPRI"/>}}
+     |bahasa = [[Bahasa Indonesia|Indonesia]] (resmi) <br> [[Bahasa Melayu|Melayu]]
+    Kabupaten Lingga: religion figure carries no citation (named references ['kepri'] defined nowhere); not read
+  [id] 'Kota_Pematangsiantar' -> 'Kota Pematangsiantar': 47,516 bytes
+     named references defined on the page (9): apbd, dana, dau2024, dukcapil, dukcapil agama, ipm, siantar, uu, wali
+     | penduduk = 278325
+     | penduduktahun = [[30 Juni]] [[2024]]
+     | pendudukref = <ref name="DUKCAPIL"/>
+     | kepadatan = auto
+     | agama = {{ublist |item_style=white-space; |{{Tree list}} * 51,25% [[Kekristenan]] ** 46,54% [[Protestanisme|Protestan]] ** 4,71% [[Gereja Katolik Roma|Katolik]] {{Tree list/end}} |43,90% [[Islam]]|4,36% [[Buddhisme|Buddha]]|0,11% [[Agama Hindu|Hindu]]|0,01% [[Konfusianisme|Konghucu]]|0,37% lainnya<ref name="AGAMA"/>}}
+     | bahasa = [[Bahasa Indonesia|Indonesia]] (resmi), [[Rumpun bahasa Batak|Batak]] ([[Bahasa Batak Simalungun|Batak Simalungun]], [[Bahasa Batak Toba|Batak Toba]], [[Bahasa Batak Angkola|Batak Angkola]], [[Bahasa Batak Mandailing|Batak Mandailing]]), [[Bahasa Jawa|Jawa]], [[Bahasa Melayu|Melayu]], [[Bahasa Tionghoa|Tionghoa]] ([[Bahasa Hokkien|Hokkien]])
+    Kota Pematangsiantar: religion figure carries no citation (named references ['agama'] defined nowhere); not read
