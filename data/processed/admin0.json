@@ -6777,7 +6777,7 @@
     },
     "religion": {
       "status": "not_collected",
-      "note": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead."
+      "note": "China's census does not ask religion; it records the 56 official nationalities (minzu) instead. The China Family Panel Studies asked it in 2012 and supports province-level figures for five provinces (Shanghai, Liaoning, Henan, Gansu, Guangdong), which carry them."
     },
     "religion_year": null,
     "language": [
@@ -16637,21 +16637,56 @@
       "unit": "percent",
       "source": "CIA World Factbook (public domain), factbook.json mirror"
     },
-    "religion": {
-      "status": "not_collected",
-      "note": "Japan's census does not ask religion. The one official religion statistic counts adherents as religious bodies report them -- 175.1 million against 123.8 million people, and from 0.5 to 3.2 times a prefecture's population depending on where the corporations are registered."
-    },
-    "religion_year": null,
-    "language": {
-      "status": "not_collected",
-      "note": "Japan's census does not ask language; it records nationality instead. The only mother-tongue tables e-Stat holds count schoolchildren who need help with Japanese."
-    },
+    "religion": [
+      {
+        "group": "Shintoism",
+        "pct": 48.6
+      },
+      {
+        "group": "Buddhism",
+        "pct": 46.4
+      },
+      {
+        "group": "Christianity",
+        "pct": 1.1
+      },
+      {
+        "group": "other",
+        "pct": 4.0
+      }
+    ],
+    "religion_year": 2021,
+    "language": [
+      {
+        "group": "Japanese",
+        "pct": null,
+        "pct_status": "not_available"
+      }
+    ],
     "language_year": null,
-    "ethnicity": {
-      "status": "not_collected",
-      "note": "Japan's census collects nationality, not ethnicity. The eight tables in e-Stat carrying the word for ethnic group are museum holdings and prison nationality counts."
-    },
-    "ethnicity_year": null,
+    "ethnicity": [
+      {
+        "group": "Japanese",
+        "pct": 97.5
+      },
+      {
+        "group": "Chinese",
+        "pct": 0.6
+      },
+      {
+        "group": "Vietnam",
+        "pct": 0.4
+      },
+      {
+        "group": "South Korean",
+        "pct": 0.3
+      },
+      {
+        "group": "other",
+        "pct": 1.2
+      }
+    ],
+    "ethnicity_year": 2022,
     "sources": [
       {
         "field": "*",
@@ -19895,48 +19930,10 @@
       }
     ],
     "religion_year": 2020,
-    "language": [
-      {
-        "group": "Bahasa Malaysia",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "English",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Chinese",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Tamil",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Telugu",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Malayalam",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Panjabi",
-        "pct": null,
-        "pct_status": "not_available"
-      },
-      {
-        "group": "Thai",
-        "pct": null,
-        "pct_status": "not_available"
-      }
-    ],
+    "language": {
+      "status": "not_collected",
+      "note": "Malaysia's census asks ethnic group, citizenship and religion but has never asked language or mother tongue, and DOSM publishes no language composition."
+    },
     "language_year": null,
     "ethnicity": [
       {
@@ -30203,8 +30200,8 @@
     ],
     "language_year": null,
     "ethnicity": {
-      "status": "not_collected",
-      "note": "South Korea's census does not collect ethnicity."
+      "status": "not_available",
+      "note": "Factbook reports free text only: Korean"
     },
     "ethnicity_year": null,
     "sources": [
