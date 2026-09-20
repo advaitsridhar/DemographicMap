@@ -1,20 +1,18 @@
-page: https://nso.mn/en
-  63,708 bytes
-  6 distinct match(es) for 'https?://[a-zA-Z0-9.-]+[.]mn[a-zA-Z0-9/_.-]*'
-    https://data.nso.mn
-    https://iaac.mn/
-    https://metadata.nso.mn
-    https://www.1212.mn
-    https://www.1212.mn/en/terms_of_use
-    https://www.1212.mn/images/logo.png
-page: https://nso.mn/mn
-  63,677 bytes
-  6 distinct match(es) for 'https?://[a-zA-Z0-9.-]+[.]mn[a-zA-Z0-9/_.-]*'
-    https://data.nso.mn
-    https://iaac.mn/
-    https://metadata.nso.mn
-    https://www.1212.mn
-    https://www.1212.mn/images/logo.png
-    https://www.1212.mn/mn/terms_of_use
-page: https://www.1212.mn/en
-  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1016)>
+
+=== HDX dataset: cod-ps-png ===
+    title: Papua New Guinea - Subnational Population Statistics
+    org:   ocha-fiss
+    notes: Papua New Guinea administrative level 0-3 2011 population statistics.   (Please see caveats.)  REFERENCE YEAR:  2011  See caveats  These population statistics .csv tables are suitable for database or GIS linkage to the shapefiles available in the [Papua New Guinea - Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-png) HDX dataset.   Source:  [National Statis
+    6 resource(s):
+      XLSX   PNG_AdminBoundaries_TabularData.xlsx
+             https://data.humdata.org/dataset/5f76d06a-70f6-4cc4-a0f2-d9da9342fc06/resource/863ffcb9-b429-41d6-a8d5-b208dfcd6c88/download/png_adminboundaries_tabulardata.xlsx
+      XLSX   png_admpop_2011.xlsx
+             https://data.humdata.org/dataset/5f76d06a-70f6-4cc4-a0f2-d9da9342fc06/resource/7078d27f-271d-435d-993a-e31fed92f9f9/download/png_admpop_2011.xlsx
+      CSV    png_admpop_adm0_2011_v2.csv
+             https://data.humdata.org/dataset/5f76d06a-70f6-4cc4-a0f2-d9da9342fc06/resource/f34481a5-8c78-49de-8da0-fce8c915d9ae/download/png_admpop_adm0_2011_v2.csv
+      CSV    png_admpop_adm1_2011_v2.csv
+             https://data.humdata.org/dataset/5f76d06a-70f6-4cc4-a0f2-d9da9342fc06/resource/8b4346b6-b0a4-4e65-8d15-b6c79dbacee2/download/png_admpop_adm1_2011_v2.csv
+      CSV    png_admpop_adm2_2011_v2.csv
+             https://data.humdata.org/dataset/5f76d06a-70f6-4cc4-a0f2-d9da9342fc06/resource/534798e8-372a-40b7-bc81-e5679acc07b9/download/png_admpop_adm2_2011_v2.csv
+      CSV    png_admpop_adm3_2011_v2.csv
+             https://data.humdata.org/dataset/5f76d06a-70f6-4cc4-a0f2-d9da9342fc06/resource/fca6139c-15fc-4bad-bf62-5f21426e821b/download/png_admpop_adm3_2011_v2.csv
