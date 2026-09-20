@@ -1,30 +1,15 @@
-  https://hapi.humdata.org/openapi.json
-    280,618 chars
-    27 distinct match(es) for '/api/v2/[a-z0-9/_-]+'
-      /api/v2/affected-people/humanitarian-needs
-      /api/v2/affected-people/idps
-      /api/v2/affected-people/refugees-persons-of-concern
-      /api/v2/affected-people/returnees
-      /api/v2/climate/rainfall
-      /api/v2/coordination-context/conflict-events
-      /api/v2/coordination-context/funding
-      /api/v2/coordination-context/national-risk
-      /api/v2/coordination-context/operational-presence
-      /api/v2/encode_app_identifier
-      /api/v2/food-security-nutrition-poverty/food-prices-market-monitor
-      /api/v2/food-security-nutrition-poverty/food-security
-      /api/v2/food-security-nutrition-poverty/poverty-rate
-      /api/v2/geography-infrastructure/baseline-population
-      /api/v2/metadata/admin1
-      /api/v2/metadata/admin2
-      /api/v2/metadata/currency
-      /api/v2/metadata/data-availability
-      /api/v2/metadata/dataset
-      /api/v2/metadata/location
-      /api/v2/metadata/org
-      /api/v2/metadata/org-type
-      /api/v2/metadata/resource
-      /api/v2/metadata/sector
-      /api/v2/metadata/wfp-commodity
-      /api/v2/metadata/wfp-market
-      /api/v2/util/version
+probe_hapi: 2 call(s); the app identifier is read from DEMOGRAPHIC_MAP and scrubbed from everything below
+  https://hapi.humdata.org/api/v2/geography-infrastructure/baseline-population?location_code=IDN&admin_level=2&limit=4
+    4 row(s)
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, resource_hdx_id='8f6f09d2-95f7-42dc-b6f1-aead319607f3', gender='f', age_range='0-4', min_age=0, max_age=4, population=4933, reference_period_start='2020-01-01T00:00:00', reference_period_end='2020-12-31T23:59:59'
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, resource_hdx_id='8f6f09d2-95f7-42dc-b6f1-aead319607f3', gender='f', age_range='10-14', min_age=10, max_age=14, population=4578, reference_period_start='2020-01-01T00:00:00', reference_period_end='2020-12-31T23:59:59'
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, resource_hdx_id='8f6f09d2-95f7-42dc-b6f1-aead319607f3', gender='f', age_range='15-19', min_age=15, max_age=19, population=3766, reference_period_start='2020-01-01T00:00:00', reference_period_end='2020-12-31T23:59:59'
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1101', admin2_name='Simeulue', admin_level=2, resource_hdx_id='8f6f09d2-95f7-42dc-b6f1-aead319607f3', gender='f', age_range='20-24', min_age=20, max_age=24, population=3284, reference_period_start='2020-01-01T00:00:00', reference_period_end='2020-12-31T23:59:59'
+  https://hapi.humdata.org/api/v2/metadata/data-availability?location_code=IDN&limit=10
+    10 row(s)
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1109', admin2_name='Pidie', admin_level=2, category='affected-people', subcategory='idps', hapi_updated_date='2026-09-07T01:33:17.350664'
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin2_code='ID1118', admin2_name='Pidie Jaya', admin_level=2, category='affected-people', subcategory='idps', hapi_updated_date='2026-09-07T01:33:17.350664'
+    location_code='IDN', location_name='Indonesia', admin1_code='ID11', admin1_name='Aceh', admin_level=1, category='affected-people', subcategory='idps', hapi_updated_date='2026-09-07T01:33:17.350664'
+    location_code='IDN', location_name='Indonesia', admin1_code='ID51', admin1_name='Bali', admin2_code='ID5106', admin2_name='Bangli', admin_level=2, category='affected-people', subcategory='idps', hapi_updated_date='2026-09-07T01:33:17.350664'
+    location_code='IDN', location_name='Indonesia', admin1_code='ID51', admin1_name='Bali', admin2_code='ID5108', admin2_name='Buleleng', admin_level=2, category='affected-people', subcategory='idps', hapi_updated_date='2026-09-07T01:33:17.350664'
+    location_code='IDN', location_name='Indonesia', admin1_code='ID51', admin1_name='Bali', admin2_code='ID5102', admin2_name='Tabanan', admin_level=2, category='affected-people', subcategory='idps', hapi_updated_date='2026-09-07T01:33:17.350664'
