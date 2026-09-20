@@ -76,6 +76,24 @@ def fetch(title: str, lang: str) -> tuple[str, str]:
 # Probe
 # ---------------------------------------------------------------------------
 
+PROBE_LOG = PROCESSED / "europe_wiki_probe.log"
+_probe_lines: list[str] = []
+
+
+def say(line: str) -> None:
+    """Print, and keep it for the probe's own log file.
+
+    The runner tees every run into data/processed/last-run.log and commits
+    it, so two adapters dispatched minutes apart overwrite each other's
+    answer -- the first Europe probe's log was gone by the time it was read,
+    replaced by an unrelated catalogue listing. A probe's whole product is
+    what it printed, so it also writes a file of its own that nothing else
+    touches.
+    """
+    log(line)
+    _probe_lines.append(line)
+
+
 COMPOSITION = re.compile(
     r"etni|na[tţț]ional|nacional|национал|етни|этни|религ|confes|конфес|рели|"
     r"veroispoved|vallás|nemzetiség|národnost|náboženstv|jezik|język|"
