@@ -103,14 +103,26 @@ def fetch() -> list[dict[str, Any]]:
 
 
 def totals(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
-    """One head count per regency, summed over the age bands and both sexes.
+    """One head count per regency, with three readings of it checked against
+    each other.
 
-    A row with no age band would be a total the file already states, and
-    adding it to the bands that make it up would double the regency. None
-    have appeared, and the guard says so rather than assuming.
+    Every regency comes back as 51 rows: seventeen age bands times three
+    values of ``gender`` -- "all", "f" and "m" -- and three of those rows
+    carry ``age_range`` "all" rather than a band. Adding up everything with
+    no band therefore adds the total to the two halves that make it up, and
+    the first run of this module did exactly that: Indonesia came out at
+    539,206,860 people, almost precisely twice its real size.
+
+    So the figure is the one row that is both "all" genders and "all" ages,
+    and the two other ways of arriving at it are computed and compared:
+    the sexes' own totals added together, and the "all"-gender age bands
+    added together. A regency where the three disagree is refused rather
+    than published, because there is then no saying which of them is the
+    head count.
     """
-    banded: dict[str, int] = collections.defaultdict(int)
-    stated: dict[str, int] = collections.defaultdict(int)
+    grand: dict[str, int] = {}
+    by_sex: dict[str, int] = collections.defaultdict(int)
+    by_band: dict[str, int] = collections.defaultdict(int)
     meta: dict[str, dict[str, Any]] = {}
     for row in rows:
         code = row.get("admin2_code")
@@ -122,16 +134,30 @@ def totals(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
             "resource": row.get("resource_hdx_id", ""),
         })
         value = int(row.get("population") or 0)
-        if row.get("min_age") is None and row.get("max_age") is None:
-            stated[code] += value
-        else:
-            banded[code] += value
-    if stated:
-        log(f"  {len(stated)} regencies also carry a row with no age band; "
-            f"those are used and the bands ignored, to avoid double counting")
+        gender = (row.get("gender") or "").lower()
+        whole = row.get("min_age") is None and row.get("max_age") is None
+        if gender == "all" and whole:
+            grand[code] = value
+        elif gender in ("f", "m") and whole:
+            by_sex[code] += value
+        elif gender == "all":
+            by_band[code] += value
     out: dict[str, dict[str, Any]] = {}
+    disagreed: list[str] = []
     for code, info in meta.items():
-        out[code] = dict(info, population=stated.get(code) or banded.get(code, 0))
+        total = grand.get(code)
+        if total is None or total != by_sex.get(code) or total != by_band.get(code):
+            disagreed.append(f"{info['admin2_name']} ({code}): "
+                             f"stated {grand.get(code)}, sexes {by_sex.get(code)}, "
+                             f"bands {by_band.get(code)}")
+            continue
+        out[code] = dict(info, population=total)
+    log(f"  {len(out)} regencies where the stated total, the two sexes added "
+        f"and the age bands added all agree")
+    for line in disagreed[:10]:
+        log(f"    refused, the three readings differ: {line}")
+    if disagreed:
+        log(f"    {len(disagreed)} refused in all")
     return out
 
 
@@ -181,6 +207,17 @@ def main() -> int:
         rows = fetch()
         log(f"  {len(rows):,} rows for Indonesia at admin2")
         counts = totals(rows)
+        people = sum(i["population"] for i in counts.values())
+        # Indonesia was 270.2 million at the 2020 census and is about 280
+        # million now; a projection for 2020 that lands outside this range is
+        # not a projection of Indonesia, it is an arithmetic mistake. The
+        # first run of this module wrote 539,206,860 and nothing stopped it.
+        if not 240_000_000 <= people <= 300_000_000:
+            raise SystemExit(
+                f"indonesia_hapi: the regencies add to {people:,}, which is "
+                f"not a plausible Indonesia; refusing to write {EXTRACT}")
+        log(f"  the {len(counts)} regencies add to {people:,}, against "
+            f"270.2 million counted in the 2020 census")
         write(counts)
         return 0
     rows = committed()
