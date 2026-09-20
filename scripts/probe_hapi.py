@@ -83,7 +83,12 @@ def key() -> str:
     value = value.strip().strip('"').strip("'")
     if ":" in value and "@" in value:            # not encoded at all
         value = base64.b64encode(value.encode("utf-8")).decode("ascii")
-    return value
+    # Base64's "=" padding does not survive a round trip through a URL bar or
+    # a copy that trims it, and HAPI rejects the unpadded form: the secret
+    # held 54 characters where an identifier of that length is 56 with its
+    # "==". Restoring it is arithmetic on the length and changes nothing that
+    # was already padded.
+    return value + "=" * (-len(value) % 4)
 
 
 def check() -> int:
