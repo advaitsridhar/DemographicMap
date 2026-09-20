@@ -83,6 +83,13 @@ jobs:
           # and scripts/probe_estat.py scrubs it out of everything it prints,
           # because a probe's product is a log that gets committed.
           ESTAT_API: ${{ secrets.ESTAT_API }}
+          # HDX's Humanitarian API (hapi.humdata.org) wants an "app
+          # identifier": base64 of "appname:email", free to generate. It is
+          # not a password, but it carries the owner's email address, so it
+          # goes in the environment with the rest and scripts/probe_hapi.py
+          # scrubs it out of everything it prints -- a probe's product is a
+          # log that gets committed to a public repository.
+          DEMOGRAPHIC_MAP: ${{ secrets.DEMOGRAPHIC_MAP }}
           # Kaggle, for scripts/probe_kaggle.py and any adapter that reads a
           # dataset there. A public dataset may download without them.
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}

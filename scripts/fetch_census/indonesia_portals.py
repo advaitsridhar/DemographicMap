@@ -71,6 +71,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from common import RAW, log  # noqa: E402
 
+from ._shared import measure  # noqa: E402
+
 RAWDIR = RAW / "indonesia_portals"
 LICENCE = "Official statistics; compilation CC BY-SA 4.0"
 
@@ -517,12 +519,32 @@ def fields(source: Source, counts: dict[str, int], swap: bool) -> dict[str, Any]
         sentences.append("The workbook heads its Christian columns in the reverse of "
                          "the order it prints them in, which is corrected here against "
                          "the province's other regencies.")
+    # The table's own total is a head count, and these eight regencies had
+    # none: the shares come from counts, the counts are the registry's, and
+    # the registry files every registered resident under exactly one of the
+    # faiths the table columns. Summing them is reading the total the table
+    # already states row by row, not estimating one. It is the same registry
+    # that supplies the head count on 255 of the regencies read from their
+    # own articles, so the figures are comparable with those.
     return {
         "religion": rows,
         "religion_year": source.year,
         "religion_note": " ".join(sentences),
         "religion_source": {
             "field": "religion",
+            "name": f"{source.publisher}, {source.title} ({source.year})",
+            "url": f"https://{source.host}/dataset/{source.dataset}",
+            "license": LICENCE,
+        },
+        "population": measure(total, year=source.year,
+                              source=f"{source.publisher}, {source.title}"),
+        "population_note": (
+            f"Total population for {source.year} from {source.publisher}, "
+            f"summed across the faiths of '{source.title}' on the "
+            f"{source.host} open-data portal -- the same table the religion "
+            f"shares are computed from. {CAVEAT[source.kind]}"),
+        "population_source": {
+            "field": "population",
             "name": f"{source.publisher}, {source.title} ({source.year})",
             "url": f"https://{source.host}/dataset/{source.dataset}",
             "license": LICENCE,

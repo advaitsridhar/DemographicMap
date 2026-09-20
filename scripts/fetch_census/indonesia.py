@@ -84,11 +84,11 @@ from pathlib import Path
 from typing import Any
 
 from . import indonesia_portals as portals
-from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_json, log, measure,
-                      record, write_json)
+from ._shared import (NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, http_json,
+                      log, measure, record, shares, write_json)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from common import slugify  # noqa: E402
+from common import DERIVED, MODELLED, estimate, slugify  # noqa: E402
 from probe_wikitable import plain, tables  # noqa: E402
 
 API = "https://id.wikipedia.org/w/api.php"
@@ -99,6 +99,12 @@ ETHNICITY_YEAR = 2010
 CENSUS = ("Badan Pusat Statistik, Sensus Penduduk 2010: Kewarganegaraan, Suku Bangsa, "
           "Agama, dan Bahasa Sehari-hari Penduduk Indonesia (2011)")
 LICENCE = "Official statistics; compilation CC BY-SA 4.0"
+# What a residual record cites: the province whose figures it is the
+# remainder of, because that is the only published thing behind it.
+RESIDUAL_SOURCE = ("Badan Pusat Statistik and Kementerian Agama province figures, "
+                   "less the regencies published inside them")
+NEIGHBOUR_SOURCE = ("The nearest regencies of the same province, as the "
+                    "Indonesian Wikipedia publishes them")
 NATIONAL_PAGE = "Ethnic groups in Indonesia"
 POPULATION_PAGE = "Demografi Indonesia"
 SUM_TOLERANCE = 0.3          # a province's ethnic shares, against 100
@@ -164,7 +170,36 @@ NO_ETHNIC_TABLE = {"Bangka-Belitung Islands", "West Sulawesi"}
 
 # The boundary file's admin2 layer has five polygons that are water or forest,
 # not regencies, and they have no article to read.
-NOT_REGENCIES = {"Hutan", "Wadung Kedungombo", "Waduk Cirata", "Danau", "Danau Toba"}
+# Five of the shapes the boundary file draws at this level are not regencies
+# and nobody lives in them. That is not a guess from their names: UN OCHA's
+# COD-PS catalogue entry for Indonesia says the boundary set "includes 17
+# uninhabited features (comprising lakes, reservoirs, and a park) that are
+# not represented in this dataset", and lists these among the eight it names
+# at admin2 -- Danau ID1388/ID1688/ID1888/ID7188, Danau Toba ID1288, Hutan
+# ID3399, Waduk Cirata ID3288, Wadung Kedungombo ID3388.
+#
+# They were skipped in silence, so each fell through to the build's generic
+# "nothing was read for this unit", which is true and is the wrong reason: it
+# reads as a regency awaiting data. Each now gets a record that says what the
+# shape is. There is no composition to find and no head count to look for.
+NOT_REGENCIES: dict[str, str] = {
+    "Danau": "a lake",
+    "Danau Toba": "Lake Toba",
+    "Hutan": "a forest",
+    "Waduk Cirata": "the Cirata reservoir",
+    "Wadung Kedungombo": "the Kedungombo reservoir",
+}
+COD_AB_CAVEAT = ("UN OCHA Common Operational Dataset, Indonesia subnational "
+                 "population statistics (COD-PS), catalogue caveat on the "
+                 "uninhabited features of the matching boundary set")
+COD_AB_URL = "https://data.humdata.org/dataset/cod-ps-idn"
+UNINHABITED = (
+    "This shape is {what}, not a regency, and nobody lives in it. The "
+    "boundary file draws it at the same level as Indonesia's regencies and "
+    "cities; UN OCHA's population dataset for the same boundaries names it "
+    "as one of seventeen uninhabited features -- lakes, reservoirs and a "
+    "park -- that carry no population, and publishes no row for it. There is "
+    "no composition to be missing here.")
 # Where the boundary file's spelling is not the article's, or the regency has
 # been renamed since the shapes were drawn.
 REGENCY_TITLES: dict[str, str] = {
@@ -674,8 +709,15 @@ POPULATION_KINDS: dict[str, str] = {
 }
 
 
-def read_population(wikitext: str, title: str) -> dict[str, Any] | None:
-    """The infobox's head count with its year and citation, or None.
+def read_population(wikitext: str,
+                    title: str) -> tuple[dict[str, Any] | None, str]:
+    """The infobox's head count with its year and citation, and why not.
+
+    Returns ``(reading, "")`` when the count is read and ``(None, reason)``
+    when it is refused. The reason is written onto the record, because a
+    refusal that leaves a bare gap tells a reader of the map nothing: 44
+    regencies carried an empty population field and not one of them said
+    whether the figure was missing, uncited or undated.
 
     This exists because of a refusal. The regency compositions are
     percentages and nothing else -- not one of the 491 articles prints a
@@ -694,20 +736,34 @@ def read_population(wikitext: str, title: str) -> dict[str, Any] | None:
     """
     value = infobox_param(wikitext, "penduduk")
     if not value:
-        return None
+        return None, "the article's infobox carries no head count at all"
     definitions = ref_definitions(wikitext)
+    # The year is written under either of two names. The infobox template
+    # accepts both, and reading only one of them refused a figure that was
+    # there and dated -- Banyuwangi's 1,785,316 for 30 June 2024 is under
+    # "tahun populasi", not "penduduktahun".
+    dated = (infobox_param(wikitext, "penduduktahun")
+             or infobox_param(wikitext, "tahun populasi") or "")
     # The count's own reference lives in a parameter of its own, which is
-    # where nearly every article puts it; a few attach it to the value.
-    cites = citations(value, definitions) + citations(
-        infobox_param(wikitext, "pendudukref") or "", definitions)
+    # where nearly every article puts it; a few attach it to the value, and a
+    # few to the year beside it -- Musi Rawas Utara writes
+    # "penduduktahun = 2023<ref name=DUKCAPIL>...". A reference on the year
+    # that dates the count is a reference for the count: it is the same
+    # snapshot, and it is the one the editor put there for it. A reference
+    # anywhere *else* in the infobox is not, and is still not read.
+    cites = (citations(value, definitions)
+             + citations(infobox_param(wikitext, "pendudukref") or "", definitions)
+             + citations(dated, definitions))
     if not cites:
         log(f"    {title}: the head count carries no citation; not read")
-        return None
+        return None, ("the article prints a head count and cites nothing for "
+                      "it; an uncited figure is not read")
     text = REF.sub("", value).replace("[[", " ").replace("]]", " ")
     m = HEAD_COUNT.search(text)
     if not m:
         log(f"    {title}: no head count in {' '.join(text.split())[:60]!r}; not read")
-        return None
+        return None, ("the infobox's population parameter holds no number this "
+                      "reader can take as a head count")
     total = int(re.sub(r"[.\u00a0 ]", "", m.group(1)))
     # In citation order, not by rank. ``read_religion`` ranks because several
     # references may each describe the one composition and the best of them
@@ -721,18 +777,20 @@ def read_population(wikitext: str, title: str) -> dict[str, Any] | None:
     if kind not in POPULATION_KINDS:
         log(f"    {title}: the head count cites {kind}, which does not "
             f"publish one; not read")
-        return None
+        return None, (f"the head count's citation is {EXPLAINED.get(kind, kind)}, "
+                      f"which does not publish a head count for a regency; a "
+                      f"reference the page never defines reads as one of these")
     # "31 Desember [[2024]]" -- the date the count is *as of*, which is the
     # year that describes it. The citation's own year is the fallback, and it
     # is a worse one: an editor updates the figure more often than the
     # reference beside it.
-    asof = re.findall(r"\b(19\d\d|20[0-2]\d)\b",
-                      infobox_param(wikitext, "penduduktahun") or "")
+    asof = re.findall(r"\b(19\d\d|20[0-2]\d)\b", dated)
     year = int(asof[-1]) if asof else described[0][1]
     if year is None:
         log(f"    {title}: the head count carries no year; not read")
-        return None
-    return {"total": total, "year": year, "kind": kind}
+        return None, ("neither the head count nor its citation carries a year, "
+                      "so there is no date the figure is as of")
+    return {"total": total, "year": year, "kind": kind}, ""
 
 
 def population_fields(reading: dict[str, Any], title: str) -> dict[str, Any]:
@@ -1145,6 +1203,65 @@ def regency_record(name: str, province: str, fields: dict[str, Any],
                   sources=sources, **fields)
 
 
+def hapi_by_province() -> dict[str, dict[str, dict[str, Any]]]:
+    """HAPI's regency head counts, keyed by the province name this map uses.
+
+    HAPI names a province in Indonesian where this map names it in English,
+    and PROVINCES already holds both -- the article title and the aliases --
+    so the join is a lookup rather than a second table to keep in step. All
+    34 match; a province that stopped matching would silently lose its
+    regencies, so the count is logged.
+    """
+    from . import indonesia_hapi                   # noqa: PLC0415 -- optional
+
+    lookup: dict[str, str] = {}
+    for english, (title, aliases) in PROVINCES.items():
+        for name in [english, title, *aliases]:
+            lookup[re.sub(r"[^a-z]", "", name.lower())] = english
+    out: dict[str, dict[str, dict[str, Any]]] = {}
+    unknown: set[str] = set()
+    for row in indonesia_hapi.committed():
+        english = lookup.get(re.sub(r"[^a-z]", "", row["admin1_name"].lower()))
+        if not english:
+            unknown.add(row["admin1_name"])
+            continue
+        out.setdefault(english, {})[row["admin2_name"]] = row
+    if unknown:
+        log(f"  hapi: {len(unknown)} province name(s) match none of this map's: "
+            f"{', '.join(sorted(unknown))}")
+    if out:
+        log(f"  hapi: {sum(len(v) for v in out.values())} regency head counts "
+            f"available across {len(out)} provinces, as a last resort")
+    return out
+
+
+def hapi_fields(row: dict[str, Any], name: str, why: str) -> dict[str, Any]:
+    """The population fields for a regency filled from HAPI.
+
+    The licence is on the record rather than only in the docs, because this
+    one is not open and a reader of the map should be able to see that
+    without going looking for it.
+    """
+    from . import indonesia_hapi                   # noqa: PLC0415 -- optional
+
+    year = int(row["year"])
+    return {
+        "population": measure(int(row["population"]), year=year,
+                              source=indonesia_hapi.PUBLISHER),
+        "population_note": (
+            f"Total population for {year} from {indonesia_hapi.PUBLISHER}, "
+            f"served through UN OCHA's Humanitarian API. Used because the "
+            f"article route found none: {why}. {indonesia_hapi.CAVEAT} "
+            f"{indonesia_hapi.TERMS}"),
+        "population_source": {
+            "field": "population",
+            "name": indonesia_hapi.PUBLISHER,
+            "url": indonesia_hapi.DATASET,
+            "license": indonesia_hapi.LICENCE,
+        },
+    }
+
+
 def portal_records(known: dict[str, dict[str, dict[str, float]]],
                    unread: dict[str, dict[str, str]]) -> list[dict[str, Any]]:
     """The regencies the infobox could not answer for, from the provincial and
@@ -1176,20 +1293,238 @@ def portal_records(known: dict[str, dict[str, dict[str, float]]],
         for name in sorted(filled):
             fields = portals.fields(source, counts[name], swap)
             sources = [fields.pop("religion_source")]
+            # The table's own total is this regency's head count, and these
+            # eight had none at all: the shares are computed from counts, so
+            # the count is there to be read.
+            if "population_source" in fields:
+                sources.append(fields.pop("population_source"))
             records.append(regency_record(name, source.province, fields, sources))
     return records
 
 
-def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
+# A residual estimate may not disagree with the arithmetic that produced it.
+# If the province's shares and its regencies' shares came from the same
+# counting, the leftover would equal the leftover population exactly; they
+# come from different sources and vintages, so a few per cent of slack is
+# expected. A third of the gap population is not slack, and a negative group
+# is not slack at all -- it says the regencies already hold more Muslims, or
+# more Hindus, than the province total leaves room for, and there is then no
+# honest residual to take.
+RESIDUAL_SLACK = 0.10          # of the missing regencies' own population
+RESIDUAL_NEGATIVE = 0.005      # of the province's population
+
+
+def neighbour_records(known: dict[str, dict[str, Any]], province: str,
+                      info: dict[str, Any], refused: str) -> list[dict[str, Any]]:
+    """The nearest read regencies of the same province, where the residual
+    contradicts itself.
+
+    Three provinces do contradict themselves: the compositions published for
+    the regencies inside them account for more Muslims, Hindus or Protestants
+    than the province's own figures leave room for, so there is no remainder
+    to take and forcing one would mean writing a regency with no Muslims in
+    North Sumatra. This is the weaker method the residual was chosen over,
+    kept for exactly the case the residual cannot serve. Measured the same
+    way, by leave-one-out against the regencies that are read:
+
+        province residual         median 1.4 points off, dominant group 96.9%
+        three nearest in-province median 4.0 points off, dominant group 92.8%
+        the province itself       median 4.0 points off, dominant group 89.5%
+
+    The three nearest are taken rather than the province as a whole because
+    they are no worse on the median and better on the group a reader actually
+    sees -- the one the map colours the shape by.
+
+    Nearest is by the centroid the boundary file gives each shape, inside the
+    province only. It is not adjacency: two regencies either side of a bay
+    are near each other here and do not touch. The note says so, because a
+    reader should not be told this is a neighbour when it is a distance.
+    """
+    points = info.get("points", {})
+    read = [n for n in info["all"] if n not in info["gaps"] and n in known]
+    out: list[dict[str, Any]] = []
+    for name in sorted(info["gaps"]):
+        here = points.get(name)
+        near = [n for n in read if points.get(n)]
+        if here and near:
+            near.sort(key=lambda n: (points[n][0] - here[0]) ** 2
+                                    + (points[n][1] - here[1]) ** 2)
+            near = near[:3]
+        else:
+            near = read[:3]
+        if not near:
+            continue
+        pooled: dict[str, float] = {}
+        for other in near:
+            for row in known[other]["religion"]:
+                pooled[row["group"]] = pooled.get(row["group"], 0.0) + \
+                    row["pct"] / len(near)
+        rows = shares(pooled)
+        if not rows:
+            continue
+        out.append(regency_record(
+            name, province,
+            {"religion": estimate(
+                MODELLED, rows, method="nearest regencies in the province",
+                inputs=[f"{ISO3}-{slugify(province)}-{slugify(n)}" for n in near],
+                note=(f"No composition was read for this regency, and "
+                      f"{province}'s own figures cannot supply one: "
+                      f"{refused}. This is instead the average of the "
+                      f"{len(near)} regencies of {province} whose centroids "
+                      f"are nearest to it ({', '.join(near)}) -- an "
+                      f"assumption that a regency resembles what is around "
+                      f"it, not a measurement of anyone here, and nearest by "
+                      f"distance rather than by sharing a border."))},
+            [{"field": "religion", "name": NEIGHBOUR_SOURCE,
+              "url": "https://id.wikipedia.org/wiki/"
+                     + PROVINCES[province][0].replace(" ", "_"),
+              "license": LICENCE}]))
+    if out:
+        log(f"    {province}: {len(out)} regency(ies) from the nearest read "
+            f"regencies instead (modelled)")
+    return out
+
+
+def residual_records(known: dict[str, dict[str, Any]],
+                     provinces: dict[str, dict[str, Any]],
+                     hapi: dict[str, dict[str, dict[str, Any]]]
+                     ) -> list[dict[str, Any]]:
+    """What is left of a province once its read regencies are taken out of it.
+
+    The owner asked whether the empty regencies could be modelled from their
+    neighbours, from the province, or from both. Measured by leave-one-out
+    against the regencies that *are* read, the two are not close:
+
+        neighbours        median 5.1 points off, dominant group right 90.8%,
+                          worst case 93.8 points
+        province residual median 1.4 points off, dominant group right 96.9%,
+                          worst case 17 points
+
+    So it is the residual, and the residual is not a model: a province's
+    published composition minus the compositions published for the regencies
+    inside it is arithmetic on published figures, which is what DERIVED
+    means. It also keeps the province summing to itself, which is what the
+    owner asked for when they said the admin1 numbers should indicate the
+    admin2 splits "so that it remains consistent".
+
+    Where a province has one empty regency the leftover *is* that regency and
+    the status is DERIVED. Where it has several, the leftover is their total
+    and the arithmetic says nothing about how they differ from each other;
+    each then carries the leftover composition as MODELLED, under that
+    assumption stated on the record.
+    """
+    out: list[dict[str, Any]] = []
+    for province, info in sorted(provinces.items()):
+        gaps, published = info["gaps"], info["shares"]
+        if not gaps or not published:
+            continue
+        pops = {name: info["population"].get(name) for name in info["all"]}
+        absent = [n for n, v in pops.items() if not v]
+        if absent:
+            log(f"    {province}: no residual, {len(absent)} regency without a "
+                f"head count ({', '.join(sorted(absent)[:3])})")
+            continue
+        whole = sum(pops.values())
+        target = {g: whole * pct / 100 for g, pct in published.items()}
+        taken: dict[str, float] = {}
+        for name in info["all"]:
+            if name in gaps:
+                continue
+            for row in known[name]["religion"]:
+                taken[row["group"]] = taken.get(row["group"], 0.0) + \
+                    pops[name] * row["pct"] / 100
+        left = {g: target.get(g, 0.0) - taken.get(g, 0.0)
+                for g in set(target) | set(taken)}
+        missing = sum(pops[n] for n in gaps)
+        negative = {g: v for g, v in left.items() if v < -RESIDUAL_NEGATIVE * whole}
+        total = sum(v for v in left.values() if v > 0)
+        drift = total / missing - 1 if missing else 1.0
+        refused = ""
+        if negative:
+            refused = ("the regencies already published inside it hold more "
+                       + " and more ".join(
+                           f"{g} than its own figures leave room for "
+                           f"({-v:,.0f} people)"
+                           for g, v in sorted(negative.items())))
+        elif abs(drift) > RESIDUAL_SLACK:
+            refused = (f"what is left over comes to {total:,.0f} people where "
+                       f"{missing:,} live, {abs(drift):.0%} out")
+        if refused:
+            log(f"    {province}: no residual -- {refused}")
+            out += neighbour_records(known, province, info, refused)
+            continue
+        rows = shares({g: v for g, v in left.items() if v > 0})
+        if not rows:
+            continue
+        one = len(gaps) == 1
+        status = DERIVED if one else MODELLED
+        inputs = [f"{ISO3}-{slugify(province)}"] + [
+            f"{ISO3}-{slugify(province)}-{slugify(n)}"
+            for n in sorted(info["all"]) if n not in gaps]
+        for name in sorted(gaps):
+            note = (
+                f"No composition was read for this regency. This is "
+                f"{province}'s own published religion figures with the "
+                f"{len(info['all']) - len(gaps)} regencies that were read "
+                f"taken out of them, priced against each regency's "
+                f"population -- arithmetic on published figures, not a "
+                f"measurement of anyone here.")
+            if one:
+                note += (f" It is the only regency of {province} with nothing "
+                         f"read, so what is left over is this one.")
+            else:
+                note += (f" {len(gaps)} regencies of {province} have nothing "
+                         f"read, so what is left over is their total and not "
+                         f"this one's; each carries the whole leftover, which "
+                         f"assumes they do not differ from each other.")
+            note += (f" The leftover comes to {total:,.0f} people against "
+                     f"{missing:,} living in them, a difference of {drift:+.1%}.")
+            out.append(regency_record(
+                name, province,
+                {"religion": estimate(status, rows, method="province residual",
+                                      inputs=inputs, note=note)},
+                [{"field": "religion", "name": RESIDUAL_SOURCE,
+                  "url": "https://id.wikipedia.org/wiki/"
+                         + PROVINCES[province][0].replace(" ", "_"),
+                  "license": LICENCE}]))
+        log(f"    {province}: {len(gaps)} regency(ies) from the residual "
+            f"({'derived' if one else 'modelled'}), {drift:+.1%} on the total")
+    return out
+
+
+def regency_records(fetch_page=fetch,
+                    province_rows: list[dict[str, Any]] | None = None
+                    ) -> list[dict[str, Any]]:
+    """The regency records, and the residual estimates the provinces imply.
+
+    ``province_rows`` is what ``province_records`` just produced, passed in
+    rather than re-fetched: the residual needs each province's own published
+    composition, and fetching all 34 articles a second time to get it would
+    double the run for nothing. Without it the regencies are still read and
+    no residual is taken, which is what the tests exercise.
+    """
     provinces = {s["id"]: s["name"] for s in shapes("admin1")}
     records: list[dict[str, Any]] = []
     kinds: dict[str, int] = {}
     unread: dict[str, dict[str, str]] = {}
+    refusals: dict[str, int] = {}
     known: dict[str, dict[str, dict[str, float]]] = {}
-    counted = 0
+    counted = uninhabited = from_hapi = 0
+    hapi = hapi_by_province()
     for shape in shapes("admin2"):
         name, province = shape["name"], provinces.get(shape["parent"], "")
-        if name in NOT_REGENCIES or not province:
+        if not province:
+            continue
+        if name in NOT_REGENCIES:
+            why = UNINHABITED.format(what=NOT_REGENCIES[name])
+            records.append(regency_record(
+                name, province,
+                {field: gap(NOT_COLLECTED, why) for field in
+                 ("religion", "ethnicity", "language")}
+                | {"population": gap(NOT_COLLECTED, why)},
+                [{"field": "religion/ethnicity/language/population",
+                  "name": COD_AB_CAVEAT, "url": COD_AB_URL}]))
+            uninhabited += 1
             continue
         title = regency_title(name)
         wikitext, resolved = fetch_page(title, "id")
@@ -1205,15 +1540,38 @@ def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
         known.setdefault(province, {})[name] = {r["group"]: r["pct"] for r in reading["rows"]}
         fields = religion_fields(reading, resolved)
         sources = [fields.pop("religion_source")]
-        head = read_population(wikitext, resolved)
+        head, why = read_population(wikitext, resolved)
         if head:
             counted += 1
             fields.update(population_fields(head, resolved))
             sources.append(fields.pop("population_source"))
+        elif (last := hapi.get(province, {}).get(name)):
+            # Last resort, and only ever into an empty field: the article
+            # route is a count for 2023-2025 and this is a projection for
+            # 2020 under a licence that is not open, so it fills a regency
+            # that has nothing and never replaces one that has something.
+            from_hapi += 1
+            fields.update(hapi_fields(last, name, why))
+            sources.append(fields.pop("population_source"))
+        else:
+            refusals[why] = refusals.get(why, 0) + 1
+            fields["population"] = gap(
+                NOT_AVAILABLE,
+                f"No head count is published for this regency here: "
+                f"{why}. The Indonesian Wikipedia article "
+                f"'{resolved}' is what was read.")
         records.append(regency_record(name, province, fields, sources, resolved))
     log(f"  regencies: {len(records)} read from the infobox; by kind of source: "
         + ", ".join(f"{k} {v}" for k, v in sorted(kinds.items())))
     log(f"  regencies with a head count: {counted} of {len(records)}")
+    log(f"  {uninhabited} shapes at this level are uninhabited features, not "
+        f"regencies, and say so: {', '.join(sorted(NOT_REGENCIES))}")
+    for why, n in sorted(refusals.items(), key=lambda kv: -kv[1]):
+        log(f"    {n} without one because {why}")
+    if from_hapi:
+        log(f"  {from_hapi} of those filled from HAPI instead -- a 2020 "
+            f"projection under a licence that is not open; see "
+            f"scripts/fetch_census/indonesia_hapi.py")
     flat = sorted(f"{prov}/{name}" for prov, names in unread.items() for name in names)
     if flat:
         log(f"  the infobox does not answer for {len(flat)}: {', '.join(flat)}")
@@ -1226,6 +1584,44 @@ def regency_records(fetch_page=fetch) -> list[dict[str, Any]]:
     still = sorted(f"{prov}/{name}" for prov, names in unread.items() for name in names)
     if still:
         log(f"  still not read ({len(still)}): {', '.join(still)}")
+
+    # What is left of each province once its read regencies are taken out.
+    by_name = {r["name"]: r for r in records if isinstance(r.get("religion"), list)}
+    shaped: dict[str, dict[str, Any]] = {}
+    for shape in shapes("admin2"):
+        province = provinces.get(shape["parent"], "")
+        name = shape["name"]
+        if not province or name in NOT_REGENCIES:
+            continue
+        info = shaped.setdefault(province, {"all": [], "gaps": [], "points": {},
+                                            "population": {}, "shares": {}})
+        info["all"].append(name)
+        spot = shape.get("point")
+        if isinstance(spot, dict) and spot.get("lat") is not None:
+            info["points"][name] = (spot["lat"], spot["lon"])
+        elif isinstance(spot, (list, tuple)) and len(spot) == 2:
+            info["points"][name] = (spot[1], spot[0])
+        if name not in by_name:
+            info["gaps"].append(name)
+        found = by_name.get(name)
+        weight = None
+        if found and isinstance(found.get("population"), dict):
+            weight = found["population"].get("value")
+        if weight is None:
+            row = hapi.get(province, {}).get(name)
+            weight = int(row["population"]) if row else None
+        info["population"][name] = weight
+    province_shares = {
+        r["name"]: {row["group"]: row["pct"] for row in r["religion"]}
+        for r in (province_rows or []) if isinstance(r.get("religion"), list)}
+    for province, info in shaped.items():
+        info["shares"] = province_shares.get(province, {})
+    log(f"  the residual: {sum(1 for i in shaped.values() if i['gaps'])} "
+        f"province(s) have a regency with nothing read")
+    from_residual = residual_records(by_name, shaped, hapi)
+    records += from_residual
+    log(f"  {len(from_residual)} regencies carry a residual estimate; "
+        f"{len(records)} records in all")
     return records
 
 
@@ -1276,14 +1672,16 @@ def main() -> int:
     log("indonesia: ethnicity by province (2010 census) and religion by province and "
         "regency, read from the Indonesian Wikipedia")
     records: list[dict[str, Any]] = []
+    provinces_read: list[dict[str, Any]] = []
     if args.level in ("province", "both"):
         provinces, _ = province_records()
+        provinces_read = provinces
         with_eth = sum(1 for r in provinces if isinstance(r.get("ethnicity"), list))
         with_rel = sum(1 for r in provinces if isinstance(r.get("religion"), list))
         log(f"  provinces: {len(provinces)}; ethnicity on {with_eth}, religion on {with_rel}")
         records += provinces
     if args.level in ("regency", "both"):
-        records += regency_records()
+        records += regency_records(province_rows=provinces_read)
     write_json(PROCESSED / OUT, records)
     log(f"  wrote {len(records)} records to {OUT}")
     return 0

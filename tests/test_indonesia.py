@@ -410,8 +410,9 @@ class InfoboxPopulation(unittest.TestCase):
     """
 
     def test_count_year_and_registry_named(self):
-        head, printed = quiet(m.read_population, CILACAP, "Kabupaten Cilacap")
+        (head, why), printed = quiet(m.read_population, CILACAP, "Kabupaten Cilacap")
         self.assertEqual(head, {"total": 2_037_899, "year": 2024, "kind": "dukcapil"})
+        self.assertEqual(why, "")
         fields = m.population_fields(head, "Kabupaten Cilacap")
         self.assertEqual(fields["population"]["value"], 2_037_899)
         self.assertEqual(fields["population"]["year"], 2024)
@@ -420,19 +421,29 @@ class InfoboxPopulation(unittest.TestCase):
         self.assertEqual(fields["population_source"]["field"], "population")
 
     def test_year_falls_back_to_the_citation_when_the_infobox_gives_none(self):
-        head, printed = quiet(m.read_population, MANADO, "Kota Manado")
+        (head, _), printed = quiet(m.read_population, MANADO, "Kota Manado")
         self.assertEqual(head["total"], 459_409)
         self.assertEqual(head["year"], 2023)
 
     def test_separators_and_the_as_of_date_win_over_the_citation(self):
-        head, printed = quiet(m.read_population, PUNCAK_JAYA, "Kabupaten Puncak Jaya")
+        (head, _), printed = quiet(m.read_population, PUNCAK_JAYA,
+                                   "Kabupaten Puncak Jaya")
         self.assertEqual(head, {"total": 220_393, "year": 2024, "kind": "dukcapil"})
 
-    def test_no_count_and_an_uncited_count_are_both_none(self):
-        head, printed = quiet(m.read_population, SURABAYA, "Kota Surabaya")
+    def test_no_count_and_an_uncited_count_are_both_refused_with_a_reason(self):
+        """A refusal has to say which of the two it is.
+
+        Both end with no population on the record, and they are not the same
+        fact about the place: one article prints no head count at all, the
+        other prints one and cites nothing for it. A bare gap says neither.
+        """
+        (head, why), printed = quiet(m.read_population, SURABAYA, "Kota Surabaya")
         self.assertIsNone(head)
-        head, printed = quiet(m.read_population, UNCITED_COUNT, "Kabupaten Contoh")
+        self.assertIn("no head count at all", why)
+        (head, why), printed = quiet(m.read_population, UNCITED_COUNT,
+                                     "Kabupaten Contoh")
         self.assertIsNone(head)
+        self.assertIn("cites nothing for it", why)
         self.assertIn("no citation", printed)
 
     def test_a_joint_hindu_buddhist_bucket_is_one_other_row(self):
@@ -538,12 +549,19 @@ class Records(unittest.TestCase):
         # of their provinces and write only the ones no article answered for.
         cilacap = by_regency["Kabupaten Cilacap"] if "Kabupaten Cilacap" in by_regency \
             else by_regency["Cilacap"]
-        self.assertEqual(sum(1 for r in regencies if r["religion_year"] == 2019), 1)
+        self.assertEqual(sum(1 for r in regencies
+                             if r.get("religion_year") == 2019), 1)
         bukittinggi = by_regency["Kota Bukittinggi"]
         self.assertEqual(bukittinggi["religion_year"], 2023)
         self.assertEqual(bukittinggi["religion"][0]["group"], "Islam")
         self.assertIn("data.sumbarprov.go.id", bukittinggi["religion_note"])
-        self.assertEqual({s["field"] for s in bukittinggi["sources"]}, {"religion"})
+        # The portal table prints counts, so its own total is a head count
+        # for a regency whose article gave none.
+        self.assertEqual({s["field"] for s in bukittinggi["sources"]},
+                         {"religion", "population"})
+        self.assertGreater(bukittinggi["population"]["value"], 0)
+        self.assertEqual(bukittinggi["population"]["year"], 2023)
+        self.assertIn("summed across the faiths", bukittinggi["population_note"])
         self.assertEqual(by_regency["Kota Samarinda"]["religion_year"], 2023)
         self.assertEqual(by_regency["Lebong"]["religion_year"], 2024)
         self.assertEqual(by_regency["Kota Tangerang Selatan"]["religion_year"], 2021)
@@ -557,8 +575,69 @@ class Records(unittest.TestCase):
         self.assertEqual({s["field"] for s in cilacap["sources"]},
                          {"religion", "population"})
         self.assertIn("not read", printed)
-        self.assertNotIn("Hutan", printed)
         self.assertNotIn("Kabupaten Cilacap", printed)
+        # Hutan is named as an uninhabited feature, never as a regency the
+        # reader failed on: the two are different facts and the log says which.
+        self.assertIn("uninhabited features", printed)
+        for line in printed.splitlines():
+            if "not read" in line or "does not answer" in line:
+                self.assertNotIn("Hutan", line, line)
+
+    def test_hapi_only_ever_fills_and_never_replaces(self):
+        """The last-resort head count must not touch a regency that has one.
+
+        HAPI's figures are a 2020 projection under a licence that is not
+        open; the article route's are a registry count for 2023 to 2025. A
+        rule that let the projection win anywhere would be replacing a better
+        figure with a worse one, and would be doing it under a licence the
+        project would rather not lean on at all.
+        """
+        pages = {("Kabupaten Cilacap", "id"): CILACAP}
+        regencies, _ = quiet(m.regency_records,
+                             lambda title, lang="id": (pages.get((title, lang), ""),
+                                                       title))
+        by_name = {r["name"]: r for r in regencies}
+        cilacap = by_name.get("Kabupaten Cilacap") or by_name["Cilacap"]
+        # Cilacap's article carries a cited, dated count, so that is what
+        # lands -- not HAPI's, whatever HAPI holds for it.
+        self.assertEqual(cilacap["population"]["value"], 2_037_899)
+        self.assertEqual(cilacap["population"]["year"], 2024)
+        self.assertIn("Dukcapil", cilacap["population"]["source"])
+        self.assertNotIn("UNFPA", cilacap["population"]["source"])
+
+    def test_a_hapi_record_carries_its_licence_and_its_vintage(self):
+        from scripts.fetch_census import indonesia_hapi as hapi
+        row = {"population": "95303", "year": "2020",
+               "admin2_name": "Simeulue", "admin2_code": "ID1101",
+               "resource_hdx_id": "8f6f09d2-95f7-42dc-b6f1-aead319607f3"}
+        fields = m.hapi_fields(row, "Simeulue", "the article prints no head count")
+        self.assertEqual(fields["population"]["value"], 95_303)
+        self.assertEqual(fields["population"]["year"], 2020)
+        self.assertEqual(fields["population_source"]["license"], hapi.LICENCE)
+        self.assertIn("humanitarian use only", fields["population_source"]["license"])
+        for phrase in ("projection, not a count", "owner's decision",
+                       "humanitarian use only", "marks it as not open",
+                       "the article prints no head count"):
+            self.assertIn(phrase, fields["population_note"], phrase)
+
+    def test_a_lake_says_it_is_a_lake(self):
+        """Five shapes at this level are lakes, a forest and two reservoirs.
+
+        Skipped in silence they fell through to the build's generic "nothing
+        was read for this unit", which reads as a regency awaiting data. UN
+        OCHA's catalogue entry for the matching boundary set names them as
+        uninhabited and publishes no row for any of them.
+        """
+        regencies, _ = quiet(m.regency_records, lambda title, lang="id": ("", title))
+        by_name = {r["name"]: r for r in regencies}
+        for name in ("Hutan", "Danau", "Waduk Cirata"):
+            self.assertIn(name, by_name, sorted(by_name)[:8])
+            unit = by_name[name]
+            for field in ("religion", "ethnicity", "language", "population"):
+                self.assertEqual(unit[field]["status"], "not_collected", field)
+                self.assertIn("nobody lives in it", unit[field]["note"])
+        self.assertIn("a forest", by_name["Hutan"]["religion"]["note"])
+        self.assertIn("reservoir", by_name["Waduk Cirata"]["religion"]["note"])
 
     def test_regency_titles(self):
         self.assertEqual(m.regency_title("Kota Medan"), "Kota Medan")
@@ -588,3 +667,101 @@ class Classification(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TheProvinceResidual(unittest.TestCase):
+    """A province's own figures, less the regencies published inside it.
+
+    Measured against the regencies that are read, by leave-one-out: the
+    residual is a median 1.4 points off with the dominant group right 96.9%
+    of the time and a worst case of 17 points, where taking the neighbouring
+    regencies instead is 5.1 points off, 90.8% right, and 93.8 points at
+    worst. So this is the method, and it is arithmetic rather than a model.
+    """
+
+    def province(self, gaps, known, shares, pops):
+        return {"Aceh": {"all": list(known) + list(gaps), "gaps": list(gaps),
+                         "population": pops, "shares": shares}}
+
+    def known(self, rows):
+        return {name: {"religion": [{"group": g, "pct": p} for g, p in comp.items()]}
+                for name, comp in rows.items()}
+
+    def test_one_empty_regency_is_derived_and_exact(self):
+        """Two regencies of 100, the province 60/40, one of them 80/20."""
+        out, printed = quiet(
+            m.residual_records,
+            self.known({"A": {"Islam": 80.0, "Protestantism": 20.0}}),
+            self.province(["B"], ["A"], {"Islam": 60.0, "Protestantism": 40.0},
+                          {"A": 100, "B": 100}), {})
+        self.assertEqual(len(out), 1)
+        religion = out[0]["religion"]
+        self.assertEqual(religion["status"], "derived")
+        got = {r["group"]: r["pct"] for r in religion["estimate"]}
+        # 200 people, 60% Muslim = 120; A holds 80; B holds the other 40 of 100.
+        self.assertEqual(got, {"Islam": 40.0, "Protestantism": 60.0})
+        self.assertIn("only regency", religion["note"])
+        self.assertEqual(religion["method"], "province residual")
+
+    def test_several_empty_regencies_are_modelled_and_say_so(self):
+        out, _ = quiet(
+            m.residual_records,
+            self.known({"A": {"Islam": 80.0, "Protestantism": 20.0}}),
+            self.province(["B", "C"], ["A"], {"Islam": 60.0, "Protestantism": 40.0},
+                          {"A": 100, "B": 50, "C": 50}), {})
+        self.assertEqual(len(out), 2)
+        for record in out:
+            self.assertEqual(record["religion"]["status"], "modelled")
+            self.assertIn("assumes they do not differ", record["religion"]["note"])
+
+    def test_a_negative_group_is_refused(self):
+        """The read regencies already hold more Muslims than the province has.
+
+        That is not a small inconsistency to absorb -- it says the province
+        figure and the regency figures are describing different populations,
+        and there is no honest remainder to take. North Sumatra fails this
+        way for real, by 313,752 Muslims.
+        """
+        out, printed = quiet(
+            m.residual_records,
+            self.known({"A": {"Islam": 95.0, "Protestantism": 5.0}}),
+            self.province(["B"], ["A"], {"Islam": 40.0, "Protestantism": 60.0},
+                          {"A": 100, "B": 100}), {})
+        self.assertIn("hold more Islam than its own figures leave room for", printed)
+        # The residual is refused; the weaker method takes over rather than
+        # forcing a regency with no Muslims in it.
+        self.assertEqual(len(out), 1)
+        religion = out[0]["religion"]
+        self.assertEqual(religion["status"], "modelled")
+        self.assertEqual(religion["method"], "nearest regencies in the province")
+        self.assertEqual({r["group"]: r["pct"] for r in religion["estimate"]},
+                         {"Islam": 95.0, "Protestantism": 5.0})
+        self.assertIn("cannot supply one", religion["note"])
+        self.assertIn("rather than by sharing a border", religion["note"])
+
+    def test_a_leftover_far_from_the_missing_population_is_refused(self):
+        """The province's figures describe 70% of it and the regencies 100%.
+
+        Subtracting one from the other then leaves 40 people where 100 live,
+        and the shares that come out of it are not this regency's even if
+        they normalise to something plausible. Central Sulawesi drifts 29%
+        this way for real.
+        """
+        out, printed = quiet(
+            m.residual_records,
+            self.known({"A": {"Islam": 50.0, "Protestantism": 50.0}}),
+            self.province(["B"], ["A"], {"Islam": 35.0, "Protestantism": 35.0},
+                          {"A": 100, "B": 100}), {})
+        self.assertIn("out", printed)
+        self.assertEqual(len(out), 1)
+        self.assertEqual(out[0]["religion"]["status"], "modelled")
+        self.assertEqual(out[0]["religion"]["method"],
+                         "nearest regencies in the province")
+
+    def test_a_regency_with_no_head_count_stops_the_province(self):
+        out, printed = quiet(
+            m.residual_records,
+            self.known({"A": {"Islam": 100.0}}),
+            self.province(["B"], ["A"], {"Islam": 100.0}, {"A": None, "B": 100}), {})
+        self.assertEqual(out, [])
+        self.assertIn("without a head count", printed)
