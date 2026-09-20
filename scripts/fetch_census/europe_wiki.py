@@ -77,15 +77,36 @@ def fetch(title: str, lang: str) -> tuple[str, str]:
 # ---------------------------------------------------------------------------
 
 COMPOSITION = re.compile(
-    r"etni|naţional|nacional|национал|етни|этни|религ|confes|конфес|рели|"
+    r"etni|na[tţț]ional|nacional|национал|етни|этни|религ|confes|конфес|рели|"
     r"veroispoved|vallás|nemzetiség|národnost|náboženstv|jezik|język|"
-    r"limba|език|мова|мова|language|religio|ethnic|nationalit|faith|"
-    r"maternal|matern|anyanyelv|kalba|valoda|keel|usk|rahvus|tautyb|tautīb",
+    r"limba|език|мова|language|religio|ethnic|nationalit|faith|мов|"
+    r"anyanyelv|kalba|valoda|keel|usk|rahvus|tautyb|tautīb|"
+    r"demogra|населен|становништв|composition|населення|popula|"
+    r"вероисповед|склад|состав|склау|fe[j]?e|besim|gjuh|struktur",
     re.I)
+
+HEADING = re.compile(r"^\s*(=+)\s*(.+?)\s*\1\s*$", re.M)
+
+
+def sections(wikitext: str) -> list[tuple[str, str]]:
+    """(heading, body) for every section, with the lead under ""."""
+    out: list[tuple[str, str]] = []
+    last, name = 0, ""
+    for m in HEADING.finditer(wikitext):
+        out.append((name, wikitext[last:m.start()]))
+        name, last = m.group(2), m.end()
+    out.append((name, wikitext[last:]))
+    return out
 
 
 def probe(spec: str, rows: int, width: int) -> None:
-    """Print one article's infobox parameters and its composition-looking tables.
+    """Print one article's infobox parameters and its composition sections.
+
+    A European unit's article almost never names the field in the table's
+    own header -- Bulgaria's ethnic table starts "Численост | Дял (в %)" and
+    says what it counts in the heading above it -- so the tables are printed
+    under the section they sit in, and a section is shown when either its
+    heading or its first rows name one of the three fields.
 
     ``spec`` is "lang:Title"; a title carries underscores rather than spaces,
     because the runner hands this command to xargs and xargs splits on
@@ -93,28 +114,36 @@ def probe(spec: str, rows: int, width: int) -> None:
     """
     lang, _, title = spec.partition(":")
     wikitext, resolved = fetch(title.replace("_", " "), lang)
-    log(f"\n===== [{lang}] {resolved!r}, {len(wikitext):,} bytes")
+    say(f"\n===== [{lang}] {resolved!r}, {len(wikitext):,} bytes")
     if not wikitext:
         return
-    log("  -- infobox --")
+    say("  -- infobox --")
     for entry in infobox_lines(wikitext):
         head, _, rest = entry.partition("=")
-        log(f"    {head.strip(' |')} = {' '.join(rest.split())[:width]}")
-    found = tables(wikitext)
-    log(f"  -- {len(found)} table(s) --")
-    for i, table in enumerate(found, 1):
-        flat = " ".join(" ".join(r) for r in table[:3])
-        if not COMPOSITION.search(flat):
-            log(f"    table {i}: {len(table)} rows, not a composition: {flat[:80]}")
+        key = head.strip(" |")
+        value = " ".join(rest.split())
+        if COMPOSITION.search(key) or COMPOSITION.search(value[:60]):
+            say(f"    * {key} = {value[:4 * width]}")
+        else:
+            say(f"      {key} = {value[:width]}")
+    say("  -- sections --")
+    for name, body in sections(wikitext):
+        found = tables(body)
+        flat = " ".join(" ".join(r) for t in found for r in t[:3])
+        interesting = COMPOSITION.search(name) or COMPOSITION.search(flat[:400])
+        if not found:
+            say(f"    [{name}] no table")
             continue
-        log(f"    table {i}: {len(table)} rows")
-        for row in table[:rows]:
-            log("      " + " | ".join(c[:width] for c in row))
-        if len(table) > rows:
-            log(f"      ... {len(table) - rows} more rows")
-    # The sections, so a reader of the log knows what else the article holds.
-    heads = re.findall(r"^\s*=+\s*(.+?)\s*=+\s*$", wikitext, re.M)
-    log(f"  -- sections: {', '.join(h for h in heads)[:400]}")
+        if not interesting:
+            say(f"    [{name}] {len(found)} table(s), not a composition: {flat[:70]}")
+            continue
+        say(f"    [{name}] {len(found)} table(s)")
+        for i, table in enumerate(found, 1):
+            say(f"      table {i}: {len(table)} rows")
+            for row in table[:rows]:
+                say("        " + " | ".join(c[:width] for c in row))
+            if len(table) > rows:
+                say(f"        ... {len(table) - rows} more rows")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -128,6 +157,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.probe:
         for spec in args.probe:
             probe(spec, args.rows, args.width)
+        PROBE_LOG.parent.mkdir(parents=True, exist_ok=True)
+        PROBE_LOG.write_text("\n".join(_probe_lines) + "\n", encoding="utf-8")
+        log(f"\nwrote {PROBE_LOG}")
         return 0
     ap.error("nothing to do yet")
     return 1
