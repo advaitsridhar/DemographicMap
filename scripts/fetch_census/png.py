@@ -232,6 +232,10 @@ PROSE_CONTROLS: dict[str, tuple[str, int]] = {
 DISTRICT_NOTE = ("Counted by the 2024 National Population Census, which the "
                  "National Statistical Office published as district totals in "
                  "each province's snapshot.")
+UNION_NOTE = ("Counted by the 2024 National Population Census and summed from "
+              "the {n} districts the census now draws inside this one -- {parts} "
+              "-- which together cover it and nothing else, every other district "
+              "of {province} having a shape of its own.")
 REDRAWN_NOTE = (
     "No 2024 figure is written for this district. The census tabulates {n} "
     "districts in {province} where the boundary file draws {m}: {new} has been "
@@ -370,8 +374,11 @@ def sex_ratio(male: int, female: int) -> int:
 class Unit:
     """One province or district as the booklet counts it."""
 
-    def __init__(self, name: str, total: int, male: int, female: int) -> None:
+    def __init__(self, name: str, total: int, male: int, female: int,
+                 parts: tuple[str, ...] = ()) -> None:
         self.name, self.total, self.male, self.female = name, total, male, female
+        # The districts summed into this one, where the shape is a union.
+        self.parts = parts
 
     @property
     def ratio(self) -> int:
@@ -598,7 +605,7 @@ def place_districts(province: str, districts: list[Unit]
             total = sum(by_name[p].total for p in parts)
             male = sum(by_name[p].male for p in parts)
             female = sum(by_name[p].female for p in parts)
-            placed[shape] = Unit(shape, total, male, female)
+            placed[shape] = Unit(shape, total, male, female, parts)
             used.update(parts)
     for name, unit in by_name.items():
         if name in used:
@@ -649,7 +656,10 @@ def district_record(province: str, shape: str, unit: Unit | None,
         fields["sex_ratio"] = measure(unit.ratio, year=CENSUS_2024,
                                       source=FINAL_FIGURES,
                                       unit="males_per_100_females")
-        fields["population_note"] = DISTRICT_NOTE
+        fields["population_note"] = (
+            UNION_NOTE.format(n=len(unit.parts), province=province,
+                              parts=", ".join(unit.parts))
+            if unit.parts else DISTRICT_NOTE)
     else:
         fields["population"] = gap(NOT_AVAILABLE, reason)
     return record(

@@ -273,6 +273,19 @@ class PlacingDistrictsOnShapes(unittest.TestCase):
                                           "Koroba/Kopiago District",
                                           "Tari/Pori District"])
         self.assertEqual(placed["Komo/Magarima District"].total, 77_114 + 56_186)
+        self.assertEqual(placed["Komo/Magarima District"].parts,
+                         ("Komo Hulia", "Magarima"))
+        self.assertEqual(placed["Tari/Pori District"].parts, ())
+
+    def test_a_summed_shape_says_what_was_summed(self):
+        placed, _ = png.place_districts("Hela", [
+            self.unit("Komo Hulia", 77_114), self.unit("Koroba Kopiago", 130_425),
+            self.unit("Tari/Pori", 102_081), self.unit("Magarima", 56_186)])
+        note = png.district_record(
+            "Hela", "Komo/Magarima District",
+            placed["Komo/Magarima District"], "")["population_note"]
+        self.assertIn("Komo Hulia, Magarima", note)
+        self.assertIn("Hela", note)
 
     def test_a_renamed_district_reaches_its_shape(self):
         placed, _ = png.place_districts("Western Highlands", [
