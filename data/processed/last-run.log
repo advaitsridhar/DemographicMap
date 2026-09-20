@@ -1,34 +1,428 @@
-probe_pdf: https://www.unicef.org/eap/sites/unicef.org.eap/files/2018-06/2017%20DPRK%20MICS%20Survey%20Findings%20Report_July%202018.pdf
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 301, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 257, in main
-    text = fetch_text(args.url, layout=args.layout, boxes=args.boxes,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 161, in fetch_text
-    blob = fetch_blob(url, aia=aia)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
-    with urllib.request.urlopen(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 563, in error
-    return self._call_chain(*args)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 403: Forbidden
+page: https://www.nso.gov.pg/census-surveys/national-population-housing-census/
+  231,594 bytes
+  31 matching link(s)
+  - 
+    https://www.nso.gov.pg/
+  - Statistics
+    https://www.nso.gov.pg/census-surveys/national-population-housing-census/
+  - Education
+    https://www.nso.gov.pg/statistics/education/
+  - Economy
+    https://www.nso.gov.pg/statistics/economy/
+  - Health
+    https://www.nso.gov.pg/statistics/health/
+  - Population
+    https://www.nso.gov.pg/statistics/population/
+  - Social
+    https://www.nso.gov.pg/statistics/social/
+  - Census &amp; Surveys
+    https://www.nso.gov.pg/census-surveys/
+  - Demographic and Health Survey
+    https://www.nso.gov.pg/census-surveys/demographic-and-health-survey/
+  - Household and Income Expenditure Survey
+    https://www.nso.gov.pg/census-surveys/household-and-income-expenditure-survey/
+  - Population Data Collection and Assessment
+    https://www.nso.gov.pg/census-surveys/population-data-collection-and-assessment/
+  - Documents
+    https://www.nso.gov.pg/documents/
+  - Data Request
+    https://www.nso.gov.pg/documents/data-request/
+  - About us
+    https://www.nso.gov.pg/about-us/
+  - Contact
+    https://www.nso.gov.pg/about-us/contact/
+  - Featured News
+    https://www.nso.gov.pg/about-us/featured-news/
+  - Vacancies
+    https://www.nso.gov.pg/about-us/vacancies/
+  - 
+    https://www.nso.gov.pg/2026/08/21/png-gdp-2025-tentative-release-date/
+  - News
+    https://www.nso.gov.pg/category/news/
+  - Economy
+    https://www.nso.gov.pg/category/economy/
+  - 
+    https://www.nso.gov.pg/2026/01/28/png-economy-grows-3-9-in-2024/
+  - Statistics for Development (SPC)
+    https://sdd.spc.int/pg
+  - Microdata Library
+    https://microdata.pacificdata.org/index.php/catalog/PNG
+  - Pacific Data
+    https://pacificdata.org/
+  - Environmental Data &#8211; SPREP
+    https://png-data.sprep.org/
+  - DHS Program PNG
+    https://dhsprogram.com/what-we-do/survey/survey-display-499.cfm
+  - Australian Bureau of Statistics
+    https://www.abs.gov.au/
+  - National Planning and Monitoring
+    http://www.planning.gov.pg/
+  - The Pacific Community (SPC)
+    https://www.spc.int/
+  - UNFPA
+    https://www.unfpa.org/data/PG
+  - National Statistical Office of Papua New Guinea
+    https://www.nso.gov.pg
+  checking https://www.nso.gov.pg/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/national-population-housing-census/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/education/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/economy/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/health/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/population/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/social/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/demographic-and-health-survey/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/household-and-income-expenditure-survey/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/population-data-collection-and-assessment/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/documents/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/documents/data-request/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/contact/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/featured-news/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/vacancies/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/2026/08/21/png-gdp-2025-tentative-release-date/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/category/news/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/category/economy/
+    200 text/html; charset=UTF-8 size=None
+page: https://www.nso.gov.pg/statistics/population/
+  237,242 bytes
+  39 matching link(s)
+  - 
+    https://www.nso.gov.pg/
+  - Statistics
+    https://www.nso.gov.pg/statistics/population/
+  - Education
+    https://www.nso.gov.pg/statistics/education/
+  - Economy
+    https://www.nso.gov.pg/statistics/economy/
+  - Health
+    https://www.nso.gov.pg/statistics/health/
+  - Social
+    https://www.nso.gov.pg/statistics/social/
+  - Census &amp; Surveys
+    https://www.nso.gov.pg/census-surveys/
+  - Demographic and Health Survey
+    https://www.nso.gov.pg/census-surveys/demographic-and-health-survey/
+  - Household and Income Expenditure Survey
+    https://www.nso.gov.pg/census-surveys/household-and-income-expenditure-survey/
+  - Population &#038; Housing
+    https://www.nso.gov.pg/census-surveys/national-population-housing-census/
+  - Population Data Collection and Assessment
+    https://www.nso.gov.pg/census-surveys/population-data-collection-and-assessment/
+  - Documents
+    https://www.nso.gov.pg/documents/
+  - Data Request
+    https://www.nso.gov.pg/documents/data-request/
+  - About us
+    https://www.nso.gov.pg/about-us/
+  - Contact
+    https://www.nso.gov.pg/about-us/contact/
+  - Featured News
+    https://www.nso.gov.pg/about-us/featured-news/
+  - Vacancies
+    https://www.nso.gov.pg/about-us/vacancies/
+  - WordPress Tables
+    https://supsystic.com/plugins/wordpress-data-table-plugin/?utm_medium=love_link
+  - Download Final Figures
+    https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf
+  - {{#if file_custom_icon}} {{else}} {{/if}} {{{crop_title}}}
+    https://www.nso.gov.pg/statistics/population/{{linkdownload}}
+  - 2024 National Population Census - Final Figures
+    https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures.pdf
+  - PNG National Report 2011 Census
+    https://www.nso.gov.pg/download/51/population-housing/2152/png-national-report-2011-census.pdf
+  - PNG National Report 2000 Census
+    https://www.nso.gov.pg/download/51/population-housing/2151/png-national-report-2000-census.pdf
+  - PNG Final Figures 2011 - Brochure
+    https://www.nso.gov.pg/download/51/population-housing/1841/png-final-figures-2011-brochure.pdf
+  - PNG Final Figures 2011 - Booklet
+    https://www.nso.gov.pg/download/51/population-housing/1842/png-final-figures-2011-booklet.pdf
+  - Census Figures by Wards - Southern Region
+    https://www.nso.gov.pg/download/51/population-housing/2960/census-figures-by-wards-southern-region.pdf
+  - Census Figures by Wards - Momase Region
+    https://www.nso.gov.pg/download/51/population-housing/2962/census-figures-by-wards-momase-region.pdf
+  - Census Figures by Wards - Islands Region
+    https://www.nso.gov.pg/download/51/population-housing/2959/census-figures-by-wards-islands-region.pdf
+  - Census Figures by Wards - Highlands Region
+    https://www.nso.gov.pg/download/51/population-housing/2961/census-figures-by-wards-highlands-region.pdf
+  - Statistics for Development (SPC)
+    https://sdd.spc.int/pg
+  - Microdata Library
+    https://microdata.pacificdata.org/index.php/catalog/PNG
+  - Pacific Data
+    https://pacificdata.org/
+  - Environmental Data &#8211; SPREP
+    https://png-data.sprep.org/
+  - DHS Program PNG
+    https://dhsprogram.com/what-we-do/survey/survey-display-499.cfm
+  - Australian Bureau of Statistics
+    https://www.abs.gov.au/
+  - National Planning and Monitoring
+    http://www.planning.gov.pg/
+  - The Pacific Community (SPC)
+    https://www.spc.int/
+  - UNFPA
+    https://www.unfpa.org/data/PG
+  - National Statistical Office of Papua New Guinea
+    https://www.nso.gov.pg
+  checking https://www.nso.gov.pg/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/population/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/education/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/economy/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/health/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/social/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/demographic-and-health-survey/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/household-and-income-expenditure-survey/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/national-population-housing-census/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/population-data-collection-and-assessment/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/documents/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/documents/data-request/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/contact/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/featured-news/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/vacancies/
+    200 text/html; charset=UTF-8 size=None
+  checking https://supsystic.com/plugins/wordpress-data-table-plugin/?utm_medium=love_link
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/download/51/population-housing/4310/2024-national-population-census-final-figures_web.pdf
+    200 application/pdf size=None
+  checking https://www.nso.gov.pg/statistics/population/{{linkdownload}}
+    HTTP 404
+page: https://www.nso.gov.pg/documents/
+  361,951 bytes
+  27 matching link(s)
+  - 
+    https://www.nso.gov.pg/
+  - Statistics
+    https://www.nso.gov.pg/documents/
+  - Education
+    https://www.nso.gov.pg/statistics/education/
+  - Economy
+    https://www.nso.gov.pg/statistics/economy/
+  - Health
+    https://www.nso.gov.pg/statistics/health/
+  - Population
+    https://www.nso.gov.pg/statistics/population/
+  - Social
+    https://www.nso.gov.pg/statistics/social/
+  - Census &amp; Surveys
+    https://www.nso.gov.pg/census-surveys/
+  - Demographic and Health Survey
+    https://www.nso.gov.pg/census-surveys/demographic-and-health-survey/
+  - Household and Income Expenditure Survey
+    https://www.nso.gov.pg/census-surveys/household-and-income-expenditure-survey/
+  - Population &#038; Housing
+    https://www.nso.gov.pg/census-surveys/national-population-housing-census/
+  - Population Data Collection and Assessment
+    https://www.nso.gov.pg/census-surveys/population-data-collection-and-assessment/
+  - Data Request
+    https://www.nso.gov.pg/documents/data-request/
+  - About us
+    https://www.nso.gov.pg/about-us/
+  - Contact
+    https://www.nso.gov.pg/about-us/contact/
+  - Featured News
+    https://www.nso.gov.pg/about-us/featured-news/
+  - Vacancies
+    https://www.nso.gov.pg/about-us/vacancies/
+  - Statistics for Development (SPC)
+    https://sdd.spc.int/pg
+  - Microdata Library
+    https://microdata.pacificdata.org/index.php/catalog/PNG
+  - Pacific Data
+    https://pacificdata.org/
+  - Environmental Data &#8211; SPREP
+    https://png-data.sprep.org/
+  - DHS Program PNG
+    https://dhsprogram.com/what-we-do/survey/survey-display-499.cfm
+  - Australian Bureau of Statistics
+    https://www.abs.gov.au/
+  - National Planning and Monitoring
+    http://www.planning.gov.pg/
+  - The Pacific Community (SPC)
+    https://www.spc.int/
+  - UNFPA
+    https://www.unfpa.org/data/PG
+  - National Statistical Office of Papua New Guinea
+    https://www.nso.gov.pg
+  checking https://www.nso.gov.pg/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/documents/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/education/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/economy/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/health/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/population/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/social/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/demographic-and-health-survey/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/household-and-income-expenditure-survey/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/national-population-housing-census/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/population-data-collection-and-assessment/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/documents/data-request/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/contact/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/featured-news/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/vacancies/
+    200 text/html; charset=UTF-8 size=None
+  checking https://sdd.spc.int/pg
+    200 text/html; charset=UTF-8 size=None
+  checking https://microdata.pacificdata.org/index.php/catalog/PNG
+    HTTP 403
+  checking https://pacificdata.org/
+    HTTP 403
+page: https://www.nso.gov.pg/statistics/social/
+  182,728 bytes
+  31 matching link(s)
+  - 
+    https://www.nso.gov.pg/
+  - Statistics
+    https://www.nso.gov.pg/statistics/social/
+  - Education
+    https://www.nso.gov.pg/statistics/education/
+  - Economy
+    https://www.nso.gov.pg/statistics/economy/
+  - Health
+    https://www.nso.gov.pg/statistics/health/
+  - Population
+    https://www.nso.gov.pg/statistics/population/
+  - Census &amp; Surveys
+    https://www.nso.gov.pg/census-surveys/
+  - Demographic and Health Survey
+    https://www.nso.gov.pg/census-surveys/demographic-and-health-survey/
+  - Household and Income Expenditure Survey
+    https://www.nso.gov.pg/census-surveys/household-and-income-expenditure-survey/
+  - Population &#038; Housing
+    https://www.nso.gov.pg/census-surveys/national-population-housing-census/
+  - Population Data Collection and Assessment
+    https://www.nso.gov.pg/census-surveys/population-data-collection-and-assessment/
+  - Documents
+    https://www.nso.gov.pg/documents/
+  - Data Request
+    https://www.nso.gov.pg/documents/data-request/
+  - About us
+    https://www.nso.gov.pg/about-us/
+  - Contact
+    https://www.nso.gov.pg/about-us/contact/
+  - Featured News
+    https://www.nso.gov.pg/about-us/featured-news/
+  - Vacancies
+    https://www.nso.gov.pg/about-us/vacancies/
+  - Business Statistics
+    https://www.nso.gov.pg/statistics/economy/business-statistics/
+  - September Quarter 2020
+    https://www.nso.gov.pg/statistics/economy/consumer-price-index/september-quarter-2020/
+  - Gross Domestic Products
+    https://www.nso.gov.pg/statistics/economy/gross-domestic-products/
+  - 2020 Release
+    https://www.nso.gov.pg/statistics/economy/international-merchandise-trade/2020-release/
+  - Statistics for Development (SPC)
+    https://sdd.spc.int/pg
+  - Microdata Library
+    https://microdata.pacificdata.org/index.php/catalog/PNG
+  - Pacific Data
+    https://pacificdata.org/
+  - Environmental Data &#8211; SPREP
+    https://png-data.sprep.org/
+  - DHS Program PNG
+    https://dhsprogram.com/what-we-do/survey/survey-display-499.cfm
+  - Australian Bureau of Statistics
+    https://www.abs.gov.au/
+  - National Planning and Monitoring
+    http://www.planning.gov.pg/
+  - The Pacific Community (SPC)
+    https://www.spc.int/
+  - UNFPA
+    https://www.unfpa.org/data/PG
+  - National Statistical Office of Papua New Guinea
+    https://www.nso.gov.pg
+  checking https://www.nso.gov.pg/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/social/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/education/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/economy/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/health/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/population/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/demographic-and-health-survey/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/household-and-income-expenditure-survey/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/national-population-housing-census/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/census-surveys/population-data-collection-and-assessment/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/documents/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/documents/data-request/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/contact/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/featured-news/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/about-us/vacancies/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/economy/business-statistics/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/economy/consumer-price-index/september-quarter-2020/
+    200 text/html; charset=UTF-8 size=None
+  checking https://www.nso.gov.pg/statistics/economy/gross-domestic-products/
+    200 text/html; charset=UTF-8 size=None
