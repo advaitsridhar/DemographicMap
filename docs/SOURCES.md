@@ -6076,6 +6076,73 @@ label is deliberately left alone: **Faith of Unity** is a Ugandan new religious
 movement rather than a Christian denomination, and it keeps its own name rather
 than being folded on a guess.
 
+### Round 8, for language alone
+
+Round 9 does not ask what language people speak. Round 8 does -- Q2, "Language
+spoken in home", coded to 458 named languages -- and language is the field
+Africa was emptiest of here: before this, three African countries carried a
+language composition at first level (Mali, South Africa, Zimbabwe), all three
+from a census. **Thirty-one do now.** 48,084 interviews, 34 countries, 457
+regions; 396 clear the 25-respondent floor.
+
+The sampling rules are Round 9's, imported from its module rather than
+restated, so two readings of one survey programme cannot drift apart.
+`scripts/fetch_census/afrobarometer_r8.py`.
+
+**Two defects in the release, both found by checking rather than trusting.**
+The SPSS file's REGION value-label table holds **427 of the 454** labels its
+own codebook lists, and the 27 it omits are almost all of Tanzania -- codes
+740 to 770, every region of a 29-region country, which read as "740.0" until
+they are filled. The codebook's list is transcribed to
+`data/raw/afrobarometer/r8_region_codebook.json` and fills what the file does
+not carry; the file wins where both have a label. Separately, the COUNTRY
+table names **37 countries where the round surveyed 34** -- the merge file's
+labels span the programme, not the round -- so Algeria, Madagascar and São
+Tomé and Príncipe carry a code and no respondents, and produce no records
+rather than empty ones.
+
+**Three kinds of mismatch between a survey stratum and a shape**, which are
+not the same thing and are not treated the same way:
+
+| | what it is | what is done |
+|---|---|---|
+| a spelling | Huila for Huíla, Koulikoro for the file's Koulikouro, Cameroon's regions in French against an English-named file, "Souther Nations..." (the release's own typo) for SNNPR | declared, one stratum to one shape |
+| **finer** than the map | Botswana's 16 survey districts over 10 shapes, Uganda's 11 sub-regions over 4, Côte d'Ivoire's regions over the districts they make up, Mfoundi (Yaoundé) inside Centre, Songwe -- carved out of Mbeya in 2016, after these shapes were drawn | summed into the shape that holds it, sample sizes included, so the 25-respondent floor applies to the shape |
+| **coarser** than the map | Cabo Verde surveyed in 5 strata over 22 municipalities, Sudan in 6 macro-regions over 19 states, Tunisia in 7 over 24 governorates | **published for no shape at all** |
+
+The last row is the one worth stating plainly. A composition for "North West"
+is a fact about a seventh of Tunisia and not about Jendouba, Béja, El Kef or
+Siliana; spreading it over the four would state something nobody measured. The
+run names the three countries and the counts rather than leaving a reader to
+notice. After the declarations, **356 of 356 shapes join by name**, up from 299
+of 396 before them.
+
+**The group tree gained two Niger-Congo branches** it had no member of -- Kru
+(Liberia's Kru, Krahn, Grebo, Bassa) and Ijoid (Ijaw) -- plus 22 members of
+branches it already had and 32 spellings folded into names already there
+(Haoussa to Hausa, Oromiffa to Oromo, Tigirigna to Tigrinya, Fongbé to Fon,
+one of them carrying a stray left-to-right mark from the questionnaire
+software). All 121 languages that lead a shape now resolve to a family; 44 did
+not before.
+
+Two foldings that would have been wrong, and are not made. **Ciyao is not
+folded to "Yao"**: that name already resolves to the Hmong-Mien Yao of
+southern China, and folding Malawi's Bantu Ciyao into it would put a
+Mozambican border district in the wrong language family -- the invisible
+mis-match this project ranks above an empty cell. And **variants do not
+chain**, so Sonrhaï maps to Songhai directly rather than to Songhay, which is
+itself a variant of it and silently resolved to nothing.
+
+"Other" (code 9995) is published as a named residual rather than dropped,
+because it is an answer and excluding it would inflate every named language
+beside it. Refusals, don't knows and missing values leave the denominator.
+
+The 52 MB release is not committed. What is committed is the six columns this
+reads, gzipped to 287 KB and re-derivable with `--extract`, plus the
+codebook's region list. Religion and ethnicity are extracted although nothing
+publishes them yet: Round 9 covers both and is newer, but re-extracting later
+would mean having the release again.
+
 ## One ISO code, several places
 
 Six ISO3 codes carry more than one Factbook profile, because the Factbook
