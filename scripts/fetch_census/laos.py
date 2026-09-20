@@ -118,7 +118,7 @@ LANDING = ("https://data.laos.opendevelopmentmekong.net/dataset/"
            "lao-population-and-housing-census-2015-general-demographic")
 SOURCE = ("Lao Statistics Bureau, 4th Population and Housing Census 2015, village "
           "indicator table (population, ethno-linguistic category and religion for "
-          "each of 8,500 villages), released through Open Development Laos")
+          "each of 8,499 villages), released through Open Development Laos")
 LICENCE = ("Official statistics of the Lao Statistics Bureau, distributed by Open "
            "Development Laos")
 
