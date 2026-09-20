@@ -102,27 +102,33 @@ MARKERS = ("угсаа", "шашин", "шашны", "хүйсийн харьц�
 MAX_PAGES = 70
 
 
-def slug(name: str) -> str:
-    from common import slugify                      # noqa: PLC0415
-    return slugify(name)
+def key(aimag: str) -> str:
+    """The raw file's name: the Archive's own stem for that aimag's book,
+    lower-cased. Deliberately not a slug of the Mongolian name -- the boundary
+    file spells four aimags with ö and ü, and a raw file called
+    ``bayan-ölgii.txt`` is a filename that not every checkout can hold."""
+    stem = BOOKS[aimag].split("_XAOCT")[0]
+    return stem.removesuffix(".pdf").lower()
 
 
 # ---------------------------------------------------------------------------
 # --fetch: the Archive, the books, and the pages worth keeping
 # ---------------------------------------------------------------------------
 
-def captures() -> dict[str, tuple[str, str, int]]:
-    """{book filename: (timestamp, original url, bytes)} -- the largest
-    capture of each book the Archive holds.
+def captures() -> dict[str, list[tuple[str, str, int]]]:
+    """{book filename: [(timestamp, original url, bytes), ...]} -- every
+    capture the Archive holds of each book, largest first.
 
     The Archive stored several of these books twice: once whole and once
     truncated at exactly 1,048,576 bytes, a download cut off at one mebibyte.
     A truncated PDF opens as zero pages and reports nothing, so the capture
-    to ask for is the biggest one, not the newest.
+    to ask for is the biggest one, not the newest -- and when the biggest is
+    itself half-written, or the Archive answers 503 for it, the next one down
+    is tried rather than the book being given up on.
     """
     text = http_get(CDX, cache=False, retries=3, timeout=120)
     assert isinstance(text, str)
-    best: dict[str, tuple[str, str, int]] = {}
+    found: dict[str, list[tuple[str, str, int]]] = {}
     rows = 0
     for line in text.splitlines():
         parts = line.split()
@@ -131,12 +137,12 @@ def captures() -> dict[str, tuple[str, str, int]]:
         rows += 1
         timestamp, original, size = parts[0], parts[1], int(parts[2])
         for file in BOOKS.values():
-            if f"url={file}" not in original:
-                continue
-            if file not in best or size > best[file][2]:
-                best[file] = (timestamp, original, size)
-    log(f"  CDX: {rows} archived PDF captures, {len(best)} of the {len(BOOKS)} books")
-    return best
+            if f"url={file}" in original:
+                found.setdefault(file, []).append((timestamp, original, size))
+    for rowset in found.values():
+        rowset.sort(key=lambda r: -r[2])
+    log(f"  CDX: {rows} archived PDF captures, {len(found)} of the {len(BOOKS)} books")
+    return found
 
 
 def keep_pages(blob: bytes) -> list[int]:
@@ -182,32 +188,43 @@ def laid_out_pages(blob: bytes, numbers: list[int], tolerance: float = 2.0) -> s
 
 def fetch(only: list[str] | None = None) -> int:
     RAW_DIR.mkdir(parents=True, exist_ok=True)
-    best = captures()
-    missing = [n for n, f in BOOKS.items() if f not in best]
+    found = captures()
+    missing = [n for n, f in BOOKS.items() if f not in found]
     if missing:
         log(f"  ! no archived capture for {missing}")
+    wrote = 0
     for aimag, file in BOOKS.items():
         if only and aimag not in only:
             continue
-        if file not in best:
+        dest = RAW_DIR / f"{key(aimag)}.txt"
+        if dest.exists() and dest.stat().st_size > 2000 and not (only and aimag in only):
+            log(f"  {aimag}: {dest.name} already read")
+            wrote += 1
             continue
-        timestamp, original, size = best[file]
-        url = REPLAY.format(timestamp=timestamp, original=original)
-        log(f"  {aimag}: {file} {size:,} bytes, captured {timestamp}")
-        try:
-            blob = http_get(url, binary=True, cache=False, retries=3, timeout=600,
-                            headers={"Accept": "application/pdf,*/*"})
-        except Exception as exc:                     # noqa: BLE001
-            log(f"    ! unreachable: {type(exc).__name__}: {exc}")
-            continue
-        assert isinstance(blob, bytes)
-        numbers = keep_pages(blob)
-        text = laid_out_pages(blob, numbers)
-        dest = RAW_DIR / f"{slug(aimag)}.txt"
-        header = (f"# {aimag}\n# {url}\n# archived {timestamp}, {size} bytes, "
-                  f"pages kept: {numbers}\n")
-        dest.write_text(header + text + "\n", encoding="utf-8")
-        log(f"    {len(numbers)} pages kept, {len(text):,} chars -> {dest.name}")
+        for timestamp, original, size in found.get(file, [])[:6]:
+            url = REPLAY.format(timestamp=timestamp, original=original)
+            log(f"  {aimag}: {file} {size:,} bytes, captured {timestamp}")
+            try:
+                blob = http_get(url, binary=True, cache=False, retries=4, timeout=900,
+                                headers={"Accept": "application/pdf,*/*"})
+                assert isinstance(blob, bytes)
+                numbers = keep_pages(blob)
+                text = laid_out_pages(blob, numbers)
+            except Exception as exc:                 # noqa: BLE001
+                log(f"    ! {type(exc).__name__}: {exc}")
+                continue
+            if not numbers:
+                log("    ! no page of this capture names ethnic group or religion")
+                continue
+            header = (f"# {aimag}\n# {url}\n# archived {timestamp}, {size} bytes, "
+                      f"pages kept: {numbers}\n")
+            dest.write_text(header + text + "\n", encoding="utf-8")
+            log(f"    {len(numbers)} pages kept, {len(text):,} chars -> {dest.name}")
+            wrote += 1
+            break
+        else:
+            log(f"  ! {aimag}: no capture of {file} could be read")
+    log(f"  {wrote} of {len(BOOKS)} books in {RAW_DIR}")
     return 0
 
 
