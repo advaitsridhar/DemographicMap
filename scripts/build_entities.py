@@ -2847,6 +2847,58 @@ def check_no_estimate_on_policy_field(*tables: dict[str, list[dict[str, Any]]]) 
                          "collect: " + ", ".join(bad[:10]))
 
 
+def check_no_stale_country_declaration(
+        admin0: list[dict[str, Any]],
+        admin1_by_country: dict[str, list[dict[str, Any]]]) -> None:
+    """A country saying "never collected" while its divisions carry figures.
+
+    ``data/processed/admin0.json`` is a stored file, written by
+    ``fetch_factbook.py`` from ``NOT_COLLECTED_POLICY`` at the time it ran. The
+    policy table is code and changes with a commit; the file only changes when
+    the adapter is re-run. When a country leaves the table -- as Japan and
+    South Korea did on 19 September 2026, so that their divisions could carry
+    nationality as a census composition -- the file keeps the old declaration,
+    and nothing downstream notices: ``roll_up_field`` honours a
+    ``not_collected`` by design, and returns ``None`` without logging, because
+    a state's own statement is not a gap to be summed over.
+
+    The effect is a map that contradicts itself between zoom levels and says
+    the false half loudest: every Japanese prefecture carrying a composition,
+    and Japan painted "not collected" at the zoom a reader opens on. That is
+    what this refuses. The rule is narrow on purpose -- only a country whose
+    own first-level divisions carry a real composition for the field, which is
+    the contradiction itself and nothing else. A country that declines to ask
+    and has no division carrying an answer is untouched, and so is an
+    uninhabited dependency whose divisions carry nothing.
+
+    The fix is always to re-run the adapter that wrote the file:
+    ``python -m scripts.fetch_factbook``.
+    """
+    bad: list[str] = []
+    for country in admin0:
+        iso3 = (country.get("codes") or {}).get("iso3") or country.get("id", "")
+        if country.get("id") != iso3:
+            continue
+        for field in ROLLUP_FIELDS:
+            value = country.get(field)
+            if not (isinstance(value, dict)
+                    and value.get("status") == NOT_COLLECTED):
+                continue
+            if collection_gap(iso3, field) is not None:
+                continue                      # the policy still says so
+            carried = sum(1 for child in admin1_by_country.get(iso3, [])
+                          if isinstance(child.get(field), list))
+            if carried:
+                bad.append(f"{iso3} {field} ({carried} divisions carry one)")
+    if bad:
+        raise SystemExit(
+            "data/processed/admin0.json declares a field not collected that "
+            "the policy table no longer declares, while the country's own "
+            "divisions carry a composition for it: " + ", ".join(bad[:10])
+            + ". The stored country file is stale -- re-run "
+              "python -m scripts.fetch_factbook.")
+
+
 def add_known_as(index: dict[str, list[dict[str, Any]]],
                  entities: Sequence[dict[str, Any]]) -> int:
     """Index each shape's declared alternative names, under two rules.
@@ -3542,6 +3594,7 @@ def main() -> int:
     # After the level below, so a first-level unit that was itself summed can
     # carry into its country -- and so the country's note counts the divisions
     # as they finally stand rather than as they arrived.
+    check_no_stale_country_declaration(admin0, admin1_by_country)
     roll_up_countries(admin0, admin1_by_country)
 
     # Last, so a curated country row is the last word on the field it names.
