@@ -388,12 +388,19 @@ def laid_out_pages(blob: bytes, numbers: list[int], tolerance: float = 2.0) -> s
     return "\n".join(out)
 
 
-def fetch(only: list[str] | None = None) -> int:
+def fetch(only: list[str] | None = None, force: bool = False) -> int:
+    """Read what is wanted into data/raw/mongolia.
+
+    ``--only`` takes the names below, comma-separated and without spaces --
+    the workflow that runs this hands its input to xargs, so an argument with
+    a space in it arrives as two. Twenty-two books of twenty megabytes do not
+    always finish inside one runner's timeout, which is what ``--only`` is
+    for.
+    """
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     found = captures()
     wanted: list[tuple[str, Path, tuple[str, ...], tuple[str, ...]]] = [
-        ("National report (English)", RAW_DIR / REPORT_FILE, (REPORT_EN,),
-         REPORT_MARKERS),
+        ("report", RAW_DIR / REPORT_FILE, (REPORT_EN,), REPORT_MARKERS),
     ]
     wanted += [(name, RAW_DIR / f"{raw_name(name)}.txt", files, MARKERS)
                for name, (_en, files) in AIMAGS.items()]
@@ -401,7 +408,7 @@ def fetch(only: list[str] | None = None) -> int:
     for name, dest, files, markers in wanted:
         if only and name not in only:
             continue
-        if dest.exists() and dest.stat().st_size > 2000 and not only:
+        if dest.exists() and dest.stat().st_size > 2000 and not force:
             log(f"  {name}: {dest.name} already read")
             wrote += 1
             continue
@@ -1132,7 +1139,9 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--fetch", action="store_true",
                     help="read the books from the Archive into data/raw/mongolia")
-    ap.add_argument("--only", help="comma-separated aimags, for --fetch")
+    ap.add_argument("--only", help="comma-separated aimags (or 'report'), for --fetch")
+    ap.add_argument("--force", action="store_true",
+                    help="with --fetch, read again what is already on disk")
     ap.add_argument("--probe", action="store_true")
     ap.add_argument("--get", action="append")
     ap.add_argument("--post", action="append")
@@ -1146,7 +1155,8 @@ def main() -> int:
     if args.probe:
         return probe(args)
     if args.fetch:
-        return fetch([a.strip() for a in args.only.split(",")] if args.only else None)
+        return fetch([a.strip() for a in args.only.split(",")] if args.only else None,
+                     force=args.force)
     return run()
 
 
