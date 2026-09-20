@@ -1,72 +1,61 @@
-probe_ckan: 36 host(s), timeout 12s
-  https://data.lumajangkab.go.id/ -> 200 text/html "SATU DATA KABUPATEN LUMAJANG"
-    /api/3/action/status_show -> 404 text/html <!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <title>404 Page Not Found</title> <style type="text/css">
-    /api/action/status_show -> 404 text/html <!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <title>404 Page Not Found</title> <style type="text/css">
-  https://data.ngawikab.go.id/ -> 0  TLS: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'data.ngawikab.go.id'. (_ssl.c:1016)
-  http://data.ngawikab.go.id/ -> 200 text/html "HTTP Server Test Page powered by CentOS-WebPanel.com"
-    /api/3/action/status_show -> 404 text/html <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>404 Not Found</title> </head><body> <h1>Not Found
-    /api/action/status_show -> 404 text/html <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>404 Not Found</title> </head><body> <h1>Not Found
-  https://data.pacitankab.go.id/ -> 200 text/html "Portal Data Statistik Sektoral Kabupaten Pacitan"
-    /api/3/action/status_show -> 200 text/html
-    /api/action/status_show -> 200 text/html
-  https://data.probolinggokab.go.id/ -> 0  DNS: no such host
-  https://data.sampangkab.go.id/ -> 0  DNS: no such host
-  https://satudata.sidoarjokab.go.id/ -> 200 text/html "Satu Data"
-    /api/3/action/status_show -> 404 application/json { "message": "The route api/3/action/status_show could not be found." }
-    /api/action/status_show -> 404 application/json { "message": "The route api/action/status_show could not be found." }
-  https://data.luwuutarakab.go.id/ -> 0  DNS: no such host
-  https://data.pinrangkab.go.id/ -> 0  timeout after 12s
-  http://data.pinrangkab.go.id/ -> 0  timeout after 12s
-  https://data.sidrapkab.go.id/ -> 0  DNS: no such host
-  https://data.soppengkab.go.id/ -> 0  DNS: no such host
-  https://data.takalarkab.go.id/ -> 200 text/html "Portal Satudata - Kabupaten Takalar"
-    /api/3/action/status_show -> 200 text/html
-    /api/action/status_show -> 200 text/html
-  https://data.wajokab.go.id/ -> 200 text/html "Index of /"
-    /api/3/action/status_show -> 404 text/html <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html><head> <title>404 Not F
-    /api/action/status_show -> 404 text/html <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html><head> <title>404 Not F
-  https://opendata.sukabumikab.go.id/ -> 403 text/html "Just a moment..."
-    /api/3/action/status_show -> 404 application/json {"detail":"Not Found"}
-    /api/action/status_show -> 404 application/json {"detail":"Not Found"}
-  https://data.cimahikota.go.id/ -> 403 text/html "Just a moment..."
-    /api/3/action/status_show -> 403 text/html <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/htm
-    /api/action/status_show -> 403 text/html <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/htm
-  https://data.banjarkota.go.id/ -> 0  timeout after 12s
-  http://data.banjarkota.go.id/ -> 0  timeout after 12s
-  https://data.pangandarankab.go.id/ -> 200 text/html "Admin"
-    /api/3/action/status_show -> 404 application/json {"detail":"Not Found"}
-    /api/action/status_show -> 404 application/json {"detail":"Not Found"}
-  https://data.lampungutarakab.go.id/ -> 200 text/html "Welcome - Portal Satu Data Lampung Utara"
-    /api/3/action/status_show -> 200 application/json CKAN 2.9.11
-    package_search q='agama' -> 200, 19 matches, 19 shown, printing those matching 'penduduk|pemeluk'
-      (19 others not matching)
-  https://data.pesawarankab.go.id/ -> 0  timeout after 12s
-  http://data.pesawarankab.go.id/ -> 0  timeout after 12s
-  https://data.pesisirbaratkab.go.id/ -> 200 text/html "Selamat Datang di Portal Open Data - Pemerintah Kabupaten Pesisir Barat"
-    /api/3/action/status_show -> 404 text/html <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
-    /api/action/status_show -> 404 text/html <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
-  https://data.banyuasinkab.go.id/ -> 403 text/html "Just a moment..."
-    /api/3/action/status_show -> 403 text/html <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/htm
-    /api/action/status_show -> 403 text/html <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/htm
-  https://data.musirawaskab.go.id/ -> 0  DNS: no such host
-  https://data.oganilirkab.go.id/ -> 0  DNS: no such host
-  https://data.okukab.go.id/ -> 0  DNS: no such host
-  https://data.palikab.go.id/ -> 0  DNS: no such host
-  https://data.pagaralamkota.go.id/ -> 0  DNS: no such host
-  https://data.bangkakab.go.id/ -> 0  DNS: no such host
-  https://data.belitungtimurkab.go.id/ -> 0  DNS: no such host
-  https://data.meranti.go.id/ -> 0  DNS: no such host
-  https://data.kolakatimurkab.go.id/ -> 0  DNS: no such host
-  https://data.pematangsiantar.go.id/ -> 0  DNS: no such host
-  https://data.tidorekota.go.id/ -> 0  DNS: no such host
-  https://data.morowaliutarakab.go.id/ -> 0  DNS: no such host
-  https://data.tojounaunakab.go.id/ -> 0  DNS: no such host
-  https://data.pohuwatokab.go.id/ -> 0  timeout after 12s
-  http://data.pohuwatokab.go.id/ -> 0  timeout after 12s
-  https://data.mamujutengahkab.go.id/ -> 403 text/html "Attention Required! | Cloudflare"
-    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]--> <!--[if IE 7]> <html class
-    /api/action/status_show -> 403 text/html <!DOCTYPE html> <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]--> <!--[if IE 7]> <html class
-  https://data.mitrakab.go.id/ -> 403 text/html "Attention Required! | Cloudflare"
-    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]--> <!--[if IE 7]> <html class
-    /api/action/status_show -> 403 text/html <!DOCTYPE html> <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]--> <!--[if IE 7]> <html class
-probe_ckan: 14 of 36 answered; 1 speak CKAN: data.lampungutarakab.go.id
+indonesia_portals: religion by regency from the Satu Data portals
+  sumbar: 6,372 bytes from data.sumbarprov.go.id
+  sumbar: 20 units -> /home/runner/work/DemographicMap/DemographicMap/data/raw/indonesia_portals/sumbar.csv
+  sumbar (West Sumatra, 2023, dukcapil): 20 units
+    SUMATERA BARAT: Buddhism 3,286, Catholicism 87,823, Confucianism 7, Hinduism 87, Islam 5,610,761, Kepercayaan (traditional belief) 258, Protestantism 48,104
+    PESISIR SELATAN: Buddhism 1, Catholicism 915, Confucianism 0, Hinduism 9, Islam 527,261, Kepercayaan (traditional belief) 0, Protestantism 195
+    SOLOK: Buddhism 0, Catholicism 328, Confucianism 0, Hinduism 2, Islam 408,071, Kepercayaan (traditional belief) 0, Protestantism 23
+    SIJUNJUNG: Buddhism 2, Catholicism 945, Confucianism 0, Hinduism 7, Islam 243,088, Kepercayaan (traditional belief) 0, Protestantism 300
+    TANAH DATAR: Buddhism 11, Catholicism 307, Confucianism 0, Hinduism 1, Islam 380,278, Kepercayaan (traditional belief) 0, Protestantism 130
+    PADANG PARIAMAN: Buddhism 4, Catholicism 1,599, Confucianism 0, Hinduism 5, Islam 453,093, Kepercayaan (traditional belief) 0, Protestantism 517
+    AGAM: Buddhism 7, Catholicism 3,797, Confucianism 0, Hinduism 0, Islam 525,843, Kepercayaan (traditional belief) 0, Protestantism 476
+    LIMA PULUH KOTA: Buddhism 3, Catholicism 573, Confucianism 0, Hinduism 0, Islam 396,810, Kepercayaan (traditional belief) 1, Protestantism 296
+    PASAMAN: Buddhism 0, Catholicism 1,208, Confucianism 0, Hinduism 0, Islam 307,813, Kepercayaan (traditional belief) 0, Protestantism 181
+    KEPULAUAN MENTAWAI: Buddhism 3, Catholicism 45,693, Confucianism 0, Hinduism 1, Islam 21,698, Kepercayaan (traditional belief) 178, Protestantism 27,495
+    DHARMASRAYA: Buddhism 2, Catholicism 4,467, Confucianism 0, Hinduism 3, Islam 232,586, Kepercayaan (traditional belief) 37, Protestantism 629
+    SOLOK SELATAN: Buddhism 7, Catholicism 1,331, Confucianism 0, Hinduism 1, Islam 181,034, Kepercayaan (traditional belief) 0, Protestantism 200
+    PASAMAN BARAT: Buddhism 9, Catholicism 7,798, Confucianism 0, Hinduism 0, Islam 434,780, Kepercayaan (traditional belief) 21, Protestantism 2,831
+    KOTA PADANG: Buddhism 2,944, Catholicism 14,230, Confucianism 6, Hinduism 46, Islam 905,479, Kepercayaan (traditional belief) 17, Protestantism 12,125
+    KOTA SOLOK: Buddhism 4, Catholicism 533, Confucianism 0, Hinduism 0, Islam 81,643, Kepercayaan (traditional belief) 0, Protestantism 298
+    KOTA SAWAHLUNTO: Buddhism 0, Catholicism 338, Confucianism 0, Hinduism 0, Islam 67,921, Kepercayaan (traditional belief) 0, Protestantism 121
+    KOTA PADANG PANJANG: Buddhism 44, Catholicism 422, Confucianism 1, Hinduism 0, Islam 61,916, Kepercayaan (traditional belief) 0, Protestantism 348
+    KOTA BUKITTINGGI: Buddhism 143, Catholicism 2,292, Confucianism 0, Hinduism 5, Islam 134,937, Kepercayaan (traditional belief) 0, Protestantism 1,157
+    KOTA PAYAKUMBUH: Buddhism 100, Catholicism 850, Confucianism 0, Hinduism 7, Islam 145,145, Kepercayaan (traditional belief) 0, Protestantism 670
+    KOTA PARIAMAN: Buddhism 2, Catholicism 197, Confucianism 0, Hinduism 0, Islam 101,365, Kepercayaan (traditional belief) 4, Protestantism 112
+  kaltim: 12,184 bytes from data.kaltimprov.go.id
+  kaltim: 11 units -> /home/runner/work/DemographicMap/DemographicMap/data/raw/indonesia_portals/kaltim.csv
+  kaltim (East Kalimantan, 2023, kemenag): 11 units
+    1: Buddhism 517, Catholicism 9,461, Confucianism 0, Hinduism 508, Islam 276,235, Protestantism 9,857
+    2: Buddhism 266, Catholicism 14,806, Confucianism 5, Hinduism 2,603, Islam 718,148, Protestantism 42,195
+    3: Buddhism 653, Catholicism 16,438, Confucianism 23, Hinduism 235, Islam 230,756, Protestantism 24,772
+    4: Buddhism 41, Catholicism 36,481, Confucianism 1, Hinduism 150, Islam 83,636, Protestantism 55,203
+    5: Buddhism 132, Catholicism 34,319, Confucianism 6, Hinduism 2,491, Islam 347,227, Protestantism 41,591
+    6: Buddhism 36, Catholicism 2,679, Confucianism 0, Hinduism 94, Islam 182,003, Protestantism 7,154
+    7: Buddhism 3, Catholicism 22,862, Confucianism 0, Hinduism 49, Islam 8,867, Protestantism 5,534
+    8: Buddhism 5,919, Catholicism 13,338, Confucianism 33, Hinduism 1,395, Islam 656,544, Protestantism 50,424
+    9: Buddhism 7,904, Catholicism 21,475, Confucianism 287, Hinduism 828, Islam 775,993, Protestantism 43,171
+    10: Buddhism 136, Catholicism 3,255, Confucianism 0, Hinduism 291, Islam 167,243, Protestantism 15,212
+    %: Buddhism 3,959,675,097,076,356, Catholicism 4,442,843,243,092,388, Hinduism 21,930,820,490,246,696, Islam 874,455,186,306,684, Protestantism 74,873,556,540,238
+  bengkulu: 9,334 bytes from data.bengkuluprov.go.id
+  bengkulu: 10 units -> /home/runner/work/DemographicMap/DemographicMap/data/raw/indonesia_portals/bengkulu.csv
+  bengkulu (Bengkulu, 2024, dukcapil): 10 units
+    Bengkulu Selatan: Buddhism 15, Catholicism 351, Confucianism 0, Hinduism 17, Islam 175,155, Kepercayaan (traditional belief) 2, Protestantism 1,597
+    Rejang Lebong: Buddhism 559, Catholicism 1,314, Confucianism 3, Hinduism 38, Islam 284,467, Kepercayaan (traditional belief) 49, Protestantism 2,152
+    Bengkulu Utara: Buddhism 90, Catholicism 1,447, Confucianism 0, Hinduism 1,761, Islam 297,439, Kepercayaan (traditional belief) 10, Protestantism 9,026
+    Kaur: Buddhism 8, Catholicism 79, Confucianism 0, Hinduism 162, Islam 135,879, Kepercayaan (traditional belief) 0, Protestantism 405
+    Seluma: Buddhism 10, Catholicism 272, Confucianism 0, Hinduism 1,324, Islam 211,940, Kepercayaan (traditional belief) 0, Protestantism 2,482
+    Mukomuko: Buddhism 14, Catholicism 907, Confucianism 0, Hinduism 239, Islam 199,327, Kepercayaan (traditional belief) 0, Protestantism 5,115
+    Lebong: Buddhism 1, Catholicism 103, Confucianism 0, Hinduism 10, Islam 115,034, Kepercayaan (traditional belief) 0, Protestantism 372
+    Kepahiang: Buddhism 84, Catholicism 200, Confucianism 0, Hinduism 175, Islam 150,802, Kepercayaan (traditional belief) 4, Protestantism 645
+    Bengkulu Tengah: Buddhism 28, Catholicism 466, Confucianism 0, Hinduism 282, Islam 124,251, Kepercayaan (traditional belief) 4, Protestantism 1,308
+    Kota Bengkulu: Buddhism 1,239, Catholicism 2,971, Confucianism 6, Hinduism 190, Islam 385,481, Kepercayaan (traditional belief) 8, Protestantism 10,638
+  tangsel: 417 bytes from data.tangerangselatankota.go.id
+  tangsel: 7 units -> /home/runner/work/DemographicMap/DemographicMap/data/raw/indonesia_portals/tangsel.csv
+  tangsel (Banten, 2021, dukcapil): 7 units
+    Serpong: Buddhism 3,345, Catholicism 11,062, Hinduism 341, Islam 128,002, Kepercayaan (traditional belief) 0, Protestantism 13,816
+    Serpong Utara: Buddhism 5,433, Catholicism 13,314, Hinduism 361, Islam 99,173, Kepercayaan (traditional belief) 8, Protestantism 16,246
+    Pondok Aren: Buddhism 951, Catholicism 7,877, Hinduism 621, Islam 267,050, Kepercayaan (traditional belief) 1, Protestantism 13,256
+    Ciputat: Buddhism 762, Catholicism 4,245, Hinduism 359, Islam 200,931, Kepercayaan (traditional belief) 1, Protestantism 9,290
+    Ciputat Timur: Buddhism 362, Catholicism 3,371, Hinduism 412, Islam 157,716, Kepercayaan (traditional belief) 0, Protestantism 6,029
+    Pamulang: Buddhism 1,692, Catholicism 6,974, Hinduism 772, Islam 288,406, Kepercayaan (traditional belief) 0, Protestantism 17,481
+    Setu: Buddhism 688, Catholicism 1,699, Hinduism 195, Islam 79,903, Kepercayaan (traditional belief) 7, Protestantism 4,568
