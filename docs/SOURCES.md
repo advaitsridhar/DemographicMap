@@ -4250,6 +4250,17 @@ a result, and re-measuring it is waste, so the whole sweep is written down.
   `data.banjarkota.go.id`, `data.pesawarankab.go.id`,
   `data.pohuwatokab.go.id`, and `data.jakarta.go.id`, which answers its home
   page over HTTP in 139 kB and then times out on every API path.
+* **The Kemenag provincial offices**, a separate sweep of 26 hostnames
+  (`<prov>.kemenag.go.id` plus `data.` and `satudata.kemenag.go.id`), which
+  publish "jumlah pemeluk agama" tables on their own pages. **Seven answer and
+  not one speaks CKAN**: Lampung, Central Java, West Sulawesi and North
+  Sulawesi serve a news portal, Central Sulawesi answers 204 to every API
+  path, `data.kemenag.go.id` 503, and `satudata.kemenag.go.id` -- recorded
+  above as timing out -- now answers its home page and times out on every API
+  path beneath it. The other eighteen, among them every province with more
+  than one gap, time out at twelve seconds over both HTTP and HTTPS. The
+  ministry's figure reaches this map only where a provincial data portal
+  republishes it, which is East Kalimantan's case and no other's.
 * **Do not resolve at all** -- 53 of the 110, and the reason most of this map
   of Indonesia is still empty. Among them every hostname tried for North
   Sumatra, Riau, the Riau Islands, Central Kalimantan, East Nusa Tenggara,
