@@ -1139,6 +1139,10 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     # Ugandan names an ethnic group, a non-Ugandan names a country. Neither
     # of these two rows is an ethnic group.
     "Non-Ugandan nationals", "Other Ugandans",
+    # Mongolia's census counts, beside the 33 ethnic groups, the Mongolian
+    # citizens whose ethnicity is a foreign nation's. The row says which
+    # citizenship they hold and nothing about where they are from.
+    "Other nationals (Mongolian citizens)",
     # A religion written into the ethnicity question. The mirror of
     # "Scheduled Castes" in the religion tree: an answer to a different
     # question, kept and kept apart.
@@ -1610,6 +1614,19 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Mongolia's own aimags, and the peoples of the Russian far east
         # that the census counts in the hundreds.
         "Bayad", "Buriad", "Dariganga", "Durvud", "Zakhchin",
+        # The rest of the 2020 Mongolian census's list of ethnic groups.
+        # Most are Oirat or eastern Mongol: the Uuld, Torguud, Khoshuud,
+        # Myangad and Zakhchin of the west, the Kharchin, Tsakhar, Khorchin,
+        # Sonod and Tumed whose homelands are across the border in Inner
+        # Mongolia, and the Uriankhai, Darkhad, Khotgoid, Eljigen, Sartuul,
+        # Barga, Uzemchin and Khoton in between. The Khamnigan are Evenks
+        # who speak Mongolian and the Tsaatan (Dukha) are reindeer herders
+        # of the Khuvsgul taiga; both are Siberian peoples, which this node
+        # covers as well.
+        "Uriankhai", "Darkhad", "Uuld", "Khotgoid", "Torguud", "Khoton",
+        "Myangad", "Barga", "Uzemchin", "Eljigen", "Sartuul", "Kharchin",
+        "Tsakhar", "Khoshuud", "Khorchin", "Sonod", "Tumed",
+        "Khamnigan", "Tsaatan (Dukha)",
         "Ulch", "Uilta", "Negidal", "Oroch", "Kerek",
         # China's north-eastern and north-western nationalities: the
         # Tungusic Manchu, Xibe, Hezhen (the Nanai above) and Oroqen, and
@@ -1944,6 +1961,11 @@ ETHNIC_VARIANTS: dict[str, str] = {
     "Senoufo": "Senufo", "S\u00e9noufo": "Senufo", "Dagari": "Dagaaba",
     "Dagaati": "Dagaaba", "Frafri": "Frafra",
     "Krou": "Kru", "Mjaruo": "Luo", "Ateso": "Teso", "Khalkh": "Khalkha",
+    # Mongolia's 2020 census writes three of its groups in Mongolian rather
+    # than by the name the references carry: Тува are the Tuvans, Халимаг
+    # the Kalmyks, and Балба -- which is the Mongolian for Nepal -- the
+    # Nepalis that two aimags' books name among their citizens.
+    "Tuva": "Tuvan", "Khalimag": "Kalmyk", "Balba": "Nepali",
     "Makuwa": "Makua", "Mmakuwa": "Makua",
     "Bakwa Kalonji": "Kalonji", "Mb\u00e9d\u00e8": "Mbete", "Muha": "Ha",
     "Lorma": "Loma",
