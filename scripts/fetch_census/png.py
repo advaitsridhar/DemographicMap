@@ -233,8 +233,9 @@ DISTRICT_NOTE = ("Counted by the 2024 National Population Census, which the "
                  "National Statistical Office published as district totals in "
                  "each province's snapshot.")
 UNION_NOTE = ("Counted by the 2024 National Population Census and summed from "
-              "the {n} districts the census now draws inside this one -- {parts} "
-              "-- which together cover it and nothing else, every other district "
+              "the {n} districts the census now draws inside this one -- {parts}"
+              "{rest}")
+UNION_REST = (" -- which together cover it and nothing else, every other district "
               "of {province} having a shape of its own.")
 REDRAWN_NOTE = (
     "No 2024 figure is written for this district. The census tabulates {n} "
@@ -657,8 +658,12 @@ def district_record(province: str, shape: str, unit: Unit | None,
                                       source=FINAL_FIGURES,
                                       unit="males_per_100_females")
         fields["population_note"] = (
-            UNION_NOTE.format(n=len(unit.parts), province=province,
-                              parts=", ".join(unit.parts))
+            UNION_NOTE.format(
+                n=len(unit.parts), parts=", ".join(unit.parts),
+                rest=(UNION_REST.format(province=province)
+                      if SHAPES[province] > 1 else
+                      ", which are the whole of it: the boundary file draws "
+                      "this province as one shape."))
             if unit.parts else DISTRICT_NOTE)
     else:
         fields["population"] = gap(NOT_AVAILABLE, reason)
