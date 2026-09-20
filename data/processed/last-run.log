@@ -1,171 +1,477 @@
-probe_ckan: 38 host(s), timeout 10s
-  https://data.sumselprov.go.id/ -> 0  TLS: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1016)
-  http://data.sumselprov.go.id/ -> 200 text/html "Dalam Pemeliharaan"
-    /api/3/action/status_show -> 200 text/html
-    /api/action/status_show -> 200 text/html
+probe_ckan: 6 host(s), timeout 30s
   https://opendata.sumselprov.go.id/ -> 200 text/html "Welcome - Open Data Provinsi Sumatera Selatan"
     /api/3/action/status_show -> 200 application/json CKAN 2.9.5
-    package_search q='agama' -> 200, 31 matches, 15 shown
-      - jumlah-sekolah-guru-dan-murid-raudatul-athfal-ra-di-bawah-kementerian-agama1: Jumlah Sekolah, Guru, dan Murid Raudatul Athfal (RA) di Bawah Kementerian Agama Menurut Kabupaten/Kota di Prov  [6 res: xlsx]
-      - jumlah-sekolah-guru-dan-murid-madrasah-ibtidaiyah-mi-di-bawah-kementerian-agama: Jumlah Sekolah, Guru, dan Murid Madrasah Ibtidaiyah (MI) di Bawah Kementerian Agama Menurut Kabupaten/Kota di   [7 res: xlsx]
-      - jumlah-sekolah-guru-dan-murid-madrasah-tsanawiyah-mts-di-bawah-kementerian-agama: Jumlah Sekolah, Guru, dan Murid Madrasah Tsanawiyah (MTs) di Bawah Kementerian Agama Menurut Kabupaten/Kota di  [7 res: xlsx]
-      - jumlah-tim-ahli-cagar-budaya-provinsi: Jumlah Tim Ahli Cagar Budaya Provinsi  [1 res: csv]
-      - register-dan-perlindungan-cagar-budaya: Register dan Perlindungan Cagar Budaya Sumsel  [1 res: csv]
-      - jumlah-cagar-budaya-di-provinsi-sumatera-selatan-yang-terlindungi-termanfaatkan-dan-dikembangkan: Angka Kumulatif Jumlah Cagar Budaya yang terlindungi, termanfaatkan dan dikembangkan  [1 res: csv]
-      - tim-ahli-cagar-budaya-di-provinsi-sumatera-selatan-yang-memiliki-sertifikasi: Jumlah Tim Ahli Cagar Budaya di Provinsi Sumatera Selatan yang Memiliki Sertifikasi  [1 res: csv]
-      - jumlah-anggota-perpustakaan: Jumlah Anggota Perpustakaan  [1 res: xlsx]
-      - jumlah-pengunjung-perpustakaan: Jumlah Pengunjung Perpustakaan  [1 res: xlsx]
-      - jumlah-koleksi-perpustakaan: Jumlah Koleksi Perpustakaan  [1 res: xlsx]
-      - jumlah-naskah-kuno-yang-dialih-aksara: Jumlah Naskah Kuno yang dialih Aksara  [1 res: xlsx]
-      - jumlah-cagar-budaya-yang-dilestarikan: Jumlah Cagar Budaya Yang Dilestarikan  [1 res: xlsx]
-      - jumlah-pustakawan: Jumlah Pustakawan  [4 res: csv]
-      - tingkat-kegemaran-membaca-tgm-pada-kabupaten-kota-di-provinsi-sumatera-selatan: Tingkat Kegemaran Membaca (TGM) pada kabupaten kota di Provinsi Sumatera Selatan  [1 res: xlsx]
-      - persentase-warisan-budaya-yang-dilestarikan: Persentase Warisan Budaya yang Dilestarikan  [1 res: xlsx]
-  https://satudata.sumselprov.go.id/ -> 200 text/html "Satudata Sumsel | Home"
-    /api/3/action/status_show -> 404 application/json { "message": "The route api/3/action/status_show could not be found." }
-    /api/action/status_show -> 404 application/json { "message": "The route api/action/status_show could not be found." }
-  https://opendata.jatimprov.go.id/ -> 403 text/html "404 - Halaman Tidak Ditemukan"
-    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width
-    /api/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width
-  https://data.jatimprov.go.id/ -> 403 text/html "404 - Halaman Tidak Ditemukan"
-    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width
-    /api/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width
-  https://satudata.jatimprov.go.id/ -> 0  DNS: no such host
-  https://data.sulselprov.go.id/ -> 403 application/json 765 bytes
-    /api/3/action/status_show -> 403 application/json {"type":"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1000/"
-    /api/action/status_show -> 403 application/json {"type":"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1000/"
-  https://satudata.sulselprov.go.id/ -> 200 text/html "Satu Data Sulawesi Selatan | Satu Data Sulawesi Selatan"
-    /api/3/action/status_show -> 404 application/json { "message": "The route api/3/action/status_show could not be found.", "exception": "Symfony\\Component\\HttpKer
-    /api/action/status_show -> 404 application/json { "message": "The route api/action/status_show could not be found.", "exception": "Symfony\\Component\\HttpKerne
-  https://opendata.jabarprov.go.id/ -> 403 text/html "Halaman Tidak Dapat Dibuka"
-    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width
-    /api/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width
-  https://data.jabarprov.go.id/ -> 403 text/html "Halaman Tidak Dapat Dibuka"
-    /api/3/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width
-    /api/action/status_show -> 403 text/html <!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width
+    package_search q='agama' -> 200, 31 matches, 31 shown, printing those matching 'penduduk|pemeluk'
+      (31 others not matching)
   https://data.sumbarprov.go.id/ -> 200 text/html "Portal Data Sumbar"
     /api/3/action/status_show -> 200 application/json CKAN 2.9.11
-    package_search q='agama' -> 200, 34 matches, 15 shown
-      - dataset-api-data-statistik-agama: API Data Statistik Agama  [1 res: api]
+    package_search q='agama' -> 200, 34 matches, 34 shown, printing those matching 'penduduk|pemeluk'
       - persentase-pemeluk-agama-kota-sawahlunto: PERSENTASE PEMELUK AGAMA KOTA SAWAHLUNTO  [1 res: xlsx]
-      - dataset-api-data-statistik-agama-nagari-kinari: API Data Statistik Agama Nagari Kinari  [1 res: api]
-      - dataset-api-data-statistik-agama-nagari-paninggahan: API Data Statistik Agama Nagari Paninggahan  [1 res: api]
-      - dataset-api-data-statistik-agama-nagari-sungai-durian: API Data Statistik Agama Nagari Sungai Durian  [1 res: api]
-      - dataset-api-data-statistik-agama-nagari-sulit-air: API Data Statistik Agama Nagari Sulit Air  [1 res: api]
-      - dataset-api-data-statistik-agama-nagari-ganguang-ciri: API Data Statistik Agama Nagari Ganguang Ciri  [1 res: api]
-      - dataset-api-data-statistik-agama-nagari-bukit-tandang: API Data Statistik Agama Nagari Bukit Tandang  [1 res: api]
-      - dataset-api-data-statistik-agama-nagari-koto-baru: API Data Statistik Agama Nagari Koto Baru  [1 res: api]
+          XLSX datastore=False a0814a4c-dee3-480f-a1f6-5f3697ffa522 https://data.sawahluntokota.go.id/dataset/00634e10-ab39-45d7-97b2-a780a9b83d7b/resource/a0814a4c-dee3-480f-a1f6-5f3697ffa522/download/persentase-pemeluk-agama-di-kota-sawahlunto.xlsx
       - jumlah-penduduk-menurut-agama-dan-kecamatan: Jumlah Penduduk Menurut Agama dan Kecamatan  [1 res: xlsx]
-      - dataset-api-data-statistik-agama-nagari-kampung-batu-dalam: API Data Statistik Agama Nagari Kampung Batu Dalam  [1 res: api]
+          XLSX datastore=False cda31389-a3d3-4cbe-83d7-5098d778b629 http://satudata.padangpariamankab.go.id/dataset/7ba6de94-4913-4a8d-9cfb-10196a802173/resource/cda31389-a3d3-4cbe-83d7-5098d778b629/download/capil-3.xlsx
       - jumlah-penduduk-berdasarkan-agama-dikabupaten-lima-puluh-kota: Jumlah Penduduk Berdasarkan Agama Dikabupaten Lima Puluh Kota  [1 res: csv]
-      - jumlah-anggota-dprd-menurut-agama-di-kab-pasaman-barat-tahun-2021: Jumlah Anggota DPRD menurut Agama di Kab.Pasaman Barat Tahun 2021  [1 res: csv]
-      - jumlah-kunjungan-pasien-rawat-jalan-berdasarkan-agama-dan-suku-bulan-februari-2024: Jumlah Kunjungan Pasien Rawat Jalan Berdasarkan Agama dan Suku Bulan Februari 2024  [1 res: csv]
+          CSV datastore=False 8985d54c-0589-4b2a-a934-a21838bfce0c https://opendata.limapuluhkotakab.go.id/download/5517899f471f46adb1cd37967ad31b16.csv
       - persentasependuduk: Persentase Penduduk Menurut Kecamatan dan Agama yang Dipeluk di Kabupaten Tanah Datar, 2022  [1 res: xlsx]
-  https://satudata.sumbarprov.go.id/ -> 0  DNS: no such host
-  https://data.babelprov.go.id/ -> 0  timeout after 10s
-  http://data.babelprov.go.id/ -> 0  timeout after 10s
-  https://satudata.babelprov.go.id/ -> 0  DNS: no such host
-  https://data.lampungprov.go.id/ -> 403 text/html "Just a moment..."
-    /api/3/action/status_show -> 403 text/html <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/htm
-    /api/action/status_show -> 403 text/html <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/htm
-  https://satudata.lampungprov.go.id/ -> 0  DNS: no such host
-  https://data.nttprov.go.id/ -> 0  DNS: no such host
-  https://data.sultengprov.go.id/ -> 0  DNS: no such host
-  https://data.riau.go.id/ -> 0  DNS: no such host
-  https://data.sultraprov.go.id/ -> 0  timeout after 10s
-  http://data.sultraprov.go.id/ -> 0  timeout after 10s
-  https://data.jakarta.go.id/ -> 0  timeout after 10s
-  http://data.jakarta.go.id/ -> 200 ? 138,998 bytes
-    /api/3/action/status_show -> 0  timeout after 10s
-    /api/action/status_show -> 0  timeout after 10s
-  https://satudata.jakarta.go.id/ -> 200 text/html "Satu Data Jakarta — Portal Data Terbuka Pemerintah Provinsi DKI Jakarta"
-    /api/3/action/status_show -> 0  timeout after 10s
-    /api/action/status_show -> 200 text/html
-  https://data.kalteng.go.id/ -> 0  DNS: no such host
-  https://data.sumutprov.go.id/ -> 0  DNS: no such host
+          XLSX datastore=False 4c22b339-82c3-4827-83e5-ca9826121ba5 http://data.tanahdatar.go.id/dataset/a5feb81b-c4c1-40a4-8f38-46b4b1ae75e1/resource/4c22b339-82c3-4827-83e5-ca9826121ba5/download/persentase-penduduk-menurut-kecamatan-dan-agama-yang-dipeluk-di-kabupaten-tanah-datar-2022.xlsx
+      - buku-data-kependudukan-semester-i-tahun-2021-prov-sumatera-barat: BUKU DATA KEPENDUDUKAN SEMESTER I TAHUN 2021 PROV. SUMATERA BARAT  [1 res: xlsx]
+          XLSX datastore=True 3d8c8d50-214e-42bb-9fe4-9f3201c9caee https://data.sumbarprov.go.id/dataset/05864631-a966-422c-8eb0-9e2fbf3b4374/resource/3d8c8d50-214e-42bb-9fe4-9f3201c9caee/download/jumlah-penduduk-jenis-kelamin.xlsx
+      - buku-data-kependudukan-semester-ii-tahun-2022-prov-sumatera-barat: BUKU DATA KEPENDUDUKAN SEMESTER II TAHUN 2022 PROV. SUMATERA BARAT  [1 res: xlsx]
+          XLSX datastore=True 8fc6979e-8412-4b74-8322-e322d92d3f7b https://data.sumbarprov.go.id/dataset/e5fdc1c5-e99a-4766-b9d5-457a16b430fc/resource/8fc6979e-8412-4b74-8322-e322d92d3f7b/download/jumlah-penduduk-jenis-kelamin.xlsx
+      - buku-data-kependudukan-semester-i-tahun-2022-prov-sumatera-barat: BUKU DATA KEPENDUDUKAN SEMESTER I TAHUN 2022 PROV. SUMATERA BARAT  [1 res: xlsx]
+          XLSX datastore=True 75721294-c525-48cf-975d-1d78aef09074 https://data.sumbarprov.go.id/dataset/d42766ca-92ae-46eb-9e14-00ced4a70013/resource/75721294-c525-48cf-975d-1d78aef09074/download/jumlah-penduduk-jenis-kelamin.xlsx
+      - buku-data-kependudukan-semester-ii-tahun-2021-prov-sumatera-barat: BUKU DATA KEPENDUDUKAN SEMESTER II TAHUN 2021 PROV. SUMATERA BARAT  [1 res: xlsx]
+          XLSX datastore=True 19a79a49-b535-47cb-939c-36f70766df68 https://data.sumbarprov.go.id/dataset/7572a567-776c-4296-b636-542c3ef35d72/resource/19a79a49-b535-47cb-939c-36f70766df68/download/jumlah-penduduk-jenis-kelamin.xlsx
+      - buku-data-kependudukan-semester-ii-tahun-2020-prov-sumatera-barat: BUKU DATA KEPENDUDUKAN SEMESTER II TAHUN 2020 PROV. SUMATERA BARAT  [1 res: xlsx]
+          XLSX datastore=True b13fd8d1-89ed-4679-a375-147e0c5f5e60 https://data.sumbarprov.go.id/dataset/64a8e72a-a220-4ad0-aa19-5daaeb828927/resource/b13fd8d1-89ed-4679-a375-147e0c5f5e60/download/jumlah-penduduk-jenis-kelamin.xlsx
+      - buku-data-kependudukan-semester-i-tahun-2019-prov-sumatera-barat: BUKU DATA KEPENDUDUKAN SEMESTER I TAHUN 2019 PROV. SUMATERA BARAT  [1 res: xlsx]
+          XLSX datastore=True 39505bb0-f3a0-4188-a76d-13efb95627db https://data.sumbarprov.go.id/dataset/6409ed45-8706-44bf-b72f-3b0d91dc60d8/resource/39505bb0-f3a0-4188-a76d-13efb95627db/download/jumlah-penduduk-jenis-kelamin.xlsx
+      - buku-data-kependudukan-semester-ii-tahun-2019-prov-sumatera-barat: BUKU DATA KEPENDUDUKAN SEMESTER II TAHUN 2019 PROV. SUMATERA BARAT  [1 res: xlsx]
+          XLSX datastore=True 08c1e697-f55c-47a6-b847-b971f59314af https://data.sumbarprov.go.id/dataset/81914b89-93cd-4a4b-828e-61bdb3d05c47/resource/08c1e697-f55c-47a6-b847-b971f59314af/download/jumlah-penduduk-jenis-kelamin.xlsx
+      - buku-data-kependudukan-semester-i-tahun-2020-prov-sumatera-barat: BUKU DATA KEPENDUDUKAN SEMESTER I TAHUN 2020 PROV. SUMATERA BARAT  [1 res: xlsx]
+          XLSX datastore=True f87c12e2-fda4-43f3-858c-7811301c3df4 https://data.sumbarprov.go.id/dataset/1937065a-9f46-4b6f-999e-3d6ecd0de8e4/resource/f87c12e2-fda4-43f3-858c-7811301c3df4/download/jumlah-penduduk-jenis-kelamin.xlsx
+      - jumlah-penduduk-kabupaten-pasaman-2021-2023: Profil Perkembangan Kependudukan Kabupaten Pasaman Tahun 2022  [5 res: pdf,xlsx]
+          XLSX datastore=False 5509ad1c-a3b5-4312-986d-1856ba90df2b https://data.pasamankab.go.id/dataset/a7864d54-77da-4749-af34-83684f6e5f84/resource/5509ad1c-a3b5-4312-986d-1856ba90df2b/download/jumlah-penduduk-kabuaten-pasaman-jiwa-2021-2023.xlsx
+          XLSX datastore=False 241ffdf6-0b20-4e22-bdbe-59e8cfacc7b9 https://data.pasamankab.go.id/dataset/a7864d54-77da-4749-af34-83684f6e5f84/resource/241ffdf6-0b20-4e22-bdbe-59e8cfacc7b9/download/jumlah-penduduk-menurut-agama-dan-jenis-kelamin-di-kabupaten-pasaman-jiwa-2021-2023.xlsx
+          XLSX datastore=False 78e05c3b-9c18-4209-8400-fa989031c31f https://data.pasamankab.go.id/dataset/a7864d54-77da-4749-af34-83684f6e5f84/resource/78e05c3b-9c18-4209-8400-fa989031c31f/download/persentase-kepemilikan-akta-kelahiran-penduduk-usia-0-18-tahun-menurut-kecamatan-di-kabupaten-p.xlsx
+          XLSX datastore=False cd00ee8e-c38f-43bb-b03b-617607239feb https://data.pasamankab.go.id/dataset/a7864d54-77da-4749-af34-83684f6e5f84/resource/cd00ee8e-c38f-43bb-b03b-617607239feb/download/persentase-penduduk-wajib-ktp-dan-kepemilikan-ktp-el-menurut-kecamatan-di-kabupaten-pasaman-per.xlsx
+          PDF datastore=False 878c3150-c223-4855-9191-cb555dc051ce https://data.pasamankab.go.id/dataset/a7864d54-77da-4749-af34-83684f6e5f84/resource/878c3150-c223-4855-9191-cb555dc051ce/download/profil-perkembangan-kependudukan-kab-pasaman-2022_compressed.pdf
+      - buku-data-kependudukan-semester-ii-tahun-2023-prov-sumatera-barat: BUKU DATA KEPENDUDUKAN SEMESTER II TAHUN 2023 PROV. SUMATERA BARAT  [25 res: xlsx]
+          XLSX datastore=True 0e3e4a5c-956e-4770-b0b3-825f7a130666 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/0e3e4a5c-956e-4770-b0b3-825f7a130666/download/disabilitas-usia-sekolah.xlsx
+          XLSX datastore=True c387481d-e66d-416e-8264-0ec97a499b23 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/c387481d-e66d-416e-8264-0ec97a499b23/download/disabilitas-jenis-kelamin.xlsx
+          XLSX datastore=True 71525c21-b607-4ea4-9bcb-ed3685dfd664 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/71525c21-b607-4ea4-9bcb-ed3685dfd664/download/golongan-darah-jenis-kelamin.xlsx
+          XLSX datastore=True 42ab0a95-1b27-4598-a6d9-adb4593702b1 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/42ab0a95-1b27-4598-a6d9-adb4593702b1/download/pekerjaan-usia-produktif.xlsx
+          XLSX datastore=True 7a1a0815-abda-402f-ae6f-497a954f703a https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/7a1a0815-abda-402f-ae6f-497a954f703a/download/pekerjaan-jenis-kelamin.xlsx
+          XLSX datastore=True f85bef24-ed88-4251-b7c0-cb6806d69fab https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/f85bef24-ed88-4251-b7c0-cb6806d69fab/download/pendidikan-jenis-kelamin.xlsx
+          XLSX datastore=True 418513f6-c45b-40fb-9151-61df45d5ee81 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/418513f6-c45b-40fb-9151-61df45d5ee81/download/agama-jenis-kelamin.xlsx
+          XLSX datastore=True 9f0d3481-1a91-4c2a-a6f2-498b9a44ef59 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/9f0d3481-1a91-4c2a-a6f2-498b9a44ef59/download/status-kawin-pekerjaan.xlsx
+          XLSX datastore=True a3129814-f6aa-45b8-ae15-b05b0a51ec06 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/a3129814-f6aa-45b8-ae15-b05b0a51ec06/download/status-kawin-kelompok-umur.xlsx
+          XLSX datastore=True 152d78fb-dd2b-479a-a0dc-9a5e97354d39 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/152d78fb-dd2b-479a-a0dc-9a5e97354d39/download/status-kawin-agama.xlsx
+          XLSX datastore=True 819e29d4-41d9-429a-a066-be2f4f42b312 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/819e29d4-41d9-429a-a066-be2f4f42b312/download/status-kawin-jenis-kelamin.xlsx
+          XLSX datastore=True 10173ef3-2f5c-4c87-b965-7ab20b007291 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/10173ef3-2f5c-4c87-b965-7ab20b007291/download/usia-sekolah.xlsx
+          XLSX datastore=True be80ecec-d954-4fb5-9f60-cb556d1a6f06 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/be80ecec-d954-4fb5-9f60-cb556d1a6f06/download/usia-muda-usia-produktif-dan-usia-tua.xlsx
+          XLSX datastore=True 1836ecaf-d521-43e0-b7bc-22f9dbc62978 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/1836ecaf-d521-43e0-b7bc-22f9dbc62978/download/umur-tunggal.xlsx
+          XLSX datastore=True e73c6550-30a1-45e3-abf3-0fcc7c285289 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/e73c6550-30a1-45e3-abf3-0fcc7c285289/download/struktur-umur.xlsx
+          XLSX datastore=True f4c8a6e3-50bb-4661-9d06-0b8567b577d3 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/f4c8a6e3-50bb-4661-9d06-0b8567b577d3/download/status-hubungan-keluarga.xlsx
+          XLSX datastore=True e487a844-aef3-44f2-b775-e89d07b9176b https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/e487a844-aef3-44f2-b775-e89d07b9176b/download/kepala-keluarga-status-kawin-kel.-umur.xlsx
+          XLSX datastore=True cf77cfbc-3878-4826-942a-4109e2aaa35d https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/cf77cfbc-3878-4826-942a-4109e2aaa35d/download/kepala-keluarga-umur-tunggal.xlsx
+          XLSX datastore=True e871c367-a105-4994-9199-111a1dc7a841 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/e871c367-a105-4994-9199-111a1dc7a841/download/kepala-keluarga-status-kawin.xlsx
+          XLSX datastore=True c3c6a63a-d848-408a-ab5f-a411ff4239d1 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/c3c6a63a-d848-408a-ab5f-a411ff4239d1/download/kepala-keluarga-pendidikan.xlsx
+          XLSX datastore=True 04a70a85-2cad-4338-abb4-0eb047322db4 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/04a70a85-2cad-4338-abb4-0eb047322db4/download/kepala-keluarga-jenis-kelamin.xlsx
+          XLSX datastore=True 975a34ee-4c82-44c4-a660-2b23f415de50 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/975a34ee-4c82-44c4-a660-2b23f415de50/download/kepadatan-penduduk.xlsx
+          XLSX datastore=True 6f91f52b-1907-41cb-986b-cfb2153bd1f9 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/6f91f52b-1907-41cb-986b-cfb2153bd1f9/download/jumlah-penduduk-tingkat-rw-dan-rt.xlsx
+          XLSX datastore=True 8ce4ce89-00ec-4718-9d77-98fd52204ec6 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/8ce4ce89-00ec-4718-9d77-98fd52204ec6/download/kepemilikan-kk.xlsx
+          XLSX datastore=True 947a3808-5336-4235-a901-11720511f079 https://data.sumbarprov.go.id/dataset/76470dbf-cddc-46bd-90f1-966f5a428aa1/resource/947a3808-5336-4235-a901-11720511f079/download/jumlah-penduduk-jenis-kelamin.xlsx
+      - buku-data-kependudukan-semester-i-tahun-2023: BUKU DATA KEPENDUDUKAN SEMESTER I TAHUN 2023 PROV. SUMATERA BARAT  [21 res: xlsx]
+          XLSX datastore=True 4e87261e-fa9a-4d83-b991-56f150feb5fc https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/4e87261e-fa9a-4d83-b991-56f150feb5fc/download/jumlah-penduduk-jenis-kelamin.xlsx
+          XLSX datastore=True 08ad0f9b-7b4b-47b3-838d-d28b2c8e4e8b https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/08ad0f9b-7b4b-47b3-838d-d28b2c8e4e8b/download/usia-sekolah.xlsx
+          XLSX datastore=True be1a846a-e476-4dce-97ac-3a3659f023e4 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/be1a846a-e476-4dce-97ac-3a3659f023e4/download/usia-muda-usia-produktif-dan-usia-tua.xlsx
+          XLSX datastore=True d767642d-c167-4286-ad28-d8bdd1586cf6 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/d767642d-c167-4286-ad28-d8bdd1586cf6/download/umur-tunggal.xlsx
+          XLSX datastore=True f7558275-c922-4acf-a7d0-02a2a20c1170 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/f7558275-c922-4acf-a7d0-02a2a20c1170/download/struktur-umur.xlsx
+          XLSX datastore=True 438caac2-6a78-4f27-a43a-e84e4544b6e4 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/438caac2-6a78-4f27-a43a-e84e4544b6e4/download/status-kawin-jenis-kelamin.xlsx
+          XLSX datastore=True de533758-3e86-4253-ab4a-e0e49130ff53 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/de533758-3e86-4253-ab4a-e0e49130ff53/download/status-hubungan-keluarga.xlsx
+          XLSX datastore=True 8949e9aa-cb3a-4ec1-ad9d-dbd7bec194e4 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/8949e9aa-cb3a-4ec1-ad9d-dbd7bec194e4/download/pendidikan-pekerjaan.xlsx
+          XLSX datastore=True 03664de6-606e-468d-9ca3-4272ad9d73bb https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/03664de6-606e-468d-9ca3-4272ad9d73bb/download/pekerjaan-usia-produktif.xlsx
+          XLSX datastore=True e7e75069-0926-4d83-82d0-2fe78cedbdaf https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/e7e75069-0926-4d83-82d0-2fe78cedbdaf/download/pekerjaan-jenis-kelamin.xlsx
+          XLSX datastore=True d2c8368c-399b-46cf-83ef-7776161ee0bf https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/d2c8368c-399b-46cf-83ef-7776161ee0bf/download/kepemilikan-kk.xlsx
+          XLSX datastore=True 91519ce4-d777-4a4e-9bef-f7ddd4a8a811 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/91519ce4-d777-4a4e-9bef-f7ddd4a8a811/download/kepala-keluarga-status-kawin.xlsx
+          XLSX datastore=True 029da6d2-3313-4cb3-aec8-1b0486da490e https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/029da6d2-3313-4cb3-aec8-1b0486da490e/download/kepala-keluarga-pendidikan.xlsx
+          XLSX datastore=True a20ab615-860c-4090-853d-110f934a8a4d https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/a20ab615-860c-4090-853d-110f934a8a4d/download/kepala-keluarga-pekerjaan.xlsx
+          XLSX datastore=True cc946ad6-a0d4-4e4c-9776-ee64a09df7d8 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/cc946ad6-a0d4-4e4c-9776-ee64a09df7d8/download/kepala-keluarga-jenis-kelamin.xlsx
+          XLSX datastore=True 2aab314d-7f34-4058-a3bf-dcbbde9ec074 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/2aab314d-7f34-4058-a3bf-dcbbde9ec074/download/kepala-keluarga-agama.xlsx
+          XLSX datastore=True 24926b7a-4506-42b8-a49c-83c0c5066b6b https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/24926b7a-4506-42b8-a49c-83c0c5066b6b/download/kepadatan-penduduk.xlsx
+          XLSX datastore=True 11ffe74c-25dc-4093-a859-c65ea87fcc60 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/11ffe74c-25dc-4093-a859-c65ea87fcc60/download/golongan-darah-jenis-kelamin.xlsx
+          XLSX datastore=True 1cfc73f1-b604-4750-89b7-56ee02dbfa55 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/1cfc73f1-b604-4750-89b7-56ee02dbfa55/download/disabilitas-usia-sekolah.xlsx
+          XLSX datastore=True 2731ba69-4c90-4ff0-8eee-df2584e5c502 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/2731ba69-4c90-4ff0-8eee-df2584e5c502/download/disabilitas-jenis-kelamin.xlsx
+          XLSX datastore=True 45ae12f7-aa7d-43fd-9346-293b19cfed79 https://data.sumbarprov.go.id/dataset/b6dcb267-c7b1-4ef8-a691-71e6f9e2e391/resource/45ae12f7-aa7d-43fd-9346-293b19cfed79/download/agama-jenis-kelamin.xlsx
+      (19 others not matching)
   https://data.kaltimprov.go.id/ -> 200 text/html "SATU DATA KALTIM"
     /api/3/action/status_show -> 200 application/json CKAN ?
-    package_search q='agama' -> 200, 282 matches, 15 shown
+    package_search q='agama' -> 200, 282 matches, 150 shown, printing those matching 'penduduk|pemeluk'
       - jumlah-pemeluk-agama-menurut-agamadisdukcapil: Jumlah Pemeluk Agama menurut Agama  [1 res: csv]
+          CSV datastore=True 29313f54-d515-4437-9ed1-1a527624c35e https://data.mahakamulukab.go.id/datastore/dump/29313f54-d515-4437-9ed1-1a527624c35e
       - jumlah-pemeluk-agama: Jumlah Pemeluk Agama  [1 res: xlsx]
+          XLSX datastore=False fe59285a-29f8-41be-ac12-42db725f0de1 http://opendata.kukarkab.go.id/dataset/5e881e48-f1c6-4801-a7ce-7a8e6fe5c16f/resource/fe59285a-29f8-41be-ac12-42db725f0de1/download/pemeluk-agama.xlsx
       - banyaknya-pemeluk-agama-menurut-golongan-agama-dan-kabupatenkota-2015: Banyaknya Pemeluk Agama Menurut Golongan Agama dan Kabupaten/Kota 2015  [1 res: xls]
-      - sarana-ibadah-agama-islam: Sarana Ibadah Agama Islam  [1 res: xlsx]
-      - jumlah-ormas-berdasarkan-agama: Jumlah Ormas Berdasarkan Agama  [1 res: xlsx]
-      - jumlah-pppk-menurut-agamabkpp: Jumlah PPPK menurut Agama  [0 res: ]
+          XLS datastore=False add172d3-5d76-4288-851e-e5d6dda94df9 https://data.kaltimprov.go.id/dataset/03efb16f-c018-405b-90d3-d25f0a8a3492/resource/add172d3-5d76-4288-851e-e5d6dda94df9/download/314n4rk66j20q2h1w.xls
       - jumlah-penduduk-menurut-agama: Jumlah Penduduk Kabupaten Berau berdasarkan Agama  [11 res: xls,xlsx]
+          XLSX datastore=False e6a2f569-77b9-4f2f-8025-98078ccd752a https://data.beraukab.go.id/dataset/4365446e-c7c1-44b3-a408-b3eb7dc03854/resource/e6a2f569-77b9-4f2f-8025-98078ccd752a/download/agr_agama_6403_2024.xlsx
+          XLSX datastore=False fd603eca-8bc1-45cc-abd8-000a938bc5b8 https://data.beraukab.go.id/dataset/4365446e-c7c1-44b3-a408-b3eb7dc03854/resource/fd603eca-8bc1-45cc-abd8-000a938bc5b8/download/agr_agama_6403_2023.xlsx
+          XLSX datastore=False d57155cd-3dac-49a5-a723-e8831c32a28b https://data.beraukab.go.id/dataset/4365446e-c7c1-44b3-a408-b3eb7dc03854/resource/d57155cd-3dac-49a5-a723-e8831c32a28b/download/agr_agama_6403_2022.xlsx
+          XLSX datastore=False 4676707b-8fe7-4a5f-acff-0c5bc71917a7 https://data.beraukab.go.id/dataset/4365446e-c7c1-44b3-a408-b3eb7dc03854/resource/4676707b-8fe7-4a5f-acff-0c5bc71917a7/download/agr_agama_6403_2021.xlsx
+          XLSX datastore=False 5da8c63c-ccb4-4228-b334-4a4086640d26 https://data.beraukab.go.id/dataset/4365446e-c7c1-44b3-a408-b3eb7dc03854/resource/5da8c63c-ccb4-4228-b334-4a4086640d26/download/agr_agama_6403_2020.xlsx
+          XLSX datastore=False b51f9895-243d-4371-b6bd-de4df40362f4 https://data.beraukab.go.id/dataset/4365446e-c7c1-44b3-a408-b3eb7dc03854/resource/b51f9895-243d-4371-b6bd-de4df40362f4/download/agr_agama_6403_2019.xlsx
+          XLS datastore=True 7ab16247-be67-4dc2-91df-61fda743a1d0 https://data.beraukab.go.id/dataset/4365446e-c7c1-44b3-a408-b3eb7dc03854/resource/7ab16247-be67-4dc2-91df-61fda743a1d0/download/jumlah-penduduk-kabupaten-berau-berdasarkan-agama-2019.xls
+          XLS datastore=True 6801b287-2b23-4a7e-8a7e-0499f3006003 https://data.beraukab.go.id/dataset/4365446e-c7c1-44b3-a408-b3eb7dc03854/resource/6801b287-2b23-4a7e-8a7e-0499f3006003/download/jumlah-penduduk-kabupaten-berau-berdasarkan-agama-2020.xls
+          XLS datastore=True bf103070-4a73-434f-aecf-12643cd19afa https://data.beraukab.go.id/dataset/4365446e-c7c1-44b3-a408-b3eb7dc03854/resource/bf103070-4a73-434f-aecf-12643cd19afa/download/jumlah-penduduk-kabupaten-berau-berdasarkan-agama-2021.xls
+          XLS datastore=True b1380c61-5de1-4510-9d7e-7084707b99ab https://data.beraukab.go.id/dataset/4365446e-c7c1-44b3-a408-b3eb7dc03854/resource/b1380c61-5de1-4510-9d7e-7084707b99ab/download/jumlah-penduduk-kabupaten-berau-berdasarkan-agama-2022.xls
+          XLSX datastore=False e771ffcc-0d90-4b6f-a2cb-cd6d33367d44 https://data.beraukab.go.id/dataset/4365446e-c7c1-44b3-a408-b3eb7dc03854/resource/e771ffcc-0d90-4b6f-a2cb-cd6d33367d44/download/agr_agama_6403_2025.xlsx
       - penduduk-menurut-agama-tahun-2024: PENDUDUK MENURUT AGAMA TAHUN 2024  [1 res: xlsx]
-      - jumlah-sarana-ibadah-agama-islam: Jumlah Sarana Ibadah Agama Islam  [1 res: xlsx]
+          XLSX datastore=False ae03f6b1-7bb5-4c80-b56c-d20cb86a0f77 https://data.kutaibaratkab.go.id/dataset/3071d8fd-268c-4cef-97ac-afd36f847085/resource/ae03f6b1-7bb5-4c80-b56c-d20cb86a0f77/download/agama-ok.xlsx
       - rekapitulasi-jumlah-penduduk-berdasarkan-agama: REKAPITULASI JUMLAH PENDUDUK BERDASARKAN AGAMA  [1 res: xlsx]
-      - data-menurut-agama-perjenis-kelaminbkpp: Data menurut Agama perjenis kelamin  [0 res: ]
-      - sarana-ibadah-agama-islam-menurut-desa: Sarana Ibadah Agama Islam Menurut Desa  [1 res: xlsx]
-      - data-jumlah-penyuluh-agama-provinsi-kaltim-tahun-2016-2020: Data Jumlah Penyuluh Agama Prov. Kaltim Tahun 2016-2020  [2 res: csv,xlsx]
+          XLSX datastore=False 60070b92-c264-436a-9143-13339287a085 https://data.balikpapan.go.id/dataset/807dca58-9e04-43b3-9670-67e80ecfdf60/resource/60070b92-c264-436a-9143-13339287a085/download/berdasarkan-agama.xlsx
       - data-jumlah-pemeluk-agama-provinsi-kaltim-tahun-2016-2020: Data Jumlah Pemeluk Agama Prov. Kaltim Tahun 2016-2020  [2 res: csv,xlsx]
-      - jumlah-pegawai-negeri-sipil-menurut-agama-dan-jenis-kelamin: Jumlah Pegawai Negeri Sipil Menurut Agama dan Jenis Kelamin  [1 res: xlsx]
+          XLSX datastore=True 77d02960-7baf-4991-aa35-d98798eac382 https://data.kaltimprov.go.id/dataset/7d1c0847-aac8-40e8-842e-6540a22a4749/resource/77d02960-7baf-4991-aa35-d98798eac382/download/data-jumlah-pemeluk-agama-prov.-kaltim-tahun-2016-2020.xlsx
+          CSV datastore=True 7e030f3f-cd5f-479e-96f2-75d4ee9bd308 https://data.kaltimprov.go.id/dataset/7d1c0847-aac8-40e8-842e-6540a22a4749/resource/7e030f3f-cd5f-479e-96f2-75d4ee9bd308/download/data-jumlah-pemeluk-agama-prov.-kaltim-tahun-2016-2020.csv
+      - jumlah-penduduk-menurut-agama-per-desa-kelurahan-2019: Jumlah Penduduk Menurut Agama Per Desa/Kelurahan  [1 res: xlsx]
+          XLSX datastore=False 98f8db1b-4b32-40c9-bde5-b55d682a8cd7 https://opendata.kukarkab.go.id/dataset/1b1578cf-9615-40e7-9d6c-b37bf5b145f2/resource/98f8db1b-4b32-40c9-bde5-b55d682a8cd7/download/jumlah-penduduk-menurut-agama.xlsx
+      - jumlah-penduduk-di-kecamatan-segah-menurut-agama: Jumlah Penduduk di Kecamatan Segah Menurut Agama  [1 res: xls]
+          XLS datastore=True 372c32d8-4fca-43db-b287-4cdbb37d37a6 https://data.beraukab.go.id/dataset/f1971e9e-ffb0-44c5-ac69-f9ee6f9de9bd/resource/372c32d8-4fca-43db-b287-4cdbb37d37a6/download/jumlah-penduduk-kecamatan-segah-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-di-kecamatan-tabalar-menurut-agama: Jumlah Penduduk di Kecamatan Tabalar Menurut Agama  [1 res: xls]
+          XLS datastore=True 5dec3133-0614-4dcb-902e-b1add173f53e https://data.beraukab.go.id/dataset/a4b38575-4c83-4118-8fca-8943fb85425e/resource/5dec3133-0614-4dcb-902e-b1add173f53e/download/jumlah-penduduk-kecamatan-tabalar-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-di-kecamatan-talisayan-menurut-agama: Jumlah Penduduk di Kecamatan Talisayan Menurut Agama  [1 res: xls]
+          XLS datastore=True 7a33daef-a191-4465-9a6a-04ea55ef8820 https://data.beraukab.go.id/dataset/975830c5-c56b-4d17-81f2-48ec5f76e724/resource/7a33daef-a191-4465-9a6a-04ea55ef8820/download/jumlah-penduduk-kecamatan-talisayan-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-di-kecamatan-maratua-menurut-agama: Jumlah Penduduk di Kecamatan Maratua Menurut Agama  [1 res: xls]
+          XLS datastore=True 5f601f01-66df-44f1-bb91-1d36170d25c8 https://data.beraukab.go.id/dataset/771f9c60-124b-43c8-bad3-4f9ceb9bbea8/resource/5f601f01-66df-44f1-bb91-1d36170d25c8/download/jumlah-penduduk-kecamatan-maratua-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-di-kecamatan-kelay-menurut-agama: Jumlah Penduduk di Kecamatan Kelay Menurut Agama  [1 res: xls]
+          XLS datastore=True d9ca2d8e-2ec7-4b18-9984-50faa79ad9e1 https://data.beraukab.go.id/dataset/544722d6-7ab2-48fc-a065-1e08079c341f/resource/d9ca2d8e-2ec7-4b18-9984-50faa79ad9e1/download/jumlah-penduduk-kecamatan-kelay-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-di-kecamatan-sambaliung-menurut-agama: Jumlah Penduduk di Kecamatan Sambaliung Menurut Agama  [1 res: xls]
+          XLS datastore=True df51ec61-30e1-4e6f-a2d5-5972c328f14c https://data.beraukab.go.id/dataset/5295b0c6-c4e3-4156-a27d-2a3f3220031e/resource/df51ec61-30e1-4e6f-a2d5-5972c328f14c/download/jumlah-penduduk-kecamatan-sambaliung-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-menurut-agama-di-kecamatan-biatan: Jumlah Penduduk di Kecamatan Biatan Menurut Agama  [1 res: xls]
+          XLS datastore=True c8e1d405-05e1-4789-af9a-4588f6fd46e8 https://data.beraukab.go.id/dataset/3f04d641-1234-40ec-bbbc-59c7a1cfe740/resource/c8e1d405-05e1-4789-af9a-4588f6fd46e8/download/jumlah-penduduk-kecamatan-biatan-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-menurut-desa-kelurahan-dan-agama: Jumlah Penduduk Menurut Desa/Kelurahan dan Agama, 2020  [1 res: xlsx]
+          XLSX datastore=False d8ec0717-3101-40cd-b0f1-7bc68f33d466 http://opendata.kukarkab.go.id/dataset/0c646b3a-e7b2-4ac6-8a9e-ef53576e66af/resource/d8ec0717-3101-40cd-b0f1-7bc68f33d466/download/jumlah-penduduk-menurut-desa-kelurahan-dan-agama.xlsx
+      - jumlah-penduduk-menurut-desa-kelurahan-dan-agama-2019: Jumlah Penduduk Menurut Desa-Kelurahan dan Agama, 2019  [1 res: xlsx]
+          XLSX datastore=False 5874ef04-fb36-4681-9ffd-feaa48754874 http://opendata.kukarkab.go.id/dataset/fde85779-93f1-4fb8-b659-040dbd2edcdd/resource/5874ef04-fb36-4681-9ffd-feaa48754874/download/penduduk-beragama.xlsx
+      - jumlah-penduduk-menurut-desa-kelurahan-dan-agama-2020: Jumlah Penduduk Menurut Desa/Kelurahan dan Agama, 2020  [1 res: xlsx]
+          XLSX datastore=False d6c1617e-82f8-4bc0-ae01-e03aa91bebef http://opendata.kukarkab.go.id/dataset/ed40cab7-aade-4cad-be26-cf73ee4a4e0f/resource/d6c1617e-82f8-4bc0-ae01-e03aa91bebef/download/jumlah-penduduk.xlsx
+      - banyaknya-penduduk-menurut-agama-dan-desa-kelurahan-2019: Banyaknya Penduduk Menurut Agama dan Desa/Kelurahan, 2019  [1 res: xlsx]
+          XLSX datastore=False 0724e0e5-bbb4-4ded-a9f0-cdf1423067d1 http://opendata.kukarkab.go.id/dataset/4bb712e7-aa9d-487d-a1df-e9faf5260e1f/resource/0724e0e5-bbb4-4ded-a9f0-cdf1423067d1/download/banyak-pendudk-beragama.xlsx
+      - jumlah-penduduk-menurut-agama-di-kecamatan-pulau-derawan: Jumlah Penduduk di Kecamatan Pulau Derawan Menurut Agama  [1 res: xls]
+          XLS datastore=True 6d09f346-019a-4abf-9bed-c3d48e83ef9a https://data.beraukab.go.id/dataset/d0c2eaae-ae95-481d-86ca-50c149e5ed32/resource/6d09f346-019a-4abf-9bed-c3d48e83ef9a/download/jumlah-penduduk-kecamatan-pulau-derawan-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-di-kecamatan-tanjung-redeb-menurut-agama: Jumlah Penduduk di Kecamatan Tanjung Redeb Menurut Agama  [1 res: xls]
+          XLS datastore=True bb11e70a-5097-4d4e-9445-2fd697817298 https://data.beraukab.go.id/dataset/885bd89d-5a74-49c0-9792-27052a10767f/resource/bb11e70a-5097-4d4e-9445-2fd697817298/download/jumlah-penduduk-kecamatan-tanjung-redeb-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-menurut-agama-di-kecamatan-biduk-biduk: Jumlah Penduduk di Kecamatan Biduk-Biduk Menurut Agama  [1 res: xls]
+          XLS datastore=True 583b4e0d-cc5e-450d-9532-a18b2aab5844 https://data.beraukab.go.id/dataset/569b246e-6e1c-4e48-9921-cfcda31c80c2/resource/583b4e0d-cc5e-450d-9532-a18b2aab5844/download/jumlah-penduduk-kecamatan-biduk-biduk-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-menurut-agama-di-kecamatan-gunung-tabur: Jumlah Penduduk di Kecamatan Gunung Tabur Menurut Agama  [1 res: xls]
+          XLS datastore=True 8ecc9755-ca57-4866-b36a-6d90e319a923 https://data.beraukab.go.id/dataset/290cad2d-fa16-4990-aa6d-ee8e481f6133/resource/8ecc9755-ca57-4866-b36a-6d90e319a923/download/jumlah-penduduk-kecamatan-gunung-tabur-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-di-kecamatan-teluk-bayur-menurut-agama: Jumlah Penduduk di Kecamatan Teluk Bayur Menurut Agama  [1 res: xls]
+          XLS datastore=True 192892c8-d8dc-4220-ad09-1f094ada2f23 https://data.beraukab.go.id/dataset/23c3048b-3198-4285-9d20-afd65ed9fa85/resource/192892c8-d8dc-4220-ad09-1f094ada2f23/download/jumlah-penduduk-kecamatan-teluk-bayur-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-di-kecamatan-batu-putih-menurut-agama-tahun-2019-2024: Jumlah Penduduk di Kecamatan Batu Putih Menurut Agama  [1 res: xls]
+          XLS datastore=True 674416f4-0284-4259-8e85-c4ec1c2dfc7a https://data.beraukab.go.id/dataset/1396b11f-d07e-4524-b332-8d67443a962a/resource/674416f4-0284-4259-8e85-c4ec1c2dfc7a/download/jumlah-penduduk-kecamatan-batu-putih-menurut-agama-2019-2024.xls
+      - jumlah-penduduk-menurut-agama-per-kecamatan-di-kabupaten-penajam-paser-utara: Jumlah Penduduk Menurut Agama per Kecamatan di Kabupaten Penajam Paser Utara  [3 res: csv]
+          CSV datastore=False c30044d2-a10c-486e-b4ae-77df576cd9d8 https://opendata.penajamkab.go.id/dataset/4c76adce-1228-4cb7-b703-6736976d32ba/resource/c30044d2-a10c-486e-b4ae-77df576cd9d8/download/jumlah-penduduk-menurut-agama-per-kecamatan-di-kabupaten-penajam-paser-utara-2020-2022.csv
+          CSV datastore=False 46bec3d5-76d7-433d-a676-f77e03b4053f https://opendata.penajamkab.go.id/dataset/4c76adce-1228-4cb7-b703-6736976d32ba/resource/46bec3d5-76d7-433d-a676-f77e03b4053f/download/jumlah-penduduk-menurut-agama-per-kecamatan-di-kabupaten-penajam-paser-utara-tahun-2023.csv
+          CSV datastore=False 2ef9d4a7-6e9f-4b71-a6a2-ee54ce7099ff https://opendata.penajamkab.go.id/dataset/4c76adce-1228-4cb7-b703-6736976d32ba/resource/2ef9d4a7-6e9f-4b71-a6a2-ee54ce7099ff/download/jumlah_penduduk_menurut_agama_per_kecamatan_di_kabupaten_penajam_paser_utara_-_04-09-2025-08_07_.csv
+      - jumlah-penduduk-berdasarkan-agama-dalam-periode-6-tahun-2018-sd-2023: Jumlah Penduduk Berdasarkan Agama dalam Periode 6 tahun 2018 sd 2023  [3 res: csv,json,xlsx]
+          CSV datastore=True daf14b34-1c56-11ef-81fc-1866dab29db8 https://cdn.samarindakota.go.id/satudata/4f94e6e0-2cea-11ed-bde8-a76d4fa5106e/jumlah-penduduk-berdasarkan-agama-dalam-periode-6-tahun-2018-sd-2023.csv
+          XLSX datastore=False daf7aea2-1c56-11ef-8e05-1866dab29db8 https://satudata.samarindakota.go.id/export/kategori/4f94e6e0-2cea-11ed-bde8-a76d4fa5106e?start=2018&end=2023&type=excel
+          JSON datastore=False daf8f3b6-1c56-11ef-837a-1866dab29db8 https://satudata.samarindakota.go.id/api/kategori/4f94e6e0-2cea-11ed-bde8-a76d4fa5106e/jumlah-penduduk-berdasarkan-agama?start=2018&end=2023
+      - data-jumlah-pemeluk-agama-provinsi-kaltim-tahun-2021: Data Jumlah Pemeluk Agama Prov. Kaltim Tahun 2021-2023  [5 res: csv,xlsx]
+          XLSX datastore=True bf80365e-937f-4616-9111-7faa910991d9 https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/bf80365e-937f-4616-9111-7faa910991d9/download/data-jumlah-pemeluk-agama-prov.-kaltim-tahun-2021-2023.xlsx
+          CSV datastore=True 05f8fa71-5b64-44d8-ad40-85ca618e9ecd https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/05f8fa71-5b64-44d8-ad40-85ca618e9ecd/download/data-jumlah-pemeluk-agama-prov.-kaltim-tahun-2021-2022.csv
+          XLSX datastore=True c33cae6b-5d6c-488c-8bb4-c063ab95bab0 https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/c33cae6b-5d6c-488c-8bb4-c063ab95bab0/download/data-jumlah-pemeluk-agama-per-kabkot-prov.-kaltim-tahun-2021.xlsx
+          XLSX datastore=True ed8e4ed7-97c2-4c17-9976-d64f0a403fee https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/ed8e4ed7-97c2-4c17-9976-d64f0a403fee/download/data-jumlah-pemeluk-agama-per-kabkot-prov.-kaltim-tahun-2022.xlsx
+          XLSX datastore=True 31b549ab-6cda-4d27-82c7-c991d1f9fde0 https://data.kaltimprov.go.id/dataset/4dd429f3-3cc7-461d-8dd4-2f221c9c8c15/resource/31b549ab-6cda-4d27-82c7-c991d1f9fde0/download/data-jumlah-pemeluk-agama-per-kabkot-prov.-kaltim-tahun-2023.xlsx
+      - data-jumlah-penduduk-berdasarkan-agama-di-kabupaten-mahakam-ulukemenag: Data Jumlah Penduduk berdasarkan agama di Kabupaten Mahakam Ulu  [5 res: csv]
+          CSV datastore=True f51c9d0b-4a36-4715-b380-c760b19c67ac https://data.mahakamulukab.go.id/datastore/dump/f51c9d0b-4a36-4715-b380-c760b19c67ac
+          CSV datastore=True bc2e269f-cd9c-4e1e-9314-f55a680c2552 https://data.mahakamulukab.go.id/datastore/dump/bc2e269f-cd9c-4e1e-9314-f55a680c2552
+          CSV datastore=True daa09d74-bbbb-47ea-9b97-2ba5d8c25af0 https://data.mahakamulukab.go.id/datastore/dump/daa09d74-bbbb-47ea-9b97-2ba5d8c25af0
+          CSV datastore=True b8ba26af-3889-418d-9559-aef58fd1f1f1 https://data.mahakamulukab.go.id/datastore/dump/b8ba26af-3889-418d-9559-aef58fd1f1f1
+          CSV datastore=True 6371c473-ca33-47e7-87ea-c9f68881822d https://data.mahakamulukab.go.id/datastore/dump/6371c473-ca33-47e7-87ea-c9f68881822d
+      - banyaknya-penduduk-menurut-agama-dan-desa-kelurahan-kecamatan-sebulu: Banyaknya Penduduk Menurut Agama Dan Desa/Kelurahan Kecamatan Sebulu  [1 res: xlsx]
+          XLSX datastore=False 260b899a-e29c-4674-a9a0-0a335bfef1f3 https://opendata.kukarkab.go.id/dataset/1da08384-de09-4745-9b2f-d30bba7c5e73/resource/260b899a-e29c-4674-a9a0-0a335bfef1f3/download/tabel-4.23-banyaknya-penduduk-menurut-agama-dan-desa-kelurahan.xlsx
+      - banyaknya-penduduk-menurut-agama-dan-desa-kelurahan-di-samboja: Banyaknya Penduduk Menurut Agama Dan Desa/Kelurahan di Samboja  [1 res: xlsx]
+          XLSX datastore=False dd46e3ac-b51a-43c1-95bf-9770f62c22d5 https://opendata.kukarkab.go.id/dataset/51ef4139-a23f-4f8c-86e4-87b2b81c3c33/resource/dd46e3ac-b51a-43c1-95bf-9770f62c22d5/download/tabel-4.19-banyaknya-penduduk-menurut-agama-dan-desa-kelurahan-2020.xlsx
+      - jumlah-penduduk-berdasarkan-agama-dkb-semester-i-tahun-2025: Jumlah Penduduk Berdasarkan Agama DKB Semester I Tahun 2025  [1 res: xlsx]
+          XLSX datastore=False 775f6c27-ce7c-4022-ac38-f7aeb0f5860b https://data.kutaibaratkab.go.id/dataset/3575351e-7315-43d2-9db5-d6aff1423ff2/resource/775f6c27-ce7c-4022-ac38-f7aeb0f5860b/download/19.agama.xlsx
+      - jumlah-penduduk-berdasarkan-agama-dan-dirinci-menurut-jenis-kelamin-dalam-periode-8-tahun-20-20: Jumlah Penduduk berdasarkan Agama dan dirinci menurut Jenis Kelamin dalam Periode 8 tahun 2018 sd 2025  [3 res: csv,json,xlsx]
+          CSV datastore=True 571f7416-3937-11f1-928e-1866dab29db8 https://cdn.samarindakota.go.id/satudata/4f94e6e0-2cea-11ed-bde8-a76d4fa5106e/jumlah-penduduk-berdasarkan-agama-dan-dirinci-menurut-jenis-kelamin-dalam-periode-8-tahun-2018-sd-20.csv
+          XLSX datastore=False 572077d0-3937-11f1-8b3b-1866dab29db8 https://satudata.samarindakota.go.id/export/kategori/4f94e6e0-2cea-11ed-bde8-a76d4fa5106e?start=2018&end=2025&type=excel
+          JSON datastore=False 5721bc94-3937-11f1-bb96-1866dab29db8 https://satudata.samarindakota.go.id/api/kategori/4f94e6e0-2cea-11ed-bde8-a76d4fa5106e/jumlah-penduduk-berdasarkan-agama-dan-dirinci-menurut-jenis-kelamin?start=2018&end=2025
+      - jumlah-penduduk-menurut-desa-kelurahan-dan-agama-di-kecamatan-tenggarong: Jumlah Penduduk Menurut Desa/Kelurahan dan Agama di Kecamatan Tenggarong  [2 res: xlsx]
+          XLSX datastore=False e03b73cc-648a-4036-b4a8-5e45e4864e21 https://opendata.kukarkab.go.id/dataset/991767d1-7c99-4844-bb13-ae063fb2f18b/resource/e03b73cc-648a-4036-b4a8-5e45e4864e21/download/jlh-penduduk-menurut-agama.xlsx
+          XLSX datastore=False c0467217-3092-4bc5-8ce4-e6fcbdd90371 https://opendata.kukarkab.go.id/dataset/991767d1-7c99-4844-bb13-ae063fb2f18b/resource/c0467217-3092-4bc5-8ce4-e6fcbdd90371/download/tabel-4.4.1-jumlah-penduduk-menurut-desa-kelurahan-dan-agama-yang-dianut-di-kecamatan-tenggaron.xlsx
+      - jumlah-penduduk-menurut-desa-kelurahan-dan-agama-di-muara-wis: Jumlah Penduduk Menurut Desa/Kelurahan dan Agama di Muara Wis  [1 res: xlsx]
+          XLSX datastore=False 11e904b5-a8ee-427b-9cb6-8214e0c8b8a4 https://opendata.kukarkab.go.id/dataset/214452ea-c788-4b71-a939-e711894466f8/resource/11e904b5-a8ee-427b-9cb6-8214e0c8b8a4/download/tabel-4.28-jumlah-penduduk-menurut-desakelurahan-dan-agama-2021.xlsx
+      - data-penduduk-kecamatan-long-kali-menurut-agama-kepercayaan-tahun-2022: Data Penduduk Kecamatan Long Kali Menurut Agama Kepercayaan Tahun 2022  [1 res: pdf]
+          PDF datastore=False 08bb9fd6-1f76-47cb-afb6-721e40219784 https://data.paserkab.go.id/dataset/3e4fad8d-e746-4c8f-b8f7-aacc4c7f7017/resource/08bb9fd6-1f76-47cb-afb6-721e40219784/download/camscanner-23-11-2023-10.51.pdf
+      - jumlah-penduduk-menurut-desa-kelurahan-dan-agama-di-kec-sanga-sanga: Jumlah Penduduk Menurut Desa/Kelurahan dan Agama di Kec. Sanga-sanga  [2 res: xlsx]
+          XLSX datastore=False b4a00ce7-1af2-46f0-8771-d7233dccdba0 https://opendata.kukarkab.go.id/dataset/47e72a3e-d037-49e8-ac9b-b8ca12b5b1b4/resource/b4a00ce7-1af2-46f0-8771-d7233dccdba0/download/jumlah-penduduk-agama.xlsx
+          XLSX datastore=False 150038fe-89cf-4905-a988-e8f145fb8ba5 https://opendata.kukarkab.go.id/dataset/47e72a3e-d037-49e8-ac9b-b8ca12b5b1b4/resource/150038fe-89cf-4905-a988-e8f145fb8ba5/download/tabel-4.28-jumlah-penduduk-menurut-desa-kelurahan-dan-agama-2020.xlsx
+      - jumlah-penduduk-menurut-agama-dan-kecamatan-di-kabupaten-penajam-paser-utara: Jumlah Penduduk Menurut Agama dan Kecamatan di Kabupaten Penajam Paser Utara  [3 res: csv]
+          CSV datastore=False 3d55a655-1889-414d-adf0-159f45b0e078 https://opendata.penajamkab.go.id/dataset/446db3cf-9a1f-4713-88fe-44e93735c610/resource/3d55a655-1889-414d-adf0-159f45b0e078/download/jumlah_penduduk_menurut_agama_d.csv
+          CSV datastore=False 34a62fb1-b519-4c43-bfb2-7c4281f25078 https://opendata.penajamkab.go.id/dataset/446db3cf-9a1f-4713-88fe-44e93735c610/resource/34a62fb1-b519-4c43-bfb2-7c4281f25078/download/jumlah_penduduk_menurut_agama_d.csv
+          CSV datastore=False 7af029bf-23ca-425c-ae3b-d735cc62c7ed https://opendata.penajamkab.go.id/dataset/446db3cf-9a1f-4713-88fe-44e93735c610/resource/7af029bf-23ca-425c-ae3b-d735cc62c7ed/download/jumlah_penduduk_menurut_agama_d.csv
+      - jumlah-penduduk-menurut-desa-kelurahan-dan-agama-2020-di-kec-marangkayu: Jumlah Penduduk Menurut Desa/Kelurahan dan Agama, 2020 di Kec. Marangkayu  [1 res: xlsx]
+          XLSX datastore=False dfefcbb7-5c98-45a1-ba49-543f472ee946 http://opendata.kukarkab.go.id/dataset/fc44f467-c3b6-4154-943a-291c9869a188/resource/dfefcbb7-5c98-45a1-ba49-543f472ee946/download/agama.xlsx
+      - jumlah-penduduk-menurut-desa-kelurahan-dan-agama-2019-di-kec-tabang: Jumlah Penduduk Menurut Desa/Kelurahan dan Agama, 2019 di Kec. Tabang  [1 res: xlsx]
+          XLSX datastore=False a2976234-38b3-4a29-8235-4b5d36caa2fc https://opendata.kukarkab.go.id/dataset/dd50b146-8095-4fc9-a43c-1c16978b3657/resource/a2976234-38b3-4a29-8235-4b5d36caa2fc/download/tabel-4.28-jumlah-penduduk-menurut-desa-kelurahan-dan-agama-2019.xlsx
+      - jumlah-penduduk-menurut-kecamatan-dan-agama-yang-dianut-di-kota-balikpapan: Jumlah Penduduk Menurut Kecamatan dan Agama yang Dianut di Kota Balikpapan  [1 res: csv]
+          CSV datastore=True 2949757d-090f-445e-9dee-bb6528d7f9fc https://data.balikpapan.go.id/dataset/b4def9f0-5e9e-4901-a391-7e9e03a4e532/resource/2949757d-090f-445e-9dee-bb6528d7f9fc/download/jumlah-penduduk-menurut-kecamatan-dan-agama-yang-dianut-di-kota-balikpapan.csv
+      - jumlah-persentase-pemeluk-agama-menurut-desa-kelurahan-di-kecamatan-loa-kulu-2019: Jumlah Persentase Pemeluk Agama Menurut Desa/Kelurahan di Kecamatan Loa Kulu, 2019  [1 res: xlsx]
+          XLSX datastore=False b13227c3-adbf-41f2-a782-b8d5d7772173 http://opendata.kukarkab.go.id/dataset/9889e02b-94cb-4c67-b303-4da2c8f41948/resource/b13227c3-adbf-41f2-a782-b8d5d7772173/download/jumlah-pemeluk-agama.xlsx
+      - jumlah-penduduk-menurut-desa-kelurahan-dan-agama-di-kecamatan-muara-wis-2019: Jumlah Penduduk Menurut Desa/Kelurahan dan Agama di Kecamatan Muara Wis, 2019  [1 res: xlsx]
+          XLSX datastore=False 8319a598-b1d3-4448-8f0e-1db813f65cb1 http://opendata.kukarkab.go.id/dataset/ffd7c8c4-ae95-4be8-9cf9-56b77c8f4e3f/resource/8319a598-b1d3-4448-8f0e-1db813f65cb1/download/jlh-penduduk-menurut-desa_kel-dan-agama.xlsx
+      - jumlah-penduduk-menurut-desa-kelurahan-dan-agama-di-kecamatan-tenggarong-seberang-2019: Jumlah Penduduk Menurut Desa/Kelurahan dan Agama di Kecamatan Tenggarong Seberang, 2019  [1 res: xlsx]
+          XLSX datastore=False 3451cb77-eb75-4e30-be56-04a499f03f90 https://opendata.kukarkab.go.id/dataset/de91e394-dbc4-4bbd-a65b-aff247eef956/resource/3451cb77-eb75-4e30-be56-04a499f03f90/download/tabel-4.22.-jumlah-penduduk-menurut-desa-kelurahan-dan-agama-2019.xlsx
+      - jumlah-penduduk-menurut-kecamatan-dan-agama-yang-dianut-di-kabupaten-kutai-barat-2023: Jumlah Penduduk Menurut Kecamatan dan Agama yang Dianut di Kabupaten Kutai Barat,2023  [1 res: xlsx]
+          XLSX datastore=False cdfa9588-20d4-4d60-b084-38c05ffb5774 https://data.kutaibaratkab.go.id/dataset/151d6fb0-212c-466f-bdbf-1834646cb656/resource/cdfa9588-20d4-4d60-b084-38c05ffb5774/download/jumlah-penduduk-menurut-kecamatan-dan-agama-yang-dianut-di-kabupaten-kutai-barat2023.xlsx
+      - jumlah-penduduk-menurut-kecamatan-dan-agama-yang-dianut-di-kabupaten-kutai-barat-tahun-2025: Jumlah Penduduk Menurut Kecamatan dan Agama yang Dianut di Kabupaten Kutai Barat Tahun 2025  [2 res: csv,xlsx]
+          XLSX datastore=False 02ccfdb3-e165-4efa-be0f-14d12823a21e https://data.kutaibaratkab.go.id/dataset/cedca110-5b0e-431c-ace7-b42244534cab/resource/02ccfdb3-e165-4efa-be0f-14d12823a21e/download/jumlah-penduduk-menurut-kecamatan-dan-agama-yang-dianut-di-kabupaten-kutai-barat-tahun-2025.xlsx
+          CSV datastore=False b9916739-d968-4fb7-b8c2-18282a05b7c7 https://data.kutaibaratkab.go.id/dataset/cedca110-5b0e-431c-ace7-b42244534cab/resource/b9916739-d968-4fb7-b8c2-18282a05b7c7/download/jumlah-penduduk-menurut-kecamatan-dan-agama-yang-dianut-di-kabupaten-kutai-barat-tahun-2025.csv
+      - jumlah-penduduk-menurut-kecamatan-dan-agama-yang-dianut-di-kabupaten-kutai-barat-tahun-2024: Jumlah Penduduk Menurut Kecamatan dan Agama yang Dianut di Kabupaten Kutai Barat Tahun 2024  [1 res: xlsx]
+          XLSX datastore=False 1657656f-8e03-452b-9ba0-6a85d85adfaf https://data.kutaibaratkab.go.id/dataset/96834411-2513-4b33-b12e-834023a240dd/resource/1657656f-8e03-452b-9ba0-6a85d85adfaf/download/jumlah-penduduk-menurut-kecamatan-dan-agama-yang-dianut-di-kabupaten-kutai-barat-tahun-2024.xlsx
+      - rasio-tempat-ibadah-per-satuan-penduduk-prov-kaltim-2022: Data Rasio Tempat Ibadah per Satuan Penduduk Prov. Kaltim Tahun 2021-2023  [5 res: csv,xlsx]
+          XLSX datastore=True 6dcab089-a070-441a-92c4-81a87be16ed5 https://data.kaltimprov.go.id/dataset/187f9201-bec5-42b6-94cc-7fcc0202f350/resource/6dcab089-a070-441a-92c4-81a87be16ed5/download/data-rasio-tempat-ibadah-per-satuan-penduduk-prov.-kaltim-tahun-2021-2023.xlsx
+          CSV datastore=True 14f12ce9-0672-49fc-afe0-189edfe2afe8 https://data.kaltimprov.go.id/dataset/187f9201-bec5-42b6-94cc-7fcc0202f350/resource/14f12ce9-0672-49fc-afe0-189edfe2afe8/download/data-rasio-tempat-ibadah-per-satuan-penduduk-prov.-kaltim-tahun-2021-2022.csv
+          XLSX datastore=False 03b7795b-400d-4f41-99a9-779efbad29cd https://data.kaltimprov.go.id/dataset/187f9201-bec5-42b6-94cc-7fcc0202f350/resource/03b7795b-400d-4f41-99a9-779efbad29cd/download/data-rincian-rasio-tempat-ibadah-per-satuan-penduduk-prov.-kaltim-tahun-2021.xlsx
+          XLSX datastore=False 8e47bb47-6ed7-4703-888d-b85443980af9 https://data.kaltimprov.go.id/dataset/187f9201-bec5-42b6-94cc-7fcc0202f350/resource/8e47bb47-6ed7-4703-888d-b85443980af9/download/data-rincian-rasio-tempat-ibadah-per-satuan-penduduk-prov.-kaltim-tahun-2022.xlsx
+          XLSX datastore=False 77132b64-6358-449b-b345-a4ee66b3aee8 https://data.kaltimprov.go.id/dataset/187f9201-bec5-42b6-94cc-7fcc0202f350/resource/77132b64-6358-449b-b345-a4ee66b3aee8/download/data-rincian-rasio-tempat-ibadah-per-satuan-penduduk-prov.-kaltim-tahun-2023.xlsx
+      - laporan-kependudukan-dkb-semester-ii-2022: Laporan Kependudukan DKB Semester II 2022  [3 res: xlsx]
+          XLSX datastore=False 60bb0836-1813-4eb7-b337-652c40fb1325 https://data.balikpapan.go.id/dataset/ba68968e-9c33-40da-ab82-2615a4398cb8/resource/60bb0836-1813-4eb7-b337-652c40fb1325/download/laporan-kependudukan-dkb-semester-ii-2022-berdasarkan-agama.xlsx
+          XLSX datastore=False ebed578e-985a-400c-932f-41c56623b2bf https://data.balikpapan.go.id/dataset/ba68968e-9c33-40da-ab82-2615a4398cb8/resource/ebed578e-985a-400c-932f-41c56623b2bf/download/laporan-kependudukan-dkb-semester-ii-2022-berdasarkan-agama.xlsx
+          XLSX datastore=False f8841587-bc97-40d6-ba83-26fdec6dda1a https://data.balikpapan.go.id/dataset/ba68968e-9c33-40da-ab82-2615a4398cb8/resource/f8841587-bc97-40d6-ba83-26fdec6dda1a/download/laporan-kependudukan-dkb-semester-ii-2022-berdasarkan-agama.xlsx
+      (101 others not matching)
   https://data.jatengprov.go.id/ -> 500 text/html "Database Exception (#HY000)"
     /api/3/action/status_show -> 200 application/json CKAN 2.9.5
-    package_search q='agama' -> 200, 1869 matches, 15 shown
+    package_search q='agama' -> 200, 1869 matches, 150 shown, printing those matching 'penduduk|pemeluk'
       - pemeluk-agama-2015: Pemeluk Agama  [0 res: ]
       - pemeluk-agama-2016: Pemeluk Agama  [0 res: ]
       - pemeluk-agama-2014: Pemeluk Agama  [0 res: ]
       - data-jumlah-penduduk-berdasarkan-agama-jumlah-menurut-agama: Data Jumlah Penduduk Berdasarkan Agama Jumlah menurut agama  [1 res: json]
+          JSON datastore=False dc9303e8-95e9-4f1a-bf6b-97d3e43685f2 http://satudata.purworejokab.go.id/api/79153/0/jumlah-menurut-agama.json
       - banyaknya-pemeluk-agama: Banyaknya Pemeluk Agama  [1 res: csv]
+          CSV datastore=True 256138fb-8fa4-4827-8cd1-1706b095ef6b http://data.temanggungkab.go.id/dataset/e0873aed-b4ad-44dc-9616-6ecc9b965ba6/resource/256138fb-8fa4-4827-8cd1-1706b095ef6b/download/banyaknya-pemeluk-agama.csv
       - jumlah-penduduk-berdasarkan-agama: Jumlah Penduduk Berdasarkan Agama  [1 res: xls]
+          XLS datastore=False 4d33489a-6944-4028-868c-669cb2ac830f http://opendata.karanganyarkab.go.id/dataset/2d2d9060-3231-4f28-b684-eb15209f6b1d/resource/4d33489a-6944-4028-868c-669cb2ac830f/download/jumlah-penduduk-berdasarkan-agama.xls
       - jumlah-pemeluk-agama-di-kecamatan-wedung-tahun-2019: JUMLAH PEMELUK AGAMA  [1 res: xls]
+          XLS datastore=False c58cf22f-0ff0-41f0-a9b6-ed714d4e704b http://103.47.60.179/dataset/bc7d205b-dd01-44ff-9f8f-d2d609ed3e88/resource/c58cf22f-0ff0-41f0-a9b6-ed714d4e704b/download/jumlah-pemeluk-agama-di-kecamatan-wedung-tahun-2019.xlsx
       - jumlah-penduduk-menurut-agama: JUMLAH PENDUDUK MENURUT AGAMA  [2 res: .xlsx,csv]
-      - statistikagamapegawai: STATISTIK AGAMA PEGAWAI  [1 res: docx]
-      - data-ormas-berdasarkan-kesamaan-agama: Ormas Berdasarkan Kesamaan Agama  [1 res: xlsx]
-      - pks-pengadilan-agama-2021: PKS PENGADILAN AGAMA 2021  [1 res: pdf]
+          CSV datastore=False eb521c81-2def-42ef-908c-4842032592fc http://103.78.143.59/dataset/b10576dd-cc1f-4311-bb11-40556db0f2fb/resource/eb521c81-2def-42ef-908c-4842032592fc/download/jumlah-penduduk-menurut-agama-dirinci-menurut-desa-tahun-2015.csv
+          .xlsx datastore=False 3edb8621-8356-4d31-b279-032a082243ba http://103.78.143.59/dataset/b10576dd-cc1f-4311-bb11-40556db0f2fb/resource/3edb8621-8356-4d31-b279-032a082243ba/download/jumlah-penduduk-menurut-agama-dirinci-menurut-desa-tahun-2015.xlsx
       - jumlah-agama-dikec-mijen-2019: jumlah pemeluk agama  [1 res: xlsx]
+          XLSX datastore=False 707f67dc-e10f-47f0-8920-af320c1ea771 http://103.47.60.179/dataset/2455833b-b71c-4509-9e12-f5c03a414f90/resource/707f67dc-e10f-47f0-8920-af320c1ea771/download/jumlah-pemeluk-agama.xlsx
       - jumlah-penduduk-menurut-agama2: JUMLAH PENDUDUK MENURUT AGAMA  [1 res: xlsx]
-      - agama-dan-kepercayaan: Agama dan Kepercayaan  [0 res: ]
+          XLSX datastore=False 0b949820-b579-4b2a-93c7-b7ed4b0c3b78 https://opendata.karanganyarkab.go.id/dataset/674274da-0a8d-48f2-b92d-ba906f46c1c5/resource/0b949820-b579-4b2a-93c7-b7ed4b0c3b78/download/jumlah-penduduk-menurut-agama.xlsx
       - penduduk_agama_15853: Jumlah Penduduk Berdasarkan Agama  [0 res: ]
-  https://opendata.jatengprov.go.id/ -> 0  DNS: no such host
+      - penduduk_agama_15852: Jumlah Penduduk Berdasarkan Agama  [0 res: ]
+      - jumlah-pemeluk-agama: Jumlah Pemeluk Agama  [0 res: ]
+      - penduduk_agama_15851: Jumlah Penduduk Berdasarkan Agama  [0 res: ]
+      - penduduk_agama_1585: JUMLAH PENDUDUK BERDASARKAN AGAMA  [0 res: ]
+      - jumlah-pemeluk-agama-di-kecamatan-karangawen-tahun-2015: JUMLAH PEMELUK AGAMA  [1 res: xlsx]
+          XLSX datastore=False dd593a07-2268-489f-9d8e-4ccfb43129d1 http://103.47.60.179/dataset/3a9cadbe-7ff2-4a8b-983f-b912baa363d5/resource/dd593a07-2268-489f-9d8e-4ccfb43129d1/download/book67.xlsx
+      - jumlah-pemeluk-agama-di-kecamatan-dempet: Jumlah Pemeluk Agama  [1 res: xlsx]
+          XLSX datastore=False 5c2c275f-b90d-49a6-af2e-9958858bee48 http://103.47.60.179/dataset/23bc677d-6a07-4d04-b992-2ffe47dd4c1f/resource/5c2c275f-b90d-49a6-af2e-9958858bee48/download/jumlah-pemeluk-agama-di-kecamatan-dempet.xlsx
+      - jumlah-pemeluk-agama-islam: JUMLAH PEMELUK AGAMA ISLAM  [0 res: ]
+      - jumlah-pemeluk-agama-katolik: JUMLAH PEMELUK AGAMA KATOLIK  [0 res: ]
+      - jumlah-pemeluk-agama-hindu: JUMLAH PEMELUK AGAMA HINDU  [0 res: ]
+      - jumlah-penduduk-menurut-agama1: JUMLAH PENDUDUK MENURUT AGAMA  [0 res: ]
+      - jumlah-pemeluk-agama-budha: JUMLAH PEMELUK AGAMA BUDHA  [1 res: xlsx]
+          XLSX datastore=False a1491ea7-5ff5-4fcc-a25b-dedfcae078c8 http://103.47.60.179/dataset/f37be7a5-28fd-4055-afe5-411b09010d30/resource/a1491ea7-5ff5-4fcc-a25b-dedfcae078c8/download/jumlah-pemeluk-agama-budha-kecamatan-bonang-tahun-2019.xlsx
+      - banyaknya-pemeluk-agama-per-kelurahan-kota-salatiga: Penduduk Berdasarkan Pemeluk Agama  [1 res: csv]
+          CSV datastore=False b19cafe3-7951-48af-81bb-fd8ef9b603a4 http://data.salatiga.go.id/en/dataset/e9486e97-f65a-4448-8e71-b0abe15eb1b9/resource/b19cafe3-7951-48af-81bb-fd8ef9b603a4/download/banyaknya-pemeluk-agama-per-kelurahan-kota-salatiga-tahun-2017.csv
+      - jumlah-pemeluk-agama-di-kecamatan-karangawen-tahun-2017: JUMLAH PEMELUK AGAMA  [1 res: xlsx]
+          XLSX datastore=False 33f53372-36d0-48f8-95ea-f9fb07133c47 http://103.47.60.179/dataset/151d7952-208b-48d4-af23-3e3cb8b89ef5/resource/33f53372-36d0-48f8-95ea-f9fb07133c47/download/jumlah-pemeluk-agama-di-kecamatan-karangawen-tahun-2017.xlsx
+      - komposisi_penduduk_menurut_agama_16494: Komposisi Penduduk Menurut Agama  [0 res: ]
+      - komposisi_penduduk_menurut_agama_16493: Komposisi Penduduk Menurut Agama  [0 res: ]
+      - komposisi_penduduk_menurut_agama_16492: Komposisi Penduduk Menurut Agama  [0 res: ]
+      - komposisi_penduduk_menurut_agama_16491: Komposisi Penduduk Menurut Agama  [0 res: ]
+      - komposisi_penduduk_menurut_agama_1649: Komposisi Penduduk Menurut Agama  [0 res: ]
+      - jumlah-penduduk-berdasarkan-agama-per-kecamatan: Jumlah Penduduk Berdasarkan Agama  [2 res: csv,xlsx]
+          CSV datastore=False d3de9434-9c98-4634-9e4c-1a2b4ebf17a1 https://data.purbalinggakab.go.id/dataset/8ea3bb1b-d820-4571-8a00-031080b98899/resource/d3de9434-9c98-4634-9e4c-1a2b4ebf17a1/download/tahun-2015-semester-2-jumlah-penduduk-berdasarkan-agama.csv
+          XLSX datastore=False 35107176-374e-4c09-9f6c-6a116194b103 https://data.purbalinggakab.go.id/dataset/8ea3bb1b-d820-4571-8a00-031080b98899/resource/35107176-374e-4c09-9f6c-6a116194b103/download/19.-jumlah-penduduk-berdasarkan-agama-per-kec.xlsx
+      - jumlah-pemeluk-agama-protestan-kecamatan-bonang-tahun-2019aa: JUMLAH PEMELUK AGAMA PROTESTAN  [0 res: ]
+      - jumlah-pemeluk-agama-di-kecamatan-karanganyar-tahun-2015: Jumlah Pemeluk Agama  [0 res: ]
+      - jumlah-pemeluk-agama-islam-dikecamatan-guntur-tahun-2019: JUMLAH PEMELUK AGAMA ISLAM  [0 res: ]
+      - jumlah-pemeluk-agama-islam-dikecamatan-guntur-tahun-2020: JUMLAH PEMELUK AGAMA ISLAM  [0 res: ]
+      - 2016: JUMLAH PEMELUK AGAMA  [1 res: xlsx]
+          XLSX datastore=False d160dd47-085b-41a6-b030-e0ddf0a1752a http://103.47.60.179/dataset/6e1d3025-1442-4a3a-8365-962fda650699/resource/d160dd47-085b-41a6-b030-e0ddf0a1752a/download/jumlah-pemeluk-agama-di-kecamatan-dempet-tahun-2016.xlsx
+      - jumlah-pemeluk-agama-di-kecamatan-karangawen-tahun-2018: JUMLAH PEMELUK AGAMA  [1 res: xlsx]
+          XLSX datastore=False 962b177d-dafa-41c3-9dea-6eaa12906bcf http://103.47.60.179/dataset/523ecae9-89dc-455f-b797-d74b9b95d0c9/resource/962b177d-dafa-41c3-9dea-6eaa12906bcf/download/book62.xlsx
+      - jumlah-pemeluk-agama-di-kecamatan-karanganyar-tahun-2019: Jumlah Pemeluk Agama  [0 res: ]
+      - jumlahpemelukagama: jumlah pemeluk agama  [0 res: ]
+      - jumlahpemeluk: Jumlah Pemeluk Agama  [0 res: ]
+      - jumlah-penduduk-berdasarkan-agama-2019: Jumlah penduduk berdasarkan agama 2019  [1 res: pdf]
+          PDF datastore=False 337d0a70-8c29-4aff-affa-9aae2a874cde http://data.grobogan.go.id/dataset/e2325653-48b8-4c65-9301-77752c1b007a/resource/337d0a70-8c29-4aff-affa-9aae2a874cde/download/19_jumlah_penduduk_agama_kec_201902.pdf
+      - jumlah-penduduk-sesuai-agama-2019: JUMLAH PENDUDUK SESUAI AGAMA 2019  [2 res: csv,xlsx]
+          XLSX datastore=False add88b4a-6c48-42a9-9235-2a9dd24c1886 http://103.146.199.34/dataset/e13ba638-0901-4a69-a1af-0fc87466c619/resource/add88b4a-6c48-42a9-9235-2a9dd24c1886/download/jml-penduduk-sesuai-agama-2019.xlsx
+          CSV datastore=False 02853890-8031-4cad-9384-c6f31efe887b http://103.146.199.34/dataset/e13ba638-0901-4a69-a1af-0fc87466c619/resource/02853890-8031-4cad-9384-c6f31efe887b/download/jml-penduduk-sesuai-agama-2019.xlsx
+      - jumlah-pemeluk-agama-kecamatan-pegandon: JUMLAH PEMELUK AGAMA KECAMATAN PEGANDON  [1 res: docx]
+          DOCX datastore=False bfc8f885-748a-454d-aac8-f6dfa5eaabb4 http://118.97.18.18/dataset/6ca1366a-17a5-4314-9f31-b8f4efeec868/resource/bfc8f885-748a-454d-aac8-f6dfa5eaabb4/download/dt.kependudukan-menurut-pemeluk-agama.docx
+      - penduduk-menurut-agama-yang-dianut: Penduduk menurut Agama yang dianut  [0 res: ]
+      - jumlah-pemeluk-agama-kecamatan-mijen: Jumlah Pemeluk Agama Kecamatan Mijen  [0 res: ]
+      - demografi-kependudukan_agama-penduduk-2021: Demografi Kependudukan_Agama Penduduk 2021  [1 res: xlsx]
+          XLSX datastore=False 99c97234-1809-4fc4-baec-5a1b65bb85aa https://opendata.karanganyarkab.go.id/dataset/5f01bcf5-19dd-4223-a7d7-446a1ab38b55/resource/99c97234-1809-4fc4-baec-5a1b65bb85aa/download/2021-data-status-perkawinan.xls
+      - jumlah-pemeluk-agama-kristen-protestan-dikecamatan-guntur-tahun-2019: JUMLAH PEMELUK AGAMA KRISTEN PROTESTAN  [0 res: ]
+      - jumlah-pemeluk-agama-kristen-khatolik-dikecamatan-guntur-tahun-2020: JUMLAH PEMELUK AGAMA KRISTEN KHATOLIK  [0 res: ]
+      - jumlah-pemeluk-agama-kristen-protestan-dikecamatan-guntur-tahun-2020: JUMLAH PEMELUK AGAMA KRISTEN PROTESTAN  [0 res: ]
+      - jumlah-pemeluk-agama-kristen-khatolik-dikecamatan-guntur-tahun-2019: JUMLAH PEMELUK AGAMA KRISTEN KHATOLIK  [0 res: ]
+      - jumlah-pemeluk-agama-kecamatan-bonang-tahun-2018: JUMLAH PEMELUK AGAMA KECAMATAN BONANG  [0 res: ]
+      - jumlah-penduduk-sesuai-agama-2022-2024: Jumlah Penduduk sesuai Agama 2022-2024  [1 res: csv]
+          CSV datastore=True 7545b842-62a1-45ed-af05-9f2a3598b041 https://opendata.banjarnegarakab.go.id/dataset/c8198c2d-7b09-4113-b4c7-aac03bcf29bb/resource/7545b842-62a1-45ed-af05-9f2a3598b041/download/jumlah_penduduk_sesuai_agama_2022-2024.csv
+      - agama-dan-sosial-lainnya-jumlah-penduduk-menurut-kecamatan-dan-agama-yang-dianut-2020: AGAMA DAN SOSIAL LAINNYA Jumlah Penduduk Menurut Kecamatan dan Agama yang Dianut, 2020  [1 res: csv]
+          CSV datastore=False 0a4bdd5b-f705-4bb0-910b-9c8c062b3cd0 http://data.sragenkab.go.id/dataset/707aaebd-c3a8-4d2b-83c1-06991e976d17/resource/0a4bdd5b-f705-4bb0-910b-9c8c062b3cd0/download/kesehatan-banyaknya-peserta-menurut-jenis-kepesertaan-pada-bpjs-kabupaten-sragen-2018-2020.csv
+      - jumlah-penduduk-berdasarkan-agama-tahun-2021: Jumlah Penduduk Berdasarkan Agama Tahun 2021  [3 res: xls]
+          XLS datastore=False a048935d-2ab8-4b18-82c2-e48a5748ccfd https://data.brebeskab.go.id/dataset/a2d1e117-fcd4-4149-a49a-855e1d73e3f7/resource/a048935d-2ab8-4b18-82c2-e48a5748ccfd/download/19_jumlah_penduduk_agama_kab.xls
+          XLS datastore=False 89d86733-24be-4f1d-87be-ca39f4fb9950 https://data.brebeskab.go.id/dataset/a2d1e117-fcd4-4149-a49a-855e1d73e3f7/resource/89d86733-24be-4f1d-87be-ca39f4fb9950/download/19_jumlah_penduduk_agama_kec.xls
+          XLS datastore=False 3544248d-1396-4cc2-98b2-99d5589222d1 https://data.brebeskab.go.id/dataset/a2d1e117-fcd4-4149-a49a-855e1d73e3f7/resource/3544248d-1396-4cc2-98b2-99d5589222d1/download/19_jumlah_penduduk_agama_kel.xls
+      - jumlah-pemeluk-agama-di-kecamatan-karanganyar-tahun-2014: Jumlah Pemeluk Agama di Kecamatan Karanganyar  [1 res: xlsx]
+          XLSX datastore=False db9e12d7-deb6-4614-bc9d-a0eacf436546 http://103.47.60.179/dataset/3aa9a928-8830-46c2-96ad-e35c1cc1fb3c/resource/db9e12d7-deb6-4614-bc9d-a0eacf436546/download/jumlah-pemeluk-agama-di-kecamatan-karanganyar-tahun-2014.xlsx
+      - jumlah-penduduk-berdasarkan-agama-2023-semester-i: Jumlah Penduduk Berdasarkan Agama 2023 Semester I  [2 res: csv,pdf]
+          PDF datastore=False b8b80540-d008-4ab2-bee6-5b6e93a0c900 http://data.grobogan.go.id/dataset/c2a6d80e-a87d-4ecb-a808-fcd91022f709/resource/b8b80540-d008-4ab2-bee6-5b6e93a0c900/download/6-jumlah-agama-per-kec-202301-ok.pdf
+          CSV datastore=False 9dd762b8-f83d-4c21-b0e1-987ad1a3f5d0 http://data.grobogan.go.id/dataset/c2a6d80e-a87d-4ecb-a808-fcd91022f709/resource/9dd762b8-f83d-4c21-b0e1-987ad1a3f5d0/download/jumlah-agama-per-kec-202301-ok.csv
+      - jumlah-penduduk-menurut-agama-di-kecamatan-banyuputih-2017: Jumlah Penduduk Menurut Agama di Kecamatan Banyuputih  [2 res: csv,xlsx]
+          XLSX datastore=False ee86024d-7d9c-40f7-b61e-45830a6ae963 http://data.batangkab.go.id/dataset/265a068f-6bfb-4066-a852-dea71cd6f92e/resource/ee86024d-7d9c-40f7-b61e-45830a6ae963/download/jumlah-penduduk-menurut-agama-di-kecamatan-banyuputih-2017.xlsx
+          CSV datastore=False f29cc0e7-9e6b-46a1-ba47-c05ed75b1285 http://data.batangkab.go.id/dataset/265a068f-6bfb-4066-a852-dea71cd6f92e/resource/f29cc0e7-9e6b-46a1-ba47-c05ed75b1285/download/jumlah-penduduk-menurut-agama-di-kecamatan-banyuputih-2017.csv
+      - table-58-jml-pemeluk-agama-2017: Table 58 Jml Pemeluk Agama 2018  [1 res: xlsx]
+          XLSX datastore=False 5ab20e3e-df0f-490d-8d38-e8f48c96b771 http://103.47.60.179/dataset/21c44651-a660-4fff-9357-db5c14398646/resource/5ab20e3e-df0f-490d-8d38-e8f48c96b771/download/table-58-jml-pemeluk-agama.xlsx
+      - jumlah-pemeluk-agama-jiwa-protestan-2014: Jumlah Pemeluk Agama (Jiwa) Protestan 2014  [1 res: xlsx]
+          XLSX datastore=False b4574790-d3dc-4617-be93-a87875586cd4 https://drive.google.com/file/d/1dlr6FcsRxvV0DSeEOjJzPhEIvVKrM85v/view
+      - jumlah-pemeluk-agama-jiwa-protestan-2012: Jumlah Pemeluk Agama (Jiwa) Protestan 2012  [1 res: xlsx]
+          XLSX datastore=False fd33261c-b889-4224-8077-0dcf82100507 https://drive.google.com/file/d/1GNfqjlyaMutP_vNpB7Zh1W4ccvCdVMzs/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2014: Jumlah Pemeluk Agama (Jiwa) Hindu 2014  [1 res: xlsx]
+          XLSX datastore=False e022b33a-55b1-443f-981a-67be6a3a10d5 https://drive.google.com/file/d/1aXoIgVp256rXyNKCt670zwMGBTiQrwyl/view
+      - jumlah-pemeluk-agama-jiwa-protestan-2019: Jumlah Pemeluk Agama (Jiwa) Protestan 2019  [1 res: xlsx]
+          XLSX datastore=False 4e252175-ea3c-4519-b64e-a47a5ce267b8 https://drive.google.com/file/d/11HQhtRb4lXTr7DCGSMxeGZT5QWtJhwuW/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2010: Jumlah Pemeluk Agama (Jiwa) Hindu 2010  [1 res: xlsx]
+          XLSX datastore=False b4d9add3-b49e-4c18-9987-c659afd63395 https://drive.google.com/file/d/19y9dcLmZxK-Z9QWJoQ7n2up2MbXTyVNu/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2009: Jumlah Pemeluk Agama (Jiwa) Hindu 2009  [1 res: xlsx]
+          XLSX datastore=False cd3c29d5-fb5e-4c58-a8a9-085d145ed4bf https://drive.google.com/file/d/1tKXDlXDYqzEIbtEqZ1CTCQeWbb7SJHBV/view
+      - jumlah-pemeluk-agama-jiwa-protestan-2001-2020: Jumlah Pemeluk Agama (Jiwa) Protestan 2001-2020  [1 res: xlsx]
+          XLSX datastore=False 54c07179-8d90-43f3-b4b9-b8531500d41c https://drive.google.com/file/d/1uGS_Bov0V4PbayWGFbEGX-NkwoCUFdT3/view
+      - jumlah-pemeluk-agama-jiwa-katolik-2002: Jumlah Pemeluk Agama (Jiwa) Katolik 2002  [1 res: xlsx]
+          XLSX datastore=False 887597a7-5b69-4104-840f-fc1cf21d67e9 https://drive.google.com/file/d/1caI7wafCoZkkKwRcXPNDFOnfWObjz7PK/view
+      - jumlah-pemeluk-agama-jiwa-budha-2009: Jumlah Pemeluk Agama (Jiwa) Budha 2009  [1 res: xlsx]
+          XLSX datastore=False 8b195fcb-d675-43a0-9df5-11bfee251142 https://drive.google.com/file/d/1BYYWBn1saQmnn1ZEYF9khFFLgRBqTeJY/view
+      - jumlah-pemeluk-agama-jiwa-katolik-2017: Jumlah Pemeluk Agama (Jiwa) Katolik 2017  [1 res: xlsx]
+          XLSX datastore=False 085dc92d-277c-4b70-a52c-d6df9541caa1 https://drive.google.com/file/d/1eh75Z8rpH40GCU21twj6LmE3rSM5_-oH/view
+      - jumlah-pemeluk-agama-jiwa-budha-2003: Jumlah Pemeluk Agama (Jiwa) Budha 2003  [1 res: xlsx]
+          XLSX datastore=False 1a9201bb-642e-4968-91da-9bf753764fc9 https://drive.google.com/file/d/16dtHIDruhNyDwbXzEKVuXXK6cgxK7sNi/view
+      - jumlah-pemeluk-agama-jiwa-islam-2002: Jumlah Pemeluk Agama (Jiwa) Islam 2002  [1 res: xlsx]
+          XLSX datastore=False d6faaa2f-fcc4-4252-a6a6-f953ad673a69 https://drive.google.com/file/d/1zuWt7kprJM95eH5-LIq0OvSf5ta3qoff/view
+      - jumlah-pemeluk-agama-jiwa-katolik-2001-2020: Jumlah Pemeluk Agama (Jiwa) Katolik 2001-2020  [1 res: xlsx]
+          XLSX datastore=False 23be8a14-fd70-487e-a387-6b87522fface https://drive.google.com/file/d/1rPar7HpoDPuDxpGOPBks0XY66492ztkh/view
+      - jumlah-pemeluk-agama-jiwa-protestan-2010: Jumlah Pemeluk Agama (Jiwa) Protestan 2010  [1 res: xlsx]
+          XLSX datastore=False 2c07ca65-27c2-4811-9eb8-9d7c1747aa9b https://drive.google.com/file/d/1eE32xhOtUDeH1_DEOGasBsJdOPW6na1u/view
+      - jumlah-pemeluk-agama-jiwa-lainnya-2004: Jumlah Pemeluk Agama (Jiwa) Lainnya 2004  [1 res: xlsx]
+          XLSX datastore=False a2e0246c-5a97-4e41-82ef-1ef1b33bf644 https://drive.google.com/file/d/1Bg8UWxUMSXPMgucPckJoEi_EHeS0vPtd/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2016: Jumlah Pemeluk Agama (Jiwa) Hindu 2016  [1 res: xlsx]
+          XLSX datastore=False 0b827e39-785e-4ddd-8959-9318dc3df20d https://drive.google.com/file/d/1L-Ymb2GfO2c-v4A7cJz5_bvsdKxOiW_f/view
+      - jumlah-pemeluk-agama-jiwa-lainnya-2001: Jumlah Pemeluk Agama (Jiwa) Lainnya 2001  [1 res: xlsx]
+          XLSX datastore=False 7180b5d4-1544-48ef-b1d2-eb16cf4f1e5b https://drive.google.com/file/d/1uTulRBppAPfpurDSq9yDsFQ3kY5srbvf/view
+      - jumlah-pemeluk-agama-jiwa-lainnya-2006: Jumlah Pemeluk Agama (Jiwa) Lainnya 2006  [1 res: xlsx]
+          XLSX datastore=False 5fa219bc-5d83-47a7-8c79-fe31699d489f https://drive.google.com/file/d/1Rl_gt7UMCqgNMSregv7shAlX3tv7Elfy/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2006: Jumlah Pemeluk Agama (Jiwa) Hindu 2006  [1 res: xlsx]
+          XLSX datastore=False c0167ce8-10ae-41e5-8203-83e5ac2fd151 https://drive.google.com/file/d/1wALJN0T-cy31qViL9vc9WU8BOA-m8YwF/view
+      - jumlah-pemeluk-agama-jiwa-protestan-2003: Jumlah Pemeluk Agama (Jiwa) Protestan 2003  [1 res: xlsx]
+          XLSX datastore=False da82ffac-7ec5-45cb-9c00-eff3f1f64fda https://drive.google.com/file/d/1nOdfHWXp_4Iej83I03UoCCi41GayG1Qg/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2001: Jumlah Pemeluk Agama (Jiwa) Hindu 2001  [1 res: xlsx]
+          XLSX datastore=False 5f59de3a-1f9c-40ec-902c-4b6732bc5caf https://drive.google.com/file/d/11y88gbPZHbsq2GgupcS2dzxld4QDWnOt/view
+      - jumlah-pemeluk-agama-jiwa-lainnya-2002: Jumlah Pemeluk Agama (Jiwa) Lainnya 2002  [1 res: xlsx]
+          XLSX datastore=False 022561e6-8353-4d07-901b-c7ac842ad07d https://drive.google.com/file/d/1lwk9ICWsmMakFfEuTf5y1wan92UgP4tI/view
+      - jumlah-pemeluk-agama-jiwa-lainnya-2001-2020: Jumlah Pemeluk Agama (Jiwa) Lainnya 2001-2020  [1 res: xlsx]
+          XLSX datastore=False fc1ae785-2cd6-4eef-b240-461ee88a6e47 https://drive.google.com/file/d/1iEMOubXulZhU4huFhqbVqlTVbvu61Izd/view
+      - jumlah-pemeluk-agama-jiwa-islam-2010: Jumlah Pemeluk Agama (Jiwa) Islam 2010  [1 res: xlsx]
+          XLSX datastore=False 45cb9db8-10e3-4524-be56-a252b5f2f06c https://drive.google.com/file/d/1CX7DaNJX-KxNyeQTwdlZfmI9Znk4FE_s/view
+      - jumlah-pemeluk-agama-jiwa-katolik-2020: Jumlah Pemeluk Agama (Jiwa) Katolik 2020  [1 res: xlsx]
+          XLSX datastore=False 83f8c988-e98e-444e-bf0c-fbc234efc711 https://drive.google.com/file/d/10FKmWFyjp2qyFS9bKGSgdBC9IiOumB6L/view
+      - jumlah-pemeluk-agama-jiwa-katolik-2014: Jumlah Pemeluk Agama (Jiwa) Katolik 2014  [1 res: xlsx]
+          XLSX datastore=False 1438f489-63c9-4358-9845-dd16bf170b85 https://drive.google.com/file/d/19yRTarJB21gdnvPLBg51Hy3Thb5wcmJm/view
+      - jumlah-pemeluk-agama-jiwa-lainnya-2007: Jumlah Pemeluk Agama (Jiwa) Lainnya 2007  [1 res: xlsx]
+          XLSX datastore=False 7e822935-166d-4da6-89ba-fb6329215caf https://drive.google.com/file/d/1v3gGWTABhMgxZQBvQmS4Mc83kZcRXo7i/view
+      - jumlah-pemeluk-agama-jiwa-lainnya-2008: Jumlah Pemeluk Agama (Jiwa) Lainnya 2008  [1 res: xlsx]
+          XLSX datastore=False e0976ebf-44ca-45bb-bfab-fa82ea0b73f1 https://drive.google.com/file/d/1O7WU8lQZdxjNyU6FRwWG7XfTe0TT7Sba/view
+      - jumlah-pemeluk-agama-jiwa-budha-2010: Jumlah Pemeluk Agama (Jiwa) Budha 2010  [1 res: xlsx]
+          XLSX datastore=False 31277eed-ee5a-419f-9394-fa3576627f20 https://drive.google.com/file/d/1NcZ_VeufRrbf5kN0p9QOeGj7OXcp4j3B/view
+      - jumlah-pemeluk-agama-jiwa-budha-2019: Jumlah Pemeluk Agama (Jiwa) Budha 2019  [1 res: xlsx]
+          XLSX datastore=False 7941a54a-b3b9-4aac-9025-0acd4c7c7d9d https://drive.google.com/file/d/1xgNCsVsg8GSqOSqHHiahL50o05EdO9kL/view
+      - jumlah-pemeluk-agama-jiwa-protestan-2008: Jumlah Pemeluk Agama (Jiwa) Protestan 2008  [1 res: xlsx]
+          XLSX datastore=False 2a34ab88-7424-4708-b461-fa71c2b8c879 https://drive.google.com/file/d/1zx-qBtkcH_gA_ihdqAauI9J1fwmHCdaH/view
+      - jumlah-pemeluk-agama-jiwa-protestan-2016: Jumlah Pemeluk Agama (Jiwa) Protestan 2016  [1 res: xlsx]
+          XLSX datastore=False c2b8a289-997d-4fae-8602-1b2913bbf775 https://drive.google.com/file/d/1ddi_QvjixCt9LIAyecf7aT_K6C_Kwcia/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2012: Jumlah Pemeluk Agama (Jiwa) Hindu 2012  [1 res: xlsx]
+          XLSX datastore=False 63db606c-751d-4731-a7c9-aa6787259e61 https://drive.google.com/file/d/12S7YrpMPSCgj_5ufYQmVKQlhj5c-Dn9j/view
+      - jumlah-pemeluk-agama-jiwa-protestan-2002: Jumlah Pemeluk Agama (Jiwa) Protestan 2002  [1 res: xlsx]
+          XLSX datastore=False 812a2311-0ad7-44b0-9fe6-f97fd0cd1d16 https://drive.google.com/file/d/1MgpuRcacBz3arkS-N-NmQbnHA2jztGqH/view
+      - jumlah-pemeluk-agama-jiwa-budha-2012: Jumlah Pemeluk Agama (Jiwa) Budha 2012  [1 res: xlsx]
+          XLSX datastore=False e31156d1-8e98-4e7a-beba-48b6b10540ae https://drive.google.com/file/d/1gs3ZiBo3st2xdhSYTqBbswloJ8YjfTVJ/view
+      - jumlah-pemeluk-agama-jiwa-lainnya-2012: Jumlah Pemeluk Agama (Jiwa) Lainnya 2012  [1 res: xlsx]
+          XLSX datastore=False 7116b95b-bfac-48e4-9dc7-78157cf05ef5 https://drive.google.com/file/d/17EVsR9geQPlQNqp7_0wrYBC0_4j8LKqS/view
+      - jumlah-pemeluk-agama-jiwa-protestan-2015: Jumlah Pemeluk Agama (Jiwa) Protestan 2015  [1 res: xlsx]
+          XLSX datastore=False 7dd9ca1e-b93b-485d-a5dd-49be875cdb13 https://drive.google.com/file/d/1ApZzEKXQLnuqrf2I-v89mYkfEJ0-ms5H/view
+      - jumlah-pemeluk-agama-jiwa-lainnya-2009: Jumlah Pemeluk Agama (Jiwa) Lainnya 2009  [1 res: xlsx]
+          XLSX datastore=False c2e6018d-a7f0-4f9d-ba5d-bf6190083dd2 https://drive.google.com/file/d/1hMeWzCCFcudfGcyDF8EngrJd7s9gjFlB/view
+      - jumlah-pemeluk-agama-jiwa-budha-2016: Jumlah Pemeluk Agama (Jiwa) Budha 2016  [1 res: xlsx]
+          XLSX datastore=False 000faa22-a029-4c89-be7c-28ab5c60b2cf https://drive.google.com/file/d/1K_hnM9KSHG5nWWdSXQzxTgAEabroDAbA/view
+      - jumlah-pemeluk-agama-jiwa-lainnya-2017: Jumlah Pemeluk Agama (Jiwa) Lainnya 2017  [1 res: xlsx]
+          XLSX datastore=False 22cef251-fe09-4a4c-9905-ad2e0acf8079 https://drive.google.com/file/d/1NXY6RK649ME0OpEiH5DNcAjMeKXEO9e0/view
+      - jumlah-pemeluk-agama-jiwa-islam-2016: Jumlah Pemeluk Agama (Jiwa) Islam 2016  [1 res: xlsx]
+          XLSX datastore=False 35d8982b-a1d6-4094-aadf-944acbd6960c https://drive.google.com/file/d/11t2GQ-vJ5xNX1lg1icReN3TXQgI2SnYX/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2005: Jumlah Pemeluk Agama (Jiwa) Hindu 2005  [1 res: xlsx]
+          XLSX datastore=False 7f8d81b1-68ca-475f-aac9-0e3782b21dab https://drive.google.com/file/d/11OPKu3XSpzqzD1KyUbColfyjHsGlIYf3/view
+      - jumlah-pemeluk-agama-jiwa-islam-2006: Jumlah Pemeluk Agama (Jiwa) Islam 2006  [1 res: xlsx]
+          XLSX datastore=False f8a00b2b-8642-48b2-9bde-833dfa8479f2 https://drive.google.com/file/d/1AX7ypceH6k2LWgqIy5rW2uEABKLhvAVB/view
+      - jumlah-pemeluk-agama-jiwa-katolik-2007: Jumlah Pemeluk Agama (Jiwa) Katolik 2007  [1 res: xlsx]
+          XLSX datastore=False f9c4e077-ee0e-4886-af36-c0c9772e9882 https://drive.google.com/file/d/1rb7z59QcBKG2OH60E2smU9OwxfXYDLy0/view
+      - jumlah-pemeluk-agama-jiwa-islam-2007: Jumlah Pemeluk Agama (Jiwa) Islam 2007  [1 res: xlsx]
+          XLSX datastore=False 24abc7ba-7932-4bce-8a5b-ed7b38d8151f https://drive.google.com/file/d/1_Qhfn7_fsr1xN14VFqBptaaQU-1b-aJ0/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2020: Jumlah Pemeluk Agama (Jiwa) Hindu 2020  [1 res: xlsx]
+          XLSX datastore=False 31834d82-1987-4836-bddc-f2c1e4c2a7f0 https://drive.google.com/file/d/1RsOA5IdcfTMfNM5qZh1B4YbekpIAkrPR/view
+      - jumlah-pemeluk-agama-jiwa-budha-2006: Jumlah Pemeluk Agama (Jiwa) Budha 2006  [1 res: xlsx]
+          XLSX datastore=False 0b25e90a-4723-4e01-9aa0-95c3d676e93f https://drive.google.com/file/d/1-Qm7J4MAvb3XIMW-0bDEU1bDrxT006fa/view
+      - jumlah-pemeluk-agama-jiwa-protestan-2007: Jumlah Pemeluk Agama (Jiwa) Protestan 2007  [1 res: xlsx]
+          XLSX datastore=False 1460dd4e-416d-4e81-b3a8-a33b9fabcb4e https://drive.google.com/file/d/160K3HJj5hUWb41JHEAXxg245EIA74bVV/view
+      - jumlah-pemeluk-agama-jiwa-islam-2019: Jumlah Pemeluk Agama (Jiwa) Islam 2019  [1 res: xlsx]
+          XLSX datastore=False 0d117e0b-c862-44dc-8a17-197ed954d2cc https://drive.google.com/file/d/19uNteTXqhs38Lh6C9OeOixZQhHgz0UxT/view
+      - jumlah-pemeluk-agama-jiwa-islam-2003: Jumlah Pemeluk Agama (Jiwa) Islam 2003  [1 res: xlsx]
+          XLSX datastore=False 6fbb23a5-33aa-4295-90e9-acf50331b3c8 https://drive.google.com/file/d/1EP_W7fMph8Ahl46h3FzlEVO8i6rg6OmL/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2018: Jumlah Pemeluk Agama (Jiwa) Hindu 2018  [1 res: xlsx]
+          XLSX datastore=False 8b8dbd95-7436-45ed-9b71-eb694c1c46f7 https://drive.google.com/file/d/1KIRWw_ZtkQj_lLJ9O43V_78Duv2grW9a/view
+      - jumlah-pemeluk-agama-jiwa-katolik-2013: Jumlah Pemeluk Agama (Jiwa) Katolik 2013  [1 res: xlsx]
+          XLSX datastore=False 6e088d27-807c-4dad-a6f3-4bd28de2d6d1 https://drive.google.com/file/d/1UAFn3aN81z_J9cuDFz25pz17II0ofAQZ/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2017: Jumlah Pemeluk Agama (Jiwa) Hindu 2017  [1 res: xlsx]
+          XLSX datastore=False 9c1e497e-0730-4077-8c43-8a809b713684 https://drive.google.com/file/d/1FIPv2fq9wcwPOSXYea-TqJcjeyW5ekee/view
+      - jumlah-pemeluk-agama-jiwa-budha-2015: Jumlah Pemeluk Agama (Jiwa) Budha 2015  [1 res: xlsx]
+          XLSX datastore=False 5de63fe6-1f45-4fd7-ba21-2faa067ee9fb https://drive.google.com/file/d/1TviynDBr2qq1VYjFQR0xobESoZWOsQ4S/view
+      - jumlah-pemeluk-agama-jiwa-budha-2004: Jumlah Pemeluk Agama (Jiwa) Budha 2004  [1 res: xlsx]
+          XLSX datastore=False 742046b4-84d3-4e63-8ead-d586e432cbc8 https://drive.google.com/file/d/1zbjV5pVMlD516-LHfeHUNHUV8OWFJDMb/view
+      - jumlah-pemeluk-agama-jiwa-lainnya-2005: Jumlah Pemeluk Agama (Jiwa) Lainnya 2005  [1 res: xlsx]
+          XLSX datastore=False 0e958b13-4fbd-4abf-b656-9851750556e4 https://drive.google.com/file/d/1r6Tlfiu7TPOE0sJbv6eVXRGR7LUF7YWU/view
+      - jumlah-pemeluk-agama-jiwa-islam-2008: Jumlah Pemeluk Agama (Jiwa) Islam 2008  [1 res: xlsx]
+          XLSX datastore=False efab9360-60da-419a-87c9-4e129f37c6f5 https://drive.google.com/file/d/17ZXMrj6BN5OzOOxGReaCIScSL_Yb2Th6/view
+      - jumlah-pemeluk-agama-jiwa-islam-2015: Jumlah Pemeluk Agama (Jiwa) Islam 2015  [1 res: xlsx]
+          XLSX datastore=False 9d4d2d6e-e372-45d6-b10a-6b6e3684bb8f https://drive.google.com/file/d/1q8uFD8_PZbTco8LVPsrfNecusYXWKLHI/view
+      - jumlah-pemeluk-agama-jiwa-budha-2020: Jumlah Pemeluk Agama (Jiwa) Budha 2020  [1 res: xlsx]
+          XLSX datastore=False ff02c30f-8a59-4e36-8b0a-d3522ea4385f https://drive.google.com/file/d/1KYEYnHqtpX_-KWFmHBdPM_wg9tbfsV0b/view
+      - jumlah-pemeluk-agama-jiwa-budha-2011: Jumlah Pemeluk Agama (Jiwa) Budha 2011  [1 res: xlsx]
+          XLSX datastore=False 4570de28-59b9-49df-8500-3ad78fd70d8f https://drive.google.com/file/d/10m21x8fjp7U7cQYTSXWCIE5MNcx7gr3Z/view
+      - jumlah-pemeluk-agama-jiwa-islam-2001: Jumlah Pemeluk Agama (Jiwa) Islam 2001  [1 res: xlsx]
+          XLSX datastore=False f3fb2e74-e824-4b54-a3ed-e1c0179702a6 https://drive.google.com/file/d/1nLE5_bjHrAtaTVXU4SVRnng4h_qJoHvK/view
+      - jumlah-pemeluk-agama-jiwa-protestan-2004: Jumlah Pemeluk Agama (Jiwa) Protestan 2004  [1 res: xlsx]
+          XLSX datastore=False f7dbb970-70c4-4f82-b9e2-ae070deb4bcd https://drive.google.com/file/d/1_Ok0rQZ7munOSxYo4srLLHrCE6rThOaj/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2013: Jumlah Pemeluk Agama (Jiwa) Hindu 2013  [1 res: xlsx]
+          XLSX datastore=False a7da7489-ed19-4ad9-b27c-d9f6ffff7c4a https://drive.google.com/file/d/124ndUKL36kjW6qUMLEHraFoxv-hIx5MA/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2019: Jumlah Pemeluk Agama (Jiwa) Hindu 2019  [1 res: xlsx]
+          XLSX datastore=False 2a425618-0459-4fdf-b2df-94745244321f https://drive.google.com/file/d/1HEta_8onO5bJjoZXVatVIamGHVHLZVj9/view
+      - jumlah-pemeluk-agama-jiwa-budha-2002: Jumlah Pemeluk Agama (Jiwa) Budha 2002  [1 res: xlsx]
+          XLSX datastore=False ea1d8264-e65e-418b-b7fb-0e412cddbd0b https://drive.google.com/file/d/1mO9V-0EF5QpvIiSku1Qfk4lhsgbFDXt2/view
+      - jumlah-pemeluk-agama-jiwa-hindu-2015: Jumlah Pemeluk Agama (Jiwa) Hindu 2015  [1 res: xlsx]
+          XLSX datastore=False a50c103e-50d5-4a50-88d4-e3ad8f23baae https://drive.google.com/file/d/1lAQzh0LDUjWbDiCrdxGa356p-Vw3FjkS/view
+      - jumlah-pemeluk-agama-jiwa-lainnya-2019: Jumlah Pemeluk Agama (Jiwa) Lainnya 2019  [1 res: xlsx]
+          XLSX datastore=False 49b6a7da-eb70-4de2-8526-01996af5918c https://drive.google.com/file/d/1F_093rMsL0vy9EORISeG4fDHdSuVdPFs/view
+      - jumlah-pemeluk-agama-jiwa-katolik-2010: Jumlah Pemeluk Agama (Jiwa) Katolik 2010  [1 res: xlsx]
+          XLSX datastore=False 1f4cdb9e-8435-4fc8-8901-e1f18403e114 https://drive.google.com/file/d/14N83pEMvP3Lcmlb7oS4VO605nFpBTVPU/view
+      (25 others not matching)
   https://data.bantenprov.go.id/ -> 200 text/html "Selamat datang - Satu Data Provinsi Banten"
     /api/3/action/status_show -> 200 application/json CKAN 2.11.4
-    package_search q='agama' -> 200, 40 matches, 15 shown
-      - pemulasaraan: Pemulasaraan  [3 res: csv,pdf,xlsx]
-      - cagar-budaya-yang-diselamatkan: Cagar Budaya yang Diselamatkan  [3 res: csv,pdf,xlsx]
-      - cagar-budaya-yang-dipublikasikan: Cagar Budaya yang Dipublikasikan  [3 res: csv,pdf,xlsx]
-      - cagar-budaya-yang-dipelihara: Cagar Budaya yang Dipelihara  [3 res: csv,pdf,xlsx]
-      - objek-diduga-cagar-budaya-yang-diusulkan-penetapannya: Objek Diduga Cagar Budaya yang Diusulkan Penetapannya  [3 res: csv,pdf,xlsx]
-      - objek-cagar-budaya-yang-diregistrasi: Objek Cagar Budaya yang Diregistrasi  [3 res: csv,pdf,xlsx]
-      - objek-cagar-budaya-yang-dipublikasikan: Objek Cagar Budaya yang Dipublikasikan  [3 res: csv,pdf,xlsx]
-      - objek-cagar-budaya-yang-dikelola: Objek Cagar Budaya yang Dikelola  [3 res: csv,pdf,xlsx]
-      - organisasi-kepramukaan: Organisasi Kepramukaan  [3 res: csv,pdf,xlsx]
-      - objek-pemajuan-kebudayaan-yang-dimanfaatkan-c3209: Objek Pemajuan Kebudayaan yang Dimanfaatkan  [3 res: csv,pdf,xlsx]
-      - cagar-budaya-yang-dilakukan-pengamanan: Cagar Budaya yang Dilakukan Pengamanan  [3 res: csv,pdf,xlsx]
-      - objek-warisan-budaya-yang-dipublikasikan-35266: Objek Warisan Budaya yang Dipublikasikan  [3 res: csv,pdf,xlsx]
-      - objek-pemajuan-tradisi-budaya-yang-di-manfaatkan-1e60d: Objek Pemajuan Tradisi Budaya yang Dimanfaatkan  [3 res: csv,pdf,xlsx]
-      - perpustakaan-umum-kewenangan-provinsi-a3307: Perpustakaan Umum Kewenangan Provinsi  [3 res: csv,pdf,xlsx]
-      - pranata-kebudayaan-yang-dibina: Pranata Kebudayaan yang Dibina  [3 res: csv,pdf,xlsx]
-  https://data.malutprov.go.id/ -> 0  DNS: no such host
-  https://data.jogjaprov.go.id/ -> 0  DNS: no such host
+    package_search q='agama' -> 200, 40 matches, 40 shown, printing those matching 'penduduk|pemeluk'
+      (40 others not matching)
   https://data.bengkuluprov.go.id/ -> 200 text/html "Selamat datang - Bengkulu Portal Data"
     /api/3/action/status_show -> 403 application/json {"help": "API Security Endpoint", "success": false, "error": {"__type": "Authorization Error", "message": "RBAC Policy:
     /api/action/status_show -> 200 application/json CKAN 2.9.11
-    package_search q='agama' -> 200, 12 matches, 12 shown
-      - data_aliran_agama_dan_kepercayaan_provinsi_bengkulu: DATA ALIRAN AGAMA DAN KEPERCAYAAN PROVINSI BENGKULU  [1 res: pdf]
+    package_search q='agama' -> 200, 12 matches, 12 shown, printing those matching 'penduduk|pemeluk'
       - jumlah-penduduk-provinsi-bengkulu-berdasarkan-agama-semester-i-tahun-2026: JUMLAH PENDUDUK PROVINSI BENGKULU BERDASARKAN AGAMA SEMESTER I TAHUN 2026  [1 res: xlsx]
+          XLSX datastore=True 59900063-393c-4a29-ada2-a8fc1dcbfa01 https://data.bengkuluprov.go.id/dataset/b083eaf3-f243-45a4-ba88-23cacf0c9d3b/resource/59900063-393c-4a29-ada2-a8fc1dcbfa01/download/agama-jenis-kelamin-1.xlsx
       - jumlah-penduduk-provinsi-bengkulu-berdasarkan-agama-semester-ii-tahun-2025: JUMLAH PENDUDUK PROVINSI BENGKULU BERDASARKAN AGAMA SEMESTER II TAHUN 2025  [1 res: xlsx]
+          XLSX datastore=True 7e1cec9d-8409-471d-b751-db55ca49a1a0 https://data.bengkuluprov.go.id/dataset/bd0b8a17-1b9f-4d42-b675-4362debc9641/resource/7e1cec9d-8409-471d-b751-db55ca49a1a0/download/agama-jenis-kelamin-1.xlsx
       - data-jumlah-penduduk-menurut-agama-tahun-2024: DATA JUMLAH PENDUDUK MENURUT AGAMA DI PROVINSI BENGKULU TAHUN 2024  [1 res: xlsx]
+          XLSX datastore=True cc6c8dd4-639b-426f-bc80-76cdbf267c36 https://data.bengkuluprov.go.id/dataset/192aeb53-6c0c-4aca-9c06-e879ce3861e6/resource/cc6c8dd4-639b-426f-bc80-76cdbf267c36/download/data-jumlah-penduduk-provinsi-bengkulu-menurut-agama-tahun-2024.xlsx
       - data-jumlah-penduduk-provinsi-bengkulu-menurut-agama-tahun-2023: DATA JUMLAH PENDUDUK PROVINSI BENGKULU MENURUT AGAMA TAHUN 2023  [1 res: xlsx]
-      - jumlah-perkara-perceraian-pengadilan-agama-sewilayah-pta-bengkulu-2024: JUMLAH PERKARA PERCERAIAN PENGADILAN AGAMA SEWILAYAH PTA BENGKULU TAHUN 2024  [2 res: csv,xlsx]
+          XLSX datastore=True ac17441f-741b-40fd-8ecf-7d4fef4047be https://data.bengkuluprov.go.id/dataset/dbe56713-cfba-4aca-8152-c3bcdc823af3/resource/ac17441f-741b-40fd-8ecf-7d4fef4047be/download/jumlah-penduduk-provinsi-bengkulu-menurut-agama-tahun-2023.xlsx
       - data-jumlah-penduduk-menurut-agama-di-provinsi-bengkulu-semester-i-tahun-2025: DATA JUMLAH PENDUDUK MENURUT AGAMA DI PROVINSI BENGKULU SEMESTER I TAHUN 2025  [1 res: xlsx]
-      - data-jumlah-perkara-perceraian-wilayah-pengadilan-tinggi-agama-di-bengkulu-tahun-2021: DATA JUMLAH PERKARA PERCERAIAN WILAYAH PENGADILAN TINGGI AGAMA DI BENGKULU TAHUN 2021  [2 res: xlsx]
-      - faktor_penyebab_terjadinya_perceraian_sewilayah_hukum_hukum_pta_bengkulu_2022: FAKTOR-FAKTOR PENYEBAB TERJADINYA PERCERAIAN SEWILAYAH HUKUM PENGADILAN TINGGI AGAMA BENGKULU TAHUN 2022  [2 res: csv,xlsx]
-      - data-persentase-masyarakat-yang-paham-terhadap-kesatuan-bangsa: DATA PERSENTASE MASYARAKAT YANG PAHAM TERHADAP KESATUAN BANGSA  [1 res: pdf]
-      - data_suku_dan_etnis_se_provinsi_bengkulu: DATA SUKU DAN ETNIS SE PROVINSI BENGKULU  [2 res: pdf,xlsx]
+          XLSX datastore=True d0a34b2d-0fac-4fc6-a081-92da95c07a9f https://data.bengkuluprov.go.id/dataset/45b45d7c-eaa8-48b9-ae41-9085d8843f3b/resource/d0a34b2d-0fac-4fc6-a081-92da95c07a9f/download/agama-jenis-kelamin.xlsx
       - data-jumlah-penduduk-provinsi-bengkulu-menurut-status-perkawinan-semester-i-tahun-2025: DATA JUMLAH PENDUDUK PROVINSI BENGKULU MENURUT STATUS PERKAWINAN SEMESTER I TAHUN 2025  [1 res: xlsx]
-  https://data.kepriprov.go.id/ -> 0  DNS: no such host
-  https://data.sulbarprov.go.id/ -> 200 text/html "Under Maintenance"
-    /api/3/action/status_show -> 500 text/html <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>500 Internal Server Error</title> </head><body> <
-    /api/action/status_show -> 500 text/html <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>500 Internal Server Error</title> </head><body> <
-  https://data.sulutprov.go.id/ -> 0  timeout after 10s
-  http://data.sulutprov.go.id/ -> 0  timeout after 10s
-  https://data.gorontaloprov.go.id/ -> 0  DNS: no such host
-  https://data.go.id/ -> 200 text/html "Portal Satu Data Indonesia - Homepage"
-    /api/3/action/status_show -> 404 text/html <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-s
-    /api/action/status_show -> 404 text/html <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-s
-  https://satudata.go.id/ -> 0  DNS: no such host
-  https://katalog.data.go.id/ -> 0  DNS: no such host
-probe_ckan: 19 of 38 answered; 6 speak CKAN: opendata.sumselprov.go.id, data.sumbarprov.go.id, data.kaltimprov.go.id, data.jatengprov.go.id, data.bantenprov.go.id, data.bengkuluprov.go.id
+          XLSX datastore=True b15c4849-3584-45d5-8dcd-e2e2d57cec06 https://data.bengkuluprov.go.id/dataset/f8e8b173-03a9-4f49-8f7b-584639e88f1a/resource/b15c4849-3584-45d5-8dcd-e2e2d57cec06/download/status-kawin-jenis-kelamin.xlsx
+      (6 others not matching)
+probe_ckan: 6 of 6 answered; 6 speak CKAN: opendata.sumselprov.go.id, data.sumbarprov.go.id, data.kaltimprov.go.id, data.jatengprov.go.id, data.bantenprov.go.id, data.bengkuluprov.go.id
