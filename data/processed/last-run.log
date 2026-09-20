@@ -1,475 +1,544 @@
-SVK:
-  SVK admin1: 8 shapes, 8 with an article, 0 without
-    Region of Bratislava: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    Region of Bratislava: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    Region of Nitra: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Region of Nitra: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Region of Trenčín: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Region of Trenčín: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Region of Trnava: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Region of Trnava: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Region of Žilina: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Region of Žilina: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-  SVK admin1: ethnicity: 3 of 8
-  SVK admin1: religion: 3 of 8
-  SVK admin2: 79 shapes, 79 with an article, 0 without
-    District of Banskk vtiavnica: religion: labels this reader has no entry for: ['Židovská obec', 'Budhizmus', 'Islam', 'Hinduizmus', 'ostatné kresťanské cirkvi', 'pohanstvo', 'ad hoc hnutia']
-    District of Bansks Bystrica: religion: labels this reader has no entry for: ['Židovská obec', 'Budhizmus', 'Islam', 'Hinduizmus', 'ostatné kresťanské cirkvi', 'pohanstvo', 'ad hoc hnutia']
-    District of Bardejov: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    District of Bardejov: religion: the article prints this table and cites nothing for it; an uncited figure is not read
-    District of Bonovce nad Bebra*: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bonovce nad Bebra*: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bratislava I: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bratislava I: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bratislava II: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bratislava II: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bratislava III: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bratislava III: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bratislava IV: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bratislava IV: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bratislava V: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bratislava V: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bytca: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Bytca: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Cadca: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Cadca: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Detva: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Detva: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Dolne Kub: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Dolne Kub: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Dunajskn Streda: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    District of Dunajskn Streda: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Gala: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Gala: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Galanta: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    District of Galanta: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Gelnica: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Gelnica: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Giar nad Hronom: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Giar nad Hronom: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Hlohovec: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Hlohovec: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Ilava: ethnicity: the shares add to 60583.00, which is not a composition
-    District of Ilava: religion: labels this reader has no entry for: ['Židovské náboženské obce', 'Unitarizmus']
-    District of Komprno: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Komprno: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Krupina: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Krupina: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Kysucki Novi Mesto: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Kysucki Novi Mesto: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Levice: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Levice: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Liptovsk: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Liptovsk: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Lucenec: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Lucenec: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Malacky: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Malacky: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Martin: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Martin: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Michalovce: religion: the article prints this table and cites nothing for it; an uncited figure is not read
-    District of Myjava: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Myjava: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Nitra: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Nitra: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Nova Mesto nad Va*: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Nova Mesto nad Va*: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Nova Zkmky: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Nova Zkmky: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Numestovo: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Numestovo: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Partizonske: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Partizonske: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Pezinok: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Pezinok: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Piertany: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Piertany: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Pilina: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Pilina: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Poltcr: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Poltcr: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Povacskn Bystrica: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Povacskn Bystrica: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Prchov: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Prchov: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Predov: religion: the article prints this table and cites nothing for it; an uncited figure is not read
-    District of Prievidza: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Prievidza: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Revnca: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    District of Revnca: religion: the article prints this table and cites nothing for it; an uncited figure is not read
-    District of Rimavsk: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Rimavsk: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Ronnava: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    District of Ronnava: religion: the article prints this table and cites nothing for it; an uncited figure is not read
-    District of Ruromberok: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Ruromberok: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Senec: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    District of Senec: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Senica: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Senica: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Skalica: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Skalica: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Tarnovica: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Tarnovica: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Topolcany: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Topolcany: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Trencon: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Trencon: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Trnava: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Trnava: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Turcianske Teplice: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Turcianske Teplice: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Tvrdo: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Tvrdo: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Velka Krta: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Velka Krta: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Zlatc Moravce: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Zlatc Moravce: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    District of Zvolen: ethnicity: the article has no section matching 'n[áa]rodnos|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-    District of Zvolen: religion: the article has no section matching 'n[áa]bo[žz]en|vierovyznanie|obyvate[ľl]|demograf|zlo[žz]enie|[šs]trukt[úu]ra'
-  SVK admin2: ethnicity: 24 of 79
-  SVK admin2: religion: 20 of 79
-MKD:
-    Category:Municipalities of North Macedonia: 84 article(s), 84 distinct names
-  MKD admin2: 84 shapes, 84 with an article, 0 without
-    Berovo: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Centar: ethnicity: the shares add to 88.58, which is not a composition
-    Drugovo: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Karbintsi: ethnicity: the shares add to 89.24, which is not a composition
-    Kichevo: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Kumanovo: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Oslomej: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Pehchevo: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Prilep: ethnicity: the shares add to 8461.29, which is not a composition
-    Radovish: ethnicity: the shares add to 89.92, which is not a composition
-    Shuto Orizari: ethnicity: the shares add to 82.57, which is not a composition
-    Staro Nagorichane: ethnicity: the shares add to 89.20, which is not a composition
-    Struga: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Strumitsa: ethnicity: the shares add to 87.04, which is not a composition
-    Vasilevo: ethnicity: the shares add to 87.23, which is not a composition
-    Vraneshtitsa: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Zajas: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Zelenikovo: ethnicity: the shares add to 8.24, which is not a composition
-  MKD admin2: ethnicity: 66 of 84
-MDA:
-    Category:Districts of Moldova: 34 article(s), 34 distinct names
-  MDA admin1: 37 shapes, 32 with an article, 5 without
-    no article: 'Balti' is none of the names on the country's own list of units; there is no article to read for it
-    no article: 'Bender' is none of the names on the country's own list of units; there is no article to read for it
-    no article: 'Chisinau' is none of the names on the country's own list of units; there is no article to read for it
-    no article: 'Gagauzia' is none of the names on the country's own list of units; there is no article to read for it
-    no article: 'Transnistria' is none of the names on the country's own list of units; there is no article to read for it
-    Briceni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Cahul: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Calarasi: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Causeni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Cimislia: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Criuleni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Donduseni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Drochia: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Dubasari: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Edinet: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Falesti: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Floresti: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Glodeni: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Hincesti: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Ialoveni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Leova: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Nisporeni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Ocnita: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Orhei: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    RIscani: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Rezina: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    SIngerei: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Soldanesti: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Soroca: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Stefan Voda: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Straseni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Taraclia: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Telenesti: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Ungheni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-  MDA admin1: ethnicity: 3 of 37
-    Category:Districts of Moldova: 34 article(s), 34 distinct names
-  MDA admin2: 37 shapes, 32 with an article, 5 without
-    no article: 'Balti' is none of the names on the country's own list of units; there is no article to read for it
-    no article: 'Bender' is none of the names on the country's own list of units; there is no article to read for it
-    no article: 'Chisinau' is none of the names on the country's own list of units; there is no article to read for it
-    no article: 'Gagauzia' is none of the names on the country's own list of units; there is no article to read for it
-    no article: 'Transnistria' is none of the names on the country's own list of units; there is no article to read for it
-    Briceni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Cahul: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Calarasi: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Causeni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Cimislia: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Criuleni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Donduseni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Drochia: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Dubasari: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Edinet: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Falesti: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Floresti: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Glodeni: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Hincesti: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Ialoveni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Leova: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Nisporeni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Ocnita: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Orhei: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    RIscani: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Rezina: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    SIngerei: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Soldanesti: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Soroca: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Stefan Voda: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Straseni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Taraclia: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Telenesti: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Ungheni: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-  MDA admin2: ethnicity: 3 of 37
-MNE:
-    Category:Municipalities of Montenegro: 27 article(s), 27 distinct names
-  MNE admin1: 23 shapes, 21 with an article, 2 without
-    no article: 'Cetinje' is none of the names on the country's own list of units; there is no article to read for it
-    no article: 'Podgorica' is none of the names on the country's own list of units; there is no article to read for it
-    Andrijevica Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Andrijevica Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Bar Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Bar Municipality: religion: the article prints this table and cites nothing for it; an uncited figure is not read
-    Berane Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Berane Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Bijelo Polje Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Bijelo Polje Municipality: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Budva Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Budva Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Danilovgrad Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Danilovgrad Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Gusinje Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Gusinje Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Herceg Novi Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Herceg Novi Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Kolašin Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Kolašin Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Kotor Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Kotor Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Mojkovac Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Mojkovac Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Nikšić Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Nikšić Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Petnjica Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Petnjica Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Plav Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Plav Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Pljevlja Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Pljevlja Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Plužine Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Plužine Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Rožaje Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Rožaje Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Tivat Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Tivat Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Ulcinj Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Ulcinj Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Šavnik Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Šavnik Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Žabljak Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Žabljak Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-  MNE admin1: ethnicity: 0 of 23
-  MNE admin1: religion: 0 of 23
-    Category:Municipalities of Montenegro: 27 article(s), 27 distinct names
-  MNE admin2: 23 shapes, 21 with an article, 2 without
-    no article: 'Cetinje' is none of the names on the country's own list of units; there is no article to read for it
-    no article: 'Podgorica' is none of the names on the country's own list of units; there is no article to read for it
-    Andrijevica Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Andrijevica Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Bar Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Bar Municipality: religion: the article prints this table and cites nothing for it; an uncited figure is not read
-    Berane Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Berane Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Bijelo Polje Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Bijelo Polje Municipality: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Budva Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Budva Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Danilovgrad Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Danilovgrad Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Gusinje Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Gusinje Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Herceg Novi Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Herceg Novi Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Kolašin Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Kolašin Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Kotor Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Kotor Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Mojkovac Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Mojkovac Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Nikšić Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Nikšić Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Petnjica Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Petnjica Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Plav Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Plav Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Pljevlja Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Pljevlja Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Plužine Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Plužine Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Rožaje Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Rožaje Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Tivat Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Tivat Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Ulcinj Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Ulcinj Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Šavnik Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Šavnik Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Žabljak Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Žabljak Municipality: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-  MNE admin2: ethnicity: 0 of 23
-  MNE admin2: religion: 0 of 23
-SRB:
-    Administrative districts of Serbia: 225 article(s), 225 distinct names
-  SRB admin1: 25 shapes, 23 with an article, 2 without
-    no article: 'Belgrade' is none of the names on the country's own list of units; there is no article to read for it
-    no article: 'Syrmia District' is none of the names on the country's own list of units; there is no article to read for it
-    Bor District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Branicevo District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Central Banat District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Jablanica District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Kolubara District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Macva District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Moravica District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Nisava District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    North Backa District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    North Banat District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Pcinja District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Pirot District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Podunavlje District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Pomoravlje District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Rasina District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    South Backa District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    South Banat District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Sumadija District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Toplica District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    West Backa District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Zajecar District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Zlatibor District: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-  SRB admin1: ethnicity: 1 of 25
-    Municipalities and cities of Serbia: 229 article(s), 229 distinct names
-  SRB admin2: 145 shapes, 143 with an article, 2 without
-    no article: 'Petrovac-na-Mlavi' is none of the names on the country's own list of units; there is no article to read for it
-    no article: 'Raska' is none of the names on the country's own list of units; there is no article to read for it
-    Aleksandrovac Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Aleksinac Municipality: ethnicity: labels this reader has no entry for: ['Slovenians']
-    Alibunar Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Apatin Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Arilje Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Backa Palanka Municipality: ethnicity: the shares add to 55528.00, which is not a composition
-    Bajina Basta Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Batocina Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Bela Crkva Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Bela Palanka Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Belgrade: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Beocin Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Blace Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Bojnik Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Boljevac Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Bor Municipality: ethnicity: the shares add to 40279.00, which is not a composition
-    Bosilegrad Municipality: ethnicity: the shares add to 6075.00, which is not a composition
-    Brus Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Bujanovac Municipality: ethnicity: the shares add to 234.00, which is not a composition
-    Cajetina Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Cicevac Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Crna Trava Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Cuprija Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Despotovac Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Dimitrovgrad Municipality: ethnicity: labels this reader has no entry for: ['Others/Unknown']
-    Doljevac Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Gadzin Han Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Golubac Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Gornji Milanovac Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Indjija Municipality: ethnicity: labels this reader has no entry for: ['Slovenians']
-    Irig Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Ivanjica Municipality: ethnicity: the shares add to 27757.00, which is not a composition
-    Jagodina City: ethnicity: labels this reader has no entry for: ['Slovenians']
-    Kikinda City: ethnicity: the shares add to 59453.00, which is not a composition
-    Kladovo Municipality: ethnicity: labels this reader has no entry for: ['Romanians (self-declared)']
-    Knic Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Knjazevac Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Koceljeva Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Kosjeric Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Kovin Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Kragujevac City: ethnicity: the shares add to 171186.00, which is not a composition
-    Krupanj Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Krusevac City: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Kucevo Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Kursumlija Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Lajkovac Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Lapovo Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Lebane Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Leskovac City: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Ljig Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Ljubovija Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Loznica City: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Lucani Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Majdanpek Municipality: ethnicity: labels this reader has no entry for: ['Romanians (self-declared)']
-    Mali Zvornik Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Malo Crnice Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Medvedja Municipality: ethnicity: the shares add to 6360.00, which is not a composition
-    Merosina Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Mionica Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Negotin Municipality: ethnicity: labels this reader has no entry for: ['Vlachs of Serbia (Vlachs)', 'Romanians (self-declared)']
-    Nis City: ethnicity: the shares add to 183544.00, which is not a composition
-    Nova Crnja Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Novi Becej Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Novi Knezevac Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Novi Pazar City: ethnicity: the shares add to 113414.00, which is not a composition
-    Novi Sad City: ethnicity: labels this reader has no entry for: ['Regional identity']
-    Odzaci Municipality: ethnicity: labels this reader has no entry for: ['Slovenians']
-    Opovo Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Osecina Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Pancevo City: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Paracin Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Pecinci Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Pirot Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Plandiste Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Pozarevac City: ethnicity: labels this reader has no entry for: ['Vlachs/Romanians', 'Slovenians']
-    Pozega Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Prokuplje Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Raca Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Razanj Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Rekovac Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Ruma Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Sabac City: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Sid Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Smederevo City: ethnicity: labels this reader has no entry for: ['Did not declare']
-    Sokobanja Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Srbobran Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Stara Pazova Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Subotica City: ethnicity: the shares add to 2984.70, which is not a composition
-    Svilajnac Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Svrljig Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Temerin Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Titel Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Topola Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Trstenik Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Ub Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Valjevo City: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Varvarin Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Veliko Gradiste Municipality: ethnicity: labels this reader has no entry for: ['Romanians (self-declared)']
-    Vladimirci Municipality: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
-    Vlasotince Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-    Vrbas Municipality: ethnicity: the shares add to 477.70, which is not a composition
-    Zabalj Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Zabari Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Zagubica Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Zajecar City: ethnicity: labels this reader has no entry for: ['Slovenians']
-    Zitiste Municipality: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
-    Zitoradja Municipality: ethnicity: the article prints this table and cites nothing for it; an uncited figure is not read
-  SRB admin2: ethnicity: 36 of 145
-  wrote data/processed/europe_wiki_slovakia.json (153 kB)
-wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/europe_wiki_slovakia.json (87 records)
-  wrote data/processed/europe_wiki_north_macedonia.json (141 kB)
-wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/europe_wiki_north_macedonia.json (84 records)
-  wrote data/processed/europe_wiki_moldova.json (63 kB)
-wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/europe_wiki_moldova.json (74 records)
-  wrote data/processed/europe_wiki_montenegro.json (45 kB)
-wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/europe_wiki_montenegro.json (46 records)
-  wrote data/processed/europe_wiki_serbia.json (181 kB)
-wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/europe_wiki_serbia.json (170 records)
+BGR:
+    Category:Provinces of Bulgaria: 32 article(s), 32 distinct names
+  BGR admin1: 28 shapes, 28 with an article, 0 without
+    Blagoevgrad: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Burgas: language: the article has no section matching '^езици|роден език'
+    Burgas: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Burgas: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Dobrich: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Gabrovo: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Haskovo: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Kardzhali: language: the article has no section matching '^езици|роден език'
+    Kardzhali: religion: the article has no section matching 'вероизповед|религи'
+    Kardzhali: ethnicity: the article has no section matching 'етнически|етнос'
+    Kyustendil: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Lovech: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Montana: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Montana: religion: the shares add to 89.95, which is not a composition
+    Pazardzhik: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Pernik: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Pleven: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Plovdiv: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Razgrad: language: labels this reader has no entry for: ['Не се само- определят']
+    Razgrad: religion: labels this reader has no entry for: ['Не се само- определят']
+    Razgrad: ethnicity: labels this reader has no entry for: ['Не се само- определят']
+    Ruse: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Shumen: language: the shares add to 9997.00, which is not a composition
+    Shumen: religion: the shares add to 9750.00, which is not a composition
+    Shumen: ethnicity: the shares add to 9997.00, which is not a composition
+    Silistra: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Sliven: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Smolyan: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Sofia: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Sofia City: language: the article has no section matching '^езици|роден език'
+    Sofia City: religion: the article has no section matching 'вероизповед|религи'
+    Sofia City: ethnicity: the article has no section matching 'етнически|етнос'
+    Stara Zagora: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Targovishte: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Varna: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Varna: religion: the shares add to 6.22, which is not a composition
+    Varna: ethnicity: the shares add to 9997.00, which is not a composition
+    Veliko Tarnovo: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Vidin: language: the article has no section matching '^езици|роден език'
+    Vidin: religion: the article has no section matching 'вероизповед|религи'
+    Vidin: ethnicity: the article has no section matching 'етнически|етнос'
+    Vratsa: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Yambol: language: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+  BGR admin1: language: 0 of 28
+  BGR admin1: religion: 20 of 28
+  BGR admin1: ethnicity: 21 of 28
+  BGR admin2: 265 shapes, 225 with an article, 38 without
+    no article: the English Wikipedia article 'Banite Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Bolyarovo Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Borovan Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Bratya Daskalovi Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Byala Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Chepelare Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Chirpan Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Devin Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Dimitrovgrad Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Elhovo Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Galabovo Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Georgi Bamyanovo Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Gurkovo Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Hayredin Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Kovachevtsi Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Krivodol Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Kula Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Madan Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Maglizh Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Mezdra Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Miziya Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Nedelino Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Nikolaevo Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Oryahovo Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Pavel Banya Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Plovdiv Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Radnevo Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Rakovski Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Rudozem Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Ruzhinsi Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Stara Zagora Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Straldzha Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Strumyarni Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Tran Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Vratsa Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Yambol Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Zemen Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    no article: the English Wikipedia article 'Zlatograd Municipality' has no bg.wikipedia counterpart, and the composition is published only in that edition
+    Aksakovo: religion: the shares add to 9994.00, which is not a composition
+    Aksakovo: ethnicity: the article prints 3 tables of this kind under one heading, with nothing in their headers to say which census each is; none is read
+    Alfatar: religion: the shares add to 9986.00, which is not a composition
+    Alfatar: ethnicity: the table holds no row this reader could read
+    Anton: religion: the article has no section matching 'вероизповед|религи'
+    Anton: ethnicity: the shares add to 10000.00, which is not a composition
+    Antonovo: religion: the article has no section matching 'вероизповед|религи'
+    Antonovo: ethnicity: the table holds no row this reader could read
+    Apriltsi: religion: the article has no section matching 'вероизповед|религи'
+    Apriltsi: ethnicity: the shares add to 9985.00, which is not a composition
+    Ardino: religion: the article has no section matching 'вероизповед|религи'
+    Ardino: ethnicity: the shares add to 10000.00, which is not a composition
+    Asenovgrad: religion: the shares add to 9997.00, which is not a composition
+    Asenovgrad: ethnicity: the table holds no row this reader could read
+    Avren: religion: the shares add to 9996.00, which is not a composition
+    Avren: ethnicity: the table holds no row this reader could read
+    Aytos: religion: the article has no section matching 'вероизповед|религи'
+    Aytos: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Balchik: religion: the article has no section matching 'вероизповед|религи'
+    Balchik: ethnicity: the table holds no row this reader could read
+    Bansko: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Bansko: ethnicity: the table holds no row this reader could read
+    Batak: religion: the article has no section matching 'вероизповед|религи'
+    Batak: ethnicity: the shares add to 10000.00, which is not a composition
+    Belene: religion: the article has no section matching 'вероизповед|религи'
+    Belene: ethnicity: the shares add to 9999.00, which is not a composition
+    Belitsa: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Belitsa: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Belogradchik: religion: the article has no section matching 'вероизповед|религи'
+    Belogradchik: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Beloslav: religion: the shares add to 9996.00, which is not a composition
+    Beloslav: ethnicity: the table holds no row this reader could read
+    Belovo: religion: the article has no section matching 'вероизповед|религи'
+    Belovo: ethnicity: the shares add to 10000.00, which is not a composition
+    Berkovitsa: religion: the article has no section matching 'вероизповед|религи'
+    Berkovitsa: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Blagoevgrad: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Blagoevgrad: ethnicity: the table holds no row this reader could read
+    Boboshevo: religion: the article has no section matching 'вероизповед|религи'
+    Boboshevo: ethnicity: the shares add to 9989.00, which is not a composition
+    Bobov Dol: religion: the article has no section matching 'вероизповед|религи'
+    Bobov Dol: ethnicity: the shares add to 10000.00, which is not a composition
+    Borino: religion: the article has no section matching 'вероизповед|религи'
+    Borino: ethnicity: the shares add to 10000.00, which is not a composition
+    Borovo: religion: the article has no section matching 'вероизповед|религи'
+    Borovo: ethnicity: the article has no section matching 'етнически|етнос'
+    Botevgrad: religion: the shares add to 9996.00, which is not a composition
+    Botevgrad: ethnicity: the table holds no row this reader could read
+    Boychinovtsi: religion: the article has no section matching 'вероизповед|религи'
+    Boychinovtsi: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Boynitsa: religion: the article has no section matching 'вероизповед|религи'
+    Boynitsa: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Bozhurishte: religion: the article has no section matching 'вероизповед|религи'
+    Bozhurishte: ethnicity: the shares add to 10001.00, which is not a composition
+    Bratsigovo: religion: the article has no section matching 'вероизповед|религи'
+    Bratsigovo: ethnicity: the shares add to 10000.00, which is not a composition
+    Bregovo: religion: the article has no section matching 'вероизповед|религи'
+    Bregovo: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Breznik: religion: the article has no section matching 'вероизповед|религи'
+    Breznik: ethnicity: the shares add to 10000.00, which is not a composition
+    Brezovo: religion: the article has no section matching 'вероизповед|религи'
+    Brezovo: ethnicity: the shares add to 10002.00, which is not a composition
+    Brusartsi: religion: the article has no section matching 'вероизповед|религи'
+    Brusartsi: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Burgas: religion: the article has no section matching 'вероизповед|религи'
+    Burgas: ethnicity: the table holds no row this reader could read
+    Byala Slatina: religion: the article has no section matching 'вероизповед|религи'
+    Byala Slatina: ethnicity: the shares add to 10001.00, which is not a composition
+    Chavdar: religion: the article has no section matching 'вероизповед|религи'
+    Chavdar: ethnicity: the shares add to 9969.00, which is not a composition
+    Chelopech: religion: the article has no section matching 'вероизповед|религи'
+    Chelopech: ethnicity: the shares add to 9932.00, which is not a composition
+    Chernoochene: religion: the article has no section matching 'вероизповед|религи'
+    Chernoochene: ethnicity: the shares add to 10000.00, which is not a composition
+    Cherven Bryag: religion: the article has no section matching 'вероизповед|религи'
+    Cherven Bryag: ethnicity: the shares add to 9999.00, which is not a composition
+    Chiprovtsi: religion: the article has no section matching 'вероизповед|религи'
+    Chiprovtsi: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Chuprene: religion: the article has no section matching 'вероизповед|религи'
+    Chuprene: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Dalgopol: religion: the shares add to 9969.00, which is not a composition
+    Dalgopol: ethnicity: the table holds no row this reader could read
+    Devnya: religion: the shares add to 9997.00, which is not a composition
+    Devnya: ethnicity: the table holds no row this reader could read
+    Dimovo: religion: the article has no section matching 'вероизповед|религи'
+    Dimovo: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Dobrich: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Dobrich: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Dobrichka: religion: the shares add to 9996.00, which is not a composition
+    Dobrichka: ethnicity: the table holds no row this reader could read
+    Dolna Banya: religion: the article has no section matching 'вероизповед|религи'
+    Dolna Banya: ethnicity: the shares add to 10000.00, which is not a composition
+    Dolna Mitropoliya: religion: the article has no section matching 'вероизповед|религи'
+    Dolna Mitropoliya: ethnicity: the shares add to 9999.00, which is not a composition
+    Dolni Chiflik: religion: the shares add to 9973.00, which is not a composition
+    Dolni Chiflik: ethnicity: the table holds no row this reader could read
+    Dolni Dabnik: religion: the article has no section matching 'вероизповед|религи'
+    Dolni Dabnik: ethnicity: the shares add to 9999.00, which is not a composition
+    Dospat: religion: the article has no section matching 'вероизповед|религи'
+    Dospat: ethnicity: the shares add to 9999.00, which is not a composition
+    Dragoman: religion: the article has no section matching 'вероизповед|религи'
+    Dragoman: ethnicity: the shares add to 9982.00, which is not a composition
+    Dryanovo: religion: the article has no section matching 'вероизповед|религи'
+    Dryanovo: ethnicity: the shares add to 10000.00, which is not a composition
+    Dulovo: religion: the shares add to 9996.00, which is not a composition
+    Dulovo: ethnicity: the table holds no row this reader could read
+    Dupnitsa: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Dupnitsa: ethnicity: the shares add to 10001.00, which is not a composition
+    Dve Mogili: religion: the article has no section matching 'вероизповед|религи'
+    Dve Mogili: ethnicity: the shares add to 10000.00, which is not a composition
+    Dzhebel: religion: the article has no section matching 'вероизповед|религи'
+    Dzhebel: ethnicity: the shares add to 10000.00, which is not a composition
+    Elena: religion: the article has no section matching 'вероизповед|религи'
+    Elena: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Elin Pelin: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Elin Pelin: ethnicity: the shares add to 10002.00, which is not a composition
+    Etropole: religion: the article has no section matching 'вероизповед|религи'
+    Etropole: ethnicity: the shares add to 9999.00, which is not a composition
+    Gabrovo: religion: the article has no section matching 'вероизповед|религи'
+    Gabrovo: ethnicity: the shares add to 10000.00, which is not a composition
+    Garmen: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Garmen: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    General Toshevo: religion: the shares add to 9996.00, which is not a composition
+    General Toshevo: ethnicity: the table holds no row this reader could read
+    Glavinitsa: religion: the shares add to 9996.00, which is not a composition
+    Glavinitsa: ethnicity: the table holds no row this reader could read
+    Godech: religion: the article has no section matching 'вероизповед|религи'
+    Godech: ethnicity: the shares add to 9989.00, which is not a composition
+    Gorna Malina: religion: the article has no section matching 'вероизповед|религи'
+    Gorna Malina: ethnicity: the shares add to 9999.00, which is not a composition
+    Gorna Oryahovitsa: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Gorna Oryahovitsa: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Gotse Delchev: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Gotse Delchev: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Gramada: religion: the article has no section matching 'вероизповед|религи'
+    Gramada: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Gulyantsi: religion: the article has no section matching 'вероизповед|религи'
+    Gulyantsi: ethnicity: the shares add to 2619.00, which is not a composition
+    Hadzhidimovo: religion: the article has no section matching 'вероизповед|религи'
+    Hadzhidimovo: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Harmanli: religion: the shares add to 9996.00, which is not a composition
+    Harmanli: ethnicity: the table holds no row this reader could read
+    Haskovo: religion: the article has no section matching 'вероизповед|религи'
+    Haskovo: ethnicity: the table holds no row this reader could read
+    Hisarya: religion: the article has no section matching 'вероизповед|религи'
+    Hisarya: ethnicity: the table holds no row this reader could read
+    Hitrino: religion: the shares add to 9996.00, which is not a composition
+    Hitrino: ethnicity: the table holds no row this reader could read
+    Ihtiman: religion: the article has no section matching 'вероизповед|религи'
+    Ihtiman: ethnicity: the shares add to 10001.00, which is not a composition
+    Iskar: religion: the article has no section matching 'вероизповед|религи'
+    Iskar: ethnicity: the shares add to 10000.00, which is not a composition
+    Isperih: religion: the shares add to 9996.00, which is not a composition
+    Isperih: ethnicity: the table holds no row this reader could read
+    Ivanovo: religion: the article has no section matching 'вероизповед|религи'
+    Ivanovo: ethnicity: the shares add to 9999.00, which is not a composition
+    Ivaylovgrad: religion: the article has no section matching 'вероизповед|религи'
+    Ivaylovgrad: ethnicity: the shares add to 10000.00, which is not a composition
+    Kaloyanovo: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Kaloyanovo: ethnicity: the shares add to 10000.00, which is not a composition
+    Kameno: religion: the article has no section matching 'вероизповед|религи'
+    Kameno: ethnicity: the shares add to 9996.00, which is not a composition
+    Kaolinovo: religion: the shares add to 9986.00, which is not a composition
+    Kaolinovo: ethnicity: the table holds no row this reader could read
+    Kardzhali: religion: the article has no section matching 'вероизповед|религи'
+    Kardzhali: ethnicity: the shares add to 10000.00, which is not a composition
+    Karlovo: religion: the article has no section matching 'вероизповед|религи'
+    Karlovo: ethnicity: the table holds no row this reader could read
+    Karnobat: religion: the article has no section matching 'вероизповед|религи'
+    Karnobat: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Kaspichan: religion: the shares add to 9963.00, which is not a composition
+    Kaspichan: ethnicity: the table holds no row this reader could read
+    Kavarna: religion: the article has no section matching 'вероизповед|религи'
+    Kavarna: ethnicity: the table holds no row this reader could read
+    Kaynardzha: religion: the shares add to 9982.00, which is not a composition
+    Kaynardzha: ethnicity: the table holds no row this reader could read
+    Kazanlak: religion: the article has no section matching 'вероизповед|религи'
+    Kazanlak: ethnicity: the table holds no row this reader could read
+    Kirkovo: religion: the article has no section matching 'вероизповед|религи'
+    Kirkovo: ethnicity: the table holds no row this reader could read
+    Knezha: religion: the article has no section matching 'вероизповед|религи'
+    Knezha: ethnicity: the shares add to 10000.00, which is not a composition
+    Kocherinovo: religion: the article has no section matching 'вероизповед|религи'
+    Kocherinovo: ethnicity: the shares add to 9999.00, which is not a composition
+    Koprivshtitsa: religion: the article has no section matching 'вероизповед|религи'
+    Koprivshtitsa: ethnicity: the shares add to 10001.00, which is not a composition
+    Kostenets: religion: the article has no section matching 'вероизповед|религи'
+    Kostenets: ethnicity: the shares add to 10000.00, which is not a composition
+    Kostinbrod: religion: the article has no section matching 'вероизповед|религи'
+    Kostinbrod: ethnicity: the shares add to 10000.00, which is not a composition
+    Kotel: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Kotel: ethnicity: the table holds no row this reader could read
+    Kozloduy: religion: the article has no section matching 'вероизповед|религи'
+    Kozloduy: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Kresna: religion: the article has no section matching 'вероизповед|религи'
+    Kresna: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Krichim: religion: the article has no section matching 'вероизповед|религи'
+    Krichim: ethnicity: the shares add to 9999.00, which is not a composition
+    Krumovgrad: religion: the article has no section matching 'вероизповед|религи'
+    Krumovgrad: ethnicity: the table holds no row this reader could read
+    Krushari: religion: the shares add to 9978.00, which is not a composition
+    Krushari: ethnicity: the table holds no row this reader could read
+    Kubrat: religion: the shares add to 9995.00, which is not a composition
+    Kubrat: ethnicity: the table holds no row this reader could read
+    Kuklen: religion: the shares add to 9996.00, which is not a composition
+    Kuklen: ethnicity: the table holds no row this reader could read
+    Kyustendil: religion: the article has no section matching 'вероизповед|религи'
+    Kyustendil: ethnicity: the shares add to 8737.00, which is not a composition
+    Laki: religion: the article has no section matching 'вероизповед|религи'
+    Laki: ethnicity: the shares add to 10000.00, which is not a composition
+    Lesichovo: religion: the article has no section matching 'вероизповед|религи'
+    Lesichovo: ethnicity: the table holds no row this reader could read
+    Letnitsa: religion: the article has no section matching 'вероизповед|религи'
+    Letnitsa: ethnicity: the shares add to 9999.00, which is not a composition
+    Levski: religion: the article has no section matching 'вероизповед|религи'
+    Levski: ethnicity: the shares add to 9978.00, which is not a composition
+    Lom: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Lom: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Lovech: religion: the article has no section matching 'вероизповед|религи'
+    Lovech: ethnicity: the shares add to 10001.00, which is not a composition
+    Loznitsa: religion: the shares add to 228.00, which is not a composition
+    Loznitsa: ethnicity: the article prints 2 tables of this kind under one heading, with nothing in their headers to say which census each is; none is read
+    Lukovit: religion: the article has no section matching 'вероизповед|религи'
+    Lukovit: ethnicity: the shares add to 10001.00, which is not a composition
+    Lyaskovets: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Lyaskovets: ethnicity: the table holds no row this reader could read
+    Lyubimets: religion: the shares add to 9997.00, which is not a composition
+    Lyubimets: ethnicity: the table holds no row this reader could read
+    Madzharovo: religion: the article has no section matching 'вероизповед|религи'
+    Madzharovo: ethnicity: the shares add to 10000.00, which is not a composition
+    Makresh: religion: the article has no section matching 'вероизповед|религи'
+    Makresh: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Malko Tarnovo: religion: the article has no section matching 'вероизповед|религи'
+    Malko Tarnovo: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Maritsa: religion: the article has no section matching 'вероизповед|религи'
+    Maritsa: ethnicity: the table holds no row this reader could read
+    Medkovets: religion: the article has no section matching 'вероизповед|религи'
+    Medkovets: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Mineralni Bani: religion: the shares add to 10033.00, which is not a composition
+    Mineralni Bani: ethnicity: the table holds no row this reader could read
+    Mirkovo: religion: the article has no section matching 'вероизповед|религи'
+    Mirkovo: ethnicity: the shares add to 9999.00, which is not a composition
+    Momchilgrad: religion: the article has no section matching 'вероизповед|религи'
+    Momchilgrad: ethnicity: the shares add to 10000.00, which is not a composition
+    Montana: religion: the article has no section matching 'вероизповед|религи'
+    Montana: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Nesebar: religion: the article has no section matching 'вероизповед|религи'
+    Nesebar: ethnicity: the article prints 3 tables of this kind under one heading, with nothing in their headers to say which census each is; none is read
+    Nevestino: religion: the article has no section matching 'вероизповед|религи'
+    Nevestino: ethnicity: the shares add to 10000.00, which is not a composition
+    Nikola Kozlevo: religion: the shares add to 9997.00, which is not a composition
+    Nikola Kozlevo: ethnicity: the table holds no row this reader could read
+    Nikopol: religion: the article has no section matching 'вероизповед|религи'
+    Nikopol: ethnicity: the shares add to 10002.00, which is not a composition
+    Nova Zagora: religion: the shares add to 10001.00, which is not a composition
+    Nova Zagora: ethnicity: the table holds no row this reader could read
+    Novi Pazar: religion: the shares add to 9995.00, which is not a composition
+    Novi Pazar: ethnicity: the table holds no row this reader could read
+    Novo Selo: religion: the article has no section matching 'вероизповед|религи'
+    Novo Selo: ethnicity: the article has no section matching 'етнически|етнос'
+    Omurtag: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Omurtag: ethnicity: the table holds no row this reader could read
+    Opaka: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Opaka: ethnicity: the table holds no row this reader could read
+    Opan: religion: the article has no section matching 'вероизповед|религи'
+    Opan: ethnicity: the shares add to 10003.00, which is not a composition
+    Panagyurishte: religion: the article has no section matching 'вероизповед|религи'
+    Panagyurishte: ethnicity: the article prints 2 tables of this kind under one heading, with nothing in their headers to say which census each is; none is read
+    Parvomay: religion: the shares add to 9996.00, which is not a composition
+    Parvomay: ethnicity: the table holds no row this reader could read
+    Pavlikeni: religion: the article has no section matching 'вероизповед|религи'
+    Pavlikeni: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Pazardzhik: religion: the article has no section matching 'вероизповед|религи'
+    Pazardzhik: ethnicity: the table holds no row this reader could read
+    Pernik: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Pernik: ethnicity: the table holds no row this reader could read
+    Perushtitsa: religion: the article has no section matching 'вероизповед|религи'
+    Perushtitsa: ethnicity: the shares add to 9999.00, which is not a composition
+    Peshtera: religion: the article has no section matching 'вероизповед|религи'
+    Peshtera: ethnicity: the shares add to 9999.00, which is not a composition
+    Petrich: religion: the article has no section matching 'вероизповед|религи'
+    Petrich: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Pirdop: religion: the article has no section matching 'вероизповед|религи'
+    Pirdop: ethnicity: the shares add to 9999.00, which is not a composition
+    Pleven: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Pleven: ethnicity: the table holds no row this reader could read
+    Polski Trambesh: religion: the article has no section matching 'вероизповед|религи'
+    Polski Trambesh: ethnicity: the shares add to 10001.00, which is not a composition
+    Pomorie: religion: the article has no section matching 'вероизповед|религи'
+    Pomorie: ethnicity: the table holds no row this reader could read
+    Popovo: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Popovo: ethnicity: the table holds no row this reader could read
+    Pordim: religion: the article has no section matching 'вероизповед|религи'
+    Pordim: ethnicity: the shares add to 10000.00, which is not a composition
+    Pravets: religion: the article has no section matching 'вероизповед|религи'
+    Pravets: ethnicity: the shares add to 9999.00, which is not a composition
+    Primorsko: religion: the article has no section matching 'вероизповед|религи'
+    Primorsko: ethnicity: the table holds no row this reader could read
+    Provadiya: religion: the shares add to 9997.00, which is not a composition
+    Provadiya: ethnicity: the table holds no row this reader could read
+    Radomir: religion: the article has no section matching 'вероизповед|религи'
+    Radomir: ethnicity: the shares add to 9998.00, which is not a composition
+    Rakitovo: religion: the article has no section matching 'вероизповед|религи'
+    Rakitovo: ethnicity: the table holds no row this reader could read
+    Razgrad: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Razgrad: ethnicity: the table holds no row this reader could read
+    Razlog: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Razlog: ethnicity: the table holds no row this reader could read
+    Rila: religion: the article has no section matching 'вероизповед|религи'
+    Rila: ethnicity: the shares add to 9999.00, which is not a composition
+    Rodopi: religion: the article has no section matching 'вероизповед|религи'
+    Rodopi: ethnicity: the table holds no row this reader could read
+    Roman: religion: the article has no section matching 'вероизповед|религи'
+    Roman: ethnicity: the table holds no row this reader could read
+    Ruen: religion: the article has no section matching 'вероизповед|религи'
+    Ruen: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Ruse: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Ruse: ethnicity: the table holds no row this reader could read
+    Sadovo: religion: the shares add to 9996.00, which is not a composition
+    Sadovo: ethnicity: the table holds no row this reader could read
+    Saedinenie: religion: the article has no section matching 'вероизповед|религи'
+    Saedinenie: ethnicity: the table holds no row this reader could read
+    Samokov: religion: the article has no section matching 'вероизповед|религи'
+    Samokov: ethnicity: the shares add to 10000.00, which is not a composition
+    Samuil: religion: the article has no section matching 'вероизповед|религи'
+    Samuil: ethnicity: the table holds no row this reader could read
+    Sandanski: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Sandanski: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Sapareva Banya: religion: the article has no section matching 'вероизповед|религи'
+    Sapareva Banya: ethnicity: the article has no section matching 'етнически|етнос'
+    Satovcha: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Satovcha: ethnicity: the article has no section matching 'етнически|етнос'
+    Septemvri: religion: the article has no section matching 'вероизповед|религи'
+    Septemvri: ethnicity: the shares add to 9984.17, which is not a composition
+    Sevlievo: religion: the article has no section matching 'вероизповед|религи'
+    Sevlievo: ethnicity: the shares add to 10001.00, which is not a composition
+    Shabla: religion: the article has no section matching 'вероизповед|религи'
+    Shabla: ethnicity: the table holds no row this reader could read
+    Shumen: religion: the article has no section matching 'вероизповед|религи'
+    Shumen: ethnicity: the table holds no row this reader could read
+    Silistra: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Silistra: ethnicity: the table holds no row this reader could read
+    Simeonovgrad: religion: the article has no section matching 'вероизповед|религи'
+    Simeonovgrad: ethnicity: the table holds no row this reader could read
+    Simitli: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Simitli: ethnicity: the table holds no row this reader could read
+    Sitovo: religion: the shares add to 9995.00, which is not a composition
+    Sitovo: ethnicity: the table holds no row this reader could read
+    Sliven: religion: the article has no section matching 'вероизповед|религи'
+    Sliven: ethnicity: the table holds no row this reader could read
+    Slivnitsa: religion: the article has no section matching 'вероизповед|религи'
+    Slivnitsa: ethnicity: the shares add to 10001.00, which is not a composition
+    Slivo Pole: religion: the shares add to 9974.00, which is not a composition
+    Slivo Pole: ethnicity: the table holds no row this reader could read
+    Smolyan: religion: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Smolyan: ethnicity: the article has no section matching 'етнически|етнос'
+    Smyadovo: religion: the shares add to 9965.00, which is not a composition
+    Smyadovo: ethnicity: the table holds no row this reader could read
+    Sopot: religion: the article has no section matching 'вероизповед|религи'
+    Sopot: ethnicity: the article has no section matching 'етнически|етнос'
+    Sozopol: religion: the article has no section matching 'вероизповед|религи'
+    Sozopol: ethnicity: the table holds no row this reader could read
+    Sredets: religion: the article has no section matching 'вероизповед|религи'
+    Sredets: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Stamboliyski: religion: the article has no section matching 'вероизповед|религи'
+    Stamboliyski: ethnicity: the table holds no row this reader could read
+    Stambolovo: religion: the article has no section matching 'вероизповед|религи'
+    Stambolovo: ethnicity: the shares add to 10000.00, which is not a composition
+    Stolichna: religion: the article has no section matching 'вероизповед|религи'
+    Stolichna: ethnicity: the table holds no row this reader could read
+    Strazhitsa: religion: the article has no section matching 'вероизповед|религи'
+    Strazhitsa: ethnicity: the shares add to 9999.00, which is not a composition
+    Strelcha: religion: the article has no section matching 'вероизповед|религи'
+    Strelcha: ethnicity: the table holds no row this reader could read
+    Suhindol: religion: the article has no section matching 'вероизповед|религи'
+    Suhindol: ethnicity: the shares add to 10001.00, which is not a composition
+    Sungurlare: religion: the article has no section matching 'вероизповед|религи'
+    Sungurlare: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Suvorovo: religion: the shares add to 9996.00, which is not a composition
+    Suvorovo: ethnicity: the table holds no row this reader could read
+    Svilengrad: religion: the shares add to 9995.00, which is not a composition
+    Svilengrad: ethnicity: the table holds no row this reader could read
+    Svishtov: religion: the article has no section matching 'вероизповед|религи'
+    Svishtov: ethnicity: the shares add to 10000.00, which is not a composition
+    Svoge: religion: the article has no section matching 'вероизповед|религи'
+    Svoge: ethnicity: the shares add to 10001.00, which is not a composition
+    Targovishte: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Targovishte: ethnicity: the table holds no row this reader could read
+    Tervel: religion: the shares add to 9995.00, which is not a composition
+    Tervel: ethnicity: the table holds no row this reader could read
+    Teteven: religion: the article has no section matching 'вероизповед|религи'
+    Teteven: ethnicity: the shares add to 9999.00, which is not a composition
+    Topolovgrad: religion: the shares add to 9997.00, which is not a composition
+    Topolovgrad: ethnicity: the table holds no row this reader could read
+    Treklyano: religion: the article has no section matching 'вероизповед|религи'
+    Treklyano: ethnicity: the shares add to 10001.00, which is not a composition
+    Troyan: religion: the article has no section matching 'вероизповед|религи'
+    Troyan: ethnicity: the shares add to 10000.00, which is not a composition
+    Tryavna: religion: the article has no section matching 'вероизповед|религи'
+    Tryavna: ethnicity: the shares add to 10000.00, which is not a composition
+    Tsar Kaloyan: religion: the shares add to 10000.00, which is not a composition
+    Tsar Kaloyan: ethnicity: the table holds no row this reader could read
+    Tsarevo: religion: the shares add to 9985.00, which is not a composition
+    Tsarevo: ethnicity: the table holds no row this reader could read
+    Tsenovo: religion: the article has no section matching 'вероизповед|религи'
+    Tsenovo: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Tundzha: religion: the shares add to 9996.00, which is not a composition
+    Tundzha: ethnicity: the table holds no row this reader could read
+    Tutrakan: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Tutrakan: ethnicity: the table holds no row this reader could read
+    Tvarditsa: religion: the shares add to 9997.00, which is not a composition
+    Tvarditsa: ethnicity: the table holds no row this reader could read
+    Ugarchin: religion: the article has no section matching 'вероизповед|религи'
+    Ugarchin: ethnicity: the shares add to 10000.00, which is not a composition
+    Valchedram: religion: the article has no section matching 'вероизповед|религи'
+    Valchedram: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Valchi Dol: religion: the shares add to 9996.00, which is not a composition
+    Valchi Dol: ethnicity: the table holds no row this reader could read
+    Varbitsa: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Varbitsa: ethnicity: the table holds no row this reader could read
+    Varna: religion: the shares add to 9998.00, which is not a composition
+    Varna: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Varshets: religion: the article has no section matching 'вероизповед|религи'
+    Varshets: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Veliki Preslav: religion: the article has no section matching 'вероизповед|религи'
+    Veliki Preslav: ethnicity: the table holds no row this reader could read
+    Veliko Tarnovo: religion: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Veliko Tarnovo: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Velingrad: religion: the article has no section matching 'вероизповед|религи'
+    Velingrad: ethnicity: the shares add to 10000.00, which is not a composition
+    Venets: religion: the shares add to 9986.00, which is not a composition
+    Venets: ethnicity: the table holds no row this reader could read
+    Vetovo: religion: the article has no section matching 'вероизповед|религи'
+    Vetovo: ethnicity: the article has no section matching 'етнически|етнос'
+    Vetrino: religion: the shares add to 9996.00, which is not a composition
+    Vetrino: ethnicity: the table holds no row this reader could read
+    Vidin: religion: the article has no section matching 'вероизповед|религи'
+    Vidin: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Yablanitsa: religion: the article has no section matching 'вероизповед|религи'
+    Yablanitsa: ethnicity: the shares add to 10001.00, which is not a composition
+    Yakimovo: religion: the article has no section matching 'вероизповед|религи'
+    Yakimovo: ethnicity: the section is there and holds no table whose header this reader knows; the article has been reorganised or carries a different table
+    Yakoruda: religion: the article has no section matching 'вероизповед|религи'
+    Yakoruda: ethnicity: neither the citation nor the table's own header carries a year, so there is no date the figures are as of
+    Zavet: religion: the shares add to 9995.00, which is not a composition
+    Zavet: ethnicity: the table holds no row this reader could read
+    Zlataritsa: religion: the article has no section matching 'вероизповед|религи'
+    Zlataritsa: ethnicity: the shares add to 10000.00, which is not a composition
+    Zlatitsa: religion: the article has no section matching 'вероизповед|религи'
+    Zlatitsa: ethnicity: the shares add to 10000.00, which is not a composition
+    Zlatitsa: religion: the article has no section matching 'вероизповед|религи'
+    Zlatitsa: ethnicity: the shares add to 10000.00, which is not a composition
+  BGR admin2: religion: 0 of 265
+  BGR admin2: ethnicity: 0 of 265
+  wrote data/processed/europe_wiki_bulgaria.json (314 kB)
+wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/europe_wiki_bulgaria.json (293 records)
