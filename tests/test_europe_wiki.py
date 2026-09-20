@@ -378,3 +378,31 @@ class TwoTablesUnderOneHeading(unittest.TestCase):
         got, why = m.read_field(text, spec, m.SPECS["BGR"], "T", "bg")
         self.assertIsNone(got)
         self.assertIn("which census each is", why)
+
+
+class TheYearInAUrl(unittest.TestCase):
+    """A citation's year is often glued to a word in its URL, and a word
+    boundary finds none of them.
+
+    Every Serbian district was refused for want of a date that was in its
+    citation all along: the Statistical Office publishes at
+    publikacije.stat.gov.rs/G2023/ and popis2022.stat.gov.rs. What must not
+    happen instead is reading four digits out of the middle of an
+    identifier, so a year may touch letters and not digits.
+    """
+
+    def year(self, body):
+        return m.describe_citation(body)[1]
+
+    def test_a_year_glued_to_a_word_is_read(self):
+        self.assertEqual(self.year(
+            "{{Cite web|url=https://popis2022.stat.gov.rs/media/x.pdf|title=Попис}}"),
+            2022)
+        self.assertEqual(self.year(
+            "{{Cite web|url=https://publikacije.stat.gov.rs/G2023/Pdf/G20234001.pdf"
+            "|title=Национална припадност}}"), 2023)
+
+    def test_four_digits_inside_an_identifier_are_not_a_year(self):
+        self.assertIsNone(self.year(
+            "{{cite web|url=http://miris.eurac.edu/do/blob.html?serial=1039432230349"
+            "|title=Minorities}}"))

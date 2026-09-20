@@ -421,7 +421,15 @@ def describe_citation(body: str) -> tuple[str, int | None, str]:
     years = [int(y) for y in re.findall(r"\b(19\d\d|20[0-4]\d)\b", title)]
     if not years:
         path = re.sub(r"web\.archive\.org/web/\d+/", "", url)
-        years = [int(y) for y in re.findall(r"\b(19\d\d|20[0-4]\d)\b", path)]
+        # A URL glues the year to a word -- popis2022.stat.gov.rs,
+        # census2011.statistics.sk, publikacije.stat.gov.rs/G2023/ -- so a
+        # word boundary finds none of them, and every Serbian district was
+        # refused for want of a date that was in its citation all along.
+        # What must not happen is reading four digits out of the middle of
+        # an identifier, so the year may touch letters and not digits:
+        # "G20234001.pdf" yields nothing, "G2023" yields 2023.
+        years = [int(y) for y in
+                 re.findall(r"(?<!\d)(19\d\d|20[0-4]\d)(?!\d)", path)]
     if not years:
         # The citation's own date of publication; never its access date,
         # which is when the editor read it.
@@ -433,7 +441,8 @@ def describe_citation(body: str) -> tuple[str, int | None, str]:
         # the whole of it is the citation and the year in it is the
         # citation's own -- there is no access date in a bare link to
         # mistake it for.
-        years = [int(y) for y in re.findall(r"\b(19\d\d|20[0-4]\d)\b", body)]
+        years = [int(y) for y in
+                 re.findall(r"(?<!\d)(19\d\d|20[0-4]\d)(?!\d)", body)]
     return kind, (max(years) if years else None), title or url or " ".join(body.split())[:80]
 
 
@@ -852,7 +861,11 @@ BALKAN_ETHNICITY = {
     "balkan egyptians": "Balkan Egyptian", "ethnic muslims": "Muslim (ethnic)",
     "muslims": "Muslim (ethnic)", "muslims by nationality": "Muslim (ethnic)",
     "germans": "German", "russians": "Russian", "ukrainians": "Ukrainian",
-    "slovenes": "Slovene", "czechs": "Czech", "poles": "Polish",
+    "slovenes": "Slovene", "slovenians": "Slovene", "czechs": "Czech",
+    "poles": "Polish", "slovenians (people)": "Slovene",
+    "romanians": "Romanian", "vlasi": "Vlach", "bunjevac": "Bunjevac",
+    "šokci": "Šokci", "sokci": "Šokci", "goranci": "Gorani",
+    "yugoslav": "Yugoslav", "bosnians": "Bosnian", "serb": "Serbian",
     "greeks": "Greek", "jews": "Jewish", "italians": "Italian",
     "torbesh": "Torbesh", "serbians": "Serbian", "gagauz": "Gagauz",
     "moldovans": "Moldovan", "moldovans *": "Moldovan",
@@ -962,13 +975,17 @@ MD_ETHNICITY = Composition(
     labels=BALKAN_ETHNICITY,
     skip=TOTALS)
 
+# The two municipalities the category files under their formal titles.
+ME_TITLES = {"Cetinje Municipality": "Old Royal Capital Cetinje",
+             "Podgorica Municipality": "Podgorica Capital City"}
+
 ME_FIELDS = (
     Composition(field="ethnicity", section=r"ethnic|^demograph|^population",
-                header=r"ethnicity|ethnic group", value=-1,
-                labels=BALKAN_ETHNICITY, skip=TOTALS),
+                header=r"ethnic(ity|\s+group|\s+composition)|nationality",
+                value=-1, labels=BALKAN_ETHNICITY, skip=TOTALS),
     Composition(field="religion", section=r"religio|^demograph|^population",
-                header=r"religion", value=-1,
-                labels=BALKAN_RELIGION, skip=TOTALS),
+                header=r"religio|denomination|faith|confession",
+                value=-1, labels=BALKAN_RELIGION, skip=TOTALS),
 )
 
 # Bulgarian. The National Statistical Institute's own categories, as the
@@ -1118,11 +1135,19 @@ SPECS: dict[str, Country] = {
         levels=(
             Level(level="admin1", lang="en", title="{name}", match="folded",
                   links="Administrative districts of Serbia",
+                  # The list article names the City of Belgrade, which the
+                  # boundary file draws as a district, by its own article;
+                  # and Srem District, which the file calls by the region's
+                  # English name, Syrmia.
+                  titles={"Belgrade": "Belgrade",
+                          "Syrmia District": "Srem District"},
                   fields=(RS_ETHNICITY,)),
             Level(level="admin2", lang="en", title="{name}", match="folded",
                   links="Municipalities and cities of Serbia",
                   shape_trim=r"\s+(Municipality|Municipal\*|City)$",
                   article_trim=r",\s*Serbia$",
+                  titles={"Petrovac-na-Mlavi Municipality": "Petrovac na Mlavi",
+                          "Raska Municipality": "Raška"},
                   fields=(RS_ETHNICITY,)),
         )),
     # Bulgaria: the composition is in the Bulgarian edition and not in the
@@ -1159,11 +1184,13 @@ SPECS: dict[str, Country] = {
             Level(level="admin1", lang="en", title="{name}", match="folded",
                   category="Category:Municipalities of Montenegro",
                   article_trim=r"\s+Municipality$",
-                  shape_trim=r"\s+Municipality$", fields=ME_FIELDS),
+                  shape_trim=r"\s+Municipality$",
+                  titles=ME_TITLES, fields=ME_FIELDS),
             Level(level="admin2", lang="en", title="{name}", match="folded",
                   category="Category:Municipalities of Montenegro",
                   article_trim=r"\s+Municipality$",
-                  shape_trim=r"\s+Municipality$", fields=ME_FIELDS),
+                  shape_trim=r"\s+Municipality$",
+                  titles=ME_TITLES, fields=ME_FIELDS),
         )),
 }
 
