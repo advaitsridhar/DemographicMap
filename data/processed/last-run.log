@@ -1,131 +1,307 @@
-indonesia: ethnicity by province (2010 census) and religion by province and regency, read from the Indonesian Wikipedia
-    Aceh: no total row; the rows' sum 4,407,444 stands as the total
-    Banten: The article's 'Sunda' row folds the census's Bantenese, 4.66 million nationally, into Sundanese; the two are not separated here.
-    Central Kalimantan: The table's rows add to 2,214,365 against its printed total 2,207,367; the rows are the denominator.
-    East Kalimantan: The table's rows add to 2,971,205 against its printed total 2,971,203; the rows are the denominator.
-    East Nusa Tenggara: The article's 'asal Kalimantan' row, 14.5%, is carried in 'Other ethnic groups': no census of the province supports a Kalimantan share of that size.
-    Riau: The table's printed total, 6,407,842, is not the 2010 census population; its rows add to 5,499,561, which is, and are the denominator.
-    Riau Islands: no total row; the rows' sum 1,672,891 stands as the total
-    South Sumatra: The table's rows add to 7,485,042 against its printed total 7,434,042; the rows are the denominator.
-    Special Region of Yogyakarta: no total row; the rows' sum 3,451,008 stands as the total
-    West Java: The table's rows add to 42,922,426 against its printed total 42,982,865; the rows are the denominator.
-    West Kalimantan: The table's rows add to 4,385,356 against its printed total 4,397,162; the rows are the denominator.
-  national check: Javanese 95,107,968 across 32 provinces against the census's 95,217,022 (99.89%)
-    Sundanese: 41,161,964 read, 36,701,670 published (112.2%)
-    Batak: 8,446,015 read, 8,466,969 published (99.8%)
-    Madurese: 7,110,040 read, 7,179,356 published (99.0%)
-    Betawi: 6,742,910 read, 6,807,968 published (99.0%)
-    Minangkabau: 6,472,699 read, 6,462,713 published (100.2%)
-    Bantenese: 75,191 read, 4,657,784 published (1.6%)
-    Banjar: 4,075,509 read, 4,127,124 published (98.7%)
-    Balinese: 3,879,961 read, 3,946,416 published (98.3%)
-    Dayak: 3,012,300 read, 3,009,494 published (100.1%)
-    Sasak: 3,153,162 read, 3,173,127 published (99.4%)
-    Makassarese: 2,595,729 read, 2,672,590 published (97.1%)
-  provinces: 34; ethnicity on 32, religion on 32
-    Kabupaten Bangka: the citation carries no year; not read
-    Kabupaten Bangka Barat: unknown faith label(s) ['% Kristen']; not read
-    Kabupaten Bangka Tengah: unknown faith label(s) ['% Kristen']; not read
-    Kabupaten Banyuasin: the citation carries no year; not read
-    Kabupaten Banyuwangi: the head count carries no citation; not read
-    Kabupaten Barru: the head count carries no citation; not read
-    Kabupaten Belitung Timur: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
-    Kabupaten Bintan: the head count cites other, which does not publish one; not read
-    Kabupaten Boalemo: As printed the shares add to 101.0%, and are carried as printed.
-    Kabupaten Bolaang Mongondow: As printed the shares add to 102.0%, and are carried as printed.
-    Kabupaten Bolaang Mongondow Utara: As printed the shares add to 101.0%, and are carried as printed.
-    Kabupaten Bone Bolango: the head count carries no citation; not read
-    Kabupaten Flores Timur: no religion in the infobox
-    Kabupaten Garut: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
-    Kabupaten Grobogan: As printed the shares add to 100.8%, and are carried as printed.
-    Kabupaten Jember: As printed the shares add to 101.9%, and are carried as printed.
-    Kabupaten Jember: the head count carries no citation; not read
-    Kabupaten Karimun: the head count cites other, which does not publish one; not read
-    Kabupaten Kaur: the head count cites other, which does not publish one; not read
-    Kabupaten Kepulauan Anambas: the head count cites other, which does not publish one; not read
-    Kabupaten Kepulauan Meranti: religion figure carries no citation; not read
-    Kabupaten Kolaka Timur: the citation carries no year; not read
-    Kota Ambon: the head count carries no citation; not read
-    Kota Balikpapan: As printed the shares add to 101.1%, and are carried as printed.
-    Kota Bandar Lampung: the head count carries no citation; not read
-    Kota Banjar: the citation carries no year; not read
-    Kota Batam: the head count cites other, which does not publish one; not read
-    Kota Baubau: the head count carries no citation; not read
-    Kota Bekasi: the head count carries no citation; not read
-    Kota Bukittinggi: religion figure carries no citation; not read
-    Kota Cimahi: religion figure carries no citation; not read
-    Kota Denpasar: the head count cites other, which does not publish one; not read
-    Kota Depok: the head count carries no citation; not read
-    Kota Administrasi Jakarta Timur: unknown faith label(s) ['4% Buddha']; not read
-    Kota Kupang: the citation carries no year; not read
-    Kota Lubuk Linggau: no head count in '245,287'; not read
-    Kota Pagar Alam: religion figure carries no citation; not read
-    Kota Palangka Raya: the citation carries no year; not read
-    Kota Pariaman: religion figure carries no citation; not read
-    Kota Payakumbuh: religion figure carries no citation; not read
-    Kota Pematangsiantar: religion figure carries no citation (named references ['agama'] defined nowhere); not read
-    Kota Prabumulih: religion figure carries no citation; not read
-    Kota Samarinda: the citation carries no year; not read
-    Kota Sawahlunto: religion figure carries no citation; not read
-    Kota Semarang: the citation carries no year; not read
-    Kota Tangerang Selatan: the citation carries no year; not read
-    Kota Tanjungpinang: the head count cites other, which does not publish one; not read
-    Kota Tidore Kepulauan: the citation carries no year; not read
-    Kota Tual: the head count carries no citation; not read
-    Kota Yogyakarta: the citation carries no year; not read
-    Kabupaten Lampung Utara: the citation carries no year; not read
-    Kabupaten Lebong: the citation carries no year; not read
-    Kabupaten Lingga: religion figure carries no citation (named references ['kepri'] defined nowhere); not read
-    Kabupaten Lumajang: religion figure carries no citation; not read
-    Kabupaten Luwu Utara: the citation carries no year; not read
-    Kabupaten Madiun: the head count carries no citation; not read
-    Kabupaten Pasangkayu: the citation carries no year; not read
-    Kabupaten Maros: the head count carries no year; not read
-    Kabupaten Minahasa Tenggara: unknown faith label(s) ['Budha danHindu']; not read
-    Kabupaten Minahasa Utara: As printed the shares add to 103.0%, and are carried as printed.
-    Kabupaten Morowali Utara: religion figure carries no citation; not read
-    Kabupaten Muna: As printed the shares add to 101.8%, and are carried as printed.
-    Kabupaten Murung Raya: the head count carries no citation; not read
-    Kabupaten Musi Rawas: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
-    Kabupaten Musi Rawas Utara: the head count carries no citation; not read
-    Kabupaten Natuna: the head count cites other, which does not publish one; not read
-    Kabupaten Ngawi: the citation carries no year; not read
-    Kabupaten Ogan Ilir: religion figure carries no citation; not read
-    Kabupaten Ogan Komering Ulu: religion figure carries no citation; not read
-    Kabupaten Pacitan: religion figure carries no citation; not read
-    Kabupaten Pangandaran: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
-    Kabupaten Pangkajene dan Kepulauan: the head count carries no citation; not read
-    Kabupaten Pasaman: religion figure carries no citation; not read
-    Kabupaten Pekalongan: the head count carries no citation; not read
-    Kabupaten Penukal Abab Lematang Ilir: the citation carries no year; not read
-    Kabupaten Pesawaran: the citation carries no year; not read
-    Kabupaten Pesisir Barat: religion figure carries no citation; not read
-    Kabupaten Pinrang: the citation carries no year; not read
-    Kabupaten Pohuwato: the citation carries no year; not read
-    Kabupaten Polewali Mandar: the head count carries no citation; not read
-    Kabupaten Ponorogo: the head count carries no citation; not read
-    Kabupaten Probolinggo: religion figure carries no citation (named references ['pas'] defined nowhere); not read
-    Kabupaten Rejang Lebong: the head count carries no citation; not read
-    Kabupaten Sampang: religion figure carries no citation; not read
-    Kabupaten Sidenreng Rappang: the citation carries no year; not read
-    Kabupaten Sidoarjo: the citation carries no year; not read
-    Kabupaten Sijunjung: the head count carries no citation; not read
-    Kabupaten Soppeng: religion figure carries no citation; not read
-    Kabupaten Sukabumi: religion figure carries no citation (named references ['dukcapil'] defined nowhere); not read
-    Kabupaten Takalar: no religion in the infobox
-    Kabupaten Tasikmalaya: the head count carries no citation; not read
-    Kabupaten Tegal: the head count carries no citation; not read
-    Kabupaten Temanggung: the head count carries no citation; not read
-    Kabupaten Tojo Una-Una: religion figure carries no citation; not read
-    Kabupaten Trenggalek: the head count carries no citation; not read
-    Kabupaten Tuban: the head count carries no citation; not read
-    Kabupaten Tulang Bawang: As printed the shares add to 101.5%, and are carried as printed.
-    Kabupaten Tulungagung: the head count carries no citation; not read
-    Kabupaten Wajo: the citation carries no year; not read
-    Kabupaten Wonogiri: The article's faiths add to 99.2%; the rest is carried as a remainder.
-    Kabupaten Wonogiri: the head count carries no citation; not read
-  regencies: 458 read; by kind of source: bps 120, census2010 67, dukcapil 252, jakarta 1, kemenag 7, other 11
-  regencies with a head count: 422 of 458
-  not read (55): Bangka-Belitung Islands/Bangka, Bangka-Belitung Islands/Bangka Barat, Bangka-Belitung Islands/Bangka Tengah, South Sumatra/Banyu Asin, Bangka-Belitung Islands/Belitung Timur, East Nusa Tenggara/Flores Timur, West Java/Garut, Riau/Kepulauan Meranti, Southeast Sulawesi/Kolaka Timur, West Java/Kota Banjar, West Sumatra/Kota Bukittinggi, West Java/Kota Cimahi, Jakarta Special Capital Region/Kota Jakarta Timur, East Nusa Tenggara/Kota Kupang, South Sumatra/Kota Pagar Alam, Central Kalimantan/Kota Palangka Raya, West Sumatra/Kota Pariaman, West Sumatra/Kota Payakumbuh, North Sumatra/Kota Pematang Siantar, South Sumatra/Kota Prabumulih, East Kalimantan/Kota Samarinda, West Sumatra/Kota Sawah Lunto, Central Java/Kota Semarang, Banten/Kota Tangerang Selatan, North Maluku/Kota Tidore Kepulauan, Special Region of Yogyakarta/Kota Yogyakarta, Lampung/Lampung Utara, Bengkulu/Lebong, Riau Islands/Lingga, East Java/Lumajang, South Sulawesi/Luwu Utara, West Sulawesi/Mamuju Utara, North Sulawesi/Minahasa Tenggara, Central Sulawesi/Morowali Utara, South Sumatra/Musi Rawas, East Java/Ngawi, South Sumatra/Ogan Ilir, South Sumatra/Ogan Komering Ulu, East Java/Pacitan, West Java/Pangandaran, West Sumatra/Pasaman, South Sumatra/Penukal Abab Lematang Ilir, Lampung/Pesawaran, Lampung/Pesisir Barat, South Sulawesi/Pinrang, Gorontalo/Pohuwato, East Java/Probolinggo, East Java/Sampang, South Sulawesi/Sidenreng Rappang, East Java/Sidoarjo, South Sulawesi/Soppeng, West Java/Sukabumi, South Sulawesi/Takalar, Central Sulawesi/Tojo Una-Una, South Sulawesi/Wajo
-  wrote data/processed/indonesia.json (1106 kB)
-  wrote 492 records to indonesia.json
+  retry 1/1 after 2s :: http://web.archive.org/cdx/search/cdx?url=prism.spc.int/country/pg*&output=text&limit=8000&fl=original&collapse=urlkey :: HTTP Error 504: Gateway Time-out
+  http://web.archive.org/cdx/search/cdx?url=prism.spc.int/country/pg*&output=text&limit=8000&fl=original&collapse=urlkey
+    23,413 chars
+    373 distinct match(es) for 'http[a-zA-Z0-9:/?&=%._~-]+'
+      http://prism.spc.int/Country/PG/PGindex.html
+      http://prism.spc.int/Country/PG/Stats.htm
+      http://prism.spc.int/Country/PG/Stats.htm8
+      http://prism.spc.int/Country/PG/Stats/GISMaps/GIS.pdf
+      http://prism.spc.int/Country/PG/Stats/News_Release/2006%20DHS%20Launching%20Speech.pdf
+      http://prism.spc.int/Country/PG/Stats/other_news_files/ADOC2005/2005%20ADOC%20AWARD
+      http://prism.spc.int/country/pg/
+      http://prism.spc.int/country/pg/0.href
+      http://prism.spc.int/country/pg/1.2em
+      http://prism.spc.int/country/pg/3p.ds
+      http://prism.spc.int/country/pg/ChAIgK/HqgYQ8qedy/Gn4bt0EiUA5BVRJH3HMkdAl/dWE60QXN11EDcYuKW08/3dgyEdtzk/2YJtGgLr9wx3dx3d
+      http://prism.spc.int/country/pg/ChAIgK/HqgYQ8qedy/Gn4bt0EiYA5BVRJA8U9kbIWEUfLAI3Lm5qix5d7BKxieK3eN/0alkvIxkunhoCMiEx3d
+      http://prism.spc.int/country/pg/ChAIgMjCmwYQ1uqOzOisk4kfEiYAgRLD5m5OUlqp6Jx8uk7YCnx1xbaF12mG6gnSEzctZ3H/blIqyhoCP48x3d
+      http://prism.spc.int/country/pg/Edg/
+      http://prism.spc.int/country/pg/IN/Share
+      http://prism.spc.int/country/pg/ImageServer/exportImage
+      http://prism.spc.int/country/pg/JSON.parse
+      http://prism.spc.int/country/pg/JSON.stringify
+      http://prism.spc.int/country/pg/LC_API.agents_are_available
+      http://prism.spc.int/country/pg/LC_API.chat_running
+      http://prism.spc.int/country/pg/LC_API.chat_window_hidden
+      http://prism.spc.int/country/pg/LC_API.chat_window_maximized
+      http://prism.spc.int/country/pg/LC_API.chat_window_minimized
+      http://prism.spc.int/country/pg/LC_API.close_chat
+      http://prism.spc.int/country/pg/LC_API.get_window_type
+      http://prism.spc.int/country/pg/LC_API.hide_chat_window
+      http://prism.spc.int/country/pg/LC_API.hide_eye_catcher
+      http://prism.spc.int/country/pg/LC_API.minimize_chat_window
+      http://prism.spc.int/country/pg/LC_API.open_chat_window
+      http://prism.spc.int/country/pg/LC_API.set_custom_variables
+      http://prism.spc.int/country/pg/LC_API.set_visitor_email
+      http://prism.spc.int/country/pg/LC_API.set_visitor_name
+      http://prism.spc.int/country/pg/LC_API.update_custom_variables
+      http://prism.spc.int/country/pg/LC_API.visitor_engaged
+      http://prism.spc.int/country/pg/LC_API.visitor_queued
+      http://prism.spc.int/country/pg/LiveChatWidget.call
+      http://prism.spc.int/country/pg/LiveChatWidget.get
+      http://prism.spc.int/country/pg/LiveChatWidget.on
+      http://prism.spc.int/country/pg/LiveChatWidget.once
+      http://prism.spc.int/country/pg/MapServer/export
+      http://prism.spc.int/country/pg/Micro.blog
+      http://prism.spc.int/country/pg/Microsoft.XMLDOM
+      http://prism.spc.int/country/pg/Stats/Ec
+      http://prism.spc.int/country/pg/Stats/Economic_Statistics/National%20Accounts/nat_act.htm
+      http://prism.spc.int/country/pg/Stats/Tourism/tourism.htm
+      http://prism.spc.int/country/pg/Version/15
+      http://prism.spc.int/country/pg/_gat._anonymizeIp
+      http://prism.spc.int/country/pg/_gat._forceSSL
+      http://prism.spc.int/country/pg/aff.map
+      http://prism.spc.int/country/pg/attachments.enable_for_visitors
+      http://prism.spc.int/country/pg/aw.ds
+      http://prism.spc.int/country/pg/bs.alert
+      http://prism.spc.int/country/pg/bs.button
+      http://prism.spc.int/country/pg/bs.carousel
+      http://prism.spc.int/country/pg/bs.collapse
+      http://prism.spc.int/country/pg/bs.dropdown
+      http://prism.spc.int/country/pg/bs.modal
+      http://prism.spc.int/country/pg/bs.popover
+      http://prism.spc.int/country/pg/bs.scrollspy
+      http://prism.spc.int/country/pg/bs.tab
+      http://prism.spc.int/country/pg/bs.tooltip
+      http://prism.spc.int/country/pg/cct.google
+      http://prism.spc.int/country/pg/chat_window.custom_mobile_settings
+      http://prism.spc.int/country/pg/chat_window.disable_minimized
+      http://prism.spc.int/country/pg/chat_window.disable_sounds
+      http://prism.spc.int/country/pg/chat_window.display_avatar
+      http://prism.spc.int/country/pg/chat_window.display_logo
+      http://prism.spc.int/country/pg/chat_window.display_transcript_button
+      http://prism.spc.int/country/pg/chat_window.hide_on_init
+      http://prism.spc.int/country/pg/chat_window.hide_on_mobile
+      http://prism.spc.int/country/pg/chat_window.hide_trademark
+      http://prism.spc.int/country/pg/chat_window.logo_path
+      http://prism.spc.int/country/pg/chat_window.mobile_disable_minimized
+      http://prism.spc.int/country/pg/chat_window.mobile_hide_on_init
+      http://prism.spc.int/country/pg/chat_window.mobile_minimized_theme
+      http://prism.spc.int/country/pg/chat_window.mobile_offset_x
+      http://prism.spc.int/country/pg/chat_window.mobile_offset_y
+      http://prism.spc.int/country/pg/chat_window.mobile_screen_position
+      http://prism.spc.int/country/pg/chat_window.offset_x
+      http://prism.spc.int/country/pg/chat_window.offset_y
+      http://prism.spc.int/country/pg/chat_window.screen_position
+      http://prism.spc.int/country/pg/click.dismiss
+      http://prism.spc.int/country/pg/click.form-plugin
+      http://prism.spc.int/country/pg/console.log
+      http://prism.spc.int/country/pg/cookie/consent
+      http://prism.spc.int/country/pg/document.domain
+      http://prism.spc.int/country/pg/ec.js
+      http://prism.spc.int/country/pg/edge.create
+      http://prism.spc.int/country/pg/edge.remove
+      http://prism.spc.int/country/pg/embed/
+      http://prism.spc.int/country/pg/embedded_chat.display_eye_catcher
+      http://prism.spc.int/country/pg/embedded_chat.hide_when_offline
+      http://prism.spc.int/country/pg/grid/collection
+      http://prism.spc.int/country/pg/gtag.config
+      http://prism.spc.int/country/pg/gtag.get
+      http://prism.spc.int/country/pg/gtm.allowlist
+      http://prism.spc.int/country/pg/gtm.blacklist
+      http://prism.spc.int/country/pg/gtm.blocklist
+      http://prism.spc.int/country/pg/gtm.dom
+      http://prism.spc.int/country/pg/gtm.element
+      http://prism.spc.int/country/pg/gtm.elementClasses
+      http://prism.spc.int/country/pg/gtm.elementId
+      http://prism.spc.int/country/pg/gtm.elementTarget
+      http://prism.spc.int/country/pg/gtm.elementText
+      http://prism.spc.int/country/pg/gtm.elementUrl
+      http://prism.spc.int/country/pg/gtm.formCanceled
+      http://prism.spc.int/country/pg/gtm.formInteract
+      http://prism.spc.int/country/pg/gtm.formSubmit
+      http://prism.spc.int/country/pg/gtm.formSubmitButtonText
+      http://prism.spc.int/country/pg/gtm.formSubmitElement
+      http://prism.spc.int/country/pg/gtm.formSubmitElementText
+      http://prism.spc.int/country/pg/gtm.historyChange
+      http://prism.spc.int/country/pg/gtm.historyChange-v2
+      http://prism.spc.int/country/pg/gtm.historyChangeSource
+      http://prism.spc.int/country/pg/gtm.init
+      http://prism.spc.int/country/pg/gtm.init_consent
+      http://prism.spc.int/country/pg/gtm.interactSequenceNumber
+      http://prism.spc.int/country/pg/gtm.interactedFormField
+      http://prism.spc.int/country/pg/gtm.interactedFormFieldId
+      http://prism.spc.int/country/pg/gtm.interactedFormFieldName
+      http://prism.spc.int/country/pg/gtm.interactedFormFieldPosition
+      http://prism.spc.int/country/pg/gtm.interactedFormFieldType
+      http://prism.spc.int/country/pg/gtm.interactedFormLength
+      http://prism.spc.int/country/pg/gtm.interactedFormName
+      http://prism.spc.int/country/pg/gtm.js
+      http://prism.spc.int/country/pg/gtm.linkClick
+      http://prism.spc.int/country/pg/gtm.load
+      http://prism.spc.int/country/pg/gtm.newHistoryState
+      http://prism.spc.int/country/pg/gtm.newUrl
+      http://prism.spc.int/country/pg/gtm.newUrlFragment
+      http://prism.spc.int/country/pg/gtm.oldHistoryState
+      http://prism.spc.int/country/pg/gtm.oldUrl
+      http://prism.spc.int/country/pg/gtm.oldUrlFragment
+      http://prism.spc.int/country/pg/gtm.priorityId
+      http://prism.spc.int/country/pg/gtm.scrollDepth
+      http://prism.spc.int/country/pg/gtm.scrollDirection
+      http://prism.spc.int/country/pg/gtm.scrollThreshold
+      http://prism.spc.int/country/pg/gtm.scrollUnits
+      http://prism.spc.int/country/pg/gtm.start
+      http://prism.spc.int/country/pg/gtm.sync
+      http://prism.spc.int/country/pg/gtm.timerCurrentTime
+      http://prism.spc.int/country/pg/gtm.timerElapsedTime
+      http://prism.spc.int/country/pg/gtm.timerEventNumber
+      http://prism.spc.int/country/pg/gtm.timerId
+      http://prism.spc.int/country/pg/gtm.timerInterval
+      http://prism.spc.int/country/pg/gtm.timerLimit
+      http://prism.spc.int/country/pg/gtm.timerStartTime
+      http://prism.spc.int/country/pg/gtm.triggers
+      http://prism.spc.int/country/pg/gtm.uniqueEventId
+      http://prism.spc.int/country/pg/gtm.video
+      http://prism.spc.int/country/pg/gtm.videoCurrentTime
+      http://prism.spc.int/country/pg/gtm.videoDuration
+      http://prism.spc.int/country/pg/gtm.videoElapsedTime
+      http://prism.spc.int/country/pg/gtm.videoPercent
+      http://prism.spc.int/country/pg/gtm.videoProvider
+      http://prism.spc.int/country/pg/gtm.videoStatus
+      http://prism.spc.int/country/pg/gtm.videoTitle
+      http://prism.spc.int/country/pg/gtm.videoUrl
+      http://prism.spc.int/country/pg/gtm.videoVisible
+      http://prism.spc.int/country/pg/gtm.whitelist
+      http://prism.spc.int/country/pg/gtm.willOpenInCurrentWindow
+      http://prism.spc.int/country/pg/gtm.willOpenInNewWindow
+      http://prism.spc.int/country/pg/helpdesk.inbound_forwarding
+      http://prism.spc.int/country/pg/horiz.pct
+      http://prism.spc.int/country/pg/horiz.pix
+      http://prism.spc.int/country/pg/i/jot/embeds
+      http://prism.spc.int/country/pg/image/
+      http://prism.spc.int/country/pg/image/webp
+      http://prism.spc.int/country/pg/internal.GtagSchema
+      http://prism.spc.int/country/pg/internal.addDataLayerEventListener
+      http://prism.spc.int/country/pg/internal.addFormAbandonmentListener
+      http://prism.spc.int/country/pg/internal.addFormData
+      http://prism.spc.int/country/pg/internal.addFormInteractionListener
+      http://prism.spc.int/country/pg/internal.addFormSubmitListener
+      http://prism.spc.int/country/pg/internal.addGaSendListener
+      http://prism.spc.int/country/pg/internal.addGoogleTagRestriction
+      http://prism.spc.int/country/pg/internal.addHistoryChangeListener
+      http://prism.spc.int/country/pg/internal.appendRemoteConfigParameter
+      http://prism.spc.int/country/pg/internal.computeGtmParameter
+      http://prism.spc.int/country/pg/internal.copyFromDataLayerCache
+      http://prism.spc.int/country/pg/internal.copyKeyFromWindow
+      http://prism.spc.int/country/pg/internal.copyPreHit
+      http://prism.spc.int/country/pg/internal.createGaCommandQueue
+      http://prism.spc.int/country/pg/internal.createRegex
+      http://prism.spc.int/country/pg/internal.declareConsentState
+      http://prism.spc.int/country/pg/internal.decodeUrlHtmlEntities
+      http://prism.spc.int/country/pg/internal.decorateUrlWithGaCookies
+      http://prism.spc.int/country/pg/internal.detectUserProvidedData
+      http://prism.spc.int/country/pg/internal.enableAutoEventOnClick
+      http://prism.spc.int/country/pg/internal.enableAutoEventOnElementVisibility
+      http://prism.spc.int/country/pg/internal.enableAutoEventOnError
+      http://prism.spc.int/country/pg/internal.enableAutoEventOnFormInteraction
+      http://prism.spc.int/country/pg/internal.enableAutoEventOnFormSubmit
+      http://prism.spc.int/country/pg/internal.enableAutoEventOnGaSend
+      http://prism.spc.int/country/pg/internal.enableAutoEventOnHistoryChange
+      http://prism.spc.int/country/pg/internal.enableAutoEventOnLinkClick
+      http://prism.spc.int/country/pg/internal.enableAutoEventOnScroll
+      http://prism.spc.int/country/pg/internal.enableAutoEventOnTimer
+      http://prism.spc.int/country/pg/internal.enableAutoEventOnYouTubeActivity
+      http://prism.spc.int/country/pg/internal.evaluateBooleanExpression
+      http://prism.spc.int/country/pg/internal.evaluateMatchingRules
+      http://prism.spc.int/country/pg/internal.executeEventProcessor
+      http://prism.spc.int/country/pg/internal.executeJavascriptString
+      http://prism.spc.int/country/pg/internal.getCountryCode
+      http://prism.spc.int/country/pg/internal.getDestinationIds
+      http://prism.spc.int/country/pg/internal.getElementAttribute
+      http://prism.spc.int/country/pg/internal.getElementById
+      http://prism.spc.int/country/pg/internal.getElementInnerText
+      http://prism.spc.int/country/pg/internal.getElementProperty
+      http://prism.spc.int/country/pg/internal.getElementValue
+      http://prism.spc.int/country/pg/internal.getElementVisibilityRatio
+      http://prism.spc.int/country/pg/internal.getElementsByCssSelector
+      http://prism.spc.int/country/pg/internal.getEventData
+      http://prism.spc.int/country/pg/internal.getFlags
+      http://prism.spc.int/country/pg/internal.getHtmlId
+      http://prism.spc.int/country/pg/internal.getProductSettingsParameter
+      http://prism.spc.int/country/pg/internal.getRegionCode
+      http://prism.spc.int/country/pg/internal.getRemoteConfigParameter
+      http://prism.spc.int/country/pg/internal.gtagConfig
+      http://prism.spc.int/country/pg/internal.injectHtml
+      http://prism.spc.int/country/pg/internal.injectScript
+      http://prism.spc.int/country/pg/internal.legacyParseUrl
+      http://prism.spc.int/country/pg/internal.loadGoogleTag
+      http://prism.spc.int/country/pg/internal.mergeRemoteConfig
+      http://prism.spc.int/country/pg/internal.parseCookieValuesFromString
+      http://prism.spc.int/country/pg/internal.processAsNewEvent
+      http://prism.spc.int/country/pg/internal.pushToDataLayer
+      http://prism.spc.int/country/pg/internal.readDataLayerName
+      http://prism.spc.int/country/pg/internal.registerCcdCallback
+      http://prism.spc.int/country/pg/internal.registerDestination
+      http://prism.spc.int/country/pg/internal.registerGtagCommandListener
+      http://prism.spc.int/country/pg/internal.removeDataLayerEventListener
+      http://prism.spc.int/country/pg/internal.removeFormData
+      http://prism.spc.int/country/pg/internal.sendGtagEvent
+      http://prism.spc.int/country/pg/internal.setAnchorHref
+      http://prism.spc.int/country/pg/internal.setCorePlatformServices
+      http://prism.spc.int/country/pg/internal.setDelegatedConsentType
+      http://prism.spc.int/country/pg/internal.setFormAction
+      http://prism.spc.int/country/pg/internal.setProductSettingsParameter
+      http://prism.spc.int/country/pg/internal.setRemoteConfigParameter
+      http://prism.spc.int/country/pg/internal.sortRemoteConfigParameters
+      http://prism.spc.int/country/pg/internal.testRegex
+      http://prism.spc.int/country/pg/js/
+      http://prism.spc.int/country/pg/keydown.dismiss
+      http://prism.spc.int/country/pg/kit.linkedin_share_event
+      http://prism.spc.int/country/pg/lc.chat
+      http://prism.spc.int/country/pg/linkid.js
+      http://prism.spc.int/country/pg/map/
+      http://prism.spc.int/country/pg/message.send
+      http://prism.spc.int/country/pg/modules/
+      http://prism.spc.int/country/pg/mousedown.dismiss
+      http://prism.spc.int/country/pg/mouseup.dismiss
+      http://prism.spc.int/country/pg/multipart/form-data
+      http://prism.spc.int/country/pg/n/a
+      http://prism.spc.int/country/pg/nv.ids
+      http://prism.spc.int/country/pg/nv.mwt
+      http://prism.spc.int/country/pg/optimize.callback
+      http://prism.spc.int/country/pg/options.selectorCreator
+      http://prism.spc.int/country/pg/overlays
+      http://prism.spc.int/country/pg/pg_index.html
+      http://prism.spc.int/country/pg/pix.fil
+      http://prism.spc.int/country/pg/pix.fsl
+      http://prism.spc.int/country/pg/popper.js
+      http://prism.spc.int/country/pg/rate_me.enabled
+      http://prism.spc.int/country/pg/recaptcha.js
+      http://prism.spc.int/country/pg/s
+      http://prism.spc.int/country/pg/shared/
+      http://prism.spc.int/country/pg/src/index.js
+      http://prism.spc.int/country/pg/sta
+      http://prism.spc.int/country/pg/stats.World
+      http://prism.spc.int/country/pg/stats/1990
+      http://prism.spc.int/country/pg/stats/1990%E3%83%9D%E3%83%AA
+      http://prism.spc.int/country/pg/stats/1990%E3%83%9D%E3%83%AA%E3%83%8D
+      http://prism.spc.int/country/pg/stats/1990%E3%83%9D%E3%83%AA%E3%83%8D%E3%82%B7
+      http://prism.spc.int/country/pg/stats/1990%E3%83%9D%E3%83%AA%E3%83%8D%E3%82%B7%E3%82%A2
+      http://prism.spc.int/country/pg/stats/2
+      http://prism.spc.int/country/pg/stats/200
+      http://prism.spc.int/country/pg/stats/2000_
+      http://prism.spc.int/country/pg/stats/2000_Ce
+      http://prism.spc.int/country/pg/stats/2000_Cens
+      http://prism.spc.int/country/pg/stats/2000_Census/
+      http://prism.spc.int/country/pg/stats/2000_Census/c
+      http://prism.spc.int/country/pg/stats/2000_Census/cen
+      http://prism.spc.int/country/pg/stats/2000_Census/censu
+      http://prism.spc.int/country/pg/stats/2000_Census/census.h
+      http://prism.spc.int/country/pg/stats/2000_Census/census.htm.Shortened
+      http://prism.spc.int/country/pg/stats/2000_Census/census.htmNational
+      http://prism.spc.int/country/pg/stats/About_NSO/about
+      http://prism.spc.int/country/pg/stats/About_NSO/about.htm
+      http://prism.spc.int/country/pg/stats/Eco-
+      http://prism.spc.int/country/pg/stats/Eco-nomic_Statistics/National%20Accounts/nat_act.htm
+      http://prism.spc.int/country/pg/stats/Economic_Statistics/Govt
+      http://prism.spc.int/country/pg/stats/Economic_Statistics/Govt%20Finance/gov_exp.ht
+      http://prism.spc.int/country/pg/stats/Economic_Statistics/Govt%20Finance/gov_exp.htm
+      http://prism.spc.int/country/pg/stats/Environment/enviro.htm
+      http://prism.spc.int/country/pg/stats/Pacific
+      http://prism.spc.int/country/pg/stats/Pop_
+      http://prism.spc.int/country/pg/stats/Pop_Soc_
+      http://prism.spc.int/country/pg/stats/Pop_Soc_%20Stats/Population/popdem
+      http://prism.spc.int/country/pg/stats/Pop_Soc_%20Stats/Population/popdemog.htm
+  http://web.archive.org/cdx/search/cdx?url=spc.int&matchType=domain&output=text&limit=8000&fl=original&collapse=urlkey&filter=original:.*(PNG-Tab|Popn|2000_Census|2011_Census).*
+    0 chars
+    0 distinct match(es) for 'http[a-zA-Z0-9:/?&=%._~-]+'
