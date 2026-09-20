@@ -6776,7 +6776,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Banyuwangi' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -7130,7 +7131,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Barru' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -8289,7 +8291,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the head count's citation is a regional government figure, which does not publish a head count for a regency; a reference the page never defines reads as one of these. The Indonesian Wikipedia article 'Kabupaten Bintan' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -9290,7 +9293,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Bone Bolango' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -10700,6 +10704,94 @@
     "religion_year": 2021,
     "religion_note": "Population by religion for 2021 from a BPS (Statistics Indonesia) population-by-religion table, as the Indonesian Wikipedia article 'Kabupaten Dairi' cites it. A statistical-office table, not the census.",
     "population_note": "Total population for 2024 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Dairi' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
+  },
+  {
+    "id": "IDN-west-sumatra-danau",
+    "level": "admin2",
+    "name": "Danau",
+    "parent": "IDN-west-sumatra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_collected",
+      "note": "This shape is a lake, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "This shape is a lake, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "This shape is a lake, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "This shape is a lake, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "sources": [
+      {
+        "field": "religion/ethnicity/language/population",
+        "name": "UN OCHA Common Operational Dataset, Indonesia subnational population statistics (COD-PS), catalogue caveat on the uninhabited features of the matching boundary set",
+        "url": "https://data.humdata.org/dataset/cod-ps-idn"
+      }
+    ],
+    "parent_name": "West Sumatra",
+    "country": "IDN",
+    "aliases": []
+  },
+  {
+    "id": "IDN-north-sumatra-danau-toba",
+    "level": "admin2",
+    "name": "Danau Toba",
+    "parent": "IDN-north-sumatra",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_collected",
+      "note": "This shape is Lake Toba, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "This shape is Lake Toba, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "This shape is Lake Toba, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "This shape is Lake Toba, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "sources": [
+      {
+        "field": "religion/ethnicity/language/population",
+        "name": "UN OCHA Common Operational Dataset, Indonesia subnational population statistics (COD-PS), catalogue caveat on the uninhabited features of the matching boundary set",
+        "url": "https://data.humdata.org/dataset/cod-ps-idn"
+      }
+    ],
+    "parent_name": "North Sumatra",
+    "country": "IDN",
+    "aliases": []
   },
   {
     "id": "IDN-papua-deiyai",
@@ -12763,6 +12855,50 @@
     "population_note": "Total population for 2025 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Humbang Hasundutan' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
   },
   {
+    "id": "IDN-central-java-hutan",
+    "level": "admin2",
+    "name": "Hutan",
+    "parent": "IDN-central-java",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_collected",
+      "note": "This shape is a forest, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "This shape is a forest, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "This shape is a forest, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "This shape is a forest, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "sources": [
+      {
+        "field": "religion/ethnicity/language/population",
+        "name": "UN OCHA Common Operational Dataset, Indonesia subnational population statistics (COD-PS), catalogue caveat on the uninhabited features of the matching boundary set",
+        "url": "https://data.humdata.org/dataset/cod-ps-idn"
+      }
+    ],
+    "parent_name": "Central Java",
+    "country": "IDN",
+    "aliases": []
+  },
+  {
     "id": "IDN-riau-indragiri-hilir",
     "level": "admin2",
     "name": "Indragiri Hilir",
@@ -13208,7 +13344,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Jember' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -14089,7 +14226,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the head count's citation is a regional government figure, which does not publish a head count for a regency; a reference the page never defines reads as one of these. The Indonesian Wikipedia article 'Kabupaten Karimun' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -14301,7 +14439,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the head count's citation is a regional government figure, which does not publish a head count for a regency; a reference the page never defines reads as one of these. The Indonesian Wikipedia article 'Kabupaten Kaur' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -14805,7 +14944,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the head count's citation is a regional government figure, which does not publish a head count for a regency; a reference the page never defines reads as one of these. The Indonesian Wikipedia article 'Kabupaten Kepulauan Anambas' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -16070,7 +16210,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kota Ambon' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -16274,7 +16415,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kota Bandar Lampung' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -16640,7 +16782,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the head count's citation is a regional government figure, which does not publish a head count for a regency; a reference the page never defines reads as one of these. The Indonesian Wikipedia article 'Kota Batam' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -16789,7 +16932,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 162377,
+      "year": 2019,
+      "source": "BPS (Statistics Indonesia), total population"
     },
     "median_age": {
       "status": "not_available"
@@ -16835,13 +16980,20 @@
         "name": "BPS (Statistics Indonesia), population by religion (2019)",
         "url": "https://id.wikipedia.org/wiki/Kota_Baubau",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "BPS (Statistics Indonesia), total population",
+        "url": "https://id.wikipedia.org/wiki/Kota_Baubau",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Southeast Sulawesi",
     "country": "IDN",
     "aliases": [],
     "religion_year": 2019,
-    "religion_note": "Population by religion for 2019 from a BPS (Statistics Indonesia) population-by-religion table, as the Indonesian Wikipedia article 'Kota Baubau' cites it. A statistical-office table, not the census."
+    "religion_note": "Population by religion for 2019 from a BPS (Statistics Indonesia) population-by-religion table, as the Indonesian Wikipedia article 'Kota Baubau' cites it. A statistical-office table, not the census.",
+    "population_note": "Total population for 2019 from a BPS (Statistics Indonesia) population-by-religion table, as the Indonesian Wikipedia article 'Kota Baubau' cites it."
   },
   {
     "id": "IDN-west-java-kota-bekasi",
@@ -16855,7 +17007,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kota Bekasi' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -17588,7 +17741,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the head count's citation is a regional government figure, which does not publish a head count for a regency; a reference the page never defines reads as one of these. The Indonesian Wikipedia article 'Kota Denpasar' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -17654,7 +17808,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kota Depok' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -18823,7 +18978,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the infobox's population parameter holds no number this reader can take as a head count. The Indonesian Wikipedia article 'Kota Lubuk Linggau' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -21531,7 +21687,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the head count's citation is a regional government figure, which does not publish a head count for a regency; a reference the page never defines reads as one of these. The Indonesian Wikipedia article 'Kota Tanjungpinang' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -22049,7 +22206,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kota Tual' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -24520,7 +24678,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Madiun' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -26274,7 +26433,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 420433,
+      "year": 2025,
+      "source": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population"
     },
     "median_age": {
       "status": "not_available"
@@ -26320,13 +26481,20 @@
         "name": "BPS, 2010 Population Census, population by religion (2010)",
         "url": "https://id.wikipedia.org/wiki/Kabupaten_Maros",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population",
+        "url": "https://id.wikipedia.org/wiki/Kabupaten_Maros",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "South Sulawesi",
     "country": "IDN",
     "aliases": [],
     "religion_year": 2010,
-    "religion_note": "Population by religion for 2010 from the 2010 Population Census (BPS), as the Indonesian Wikipedia article 'Kabupaten Maros' cites it. A census count."
+    "religion_note": "Population by religion for 2010 from the 2010 Population Census (BPS), as the Indonesian Wikipedia article 'Kabupaten Maros' cites it. A census count.",
+    "population_note": "Total population for 2025 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Maros' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
   },
   {
     "id": "IDN-west-papua-maybrat",
@@ -27654,7 +27822,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Murung Raya' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -27787,7 +27956,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 199668,
+      "year": 2024,
+      "source": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population"
     },
     "median_age": {
       "status": "not_available"
@@ -27825,13 +27996,20 @@
         "name": "Kementerian Dalam Negeri, Dukcapil civil registry, population by religion (2023)",
         "url": "https://id.wikipedia.org/wiki/Kabupaten_Musi_Rawas_Utara",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population",
+        "url": "https://id.wikipedia.org/wiki/Kabupaten_Musi_Rawas_Utara",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "South Sumatra",
     "country": "IDN",
     "aliases": [],
     "religion_year": 2023,
-    "religion_note": "Population by religion for 2023 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Musi Rawas Utara' cites it. A registry count of the religion on residents' identity cards, not a census answer."
+    "religion_note": "Population by religion for 2023 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Musi Rawas Utara' cites it. A registry count of the religion on residents' identity cards, not a census answer.",
+    "population_note": "Total population for 2024 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Musi Rawas Utara' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
   },
   {
     "id": "IDN-papua-nabire",
@@ -28058,7 +28236,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the head count's citation is a regional government figure, which does not publish a head count for a regency; a reference the page never defines reads as one of these. The Indonesian Wikipedia article 'Kabupaten Natuna' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -29291,7 +29470,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Pangkajene dan Kepulauan' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -29927,7 +30107,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Pekalongan' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -30403,7 +30584,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Polewali Mandar' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -30465,7 +30647,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Ponorogo' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -31304,7 +31487,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 288582,
+      "year": 2025,
+      "source": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population"
     },
     "median_age": {
       "status": "not_available"
@@ -31354,13 +31539,20 @@
         "name": "BPS, 2010 Population Census, population by religion (2010)",
         "url": "https://id.wikipedia.org/wiki/Kabupaten_Rejang_Lebong",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "Kementerian Dalam Negeri, Dukcapil civil registry, registered population",
+        "url": "https://id.wikipedia.org/wiki/Kabupaten_Rejang_Lebong",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Bengkulu",
     "country": "IDN",
     "aliases": [],
     "religion_year": 2010,
-    "religion_note": "Population by religion for 2010 from the 2010 Population Census (BPS), as the Indonesian Wikipedia article 'Kabupaten Rejang Lebong' cites it. A census count."
+    "religion_note": "Population by religion for 2010 from the 2010 Population Census (BPS), as the Indonesian Wikipedia article 'Kabupaten Rejang Lebong' cites it. A census count.",
+    "population_note": "Total population for 2025 from the Ministry of Home Affairs' civil registry (Dukcapil), as the Indonesian Wikipedia article 'Kabupaten Rejang Lebong' cites it. A registry counts the people holding an identity card for the regency, which is not the same number as a census count."
   },
   {
     "id": "IDN-central-java-rembang",
@@ -32907,7 +33099,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Sijunjung' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -35829,7 +36022,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Tasikmalaya' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -35958,7 +36152,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Tegal' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -36170,7 +36365,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "value": 799764,
+      "year": 2023,
+      "source": "BPS (Statistics Indonesia), total population"
     },
     "median_age": {
       "status": "not_available"
@@ -36216,13 +36413,20 @@
         "name": "BPS (Statistics Indonesia), population by religion (2014)",
         "url": "https://id.wikipedia.org/wiki/Kabupaten_Temanggung",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "BPS (Statistics Indonesia), total population",
+        "url": "https://id.wikipedia.org/wiki/Kabupaten_Temanggung",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Central Java",
     "country": "IDN",
     "aliases": [],
     "religion_year": 2014,
-    "religion_note": "Population by religion for 2014 from a BPS (Statistics Indonesia) population-by-religion table, as the Indonesian Wikipedia article 'Kabupaten Temanggung' cites it. A statistical-office table, not the census."
+    "religion_note": "Population by religion for 2014 from a BPS (Statistics Indonesia) population-by-religion table, as the Indonesian Wikipedia article 'Kabupaten Temanggung' cites it. A statistical-office table, not the census.",
+    "population_note": "Total population for 2023 from a BPS (Statistics Indonesia) population-by-religion table, as the Indonesian Wikipedia article 'Kabupaten Temanggung' cites it."
   },
   {
     "id": "IDN-east-nusa-tenggara-timor-tengah-selatan",
@@ -36662,7 +36866,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Trenggalek' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -36720,7 +36925,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Tuban' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -36934,7 +37140,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Tulungagung' is what was read."
     },
     "median_age": {
       "status": "not_available"
@@ -36991,6 +37198,94 @@
     "aliases": [],
     "religion_year": 2016,
     "religion_note": "Population by religion for 2016 from a BPS (Statistics Indonesia) population-by-religion table, as the Indonesian Wikipedia article 'Kabupaten Tulungagung' cites it. A statistical-office table, not the census."
+  },
+  {
+    "id": "IDN-west-java-waduk-cirata",
+    "level": "admin2",
+    "name": "Waduk Cirata",
+    "parent": "IDN-west-java",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_collected",
+      "note": "This shape is the Cirata reservoir, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "This shape is the Cirata reservoir, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "This shape is the Cirata reservoir, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "This shape is the Cirata reservoir, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "sources": [
+      {
+        "field": "religion/ethnicity/language/population",
+        "name": "UN OCHA Common Operational Dataset, Indonesia subnational population statistics (COD-PS), catalogue caveat on the uninhabited features of the matching boundary set",
+        "url": "https://data.humdata.org/dataset/cod-ps-idn"
+      }
+    ],
+    "parent_name": "West Java",
+    "country": "IDN",
+    "aliases": []
+  },
+  {
+    "id": "IDN-central-java-wadung-kedungombo",
+    "level": "admin2",
+    "name": "Wadung Kedungombo",
+    "parent": "IDN-central-java",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_collected",
+      "note": "This shape is the Kedungombo reservoir, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_collected",
+      "note": "This shape is the Kedungombo reservoir, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "language": {
+      "status": "not_collected",
+      "note": "This shape is the Kedungombo reservoir, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "ethnicity": {
+      "status": "not_collected",
+      "note": "This shape is the Kedungombo reservoir, not a regency, and nobody lives in it. The boundary file draws it at the same level as Indonesia's regencies and cities; UN OCHA's population dataset for the same boundaries names it as one of seventeen uninhabited features -- lakes, reservoirs and a park -- that carry no population, and publishes no row for it. There is no composition to be missing here."
+    },
+    "sources": [
+      {
+        "field": "religion/ethnicity/language/population",
+        "name": "UN OCHA Common Operational Dataset, Indonesia subnational population statistics (COD-PS), catalogue caveat on the uninhabited features of the matching boundary set",
+        "url": "https://data.humdata.org/dataset/cod-ps-idn"
+      }
+    ],
+    "parent_name": "Central Java",
+    "country": "IDN",
+    "aliases": []
   },
   {
     "id": "IDN-southeast-sulawesi-wakatobi",
@@ -37205,7 +37500,8 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available"
+      "status": "not_available",
+      "note": "No head count is published for this regency here: the article prints a head count and cites nothing for it; an uncited figure is not read. The Indonesian Wikipedia article 'Kabupaten Wonogiri' is what was read."
     },
     "median_age": {
       "status": "not_available"
