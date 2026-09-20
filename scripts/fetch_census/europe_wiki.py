@@ -217,6 +217,32 @@ def langlinks(titles: list[str], src: str, dest: str) -> dict[str, str]:
     return out
 
 
+def category_members(category: str, lang: str) -> list[str]:
+    """The article titles in one category, in the order the API gives them.
+
+    This is how a country's own list of unit names is obtained without
+    typing a hundred and forty-five of them into this file and without
+    inventing a transliteration: the boundary file spells a Serbian
+    municipality "Cacak City" and Serbia spells it "Cacak" with three
+    diacritics, and match_spellings joins the two without guessing at
+    either.
+    """
+    out: list[str] = []
+    cont: dict[str, str] = {}
+    while True:
+        q = urllib.parse.urlencode({
+            "action": "query", "list": "categorymembers",
+            "cmtitle": category, "cmlimit": "500", "cmnamespace": "0",
+            "format": "json", "formatversion": "2", **cont})
+        time.sleep(PAUSE)
+        data = http_json(f"{api(lang)}?{q}", timeout=90)
+        out.extend(m["title"] for m in
+                   (data.get("query") or {}).get("categorymembers") or [])
+        cont = data.get("continue") or {}
+        if not cont:
+            return out
+
+
 # ---------------------------------------------------------------------------
 # What a citation is, and what kind of count it describes
 # ---------------------------------------------------------------------------
@@ -360,6 +386,14 @@ class Level:
     # front of each ("District of "). match_spellings joins the two.
     official: tuple[str, ...] | None = None
     strip: str = ""
+    # Where the country's own list of unit names is a Wikipedia category
+    # rather than a list typed into this file. The two sides are compared on
+    # a key -- the shape's name without the word the boundary file appends,
+    # the article's title without the disambiguator Wikipedia appends -- and
+    # the article kept is the one the category named.
+    category: str | None = None
+    shape_trim: str = ""
+    article_trim: str = ""
 
 
 @dataclass(frozen=True)
@@ -745,6 +779,17 @@ def shapes(iso3: str, level: str) -> list[dict[str, Any]]:
     return read_json(SITE / level / f"{iso3}.json", []) or []
 
 
+def trimmed(name: str, pattern: str) -> str:
+    """The comparison key: the name with the word that is not part of it gone.
+
+    The boundary file writes "Ada Municipality" and "Cacak City"; the English
+    Wikipedia writes "Ada, Serbia" and "Cacak" with its diacritics. Neither
+    side's extra word is part of the place's name, and the letters that are
+    have to line up for the positional match below to mean anything.
+    """
+    return re.sub(pattern, "", name).strip(" ,-") if pattern else name
+
+
 def article_titles(country: Country, level: Level, names: list[str]
                    ) -> tuple[dict[str, str], dict[str, str]]:
     """({shape name: article title}, {shape name: why it has none}).
@@ -765,13 +810,28 @@ def article_titles(country: Country, level: Level, names: list[str]
             continue          # settled below, in one pass over the whole level
         else:
             titles[name] = level.title.format(name=name)
-    if level.official:
+    official = level.official
+    article_of: dict[str, str] = {}
+    if level.category:
+        members = category_members(level.category, level.lang)
+        for title in members:
+            key = trimmed(title, level.article_trim)
+            article_of.setdefault(key, title)
+        official = tuple(article_of)
+        log(f"    {level.category}: {len(members)} article(s), "
+            f"{len(official)} distinct names")
+    if official:
         prefix = level.strip or ""
-        spellings = {name[len(prefix):] if name.startswith(prefix) else name: name
-                     for name in names if name not in titles and name not in refused}
-        matched, unmatched = match_spellings(list(spellings), list(level.official))
-        for spelling, official in matched.items():
-            titles[spellings[spelling]] = level.title.format(name=official)
+        spellings: dict[str, str] = {}
+        for name in names:
+            if name in titles or name in refused:
+                continue
+            key = name[len(prefix):] if name.startswith(prefix) else name
+            spellings[trimmed(key, level.shape_trim)] = name
+        matched, unmatched = match_spellings(list(spellings), list(official))
+        for spelling, name in matched.items():
+            titles[spellings[spelling]] = (
+                article_of[name] if article_of else level.title.format(name=name))
         for spelling, why in unmatched.items():
             refused[spellings[spelling]] = why
     if level.via:
@@ -967,6 +1027,8 @@ def main(argv: list[str] | None = None) -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--probe", nargs="+", metavar="LANG:TITLE",
                     help="print one or more articles' infobox, references and tables")
+    ap.add_argument("--category", nargs="+", metavar="LANG:CATEGORY",
+                    help="print the article titles in a category")
     ap.add_argument("--country", nargs="+", metavar="ISO3",
                     help="the countries to read; the default is every spec")
     ap.add_argument("--rows", type=int, default=25)
@@ -978,6 +1040,16 @@ def main(argv: list[str] | None = None) -> int:
         PROBE_LOG.parent.mkdir(parents=True, exist_ok=True)
         PROBE_LOG.write_text("\n".join(_probe_lines) + "\n", encoding="utf-8")
         log(f"\nwrote {PROBE_LOG}")
+        return 0
+    if args.category:
+        for spec in args.category:
+            lang, _, name = spec.partition(":")
+            found = category_members(name.replace("_", " "), lang)
+            say(f"\n===== [{lang}] {name}: {len(found)} article(s)")
+            for title in found:
+                say(f"    {title}")
+        PROBE_LOG.parent.mkdir(parents=True, exist_ok=True)
+        PROBE_LOG.write_text("\n".join(_probe_lines) + "\n", encoding="utf-8")
         return 0
     wanted = [c.upper() for c in (args.country or SPECS)]
     unknown = [c for c in wanted if c not in SPECS]
