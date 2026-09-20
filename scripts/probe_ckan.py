@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import socket
 import ssl
 import sys
@@ -140,7 +141,11 @@ def reach(host: str) -> tuple[str | None, str | None]:
     return None, None
 
 
-def search(host: str, scheme: str, root: str, query: str, rows: int) -> None:
+def search(host: str, scheme: str, root: str, query: str, rows: int,
+           keep: "re.Pattern[str] | None", resources: bool) -> None:
+    """One package_search, printed. ``keep`` prints only the datasets whose
+    name or title it matches and counts the rest, because a catalogue that
+    answers "agama" with 1,869 datasets is mostly courts and school rolls."""
     q = urllib.parse.urlencode({"q": query, "rows": rows})
     url = f"{scheme}://{host}{root}/package_search?{q}"
     status, _, body = get(url)
@@ -151,12 +156,23 @@ def search(host: str, scheme: str, root: str, query: str, rows: int) -> None:
     result = payload.get("result", {})
     results = result.get("results", []) or []
     log(f"    package_search q={query!r} -> {status}, {result.get('count', 0)} matches, "
-        f"{len(results)} shown")
+        f"{len(results)} shown" + (f", printing those matching {keep.pattern!r}" if keep else ""))
+    skipped = 0
     for pkg in results:
-        formats = sorted({(r.get("format") or "?").lower()
-                          for r in (pkg.get("resources") or [])})
-        log(f"      - {pkg.get('name', '?')}: {' '.join(str(pkg.get('title', '')).split())[:110]}"
-            f"  [{len(pkg.get('resources') or [])} res: {','.join(formats)[:60]}]")
+        name = str(pkg.get("name", "?"))
+        title = " ".join(str(pkg.get("title", "")).split())
+        if keep and not (keep.search(name) or keep.search(title)):
+            skipped += 1
+            continue
+        items = pkg.get("resources") or []
+        formats = sorted({(r.get("format") or "?").lower() for r in items})
+        log(f"      - {name}: {title[:110]}  [{len(items)} res: {','.join(formats)[:60]}]")
+        if resources:
+            for res in items:
+                log(f"          {res.get('format', '?')} datastore={res.get('datastore_active')} "
+                    f"{res.get('id', '?')} {res.get('url', '')}")
+    if skipped:
+        log(f"      ({skipped} others not matching)")
 
 
 def package(host: str, scheme: str, root: str, name: str) -> None:
@@ -220,7 +236,13 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("hosts", nargs="*", help="hostnames, e.g. data.jabarprov.go.id")
     ap.add_argument("--hosts-file", help="a file of hostnames, one per line, # comments")
-    ap.add_argument("--query", default="", help="package_search query, e.g. agama")
+    ap.add_argument("--query", default="",
+                    help="package_search queries, comma-separated; '+' is a space, "
+                         "so 'pemeluk+agama,agama+kecamatan' is two phrases")
+    ap.add_argument("--match", help="print only the datasets whose name or title "
+                                    "matches this regex, and count the rest")
+    ap.add_argument("--resources", action="store_true",
+                    help="print each dataset's resources with their URLs")
     ap.add_argument("--rows", type=int, default=25)
     ap.add_argument("--package", help="package_show this dataset on each host that answers")
     ap.add_argument("--datastore", help="datastore_search this resource id")
@@ -228,6 +250,8 @@ def main() -> int:
     ap.add_argument("--timeout", type=int, default=TIMEOUT)
     args = ap.parse_args()
     TIMEOUT = args.timeout
+    queries = [q.replace("+", " ").strip() for q in args.query.split(",") if q.strip()]
+    keep = re.compile(args.match, re.I) if args.match else None
 
     hosts = hosts_from(args)
     if not hosts:
@@ -242,8 +266,8 @@ def main() -> int:
         if not root:
             continue
         ckan.append(host)
-        if args.query:
-            search(host, scheme, root, args.query, args.rows)
+        for query in queries:
+            search(host, scheme, root, query, args.rows, keep, args.resources)
         if args.package:
             package(host, scheme, root, args.package)
         if args.datastore:

@@ -477,7 +477,11 @@ def describe_citation(body: str) -> tuple[str, int | None, str]:
     return kind, year, title or url or body[:80]
 
 
-PERCENT = re.compile(r"(?<![\d,.])(\d{1,3}(?:[.,]\d{1,2})?)\s*%?")
+# Up to three decimals. Two cut Jakarta Timur's "0,454% Buddha" in half and
+# left "4% Buddha" as the faith's name, which is no faith and refused the
+# whole regency. The lookbehind still refuses to start inside a number, so
+# this cannot walk into a thousands separator.
+PERCENT = re.compile(r"(?<![\d,.])(\d{1,3}(?:[.,]\d{1,3})?)\s*%?")
 LINK = re.compile(r"\[\[([^\]]+)\]\]")
 
 
@@ -501,7 +505,12 @@ def religion_items(value: str) -> list[tuple[str, float]]:
     text = re.sub(r"&nbsp;|[   ]", " ", text)
     # A piped link carries the separator inside it; resolve links to their
     # display text before the value is cut at pipes.
-    text = LINK.sub(lambda m: m.group(1).split("|")[-1], text)
+    # A space either side, because the markup is the only separator between a
+    # link and the word next to it: Minahasa Tenggara writes "[[Buddhisme|
+    # Budha]] dan[[Agama Hindu|Hindu]]", which resolved bare reads
+    # "Budha danHindu". The pieces are whitespace-collapsed after, so a link
+    # that already had a space either side is unchanged.
+    text = LINK.sub(lambda m: " " + m.group(1).split("|")[-1] + " ", text)
     out: list[tuple[str, float]] = []
     for piece in re.split(r"\||\n|(?:^|\s)\*+(?=\s)", text):
         piece = piece.strip().lstrip("*-—–• ").strip()
@@ -517,8 +526,13 @@ def religion_items(value: str) -> list[tuple[str, float]]:
 
 
 def link_text(label: str) -> str:
-    """The label an item names, its markup and punctuation gone."""
-    return " ".join(label.replace("[[", " ").replace("]]", " ").split()).strip(" .;:<>=()")
+    """The label an item names, its markup and punctuation gone.
+
+    "%" is stripped with the rest: Bangka Barat and Bangka Tengah write their
+    Christian share "1,93%%" and "5,08%%", and the second sign is left behind
+    on the label, where "% Kristen" is not a faith this reader knows.
+    """
+    return " ".join(label.replace("[[", " ").replace("]]", " ").split()).strip(" .;:<>=()%")
 
 
 def religion_shares(items: list[tuple[str, float]]
@@ -538,6 +552,15 @@ def religion_shares(items: list[tuple[str, float]]
     for label, pct in items:
         key = re.sub(r"\s+", " ", label.lower()).strip()
         key = re.sub(r"^agama ", "", key)
+        # "Budha" is the everyday Indonesian spelling of "Buddha" and the
+        # articles use both, including inside a joint bucket -- Minahasa
+        # Tenggara's "Budha dan Hindu" against Puncak Jaya's "Hindu/Buddha".
+        # One spelling, so a joint bucket does not need four entries.
+        key = re.sub(r"\bbudha\b", "buddha", key)
+        # "Hindu/Buddha" and "Hindu / Buddha" are the same bucket; the space
+        # is only there because Puncak Jaya writes the two as separate links
+        # and a link resolves with a space either side.
+        key = re.sub(r"\s*/\s*", "/", key)
         mapped = RELIGION_LABELS.get(key)
         if mapped is None:
             unknown.append(label)
