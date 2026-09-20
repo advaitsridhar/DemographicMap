@@ -1,36 +1,13 @@
-korea_nationality: Ministry of Justice (Korea Immigration Service), registered foreign residents by city/county/district and nationality at 31 December 2023 (시군구별 국적(지역)별 등록외국인 체류현황, data.go.kr dataset 15108413)
-  cached moj_registered_foreigners_by_district_2022_2023.zip (0.1 MB)
-  2023 시군구별 국적(지역)별 등록외국인 체류 현황.csv: 322,310 bytes
-  229 units in 17 provinces
-  register: 17 provinces listed
-    서울특별시: 26 rows
-    부산광역시: 17 rows
-    대구광역시: 10 rows
-    인천광역시: 11 rows
-    광주광역시: 6 rows
-    대전광역시: 6 rows
-    울산광역시: 6 rows
-    세종특별자치시: 2 rows
-    경기도: 49 rows
-    강원특별자치도: 19 rows
-    충청북도: 16 rows
-    충청남도: 18 rows
-    전라북도: 17 rows
-    전라남도: 23 rows
-    경상북도: 25 rows
-    경상남도: 24 rows
-    제주특별자치도: 3 rows
-  register: 247 rows, 51,325,329 nationally
-  fetched moj_registered_foreigners_by_nationality_by_year.csv (53,370 bytes)
-  published: 195 nationalities for 2023
-  national: 1,348,626 registered foreigners against 51,325,329 Koreans (2.56%)
-  published: the Ministry's national table gives 1,348,626 registered foreigners (2.56%) against the district file's 1,348,626 (2.56%)
-      Vietnamese         districts   227,930  national   227,930  (0.0% apart)
-      Uzbek              districts    55,239  national    55,239  (0.0% apart)
-      Thai               districts    40,062  national    40,062  (0.0% apart)
-      Taiwanese          districts    17,704  national    17,704  (0.0% apart)
-      Sri Lankan         districts    28,258  national    28,258  (0.0% apart)
-  named: Korean-Chinese, Vietnamese, Chinese, Nepalese, Uzbek, Cambodian, Indonesian, Filipino, Thai, Burmese, American, Mongolian, Sri Lankan, Japanese, Bangladeshi, Kazakh, Russian, Taiwanese, Pakistani, Indian
-  South Jeolla 영광군 (Yeonggwang-gun): no shape; counted in the province only
-  17 provinces, 228 districts
-  wrote data/processed/korea_nationality.json (1240 kB)
+page: https://deps.mofe.gov.bn/
+  213,138 bytes
+  4 matching link(s)
+  - Department of Statistics
+    https://www.deps.gov.bn/department-of-statistics-2/
+  - 
+    http://www.deps.gov.bn/national-statistics-2/
+  - Population
+    https://deps.mofe.gov.bn/population-social-statistics/
+  - 
+    https://form.gov.bn/en/department-of-statistics-user-satisfaction-survey-ff918962e577
+page: https://data.gov.bn/
+  unreachable: URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'data.gov.bn'. (_ssl.c:1016)>
