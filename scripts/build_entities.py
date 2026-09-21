@@ -2904,8 +2904,23 @@ def inherit_single_unit(admin0: list[dict[str, Any]],
     return done
 
 
+# A source name ends with how this map reached it, which is provenance rather
+# than identity. The Wikipedia readers append ", as the bg.wikipedia article
+# 'X (област)' transcribes it", and a province and its municipalities each name
+# their own article -- so two rows off one census read as two sources and every
+# subtraction between them was refused. 53 of the 103 refusals on the build of
+# 21 September 2026 were this and nothing else, Bulgaria's whole second level
+# among them. The clause is cut before the comparison: what is left is the
+# office and the publication, which is what "the same source" means.
+TRANSCRIPTION = ", as the "
+
+
+def source_identity(name: str) -> str:
+    return name.split(TRANSCRIPTION, 1)[0].strip()
+
+
 def source_names(entity: dict[str, Any], field: str) -> set[str]:
-    return {s.get("name") for s in entity.get("sources", []) or []
+    return {source_identity(str(s.get("name"))) for s in entity.get("sources", []) or []
             if s.get("name") and field in str(s.get("field") or "").split("/")}
 
 
@@ -2993,6 +3008,74 @@ def residual_child(admin0: list[dict[str, Any]],
                       f"difference: the national count less the other units', share "
                       f"by share. Derived by subtraction, not separately published."))
             filled.append(where)
+    return filled, refused
+
+
+def residual_grandchild(admin1_by_country: dict[str, list[dict[str, Any]]],
+                        admin2_by_country: dict[str, list[dict[str, Any]]]
+                        ) -> tuple[list[str], list[str]]:
+    """The same subtraction one level down: a parent unit and its districts.
+
+    residual_child fills the one first-level unit a country's own arithmetic
+    determines. This fills the one *district* a first-level unit determines,
+    and it is the answer to a question the second level kept raising: a
+    province carries a language composition, all but one of its districts
+    carry one too, and that last district reads as unmeasured when in fact the
+    province's own figure and its siblings' fix it exactly.
+
+    It reuses residual() unchanged, which is worth saying because that
+    function's refusals are the reason this is safe to run at all. It will not
+    subtract across two sources, or where the children's populations do not
+    add to the parent's, or where a child names a group the parent never did,
+    or where the answer comes out negative, or where the people left over do
+    not match the district's own published population. Every one of those is a
+    way the difference would describe something other than the district.
+
+    What this deliberately does NOT do is the many-unknowns case. Where two or
+    more districts are empty their shares are not determined -- the province
+    fixes only their sum -- and the obvious move, giving each of them the
+    province's own composition, would assert that every district speaks like
+    its province. For language that is close to the opposite of true, and it
+    is the reason a province-level figure is worth less than a district-level
+    one in the first place. Those districts keep their stated gap.
+    """
+    filled: list[str] = []
+    refused: list[str] = []
+    for iso3, parents in sorted(admin1_by_country.items()):
+        kids: dict[str | None, list[dict[str, Any]]] = defaultdict(list)
+        for entity in admin2_by_country.get(iso3, []):
+            kids[entity.get("parent")].append(entity)
+        for parent in parents:
+            rows = kids.get(parent["id"], [])
+            if len(rows) < 2 or parent.get("disputed") \
+                    or any(r.get("disputed") for r in rows):
+                continue
+            for field in ROLLUP_FIELDS:
+                if not (isinstance(parent.get(field), list)
+                        and shares_of(parent[field])):
+                    continue
+                blank = [r for r in rows if isinstance(r.get(field), dict)
+                         and r[field].get("status") == NOT_AVAILABLE]
+                known = [r for r in rows if isinstance(r.get(field), list)]
+                if len(blank) != 1 or len(known) != len(rows) - 1:
+                    continue
+                target = blank[0]
+                where = f"{iso3} {target['name']} {field}"
+                why, shares = residual(parent, known, target, field)
+                if why or not shares:
+                    refused.append(f"{where}: {why or 'nothing left over'}")
+                    continue
+                target[field] = estimate(
+                    DERIVED, shares, method="tier0-residual",
+                    inputs=[parent["id"], *(r["id"] for r in known)],
+                    note=(f"No source has been read for {target['name']}. "
+                          f"{parent.get('name') or 'Its parent'}'s {field} figure "
+                          f"and every other district's come from the same source "
+                          f"and their populations agree, so this is the "
+                          f"difference: the parent's count less the other "
+                          f"districts', share by share. Derived by subtraction, "
+                          f"not separately published."))
+                filled.append(where)
     return filled, refused
 
 
@@ -3777,6 +3860,18 @@ def main() -> int:
     if derived:
         log(f"  {len(derived)} units derived by subtraction: " + ", ".join(derived))
     for line in refused:
+        log(f"  not derived -- {line}")
+    # And the same one level down. It runs after, but it does not build on
+    # what ran before: a first-level unit the pass above filled is an estimate
+    # rather than a list, and this pass subtracts only from a published
+    # figure. Subtracting from a guess would compound it and the note would
+    # still say "derived".
+    derived2, refused2 = residual_grandchild(admin1_by_country, admin2_by_country)
+    if derived2:
+        log(f"  {len(derived2)} districts derived by subtraction from their "
+            f"parent: " + ", ".join(derived2[:8])
+            + (" ..." if len(derived2) > 8 else ""))
+    for line in refused2:
         log(f"  not derived -- {line}")
     check_no_estimate_on_policy_field(admin1_by_country, admin2_by_country)
 

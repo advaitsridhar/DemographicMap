@@ -8085,3 +8085,143 @@ class BangladeshEthnicPopulation(unittest.TestCase):
             elif isinstance(row.get("ethnicity"), list):
                 self.assertEqual(row.get("ethnicity_year"), 2022,
                                  f"{row['name']} publishes an undated composition")
+
+
+class TheResidualOneLevelDown(unittest.TestCase):
+    """A province and its districts, where all but one district is read.
+
+    residual_child fills the one first-level unit a country's arithmetic
+    determines. This is the same subtraction between a first-level unit and
+    its districts, which is the case the second level kept raising once
+    CLEAR Global's district files were read: a province with a composition,
+    every district but one with a composition, and that last one reading as
+    unmeasured when the others fix it exactly.
+    """
+
+    def province_and_districts(self):
+        src = [{"name": "Census", "field": "language"}]
+        parent = {"id": "XXX-1", "name": "P", "sources": src,
+                  "population": {"value": 1000},
+                  "language": [{"group": "A", "pct": 62.0},
+                               {"group": "B", "pct": 38.0}]}
+        known = [{"id": "d1", "name": "D1", "parent": "XXX-1", "sources": src,
+                  "population": {"value": 300},
+                  "language": [{"group": "A", "pct": 50.0},
+                               {"group": "B", "pct": 50.0}]},
+                 {"id": "d2", "name": "D2", "parent": "XXX-1", "sources": src,
+                  "population": {"value": 300},
+                  "language": [{"group": "A", "pct": 50.0},
+                               {"group": "B", "pct": 50.0}]}]
+        blank = {"id": "d3", "name": "D3", "parent": "XXX-1", "sources": [],
+                 "population": {"value": 400},
+                 "language": common.gap(common.NOT_AVAILABLE)}
+        return parent, known, blank
+
+    def test_the_one_unread_district_is_derived_from_its_parent(self):
+        parent, known, blank = self.province_and_districts()
+        filled, refused = be.residual_grandchild(
+            {"XXX": [parent]}, {"XXX": [*known, blank]})
+        self.assertEqual(filled, ["XXX D3 language"])
+        self.assertEqual(refused, [])
+        # A: 620 - 150 - 150 = 320 of 400; B: 380 - 300 = 80 of 400.
+        self.assertEqual(blank["language"]["status"], common.DERIVED)
+        self.assertEqual({r["group"]: r["pct"]
+                          for r in blank["language"]["estimate"]},
+                         {"A": 80.0, "B": 20.0})
+        self.assertEqual(blank["language"]["inputs"], ["XXX-1", "d1", "d2"])
+        self.assertIn("Derived by subtraction", blank["language"]["note"])
+
+    def test_two_unread_districts_are_left_alone(self):
+        # The parent fixes their *sum* and nothing about either one. Handing
+        # each the parent's own composition would assert that every district
+        # speaks like its province, which is close to the opposite of true
+        # and is the reason district figures are worth having at all.
+        parent, known, blank = self.province_and_districts()
+        second = dict(known[1])
+        second["language"] = common.gap(common.NOT_AVAILABLE)
+        filled, refused = be.residual_grandchild(
+            {"XXX": [parent]}, {"XXX": [known[0], second, blank]})
+        self.assertEqual(filled, [])
+        self.assertEqual(refused, [])
+        self.assertEqual(blank["language"]["status"], common.NOT_AVAILABLE)
+        self.assertEqual(second["language"]["status"], common.NOT_AVAILABLE)
+
+    def test_it_will_not_subtract_from_an_estimated_parent(self):
+        # A parent the pass above filled is an estimate, not a list.
+        # Subtracting from a guess compounds it while the note still says
+        # "derived by subtraction".
+        parent, known, blank = self.province_and_districts()
+        parent["language"] = common.estimate(
+            common.DERIVED, [{"group": "A", "pct": 62.0},
+                             {"group": "B", "pct": 38.0}],
+            method="tier0-residual", inputs=["XXX"], note="n")
+        filled, refused = be.residual_grandchild(
+            {"XXX": [parent]}, {"XXX": [*known, blank]})
+        self.assertEqual((filled, refused), ([], []))
+        self.assertEqual(blank["language"]["status"], common.NOT_AVAILABLE)
+
+    def test_it_refuses_the_same_ways_the_first_level_pass_does(self):
+        # residual() owns the refusals and is reused unchanged; this checks
+        # the wiring reaches them rather than re-testing each one.
+        parent, known, blank = self.province_and_districts()
+        parent["sources"] = [{"name": "Factbook", "field": "language"}]
+        filled, refused = be.residual_grandchild(
+            {"XXX": [parent]}, {"XXX": [*known, blank]})
+        self.assertEqual(filled, [])
+        self.assertEqual(len(refused), 1)
+        self.assertIn("different sources", refused[0])
+        self.assertEqual(blank["language"]["status"], common.NOT_AVAILABLE)
+
+
+class SourceIdentityIgnoresHowItWasReached(unittest.TestCase):
+    """Two rows off one census are one source, whatever article quoted it.
+
+    Bulgaria is the case. Its province article and each of its municipality
+    articles transcribe the same National Statistical Institute census, and
+    each source name ends with the article that did the transcribing -- so
+    every subtraction between a province and its municipalities was refused
+    for "different sources", which was a fact about this map's reading and not
+    about the census.
+    """
+
+    NSI = ("Национален статистически институт, Преброяване на населението "
+           "(National Statistical Institute of Bulgaria, Census of Population "
+           "and Housing) (2011)")
+
+    def test_the_transcription_clause_is_not_part_of_the_identity(self):
+        province = f"{self.NSI}, as the bg.wikipedia article 'Кюстендил (област)' transcribes it"
+        town = f"{self.NSI}, as the bg.wikipedia article 'Бобов дол (община)' transcribes it"
+        self.assertEqual(be.source_identity(province), be.source_identity(town))
+        self.assertEqual(be.source_identity(province), self.NSI)
+
+    def test_a_name_with_no_clause_is_left_alone(self):
+        self.assertEqual(be.source_identity("PBS 2023 Table 9"), "PBS 2023 Table 9")
+
+    def test_two_real_sources_still_differ(self):
+        # The clause is the only thing cut. A different office is still a
+        # different source, which is what the refusal exists for.
+        self.assertNotEqual(
+            be.source_identity("Factbook, as the en.wikipedia article 'X' transcribes it"),
+            be.source_identity(f"{self.NSI}, as the en.wikipedia article 'X' transcribes it"))
+
+    def test_a_province_and_its_towns_now_subtract(self):
+        def row(rid, name, pop, shares, article):
+            src = [{"name": f"{self.NSI}, as the bg.wikipedia article '{article}' transcribes it",
+                    "field": "religion"}]
+            out = {"id": rid, "name": name, "parent": "BGR-1", "sources": src,
+                   "population": {"value": pop}}
+            out["religion"] = shares if shares else common.gap(common.NOT_AVAILABLE)
+            return out
+        parent = row("BGR-1", "P", 1000,
+                     [{"group": "A", "pct": 62.0}, {"group": "B", "pct": 38.0}], "P (област)")
+        parent["parent"] = "BGR"
+        known = [row("t1", "T1", 300, [{"group": "A", "pct": 50.0},
+                                       {"group": "B", "pct": 50.0}], "T1 (община)"),
+                 row("t2", "T2", 300, [{"group": "A", "pct": 50.0},
+                                       {"group": "B", "pct": 50.0}], "T2 (община)")]
+        blank = row("t3", "T3", 400, None, "T3 (община)")
+        filled, refused = be.residual_grandchild({"BGR": [parent]},
+                                                 {"BGR": [*known, blank]})
+        self.assertEqual(refused, [])
+        self.assertEqual(filled, ["BGR T3 religion"])
+        self.assertEqual(blank["religion"]["status"], common.DERIVED)

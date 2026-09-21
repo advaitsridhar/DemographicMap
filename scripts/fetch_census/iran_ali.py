@@ -740,12 +740,28 @@ def unit_record(unit: Unit, shape: dict[str, Any], entry: dict[str, Any],
     coverage = unit.population / total if total else 0.0
 
     # Derived or modelled, decided per unit and by measurement. A derivation
-    # is arithmetic on published figures and nothing else: the atlas's own
-    # total to measure against, every settlement weighted, nothing refused,
-    # and the weighted settlements accounting for effectively the whole unit.
-    # Anything short of that rests on the assumption that what was left out
-    # resembles what was read, which is a model.
-    full = (basis == "own" and coverage >= FULL_COVERAGE
+    # is arithmetic on published figures and nothing else: every settlement
+    # weighted, nothing refused, and the weighted settlements accounting for
+    # effectively the whole unit measured against a denominator that could
+    # have come out larger. Anything short of that rests on the assumption
+    # that what was left out resembles what was read, which is a model.
+    #
+    # "places" counts as such a denominator and "shape" does not, which is a
+    # change from the first version of this rule. The place total is built in
+    # two passes and the first one adds settlements that have a population and
+    # no language at all -- so an unsurveyed corner of a unit lands in the
+    # denominator and pulls coverage below 100%. A unit that still reaches
+    # 100% has been measured, not defined into it: Bahar's 71 settlements all
+    # carry both a population and a language, and had any one of them carried
+    # only a population the coverage would have said so. Requiring the atlas's
+    # own aggregate row instead called that a model, which understated the one
+    # unit in Iran where the atlas is demonstrably complete.
+    #
+    # "shape" stays a model because its denominator is a different source and
+    # a different vintage -- this map's Wikidata population against the
+    # atlas's census weights -- so agreement between them is a coincidence of
+    # two sources rather than arithmetic within one.
+    full = (basis in ("own", "places") and coverage >= FULL_COVERAGE
             and not unit.unweighted and not unit.refused)
     status = DERIVED if full else MODELLED
     method = ("population-weighted sum of every published ALI settlement "

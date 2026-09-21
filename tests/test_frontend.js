@@ -599,7 +599,7 @@ function estimatesPaintOnlyWhenAskedAndNeverCount() {
  * every style load, because a theme change rebuilds the style without its
  * images; and the flag is re-applied with the colour after that rebuild.
  */
-function estimatesAreHatchedAndTheHatchSurvivesARestyle() {
+function anEstimateIsColouredLikeAReading() {
   const listeners = new Map();
   const states = new Map();
   const images = new Map();
@@ -655,46 +655,36 @@ function estimatesAreHatchedAndTheHatchSurvivesARestyle() {
   worldMap.init({});
   listeners.get("style.load")();
 
-  // The pattern exists as soon as the style does, drawn at twice the size.
-  assert.ok(images.has("estimate-hatch"), "the hatch image is added when the style loads");
-  assert.strictEqual(images.get("estimate-hatch").options.pixelRatio, 2);
-  assert.strictEqual(images.get("estimate-hatch").image, pixels,
-                     "added as pixels: addImage does not take a canvas element");
-  assert.strictEqual(drawn.length, 2, "two strokes: a dark edge and a light core");
+  // Nothing is drawn and no pattern is registered: an estimate is coloured
+  // like a reading, by the owner's decision of 21 September 2026.
+  assert.ok(!images.has("estimate-hatch"), "no hatch image is registered");
+  assert.strictEqual(drawn.length, 0, "nothing is drawn on a canvas");
 
-  // One hatch layer per level, over the colour and under the borders,
-  // carrying the pattern and an opacity that feature-state switches.
+  // No hatch layer at any level. The fill and the borders are all there is.
   const order = styleLayers.map((l) => l.id);
   for (const level of ["admin0", "admin1", "admin2"]) {
-    const layer = styleLayers.find((l) => l.id === `${level}-estimate`);
-    assert.ok(layer, `${level} has a hatch layer`);
-    assert.strictEqual(layer.paint["fill-pattern"], "estimate-hatch");
-    assert.ok(JSON.stringify(layer.paint["fill-opacity"]).includes('["feature-state","estimate"]'),
-              `${level}'s hatch is switched by feature-state`);
-    assert.ok(order.indexOf(`${level}-estimate`) > order.indexOf(`${level}-fill`),
-              `${level}'s hatch sits over its colour`);
-    assert.ok(order.indexOf(`${level}-estimate`) < order.indexOf(`${level}-line`),
-              `${level}'s hatch sits under its borders`);
+    assert.ok(!styleLayers.some((l) => l.id === `${level}-estimate`),
+              `${level} has no hatch layer`);
+    assert.ok(order.includes(`${level}-fill`), `${level} still has its colour`);
+    assert.ok(order.includes(`${level}-line`), `${level} still has its borders`);
   }
 
-  // The flag travels with the colour, and is written false as well as true.
+  // A modelled unit and a read one are written identically: a colour and
+  // nothing else. This is the test that would fail if a caveat crept back
+  // onto the map's surface rather than into the panel.
   const colors = new Map([["E", "#123456"], ["R", "#654321"]]);
-  worldMap.applyColors("admin1", colors, new Set(["E"]));
-  assert.strictEqual(states.get("E").estimate, true, "an estimated unit is flagged");
-  assert.strictEqual(states.get("E").color, "#123456", "and keeps its colour");
-  assert.strictEqual(states.get("R").estimate, false, "a read unit is flagged off, not left unset");
-  worldMap.applyColors("admin1", colors, new Set());
-  assert.strictEqual(states.get("E").estimate, false,
-                     "turning estimates off takes the hatch away");
+  worldMap.applyColors("admin1", colors);
+  assert.deepStrictEqual(states.get("E"), { color: "#123456" },
+                         "an estimated unit carries its colour and no flag");
+  assert.deepStrictEqual(states.get("R"), { color: "#654321" },
+                         "a read unit is written the same way");
 
-  // A restyle -- the theme toggle -- loses the images and the states, and
-  // must get both back from module state.
-  worldMap.applyColors("admin1", colors, new Set(["E"]));
+  // A restyle -- the theme toggle -- loses the states, and must get the
+  // colours back from module state without reintroducing a pattern.
   states.clear();
   worldMap.restyle();
-  assert.ok(images.has("estimate-hatch"), "the hatch image is added again after a restyle");
-  assert.strictEqual(states.get("E").estimate, true, "the flag is re-applied with the colour");
-  assert.strictEqual(states.get("R").estimate, false);
+  assert.strictEqual(states.get("E").color, "#123456", "the colour returns after a restyle");
+  assert.ok(!images.has("estimate-hatch"), "and no hatch comes back with it");
 }
 
 (async () => {
@@ -709,6 +699,6 @@ function estimatesAreHatchedAndTheHatchSurvivesARestyle() {
   estimatesAreGapsInTheBrowser();
   estimatesAreDrawnAsFiguresWithOneSentence();
   estimatesPaintOnlyWhenAskedAndNeverCount();
-  estimatesAreHatchedAndTheHatchSurvivesARestyle();
+  anEstimateIsColouredLikeAReading();
   console.log("frontend regression tests passed");
 })().catch((error) => { console.error(error); process.exitCode = 1; });
