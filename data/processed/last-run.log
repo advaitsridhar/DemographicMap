@@ -1,17 +1,15 @@
 netherlands: 12 provinces from nl.wikipedia
-  [nl] 'Groningen (provincie)': nothing (missingtitle)
-  Groningen: the article could not be read
-  Fryslân: the infobox has no 'religie' parameter
-  Drenthe: the infobox has no 'religie' parameter
-  Overijssel: the infobox has no 'religie' parameter
-  Flevoland: the infobox has no 'religie' parameter
-  Gelderland: the infobox has no 'religie' parameter
-  Utrecht: the infobox has no 'religie' parameter
-  Noord-Holland: the infobox has no 'religie' parameter
-  Zuid-Holland: the infobox has no 'religie' parameter
-  [nl] 'Zeeland (provincie)': nothing (missingtitle)
-  Zeeland: the article could not be read
-  Noord-Brabant: the infobox has no 'religie' parameter
-  [nl] 'Limburg (Nederlandse provincie)': nothing (missingtitle)
-  Limburg: the article could not be read
-netherlands: nothing was read; writing nothing
+  Groningen: 5 groups, No religion 68.4%, 2015
+  Fryslân: 5 groups, No religion 57.2%, 2015
+  Drenthe: labels this reader has no entry for: ['Overige gezindtes']
+  Overijssel: 5 groups, No religion 42.2%, 2015
+  Flevoland: 5 groups, No religion 55.2%, 2015
+  Gelderland: labels this reader has no entry for: ['islamitisch']
+  Utrecht: labels this reader has no entry for: ['Islamitisch', 'andere godsdienstige gezindte']
+  Noord-Holland: 5 groups, No religion 62.9%, 2015
+  Zuid-Holland: 5 groups, No religion 52.2%, 2015
+  Zeeland: 5 groups, No religion 46.6%, 2015
+  Noord-Brabant: 5 groups, No religion 47.4%, 2023
+  Limburg: 4 groups, Roman Catholic 46.5%, 2023
+  9 of 12 provinces written
+  wrote data/processed/netherlands_province.json (17 kB)
