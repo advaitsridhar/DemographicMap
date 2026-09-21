@@ -98,6 +98,14 @@ LABELS = {
     "islam": "Muslim",
     "overige gezindte": "Other religion",
     "overige gezindten": "Other religion",
+    # Three more the first run met and refused rather than drop: Drenthe
+    # writes the plural with an -s, Gelderland and Utrecht write the
+    # adjective for Muslim, and Utrecht spells "other" out in full. Refusing
+    # was right -- a label with no entry would otherwise vanish and shrink
+    # the province -- and these are the same answers under other spellings.
+    "overige gezindtes": "Other religion",
+    "andere godsdienstige gezindte": "Other religion",
+    "islamitisch": "Muslim",
     "overig": "Other religion",
     "overige": "Other religion",
     "andere gezindte": "Other religion",
