@@ -76,6 +76,39 @@ SELECT ?unit ?unitLabel ?parent ?parentLabel ?pop ?popTime ?capitalLabel ?coord 
 """
 
 # ISO3 -> Wikidata country item.  Resolved live when the lookup misses.
+# The same, stripped to what a Wikipedia probe needs: the unit, its label and
+# its parent, and nothing else. The three OPTIONAL blocks above -- population
+# with its point in time, capital, coordinates -- are what make the full query
+# expensive, and on 21 September 2026 they made it unrunnable: a sweep of all
+# 218 countries was cancelled at the job's 45-minute limit having reached about
+# 25, with Wikidata answering 502, 504 and read-timeout on most of them and
+# Austria failing outright after four retries.
+#
+# This asks for QIDs, and a QID is all that resolves to a Wikipedia article.
+#
+# It must never be run for a country already in the file. The merge below
+# replaces an answered country's records wholesale, so a light answer for
+# Mexico would drop the 1,877 populations the full query found there. --light
+# refuses such a country by name rather than trusting the caller to remember.
+ADMIN2_LIGHT_QUERY = """
+SELECT ?unit ?unitLabel ?parent ?parentLabel WHERE {
+  VALUES ?country { wd:%(qid)s }
+  ?country wdt:P150 ?parent .
+  ?unit wdt:P131 ?parent .
+  ?unit wdt:P31/wdt:P279* wd:Q56061 .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+"""
+
+ADMIN1_LIGHT_QUERY = """
+SELECT ?unit ?unitLabel WHERE {
+  VALUES ?country { wd:%(qid)s }
+  ?country wdt:P150 ?unit .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+"""
+
+
 COUNTRY_QID_QUERY = """
 SELECT ?country ?iso3 WHERE {
   ?country wdt:P31 wd:Q6256 ; wdt:P298 ?iso3 .
@@ -183,6 +216,35 @@ def countries_in(records: list[dict[str, Any]]) -> set[str]:
             if (row.get("country") or (row.get("id") or "")[:3])}
 
 
+def light_query(level: str) -> str:
+    return ADMIN1_LIGHT_QUERY if level == "admin1" else ADMIN2_LIGHT_QUERY
+
+
+def refuse_light_overwrite(out: Path, level: str,
+                           countries: list[str] | None) -> None:
+    """A light answer must never replace a full one.
+
+    The merge replaces an answered country's records wholesale, so a light
+    run over Mexico would drop the 1,877 populations the full query found
+    there. Asking for every country with --light would quietly empty the
+    fourteen that are already complete, which is why this refuses by name
+    instead of trusting the caller to remember.
+    """
+    already = countries_in(read_json(out, []) or [])
+    if not already:
+        return
+    asked = {c.upper() for c in countries} if countries else already
+    clash = sorted(already & asked)
+    if clash:
+        raise SystemExit(
+            f"--light would replace {len(clash)} country(ies) already in "
+            f"{out.name} with records carrying no population, capital or "
+            f"coordinates: {', '.join(clash[:20])}.\n"
+            "The merge replaces an answered country wholesale, so that is a "
+            "loss rather than a refresh. Run the full query for those, or "
+            "leave them out of --countries.")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -190,17 +252,28 @@ def main() -> int:
     ap.add_argument("--countries", nargs="*", help="ISO3 codes; default is every country")
     ap.add_argument("--sleep", type=float, default=1.0, help="pause between queries (be polite)")
     ap.add_argument("--out", type=Path, default=None)
+    ap.add_argument("--light", action="store_true",
+                    help="ask only for units and their parents; far cheaper, "
+                         "and refused for a country already in the file")
     ap.add_argument("--allow-shrink", action="store_true",
                     help="write even though it drops countries the existing "
                          "file covers")
     args = ap.parse_args()
+
+    # Before any network work: a light run that would overwrite a country
+    # already answered in full is refused here rather than after forty
+    # minutes of queries.
+    out_path = args.out or PROCESSED / f"wikidata_{args.level}.json"
+    if args.light:
+        refuse_light_overwrite(out_path, args.level, args.countries)
 
     qids = country_qids()
     codes = [c.upper() for c in (args.countries or sorted(qids))]
     # Wikidata's P298 for Kosovo is XKS; geoBoundaries uses XKX. Normalise so
     # the join buckets the records with the shapes instead of beside them.
     iso3_alias = {"XKS": "XKX"}
-    query = ADMIN1_QUERY if args.level == "admin1" else ADMIN2_QUERY
+    query = (light_query(args.level) if args.light
+             else (ADMIN1_QUERY if args.level == "admin1" else ADMIN2_QUERY))
 
     records: list[dict[str, Any]] = []
     missing: list[str] = []
