@@ -75,6 +75,19 @@ def licence(package: dict[str, Any]) -> str:
             + (f", license_other={other!r}" if other else ""))
 
 
+# The two licences this map may read a COD-PS under. CC BY-IGO is the common
+# one and is an attribution licence; png.py has read cod-ps-png under it since
+# before this file existed. Everything else is refused by name rather than by
+# flag: "humanitarian use only" (cod-ps-idn and four others), "Restricted for
+# use only in HRP and Humanitarian Operations", and the two that state no
+# licence at all.
+USABLE = ("cc-by-igo", "cc-by")
+
+
+def is_usable(package: dict[str, Any]) -> bool:
+    return str(package.get("license_id") or "") in USABLE
+
+
 def iso3(package: dict[str, Any]) -> str:
     for group in package.get("groups") or ():
         code = str(group.get("name") or "").upper()
@@ -88,23 +101,68 @@ def iso3(package: dict[str, Any]) -> str:
 def probe() -> None:
     packages = catalogue()
     log(f"cod_ps: {len(packages)} cod-ps dataset(s) on HDX")
-    open_count = 0
+    usable_count = 0
     for package in sorted(packages, key=lambda p: str(p.get("name"))):
         terms = licence(package)
-        if package.get("isopen"):
-            open_count += 1
+        if is_usable(package):
+            usable_count += 1
         log(f"  {str(package.get('name')):22} {iso3(package) or '?':4} {terms}")
         for resource in package.get("resources") or ():
             log(f"      {str(resource.get('name'))[:78]:80} "
                 f"{str(resource.get('format'))}")
-    log(f"  {open_count} of {len(packages)} carry an open licence")
+    # NOT CKAN's isopen flag, which is what the first version of this printed
+    # and it was misleading: 132 of these are CC BY-IGO, which HDX marks
+    # isopen=False only because CKAN's registry does not list it. CC BY-IGO is
+    # an attribution licence and this map already reads cod-ps-png under it
+    # (scripts/fetch_census/png.py). What is genuinely unusable is the handful
+    # that say so in words -- "humanitarian use only", "Restricted for use only
+    # in HRP and Humanitarian Operations" -- and the ones with no licence at
+    # all. So the count is by what the licence says, not by the flag.
+    log(f"  usable (CC BY or CC BY-IGO): {usable_count} of {len(packages)}")
+
+
+def headers(isos: list[str]) -> None:
+    """The first two lines of each country's adm2 table, and nothing else.
+
+    A reader cannot be written against a guessed column name, and COD-PS has
+    been through more than one schema. This prints what is actually there.
+    """
+    wanted = {c.upper() for c in isos}
+    for package in sorted(catalogue(), key=lambda p: str(p.get("name"))):
+        code = iso3(package)
+        if wanted and code not in wanted:
+            continue
+        if not is_usable(package):
+            log(f"  {code}: refused, {licence(package)}")
+            continue
+        for resource in package.get("resources") or ():
+            name = str(resource.get("name") or "")
+            if "adm2" not in name.lower() or not name.lower().endswith(".csv"):
+                continue
+            log(f"  {code} {name}")
+            try:
+                with urllib.request.urlopen(urllib.request.Request(
+                        str(resource.get("url")), headers=HEADERS),
+                        timeout=TIMEOUT) as fh:
+                    body = fh.read(4000).decode("utf-8-sig", "replace")
+            except Exception as err:                 # noqa: BLE001 -- reported
+                log(f"      unreadable: {type(err).__name__}: {err}")
+                continue
+            for line in body.splitlines()[:2]:
+                log(f"      {line[:400]}")
+            break
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--probe", action="store_true",
                     help="describe every dataset and write nothing")
+    ap.add_argument("--headers", default="",
+                    help="comma-separated ISO3s whose adm2 table to describe")
     args = ap.parse_args()
+    if args.headers:
+        headers([x for x in args.headers.split(",") if x])
+        return 0
     if not args.probe:
         raise SystemExit("cod_ps: only --probe is implemented; "
                          "nothing is written until the probe has been read")
