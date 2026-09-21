@@ -58,15 +58,20 @@ not a measurement of anywhere:
   "west: level 2 unknown" -- is dropped, since there is no shape it could be
   matched to and a fuzzy match to a real region would be worse than a gap.
 
-**Level.** Admin 1 only. The files carry admin2 rows too, and this map would
-take them, but the table has no parent column: the only route to a district's
-region is the P-code prefix, and that is a guess. Somalia's SO2301 does sit
-under SO23 and Iraq's IQG15Q05 under IQG15, but Kyrgyzstan's admin1 codes are
-zero-padded to thirteen characters (KG06000000000) and its districts are not
-(KG06246000000), so no one prefix rule holds across the publisher. A
-mis-parented district is an invisible error and a missing one is a visible
-gap, so the districts are left for a pass that can establish the parent
-rather than infer it.
+**Level.** Both, since 21 September 2026. The districts were left unread for
+a while on the grounds that the table has no parent column and the P-code
+prefix is a guess: Somalia's SO2301 does sit under SO23 and Iraq's IQG15Q05
+under IQG15, but Kyrgyzstan's admin1 codes are zero-padded to thirteen
+characters (KG06000000000) where its districts are not (KG06246000000), so no
+one prefix rule holds across the publisher.
+
+That is true and it turned out not to matter. No parent is claimed here and
+none is needed: ``build_entities.match_admin2`` matches a parentless row only
+against a district name that is unique country-wide, and refuses it where the
+name repeats. A mis-parented district is an invisible error and a missing one
+is a visible gap -- which is the rule that kept the level out, applied by the
+code that owns the join instead of guessed at here. 2,122 district rows, seven
+refused for a name that repeats inside its own country.
 
 Usage:
     python -m scripts.fetch_census.clear_global            # write the file
@@ -511,8 +516,13 @@ def country_records(package: dict[str, Any], level: int = 1
     methodology = str(package.get("methodology") or "").strip()
     method_note = str(package.get("methodology_other") or "").strip()
     terms = licence(package)
-    source_name = (f"{PUBLISHER}, {package.get('title')} "
-                   f"({resource.get('name')})")
+    # The file's name is how this map reached the dataset, not what the
+    # dataset is, and putting it in the source name made the two levels of one
+    # publication read as two sources: every subtraction between a Bolivian
+    # department and its provinces was refused because one cited
+    # "..._BOL_admin1.csv" and the other "..._BOL_admin2.csv". Which file was
+    # read is in the run log, where provenance belongs.
+    source_name = f"{PUBLISHER}, {package.get('title')}"
     note = (
         f"The main language spoken in the household, as a share of the "
         f"population. Tabulated by {PUBLISHER} from "

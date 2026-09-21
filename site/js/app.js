@@ -64,9 +64,10 @@
     // same thing everywhere is the more honest starting point.
     spread: "absolute",
     // Whether a unit with no read figure but an estimate is coloured by the
-    // estimate -- hatched, so it cannot pass for a reading -- or left as the
-    // gap it also is. On by default: the hatch does the work of honesty,
-    // and off by default hid that an estimate existed at all
+    // estimate or left as the gap it also is. On by default: off hid that an
+    // estimate existed at all. The estimate used to be hatched as well as
+    // coloured; by the owner's decision of 21 September 2026 it is drawn like
+    // any other unit, and the panel carries the caveat instead
     // (docs/MODELLING.md, section 6).
     estimates: estimatesDefault(),
     // Which parents the group tree is showing the children of. Expanding is
@@ -226,9 +227,10 @@
       "one of its parts instead. Blank on the map means the figure is " +
       "missing at that level, never that the share is zero.",
     estimates:
-      "A hatched unit has no read figure: its colour is what an estimate " +
-      "says, and the panel says how it was made. Estimates never count in " +
-      "a group's totals. Untick to draw them as gaps.",
+      "Some units have no read figure and carry an estimate instead. Their " +
+      "colour is what the estimate says, drawn like any other, and the " +
+      "panel names the status and how it was made. Estimates never count " +
+      "in a group's totals. Untick to draw them as gaps.",
   };
 
   let infoOpen = null;
@@ -1069,7 +1071,7 @@
                                           estimates: state.estimates,
                                           inView: (record) =>
                                             window.WorldMap.inView(record.point) });
-    window.WorldMap.applyColors(levelId, result.colors, result.estimated);
+    window.WorldMap.applyColors(levelId, result.colors);
     renderLegend(result.legend);
     updateLevelNote(level, records.length);
   }

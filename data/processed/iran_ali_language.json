@@ -4640,7 +4640,7 @@
       "status": "not_available"
     },
     "language": {
-      "status": "modelled",
+      "status": "derived",
       "estimate": [
         {
           "group": "Turkic",
@@ -4659,7 +4659,7 @@
           "pct": 1.8
         }
       ],
-      "method": "population-weighted sum of the published ALI settlement estimates in the unit that carry a population",
+      "method": "population-weighted sum of every published ALI settlement estimate in the unit",
       "inputs": [
         "ali-language-distribution-in-hamadan-province-iran-2021"
       ],

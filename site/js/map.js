@@ -33,10 +33,7 @@ window.WorldMap = (function () {
   // a fetch happens to complete in.
   let partialCountries = [];
   const colorState = new Map();  // level id -> Map(shapeID -> color)
-  // level id -> Set(shapeID) of units whose colour came from an estimate.
   // Kept beside the colours, and re-applied with them, so a restyle cannot
-  // drop the hatching while keeping the colour it qualifies.
-  const estimateState = new Map();
 
   // When set, the viewer has chosen a level explicitly and zoom no longer picks
   // one. Second-level divisions at world view are the point: 49,349 shapes at
@@ -67,22 +64,16 @@ window.WorldMap = (function () {
     for (let i = 0; i < LEVELS.length; i += 1) {
       const level = LEVELS[i];
       const shown = index === null || i === index;
-      for (const suffix of ["fill", "estimate", "line", "hover"]) {
+      for (const suffix of ["fill", "line", "hover"]) {
         const id = `${level.id}-${suffix}`;
         if (!map.getLayer(id)) continue;
         map.setLayoutProperty(id, "visibility", shown ? "visible" : "none");
         if (index === null) {
           map.setLayerZoomRange(id, layerMinZoom(level), layerMaxZoom(level));
           if (suffix === "fill") map.setPaintProperty(id, "fill-opacity", fadeExpression(level));
-          if (suffix === "estimate") {
-            map.setPaintProperty(id, "fill-opacity", estimateOpacity(level, false));
-          }
         } else if (shown) {
           map.setLayerZoomRange(id, level.minzoom, 24);
           if (suffix === "fill") map.setPaintProperty(id, "fill-opacity", 1);
-          if (suffix === "estimate") {
-            map.setPaintProperty(id, "fill-opacity", estimateOpacity(level, true));
-          }
         }
       }
     }
@@ -152,78 +143,24 @@ window.WorldMap = (function () {
     return expr;
   }
 
-  /* The hatching over a unit whose colour is an estimate.
+  /* An estimate is drawn exactly like a reading, by the owner's decision of
+   * 21 September 2026.
    *
-   * An estimate is painted in the colour its rows would earn, so that the
-   * map can say what the estimate says; and it is hatched, so that the map
-   * can never be read as saying the figure was published. The colour is a
-   * claim about the place and the hatch is a claim about the evidence, and
-   * a reader needs both at once (docs/MODELLING.md, section 6).
+   * It used to be hatched as well as coloured: the colour said what the
+   * estimate said and the diagonal lines said it was not published, which is
+   * two claims a reader needs at once (docs/MODELLING.md, section 6). The
+   * owner's words were that a modelled unit "should look normal", and the
+   * hatch is gone with the layer, the pattern and the feature-state flag that
+   * switched it on.
    *
-   * MapLibre will not read feature-state into `fill-pattern`, so the hatch
-   * is its own fill layer over the colour, with a constant pattern and an
-   * opacity that feature-state switches on. The flag travels with the
-   * colour through applyColors(), which is what keeps the two in step: a
-   * restyle re-applies both from the same module state, and turning
-   * estimates off repaints the flag to false with the colour to neutral.
-   *
-   * The pattern follows the level's own cross-fade, or the hatch would sit
-   * at full strength over a fill that is still fading in.
+   * The distinction is not gone with it. It is in the panel, where the badge
+   * names the status ("Modelled", "Derived"), the note's first sentence says
+   * nothing was read for the unit, and the record carries its own method and
+   * vintage; and it is in the estimates control, which still decides whether
+   * a modelled unit is coloured at all. What changed is that the map's
+   * surface no longer carries the caveat -- a reader who wants it opens the
+   * unit.
    */
-  const HATCH_IMAGE = "estimate-hatch";
-  const ESTIMATE_FLAG = ["case", ["boolean", ["feature-state", "estimate"], false], 1, 0];
-
-  function estimateOpacity(level, pinned) {
-    if (pinned) return ESTIMATE_FLAG;
-    return fadeExpression(level, (opacity) => (opacity ? ["*", opacity, ESTIMATE_FLAG] : 0));
-  }
-
-  /* One tile of diagonal hatching, drawn on the fly.
-   *
-   * Two-tone -- a light core inside a dark edge -- rather than one ink, so
-   * it reads on the pale end of a ramp and on the deep end alike: a dark
-   * line vanishes on a 95% unit and a light one on a 30% unit. Drawn at
-   * twice the size and declared at that ratio so it stays crisp on a dense
-   * display. Null where there is no canvas to draw on, in which case the
-   * estimate keeps its colour and its readout but loses the hatch.
-   */
-  function hatchImage() {
-    if (typeof document === "undefined" || typeof document.createElement !== "function") {
-      return null;
-    }
-    const ratio = 2;
-    const size = 8 * ratio;
-    const canvas = document.createElement("canvas");
-    if (!canvas || typeof canvas.getContext !== "function") return null;
-    canvas.width = size;
-    canvas.height = size;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return null;
-    ctx.clearRect(0, 0, size, size);
-    ctx.lineCap = "butt";
-    // Lines on y = -x + k*size for k = 0, 1, 2: the anti-diagonal and the
-    // two corners it wraps into, so the tile repeats without a seam.
-    const strokes = [["rgba(0, 0, 0, 0.55)", 1.6 * ratio], ["rgba(255, 255, 255, 0.85)", 0.7 * ratio]];
-    for (const [style, width] of strokes) {
-      ctx.strokeStyle = style;
-      ctx.lineWidth = width;
-      ctx.beginPath();
-      for (const k of [0, 1, 2]) {
-        ctx.moveTo((k - 1) * size, size);
-        ctx.lineTo(k * size, 0);
-      }
-      ctx.stroke();
-    }
-    // Handed over as pixels, which is what addImage takes; a canvas element
-    // is not on its list and fails inside the style.load handler.
-    return { image: ctx.getImageData(0, 0, size, size), pixelRatio: ratio };
-  }
-
-  function ensureHatch() {
-    if (!map || map.hasImage(HATCH_IMAGE)) return;
-    const hatch = hatchImage();
-    if (hatch) map.addImage(HATCH_IMAGE, hatch.image, { pixelRatio: hatch.pixelRatio });
-  }
 
   function partialFilter() {
     return ["in", ["get", "shapeGroup"], ["literal", partialCountries.slice()]];
@@ -311,20 +248,6 @@ window.WorldMap = (function () {
           "fill-opacity": fadeExpression(level),
         },
       });
-      // Hatching over the units whose colour is an estimate (see
-      // estimateOpacity). Above the colour it qualifies, below the borders.
-      layers.push({
-        id: `${level.id}-estimate`,
-        type: "fill",
-        source: level.id,
-        "source-layer": level.id,
-        minzoom: layerMinZoom(level),
-        maxzoom: layerMaxZoom(level),
-        paint: {
-          "fill-pattern": HATCH_IMAGE,
-          "fill-opacity": estimateOpacity(level, false),
-        },
-      });
       layers.push({
         id: `${level.id}-line`,
         type: "line",
@@ -370,17 +293,15 @@ window.WorldMap = (function () {
     }
   }
 
-  /** Colour one level, and say which of its units are coloured by an estimate. */
-  function applyColors(levelId, colors, estimated) {
+  /** Colour one level. An estimate's colour is a colour like any other. */
+  function applyColors(levelId, colors) {
     colorState.set(levelId, colors);
-    estimateState.set(levelId, estimated || new Set());
     repaintLevel(levelId);
   }
 
   function repaintLevel(levelId) {
     const colors = colorState.get(levelId);
     if (!colors || !map || !map.getSource(levelId)) return;
-    const estimated = estimateState.get(levelId) || new Set();
     const features = map.querySourceFeatures(levelId, { sourceLayer: levelId });
     const seen = new Set();
     for (const feature of features) {
@@ -388,11 +309,8 @@ window.WorldMap = (function () {
       if (!key || seen.has(key)) continue;
       seen.add(key);
       const color = colors.get(key);
-      // The flag is written every time, false included: feature-state
-      // persists, and a unit that stops being an estimate (the control
-      // turned off, or the metric changed) must lose its hatch.
       map.setFeatureState({ source: levelId, sourceLayer: levelId, id: feature.id },
-                          { color: color || null, estimate: estimated.has(key) });
+                          { color: color || null });
     }
   }
 
@@ -478,15 +396,6 @@ window.WorldMap = (function () {
     // later restyle, in the same place.
     map.on("style.load", () => {
       if (map.getLayer("partial-land")) map.setFilter("partial-land", partialFilter());
-      // A restyle rebuilds the style from scratch, images included, so the
-      // hatch pattern is added here, once per style, before any tile asks
-      // for it.
-      ensureHatch();
-    });
-    // And if a tile asks first anyway, draw it on demand rather than let the
-    // layer warn that its image never arrived.
-    map.on("styleimagemissing", (event) => {
-      if (event && event.id === HATCH_IMAGE) ensureHatch();
     });
 
     map.on("load", () => {
