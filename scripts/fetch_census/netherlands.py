@@ -51,7 +51,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from common import NOT_AVAILABLE, gap                      # noqa: E402
 from ._shared import PROCESSED, log, record, write_json    # noqa: E402
-from .indonesia import (citations, fetch, infobox_param,   # noqa: E402
+# The Indonesian reader owns the infobox and citation helpers, but not the
+# fetcher: indonesia.fetch takes "id" or falls through to English, so asking
+# it for a Dutch title queried en.wikipedia and returned either a
+# missingtitle or the English article, which has no 'religie' parameter at
+# all. The Europe reader's fetch takes any language, which is what this needs.
+from .europe_wiki import fetch                            # noqa: E402
+from .indonesia import (citations, infobox_param,         # noqa: E402
                         ref_definitions)
 
 OUT = "netherlands_province.json"
