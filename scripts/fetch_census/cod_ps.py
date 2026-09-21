@@ -31,15 +31,20 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import csv
+import io
 import json
+import re
 import urllib.parse
 import urllib.request
 from typing import Any
 
-from ._shared import log
+from ._shared import PROCESSED, log, record, write_json
 
 API = "https://data.humdata.org/api/3/action"
 TIMEOUT = 120
+OUT = "cod_ps_admin2.json"
+DATASET_PAGE = "https://data.humdata.org/dataset/{stub}"
 HEADERS = {"Accept": "application/json",
            "User-Agent": "DemographicMap/1.0 "
                          "(+https://github.com/advaitsridhar/DemographicMap)"}
@@ -121,6 +126,148 @@ def probe() -> None:
     log(f"  usable (CC BY or CC BY-IGO): {usable_count} of {len(packages)}")
 
 
+# The columns, as the eight countries probed on 21 September 2026 write them.
+# The name column carries the language rather than a fixed suffix -- Iran and
+# Turkey write ADM2_EN, Romania ADM2_RO -- so it is matched by shape and the
+# English one is preferred where a file has both.
+NAME_COL = re.compile(r"^ADM(?P<level>[12])_(?P<lang>[A-Z]{2})$")
+TOTAL = "T_TL"
+# The reference year is a column in the newer files and only in the resource
+# name in the older ones ("irn_admpop_adm2_2016_v2.csv"). A population with no
+# year is not written: the whole point of this file is to weigh a composition,
+# and a weight of unknown vintage against a composition of known vintage is
+# how a residual comes out wrong while looking right.
+YEAR_IN_NAME = re.compile(r"_(\d{4})(?:_|\.)")
+
+
+def name_column(columns: list[str], level: str) -> str | None:
+    """ADM<level>_EN if the file has it, else any ADM<level>_<lang>."""
+    candidates = [c for c in columns
+                  if (m := NAME_COL.match(c.strip())) and m.group("level") == level]
+    for column in candidates:
+        if column.endswith("_EN"):
+            return column
+    return candidates[0] if candidates else None
+
+
+def reference_year(columns: list[str], rows: list[dict[str, str]],
+                   resource_name: str) -> int | None:
+    if "year" in columns:
+        years = {str(r.get("year") or "").strip() for r in rows}
+        years = {y for y in years if y.isdigit()}
+        if len(years) == 1:
+            return int(years.pop())
+    found = YEAR_IN_NAME.search(resource_name)
+    return int(found.group(1)) if found else None
+
+
+def adm2_resource(package: dict[str, Any]) -> dict[str, Any] | None:
+    for resource in package.get("resources") or ():
+        name = str(resource.get("name") or "").lower()
+        if "adm2" in name and name.endswith(".csv"):
+            return resource
+    return None
+
+
+def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
+    """One country's district populations, or none with the reason logged."""
+    code = iso3(package)
+    stub = str(package.get("name") or "")
+    terms = licence(package)
+    log(f"  {stub} ({code or '?'})")
+    log(f"    licence: {terms}")
+    if not code:
+        log("    refused: the catalogue gives no ISO3")
+        return []
+    if not is_usable(package):
+        log("    refused: this licence is not one this map may read")
+        return []
+    resource = adm2_resource(package)
+    if resource is None:
+        log("    refused: no adm2 CSV on this dataset")
+        return []
+    try:
+        with urllib.request.urlopen(urllib.request.Request(
+                str(resource.get("url")), headers=HEADERS), timeout=TIMEOUT) as fh:
+            body = fh.read().decode("utf-8-sig", "replace")
+    except Exception as err:                         # noqa: BLE001 -- reported
+        log(f"    refused: {resource.get('name')}: {type(err).__name__}: {err}")
+        return []
+    reader = csv.DictReader(io.StringIO(body))
+    rows = list(reader)
+    columns = [c.strip() for c in (reader.fieldnames or [])]
+    unit = name_column(columns, "2")
+    parent = name_column(columns, "1")
+    if not unit or TOTAL not in columns:
+        log(f"    refused: no ADM2 name column or no {TOTAL}; "
+            f"its columns are: {', '.join(columns[:12])}")
+        return []
+    year = reference_year(columns, rows, str(resource.get("name") or ""))
+    if year is None:
+        log("    refused: the file states no reference year, in a column or "
+            "its own name")
+        return []
+
+    # One row per district, and a district that appears twice is refused
+    # rather than summed or overwritten. Turkey's file carries a "type"
+    # column, so a second row for one P-code would be a different universe
+    # (residents against some other count) and adding them would invent a
+    # population nobody published.
+    seen: dict[str, dict[str, Any]] = {}
+    clashed: set[str] = set()
+    unnamed = bad = 0
+    for row in rows:
+        name = (row.get(unit) or "").strip()
+        code2 = (row.get("ADM2_PCODE") or name).strip()
+        raw = (row.get(TOTAL) or "").strip().replace(",", "")
+        if not name or not code2:
+            unnamed += 1
+            continue
+        try:
+            people = int(float(raw))
+        except ValueError:
+            bad += 1
+            continue
+        if people <= 0:
+            bad += 1
+            continue
+        if code2 in seen:
+            if seen[code2]["people"] != people:
+                clashed.add(code2)
+            continue
+        seen[code2] = {"name": name, "people": people,
+                       "parent": (row.get(parent) or "").strip() if parent else ""}
+    for code2 in clashed:
+        seen.pop(code2, None)
+    if clashed:
+        log(f"    {len(clashed)} district(s) appear twice with different "
+            f"totals and are refused")
+    if unnamed or bad:
+        log(f"    {unnamed} row(s) unnamed, {bad} with no usable total")
+    if not seen:
+        log("    refused: no district survived")
+        return []
+
+    source = {"field": "population",
+              "name": f"OCHA, Common Operational Dataset -- population "
+                      f"statistics ({stub}), reference year {year}",
+              "url": DATASET_PAGE.format(stub=stub),
+              "year": year,
+              "license": terms}
+    out = []
+    for code2, unit_row in sorted(seen.items()):
+        out.append(record(
+            f"{code}-CODPS-{code2}", unit_row["name"], level="admin2",
+            parent=code, country=code,
+            parent_name=unit_row["parent"] or None,
+            population={"value": unit_row["people"], "year": year,
+                        "source": source["name"]},
+            sources=[source]))
+    log(f"    {len(out)} district(s), reference year {year}, "
+        f"{sum(r['population']['value'] for r in out):,} people")
+    return out
+
+
 def headers(isos: list[str]) -> None:
     """The first two lines of each country's adm2 table, and nothing else.
 
@@ -157,16 +304,35 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--probe", action="store_true",
                     help="describe every dataset and write nothing")
+    ap.add_argument("--only", default="",
+                    help="comma-separated ISO3s to write, rather than all")
+    ap.add_argument("--out", default=None)
     ap.add_argument("--headers", default="",
                     help="comma-separated ISO3s whose adm2 table to describe")
     args = ap.parse_args()
     if args.headers:
         headers([x for x in args.headers.split(",") if x])
         return 0
-    if not args.probe:
-        raise SystemExit("cod_ps: only --probe is implemented; "
-                         "nothing is written until the probe has been read")
-    probe()
+    if args.probe:
+        probe()
+        return 0
+    only = {x.upper() for x in args.only.split(",") if x}
+    packages = catalogue()
+    log(f"cod_ps: {len(packages)} cod-ps dataset(s) on HDX")
+    records_out: list[dict[str, Any]] = []
+    written: list[str] = []
+    for package in sorted(packages, key=lambda p: str(p.get("name"))):
+        if only and iso3(package) not in only:
+            continue
+        got = country_records(package)
+        if got:
+            written.append(f"{iso3(package)}:{len(got)}")
+        records_out += got
+    if not records_out:
+        raise SystemExit("cod_ps: nothing usable was read; writing nothing")
+    log(f"  {len(records_out)} districts in {len(written)} countries: "
+        f"{', '.join(written)}")
+    write_json(args.out or PROCESSED / OUT, records_out)
     return 0
 
 
