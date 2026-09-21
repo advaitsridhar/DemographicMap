@@ -131,24 +131,73 @@ def probe() -> None:
 # The name column carries the language rather than a fixed suffix -- Iran and
 # Turkey write ADM2_EN, Romania ADM2_RO -- so it is matched by shape and the
 # English one is preferred where a file has both.
-NAME_COL = re.compile(r"^ADM(?P<level>[12])_(?P<lang>[A-Z]{2})$")
-TOTAL = "T_TL"
-# The reference year is a column in the newer files and only in the resource
-# name in the older ones ("irn_admpop_adm2_2016_v2.csv"). A population with no
-# year is not written: the whole point of this file is to weigh a composition,
-# and a weight of unknown vintage against a composition of known vintage is
-# how a residual comes out wrong while looking right.
-YEAR_IN_NAME = re.compile(r"_(\d{4})(?:_|\.)")
+# The column names, as the 148 datasets actually write them. There is no one
+# schema: the first version of this matched ^ADM2_[A-Z]{2}$ and refused
+# fifteen files whose only fault was spelling. What is out there --
+#
+#   ADM2_EN      ADM2_RO      ADM2_NAME    ADM2_NAME_SI
+#   admin2Name_en   admin2Name_fr   admin2Name_ru
+#   Adm2_name    adm2_Name    district_name
+#
+# -- so the column is recognised by its shape after the punctuation and case
+# are taken out, and the preference order is English, then an unqualified
+# name, then whatever language is left. A file that offers ADM2_NAME beside
+# ADM2_NAME_SI and ADM2_NAME_TA is Sri Lanka's, and the unqualified one is the
+# English it already is.
+LEVEL_WORD = re.compile(r"^(?:adm|admin)(?P<level>[12])")
+# Never a name: a code, a classification, or one of the alternates a file
+# carries beside the name it actually uses.
+NOT_A_NAME = ("pcode", "code", "type", "refname", "altname")
+# The total. T_TL is the COD-PS standard and a handful write it out instead.
+TOTAL_COLUMNS = ("ttl", "populationtotal", "totalpopulation", "total")
+
+
+def squash(column: str) -> str:
+    return "".join(c for c in column.lower() if c.isalnum())
 
 
 def name_column(columns: list[str], level: str) -> str | None:
-    """ADM<level>_EN if the file has it, else any ADM<level>_<lang>."""
-    candidates = [c for c in columns
-                  if (m := NAME_COL.match(c.strip())) and m.group("level") == level]
-    for column in candidates:
-        if column.endswith("_EN"):
-            return column
-    return candidates[0] if candidates else None
+    """The column naming the units at ``level``, or None.
+
+    Ranked rather than taken first, because several files carry more than one
+    name column and picking the wrong one puts a Tamil transliteration where
+    the boundary file has English.
+    """
+    def rank(column: str) -> tuple[int, int]:
+        flat = squash(column)
+        if flat.endswith("en"):
+            return (0, len(flat))
+        if flat.endswith("name"):
+            return (1, len(flat))
+        return (2, len(flat))
+
+
+    found = []
+    for column in columns:
+        flat = squash(column.strip())
+        match = LEVEL_WORD.match(flat)
+        if not match or match.group("level") != level:
+            continue
+        rest = flat[match.end():]
+        # Either it says "name" (ADM2_NAME, admin2Name_en) or it is the bare
+        # language the older files use (ADM2_EN, ADM2_RO).
+        if not (rest.startswith("name") or (len(rest) == 2 and rest.isalpha())):
+            continue
+        if any(b in rest for b in NOT_A_NAME):
+            continue
+        found.append(column.strip())
+    # Somalia writes "district_name" and "province_name" with no adm prefix.
+    if not found:
+        word = "district" if level == "2" else "province"
+        found = [c.strip() for c in columns if squash(c) == f"{word}name"]
+    return min(found, key=rank) if found else None
+
+
+def total_column(columns: list[str]) -> str | None:
+    for column in columns:
+        if squash(column) in TOTAL_COLUMNS:
+            return column.strip()
+    return None
 
 
 def reference_year(columns: list[str], rows: list[dict[str, str]],
@@ -257,8 +306,9 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
     columns = [c.strip() for c in (reader.fieldnames or [])]
     unit = name_column(columns, "2")
     parent = name_column(columns, "1")
-    if not unit or TOTAL not in columns:
-        log(f"    refused: no ADM2 name column or no {TOTAL}; "
+    total = total_column(columns)
+    if not unit or not total:
+        log(f"    refused: no second-level name column or no total; "
             f"its columns are: {', '.join(columns[:12])}")
         return []
     year = reference_year(columns, rows, str(resource.get("name") or ""))
@@ -277,8 +327,10 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
     unnamed = bad = 0
     for row in rows:
         name = (row.get(unit) or "").strip()
-        code2 = (row.get("ADM2_PCODE") or name).strip()
-        raw = (row.get(TOTAL) or "").strip().replace(",", "")
+        code2 = next((str(row[c]).strip() for c in row
+                      if squash(c) in ("adm2pcode", "admin2pcode", "districtcode")
+                      and row.get(c)), name).strip()
+        raw = (row.get(total) or "").strip().replace(",", "")
         if not name or not code2:
             unnamed += 1
             continue
