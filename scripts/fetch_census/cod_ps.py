@@ -150,6 +150,12 @@ LEVEL_WORD = re.compile(r"^(?:adm|admin)(?P<level>[12])")
 NOT_A_NAME = ("pcode", "code", "type", "refname", "altname")
 # The total. T_TL is the COD-PS standard and a handful write it out instead.
 TOTAL_COLUMNS = ("ttl", "populationtotal", "totalpopulation", "total")
+# The reference year is a column in the newer files and only in the resource
+# name in the older ones ("irn_admpop_adm2_2016_v2.csv"). A population with no
+# year is not written: the point of this file is to weigh a composition, and a
+# weight of unknown vintage against a composition of known vintage is how a
+# residual comes out wrong while looking right.
+YEAR_IN_NAME = re.compile(r"_(\d{4})(?:_|\.)")
 
 
 def squash(column: str) -> str:
