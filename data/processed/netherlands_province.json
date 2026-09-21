@@ -122,6 +122,67 @@
     "religion_note": "Religion in Fryslân for 2015, as the nl.wikipedia article 'Friesland' transcribes it from Statistics Netherlands (CBS). The figure is in the article's infobox rather than in a table. Cited to: [https://www.cbs.nl/nl-nl/nieuws/2016/51/helft-nederlanders-is-kerkelijk-of-religieus Helft Nederlanders is kerkelijk of religieus], CBS, 22 december 2016. [https://web.archive.org/web/20230603222638/. The twelve provinces do not share a year -- most cite CBS's 2015 release, Noord-Brabant and Limburg a 2023 one and Drenthe a 2025 one -- so each province carries its own."
   },
   {
+    "id": "NLD-drenthe",
+    "level": "admin1",
+    "name": "Drenthe",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 66.5
+      },
+      {
+        "group": "Protestant",
+        "pct": 19.4
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 6.6
+      },
+      {
+        "group": "Other religion",
+        "pct": 4.6
+      },
+      {
+        "group": "Muslim",
+        "pct": 2.9
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Statistics Netherlands (CBS), religion by province (2025), as the nl.wikipedia article 'Drenthe' transcribes it",
+        "url": "Drenthe",
+        "year": 2025,
+        "license": "Official statistics (CBS); compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "NLD",
+    "religion_year": 2025,
+    "religion_note": "Religion in Drenthe for 2025, as the nl.wikipedia article 'Drenthe' transcribes it from Statistics Netherlands (CBS). The figure is in the article's infobox rather than in a table. Cited to: [https://web.archive.org/web/20190714153332/https://www.cbs.nl/nl-nl/nieuws/2016/51/helft-nederlanders-is-kerkelijk-of-religieus Helft Nederlanders is kerkelijk of religieus], CBS, 22 december 2016. The twelve provinces do not share a year -- most cite CBS's 2015 release, Noord-Brabant and Limburg a 2023 one and Drenthe a 2025 one -- so each province carries its own."
+  },
+  {
     "id": "NLD-overijssel",
     "level": "admin1",
     "name": "Overijssel",
@@ -242,6 +303,128 @@
     "country": "NLD",
     "religion_year": 2015,
     "religion_note": "Religion in Flevoland for 2015, as the nl.wikipedia article 'Flevoland' transcribes it from Statistics Netherlands (CBS). The figure is in the article's infobox rather than in a table. Cited to: [https://www.cbs.nl/nl-nl/nieuws/2016/51/helft-nederlanders-is-kerkelijk-of-religieus Helft Nederlanders is kerkelijk of religieus], CBS, 22 december 2016. [https://web.archive.org/web/20230603222638/. The twelve provinces do not share a year -- most cite CBS's 2015 release, Noord-Brabant and Limburg a 2023 one and Drenthe a 2025 one -- so each province carries its own."
+  },
+  {
+    "id": "NLD-gelderland",
+    "level": "admin1",
+    "name": "Gelderland",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 46.3
+      },
+      {
+        "group": "Protestant",
+        "pct": 23.2
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 21.6
+      },
+      {
+        "group": "Other religion",
+        "pct": 5.3
+      },
+      {
+        "group": "Muslim",
+        "pct": 3.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Statistics Netherlands (CBS), religion by province (2015), as the nl.wikipedia article 'Gelderland' transcribes it",
+        "url": "Gelderland",
+        "year": 2015,
+        "license": "Official statistics (CBS); compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "NLD",
+    "religion_year": 2015,
+    "religion_note": "Religion in Gelderland for 2015, as the nl.wikipedia article 'Gelderland' transcribes it from Statistics Netherlands (CBS). The figure is in the article's infobox rather than in a table. Cited to: [https://www.cbs.nl/nl-nl/nieuws/2016/51/helft-nederlanders-is-kerkelijk-of-religieus Helft Nederlanders is kerkelijk of religieus], CBS, 22 december 2016. [https://web.archive.org/web/20230603222638/. The twelve provinces do not share a year -- most cite CBS's 2015 release, Noord-Brabant and Limburg a 2023 one and Drenthe a 2025 one -- so each province carries its own."
+  },
+  {
+    "id": "NLD-utrecht",
+    "level": "admin1",
+    "name": "Utrecht",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": [
+      {
+        "group": "No religion",
+        "pct": 54.4
+      },
+      {
+        "group": "Protestant",
+        "pct": 20.3
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 13.2
+      },
+      {
+        "group": "Other religion",
+        "pct": 6.6
+      },
+      {
+        "group": "Muslim",
+        "pct": 5.6
+      }
+    ],
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Statistics Netherlands (CBS), religion by province (2015), as the nl.wikipedia article 'Utrecht (provincie)' transcribes it",
+        "url": "Utrecht (provincie)",
+        "year": 2015,
+        "license": "Official statistics (CBS); compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "NLD",
+    "religion_year": 2015,
+    "religion_note": "Religion in Utrecht for 2015, as the nl.wikipedia article 'Utrecht (provincie)' transcribes it from Statistics Netherlands (CBS). The figure is in the article's infobox rather than in a table. Cited to: [https://web.archive.org/web/20200815054833/https://www.cbs.nl/nl-nl/nieuws/2016/51/helft-nederlanders-is-kerkelijk-of-religieus Helft Nederlanders is kerkelijk of religieus], CBS, 22 december 2016. The twelve provinces do not share a year -- most cite CBS's 2015 release, Noord-Brabant and Limburg a 2023 one and Drenthe a 2025 one -- so each province carries its own."
   },
   {
     "id": "NLD-noord-holland",
