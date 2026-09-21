@@ -146,6 +146,13 @@ ADAPTER_FILES = [
     # Wikipedia articles transcribe: a census transcription, so above the
     # surveys, and it touches a field the surveys do not carry.
     "china_wiki_province.json",
+    # The Netherlands' twelve provinces, religion from each province's own
+    # nl.wikipedia infobox, which transcribes CBS. A statistical office's
+    # figures read through a transcription, so it sits with the other
+    # Wikipedia-transcribed census tables rather than with the surveys. It
+    # touches religion only: language and ethnicity are NOT_COLLECTED_POLICY
+    # for the Netherlands and this must not overwrite that.
+    "netherlands_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
     # OCHA's Common Operational Dataset -- population statistics, the district
     # populations of 52 countries by P-code. It carries no composition at all,
