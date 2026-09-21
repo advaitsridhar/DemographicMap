@@ -4,7 +4,9 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: no adm2 CSV on this dataset
   cod-ps-afg (AFG)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: admin0_name, admin0_code, region, province_code, province_name, district_code, district_name, population_total, population_boys_u18, population_girls_u18, population_men_18plus, population_women_18plus
+    0 row(s) unnamed, 1 with no usable total
+    level: 252 of 390 names match this map's admin2 (against 6 at admin1)
+    401 admin2 unit(s), reference year 2026, 48,595,434 people
   cod-ps-ago (AGO)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     level: 144 of 161 names match this map's admin2 (against 7 at admin1)
@@ -30,7 +32,8 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: its names match 0 of this map's districts and 0 of its first-level units, out of 85; too few of either to say which level this file describes
   cod-ps-bdi (BDI)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: year, ISO3, ADM0_NAME, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, ADM2_NAME, ADM2_PCODE, F_TL, M_TL, T_TL, F_00_04
+    level: 108 of 117 names match this map's admin2 (against 13 at admin1)
+    119 admin2 unit(s), reference year 2022, 13,462,695 people
   cod-ps-ben (BEN)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     level: 77 of 77 names match this map's admin2 (against 0 at admin1)
@@ -41,7 +44,8 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     45 admin2 unit(s), reference year 2023, 22,868,915 people
   cod-ps-bgd (BGD)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: year, ISO3, ADM0_NAME, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, ADM2_NAME, ADM2_PCODE, F_TL, M_TL, T_TL, F_00_04
+    level: 64 of 64 names match this map's admin2 (against 7 at admin1)
+    64 admin2 unit(s), reference year 2022, 165,650,475 people
   cod-ps-bhs (BHS)
     licence: Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
     refused: this licence is not one this map may read
@@ -72,7 +76,9 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: its names match 11 of this map's districts and 0 of its first-level units, out of 28; too few of either to say which level this file describes
   cod-ps-caf (CAF)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: Adm1_name, Adm1_Pcode, Adm2_name, Adm2_Pcode, T_TL, F_TL, M_TL, Enfants_00_18, Adultes_19_59, Agees_60plus
+    1 district(s) appear twice with different totals and are refused
+    level: 53 of 71 names match this map's admin2 (against 0 at admin1)
+    71 admin2 unit(s), reference year 2015, 4,113,940 people
   cod-ps-chl (CHL)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     refused: its names match 0 of this map's districts and 0 of its first-level units, out of 56; too few of either to say which level this file describes
@@ -84,7 +90,9 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: its names match 0 of this map's districts and 0 of its first-level units, out of 1; too few of either to say which level this file describes
   cod-ps-cod (COD)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: admin2Name_fr, admin2Pcode, admin1Name_fr, admin1Pcode, admin0Name_fr, REMARK, F_00_04, M_00_04, F_05_19, M_05_19, F_adulte, M_adulte
+    0 row(s) unnamed, 25 with no usable total
+    level: 164 of 164 names match this map's admin2 (against 1 at admin1)
+    164 admin2 unit(s), reference year 2020, 103,199,358 people
   cod-ps-col (COL)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     0 row(s) unnamed, 1 with no usable total
@@ -117,7 +125,8 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: no adm2 CSV on this dataset
   cod-ps-dom (DOM)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: year, ISO3, ADM0_NAME, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, ADM2_NAME, ADM2_PCODE, F_TL, M_TL, T_TL, F_00_04
+    level: 28 of 32 names match this map's admin1 (against 8 at admin2)
+    32 admin1 unit(s), reference year 2023, 10,711,155 people
   cod-ps-ecu (ECU)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     refused: no adm2 CSV on this dataset
@@ -130,14 +139,15 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     58 admin2 unit(s), reference year 2001, 2,908,795 people
   cod-ps-eth (ETH)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: admin2Name_en, admin2Pcode, admin1Name_en, admin1Pcode, admin0Name_en, admin0Pcode, T_TL, M_TL, F_TL, T_00_04, T_05_09, T_10_14
+    level: 37 of 92 names match this map's admin2 (against 1 at admin1)
+    92 admin2 unit(s), reference year 2022, 102,536,651 people
   cod-ps-fji (FJI)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     level: 15 of 15 names match this map's admin2 (against 0 at admin1)
     15 admin2 unit(s), reference year 2017, 884,887 people
   cod-ps-fsm (FSM)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: adm2_Pcode, adm2_Name, adm1_Pcode, adm1Name, Main_Outer, Region, Sub_Region, Stats_Mcode, T_TL, T_00_04, T_05_09, T_10_14
+    refused: the file states no reference year, in a column or its own name
   cod-ps-gab (GAB)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     refused: no adm2 CSV on this dataset
@@ -147,7 +157,8 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     80 admin2 unit(s), reference year 2014, 3,713,804 people
   cod-ps-gha (GHA)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: ADM0_NAME, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, ADM2_NAME, ADM2_PCODE, F_TL, M_TL, T_TL, F_00_04, F_05_09, F_10_14
+    level: 134 of 216 names match this map's admin2 (against 0 at admin1)
+    216 admin2 unit(s), reference year 2021, 29,340,248 people
   cod-ps-gin (GIN)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     level: 34 of 34 names match this map's admin2 (against 8 at admin1)
@@ -205,7 +216,9 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: no adm2 CSV on this dataset
   cod-ps-kgz (KGZ)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: Country, admin0Pcode, admin1Pcode, admin1Name_en, admin1Name_ru, admin2Pcode, admin2Name_ru, admin2Name_en, admin2Type_ru, admin2Type_ky, admin2Type_en, T_TL
+    11 district(s) appear twice with different totals and are refused
+    0 row(s) unnamed, 1 with no usable total
+    refused: its names match 0 of this map's districts and 0 of its first-level units, out of 4; too few of either to say which level this file describes
   cod-ps-khm (KHM)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     refused: no adm2 CSV on this dataset
@@ -230,7 +243,7 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: no adm2 CSV on this dataset
   cod-ps-lka (LKA)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: year, ISO3, ADM0_EN, ADM0_PCODE, ADM1_EN, ADM1_NAME_SI, ADM1_NAME_TA, ADM1_PCODE, ADM2_NAME, ADM2_NAME_SI, ADM2_NAME_TA, ADM2_PCODE
+    refused: its names match 0 of this map's districts and 0 of its first-level units, out of 25; too few of either to say which level this file describes
   cod-ps-lso (LSO)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     refused: no adm2 CSV on this dataset
@@ -260,18 +273,18 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: no adm2 CSV on this dataset
   cod-ps-mli (MLI)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: admin2Name_fr, admin2Pcode, admin2RefName, admin2AltName1_fr, admin2AltName2_fr, admin1Name_fr, admin1Pcode, admin0Name_fr, admin0Pcode, M_TL, F_TL, T_TL
+    refused: the file states no reference year, in a column or its own name
   cod-ps-mmr (MMR)
     licence: unstated -- license_id=None, isopen=False
     refused: this licence is not one this map may read
   cod-ps-mmr-archived (MMR)
     licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
-    refused: no ADM2 name column or no T_TL; its columns are: YEAR, ISO3, ADM0_NAME, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, ADM2_NAME, ADM2_PCODE, F_TL, M_TL, T_TL, F_00_04
+    level: 73 of 80 names match this map's admin2 (against 4 at admin1)
+    80 admin2 unit(s), reference year 2023, 56,242,837 people
   cod-ps-mng (MNG)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    44 district(s) appear twice with different totals and are refused
-    level: 233 of 233 names match this map's admin2 (against 2 at admin1)
-    233 admin2 unit(s), reference year 2017, 1,764,077 people
+    level: 277 of 277 names match this map's admin2 (against 3 at admin1)
+    339 admin2 unit(s), reference year 2017, 3,131,750 people
   cod-ps-moz (MOZ)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     0 row(s) unnamed, 4 with no usable total
@@ -308,7 +321,7 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: no adm2 CSV on this dataset
   cod-ps-nic (NIC)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: year, ISO3, ADM0_NAME, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, ADM2_NAME, MCOD, ADM2_PCODE, F_TL, M_TL, T_TL
+    refused: its names match 3 of this map's districts and 8 of its first-level units, out of 153; too few of either to say which level this file describes
   cod-ps-niu (NIU)
     licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
     refused: no adm2 CSV on this dataset
@@ -327,7 +340,8 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: no adm2 CSV on this dataset
   cod-ps-phl (PHL)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: year, ISO3, ADM0_NAME, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, ADM2_NAME, ADM2_PCODE, F_TL, M_TL, T_TL, F_00_04
+    level: 78 of 84 names match this map's admin2 (against 0 at admin1)
+    84 admin2 unit(s), reference year 2022, 111,572,254 people
   cod-ps-plw (PLW)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     refused: no adm2 CSV on this dataset
@@ -343,7 +357,8 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: the file states no reference year, in a column or its own name
   cod-ps-pry (PRY)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: year, ISO3, ADM0_NAME, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, ADM2_NAME, ADM2_PCODE, F_TL, M_TL, T_TL, F_00_04
+    level: 217 of 249 names match this map's admin2 (against 6 at admin1)
+    250 admin2 unit(s), reference year 2023, 7,552,654 people
   cod-ps-pse (PSE)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     refused: no adm2 CSV on this dataset
@@ -370,7 +385,8 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: no adm2 CSV on this dataset
   cod-ps-slb (SLB)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: year, ISO3, ADM0_PCODE, ADM0_NAME, ADM1_NAME, ADM1_PCODE, ADM2_PCODE, ADM2_NAME, F_TL, M_TL, T_TL, F_00_04
+    level: 49 of 50 names match this map's admin2 (against 0 at admin1)
+    50 admin2 unit(s), reference year 2023, 768,701 people
   cod-ps-sle (SLE)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
     refused: the file states no reference year, in a column or its own name
@@ -476,15 +492,19 @@ cod_ps: 148 cod-ps dataset(s) on HDX
     refused: no adm2 CSV on this dataset
   cod-ps-vut (VUT)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: year, ISO3, ADM0_NAME, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, ADM2_NAME, ADM2_PCODE, R_U, F_TL, M_TL, T_TL
+    level: 58 of 66 names match this map's admin2 (against 0 at admin1)
+    66 admin2 unit(s), reference year 2020, 300,043 people
   cod-ps-zaf (ZAF)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: ADM0_EN, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, ADM2_NAME, ADM2_PCODE, YEAR, F_TL, M_TL, T_TL, F_00_04, F_05_09
+    181 row(s) unnamed, 0 with no usable total
+    level: 43 of 52 names match this map's admin2 (against 0 at admin1)
+    52 admin2 unit(s), reference year 2020, 56,463,617 people
   cod-ps-zmb (ZMB)
     licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
     refused: no adm2 CSV on this dataset
   cod-ps-zwe (ZWE)
     licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-    refused: no ADM2 name column or no T_TL; its columns are: year, ISO3, ADM0_NAME, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, ADM2_NAME, ADM2_PCODE, F_TL, M_TL, T_TL, F_00_04
-  14898 districts in 37 countries: AGO:161, BEN:77, BFA:45, BRA:5570, COL:1121, CRI:81, ERI:58, FJI:15, GEO:80, GIN:34, GTM:340, HND:298, IRN:429, KIR:22, LAO:148, LBR:136, MAR:31, MDG:119, MEX:2475, MNG:233, MOZ:155, NAM:107, NER:67, NPL:77, PNG:87, ROU:42, RWA:30, SDN:188, SSD:78, STP:7, THA:928, TON:23, TUN:24, TUR:973, TZA:169, UGA:135, VEN:335
-  wrote data/processed/cod_ps_admin2.json (17275 kB)
+    level: 91 of 91 names match this map's admin2 (against 3 at admin1)
+    91 admin2 unit(s), reference year 2023, 17,408,564 people
+  16836 districts in 52 countries: AFG:401, AGO:161, BDI:119, BEN:77, BFA:45, BGD:64, BRA:5570, CAF:71, COD:164, COL:1121, CRI:81, DOM:32, ERI:58, ETH:92, FJI:15, GEO:80, GHA:216, GIN:34, GTM:340, HND:298, IRN:429, KIR:22, LAO:148, LBR:136, MAR:31, MDG:119, MEX:2475, MMR:80, MNG:339, MOZ:155, NAM:107, NER:67, NPL:77, PHL:84, PNG:87, PRY:250, ROU:42, RWA:30, SDN:188, SLB:50, SSD:78, STP:7, THA:928, TON:23, TUN:24, TUR:973, TZA:169, UGA:135, VEN:335, VUT:66, ZAF:52, ZWE:91
+  wrote data/processed/cod_ps_admin2.json (19518 kB)
