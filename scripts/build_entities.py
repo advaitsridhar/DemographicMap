@@ -147,6 +147,23 @@ ADAPTER_FILES = [
     # surveys, and it touches a field the surveys do not carry.
     "china_wiki_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
+    # OCHA's Common Operational Dataset -- population statistics, the district
+    # populations of 52 countries by P-code. It carries no composition at all,
+    # only a head count, and it sits here because a head count from a national
+    # statistical office beats Wikidata's and loses to the office's own census
+    # file further down.
+    #
+    # 30,170 of this map's 49,349 second-level shapes had no population, and
+    # that is not cosmetic: a parent's composition cannot be subtracted down
+    # to its one unread district without a weight, so 59 of the 103 residuals
+    # refused on the build of 21 September 2026 said exactly that. Bolivia had
+    # a population for 9 of 9 departments and 0 of 110 provinces.
+    #
+    # Which level a file describes is measured, not assumed. "adm2" is OCHA's
+    # word and the two do not always mean the same divisions: Romania's adm2
+    # table is its 42 judete, which are this map's *first* level, against
+    # 3,235 communes at the second.
+    "cod_ps_admin2.json",
     # Indonesia, by the owner's decision of 19 September 2026: the 2010
     # census's ethnicity by province as its provinces' Wikipedia articles
     # transcribe it, and religion by province and regency from the registry
