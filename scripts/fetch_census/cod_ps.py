@@ -35,6 +35,7 @@ import csv
 import io
 import json
 import re
+import unicodedata
 import urllib.parse
 import urllib.request
 from typing import Any
@@ -169,6 +170,64 @@ def adm2_resource(package: dict[str, Any]) -> dict[str, Any] | None:
     return None
 
 
+# Where this map's own shapes are, so a file can be asked which level it is
+# actually describing rather than believed.
+SITE = PROCESSED.parent.parent / "site" / "data"
+
+
+def fold(name: str) -> str:
+    """Enough of a name to compare two spellings of it."""
+    stripped = unicodedata.normalize("NFKD", name)
+    letters = "".join(c for c in stripped if not unicodedata.combining(c))
+    return "".join(c for c in letters.lower() if c.isalnum())
+
+
+def shape_names(code: str, level: str) -> set[str]:
+    path = SITE / level / f"{code}.json"
+    try:
+        return {fold(s["name"]) for s in json.loads(path.read_text())}
+    except (OSError, ValueError, KeyError):
+        return set()
+
+
+def which_level(code: str, names: list[str]) -> tuple[str | None, str]:
+    """Which of this map's levels the file's rows are naming, by measurement.
+
+    "adm2" is the file's word, not this map's, and the two do not always mean
+    the same divisions. Romania's cod-ps adm2 table has 42 rows -- its judete,
+    which are this map's *first* level -- against 3,235 communes at the second.
+    Written as districts those 42 would mostly find no shape, which is a
+    visible gap and survivable; but Romanian communes are frequently named
+    after the county town, so some would find the wrong shape and wear a
+    county's population. That is the invisible error this project exists to
+    avoid, so the level is established rather than assumed.
+
+    The test is the file's own names against this map's: whichever level they
+    match more is the level they describe. A file matching neither is refused,
+    because then there is nothing to say where its rows belong.
+    """
+    want = {fold(n) for n in names if n}
+    if not want:
+        return None, "no row carries a name"
+    scores = {level: len(want & shape_names(code, level))
+              for level in ("admin1", "admin2")}
+    best = max(scores, key=lambda k: scores[k])
+    other = "admin1" if best == "admin2" else "admin2"
+    if scores[best] < MIN_LEVEL_MATCH * len(want):
+        return None, (f"its names match {scores['admin2']} of this map's "
+                      f"districts and {scores['admin1']} of its first-level "
+                      f"units, out of {len(want)}; too few of either to say "
+                      f"which level this file describes")
+    return best, (f"{scores[best]} of {len(want)} names match this map's "
+                  f"{best} (against {scores[other]} at {other})")
+
+
+# How much of a file must land on a level before this reader believes it is
+# that level. Not a majority: boundary files and COD-PS disagree about
+# spellings often enough that a real match sits well below 100%.
+MIN_LEVEL_MATCH = 0.40
+
+
 def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
     """One country's district populations, or none with the reason logged."""
     code = iso3(package)
@@ -248,6 +307,12 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
         log("    refused: no district survived")
         return []
 
+    level, why = which_level(code, [u["name"] for u in seen.values()])
+    if level is None:
+        log(f"    refused: {why}")
+        return []
+    log(f"    level: {why}")
+
     source = {"field": "population",
               "name": f"OCHA, Common Operational Dataset -- population "
                       f"statistics ({stub}), reference year {year}",
@@ -257,13 +322,16 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
     out = []
     for code2, unit_row in sorted(seen.items()):
         out.append(record(
-            f"{code}-CODPS-{code2}", unit_row["name"], level="admin2",
+            f"{code}-CODPS-{code2}", unit_row["name"], level=level,
             parent=code, country=code,
-            parent_name=unit_row["parent"] or None,
+            # The parent hint is only meaningful for a district: at the first
+            # level the parent is the country and naming a region there would
+            # send the matcher looking for a shape above the one it wants.
+            parent_name=(unit_row["parent"] or None) if level == "admin2" else None,
             population={"value": unit_row["people"], "year": year,
                         "source": source["name"]},
             sources=[source]))
-    log(f"    {len(out)} district(s), reference year {year}, "
+    log(f"    {len(out)} {level} unit(s), reference year {year}, "
         f"{sum(r['population']['value'] for r in out):,} people")
     return out
 
