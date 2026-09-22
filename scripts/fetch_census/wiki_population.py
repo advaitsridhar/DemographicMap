@@ -227,6 +227,34 @@ def same_place_name(a: str, b: str) -> bool:
         and len(long_) - len(short) <= PREFIX_TAIL
 
 
+DIRECTIONS = frozenset({
+    "north", "south", "east", "west", "northern", "southern", "eastern",
+    "western", "northeast", "northwest", "southeast", "southwest",
+    "northeastern", "northwestern", "southeastern", "southwestern",
+    "nord", "sud", "est", "ouest", "ovest", "norte", "sur", "este", "oeste"})
+
+
+def a_part_of(name: str, title: str) -> bool:
+    """Whether the article is this unit's name with a compass point added.
+
+    Oman's boundary file draws its regions as they were before 2011, when
+    Al Batinah and Ash Sharqiyah were each split into a North and a South
+    governorate. Resolved against the country's current divisions, "Al
+    Batinah" reached Al Batinah South Governorate and read 465,550 people for
+    a shape that holds both halves -- the region's own article, which the
+    previous run had found, gives 772,590. "X South" is a part of X.
+
+    Only exactly that. Eritrea's "Debub" is Tigrinya for "south" and its
+    article is "Southern region"; once the compass point is taken away, what
+    is left is not "Debub", so it is not a part of it.
+    """
+    words = plain(disambiguated(title or "")).split()
+    if not DIRECTIONS.intersection(words):
+        return False
+    rest = fold(" ".join(w for w in words if w not in DIRECTIONS))
+    return bool(rest) and rest == fold(name)
+
+
 def says_its_kind(name: str) -> bool:
     """Whether a name carries a word for what kind of unit it is."""
     return fold(name) != "".join(c for c in plain(name) if c.isalnum())
@@ -425,7 +453,8 @@ def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]],
             plain(disambiguated(item["title"]))}
 
     def unique(hits: list[str], raw: str) -> str | None:
-        hits = [q for q in dict.fromkeys(hits) if q not in taken]
+        hits = [q for q in dict.fromkeys(hits)
+                if q not in taken and not a_part_of(raw, pool[q]["title"])]
         if len(hits) == 1:
             return hits[0]
         if not says_its_kind(raw):

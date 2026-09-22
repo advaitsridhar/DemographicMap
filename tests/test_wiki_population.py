@@ -603,3 +603,22 @@ class CountedTwice(unittest.TestCase):
                   {"id": "b", "population": {"status": "not_available"}}]
         read_out = [{"unit": {"id": "b"}, "value": 40}]
         self.assertAlmostEqual(wp.overcount("X", shapes, read_out, 100), 1.0)
+
+
+class APartIsNotTheWhole(unittest.TestCase):
+    def test_a_governorate_split_off_a_region_is_not_the_region(self):
+        self.assertTrue(wp.a_part_of("Al Batinah", "Al Batinah South Governorate"))
+        self.assertTrue(wp.a_part_of("Ash Sharqiyah", "Ash Sharqiyah South Governorate"))
+
+    def test_a_name_that_is_a_direction_in_another_language_is_not_refused(self):
+        self.assertFalse(wp.a_part_of("Debub Region", "Southern region (Eritrea)"))
+        self.assertFalse(wp.a_part_of("Département de l'Ouest", "Ouest (department)"))
+        self.assertFalse(wp.a_part_of("Nord-Est", "Northeast Italy"))
+        self.assertFalse(wp.a_part_of("North Darfur", "North Darfur"))
+        self.assertFalse(wp.a_part_of("Attard", "Attard"))
+
+    def test_the_half_is_passed_over_for_the_whole(self):
+        got = wp.resolve(units("Al Batinah"),
+                         {"Q1": {"names": ["Al Batinah"], "title": "Al Batinah South Governorate"},
+                          "Q2": {"names": ["Al Batinah Region"], "title": "Al Batinah Region"}})
+        self.assertEqual(got["u1"][:2], ("Q2", "Al Batinah Region"))

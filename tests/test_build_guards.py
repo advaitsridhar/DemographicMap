@@ -104,3 +104,34 @@ class APolygonTheBoundaryFileMislabels(unittest.TestCase):
         with self.assertRaises(SystemExit):
             self.b.placed("BLR", {"name": "Minsk", "wikidata": "Q2280"},
                           [{"id": "x", "name": "Minsk"}])
+
+
+class APolygonDrawnAtBothLevels(unittest.TestCase):
+    """Malta's 68 localities are drawn at admin1 and admin2 under one id."""
+
+    def setUp(self):
+        import build_entities
+        self.b = build_entities
+        self.a1 = {"id": "83640313B93037213409403", "level": "admin1", "name": "Attard"}
+        self.a2 = {"id": "83640313B93037213409403", "level": "admin2", "name": "Attard"}
+        self.nepal = {"id": "NPL-ADM2-7", "level": "admin2", "name": "Bara"}
+        entities = [self.a1, self.a2, self.nepal]
+        self.by_shape = {e["id"]: e for e in entities}
+        self.by_level = {(e["level"], e["id"]): e for e in entities}
+
+    def test_a_first_level_row_lands_on_the_first_level(self):
+        got = self.b.bound(self.by_shape, self.by_level, self.a1["id"], "admin1")
+        self.assertIs(got, self.a1)
+
+    def test_a_second_level_row_lands_on_the_second_level(self):
+        got = self.b.bound(self.by_shape, self.by_level, self.a1["id"], "admin2")
+        self.assertIs(got, self.a2)
+
+    def test_an_id_drawn_at_one_level_is_found_whatever_the_row_says(self):
+        # What a binding meant before, and still means for Nepal's.
+        for level in ("admin2", "admin1", None):
+            self.assertIs(self.b.bound(self.by_shape, self.by_level,
+                                       "NPL-ADM2-7", level), self.nepal)
+
+    def test_an_id_not_drawn_at_all_is_none(self):
+        self.assertIsNone(self.b.bound(self.by_shape, self.by_level, "nope", "admin1"))

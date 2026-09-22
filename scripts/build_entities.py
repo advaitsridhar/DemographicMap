@@ -3264,6 +3264,25 @@ def placed(iso3: str, row: dict[str, Any],
             "match_by": "shape_id", "shape_id": target[0]["id"]}
 
 
+def bound(by_shape: dict[str, dict[str, Any]],
+          by_level: dict[tuple[str, str], dict[str, Any]],
+          wanted: str | None, level: str | None) -> dict[str, Any] | None:
+    """The polygon a shape_id binding names, at the level the row says it is.
+
+    An id is not always one polygon. The boundary file draws a small country's
+    units at both levels under the same shapeID -- all 68 of Malta's, all of
+    Moldova's, Libya's, Trinidad's, 334 in all -- and an index keyed by id alone
+    kept whichever level was indexed last. Every first-level population the
+    Wikipedia reader bound that way went onto the second-level twin, and the
+    first level it was read for came out empty. Where the id is drawn at the
+    row's own level, that is the polygon; otherwise any level will do, which is
+    what a binding meant before and still means for Nepal's and Bhutan's.
+    """
+    if wanted is None:
+        return None
+    return by_level.get((level or "", wanted)) or by_shape.get(wanted)
+
+
 def blank(shape: dict[str, Any], level: str, parent: str | None) -> dict[str, Any]:
     return {
         "id": shape["shape_id"],
@@ -3675,9 +3694,15 @@ def main() -> int:
             a2[norm(entity["name"])].append(entity)
         aka += add_known_as(a2, admin2_by_country.get(iso3, []))
         # Both levels, because a binding names a polygon and does not care
-        # which order the boundary file draws it at.
+        # which order the boundary file draws it at -- and each level on its
+        # own as well, because some ids are drawn at both (see bound()).
         by_shape: dict[str, dict[str, Any]] = {
             entity["id"]: entity
+            for entity in (*admin1_by_country.get(iso3, []),
+                           *admin2_by_country.get(iso3, []))
+            if entity.get("id")}
+        by_level: dict[tuple[str, str], dict[str, Any]] = {
+            (entity["level"], entity["id"]): entity
             for entity in (*admin1_by_country.get(iso3, []),
                            *admin2_by_country.get(iso3, []))
             if entity.get("id")}
@@ -3738,7 +3763,7 @@ def main() -> int:
             # has to be checked hardest.
             if row.get("match_by") == "shape_id":
                 wanted = row.get("shape_id")
-                entity = by_shape.get(wanted)
+                entity = bound(by_shape, by_level, wanted, row.get("level"))
                 if entity is None:
                     raise SystemExit(
                         f"{iso3}: {row.get('name')!r} asks for shape "
