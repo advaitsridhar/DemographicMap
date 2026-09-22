@@ -119,3 +119,52 @@ class TheReportMergesRatherThanReplaces(unittest.TestCase):
         report = self._run(unit, {"NLD-1": "== Religie ==\n{| class=wikitable\n|}"})
         self.assertEqual(len(report["units"]), 1,
                          "a country asked about twice appears once")
+
+
+class AUnitWithNoEnglishArticleIsStillProbed(unittest.TestCase):
+    """English is a preference, not a guarantee.
+
+    The first real run raised KeyError('enwiki') 2,000 units in: "enwiki" was
+    appended to the list of editions to read whether or not the unit had one.
+    """
+
+    def setUp(self) -> None:
+        self.dir = tempfile.TemporaryDirectory()
+        self.addCleanup(self.dir.cleanup)
+        self.out = Path(self.dir.name) / "probe.json"
+
+    def _probe(self, sitelinks_by_qid):
+        units = [{"id": f"XXX-{i}", "country": "XXX", "level": "admin2",
+                  "name": f"unit {i}", "wikidata": q}
+                 for i, q in enumerate(sitelinks_by_qid)]
+        real = p.read_json
+
+        def reader(path, default=None):
+            return units if "wikidata_" in str(path) else real(path, default)
+
+        with mock.patch.object(p, "read_json", side_effect=reader), \
+             mock.patch.object(p, "sitelinks",
+                               lambda chunk: {q: sitelinks_by_qid[q] for q in chunk}), \
+             mock.patch.object(p, "wikitexts",
+                               lambda lang, titles: {t: "== Religion ==\n{| \n|}"
+                                                     for t in titles}), \
+             mock.patch.object(p.time, "sleep", lambda _s: None), \
+             mock.patch.object(sys, "argv",
+                               ["x", "--level", "admin2", "--out", str(self.out)]):
+            self.assertEqual(p.main(), 0)
+        return json.loads(self.out.read_text())
+
+    def test_an_article_in_one_language_only(self) -> None:
+        report = self._probe({"Q1": {"fawiki": "شهرستان"}})
+        self.assertEqual(len(report["units"]), 1,
+                         "a unit written up only in Persian is still probed")
+        self.assertEqual(report["units"][0]["wiki"], "fa")
+
+    def test_english_and_another_edition_are_both_read(self) -> None:
+        report = self._probe({"Q1": {"enwiki": "Utrecht", "nlwiki": "Utrecht"}})
+        self.assertEqual(len(report["units"]), 1)
+
+    def test_a_unit_with_no_article_anywhere_is_counted_as_such(self) -> None:
+        report = self._probe({"Q1": {}})
+        self.assertEqual(report["units"], [])
+        self.assertEqual(report["per_country"]["XXX"], {"admin2:no article": 1})

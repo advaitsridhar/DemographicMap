@@ -201,8 +201,13 @@ def main() -> int:
         # The country's own edition if the unit has one there, else English,
         # else whatever edition exists -- an article in one language is worth
         # probing even when it is in none of the obvious ones.
+        # "enwiki" was appended unconditionally and then indexed, which
+        # raised KeyError on the first unit whose only article is in another
+        # language -- 2,000 units into the first real run. English is a
+        # preference, not a guarantee: a Nepali district or an Iranian county
+        # may be written up only in its own edition.
         wiki = next((w for w in found if w != "enwiki"), None)
-        for choice in [w for w in (wiki, "enwiki") if w]:
+        for choice in [w for w in (wiki, "enwiki") if w and w in found]:
             by_wiki[choice].append((found[choice], unit))
 
     results: dict[str, dict[str, Any]] = {}
