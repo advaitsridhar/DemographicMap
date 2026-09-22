@@ -1,64 +1,70 @@
-probe_wikipedia: 2179 units with a Wikidata id
-  2000 of 2179 units resolved
-  [en] 1828 article(s) probed
-  [ar] 611 article(s) probed
-  [dga] 276 article(s) probed
-  [fa] 269 article(s) probed
-  [ceb] 208 article(s) probed
-  [arz] 90 article(s) probed
-  [commons] 87 article(s) probed
-  [ca] 74 article(s) probed
-  [abstract] 52 article(s) probed
-  [ne] 52 article(s) probed
-  [awa] 51 article(s) probed
-  [de] 48 article(s) probed
-  [af] 36 article(s) probed
-  [ay] 35 article(s) probed
-  [dag] 31 article(s) probed
-  [azb] 24 article(s) probed
-  [bh] 23 article(s) probed
-  [mai] 16 article(s) probed
-  [kus] 12 article(s) probed
-  [fr] 10 article(s) probed
-  [ce] 10 article(s) probed
-  [nl] 8 article(s) probed
-  [bn] 7 article(s) probed
-  [an] 6 article(s) probed
-  [az] 5 article(s) probed
-  [gpe] 5 article(s) probed
-  [ckb] 5 article(s) probed
-  [es] 4 article(s) probed
-  [ast] 4 article(s) probed
-  [tw] 4 article(s) probed
-  [da] 3 article(s) probed
+probe_wikipedia: 14104 units with a Wikidata id
+  2000 of 14104 units resolved
+  4000 of 14104 units resolved
+  6000 of 14104 units resolved
+  8000 of 14104 units resolved
+  10000 of 14104 units resolved
+  12000 of 14104 units resolved
+  14000 of 14104 units resolved
+  [en] 6884 article(s) probed
+  [ceb] 2840 article(s) probed
+  [bpy] batch 2000: HTTPError: HTTP Error 414: URI Too Long
+  [bpy] batch 2150: HTTPError: HTTP Error 414: URI Too Long
+  [bpy] batch 2200: HTTPError: HTTP Error 414: URI Too Long
+  [bpy] 2499 article(s) probed
+  [ce] batch 650: HTTPError: HTTP Error 414: URI Too Long
+  [ce] batch 1500: HTTPError: HTTP Error 414: URI Too Long
+  [ce] batch 1650: HTTPError: HTTP Error 414: URI Too Long
+  [ce] batch 1700: HTTPError: HTTP Error 414: URI Too Long
+  [ce] 1994 article(s) probed
+  [ar] 920 article(s) probed
+  [es] 380 article(s) probed
+  [ca] 297 article(s) probed
+  [bg] 99 article(s) probed
+  [af] 67 article(s) probed
   [be_x_old] batch 0: URLError: <urlopen error [Errno -2] Name or service not known>
-  [be_x_old] 2 article(s) probed
-  [simple] 2 article(s) probed
-  [ace] 2 article(s) probed
-  [ba] 2 article(s) probed
+  [be_x_old] batch 50: URLError: <urlopen error [Errno -2] Name or service not known>
+  [be_x_old] 55 article(s) probed
+  [commons] 54 article(s) probed
+  [an] 47 article(s) probed
+  [arz] 37 article(s) probed
+  [az] 29 article(s) probed
+  [de] 25 article(s) probed
+  [ast] 16 article(s) probed
+  [br] 13 article(s) probed
+  [ace] 9 article(s) probed
+  [ay] 8 article(s) probed
+  [bcl] 8 article(s) probed
+  [eo] 6 article(s) probed
+  [lg] 6 article(s) probed
+  [ang] 5 article(s) probed
+  [fr] 5 article(s) probed
+  [azb] 5 article(s) probed
+  [fa] 4 article(s) probed
+  [ab] 3 article(s) probed
+  [pl] 3 article(s) probed
+  [sw] 2 article(s) probed
+  [hr] 2 article(s) probed
+  [be] 2 article(s) probed
+  [abstract] 2 article(s) probed
   [ku] 2 article(s) probed
-  [ms] 2 article(s) probed
-  [bcl] 1 article(s) probed
-  [pl] 1 article(s) probed
-  [ee] 1 article(s) probed
-  [sv] 1 article(s) probed
-  [am] 1 article(s) probed
-  [bg] 1 article(s) probed
-  [pnb] 1 article(s) probed
-  [ang] 1 article(s) probed
-  [hy] 1 article(s) probed
-  [it] 1 article(s) probed
-  [as] 1 article(s) probed
-  [ban] 1 article(s) probed
+  [ja] 1 article(s) probed
+  [lad] 1 article(s) probed
+  [bn] 1 article(s) probed
+  [ary] 1 article(s) probed
+  [ckb] 1 article(s) probed
+  [als] 1 article(s) probed
+  [mg] 1 article(s) probed
+  [bar] 1 article(s) probed
+  [ff] 1 article(s) probed
+  [fi] 1 article(s) probed
+  [tum] 1 article(s) probed
 
 iso   units by what their article carries
-  BEL  admin1:nothing 2, admin1:section only 2, admin1:section+infobox 1, admin1:section+table+infobox 1, admin2:infobox 6, admin2:nothing 20, admin2:section+table 4
-  BOL  admin1:nothing 1, admin1:section only 2, admin1:section+table 6, admin2:infobox 8, admin2:nothing 157, admin2:section+table 24
-  GHA  admin1:nothing 9, admin1:section only 3, admin1:section+table 4, admin2:infobox 10, admin2:no article 50, admin2:nothing 625, admin2:section only 5, admin2:section+table 3
-  IRN  admin1:infobox 1, admin1:nothing 4, admin1:section only 19, admin1:section+table 7, admin2:infobox 4, admin2:no article 6, admin2:nothing 882, admin2:section only 18, admin2:section+table 55
-  NLD  admin1:section+infobox 4, admin2:infobox 8, admin2:no article 3, admin2:nothing 16, admin2:section only 4, admin2:section+infobox 3, admin2:section+table 3, admin2:section+table+infobox 1
-  NPL  admin1:infobox 4, admin1:section only 1, admin1:section+table 1, admin1:section+table+infobox 1, admin2:infobox 6, admin2:nothing 172, admin2:section only 9, admin2:section+infobox 1, admin2:section+table 3
+  BRA  admin1:nothing 4, admin1:section only 4, admin1:section+table 18, admin1:section+table+infobox 1, admin2:infobox 275, admin2:nothing 3644, admin2:section only 59, admin2:section+infobox 18, admin2:section+table 13, admin2:section+table+infobox 6
+  MEX  admin1:nothing 23, admin1:section only 4, admin1:section+infobox 3, admin1:section+table 2, admin2:infobox 1070, admin2:no article 688, admin2:nothing 3722, admin2:section only 22, admin2:section+infobox 3, admin2:section+table 9, admin2:section+table+infobox 1
+  UGA  admin1:nothing 115, admin1:section only 18, admin1:section+table 2, admin2:infobox 8, admin2:no article 3917, admin2:nothing 253, admin2:section only 2, admin2:section+table 1
 
-this run: 6 countries, 2120 units
-world so far (6 countries): admin1:infobox 5, admin1:nothing 16, admin1:section only 27, admin1:section+infobox 5, admin1:section+table 18, admin1:section+table+infobox 2, admin2:infobox 42, admin2:no article 59, admin2:nothing 1872, admin2:section only 36, admin2:section+infobox 4, admin2:section+table 92, admin2:section+table+infobox 1
-  wrote data/processed/wikipedia_probe.json (453 kB)
+this run: 3 countries, 9300 units
+world so far (9 countries): admin1:infobox 5, admin1:nothing 158, admin1:section only 53, admin1:section+infobox 8, admin1:section+table 40, admin1:section+table+infobox 3, admin2:infobox 1395, admin2:no article 4664, admin2:nothing 9491, admin2:section only 119, admin2:section+infobox 25, admin2:section+table 115, admin2:section+table+infobox 8
+  wrote data/processed/wikipedia_probe.json (2447 kB)
