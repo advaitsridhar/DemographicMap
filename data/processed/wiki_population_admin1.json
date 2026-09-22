@@ -86,6 +86,92 @@
     "country": "BDI"
   },
   {
+    "id": "BEL-WP-vlaams-gewest",
+    "level": "admin1",
+    "name": "Vlaams Gewest",
+    "parent": "BEL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6821770,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Flemish Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Flemish_Region",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BEL"
+  },
+  {
+    "id": "BEL-WP-wallonne-gewest",
+    "level": "admin1",
+    "name": "Wallonne Gewest",
+    "parent": "BEL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3692283,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Wallonia (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Wallonia",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BEL"
+  },
+  {
     "id": "BEN-WP-atakora",
     "level": "admin1",
     "name": "Atakora",
@@ -430,6 +516,49 @@
     "country": "BEN"
   },
   {
+    "id": "BFA-WP-boucle-du-mouhoun",
+    "level": "admin1",
+    "name": "Boucle du Mouhoun",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1898133,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Bankui Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bankui_Region",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BFA"
+  },
+  {
     "id": "BFA-WP-cascades",
     "level": "admin1",
     "name": "Cascades",
@@ -516,6 +645,92 @@
     "country": "BFA"
   },
   {
+    "id": "BFA-WP-centre-est",
+    "level": "admin1",
+    "name": "Centre-Est",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1578075,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Nakambé Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nakamb%C3%A9_Region",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BFA"
+  },
+  {
+    "id": "BFA-WP-centre-nord",
+    "level": "admin1",
+    "name": "Centre-Nord",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1872126,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Kuilsé Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kuils%C3%A9_Region",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BFA"
+  },
+  {
     "id": "BFA-WP-centre-ouest",
     "level": "admin1",
     "name": "Centre-Ouest",
@@ -552,6 +767,178 @@
         "field": "population",
         "name": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Nando_Region",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BFA"
+  },
+  {
+    "id": "BFA-WP-centre-sud",
+    "level": "admin1",
+    "name": "Centre-Sud",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 788341,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Nazinon Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nazinon_Region",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BFA"
+  },
+  {
+    "id": "BFA-WP-est",
+    "level": "admin1",
+    "name": "Est",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1941505,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Goulmou Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Goulmou_Region",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BFA"
+  },
+  {
+    "id": "BFA-WP-hauts-bassins",
+    "level": "admin1",
+    "name": "Hauts-Bassins",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2238375,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Guiriko Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Guiriko_Region",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BFA"
+  },
+  {
+    "id": "BFA-WP-nord",
+    "level": "admin1",
+    "name": "Nord",
+    "parent": "BFA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1720908,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Yaadga Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Yaadga_Region",
         "year": 2019,
         "license": "CC BY-SA 4.0"
       }
@@ -686,6 +1073,49 @@
       }
     ],
     "country": "BFA"
+  },
+  {
+    "id": "BGR-WP-sofia",
+    "level": "admin1",
+    "name": "Sofia",
+    "parent": "BGR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 227610,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Sofia Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sofia_Province",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BGR"
   },
   {
     "id": "BHS-WP-grand-cay",
@@ -1068,6 +1498,49 @@
         "field": "population",
         "name": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Grodno_region",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BLR"
+  },
+  {
+    "id": "BLR-WP-minsk-city",
+    "level": "admin1",
+    "name": "Minsk City",
+    "parent": "BLR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1460289,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Minsk region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Minsk_region",
         "year": 2024,
         "license": "CC BY-SA 4.0"
       }
@@ -3606,6 +4079,49 @@
     "country": "IRQ"
   },
   {
+    "id": "ISL-WP-capital-region",
+    "level": "admin1",
+    "name": "Capital Region",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 249054,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Capital Region (Iceland) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Capital_Region_%28Iceland%29",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ISL"
+  },
+  {
     "id": "ISL-WP-eastern-region",
     "level": "admin1",
     "name": "Eastern Region",
@@ -3862,6 +4378,49 @@
       }
     ],
     "country": "ISL"
+  },
+  {
+    "id": "ITA-WP-nord-est",
+    "level": "admin1",
+    "name": "Nord-Est",
+    "parent": "ITA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11618783,
+      "unit": "people",
+      "year": 2026,
+      "source": "English Wikipedia, Northeast Italy (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Northeast_Italy",
+        "year": 2026,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ITA"
   },
   {
     "id": "JAM-WP-clarendon",
@@ -5926,6 +6485,264 @@
       }
     ],
     "country": "LBY"
+  },
+  {
+    "id": "LTU-WP-alytus-county",
+    "level": "admin1",
+    "name": "Alytus County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 134070,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Alytus County (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Alytus_County",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LTU"
+  },
+  {
+    "id": "LTU-WP-kaunas-county",
+    "level": "admin1",
+    "name": "Kaunas County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 623262,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Kaunas County (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kaunas_County",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LTU"
+  },
+  {
+    "id": "LTU-WP-klaipeda-county",
+    "level": "admin1",
+    "name": "Klaipeda County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 319958,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Klaipėda County (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Klaip%C4%97da_County",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LTU"
+  },
+  {
+    "id": "LTU-WP-panevezys-county",
+    "level": "admin1",
+    "name": "Panevezys County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 211189,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Panevėžys County (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Panev%C4%97%C5%BEys_County",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LTU"
+  },
+  {
+    "id": "LTU-WP-siauliai-county",
+    "level": "admin1",
+    "name": "Siauliai County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 261452,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Šiauliai County (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/%C5%A0iauliai_County",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LTU"
+  },
+  {
+    "id": "LTU-WP-vilnius-county",
+    "level": "admin1",
+    "name": "Vilnius County",
+    "parent": "LTU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 872685,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Vilnius County (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Vilnius_County",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LTU"
   },
   {
     "id": "MAR-WP-marrakech-safi",
@@ -9457,9 +10274,9 @@
       "status": "not_available"
     },
     "population": {
-      "value": 1707,
+      "value": 1872,
       "unit": "people",
-      "year": 2023,
+      "year": 2024,
       "source": "English Wikipedia, Munxar (infobox)"
     },
     "median_age": {
@@ -9482,7 +10299,7 @@
         "field": "population",
         "name": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Munxar",
-        "year": 2023,
+        "year": 2024,
         "license": "CC BY-SA 4.0"
       }
     ],
@@ -9876,6 +10693,49 @@
     "country": "MLT"
   },
   {
+    "id": "MLT-WP-rabat-gozo",
+    "level": "admin1",
+    "name": "Rabat Gozo",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7491,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Victoria, Malta (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Victoria%2C_Malta",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
     "id": "MLT-WP-rabat-malta",
     "level": "admin1",
     "name": "Rabat Malta",
@@ -9962,6 +10822,49 @@
     "country": "MLT"
   },
   {
+    "id": "MLT-WP-saint-john",
+    "level": "admin1",
+    "name": "Saint John",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 15882,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, San Ġwann (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/San_%C4%A0wann",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
     "id": "MLT-WP-saint-julians",
     "level": "admin1",
     "name": "Saint Julian's",
@@ -9998,6 +10901,92 @@
         "field": "population",
         "name": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/St._Julian%27s%2C_Malta",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-saint-lawerence",
+    "level": "admin1",
+    "name": "Saint Lawerence",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 748,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, San Lawrenz (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/San_Lawrenz",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-saint-lucias",
+    "level": "admin1",
+    "name": "Saint Lucia's",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2666,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Santa Luċija (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Santa_Lu%C4%8Bija",
         "year": 2024,
         "license": "CC BY-SA 4.0"
       }
@@ -10650,6 +11639,49 @@
     "country": "MLT"
   },
   {
+    "id": "MLT-WP-żebbuġ-malta",
+    "level": "admin1",
+    "name": "Żebbuġ Malta",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14798,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Żebbuġ (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/%C5%BBebbu%C4%A1",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
     "id": "MLT-WP-żejtun",
     "level": "admin1",
     "name": "Żejtun",
@@ -11164,6 +12196,49 @@
       }
     ],
     "country": "MWI"
+  },
+  {
+    "id": "NLD-WP-fryslân",
+    "level": "admin1",
+    "name": "Fryslân",
+    "parent": "NLD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 659551,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Friesland (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Friesland",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "NLD"
   },
   {
     "id": "NOR-WP-troms-og-finnmark",
@@ -11983,6 +13058,48 @@
     "country": "PRT"
   },
   {
+    "id": "PRT-WP-lisboa",
+    "level": "admin1",
+    "name": "LISBOA",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2135992,
+      "unit": "people",
+      "source": "English Wikipedia, Lisbon District (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Lisbon_District",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT"
+  },
+  {
     "id": "QAT-WP-al-daayen",
     "level": "admin1",
     "name": "Al Daayen",
@@ -12110,6 +13227,49 @@
       }
     ],
     "country": "QAT"
+  },
+  {
+    "id": "RUS-WP-sakha-republic",
+    "level": "admin1",
+    "name": "Sakha Republic",
+    "parent": "RUS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 995686,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Sakha Republic (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sakha_Republic",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "RUS"
   },
   {
     "id": "SAU-WP-al-bahah-region",
@@ -16068,6 +17228,49 @@
     "country": "UKR"
   },
   {
+    "id": "UKR-WP-zaporizhia-oblast",
+    "level": "admin1",
+    "name": "Zaporizhia Oblast",
+    "parent": "UKR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1638462,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Zaporizhzhia Oblast (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Zaporizhzhia_Oblast",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "UKR"
+  },
+  {
     "id": "UZB-WP-sirdaryo-region",
     "level": "admin1",
     "name": "Sirdaryo Region",
@@ -16152,6 +17355,49 @@
       }
     ],
     "country": "UZB"
+  },
+  {
+    "id": "VAT-WP-vatican-city",
+    "level": "admin1",
+    "name": "Vatican City",
+    "parent": "VAT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 882,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Vatican City (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Vatican_City",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VAT"
   },
   {
     "id": "VCT-WP-charlotte",
