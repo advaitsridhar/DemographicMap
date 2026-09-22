@@ -1,5 +1,435 @@
 [
   {
+    "id": "ARG-WP-ciudad-autónoma-de-buenos-aires",
+    "level": "admin1",
+    "name": "Ciudad Autónoma de Buenos Aires",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3121707,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Buenos Aires (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Buenos_Aires",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ARG"
+  },
+  {
+    "id": "BDI-WP-rumonge",
+    "level": "admin1",
+    "name": "Rumonge",
+    "parent": "BDI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 352026,
+      "unit": "people",
+      "year": 2008,
+      "source": "English Wikipedia, Rumonge Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Rumonge_Province",
+        "year": 2008,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BDI"
+  },
+  {
+    "id": "BEN-WP-atakora",
+    "level": "admin1",
+    "name": "Atakora",
+    "parent": "BEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 769337,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, Atacora Department (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Atacora_Department",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BEN"
+  },
+  {
+    "id": "BEN-WP-atlantique",
+    "level": "admin1",
+    "name": "Atlantique",
+    "parent": "BEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1396548,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, Atlantique Department (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Atlantique_Department",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BEN"
+  },
+  {
+    "id": "BEN-WP-borgou",
+    "level": "admin1",
+    "name": "Borgou",
+    "parent": "BEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1202095,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, Borgou Department (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Borgou_Department",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BEN"
+  },
+  {
+    "id": "BEN-WP-collines",
+    "level": "admin1",
+    "name": "Collines",
+    "parent": "BEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 716558,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, Collines Department (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Collines_Department",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BEN"
+  },
+  {
+    "id": "BEN-WP-donga",
+    "level": "admin1",
+    "name": "Donga",
+    "parent": "BEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 542605,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, Donga Department (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Donga_Department",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BEN"
+  },
+  {
+    "id": "BEN-WP-mono",
+    "level": "admin1",
+    "name": "Mono",
+    "parent": "BEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 495307,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, Mono Department (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mono_Department",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BEN"
+  },
+  {
+    "id": "BEN-WP-plateau",
+    "level": "admin1",
+    "name": "Plateau",
+    "parent": "BEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 624146,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, Plateau Department (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Plateau_Department",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BEN"
+  },
+  {
+    "id": "BEN-WP-zou",
+    "level": "admin1",
+    "name": "Zou",
+    "parent": "BEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 851623,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, Zou Department (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Zou_Department",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BEN"
+  },
+  {
     "id": "BFA-WP-cascades",
     "level": "admin1",
     "name": "Cascades",
@@ -258,6 +688,522 @@
     "country": "BFA"
   },
   {
+    "id": "BHS-WP-grand-cay",
+    "level": "admin1",
+    "name": "Grand Cay",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 383,
+      "unit": "people",
+      "year": 2010,
+      "source": "English Wikipedia, Grand Cay (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Grand_Cay",
+        "year": 2010,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS"
+  },
+  {
+    "id": "BHS-WP-harbour-island",
+    "level": "admin1",
+    "name": "Harbour Island",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1861,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Harbour Island, Bahamas (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Harbour_Island%2C_Bahamas",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS"
+  },
+  {
+    "id": "BHS-WP-hope-town",
+    "level": "admin1",
+    "name": "Hope Town",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 458,
+      "unit": "people",
+      "year": 2010,
+      "source": "English Wikipedia, Hope Town (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Hope_Town",
+        "year": 2010,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS"
+  },
+  {
+    "id": "BHS-WP-inagua",
+    "level": "admin1",
+    "name": "Inagua",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 856,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Inagua (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Inagua",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS"
+  },
+  {
+    "id": "BHS-WP-north-abaco",
+    "level": "admin1",
+    "name": "North Abaco",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9578,
+      "unit": "people",
+      "year": 2010,
+      "source": "English Wikipedia, North Abaco (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/North_Abaco",
+        "year": 2010,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS"
+  },
+  {
+    "id": "BHS-WP-north-andros",
+    "level": "admin1",
+    "name": "North Andros",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4069,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, North Andros (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/North_Andros",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS"
+  },
+  {
+    "id": "BHS-WP-south-andros",
+    "level": "admin1",
+    "name": "South Andros",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3711,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, South Andros (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/South_Andros",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS"
+  },
+  {
+    "id": "BLR-WP-brest",
+    "level": "admin1",
+    "name": "Brest",
+    "parent": "BLR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1308569,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Brest region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Brest_region",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BLR"
+  },
+  {
+    "id": "BLR-WP-grodno",
+    "level": "admin1",
+    "name": "Grodno",
+    "parent": "BLR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 992556,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Grodno region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Grodno_region",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BLR"
+  },
+  {
+    "id": "BLR-WP-mogilev",
+    "level": "admin1",
+    "name": "Mogilev",
+    "parent": "BLR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 981174,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Mogilev region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mogilev_region",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BLR"
+  },
+  {
+    "id": "BWA-WP-chobe-district",
+    "level": "admin1",
+    "name": "Chobe District",
+    "parent": "BWA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 28743,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Chobe District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Chobe_District",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BWA"
+  },
+  {
+    "id": "CAF-WP-ouham",
+    "level": "admin1",
+    "name": "Ouham",
+    "parent": "CAF",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 369220,
+      "unit": "people",
+      "year": 2003,
+      "source": "English Wikipedia, Ouham (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ouham",
+        "year": 2003,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CAF"
+  },
+  {
     "id": "CIV-WP-comoe",
     "level": "admin1",
     "name": "Comoe",
@@ -385,6 +1331,1338 @@
       }
     ],
     "country": "CIV"
+  },
+  {
+    "id": "COL-WP-archipiélago-de-san-andrés-providencia-y-santa-catalina",
+    "level": "admin1",
+    "name": "Archipiélago de San Andrés, Providencia y Santa Catalina",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 61280,
+      "unit": "people",
+      "year": 2018,
+      "source": "English Wikipedia, San Andrés and Providencia (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/San_Andr%C3%A9s_and_Providencia",
+        "year": 2018,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "COL"
+  },
+  {
+    "id": "CPV-WP-brava",
+    "level": "admin1",
+    "name": "Brava",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5698,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Brava, Cape Verde (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Brava%2C_Cape_Verde",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV"
+  },
+  {
+    "id": "CPV-WP-maio",
+    "level": "admin1",
+    "name": "Maio",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6980,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Maio, Cape Verde (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Maio%2C_Cape_Verde",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV"
+  },
+  {
+    "id": "CPV-WP-sal",
+    "level": "admin1",
+    "name": "Sal",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 39700,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Sal, Cape Verde (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sal%2C_Cape_Verde",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV"
+  },
+  {
+    "id": "DJI-WP-ali-sabieh",
+    "level": "admin1",
+    "name": "Ali Sabieh",
+    "parent": "DJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 76414,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Ali Sabieh Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ali_Sabieh_Region",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "DJI"
+  },
+  {
+    "id": "DJI-WP-arta",
+    "level": "admin1",
+    "name": "Arta",
+    "parent": "DJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 48922,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Arta Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Arta_Region",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "DJI"
+  },
+  {
+    "id": "DJI-WP-dikhil",
+    "level": "admin1",
+    "name": "Dikhil",
+    "parent": "DJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 66196,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Dikhil Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dikhil_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "DJI"
+  },
+  {
+    "id": "DJI-WP-djibouti",
+    "level": "admin1",
+    "name": "Djibouti",
+    "parent": "DJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 776966,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Djibouti Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Djibouti_Region",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "DJI"
+  },
+  {
+    "id": "DJI-WP-tadjourah",
+    "level": "admin1",
+    "name": "Tadjourah",
+    "parent": "DJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 60645,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Tadjourah Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tadjourah_Region",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "DJI"
+  },
+  {
+    "id": "DZA-WP-tipaza",
+    "level": "admin1",
+    "name": "Tipaza",
+    "parent": "DZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 617661,
+      "unit": "people",
+      "year": 2008,
+      "source": "English Wikipedia, Tipaza Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tipaza_Province",
+        "year": 2008,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "DZA"
+  },
+  {
+    "id": "EGY-WP-matrouh-governorate",
+    "level": "admin1",
+    "name": "Matrouh Governorate",
+    "parent": "EGY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 538546,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Matrouh Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Matrouh_Governorate",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "EGY"
+  },
+  {
+    "id": "ERI-WP-debub-region",
+    "level": "admin1",
+    "name": "Debub Region",
+    "parent": "ERI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1476765,
+      "unit": "people",
+      "source": "English Wikipedia, Southern region (Eritrea) (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Southern_region_%28Eritrea%29",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ERI"
+  },
+  {
+    "id": "FJI-WP-central",
+    "level": "admin1",
+    "name": "Central",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 378148,
+      "unit": "people",
+      "year": 2017,
+      "source": "English Wikipedia, Central Division, Fiji (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Central_Division%2C_Fiji",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "FJI"
+  },
+  {
+    "id": "FJI-WP-northern",
+    "level": "admin1",
+    "name": "Northern",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 131918,
+      "unit": "people",
+      "year": 2017,
+      "source": "English Wikipedia, Northern Division, Fiji (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Northern_Division%2C_Fiji",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "FJI"
+  },
+  {
+    "id": "FJI-WP-western",
+    "level": "admin1",
+    "name": "Western",
+    "parent": "FJI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 337071,
+      "unit": "people",
+      "year": 2017,
+      "source": "English Wikipedia, Western Division, Fiji (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Western_Division%2C_Fiji",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "FJI"
+  },
+  {
+    "id": "GHA-WP-ahafo-region",
+    "level": "admin1",
+    "name": "Ahafo Region",
+    "parent": "GHA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 564668,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Ahafo Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ahafo_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GHA"
+  },
+  {
+    "id": "GHA-WP-ashanti-region",
+    "level": "admin1",
+    "name": "Ashanti Region",
+    "parent": "GHA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5440463,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Ashanti Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ashanti_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GHA"
+  },
+  {
+    "id": "GHA-WP-bono-east-region",
+    "level": "admin1",
+    "name": "Bono East Region",
+    "parent": "GHA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1203400,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Bono East Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bono_East_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GHA"
+  },
+  {
+    "id": "GHA-WP-bono-region",
+    "level": "admin1",
+    "name": "Bono Region",
+    "parent": "GHA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1208649,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Bono Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bono_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GHA"
+  },
+  {
+    "id": "GHA-WP-central-region",
+    "level": "admin1",
+    "name": "Central Region",
+    "parent": "GHA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2859821,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Central Region (Ghana) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Central_Region_%28Ghana%29",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GHA"
+  },
+  {
+    "id": "GHA-WP-eastern-region",
+    "level": "admin1",
+    "name": "Eastern Region",
+    "parent": "GHA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2925653,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Eastern Region (Ghana) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Eastern_Region_%28Ghana%29",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GHA"
+  },
+  {
+    "id": "GHA-WP-north-east-region",
+    "level": "admin1",
+    "name": "North East Region",
+    "parent": "GHA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 658903,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, North East Region, Ghana (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/North_East_Region%2C_Ghana",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GHA"
+  },
+  {
+    "id": "GHA-WP-northern-region",
+    "level": "admin1",
+    "name": "Northern Region",
+    "parent": "GHA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2310939,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Northern Region (Ghana) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Northern_Region_%28Ghana%29",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GHA"
+  },
+  {
+    "id": "GHA-WP-savannah-region",
+    "level": "admin1",
+    "name": "Savannah Region",
+    "parent": "GHA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 653266,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Savannah Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Savannah_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GHA"
+  },
+  {
+    "id": "GHA-WP-upper-west-region",
+    "level": "admin1",
+    "name": "Upper West Region",
+    "parent": "GHA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 901502,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Upper West Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Upper_West_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GHA"
+  },
+  {
+    "id": "GHA-WP-western-north-region",
+    "level": "admin1",
+    "name": "Western North Region",
+    "parent": "GHA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 880921,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Western North Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Western_North_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GHA"
+  },
+  {
+    "id": "GHA-WP-western-region",
+    "level": "admin1",
+    "name": "Western Region",
+    "parent": "GHA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2060585,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Western Region (Ghana) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Western_Region_%28Ghana%29",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GHA"
+  },
+  {
+    "id": "GIN-WP-faranah",
+    "level": "admin1",
+    "name": "Faranah",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1460931,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Faranah Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Faranah_Region",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GIN"
+  },
+  {
+    "id": "GIN-WP-labe",
+    "level": "admin1",
+    "name": "Labe",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1239897,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Labé Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Lab%C3%A9_Region",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GIN"
+  },
+  {
+    "id": "GIN-WP-mamou",
+    "level": "admin1",
+    "name": "Mamou",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 916535,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Mamou Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mamou_Region",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GIN"
+  },
+  {
+    "id": "GIN-WP-nzerekore",
+    "level": "admin1",
+    "name": "Nzerekore",
+    "parent": "GIN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2481986,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Nzérékoré Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nz%C3%A9r%C3%A9kor%C3%A9_Region",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GIN"
   },
   {
     "id": "HTI-WP-artibonite-department",
