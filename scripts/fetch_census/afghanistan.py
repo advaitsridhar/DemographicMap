@@ -1,0 +1,433 @@
+#!/usr/bin/env python3
+"""Ethnic composition of Afghan districts, from each province's own article.
+
+Afghanistan has never completed a population census -- the 1979 count was
+abandoned partway, and the census restarted in 2013 excluded ethnicity and
+language deliberately -- so there is no official ethnic tabulation of any
+kind, and all 398 districts read `not_collected` before this file.
+
+What exists instead is the district development plan. Between roughly 2008
+and 2014 the Ministry of Rural Rehabilitation and Development, through its
+National Area-Based Development Programme, published a summary for each
+district; several state an ethnic breakdown. The English Wikipedia article of
+each province transcribes them into its `Administrative divisions` table and
+cites the PDFs. That is what this reads.
+
+**It is not a census and the record says so**, in the source name and in the
+year. A ministry's planning survey is a weaker thing than a count, and the
+right response to that is to label it accurately rather than to refuse it:
+the alternative on offer is 398 districts that say nothing at all.
+
+The column is not uniform. Baghlan heads it `Notes`, Badakhshan runs
+`Villages` and `Ethnic groups` together into one, and others differ again, so
+it is matched by shape rather than by one spelling. Neither is the prose:
+
+    Pashtun 70%, Tajik 20%, Uzbek 10%          <- share after the name
+    60% Uzbek, 20% Tajik, 10% Hazara           <- share before it
+    51 villages. 100% Tajik.                   <- a village count first
+    Majority Turkmen, minority Tajik           <- no shares at all
+    Predominantly Pamiris (Ishkashimi), few Tajik
+
+**Only the first three shapes are read.** A row that says "Majority Turkmen"
+is refused and stays a gap, because turning *majority* and *minority* into
+numbers would be inventing the figures rather than reading them -- and a
+district wearing an invented composition is indistinguishable, on the map,
+from one wearing a measured one.
+
+Usage:
+    python -m scripts.fetch_census.afghanistan --probe
+    python -m scripts.fetch_census.afghanistan
+"""
+
+from __future__ import annotations
+
+import argparse
+import re
+import sys
+from pathlib import Path
+from typing import Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from common import NOT_AVAILABLE, gap                      # noqa: E402
+from probe_wikitable import tables                         # noqa: E402
+from ._shared import PROCESSED, log, record, write_json    # noqa: E402
+from .europe_wiki import fetch                             # noqa: E402
+
+OUT = "afghanistan_district.json"
+LANG = "en"
+SOURCE = ("Ministry of Rural Rehabilitation and Development, National "
+          "Area-Based Development Programme, district development plans")
+LICENCE = "Ministry publication; compilation CC BY-SA 4.0"
+# The plans were published across these years and the articles rarely say
+# which. The record carries the range rather than a false precision.
+YEARS = "2008-2014"
+
+PROVINCES = (
+    "Badakhshan", "Badghis", "Baghlan", "Balkh", "Bamyan", "Daikundi",
+    "Farah", "Faryab", "Ghazni", "Ghor", "Helmand", "Herat", "Juzjan",
+    "Kabul", "Kandahar", "Kapisa", "Khost", "Kunar", "Kunduz", "Laghman",
+    "Logar", "Maidan Wardak", "Nangarhar", "Nimruz", "Nuristan", "Paktia",
+    "Paktika", "Panjshir", "Parwan", "Samangan", "Sar-e-Pol", "Takhar",
+    "Uruzgan", "Zabul",
+)
+
+# What the articles call the groups, against this map's names. The spellings
+# are the ones the run log reported, not invented ones.
+GROUPS = {
+    "pashtun": "Pashtun", "pashtuns": "Pashtun", "pashton": "Pashtun",
+    "pushtun": "Pashtun", "pathan": "Pashtun",
+    "tajik": "Tajik", "tajiks": "Tajik", "tadjik": "Tajik",
+    "hazara": "Hazara", "hazaras": "Hazara",
+    "uzbek": "Uzbek", "uzbeks": "Uzbek",
+    "turkmen": "Turkmen", "turkmens": "Turkmen", "turkman": "Turkmen",
+    "aimaq": "Aimaq", "aimaqs": "Aimaq", "aimak": "Aimaq",
+    "baloch": "Baloch", "balochs": "Baloch", "baluch": "Baloch",
+    "nuristani": "Nuristani", "nuristanis": "Nuristani",
+    "pashai": "Pashai", "pashais": "Pashai",
+    "pamiri": "Pamiri", "pamiris": "Pamiri",
+    "arab": "Arab", "arabs": "Arab",
+    "kyrgyz": "Kyrgyz", "qizilbash": "Qizilbash",
+    "brahui": "Brahui", "gujjar": "Gujjar", "gurjar": "Gujjar",
+    "sadat": "Sayyid", "sayyid": "Sayyid", "sayed": "Sayyid",
+    "farsiwan": "Farsiwan", "farsiwans": "Farsiwan",
+    "kuchi": "Kuchi", "kochi": "Kuchi",
+    "other": "Other", "others": "Other",
+}
+
+# The province, as this map's boundary file spells it against the article's
+# title. Five of the thirty-four differ, and one of them is a transposition --
+# the file writes Ghanzi for Ghazni -- so every Ghazni district was refused as
+# "outside its stated parent" and the cause was three letters in the wrong
+# order. Fixing the province is worth far more than fixing its districts one
+# by one: match_admin2 resolves a district inside its stated province, so a
+# province it cannot recognise refuses the lot.
+#
+# Juzjan and Uruzgan are both on the map and are different places; only the
+# first is renamed here.
+PROVINCE_ON_MAP = {
+    "Daikundi": "Daykundi",
+    "Ghazni": "Ghanzi",
+    "Juzjan": "Jowzjan",
+    "Maidan Wardak": "Wardak",
+    "Sar-e-Pol": "Sar-e Pol",
+}
+
+# A district the article and the boundary file transliterate differently.
+# Each one was established by taking the names left unmatched inside a single
+# province and keeping only those with exactly one close candidate there; a
+# name with two candidates, or none, is not in this table and stays a gap.
+DISTRICT_ON_MAP = {
+    ("Badakhshan", "Tishkan"): "Tashkan",
+    ("Badakhshan", "Yaftali Sufla"): "Yaftal Sufla",
+    ("Ghazni", "Deh Yak"): "Dih Yak",
+    ("Ghazni", "Jaghori"): "Jaghuri",
+    ("Helmand", "Garmsir"): "Garmser",
+    ("Helmand", "Washir"): "Washer",
+    ("Herat", "Kushki Kuhna"): "Koshki Kohna",
+    ("Herat", "Herat"): "Hirat",
+    ("Kabul", "Deh Sabz"): "Dih Sabz",
+    ("Khost", "Jaji Maydan"): "Jaji Maidan",
+    ("Khost", "Musa Khel"): "Mosa Khail",
+    ("Khost", "Sabari"): "Sabri",
+    ("Kunar", "Sirkani"): "Sarkani",
+    ("Kunduz", "Chardara"): "Chahar Dara",
+    ("Laghman", "Dawlat Shah"): "Daulatshahi",
+    ("Nangarhar", "Achin"): "Acheen",
+    ("Nangarhar", "Hisarak"): "Hesarak",
+    ("Nangarhar", "Khogyani"): "Khogayani",
+    ("Nangarhar", "Lal Pur"): "Lal Por",
+    ("Nangarhar", "Momand Dara"): "Muhmand Dara",
+    ("Nangarhar", "Pachir Aw Agam"): "Pachier Agam",
+    ("Nangarhar", "Sherzad"): "Shirzad",
+    ("Nuristan", "Nurgram"): "Nurgaram",
+    ("Paktika", "Wor Mamay"): "Wor Mayi",
+    ("Paktika", "Yusufkhel"): "Yosuf Khel",
+    ("Takhar", "Kalafgan"): "Kalfagan",
+    ("Zabul", "Mezana"): "Mizan",
+    ("Zabul", "Tarnak Aw Jaldak"): "Tarnak Wa Jaldak",
+}
+
+LINK = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
+REF = re.compile(r"<ref[^>]*?(?:/>|>.*?</ref>)", re.S | re.I)
+MARKUP = re.compile(r"\{\{[^{}]*\}\}|'''?|<[^>]+>|align=\w+\|?|style=\"[^\"]*\"")
+# "Pashtun 70%" and "70% Pashtun" -- both orders appear, often in one article.
+AFTER = re.compile(r"([A-Za-z][A-Za-z\- ]{2,24}?)\s*[:\-]?\s*(\d{1,3}(?:\.\d+)?)\s*%")
+BEFORE = re.compile(r"(\d{1,3}(?:\.\d+)?)\s*%\s*(?:of\s+)?([A-Za-z][A-Za-z\- ]{2,24})")
+# A composition may fall short -- the plans list the groups they list -- but
+# a large overrun means a group counted twice and the arithmetic then
+# describes nobody.
+#
+# The ceiling is 101.5 rather than 100.5 because the first run showed what
+# the two kinds of overrun actually look like, and they are nothing like each
+# other. Rounding lands just over: Qala i Naw at 101.0%, Herat at 100.9%,
+# both real districts thrown away over a tenth of a point. A row that is not
+# a district at all lands far over -- the province's own summary row
+# concatenates every district's note, so Badakhshan came to 185.4%, Ghor to
+# 170.9% and Badghis to 144.4%. Nothing observed sits between 103% and 144%.
+CEILING = 101.5
+FLOOR = 55.0
+
+
+def clean(cell: str) -> str:
+    """A table cell down to the words a reader sees."""
+    text = REF.sub(" ", cell)
+    text = LINK.sub(lambda m: m.group(2) or m.group(1), text)
+    text = MARKUP.sub(" ", text)
+    return " ".join(text.split())
+
+
+def shares(text: str) -> list[dict[str, Any]]:
+    """Every "<group> N%" or "N% <group>" pair the cell states.
+
+    Returns [] for a cell that states none, which is the common case and a
+    refusal rather than an error: "Majority Turkmen, minority Tajik" is a real
+    sentence about a real district and it is not a composition.
+    """
+    found: dict[str, float] = {}
+    for pattern, gi, pi in ((AFTER, 1, 2), (BEFORE, 2, 1)):
+        for m in pattern.finditer(text):
+            name = GROUPS.get(m.group(gi).strip().lower())
+            if not name:
+                continue
+            pct = float(m.group(pi))
+            # The same group twice in one cell is the article contradicting
+            # itself; keep the first and let the total test catch the rest.
+            found.setdefault(name, pct)
+    return [{"group": g, "pct": p} for g, p in found.items()]
+
+
+def usable(parts: list[dict[str, Any]], where: str) -> bool:
+    if not parts:
+        return False
+    total = sum(p["pct"] for p in parts)
+    if total > CEILING:
+        log(f"    {where}: refused, shares add to {total:.1f}%")
+        return False
+    if total < FLOOR:
+        log(f"    {where}: refused, shares add to only {total:.1f}%")
+        return False
+    return True
+
+
+def repair_header(cells: list[str]) -> list[str]:
+    """Re-join header cells a citation template was split across.
+
+    The table parser splits on ``|``, and a ``{{Cite web|url=...|title=...}}``
+    inside a heading carries its own. Badghis heads its column "Area" with a
+    citation on it, and the pipes turned one cell into two -- so the header
+    counted seven columns where every data row had six, the ethnic column's
+    index was one too high, and all fifteen rows were skipped for being too
+    short. The province reported nothing at all rather than a refusal.
+
+    A cell with unbalanced ``{{`` is a fragment, and it is joined forward
+    until the braces close.
+    """
+    out: list[str] = []
+    pending: list[str] = []
+    for cell in cells:
+        pending.append(cell)
+        joined = "|".join(pending)
+        if joined.count("{{") <= joined.count("}}"):
+            out.append(joined)
+            pending = []
+    if pending:
+        out.append("|".join(pending))
+    return out
+
+
+def notes_column(header: list[str]) -> int | None:
+    """Which column carries the ethnic note, by what it is called.
+
+    Baghlan heads it "Notes", Badakhshan runs "Villages" and "Ethnic groups"
+    into one cell, and the rest vary; so the name is matched loosely and a
+    column that is plainly something else is never chosen.
+    """
+    for i, cell in enumerate(header):
+        name = clean(cell).lower()
+        if any(w in name for w in ("ethnic", "note", "demograph", "populationnote")):
+            return i
+    return None
+
+
+def name_column(header: list[str]) -> int:
+    for i, cell in enumerate(header):
+        if "district" in clean(cell).lower():
+            return i
+    return 0
+
+
+def province_rows(province: str, *, probing: bool) -> list[dict[str, Any]]:
+    title = f"{province} Province"
+    # fetch returns (wikitext, resolved title): the article may sit behind a
+    # redirect, and the name it resolved to is worth having in the log.
+    body, resolved = fetch(title, LANG)
+    if resolved != title:
+        log(f"  {province}: redirected to {resolved!r}")
+    if not body:
+        log(f"  {province}: no article")
+        return []
+    out: list[dict[str, Any]] = []
+    for table in tables(body):
+        if len(table) < 2:
+            continue
+        header = repair_header(table[0])
+        col = notes_column(header)
+        if col is None:
+            continue
+        which = name_column(header)
+        if probing:
+            log(f"  {province}: header {[clean(c) for c in header]}")
+        read = refused = silent = 0
+        for row in table[1:]:
+            # A row too short for the column, or one whose note is blank, used
+            # to be dropped without a word -- which is how Uruzgan came to
+            # report "0 with shares, 0 without" and say nothing about the
+            # fifteen rows it had looked at. A gap has to say why it is a gap,
+            # and that applies to this file's own log.
+            if len(row) <= max(col, which):
+                silent += 1
+                continue
+            district = clean(row[which])
+            note = clean(row[col])
+            if not district or not note:
+                silent += 1
+                continue
+            parts = shares(note)
+            if not usable(parts, f"{province}/{district}"):
+                refused += 1
+                if probing and note:
+                    log(f"      - {district}: {note[:70]}")
+                continue
+            read += 1
+            if probing:
+                log(f"      + {district}: "
+                    + ", ".join(f"{p['group']} {p['pct']:g}%" for p in parts))
+            out.append({"district": district, "province": province,
+                        "ethnicity": parts})
+        log(f"  {province}: {read} district(s) with shares, {refused} without"
+            + (f", {silent} row(s) with no note at all" if silent else ""))
+        break
+    return out
+
+
+# Two readings of one district agree when they name the same groups and no
+# share moves by more than this. Kunduz's table prints it twice, once rounded
+# and once not -- 33% against 33.2%, 27% against 26.8% -- and that is one
+# figure written twice, not two claims.
+AGREEMENT = 2.0
+
+
+def settle(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], str]:
+    """One reading for a district the table names more than once.
+
+    Four provinces have a district sharing the province's name, and print two
+    rows for it. Sometimes that is the same figure at two precisions, and
+    sometimes it is two sources that disagree:
+
+        Ghazni   Tajik 50%, Pashtun 25%, Hazara 20%
+        Ghazni   Pashtun 48.1%, Hazara 43.8%, Tajik 7.4%
+
+    Tajik at 50% and at 7.4% cannot both describe Ghazni. Left alone the
+    later record silently replaced the earlier one and the map showed
+    whichever it happened to be, with nothing saying a source disagreed by
+    forty-two points -- the invisible error this map ranks below an empty
+    district.
+
+    So agreement keeps the better-resolved reading, and contradiction keeps
+    neither and says so.
+    """
+    if len(rows) == 1:
+        return rows, ""
+    shares = [{p["group"]: p["pct"] for p in r["ethnicity"]} for r in rows]
+    first = shares[0]
+    for other in shares[1:]:
+        if set(other) != set(first):
+            return [], "they name different groups"
+        worst = max(abs(other[g] - first[g]) for g in first)
+        if worst > AGREEMENT:
+            bad = max(first, key=lambda g: abs(other[g] - first[g]))
+            return [], (f"{bad} is {first[bad]:g}% in one and "
+                        f"{other[bad]:g}% in the other")
+    # Same figures at two precisions: keep the one that states them finest.
+    #
+    # Measured by how many shares are not whole numbers, not by the length of
+    # the decimal part -- "33.0" and "33.2" both print one digit after the
+    # point and would tie, and the tie would hand back the rounded row.
+    best = max(rows, key=lambda r: sum(
+        1 for p in r["ethnicity"] if p["pct"] % 1))
+    return [best], ""
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--probe", action="store_true",
+                    help="print each province's header and every row's verdict, "
+                         "and write nothing")
+    ap.add_argument("--only", help="comma-separated province names")
+    args = ap.parse_args(argv)
+
+    wanted = ([p.strip() for p in args.only.split(",")] if args.only
+              else list(PROVINCES))
+    records: list[dict[str, Any]] = []
+    for province in wanted:
+        seen: dict[str, list[dict[str, Any]]] = {}
+        for row in province_rows(province, probing=args.probe):
+            seen.setdefault(row["district"], []).append(row)
+        settled: list[dict[str, Any]] = []
+        for district, found in seen.items():
+            kept, why = settle(found)
+            if why:
+                log(f"    {province}/{district}: refused, the table names it "
+                    f"{len(found)} times and {why}")
+            elif len(found) > 1:
+                log(f"    {province}/{district}: named {len(found)} times, "
+                    f"the readings agree; kept the finer one")
+            settled += kept
+        for row in settled:
+            # Both names go out as the boundary file spells them, so a
+            # district reaches its shape and reaches it inside the right
+            # province. The article's spelling stays in the log.
+            on_map = DISTRICT_ON_MAP.get((row["province"], row["district"]))
+            if on_map:
+                log(f"    {row['province']}/{row['district']}: "
+                    f"the map spells it {on_map!r}")
+                row["district"] = on_map
+            row["province"] = PROVINCE_ON_MAP.get(row["province"],
+                                                  row["province"])
+            # The province belongs in the id and on the row, and both for the
+            # same reason. Afghanistan has a Baharak in Badakhshan and another
+            # in Takhar, a Fayzabad in Badakhshan and another in Jowzjan, and
+            # nine such pairs in all. Keyed on the district name alone they
+            # collide: one record silently replaces the other before matching
+            # even begins, and the survivor is then matched country-wide,
+            # where build_entities refuses an ambiguous name outright -- so
+            # both districts end up with nothing.
+            #
+            # parent_name is what match_admin2 uses to resolve a repeated name
+            # inside its own province, and its docstring names this exact
+            # failure: a district quietly wearing its twin's figures, "a wrong
+            # answer that looks exactly like a right one".
+            slug = re.sub(r"[^a-z0-9]+", "-",
+                          f"{row['province']} {row['district']}".lower()).strip("-")
+            records.append(record(
+                f"AFG-admin2-{slug}", row["district"], level="admin2",
+                parent="AFG", parent_name=row["province"],
+                ethnicity=row["ethnicity"],
+                ethnicity_year=YEARS,
+                ethnicity_basis="district development plan",
+                sources=[{"field": "ethnicity", "name": SOURCE,
+                          "licence": LICENCE, "year": YEARS,
+                          "url": "https://en.wikipedia.org/wiki/"
+                                 "Administrative_divisions_of_Afghanistan"}]))
+    log(f"\nAfghanistan: {len(records)} district(s) with an ethnic composition")
+    if args.probe:
+        log("--probe: nothing written")
+        return 0
+    write_json(PROCESSED / OUT, records)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

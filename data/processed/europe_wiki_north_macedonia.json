@@ -169,13 +169,52 @@
       "status": "not_available",
       "note": "The one table a North Macedonian municipality's article carries as a matter of course is the census's ethnicity. A few also print mother tongue and religion, under headings that differ from article to article and sometimes twice over for two boundary eras, and this reader does not attempt them."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 91.14
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 4.62
+      },
+      {
+        "group": "Romani",
+        "pct": 3.11
+      },
+      {
+        "group": "Turkish",
+        "pct": 0.55
+      },
+      {
+        "group": "Other",
+        "pct": 0.4
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.09
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.08
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Berovo Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Berovo_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "East",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a source this reader cannot classify, as the en.wikipedia article 'Berovo Municipality' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. The article cites nothing for this table, so the article itself is the source on the record. 2 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 95.4%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-bitola",
@@ -2857,7 +2896,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "the shares add to 3.00, which is not a composition"
     },
     "sources": [],
     "parent_name": "Northeast",
@@ -3633,13 +3672,48 @@
       "status": "not_available",
       "note": "The one table a North Macedonian municipality's article carries as a matter of course is the census's ethnicity. A few also print mother tongue and religion, under headings that differ from article to article and sometimes twice over for two boundary eras, and this reader does not attempt them."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Macedonian",
+        "pct": 81.17
+      },
+      {
+        "group": "Turkish",
+        "pct": 7.03
+      },
+      {
+        "group": "Romani",
+        "pct": 6.43
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 4.3
+      },
+      {
+        "group": "Not declared or unknown",
+        "pct": 0.79
+      },
+      {
+        "group": "Serbian",
+        "pct": 0.25
+      },
+      {
+        "group": "Vlach",
+        "pct": 0.03
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "State Statistical Office of North Macedonia, Census of Population, Households and Dwellings (2021), as the en.wikipedia article 'Pehčevo Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Peh%C4%8Devo_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "East",
-    "country": "MKD"
+    "country": "MKD",
+    "ethnicity_year": 2021,
+    "ethnicity_note": "Population by ethnicity for 2021 from a source this reader cannot classify, as the en.wikipedia article 'Pehčevo Municipality' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. The article cites nothing for this table, so the article itself is the source on the record. 3 row(s) of the table carry figures for only one of the censuses it prints and are not read; what they hold is inside the remainder. The table's groups add to 95.7%; the rest is carried as a remainder."
   },
   {
     "id": "MKD-admin2-petrovets",

@@ -28,6 +28,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 import time
 import urllib.parse
@@ -37,7 +38,8 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import (  # noqa: E402
-    NOT_AVAILABLE, PROCESSED, RAW, gap, http_get, log, measure, read_json, write_json,
+    NOT_AVAILABLE, PROCESSED, RAW, forget, gap, http_get, log, measure, read_json,
+    write_json,
 )
 
 ENDPOINT = "https://query.wikidata.org/sparql"
@@ -76,6 +78,69 @@ SELECT ?unit ?unitLabel ?parent ?parentLabel ?pop ?popTime ?capitalLabel ?coord 
 """
 
 # ISO3 -> Wikidata country item.  Resolved live when the lookup misses.
+# The same, stripped to what a Wikipedia probe needs: the unit, its label and
+# its parent, and nothing else. The three OPTIONAL blocks above -- population
+# with its point in time, capital, coordinates -- are what make the full query
+# expensive, and on 21 September 2026 they made it unrunnable: a sweep of all
+# 218 countries was cancelled at the job's 45-minute limit having reached about
+# 25, with Wikidata answering 502, 504 and read-timeout on most of them and
+# Austria failing outright after four retries.
+#
+# This asks for QIDs, and a QID is all that resolves to a Wikipedia article.
+#
+# It must never be run for a country already in the file. The merge below
+# replaces an answered country's records wholesale, so a light answer for
+# Mexico would drop the 1,877 populations the full query found there. --light
+# refuses such a country by name rather than trusting the caller to remember.
+ADMIN2_LIGHT_QUERY = """
+SELECT ?unit ?unitLabel ?parent ?parentLabel WHERE {
+  VALUES ?country { wd:%(qid)s }
+  ?country wdt:P150 ?parent .
+  ?unit wdt:P131 ?parent .
+  ?unit wdt:P31/wdt:P279* wd:Q56061 .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+"""
+
+ADMIN1_LIGHT_QUERY = """
+SELECT ?unit ?unitLabel WHERE {
+  VALUES ?country { wd:%(qid)s }
+  ?country wdt:P150 ?unit .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+"""
+
+# A second shape for the second level, and why there are two.
+#
+# ADMIN2_QUERY walks *up*: everything whose P131 is one of the country's
+# admin-1 units, narrowed to administrative entities by a P279* walk up the
+# class tree. Before that filter the set is enormous -- every village, school,
+# protected area and railway station in the country carries P131 to a state --
+# and the filter runs over all of it. That, and not the OPTIONAL blocks, is
+# the expense. The --light run of 21 September dropped all three OPTIONALs and
+# still lost eight of twenty-three countries: AFG, ALB, ARM, AUT, AZE, BLR and
+# BOL each came back as valid JSON that stops mid-object several hundred kB
+# in, which is WDQS hitting its 60-second limit and abandoning the stream.
+#
+# This walks *down* instead, by the property the admin-1 query already uses:
+# P150, the subdivisions a unit declares. One hop from a handful of parents,
+# and it costs almost nothing.
+#
+# The two are not equivalent and neither is obviously better. P150 is curated
+# and can be incomplete; P131 is carried by the members themselves and can
+# reach things that are not subdivisions at all. Which finds more units is a
+# question per country, not a matter of opinion -- so --probe asks both and
+# prints the counts side by side, and writes nothing.
+ADMIN2_DESCENT_QUERY = """
+SELECT ?unit ?unitLabel ?parent ?parentLabel WHERE {
+  VALUES ?country { wd:%(qid)s }
+  ?country wdt:P150 ?parent .
+  ?parent wdt:P150 ?unit .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+"""
+
+
 COUNTRY_QID_QUERY = """
 SELECT ?country ?iso3 WHERE {
   ?country wdt:P31 wd:Q6256 ; wdt:P298 ?iso3 .
@@ -83,13 +148,46 @@ SELECT ?country ?iso3 WHERE {
 """
 
 
-def sparql(query: str, *, cache: bool = True) -> list[dict[str, Any]]:
+def sparql(query: str, *, cache: bool = True, retries: int = 1) -> list[dict[str, Any]]:
+    """Run a query, treating a body that will not parse as a failed fetch.
+
+    WDQS answers 200 and streams, and when the query outruns its 60-second
+    limit it abandons the stream and appends its own error to what it has
+    already sent. The body is then valid JSON up to some byte followed by
+    something that is not JSON at all -- Austria's was 1,250,094 bytes ending
+    at 1,244,867, Australia's 18,445,340 ending at 18,440,112, the same 5,227
+    trailing bytes in both.
+
+    http_get sees a 200 and caches it, so without the ``forget`` below every
+    re-ask in the run is served the same broken bytes from disk.
+
+    Re-asking barely helps and the default is one attempt, not four: the
+    failure is a property of the query, and both of Austria's attempts
+    returned byte-identical bodies for 90 seconds each. What answers such a
+    country is a cheaper query, which is ADMIN2_DESCENT_QUERY's job.
+    """
     url = ENDPOINT + "?" + urllib.parse.urlencode({"format": "json", "query": query})
-    payload = http_get(url, cache=cache, timeout=90,
-                       headers={"Accept": "application/sparql-results+json"})
-    import json as _json
-    data = _json.loads(payload)
-    return data.get("results", {}).get("bindings", [])
+    last: json.JSONDecodeError | None = None
+    for attempt in range(retries + 1):
+        payload = http_get(url, cache=cache, timeout=90,
+                           headers={"Accept": "application/sparql-results+json"})
+        assert isinstance(payload, str)
+        try:
+            data = json.loads(payload)
+        except json.JSONDecodeError as exc:
+            last = exc
+            forget(url)
+            tail = " ".join(payload[exc.pos:].split())[:200]
+            log(f"    answer unparseable: {len(payload):,} bytes, JSON ends at "
+                f"{exc.pos:,}, then {len(payload) - exc.pos:,} more "
+                f"({attempt + 1}/{retries + 1})")
+            log(f"    what follows it: {tail!r}")
+            if attempt < retries:
+                time.sleep(2 ** attempt)
+            continue
+        return data.get("results", {}).get("bindings", [])
+    raise RuntimeError(
+        f"answer truncated at byte {last.pos} after {retries + 1} attempts") from last
 
 
 def value(row: dict[str, Any], key: str) -> str | None:
@@ -183,6 +281,127 @@ def countries_in(records: list[dict[str, Any]]) -> set[str]:
             if (row.get("country") or (row.get("id") or "")[:3])}
 
 
+def light_query(level: str) -> str:
+    return ADMIN1_LIGHT_QUERY if level == "admin1" else ADMIN2_LIGHT_QUERY
+
+
+def refuse_light_overwrite(out: Path, level: str,
+                           countries: list[str] | None) -> None:
+    """A light answer must never replace a full one.
+
+    The merge replaces an answered country's records wholesale, so a light
+    run over Mexico would drop the 1,877 populations the full query found
+    there. Asking for every country with --light would quietly empty the
+    fourteen that are already complete, which is why this refuses by name
+    instead of trusting the caller to remember.
+    """
+    already = countries_in(read_json(out, []) or [])
+    if not already:
+        return
+    asked = {c.upper() for c in countries} if countries else already
+    clash = sorted(already & asked)
+    if clash:
+        raise SystemExit(
+            f"--light would replace {len(clash)} country(ies) already in "
+            f"{out.name} with records carrying no population, capital or "
+            f"coordinates: {', '.join(clash[:20])}.\n"
+            "The merge replaces an answered country wholesale, so that is a "
+            "loss rather than a refresh. Run the full query for those, or "
+            "leave them out of --countries.")
+
+
+def union_by_unit(primary: list[dict[str, Any]],
+                  secondary: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Add the units the primary query missed, keeping the primary's rows.
+
+    Order matters: a unit found both ways is kept as the primary found it,
+    because the full query carries a population, a capital and coordinates
+    and the descent carries none of them. The descent only ever adds units,
+    never replaces one.
+    """
+    seen = {row["unit"]["value"] for row in primary if row.get("unit")}
+    return primary + [row for row in secondary
+                      if row.get("unit") and row["unit"]["value"] not in seen]
+
+
+def admin2_rows(qid: str, primary: str, sleep: float) -> tuple[list[dict[str, Any]], str]:
+    """Ask both ways and return the union, and a word on what answered.
+
+    Neither descent covers a country on its own, which the probe of 22
+    September 2026 measured over eight of them:
+
+        AFG   494 in 10.5s     404 in  0.4s
+        AUT   truncated        116 in  0.3s
+        AZE   191 in 34.8s       0 in  0.2s
+        AUS   truncated (18MB) 581 in  1.4s
+        AGO   428 in 12.4s     164 in  0.3s
+        BGR   306 in 16.4s     266 in  0.4s
+        BIH   134 in 30.4s      68 in  0.2s
+        BEL    30 in 20.8s      11 in  0.3s
+
+    P131 with the class walk is the better answer nearly everywhere and the
+    descent loses more than half of Angola, Belgium and Bosnia and the whole
+    of Azerbaijan -- so it cannot replace it. But it costs under a second and
+    it answers the two countries P131 cannot answer at all. So both are asked.
+
+    A country whose P131 query fails is served by the descent alone, and this
+    returns "descent only" so the caller can say which countries those are.
+    A country that is short is a gap; a country that is short and does not
+    say so is the error this project treats as worse.
+    """
+    try:
+        # retries=0: a truncation is a property of the query, not the moment,
+        # and there is a fallback below. This only governs re-parsing -- a
+        # genuine network error is still retried inside http_get.
+        rows = sparql(primary % {"qid": qid}, retries=0)
+    except Exception as exc:
+        log(f"    primary query failed ({str(exc)[:80]}); falling back")
+        rows, reached = [], "descent only"
+    else:
+        reached = "both"
+    time.sleep(sleep)
+    try:
+        descent = sparql(ADMIN2_DESCENT_QUERY % {"qid": qid})
+    except Exception as exc:
+        if reached == "descent only":
+            raise
+        log(f"    descent failed ({str(exc)[:80]})")
+        return rows, "primary only"
+    united = union_by_unit(rows, descent)
+    if reached == "descent only":
+        return united, reached
+    return united, f"{len(united) - len(rows)} added by descent"
+
+
+def probe(codes: list[str], qids: dict[str, str], sleep: float) -> None:
+    """Ask each country both ways and report what each descent finds.
+
+    Writes nothing. The point is to settle, before a 185-country sweep commits
+    to one query shape, whether the cheap descent actually loses units and
+    where -- rather than adopting it because it is fast and discovering the
+    loss as a country-shaped hole on the map.
+    """
+    shapes = (("P131 + class walk", ADMIN2_LIGHT_QUERY),
+              ("P150 descent", ADMIN2_DESCENT_QUERY))
+    log(f"  {'':5}  {shapes[0][0]:>22}  {shapes[1][0]:>22}")
+    for iso3 in codes:
+        qid = qids.get(iso3)
+        if not qid:
+            log(f"  {iso3}:  no Wikidata country item")
+            continue
+        told = []
+        for _, query in shapes:
+            started = time.time()
+            try:
+                rows = sparql(query % {"qid": qid}, cache=False, retries=1)
+                units = len(collapse(rows, level="admin2", iso3=iso3))
+                told.append(f"{units:>6} in {time.time() - started:5.1f}s")
+            except Exception as exc:
+                told.append(f"{type(exc).__name__}: {str(exc)[:60]}")
+            time.sleep(sleep)
+        log(f"  {iso3}:  {told[0]:>22}  {told[1]:>22}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -190,17 +409,42 @@ def main() -> int:
     ap.add_argument("--countries", nargs="*", help="ISO3 codes; default is every country")
     ap.add_argument("--sleep", type=float, default=1.0, help="pause between queries (be polite)")
     ap.add_argument("--out", type=Path, default=None)
+    ap.add_argument("--light", action="store_true",
+                    help="ask only for units and their parents; far cheaper, "
+                         "and refused for a country already in the file")
+    ap.add_argument("--probe", action="store_true",
+                    help="ask the named countries both ways and print what "
+                         "each descent finds; writes nothing")
     ap.add_argument("--allow-shrink", action="store_true",
                     help="write even though it drops countries the existing "
                          "file covers")
     args = ap.parse_args()
 
+    # Before any network work: a light run that would overwrite a country
+    # already answered in full is refused here rather than after forty
+    # minutes of queries.
+    out_path = args.out or PROCESSED / f"wikidata_{args.level}.json"
+    if args.light and not args.probe:
+        refuse_light_overwrite(out_path, args.level, args.countries)
+
+    # A probe writes nothing, so it needs no overwrite guard -- but it does
+    # need countries, and finding that out after resolving every country QID
+    # would spend a query to reject an argument.
+    if args.probe and not args.countries:
+        log("  --probe needs --countries: it is a comparison, not a sweep")
+        return 1
+
     qids = country_qids()
+    if args.probe:
+        probe([c.upper() for c in args.countries], qids, args.sleep)
+        return 0
+
     codes = [c.upper() for c in (args.countries or sorted(qids))]
     # Wikidata's P298 for Kosovo is XKS; geoBoundaries uses XKX. Normalise so
     # the join buckets the records with the shapes instead of beside them.
     iso3_alias = {"XKS": "XKX"}
-    query = ADMIN1_QUERY if args.level == "admin1" else ADMIN2_QUERY
+    query = (light_query(args.level) if args.light
+             else (ADMIN1_QUERY if args.level == "admin1" else ADMIN2_QUERY))
 
     records: list[dict[str, Any]] = []
     missing: list[str] = []
@@ -210,7 +454,10 @@ def main() -> int:
             missing.append(iso3)
             continue
         try:
-            rows = sparql(query % {"qid": qid})
+            if args.level == "admin2":
+                rows, reached = admin2_rows(qid, query, args.sleep)
+            else:
+                rows, reached = sparql(query % {"qid": qid}), ""
         except Exception as exc:
             log(f"  {iso3}: query failed ({exc})")
             missing.append(iso3)
@@ -221,7 +468,8 @@ def main() -> int:
             time.sleep(args.sleep)
             continue
         got = collapse(rows, level=args.level, iso3=iso3_alias.get(iso3, iso3))
-        log(f"  {iso3}: {len(got)} {args.level} units")
+        log(f"  {iso3}: {len(got)} {args.level} units"
+            + (f" ({reached})" if reached else ""))
         records.extend(got)
         time.sleep(args.sleep)
 

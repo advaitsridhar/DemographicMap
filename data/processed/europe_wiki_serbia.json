@@ -1979,13 +1979,51 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 97.95
+      },
+      {
+        "group": "Other",
+        "pct": 1.11
+      },
+      {
+        "group": "Romani",
+        "pct": 0.64
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.12
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.05
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.05
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.04
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.04
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Arilje' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Arilje",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Zlatibor District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Arilje' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-babusnica-municipality",
@@ -2371,13 +2409,59 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 98.52
+      },
+      {
+        "group": "Other",
+        "pct": 0.58
+      },
+      {
+        "group": "Romani",
+        "pct": 0.46
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.17
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.07
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.05
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.05
+      },
+      {
+        "group": "Russian",
+        "pct": 0.04
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.03
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.03
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Bajina Bašta' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Bajina_Ba%C5%A1ta",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Zlatibor District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Bajina Bašta' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-batocina-municipality",
@@ -2510,13 +2594,55 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 73.21
+      },
+      {
+        "group": "Other",
+        "pct": 13.36
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.85
+      },
+      {
+        "group": "Romani",
+        "pct": 4.55
+      },
+      {
+        "group": "Hungarian",
+        "pct": 2.45
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.56
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.38
+      },
+      {
+        "group": "German",
+        "pct": 0.34
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.3
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Bela Crkva' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Bela_Crkva",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "South Banat District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Bela Crkva' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-bela-palanka-municipality",
@@ -2546,13 +2672,43 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 85.94
+      },
+      {
+        "group": "Romani",
+        "pct": 11.72
+      },
+      {
+        "group": "Other",
+        "pct": 2.12
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.08
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.07
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.07
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Bela Palanka' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Bela_Palanka",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Pirot District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Bela Palanka' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-belgrade",
@@ -2618,13 +2774,67 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 69.67
+      },
+      {
+        "group": "Romani",
+        "pct": 9.04
+      },
+      {
+        "group": "Other",
+        "pct": 8.01
+      },
+      {
+        "group": "Slovak",
+        "pct": 5.28
+      },
+      {
+        "group": "Croatian",
+        "pct": 3.54
+      },
+      {
+        "group": "Hungarian",
+        "pct": 1.88
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 1.02
+      },
+      {
+        "group": "Slovene",
+        "pct": 0.45
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.39
+      },
+      {
+        "group": "German",
+        "pct": 0.29
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.24
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.21
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Beočin' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Beo%C4%8Din",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "South Backa District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Beočin' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-blace-municipality",
@@ -2654,13 +2864,35 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 98.27
+      },
+      {
+        "group": "Other",
+        "pct": 0.9
+      },
+      {
+        "group": "Romani",
+        "pct": 0.73
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.09
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Blace' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Blace",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Toplica District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Blace' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-bogatic-municipality",
@@ -2765,13 +2997,39 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 82.83
+      },
+      {
+        "group": "Romani",
+        "pct": 14.85
+      },
+      {
+        "group": "Other",
+        "pct": 2.08
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.15
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.09
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Bojnik, Serbia' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Bojnik%2C_Serbia",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Jablanica District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Bojnik, Serbia' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-boljevac-municipality",
@@ -3056,13 +3314,47 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 93.9
+      },
+      {
+        "group": "Not stated",
+        "pct": 4.15
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.12
+      },
+      {
+        "group": "Other",
+        "pct": 0.45
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.16
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.11
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Čajetina' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/%C4%8Cajetina",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Zlatibor District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Čajetina' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-cicevac-municipality",
@@ -3238,13 +3530,40 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 97.3
+      },
+      {
+        "group": "Other",
+        "pct": 2.54
+      },
+      {
+        "group": "Gorani",
+        "pct": 0.18
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Russian",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (2022), as the en.wikipedia article 'Crna Trava' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Crna_Trava",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Jablanica District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_year": 2022,
+    "ethnicity_note": "Population by ethnicity for 2022 from a source this reader cannot classify, as the en.wikipedia article 'Crna Trava' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-cuprija-municipality",
@@ -4356,13 +4675,35 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 98.25
+      },
+      {
+        "group": "Other",
+        "pct": 1.49
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.19
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.07
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Kosjerić' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Kosjeri%C4%87",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Zlatibor District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Kosjerić' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-kovacica-municipality",
@@ -4654,13 +4995,51 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 90.85
+      },
+      {
+        "group": "Not stated",
+        "pct": 3.1
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 2.63
+      },
+      {
+        "group": "Romani",
+        "pct": 1.82
+      },
+      {
+        "group": "Other",
+        "pct": 1.23
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.15
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.11
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.11
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Kruševac' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Kru%C5%A1evac",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Rasina District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Kruševac' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record. The table's groups add to 97.4%; the rest is carried as a remainder."
   },
   {
     "id": "SRB-admin2-kucevo-municipality",
@@ -4813,13 +5192,59 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 96.43
+      },
+      {
+        "group": "Romani",
+        "pct": 1.76
+      },
+      {
+        "group": "Other",
+        "pct": 1.36
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.24
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.04
+      },
+      {
+        "group": "Gorani",
+        "pct": 0.04
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.03
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.03
+      },
+      {
+        "group": "Russian",
+        "pct": 0.03
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.03
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Kuršumlija' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Kur%C5%A1umlija",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Toplica District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Kuršumlija' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-lajkovac-municipality",
@@ -4956,13 +5381,47 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 92.72
+      },
+      {
+        "group": "Romani",
+        "pct": 5.69
+      },
+      {
+        "group": "Other",
+        "pct": 1.38
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.09
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.07
+      },
+      {
+        "group": "Gorani",
+        "pct": 0.03
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.02
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Lebane' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Lebane",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Jablanica District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Lebane' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-leskovac-city",
@@ -5404,13 +5863,51 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 93.55
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 3.01
+      },
+      {
+        "group": "Other",
+        "pct": 2.3
+      },
+      {
+        "group": "Bosniak",
+        "pct": 0.58
+      },
+      {
+        "group": "Romani",
+        "pct": 0.2
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.13
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.12
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.11
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Mali Zvornik' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Mali_Zvornik",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Macva District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Mali Zvornik' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-malo-crnice-municipality",
@@ -6429,13 +6926,59 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 91.89
+      },
+      {
+        "group": "Romani",
+        "pct": 4.45
+      },
+      {
+        "group": "Other",
+        "pct": 2.23
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.95
+      },
+      {
+        "group": "Gorani",
+        "pct": 0.14
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.12
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.08
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.07
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.04
+      },
+      {
+        "group": "Albanian",
+        "pct": 0.03
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Pirot' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Pirot",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Pirot District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Pirot' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-plandiste-municipality",
@@ -6537,13 +7080,47 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 96.54
+      },
+      {
+        "group": "Romani",
+        "pct": 1.72
+      },
+      {
+        "group": "Other",
+        "pct": 0.94
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.39
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.14
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.14
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.12
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Požega, Serbia' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Po%C5%BEega%2C_Serbia",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Zlatibor District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Požega, Serbia' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-presevo-municipality",
@@ -6618,7 +7195,7 @@
     "parent_name": "Pcinja District",
     "country": "SRB",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Population by ethnicity for 2022 from a population census, as the en.wikipedia article 'Preševo' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2002; the column read is the one the table's own header labels 2022, and that is the year on this record."
+    "ethnicity_note": "Population by ethnicity for 2022 from a population census, as the en.wikipedia article 'Preševo' transcribes and cites it. A census count. The citation is for 2002; the column read is the one the table's own header labels 2022, and that is the year on this record."
   },
   {
     "id": "SRB-admin2-priboj-municipality",
@@ -6786,13 +7363,51 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 92.16
+      },
+      {
+        "group": "Romani",
+        "pct": 4.83
+      },
+      {
+        "group": "Other",
+        "pct": 2.29
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.25
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.17
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.17
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.08
+      },
+      {
+        "group": "Gorani",
+        "pct": 0.05
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Prokuplje' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Prokuplje",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Toplica District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Prokuplje' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-raca-municipality",
@@ -7084,13 +7699,43 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 95.48
+      },
+      {
+        "group": "Other",
+        "pct": 2.29
+      },
+      {
+        "group": "Romani",
+        "pct": 1.64
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 0.34
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.14
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.11
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Šabac' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/%C5%A0abac",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Macva District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Šabac' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-secanj-municipality",
@@ -8398,7 +9043,7 @@
     "parent_name": "Pcinja District",
     "country": "SRB",
     "ethnicity_year": 2022,
-    "ethnicity_note": "Population by ethnicity for 2022 from a population census, as the en.wikipedia article 'Trgovište' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2022, and that is the year on this record."
+    "ethnicity_note": "Population by ethnicity for 2022 from a population census, as the en.wikipedia article 'Trgovište' transcribes and cites it. A census count. The citation is for 2023; the column read is the one the table's own header labels 2022, and that is the year on this record."
   },
   {
     "id": "SRB-admin2-trstenik-municipality",
@@ -8724,13 +9369,47 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 95.69
+      },
+      {
+        "group": "Other",
+        "pct": 2.31
+      },
+      {
+        "group": "Romani",
+        "pct": 1.56
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.15
+      },
+      {
+        "group": "Yugoslav",
+        "pct": 0.12
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.09
+      },
+      {
+        "group": "Croatian",
+        "pct": 0.08
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Valjevo' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Valjevo",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Kolubara District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Valjevo' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-varvarin-municipality",
@@ -9143,13 +9822,47 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 97.54
+      },
+      {
+        "group": "Romani",
+        "pct": 2.36
+      },
+      {
+        "group": "Other",
+        "pct": 0.04
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.03
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.02
+      },
+      {
+        "group": "Gorani",
+        "pct": 0.01
+      },
+      {
+        "group": "Russian",
+        "pct": 0.01
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Vlasotince' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Vlasotince",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Jablanica District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Vlasotince' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-vranje-city",
@@ -9687,13 +10400,39 @@
       "status": "not_available",
       "note": "No Serbian unit article measured carries a mother-tongue composition, in either edition, though the census asks the question and publishes it by municipality."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 90.02
+      },
+      {
+        "group": "Romani",
+        "pct": 8.35
+      },
+      {
+        "group": "Other",
+        "pct": 0.87
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 0.69
+      },
+      {
+        "group": "Macedonian",
+        "pct": 0.07
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Републички завод за статистику, Попис становништва, домаћинстава и станова (Statistical Office of the Republic of Serbia, Census of Population, Households and Dwellings) (None), as the en.wikipedia article 'Žitorađa' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/%C5%BDitora%C4%91a",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Toplica District",
-    "country": "SRB"
+    "country": "SRB",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the en.wikipedia article 'Žitorađa' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SRB-admin2-zrenjanin-city",

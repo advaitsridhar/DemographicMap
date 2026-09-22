@@ -170,6 +170,13 @@ ADAPTER_FILES = [
     # word and the two do not always mean the same divisions: Romania's adm2
     # table is its 42 judete, which are this map's *first* level, against
     # 3,235 communes at the second.
+    # Afghan district ethnicity, from the ministry's district development
+    # plans as the provinces' articles transcribe them. Above Wikidata because
+    # it is a field Wikidata does not carry at all, and below every census
+    # file because a planning survey loses to a count -- though for
+    # Afghanistan there is no count to lose to, which is the whole reason this
+    # file exists.
+    "afghanistan_district.json",
     "cod_ps_admin2.json",
     # Indonesia, by the owner's decision of 19 September 2026: the 2010
     # census's ethnicity by province as its provinces' Wikipedia articles

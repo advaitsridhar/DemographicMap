@@ -54,20 +54,50 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 55.02
+      },
+      {
+        "group": "Islam",
+        "pct": 31.96
+      },
+      {
+        "group": "Catholic",
+        "pct": 6.11
+      },
+      {
+        "group": "Not declared",
+        "pct": 2.88
+      },
+      {
+        "group": "Atheism",
+        "pct": 2.5
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.53
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "A Montenegrin municipality's article carries ethnicity and religion and no mother-tongue table, though the census asks the question and publishes it."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "labels this reader has no entry for: ['Other/not declared']"
     },
-    "sources": [],
-    "country": "MNE"
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Monstat, Popis stanovništva, domaćinstava i stanova (None), as the en.wikipedia article 'Bar Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Bar_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MNE",
+    "religion_note": "Population by religion for None from a source this reader cannot classify, as the en.wikipedia article 'Bar Municipality' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "MNE-admin1-berane-municipality",
@@ -124,20 +154,75 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 54.2
+      },
+      {
+        "group": "Islam",
+        "pct": 44.49
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.65
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.48
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.24
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.18
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "A Montenegrin municipality's article carries ethnicity and religion and no mother-tongue table, though the census asks the question and publishes it."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
-    "country": "MNE"
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 43.13
+      },
+      {
+        "group": "Bosniak",
+        "pct": 31.85
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 14.88
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 7.54
+      },
+      {
+        "group": "Other",
+        "pct": 2.6
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Monstat, Popis stanovništva, domaćinstava i stanova (None), as the en.wikipedia article 'Bijelo Polje Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Bijelo_Polje_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Monstat, Popis stanovništva, domaćinstava i stanova (None), as the en.wikipedia article 'Bijelo Polje Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Bijelo_Polje_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MNE",
+    "ethnicity_note": "Population by ethnicity for None from a population census, as the en.wikipedia article 'Bijelo Polje Municipality' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown.",
+    "religion_note": "Population by religion for None from a population census, as the en.wikipedia article 'Bijelo Polje Municipality' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown."
   },
   {
     "id": "MNE-admin1-budva-municipality",
@@ -895,21 +980,51 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 55.02
+      },
+      {
+        "group": "Islam",
+        "pct": 31.96
+      },
+      {
+        "group": "Catholic",
+        "pct": 6.11
+      },
+      {
+        "group": "Not declared",
+        "pct": 2.88
+      },
+      {
+        "group": "Atheism",
+        "pct": 2.5
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.53
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "A Montenegrin municipality's article carries ethnicity and religion and no mother-tongue table, though the census asks the question and publishes it."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "labels this reader has no entry for: ['Other/not declared']"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "religion",
+        "name": "Monstat, Popis stanovništva, domaćinstava i stanova (None), as the en.wikipedia article 'Bar Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Bar_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Bar Municipality",
-    "country": "MNE"
+    "country": "MNE",
+    "religion_note": "Population by religion for None from a source this reader cannot classify, as the en.wikipedia article 'Bar Municipality' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "MNE-admin2-berane-municipality",
@@ -967,21 +1082,76 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 54.2
+      },
+      {
+        "group": "Islam",
+        "pct": 44.49
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.65
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.48
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.24
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.18
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "A Montenegrin municipality's article carries ethnicity and religion and no mother-tongue table, though the census asks the question and publishes it."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "neither the citation nor the table's own header carries a year, so there is no date the figures are as of"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Serbian",
+        "pct": 43.13
+      },
+      {
+        "group": "Bosniak",
+        "pct": 31.85
+      },
+      {
+        "group": "Montenegrin",
+        "pct": 14.88
+      },
+      {
+        "group": "Muslim (ethnic)",
+        "pct": 7.54
+      },
+      {
+        "group": "Other",
+        "pct": 2.6
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Monstat, Popis stanovništva, domaćinstava i stanova (None), as the en.wikipedia article 'Bijelo Polje Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Bijelo_Polje_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Monstat, Popis stanovništva, domaćinstava i stanova (None), as the en.wikipedia article 'Bijelo Polje Municipality' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Bijelo_Polje_Municipality",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Bijelo Polje Municipality",
-    "country": "MNE"
+    "country": "MNE",
+    "ethnicity_note": "Population by ethnicity for None from a population census, as the en.wikipedia article 'Bijelo Polje Municipality' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown.",
+    "religion_note": "Population by religion for None from a population census, as the en.wikipedia article 'Bijelo Polje Municipality' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown."
   },
   {
     "id": "MNE-admin2-budva-municipality",

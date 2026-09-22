@@ -561,6 +561,22 @@ class Country:
     # reason, because a measured negative is a result: it says which kind of
     # empty this is, and stops the next reader repeating the search.
     declared: dict[str, str] | None = None
+    # Where the article cites its census once, in the infobox, and does not
+    # repeat the reference on the table.
+    #
+    # Moldova is why. Its district articles all transcribe the same 2024
+    # census into the same two-column table, and three of thirty-two happen
+    # to carry the reference on the table itself; the rest cite it from
+    # `population_footnotes` and nowhere else. Read strictly, that left
+    # twenty-nine districts empty over where an editor put a <ref>, not over
+    # anything about the figures.
+    #
+    # It stays opt-in and it stays narrow: the value is a pattern the
+    # infobox's citation must match, so a district cannot borrow a citation
+    # about something else, and the note on every record says the citation
+    # came from the infobox rather than from the table. A reader of the panel
+    # can see exactly what was leaned on.
+    infobox_citation: str | None = None
 
 
 # The share of a composition that may be missing before the rest is carried
@@ -1174,6 +1190,13 @@ SPECS: dict[str, Country] = {
         census="Biroul Naţional de Statistică, Recensământul Populaţiei şi al "
                "Locuinţelor",
         licence="Official statistics; compilation CC BY-SA 4.0",
+        # Three of the thirty-two districts carry the census reference on the
+        # ethnic table; the rest cite it once, from population_footnotes, and
+        # transcribe the same 2024 release into the same two-column table.
+        # The pattern is the National Bureau's own results page, so a district
+        # can only borrow a citation that is to the census itself.
+        infobox_citation=r"statistica\.gov\.md|Recens[aă]m[aâ]ntul|"
+                         r"National Bureau of Statistics",
         declared={
             "religion": (
                 "A Moldovan district's article carries an ethnic table and "
@@ -1415,9 +1438,27 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
         return None, why
     definitions = ref_definitions(wikitext)
     cites = citations(body, definitions)
-    if not cites:
-        return None, ("the article prints this table and cites nothing for it; "
-                      "an uncited figure is not read")
+    borrowed = False
+    if not cites and country.infobox_citation:
+        cites = [c for line in infobox_lines(wikitext)
+                 for c in citations(line, definitions)
+                 if re.search(country.infobox_citation, c, re.I)]
+        borrowed = bool(cites)
+    # An uncited table is read, and the article is named as the source.
+    #
+    # The owner's decision of 22 September 2026, and it overrides the rule
+    # inherited from the Indonesian reader. That rule refused a table the
+    # article cited nothing for, and on Wikipedia that is a fact about
+    # editing habits rather than about evidence: Moldova's districts all
+    # transcribe the same 2024 census into the same table and three of
+    # thirty-two happen to repeat the <ref> on it, so twenty-nine districts
+    # went empty over where an editor put a footnote.
+    #
+    # Nothing is invented by reading them. The figures still have to survive
+    # every other test -- the labels must all be known, and the shares must
+    # add to about a hundred -- and the record says plainly that the article
+    # is what it rests on, so a reader of the panel can weigh it.
+    uncited = not cites
     # Which mark separates a fraction is a fact about the country, except
     # where it is not: Bulgaria's provinces write "89.72" and its
     # municipalities write "64,81", in the same edition and under the same
@@ -1448,11 +1489,22 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
         remark = (f"{dropped[0]} row(s) of the table carry figures for only "
                   f"one of the censuses it prints and are not read; what they "
                   f"hold is inside the remainder. " + remark).strip()
-    described = sorted((describe_citation(c) for c in cites),
-                       key=lambda d: KIND_RANK[d[0]])
-    kind, year, cited = described[0]
-    years = [d[1] for d in described if d[1]]
-    year = year or (max(years) if years else None)
+    if borrowed:
+        remark = ("The table itself carries no reference; the citation is the "
+                  "one the article's infobox gives for the same census. "
+                  + remark).strip()
+    if uncited:
+        remark = ("The article cites nothing for this table, so the article "
+                  "itself is the source on the record. " + remark).strip()
+        kind, year, cited = "other", None, (
+            f"https://{lang}.wikipedia.org/wiki/"
+            + urllib.parse.quote(title.replace(" ", "_")))
+    else:
+        described = sorted((describe_citation(c) for c in cites),
+                           key=lambda d: KIND_RANK[d[0]])
+        kind, year, cited = described[0]
+        years = [d[1] for d in described if d[1]]
+        year = year or (max(years) if years else None)
     dated = "its citation"
     # The year the column read is printed under, where the table prints one.
     # This is not a fallback for an undated citation but the better answer
@@ -1470,9 +1522,17 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
         year = max(printed)
         dated = "the table's own header"
     if year is None:
-        return None, ("neither the citation nor the table's own header "
-                      "carries a year, so there is no date the figures "
-                      "are as of")
+        # An undated figure is read and said to be undated.
+        #
+        # The owner's decision of 22 September 2026, and the same one that
+        # dropped the citation gate above. Refusing here threw away a whole
+        # composition to avoid printing one unknown field, which is a worse
+        # trade than it looks: a district with no ethnic table at all and a
+        # district whose table is undated came out identical on the map.
+        remark = ("Neither the citation nor the table's own header carries a "
+                  "year, so the date these figures are as of is unknown. "
+                  + remark).strip()
+        dated = "nothing on the page"
     return {"rows": rows, "year": year, "kind": kind, "cited": cited,
             "remark": remark, "dated": dated, "counts": counts}, ""
 

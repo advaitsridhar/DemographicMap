@@ -70,6 +70,55 @@ UNDATED_BY_DESIGN: dict[str, dict[str, set[str] | None]] = {
     # second-level unit, so it appears once as admin1 and once as admin2.
     "pakistan_district.json": {"language": {"PAK-ajk",
                                             "PAK-ajk-azad-kashmir"}},
+    # Tables that print no date, in articles that cite nothing datable for
+    # them. Until 22 September 2026 these were not undated -- they were not
+    # read at all, because europe_wiki refused an undated table outright.
+    # That refusal was dropped by the owner's decision, on the grounds that
+    # throwing away a whole composition to avoid printing one unknown field
+    # is the worse trade: a municipality with no ethnic table and one whose
+    # table carries no year came out identical on the map.
+    #
+    # So they are read, and each record says in words that the date is
+    # unknown. They are listed by id rather than by file because the rest of
+    # these files *is* dated -- the same distinction Pakistan needed -- and a
+    # new undated row appearing here should be looked at rather than absorbed.
+    "europe_wiki_montenegro.json": {
+        "religion": {
+            "MNE-admin1-bar-municipality",
+            "MNE-admin1-bijelo-polje-municipality",
+            "MNE-admin2-bar-municipality",
+            "MNE-admin2-bijelo-polje-municipality",
+        },
+        "ethnicity": {
+            "MNE-admin1-bijelo-polje-municipality",
+            "MNE-admin2-bijelo-polje-municipality",
+        },
+    },
+    "europe_wiki_serbia.json": {
+        "ethnicity": {
+            "SRB-admin2-arilje-municipality",
+            "SRB-admin2-bajina-basta-municipality",
+            "SRB-admin2-bela-crkva-municipality",
+            "SRB-admin2-bela-palanka-municipality",
+            "SRB-admin2-beocin-municipality", "SRB-admin2-blace-municipality",
+            "SRB-admin2-bojnik-municipality",
+            "SRB-admin2-cajetina-municipality",
+            "SRB-admin2-kosjeric-municipality", "SRB-admin2-krusevac-city",
+            "SRB-admin2-kursumlija-municipality",
+            "SRB-admin2-lebane-municipality",
+            "SRB-admin2-mali-zvornik-municipality",
+            "SRB-admin2-pirot-municipality", "SRB-admin2-pozega-municipality",
+            "SRB-admin2-prokuplje-municipality", "SRB-admin2-sabac-city",
+            "SRB-admin2-valjevo-city", "SRB-admin2-vlasotince-municipality",
+            "SRB-admin2-zitoradja-municipality",
+        },
+    },
+    "europe_wiki_slovakia.json": {
+        "ethnicity": {
+            "SVK-admin2-district-of-bardejov",
+            "SVK-admin2-district-of-galanta",
+        },
+    },
 }
 
 # The adapter now stamps the year; the committed file predates that and says

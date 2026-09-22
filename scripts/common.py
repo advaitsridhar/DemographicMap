@@ -441,7 +441,23 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # its own, and it now says why no non-census route replaces it.
     "AFG": {
         "religion": "Afghanistan has never completed a population census: the 1979 count was abandoned partway and none has been held since, so no census question on religion exists. No survey stands in for it either -- the CSO/NSIA household series (NRVA 2011-12, ALCS 2013-14 and 2016-17) publishes its questionnaire and asks nothing about religion. The NSIA publishes population estimates only.",
-        "ethnicity": "Afghanistan has never completed a population census, so no census question on ethnicity exists; the census restarted in 2013 excluded ethnicity and language deliberately. The CSO/NSIA household series (NRVA 2011-12, ALCS 2013-14 and 2016-17) does not ask it either. The NSIA publishes population estimates only.",
+        # Ethnicity is deliberately no longer here, by the owner's decision of
+        # 22 September 2026: where a source exists, it is read, and the policy
+        # table does not get to forbid it.
+        #
+        # What this table means is "no value may ever be written", which is a
+        # stronger claim than the one the entry actually established. The
+        # entry was right that no *census* asks -- none has ever been
+        # completed -- but that is not the same as there being nothing to
+        # read. The Ministry of Rural Rehabilitation and Development published
+        # district development plans between about 2008 and 2014, and many
+        # state an ethnic breakdown; scripts/fetch_census/afghanistan.py reads
+        # them and labels them as what they are, a ministry planning survey
+        # rather than a count.
+        #
+        # The sentence itself is kept, because it is true and a district the
+        # plans do not cover still needs to say why it is empty -- it is now
+        # the gap's note rather than a prohibition.
         "language": "Afghanistan has never completed a population census, so no census question on language exists. The CSO/NSIA household series does not ask mother tongue: the ALCS questionnaire carries no language question, and the NRVA 2011-12 report mentions language only to say which languages the report itself is printed in. The NSIA publishes population estimates only.",
     },
     # Measured against the census's own form and its own table list, not
@@ -704,6 +720,26 @@ def log(*args: Any) -> None:
     print(*args, file=sys.stderr, flush=True)
 
 
+def cache_path(url: str, cache_dir: Path | None = None) -> Path:
+    """Where http_get keeps this URL's body."""
+    cache_dir = cache_dir or (RAW / "http_cache")
+    return cache_dir / hashlib.sha256(url.encode()).hexdigest()[:24]
+
+
+def forget(url: str, cache_dir: Path | None = None) -> None:
+    """Drop a cached body, for a caller that finds it is not what it claims.
+
+    http_get caches on a 200 and cannot tell a complete body from a truncated
+    one -- the server said OK and the bytes arrived. Only the caller that
+    parses it knows. Wikidata's endpoint is the case this exists for: it
+    answers 200, streams results, hits its own 60-second limit part way
+    through and abandons the stream, so the body is valid JSON up to some
+    byte several hundred kB in and then simply stops. Cached, that truncation
+    is what every retry in the run gets back.
+    """
+    cache_path(url, cache_dir).unlink(missing_ok=True)
+
+
 def http_get(url: str, *, cache: bool = True, retries: int = 4, timeout: int = 120,
              headers: dict[str, str] | None = None, binary: bool = False,
              cache_dir: Path | None = None, aia: bool = False) -> bytes | str:
@@ -724,9 +760,8 @@ def http_get(url: str, *, cache: bool = True, retries: int = 4, timeout: int = 1
     HTTP is safe to add (it is believed only if it chains to a trusted root,
     which the handshake then tests).
     """
-    cache_dir = cache_dir or (RAW / "http_cache")
-    key = hashlib.sha256(url.encode()).hexdigest()[:24]
-    path = cache_dir / key
+    path = cache_path(url, cache_dir)
+    cache_dir = path.parent
     if cache and path.exists():
         blob = path.read_bytes()
         return blob if binary else blob.decode("utf-8", "replace")
