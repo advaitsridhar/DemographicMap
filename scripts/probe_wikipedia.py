@@ -133,6 +133,16 @@ def wikitexts(lang: str, titles: list[str]) -> dict[str, str]:
     return out
 
 
+# How much a reader could get out of each verdict, worst to best. It lives
+# beside verdict() because it must list every kind verdict() can return: the
+# re-probe of 22 September died on KeyError('section+figures') after 16,353
+# units had been resolved, because the two were edited apart. A test walks
+# verdict()'s own branches against this.
+RANK = ("nothing", "section only", "infobox", "section+infobox",
+        "section+figures", "section+figures+infobox",
+        "section+table", "section+table+infobox")
+
+
 def verdict(wikitext: str) -> tuple[str, list[str]]:
     """What this article carries, and the headings or parameters that say so.
 
@@ -248,12 +258,7 @@ def main() -> int:
                 kind, words = verdict(body)
                 key = unit["id"]
                 best = results.get(key)
-                # Ranked by how much a reader could get out of it. An
-                # infobox outranks a bare heading: the heading may be prose.
-                rank = {"section+table+infobox": 5, "section+table": 4,
-                        "section+infobox": 3, "infobox": 2,
-                        "section only": 1, "nothing": 0}
-                if best is None or rank[kind] > rank[best["kind"]]:
+                if best is None or RANK.index(kind) > RANK.index(best["kind"]):
                     results[key] = {"country": unit.get("country"),
                                     "level": unit.get("level"),
                                     "name": unit.get("name"),

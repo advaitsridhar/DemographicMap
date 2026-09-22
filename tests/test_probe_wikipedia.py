@@ -242,3 +242,39 @@ class AnInfoboxParameterMustStateShares(unittest.TestCase):
             "| religiejaar = 2015\n}}\n")
         self.assertEqual(kind, "infobox")
         self.assertEqual(words, ["religie"])
+
+
+class EveryVerdictHasAPlaceInTheRanking(unittest.TestCase):
+    """The two were edited apart once: the re-probe died on
+    KeyError('section+figures') after 16,353 units had been resolved."""
+
+    CASES = (
+        ("", "nothing"),
+        ("== Religion ==\nProse.\n", "section only"),
+        ("{{Infobox\n| religie = 68,4% geen\n}}\n", "infobox"),
+        ("{{Infobox\n| religie = 68,4% geen\n}}\n== Religie ==\nProza.\n",
+         "section+infobox"),
+        ("== Religion ==\n70.1% Catholic.\n", "section+figures"),
+        ("{{Infobox\n| religie = 68,4% geen\n}}\n== Religion ==\n70.1% X.\n",
+         "section+figures+infobox"),
+        ("== Religion ==\n{| class=wikitable\n| a | 1\n|}\n", "section+table"),
+        ("{{Infobox\n| religie = 68,4% geen\n}}\n== Religion ==\n"
+         "{| class=wikitable\n| a | 1\n|}\n", "section+table+infobox"),
+    )
+
+    def test_each_branch_of_verdict_is_rankable(self) -> None:
+        seen = set()
+        for text, expected in self.CASES:
+            kind, _ = p.verdict(text)
+            self.assertEqual(kind, expected, f"for {text!r}")
+            self.assertIn(kind, p.RANK, f"{kind!r} has no place in RANK")
+            seen.add(kind)
+        self.assertEqual(seen, set(p.RANK),
+                         "every kind in RANK must be reachable, and every "
+                         "kind verdict returns must be in RANK")
+
+    def test_a_table_outranks_figures_which_outrank_an_infobox(self) -> None:
+        order = [p.RANK.index(k) for k in
+                 ("nothing", "section only", "infobox", "section+figures",
+                  "section+table")]
+        self.assertEqual(order, sorted(order))
