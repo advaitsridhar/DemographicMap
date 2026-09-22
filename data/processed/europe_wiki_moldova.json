@@ -259,7 +259,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "the table in the article counts a population this shape does not have, so the article is about some other place; it is not read"
     },
     "sources": [],
     "country": "MDA"
@@ -292,12 +292,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 80.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 5.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.9
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 3.7
+      },
+      {
+        "group": "Russian",
+        "pct": 3.4
+      },
+      {
+        "group": "Gagauz",
+        "pct": 2.4
+      },
+      {
+        "group": "Other",
+        "pct": 0.5
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Cahul District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Cahul_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Cahul District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-calarasi",
@@ -327,12 +370,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 85.7
+      },
+      {
+        "group": "Romanian",
+        "pct": 10.0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.7
+      },
+      {
+        "group": "Romani",
+        "pct": 0.9
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Călărași District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/C%C4%83l%C4%83ra%C8%99i_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Călărași District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-cantemir",
@@ -440,12 +526,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 85.8
+      },
+      {
+        "group": "Romanian",
+        "pct": 8.4
+      },
+      {
+        "group": "Russian",
+        "pct": 2.3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.7
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.9
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Căușeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/C%C4%83u%C8%99eni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Căușeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-chisinau",
@@ -510,12 +639,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 86.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 5.1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.5
+      },
+      {
+        "group": "Russian",
+        "pct": 2.6
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 1.6
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Cimișlia District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Cimi%C8%99lia_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Cimișlia District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-criuleni",
@@ -545,12 +717,51 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 85.4
+      },
+      {
+        "group": "Romanian",
+        "pct": 10.8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.6
+      },
+      {
+        "group": "Russian",
+        "pct": 0.8
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Criuleni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Criuleni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Criuleni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-donduseni",
@@ -580,12 +791,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 81.1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 8.3
+      },
+      {
+        "group": "Russian",
+        "pct": 5.2
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.7
+      },
+      {
+        "group": "Romani",
+        "pct": 0.4
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Dondușeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Dondu%C8%99eni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Dondușeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-drochia",
@@ -615,12 +869,51 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 88.9
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 5.8
+      },
+      {
+        "group": "Romanian",
+        "pct": 3.3
+      },
+      {
+        "group": "Russian",
+        "pct": 1.2
+      },
+      {
+        "group": "Romani",
+        "pct": 0.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Drochia District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Drochia_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Drochia District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-dubasari",
@@ -650,12 +943,51 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 96.4
+      },
+      {
+        "group": "Romanian",
+        "pct": 2.5
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.5
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Dubăsari District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Dub%C4%83sari_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Dubăsari District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-edinet",
@@ -755,12 +1087,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 88.5
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.9
+      },
+      {
+        "group": "Russian",
+        "pct": 3.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.2
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Florești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Flore%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Florești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-gagauzia",
@@ -860,12 +1235,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 87.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 7.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.4
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6
+      },
+      {
+        "group": "Romani",
+        "pct": 0.5
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Hîncești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/H%C3%AEnce%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Hîncești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-ialoveni",
@@ -895,12 +1313,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 80.7
+      },
+      {
+        "group": "Romanian",
+        "pct": 15.6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.8
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.7
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5
+      },
+      {
+        "group": "Romani",
+        "pct": 0.4
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Ialoveni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ialoveni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ialoveni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-leova",
@@ -930,12 +1391,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 85.8
+      },
+      {
+        "group": "Romanian",
+        "pct": 5.8
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 5.2
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.2
+      },
+      {
+        "group": "Russian",
+        "pct": 1.0
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.5
+      },
+      {
+        "group": "Romani",
+        "pct": 0.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Leova District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Leova_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Leova District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-nisporeni",
@@ -965,12 +1469,47 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 89.4
+      },
+      {
+        "group": "Romanian",
+        "pct": 8.6
+      },
+      {
+        "group": "Romani",
+        "pct": 1.3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.3
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Nisporeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Nisporeni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Nisporeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-ocnita",
@@ -1000,12 +1539,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 69.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 18.7
+      },
+      {
+        "group": "Romani",
+        "pct": 5.8
+      },
+      {
+        "group": "Russian",
+        "pct": 3.9
+      },
+      {
+        "group": "Romanian",
+        "pct": 1.7
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Ocnița District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ocni%C8%9Ba_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ocnița District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-orhei",
@@ -1035,12 +1617,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 88.0
+      },
+      {
+        "group": "Romanian",
+        "pct": 8.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.2
+      },
+      {
+        "group": "Russian",
+        "pct": 0.9
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Orhei District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Orhei_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Orhei District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-riscani",
@@ -1105,12 +1730,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 90.9
+      },
+      {
+        "group": "Romanian",
+        "pct": 5.8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.9
+      },
+      {
+        "group": "Russian",
+        "pct": 1.0
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Rezina District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Rezina_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Rezina District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-singerei",
@@ -1140,12 +1808,51 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 88.1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 4.9
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.2
+      },
+      {
+        "group": "Russian",
+        "pct": 2.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Sîngerei District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/S%C3%AEngerei_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Sîngerei District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-soldanesti",
@@ -1175,12 +1882,47 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 93.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.1
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4
+      },
+      {
+        "group": "Romani",
+        "pct": 0.2
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Șoldănești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/%C8%98old%C4%83ne%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Șoldănești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-soroca",
@@ -1210,12 +1952,47 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 90.1
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.9
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.1
+      },
+      {
+        "group": "Romani",
+        "pct": 1.5
+      },
+      {
+        "group": "Russian",
+        "pct": 1.1
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Soroca District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Soroca_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Soroca District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-stefan-voda",
@@ -1245,12 +2022,55 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 86.7
+      },
+      {
+        "group": "Romanian",
+        "pct": 8.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.4
+      },
+      {
+        "group": "Russian",
+        "pct": 1.5
+      },
+      {
+        "group": "Romani",
+        "pct": 0.5
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Ștefan Vodă District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/%C8%98tefan_Vod%C4%83_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ștefan Vodă District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-straseni",
@@ -1280,12 +2100,51 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 86.9
+      },
+      {
+        "group": "Romanian",
+        "pct": 11.3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.7
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Strășeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Str%C4%83%C8%99eni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Strășeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-taraclia",
@@ -1350,12 +2209,43 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 90.8
+      },
+      {
+        "group": "Romanian",
+        "pct": 8.2
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.6
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Telenești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Telene%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Telenești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-transnistria",
@@ -1420,12 +2310,47 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 91.0
+      },
+      {
+        "group": "Romanian",
+        "pct": 5.0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.7
+      },
+      {
+        "group": "Russian",
+        "pct": 0.8
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Ungheni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ungheni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ungheni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-anenii-noi",
@@ -1689,13 +2614,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 72.6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 22.5
+      },
+      {
+        "group": "Russian",
+        "pct": 2.3
+      },
+      {
+        "group": "Romanian",
+        "pct": 2.0
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.21
+      },
+      {
+        "group": "Other",
+        "pct": 0.3
+      },
+      {
+        "group": "Romani",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Briceni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Briceni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Briceni",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Briceni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census. As printed the shares add to 101.3%, and are carried as printed."
   },
   {
     "id": "MDA-admin2-cahul",
@@ -1725,13 +2693,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 80.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 5.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.9
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 3.7
+      },
+      {
+        "group": "Russian",
+        "pct": 3.4
+      },
+      {
+        "group": "Gagauz",
+        "pct": 2.4
+      },
+      {
+        "group": "Other",
+        "pct": 0.5
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Cahul District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Cahul_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Cahul",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Cahul District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-calarasi",
@@ -1761,13 +2772,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 85.7
+      },
+      {
+        "group": "Romanian",
+        "pct": 10.0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.7
+      },
+      {
+        "group": "Romani",
+        "pct": 0.9
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Călărași District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/C%C4%83l%C4%83ra%C8%99i_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Calarasi",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Călărași District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-cantemir",
@@ -1876,13 +2930,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 85.8
+      },
+      {
+        "group": "Romanian",
+        "pct": 8.4
+      },
+      {
+        "group": "Russian",
+        "pct": 2.3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.7
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.9
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Căușeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/C%C4%83u%C8%99eni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Causeni",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Căușeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-chisinau",
@@ -1948,13 +3045,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 86.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 5.1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.5
+      },
+      {
+        "group": "Russian",
+        "pct": 2.6
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 1.6
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Cimișlia District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Cimi%C8%99lia_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Cimislia",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Cimișlia District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-criuleni",
@@ -1984,13 +3124,52 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 85.4
+      },
+      {
+        "group": "Romanian",
+        "pct": 10.8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.6
+      },
+      {
+        "group": "Russian",
+        "pct": 0.8
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Criuleni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Criuleni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Criuleni",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Criuleni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-donduseni",
@@ -2020,13 +3199,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 81.1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 8.3
+      },
+      {
+        "group": "Russian",
+        "pct": 5.2
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.7
+      },
+      {
+        "group": "Romani",
+        "pct": 0.4
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Dondușeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Dondu%C8%99eni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Donduseni",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Dondușeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-drochia",
@@ -2056,13 +3278,52 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 88.9
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 5.8
+      },
+      {
+        "group": "Romanian",
+        "pct": 3.3
+      },
+      {
+        "group": "Russian",
+        "pct": 1.2
+      },
+      {
+        "group": "Romani",
+        "pct": 0.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Drochia District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Drochia_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Drochia",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Drochia District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-dubasari",
@@ -2092,13 +3353,52 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 96.4
+      },
+      {
+        "group": "Romanian",
+        "pct": 2.5
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.5
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Dubăsari District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Dub%C4%83sari_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Dubasari",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Dubăsari District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-edinet",
@@ -2200,13 +3500,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 88.5
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.9
+      },
+      {
+        "group": "Russian",
+        "pct": 3.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.2
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.0
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Florești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Flore%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Floresti",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Florești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-gagauzia",
@@ -2308,13 +3651,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 87.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 7.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 3.4
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6
+      },
+      {
+        "group": "Romani",
+        "pct": 0.5
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Hîncești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/H%C3%AEnce%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Hincesti",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Hîncești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-ialoveni",
@@ -2344,13 +3730,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 80.7
+      },
+      {
+        "group": "Romanian",
+        "pct": 15.6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.8
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.7
+      },
+      {
+        "group": "Russian",
+        "pct": 0.5
+      },
+      {
+        "group": "Romani",
+        "pct": 0.4
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Ialoveni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ialoveni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Ialoveni",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ialoveni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-leova",
@@ -2380,13 +3809,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 85.8
+      },
+      {
+        "group": "Romanian",
+        "pct": 5.8
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 5.2
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.2
+      },
+      {
+        "group": "Russian",
+        "pct": 1.0
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.5
+      },
+      {
+        "group": "Romani",
+        "pct": 0.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Leova District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Leova_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Leova",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Leova District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-nisporeni",
@@ -2416,13 +3888,48 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 89.4
+      },
+      {
+        "group": "Romanian",
+        "pct": 8.6
+      },
+      {
+        "group": "Romani",
+        "pct": 1.3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.3
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Nisporeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Nisporeni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Nisporeni",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Nisporeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-ocnita",
@@ -2452,13 +3959,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 69.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 18.7
+      },
+      {
+        "group": "Romani",
+        "pct": 5.8
+      },
+      {
+        "group": "Russian",
+        "pct": 3.9
+      },
+      {
+        "group": "Romanian",
+        "pct": 1.7
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Ocnița District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ocni%C8%9Ba_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Ocnita",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ocnița District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-orhei",
@@ -2488,13 +4038,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 88.0
+      },
+      {
+        "group": "Romanian",
+        "pct": 8.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.2
+      },
+      {
+        "group": "Russian",
+        "pct": 0.9
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Orhei District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Orhei_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Orhei",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Orhei District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-riscani",
@@ -2560,13 +4153,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 90.9
+      },
+      {
+        "group": "Romanian",
+        "pct": 5.8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.9
+      },
+      {
+        "group": "Russian",
+        "pct": 1.0
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Rezina District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Rezina_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Rezina",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Rezina District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-singerei",
@@ -2596,13 +4232,52 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 88.1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 4.9
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.2
+      },
+      {
+        "group": "Russian",
+        "pct": 2.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Sîngerei District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/S%C3%AEngerei_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "SIngerei",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Sîngerei District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-soldanesti",
@@ -2632,13 +4307,48 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 93.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.1
+      },
+      {
+        "group": "Russian",
+        "pct": 0.4
+      },
+      {
+        "group": "Romani",
+        "pct": 0.2
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Șoldănești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/%C8%98old%C4%83ne%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Soldanesti",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Șoldănești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-soroca",
@@ -2668,13 +4378,48 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 90.1
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.9
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.1
+      },
+      {
+        "group": "Romani",
+        "pct": 1.5
+      },
+      {
+        "group": "Russian",
+        "pct": 1.1
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Soroca District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Soroca_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Soroca",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Soroca District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-stefan-voda",
@@ -2704,13 +4449,56 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 86.7
+      },
+      {
+        "group": "Romanian",
+        "pct": 8.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.4
+      },
+      {
+        "group": "Russian",
+        "pct": 1.5
+      },
+      {
+        "group": "Romani",
+        "pct": 0.5
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Ștefan Vodă District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/%C8%98tefan_Vod%C4%83_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Stefan Voda",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ștefan Vodă District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-straseni",
@@ -2740,13 +4528,52 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 86.9
+      },
+      {
+        "group": "Romanian",
+        "pct": 11.3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.7
+      },
+      {
+        "group": "Russian",
+        "pct": 0.6
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Strășeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Str%C4%83%C8%99eni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Straseni",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Strășeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-taraclia",
@@ -2812,13 +4639,44 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 90.8
+      },
+      {
+        "group": "Romanian",
+        "pct": 8.2
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.6
+      },
+      {
+        "group": "Russian",
+        "pct": 0.2
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Telenești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Telene%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Telenesti",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Telenești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-transnistria",
@@ -2884,12 +4742,47 @@
       "status": "not_available",
       "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 91.0
+      },
+      {
+        "group": "Romanian",
+        "pct": 5.0
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.7
+      },
+      {
+        "group": "Russian",
+        "pct": 0.8
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Ungheni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ungheni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Ungheni",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ungheni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   }
 ]
