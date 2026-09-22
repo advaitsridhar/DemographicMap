@@ -5393,51 +5393,6 @@
     "match_by": "shape_id"
   },
   {
-    "id": "ITA-WP-sud",
-    "level": "admin1",
-    "name": "Sud",
-    "parent": "ITA",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 19669678,
-      "unit": "people",
-      "year": 2026,
-      "source": "English Wikipedia, Southern Italy (infobox)"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Southern_Italy",
-        "year": 2026,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "country": "ITA",
-    "shape_id": "72843720B88210905209841",
-    "match_by": "shape_id"
-  },
-  {
     "id": "JAM-WP-clarendon",
     "level": "admin1",
     "name": "Clarendon",
@@ -20453,7 +20408,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VAT"
+    "country": "VAT",
+    "shape_id": "52476719B53484862947726",
+    "match_by": "shape_id"
   },
   {
     "id": "VCT-WP-charlotte",
@@ -20495,7 +20452,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VCT"
+    "country": "VCT",
+    "shape_id": "94954027B88448576527444",
+    "match_by": "shape_id"
   },
   {
     "id": "VCT-WP-saint-andrew",
@@ -20537,7 +20496,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VCT"
+    "country": "VCT",
+    "shape_id": "94954027B50419639501702",
+    "match_by": "shape_id"
   },
   {
     "id": "VCT-WP-saint-david",
@@ -20579,7 +20540,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VCT"
+    "country": "VCT",
+    "shape_id": "94954027B75488374461778",
+    "match_by": "shape_id"
   },
   {
     "id": "VCT-WP-saint-george",
@@ -20621,7 +20584,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VCT"
+    "country": "VCT",
+    "shape_id": "94954027B8071677306874",
+    "match_by": "shape_id"
   },
   {
     "id": "VCT-WP-saint-patrick",
@@ -20663,7 +20628,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VCT"
+    "country": "VCT",
+    "shape_id": "94954027B24043744256815",
+    "match_by": "shape_id"
   },
   {
     "id": "VEN-WP-barinas",
@@ -20706,7 +20673,54 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VEN"
+    "country": "VEN",
+    "shape_id": "42786344B61768817645443",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "VEN-WP-dependencias-federales",
+    "level": "admin1",
+    "name": "Dependencias Federales",
+    "parent": "VEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2155,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Federal Dependencies of Venezuela (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Federal_Dependencies_of_Venezuela",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VEN",
+    "shape_id": "42786344B77541452473448",
+    "match_by": "shape_id"
   },
   {
     "id": "VEN-WP-distrito-capital",
@@ -20749,7 +20763,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VEN"
+    "country": "VEN",
+    "shape_id": "42786344B65702840901799",
+    "match_by": "shape_id"
   },
   {
     "id": "VEN-WP-la-guaira",
@@ -20792,7 +20808,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VEN"
+    "country": "VEN",
+    "shape_id": "42786344B94533756407676",
+    "match_by": "shape_id"
   },
   {
     "id": "VEN-WP-miranda",
@@ -20835,7 +20853,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VEN"
+    "country": "VEN",
+    "shape_id": "42786344B65180575927800",
+    "match_by": "shape_id"
   },
   {
     "id": "VEN-WP-mérida",
@@ -20878,7 +20898,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VEN"
+    "country": "VEN",
+    "shape_id": "42786344B40280485548078",
+    "match_by": "shape_id"
   },
   {
     "id": "VEN-WP-portuguesa",
@@ -20921,7 +20943,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VEN"
+    "country": "VEN",
+    "shape_id": "42786344B52185535187745",
+    "match_by": "shape_id"
   },
   {
     "id": "VEN-WP-trujillo",
@@ -20964,7 +20988,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VEN"
+    "country": "VEN",
+    "shape_id": "42786344B81831268549679",
+    "match_by": "shape_id"
   },
   {
     "id": "VEN-WP-táchira",
@@ -21007,7 +21033,54 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VEN"
+    "country": "VEN",
+    "shape_id": "42786344B49171663325386",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "VNM-WP-côn-đảo",
+    "level": "admin1",
+    "name": "Côn Đảo",
+    "parent": "VNM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8827,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Côn Đảo (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/C%C3%B4n_%C4%90%E1%BA%A3o",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VNM",
+    "shape_id": "63759600B5991530625500",
+    "match_by": "shape_id"
   },
   {
     "id": "VUT-WP-penama",
@@ -21050,7 +21123,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VUT"
+    "country": "VUT",
+    "shape_id": "32282491B78905986242135",
+    "match_by": "shape_id"
   },
   {
     "id": "VUT-WP-sanma",
@@ -21093,7 +21168,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VUT"
+    "country": "VUT",
+    "shape_id": "32282491B7486560380604",
+    "match_by": "shape_id"
   },
   {
     "id": "VUT-WP-shefa-province",
@@ -21136,7 +21213,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VUT"
+    "country": "VUT",
+    "shape_id": "32282491B17169683382430",
+    "match_by": "shape_id"
   },
   {
     "id": "VUT-WP-torba",
@@ -21179,7 +21258,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "VUT"
+    "country": "VUT",
+    "shape_id": "32282491B8417950609019",
+    "match_by": "shape_id"
   },
   {
     "id": "WSM-WP-aiga-i-le-tai",
@@ -21222,7 +21303,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "WSM"
+    "country": "WSM",
+    "shape_id": "40696546B9385579031596",
+    "match_by": "shape_id"
   },
   {
     "id": "WSM-WP-atua",
@@ -21265,7 +21348,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "WSM"
+    "country": "WSM",
+    "shape_id": "40696546B40781349975951",
+    "match_by": "shape_id"
   },
   {
     "id": "WSM-WP-faasaleleaga",
@@ -21308,7 +21393,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "WSM"
+    "country": "WSM",
+    "shape_id": "40696546B94827234951055",
+    "match_by": "shape_id"
   },
   {
     "id": "WSM-WP-gagaemauga",
@@ -21351,7 +21438,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "WSM"
+    "country": "WSM",
+    "shape_id": "40696546B45584224409911",
+    "match_by": "shape_id"
   },
   {
     "id": "WSM-WP-gagaifomauga",
@@ -21394,7 +21483,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "WSM"
+    "country": "WSM",
+    "shape_id": "40696546B1701315009328",
+    "match_by": "shape_id"
   },
   {
     "id": "WSM-WP-palauli",
@@ -21437,7 +21528,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "WSM"
+    "country": "WSM",
+    "shape_id": "40696546B72194673836531",
+    "match_by": "shape_id"
   },
   {
     "id": "WSM-WP-satupaitea",
@@ -21480,7 +21573,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "WSM"
+    "country": "WSM",
+    "shape_id": "40696546B5747120083880",
+    "match_by": "shape_id"
   },
   {
     "id": "WSM-WP-tuamasaga",
@@ -21523,7 +21618,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "WSM"
+    "country": "WSM",
+    "shape_id": "40696546B29543190564601",
+    "match_by": "shape_id"
   },
   {
     "id": "WSM-WP-vaa-o-fonoti",
@@ -21566,7 +21663,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "WSM"
+    "country": "WSM",
+    "shape_id": "40696546B90373058224054",
+    "match_by": "shape_id"
   },
   {
     "id": "WSM-WP-vaisigano",
@@ -21609,7 +21708,54 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "WSM"
+    "country": "WSM",
+    "shape_id": "40696546B98223692696505",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "YEM-WP-sanʿaʾ-governorate",
+    "level": "admin1",
+    "name": "Sanʿaʾ Governorate",
+    "parent": "YEM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2409000,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Sanaa Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sanaa_Governorate",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "YEM",
+    "shape_id": "18629408B64822604790923",
+    "match_by": "shape_id"
   },
   {
     "id": "ZMB-WP-central",
@@ -21652,7 +21798,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZMB"
+    "country": "ZMB",
+    "shape_id": "6923714B60407914126357",
+    "match_by": "shape_id"
   },
   {
     "id": "ZMB-WP-copperbelt",
@@ -21695,7 +21843,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZMB"
+    "country": "ZMB",
+    "shape_id": "6923714B61812757118010",
+    "match_by": "shape_id"
   },
   {
     "id": "ZMB-WP-eastern",
@@ -21738,7 +21888,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZMB"
+    "country": "ZMB",
+    "shape_id": "6923714B50523150920038",
+    "match_by": "shape_id"
   },
   {
     "id": "ZMB-WP-luapula",
@@ -21781,7 +21933,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZMB"
+    "country": "ZMB",
+    "shape_id": "6923714B94361964796426",
+    "match_by": "shape_id"
   },
   {
     "id": "ZMB-WP-lusaka",
@@ -21824,7 +21978,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZMB"
+    "country": "ZMB",
+    "shape_id": "6923714B17126467226495",
+    "match_by": "shape_id"
   },
   {
     "id": "ZMB-WP-muchinga",
@@ -21867,7 +22023,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZMB"
+    "country": "ZMB",
+    "shape_id": "6923714B61233419501629",
+    "match_by": "shape_id"
   },
   {
     "id": "ZMB-WP-north-western",
@@ -21910,7 +22068,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZMB"
+    "country": "ZMB",
+    "shape_id": "6923714B68349750823816",
+    "match_by": "shape_id"
   },
   {
     "id": "ZMB-WP-northern",
@@ -21953,7 +22113,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZMB"
+    "country": "ZMB",
+    "shape_id": "6923714B80596734375081",
+    "match_by": "shape_id"
   },
   {
     "id": "ZMB-WP-southern",
@@ -21996,7 +22158,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZMB"
+    "country": "ZMB",
+    "shape_id": "6923714B34072001548912",
+    "match_by": "shape_id"
   },
   {
     "id": "ZMB-WP-western",
@@ -22039,7 +22203,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZMB"
+    "country": "ZMB",
+    "shape_id": "6923714B71523451831393",
+    "match_by": "shape_id"
   },
   {
     "id": "ZWE-WP-harare",
@@ -22082,7 +22248,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZWE"
+    "country": "ZWE",
+    "shape_id": "88200057B87996012089813",
+    "match_by": "shape_id"
   },
   {
     "id": "ZWE-WP-manicaland",
@@ -22125,7 +22293,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZWE"
+    "country": "ZWE",
+    "shape_id": "88200057B32763847551562",
+    "match_by": "shape_id"
   },
   {
     "id": "ZWE-WP-mashonaland-east",
@@ -22168,7 +22338,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZWE"
+    "country": "ZWE",
+    "shape_id": "88200057B49508968932773",
+    "match_by": "shape_id"
   },
   {
     "id": "ZWE-WP-mashonaland-west",
@@ -22211,7 +22383,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZWE"
+    "country": "ZWE",
+    "shape_id": "88200057B70993266842589",
+    "match_by": "shape_id"
   },
   {
     "id": "ZWE-WP-masvingo",
@@ -22254,7 +22428,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZWE"
+    "country": "ZWE",
+    "shape_id": "88200057B85209083975104",
+    "match_by": "shape_id"
   },
   {
     "id": "ZWE-WP-matabeleland-south",
@@ -22297,7 +22473,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZWE"
+    "country": "ZWE",
+    "shape_id": "88200057B5014357533485",
+    "match_by": "shape_id"
   },
   {
     "id": "ZWE-WP-midlands",
@@ -22340,6 +22518,8 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "ZWE"
+    "country": "ZWE",
+    "shape_id": "88200057B27236199640876",
+    "match_by": "shape_id"
   }
 ]
