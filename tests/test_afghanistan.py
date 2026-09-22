@@ -154,3 +154,30 @@ class AHeaderSplitByItsOwnCitation(unittest.TestCase):
         got = a.repair_header(["District", "Area {{Cite", "Notes"])
         self.assertEqual(got[0], "District")
         self.assertEqual(len(got), 2)
+
+
+class TheTwoKindsOfOverrun(unittest.TestCase):
+    """Rounding lands just over a hundred; a row that is not a district at
+    all lands far over. The first run showed both and they do not overlap.
+    """
+
+    def test_a_rounding_overrun_is_kept(self) -> None:
+        # Qala i Naw, refused by the first run at 101.0%.
+        self.assertTrue(a.usable([{"group": "Pashtun", "pct": 60.0},
+                                  {"group": "Tajik", "pct": 25.0},
+                                  {"group": "Aimaq", "pct": 16.0}], "Qala i Naw"))
+
+    def test_a_tenth_of_a_point_over_is_kept(self) -> None:
+        # Herat, refused at 100.9%.
+        self.assertTrue(a.usable([{"group": "Tajik", "pct": 80.9},
+                                  {"group": "Pashtun", "pct": 20.0}], "Herat"))
+
+    def test_a_province_summary_row_is_still_refused(self) -> None:
+        # Badakhshan's own row concatenates every district's note: 185.4%.
+        self.assertFalse(a.usable([{"group": "Tajik", "pct": 100.0},
+                                   {"group": "Pashtun", "pct": 85.4}], "Badakhshan"))
+
+    def test_the_gap_between_the_two_kinds_is_not_crossed(self) -> None:
+        # Nothing observed sits between 103% and 144%; 110% is refused.
+        self.assertFalse(a.usable([{"group": "Tajik", "pct": 70.0},
+                                   {"group": "Uzbek", "pct": 40.0}], "x"))

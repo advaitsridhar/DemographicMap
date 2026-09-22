@@ -102,9 +102,17 @@ MARKUP = re.compile(r"\{\{[^{}]*\}\}|'''?|<[^>]+>|align=\w+\|?|style=\"[^\"]*\""
 AFTER = re.compile(r"([A-Za-z][A-Za-z\- ]{2,24}?)\s*[:\-]?\s*(\d{1,3}(?:\.\d+)?)\s*%")
 BEFORE = re.compile(r"(\d{1,3}(?:\.\d+)?)\s*%\s*(?:of\s+)?([A-Za-z][A-Za-z\- ]{2,24})")
 # A composition may fall short -- the plans list the groups they list -- but
-# never overrun: over 100 means a group counted twice and the arithmetic then
+# a large overrun means a group counted twice and the arithmetic then
 # describes nobody.
-CEILING = 100.5
+#
+# The ceiling is 101.5 rather than 100.5 because the first run showed what
+# the two kinds of overrun actually look like, and they are nothing like each
+# other. Rounding lands just over: Qala i Naw at 101.0%, Herat at 100.9%,
+# both real districts thrown away over a tenth of a point. A row that is not
+# a district at all lands far over -- the province's own summary row
+# concatenates every district's note, so Badakhshan came to 185.4%, Ghor to
+# 170.9% and Badghis to 144.4%. Nothing observed sits between 103% and 144%.
+CEILING = 101.5
 FLOOR = 55.0
 
 
