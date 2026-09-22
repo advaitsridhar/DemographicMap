@@ -258,6 +258,54 @@ def province_rows(province: str, *, probing: bool) -> list[dict[str, Any]]:
     return out
 
 
+# Two readings of one district agree when they name the same groups and no
+# share moves by more than this. Kunduz's table prints it twice, once rounded
+# and once not -- 33% against 33.2%, 27% against 26.8% -- and that is one
+# figure written twice, not two claims.
+AGREEMENT = 2.0
+
+
+def settle(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], str]:
+    """One reading for a district the table names more than once.
+
+    Four provinces have a district sharing the province's name, and print two
+    rows for it. Sometimes that is the same figure at two precisions, and
+    sometimes it is two sources that disagree:
+
+        Ghazni   Tajik 50%, Pashtun 25%, Hazara 20%
+        Ghazni   Pashtun 48.1%, Hazara 43.8%, Tajik 7.4%
+
+    Tajik at 50% and at 7.4% cannot both describe Ghazni. Left alone the
+    later record silently replaced the earlier one and the map showed
+    whichever it happened to be, with nothing saying a source disagreed by
+    forty-two points -- the invisible error this map ranks below an empty
+    district.
+
+    So agreement keeps the better-resolved reading, and contradiction keeps
+    neither and says so.
+    """
+    if len(rows) == 1:
+        return rows, ""
+    shares = [{p["group"]: p["pct"] for p in r["ethnicity"]} for r in rows]
+    first = shares[0]
+    for other in shares[1:]:
+        if set(other) != set(first):
+            return [], "they name different groups"
+        worst = max(abs(other[g] - first[g]) for g in first)
+        if worst > AGREEMENT:
+            bad = max(first, key=lambda g: abs(other[g] - first[g]))
+            return [], (f"{bad} is {first[bad]:g}% in one and "
+                        f"{other[bad]:g}% in the other")
+    # Same figures at two precisions: keep the one that states them finest.
+    #
+    # Measured by how many shares are not whole numbers, not by the length of
+    # the decimal part -- "33.0" and "33.2" both print one digit after the
+    # point and would tie, and the tie would hand back the rounded row.
+    best = max(rows, key=lambda r: sum(
+        1 for p in r["ethnicity"] if p["pct"] % 1))
+    return [best], ""
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -271,7 +319,20 @@ def main(argv: list[str] | None = None) -> int:
               else list(PROVINCES))
     records: list[dict[str, Any]] = []
     for province in wanted:
+        seen: dict[str, list[dict[str, Any]]] = {}
         for row in province_rows(province, probing=args.probe):
+            seen.setdefault(row["district"], []).append(row)
+        settled: list[dict[str, Any]] = []
+        for district, found in seen.items():
+            kept, why = settle(found)
+            if why:
+                log(f"    {province}/{district}: refused, the table names it "
+                    f"{len(found)} times and {why}")
+            elif len(found) > 1:
+                log(f"    {province}/{district}: named {len(found)} times, "
+                    f"the readings agree; kept the finer one")
+            settled += kept
+        for row in settled:
             # The province belongs in the id and on the row, and both for the
             # same reason. Afghanistan has a Baharak in Badakhshan and another
             # in Takhar, a Fayzabad in Badakhshan and another in Jowzjan, and

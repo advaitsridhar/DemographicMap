@@ -219,3 +219,54 @@ class ADistrictNameThatRepeatsAcrossProvinces(unittest.TestCase):
         src = (Path(__file__).resolve().parent.parent / "scripts"
                / "fetch_census" / "afghanistan.py").read_text()
         self.assertIn('"province": province', src)
+
+
+class ADistrictTheTableNamesTwice(unittest.TestCase):
+    """Four provinces have a district sharing the province's name and print
+    two rows for it. Sometimes that is one figure at two precisions, and
+    sometimes it is two sources that disagree.
+    """
+
+    def row(self, *pairs):
+        return {"district": "X", "province": "P",
+                "ethnicity": [{"group": g, "pct": p} for g, p in pairs]}
+
+    def test_one_row_passes_through(self) -> None:
+        kept, why = a.settle([self.row(("Tajik", 100.0))])
+        self.assertEqual(why, "")
+        self.assertEqual(len(kept), 1)
+
+    def test_the_same_figures_rounded_twice_keep_the_finer_one(self) -> None:
+        # Kunduz, as the article prints it.
+        coarse = self.row(("Pashtun", 33.0), ("Uzbek", 27.0), ("Tajik", 22.0))
+        fine = self.row(("Pashtun", 33.2), ("Uzbek", 26.8), ("Tajik", 21.8))
+        kept, why = a.settle([coarse, fine])
+        self.assertEqual(why, "")
+        self.assertEqual(kept, [fine], "the finer reading is the one to keep")
+
+    def test_two_readings_that_contradict_keep_neither(self) -> None:
+        # Ghazni: Tajik at 50% in one row and 7.4% in the other.
+        kept, why = a.settle([
+            self.row(("Tajik", 50.0), ("Pashtun", 25.0), ("Hazara", 20.0)),
+            self.row(("Tajik", 7.4), ("Pashtun", 48.1), ("Hazara", 43.8))])
+        self.assertEqual(kept, [], "a district cannot be both")
+        self.assertIn("Tajik", why)
+        self.assertIn("50", why)
+
+    def test_the_refusal_names_the_group_that_moved_most(self) -> None:
+        _, why = a.settle([
+            self.row(("Hazara", 76.0), ("Tajik", 20.0)),
+            self.row(("Hazara", 83.9), ("Tajik", 20.0))])
+        self.assertIn("Hazara", why)
+
+    def test_readings_of_different_groups_keep_neither(self) -> None:
+        kept, why = a.settle([self.row(("Tajik", 100.0)),
+                              self.row(("Pashtun", 100.0))])
+        self.assertEqual(kept, [])
+        self.assertIn("different groups", why)
+
+    def test_a_two_point_gap_is_rounding_and_is_kept(self) -> None:
+        kept, why = a.settle([self.row(("Tajik", 60.0), ("Uzbek", 40.0)),
+                              self.row(("Tajik", 61.5), ("Uzbek", 38.5))])
+        self.assertEqual(why, "")
+        self.assertEqual(len(kept), 1)
