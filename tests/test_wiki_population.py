@@ -217,6 +217,39 @@ class Resolving(unittest.TestCase):
         got = wp.resolve(units("Ngatpang"), pool(("Ngatpang", None)))
         self.assertEqual(got, {})
 
+    def test_a_prefix_that_adds_a_whole_word_is_a_different_place(self):
+        # All three are from the first run of this reader, which published
+        # none of them only because none of the three articles carried a
+        # population. Clarendon Park is a town inside Clarendon parish, the
+        # Valletta-Mdina railway is not Valletta, and a pottery phase named
+        # after Tarxien is not Tarxien.
+        for name, label, title in (
+                ("Clarendon", "Clarendon Park", "Clarendon Park, Jamaica"),
+                ("Valletta", "Valletta\u2013Mdina railway", "Malta Railway"),
+                ("Tarxien", "Tarxien Cemetery phase", "Tarxien Cemetery phase")):
+            self.assertEqual(wp.resolve(units(name), pool((label, title))), {}, name)
+
+    def test_a_name_cut_to_the_boundary_file_s_width_may_lose_a_whole_word(self):
+        # "Baie Saint" is ten characters because the boundary file stops
+        # there, and the district is Baie Sainte Anne.
+        got = wp.resolve(units("Baie Saint"),
+                         pool(("Baie Sainte Anne", "Baie Sainte Anne")))
+        self.assertEqual(got["u1"][:2], ("Q1", "Baie Sainte Anne"))
+
+    def test_a_shorter_name_may_still_gain_an_ending(self):
+        got = wp.resolve(units("Cascade"), pool(("Cascades", "Cascades")))
+        self.assertEqual(got["u1"][:2], ("Q1", "Cascades"))
+
+    def test_the_item_the_build_already_joined_wins(self):
+        # A wider pool is consulted only for what the first pass left short,
+        # so a match already made can never be taken away by one.
+        preset = {"u1": ("Q9", "Attard", "wikidata")}
+        got = wp.resolve(units("Attard", "Balzan"),
+                         pool(("Attard", "Attard, Malta"), ("Balzan", "Balzan")),
+                         preset)
+        self.assertEqual(got["u1"], ("Q9", "Attard", "wikidata"))
+        self.assertEqual(got["u2"][:2], ("Q2", "Balzan"))
+
     def test_a_short_name_is_not_prefix_matched(self):
         # "Bay" would start Bayamo, Bayan Olgii and a hundred other places.
         got = wp.resolve(units("Bay"), pool(("Bayamo", "Bayamo")))

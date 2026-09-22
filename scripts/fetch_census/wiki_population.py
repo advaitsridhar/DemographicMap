@@ -89,11 +89,25 @@ PER_PAGE = 500
 PREFIX_MIN = 6
 NEAR_MIN = 8
 NEAR = 0.92
+# The width the boundary file cuts a name to. Seychelles' 24 districts are all
+# exactly ten characters -- "Anse Etoil", "Mont Buxto", "Baie Saint" -- and a
+# name that long is the only one this module will follow a prefix of freely.
+# Below it a prefix may only make up an ending, three characters at most,
+# because a prefix that adds a whole word is a different place: the first run
+# of this reader matched Jamaica's Clarendon parish to Clarendon Park, a town
+# inside it, and Malta's Valletta to the Valletta-Mdina railway.
+TRUNCATED_AT = 10
+PREFIX_TAIL = 3
 
 # The most items to consider for one country. Malta files every locality,
 # parish church and street directly under the country, and a candidate
 # list longer than this is not going to be made safer by being longer.
 CEILING = 4000
+
+# How many of a country's own divisions to open in turn when its first
+# level is not what sits directly under it. Five for Malta, thirteen for
+# Saudi Arabia; a country with more than this has not needed it.
+GRANDCHILDREN = 60
 
 
 # ---------------------------------------------------------------------------
@@ -205,6 +219,26 @@ def children(country_qid: str) -> list[str]:
     return out
 
 
+def contains(qid: str) -> list[str]:
+    """What an item says it is divided into: its P150 statements.
+
+    The P131 search alone missed whole countries. Malta files its 68 local
+    councils under one of five regions and not under Malta, so a search for
+    what sits directly in the country returned 62 items and matched three, all
+    three wrong. Reading the division downwards instead of upwards reaches
+    them, and reaches a first-level unit whose own article is the only place
+    its population is written.
+    """
+    payload = api(DATA, action="wbgetentities", ids=qid, props="claims")
+    item = ((payload or {}).get("entities") or {}).get(qid) or {}
+    out = []
+    for claim in (item.get("claims") or {}).get("P150", []):
+        value = (((claim.get("mainsnak") or {}).get("datavalue") or {}).get("value") or {})
+        if isinstance(value, dict) and value.get("id"):
+            out.append(value["id"])
+    return out
+
+
 def entities(qids: Iterable[str]) -> dict[str, dict[str, Any]]:
     """Labels, aliases and the English article title, for a list of items."""
     out: dict[str, dict[str, Any]] = {}
@@ -224,7 +258,8 @@ def entities(qids: Iterable[str]) -> dict[str, dict[str, Any]]:
     return out
 
 
-def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]]
+def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]],
+            preset: dict[str, tuple[str, str, str]] | None = None
             ) -> dict[str, tuple[str, str, str]]:
     """unit id -> (Wikidata item, English title, how it was matched).
 
@@ -252,8 +287,8 @@ def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]]
             if form:
                 by_name.setdefault(form, []).append(qid)
 
-    taken: set[str] = set()
-    out: dict[str, tuple[str, str, str]] = {}
+    out: dict[str, tuple[str, str, str]] = dict(preset or {})
+    taken: set[str] = {qid for qid, _, _ in out.values()}
 
     def unique(hits: list[str]) -> str | None:
         hits = [q for q in dict.fromkeys(hits) if q not in taken]
@@ -262,13 +297,16 @@ def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]]
     def exact(key: str) -> str | None:
         return unique(by_name.get(key, []))
 
-    def prefix(key: str) -> str | None:
+    def prefix(key: str, raw: str) -> str | None:
         if len(key) < PREFIX_MIN:
             return None
+        cut = len(raw.strip()) >= TRUNCATED_AT
         return unique([q for form, qids in by_name.items()
-                       if form.startswith(key) for q in qids])
+                       if form.startswith(key)
+                       and (cut or len(form) - len(key) <= PREFIX_TAIL)
+                       for q in qids])
 
-    def near(key: str) -> str | None:
+    def near(key: str, raw: str) -> str | None:
         if len(key) < NEAR_MIN:
             return None
         return unique([q for form, qids in by_name.items()
@@ -276,14 +314,15 @@ def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]]
                        and SequenceMatcher(None, key, form).ratio() >= NEAR
                        for q in qids])
 
-    for how, find in (("name", exact), ("prefix", prefix), ("near", near)):
+    for how, find in (("name", lambda key, raw: exact(key)),
+                      ("prefix", prefix), ("near", near)):
         for unit in units:
             if unit["id"] in out:
                 continue
             key = fold(unit["name"])
             if not key:
                 continue
-            qid = find(key)
+            qid = find(key, unit["name"])
             if qid:
                 taken.add(qid)
                 out[unit["id"]] = (qid, pool[qid]["title"], how)
@@ -457,24 +496,73 @@ UNDATED = ("English Wikipedia, {title} (infobox); the article gives no year "
            "for the figure")
 
 
-def run(iso3: str, units: list[dict[str, Any]], national: float | None,
-        *, probe: bool = False) -> list[dict[str, Any]]:
+def article_for(iso3: str, units: list[dict[str, Any]]
+                ) -> dict[str, tuple[str, str, str]]:
+    """unit id -> (Wikidata item, English title, how), for as many as can be proved.
+
+    Three sources of candidates, tried in that order because that is the order
+    of how much they prove.
+
+    1. The item the build already joined to this shape. 248 of the 610 shapes
+       carry one, and nothing this module could work out by name is better
+       evidence than a match the map has already made.
+    2. What the country says it is divided into (P150), and what those are
+       divided into, which is how Malta's 68 local councils are reached: they
+       sit under one of five regions and not under Malta, so the search below
+       never saw them.
+    3. What says it sits directly in the country (P131), which is what a
+       first-level unit is and what a town inside one is not.
+    """
     qid = country_item(iso3)
     if not qid:
         log(f"{iso3}: no Wikidata item carries this ISO code; skipped")
-        return []
-    pool = entities(children(qid))
-    found = resolve(units, pool)
-    log(f"{iso3}: {len(units)} units without a population, "
-        f"{len(pool)} items directly in {qid}, {len(found)} resolved")
+        return {}
+
+    known = {u["id"]: u["wikidata"] for u in units if u.get("wikidata")}
+    divisions = contains(qid)
+    pool = entities(set(known.values()) | set(divisions) | set(children(qid)))
+
+    preset: dict[str, tuple[str, str, str]] = {}
+    for uid, item in known.items():
+        title = (pool.get(item) or {}).get("title")
+        if title:
+            preset[uid] = (item, title, "wikidata")
+    # A shape the build has already joined to an item is that item. Where the
+    # item has no English article there is nothing to read, and guessing at a
+    # different article by name would be guessing against evidence.
+    settled = set(known)
+
+    found = resolve([u for u in units if u["id"] not in settled], pool, preset)
+    short = [u for u in units if u["id"] not in found and u["id"] not in settled]
+    if short and divisions:
+        deeper: set[str] = set()
+        for division in divisions[:GRANDCHILDREN]:
+            deeper |= set(contains(division))
+        deeper -= set(pool)
+        if deeper:
+            log(f"{iso3}: {len(short)} still unresolved; reading {len(deeper)} "
+                f"units one level further down")
+            pool.update(entities(deeper))
+            # preset carries the first pass forward, so a wider pool can only
+            # add a match and never take one away by making it ambiguous.
+            found = resolve(short, pool, found)
+    return found
+
+
+def run(iso3: str, units: list[dict[str, Any]], national: float | None,
+        *, probe: bool = False) -> list[dict[str, Any]]:
+    found = article_for(iso3, units)
+    log(f"{iso3}: {len(units)} units without a population, {len(found)} resolved")
     rows: list[dict[str, Any]] = []
     for unit in units:
         hit = found.get(unit["id"])
         if not hit:
-            log(f"  {unit['name']}: no article resolved")
+            why = ("its Wikidata item has no English article"
+                   if unit.get("wikidata") else "no article resolved")
+            log(f"  {unit['name']}: {why}")
             continue
         item, title, how = hit
-        if probe or how != "name":
+        if probe or how != "wikidata":
             log(f"  {unit['name']} -> {title} ({item}, matched by {how})")
         if probe:
             continue
