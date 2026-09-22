@@ -50,6 +50,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import sys
 import time
@@ -87,6 +88,10 @@ PER_PAGE = 500
 # for the same place: long enough that the overlap is not a coincidence,
 # close enough that the difference is a spelling.
 PREFIX_MIN = 6
+# A name that only gains an ending -- North Macedonia's "East" against
+# "Eastern Statistical Region" -- may be shorter, because an ending of at
+# most three letters is the whole of what it is allowed to gain.
+ENDING_MIN = 4
 NEAR_MIN = 8
 NEAR = 0.92
 # The width the boundary file cuts a name to. Seychelles' 24 districts are all
@@ -114,6 +119,11 @@ GRANDCHILDREN = 60
 
 # How many hits of the country-restricted search to consider for one name.
 SEARCH_HITS = 15
+
+# How much larger than its shape's bounding box a place's stated area may
+# be before it cannot be that shape: boundaries differ between vintages
+# and sources, and a box is not a polygon, so the margin is generous.
+AREA_SLACK = 1.5
 
 
 # ---------------------------------------------------------------------------
@@ -404,9 +414,9 @@ def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]],
         cutting = truncates(units)
 
     def prefix(key: str, raw: str) -> str | None:
-        if len(key) < PREFIX_MIN:
-            return None
         cut = cutting and len(raw.strip()) == TRUNCATED_AT
+        if len(key) < (PREFIX_MIN if cut else ENDING_MIN):
+            return None
         return unique([q for form, qids in by_name.items()
                        if form.startswith(key)
                        and (cut or len(form) - len(key) <= PREFIX_TAIL)
@@ -516,10 +526,25 @@ def unclosed(value: str) -> str:
     return value
 
 
+INFOBOX = re.compile(r"\{\{\s*infobox", re.I)
+
+
 def params(wikitext: str) -> dict[str, str]:
-    """The first infobox's parameters, keyed by a normalised name."""
+    """Every infobox's parameters, keyed by a normalised name, first one first.
+
+    Not only the first. An article can open with a box about something the
+    place is -- a World Heritage Site, a protected area -- and carry the
+    population in the settlement box beneath it; Mount Athos came back as
+    having no population parameter that way. The first box to state a
+    parameter still wins, so a second box never overrides the place's own.
+    """
     out: dict[str, str] = {}
-    for line in infobox_lines(wikitext):
+    lines: list[str] = []
+    for m in INFOBOX.finditer(wikitext):
+        lines += infobox_lines(wikitext[m.start():])
+    if not lines:
+        lines = infobox_lines(wikitext)
+    for line in lines:
         line = line.lstrip().lstrip("|")
         if "=" not in line:
             continue
@@ -561,8 +586,21 @@ def year_of(text: str) -> tuple[int | None, str]:
     return found[0], ""
 
 
+# An infobox that prints Wikidata's figure rather than writing one down.
+# France's regions ({{France metadata Wikidata|population_total}}), Latvia's
+# municipalities ({{wikidata|property|...|P1082}}) and the Philippines' ({{PH
+# wikidata|population_total}}) all do it, so the page shows a number and its
+# wikitext holds none.
+PULLS_FROM_WIKIDATA = re.compile(r"\{\{[^{}]*wikidata", re.I)
+FROM_WIKIDATA = "the infobox displays Wikidata's figure"
+
+
 def read(wikitext: str) -> tuple[int | None, int | None, str]:
-    """(population, year, remark) from an article's infobox."""
+    """(population, year, remark) from an article's infobox.
+
+    A remark of FROM_WIKIDATA means the infobox shows Wikidata's own P1082,
+    which the caller reads from the item the article belongs to.
+    """
     fields = params(wikitext)
     if not fields:
         return None, None, "no infobox"
@@ -570,6 +608,8 @@ def read(wikitext: str) -> tuple[int | None, int | None, str]:
         if key not in fields:
             continue
         value, tail = number(fields[key])
+        if value is None and PULLS_FROM_WIKIDATA.search(fields[key]):
+            return None, None, FROM_WIKIDATA
         if value is None:
             return None, None, f"{key}: {tail}"
         year, why = None, ""
@@ -704,12 +744,100 @@ def search(name: str, country_qid: str, langs: list[str]) -> dict[str, dict[str,
     words = " ".join("".join(c if c.isalnum() else " " for c in name).split())
     if not words:
         return {}
-    hits = ((api(DATA, action="query", list="search",
-                 srsearch=f"{words} haswbstatement:P17={country_qid}",
-                 srlimit=SEARCH_HITS, srnamespace=0) or {}).get("query") or {}
-            ).get("search") or []
-    qids = [h["title"] for h in hits if re.fullmatch(r"Q\d+", h.get("title") or "")]
+    qids: list[str] = []
+    # Statistical regions first. Italy's first level on this map is its five
+    # NUTS-1 macro-regions, and a plain search for "Centro" or "Sud" among
+    # everything in Italy is fifteen neighbourhoods deep before it reaches
+    # one; among items carrying a NUTS code (P605) it is the first hit.
+    for extra in (" haswbstatement:P605", ""):
+        hits = ((api(DATA, action="query", list="search",
+                     srsearch=f"{words} haswbstatement:P17={country_qid}{extra}",
+                     srlimit=SEARCH_HITS, srnamespace=0) or {}).get("query") or {}
+                ).get("search") or []
+        qids += [h["title"] for h in hits if re.fullmatch(r"Q\d+", h.get("title") or "")]
+    qids = list(dict.fromkeys(qids))
     return entities(qids, langs) if qids else {}
+
+
+def claim_values(qid: str, prop: str) -> list[dict[str, Any]]:
+    """One property's statements on one item, without the rest of the item.
+
+    wbgetclaims rather than wbgetentities: a region's full claims run to
+    hundreds of kilobytes and all this needs is one property of it.
+    """
+    payload = api(DATA, action="wbgetclaims", entity=qid, property=prop) or {}
+    return (payload.get("claims") or {}).get(prop) or []
+
+
+def wikidata_population(qid: str) -> tuple[int | None, int | None]:
+    """The figure Wikidata's P1082 gives, and the year its P585 dates it to.
+
+    The preferred statement if there is one, else the most recent normal one
+    -- which is what an infobox reading "best" from Wikidata prints.
+    """
+    best: tuple[int, int, int] | None = None
+    for claim in claim_values(qid, "P1082"):
+        rank = {"preferred": 2, "normal": 1}.get(claim.get("rank"), 0)
+        if not rank:
+            continue
+        value = (((claim.get("mainsnak") or {}).get("datavalue") or {}).get("value") or {})
+        try:
+            amount = int(float(str(value.get("amount", "")).lstrip("+")))
+        except ValueError:
+            continue
+        year = 0
+        for q in (claim.get("qualifiers") or {}).get("P585", []):
+            time = ((q.get("datavalue") or {}).get("value") or {}).get("time", "")
+            if len(time) >= 5 and time[1:5].isdigit():
+                year = max(year, int(time[1:5]))
+        key = (rank, year, amount)
+        if amount > 0 and (best is None or key > best):
+            best = key
+    if best is None:
+        return None, None
+    return best[2], best[1] or None
+
+
+# Square kilometres per unit, for the units Wikidata states areas in.
+AREA_UNITS = {"Q712226": 1.0, "Q35852": 0.01, "Q232291": 2.589988,
+              "Q25343": 1e-6, "Q81292": 4046.8564224e-6}
+
+
+def refuted(qid: str, bbox: list[float] | None) -> str:
+    """Why this item cannot be the shape, or "" if nothing says it cannot.
+
+    Refutation only, never confirmation: a point inside a bounding box does
+    not prove a place is the shape, and a place smaller than the box proves
+    nothing either. What they can prove is the negative. A place whose own
+    coordinates lie well outside the box is somewhere else, and a place whose
+    stated area is larger than the box could not fit inside it -- Minsk
+    Region, 39,900 km^2, offered for a shape whose box is 253 km^2.
+    """
+    if not bbox or len(bbox) != 4:
+        return ""
+    w, s_, e, n = bbox
+    pad_x = max(0.1, (e - w) * 0.1)
+    pad_y = max(0.1, (n - s_) * 0.1)
+    points = []
+    for claim in claim_values(qid, "P625"):
+        v = ((claim.get("mainsnak") or {}).get("datavalue") or {}).get("value") or {}
+        if isinstance(v.get("latitude"), (int, float)) and isinstance(v.get("longitude"), (int, float)):
+            points.append((v["longitude"], v["latitude"]))
+    if points and not any(w - pad_x <= x <= e + pad_x and s_ - pad_y <= y <= n + pad_y
+                          for x, y in points):
+        x, y = points[0]
+        return f"its coordinates ({y:.2f}, {x:.2f}) lie outside the shape"
+    box = abs(n - s_) * 111.32 * abs(e - w) * 111.32 * math.cos(math.radians((n + s_) / 2))
+    for claim in claim_values(qid, "P2046"):
+        v = ((claim.get("mainsnak") or {}).get("datavalue") or {}).get("value") or {}
+        unit = str(v.get("unit", "")).rsplit("/", 1)[-1]
+        try:
+            km2 = float(str(v.get("amount", "")).lstrip("+")) * AREA_UNITS[unit]
+        except (KeyError, ValueError):
+            continue
+        if box and km2 > box * AREA_SLACK + 50:
+            return f"its area, {km2:,.0f} km^2, cannot fit in the shape's {box:,.0f} km^2 box"
+    return ""
 
 
 def in_country(qid: str, country_qid: str) -> bool:
@@ -841,6 +969,11 @@ def article_for(iso3: str, units: list[dict[str, Any]],
         found = resolve([unit], hits, found, others, cut)
         if len(found) > before:
             log(f"  {unit['name']}: found by searching the country")
+        else:
+            # What the search did offer, so the next run can be taught the
+            # name rather than the gap being re-diagnosed from nothing.
+            offered = [f"{q} {(v['names'] or ['?'])[0]!r}" for q, v in list(hits.items())[:5]]
+            log(f"  {unit['name']}: searching the country offered {', '.join(offered)}")
     if country:
         for unit in short():
             taken = {item for item, _, _ in found.values()} | others
@@ -868,6 +1001,10 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
             log(f"  {unit['name']} -> {title} ({item}, matched by {how})")
         if probe:
             continue
+        why = refuted(item, unit.get("bbox"))
+        if why:
+            log(f"  {unit['name']} -> {title} ({item}): {why}; refused")
+            continue
         text = ((api(WIKI, action="parse", page=title, prop="wikitext",
                      redirects="1") or {}).get("parse") or {})
         wikitext = text.get("wikitext") or ""
@@ -876,6 +1013,17 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
             log(f"  {unit['name']} -> {title}: no wikitext")
             continue
         value, year, remark = read(wikitext)
+        pulled = remark == FROM_WIKIDATA
+        if pulled:
+            # What the reader of the page sees is Wikidata's figure, so that
+            # is what is read -- from the item this article belongs to, and
+            # with the year Wikidata dates it to.
+            value, year = wikidata_population(item)
+            remark = "" if year else "Wikidata dates the figure to no year"
+            if value is None:
+                log(f"  {unit['name']} -> {landed}: its infobox displays "
+                    f"Wikidata's figure and {item} has no P1082")
+                continue
         if value is None:
             log(f"  {unit['name']} -> {landed}: {remark}")
             continue
@@ -887,7 +1035,8 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
                 f"own {national:,.0f}; refused")
             continue
         read_out.append({"unit": unit, "title": landed, "value": value,
-                         "year": year, "remark": remark, "kind": kind(wikitext)})
+                         "year": year, "remark": remark, "kind": kind(wikitext),
+                         "item": item if pulled else None})
 
     rows: list[dict[str, Any]] = []
     division = odd_one_out([r["kind"] for r in read_out])
@@ -902,11 +1051,18 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
                 f"{iso3}'s units read as a {division}; refused")
             continue
         where = (SOURCE if year else UNDATED).format(title=landed)
+        if r["item"]:
+            where = where.replace("(infobox)", f"(infobox, which displays "
+                                               f"Wikidata {r['item']}'s P1082)")
         if not year:
             log(f"  {unit['name']} -> {landed}: {value:,}, undated ({r['remark']})")
         rows.append(record(
             f"{iso3}-WP-{slugify(unit['name'])}", unit["name"],
             level="admin1", parent=iso3, country=iso3,
+            # Bound to the polygon this reader started from, so the build
+            # never has to find it again by name. This reader knows exactly
+            # which shape it read for; a name-keyed join could only lose that.
+            shape_id=unit["id"], match_by="shape_id",
             population=measure(value, unit="people", year=year, source=where),
             sources=[{"field": "population", "name": "Wikipedia",
                       "url": "https://en.wikipedia.org/wiki/"

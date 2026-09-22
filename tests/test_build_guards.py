@@ -69,3 +69,38 @@ class BuildGuards(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class APolygonTheBoundaryFileMislabels(unittest.TestCase):
+    """Belarus labels Minsk Region's polygon plain "Minsk"."""
+
+    def setUp(self):
+        import build_entities
+        self.b = build_entities
+        self.shapes = [{"id": "region", "name": "Minsk"},
+                       {"id": "city", "name": "Minsk City"},
+                       {"id": "brest", "name": "Brest"}]
+
+    def test_the_city_s_row_goes_to_the_city_s_polygon(self):
+        row = self.b.placed("BLR", {"name": "Minsk", "wikidata": "Q2280"}, self.shapes)
+        self.assertEqual((row["match_by"], row["shape_id"]), ("shape_id", "city"))
+        # Named as the polygon is, so the binding never relabels a shape.
+        self.assertEqual(row["name"], "Minsk City")
+        self.assertIn("Minsk", row["aliases"])
+
+    def test_the_region_s_row_goes_to_the_region_s_polygon(self):
+        row = self.b.placed("BLR", {"name": "Minsk region", "wikidata": "Q192959"},
+                            self.shapes)
+        self.assertEqual(row["shape_id"], "region")
+
+    def test_every_other_row_is_left_alone(self):
+        for row in ({"name": "Brest", "wikidata": "Q173822"},
+                    {"name": "Minsk"},
+                    {"name": "Minsk", "wikidata": "Q2280", "country": "UKR"}):
+            iso3 = row.get("country", "BLR")
+            self.assertIs(self.b.placed(iso3, row, self.shapes), row)
+
+    def test_a_label_no_longer_drawn_stops_the_build(self):
+        with self.assertRaises(SystemExit):
+            self.b.placed("BLR", {"name": "Minsk", "wikidata": "Q2280"},
+                          [{"id": "x", "name": "Minsk"}])

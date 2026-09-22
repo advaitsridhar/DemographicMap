@@ -460,3 +460,60 @@ class FollowingARedirect(unittest.TestCase):
         wp.in_country = lambda item, country: False
         got = wp.by_title({"name": "Boucle du Mouhoun"}, "Burkina Faso", "Q965", set())
         self.assertIsNone(got)
+
+
+class WhatThePageShowsAndWhereThePlaceIs(unittest.TestCase):
+    def test_an_infobox_that_prints_wikidata_s_figure_is_recognised(self):
+        # France's regions and Latvia's municipalities, verbatim.
+        for value in ("{{France metadata Wikidata|population_total}}",
+                      "{{wikidata|property|qualifier|best||P1082}}"):
+            self.assertEqual(wp.read(infobox(population_total=value)),
+                             (None, None, wp.FROM_WIKIDATA))
+
+    def test_every_infobox_on_the_page_is_read_first_one_first(self):
+        text = ("{{Infobox World Heritage Site\n| name = Mount Athos\n| year = 1988\n}}\n"
+                "{{Infobox settlement\n| name = Athos\n| population_total = 1,746\n"
+                "| population_as_of = 2021\n}}\n")
+        self.assertEqual(wp.read(text)[:2], (1746, 2021))
+
+    def test_a_region_cannot_be_given_to_a_city_shape_it_could_not_fit_in(self):
+        # Minsk Region, offered for the shape Belarus's boundary file draws
+        # as "Minsk City": its coordinates are south of the city's box and
+        # its area is 157 times the box's.
+        saved = wp.claim_values
+        claims = {
+            "P625": [{"mainsnak": {"datavalue": {"value": {"latitude": 53.667, "longitude": 27.75}}}}],
+            "P2046": [{"mainsnak": {"datavalue": {"value": {
+                "amount": "+39854", "unit": "http://www.wikidata.org/entity/Q712226"}}}}],
+        }
+        wp.claim_values = lambda qid, prop: claims.get(prop, [])
+        try:
+            city_box = [27.4751, 53.8232, 27.733, 53.9583]
+            self.assertIn("outside the shape", wp.refuted("Q192959", city_box))
+            claims["P625"] = []
+            self.assertIn("cannot fit", wp.refuted("Q192959", city_box))
+            region_box = [26.0139, 52.3913, 29.4894, 55.009]
+            claims["P625"] = [{"mainsnak": {"datavalue": {"value": {"latitude": 53.667, "longitude": 27.75}}}}]
+            self.assertEqual(wp.refuted("Q192959", region_box), "")
+        finally:
+            wp.claim_values = saved
+
+    def test_the_figure_wikidata_ranks_best_and_dates_latest(self):
+        saved = wp.claim_values
+
+        def claim(amount, year, rank="normal"):
+            return {"rank": rank,
+                    "mainsnak": {"datavalue": {"value": {"amount": f"+{amount}"}}},
+                    "qualifiers": {"P585": [{"datavalue": {"value": {
+                        "time": f"+{year}-01-01T00:00:00Z"}}}]}}
+        wp.claim_values = lambda qid, prop: [claim(3300000, 2019), claim(3325032, 2021),
+                                             claim(1, 2023, "deprecated")]
+        try:
+            self.assertEqual(wp.wikidata_population("Q18677983"), (3325032, 2021))
+        finally:
+            wp.claim_values = saved
+
+    def test_a_short_name_may_gain_an_ending(self):
+        got = wp.resolve(units("East"),
+                         pool(("Eastern Statistical Region", "Eastern Statistical Region")))
+        self.assertEqual(got["u1"][:2], ("Q1", "Eastern Statistical Region"))

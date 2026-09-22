@@ -3213,6 +3213,57 @@ def add_known_as(index: dict[str, list[dict[str, Any]]],
     return added
 
 
+# Wikidata rows placed on a polygon by declaration, because the boundary file
+# labels the polygon in a way no name can undo.
+#
+# Belarus draws Minsk Region and Minsk the city as two shapes and calls the
+# region plain "Minsk". norm() drops "Region" and "City", so all three names
+# -- "Minsk", "Minsk City", "Minsk region" -- are one key, and the tiebreak on
+# an identical name gave Wikidata's row for the *city* (Q2280) to the shape
+# labelled "Minsk", which is the region: 66,000 km^2 of oblast wearing the
+# capital's 1,995,091 people, with nothing on the map to say so. The region's
+# own row found no shape at all.
+#
+# The general rule that would have fixed it was measured and rejected. Of the
+# fifteen Wikidata admin-1 rows whose names collide across shapes, sending
+# each to the smallest shape whose box holds its coordinates fixes Minsk and
+# breaks Moscow Oblast and Kyiv Oblast, whose Wikidata coordinates sit on the
+# capital. Every other collision the identical-name tiebreak already gets
+# right, because those boundary files write "Kyiv Oblast" and "Moscow Oblast"
+# where Belarus's writes "Minsk". So this is a declaration about one boundary
+# file's labels, not a rule.
+#
+# Keyed by the Wikidata item, so it can only ever move the row it names; the
+# value is the polygon's label as the boundary file writes it. A label that is
+# not drawn stops the build rather than letting the row fall back to a name.
+PLACED: dict[tuple[str, str], str] = {
+    ("BLR", "Q2280"): "Minsk City",
+    ("BLR", "Q192959"): "Minsk",
+}
+
+
+def placed(iso3: str, row: dict[str, Any],
+           shapes: Sequence[dict[str, Any]]) -> dict[str, Any]:
+    """The row bound to the polygon PLACED names for its item, if it names one.
+
+    The row takes the polygon's own label as its name, with its own name kept
+    as an alias, so the binding moves figures and never relabels a shape.
+    """
+    label = PLACED.get((iso3, row.get("wikidata") or ""))
+    if not label:
+        return row
+    target = [e for e in shapes if e.get("name") == label]
+    if len(target) != 1:
+        raise SystemExit(f"{iso3}: PLACED sends {row.get('wikidata')} to "
+                         f"{label!r}, which this country draws "
+                         f"{len(target)} times rather than once")
+    aliases = [*(row.get("aliases") or [])]
+    if row.get("name") and row["name"] != label:
+        aliases.append(row["name"])
+    return {**row, "name": label, "aliases": aliases,
+            "match_by": "shape_id", "shape_id": target[0]["id"]}
+
+
 def blank(shape: dict[str, Any], level: str, parent: str | None) -> dict[str, Any]:
     return {
         "id": shape["shape_id"],
@@ -3655,6 +3706,7 @@ def main() -> int:
                 declared += 1
                 miss += 1
                 continue
+            row = placed(iso3, row, admin1_by_country.get(iso3, []))
             # Aliases travel with the key. They were being dropped here, which
             # made every alias an adapter declared for an admin-2 row or its
             # parent dead weight -- the matcher never saw them.
