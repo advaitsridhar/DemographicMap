@@ -1104,6 +1104,16 @@ MD_RELIGION_LABELS = {
     "– roman catholic": "Roman Catholic",
     "jehovah's witnesses": "Jehovah's Witnesses",
     "other religions": "Other religion",
+    # Basarabeasca's table, which names the same faiths in the plural and
+    # puts "Christians" over them with no dash to mark the children.
+    "orthodox christians": "Orthodox", "baptists": "Baptist",
+    "adventists": "Adventist", "pentecostals": "Pentecostal",
+    "evangelicals": "Evangelical", "old believers": "Old Believer",
+    "catholics": "Catholic",
+    "irreligious": "No religion",
+    # The census's own category, beside atheists and agnostics in the same
+    # table, so it is not either of them and is not folded into either.
+    "free thinkers": "Freethinker",
     # One bar for two answers, because the census printed one number for
     # them. Chisinau's table has a separate "No religion" row beside this.
     "agnostic / atheist": "Agnostic or atheist",

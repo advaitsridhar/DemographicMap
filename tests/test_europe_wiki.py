@@ -1052,3 +1052,79 @@ class ATableOfSharesIsNeverAPopulation(unittest.TestCase):
         self.assertFalse(m.fits_population(
             {"counts": {"a": 9000.0, "b": 500.0}},
             {"population": {"value": 101100}}, "T", m.MD_ETHNICITY))
+
+
+BASARABEASCA_RELIGION = """== Religion ==
+""" + MD_CITE + """{| class="wikitable"
+! Religion !! Number !! %
+|-
+| Christians || 14,717 || 98.7
+|-
+| Orthodox Christians || 14,200 || 95.2
+|-
+| Baptists || 230 || 1.5
+|-
+| Adventists || 152 || 1.0
+|-
+| Pentecostals || 66 || 0.4
+|-
+| Evangelicals || 30 || 0.2
+|-
+| Jehovah's Witnesses || 27 || 0.2
+|-
+| Catholics || 11 || 0.1
+|-
+| Old Believers || 1 || 0.0
+|-
+| Muslims || 7 || 0.0
+|-
+| Free thinkers || 2 || 0.0
+|-
+| Agnostics || 5 || 0.0
+|-
+| Atheists || 31 || 0.2
+|-
+| Irreligious || 90 || 0.6
+|-
+| Other || 6 || 0.0
+|-
+| Undeclared || 56 || 0.4
+|-
+! Total || 14,914 || 100
+|}
+"""
+
+
+class AParentWithNoDashToMarkItsChildren(unittest.TestCase):
+    """Basarabeasca is the third spelling of the same hazard, and the one
+    with nothing in the markup to give it away: "Christians" 98.7 sits above
+    eight rows that add to 98.6, and not one of them is marked as a child.
+
+    It is also the district that made this reader's own labels visible. The
+    run refused the table on seven words -- Baptists, Adventists,
+    Pentecostals, Evangelicals, Old Believers, Free thinkers, Irreligious --
+    which are the same faiths Chisinau and Taraclia name in the singular.
+    """
+
+    def test_the_parent_is_skipped_and_the_plurals_are_read(self):
+        got, why = m.read_field(BASARABEASCA_RELIGION, m.MD_RELIGION, MDA,
+                                "Basarabeasca District", "en")
+        self.assertEqual(why, "")
+        self.assertAlmostEqual(sum(got["counts"].values()), 99.8, places=2)
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Orthodox"], 95.2)
+        self.assertEqual(shares["Adventist"], 1.0)
+        self.assertEqual(shares["Old Believer"], 0.0)
+        self.assertNotIn(98.7, shares.values())
+
+    def test_the_census_s_own_three_kinds_of_unbelief_stay_apart(self):
+        # Atheists, agnostics, free thinkers and the irreligious are four
+        # rows of one table, so the census means four different answers.
+        # None of them is folded into another here.
+        got, _ = m.read_field(BASARABEASCA_RELIGION, m.MD_RELIGION, MDA,
+                              "Basarabeasca District", "en")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Atheism"], 0.2)
+        self.assertEqual(shares["Agnosticism"], 0.0)
+        self.assertEqual(shares["Freethinker"], 0.0)
+        self.assertEqual(shares["No religion"], 0.6)
