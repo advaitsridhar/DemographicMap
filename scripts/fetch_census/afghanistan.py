@@ -172,7 +172,11 @@ def name_column(header: list[str]) -> int:
 
 def province_rows(province: str, *, probing: bool) -> list[dict[str, Any]]:
     title = f"{province} Province"
-    body = fetch(title, LANG)
+    # fetch returns (wikitext, resolved title): the article may sit behind a
+    # redirect, and the name it resolved to is worth having in the log.
+    body, resolved = fetch(title, LANG)
+    if resolved != title:
+        log(f"  {province}: redirected to {resolved!r}")
     if not body:
         log(f"  {province}: no article")
         return []
