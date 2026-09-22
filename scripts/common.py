@@ -441,7 +441,23 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     # its own, and it now says why no non-census route replaces it.
     "AFG": {
         "religion": "Afghanistan has never completed a population census: the 1979 count was abandoned partway and none has been held since, so no census question on religion exists. No survey stands in for it either -- the CSO/NSIA household series (NRVA 2011-12, ALCS 2013-14 and 2016-17) publishes its questionnaire and asks nothing about religion. The NSIA publishes population estimates only.",
-        "ethnicity": "Afghanistan has never completed a population census, so no census question on ethnicity exists; the census restarted in 2013 excluded ethnicity and language deliberately. The CSO/NSIA household series (NRVA 2011-12, ALCS 2013-14 and 2016-17) does not ask it either. The NSIA publishes population estimates only.",
+        # Ethnicity is deliberately no longer here, by the owner's decision of
+        # 22 September 2026: where a source exists, it is read, and the policy
+        # table does not get to forbid it.
+        #
+        # What this table means is "no value may ever be written", which is a
+        # stronger claim than the one the entry actually established. The
+        # entry was right that no *census* asks -- none has ever been
+        # completed -- but that is not the same as there being nothing to
+        # read. The Ministry of Rural Rehabilitation and Development published
+        # district development plans between about 2008 and 2014, and many
+        # state an ethnic breakdown; scripts/fetch_census/afghanistan.py reads
+        # them and labels them as what they are, a ministry planning survey
+        # rather than a count.
+        #
+        # The sentence itself is kept, because it is true and a district the
+        # plans do not cover still needs to say why it is empty -- it is now
+        # the gap's note rather than a prohibition.
         "language": "Afghanistan has never completed a population census, so no census question on language exists. The CSO/NSIA household series does not ask mother tongue: the ALCS questionnaire carries no language question, and the NRVA 2011-12 report mentions language only to say which languages the report itself is printed in. The NSIA publishes population estimates only.",
     },
     # Measured against the census's own form and its own table list, not
