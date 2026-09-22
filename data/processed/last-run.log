@@ -1,45 +1,157 @@
-SDN: 6 units without a population, 4 resolved
-  Abyei PCA: no article resolved
-  Central Darfur: no article resolved
-  East Darfur -> East Darfur (Q3545641, matched by name)
-  Gedaref -> Azaza Airport (Q3275523, matched by name)
-  Gedaref -> Azaza Airport: no population parameter in the infobox
-  West Darfur -> West Darfur: population_total: not a whole number: '1.9 million'
-  West Kordofan -> West Kordofan (Q536396, matched by name)
-OMN: 3 units without a population, 2 resolved
-  Al Batinah -> Al Batinah Region (Q264245, matched by name)
-  Ash Sharqiyah -> Ash Sharqiyah Region (Oman) (Q1106416, matched by name)
-  Ash Sharqiyah -> Ash Sharqiyah Region (Oman): population_total: empty
-  Az Zahirah: no article resolved
-TON: 4 units without a population, 0 resolved
-  'Eua: its Wikidata item has no English article
-  Ha'apai: its Wikidata item has no English article
-  Niuas: its Wikidata item has no English article
-  Tongatapu: its Wikidata item has no English article
-NER: 3 still unresolved; reading 47 units one level further down
-NER: 3 units without a population, 0 resolved
-  Dossa: no article resolved
-  Tahoua/Agadez: no article resolved
-  Zinder/Diffa: no article resolved
-PER: 2 still unresolved; reading 202 units one level further down
-PER: 2 units without a population, 0 resolved
-  El Callao: no article resolved
-  Municipalidad Metropolitana de Lima: no article resolved
-SYR: 6 still unresolved; reading 43 units one level further down
-SYR: 6 units without a population, 0 resolved
-  Al-Hasakeh: no article resolved
-  As-Sweida: no article resolved
-  Idleb: no article resolved
-  Lattakia: no article resolved
-  Rural Damascus: no article resolved
-  Tartous: no article resolved
-GMB: 8 units without a population, 1 resolved
-  Basse: no article resolved
-  Brikama: no article resolved
-  Janjanbureh: no article resolved
-  Kanifing: no article resolved
-  Kerewan: no article resolved
-  Kuntaur: no article resolved
-  Mansakonko: no article resolved
-  wrote data/processed/wiki_population_admin1.json (388 kB)
-wrote 420 records to wiki_population_admin1.json
+MDA:
+    Category:Districts of Moldova: 34 article(s), 34 distinct names
+  MDA admin1: 37 shapes, 35 with an article, 2 without
+    no article: Bender is administered by Transnistria and the 2024 Moldovan census did not count it. The only composition its article prints is the 2004 census the Transnistrian authorities took, cited to a third-party compilation of Eastern European census results, and its rows give ranges rather than counts where the compiler could not tell -- "0-5", "61-66" -- inside column markup this reader cannot line up with the header. It is not a figure of the census this reader names as its source, and it is not read.
+    no article: Transnistria is not under the Moldovan government's control and the 2024 Moldovan census did not count it. Its article publishes no composition table for the territory: what it has is an infobox listing 29.1% Russians, 28.6% Moldovans/Romanians and 22.9% Ukrainians from the census the Transnistrian authorities took in 2015, and a column of 2004 prose, district by district, inside its table of administrative divisions. Neither is a figure of the census this reader names as its source, and the 2015 one counts Bender too, which this map draws as a unit of its own. They are left unread rather than published as Moldovan census results.
+    Anenii Noi: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Anenii Noi: language: the article has no section matching 'language|mother tongue'
+    Balti: ethnicity: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Balti: religion: the article has no section matching 'religio'
+    Balti: language: the article has no section matching 'language|mother tongue'
+    Basarabeasca: language: the article has no section matching 'language|mother tongue'
+    Briceni: religion: the table's rows are there and the column this reader takes the share from is empty in all 10 of them
+    Briceni: language: the article has no section matching 'language|mother tongue'
+    Cahul: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Cahul: language: the article has no section matching 'language|mother tongue'
+    Calarasi: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Calarasi: language: the article has no section matching 'language|mother tongue'
+    Cantemir: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Cantemir: language: the article has no section matching 'language|mother tongue'
+    Causeni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Causeni: language: the article has no section matching 'language|mother tongue'
+    Cimislia: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Cimislia: language: the article has no section matching 'language|mother tongue'
+    Criuleni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Criuleni: language: the article has no section matching 'language|mother tongue'
+    Donduseni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Donduseni: language: the article has no section matching 'language|mother tongue'
+    Drochia: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Drochia: language: the article has no section matching 'language|mother tongue'
+    Dubasari: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Dubasari: language: the article has no section matching 'language|mother tongue'
+    Edinet: ethnicity: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Edinet: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Edinet: language: the article has no section matching 'language|mother tongue'
+    Falesti: ethnicity: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Falesti: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Falesti: language: the article has no section matching 'language|mother tongue'
+    Floresti: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Floresti: language: the article has no section matching 'language|mother tongue'
+    Gagauzia: language: the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table
+    Glodeni: ethnicity: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Glodeni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Glodeni: language: the article has no section matching 'language|mother tongue'
+    Hincesti: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Hincesti: language: the article has no section matching 'language|mother tongue'
+    Ialoveni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Ialoveni: language: the article has no section matching 'language|mother tongue'
+    Leova: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Leova: language: the article has no section matching 'language|mother tongue'
+    Nisporeni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Nisporeni: language: the article has no section matching 'language|mother tongue'
+    Ocnita: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Ocnita: language: the article has no section matching 'language|mother tongue'
+    Orhei: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Orhei: language: the article has no section matching 'language|mother tongue'
+    RIscani: ethnicity: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    RIscani: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    RIscani: language: the article has no section matching 'language|mother tongue'
+    Rezina: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Rezina: language: the article has no section matching 'language|mother tongue'
+    SIngerei: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    SIngerei: language: the article has no section matching 'language|mother tongue'
+    Soldanesti: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Soldanesti: language: the article has no section matching 'language|mother tongue'
+    Soroca: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Soroca: language: the article has no section matching 'language|mother tongue'
+    Stefan Voda: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Stefan Voda: language: the article has no section matching 'language|mother tongue'
+    Straseni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Straseni: language: the article has no section matching 'language|mother tongue'
+    Taraclia: language: the article has no section matching 'language|mother tongue'
+    Telenesti: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Telenesti: language: the article has no section matching 'language|mother tongue'
+    Ungheni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Ungheni: language: the article has no section matching 'language|mother tongue'
+  MDA admin1: ethnicity: 30 of 37
+  MDA admin1: religion: 4 of 37
+  MDA admin1: language: 2 of 37
+    Category:Districts of Moldova: 34 article(s), 34 distinct names
+  MDA admin2: 37 shapes, 35 with an article, 2 without
+    no article: Bender is administered by Transnistria and the 2024 Moldovan census did not count it. The only composition its article prints is the 2004 census the Transnistrian authorities took, cited to a third-party compilation of Eastern European census results, and its rows give ranges rather than counts where the compiler could not tell -- "0-5", "61-66" -- inside column markup this reader cannot line up with the header. It is not a figure of the census this reader names as its source, and it is not read.
+    no article: Transnistria is not under the Moldovan government's control and the 2024 Moldovan census did not count it. Its article publishes no composition table for the territory: what it has is an infobox listing 29.1% Russians, 28.6% Moldovans/Romanians and 22.9% Ukrainians from the census the Transnistrian authorities took in 2015, and a column of 2004 prose, district by district, inside its table of administrative divisions. Neither is a figure of the census this reader names as its source, and the 2015 one counts Bender too, which this map draws as a unit of its own. They are left unread rather than published as Moldovan census results.
+    Anenii Noi: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Anenii Noi: language: the article has no section matching 'language|mother tongue'
+    Balti: ethnicity: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Balti: religion: the article has no section matching 'religio'
+    Balti: language: the article has no section matching 'language|mother tongue'
+    Basarabeasca: language: the article has no section matching 'language|mother tongue'
+    Briceni: religion: the table's rows are there and the column this reader takes the share from is empty in all 10 of them
+    Briceni: language: the article has no section matching 'language|mother tongue'
+    Cahul: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Cahul: language: the article has no section matching 'language|mother tongue'
+    Calarasi: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Calarasi: language: the article has no section matching 'language|mother tongue'
+    Cantemir: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Cantemir: language: the article has no section matching 'language|mother tongue'
+    Causeni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Causeni: language: the article has no section matching 'language|mother tongue'
+    Cimislia: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Cimislia: language: the article has no section matching 'language|mother tongue'
+    Criuleni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Criuleni: language: the article has no section matching 'language|mother tongue'
+    Donduseni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Donduseni: language: the article has no section matching 'language|mother tongue'
+    Drochia: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Drochia: language: the article has no section matching 'language|mother tongue'
+    Dubasari: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Dubasari: language: the article has no section matching 'language|mother tongue'
+    Edinet: ethnicity: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Edinet: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Edinet: language: the article has no section matching 'language|mother tongue'
+    Falesti: ethnicity: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Falesti: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Falesti: language: the article has no section matching 'language|mother tongue'
+    Floresti: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Floresti: language: the article has no section matching 'language|mother tongue'
+    Gagauzia: language: the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table
+    Glodeni: ethnicity: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Glodeni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Glodeni: language: the article has no section matching 'language|mother tongue'
+    Hincesti: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Hincesti: language: the article has no section matching 'language|mother tongue'
+    Ialoveni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Ialoveni: language: the article has no section matching 'language|mother tongue'
+    Leova: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Leova: language: the article has no section matching 'language|mother tongue'
+    Nisporeni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Nisporeni: language: the article has no section matching 'language|mother tongue'
+    Ocnita: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Ocnita: language: the article has no section matching 'language|mother tongue'
+    Orhei: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Orhei: language: the article has no section matching 'language|mother tongue'
+    RIscani: ethnicity: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    RIscani: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    RIscani: language: the article has no section matching 'language|mother tongue'
+    Rezina: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Rezina: language: the article has no section matching 'language|mother tongue'
+    SIngerei: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    SIngerei: language: the article has no section matching 'language|mother tongue'
+    Soldanesti: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Soldanesti: language: the article has no section matching 'language|mother tongue'
+    Soroca: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Soroca: language: the article has no section matching 'language|mother tongue'
+    Stefan Voda: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Stefan Voda: language: the article has no section matching 'language|mother tongue'
+    Straseni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Straseni: language: the article has no section matching 'language|mother tongue'
+    Taraclia: language: the article has no section matching 'language|mother tongue'
+    Telenesti: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Telenesti: language: the article has no section matching 'language|mother tongue'
+    Ungheni: religion: the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition
+    Ungheni: language: the article has no section matching 'language|mother tongue'
+  MDA admin2: ethnicity: 30 of 37
+  MDA admin2: religion: 4 of 37
+  MDA admin2: language: 2 of 37
+  wrote data/processed/europe_wiki_moldova.json (156 kB)
+wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/europe_wiki_moldova.json (74 records)
