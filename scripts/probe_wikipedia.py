@@ -198,6 +198,10 @@ def main() -> int:
     ap.add_argument("--level", default="both",
                     choices=["admin1", "admin2", "both"])
     ap.add_argument("--out", default=None)
+    ap.add_argument("--show", type=int, default=0, metavar="N",
+                    help="print the matched section's own text for the first "
+                         "N readable units and write nothing; the verdict has "
+                         "been wrong twice and this is how it gets checked")
     args = ap.parse_args()
 
     units: list[dict[str, Any]] = []
@@ -242,6 +246,7 @@ def main() -> int:
             by_wiki[choice].append((found[choice], unit))
 
     results: dict[str, dict[str, Any]] = {}
+    shown = [0]
     for wiki, entries in sorted(by_wiki.items(), key=lambda kv: -len(kv[1])):
         lang = wiki[:-4]
         for i in range(0, len(entries), BATCH):
@@ -256,6 +261,18 @@ def main() -> int:
                 if not body:
                     continue
                 kind, words = verdict(body)
+                if args.show and kind != "nothing" and shown[0] < args.show:
+                    shown[0] += 1
+                    log(f"\n--- {unit.get('country')} {unit.get('level')} "
+                        f"{title} [{lang}] {kind} {words}")
+                    for m in SECTION.finditer(body):
+                        if not WANTED.search(m.group(1)):
+                            continue
+                        rest = body[m.end():]
+                        nxt = SECTION.search(rest)
+                        text = rest[:nxt.start()] if nxt else rest
+                        text = " ".join(text.split())[:700]
+                        log(f"  [{m.group(1)}] {text}")
                 key = unit["id"]
                 best = results.get(key)
                 if best is None or RANK.index(kind) > RANK.index(best["kind"]):
@@ -287,6 +304,9 @@ def main() -> int:
     # whose every request failed has no entry here, so its earlier rows stand
     # rather than being silently deleted by a network failure. Only a country
     # this run actually has something to say about is overwritten.
+    if args.show:
+        log("\n--show: nothing written")
+        return 0
     out = Path(args.out) if args.out else REPORT
     previous = read_json(out, {}) or {}
     answered = set(per_country)
