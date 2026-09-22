@@ -177,3 +177,80 @@ class TheTwoDescentsAreBothAsked(unittest.TestCase):
                                ["x", "--level", "admin2", "--light", "--probe"]):
             self.assertEqual(m.main(), 1,
                              "a probe with no countries is not a sweep")
+
+
+def _unit(qid: str, parent: str = "Q1") -> dict:
+    return {"unit": {"value": f"http://www.wikidata.org/entity/{qid}"},
+            "unitLabel": {"value": qid},
+            "parent": {"value": f"http://www.wikidata.org/entity/{parent}"},
+            "parentLabel": {"value": parent}}
+
+
+class NeitherDescentCoversACountryAlone(unittest.TestCase):
+    """The probe of 22 September measured both, and neither wins outright.
+
+    P131 with the class walk loses Austria and Australia entirely; the P150
+    descent loses 62% of Angola, 63% of Belgium and all of Azerbaijan. So the
+    sweep asks both and unions them.
+    """
+
+    def test_the_union_keeps_the_primary_row_for_a_unit_found_twice(self) -> None:
+        rich = dict(_unit("Q10"), pop={"value": "5000"})
+        united = m.union_by_unit([rich], [_unit("Q10")])
+        self.assertEqual(len(united), 1, "a unit found both ways appears once")
+        self.assertIn("pop", united[0],
+                      "the primary carries the population; the descent does not")
+
+    def test_the_descent_adds_units_the_primary_missed(self) -> None:
+        united = m.union_by_unit([_unit("Q10")], [_unit("Q10"), _unit("Q11")])
+        self.assertEqual([r["unitLabel"]["value"] for r in united], ["Q10", "Q11"])
+
+    def test_a_country_the_primary_cannot_answer_falls_back_to_the_descent(self) -> None:
+        def sparql(query, **kwargs):
+            if "P279" in query:
+                raise RuntimeError("answer truncated at byte 1244867")
+            return [_unit("Q10"), _unit("Q11")]
+
+        with mock.patch.object(m, "sparql", sparql), \
+             mock.patch.object(m.time, "sleep", lambda _s: None):
+            rows, reached = m.admin2_rows("Q40", m.ADMIN2_QUERY, 0.0)
+        self.assertEqual(len(rows), 2, "Austria is served by the descent")
+        self.assertEqual(reached, "descent only",
+                         "a country served by the cheap query must say so")
+
+    def test_a_country_served_only_by_the_descent_still_raises_if_that_fails_too(self) -> None:
+        with mock.patch.object(m, "sparql", mock.Mock(side_effect=RuntimeError("no"))), \
+             mock.patch.object(m.time, "sleep", lambda _s: None), \
+             self.assertRaises(RuntimeError):
+            m.admin2_rows("Q40", m.ADMIN2_QUERY, 0.0)
+
+    def test_a_failed_descent_does_not_discard_a_good_primary_answer(self) -> None:
+        def sparql(query, **kwargs):
+            if "P279" in query:
+                return [_unit("Q10")]
+            raise RuntimeError("descent broke")
+
+        with mock.patch.object(m, "sparql", sparql), \
+             mock.patch.object(m.time, "sleep", lambda _s: None):
+            rows, reached = m.admin2_rows("Q916", m.ADMIN2_QUERY, 0.0)
+        self.assertEqual(len(rows), 1, "Azerbaijan's 191 units are not thrown away")
+        self.assertEqual(reached, "primary only")
+
+    def test_the_report_counts_what_the_descent_contributed(self) -> None:
+        def sparql(query, **kwargs):
+            return [_unit("Q10")] if "P279" in query else [_unit("Q10"), _unit("Q11")]
+
+        with mock.patch.object(m, "sparql", sparql), \
+             mock.patch.object(m.time, "sleep", lambda _s: None):
+            rows, reached = m.admin2_rows("Q1", m.ADMIN2_QUERY, 0.0)
+        self.assertEqual(len(rows), 2)
+        self.assertEqual(reached, "1 added by descent")
+
+
+class ADeterministicFailureIsNotReAskedFourTimes(unittest.TestCase):
+    def test_one_retry_by_default(self) -> None:
+        import inspect
+        default = inspect.signature(m.sparql).parameters["retries"].default
+        self.assertEqual(default, 1,
+                         "both of Austria's attempts returned byte-identical "
+                         "bodies; a second 90-second ask buys nothing")

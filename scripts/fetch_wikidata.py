@@ -148,16 +148,23 @@ SELECT ?country ?iso3 WHERE {
 """
 
 
-def sparql(query: str, *, cache: bool = True, retries: int = 2) -> list[dict[str, Any]]:
+def sparql(query: str, *, cache: bool = True, retries: int = 1) -> list[dict[str, Any]]:
     """Run a query, treating a body that will not parse as a failed fetch.
 
-    WDQS answers 200 and streams; when the query outruns its 60-second limit
-    the stream simply stops, and what arrives is valid JSON up to some byte
-    and then nothing. http_get sees a 200 and caches it, so without the
-    ``forget`` below every re-ask in the run is served the same broken bytes
-    from disk. The byte offset is worth logging: it is the difference between
-    "the endpoint refused us" and "the endpoint started answering and ran out
-    of time", and only the second is worth re-asking.
+    WDQS answers 200 and streams, and when the query outruns its 60-second
+    limit it abandons the stream and appends its own error to what it has
+    already sent. The body is then valid JSON up to some byte followed by
+    something that is not JSON at all -- Austria's was 1,250,094 bytes ending
+    at 1,244,867, Australia's 18,445,340 ending at 18,440,112, the same 5,227
+    trailing bytes in both.
+
+    http_get sees a 200 and caches it, so without the ``forget`` below every
+    re-ask in the run is served the same broken bytes from disk.
+
+    Re-asking barely helps and the default is one attempt, not four: the
+    failure is a property of the query, and both of Austria's attempts
+    returned byte-identical bodies for 90 seconds each. What answers such a
+    country is a cheaper query, which is ADMIN2_DESCENT_QUERY's job.
     """
     url = ENDPOINT + "?" + urllib.parse.urlencode({"format": "json", "query": query})
     last: json.JSONDecodeError | None = None
@@ -170,8 +177,11 @@ def sparql(query: str, *, cache: bool = True, retries: int = 2) -> list[dict[str
         except json.JSONDecodeError as exc:
             last = exc
             forget(url)
-            log(f"    truncated answer: {len(payload):,} bytes, stops at "
-                f"{exc.pos:,} ({attempt + 1}/{retries + 1})")
+            tail = " ".join(payload[exc.pos:].split())[:200]
+            log(f"    answer unparseable: {len(payload):,} bytes, JSON ends at "
+                f"{exc.pos:,}, then {len(payload) - exc.pos:,} more "
+                f"({attempt + 1}/{retries + 1})")
+            log(f"    what follows it: {tail!r}")
             if attempt < retries:
                 time.sleep(2 ** attempt)
             continue
@@ -300,6 +310,66 @@ def refuse_light_overwrite(out: Path, level: str,
             "leave them out of --countries.")
 
 
+def union_by_unit(primary: list[dict[str, Any]],
+                  secondary: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Add the units the primary query missed, keeping the primary's rows.
+
+    Order matters: a unit found both ways is kept as the primary found it,
+    because the full query carries a population, a capital and coordinates
+    and the descent carries none of them. The descent only ever adds units,
+    never replaces one.
+    """
+    seen = {row["unit"]["value"] for row in primary if row.get("unit")}
+    return primary + [row for row in secondary
+                      if row.get("unit") and row["unit"]["value"] not in seen]
+
+
+def admin2_rows(qid: str, primary: str, sleep: float) -> tuple[list[dict[str, Any]], str]:
+    """Ask both ways and return the union, and a word on what answered.
+
+    Neither descent covers a country on its own, which the probe of 22
+    September 2026 measured over eight of them:
+
+        AFG   494 in 10.5s     404 in  0.4s
+        AUT   truncated        116 in  0.3s
+        AZE   191 in 34.8s       0 in  0.2s
+        AUS   truncated (18MB) 581 in  1.4s
+        AGO   428 in 12.4s     164 in  0.3s
+        BGR   306 in 16.4s     266 in  0.4s
+        BIH   134 in 30.4s      68 in  0.2s
+        BEL    30 in 20.8s      11 in  0.3s
+
+    P131 with the class walk is the better answer nearly everywhere and the
+    descent loses more than half of Angola, Belgium and Bosnia and the whole
+    of Azerbaijan -- so it cannot replace it. But it costs under a second and
+    it answers the two countries P131 cannot answer at all. So both are asked.
+
+    A country whose P131 query fails is served by the descent alone, and this
+    returns "descent only" so the caller can say which countries those are.
+    A country that is short is a gap; a country that is short and does not
+    say so is the error this project treats as worse.
+    """
+    try:
+        rows = sparql(primary % {"qid": qid})
+    except Exception as exc:
+        log(f"    primary query failed ({str(exc)[:80]}); falling back")
+        rows, reached = [], "descent only"
+    else:
+        reached = "both"
+    time.sleep(sleep)
+    try:
+        descent = sparql(ADMIN2_DESCENT_QUERY % {"qid": qid})
+    except Exception as exc:
+        if reached == "descent only":
+            raise
+        log(f"    descent failed ({str(exc)[:80]})")
+        return rows, "primary only"
+    united = union_by_unit(rows, descent)
+    if reached == "descent only":
+        return united, reached
+    return united, f"{len(united) - len(rows)} added by descent"
+
+
 def probe(codes: list[str], qids: dict[str, str], sleep: float) -> None:
     """Ask each country both ways and report what each descent finds.
 
@@ -381,7 +451,10 @@ def main() -> int:
             missing.append(iso3)
             continue
         try:
-            rows = sparql(query % {"qid": qid})
+            if args.level == "admin2":
+                rows, reached = admin2_rows(qid, query, args.sleep)
+            else:
+                rows, reached = sparql(query % {"qid": qid}), ""
         except Exception as exc:
             log(f"  {iso3}: query failed ({exc})")
             missing.append(iso3)
@@ -392,7 +465,8 @@ def main() -> int:
             time.sleep(args.sleep)
             continue
         got = collapse(rows, level=args.level, iso3=iso3_alias.get(iso3, iso3))
-        log(f"  {iso3}: {len(got)} {args.level} units")
+        log(f"  {iso3}: {len(got)} {args.level} units"
+            + (f" ({reached})" if reached else ""))
         records.extend(got)
         time.sleep(args.sleep)
 
