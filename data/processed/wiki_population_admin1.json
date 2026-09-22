@@ -1806,6 +1806,48 @@
     "country": "EGY"
   },
   {
+    "id": "ERI-WP-anseba-region",
+    "level": "admin1",
+    "name": "Anseba Region",
+    "parent": "ERI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 893587,
+      "unit": "people",
+      "source": "English Wikipedia, Anseba region (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Anseba_region",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ERI"
+  },
+  {
     "id": "ERI-WP-debub-region",
     "level": "admin1",
     "name": "Debub Region",
@@ -1841,6 +1883,174 @@
         "field": "population",
         "name": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Southern_region_%28Eritrea%29",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ERI"
+  },
+  {
+    "id": "ERI-WP-gash-barka-region",
+    "level": "admin1",
+    "name": "Gash-Barka Region",
+    "parent": "ERI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1103742,
+      "unit": "people",
+      "source": "English Wikipedia, Gash-Barka region (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gash-Barka_region",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ERI"
+  },
+  {
+    "id": "ERI-WP-maekel-region",
+    "level": "admin1",
+    "name": "Maekel Region",
+    "parent": "ERI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1053254,
+      "unit": "people",
+      "source": "English Wikipedia, Central region (Eritrea) (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Central_region_%28Eritrea%29",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ERI"
+  },
+  {
+    "id": "ERI-WP-northern-red-sea-region",
+    "level": "admin1",
+    "name": "Northern Red Sea Region",
+    "parent": "ERI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 897454,
+      "unit": "people",
+      "source": "English Wikipedia, Northern Red Sea region (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Northern_Red_Sea_region",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ERI"
+  },
+  {
+    "id": "ERI-WP-southern-red-sea-region",
+    "level": "admin1",
+    "name": "Southern Red Sea Region",
+    "parent": "ERI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 398073,
+      "unit": "people",
+      "source": "English Wikipedia, Southern Red Sea region (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Southern_Red_Sea_region",
         "year": null,
         "license": "CC BY-SA 4.0"
       }
@@ -4600,6 +4810,135 @@
     "country": "KGZ"
   },
   {
+    "id": "KHM-WP-bantey-meanchey",
+    "level": "admin1",
+    "name": "Bantey Meanchey",
+    "parent": "KHM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 898484,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Banteay Meanchey province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Banteay_Meanchey_province",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KHM"
+  },
+  {
+    "id": "KHM-WP-preah-sihanouk",
+    "level": "admin1",
+    "name": "Preah Sihanouk",
+    "parent": "KHM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 234702,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Preah Sihanouk province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Preah_Sihanouk_province",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KHM"
+  },
+  {
+    "id": "KHM-WP-tbong-khmum",
+    "level": "admin1",
+    "name": "Tbong Khmum",
+    "parent": "KHM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 889970,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Tboung Khmum province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tboung_Khmum_province",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KHM"
+  },
+  {
     "id": "KIR-WP-gilbert-islands",
     "level": "admin1",
     "name": "Gilbert Islands",
@@ -6824,6 +7163,48 @@
         "field": "population",
         "name": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Lhaviyani_Atoll",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDV"
+  },
+  {
+    "id": "MDV-WP-shaviyani",
+    "level": "admin1",
+    "name": "Shaviyani",
+    "parent": "MDV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12091,
+      "unit": "people",
+      "source": "English Wikipedia, Shaviyani Atoll (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Shaviyani_Atoll",
         "year": null,
         "license": "CC BY-SA 4.0"
       }
@@ -15214,6 +15595,1678 @@
     "country": "TUV"
   },
   {
+    "id": "TZA-WP-katavi",
+    "level": "admin1",
+    "name": "Katavi",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1152958,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Katavi Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Katavi_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA"
+  },
+  {
+    "id": "TZA-WP-njombe",
+    "level": "admin1",
+    "name": "Njombe",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 889946,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Njombe Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Njombe_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA"
+  },
+  {
+    "id": "TZA-WP-zanzibar-north",
+    "level": "admin1",
+    "name": "Zanzibar North",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 187455,
+      "unit": "people",
+      "year": 2012,
+      "source": "English Wikipedia, Unguja North Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Unguja_North_Region",
+        "year": 2012,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA"
+  },
+  {
+    "id": "TZA-WP-zanzibar-south-central",
+    "level": "admin1",
+    "name": "Zanzibar South & Central",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 195873,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Unguja South Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Unguja_South_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA"
+  },
+  {
+    "id": "TZA-WP-zanzibar-urbanwest",
+    "level": "admin1",
+    "name": "Zanzibar Urban/West",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 893169,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Mjini Magharibi Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mjini_Magharibi_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA"
+  },
+  {
+    "id": "UGA-WP-central-region",
+    "level": "admin1",
+    "name": "Central Region",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9529227,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Central Region, Uganda (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Central_Region%2C_Uganda",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "UGA"
+  },
+  {
+    "id": "UGA-WP-eastern-region",
+    "level": "admin1",
+    "name": "Eastern Region",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9042422,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Eastern Region, Uganda (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Eastern_Region%2C_Uganda",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "UGA"
+  },
+  {
+    "id": "UGA-WP-northern-region",
+    "level": "admin1",
+    "name": "Northern Region",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7188139,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Northern Region, Uganda (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Northern_Region%2C_Uganda",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "UGA"
+  },
+  {
+    "id": "UGA-WP-western-region",
+    "level": "admin1",
+    "name": "Western Region",
+    "parent": "UGA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8874862,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Western Region, Uganda (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Western_Region%2C_Uganda",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "UGA"
+  },
+  {
+    "id": "UKR-WP-odessa-oblast",
+    "level": "admin1",
+    "name": "Odessa Oblast",
+    "parent": "UKR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2351392,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Odesa Oblast (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Odesa_Oblast",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "UKR"
+  },
+  {
+    "id": "UZB-WP-sirdaryo-region",
+    "level": "admin1",
+    "name": "Sirdaryo Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 860900,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Sirdaryo Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sirdaryo_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "UZB"
+  },
+  {
+    "id": "UZB-WP-surxondaryo-region",
+    "level": "admin1",
+    "name": "Surxondaryo Region",
+    "parent": "UZB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2680800,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Surxondaryo Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Surxondaryo_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "UZB"
+  },
+  {
+    "id": "VCT-WP-charlotte",
+    "level": "admin1",
+    "name": "Charlotte",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 38000,
+      "unit": "people",
+      "source": "English Wikipedia, Charlotte Parish, Saint Vincent and the Grenadines (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Charlotte_Parish%2C_Saint_Vincent_and_the_Grenadines",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VCT"
+  },
+  {
+    "id": "VCT-WP-saint-andrew",
+    "level": "admin1",
+    "name": "Saint Andrew",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6700,
+      "unit": "people",
+      "source": "English Wikipedia, Saint Andrew Parish, Saint Vincent and the Grenadines (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Saint_Andrew_Parish%2C_Saint_Vincent_and_the_Grenadines",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VCT"
+  },
+  {
+    "id": "VCT-WP-saint-david",
+    "level": "admin1",
+    "name": "Saint David",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6700,
+      "unit": "people",
+      "source": "English Wikipedia, Saint David Parish, Saint Vincent and the Grenadines (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Saint_David_Parish%2C_Saint_Vincent_and_the_Grenadines",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VCT"
+  },
+  {
+    "id": "VCT-WP-saint-george",
+    "level": "admin1",
+    "name": "Saint George",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 52400,
+      "unit": "people",
+      "source": "English Wikipedia, Saint George Parish, Saint Vincent and the Grenadines (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Saint_George_Parish%2C_Saint_Vincent_and_the_Grenadines",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VCT"
+  },
+  {
+    "id": "VCT-WP-saint-patrick",
+    "level": "admin1",
+    "name": "Saint Patrick",
+    "parent": "VCT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5800,
+      "unit": "people",
+      "source": "English Wikipedia, Saint Patrick Parish, Saint Vincent and the Grenadines (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Saint_Patrick_Parish%2C_Saint_Vincent_and_the_Grenadines",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VCT"
+  },
+  {
+    "id": "VEN-WP-barinas",
+    "level": "admin1",
+    "name": "Barinas",
+    "parent": "VEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1089689,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Barinas (state) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Barinas_%28state%29",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VEN"
+  },
+  {
+    "id": "VEN-WP-distrito-capital",
+    "level": "admin1",
+    "name": "Distrito Capital",
+    "parent": "VEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3523959,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Capital District (Venezuela) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Capital_District_%28Venezuela%29",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VEN"
+  },
+  {
+    "id": "VEN-WP-la-guaira",
+    "level": "admin1",
+    "name": "La Guaira",
+    "parent": "VEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 352920,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, La Guaira (state) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/La_Guaira_%28state%29",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VEN"
+  },
+  {
+    "id": "VEN-WP-miranda",
+    "level": "admin1",
+    "name": "Miranda",
+    "parent": "VEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3222374,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Miranda (state) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Miranda_%28state%29",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VEN"
+  },
+  {
+    "id": "VEN-WP-mérida",
+    "level": "admin1",
+    "name": "Mérida",
+    "parent": "VEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 828592,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Mérida (state) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/M%C3%A9rida_%28state%29",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VEN"
+  },
+  {
+    "id": "VEN-WP-portuguesa",
+    "level": "admin1",
+    "name": "Portuguesa",
+    "parent": "VEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 876496,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Portuguesa (state) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Portuguesa_%28state%29",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VEN"
+  },
+  {
+    "id": "VEN-WP-trujillo",
+    "level": "admin1",
+    "name": "Trujillo",
+    "parent": "VEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 686367,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Trujillo (state) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Trujillo_%28state%29",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VEN"
+  },
+  {
+    "id": "VEN-WP-táchira",
+    "level": "admin1",
+    "name": "Táchira",
+    "parent": "VEN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1168908,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Táchira (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/T%C3%A1chira",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VEN"
+  },
+  {
+    "id": "VUT-WP-penama",
+    "level": "admin1",
+    "name": "Penama",
+    "parent": "VUT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 32543,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Penama Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Penama_Province",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VUT"
+  },
+  {
+    "id": "VUT-WP-sanma",
+    "level": "admin1",
+    "name": "Sanma",
+    "parent": "VUT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 61458,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Sanma Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sanma_Province",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VUT"
+  },
+  {
+    "id": "VUT-WP-shefa-province",
+    "level": "admin1",
+    "name": "Shefa Province",
+    "parent": "VUT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 97602,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Shefa Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Shefa_Province",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VUT"
+  },
+  {
+    "id": "VUT-WP-torba",
+    "level": "admin1",
+    "name": "Torba",
+    "parent": "VUT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11002,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Torba Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Torba_Province",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "VUT"
+  },
+  {
+    "id": "WSM-WP-aiga-i-le-tai",
+    "level": "admin1",
+    "name": "Aiga-i-le-Tai",
+    "parent": "WSM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5029,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Aiga-i-le-Tai (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Aiga-i-le-Tai",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "WSM"
+  },
+  {
+    "id": "WSM-WP-atua",
+    "level": "admin1",
+    "name": "Atua",
+    "parent": "WSM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 22769,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Atua (district) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Atua_%28district%29",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "WSM"
+  },
+  {
+    "id": "WSM-WP-faasaleleaga",
+    "level": "admin1",
+    "name": "Fa'asaleleaga",
+    "parent": "WSM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13566,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Faʻasaleleaga (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Fa%CA%BBasaleleaga",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "WSM"
+  },
+  {
+    "id": "WSM-WP-gagaemauga",
+    "level": "admin1",
+    "name": "Gaga'emauga",
+    "parent": "WSM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7840,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Gagaʻemauga (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gaga%CA%BBemauga",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "WSM"
+  },
+  {
+    "id": "WSM-WP-gagaifomauga",
+    "level": "admin1",
+    "name": "Gaga'ifomauga",
+    "parent": "WSM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4878,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Gagaʻifomauga (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gaga%CA%BBifomauga",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "WSM"
+  },
+  {
+    "id": "WSM-WP-palauli",
+    "level": "admin1",
+    "name": "Palauli",
+    "parent": "WSM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9300,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Palauli (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Palauli",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "WSM"
+  },
+  {
+    "id": "WSM-WP-satupaitea",
+    "level": "admin1",
+    "name": "Satupa'itea",
+    "parent": "WSM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5261,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Satupaʻitea (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Satupa%CA%BBitea",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "WSM"
+  },
+  {
+    "id": "WSM-WP-tuamasaga",
+    "level": "admin1",
+    "name": "Tuamasaga",
+    "parent": "WSM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 95907,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Tuamasaga (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tuamasaga",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "WSM"
+  },
+  {
+    "id": "WSM-WP-vaa-o-fonoti",
+    "level": "admin1",
+    "name": "Va'a-o-Fonoti",
+    "parent": "WSM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1621,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Vaʻa-o-Fonoti (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Va%CA%BBa-o-Fonoti",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "WSM"
+  },
+  {
+    "id": "WSM-WP-vaisigano",
+    "level": "admin1",
+    "name": "Vaisigano",
+    "parent": "WSM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6543,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Vaisigano (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Vaisigano",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "WSM"
+  },
+  {
     "id": "ZMB-WP-central",
     "level": "admin1",
     "name": "Central",
@@ -15642,5 +17695,306 @@
       }
     ],
     "country": "ZMB"
+  },
+  {
+    "id": "ZWE-WP-harare",
+    "level": "admin1",
+    "name": "Harare",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2427209,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Harare Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Harare_Province",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ZWE"
+  },
+  {
+    "id": "ZWE-WP-manicaland",
+    "level": "admin1",
+    "name": "Manicaland",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2037762,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Manicaland Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Manicaland_Province",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ZWE"
+  },
+  {
+    "id": "ZWE-WP-mashonaland-east",
+    "level": "admin1",
+    "name": "Mashonaland East",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1731173,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Mashonaland East Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mashonaland_East_Province",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ZWE"
+  },
+  {
+    "id": "ZWE-WP-mashonaland-west",
+    "level": "admin1",
+    "name": "Mashonaland West",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1893584,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Mashonaland West Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mashonaland_West_Province",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ZWE"
+  },
+  {
+    "id": "ZWE-WP-masvingo",
+    "level": "admin1",
+    "name": "Masvingo",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1638528,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Masvingo Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Masvingo_Province",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ZWE"
+  },
+  {
+    "id": "ZWE-WP-matabeleland-south",
+    "level": "admin1",
+    "name": "Matabeleland South",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 760345,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Matabeleland South Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Matabeleland_South_Province",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ZWE"
+  },
+  {
+    "id": "ZWE-WP-midlands",
+    "level": "admin1",
+    "name": "Midlands",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1811905,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Midlands Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Midlands_Province",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ZWE"
   }
 ]
