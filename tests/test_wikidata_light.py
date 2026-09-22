@@ -7,6 +7,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
@@ -80,3 +81,99 @@ class TheGuard(unittest.TestCase):
         empty = Path(self.dir.name) / "none.json"
         empty.write_text("[]")
         m.refuse_light_overwrite(empty, "admin2", None)
+
+
+class ATruncatedAnswerIsNotAnAnswer(unittest.TestCase):
+    """WDQS answers 200, streams, and abandons the stream at its own timeout.
+
+    The body is then valid JSON up to some byte and then nothing. http_get
+    sees a 200 and caches it, so the failure that matters is not the first
+    parse error -- it is every retry afterwards being served the same broken
+    bytes from disk.
+    """
+
+    def setUp(self) -> None:
+        self.calls: list[str] = []
+        self.forgotten: list[str] = []
+        self.bodies: list[str] = []
+
+    def _patched(self):
+        def http_get(url, **kwargs):
+            self.calls.append(url)
+            return self.bodies[min(len(self.calls) - 1, len(self.bodies) - 1)]
+
+        return mock.patch.object(m, "http_get", http_get), \
+            mock.patch.object(m, "forget", self.forgotten.append), \
+            mock.patch.object(m.time, "sleep", lambda _s: None)
+
+    def test_a_whole_answer_is_parsed_and_the_cache_left_alone(self) -> None:
+        self.bodies = ['{"results": {"bindings": [{"unit": {"value": "Q1"}}]}}']
+        get, forgotten, slept = self._patched()
+        with get, forgotten, slept:
+            rows = m.sparql("SELECT * WHERE {}")
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(self.calls and len(self.calls), 1)
+        self.assertEqual(self.forgotten, [],
+                         "a body that parsed must stay in the cache")
+
+    def test_a_truncated_body_is_forgotten_before_it_is_re_asked(self) -> None:
+        whole = '{"results": {"bindings": [{"unit": {"value": "Q1"}}]}}'
+        self.bodies = ['{"results": {"bindings": [{"unit": {"val', whole]
+        get, forgotten, slept = self._patched()
+        with get, forgotten, slept:
+            rows = m.sparql("SELECT * WHERE {}")
+        self.assertEqual(len(rows), 1, "the second ask succeeded")
+        self.assertEqual(len(self.calls), 2)
+        self.assertEqual(len(self.forgotten), 1,
+                         "the truncation must be dropped from the cache, or "
+                         "the re-ask is served the same bytes")
+        self.assertEqual(self.forgotten[0], self.calls[0])
+
+    def test_a_body_that_never_parses_raises_rather_than_reporting_no_units(self) -> None:
+        self.bodies = ['{"results": {"bindings": [{"unit": {"val']
+        get, forgotten, slept = self._patched()
+        with get, forgotten, slept, self.assertRaises(RuntimeError) as caught:
+            m.sparql("SELECT * WHERE {}", retries=2)
+        self.assertIn("truncated", str(caught.exception))
+        self.assertEqual(len(self.calls), 3, "one attempt plus two retries")
+        self.assertEqual(len(self.forgotten), 3)
+
+
+class TheTwoDescentsAreBothAsked(unittest.TestCase):
+    """--probe exists to measure, so it must actually run both shapes."""
+
+    def test_the_descent_query_walks_down_and_does_not_walk_the_class_tree(self) -> None:
+        descent = m.ADMIN2_DESCENT_QUERY
+        self.assertIn("?parent wdt:P150 ?unit", descent,
+                      "the cheap shape descends by declared subdivision")
+        self.assertNotIn("P279", descent,
+                         "walking the class tree is the expense this avoids")
+        self.assertNotIn("wdt:P131", descent)
+
+    def test_probe_asks_every_country_both_ways(self) -> None:
+        asked: list[str] = []
+
+        def sparql(query, **kwargs):
+            asked.append("descent" if "?parent wdt:P150 ?unit" in query else "p131")
+            return []
+
+        with mock.patch.object(m, "sparql", sparql), \
+             mock.patch.object(m.time, "sleep", lambda _s: None):
+            m.probe(["AUT", "AGO"], {"AUT": "Q40", "AGO": "Q916"}, 0.0)
+        self.assertEqual(asked, ["p131", "descent", "p131", "descent"])
+
+    def test_a_shape_that_fails_does_not_stop_the_comparison(self) -> None:
+        def sparql(query, **kwargs):
+            if "P279" in query:
+                raise RuntimeError("answer truncated at byte 458736")
+            return []
+
+        with mock.patch.object(m, "sparql", sparql), \
+             mock.patch.object(m.time, "sleep", lambda _s: None):
+            m.probe(["AUT"], {"AUT": "Q40"}, 0.0)
+
+    def test_probe_writes_nothing_even_without_countries(self) -> None:
+        with mock.patch.object(sys, "argv",
+                               ["x", "--level", "admin2", "--light", "--probe"]):
+            self.assertEqual(m.main(), 1,
+                             "a probe with no countries is not a sweep")

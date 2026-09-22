@@ -704,6 +704,26 @@ def log(*args: Any) -> None:
     print(*args, file=sys.stderr, flush=True)
 
 
+def cache_path(url: str, cache_dir: Path | None = None) -> Path:
+    """Where http_get keeps this URL's body."""
+    cache_dir = cache_dir or (RAW / "http_cache")
+    return cache_dir / hashlib.sha256(url.encode()).hexdigest()[:24]
+
+
+def forget(url: str, cache_dir: Path | None = None) -> None:
+    """Drop a cached body, for a caller that finds it is not what it claims.
+
+    http_get caches on a 200 and cannot tell a complete body from a truncated
+    one -- the server said OK and the bytes arrived. Only the caller that
+    parses it knows. Wikidata's endpoint is the case this exists for: it
+    answers 200, streams results, hits its own 60-second limit part way
+    through and abandons the stream, so the body is valid JSON up to some
+    byte several hundred kB in and then simply stops. Cached, that truncation
+    is what every retry in the run gets back.
+    """
+    cache_path(url, cache_dir).unlink(missing_ok=True)
+
+
 def http_get(url: str, *, cache: bool = True, retries: int = 4, timeout: int = 120,
              headers: dict[str, str] | None = None, binary: bool = False,
              cache_dir: Path | None = None, aia: bool = False) -> bytes | str:
@@ -724,9 +744,8 @@ def http_get(url: str, *, cache: bool = True, retries: int = 4, timeout: int = 1
     HTTP is safe to add (it is believed only if it chains to a trusted root,
     which the handshake then tests).
     """
-    cache_dir = cache_dir or (RAW / "http_cache")
-    key = hashlib.sha256(url.encode()).hexdigest()[:24]
-    path = cache_dir / key
+    path = cache_path(url, cache_dir)
+    cache_dir = path.parent
     if cache and path.exists():
         blob = path.read_bytes()
         return blob if binary else blob.decode("utf-8", "replace")

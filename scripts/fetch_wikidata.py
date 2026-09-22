@@ -28,6 +28,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 import time
 import urllib.parse
@@ -37,7 +38,8 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import (  # noqa: E402
-    NOT_AVAILABLE, PROCESSED, RAW, gap, http_get, log, measure, read_json, write_json,
+    NOT_AVAILABLE, PROCESSED, RAW, forget, gap, http_get, log, measure, read_json,
+    write_json,
 )
 
 ENDPOINT = "https://query.wikidata.org/sparql"
@@ -108,6 +110,36 @@ SELECT ?unit ?unitLabel WHERE {
 }
 """
 
+# A second shape for the second level, and why there are two.
+#
+# ADMIN2_QUERY walks *up*: everything whose P131 is one of the country's
+# admin-1 units, narrowed to administrative entities by a P279* walk up the
+# class tree. Before that filter the set is enormous -- every village, school,
+# protected area and railway station in the country carries P131 to a state --
+# and the filter runs over all of it. That, and not the OPTIONAL blocks, is
+# the expense. The --light run of 21 September dropped all three OPTIONALs and
+# still lost eight of twenty-three countries: AFG, ALB, ARM, AUT, AZE, BLR and
+# BOL each came back as valid JSON that stops mid-object several hundred kB
+# in, which is WDQS hitting its 60-second limit and abandoning the stream.
+#
+# This walks *down* instead, by the property the admin-1 query already uses:
+# P150, the subdivisions a unit declares. One hop from a handful of parents,
+# and it costs almost nothing.
+#
+# The two are not equivalent and neither is obviously better. P150 is curated
+# and can be incomplete; P131 is carried by the members themselves and can
+# reach things that are not subdivisions at all. Which finds more units is a
+# question per country, not a matter of opinion -- so --probe asks both and
+# prints the counts side by side, and writes nothing.
+ADMIN2_DESCENT_QUERY = """
+SELECT ?unit ?unitLabel ?parent ?parentLabel WHERE {
+  VALUES ?country { wd:%(qid)s }
+  ?country wdt:P150 ?parent .
+  ?parent wdt:P150 ?unit .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+"""
+
 
 COUNTRY_QID_QUERY = """
 SELECT ?country ?iso3 WHERE {
@@ -116,13 +148,36 @@ SELECT ?country ?iso3 WHERE {
 """
 
 
-def sparql(query: str, *, cache: bool = True) -> list[dict[str, Any]]:
+def sparql(query: str, *, cache: bool = True, retries: int = 2) -> list[dict[str, Any]]:
+    """Run a query, treating a body that will not parse as a failed fetch.
+
+    WDQS answers 200 and streams; when the query outruns its 60-second limit
+    the stream simply stops, and what arrives is valid JSON up to some byte
+    and then nothing. http_get sees a 200 and caches it, so without the
+    ``forget`` below every re-ask in the run is served the same broken bytes
+    from disk. The byte offset is worth logging: it is the difference between
+    "the endpoint refused us" and "the endpoint started answering and ran out
+    of time", and only the second is worth re-asking.
+    """
     url = ENDPOINT + "?" + urllib.parse.urlencode({"format": "json", "query": query})
-    payload = http_get(url, cache=cache, timeout=90,
-                       headers={"Accept": "application/sparql-results+json"})
-    import json as _json
-    data = _json.loads(payload)
-    return data.get("results", {}).get("bindings", [])
+    last: json.JSONDecodeError | None = None
+    for attempt in range(retries + 1):
+        payload = http_get(url, cache=cache, timeout=90,
+                           headers={"Accept": "application/sparql-results+json"})
+        assert isinstance(payload, str)
+        try:
+            data = json.loads(payload)
+        except json.JSONDecodeError as exc:
+            last = exc
+            forget(url)
+            log(f"    truncated answer: {len(payload):,} bytes, stops at "
+                f"{exc.pos:,} ({attempt + 1}/{retries + 1})")
+            if attempt < retries:
+                time.sleep(2 ** attempt)
+            continue
+        return data.get("results", {}).get("bindings", [])
+    raise RuntimeError(
+        f"answer truncated at byte {last.pos} after {retries + 1} attempts") from last
 
 
 def value(row: dict[str, Any], key: str) -> str | None:
@@ -245,6 +300,35 @@ def refuse_light_overwrite(out: Path, level: str,
             "leave them out of --countries.")
 
 
+def probe(codes: list[str], qids: dict[str, str], sleep: float) -> None:
+    """Ask each country both ways and report what each descent finds.
+
+    Writes nothing. The point is to settle, before a 185-country sweep commits
+    to one query shape, whether the cheap descent actually loses units and
+    where -- rather than adopting it because it is fast and discovering the
+    loss as a country-shaped hole on the map.
+    """
+    shapes = (("P131 + class walk", ADMIN2_LIGHT_QUERY),
+              ("P150 descent", ADMIN2_DESCENT_QUERY))
+    log(f"  {'':5}  {shapes[0][0]:>22}  {shapes[1][0]:>22}")
+    for iso3 in codes:
+        qid = qids.get(iso3)
+        if not qid:
+            log(f"  {iso3}:  no Wikidata country item")
+            continue
+        told = []
+        for _, query in shapes:
+            started = time.time()
+            try:
+                rows = sparql(query % {"qid": qid}, cache=False, retries=1)
+                units = len(collapse(rows, level="admin2", iso3=iso3))
+                told.append(f"{units:>6} in {time.time() - started:5.1f}s")
+            except Exception as exc:
+                told.append(f"{type(exc).__name__}: {str(exc)[:60]}")
+            time.sleep(sleep)
+        log(f"  {iso3}:  {told[0]:>22}  {told[1]:>22}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -255,6 +339,9 @@ def main() -> int:
     ap.add_argument("--light", action="store_true",
                     help="ask only for units and their parents; far cheaper, "
                          "and refused for a country already in the file")
+    ap.add_argument("--probe", action="store_true",
+                    help="ask the named countries both ways and print what "
+                         "each descent finds; writes nothing")
     ap.add_argument("--allow-shrink", action="store_true",
                     help="write even though it drops countries the existing "
                          "file covers")
@@ -264,10 +351,21 @@ def main() -> int:
     # already answered in full is refused here rather than after forty
     # minutes of queries.
     out_path = args.out or PROCESSED / f"wikidata_{args.level}.json"
-    if args.light:
+    if args.light and not args.probe:
         refuse_light_overwrite(out_path, args.level, args.countries)
 
+    # A probe writes nothing, so it needs no overwrite guard -- but it does
+    # need countries, and finding that out after resolving every country QID
+    # would spend a query to reject an argument.
+    if args.probe and not args.countries:
+        log("  --probe needs --countries: it is a comparison, not a sweep")
+        return 1
+
     qids = country_qids()
+    if args.probe:
+        probe([c.upper() for c in args.countries], qids, args.sleep)
+        return 0
+
     codes = [c.upper() for c in (args.countries or sorted(qids))]
     # Wikidata's P298 for Kosovo is XKS; geoBoundaries uses XKX. Normalise so
     # the join buckets the records with the shapes instead of beside them.
