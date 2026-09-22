@@ -244,6 +244,28 @@ def main() -> int:
     for unit in no_article:
         per_country[unit.get("country")][f"{unit.get('level')}:no article"] += 1
 
+    # A run updates the countries it answered for and leaves the rest alone.
+    #
+    # 52,573 units over two editions is about 2,100 requests, which does not
+    # fit in one 45-minute job, so this will be run in batches -- and a
+    # wholesale write would mean each batch discarding the one before it.
+    # fetch_wikidata learned the same lesson the expensive way.
+    #
+    # The unit of replacement is the country, and the test is whether this run
+    # produced anything for it at all: a country that was asked about and
+    # whose every request failed has no entry here, so its earlier rows stand
+    # rather than being silently deleted by a network failure. Only a country
+    # this run actually has something to say about is overwritten.
+    out = Path(args.out) if args.out else REPORT
+    previous = read_json(out, {}) or {}
+    answered = set(per_country)
+    kept = [row for row in previous.get("units", [])
+            if row.get("country") not in answered]
+    merged_per: dict[str, dict[str, int]] = {
+        iso: counts for iso, counts in (previous.get("per_country") or {}).items()
+        if iso not in answered}
+    merged_per.update({k: dict(v) for k, v in per_country.items()})
+
     log("")
     log("%-5s %s" % ("iso", "units by what their article carries"))
     for iso in sorted(per_country):
@@ -251,13 +273,13 @@ def main() -> int:
         line = ", ".join(f"{k} {v}" for k, v in sorted(counts.items()))
         log(f"  {iso:4} {line}")
     total = collections.Counter()
-    for counts in per_country.values():
+    for counts in merged_per.values():
         total.update(counts)
     log("")
-    log("world: " + ", ".join(f"{k} {v}" for k, v in sorted(total.items())))
-    write_json(Path(args.out) if args.out else REPORT,
-               {"per_country": {k: dict(v) for k, v in per_country.items()},
-                "units": list(results.values())})
+    log(f"this run: {len(answered)} countries, {len(results)} units")
+    log(f"world so far ({len(merged_per)} countries): "
+        + ", ".join(f"{k} {v}" for k, v in sorted(total.items())))
+    write_json(out, {"per_country": merged_per, "units": kept + list(results.values())})
     return 0
 
 

@@ -2,9 +2,12 @@
 
 from __future__ import annotations
 
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
@@ -56,3 +59,63 @@ class WhatAnArticleCarries(unittest.TestCase):
         for heading in ("Geografie", "Economy", "Transport", "History"):
             with self.subTest(heading=heading):
                 self.assertFalse(p.WANTED.search(heading), heading)
+
+
+class TheReportMergesRatherThanReplaces(unittest.TestCase):
+    """52,573 units will not probe in one 45-minute job, so it runs in batches.
+
+    A wholesale write would mean every batch discarding the one before it.
+    """
+
+    def setUp(self) -> None:
+        self.dir = tempfile.TemporaryDirectory()
+        self.addCleanup(self.dir.cleanup)
+        self.out = Path(self.dir.name) / "probe.json"
+
+    def _run(self, units, results):
+        """Drive main() with the network stubbed out."""
+        wikidata = [dict(u, wikidata=u["id"].upper()) for u in units]
+
+        def sitelinks(chunk):
+            return {q: {"enwiki": q} for q in chunk}
+
+        def wikitexts(lang, titles):
+            return {t: results.get(t, "") for t in titles}
+
+        with mock.patch.object(p, "read_json", side_effect=self._read(wikidata)), \
+             mock.patch.object(p, "sitelinks", sitelinks), \
+             mock.patch.object(p, "wikitexts", wikitexts), \
+             mock.patch.object(p.time, "sleep", lambda _s: None), \
+             mock.patch.object(sys, "argv",
+                               ["x", "--level", "admin1", "--out", str(self.out)]):
+            self.assertEqual(p.main(), 0)
+        return json.loads(self.out.read_text())
+
+    def _read(self, wikidata):
+        real = p.read_json
+
+        def reader(path, default=None):
+            if "wikidata_" in str(path):
+                return wikidata
+            return real(path, default)
+        return reader
+
+    def test_a_second_batch_keeps_the_first_batch_countries(self) -> None:
+        self._run([{"id": "nld-1", "country": "NLD", "level": "admin1",
+                    "name": "Utrecht"}],
+                  {"NLD-1": "== Religie ==\n{| class=wikitable\n|}"})
+        report = self._run([{"id": "bel-1", "country": "BEL", "level": "admin1",
+                             "name": "Liege"}],
+                           {"BEL-1": "== Religion ==\n{| class=wikitable\n|}"})
+        self.assertIn("NLD", report["per_country"],
+                      "the first batch's country must survive the second")
+        self.assertIn("BEL", report["per_country"])
+        self.assertEqual({r["country"] for r in report["units"]}, {"NLD", "BEL"})
+
+    def test_re_running_a_country_replaces_it_rather_than_doubling_it(self) -> None:
+        unit = [{"id": "nld-1", "country": "NLD", "level": "admin1",
+                 "name": "Utrecht"}]
+        self._run(unit, {"NLD-1": "== Religie ==\n{| class=wikitable\n|}"})
+        report = self._run(unit, {"NLD-1": "== Religie ==\n{| class=wikitable\n|}"})
+        self.assertEqual(len(report["units"]), 1,
+                         "a country asked about twice appears once")
