@@ -149,6 +149,32 @@ def usable(parts: list[dict[str, Any]], where: str) -> bool:
     return True
 
 
+def repair_header(cells: list[str]) -> list[str]:
+    """Re-join header cells a citation template was split across.
+
+    The table parser splits on ``|``, and a ``{{Cite web|url=...|title=...}}``
+    inside a heading carries its own. Badghis heads its column "Area" with a
+    citation on it, and the pipes turned one cell into two -- so the header
+    counted seven columns where every data row had six, the ethnic column's
+    index was one too high, and all fifteen rows were skipped for being too
+    short. The province reported nothing at all rather than a refusal.
+
+    A cell with unbalanced ``{{`` is a fragment, and it is joined forward
+    until the braces close.
+    """
+    out: list[str] = []
+    pending: list[str] = []
+    for cell in cells:
+        pending.append(cell)
+        joined = "|".join(pending)
+        if joined.count("{{") <= joined.count("}}"):
+            out.append(joined)
+            pending = []
+    if pending:
+        out.append("|".join(pending))
+    return out
+
+
 def notes_column(header: list[str]) -> int | None:
     """Which column carries the ethnic note, by what it is called.
 
@@ -184,20 +210,27 @@ def province_rows(province: str, *, probing: bool) -> list[dict[str, Any]]:
     for table in tables(body):
         if len(table) < 2:
             continue
-        header = table[0]
+        header = repair_header(table[0])
         col = notes_column(header)
         if col is None:
             continue
         which = name_column(header)
         if probing:
             log(f"  {province}: header {[clean(c) for c in header]}")
-        read = refused = 0
+        read = refused = silent = 0
         for row in table[1:]:
+            # A row too short for the column, or one whose note is blank, used
+            # to be dropped without a word -- which is how Uruzgan came to
+            # report "0 with shares, 0 without" and say nothing about the
+            # fifteen rows it had looked at. A gap has to say why it is a gap,
+            # and that applies to this file's own log.
             if len(row) <= max(col, which):
+                silent += 1
                 continue
             district = clean(row[which])
             note = clean(row[col])
             if not district or not note:
+                silent += 1
                 continue
             parts = shares(note)
             if not usable(parts, f"{province}/{district}"):
@@ -210,7 +243,8 @@ def province_rows(province: str, *, probing: bool) -> list[dict[str, Any]]:
                 log(f"      + {district}: "
                     + ", ".join(f"{p['group']} {p['pct']:g}%" for p in parts))
             out.append({"district": district, "ethnicity": parts})
-        log(f"  {province}: {read} district(s) with shares, {refused} without")
+        log(f"  {province}: {read} district(s) with shares, {refused} without"
+            + (f", {silent} row(s) with no note at all" if silent else ""))
         break
     return out
 

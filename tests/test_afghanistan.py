@@ -120,3 +120,37 @@ class ThePolicyNoLongerForbidsIt(unittest.TestCase):
                          "source exists it is read")
         self.assertIn("religion", afg, "no source was found for these two")
         self.assertIn("language", afg)
+
+
+class AHeaderSplitByItsOwnCitation(unittest.TestCase):
+    """Badghis heads a column "Area" and hangs a {{Cite web}} on it.
+
+    The table parser splits cells on "|" and the template carries its own, so
+    seven header cells were counted where every data row had six. The ethnic
+    column's index came out one too high and all fifteen rows were skipped for
+    being too short -- the province reported nothing rather than a refusal.
+    """
+
+    BADGHIS = ["District", "Capital", "Population",
+               "Area {{Cite web|url=https://www.fao.org/|website=www.fao.org"
+               "|accessdate=16 February 2024",
+               "title=Food and Agriculture Organization}}",
+               "Pop. density", "Ethnic categories"]
+
+    def test_the_fragments_are_rejoined(self) -> None:
+        self.assertEqual(len(a.repair_header(self.BADGHIS)), 6)
+
+    def test_the_column_index_then_matches_the_data_rows(self) -> None:
+        self.assertEqual(a.notes_column(a.repair_header(self.BADGHIS)), 5)
+        self.assertEqual(a.notes_column(self.BADGHIS), 6,
+                         "unrepaired, it points one past where the note is")
+
+    def test_a_header_with_no_templates_is_unchanged(self) -> None:
+        plain = ["District", "Capital", "Population", "Notes"]
+        self.assertEqual(a.repair_header(plain), plain)
+
+    def test_a_template_that_never_closes_does_not_swallow_the_rest(self) -> None:
+        # Better one long cell than an exception or a silent drop.
+        got = a.repair_header(["District", "Area {{Cite", "Notes"])
+        self.assertEqual(got[0], "District")
+        self.assertEqual(len(got), 2)
