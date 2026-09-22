@@ -350,7 +350,10 @@ def admin2_rows(qid: str, primary: str, sleep: float) -> tuple[list[dict[str, An
     say so is the error this project treats as worse.
     """
     try:
-        rows = sparql(primary % {"qid": qid})
+        # retries=0: a truncation is a property of the query, not the moment,
+        # and there is a fallback below. This only governs re-parsing -- a
+        # genuine network error is still retried inside http_get.
+        rows = sparql(primary % {"qid": qid}, retries=0)
     except Exception as exc:
         log(f"    primary query failed ({str(exc)[:80]}); falling back")
         rows, reached = [], "descent only"

@@ -254,3 +254,21 @@ class ADeterministicFailureIsNotReAskedFourTimes(unittest.TestCase):
         self.assertEqual(default, 1,
                          "both of Austria's attempts returned byte-identical "
                          "bodies; a second 90-second ask buys nothing")
+
+
+class TheFallbackPaysForItself(unittest.TestCase):
+    def test_the_primary_is_asked_once_because_a_descent_follows_it(self) -> None:
+        asked: list[int] = []
+
+        def sparql(query, **kwargs):
+            if "P279" in query:
+                asked.append(kwargs.get("retries", 1))
+                raise RuntimeError("answer truncated at byte 1244867")
+            return []
+
+        with mock.patch.object(m, "sparql", sparql), \
+             mock.patch.object(m.time, "sleep", lambda _s: None):
+            m.admin2_rows("Q40", m.ADMIN2_QUERY, 0.0)
+        self.assertEqual(asked, [0],
+                         "re-asking a deterministic truncation costs 90 "
+                         "seconds and returns the same bytes")
