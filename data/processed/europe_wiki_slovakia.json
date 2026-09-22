@@ -159,7 +159,7 @@
     ],
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Banskobystrický kraj' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Banskobystrický kraj' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
     "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Banskobystrický kraj' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
@@ -358,7 +358,7 @@
     ],
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košický kraj' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košický kraj' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
     "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košický kraj' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
@@ -392,7 +392,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "labels this reader has no entry for: ['Komárno', 'Levice', 'Nitra', 'Nové Zámky', 'Šaľa', 'Topoľčany', 'Zlaté Moravce']"
     },
     "sources": [],
     "country": "SVK"
@@ -557,9 +557,9 @@
     ],
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Prešovský kraj' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Prešovský kraj' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
-    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Prešovský kraj' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Prešovský kraj' transcribes and cites it. A census count. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
   },
   {
     "id": "SVK-admin1-region-of-trenčín",
@@ -626,7 +626,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "labels this reader has no entry for: ['Dunajská Streda', 'Galanta', 'Hlohovec', 'Piešťany', 'Senica', 'Skalica', 'Trnava', 'Trnavský kraj spolu']"
     },
     "sources": [],
     "country": "SVK"
@@ -799,7 +799,7 @@
     "parent_name": "Region of Banská Bystrica",
     "country": "SVK",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the sk.wikipedia article 'Banská Štiavnica (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2021, and that is the year on this record."
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the sk.wikipedia article 'Banská Štiavnica (okres)' transcribes and cites it. A census count. The citation is for 2023; the column read is the one the table's own header labels 2021, and that is the year on this record."
   },
   {
     "id": "SVK-admin2-district-of-bansks-bystrica",
@@ -966,7 +966,7 @@
     "parent_name": "Region of Banská Bystrica",
     "country": "SVK",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the sk.wikipedia article 'Banská Bystrica (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2021, and that is the year on this record."
+    "ethnicity_note": "Population by ethnicity for 2021 from a population census, as the sk.wikipedia article 'Banská Bystrica (okres)' transcribes and cites it. A census count. The citation is for 2023; the column read is the one the table's own header labels 2021, and that is the year on this record."
   },
   {
     "id": "SVK-admin2-district-of-bardejov",
@@ -990,19 +990,53 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "labels this reader has no entry for: ['evanjelické a.v']"
     },
     "language": {
       "status": "not_available",
       "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 91.41
+      },
+      {
+        "group": "Rusyn and Ukrainian",
+        "pct": 4.16
+      },
+      {
+        "group": "Romani",
+        "pct": 2.97
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 1.09
+      },
+      {
+        "group": "Czech and Moravian",
+        "pct": 0.3
+      },
+      {
+        "group": "Hungarian",
+        "pct": 0.07
+      },
+      {
+        "group": "German",
+        "pct": 0.0
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (None), as the sk.wikipedia article 'Bardejov (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Bardejov_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Region of Prešov",
-    "country": "SVK"
+    "country": "SVK",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the sk.wikipedia article 'Bardejov (okres)' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SVK-admin2-district-of-bonovce-nad-bebra",
@@ -1381,7 +1415,7 @@
     "parent_name": "Region of Banská Bystrica",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Brezno (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Brezno (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
     "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Brezno (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
@@ -1656,13 +1690,63 @@
       "status": "not_available",
       "note": "Slovakia's census asks mother tongue, and the Slovak Wikipedia article of a region or a district carries the census's nationality table and its religion table and not its mother-tongue table. There is nothing here to read for this field; the figures exist at the Statistical Office."
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Slovak",
+        "pct": 60.73
+      },
+      {
+        "group": "Hungarian",
+        "pct": 33.45
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 3.45
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.98
+      },
+      {
+        "group": "Romani",
+        "pct": 0.53
+      },
+      {
+        "group": "Czech",
+        "pct": 0.52
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.11
+      },
+      {
+        "group": "German",
+        "pct": 0.07
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 0.06
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.05
+      },
+      {
+        "group": "Polish",
+        "pct": 0.05
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Štatistický úrad SR, Sčítanie obyvateľov, domov a bytov 2011 (None), as the sk.wikipedia article 'Galanta (okres)' transcribes it",
+        "url": "https://sk.wikipedia.org/wiki/Galanta_%28okres%29",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Region of Trnava",
-    "country": "SVK"
+    "country": "SVK",
+    "ethnicity_note": "Population by ethnicity for None from a source this reader cannot classify, as the sk.wikipedia article 'Galanta (okres)' transcribes and cites it. The citation does not say which kind of count this is. The citation carries no year; the figures are dated by the year printed in the table's own header. Neither the citation nor the table's own header carries a year, so the date these figures are as of is unknown. The article cites nothing for this table, so the article itself is the source on the record."
   },
   {
     "id": "SVK-admin2-district-of-gelnica",
@@ -2295,7 +2379,7 @@
     "parent_name": "Region of Košice",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice I (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice I (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
     "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košice I (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
@@ -2460,7 +2544,7 @@
     "parent_name": "Region of Košice",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice II (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice II (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
     "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košice II (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
@@ -2625,9 +2709,9 @@
     "parent_name": "Region of Košice",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice III (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice III (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
-    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košice III (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košice III (okres)' transcribes and cites it. A census count. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
   },
   {
     "id": "SVK-admin2-district-of-kolice-iv",
@@ -2790,7 +2874,7 @@
     "parent_name": "Region of Košice",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice IV (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice IV (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
     "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košice IV (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
@@ -2991,7 +3075,7 @@
     "parent_name": "Region of Košice",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice-okolie (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Košice-okolie (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
     "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Košice-okolie (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
@@ -3256,9 +3340,9 @@
     "parent_name": "Region of Prešov",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Levoča (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Levoča (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
-    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Levoča (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Levoča (okres)' transcribes and cites it. A census count. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
   },
   {
     "id": "SVK-admin2-district-of-liptovsk",
@@ -3541,9 +3625,9 @@
     "parent_name": "Region of Prešov",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Medzilaborce (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Medzilaborce (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
-    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Medzilaborce (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Medzilaborce (okres)' transcribes and cites it. A census count. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
   },
   {
     "id": "SVK-admin2-district-of-michalovce",
@@ -3567,7 +3651,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "labels this reader has no entry for: ['Evanjelická cirkev a.v', 'Svedkovia Jehovovi', 'židia']"
     },
     "language": {
       "status": "not_available",
@@ -3650,7 +3734,7 @@
     "parent_name": "Region of Košice",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Michalovce (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record."
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Michalovce (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record."
   },
   {
     "id": "SVK-admin2-district-of-myjava",
@@ -4173,7 +4257,7 @@
     "parent_name": "Region of Prešov",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Poprad (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Poprad (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
     "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Poprad (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
@@ -4271,7 +4355,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "labels this reader has no entry for: ['Evanjelická cirkev a.v', 'jehovisti', 'židia']"
     },
     "language": {
       "status": "not_available",
@@ -4354,7 +4438,7 @@
     "parent_name": "Region of Prešov",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Prešov (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record."
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Prešov (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record."
   },
   {
     "id": "SVK-admin2-district-of-prievidza",
@@ -4414,7 +4498,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "labels this reader has no entry for: ['Evanjelická cirkev a.v', 'jehovisti', 'židia']"
     },
     "language": {
       "status": "not_available",
@@ -4422,7 +4506,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "labels this reader has no entry for: ['Národnosť']"
     },
     "sources": [],
     "parent_name": "Region of Banská Bystrica",
@@ -4486,7 +4570,7 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "the shares add to 1411.00, which is not a composition"
     },
     "language": {
       "status": "not_available",
@@ -4494,7 +4578,7 @@
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "the article prints this table and cites nothing for it; an uncited figure is not read"
+      "note": "labels this reader has no entry for: ['rusínska,ukrajinská']"
     },
     "sources": [],
     "parent_name": "Region of Košice",
@@ -4697,9 +4781,9 @@
     "parent_name": "Region of Prešov",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Sabinov (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Sabinov (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
-    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Sabinov (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Sabinov (okres)' transcribes and cites it. A census count. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
   },
   {
     "id": "SVK-admin2-district-of-senec",
@@ -4985,7 +5069,7 @@
     "parent_name": "Region of Prešov",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Snina (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Snina (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
     "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Snina (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
@@ -5307,7 +5391,7 @@
     "parent_name": "Region of Košice",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Spišská Nová Ves (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Spišská Nová Ves (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
     "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Spišská Nová Ves (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
@@ -5468,7 +5552,7 @@
     "parent_name": "Region of Prešov",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Stará Ľubovňa (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Stará Ľubovňa (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
     "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Stará Ľubovňa (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
@@ -5617,7 +5701,7 @@
     "parent_name": "Region of Prešov",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Stropkov (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Stropkov (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
     "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Stropkov (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
@@ -5778,9 +5862,9 @@
     "parent_name": "Region of Prešov",
     "country": "SVK",
     "ethnicity_year": 2011,
-    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Svidník (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
+    "ethnicity_note": "Population by ethnicity for 2011 from a population census, as the sk.wikipedia article 'Svidník (okres)' transcribes and cites it. A census count. The citation is for 2020; the column read is the one the table's own header labels 2011, and that is the year on this record.",
     "religion_year": 2011,
-    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Svidník (okres)' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
+    "religion_note": "Population by religion for 2011 from a population census, as the sk.wikipedia article 'Svidník (okres)' transcribes and cites it. A census count. The citation is for 2023; the column read is the one the table's own header labels 2011, and that is the year on this record."
   },
   {
     "id": "SVK-admin2-district-of-tarnovica",
