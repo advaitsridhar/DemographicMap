@@ -14064,7 +14064,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "MWI"
+    "country": "MWI",
+    "shape_id": "82672581B12520625652479",
+    "match_by": "shape_id"
   },
   {
     "id": "MWI-WP-southern-region",
@@ -14107,7 +14109,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "MWI"
+    "country": "MWI",
+    "shape_id": "82672581B71595037145626",
+    "match_by": "shape_id"
   },
   {
     "id": "NLD-WP-fryslân",
@@ -14150,7 +14154,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "NLD"
+    "country": "NLD",
+    "shape_id": "6811986B16797155540126",
+    "match_by": "shape_id"
   },
   {
     "id": "NOR-WP-troms-og-finnmark",
@@ -14193,7 +14199,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "NOR"
+    "country": "NOR",
+    "shape_id": "71437522B84427958303197",
+    "match_by": "shape_id"
   },
   {
     "id": "NOR-WP-vestfold-og-telemark",
@@ -14236,7 +14244,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "NOR"
+    "country": "NOR",
+    "shape_id": "71437522B75605567014825",
+    "match_by": "shape_id"
   },
   {
     "id": "NOR-WP-viken",
@@ -14279,7 +14289,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "NOR"
+    "country": "NOR",
+    "shape_id": "71437522B91482774809601",
+    "match_by": "shape_id"
   },
   {
     "id": "NRU-WP-anabar",
@@ -14322,7 +14334,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "NRU"
+    "country": "NRU",
+    "shape_id": "42797286B10235022797721",
+    "match_by": "shape_id"
   },
   {
     "id": "NRU-WP-anetan",
@@ -14365,7 +14379,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "NRU"
+    "country": "NRU",
+    "shape_id": "42797286B47186779397710",
+    "match_by": "shape_id"
   },
   {
     "id": "NRU-WP-anibare",
@@ -14408,7 +14424,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "NRU"
+    "country": "NRU",
+    "shape_id": "42797286B13012859405048",
+    "match_by": "shape_id"
   },
   {
     "id": "NRU-WP-ewa",
@@ -14451,7 +14469,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "NRU"
+    "country": "NRU",
+    "shape_id": "42797286B43186886097675",
+    "match_by": "shape_id"
   },
   {
     "id": "NRU-WP-ijuw",
@@ -14494,7 +14514,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "NRU"
+    "country": "NRU",
+    "shape_id": "42797286B57716352557989",
+    "match_by": "shape_id"
   },
   {
     "id": "OMN-WP-al-batinah",
@@ -14508,10 +14530,10 @@
       "status": "not_available"
     },
     "population": {
-      "value": 772590,
+      "value": 465550,
       "unit": "people",
-      "year": 2010,
-      "source": "English Wikipedia, Al Batinah Region (infobox)"
+      "year": 2020,
+      "source": "English Wikipedia, Al Batinah South Governorate (infobox)"
     },
     "median_age": {
       "status": "not_available"
@@ -14532,12 +14554,239 @@
       {
         "field": "population",
         "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Al_Batinah_Region",
-        "year": 2010,
+        "url": "https://en.wikipedia.org/wiki/Al_Batinah_South_Governorate",
+        "year": 2020,
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "OMN"
+    "country": "OMN",
+    "shape_id": "34121849B71010913728332",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "OMN-WP-ash-sharqiyah",
+    "level": "admin1",
+    "name": "Ash Sharqiyah",
+    "parent": "OMN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 315460,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Ash Sharqiyah South Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ash_Sharqiyah_South_Governorate",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "OMN",
+    "shape_id": "34121849B48568874604869",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "OMN-WP-az-zahirah",
+    "level": "admin1",
+    "name": "Az Zahirah",
+    "parent": "OMN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 213043,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Al Dhahirah Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Al_Dhahirah_Governorate",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "OMN",
+    "shape_id": "34121849B37717587073732",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PER-WP-el-callao",
+    "level": "admin1",
+    "name": "El Callao",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1226200,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Callao (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Callao",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PER",
+    "shape_id": "1875124B73300566086976",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PHL-WP-car",
+    "level": "admin1",
+    "name": "CAR",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1808985,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Cordillera Administrative Region (infobox, which displays Wikidata Q13606's P1082)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Cordillera_Administrative_Region",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PHL",
+    "shape_id": "36201628B92932511992503",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PHL-WP-ncr",
+    "level": "admin1",
+    "name": "NCR",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14001751,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Metro Manila (infobox, which displays Wikidata Q13580's P1082)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Metro_Manila",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PHL",
+    "shape_id": "36201628B69282955287113",
+    "match_by": "shape_id"
   },
   {
     "id": "PLW-WP-airai",
@@ -14580,7 +14829,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "PLW"
+    "country": "PLW",
+    "shape_id": "51375826B14634142702996",
+    "match_by": "shape_id"
   },
   {
     "id": "PLW-WP-ngaraard",
@@ -14623,7 +14874,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "PLW"
+    "country": "PLW",
+    "shape_id": "51375826B48991434772650",
+    "match_by": "shape_id"
   },
   {
     "id": "PLW-WP-ngarchelong",
@@ -14666,7 +14919,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "PLW"
+    "country": "PLW",
+    "shape_id": "51375826B16617280953256",
+    "match_by": "shape_id"
   },
   {
     "id": "PLW-WP-ngardmau",
@@ -14709,7 +14964,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "PLW"
+    "country": "PLW",
+    "shape_id": "51375826B95953962908269",
+    "match_by": "shape_id"
   },
   {
     "id": "PLW-WP-ngatpang",
@@ -14752,7 +15009,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "PLW"
+    "country": "PLW",
+    "shape_id": "51375826B59587402164376",
+    "match_by": "shape_id"
   },
   {
     "id": "PLW-WP-ngchesar",
@@ -14795,7 +15054,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "PLW"
+    "country": "PLW",
+    "shape_id": "51375826B32695076810418",
+    "match_by": "shape_id"
   },
   {
     "id": "PLW-WP-ngiwal",
@@ -14838,7 +15099,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "PLW"
+    "country": "PLW",
+    "shape_id": "51375826B1021187793063",
+    "match_by": "shape_id"
   },
   {
     "id": "PLW-WP-peleliu",
@@ -14881,7 +15144,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "PLW"
+    "country": "PLW",
+    "shape_id": "51375826B83906845617852",
+    "match_by": "shape_id"
   },
   {
     "id": "PLW-WP-sonsorol",
@@ -14924,7 +15189,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "PLW"
+    "country": "PLW",
+    "shape_id": "51375826B80300454073965",
+    "match_by": "shape_id"
   },
   {
     "id": "PRT-WP-beja",
@@ -14967,7 +15234,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "PRT"
+    "country": "PRT",
+    "shape_id": "24955722B69535494870966",
+    "match_by": "shape_id"
   },
   {
     "id": "PRT-WP-lisboa",
@@ -15009,7 +15278,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "PRT"
+    "country": "PRT",
+    "shape_id": "24955722B70468072404853",
+    "match_by": "shape_id"
   },
   {
     "id": "QAT-WP-al-daayen",
@@ -15052,7 +15323,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "QAT"
+    "country": "QAT",
+    "shape_id": "59647477B54758693261255",
+    "match_by": "shape_id"
   },
   {
     "id": "QAT-WP-al-shamal",
@@ -15095,7 +15368,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "QAT"
+    "country": "QAT",
+    "shape_id": "59647477B13867481202727",
+    "match_by": "shape_id"
   },
   {
     "id": "QAT-WP-doha",
@@ -15138,7 +15413,54 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "QAT"
+    "country": "QAT",
+    "shape_id": "59647477B74568109878344",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "QAT-WP-umm-slal",
+    "level": "admin1",
+    "name": "Umm Slal",
+    "parent": "QAT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 90835,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Umm Salal (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Umm_Salal",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "QAT",
+    "shape_id": "59647477B67880775667160",
+    "match_by": "shape_id"
   },
   {
     "id": "RUS-WP-sakha-republic",
@@ -15181,7 +15503,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "RUS"
+    "country": "RUS",
+    "shape_id": "28173009B48058606062294",
+    "match_by": "shape_id"
   },
   {
     "id": "SAU-WP-al-bahah-region",
@@ -15224,7 +15548,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SAU"
+    "country": "SAU",
+    "shape_id": "25081817B90917209203250",
+    "match_by": "shape_id"
   },
   {
     "id": "SAU-WP-al-jawf-region",
@@ -15267,7 +15593,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SAU"
+    "country": "SAU",
+    "shape_id": "25081817B5742042673291",
+    "match_by": "shape_id"
   },
   {
     "id": "SAU-WP-al-madinah-region",
@@ -15310,7 +15638,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SAU"
+    "country": "SAU",
+    "shape_id": "25081817B5326875801694",
+    "match_by": "shape_id"
   },
   {
     "id": "SAU-WP-al-qassim-region",
@@ -15353,7 +15683,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SAU"
+    "country": "SAU",
+    "shape_id": "25081817B98761102949945",
+    "match_by": "shape_id"
   },
   {
     "id": "SAU-WP-asir-region",
@@ -15396,7 +15728,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SAU"
+    "country": "SAU",
+    "shape_id": "25081817B79414847265706",
+    "match_by": "shape_id"
   },
   {
     "id": "SAU-WP-eastern-region",
@@ -15439,7 +15773,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SAU"
+    "country": "SAU",
+    "shape_id": "25081817B34473806557189",
+    "match_by": "shape_id"
   },
   {
     "id": "SAU-WP-jazan-region",
@@ -15482,7 +15818,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SAU"
+    "country": "SAU",
+    "shape_id": "25081817B72054791986965",
+    "match_by": "shape_id"
   },
   {
     "id": "SAU-WP-makkah-region",
@@ -15525,7 +15863,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SAU"
+    "country": "SAU",
+    "shape_id": "25081817B13159281784364",
+    "match_by": "shape_id"
   },
   {
     "id": "SAU-WP-najran-region",
@@ -15568,7 +15908,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SAU"
+    "country": "SAU",
+    "shape_id": "25081817B54479367627811",
+    "match_by": "shape_id"
   },
   {
     "id": "SAU-WP-northern-borders-region",
@@ -15611,7 +15953,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SAU"
+    "country": "SAU",
+    "shape_id": "25081817B61333239611232",
+    "match_by": "shape_id"
   },
   {
     "id": "SAU-WP-riyadh-region",
@@ -15654,7 +15998,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SAU"
+    "country": "SAU",
+    "shape_id": "25081817B56088895138556",
+    "match_by": "shape_id"
   },
   {
     "id": "SAU-WP-tabuk-region",
@@ -15697,7 +16043,54 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SAU"
+    "country": "SAU",
+    "shape_id": "25081817B21311317754967",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SDN-WP-central-darfur",
+    "level": "admin1",
+    "name": "Central Darfur",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2499000,
+      "unit": "people",
+      "year": 2017,
+      "source": "English Wikipedia, Central Darfur (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Central_Darfur",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SDN",
+    "shape_id": "86620642B67241023181859",
+    "match_by": "shape_id"
   },
   {
     "id": "SDN-WP-east-darfur",
@@ -15740,7 +16133,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SDN"
+    "country": "SDN",
+    "shape_id": "86620642B42892304507154",
+    "match_by": "shape_id"
   },
   {
     "id": "SDN-WP-west-kordofan",
@@ -15783,7 +16178,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SDN"
+    "country": "SDN",
+    "shape_id": "86620642B26042209819562",
+    "match_by": "shape_id"
   },
   {
     "id": "SLB-WP-central",
@@ -15826,7 +16223,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SLB"
+    "country": "SLB",
+    "shape_id": "17018030B21762340724861",
+    "match_by": "shape_id"
   },
   {
     "id": "SLB-WP-choiseul",
@@ -15869,7 +16268,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SLB"
+    "country": "SLB",
+    "shape_id": "17018030B68013150931387",
+    "match_by": "shape_id"
   },
   {
     "id": "SLB-WP-isabel",
@@ -15912,7 +16313,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SLB"
+    "country": "SLB",
+    "shape_id": "17018030B36628097040544",
+    "match_by": "shape_id"
   },
   {
     "id": "SLB-WP-makira",
@@ -15955,7 +16358,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SLB"
+    "country": "SLB",
+    "shape_id": "17018030B43755880178831",
+    "match_by": "shape_id"
   },
   {
     "id": "SLB-WP-malaita",
@@ -15998,7 +16403,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SLB"
+    "country": "SLB",
+    "shape_id": "17018030B28135645457785",
+    "match_by": "shape_id"
   },
   {
     "id": "SLB-WP-rennell-and-bellona",
@@ -16041,7 +16448,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SLB"
+    "country": "SLB",
+    "shape_id": "17018030B84591335552725",
+    "match_by": "shape_id"
   },
   {
     "id": "SLB-WP-western",
@@ -16084,7 +16493,54 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SLB"
+    "country": "SLB",
+    "shape_id": "17018030B8659224027401",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SOM-WP-banadir",
+    "level": "admin1",
+    "name": "Banadir",
+    "parent": "SOM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3262129,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Banaadir (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Banaadir",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SOM",
+    "shape_id": "83879307B32896531038690",
+    "match_by": "shape_id"
   },
   {
     "id": "SOM-WP-bari",
@@ -16127,7 +16583,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SOM"
+    "country": "SOM",
+    "shape_id": "83879307B19000204873860",
+    "match_by": "shape_id"
   },
   {
     "id": "SOM-WP-bay",
@@ -16170,7 +16628,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SOM"
+    "country": "SOM",
+    "shape_id": "83879307B67196763494499",
+    "match_by": "shape_id"
   },
   {
     "id": "SOM-WP-galgaduud",
@@ -16213,7 +16673,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SOM"
+    "country": "SOM",
+    "shape_id": "83879307B20044253365087",
+    "match_by": "shape_id"
   },
   {
     "id": "SOM-WP-gedo",
@@ -16256,7 +16718,54 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SOM"
+    "country": "SOM",
+    "shape_id": "83879307B34714219035659",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SOM-WP-hiiraan",
+    "level": "admin1",
+    "name": "Hiiraan",
+    "parent": "SOM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2566400,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Hiran, Somalia (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Hiran%2C_Somalia",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SOM",
+    "shape_id": "83879307B66756469447496",
+    "match_by": "shape_id"
   },
   {
     "id": "SOM-WP-lower-shebelle",
@@ -16299,7 +16808,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SOM"
+    "country": "SOM",
+    "shape_id": "83879307B35519599536274",
+    "match_by": "shape_id"
   },
   {
     "id": "SOM-WP-middle-juba",
@@ -16342,7 +16853,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SOM"
+    "country": "SOM",
+    "shape_id": "83879307B33420401553888",
+    "match_by": "shape_id"
   },
   {
     "id": "SOM-WP-mudug",
@@ -16385,7 +16898,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SOM"
+    "country": "SOM",
+    "shape_id": "83879307B26517451678825",
+    "match_by": "shape_id"
   },
   {
     "id": "SOM-WP-nugaal",
@@ -16428,7 +16943,144 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SOM"
+    "country": "SOM",
+    "shape_id": "83879307B66585548815331",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SOM-WP-sanaag",
+    "level": "admin1",
+    "name": "Sanaag",
+    "parent": "SOM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 325136,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Sanaag (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sanaag",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SOM",
+    "shape_id": "83879307B13610404434600",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SOM-WP-sool",
+    "level": "admin1",
+    "name": "Sool",
+    "parent": "SOM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 618600,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Sool (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sool",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SOM",
+    "shape_id": "83879307B65026001570916",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SOM-WP-woqooyi-galbeed",
+    "level": "admin1",
+    "name": "Woqooyi Galbeed",
+    "parent": "SOM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2100000,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Maroodi Jeex (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Maroodi_Jeex",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SOM",
+    "shape_id": "83879307B42572798770371",
+    "match_by": "shape_id"
   },
   {
     "id": "SSD-WP-central-equatoria",
@@ -16471,7 +17123,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SSD"
+    "country": "SSD",
+    "shape_id": "48771326B10235544430886",
+    "match_by": "shape_id"
   },
   {
     "id": "SSD-WP-eastern-equatoria",
@@ -16514,7 +17168,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SSD"
+    "country": "SSD",
+    "shape_id": "48771326B42994405084241",
+    "match_by": "shape_id"
   },
   {
     "id": "SSD-WP-lakes",
@@ -16557,7 +17213,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SSD"
+    "country": "SSD",
+    "shape_id": "48771326B2646389376646",
+    "match_by": "shape_id"
   },
   {
     "id": "SSD-WP-northern-bahr-el-ghazal",
@@ -16600,7 +17258,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SSD"
+    "country": "SSD",
+    "shape_id": "48771326B49579010016854",
+    "match_by": "shape_id"
   },
   {
     "id": "SSD-WP-unity",
@@ -16643,7 +17303,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SSD"
+    "country": "SSD",
+    "shape_id": "48771326B37591972128550",
+    "match_by": "shape_id"
   },
   {
     "id": "SSD-WP-upper-nile",
@@ -16686,7 +17348,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SSD"
+    "country": "SSD",
+    "shape_id": "48771326B2876692069974",
+    "match_by": "shape_id"
   },
   {
     "id": "SSD-WP-warrap",
@@ -16729,7 +17393,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SSD"
+    "country": "SSD",
+    "shape_id": "48771326B11845073429118",
+    "match_by": "shape_id"
   },
   {
     "id": "SSD-WP-western-bahr-el-ghazal",
@@ -16772,7 +17438,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SSD"
+    "country": "SSD",
+    "shape_id": "48771326B76913720880161",
+    "match_by": "shape_id"
   },
   {
     "id": "SSD-WP-western-equatoria",
@@ -16815,7 +17483,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SSD"
+    "country": "SSD",
+    "shape_id": "48771326B90797869503386",
+    "match_by": "shape_id"
   },
   {
     "id": "STP-WP-são-tomé-province",
@@ -16858,7 +17528,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "STP"
+    "country": "STP",
+    "shape_id": "19237168B40253326356618",
+    "match_by": "shape_id"
   },
   {
     "id": "SUR-WP-commewijne",
@@ -16901,7 +17573,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SUR"
+    "country": "SUR",
+    "shape_id": "93550828B58991910935434",
+    "match_by": "shape_id"
   },
   {
     "id": "SUR-WP-coronie",
@@ -16944,7 +17618,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SUR"
+    "country": "SUR",
+    "shape_id": "93550828B7327447609620",
+    "match_by": "shape_id"
   },
   {
     "id": "SUR-WP-nickerie",
@@ -16987,7 +17663,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SUR"
+    "country": "SUR",
+    "shape_id": "93550828B24363513819677",
+    "match_by": "shape_id"
   },
   {
     "id": "SUR-WP-para",
@@ -17030,7 +17708,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SUR"
+    "country": "SUR",
+    "shape_id": "93550828B25693187591601",
+    "match_by": "shape_id"
   },
   {
     "id": "SUR-WP-saramacca",
@@ -17073,7 +17753,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SUR"
+    "country": "SUR",
+    "shape_id": "93550828B82794982350584",
+    "match_by": "shape_id"
   },
   {
     "id": "SUR-WP-wanica",
@@ -17116,7 +17798,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SUR"
+    "country": "SUR",
+    "shape_id": "93550828B69998957246771",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-anse-etoil",
@@ -17159,7 +17843,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B87843643892528",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-anse-royal",
@@ -17202,7 +17888,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B89376585633127",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-au-cap",
@@ -17245,7 +17933,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B21107318630465",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-baie-lazar",
@@ -17288,7 +17978,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B38530476923333",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-baie-saint",
@@ -17331,7 +18023,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B68430641477456",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-beau-vallo",
@@ -17374,7 +18068,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B88598061182448",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-bel-air",
@@ -17417,7 +18113,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B54769404218422",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-bel-ombre",
@@ -17460,7 +18158,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B26716977032117",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-cascade",
@@ -17503,7 +18203,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B24501722208733",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-glacis",
@@ -17546,7 +18248,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B70505016322555",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-grandanse-mahé",
@@ -17589,7 +18293,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B44273626822256",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-grandanse-praslin",
@@ -17632,7 +18338,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B30823539589951",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-la-rivière",
@@ -17675,7 +18383,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B99498664822858",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-les-mamell",
@@ -17718,7 +18428,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B85899211000067",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-mont-buxto",
@@ -17761,7 +18473,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B48375430986897",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-mont-fleur",
@@ -17804,7 +18518,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B90252608075096",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-plaisance",
@@ -17847,7 +18563,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B73485441343177",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-pointe-la",
@@ -17890,7 +18608,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B83277674209167",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-port-glaud",
@@ -17933,7 +18653,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B13397871657541",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-roche-caïm",
@@ -17976,7 +18698,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B64732243105598",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-saint-loui",
@@ -18019,7 +18743,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B99490362371976",
+    "match_by": "shape_id"
   },
   {
     "id": "SYC-WP-takamaka",
@@ -18062,7 +18788,144 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "SYC"
+    "country": "SYC",
+    "shape_id": "4304713B51488395510296",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SYR-WP-idleb",
+    "level": "admin1",
+    "name": "Idleb",
+    "parent": "SYR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1501000,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Idlib Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Idlib_Governorate",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SYR",
+    "shape_id": "8384693B38455082445791",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SYR-WP-rural-damascus",
+    "level": "admin1",
+    "name": "Rural Damascus",
+    "parent": "SYR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2836000,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Rif Dimashq Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Rif_Dimashq_Governorate",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SYR",
+    "shape_id": "8384693B89451039606890",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SYR-WP-tartous",
+    "level": "admin1",
+    "name": "Tartous",
+    "parent": "SYR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 797000,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Tartus Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tartus_Governorate",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SYR",
+    "shape_id": "8384693B50697642267539",
+    "match_by": "shape_id"
   },
   {
     "id": "TCD-WP-ennedi-est",
@@ -18105,7 +18968,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TCD"
+    "country": "TCD",
+    "shape_id": "23847190B43219597202588",
+    "match_by": "shape_id"
   },
   {
     "id": "TCD-WP-ennedi-ouest",
@@ -18148,7 +19013,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TCD"
+    "country": "TCD",
+    "shape_id": "23847190B77249644038093",
+    "match_by": "shape_id"
   },
   {
     "id": "TTO-WP-couva-tabaquite-talparo",
@@ -18191,7 +19058,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TTO"
+    "country": "TTO",
+    "shape_id": "22272344B56641681440639",
+    "match_by": "shape_id"
   },
   {
     "id": "TTO-WP-diego-martin",
@@ -18234,7 +19103,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TTO"
+    "country": "TTO",
+    "shape_id": "22272344B56659955629338",
+    "match_by": "shape_id"
   },
   {
     "id": "TTO-WP-penal-debe",
@@ -18277,7 +19148,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TTO"
+    "country": "TTO",
+    "shape_id": "22272344B69788286970028",
+    "match_by": "shape_id"
   },
   {
     "id": "TTO-WP-princes-town",
@@ -18320,7 +19193,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TTO"
+    "country": "TTO",
+    "shape_id": "22272344B24277435757602",
+    "match_by": "shape_id"
   },
   {
     "id": "TTO-WP-rio-claro-mayaro",
@@ -18363,7 +19238,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TTO"
+    "country": "TTO",
+    "shape_id": "22272344B97643437657922",
+    "match_by": "shape_id"
   },
   {
     "id": "TTO-WP-san-juan-laventille",
@@ -18406,7 +19283,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TTO"
+    "country": "TTO",
+    "shape_id": "22272344B98197828393532",
+    "match_by": "shape_id"
   },
   {
     "id": "TTO-WP-sangre-grande",
@@ -18449,7 +19328,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TTO"
+    "country": "TTO",
+    "shape_id": "22272344B26975146783294",
+    "match_by": "shape_id"
   },
   {
     "id": "TTO-WP-siparia",
@@ -18492,7 +19373,54 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TTO"
+    "country": "TTO",
+    "shape_id": "22272344B73668233111034",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TTO-WP-tobago",
+    "level": "admin1",
+    "name": "Tobago",
+    "parent": "TTO",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 60735,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Tobago (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tobago",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TTO",
+    "shape_id": "22272344B40586354952803",
+    "match_by": "shape_id"
   },
   {
     "id": "TTO-WP-tunapuna-piarco",
@@ -18535,7 +19463,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TTO"
+    "country": "TTO",
+    "shape_id": "22272344B26544115797749",
+    "match_by": "shape_id"
   },
   {
     "id": "TUN-WP-el-kef",
@@ -18578,7 +19508,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TUN"
+    "country": "TUN",
+    "shape_id": "13205935B49538157477352",
+    "match_by": "shape_id"
   },
   {
     "id": "TUV-WP-nui",
@@ -18621,7 +19553,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TUV"
+    "country": "TUV",
+    "shape_id": "17741764B90379454256238",
+    "match_by": "shape_id"
   },
   {
     "id": "TUV-WP-nukufetau",
@@ -18664,7 +19598,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TUV"
+    "country": "TUV",
+    "shape_id": "17741764B30576374901893",
+    "match_by": "shape_id"
   },
   {
     "id": "TUV-WP-vaitupu",
@@ -18707,7 +19643,54 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TUV"
+    "country": "TUV",
+    "shape_id": "17741764B83632895409465",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TZA-WP-dar-es-salaam",
+    "level": "admin1",
+    "name": "Dar es Salaam",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7776000,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Dar es Salaam (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dar_es_Salaam",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B2633782293100",
+    "match_by": "shape_id"
   },
   {
     "id": "TZA-WP-katavi",
@@ -18750,7 +19733,99 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TZA"
+    "country": "TZA",
+    "shape_id": "36957248B34051677343112",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TZA-WP-mbeya",
+    "level": "admin1",
+    "name": "Mbeya",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2343754,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Mbeya Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mbeya_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B75876472342648",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TZA-WP-morogoro",
+    "level": "admin1",
+    "name": "Morogoro",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 471409,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Morogoro (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Morogoro",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B51202481578817",
+    "match_by": "shape_id"
   },
   {
     "id": "TZA-WP-njombe",
@@ -18793,7 +19868,54 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TZA"
+    "country": "TZA",
+    "shape_id": "36957248B16645806994912",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TZA-WP-tabora",
+    "level": "admin1",
+    "name": "Tabora",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3391679,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Tabora Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tabora_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B64143865471040",
+    "match_by": "shape_id"
   },
   {
     "id": "TZA-WP-zanzibar-north",
@@ -18836,7 +19958,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TZA"
+    "country": "TZA",
+    "shape_id": "36957248B81638677744414",
+    "match_by": "shape_id"
   },
   {
     "id": "TZA-WP-zanzibar-south-central",
@@ -18879,7 +20003,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TZA"
+    "country": "TZA",
+    "shape_id": "36957248B39816127207897",
+    "match_by": "shape_id"
   },
   {
     "id": "TZA-WP-zanzibar-urbanwest",
@@ -18922,7 +20048,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "TZA"
+    "country": "TZA",
+    "shape_id": "36957248B66874645654546",
+    "match_by": "shape_id"
   },
   {
     "id": "UGA-WP-central-region",
@@ -18965,7 +20093,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "UGA"
+    "country": "UGA",
+    "shape_id": "17295835B48340970483027",
+    "match_by": "shape_id"
   },
   {
     "id": "UGA-WP-eastern-region",
@@ -19008,7 +20138,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "UGA"
+    "country": "UGA",
+    "shape_id": "17295835B57878138064711",
+    "match_by": "shape_id"
   },
   {
     "id": "UGA-WP-northern-region",
@@ -19051,7 +20183,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "UGA"
+    "country": "UGA",
+    "shape_id": "17295835B80141219017784",
+    "match_by": "shape_id"
   },
   {
     "id": "UGA-WP-western-region",
@@ -19094,7 +20228,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "UGA"
+    "country": "UGA",
+    "shape_id": "17295835B91329899113986",
+    "match_by": "shape_id"
   },
   {
     "id": "UKR-WP-odessa-oblast",
@@ -19137,7 +20273,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "UKR"
+    "country": "UKR",
+    "shape_id": "14850775B53240635394722",
+    "match_by": "shape_id"
   },
   {
     "id": "UKR-WP-zaporizhia-oblast",
@@ -19180,7 +20318,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "UKR"
+    "country": "UKR",
+    "shape_id": "14850775B92888097715572",
+    "match_by": "shape_id"
   },
   {
     "id": "UZB-WP-sirdaryo-region",
@@ -19223,7 +20363,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "UZB"
+    "country": "UZB",
+    "shape_id": "4885205B28875075161645",
+    "match_by": "shape_id"
   },
   {
     "id": "UZB-WP-surxondaryo-region",
@@ -19266,7 +20408,9 @@
         "license": "CC BY-SA 4.0"
       }
     ],
-    "country": "UZB"
+    "country": "UZB",
+    "shape_id": "4885205B83157789420886",
+    "match_by": "shape_id"
   },
   {
     "id": "VAT-WP-vatican-city",
