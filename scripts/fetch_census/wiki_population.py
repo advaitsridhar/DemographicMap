@@ -98,6 +98,9 @@ NEAR = 0.92
 # inside it, and Malta's Valletta to the Valletta-Mdina railway.
 TRUNCATED_AT = 10
 PREFIX_TAIL = 3
+# How many names of exactly that length it takes before the length is the
+# boundary file's doing rather than a coincidence.
+TRUNCATED_SIGN = 3
 
 # The most items to consider for one country. Malta files every locality,
 # parish church and street directly under the country, and a candidate
@@ -258,6 +261,20 @@ def entities(qids: Iterable[str]) -> dict[str, dict[str, Any]]:
     return out
 
 
+def truncates(units: list[dict[str, Any]]) -> bool:
+    """Whether this country's names come out of the boundary file cut short.
+
+    Measured rather than assumed. All 24 of Seychelles' districts are exactly
+    ten characters long -- "Anse Etoil", "Mont Buxto", "Baie Saint" -- which
+    no real list of names does by accident. Jamaica has two of fourteen at
+    that length and is not cut, which matters: with the free prefix granted to
+    every long name, "Saint Thomas" reached Saint Thomas in the Vale, a
+    different parish.
+    """
+    return sum(1 for u in units
+               if len((u.get("name") or "").strip()) == TRUNCATED_AT) >= TRUNCATED_SIGN
+
+
 def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]],
             preset: dict[str, tuple[str, str, str]] | None = None
             ) -> dict[str, tuple[str, str, str]]:
@@ -297,10 +314,12 @@ def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]],
     def exact(key: str) -> str | None:
         return unique(by_name.get(key, []))
 
+    cutting = truncates(units)
+
     def prefix(key: str, raw: str) -> str | None:
         if len(key) < PREFIX_MIN:
             return None
-        cut = len(raw.strip()) >= TRUNCATED_AT
+        cut = cutting and len(raw.strip()) == TRUNCATED_AT
         return unique([q for form, qids in by_name.items()
                        if form.startswith(key)
                        and (cut or len(form) - len(key) <= PREFIX_TAIL)
@@ -458,6 +477,37 @@ def read(wikitext: str) -> tuple[int | None, int | None, str]:
     return None, None, "no population parameter in the infobox"
 
 
+# The last word of what an article says it is. "[[Districts of Libya|District]]"
+# is a district; "City" is a city. Infobox settlement's own parameter, so it is
+# the article speaking about itself rather than this module inferring.
+SETTLEMENT = frozenset({"city", "town", "village", "hamlet", "suburb", "locality",
+                        "neighbourhood", "neighborhood", "settlement", "commune"})
+
+
+def kind(wikitext: str) -> str:
+    """What the article's infobox says the place is, in one word."""
+    words = clean((params(wikitext) or {}).get("settlement_type", "")).lower().split()
+    return words[-1].strip(" ()") if words else ""
+
+
+def odd_one_out(kinds: list[str]) -> str | None:
+    """The kind of division this country's units are, where they agree on one.
+
+    Libya's 22 districts read 11 "District" and one "City": the city of Zawiya,
+    whose article this module had resolved for Az Zawiyah district, and whose
+    200,000 people are not the district's. A unit reading as a settlement in a
+    country whose units read as divisions is the shape of that mistake, and
+    this is what names the majority it stands against.
+    """
+    counted = [k for k in kinds if k]
+    if not counted:
+        return None
+    best = max(set(counted), key=counted.count)
+    if best in SETTLEMENT or counted.count(best) * 2 < len(kinds):
+        return None
+    return best
+
+
 # ---------------------------------------------------------------------------
 # What the map is missing
 # ---------------------------------------------------------------------------
@@ -553,7 +603,7 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
         *, probe: bool = False) -> list[dict[str, Any]]:
     found = article_for(iso3, units)
     log(f"{iso3}: {len(units)} units without a population, {len(found)} resolved")
-    rows: list[dict[str, Any]] = []
+    read_out: list[dict[str, Any]] = []
     for unit in units:
         hit = found.get(unit["id"])
         if not hit:
@@ -584,9 +634,24 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
             log(f"  {unit['name']} -> {landed}: {value:,} exceeds the country's "
                 f"own {national:,.0f}; refused")
             continue
+        read_out.append({"unit": unit, "title": landed, "value": value,
+                         "year": year, "remark": remark, "kind": kind(wikitext)})
+
+    rows: list[dict[str, Any]] = []
+    division = odd_one_out([r["kind"] for r in read_out])
+    for r in read_out:
+        unit, landed, value, year = r["unit"], r["title"], r["value"], r["year"]
+        # A settlement inside the unit is not the unit -- unless the article is
+        # titled the way the map names the place, in which case it is the unit
+        # and the article simply calls it a city.
+        if (division and r["kind"] in SETTLEMENT
+                and fold(unit["name"]) != fold(disambiguated(landed))):
+            log(f"  {unit['name']} -> {landed}: reads as a {r['kind']} where "
+                f"{iso3}'s units read as a {division}; refused")
+            continue
         where = (SOURCE if year else UNDATED).format(title=landed)
         if not year:
-            log(f"  {unit['name']} -> {landed}: {value:,}, undated ({remark})")
+            log(f"  {unit['name']} -> {landed}: {value:,}, undated ({r['remark']})")
         rows.append(record(
             f"{iso3}-WP-{slugify(unit['name'])}", unit["name"],
             level="admin1", parent=iso3, country=iso3,

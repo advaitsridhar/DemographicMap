@@ -149,6 +149,29 @@ class Refusals(unittest.TestCase):
         self.assertIn("population_total", why)
 
 
+class WhatTheArticleIsAbout(unittest.TestCase):
+    def test_the_infobox_says_what_the_place_is(self):
+        self.assertEqual(wp.kind(ZAMBIA), "province")
+        self.assertEqual(wp.kind(infobox(settlement_type="City")), "city")
+        self.assertEqual(wp.kind(infobox(settlement_type="[[Districts of Libya|District]]")),
+                         "district")
+        self.assertEqual(wp.kind(infobox(official_name="X")), "")
+
+    def test_a_country_that_agrees_on_one_kind(self):
+        # Libya: eleven districts and the city of Zawiya, which is inside one
+        # of them and whose 200,000 people are not a district's.
+        self.assertEqual(wp.odd_one_out(["district"] * 11 + ["city"]), "district")
+
+    def test_a_country_that_agrees_on_nothing_accuses_no_one(self):
+        self.assertIsNone(wp.odd_one_out(["city", "town", "district"]))
+        self.assertIsNone(wp.odd_one_out(["", "", ""]))
+        self.assertIsNone(wp.odd_one_out([]))
+
+    def test_a_country_whose_units_are_themselves_settlements(self):
+        # Malta's 68 localities. Nothing here stands against anything.
+        self.assertIsNone(wp.odd_one_out(["town"] * 40 + ["city"] * 28))
+
+
 class Names(unittest.TestCase):
     def test_the_boundary_file_and_the_encyclopaedia_agree(self):
         same = [("Central", "Central Province"),
@@ -229,12 +252,32 @@ class Resolving(unittest.TestCase):
                 ("Tarxien", "Tarxien Cemetery phase", "Tarxien Cemetery phase")):
             self.assertEqual(wp.resolve(units(name), pool((label, title))), {}, name)
 
-    def test_a_name_cut_to_the_boundary_file_s_width_may_lose_a_whole_word(self):
-        # "Baie Saint" is ten characters because the boundary file stops
-        # there, and the district is Baie Sainte Anne.
-        got = wp.resolve(units("Baie Saint"),
-                         pool(("Baie Sainte Anne", "Baie Sainte Anne")))
+    def test_a_country_whose_names_are_cut_may_lose_a_whole_word(self):
+        # Seychelles' boundary file stops at ten characters, and does it to
+        # twelve of the twenty-four, which is the evidence that it is cutting.
+        # "Baie Saint" is Baie Sainte Anne.
+        seychelles = units("Baie Saint", "Anse Etoil", "Mont Buxto", "Cascade")
+        self.assertTrue(wp.truncates(seychelles))
+        got = wp.resolve(seychelles,
+                         pool(("Baie Sainte Anne", "Baie Sainte Anne"),
+                              ("Anse Etoile", "Anse Etoile"),
+                              ("Mont Buxton", "Mont Buxton"),
+                              ("Cascade", "Cascade")))
         self.assertEqual(got["u1"][:2], ("Q1", "Baie Sainte Anne"))
+
+    def test_a_country_whose_names_are_not_cut_may_not(self):
+        # Jamaica has two names of ten characters out of fourteen, which is
+        # coincidence, not a cut. Saint Thomas in the Vale is a different
+        # parish from Saint Thomas, and the second run matched them.
+        jamaica = units("Saint Thomas", "Clarendon", "Manchester", "Saint Mary")
+        self.assertFalse(wp.truncates(jamaica))
+        got = wp.resolve(jamaica, pool(
+            ("Saint Thomas in the Vale Parish", "Saint Thomas in the Vale Parish, Jamaica"),
+            ("Clarendon Parish", "Clarendon Parish, Jamaica"),
+            ("Manchester Parish", "Manchester Parish"),
+            ("Saint Mary Parish", "Saint Mary Parish, Jamaica")))
+        self.assertNotIn("u1", got)
+        self.assertEqual(got["u2"][:2], ("Q2", "Clarendon Parish, Jamaica"))
 
     def test_a_shorter_name_may_still_gain_an_ending(self):
         got = wp.resolve(units("Cascade"), pool(("Cascades", "Cascades")))
