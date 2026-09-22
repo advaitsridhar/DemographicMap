@@ -542,3 +542,44 @@ class WhatThePageShowsAndWhereThePlaceIs(unittest.TestCase):
         got = wp.resolve(units("East"),
                          pool(("Eastern Statistical Region", "Eastern Statistical Region")))
         self.assertEqual(got["u1"][:2], ("Q1", "Eastern Statistical Region"))
+
+
+class Declarations(unittest.TestCase):
+    def test_a_genitive_ending_is_the_same_name(self):
+        self.assertTrue(wp.same_place_name("Rēzeknes", "Rēzekne"))
+        self.assertTrue(wp.same_place_name("Valletta", "Valletta"))
+        # The city of Zawiya is not Az Zawiyah district.
+        self.assertFalse(wp.same_place_name("Az Zawiyah", "Zawiya"))
+        self.assertFalse(wp.same_place_name("Saint Thomas", "Saint Thomas in the Vale"))
+
+    def test_a_declared_article_is_still_proved(self):
+        saved = (wp.api, wp.in_country)
+        wp.api = lambda endpoint, **params: {"query": {"pages": [
+            {"title": "Central Italy", "pageprops": {"wikibase_item": "Q1127320"}}]}}
+        try:
+            wp.in_country = lambda item, country: True
+            self.assertEqual(wp.declared("ITA", {"name": "Centro"}, "Q38", set()),
+                             ("Q1127320", "Central Italy"))
+            # Held by another shape, or outside the country: refused.
+            self.assertIsNone(wp.declared("ITA", {"name": "Centro"}, "Q38", {"Q1127320"}))
+            wp.in_country = lambda item, country: False
+            self.assertIsNone(wp.declared("ITA", {"name": "Centro"}, "Q38", set()))
+            # Nothing declared, nothing asked.
+            self.assertIsNone(wp.declared("ITA", {"name": "Lazio"}, "Q38", set()))
+        finally:
+            wp.api, wp.in_country = saved
+
+    def test_a_gross_area_mismatch_refutes_and_a_wrong_wikidata_area_does_not(self):
+        saved = wp.claim_values
+
+        def area(km2):
+            return lambda qid, prop: [{"mainsnak": {"datavalue": {"value": {
+                "amount": f"+{km2}", "unit": "http://www.wikidata.org/entity/Q712226"}}}}
+            ] if prop == "P2046" else []
+        try:
+            wp.claim_values = area(161)   # Mgarr, as Wikidata has it
+            self.assertEqual(wp.refuted("Q691220", [14.33, 35.90, 14.40, 35.93]), "")
+            wp.claim_values = area(39854)  # Minsk Region
+            self.assertIn("cannot fit", wp.refuted("Q192959", [27.4751, 53.8232, 27.733, 53.9583]))
+        finally:
+            wp.claim_values = saved

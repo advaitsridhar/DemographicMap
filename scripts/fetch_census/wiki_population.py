@@ -121,9 +121,12 @@ GRANDCHILDREN = 60
 SEARCH_HITS = 15
 
 # How much larger than its shape's bounding box a place's stated area may
-# be before it cannot be that shape: boundaries differ between vintages
-# and sources, and a box is not a polygon, so the margin is generous.
-AREA_SLACK = 1.5
+# be before it cannot be that shape. Ten times, because Wikidata's areas are
+# not always right: Malta's Mgarr is about 16 km^2 and Wikidata says 161,
+# which a margin of one and a half refused. What this exists to catch is a
+# region offered for its capital, and that is a hundred times or more --
+# Minsk Region against the city's box is 157.
+AREA_SLACK = 10.0
 # How far outside its shape's box, in degrees, a place's own coordinates
 # must lie before they prove it is somewhere else -- at least this, and at
 # least the size of the box itself.
@@ -203,6 +206,21 @@ def fold(text: str | None) -> str:
         return ""
     stripped = "".join(c for c in GENERIC.sub(" ", bare) if c.isalnum())
     return stripped or "".join(c for c in bare if c.isalnum())
+
+
+def same_place_name(a: str, b: str) -> bool:
+    """Whether two names are one name, allowing an ending of a few letters.
+
+    Latvia's boundary file writes its state cities in the genitive --
+    "Rezeknes" for Rezekne -- and the settlement guard refused the city's own
+    article for its own shape on that one letter.
+    """
+    x, y = fold(a), fold(b)
+    if x == y:
+        return True
+    short, long_ = sorted((x, y), key=len)
+    return len(short) >= ENDING_MIN and long_.startswith(short) \
+        and len(long_) - len(short) <= PREFIX_TAIL
 
 
 def says_its_kind(name: str) -> bool:
@@ -897,6 +915,52 @@ def by_title(unit: dict[str, Any], country: str, country_qid: str,
     return None
 
 
+# Articles named by declaration, for first-level units whose names on the map
+# no index can connect to their article. Italy's first level on this map is
+# its five NUTS-1 macro-regions, written as Eurostat writes them; Wikidata
+# keeps "Nord-Est" as an alias of Northeast Italy and nothing of the kind for
+# the other four, and its search offers neighbourhoods called Centro and
+# islands called Isole instead. Greece's are its decentralised
+# administrations, in a Greek-English hybrid the boundary file invented.
+#
+# A declaration names an article and proves nothing: the page must still
+# exist and not be a disambiguation page, its item must still be located in
+# the country and held by no other shape, its coordinates and area must not
+# refute it, and its infobox must still be read. It only replaces the search.
+TITLES: dict[tuple[str, str], str] = {
+    ("ITA", "Centro"): "Central Italy",
+    ("ITA", "Isole"): "Insular Italy",
+    ("ITA", "Nord-Ovest"): "Northwest Italy",
+    ("ITA", "Sud"): "Southern Italy",
+    ("GRC", "Egean"): "Decentralized Administration of the Aegean",
+    ("GRC", "Peloponisos-W. Greece & Ionian"):
+        "Decentralized Administration of Peloponnese, Western Greece and the Ionian",
+}
+
+
+def declared(iso3: str, unit: dict[str, Any], country_qid: str,
+             taken: set[str]) -> tuple[str, str] | None:
+    """The declared article for this unit, if TITLES names one and it holds."""
+    title = TITLES.get((iso3, unit["name"]))
+    if not title:
+        return None
+    q = (api(WIKI, action="query", prop="pageprops",
+             ppprop="wikibase_item|disambiguation", titles=title,
+             redirects="1") or {}).get("query") or {}
+    for page in q.get("pages") or []:
+        props = page.get("pageprops") or {}
+        item = props.get("wikibase_item")
+        if page.get("missing") or "disambiguation" in props or not item:
+            log(f"  {unit['name']}: the declared article {title!r} is not an article")
+            return None
+        if item in taken or item == country_qid or not in_country(item, country_qid):
+            log(f"  {unit['name']}: the declared article {title!r} is {item}, "
+                f"which is another shape's or not in the country")
+            return None
+        return item, page.get("title") or title
+    return None
+
+
 def article_for(iso3: str, units: list[dict[str, Any]],
                 shapes: list[dict[str, Any]] | None = None,
                 country: str = "") -> dict[str, tuple[str, str, str]]:
@@ -964,6 +1028,11 @@ def article_for(iso3: str, units: list[dict[str, Any]],
         if len(found) > before:
             log(f"{iso3}: {label} resolved {len(found) - before} more")
 
+    for unit in short():
+        taken = {item for item, _, _ in found.values()} | others
+        hit = declared(iso3, unit, qid, taken)
+        if hit:
+            found[unit["id"]] = (hit[0], hit[1], "declaration")
     widen("the country's own divisions", ())
     if short():
         widen("what sits directly in the country", children(qid))
@@ -1058,7 +1127,7 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
         # titled the way the map names the place, in which case it is the unit
         # and the article simply calls it a city.
         if (division and r["kind"] in SETTLEMENT
-                and fold(unit["name"]) != fold(disambiguated(landed))):
+                and not same_place_name(unit["name"], disambiguated(landed))):
             log(f"  {unit['name']} -> {landed}: reads as a {r['kind']} where "
                 f"{iso3}'s units read as a {division}; refused")
             continue
