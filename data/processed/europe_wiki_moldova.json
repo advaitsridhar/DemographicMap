@@ -21,11 +21,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -103,15 +103,15 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has no section matching 'religio'"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "'Balti' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "sources": [],
     "country": "MDA"
@@ -138,11 +138,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "labels this reader has no entry for: ['Baptists', 'Adventists', 'Pentecostals', 'Evangelicals', 'Old Believers', 'Free thinkers', 'Irreligious']"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -216,15 +216,15 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "Bender is administered by Transnistria and the 2024 Moldovan census did not count it. The only composition its article prints is the 2004 census the Transnistrian authorities took, cited to a third-party compilation of Eastern European census results, and its rows give ranges rather than counts where the compiler could not tell -- \"0-5\", \"61-66\" -- inside column markup this reader cannot line up with the header. It is not a figure of the census this reader names as its source, and it is not read."
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "Bender is administered by Transnistria and the 2024 Moldovan census did not count it. The only composition its article prints is the 2004 census the Transnistrian authorities took, cited to a third-party compilation of Eastern European census results, and its rows give ranges rather than counts where the compiler could not tell -- \"0-5\", \"61-66\" -- inside column markup this reader cannot line up with the header. It is not a figure of the census this reader names as its source, and it is not read."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "'Bender' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "Bender is administered by Transnistria and the 2024 Moldovan census did not count it. The only composition its article prints is the 2004 census the Transnistrian authorities took, cited to a third-party compilation of Eastern European census results, and its rows give ranges rather than counts where the compiler could not tell -- \"0-5\", \"61-66\" -- inside column markup this reader cannot line up with the header. It is not a figure of the census this reader names as its source, and it is not read."
     },
     "sources": [],
     "country": "MDA"
@@ -251,18 +251,61 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the table's rows are there and the column this reader takes the share from is empty in all 10 of them"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the table in the article counts a population this shape does not have, so the article is about some other place; it is not read"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 72.6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 22.5
+      },
+      {
+        "group": "Russian",
+        "pct": 2.3
+      },
+      {
+        "group": "Romanian",
+        "pct": 2.0
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.21
+      },
+      {
+        "group": "Other",
+        "pct": 0.3
+      },
+      {
+        "group": "Romani",
+        "pct": 0.2
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.1
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Briceni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Briceni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Briceni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census. As printed the shares add to 101.3%, and are carried as printed."
   },
   {
     "id": "MDA-admin1-cahul",
@@ -286,11 +329,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -364,11 +407,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -442,11 +485,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -520,11 +563,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -596,20 +639,131 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "'Chisinau' is none of the names on the country's own list of units; there is no article to read for it"
-    },
-    "sources": [],
-    "country": "MDA"
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 92.44
+      },
+      {
+        "group": "Agnostic or atheist",
+        "pct": 1.86
+      },
+      {
+        "group": "No religion",
+        "pct": 1.72
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.22
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.65
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.54
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.44
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.26
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.2
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.2
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.16
+      }
+    ],
+    "language": [
+      {
+        "group": "Romanian",
+        "pct": 47.65
+      },
+      {
+        "group": "Moldovan",
+        "pct": 28.69
+      },
+      {
+        "group": "Russian",
+        "pct": 19.7
+      },
+      {
+        "group": "Other",
+        "pct": 3.97
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 72.46
+      },
+      {
+        "group": "Romanian",
+        "pct": 12.91
+      },
+      {
+        "group": "Russian",
+        "pct": 5.94
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 5.37
+      },
+      {
+        "group": "Other",
+        "pct": 1.63
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.9
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.78
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Chișinău' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Chi%C8%99in%C4%83u",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Chișinău' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Chi%C8%99in%C4%83u",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Chișinău' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Chi%C8%99in%C4%83u",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count. The citation is for 2025; the column read is the one the table's own header labels 2024, and that is the year on this record.",
+    "language_year": 2024,
+    "language_note": "Population by mother tongue for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
   {
     "id": "MDA-admin1-cimislia",
@@ -633,11 +787,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -711,11 +865,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -785,11 +939,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -863,11 +1017,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -937,11 +1091,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -1011,11 +1165,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": {
       "status": "not_available",
@@ -1046,11 +1200,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": {
       "status": "not_available",
@@ -1081,11 +1235,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -1157,20 +1311,111 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "'Gagauzia' is none of the names on the country's own list of units; there is no article to read for it"
-    },
-    "sources": [],
-    "country": "MDA"
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 95.9
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.2
+      },
+      {
+        "group": "No religion",
+        "pct": 0.5
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3
+      }
+    ],
+    "language": [
+      {
+        "group": "Gagauz",
+        "pct": 77.2
+      },
+      {
+        "group": "Russian",
+        "pct": 12.1
+      },
+      {
+        "group": "Moldovan (Romanian)",
+        "pct": 4.7
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 4.2
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.2
+      },
+      {
+        "group": "Other",
+        "pct": 0.6
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Gagauz",
+        "pct": 81.2
+      },
+      {
+        "group": "Moldovan",
+        "pct": 6.3
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 5.5
+      },
+      {
+        "group": "Russian",
+        "pct": 3.2
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.8
+      },
+      {
+        "group": "Romani",
+        "pct": 0.3
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Gagauzia' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Gagauzia",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Gagauzia' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Gagauzia",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Gagauzia' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Gagauzia",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "language_year": 2024,
+    "language_note": "Population by mother tongue for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count."
   },
   {
     "id": "MDA-admin1-glodeni",
@@ -1194,11 +1439,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": {
       "status": "not_available",
@@ -1229,11 +1474,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -1307,11 +1552,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -1385,11 +1630,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -1463,11 +1708,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -1533,11 +1778,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -1611,11 +1856,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -1689,11 +1934,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": {
       "status": "not_available",
@@ -1724,11 +1969,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -1802,11 +2047,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -1876,11 +2121,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -1946,11 +2191,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -2016,11 +2261,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -2094,11 +2339,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -2166,20 +2411,117 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 95.17
+      },
+      {
+        "group": "Baptist",
+        "pct": 2.25
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.68
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.59
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.43
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.37
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.14
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.13
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 0.11
+      },
+      {
+        "group": "Islam",
+        "pct": 0.06
+      },
+      {
+        "group": "Old Believer",
+        "pct": 0.01
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.01
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
-    },
-    "sources": [],
-    "country": "MDA"
+    "ethnicity": [
+      {
+        "group": "Bulgarian",
+        "pct": 64.2
+      },
+      {
+        "group": "Moldovan",
+        "pct": 14.8
+      },
+      {
+        "group": "Gagauz",
+        "pct": 10.3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 4.9
+      },
+      {
+        "group": "Russian",
+        "pct": 4.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.5
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.3
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.2
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Taraclia District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Taraclia_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Taraclia District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Taraclia_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Taraclia District' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Taraclia District' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The table itself carries no reference; the citation is the one the article's infobox gives for the same census. 3 row(s) of the table print nothing in the column read -- the table has no figure there -- and are not read."
   },
   {
     "id": "MDA-admin1-telenesti",
@@ -2203,11 +2545,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -2269,15 +2611,15 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "Transnistria is not under the Moldovan government's control and the 2024 Moldovan census did not count it. Its article publishes no composition table for the territory: what it has is an infobox listing 29.1% Russians, 28.6% Moldovans/Romanians and 22.9% Ukrainians from the census the Transnistrian authorities took in 2015, and a column of 2004 prose, district by district, inside its table of administrative divisions. Neither is a figure of the census this reader names as its source, and the 2015 one counts Bender too, which this map draws as a unit of its own. They are left unread rather than published as Moldovan census results."
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "Transnistria is not under the Moldovan government's control and the 2024 Moldovan census did not count it. Its article publishes no composition table for the territory: what it has is an infobox listing 29.1% Russians, 28.6% Moldovans/Romanians and 22.9% Ukrainians from the census the Transnistrian authorities took in 2015, and a column of 2004 prose, district by district, inside its table of administrative divisions. Neither is a figure of the census this reader names as its source, and the 2015 one counts Bender too, which this map draws as a unit of its own. They are left unread rather than published as Moldovan census results."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "'Transnistria' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "Transnistria is not under the Moldovan government's control and the 2024 Moldovan census did not count it. Its article publishes no composition table for the territory: what it has is an infobox listing 29.1% Russians, 28.6% Moldovans/Romanians and 22.9% Ukrainians from the census the Transnistrian authorities took in 2015, and a column of 2004 prose, district by district, inside its table of administrative divisions. Neither is a figure of the census this reader names as its source, and the 2015 one counts Bender too, which this map draws as a unit of its own. They are left unread rather than published as Moldovan census results."
     },
     "sources": [],
     "country": "MDA"
@@ -2304,11 +2646,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -2374,11 +2716,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -2457,15 +2799,15 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has no section matching 'religio'"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "'Balti' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "sources": [],
     "parent_name": "Balti",
@@ -2493,11 +2835,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "labels this reader has no entry for: ['Baptists', 'Adventists', 'Pentecostals', 'Evangelicals', 'Old Believers', 'Free thinkers', 'Irreligious']"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -2572,15 +2914,15 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "Bender is administered by Transnistria and the 2024 Moldovan census did not count it. The only composition its article prints is the 2004 census the Transnistrian authorities took, cited to a third-party compilation of Eastern European census results, and its rows give ranges rather than counts where the compiler could not tell -- \"0-5\", \"61-66\" -- inside column markup this reader cannot line up with the header. It is not a figure of the census this reader names as its source, and it is not read."
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "Bender is administered by Transnistria and the 2024 Moldovan census did not count it. The only composition its article prints is the 2004 census the Transnistrian authorities took, cited to a third-party compilation of Eastern European census results, and its rows give ranges rather than counts where the compiler could not tell -- \"0-5\", \"61-66\" -- inside column markup this reader cannot line up with the header. It is not a figure of the census this reader names as its source, and it is not read."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "'Bender' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "Bender is administered by Transnistria and the 2024 Moldovan census did not count it. The only composition its article prints is the 2004 census the Transnistrian authorities took, cited to a third-party compilation of Eastern European census results, and its rows give ranges rather than counts where the compiler could not tell -- \"0-5\", \"61-66\" -- inside column markup this reader cannot line up with the header. It is not a figure of the census this reader names as its source, and it is not read."
     },
     "sources": [],
     "parent_name": "Bender",
@@ -2608,11 +2950,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the table's rows are there and the column this reader takes the share from is empty in all 10 of them"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -2687,11 +3029,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -2766,11 +3108,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -2845,11 +3187,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -2924,11 +3266,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -3001,21 +3343,132 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "'Chisinau' is none of the names on the country's own list of units; there is no article to read for it"
-    },
-    "sources": [],
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 92.44
+      },
+      {
+        "group": "Agnostic or atheist",
+        "pct": 1.86
+      },
+      {
+        "group": "No religion",
+        "pct": 1.72
+      },
+      {
+        "group": "Not declared",
+        "pct": 1.22
+      },
+      {
+        "group": "Baptist",
+        "pct": 0.65
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.54
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.44
+      },
+      {
+        "group": "Islam",
+        "pct": 0.3
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.26
+      },
+      {
+        "group": "Catholic",
+        "pct": 0.2
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.2
+      },
+      {
+        "group": "Other Christian",
+        "pct": 0.16
+      }
+    ],
+    "language": [
+      {
+        "group": "Romanian",
+        "pct": 47.65
+      },
+      {
+        "group": "Moldovan",
+        "pct": 28.69
+      },
+      {
+        "group": "Russian",
+        "pct": 19.7
+      },
+      {
+        "group": "Other",
+        "pct": 3.97
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 72.46
+      },
+      {
+        "group": "Romanian",
+        "pct": 12.91
+      },
+      {
+        "group": "Russian",
+        "pct": 5.94
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 5.37
+      },
+      {
+        "group": "Other",
+        "pct": 1.63
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.9
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.78
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Chișinău' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Chi%C8%99in%C4%83u",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Chișinău' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Chi%C8%99in%C4%83u",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Chișinău' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Chi%C8%99in%C4%83u",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Chisinau",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count. The citation is for 2025; the column read is the one the table's own header labels 2024, and that is the year on this record.",
+    "language_year": 2024,
+    "language_note": "Population by mother tongue for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
   },
   {
     "id": "MDA-admin2-cimislia",
@@ -3039,11 +3492,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -3118,11 +3571,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -3193,11 +3646,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -3272,11 +3725,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -3347,11 +3800,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -3422,11 +3875,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": {
       "status": "not_available",
@@ -3458,11 +3911,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": {
       "status": "not_available",
@@ -3494,11 +3947,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -3571,21 +4024,112 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
-    },
-    "language": {
-      "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "'Gagauzia' is none of the names on the country's own list of units; there is no article to read for it"
-    },
-    "sources": [],
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 95.9
+      },
+      {
+        "group": "Other Christian",
+        "pct": 3.2
+      },
+      {
+        "group": "No religion",
+        "pct": 0.5
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.3
+      }
+    ],
+    "language": [
+      {
+        "group": "Gagauz",
+        "pct": 77.2
+      },
+      {
+        "group": "Russian",
+        "pct": 12.1
+      },
+      {
+        "group": "Moldovan (Romanian)",
+        "pct": 4.7
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 4.2
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 1.2
+      },
+      {
+        "group": "Other",
+        "pct": 0.6
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Gagauz",
+        "pct": 81.2
+      },
+      {
+        "group": "Moldovan",
+        "pct": 6.3
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 5.5
+      },
+      {
+        "group": "Russian",
+        "pct": 3.2
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 2.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.8
+      },
+      {
+        "group": "Romani",
+        "pct": 0.3
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.1
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Gagauzia' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Gagauzia",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Gagauzia' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Gagauzia",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Gagauzia' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Gagauzia",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Gagauzia",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "language_year": 2024,
+    "language_note": "Population by mother tongue for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count."
   },
   {
     "id": "MDA-admin2-glodeni",
@@ -3609,11 +4153,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": {
       "status": "not_available",
@@ -3645,11 +4189,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -3724,11 +4268,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -3803,11 +4347,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -3882,11 +4426,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -3953,11 +4497,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -4032,11 +4576,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -4111,11 +4655,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": {
       "status": "not_available",
@@ -4147,11 +4691,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -4226,11 +4770,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -4301,11 +4845,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -4372,11 +4916,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -4443,11 +4987,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -4522,11 +5066,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -4595,21 +5139,118 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 95.17
+      },
+      {
+        "group": "Baptist",
+        "pct": 2.25
+      },
+      {
+        "group": "Evangelical",
+        "pct": 0.68
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.59
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.43
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 0.37
+      },
+      {
+        "group": "Atheism",
+        "pct": 0.14
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 0.13
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 0.11
+      },
+      {
+        "group": "Islam",
+        "pct": 0.06
+      },
+      {
+        "group": "Old Believer",
+        "pct": 0.01
+      },
+      {
+        "group": "Roman Catholic",
+        "pct": 0.01
+      }
+    ],
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the section is there and holds a table whose header this reader does not know; the article has been reorganised or carries a different table"
-    },
-    "sources": [],
+    "ethnicity": [
+      {
+        "group": "Bulgarian",
+        "pct": 64.2
+      },
+      {
+        "group": "Moldovan",
+        "pct": 14.8
+      },
+      {
+        "group": "Gagauz",
+        "pct": 10.3
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 4.9
+      },
+      {
+        "group": "Russian",
+        "pct": 4.1
+      },
+      {
+        "group": "Romani",
+        "pct": 0.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.5
+      },
+      {
+        "group": "Romanian",
+        "pct": 0.3
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.2
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Taraclia District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Taraclia_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Taraclia District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Taraclia_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Taraclia",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Taraclia District' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Taraclia District' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The table itself carries no reference; the citation is the one the article's infobox gives for the same census. 3 row(s) of the table print nothing in the column read -- the table has no figure there -- and are not read."
   },
   {
     "id": "MDA-admin2-telenesti",
@@ -4633,11 +5274,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
@@ -4700,15 +5341,15 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "Transnistria is not under the Moldovan government's control and the 2024 Moldovan census did not count it. Its article publishes no composition table for the territory: what it has is an infobox listing 29.1% Russians, 28.6% Moldovans/Romanians and 22.9% Ukrainians from the census the Transnistrian authorities took in 2015, and a column of 2004 prose, district by district, inside its table of administrative divisions. Neither is a figure of the census this reader names as its source, and the 2015 one counts Bender too, which this map draws as a unit of its own. They are left unread rather than published as Moldovan census results."
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "Transnistria is not under the Moldovan government's control and the 2024 Moldovan census did not count it. Its article publishes no composition table for the territory: what it has is an infobox listing 29.1% Russians, 28.6% Moldovans/Romanians and 22.9% Ukrainians from the census the Transnistrian authorities took in 2015, and a column of 2004 prose, district by district, inside its table of administrative divisions. Neither is a figure of the census this reader names as its source, and the 2015 one counts Bender too, which this map draws as a unit of its own. They are left unread rather than published as Moldovan census results."
     },
     "ethnicity": {
       "status": "not_available",
-      "note": "'Transnistria' is none of the names on the country's own list of units; there is no article to read for it"
+      "note": "Transnistria is not under the Moldovan government's control and the 2024 Moldovan census did not count it. Its article publishes no composition table for the territory: what it has is an infobox listing 29.1% Russians, 28.6% Moldovans/Romanians and 22.9% Ukrainians from the census the Transnistrian authorities took in 2015, and a column of 2004 prose, district by district, inside its table of administrative divisions. Neither is a figure of the census this reader names as its source, and the 2015 one counts Bender too, which this map draws as a unit of its own. They are left unread rather than published as Moldovan census results."
     },
     "sources": [],
     "parent_name": "Transnistria",
@@ -4736,11 +5377,11 @@
     },
     "religion": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries an ethnic table and no religion table; several have a Religion heading with nothing under it."
+      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
     },
     "language": {
       "status": "not_available",
-      "note": "A Moldovan district's article carries no mother-tongue table, in either edition."
+      "note": "the article has no section matching 'language|mother tongue'"
     },
     "ethnicity": [
       {
