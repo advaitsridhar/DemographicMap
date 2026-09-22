@@ -1,37 +1,9 @@
-  Vatican City: found by searching the country
-VAT: 1 units without a population, 1 resolved
-  Vatican City -> Vatican City (Q237, matched by name)
-VCT: 5 units without a population, 5 resolved
-  VCT: its first level now sums to 118,800, 118% of the country's 100,647 -- check for a unit counted twice
-  Charlotte -> Charlotte Parish, Saint Vincent and the Grenadines: 38,000, undated (no year in the value)
-  Saint Andrew -> Saint Andrew Parish, Saint Vincent and the Grenadines: 6,700, undated (no year in the value)
-  Saint David -> Saint David Parish, Saint Vincent and the Grenadines: 6,700, undated (no year in the value)
-  Saint George -> Saint George Parish, Saint Vincent and the Grenadines: 52,400, undated (no year in the value)
-  Saint Patrick -> Saint Patrick Parish, Saint Vincent and the Grenadines: 5,800, undated (no year in the value)
-VEN: the country's own divisions resolved 1 more
-VEN: 9 units without a population, 9 resolved
-  Dependencias Federales -> Federal Dependencies of Venezuela (Q130343, matched by name)
-  Côn Đảo: found by searching the country
-VNM: 1 units without a population, 1 resolved
-  Côn Đảo -> Côn Đảo (Q370746, matched by name)
-  VNM: its first level now sums to 134,520,982, 126% of the country's 106,688,169 -- check for a unit counted twice
-VUT: 4 units without a population, 4 resolved
-WSM: what sits directly in the country resolved 1 more
-WSM: 10 units without a population, 10 resolved
-  Tuamasaga -> Tuamasaga (Q1144482, matched by name)
-YEM: the country's own divisions resolved 1 more
-YEM: 1 units without a population, 1 resolved
-  Sanʿaʾ Governorate -> Sanaa Governorate (Q388291, matched by name)
-ZMB: 10 units without a population, 10 resolved
-ZWE: 8 units without a population, 7 resolved
-  Bulawayo: its Wikidata item has no English article
-  Nord-Est: found by searching the country
-  Sud: searching the country offered Q15124 'South Tyrol', Q23498165 'Province of South Sardinia', Q1237 'Trentino-South Tyrol', Q38 'Italy', Q1447 'Apulia'
-ITA: 5 units without a population, 4 resolved
-  Centro -> Central Italy (Q1127320, matched by declaration)
-  Isole -> Insular Italy (Q525358, matched by declaration)
-  Nord-Est -> Northeast Italy (Q579075, matched by name)
-  Nord-Ovest -> Northwest Italy (Q2725942, matched by declaration)
-  Sud: no article resolved
-  wrote data/processed/wiki_population_admin1.json (498 kB)
-wrote 501 records to wiki_population_admin1.json
+OMN: the country's own divisions resolved 1 more
+OMN: what sits directly in the country resolved 2 more
+OMN: 3 units without a population, 3 resolved
+  Al Batinah -> Al Batinah Region (Q264245, matched by name)
+  Ash Sharqiyah -> Ash Sharqiyah Region (Oman) (Q1106416, matched by name)
+  Ash Sharqiyah -> Ash Sharqiyah Region (Oman): population_total: empty
+  Az Zahirah -> Al Dhahirah Governorate (Q1468596, matched by name)
+  wrote data/processed/wiki_population_admin1.json (497 kB)
+wrote 500 records to wiki_population_admin1.json
