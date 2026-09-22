@@ -1,127 +1,288 @@
-probe_wikipedia: 15220 units with a Wikidata id
-  2000 of 15220 units resolved
-  4000 of 15220 units resolved
-  6000 of 15220 units resolved
-  8000 of 15220 units resolved
-  10000 of 15220 units resolved
-  12000 of 15220 units resolved
-  14000 of 15220 units resolved
-  [en] 10120 article(s) probed
-  [ar] 3185 article(s) probed
-  [ceb] 2131 article(s) probed
-  [commons] 1223 article(s) probed
-  [fr] 525 article(s) probed
-  [es] 498 article(s) probed
-  [ca] 410 article(s) probed
-  [azb] 395 article(s) probed
-  [af] 376 article(s) probed
-  [sv] 339 article(s) probed
-  [bat_smg] batch 0: URLError: <urlopen error [Errno -2] Name or service not known>
-  [bat_smg] batch 50: URLError: <urlopen error [Errno -2] Name or service not known>
-  [bat_smg] batch 100: URLError: <urlopen error [Errno -2] Name or service not known>
-  [bat_smg] batch 150: URLError: <urlopen error [Errno -2] Name or service not known>
-  [bat_smg] batch 200: URLError: <urlopen error [Errno -2] Name or service not known>
-  [bat_smg] batch 250: URLError: <urlopen error [Errno -2] Name or service not known>
-  [bat_smg] batch 300: URLError: <urlopen error [Errno -2] Name or service not known>
-  [bat_smg] 318 article(s) probed
-  [bn] 315 article(s) probed
-  [arz] 304 article(s) probed
-  [bg] 295 article(s) probed
-  [de] 294 article(s) probed
-  [pl] 292 article(s) probed
-  [ay] 230 article(s) probed
-  [it] 205 article(s) probed
-  [an] 200 article(s) probed
-  [pt] 194 article(s) probed
-  [da] 186 article(s) probed
-  [be] 173 article(s) probed
-  [et] 163 article(s) probed
-  [ast] 134 article(s) probed
-  [ms] 121 article(s) probed
-  [als] 94 article(s) probed
-  [az] 89 article(s) probed
-  [avk] 86 article(s) probed
-  [cdo] 82 article(s) probed
-  [ace] 77 article(s) probed
-  [lt] 62 article(s) probed
-  [bs] 57 article(s) probed
+probe_wikipedia: 19200 units with a Wikidata id
+  2000 of 19200 units resolved
+  4000 of 19200 units resolved
+  6000 of 19200 units resolved
+  8000 of 19200 units resolved
+  10000 of 19200 units resolved
+  12000 of 19200 units resolved
+  14000 of 19200 units resolved
+  16000 of 19200 units resolved
+  18000 of 19200 units resolved
+  [en] 15275 article(s) probed
+  [ar] 4287 article(s) probed
+  [ceb] 3894 article(s) probed
+  [de] 935 article(s) probed
+  [af] 925 article(s) probed
+  [commons] 905 article(s) probed
+  [bg] 811 article(s) probed
+  [ca] 561 article(s) probed
+  [an] 547 article(s) probed
+  [als] 480 article(s) probed
+  [be] 434 article(s) probed
   [be_x_old] batch 0: URLError: <urlopen error [Errno -2] Name or service not known>
   [be_x_old] batch 50: URLError: <urlopen error [Errno -2] Name or service not known>
-  [be_x_old] 55 article(s) probed
-  [fa] 55 article(s) probed
-  [sq] 45 article(s) probed
-  [fi] 44 article(s) probed
-  [abstract] 42 article(s) probed
-  [lv] 37 article(s) probed
-  [cs] 30 article(s) probed
-  [ltg] 29 article(s) probed
-  [el] 24 article(s) probed
-  [sl] 23 article(s) probed
-  [bar] 21 article(s) probed
-  [ban] 21 article(s) probed
-  [ang] 18 article(s) probed
-  [ja] 18 article(s) probed
-  [eo] 17 article(s) probed
-  [uz] 14 article(s) probed
-  [ce] 13 article(s) probed
-  [dag] 10 article(s) probed
-  [br] 10 article(s) probed
-  [ba] 8 article(s) probed
-  [bo] 7 article(s) probed
-  [ab] 6 article(s) probed
-  [bcl] 6 article(s) probed
-  [bm] 6 article(s) probed
-  [nl] 6 article(s) probed
-  [lld] 6 article(s) probed
+  [be_x_old] batch 100: URLError: <urlopen error [Errno -2] Name or service not known>
+  [be_x_old] batch 150: URLError: <urlopen error [Errno -2] Name or service not known>
+  [be_x_old] batch 200: URLError: <urlopen error [Errno -2] Name or service not known>
+  [be_x_old] batch 250: URLError: <urlopen error [Errno -2] Name or service not known>
+  [be_x_old] batch 300: URLError: <urlopen error [Errno -2] Name or service not known>
+  [be_x_old] batch 350: URLError: <urlopen error [Errno -2] Name or service not known>
+  [be_x_old] 379 article(s) probed
+  [es] 328 article(s) probed
+  [fr] 302 article(s) probed
+  [ace] 282 article(s) probed
+  [bn] 254 article(s) probed
+  [arz] 246 article(s) probed
+  [az] 242 article(s) probed
+  [bar] 218 article(s) probed
+  [da] 166 article(s) probed
+  [ast] 145 article(s) probed
+  [fa] 144 article(s) probed
+  [blk] 121 article(s) probed
+  [cs] 119 article(s) probed
+  [azb] 105 article(s) probed
+  [ang] 74 article(s) probed
+  [bpy] 74 article(s) probed
+  [ce] 64 article(s) probed
+  [abstract] 63 article(s) probed
+  [bs] 61 article(s) probed
+  [am] 57 article(s) probed
+  [awa] 49 article(s) probed
+  [et] 45 article(s) probed
+  [it] 44 article(s) probed
+  [ckb] 43 article(s) probed
+  [br] 39 article(s) probed
+  [ms] 36 article(s) probed
+  [ff] 35 article(s) probed
+  [my] 34 article(s) probed
+  [el] 30 article(s) probed
+  [ab] 28 article(s) probed
+  [ko] 27 article(s) probed
+  [arc] 25 article(s) probed
+  [ban] 24 article(s) probed
+  [ba] 23 article(s) probed
+  [bcl] 19 article(s) probed
+  [km] 18 article(s) probed
+  [avk] 17 article(s) probed
+  [pt] 17 article(s) probed
+  [bat_smg] batch 0: URLError: <urlopen error [Errno -2] Name or service not known>
+  [bat_smg] 16 article(s) probed
+  [ur] 14 article(s) probed
+  [ht] 14 article(s) probed
+  [bjn] 14 article(s) probed
+  [as] 13 article(s) probed
+  [lb] 13 article(s) probed
+  [ru] 12 article(s) probed
+  [kk] 12 article(s) probed
+  [mk] 12 article(s) probed
+  [pl] 11 article(s) probed
+  [he] 11 article(s) probed
+  [zu] 10 article(s) probed
+  [id] 10 article(s) probed
+  [nl] 9 article(s) probed
+  [av] 8 article(s) probed
+  [tum] 8 article(s) probed
+  [ka] 7 article(s) probed
+  [zh] 7 article(s) probed
+  [frr] 6 article(s) probed
+  [eo] 6 article(s) probed
+  [bh] 6 article(s) probed
+  [uz] 6 article(s) probed
+  [ady] 5 article(s) probed
+  [anp] 5 article(s) probed
+  [no] 5 article(s) probed
   [hu] 5 article(s) probed
-  [mk] 5 article(s) probed
-  [am] 4 article(s) probed
-  [bpy] 4 article(s) probed
-  [id] 3 article(s) probed
+  [ary] 4 article(s) probed
+  [ja] 4 article(s) probed
+  [nds] 4 article(s) probed
+  [uk] 4 article(s) probed
+  [fi] 4 article(s) probed
+  [hy] 3 article(s) probed
+  [dz] 3 article(s) probed
+  [ay] 3 article(s) probed
+  [ha] 3 article(s) probed
+  [ro] 3 article(s) probed
+  [ku] 3 article(s) probed
+  [io] 3 article(s) probed
+  [so] 3 article(s) probed
+  [sw] 2 article(s) probed
+  [tn] 2 article(s) probed
   [simple] 2 article(s) probed
-  [as] 2 article(s) probed
-  [nn] 2 article(s) probed
+  [hif] 2 article(s) probed
   [vi] 2 article(s) probed
+  [mr] 2 article(s) probed
+  [hi] 2 article(s) probed
+  [pap] 1 article(s) probed
+  [sr] 1 article(s) probed
+  [atj] 1 article(s) probed
   [kg] 1 article(s) probed
-  [sw] 1 article(s) probed
-  [mwl] 1 article(s) probed
-  [ckb] 1 article(s) probed
-  [av] 1 article(s) probed
   [eu] 1 article(s) probed
-  [lmo] 1 article(s) probed
-  [ur] 1 article(s) probed
-  [csb] 1 article(s) probed
-  [ha] 1 article(s) probed
-  [zu] 1 article(s) probed
-  [ro] 1 article(s) probed
-  [sh] 1 article(s) probed
+  [hr] 1 article(s) probed
+  [tr] 1 article(s) probed
+  [qu] 1 article(s) probed
+  [sv] 1 article(s) probed
+  [nn] 1 article(s) probed
+  [th] 1 article(s) probed
+  [ta] 1 article(s) probed
+  [si] 1 article(s) probed
+  [la] 1 article(s) probed
+  [mnw] 1 article(s) probed
+  [tl] 1 article(s) probed
+  [sq] 1 article(s) probed
+  [tpi] 1 article(s) probed
+  [sk] 1 article(s) probed
+  [ig] 1 article(s) probed
+  [zh_min_nan] batch 0: URLError: <urlopen error [Errno -2] Name or service not known>
+  [zh_min_nan] 1 article(s) probed
 
 iso   units by what their article carries
-  AFG  admin1:section only 2, admin1:section+table 32, admin2:infobox 2, admin2:no article 5, admin2:nothing 486, admin2:section only 1
-  AGO  admin1:infobox 1, admin1:nothing 16, admin1:section only 1, admin2:infobox 27, admin2:no article 18, admin2:nothing 389, admin2:section only 2, admin2:section+infobox 3
-  ALB  admin1:nothing 1, admin1:section only 1, admin1:section+table 10, admin2:infobox 4, admin2:no article 2, admin2:nothing 463, admin2:section only 5, admin2:section+infobox 1
-  AUS  admin1:infobox 6, admin1:section+infobox 2, admin1:section+table 6, admin1:section+table+infobox 2, admin2:infobox 23, admin2:nothing 549, admin2:section only 4, admin2:section+table 5
-  CHN  admin1:section only 19, admin1:section+infobox 5, admin1:section+table 9, admin2:infobox 191, admin2:no article 1, admin2:nothing 199, admin2:section only 19, admin2:section+infobox 27, admin2:section+table 19, admin2:section+table+infobox 18
-  CMR  admin1:nothing 6, admin1:section only 4, admin2:infobox 8, admin2:no article 16, admin2:nothing 576, admin2:section only 10, admin2:section+infobox 1, admin2:section+table 2
-  CYP  admin1:nothing 6, admin2:infobox 5, admin2:no article 14, admin2:nothing 615, admin2:section only 4, admin2:section+infobox 1, admin2:section+table 1
-  DZA  admin1:infobox 1, admin1:nothing 55, admin1:section only 1, admin1:section+table 1, admin2:infobox 4, admin2:no article 5, admin2:nothing 623, admin2:section only 3, admin2:section+table 1
-  EGY  admin1:nothing 25, admin1:section only 2, admin2:infobox 16, admin2:no article 11, admin2:nothing 503, admin2:section only 11, admin2:section+infobox 3, admin2:section+table 1
-  FIN  admin1:infobox 1, admin1:nothing 13, admin1:section only 2, admin1:section+infobox 1, admin1:section+table 1, admin1:section+table+infobox 1, admin2:infobox 15, admin2:no article 6, admin2:nothing 378, admin2:section only 25, admin2:section+infobox 5, admin2:section+table 27, admin2:section+table+infobox 1
-  ITA  admin1:infobox 2, admin1:nothing 7, admin1:section only 9, admin1:section+table 2, admin2:infobox 7, admin2:no article 154, admin2:nothing 654, admin2:section only 8, admin2:section+table 4, admin2:section+table+infobox 1
-  LTU  admin1:infobox 1, admin1:nothing 55, admin1:section only 1, admin1:section+table 2, admin2:infobox 3, admin2:no article 1, admin2:nothing 674, admin2:section only 27, admin2:section+infobox 1, admin2:section+table 1
-  LVA  admin1:infobox 4, admin1:nothing 33, admin1:section+infobox 3, admin1:section+table 1, admin2:infobox 7, admin2:no article 4, admin2:nothing 612, admin2:section only 3, admin2:section+infobox 3, admin2:section+table 2
-  MLI  admin1:infobox 2, admin1:nothing 7, admin1:section only 8, admin1:section+table 3, admin2:infobox 289, admin2:no article 2, admin2:nothing 409, admin2:section only 3, admin2:section+infobox 2, admin2:section+table 1
-  MNG  admin1:infobox 1, admin1:nothing 19, admin1:section only 2, admin2:infobox 11, admin2:no article 1, admin2:nothing 356, admin2:section+table 1
-  NIC  admin1:nothing 16, admin1:section only 1, admin2:infobox 3, admin2:no article 781, admin2:nothing 192, admin2:section only 5, admin2:section+table 1
-  PER  admin1:nothing 10, admin1:section only 2, admin1:section+table 9, admin1:section+table+infobox 4, admin2:infobox 13, admin2:no article 2, admin2:nothing 242, admin2:section only 116, admin2:section+infobox 2, admin2:section+table 5
-  POL  admin1:infobox 3, admin1:nothing 12, admin1:section+infobox 1, admin2:infobox 35, admin2:no article 3, admin2:nothing 772, admin2:section only 3, admin2:section+infobox 13
-  PRT  admin1:infobox 1, admin1:nothing 18, admin1:section+infobox 1, admin2:infobox 30, admin2:no article 1, admin2:nothing 474, admin2:section only 46, admin2:section+infobox 6, admin2:section+table 1
-  SSD  admin1:nothing 28, admin1:section only 1, admin2:infobox 2, admin2:no article 377, admin2:nothing 21
-  SVN  admin1:infobox 1, admin1:nothing 210, admin1:section only 1, admin2:infobox 8, admin2:no article 29, admin2:nothing 459, admin2:section only 5, admin2:section+infobox 1
-  SWE  admin1:infobox 21, admin2:infobox 28, admin2:no article 2, admin2:nothing 815, admin2:section only 8, admin2:section+table 3
-  TUN  admin1:infobox 1, admin1:nothing 23, admin2:infobox 12, admin2:no article 52, admin2:nothing 417, admin2:section only 3, admin2:section+infobox 1, admin2:section+table 1
-  YEM  admin1:nothing 21, admin1:section only 1, admin2:infobox 3, admin2:no article 2, admin2:nothing 825, admin2:section only 1
+  AND  admin1:infobox 4, admin1:nothing 3, admin2:nothing 49, admin2:section only 1, admin2:section+infobox 1
+  ARE  admin1:infobox 1, admin1:nothing 6, admin2:infobox 3, admin2:no article 2, admin2:nothing 31, admin2:section only 1
+  ATG  admin1:infobox 1, admin1:nothing 4, admin1:section only 2, admin1:section+infobox 1, admin2:infobox 1, admin2:no article 2, admin2:nothing 20
+  AUT  admin1:nothing 3, admin1:section only 5, admin1:section+infobox 1, admin2:infobox 86, admin2:no article 43, admin2:nothing 165, admin2:section only 3, admin2:section+infobox 3, admin2:section+table 12, admin2:section+table+infobox 1
+  AZE  admin1:infobox 2, admin1:nothing 50, admin1:section only 7, admin1:section+infobox 1, admin1:section+table 9, admin1:section+table+infobox 1, admin2:infobox 16, admin2:no article 3, admin2:nothing 165, admin2:section only 2, admin2:section+infobox 1
+  BDI  admin1:nothing 16, admin1:section only 1, admin2:infobox 2, admin2:nothing 131
+  BEN  admin1:nothing 12, admin2:infobox 10, admin2:no article 1, admin2:nothing 85, admin2:section only 1
+  BFA  admin1:nothing 13, admin2:infobox 2, admin2:nothing 48
+  BGD  admin1:nothing 6, admin1:section only 1, admin1:section+infobox 1, admin2:infobox 2, admin2:no article 18, admin2:nothing 198, admin2:section only 3, admin2:section+table 27
+  BGR  admin1:nothing 2, admin1:section+table 25, admin1:section+table+infobox 1, admin2:infobox 23, admin2:no article 1, admin2:nothing 81, admin2:section only 123, admin2:section+infobox 3, admin2:section+table 76
+  BHR  admin1:nothing 5, admin2:infobox 1, admin2:nothing 4, admin2:section+infobox 1
+  BHS  admin1:infobox 1, admin1:nothing 30, admin1:section only 1, admin2:infobox 2, admin2:no article 1, admin2:nothing 5
+  BIH  admin1:infobox 1, admin1:section+table 1, admin1:section+table+infobox 1, admin2:infobox 8, admin2:nothing 92, admin2:section only 2, admin2:section+infobox 3, admin2:section+table 24
+  BLR  admin1:nothing 6, admin1:section+infobox 1, admin2:infobox 47, admin2:no article 3, admin2:nothing 149, admin2:section+infobox 3
+  BLZ  admin1:section+table 6, admin2:infobox 11, admin2:no article 2, admin2:nothing 21, admin2:section only 2
+  BRB  admin1:nothing 10, admin1:section only 1, admin2:infobox 1
+  BRN  admin1:section only 4, admin2:infobox 12, admin2:nothing 32, admin2:section only 3, admin2:section+infobox 2
+  BTN  admin1:nothing 6, admin1:section only 14, admin2:infobox 171, admin2:nothing 67, admin2:section only 2
+  BWA  admin1:nothing 9, admin2:infobox 15, admin2:no article 21, admin2:nothing 32, admin2:section only 1
+  CAF  admin1:infobox 14, admin1:nothing 2, admin2:infobox 17, admin2:nothing 65
+  CAN  admin1:section only 7, admin1:section+infobox 1, admin1:section+table 5, admin2:infobox 1, admin2:nothing 54, admin2:section only 2, admin2:section+table 17
+  CHE  admin1:nothing 16, admin1:section only 9, admin1:section+table 1, admin2:nothing 73, admin2:section only 175, admin2:section+table 30
+  CHL  admin1:infobox 3, admin1:nothing 11, admin1:section only 2, admin2:infobox 14, admin2:no article 105, admin2:nothing 94, admin2:section+infobox 1
+  CIV  admin1:nothing 19, admin2:no article 2, admin2:nothing 39, admin2:section only 1
+  COD  admin1:infobox 2, admin1:nothing 20, admin1:section only 2, admin1:section+table 2, admin2:infobox 13, admin2:no article 4, admin2:nothing 229, admin2:section only 16, admin2:section+table 3
+  COG  admin1:nothing 14, admin1:section only 1, admin2:infobox 2, admin2:no article 1, admin2:nothing 115, admin2:section only 1
+  COM  admin1:nothing 2, admin1:section only 1, admin2:no article 1, admin2:nothing 10
+  CPV  admin1:infobox 4, admin1:nothing 17, admin1:section+infobox 1, admin2:infobox 33, admin2:no article 4, admin2:nothing 17, admin2:section+infobox 1
+  CRI  admin1:nothing 7, admin2:infobox 5, admin2:no article 2, admin2:nothing 153
+  CUB  admin1:nothing 16, admin2:infobox 11, admin2:no article 13, admin2:nothing 227, admin2:section+infobox 1
+  CZE  admin1:infobox 13, admin1:nothing 1, admin2:infobox 23, admin2:nothing 163, admin2:section only 2
+  DEU  admin1:nothing 4, admin1:section only 6, admin1:section+infobox 3, admin1:section+table 5, admin1:section+table+infobox 1, admin2:infobox 137, admin2:nothing 73, admin2:section only 5, admin2:section+infobox 4, admin2:section+table 1
+  DJI  admin1:nothing 6, admin2:nothing 19, admin2:section+infobox 1
+  DMA  admin1:nothing 10, admin2:nothing 3, admin2:section only 1
+  DNK  admin1:infobox 2, admin1:nothing 12, admin2:infobox 65, admin2:nothing 212, admin2:section+infobox 1, admin2:section+table+infobox 1
+  DOM  admin1:infobox 10, admin1:nothing 22, admin2:infobox 52, admin2:nothing 110, admin2:section only 2, admin2:section+infobox 2, admin2:section+table+infobox 1
+  ECU  admin1:infobox 2, admin1:nothing 22, admin2:infobox 77, admin2:no article 1, admin2:nothing 278, admin2:section only 5
+  ERI  admin1:nothing 6, admin2:infobox 1, admin2:no article 1, admin2:nothing 68, admin2:section+infobox 1
+  ESP  admin1:infobox 6, admin1:nothing 1, admin1:section only 5, admin1:section+infobox 4, admin1:section+table 4, admin2:infobox 11, admin2:nothing 31, admin2:section only 3, admin2:section+infobox 1, admin2:section+table 1
+  EST  admin1:infobox 1, admin1:section+table 14, admin2:infobox 4, admin2:no article 65, admin2:nothing 238, admin2:section only 49, admin2:section+table 2, admin2:section+table+infobox 1
+  ETH  admin1:infobox 1, admin1:nothing 5, admin1:section only 3, admin1:section+table 5, admin2:infobox 3, admin2:no article 4, admin2:nothing 161, admin2:section only 2
+  FJI  admin1:infobox 1, admin1:nothing 4, admin2:nothing 22
+  FRA  admin1:infobox 1, admin1:nothing 9, admin1:section only 5, admin1:section+infobox 4, admin1:section+table 4, admin1:section+table+infobox 3, admin2:infobox 73, admin2:nothing 216, admin2:section only 17, admin2:section+infobox 5, admin2:section+table 4, admin2:section+table+infobox 1
+  FSM  admin1:nothing 2, admin1:section only 1, admin1:section+table 1, admin2:infobox 14, admin2:no article 1, admin2:nothing 66, admin2:section only 2, admin2:section+infobox 2
+  GAB  admin1:nothing 8, admin1:section only 1, admin2:infobox 2, admin2:no article 1, admin2:nothing 59, admin2:section only 2, admin2:section+infobox 1
+  GBR  admin1:section+infobox 4, admin2:infobox 11, admin2:no article 1, admin2:nothing 13, admin2:section only 33, admin2:section+infobox 1, admin2:section+table 14, admin2:section+table+infobox 1
+  GEO  admin1:infobox 1, admin1:nothing 4, admin1:section only 4, admin1:section+infobox 2, admin1:section+table 1, admin2:infobox 8, admin2:no article 3, admin2:nothing 102, admin2:section only 2, admin2:section+infobox 2, admin2:section+table 5
+  GIN  admin1:nothing 8, admin2:no article 2, admin2:nothing 43
+  GMB  admin1:nothing 6, admin2:infobox 1, admin2:no article 4, admin2:nothing 50
+  GNB  admin1:nothing 8, admin2:infobox 22, admin2:no article 2, admin2:nothing 28, admin2:section only 1
+  GNQ  admin1:nothing 7, admin1:section+infobox 1, admin2:infobox 26, admin2:no article 2, admin2:nothing 8, admin2:section only 2
+  GRC  admin1:infobox 3, admin1:nothing 9, admin1:section only 1, admin1:section+table+infobox 1, admin2:infobox 16, admin2:no article 3, admin2:nothing 134, admin2:section+table 1
+  GRD  admin1:infobox 2, admin1:nothing 6, admin2:no article 2, admin2:nothing 9
+  GRL  admin1:nothing 3, admin1:section only 3, admin2:infobox 8, admin2:no article 2, admin2:nothing 44, admin2:section only 1
+  GTM  admin1:nothing 19, admin1:section only 2, admin1:section+table 1, admin2:infobox 5, admin2:no article 3, admin2:nothing 326, admin2:section only 12, admin2:section+table 1
+  GUY  admin1:nothing 10, admin2:infobox 5, admin2:no article 2, admin2:nothing 32
+  HND  admin1:nothing 17, admin1:section only 1, admin2:infobox 4, admin2:no article 2, admin2:nothing 303, admin2:section+infobox 1, admin2:section+table 1
+  HRV  admin1:infobox 4, admin1:nothing 14, admin1:section only 2, admin1:section+table 1, admin2:infobox 1, admin2:nothing 52, admin2:section only 3
+  HTI  admin1:infobox 3, admin1:nothing 7, admin2:infobox 1, admin2:nothing 108
+  HUN  admin1:nothing 1, admin1:section only 1, admin1:section+table 18, admin2:nothing 72, admin2:section+table 126
+  IND  admin1:infobox 1, admin1:nothing 1, admin1:section only 23, admin1:section+infobox 1, admin1:section+table 13, admin2:infobox 18, admin2:no article 4, admin2:nothing 169, admin2:section only 57, admin2:section+table 18
+  IRL  admin1:infobox 2, admin1:nothing 9, admin1:section only 15, admin1:section+table 4, admin2:infobox 1, admin2:no article 125, admin2:nothing 1, admin2:section only 1
+  IRQ  admin1:nothing 18, admin2:infobox 11, admin2:no article 4, admin2:nothing 219, admin2:section only 10, admin2:section+infobox 1
+  ISL  admin1:nothing 6, admin2:infobox 1, admin2:nothing 4
+  ISR  admin1:nothing 7, admin2:infobox 30, admin2:nothing 172, admin2:section only 7, admin2:section+infobox 1
+  JAM  admin1:nothing 3, admin2:nothing 15, admin2:section+infobox 1
+  JOR  admin1:nothing 12, admin2:infobox 1, admin2:no article 4, admin2:nothing 150, admin2:section only 2, admin2:section+infobox 2
+  KAZ  admin1:infobox 1, admin1:nothing 9, admin1:section only 2, admin1:section+table 6, admin2:infobox 7, admin2:no article 9, admin2:nothing 249, admin2:section+table+infobox 1
+  KEN  admin1:nothing 4, admin1:section only 2, admin1:section+table 1, admin2:infobox 3, admin2:nothing 19, admin2:section only 5, admin2:section+table 6
+  KGZ  admin1:section only 1, admin2:infobox 1, admin2:nothing 1, admin2:section+table 4
+  KHM  admin1:nothing 7, admin1:section only 9, admin1:section+table 7, admin1:section+table+infobox 1, admin2:infobox 2, admin2:nothing 214, admin2:section only 2
+  KNA  admin1:nothing 14, admin2:infobox 1, admin2:no article 1, admin2:nothing 3, admin2:section only 1
+  KOR  admin1:infobox 3, admin1:nothing 2, admin1:section only 6, admin1:section+infobox 2, admin1:section+table 4, admin2:infobox 93, admin2:nothing 148, admin2:section only 3, admin2:section+infobox 4, admin2:section+table 1, admin2:section+table+infobox 1
+  KWT  admin1:nothing 6, admin2:no article 2, admin2:nothing 40, admin2:section only 1
+  LAO  admin1:nothing 15, admin1:section only 1, admin1:section+table 1, admin2:infobox 1, admin2:no article 9, admin2:nothing 152, admin2:section only 2
+  LBN  admin1:nothing 5, admin1:section only 1, admin2:infobox 1, admin2:no article 1, admin2:nothing 58, admin2:section only 2, admin2:section+infobox 1
+  LBR  admin1:nothing 15, admin2:infobox 1, admin2:nothing 295, admin2:section only 4
+  LBY  admin1:infobox 3, admin1:nothing 23, admin1:section+infobox 1, admin2:infobox 14, admin2:no article 28, admin2:nothing 111, admin2:section only 1
+  LCA  admin1:nothing 11, admin2:nothing 2
+  LIE  admin1:nothing 1, admin1:section only 10, admin2:nothing 10
+  LKA  admin1:section only 5, admin1:section+table 4, admin2:infobox 1, admin2:no article 1, admin2:nothing 35, admin2:section only 16, admin2:section+infobox 1, admin2:section+table 8
+  LSO  admin1:infobox 10, admin2:infobox 129, admin2:nothing 5
+  LUX  admin1:nothing 12, admin2:infobox 99, admin2:nothing 22
+  MAR  admin1:infobox 1, admin1:nothing 11, admin2:infobox 1, admin2:nothing 144
+  MCO  admin1:nothing 1, admin2:infobox 8, admin2:no article 3, admin2:nothing 4
+  MDA  admin1:infobox 1, admin1:nothing 3, admin1:section only 3, admin1:section+table 28, admin1:section+table+infobox 2, admin2:nothing 1
+  MDG  admin1:nothing 6, admin2:infobox 3, admin2:no article 3, admin2:nothing 12
+  MDV  admin1:infobox 1, admin1:nothing 19, admin2:infobox 1, admin2:nothing 4
+  MHL  admin1:infobox 27, admin1:nothing 4, admin1:section+infobox 1, admin1:section+table 1, admin2:nothing 2
+  MKD  admin1:infobox 1, admin1:nothing 76, admin1:section+table 4, admin2:infobox 7, admin2:no article 6, admin2:nothing 134, admin2:section only 4, admin2:section+table 1, admin2:section+table+infobox 1
+  MLT  admin1:nothing 6, admin2:infobox 2, admin2:nothing 57, admin2:section only 10
+  MMR  admin1:nothing 6, admin1:section only 14, admin1:section+table 1, admin2:infobox 1, admin2:no article 2, admin2:nothing 199, admin2:section only 8
+  MNE  admin1:nothing 23, admin1:section+table 2, admin2:no article 1, admin2:nothing 27, admin2:section only 5, admin2:section+infobox 3, admin2:section+table 3, admin2:section+table+infobox 4
+  MOZ  admin1:nothing 9, admin1:section only 2, admin2:infobox 142, admin2:no article 13, admin2:nothing 42
+  MRT  admin1:infobox 1, admin1:nothing 12, admin2:infobox 2, admin2:nothing 94, admin2:section only 1
+  MUS  admin1:infobox 3, admin1:nothing 6, admin2:infobox 3, admin2:nothing 12, admin2:section only 1
+  MWI  admin1:section only 3, admin2:no article 1, admin2:nothing 27, admin2:section only 6, admin2:section+table 1
+  MYS  admin1:section only 1, admin1:section+infobox 8, admin1:section+table 2, admin1:section+table+infobox 5, admin2:nothing 23, admin2:section only 1, admin2:section+table 5
+  NAM  admin1:nothing 14, admin2:infobox 29, admin2:no article 1, admin2:nothing 128, admin2:section+table 1
+  NER  admin1:nothing 7, admin1:section only 1, admin2:no article 4, admin2:nothing 78
+  NOR  admin1:infobox 14, admin1:nothing 3, admin1:section+infobox 1, admin2:infobox 347, admin2:nothing 7, admin2:section+infobox 1, admin2:section+table+infobox 1
+  NRU  admin1:nothing 14, admin2:nothing 8
+  NZL  admin1:infobox 15, admin1:nothing 2, admin2:nothing 46
+  OMN  admin1:nothing 11, admin2:infobox 1, admin2:nothing 64, admin2:section only 1
+  PAN  admin1:nothing 15, admin2:infobox 2, admin2:nothing 131
+  PHL  admin1:nothing 2, admin1:section only 15, admin1:section+table 1, admin2:infobox 3, admin2:no article 4, admin2:nothing 26, admin2:section only 93, admin2:section+infobox 4, admin2:section+table 13
+  PLW  admin1:nothing 15, admin1:section only 1, admin2:nothing 1, admin2:section only 1
+  PNG  admin1:infobox 2, admin1:nothing 17, admin1:section only 1, admin1:section+infobox 1, admin1:section+table 1, admin2:infobox 2, admin2:no article 8, admin2:nothing 109, admin2:section only 2
+  PRK  admin1:infobox 1, admin1:nothing 11, admin2:infobox 24, admin2:no article 4, admin2:nothing 234, admin2:section only 2
+  PRY  admin1:nothing 18, admin2:infobox 61, admin2:no article 27, admin2:nothing 208, admin2:section only 5, admin2:section+infobox 1, admin2:section+table 1
+  PSE  admin1:infobox 16, admin1:section+infobox 2
+  QAT  admin1:nothing 10, admin2:no article 1, admin2:nothing 18, admin2:section+table 2
+  RWA  admin1:nothing 5, admin2:nothing 10
+  SAU  admin1:nothing 1
+  SDN  admin1:nothing 11, admin1:section only 4, admin2:infobox 14, admin2:no article 72, admin2:nothing 143, admin2:section only 3
+  SEN  admin1:nothing 14, admin2:infobox 5, admin2:no article 18, admin2:nothing 229, admin2:section+table+infobox 1
+  SGP  admin1:nothing 5, admin2:nothing 31
+  SLB  admin1:nothing 6, admin1:section only 3, admin1:section+infobox 1, admin2:infobox 19, admin2:nothing 1
+  SLE  admin1:infobox 2, admin1:nothing 1, admin1:section only 2, admin2:infobox 2, admin2:nothing 12, admin2:section only 9, admin2:section+table 2
+  SLV  admin1:nothing 14, admin2:no article 6, admin2:nothing 325
+  SMR  admin1:infobox 2, admin1:nothing 7, admin2:infobox 1, admin2:nothing 43
+  SOM  admin1:nothing 14, admin2:infobox 3, admin2:no article 1, admin2:nothing 115, admin2:section+infobox 1
+  SRB  admin1:nothing 6, admin1:section+table 24, admin2:infobox 12, admin2:no article 3, admin2:nothing 210, admin2:section only 7, admin2:section+table 27, admin2:section+table+infobox 3
+  STP  admin1:infobox 1, admin1:nothing 6, admin1:section+infobox 1, admin2:infobox 1, admin2:nothing 5
+  SUR  admin1:nothing 10, admin2:infobox 31, admin2:no article 11, admin2:nothing 34
+  SVK  admin1:infobox 4, admin1:section+table 4, admin2:infobox 13, admin2:no article 2, admin2:nothing 5, admin2:section only 73, admin2:section+infobox 1, admin2:section+table 2
+  SWZ  admin1:nothing 3, admin1:section only 1, admin2:infobox 7, admin2:nothing 67
+  SYC  admin1:infobox 1, admin1:no article 2, admin1:nothing 24, admin2:infobox 1, admin2:nothing 1
+  SYR  admin1:infobox 1, admin1:nothing 12, admin1:section+infobox 1, admin2:infobox 2, admin2:no article 9, admin2:nothing 223, admin2:section only 15, admin2:section+infobox 1
+  TCD  admin1:infobox 1, admin1:nothing 20, admin1:section only 1, admin2:nothing 102
+  TGO  admin1:nothing 5, admin2:infobox 3, admin2:no article 44, admin2:nothing 87, admin2:section only 4
+  TJK  admin1:nothing 3, admin1:section+infobox 1, admin1:section+table 1, admin2:infobox 2, admin2:no article 6, admin2:nothing 149, admin2:section only 1
+  TKM  admin1:infobox 1, admin1:nothing 5, admin2:infobox 4, admin2:no article 1, admin2:nothing 67, admin2:section only 1, admin2:section+infobox 1
+  TLS  admin1:nothing 13, admin1:section only 1, admin2:nothing 336, admin2:section only 1, admin2:section+infobox 1
+  TON  admin1:nothing 5, admin2:infobox 16, admin2:nothing 2
+  TTO  admin1:nothing 4, admin1:section+table 10, admin2:infobox 2, admin2:nothing 8
+  TZA  admin1:infobox 4, admin1:nothing 32, admin1:section+table 1, admin2:nothing 6, admin2:section+table 1
+  URY  admin1:nothing 19, admin2:infobox 16, admin2:no article 13, admin2:nothing 214, admin2:section+infobox 1
+  UZB  admin1:infobox 2, admin1:nothing 12, admin2:infobox 9, admin2:no article 18, admin2:nothing 214, admin2:section only 2, admin2:section+infobox 2
+  VCT  admin1:nothing 6, admin2:infobox 2, admin2:nothing 3
+  VUT  admin1:nothing 5, admin1:section only 1, admin2:infobox 1, admin2:nothing 1, admin2:section+infobox 1
+  WSM  admin1:nothing 10, admin2:nothing 1
+  XKX  admin1:infobox 12, admin1:nothing 14, admin1:section only 5
+  ZAF  admin1:infobox 3, admin1:section+table 5, admin1:section+table+infobox 1, admin2:infobox 1, admin2:nothing 4, admin2:section+table 48
+  ZMB  admin1:nothing 7, admin1:section+table 3, admin2:infobox 16, admin2:no article 37, admin2:nothing 261, admin2:section only 5
+  ZWE  admin1:infobox 1, admin1:nothing 8, admin1:section+table 1, admin2:infobox 9, admin2:no article 2, admin2:nothing 68, admin2:section only 1, admin2:section+infobox 1
 
-this run: 24 countries, 13708 units
-world so far (48 countries): admin1:infobox 81, admin1:no article 1, admin1:nothing 1029, admin1:section only 219, admin1:section+infobox 41, admin1:section+table 258, admin1:section+table+infobox 47, admin2:infobox 3290, admin2:no article 9290, admin2:nothing 41994, admin2:section only 801, admin2:section+infobox 146, admin2:section+table 2238, admin2:section+table+infobox 62
-  wrote data/processed/wikipedia_probe.json (10250 kB)
+this run: 146 countries, 18255 units
+world so far (194 countries): admin1:infobox 302, admin1:no article 3, admin1:nothing 2373, admin1:section only 446, admin1:section+infobox 87, admin1:section+table 490, admin1:section+table+infobox 64, admin2:infobox 5615, admin2:no article 10129, admin2:nothing 54399, admin2:section only 1660, admin2:section+infobox 218, admin2:section+table 2727, admin2:section+table+infobox 80
+  wrote data/processed/wikipedia_probe.json (14026 kB)
