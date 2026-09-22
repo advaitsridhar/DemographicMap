@@ -1110,7 +1110,11 @@ MD_RELIGION_LABELS = {
     "adventists": "Adventist", "pentecostals": "Pentecostal",
     "evangelicals": "Evangelical", "old believers": "Old Believer",
     "catholics": "Catholic",
-    "irreligious": "No religion",
+    # Beside atheists and agnostics in the same table, so it is a fourth
+    # answer and not the category the three of them sit in. Mapped onto "No
+    # religion" it made Basarabeasca report a parent and its children at once,
+    # which the build refuses and is right to.
+    "irreligious": "Irreligious",
     # The census's own category, beside atheists and agnostics in the same
     # table, so it is not either of them and is not folded into either.
     "free thinkers": "Freethinker",

@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT))
 
+import canonical_groups  # noqa: E402
 from scripts.fetch_census import europe_wiki as m  # noqa: E402
 
 CITE = ('<ref>[https://census2011.statistics.sk/tabulky.html '
@@ -1117,7 +1118,7 @@ class AParentWithNoDashToMarkItsChildren(unittest.TestCase):
         self.assertEqual(shares["Old Believer"], 0.0)
         self.assertNotIn(98.7, shares.values())
 
-    def test_the_census_s_own_three_kinds_of_unbelief_stay_apart(self):
+    def test_the_census_s_own_four_kinds_of_unbelief_stay_apart(self):
         # Atheists, agnostics, free thinkers and the irreligious are four
         # rows of one table, so the census means four different answers.
         # None of them is folded into another here.
@@ -1127,4 +1128,16 @@ class AParentWithNoDashToMarkItsChildren(unittest.TestCase):
         self.assertEqual(shares["Atheism"], 0.2)
         self.assertEqual(shares["Agnosticism"], 0.0)
         self.assertEqual(shares["Freethinker"], 0.0)
-        self.assertEqual(shares["No religion"], 0.6)
+        self.assertEqual(shares["Irreligious"], 0.6)
+
+    def test_none_of_the_four_is_the_category_the_others_sit_in(self):
+        # The fourth used to be written "No religion", which is the canonical
+        # parent of the first two. A record naming a parent and its children
+        # is counted once for itself and again for each child, so the build
+        # stops on it -- as it did, after every site file had been written.
+        got, _ = m.read_field(BASARABEASCA_RELIGION, m.MD_RELIGION, MDA,
+                              "Basarabeasca District", "en")
+        named = {r["group"] for r in got["rows"]}
+        parents = {p for g in named
+                   for p in canonical_groups.ancestry("religion", g)[1:]}
+        self.assertEqual(named & parents, set())
