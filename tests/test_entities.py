@@ -465,10 +465,24 @@ class MaldivesAndAfghanistanAreDeclaredNotEmpty(unittest.TestCase):
         fields, which for Afghanistan is the first thing to ask -- the ALCS
         is representative at province level and this map does publish survey
         compositions. It does not carry these, and the reason says so.
+
+        Ethnicity is no longer among them, by the owner's decision of 22
+        September 2026. The entry was right that no census asks and wrong to
+        conclude that nothing may be written: the Ministry of Rural
+        Rehabilitation and Development's district development plans state a
+        breakdown for many districts, and afghanistan.py reads them. Both
+        halves are pinned, because dropping the entry is only correct while
+        something is actually reading the source that replaced it.
         """
-        for field in ("religion", "ethnicity", "language"):
+        for field in ("religion", "language"):
             reason = common.NOT_COLLECTED_POLICY["AFG"][field]
             self.assertIn("ALCS", reason, field)
+        self.assertNotIn("ethnicity", common.NOT_COLLECTED_POLICY["AFG"])
+        reader = (pathlib.Path(__file__).resolve().parent.parent
+                  / "scripts" / "fetch_census" / "afghanistan.py")
+        self.assertTrue(reader.exists(),
+                        "ethnicity may leave the policy table only because a "
+                        "reader takes its place")
 
 
 class TheFactbookHonoursTheSameDeclaration(unittest.TestCase):
