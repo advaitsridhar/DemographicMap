@@ -270,3 +270,65 @@ class ADistrictTheTableNamesTwice(unittest.TestCase):
                               self.row(("Tajik", 61.5), ("Uzbek", 38.5))])
         self.assertEqual(why, "")
         self.assertEqual(len(kept), 1)
+
+
+class TheAliasesNameShapesThatExist(unittest.TestCase):
+    """An alias is a claim about the boundary file, so it is checked against
+    it. A table of aliases nobody verifies is how a district ends up wearing
+    another district's figures.
+    """
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        import json
+        root = Path(__file__).resolve().parent.parent
+        cls.a1 = {s["id"]: s["name"]
+                  for s in json.loads((root / "site/data/admin1/AFG.json")
+                                      .read_text())}
+        cls.shapes = json.loads((root / "site/data/admin2/AFG.json").read_text())
+        cls.provinces = set(cls.a1.values())
+        cls.by_province = {}
+        for s in cls.shapes:
+            cls.by_province.setdefault(
+                cls.a1.get(s["parent"], "?"), set()).add(s["name"])
+
+    def test_every_renamed_province_is_on_the_map(self) -> None:
+        for article, on_map in a.PROVINCE_ON_MAP.items():
+            self.assertIn(on_map, self.provinces,
+                          f"{article!r} -> {on_map!r} names no province")
+            self.assertNotIn(article, self.provinces,
+                             f"{article!r} is already on the map; no alias needed")
+
+    def test_every_province_the_reader_lists_resolves(self) -> None:
+        for p in a.PROVINCES:
+            self.assertIn(a.PROVINCE_ON_MAP.get(p, p), self.provinces,
+                          f"{p!r} reaches no province on the map")
+
+    def test_every_district_alias_names_a_shape_in_that_province(self) -> None:
+        for (province, article), on_map in a.DISTRICT_ON_MAP.items():
+            here = self.by_province.get(a.PROVINCE_ON_MAP.get(province, province),
+                                        set())
+            self.assertIn(on_map, here,
+                          f"{province}/{article!r} -> {on_map!r} is not a "
+                          f"district of that province")
+
+    def test_no_alias_points_at_a_name_the_article_already_uses(self) -> None:
+        # If both spellings exist as shapes, renaming moves the figures off a
+        # real district onto a different one -- the invisible error.
+        for (province, article), on_map in a.DISTRICT_ON_MAP.items():
+            here = self.by_province.get(a.PROVINCE_ON_MAP.get(province, province),
+                                        set())
+            if article in here:
+                self.assertEqual(article, on_map,
+                                 f"{province}/{article!r} is itself a shape; "
+                                 f"aliasing it to {on_map!r} would move the "
+                                 f"figures onto another district")
+
+    def test_the_tables_have_no_duplicate_targets_in_one_province(self) -> None:
+        import collections
+        per = collections.defaultdict(list)
+        for (province, article), on_map in a.DISTRICT_ON_MAP.items():
+            per[(province, on_map)].append(article)
+        clashes = {k: v for k, v in per.items() if len(v) > 1}
+        self.assertEqual({}, clashes,
+                         "two article names aliased onto one shape")

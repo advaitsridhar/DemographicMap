@@ -95,6 +95,59 @@ GROUPS = {
     "other": "Other", "others": "Other",
 }
 
+# The province, as this map's boundary file spells it against the article's
+# title. Five of the thirty-four differ, and one of them is a transposition --
+# the file writes Ghanzi for Ghazni -- so every Ghazni district was refused as
+# "outside its stated parent" and the cause was three letters in the wrong
+# order. Fixing the province is worth far more than fixing its districts one
+# by one: match_admin2 resolves a district inside its stated province, so a
+# province it cannot recognise refuses the lot.
+#
+# Juzjan and Uruzgan are both on the map and are different places; only the
+# first is renamed here.
+PROVINCE_ON_MAP = {
+    "Daikundi": "Daykundi",
+    "Ghazni": "Ghanzi",
+    "Juzjan": "Jowzjan",
+    "Maidan Wardak": "Wardak",
+    "Sar-e-Pol": "Sar-e Pol",
+}
+
+# A district the article and the boundary file transliterate differently.
+# Each one was established by taking the names left unmatched inside a single
+# province and keeping only those with exactly one close candidate there; a
+# name with two candidates, or none, is not in this table and stays a gap.
+DISTRICT_ON_MAP = {
+    ("Badakhshan", "Tishkan"): "Tashkan",
+    ("Badakhshan", "Yaftali Sufla"): "Yaftal Sufla",
+    ("Ghazni", "Deh Yak"): "Dih Yak",
+    ("Ghazni", "Jaghori"): "Jaghuri",
+    ("Helmand", "Garmsir"): "Garmser",
+    ("Helmand", "Washir"): "Washer",
+    ("Herat", "Kushki Kuhna"): "Koshki Kohna",
+    ("Herat", "Herat"): "Hirat",
+    ("Kabul", "Deh Sabz"): "Dih Sabz",
+    ("Khost", "Jaji Maydan"): "Jaji Maidan",
+    ("Khost", "Musa Khel"): "Mosa Khail",
+    ("Khost", "Sabari"): "Sabri",
+    ("Kunar", "Sirkani"): "Sarkani",
+    ("Kunduz", "Chardara"): "Chahar Dara",
+    ("Laghman", "Dawlat Shah"): "Daulatshahi",
+    ("Nangarhar", "Achin"): "Acheen",
+    ("Nangarhar", "Hisarak"): "Hesarak",
+    ("Nangarhar", "Khogyani"): "Khogayani",
+    ("Nangarhar", "Lal Pur"): "Lal Por",
+    ("Nangarhar", "Momand Dara"): "Muhmand Dara",
+    ("Nangarhar", "Pachir Aw Agam"): "Pachier Agam",
+    ("Nangarhar", "Sherzad"): "Shirzad",
+    ("Nuristan", "Nurgram"): "Nurgaram",
+    ("Paktika", "Wor Mamay"): "Wor Mayi",
+    ("Paktika", "Yusufkhel"): "Yosuf Khel",
+    ("Takhar", "Kalafgan"): "Kalfagan",
+    ("Zabul", "Mezana"): "Mizan",
+    ("Zabul", "Tarnak Aw Jaldak"): "Tarnak Wa Jaldak",
+}
+
 LINK = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
 REF = re.compile(r"<ref[^>]*?(?:/>|>.*?</ref>)", re.S | re.I)
 MARKUP = re.compile(r"\{\{[^{}]*\}\}|'''?|<[^>]+>|align=\w+\|?|style=\"[^\"]*\"")
@@ -333,6 +386,16 @@ def main(argv: list[str] | None = None) -> int:
                     f"the readings agree; kept the finer one")
             settled += kept
         for row in settled:
+            # Both names go out as the boundary file spells them, so a
+            # district reaches its shape and reaches it inside the right
+            # province. The article's spelling stays in the log.
+            on_map = DISTRICT_ON_MAP.get((row["province"], row["district"]))
+            if on_map:
+                log(f"    {row['province']}/{row['district']}: "
+                    f"the map spells it {on_map!r}")
+                row["district"] = on_map
+            row["province"] = PROVINCE_ON_MAP.get(row["province"],
+                                                  row["province"])
             # The province belongs in the id and on the row, and both for the
             # same reason. Afghanistan has a Baharak in Badakhshan and another
             # in Takhar, a Fayzabad in Badakhshan and another in Jowzjan, and
