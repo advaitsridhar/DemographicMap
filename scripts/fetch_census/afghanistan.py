@@ -55,6 +55,7 @@ from ._shared import PROCESSED, log, record, write_json    # noqa: E402
 from .europe_wiki import fetch                             # noqa: E402
 
 OUT = "afghanistan_district.json"
+PROVINCE_OUT = "afghanistan_province.json"
 LANG = "en"
 SOURCE = ("Ministry of Rural Rehabilitation and Development, National "
           "Area-Based Development Programme, district development plans")
@@ -359,6 +360,114 @@ def settle(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], str]:
     return [best], ""
 
 
+# ---------------------------------------------------------------------------
+# The province table, which is a comparison of sources and not a census
+# ---------------------------------------------------------------------------
+#
+# Afghanistan has never counted its people, so its province articles do not
+# transcribe a census -- they tabulate what a dozen bodies have each estimated,
+# one row per source:
+#
+#   Ethnicity | Tajik/Farsiwan | Hazara | Arab | Pashtun | Turkmen | Uzbek | Others
+#   2004-2021 | <=46%          | <=12%  | <=7% | 10-27%  | 12-15%  | 10-11%| null
+#   2018 UN   |                | 46%    | 12%  | 7%      | 10%     | 15%   | 10%
+#   2015 NPS  | colspan=3| 50%          | 27%  | 11.9%   | 10.7%   | -
+#   2011 USA  | colspan=3| 50%          | 27%  | 12%     | 11%     | -
+#
+# Only a row that is a whole composition is read, and the rest are refused
+# rather than repaired:
+#
+#   a range      "10 - 27%"   -- which end is the answer
+#   a word       "majority"   -- not a number, and not one to invent
+#   a colspan    one value covering three groups, with no way to divide it
+#   a short row  fewer or more cells than the header has groups
+#
+# That last one is the important one and it is why this reads cell counts
+# rather than cell contents. The 2018 UN row above has a stray empty cell
+# after the period, so its 46% sits under Hazara when the header says Tajik.
+# Read positionally it would hand Balkh's Tajik plurality to its Hazara
+# minority -- the wrong answer wearing the right shape, which is the failure
+# this file refuses everywhere else. A row whose cells do not line up with the
+# header exactly is not read at all.
+#
+# The record names the source row it came from, because "UNHCR 2009" and
+# "census" are not the same claim and the panel must not present them alike.
+PERIOD = re.compile(r"^\s*(?:(\d{4})\s*[-\u2013]\s*)?(\d{4})\b\s*(.*)$")
+PLAIN = re.compile(r"^(\d{1,3}(?:\.\d+)?)\s*%$")
+SPAN = re.compile(r"colspan", re.I)
+
+
+def group_columns(header: list[str]) -> dict[int, str]:
+    """{column index: group}, for the header cells that name one."""
+    out: dict[int, str] = {}
+    for i, cell in enumerate(header):
+        # "Tajik/ Farsiwan" is one column naming two peoples; the first is the
+        # one this map has a name for, and the slash is not a second column.
+        first = clean(cell).split("/")[0].strip().lower()
+        name = GROUPS.get(first)
+        if name:
+            out[i] = name
+    return out
+
+
+def source_rows(table: list[list[str]]) -> list[tuple[int, str, list[dict[str, Any]]]]:
+    """Every row that is a whole composition, newest first."""
+    cols = group_columns(table[0])
+    if len(cols) < 2:
+        return []
+    width = len(table[0])
+    found: list[tuple[int, str, list[dict[str, Any]]]] = []
+    for row in table[1:]:
+        if len(row) != width or any(SPAN.search(c) for c in row):
+            continue
+        head = PERIOD.match(clean(row[0]))
+        if not head:
+            continue
+        year, who = int(head.group(2)), head.group(3).strip()
+        parts = []
+        for i, group in cols.items():
+            m = PLAIN.match(clean(row[i]))
+            if not m:
+                parts = []
+                break
+            parts.append({"group": group, "pct": float(m.group(1))})
+        if parts and usable(parts, f"row {year}"):
+            found.append((year, who or "unattributed", parts))
+    return sorted(found, key=lambda r: -r[0])
+
+
+def province_record(province: str, *, probing: bool) -> dict[str, Any] | None:
+    body, _ = fetch(f"{province} Province", LANG)
+    if not body:
+        return None
+    for table in tables(body):
+        if len(table) < 2:
+            continue
+        rows = source_rows([repair_header(table[0])] + table[1:])
+        if not rows:
+            continue
+        year, who, parts = rows[0]
+        if probing:
+            log(f"  {province}: {len(rows)} whole row(s); took {who} {year} -- "
+                + ", ".join(f"{p['group']} {p['pct']:g}%" for p in parts))
+        on_map = PROVINCE_ON_MAP.get(province, province)
+        slug = re.sub(r"[^a-z0-9]+", "-", on_map.lower()).strip("-")
+        return record(f"AFG-admin1-{slug}", on_map, level="admin1",
+                      parent="AFG", ethnicity=parts, ethnicity_year=year,
+                      ethnicity_basis=f"estimate, {who}",
+                      sources=[{"field": "ethnicity",
+                                "name": f"{who}, {year}, as the English "
+                                        f"Wikipedia article "
+                                        f"'{province} Province' tabulates it",
+                                "licence": LICENCE, "year": year,
+                                "url": "https://en.wikipedia.org/wiki/"
+                                       + province.replace(" ", "_")
+                                       + "_Province"}])
+    if probing:
+        log(f"  {province}: no whole row")
+    return None
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -366,10 +475,23 @@ def main(argv: list[str] | None = None) -> int:
                     help="print each province's header and every row's verdict, "
                          "and write nothing")
     ap.add_argument("--only", help="comma-separated province names")
+    ap.add_argument("--provinces", action="store_true",
+                    help="read the province table instead of the district one")
     args = ap.parse_args(argv)
 
     wanted = ([p.strip() for p in args.only.split(",")] if args.only
               else list(PROVINCES))
+    if args.provinces:
+        got = [r for p in wanted
+               if (r := province_record(p, probing=True)) is not None]
+        log(f"\nAfghanistan: {len(got)} of {len(wanted)} provinces have a "
+            f"whole composition in their source table")
+        if args.probe:
+            log("--probe: nothing written")
+            return 0
+        write_json(PROCESSED / PROVINCE_OUT, got)
+        return 0
+
     records: list[dict[str, Any]] = []
     for province in wanted:
         seen: dict[str, list[dict[str, Any]]] = {}
