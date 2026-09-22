@@ -250,7 +250,8 @@ def province_rows(province: str, *, probing: bool) -> list[dict[str, Any]]:
             if probing:
                 log(f"      + {district}: "
                     + ", ".join(f"{p['group']} {p['pct']:g}%" for p in parts))
-            out.append({"district": district, "ethnicity": parts})
+            out.append({"district": district, "province": province,
+                        "ethnicity": parts})
         log(f"  {province}: {read} district(s) with shares, {refused} without"
             + (f", {silent} row(s) with no note at all" if silent else ""))
         break
@@ -271,10 +272,24 @@ def main(argv: list[str] | None = None) -> int:
     records: list[dict[str, Any]] = []
     for province in wanted:
         for row in province_rows(province, probing=args.probe):
-            slug = re.sub(r"[^a-z0-9]+", "-", row["district"].lower()).strip("-")
+            # The province belongs in the id and on the row, and both for the
+            # same reason. Afghanistan has a Baharak in Badakhshan and another
+            # in Takhar, a Fayzabad in Badakhshan and another in Jowzjan, and
+            # nine such pairs in all. Keyed on the district name alone they
+            # collide: one record silently replaces the other before matching
+            # even begins, and the survivor is then matched country-wide,
+            # where build_entities refuses an ambiguous name outright -- so
+            # both districts end up with nothing.
+            #
+            # parent_name is what match_admin2 uses to resolve a repeated name
+            # inside its own province, and its docstring names this exact
+            # failure: a district quietly wearing its twin's figures, "a wrong
+            # answer that looks exactly like a right one".
+            slug = re.sub(r"[^a-z0-9]+", "-",
+                          f"{row['province']} {row['district']}".lower()).strip("-")
             records.append(record(
                 f"AFG-admin2-{slug}", row["district"], level="admin2",
-                parent="AFG",
+                parent="AFG", parent_name=row["province"],
                 ethnicity=row["ethnicity"],
                 ethnicity_year=YEARS,
                 ethnicity_basis="district development plan",

@@ -181,3 +181,41 @@ class TheTwoKindsOfOverrun(unittest.TestCase):
         # Nothing observed sits between 103% and 144%; 110% is refused.
         self.assertFalse(a.usable([{"group": "Tajik", "pct": 70.0},
                                    {"group": "Uzbek", "pct": 40.0}], "x"))
+
+
+class ADistrictNameThatRepeatsAcrossProvinces(unittest.TestCase):
+    """Afghanistan has a Baharak in Badakhshan and another in Takhar, a
+    Fayzabad in Badakhshan and another in Jowzjan -- nine such pairs.
+
+    Keyed on the district name alone they collide before matching begins, and
+    the survivor is then matched country-wide, where an ambiguous name is
+    refused outright -- so both districts end up with nothing.
+    """
+
+    def rows(self):
+        import re as _re
+        out = []
+        for province, district in (("Badakhshan", "Baharak"),
+                                   ("Takhar", "Baharak")):
+            slug = _re.sub(r"[^a-z0-9]+", "-",
+                           f"{province} {district}".lower()).strip("-")
+            out.append((f"AFG-admin2-{slug}", province, district))
+        return out
+
+    def test_the_id_carries_the_province(self) -> None:
+        ids = [i for i, _, _ in self.rows()]
+        self.assertEqual(len(set(ids)), 2, f"ids collide: {ids}")
+        self.assertIn("badakhshan", ids[0])
+        self.assertIn("takhar", ids[1])
+
+    def test_the_reader_names_the_parent_on_every_record(self) -> None:
+        src = (Path(__file__).resolve().parent.parent / "scripts"
+               / "fetch_census" / "afghanistan.py").read_text()
+        self.assertIn("parent_name=row[\"province\"]", src,
+                      "match_admin2 resolves a repeated district name only "
+                      "when the row says which province it is in")
+
+    def test_the_province_is_carried_out_of_the_table_reader(self) -> None:
+        src = (Path(__file__).resolve().parent.parent / "scripts"
+               / "fetch_census" / "afghanistan.py").read_text()
+        self.assertIn('"province": province', src)
