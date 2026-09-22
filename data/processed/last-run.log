@@ -1,3 +1,28 @@
+AFG: 1 units without a population, 0 resolved
+  Ghanzi: no article resolved
+ARG: what sits directly in the country resolved 1 more
+ARG: one level further down resolved 1 more
+ARG: 2 units without a population, 2 resolved
+  Ciudad Autónoma de Buenos Aires -> Buenos Aires (Q1486, matched by name)
+  La Roja -> Rojas Partido (Q2621930, matched by prefix)
+  La Roja -> Rojas Partido (Q2621930): its coordinates (-34.20, -60.73) lie outside the shape; refused
+  Antarctica: searching the country offered Q3323150 'Queen Elizabeth Range', Q6556067 'Liotard Glacier'
+ATA: 1 units without a population, 0 resolved
+  Antarctica: no article resolved
+ATG: 1 units without a population, 1 resolved
+  Redonda -> Redonda: population: zero
+  Nakhchivan Autonomous Republic: found by searching the country
+AZE: 2 units without a population, 1 resolved
+  Contiguous Azerbaijan: no article resolved
+  Nakhchivan Autonomous Republic -> Nakhchivan Autonomous Republic (Q131083, matched by name)
+BDI: what sits directly in the country resolved 1 more
+BDI: 1 units without a population, 1 resolved
+  Rumonge -> Rumonge Province (Q20669646, matched by name)
+BEL: the country's own divisions resolved 2 more
+BEL: 2 units without a population, 2 resolved
+  Vlaams Gewest -> Flemish Region (Q9337, matched by name)
+  Wallonne Gewest -> Wallonia (Q231, matched by name)
+BEN: 8 units without a population, 8 resolved
 BFA: the country's own divisions resolved 13 more
 BFA: 13 units without a population, 13 resolved
   Boucle du Mouhoun -> Bankui Region (Q527093, matched by name)
@@ -13,161 +38,125 @@ BFA: 13 units without a population, 13 resolved
   Plateau Central -> Oubri Region (Q862606, matched by name)
   Sahel -> Sahel Region (Q665514, matched by name)
   Sud-Ouest -> Sud-Ouest Region (Burkina Faso) (Q429149, matched by name)
-  Nord-Est: found by searching the country
-ITA: 5 units without a population, 1 resolved
-  Centro: no article resolved
-  Isole: no article resolved
-  Nord-Est -> Northeast Italy (Q579075, matched by name)
-  Nord-Ovest: no article resolved
-  Sud: no article resolved
-LTU: the country's own divisions resolved 6 more
-LTU: 6 units without a population, 6 resolved
-  Alytus County -> Alytus County (Q669470, matched by name)
-  Kaunas County -> Kaunas County (Q853861, matched by name)
-  Klaipeda County -> Klaipėda County (Q475207, matched by name)
-  Panevezys County -> Panevėžys County (Q188085, matched by name)
-  Siauliai County -> Šiauliai County (Q186410, matched by name)
-  Vilnius County -> Vilnius County (Q188061, matched by name)
-GRC: what sits directly in the country resolved 1 more
-  Agion Oros: found by searching the country
-GRC: 4 units without a population, 2 resolved
-  Agion Oros -> Mount Athos (Q130321, matched by name)
-  Agion Oros -> Mount Athos: no population parameter in the infobox
-  Egean: no article resolved
-  Epirus-Western Macedonia -> Decentralized Administration of Epirus and Western Macedonia (Q9254348, matched by name)
-  Epirus-Western Macedonia -> Decentralized Administration of Epirus and Western Macedonia: no population parameter in the infobox
-  Peloponisos-W. Greece & Ionian: no article resolved
-LVA: what sits directly in the country resolved 1 more
-LVA: 3 units without a population, 2 resolved
-  Jelgavas: no article resolved
-  Rēzeknes -> Rēzekne (Q180379, matched by redirect)
-  Rēzeknes -> Rēzekne: population_total: not a whole number: '{{wikidata|property|qualifier|best||P1082}}'
-  Varakļānu novads -> Varakļāni Municipality (Q432596, matched by name)
-  Varakļānu novads -> Varakļāni Municipality: population_total: not a whole number: '{{wikidata|property|qualifier|best||P1082}}'
-BEL: the country's own divisions resolved 2 more
-BEL: 2 units without a population, 2 resolved
-  Vlaams Gewest -> Flemish Region (Q9337, matched by name)
-  Wallonne Gewest -> Wallonia (Q231, matched by name)
-FRA: the country's own divisions resolved 2 more
-FRA: 2 units without a population, 2 resolved
-  Normandie -> Normandy (administrative region) (Q18677875, matched by name)
-  Normandie -> Normandy (administrative region): population_total: not a whole number: '{{France metadata Wikidata|population_total}}'
-  Occitanie -> Occitania (administrative region) (Q18678265, matched by name)
-  Occitanie -> Occitania (administrative region): population_total: not a whole number: '{{France metadata Wikidata|population_total}}'
 BGR: the country's own divisions resolved 1 more
 BGR: 1 units without a population, 1 resolved
   Sofia -> Sofia Province (Q202904, matched by name)
+BHS: 18 units without a population, 17 resolved
+  Acklins: its Wikidata item has no English article
+  Black Point -> Black Point, Bahamas: no infobox
+  Central Abaco -> Central Abaco: no infobox
+  Central Eleuthera -> Central Eleuthera: no infobox
+  East Grand Bahama -> East Grand Bahama: no infobox
+  Harbour Island -> Harbour Island, Bahamas (Q2357510): its coordinates (25.50, -76.63) lie outside the shape; refused
+  Mangrove Cay -> Mangrove Cay: no infobox
+  Moore's Island -> Moore's Island: no infobox
+  North Eleuthera -> North Eleuthera: no infobox
+  South Abaco -> South Abaco: no infobox
+  South Eleuthera -> South Eleuthera: no infobox
+  West Grand Bahama -> West Grand Bahama: population_total: empty
 BLR: the country's own divisions resolved 4 more
 BLR: 4 units without a population, 4 resolved
   Brest -> Brest region (Q173822, matched by name)
   Grodno -> Grodno region (Q191061, matched by name)
   Minsk City -> Minsk region (Q192959, matched by name)
+  Minsk City -> Minsk region (Q192959): its coordinates (53.67, 27.75) lie outside the shape; refused
   Mogilev -> Mogilev region (Q189822, matched by name)
-NLD: the country's own divisions resolved 1 more
-NLD: 1 units without a population, 1 resolved
-  Fryslân -> Friesland (Q770, matched by name)
-PRT: the country's own divisions resolved 1 more
-PRT: 2 units without a population, 2 resolved
-  LISBOA -> Lisbon District (Q207199, matched by name)
-  LISBOA -> Lisbon District: 2,135,992, undated (no year in the value)
-ISL: what sits directly in the country resolved 6 more
-ISL: 8 units without a population, 8 resolved
-  Capital Region -> Capital Region (Iceland) (Q203304, matched by name)
-  Eastern Region -> Eastern Region (Iceland) (Q220663, matched by name)
-  Southern Peninsula -> Southern Peninsula (Iceland) (Q212768, matched by name)
-  Southern Peninsula -> Southern Peninsula (Iceland): no infobox
-  Southern Region -> Southern Region (Iceland) (Q204796, matched by name)
-  Western Region -> Western Region (Iceland) (Q221791, matched by name)
-  Westfjords -> Westfjords (Q727267, matched by name)
-UKR: the country's own divisions resolved 2 more
-UKR: 2 units without a population, 2 resolved
-  Odessa Oblast -> Odesa Oblast (Q171852, matched by name)
-  Zaporizhia Oblast -> Zaporizhzhia Oblast (Q171334, matched by name)
-RUS: the country's own divisions resolved 1 more
-RUS: 1 units without a population, 1 resolved
-  Sakha Republic -> Sakha Republic (Q6605, matched by name)
-  Vatican City: found by searching the country
-VAT: 1 units without a population, 1 resolved
-  Vatican City -> Vatican City (Q237, matched by name)
-MKD: what sits directly in the country resolved 6 more
-MKD: 7 units without a population, 6 resolved
-  East: no article resolved
-  Northeast -> Northeastern Statistical Region (Q2077026, matched by prefix)
-  Pelagonia -> Pelagonia Statistical Region (Q1461478, matched by name)
-  Polog -> Polog Statistical Region (Q1587956, matched by name)
-  Southeast -> Southeastern Statistical Region (Q2077037, matched by prefix)
-  Southwest -> Southwestern Statistical Region (Q1415305, matched by prefix)
-  Vardar -> Vardar Statistical Region (Q743691, matched by name)
-MLT: what sits directly in the country resolved 1 more
-MLT: one level further down resolved 63 more
-MLT: 68 units without a population, 68 resolved
-  Attard -> Attard (Q44557, matched by name)
-  Balzan -> Balzan (Q789794, matched by name)
-  Birgu -> Birgu (Q752346, matched by name)
-  Birkirkara -> Birkirkara (Q39583, matched by name)
-  Birżebbuġa -> Birżebbuġa (Q258028, matched by name)
-  Bormla -> Cospicua (Q757225, matched by name)
-  Dingli -> Dingli (Q905641, matched by name)
-  Fgura -> Fgura (Q44388, matched by name)
-  Floriana -> Floriana (Q832807, matched by name)
-  Fontana -> Fontana, Gozo (Q1002742, matched by name)
-  Ghajnsielem -> Għajnsielem (Q761675, matched by name)
-  Gharb -> Għarb (Q1026487, matched by name)
-  Ghasri -> Għasri (Q1017339, matched by name)
-  Gudja -> Gudja (Q1018153, matched by name)
-  Għargħur -> Għargħur (Q1018111, matched by name)
-  Għaxaq -> Għaxaq (Q426385, matched by name)
-  Gżira -> Gżira (Q632097, matched by name)
-  Iklin -> Iklin (Q304589, matched by name)
-  Isla -> Senglea (Q846593, matched by name)
-  Kalkara -> Kalkara (Q533257, matched by name)
-  Kerċem -> Kerċem (Q674679, matched by name)
-  Kirkop -> Kirkop (Q597464, matched by name)
-  Lija -> Lija (Q782049, matched by name)
-  Luqa -> Luqa (Q475585, matched by name)
-  Marsa -> Marsa, Malta (Q267431, matched by name)
-  Marsaskala -> Marsaskala (Q534571, matched by name)
-  Marsaxlokk -> Marsaxlokk (Q781921, matched by name)
-  Mdina -> Mdina (Q207277, matched by name)
-  Mellieħa -> Mellieħa (Q755979, matched by name)
-  Mosta -> Mosta (Q39520, matched by name)
-  Mqabba -> Mqabba (Q1017953, matched by name)
-  Msida -> Msida (Q585187, matched by name)
-  Mtarfa -> Mtarfa (Q656837, matched by name)
-  Munxar -> Munxar (Q587462, matched by name)
-  Mġarr -> Mġarr (Q691220, matched by name)
-  Nadur -> Nadur (Q929969, matched by name)
-  Naxxar -> Naxxar (Q44397, matched by name)
-  Paola -> Paola, Malta (Q846589, matched by name)
-  Pembroke -> Pembroke, Malta (Q775756, matched by name)
-  Pietà -> Pietà, Malta (Q744070, matched by name)
-  Qala -> Qala, Malta (Q1088033, matched by name)
-  Qormi -> Qormi (Q39578, matched by name)
-  Qrendi -> Qrendi (Q282203, matched by name)
-  Rabat Gozo -> Victoria, Malta (Q752348, matched by redirect)
-  Rabat Malta -> Rabat, Malta (Q44381, matched by name)
-  Safi -> Safi, Malta (Q658903, matched by name)
-  Saint John -> San Ġwann (Q39507, matched by redirect)
-  Saint Julian's -> St. Julian's, Malta (Q669979, matched by name)
-  Saint Lawerence -> San Lawrenz (Q537308, matched by near)
-  Saint Lucia's -> Santa Luċija (Q1087776, matched by redirect)
-  Saint Paul's Bay -> St. Paul's Bay (Q39521, matched by name)
-  Sannat -> Sannat (Q602037, matched by name)
-  Santa Venera -> Santa Venera (Q585420, matched by name)
-  Siġġiewi -> Siġġiewi (Q919908, matched by name)
-  Sliema -> Sliema (Q39526, matched by name)
-  Swieqi -> Swieqi (Q220667, matched by name)
-  Ta' Xbiex -> Ta' Xbiex (Q1017348, matched by name)
-  Tarxien -> Tarxien (Q744001, matched by name)
-  Valletta -> Valletta (Q23800, matched by name)
-  Xagħra -> Xagħra (Q605343, matched by name)
-  Xewkija -> Xewkija (Q919921, matched by name)
-  Xgħajra -> Xgħajra (Q520962, matched by name)
-  Ħamrun -> Hamrun (Q343001, matched by name)
-  Żabbar -> Żabbar (Q39518, matched by name)
-  Żebbuġ Gozo -> Żebbuġ, Gozo (Q179243, matched by name)
-  Żebbuġ Malta -> Żebbuġ (Q44573, matched by redirect)
-  Żejtun -> Żejtun (Q44392, matched by name)
-  Żurrieq -> Żurrieq (Q44417, matched by name)
-  wrote data/processed/wiki_population_admin1.json (415 kB)
-wrote 449 records to wiki_population_admin1.json
+BWA: what sits directly in the country resolved 1 more
+BWA: 1 units without a population, 1 resolved
+  Chobe District -> Chobe District (Q165536, matched by name)
+CAF: what sits directly in the country resolved 1 more
+CAF: 2 units without a population, 2 resolved
+  Mbomou -> Mbomou River: no population parameter in the infobox
+  Ouham -> Ouham (Q726620, matched by name)
+CIV: the country's own divisions resolved 1 more
+CIV: what sits directly in the country resolved 3 more
+  District Autonome De Yamoussoukro: searching the country offered Q19830973 'Yamoussoukro Autonomous District', Q135179434 'statistiques sur les grossesses en milieu scolaire dans le district autonome de Yamoussoukro'
+CIV: 11 units without a population, 9 resolved
+  Comoe -> Comoé District (Q16629374, matched by name)
+  Denguele -> Denguélé Region: no population parameter in the infobox
+  District Autonome D'Abidjan: no article resolved
+  District Autonome De Yamoussoukro: no article resolved
+  Goh-Djiboua -> Gôh-Djiboua District (Q21003640, matched by name)
+  Lacs -> Lacs Region: no population parameter in the infobox
+  Montagnes -> Dix-Huit Montagnes: no population parameter in the infobox
+  Savanes -> Savanes Region (Ivory Coast): no population parameter in the infobox
+  Valle Du Bandama -> Vallée du Bandama Region (Q845721, matched by name)
+  Valle Du Bandama -> Vallée du Bandama Region: no population parameter in the infobox
+  Woroba -> Woroba District (Q20980371, matched by name)
+  Zanzan -> Zanzan Region: no population parameter in the infobox
+CMR: the country's own divisions resolved 1 more
+CMR: 1 units without a population, 1 resolved
+  Adamaoua -> Adamawa Region (Q351514, matched by name)
+  Central Kasai: searching the country offered Q6702952 'Kasaï-Central', Q5277178 'Dimbelenge Territory', Q28792426 'Kasaï-Central clashes (2016–present)', Q130576 'Kasaï-Occidental', Q186541 'Kasai River'
+  Upper Uele: searching the country offered Q96314579 'Mangbetu kingdom'
+COD: 3 units without a population, 2 resolved
+  Central Kasai: no article resolved
+  Lower Uele -> Bas-Uélé (Q652056, matched by redirect)
+  Upper Uele -> Haut-Uélé (Q751632, matched by redirect)
+COL: the country's own divisions resolved 1 more
+COL: 1 units without a population, 1 resolved
+  Archipiélago de San Andrés, Providencia y Santa Catalina -> San Andrés and Providencia (Q26855, matched by name)
+  Archipiélago de San Andrés, Providencia y Santa Catalina -> San Andrés and Providencia (Q26855): its coordinates (14.38, -80.28) lie outside the shape; refused
+CPV: 11 units without a population, 11 resolved
+  Ribeira Grande de Santiago -> Ribeira Grande de Santiago, Cape Verde: no population parameter in the infobox
+  Santa Catarina -> Santa Catarina, Cape Verde: no population parameter in the infobox
+  Santa Catarina do Fogo -> Santa Catarina do Fogo: no population parameter in the infobox
+  Santa Cruz -> Santa Cruz, Cape Verde: no population parameter in the infobox
+  São Domingos -> São Domingos, Cape Verde (municipality): no population parameter in the infobox
+  São Lourenço dos Órgãos -> São Lourenço dos Órgãos, Cape Verde: no population parameter in the infobox
+  São Miguel -> São Miguel, Cape Verde: no population parameter in the infobox
+  São Salvador do Mundo -> São Salvador do Mundo, Cape Verde: no population parameter in the infobox
+DJI: 5 units without a population, 5 resolved
+DZA: the country's own divisions resolved 1 more
+DZA: 1 units without a population, 1 resolved
+  Tipaza -> Tipaza Province (Q235814, matched by name)
+EGY: the country's own divisions resolved 2 more
+EGY: 2 units without a population, 2 resolved
+  Gharbiyya Governorate -> Gharbia Governorate (Q30835, matched by name)
+  Matrouh Governorate -> Matrouh Governorate (Q30682, matched by name)
+ERI: 6 units without a population, 6 resolved
+  Anseba Region -> Anseba region: 893,587, undated (the infobox names no year for the figure)
+  Debub Region -> Southern region (Eritrea): 1,476,765, undated (the infobox names no year for the figure)
+  Gash-Barka Region -> Gash-Barka region: 1,103,742, undated (no year in the value)
+  Maekel Region -> Central region (Eritrea): 1,053,254, undated (the infobox names no year for the figure)
+  Northern Red Sea Region -> Northern Red Sea region: 897,454, undated (the infobox names no year for the figure)
+  Southern Red Sea Region -> Southern Red Sea region: 398,073, undated (the infobox names no year for the figure)
+  Western Sahara: found by searching the country
+ESH: 1 units without a population, 1 resolved
+  Western Sahara -> Moroccan-occupied Western Sahara (Q1418613, matched by name)
+  Western Sahara -> Moroccan-occupied Western Sahara: no infobox
+ETH: what sits directly in the country resolved 1 more
+  Hareri: searching the country offered Q1135103 'Hareri National League', Q1033855 'Harari Region', Q33626 'Harari', Q356382 'Harari people'
+ETH: 3 units without a population, 1 resolved
+  Beneshangul Gumu: no article resolved
+  Hareri: no article resolved
+  SNNPR -> Southern Nations, Nationalities, and Peoples' Region (Q203193, matched by name)
+  SNNPR -> Southern Nations, Nationalities, and Peoples' Region: no population parameter in the infobox
+FJI: 3 units without a population, 3 resolved
+FRA: the country's own divisions resolved 2 more
+FRA: 2 units without a population, 2 resolved
+  Normandie -> Normandy (administrative region) (Q18677875, matched by name)
+  Occitanie -> Occitania (administrative region) (Q18678265, matched by name)
+GHA: 12 units without a population, 12 resolved
+GIN: 4 units without a population, 4 resolved
+  Basse: searching the country offered Q3676070 'Basse', Q113575217 'Basse Constituency', Q153498 'Basse Santa Su', Q4868040 'Basse Nding', Q140362702 'Samba Juma Bridge'
+  Brikama: searching the country offered Q916988 'Brikama', Q3676074 'Brikama', Q916991 'Brikama United', Q1601469 'Brikama power station', Q302963 'Brikama Ba'
+  Janjanbureh: searching the country offered Q1002786 'Janjanbureh', Q3676493 'Janjanbureh', Q113575198 'Janjanbureh Constituency', Q224775 'MacCarthy Island', Q1253431 'Janjanbureh district'
+  Kanifing: searching the country offered Q277397 'Kanifing', Q45207025 'Kanifing', Q25377595 'Kanifing', Q1762211 'Kanifing District', Q1393616 'Faji Kunda'
+  Kerewan: searching the country offered Q1478583 'Kerewan', Q2756511 'Kerewan', Q24844392 'Kerewan Bolon', Q1739235 'Kerewan Bridge', Q24844388 '?'
+  Kuntaur: searching the country offered Q1188137 'Kuntaur', Q2756380 'Kuntaur', Q140877695 'Kuntaur Area Council Building', Q141464857 'Liste der Vorsteher des Kuntaur Area Council'
+  Mansakonko: searching the country offered Q2756523 'Mansa Konko', Q140877583 'Mansakonko Area Council Building', Q141416396 'Liste der Vorsteher des Mansakonko Area Council', Q972281 'Mansa Konko'
+GMB: 8 units without a population, 7 resolved
+  Basse -> Basse Santa Su (Q153498, matched by redirect)
+  Brikama -> Brikama (Q916988, matched by redirect)
+  Janjanbureh -> Janjanbureh (Q1002786, matched by redirect)
+  Janjanbureh -> Janjanbureh: population_total: empty
+  Kanifing -> Kanifing (Q1762211, matched by redirect)
+  Kerewan -> Kerewan (Q1478583, matched by redirect)
+  Kerewan -> Kerewan: population_total: empty
+  Kuntaur -> Kuntaur (Q1188137, matched by redirect)
+  Kuntaur -> Kuntaur: population_total: empty
+  Mansakonko: no article resolved
+  Basse -> Basse Santa Su: 18,414, undated (no year in the value)
+  wrote data/processed/wiki_population_admin1.json (427 kB)
+wrote 456 records to wiki_population_admin1.json
