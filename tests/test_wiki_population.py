@@ -583,3 +583,23 @@ class Declarations(unittest.TestCase):
             self.assertIn("cannot fit", wp.refuted("Q192959", [27.4751, 53.8232, 27.733, 53.9583]))
         finally:
             wp.claim_values = saved
+
+
+class CountedTwice(unittest.TestCase):
+    def test_italy_s_five_as_first_read_are_reported(self):
+        # "Southern Italy" is the Mezzogiorno with the islands, which Insular
+        # Italy had already counted.
+        values = {"Centro": 11699125, "Isole": 6329684, "Nord-Est": 11618783,
+                  "Nord-Ovest": 15955242, "Sud": 19669678}
+        shapes = [{"id": n, "population": {"status": "not_available"}} for n in values]
+        read_out = [{"unit": {"id": n}, "value": v} for n, v in values.items()]
+        self.assertGreater(wp.overcount("ITA", shapes, read_out, 58_934_177), wp.OVERCOUNT)
+
+    def test_southern_italy_is_no_longer_declared_for_sud(self):
+        self.assertNotIn(("ITA", "Sud"), wp.TITLES)
+
+    def test_a_census_figure_already_on_the_map_is_counted_too(self):
+        shapes = [{"id": "a", "population": {"value": 60, "source": "Census"}},
+                  {"id": "b", "population": {"status": "not_available"}}]
+        read_out = [{"unit": {"id": "b"}, "value": 40}]
+        self.assertAlmostEqual(wp.overcount("X", shapes, read_out, 100), 1.0)

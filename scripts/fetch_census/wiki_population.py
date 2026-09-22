@@ -132,6 +132,10 @@ AREA_SLACK = 10.0
 # least the size of the box itself.
 POINT_SLACK = 1.5
 
+# Above this share of the national total, a country's first level is
+# reported as possibly counting someone twice.
+OVERCOUNT = 1.05
+
 
 # ---------------------------------------------------------------------------
 # HTTP
@@ -931,7 +935,12 @@ TITLES: dict[tuple[str, str], str] = {
     ("ITA", "Centro"): "Central Italy",
     ("ITA", "Isole"): "Insular Italy",
     ("ITA", "Nord-Ovest"): "Northwest Italy",
-    ("ITA", "Sud"): "Southern Italy",
+    # Not ("ITA", "Sud"): "Southern Italy". It was declared, and it is the
+    # Mezzogiorno *with* Sicily and Sardinia -- 19.7 million against the
+    # NUTS-1 region's 13.4 -- so Italy's five summed to 65.3 million against
+    # 58.9, over by exactly Insular Italy. No English article is the mainland
+    # south alone, and a sum that counts the islands twice is the wrong
+    # number this project ranks below a gap.
     ("GRC", "Egean"): "Decentralized Administration of the Aegean",
     ("GRC", "Peloponisos-W. Greece & Ionian"):
         "Decentralized Administration of Peloponnese, Western Greece and the Ionian",
@@ -1064,6 +1073,38 @@ def article_for(iso3: str, units: list[dict[str, Any]],
     return found
 
 
+def overcount(iso3: str, shapes: list[dict[str, Any]], read_out: list[dict[str, Any]],
+              national: float | None) -> float | None:
+    """The country's first level, summed with what this run read, over its total.
+
+    Printed and never acted on, because it cannot say which figure is wrong
+    and a sum over a whole country is not a clean test: vintages differ, and
+    Kuwait's governorates add to 110% of an older national figure with no
+    unit mis-read. What it is for is the case no single unit can show. Italy's
+    five macro-regions each read correctly on their own and summed to 111%,
+    because one article's "Southern Italy" included the islands another
+    article had already counted.
+    """
+    if not national:
+        return None
+    mine = {r["unit"]["id"]: r["value"] for r in read_out}
+    total = 0.0
+    for shape in shapes:
+        if shape["id"] in mine:
+            total += mine[shape["id"]]
+            continue
+        pop = shape.get("population")
+        if isinstance(pop, dict) and isinstance(pop.get("value"), (int, float)) \
+                and not ours(pop):
+            total += pop["value"]
+    share = total / national
+    if share > OVERCOUNT:
+        log(f"  {iso3}: its first level now sums to {total:,.0f}, "
+            f"{share:.0%} of the country's {national:,.0f} -- check for a unit "
+            f"counted twice")
+    return share
+
+
 def run(iso3: str, units: list[dict[str, Any]], national: float | None,
         *, probe: bool = False, shapes: list[dict[str, Any]] | None = None,
         country: str = "") -> list[dict[str, Any]]:
@@ -1120,6 +1161,7 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
                          "item": item if pulled else None})
 
     rows: list[dict[str, Any]] = []
+    overcount(iso3, shapes or units, read_out, national)
     division = odd_one_out([r["kind"] for r in read_out])
     for r in read_out:
         unit, landed, value, year = r["unit"], r["title"], r["value"], r["year"]
