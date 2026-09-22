@@ -2665,6 +2665,221 @@
     "country": "GIN"
   },
   {
+    "id": "GMB-WP-banjul",
+    "level": "admin1",
+    "name": "Banjul",
+    "parent": "GMB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 31301,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, Banjul (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Banjul",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GMB"
+  },
+  {
+    "id": "GNQ-WP-bioko-sur",
+    "level": "admin1",
+    "name": "Bioko Sur",
+    "parent": "GNQ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 34674,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Bioko Sur (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bioko_Sur",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GNQ"
+  },
+  {
+    "id": "GNQ-WP-centro-sur-province",
+    "level": "admin1",
+    "name": "Centro Sur Province",
+    "parent": "GNQ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 141986,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Centro Sur (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Centro_Sur",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GNQ"
+  },
+  {
+    "id": "GNQ-WP-kié-ntem-province",
+    "level": "admin1",
+    "name": "Kié-Ntem Province",
+    "parent": "GNQ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 183664,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Kié-Ntem (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ki%C3%A9-Ntem",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GNQ"
+  },
+  {
+    "id": "GNQ-WP-wele-nzas-province",
+    "level": "admin1",
+    "name": "Wele-Nzas Province",
+    "parent": "GNQ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 192017,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Wele-Nzas (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Wele-Nzas",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GNQ"
+  },
+  {
     "id": "HTI-WP-artibonite-department",
     "level": "admin1",
     "name": "Artibonite Department",
@@ -3050,6 +3265,393 @@
       }
     ],
     "country": "HTI"
+  },
+  {
+    "id": "IRN-WP-mazandaran",
+    "level": "admin1",
+    "name": "Mazandaran",
+    "parent": "IRN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3283582,
+      "unit": "people",
+      "year": 2016,
+      "source": "English Wikipedia, Mazandaran province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mazandaran_province",
+        "year": 2016,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "IRN"
+  },
+  {
+    "id": "IRQ-WP-al-qadisiyah",
+    "level": "admin1",
+    "name": "Al-Qadisiyah",
+    "parent": "IRQ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1477310,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Al-Qādisiyyah Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Al-Q%C4%81disiyyah_Governorate",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "IRQ"
+  },
+  {
+    "id": "IRQ-WP-babil",
+    "level": "admin1",
+    "name": "Babil",
+    "parent": "IRQ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2482324,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Babylon Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Babylon_Governorate",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "IRQ"
+  },
+  {
+    "id": "ISL-WP-eastern-region",
+    "level": "admin1",
+    "name": "Eastern Region",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11085,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Eastern Region (Iceland) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Eastern_Region_%28Iceland%29",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ISL"
+  },
+  {
+    "id": "ISL-WP-northeastern-region",
+    "level": "admin1",
+    "name": "Northeastern Region",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 42659,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Northeast (Althing constituency) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Northeast_%28Althing_constituency%29",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ISL"
+  },
+  {
+    "id": "ISL-WP-northwestern-region",
+    "level": "admin1",
+    "name": "Northwestern Region",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 31881,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Northwest (Althing constituency) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Northwest_%28Althing_constituency%29",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ISL"
+  },
+  {
+    "id": "ISL-WP-southern-region",
+    "level": "admin1",
+    "name": "Southern Region",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 34076,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Southern Region (Iceland) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Southern_Region_%28Iceland%29",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ISL"
+  },
+  {
+    "id": "ISL-WP-western-region",
+    "level": "admin1",
+    "name": "Western Region",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17419,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Western Region (Iceland) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Western_Region_%28Iceland%29",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ISL"
+  },
+  {
+    "id": "ISL-WP-westfjords",
+    "level": "admin1",
+    "name": "Westfjords",
+    "parent": "ISL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7341,
+      "unit": "people",
+      "year": 2026,
+      "source": "English Wikipedia, Westfjords (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Westfjords",
+        "year": 2026,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ISL"
   },
   {
     "id": "JAM-WP-clarendon",
@@ -3611,6 +4213,866 @@
     "country": "JAM"
   },
   {
+    "id": "JOR-WP-aqaba",
+    "level": "admin1",
+    "name": "Aqaba",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 200800,
+      "unit": "people",
+      "year": 2026,
+      "source": "English Wikipedia, Aqaba Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Aqaba_Governorate",
+        "year": 2026,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JOR"
+  },
+  {
+    "id": "JOR-WP-irbid",
+    "level": "admin1",
+    "name": "Irbid",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1770158,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Irbid Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Irbid_Governorate",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JOR"
+  },
+  {
+    "id": "JOR-WP-zarqa",
+    "level": "admin1",
+    "name": "Zarqa",
+    "parent": "JOR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1675700,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Zarqa Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Zarqa_Governorate",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JOR"
+  },
+  {
+    "id": "KGZ-WP-batken-region",
+    "level": "admin1",
+    "name": "Batken Region",
+    "parent": "KGZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 570898,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Batken Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Batken_Region",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KGZ"
+  },
+  {
+    "id": "KGZ-WP-chuy-region",
+    "level": "admin1",
+    "name": "Chuy Region",
+    "parent": "KGZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1068702,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Chüy Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ch%C3%BCy_Region",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KGZ"
+  },
+  {
+    "id": "KGZ-WP-issyk-kul-region",
+    "level": "admin1",
+    "name": "Issyk-Kul Region",
+    "parent": "KGZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 538384,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Issyk-Kul Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Issyk-Kul_Region",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KGZ"
+  },
+  {
+    "id": "KGZ-WP-jalal-abad-region",
+    "level": "admin1",
+    "name": "Jalal-Abad Region",
+    "parent": "KGZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1311007,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Jalal-Abad Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jalal-Abad_Region",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KGZ"
+  },
+  {
+    "id": "KGZ-WP-naryn-region",
+    "level": "admin1",
+    "name": "Naryn Region",
+    "parent": "KGZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 308348,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Naryn Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Naryn_Region",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KGZ"
+  },
+  {
+    "id": "KGZ-WP-talas-region",
+    "level": "admin1",
+    "name": "Talas Region",
+    "parent": "KGZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 273509,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Talas Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Talas_Region",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KGZ"
+  },
+  {
+    "id": "KIR-WP-gilbert-islands",
+    "level": "admin1",
+    "name": "Gilbert Islands",
+    "parent": "KIR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 83382,
+      "unit": "people",
+      "year": 2005,
+      "source": "English Wikipedia, Gilbert Islands (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gilbert_Islands",
+        "year": 2005,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KIR"
+  },
+  {
+    "id": "KWT-WP-al-asimah",
+    "level": "admin1",
+    "name": "Al Asimah",
+    "parent": "KWT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 630000,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Capital Governorate (Kuwait) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Capital_Governorate_%28Kuwait%29",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KWT"
+  },
+  {
+    "id": "KWT-WP-farwaniya",
+    "level": "admin1",
+    "name": "Farwaniya",
+    "parent": "KWT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1231225,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Farwaniya Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Farwaniya_Governorate",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KWT"
+  },
+  {
+    "id": "KWT-WP-hawalli",
+    "level": "admin1",
+    "name": "Hawalli",
+    "parent": "KWT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 967823,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Hawalli Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Hawalli_Governorate",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KWT"
+  },
+  {
+    "id": "KWT-WP-jahra",
+    "level": "admin1",
+    "name": "Jahra",
+    "parent": "KWT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 439106,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Jahra Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jahra_Governorate",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KWT"
+  },
+  {
+    "id": "KWT-WP-mubarak-al-kabeer",
+    "level": "admin1",
+    "name": "Mubarak Al-Kabeer",
+    "parent": "KWT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 230727,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Mubarak Al-Kabeer (governorate) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mubarak_Al-Kabeer_%28governorate%29",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KWT"
+  },
+  {
+    "id": "LBN-WP-aakkâr",
+    "level": "admin1",
+    "name": "Aakkâr",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 423596,
+      "unit": "people",
+      "year": 2017,
+      "source": "English Wikipedia, Akkar Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Akkar_Governorate",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBN"
+  },
+  {
+    "id": "LBN-WP-baalbek-hermel",
+    "level": "admin1",
+    "name": "Baalbek-Hermel",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 457932,
+      "unit": "people",
+      "year": 2017,
+      "source": "English Wikipedia, Baalbek-Hermel Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Baalbek-Hermel_Governorate",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBN"
+  },
+  {
+    "id": "LBN-WP-keserwan-jbeil",
+    "level": "admin1",
+    "name": "Keserwan-Jbeil",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 282222,
+      "unit": "people",
+      "year": 2017,
+      "source": "English Wikipedia, Keserwan-Jbeil Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Keserwan-Jbeil_Governorate",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBN"
+  },
+  {
+    "id": "LBN-WP-mont-liban",
+    "level": "admin1",
+    "name": "Mont-Liban",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1520016,
+      "unit": "people",
+      "year": 2017,
+      "source": "English Wikipedia, Mount Lebanon Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mount_Lebanon_Governorate",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBN"
+  },
+  {
+    "id": "LBN-WP-nabatîyé",
+    "level": "admin1",
+    "name": "Nabatîyé",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 383839,
+      "unit": "people",
+      "year": 2017,
+      "source": "English Wikipedia, Nabatieh Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nabatieh_Governorate",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBN"
+  },
+  {
     "id": "LBY-WP-al-butnan",
     "level": "admin1",
     "name": "Al Butnan",
@@ -4125,6 +5587,92 @@
       }
     ],
     "country": "LBY"
+  },
+  {
+    "id": "MAR-WP-marrakech-safi",
+    "level": "admin1",
+    "name": "Marrakech-Safi",
+    "parent": "MAR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4878500,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Marrakesh-Safi (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Marrakesh-Safi",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MAR"
+  },
+  {
+    "id": "MDA-WP-transnistria",
+    "level": "admin1",
+    "name": "Transnistria",
+    "parent": "MDA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 475373,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Administrative-Territorial Units of the Left Bank of the Dniester (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Administrative-Territorial_Units_of_the_Left_Bank_of_the_Dniester",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA"
   },
   {
     "id": "MDG-WP-alaotra-mangoro",
@@ -5028,6 +6576,1074 @@
       }
     ],
     "country": "MDG"
+  },
+  {
+    "id": "MDV-WP-baa",
+    "level": "admin1",
+    "name": "Baa",
+    "parent": "MDV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13000,
+      "unit": "people",
+      "source": "English Wikipedia, Baa Atoll (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Baa_Atoll",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDV"
+  },
+  {
+    "id": "MDV-WP-dhaalu",
+    "level": "admin1",
+    "name": "Dhaalu",
+    "parent": "MDV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5305,
+      "unit": "people",
+      "source": "English Wikipedia, Dhaalu Atoll (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dhaalu_Atoll",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDV"
+  },
+  {
+    "id": "MDV-WP-faafu",
+    "level": "admin1",
+    "name": "Faafu",
+    "parent": "MDV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4869,
+      "unit": "people",
+      "source": "English Wikipedia, Faafu Atoll (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Faafu_Atoll",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDV"
+  },
+  {
+    "id": "MDV-WP-haa-alif",
+    "level": "admin1",
+    "name": "Haa Alif",
+    "parent": "MDV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 24598,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Haa Alif Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Haa_Alif_Atoll",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDV"
+  },
+  {
+    "id": "MDV-WP-haa-dhaalu",
+    "level": "admin1",
+    "name": "Haa Dhaalu",
+    "parent": "MDV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 22845,
+      "unit": "people",
+      "source": "English Wikipedia, Haa Dhaalu Atoll (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Haa_Dhaalu_Atoll",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDV"
+  },
+  {
+    "id": "MDV-WP-lhaviyani",
+    "level": "admin1",
+    "name": "Lhaviyani",
+    "parent": "MDV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11905,
+      "unit": "people",
+      "source": "English Wikipedia, Lhaviyani Atoll (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Lhaviyani_Atoll",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDV"
+  },
+  {
+    "id": "MDV-WP-thaa",
+    "level": "admin1",
+    "name": "Thaa",
+    "parent": "MDV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 8901,
+      "unit": "people",
+      "source": "English Wikipedia, Thaa Atoll (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Thaa_Atoll",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDV"
+  },
+  {
+    "id": "MDV-WP-vaavu",
+    "level": "admin1",
+    "name": "Vaavu",
+    "parent": "MDV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1601,
+      "unit": "people",
+      "source": "English Wikipedia, Vaavu Atoll (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Vaavu_Atoll",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDV"
+  },
+  {
+    "id": "MHL-WP-maloelap",
+    "level": "admin1",
+    "name": "Maloelap",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 395,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Maloelap Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Maloelap_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL"
+  },
+  {
+    "id": "MHL-WP-mili",
+    "level": "admin1",
+    "name": "Mili",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 497,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Mili Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mili_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL"
+  },
+  {
+    "id": "MHL-WP-namdrik",
+    "level": "admin1",
+    "name": "Namdrik",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 299,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Namdrik Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Namdrik_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL"
+  },
+  {
+    "id": "MHL-WP-namu",
+    "level": "admin1",
+    "name": "Namu",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 525,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Namu Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Namu_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL"
+  },
+  {
+    "id": "MHL-WP-ujae",
+    "level": "admin1",
+    "name": "Ujae",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 310,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Ujae Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ujae_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL"
+  },
+  {
+    "id": "MHL-WP-utirik",
+    "level": "admin1",
+    "name": "Utirik",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 264,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Utirik Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Utirik_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL"
+  },
+  {
+    "id": "MHL-WP-wotho",
+    "level": "admin1",
+    "name": "Wotho",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 88,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Wotho Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Wotho_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL"
+  },
+  {
+    "id": "MHL-WP-wotje",
+    "level": "admin1",
+    "name": "Wotje",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 816,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Wotje Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Wotje_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL"
+  },
+  {
+    "id": "MKD-WP-northeast",
+    "level": "admin1",
+    "name": "Northeast",
+    "parent": "MKD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 152982,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Northeastern Statistical Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Northeastern_Statistical_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MKD"
+  },
+  {
+    "id": "MKD-WP-pelagonia",
+    "level": "admin1",
+    "name": "Pelagonia",
+    "parent": "MKD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 210431,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Pelagonia Statistical Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Pelagonia_Statistical_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MKD"
+  },
+  {
+    "id": "MKD-WP-polog",
+    "level": "admin1",
+    "name": "Polog",
+    "parent": "MKD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 251552,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Polog Statistical Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Polog_Statistical_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MKD"
+  },
+  {
+    "id": "MKD-WP-southeast",
+    "level": "admin1",
+    "name": "Southeast",
+    "parent": "MKD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 148387,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Southeastern Statistical Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Southeastern_Statistical_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MKD"
+  },
+  {
+    "id": "MKD-WP-southwest",
+    "level": "admin1",
+    "name": "Southwest",
+    "parent": "MKD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 177398,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Southwestern Statistical Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Southwestern_Statistical_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MKD"
+  },
+  {
+    "id": "MKD-WP-vardar",
+    "level": "admin1",
+    "name": "Vardar",
+    "parent": "MKD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 138722,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Vardar Statistical Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Vardar_Statistical_Region",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MKD"
+  },
+  {
+    "id": "MLI-WP-kayes",
+    "level": "admin1",
+    "name": "Kayes",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1815258,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Kayes Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kayes_Region",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLI"
+  },
+  {
+    "id": "MLI-WP-koulikouro",
+    "level": "admin1",
+    "name": "Koulikouro",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2224418,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Koulikoro Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Koulikoro_Region",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLI"
+  },
+  {
+    "id": "MLI-WP-tombouctou",
+    "level": "admin1",
+    "name": "Tombouctou",
+    "parent": "MLI",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1047917,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Tombouctou Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tombouctou_Region",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLI"
   },
   {
     "id": "MLT-WP-attard",
@@ -7737,6 +10353,49 @@
       }
     ],
     "country": "MLT"
+  },
+  {
+    "id": "MRT-WP-tagant",
+    "level": "admin1",
+    "name": "Tagant",
+    "parent": "MRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 114760,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Tagant region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tagant_region",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MRT"
   },
   {
     "id": "SAU-WP-al-bahah-region",
