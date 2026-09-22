@@ -489,12 +489,37 @@ class WhatThePageShowsAndWhereThePlaceIs(unittest.TestCase):
         wp.claim_values = lambda qid, prop: claims.get(prop, [])
         try:
             city_box = [27.4751, 53.8232, 27.733, 53.9583]
-            self.assertIn("outside the shape", wp.refuted("Q192959", city_box))
-            claims["P625"] = []
             self.assertIn("cannot fit", wp.refuted("Q192959", city_box))
             region_box = [26.0139, 52.3913, 29.4894, 55.009]
             claims["P625"] = [{"mainsnak": {"datavalue": {"value": {"latitude": 53.667, "longitude": 27.75}}}}]
             self.assertEqual(wp.refuted("Q192959", region_box), "")
+        finally:
+            wp.claim_values = saved
+
+    def test_a_place_far_from_its_shape_is_somewhere_else(self):
+        # Argentina's "La Roja" (La Rioja) offered Rojas Partido, in Buenos
+        # Aires province.
+        saved = wp.claim_values
+        wp.claim_values = lambda qid, prop: [
+            {"mainsnak": {"datavalue": {"value": {"latitude": -34.20, "longitude": -60.73}}}}
+        ] if prop == "P625" else []
+        try:
+            la_rioja = [-69.6341, -31.9212, -65.3285, -27.7359]
+            self.assertIn("outside the shape", wp.refuted("Q2621930", la_rioja))
+        finally:
+            wp.claim_values = saved
+
+    def test_coordinates_a_little_off_do_not_refute_a_right_answer(self):
+        # Both were refused by the first version of this check, and both
+        # figures were right.
+        saved = wp.claim_values
+        try:
+            for point, box in (((25.50, -76.63), [-76.811, 25.5375, -76.7438, 25.5512]),
+                               ((14.38, -80.28), [-81.7356, 12.4831, -81.3496, 13.3859])):
+                wp.claim_values = lambda qid, prop, pt=point: [
+                    {"mainsnak": {"datavalue": {"value": {"latitude": pt[0], "longitude": pt[1]}}}}
+                ] if prop == "P625" else []
+                self.assertEqual(wp.refuted("Q1", box), "", point)
         finally:
             wp.claim_values = saved
 

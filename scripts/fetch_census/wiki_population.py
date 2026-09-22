@@ -124,6 +124,10 @@ SEARCH_HITS = 15
 # be before it cannot be that shape: boundaries differ between vintages
 # and sources, and a box is not a polygon, so the margin is generous.
 AREA_SLACK = 1.5
+# How far outside its shape's box, in degrees, a place's own coordinates
+# must lie before they prove it is somewhere else -- at least this, and at
+# least the size of the box itself.
+POINT_SLACK = 1.5
 
 
 # ---------------------------------------------------------------------------
@@ -808,16 +812,24 @@ def refuted(qid: str, bbox: list[float] | None) -> str:
 
     Refutation only, never confirmation: a point inside a bounding box does
     not prove a place is the shape, and a place smaller than the box proves
-    nothing either. What they can prove is the negative. A place whose own
-    coordinates lie well outside the box is somewhere else, and a place whose
-    stated area is larger than the box could not fit inside it -- Minsk
-    Region, 39,900 km^2, offered for a shape whose box is 253 km^2.
+    nothing either. What they can prove is the negative. A place whose stated
+    area is larger than the box could not fit inside it -- Minsk Region,
+    39,900 km^2, offered for a shape whose box is 253 km^2 -- and a place
+    whose own coordinates lie far from the box is somewhere else: Argentina's
+    "La Roja" (La Rioja, misspelt) reached Rojas Partido in Buenos Aires
+    province, 4.6 degrees east of the province's box.
+
+    "Far" is generous, because coordinates are not always where the place is.
+    With a margin of a tenth of a degree the first run of this check refused
+    Harbour Island, whose polygon in the boundary file sits 11 km from the
+    island, and San Andres, whose Wikidata point is out at sea a degree north
+    of the islands. Both figures were right. Minsk never needed the margin to
+    be tight: its area alone refutes it.
     """
     if not bbox or len(bbox) != 4:
         return ""
     w, s_, e, n = bbox
-    pad_x = max(0.1, (e - w) * 0.1)
-    pad_y = max(0.1, (n - s_) * 0.1)
+    pad_x = pad_y = max(POINT_SLACK, e - w, n - s_)
     points = []
     for claim in claim_values(qid, "P625"):
         v = ((claim.get("mainsnak") or {}).get("datavalue") or {}).get("value") or {}
