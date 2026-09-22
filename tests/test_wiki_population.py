@@ -319,3 +319,144 @@ class Resolving(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Europe(unittest.TestCase):
+    """Every European gap in the first sweep failed at finding the article.
+
+    Belgium, France, Italy and Portugal because their shapes carry names in
+    their own languages and the reader asked Wikidata for English labels
+    only; Lithuania, Italy and Ukraine because the P131 search stopped at four
+    thousand items before reaching them; Bulgaria and Belarus because a city
+    and the unit around it fold to one name.
+    """
+
+    def test_a_name_that_is_all_generic_words_is_kept_whole(self):
+        self.assertEqual(wp.fold("Capital Region"), "capitalregion")
+        self.assertEqual(wp.fold("Capital Region"),
+                         wp.fold(wp.disambiguated("Capital Region (Iceland)")))
+
+    def test_the_generic_words_of_the_map_s_own_languages(self):
+        self.assertEqual(wp.fold("Vlaams Gewest"), wp.fold("Vlaams Gewest (region)"))
+        self.assertEqual(wp.fold("Wallonne Gewest"), wp.fold("Région wallonne"))
+        self.assertEqual(wp.fold("LISBOA"), wp.fold("Distrito de Lisboa"))
+        self.assertEqual(wp.fold("Epirus-Western Macedonia"),
+                         wp.fold("Decentralized Administration of Epirus and Western Macedonia"))
+
+    def test_the_item_another_shape_holds_is_not_this_shape_s(self):
+        # Belarus draws Minsk Region and Minsk the city as two shapes.
+        got = wp.resolve(units("Minsk City"),
+                         pool(("Minsk Region", "Minsk Region"), ("Minsk", "Minsk")),
+                         exclude={"Q1"})
+        self.assertEqual(got["u1"][:2], ("Q2", "Minsk"))
+
+    def test_the_name_written_exactly_as_the_map_writes_it_settles_a_tie(self):
+        # The town, the district municipality and the county all fold to
+        # "alytus"; only one of them is called "Alytus County".
+        got = wp.resolve(units("Alytus County"),
+                         pool(("Alytus", "Alytus"),
+                              ("Alytus District Municipality", "Alytus District Municipality"),
+                              ("Alytus County", "Alytus County")))
+        self.assertEqual(got["u1"][:2], ("Q3", "Alytus County"))
+
+    def test_a_tie_nothing_written_settles_is_still_refused(self):
+        got = wp.resolve(units("Sofia"),
+                         pool(("Sofia", "Sofia"), ("Sofia Province", "Sofia Province")))
+        self.assertEqual(got, {})
+
+    def test_a_census_year_in_the_parameter_s_name(self):
+        # Infobox Russian federal subject, as the Sakha Republic uses it.
+        text = ("{{Infobox Russian federal subject\n| name = Sakha\n"
+                "| pop_2021census = 995,686\n| pop_2021census_rank = 55th\n"
+                "| pop_2010census = 958,528\n| pop_density = 0.3\n}}")
+        self.assertEqual(wp.read(text)[:2], (995686, 2021))
+
+    def test_an_empty_newer_census_falls_back_to_the_older_one(self):
+        text = "{{Infobox X\n| pop_2021census = \n| pop_2010census = 958,528\n}}"
+        self.assertEqual(wp.read(text)[:2], (958528, 2010))
+
+
+class TheCountryItsOwnDivisionsFirst(unittest.TestCase):
+    """Sofia, end to end, with the network replaced by what Wikidata says."""
+
+    def setUp(self):
+        self.saved = {name: getattr(wp, name) for name in (
+            "country_item", "claims_of", "entities", "children", "contains",
+            "search", "by_title", "languages")}
+        items = {
+            "Q472": {"names": ["Sofia"], "title": "Sofia"},
+            "Q1": {"names": ["Sofia Province"], "title": "Sofia Province"},
+            "Q2": {"names": ["Sofia City Province"], "title": "Sofia City Province"},
+        }
+        wp.country_item = lambda iso3: "Q219"
+        wp.claims_of = lambda qid: {}
+        wp.languages = lambda claims: ["en"]
+        wp.statements = self.saved.get("statements", wp.statements)
+        wp.entities = lambda qids, langs=("en",): {q: items[q] for q in qids if q in items}
+        wp.children = lambda qid: ["Q472"]
+        wp.contains = lambda qid: []
+        wp.search = lambda *a, **k: {}
+        wp.by_title = lambda *a, **k: None
+        self.divisions = ["Q1", "Q2"]
+        original = wp.statements
+        wp.statements = lambda claims, prop: self.divisions if prop == "P150" else []
+        self.saved["statements"] = original
+
+    def tearDown(self):
+        for name, value in self.saved.items():
+            setattr(wp, name, value)
+
+    def test_the_province_is_found_before_the_city_is_ever_offered(self):
+        shapes = [{"id": "a", "name": "Sofia"},
+                  {"id": "b", "name": "Sofia City", "wikidata": "Q2"}]
+        got = wp.article_for("BGR", shapes[:1], shapes, "Bulgaria")
+        self.assertEqual(got["a"][:2], ("Q1", "Sofia Province"))
+
+
+class WhatThisReaderAnswersFor(unittest.TestCase):
+    def test_its_own_earlier_answers_and_every_gap_and_nothing_else(self):
+        shapes = [
+            {"id": "gap", "population": {"status": "not_available"}},
+            {"id": "mine", "population": {"value": 12998, "year": 2024,
+                                          "source": "English Wikipedia, Attard (infobox)"}},
+            {"id": "census", "population": {"value": 5, "year": 2021,
+                                            "source": "National Statistics Office"}},
+            {"id": "wikidata", "population": {"value": 7, "source": "Wikidata (CC0)"}},
+        ]
+        self.assertEqual([u["id"] for u in wp.to_read(shapes)], ["gap", "mine"])
+
+
+class FollowingARedirect(unittest.TestCase):
+    """Burkina Faso's old region names survive only as Wikipedia redirects."""
+
+    def setUp(self):
+        self.saved = (wp.api, wp.in_country)
+
+        def api(endpoint, **params):
+            titles = params["titles"].split("|")
+            return {"query": {
+                "redirects": [{"from": "Boucle du Mouhoun Region", "to": "Bankui Region"}],
+                "pages": [
+                    {"title": "Bankui Region", "pageprops": {"wikibase_item": "Q850000"}},
+                    {"title": "Boucle du Mouhoun", "pageprops": {"disambiguation": ""}},
+                ] + [{"title": t, "missing": True} for t in titles
+                     if t not in ("Boucle du Mouhoun Region", "Boucle du Mouhoun")]}}
+        wp.api = api
+        wp.in_country = lambda item, country: item == "Q850000"
+
+    def tearDown(self):
+        wp.api, wp.in_country = self.saved
+
+    def test_the_old_name_reaches_the_renamed_region(self):
+        got = wp.by_title({"name": "Boucle du Mouhoun"}, "Burkina Faso", "Q965", set())
+        self.assertEqual(got, ("Q850000", "Bankui Region"))
+
+    def test_an_item_another_shape_holds_is_passed_over(self):
+        got = wp.by_title({"name": "Boucle du Mouhoun"}, "Burkina Faso", "Q965",
+                          {"Q850000"})
+        self.assertIsNone(got)
+
+    def test_an_item_outside_the_country_is_passed_over(self):
+        wp.in_country = lambda item, country: False
+        got = wp.by_title({"name": "Boucle du Mouhoun"}, "Burkina Faso", "Q965", set())
+        self.assertIsNone(got)

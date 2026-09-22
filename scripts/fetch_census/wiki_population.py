@@ -112,6 +112,9 @@ CEILING = 4000
 # Saudi Arabia; a country with more than this has not needed it.
 GRANDCHILDREN = 60
 
+# How many hits of the country-restricted search to consider for one name.
+SEARCH_HITS = 15
+
 
 # ---------------------------------------------------------------------------
 # HTTP
@@ -153,18 +156,44 @@ GENERIC = re.compile(
     r"\b(province|provincia|state|region|regiao|regi[oó]n|district|districto|"
     r"county|prefecture|governorate|oblast|department|departement|departamento|"
     r"municipality|municipio|parish|paroisse|atoll|island|islands|"
-    r"autonomous|administrative|capital|metropolitan|"
+    r"autonomous|administrative|capital|metropolitan|city|"
+    # The same words in the languages Europe's first level is written in on
+    # this map. Belgium's shapes are "Vlaams Gewest" and "Wallonne Gewest",
+    # Portugal's are its distritos, Italy's regione, Latvia's novads and its
+    # state cities' valstspilseta, Lithuania's apskritis; the decentralised
+    # administrations Greece's shapes are drawn from carry both words in
+    # English.
+    r"gewest|distrito|regione|provincie|apskritis|novads|valstspilseta|"
+    r"pilseta|statistical|decentralized|decentralised|administration|"
     r"of|the|and|de|du|des|da|do|del|la|le|les|el|al)\b", re.I)
 
 
-def fold(text: str | None) -> str:
-    """A name reduced to what a boundary file and an encyclopaedia agree on."""
+def plain(text: str | None) -> str:
+    """A name lowercased and stripped of accents, and nothing else."""
     if not text:
         return ""
     text = unicodedata.normalize("NFKD", text.lower()).translate(FOLD)
     text = "".join(c for c in text if not unicodedata.combining(c))
-    text = GENERIC.sub(" ", text)
-    return "".join(c for c in text if c.isalnum())
+    return " ".join("".join(c if c.isalnum() else " " for c in text).split())
+
+
+def fold(text: str | None) -> str:
+    """A name reduced to what a boundary file and an encyclopaedia agree on.
+
+    Where dropping the generic words leaves nothing, the name *is* its generic
+    words, and it is kept whole: Iceland's "Capital Region" folded to the
+    empty string and was never compared with anything.
+    """
+    bare = plain(text)
+    if not bare:
+        return ""
+    stripped = "".join(c for c in GENERIC.sub(" ", bare) if c.isalnum())
+    return stripped or "".join(c for c in bare if c.isalnum())
+
+
+def says_its_kind(name: str) -> bool:
+    """Whether a name carries a word for what kind of unit it is."""
+    return fold(name) != "".join(c for c in plain(name) if c.isalnum())
 
 
 def disambiguated(title: str) -> str:
@@ -222,6 +251,40 @@ def children(country_qid: str) -> list[str]:
     return out
 
 
+def claims_of(qid: str) -> dict[str, list[dict[str, Any]]]:
+    payload = api(DATA, action="wbgetentities", ids=qid, props="claims")
+    item = ((payload or {}).get("entities") or {}).get(qid) or {}
+    return item.get("claims") or {}
+
+
+def statements(claims: dict[str, list[dict[str, Any]]], prop: str) -> list[str]:
+    out = []
+    for claim in claims.get(prop, []):
+        value = (((claim.get("mainsnak") or {}).get("datavalue") or {}).get("value") or {})
+        if isinstance(value, dict) and value.get("id"):
+            out.append(value["id"])
+        elif isinstance(value, str):
+            out.append(value)
+    return out
+
+
+# Always asked for, whatever the country says it speaks: English because the
+# article is English, "mul" because Wikidata now keeps a name that is the same
+# in every language there once rather than per language, and the languages
+# the boundary files most often write a European or African name in. The
+# first run asked for English alone, and every one of Belgium's, France's,
+# Italy's and Portugal's gaps was a unit whose name on the map is not English.
+LANGUAGES = ("en", "mul", "fr", "de", "es", "it", "pt", "nl", "ru")
+
+
+def languages(claims: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """The Wikimedia codes of the country's official languages (P37 -> P424)."""
+    codes: list[str] = []
+    for lang in statements(claims, "P37")[:6]:
+        codes += statements(claims_of(lang), "P424")
+    return list(dict.fromkeys([*LANGUAGES, *codes]))
+
+
 def contains(qid: str) -> list[str]:
     """What an item says it is divided into: its P150 statements.
 
@@ -232,32 +295,29 @@ def contains(qid: str) -> list[str]:
     them, and reaches a first-level unit whose own article is the only place
     its population is written.
     """
-    payload = api(DATA, action="wbgetentities", ids=qid, props="claims")
-    item = ((payload or {}).get("entities") or {}).get(qid) or {}
-    out = []
-    for claim in (item.get("claims") or {}).get("P150", []):
-        value = (((claim.get("mainsnak") or {}).get("datavalue") or {}).get("value") or {})
-        if isinstance(value, dict) and value.get("id"):
-            out.append(value["id"])
-    return out
+    return statements(claims_of(qid), "P150")
 
 
-def entities(qids: Iterable[str]) -> dict[str, dict[str, Any]]:
-    """Labels, aliases and the English article title, for a list of items."""
+def entities(qids: Iterable[str], langs: Iterable[str] = ("en", "mul")
+             ) -> dict[str, dict[str, Any]]:
+    """Labels and aliases in these languages, and the English article title."""
     out: dict[str, dict[str, Any]] = {}
     qids = list(dict.fromkeys(qids))
+    langs = list(dict.fromkeys(langs))
     for i in range(0, len(qids), BATCH):
         chunk = qids[i:i + BATCH]
         payload = api(DATA, action="wbgetentities", ids="|".join(chunk),
-                      props="labels|aliases|sitelinks", languages="en",
+                      props="labels|aliases|sitelinks", languages="|".join(langs),
                       sitefilter="enwiki")
         for qid, item in (payload.get("entities") or {}).items():
             labels = item.get("labels") or {}
             aliases = item.get("aliases") or {}
-            names = [(labels.get("en") or {}).get("value")]
-            names += [a.get("value") for a in aliases.get("en") or []]
+            names = [(labels.get(lang) or {}).get("value") for lang in langs]
+            for lang in langs:
+                names += [a.get("value") for a in aliases.get(lang) or []]
             title = ((item.get("sitelinks") or {}).get("enwiki") or {}).get("title")
-            out[qid] = {"names": [n for n in names if n], "title": title}
+            out[qid] = {"names": list(dict.fromkeys(n for n in names if n)),
+                        "title": title}
     return out
 
 
@@ -276,7 +336,9 @@ def truncates(units: list[dict[str, Any]]) -> bool:
 
 
 def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]],
-            preset: dict[str, tuple[str, str, str]] | None = None
+            preset: dict[str, tuple[str, str, str]] | None = None,
+            exclude: Iterable[str] = (),
+            cutting: bool | None = None
             ) -> dict[str, tuple[str, str, str]]:
     """unit id -> (Wikidata item, English title, how it was matched).
 
@@ -292,6 +354,20 @@ def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]],
     difference is a spelling rather than a different place. Every match above
     the exact one is printed, because a match this module guessed is a match
     somebody should be able to check.
+
+    ``exclude`` is the items the build has already joined to the country's
+    *other* shapes. Belarus draws Minsk the region and Minsk the city as two
+    shapes, and once the generic words are gone both are "minsk"; the region
+    is already the region's, so the city is the only one left for the city.
+
+    Where two items still fold to one name, the one whose own name is written
+    exactly as the map writes it wins -- but only where the map's name says
+    what kind of unit it is. Lithuania's "Alytus County" folds to "alytus"
+    with the town and the district municipality, and only the county is called
+    "Alytus County": the word "County" is the evidence. Bulgaria's map calls
+    Sofia Province plain "Sofia", and the one item spelled exactly "Sofia" is
+    the capital, so a bare name settles nothing and the tie is refused. The
+    test suite caught this tiebreak choosing the city before it ever ran.
     """
     by_name: dict[str, list[str]] = {}
     for qid, item in pool.items():
@@ -305,16 +381,27 @@ def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]],
                 by_name.setdefault(form, []).append(qid)
 
     out: dict[str, tuple[str, str, str]] = dict(preset or {})
-    taken: set[str] = {qid for qid, _, _ in out.values()}
+    taken: set[str] = {qid for qid, _, _ in out.values()} | set(exclude)
 
-    def unique(hits: list[str]) -> str | None:
+    def written(qid: str) -> set[str]:
+        item = pool[qid]
+        return {plain(n) for n in item["names"]} | {
+            plain(disambiguated(item["title"]))}
+
+    def unique(hits: list[str], raw: str) -> str | None:
         hits = [q for q in dict.fromkeys(hits) if q not in taken]
-        return hits[0] if len(hits) == 1 else None
+        if len(hits) == 1:
+            return hits[0]
+        if not says_its_kind(raw):
+            return None
+        spelled = [q for q in hits if plain(raw) in written(q)]
+        return spelled[0] if len(spelled) == 1 else None
 
-    def exact(key: str) -> str | None:
-        return unique(by_name.get(key, []))
+    def exact(key: str, raw: str) -> str | None:
+        return unique(by_name.get(key, []), raw)
 
-    cutting = truncates(units)
+    if cutting is None:
+        cutting = truncates(units)
 
     def prefix(key: str, raw: str) -> str | None:
         if len(key) < PREFIX_MIN:
@@ -323,7 +410,7 @@ def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]],
         return unique([q for form, qids in by_name.items()
                        if form.startswith(key)
                        and (cut or len(form) - len(key) <= PREFIX_TAIL)
-                       for q in qids])
+                       for q in qids], raw)
 
     def near(key: str, raw: str) -> str | None:
         if len(key) < NEAR_MIN:
@@ -331,10 +418,9 @@ def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]],
         return unique([q for form, qids in by_name.items()
                        if len(form) >= NEAR_MIN
                        and SequenceMatcher(None, key, form).ratio() >= NEAR
-                       for q in qids])
+                       for q in qids], raw)
 
-    for how, find in (("name", lambda key, raw: exact(key)),
-                      ("prefix", prefix), ("near", near)):
+    for how, find in (("name", exact), ("prefix", prefix), ("near", near)):
         for unit in units:
             if unit["id"] in out:
                 continue
@@ -386,6 +472,7 @@ RAN_ON = re.compile(r"\s+[A-Za-z_][\w\s-]*=.*$")
 
 NUMBER = re.compile(r"^\d{1,3}(?:[,    ]\d{3})+$|^\d+$")
 YEAR = re.compile(r"\b(1[89]\d\d|20\d\d)\b")
+DATED_KEY = re.compile(r"^(?:pop|population)_?(?:census_?)?((?:19|20)\d\d)(?:_?census)?$")
 
 # In the order a figure should be preferred. A census beats an estimate, and a
 # total beats either, because a total is what the article settled on.
@@ -496,6 +583,20 @@ def read(wikitext: str) -> tuple[int | None, int | None, str]:
         if year is None and not why:
             why = "the infobox names no year for the figure"
         return value, year, why if year is None else ""
+    # Templates that put the year in the parameter's name. Infobox Russian
+    # federal subject writes "pop_2021census = 995,686", which is how the
+    # Sakha Republic's article came back as having no population at all. The
+    # newest census that carries a figure is read, dated by its own key.
+    dated = sorted(((int(m.group(1)), key) for key in fields
+                    for m in [DATED_KEY.match(key)] if m), reverse=True)
+    last = ""
+    for year, key in dated:
+        value, why = number(fields[key])
+        if value is not None:
+            return value, year, ""
+        last = f"{key}: {why}"
+    if last:
+        return None, None, last
     return None, None, "no population parameter in the infobox"
 
 
@@ -534,32 +635,53 @@ def odd_one_out(kinds: list[str]) -> str | None:
 # What the map is missing
 # ---------------------------------------------------------------------------
 
-def units_without_population() -> dict[str, list[dict[str, Any]]]:
-    """The first-level shapes whose population is a gap, by country.
-
-    Read from the built site files rather than from the boundary files,
-    because what this reader fills is defined by what the last build left
-    empty. It can only under-report: a unit that has gained a population
-    since is skipped, which is the safe direction.
-    """
+def country_shapes() -> dict[str, list[dict[str, Any]]]:
+    """Every first-level shape the last build wrote, by country."""
     out: dict[str, list[dict[str, Any]]] = {}
     for path in sorted((SITE / "admin1").glob("*.json")):
-        iso3 = path.stem
-        rows = read_json(path, [])
-        missing = [u for u in rows if isinstance(u, dict)
-                   and isinstance(u.get("population"), dict)
-                   and "status" in u["population"]]
-        if missing:
-            out[iso3] = missing
+        rows = [u for u in read_json(path, []) if isinstance(u, dict)]
+        if rows:
+            out[path.stem] = rows
     return out
 
 
-def country_populations() -> dict[str, float]:
-    out: dict[str, float] = {}
+def ours(value: Any) -> bool:
+    """Whether a population on the map was written by this reader."""
+    return isinstance(value, dict) and \
+        str(value.get("source") or "").startswith("English Wikipedia,")
+
+
+def to_read(shapes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """The shapes this reader answers for: every empty one, and every one it filled.
+
+    Its own earlier answers are read again on every run rather than trusted,
+    for two reasons. A run for a country replaces that country's rows in the
+    output, and the first version of this reader chose the units to re-read
+    from what the last build left empty -- which, once a build had joined its
+    figures in, was only the units it had failed on. Re-running Malta after
+    that build would have written five rows and deleted the 63 it had read
+    before. And a guard added since an earlier run should apply to what that
+    run wrote, not only to what comes after it.
+
+    A population some other source wrote is never in this list, so no census
+    figure is ever in reach of this reader.
+    """
+    return [u for u in shapes
+            if (isinstance(u.get("population"), dict) and "status" in u["population"])
+            or ours(u.get("population"))]
+
+
+def countries() -> dict[str, dict[str, Any]]:
+    """Each country's own record: its English name and its population."""
+    out: dict[str, dict[str, Any]] = {}
     for row in read_json(SITE / "admin0.json", []):
-        pop = (row or {}).get("population")
-        if isinstance(pop, dict) and isinstance(pop.get("value"), (int, float)):
-            out[row["id"]] = float(pop["value"])
+        if not isinstance(row, dict) or not row.get("id"):
+            continue
+        pop = row.get("population")
+        out[row["id"]] = {
+            "name": row.get("name") or "",
+            "population": float(pop["value"]) if isinstance(pop, dict)
+            and isinstance(pop.get("value"), (int, float)) else None}
     return out
 
 
@@ -568,62 +690,170 @@ UNDATED = ("English Wikipedia, {title} (infobox); the article gives no year "
            "for the figure")
 
 
-def article_for(iso3: str, units: list[dict[str, Any]]
-                ) -> dict[str, tuple[str, str, str]]:
+def search(name: str, country_qid: str, langs: list[str]) -> dict[str, dict[str, Any]]:
+    """Items in the country whose names read like this one, by full-text search.
+
+    The last resort before a title is guessed, and still an index lookup
+    rather than a guess: Wikidata's own search, over every label and alias in
+    every language, restricted to items whose country (P17) is this one. It is
+    what reaches a unit the country does not list among its divisions and the
+    P131 search cut off before it got to -- Italy files more than four
+    thousand things directly under Italy, and its five macro-regions were not
+    among the first four thousand.
+    """
+    words = " ".join("".join(c if c.isalnum() else " " for c in name).split())
+    if not words:
+        return {}
+    hits = ((api(DATA, action="query", list="search",
+                 srsearch=f"{words} haswbstatement:P17={country_qid}",
+                 srlimit=SEARCH_HITS, srnamespace=0) or {}).get("query") or {}
+            ).get("search") or []
+    qids = [h["title"] for h in hits if re.fullmatch(r"Q\d+", h.get("title") or "")]
+    return entities(qids, langs) if qids else {}
+
+
+def in_country(qid: str, country_qid: str) -> bool:
+    claims = claims_of(qid)
+    return country_qid in statements(claims, "P17") or \
+        country_qid in statements(claims, "P131")
+
+
+def by_title(unit: dict[str, Any], country: str, country_qid: str,
+             taken: set[str]) -> tuple[str, str] | None:
+    """The article Wikipedia itself sends this name to, if it is in the country.
+
+    Burkina Faso renamed its thirteen regions in 2025, and the boundary file
+    still carries the old names. Wikidata moved its labels with the rename and
+    kept some of the old ones as aliases, which reached six of the thirteen;
+    the other seven old names survive only as Wikipedia redirects --
+    "Boucle du Mouhoun Region" is a redirect to Bankui Region. Following a
+    redirect is following the encyclopaedia's own statement that the two are
+    one place, so it is taken, but only after the page it lands on is proved
+    to be an item located in this country, not a disambiguation page, and not
+    an item another shape already holds.
+    """
+    name = unit["name"].strip()
+    titles = [f"{name} Region ({country})", f"{name} Region, {country}",
+              f"{name} ({country})", f"{name}, {country}",
+              f"{name} Region", name]
+    titles = list(dict.fromkeys(titles))
+    q = (api(WIKI, action="query", prop="pageprops",
+             ppprop="wikibase_item|disambiguation", titles="|".join(titles),
+             redirects="1") or {}).get("query") or {}
+    normal = {n["from"]: n["to"] for n in q.get("normalized") or []}
+    moved = {r["from"]: r["to"] for r in q.get("redirects") or []}
+    pages = {pg.get("title"): pg for pg in q.get("pages") or []}
+    for title in titles:
+        landed = moved.get(normal.get(title, title), normal.get(title, title))
+        page = pages.get(landed) or {}
+        props = page.get("pageprops") or {}
+        if page.get("missing") or "disambiguation" in props:
+            continue
+        item = props.get("wikibase_item")
+        if not item or item in taken or item == country_qid:
+            continue
+        if in_country(item, country_qid):
+            return item, landed
+    return None
+
+
+def article_for(iso3: str, units: list[dict[str, Any]],
+                shapes: list[dict[str, Any]] | None = None,
+                country: str = "") -> dict[str, tuple[str, str, str]]:
     """unit id -> (Wikidata item, English title, how), for as many as can be proved.
 
-    Three sources of candidates, tried in that order because that is the order
-    of how much they prove.
+    Candidates are drawn in stages, narrowest first, and each stage is handed
+    what the ones before it settled, so a wider pool can add a match and never
+    take one away by making it ambiguous.
 
-    1. The item the build already joined to this shape. 248 of the 610 shapes
-       carry one, and nothing this module could work out by name is better
-       evidence than a match the map has already made.
-    2. What the country says it is divided into (P150), and what those are
-       divided into, which is how Malta's 68 local councils are reached: they
-       sit under one of five regions and not under Malta, so the search below
-       never saw them.
-    3. What says it sits directly in the country (P131), which is what a
+    0. The item the build already joined to this shape. Nothing this module
+       could work out by name is better evidence than a match the map has
+       already made.
+    1. What the country says it is divided into (P150). Bulgaria's 28
+       provinces are there and Sofia the city is not, which is what separates
+       Sofia Province from the capital on the only name the map gives it.
+    2. What says it sits directly in the country (P131), which is what a
        first-level unit is and what a town inside one is not.
+    3. What the country's divisions are divided into, which is how Malta's 68
+       local councils are reached under its five regions.
+    4. Wikidata's full-text search, restricted to the country.
+    5. The article Wikipedia's own redirects send the name to.
     """
+    shapes = shapes or units
     qid = country_item(iso3)
     if not qid:
         log(f"{iso3}: no Wikidata item carries this ISO code; skipped")
         return {}
+    claims = claims_of(qid)
+    divisions = statements(claims, "P150")
+    langs = languages(claims)
 
+    mine = {u["id"] for u in units}
     known = {u["id"]: u["wikidata"] for u in units if u.get("wikidata")}
-    divisions = contains(qid)
-    pool = entities(set(known.values()) | set(divisions) | set(children(qid)))
+    others = {u["wikidata"] for u in shapes
+              if u.get("wikidata") and u["id"] not in mine}
+    # The country itself is never a unit of itself -- unless it has only the
+    # one shape, as the Vatican does.
+    if len(shapes) > 1:
+        others.add(qid)
 
-    preset: dict[str, tuple[str, str, str]] = {}
+    pool = entities(set(known.values()) | set(divisions), langs)
+    found: dict[str, tuple[str, str, str]] = {}
     for uid, item in known.items():
         title = (pool.get(item) or {}).get("title")
         if title:
-            preset[uid] = (item, title, "wikidata")
+            found[uid] = (item, title, "wikidata")
     # A shape the build has already joined to an item is that item. Where the
     # item has no English article there is nothing to read, and guessing at a
     # different article by name would be guessing against evidence.
     settled = set(known)
+    # Measured on every shape the country has, so a late stage with two
+    # names left does not forget that Seychelles cuts all of them.
+    cut = truncates(shapes)
 
-    found = resolve([u for u in units if u["id"] not in settled], pool, preset)
-    short = [u for u in units if u["id"] not in found and u["id"] not in settled]
-    if short and divisions:
+    def short() -> list[dict[str, Any]]:
+        return [u for u in units if u["id"] not in found and u["id"] not in settled]
+
+    def widen(label: str, qids: Iterable[str]) -> None:
+        nonlocal found
+        fresh = set(qids) - set(pool)
+        if fresh and short():
+            pool.update(entities(fresh, langs))
+        before = len(found)
+        found = resolve(short(), pool, found, others, cut)
+        if len(found) > before:
+            log(f"{iso3}: {label} resolved {len(found) - before} more")
+
+    widen("the country's own divisions", ())
+    if short():
+        widen("what sits directly in the country", children(qid))
+    if short() and divisions:
         deeper: set[str] = set()
         for division in divisions[:GRANDCHILDREN]:
             deeper |= set(contains(division))
-        deeper -= set(pool)
-        if deeper:
-            log(f"{iso3}: {len(short)} still unresolved; reading {len(deeper)} "
-                f"units one level further down")
-            pool.update(entities(deeper))
-            # preset carries the first pass forward, so a wider pool can only
-            # add a match and never take one away by making it ambiguous.
-            found = resolve(short, pool, found)
+        widen("one level further down", deeper)
+    for unit in short():
+        hits = search(unit["name"], qid, langs)
+        if not hits:
+            continue
+        pool.update(hits)
+        before = len(found)
+        found = resolve([unit], hits, found, others, cut)
+        if len(found) > before:
+            log(f"  {unit['name']}: found by searching the country")
+    if country:
+        for unit in short():
+            taken = {item for item, _, _ in found.values()} | others
+            hit = by_title(unit, country, qid, taken)
+            if hit:
+                found[unit["id"]] = (hit[0], hit[1], "redirect")
     return found
 
 
 def run(iso3: str, units: list[dict[str, Any]], national: float | None,
-        *, probe: bool = False) -> list[dict[str, Any]]:
-    found = article_for(iso3, units)
+        *, probe: bool = False, shapes: list[dict[str, Any]] | None = None,
+        country: str = "") -> list[dict[str, Any]]:
+    found = article_for(iso3, units, shapes, country)
     log(f"{iso3}: {len(units)} units without a population, {len(found)} resolved")
     read_out: list[dict[str, Any]] = []
     for unit in units:
@@ -695,32 +925,39 @@ def main() -> None:
                     help="Stop after this many countries.")
     args = ap.parse_args()
 
-    missing = units_without_population()
-    nationals = country_populations()
-    wanted = [c.upper() for c in args.country] or sorted(missing)
+    shapes = country_shapes()
+    nations = countries()
+    wanted = [c.upper() for c in args.country] or \
+        sorted(c for c, rows in shapes.items() if to_read(rows))
     if args.limit:
         wanted = wanted[:args.limit]
 
     rows: list[dict[str, Any]] = []
+    failed: set[str] = set()
     for iso3 in wanted:
-        units = missing.get(iso3)
+        units = to_read(shapes.get(iso3, []))
         if not units:
-            log(f"{iso3}: nothing missing a population")
+            log(f"{iso3}: nothing this reader answers for")
             continue
+        nation = nations.get(iso3) or {}
         try:
-            rows.extend(run(iso3, units, nationals.get(iso3), probe=args.probe))
+            rows.extend(run(iso3, units, nation.get("population"), probe=args.probe,
+                            shapes=shapes[iso3], country=nation.get("name", "")))
         except Exception as exc:  # one country's outage is not the run's
             log(f"{iso3}: failed -- {exc}")
+            failed.add(iso3)
 
     if args.probe:
         return
     kept = read_json(PROCESSED / OUT, [])
-    if args.country and kept:
-        # A per-country run tops up the file rather than replacing it, and
-        # replaces every country it was asked for -- including one that read
+    if kept:
+        # A run replaces every country it read -- including one that read
         # nothing this time, whose old rows must not survive the re-reading
-        # that decided against them.
-        rows = [r for r in kept if r.get("country") not in set(wanted)] + rows
+        # that decided against them -- and keeps every other country's rows.
+        # A country whose run failed keeps what it had: an outage is not a
+        # finding that the figures are gone.
+        replaced = set(wanted) - failed
+        rows = [r for r in kept if r.get("country") not in replaced] + rows
     write_json(PROCESSED / OUT, sorted(rows, key=lambda r: r["id"]))
     log(f"wrote {len(rows)} records to {OUT}")
 
