@@ -143,12 +143,29 @@ class WhatIsRefused(unittest.TestCase):
         self.assertIsNone(got)
         return why
 
-    def test_a_table_with_no_citation_is_not_read(self):
-        self.assertIn("cites nothing", self.refusal(sk(SK_ETHNIC, cite="")))
+    # Two refusals are deliberately gone, by the owner's decision of 22
+    # September 2026: an uncited table and an undated one are both read.
+    # Refusing them threw away figures that are on the page, over where an
+    # editor put a footnote -- twenty-nine Moldovan districts went empty that
+    # way while three identical ones were read. What the record does instead
+    # is say plainly what it is resting on.
 
-    def test_a_citation_that_cannot_be_dated_is_not_read(self):
+    def test_a_table_with_no_citation_is_read_and_cites_the_article(self):
+        got, why = m.read_field(sk(SK_ETHNIC, cite=""), ETHNIC, SVK, "T", "sk")
+        self.assertEqual(why, "")
+        self.assertTrue(got["rows"], "the figures are on the page; use them")
+        self.assertIn("wikipedia.org", got["cited"])
+        self.assertIn("cites nothing", got["remark"])
+
+    def test_a_citation_that_cannot_be_dated_is_read_and_says_it_is_undated(self):
         undated = "<ref>[https://statistics.sk/tabulky.html Výsledky]</ref>"
-        self.assertIn("no date", self.refusal(sk(SK_ETHNIC, cite=undated)))
+        got, why = m.read_field(sk(SK_ETHNIC, cite=undated), ETHNIC, SVK,
+                                "T", "sk")
+        self.assertEqual(why, "")
+        self.assertTrue(got["rows"])
+        self.assertIsNone(got["year"])
+        self.assertIn("unknown", got["remark"])
+        self.assertEqual(got["dated"], "nothing on the page")
 
     def test_an_undated_citation_beside_a_dated_header_reads_and_says_so(self):
         undated = "<ref>[https://statistics.sk/tabulky.html Výsledky]</ref>"
@@ -160,9 +177,12 @@ class WhatIsRefused(unittest.TestCase):
         note = m.field_fields(got, RELIGION, SVK, "T", "sk")["religion_note"]
         self.assertIn("citation carries no year", note)
 
-    def test_a_reference_the_page_never_defines_is_a_citation_to_nothing(self):
+    def test_a_reference_the_page_never_defines_falls_back_to_the_article(self):
         named = '<ref name="scitanie" />'
-        self.assertIn("cites nothing", self.refusal(sk(SK_ETHNIC, cite=named)))
+        got, why = m.read_field(sk(SK_ETHNIC, cite=named), ETHNIC, SVK,
+                                "T", "sk")
+        self.assertEqual(why, "")
+        self.assertIn("wikipedia.org", got["cited"])
 
     def test_a_label_the_reader_has_no_entry_for_refuses_the_table(self):
         text = sk(SK_ETHNIC).replace("| rómska ", "| marťanská ")
@@ -591,11 +611,16 @@ class ACitationTheInfoboxGivesAndTheTableDoesNot(unittest.TestCase):
         return m.Country(iso3="MDA", out="x.json", decimal=".", census="C",
                          licence="L", levels=(), **kw)
 
-    def test_without_the_opt_in_an_uncited_table_is_still_refused(self) -> None:
+    def test_without_the_opt_in_the_figures_are_still_read(self) -> None:
+        # The table is read either way -- the figures are on the page. What
+        # the opt-in changes is what the record rests on: the census the
+        # infobox names, or the article itself.
         got, why = m.read_field(self.CITE + self.TABLE, m.MD_ETHNICITY,
                                 self.spec(), "Cahul District", "en")
-        self.assertIsNone(got)
-        self.assertIn("cites nothing", why)
+        self.assertEqual(why, "")
+        self.assertTrue(got["rows"])
+        self.assertIn("wikipedia.org", got["cited"])
+        self.assertNotIn("statistica.gov.md", got["cited"])
 
     def test_with_it_the_infobox_citation_stands_in(self) -> None:
         got, why = m.read_field(
@@ -615,6 +640,8 @@ class ACitationTheInfoboxGivesAndTheTableDoesNot(unittest.TestCase):
                       "a borrowed citation has to say it was borrowed")
 
     def test_a_citation_about_something_else_is_not_borrowed(self) -> None:
+        # Still read -- but it must not claim the hill-elevations page as the
+        # source of an ethnic composition. It falls back to the article.
         other = ("{{Infobox settlement\n| elevation_footnotes = <ref>"
                  "{{cite web|url=https://example.com/hills|title=Elevations"
                  "}}</ref>\n}}\n")
@@ -622,8 +649,9 @@ class ACitationTheInfoboxGivesAndTheTableDoesNot(unittest.TestCase):
             other + self.TABLE, m.MD_ETHNICITY,
             self.spec(infobox_citation=r"statistica\.gov\.md"),
             "Cahul District", "en")
-        self.assertIsNone(got)
-        self.assertIn("cites nothing", why)
+        self.assertEqual(why, "")
+        self.assertNotIn("example.com", got["cited"])
+        self.assertIn("wikipedia.org", got["cited"])
 
     def test_a_table_with_its_own_citation_does_not_borrow(self) -> None:
         own = self.TABLE.replace(

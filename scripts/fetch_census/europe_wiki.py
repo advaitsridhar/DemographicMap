@@ -1444,9 +1444,21 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
                  for c in citations(line, definitions)
                  if re.search(country.infobox_citation, c, re.I)]
         borrowed = bool(cites)
-    if not cites:
-        return None, ("the article prints this table and cites nothing for it; "
-                      "an uncited figure is not read")
+    # An uncited table is read, and the article is named as the source.
+    #
+    # The owner's decision of 22 September 2026, and it overrides the rule
+    # inherited from the Indonesian reader. That rule refused a table the
+    # article cited nothing for, and on Wikipedia that is a fact about
+    # editing habits rather than about evidence: Moldova's districts all
+    # transcribe the same 2024 census into the same table and three of
+    # thirty-two happen to repeat the <ref> on it, so twenty-nine districts
+    # went empty over where an editor put a footnote.
+    #
+    # Nothing is invented by reading them. The figures still have to survive
+    # every other test -- the labels must all be known, and the shares must
+    # add to about a hundred -- and the record says plainly that the article
+    # is what it rests on, so a reader of the panel can weigh it.
+    uncited = not cites
     # Which mark separates a fraction is a fact about the country, except
     # where it is not: Bulgaria's provinces write "89.72" and its
     # municipalities write "64,81", in the same edition and under the same
@@ -1481,11 +1493,18 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
         remark = ("The table itself carries no reference; the citation is the "
                   "one the article's infobox gives for the same census. "
                   + remark).strip()
-    described = sorted((describe_citation(c) for c in cites),
-                       key=lambda d: KIND_RANK[d[0]])
-    kind, year, cited = described[0]
-    years = [d[1] for d in described if d[1]]
-    year = year or (max(years) if years else None)
+    if uncited:
+        remark = ("The article cites nothing for this table, so the article "
+                  "itself is the source on the record. " + remark).strip()
+        kind, year, cited = "other", None, (
+            f"https://{lang}.wikipedia.org/wiki/"
+            + urllib.parse.quote(title.replace(" ", "_")))
+    else:
+        described = sorted((describe_citation(c) for c in cites),
+                           key=lambda d: KIND_RANK[d[0]])
+        kind, year, cited = described[0]
+        years = [d[1] for d in described if d[1]]
+        year = year or (max(years) if years else None)
     dated = "its citation"
     # The year the column read is printed under, where the table prints one.
     # This is not a fallback for an undated citation but the better answer
@@ -1503,9 +1522,17 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
         year = max(printed)
         dated = "the table's own header"
     if year is None:
-        return None, ("neither the citation nor the table's own header "
-                      "carries a year, so there is no date the figures "
-                      "are as of")
+        # An undated figure is read and said to be undated.
+        #
+        # The owner's decision of 22 September 2026, and the same one that
+        # dropped the citation gate above. Refusing here threw away a whole
+        # composition to avoid printing one unknown field, which is a worse
+        # trade than it looks: a district with no ethnic table at all and a
+        # district whose table is undated came out identical on the map.
+        remark = ("Neither the citation nor the table's own header carries a "
+                  "year, so the date these figures are as of is unknown. "
+                  + remark).strip()
+        dated = "nothing on the page"
     return {"rows": rows, "year": year, "kind": kind, "cited": cited,
             "remark": remark, "dated": dated, "counts": counts}, ""
 
