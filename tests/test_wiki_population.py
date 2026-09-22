@@ -107,6 +107,24 @@ class Numbers(unittest.TestCase):
         self.assertEqual(value, 12998)
         self.assertEqual(wp.year_of(tail)[0], 2024)
 
+    def test_a_maintenance_tag_beside_the_figure_is_not_part_of_it(self):
+        # All five of Eritrea's regions print the 2005 estimate this way, and
+        # all five were refused as "not a whole number" for the tag.
+        self.assertEqual(wp.number("893,587{{citation needed|date=November 2023}}")[0],
+                         893587)
+        self.assertEqual(wp.number("1,103,742 {{citation needed|date=November 2023}}")[0],
+                         1103742)
+
+    def test_an_arrow_beside_the_figure_is_not_part_of_it(self):
+        # All three of Cambodia's unread provinces print the figure with an
+        # arrow saying which way it moved, which is about the series.
+        self.assertEqual(wp.number("{{decrease}} 898,484")[0], 898484)
+        self.assertEqual(wp.number("{{increase}} 889,970")[0], 889970)
+
+    def test_a_parameter_that_ran_on_into_the_next_one(self):
+        # Maldives' Shaviyani Atoll writes two parameters on one line.
+        self.assertEqual(wp.number("12,091 noofislands=51")[0], 12091)
+
     def test_a_reference_beside_the_figure_is_not_part_of_it(self):
         self.assertEqual(wp.number('253,462<ref name="x">{{cite web|y=1}}</ref>')[0],
                          253462)

@@ -363,6 +363,27 @@ PASSTHROUGH = re.compile(r"\{\{\s*(?:formatnum:\s*|nowrap\s*\||nobold\s*\||"
                          r"small\s*\||val\s*\||increase\s*\||decrease\s*\||"
                          r"as of\s*\|)([^{}|]*?)(?:\|[^{}]*)?\}\}", re.I)
 
+# Templates that add a note about the article rather than anything about the
+# place: Eritrea's five regions all print their census figure with a
+# {{citation needed}} hung off the end, and all five were refused as "not a
+# whole number" for it. Removed, not expanded -- what they say is about the
+# sourcing, and the sourcing is not the figure.
+MAINTENANCE = re.compile(
+    r"\{\{\s*(?:citation needed|cn|fact|clarify|clarification needed|when|"
+    r"update|update after|dubious|disputed|better source needed|"
+    r"verify source|unreliable source\?|page needed|specify|"
+    r"according to whom|by whom|vague|original research\?|"
+    r"efn|refn|sfn|nb|note|"
+    # The arrows. {{increase}} beside a figure says which way it moved since
+    # the last one, which is about the series and not about the figure;
+    # Cambodia writes all three of its provinces that way.
+    r"increase|decrease|steady|nochange|no change|gain|loss|growth|positive "
+    r"decrease|negative increase)\b[^{}]*\}\}", re.I)
+
+# A parameter that ran on into the next one. Maldives' Shaviyani Atoll writes
+# "12,091 noofislands=51" on one line, and a population never contains an "=".
+RAN_ON = re.compile(r"\s+[A-Za-z_][\w\s-]*=.*$")
+
 NUMBER = re.compile(r"^\d{1,3}(?:[,    ]\d{3})+$|^\d+$")
 YEAR = re.compile(r"\b(1[89]\d\d|20\d\d)\b")
 
@@ -386,6 +407,7 @@ YEAR_KEYS = {
 def clean(value: str) -> str:
     value = COMMENT.sub("", value)
     value = REF.sub("", value)
+    value = MAINTENANCE.sub("", value)
     for _ in range(3):
         value = PASSTHROUGH.sub(lambda m: m.group(1), value)
     value = LINK.sub(lambda m: m.group(2) if m.group(2) is not None else m.group(1), value)
@@ -423,7 +445,7 @@ def params(wikitext: str) -> dict[str, str]:
 
 def number(text: str) -> tuple[int | None, str]:
     """The whole number a value states, or why it states none."""
-    body = clean(text)
+    body = RAN_ON.sub("", clean(text))
     if not body:
         return None, "empty"
     # "12,998 (2024)" -- the figure, with the year the article put beside it.
