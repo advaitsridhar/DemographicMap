@@ -5213,6 +5213,96 @@
     "match_by": "shape_id"
   },
   {
+    "id": "ITA-WP-centro",
+    "level": "admin1",
+    "name": "Centro",
+    "parent": "ITA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11699125,
+      "unit": "people",
+      "year": 2026,
+      "source": "English Wikipedia, Central Italy (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Central_Italy",
+        "year": 2026,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ITA",
+    "shape_id": "72843720B863019116732",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ITA-WP-isole",
+    "level": "admin1",
+    "name": "Isole",
+    "parent": "ITA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6329684,
+      "unit": "people",
+      "year": 2026,
+      "source": "English Wikipedia, Insular Italy (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Insular_Italy",
+        "year": 2026,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ITA",
+    "shape_id": "72843720B81376294924159",
+    "match_by": "shape_id"
+  },
+  {
     "id": "ITA-WP-nord-est",
     "level": "admin1",
     "name": "Nord-Est",
@@ -5255,6 +5345,96 @@
     ],
     "country": "ITA",
     "shape_id": "72843720B59566147937015",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ITA-WP-nord-ovest",
+    "level": "admin1",
+    "name": "Nord-Ovest",
+    "parent": "ITA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 15955242,
+      "unit": "people",
+      "year": 2026,
+      "source": "English Wikipedia, Northwest Italy (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Northwest_Italy",
+        "year": 2026,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ITA",
+    "shape_id": "72843720B99597932318450",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ITA-WP-sud",
+    "level": "admin1",
+    "name": "Sud",
+    "parent": "ITA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19669678,
+      "unit": "people",
+      "year": 2026,
+      "source": "English Wikipedia, Southern Italy (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Southern_Italy",
+        "year": 2026,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ITA",
+    "shape_id": "72843720B88210905209841",
     "match_by": "shape_id"
   },
   {
@@ -7147,6 +7327,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "LBY-WP-al-jifarah",
+    "level": "admin1",
+    "name": "Al Jifarah",
+    "parent": "LBY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 548855,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Jafara (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jafara",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBY",
+    "shape_id": "10800210B86029592505559",
+    "match_by": "shape_id"
+  },
+  {
     "id": "LBY-WP-al-jufrah",
     "level": "admin1",
     "name": "Al Jufrah",
@@ -7954,6 +8179,51 @@
     ],
     "country": "LTU",
     "shape_id": "39236102B79521903246642",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "LVA-WP-rēzeknes",
+    "level": "admin1",
+    "name": "Rēzeknes",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25978,
+      "unit": "people",
+      "year": 2026,
+      "source": "English Wikipedia, Rēzekne (infobox, which displays Wikidata Q180379's P1082)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/R%C4%93zekne",
+        "year": 2026,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LVA",
+    "shape_id": "71098776B7836540053544",
     "match_by": "shape_id"
   },
   {
@@ -9082,6 +9352,50 @@
     "match_by": "shape_id"
   },
   {
+    "id": "MDV-WP-baa",
+    "level": "admin1",
+    "name": "Baa",
+    "parent": "MDV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13000,
+      "unit": "people",
+      "source": "English Wikipedia, Baa Atoll (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Baa_Atoll",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDV",
+    "shape_id": "51498476B81939708930954",
+    "match_by": "shape_id"
+  },
+  {
     "id": "MDV-WP-dhaalu",
     "level": "admin1",
     "name": "Dhaalu",
@@ -9391,6 +9705,140 @@
     "match_by": "shape_id"
   },
   {
+    "id": "MDV-WP-vaavu",
+    "level": "admin1",
+    "name": "Vaavu",
+    "parent": "MDV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1601,
+      "unit": "people",
+      "source": "English Wikipedia, Vaavu Atoll (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Vaavu_Atoll",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDV",
+    "shape_id": "51498476B82988233622813",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "MHL-WP-maloelap",
+    "level": "admin1",
+    "name": "Maloelap",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 395,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Maloelap Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Maloelap_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL",
+    "shape_id": "77969171B37424980791701",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "MHL-WP-mili",
+    "level": "admin1",
+    "name": "Mili",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 497,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Mili Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mili_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL",
+    "shape_id": "77969171B38536087618645",
+    "match_by": "shape_id"
+  },
+  {
     "id": "MHL-WP-namdrik",
     "level": "admin1",
     "name": "Namdrik",
@@ -9433,6 +9881,96 @@
     ],
     "country": "MHL",
     "shape_id": "77969171B54378659360174",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "MHL-WP-namu",
+    "level": "admin1",
+    "name": "Namu",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 525,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Namu Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Namu_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL",
+    "shape_id": "77969171B35666329157800",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "MHL-WP-ujae",
+    "level": "admin1",
+    "name": "Ujae",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 310,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Ujae Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ujae_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL",
+    "shape_id": "77969171B60639821987115",
     "match_by": "shape_id"
   },
   {
@@ -9523,6 +10061,51 @@
     ],
     "country": "MHL",
     "shape_id": "77969171B89836250003833",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "MHL-WP-wotje",
+    "level": "admin1",
+    "name": "Wotje",
+    "parent": "MHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 816,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Wotje Atoll (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Wotje_Atoll",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MHL",
+    "shape_id": "77969171B58043664047812",
     "match_by": "shape_id"
   },
   {
@@ -11506,6 +12089,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "MLT-WP-mġarr",
+    "level": "admin1",
+    "name": "Mġarr",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5336,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Mġarr (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/M%C4%A1arr",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT",
+    "shape_id": "83640313B45218014578174",
+    "match_by": "shape_id"
+  },
+  {
     "id": "MLT-WP-nadur",
     "level": "admin1",
     "name": "Nadur",
@@ -12586,6 +13214,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "MLT-WP-xagħra",
+    "level": "admin1",
+    "name": "Xagħra",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4886,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Xagħra (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Xag%C4%A7ra",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT",
+    "shape_id": "83640313B83261609786955",
+    "match_by": "shape_id"
+  },
+  {
     "id": "MLT-WP-xewkija",
     "level": "admin1",
     "name": "Xewkija",
@@ -12628,6 +13301,51 @@
     ],
     "country": "MLT",
     "shape_id": "83640313B46186135646579",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "MLT-WP-xgħajra",
+    "level": "admin1",
+    "name": "Xgħajra",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2440,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Xgħajra (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Xg%C4%A7ajra",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT",
+    "shape_id": "83640313B35952736247105",
     "match_by": "shape_id"
   },
   {
