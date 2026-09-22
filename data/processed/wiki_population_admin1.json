@@ -301,49 +301,6 @@
     "country": "CIV"
   },
   {
-    "id": "CIV-WP-denguele",
-    "level": "admin1",
-    "name": "Denguele",
-    "parent": "CIV",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 436015,
-      "unit": "people",
-      "year": 2021,
-      "source": "English Wikipedia, Denguélé District (infobox)"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Dengu%C3%A9l%C3%A9_District",
-        "year": 2021,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "country": "CIV"
-  },
-  {
     "id": "CIV-WP-goh-djiboua",
     "level": "admin1",
     "name": "Goh-Djiboua",
@@ -380,49 +337,6 @@
         "field": "population",
         "name": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/G%C3%B4h-Djiboua_District",
-        "year": 2021,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "country": "CIV"
-  },
-  {
-    "id": "CIV-WP-montagnes",
-    "level": "admin1",
-    "name": "Montagnes",
-    "parent": "CIV",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 3027023,
-      "unit": "people",
-      "year": 2021,
-      "source": "English Wikipedia, Montagnes District (infobox)"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Montagnes_District",
         "year": 2021,
         "license": "CC BY-SA 4.0"
       }
@@ -860,6 +774,565 @@
     "country": "HTI"
   },
   {
+    "id": "JAM-WP-clarendon",
+    "level": "admin1",
+    "name": "Clarendon",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 253462,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Clarendon Parish, Jamaica (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Clarendon_Parish%2C_Jamaica",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
+    "id": "JAM-WP-hanover",
+    "level": "admin1",
+    "name": "Hanover",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 69874,
+      "unit": "people",
+      "year": 2012,
+      "source": "English Wikipedia, Hanover Parish (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Hanover_Parish",
+        "year": 2012,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
+    "id": "JAM-WP-kingston",
+    "level": "admin1",
+    "name": "Kingston",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 89057,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Kingston Parish (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kingston_Parish",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
+    "id": "JAM-WP-manchester",
+    "level": "admin1",
+    "name": "Manchester",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 193694,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Manchester Parish (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Manchester_Parish",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
+    "id": "JAM-WP-portland",
+    "level": "admin1",
+    "name": "Portland",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 82183,
+      "unit": "people",
+      "year": 2012,
+      "source": "English Wikipedia, Portland Parish (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Portland_Parish",
+        "year": 2012,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
+    "id": "JAM-WP-saint-andrew",
+    "level": "admin1",
+    "name": "Saint Andrew",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 583718,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Saint Andrew Parish, Jamaica (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Saint_Andrew_Parish%2C_Jamaica",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
+    "id": "JAM-WP-saint-ann",
+    "level": "admin1",
+    "name": "Saint Ann",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 173232,
+      "unit": "people",
+      "year": 2012,
+      "source": "English Wikipedia, Saint Ann Parish (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Saint_Ann_Parish",
+        "year": 2012,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
+    "id": "JAM-WP-saint-catherine",
+    "level": "admin1",
+    "name": "Saint Catherine",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 518345,
+      "unit": "people",
+      "year": 2012,
+      "source": "English Wikipedia, Saint Catherine Parish (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Saint_Catherine_Parish",
+        "year": 2012,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
+    "id": "JAM-WP-saint-elizabeth",
+    "level": "admin1",
+    "name": "Saint Elizabeth",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 150993,
+      "unit": "people",
+      "year": 2012,
+      "source": "English Wikipedia, Saint Elizabeth Parish (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Saint_Elizabeth_Parish",
+        "year": 2012,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
+    "id": "JAM-WP-saint-james",
+    "level": "admin1",
+    "name": "Saint James",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 184662,
+      "unit": "people",
+      "year": 2012,
+      "source": "English Wikipedia, Saint James Parish, Jamaica (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Saint_James_Parish%2C_Jamaica",
+        "year": 2012,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
+    "id": "JAM-WP-saint-mary",
+    "level": "admin1",
+    "name": "Saint Mary",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 114227,
+      "unit": "people",
+      "year": 2012,
+      "source": "English Wikipedia, Saint Mary Parish, Jamaica (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Saint_Mary_Parish%2C_Jamaica",
+        "year": 2012,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
+    "id": "JAM-WP-trelawny",
+    "level": "admin1",
+    "name": "Trelawny",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 75558,
+      "unit": "people",
+      "year": 2012,
+      "source": "English Wikipedia, Trelawny Parish (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Trelawny_Parish",
+        "year": 2012,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
+    "id": "JAM-WP-westmoreland",
+    "level": "admin1",
+    "name": "Westmoreland",
+    "parent": "JAM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 149857,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Westmoreland Parish (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Westmoreland_Parish",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "JAM"
+  },
+  {
     "id": "LBY-WP-al-butnan",
     "level": "admin1",
     "name": "Al Butnan",
@@ -946,6 +1419,49 @@
     "country": "LBY"
   },
   {
+    "id": "LBY-WP-al-jufrah",
+    "level": "admin1",
+    "name": "Al Jufrah",
+    "parent": "LBY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 52342,
+      "unit": "people",
+      "year": 2006,
+      "source": "English Wikipedia, Jufra District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jufra_District",
+        "year": 2006,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBY"
+  },
+  {
     "id": "LBY-WP-al-marj",
     "level": "admin1",
     "name": "Al Marj",
@@ -1025,6 +1541,135 @@
         "field": "population",
         "name": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Murqub_District",
+        "year": 2006,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBY"
+  },
+  {
+    "id": "LBY-WP-an-nuqat-al-khams",
+    "level": "admin1",
+    "name": "An Nuqat al Khams",
+    "parent": "LBY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 292440,
+      "unit": "people",
+      "year": 2012,
+      "source": "English Wikipedia, Nuqat al Khams (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nuqat_al_Khams",
+        "year": 2012,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBY"
+  },
+  {
+    "id": "LBY-WP-az-zawiyah",
+    "level": "admin1",
+    "name": "Az Zawiyah",
+    "parent": "LBY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 200000,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Zawiya, Libya (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Zawiya%2C_Libya",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBY"
+  },
+  {
+    "id": "LBY-WP-misratah",
+    "level": "admin1",
+    "name": "Misratah",
+    "parent": "LBY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 550938,
+      "unit": "people",
+      "year": 2006,
+      "source": "English Wikipedia, Misrata District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Misrata_District",
         "year": 2006,
         "license": "CC BY-SA 4.0"
       }
@@ -1548,6 +2193,49 @@
     "country": "MDG"
   },
   {
+    "id": "MDG-WP-atsinanana",
+    "level": "admin1",
+    "name": "Atsinanana",
+    "parent": "MDG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1484403,
+      "unit": "people",
+      "year": 2018,
+      "source": "English Wikipedia, Atsinanana (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Atsinanana",
+        "year": 2018,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDG"
+  },
+  {
     "id": "MDG-WP-betsiboka",
     "level": "admin1",
     "name": "Betsiboka",
@@ -2064,6 +2752,1038 @@
     "country": "MDG"
   },
   {
+    "id": "MLT-WP-attard",
+    "level": "admin1",
+    "name": "Attard",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12998,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Attard (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Attard",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-balzan",
+    "level": "admin1",
+    "name": "Balzan",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5022,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Balzan (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Balzan",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-birgu",
+    "level": "admin1",
+    "name": "Birgu",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2289,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Birgu (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Birgu",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-birkirkara",
+    "level": "admin1",
+    "name": "Birkirkara",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 30166,
+      "unit": "people",
+      "year": 2026,
+      "source": "English Wikipedia, Birkirkara (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Birkirkara",
+        "year": 2026,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-birżebbuġa",
+    "level": "admin1",
+    "name": "Birżebbuġa",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12467,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Birżebbuġa (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bir%C5%BCebbu%C4%A1a",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-bormla",
+    "level": "admin1",
+    "name": "Bormla",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4807,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Cospicua (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Cospicua",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-dingli",
+    "level": "admin1",
+    "name": "Dingli",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3950,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Dingli (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dingli",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-fgura",
+    "level": "admin1",
+    "name": "Fgura",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13886,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Fgura (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Fgura",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-floriana",
+    "level": "admin1",
+    "name": "Floriana",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2096,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Floriana (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Floriana",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-fontana",
+    "level": "admin1",
+    "name": "Fontana",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1160,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Fontana, Gozo (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Fontana%2C_Gozo",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-ghajnsielem",
+    "level": "admin1",
+    "name": "Ghajnsielem",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3733,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Għajnsielem (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/G%C4%A7ajnsielem",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-gharb",
+    "level": "admin1",
+    "name": "Gharb",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1595,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Għarb (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/G%C4%A7arb",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-ghasri",
+    "level": "admin1",
+    "name": "Ghasri",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 529,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Għasri (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/G%C4%A7asri",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-gudja",
+    "level": "admin1",
+    "name": "Gudja",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3501,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Gudja (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gudja",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-għargħur",
+    "level": "admin1",
+    "name": "Għargħur",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4172,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Għargħur (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/G%C4%A7arg%C4%A7ur",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-għaxaq",
+    "level": "admin1",
+    "name": "Għaxaq",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5852,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Għaxaq (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/G%C4%A7axaq",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-gżira",
+    "level": "admin1",
+    "name": "Gżira",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12343,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Gżira (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/G%C5%BCira",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-iklin",
+    "level": "admin1",
+    "name": "Iklin",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3692,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Iklin (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Iklin",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-isla",
+    "level": "admin1",
+    "name": "Isla",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2408,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Senglea (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Senglea",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-kalkara",
+    "level": "admin1",
+    "name": "Kalkara",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3248,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Kalkara (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kalkara",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-kerċem",
+    "level": "admin1",
+    "name": "Kerċem",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1932,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Kerċem (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ker%C4%8Bem",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-kirkop",
+    "level": "admin1",
+    "name": "Kirkop",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2659,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Kirkop (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kirkop",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-lija",
+    "level": "admin1",
+    "name": "Lija",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3785,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Lija (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Lija",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-luqa",
+    "level": "admin1",
+    "name": "Luqa",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7360,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Luqa (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Luqa",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
     "id": "MLT-WP-marsa",
     "level": "admin1",
     "name": "Marsa",
@@ -2100,6 +3820,1640 @@
         "field": "population",
         "name": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Marsa%2C_Malta",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-marsaskala",
+    "level": "admin1",
+    "name": "Marsaskala",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 18317,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Marsaskala (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Marsaskala",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-marsaxlokk",
+    "level": "admin1",
+    "name": "Marsaxlokk",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4206,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Marsaxlokk (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Marsaxlokk",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-mdina",
+    "level": "admin1",
+    "name": "Mdina",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 242,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Mdina (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mdina",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-mellieħa",
+    "level": "admin1",
+    "name": "Mellieħa",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14232,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Mellieħa (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mellie%C4%A7a",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-mosta",
+    "level": "admin1",
+    "name": "Mosta",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25379,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Mosta (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mosta",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-mqabba",
+    "level": "admin1",
+    "name": "Mqabba",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3714,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Mqabba (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mqabba",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-msida",
+    "level": "admin1",
+    "name": "Msida",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 16001,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Msida (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Msida",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-mtarfa",
+    "level": "admin1",
+    "name": "Mtarfa",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2607,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Mtarfa (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mtarfa",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-munxar",
+    "level": "admin1",
+    "name": "Munxar",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1707,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Munxar (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Munxar",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-mġarr",
+    "level": "admin1",
+    "name": "Mġarr",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5336,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Mġarr (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/M%C4%A1arr",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-nadur",
+    "level": "admin1",
+    "name": "Nadur",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4509,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Nadur (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nadur",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-naxxar",
+    "level": "admin1",
+    "name": "Naxxar",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 18063,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Naxxar (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Naxxar",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-paola",
+    "level": "admin1",
+    "name": "Paola",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9815,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Paola, Malta (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Paola%2C_Malta",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-pembroke",
+    "level": "admin1",
+    "name": "Pembroke",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3910,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Pembroke, Malta (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Pembroke%2C_Malta",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-pietà",
+    "level": "admin1",
+    "name": "Pietà",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7086,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Pietà, Malta (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Piet%C3%A0%2C_Malta",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-qala",
+    "level": "admin1",
+    "name": "Qala",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2300,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Qala, Malta (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Qala%2C_Malta",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-qormi",
+    "level": "admin1",
+    "name": "Qormi",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 19752,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Qormi (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Qormi",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-qrendi",
+    "level": "admin1",
+    "name": "Qrendi",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3324,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Qrendi (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Qrendi",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-rabat-malta",
+    "level": "admin1",
+    "name": "Rabat Malta",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12329,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Rabat, Malta (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Rabat%2C_Malta",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-safi",
+    "level": "admin1",
+    "name": "Safi",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3324,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Safi, Malta (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Safi%2C_Malta",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-saint-julians",
+    "level": "admin1",
+    "name": "Saint Julian's",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14709,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, St. Julian's, Malta (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/St._Julian%27s%2C_Malta",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-saint-pauls-bay",
+    "level": "admin1",
+    "name": "Saint Paul's Bay",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 38844,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, St. Paul's Bay (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/St._Paul%27s_Bay",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-sannat",
+    "level": "admin1",
+    "name": "Sannat",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2117,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Sannat (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sannat",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-santa-venera",
+    "level": "admin1",
+    "name": "Santa Venera",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9762,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Santa Venera (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Santa_Venera",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-siġġiewi",
+    "level": "admin1",
+    "name": "Siġġiewi",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9697,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Siġġiewi (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Si%C4%A1%C4%A1iewi",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-sliema",
+    "level": "admin1",
+    "name": "Sliema",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 22224,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Sliema (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sliema",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-swieqi",
+    "level": "admin1",
+    "name": "Swieqi",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 14979,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Swieqi (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Swieqi",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-ta-xbiex",
+    "level": "admin1",
+    "name": "Ta' Xbiex",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2646,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Ta' Xbiex (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ta%27_Xbiex",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-tarxien",
+    "level": "admin1",
+    "name": "Tarxien",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9901,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Tarxien (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tarxien",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-valletta",
+    "level": "admin1",
+    "name": "Valletta",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5226,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Valletta (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Valletta",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-xagħra",
+    "level": "admin1",
+    "name": "Xagħra",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4886,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Xagħra (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Xag%C4%A7ra",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-xewkija",
+    "level": "admin1",
+    "name": "Xewkija",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3300,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Xewkija (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Xewkija",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-xgħajra",
+    "level": "admin1",
+    "name": "Xgħajra",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2440,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Xgħajra (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Xg%C4%A7ajra",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-ħamrun",
+    "level": "admin1",
+    "name": "Ħamrun",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11936,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Hamrun (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Hamrun",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-żabbar",
+    "level": "admin1",
+    "name": "Żabbar",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17779,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Żabbar (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/%C5%BBabbar",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-żebbuġ-gozo",
+    "level": "admin1",
+    "name": "Żebbuġ Gozo",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2956,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Żebbuġ, Gozo (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/%C5%BBebbu%C4%A1%2C_Gozo",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-żejtun",
+    "level": "admin1",
+    "name": "Żejtun",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12783,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Żejtun (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/%C5%BBejtun",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MLT"
+  },
+  {
+    "id": "MLT-WP-żurrieq",
+    "level": "admin1",
+    "name": "Żurrieq",
+    "parent": "MLT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12731,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Żurrieq (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/%C5%BBurrieq",
         "year": 2024,
         "license": "CC BY-SA 4.0"
       }
@@ -3182,6 +6536,49 @@
     "country": "SYC"
   },
   {
+    "id": "SYC-WP-les-mamell",
+    "level": "admin1",
+    "name": "Les Mamell",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2720,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Les Mamelles (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Les_Mamelles",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SYC"
+  },
+  {
     "id": "SYC-WP-mont-buxto",
     "level": "admin1",
     "name": "Mont Buxto",
@@ -3562,6 +6959,49 @@
         "field": "population",
         "name": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Central_Province%2C_Zambia",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ZMB"
+  },
+  {
+    "id": "ZMB-WP-copperbelt",
+    "level": "admin1",
+    "name": "Copperbelt",
+    "parent": "ZMB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2768192,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Copperbelt Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Copperbelt_Province",
         "year": 2022,
         "license": "CC BY-SA 4.0"
       }
