@@ -78,7 +78,13 @@ WANTED = re.compile(
 # A heading is only interesting if something tabular or list-shaped follows.
 TABLE = re.compile(r"^\s*\{\|", re.M)
 SECTION = re.compile(r"^==+\s*([^=\n]+?)\s*=+\s*$", re.M)
-INFOBOX_PARAM = re.compile(r"^\s*\|\s*([^=|{}\n]{2,40}?)\s*=", re.M)
+INFOBOX_PARAM = re.compile(r"^\s*\|\s*([^=|{}\n]{2,40}?)\s*=([^\n]*)$", re.M)
+
+# A composition states shares. Requiring one is what separates the Dutch
+# provinces' "religie = 68,4% geen gezindte<br/>18,7% Protestants" from
+# Bhutan's "WWW-SPRACHE = de", which is the language of the town's *website*
+# and was counted as a language composition 170 times by the first sweep.
+SHARE = re.compile(r"\d[\d.,]*\s*%|%\s*\d")
 
 
 def get(api: str, **params: object) -> dict[str, Any]:
@@ -138,27 +144,42 @@ def verdict(wikitext: str) -> tuple[str, list[str]]:
     a reader against -- which is precisely the mistake the Europe reader made,
     and why twelve Dutch provinces sat empty.
     """
-    hits = [h for h in SECTION.findall(wikitext) if WANTED.search(h)]
-    params = [p for p in INFOBOX_PARAM.findall(wikitext) if WANTED.search(p)]
-    tabled = False
-    for heading in hits:
-        start = wikitext.find(heading)
-        if TABLE.search(wikitext[start:start + 4000]):
-            tabled = True
-            break
-    if tabled and params:
-        kind = "section+table+infobox"
-    elif tabled:
-        kind = "section+table"
-    elif hits and params:
-        kind = "section+infobox"
+    # Every heading with its real position, so a section can be bounded by the
+    # next one. The first version searched 4,000 characters from
+    # ``wikitext.find(heading)`` -- which finds the first occurrence of the
+    # *string* "Ethnicity" anywhere, a link or the lead included, not the
+    # heading -- and then read straight across into whatever table came next.
+    # Every one of Hungary's 126 districts was reported as carrying a table
+    # that way; their Ethnicity and Religion sections are prose, and the table
+    # the probe found was a population time series in another section.
+    marks = [(m.start(), m.end(), m.group(1)) for m in SECTION.finditer(wikitext)]
+    hits, tabled, figured = [], [], []
+    for i, (_start, end, heading) in enumerate(marks):
+        if not WANTED.search(heading):
+            continue
+        hits.append(heading)
+        body = wikitext[end:marks[i + 1][0] if i + 1 < len(marks) else len(wikitext)]
+        if TABLE.search(body):
+            tabled.append(heading)
+        elif SHARE.search(body):
+            figured.append(heading)
+
+    # An infobox parameter counts only when its value states shares. The name
+    # alone is not evidence: "WWW-SPRACHE" is a website's language.
+    params = [name for name, value in INFOBOX_PARAM.findall(wikitext)
+              if WANTED.search(name) and SHARE.search(value)]
+
+    if tabled:
+        kind = "section+table+infobox" if params else "section+table"
+    elif figured:
+        kind = "section+figures+infobox" if params else "section+figures"
     elif params:
-        kind = "infobox"
+        kind = "section+infobox" if hits else "infobox"
     elif hits:
         kind = "section only"
     else:
         kind = "nothing"
-    return kind, hits + params
+    return kind, (tabled or figured or hits) + params
 
 
 def main() -> int:

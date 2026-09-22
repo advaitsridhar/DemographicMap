@@ -35,8 +35,10 @@ class WhatAnArticleCarries(unittest.TestCase):
         self.assertEqual(p.verdict(self.SLOVAK)[0], "section+table")
 
     def test_both_together_rank_highest(self):
-        both = ("{{Infobox\n| religie = x\n}}\n== Religie ==\n"
-                "{| class=wikitable\n| a | 1\n|}\n")
+        # The value states shares. "religie = x" would not count, and should
+        # not: a parameter's name is not evidence that it holds a composition.
+        both = ("{{Infobox\n| religie = 54,8% Rooms-katholiek\n}}\n"
+                "== Religie ==\n{| class=wikitable\n| a | 1\n|}\n")
         self.assertEqual(p.verdict(both)[0], "section+table+infobox")
 
     def test_a_heading_with_only_prose_says_so(self):
@@ -168,3 +170,75 @@ class AUnitWithNoEnglishArticleIsStillProbed(unittest.TestCase):
         report = self._probe({"Q1": {}})
         self.assertEqual(report["units"], [])
         self.assertEqual(report["per_country"]["XXX"], {"admin2:no article": 1})
+
+
+class ATableCountsOnlyInsideItsOwnSection(unittest.TestCase):
+    """Hungary is why. Every one of its 126 districts was reported as carrying
+    a demographic table; their Ethnicity and Religion sections are prose, and
+    the table the probe found was a population time series somewhere else.
+    """
+
+    ASZOD = (
+        "{{Infobox settlement\n| name = Aszód District\n"
+        "| population_total = 37,472\n}}\n"
+        "== Demographics ==\n"
+        "{| class=wikitable\n! Year !! Population\n|-\n| 2011 || 37,472\n|}\n"
+        "== Ethnicity ==\n"
+        "The district is ethnically mixed.\n"
+        "== Religion ==\n"
+        "There are several churches.\n")
+
+    def test_a_table_in_another_section_is_not_this_section_s_table(self) -> None:
+        kind, _ = p.verdict(self.ASZOD)
+        self.assertNotIn("table", kind,
+                         "the only table is a population series under "
+                         "Demographics, not a composition under Ethnicity")
+        self.assertEqual(kind, "section only")
+
+    def test_a_table_inside_the_section_still_counts(self) -> None:
+        text = ("== Ethnicity ==\n{| class=wikitable\n! Group !! %\n|-\n"
+                "| Hungarian || 88\n|}\n== Economy ==\nFarming.\n")
+        kind, words = p.verdict(text)
+        self.assertEqual(kind, "section+table")
+        self.assertEqual(words, ["Ethnicity"])
+
+    def test_prose_that_states_shares_is_worth_more_than_bare_prose(self) -> None:
+        text = ("== Ethnicity ==\nThe population is 88.2% Hungarian and "
+                "3.1% Roma.\n== Economy ==\nFarming.\n")
+        kind, _ = p.verdict(text)
+        self.assertEqual(kind, "section+figures",
+                         "prose with percentages is readable; bare prose is not")
+
+    def test_a_heading_named_in_the_lead_does_not_move_the_section(self) -> None:
+        # "Ethnicity" appears as a link long before the real heading.
+        text = ("The [[Ethnicity|ethnic]] make-up is complex.\n"
+                "{| class=wikitable\n! Party !! Seats\n|-\n| Fidesz || 21\n|}\n"
+                "== Ethnicity ==\nMixed.\n")
+        kind, _ = p.verdict(text)
+        self.assertEqual(kind, "section only",
+                         "str.find would have landed on the lead and taken "
+                         "the election table with it")
+
+
+class AnInfoboxParameterMustStateShares(unittest.TestCase):
+    """"WWW-SPRACHE = de" is a website's language. It was counted as a language
+    composition 170 times for Bhutan, 97 for Luxembourg, 75 for Ecuador."""
+
+    def test_a_website_language_parameter_is_not_a_composition(self) -> None:
+        kind, words = p.verdict("{{Infobox\n| WWW-SPRACHE = de\n| name = X\n}}\n")
+        self.assertEqual(kind, "nothing")
+        self.assertEqual(words, [])
+
+    def test_norways_written_form_parameter_is_not_a_composition(self) -> None:
+        kind, _ = p.verdict("{{Infobox\n| language = Nynorsk\n}}\n")
+        self.assertEqual(kind, "nothing",
+                         "Bokmaal/Nynorsk is the official written form, not a "
+                         "split of what people speak")
+
+    def test_the_dutch_infobox_still_counts(self) -> None:
+        kind, words = p.verdict(
+            "{{Infobox provincie\n"
+            "| religie = 68,4% geen gezindte<br />18,7% Protestants\n"
+            "| religiejaar = 2015\n}}\n")
+        self.assertEqual(kind, "infobox")
+        self.assertEqual(words, ["religie"])
