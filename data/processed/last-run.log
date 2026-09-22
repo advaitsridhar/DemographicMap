@@ -1,55 +1,40 @@
   wrote data/raw/codes/wikidata_countries.json (3 kB)
-  NAM: 159 admin2 units (0 added by descent)
-  NER: 82 admin2 units (5 added by descent)
-  NIC: 982 admin2 units (0 added by descent)
-  NLD: 38 admin2 units (0 added by descent)
-    answer unparseable: 1,748,010 bytes, JSON ends at 1,742,806, then 5,204 more (1/1)
-    what follows it: 'SELECT ?unit ?unitLabel ?parent ?parentLabel WHERE { VALUES ?country { wd:Q20 } ?country wdt:P150 ?parent . ?unit wdt:P131 ?parent . ?unit wdt:P31/wdt:P279* wd:Q56061 . SERVICE wikibase:label { bd:ser'
-    primary query failed (answer truncated at byte 1742806 after 1 attempts); falling back
-  NOR: 356 admin2 units (descent only)
-  NPL: 191 admin2 units (0 added by descent)
-  NRU: 8 admin2 units (0 added by descent)
-    answer unparseable: 2,134,317 bytes, JSON ends at 2,129,089, then 5,228 more (1/1)
-    what follows it: 'SPARQL-QUERY: queryStr= SELECT ?unit ?unitLabel ?parent ?parentLabel WHERE { VALUES ?country { wd:Q664 } ?country wdt:P150 ?parent . ?unit wdt:P131 ?parent . ?unit wdt:P31/wdt:P279* wd:Q56061 . SERVIC'
-    primary query failed (answer truncated at byte 2129089 after 1 attempts); falling back
-  NZL: 46 admin2 units (descent only)
-  OMN: 66 admin2 units (0 added by descent)
-  PAN: 133 admin2 units (0 added by descent)
-  PLW: 2 admin2 units (0 added by descent)
-  PNG: 121 admin2 units (0 added by descent)
-  POL: 828 admin2 units (1 added by descent)
-  PRK: 265 admin2 units (15 added by descent)
-  PRT: 558 admin2 units (1 added by descent)
-  PRY: 303 admin2 units (25 added by descent)
-  QAT: 21 admin2 units (4 added by descent)
-    answer unparseable: 6,293,728 bytes, JSON ends at 6,288,500, then 5,228 more (1/1)
-    what follows it: 'SPARQL-QUERY: queryStr= SELECT ?unit ?unitLabel ?parent ?parentLabel WHERE { VALUES ?country { wd:Q218 } ?country wdt:P150 ?parent . ?unit wdt:P131 ?parent . ?unit wdt:P31/wdt:P279* wd:Q56061 . SERVIC'
-    primary query failed (answer truncated at byte 6288500 after 1 attempts); falling back
-  ROU: 3186 admin2 units (descent only)
-  retry 1/4 after 2s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ159+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Funit+wdt%3AP131+%3Fparent+.%0A++%3Funit+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ56061+.%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 502: Bad Gateway
-  retry 2/4 after 4s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ159+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Funit+wdt%3AP131+%3Fparent+.%0A++%3Funit+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ56061+.%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 504: Gateway Timeout
-  retry 3/4 after 8s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ159+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Funit+wdt%3AP131+%3Fparent+.%0A++%3Funit+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ56061+.%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 504: Gateway Timeout
-  retry 4/4 after 16s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ159+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Funit+wdt%3AP131+%3Fparent+.%0A++%3Funit+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ56061+.%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 504: Gateway Timeout
-    primary query failed (GET failed after 4 retries: https://query.wikidata.org/sparql?format=json&query=); falling back
-  RUS: 1604 admin2 units (descent only)
-    answer unparseable: 131,068 bytes, JSON ends at 131,068, then 0 more (1/1)
+  SSD: 400 admin2 units (0 added by descent)
+  STP: 12 admin2 units (6 added by descent)
+  SUR: 76 admin2 units (1 added by descent)
+  SVK: 97 admin2 units (1 added by descent)
+  SVN: 502 admin2 units (0 added by descent)
+  SWE: 860 admin2 units (1 added by descent)
+  SWZ: 74 admin2 units (0 added by descent)
+  SYC: 2 admin2 units (0 added by descent)
+  SYR: 250 admin2 units (10 added by descent)
+  TCD: 102 admin2 units (0 added by descent)
+  TGO: 138 admin2 units (0 added by descent)
+  TJK: 159 admin2 units (4 added by descent)
+  TKM: 74 admin2 units (1 added by descent)
+  TLS: 338 admin2 units (0 added by descent)
+  TON: 18 admin2 units (0 added by descent)
+  TTO: 10 admin2 units (0 added by descent)
+  TUN: 486 admin2 units (0 added by descent)
+  TUR: 2923 admin2 units (456 added by descent)
+  TUV: 0 admin2 units (0 added by descent)
+    answer unparseable: 589,824 bytes, JSON ends at 589,824, then 0 more (1/1)
     what follows it: ''
-    primary query failed (answer truncated at byte 131068 after 1 attempts); falling back
-  retry 1/4 after 2s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ1037+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Fparent+wdt%3AP150+%3Funit+.%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 502: Bad Gateway
-  RWA: 10 admin2 units (descent only)
-  retry 1/4 after 2s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ851+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Funit+wdt%3AP131+%3Fparent+.%0A++%3Funit+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ56061+.%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 502: Bad Gateway
-  retry 2/4 after 4s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ851+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Funit+wdt%3AP131+%3Fparent+.%0A++%3Funit+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ56061+.%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 502: Bad Gateway
-  retry 3/4 after 8s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ851+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Funit+wdt%3AP131+%3Fparent+.%0A++%3Funit+wdt%3AP31%2Fwdt%3AP279%2A+wd%3AQ56061+.%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 502: Bad Gateway
-  SAU: 0 admin2 units (0 added by descent)
-  SDN: 232 admin2 units (0 added by descent)
-  SEN: 253 admin2 units (0 added by descent)
-  retry 1/4 after 2s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ334+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Fparent+wdt%3AP150+%3Funit+.%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 429: Too Many Requests
-  SGP: 31 admin2 units (0 added by descent)
-  SLB: 21 admin2 units (0 added by descent)
-  SLE: 25 admin2 units (0 added by descent)
-  SLV: 331 admin2 units (0 added by descent)
-  SMR: 44 admin2 units (0 added by descent)
-  SOM: 120 admin2 units (1 added by descent)
-  SRB: 262 admin2 units (0 added by descent)
-  wrote data/processed/wikidata_admin2.json (42250 kB)
-  29 countries refreshed, 131 carried over, 56974 records in wikidata_admin2.json
+    primary query failed (answer truncated at byte 589824 after 1 attempts); falling back
+  retry 1/4 after 2s :: https://query.wikidata.org/sparql?format=json&query=%0ASELECT+%3Funit+%3FunitLabel+%3Fparent+%3FparentLabel+WHERE+%7B%0A++VALUES+%3Fcountry+%7B+wd%3AQ924+%7D%0A++%3Fcountry+wdt%3AP150+%3Fparent+.%0A++%3Fparent+wdt%3AP150+%3Funit+.%0A++SERVICE+wikibase%3Alabel+%7B+bd%3AserviceParam+wikibase%3Alanguage+%22en%2Cmul%22.+%7D%0A%7D%0A :: HTTP Error 502: Bad Gateway
+  TZA: 7 admin2 units (descent only)
+  UGA: 4181 admin2 units (0 added by descent)
+  UKR: 1562 admin2 units (9 added by descent)
+    answer unparseable: 49,014,849 bytes, JSON ends at 49,009,622, then 5,227 more (1/1)
+    what follows it: 'SPARQL-QUERY: queryStr= SELECT ?unit ?unitLabel ?parent ?parentLabel WHERE { VALUES ?country { wd:Q30 } ?country wdt:P150 ?parent . ?unit wdt:P131 ?parent . ?unit wdt:P31/wdt:P279* wd:Q56061 . SERVICE'
+    primary query failed (answer truncated at byte 49009622 after 1 attempts); falling back
+  USA: 3240 admin2 units (descent only)
+  UZB: 245 admin2 units (1 added by descent)
+  VAT: 0 admin2 units (0 added by descent)
+  VCT: 5 admin2 units (0 added by descent)
+  VEN: 1209 admin2 units (1 added by descent)
+  VUT: 3 admin2 units (0 added by descent)
+  WSM: 1 admin2 units (0 added by descent)
+  wrote data/processed/wikidata_admin2.json (54886 kB)
+  27 countries refreshed, 160 carried over, 73948 records in wikidata_admin2.json
+  could not fetch 1, previous rows kept: TWN
