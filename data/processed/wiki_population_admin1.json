@@ -1260,6 +1260,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "BHS-WP-harbour-island",
+    "level": "admin1",
+    "name": "Harbour Island",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1861,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Harbour Island, Bahamas (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Harbour_Island%2C_Bahamas",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS",
+    "shape_id": "57655419B64917905581576",
+    "match_by": "shape_id"
+  },
+  {
     "id": "BHS-WP-hope-town",
     "level": "admin1",
     "name": "Hope Town",
@@ -1977,6 +2022,51 @@
     ],
     "country": "COD",
     "shape_id": "28894549B55881681467015",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "COL-WP-archipiélago-de-san-andrés-providencia-y-santa-catalina",
+    "level": "admin1",
+    "name": "Archipiélago de San Andrés, Providencia y Santa Catalina",
+    "parent": "COL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 61280,
+      "unit": "people",
+      "year": 2018,
+      "source": "English Wikipedia, San Andrés and Providencia (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/San_Andr%C3%A9s_and_Providencia",
+        "year": 2018,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "COL",
+    "shape_id": "13589884B18807997781037",
     "match_by": "shape_id"
   },
   {
