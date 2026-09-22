@@ -563,3 +563,77 @@ class ANoteNeverSaysBothThings(unittest.TestCase):
                               "T", "sk")
         note = m.field_fields(got, RELIGION, SVK, "T", "sk")["religion_note"]
         self.assertIn("The citation carries no year", note)
+
+
+class ACitationTheInfoboxGivesAndTheTableDoesNot(unittest.TestCase):
+    """Moldova's districts transcribe one census into one table shape.
+
+    Three of thirty-two carry the reference on the table; the rest cite it
+    once from population_footnotes. Read strictly, twenty-nine districts sat
+    empty over where an editor put a <ref>, not over anything about the
+    figures.
+    """
+
+    TABLE = ("== Ethnic groups ==\n"
+             "{| class=wikitable\n"
+             "! Ethnic group !! % of total\n|-\n"
+             "| Moldovans || 80.6\n|-\n| Ukrainians || 10.0\n|-\n"
+             "| Russians || 9.0\n|}\n")
+    CITE = ("{{Infobox settlement\n"
+            "| population_as_of = [[2024 Moldovan census|2024]]\n"
+            "| population_footnotes = <ref>{{cite web"
+            "|url=https://statistica.gov.md/en/statistic_indicator_details/60"
+            "|title=Final Results of the Population and Housing Census 2024"
+            "|publisher=National Bureau of Statistics|year=2026}}</ref>\n"
+            "| population_total = 72,775\n}}\n")
+
+    def spec(self, **kw):
+        return m.Country(iso3="MDA", out="x.json", decimal=".", census="C",
+                         licence="L", levels=(), **kw)
+
+    def test_without_the_opt_in_an_uncited_table_is_still_refused(self) -> None:
+        got, why = m.read_field(self.CITE + self.TABLE, m.MD_ETHNICITY,
+                                self.spec(), "Cahul District", "en")
+        self.assertIsNone(got)
+        self.assertIn("cites nothing", why)
+
+    def test_with_it_the_infobox_citation_stands_in(self) -> None:
+        got, why = m.read_field(
+            self.CITE + self.TABLE, m.MD_ETHNICITY,
+            self.spec(infobox_citation=r"statistica\.gov\.md"),
+            "Cahul District", "en")
+        self.assertEqual(why, "")
+        self.assertIsNotNone(got)
+
+    def test_the_record_says_the_citation_was_borrowed(self) -> None:
+        got, _ = m.read_field(
+            self.CITE + self.TABLE, m.MD_ETHNICITY,
+            self.spec(infobox_citation=r"statistica\.gov\.md"),
+            "Cahul District", "en")
+        note = " ".join(str(v) for v in got.values())
+        self.assertIn("infobox", note,
+                      "a borrowed citation has to say it was borrowed")
+
+    def test_a_citation_about_something_else_is_not_borrowed(self) -> None:
+        other = ("{{Infobox settlement\n| elevation_footnotes = <ref>"
+                 "{{cite web|url=https://example.com/hills|title=Elevations"
+                 "}}</ref>\n}}\n")
+        got, why = m.read_field(
+            other + self.TABLE, m.MD_ETHNICITY,
+            self.spec(infobox_citation=r"statistica\.gov\.md"),
+            "Cahul District", "en")
+        self.assertIsNone(got)
+        self.assertIn("cites nothing", why)
+
+    def test_a_table_with_its_own_citation_does_not_borrow(self) -> None:
+        own = self.TABLE.replace(
+            "== Ethnic groups ==\n",
+            "== Ethnic groups ==\n<ref>{{cite web"
+            "|url=https://statistica.gov.md/ro/x|title=Recensamantul 2024"
+            "}}</ref>\n")
+        got, _ = m.read_field(
+            self.CITE + own, m.MD_ETHNICITY,
+            self.spec(infobox_citation=r"statistica\.gov\.md"),
+            "Cahul District", "en")
+        note = " ".join(str(v) for v in got.values())
+        self.assertNotIn("infobox", note)
