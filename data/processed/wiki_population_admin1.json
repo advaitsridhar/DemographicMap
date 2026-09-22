@@ -12671,6 +12671,49 @@
     "country": "SDN"
   },
   {
+    "id": "SDN-WP-west-kordofan",
+    "level": "admin1",
+    "name": "West Kordofan",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1320405,
+      "unit": "people",
+      "year": 2006,
+      "source": "English Wikipedia, West Kordofan (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/West_Kordofan",
+        "year": 2006,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SDN"
+  },
+  {
     "id": "SLB-WP-central",
     "level": "admin1",
     "name": "Central",
