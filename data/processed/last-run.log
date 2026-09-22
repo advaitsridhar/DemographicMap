@@ -1,70 +1,80 @@
-probe_wikipedia: 14104 units with a Wikidata id
-  2000 of 14104 units resolved
-  4000 of 14104 units resolved
-  6000 of 14104 units resolved
-  8000 of 14104 units resolved
-  10000 of 14104 units resolved
-  12000 of 14104 units resolved
-  14000 of 14104 units resolved
-  [en] 6884 article(s) probed
-  [ceb] 2840 article(s) probed
-  [bpy] batch 2000: HTTPError: HTTP Error 414: URI Too Long
-  [bpy] batch 2150: HTTPError: HTTP Error 414: URI Too Long
-  [bpy] batch 2200: HTTPError: HTTP Error 414: URI Too Long
-  [bpy] 2499 article(s) probed
-  [ce] batch 650: HTTPError: HTTP Error 414: URI Too Long
-  [ce] batch 1500: HTTPError: HTTP Error 414: URI Too Long
-  [ce] batch 1650: HTTPError: HTTP Error 414: URI Too Long
-  [ce] batch 1700: HTTPError: HTTP Error 414: URI Too Long
-  [ce] 1994 article(s) probed
-  [ar] 920 article(s) probed
-  [es] 380 article(s) probed
-  [ca] 297 article(s) probed
-  [bg] 99 article(s) probed
-  [af] 67 article(s) probed
-  [be_x_old] batch 0: URLError: <urlopen error [Errno -2] Name or service not known>
-  [be_x_old] batch 50: URLError: <urlopen error [Errno -2] Name or service not known>
-  [be_x_old] 55 article(s) probed
-  [commons] 54 article(s) probed
-  [an] 47 article(s) probed
-  [arz] 37 article(s) probed
-  [az] 29 article(s) probed
-  [de] 25 article(s) probed
-  [ast] 16 article(s) probed
-  [br] 13 article(s) probed
-  [ace] 9 article(s) probed
-  [ay] 8 article(s) probed
-  [bcl] 8 article(s) probed
-  [eo] 6 article(s) probed
-  [lg] 6 article(s) probed
-  [ang] 5 article(s) probed
-  [fr] 5 article(s) probed
-  [azb] 5 article(s) probed
-  [fa] 4 article(s) probed
-  [ab] 3 article(s) probed
-  [pl] 3 article(s) probed
-  [sw] 2 article(s) probed
-  [hr] 2 article(s) probed
-  [be] 2 article(s) probed
-  [abstract] 2 article(s) probed
-  [ku] 2 article(s) probed
-  [ja] 1 article(s) probed
-  [lad] 1 article(s) probed
-  [bn] 1 article(s) probed
-  [ary] 1 article(s) probed
-  [ckb] 1 article(s) probed
-  [als] 1 article(s) probed
-  [mg] 1 article(s) probed
-  [bar] 1 article(s) probed
-  [ff] 1 article(s) probed
-  [fi] 1 article(s) probed
-  [tum] 1 article(s) probed
+probe_wikipedia: 13409 units with a Wikidata id
+  2000 of 13409 units resolved
+  4000 of 13409 units resolved
+  6000 of 13409 units resolved
+  8000 of 13409 units resolved
+  10000 of 13409 units resolved
+  12000 of 13409 units resolved
+  [en] 9737 article(s) probed
+  [ceb] 4754 article(s) probed
+  [ar] 4134 article(s) probed
+  [ca] 278 article(s) probed
+  [ce] 254 article(s) probed
+  [af] 182 article(s) probed
+  [azb] 175 article(s) probed
+  [ace] 171 article(s) probed
+  [io] 156 article(s) probed
+  [az] 144 article(s) probed
+  [tr] 135 article(s) probed
+  [bg] 107 article(s) probed
+  [fr] 82 article(s) probed
+  [ku] 73 article(s) probed
+  [commons] 72 article(s) probed
+  [ang] 69 article(s) probed
+  [ha] 66 article(s) probed
+  [it] 61 article(s) probed
+  [arz] 52 article(s) probed
+  [bpy] batch 0: HTTPError: HTTP Error 414: URI Too Long
+  [bpy] 49 article(s) probed
+  [ann] 40 article(s) probed
+  [de] 40 article(s) probed
+  [bol] 30 article(s) probed
+  [abstract] 26 article(s) probed
+  [ff] 23 article(s) probed
+  [es] 23 article(s) probed
+  [bar] 22 article(s) probed
+  [am] 19 article(s) probed
+  [hy] 18 article(s) probed
+  [ab] 14 article(s) probed
+  [arc] 13 article(s) probed
+  [ady] 13 article(s) probed
+  [be] 11 article(s) probed
+  [eo] 10 article(s) probed
+  [id] 9 article(s) probed
+  [el] 9 article(s) probed
+  [an] 7 article(s) probed
+  [fi] 7 article(s) probed
+  [ast] 6 article(s) probed
+  [cs] 5 article(s) probed
+  [nl] 5 article(s) probed
+  [dag] 4 article(s) probed
+  [ig] 4 article(s) probed
+  [als] 4 article(s) probed
+  [av] 4 article(s) probed
+  [bn] 3 article(s) probed
+  [br] 3 article(s) probed
+  [fa] 3 article(s) probed
+  [pt] 2 article(s) probed
+  [bat_smg] batch 0: URLError: <urlopen error [Errno -2] Name or service not known>
+  [bat_smg] 2 article(s) probed
+  [bcl] 2 article(s) probed
+  [ckb] 2 article(s) probed
+  [diq] 2 article(s) probed
+  [yo] 1 article(s) probed
+  [igl] 1 article(s) probed
+  [nup] 1 article(s) probed
+  [da] 1 article(s) probed
+  [kcg] 1 article(s) probed
+  [uz] 1 article(s) probed
+  [glk] 1 article(s) probed
+  [ka] 1 article(s) probed
 
 iso   units by what their article carries
-  BRA  admin1:nothing 4, admin1:section only 4, admin1:section+table 18, admin1:section+table+infobox 1, admin2:infobox 275, admin2:nothing 3644, admin2:section only 59, admin2:section+infobox 18, admin2:section+table 13, admin2:section+table+infobox 6
-  MEX  admin1:nothing 23, admin1:section only 4, admin1:section+infobox 3, admin1:section+table 2, admin2:infobox 1070, admin2:no article 688, admin2:nothing 3722, admin2:section only 22, admin2:section+infobox 3, admin2:section+table 9, admin2:section+table+infobox 1
-  UGA  admin1:nothing 115, admin1:section only 18, admin1:section+table 2, admin2:infobox 8, admin2:no article 3917, admin2:nothing 253, admin2:section only 2, admin2:section+table 1
+  NGA  admin1:nothing 3, admin1:section only 13, admin1:section+table 21, admin2:infobox 27, admin2:no article 1939, admin2:nothing 1754, admin2:section only 114, admin2:section+infobox 7, admin2:section+table 3
+  ROU  admin1:nothing 38, admin1:section only 1, admin1:section+infobox 1, admin1:section+table 1, admin1:section+table+infobox 1, admin2:infobox 11, admin2:nothing 3137, admin2:section only 22, admin2:section+infobox 3, admin2:section+table 12, admin2:section+table+infobox 1
+  TUR  admin1:infobox 2, admin1:nothing 73, admin1:section only 3, admin1:section+infobox 1, admin1:section+table 2, admin2:infobox 114, admin2:no article 15, admin2:nothing 2770, admin2:section only 15, admin2:section+infobox 7, admin2:section+table 1, admin2:section+table+infobox 1
+  USA  admin1:infobox 5, admin1:nothing 1, admin1:section only 3, admin1:section+infobox 12, admin1:section+table 14, admin1:section+table+infobox 21, admin2:infobox 9, admin2:nothing 1274, admin2:section only 59, admin2:section+infobox 1, admin2:section+table 1871, admin2:section+table+infobox 26
 
-this run: 3 countries, 9300 units
-world so far (9 countries): admin1:infobox 5, admin1:nothing 158, admin1:section only 53, admin1:section+infobox 8, admin1:section+table 40, admin1:section+table+infobox 3, admin2:infobox 1395, admin2:no article 4664, admin2:nothing 9491, admin2:section only 119, admin2:section+infobox 25, admin2:section+table 115, admin2:section+table+infobox 8
-  wrote data/processed/wikipedia_probe.json (2447 kB)
+this run: 4 countries, 11455 units
+world so far (13 countries): admin1:infobox 12, admin1:nothing 273, admin1:section only 73, admin1:section+infobox 22, admin1:section+table 78, admin1:section+table+infobox 25, admin2:infobox 1556, admin2:no article 6618, admin2:nothing 18426, admin2:section only 329, admin2:section+infobox 43, admin2:section+table 2002, admin2:section+table+infobox 36
+  wrote data/processed/wikipedia_probe.json (4750 kB)
