@@ -1130,6 +1130,24 @@ class AParentWithNoDashToMarkItsChildren(unittest.TestCase):
         self.assertEqual(shares["Freethinker"], 0.0)
         self.assertEqual(shares["Irreligious"], 0.6)
 
+    def test_chisinau_s_two_irreligious_rows_are_not_one_inside_the_other(self):
+        # "Agnostic / atheist" is the two leaves welded into one figure, so it
+        # stays at the level that holds both; the row beneath it, written "No
+        # religion" in English, is the census's fourth answer and not that
+        # level. Written as the same canonical name, the pair stopped a build
+        # that had already produced every site file.
+        labels = m.MD_RELIGION_LABELS
+        self.assertEqual(labels["no religion"], "Irreligious")
+        self.assertEqual(labels["agnostic / atheist"], "Agnostic or atheist")
+        rows = [{"group": labels["agnostic / atheist"], "pct": 3.6},
+                {"group": labels["no religion"], "pct": 1.0}]
+        self.assertEqual(canonical_groups.check_no_double_counting(rows, "religion"), [])
+
+    def test_a_balkan_table_keeps_the_plain_category(self):
+        # The override is Moldova's. Serbia and Bulgaria read a table with no
+        # atheist row beside it, where "no religion" is the whole answer.
+        self.assertEqual(m.BALKAN_RELIGION["no religion"], "No religion")
+
     def test_none_of_the_four_is_the_category_the_others_sit_in(self):
         # The fourth used to be written "No religion", which is the canonical
         # parent of the first two. A record naming a parent and its children

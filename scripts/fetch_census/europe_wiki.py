@@ -1115,6 +1115,14 @@ MD_RELIGION_LABELS = {
     # religion" it made Basarabeasca report a parent and its children at once,
     # which the build refuses and is right to.
     "irreligious": "Irreligious",
+    # Chisinau's table writes the same census category in English as "No
+    # religion" and puts "Agnostic / atheist" on the row above it. Left as the
+    # canonical "No religion", that is the category the agnostics and atheists
+    # are already inside, and the build stopped on the pair. It is the fourth
+    # answer here exactly as it is in Basarabeasca, so it is written that way.
+    # BALKAN_RELIGION's own "no religion", which Serbia and Bulgaria use for a
+    # table with no atheist row beside it, is untouched.
+    "no religion": "Irreligious",
     # The census's own category, beside atheists and agnostics in the same
     # table, so it is not either of them and is not folded into either.
     "free thinkers": "Freethinker",
