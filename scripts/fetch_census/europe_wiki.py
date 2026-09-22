@@ -513,6 +513,23 @@ class Composition:
     # row is dropped rather than read from the wrong column, and the note
     # says how many were dropped.
     width: int | None = None
+    # Whether ``value`` counts the row's columns rather than its figures.
+    #
+    # The two are the same until a cell is empty, and Moldova's tables are
+    # full of empty cells. Taraclia's religion table prints 2004, 2014 and
+    # 2024 side by side and writes "-" where a faith had nobody: its
+    # Lutheran row is "- | - | 44 | 0.13 | - | -", whose last *figure* is
+    # 0.13 and whose last *column* is empty. Counting figures publishes
+    # 2014's Lutherans as 2024's; counting columns reads nothing there,
+    # which is what the table says. It also keeps the rows the width check
+    # would have thrown away whole -- the same table's Jehovah's Witnesses
+    # have no 2004 figure and a perfectly good 2024 one.
+    #
+    # Opt-in, because it is only safe where a row's cells line up with the
+    # header's, and a table that merges two cells into one (Chisinau's
+    # ethnic table does, where a people has no count for 1989) is only
+    # aligned at the end -- which is the column these specs read.
+    columns: bool = False
 
 
 @dataclass(frozen=True)
@@ -525,7 +542,12 @@ class Level:
     lang: str = "en"
     via: str | None = None           # resolve the title above into this edition
     titles: dict[str, str] | None = None     # shape name -> article, where the pattern fails
-    absent: dict[str, str] | None = None     # shape name -> why it has no article
+    # shape name -> why nothing is read for it. Either there is no article,
+    # or there is one and what it publishes is not this country's census:
+    # Bender's composition is Transnistria's own count of a city Moldova did
+    # not count, and reading it would put another authority's figures out
+    # under the National Bureau's name.
+    absent: dict[str, str] | None = None
     # Where the boundary file's spelling cannot be used as written: the
     # country's own list of unit names, and the prefix the file puts in
     # front of each ("District of "). match_spellings joins the two.
@@ -702,23 +724,28 @@ def label_for(label: str, labels: dict[str, str]) -> tuple[str | None, str]:
 
 def read_rows(table: list[list[str]], spec: Composition, decimal: str
               ) -> tuple[dict[str, float], list[str], str]:
-    """({label: share}, the labels with no entry in the spec, why not).
+    """({label: share}, what to say about the rows not read, why not).
 
     A row is read when its first cell is a label and the row carries at
     least as many numbers as the spec asks for. A row that carries none is
     a header continuation and is skipped in silence; a row whose label the
     spec has no entry for is collected and reported, never guessed at.
+
+    The middle value is the labels themselves where a label was unknown --
+    which is what the refusal prints -- and otherwise the sentences the
+    record must carry about rows this reader passed over.
     """
     skip = re.compile(spec.skip, re.I)
     out: dict[str, float] = {}
     unknown: list[str] = []
     short = 0
+    blank = 0
     for row in table:
         if not row:
             continue
         label = cell_text(row[0])
-        numbers = [n for n in (number(cell_text(c), decimal) for c in row[1:])
-                   if n is not None]
+        cells = [number(cell_text(c), decimal) for c in row[1:]]
+        numbers = [n for n in cells if n is not None]
         if not label or not numbers:
             continue
         if skip.search(label):
@@ -726,19 +753,42 @@ def read_rows(table: list[list[str]], spec: Composition, decimal: str
         if spec.width is not None and len(numbers) != spec.width:
             short += 1
             continue
-        wanted = spec.value if spec.value >= 0 else len(numbers) + spec.value
-        if not 0 <= wanted < len(numbers):
+        found = cells if spec.columns else numbers
+        wanted = spec.value if spec.value >= 0 else len(found) + spec.value
+        if not 0 <= wanted < len(found):
+            continue
+        if found[wanted] is None:
+            # Only where the columns are being counted: the row is about
+            # this table's subject and has nothing in the column read.
+            blank += 1
             continue
         mapped, key = label_for(label, spec.labels)
         if mapped is None:
             unknown.append(label)
             continue
-        out[mapped] = out.get(mapped, 0.0) + numbers[wanted]
+        out[mapped] = out.get(mapped, 0.0) + found[wanted]
     if unknown:
         return {}, unknown, f"labels this reader has no entry for: {unknown}"
+    if not out and blank:
+        # Briceni's religion table is this: a 2014 column of counts with the
+        # share column beside it left empty in every row. Worth telling apart
+        # from the refusal below, because the article does publish a table
+        # and it is the column that is missing.
+        return {}, [], (f"the table's rows are there and the column this "
+                        f"reader takes the share from is empty in all "
+                        f"{blank} of them")
     if not out:
         return {}, [], "the table holds no row this reader could read"
-    return out, [str(short)] if short else [], ""
+    said: list[str] = []
+    if short:
+        said.append(f"{short} row(s) of the table carry figures for only one "
+                    f"of the censuses it prints and are not read; what they "
+                    f"hold is inside the remainder.")
+    if blank:
+        said.append(f"{blank} row(s) of the table print nothing in the column "
+                    f"read -- the table has no figure there -- and are not "
+                    f"read.")
+    return out, said, ""
 
 
 def shares_of(counts: dict[str, float]) -> tuple[list[dict[str, Any]], str, str]:
@@ -1028,13 +1078,150 @@ MK_ETHNICITY = Composition(
     labels=BALKAN_ETHNICITY,
     skip=TOTALS)
 
+# Moldova's own words, on top of the Balkan tables above. They are kept
+# here rather than added to the shared ones because a label added to read
+# Taraclia would otherwise change what is read in Serbia and North
+# Macedonia, in tables nobody has looked at while writing this.
+MD_ETHNICITY_LABELS = {
+    **BALKAN_ETHNICITY,
+    # Gagauzia's table's word for the Roma, and the 2024 census's.
+    "gypsies": "Romani",
+}
+MD_RELIGION_LABELS = {
+    **BALKAN_RELIGION,
+    "eastern orthodoxy": "Orthodox",
+    # The dash marks a child of the row above it -- see MD_SUBTOTALS.
+    "– orthodox christians": "Orthodox",
+    "– old believers": "Old Believer",
+    "– other christians": "Other Christian",
+    "other christians": "Other Christian",
+    "baptist": "Baptist", "– baptists": "Baptist",
+    "evangelical": "Evangelical", "– evangelic christian": "Evangelical",
+    "pentecostal": "Pentecostal", "– penticostal": "Pentecostal",
+    "– seventh-day adventist": "Seventh-day Adventist",
+    "– lutheran": "Lutheran",
+    "– presbyterian": "Presbyterian",
+    "– roman catholic": "Roman Catholic",
+    "jehovah's witnesses": "Jehovah's Witnesses",
+    "other religions": "Other religion",
+    # One bar for two answers, because the census printed one number for
+    # them. Chisinau's table has a separate "No religion" row beside this.
+    "agnostic / atheist": "Agnostic or atheist",
+    # Gagauzia's, and the same reasoning: both halves are irreligion.
+    "atheism and irreligion": "No religion",
+}
+MD_LANGUAGE_LABELS = {
+    "romanian": "Romanian", "moldovan": "Moldovan", "russian": "Russian",
+    "gagauz": "Gagauz", "bulgarian": "Bulgarian", "ukrainian": "Ukrainian",
+    # Gagauzia's table names the two together and gives them one figure;
+    # Chisinau's keeps them apart. A bucket naming two languages at once is
+    # one bucket and not two rows, and splitting it would invent the split.
+    "moldovan (romanian)": "Moldovan (Romanian)",
+    "other languages": "Other", "others": "Other", "other": "Other",
+}
+
+# A row that is the sum of the rows under it.
+#
+# Moldova's religion tables print the parent above its parts. Chisinau's
+# has "Christianity (total)" at 94.45% standing over Baptist, Evangelical,
+# Catholic, Pentecostal and the rest; Gagauzia's and Taraclia's have
+# "Christians" over "– Orthodox Christians" and "– Other Christians", the
+# dash marking the child. Reading both counts those people twice and hands
+# the map a composition adding to nearly two hundred -- which shares_of
+# would refuse, so the whole unit would be lost over it.
+#
+# Skipping a parent whose children are missing is the safe direction of the
+# same mistake: what is left adds to five per cent and is refused, which is
+# a gap and not a wrong figure.
+MD_SUBTOTALS = r"|\(total\)|^christians$|^christianity$"
+
+# The table's own header, which is a row like any other to a reader that has
+# only the wikitext. Most of Europe's headers are skipped without being
+# named -- they carry no figure, so there is nothing to read out of them --
+# but Moldova's carry the census years, "Ethnicity | 2004 | 2014 | 2024",
+# and a row with a label and figures in it is exactly what this reader
+# stops at. Naming them is what keeps the header out of the composition.
+MD_HEADER_ROWS = r"|^ethnic(ity|s|\s+group)|^religio|^(first\s+)?language"
+
 MD_ETHNICITY = Composition(
     field="ethnicity",
     section=r"ethnic|^demograph|^population",
-    header=r"ethnic group",
+    # "Ethnic group" in a district's two-column table and in Chisinau's six
+    # censuses side by side; "Ethnicity" in Taraclia's three.
+    header=r"ethnic(ity|\s+group)",
     value=-1,
-    labels=BALKAN_ETHNICITY,
-    skip=TOTALS)
+    labels=MD_ETHNICITY_LABELS,
+    skip=TOTALS + MD_HEADER_ROWS)
+MD_RELIGION = Composition(
+    field="religion",
+    section=r"religio",
+    header=r"religio",
+    value=-1,
+    # Counting columns and not figures: Taraclia prints three censuses side
+    # by side and writes "-" where a faith had nobody in one of them.
+    columns=True,
+    labels=MD_RELIGION_LABELS,
+    skip=TOTALS + MD_SUBTOTALS + MD_HEADER_ROWS)
+# Two shapes of the same question, one per article that asks it. Chisinau's
+# table is first language by census since 1989; Gagauzia's is mother tongue
+# beside the language spoken at home, which is why its column is named and
+# not counted from the end -- the last column of that table is a different
+# question.
+MD_LANGUAGE_FIRST = Composition(
+    field="language",
+    section=r"language|mother tongue",
+    header=r"first language",
+    value=-1,
+    labels=MD_LANGUAGE_LABELS,
+    skip=TOTALS + MD_HEADER_ROWS)
+MD_LANGUAGE_MOTHER = Composition(
+    field="language",
+    section=r"language|mother tongue",
+    header=r"mother tongue",
+    value=1,
+    width=4,
+    labels=MD_LANGUAGE_LABELS,
+    skip=TOTALS + MD_HEADER_ROWS)
+MD_FIELDS = (MD_ETHNICITY, MD_RELIGION, MD_LANGUAGE_FIRST, MD_LANGUAGE_MOTHER)
+
+# The units of Moldova that are not districts, and so are in no category of
+# them: the capital, the second city and the autonomous unit. Naming the
+# article each one keeps its composition in is all it takes to reach them,
+# because a name given here is used before the country's own list of unit
+# names is consulted at all.
+MD_TITLES = {"Chisinau": "Chișinău", "Balti": "Bălți", "Gagauzia": "Gagauzia"}
+
+# The two this reader will not read, and why.
+#
+# Both are administered by Transnistria, which the 2024 Moldovan census did
+# not count: the National Bureau's tables stop at the Dniester. What their
+# articles publish instead is Transnistria's own counting, and this reader
+# would print it under the line "Biroul Naţional de Statistică,
+# Recensământul Populaţiei şi al Locuinţelor" -- a provenance it does not
+# have. That is the mis-statement this project treats as worse than a gap,
+# so they are gaps, and these are the reasons.
+MD_ABSENT = {
+    "Transnistria": (
+        "Transnistria is not under the Moldovan government's control and the "
+        "2024 Moldovan census did not count it. Its article publishes no "
+        "composition table for the territory: what it has is an infobox "
+        "listing 29.1% Russians, 28.6% Moldovans/Romanians and 22.9% "
+        "Ukrainians from the census the Transnistrian authorities took in "
+        "2015, and a column of 2004 prose, district by district, inside its "
+        "table of administrative divisions. Neither is a figure of the "
+        "census this reader names as its source, and the 2015 one counts "
+        "Bender too, which this map draws as a unit of its own. They are "
+        "left unread rather than published as Moldovan census results."),
+    "Bender": (
+        "Bender is administered by Transnistria and the 2024 Moldovan census "
+        "did not count it. The only composition its article prints is the "
+        "2004 census the Transnistrian authorities took, cited to a "
+        "third-party compilation of Eastern European census results, and its "
+        "rows give ranges rather than counts where the compiler could not "
+        "tell -- \"0-5\", \"61-66\" -- inside column markup this reader "
+        "cannot line up with the header. It is not a figure of the census "
+        "this reader names as its source, and it is not read."),
+}
 
 # The two municipalities the category files under their formal titles.
 ME_TITLES = {"Cetinje Municipality": "Old Royal Capital Cetinje",
@@ -1182,9 +1369,25 @@ SPECS: dict[str, Country] = {
                   fields=(MK_ETHNICITY,)),
         )),
     # Moldova: the districts, whose English articles carry an ethnic table of
-    # percentages and cite the census the infobox is dated by. The four units
-    # that are not districts -- Chisinau, Balti, Bender, Gagauzia -- are not
-    # in the category and carry the reason instead.
+    # percentages and cite the census the infobox is dated by, plus the five
+    # units that are not districts and so are in no category of them.
+    # Chisinau, Balti and Gagauzia are named to their articles and read like
+    # any other unit -- which gets the capital's 720,128 people all three
+    # fields and Gagauzia all three, and measures Balti's article as
+    # publishing no composition at all. Bender and Transnistria are refused,
+    # in writing, for the reason under MD_ABSENT.
+    #
+    # Four districts -- Edinet, Falesti, Glodeni and Riscani -- have a
+    # Demographics heading in English with no table under it, and that is
+    # what their records say. The Romanian edition does carry an ethnic
+    # table for each of them, and it was read and not taken: those tables
+    # are the 2004 census, twenty years older than the 2024 figures every
+    # other Moldovan unit here carries, three of the four cite nothing at
+    # all (so they would be published undated, beside neighbours dated
+    # 2024), and Riscani's has two rows merged into one cell -- "Moldoveni
+    # Romani 1 | 50.391 777 | 72,55% 1,12%" -- which is two peoples sharing
+    # a label and would be refused anyway. Reaching them would also need a
+    # per-unit edition, which this reader does not have. Measured and left.
     "MDA": Country(
         iso3="MDA", out="europe_wiki_moldova.json", decimal=".",
         census="Biroul Naţional de Statistică, Recensământul Populaţiei şi al "
@@ -1197,24 +1400,25 @@ SPECS: dict[str, Country] = {
         # can only borrow a citation that is to the census itself.
         infobox_citation=r"statistica\.gov\.md|Recens[aă]m[aâ]ntul|"
                          r"National Bureau of Statistics",
-        declared={
-            "religion": (
-                "A Moldovan district's article carries an ethnic table and "
-                "no religion table; several have a Religion heading with "
-                "nothing under it."),
-            "language": (
-                "A Moldovan district's article carries no mother-tongue "
-                "table, in either edition."),
-        },
+        # No declared gap for religion or language any more. It used to say
+        # that a Moldovan article carries neither, and that is a statement
+        # about districts which stopped being true of the country the moment
+        # the capital, Gagauzia and Taraclia were reached: all three publish
+        # a religion table, and two of them publish languages. Each unit now
+        # says for itself which kind of empty it is -- no such heading, a
+        # heading with no table under it, a table whose column is blank --
+        # because that is what was measured for it.
         levels=(
             Level(level="admin1", lang="en", title="{name} District",
                   category="Category:Districts of Moldova", match="folded",
                   article_trim=r"\s+District$",
-                  fields=(MD_ETHNICITY,)),
+                  titles=MD_TITLES, absent=MD_ABSENT,
+                  fields=MD_FIELDS),
             Level(level="admin2", lang="en", title="{name} District",
                   category="Category:Districts of Moldova", match="folded",
                   article_trim=r"\s+District$",
-                  fields=(MD_ETHNICITY,)),
+                  titles=MD_TITLES, absent=MD_ABSENT,
+                  fields=MD_FIELDS),
         )),
     # Serbia: ethnicity, which is what the English article of a district and
     # of a municipality carries and the only one of the three it does. The
@@ -1486,9 +1690,7 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
                   f"country's articles usually write \".\"; read as shares, "
                   f"they add to a hundred. " + remark).strip()
     if dropped:
-        remark = (f"{dropped[0]} row(s) of the table carry figures for only "
-                  f"one of the censuses it prints and are not read; what they "
-                  f"hold is inside the remainder. " + remark).strip()
+        remark = (" ".join(dropped) + " " + remark).strip()
     if borrowed:
         remark = ("The table itself carries no reference; the citation is the "
                   "one the article's infobox gives for the same census. "
@@ -1597,7 +1799,23 @@ def run(country: Country) -> list[dict[str, Any]]:
                             f"which is where this country publishes its "
                             f"compositions, does not exist")
                 else:
+                    # Two specs for one field are two shapes the same table
+                    # takes, not two readings of it. A country whose units
+                    # are not all the same kind of unit needs this: Moldova
+                    # publishes its capital's mother tongues under "First
+                    # language", with a column per census since 1989, and
+                    # Gagauzia's under "Mother tongue", beside a second pair
+                    # of columns for the language spoken at home. Neither
+                    # spec can read the other's table and both must be
+                    # tried, so the first that reads wins and the rest are
+                    # not attempted. What a field that reads nothing says is
+                    # the first spec's refusal, because the first spec is the
+                    # shape the country's articles usually take.
+                    taken: set[str] = set()
+                    failed: set[str] = set()
                     for spec in level.fields:
+                        if spec.field in taken:
+                            continue
                         reading, why = read_field(wikitext, spec, country,
                                                   resolved, level.lang)
                         if reading and not fits_population(reading, unit, name, spec):
@@ -1606,13 +1824,16 @@ def run(country: Country) -> list[dict[str, Any]]:
                                 "this shape does not have, so the article is "
                                 "about some other place; it is not read")
                         if reading is None:
-                            fields[spec.field] = gap(NOT_AVAILABLE, why)
-                            log(f"    {name}: {spec.field}: {why}")
+                            if spec.field not in failed:
+                                failed.add(spec.field)
+                                fields[spec.field] = gap(NOT_AVAILABLE, why)
+                                log(f"    {name}: {spec.field}: {why}")
                             continue
                         got = field_fields(reading, spec, country, resolved,
                                            level.lang)
                         sources.append(got.pop(f"{spec.field}_source"))
                         fields.update(got)
+                        taken.add(spec.field)
                         read[spec.field] += 1
             parent = (country.iso3 if level.level == "admin1"
                       else parents.get(unit.get("parent"), ""))
@@ -1644,11 +1865,18 @@ def fits_population(reading: dict[str, Any], unit: dict[str, Any], name: str,
     carries for the shape.
     """
     counted = sum(v for v in reading["counts"].values())
-    if counted <= 101:
-        # Percentages, which have nothing to weigh. 101 and not 100 because
-        # a table of shares that adds to exactly 100 adds, in binary, to
-        # 100.00000000000001 -- which refused two Slovak regions whose
-        # figures were right.
+    if counted <= BOUNDS[1]:
+        # Percentages, which have nothing to weigh.
+        #
+        # The bound is the same one that decides whether a set of figures is
+        # a composition at all, and it has to be: shares_of has already run
+        # by the time this is asked, so anything still here added to between
+        # 90 and 103 and is a set of shares by that decision. A fixed 101
+        # said otherwise about Briceni, whose ethnic table adds to 101.31 as
+        # printed -- nine percentages, weighed against a district of 46,894
+        # people and refused for being 0.2% of it. No unit at either level
+        # of this map has a hundred and three inhabitants, so nothing that
+        # really is a count can slip through here.
         return True
     population = (unit.get("population") or {})
     total = population.get("value") if isinstance(population, dict) else None

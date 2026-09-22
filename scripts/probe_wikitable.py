@@ -35,6 +35,15 @@ API = "https://{lang}.wikipedia.org/w/api.php"
 LINK = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]*))?\]\]")
 REF = re.compile(r"<ref[^>]*/>|<ref[^>]*>.*?</ref>", re.S)
 TEMPLATE = re.compile(r"\{\{[^{}]*\}\}")
+# A footnote is not part of the cell's text. Every other template is
+# collapsed to whatever follows its last "|", which is right for {{lang}}
+# and {{nowrap}} and wrong for this one: Taraclia's ethnic table labels a
+# row "Moldovans{{efn|...an [[...|ongoing controversy]] regarding the ethnic
+# identification of...}}", and collapsing that left the label reading
+# "Moldovansongoing controversy]] regarding the ethnic identification of" --
+# a label no reader has an entry for, which refused the whole table.
+FOOTNOTE = re.compile(r"\{\{\s*(?:efn|sfn|refn|notetag|note label|ref label)\b"
+                      r"[^{}]*\}\}", re.I)
 TAG = re.compile(r"<[^>]+>")
 ATTR = re.compile(r'^[^|]*(?:style|rowspan|colspan|scope|align|width|bgcolor|class)="[^"]*"[^|]*\|')
 
@@ -42,6 +51,10 @@ ATTR = re.compile(r'^[^|]*(?:style|rowspan|colspan|scope|align|width|bgcolor|cla
 def plain(cell: str) -> str:
     cell = REF.sub("", cell)
     for _ in range(3):
+        # Before the collapse below, and inside the loop: a footnote holding
+        # a template of its own only looks like a footnote once that inner
+        # template is gone.
+        cell = FOOTNOTE.sub("", cell)
         cell = TEMPLATE.sub(lambda m: m.group(0)[2:-2].split("|")[-1], cell)
     cell = LINK.sub(lambda m: m.group(2) if m.group(2) is not None else m.group(1), cell)
     cell = TAG.sub(" ", cell).replace("'''", "").replace("''", "")
