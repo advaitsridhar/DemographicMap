@@ -1038,6 +1038,17 @@ PARENT: dict[str, dict[str, str]] = {
         "Ahmadiyya": "Islam",
         "Atheism": "No religion",
         "Agnosticism": "No religion",
+        # Moldova's 2024 census prints four irreligious answers side by side:
+        # atheists, agnostics, free thinkers and the irreligious. Read as four
+        # siblings they are four leaves; read with the fourth mapped onto "No
+        # religion" itself, Basarabeasca named a parent and two of its children
+        # in one table and the build stopped, which is the guard doing its job
+        # -- a unit counted once under "No religion" for its own row and again
+        # for each child would be counted three times over. So the fourth
+        # answer is its own leaf, and free thinkers, who were outside the tree
+        # entirely and so rolled up to nothing, join it.
+        "Irreligious": "No religion",
+        "Freethinker": "No religion",
     },
     # Genealogical classification, as the standard references give it. A
     # family is one hue on the map and closely related languages are shades of

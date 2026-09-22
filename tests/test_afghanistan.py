@@ -332,3 +332,60 @@ class TheAliasesNameShapesThatExist(unittest.TestCase):
         clashes = {k: v for k, v in per.items() if len(v) > 1}
         self.assertEqual({}, clashes,
                          "two article names aliased onto one shape")
+
+
+class TheProvinceTableIsSourcesNotACensus(unittest.TestCase):
+    """Afghanistan has never counted its people, so a province article
+    tabulates what a dozen bodies each estimated, one row per source.
+    Every string here is Balkh's, as the article prints it.
+    """
+
+    HEAD = ["Ethnicity", "Tajik/ Farsiwan", "Hazara", "Arab", "Pashtun",
+            "Turkmen", "Uzbek", "Others", "Sources"]
+
+    def test_the_header_names_its_group_columns(self) -> None:
+        cols = a.group_columns(self.HEAD)
+        self.assertEqual(cols[1], "Tajik", "a slashed column is one people")
+        self.assertEqual([cols[i] for i in sorted(cols)],
+                         ["Tajik", "Hazara", "Arab", "Pashtun", "Turkmen",
+                          "Uzbek", "Other"])
+        self.assertNotIn(0, cols, "'Ethnicity' is a label, not a group")
+        self.assertNotIn(8, cols, "'Sources' is a label, not a group")
+
+    def test_a_whole_row_is_read_newest_first(self) -> None:
+        rows = a.source_rows([self.HEAD,
+            ["2011 USA", "50%", "12%", "7%", "11%", "10%", "10%", "0%", "-"],
+            ["2018 UN", "46%", "12%", "7%", "10%", "15%", "10%", "0%", "-"]])
+        self.assertEqual(len(rows), 2)
+        self.assertEqual(rows[0][0], 2018, "newest first")
+        self.assertEqual(rows[0][1], "UN")
+        self.assertEqual(rows[0][2][0], {"group": "Tajik", "pct": 46.0})
+
+    def test_a_row_with_a_stray_cell_is_refused_not_shifted(self) -> None:
+        # The real trap. Read positionally this hands Balkh's Tajik plurality
+        # to its Hazara minority -- the wrong answer wearing the right shape.
+        rows = a.source_rows([self.HEAD,
+            ["2018 UN", "", "46%", "12%", "7%", "10%", "15%", "10%", "-"]])
+        self.assertEqual(rows, [], "a row that does not line up is not read")
+
+    def test_a_range_is_refused(self) -> None:
+        rows = a.source_rows([self.HEAD,
+            ["2004-2021", "<=46%", "<=12%", "<=7%", "10 - 27%", "12 - 15%",
+             "10 - 11%", "0%", "-"]])
+        self.assertEqual(rows, [], "which end of a range is the answer")
+
+    def test_a_colspan_row_is_refused(self) -> None:
+        rows = a.source_rows([self.HEAD,
+            ["2015 NPS", "colspan=3| 50%", "27%", "11.9%", "10.7%", "-",
+             "-", "-", "-"]])
+        self.assertEqual(rows, [], "one value covering three groups")
+
+    def test_a_word_is_not_a_number(self) -> None:
+        rows = a.source_rows([self.HEAD,
+            ["2011 UCD", "majority", "minority", "-", "minority", "-", "-",
+             "-", "-"]])
+        self.assertEqual(rows, [])
+
+    def test_a_header_naming_too_few_groups_reads_nothing(self) -> None:
+        self.assertEqual(a.source_rows([["Period", "Sources"],
+                                        ["2018 UN", "46%"]]), [])

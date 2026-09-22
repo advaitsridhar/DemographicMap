@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT))
 
+import canonical_groups  # noqa: E402
 from scripts.fetch_census import europe_wiki as m  # noqa: E402
 
 CITE = ('<ref>[https://census2011.statistics.sk/tabulky.html '
@@ -665,3 +666,496 @@ class ACitationTheInfoboxGivesAndTheTableDoesNot(unittest.TestCase):
             "Cahul District", "en")
         note = " ".join(str(v) for v in got.values())
         self.assertNotIn("infobox", note)
+
+
+# Every string below is Moldova's own, as the runner's probe printed it from
+# the English Wikipedia on 22 September 2026: the capital's three tables, the
+# autonomous unit's three, Taraclia's two and Briceni's one. They are cut to
+# the rows each test is about and nothing in them is retyped.
+MD_CITE = ('<ref name=census24>[https://statistica.gov.md/ro/'
+           'rezultatele-finale-ale-recensamantului-populatiei-si-locuintelor-'
+           '2024-caracteris-10121_62043.html National Bureau of Statistics: '
+           'Final results of the Census 2024]</ref>\n')
+
+CHISINAU_RELIGION = """== Religion ==
+""" + MD_CITE + """{| class="wikitable"
+! Religious group !! colspan=2 | 2024
+|-
+! !! Number !! %
+|-
+| Eastern Orthodoxy || 665,659 || 92.44
+|-
+| Baptist || 4,705 || 0.65
+|-
+| Jehovah's Witnesses || 3,868 || 0.54
+|-
+| Evangelical || 1,864 || 0.26
+|-
+| Catholic || 1,463 || 0.20
+|-
+| Pentecostal || 1,458 || 0.20
+|-
+| Other Christians || 1,161 || 0.16
+|-
+! Christianity (total) !! 680,178 !! 94.45
+|-
+| Islam || 2,182 || 0.30
+|-
+| Other religions || 3,164 || 0.44
+|-
+| Agnostic / Atheist || 13,409 || 1.86
+|-
+| No religion || 12,377 || 1.72
+|-
+| Undeclared || 8,818 || 1.22
+|-
+! Total !! 720,128 !!
+|}
+"""
+
+GAGAUZIA_RELIGION = """== Religion ==
+""" + MD_CITE + """{| class="wikitable"
+! Religion !! 2014 !! 2024
+|-
+! !! % !! %
+|-
+| Christians || 99.4 || 99.1
+|-
+| – Orthodox Christians || 97.2 || 95.9
+|-
+| – Other Christians || 2.2 || 3.2
+|-
+| Other religion || 0.5 || 0.3
+|-
+| Atheism and irreligion || 0.1 || 0.5
+|}
+"""
+
+TARACLIA_RELIGION = """== Religion ==
+""" + MD_CITE + """{| class="wikitable"
+! Religion !! colspan=2|2004 !! colspan=2|2014 !! colspan=2|2024
+|-
+! !! Number !! % !! Number !! % !! Number !! %
+|-
+| Christians || 41,704 || 96.64 || 35,209 || 94.67 || 26,010 || 98.38
+|-
+| – Orthodox Christians || 40,701 || 94.31 || 34,480 || 92.72 || 25,160 || 95.17
+|-
+| – Baptists || 573 || 1.33 || 540 || 1.45 || 596 || 2.25
+|-
+| – Seventh-day Adventist || 84 || 0.19 || 15 || 0.04 || 30 || 0.11
+|-
+| – Penticostal || 110 || 0.25 || 73 || 0.2 || 35 || 0.13
+|-
+| – Old Believers || 3 || 0.01 || 0 || 0 || 3 || 0.01
+|-
+| – Evangelic Christian || 157 || 0.36 || 47 || 0.13 || 181 || 0.68
+|-
+| – Lutheran || - || - || 44 || 0.13 || - || -
+|-
+| – Roman Catholic || 14 || 0.03 || 10 || 0.02 || 5 || 0.01
+|-
+| – Presbyterian || 62 || 0.14 || - || - || - || -
+|-
+| Jehovah's Witnesses || - || - || 112 || 0.3 || 99 || 0.37
+|-
+| Atheist || 141 || 0.33 || 16 || 0.04 || 37 || 0.14
+|-
+| Judaism || - || - || 1 || 0.01 || - || -
+|-
+| Muslim || - || - || 21 || 0.5 || 17 || 0.06
+|-
+| Other || 802 || 1.86 || 5 || 0.01 || 156 || 0.59
+|-
+| Not Declared || 507 || 1.17 || 1,993 || 5.36 || 116 || 0.43
+|-
+! Total || 43,154 || 100 || 37,188 || 100 || 26,435 || 100
+|}
+"""
+
+TARACLIA_ETHNIC = """== Demographics ==
+""" + MD_CITE + """{| class="wikitable"
+! Ethnicity !! colspan=2|2004 !! colspan=2|2014 !! colspan=2|2024
+|-
+| Bulgarians || 28,293 || 65.6 || 24,581 || 66.1 || 16,984 || 64.2
+|-
+| Moldovans{{efn|There is an [[Controversy over ethnic and linguistic identity in Moldova|ongoing controversy]] regarding the ethnic identification of Moldovans}} || 5,980 || 13.9 || 5,206 || 14.0 || 3,901 || 14.8
+|-
+| Gagauz || 3,587 || 8.3 || 3,346 || 9.0 || 2,730 || 10.3
+|-
+| Ukrainians || 2,646 || 6.1 || 1,934 || 5.2 || 1,305 || 4.9
+|-
+| Russians || 2,139 || 5.0 || 1,673 || 4.5 || 1,092 || 4.1
+|-
+| Romani || - || - || 186 || 0.5 || 152 || 0.6
+|-
+| Romanians || 29 || 0.1 || 74 || 0.2 || 71 || 0.3
+|-
+| Other || 480 || 1.1 || - || - || 140 || 0.5
+|-
+| Not Declared || 0 || 0 || 186 || 0.5 || 60 || 0.2
+|-
+! Total || 43,154 || 100 || 37,188 || 100 || 26,435 || 100
+|}
+"""
+
+CHISINAU_LANGUAGE = """== Languages ==
+""" + MD_CITE + """{| class="wikitable"
+! First language (%) !! 1989 !! 2004 !! 2014 !! Speakers 2024 !! 2024
+|-
+| Romanian * || – || 37.06 || 43.78 || 343,146 || 47.65
+|-
+| Moldovan * || 46.15 || 28.56 || 29.55 || 206,594 || 28.69
+|-
+| Russian || 44.73 || 33.50 || 25.64 || 141,807 || 19.70
+|-
+| Other languages || 9.12 || 0.88 || 1.03 || 28,581 || 3.97
+|}
+"""
+
+GAGAUZIA_LANGUAGE = """== Languages ==
+""" + MD_CITE + """{| class="wikitable"
+! !! colspan=2 | Mother tongue !! colspan=2 | Spoken at home
+|-
+! Language !! 2014 !! 2024 !! 2014 !! 2024
+|-
+! !! % !! % !! % !! %
+|-
+| Gagauz || 79.5 || 77.2 || 54.4 || 48.8
+|-
+| Russian || 10.4 || 12.1 || 42.5 || 47.3
+|-
+| Moldovan (Romanian) || 3.9 || 4.7 || 1.1 || 1.7
+|-
+| Bulgarian || 4.2 || 4.2 || 1.7 || 1.5
+|-
+| Ukrainian || 1.4 || 1.2 || 0.2 || 0.4
+|-
+| Others || 0.6 || 0.6 || 0.2 || 0.3
+|}
+"""
+
+BRICENI_RELIGION = """== Religion ==
+""" + MD_CITE + """{| class="wikitable"
+! Religion !! Adherents (2004) !! % of total (2004) !! Adherents (2014) !! % of total (2014)
+|-
+| Christianity: (total) || 65,431 || 83.82% || ||
+|-
+| Orthodox Christians || 62,181 || 79.69% || 49,958 ||
+|-
+| Protestants: (total) || 3,218 || 4.12% || ||
+|-
+| Other religions || 6,184 || 7.92% || 93 ||
+|-
+| No religion || 3,269 || 4.18% || − || −
+|}
+"""
+
+MDA = m.SPECS["MDA"]
+
+
+class AParentAboveItsParts(unittest.TestCase):
+    """A religion table that prints a subtotal over the rows it sums.
+
+    All three of Moldova's readable religion tables do it, in two spellings:
+    Chisinau writes "Christianity (total)" above Baptist, Evangelical,
+    Catholic and the rest, and Gagauzia and Taraclia write "Christians" above
+    "– Orthodox Christians" and "– Other Christians", the dash marking the
+    child. Reading the parent as well as its parts counts those people twice:
+    Gagauzia's table would add to 199.0%, and shares_of refuses that, so the
+    unit is lost over it rather than published wrong. These tests hold the
+    real rows.
+    """
+
+    def test_the_capital_s_subtotal_is_not_a_group(self):
+        got, why = m.read_field(CHISINAU_RELIGION, m.MD_RELIGION, MDA,
+                                "Chișinău", "en")
+        self.assertEqual(why, "")
+        self.assertNotIn(94.45, [r["pct"] for r in got["rows"]])
+        self.assertAlmostEqual(sum(got["counts"].values()), 99.99, places=2)
+        self.assertEqual(got["rows"][0], {"group": "Orthodox", "pct": 92.44})
+        self.assertEqual(got["year"], 2024)
+
+    def test_the_dashed_rows_are_read_and_their_parent_is_not(self):
+        got, why = m.read_field(GAGAUZIA_RELIGION, m.MD_RELIGION, MDA,
+                                "Gagauzia", "en")
+        self.assertEqual(why, "")
+        self.assertEqual({r["group"]: r["pct"] for r in got["rows"]},
+                         {"Orthodox": 95.9, "Other Christian": 3.2,
+                          "No religion": 0.5, "Other religion": 0.3})
+        self.assertEqual(got["year"], 2024)
+
+    def test_a_parent_read_with_its_parts_would_not_be_a_composition(self):
+        # What the skip is for, said in figures: with "Christians" left in,
+        # the table adds to 199% and nothing is published for the unit.
+        loose = m.Composition(
+            field="religion", section=r"religio", header=r"religio",
+            value=-1, columns=True,
+            labels={**m.MD_RELIGION_LABELS, "christians": "Other Christian"},
+            skip=m.TOTALS + m.MD_HEADER_ROWS)
+        counts, _, why = m.read_rows(m.tables(GAGAUZIA_RELIGION)[0], loose, ".")
+        self.assertEqual(why, "")
+        self.assertAlmostEqual(sum(counts.values()), 199.0, places=2)
+        rows, bad, _ = m.shares_of(counts)
+        self.assertEqual(rows, [])
+        self.assertIn("199.00", bad)
+        got, _ = m.read_field(GAGAUZIA_RELIGION, loose, MDA, "Gagauzia", "en")
+        self.assertIsNone(got)
+
+
+class AColumnACensusHasNoFigureIn(unittest.TestCase):
+    """Taraclia prints three censuses side by side and writes "-" where a
+    faith had nobody, so the last *figure* in a row and the last *column* of
+    it are different things."""
+
+    def test_the_column_is_read_and_not_the_last_figure(self):
+        got, why = m.read_field(TARACLIA_RELIGION, m.MD_RELIGION, MDA,
+                                "Taraclia District", "en")
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        # 0.13 and 0.14 are the Lutherans' 2014 and the Presbyterians' 2004,
+        # which a reader counting figures would have published as 2024.
+        self.assertNotIn("Lutheran", shares)
+        self.assertNotIn("Presbyterian", shares)
+        self.assertEqual(shares["Orthodox"], 95.17)
+        # And the rows with a 2024 figure and no 2004 one are kept, which a
+        # width check would have thrown away with the others.
+        self.assertEqual(shares["Jehovah's Witnesses"], 0.37)
+        self.assertEqual(shares["Islam"], 0.06)
+        self.assertEqual(got["year"], 2024)
+        self.assertIn("3 row(s) of the table print nothing in the column read",
+                      got["remark"])
+
+    def test_a_column_empty_in_every_row_says_that(self):
+        got, why = m.read_field(BRICENI_RELIGION, m.MD_RELIGION, MDA,
+                                "Briceni District", "en")
+        self.assertIsNone(got)
+        self.assertIn("empty in all 3 of them", why)
+
+
+class AFootnoteIsNotPartOfTheLabel(unittest.TestCase):
+    """Taraclia's ethnic table hangs an {{efn}} off the word "Moldovans".
+
+    Collapsed the way every other template is -- to whatever follows its last
+    pipe -- that left the row labelled "Moldovansongoing controversy]]
+    regarding the ethnic identification of Moldovans", which is no label this
+    reader has an entry for, and the whole table was refused for it.
+    """
+
+    def test_the_row_is_the_people_and_not_the_footnote(self):
+        got, why = m.read_field(TARACLIA_ETHNIC, m.MD_ETHNICITY, MDA,
+                                "Taraclia District", "en")
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Moldovan"], 14.8)
+        self.assertEqual(shares["Bulgarian"], 64.2)
+        self.assertEqual(got["year"], 2024)
+
+
+class TwoShapesOfTheSameQuestion(unittest.TestCase):
+    """Moldova asks about language twice and publishes it two ways."""
+
+    def test_the_capital_s_table_is_read_by_the_first_spec(self):
+        got, why = m.read_field(CHISINAU_LANGUAGE, m.MD_LANGUAGE_FIRST, MDA,
+                                "Chișinău", "en")
+        self.assertEqual(why, "")
+        self.assertEqual({r["group"]: r["pct"] for r in got["rows"]},
+                         {"Romanian": 47.65, "Moldovan": 28.69,
+                          "Russian": 19.70, "Other": 3.97})
+        self.assertEqual(got["year"], 2024)
+
+    def test_the_first_spec_does_not_read_the_other_table(self):
+        got, why = m.read_field(GAGAUZIA_LANGUAGE, m.MD_LANGUAGE_FIRST, MDA,
+                                "Gagauzia", "en")
+        self.assertIsNone(got)
+        self.assertIn("header this reader does not know", why)
+
+    def test_the_mother_tongue_column_is_named_not_counted_from_the_end(self):
+        # The last column of Gagauzia's table is the language spoken at home,
+        # which is a different question: Gagauz is 77.2% of mother tongues
+        # and 48.8% of homes.
+        got, why = m.read_field(GAGAUZIA_LANGUAGE, m.MD_LANGUAGE_MOTHER, MDA,
+                                "Gagauzia", "en")
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Gagauz"], 77.2)
+        self.assertEqual(shares["Moldovan (Romanian)"], 4.7)
+        self.assertNotIn(48.8, shares.values())
+        self.assertEqual(got["year"], 2024)
+
+
+class AUnitThatIsNotInTheCategory(unittest.TestCase):
+    """Five of Moldova's thirty-seven units are not districts.
+
+    The reader builds its candidates from "Category:Districts of Moldova", so
+    the capital, the second city, Gagauzia, Bender and Transnistria were
+    never candidates and every one of them said the same thing: "is none of
+    the names on the country's own list of units". Three of them have an
+    article with a composition in it, and naming it is all it takes; the
+    other two are refused in writing, because what their articles publish is
+    Transnistria's own counting and not the census this reader names.
+    """
+
+    def setUp(self):
+        self.members = m.category_members
+        m.category_members = lambda category, lang: ["Taraclia District",
+                                                     "Briceni District"]
+
+    def tearDown(self):
+        m.category_members = self.members
+
+    def titles(self):
+        return m.article_titles(
+            MDA, MDA.levels[0],
+            ["Taraclia", "Briceni", "Chisinau", "Balti", "Gagauzia",
+             "Bender", "Transnistria"])
+
+    def test_the_capital_is_reached_by_name(self):
+        titles, _ = self.titles()
+        self.assertEqual(titles["Chisinau"], "Chișinău")
+        self.assertEqual(titles["Gagauzia"], "Gagauzia")
+        self.assertEqual(titles["Balti"], "Bălți")
+
+    def test_the_districts_still_come_from_the_category(self):
+        titles, _ = self.titles()
+        self.assertEqual(titles["Taraclia"], "Taraclia District")
+        self.assertEqual(titles["Briceni"], "Briceni District")
+
+    def test_what_is_refused_says_whose_census_it_would_have_been(self):
+        titles, refused = self.titles()
+        self.assertNotIn("Bender", titles)
+        self.assertNotIn("Transnistria", titles)
+        for name in ("Bender", "Transnistria"):
+            self.assertIn("2024 Moldovan census did not count it",
+                          refused[name])
+        self.assertIn("2015", refused["Transnistria"])
+        self.assertIn("0-5", refused["Bender"])
+
+
+class ATableOfSharesIsNeverAPopulation(unittest.TestCase):
+    """Briceni's ethnic table adds to 101.31% as printed.
+
+    Above 101 the population guard took it for a table of counts and weighed
+    nine percentages against a district of 46,894 people, which is 0.2% of
+    it, so the district was refused at admin1 -- and read at admin2, where
+    this map carries no population to weigh it against. The bound is now the
+    one that decides what a composition is at all.
+    """
+
+    def test_a_hundred_and_one_point_three_is_still_shares(self):
+        self.assertTrue(m.fits_population(
+            {"counts": {"Moldovan": 72.6, "Ukrainian": 22.5, "Russian": 2.3,
+                        "Romanian": 2.0, "Not declared": 1.21, "Other": 0.3,
+                        "Romani": 0.2, "Bulgarian": 0.1, "Gagauz": 0.1}},
+            {"population": {"value": 46894}}, "Briceni", m.MD_ETHNICITY))
+
+    def test_a_table_of_counts_is_still_weighed(self):
+        self.assertFalse(m.fits_population(
+            {"counts": {"a": 9000.0, "b": 500.0}},
+            {"population": {"value": 101100}}, "T", m.MD_ETHNICITY))
+
+
+BASARABEASCA_RELIGION = """== Religion ==
+""" + MD_CITE + """{| class="wikitable"
+! Religion !! Number !! %
+|-
+| Christians || 14,717 || 98.7
+|-
+| Orthodox Christians || 14,200 || 95.2
+|-
+| Baptists || 230 || 1.5
+|-
+| Adventists || 152 || 1.0
+|-
+| Pentecostals || 66 || 0.4
+|-
+| Evangelicals || 30 || 0.2
+|-
+| Jehovah's Witnesses || 27 || 0.2
+|-
+| Catholics || 11 || 0.1
+|-
+| Old Believers || 1 || 0.0
+|-
+| Muslims || 7 || 0.0
+|-
+| Free thinkers || 2 || 0.0
+|-
+| Agnostics || 5 || 0.0
+|-
+| Atheists || 31 || 0.2
+|-
+| Irreligious || 90 || 0.6
+|-
+| Other || 6 || 0.0
+|-
+| Undeclared || 56 || 0.4
+|-
+! Total || 14,914 || 100
+|}
+"""
+
+
+class AParentWithNoDashToMarkItsChildren(unittest.TestCase):
+    """Basarabeasca is the third spelling of the same hazard, and the one
+    with nothing in the markup to give it away: "Christians" 98.7 sits above
+    eight rows that add to 98.6, and not one of them is marked as a child.
+
+    It is also the district that made this reader's own labels visible. The
+    run refused the table on seven words -- Baptists, Adventists,
+    Pentecostals, Evangelicals, Old Believers, Free thinkers, Irreligious --
+    which are the same faiths Chisinau and Taraclia name in the singular.
+    """
+
+    def test_the_parent_is_skipped_and_the_plurals_are_read(self):
+        got, why = m.read_field(BASARABEASCA_RELIGION, m.MD_RELIGION, MDA,
+                                "Basarabeasca District", "en")
+        self.assertEqual(why, "")
+        self.assertAlmostEqual(sum(got["counts"].values()), 99.8, places=2)
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Orthodox"], 95.2)
+        self.assertEqual(shares["Adventist"], 1.0)
+        self.assertEqual(shares["Old Believer"], 0.0)
+        self.assertNotIn(98.7, shares.values())
+
+    def test_the_census_s_own_four_kinds_of_unbelief_stay_apart(self):
+        # Atheists, agnostics, free thinkers and the irreligious are four
+        # rows of one table, so the census means four different answers.
+        # None of them is folded into another here.
+        got, _ = m.read_field(BASARABEASCA_RELIGION, m.MD_RELIGION, MDA,
+                              "Basarabeasca District", "en")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Atheism"], 0.2)
+        self.assertEqual(shares["Agnosticism"], 0.0)
+        self.assertEqual(shares["Freethinker"], 0.0)
+        self.assertEqual(shares["Irreligious"], 0.6)
+
+    def test_chisinau_s_two_irreligious_rows_are_not_one_inside_the_other(self):
+        # "Agnostic / atheist" is the two leaves welded into one figure, so it
+        # stays at the level that holds both; the row beneath it, written "No
+        # religion" in English, is the census's fourth answer and not that
+        # level. Written as the same canonical name, the pair stopped a build
+        # that had already produced every site file.
+        labels = m.MD_RELIGION_LABELS
+        self.assertEqual(labels["no religion"], "Irreligious")
+        self.assertEqual(labels["agnostic / atheist"], "Agnostic or atheist")
+        rows = [{"group": labels["agnostic / atheist"], "pct": 3.6},
+                {"group": labels["no religion"], "pct": 1.0}]
+        self.assertEqual(canonical_groups.check_no_double_counting(rows, "religion"), [])
+
+    def test_a_balkan_table_keeps_the_plain_category(self):
+        # The override is Moldova's. Serbia and Bulgaria read a table with no
+        # atheist row beside it, where "no religion" is the whole answer.
+        self.assertEqual(m.BALKAN_RELIGION["no religion"], "No religion")
+
+    def test_none_of_the_four_is_the_category_the_others_sit_in(self):
+        # The fourth used to be written "No religion", which is the canonical
+        # parent of the first two. A record naming a parent and its children
+        # is counted once for itself and again for each child, so the build
+        # stops on it -- as it did, after every site file had been written.
+        got, _ = m.read_field(BASARABEASCA_RELIGION, m.MD_RELIGION, MDA,
+                              "Basarabeasca District", "en")
+        named = {r["group"] for r in got["rows"]}
+        parents = {p for g in named
+                   for p in canonical_groups.ancestry("religion", g)[1:]}
+        self.assertEqual(named & parents, set())

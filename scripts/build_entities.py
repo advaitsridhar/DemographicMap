@@ -154,6 +154,17 @@ ADAPTER_FILES = [
     # for the Netherlands and this must not overwrite that.
     "netherlands_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
+    # The head count a first-level unit's own Wikipedia article prints,
+    # where nothing on this map has one. Directly under the Wikidata sweep
+    # because it answers the same question from the same kind of source and
+    # exists only for the units that sweep missed: 610 of 3,224 first-level
+    # shapes had no population at all on the build of 22 September 2026 --
+    # every Maltese locality, every Jamaican parish, every Zambian province,
+    # every Saudi region -- because admin-1 population had only ever been
+    # fetched from Wikidata's P1082 and a unit with no P1082 statement came
+    # out blank. Every census file below overwrites it, which is the point
+    # of the position: it is a floor under the field and never a ceiling.
+    "wiki_population_admin1.json",
     # OCHA's Common Operational Dataset -- population statistics, the district
     # populations of 52 countries by P-code. It carries no composition at all,
     # only a head count, and it sits here because a head count from a national
