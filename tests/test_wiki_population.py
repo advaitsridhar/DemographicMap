@@ -476,6 +476,16 @@ class WhatThePageShowsAndWhereThePlaceIs(unittest.TestCase):
                 "| population_as_of = 2021\n}}\n")
         self.assertEqual(wp.read(text)[:2], (1746, 2021))
 
+    def test_a_parameter_run_on_after_a_comment_is_read(self):
+        # Tanzania's Iringa Region, verbatim but for the dashes.
+        text = ("{{Infobox settlement\n| name = Iringa Region\n"
+                "| elevation_max_point = Luhombero <!-- Population ------>"
+                "| population_total = 1,192,728\n| population_as_of = 2022\n"
+                "| area_note = {{convert|1|km<!-- x -->|mi}}\n}}\n")
+        self.assertEqual(wp.read(text), (1192728, 2022, ""))
+        # A comment inside a template, before an unnamed argument, is not split.
+        self.assertIn("|mi}}", wp.params(text)["area_note"])
+
     def test_a_region_cannot_be_given_to_a_city_shape_it_could_not_fit_in(self):
         # Minsk Region, offered for the shape Belarus's boundary file draws
         # as "Minsk City": its coordinates are south of the city's box and

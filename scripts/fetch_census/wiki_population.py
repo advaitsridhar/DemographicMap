@@ -620,6 +620,11 @@ def unclosed(value: str) -> str:
 
 
 INFOBOX = re.compile(r"\{\{\s*infobox", re.I)
+# A section comment with the next parameter run on after it. Tanzania's
+# region articles write "| elevation_max_point = Luhombero <!-- Population
+# ---->| population_total = 1,192,728" on one line, and a reader that takes
+# a parameter to start a line read nine regions as having no population.
+RUN_ON = re.compile(r"<!--.*?-->[ \t]*(?=\|[ \t]*[\w ]+?[ \t]*=)", re.S)
 
 
 def params(wikitext: str) -> dict[str, str]:
@@ -633,6 +638,7 @@ def params(wikitext: str) -> dict[str, str]:
     """
     out: dict[str, str] = {}
     lines: list[str] = []
+    wikitext = RUN_ON.sub("\n", wikitext)
     for m in INFOBOX.finditer(wikitext):
         lines += infobox_lines(wikitext[m.start():])
     if not lines:
