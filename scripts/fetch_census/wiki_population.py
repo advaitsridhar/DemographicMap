@@ -624,7 +624,10 @@ INFOBOX = re.compile(r"\{\{\s*infobox", re.I)
 # region articles write "| elevation_max_point = Luhombero <!-- Population
 # ---->| population_total = 1,192,728" on one line, and a reader that takes
 # a parameter to start a line read nine regions as having no population.
-RUN_ON = re.compile(r"<!--.*?-->[ \t]*(?=\|[ \t]*[\w ]+?[ \t]*=)", re.S)
+# One comment only: a match allowed to run on to a later comment's close
+# swallowed every parameter between the two, which is how Nakhchivan's
+# infobox lost its population to this line.
+RUN_ON = re.compile(r"<!--(?:(?!-->).)*-->[ \t]*(?=\|[ \t]*[\w ]+?[ \t]*=)", re.S)
 
 
 def params(wikitext: str) -> dict[str, str]:

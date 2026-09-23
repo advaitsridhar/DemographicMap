@@ -486,6 +486,15 @@ class WhatThePageShowsAndWhereThePlaceIs(unittest.TestCase):
         # A comment inside a template, before an unnamed argument, is not split.
         self.assertIn("|mi}}", wp.params(text)["area_note"])
 
+    def test_a_split_never_reaches_across_to_a_later_comment(self):
+        # Nakhchivan's: a comment with text after it, parameters, then a
+        # comment that does run on. Only the second is split.
+        text = ("{{Infobox settlement\n| name = N <!-- a --> text\n"
+                "| population_census = 458,910\n| population_census_year = 2019\n"
+                "| area_km2 = 5,502 <!-- b -->| demonym = x\n}}\n")
+        self.assertEqual(wp.read(text), (458910, 2019, ""))
+        self.assertEqual(wp.params(text)["demonym"].strip(), "x")
+
     def test_a_region_cannot_be_given_to_a_city_shape_it_could_not_fit_in(self):
         # Minsk Region, offered for the shape Belarus's boundary file draws
         # as "Minsk City": its coordinates are south of the city's box and
