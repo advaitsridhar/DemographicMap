@@ -34,6 +34,7 @@ from __future__ import annotations
 import io
 import re
 import sys
+import time
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
@@ -271,7 +272,16 @@ def seychelles(drawn: dict[str, str]) -> list[dict[str, Any]]:
     # refuses this runner.
     from probe_pdf import fetch_blob
 
-    blob = fetch_blob(NBS_ARCHIVED)
+    for wait in (30, 90, None):
+        try:
+            blob = fetch_blob(NBS_ARCHIVED)
+            break
+        except OSError as exc:  # the archive refuses or times out now and then
+            if wait is None:
+                log(f"  SYC: the archive did not answer ({exc}); nothing written")
+                return []
+            log(f"  SYC: the archive did not answer ({exc}); waiting {wait}s")
+            time.sleep(wait)
     text = "\n".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(blob)).pages)
     figures, why = seychelles_rows(text)
     if why:
@@ -305,7 +315,26 @@ def drawn(iso3: str) -> dict[str, str]:
             for u in read_json(ROOT / "site" / "data" / "admin1" / f"{iso3}.json", [])}
 
 
+def dump() -> None:
+    """Print every table citypopulation.de's page parses into, for a reader to see."""
+    html = http_get(SOMALIA_URL)
+    assert isinstance(html, str)
+    parser = Tables()
+    parser.feed(html)
+    log(f"{len(html):,} characters, {html.count('<table')} '<table' tags, "
+        f"{len(parser.tables)} tables parsed")
+    for n, table in enumerate(parser.tables):
+        log(f"-- table {n}: {len(table)} rows")
+        for row in table[:6]:
+            log("   " + " | ".join(row)[:300])
+    at = html.find("Bakool")
+    log("around 'Bakool': " + " ".join(html[max(0, at - 1500):at + 400].split()))
+
+
 def main() -> None:
+    if "--dump" in sys.argv:
+        dump()
+        return
     rows = somalia(drawn("SOM")) + seychelles(drawn("SYC"))
     write_json(PROCESSED / OUT, rows)
     log(f"wrote {len(rows)} records to {OUT}")
