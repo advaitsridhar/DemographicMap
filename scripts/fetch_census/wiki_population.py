@@ -1187,7 +1187,17 @@ TITLES: dict[tuple[str, str], str | tuple[str, ...]] = {
 # populations is the population of the polygon, and nothing short of both is.
 # Shapes no article is the whole of, and why. Named so that no stage of the
 # search is left to find a part and publish it as the whole.
-UNREADABLE: dict[tuple[str, str], str] = {}
+UNREADABLE: dict[tuple[str, str], str] = {
+    # The 2022 census counted 5,383,728 people in Dar es Salaam Region, as
+    # the list of Tanzania's regions prints. The city's article prints the
+    # CIA Factbook's 7,776,000 for the urban area in 2023, and the region's
+    # article 10,599,999 for 2025: neither can be the same ground a year or
+    # three after the census, and the city's figure was on the map.
+    ("TZA", "Dar es Salaam"): ("neither article gives the region's own count: the "
+                               "city's prints the CIA Factbook's 7,776,000 for the "
+                               "urban area (2023) and the region's 10,599,999 (2025), "
+                               "where the 2022 census counted 5,383,728"),
+}
 
 COMPOSITES: dict[tuple[str, str], tuple[str, ...]] = {
     ("NER", "Tahoua/Agadez"): ("Tahoua Region", "Agadez Region"),
