@@ -227,6 +227,11 @@ ADAPTER_FILES = [
     # rows for the same units carry the refusal as a note that this file's
     # reading must replace.
     "moldova_ethnicity_gaps.json",
+    # Moldova's 2024 census annex: religion and mother tongue for the 35 units
+    # it counted. After both files above, because the districts' Wikipedia
+    # lists transcribe this same table -- with their editors' slips -- and
+    # the census's own counts are the better reading of it.
+    "moldova_census.json",
     # After Wikidata, which carries a population for North Korea's provinces
     # and for Pyongyang a 2015 estimate: this is the 2008 census's own Table 2,
     # for all 11 first-level units and all 179 counties, with the sex ratio
