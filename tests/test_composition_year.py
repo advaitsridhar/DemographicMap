@@ -119,6 +119,21 @@ UNDATED_BY_DESIGN: dict[str, dict[str, set[str] | None]] = {
             "SVK-admin2-district-of-galanta",
         },
     },
+    # Three Moldovan districts' Romanian articles, whose ethnic tables name no
+    # year and cite nothing that does. Read by the owner's decision of 22
+    # September 2026 and said to be undated, rather than dated by inference
+    # from which census their totals happen to match. Riscani's cites the
+    # 2004 census and Balti's names its column, and both are dated.
+    "moldova_ethnicity_gaps.json": {
+        "ethnicity": {
+            "MDA-gap-admin1-edinet",
+            "MDA-gap-admin1-falesti",
+            "MDA-gap-admin1-glodeni",
+            "MDA-gap-admin2-edinet",
+            "MDA-gap-admin2-falesti",
+            "MDA-gap-admin2-glodeni",
+        },
+    },
 }
 
 # The adapter now stamps the year; the committed file predates that and says
