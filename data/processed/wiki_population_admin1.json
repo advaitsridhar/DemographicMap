@@ -6560,6 +6560,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "ITA-WP-sud",
+    "level": "admin1",
+    "name": "Sud",
+    "parent": "ITA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13339994,
+      "unit": "people",
+      "year": 2026,
+      "source": "English Wikipedia, Abruzzo + Molise + Campania + Apulia + Basilicata + Calabria (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Abruzzo_%2B_Molise_%2B_Campania_%2B_Apulia_%2B_Basilicata_%2B_Calabria",
+        "year": 2026,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ITA",
+    "shape_id": "72843720B88210905209841",
+    "match_by": "shape_id"
+  },
+  {
     "id": "JAM-WP-clarendon",
     "level": "admin1",
     "name": "Clarendon",
@@ -15863,6 +15908,96 @@
     ],
     "country": "OMN",
     "shape_id": "34121849B71010913728332",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "OMN-WP-ash-sharqiyah",
+    "level": "admin1",
+    "name": "Ash Sharqiyah",
+    "parent": "OMN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 587260,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Ash Sharqiyah North Governorate + Ash Sharqiyah South Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ash_Sharqiyah_North_Governorate_%2B_Ash_Sharqiyah_South_Governorate",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "OMN",
+    "shape_id": "34121849B48568874604869",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "OMN-WP-az-zahirah",
+    "level": "admin1",
+    "name": "Az Zahirah",
+    "parent": "OMN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 383907,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Al Dhahirah Governorate + Al Buraimi Governorate + Musandam Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Al_Dhahirah_Governorate_%2B_Al_Buraimi_Governorate_%2B_Musandam_Governorate",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "OMN",
+    "shape_id": "34121849B37717587073732",
     "match_by": "shape_id"
   },
   {
