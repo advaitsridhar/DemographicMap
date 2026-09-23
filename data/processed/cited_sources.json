@@ -826,5 +826,51 @@
     "country": "SOM",
     "shape_id": "83879307B42572798770371",
     "match_by": "shape_id"
+  },
+  {
+    "id": "SYC-NBS-Outer-Islands",
+    "level": "admin1",
+    "name": "Outer Islands",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 574,
+      "unit": "people",
+      "year": 2019,
+      "source": "National Bureau of Statistics, Seychelles, mid-2019 bulletin, Table 10",
+      "note": "The bulletin's mid-2019 estimate for its 'Other Islands' row, which is this district. The Wikipedia article cites this bulletin and prints '1.032', a figure the bulletin does not give: its row reads 1,042 at the 2010 census and 574 for mid-2019."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "National Bureau of Statistics, Seychelles",
+        "url": "https://www.nbs.gov.sc/downloads/mid-2019-population-bulletin/viewdocument",
+        "year": 2019,
+        "note": "read from a transcript of the Internet Archive's copy, https://web.archive.org/web/2021id_/https://www.nbs.gov.sc/downloads/mid-2019-population-bulletin/viewdocument, made on 23 September 2026 and kept at data/raw/seychelles"
+      }
+    ],
+    "country": "SYC",
+    "shape_id": "4304713B25967812410873",
+    "match_by": "shape_id"
   }
 ]

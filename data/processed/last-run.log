@@ -17,7 +17,8 @@
   SOM Togdheer: 962,400
   SOM Woqooyi Galbeed: 1,744,400
   SYC: the archive did not answer (HTTP Error 403: Forbidden); waiting 30s
-  SYC: the archive did not answer (<urlopen error timed out>); waiting 90s
-  SYC: the archive did not answer (HTTP Error 403: Forbidden); nothing written
-  wrote data/processed/cited_sources.json (26 kB)
-wrote 18 records to cited_sources.json
+  SYC: the archive did not answer (<urlopen error [Errno 111] Connection refused>); waiting 90s
+  SYC: the archive did not answer (HTTP Error 403: Forbidden); reading the transcript of Table 10 it gave on 23 September 2026
+  SYC Outer Islands: 574 (Table 10, 'Other Islands', mid-2019)
+  wrote data/processed/cited_sources.json (27 kB)
+wrote 19 records to cited_sources.json
