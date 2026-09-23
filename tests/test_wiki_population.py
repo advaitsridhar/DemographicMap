@@ -96,8 +96,8 @@ class Numbers(unittest.TestCase):
     def test_what_it_refuses(self):
         # A dot is a thousands separator in half of Europe and a decimal point
         # in the other half, so a number carrying one is not read at all.
-        for text in ("1.727.524", "12.5", "c. 40,000", "40,000-45,000",
-                     "unknown", "", "approx 900", "1.2 million"):
+        for text in ("1.727.524", "12.5", "40,000-45,000", "50–100",
+                     "unknown", "", "1.2 million", "~1.2 million"):
             value, why = wp.number(text)
             self.assertIsNone(value, text)
             self.assertTrue(why, text)
@@ -823,3 +823,24 @@ class AFailedDeclarationIsFinal(unittest.TestCase):
     def test_a_unit_with_no_declaration_still_searches(self):
         unit = {"id": "g", "name": "Gedaref"}
         self.assertEqual(wp.article_for("XXX", [unit], [unit], "Nowhere")["g"][0], "Q311199")
+
+
+class Approximately(unittest.TestCase):
+    """A stated figure with a stated uncertainty is read, and said to be approximate."""
+
+    def test_the_real_ones(self):
+        # The Gaza Strip, Beirut and the Liancourt Rocks, verbatim.
+        for text, want in (("~2,050,000", 2050000), ("{{circa|433249}}", 433249),
+                           ("Approximately 25", 25), ("c. 40,000", 40000)):
+            self.assertEqual(wp.number(text)[0], want, text)
+            self.assertTrue(wp.approximate(text), text)
+
+    def test_read_carries_the_mark(self):
+        value, year, remark = wp.read(infobox(population_estimate="~2,050,000",
+                                              population_estimate_year="2023"))
+        self.assertEqual((value, year), (2050000, 2023))
+        self.assertEqual(remark, "approximate")
+
+    def test_an_exact_figure_carries_none(self):
+        self.assertEqual(wp.read(ZAMBIA)[2], "")
+        self.assertFalse(wp.approximate("2252483"))

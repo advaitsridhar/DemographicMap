@@ -140,6 +140,11 @@ OVERCOUNT = 1.05
 # redirect must fill. A shape seldom fills its whole box, so this is low;
 # a town offered for the region around it fills a fraction of a percent.
 MIN_FILL = 0.05
+# The same for a match made by name, which has more to go on than a bare
+# redirect and so is refuted only by a town-sized share. Five per cent refused
+# ARMM, whose islands spread across a box 23 times the region's land; a town
+# offered for its region is a fraction of one per cent.
+NAME_FILL = 0.01
 
 
 # ---------------------------------------------------------------------------
@@ -587,6 +592,7 @@ def clean(value: str) -> str:
     value = COMMENT.sub("", value)
     value = REF.sub("", value)
     value = MAINTENANCE.sub("", value)
+    value = CIRCA.sub(lambda m: f"c. {m.group(1)}", value)
     for _ in range(3):
         value = PASSTHROUGH.sub(lambda m: m.group(1), value)
     value = LINK.sub(lambda m: m.group(2) if m.group(2) is not None else m.group(1), value)
@@ -639,6 +645,17 @@ def params(wikitext: str) -> dict[str, str]:
 
 UNINHABITED = re.compile(r"^(?:uninhabited|none|nil|no permanent population)\b", re.I)
 
+# A figure the article marks as approximate. Read, and said to be approximate,
+# by the same reasoning as an undated one: the Gaza Strip's infobox gives
+# "~2,050,000" and Beirut's "{{circa|433249}}", and a stated figure with a
+# stated uncertainty is a figure. A range is two figures and is still refused.
+APPROX = re.compile(r"^(?:~|≈|approximately|approx\.?|circa|ca\.|c\.|about|est\.)\s*", re.I)
+CIRCA = re.compile(r"\{\{\s*(?:circa|c\.|approx)\s*\|\s*([^{}|]*?)\s*(?:\|[^{}]*)?\}\}", re.I)
+
+
+def approximate(text: str) -> bool:
+    return bool(APPROX.match(RAN_ON.sub("", clean(text))))
+
 
 def number(text: str) -> tuple[int | None, str]:
     """The whole number a value states, or why it states none."""
@@ -648,6 +665,7 @@ def number(text: str) -> tuple[int | None, str]:
     # An infobox that writes the word instead of the number is stating one.
     if UNINHABITED.match(body):
         return 0, ""
+    body = APPROX.sub("", body, count=1)
     # "12,998 (2024)" -- the figure, with the year the article put beside it.
     m = re.match(r"^(.*?)\s*\(([^()]*)\)\s*$", body)
     tail = ""
@@ -716,7 +734,10 @@ def read(wikitext: str) -> tuple[int | None, int | None, str]:
             year, why = year_of(tail)
         if year is None and not why:
             why = "the infobox names no year for the figure"
-        return value, year, why if year is None else ""
+        remark = why if year is None else ""
+        if approximate(fields[key]):
+            remark = f"approximate; {remark}" if remark else "approximate"
+        return value, year, remark
     # Templates that put the year in the parameter's name. Infobox Russian
     # federal subject writes "pop_2021census = 995,686", which is how the
     # Sakha Republic's article came back as having no population at all. The
@@ -957,7 +978,7 @@ def box_km2(bbox: list[float] | None) -> float | None:
     return abs(n - s_) * 111.32 * abs(e - w) * 111.32 * math.cos(math.radians((n + s_) / 2))
 
 
-def too_small(qid: str, bbox: list[float] | None) -> str:
+def too_small(qid: str, bbox: list[float] | None, fill: float | None = None) -> str:
     """Why a place reached only through a redirect is too small to be the shape.
 
     The redirect stage takes the article Wikipedia sends a bare name to, and a
@@ -976,7 +997,8 @@ def too_small(qid: str, bbox: list[float] | None) -> str:
     area = area_km2(qid)
     if area is None:
         return "reached only by a redirect, and Wikidata states no area to size it by"
-    if area < box * MIN_FILL:
+    fill = MIN_FILL if fill is None else fill
+    if area < box * fill:
         return (f"reached only by a redirect, and its {area:,.0f} km^2 is "
                 f"{area / box:.1%} of the shape's {box:,.0f} km^2 box")
     return ""
@@ -1039,7 +1061,7 @@ def by_title(unit: dict[str, Any], country: str, country_qid: str,
 # exist and not be a disambiguation page, its item must still be located in
 # the country and held by no other shape, its coordinates and area must not
 # refute it, and its infobox must still be read. It only replaces the search.
-TITLES: dict[tuple[str, str], str] = {
+TITLES: dict[tuple[str, str], str | tuple[str, ...]] = {
     ("ITA", "Centro"): "Central Italy",
     ("ITA", "Isole"): "Insular Italy",
     ("ITA", "Nord-Ovest"): "Northwest Italy",
@@ -1082,7 +1104,10 @@ TITLES: dict[tuple[str, str], str] = {
     # The Gambia's local government areas are its administrative divisions,
     # except that Central River Division is split between Janjanbureh and
     # Kuntaur, which are therefore left alone.
-    ("GMB", "Brikama"): "West Coast Division",
+    # Not "West Coast Division", which is a division of Sabah, Malaysia: the
+    # coordinate check put it 116 degrees east of the shape and refused it.
+    ("GMB", "Brikama"): ("West Coast Division (The Gambia)", "West Coast Region (The Gambia)",
+                         "West Coast Region, The Gambia", "West Coast Division, The Gambia"),
     ("GMB", "Mansakonko"): "Lower River Division",
     ("GMB", "Kerewan"): "North Bank Division",
     ("GMB", "Basse"): "Upper River Division",
@@ -1146,27 +1171,35 @@ def declared(iso3: str, unit: dict[str, Any], country_qid: str | None,
     places in Somaliland, and Western Sahara, whose article is the territory
     itself -- as it should be, the map drawing it as one shape.
     """
-    title = TITLES.get((iso3, unit["name"]))
-    if not title:
+    titles = TITLES.get((iso3, unit["name"]))
+    if not titles:
         return None
-    q = (api(WIKI, action="query", prop="pageprops",
-             ppprop="wikibase_item|disambiguation", titles=title,
-             redirects="1") or {}).get("query") or {}
-    for page in q.get("pages") or []:
-        props = page.get("pageprops") or {}
-        item = props.get("wikibase_item")
-        if page.get("missing") or "disambiguation" in props or not item:
-            log(f"  {unit['name']}: the declared article {title!r} is not an article")
-            return None
-        # A disputed area has no country to be in, and is its own place.
-        if item in taken:
-            log(f"  {unit['name']}: the declared article {title!r} is {item}, "
-                f"which another shape already holds")
-            return None
-        if country_qid and item == country_qid and not alone:
-            log(f"  {unit['name']}: the declared article {title!r} is the country itself")
-            return None
-        return item, page.get("title") or title
+    for title in ((titles,) if isinstance(titles, str) else titles):
+        q = (api(WIKI, action="query", prop="pageprops",
+                 ppprop="wikibase_item|disambiguation", titles=title,
+                 redirects="1") or {}).get("query") or {}
+        for page in q.get("pages") or []:
+            props = page.get("pageprops") or {}
+            item = props.get("wikibase_item")
+            if page.get("missing") or "disambiguation" in props or not item:
+                log(f"  {unit['name']}: the declared article {title!r} is not an article")
+                continue
+            if item in taken:
+                log(f"  {unit['name']}: the declared article {title!r} is {item}, "
+                    f"which another shape already holds")
+                continue
+            if country_qid and item == country_qid and not alone:
+                log(f"  {unit['name']}: the declared article {title!r} is the country itself")
+                continue
+            # Where a declaration offers more than one title, each is held to
+            # the geometry before it is taken, so a namesake abroad is passed
+            # over for the next title rather than refused at the end.
+            if not isinstance(titles, str):
+                why = refuted(item, unit.get("bbox"))
+                if why:
+                    log(f"  {unit['name']}: the declared article {title!r} ({item}): {why}")
+                    continue
+            return item, page.get("title") or title
     return None
 
 
@@ -1398,7 +1431,7 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
             # Any match made by a name is held to the same test where Wikidata
             # can size the place: the name search reached El-Gadarif, the city,
             # for Gedaref State. Where it cannot, a name match stands.
-            small = too_small(item, unit.get("bbox"))
+            small = too_small(item, unit.get("bbox"), NAME_FILL)
             why = small if small and "no area" not in small else ""
         if why:
             log(f"  {unit['name']} -> {title} ({item}): {why}; refused")
@@ -1450,6 +1483,8 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
                 f"{iso3}'s units read as a {division}; refused")
             continue
         where = (SOURCE if year else UNDATED).format(title=landed)
+        if r["remark"].startswith("approximate"):
+            where += ", which gives the figure as approximate"
         if r["item"]:
             where = where.replace("(infobox)", f"(infobox, which displays "
                                                f"Wikidata {r['item']}'s P1082)")
