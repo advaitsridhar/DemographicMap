@@ -1,89 +1,16 @@
-  SOM: no table on the page has a 2019 column; nothing written
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1351, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1397, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1346, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1106, in _send_output
-    self.send(msg)
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1044, in send
-    self.connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1516, in connect
-    super().connect()
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/http/client.py", line 1010, in connect
-    self.sock = self._create_connection(
-                ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 863, in create_connection
-    raise exceptions[0]
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/socket.py", line 848, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 111] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cited_sources.py", line 315, in <module>
-    main()
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cited_sources.py", line 309, in main
-    rows = somalia(drawn("SOM")) + seychelles(drawn("SYC"))
-                                   ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/cited_sources.py", line 274, in seychelles
-    blob = fetch_blob(NBS_ARCHIVED)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/probe_pdf.py", line 119, in fetch_blob
-    with urllib.request.urlopen(req, timeout=90) as resp:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 216, in urlopen
-    return opener.open(url, data, timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 557, in error
-    result = self._call_chain(*args)
-             ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 749, in http_error_302
-    return self.parent.open(new, timeout=req.timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 525, in open
-    response = meth(req, response)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 634, in http_response
-    response = self.parent.error(
-               ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 557, in error
-    result = self._call_chain(*args)
-             ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 749, in http_error_302
-    return self.parent.open(new, timeout=req.timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 519, in open
-    response = self._open(req, data)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 496, in _call_chain
-    result = func(*args)
-             ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/urllib/request.py", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+26,907 characters, 2 '<table' tags, 2 tables parsed
+-- table 0: 20 rows
+    | Name | Abbr. | Area A (km²) | Population Estimate (E) 2005-08-01 | Population Estimate (E) 2014-01-01 | Population Calculation (UP) 2019-01-01 |  | 
+    | Somalia | SOM | 637,657 | 7,502,700 | 12,316,895 | 15,626,000 |  | →
+    | Awdal | ADL | 21,374 | 305,500 | 673,263 | 1,010,600 | 2137400 | →
+    | Bakool | BKL | 26,962 | 310,600 | 367,226 | 383,400 | 2696200 | →
+    | Banaadir | BND | 370 | 901,200 | 1,650,227 | 2,330,700 | 37000 | →
+    | Bari [East] | BAR | 70,088 | 367,600 | 719,512 | 949,700 | 7008800 | →
+-- table 1: 25 rows
+    | Name | Population Projection (P) 2014-07-01 | Area
+    | Afgooye | ... | 0
+    | Baardheere [Bardera] | ... | 0
+    | Badhan (Baran) | ... | 0
+    | Barbara [Berbera] | 374,000 | 0
+    | Baydhabo [Baidoa] | ... | 0
+around 'Bakool': chema.org/Continent"><a itemprop="url" href="/en/africa/"><span itemprop="name">Africa</span></a></span></div> <div id="social"></div> </div> <header class="cpage"> <a href="javascript:openMap()"><img id="smap" alt="Somalia Map" src="/images/smaps/somalia-cities.png"></a> <h1 itemprop="name">Somalia</h1> <p itemprop="description">Federal Republic of Somalia</p> <span itemprop="geo" itemscope="" itemtype="http://schema.org/GeoCoordinates"><meta itemprop="latitude" content="5.56" /><meta itemprop="longitude" content="45.4"></span> </header> <article class="cpage swapped"> <script>handleArticleResize()</script> <p class="info">The <strong>central government</strong> controls Somalia only partly. <strong>Militant groups</strong> occupy some parts of the country. <strong><a href="../somaliland/admin">Somaliland</a></strong> with the five north-western regions declared independence from Somalia in 1991. Despite of its de-facto independence, it is still internationally considered to be part of Somalia.</p> <section id="adminareas"> <h2>Federal States</h2> <p>The federal states (without Somaliland and without Banaadir that remains a region) consist of following pre-war regions:<ul> <li><strong>Galmudugh</strong>: Galgaduud and southern parts of Mudug.</li> <li><strong>Hirshabelle</strong>: Hiiraan and Shabeellaha Dhexe.</li> <li><strong>Jubaland</strong>: Gedo, Jubbada Dhexe and Jubbada Hoose.</li> <li><strong>Koonfur Galbeed [South West]</strong>: Bakool, Bay and Shabeellaha Hoose.</li> <li><strong>Puntland</strong>: Bari, Nugaal and northern parts of Mudug. It claims also the eastern districts of Somaliland.</li></ul> <h2>Pre-war Regions</h2> <p>The population of the pre-war regions of Somalia according to latest estimates and calculations.</p></p> <table id="tl" class="data"> <thead> <tr id="tlh"><th class="ri" data-coltype
