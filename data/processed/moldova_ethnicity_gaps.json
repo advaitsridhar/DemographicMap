@@ -452,6 +452,128 @@
     "ethnicity_year": 2004
   },
   {
+    "id": "MDA-gap-admin1-balti",
+    "level": "admin1",
+    "name": "Balti",
+    "parent": "MDA",
+    "country": "MDA",
+    "shape_id": "25212430B53322619224262",
+    "match_by": "shape_id",
+    "ethnicity": [
+      {
+        "group": "Moldovan or Romanian",
+        "pct": 74.33,
+        "count": 67606
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 13.36,
+        "count": 12156
+      },
+      {
+        "group": "Russian",
+        "pct": 10.37,
+        "count": 9428
+      },
+      {
+        "group": "Other",
+        "pct": 1.17,
+        "count": 1067
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.33,
+        "count": 303
+      },
+      {
+        "group": "Romani",
+        "pct": 0.16,
+        "count": 144
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.15,
+        "count": 136
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.13,
+        "count": 114
+      }
+    ],
+    "ethnicity_note": "Ethnic structure as the ro.wikipedia article 'Bălți' gives it, for 2024, the newest of the censuses its columns give. Shares computed from the table's own counts. Not the 2024 census the neighbouring districts are read from, which the English article for this district does not transcribe.",
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "ro.wikipedia, 'Bălți'",
+        "url": "https://ro.wikipedia.org/wiki/B%C4%83l%C8%9Bi",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "ethnicity_year": 2024
+  },
+  {
+    "id": "MDA-gap-admin2-balti",
+    "level": "admin2",
+    "name": "Balti",
+    "parent": "MDA",
+    "country": "MDA",
+    "shape_id": "25212430B53322619224262",
+    "match_by": "shape_id",
+    "ethnicity": [
+      {
+        "group": "Moldovan or Romanian",
+        "pct": 74.33,
+        "count": 67606
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 13.36,
+        "count": 12156
+      },
+      {
+        "group": "Russian",
+        "pct": 10.37,
+        "count": 9428
+      },
+      {
+        "group": "Other",
+        "pct": 1.17,
+        "count": 1067
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.33,
+        "count": 303
+      },
+      {
+        "group": "Romani",
+        "pct": 0.16,
+        "count": 144
+      },
+      {
+        "group": "Bulgarian",
+        "pct": 0.15,
+        "count": 136
+      },
+      {
+        "group": "Gagauz",
+        "pct": 0.13,
+        "count": 114
+      }
+    ],
+    "ethnicity_note": "Ethnic structure as the ro.wikipedia article 'Bălți' gives it, for 2024, the newest of the censuses its columns give. Shares computed from the table's own counts. Not the 2024 census the neighbouring districts are read from, which the English article for this district does not transcribe.",
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "ro.wikipedia, 'Bălți'",
+        "url": "https://ro.wikipedia.org/wiki/B%C4%83l%C8%9Bi",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "ethnicity_year": 2024
+  },
+  {
     "id": "MDA-gap-admin1-bender",
     "level": "admin1",
     "name": "Bender",
