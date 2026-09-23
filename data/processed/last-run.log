@@ -1,9 +1,53 @@
-  AZE Contiguous Azerbaijan: 9,492,499 from 9,951,409 (the Total row of Demographics of Azerbaijan) less 458,910 (Nakhchivan Autonomous Republic's infobox)
-  GMB Basse: 261,160 from 261,160 (the Upper River row of Subdivisions of the Gambia)
-  MOZ Maputo: 3,608,268 from 1,101,170 (the Maputo City row of Provinces of Mozambique) plus 2,507,098 (the Maputo row of Provinces of Mozambique)
-  SOM Bakool: 560,267 from 560,267 (the Bakool Region row of Administrative divisions of Somalia)
-  BHS North Eleuthera: 3,923 from 3,923 (the North Eleuthera row of Local government in the Bahamas)
-  BHS East Grand Bahama: 11,011 from 11,011 (the East Grand Bahama row of Local government in the Bahamas)
-  BHS West Grand Bahama: 5,960 from 5,960 (the West Grand Bahama row of Local government in the Bahamas)
-  wrote data/processed/wiki_table_population.json (9 kB)
-wrote 7 records to wiki_table_population.json
+  Nord-Est: found by searching the country
+  Sud: searching the country offered Q15124 'South Tyrol', Q23498165 'Province of South Sardinia', Q1237 'Trentino-South Tyrol', Q38 'Italy', Q1447 'Apulia'
+ITA: 5 units without a population, 4 resolved
+  Centro -> Central Italy (Q1127320, matched by declaration)
+  Isole -> Insular Italy (Q525358, matched by declaration)
+  Nord-Est -> Northeast Italy (Q579075, matched by name)
+  Nord-Ovest -> Northwest Italy (Q2725942, matched by declaration)
+  Sud -> Abruzzo + Molise + Campania + Apulia + Basilicata + Calabria: 13,339,994
+TZA: the country's own divisions resolved 3 more
+TZA: what sits directly in the country resolved 4 more
+  Dar es Salaam: searching the country offered Q1960 'Dar es Salaam', Q1411192 'Julius Nyerere International Airport', Q3663642 "Saint Joseph's Cathedral, Dar es Salaam", Q557597 'University of Dar es Salaam', Q1364405 'Roman Catholic Archdiocese of Dar-es-Salaam'
+  Iringa: searching the country offered Q735609 'Iringa', Q1888339 'Iringa District', Q309352 'Iringa Region', Q3710991 'Iringa Municipal District', Q15228797 'Iringa University College'
+  Kigoma: searching the country offered Q244509 'Kigoma', Q747943 'Kigoma Region', Q25619275 'Kigoma', Q10779824 'Kigoma Municipal District', Q10779823 'Kigoma District'
+  Lindi: searching the country offered Q829886 'Lindi', Q309339 'Lindi Region', Q8935650 'Mtama District', Q6552506 'Lindi Urban District', Q871249 'Roman Catholic Diocese of Lindi'
+  Mbeya: searching the country offered Q335548 'Mbeya', Q6799690 'Mbeya City District', Q458382 'Mbeya Region', Q6799682 'Mbeya District', Q284482 'Roman Catholic Archdiocese of Mbeya'
+  Mtwara: searching the country offered Q646684 'Mtwara', Q6930523 'Mtwara Municipal District', Q499465 'Mtwara Region', Q6930521 'Mtwara District', Q259904 'Roman Catholic Diocese of Mtwara'
+  Shinyanga: searching the country offered Q818765 'Shinyanga', Q7497842 'Shinyanga Municipal District', Q10819677 'Shinyanga District', Q153339 'Shinyanga Region', Q876439 'Roman Catholic Diocese of Shinyanga'
+  Tabora: searching the country offered Q643112 'Tabora', Q153335 'Tabora Region', Q7673548 'Tabora Municipal District', Q958486 'Roman Catholic Archdiocese of Tabora', Q7220771 'Tabora Airport'
+TZA: 17 units without a population, 17 resolved
+  Dar es Salaam -> Dar es Salaam (Q1960, matched by redirect)
+  Geita -> Geita Region (Q1848521, matched by name)
+  Geita -> Geita Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_footnotes, population_demonym)
+  Iringa -> Iringa Region (Q309352, matched by redirect)
+  Iringa -> Iringa Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
+  Katavi -> Katavi Region (Q2682731, matched by name)
+  Kigoma -> Kigoma Region (Q747943, matched by redirect)
+  Kigoma -> Kigoma Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym, population_footnotes)
+  Lindi -> Lindi Region (Q309339, matched by redirect)
+  Lindi -> Lindi Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
+  Mbeya -> Mbeya Region (Q458382, matched by redirect)
+  Morogoro -> Morogoro Region (Q458388, matched by declaration)
+  Morogoro -> Morogoro Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
+  Mtwara -> Mtwara Region (Q499465, matched by redirect)
+  Mtwara -> Mtwara Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
+  Mwanza -> Mwanza Region (Q331153, matched by declaration)
+  Mwanza -> Mwanza Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_footnotes, population_demonym)
+  Njombe -> Njombe Region (Q2086273, matched by name)
+  Shinyanga -> Shinyanga Region (Q153339, matched by redirect)
+  Shinyanga -> Shinyanga Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
+  Simiyu -> Simiyu Region (Q2787568, matched by name)
+  Simiyu -> Simiyu Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
+  Tabora -> Tabora Region (Q153335, matched by redirect)
+  Zanzibar North -> Unguja North Region (Q147116, matched by name)
+  Zanzibar South & Central -> Unguja South Region (Q643120, matched by name)
+  Zanzibar Urban/West -> Mjini Magharibi Region (Q180822, matched by name)
+OMN: the country's own divisions resolved 1 more
+OMN: what sits directly in the country resolved 1 more
+OMN: 3 units without a population, 3 resolved
+  Al Batinah -> Al Batinah Region (Q264245, matched by redirect)
+  Ash Sharqiyah -> Ash Sharqiyah North Governorate + Ash Sharqiyah South Governorate: 587,260
+  Az Zahirah -> Al Dhahirah Governorate + Al Buraimi Governorate + Musandam Governorate: 383,907
+  wrote data/processed/wiki_population_admin1.json (542 kB)
+wrote 544 records to wiki_population_admin1.json
