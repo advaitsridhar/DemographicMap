@@ -137,24 +137,32 @@ def count(cell: Any) -> int:
     return int(digits)
 
 
-def columns(rows: list[tuple[Any, ...]]) -> tuple[int, dict[int, str], int]:
-    """(the first row of data, {column: category}, the total's column).
+def columns(rows: list[tuple[Any, ...]]) -> tuple[int, int, dict[int, str], int]:
+    """(the first row of data, the code's column, {column: category}, the total's column).
 
-    The header starts at the row whose first cell is "Cod statistic" and ends
-    at the row of column letters beneath it, whose first two cells are A and B.
+    The header starts at the row holding "Cod statistic" and ends at the row
+    of column letters beneath it, A under the code and B under the name. The
+    code is not in the sheet's first column: the workbook leaves column A
+    empty, so everything is found from where "Cod statistic" is.
     """
-    top = next((i for i, r in enumerate(rows)
-                if r and fold(r[0]).startswith("cod statistic")), None)
-    if top is None:
-        raise SystemExit("moldova_census: no header row starting 'Cod statistic'")
+    top = code = None
+    for i, r in enumerate(rows):
+        hit = next((j for j, c in enumerate(r or ()) if fold(c).startswith("cod statistic")), None)
+        if hit is not None:
+            top, code = i, hit
+            break
+    if top is None or code is None:
+        raise SystemExit("moldova_census: no header row holding 'Cod statistic'")
+
+    def cell(r: tuple[Any, ...], j: int) -> str:
+        return str(r[j]).strip() if j < len(r) and r[j] is not None else ""
     letters = next((i for i in range(top + 1, len(rows))
-                    if rows[i] and str(rows[i][0]).strip() == "A"
-                    and len(rows[i]) > 1 and str(rows[i][1]).strip() == "B"), None)
+                    if cell(rows[i], code) == "A" and cell(rows[i], code + 1) == "B"), None)
     if letters is None:
         raise SystemExit("moldova_census: no row of column letters under the header")
     width = max(len(r) for r in rows[top:letters])
     labels: dict[int, str] = {}
-    for j in range(2, width):
+    for j in range(code + 2, width):
         cells = [rows[i][j] for i in range(top, letters)
                  if j < len(rows[i]) and rows[i][j] not in (None, "")]
         if cells:
@@ -163,7 +171,7 @@ def columns(rows: list[tuple[Any, ...]]) -> tuple[int, dict[int, str], int]:
     if not totals or totals[0] != min(labels):
         raise SystemExit(f"moldova_census: the first column read is not the total: {labels}")
     total = totals[0]
-    return letters + 1, {j: s for j, s in labels.items() if j not in totals}, total
+    return letters + 1, code, {j: s for j, s in labels.items() if j not in totals}, total
 
 
 def named(field: str, label: str) -> str:
@@ -176,13 +184,13 @@ def named(field: str, label: str) -> str:
 
 def units(field: str, rows: list[tuple[Any, ...]]) -> list[dict[str, Any]]:
     """Every row with a statistical code: the unit, its total and its groups."""
-    first, labels, total_col = columns(rows)
+    first, at, labels, total_col = columns(rows)
     out = []
     for row in rows[first:]:
-        code = str(row[0] or "").strip() if row else ""
+        code = str(row[at] or "").strip() if len(row) > at else ""
         if not re.fullmatch(r"\d{6,7}", code):
             continue
-        name = str(row[1] or "").strip()
+        name = str(row[at + 1] or "").strip()
         total = count(row[total_col])
         groups: dict[str, int] = {}
         for j, label in labels.items():

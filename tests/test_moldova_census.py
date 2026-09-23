@@ -95,6 +95,12 @@ class Religion(unittest.TestCase):
             m.units("religion", renamed)
         self.assertIn("Budistă", str(caught.exception))
 
+    def test_the_workbook_s_empty_first_column(self):
+        # The annex leaves column A empty, and the code sits in column B.
+        shifted = [(N,) + row for row in RELIGION]
+        units = {u["name"]: u for u in m.units("religion", shifted)}
+        self.assertEqual(units["Briceni"]["groups"]["Orthodox"], 37731)
+
     def test_every_name_is_already_on_the_map(self):
         import canonical_groups
         # "Not declared" stands alone on purpose: non-response is nobody's kind.
