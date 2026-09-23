@@ -1,6 +1,6 @@
-xargs: unmatched double quote; by default quotes are special to xargs unless you use the -0 option
-usage: probe_links.py [-h] [--match MATCH] [--head] [--limit LIMIT]
-                      [--timeout TIMEOUT] [--check CHECK] [--accept ACCEPT]
-                      [--find FIND] [--raw RAW]
-                      url [url ...]
-probe_links.py: error: argument --find: expected one argument
+page: https://statistica.gov.md/ro/rezultatele-finale-ale-recensamantului-populatiei-si-locuintelor-2024-caracteris-10121_62043.html
+  113,330 bytes
+  3 distinct match(es) for '[^s<>=]{0,160}.xlsx?'
+    amant/2024/Ro/Date_Comunicat_Etnoculturale_20_10_25.xlsx
+    carcă datele &icirc;n format.xlsx
+    tici_Etnoculturale_RPL2024.xlsx
