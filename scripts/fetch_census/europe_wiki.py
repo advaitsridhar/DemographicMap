@@ -1355,7 +1355,10 @@ MD_LANGUAGE_LABELS = {
 # Skipping a parent whose children are missing is the safe direction of the
 # same mistake: what is left adds to five per cent and is refused, which is
 # a gap and not a wrong figure.
-MD_SUBTOTALS = r"|\(total\)|^christians$|^christianity$"
+#
+# The districts' bulleted lists write the same parent as "Christians" or, in
+# Donduseni and Drochia, "Christian".
+MD_SUBTOTALS = r"|\(total\)|^christians?$|^christianity$"
 
 # The table's own header, which is a row like any other to a reader that has
 # only the wikitext. Most of Europe's headers are skipped without being

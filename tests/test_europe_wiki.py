@@ -1415,3 +1415,18 @@ class APieChartIsReadWhereThereIsNoTable(unittest.TestCase):
         doubled = EDINET + "\n" + "{{Pie chart" + EDINET.split("{{Pie chart")[1]
         rows, _, _ = m.find_chart(doubled, m.MD_ETHNICITY)
         self.assertEqual(rows, [])
+
+
+class TheParentWrittenInTheSingular(unittest.TestCase):
+    def test_donduseni_s_christian_is_a_subtotal(self):
+        got, why = m.read_field(
+            ANENII_NOI.split("=== Ethnic groups ===")[0] + "=== Religion ===\n"
+            "*Christian – 99.2%\n"
+            "**Orthodox Christians – 93.1%\n"
+            "**Old Believers – 3.3%\n"
+            "**Protestant – 2.8%\n"
+            "*Other – 0.1%\n"
+            "*No religion – 0.3%\n"
+            "*Not declared – 0.3%\n", m.MD_RELIGION, MDA, "T", "en")
+        self.assertEqual(why, "")
+        self.assertEqual(got["rows"][0]["group"], "Orthodox")
