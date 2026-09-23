@@ -270,7 +270,10 @@ def a_part_of(name: str, title: str) -> bool:
 NOT_A_UNIT = re.compile(
     r"constituency|electoral|electorate|parliamentary|\bdiocese\b|archdiocese|"
     r"\bairport\b|\buniversity\b|\bbattle\b|\bstadium\b|football club|"
-    r"\bcemetery\b|\brailway\b", re.I)
+    r"\bcemetery\b|\brailway\b|"
+    # A title that ends in "River" is the river. "English River, Seychelles"
+    # is a district named for one, and does not end there.
+    r"\bRiver(?: \([^)]*\))?$", re.I)
 
 
 def says_its_kind(name: str) -> bool:
@@ -711,7 +714,10 @@ def read(wikitext: str) -> tuple[int | None, int | None, str]:
         last = f"{key}: {why}"
     if last:
         return None, None, last
-    return None, None, "no population parameter in the infobox"
+    near = [k for k in fields if re.search(r"pop|census|inhabit", k)][:6]
+    return None, None, ("no population parameter in the infobox"
+                        + (f" (it has {', '.join(near)})" if near else
+                           f" (its first keys are {', '.join(list(fields)[:5])})"))
 
 
 # The last word of what an article says it is. "[[Districts of Libya|District]]"
@@ -1029,10 +1035,73 @@ TITLES: dict[tuple[str, str], str] = {
     ("GRC", "Egean"): "Decentralized Administration of the Aegean",
     ("GRC", "Peloponisos-W. Greece & Ionian"):
         "Decentralized Administration of Peloponnese, Western Greece and the Ionian",
+    # Names the boundary file misspells past what any index can reach.
+    ("AFG", "Ghanzi"): "Ghazni Province",
+    ("ARG", "La Roja"): "La Rioja Province, Argentina",
+    ("SAU", "Hayel Region"): "Ha'il Province",
+    ("ETH", "Beneshangul Gumu"): "Benishangul-Gumuz Region",
+    ("ETH", "Hareri"): "Harari Region",
+    ("IRQ", "Salah al-Din"): "Saladin Governorate",
+    ("NER", "Dossa"): "Dosso Region",
+    ("QAT", "Al Sheehaniya"): "Al-Shahaniya",
+    ("SYC", "La Digue a"): "La Digue and Inner Islands",
+    ("SYR", "As-Sweida"): "As-Suwayda Governorate",
+    ("COD", "Central Kasai"): "Kasaï-Central",
+    ("CIV", "District Autonome D'Abidjan"): "Abidjan Autonomous District",
+    ("CIV", "District Autonome De Yamoussoukro"): "Yamoussoukro Autonomous District",
+    # Regions named after their capitals, whose bare names every index sends
+    # to the town. The sweep refused each of these correctly; the region has
+    # its own article under its own title.
+    ("TZA", "Morogoro"): "Morogoro Region",
+    ("TZA", "Mwanza"): "Mwanza Region",
+    ("SYR", "Lattakia"): "Latakia Governorate",
+    ("SYR", "Al-Hasakeh"): "Al-Hasakah Governorate",
+    ("LBY", "Ajdabiya"): "Ajdabiya District",
+    ("LBY", "Az Zawiyah"): "Zawiya District",
+    ("LBN", "Liban-Sud"): "South Governorate",
+    ("SDN", "Gedaref"): "Gedaref State",
+    ("SOM", "Togdheer"): "Togdheer",
+    ("CAF", "Mbomou"): "Mbomou",
+    # The Gambia's local government areas are its administrative divisions,
+    # except that Central River Division is split between Janjanbureh and
+    # Kuntaur, which are therefore left alone.
+    ("GMB", "Brikama"): "West Coast Division",
+    ("GMB", "Mansakonko"): "Lower River Division",
+    ("GMB", "Kerewan"): "North Bank Division",
+    ("GMB", "Basse"): "Upper River Division",
+    ("GMB", "Kanifing"): "Kanifing",
+    # Units the build joined to a Wikidata item with no English article, whose
+    # territory is an island group or a city that has one.
+    ("TON", "Tongatapu"): "Tongatapu",
+    ("TON", "'Eua"): "ʻEua",
+    ("TON", "Ha'apai"): "Haʻapai",
+    ("TON", "Niuas"): "Niuas",
+    ("BHS", "Acklins"): "Acklins",
+    ("GNB", "Bissau"): "Bissau",
+    ("ZWE", "Bulawayo"): "Bulawayo",
+    ("LVA", "Jelgavas"): "Jelgava",
+    ("LCA", "Canaries"): "Canaries, Saint Lucia",
+    ("SOM", "Woqooyi Galbeed"): "Maroodi Jeex",
+    # Disputed areas the boundary file draws under a numeric code of its own,
+    # which no Wikidata item carries -- so they were never attempted at all.
+    # The inhabited ones have articles; the rocks and reefs do not.
+    ("118", "Gaza Strip"): "Gaza Strip",
+    ("129", "West Bank"): "West Bank",
+    ("117", "Falkland Islands (UK)"): "Falkland Islands",
+    ("111", "Abyei"): "Abyei Area",
+}
+
+# A shape the boundary file draws as two units at once, read as the sum of
+# both units' articles. Niger's first level on this map is six shapes for its
+# eight regions, "Tahoua/Agadez" and "Zinder/Diffa" among them: the sum of two
+# populations is the population of the polygon, and nothing short of both is.
+COMPOSITES: dict[tuple[str, str], tuple[str, ...]] = {
+    ("NER", "Tahoua/Agadez"): ("Tahoua Region", "Agadez Region"),
+    ("NER", "Zinder/Diffa"): ("Zinder Region", "Diffa Region"),
 }
 
 
-def declared(iso3: str, unit: dict[str, Any], country_qid: str,
+def declared(iso3: str, unit: dict[str, Any], country_qid: str | None,
              taken: set[str]) -> tuple[str, str] | None:
     """The declared article for this unit, if TITLES names one and it holds."""
     title = TITLES.get((iso3, unit["name"]))
@@ -1047,7 +1116,9 @@ def declared(iso3: str, unit: dict[str, Any], country_qid: str,
         if page.get("missing") or "disambiguation" in props or not item:
             log(f"  {unit['name']}: the declared article {title!r} is not an article")
             return None
-        if item in taken or item == country_qid or not in_country(item, country_qid):
+        # A disputed area has no country to be in, and is its own place.
+        if item in taken or (country_qid and (
+                item == country_qid or not in_country(item, country_qid))):
             log(f"  {unit['name']}: the declared article {title!r} is {item}, "
                 f"which is another shape's or not in the country")
             return None
@@ -1080,8 +1151,16 @@ def article_for(iso3: str, units: list[dict[str, Any]],
     shapes = shapes or units
     qid = country_item(iso3)
     if not qid:
-        log(f"{iso3}: no Wikidata item carries this ISO code; skipped")
-        return {}
+        # A disputed area under the boundary file's own numeric code: only a
+        # declaration can name its article.
+        found_: dict[str, tuple[str, str, str]] = {}
+        for unit in units:
+            hit = declared(iso3, unit, None, set())
+            if hit:
+                found_[unit["id"]] = (hit[0], hit[1], "declaration")
+        if not found_:
+            log(f"{iso3}: no Wikidata item carries this code and nothing is declared")
+        return found_
     claims = claims_of(qid)
     divisions = statements(claims, "P150")
     langs = languages(claims)
@@ -1135,11 +1214,17 @@ def article_for(iso3: str, units: list[dict[str, Any]],
         if len(found) > before:
             log(f"{iso3}: {label} resolved {len(found) - before} more")
 
-    for unit in short():
+    # Declarations before anything else, and for every unit -- including one
+    # whose Wikidata item has no English article, which is what several of
+    # them are for.
+    for unit in units:
+        if unit["id"] in found:
+            continue
         taken = {item for item, _, _ in found.values()} | others
         hit = declared(iso3, unit, qid, taken)
         if hit:
             found[unit["id"]] = (hit[0], hit[1], "declaration")
+            settled.discard(unit["id"])
     widen("the country's own divisions", ())
     if short():
         widen("what sits directly in the country", children(qid))
@@ -1203,6 +1288,31 @@ def overcount(iso3: str, shapes: list[dict[str, Any]], read_out: list[dict[str, 
     return share
 
 
+def composite(unit: dict[str, Any], titles: tuple[str, ...]) -> dict[str, Any] | None:
+    """The sum of several articles' populations, or None unless every one reads.
+
+    Dated by the oldest of them, because the sum is only as recent as its
+    least recent part; undated if any part is.
+    """
+    total, years, landed = 0, [], []
+    for title in titles:
+        text = ((api(WIKI, action="parse", page=title, prop="wikitext",
+                     redirects="1") or {}).get("parse") or {})
+        value, year, remark = read(text.get("wikitext") or "")
+        if value is None or remark == FROM_WIKIDATA:
+            log(f"  {unit['name']}: {title} does not read ({remark or 'no wikitext'}), "
+                f"so the sum is not taken")
+            return None
+        total += value
+        years.append(year)
+        landed.append(text.get("title") or title)
+    year = None if None in years else min(years)
+    log(f"  {unit['name']} -> {' + '.join(landed)}: {total:,}")
+    return {"unit": unit, "title": " + ".join(landed), "value": total, "year": year,
+            "remark": "" if year else "one of the parts names no year",
+            "kind": "", "item": None}
+
+
 def run(iso3: str, units: list[dict[str, Any]], national: float | None,
         *, probe: bool = False, shapes: list[dict[str, Any]] | None = None,
         country: str = "") -> list[dict[str, Any]]:
@@ -1210,6 +1320,12 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
     log(f"{iso3}: {len(units)} units without a population, {len(found)} resolved")
     read_out: list[dict[str, Any]] = []
     for unit in units:
+        parts = COMPOSITES.get((iso3, unit["name"]))
+        if parts and not probe:
+            got = composite(unit, parts)
+            if got:
+                read_out.append(got)
+            continue
         hit = found.get(unit["id"])
         if not hit:
             why = ("its Wikidata item has no English article"

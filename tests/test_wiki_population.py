@@ -705,3 +705,42 @@ class AJoinTheBuildMadeBadly(unittest.TestCase):
         shape = {"id": "ne", "name": "Northeastern Region", "wikidata": "Q_CONST"}
         got = wp.article_for("ISL", [shape], [shape], "Iceland")
         self.assertEqual(got["ne"][:2], ("Q_REGION", "Northeastern Region (Iceland)"))
+
+
+class TwoRegionsInOneShape(unittest.TestCase):
+    def setUp(self):
+        self.saved = wp.api
+
+    def tearDown(self):
+        wp.api = self.saved
+
+    def pages(self, **texts):
+        wp.api = lambda endpoint, **params: {"parse": {
+            "title": params["page"], "wikitext": texts.get(params["page"], "")}}
+
+    def test_both_parts_read_and_are_summed(self):
+        self.pages(**{"Tahoua Region": infobox(population_total="3,328,365",
+                                                population_as_of="2012 census"),
+                      "Agadez Region": infobox(population_total="487,620",
+                                               population_as_of="2012 census")})
+        got = wp.composite({"name": "Tahoua/Agadez"}, ("Tahoua Region", "Agadez Region"))
+        self.assertEqual((got["value"], got["year"]), (3815985, 2012))
+        self.assertEqual(got["title"], "Tahoua Region + Agadez Region")
+
+    def test_one_part_missing_takes_nothing(self):
+        self.pages(**{"Zinder Region": infobox(population_total="3,539,764")})
+        self.assertIsNone(wp.composite({"name": "Zinder/Diffa"},
+                                       ("Zinder Region", "Diffa Region")))
+
+    def test_the_older_part_dates_the_sum(self):
+        self.pages(**{"A": infobox(population_total="10", population_as_of="2012"),
+                      "B": infobox(population_total="5", population_as_of="2020")})
+        self.assertEqual(wp.composite({"name": "A/B"}, ("A", "B"))["year"], 2012)
+
+
+class ARiverIsNotARegion(unittest.TestCase):
+    def test_titles(self):
+        for t in ("Togdheer River", "Mbomou River"):
+            self.assertTrue(wp.NOT_A_UNIT.search(t), t)
+        for t in ("English River, Seychelles", "Rivière du Rempart District", "Togdheer"):
+            self.assertFalse(wp.NOT_A_UNIT.search(t), t)
