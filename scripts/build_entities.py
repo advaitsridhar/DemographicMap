@@ -221,6 +221,12 @@ ADAPTER_FILES = [
     "europe_wiki_montenegro.json",
     "europe_wiki_serbia.json",
     "europe_wiki_bulgaria.json",
+    # Moldova's seven units the Europe reader refused, read by the owner's
+    # decision of 22 September 2026 from the Romanian articles and the
+    # Transnistria article's table. After europe_wiki_moldova.json, whose gap
+    # rows for the same units carry the refusal as a note that this file's
+    # reading must replace.
+    "moldova_ethnicity_gaps.json",
     # After Wikidata, which carries a population for North Korea's provinces
     # and for Pyongyang a 2015 estimate: this is the 2008 census's own Table 2,
     # for all 11 first-level units and all 179 counties, with the sex ratio
@@ -1340,6 +1346,28 @@ DESCRIBED_FIELDS = ("religion", "language", "ethnicity", "ancestry",
                     "scheduled_groups")
 
 
+# Sources whose head count fills an empty population and never replaces one.
+#
+# ADAPTER_FILES ranks files by what they are for, and the rank is about the
+# compositions: Japan's prefecture file sits among the models because its
+# religion is modelled, Viet Nam's and Laos's census files sit high because
+# nothing else writes their ethnicity. Each of those files also carries its
+# census head count, and the Wikidata sweep lower down replaced it -- all 47
+# of Japan's prefectures, 8 of Laos's provinces, 17 of Korea's, and 33 of Viet
+# Nam's, where it did real damage. Viet Nam merged its 63 provinces into 34 in
+# 2025 and Wikidata's P1082 moved with the merger, so the boundary file's
+# pre-merger polygons wore the merged provinces' populations: Ho Chi Minh City
+# 14.0 million, which is the old city with Binh Duong and Ba Ria-Vung Tau, and
+# the country's first level summed to 126% of the country.
+#
+# A statistical office's count is not replaced by an encyclopaedia's, whatever
+# order the files are read in. These two only ever fill a population nobody
+# else has written.
+FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
+                       "wiki_population_admin1.json"})
+FILL_ONLY_FIELDS = frozenset({"population"})
+
+
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     """Adapter values override seeds; gap markers never overwrite real values.
 
@@ -1363,8 +1391,10 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     from a wrong one. A row that replaces a figure owns what describes it, and
     what the row does not say is not carried over from what it displaced.
     """
+    held = {key for key in FILL_ONLY_FIELDS
+            if row.get("_source") in FILL_ONLY and not is_gap(entity.get(key))}
     replaced = {key for key, value in row.items()
-                if key in VALUE_FIELDS and not is_gap(value)}
+                if key in VALUE_FIELDS and not is_gap(value) and key not in held}
     if replaced:
         entity["sources"] = [
             src for src in entity.get("sources", [])
@@ -1376,7 +1406,13 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                    "match_by", "_source"}:
             continue
         if key == "sources":
-            entity.setdefault("sources", []).extend(value or [])
+            # A citation for a figure that was held back describes nothing
+            # on the record, so it is not added either.
+            kept = [src for src in (value or [])
+                    if not (held and set(str(src.get("field") or "").split("/")) <= held)]
+            entity.setdefault("sources", []).extend(kept)
+            continue
+        if key in held:
             continue
         if is_gap(value) and not is_gap(entity.get(key)):
             continue
@@ -2476,13 +2512,17 @@ def resolve_collisions(matched: list[tuple[dict[str, Any], dict[str, Any], str]]
     exemption now requires agreement, and a disagreement is ranked on evidence
     or refused like any other rivalry.
     """
-    claims: dict[tuple[Any, str], list[int]] = defaultdict(list)
+    # Keyed by level as well as id: 334 polygons are drawn at both levels
+    # under one id, and a source that binds both -- Moldova's Bender, once at
+    # each level -- is two rows on two shapes, not two rows fighting over one.
+    # Keyed by id alone they tied on evidence and both were refused.
+    claims: dict[tuple[Any, Any, str], list[int]] = defaultdict(list)
     for i, (row, entity, _) in enumerate(matched):
-        claims[(row.get("_source"), entity["id"])].append(i)
+        claims[(row.get("_source"), entity.get("level"), entity["id"])].append(i)
 
     dropped: set[int] = set()
     notes: list[str] = []
-    for (_, _eid), idxs in claims.items():
+    for (_, _level, _eid), idxs in claims.items():
         if len(idxs) < 2:
             continue
         ranked = sorted(idxs, key=lambda i: -evidence(matched[i][2]))
@@ -3495,6 +3535,28 @@ def group_index(admin0: list[dict[str, Any]],
 TRACE: set[str] = set()
 
 
+def claim(claimed: dict[int, str], entity: dict[str, Any], row: dict[str, Any],
+          iso3: str, wanted: str) -> None:
+    """Record a row's binding to a polygon, refusing a second place on it.
+
+    Two rows on one shape is how one district quietly wears another's
+    figures, and that is what this stops. Two rows *about the same place* are
+    not that: Transnistria's population comes from the Wikipedia reader and
+    its ethnic composition from the Moldova reader, each bound to the same
+    polygon by id, and refusing the pair stopped the build over two sources
+    agreeing on where Transnistria is. So the second claim is refused only
+    where it names a different place from the first.
+    """
+    name = row.get("name") or ""
+    held = claimed.get(id(entity))
+    if held is not None and norm(held) != norm(name):
+        raise SystemExit(
+            f"{iso3}: shape {wanted!r} is claimed by {name!r} and by "
+            f"{held!r}. Two rows on one shape is how one district quietly "
+            f"wears another's figures")
+    claimed[id(entity)] = name
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -3706,7 +3768,7 @@ def main() -> int:
             for entity in (*admin1_by_country.get(iso3, []),
                            *admin2_by_country.get(iso3, []))
             if entity.get("id")}
-        claimed: set[int] = set()
+        claimed: dict[int, str] = {}
         hit = miss = ambiguous = outside = collided = declared = 0
         matched: list[tuple[dict[str, Any], dict[str, Any], str]] = []
         deferred: list[tuple[dict[str, Any], dict[str, Any]]] = []
@@ -3770,13 +3832,7 @@ def main() -> int:
                         f"{wanted!r}, which this country does not draw. A "
                         f"binding is a claim about a specific polygon, so a "
                         f"stale one is a mistake rather than a near miss")
-                if id(entity) in claimed:
-                    raise SystemExit(
-                        f"{iso3}: shape {wanted!r} is claimed by "
-                        f"{row.get('name')!r} and by another row. Two rows on "
-                        f"one shape is how one district quietly wears "
-                        f"another's figures")
-                claimed.add(id(entity))
+                claim(claimed, entity, row, iso3, wanted)
                 # The binding carries the name as well as the figures, and it
                 # has to. A shape labelled "Nawalapur" wearing Rupandehi's
                 # 1,121,957 people is exactly the mis-match this project ranks

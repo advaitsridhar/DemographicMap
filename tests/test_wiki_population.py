@@ -96,8 +96,8 @@ class Numbers(unittest.TestCase):
     def test_what_it_refuses(self):
         # A dot is a thousands separator in half of Europe and a decimal point
         # in the other half, so a number carrying one is not read at all.
-        for text in ("1.727.524", "12.5", "c. 40,000", "40,000-45,000",
-                     "unknown", "", "approx 900", "1.2 million"):
+        for text in ("1.727.524", "12.5", "40,000-45,000", "50–100",
+                     "unknown", "", "1.2 million", "~1.2 million"):
             value, why = wp.number(text)
             self.assertIsNone(value, text)
             self.assertTrue(why, text)
@@ -560,10 +560,17 @@ class Declarations(unittest.TestCase):
             wp.in_country = lambda item, country: True
             self.assertEqual(wp.declared("ITA", {"name": "Centro"}, "Q38", set()),
                              ("Q1127320", "Central Italy"))
-            # Held by another shape, or outside the country: refused.
+            # Held by another shape: refused.
             self.assertIsNone(wp.declared("ITA", {"name": "Centro"}, "Q38", {"Q1127320"}))
+            # Wikidata's country statement is not asked: it refused
+            # Somaliland's Togdheer. Geometry guards a declaration instead.
             wp.in_country = lambda item, country: False
-            self.assertIsNone(wp.declared("ITA", {"name": "Centro"}, "Q38", set()))
+            self.assertEqual(wp.declared("ITA", {"name": "Centro"}, "Q38", set()),
+                             ("Q1127320", "Central Italy"))
+            # The country itself only where the country is its one shape.
+            self.assertIsNone(wp.declared("ITA", {"name": "Centro"}, "Q1127320", set()))
+            self.assertEqual(wp.declared("ITA", {"name": "Centro"}, "Q1127320", set(),
+                                         alone=True), ("Q1127320", "Central Italy"))
             # Nothing declared, nothing asked.
             self.assertIsNone(wp.declared("ITA", {"name": "Lazio"}, "Q38", set()))
         finally:
@@ -652,6 +659,25 @@ class ATownForTheRegionAroundIt(unittest.TestCase):
         self.area(None)
         self.assertIn("no area", wp.too_small("Q916988", [16.5, 13.1, 16.9, 13.4]))
 
+    def test_an_island_group_is_not_sized_by_its_ocean(self):
+        # The Gilbert Islands: 279 km^2 of land in a box of 291,657. The shape
+        # is the same sliver of the same box, so the share proves nothing.
+        wp.claim_values = lambda qid, prop: (
+            [{"mainsnak": {"datavalue": {"value": {"id": "Q33837"}}}}] if prop == "P31"
+            else [{"mainsnak": {"datavalue": {"value": {
+                "amount": "+279", "unit": "http://www.wikidata.org/entity/Q712226"}}}}]
+            if prop == "P2046" else [])
+        self.assertEqual(wp.too_small("Q271876", [172.7664, -2.6696, 176.8454, 3.1004]), "")
+
+    def test_a_town_is_still_sized_whatever_else_it_is(self):
+        # Maputo the city, for Maputo Province: a city, and 1% of the box.
+        wp.claim_values = lambda qid, prop: (
+            [{"mainsnak": {"datavalue": {"value": {"id": "Q515"}}}}] if prop == "P31"
+            else [{"mainsnak": {"datavalue": {"value": {
+                "amount": "+347", "unit": "http://www.wikidata.org/entity/Q712226"}}}}]
+            if prop == "P2046" else [])
+        self.assertIn("of the shape's", wp.too_small("Q3889", [31.9, -26.9, 33.0, -25.0]))
+
 
 class ATitleThatNamesTheDivision(unittest.TestCase):
     def test_the_redirect_titles_that_name_their_kind(self):
@@ -705,3 +731,177 @@ class AJoinTheBuildMadeBadly(unittest.TestCase):
         shape = {"id": "ne", "name": "Northeastern Region", "wikidata": "Q_CONST"}
         got = wp.article_for("ISL", [shape], [shape], "Iceland")
         self.assertEqual(got["ne"][:2], ("Q_REGION", "Northeastern Region (Iceland)"))
+
+
+class TwoRegionsInOneShape(unittest.TestCase):
+    def setUp(self):
+        self.saved = wp.api
+
+    def tearDown(self):
+        wp.api = self.saved
+
+    def pages(self, **texts):
+        wp.api = lambda endpoint, **params: {"parse": {
+            "title": params["page"], "wikitext": texts.get(params["page"], "")}}
+
+    def test_both_parts_read_and_are_summed(self):
+        self.pages(**{"Tahoua Region": infobox(population_total="3,328,365",
+                                                population_as_of="2012 census"),
+                      "Agadez Region": infobox(population_total="487,620",
+                                               population_as_of="2012 census")})
+        got = wp.composite({"name": "Tahoua/Agadez"}, ("Tahoua Region", "Agadez Region"))
+        self.assertEqual((got["value"], got["year"]), (3815985, 2012))
+        self.assertEqual(got["title"], "Tahoua Region + Agadez Region")
+
+    def test_one_part_missing_takes_nothing(self):
+        self.pages(**{"Zinder Region": infobox(population_total="3,539,764")})
+        self.assertIsNone(wp.composite({"name": "Zinder/Diffa"},
+                                       ("Zinder Region", "Diffa Region")))
+
+    def test_the_older_part_dates_the_sum(self):
+        self.pages(**{"A": infobox(population_total="10", population_as_of="2012"),
+                      "B": infobox(population_total="5", population_as_of="2020")})
+        self.assertEqual(wp.composite({"name": "A/B"}, ("A", "B"))["year"], 2012)
+
+
+class ARiverIsNotARegion(unittest.TestCase):
+    def test_titles(self):
+        for t in ("Togdheer River", "Mbomou River"):
+            self.assertTrue(wp.NOT_A_UNIT.search(t), t)
+        for t in ("English River, Seychelles", "Rivière du Rempart District", "Togdheer"):
+            self.assertFalse(wp.NOT_A_UNIT.search(t), t)
+
+
+class NobodyLivesThere(unittest.TestCase):
+    def test_a_zero_is_read_where_the_article_says_uninhabited(self):
+        text = infobox(population_total="0") + "Redonda is an uninhabited island."
+        self.assertEqual(wp.read(text)[0], 0)
+
+    def test_a_zero_is_not_read_where_it_might_be_a_blank(self):
+        value, _, why = wp.read(infobox(population_total="0"))
+        self.assertIsNone(value)
+        self.assertIn("uninhabited", why)
+
+    def test_the_word_itself_is_a_figure(self):
+        text = infobox(population_total="Uninhabited") + "The islands are uninhabited."
+        self.assertEqual(wp.read(text)[0], 0)
+
+
+class TheStatisticsBlock(unittest.TestCase):
+    def test_stat_pop1_with_its_own_year(self):
+        # Cote d'Ivoire's regions keep the census figure here.
+        text = infobox(stat_year1="2021", stat_pop1="1,000,508", stat_area1="12345")
+        self.assertEqual(wp.read(text)[:2], (1000508, 2021))
+
+    def test_population_total_still_comes_first(self):
+        text = infobox(population_total="10", population_as_of="2020",
+                       stat_year1="2014", stat_pop1="20")
+        self.assertEqual(wp.read(text)[:2], (10, 2020))
+
+
+class AnEmptyParameter(unittest.TestCase):
+    def test_is_passed_over_for_the_next(self):
+        text = infobox(population_census="", population_estimate="2,098,389",
+                       population_estimate_year="2023")
+        self.assertEqual(wp.read(text)[:2], (2098389, 2023))
+
+    def test_an_unreadable_one_still_stops_the_reader(self):
+        value, _, why = wp.read(infobox(population_total="1.9 million",
+                                        population_estimate="1900000"))
+        self.assertIsNone(value)
+        self.assertIn("population_total", why)
+
+
+class AFailedDeclarationIsFinal(unittest.TestCase):
+    """Gedaref's declared title was not an article, and the search found the city."""
+
+    def setUp(self):
+        self.saved = {n: getattr(wp, n) for n in (
+            "country_item", "claims_of", "entities", "children", "contains",
+            "search", "by_title", "languages", "statements", "declared")}
+        wp.country_item = lambda iso3: "Q1049"
+        wp.claims_of = lambda qid: {}
+        wp.languages = lambda claims: ["en"]
+        wp.statements = lambda claims, prop: []
+        wp.entities = lambda qids, langs=("en",): {}
+        wp.children = lambda qid: []
+        wp.contains = lambda qid: []
+        wp.search = lambda *a, **k: {"Q311199": {"names": ["Gedaref"], "title": "El-Gadarif"}}
+        wp.by_title = lambda *a, **k: ("Q311199", "El-Gadarif")
+        wp.declared = lambda *a, **k: None
+
+    def tearDown(self):
+        for n, v in self.saved.items():
+            setattr(wp, n, v)
+
+    def test_the_name_is_not_tried_after_it(self):
+        unit = {"id": "g", "name": "Gedaref"}
+        self.assertIn(("SDN", "Gedaref"), wp.TITLES)
+        self.assertEqual(wp.article_for("SDN", [unit], [unit], "Sudan"), {})
+
+    def test_a_unit_with_no_declaration_still_searches(self):
+        unit = {"id": "g", "name": "Gedaref"}
+        self.assertEqual(wp.article_for("XXX", [unit], [unit], "Nowhere")["g"][0], "Q311199")
+
+
+class AShapeNoArticleIsTheWholeOf(AFailedDeclarationIsFinal):
+    """Oman's Az Zahirah holds Al Buraimi and Musandam too."""
+
+    def test_nothing_is_searched_for(self):
+        wp.search = lambda *a, **k: {"Q1468596": {"names": ["Az Zahirah"],
+                                                  "title": "Al Dhahirah Governorate"}}
+        unit = {"id": "z", "name": "Az Zahirah"}
+        self.assertEqual(wp.article_for("OMN", [unit], [unit], "Oman"), {})
+
+    def test_the_reason_is_written_down(self):
+        self.assertIn("Musandam", wp.UNREADABLE[("OMN", "Az Zahirah")])
+
+
+class ADeclarationOverridesTheBuildsJoin(AFailedDeclarationIsFinal):
+    """Savanes was joined on Wikidata to Savanes Region, a part of the district."""
+
+    def setUp(self):
+        super().setUp()
+        self.saved_entities = wp.entities
+        region = {"names": ["Savanes"], "title": "Savanes Region (Ivory Coast)"}
+        wp.entities = lambda qids, langs=("en",): {q: region for q in qids if q == "Q1"}
+
+    def unit(self):
+        return {"id": "s", "name": "Savanes", "wikidata": "Q1"}
+
+    def test_the_declared_district_wins(self):
+        wp.declared = lambda *a, **k: ("Q2", "Savanes District")
+        got = wp.article_for("CIV", [self.unit()], [self.unit()], "Ivory Coast")
+        self.assertEqual(got["s"], ("Q2", "Savanes District", "declaration"))
+
+    def test_a_failed_declaration_does_not_leave_the_join_standing(self):
+        wp.declared = lambda *a, **k: None
+        got = wp.article_for("CIV", [self.unit()], [self.unit()], "Ivory Coast")
+        self.assertEqual(got, {})
+
+
+class IvoryCoastsDistrictsAreNotItsRegions(unittest.TestCase):
+    def test_each_redirect_that_reached_a_region_is_declared_to_the_district(self):
+        for name in ("Denguele", "Lacs", "Montagnes", "Savanes", "Valle Du Bandama", "Zanzan"):
+            self.assertTrue(wp.TITLES[("CIV", name)].endswith(" District"), name)
+
+
+class Approximately(unittest.TestCase):
+    """A stated figure with a stated uncertainty is read, and said to be approximate."""
+
+    def test_the_real_ones(self):
+        # The Gaza Strip, Beirut and the Liancourt Rocks, verbatim.
+        for text, want in (("~2,050,000", 2050000), ("{{circa|433249}}", 433249),
+                           ("Approximately 25", 25), ("c. 40,000", 40000)):
+            self.assertEqual(wp.number(text)[0], want, text)
+            self.assertTrue(wp.approximate(text), text)
+
+    def test_read_carries_the_mark(self):
+        value, year, remark = wp.read(infobox(population_estimate="~2,050,000",
+                                              population_estimate_year="2023"))
+        self.assertEqual((value, year), (2050000, 2023))
+        self.assertEqual(remark, "approximate")
+
+    def test_an_exact_figure_carries_none(self):
+        self.assertEqual(wp.read(ZAMBIA)[2], "")
+        self.assertFalse(wp.approximate("2252483"))

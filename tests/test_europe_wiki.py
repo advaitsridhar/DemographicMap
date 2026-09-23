@@ -1159,3 +1159,274 @@ class AParentWithNoDashToMarkItsChildren(unittest.TestCase):
         parents = {p for g in named
                    for p in canonical_groups.ancestry("religion", g)[1:]}
         self.assertEqual(named & parents, set())
+
+
+# Anenii Noi District's Religion section as the runner fetched it from the
+# English Wikipedia on 23 September 2026, and the infobox reference it cites
+# by name. Muslims are indented under Christians in the article; that is how
+# it is written, and the test keeps it.
+ANENII_NOI = """{{Infobox settlement
+| population_as_of = [[2024 Moldovan Census|2024]]
+| population_footnotes = <ref name=":0">{{Cite web |date=2026-02-27 |title=Rezultatele finale ale Recensământului Populației și Locuințelor 2024 |url=https://statistica.gov.md/ro/x}}</ref>
+| population_total = 57,687
+}}
+=== Ethnic groups ===
+text
+=== Religion ===
+[[File:MD.AN.AN - St Demetrius church (rear) - nov 2012.JPG|thumb|Church of St. Dumitru, [[Anenii Noi|city of Anenii Noi]]]]
+Source:<ref name=":0" />
+*Christians – 96.7%
+**[[Orthodoxy#Christianity|Orthodox Christians]] – 96.1%
+**[[Protestant]] – 1.7%
+**[[Catholics]] – 0.1%
+**[[Muslims|Muslim]] - 0.2%
+*Other – 0.1%
+*No Religion – 0.8%
+*Not declared - 0.9%
+== Economy ==
+There are 12,555 businesses registered in the district.
+"""
+
+
+class AListIsReadWhereThereIsNoTable(unittest.TestCase):
+    """Moldova's districts publish their 2024 religion as bullets, not a table."""
+
+    def test_the_lines_with_nothing_under_them_are_read(self):
+        got, why = m.read_field(ANENII_NOI, m.MD_RELIGION, MDA,
+                                "Anenii Noi District", "en")
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Orthodox"], 96.1)
+        self.assertEqual(shares["Protestant"], 1.7)
+        self.assertEqual(shares["Islam"], 0.2)
+        self.assertEqual(shares["Not declared"], 0.9)
+
+    def test_the_subtotal_is_not_read_beside_its_parts(self):
+        got, _ = m.read_field(ANENII_NOI, m.MD_RELIGION, MDA,
+                              "Anenii Noi District", "en")
+        self.assertNotIn("Christian", {r["group"] for r in got["rows"]})
+        self.assertAlmostEqual(sum(r["pct"] for r in got["rows"]), 100.0, delta=0.6)
+
+    def test_a_subtotal_that_is_not_its_parts_is_said_to_be(self):
+        # 96.1 + 1.7 + 0.1 + 0.2 is 98.1, not the 96.7 the line above says.
+        got, _ = m.read_field(ANENII_NOI, m.MD_RELIGION, MDA,
+                              "Anenii Noi District", "en")
+        self.assertIn('"Christians" gives 96.7%', got["remark"])
+        self.assertIn("98.1%", got["remark"])
+        self.assertIn("bulleted list", got["remark"])
+
+    def test_it_is_dated_by_the_census_its_citation_names(self):
+        # The reference is used by name in the section and defined in the
+        # infobox; the title's 2024 dates it, not the 2026 publication date.
+        got, _ = m.read_field(ANENII_NOI, m.MD_RELIGION, MDA,
+                              "Anenii Noi District", "en")
+        self.assertEqual(got["year"], 2024)
+        self.assertIn("Recensământului", got["cited"])
+        self.assertEqual(got["kind"], "census")
+
+    def test_a_table_is_still_preferred_where_there_is_one(self):
+        got, _ = m.read_field(BASARABEASCA_RELIGION, m.MD_RELIGION, MDA,
+                              "Basarabeasca District", "en")
+        self.assertNotIn("bulleted list", got["remark"])
+
+    def test_without_the_opt_in_a_list_is_not_read(self):
+        import dataclasses
+        spec = dataclasses.replace(m.MD_RELIGION, bullets=False)
+        got, why = m.read_field(ANENII_NOI, spec, MDA, "Anenii Noi District", "en")
+        self.assertIsNone(got)
+        self.assertIn("no table", why)
+
+    def test_a_hyphen_inside_a_label_is_not_the_dash(self):
+        rows, _, _ = m.find_list(
+            "== Religion ==\n* Seventh-day Adventists – 0.3%\n"
+            "* Orthodox Christians – 99.0%\n* Other – 0.7%\n", m.MD_RELIGION)
+        self.assertIn(["Seventh-day Adventists", "0.3"], rows)
+
+    def test_two_lines_are_not_a_composition(self):
+        rows, _, _ = m.find_list(
+            "== Religion ==\n* Orthodox – 99%\n* Other – 1%\n", m.MD_RELIGION)
+        self.assertEqual(rows, [])
+
+
+class ListsAsTheDistrictsWriteThem(unittest.TestCase):
+    """Each list below is the district's own, from the runner's raw fetches."""
+
+    def read(self, section, title="T"):
+        text = ANENII_NOI.split("=== Ethnic groups ===")[0] + section
+        return m.read_field(text, m.MD_RELIGION, MDA, title, "en")
+
+    def test_straseni_s_dash_is_a_template(self):
+        got, why = self.read(
+            "=== Religion ===\n"
+            "*[[Christians]]{{Snd}}99.1%\n"
+            "**[[Eastern Orthodoxy|Orthodox Christians]]{{Snd}}96.9%\n"
+            "**[[Protestant]]{{Snd}}2.1%\n"
+            "*[[Muslims]] - 0.1%\n"
+            "*Other{{Snd}}0.1%\n"
+            "*No religion{{Snd}}0.4%\n"
+            "*Not Declared - 0.4%\n")
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Orthodox"], 96.9)
+        self.assertEqual(shares["Islam"], 0.1)
+
+    def test_causeni_writes_no_dash(self):
+        got, why = self.read(
+            "=== Religion ===\n"
+            "*Christians - 99.1%\n"
+            "**[[Eastern Orthodox|Orthodox Christians]] - 96.9%\n"
+            "**[[Protestant]] - 2.1%\n"
+            "*Other 0.5%\n"
+            "*No religion 0.4%\n")
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Other religion"], 0.5)
+        self.assertEqual(shares["Irreligious"], 0.4)
+
+    def test_dubasari_s_indentation_is_not_believed_where_the_groups_deny_it(self):
+        # "Not Declared" is indented under "No Religion"; neither is a kind of
+        # the other, so both are read. And "98.%" is 98.
+        got, why = self.read(
+            "=== Religion ===\n"
+            "*[[Christians]] - 99.5%\n"
+            "**[[Eastern Orthodox|Orthodox Christians]] - 98.%\n"
+            "**[[Protestant]] - 0.9%\n"
+            "*Other - 0.1%\n"
+            "*No Religion - 0.3%\n"
+            "**Not Declared - 0.1%\n")
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Orthodox"], 98.0)
+        self.assertEqual(shares["Irreligious"], 0.3)
+        self.assertEqual(shares["Not declared"], 0.1)
+        self.assertIn("neither is a kind of the other", got["remark"])
+
+    def test_a_breakdown_the_tree_agrees_with_drops_its_parent(self):
+        # Protestant is not a label the spec skips, but Baptist is a kind of
+        # it, so the indentation is a breakdown and Protestant is not read
+        # beside its parts -- the build refuses a parent and child together.
+        got, why = self.read(
+            "=== Religion ===\n"
+            "*Orthodox Christians - 95.0%\n"
+            "*Protestant - 4.0%\n"
+            "**Baptists - 2.5%\n"
+            "**Pentecostals - 1.5%\n"
+            "*Other - 1.0%\n")
+        self.assertEqual(why, "")
+        groups = {r["group"] for r in got["rows"]}
+        self.assertNotIn("Protestant", groups)
+        self.assertIn("Baptist", groups)
+
+    def test_edinet_s_words(self):
+        got, why = self.read(
+            "=== Religion ===\n"
+            "*[[Eastern Orthodox Church|Christian Orthodox]] - 86.7%\n"
+            "*[[Jehovah's Witnesses]] - 4.6%\n"
+            "*[[Pentecostalism|Pentecostals]] - 3.0%\n"
+            "*[[Seventh-day Adventist Church|Seventh-day Adventist]]s - 1.2%\n"
+            "*Other - 2.0%\n"
+            "*[[Irreligion|Irreligious]] - 1.6%\n"
+            "*Not stated - 0.9%\n")
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Orthodox"], 86.7)
+        self.assertEqual(shares["Seventh-day Adventist"], 1.2)
+        self.assertEqual(shares["Not declared"], 0.9)
+
+    def test_a_list_borrowing_the_infobox_citation_calls_itself_a_list(self):
+        spec = m.Country(iso3="MDA", out="x.json", decimal=".", census="C",
+                         licence="L", levels=(),
+                         infobox_citation=r"statistica\.gov\.md")
+        text = ANENII_NOI.replace('Source:<ref name=":0" />\n', "")
+        got, _ = m.read_field(text, m.MD_RELIGION, spec, "T", "en")
+        self.assertIn("The list itself carries no reference", got["remark"])
+        self.assertNotIn("table itself", got["remark"])
+
+
+# Edinet District's Demographics section as the runner fetched it on
+# 23 September 2026. The Moldovan language label's footnote is cut short
+# where the probe's log cut it, and closed; its value is not in the log and
+# is written here as the remainder of the chart.
+EDINET = """{{Infobox settlement
+| population_footnotes = <ref name=recens>{{Cite web |title=Rezultatele finale ale Recensământului Populației și Locuințelor 2024 |url=https://statistica.gov.md/ro/x}}</ref>
+}}
+==Demographics==
+According to the [[2024 Moldovan census|2024 census]], 50,429 inhabitants lived in Edineț District.
+{{Pie chart
+|thumb=left
+|caption=Ethnic composition of Edineț District (2024)
+|label1=[[Moldovans]]{{efn|There is an [[Controversy over ethnic and linguistic identity in Moldova|ongoing controversy]] regarding the ethnic identification of Moldovans and Romanians.}}|value1=77.4|color1=#8A2BE2
+|label2=[[Romanians]]|value2=3.3|color2=#8080ff
+|label3=[[Ukrainians in Moldova|Ukrainians]]|value3=13.3|color3=#ffff80
+|label4=[[Russians in Moldova|Russians]]|value4=4.1|color4=#c08080
+|label5=[[Romani people|Romani]]|value5=1.3|color5=#80ffff
+|label6=Others|value6=0.5|color6=#9f9f9f}}
+{{Pie chart
+|thumb=right
+|caption=Linguistic composition of Edineț District (2024)
+|label1=[[Moldovan language|Moldovan]]{{efn|In March 2023, the [[Parliament of Moldova]] passed a law. {{cite news| url=https://www.rferl.org/a/x |title=Moldova | work=RFE/RL}}}}|value1=59.0|color1=#8A2BE2
+|label2=[[Romanian language|Romanian]]|value2=15.6|color2=#8080ff
+|label3=[[Russian language|Russian]]|value3=16.2|color3=#c08080
+|label4=[[Ukrainian language|Ukrainian]]|value4=7.8|color4=#ffff80
+|label5=[[Romani language|Romani]]|value5=1.2|color5=#80ffff
+|label6=Other|value6=0.2|color6=#9f9f9f}}
+{{clear|left}}
+=== Religion ===
+*Other - 2.0%
+"""
+
+
+class APieChartIsReadWhereThereIsNoTable(unittest.TestCase):
+    def test_the_ethnic_chart(self):
+        got, why = m.read_field(EDINET, m.MD_ETHNICITY, MDA, "Edineț District", "en")
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Moldovan"], 77.4)
+        self.assertEqual(shares["Ukrainian"], 13.3)
+        self.assertEqual(got["year"], 2024)
+        self.assertIn("pie chart", got["remark"])
+
+    def test_a_footnote_with_a_citation_in_it_does_not_split_the_label(self):
+        got, why = m.read_field(EDINET, m.MD_LANGUAGE_FIRST, MDA, "Edineț District", "en")
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Moldovan"], 59.0)
+        self.assertEqual(shares["Russian"], 16.2)
+
+    def test_the_language_chart_is_not_said_to_be_mother_tongue(self):
+        got, _ = m.read_field(EDINET, m.MD_LANGUAGE_FIRST, MDA, "Edineț District", "en")
+        fields = m.field_fields(got, m.MD_LANGUAGE_FIRST, MDA, "Edineț District", "en")
+        self.assertNotIn("mother tongue for", fields["language_note"])
+        self.assertIn("does not say whether", fields["language_note"])
+
+    def test_the_caption_must_name_the_field(self):
+        # The ethnic chart is not read as the language, nor the reverse.
+        rows, _, caption = m.find_chart(EDINET, m.MD_LANGUAGE_FIRST)
+        self.assertTrue(caption.startswith("Linguistic"))
+        rows, _, caption = m.find_chart(EDINET, m.MD_ETHNICITY)
+        self.assertTrue(caption.startswith("Ethnic"))
+
+    def test_a_citation_that_names_the_year_the_caption_does_dates_it(self):
+        got, _ = m.read_field(EDINET, m.MD_ETHNICITY, MDA, "Edineț District", "en")
+        fields = m.field_fields(got, m.MD_ETHNICITY, MDA, "Edineț District", "en")
+        self.assertNotIn("The citation carries no year", fields["ethnicity_note"])
+
+    def test_two_charts_of_one_kind_are_neither_read(self):
+        doubled = EDINET + "\n" + "{{Pie chart" + EDINET.split("{{Pie chart")[1]
+        rows, _, _ = m.find_chart(doubled, m.MD_ETHNICITY)
+        self.assertEqual(rows, [])
+
+
+class TheParentWrittenInTheSingular(unittest.TestCase):
+    def test_donduseni_s_christian_is_a_subtotal(self):
+        got, why = m.read_field(
+            ANENII_NOI.split("=== Ethnic groups ===")[0] + "=== Religion ===\n"
+            "*Christian – 99.2%\n"
+            "**Orthodox Christians – 93.1%\n"
+            "**Old Believers – 3.3%\n"
+            "**Protestant – 2.8%\n"
+            "*Other – 0.1%\n"
+            "*No religion – 0.3%\n"
+            "*Not declared – 0.3%\n", m.MD_RELIGION, MDA, "T", "en")
+        self.assertEqual(why, "")
+        self.assertEqual(got["rows"][0]["group"], "Orthodox")

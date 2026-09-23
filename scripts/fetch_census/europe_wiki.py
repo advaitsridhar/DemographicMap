@@ -45,7 +45,7 @@ from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_json, log,
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import slugify  # noqa: E402
-from probe_wikitable import infobox_lines, tables  # noqa: E402
+from probe_wikitable import infobox_lines, plain, tables  # noqa: E402
 
 PAUSE = 0.3
 BACKOFF = (60, 120, 240)
@@ -530,6 +530,23 @@ class Composition:
     # ethnic table does, where a people has no count for 1989) is only
     # aligned at the end -- which is the column these specs read.
     columns: bool = False
+    # Whether a section with no table may hold the composition as a bulleted
+    # list, "* Orthodox Christians – 96.1%", one line a group. Moldova's
+    # English district articles publish their 2024 religion that way, under
+    # the same heading as a table would sit, and the table-only reader
+    # called every one of them "a section where a composition would go with
+    # no table in it". Only tried where no table is found: a table is still
+    # preferred wherever there is one.
+    bullets: bool = False
+    # A pattern a {{Pie chart}}'s caption must match for the chart to be read
+    # as this field's composition, where the article has no table for it.
+    # Four of Moldova's northern districts -- Edinet, Falesti, Glodeni,
+    # Riscani -- publish their 2024 ethnic and linguistic composition as a
+    # pair of pie charts captioned "Ethnic composition of Edinet District
+    # (2024)" and "Linguistic composition of ...", and nothing else. The
+    # caption is the check a table's header is: it names what is counted and
+    # the year it is counted for.
+    charts: str | None = None
 
 
 @dataclass(frozen=True)
@@ -678,6 +695,177 @@ def find_table(wikitext: str, spec: Composition) -> tuple[list[list[str]], str, 
     return [], "", ("the section is there and holds a table whose header this "
                     "reader does not know; the article has been reorganised "
                     "or carries a different table")
+
+
+# One line of a bulleted composition once its markup is gone: a label, a
+# dash of any width, a share. The dash may be a hyphen, and a label may carry
+# one of its own ("Seventh-day Adventists – 0.3%"), which is why the label is
+# taken lazily and the dash must be followed by the figure.
+#
+# Căușeni writes "*Other 0.5%" with no dash at all, so a space will do; and
+# Dubăsari's Orthodox line is "98.%", a decimal mark with nothing after it,
+# which is read as the 98 it says rather than losing the district's largest
+# group and refusing what is left for adding to eleven.
+BULLET = re.compile(r"^(?P<label>.+?)(?:\s*[–—−-]+\s*|\s+)"
+                    r"(?P<share>\d+(?:[.,]\d+)?)[.,]?\s*%$")
+# A dash written as a template. Strășeni's list is "*[[Christians]]{{Snd}}
+# 99.1%", and the table reader's way with a template -- keep what follows
+# its last "|" -- turns that into "ChristiansSnd99.1%".
+DASH_TEMPLATE = re.compile(r"\{\{\s*(?:snd|spnd|sndash|spaced\s+(?:en\s+)?n?dash|"
+                           r"ndash|mdash|dash)\s*\}\}", re.I)
+# The first row of a list read as a table. It has no figure, so read_rows
+# passes over it, and it tells read_field that there is no header to date.
+LIST_HEADER = ["(a bulleted list)"]
+
+
+def find_list(wikitext: str, spec: Composition
+              ) -> tuple[list[list[str]], str, list[str]]:
+    """(the list's groups as rows of a table, the section's wikitext, remarks).
+
+    A line with lines indented under it is their subtotal, and it is not
+    read: Anenii Noi's list gives "Christians – 96.7%" with Orthodox,
+    Protestant and Catholic under it, and reading all four counts those
+    people twice. What is read is every line with nothing under it. Where a
+    subtotal is not the sum of its parts the remark says so, with both
+    figures -- the parts are what is read, and a reader of the panel should
+    know the article disagrees with itself.
+
+    Fewer than three groups is not a composition and nothing is returned.
+    """
+    section = re.compile(spec.section, re.I)
+    for name, body in sections(wikitext):
+        if not section.search(name):
+            continue
+        items: list[tuple[int, str, str]] = []
+        for line in body.splitlines():
+            depth = len(line) - len(line.lstrip("*"))
+            if not depth:
+                continue
+            m = BULLET.match(plain(DASH_TEMPLATE.sub(" – ", line[depth:])))
+            if m:
+                items.append((depth, m.group("label"), m.group("share")))
+        rows: list[list[str]] = []
+        remarks: list[str] = []
+        for i, (depth, label, share) in enumerate(items):
+            under = []
+            for d, c, s in items[i + 1:]:
+                if d <= depth:
+                    break
+                under.append((d, c, s))
+            if not under or not breakdown(label, [c for _, c, _ in under], spec):
+                if under:
+                    remarks.append(
+                        f"The list indents \"{under[0][1]}\" under \"{label}\", "
+                        f"and neither is a kind of the other; both are read.")
+                rows.append([label, share])
+                continue
+            # Only the lines directly under it: a grandchild is inside its
+            # own parent's figure already.
+            first = min(d for d, _, _ in under)
+            parts = sum(float(s.replace(",", ".")) for d, _, s in under if d == first)
+            whole = float(share.replace(",", "."))
+            if abs(parts - whole) > 0.15:
+                remarks.append(
+                    f"The list's line \"{label}\" gives {whole:g}% and the lines "
+                    f"under it add to {parts:.1f}%; the lines under it are what "
+                    f"is read.")
+        if len(rows) >= 3:
+            return [LIST_HEADER] + rows, body, remarks
+    return [], "", []
+
+
+def template_params(wikitext: str, name: str) -> list[dict[str, str]]:
+    """Every use of the template ``name``, as {parameter: value}.
+
+    A parameter's value may hold templates and links of its own -- a pie
+    chart's label carries an {{efn}} footnote with a {{cite news}} inside
+    it, pipes and all -- so the template is split on the pipes at its own
+    depth and nowhere else.
+    """
+    out: list[dict[str, str]] = []
+    for m in re.finditer(r"\{\{\s*" + re.escape(name) + r"\s*\|", wikitext, re.I):
+        depth, i, start = 0, m.start(), m.end()
+        parts: list[str] = []
+        while i < len(wikitext):
+            two = wikitext[i:i + 2]
+            if two in ("{{", "[["):
+                depth += 1
+                i += 2
+                continue
+            if two in ("}}", "]]"):
+                depth -= 1
+                if depth == 0:
+                    parts.append(wikitext[start:i])
+                    break
+                i += 2
+                continue
+            if wikitext[i] == "|" and depth == 1:
+                parts.append(wikitext[start:i])
+                start = i + 1
+            i += 1
+        params: dict[str, str] = {}
+        for part in parts:
+            key, eq, value = part.partition("=")
+            if eq:
+                params[key.strip().lower()] = value.strip()
+        out.append(params)
+    return out
+
+
+def find_chart(wikitext: str, spec: Composition
+               ) -> tuple[list[list[str]], str, str]:
+    """(the chart's slices as rows of a table, the section it sits in, its caption).
+
+    The section is returned for its citations, as a table's is. Nothing is
+    returned unless exactly one chart's caption matches: two would be two
+    counts with nothing to say which is meant.
+    """
+    wanted = re.compile(spec.charts or r"^$", re.I)
+    found: list[tuple[list[list[str]], str, str]] = []
+    for _, body in sections(wikitext):
+        for params in template_params(body, "Pie chart"):
+            caption = plain(params.get("caption", ""))
+            if not wanted.search(caption):
+                continue
+            rows = []
+            k = 1
+            while f"label{k}" in params:
+                rows.append([plain(params[f"label{k}"]), params.get(f"value{k}", "")])
+                k += 1
+            if len(rows) >= 3:
+                found.append(([[caption]] + rows, body, caption))
+    return found[0] if len(found) == 1 else ([], "", "")
+
+
+def breakdown(label: str, under: list[str], spec: Composition) -> bool:
+    """Whether the lines indented under ``label`` are its parts.
+
+    Indentation is how an editor lays a list out, not a statement about the
+    groups, and Dubăsari's list indents "Not Declared" under "No Religion".
+    Taken as a breakdown, "No Religion" is dropped as a subtotal and its 0.3%
+    is lost. So the indentation is believed only where the groups agree with
+    it: the line is one the spec already skips as a subtotal ("Christians"),
+    or a line under it is, on the map's own tree of groups, a kind of it.
+    A line whose label is unknown is not a subtotal either -- it is read, so
+    that read_rows reports the label rather than this hiding it.
+    """
+    if re.search(spec.skip, " ".join(label.lower().split()), re.I):
+        return True
+    parent, _ = label_for(label, spec.labels)
+    if parent is None:
+        return False
+    import canonical_groups
+    # The map files "Protestant" beside "Baptist" under Protestantism, not
+    # above it, so the parent's own category counts too -- but never the
+    # top tier: Islam's category is "Abrahamic religions", which would make
+    # it the parent of every Christian line.
+    above = canonical_groups.ancestry(spec.field, parent)
+    kinds = {parent} | ({above[1]} if len(above) > 2 else set())
+    for child in under:
+        group, _ = label_for(child, spec.labels)
+        if group and kinds & set(canonical_groups.ancestry(spec.field, group)[1:]):
+            return True
+    return False
 
 
 PIXELS = re.compile(r"^\d+\s*px$", re.I)
@@ -1131,6 +1319,16 @@ MD_RELIGION_LABELS = {
     "agnostic / atheist": "Agnostic or atheist",
     # Gagauzia's, and the same reasoning: both halves are irreligion.
     "atheism and irreligion": "No religion",
+    # The districts' bulleted lists, which each editor worded their own way.
+    # "Not stated" (Edinet, Falesti, Glodeni, Riscani) and Ocnita's "No
+    # Declared" are the census's non-response, which the tables call
+    # "Undeclared". Orhei's "None" is the census's no-religion answer, and
+    # takes the same name the tables' "No religion" does here.
+    "not stated": "Not declared", "no declared": "Not declared",
+    "none": "Irreligious",
+    "christian orthodox": "Orthodox",
+    "seventh-day adventists": "Seventh-day Adventist",
+    "seventh-day adventist": "Seventh-day Adventist",
 }
 MD_LANGUAGE_LABELS = {
     "romanian": "Romanian", "moldovan": "Moldovan", "russian": "Russian",
@@ -1140,6 +1338,8 @@ MD_LANGUAGE_LABELS = {
     # one bucket and not two rows, and splitting it would invent the split.
     "moldovan (romanian)": "Moldovan (Romanian)",
     "other languages": "Other", "others": "Other", "other": "Other",
+    # The northern districts' pie charts.
+    "romani": "Romani",
 }
 
 # A row that is the sum of the rows under it.
@@ -1155,7 +1355,10 @@ MD_LANGUAGE_LABELS = {
 # Skipping a parent whose children are missing is the safe direction of the
 # same mistake: what is left adds to five per cent and is refused, which is
 # a gap and not a wrong figure.
-MD_SUBTOTALS = r"|\(total\)|^christians$|^christianity$"
+#
+# The districts' bulleted lists write the same parent as "Christians" or, in
+# Donduseni and Drochia, "Christian".
+MD_SUBTOTALS = r"|\(total\)|^christians?$|^christianity$"
 
 # The table's own header, which is a row like any other to a reader that has
 # only the wikitext. Most of Europe's headers are skipped without being
@@ -1172,6 +1375,7 @@ MD_ETHNICITY = Composition(
     # censuses side by side; "Ethnicity" in Taraclia's three.
     header=r"ethnic(ity|\s+group)",
     value=-1,
+    charts=r"^ethnic composition\b",
     labels=MD_ETHNICITY_LABELS,
     skip=TOTALS + MD_HEADER_ROWS)
 MD_RELIGION = Composition(
@@ -1182,6 +1386,9 @@ MD_RELIGION = Composition(
     # Counting columns and not figures: Taraclia prints three censuses side
     # by side and writes "-" where a faith had nobody in one of them.
     columns=True,
+    # The districts' English articles list their 2024 religion as bullets
+    # under this heading, with no table: Anenii Noi, and most of the rest.
+    bullets=True,
     labels=MD_RELIGION_LABELS,
     skip=TOTALS + MD_SUBTOTALS + MD_HEADER_ROWS)
 # Two shapes of the same question, one per article that asks it. Chisinau's
@@ -1194,6 +1401,7 @@ MD_LANGUAGE_FIRST = Composition(
     section=r"language|mother tongue",
     header=r"first language",
     value=-1,
+    charts=r"^linguistic composition\b",
     labels=MD_LANGUAGE_LABELS,
     skip=TOTALS + MD_HEADER_ROWS)
 MD_LANGUAGE_MOTHER = Composition(
@@ -1399,17 +1607,15 @@ SPECS: dict[str, Country] = {
     # publishing no composition at all. Bender and Transnistria are refused,
     # in writing, for the reason under MD_ABSENT.
     #
-    # Four districts -- Edinet, Falesti, Glodeni and Riscani -- have a
-    # Demographics heading in English with no table under it, and that is
-    # what their records say. The Romanian edition does carry an ethnic
-    # table for each of them, and it was read and not taken: those tables
-    # are the 2004 census, twenty years older than the 2024 figures every
-    # other Moldovan unit here carries, three of the four cite nothing at
-    # all (so they would be published undated, beside neighbours dated
-    # 2024), and Riscani's has two rows merged into one cell -- "Moldoveni
-    # Romani 1 | 50.391 777 | 72,55% 1,12%" -- which is two peoples sharing
-    # a label and would be refused anyway. Reaching them would also need a
-    # per-unit edition, which this reader does not have. Measured and left.
+    # Four districts -- Edinet, Falesti, Glodeni and Riscani -- and Balti have
+    # no table in English: their 2024 ethnic and linguistic composition is a
+    # pair of {{Pie chart}}s under Demographics, and MD_ETHNICITY and
+    # MD_LANGUAGE_FIRST name the charts' captions. Every district but
+    # Briceni and the capital lists its 2024 religion as bullets under a
+    # Religion heading, which MD_RELIGION opts in to reading. Briceni's
+    # religion table gives 2004 shares and 2014 counts with no shares, and
+    # is refused for the empty column. Bender and Transnistria are left to
+    # moldova_gaps.py, which says whose count it reads for them.
     "MDA": Country(
         iso3="MDA", out="europe_wiki_moldova.json", decimal=".",
         census="Biroul Naţional de Statistică, Recensământul Populaţiei şi al "
@@ -1660,6 +1866,16 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
     note says which of the two dated the figure.
     """
     table, body, why = find_table(wikitext, spec)
+    listed: list[str] | None = None
+    caption: str | None = None
+    if why and spec.bullets:
+        rows, section, said = find_list(wikitext, spec)
+        if rows:
+            table, body, why, listed = rows, section, "", said
+    if why and spec.charts:
+        rows, section, title_of_chart = find_chart(wikitext, spec)
+        if rows:
+            table, body, why, caption = rows, section, "", title_of_chart
     if why:
         return None, why
     definitions = ref_definitions(wikitext)
@@ -1713,13 +1929,15 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
                   f"they add to a hundred. " + remark).strip()
     if dropped:
         remark = (" ".join(dropped) + " " + remark).strip()
+    what = ("list" if listed is not None else "chart" if caption is not None
+            else "table")
     if borrowed:
-        remark = ("The table itself carries no reference; the citation is the "
-                  "one the article's infobox gives for the same census. "
+        remark = (f"The {what} itself carries no reference; the citation is the "
+                  f"one the article's infobox gives for the same census. "
                   + remark).strip()
     if uncited:
-        remark = ("The article cites nothing for this table, so the article "
-                  "itself is the source on the record. " + remark).strip()
+        remark = (f"The article cites nothing for this {what}, so the article "
+                  f"itself is the source on the record. " + remark).strip()
         kind, year, cited = "other", None, (
             f"https://{lang}.wikipedia.org/wiki/"
             + urllib.parse.quote(title.replace(" ", "_")))
@@ -1736,15 +1954,31 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
     # by side and cites the 2001 release first, so the 2011 column -- which
     # is the one read -- was being stamped 2001. A figure dated by the
     # wrong census is worse than no figure.
-    header = " ".join(" ".join(row) for row in table[:2])
+    # A list has no header to print a year in, and its first line is a
+    # group's label -- which must not be searched for one.
+    # A chart's caption is its header: "Ethnic composition of Edinet District
+    # (2024)".
+    header = ("" if listed is not None else caption if caption is not None
+              else " ".join(" ".join(row) for row in table[:2]))
     printed = [int(y) for y in re.findall(r"\b(19\d\d|20[0-4]\d)\b", header)]
+    if caption is not None:
+        remark = (f"The article gives this composition as a pie chart, "
+                  f"captioned \"{caption}\", and not as a table. " + remark).strip()
+    if listed is not None:
+        remark = " ".join(["The article gives this composition as a bulleted "
+                           "list under its heading rather than as a table.",
+                           *listed, remark]).strip()
     if printed and spec.value == -1:
         if year and max(printed) != year:
             remark = (f"The citation is for {year}; the column read is the one "
                       f"the table's own header labels {max(printed)}, and that "
                       f"is the year on this record. " + remark).strip()
+        # Only where the header is what dates it. A citation and a header
+        # that name the same year are a citation that dates the figures.
+        if year != max(printed):
+            dated = ("the chart's own caption" if caption is not None
+                     else "the table's own header")
         year = max(printed)
-        dated = "the table's own header"
     if year is None:
         # An undated figure is read and said to be undated.
         #
@@ -1757,25 +1991,37 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
                   "year, so the date these figures are as of is unknown. "
                   + remark).strip()
         dated = "nothing on the page"
+    # A chart names its subject in its caption and no more: "Linguistic
+    # composition" does not say whether it counts mother tongue or the
+    # language usually spoken, so the record does not say either.
+    word = None
+    if caption is not None and spec.field == "language":
+        word = "language"
+        remark = (remark + " The chart does not say whether it counts mother "
+                  "tongue or the language usually spoken.").strip()
     return {"rows": rows, "year": year, "kind": kind, "cited": cited,
-            "remark": remark, "dated": dated, "counts": counts}, ""
+            "remark": remark, "dated": dated, "counts": counts,
+            "word": word}, ""
 
 
 def field_fields(reading: dict[str, Any], spec: Composition, country: Country,
                  title: str, lang: str) -> dict[str, Any]:
     sentences = [
-        f"Population by {FIELD_WORD[spec.field]} for {reading['year']} from "
+        f"Population by {reading.get('word') or FIELD_WORD[spec.field]} for "
+        f"{reading['year']} from "
         f"{EXPLAINED[reading['kind']]}, as the {lang}.wikipedia article "
         f"'{title}' transcribes and cites it.",
         CAVEAT[reading["kind"]],
     ]
-    if reading["dated"] != "its citation" and "The citation is for" not in reading["remark"]:
-        # Only where the citation really is undated. Where it carries a year
-        # and the table's header carries another, the remark below already
-        # says both and which one the record holds, and this sentence said
-        # the opposite of it.
-        sentences.append("The citation carries no year; the figures are dated "
-                         "by the year printed in the table's own header.")
+    if (reading["dated"] not in ("its citation", "nothing on the page")
+            and "The citation is for" not in reading["remark"]):
+        # Only where the citation really is undated and the header dates the
+        # figures. Where it carries a year and the table's header carries
+        # another, the remark below already says both and which one the
+        # record holds, and this sentence said the opposite of it; where
+        # nothing dates them, the remark says that.
+        sentences.append(f"The citation carries no year; the figures are dated "
+                         f"by the year printed in {reading['dated']}.")
     if reading["remark"]:
         sentences.append(reading["remark"])
     return {

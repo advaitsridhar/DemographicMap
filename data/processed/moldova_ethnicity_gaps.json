@@ -1,0 +1,174 @@
+[
+  {
+    "id": "MDA-gap-admin1-bender",
+    "level": "admin1",
+    "name": "Bender",
+    "parent": "MDA",
+    "country": "MDA",
+    "shape_id": "25212430B95154791539173",
+    "match_by": "shape_id",
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 25.03
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 17.98
+      },
+      {
+        "group": "Russian",
+        "pct": 43.35
+      },
+      {
+        "group": "Other",
+        "pct": 13.64
+      }
+    ],
+    "ethnicity_note": "Ethnic composition from Transnistria's own 2004 census, as the en.wikipedia article 'Transnistria' tabulates it by district. Bender is administered by Transnistria and the 2024 Moldovan census did not count it; this is the breakaway authority's count, not Moldova's.",
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Transnistria's 2004 census, as the en.wikipedia article 'Transnistria' tabulates it",
+        "url": "https://en.wikipedia.org/wiki/Transnistria",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "ethnicity_year": 2004
+  },
+  {
+    "id": "MDA-gap-admin2-bender",
+    "level": "admin2",
+    "name": "Bender",
+    "parent": "MDA",
+    "country": "MDA",
+    "shape_id": "25212430B95154791539173",
+    "match_by": "shape_id",
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 25.03
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 17.98
+      },
+      {
+        "group": "Russian",
+        "pct": 43.35
+      },
+      {
+        "group": "Other",
+        "pct": 13.64
+      }
+    ],
+    "ethnicity_note": "Ethnic composition from Transnistria's own 2004 census, as the en.wikipedia article 'Transnistria' tabulates it by district. Bender is administered by Transnistria and the 2024 Moldovan census did not count it; this is the breakaway authority's count, not Moldova's.",
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Transnistria's 2004 census, as the en.wikipedia article 'Transnistria' tabulates it",
+        "url": "https://en.wikipedia.org/wiki/Transnistria",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "ethnicity_year": 2004
+  },
+  {
+    "id": "MDA-gap-admin1-transnistria",
+    "level": "admin1",
+    "name": "Transnistria",
+    "parent": "MDA",
+    "country": "MDA",
+    "shape_id": "25212430B22111314945643",
+    "match_by": "shape_id",
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Moldovan",
+          "pct": 35.1
+        },
+        {
+          "group": "Ukrainian",
+          "pct": 30.8
+        },
+        {
+          "group": "Russian",
+          "pct": 27.1
+        },
+        {
+          "group": "Other",
+          "pct": 7.0
+        }
+      ],
+      "method": "district-weighted",
+      "inputs": [
+        "en.wikipedia 'Transnistria', Camenca",
+        "en.wikipedia 'Transnistria', Rîbnița",
+        "en.wikipedia 'Transnistria', Dubăsari",
+        "en.wikipedia 'Transnistria', Grigoriopol",
+        "en.wikipedia 'Transnistria', Slobozia",
+        "en.wikipedia 'Transnistria', Tiraspol"
+      ],
+      "note": "Not read: nothing publishes the left bank without Bender. The shares of Transnistria's six left-bank districts from its own 2004 census, combined weighted by the same table's 2025 populations, which assumes the districts' relative sizes have held since 2004. Breakaway authority's census; the 2024 Moldovan census did not count this territory."
+    },
+    "ethnicity_note": "Not read: nothing publishes the left bank without Bender. The shares of Transnistria's six left-bank districts from its own 2004 census, combined weighted by the same table's 2025 populations, which assumes the districts' relative sizes have held since 2004. Breakaway authority's census; the 2024 Moldovan census did not count this territory.",
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Transnistria's 2004 census, as the en.wikipedia article 'Transnistria' tabulates it",
+        "url": "https://en.wikipedia.org/wiki/Transnistria",
+        "license": "CC BY-SA 4.0"
+      }
+    ]
+  },
+  {
+    "id": "MDA-gap-admin2-transnistria",
+    "level": "admin2",
+    "name": "Transnistria",
+    "parent": "MDA",
+    "country": "MDA",
+    "shape_id": "25212430B22111314945643",
+    "match_by": "shape_id",
+    "ethnicity": {
+      "status": "modelled",
+      "estimate": [
+        {
+          "group": "Moldovan",
+          "pct": 35.1
+        },
+        {
+          "group": "Ukrainian",
+          "pct": 30.8
+        },
+        {
+          "group": "Russian",
+          "pct": 27.1
+        },
+        {
+          "group": "Other",
+          "pct": 7.0
+        }
+      ],
+      "method": "district-weighted",
+      "inputs": [
+        "en.wikipedia 'Transnistria', Camenca",
+        "en.wikipedia 'Transnistria', Rîbnița",
+        "en.wikipedia 'Transnistria', Dubăsari",
+        "en.wikipedia 'Transnistria', Grigoriopol",
+        "en.wikipedia 'Transnistria', Slobozia",
+        "en.wikipedia 'Transnistria', Tiraspol"
+      ],
+      "note": "Not read: nothing publishes the left bank without Bender. The shares of Transnistria's six left-bank districts from its own 2004 census, combined weighted by the same table's 2025 populations, which assumes the districts' relative sizes have held since 2004. Breakaway authority's census; the 2024 Moldovan census did not count this territory."
+    },
+    "ethnicity_note": "Not read: nothing publishes the left bank without Bender. The shares of Transnistria's six left-bank districts from its own 2004 census, combined weighted by the same table's 2025 populations, which assumes the districts' relative sizes have held since 2004. Breakaway authority's census; the 2024 Moldovan census did not count this territory.",
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Transnistria's 2004 census, as the en.wikipedia article 'Transnistria' tabulates it",
+        "url": "https://en.wikipedia.org/wiki/Transnistria",
+        "license": "CC BY-SA 4.0"
+      }
+    ]
+  }
+]

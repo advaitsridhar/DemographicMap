@@ -1,5 +1,362 @@
 [
   {
+    "id": "117-WP-falkland-islands-uk",
+    "level": "admin1",
+    "name": "Falkland Islands (UK)",
+    "parent": "117",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3662,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Falkland Islands (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Falkland_Islands",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "117",
+    "shape_id": "DIS007",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "118-WP-gaza-strip",
+    "level": "admin1",
+    "name": "Gaza Strip",
+    "parent": "118",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2050000,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Gaza Strip (infobox), which gives the figure as approximate"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gaza_Strip",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "118",
+    "shape_id": "DIS008",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "123-WP-liancourt-rocks",
+    "level": "admin1",
+    "name": "Liancourt Rocks",
+    "parent": "123",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25,
+      "unit": "people",
+      "source": "English Wikipedia, Liancourt Rocks (infobox); the article gives no year for the figure, which gives the figure as approximate"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Liancourt_Rocks",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "123",
+    "shape_id": "DIS013",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "125-WP-paracel-is",
+    "level": "admin1",
+    "name": "Paracel Is",
+    "parent": "125",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1443,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Woody Island (South China Sea) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Woody_Island_%28South_China_Sea%29",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "125",
+    "shape_id": "DIS015",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "126-WP-sanafir-tiran-is",
+    "level": "admin1",
+    "name": "Sanafir & Tiran Is.",
+    "parent": "126",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 0,
+      "unit": "people",
+      "source": "English Wikipedia, Tiran Island + Sanafir Island (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tiran_Island_%2B_Sanafir_Island",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "126",
+    "shape_id": "DIS016",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "128-WP-spratly-is",
+    "level": "admin1",
+    "name": "Spratly Is",
+    "parent": "128",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 32,
+      "unit": "people",
+      "source": "English Wikipedia, Southwest Cay (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Southwest_Cay",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "128",
+    "shape_id": "DIS018",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "129-WP-west-bank",
+    "level": "admin1",
+    "name": "West Bank",
+    "parent": "129",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2949246,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, West Bank (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/West_Bank",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "129",
+    "shape_id": "DIS019",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "AFG-WP-ghanzi",
+    "level": "admin1",
+    "name": "Ghanzi",
+    "parent": "AFG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1386764,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Ghazni Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ghazni_Province",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "AFG",
+    "shape_id": "12653393B29313712249365",
+    "match_by": "shape_id"
+  },
+  {
     "id": "ARG-WP-ciudad-autónoma-de-buenos-aires",
     "level": "admin1",
     "name": "Ciudad Autónoma de Buenos Aires",
@@ -42,6 +399,95 @@
     ],
     "country": "ARG",
     "shape_id": "19177384B49506124846693",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ARG-WP-la-roja",
+    "level": "admin1",
+    "name": "La Roja",
+    "parent": "ARG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 384607,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, La Rioja Province, Argentina (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/La_Rioja_Province%2C_Argentina",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ARG",
+    "shape_id": "19177384B72583408220290",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ATG-WP-redonda",
+    "level": "admin1",
+    "name": "Redonda",
+    "parent": "ATG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 0,
+      "unit": "people",
+      "source": "English Wikipedia, Redonda (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Redonda",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ATG",
+    "shape_id": "74100532B54294973205276",
     "match_by": "shape_id"
   },
   {
@@ -1215,6 +1661,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "BHS-WP-acklins",
+    "level": "admin1",
+    "name": "Acklins",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 692,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Acklins (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Acklins",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS",
+    "shape_id": "57655419B62229097939124",
+    "match_by": "shape_id"
+  },
+  {
     "id": "BHS-WP-grand-cay",
     "level": "admin1",
     "name": "Grand Cay",
@@ -1710,6 +2201,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "CAF-WP-mbomou",
+    "level": "admin1",
+    "name": "Mbomou",
+    "parent": "CAF",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 164009,
+      "unit": "people",
+      "year": 2003,
+      "source": "English Wikipedia, Mbomou (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mbomou",
+        "year": 2003,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CAF",
+    "shape_id": "63714938B78522502559544",
+    "match_by": "shape_id"
+  },
+  {
     "id": "CAF-WP-ouham",
     "level": "admin1",
     "name": "Ouham",
@@ -1800,6 +2336,96 @@
     "match_by": "shape_id"
   },
   {
+    "id": "CIV-WP-denguele",
+    "level": "admin1",
+    "name": "Denguele",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 436015,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Denguélé District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dengu%C3%A9l%C3%A9_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B12160353323799",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WP-district-autonome-dabidjan",
+    "level": "admin1",
+    "name": "District Autonome D'Abidjan",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6321017,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Abidjan Department (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Abidjan_Department",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B76853064397847",
+    "match_by": "shape_id"
+  },
+  {
     "id": "CIV-WP-goh-djiboua",
     "level": "admin1",
     "name": "Goh-Djiboua",
@@ -1842,6 +2468,186 @@
     ],
     "country": "CIV",
     "shape_id": "83157122B34711482467037",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WP-lacs",
+    "level": "admin1",
+    "name": "Lacs",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1488531,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Lacs District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Lacs_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B20352934117266",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WP-montagnes",
+    "level": "admin1",
+    "name": "Montagnes",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3027023,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Montagnes District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Montagnes_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B69310198422077",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WP-savanes",
+    "level": "admin1",
+    "name": "Savanes",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2159434,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Savanes District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Savanes_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B28791092437733",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WP-valle-du-bandama",
+    "level": "admin1",
+    "name": "Valle Du Bandama",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1964929,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Vallée du Bandama District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Vall%C3%A9e_du_Bandama_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B62906982633778",
     "match_by": "shape_id"
   },
   {
@@ -1890,6 +2696,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "CIV-WP-zanzan",
+    "level": "admin1",
+    "name": "Zanzan",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1344865,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Zanzan District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Zanzan_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B79983119233374",
+    "match_by": "shape_id"
+  },
+  {
     "id": "CMR-WP-adamaoua",
     "level": "admin1",
     "name": "Adamaoua",
@@ -1932,6 +2783,51 @@
     ],
     "country": "CMR",
     "shape_id": "27767025B32580592296844",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "COD-WP-central-kasai",
+    "level": "admin1",
+    "name": "Central Kasai",
+    "parent": "COD",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4211190,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Kasaï-Central (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kasa%C3%AF-Central",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "COD",
+    "shape_id": "28894549B61915221715888",
     "match_by": "shape_id"
   },
   {
@@ -2826,6 +3722,141 @@
     ],
     "country": "ERI",
     "shape_id": "12472421B84439525883962",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ETH-WP-beneshangul-gumu",
+    "level": "admin1",
+    "name": "Beneshangul Gumu",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1096000,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Benishangul-Gumuz Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Benishangul-Gumuz_Region",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ETH",
+    "shape_id": "75662566B16746670119676",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ETH-WP-hareri",
+    "level": "admin1",
+    "name": "Hareri",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 312000,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Harari Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Harari_Region",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ETH",
+    "shape_id": "75662566B51121866066295",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ETH-WP-snnpr",
+    "level": "admin1",
+    "name": "SNNPR",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13044044,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Southern Nations, Nationalities, and Peoples' Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Southern_Nations%2C_Nationalities%2C_and_Peoples%27_Region",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ETH",
+    "shape_id": "75662566B72302855928957",
     "match_by": "shape_id"
   },
   {
@@ -3819,6 +4850,231 @@
     "match_by": "shape_id"
   },
   {
+    "id": "GMB-WP-brikama",
+    "level": "admin1",
+    "name": "Brikama",
+    "parent": "GMB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 699704,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, West Coast Region (The Gambia) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/West_Coast_Region_%28The_Gambia%29",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GMB",
+    "shape_id": "31243875B88426941804625",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "GMB-WP-kanifing",
+    "level": "admin1",
+    "name": "Kanifing",
+    "parent": "GMB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 379348,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Kanifing (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kanifing",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GMB",
+    "shape_id": "31243875B42421745591684",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "GMB-WP-kerewan",
+    "level": "admin1",
+    "name": "Kerewan",
+    "parent": "GMB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 221054,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, North Bank Division (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/North_Bank_Division",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GMB",
+    "shape_id": "31243875B21899311231896",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "GMB-WP-mansakonko",
+    "level": "admin1",
+    "name": "Mansakonko",
+    "parent": "GMB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 82361,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, Lower River Division (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Lower_River_Division",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GMB",
+    "shape_id": "31243875B75097494588605",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "GNB-WP-bissau",
+    "level": "admin1",
+    "name": "Bissau",
+    "parent": "GNB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 492004,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Bissau (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bissau",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GNB",
+    "shape_id": "76643164B96925829526723",
+    "match_by": "shape_id"
+  },
+  {
     "id": "GNQ-WP-bioko-sur",
     "level": "admin1",
     "name": "Bioko Sur",
@@ -4716,6 +5972,51 @@
     ],
     "country": "IRQ",
     "shape_id": "90741666B29902093370976",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "IRQ-WP-salah-al-din",
+    "level": "admin1",
+    "name": "Salah al-Din",
+    "parent": "IRQ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1774542,
+      "unit": "people",
+      "year": 2024,
+      "source": "English Wikipedia, Saladin Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Saladin_Governorate",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "IRQ",
+    "shape_id": "90741666B48099694344995",
     "match_by": "shape_id"
   },
   {
@@ -6834,6 +8135,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "LBN-WP-beyrouth",
+    "level": "admin1",
+    "name": "Beyrouth",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 433249,
+      "unit": "people",
+      "year": 2017,
+      "source": "English Wikipedia, Beirut (infobox), which gives the figure as approximate"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Beirut",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBN",
+    "shape_id": "68408151B13555465262434",
+    "match_by": "shape_id"
+  },
+  {
     "id": "LBN-WP-keserwan-jbeil",
     "level": "admin1",
     "name": "Keserwan-Jbeil",
@@ -6920,6 +8266,51 @@
     ],
     "country": "LBN",
     "shape_id": "68408151B65529488220063",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "LBN-WP-liban-sud",
+    "level": "admin1",
+    "name": "Liban-Sud",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 590078,
+      "unit": "people",
+      "year": 2017,
+      "source": "English Wikipedia, South Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/South_Governorate",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBN",
+    "shape_id": "68408151B17317068268844",
     "match_by": "shape_id"
   },
   {
@@ -7373,6 +8764,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "LBY-WP-az-zawiyah",
+    "level": "admin1",
+    "name": "Az Zawiyah",
+    "parent": "LBY",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 290993,
+      "unit": "people",
+      "year": 2006,
+      "source": "English Wikipedia, Zawiya District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Zawiya_District",
+        "year": 2006,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBY",
+    "shape_id": "10800210B15874653580067",
+    "match_by": "shape_id"
+  },
+  {
     "id": "LBY-WP-misratah",
     "level": "admin1",
     "name": "Misratah",
@@ -7595,6 +9031,51 @@
     ],
     "country": "LBY",
     "shape_id": "10800210B2800497533490",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "LCA-WP-canaries",
+    "level": "admin1",
+    "name": "Canaries",
+    "parent": "LCA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1862,
+      "unit": "people",
+      "year": 2005,
+      "source": "English Wikipedia, Canaries, Saint Lucia (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Canaries%2C_Saint_Lucia",
+        "year": 2005,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LCA",
+    "shape_id": "63095687B90177859016877",
     "match_by": "shape_id"
   },
   {
@@ -7865,6 +9346,51 @@
     ],
     "country": "LTU",
     "shape_id": "39236102B79521903246642",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "LVA-WP-jelgavas",
+    "level": "admin1",
+    "name": "Jelgavas",
+    "parent": "LVA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 54408,
+      "unit": "people",
+      "year": 2026,
+      "source": "English Wikipedia, Jelgava (infobox, which displays Wikidata Q179830's P1082)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jelgava",
+        "year": 2026,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LVA",
+    "shape_id": "71098776B72876713406332",
     "match_by": "shape_id"
   },
   {
@@ -13755,6 +15281,141 @@
     "match_by": "shape_id"
   },
   {
+    "id": "NER-WP-dossa",
+    "level": "admin1",
+    "name": "Dossa",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2754500,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Dosso Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dosso_Region",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "NER",
+    "shape_id": "87150794B47488127174201",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "NER-WP-tahouaagadez",
+    "level": "admin1",
+    "name": "Tahoua/Agadez",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4930320,
+      "unit": "people",
+      "year": 2012,
+      "source": "English Wikipedia, Tahoua Region + Agadez Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tahoua_Region_%2B_Agadez_Region",
+        "year": 2012,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "NER",
+    "shape_id": "87150794B58281898249288",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "NER-WP-zinderdiffa",
+    "level": "admin1",
+    "name": "Zinder/Diffa",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5636600,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Zinder Region + Diffa Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Zinder_Region_%2B_Diffa_Region",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "NER",
+    "shape_id": "87150794B17606801029036",
+    "match_by": "shape_id"
+  },
+  {
     "id": "NLD-WP-fryslân",
     "level": "admin1",
     "name": "Fryslân",
@@ -14205,51 +15866,6 @@
     "match_by": "shape_id"
   },
   {
-    "id": "OMN-WP-az-zahirah",
-    "level": "admin1",
-    "name": "Az Zahirah",
-    "parent": "OMN",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 213043,
-      "unit": "people",
-      "year": 2020,
-      "source": "English Wikipedia, Al Dhahirah Governorate (infobox)"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Al_Dhahirah_Governorate",
-        "year": 2020,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "country": "OMN",
-    "shape_id": "34121849B37717587073732",
-    "match_by": "shape_id"
-  },
-  {
     "id": "PER-WP-el-callao",
     "level": "admin1",
     "name": "El Callao",
@@ -14292,6 +15908,51 @@
     ],
     "country": "PER",
     "shape_id": "1875124B73300566086976",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PHL-WP-armm",
+    "level": "admin1",
+    "name": "ARMM",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3781387,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Autonomous Region in Muslim Mindanao (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Autonomous_Region_in_Muslim_Mindanao",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PHL",
+    "shape_id": "36201628B49646111072560",
     "match_by": "shape_id"
   },
   {
@@ -14969,6 +16630,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "QAT-WP-al-sheehaniya",
+    "level": "admin1",
+    "name": "Al Sheehaniya",
+    "parent": "QAT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 187571,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Al-Shahaniya (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Al-Shahaniya",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "QAT",
+    "shape_id": "59647477B8883927479068",
+    "match_by": "shape_id"
+  },
+  {
     "id": "QAT-WP-doha",
     "level": "admin1",
     "name": "Doha",
@@ -15374,6 +17080,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "SAU-WP-hayel-region",
+    "level": "admin1",
+    "name": "Hayel Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 746406,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Hail Province, Saudi Arabia (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Hail_Province%2C_Saudi_Arabia",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SAU",
+    "shape_id": "25081817B30843703179747",
+    "match_by": "shape_id"
+  },
+  {
     "id": "SAU-WP-jazan-region",
     "level": "admin1",
     "name": "Jazan Region",
@@ -15731,6 +17482,51 @@
     ],
     "country": "SDN",
     "shape_id": "86620642B42892304507154",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SDN-WP-gedaref",
+    "level": "admin1",
+    "name": "Gedaref",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2208385,
+      "unit": "people",
+      "year": 2018,
+      "source": "English Wikipedia, Al Qadarif State (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Al_Qadarif_State",
+        "year": 2018,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SDN",
+    "shape_id": "86620642B51630913908628",
     "match_by": "shape_id"
   },
   {
@@ -16631,6 +18427,96 @@
     ],
     "country": "SOM",
     "shape_id": "83879307B65026001570916",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SOM-WP-togdheer",
+    "level": "admin1",
+    "name": "Togdheer",
+    "parent": "SOM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 962400,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Togdheer (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Togdheer",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SOM",
+    "shape_id": "83879307B67680758004346",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SOM-WP-woqooyi-galbeed",
+    "level": "admin1",
+    "name": "Woqooyi Galbeed",
+    "parent": "SOM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2100000,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Maroodi Jeex (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Maroodi_Jeex",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SOM",
+    "shape_id": "83879307B42572798770371",
     "match_by": "shape_id"
   },
   {
@@ -17894,6 +19780,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "SYC-WP-la-digue-a",
+    "level": "admin1",
+    "name": "La Digue a",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3506,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, La Digue and Inner Islands (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/La_Digue_and_Inner_Islands",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SYC",
+    "shape_id": "4304713B61373702137462",
+    "match_by": "shape_id"
+  },
+  {
     "id": "SYC-WP-la-rivière",
     "level": "admin1",
     "name": "La Rivière",
@@ -18344,6 +20275,96 @@
     "match_by": "shape_id"
   },
   {
+    "id": "SYR-WP-al-hasakeh",
+    "level": "admin1",
+    "name": "Al-Hasakeh",
+    "parent": "SYR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1512000,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Hasakah Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Hasakah_Governorate",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SYR",
+    "shape_id": "8384693B3351094574159",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SYR-WP-as-sweida",
+    "level": "admin1",
+    "name": "As-Sweida",
+    "parent": "SYR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1035000,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Suwayda Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Suwayda_Governorate",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SYR",
+    "shape_id": "8384693B61807023607014",
+    "match_by": "shape_id"
+  },
+  {
     "id": "SYR-WP-idleb",
     "level": "admin1",
     "name": "Idleb",
@@ -18386,6 +20407,51 @@
     ],
     "country": "SYR",
     "shape_id": "8384693B38455082445791",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SYR-WP-lattakia",
+    "level": "admin1",
+    "name": "Lattakia",
+    "parent": "SYR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1008000,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Latakia Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Latakia_Governorate",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SYR",
+    "shape_id": "8384693B20094101885952",
     "match_by": "shape_id"
   },
   {
@@ -18566,6 +20632,141 @@
     ],
     "country": "TCD",
     "shape_id": "23847190B77249644038093",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TON-WP-eua",
+    "level": "admin1",
+    "name": "'Eua",
+    "parent": "TON",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4903,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, ʻEua (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/%CA%BBEua",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TON",
+    "shape_id": "12702645B6842520552302",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TON-WP-haapai",
+    "level": "admin1",
+    "name": "Ha'apai",
+    "parent": "TON",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5419,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Haʻapai (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ha%CA%BBapai",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TON",
+    "shape_id": "12702645B14719640472686",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TON-WP-tongatapu",
+    "level": "admin1",
+    "name": "Tongatapu",
+    "parent": "TON",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 74454,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Tongatapu (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tongatapu",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TON",
+    "shape_id": "12702645B50986277851262",
     "match_by": "shape_id"
   },
   {
@@ -21756,6 +23957,51 @@
     ],
     "country": "ZMB",
     "shape_id": "6923714B71523451831393",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ZWE-WP-bulawayo",
+    "level": "admin1",
+    "name": "Bulawayo",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 665952,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Bulawayo (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bulawayo",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ZWE",
+    "shape_id": "88200057B51719638002761",
     "match_by": "shape_id"
   },
   {
