@@ -45,6 +45,139 @@
     "match_by": "shape_id"
   },
   {
+    "id": "125-WP-paracel-is",
+    "level": "admin1",
+    "name": "Paracel Is",
+    "parent": "125",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1443,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, Woody Island (South China Sea) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Woody_Island_%28South_China_Sea%29",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "125",
+    "shape_id": "DIS015",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "126-WP-sanafir-tiran-is",
+    "level": "admin1",
+    "name": "Sanafir & Tiran Is.",
+    "parent": "126",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 0,
+      "unit": "people",
+      "source": "English Wikipedia, Tiran Island + Sanafir Island (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tiran_Island_%2B_Sanafir_Island",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "126",
+    "shape_id": "DIS016",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "128-WP-spratly-is",
+    "level": "admin1",
+    "name": "Spratly Is",
+    "parent": "128",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 32,
+      "unit": "people",
+      "source": "English Wikipedia, Southwest Cay (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Southwest_Cay",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "128",
+    "shape_id": "DIS018",
+    "match_by": "shape_id"
+  },
+  {
     "id": "129-WP-west-bank",
     "level": "admin1",
     "name": "West Bank",
@@ -222,6 +355,50 @@
     ],
     "country": "ARG",
     "shape_id": "19177384B72583408220290",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ATG-WP-redonda",
+    "level": "admin1",
+    "name": "Redonda",
+    "parent": "ATG",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 0,
+      "unit": "people",
+      "source": "English Wikipedia, Redonda (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Redonda",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ATG",
+    "shape_id": "74100532B54294973205276",
     "match_by": "shape_id"
   },
   {
@@ -14655,6 +14832,141 @@
     "match_by": "shape_id"
   },
   {
+    "id": "NER-WP-dossa",
+    "level": "admin1",
+    "name": "Dossa",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2754500,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Dosso Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dosso_Region",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "NER",
+    "shape_id": "87150794B47488127174201",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "NER-WP-tahouaagadez",
+    "level": "admin1",
+    "name": "Tahoua/Agadez",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4930320,
+      "unit": "people",
+      "year": 2012,
+      "source": "English Wikipedia, Tahoua Region + Agadez Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tahoua_Region_%2B_Agadez_Region",
+        "year": 2012,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "NER",
+    "shape_id": "87150794B58281898249288",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "NER-WP-zinderdiffa",
+    "level": "admin1",
+    "name": "Zinder/Diffa",
+    "parent": "NER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5636600,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Zinder Region + Diffa Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Zinder_Region_%2B_Diffa_Region",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "NER",
+    "shape_id": "87150794B17606801029036",
+    "match_by": "shape_id"
+  },
+  {
     "id": "NLD-WP-fryslân",
     "level": "admin1",
     "name": "Fryslân",
@@ -15869,6 +16181,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "QAT-WP-al-sheehaniya",
+    "level": "admin1",
+    "name": "Al Sheehaniya",
+    "parent": "QAT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 187571,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Al-Shahaniya (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Al-Shahaniya",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "QAT",
+    "shape_id": "59647477B8883927479068",
+    "match_by": "shape_id"
+  },
+  {
     "id": "QAT-WP-doha",
     "level": "admin1",
     "name": "Doha",
@@ -16274,6 +16631,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "SAU-WP-hayel-region",
+    "level": "admin1",
+    "name": "Hayel Region",
+    "parent": "SAU",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 746406,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Hail Province, Saudi Arabia (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Hail_Province%2C_Saudi_Arabia",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SAU",
+    "shape_id": "25081817B30843703179747",
+    "match_by": "shape_id"
+  },
+  {
     "id": "SAU-WP-jazan-region",
     "level": "admin1",
     "name": "Jazan Region",
@@ -16631,6 +17033,50 @@
     ],
     "country": "SDN",
     "shape_id": "86620642B42892304507154",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SDN-WP-gedaref",
+    "level": "admin1",
+    "name": "Gedaref",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 363945,
+      "unit": "people",
+      "source": "English Wikipedia, El-Gadarif (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/El-Gadarif",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SDN",
+    "shape_id": "86620642B51630913908628",
     "match_by": "shape_id"
   },
   {
@@ -17531,6 +17977,51 @@
     ],
     "country": "SOM",
     "shape_id": "83879307B65026001570916",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SOM-WP-woqooyi-galbeed",
+    "level": "admin1",
+    "name": "Woqooyi Galbeed",
+    "parent": "SOM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2100000,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Maroodi Jeex (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Maroodi_Jeex",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SOM",
+    "shape_id": "83879307B42572798770371",
     "match_by": "shape_id"
   },
   {
@@ -18794,6 +19285,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "SYC-WP-la-digue-a",
+    "level": "admin1",
+    "name": "La Digue a",
+    "parent": "SYC",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3506,
+      "unit": "people",
+      "year": 2014,
+      "source": "English Wikipedia, La Digue and Inner Islands (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/La_Digue_and_Inner_Islands",
+        "year": 2014,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SYC",
+    "shape_id": "4304713B61373702137462",
+    "match_by": "shape_id"
+  },
+  {
     "id": "SYC-WP-la-rivière",
     "level": "admin1",
     "name": "La Rivière",
@@ -19244,6 +19780,96 @@
     "match_by": "shape_id"
   },
   {
+    "id": "SYR-WP-al-hasakeh",
+    "level": "admin1",
+    "name": "Al-Hasakeh",
+    "parent": "SYR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1512000,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Hasakah Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Hasakah_Governorate",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SYR",
+    "shape_id": "8384693B3351094574159",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SYR-WP-as-sweida",
+    "level": "admin1",
+    "name": "As-Sweida",
+    "parent": "SYR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1035000,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Suwayda Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Suwayda_Governorate",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SYR",
+    "shape_id": "8384693B61807023607014",
+    "match_by": "shape_id"
+  },
+  {
     "id": "SYR-WP-idleb",
     "level": "admin1",
     "name": "Idleb",
@@ -19286,6 +19912,51 @@
     ],
     "country": "SYR",
     "shape_id": "8384693B38455082445791",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SYR-WP-lattakia",
+    "level": "admin1",
+    "name": "Lattakia",
+    "parent": "SYR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1008000,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Latakia Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Latakia_Governorate",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SYR",
+    "shape_id": "8384693B20094101885952",
     "match_by": "shape_id"
   },
   {
@@ -19466,6 +20137,141 @@
     ],
     "country": "TCD",
     "shape_id": "23847190B77249644038093",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TON-WP-eua",
+    "level": "admin1",
+    "name": "'Eua",
+    "parent": "TON",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4903,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, ʻEua (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/%CA%BBEua",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TON",
+    "shape_id": "12702645B6842520552302",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TON-WP-haapai",
+    "level": "admin1",
+    "name": "Ha'apai",
+    "parent": "TON",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5419,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Haʻapai (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ha%CA%BBapai",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TON",
+    "shape_id": "12702645B14719640472686",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TON-WP-tongatapu",
+    "level": "admin1",
+    "name": "Tongatapu",
+    "parent": "TON",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 74454,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Tongatapu (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tongatapu",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TON",
+    "shape_id": "12702645B50986277851262",
     "match_by": "shape_id"
   },
   {
@@ -22656,6 +23462,51 @@
     ],
     "country": "ZMB",
     "shape_id": "6923714B71523451831393",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ZWE-WP-bulawayo",
+    "level": "admin1",
+    "name": "Bulawayo",
+    "parent": "ZWE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 665952,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Bulawayo (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bulawayo",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ZWE",
+    "shape_id": "88200057B51719638002761",
     "match_by": "shape_id"
   },
   {
