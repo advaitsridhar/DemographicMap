@@ -734,6 +734,9 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Italian", "French", "Spanish", "Portuguese", "Romanian", "Moldovan",
         "Catalan", "Galician", "Walloon", "Aromanian", "Vlach", "Romansh",
         "Sardinian", "Corsican", "Friulian", "Ladin", "Istro-Romanian",
+        # One figure for two answers, as a Moldovan district's table gives it;
+        # both halves are Romance, so it is too.
+        "Moldovan or Romanian",
     ),
     "Slavic peoples": (
         "Russian", "Ukrainian", "Belarusian", "Polish", "Czech", "Slovak",

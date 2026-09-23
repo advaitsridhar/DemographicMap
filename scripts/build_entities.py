@@ -221,6 +221,12 @@ ADAPTER_FILES = [
     "europe_wiki_montenegro.json",
     "europe_wiki_serbia.json",
     "europe_wiki_bulgaria.json",
+    # Moldova's seven units the Europe reader refused, read by the owner's
+    # decision of 22 September 2026 from the Romanian articles and the
+    # Transnistria article's table. After europe_wiki_moldova.json, whose gap
+    # rows for the same units carry the refusal as a note that this file's
+    # reading must replace.
+    "moldova_ethnicity_gaps.json",
     # After Wikidata, which carries a population for North Korea's provinces
     # and for Pyongyang a 2015 estimate: this is the 2008 census's own Table 2,
     # for all 11 first-level units and all 179 counties, with the sex ratio
