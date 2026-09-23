@@ -1,20 +1,23 @@
-  AZE Contiguous Azerbaijan: 9,492,499 from 9,951,409 (the Total row of Demographics of Azerbaijan) less 458,910 (Nakhchivan Autonomous Republic's infobox)
-  GMB Basse: 261,160 from 261,160 (the Upper River row of Subdivisions of the Gambia)
-  MOZ Maputo: 3,608,268 from 1,101,170 (the Maputo City row of Provinces of Mozambique) plus 2,507,098 (the Maputo row of Provinces of Mozambique)
-  PER Lima: 1,018,876 from 1,018,876 (Department of Lima's infobox)
-  PER Municipalidad Metropolitana de Lima: 9,600,000 from 9,600,000 (Lima's infobox)
-  TZA Dar es Salaam: 5,383,728 from 5,383,728 (the Dar es Salaam Region row of Dar es Salaam Region)
-  CPV Ribeira Grande de Santiago: 7,632 from 7,632 (the Municipality of Ribeira Grande de Santiago row of Administrative divisions of Cape Verde)
-  CPV Santa Catarina: 37,472 from 37,472 (the Municipality of Santa Catarina row of Administrative divisions of Cape Verde)
-  CPV Santa Catarina do Fogo: 4,725 from 4,725 (the Municipality of Santa Catarina do Fogo row of Administrative divisions of Cape Verde)
-  CPV Santa Cruz: 25,004 from 25,004 (the Municipality of Santa Cruz row of Administrative divisions of Cape Verde)
-  CPV São Domingos: 13,958 from 13,958 (the Municipality of São Domingos row of Administrative divisions of Cape Verde)
-  CPV São Lourenço dos Órgãos: 6,317 from 6,317 (the Municipality of São Lourenço dos Órgãos row of Administrative divisions of Cape Verde)
-  CPV São Miguel: 12,906 from 12,906 (the Municipality of São Miguel row of Administrative divisions of Cape Verde)
-  CPV São Salvador do Mundo: 7,452 from 7,452 (the Municipality of São Salvador do Mundo row of Administrative divisions of Cape Verde)
-  CIV District Autonome De Yamoussoukro: 355,573 from 355,573 (the Yamoussoukro row of Districts of Ivory Coast)
-  BHS North Eleuthera: 3,923 from 3,923 (the North Eleuthera row of Local government in the Bahamas)
-  BHS East Grand Bahama: 11,011 from 11,011 (the East Grand Bahama row of Local government in the Bahamas)
-  BHS West Grand Bahama: 5,960 from 5,960 (the West Grand Bahama row of Local government in the Bahamas)
-  wrote data/processed/wiki_table_population.json (22 kB)
-wrote 18 records to wiki_table_population.json
+120: 1 units without a population, 1 resolved
+  Isla Brasilera -> Brazilian Island (Q2093778, matched by declaration)
+  Isla Brasilera -> Brazilian Island: 0, undated (the infobox names no year for the figure)
+127: 1 units without a population, 1 resolved
+  Senkakus -> Senkaku Islands (Q29460, matched by declaration)
+  Senkakus -> Senkaku Islands: 0, undated (the article describes the place as uninhabited)
+ESH: 1 units without a population, 1 resolved
+  Western Sahara -> Western Sahara (Q6250, matched by declaration)
+KIR: what sits directly in the country resolved 2 more
+  Line Islands: found by searching the country
+KIR: 3 units without a population, 3 resolved
+  Gilbert Islands -> Gilbert Islands (Q271876, matched by name)
+  Line Islands -> Kiritimati + Tabuaeran + Teraina: 11,252
+  Phoenix Islands -> Phoenix Islands (Q271674, matched by name)
+  Phoenix Islands -> Phoenix Islands: 20, undated (country1_largest_city_population, the only inhabited place)
+TON: 4 units without a population, 4 resolved
+  'Eua -> ʻEua (Q423528, matched by declaration)
+  Ha'apai -> Haʻapai (Q612098, matched by declaration)
+  Niuas -> Niua Islands (Q1200954, matched by declaration)
+  Niuas -> Niua Islands (Q1200954): its coordinates (-15.96, -173.78) lie outside the shape, which is the boundary file's doing: the boundary file draws Niuafoʻou alone and leaves Niuatoputapu out, so this figure for the whole division counts an island the shape does not show
+  Tongatapu -> Tongatapu (Q620452, matched by declaration)
+  wrote data/processed/wiki_population_admin1.json (559 kB)
+wrote 561 records to wiki_population_admin1.json
