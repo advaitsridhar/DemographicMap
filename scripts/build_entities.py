@@ -1340,6 +1340,28 @@ DESCRIBED_FIELDS = ("religion", "language", "ethnicity", "ancestry",
                     "scheduled_groups")
 
 
+# Sources whose head count fills an empty population and never replaces one.
+#
+# ADAPTER_FILES ranks files by what they are for, and the rank is about the
+# compositions: Japan's prefecture file sits among the models because its
+# religion is modelled, Viet Nam's and Laos's census files sit high because
+# nothing else writes their ethnicity. Each of those files also carries its
+# census head count, and the Wikidata sweep lower down replaced it -- all 47
+# of Japan's prefectures, 8 of Laos's provinces, 17 of Korea's, and 33 of Viet
+# Nam's, where it did real damage. Viet Nam merged its 63 provinces into 34 in
+# 2025 and Wikidata's P1082 moved with the merger, so the boundary file's
+# pre-merger polygons wore the merged provinces' populations: Ho Chi Minh City
+# 14.0 million, which is the old city with Binh Duong and Ba Ria-Vung Tau, and
+# the country's first level summed to 126% of the country.
+#
+# A statistical office's count is not replaced by an encyclopaedia's, whatever
+# order the files are read in. These two only ever fill a population nobody
+# else has written.
+FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
+                       "wiki_population_admin1.json"})
+FILL_ONLY_FIELDS = frozenset({"population"})
+
+
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     """Adapter values override seeds; gap markers never overwrite real values.
 
@@ -1363,8 +1385,10 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     from a wrong one. A row that replaces a figure owns what describes it, and
     what the row does not say is not carried over from what it displaced.
     """
+    held = {key for key in FILL_ONLY_FIELDS
+            if row.get("_source") in FILL_ONLY and not is_gap(entity.get(key))}
     replaced = {key for key, value in row.items()
-                if key in VALUE_FIELDS and not is_gap(value)}
+                if key in VALUE_FIELDS and not is_gap(value) and key not in held}
     if replaced:
         entity["sources"] = [
             src for src in entity.get("sources", [])
@@ -1376,7 +1400,13 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                    "match_by", "_source"}:
             continue
         if key == "sources":
-            entity.setdefault("sources", []).extend(value or [])
+            # A citation for a figure that was held back describes nothing
+            # on the record, so it is not added either.
+            kept = [src for src in (value or [])
+                    if not (held and set(str(src.get("field") or "").split("/")) <= held)]
+            entity.setdefault("sources", []).extend(kept)
+            continue
+        if key in held:
             continue
         if is_gap(value) and not is_gap(entity.get(key)):
             continue

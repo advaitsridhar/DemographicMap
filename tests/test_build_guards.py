@@ -135,3 +135,50 @@ class APolygonDrawnAtBothLevels(unittest.TestCase):
 
     def test_an_id_not_drawn_at_all_is_none(self):
         self.assertIsNone(self.b.bound(self.by_shape, self.by_level, "nope", "admin1"))
+
+
+class AnEncyclopaediaNeverReplacesACount(unittest.TestCase):
+    """Viet Nam's 2019 census, overwritten by Wikidata's post-merger figures."""
+
+    def setUp(self):
+        import build_entities
+        self.b = build_entities
+        self.census = {"value": 1908352, "year": 2019,
+                       "source": "General Statistics Office of Viet Nam"}
+
+    def entity(self):
+        return {"population": dict(self.census),
+                "sources": [{"field": "population", "name": "GSO"}]}
+
+    def test_wikidata_fills_nothing_that_is_already_counted(self):
+        e = self.entity()
+        self.b.merge_adapter(e, {
+            "_source": "wikidata_admin1.json", "capital": "Long Xuyen",
+            "population": {"value": 3679300, "year": 2024, "source": "Wikidata (CC0)"},
+            "sources": [{"field": "population/capital/coordinates", "name": "Wikidata"},
+                        {"field": "population", "name": "Wikidata"}]})
+        self.assertEqual(e["population"], self.census)
+        # The census citation stays, and a citation for a figure that was
+        # held back is not added.
+        self.assertIn({"field": "population", "name": "GSO"}, e["sources"])
+        self.assertNotIn({"field": "population", "name": "Wikidata"}, e["sources"])
+        # Everything else Wikidata says still lands.
+        self.assertEqual(e["capital"], "Long Xuyen")
+
+    def test_wikidata_still_fills_a_gap(self):
+        e = {"population": {"status": "not_available"}, "sources": []}
+        pop = {"value": 3679300, "year": 2024, "source": "Wikidata (CC0)"}
+        self.b.merge_adapter(e, {"_source": "wikidata_admin1.json", "population": pop})
+        self.assertEqual(e["population"], pop)
+
+    def test_the_wikipedia_reader_is_held_to_the_same_rule(self):
+        e = self.entity()
+        self.b.merge_adapter(e, {"_source": "wiki_population_admin1.json",
+                                 "population": {"value": 1, "source": "English Wikipedia, X"}})
+        self.assertEqual(e["population"], self.census)
+
+    def test_a_census_file_still_replaces_a_census_file(self):
+        e = self.entity()
+        newer = {"value": 1950000, "year": 2024, "source": "GSO"}
+        self.b.merge_adapter(e, {"_source": "vietnam_province.json", "population": newer})
+        self.assertEqual(e["population"], newer)
