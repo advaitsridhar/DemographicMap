@@ -1,0 +1,101 @@
+[
+  {
+    "id": "AZE-WT-contiguous-azerbaijan",
+    "level": "admin1",
+    "name": "Contiguous Azerbaijan",
+    "parent": "AZE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9492499,
+      "unit": "people",
+      "year": 2019,
+      "source": "2019 census of Azerbaijan, as the national total less Nakhchivan's",
+      "note": "Derived by subtraction within the 2019 census: 9,951,409 (the Total row of Demographics of Azerbaijan) less 458,910 (Nakhchivan Autonomous Republic's infobox). The census did not enumerate the area then held by the self-declared Republic of Artsakh -- it counted 178 Armenians in the whole country -- so that area's Armenian population is not in this figure."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Demographics_of_Azerbaijan",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nakhchivan_Autonomous_Republic",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "AZE",
+    "shape_id": "63332228B70486487350611",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "GMB-WT-basse",
+    "level": "admin1",
+    "name": "Basse",
+    "parent": "GMB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 261160,
+      "unit": "people",
+      "year": 2024,
+      "source": "2024 census of the Gambia, as the list of its regions gives it",
+      "note": "Basse local government area is the Upper River Region, whose 2024 census figure is 261,160 (the Upper River row of Subdivisions of the Gambia)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Subdivisions_of_the_Gambia",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GMB",
+    "shape_id": "31243875B74768451122912",
+    "match_by": "shape_id"
+  }
+]
