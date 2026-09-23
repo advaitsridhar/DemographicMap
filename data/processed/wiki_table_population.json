@@ -145,52 +145,6 @@
     "match_by": "shape_id"
   },
   {
-    "id": "SOM-WT-bakool",
-    "level": "admin1",
-    "name": "Bakool",
-    "parent": "SOM",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 560267,
-      "unit": "people",
-      "year": 2025,
-      "source": "2025 estimate, as the list of Somalia's regions gives it",
-      "note": "Bakool's own article prints its population as '1,15,6400', which is no number; this is its row in the list of regions: 560,267 (the Bakool Region row of Administrative divisions of Somalia)."
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Somalia",
-        "year": 2025,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "country": "SOM",
-    "shape_id": "83879307B58207540839705",
-    "match_by": "shape_id"
-  },
-  {
     "id": "BHS-WT-north-eleuthera",
     "level": "admin1",
     "name": "North Eleuthera",
