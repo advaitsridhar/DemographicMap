@@ -145,6 +145,557 @@
     "match_by": "shape_id"
   },
   {
+    "id": "PER-WT-lima",
+    "level": "admin1",
+    "name": "Lima",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1018876,
+      "unit": "people",
+      "year": 2025,
+      "source": "2025 census of Peru, as English Wikipedia's Department of Lima gives it",
+      "note": "The Department of Lima without Metropolitan Lima, which the map draws as a shape of its own: 1,018,876 (Department of Lima's infobox)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Department_of_Lima",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PER",
+    "shape_id": "1875124B65618634887963",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PER-WT-municipalidad-metropolitana-de-lima",
+    "level": "admin1",
+    "name": "Municipalidad Metropolitana de Lima",
+    "parent": "PER",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9600000,
+      "unit": "people",
+      "year": 2025,
+      "source": "2025 census of Peru, as English Wikipedia's Lima gives it",
+      "note": "Metropolitan Lima, the province: 9,600,000 (Lima's infobox). INEI's release of the 2025 census gives it as 9.6 million, rounded to a tenth of a million, and the article prints the same."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Lima",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PER",
+    "shape_id": "1875124B43998217738279",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TZA-WT-dar-es-salaam",
+    "level": "admin1",
+    "name": "Dar es Salaam",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5383728,
+      "unit": "people",
+      "year": 2022,
+      "source": "2022 census of Tanzania, as the region's own district table gives it",
+      "note": "The region's row in its district table: 5,383,728 (the Dar es Salaam Region row of Dar es Salaam Region)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dar_es_Salaam_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B2633782293100",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CPV-WT-ribeira-grande-de-santiago",
+    "level": "admin1",
+    "name": "Ribeira Grande de Santiago",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7632,
+      "unit": "people",
+      "year": 2021,
+      "source": "2021 census of Cape Verde, as the list of its municipalities gives it",
+      "note": "The municipality's row in the list, under its 2021 census column: 7,632 (the Municipality of Ribeira Grande de Santiago row of Administrative divisions of Cape Verde)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Cape_Verde",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV",
+    "shape_id": "35879248B5815864302343",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CPV-WT-santa-catarina",
+    "level": "admin1",
+    "name": "Santa Catarina",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 37472,
+      "unit": "people",
+      "year": 2021,
+      "source": "2021 census of Cape Verde, as the list of its municipalities gives it",
+      "note": "The municipality's row in the list, under its 2021 census column: 37,472 (the Municipality of Santa Catarina row of Administrative divisions of Cape Verde)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Cape_Verde",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV",
+    "shape_id": "35879248B65851114160010",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CPV-WT-santa-catarina-do-fogo",
+    "level": "admin1",
+    "name": "Santa Catarina do Fogo",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 4725,
+      "unit": "people",
+      "year": 2021,
+      "source": "2021 census of Cape Verde, as the list of its municipalities gives it",
+      "note": "The municipality's row in the list, under its 2021 census column: 4,725 (the Municipality of Santa Catarina do Fogo row of Administrative divisions of Cape Verde)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Cape_Verde",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV",
+    "shape_id": "35879248B48710154896989",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CPV-WT-santa-cruz",
+    "level": "admin1",
+    "name": "Santa Cruz",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25004,
+      "unit": "people",
+      "year": 2021,
+      "source": "2021 census of Cape Verde, as the list of its municipalities gives it",
+      "note": "The municipality's row in the list, under its 2021 census column: 25,004 (the Municipality of Santa Cruz row of Administrative divisions of Cape Verde)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Cape_Verde",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV",
+    "shape_id": "35879248B13195842681213",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CPV-WT-são-domingos",
+    "level": "admin1",
+    "name": "São Domingos",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13958,
+      "unit": "people",
+      "year": 2021,
+      "source": "2021 census of Cape Verde, as the list of its municipalities gives it",
+      "note": "The municipality's row in the list, under its 2021 census column: 13,958 (the Municipality of São Domingos row of Administrative divisions of Cape Verde)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Cape_Verde",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV",
+    "shape_id": "35879248B61929302069698",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CPV-WT-são-lourenço-dos-órgãos",
+    "level": "admin1",
+    "name": "São Lourenço dos Órgãos",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 6317,
+      "unit": "people",
+      "year": 2021,
+      "source": "2021 census of Cape Verde, as the list of its municipalities gives it",
+      "note": "The municipality's row in the list, under its 2021 census column: 6,317 (the Municipality of São Lourenço dos Órgãos row of Administrative divisions of Cape Verde)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Cape_Verde",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV",
+    "shape_id": "35879248B32254847060203",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CPV-WT-são-miguel",
+    "level": "admin1",
+    "name": "São Miguel",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 12906,
+      "unit": "people",
+      "year": 2021,
+      "source": "2021 census of Cape Verde, as the list of its municipalities gives it",
+      "note": "The municipality's row in the list, under its 2021 census column: 12,906 (the Municipality of São Miguel row of Administrative divisions of Cape Verde)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Cape_Verde",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV",
+    "shape_id": "35879248B58765438888265",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CPV-WT-são-salvador-do-mundo",
+    "level": "admin1",
+    "name": "São Salvador do Mundo",
+    "parent": "CPV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7452,
+      "unit": "people",
+      "year": 2021,
+      "source": "2021 census of Cape Verde, as the list of its municipalities gives it",
+      "note": "The municipality's row in the list, under its 2021 census column: 7,452 (the Municipality of São Salvador do Mundo row of Administrative divisions of Cape Verde)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Administrative_divisions_of_Cape_Verde",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CPV",
+    "shape_id": "35879248B8506465148242",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WT-district-autonome-de-yamoussoukro",
+    "level": "admin1",
+    "name": "District Autonome De Yamoussoukro",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 355573,
+      "unit": "people",
+      "source": "English Wikipedia, Districts of Ivory Coast; the list gives no year for the figure",
+      "note": "The district's row in the list of districts, which dates none of its figures: 355,573 (the Yamoussoukro row of Districts of Ivory Coast). The city's article gives 422,072 for 2021, over 2,075 km² of the district's 3,500, so that figure is not the district's."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Districts_of_Ivory_Coast",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B30232425959699",
+    "match_by": "shape_id"
+  },
+  {
     "id": "BHS-WT-north-eleuthera",
     "level": "admin1",
     "name": "North Eleuthera",
