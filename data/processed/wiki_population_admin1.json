@@ -2471,6 +2471,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "CIV-WP-valle-du-bandama",
+    "level": "admin1",
+    "name": "Valle Du Bandama",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1964929,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Vallée du Bandama District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Vall%C3%A9e_du_Bandama_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B62906982633778",
+    "match_by": "shape_id"
+  },
+  {
     "id": "CIV-WP-woroba",
     "level": "admin1",
     "name": "Woroba",
@@ -7547,6 +7592,51 @@
     ],
     "country": "KHM",
     "shape_id": "37992800B90014860566901",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "KIR-WP-gilbert-islands",
+    "level": "admin1",
+    "name": "Gilbert Islands",
+    "parent": "KIR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 83382,
+      "unit": "people",
+      "year": 2005,
+      "source": "English Wikipedia, Gilbert Islands (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gilbert_Islands",
+        "year": 2005,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KIR",
+    "shape_id": "97431129B55805139245338",
     "match_by": "shape_id"
   },
   {
@@ -15593,51 +15683,6 @@
     ],
     "country": "OMN",
     "shape_id": "34121849B71010913728332",
-    "match_by": "shape_id"
-  },
-  {
-    "id": "OMN-WP-az-zahirah",
-    "level": "admin1",
-    "name": "Az Zahirah",
-    "parent": "OMN",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 213043,
-      "unit": "people",
-      "year": 2020,
-      "source": "English Wikipedia, Al Dhahirah Governorate (infobox)"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Al_Dhahirah_Governorate",
-        "year": 2020,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "country": "OMN",
-    "shape_id": "34121849B37717587073732",
     "match_by": "shape_id"
   },
   {
