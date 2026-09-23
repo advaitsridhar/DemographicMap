@@ -622,3 +622,32 @@ class APartIsNotTheWhole(unittest.TestCase):
                          {"Q1": {"names": ["Al Batinah"], "title": "Al Batinah South Governorate"},
                           "Q2": {"names": ["Al Batinah Region"], "title": "Al Batinah Region"}})
         self.assertEqual(got["u1"][:2], ("Q2", "Al Batinah Region"))
+
+
+class ATownForTheRegionAroundIt(unittest.TestCase):
+    """Morogoro, Brikama, Basse and Ajdabiya all arrived by redirect."""
+
+    def setUp(self):
+        self.saved = wp.claim_values
+
+    def tearDown(self):
+        wp.claim_values = self.saved
+
+    def area(self, km2):
+        wp.claim_values = lambda qid, prop: [{"mainsnak": {"datavalue": {"value": {
+            "amount": f"+{km2}", "unit": "http://www.wikidata.org/entity/Q712226"}}}}
+        ] if prop == "P2046" and km2 is not None else []
+
+    def test_the_town_is_a_sliver_of_the_region_s_box(self):
+        morogoro_region = [35.3, -10.0, 38.5, -5.8]
+        self.area(260)
+        self.assertIn("of the shape's", wp.too_small("Q243319", morogoro_region))
+
+    def test_a_town_that_is_the_shape_fills_it(self):
+        # Rezekne, 17.5 km^2, for the polygon Latvia draws for the state city.
+        self.area(17.5)
+        self.assertEqual(wp.too_small("Q180379", [27.28, 56.48, 27.39, 56.54]), "")
+
+    def test_no_area_no_redirect(self):
+        self.area(None)
+        self.assertIn("no area", wp.too_small("Q916988", [16.5, 13.1, 16.9, 13.4]))

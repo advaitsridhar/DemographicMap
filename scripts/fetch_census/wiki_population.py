@@ -136,6 +136,11 @@ POINT_SLACK = 1.5
 # reported as possibly counting someone twice.
 OVERCOUNT = 1.05
 
+# The share of its shape's bounding box a place reached only through a
+# redirect must fill. A shape seldom fills its whole box, so this is low;
+# a town offered for the region around it fills a fraction of a percent.
+MIN_FILL = 0.05
+
 
 # ---------------------------------------------------------------------------
 # HTTP
@@ -890,16 +895,53 @@ def refuted(qid: str, bbox: list[float] | None) -> str:
                           for x, y in points):
         x, y = points[0]
         return f"its coordinates ({y:.2f}, {x:.2f}) lie outside the shape"
-    box = abs(n - s_) * 111.32 * abs(e - w) * 111.32 * math.cos(math.radians((n + s_) / 2))
+    box, km2 = box_km2(bbox), area_km2(qid)
+    if box and km2 is not None and km2 > box * AREA_SLACK + 50:
+        return f"its area, {km2:,.0f} km^2, cannot fit in the shape's {box:,.0f} km^2 box"
+    return ""
+
+
+def area_km2(qid: str) -> float | None:
+    """The item's stated area in square kilometres, if it states one."""
     for claim in claim_values(qid, "P2046"):
         v = ((claim.get("mainsnak") or {}).get("datavalue") or {}).get("value") or {}
         unit = str(v.get("unit", "")).rsplit("/", 1)[-1]
         try:
-            km2 = float(str(v.get("amount", "")).lstrip("+")) * AREA_UNITS[unit]
+            return float(str(v.get("amount", "")).lstrip("+")) * AREA_UNITS[unit]
         except (KeyError, ValueError):
             continue
-        if box and km2 > box * AREA_SLACK + 50:
-            return f"its area, {km2:,.0f} km^2, cannot fit in the shape's {box:,.0f} km^2 box"
+    return None
+
+
+def box_km2(bbox: list[float] | None) -> float | None:
+    if not bbox or len(bbox) != 4:
+        return None
+    w, s_, e, n = bbox
+    return abs(n - s_) * 111.32 * abs(e - w) * 111.32 * math.cos(math.radians((n + s_) / 2))
+
+
+def too_small(qid: str, bbox: list[float] | None) -> str:
+    """Why a place reached only through a redirect is too small to be the shape.
+
+    The redirect stage takes the article Wikipedia sends a bare name to, and a
+    region named after its capital sends the name to the capital. Every
+    earlier stage had refused these as ties -- Morogoro Region, Morogoro the
+    city and Morogoro District all fold to one name -- and the redirect then
+    walked past the refusal to the town: 471,409 people for a region of three
+    million, and the same for Brikama, Basse and Ajdabiya. A place offered
+    that way must state an area, and fill a reasonable share of the shape's
+    box, before it is read. Malta's localities and Latvia's state cities,
+    which are towns and are the shapes, do.
+    """
+    box = box_km2(bbox)
+    if not box:
+        return ""
+    area = area_km2(qid)
+    if area is None:
+        return "reached only by a redirect, and Wikidata states no area to size it by"
+    if area < box * MIN_FILL:
+        return (f"reached only by a redirect, and its {area:,.0f} km^2 is "
+                f"{area / box:.1%} of the shape's {box:,.0f} km^2 box")
     return ""
 
 
@@ -1153,6 +1195,8 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
         if probe:
             continue
         why = refuted(item, unit.get("bbox"))
+        if not why and how == "redirect":
+            why = too_small(item, unit.get("bbox"))
         if why:
             log(f"  {unit['name']} -> {title} ({item}): {why}; refused")
             continue
