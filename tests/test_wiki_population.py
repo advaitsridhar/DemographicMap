@@ -744,3 +744,18 @@ class ARiverIsNotARegion(unittest.TestCase):
             self.assertTrue(wp.NOT_A_UNIT.search(t), t)
         for t in ("English River, Seychelles", "Rivière du Rempart District", "Togdheer"):
             self.assertFalse(wp.NOT_A_UNIT.search(t), t)
+
+
+class NobodyLivesThere(unittest.TestCase):
+    def test_a_zero_is_read_where_the_article_says_uninhabited(self):
+        text = infobox(population_total="0") + "Redonda is an uninhabited island."
+        self.assertEqual(wp.read(text)[0], 0)
+
+    def test_a_zero_is_not_read_where_it_might_be_a_blank(self):
+        value, _, why = wp.read(infobox(population_total="0"))
+        self.assertIsNone(value)
+        self.assertIn("uninhabited", why)
+
+    def test_the_word_itself_is_a_figure(self):
+        text = infobox(population_total="Uninhabited") + "The islands are uninhabited."
+        self.assertEqual(wp.read(text)[0], 0)

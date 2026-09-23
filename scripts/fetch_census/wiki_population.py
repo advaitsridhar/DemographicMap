@@ -632,11 +632,17 @@ def params(wikitext: str) -> dict[str, str]:
     return out
 
 
+UNINHABITED = re.compile(r"^(?:uninhabited|none|nil|no permanent population)\b", re.I)
+
+
 def number(text: str) -> tuple[int | None, str]:
     """The whole number a value states, or why it states none."""
     body = RAN_ON.sub("", clean(text))
     if not body:
         return None, "empty"
+    # An infobox that writes the word instead of the number is stating one.
+    if UNINHABITED.match(body):
+        return 0, ""
     # "12,998 (2024)" -- the figure, with the year the article put beside it.
     m = re.match(r"^(.*?)\s*\(([^()]*)\)\s*$", body)
     tail = ""
@@ -648,8 +654,6 @@ def number(text: str) -> tuple[int | None, str]:
     if not digits:
         return None, f"no digits: {body[:60]!r}"
     value = int(digits)
-    if value <= 0:
-        return None, "zero"
     return value, tail
 
 
@@ -685,6 +689,11 @@ def read(wikitext: str) -> tuple[int | None, int | None, str]:
         if key not in fields:
             continue
         value, tail = number(fields[key])
+        # Nobody lives on Redonda or the Senkakus, and a zero says so -- but a
+        # zero is also what an infobox left half-filled says, so it is read
+        # only where the article itself calls the place uninhabited.
+        if value == 0 and "uninhabited" not in wikitext.lower():
+            return None, None, f"{key}: zero, and the article nowhere says the place is uninhabited"
         if value is None and PULLS_FROM_WIKIDATA.search(fields[key]):
             return None, None, FROM_WIKIDATA
         if value is None:
@@ -1089,6 +1098,22 @@ TITLES: dict[tuple[str, str], str] = {
     ("129", "West Bank"): "West Bank",
     ("117", "Falkland Islands (UK)"): "Falkland Islands",
     ("111", "Abyei"): "Abyei Area",
+    ("112", "Aksai Chin"): "Aksai Chin",
+    ("114", "Demchok"): "Demchok sector",
+    ("119", "Kalapani"): "Kalapani territory",
+    ("120", "Isla Brasilera"): "Brasilera Island",
+    ("121", "Siachen-Saltoro"): "Siachen Glacier",
+    ("122", "Koualou"): "Koualou",
+    ("123", "Liancourt Rocks"): "Liancourt Rocks",
+    ("127", "Senkakus"): "Senkaku Islands",
+    # The boundary file's "Paracel Is" and "Spratly Is" are single islands,
+    # not the groups -- boxes a kilometre across, at Woody Island (16.83 N,
+    # 112.33 E) and Southwest Cay (11.43 N, 114.33 E). The groups' articles
+    # would put every garrison in the archipelago on one island.
+    ("125", "Paracel Is"): "Woody Island (South China Sea)",
+    ("128", "Spratly Is"): "Southwest Cay",
+    # Western Sahara is one shape for the whole territory.
+    ("ESH", "Western Sahara"): "Western Sahara",
 }
 
 # A shape the boundary file draws as two units at once, read as the sum of
@@ -1098,6 +1123,7 @@ TITLES: dict[tuple[str, str], str] = {
 COMPOSITES: dict[tuple[str, str], tuple[str, ...]] = {
     ("NER", "Tahoua/Agadez"): ("Tahoua Region", "Agadez Region"),
     ("NER", "Zinder/Diffa"): ("Zinder Region", "Diffa Region"),
+    ("126", "Sanafir & Tiran Is."): ("Tiran Island", "Sanafir Island"),
 }
 
 
