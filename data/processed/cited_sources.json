@@ -866,11 +866,103 @@
         "name": "National Bureau of Statistics, Seychelles",
         "url": "https://www.nbs.gov.sc/downloads/mid-2019-population-bulletin/viewdocument",
         "year": 2019,
-        "note": "read from a transcript of the Internet Archive's copy, https://web.archive.org/web/2021id_/https://www.nbs.gov.sc/downloads/mid-2019-population-bulletin/viewdocument, made on 23 September 2026 and kept at data/raw/seychelles"
+        "note": "read from the Internet Archive's copy, https://web.archive.org/web/2021id_/https://www.nbs.gov.sc/downloads/mid-2019-population-bulletin/viewdocument"
       }
     ],
     "country": "SYC",
     "shape_id": "4304713B25967812410873",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "GMB-GBOS-Janjanbureh",
+    "level": "admin1",
+    "name": "Janjanbureh",
+    "parent": "GMB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 126910,
+      "unit": "people",
+      "year": 2013,
+      "source": "Gambia Bureau of Statistics, 2013 census preliminary results, Table 4",
+      "note": "The local government area's own count in the Bureau's report, which Wikipedia's list of the Gambia's regions cites; the list itself gives only Central River Region, which this area and its neighbour make up. The report's other areas match the 2013 figures the map's Gambia already shows."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Gambia Bureau of Statistics",
+        "url": "http://www.gbos.gov.gm/uploads/census/The%20Gambia%20Population%20and%20Housing%20Census%202013%20Provisional%20Report.pdf",
+        "year": 2013,
+        "note": "read from the Internet Archive's copy, https://web.archive.org/web/2016id_/http://www.gbos.gov.gm/uploads/census/The%20Gambia%20Population%20and%20Housing%20Census%202013%20Provisional%20Report.pdf"
+      }
+    ],
+    "country": "GMB",
+    "shape_id": "31243875B72482523363184",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "GMB-GBOS-Kuntaur",
+    "level": "admin1",
+    "name": "Kuntaur",
+    "parent": "GMB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 99108,
+      "unit": "people",
+      "year": 2013,
+      "source": "Gambia Bureau of Statistics, 2013 census preliminary results, Table 4",
+      "note": "The local government area's own count in the Bureau's report, which Wikipedia's list of the Gambia's regions cites; the list itself gives only Central River Region, which this area and its neighbour make up. The report's other areas match the 2013 figures the map's Gambia already shows."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Gambia Bureau of Statistics",
+        "url": "http://www.gbos.gov.gm/uploads/census/The%20Gambia%20Population%20and%20Housing%20Census%202013%20Provisional%20Report.pdf",
+        "year": 2013,
+        "note": "read from the Internet Archive's copy, https://web.archive.org/web/2016id_/http://www.gbos.gov.gm/uploads/census/The%20Gambia%20Population%20and%20Housing%20Census%202013%20Provisional%20Report.pdf"
+      }
+    ],
+    "country": "GMB",
+    "shape_id": "31243875B86283726287100",
     "match_by": "shape_id"
   }
 ]
