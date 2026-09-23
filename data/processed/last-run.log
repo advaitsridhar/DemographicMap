@@ -1,6 +1,16 @@
-moldova_census: 2024 census, ethnocultural annex
-  1,310,944 bytes
-  Mun. Bălţi: religion Orthodox 91.5, Baptist 1.8, Not declared 1.5, Irreligious 1.1
-  Briceni: religion Orthodox 80.5, Jehovah's Witnesses 7.7, Pentecostal 4.2, Irreligious 3.2
-  70 records, 35 units at two levels
-  wrote data/processed/moldova_census.json (317 kB)
+transnistria: 2015 ethnic composition
+  mun bender: 91,197
+  mun tiraspol: 129,367
+  or dnestrovsc: 9,744
+  grigoriopol: 39,795
+  dubasari: 31,159
+  camenca: 20,542
+  ribnita: 69,405
+  slobozia: 83,798
+transnistria: Moldova 2024, ethnicity by religion and by mother tongue
+  Bender religion (modelled): Orthodox 88.7, Old Believer 2.0, Irreligious 1.9, Atheism 1.8
+  Bender language (modelled): Russian 56.7, Moldovan or Romanian 28.5, Ukrainian 9.1, Bulgarian 2.7
+  Transnistria religion (modelled): Orthodox 89.7, Irreligious 1.6, Atheism 1.5, Baptist 1.4
+  Transnistria language (modelled): Russian 46.1, Moldovan or Romanian 35.0, Ukrainian 14.8, Bulgarian 1.9
+  wrote data/processed/transnistria_2015.json (30 kB)
+wrote 4 records to transnistria_2015.json

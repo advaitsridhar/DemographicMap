@@ -64,45 +64,6 @@ class TheNorthernDistricts(unittest.TestCase):
         self.assertIsNone(m.year_of("{| class=wikitable\n|}\n"))
 
 
-TRANSNISTRIA = """== Administrative divisions ==
-{| class="wikitable"
-! Name !! Capital !! Area !! Population (2025) !! Ethnic composition (2004)
-|-
-| Camenca District (Camenca, Каменка) || Camenca || km2 || 21,000 || 47.82% Moldovans, 42.55% Ukrainians, 6.89% Russians, 2.74% others
-|-
-| Rîbnița District (Rîbnița, Рыбница) || Rîbnița || km2 || 69,000 || 29.90% Moldovans, 45.41% Ukrainians, 17.22% Russians, 7.47% others
-|-
-| Dubăsari District (Dubăsari, Дубэсарь) || Dubăsari || km2 || 31,000 || 50.15% Moldovans, 28.29% Ukrainians, 19.03% Russians, 2.53% others
-|-
-| Grigoriopol District (Grigoriopol, Григориопол) || Grigoriopol || km2 || 40,000 || 64.83% Moldovans, 15.28% Ukrainians, 17.36% Russians, 2.26% others
-|-
-| Slobozia District (Slobozia, Слобозия) || Slobozia || km2 || 84,000 || 41.51% Moldovans, 21.71% Ukrainians, 26.51% Russians, 10.27% others
-|-
-| City of Tiraspol (Tiraspol, Тираспол) || Tiraspol || km2 || 126,306 || 18.41% Moldovans, 32.31% Ukrainians, 41.44% Russians, 7.82% others
-|-
-| City of Bender (Tighina, Тигина/Бендер) || Bender || km2 || 83,919 || 25.03% Moldovans, 17.98% Ukrainians, 43.35% Russians, 13.64% others
-|}
-"""
-
-
-class Transnistria(unittest.TestCase):
-    def setUp(self):
-        self.saved = m.fetch
-        m.fetch = lambda title, lang: (TRANSNISTRIA, title)
-
-    def tearDown(self):
-        m.fetch = self.saved
-
-    def test_every_district_and_its_population(self):
-        shares, people = m.transnistria()
-        self.assertEqual(set(shares), {*m.LEFT_BANK, "Bender"})
-        self.assertEqual(people["Bender"], 83919)
-        self.assertEqual(people["Tiraspol"], 126306)
-
-    def test_bender_is_read_as_the_table_gives_it(self):
-        shares, _ = m.transnistria()
-        self.assertEqual({r["group"]: r["pct"] for r in shares["Bender"]},
-                         {"Moldovan": 25.03, "Ukrainian": 17.98, "Russian": 43.35, "Other": 13.64})
 
 
 BALTI = [

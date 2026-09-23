@@ -8,23 +8,15 @@ their articles give instead of a table -- and this reader fills only what it
 could not, standing aside for any field that reader has a figure for. By the
 owner's decision of 22 September 2026 -- use the figures Wikipedia has;
 where the table cites nothing, cite the article; where it is undated, say
-so -- what is left is read here:
+so -- what is left is read here: Edinet, Falesti, Glodeni, Riscani and
+Balti, should the English articles ever lose their charts, from the Romanian
+articles' "Structura etnica" tables, of counts (undated for three, 2004 for
+Riscani, every census since 1959 for Balti, whose 2024 column is read), and
+Balti's "Structura lingvistica" table of the language usually spoken.
 
-* Bender. The Transnistria article's table of administrative divisions gives
-  each district's ethnic composition from Transnistria's own 2004 census,
-  Bender among them. It is not the 2024 Moldovan census, which did not reach
-  Bender, and the record says whose count it is.
-* Transnistria. The map's shape is the left bank without Bender, which is
-  six of the table's rows. Their shares are combined weighted by the same
-  table's 2025 populations, because the table gives no 2004 ones -- which
-  assumes the districts' relative sizes have held since 2004. That is an
-  assumption, so the result is a modelled estimate, marked and hatched as
-  one, and never a reading.
-* Edinet, Falesti, Glodeni, Riscani and Balti, should the English articles
-  ever lose their charts: the Romanian articles' "Structura etnica" tables,
-  of counts (undated for three, 2004 for Riscani, every census since 1959
-  for Balti, whose 2024 column is read), and Balti's "Structura
-  lingvistica" table of the language usually spoken.
+Bender and Transnistria, which this used to read from the Transnistria
+article's 2004 table, are now transnistria.py's: Transnistria's own 2015
+census, and a modelled religion and mother tongue.
 
 Two things in the tables are not what they look like. Falesti gives
 "Moldoveni/Romani" as one row, which is one figure for two answers and is
@@ -53,7 +45,6 @@ from ._shared import PROCESSED, log, read_json, write_json
 from .europe_wiki import fetch, sections
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from common import MODELLED, estimate  # noqa: E402
 from probe_wikitable import tables  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent.parent
@@ -95,12 +86,6 @@ RO_LANGUAGE = {
 # Rows of a table that are not groups: a sub-header, the total, and the
 # citation some articles put in a row of its own under the table.
 NOT_A_GROUP = {"numar", "total", "totallocuitori"}
-
-TRANSNISTRIA = "Transnistria"
-TR_LABELS = {"moldovans": "Moldovan", "ukrainians": "Ukrainian",
-             "russians": "Russian", "others": "Other"}
-LEFT_BANK = ("Camenca", "Rîbnița", "Dubăsari", "Grigoriopol", "Slobozia", "Tiraspol")
-
 
 def fold(text: str) -> str:
     text = text.lower().replace("ș", "s").replace("ş", "s").replace("ț", "t")
@@ -263,30 +248,6 @@ def language(text: str, name: str, landed: str, url: str,
             for level in ("admin1", "admin2") if (level, name) in ids]
 
 
-def transnistria() -> tuple[dict[str, list[dict[str, Any]]], dict[str, int]]:
-    """Each district's 2004 shares, and its 2025 population, from the article."""
-    text, _ = fetch("Transnistria", "en")
-    shares: dict[str, list[dict[str, Any]]] = {}
-    people: dict[str, int] = {}
-    for heading, body in sections(text):
-        if "administrative divisions" not in heading.lower():
-            continue
-        for table in tables(body):
-            for row in table[1:]:
-                if len(row) < 5:
-                    continue
-                name = row[0].split("(")[0].replace("District", "").replace("City of", "").strip()
-                comp = []
-                for pct, label in re.findall(r"([\d.]+)%\s*([A-Za-z]+)", row[4]):
-                    group = TR_LABELS.get(label.lower())
-                    if group:
-                        comp.append({"group": group, "pct": float(pct)})
-                if comp:
-                    shares[name] = comp
-                    people[name] = count(row[3]) or 0
-    return shares, people
-
-
 def already_read() -> dict[str, set[str]]:
     """{unit: the fields the Europe reader has a figure for}.
 
@@ -343,49 +304,6 @@ def main() -> int:
                 rows.append(row_for(name, level, ids[(level, name)], comp, year=year,
                                     note=note, url=url,
                                     source=f"ro.wikipedia, '{landed}'"))
-
-    shares, people = transnistria()
-    url = "https://en.wikipedia.org/wiki/Transnistria"
-    source = "Transnistria's 2004 census, as the en.wikipedia article 'Transnistria' tabulates it"
-    bender = shares.get("Bender")
-    if bender:
-        note = ("Ethnic composition from Transnistria's own 2004 census, as the "
-                "en.wikipedia article 'Transnistria' tabulates it by district. Bender "
-                "is administered by Transnistria and the 2024 Moldovan census did not "
-                "count it; this is the breakaway authority's count, not Moldova's.")
-        for level in ("admin1", "admin2"):
-            if (level, "Bender") in ids:
-                rows.append(row_for("Bender", level, ids[(level, "Bender")], bender,
-                                    year=2004, note=note, url=url, source=source))
-        log(f"Bender: {bender}")
-    else:
-        log("Bender: not in the Transnistria article's table; left as it was")
-
-    left = [d for d in LEFT_BANK if d in shares and people.get(d)]
-    if len(left) == len(LEFT_BANK):
-        weight = sum(people[d] for d in left)
-        total: dict[str, float] = {}
-        for d in left:
-            for r in shares[d]:
-                total[r["group"]] = total.get(r["group"], 0.0) + r["pct"] * people[d] / weight
-        mix = sorted(({"group": g, "pct": round(v, 1)} for g, v in total.items()),
-                     key=lambda r: -r["pct"])
-        value = estimate(
-            MODELLED, mix, method="district-weighted",
-            inputs=[f"en.wikipedia 'Transnistria', {d}" for d in left],
-            note=("Not read: nothing publishes the left bank without Bender. The "
-                  "shares of Transnistria's six left-bank districts from its own "
-                  "2004 census, combined weighted by the same table's 2025 "
-                  "populations, which assumes the districts' relative sizes have "
-                  "held since 2004. Breakaway authority's census; the 2024 Moldovan "
-                  "census did not count this territory."))
-        for level in ("admin1", "admin2"):
-            if (level, TRANSNISTRIA) in ids:
-                rows.append(row_for(TRANSNISTRIA, level, ids[(level, TRANSNISTRIA)], value,
-                                    year=None, note=value["note"], url=url, source=source))
-        log(f"Transnistria (modelled): {mix}")
-    else:
-        log(f"Transnistria: the table has {left} of the six left-bank districts; left as it was")
 
     rows = merged(rows)
     write_json(PROCESSED / OUT, rows)
