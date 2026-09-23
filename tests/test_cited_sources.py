@@ -32,10 +32,13 @@ HEAD = ("Name", "Abbr.", "Area A (km²)", "Population Estimate (E) 2005-08-01",
 
 
 def page(rows, head=HEAD):
-    th = "".join(f"<th>{h.replace(' (', '<br>(')}</th>" for h in head)
+    # As the live page lays it out: an empty cell opens every row, the header
+    # included, and a sort key and a link close each region's.
+    th = "<th></th>" + "".join(f"<th>{h.replace(' (', '<br>(')}</th>" for h in head)
     body = "".join(
-        "<tr>" + f'<td><a href="#"><span>{r[0]}</span></a></td>'
-        + "".join(f"<td>{c}</td>" for c in r[1:]) + '<td><a href="#">→</a></td></tr>'
+        "<tr><td></td>" + f'<td><a href="#"><span>{r[0]}</span></a></td>'
+        + "".join(f"<td>{c}</td>" for c in r[1:])
+        + '<td>2696200</td><td><a href="#">→</a></td></tr>'
         for r in rows)
     return f"<p>Pre-war Regions</p><table><thead><tr>{th}</tr></thead><tbody>{body}</tbody></table>"
 

@@ -142,7 +142,12 @@ def somalia_table(table: list[list[str]]) -> tuple[dict[str, int], str]:
     heads = next((r for r in table if any("2019" in c for c in r)), None)
     if not heads:
         return {}, ""
-    rows = {main_name(r[0]): r for r in table if r}
+    # The name sits in the column headed "Name": on the live page every row,
+    # header included, opens with an empty cell.
+    key = [i for i, h in enumerate(heads) if h.strip().lower() == "name"]
+    if len(key) != 1:
+        return {}, ""
+    rows = {main_name(r[key[0]]): r for r in table if len(r) > key[0]}
     if not any(name in rows for name in SOMALIA):
         return {}, ""
     at = {year: [i for i, h in enumerate(heads) if str(year) in h] for year in (2014, 2019)}
