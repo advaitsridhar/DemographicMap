@@ -145,6 +145,11 @@ MIN_FILL = 0.05
 # ARMM, whose islands spread across a box 23 times the region's land; a town
 # offered for its region is a fraction of one per cent.
 NAME_FILL = 0.01
+# What an island group is on Wikidata: archipelago, island group. Its land is
+# a sliver of the ocean its shape's box is drawn around -- the Gilbert
+# Islands' 279 km^2 in a box of 291,657 -- and so is the shape's own, so the
+# share of the box it fills says nothing about whether it is the shape.
+ISLAND_GROUP = frozenset({"Q33837", "Q1402592"})
 
 
 # ---------------------------------------------------------------------------
@@ -994,6 +999,10 @@ def too_small(qid: str, bbox: list[float] | None, fill: float | None = None) -> 
     box = box_km2(bbox)
     if not box:
         return ""
+    kinds = {((c.get("mainsnak") or {}).get("datavalue") or {}).get("value", {}).get("id")
+             for c in claim_values(qid, "P31")}
+    if kinds & ISLAND_GROUP:
+        return ""
     area = area_km2(qid)
     if area is None:
         return "reached only by a redirect, and Wikidata states no area to size it by"
@@ -1088,6 +1097,18 @@ TITLES: dict[tuple[str, str], str | tuple[str, ...]] = {
     ("COD", "Central Kasai"): "Kasaï-Central",
     ("CIV", "District Autonome D'Abidjan"): "Abidjan Autonomous District",
     ("CIV", "District Autonome De Yamoussoukro"): "Yamoussoukro Autonomous District",
+    # The map draws Ivory Coast's fourteen districts of 2011. Each of these
+    # names is also a region's -- the region of the 1997 map, or one of the
+    # regions the district now holds -- and the redirects all land there:
+    # "Savanes Region (Ivory Coast)", "Denguélé Region", "Vallée du Bandama
+    # Region". A region's figure for a district's shape would be a part
+    # published as the whole, so the district's own article is named.
+    ("CIV", "Denguele"): "Denguélé District",
+    ("CIV", "Lacs"): "Lacs District",
+    ("CIV", "Montagnes"): "Montagnes District",
+    ("CIV", "Savanes"): "Savanes District",
+    ("CIV", "Valle Du Bandama"): "Vallée du Bandama District",
+    ("CIV", "Zanzan"): "Zanzan District",
     # Regions named after their capitals, whose bare names every index sends
     # to the town. The sweep refused each of these correctly; the region has
     # its own article under its own title.
@@ -1153,6 +1174,19 @@ TITLES: dict[tuple[str, str], str | tuple[str, ...]] = {
 # both units' articles. Niger's first level on this map is six shapes for its
 # eight regions, "Tahoua/Agadez" and "Zinder/Diffa" among them: the sum of two
 # populations is the population of the polygon, and nothing short of both is.
+# Shapes no article is the whole of, and why. Named so that no stage of the
+# search is left to find a part and publish it as the whole.
+UNREADABLE: dict[tuple[str, str], str] = {
+    # The map's Oman is seven regions of the 1990s, and its Az Zahirah runs
+    # from 17.5 to 26.4 degrees north: it holds Al Buraimi and Musandam as
+    # well. The name search found Al Dhahirah Governorate, 213,043 people in
+    # 2020, which is the governorate of that name since 2006 and a part of
+    # the shape. No article counts the three together.
+    ("OMN", "Az Zahirah"): ("no article covers this shape: it holds Al Dhahirah, "
+                            "Al Buraimi and Musandam, and Al Dhahirah Governorate "
+                            "is one of the three"),
+}
+
 COMPOSITES: dict[tuple[str, str], tuple[str, ...]] = {
     ("NER", "Tahoua/Agadez"): ("Tahoua Region", "Agadez Region"),
     ("NER", "Zinder/Diffa"): ("Zinder Region", "Diffa Region"),
@@ -1295,6 +1329,11 @@ def article_for(iso3: str, units: list[dict[str, Any]],
     # whose Wikidata item has no English article, which is what several of
     # them are for.
     for unit in units:
+        if (iso3, unit["name"]) in UNREADABLE:
+            log(f"  {unit['name']}: {UNREADABLE[(iso3, unit['name'])]}; not read")
+            found.pop(unit["id"], None)
+            settled.add(unit["id"])
+            continue
         if unit["id"] in found or (iso3, unit["name"]) not in TITLES:
             continue
         taken = {item for item, _, _ in found.values()} | (others - {qid})

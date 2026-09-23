@@ -659,6 +659,25 @@ class ATownForTheRegionAroundIt(unittest.TestCase):
         self.area(None)
         self.assertIn("no area", wp.too_small("Q916988", [16.5, 13.1, 16.9, 13.4]))
 
+    def test_an_island_group_is_not_sized_by_its_ocean(self):
+        # The Gilbert Islands: 279 km^2 of land in a box of 291,657. The shape
+        # is the same sliver of the same box, so the share proves nothing.
+        wp.claim_values = lambda qid, prop: (
+            [{"mainsnak": {"datavalue": {"value": {"id": "Q33837"}}}}] if prop == "P31"
+            else [{"mainsnak": {"datavalue": {"value": {
+                "amount": "+279", "unit": "http://www.wikidata.org/entity/Q712226"}}}}]
+            if prop == "P2046" else [])
+        self.assertEqual(wp.too_small("Q271876", [172.7664, -2.6696, 176.8454, 3.1004]), "")
+
+    def test_a_town_is_still_sized_whatever_else_it_is(self):
+        # Maputo the city, for Maputo Province: a city, and 1% of the box.
+        wp.claim_values = lambda qid, prop: (
+            [{"mainsnak": {"datavalue": {"value": {"id": "Q515"}}}}] if prop == "P31"
+            else [{"mainsnak": {"datavalue": {"value": {
+                "amount": "+347", "unit": "http://www.wikidata.org/entity/Q712226"}}}}]
+            if prop == "P2046" else [])
+        self.assertIn("of the shape's", wp.too_small("Q3889", [31.9, -26.9, 33.0, -25.0]))
+
 
 class ATitleThatNamesTheDivision(unittest.TestCase):
     def test_the_redirect_titles_that_name_their_kind(self):
@@ -823,6 +842,25 @@ class AFailedDeclarationIsFinal(unittest.TestCase):
     def test_a_unit_with_no_declaration_still_searches(self):
         unit = {"id": "g", "name": "Gedaref"}
         self.assertEqual(wp.article_for("XXX", [unit], [unit], "Nowhere")["g"][0], "Q311199")
+
+
+class AShapeNoArticleIsTheWholeOf(AFailedDeclarationIsFinal):
+    """Oman's Az Zahirah holds Al Buraimi and Musandam too."""
+
+    def test_nothing_is_searched_for(self):
+        wp.search = lambda *a, **k: {"Q1468596": {"names": ["Az Zahirah"],
+                                                  "title": "Al Dhahirah Governorate"}}
+        unit = {"id": "z", "name": "Az Zahirah"}
+        self.assertEqual(wp.article_for("OMN", [unit], [unit], "Oman"), {})
+
+    def test_the_reason_is_written_down(self):
+        self.assertIn("Musandam", wp.UNREADABLE[("OMN", "Az Zahirah")])
+
+
+class IvoryCoastsDistrictsAreNotItsRegions(unittest.TestCase):
+    def test_each_redirect_that_reached_a_region_is_declared_to_the_district(self):
+        for name in ("Denguele", "Lacs", "Montagnes", "Savanes", "Valle Du Bandama", "Zanzan"):
+            self.assertTrue(wp.TITLES[("CIV", name)].endswith(" District"), name)
 
 
 class Approximately(unittest.TestCase):
