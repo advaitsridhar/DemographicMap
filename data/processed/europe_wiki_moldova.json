@@ -139,16 +139,69 @@
       "status": "not_available",
       "note": "the article has no section matching 'religio'"
     },
-    "language": {
-      "status": "not_available",
-      "note": "the article has no section matching 'language|mother tongue'"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
-    "sources": [],
-    "country": "MDA"
+    "language": [
+      {
+        "group": "Russian",
+        "pct": 37.2
+      },
+      {
+        "group": "Moldovan",
+        "pct": 36.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 21.2
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 4.5
+      },
+      {
+        "group": "Other",
+        "pct": 0.5
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 71.1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 13.2
+      },
+      {
+        "group": "Russian",
+        "pct": 10.1
+      },
+      {
+        "group": "Romanian",
+        "pct": 3.7
+      },
+      {
+        "group": "Other",
+        "pct": 1.6
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Bălți' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/B%C4%83l%C8%9Bi",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Bălți' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/B%C4%83l%C8%9Bi",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Bălți' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Ethnic composition of Bălți (2024)\", and not as a table.",
+    "language_year": 2024,
+    "language_note": "Population by language for 2024 from a population census, as the en.wikipedia article 'Bălți' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Linguistic composition of Bălți (2024)\", and not as a table. The chart does not say whether it counts mother tongue or the language usually spoken."
   },
   {
     "id": "MDA-admin1-basarabeasca",
@@ -441,7 +494,7 @@
         "pct": 1.4
       },
       {
-        "group": "Other or not stated",
+        "group": "Not declared",
         "pct": 1.3
       },
       {
@@ -513,7 +566,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Cahul District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Cahul District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census. The table's groups add to 98.7%; the rest is carried as a remainder."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Cahul District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-calarasi",
@@ -621,7 +674,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Călărași District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Călărași District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Călărași District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-cantemir",
@@ -729,7 +782,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Cantemir District' transcribes and cites it. A census count.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Cantemir District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Cantemir District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-causeni",
@@ -751,10 +804,24 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 96.9
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.4
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -803,11 +870,19 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Căușeni District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/C%C4%83u%C8%99eni_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Căușeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/C%C4%83u%C8%99eni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Căușeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Căușeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Căușeni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-chisinau",
@@ -949,11 +1024,11 @@
     ],
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count.",
     "religion_year": 2024,
     "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count. The citation is for 2025; the column read is the one the table's own header labels 2024, and that is the year on this record.",
     "language_year": 2024,
-    "language_note": "Population by mother tongue for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+    "language_note": "Population by mother tongue for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count."
   },
   {
     "id": "MDA-admin1-cimislia",
@@ -1061,7 +1136,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Cimișlia District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Cimișlia District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Cimișlia District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-criuleni",
@@ -1161,7 +1236,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Criuleni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Criuleni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Criuleni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-donduseni",
@@ -1183,32 +1258,10 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Orthodox",
-        "pct": 93.1
-      },
-      {
-        "group": "Old Believer",
-        "pct": 3.3
-      },
-      {
-        "group": "Protestant",
-        "pct": 2.8
-      },
-      {
-        "group": "Irreligious",
-        "pct": 0.3
-      },
-      {
-        "group": "Not declared",
-        "pct": 0.3
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.1
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "labels this reader has no entry for: ['Christian']"
+    },
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -1257,19 +1310,11 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Dondușeni District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Dondu%C8%99eni_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
-      },
-      {
-        "field": "religion",
-        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Dondușeni District' transcribes it",
-        "url": "https://en.wikipedia.org/wiki/Dondu%C8%99eni_District",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Dondușeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
-    "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Dondușeni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Dondușeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-drochia",
@@ -1291,28 +1336,10 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Orthodox",
-        "pct": 97.1
-      },
-      {
-        "group": "Protestant",
-        "pct": 2.3
-      },
-      {
-        "group": "Irreligious",
-        "pct": 0.3
-      },
-      {
-        "group": "Not declared",
-        "pct": 0.2
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.1
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "labels this reader has no entry for: ['Christian']"
+    },
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -1357,19 +1384,11 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Drochia District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Drochia_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
-      },
-      {
-        "field": "religion",
-        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Drochia District' transcribes it",
-        "url": "https://en.wikipedia.org/wiki/Drochia_District",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Drochia District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
-    "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Drochia District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Drochia District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-dubasari",
@@ -1391,10 +1410,32 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "the shares add to 11.00, which is not a composition"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 98.0
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.9
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 0.6
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.3
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -1439,11 +1480,19 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Dubăsari District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Dub%C4%83sari_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Dubăsari District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Dub%C4%83sari_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Dubăsari District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Dubăsari District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Dubăsari District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list's line \"Christians\" gives 99.5% and the lines under it add to 98.9%; the lines under it are what is read. The list indents \"Not Declared\" under \"No Religion\", and neither is a kind of the other; both are read. The list itself carries no reference; the citation is the one the article's infobox gives for the same census. The table's groups add to 99.4%; the rest is carried as a remainder."
   },
   {
     "id": "MDA-admin1-edinet",
@@ -1465,20 +1514,115 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Not stated']"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "the article has no section matching 'language|mother tongue'"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
-    "sources": [],
-    "country": "MDA"
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 86.7
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 4.6
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 3.0
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.0
+      },
+      {
+        "group": "Irreligious",
+        "pct": 1.6
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.2
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.9
+      }
+    ],
+    "language": [
+      {
+        "group": "Moldovan",
+        "pct": 58.9
+      },
+      {
+        "group": "Russian",
+        "pct": 16.2
+      },
+      {
+        "group": "Romanian",
+        "pct": 15.6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 7.8
+      },
+      {
+        "group": "Romani",
+        "pct": 1.2
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 77.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 13.3
+      },
+      {
+        "group": "Russian",
+        "pct": 4.1
+      },
+      {
+        "group": "Romanian",
+        "pct": 3.3
+      },
+      {
+        "group": "Romani",
+        "pct": 1.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.5
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Edineț District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Edine%C8%9B_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Edineț District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Edine%C8%9B_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Edineț District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Edine%C8%9B_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Edineț District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Ethnic composition of Edineț District (2024)\", and not as a table.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Edineț District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "language_year": 2024,
+    "language_note": "Population by language for 2024 from a population census, as the en.wikipedia article 'Edineț District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Linguistic composition of Edineț District (2024)\", and not as a table. The chart does not say whether it counts mother tongue or the language usually spoken."
   },
   {
     "id": "MDA-admin1-falesti",
@@ -1500,20 +1644,103 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Not stated']"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "the article has no section matching 'language|mother tongue'"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
-    "sources": [],
-    "country": "MDA"
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 95.6
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.4
+      },
+      {
+        "group": "Baptist",
+        "pct": 1.3
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.0
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.4
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.3
+      }
+    ],
+    "language": [
+      {
+        "group": "Moldovan",
+        "pct": 68.9
+      },
+      {
+        "group": "Romanian",
+        "pct": 19.2
+      },
+      {
+        "group": "Russian",
+        "pct": 7.6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 4.1
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 86.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 6.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.5
+      },
+      {
+        "group": "Russian",
+        "pct": 2.0
+      },
+      {
+        "group": "Other",
+        "pct": 0.4
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Fălești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/F%C4%83le%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Fălești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/F%C4%83le%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Fălești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/F%C4%83le%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Fălești District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Ethnic composition of Fălești District (2024)\", and not as a table.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Fălești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "language_year": 2024,
+    "language_note": "Population by language for 2024 from a population census, as the en.wikipedia article 'Fălești District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Linguistic composition of Fălești District (2024)\", and not as a table. The chart does not say whether it counts mother tongue or the language usually spoken."
   },
   {
     "id": "MDA-admin1-floresti",
@@ -1621,7 +1848,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Florești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Florești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Florești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-gagauzia",
@@ -1743,9 +1970,9 @@
     ],
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count.",
     "language_year": 2024,
     "language_note": "Population by mother tongue for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count."
   },
@@ -1769,20 +1996,107 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Not stated']"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "the article has no section matching 'language|mother tongue'"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
-    "sources": [],
-    "country": "MDA"
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 96.5
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.9
+      },
+      {
+        "group": "Baptist",
+        "pct": 1.1
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.3
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.2
+      }
+    ],
+    "language": [
+      {
+        "group": "Moldovan",
+        "pct": 62.4
+      },
+      {
+        "group": "Romanian",
+        "pct": 18.0
+      },
+      {
+        "group": "Russian",
+        "pct": 10.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 8.2
+      },
+      {
+        "group": "Romani",
+        "pct": 0.8
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 79.8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 11.8
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.9
+      },
+      {
+        "group": "Russian",
+        "pct": 2.0
+      },
+      {
+        "group": "Romani",
+        "pct": 1.0
+      },
+      {
+        "group": "Other",
+        "pct": 0.5
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Glodeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Glodeni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Glodeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Glodeni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Glodeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Glodeni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Glodeni District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Ethnic composition of Glodeni District (2024)\", and not as a table.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Glodeni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "language_year": 2024,
+    "language_note": "Population by language for 2024 from a population census, as the en.wikipedia article 'Glodeni District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Linguistic composition of Glodeni District (2024)\", and not as a table. The chart does not say whether it counts mother tongue or the language usually spoken."
   },
   {
     "id": "MDA-admin1-hincesti",
@@ -1890,7 +2204,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Hîncești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Hîncești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Hîncești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-ialoveni",
@@ -1994,7 +2308,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ialoveni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ialoveni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ialoveni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-leova",
@@ -2098,7 +2412,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Leova District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Leova District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Leova District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-nisporeni",
@@ -2194,7 +2508,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Nisporeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Nisporeni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Nisporeni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-ocnita",
@@ -2216,10 +2530,28 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['No Declared']"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 95.4
+      },
+      {
+        "group": "Protestant",
+        "pct": 3.5
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.6
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.3
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -2268,11 +2600,19 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Ocnița District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Ocni%C8%9Ba_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Ocnița District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ocni%C8%9Ba_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ocnița District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ocnița District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ocnița District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-orhei",
@@ -2294,10 +2634,32 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['None']"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 97.2
+      },
+      {
+        "group": "Protestant",
+        "pct": 1.8
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.4
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.4
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -2346,11 +2708,19 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Orhei District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Orhei_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Orhei District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Orhei_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Orhei District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Orhei District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Orhei District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-riscani",
@@ -2372,20 +2742,111 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Not stated']"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "the article has no section matching 'language|mother tongue'"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
-    "sources": [],
-    "country": "MDA"
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 95.3
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.6
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.4
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.4
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.3
+      }
+    ],
+    "language": [
+      {
+        "group": "Moldovan",
+        "pct": 60.0
+      },
+      {
+        "group": "Romanian",
+        "pct": 15.8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 11.7
+      },
+      {
+        "group": "Russian",
+        "pct": 10.7
+      },
+      {
+        "group": "Romani",
+        "pct": 1.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 77.6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 14.8
+      },
+      {
+        "group": "Romanian",
+        "pct": 3.3
+      },
+      {
+        "group": "Russian",
+        "pct": 2.1
+      },
+      {
+        "group": "Romani",
+        "pct": 1.7
+      },
+      {
+        "group": "Other",
+        "pct": 0.4
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Rîșcani District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/R%C3%AE%C8%99cani_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Rîșcani District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/R%C3%AE%C8%99cani_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Rîșcani District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/R%C3%AE%C8%99cani_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Rîșcani District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Ethnic composition of Rîșcani District (2024)\", and not as a table.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Rîșcani District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "language_year": 2024,
+    "language_note": "Population by language for 2024 from a population census, as the en.wikipedia article 'Rîșcani District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Linguistic composition of Rîșcani District (2024)\", and not as a table. The chart does not say whether it counts mother tongue or the language usually spoken."
   },
   {
     "id": "MDA-admin1-rezina",
@@ -2493,7 +2954,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Rezina District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Rezina District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Rezina District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-singerei",
@@ -2601,7 +3062,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Sîngerei District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Sîngerei District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Sîngerei District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-soldanesti",
@@ -2697,7 +3158,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Șoldănești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Șoldănești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Șoldănești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-soroca",
@@ -2727,6 +3188,10 @@
       {
         "group": "Protestant",
         "pct": 1.2
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.3
       },
       {
         "group": "Not declared",
@@ -2789,7 +3254,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Soroca District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Soroca District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Soroca District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-stefan-voda",
@@ -2893,7 +3358,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ștefan Vodă District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ștefan Vodă District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ștefan Vodă District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-straseni",
@@ -2915,10 +3380,32 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 96.9
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.1
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.4
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.4
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -2963,11 +3450,19 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Strășeni District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Str%C4%83%C8%99eni_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Strășeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Str%C4%83%C8%99eni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Strășeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Strășeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Strășeni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-taraclia",
@@ -3097,9 +3592,9 @@
     ],
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Taraclia District' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Taraclia District' transcribes and cites it. A census count.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Taraclia District' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The table itself carries no reference; the citation is the one the article's infobox gives for the same census. 3 row(s) of the table print nothing in the column read -- the table has no figure there -- and are not read."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Taraclia District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census. 3 row(s) of the table print nothing in the column read -- the table has no figure there -- and are not read."
   },
   {
     "id": "MDA-admin1-telenesti",
@@ -3191,7 +3686,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Telenești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Telenești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Telenești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin1-transnistria",
@@ -3326,7 +3821,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ungheni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ungheni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ungheni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-anenii-noi",
@@ -3469,17 +3964,70 @@
       "status": "not_available",
       "note": "the article has no section matching 'religio'"
     },
-    "language": {
-      "status": "not_available",
-      "note": "the article has no section matching 'language|mother tongue'"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
-    "sources": [],
+    "language": [
+      {
+        "group": "Russian",
+        "pct": 37.2
+      },
+      {
+        "group": "Moldovan",
+        "pct": 36.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 21.2
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 4.5
+      },
+      {
+        "group": "Other",
+        "pct": 0.5
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 71.1
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 13.2
+      },
+      {
+        "group": "Russian",
+        "pct": 10.1
+      },
+      {
+        "group": "Romanian",
+        "pct": 3.7
+      },
+      {
+        "group": "Other",
+        "pct": 1.6
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Bălți' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/B%C4%83l%C8%9Bi",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Bălți' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/B%C4%83l%C8%9Bi",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Balti",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Bălți' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Ethnic composition of Bălți (2024)\", and not as a table.",
+    "language_year": 2024,
+    "language_note": "Population by language for 2024 from a population census, as the en.wikipedia article 'Bălți' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Linguistic composition of Bălți (2024)\", and not as a table. The chart does not say whether it counts mother tongue or the language usually spoken."
   },
   {
     "id": "MDA-admin2-basarabeasca",
@@ -3775,7 +4323,7 @@
         "pct": 1.4
       },
       {
-        "group": "Other or not stated",
+        "group": "Not declared",
         "pct": 1.3
       },
       {
@@ -3848,7 +4396,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Cahul District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Cahul District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census. The table's groups add to 98.7%; the rest is carried as a remainder."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Cahul District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-calarasi",
@@ -3957,7 +4505,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Călărași District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Călărași District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Călărași District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-cantemir",
@@ -4066,7 +4614,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Cantemir District' transcribes and cites it. A census count.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Cantemir District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Cantemir District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-causeni",
@@ -4088,10 +4636,24 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 96.9
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.5
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.4
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -4140,12 +4702,20 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Căușeni District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/C%C4%83u%C8%99eni_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Căușeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/C%C4%83u%C8%99eni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Causeni",
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Căușeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Căușeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Căușeni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-chisinau",
@@ -4288,11 +4858,11 @@
     "parent_name": "Chisinau",
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count.",
     "religion_year": 2024,
     "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count. The citation is for 2025; the column read is the one the table's own header labels 2024, and that is the year on this record.",
     "language_year": 2024,
-    "language_note": "Population by mother tongue for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header."
+    "language_note": "Population by mother tongue for 2024 from a population census, as the en.wikipedia article 'Chișinău' transcribes and cites it. A census count."
   },
   {
     "id": "MDA-admin2-cimislia",
@@ -4401,7 +4971,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Cimișlia District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Cimișlia District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Cimișlia District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-criuleni",
@@ -4502,7 +5072,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Criuleni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Criuleni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Criuleni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-donduseni",
@@ -4524,32 +5094,10 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Orthodox",
-        "pct": 93.1
-      },
-      {
-        "group": "Old Believer",
-        "pct": 3.3
-      },
-      {
-        "group": "Protestant",
-        "pct": 2.8
-      },
-      {
-        "group": "Irreligious",
-        "pct": 0.3
-      },
-      {
-        "group": "Not declared",
-        "pct": 0.3
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.1
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "labels this reader has no entry for: ['Christian']"
+    },
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -4598,20 +5146,12 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Dondușeni District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Dondu%C8%99eni_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
-      },
-      {
-        "field": "religion",
-        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Dondușeni District' transcribes it",
-        "url": "https://en.wikipedia.org/wiki/Dondu%C8%99eni_District",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Donduseni",
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Dondușeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
-    "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Dondușeni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Dondușeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-drochia",
@@ -4633,28 +5173,10 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": [
-      {
-        "group": "Orthodox",
-        "pct": 97.1
-      },
-      {
-        "group": "Protestant",
-        "pct": 2.3
-      },
-      {
-        "group": "Irreligious",
-        "pct": 0.3
-      },
-      {
-        "group": "Not declared",
-        "pct": 0.2
-      },
-      {
-        "group": "Other religion",
-        "pct": 0.1
-      }
-    ],
+    "religion": {
+      "status": "not_available",
+      "note": "labels this reader has no entry for: ['Christian']"
+    },
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -4699,20 +5221,12 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Drochia District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Drochia_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
-      },
-      {
-        "field": "religion",
-        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Drochia District' transcribes it",
-        "url": "https://en.wikipedia.org/wiki/Drochia_District",
-        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Drochia",
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Drochia District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
-    "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Drochia District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Drochia District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-dubasari",
@@ -4734,10 +5248,32 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "the shares add to 11.00, which is not a composition"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 98.0
+      },
+      {
+        "group": "Protestant",
+        "pct": 0.9
+      },
+      {
+        "group": "Other or not stated",
+        "pct": 0.6
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.3
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -4782,12 +5318,20 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Dubăsari District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Dub%C4%83sari_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Dubăsari District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Dub%C4%83sari_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Dubasari",
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Dubăsari District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Dubăsari District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Dubăsari District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list's line \"Christians\" gives 99.5% and the lines under it add to 98.9%; the lines under it are what is read. The list indents \"Not Declared\" under \"No Religion\", and neither is a kind of the other; both are read. The list itself carries no reference; the citation is the one the article's infobox gives for the same census. The table's groups add to 99.4%; the rest is carried as a remainder."
   },
   {
     "id": "MDA-admin2-edinet",
@@ -4809,21 +5353,116 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Not stated']"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "the article has no section matching 'language|mother tongue'"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
-    "sources": [],
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 86.7
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 4.6
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 3.0
+      },
+      {
+        "group": "Other religion",
+        "pct": 2.0
+      },
+      {
+        "group": "Irreligious",
+        "pct": 1.6
+      },
+      {
+        "group": "Seventh-day Adventist",
+        "pct": 1.2
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.9
+      }
+    ],
+    "language": [
+      {
+        "group": "Moldovan",
+        "pct": 58.9
+      },
+      {
+        "group": "Russian",
+        "pct": 16.2
+      },
+      {
+        "group": "Romanian",
+        "pct": 15.6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 7.8
+      },
+      {
+        "group": "Romani",
+        "pct": 1.2
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 77.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 13.3
+      },
+      {
+        "group": "Russian",
+        "pct": 4.1
+      },
+      {
+        "group": "Romanian",
+        "pct": 3.3
+      },
+      {
+        "group": "Romani",
+        "pct": 1.3
+      },
+      {
+        "group": "Other",
+        "pct": 0.5
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Edineț District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Edine%C8%9B_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Edineț District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Edine%C8%9B_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Edineț District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Edine%C8%9B_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Edinet",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Edineț District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Ethnic composition of Edineț District (2024)\", and not as a table.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Edineț District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "language_year": 2024,
+    "language_note": "Population by language for 2024 from a population census, as the en.wikipedia article 'Edineț District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Linguistic composition of Edineț District (2024)\", and not as a table. The chart does not say whether it counts mother tongue or the language usually spoken."
   },
   {
     "id": "MDA-admin2-falesti",
@@ -4845,21 +5484,104 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Not stated']"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "the article has no section matching 'language|mother tongue'"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
-    "sources": [],
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 95.6
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.4
+      },
+      {
+        "group": "Baptist",
+        "pct": 1.3
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.0
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.4
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.3
+      }
+    ],
+    "language": [
+      {
+        "group": "Moldovan",
+        "pct": 68.9
+      },
+      {
+        "group": "Romanian",
+        "pct": 19.2
+      },
+      {
+        "group": "Russian",
+        "pct": 7.6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 4.1
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 86.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 6.6
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.5
+      },
+      {
+        "group": "Russian",
+        "pct": 2.0
+      },
+      {
+        "group": "Other",
+        "pct": 0.4
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Fălești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/F%C4%83le%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Fălești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/F%C4%83le%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Fălești District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/F%C4%83le%C8%99ti_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Falesti",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Fălești District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Ethnic composition of Fălești District (2024)\", and not as a table.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Fălești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "language_year": 2024,
+    "language_note": "Population by language for 2024 from a population census, as the en.wikipedia article 'Fălești District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Linguistic composition of Fălești District (2024)\", and not as a table. The chart does not say whether it counts mother tongue or the language usually spoken."
   },
   {
     "id": "MDA-admin2-floresti",
@@ -4968,7 +5690,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Florești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Florești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Florești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-gagauzia",
@@ -5091,9 +5813,9 @@
     "parent_name": "Gagauzia",
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count.",
     "language_year": 2024,
     "language_note": "Population by mother tongue for 2024 from a population census, as the en.wikipedia article 'Gagauzia' transcribes and cites it. A census count."
   },
@@ -5117,21 +5839,108 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Not stated']"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "the article has no section matching 'language|mother tongue'"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
-    "sources": [],
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 96.5
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.9
+      },
+      {
+        "group": "Baptist",
+        "pct": 1.1
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.3
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.2
+      }
+    ],
+    "language": [
+      {
+        "group": "Moldovan",
+        "pct": 62.4
+      },
+      {
+        "group": "Romanian",
+        "pct": 18.0
+      },
+      {
+        "group": "Russian",
+        "pct": 10.4
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 8.2
+      },
+      {
+        "group": "Romani",
+        "pct": 0.8
+      },
+      {
+        "group": "Other",
+        "pct": 0.1
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 79.8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 11.8
+      },
+      {
+        "group": "Romanian",
+        "pct": 4.9
+      },
+      {
+        "group": "Russian",
+        "pct": 2.0
+      },
+      {
+        "group": "Romani",
+        "pct": 1.0
+      },
+      {
+        "group": "Other",
+        "pct": 0.5
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Glodeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Glodeni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Glodeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Glodeni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Glodeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Glodeni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "Glodeni",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Glodeni District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Ethnic composition of Glodeni District (2024)\", and not as a table.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Glodeni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "language_year": 2024,
+    "language_note": "Population by language for 2024 from a population census, as the en.wikipedia article 'Glodeni District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Linguistic composition of Glodeni District (2024)\", and not as a table. The chart does not say whether it counts mother tongue or the language usually spoken."
   },
   {
     "id": "MDA-admin2-hincesti",
@@ -5240,7 +6049,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Hîncești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Hîncești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Hîncești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-ialoveni",
@@ -5345,7 +6154,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ialoveni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ialoveni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ialoveni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-leova",
@@ -5450,7 +6259,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Leova District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Leova District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Leova District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-nisporeni",
@@ -5547,7 +6356,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Nisporeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Nisporeni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Nisporeni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-ocnita",
@@ -5569,10 +6378,28 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['No Declared']"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 95.4
+      },
+      {
+        "group": "Protestant",
+        "pct": 3.5
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.6
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.3
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.2
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -5621,12 +6448,20 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Ocnița District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Ocni%C8%9Ba_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Ocnița District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Ocni%C8%9Ba_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Ocnita",
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ocnița District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ocnița District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ocnița District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-orhei",
@@ -5648,10 +6483,32 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['None']"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 97.2
+      },
+      {
+        "group": "Protestant",
+        "pct": 1.8
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.4
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.4
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -5700,12 +6557,20 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Orhei District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Orhei_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Orhei District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Orhei_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Orhei",
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Orhei District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Orhei District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Orhei District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-riscani",
@@ -5727,21 +6592,112 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "labels this reader has no entry for: ['Not stated']"
-    },
-    "language": {
-      "status": "not_available",
-      "note": "the article has no section matching 'language|mother tongue'"
-    },
-    "ethnicity": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
-    "sources": [],
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 95.3
+      },
+      {
+        "group": "Other religion",
+        "pct": 1.6
+      },
+      {
+        "group": "Pentecostal",
+        "pct": 1.4
+      },
+      {
+        "group": "Jehovah's Witnesses",
+        "pct": 1.0
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.4
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.3
+      }
+    ],
+    "language": [
+      {
+        "group": "Moldovan",
+        "pct": 60.0
+      },
+      {
+        "group": "Romanian",
+        "pct": 15.8
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 11.7
+      },
+      {
+        "group": "Russian",
+        "pct": 10.7
+      },
+      {
+        "group": "Romani",
+        "pct": 1.6
+      },
+      {
+        "group": "Other",
+        "pct": 0.2
+      }
+    ],
+    "ethnicity": [
+      {
+        "group": "Moldovan",
+        "pct": 77.6
+      },
+      {
+        "group": "Ukrainian",
+        "pct": 14.8
+      },
+      {
+        "group": "Romanian",
+        "pct": 3.3
+      },
+      {
+        "group": "Russian",
+        "pct": 2.1
+      },
+      {
+        "group": "Romani",
+        "pct": 1.7
+      },
+      {
+        "group": "Other",
+        "pct": 0.4
+      }
+    ],
+    "sources": [
+      {
+        "field": "ethnicity",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Rîșcani District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/R%C3%AE%C8%99cani_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Rîșcani District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/R%C3%AE%C8%99cani_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "language",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Rîșcani District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/R%C3%AE%C8%99cani_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
+      }
+    ],
     "parent_name": "RIscani",
-    "country": "MDA"
+    "country": "MDA",
+    "ethnicity_year": 2024,
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Rîșcani District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Ethnic composition of Rîșcani District (2024)\", and not as a table.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Rîșcani District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "language_year": 2024,
+    "language_note": "Population by language for 2024 from a population census, as the en.wikipedia article 'Rîșcani District' transcribes and cites it. A census count. The article gives this composition as a pie chart, captioned \"Linguistic composition of Rîșcani District (2024)\", and not as a table. The chart does not say whether it counts mother tongue or the language usually spoken."
   },
   {
     "id": "MDA-admin2-rezina",
@@ -5850,7 +6806,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Rezina District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Rezina District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Rezina District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-singerei",
@@ -5959,7 +6915,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Sîngerei District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Sîngerei District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Sîngerei District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-soldanesti",
@@ -6056,7 +7012,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Șoldănești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Șoldănești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Șoldănești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-soroca",
@@ -6086,6 +7042,10 @@
       {
         "group": "Protestant",
         "pct": 1.2
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.3
       },
       {
         "group": "Not declared",
@@ -6149,7 +7109,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Soroca District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Soroca District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Soroca District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-stefan-voda",
@@ -6254,7 +7214,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ștefan Vodă District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ștefan Vodă District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ștefan Vodă District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-straseni",
@@ -6276,10 +7236,32 @@
     "sex_ratio": {
       "status": "not_available"
     },
-    "religion": {
-      "status": "not_available",
-      "note": "the article has a section where a composition would go and prints no table in it at all; this unit's article publishes no composition"
-    },
+    "religion": [
+      {
+        "group": "Orthodox",
+        "pct": 96.9
+      },
+      {
+        "group": "Protestant",
+        "pct": 2.1
+      },
+      {
+        "group": "Irreligious",
+        "pct": 0.4
+      },
+      {
+        "group": "Not declared",
+        "pct": 0.4
+      },
+      {
+        "group": "Islam",
+        "pct": 0.1
+      },
+      {
+        "group": "Other religion",
+        "pct": 0.1
+      }
+    ],
     "language": {
       "status": "not_available",
       "note": "the article has no section matching 'language|mother tongue'"
@@ -6324,12 +7306,20 @@
         "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Strășeni District' transcribes it",
         "url": "https://en.wikipedia.org/wiki/Str%C4%83%C8%99eni_District",
         "license": "Official statistics; compilation CC BY-SA 4.0"
+      },
+      {
+        "field": "religion",
+        "name": "Biroul Naţional de Statistică, Recensământul Populaţiei şi al Locuinţelor (2024), as the en.wikipedia article 'Strășeni District' transcribes it",
+        "url": "https://en.wikipedia.org/wiki/Str%C4%83%C8%99eni_District",
+        "license": "Official statistics; compilation CC BY-SA 4.0"
       }
     ],
     "parent_name": "Straseni",
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Strășeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Strășeni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
+    "religion_year": 2024,
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Strășeni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-taraclia",
@@ -6460,9 +7450,9 @@
     "parent_name": "Taraclia",
     "country": "MDA",
     "ethnicity_year": 2024,
-    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Taraclia District' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header.",
+    "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Taraclia District' transcribes and cites it. A census count.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Taraclia District' transcribes and cites it. A census count. The citation carries no year; the figures are dated by the year printed in the table's own header. The table itself carries no reference; the citation is the one the article's infobox gives for the same census. 3 row(s) of the table print nothing in the column read -- the table has no figure there -- and are not read."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Taraclia District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census. 3 row(s) of the table print nothing in the column read -- the table has no figure there -- and are not read."
   },
   {
     "id": "MDA-admin2-telenesti",
@@ -6555,7 +7545,7 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Telenești District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Telenești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Telenești District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   },
   {
     "id": "MDA-admin2-transnistria",
@@ -6692,6 +7682,6 @@
     "ethnicity_year": 2024,
     "ethnicity_note": "Population by ethnicity for 2024 from a population census, as the en.wikipedia article 'Ungheni District' transcribes and cites it. A census count. The table itself carries no reference; the citation is the one the article's infobox gives for the same census.",
     "religion_year": 2024,
-    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ungheni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table.  The table itself carries no reference; the citation is the one the article's infobox gives for the same census."
+    "religion_note": "Population by religion for 2024 from a population census, as the en.wikipedia article 'Ungheni District' transcribes and cites it. A census count. The article gives this composition as a bulleted list under its heading rather than as a table. The list itself carries no reference; the citation is the one the article's infobox gives for the same census."
   }
 ]
