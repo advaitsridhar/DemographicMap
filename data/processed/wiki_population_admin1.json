@@ -45,6 +45,95 @@
     "match_by": "shape_id"
   },
   {
+    "id": "118-WP-gaza-strip",
+    "level": "admin1",
+    "name": "Gaza Strip",
+    "parent": "118",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2050000,
+      "unit": "people",
+      "year": 2025,
+      "source": "English Wikipedia, Gaza Strip (infobox), which gives the figure as approximate"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gaza_Strip",
+        "year": 2025,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "118",
+    "shape_id": "DIS008",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "123-WP-liancourt-rocks",
+    "level": "admin1",
+    "name": "Liancourt Rocks",
+    "parent": "123",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 25,
+      "unit": "people",
+      "source": "English Wikipedia, Liancourt Rocks (infobox); the article gives no year for the figure, which gives the figure as approximate"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Liancourt_Rocks",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "123",
+    "shape_id": "DIS013",
+    "match_by": "shape_id"
+  },
+  {
     "id": "125-WP-paracel-is",
     "level": "admin1",
     "name": "Paracel Is",
@@ -4533,6 +4622,51 @@
     ],
     "country": "GMB",
     "shape_id": "31243875B86288540800273",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "GMB-WP-brikama",
+    "level": "admin1",
+    "name": "Brikama",
+    "parent": "GMB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 699704,
+      "unit": "people",
+      "year": 2013,
+      "source": "English Wikipedia, West Coast Region (The Gambia) (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/West_Coast_Region_%28The_Gambia%29",
+        "year": 2013,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GMB",
+    "shape_id": "31243875B88426941804625",
     "match_by": "shape_id"
   },
   {
