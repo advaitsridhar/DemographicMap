@@ -1168,6 +1168,17 @@ class RivalRowsForOneShape(unittest.TestCase):
         dropped, _ = be.resolve_collisions(rows)
         self.assertEqual(dropped, set())
 
+    def test_one_id_drawn_at_two_levels_is_two_shapes(self):
+        # Moldova's gap reader binds Bender at both levels, and both levels
+        # draw it under one id. They are not rivals for one polygon.
+        rows = [({"name": "Bender", "_source": "moldova_ethnicity_gaps.json"},
+                 {"id": "B", "name": "Bender", "level": "admin1"}, "shape_id"),
+                ({"name": "Bender", "_source": "moldova_ethnicity_gaps.json"},
+                 {"id": "B", "name": "Bender", "level": "admin2"}, "shape_id")]
+        dropped, notes = be.resolve_collisions(rows)
+        self.assertEqual(dropped, set())
+        self.assertEqual(notes, [])
+
     def test_one_row_per_shape_is_never_touched(self):
         dropped, notes = be.resolve_collisions(self.claims(
             ("Kerala", "A", "Kerala", "contains"),

@@ -182,3 +182,26 @@ class AnEncyclopaediaNeverReplacesACount(unittest.TestCase):
         newer = {"value": 1950000, "year": 2024, "source": "GSO"}
         self.b.merge_adapter(e, {"_source": "vietnam_province.json", "population": newer})
         self.assertEqual(e["population"], newer)
+
+
+class TwoRowsOnOnePolygon(unittest.TestCase):
+    """The build refuses two places on one shape, not two sources on one place."""
+
+    def setUp(self):
+        import build_entities
+        self.be = build_entities
+        self.shape = {"id": "25212430B22111314945643", "name": "Transnistria"}
+
+    def test_two_sources_about_the_same_place_are_both_kept(self):
+        claimed = {}
+        self.be.claim(claimed, self.shape, {"name": "Transnistria"}, "MDA", "x")
+        self.be.claim(claimed, self.shape, {"name": "Transnistria"}, "MDA", "x")
+        self.assertEqual(list(claimed.values()), ["Transnistria"])
+
+    def test_two_places_on_one_shape_stop_the_build(self):
+        claimed = {}
+        self.be.claim(claimed, self.shape, {"name": "Transnistria"}, "MDA", "x")
+        with self.assertRaises(SystemExit) as caught:
+            self.be.claim(claimed, self.shape, {"name": "Bender"}, "MDA", "x")
+        self.assertIn("Bender", str(caught.exception))
+        self.assertIn("Transnistria", str(caught.exception))
