@@ -232,6 +232,12 @@ ADAPTER_FILES = [
     # lists transcribe this same table -- with their editors' slips -- and
     # the census's own counts are the better reading of it.
     "moldova_census.json",
+    # Bender and Transnistria, which Moldova's census did not reach: their
+    # ethnicity from Transnistria's own 2015 census (Transnistria's summed
+    # from its left-bank rows, and marked derived), their religion and
+    # mother tongue modelled from it. After moldova_census.json, which has
+    # nothing for either.
+    "transnistria_2015.json",
     # After Wikidata, which carries a population for North Korea's provinces
     # and for Pyongyang a 2015 estimate: this is the 2008 census's own Table 2,
     # for all 11 first-level units and all 179 counties, with the sex ratio
