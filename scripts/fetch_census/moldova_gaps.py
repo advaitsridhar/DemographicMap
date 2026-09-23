@@ -290,13 +290,38 @@ def transnistria() -> tuple[dict[str, list[dict[str, Any]]], dict[str, int]]:
     return shares, people
 
 
+def already_read() -> dict[str, set[str]]:
+    """{unit: the fields the Europe reader has a figure for}.
+
+    This reader fills what that one could not, and its file is merged after
+    it -- so a figure here would replace one there. The four northern
+    districts are why that matters: their English articles now give the 2024
+    census as pie charts, which the Europe reader takes, and the Romanian
+    tables this reader would otherwise put over them are undated or 2004.
+    Run the Europe reader first.
+    """
+    out: dict[str, set[str]] = {}
+    for row in read_json(PROCESSED / "europe_wiki_moldova.json", []):
+        if row.get("level") == "admin1":
+            out[row["name"]] = {f for f in ("ethnicity", "language", "religion")
+                                if isinstance(row.get(f), list)}
+    return out
+
+
 def main() -> int:
     ids = shapes()
+    have = already_read()
     rows: list[dict[str, Any]] = []
     for name, title in DISTRICTS.items():
+        if {"ethnicity", "language"} <= have.get(name, set()):
+            log(f"{name}: the English article's figures were read; nothing to fill")
+            continue
         text, landed = fetch(title, "ro")
         url = f"https://ro.wikipedia.org/wiki/{urllib.parse.quote(landed.replace(' ', '_'))}"
-        rows.extend(language(text, name, landed, url, ids))
+        if "language" not in have.get(name, set()):
+            rows.extend(language(text, name, landed, url, ids))
+        if "ethnicity" in have.get(name, set()):
+            continue
         table, body = ro_table(text)
         if not table:
             log(f"{name}: ro:{landed} has no ethnic structure table; left as it was")

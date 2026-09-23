@@ -186,3 +186,18 @@ class BaltiLanguage(unittest.TestCase):
         self.assertIn("ethnicity", row)
         self.assertIn("language", row)
         self.assertEqual({s["field"] for s in row["sources"]}, {"ethnicity", "language"})
+
+
+class WhatTheEuropeReaderHasIsNotReplaced(unittest.TestCase):
+    def test_only_lists_count_as_read(self):
+        import json
+        import tempfile
+        from unittest import mock
+        rows = [{"level": "admin1", "name": "Edinet",
+                 "ethnicity": [{"group": "Moldovan", "pct": 77.4}],
+                 "language": {"status": "not_available", "note": "n"}},
+                {"level": "admin2", "name": "Edinet", "religion": [{"group": "x", "pct": 1}]}]
+        with tempfile.TemporaryDirectory() as tmp:
+            Path(tmp, "europe_wiki_moldova.json").write_text(json.dumps(rows))
+            with mock.patch.object(m, "PROCESSED", Path(tmp)):
+                self.assertEqual(m.already_read(), {"Edinet": {"ethnicity"}})
