@@ -33,11 +33,14 @@ from __future__ import annotations
 
 import io
 import re
+import sys
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 
 from ._shared import PROCESSED, http_get, log, measure, read_json, record, write_json
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 OUT = "cited_sources.json"
@@ -66,36 +69,45 @@ SUM_SLACK = 0.001
 
 
 class Tables(HTMLParser):
-    """Every table's rows, as lists of cell texts."""
+    """Every table's rows, as lists of cell texts, nested tables included.
+
+    A cell belongs to the innermost table it sits in, so a table used for page
+    layout does not swallow the data table inside it.
+    """
 
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
         self.tables: list[list[list[str]]] = []
-        self.depth = 0
-        self.cell: list[str] | None = None
+        self.open: list[list[list[str]]] = []
+        self.cells: list[list[str] | None] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         if tag == "table":
-            self.depth += 1
-            if self.depth == 1:
-                self.tables.append([])
-        elif self.depth == 1 and tag == "tr":
-            self.tables[-1].append([])
-        elif self.depth == 1 and tag in ("td", "th") and self.tables[-1]:
-            self.cell = []
-        elif tag == "br" and self.cell is not None:
-            self.cell.append(" ")
+            self.open.append([])
+            self.tables.append(self.open[-1])
+            self.cells.append(None)
+        elif not self.open:
+            return
+        elif tag == "tr":
+            self.open[-1].append([])
+        elif tag in ("td", "th") and self.open[-1]:
+            self.cells[-1] = []
+        elif tag == "br" and self.cells[-1] is not None:
+            self.cells[-1].append(" ")
 
     def handle_endtag(self, tag: str) -> None:
+        if not self.open:
+            return
         if tag == "table":
-            self.depth -= 1
-        elif self.depth == 1 and tag in ("td", "th") and self.cell is not None:
-            self.tables[-1][-1].append(" ".join("".join(self.cell).split()))
-            self.cell = None
+            self.open.pop()
+            self.cells.pop()
+        elif tag in ("td", "th") and self.cells[-1] is not None:
+            self.open[-1][-1].append(" ".join("".join(self.cells[-1]).split()))
+            self.cells[-1] = None
 
     def handle_data(self, data: str) -> None:
-        if self.cell is not None:
-            self.cell.append(data)
+        if self.cells and self.cells[-1] is not None:
+            self.cells[-1].append(data)
 
 
 def count(text: str) -> int | None:
@@ -112,42 +124,57 @@ def somalia_rows(html: str) -> tuple[dict[str, int], str]:
     """{table name: 2019 figure} for the eighteen regions, or why not."""
     parser = Tables()
     parser.feed(html)
+    why = "no table on the page has a 2019 column"
     for table in parser.tables:
-        heads = next((r for r in table if any("2019" in c for c in r)), None)
-        if not heads:
-            continue
-        at = {year: [i for i, h in enumerate(heads) if str(year) in h] for year in (2014, 2019)}
-        if any(len(v) != 1 for v in at.values()):
-            return {}, f"the header {heads} does not name 2014 and 2019 once each"
-        rows = {main_name(r[0]): r for r in table if r and len(r) > max(at[2019][0], at[2014][0])}
-        nation = rows.get("Somalia")
-        if not nation:
-            return {}, "the table has no national row to check the regions against"
-        found = {name: rows[name] for name in SOMALIA if name in rows}
-        missing = sorted(set(SOMALIA) - set(found))
-        if missing:
-            return {}, f"the table lacks {', '.join(missing)}"
-        for year, (i,) in at.items():
-            whole = count(nation[i])
-            parts = [count(r[i]) for r in found.values()]
-            if whole is None or any(p is None for p in parts):
-                return {}, f"a {year} cell is not a count"
-            total = sum(p for p in parts if p is not None)
-            if abs(total - whole) > SUM_SLACK * whole:
-                return {}, (f"the regions' {year} figures sum to {total:,} against "
-                            f"the national row's {whole:,}; the columns are not "
-                            f"where the header says")
-        # The sums prove each column is whole; they cannot prove which year a
-        # column is, since every column adds up to its own national figure. The
-        # figures can: OCHA's 2019 calculation is rounded to the hundred and
-        # the 2014 survey's are exact, so a header shifted by a cell shows.
-        i, j = at[2019][0], at[2014][0]
-        if any((count(r[i]) or 0) % 100 for r in found.values()) or \
-                all((count(r[j]) or 0) % 100 == 0 for r in found.values()):
-            return {}, ("the column headed 2019 is not rounded to the hundred, or the "
-                        "one headed 2014 is: the header does not sit over its figures")
-        return {name: count(r[i]) or 0 for name, r in found.items()}, ""
-    return {}, "no table on the page has a 2019 column"
+        figures, refused = somalia_table(table)
+        if figures:
+            return figures, ""
+        if refused:
+            why = refused
+            log(f"  SOM: a table was refused ({refused}); its first rows: "
+                + " / ".join(" | ".join(r) for r in table[:3])[:600])
+    return {}, why
+
+
+def somalia_table(table: list[list[str]]) -> tuple[dict[str, int], str]:
+    """The regions' figures from one table; ({}, "") where it is not the table."""
+    heads = next((r for r in table if any("2019" in c for c in r)), None)
+    if not heads:
+        return {}, ""
+    rows = {main_name(r[0]): r for r in table if r}
+    if not any(name in rows for name in SOMALIA):
+        return {}, ""
+    at = {year: [i for i, h in enumerate(heads) if str(year) in h] for year in (2014, 2019)}
+    if any(len(v) != 1 for v in at.values()):
+        return {}, f"the header {heads} does not name 2014 and 2019 once each"
+    rows = {name: r for name, r in rows.items() if len(r) > max(at[2019][0], at[2014][0])}
+    nation = rows.get("Somalia")
+    if not nation:
+        return {}, "the table has no national row to check the regions against"
+    found = {name: rows[name] for name in SOMALIA if name in rows}
+    missing = sorted(set(SOMALIA) - set(found))
+    if missing:
+        return {}, f"the table lacks {', '.join(missing)}"
+    for year, (i,) in at.items():
+        whole = count(nation[i])
+        parts = [count(r[i]) for r in found.values()]
+        if whole is None or any(p is None for p in parts):
+            return {}, f"a {year} cell is not a count"
+        total = sum(p for p in parts if p is not None)
+        if abs(total - whole) > SUM_SLACK * whole:
+            return {}, (f"the regions' {year} figures sum to {total:,} against "
+                        f"the national row's {whole:,}; the columns are not "
+                        f"where the header says")
+    # The sums prove each column is whole; they cannot prove which year a
+    # column is, since every column adds up to its own national figure. The
+    # figures can: OCHA's 2019 calculation is rounded to the hundred and
+    # the 2014 survey's are exact, so a header shifted by a cell shows.
+    i, j = at[2019][0], at[2014][0]
+    if any((count(r[i]) or 0) % 100 for r in found.values()) or \
+            all((count(r[j]) or 0) % 100 == 0 for r in found.values()):
+        return {}, ("the column headed 2019 is not rounded to the hundred, or the "
+                    "one headed 2014 is: the header does not sit over its figures")
+    return {name: count(r[i]) or 0 for name, r in found.items()}, ""
 
 
 def somalia(drawn: dict[str, str]) -> list[dict[str, Any]]:
@@ -239,8 +266,12 @@ def seychelles_rows(text: str) -> tuple[dict[str, int], str]:
 def seychelles(drawn: dict[str, str]) -> list[dict[str, Any]]:
     from pypdf import PdfReader
 
-    blob = http_get(NBS_ARCHIVED, binary=True, timeout=180)
-    assert isinstance(blob, bytes)
+    # The PDF probe's fetch, which read this address on 23 September 2026:
+    # the archive redirected http_get's request back to the bureau, which
+    # refuses this runner.
+    from probe_pdf import fetch_blob
+
+    blob = fetch_blob(NBS_ARCHIVED)
     text = "\n".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(blob)).pages)
     figures, why = seychelles_rows(text)
     if why:

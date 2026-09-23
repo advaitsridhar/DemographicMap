@@ -49,6 +49,11 @@ class SomaliasTable(unittest.TestCase):
         self.assertEqual(figures["Hiiraan"], 566400)
         self.assertEqual(figures["Jubbada Hoose"], 632900)
 
+    def test_a_table_inside_a_layout_table_is_read(self):
+        html = "<table><tr><td>Layout, 2019 <div>" + page(SOMALIA) + "</div></td></tr></table>"
+        figures, why = cs.somalia_rows(html)
+        self.assertEqual((len(figures), why), (18, ""))
+
     def test_every_region_has_a_shape(self):
         self.assertEqual(len(set(cs.SOMALIA.values())), 18)
 
