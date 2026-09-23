@@ -169,6 +169,12 @@ ADAPTER_FILES = [
     # article's table, or a unit that is its country less another unit of
     # the same census (wiki_table_population). Fill-only like the file above.
     "wiki_table_population.json",
+    # The source a Wikipedia article cites, read where the article's own
+    # figure garbles or contradicts it (cited_sources): Somalia's eighteen
+    # regions from citypopulation.de's 2019 column, which six region articles
+    # misprint, and the Seychelles' Outer Islands from the NBS bulletin its
+    # article cites. Not fill-only: replacing those misprints is its purpose.
+    "cited_sources.json",
     # OCHA's Common Operational Dataset -- population statistics, the district
     # populations of 52 countries by P-code. It carries no composition at all,
     # only a head count, and it sits here because a head count from a national

@@ -104,14 +104,6 @@ FIGURES: dict[tuple[str, str], Figure] = {
         source="2017 census of Mozambique, as the list of its provinces gives it",
         note=("The boundary file draws Maputo City and Maputo Province as one "
               "shape; this is the sum of their rows: {terms}.")),
-    # Somalia's regions, in one list with one date.
-    ("SOM", "Bakool"): Figure(
-        year=2025,
-        terms=(Term("Administrative divisions of Somalia", row="Bakool Region",
-                    column=r"Population \(2025 estimate\)"),),
-        source="2025 estimate, as the list of Somalia's regions gives it",
-        note=("Bakool's own article prints its population as '1,15,6400', which is "
-              "no number; this is its row in the list of regions: {terms}.")),
 }
 
 # The Bahamas' 2022 census by district, as "Local government in the Bahamas"

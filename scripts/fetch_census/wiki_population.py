@@ -667,8 +667,17 @@ APPROX = re.compile(r"^(?:~|≈|approximately|approx\.?|circa|ca\.|c\.|about|est
 CIRCA = re.compile(r"\{\{\s*(?:circa|c\.|approx)\s*\|\s*([^{}|]*?)\s*(?:\|[^{}]*)?\}\}", re.I)
 
 
+# A figure rounded to a tenth of a million and written in words: West Darfur's
+# "1.9 million", from OCHA's state profile of 2023. It is a figure, and a
+# rounded one, so it is read and said to be approximate -- the same footing as
+# "~2,050,000". Only millions, and only to a tenth or finer: "2 million" is a
+# figure to one significant digit, which is closer to a guess than a count.
+MILLIONS = re.compile(r"^(\d{1,3}\.\d{1,2})\s*million$", re.I)
+
+
 def approximate(text: str) -> bool:
-    return bool(APPROX.match(RAN_ON.sub("", clean(text))))
+    body = RAN_ON.sub("", clean(text))
+    return bool(APPROX.match(body)) or bool(MILLIONS.match(REF.sub("", body).strip()))
 
 
 def number(text: str) -> tuple[int | None, str]:
@@ -685,6 +694,9 @@ def number(text: str) -> tuple[int | None, str]:
     tail = ""
     if m:
         body, tail = m.group(1).strip(), m.group(2)
+    words = MILLIONS.match(body)
+    if words:
+        return int(round(float(words.group(1)) * 1_000_000)), tail
     if not NUMBER.match(body):
         return None, f"not a whole number: {body[:60]!r}"
     digits = re.sub(r"[^\d]", "", body)

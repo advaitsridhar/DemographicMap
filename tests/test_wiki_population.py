@@ -96,8 +96,9 @@ class Numbers(unittest.TestCase):
     def test_what_it_refuses(self):
         # A dot is a thousands separator in half of Europe and a decimal point
         # in the other half, so a number carrying one is not read at all.
+        # A figure in whole millions is a guess more than a count.
         for text in ("1.727.524", "12.5", "40,000-45,000", "50–100",
-                     "unknown", "", "1.2 million", "~1.2 million"):
+                     "unknown", "", "2 million", "1,15,6400"):
             value, why = wp.number(text)
             self.assertIsNone(value, text)
             self.assertTrue(why, text)
@@ -476,6 +477,15 @@ class WhatThePageShowsAndWhereThePlaceIs(unittest.TestCase):
                 "| population_as_of = 2021\n}}\n")
         self.assertEqual(wp.read(text)[:2], (1746, 2021))
 
+    def test_a_figure_in_millions_is_read_as_approximate(self):
+        # West Darfur's, from OCHA's state profile of 2023.
+        self.assertEqual(wp.read(infobox(population_total="1.9 million<ref>OCHA</ref>",
+                                         population_as_of="2023")),
+                         (1900000, 2023, "approximate"))
+        # One significant digit is not read, nor a malformed number.
+        for value in ("2 million", "1,15,6400", "1.032"):
+            self.assertIsNone(wp.number(value)[0], value)
+
     def test_a_parameter_run_on_after_a_comment_is_read(self):
         # Tanzania's Iringa Region, verbatim but for the dashes.
         text = ("{{Infobox settlement\n| name = Iringa Region\n"
@@ -825,8 +835,8 @@ class AnEmptyParameter(unittest.TestCase):
         self.assertEqual(wp.read(text)[:2], (2098389, 2023))
 
     def test_an_unreadable_one_still_stops_the_reader(self):
-        value, _, why = wp.read(infobox(population_total="1.9 million",
-                                        population_estimate="1900000"))
+        value, _, why = wp.read(infobox(population_total="1,15,6400",
+                                        population_estimate="1156400"))
         self.assertIsNone(value)
         self.assertIn("population_total", why)
 
