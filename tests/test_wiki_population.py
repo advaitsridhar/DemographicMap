@@ -673,3 +673,35 @@ class NotAnAdministrativeUnit(unittest.TestCase):
         # Seychelles' La Riviere Anglaise district.
         self.assertIsNone(wp.NOT_A_UNIT.search("English River, Seychelles"))
         self.assertIsNone(wp.NOT_A_UNIT.search("Saint Andrew Parish, Jamaica"))
+
+
+class AJoinTheBuildMadeBadly(unittest.TestCase):
+    """Iceland's region shapes carried the constituencies' Wikidata items."""
+
+    def setUp(self):
+        self.saved = {n: getattr(wp, n) for n in (
+            "country_item", "claims_of", "entities", "children", "contains",
+            "search", "by_title", "languages", "statements", "declared")}
+        items = {
+            "Q_CONST": {"names": ["Northeast"], "title": "Northeast (Althing constituency)"},
+            "Q_REGION": {"names": ["Northeastern Region"], "title": "Northeastern Region (Iceland)"},
+        }
+        wp.country_item = lambda iso3: "Q189"
+        wp.claims_of = lambda qid: {}
+        wp.languages = lambda claims: ["en"]
+        wp.statements = lambda claims, prop: ["Q_REGION"] if prop == "P150" else []
+        wp.entities = lambda qids, langs=("en",): {q: items[q] for q in qids if q in items}
+        wp.children = lambda qid: []
+        wp.contains = lambda qid: []
+        wp.search = lambda *a, **k: {}
+        wp.by_title = lambda *a, **k: None
+        wp.declared = lambda *a, **k: None
+
+    def tearDown(self):
+        for n, v in self.saved.items():
+            setattr(wp, n, v)
+
+    def test_the_constituency_is_dropped_and_the_region_found(self):
+        shape = {"id": "ne", "name": "Northeastern Region", "wikidata": "Q_CONST"}
+        got = wp.article_for("ISL", [shape], [shape], "Iceland")
+        self.assertEqual(got["ne"][:2], ("Q_REGION", "Northeastern Region (Iceland)"))

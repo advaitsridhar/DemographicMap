@@ -1105,6 +1105,19 @@ def article_for(iso3: str, units: list[dict[str, Any]],
     # item has no English article there is nothing to read, and guessing at a
     # different article by name would be guessing against evidence.
     settled = set(known)
+    # ...unless the item is plainly not an administrative unit. The Wikidata
+    # sweep joined Iceland's Northeastern and Northwestern Region shapes to
+    # the Althing's constituencies of those names, and a join the build made
+    # is no better than the rules it was made by. Those shapes are resolved
+    # afresh, and the constituencies are never offered again.
+    for u in units:
+        hit = found.get(u["id"])
+        if hit and NOT_A_UNIT.search(hit[1]):
+            log(f"  {u['name']}: the build joined it to {hit[1]!r} ({hit[0]}), "
+                f"which is not an administrative unit; resolving it afresh")
+            del found[u["id"]]
+            settled.discard(u["id"])
+            others.add(hit[0])
     # Measured on every shape the country has, so a late stage with two
     # names left does not forget that Seychelles cuts all of them.
     cut = truncates(shapes)
