@@ -651,3 +651,12 @@ class ATownForTheRegionAroundIt(unittest.TestCase):
     def test_no_area_no_redirect(self):
         self.area(None)
         self.assertIn("no area", wp.too_small("Q916988", [16.5, 13.1, 16.9, 13.4]))
+
+
+class ATitleThatNamesTheDivision(unittest.TestCase):
+    def test_the_redirect_titles_that_name_their_kind(self):
+        # Waived: the title is the division's. Asked: the title is a town's.
+        for title in ("Quba District (Libya)", "Mizda District", "Iringa Region"):
+            self.assertTrue(wp.says_its_kind(wp.disambiguated(title)), title)
+        for title in ("Morogoro", "Zawiya, Libya", "Brikama", "Basse Santa Su", "Ajdabiya"):
+            self.assertFalse(wp.says_its_kind(wp.disambiguated(title)), title)

@@ -1195,7 +1195,10 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
         if probe:
             continue
         why = refuted(item, unit.get("bbox"))
-        if not why and how == "redirect":
+        # The danger is the bare town name, so an article whose own title
+        # says it is the division -- Libya's "Quba District", "Mizda
+        # District" -- is not asked for an area Wikidata often lacks.
+        if not why and how == "redirect" and not says_its_kind(disambiguated(title)):
             why = too_small(item, unit.get("bbox"))
         if why:
             log(f"  {unit['name']} -> {title} ({item}): {why}; refused")
