@@ -90,6 +90,50 @@
     "match_by": "shape_id"
   },
   {
+    "id": "120-WP-isla-brasilera",
+    "level": "admin1",
+    "name": "Isla Brasilera",
+    "parent": "120",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 0,
+      "unit": "people",
+      "source": "English Wikipedia, Brazilian Island (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Brazilian_Island",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "120",
+    "shape_id": "DIS010",
+    "match_by": "shape_id"
+  },
+  {
     "id": "123-WP-liancourt-rocks",
     "level": "admin1",
     "name": "Liancourt Rocks",
@@ -220,6 +264,50 @@
     ],
     "country": "126",
     "shape_id": "DIS016",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "127-WP-senkakus",
+    "level": "admin1",
+    "name": "Senkakus",
+    "parent": "127",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 0,
+      "unit": "people",
+      "source": "English Wikipedia, Senkaku Islands (text); the article gives no year for the figure; the article describes the islands as uninhabited"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Senkaku_Islands",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "127",
+    "shape_id": "DIS017",
     "match_by": "shape_id"
   },
   {
@@ -3812,6 +3900,51 @@
     ],
     "country": "ERI",
     "shape_id": "12472421B84439525883962",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ESH-WP-western-sahara",
+    "level": "admin1",
+    "name": "Western Sahara",
+    "parent": "ESH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 565581,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Western Sahara (infobox, which displays the UN's World Population Prospects figure)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Western_Sahara",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ESH",
+    "shape_id": "DIS020",
     "match_by": "shape_id"
   },
   {
@@ -7952,6 +8085,95 @@
     ],
     "country": "KIR",
     "shape_id": "97431129B55805139245338",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "KIR-WP-line-islands",
+    "level": "admin1",
+    "name": "Line Islands",
+    "parent": "KIR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11252,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Kiritimati + Tabuaeran + Teraina (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kiritimati_%2B_Tabuaeran_%2B_Teraina",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KIR",
+    "shape_id": "97431129B35506555718846",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "KIR-WP-phoenix-islands",
+    "level": "admin1",
+    "name": "Phoenix Islands",
+    "parent": "KIR",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 20,
+      "unit": "people",
+      "source": "English Wikipedia, Phoenix Islands (infobox); the article gives no year for the figure; the figure for Kanton, which the article calls the only inhabited island"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Phoenix_Islands",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "KIR",
+    "shape_id": "97431129B36644055464690",
     "match_by": "shape_id"
   },
   {
@@ -20992,6 +21214,51 @@
     ],
     "country": "TON",
     "shape_id": "12702645B14719640472686",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TON-WP-niuas",
+    "level": "admin1",
+    "name": "Niuas",
+    "parent": "TON",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1150,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Niua Islands (infobox); the boundary file draws Niuafoʻou alone and leaves Niuatoputapu out, so this figure for the whole division counts an island the shape does not show"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Niua_Islands",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TON",
+    "shape_id": "12702645B16834523743175",
     "match_by": "shape_id"
   },
   {

@@ -124,7 +124,7 @@ def decode(body: bytes, override: str | None = None) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("url", help="page to read, or a Wikipedia article URL")
+    ap.add_argument("url", nargs="+", help="pages to read, or Wikipedia article URLs")
     ap.add_argument("--section", help="Wikipedia section to read on its own")
     ap.add_argument("--terms", default="religion,language,population",
                     help="comma-separated words to report around")
@@ -134,22 +134,23 @@ def main() -> int:
     args = ap.parse_args()
 
     terms = [t.strip() for t in args.terms.split(",") if t.strip()]
-    match = re.match(r"https?://en\.wikipedia\.org/wiki/([^#?]+)", args.url)
-    if match:
-        title = urllib.parse.unquote(match.group(1))
-        log(f"probe_page: en.wikipedia.org {title}"
-            + (f" § {args.section}" if args.section else ""))
-        lines = wiki_section(title, args.section)
-    else:
-        log(f"probe_page: {args.url}")
-        body = http_get(args.url)
-        lines = readable(decode(body, args.charset) if isinstance(body, bytes) else body)
-    if args.all:
-        log(f"  {len(lines)} lines:")
-        for j, line in enumerate(lines):
-            log(f"    {j:>5}  {line[:400]}")
-        return 0
-    report(lines, terms, args.context)
+    for url in args.url:
+        match = re.match(r"https?://en\.wikipedia\.org/wiki/([^#?]+)", url)
+        if match:
+            title = urllib.parse.unquote(match.group(1))
+            log(f"probe_page: en.wikipedia.org {title}"
+                + (f" § {args.section}" if args.section else ""))
+            lines = wiki_section(title, args.section)
+        else:
+            log(f"probe_page: {url}")
+            body = http_get(url)
+            lines = readable(decode(body, args.charset) if isinstance(body, bytes) else body)
+        if args.all:
+            log(f"  {len(lines)} lines:")
+            for j, line in enumerate(lines):
+                log(f"    {j:>5}  {line[:400]}")
+            continue
+        report(lines, terms, args.context)
     return 0
 
 
