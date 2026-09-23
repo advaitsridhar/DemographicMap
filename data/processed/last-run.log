@@ -1,21 +1,4 @@
-probe_page: http://pop-stat.mashke.org/pmr-ethnic2015.htm
-  19 lines:
-        0  ﻿ Ethnic composition of Transnistria 2015
-        1  Район Все Русские Молдаване Украинцы Болгары Гагаузы Белорусы Немцы Приднестровцы Поляки Прочие Не указано Отказались отвечать
-        2  Raion Total Ruși Moldoveni Ucraineni Bulgari Găgăuzi Belaruși Germani "Transnistrenii" Polonezi Alte Nedeclarată Au refuzat să răspundă
-        3  Total Russians Moldovans Ukrainians Bulgarians Gagauzians Belorussians Germans "Transnistrians" Poles Other Undeclared Refused to answer
-        4  Приднестровская Молдавская Республика Republica Moldovenească Nistreană 475007 138072 135492 108923 11210 4999 2376 1276 1013 1005 4209 66432 1974
-        5  Бендерский горсовет mun. Bender 91197 34644 19986 12526 2663 1291 530 169 13 113 1027 18235 376
-        6  Тираспольский горсовет mun. Tiraspol 129367 47348 17805 33561 2032 2622 971 398 40 138 1470 22982 1229
-        7  г. Днестровск or. Dnestrovsc 9744 3642 1706 2057 66 56 91 43 - 9 75 1999 236
-        8  Григориопольский Grigoriopol 39795 6218 23512 5658 161 100 89 190 37 12 194 3624 170
-        9  Дубоссарский Dubăsari 31159 6532 12607 5768 95 68 99 32 225 20 270 5443 695
-       10  Каменский Camenca 20542 1950 9130 7499 40 54 34 10 83 304 69 1369 166
-       11  Рыбницкий Rîbnița 69405 12231 19619 26491 263 146 266 104 170 364 446 9305 1197
-       12  Слободзейский Slobozia 83798 25507 31127 15363 5890 662 296 330 445 45 658 3475 534
-       13  L) The table uses Russian and Romanian names.
-       14  © Tim Bespyatov , 2008-2026
-       15  | About the project
-       16  | How you can help / Donate to the project
-       17  | Return to the main page
-       18  Blogs :
+page: https://mer.gospmr.org/
+  unreachable: URLError: <urlopen error timed out>
+page: http://mer.gospmr.org/
+  unreachable: URLError: <urlopen error timed out>
