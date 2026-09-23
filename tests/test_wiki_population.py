@@ -857,6 +857,29 @@ class AShapeNoArticleIsTheWholeOf(AFailedDeclarationIsFinal):
         self.assertIn("Musandam", wp.UNREADABLE[("OMN", "Az Zahirah")])
 
 
+class ADeclarationOverridesTheBuildsJoin(AFailedDeclarationIsFinal):
+    """Savanes was joined on Wikidata to Savanes Region, a part of the district."""
+
+    def setUp(self):
+        super().setUp()
+        self.saved_entities = wp.entities
+        region = {"names": ["Savanes"], "title": "Savanes Region (Ivory Coast)"}
+        wp.entities = lambda qids, langs=("en",): {q: region for q in qids if q == "Q1"}
+
+    def unit(self):
+        return {"id": "s", "name": "Savanes", "wikidata": "Q1"}
+
+    def test_the_declared_district_wins(self):
+        wp.declared = lambda *a, **k: ("Q2", "Savanes District")
+        got = wp.article_for("CIV", [self.unit()], [self.unit()], "Ivory Coast")
+        self.assertEqual(got["s"], ("Q2", "Savanes District", "declaration"))
+
+    def test_a_failed_declaration_does_not_leave_the_join_standing(self):
+        wp.declared = lambda *a, **k: None
+        got = wp.article_for("CIV", [self.unit()], [self.unit()], "Ivory Coast")
+        self.assertEqual(got, {})
+
+
 class IvoryCoastsDistrictsAreNotItsRegions(unittest.TestCase):
     def test_each_redirect_that_reached_a_region_is_declared_to_the_district(self):
         for name in ("Denguele", "Lacs", "Montagnes", "Savanes", "Valle Du Bandama", "Zanzan"):

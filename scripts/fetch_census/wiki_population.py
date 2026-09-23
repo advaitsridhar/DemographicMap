@@ -1334,11 +1334,19 @@ def article_for(iso3: str, units: list[dict[str, Any]],
             found.pop(unit["id"], None)
             settled.add(unit["id"])
             continue
-        if unit["id"] in found or (iso3, unit["name"]) not in TITLES:
+        if (iso3, unit["name"]) not in TITLES:
             continue
+        # Over the build's own join, too. Ivory Coast's Savanes, Lacs and three
+        # more shapes had been joined on Wikidata to the regions of the same
+        # names -- a part of each district -- and a declaration that only
+        # filled what nothing had claimed left them there.
+        joined = found.pop(unit["id"], None)
         taken = {item for item, _, _ in found.values()} | (others - {qid})
         hit = declared(iso3, unit, qid, taken, alone=len(shapes) == 1)
         if hit:
+            if joined and joined[0] != hit[0]:
+                log(f"  {unit['name']}: declared to {hit[1]!r} ({hit[0]}) over the "
+                    f"build's join to {joined[1]!r} ({joined[0]})")
             found[unit["id"]] = (hit[0], hit[1], "declaration")
             settled.discard(unit["id"])
         else:
