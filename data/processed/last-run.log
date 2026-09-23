@@ -1,30 +1,9 @@
-  Dar es Salaam: neither article gives the region's own count: the city's prints the CIA Factbook's 7,776,000 for the urban area (2023) and the region's 10,599,999 (2025), where the 2022 census counted 5,383,728; not read
-TZA: the country's own divisions resolved 3 more
-TZA: what sits directly in the country resolved 4 more
-  Iringa: searching the country offered Q735609 'Iringa', Q1888339 'Iringa District', Q309352 'Iringa Region', Q15228797 'Iringa University College', Q3710991 'Iringa Municipal District'
-  Kigoma: searching the country offered Q244509 'Kigoma', Q747943 'Kigoma Region', Q25619275 'Kigoma', Q10779824 'Kigoma Municipal District', Q10779823 'Kigoma District'
-  Lindi: searching the country offered Q829886 'Lindi', Q309339 'Lindi Region', Q8935650 'Mtama District', Q6552506 'Lindi Urban District', Q871249 'Roman Catholic Diocese of Lindi'
-  Mbeya: searching the country offered Q335548 'Mbeya', Q458382 'Mbeya Region', Q6799690 'Mbeya City District', Q6799682 'Mbeya District', Q284482 'Roman Catholic Archdiocese of Mbeya'
-  Mtwara: searching the country offered Q646684 'Mtwara', Q6930523 'Mtwara Municipal District', Q499465 'Mtwara Region', Q6930521 'Mtwara District', Q259904 'Roman Catholic Diocese of Mtwara'
-  Shinyanga: searching the country offered Q818765 'Shinyanga', Q7497842 'Shinyanga Municipal District', Q10819677 'Shinyanga District', Q153339 'Shinyanga Region', Q876439 'Roman Catholic Diocese of Shinyanga'
-  Tabora: searching the country offered Q643112 'Tabora', Q153335 'Tabora Region', Q7673548 'Tabora Municipal District', Q958486 'Roman Catholic Archdiocese of Tabora', Q7220771 'Tabora Airport'
-TZA: 17 units without a population, 16 resolved
-  Dar es Salaam: no article resolved
-  Geita -> Geita Region (Q1848521, matched by name)
-  Iringa -> Iringa Region (Q309352, matched by redirect)
-  Katavi -> Katavi Region (Q2682731, matched by name)
-  Kigoma -> Kigoma Region (Q747943, matched by redirect)
-  Lindi -> Lindi Region (Q309339, matched by redirect)
-  Mbeya -> Mbeya Region (Q458382, matched by redirect)
-  Morogoro -> Morogoro Region (Q458388, matched by declaration)
-  Mtwara -> Mtwara Region (Q499465, matched by redirect)
-  Mwanza -> Mwanza Region (Q331153, matched by declaration)
-  Njombe -> Njombe Region (Q2086273, matched by name)
-  Shinyanga -> Shinyanga Region (Q153339, matched by redirect)
-  Simiyu -> Simiyu Region (Q2787568, matched by name)
-  Tabora -> Tabora Region (Q153335, matched by redirect)
-  Zanzibar North -> Unguja North Region (Q147116, matched by name)
-  Zanzibar South & Central -> Unguja South Region (Q643120, matched by name)
-  Zanzibar Urban/West -> Mjini Magharibi Region (Q180822, matched by name)
-  wrote data/processed/wiki_population_admin1.json (551 kB)
-wrote 554 records to wiki_population_admin1.json
+  AZE Contiguous Azerbaijan: Nakhchivan Autonomous Republic: no population parameter in the infobox (its first keys are name, type, native_name, image_flag, flag_link); not written
+  GMB Basse: 261,160 from 261,160 (the Upper River row of Subdivisions of the Gambia)
+  MOZ Maputo: 3,608,268 from 1,101,170 (the Maputo City row of Provinces of Mozambique) plus 2,507,098 (the Maputo row of Provinces of Mozambique)
+  SOM Bakool: 560,267 from 560,267 (the Bakool Region row of Administrative divisions of Somalia)
+  BHS North Eleuthera: 3,923 from 3,923 (the North Eleuthera row of Local government in the Bahamas)
+  BHS East Grand Bahama: 11,011 from 11,011 (the East Grand Bahama row of Local government in the Bahamas)
+  BHS West Grand Bahama: 5,960 from 5,960 (the West Grand Bahama row of Local government in the Bahamas)
+  wrote data/processed/wiki_table_population.json (7 kB)
+wrote 6 records to wiki_table_population.json
