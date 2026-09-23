@@ -164,6 +164,20 @@ FIGURES[("CIV", "District Autonome De Yamoussoukro")] = Figure(
           "figures: {terms}. The city's article gives 422,072 for 2021, over 2,075 "
           "km² of the district's 3,500, so that figure is not the district's."))
 
+# Five of Libya's shapes are districts of the 2001 scheme, which the 2007
+# scheme merged away. The list of districts keeps the 2001 table, whose
+# population column gives no year: undated.
+for _shape, _row in (("Ajdabiya", "Ajdabiya"), ("Al Qubbah", "Quba"),
+                     ("Ghadamis", "Ghadames"), ("Mizdah", "Mizda"),
+                     ("Tajura' wa an Nawahi al Arba", "Tajura wa Arba‘")):
+    FIGURES[("LBY", _shape)] = Figure(
+        year=None,
+        terms=(Term("Districts of Libya", row=_row, key=r"^Sha.biyah$",
+                    column=r"^Population$"),),
+        source=("English Wikipedia, Districts of Libya (the 32 districts of 2001); the "
+                "table gives no year for the figure"),
+        note="The district's row in the table of the 2001 districts, which gives no year: {terms}.")
+
 # The Bahamas' 2022 census by district, as "Local government in the Bahamas"
 # transcribes it. The table groups some districts the map draws apart --
 # "South Abaco + Central Abaco + Moore's Island" -- and those stay empty: a

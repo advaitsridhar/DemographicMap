@@ -1658,6 +1658,8 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
         said = READINGS.get((iso3, unit["name"])) or DRAWN_SHORT.get((iso3, unit["name"]))
         if said:
             where += f"; {said}"
+        if READINGS_HOW.get((iso3, unit["name"])) == "uninhabited":
+            where = where.replace("(infobox)", "(text)")
         if not year:
             log(f"  {unit['name']} -> {landed}: {value:,}, undated ({r['remark']})")
         rows.append(record(
