@@ -759,3 +759,28 @@ class NobodyLivesThere(unittest.TestCase):
     def test_the_word_itself_is_a_figure(self):
         text = infobox(population_total="Uninhabited") + "The islands are uninhabited."
         self.assertEqual(wp.read(text)[0], 0)
+
+
+class TheStatisticsBlock(unittest.TestCase):
+    def test_stat_pop1_with_its_own_year(self):
+        # Cote d'Ivoire's regions keep the census figure here.
+        text = infobox(stat_year1="2021", stat_pop1="1,000,508", stat_area1="12345")
+        self.assertEqual(wp.read(text)[:2], (1000508, 2021))
+
+    def test_population_total_still_comes_first(self):
+        text = infobox(population_total="10", population_as_of="2020",
+                       stat_year1="2014", stat_pop1="20")
+        self.assertEqual(wp.read(text)[:2], (10, 2020))
+
+
+class AnEmptyParameter(unittest.TestCase):
+    def test_is_passed_over_for_the_next(self):
+        text = infobox(population_census="", population_estimate="2,098,389",
+                       population_estimate_year="2023")
+        self.assertEqual(wp.read(text)[:2], (2098389, 2023))
+
+    def test_an_unreadable_one_still_stops_the_reader(self):
+        value, _, why = wp.read(infobox(population_total="1.9 million",
+                                        population_estimate="1900000"))
+        self.assertIsNone(value)
+        self.assertIn("population_total", why)

@@ -564,7 +564,11 @@ DATED_KEY = re.compile(r"^(?:pop|population)_?(?:census_?)?((?:19|20)\d\d)(?:_?c
 # In the order a figure should be preferred. A census beats an estimate, and a
 # total beats either, because a total is what the article settled on.
 VALUE_KEYS = ("population_total", "population_census", "population_estimate",
-              "population", "pop", "population_as_of_total")
+              "population", "pop", "population_as_of_total",
+              # The statistics block some subdivision infoboxes keep instead:
+              # Cote d'Ivoire's regions and Ethiopia's SNNPR write their
+              # census figure as stat_pop1, dated by stat_year1.
+              "stat_pop1")
 YEAR_KEYS = {
     "population_total": ("population_as_of", "population_total_year",
                          "census_year", "population_date", "pop_year"),
@@ -575,6 +579,7 @@ YEAR_KEYS = {
     "population": ("population_as_of", "census_year", "population_date",
                    "pop_year", "population_year"),
     "pop": ("pop_year", "population_as_of", "census_year"),
+    "stat_pop1": ("stat_year1", "population_as_of", "census_year"),
 }
 
 
@@ -686,7 +691,10 @@ def read(wikitext: str) -> tuple[int | None, int | None, str]:
     if not fields:
         return None, None, "no infobox"
     for key in VALUE_KEYS:
-        if key not in fields:
+        # An empty parameter says nothing, and must not stop the reader at it:
+        # the Gaza Strip's infobox has an empty population_census above the
+        # figure it does give.
+        if key not in fields or not clean(fields[key]):
             continue
         value, tail = number(fields[key])
         # Nobody lives on Redonda or the Senkakus, and a zero says so -- but a
@@ -1143,10 +1151,13 @@ def declared(iso3: str, unit: dict[str, Any], country_qid: str | None,
             log(f"  {unit['name']}: the declared article {title!r} is not an article")
             return None
         # A disputed area has no country to be in, and is its own place.
-        if item in taken or (country_qid and (
-                item == country_qid or not in_country(item, country_qid))):
+        if item in taken:
             log(f"  {unit['name']}: the declared article {title!r} is {item}, "
-                f"which is another shape's or not in the country")
+                f"which another shape already holds")
+            return None
+        if country_qid and (item == country_qid or not in_country(item, country_qid)):
+            log(f"  {unit['name']}: the declared article {title!r} is {item}, "
+                f"which Wikidata does not place in the country")
             return None
         return item, page.get("title") or title
     return None
