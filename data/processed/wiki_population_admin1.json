@@ -2336,6 +2336,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "CIV-WP-denguele",
+    "level": "admin1",
+    "name": "Denguele",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 436015,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Denguélé District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Dengu%C3%A9l%C3%A9_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B12160353323799",
+    "match_by": "shape_id"
+  },
+  {
     "id": "CIV-WP-district-autonome-dabidjan",
     "level": "admin1",
     "name": "District Autonome D'Abidjan",
@@ -2381,51 +2426,6 @@
     "match_by": "shape_id"
   },
   {
-    "id": "CIV-WP-district-autonome-de-yamoussoukro",
-    "level": "admin1",
-    "name": "District Autonome De Yamoussoukro",
-    "parent": "CIV",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 422072,
-      "unit": "people",
-      "year": 2021,
-      "source": "English Wikipedia, Yamoussoukro (infobox)"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Yamoussoukro",
-        "year": 2021,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "country": "CIV",
-    "shape_id": "83157122B30232425959699",
-    "match_by": "shape_id"
-  },
-  {
     "id": "CIV-WP-goh-djiboua",
     "level": "admin1",
     "name": "Goh-Djiboua",
@@ -2468,6 +2468,141 @@
     ],
     "country": "CIV",
     "shape_id": "83157122B34711482467037",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WP-lacs",
+    "level": "admin1",
+    "name": "Lacs",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1488531,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Lacs District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Lacs_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B20352934117266",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WP-montagnes",
+    "level": "admin1",
+    "name": "Montagnes",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3027023,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Montagnes District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Montagnes_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B69310198422077",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WP-savanes",
+    "level": "admin1",
+    "name": "Savanes",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2159434,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Savanes District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Savanes_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B28791092437733",
     "match_by": "shape_id"
   },
   {
@@ -2558,6 +2693,51 @@
     ],
     "country": "CIV",
     "shape_id": "83157122B58892240487392",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WP-zanzan",
+    "level": "admin1",
+    "name": "Zanzan",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1344865,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Zanzan District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Zanzan_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B79983119233374",
     "match_by": "shape_id"
   },
   {
