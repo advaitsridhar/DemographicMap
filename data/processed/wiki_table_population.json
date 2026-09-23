@@ -1,0 +1,285 @@
+[
+  {
+    "id": "AZE-WT-contiguous-azerbaijan",
+    "level": "admin1",
+    "name": "Contiguous Azerbaijan",
+    "parent": "AZE",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 9492499,
+      "unit": "people",
+      "year": 2019,
+      "source": "2019 census of Azerbaijan, as the national total less Nakhchivan's",
+      "note": "Derived by subtraction within the 2019 census: 9,951,409 (the Total row of Demographics of Azerbaijan) less 458,910 (Nakhchivan Autonomous Republic's infobox). The census did not enumerate the area then held by the self-declared Republic of Artsakh -- it counted 178 Armenians in the whole country -- so that area's Armenian population is not in this figure."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Demographics_of_Azerbaijan",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      },
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Nakhchivan_Autonomous_Republic",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "AZE",
+    "shape_id": "63332228B70486487350611",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "GMB-WT-basse",
+    "level": "admin1",
+    "name": "Basse",
+    "parent": "GMB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 261160,
+      "unit": "people",
+      "year": 2024,
+      "source": "2024 census of the Gambia, as the list of its regions gives it",
+      "note": "Basse local government area is the Upper River Region, whose 2024 census figure is 261,160 (the Upper River row of Subdivisions of the Gambia)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Subdivisions_of_the_Gambia",
+        "year": 2024,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "GMB",
+    "shape_id": "31243875B74768451122912",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "MOZ-WT-maputo",
+    "level": "admin1",
+    "name": "Maputo",
+    "parent": "MOZ",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3608268,
+      "unit": "people",
+      "year": 2017,
+      "source": "2017 census of Mozambique, as the list of its provinces gives it",
+      "note": "The boundary file draws Maputo City and Maputo Province as one shape; this is the sum of their rows: 1,101,170 (the Maputo City row of Provinces of Mozambique) plus 2,507,098 (the Maputo row of Provinces of Mozambique)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Provinces_of_Mozambique",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "MOZ",
+    "shape_id": "27363107B47421408423272",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-north-eleuthera",
+    "level": "admin1",
+    "name": "North Eleuthera",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3923,
+      "unit": "people",
+      "year": 2022,
+      "source": "2022 census of the Bahamas, as Wikipedia's list of its districts gives it",
+      "note": "The district's row in the 2022 census table: 3,923 (the North Eleuthera row of Local government in the Bahamas)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS",
+    "shape_id": "57655419B2538538242492",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-east-grand-bahama",
+    "level": "admin1",
+    "name": "East Grand Bahama",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 11011,
+      "unit": "people",
+      "year": 2022,
+      "source": "2022 census of the Bahamas, as Wikipedia's list of its districts gives it",
+      "note": "The district's row in the 2022 census table: 11,011 (the East Grand Bahama row of Local government in the Bahamas)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS",
+    "shape_id": "57655419B55305756041974",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "BHS-WT-west-grand-bahama",
+    "level": "admin1",
+    "name": "West Grand Bahama",
+    "parent": "BHS",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 5960,
+      "unit": "people",
+      "year": 2022,
+      "source": "2022 census of the Bahamas, as Wikipedia's list of its districts gives it",
+      "note": "The district's row in the 2022 census table: 5,960 (the West Grand Bahama row of Local government in the Bahamas)."
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Local_government_in_the_Bahamas",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "BHS",
+    "shape_id": "57655419B65085412826087",
+    "match_by": "shape_id"
+  }
+]

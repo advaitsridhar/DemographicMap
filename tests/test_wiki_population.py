@@ -96,8 +96,9 @@ class Numbers(unittest.TestCase):
     def test_what_it_refuses(self):
         # A dot is a thousands separator in half of Europe and a decimal point
         # in the other half, so a number carrying one is not read at all.
+        # A figure in whole millions is a guess more than a count.
         for text in ("1.727.524", "12.5", "40,000-45,000", "50–100",
-                     "unknown", "", "1.2 million", "~1.2 million"):
+                     "unknown", "", "2 million", "1,15,6400"):
             value, why = wp.number(text)
             self.assertIsNone(value, text)
             self.assertTrue(why, text)
@@ -476,6 +477,34 @@ class WhatThePageShowsAndWhereThePlaceIs(unittest.TestCase):
                 "| population_as_of = 2021\n}}\n")
         self.assertEqual(wp.read(text)[:2], (1746, 2021))
 
+    def test_a_figure_in_millions_is_read_as_approximate(self):
+        # West Darfur's, from OCHA's state profile of 2023.
+        self.assertEqual(wp.read(infobox(population_total="1.9 million<ref>OCHA</ref>",
+                                         population_as_of="2023")),
+                         (1900000, 2023, "approximate"))
+        # One significant digit is not read, nor a malformed number.
+        for value in ("2 million", "1,15,6400", "1.032"):
+            self.assertIsNone(wp.number(value)[0], value)
+
+    def test_a_parameter_run_on_after_a_comment_is_read(self):
+        # Tanzania's Iringa Region, verbatim but for the dashes.
+        text = ("{{Infobox settlement\n| name = Iringa Region\n"
+                "| elevation_max_point = Luhombero <!-- Population ------>"
+                "| population_total = 1,192,728\n| population_as_of = 2022\n"
+                "| area_note = {{convert|1|km<!-- x -->|mi}}\n}}\n")
+        self.assertEqual(wp.read(text), (1192728, 2022, ""))
+        # A comment inside a template, before an unnamed argument, is not split.
+        self.assertIn("|mi}}", wp.params(text)["area_note"])
+
+    def test_a_split_never_reaches_across_to_a_later_comment(self):
+        # Nakhchivan's: a comment with text after it, parameters, then a
+        # comment that does run on. Only the second is split.
+        text = ("{{Infobox settlement\n| name = N <!-- a --> text\n"
+                "| population_census = 458,910\n| population_census_year = 2019\n"
+                "| area_km2 = 5,502 <!-- b -->| demonym = x\n}}\n")
+        self.assertEqual(wp.read(text), (458910, 2019, ""))
+        self.assertEqual(wp.params(text)["demonym"].strip(), "x")
+
     def test_a_region_cannot_be_given_to_a_city_shape_it_could_not_fit_in(self):
         # Minsk Region, offered for the shape Belarus's boundary file draws
         # as "Minsk City": its coordinates are south of the city's box and
@@ -806,8 +835,8 @@ class AnEmptyParameter(unittest.TestCase):
         self.assertEqual(wp.read(text)[:2], (2098389, 2023))
 
     def test_an_unreadable_one_still_stops_the_reader(self):
-        value, _, why = wp.read(infobox(population_total="1.9 million",
-                                        population_estimate="1900000"))
+        value, _, why = wp.read(infobox(population_total="1,15,6400",
+                                        population_estimate="1156400"))
         self.assertIsNone(value)
         self.assertIn("population_total", why)
 
@@ -845,16 +874,38 @@ class AFailedDeclarationIsFinal(unittest.TestCase):
 
 
 class AShapeNoArticleIsTheWholeOf(AFailedDeclarationIsFinal):
-    """Oman's Az Zahirah holds Al Buraimi and Musandam too."""
+    """A shape declared unreadable is not searched for a part to publish as it."""
+
+    def setUp(self):
+        super().setUp()
+        self.saved_unreadable = dict(wp.UNREADABLE)
+        wp.UNREADABLE[("XXX", "Az Zahirah")] = "it holds three governorates"
+
+    def tearDown(self):
+        wp.UNREADABLE.clear()
+        wp.UNREADABLE.update(self.saved_unreadable)
+        super().tearDown()
 
     def test_nothing_is_searched_for(self):
         wp.search = lambda *a, **k: {"Q1468596": {"names": ["Az Zahirah"],
                                                   "title": "Al Dhahirah Governorate"}}
         unit = {"id": "z", "name": "Az Zahirah"}
-        self.assertEqual(wp.article_for("OMN", [unit], [unit], "Oman"), {})
+        self.assertEqual(wp.article_for("XXX", [unit], [unit], "Oman"), {})
 
-    def test_the_reason_is_written_down(self):
-        self.assertIn("Musandam", wp.UNREADABLE[("OMN", "Az Zahirah")])
+
+class DeclaredComposites(unittest.TestCase):
+    """Shapes the map draws as several units, read as their articles summed."""
+
+    def test_az_zahirah_is_three_governorates(self):
+        self.assertEqual(set(wp.COMPOSITES[("OMN", "Az Zahirah")]),
+                         {"Al Dhahirah Governorate", "Al Buraimi Governorate",
+                          "Musandam Governorate"})
+
+    def test_sud_is_mainland_southern_italy(self):
+        parts = wp.COMPOSITES[("ITA", "Sud")]
+        self.assertEqual(len(parts), 6)
+        self.assertNotIn("Sicily", parts)
+        self.assertNotIn("Southern Italy", parts)
 
 
 class ADeclarationOverridesTheBuildsJoin(AFailedDeclarationIsFinal):

@@ -620,6 +620,14 @@ def unclosed(value: str) -> str:
 
 
 INFOBOX = re.compile(r"\{\{\s*infobox", re.I)
+# A section comment with the next parameter run on after it. Tanzania's
+# region articles write "| elevation_max_point = Luhombero <!-- Population
+# ---->| population_total = 1,192,728" on one line, and a reader that takes
+# a parameter to start a line read nine regions as having no population.
+# One comment only: a match allowed to run on to a later comment's close
+# swallowed every parameter between the two, which is how Nakhchivan's
+# infobox lost its population to this line.
+RUN_ON = re.compile(r"<!--(?:(?!-->).)*-->[ \t]*(?=\|[ \t]*[\w ]+?[ \t]*=)", re.S)
 
 
 def params(wikitext: str) -> dict[str, str]:
@@ -633,6 +641,7 @@ def params(wikitext: str) -> dict[str, str]:
     """
     out: dict[str, str] = {}
     lines: list[str] = []
+    wikitext = RUN_ON.sub("\n", wikitext)
     for m in INFOBOX.finditer(wikitext):
         lines += infobox_lines(wikitext[m.start():])
     if not lines:
@@ -658,8 +667,17 @@ APPROX = re.compile(r"^(?:~|≈|approximately|approx\.?|circa|ca\.|c\.|about|est
 CIRCA = re.compile(r"\{\{\s*(?:circa|c\.|approx)\s*\|\s*([^{}|]*?)\s*(?:\|[^{}]*)?\}\}", re.I)
 
 
+# A figure rounded to a tenth of a million and written in words: West Darfur's
+# "1.9 million", from OCHA's state profile of 2023. It is a figure, and a
+# rounded one, so it is read and said to be approximate -- the same footing as
+# "~2,050,000". Only millions, and only to a tenth or finer: "2 million" is a
+# figure to one significant digit, which is closer to a guess than a count.
+MILLIONS = re.compile(r"^(\d{1,3}\.\d{1,2})\s*million$", re.I)
+
+
 def approximate(text: str) -> bool:
-    return bool(APPROX.match(RAN_ON.sub("", clean(text))))
+    body = RAN_ON.sub("", clean(text))
+    return bool(APPROX.match(body)) or bool(MILLIONS.match(REF.sub("", body).strip()))
 
 
 def number(text: str) -> tuple[int | None, str]:
@@ -676,6 +694,9 @@ def number(text: str) -> tuple[int | None, str]:
     tail = ""
     if m:
         body, tail = m.group(1).strip(), m.group(2)
+    words = MILLIONS.match(body)
+    if words:
+        return int(round(float(words.group(1)) * 1_000_000)), tail
     if not NUMBER.match(body):
         return None, f"not a whole number: {body[:60]!r}"
     digits = re.sub(r"[^\d]", "", body)
@@ -1079,7 +1100,8 @@ TITLES: dict[tuple[str, str], str | tuple[str, ...]] = {
     # NUTS-1 region's 13.4 -- so Italy's five summed to 65.3 million against
     # 58.9, over by exactly Insular Italy. No English article is the mainland
     # south alone, and a sum that counts the islands twice is the wrong
-    # number this project ranks below a gap.
+    # number this project ranks below a gap. COMPOSITES reads it as its six
+    # regions instead.
     ("GRC", "Egean"): "Decentralized Administration of the Aegean",
     ("GRC", "Peloponisos-W. Greece & Ionian"):
         "Decentralized Administration of Peloponnese, Western Greece and the Ionian",
@@ -1109,6 +1131,10 @@ TITLES: dict[tuple[str, str], str | tuple[str, ...]] = {
     ("CIV", "Savanes"): "Savanes District",
     ("CIV", "Valle Du Bandama"): "Vallée du Bandama District",
     ("CIV", "Zanzan"): "Zanzan District",
+    # The build joined these two to regions of the same name and other ground
+    # (NOT_THIS_SHAPE in build_entities), and now leaves them empty.
+    ("CIV", "Lagunes"): "Lagunes District",
+    ("CIV", "Sassandra-Marahoue"): "Sassandra-Marahoué District",
     # Regions named after their capitals, whose bare names every index sends
     # to the town. The sweep refused each of these correctly; the region has
     # its own article under its own title.
@@ -1177,20 +1203,33 @@ TITLES: dict[tuple[str, str], str | tuple[str, ...]] = {
 # Shapes no article is the whole of, and why. Named so that no stage of the
 # search is left to find a part and publish it as the whole.
 UNREADABLE: dict[tuple[str, str], str] = {
-    # The map's Oman is seven regions of the 1990s, and its Az Zahirah runs
-    # from 17.5 to 26.4 degrees north: it holds Al Buraimi and Musandam as
-    # well. The name search found Al Dhahirah Governorate, 213,043 people in
-    # 2020, which is the governorate of that name since 2006 and a part of
-    # the shape. No article counts the three together.
-    ("OMN", "Az Zahirah"): ("no article covers this shape: it holds Al Dhahirah, "
-                            "Al Buraimi and Musandam, and Al Dhahirah Governorate "
-                            "is one of the three"),
+    # The 2022 census counted 5,383,728 people in Dar es Salaam Region, as
+    # the list of Tanzania's regions prints. The city's article prints the
+    # CIA Factbook's 7,776,000 for the urban area in 2023, and the region's
+    # article 10,599,999 for 2025: neither can be the same ground a year or
+    # three after the census, and the city's figure was on the map.
+    ("TZA", "Dar es Salaam"): ("neither article gives the region's own count: the "
+                               "city's prints the CIA Factbook's 7,776,000 for the "
+                               "urban area (2023) and the region's 10,599,999 (2025), "
+                               "where the 2022 census counted 5,383,728"),
 }
 
 COMPOSITES: dict[tuple[str, str], tuple[str, ...]] = {
     ("NER", "Tahoua/Agadez"): ("Tahoua Region", "Agadez Region"),
     ("NER", "Zinder/Diffa"): ("Zinder Region", "Diffa Region"),
     ("126", "Sanafir & Tiran Is."): ("Tiran Island", "Sanafir Island"),
+    # The map's Sud is the NUTS-1 region: mainland southern Italy, without
+    # the islands its "Southern Italy" article counts.
+    ("ITA", "Sud"): ("Abruzzo", "Molise", "Campania", "Apulia", "Basilicata", "Calabria"),
+    # The map's Oman is seven regions of the 1990s, and its Az Zahirah runs
+    # from 17.5 to 26.4 degrees north: it holds Al Buraimi and Musandam as
+    # well as the Al Dhahirah Governorate of 2006, which the name search
+    # found and which is a part of the shape. Ash Sharqiyah was divided into
+    # a north and a south governorate in 2011.
+    ("OMN", "Az Zahirah"): ("Al Dhahirah Governorate", "Al Buraimi Governorate",
+                            "Musandam Governorate"),
+    ("OMN", "Ash Sharqiyah"): ("Ash Sharqiyah North Governorate",
+                               "Ash Sharqiyah South Governorate"),
 }
 
 

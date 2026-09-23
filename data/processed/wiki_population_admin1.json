@@ -2516,6 +2516,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "CIV-WP-lagunes",
+    "level": "admin1",
+    "name": "Lagunes",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2042623,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Lagunes District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Lagunes_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B73612976130091",
+    "match_by": "shape_id"
+  },
+  {
     "id": "CIV-WP-montagnes",
     "level": "admin1",
     "name": "Montagnes",
@@ -2558,6 +2603,51 @@
     ],
     "country": "CIV",
     "shape_id": "83157122B69310198422077",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "CIV-WP-sassandra-marahoue",
+    "level": "admin1",
+    "name": "Sassandra-Marahoue",
+    "parent": "CIV",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2720876,
+      "unit": "people",
+      "year": 2021,
+      "source": "English Wikipedia, Sassandra-Marahoué District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sassandra-Marahou%C3%A9_District",
+        "year": 2021,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CIV",
+    "shape_id": "83157122B74959515955757",
     "match_by": "shape_id"
   },
   {
@@ -6557,6 +6647,51 @@
     ],
     "country": "ITA",
     "shape_id": "72843720B99597932318450",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "ITA-WP-sud",
+    "level": "admin1",
+    "name": "Sud",
+    "parent": "ITA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13339994,
+      "unit": "people",
+      "year": 2026,
+      "source": "English Wikipedia, Abruzzo + Molise + Campania + Apulia + Basilicata + Calabria (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Abruzzo_%2B_Molise_%2B_Campania_%2B_Apulia_%2B_Basilicata_%2B_Calabria",
+        "year": 2026,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ITA",
+    "shape_id": "72843720B88210905209841",
     "match_by": "shape_id"
   },
   {
@@ -15866,6 +16001,96 @@
     "match_by": "shape_id"
   },
   {
+    "id": "OMN-WP-ash-sharqiyah",
+    "level": "admin1",
+    "name": "Ash Sharqiyah",
+    "parent": "OMN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 587260,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Ash Sharqiyah North Governorate + Ash Sharqiyah South Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ash_Sharqiyah_North_Governorate_%2B_Ash_Sharqiyah_South_Governorate",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "OMN",
+    "shape_id": "34121849B48568874604869",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "OMN-WP-az-zahirah",
+    "level": "admin1",
+    "name": "Az Zahirah",
+    "parent": "OMN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 383907,
+      "unit": "people",
+      "year": 2020,
+      "source": "English Wikipedia, Al Dhahirah Governorate + Al Buraimi Governorate + Musandam Governorate (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Al_Dhahirah_Governorate_%2B_Al_Buraimi_Governorate_%2B_Musandam_Governorate",
+        "year": 2020,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "OMN",
+    "shape_id": "34121849B37717587073732",
+    "match_by": "shape_id"
+  },
+  {
     "id": "PER-WP-el-callao",
     "level": "admin1",
     "name": "El Callao",
@@ -17527,6 +17752,51 @@
     ],
     "country": "SDN",
     "shape_id": "86620642B51630913908628",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SDN-WP-west-darfur",
+    "level": "admin1",
+    "name": "West Darfur",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1900000,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, West Darfur (infobox), which gives the figure as approximate"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/West_Darfur",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SDN",
+    "shape_id": "86620642B73786067507541",
     "match_by": "shape_id"
   },
   {
@@ -21400,9 +21670,9 @@
     "match_by": "shape_id"
   },
   {
-    "id": "TZA-WP-dar-es-salaam",
+    "id": "TZA-WP-geita",
     "level": "admin1",
-    "name": "Dar es Salaam",
+    "name": "Geita",
     "parent": "TZA",
     "capital": {
       "status": "not_available"
@@ -21411,10 +21681,10 @@
       "status": "not_available"
     },
     "population": {
-      "value": 7776000,
+      "value": 2977608,
       "unit": "people",
-      "year": 2023,
-      "source": "English Wikipedia, Dar es Salaam (infobox)"
+      "year": 2022,
+      "source": "English Wikipedia, Geita Region (infobox)"
     },
     "median_age": {
       "status": "not_available"
@@ -21435,13 +21705,58 @@
       {
         "field": "population",
         "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Dar_es_Salaam",
-        "year": 2023,
+        "url": "https://en.wikipedia.org/wiki/Geita_Region",
+        "year": 2022,
         "license": "CC BY-SA 4.0"
       }
     ],
     "country": "TZA",
-    "shape_id": "36957248B2633782293100",
+    "shape_id": "36957248B67527021942185",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TZA-WP-iringa",
+    "level": "admin1",
+    "name": "Iringa",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1192728,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Iringa Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Iringa_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B77241623821364",
     "match_by": "shape_id"
   },
   {
@@ -21490,6 +21805,96 @@
     "match_by": "shape_id"
   },
   {
+    "id": "TZA-WP-kigoma",
+    "level": "admin1",
+    "name": "Kigoma",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2470967,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Kigoma Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kigoma_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B11692782910073",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TZA-WP-lindi",
+    "level": "admin1",
+    "name": "Lindi",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1194028,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Lindi Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Lindi_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B69769580879919",
+    "match_by": "shape_id"
+  },
+  {
     "id": "TZA-WP-mbeya",
     "level": "admin1",
     "name": "Mbeya",
@@ -21535,6 +21940,141 @@
     "match_by": "shape_id"
   },
   {
+    "id": "TZA-WP-morogoro",
+    "level": "admin1",
+    "name": "Morogoro",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3197104,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Morogoro Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Morogoro_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B51202481578817",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TZA-WP-mtwara",
+    "level": "admin1",
+    "name": "Mtwara",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1634947,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Mtwara Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mtwara_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B12364491601158",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TZA-WP-mwanza",
+    "level": "admin1",
+    "name": "Mwanza",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3699872,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Mwanza Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mwanza_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B97200142584881",
+    "match_by": "shape_id"
+  },
+  {
     "id": "TZA-WP-njombe",
     "level": "admin1",
     "name": "Njombe",
@@ -21577,6 +22117,96 @@
     ],
     "country": "TZA",
     "shape_id": "36957248B16645806994912",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TZA-WP-shinyanga",
+    "level": "admin1",
+    "name": "Shinyanga",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2241299,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Shinyanga Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Shinyanga_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B79115240070229",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "TZA-WP-simiyu",
+    "level": "admin1",
+    "name": "Simiyu",
+    "parent": "TZA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2140497,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Simiyu Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Simiyu_Region",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "TZA",
+    "shape_id": "36957248B66492463379082",
     "match_by": "shape_id"
   },
   {

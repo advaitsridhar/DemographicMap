@@ -17,6 +17,11 @@ data/raw/*
 !data/raw/singapore/*.csv
 !data/raw/switzerland/
 !data/raw/switzerland/*.xlsx
+# Table 10 of the Seychelles NBS mid-2019 population bulletin, as text. The
+# bureau's server refuses the runner and the Internet Archive's copy answers it
+# only sometimes, so cited_sources falls back to this transcript of it.
+!data/raw/seychelles/
+!data/raw/seychelles/*.txt
 # Kazakhstan's start-of-year ethnicity workbook: the Bureau's site is an
 # application with no file link to fetch it from, and it is 380 KB.
 !data/raw/kazakhstan/

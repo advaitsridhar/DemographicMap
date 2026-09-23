@@ -4819,6 +4819,27 @@ class DerivedValues(unittest.TestCase):
         self.assertEqual(be.pool_declared_unions(adapters), [])
         self.assertEqual([r["name"] for r in adapters["NAM"]], ["Kavango East"])
 
+    def test_a_union_part_is_found_under_each_sources_spelling(self):
+        def row(name, source, pop):
+            return {"id": f"{source}-{name}", "level": "admin1", "name": name,
+                    "country": "GRC", "_source": source, "sources": [],
+                    "population": {"value": pop, "year": 2025, "source": source},
+                    "median_age": {"value": 48.7, "unit": "years", "year": 2025}}
+        adapters = {"GRC": [row("Thessalia", "eurostat_nuts2.json", 676040),
+                            row("Sterea Elláda", "eurostat_nuts2.json", 507168),
+                            row("Thessaly Region", "wikidata_admin1.json", 688255),
+                            row("Central Greece Region", "wikidata_admin1.json", 508254)]}
+        done = be.pool_declared_unions(adapters)
+        self.assertEqual(len(done), 2)
+        pooled = {r["_source"]: r for r in adapters["GRC"]}
+        self.assertEqual({r["name"] for r in adapters["GRC"]}, {"Thessalia-Central Greece"})
+        self.assertEqual(pooled["eurostat_nuts2.json"]["population"]["value"], 1183208)
+        self.assertEqual(pooled["wikidata_admin1.json"]["population"]["value"], 1196509)
+        self.assertIn("The sum of the figures published for Thessalia and Sterea",
+                      pooled["eurostat_nuts2.json"]["population"]["note"])
+        # A median does not sum; Thessaly's is not the administration's.
+        self.assertNotIn("median_age", pooled["eurostat_nuts2.json"])
+
     def test_a_declared_split_copies_shares_as_an_estimate(self):
         src = {"id": "THA-NK", "level": "admin1", "name": "Nong Khai Province",
                "country": "THA", "_source": "thailand_province.json",
