@@ -660,3 +660,16 @@ class ATitleThatNamesTheDivision(unittest.TestCase):
             self.assertTrue(wp.says_its_kind(wp.disambiguated(title)), title)
         for title in ("Morogoro", "Zawiya, Libya", "Brikama", "Basse Santa Su", "Ajdabiya"):
             self.assertFalse(wp.says_its_kind(wp.disambiguated(title)), title)
+
+
+class NotAnAdministrativeUnit(unittest.TestCase):
+    def test_an_electoral_constituency_is_passed_over_for_the_region(self):
+        got = wp.resolve(units("Northeastern Region"),
+                         {"Q1": {"names": ["Northeastern"], "title": "Northeast (Althing constituency)"},
+                          "Q2": {"names": ["Northeastern Region"], "title": "Northeastern Region (Iceland)"}})
+        self.assertEqual(got["u1"][:2], ("Q2", "Northeastern Region (Iceland)"))
+
+    def test_a_district_named_for_a_river_is_still_a_district(self):
+        # Seychelles' La Riviere Anglaise district.
+        self.assertIsNone(wp.NOT_A_UNIT.search("English River, Seychelles"))
+        self.assertIsNone(wp.NOT_A_UNIT.search("Saint Andrew Parish, Jamaica"))

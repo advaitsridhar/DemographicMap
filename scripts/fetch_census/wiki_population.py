@@ -260,6 +260,19 @@ def a_part_of(name: str, title: str) -> bool:
     return bool(rest) and rest == fold(name)
 
 
+# Titles that name something other than an administrative unit. Iceland's
+# "Northeastern Region" and "Northwestern Region" were read from the Althing's
+# Northeast and Northwest constituencies, which span two and three regions:
+# the country's first level summed to 117% of its population, counting the
+# Eastern, Western and Westfjords regions twice. The rest are what the
+# country-restricted search has offered in place of a unit -- a diocese, an
+# airport, a battle -- and none of them is a place's own population.
+NOT_A_UNIT = re.compile(
+    r"constituency|electoral|electorate|parliamentary|\bdiocese\b|archdiocese|"
+    r"\bairport\b|\buniversity\b|\bbattle\b|\bstadium\b|football club|"
+    r"\bcemetery\b|\brailway\b", re.I)
+
+
 def says_its_kind(name: str) -> bool:
     """Whether a name carries a word for what kind of unit it is."""
     return fold(name) != "".join(c for c in plain(name) if c.isalnum())
@@ -459,7 +472,8 @@ def resolve(units: list[dict[str, Any]], pool: dict[str, dict[str, Any]],
 
     def unique(hits: list[str], raw: str) -> str | None:
         hits = [q for q in dict.fromkeys(hits)
-                if q not in taken and not a_part_of(raw, pool[q]["title"])]
+                if q not in taken and not a_part_of(raw, pool[q]["title"])
+                and not NOT_A_UNIT.search(pool[q]["title"] or "")]
         if len(hits) == 1:
             return hits[0]
         if not says_its_kind(raw):
