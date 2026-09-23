@@ -38,6 +38,29 @@ PROVINCES = """{| class="wikitable sortable"
 | 11 || [[Maputo Province|Maputo]] || [[Matola]] || 1,205,709 || 2,507,098
 |}"""
 
+BAHAMAS = """== New Providence ==
+{| class="wikitable"
+! Name !! Population (2022)
+|-
+| Killarney || 17,679
+|}
+== Demographics ==
+The 2022 census.<ref name=":0">{{Cite web |title=Census of The Bahamas 2022 |url=u}}</ref>
+{| class="wikitable"
+! District(s) or Other Area !! Island Group !! Population
+|-
+| North Eleuthera || Eleuthera || 3,923
+|-
+| South Eleuthera + Central Eleuthera || Eleuthera || 5,324
+|}
+== Types of councils ==
+{| class="wikitable"
+! Island Group !! Population
+|-
+| Eleuthera || 12,717<ref name=":0" />
+|}
+"""
+
 
 def pages(**texts):
     return lambda title, lang: (texts.get(title, ""), title)
@@ -66,6 +89,27 @@ class ACell(unittest.TestCase):
         value, why = wt.cell(GAMBIA, "Central River", r"Population \(2024\)", 2024)
         self.assertIsNone(value)
         self.assertIn("0 tables", why)
+
+    def test_an_undated_column_is_dated_by_its_sections_citation(self):
+        self.assertEqual(wt.cell(BAHAMAS, "North Eleuthera", "^Population$", 2022,
+                                 cite="Census of The Bahamas 2022"), (3923, ""))
+
+    def test_an_undated_column_with_no_citation_is_refused(self):
+        value, why = wt.cell(BAHAMAS, "Eleuthera", "^Population$", 2022,
+                             cite="Census of The Bahamas 2022")
+        self.assertIsNone(value)
+        self.assertIn("cites nothing", why)
+
+    def test_a_group_row_is_not_a_member(self):
+        value, _ = wt.cell(BAHAMAS, "Central Eleuthera", "^Population$", 2022,
+                           cite="Census of The Bahamas 2022")
+        self.assertIsNone(value)
+
+    def test_every_citation_names_its_figures_year(self):
+        for (iso3, name), fig in wt.FIGURES.items():
+            for term in fig.terms:
+                if term.cite:
+                    self.assertIn(str(fig.year), term.cite, (iso3, name))
 
 
 class AFigure(unittest.TestCase):

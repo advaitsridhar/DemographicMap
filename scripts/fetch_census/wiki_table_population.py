@@ -30,7 +30,7 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import PROCESSED, log, measure, read_json, record, write_json
-from .europe_wiki import cell_text, fetch, number
+from .europe_wiki import cell_text, fetch, number, sections
 from .wiki_population import read as infobox
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -51,6 +51,9 @@ class Term:
     sign: int = 1
     # The header of the column the row is labelled in, where it is not the first.
     key: str | None = None
+    # Where the column's header names no year: a citation in the table's own
+    # section that does, such as the census the table transcribes.
+    cite: str | None = None
 
 
 @dataclass(frozen=True)
@@ -101,39 +104,68 @@ FIGURES: dict[tuple[str, str], Figure] = {
         source="2017 census of Mozambique, as the list of its provinces gives it",
         note=("The boundary file draws Maputo City and Maputo Province as one "
               "shape; this is the sum of their rows: {terms}.")),
+    # Somalia's regions, in one list with one date.
+    ("SOM", "Bakool"): Figure(
+        year=2025,
+        terms=(Term("Administrative divisions of Somalia", row="Bakool Region",
+                    column=r"Population \(2025 estimate\)"),),
+        source="2025 estimate, as the list of Somalia's regions gives it",
+        note=("Bakool's own article prints its population as '1,15,6400', which is "
+              "no number; this is its row in the list of regions: {terms}.")),
 }
+
+# The Bahamas' 2022 census by district, as "Local government in the Bahamas"
+# transcribes it. The table groups some districts the map draws apart --
+# "South Abaco + Central Abaco + Moore's Island" -- and those stay empty: a
+# group's figure is not any one of its members'. These three it prints alone.
+for _district in ("North Eleuthera", "East Grand Bahama", "West Grand Bahama"):
+    FIGURES[("BHS", _district)] = Figure(
+        year=2022,
+        terms=(Term("Local government in the Bahamas", row=_district,
+                    column=r"^Population$", cite=r"Census of The Bahamas 2022"),),
+        source="2022 census of the Bahamas, as Wikipedia's list of its districts gives it",
+        note="The district's row in the 2022 census table: {terms}.")
 
 
 def cell(wikitext: str, row: str, column: str, year: int,
-         key: str | None = None) -> tuple[int | None, str]:
-    """The one table cell under a header naming ``year``, in the row labelled ``row``."""
+         key: str | None = None, cite: str | None = None) -> tuple[int | None, str]:
+    """The one table cell under a header naming ``year``, in the row labelled ``row``.
+
+    A table without the row says nothing about it, dated or not; a table with
+    it that cannot be dated or lined up refuses the whole reading, because
+    the row it holds might be the one meant.
+    """
     header = re.compile(column, re.I)
     found: list[int] = []
-    for table in tables(wikitext):
-        if not table:
-            continue
-        heads = [cell_text(c) for c in table[0]]
-        at = [i for i, h in enumerate(heads) if header.search(h)]
-        if len(at) != 1:
-            continue
-        if str(year) not in heads[at[0]]:
-            return None, f"the column {heads[at[0]]!r} does not name {year}"
-        labels = [i for i, h in enumerate(heads) if key and re.search(key, h, re.I)]
-        if key and len(labels) != 1:
-            continue
-        by = labels[0] if key else 0
-        for cells in table[1:]:
-            if len(cells) <= by or cell_text(cells[by]).casefold() != row.casefold():
+    for _, body in sections(wikitext):
+        for table in tables(body):
+            if not table:
                 continue
-            # Merged cells are not expanded, so a row that is shorter or
-            # longer than its header cannot be lined up with it.
-            if len(cells) != len(heads):
-                return None, (f"the {row!r} row has {len(cells)} cells against "
-                              f"{len(heads)} headers, so its columns cannot be lined up")
-            value = number(cell_text(cells[at[0]]), ".")
-            if value is None or value != int(value):
-                return None, f"the {row!r} row's cell is {cells[at[0]]!r}, not a count"
-            found.append(int(value))
+            heads = [cell_text(c) for c in table[0]]
+            at = [i for i, h in enumerate(heads) if header.search(h)]
+            labels = [i for i, h in enumerate(heads) if key and re.search(key, h, re.I)]
+            if len(at) != 1 or (key and len(labels) != 1):
+                continue
+            by = labels[0] if key else 0
+            hits = [c for c in table[1:]
+                    if len(c) > by and cell_text(c[by]).casefold() == row.casefold()]
+            if not hits:
+                continue
+            cited = cite and str(year) in cite and re.search(cite, body, re.I)
+            if str(year) not in heads[at[0]] and not cited:
+                return None, (f"the column {heads[at[0]]!r} does not name {year}"
+                              + (f", and its section cites nothing matching {cite!r}"
+                                 if cite else ""))
+            for cells in hits:
+                # Merged cells are not expanded, so a row that is shorter or
+                # longer than its header cannot be lined up with it.
+                if len(cells) != len(heads):
+                    return None, (f"the {row!r} row has {len(cells)} cells against "
+                                  f"{len(heads)} headers, so its columns cannot be lined up")
+                value = number(cell_text(cells[at[0]]), ".")
+                if value is None or value != int(value):
+                    return None, f"the {row!r} row's cell is {cells[at[0]]!r}, not a count"
+                found.append(int(value))
     if len(found) != 1:
         return None, (f"{len(found)} tables have a {row!r} row under a column "
                       f"matching {column!r}; exactly one is read")
@@ -152,7 +184,7 @@ def term_value(term: Term, year: int, fetcher=fetch) -> tuple[int | None, str, s
         if found != year:
             return None, landed, f"its infobox dates the figure to {found}, not {year}"
         return value, landed, ""
-    value, why = cell(wikitext, term.row, term.column or "", year, term.key)
+    value, why = cell(wikitext, term.row, term.column or "", year, term.key, term.cite)
     return value, landed, why
 
 
