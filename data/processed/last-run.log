@@ -1,199 +1,253 @@
-111: 1 units without a population, 1 resolved
-  Abyei -> Abyei (Q336494, matched by declaration)
-  Abyei -> Abyei: no population parameter in the infobox (its first keys are name, native_name, native_name_lang, other_name, type)
-112: 1 units without a population, 1 resolved
-  Aksai Chin -> Aksai Chin (Q230830, matched by declaration)
-  Aksai Chin -> Aksai Chin: no population parameter in the infobox (its first keys are name, type, other_name, image, caption)
-113: no Wikidata item carries this code and nothing is declared
-113: 1 units without a population, 0 resolved
-  CH-IN: no article resolved
-114: 1 units without a population, 1 resolved
-  Demchok -> Demchok sector (Q96807758, matched by declaration)
-  Demchok -> Demchok sector: no population parameter in the infobox (its first keys are title, pic, s, l, p)
-115: no Wikidata item carries this code and nothing is declared
-115: 1 units without a population, 0 resolved
-  Dragonja: no article resolved
-116: no Wikidata item carries this code and nothing is declared
-116: 1 units without a population, 0 resolved
-  Dramana-Shakatoe: no article resolved
-117: 1 units without a population, 1 resolved
-  Falkland Islands (UK) -> Falkland Islands (Q9648, matched by declaration)
-118: 1 units without a population, 1 resolved
-  Gaza Strip -> Gaza Strip (Q39760, matched by declaration)
-  Gaza Strip -> Gaza Strip: population_census: empty
-119: 1 units without a population, 1 resolved
-  Kalapani -> Kalapani territory (Q6350651, matched by declaration)
-  Kalapani -> Kalapani territory: population_total: not a whole number: '50–100'
-  Isla Brasilera: the declared article 'Brasilera Island' is not an article
-120: no Wikidata item carries this code and nothing is declared
-120: 1 units without a population, 0 resolved
-  Isla Brasilera: no article resolved
-121: 1 units without a population, 1 resolved
-  Siachen-Saltoro -> Siachen Glacier (Q333946, matched by declaration)
-  Siachen-Saltoro -> Siachen Glacier: no population parameter in the infobox (its first keys are name, image, caption, type, location)
-  Koualou: the declared article 'Koualou' is not an article
-122: no Wikidata item carries this code and nothing is declared
-122: 1 units without a population, 0 resolved
-  Koualou: no article resolved
-123: 1 units without a population, 1 resolved
-  Liancourt Rocks -> Liancourt Rocks (Q20317, matched by declaration)
-  Liancourt Rocks -> Liancourt Rocks: population: not a whole number: 'Approximately 25'
-124: no Wikidata item carries this code and nothing is declared
-124: 1 units without a population, 0 resolved
-  No Man's Land: no article resolved
-125: 1 units without a population, 1 resolved
-  Paracel Is -> Woody Island (South China Sea) (Q393044, matched by declaration)
-126: no Wikidata item carries this code and nothing is declared
-126: 1 units without a population, 0 resolved
-  Sanafir & Tiran Is. -> Tiran Island + Sanafir Island: 0
-  Sanafir & Tiran Is. -> Tiran Island + Sanafir Island: 0, undated (one of the parts names no year)
-127: 1 units without a population, 1 resolved
-  Senkakus -> Senkaku Islands (Q29460, matched by declaration)
-  Senkakus -> Senkaku Islands: no population parameter in the infobox (its first keys are disputed, name, plural, other_names, image)
-128: 1 units without a population, 1 resolved
-  Spratly Is -> Southwest Cay (Q3137837, matched by declaration)
-  Spratly Is -> Southwest Cay: 32, undated (the infobox names no year for the figure)
-129: 1 units without a population, 1 resolved
-  West Bank -> West Bank (Q36678, matched by declaration)
-ATG: 1 units without a population, 1 resolved
-  Redonda -> Redonda: 0, undated (no year in the value)
-  Western Sahara: the declared article 'Western Sahara' is Q6250, which is another shape's or not in the country
-  Western Sahara: found by searching the country
-ESH: 1 units without a population, 1 resolved
-  Western Sahara -> Moroccan-occupied Western Sahara (Q1418613, matched by name)
-  Western Sahara -> Moroccan-occupied Western Sahara: no infobox
-NER: 3 units without a population, 1 resolved
-  Dossa -> Dosso Region (Q850055, matched by declaration)
-  Tahoua/Agadez -> Tahoua Region + Agadez Region: 4,930,320
-  Zinder/Diffa -> Zinder Region + Diffa Region: 5,636,600
-OMN: the country's own divisions resolved 1 more
-OMN: what sits directly in the country resolved 2 more
-OMN: 3 units without a population, 3 resolved
-  Al Batinah -> Al Batinah Region (Q264245, matched by name)
-  Ash Sharqiyah -> Ash Sharqiyah Region (Oman) (Q1106416, matched by name)
-  Ash Sharqiyah -> Ash Sharqiyah Region (Oman): population_total: empty
-  Az Zahirah -> Al Dhahirah Governorate (Q1468596, matched by name)
-PER: the country's own divisions resolved 1 more
-  Municipalidad Metropolitana de Lima: found by searching the country
-PER: 2 units without a population, 2 resolved
-  El Callao -> Constitutional Province of Callao (Q2634400, matched by name)
-  Municipalidad Metropolitana de Lima -> Metropolitan Municipality of Lima (Q12184118, matched by name)
-  Municipalidad Metropolitana de Lima -> Metropolitan Municipality of Lima: no population parameter in the infobox (its first keys are name, native_name, type, seal, image)
-  PER: its first level now sums to 34,643,571, 106% of the country's 32,768,614 -- check for a unit counted twice
-PHL: the country's own divisions resolved 2 more
-  ARMM: found by searching the country
-PHL: 3 units without a population, 3 resolved
-  ARMM -> Autonomous Region in Muslim Mindanao (Q13708, matched by name)
-  ARMM -> Autonomous Region in Muslim Mindanao: no population parameter in the infobox (it has stat_pop1)
-  CAR -> Cordillera Administrative Region (Q13606, matched by name)
-  NCR -> Metro Manila (Q13580, matched by name)
-QAT: the country's own divisions resolved 1 more
-QAT: what sits directly in the country resolved 1 more
-QAT: 5 units without a population, 5 resolved
-  Al Daayen -> Al Daayen (Q310786, matched by name)
-  Al Sheehaniya -> Al-Shahaniya (Q12188815, matched by declaration)
-  Doha -> Doha (municipality) (Q594208, matched by name)
-  Umm Slal -> Umm Salal (Q990414, matched by redirect)
-SAU: the country's own divisions resolved 12 more
-SAU: 13 units without a population, 13 resolved
-  'Asir Region -> Asir (Q779855, matched by name)
-  Al Bahah Region -> Al-Baha Province (Q852774, matched by name)
-  Al Jawf Region -> Al-Jouf Province (Q1471266, matched by name)
-  Al Madinah Region -> Medina Province, Saudi Arabia (Q236027, matched by name)
-  Al-Qassim Region -> Al-Qassim Province (Q1105411, matched by name)
-  Eastern Region -> Eastern Province, Saudi Arabia (Q953508, matched by name)
-  Hayel Region -> Hail Province, Saudi Arabia (Q243656, matched by declaration)
-  Jazan Region -> Jazan Province (Q269973, matched by name)
-  Makkah Region -> Mecca Province (Q234167, matched by name)
-  Najran Region -> Najran Province (Q464718, matched by name)
-  Northern Borders Region -> Northern Borders Province (Q201781, matched by name)
-  Riyadh Region -> Riyadh Province (Q1249255, matched by name)
-  Tabuk Region -> Tabuk Province (Q1315953, matched by name)
-  Gedaref: the declared article 'Gedaref State' is not an article
-SDN: what sits directly in the country resolved 2 more
-  Central Darfur: found by searching the country
-  Gedaref: found by searching the country
-SDN: 6 units without a population, 5 resolved
-  Abyei PCA: no article resolved
-  Central Darfur -> Central Darfur (Q4116493, matched by name)
-  East Darfur -> East Darfur (Q3545641, matched by name)
-  Gedaref -> El-Gadarif (Q311199, matched by name)
-  West Darfur -> West Darfur: population_total: not a whole number: '1.9 million'
-  West Kordofan -> West Kordofan (Q536396, matched by name)
-  Gedaref -> El-Gadarif: 363,945, undated (no year in the value)
-  Togdheer: the declared article 'Togdheer' is Q865590, which is another shape's or not in the country
-SOM: the country's own divisions resolved 4 more
-  Sanaag: found by searching the country
-  Sool: found by searching the country
-  Togdheer: searching the country offered Q1478374 'Togdheer River', Q104882486 'Beer, Togdheer', Q96379803 'Governor of Togdheer', Q29570067 'Balanbale, Togdheer', Q107410288 'Kirit'
-SOM: 15 units without a population, 14 resolved
-  Bakool -> Bakool: population_total: not a whole number: '1,15,6400'
-  Banadir -> Banaadir (Q806070, matched by name)
-  Galgaduud -> Galguduud (Q876772, matched by name)
-  Hiiraan -> Hiran, Somalia (Q660040, matched by name)
-  Nugaal -> Nugal, Somalia (Q1046329, matched by name)
-  Sanaag -> Sanaag (Q751387, matched by name)
-  Sool -> Sool (Q848864, matched by name)
-  Togdheer: no article resolved
-  Woqooyi Galbeed -> Maroodi Jeex (Q10326669, matched by declaration)
-  Outer Islands: found by searching the country
-SYC: 24 units without a population, 24 resolved
-  La Digue a -> La Digue and Inner Islands (Q1094917, matched by declaration)
-  Outer Islands -> Outer Islands (Seychelles) (Q1547337, matched by name)
-  Outer Islands -> Outer Islands (Seychelles): population: not a whole number: '1.032'
-SYR: the country's own divisions resolved 2 more
-  Rural Damascus: searching the country offered Q232399 'Rif Dimashq Governorate'
-SYR: 6 units without a population, 6 resolved
-  Al-Hasakeh -> Hasakah Governorate (Q233914, matched by declaration)
-  As-Sweida -> Suwayda Governorate (Q236797, matched by declaration)
-  Idleb -> Idlib Governorate (Q233218, matched by name)
-  Lattakia -> Latakia Governorate (Q233236, matched by declaration)
-  Rural Damascus -> Rif Dimashq Governorate (Q232399, matched by redirect)
-  Tartous -> Tartus Governorate (Q232382, matched by name)
-TON: 4 units without a population, 4 resolved
-  'Eua -> ʻEua (Q423528, matched by declaration)
-  Ha'apai -> Haʻapai (Q612098, matched by declaration)
-  Niuas -> Niua Islands (Q1200954, matched by declaration)
-  Niuas -> Niua Islands (Q1200954): its coordinates (-15.96, -173.78) lie outside the shape; refused
-  Tongatapu -> Tongatapu (Q620452, matched by declaration)
-TZA: the country's own divisions resolved 3 more
-TZA: what sits directly in the country resolved 4 more
-  Dar es Salaam: searching the country offered Q1960 'Dar es Salaam', Q1411192 'Julius Nyerere International Airport', Q3663642 "Saint Joseph's Cathedral, Dar es Salaam", Q557597 'University of Dar es Salaam', Q1364405 'Roman Catholic Archdiocese of Dar-es-Salaam'
-  Iringa: searching the country offered Q735609 'Iringa', Q1888339 'Iringa District', Q309352 'Iringa Region', Q15228797 'Iringa University College', Q3710991 'Iringa Municipal District'
-  Kigoma: searching the country offered Q244509 'Kigoma', Q747943 'Kigoma Region', Q25619275 'Kigoma', Q10779824 'Kigoma Municipal District', Q10779823 'Kigoma District'
-  Lindi: searching the country offered Q829886 'Lindi', Q309339 'Lindi Region', Q8935650 'Mtama District', Q871249 'Roman Catholic Diocese of Lindi', Q6552506 'Lindi Urban District'
-  Mbeya: searching the country offered Q335548 'Mbeya', Q6799690 'Mbeya City District', Q458382 'Mbeya Region', Q6799682 'Mbeya District', Q284482 'Roman Catholic Archdiocese of Mbeya'
-  Mtwara: searching the country offered Q646684 'Mtwara', Q6930523 'Mtwara Municipal District', Q499465 'Mtwara Region', Q6930521 'Mtwara District', Q259904 'Roman Catholic Diocese of Mtwara'
-  Shinyanga: searching the country offered Q818765 'Shinyanga', Q7497842 'Shinyanga Municipal District', Q10819677 'Shinyanga District', Q153339 'Shinyanga Region', Q876439 'Roman Catholic Diocese of Shinyanga'
-  Tabora: searching the country offered Q643112 'Tabora', Q153335 'Tabora Region', Q7673548 'Tabora Municipal District', Q958486 'Roman Catholic Archdiocese of Tabora', Q7220771 'Tabora Airport'
-TZA: 17 units without a population, 17 resolved
-  Dar es Salaam -> Dar es Salaam (Q1960, matched by redirect)
-  Geita -> Geita Region (Q1848521, matched by name)
-  Geita -> Geita Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_footnotes, population_demonym)
-  Iringa -> Iringa Region (Q309352, matched by redirect)
-  Iringa -> Iringa Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
-  Katavi -> Katavi Region (Q2682731, matched by name)
-  Kigoma -> Kigoma Region (Q747943, matched by redirect)
-  Kigoma -> Kigoma Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym, population_footnotes)
-  Lindi -> Lindi Region (Q309339, matched by redirect)
-  Lindi -> Lindi Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
-  Mbeya -> Mbeya Region (Q458382, matched by redirect)
-  Morogoro -> Morogoro Region (Q458388, matched by declaration)
-  Morogoro -> Morogoro Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
-  Mtwara -> Mtwara Region (Q499465, matched by redirect)
-  Mtwara -> Mtwara Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
-  Mwanza -> Mwanza Region (Q331153, matched by declaration)
-  Mwanza -> Mwanza Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_footnotes, population_demonym)
-  Njombe -> Njombe Region (Q2086273, matched by name)
-  Shinyanga -> Shinyanga Region (Q153339, matched by redirect)
-  Shinyanga -> Shinyanga Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
-  Simiyu -> Simiyu Region (Q2787568, matched by name)
-  Simiyu -> Simiyu Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
-  Tabora -> Tabora Region (Q153335, matched by redirect)
-  Zanzibar North -> Unguja North Region (Q147116, matched by name)
-  Zanzibar South & Central -> Unguja South Region (Q643120, matched by name)
-  Zanzibar Urban/West -> Mjini Magharibi Region (Q180822, matched by name)
-ZWE: 8 units without a population, 8 resolved
-  Bulawayo -> Bulawayo (Q193250, matched by declaration)
-  wrote data/processed/wiki_population_admin1.json (527 kB)
-wrote 530 records to wiki_population_admin1.json
+
+===== [en] '2024 Moldovan census', 9,412 bytes
+  -- infobox --
+      name = 2024 Moldovan census
+      logo = 
+      logo_size = 
+      logo_caption = 
+      image = 
+      image_size = 
+      image_caption = 
+      country = [[Moldova]]
+      date = 8 April–7 July 2024
+    * population = 
+      percent_change = 
+      annual_percent_change = 
+      region_type = 
+      most_populous = 
+      least_populous = 
+      previous_census = 2014 Moldovan census
+      previous_year = 2014
+      next_census = 
+      next_year = 2034 }}
+  -- sections --
+    [] no table
+    [Results] no table
+    [See also] no table
+    [References] no table
+  [ro] 'Recensământul populației și locuințelor din Republica Moldova (2024)': nothing (missingtitle)
+
+===== [ro] 'Recensământul populației și locuințelor din Republica Moldova (2024)', 0 bytes
+
+===== [en] 'Transnistria', 142,114 bytes
+  -- infobox --
+      conventional_long_name = Pridnestrovian Moldavian Republic
+      common_name = Transnistria
+      native_name = {{collapsible list |titlestyle = line-height:normal;text-align:center|
+      status = [[List of states with limited recognition|Unrecognised state]]
+      image_flag = Flag of Transnistria (state).svg
+      flag_type = [[Flag of Transnistria|Flag]]{{efn|The [[flag of Russia]] shares equal
+      image_coat = Государственный герб Приднестровской Молдавской Республики цветной.svg
+      symbol_type = [[Coat of arms of Transnistria|Emblem]]
+    * national_anthem = <br />{{lang|ru|Государственный гимн Приднестровской Молдавской Республики}} ([[Russian language|Russian]])<br />"[[State Anthem of Transnistria|State Anthem of the Pridnestrovian Moldavian Republic]]"<ref>{{cite news|title=Hopes Rise in Transnistria of a Russian Annexation|newsp
+      image_map = {{Switcher|[[File:Transnistria in Europe (zoomed) (non-independent).sv
+      map_caption = {{map caption |countryprefix=the |location_color=red |region=Europe |r
+      capital = [[Tiraspol]]
+      coordinates = {{Coord|46|50|12|N|29|38|24|E|type:city}}
+      largest_city = capital
+    * official_languages = {{unbulleted list|[[Russian language|Russian]]|''[[Moldovan language|Moldovan]]''&nbsp;([[Romanian language|Romanian]]){{efn|name=romd}}||[[Ukrainian language|Ukrainian]]}}
+    * languages_type = [[Lingua franca|Interethnic language]]
+    * languages = [[Russian language|Russian]]<ref name="OSCE2011">{{cite web |url=http://www.osce.org/pc/81039?download=true |title=On the situation of Russian schools in Moldova |publisher=[[OSCE]] |date=14 July 2011 }}</ref><ref name="Law of the Moldavian Soviet Socialist Republic on the Functi
+    * ethnic_groups = {{unbulleted list | 29.1% [[Russians]] | 28.6% [[Moldovans]]/[[Romanians]]{{efn|There is [[Controversy over ethnic and linguistic identity in Moldova|an ethnolinguistic controversy]] whether [[Moldovans]] are the same as [[Romanians]] or a distinct ethnic group.}} | 22.9% [[Ukrai
+    * ethnic_groups_year = [[2015 Transnistrian census|2015]]
+      demonym = {{unbulletedlist|class=nowrap|Transnistrian}}
+      government_type = Unitary [[semi-presidential republic]]
+      leader_title1 = [[President of Transnistria|President]]
+      leader_name1 = [[Vadim Krasnoselsky]]
+      leader_title2 = [[Prime Minister of Transnistria|Prime Minister]]
+      leader_name2 = [[Aleksandr Rozenberg]]
+      leader_title3 = [[Supreme Council (Transnistria)#List of speakers|Speaker of the Supre
+      leader_name3 = [[Tatyana Zalevskaya]]
+      legislature = [[Parliament of Transnistria|Supreme Council]]
+      established_event1 = [[Transnistrian Declaration of Independence|Independence]] from [[Mold
+      established_date1 = 2 September 1990
+      established_event2 = Independence from [[Soviet Union]] declared
+      established_date2 = 25 August 1991
+      established_event3 = Succeeds the [[Pridnestrovian Moldavian Soviet Socialist Republic]]
+      established_date3 = 5 November 1991<ref>The Supreme Soviet changed the official name of th
+      established_event4 = [[Transnistria War]]
+      established_date4 = 2 March{{snd}}1 July 1992
+      area_km2 = 4,163
+      area_rank = <!-- 172 see hereafter -->
+      area_sq_mi = 1,607<!-- Do not remove per [[WP:MOSNUM]] -->
+      percent_water = 
+    * population_census = {{decreaseNeutral}} 475,373<ref name="2015census"/>
+    * population_estimate = {{increaseNeutral}} 367,776 (Moldovan estimate)<ref>{{cite web |url=https://gov.md/ro/content/peste-358-mii-de-locuitori-din-regiunea-transnistreana-sunt-cetateni-ai-republicii-moldova |title=Peste 358 mii de locuitori din Regiunea Transnistreană dețin cetățenia Republicii Moldov
+    * population_estimate_year = March 2024
+    * population_estimate_rank = 
+    * population_census_year = 2015
+    * population_density_km2 = 73.5
+    * population_density_sq_mi = 
+    * population_density_rank = 
+      GDP_nominal_year = 2021<ref>{{cite web |url=http://cbpmr.net/data/prbvd249_1.pdf |title=М
+      GDP_nominal = €1.0 billion ([[Economy of Moldova#Regional GDP|4th]])
+      GDP_nominal_rank = 
+      GDP_nominal_per_capita = €2,200
+      GDP_nominal_per_capita_rank = 
+      GDP_PPP = 
+      GDP_PPP_year = 
+      GDP_PPP_rank = 
+      GDP_PPP_per_capita = 
+      GDP_PPP_per_capita_rank = 
+      Gini = <!-- number only -->
+      Gini_year = 
+      Gini_change = <!-- increase/decrease/steady -->
+      Gini_ref = 
+      HDI = <!-- number only -->
+      HDI_year = 
+      HDI_change = <!-- increase/decrease/steady -->
+      HDI_ref = 
+      currency = [[Transnistrian ruble]]
+      currency_code = <!-- The Transnistrian ruble doesnt have an official ISO 4217 currency
+      time_zone = [[Eastern European Time|EET]]
+      utc_offset = +2
+      utc_offset_DST = +3
+      time_zone_DST = [[Eastern European Summer Time|EEST]]
+      calling_code = [[Telephone numbers in Transnistria|+373]]{{efn|+373 5 and +373 2.}} }
+  -- sections --
+    [] no table
+    [Toponymy and terminology] no table
+    [History] no table
+    [Soviet and Romanian administration] no table
+    [Secession] no table
+    [Transnistria War] no table
+    [Post-war period] no table
+    [Geography] no table
+    [Government and politics] no table
+    [Administrative divisions] 1 table(s)
+      ref: {{Cite web |date=18 March 2009 |title=2004 Census: PMR urban, multilingual, multicultural {{!}} Pridnestrovie.net - Tiraspol, PMR: Pridnestrovskaia Moldavskaia Respublica (Transnistria) |url=http://pridnestrovi
+      table 1: 8 rows
+        Name | Capital | Area | Population (2025) | Ethnic composition (2004)
+        Camenca District (Camenca, Каменка) | Camenca | km2 | 21,000 | 47.82% Moldovans, 42.55% Ukrainians, 6.89% Russians, 2.74% others
+        Rîbnița District (Rîbnița, Рыбница) | Rîbnița | km2 | 69,000 | 29.90% Moldovans, 45.41% Ukrainians, 17.22% Russians, 7.47% others
+        Dubăsari District (Dubăsari, Дубэсарь) | Dubăsari | km2 | 31,000 | 50.15% Moldovans, 28.29% Ukrainians, 19.03% Russians, 2.53% others
+        Grigoriopol District (Grigoriopol, Григориопол) | Grigoriopol | km2 | 40,000 | 64.83% Moldovans, 15.28% Ukrainians, 17.36% Russians, 2.26% others
+        Slobozia District (Slobozia, Слобозия) | Slobozia | km2 | 84,000 | 41.51% Moldovans, 21.71% Ukrainians, 26.51% Russians, 10.27% others
+        City of Tiraspol (Tiraspol, Тираспол) | Tiraspol | km2 | 126,306 | 18.41% Moldovans, 32.31% Ukrainians, 41.44% Russians, 7.82% others
+        City of Bender (Tighina, Тигина/Бендер) | Bender | km2 | 83,919 | 25.03% Moldovans, 17.98% Ukrainians, 43.35% Russians, 13.64% others
+    [Transnistria border customs dispute] no table
+    [Russian military presence in Transnistria] no table
+    [Russian invasion of Ukraine] no table
+    [Military] no table
+    [Law] no table
+    [Arms control and disarmament] no table
+    [Human rights] no table
+    [Romanian-language schools] no table
+    [LGBTQ rights] no table
+    [Status] no table
+    [International relations] no table
+    [Economy] no table
+    [Economic history] no table
+    [Macroeconomics] no table
+    [External trade] no table
+    [Economic sectors] no table
+    [Demographics] no table
+    [2015 census] no table
+    [2004 census] no table
+    [1989 census] no table
+    [Religion] no table
+    [Education] no table
+    [Culture] no table
+    [Media] no table
+    [Sport] no table
+    [See also] no table
+    [Notes] no table
+    [References] no table
+    [Further reading] no table
+    [External links] no table
+
+===== [en] 'Bălți', 51,080 bytes
+  -- infobox --
+      official_name = Bălți
+      other_name = 
+      image = {{multiple image |border = infobox |total_width = 280 |image_style = b
+      image_flag = Flag of Bălți.png
+      image_seal = Coat of Arms of Balti.png
+      image_map = Balti in Moldova (semi-secession).svg
+      map_caption = Bălți highlighted red in Moldova
+      pushpin_map = Moldova
+      pushpin_label = Bălți
+      pushpin_caption = Location within Moldova
+      coordinates = {{coord|47|46|N|27|55|E|region:MD|display=inline,title}}
+      subdivision_type = [[List of sovereign states|Country]]
+      subdivision_name = {{MDA}}
+      subdivision_type2 = [[List of localities in Moldova|Communes]]
+      subdivision_name2 = [[Sadovoe]], [[Elizaveta, Moldova|Elizaveta]]
+      established_title = Founded
+      established_date = 1620<ref>{{Cite journal |last=Marșalcovschi |first=Teo-Teodor |date=20
+      established_title2 = [[Town privileges|City rights]]
+      established_date2 = 1803<ref>[[Theodor Codrescu|Codrescu, Th]]. ''[https://www.scribd.com/
+      government_type = [[Mayor–council government]]
+      leader_title = [[Mayor of Bălți|Mayor]]
+      leader_name = [[Alexandr Petkov]]
+      area_total_km2 = 
+      elevation_footnotes = 
+      area_metro_km2 = 77.6
+      elevation_m = 59
+    * population_footnotes = <ref>{{Cite web |date=2026-02-27 |title=Rezultatele finale ale Recensământului Populației și Locuințelor 2024 |url=https://statistica.gov.md/ro/statistic_indicator_details/60 |access-date=2026-02-27 |website=Rezultatele finale ale Recensământului Populației și Locuințelor 2024 |l
+    * population_total = 90954
+    * population_as_of = [[2024 Moldovan census|2024]]
+    * population_density_km2 = auto
+      time_zone = [[Eastern European Time|EET]]
+      utc_offset = +2
+      time_zone_DST = [[Eastern European Summer Time|EEST]]
+      utc_offset_DST = +3
+      postal_code_type = Postal code
+      postal_code = MD-3100
+      area_code = +373 231 X-XX-XX
+      custom_label_sec1 = [[Vehicle registration plate|Licence plate]]
+      custom_data_sec1 = BL XX 000/ XXX 000
+      website = [http://www.balti.md/ Official website]
+      name = 
+    * population_metro = 94,546
+    * population_metro_footnotes = <br>Note: In this infobox, the "Metro" is the municipality (including Bălți, [[Elizaveta, Moldova|Elizaveta]], and [[Sadovoe, Moldova|Sadovoe]]), while the "Municipality" is the city of Bălți proper.
+    * population_density_metro_km2 = auto
+    * population_rank = 2
+      type = [[Municipiu|Municipality]]
+      leader_party = [[Our Party (Moldova)|Our Party]] }}
+  -- sections --
+    [] no table
+    [Name] no table
+    [History and symbols] no table
+    [Coat of arms] no table
+    [Flag] no table
+    [Geography] no table
+    [Neighbourhoods] no table
+    [Cityscape] no table
+    [Architecture] no table
+    [Climate] no table
+    [Seismology] no table
+    [Demographics] no table
+    [Social aspects] no table
+    [Pre-WWII Jewish Community] no table
+    [Culture and contemporary life] no table
+    [Entertainment and performing arts] no table
+    [Media] no table
+    [Civil society] no table
+    [Sports] no table
+    [Economy] no table
+    [Manufacturing] no table
+    [Shopping] no table
+    [Health facilities] no table
+    [Government] no table
+    [Politics] no table
+    [Military] no table
+    [Education] no table
+    [Primary and Secondary Education] no table
+    [Higher education] no table
+    [Historical monuments and architecture] no table
+    [Transport] no table
+    [Public transport] 1 table(s), not a composition: colspan=2|Line Length In service from Number of stations Number of car
+    [Road] no table
+    [Rail] no table
+    [Air] no table
+    [Notable people] no table
+    [Trivia] no table
+    [International relations] no table
+    [Twin towns – sister cities] no table
+    [Consulates] no table
+    [Notes and references] no table
+    [Further reading] no table
+    [External links] no table
+
+wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/europe_wiki_probe.log
