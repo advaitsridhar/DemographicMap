@@ -17755,6 +17755,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "SDN-WP-west-darfur",
+    "level": "admin1",
+    "name": "West Darfur",
+    "parent": "SDN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1900000,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, West Darfur (infobox), which gives the figure as approximate"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/West_Darfur",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SDN",
+    "shape_id": "86620642B73786067507541",
+    "match_by": "shape_id"
+  },
+  {
     "id": "SDN-WP-west-kordofan",
     "level": "admin1",
     "name": "West Kordofan",
