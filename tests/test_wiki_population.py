@@ -845,16 +845,38 @@ class AFailedDeclarationIsFinal(unittest.TestCase):
 
 
 class AShapeNoArticleIsTheWholeOf(AFailedDeclarationIsFinal):
-    """Oman's Az Zahirah holds Al Buraimi and Musandam too."""
+    """A shape declared unreadable is not searched for a part to publish as it."""
+
+    def setUp(self):
+        super().setUp()
+        self.saved_unreadable = dict(wp.UNREADABLE)
+        wp.UNREADABLE[("XXX", "Az Zahirah")] = "it holds three governorates"
+
+    def tearDown(self):
+        wp.UNREADABLE.clear()
+        wp.UNREADABLE.update(self.saved_unreadable)
+        super().tearDown()
 
     def test_nothing_is_searched_for(self):
         wp.search = lambda *a, **k: {"Q1468596": {"names": ["Az Zahirah"],
                                                   "title": "Al Dhahirah Governorate"}}
         unit = {"id": "z", "name": "Az Zahirah"}
-        self.assertEqual(wp.article_for("OMN", [unit], [unit], "Oman"), {})
+        self.assertEqual(wp.article_for("XXX", [unit], [unit], "Oman"), {})
 
-    def test_the_reason_is_written_down(self):
-        self.assertIn("Musandam", wp.UNREADABLE[("OMN", "Az Zahirah")])
+
+class DeclaredComposites(unittest.TestCase):
+    """Shapes the map draws as several units, read as their articles summed."""
+
+    def test_az_zahirah_is_three_governorates(self):
+        self.assertEqual(set(wp.COMPOSITES[("OMN", "Az Zahirah")]),
+                         {"Al Dhahirah Governorate", "Al Buraimi Governorate",
+                          "Musandam Governorate"})
+
+    def test_sud_is_mainland_southern_italy(self):
+        parts = wp.COMPOSITES[("ITA", "Sud")]
+        self.assertEqual(len(parts), 6)
+        self.assertNotIn("Sicily", parts)
+        self.assertNotIn("Southern Italy", parts)
 
 
 class ADeclarationOverridesTheBuildsJoin(AFailedDeclarationIsFinal):

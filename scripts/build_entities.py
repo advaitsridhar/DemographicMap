@@ -165,6 +165,10 @@ ADAPTER_FILES = [
     # out blank. Every census file below overwrites it, which is the point
     # of the position: it is a floor under the field and never a ceiling.
     "wiki_population_admin1.json",
+    # The same floor for the few units no infobox holds: a figure in a list
+    # article's table, or a unit that is its country less another unit of
+    # the same census (wiki_table_population). Fill-only like the file above.
+    "wiki_table_population.json",
     # OCHA's Common Operational Dataset -- population statistics, the district
     # populations of 52 countries by P-code. It carries no composition at all,
     # only a head count, and it sits here because a head count from a national
@@ -1372,10 +1376,10 @@ DESCRIBED_FIELDS = ("religion", "language", "ethnicity", "ancestry",
 # the country's first level summed to 126% of the country.
 #
 # A statistical office's count is not replaced by an encyclopaedia's, whatever
-# order the files are read in. These two only ever fill a population nobody
+# order the files are read in. These only ever fill a population nobody
 # else has written.
 FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
-                       "wiki_population_admin1.json"})
+                       "wiki_population_admin1.json", "wiki_table_population.json"})
 FILL_ONLY_FIELDS = frozenset({"population"})
 
 
@@ -2765,10 +2769,37 @@ def check_shape_gaps(admin1: dict[str, list[dict[str, Any]]],
 # Kavango; Afrobarometer surveys each half and Wikidata counts each. Pooled,
 # the parts describe the shape exactly. Pooling is done within one source file
 # at a time, so a survey's respondents are never added to a census's people.
-SHAPE_IS_UNION_OF: dict[tuple[str, str], tuple[str, ...]] = {
+#
+# A part may be a tuple of spellings, one per source that names it differently.
+# Greece is the case that needs it. The map draws the seven decentralized
+# administrations of 2011, and every source publishes the thirteen regions
+# inside them: Wikidata in English ("Thessaly Region") and Eurostat in
+# transliterated Greek ("Thessalia"). Left unpooled, a region's row is not a
+# gap -- it is a wrong answer. "Thessalia" prefix-matched "Thessalia-Central
+# Greece" and put Thessaly's 676,040 people and median age on a shape that
+# also holds Central Greece; Wikidata's "Eastern Macedonia and Thrace" matched
+# "Macedonia-Thrace" and gave it 562,201 people and Komotini for a capital,
+# where the administration also holds Central Macedonia's 1.8 million.
+SHAPE_IS_UNION_OF: dict[tuple[str, str], tuple[str | tuple[str, ...], ...]] = {
     ("NAM", "Kavango"): ("Kavango East", "Kavango West"),
     ("GRD", "Southern Grenadine Islands"): ("Carriacou Island", "Petite Martinique"),
+    ("GRC", "Macedonia-Thrace"): (("Central Macedonia", "Kentriki Makedonia"),
+                                  ("Eastern Macedonia and Thrace",
+                                   "Anatoliki Makedonia, Thraki")),
+    ("GRC", "Thessalia-Central Greece"): (("Thessaly", "Thessalia"),
+                                          ("Central Greece", "Sterea Elláda")),
+    ("GRC", "Egean"): (("North Aegean", "Voreio Aigaio"),
+                       ("South Aegean", "Notio Aigaio")),
+    ("GRC", "Epirus-Western Macedonia"): (("Epirus", "Ipeiros"),
+                                          ("Western Macedonia", "Dytiki Makedonia")),
+    ("GRC", "Peloponisos-W. Greece & Ionian"): (("Peloponnese", "Peloponnisos"),
+                                                ("West Greece", "Dytiki Elláda"),
+                                                ("Ionian Islands", "Ionia Nisia")),
 }
+
+
+def spellings(part: str | tuple[str, ...]) -> tuple[str, ...]:
+    return (part,) if isinstance(part, str) else part
 
 # A source row that covers ground the boundary file has since divided. Bueng
 # Kan was carved from Nong Khai in 2011; the 2000 census row for Nong Khai
@@ -2826,6 +2857,8 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
             if key not in seen:
                 seen.add(key)
                 pooled["sources"].append(src)
+    listed = [p["name"] for p in parts]
+    names = ", ".join(listed[:-1]) + " and " + listed[-1] if len(listed) > 1 else listed[0]
     pops = [published(p.get("population")) for p in parts]
     if all(v is not None for v in pops):
         first = dict(parts[0]["population"])
@@ -2833,8 +2866,10 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
         years = {vintage(p.get("population")) for p in parts}
         if len(years) != 1:
             first.pop("year", None)
+        # A sum says it is one: no row this source published has this figure.
+        first["note"] = (f"The sum of the figures published for {names}; "
+                         f"the boundary file draws them as one unit.")
         pooled["population"] = first
-    names = " and ".join(p["name"] for p in parts)
     for field in ROLLUP_FIELDS:
         lists = [p.get(field) for p in parts]
         if not all(isinstance(v, list) and shares_of(v) for v in lists):
@@ -2880,11 +2915,13 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
 def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
     """Replace each declared union's parts with one row named for the shape."""
     done: list[str] = []
-    for (iso3, shape_name), part_names in SHAPE_IS_UNION_OF.items():
+    for (iso3, shape_name), parts in SHAPE_IS_UNION_OF.items():
         rows = adapters.get(iso3, [])
+        # Each part is known by its first spelling.
+        part_names = tuple(spellings(p)[0] for p in parts)
         # Matched the way the shapes are: Afrobarometer writes "Kavango East"
         # and Wikidata "Kavango East Region", and norm() reads those alike.
-        wanted = {norm(p): p for p in part_names}
+        wanted = {norm(s): spellings(p)[0] for p in parts for s in spellings(p)}
         by_file: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
         for row in rows:
             part = wanted.get(norm(row.get("name")))
@@ -3287,9 +3324,28 @@ def add_known_as(index: dict[str, list[dict[str, Any]]],
 # Keyed by the Wikidata item, so it can only ever move the row it names; the
 # value is the polygon's label as the boundary file writes it. A label that is
 # not drawn stops the build rather than letting the row fall back to a name.
+# A source row the name matcher would put on a shape it does not describe,
+# keyed by the row's Wikidata item, with what the row is instead. Wikidata's
+# first level for Ivory Coast is still the nineteen regions of 1997, and the
+# map draws the fourteen districts of 2011. Three old regions share a name
+# with a district and not its ground, and each was joined by name alone.
+NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
+    ("CIV", "Q639491"): ("the Lagunes region of 1997-2011, which held Abidjan: its "
+                         "5,336,658 people and its capital are mostly Abidjan's, and "
+                         "the Lagunes District of 2011 leaves Abidjan out"),
+    ("CIV", "Q839083"): ("Marahoué Region, one of the two regions Sassandra-Marahoué "
+                         "District holds; its 981,179 people and Bouaflé leave out "
+                         "Haut-Sassandra and the district's capital, Daloa"),
+    ("CIV", "Q845706"): ("the Lacs region of 1997-2011, whose capital Yamoussoukro is "
+                         "now an autonomous district of its own; the Lacs District's "
+                         "capital is Dimbokro"),
+}
+
 PLACED: dict[tuple[str, str], str] = {
     ("BLR", "Q2280"): "Minsk City",
     ("BLR", "Q192959"): "Minsk",
+    # "monastic community of Mount Athos" shares no word with "Agion Oros".
+    ("GRC", "Q780149"): "Agion Oros",
 }
 
 
@@ -3780,7 +3836,7 @@ def main() -> int:
                            *admin2_by_country.get(iso3, []))
             if entity.get("id")}
         claimed: dict[int, str] = {}
-        hit = miss = ambiguous = outside = collided = declared = 0
+        hit = miss = ambiguous = outside = collided = declared = turned = 0
         matched: list[tuple[dict[str, Any], dict[str, Any], str]] = []
         deferred: list[tuple[dict[str, Any], dict[str, Any]]] = []
         # Which value fields each shape has already been given, and by a row
@@ -3802,6 +3858,12 @@ def main() -> int:
             # kind that cannot become a wrong answer.
             if row.get("no_shape"):
                 declared += 1
+                miss += 1
+                continue
+            elsewhere = NOT_THIS_SHAPE.get((iso3, row.get("wikidata") or ""))
+            if elsewhere:
+                log(f"  {iso3} {row.get('name')}: not joined -- it is {elsewhere}")
+                turned += 1
                 miss += 1
                 continue
             row = placed(iso3, row, admin1_by_country.get(iso3, []))
@@ -3995,6 +4057,7 @@ def main() -> int:
                    f"{outside} outside their stated parent" if outside else "",
                    f"{collided} beaten to their shape by another row" if collided else "",
                    f"{declared} with no boundary, as declared" if declared else "",
+                   f"{turned} declared to be other ground" if turned else "",
                    f"{aka} shapes reachable under a declared second name"
                    if aka else ""]
             extra = " (" + ", ".join(w for w in why if w) + ")" if any(why) else ""
