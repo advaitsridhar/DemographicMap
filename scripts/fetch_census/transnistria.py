@@ -27,7 +27,9 @@ So this writes two kinds of figure, and says which is which:
   mother tongue). This assumes that a Russian, a Ukrainian or a Moldovan on
   the left bank answers as one on the right bank does, which is the weak
   point: the left bank is more Russian-speaking than that, so the estimate
-  understates Russian as a mother tongue. People whose ethnicity the 2015
+  understates Russian as a mother tongue. Moldovan and Romanian are given
+  as one bar, the census's own sum of the two, because which name is used
+  differs between the banks. People whose ethnicity the 2015
   census did not record -- a fifth of Bender's -- are given the unit's
   declared mix. Ethnicities with no row of their own in Moldova's table
   ("Transnistrians", "other") are given the pooled rows of the smaller
@@ -94,6 +96,12 @@ LABELS = {
                  "germana": "German", "poloneza": "Polish"},
 }
 REST = {"religion": "Other religion", "language": "Other"}
+# Which of the two names a Moldovan gives the language is a matter of identity
+# on the right bank, where 31% of Moldovans call it Romanian, and of the
+# official name on the left, where it is "Moldovan" and written in Cyrillic.
+# The right bank's split would be carried across by the model and mean
+# nothing there, so the model gives the census's own sum of the two.
+JOINED = {"Moldovan": "Moldovan or Romanian", "Romanian": "Moldovan or Romanian"}
 SHEETS = {"religion": "5.35", "language": "5.33"}
 FLOOR = 0.1   # below this share a modelled group joins the remainder
 
@@ -249,6 +257,8 @@ def modelled(field: str, ethnic: dict[str, int], rate: dict[str, dict[str, float
     mix: dict[str, float] = {}
     for group, n in declared.items():
         for answer, p in rate[group].items():
+            if field == "language":
+                answer = JOINED.get(answer, answer)
             mix[answer] = mix.get(answer, 0.0) + 100.0 * p * n / total
     rest = REST[field]
     kept = {g: v for g, v in mix.items() if v >= FLOOR or g == rest}
@@ -306,7 +316,11 @@ def records(ethnic: dict[str, dict[str, int]], rate: dict[str, dict[str, dict[st
                       f"bank is more Russian-speaking, so this understates Russian"
                       + (" as a mother tongue" if field == "language" else "") +
                       f". People whose ethnicity was not recorded are given the declared "
-                      f"mix."))
+                      f"mix."
+                      + (" Moldovan and Romanian are given as one, the census's own sum: "
+                         "which name people use differs between the banks, and the "
+                         "right bank's split would mean nothing here."
+                         if field == "language" else "")))
             fields[field] = value
             fields[f"{field}_note"] = value["note"]
         for level in ("admin1", "admin2"):

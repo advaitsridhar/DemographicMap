@@ -149,6 +149,12 @@ class TheModel(unittest.TestCase):
         self.assertTrue(85 < shares["Orthodox"] < 92, shares["Orthodox"])
         self.assertIn("Old Believer", shares)
 
+    def test_moldovan_and_romanian_are_one_bar(self):
+        rows = t.modelled("language", self.ethnic[t.BENDER], self.rate["language"])
+        groups = {r["group"] for r in rows}
+        self.assertIn("Moldovan or Romanian", groups)
+        self.assertFalse({"Moldovan", "Romanian"} & groups)
+
     def test_the_undeclared_are_given_the_declared_mix(self):
         # Doubling the undeclared changes nothing.
         more = dict(self.ethnic[t.BENDER], **{"Not declared": 36470})
