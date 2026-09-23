@@ -18,7 +18,19 @@ window.DataStore = (function () {
   // maps here already stop a shard being fetched twice in one session, which
   // is all the caching this needs.
   let version = "";
-  const byId = new Map();                 // shapeID -> record
+  // One map per level, and one over all of them.
+  //
+  // A shapeID is not unique across levels: 334 polygons are drawn at both,
+  // under one id -- every one of Moldova's 37 districts among them. Keyed by id
+  // alone, the second level's records replaced the first's the moment a
+  // district was clicked (which loads the level below), and the first-level
+  // layer, painted from records of its own level, went blank. Each level now
+  // keeps its own, and the shared map prefers the shallower record, which is
+  // the one a caller that does not say which level means.
+  const byLevel = { admin0: new Map(), admin1: new Map(), admin2: new Map() };
+  const DEPTH = { admin0: 0, admin1: 1, admin2: 2 };
+  const LEVEL_KEYS = ["admin0", "admin1", "admin2"];
+  const byId = new Map();                 // shapeID -> record, the shallowest level's
   const countryRecords = new Map();       // ISO3 -> admin-0 record
   const childrenOf = new Map();           // parent id -> [record]
   const loaded = { admin0: false, admin1: new Set(), admin2: new Set() };
@@ -71,7 +83,12 @@ window.DataStore = (function () {
 
   function index(records) {
     for (const record of records) {
-      byId.set(record.id, record);
+      if (byLevel[record.level]) byLevel[record.level].set(record.id, record);
+      const held = byId.get(record.id);
+      if (!held || !(held.level in DEPTH) || !(record.level in DEPTH)
+          || DEPTH[record.level] <= DEPTH[held.level]) {
+        byId.set(record.id, record);
+      }
       const parent = record.parent;
       if (parent) {
         if (!childrenOf.has(parent)) childrenOf.set(parent, []);
@@ -120,10 +137,8 @@ window.DataStore = (function () {
 
   function childrenOfCountry(iso3, level) {
     const out = [];
-    for (const record of byId.values()) {
-      if (record.country === iso3 && record.level === (level === 1 ? "admin1" : "admin2")) {
-        out.push(record);
-      }
+    for (const record of byLevel[level === 1 ? "admin1" : "admin2"].values()) {
+      if (record.country === iso3) out.push(record);
     }
     return out;
   }
@@ -169,7 +184,18 @@ window.DataStore = (function () {
     return groups;
   }
 
-  function get(id) { return byId.get(id) || null; }
+  /** The record for ``id``; at ``level`` (0-2 or "admin0".."admin2") where
+   *  the caller knows which, since one id can be drawn at two levels. */
+  function get(id, level) {
+    const key = typeof level === "number" ? LEVEL_KEYS[level] : level;
+    const hit = key && byLevel[key] ? byLevel[key].get(id) : null;
+    return hit || byId.get(id) || null;
+  }
+  /** Every loaded record at one level. */
+  function atLevel(level) {
+    const key = typeof level === "number" ? LEVEL_KEYS[level] : level;
+    return byLevel[key] ? byLevel[key].values() : [].values();
+  }
   function country(iso3) { return countryRecords.get(iso3) || null; }
   function children(id) { return childrenOf.get(id) || []; }
   function countries() { return Array.from(countryRecords.values()); }
@@ -184,7 +210,7 @@ window.DataStore = (function () {
 
   return { loadPartialLevels,
            loadCountries, loadLevel, ensureLoaded, loadCoverage, loadGroups,
-           get, country, children, countries, isLoaded, all, on, url,
+           get, atLevel, country, children, countries, isLoaded, all, on, url,
            loadVersion };
 })();
 

@@ -204,6 +204,20 @@ def units(field: str, rows: list[tuple[Any, ...]]) -> list[dict[str, Any]]:
     return out
 
 
+# The workbook writes s and t with a cedilla (ş, ţ), the legacy encoding, and
+# prefixes the municipalities and the autonomous unit with their status. A
+# row bound to a shape names it, so these would become the map's labels:
+# "Mun. Chişinău", "UTA Găgăuzia". The map shows the name, in Romanian's own
+# letters, and Gagauzia as English writes it.
+CEDILLA = str.maketrans("şţŞŢ", "șțȘȚ")
+SHOWN = {"Găgăuzia": "Gagauzia"}
+
+
+def display(name: str) -> str:
+    name = re.sub(r"^(Mun\.|UTA)\s+", "", name.strip()).translate(CEDILLA)
+    return SHOWN.get(name, name)
+
+
 def key(name: str) -> str:
     """A unit's name as the boundary file and the workbook can both be folded to."""
     folded = fold(name)
@@ -248,7 +262,7 @@ def build(workbook: Any, drawn: dict[str, dict[str, str]]) -> list[dict[str, Any
             if not shape:
                 raise SystemExit(f"moldova_census: {unit['name']!r} is not a {level} shape")
             records.append(record(
-                f"MDA-census-{level}-{k}", unit["name"], level=level, parent="MDA",
+                f"MDA-census-{level}-{k}", display(unit["name"]), level=level, parent="MDA",
                 country="MDA", shape_id=shape, match_by="shape_id",
                 sources=[{"field": field,
                           "name": SOURCE.format(table=SHEETS[field]),
@@ -269,7 +283,7 @@ def main() -> int:
     workbook = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
     records = build(workbook, shapes())
     for r in records:
-        if r["level"] == "admin1" and r["name"] in ("Mun. Bălţi", "Briceni"):
+        if r["level"] == "admin1" and r["name"] in ("Bălți", "Briceni"):
             top = ", ".join(f"{g['group']} {g['pct']}" for g in r["religion"][:4])
             log(f"  {r['name']}: religion {top}")
     log(f"  {len(records)} records, {len(records) // 2} units at two levels")

@@ -687,8 +687,40 @@ function anEstimateIsColouredLikeAReading() {
   assert.ok(!images.has("estimate-hatch"), "and no hatch comes back with it");
 }
 
+// Moldova draws its 37 districts at both levels under the same ids, and
+// selecting a district loads the level below. Keyed by id alone, those records
+// replaced the first level's, and every district on the map went blank.
+async function anIdDrawnAtTwoLevelsKeepsBothRecords() {
+  const shards = { "admin1/MDA.json": data("admin1/MDA.json"),
+                   "admin2/MDA.json": data("admin2/MDA.json") };
+  const context = vm.createContext({
+    window: {}, console,
+    fetch: async (url) => ({
+      ok: true,
+      json: async () => url.includes("build.json") ? { version: "test" }
+        : shards[Object.keys(shards).find((key) => url.includes(key))],
+    }),
+  });
+  vm.runInContext(source("data.js"), context);
+  const store = context.window.DataStore;
+  await store.loadLevel("MDA", 1);
+  await store.loadLevel("MDA", 2);
+  const first = Array.from(store.atLevel(1)).filter((r) => r.country === "MDA");
+  const second = Array.from(store.atLevel(2)).filter((r) => r.country === "MDA");
+  assert.strictEqual(first.length, shards["admin1/MDA.json"].length,
+                     "every district is still a first-level record after the level below loads");
+  assert.strictEqual(second.length, shards["admin2/MDA.json"].length);
+  const shared = first.find((r) => second.some((s) => s.id === r.id));
+  assert.ok(shared, "Moldova still shares ids across the levels, or this test proves nothing");
+  assert.strictEqual(store.get(shared.id).level, "admin1", "an unqualified lookup is the shallower");
+  assert.strictEqual(store.get(shared.id, 2).level, "admin2");
+  assert.strictEqual(store.get(shared.id, "admin1").level, "admin1");
+  assert.strictEqual((await store.loadLevel("MDA", 1)).length, first.length);
+}
+
 (async () => {
   await concurrentLoadsAreIndexedOnce();
+  await anIdDrawnAtTwoLevelsKeepsBothRecords();
   await deepSearchWaitsForTheSecondShard();
   uncertainSharesKeepTheirQualifier();
   mapStateSurvivesThemeChangesAndUsesRepresentativePoints();

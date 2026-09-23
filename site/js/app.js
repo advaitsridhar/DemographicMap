@@ -568,12 +568,9 @@
   }
 
   function currentRecords() {
-    const wanted = ["admin0", "admin1", "admin2"][window.WorldMap.getLevel()];
-    const out = [];
-    for (const record of window.DataStore.all().values()) {
-      if (record.level === wanted) out.push(record);
-    }
-    return out;
+    // From the level's own records: an id drawn at two levels has a record at
+    // each, and reading the shared map found only one of them.
+    return Array.from(window.DataStore.atLevel(window.WorldMap.getLevel()));
   }
 
   /* --------------------------------------------------------- the group list */
@@ -1096,11 +1093,14 @@
 
   async function selectEntity(id, opts) {
     const options = opts || {};
-    let record = window.DataStore.get(id);
+    // At the level it was picked from, where the caller knows it: Moldova's
+    // districts are drawn at both levels under one id.
+    let record = window.DataStore.get(id, options.level);
 
-    if (!record && options.country) {
+    if ((!record || (options.level != null && record.level !== ["admin0", "admin1", "admin2"][options.level]))
+        && options.country) {
       await window.DataStore.loadLevel(options.country, options.level === 2 ? 2 : 1);
-      record = window.DataStore.get(id);
+      record = window.DataStore.get(id, options.level);
     }
     if (!record) { status("No data record for that unit"); return; }
 
@@ -1145,7 +1145,7 @@
   /* ----------------------------------------------------------- map events */
 
   function hoverHTML(id, properties) {
-    const record = window.DataStore.get(id);
+    const record = window.DataStore.get(id, window.WorldMap.getLevel());
     const name = (record && record.name) || properties.shapeName || id;
     const bits = [];
     if (record) {

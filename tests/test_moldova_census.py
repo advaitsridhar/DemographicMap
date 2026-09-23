@@ -177,6 +177,16 @@ class Records(unittest.TestCase):
         finally:
             m.UNITS = saved
 
+    def test_the_map_is_given_the_name_not_the_workbook_s_label(self):
+        # A bound row names its shape; "Mun. Chişinău" was on the map.
+        self.assertEqual(m.display("Mun. Chişinău"), "Chișinău")
+        self.assertEqual(m.display("Mun. Bălţi"), "Bălți")
+        self.assertEqual(m.display("UTA Găgăuzia"), "Gagauzia")
+        self.assertEqual(m.display("Ştefan Vodă"), "Ștefan Vodă")
+        self.assertEqual(m.display("Briceni"), "Briceni")
+        names = {r["name"] for r in self.records()}
+        self.assertEqual(names, {"Bălți", "Briceni"})
+
     def test_the_workbook_s_names_fold_to_the_boundary_file_s(self):
         self.assertEqual(m.key("Mun. Bălţi"), m.key("Balti"))
         self.assertEqual(m.key("UTA Găgăuzia"), m.key("Gagauzia"))
