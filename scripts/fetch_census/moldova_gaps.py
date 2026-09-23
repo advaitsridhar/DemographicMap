@@ -78,7 +78,12 @@ RO_ETHNIC = {
     "evrei": "Jewish", "belarusi": "Belarusian", "germani": "German",
     "armeni": "Armenian", "altii": "Other", "alte": "Other",
     "moldoveni/romani": "Moldovan or Romanian",
+    "nedeclarat": "Not declared", "nedeclarata": "Not declared",
 }
+
+# Rows of a table that are not groups: a sub-header, the total, and the
+# citation some articles put in a row of its own under the table.
+NOT_A_GROUP = {"numar", "total", "totallocuitori"}
 
 TRANSNISTRIA = "Transnistria"
 TR_LABELS = {"moldovans": "Moldovan", "ukrainians": "Ukrainian",
@@ -119,22 +124,40 @@ def welded(row: list[str]) -> list[list[str]]:
 
 
 def ro_table(wikitext: str) -> tuple[list[list[str]], str]:
-    """The ethnic structure table and the text of its section."""
+    """The ethnic structure table, header included, and the text of its section."""
     for heading, body in sections(wikitext):
         if "etnic" in fold(heading):
             for table in tables(body):
                 if table and "grup" in fold(table[0][0] if table[0] else ""):
-                    return table[1:], body
+                    return table, body
     return [], ""
 
 
-def ro_composition(rows: list[list[str]]) -> tuple[list[dict[str, Any]] | None, str]:
+def latest(header: list[str]) -> tuple[int | None, int]:
+    """The newest census a table's header names, and the column of its count.
+
+    Balti's table gives every census from 1959 to 2024, a count and a share
+    for each, so the count for the k-th year is column 1 + 2k. A table with
+    one set of figures and no years in its header is read from column 1.
+    """
+    years = [(k, int(c)) for k, c in enumerate(y for y in header[1:]
+                                               if re.fullmatch(r"(?:19|20)\d\d", y.strip()))]
+    if len(years) < 2:
+        return None, 1
+    k, year = max(years, key=lambda kv: kv[1])
+    return year, 1 + 2 * k
+
+
+def ro_composition(rows: list[list[str]], column: int = 1
+                   ) -> tuple[list[dict[str, Any]] | None, str]:
     counts: dict[str, int] = {}
     unknown = []
     for raw in rows:
-        for row in welded(raw):
+        if not raw or fold(raw[0]) in NOT_A_GROUP or raw[0].lstrip().startswith(("[", "http")):
+            continue
+        for row in (welded(raw) if column == 1 else [raw]):
             label = RO_ETHNIC.get(fold(row[0]))
-            n = count(row[1]) if len(row) > 1 else None
+            n = count(row[column]) if len(row) > column else None
             if label is None:
                 unknown.append(row[0])
                 continue
@@ -215,12 +238,14 @@ def main() -> int:
         if not table:
             log(f"{name}: ro:{landed} has no ethnic structure table; left as it was")
             continue
-        comp, why = ro_composition(table)
+        column_year, column = latest(table[0])
+        comp, why = ro_composition(table[1:], column)
         if comp is None:
             log(f"{name}: ro:{landed}: {why}; left as it was")
             continue
-        year = year_of(body)
-        dated = (f"for {year}, from the census its citation names" if year
+        year = column_year or year_of(body)
+        dated = (f"for {year}, the newest of the censuses its columns give" if column_year
+                 else f"for {year}, from the census its citation names" if year
                  else "with no year: the table names none and cites nothing that does")
         note = (f"Ethnic structure as the ro.wikipedia article '{landed}' gives it, "
                 f"{dated}. Shares computed from the table's own counts. Not the 2024 "

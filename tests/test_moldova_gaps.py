@@ -103,3 +103,37 @@ class Transnistria(unittest.TestCase):
         shares, _ = m.transnistria()
         self.assertEqual({r["group"]: r["pct"] for r in shares["Bender"]},
                          {"Moldovan": 25.03, "Ukrainian": 17.98, "Russian": 43.35, "Other": 13.64})
+
+
+BALTI = [
+    ["Grup etnic", "1959", "1970", "1979", "1989", "2004", "2014", "2024"],
+    ["Număr", "%", "Număr", "%", "Număr", "%", "Număr", "%", "Număr", "%", "Număr", "%", "Număr", "%"],
+    ["Moldoveni/Români", "16.100", "24.35", "29.000", "28.59", "41.400", "33.63", "63.876", "40.64", "65.079", "53.05", "56.078", "57.26", "67.606", "74.32"],
+    ["Ucraineni", "16.400", "24.81", "25.800", "25.44", "33.400", "27.13", "40.804", "25.97", "29.668", "24.18", "16.976", "17.33", "12.156", "13.36"],
+    ["Ruși", "20.700", "31.31", "30.300", "29.88", "33.700", "27.37", "38.309", "24.39", "24.341", "19.84", "14.982", "15.29", "9428", "10.36"],
+    ["Romi", "", "", "", "", "", "", "305", "0.19", "272", "0.22", "154", "0.15", "144", "0.15"],
+    ["Bulgari", "70", "0.10", "200", "0.19", "300", "0.24", "426", "0.27", "296", "0.24", "187", "0.19", "136", "0.14"],
+    ["Găgăuzi", "30", "0.04", "200", "0.19", "300", "0.24", "534", "0.33", "234", "0.19", "126", "0.12", "114", "0.12"],
+    ["Evrei", "11.600", "17.54", "12.900", "12.72", "10.500", "8.52", "8903", "5.66", "409", "0.33", "", "", "", ""],
+    ["Alții", "", "", "", "", "", "", "2477", "1.57", "1514", "1.23", "1423", "1.45", "1067", "1,17"],
+    ["Nedeclarat", "", "", "", "", "", "", "", "", "", "", "8004", "8.17", "303", "0.33"],
+    ["Total", "66.100", "101.400", "123.100", "157.068", "122.669", "97.930", "90.954"],
+    ["[https://statistica.gov.md/ro/rezultatele-finale Biroul Național de Statistică]"],
+]
+
+
+class BaltiEveryCensusSince1959(unittest.TestCase):
+    def test_the_newest_column_is_read(self):
+        year, column = m.latest(BALTI[0])
+        self.assertEqual((year, column), (2024, 13))
+        got, why = m.ro_composition(BALTI[1:], column)
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got}
+        self.assertAlmostEqual(shares["Moldovan or Romanian"], 74.33, places=1)
+        self.assertAlmostEqual(shares["Ukrainian"], 13.36, places=1)
+        self.assertEqual(sum(r["count"] for r in got), 90954)
+        # Nobody in 2024 is reported Jewish, and the 1959 figure does not leak in.
+        self.assertNotIn("Jewish", shares)
+
+    def test_a_single_census_table_reads_column_one(self):
+        self.assertEqual(m.latest(["Grup etnic", "Populație", "% Procentaj"]), (None, 1))
