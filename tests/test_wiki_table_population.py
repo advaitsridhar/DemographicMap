@@ -156,5 +156,66 @@ class AFigure(unittest.TestCase):
         self.assertEqual(len(row["sources"]), 1)
 
 
+DAR = """{| class="wikitable"
+! colspan=3 | Districts of Dar es Salaam Region
+|-
+! District !! Population (2022) !! Area km<sup>2</sup>
+|-
+| Ilala District || 1,649,912 || 210
+|-
+| '''Dar es Salaam Region''' || '''5,383,728''' || 1,393
+|}"""
+
+# As the page renders the list of Ivory Coast's districts: the district name
+# spans four columns and the district figure two.
+IVORY = """<table><tr><th>Map no.</th><th>District</th><th>District capital</th><th>Regions</th>
+<th>Region seat</th><th>Population<br>(District)</th><th>Population Regions</th><th>Area KM²</th></tr>
+<tr><th>1</th><td colspan="4">Abidjan (District Autonome d'Abidjan)</td>
+<td colspan="2">4,707,404</td><td>2,119 (818)</td></tr>
+<tr><th>13</th><td colspan="4">Yamoussoukro (District Autonome de Yamoussoukro)</td>
+<td colspan="2">355,573</td><td>3,500 (1,350)</td></tr></table>"""
+
+CAPE = """<table><tr><th>Map #</th><th>Municipality</th><th>Island(s)</th><th>Area (km<sup>2</sup>)</th>
+<th>Population<br>(2010 census)<sup>[2]</sup></th><th>Population<br>(2021 Census)<sup>[3]</sup></th></tr>
+<tr><td>72</td><td>Municipality of Santa Catarina</td><td>Santiago</td><td>242.6</td><td>43,297</td><td>37,472</td></tr>
+<tr><td>83</td><td>Municipality of Santa Catarina do Fogo</td><td>Fogo</td><td>153.0</td><td>5,299</td><td>4,725</td></tr></table>"""
+
+
+def rendered_as(html):
+    return lambda title: (html, title)
+
+
+class MoreTables(unittest.TestCase):
+    def test_a_caption_row_above_the_header_is_passed_over(self):
+        self.assertEqual(wt.cell(DAR, "Dar es Salaam Region", r"Population \(2022\)", 2022),
+                         (5383728, ""))
+
+    def test_a_rendered_table_expands_merged_cells(self):
+        fig = wt.FIGURES[("CIV", "District Autonome De Yamoussoukro")]
+        row = wt.figure_row("CIV", "Yamoussoukro", fig, "SHAPE", renderer=rendered_as(IVORY))
+        self.assertEqual(row["population"]["value"], 355573)
+        self.assertNotIn("year", row["population"])
+        self.assertIn("gives no year", row["population"]["source"])
+
+    def test_an_undated_reading_refuses_a_dated_column(self):
+        term = wt.Term("X", row="Municipality of Santa Catarina", column="Population",
+                       rendered=True, key="^Municipality$")
+        value, _, why = wt.term_value(term, None, renderer=rendered_as(CAPE))
+        self.assertIsNone(value)
+
+    def test_a_municipality_is_its_own_row_not_a_longer_name(self):
+        fig = wt.FIGURES[("CPV", "Santa Catarina")]
+        row = wt.figure_row("CPV", "Santa Catarina", fig, "SHAPE", renderer=rendered_as(CAPE))
+        self.assertEqual((row["population"]["value"], row["population"]["year"]), (37472, 2021))
+        fig = wt.FIGURES[("CPV", "Santa Catarina do Fogo")]
+        row = wt.figure_row("CPV", "Santa Catarina do Fogo", fig, "SHAPE",
+                            renderer=rendered_as(CAPE))
+        self.assertEqual(row["population"]["value"], 4725)
+
+    def test_a_bracketed_gloss_is_not_a_different_name(self):
+        self.assertTrue(wt.labelled("Lagunes (District des Lagunes)", "Lagunes"))
+        self.assertFalse(wt.labelled("Maputo City", "Maputo"))
+
+
 if __name__ == "__main__":
     unittest.main()

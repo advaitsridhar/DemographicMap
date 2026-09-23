@@ -956,3 +956,35 @@ class Approximately(unittest.TestCase):
     def test_an_exact_figure_carries_none(self):
         self.assertEqual(wp.read(ZAMBIA)[2], "")
         self.assertFalse(wp.approximate("2252483"))
+
+
+class ReadingsOffTheParameter(unittest.TestCase):
+    """Figures an article gives some other way than a population parameter."""
+
+    def test_a_un_template_is_recognised_and_expanded(self):
+        text = infobox(population_total="{{UN_Population|Western Sahara}}{{UN_Population|ref}}",
+                       population_note="({{UN_Population|Year}})")
+        self.assertEqual(wp.read(text), (None, None, wp.FROM_UN))
+        saved = wp.api
+        answers = {"{{UN_Population|Western Sahara}}": "590,000", "{{UN_Population|Year}}": "2024"}
+        wp.api = lambda endpoint, **p: {"expandtemplates": {"wikitext": answers[p["text"]]}}
+        try:
+            self.assertEqual(wp.un_population(text), (590000, 2024))
+        finally:
+            wp.api = saved
+
+    def test_an_uninhabited_place_reads_zero_only_where_the_article_says_so(self):
+        said = "{{Infobox islands\n| name = Senkaku Islands\n}}\nThe islands had been uninhabited."
+        self.assertEqual(wp.declared_reading("127", "Senkakus", said, "")[:2], (0, None))
+        silent = "{{Infobox islands\n| name = Senkaku Islands\n}}\nA group of islets."
+        self.assertIsNone(wp.declared_reading("127", "Senkakus", silent, "")[0])
+
+    def test_a_sole_settlement_is_read_only_where_it_is_the_only_one(self):
+        base = "{{Infobox islands\n| name = Phoenix Islands\n| country1_largest_city_population = 20\n}}\n"
+        self.assertEqual(wp.declared_reading(
+            "KIR", "Phoenix Islands", base + "Kanton is the only inhabited one.", "")[:2], (20, None))
+        self.assertIsNone(wp.declared_reading("KIR", "Phoenix Islands", base, "")[0])
+
+    def test_an_undeclared_unit_is_not_read_off_the_parameter(self):
+        text = "{{Infobox islands\n| country1_largest_city_population = 20\n}}\nuninhabited"
+        self.assertEqual(wp.declared_reading("XXX", "Nowhere", text, "why"), (None, None, "why"))

@@ -723,6 +723,12 @@ def year_of(text: str) -> tuple[int | None, str]:
 # wikitext holds none.
 PULLS_FROM_WIKIDATA = re.compile(r"\{\{[^{}]*wikidata", re.I)
 FROM_WIKIDATA = "the infobox displays Wikidata's figure"
+# An infobox that prints the UN's World Population Prospects figure through a
+# template -- Western Sahara's "{{UN_Population|Western Sahara}}" -- has no
+# number in its wikitext either. The template is expanded by the API, which is
+# the figure and the year a reader of the page sees.
+UN_TEMPLATE = re.compile(r"\{\{\s*UN[_ ]Population\s*\|\s*([^|{}]+?)\s*\}\}", re.I)
+FROM_UN = "the infobox displays the UN's World Population Prospects figure"
 
 
 def read(wikitext: str) -> tuple[int | None, int | None, str]:
@@ -748,6 +754,8 @@ def read(wikitext: str) -> tuple[int | None, int | None, str]:
             return None, None, f"{key}: zero, and the article nowhere says the place is uninhabited"
         if value is None and PULLS_FROM_WIKIDATA.search(fields[key]):
             return None, None, FROM_WIKIDATA
+        if value is None and UN_TEMPLATE.search(fields[key]):
+            return None, None, FROM_UN
         if value is None:
             return None, None, f"{key}: {tail}"
         year, why = None, ""
@@ -1181,7 +1189,7 @@ TITLES: dict[tuple[str, str], str | tuple[str, ...]] = {
     ("112", "Aksai Chin"): "Aksai Chin",
     ("114", "Demchok"): "Demchok sector",
     ("119", "Kalapani"): "Kalapani territory",
-    ("120", "Isla Brasilera"): "Brasilera Island",
+    ("120", "Isla Brasilera"): "Brazilian Island",
     ("121", "Siachen-Saltoro"): "Siachen Glacier",
     ("122", "Koualou"): "Koualou",
     ("123", "Liancourt Rocks"): "Liancourt Rocks",
@@ -1230,7 +1238,68 @@ COMPOSITES: dict[tuple[str, str], tuple[str, ...]] = {
                             "Musandam Governorate"),
     ("OMN", "Ash Sharqiyah"): ("Ash Sharqiyah North Governorate",
                                "Ash Sharqiyah South Governorate"),
+    # Kiribati's Line Islands on this map are the three inhabited northern
+    # atolls; the uninhabited southern ones lie outside the shape.
+    ("KIR", "Line Islands"): ("Kiritimati", "Tabuaeran", "Teraina"),
 }
+
+# Shapes whose boundary is drawn short of the unit its label names. Tonga's
+# Niuas is two islands, and the boundary file draws Niuafoʻou alone, so the
+# division's own article sits outside the shape and the coordinate check
+# refuses it. The label is the division's, so its figure is the division's.
+DRAWN_SHORT: dict[tuple[str, str], str] = {
+    ("TON", "Niuas"): ("the boundary file draws Niuafoʻou alone and leaves "
+                       "Niuatoputapu out, so this figure for the whole division "
+                       "counts an island the shape does not show"),
+}
+
+# A figure an article gives somewhere other than its population parameter,
+# read only where the article itself says what makes it the unit's.
+#   "uninhabited": no population parameter, and the article calls the place
+#   uninhabited -- the Senkakus, as the article puts it, "had been uninhabited".
+#   (param, phrase): the unit's only inhabited place is its largest settlement,
+#   whose parameter is read -- the Phoenix Islands are uninhabited but for
+#   Kanton, "the only inhabited one".
+READINGS_HOW: dict[tuple[str, str], str | tuple[str, str]] = {
+    ("127", "Senkakus"): "uninhabited",
+    ("KIR", "Phoenix Islands"): ("country1_largest_city_population", r"only inhabited"),
+}
+READINGS: dict[tuple[str, str], str] = {
+    ("127", "Senkakus"): "the article describes the islands as uninhabited",
+    ("KIR", "Phoenix Islands"): ("the figure for Kanton, which the article calls the "
+                                 "only inhabited island"),
+}
+
+
+def declared_reading(iso3: str, name: str, wikitext: str, remark: str
+                     ) -> tuple[int | None, int | None, str]:
+    """A figure a declaration says where to find, or the reader's own remark."""
+    how = READINGS_HOW.get((iso3, name))
+    if how == "uninhabited":
+        if re.search(r"\buninhabited\b", wikitext, re.I):
+            return 0, None, "the article describes the place as uninhabited"
+        return None, None, remark
+    if isinstance(how, tuple):
+        param, phrase = how
+        value, _ = number(params(wikitext).get(param, ""))
+        if value is not None and re.search(phrase, wikitext, re.I):
+            return value, None, f"{param}, the only inhabited place"
+    return None, None, remark
+
+
+def un_population(wikitext: str) -> tuple[int | None, int | None]:
+    """The figure and year the UN_Population template shows on the page."""
+    m = UN_TEMPLATE.search(wikitext)
+    if not m:
+        return None, None
+
+    def expand(text: str) -> str:
+        return str(((api(WIKI, action="expandtemplates", text=text, prop="wikitext")
+                     or {}).get("expandtemplates") or {}).get("wikitext") or "")
+
+    value, _ = number(expand("{{UN_Population|" + m.group(1) + "}}"))
+    year, _ = year_of(expand("{{UN_Population|Year}}"))
+    return value, year
 
 
 def declared(iso3: str, unit: dict[str, Any], country_qid: str | None,
@@ -1508,6 +1577,10 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
         if probe:
             continue
         why = refuted(item, unit.get("bbox"))
+        if why and (iso3, unit["name"]) in DRAWN_SHORT:
+            log(f"  {unit['name']} -> {title} ({item}): {why}, which is the "
+                f"boundary file's doing: {DRAWN_SHORT[(iso3, unit['name'])]}")
+            why = ""
         # The danger is the bare town name, so an article whose own title
         # says it is the division -- Libya's "Quba District", "Mizda
         # District" -- is not asked for an area Wikidata often lacks.
@@ -1530,6 +1603,11 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
             log(f"  {unit['name']} -> {title}: no wikitext")
             continue
         value, year, remark = read(wikitext)
+        if remark == FROM_UN:
+            value, year = un_population(wikitext)
+            remark = FROM_UN if value is not None else "the UN template did not expand to a figure"
+        if value is None:
+            value, year, remark = declared_reading(iso3, unit["name"], wikitext, remark)
         pulled = remark == FROM_WIKIDATA
         if pulled:
             # What the reader of the page sees is Wikidata's figure, so that
@@ -1574,6 +1652,12 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
         if r["item"]:
             where = where.replace("(infobox)", f"(infobox, which displays "
                                                f"Wikidata {r['item']}'s P1082)")
+        if r["remark"] == FROM_UN:
+            where = where.replace("(infobox)", "(infobox, which displays the UN's "
+                                               "World Population Prospects figure)")
+        said = READINGS.get((iso3, unit["name"])) or DRAWN_SHORT.get((iso3, unit["name"]))
+        if said:
+            where += f"; {said}"
         if not year:
             log(f"  {unit['name']} -> {landed}: {value:,}, undated ({r['remark']})")
         rows.append(record(

@@ -22,6 +22,10 @@ data/raw/*
 # only sometimes, so cited_sources falls back to this transcript of it.
 !data/raw/seychelles/
 !data/raw/seychelles/*.txt
+# Table 4 of the Gambia's 2013 census preliminary results, likewise read from
+# the archive's copy of the Bureau's PDF.
+!data/raw/gambia/
+!data/raw/gambia/*.txt
 # Kazakhstan's start-of-year ethnicity workbook: the Bureau's site is an
 # application with no file link to fetch it from, and it is 380 KB.
 !data/raw/kazakhstan/

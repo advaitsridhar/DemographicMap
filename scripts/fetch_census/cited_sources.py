@@ -75,7 +75,10 @@ class Tables(HTMLParser):
     """Every table's rows, as lists of cell texts, nested tables included.
 
     A cell belongs to the innermost table it sits in, so a table used for page
-    layout does not swallow the data table inside it.
+    layout does not swallow the data table inside it. A cell spanning several
+    columns is repeated once per column it spans, so a row lines up with its
+    header; one spanning rows is not carried down, and leaves the rows below it
+    short, which a reader refuses rather than guesses at.
     """
 
     def __init__(self) -> None:
@@ -83,18 +86,22 @@ class Tables(HTMLParser):
         self.tables: list[list[list[str]]] = []
         self.open: list[list[list[str]]] = []
         self.cells: list[list[str] | None] = []
+        self.spans: list[int] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         if tag == "table":
             self.open.append([])
             self.tables.append(self.open[-1])
             self.cells.append(None)
+            self.spans.append(1)
         elif not self.open:
             return
         elif tag == "tr":
             self.open[-1].append([])
         elif tag in ("td", "th") and self.open[-1]:
             self.cells[-1] = []
+            span = dict(attrs).get("colspan") or "1"
+            self.spans[-1] = int(span) if span.strip().isdigit() else 1
         elif tag == "br" and self.cells[-1] is not None:
             self.cells[-1].append(" ")
 
@@ -104,8 +111,10 @@ class Tables(HTMLParser):
         if tag == "table":
             self.open.pop()
             self.cells.pop()
+            self.spans.pop()
         elif tag in ("td", "th") and self.cells[-1] is not None:
-            self.open[-1][-1].append(" ".join("".join(self.cells[-1]).split()))
+            text = " ".join("".join(self.cells[-1]).split())
+            self.open[-1][-1].extend([text] * max(1, self.spans[-1]))
             self.cells[-1] = None
 
     def handle_data(self, data: str) -> None:
@@ -274,31 +283,35 @@ def seychelles_rows(text: str) -> tuple[dict[str, int], str]:
 TRANSCRIPT = ROOT / "data" / "raw" / "seychelles" / "nbs_mid2019_table10.txt"
 
 
-def bulletin_text() -> tuple[str, str]:
-    """(the bulletin's text, where it was read from)."""
+def archived_text(url: str, transcript: Path, made: str) -> tuple[str, str]:
+    """(an archived PDF's text, where it was read from), or the kept transcript."""
     from pypdf import PdfReader
 
-    # The PDF probe's fetch, which read this address on 23 September 2026:
+    # The PDF probe's fetch, which read these addresses on 23 September 2026:
     # the archive redirected http_get's request back to the bureau, which
     # refuses this runner.
     from probe_pdf import fetch_blob
 
     for wait in (30, 90, None):
         try:
-            blob = fetch_blob(NBS_ARCHIVED)
+            blob = fetch_blob(url)
             text = "\n".join((p.extract_text() or "")
                              for p in PdfReader(io.BytesIO(blob)).pages)
-            return text, f"the Internet Archive's copy, {NBS_ARCHIVED}"
-        except OSError as exc:  # the archive refuses or times out now and then
+            return text, f"the Internet Archive's copy, {url}"
+        except Exception as exc:  # the archive refuses, times out, or sends no PDF
             if wait is None:
-                log(f"  SYC: the archive did not answer ({exc}); reading the transcript "
-                    f"of Table 10 it gave on 23 September 2026")
+                log(f"  the archive did not answer ({exc}); reading the transcript "
+                    f"it gave on {made}")
                 break
-            log(f"  SYC: the archive did not answer ({exc}); waiting {wait}s")
+            log(f"  the archive did not answer ({exc}); waiting {wait}s")
             time.sleep(wait)
-    return (TRANSCRIPT.read_text(encoding="utf-8"),
-            f"a transcript of the Internet Archive's copy, {NBS_ARCHIVED}, "
-            f"made on 23 September 2026 and kept at data/raw/seychelles")
+    return (transcript.read_text(encoding="utf-8"),
+            f"a transcript of the Internet Archive's copy, {url}, made on {made} "
+            f"and kept at {transcript.relative_to(ROOT).parent}")
+
+
+def bulletin_text() -> tuple[str, str]:
+    return archived_text(NBS_ARCHIVED, TRANSCRIPT, "23 September 2026")
 
 
 def seychelles(drawn: dict[str, str]) -> list[dict[str, Any]]:
@@ -329,6 +342,75 @@ def seychelles(drawn: dict[str, str]) -> list[dict[str, Any]]:
     return out
 
 
+# ---------------------------------------------------------------------------
+# The Gambia
+# ---------------------------------------------------------------------------
+
+GBOS_URL = ("http://www.gbos.gov.gm/uploads/census/The%20Gambia%20Population%20and"
+            "%20Housing%20Census%202013%20Provisional%20Report.pdf")
+GBOS_ARCHIVED = "https://web.archive.org/web/2016id_/" + GBOS_URL
+GBOS_TRANSCRIPT = ROOT / "data" / "raw" / "gambia" / "gbos_2013_preliminary_table4.txt"
+GAMBIA_YEAR = 2013
+# Central River is one region and two local government areas, and every list
+# on Wikipedia gives the region; the Bureau's report, which the list of the
+# Gambia's regions cites, gives the areas.
+GAMBIA = ("Janjanbureh", "Kuntaur")
+LGA_ROW = re.compile(r"^([A-Z][a-z]+)\s+([\d,]+)\s+([\d,]+)\s+[\d.]+\s+[\d.]+$")
+
+
+def gambia_rows(text: str) -> tuple[dict[str, int], str]:
+    """{LGA: 2013 count} from Table 4, checked against its Total row."""
+    lines = [" ".join(line.split()) for line in text.splitlines()]
+    try:
+        start = next(i for i, line in enumerate(lines)
+                     if line.startswith("Table 4: Population distribution by LGA"))
+    except StopIteration:
+        return {}, "no Table 4 ('Population distribution by LGA') in the report"
+    rows: dict[str, int] = {}
+    for line in lines[start + 1:start + 20]:
+        m = LGA_ROW.match(line)
+        if m:
+            rows[m.group(1)] = int(m.group(3).replace(",", ""))
+    total = rows.pop("Total", None)
+    if total is None or len(rows) != 8:
+        return {}, f"Table 4 has {len(rows)} areas and {'a' if total else 'no'} Total row"
+    if sum(rows.values()) != total:
+        return {}, (f"the areas' {GAMBIA_YEAR} figures sum to {sum(rows.values()):,} "
+                    f"against the Total row's {total:,}")
+    missing = [a for a in GAMBIA if a not in rows]
+    if missing:
+        return {}, f"Table 4 has no row for {', '.join(missing)}"
+    return {a: rows[a] for a in GAMBIA}, ""
+
+
+def gambia(drawn: dict[str, str]) -> list[dict[str, Any]]:
+    text, via = archived_text(GBOS_ARCHIVED, GBOS_TRANSCRIPT, "23 September 2026")
+    figures, why = gambia_rows(text)
+    if why:
+        log(f"  GMB: {why}; nothing written")
+        return []
+    out = []
+    for area, value in figures.items():
+        if area not in drawn:
+            log(f"  GMB: the map draws no {area!r}; nothing written")
+            continue
+        log(f"  GMB {area}: {value:,} (Table 4, {GAMBIA_YEAR})")
+        out.append(record(
+            f"GMB-GBOS-{area}", area, level="admin1", parent="GMB", country="GMB",
+            shape_id=drawn[area], match_by="shape_id",
+            population=measure(
+                value, unit="people", year=GAMBIA_YEAR,
+                source="Gambia Bureau of Statistics, 2013 census preliminary results, Table 4",
+                note=("The local government area's own count in the Bureau's report, "
+                      "which Wikipedia's list of the Gambia's regions cites; the list "
+                      "itself gives only Central River Region, which this area and "
+                      "its neighbour make up. The report's other areas match the "
+                      "2013 figures the map's Gambia already shows.")),
+            sources=[{"field": "population", "name": "Gambia Bureau of Statistics",
+                      "url": GBOS_URL, "year": GAMBIA_YEAR, "note": f"read from {via}"}]))
+    return out
+
+
 def drawn(iso3: str) -> dict[str, str]:
     return {u["name"]: u["id"]
             for u in read_json(ROOT / "site" / "data" / "admin1" / f"{iso3}.json", [])}
@@ -354,7 +436,7 @@ def main() -> None:
     if "--dump" in sys.argv:
         dump()
         return
-    rows = somalia(drawn("SOM")) + seychelles(drawn("SYC"))
+    rows = somalia(drawn("SOM")) + seychelles(drawn("SYC")) + gambia(drawn("GMB"))
     write_json(PROCESSED / OUT, rows)
     log(f"wrote {len(rows)} records to {OUT}")
 

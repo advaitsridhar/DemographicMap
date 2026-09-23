@@ -99,5 +99,23 @@ class SeychellesTable10(unittest.TestCase):
         self.assertIn("Table 10", why)
 
 
+
+GAMBIA = cs.GBOS_TRANSCRIPT.read_text(encoding="utf-8")
+
+
+class GambiasTable4(unittest.TestCase):
+    def test_reads_the_two_central_river_areas(self):
+        self.assertEqual(cs.gambia_rows(GAMBIA), ({"Janjanbureh": 126910, "Kuntaur": 99108}, ""))
+
+    def test_a_changed_area_fails_the_total(self):
+        figures, why = cs.gambia_rows(GAMBIA.replace("Kuntaur 78,491 99,108",
+                                                     "Kuntaur 78,491 99,118"))
+        self.assertEqual(figures, {})
+        self.assertIn("Total row", why)
+
+    def test_no_table_writes_nothing(self):
+        self.assertIn("Table 4", cs.gambia_rows("Table A2 only")[1])
+
+
 if __name__ == "__main__":
     unittest.main()

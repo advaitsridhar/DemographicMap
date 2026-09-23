@@ -3345,6 +3345,11 @@ NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
     ("CIV", "Q845706"): ("the Lacs region of 1997-2011, whose capital Yamoussoukro is "
                          "now an autonomous district of its own; the Lacs District's "
                          "capital is Dimbokro"),
+    # Peru's boundary file draws Metropolitan Lima as a shape of its own, and
+    # "Lima" as the rest of the department around it.
+    ("PER", "Q211795"): ("the Department of Lima with Metropolitan Lima inside it: "
+                         "11,595,510 people, most of them in the metropolitan "
+                         "province the map draws separately"),
 }
 
 PLACED: dict[tuple[str, str], str] = {
