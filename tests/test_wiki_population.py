@@ -319,3 +319,389 @@ class Resolving(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Europe(unittest.TestCase):
+    """Every European gap in the first sweep failed at finding the article.
+
+    Belgium, France, Italy and Portugal because their shapes carry names in
+    their own languages and the reader asked Wikidata for English labels
+    only; Lithuania, Italy and Ukraine because the P131 search stopped at four
+    thousand items before reaching them; Bulgaria and Belarus because a city
+    and the unit around it fold to one name.
+    """
+
+    def test_a_name_that_is_all_generic_words_is_kept_whole(self):
+        self.assertEqual(wp.fold("Capital Region"), "capitalregion")
+        self.assertEqual(wp.fold("Capital Region"),
+                         wp.fold(wp.disambiguated("Capital Region (Iceland)")))
+
+    def test_the_generic_words_of_the_map_s_own_languages(self):
+        self.assertEqual(wp.fold("Vlaams Gewest"), wp.fold("Vlaams Gewest (region)"))
+        self.assertEqual(wp.fold("Wallonne Gewest"), wp.fold("Région wallonne"))
+        self.assertEqual(wp.fold("LISBOA"), wp.fold("Distrito de Lisboa"))
+        self.assertEqual(wp.fold("Epirus-Western Macedonia"),
+                         wp.fold("Decentralized Administration of Epirus and Western Macedonia"))
+
+    def test_the_item_another_shape_holds_is_not_this_shape_s(self):
+        # Belarus draws Minsk Region and Minsk the city as two shapes.
+        got = wp.resolve(units("Minsk City"),
+                         pool(("Minsk Region", "Minsk Region"), ("Minsk", "Minsk")),
+                         exclude={"Q1"})
+        self.assertEqual(got["u1"][:2], ("Q2", "Minsk"))
+
+    def test_the_name_written_exactly_as_the_map_writes_it_settles_a_tie(self):
+        # The town, the district municipality and the county all fold to
+        # "alytus"; only one of them is called "Alytus County".
+        got = wp.resolve(units("Alytus County"),
+                         pool(("Alytus", "Alytus"),
+                              ("Alytus District Municipality", "Alytus District Municipality"),
+                              ("Alytus County", "Alytus County")))
+        self.assertEqual(got["u1"][:2], ("Q3", "Alytus County"))
+
+    def test_a_tie_nothing_written_settles_is_still_refused(self):
+        got = wp.resolve(units("Sofia"),
+                         pool(("Sofia", "Sofia"), ("Sofia Province", "Sofia Province")))
+        self.assertEqual(got, {})
+
+    def test_a_census_year_in_the_parameter_s_name(self):
+        # Infobox Russian federal subject, as the Sakha Republic uses it.
+        text = ("{{Infobox Russian federal subject\n| name = Sakha\n"
+                "| pop_2021census = 995,686\n| pop_2021census_rank = 55th\n"
+                "| pop_2010census = 958,528\n| pop_density = 0.3\n}}")
+        self.assertEqual(wp.read(text)[:2], (995686, 2021))
+
+    def test_an_empty_newer_census_falls_back_to_the_older_one(self):
+        text = "{{Infobox X\n| pop_2021census = \n| pop_2010census = 958,528\n}}"
+        self.assertEqual(wp.read(text)[:2], (958528, 2010))
+
+
+class TheCountryItsOwnDivisionsFirst(unittest.TestCase):
+    """Sofia, end to end, with the network replaced by what Wikidata says."""
+
+    def setUp(self):
+        self.saved = {name: getattr(wp, name) for name in (
+            "country_item", "claims_of", "entities", "children", "contains",
+            "search", "by_title", "languages")}
+        items = {
+            "Q472": {"names": ["Sofia"], "title": "Sofia"},
+            "Q1": {"names": ["Sofia Province"], "title": "Sofia Province"},
+            "Q2": {"names": ["Sofia City Province"], "title": "Sofia City Province"},
+        }
+        wp.country_item = lambda iso3: "Q219"
+        wp.claims_of = lambda qid: {}
+        wp.languages = lambda claims: ["en"]
+        wp.statements = self.saved.get("statements", wp.statements)
+        wp.entities = lambda qids, langs=("en",): {q: items[q] for q in qids if q in items}
+        wp.children = lambda qid: ["Q472"]
+        wp.contains = lambda qid: []
+        wp.search = lambda *a, **k: {}
+        wp.by_title = lambda *a, **k: None
+        self.divisions = ["Q1", "Q2"]
+        original = wp.statements
+        wp.statements = lambda claims, prop: self.divisions if prop == "P150" else []
+        self.saved["statements"] = original
+
+    def tearDown(self):
+        for name, value in self.saved.items():
+            setattr(wp, name, value)
+
+    def test_the_province_is_found_before_the_city_is_ever_offered(self):
+        shapes = [{"id": "a", "name": "Sofia"},
+                  {"id": "b", "name": "Sofia City", "wikidata": "Q2"}]
+        got = wp.article_for("BGR", shapes[:1], shapes, "Bulgaria")
+        self.assertEqual(got["a"][:2], ("Q1", "Sofia Province"))
+
+
+class WhatThisReaderAnswersFor(unittest.TestCase):
+    def test_its_own_earlier_answers_and_every_gap_and_nothing_else(self):
+        shapes = [
+            {"id": "gap", "population": {"status": "not_available"}},
+            {"id": "mine", "population": {"value": 12998, "year": 2024,
+                                          "source": "English Wikipedia, Attard (infobox)"}},
+            {"id": "census", "population": {"value": 5, "year": 2021,
+                                            "source": "National Statistics Office"}},
+            {"id": "wikidata", "population": {"value": 7, "source": "Wikidata (CC0)"}},
+        ]
+        self.assertEqual([u["id"] for u in wp.to_read(shapes)], ["gap", "mine"])
+
+
+class FollowingARedirect(unittest.TestCase):
+    """Burkina Faso's old region names survive only as Wikipedia redirects."""
+
+    def setUp(self):
+        self.saved = (wp.api, wp.in_country)
+
+        def api(endpoint, **params):
+            titles = params["titles"].split("|")
+            return {"query": {
+                "redirects": [{"from": "Boucle du Mouhoun Region", "to": "Bankui Region"}],
+                "pages": [
+                    {"title": "Bankui Region", "pageprops": {"wikibase_item": "Q850000"}},
+                    {"title": "Boucle du Mouhoun", "pageprops": {"disambiguation": ""}},
+                ] + [{"title": t, "missing": True} for t in titles
+                     if t not in ("Boucle du Mouhoun Region", "Boucle du Mouhoun")]}}
+        wp.api = api
+        wp.in_country = lambda item, country: item == "Q850000"
+
+    def tearDown(self):
+        wp.api, wp.in_country = self.saved
+
+    def test_the_old_name_reaches_the_renamed_region(self):
+        got = wp.by_title({"name": "Boucle du Mouhoun"}, "Burkina Faso", "Q965", set())
+        self.assertEqual(got, ("Q850000", "Bankui Region"))
+
+    def test_an_item_another_shape_holds_is_passed_over(self):
+        got = wp.by_title({"name": "Boucle du Mouhoun"}, "Burkina Faso", "Q965",
+                          {"Q850000"})
+        self.assertIsNone(got)
+
+    def test_an_item_outside_the_country_is_passed_over(self):
+        wp.in_country = lambda item, country: False
+        got = wp.by_title({"name": "Boucle du Mouhoun"}, "Burkina Faso", "Q965", set())
+        self.assertIsNone(got)
+
+
+class WhatThePageShowsAndWhereThePlaceIs(unittest.TestCase):
+    def test_an_infobox_that_prints_wikidata_s_figure_is_recognised(self):
+        # France's regions and Latvia's municipalities, verbatim.
+        for value in ("{{France metadata Wikidata|population_total}}",
+                      "{{wikidata|property|qualifier|best||P1082}}"):
+            self.assertEqual(wp.read(infobox(population_total=value)),
+                             (None, None, wp.FROM_WIKIDATA))
+
+    def test_every_infobox_on_the_page_is_read_first_one_first(self):
+        text = ("{{Infobox World Heritage Site\n| name = Mount Athos\n| year = 1988\n}}\n"
+                "{{Infobox settlement\n| name = Athos\n| population_total = 1,746\n"
+                "| population_as_of = 2021\n}}\n")
+        self.assertEqual(wp.read(text)[:2], (1746, 2021))
+
+    def test_a_region_cannot_be_given_to_a_city_shape_it_could_not_fit_in(self):
+        # Minsk Region, offered for the shape Belarus's boundary file draws
+        # as "Minsk City": its coordinates are south of the city's box and
+        # its area is 157 times the box's.
+        saved = wp.claim_values
+        claims = {
+            "P625": [{"mainsnak": {"datavalue": {"value": {"latitude": 53.667, "longitude": 27.75}}}}],
+            "P2046": [{"mainsnak": {"datavalue": {"value": {
+                "amount": "+39854", "unit": "http://www.wikidata.org/entity/Q712226"}}}}],
+        }
+        wp.claim_values = lambda qid, prop: claims.get(prop, [])
+        try:
+            city_box = [27.4751, 53.8232, 27.733, 53.9583]
+            self.assertIn("cannot fit", wp.refuted("Q192959", city_box))
+            region_box = [26.0139, 52.3913, 29.4894, 55.009]
+            claims["P625"] = [{"mainsnak": {"datavalue": {"value": {"latitude": 53.667, "longitude": 27.75}}}}]
+            self.assertEqual(wp.refuted("Q192959", region_box), "")
+        finally:
+            wp.claim_values = saved
+
+    def test_a_place_far_from_its_shape_is_somewhere_else(self):
+        # Argentina's "La Roja" (La Rioja) offered Rojas Partido, in Buenos
+        # Aires province.
+        saved = wp.claim_values
+        wp.claim_values = lambda qid, prop: [
+            {"mainsnak": {"datavalue": {"value": {"latitude": -34.20, "longitude": -60.73}}}}
+        ] if prop == "P625" else []
+        try:
+            la_rioja = [-69.6341, -31.9212, -65.3285, -27.7359]
+            self.assertIn("outside the shape", wp.refuted("Q2621930", la_rioja))
+        finally:
+            wp.claim_values = saved
+
+    def test_coordinates_a_little_off_do_not_refute_a_right_answer(self):
+        # Both were refused by the first version of this check, and both
+        # figures were right.
+        saved = wp.claim_values
+        try:
+            for point, box in (((25.50, -76.63), [-76.811, 25.5375, -76.7438, 25.5512]),
+                               ((14.38, -80.28), [-81.7356, 12.4831, -81.3496, 13.3859])):
+                wp.claim_values = lambda qid, prop, pt=point: [
+                    {"mainsnak": {"datavalue": {"value": {"latitude": pt[0], "longitude": pt[1]}}}}
+                ] if prop == "P625" else []
+                self.assertEqual(wp.refuted("Q1", box), "", point)
+        finally:
+            wp.claim_values = saved
+
+    def test_the_figure_wikidata_ranks_best_and_dates_latest(self):
+        saved = wp.claim_values
+
+        def claim(amount, year, rank="normal"):
+            return {"rank": rank,
+                    "mainsnak": {"datavalue": {"value": {"amount": f"+{amount}"}}},
+                    "qualifiers": {"P585": [{"datavalue": {"value": {
+                        "time": f"+{year}-01-01T00:00:00Z"}}}]}}
+        wp.claim_values = lambda qid, prop: [claim(3300000, 2019), claim(3325032, 2021),
+                                             claim(1, 2023, "deprecated")]
+        try:
+            self.assertEqual(wp.wikidata_population("Q18677983"), (3325032, 2021))
+        finally:
+            wp.claim_values = saved
+
+    def test_a_short_name_may_gain_an_ending(self):
+        got = wp.resolve(units("East"),
+                         pool(("Eastern Statistical Region", "Eastern Statistical Region")))
+        self.assertEqual(got["u1"][:2], ("Q1", "Eastern Statistical Region"))
+
+
+class Declarations(unittest.TestCase):
+    def test_a_genitive_ending_is_the_same_name(self):
+        self.assertTrue(wp.same_place_name("Rēzeknes", "Rēzekne"))
+        self.assertTrue(wp.same_place_name("Valletta", "Valletta"))
+        # The city of Zawiya is not Az Zawiyah district.
+        self.assertFalse(wp.same_place_name("Az Zawiyah", "Zawiya"))
+        self.assertFalse(wp.same_place_name("Saint Thomas", "Saint Thomas in the Vale"))
+
+    def test_a_declared_article_is_still_proved(self):
+        saved = (wp.api, wp.in_country)
+        wp.api = lambda endpoint, **params: {"query": {"pages": [
+            {"title": "Central Italy", "pageprops": {"wikibase_item": "Q1127320"}}]}}
+        try:
+            wp.in_country = lambda item, country: True
+            self.assertEqual(wp.declared("ITA", {"name": "Centro"}, "Q38", set()),
+                             ("Q1127320", "Central Italy"))
+            # Held by another shape, or outside the country: refused.
+            self.assertIsNone(wp.declared("ITA", {"name": "Centro"}, "Q38", {"Q1127320"}))
+            wp.in_country = lambda item, country: False
+            self.assertIsNone(wp.declared("ITA", {"name": "Centro"}, "Q38", set()))
+            # Nothing declared, nothing asked.
+            self.assertIsNone(wp.declared("ITA", {"name": "Lazio"}, "Q38", set()))
+        finally:
+            wp.api, wp.in_country = saved
+
+    def test_a_gross_area_mismatch_refutes_and_a_wrong_wikidata_area_does_not(self):
+        saved = wp.claim_values
+
+        def area(km2):
+            return lambda qid, prop: [{"mainsnak": {"datavalue": {"value": {
+                "amount": f"+{km2}", "unit": "http://www.wikidata.org/entity/Q712226"}}}}
+            ] if prop == "P2046" else []
+        try:
+            wp.claim_values = area(161)   # Mgarr, as Wikidata has it
+            self.assertEqual(wp.refuted("Q691220", [14.33, 35.90, 14.40, 35.93]), "")
+            wp.claim_values = area(39854)  # Minsk Region
+            self.assertIn("cannot fit", wp.refuted("Q192959", [27.4751, 53.8232, 27.733, 53.9583]))
+        finally:
+            wp.claim_values = saved
+
+
+class CountedTwice(unittest.TestCase):
+    def test_italy_s_five_as_first_read_are_reported(self):
+        # "Southern Italy" is the Mezzogiorno with the islands, which Insular
+        # Italy had already counted.
+        values = {"Centro": 11699125, "Isole": 6329684, "Nord-Est": 11618783,
+                  "Nord-Ovest": 15955242, "Sud": 19669678}
+        shapes = [{"id": n, "population": {"status": "not_available"}} for n in values]
+        read_out = [{"unit": {"id": n}, "value": v} for n, v in values.items()]
+        self.assertGreater(wp.overcount("ITA", shapes, read_out, 58_934_177), wp.OVERCOUNT)
+
+    def test_southern_italy_is_no_longer_declared_for_sud(self):
+        self.assertNotIn(("ITA", "Sud"), wp.TITLES)
+
+    def test_a_census_figure_already_on_the_map_is_counted_too(self):
+        shapes = [{"id": "a", "population": {"value": 60, "source": "Census"}},
+                  {"id": "b", "population": {"status": "not_available"}}]
+        read_out = [{"unit": {"id": "b"}, "value": 40}]
+        self.assertAlmostEqual(wp.overcount("X", shapes, read_out, 100), 1.0)
+
+
+class APartIsNotTheWhole(unittest.TestCase):
+    def test_a_governorate_split_off_a_region_is_not_the_region(self):
+        self.assertTrue(wp.a_part_of("Al Batinah", "Al Batinah South Governorate"))
+        self.assertTrue(wp.a_part_of("Ash Sharqiyah", "Ash Sharqiyah South Governorate"))
+
+    def test_a_name_that_is_a_direction_in_another_language_is_not_refused(self):
+        self.assertFalse(wp.a_part_of("Debub Region", "Southern region (Eritrea)"))
+        self.assertFalse(wp.a_part_of("Département de l'Ouest", "Ouest (department)"))
+        self.assertFalse(wp.a_part_of("Nord-Est", "Northeast Italy"))
+        self.assertFalse(wp.a_part_of("North Darfur", "North Darfur"))
+        self.assertFalse(wp.a_part_of("Attard", "Attard"))
+
+    def test_the_half_is_passed_over_for_the_whole(self):
+        got = wp.resolve(units("Al Batinah"),
+                         {"Q1": {"names": ["Al Batinah"], "title": "Al Batinah South Governorate"},
+                          "Q2": {"names": ["Al Batinah Region"], "title": "Al Batinah Region"}})
+        self.assertEqual(got["u1"][:2], ("Q2", "Al Batinah Region"))
+
+
+class ATownForTheRegionAroundIt(unittest.TestCase):
+    """Morogoro, Brikama, Basse and Ajdabiya all arrived by redirect."""
+
+    def setUp(self):
+        self.saved = wp.claim_values
+
+    def tearDown(self):
+        wp.claim_values = self.saved
+
+    def area(self, km2):
+        wp.claim_values = lambda qid, prop: [{"mainsnak": {"datavalue": {"value": {
+            "amount": f"+{km2}", "unit": "http://www.wikidata.org/entity/Q712226"}}}}
+        ] if prop == "P2046" and km2 is not None else []
+
+    def test_the_town_is_a_sliver_of_the_region_s_box(self):
+        morogoro_region = [35.3, -10.0, 38.5, -5.8]
+        self.area(260)
+        self.assertIn("of the shape's", wp.too_small("Q243319", morogoro_region))
+
+    def test_a_town_that_is_the_shape_fills_it(self):
+        # Rezekne, 17.5 km^2, for the polygon Latvia draws for the state city.
+        self.area(17.5)
+        self.assertEqual(wp.too_small("Q180379", [27.28, 56.48, 27.39, 56.54]), "")
+
+    def test_no_area_no_redirect(self):
+        self.area(None)
+        self.assertIn("no area", wp.too_small("Q916988", [16.5, 13.1, 16.9, 13.4]))
+
+
+class ATitleThatNamesTheDivision(unittest.TestCase):
+    def test_the_redirect_titles_that_name_their_kind(self):
+        # Waived: the title is the division's. Asked: the title is a town's.
+        for title in ("Quba District (Libya)", "Mizda District", "Iringa Region"):
+            self.assertTrue(wp.says_its_kind(wp.disambiguated(title)), title)
+        for title in ("Morogoro", "Zawiya, Libya", "Brikama", "Basse Santa Su", "Ajdabiya"):
+            self.assertFalse(wp.says_its_kind(wp.disambiguated(title)), title)
+
+
+class NotAnAdministrativeUnit(unittest.TestCase):
+    def test_an_electoral_constituency_is_passed_over_for_the_region(self):
+        got = wp.resolve(units("Northeastern Region"),
+                         {"Q1": {"names": ["Northeastern"], "title": "Northeast (Althing constituency)"},
+                          "Q2": {"names": ["Northeastern Region"], "title": "Northeastern Region (Iceland)"}})
+        self.assertEqual(got["u1"][:2], ("Q2", "Northeastern Region (Iceland)"))
+
+    def test_a_district_named_for_a_river_is_still_a_district(self):
+        # Seychelles' La Riviere Anglaise district.
+        self.assertIsNone(wp.NOT_A_UNIT.search("English River, Seychelles"))
+        self.assertIsNone(wp.NOT_A_UNIT.search("Saint Andrew Parish, Jamaica"))
+
+
+class AJoinTheBuildMadeBadly(unittest.TestCase):
+    """Iceland's region shapes carried the constituencies' Wikidata items."""
+
+    def setUp(self):
+        self.saved = {n: getattr(wp, n) for n in (
+            "country_item", "claims_of", "entities", "children", "contains",
+            "search", "by_title", "languages", "statements", "declared")}
+        items = {
+            "Q_CONST": {"names": ["Northeast"], "title": "Northeast (Althing constituency)"},
+            "Q_REGION": {"names": ["Northeastern Region"], "title": "Northeastern Region (Iceland)"},
+        }
+        wp.country_item = lambda iso3: "Q189"
+        wp.claims_of = lambda qid: {}
+        wp.languages = lambda claims: ["en"]
+        wp.statements = lambda claims, prop: ["Q_REGION"] if prop == "P150" else []
+        wp.entities = lambda qids, langs=("en",): {q: items[q] for q in qids if q in items}
+        wp.children = lambda qid: []
+        wp.contains = lambda qid: []
+        wp.search = lambda *a, **k: {}
+        wp.by_title = lambda *a, **k: None
+        wp.declared = lambda *a, **k: None
+
+    def tearDown(self):
+        for n, v in self.saved.items():
+            setattr(wp, n, v)
+
+    def test_the_constituency_is_dropped_and_the_region_found(self):
+        shape = {"id": "ne", "name": "Northeastern Region", "wikidata": "Q_CONST"}
+        got = wp.article_for("ISL", [shape], [shape], "Iceland")
+        self.assertEqual(got["ne"][:2], ("Q_REGION", "Northeastern Region (Iceland)"))
