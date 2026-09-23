@@ -1159,3 +1159,90 @@ class AParentWithNoDashToMarkItsChildren(unittest.TestCase):
         parents = {p for g in named
                    for p in canonical_groups.ancestry("religion", g)[1:]}
         self.assertEqual(named & parents, set())
+
+
+# Anenii Noi District's Religion section as the runner fetched it from the
+# English Wikipedia on 23 September 2026, and the infobox reference it cites
+# by name. Muslims are indented under Christians in the article; that is how
+# it is written, and the test keeps it.
+ANENII_NOI = """{{Infobox settlement
+| population_as_of = [[2024 Moldovan Census|2024]]
+| population_footnotes = <ref name=":0">{{Cite web |date=2026-02-27 |title=Rezultatele finale ale Recensământului Populației și Locuințelor 2024 |url=https://statistica.gov.md/ro/x}}</ref>
+| population_total = 57,687
+}}
+=== Ethnic groups ===
+text
+=== Religion ===
+[[File:MD.AN.AN - St Demetrius church (rear) - nov 2012.JPG|thumb|Church of St. Dumitru, [[Anenii Noi|city of Anenii Noi]]]]
+Source:<ref name=":0" />
+*Christians – 96.7%
+**[[Orthodoxy#Christianity|Orthodox Christians]] – 96.1%
+**[[Protestant]] – 1.7%
+**[[Catholics]] – 0.1%
+**[[Muslims|Muslim]] - 0.2%
+*Other – 0.1%
+*No Religion – 0.8%
+*Not declared - 0.9%
+== Economy ==
+There are 12,555 businesses registered in the district.
+"""
+
+
+class AListIsReadWhereThereIsNoTable(unittest.TestCase):
+    """Moldova's districts publish their 2024 religion as bullets, not a table."""
+
+    def test_the_lines_with_nothing_under_them_are_read(self):
+        got, why = m.read_field(ANENII_NOI, m.MD_RELIGION, MDA,
+                                "Anenii Noi District", "en")
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got["rows"]}
+        self.assertEqual(shares["Orthodox"], 96.1)
+        self.assertEqual(shares["Protestant"], 1.7)
+        self.assertEqual(shares["Islam"], 0.2)
+        self.assertEqual(shares["Not declared"], 0.9)
+
+    def test_the_subtotal_is_not_read_beside_its_parts(self):
+        got, _ = m.read_field(ANENII_NOI, m.MD_RELIGION, MDA,
+                              "Anenii Noi District", "en")
+        self.assertNotIn("Christian", {r["group"] for r in got["rows"]})
+        self.assertAlmostEqual(sum(r["pct"] for r in got["rows"]), 100.0, delta=0.6)
+
+    def test_a_subtotal_that_is_not_its_parts_is_said_to_be(self):
+        # 96.1 + 1.7 + 0.1 + 0.2 is 98.1, not the 96.7 the line above says.
+        got, _ = m.read_field(ANENII_NOI, m.MD_RELIGION, MDA,
+                              "Anenii Noi District", "en")
+        self.assertIn('"Christians" gives 96.7%', got["remark"])
+        self.assertIn("98.1%", got["remark"])
+        self.assertIn("bulleted list", got["remark"])
+
+    def test_it_is_dated_by_the_census_its_citation_names(self):
+        # The reference is used by name in the section and defined in the
+        # infobox; the title's 2024 dates it, not the 2026 publication date.
+        got, _ = m.read_field(ANENII_NOI, m.MD_RELIGION, MDA,
+                              "Anenii Noi District", "en")
+        self.assertEqual(got["year"], 2024)
+        self.assertIn("Recensământului", got["cited"])
+        self.assertEqual(got["kind"], "census")
+
+    def test_a_table_is_still_preferred_where_there_is_one(self):
+        got, _ = m.read_field(BASARABEASCA_RELIGION, m.MD_RELIGION, MDA,
+                              "Basarabeasca District", "en")
+        self.assertNotIn("bulleted list", got["remark"])
+
+    def test_without_the_opt_in_a_list_is_not_read(self):
+        import dataclasses
+        spec = dataclasses.replace(m.MD_RELIGION, bullets=False)
+        got, why = m.read_field(ANENII_NOI, spec, MDA, "Anenii Noi District", "en")
+        self.assertIsNone(got)
+        self.assertIn("no table", why)
+
+    def test_a_hyphen_inside_a_label_is_not_the_dash(self):
+        rows, _, _ = m.find_list(
+            "== Religion ==\n* Seventh-day Adventists – 0.3%\n"
+            "* Orthodox Christians – 99.0%\n* Other – 0.7%\n", m.MD_RELIGION)
+        self.assertIn(["Seventh-day Adventists", "0.3"], rows)
+
+    def test_two_lines_are_not_a_composition(self):
+        rows, _, _ = m.find_list(
+            "== Religion ==\n* Orthodox – 99%\n* Other – 1%\n", m.MD_RELIGION)
+        self.assertEqual(rows, [])

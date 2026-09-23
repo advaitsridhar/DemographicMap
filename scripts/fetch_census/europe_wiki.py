@@ -45,7 +45,7 @@ from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_json, log,
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import slugify  # noqa: E402
-from probe_wikitable import infobox_lines, tables  # noqa: E402
+from probe_wikitable import infobox_lines, plain, tables  # noqa: E402
 
 PAUSE = 0.3
 BACKOFF = (60, 120, 240)
@@ -530,6 +530,14 @@ class Composition:
     # ethnic table does, where a people has no count for 1989) is only
     # aligned at the end -- which is the column these specs read.
     columns: bool = False
+    # Whether a section with no table may hold the composition as a bulleted
+    # list, "* Orthodox Christians – 96.1%", one line a group. Moldova's
+    # English district articles publish their 2024 religion that way, under
+    # the same heading as a table would sit, and the table-only reader
+    # called every one of them "a section where a composition would go with
+    # no table in it". Only tried where no table is found: a table is still
+    # preferred wherever there is one.
+    bullets: bool = False
 
 
 @dataclass(frozen=True)
@@ -678,6 +686,68 @@ def find_table(wikitext: str, spec: Composition) -> tuple[list[list[str]], str, 
     return [], "", ("the section is there and holds a table whose header this "
                     "reader does not know; the article has been reorganised "
                     "or carries a different table")
+
+
+# One line of a bulleted composition once its markup is gone: a label, a
+# dash of any width, a share. The dash may be a hyphen, and a label may carry
+# one of its own ("Seventh-day Adventists – 0.3%"), which is why the label is
+# taken lazily and the dash must be followed by the figure.
+BULLET = re.compile(r"^(?P<label>.+?)\s*[–—−-]+\s*(?P<share>\d+(?:[.,]\d+)?)\s*%$")
+# The first row of a list read as a table. It has no figure, so read_rows
+# passes over it, and it tells read_field that there is no header to date.
+LIST_HEADER = ["(a bulleted list)"]
+
+
+def find_list(wikitext: str, spec: Composition
+              ) -> tuple[list[list[str]], str, list[str]]:
+    """(the list's groups as rows of a table, the section's wikitext, remarks).
+
+    A line with lines indented under it is their subtotal, and it is not
+    read: Anenii Noi's list gives "Christians – 96.7%" with Orthodox,
+    Protestant and Catholic under it, and reading all four counts those
+    people twice. What is read is every line with nothing under it. Where a
+    subtotal is not the sum of its parts the remark says so, with both
+    figures -- the parts are what is read, and a reader of the panel should
+    know the article disagrees with itself.
+
+    Fewer than three groups is not a composition and nothing is returned.
+    """
+    section = re.compile(spec.section, re.I)
+    for name, body in sections(wikitext):
+        if not section.search(name):
+            continue
+        items: list[tuple[int, str, str]] = []
+        for line in body.splitlines():
+            depth = len(line) - len(line.lstrip("*"))
+            if not depth:
+                continue
+            m = BULLET.match(plain(line[depth:]))
+            if m:
+                items.append((depth, m.group("label"), m.group("share")))
+        rows: list[list[str]] = []
+        remarks: list[str] = []
+        for i, (depth, label, share) in enumerate(items):
+            under = []
+            for d, _, s in items[i + 1:]:
+                if d <= depth:
+                    break
+                under.append((d, s))
+            if not under:
+                rows.append([label, share])
+                continue
+            # Only the lines directly under it: a grandchild is inside its
+            # own parent's figure already.
+            first = min(d for d, _ in under)
+            parts = sum(float(s.replace(",", ".")) for d, s in under if d == first)
+            whole = float(share.replace(",", "."))
+            if abs(parts - whole) > 0.15:
+                remarks.append(
+                    f"The list's line \"{label}\" gives {whole:g}% and the lines "
+                    f"under it add to {parts:.1f}%; the lines under it are what "
+                    f"is read.")
+        if len(rows) >= 3:
+            return [LIST_HEADER] + rows, body, remarks
+    return [], "", []
 
 
 PIXELS = re.compile(r"^\d+\s*px$", re.I)
@@ -1182,6 +1252,9 @@ MD_RELIGION = Composition(
     # Counting columns and not figures: Taraclia prints three censuses side
     # by side and writes "-" where a faith had nobody in one of them.
     columns=True,
+    # The districts' English articles list their 2024 religion as bullets
+    # under this heading, with no table: Anenii Noi, and most of the rest.
+    bullets=True,
     labels=MD_RELIGION_LABELS,
     skip=TOTALS + MD_SUBTOTALS + MD_HEADER_ROWS)
 # Two shapes of the same question, one per article that asks it. Chisinau's
@@ -1660,6 +1733,11 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
     note says which of the two dated the figure.
     """
     table, body, why = find_table(wikitext, spec)
+    listed: list[str] | None = None
+    if why and spec.bullets:
+        rows, section, said = find_list(wikitext, spec)
+        if rows:
+            table, body, why, listed = rows, section, "", said
     if why:
         return None, why
     definitions = ref_definitions(wikitext)
@@ -1736,8 +1814,14 @@ def read_field(wikitext: str, spec: Composition, country: Country, title: str,
     # by side and cites the 2001 release first, so the 2011 column -- which
     # is the one read -- was being stamped 2001. A figure dated by the
     # wrong census is worse than no figure.
-    header = " ".join(" ".join(row) for row in table[:2])
+    # A list has no header to print a year in, and its first line is a
+    # group's label -- which must not be searched for one.
+    header = "" if listed is not None else " ".join(" ".join(row) for row in table[:2])
     printed = [int(y) for y in re.findall(r"\b(19\d\d|20[0-4]\d)\b", header)]
+    if listed is not None:
+        remark = ("The article gives this composition as a bulleted list under "
+                  "its heading rather than as a table. " + " ".join(listed)
+                  + " " + remark).strip()
     if printed and spec.value == -1:
         if year and max(printed) != year:
             remark = (f"The citation is for {year}; the column read is the one "

@@ -25,7 +25,9 @@ refusals do not stand. The seven, and what this reads for each:
   assumption, so the result is a modelled estimate, marked and hatched as
   one, and never a reading.
 * Balti. Read from the Romanian article if it has the table; otherwise left
-  as the gap it is, with the reason.
+  as the gap it is, with the reason. Its article also tabulates the language
+  usually spoken at every census since 2004, and the newest column, 2024, is
+  read for the language field, which the English article leaves empty.
 
 Two things in the tables are not what they look like. Falesti gives
 "Moldoveni/Romani" as one row, which is one figure for two answers and is
@@ -81,6 +83,18 @@ RO_ETHNIC = {
     "nedeclarat": "Not declared", "nedeclarata": "Not declared",
 }
 
+# Balti's language table, the only one of the seven that has one. Its
+# citations are to the census's "spoken language" tables -- the language a
+# person usually speaks, which is the question Chisinau's English table
+# answers as "first language" -- and the record says which question it is.
+RO_LANGUAGE = {
+    "romana": "Romanian", "moldoveneasca": "Moldovan", "rusa": "Russian",
+    "ucraineana": "Ukrainian", "romani": "Romani", "gagauza": "Gagauz",
+    "bulgara": "Bulgarian", "altii": "Other", "alte": "Other",
+    "altelimbi": "Other", "nedeclarata": "Not declared",
+    "nedeclarat": "Not declared",
+}
+
 # Rows of a table that are not groups: a sub-header, the total, and the
 # citation some articles put in a row of its own under the table.
 NOT_A_GROUP = {"numar", "total", "totallocuitori"}
@@ -123,12 +137,18 @@ def welded(row: list[str]) -> list[list[str]]:
             for i in range(len(names))]
 
 
-def ro_table(wikitext: str) -> tuple[list[list[str]], str]:
-    """The ethnic structure table, header included, and the text of its section."""
+def ro_table(wikitext: str, heading_word: str = "etnic", header_word: str = "grup"
+             ) -> tuple[list[list[str]], str]:
+    """A structure table, header included, and the text of its section.
+
+    The ethnic one by default: "Structura etnica", whose table starts "Grup
+    etnic". Balti's language table sits under "Structura lingvistica" and
+    starts "Limba".
+    """
     for heading, body in sections(wikitext):
-        if "etnic" in fold(heading):
+        if heading_word in fold(heading):
             for table in tables(body):
-                if table and "grup" in fold(table[0][0] if table[0] else ""):
+                if table and header_word in fold(table[0][0] if table[0] else ""):
                     return table, body
     return [], ""
 
@@ -148,7 +168,8 @@ def latest(header: list[str]) -> tuple[int | None, int]:
     return year, 1 + 2 * k
 
 
-def ro_composition(rows: list[list[str]], column: int = 1
+def ro_composition(rows: list[list[str]], column: int = 1,
+                   labels: dict[str, str] = RO_ETHNIC
                    ) -> tuple[list[dict[str, Any]] | None, str]:
     counts: dict[str, int] = {}
     unknown = []
@@ -156,7 +177,7 @@ def ro_composition(rows: list[list[str]], column: int = 1
         if not raw or fold(raw[0]) in NOT_A_GROUP or raw[0].lstrip().startswith(("[", "http")):
             continue
         for row in (welded(raw) if column == 1 else [raw]):
-            label = RO_ETHNIC.get(fold(row[0]))
+            label = labels.get(fold(row[0]))
             n = count(row[column]) if len(row) > column else None
             if label is None:
                 unknown.append(row[0])
@@ -193,15 +214,56 @@ def shapes() -> dict[tuple[str, str], str]:
 
 
 def row_for(name: str, level: str, shape: str, value: Any, *, year: int | None,
-            note: str, source: str, url: str) -> dict[str, Any]:
+            note: str, source: str, url: str, field: str = "ethnicity") -> dict[str, Any]:
     row = {"id": f"MDA-gap-{level}-{name.lower()}", "level": level, "name": name,
            "parent": "MDA", "country": "MDA", "shape_id": shape, "match_by": "shape_id",
-           "ethnicity": value, "ethnicity_note": note,
-           "sources": [{"field": "ethnicity", "name": source, "url": url,
+           field: value, f"{field}_note": note,
+           "sources": [{"field": field, "name": source, "url": url,
                         "license": "CC BY-SA 4.0"}]}
     if year and isinstance(value, list):
-        row["ethnicity_year"] = year
+        row[f"{field}_year"] = year
     return row
+
+
+def merged(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """One record a unit and level, whatever fields were read for it."""
+    out: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        have = out.get(row["id"])
+        if have is None:
+            out[row["id"]] = dict(row, sources=list(row["sources"]))
+            continue
+        for key, value in row.items():
+            if key == "sources":
+                have["sources"].extend(value)
+            elif key not in have:
+                have[key] = value
+    return list(out.values())
+
+
+def language(text: str, name: str, landed: str, url: str,
+             ids: dict[tuple[str, str], str]) -> list[dict[str, Any]]:
+    """The newest census column of a "Structura lingvistica" table, if there is one."""
+    table, body = ro_table(text, "lingvistic", "limba")
+    if not table:
+        return []
+    column_year, column = latest(table[0])
+    comp, why = ro_composition(table[1:], column, RO_LANGUAGE)
+    if comp is None:
+        log(f"{name}: ro:{landed} language: {why}; left as it was")
+        return []
+    year = column_year or year_of(body)
+    note = (f"Language usually spoken, as the ro.wikipedia article '{landed}' "
+            f"gives it" + (f" for {year}, the newest of the censuses its columns give"
+                           if year else ", with no year stated")
+            + ". Its citations are to the census's spoken-language tables, the "
+            "question Chisinau's table answers as first language. Shares "
+            "computed from the table's own counts.")
+    log(f"{name}: language {comp[0]['group']} {comp[0]['pct']}%, {len(comp)} groups, "
+        f"year {year or 'none stated'}")
+    return [row_for(name, level, ids[(level, name)], comp, year=year, note=note,
+                    url=url, source=f"ro.wikipedia, '{landed}'", field="language")
+            for level in ("admin1", "admin2") if (level, name) in ids]
 
 
 def transnistria() -> tuple[dict[str, list[dict[str, Any]]], dict[str, int]]:
@@ -234,6 +296,7 @@ def main() -> int:
     for name, title in DISTRICTS.items():
         text, landed = fetch(title, "ro")
         url = f"https://ro.wikipedia.org/wiki/{urllib.parse.quote(landed.replace(' ', '_'))}"
+        rows.extend(language(text, name, landed, url, ids))
         table, body = ro_table(text)
         if not table:
             log(f"{name}: ro:{landed} has no ethnic structure table; left as it was")
@@ -302,6 +365,7 @@ def main() -> int:
     else:
         log(f"Transnistria: the table has {left} of the six left-bank districts; left as it was")
 
+    rows = merged(rows)
     write_json(PROCESSED / OUT, rows)
     log(f"wrote {len(rows)} records to {OUT}")
     return 0

@@ -137,3 +137,52 @@ class BaltiEveryCensusSince1959(unittest.TestCase):
 
     def test_a_single_census_table_reads_column_one(self):
         self.assertEqual(m.latest(["Grup etnic", "Populație", "% Procentaj"]), (None, 1))
+
+
+# Balti's "Structura lingvistica" table as the runner's probe printed it from
+# ro.wikipedia on 23 September 2026 (commit 64e85ca).
+BALTI_LANGUAGE = [
+    ["Limba", "2004", "2014", "2024"],
+    ["Număr", "%", "Număr", "%", "Număr", "%"],
+    ["Română", "50.558", "41.21", "41.170", "42.04", "45.488", "51.76"],
+    ["Rusă", "67.833", "55.29", "46.775", "47.76", "40.521", "46.10"],
+    ["Ucraineană", "3761", "3.06", "1018", "1.03", "1611", "1.83"],
+    ["Romani", "N/A", "N/A", "101", "0.10", "79", "0.08"],
+    ["Găgăuză", "21", "0.01", "0", "0.00", "32", "0.03"],
+    ["Bulgară", "12", "0.00", "0", "0.00", "11", "0.01"],
+    ["Alții", "281", "0.22", "189", "0.19", "102", "0.11"],
+    ["Nedeclarată", "203", "0.16", "8673", "8.85", "35", "0.30"],
+    ["Total", "122.669", "97.930", "87.879"],
+    ["[https://statistica.gov.md/ro/"],
+]
+
+
+class BaltiLanguage(unittest.TestCase):
+    def test_the_2024_column_from_its_counts(self):
+        year, column = m.latest(BALTI_LANGUAGE[0])
+        self.assertEqual((year, column), (2024, 5))
+        got, why = m.ro_composition(BALTI_LANGUAGE[1:], column, m.RO_LANGUAGE)
+        self.assertEqual(why, "")
+        shares = {r["group"]: r["pct"] for r in got}
+        self.assertAlmostEqual(shares["Romanian"], 51.76, places=1)
+        self.assertAlmostEqual(shares["Russian"], 46.11, places=1)
+        # The table prints 0.30% beside 35 people; 35 of 87,879 is 0.04%.
+        self.assertAlmostEqual(shares["Not declared"], 0.04, places=2)
+        self.assertEqual(sum(r["count"] for r in got), 87879)
+
+    def test_the_table_is_found_under_its_own_heading(self):
+        text = ("== Structura etnică ==\n{|\n! Grup etnic !! Populație\n|-\n"
+                "| Moldoveni || 10\n|}\n== Structura lingvistică ==\n{|\n"
+                "! Limba !! 2024\n|-\n| Română || 10\n|-\n| Rusă || 5\n|}\n")
+        table, _ = m.ro_table(text, "lingvistic", "limba")
+        self.assertEqual(table[0][0], "Limba")
+
+    def test_one_record_a_unit_carries_both_fields(self):
+        a = m.row_for("Balti", "admin1", "s1", [{"group": "Moldovan", "pct": 100}],
+                      year=2024, note="n", source="s", url="u")
+        b = m.row_for("Balti", "admin1", "s1", [{"group": "Romanian", "pct": 100}],
+                      year=2024, note="n", source="s", url="u", field="language")
+        (row,) = m.merged([a, b])
+        self.assertIn("ethnicity", row)
+        self.assertIn("language", row)
+        self.assertEqual({s["field"] for s in row["sources"]}, {"ethnicity", "language"})
