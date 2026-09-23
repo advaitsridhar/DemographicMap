@@ -1607,17 +1607,15 @@ SPECS: dict[str, Country] = {
     # publishing no composition at all. Bender and Transnistria are refused,
     # in writing, for the reason under MD_ABSENT.
     #
-    # Four districts -- Edinet, Falesti, Glodeni and Riscani -- have a
-    # Demographics heading in English with no table under it, and that is
-    # what their records say. The Romanian edition does carry an ethnic
-    # table for each of them, and it was read and not taken: those tables
-    # are the 2004 census, twenty years older than the 2024 figures every
-    # other Moldovan unit here carries, three of the four cite nothing at
-    # all (so they would be published undated, beside neighbours dated
-    # 2024), and Riscani's has two rows merged into one cell -- "Moldoveni
-    # Romani 1 | 50.391 777 | 72,55% 1,12%" -- which is two peoples sharing
-    # a label and would be refused anyway. Reaching them would also need a
-    # per-unit edition, which this reader does not have. Measured and left.
+    # Four districts -- Edinet, Falesti, Glodeni and Riscani -- and Balti have
+    # no table in English: their 2024 ethnic and linguistic composition is a
+    # pair of {{Pie chart}}s under Demographics, and MD_ETHNICITY and
+    # MD_LANGUAGE_FIRST name the charts' captions. Every district but
+    # Briceni and the capital lists its 2024 religion as bullets under a
+    # Religion heading, which MD_RELIGION opts in to reading. Briceni's
+    # religion table gives 2004 shares and 2014 counts with no shares, and
+    # is refused for the empty column. Bender and Transnistria are left to
+    # moldova_gaps.py, which says whose count it reads for them.
     "MDA": Country(
         iso3="MDA", out="europe_wiki_moldova.json", decimal=".",
         census="Biroul Naţional de Statistică, Recensământul Populaţiei şi al "

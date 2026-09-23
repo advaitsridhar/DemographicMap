@@ -1,19 +1,15 @@
 #!/usr/bin/env python3
-"""Moldova's seven units without an ethnic composition, read where Wikipedia has one.
+"""Moldova's units without an ethnic composition, read where Wikipedia has one.
 
 The Europe reader (europe_wiki.py) reads Moldova from each district's English
-article, which carries the 2024 census table for thirty of its thirty-seven
-units, and it refused the other seven in writing. By the owner's decision
-of 22 September 2026 -- use the figures Wikipedia has; where the table cites
-nothing, cite the article; where it is undated, say so -- five of those
-refusals do not stand. The seven, and what this reads for each:
+article. It now reads thirty-five of the thirty-seven units' 2024 ethnic
+composition -- the four northern districts and Balti from the pie charts
+their articles give instead of a table -- and this reader fills only what it
+could not, standing aside for any field that reader has a figure for. By the
+owner's decision of 22 September 2026 -- use the figures Wikipedia has;
+where the table cites nothing, cite the article; where it is undated, say
+so -- what is left is read here:
 
-* Edinet, Falesti, Glodeni, Riscani. The English articles have no table; the
-  Romanian ones have an ethnic structure table each, under "Structura
-  etnica", of counts. Riscani's cites the 2004 census spreadsheet and is
-  dated 2004. The other three cite nothing and name no year, so they are
-  read and said to be undated -- not dated by inference from what their
-  totals happen to match.
 * Bender. The Transnistria article's table of administrative divisions gives
   each district's ethnic composition from Transnistria's own 2004 census,
   Bender among them. It is not the 2024 Moldovan census, which did not reach
@@ -24,10 +20,11 @@ refusals do not stand. The seven, and what this reads for each:
   assumes the districts' relative sizes have held since 2004. That is an
   assumption, so the result is a modelled estimate, marked and hatched as
   one, and never a reading.
-* Balti. Read from the Romanian article if it has the table; otherwise left
-  as the gap it is, with the reason. Its article also tabulates the language
-  usually spoken at every census since 2004, and the newest column, 2024, is
-  read for the language field, which the English article leaves empty.
+* Edinet, Falesti, Glodeni, Riscani and Balti, should the English articles
+  ever lose their charts: the Romanian articles' "Structura etnica" tables,
+  of counts (undated for three, 2004 for Riscani, every census since 1959
+  for Balti, whose 2024 column is read), and Balti's "Structura
+  lingvistica" table of the language usually spoken.
 
 Two things in the tables are not what they look like. Falesti gives
 "Moldoveni/Romani" as one row, which is one figure for two answers and is
