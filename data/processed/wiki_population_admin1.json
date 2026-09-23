@@ -7550,51 +7550,6 @@
     "match_by": "shape_id"
   },
   {
-    "id": "KIR-WP-gilbert-islands",
-    "level": "admin1",
-    "name": "Gilbert Islands",
-    "parent": "KIR",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 83382,
-      "unit": "people",
-      "year": 2005,
-      "source": "English Wikipedia, Gilbert Islands (infobox)"
-    },
-    "median_age": {
-      "status": "not_available"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population",
-        "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/Gilbert_Islands",
-        "year": 2005,
-        "license": "CC BY-SA 4.0"
-      }
-    ],
-    "country": "KIR",
-    "shape_id": "97431129B55805139245338",
-    "match_by": "shape_id"
-  },
-  {
     "id": "KWT-WP-al-asimah",
     "level": "admin1",
     "name": "Al Asimah",
@@ -7907,6 +7862,51 @@
     ],
     "country": "LBN",
     "shape_id": "68408151B19672163648714",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "LBN-WP-beyrouth",
+    "level": "admin1",
+    "name": "Beyrouth",
+    "parent": "LBN",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 433249,
+      "unit": "people",
+      "year": 2017,
+      "source": "English Wikipedia, Beirut (infobox), which gives the figure as approximate"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Beirut",
+        "year": 2017,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "LBN",
+    "shape_id": "68408151B13555465262434",
     "match_by": "shape_id"
   },
   {
@@ -15683,6 +15683,51 @@
     ],
     "country": "PER",
     "shape_id": "1875124B73300566086976",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PHL-WP-armm",
+    "level": "admin1",
+    "name": "ARMM",
+    "parent": "PHL",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3781387,
+      "unit": "people",
+      "year": 2015,
+      "source": "English Wikipedia, Autonomous Region in Muslim Mindanao (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Autonomous_Region_in_Muslim_Mindanao",
+        "year": 2015,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PHL",
+    "shape_id": "36201628B49646111072560",
     "match_by": "shape_id"
   },
   {
