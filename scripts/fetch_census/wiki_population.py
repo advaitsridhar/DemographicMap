@@ -1076,7 +1076,7 @@ TITLES: dict[tuple[str, str], str] = {
     ("LBY", "Ajdabiya"): "Ajdabiya District",
     ("LBY", "Az Zawiyah"): "Zawiya District",
     ("LBN", "Liban-Sud"): "South Governorate",
-    ("SDN", "Gedaref"): "Gedaref State",
+    ("SDN", "Gedaref"): "Al Qadarif State",
     ("SOM", "Togdheer"): "Togdheer",
     ("CAF", "Mbomou"): "Mbomou",
     # The Gambia's local government areas are its administrative divisions,
@@ -1136,8 +1136,16 @@ COMPOSITES: dict[tuple[str, str], tuple[str, ...]] = {
 
 
 def declared(iso3: str, unit: dict[str, Any], country_qid: str | None,
-             taken: set[str]) -> tuple[str, str] | None:
-    """The declared article for this unit, if TITLES names one and it holds."""
+             taken: set[str], alone: bool = False) -> tuple[str, str] | None:
+    """The declared article for this unit, if TITLES names one and it holds.
+
+    Wikidata's country statement is not asked. A declaration is a person
+    naming the article, and what it has to be guarded against is a typo
+    landing on a namesake elsewhere, which the geometric check does properly
+    and P17 does badly: it refused Somaliland's Togdheer, which Wikidata
+    places in Somaliland, and Western Sahara, whose article is the territory
+    itself -- as it should be, the map drawing it as one shape.
+    """
     title = TITLES.get((iso3, unit["name"]))
     if not title:
         return None
@@ -1155,9 +1163,8 @@ def declared(iso3: str, unit: dict[str, Any], country_qid: str | None,
             log(f"  {unit['name']}: the declared article {title!r} is {item}, "
                 f"which another shape already holds")
             return None
-        if country_qid and (item == country_qid or not in_country(item, country_qid)):
-            log(f"  {unit['name']}: the declared article {title!r} is {item}, "
-                f"which Wikidata does not place in the country")
+        if country_qid and item == country_qid and not alone:
+            log(f"  {unit['name']}: the declared article {title!r} is the country itself")
             return None
         return item, page.get("title") or title
     return None
@@ -1255,13 +1262,20 @@ def article_for(iso3: str, units: list[dict[str, Any]],
     # whose Wikidata item has no English article, which is what several of
     # them are for.
     for unit in units:
-        if unit["id"] in found:
+        if unit["id"] in found or (iso3, unit["name"]) not in TITLES:
             continue
-        taken = {item for item, _, _ in found.values()} | others
-        hit = declared(iso3, unit, qid, taken)
+        taken = {item for item, _, _ in found.values()} | (others - {qid})
+        hit = declared(iso3, unit, qid, taken, alone=len(shapes) == 1)
         if hit:
             found[unit["id"]] = (hit[0], hit[1], "declaration")
             settled.discard(unit["id"])
+        else:
+            # Final. A declaration exists because the name alone leads
+            # somewhere wrong, so a declaration that fails must not fall back
+            # to the name: Sudan's Gedaref did, when its declared title was
+            # not an article, and the search found the city of El-Gadarif --
+            # 363,945 people for a state of two million.
+            settled.add(unit["id"])
     widen("the country's own divisions", ())
     if short():
         widen("what sits directly in the country", children(qid))
@@ -1380,6 +1394,12 @@ def run(iso3: str, units: list[dict[str, Any]], national: float | None,
         # District" -- is not asked for an area Wikidata often lacks.
         if not why and how == "redirect" and not says_its_kind(disambiguated(title)):
             why = too_small(item, unit.get("bbox"))
+        elif not why and how != "wikidata" and how != "declaration":
+            # Any match made by a name is held to the same test where Wikidata
+            # can size the place: the name search reached El-Gadarif, the city,
+            # for Gedaref State. Where it cannot, a name match stands.
+            small = too_small(item, unit.get("bbox"))
+            why = small if small and "no area" not in small else ""
         if why:
             log(f"  {unit['name']} -> {title} ({item}): {why}; refused")
             continue

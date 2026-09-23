@@ -560,10 +560,17 @@ class Declarations(unittest.TestCase):
             wp.in_country = lambda item, country: True
             self.assertEqual(wp.declared("ITA", {"name": "Centro"}, "Q38", set()),
                              ("Q1127320", "Central Italy"))
-            # Held by another shape, or outside the country: refused.
+            # Held by another shape: refused.
             self.assertIsNone(wp.declared("ITA", {"name": "Centro"}, "Q38", {"Q1127320"}))
+            # Wikidata's country statement is not asked: it refused
+            # Somaliland's Togdheer. Geometry guards a declaration instead.
             wp.in_country = lambda item, country: False
-            self.assertIsNone(wp.declared("ITA", {"name": "Centro"}, "Q38", set()))
+            self.assertEqual(wp.declared("ITA", {"name": "Centro"}, "Q38", set()),
+                             ("Q1127320", "Central Italy"))
+            # The country itself only where the country is its one shape.
+            self.assertIsNone(wp.declared("ITA", {"name": "Centro"}, "Q1127320", set()))
+            self.assertEqual(wp.declared("ITA", {"name": "Centro"}, "Q1127320", set(),
+                                         alone=True), ("Q1127320", "Central Italy"))
             # Nothing declared, nothing asked.
             self.assertIsNone(wp.declared("ITA", {"name": "Lazio"}, "Q38", set()))
         finally:
@@ -784,3 +791,35 @@ class AnEmptyParameter(unittest.TestCase):
                                         population_estimate="1900000"))
         self.assertIsNone(value)
         self.assertIn("population_total", why)
+
+
+class AFailedDeclarationIsFinal(unittest.TestCase):
+    """Gedaref's declared title was not an article, and the search found the city."""
+
+    def setUp(self):
+        self.saved = {n: getattr(wp, n) for n in (
+            "country_item", "claims_of", "entities", "children", "contains",
+            "search", "by_title", "languages", "statements", "declared")}
+        wp.country_item = lambda iso3: "Q1049"
+        wp.claims_of = lambda qid: {}
+        wp.languages = lambda claims: ["en"]
+        wp.statements = lambda claims, prop: []
+        wp.entities = lambda qids, langs=("en",): {}
+        wp.children = lambda qid: []
+        wp.contains = lambda qid: []
+        wp.search = lambda *a, **k: {"Q311199": {"names": ["Gedaref"], "title": "El-Gadarif"}}
+        wp.by_title = lambda *a, **k: ("Q311199", "El-Gadarif")
+        wp.declared = lambda *a, **k: None
+
+    def tearDown(self):
+        for n, v in self.saved.items():
+            setattr(wp, n, v)
+
+    def test_the_name_is_not_tried_after_it(self):
+        unit = {"id": "g", "name": "Gedaref"}
+        self.assertIn(("SDN", "Gedaref"), wp.TITLES)
+        self.assertEqual(wp.article_for("SDN", [unit], [unit], "Sudan"), {})
+
+    def test_a_unit_with_no_declaration_still_searches(self):
+        unit = {"id": "g", "name": "Gedaref"}
+        self.assertEqual(wp.article_for("XXX", [unit], [unit], "Nowhere")["g"][0], "Q311199")
