@@ -1,6 +1,5 @@
 """Figures read from the source a Wikipedia article cites."""
 import unittest
-from pathlib import Path
 
 from scripts.fetch_census import cited_sources as cs
 
@@ -80,7 +79,7 @@ class SomaliasTable(unittest.TestCase):
         self.assertIn("sum to", why)
 
 
-TABLE10 = (Path(__file__).parent / "fixtures" / "seychelles_nbs_2019_table10.txt").read_text()
+TABLE10 = cs.TRANSCRIPT.read_text(encoding="utf-8")
 
 
 class SeychellesTable10(unittest.TestCase):

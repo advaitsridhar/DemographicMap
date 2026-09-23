@@ -18,7 +18,9 @@ cited source instead:
   Bureau of Statistics' mid-2019 bulletin, whose Table 10 gives the district
   ("Other Islands") 574 for mid-2019 and 1,042 at the 2010 census; 1,032 is
   in neither. The bureau's server refuses this runner, so the bulletin is read
-  from the Internet Archive's copy of the same address.
+  from the Internet Archive's copy of the same address -- and, when the
+  archive refuses it too, from the transcript of Table 10 the archive gave on
+  23 September 2026, kept in data/raw/seychelles.
 
 Each table is held to its own total before anything is written: Somalia's
 regions must add to the table's national row in two columns, which is also
@@ -269,7 +271,11 @@ def seychelles_rows(text: str) -> tuple[dict[str, int], str]:
     return out, ""
 
 
-def seychelles(drawn: dict[str, str]) -> list[dict[str, Any]]:
+TRANSCRIPT = ROOT / "data" / "raw" / "seychelles" / "nbs_mid2019_table10.txt"
+
+
+def bulletin_text() -> tuple[str, str]:
+    """(the bulletin's text, where it was read from)."""
     from pypdf import PdfReader
 
     # The PDF probe's fetch, which read this address on 23 September 2026:
@@ -280,14 +286,23 @@ def seychelles(drawn: dict[str, str]) -> list[dict[str, Any]]:
     for wait in (30, 90, None):
         try:
             blob = fetch_blob(NBS_ARCHIVED)
-            break
+            text = "\n".join((p.extract_text() or "")
+                             for p in PdfReader(io.BytesIO(blob)).pages)
+            return text, f"the Internet Archive's copy, {NBS_ARCHIVED}"
         except OSError as exc:  # the archive refuses or times out now and then
             if wait is None:
-                log(f"  SYC: the archive did not answer ({exc}); nothing written")
-                return []
+                log(f"  SYC: the archive did not answer ({exc}); reading the transcript "
+                    f"of Table 10 it gave on 23 September 2026")
+                break
             log(f"  SYC: the archive did not answer ({exc}); waiting {wait}s")
             time.sleep(wait)
-    text = "\n".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(blob)).pages)
+    return (TRANSCRIPT.read_text(encoding="utf-8"),
+            f"a transcript of the Internet Archive's copy, {NBS_ARCHIVED}, "
+            f"made on 23 September 2026 and kept at data/raw/seychelles")
+
+
+def seychelles(drawn: dict[str, str]) -> list[dict[str, Any]]:
+    text, via = bulletin_text()
     figures, why = seychelles_rows(text)
     if why:
         log(f"  SYC: {why}; nothing written")
@@ -310,8 +325,7 @@ def seychelles(drawn: dict[str, str]) -> list[dict[str, Any]]:
                       f"prints '1.032', a figure the bulletin does not give: its row "
                       f"reads 1,042 at the 2010 census and {value:,} for mid-2019.")),
             sources=[{"field": "population", "name": "National Bureau of Statistics, Seychelles",
-                      "url": NBS_URL, "year": SEYCHELLES_YEAR,
-                      "note": f"read from the Internet Archive's copy, {NBS_ARCHIVED}"}]))
+                      "url": NBS_URL, "year": SEYCHELLES_YEAR, "note": f"read from {via}"}]))
     return out
 
 
