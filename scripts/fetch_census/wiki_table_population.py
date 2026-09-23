@@ -204,8 +204,9 @@ def figure_row(iso3: str, name: str, figure: Figure, shape_id: str,
         where = f"the {term.row} row of {landed}" if term.row else f"{landed}'s infobox"
         joined = "" if not said else (" less " if term.sign < 0 else " plus ")
         said.append(f"{joined}{value:,} ({where})")
-        sources.append({"field": "population", "name": "Wikipedia", "url": url(landed),
-                        "year": figure.year, "license": LICENCE})
+        if url(landed) not in {src["url"] for src in sources}:
+            sources.append({"field": "population", "name": "Wikipedia", "url": url(landed),
+                            "year": figure.year, "license": LICENCE})
     if total <= 0:
         log(f"  {iso3} {name}: the terms come to {total:,}; not written")
         return None

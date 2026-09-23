@@ -153,6 +153,7 @@ class AFigure(unittest.TestCase):
         self.assertEqual(row["population"]["value"], 1101170 + 2507098)
         self.assertIn("1,101,170 (the Maputo City row of Provinces of Mozambique) plus "
                       "2,507,098 (the Maputo row", row["population"]["note"])
+        self.assertEqual(len(row["sources"]), 1)
 
 
 if __name__ == "__main__":
