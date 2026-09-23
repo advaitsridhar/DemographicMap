@@ -1,9 +1,74 @@
-  AZE Contiguous Azerbaijan: 9,492,499 from 9,951,409 (the Total row of Demographics of Azerbaijan) less 458,910 (Nakhchivan Autonomous Republic's infobox)
-  GMB Basse: 261,160 from 261,160 (the Upper River row of Subdivisions of the Gambia)
-  MOZ Maputo: 3,608,268 from 1,101,170 (the Maputo City row of Provinces of Mozambique) plus 2,507,098 (the Maputo row of Provinces of Mozambique)
-  SOM Bakool: 560,267 from 560,267 (the Bakool Region row of Administrative divisions of Somalia)
-  BHS North Eleuthera: 3,923 from 3,923 (the North Eleuthera row of Local government in the Bahamas)
-  BHS East Grand Bahama: 11,011 from 11,011 (the East Grand Bahama row of Local government in the Bahamas)
-  BHS West Grand Bahama: 5,960 from 5,960 (the West Grand Bahama row of Local government in the Bahamas)
-  wrote data/processed/wiki_table_population.json (9 kB)
-wrote 7 records to wiki_table_population.json
+probe_page: https://www.citypopulation.de/en/somalia/
+  264 lines of text, 11 mentioning Bakool, Juba, Hiiraan, Hiran, Bay, Gedo
+        4  The central government controls Somalia only partly. Militant groups occupy some parts of the country. Somaliland with the five north-western regions declared independence from Somalia in 1991. Despite of its de-facto independence, it is still internationally considered to be part of Somalia.
+        5  Federal States
+        6  The federal states (without Somaliland and without Banaadir that remains a region) consist of following pre-war regions:
+        7  Galmudugh : Galgaduud and southern parts of Mudug.
+        8  Hirshabelle : Hiiraan and Shabeellaha Dhexe.
+        9  Jubaland : Gedo, Jubbada Dhexe and Jubbada Hoose.
+       10  Koonfur Galbeed [South West] : Bakool, Bay and Shabeellaha Hoose.
+       11  Puntland : Bari, Nugaal and northern parts of Mudug. It claims also the eastern districts of Somaliland.
+       12  Pre-war Regions
+       13  The population of the pre-war regions of Somalia according to latest estimates and calculations.
+       14  Name
+       38  673,263
+       39  1,010,600
+       40  2137400
+       41  →
+       42  Bakool
+       43  BKL
+       44  26,962
+       45  310,600
+       46  367,226
+       62  719,512
+       63  949,700
+       64  7008800
+       65  →
+       66  Bay
+       67  BAY
+       68  35,156
+       69  620,600
+       70  792,182
+       71  1,035,900
+       78  569,434
+       79  634,300
+       80  4612600
+       81  →
+       82  Gedo
+       83  GED
+       84  60,389
+       85  328,400
+       86  508,405
+       87  566,300
+       88  6038900
+       89  →
+       90  Hiiraan [ Hiran ]
+       91  HRN
+       92  31,510
+       93  329,800
+       94  520,685
+       95  566,400
+       96  3151000
+       97  →
+       98  Jubbada Dhexe [ Middle Juba ]
+       99  JBD
+      100  9,836
+      101  238,900
+      102  362,921
+      103  432,200
+      104  983600
+      105  →
+      106  Jubbada Hoose [ Lower Juba ]
+      107  JBH
+      108  42,876
+      109  385,800
+      110  489,307
+      197  0
+      198  Barbara [ Berbera ]
+      199  374,000
+      200  0
+      201  Baydhabo [ Baidoa ]
+      202  ...
+      203  0
+      204  Beletweeyne [ Beledweyne ]
+      205  ...
