@@ -1,53 +1,230 @@
-  Nord-Est: found by searching the country
-  Sud: searching the country offered Q15124 'South Tyrol', Q23498165 'Province of South Sardinia', Q1237 'Trentino-South Tyrol', Q38 'Italy', Q1447 'Apulia'
-ITA: 5 units without a population, 4 resolved
-  Centro -> Central Italy (Q1127320, matched by declaration)
-  Isole -> Insular Italy (Q525358, matched by declaration)
-  Nord-Est -> Northeast Italy (Q579075, matched by name)
-  Nord-Ovest -> Northwest Italy (Q2725942, matched by declaration)
-  Sud -> Abruzzo + Molise + Campania + Apulia + Basilicata + Calabria: 13,339,994
-TZA: the country's own divisions resolved 3 more
-TZA: what sits directly in the country resolved 4 more
-  Dar es Salaam: searching the country offered Q1960 'Dar es Salaam', Q1411192 'Julius Nyerere International Airport', Q3663642 "Saint Joseph's Cathedral, Dar es Salaam", Q557597 'University of Dar es Salaam', Q1364405 'Roman Catholic Archdiocese of Dar-es-Salaam'
-  Iringa: searching the country offered Q735609 'Iringa', Q1888339 'Iringa District', Q309352 'Iringa Region', Q3710991 'Iringa Municipal District', Q15228797 'Iringa University College'
-  Kigoma: searching the country offered Q244509 'Kigoma', Q747943 'Kigoma Region', Q25619275 'Kigoma', Q10779824 'Kigoma Municipal District', Q10779823 'Kigoma District'
-  Lindi: searching the country offered Q829886 'Lindi', Q309339 'Lindi Region', Q8935650 'Mtama District', Q6552506 'Lindi Urban District', Q871249 'Roman Catholic Diocese of Lindi'
-  Mbeya: searching the country offered Q335548 'Mbeya', Q6799690 'Mbeya City District', Q458382 'Mbeya Region', Q6799682 'Mbeya District', Q284482 'Roman Catholic Archdiocese of Mbeya'
-  Mtwara: searching the country offered Q646684 'Mtwara', Q6930523 'Mtwara Municipal District', Q499465 'Mtwara Region', Q6930521 'Mtwara District', Q259904 'Roman Catholic Diocese of Mtwara'
-  Shinyanga: searching the country offered Q818765 'Shinyanga', Q7497842 'Shinyanga Municipal District', Q10819677 'Shinyanga District', Q153339 'Shinyanga Region', Q876439 'Roman Catholic Diocese of Shinyanga'
-  Tabora: searching the country offered Q643112 'Tabora', Q153335 'Tabora Region', Q7673548 'Tabora Municipal District', Q958486 'Roman Catholic Archdiocese of Tabora', Q7220771 'Tabora Airport'
-TZA: 17 units without a population, 17 resolved
-  Dar es Salaam -> Dar es Salaam (Q1960, matched by redirect)
-  Geita -> Geita Region (Q1848521, matched by name)
-  Geita -> Geita Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_footnotes, population_demonym)
-  Iringa -> Iringa Region (Q309352, matched by redirect)
-  Iringa -> Iringa Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
-  Katavi -> Katavi Region (Q2682731, matched by name)
-  Kigoma -> Kigoma Region (Q747943, matched by redirect)
-  Kigoma -> Kigoma Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym, population_footnotes)
-  Lindi -> Lindi Region (Q309339, matched by redirect)
-  Lindi -> Lindi Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
-  Mbeya -> Mbeya Region (Q458382, matched by redirect)
-  Morogoro -> Morogoro Region (Q458388, matched by declaration)
-  Morogoro -> Morogoro Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
-  Mtwara -> Mtwara Region (Q499465, matched by redirect)
-  Mtwara -> Mtwara Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
-  Mwanza -> Mwanza Region (Q331153, matched by declaration)
-  Mwanza -> Mwanza Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_footnotes, population_demonym)
-  Njombe -> Njombe Region (Q2086273, matched by name)
-  Shinyanga -> Shinyanga Region (Q153339, matched by redirect)
-  Shinyanga -> Shinyanga Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
-  Simiyu -> Simiyu Region (Q2787568, matched by name)
-  Simiyu -> Simiyu Region: no population parameter in the infobox (it has population_as_of, population_density_km2, population_rank, population_demonym)
-  Tabora -> Tabora Region (Q153335, matched by redirect)
-  Zanzibar North -> Unguja North Region (Q147116, matched by name)
-  Zanzibar South & Central -> Unguja South Region (Q643120, matched by name)
-  Zanzibar Urban/West -> Mjini Magharibi Region (Q180822, matched by name)
-OMN: the country's own divisions resolved 1 more
-OMN: what sits directly in the country resolved 1 more
-OMN: 3 units without a population, 3 resolved
-  Al Batinah -> Al Batinah Region (Q264245, matched by redirect)
-  Ash Sharqiyah -> Ash Sharqiyah North Governorate + Ash Sharqiyah South Governorate: 587,260
-  Az Zahirah -> Al Dhahirah Governorate + Al Buraimi Governorate + Musandam Governorate: 383,907
-  wrote data/processed/wiki_population_admin1.json (542 kB)
-wrote 544 records to wiki_population_admin1.json
+
+===== [en] 'Iringa Region', 14,175 bytes
+  -- infobox --
+      name = Iringa Region
+      native_name = {{small|{{native phrase|sw|Mkoa wa Iring
+      nickname = Tanzania's Tea Cup
+      settlement_type = [[Regions of Tanzania|Region]]
+      named_for = Iringa town <!-- images and maps -------
+      image_map = Iringa in Tanzania.svg
+      map_caption = Location in Tanzania
+      coordinates = {{coord|7|46|5.16|S|35|41|9.96|E|type:ad
+      subdivision_type = Country
+      subdivision_name = {{flag|Tanzania}}
+      subdivision_type1 = Zone
+      subdivision_name1 = Southern Highlands
+      established_title = Administrative Region
+      established_date = 2012
+      seat_type = Capital
+      seat = [[Iringa]]
+      parts_type = [[Districts of Tanzania|Districts]]
+      p1 = [[Iringa Urban District]]
+      leader_title = Regional Commissioner
+      leader_name = [[Halima Dendego]]
+      p2 = [[Iringa Rural District]]
+      p3 = [[Kilolo District]]
+      p4 = [[Mafinga|Mafinga District]]
+      p5 = [[Mufindi District]] <!-- square kilomet
+      area_rank = [[Regions of Tanzania|24th of 31]]
+      elevation_max_m = 2,489
+    * elevation_max_point = Luhombero <!-- Population ----------------------->| population_total = 1,192,728
+    * population_as_of = 2022
+    * population_density_km2 = auto
+    * population_rank = [[Regions of Tanzania|12th of 31]]
+    * demographics_type1 = [[List of ethnic groups in Tanzania|Ethnic groups]]
+    * demographics1_title1 = Settler
+    * demographics1_info1 = [[Swahili people|Swahili]]
+    * demographics1_title2 = Native
+    * demographics1_info2 = [[Hehe people|Hehe]]
+    * population_demonym = Iringan
+      timezone1 = [[East Africa Time|EAT]]
+      utc_offset1 = +3
+      postal_code_type = Postcode
+      postal_code = 51xxx
+      area_code = 026
+      iso_code = TZ-04 <ref>{{cite web|url=https://www.is
+      blank_name_sec1 = [[Human Development Index|HDI]] (2021)
+      blank_info_sec1 = 0.577<ref name="GlobalDataLab">{{Cite we
+      website = {{URL|http://iringa.go.tz/|Official webs
+      module = {{Infobox place symbols| embedded=yes |c
+  -- sections --
+    [] no table
+    [Geography] no table
+    [Demographics] no table
+    [Administrative divisions] no table
+    [Districts] 1 table(s)
+      ref name=Census: 
+      table 1: 8 rows
+        Districts of Iringa Region
+        District | Population (2012)
+        Iringa District | 254,032
+        ... 5 more rows
+    [Politics] no table
+    [Economy] no table
+    [Notable people] no table
+    [References] no table
+    [External links] no table
+
+===== [en] 'Geita Region', 16,715 bytes
+  -- infobox --
+      name = Geita Region
+      native_name = {{small|{{native phrase|sw|Mkoa wa Geita
+      nicknames = The Gold Region, Golden State of Tanzani
+      settlement_type = [[Regions of Tanzania|Region]]
+      named_for = Geita <!-- images and maps ----------->|
+      image_caption = Ferry from Mwanza to Geita
+      image_map = Tanzania Geita Region location map.svg
+      map_caption = Location in Tanzania
+      coordinates = {{coord|2|49|27.12|S|32|15|55.44|E|type:
+      subdivision_type = Country
+      subdivision_name = {{flag|Tanzania}}
+      subdivision_type1 = Zone
+      subdivision_name1 = Lake
+      established_title = Administrative Region
+      established_date = 2012
+      seat_type = Capital
+      seat = [[Geita Municipal]]
+      leader_title = Regional Commissioner
+      leader_name = Martin Reuben Shigela
+      leader_title1 = Assistant Administrator
+      leader_name1 = Godius Walter Kayharara
+      parts_type = [[Districts of Tanzania|Districts]]
+      p1 = [[Geita|Geita Urban]]
+      p2 = [[Bukombe District]]
+      p3 = [[Chato District]]
+      p4 = [[Geita District]]
+      p5 = [[Mbogwe District]]
+      p6 = [[Nyang'hwale District]] <!-- square kil
+      area_rank = [[Regions of Tanzania|21st of 31]]
+      elevation_max_m = 1519
+    * elevation_max_point = Mula <!-- Population ----------------------->| population_total = 2,977,608
+    * population_as_of = 2022 census
+    * population_density_km2 = auto
+    * population_rank = [[Regions of Tanzania|7th of 31]]
+    * population_footnotes = {{r|2016_census|p=11}}
+    * demographics_type1 = [[List of ethnic groups in Tanzania|Ethnic groups]]
+    * demographics1_title1 = Settler
+    * demographics1_info1 = [[Swahili people|Swahili]] & [[Sukuma people|Sukuma]]
+    * demographics1_title2 = Native
+    * demographics1_info2 = [[Zinza people|Zinza]], [[Sumbwa people|Sumbwa]] & [[Haya people|Haya]]
+    * population_demonym = Geitan
+      timezone1 = [[East Africa Time|EAT]]
+      utc_offset1 = +3
+      postal_code_type = Postcode
+      postal_code = 30xxx
+      area_code = 028
+      iso_code = TZ-27
+      blank_name_sec1 = [[Human Development Index|HDI]] (2021)
+      blank_info_sec1 = 0.523<ref name="GlobalDataLab">{{Cite we
+      website = {{URL|https://geita.go.tz |Official webs
+      module = {{Infobox place symbols| embedded=yes |c
+  -- sections --
+    [] no table
+    [Geography] no table
+    [Climate] no table
+    [History] no table
+    [Demographics] 1 table(s)
+      table 1: 4 rows
+        Census | Population
+        2002 | 1,337,718
+        2012 | 1,739,530
+        ... 1 more rows
+    [Economy] no table
+    [Administrative divisions] no table
+    [Districts] 1 table(s)
+      table 1: 9 rows
+        Districts of Geita Region
+        Map with main roads in green | District | Population (2016)p=11
+        rowspan=7 | 350px | Geita Town | 192,541
+        ... 6 more rows
+    [Gallery] no table
+    [Notable people from Geita Region] no table
+    [References] no table
+    [External links] no table
+
+===== [en] 'Mwanza Region', 35,342 bytes
+  -- infobox --
+      name = Mwanza Region
+      native_name = {{small|{{native phrase|sw|Mkoa wa Mwanz
+      nicknames = The rock of Tanzania; The granite rock r
+      settlement_type = [[Regions of Tanzania|Region]] <!-- imag
+      image_map = Mwanza in Tanzania.svg
+      map_caption = Location in Tanzania <!-- Location -----
+      subdivision_type = Country
+      subdivision_name = {{flag|Tanzania}}
+      subdivision_type1 = Zone
+      subdivision_name1 = Lake
+      established_title = Region
+      established_date = 1961
+      seat_type = Capital
+      seat = [[Mwanza]]
+      parts_type = [[Districts of Tanzania|Districts]]
+      p1 = [[Ilemela District|Ilemela]]
+      p2 = [[Kwimba District|Kwimba]]
+      p3 = [[Magu District|Magu]]
+      p4 = [[Misungwi District|Misungwi]]
+      p5 = [[Nyamagana District|Nyamagana]]
+      p6 = [[Sengerema District|Sengerema]]
+      p7 = [[Ukerewe District|Ukerewe]]
+      leader_party = [[Chama Cha Mapinduzi|CCM]]
+      leader_title = Regional Commissioner
+      leader_name = Adam Malima
+      unit_pref = Metric <!-- square kilometers -->| area_
+      area_land_km2 = 11,796
+      area_water_km2 = 13,437
+      area_water_percent = 53.25
+      area_rank = [[Regions of Tanzania|16th of 31]]
+      elevation_max_m = 1,471
+    * elevation_max_point = Katogoli <!-- Population ----------------------->| population_total = 3699872
+    * population_as_of = 2022
+    * population_density_km2 = auto
+    * population_rank = [[Regions of Tanzania|2nd of 31]]
+    * population_footnotes = {{r|2022_census}}
+    * demographics_type1 = [[List of ethnic groups in Tanzania|Ethnic groups]]
+    * demographics1_title1 = Settler
+    * demographics1_info1 = [[Swahili people|Swahili]]
+    * demographics1_title2 = Native
+    * demographics1_info2 = [[Sukuma people|Wasukuma]], [[Kerewe people|Wakerewe]], [[Kara people (Tanzania)|Wakara]] & [[Zinza people|Wazinza]]
+    * population_demonym = Mwanzan
+      timezone1 = [[East Africa Time|EAT]]
+      utc_offset1 = +3
+      postal_code_type = Postcode
+      postal_code = 33xxx
+      area_code = 028
+      iso_code = TZ-18<ref>{{cite web|url=https://www.iso
+      blank_name_sec1 = [[Human Development Index|HDI]] (2021)
+      blank_info_sec1 = 0.523<ref name="GlobalDataLab">{{Cite we
+      website = {{URL|http://mwanza.go.tz/|Official webs
+      module = {{Infobox place symbols| embedded=yes |c
+  -- sections --
+    [] no table
+    [History] no table
+    [First communities] no table
+    [Colonial era] no table
+    [Post-colonial era] no table
+    [Geography] no table
+    [Economy] no table
+    [Agriculture] no table
+    [Industry] no table
+    [Tourism] no table
+    [Infrastructure] no table
+    [Railways] no table
+    [Maritime transport] no table
+    [Air transport] no table
+    [Population] no table
+    [Demographics] no table
+    [Culture] no table
+    [Administrative divisions] no table
+    [Districts] 1 table(s)
+      table 1: 11 rows
+        Districts of Mwanza Region
+        Map | District | Population (2012)
+        rowspan=8 | 300px | Buchosa District | 369,201
+        ... 8 more rows
+    [Health and Education] no table
+    [Education] no table
+    [Notable persons from Mwanza Region] no table
+    [References] no table
+    [External links] no table
+
+wrote /home/runner/work/DemographicMap/DemographicMap/data/processed/europe_wiki_probe.log
