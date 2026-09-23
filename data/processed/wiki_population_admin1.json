@@ -3501,6 +3501,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "ETH-WP-snnpr",
+    "level": "admin1",
+    "name": "SNNPR",
+    "parent": "ETH",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 13044044,
+      "unit": "people",
+      "year": 2023,
+      "source": "English Wikipedia, Southern Nations, Nationalities, and Peoples' Region (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Southern_Nations%2C_Nationalities%2C_and_Peoples%27_Region",
+        "year": 2023,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "ETH",
+    "shape_id": "75662566B72302855928957",
+    "match_by": "shape_id"
+  },
+  {
     "id": "FJI-WP-central",
     "level": "admin1",
     "name": "Central",
@@ -17047,9 +17092,10 @@
       "status": "not_available"
     },
     "population": {
-      "value": 363945,
+      "value": 2208385,
       "unit": "people",
-      "source": "English Wikipedia, El-Gadarif (infobox); the article gives no year for the figure"
+      "year": 2018,
+      "source": "English Wikipedia, Al Qadarif State (infobox)"
     },
     "median_age": {
       "status": "not_available"
@@ -17070,8 +17116,8 @@
       {
         "field": "population",
         "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/El-Gadarif",
-        "year": null,
+        "url": "https://en.wikipedia.org/wiki/Al_Qadarif_State",
+        "year": 2018,
         "license": "CC BY-SA 4.0"
       }
     ],
@@ -17977,6 +18023,51 @@
     ],
     "country": "SOM",
     "shape_id": "83879307B65026001570916",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "SOM-WP-togdheer",
+    "level": "admin1",
+    "name": "Togdheer",
+    "parent": "SOM",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 962400,
+      "unit": "people",
+      "year": 2019,
+      "source": "English Wikipedia, Togdheer (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Togdheer",
+        "year": 2019,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "SOM",
+    "shape_id": "83879307B67680758004346",
     "match_by": "shape_id"
   },
   {

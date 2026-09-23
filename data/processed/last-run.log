@@ -1,9 +1,96 @@
-Edinet: Moldovan 72.73%, 7 groups, year none stated
-Falesti: Moldovan or Romanian 84.33%, 5 groups, year none stated
-Glodeni: Moldovan 76.5%, 8 groups, year none stated
-RIscani: Moldovan 72.55%, 9 groups, year 2004
-Balti: Moldovan or Romanian 74.33%, 8 groups, year 2024
-Bender: [{'group': 'Moldovan', 'pct': 25.03}, {'group': 'Ukrainian', 'pct': 17.98}, {'group': 'Russian', 'pct': 43.35}, {'group': 'Other', 'pct': 13.64}]
-Transnistria (modelled): [{'group': 'Moldovan', 'pct': 35.1}, {'group': 'Ukrainian', 'pct': 30.8}, {'group': 'Russian', 'pct': 27.1}, {'group': 'Other', 'pct': 7.0}]
-  wrote data/processed/moldova_ethnicity_gaps.json (21 kB)
-wrote 14 records to moldova_ethnicity_gaps.json
+CIV: the country's own divisions resolved 1 more
+CIV: what sits directly in the country resolved 3 more
+CIV: 11 units without a population, 11 resolved
+  Comoe -> Comoé District (Q16629374, matched by name)
+  Denguele -> Denguélé Region: no population parameter in the infobox (it has stat_pop1)
+  District Autonome D'Abidjan -> Abidjan Department (Q4667612, matched by declaration)
+  District Autonome De Yamoussoukro -> Yamoussoukro (Q3768, matched by declaration)
+  Goh-Djiboua -> Gôh-Djiboua District (Q21003640, matched by name)
+  Lacs -> Lacs Region: no population parameter in the infobox (it has stat_pop1)
+  Montagnes -> Dix-Huit Montagnes: no population parameter in the infobox (it has stat_pop1)
+  Savanes -> Savanes Region (Ivory Coast): no population parameter in the infobox (it has stat_pop1)
+  Valle Du Bandama -> Vallée du Bandama Region (Q845721, matched by name)
+  Valle Du Bandama -> Vallée du Bandama Region (Q845721): reached only by a redirect, and its 28 km^2 is 0.1% of the shape's 50,278 km^2 box; refused
+  Woroba -> Woroba District (Q20980371, matched by name)
+  Zanzan -> Zanzan Region: no population parameter in the infobox (it has stat_pop1)
+ETH: what sits directly in the country resolved 1 more
+ETH: 3 units without a population, 3 resolved
+  Beneshangul Gumu -> Benishangul-Gumuz Region (Q207635, matched by declaration)
+  Hareri -> Harari Region (Q1033855, matched by declaration)
+  SNNPR -> Southern Nations, Nationalities, and Peoples' Region (Q203193, matched by name)
+  Janjanbureh: searching the country offered Q1002786 'Janjanbureh', Q3676493 'Janjanbureh', Q113575198 'Janjanbureh Constituency', Q224775 'MacCarthy Island', Q1253431 'Janjanbureh district'
+  Kuntaur: searching the country offered Q1188137 'Kuntaur', Q2756380 'Kuntaur', Q140877695 'Kuntaur Area Council Building', Q141464857 'Liste der Vorsteher des Kuntaur Area Council'
+GMB: 8 units without a population, 8 resolved
+  Basse -> Upper River Division (Q824373, matched by declaration)
+  Basse -> Upper River Division: no population parameter in the infobox (it has population_as_of, population_footnotes, population_note, population_total, population_density_km2, population_density_sq_mi)
+  Brikama -> West Coast Division (Q1889977, matched by declaration)
+  Brikama -> West Coast Division (Q1889977): its coordinates (6.08, 116.50) lie outside the shape; refused
+  Janjanbureh -> Janjanbureh (Q1002786, matched by redirect)
+  Janjanbureh -> Janjanbureh (Q1002786): reached only by a redirect, and Wikidata states no area to size it by; refused
+  Kanifing -> Kanifing (Q1762211, matched by declaration)
+  Kerewan -> North Bank Division (Q846161, matched by declaration)
+  Kuntaur -> Kuntaur (Q1188137, matched by redirect)
+  Kuntaur -> Kuntaur (Q1188137): reached only by a redirect, and Wikidata states no area to size it by; refused
+  Mansakonko -> Lower River Division (Q824421, matched by declaration)
+BHS: 18 units without a population, 18 resolved
+  Acklins -> Acklins (Q341919, matched by declaration)
+  Black Point -> Black Point, Bahamas: no infobox
+  Central Abaco -> Central Abaco: no infobox
+  Central Eleuthera -> Central Eleuthera: no infobox
+  East Grand Bahama -> East Grand Bahama: no infobox
+  Mangrove Cay -> Mangrove Cay: no infobox
+  Moore's Island -> Moore's Island: no infobox
+  North Eleuthera -> North Eleuthera: no infobox
+  South Abaco -> South Abaco: no infobox
+  South Eleuthera -> South Eleuthera: no infobox
+  West Grand Bahama -> West Grand Bahama: no population parameter in the infobox (it has population_as_of, population_footnotes, population_note, population_total, population_density_km2, population_metro)
+OMN: the country's own divisions resolved 1 more
+OMN: what sits directly in the country resolved 2 more
+OMN: 3 units without a population, 3 resolved
+  Al Batinah -> Al Batinah Region (Q264245, matched by name)
+  Ash Sharqiyah -> Ash Sharqiyah Region (Oman) (Q1106416, matched by name)
+  Ash Sharqiyah -> Ash Sharqiyah Region (Oman): no population parameter in the infobox (it has population_as_of, population_density_km2, population_density_sq_mi, population_total, population_metro)
+  Az Zahirah -> Al Dhahirah Governorate (Q1468596, matched by name)
+118: 1 units without a population, 1 resolved
+  Gaza Strip -> Gaza Strip (Q39760, matched by declaration)
+  Gaza Strip -> Gaza Strip: population_estimate: not a whole number: '~2,050,000'
+PHL: the country's own divisions resolved 2 more
+  ARMM: found by searching the country
+PHL: 3 units without a population, 3 resolved
+  ARMM -> Autonomous Region in Muslim Mindanao (Q13708, matched by name)
+  ARMM -> Autonomous Region in Muslim Mindanao (Q13708): reached only by a redirect, and its 12,536 km^2 is 4.4% of the shape's 285,415 km^2 box; refused
+  CAR -> Cordillera Administrative Region (Q13606, matched by name)
+  NCR -> Metro Manila (Q13580, matched by name)
+SDN: what sits directly in the country resolved 2 more
+  Central Darfur: found by searching the country
+SDN: 6 units without a population, 5 resolved
+  Abyei PCA: no article resolved
+  Central Darfur -> Central Darfur (Q4116493, matched by name)
+  East Darfur -> East Darfur (Q3545641, matched by name)
+  Gedaref -> Al Qadarif State (Q309478, matched by declaration)
+  West Darfur -> West Darfur: population_total: not a whole number: '1.9 million'
+  West Kordofan -> West Kordofan (Q536396, matched by name)
+SOM: the country's own divisions resolved 4 more
+  Sanaag: found by searching the country
+  Sool: found by searching the country
+SOM: 15 units without a population, 15 resolved
+  Bakool -> Bakool: population_total: not a whole number: '1,15,6400'
+  Banadir -> Banaadir (Q806070, matched by name)
+  Galgaduud -> Galguduud (Q876772, matched by name)
+  Hiiraan -> Hiran, Somalia (Q660040, matched by name)
+  Nugaal -> Nugal, Somalia (Q1046329, matched by name)
+  Sanaag -> Sanaag (Q751387, matched by name)
+  Sool -> Sool (Q848864, matched by name)
+  Togdheer -> Togdheer (Q865590, matched by declaration)
+  Woqooyi Galbeed -> Maroodi Jeex (Q10326669, matched by declaration)
+ESH: 1 units without a population, 1 resolved
+  Western Sahara -> Western Sahara (Q6250, matched by declaration)
+  Western Sahara -> Western Sahara: population_total: not a whole number: '{{UN_Population|Western Sahara}}{{UN_Population|ref}}'
+TON: 4 units without a population, 4 resolved
+  'Eua -> ʻEua (Q423528, matched by declaration)
+  Ha'apai -> Haʻapai (Q612098, matched by declaration)
+  Niuas -> Niua Islands (Q1200954, matched by declaration)
+  Niuas -> Niua Islands (Q1200954): its coordinates (-15.96, -173.78) lie outside the shape; refused
+  Tongatapu -> Tongatapu (Q620452, matched by declaration)
+  wrote data/processed/wiki_population_admin1.json (529 kB)
+wrote 532 records to wiki_population_admin1.json
