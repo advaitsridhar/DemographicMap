@@ -1190,9 +1190,6 @@ COMPOSITES: dict[tuple[str, str], tuple[str, ...]] = {
     # The map's Sud is the NUTS-1 region: mainland southern Italy, without
     # the islands its "Southern Italy" article counts.
     ("ITA", "Sud"): ("Abruzzo", "Molise", "Campania", "Apulia", "Basilicata", "Calabria"),
-    # The boundary file's Maputo holds the capital as well as the province
-    # around it; the country's other nine shapes are its other provinces.
-    ("MOZ", "Maputo"): ("Maputo Province", "Maputo"),
     # The map's Oman is seven regions of the 1990s, and its Az Zahirah runs
     # from 17.5 to 26.4 degrees north: it holds Al Buraimi and Musandam as
     # well as the Al Dhahirah Governorate of 2006, which the name search

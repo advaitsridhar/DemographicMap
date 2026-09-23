@@ -30,6 +30,14 @@ GAMBIA = """{| class="wikitable"
 | Lower River || Mansa Konko || 81,042 || 90,624
 |}"""
 
+PROVINCES = """{| class="wikitable sortable"
+! Map Key !! Province !! Capital !! Population (2007 census) !! Population (2017 census)
+|-
+| 10 || [[Maputo|Maputo City]] || Maputo || 1,094,628 || 1,101,170
+|-
+| 11 || [[Maputo Province|Maputo]] || [[Matola]] || 1,205,709 || 2,507,098
+|}"""
+
 
 def pages(**texts):
     return lambda title, lang: (texts.get(title, ""), title)
@@ -93,6 +101,14 @@ class AFigure(unittest.TestCase):
                             pages(**{"Subdivisions of the Gambia": GAMBIA}))
         self.assertEqual((row["population"]["value"], row["population"]["year"]),
                          (261160, 2024))
+
+    def test_maputo_is_the_city_and_the_province_from_one_column(self):
+        fig = wt.FIGURES[("MOZ", "Maputo")]
+        row = wt.figure_row("MOZ", "Maputo", fig, "SHAPE",
+                            pages(**{"Provinces of Mozambique": PROVINCES}))
+        self.assertEqual(row["population"]["value"], 1101170 + 2507098)
+        self.assertIn("1,101,170 (the Maputo City row of Provinces of Mozambique) plus "
+                      "2,507,098 (the Maputo row", row["population"]["note"])
 
 
 if __name__ == "__main__":

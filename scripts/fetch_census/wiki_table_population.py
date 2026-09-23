@@ -49,6 +49,8 @@ class Term:
     row: str | None = None
     column: str | None = None
     sign: int = 1
+    # The header of the column the row is labelled in, where it is not the first.
+    key: str | None = None
 
 
 @dataclass(frozen=True)
@@ -84,10 +86,26 @@ FIGURES: dict[tuple[str, str], Figure] = {
         source="2024 census of the Gambia, as the list of its regions gives it",
         note=("Basse local government area is the Upper River Region, whose 2024 "
               "census figure is {terms}.")),
+    # The boundary file's Maputo holds the capital as well as the province
+    # around it. Not the sum of the two articles' infoboxes: those print
+    # 1,968,906 and 1,088,449, each "2017 census", from two different
+    # releases of it, where the list of provinces prints one release for all
+    # eleven -- the one the map's other provinces already carry, eight of the
+    # nine to the person.
+    ("MOZ", "Maputo"): Figure(
+        year=2017,
+        terms=(Term("Provinces of Mozambique", row="Maputo City", key=r"^Province$",
+                    column=r"Population \(2017 census\)"),
+               Term("Provinces of Mozambique", row="Maputo", key=r"^Province$",
+                    column=r"Population \(2017 census\)")),
+        source="2017 census of Mozambique, as the list of its provinces gives it",
+        note=("The boundary file draws Maputo City and Maputo Province as one "
+              "shape; this is the sum of their rows: {terms}.")),
 }
 
 
-def cell(wikitext: str, row: str, column: str, year: int) -> tuple[int | None, str]:
+def cell(wikitext: str, row: str, column: str, year: int,
+         key: str | None = None) -> tuple[int | None, str]:
     """The one table cell under a header naming ``year``, in the row labelled ``row``."""
     header = re.compile(column, re.I)
     found: list[int] = []
@@ -100,8 +118,12 @@ def cell(wikitext: str, row: str, column: str, year: int) -> tuple[int | None, s
             continue
         if str(year) not in heads[at[0]]:
             return None, f"the column {heads[at[0]]!r} does not name {year}"
+        labels = [i for i, h in enumerate(heads) if key and re.search(key, h, re.I)]
+        if key and len(labels) != 1:
+            continue
+        by = labels[0] if key else 0
         for cells in table[1:]:
-            if not cells or cell_text(cells[0]).casefold() != row.casefold():
+            if len(cells) <= by or cell_text(cells[by]).casefold() != row.casefold():
                 continue
             # Merged cells are not expanded, so a row that is shorter or
             # longer than its header cannot be lined up with it.
@@ -130,7 +152,7 @@ def term_value(term: Term, year: int, fetcher=fetch) -> tuple[int | None, str, s
         if found != year:
             return None, landed, f"its infobox dates the figure to {found}, not {year}"
         return value, landed, ""
-    value, why = cell(wikitext, term.row, term.column or "", year)
+    value, why = cell(wikitext, term.row, term.column or "", year, term.key)
     return value, landed, why
 
 
