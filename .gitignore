@@ -26,6 +26,10 @@ data/raw/*
 # the archive's copy of the Bureau's PDF.
 !data/raw/gambia/
 !data/raw/gambia/*.txt
+# Table 11/2 of Iraq's Annual Abstract of Statistics 2024, the 2024 census by
+# sub-district, as the text its PDF lays out: what iraq_census parses.
+!data/raw/iraq/
+!data/raw/iraq/*.txt
 # Kazakhstan's start-of-year ethnicity workbook: the Bureau's site is an
 # application with no file link to fetch it from, and it is 380 KB.
 !data/raw/kazakhstan/
