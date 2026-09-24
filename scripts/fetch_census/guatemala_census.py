@@ -7,8 +7,12 @@ tabulated by CLEAR Global, and ethnicity was empty. This reads the database in
 the runner, counts people by municipality, and writes the counts; the rows
 themselves are never kept.
 
-The file is checked against the SHA-256 the portal prints beside the link
-before a row is read.
+The portal prints a size and a SHA-256 beside the link (399 MB,
+C0F23CED...), and on 24 September 2026 it served a different file: 322,771,575
+bytes, SHA-256 82C57488... So the printed hash cannot vouch for what arrives,
+and the file is vouched for in two other ways before a count is written: the
+archive's own CRCs, which catch a damaged download, and INE's published 2018
+population of every department, which catch a wrong or altered file.
 
 Usage:
     python -m scripts.fetch_census.guatemala_census --probe
@@ -34,8 +38,8 @@ SHA256 = "C0F23CED957F7BC126A5A689B728BE143D8B57B74F96CDF31869B28B01B820F9"
 UA = "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap)"
 
 
-def download(dest: Path) -> None:
-    """The database, streamed to disk and checked against the published hash.
+def download(dest: Path) -> str:
+    """The database, streamed to disk; its SHA-256, logged beside the published one.
 
     The portal's button submits a form by POST; a GET is tried first, as the
     plainer request, and the form's own method only if the server wants it.
@@ -55,15 +59,17 @@ def download(dest: Path) -> None:
         got = digest.hexdigest().upper()
         log(f"  {method} {URL}: {dest.stat().st_size:,} bytes, sha256 {got}")
         if got != SHA256:
-            raise SystemExit(f"the file's SHA-256 is {got}, not the {SHA256} the portal publishes")
-        return
+            log(f"  the portal prints {SHA256} beside the link: not this file")
+        return got
     raise SystemExit("the database could not be downloaded")
 
 
 def probe(archive: zipfile.ZipFile) -> None:
-    """What the archive holds: its files, each CSV's header, and the codebook."""
+    """What the archive holds: its files, each CSV's header and rows, and the codebook."""
     for info in archive.infolist():
         log(f"  {info.filename}: {info.file_size:,} bytes")
+    bad = archive.testzip()
+    log(f"  CRC check: {'every member intact' if bad is None else 'damaged at ' + bad}")
     for info in archive.infolist():
         name = info.filename.lower()
         if name.endswith((".txt", ".md")) and info.file_size < 200_000:
@@ -80,12 +86,14 @@ def probe(archive: zipfile.ZipFile) -> None:
             log(f"-- {info.filename}: {len(header)} columns")
             log("   " + " | ".join(header))
             counts: dict[str, Counter] = {h: Counter() for h in header}
-            for n, row in enumerate(reader):
-                if n >= 200_000:
-                    break
+            rows = 0
+            for rows, row in enumerate(reader, 1):
+                if rows > 200_000:
+                    continue
                 for h, v in zip(header, row):
                     if len(counts[h]) < 60:
                         counts[h][v] += 1
+            log(f"   {rows:,} rows")
             for h in header:
                 top = counts[h].most_common(12)
                 log(f"   {h}: {len(counts[h])} values in the first 200,000 rows; {top}")
