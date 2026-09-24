@@ -210,6 +210,10 @@ ADAPTER_FILES = [
     # Where the agency counts a district the boundary file does not draw, the
     # older shape around it carries both, or a gap that says why.
     "uzbekistan_siat.json",
+    # Iraq's 2024 census from COSIT's Annual Abstract (iraq_census): every
+    # governorate, and the districts of the governorates whose census districts
+    # can be placed wholly inside the boundary file's older ones.
+    "iraq_census.json",
     # Indonesia, by the owner's decision of 19 September 2026: the 2010
     # census's ethnicity by province as its provinces' Wikipedia articles
     # transcribe it, and religion by province and regency from the registry
