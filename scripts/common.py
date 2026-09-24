@@ -1027,6 +1027,9 @@ ALSO_KNOWN_AS: dict[tuple[str, str], tuple[str, ...]] = {
     ("CHL", "Región de Magallanes y Antártica Chilena"):
         ("Magellan and the Chilean Antarctic Region",),
     ("CUB", "Isle of Youth"): ("Isla de la Juventud",),
+    # The boundary file abbreviates two of Guayas's cantons; INEC writes them out.
+    ("ECU", "Crnel. Marcelino Maridueña"): ("Coronel Marcelino Maridueña",),
+    ("ECU", "Gnral. Antonio Elizalde"): ("General Antonio Elizalde",),
     # Italy's regions, which the map draws at its second level: Eurostat writes
     # the Aosta Valley in both its languages, Wikidata in English.
     ("ITA", "Valle d'Aosta"): ("Valle d’Aosta/Vallée d’Aoste", "Aosta Valley"),

@@ -612,7 +612,23 @@ ADAPTER_GAPS: dict[str, str] = {
 # in India), read as facts about the boundary file. A gap that says why it is
 # a gap is worth having; a gap that says why, wrongly, is worse than a silent
 # one, because it stops anyone looking again.
-SHAPE_GAPS: dict[str, dict[str, str]] = {}
+SHAPE_GAPS: dict[str, dict[str, str]] = {
+    # Ecuador's two zonas no delimitadas the boundary file draws: ground whose
+    # province was unsettled when it was drawn. INEC's 2022 table is by canton
+    # and has no row for either.
+    "ECU": {
+        "El Piedrero": (
+            "Not a canton: one of Ecuador's zonas no delimitadas, ground whose "
+            "province was not settled when the boundary file was drawn. INEC's "
+            "2022 census table is by canton and has no row for it, so no count "
+            "is published for it as a unit."),
+        "Las Golondrinas": (
+            "Not a canton: one of Ecuador's zonas no delimitadas, ground whose "
+            "province was not settled when the boundary file was drawn. INEC's "
+            "2022 census table is by canton and has no row for it, so no count "
+            "is published for it as a unit."),
+    },
+}
 
 
 # ---------------------------------------------------------------------------
