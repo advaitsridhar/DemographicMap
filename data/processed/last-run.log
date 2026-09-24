@@ -1,8 +1,6 @@
   1,642,963 bytes
   https://cosit.gov.iq/documents/AAS2024/02.pdf: 1,642,963 bytes
   39 pages
-  13 pages of Table 11/2
-  wrote data/raw/iraq/aas2024_table11.txt
   98,126 bytes
   sheet 'irq_admin0': 1 rows, ['iso2', 'iso3', 'adm0_name', 'adm0_name1', 'adm0_name2', 'adm0_name3', 'adm0_pcode', 'valid_on', 'valid_to', 'version', 'area_sqkm', 'lang', 'lang1', 'lang2']
   sheet 'irq_admin1': 18 rows, ['adm1_name', 'adm1_name1', 'adm1_name2', 'adm1_name3', 'adm1_pcode', 'adm0_name', 'adm0_name1', 'adm0_name2', 'adm0_name3', 'adm0_pcode', 'valid_on', 'valid_to', 'area_sqkm', 'version']
@@ -10,4 +8,24 @@
   sheet 'irq_admin3': 294 rows, ['adm3_name', 'adm3_name1', 'adm3_name2', 'adm3_name3', 'adm3_pcode', 'adm2_name', 'adm2_name1', 'adm2_name2', 'adm2_name3', 'adm2_pcode', 'adm1_name', 'adm1_name1', 'adm1_name2', 'adm1_name3']
   sheet 'irq_adminlines': 864 rows, ['adm_level', 'name', 'valid_on', 'valid_to', 'version', 'right_pcod', 'left_pcod']
   sheet 'irq_adminpoints': 414 rows, ['admin_level', 'name', 'name1', 'name2', 'name3', 'x_coord', 'y_coord', 'adm4_name', 'adm4_name1', 'adm4_name2', 'adm4_name3', 'adm4_pcode', 'adm3_name', 'adm3_name1']
-  wrote data/raw/iraq/ocha_admin3.txt (710 rows)
+  181 districts, 18 governorates, 408 sub-districts; governorates sum to 46,118,793 against the grand total 46,118,793
+  Duhok: not written -- census districts not placed: Shikhan, Akri, Bardresh; sub-districts elsewhere: Batel in Sumail, not Zakho
+  Ninewa: not written -- census districts not placed: Makhmoor; map districts given none: Aqra
+  Al-Sulaymaniyah: not written -- census districts not placed: Saed Sadiq, Kifri, Khanakeen, Hajyawa
+  Kirkuk: not written -- sub-districts elsewhere: Alton kubri in Dibis, not Kirkuk
+  Erbil: not written -- census districts not placed: Benselawa, Chouman, Khabat, Aynkawa, Bearmam, Sayda Kan, Qosh Tba; map districts given none: Al-Zibar, Makhmour; sub-districts elsewhere: Barzan in Al-Zibar, not Rawanduz
+  Diyala: not written -- sub-districts elsewhere: Al-Abbara in Kifri, not Baquba
+  Al-Anbar: not written -- census districts not placed: AL-Obour
+  Baghdad: not written -- census districts not placed: Zawraa, Al-Zuhoor, Sama Al-Kadhimiya, Fada' Al-kazimia
+  Babil: not written -- census districts not placed: Kothi, Al-Kifl (Al-Nakhila
+  Kerbala: not written -- census districts not placed: Al-Hur
+  Wassit: not written -- sub-districts elsewhere: Zurbadia in Al-Suwaira, not Badra
+  Salah Al-Din: 7 districts from 11 census districts
+  Al-Najaf: not written -- census districts not placed: AL-Mishkhab
+  Al-Qadissiya: not written -- census districts not placed: Gammass (Al-Kawarnaq
+  Al-Muthanna: 4 districts from 9 census districts
+  Thi Qar: 5 districts from 15 census districts
+  Maysan: not written -- sub-districts elsewhere: Al-Uzair in Al-Mejar Al-Kabir, not Qalat Saleh
+  Al-Basrah: not written -- census districts not placed: Al-Sadiq
+  16 map districts with a figure, 85 with the reason they have none
+  wrote data/processed/iraq_census.json (119 kB)
