@@ -329,6 +329,63 @@ class HeldFiguresFallBack(unittest.TestCase):
         self.assertFalse(be.fall_back(entity, entity["population"]))
 
 
+class AFirstLevelItemOnASecondLevelShape(unittest.TestCase):
+    """Slovenia's municipalities are Wikidata's first level and the map's second."""
+
+    TOWN = {"Q15855": [["Q515", "city"]]}
+
+    def municipality(self, year):
+        return {"_source": "wikidata_admin1.json", "wikidata": "Q3259688",
+                "population": {"value": 3073, "year": year, "source": "Wikidata (CC0)"}}
+
+    def town(self, year):
+        return {"_source": "wikidata_admin2.json", "wikidata": "Q15855",
+                "population": {"value": 1586, "year": year, "source": "Wikidata (CC0)"}}
+
+    def test_the_town_joined_after_keeps_neither_the_figure_nor_the_link(self):
+        shape = {"id": "S", "name": "Bovec", "parent": "P", "sources": []}
+        be.merge_adapter(shape, self.municipality(2020))
+        be.merge_adapter(shape, self.town(2020))
+        self.assertEqual((shape["population"]["value"], shape["wikidata"]),
+                         (3073, "Q3259688"))
+        # So the settlement check reads the municipality, and leaves it.
+        self.assertEqual(be.refuse_settlement_figures({}, {"SVN": [shape]}, self.TOWN), 0)
+
+    def test_a_newer_town_figure_is_refused_for_the_municipality_s(self):
+        shape = {"id": "S", "name": "Bovec", "parent": "P", "sources": []}
+        be.merge_adapter(shape, self.municipality(2020))
+        be.merge_adapter(shape, self.town(2024))
+        self.assertEqual(shape["population"]["value"], 1586)
+        self.assertEqual(be.refuse_settlement_figures({}, {"SVN": [shape]}, self.TOWN), 1)
+        self.assertEqual(shape["population"]["value"], 3073)
+        self.assertIn("shown instead", shape["population"]["note"])
+
+    def test_a_figure_that_reached_the_shape_by_a_fragment_is_not_a_fallback(self):
+        shape = {"id": "S", "name": "Novosibirsk", "parent": "P", "sources": []}
+        be.merge_adapter(shape, {"_source": "wikidata_admin2.json", "_match": "name",
+                                 "wikidata": "Q9", "population": {
+                                     "value": 1637266, "year": 2025,
+                                     "source": "Wikidata (CC0)"}})
+        be.merge_adapter(shape, {"_source": "wikidata_admin2_classes.json",
+                                 "_match": "contains", "wikidata": "Q552914",
+                                 "population": {"value": 7319, "year": 2024,
+                                                "source": "Wikidata (CC0)"}})
+        classes = {"Q9": [["Q515", "city"]], "Q552914": [["Q1", "district"]]}
+        self.assertEqual(be.refuse_settlement_figures({}, {"RUS": [shape]}, classes), 1)
+        self.assertNotIn("value", shape["population"])
+
+    def test_a_city_declared_to_be_its_unit_keeps_its_figure(self):
+        shape = {"id": "S", "name": "Novosibirsk", "parent": "P", "wikidata": "Q883",
+                 "population": {"value": 1637266, "source": "Wikidata (CC0)"}}
+        self.assertEqual(be.refuse_settlement_figures(
+            {}, {"RUS": [shape]}, {"Q883": [["Q515", "city"]]}), 0)
+
+    def test_only_countries_measured_to_draw_it_so_are_declared(self):
+        self.assertIn("SVN", be.FIRST_LEVEL_DRAWN_SECOND)
+        # San José province would land on San José canton.
+        self.assertNotIn("CRI", be.FIRST_LEVEL_DRAWN_SECOND)
+
+
 class ParentsFilledFromAllTheirDivisions(unittest.TestCase):
     def tables(self, kid_pops, parent_pop=None):
         parent = {"id": "P", "name": "Moxico",
@@ -356,6 +413,42 @@ class ParentsFilledFromAllTheirDivisions(unittest.TestCase):
         self.assertEqual(a1["AGO"][0]["population"]["value"], 9)
 
 
+class APolygonDrawnAtBothLevelsShowsOneUnit(unittest.TestCase):
+    def tables(self):
+        census = {"value": 43693, "year": 2023, "source": "MONSTAT"}
+        a1 = {"id": "S", "name": "Bar Municipality", "population": census,
+              "sources": [{"field": "population", "name": "MONSTAT"}]}
+        a2 = {"id": "S", "name": "Bar Municipality",
+              "population": {"status": "not_available", "note": "a town's figure"},
+              "religion": {"status": "not_collected"},
+              "sources": [{"field": "population/coordinates", "name": "Wikidata"}]}
+        other = {"id": "T", "name": "Elsewhere", "population": {"status": "not_available"}}
+        return {"MNE": [a1]}, {"MNE": [a2, other]}
+
+    def test_the_second_level_copy_takes_the_first_level_figure(self):
+        a1, a2 = self.tables()
+        self.assertEqual(be.fill_same_polygons(a1, a2), 1)
+        twin = a2["MNE"][0]
+        self.assertEqual(twin["population"]["value"], 43693)
+        self.assertIn({"field": "population", "name": "MONSTAT"}, twin["sources"])
+        # A citation that also covers something else stays.
+        self.assertIn({"field": "population/coordinates", "name": "Wikidata"},
+                      twin["sources"])
+        # A copy, not the same object, so later passes cannot edit both.
+        self.assertIsNot(twin["population"], a1["MNE"][0]["population"])
+
+    def test_a_different_polygon_is_left_alone(self):
+        a1, a2 = self.tables()
+        be.fill_same_polygons(a1, a2)
+        self.assertNotIn("value", a2["MNE"][1]["population"])
+
+    def test_a_figure_already_there_is_not_replaced(self):
+        a1, a2 = self.tables()
+        a2["MNE"][0]["population"] = {"value": 1, "year": 2024, "source": "X"}
+        self.assertEqual(be.fill_same_polygons(a1, a2), 0)
+        self.assertEqual(a2["MNE"][0]["population"]["value"], 1)
+
+
 class BorrowedNamesYield(unittest.TestCase):
     def test_a_town_reaching_a_department_by_its_name_yields(self):
         shape = {"id": "S", "name": "Lago Buenos Aires", "level": "admin2"}
@@ -378,6 +471,18 @@ class BorrowedNamesYield(unittest.TestCase):
         dept = {"name": "Pomán Department", "_source": "wd.json"}
         dropped, _ = be.resolve_collisions([(town, shape, "alias+state"),
                                             (dept, shape, "name+state")])
+        self.assertEqual(dropped, {0})
+
+    def test_part_of_the_shape_s_name_is_not_its_own(self):
+        # Maneh and Samalqan was split in two; "Maneh County" is one half, and
+        # the row whose alias is the undivided county's name is the shape's.
+        shape = {"id": "M", "name": "Maneh and Samalqan", "level": "admin2"}
+        whole = {"name": "Samalqan County", "_source": "wd.json",
+                 "aliases": ["Maneh and Samalqan County"],
+                 "population": {"value": 101727}}
+        half = {"name": "Maneh County", "_source": "wd.json"}
+        dropped, _ = be.resolve_collisions([(half, shape, "prefix+state"),
+                                            (whole, shape, "alias+state")])
         self.assertEqual(dropped, {0})
 
     def test_two_rivals_named_like_the_shape_are_left_to_the_ranking(self):

@@ -1027,6 +1027,10 @@ ALSO_KNOWN_AS: dict[tuple[str, str], tuple[str, ...]] = {
     ("CHL", "Región de Magallanes y Antártica Chilena"):
         ("Magellan and the Chilean Antarctic Region",),
     ("CUB", "Isle of Youth"): ("Isla de la Juventud",),
+    # Italy's regions, which the map draws at its second level: Eurostat writes
+    # the Aosta Valley in both its languages, Wikidata in English.
+    ("ITA", "Valle d'Aosta"): ("Valle d’Aosta/Vallée d’Aoste", "Aosta Valley"),
+    ("ITA", "Trentino-Alto Adige"): ("Trentino-South Tyrol",),
     ("DOM", "Bahoruco"): ("Baoruco Province", "Baoruco"),
     ("DOM", "El Seybo"): ("El Seibo Province", "El Seibo"),
     # Renamed for the general in 1942; the older name is still the shape's.
