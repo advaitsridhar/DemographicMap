@@ -126,6 +126,9 @@ class OtherLakesAreWater(unittest.TestCase):
     def test_honduras_and_mozambique_are_declared(self):
         self.assertIn("Lago de Yojoa", be.WATER_SHAPES["HND"])
         self.assertIn("Lago Niassa", be.WATER_SHAPES["MOZ"])
+        for name in ("Danau Toba", "Danau", "Waduk Cirata", "Wadung Kedungombo"):
+            self.assertIn(name, be.WATER_SHAPES["IDN"])
+        self.assertNotIn("Hutan", be.WATER_SHAPES["IDN"], "a forest is land")
 
 
 class LakesAreWater(unittest.TestCase):
@@ -177,6 +180,17 @@ class LakesAreWater(unittest.TestCase):
     def test_the_check_passes_a_lake_left_as_water(self):
         e = self.lake()
         be.check_water_shapes({}, {"GTM": [e, self.lake(name="Lago De Amatitlan")]})
+
+    def test_a_gap_that_landed_is_settled_back_to_water(self):
+        # Indonesia's adapter writes "not collected" on its lakes; the
+        # declaration settles it, and the adapter's citation stays.
+        e = self.lake()
+        e["population"] = common.gap(common.NOT_COLLECTED, "uninhabited")
+        e["sources"] = [{"field": "population", "name": "OCHA caveat"}]
+        be.check_water_shapes({}, {"GTM": [e, self.lake(name="Lago De Amatitlan")]})
+        self.assertEqual(e["population"]["status"], common.NOT_APPLICABLE)
+        self.assertTrue(e["water"])
+        self.assertEqual(e["sources"][0]["name"], "OCHA caveat")
 
     def test_a_row_joined_to_a_lake_stops_the_build(self):
         e = self.lake()
