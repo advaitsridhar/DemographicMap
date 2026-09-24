@@ -272,3 +272,67 @@ class TheFallbackPaysForItself(unittest.TestCase):
         self.assertEqual(asked, [0],
                          "re-asking a deterministic truncation costs 90 "
                          "seconds and returns the same bytes")
+
+
+def uri(qid):
+    return {"type": "uri", "value": f"http://www.wikidata.org/entity/{qid}"}
+
+
+def lit(v):
+    return {"type": "literal", "value": str(v)}
+
+
+def stmt(qid, pop, year=None, rank="NormalRank", coord=None):
+    row = {"unit": uri(qid), "pop": lit(pop),
+           "rank": uri(f"http://wikiba.se/ontology#{rank}")}
+    row["rank"] = {"type": "uri", "value": f"http://wikiba.se/ontology#{rank}"}
+    if year:
+        row["popTime"] = lit(f"{year}-01-01T00:00:00Z")
+    if coord:
+        row["coord"] = lit(coord)
+    return row
+
+
+class BestStatement(unittest.TestCase):
+    def test_preferred_beats_a_later_normal(self):
+        rows = [stmt("Q1", 100, 2021, "PreferredRank"), stmt("Q1", 90, 2023)]
+        self.assertEqual(m.best_statement(rows), (100, 2021))
+
+    def test_latest_year_among_equals(self):
+        rows = [stmt("Q1", 100, 2011), stmt("Q1", 120, 2021), stmt("Q1", 80)]
+        self.assertEqual(m.best_statement(rows), (120, 2021))
+
+    def test_deprecated_and_empty_are_ignored(self):
+        rows = [stmt("Q1", 500, 2024, "DeprecatedRank"), stmt("Q1", 0, 2020)]
+        self.assertIsNone(m.best_statement(rows))
+
+
+class Hydrate(unittest.TestCase):
+    def test_fills_only_what_is_missing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "wd.json"
+            rows = [
+                {"id": "ROU-WD-Q1", "wikidata": "Q1", "country": "ROU", "name": "Abram",
+                 "population": {"status": "not_available"},
+                 "coordinates": {"status": "not_available"}},
+                {"id": "ROU-WD-Q2", "wikidata": "Q2", "country": "ROU", "name": "Kept",
+                 "population": {"value": 7, "year": 2011}, "coordinates": [1.0, 2.0]},
+                {"id": "ROU-WD-Q3", "wikidata": "Q3", "country": "ROU", "name": "Bare",
+                 "population": {"status": "not_available"},
+                 "coordinates": {"status": "not_available"}},
+            ]
+            path.write_text(json.dumps(rows))
+            answer = [stmt("Q1", 3100, 2021, coord="Point(22.4 47.2)"),
+                      {"unit": uri("Q3")}]
+            with mock.patch.object(m, "sparql", return_value=answer) as asked, \
+                 mock.patch.object(m.time, "sleep"):
+                m.hydrate(path, None, 0)
+            query = asked.call_args[0][0]
+            self.assertIn("wd:Q1", query)
+            self.assertNotIn("wd:Q2", query, "a row with a population is not asked for")
+            out = {r["name"]: r for r in json.loads(path.read_text())}
+            self.assertEqual(out["Abram"]["population"]["value"], 3100)
+            self.assertEqual(out["Abram"]["population"]["year"], 2021)
+            self.assertEqual(out["Abram"]["coordinates"], [22.4, 47.2])
+            self.assertEqual(out["Kept"]["population"]["value"], 7)
+            self.assertEqual(out["Bare"]["population"]["status"], "not_available")

@@ -23,6 +23,7 @@ Design notes:
 Usage:
     python scripts/fetch_wikidata.py --level admin1
     python scripts/fetch_wikidata.py --level admin2 --countries IND BRA
+    python scripts/fetch_wikidata.py --level admin2 --hydrate [--countries ROU]
 """
 
 from __future__ import annotations
@@ -140,6 +141,31 @@ SELECT ?unit ?unitLabel ?parent ?parentLabel WHERE {
 }
 """
 
+
+# Population and coordinates for units already identified, looked up by id.
+#
+# The --light and descent sweeps of 21-22 September 2026 found 75,232
+# second-level items and fetched none of their populations, because the query
+# that walks the class tree could not carry the OPTIONAL blocks inside WDQS's
+# 60-second limit. 68,764 rows came back "No P1082 statement", among them
+# every one of Romania's 3,186 communes -- which do have one. Asking for known
+# items by id is a different and cheap query: no walk, just a lookup.
+#
+# A statement that applies to part of the unit (P518, e.g. its urban area) is
+# not the unit's population and is left out; a deprecated one is wrong by the
+# item's own account. Among the rest the preferred rank wins where there is
+# one, and then the latest year.
+HYDRATE_QUERY = """
+SELECT ?unit ?pop ?popTime ?rank ?coord WHERE {
+  VALUES ?unit { %(ids)s }
+  OPTIONAL { ?unit p:P1082 ?popSt .
+             ?popSt ps:P1082 ?pop ; wikibase:rank ?rank .
+             FILTER NOT EXISTS { ?popSt pq:P518 ?part . }
+             OPTIONAL { ?popSt pq:P585 ?popTime . } }
+  OPTIONAL { ?unit wdt:P625 ?coord . }
+}
+"""
+HYDRATE_BATCH = 150
 
 COUNTRY_QID_QUERY = """
 SELECT ?country ?iso3 WHERE {
@@ -402,6 +428,89 @@ def probe(codes: list[str], qids: dict[str, str], sleep: float) -> None:
         log(f"  {iso3}:  {told[0]:>22}  {told[1]:>22}")
 
 
+def best_statement(rows: list[dict[str, Any]]) -> tuple[int, int | None] | None:
+    """The population a unit's statements settle on: (count, year), or None."""
+    found: list[tuple[bool, int, int, int | None]] = []
+    for row in rows:
+        rank = (value(row, "rank") or "").rsplit("#", 1)[-1]
+        if rank == "DeprecatedRank" or value(row, "pop") is None:
+            continue
+        try:
+            pop = int(float(value(row, "pop")))
+        except ValueError:
+            continue
+        if pop <= 0:
+            continue
+        year = (value(row, "popTime") or "")[:4]
+        year_i = int(year) if year.isdigit() else None
+        found.append((rank == "PreferredRank", year_i or 0, pop, year_i))
+    if not found:
+        return None
+    # Preferred first, then the latest year; a tie on both keeps the larger
+    # count only so the answer does not depend on the order WDQS streams in.
+    best = max(found)
+    return best[2], best[3]
+
+
+def hydrate(path: Path, countries: list[str] | None, sleep: float) -> int:
+    """Fill population and coordinates for rows that have neither, by id.
+
+    Only ever fills: a row that already carries a population keeps it, and
+    one Wikidata still has nothing for keeps its gap. Nothing else about a
+    row changes, so the join the build made on names is the same join.
+    """
+    records = read_json(path, []) or []
+    wanted = {c.upper() for c in countries} if countries else None
+    todo = [r for r in records
+            if r.get("wikidata")
+            and (wanted is None or (r.get("country") or "").upper() in wanted)
+            and not (isinstance(r.get("population"), dict)
+                     and r["population"].get("value"))]
+    log(f"  {len(todo):,} rows without a population"
+        + (f" in {', '.join(sorted(wanted))}" if wanted else ""))
+    by_qid: dict[str, list[dict[str, Any]]] = {}
+    for rec in todo:
+        by_qid.setdefault(rec["wikidata"], []).append(rec)
+    qids = sorted(by_qid)
+    filled = placed = failed = 0
+    for start in range(0, len(qids), HYDRATE_BATCH):
+        batch = qids[start:start + HYDRATE_BATCH]
+        try:
+            rows = sparql(HYDRATE_QUERY % {"ids": " ".join(f"wd:{q}" for q in batch)},
+                          cache=False, retries=2)
+        except Exception as exc:
+            failed += len(batch)
+            log(f"    batch {start // HYDRATE_BATCH + 1} failed: {str(exc)[:80]}")
+            time.sleep(sleep * 4)
+            continue
+        grouped: dict[str, list[dict[str, Any]]] = {}
+        coords: dict[str, list[float]] = {}
+        for row in rows:
+            qid = value(row, "unit")
+            grouped.setdefault(qid, []).append(row)
+            point = parse_point(value(row, "coord"))
+            if point and qid not in coords:
+                coords[qid] = point
+        for qid in batch:
+            best = best_statement(grouped.get(qid, []))
+            for rec in by_qid[qid]:
+                if best:
+                    rec["population"] = measure(best[0], year=best[1],
+                                                source="Wikidata (CC0)")
+                    filled += 1
+                if qid in coords and not isinstance(rec.get("coordinates"), list):
+                    rec["coordinates"] = coords[qid]
+                    placed += 1
+        if (start // HYDRATE_BATCH) % 20 == 0:
+            log(f"    {min(start + HYDRATE_BATCH, len(qids)):,} of {len(qids):,} "
+                f"items asked; {filled:,} populations so far")
+        time.sleep(sleep)
+    write_json(path, records)
+    log(f"  filled {filled:,} populations and {placed:,} coordinates; "
+        f"{failed:,} items in failed batches keep their gaps")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -418,7 +527,13 @@ def main() -> int:
     ap.add_argument("--allow-shrink", action="store_true",
                     help="write even though it drops countries the existing "
                          "file covers")
+    ap.add_argument("--hydrate", action="store_true",
+                    help="fill population and coordinates for rows already in "
+                         "the file that lack them, looked up by id")
     args = ap.parse_args()
+    if args.hydrate:
+        return hydrate(args.out or PROCESSED / f"wikidata_{args.level}.json",
+                       args.countries, args.sleep)
 
     # Before any network work: a light run that would overwrite a country
     # already answered in full is refused here rather than after forty
