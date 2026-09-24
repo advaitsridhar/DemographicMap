@@ -251,28 +251,55 @@ class HistoricFigures(unittest.TestCase):
         self.assertEqual(a2["IRQ"][1]["population"]["value"], 9000)
 
 
-class ProjectionsDoNotDisplaceCounts(unittest.TestCase):
-    def entity(self):
-        return {"population": {"value": 107488, "year": 2006, "source": "Wikidata (CC0)"},
-                "sources": []}
+class NewestFigureStands(unittest.TestCase):
+    """A newer dated figure is never replaced by an older one."""
 
-    def test_nigerias_projection_does_not_replace_its_census(self):
-        entity = self.entity()
-        be.merge_adapter(entity, {"_source": "cod_ps_admin2.json", "country": "NGA",
-                                  "population": {"value": 115305, "year": 2020}})
-        self.assertEqual(entity["population"]["value"], 107488)
+    def test_an_older_census_below_a_newer_estimate_does_not_replace_it(self):
+        entity = {"population": {"value": 115305, "year": 2020, "source": "OCHA"},
+                  "sources": [{"field": "population", "name": "OCHA"}]}
+        be.merge_adapter(entity, {"_source": "census.json",
+                                  "population": {"value": 107488, "year": 2006},
+                                  "sources": [{"field": "population", "name": "Census"}]})
+        self.assertEqual(entity["population"]["value"], 115305)
+        self.assertEqual(entity["sources"], [{"field": "population", "name": "OCHA"}])
+        self.assertEqual(entity["_held"]["population"][0]["value"]["value"], 107488)
 
-    def test_it_still_fills_a_gap(self):
+    def test_a_newer_encyclopaedia_figure_replaces_an_older_one(self):
         entity = {"population": {"status": "not_available"}, "sources": []}
-        be.merge_adapter(entity, {"_source": "cod_ps_admin2.json", "country": "NGA",
+        be.merge_adapter(entity, {"_source": "wikidata_admin1.json",
+                                  "population": {"value": 22359, "year": 2011}})
+        be.merge_adapter(entity, {"_source": "wiki_population_admin1.json",
+                                  "population": {"value": 104923, "year": 2021}})
+        self.assertEqual(entity["population"]["value"], 104923)
+
+    def test_but_never_a_count(self):
+        # Viet Nam: Wikidata's 2024 figure is the merged province's.
+        entity = {"population": {"value": 1908352, "year": 2019}, "sources": []}
+        be.merge_adapter(entity, {"_source": "wikidata_admin1.json",
+                                  "population": {"value": 3679300, "year": 2024}})
+        self.assertEqual(entity["population"]["value"], 1908352)
+
+    def test_an_older_count_does_not_replace_a_newer_count(self):
+        entity = {"population": {"status": "not_available"}, "sources": []}
+        be.merge_adapter(entity, {"_source": "cod_ps_admin2.json",
                                   "population": {"value": 115305, "year": 2020}})
+        be.merge_adapter(entity, {"_source": "census.json",
+                                  "population": {"value": 107488, "year": 2006}})
         self.assertEqual(entity["population"]["value"], 115305)
 
-    def test_elsewhere_the_file_replaces_as_before(self):
-        entity = self.entity()
-        be.merge_adapter(entity, {"_source": "cod_ps_admin2.json", "country": "GHA",
-                                  "population": {"value": 115305, "year": 2020}})
-        self.assertEqual(entity["population"]["value"], 115305)
+    def test_an_older_composition_keeps_its_year_off_the_newer_one(self):
+        entity = {"religion": [{"group": "A", "pct": 100.0}], "religion_year": 2021,
+                  "religion_note": "newer", "sources": []}
+        be.merge_adapter(entity, {"_source": "old.json",
+                                  "religion": [{"group": "B", "pct": 100.0}],
+                                  "religion_year": 2011, "religion_note": "older"})
+        self.assertEqual((entity["religion"][0]["group"], entity["religion_year"],
+                          entity["religion_note"]), ("A", 2021, "newer"))
+
+    def test_undated_figures_keep_the_file_order(self):
+        entity = {"population": {"value": 1}, "sources": []}
+        be.merge_adapter(entity, {"_source": "later.json", "population": {"value": 2}})
+        self.assertEqual(entity["population"]["value"], 2)
 
 
 class HeldFiguresFallBack(unittest.TestCase):
@@ -284,7 +311,7 @@ class HeldFiguresFallBack(unittest.TestCase):
                                                  "source": "Wikidata (CC0)"},
                                   "sources": [{"field": "population", "name": "Wikidata"}]})
         be.merge_adapter(parent, {"_source": "wiki_population_admin1.json",
-                                  "population": {"value": 104923, "year": 2021,
+                                  "population": {"value": 104923,
                                                  "source": "English Wikipedia"},
                                   "sources": [{"field": "population", "name": "Wikipedia"}]})
         self.assertEqual(parent["population"]["value"], 22359)
@@ -2158,6 +2185,65 @@ class TheYearBelongsToTheFigure(unittest.TestCase):
         self.assertEqual([g["group"] for g in got["religion"]],
                          ["Alpha", "other"])
         self.assertEqual(got["religion_year"], 2021)
+
+
+class LargestGroupsDoNotAddUp(unittest.TestCase):
+    def test_provinces_naming_only_their_largest_denomination_are_not_summed(self):
+        country = {"id": "XXX", "codes": {"iso3": "XXX"}, "name": "PNG",
+                   "population": {"value": 1000, "year": 2025},
+                   "religion": [{"group": "Protestant", "pct": 64.3},
+                                {"group": "Roman Catholic", "pct": 26.0}],
+                   "sources": []}
+        provinces = [{"id": n, "name": n, "parent": "XXX",
+                      "population": {"value": 500, "year": 2024},
+                      "religion": [{"group": g, "pct": p}], "sources": []}
+                     for n, g, p in (("Bougainville", "Roman Catholic", 68.4),
+                                     ("Central", "United Church", 40.0))]
+        be.roll_up_countries([country], {"XXX": provinces})
+        self.assertEqual(country["religion"][0]["group"], "Protestant")
+
+    def test_a_single_group_at_the_whole_is_a_composition(self):
+        why = be.roll_up_field({"population": {"value": 1000}}, [
+            {"name": "A", "population": {"value": 500},
+             "religion": [{"group": "Muslim", "pct": 100.0, "count": 500}]},
+            {"name": "B", "population": {"value": 500},
+             "religion": [{"group": "Muslim", "pct": 100.0, "count": 500}]}],
+            "religion")
+        self.assertIsNone(why)
+
+
+class ACountrySumNeedsItsCheck(unittest.TestCase):
+    """A sum replaces a country's published composition only when checked."""
+
+    def country(self):
+        return {"id": "XXX", "codes": {"iso3": "XXX"}, "name": "Angola",
+                "population": {"value": 1000, "year": 2025},
+                "religion": [{"group": "Catholic", "pct": 41.1},
+                             {"group": "Protestant", "pct": 58.9}],
+                "sources": []}
+
+    def region(self, name, pop):
+        row = {"id": name, "name": name, "parent": "XXX",
+               "religion": [{"group": "Catholic", "pct": 50.0, "count": 250},
+                            {"group": "Adventist", "pct": 50.0, "count": 250}],
+               "sources": []}
+        row["population"] = ({"value": pop, "year": 2024} if pop
+                             else {"status": "not_available"})
+        return row
+
+    def test_a_province_without_a_population_does_not_switch_the_check_off(self):
+        # Angola's national figures were replaced the day Moxico's population
+        # was taken off as its capital's.
+        country = self.country()
+        be.roll_up_countries([country], {"XXX": [self.region("Luanda", 500),
+                                                 self.region("Moxico", None)]})
+        self.assertEqual(country["religion"][0], {"group": "Catholic", "pct": 41.1})
+
+    def test_with_every_province_priced_the_check_decides(self):
+        country = self.country()
+        be.roll_up_countries([country], {"XXX": [self.region("Luanda", 500),
+                                                 self.region("Moxico", 500)]})
+        self.assertIn("Adventist", {g["group"] for g in country["religion"]})
 
 
 class ADivisionCountingSomethingElse(unittest.TestCase):

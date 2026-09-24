@@ -1607,16 +1607,16 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "wikidata_admin2_classes.json",
                        "wiki_population_admin1.json", "wiki_table_population.json"})
 FILL_ONLY_FIELDS = frozenset({"population"})
-# A file that only fills in some countries: where its figure is a projection
-# and another source holds the count it was projected from. Nigeria has not
-# counted since 2006; OCHA's 2020 figures for its 774 local government areas
-# are the National Population Commission's projections from that census, and
-# they replaced the census counts Wikidata carries on 716 of them. A
-# projection does not displace the count it was made from; it still fills the
-# areas nothing else reaches.
-FILL_ONLY_IN: dict[str, frozenset[str]] = {
-    "cod_ps_admin2.json": frozenset({"NGA"}),
-}
+
+
+def year_of(container: dict[str, Any], key: str) -> int | None:
+    """The year a field's value is for: inside a figure, beside a composition."""
+    value = container.get(key)
+    if isinstance(value, dict) and isinstance(value.get("year"), int):
+        return value["year"]
+    if isinstance(value, list) and isinstance(container.get(f"{key}_year"), int):
+        return container[f"{key}_year"]
+    return None
 
 
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
@@ -1642,10 +1642,30 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     from a wrong one. A row that replaces a figure owns what describes it, and
     what the row does not say is not carried over from what it displaced.
     """
-    fill_only = (row.get("_source") in FILL_ONLY
-                 or row.get("country") in FILL_ONLY_IN.get(row.get("_source"), ()))
+    # The newer of two dated figures stands, whichever file it came from and
+    # whichever came first. File order is a ranking of sources, and it was
+    # being applied to dates: a 2011 census file below a 2021 estimate in the
+    # list replaced the estimate. An older figure is used only where nothing
+    # newer is published; it is held aside rather than dropped, so a check
+    # that later refuses the newer one can still fall back to it.
+    #
+    # Between two kinds of source it does not decide: an encyclopaedia's figure
+    # never replaces a count, however recent (the owner's rule of 22 September
+    # 2026). Viet Nam is why. It merged its provinces in 2025, and Wikidata's
+    # 2024 figure for An Giang -- 3,679,300 -- is the merged province's, on the
+    # old province's shape, against the 2019 census's 1,908,352. A newer figure
+    # can be a different unit's.
+    encyclopaedic = row.get("_source") in FILL_ONLY
+    origin = entity.get("_from") or {}
+    dated = {key: (year_of(row, key), year_of(entity, key)) for key in VALUE_FIELDS
+             if not is_gap(row.get(key)) and not is_gap(entity.get(key))
+             and (origin.get(key) in FILL_ONLY) == encyclopaedic}
+    newer = {key for key, (theirs, ours) in dated.items()
+             if theirs is not None and ours is not None and theirs > ours}
+    older = {key for key, (theirs, ours) in dated.items()
+             if theirs is not None and ours is not None and theirs < ours}
     held = {key for key in FILL_ONLY_FIELDS
-            if fill_only and not is_gap(entity.get(key))}
+            if encyclopaedic and not is_gap(entity.get(key)) and key not in newer} | older
     # What was held back is kept aside, not thrown away: a check that later
     # refuses the figure in front of it can fall back to it (see fall_back).
     for key in held:
@@ -1673,7 +1693,7 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                     if not (held and set(str(src.get("field") or "").split("/")) <= held)]
             entity.setdefault("sources", []).extend(kept)
             continue
-        if key in held:
+        if key in held or any(key == f"{f}{suffix}" for f in held for suffix in SATELLITES):
             continue
         if is_gap(value) and not is_gap(entity.get(key)):
             continue
@@ -1686,13 +1706,15 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                          and value.get("status") == NOT_COLLECTED)):
             continue
         entity[key] = value
+        if key in VALUE_FIELDS and not is_gap(value):
+            entity.setdefault("_from", {})[key] = row.get("_source")
     # After the copy, not before it: a satellite the row does supply has just
     # overwritten the old one in place, and popping first would have moved it
     # to the end of the record. build.json is a digest of the written files, so
     # a key order that churns invalidates every reader's cache for no change in
     # the figures.
     for field in DESCRIBED_FIELDS:
-        if is_gap(row.get(field)) or field not in row:
+        if is_gap(row.get(field)) or field not in row or field in held:
             continue
         for suffix in SATELLITES:
             if f"{field}{suffix}" not in row:
@@ -2059,6 +2081,8 @@ def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
 # ---------------------------------------------------------------------------
 
 ROLLUP_FIELDS = ("religion", "language", "ethnicity")
+# One group at this share or more is the whole composition, not its largest part.
+SOLE_GROUP_WHOLE = 99.0
 
 # How far the children's population may sit from the parent's own before the
 # sum is refused. Rounding and small-cell suppression move it a little -- New
@@ -2329,6 +2353,23 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     if apart:
         children = [c for c in children if c not in apart]
 
+    # A division that names only its largest group has not published a
+    # composition, and largest groups do not add up to one. Papua New Guinea's
+    # provinces each carry the "Main religion" row of the 2011 census --
+    # Bougainville Roman Catholic 68.4%, Central Province United Church 40.0%
+    # -- and their sum made the country 15.4% Catholic and left out every
+    # denomination that is nowhere the largest, over the census's own national
+    # figure of 26%. One such division among many costs the sum little
+    # (Appenzell Innerrhoden among Switzerland's 26 cantons); when they are
+    # half of it, the sum is of winners, not of people.
+    listed = [c for c in children if isinstance(c.get(field), list)]
+    lone = [c for c in listed if len(c[field]) == 1
+            and (c[field][0].get("pct") or 0) < SOLE_GROUP_WHOLE]
+    if lone and 2 * len(lone) >= len(listed):
+        return (f"{field}: {len(lone)} of {len(listed)} children publish only "
+                f"their largest group, and largest groups do not add up to a "
+                f"composition")
+
     missing = [c for c in children if not isinstance(c.get(field), list)]
     left_out = ""
     if missing:
@@ -2416,6 +2457,19 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
 
     disagrees = ""
     own = published(parent.get("population"))
+    stated = own
+    if (unpriced or not total_pop) and own is not None and over_published \
+            and shares_of(current):
+        # A sum that would replace a published composition is checked against
+        # the unit's own population, and with a division unpriced there is no
+        # total to check. Skipping the check here let one missing figure
+        # decide the matter: Angola's national composition was replaced the
+        # day Moxico's population was taken off as its capital's, although
+        # with Moxico priced the same sum is refused, 11% short of the
+        # country's published population.
+        return (f"{field}: {unpriced} of {len(children)} children have no "
+                f"population, so the sum cannot be checked against the "
+                f"published {own:,.0f}")
     if unpriced or not total_pop:
         # No usable control, and none needed: every shape at this level in the
         # country carries the field, so the children partition it.
@@ -2576,11 +2630,16 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
            if own is not None else
            (f" {'they publish' if many else 'it publishes'} no population of "
             f"{'their' if many else 'its'} own, and"
-            if unpriced else
+            if unpriced == len(children) else
+            f" {unpriced} of them publish no population, so their total is not "
+            f"known, and" if unpriced else
             f" {'Their' if many else 'Its'} population"
             f"{'s total' if many else ' is'} {total_pop:,.0f}, and")
-           + " no source publishes a population for the unit to check that "
-             "against; it was summed because every division at this level in "
+           + (" no source publishes a population for the unit to check that "
+              "against" if stated is None else
+              f" the unit's own published {stated:,.0f} cannot be checked "
+              f"against it")
+           + "; it was summed because every division at this level in "
              "the country has these figures, so these are all of its children.")
         + (f" Weighted by population: {len(sampled)} of them count a survey's "
            "respondents and the rest count people, so every division's shares "
@@ -4981,6 +5040,7 @@ def main() -> int:
     for table in (admin1_by_country, admin2_by_country):
         for rows in table.values():
             for entity in rows:
+                entity.pop("_from", None)
                 held = entity.pop("_held", None)
                 if held and isinstance(entity.get("population"), dict) \
                         and "shown instead" in str(entity["population"].get("note") or ""):
