@@ -12,8 +12,9 @@ Wikidata carries the 2022 figure for 188 of the map's 223 cantons; this is the
 census itself for all of them, and fills the 35 that had none -- nineteen of
 which had only the figure of the canton's town, which the build refuses.
 
-Two checks: the cantons of every province add up to the province's row, and
-the provinces to INEC's national 16,938,986. Nothing is written otherwise.
+The sheet has no province rows -- a province is its cantons -- so the check
+is that every canton together is INEC's national 16,938,986, exactly, and
+nothing is written otherwise. A province's figure is the sum of its cantons.
 
 ``--dump`` also saves the sheet as tab-separated text in data/raw/ecuador.
 
@@ -69,17 +70,16 @@ def number(cell: str) -> int | None:
     return int(round(value)) if value > 0 else None
 
 
-def parse(rows: list[list[str]]) -> tuple[dict[str, int], dict[str, dict[str, int]], int]:
-    """(provinces, cantons by province, national) from the sheet's rows.
+def parse(rows: list[list[str]]) -> tuple[dict[str, dict[str, int]], int]:
+    """(cantons by province, national) from the sheet's rows.
 
-    A row is (blank, province, canton, 2010, 2022, rate); a province's own row
-    names it in both columns or leaves the canton "Total", as the national
-    row does.
+    Every row is (blank, province, canton, 2010, 2022, rate) but the first,
+    which names the country in both columns. There is no province row: a
+    province is its cantons.
     """
     header = next(i for i, r in enumerate(rows) if any("2022" in c for c in r)
                   and any("Provincia" in c for c in r))
     col = next(i for i, c in enumerate(rows[header]) if "2022" in c and "Poblaci" in c)
-    provinces: dict[str, int] = {}
     cantons: dict[str, dict[str, int]] = defaultdict(dict)
     national = 0
     for row in rows[header + 1:]:
@@ -88,34 +88,32 @@ def parse(rows: list[list[str]]) -> tuple[dict[str, int], dict[str, dict[str, in
             continue
         value = number(cells[col])
         names = [c for c in cells[:col] if c and number(c) is None]
-        if value is None or not names:
+        if value is None or len(names) < 2:
             continue
         if fold(names[0]) == "total nacional":
             national = value
-        elif len(names) == 1 or fold(names[1]) in (fold(names[0]), "total"):
-            provinces[names[0]] = value
         else:
             cantons[names[0]][names[1]] = value
-    return provinces, cantons, national
+    return cantons, national
 
 
 def build(rows: list[list[str]]) -> list[dict[str, Any]]:
-    provinces, cantons, national = parse(rows)
-    bad = {p: (v, sum(cantons[p].values())) for p, v in provinces.items()
-           if sum(cantons[p].values()) != v}
+    cantons, national = parse(rows)
+    provinces = {p: sum(c.values()) for p, c in cantons.items()}
     total = sum(provinces.values())
     log(f"  {len(provinces)} provinces, {sum(len(c) for c in cantons.values())} cantons; "
-        f"provinces sum to {total:,}, national row {national:,}")
-    if national != NATIONAL or total != NATIONAL or bad or not provinces:
-        raise SystemExit(f"the sheet does not add up (provinces off: {bad}); nothing written")
+        f"they sum to {total:,}, national row {national:,}")
+    if national != NATIONAL or total != NATIONAL:
+        raise SystemExit("the cantons do not add up to the country; nothing written")
     cite = [{"field": "population", "name": SOURCE, "url": ORIGINAL,
              "archived": CAPTURE}]
     out = []
     for province, value in sorted(provinces.items()):
         name = province.title() if province.isupper() else province
+        population = measure(value, year=YEAR, source=SOURCE)
+        population["note"] = f"The sum of its {len(cantons[province])} cantons' counts."
         out.append(record(f"ECU-CEN-{slugify(name)}", name, level="admin1", parent="ECU",
-                          country="ECU", population=measure(value, year=YEAR, source=SOURCE),
-                          sources=cite))
+                          country="ECU", population=population, sources=cite))
         for canton, people in sorted(cantons[province].items()):
             label = canton.title() if canton.isupper() else canton
             out.append(record(f"ECU-CEN-{slugify(name)}-{slugify(label)}", label,
