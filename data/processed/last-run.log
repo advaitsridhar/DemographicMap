@@ -1,11 +1,20 @@
-cod-ab-nam: Namibia - Subnational Administrative Boundaries
-  licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
-  resource: nam_admin_boundaries.gdb.zip [Geodatabase] https://data.humdata.org/dataset/50fda5c8-bc93-48e7-b542-f123b2038350/resource/f944335e-5d6a-4f31-82a0-924a396b831d/download/nam_admin_boundaries.gdb.zip
-  resource: nam_admin_boundaries.shp.zip [SHP] https://data.humdata.org/dataset/50fda5c8-bc93-48e7-b542-f123b2038350/resource/f3f8c77c-27fe-4d65-a7cd-e31ae380db47/download/nam_admin_boundaries.shp.zip
-  resource: nam_admin_boundaries.geojson.zip [GeoJSON] https://data.humdata.org/dataset/50fda5c8-bc93-48e7-b542-f123b2038350/resource/12801c74-a3da-4887-ac82-c56f1b351f38/download/nam_admin_boundaries.geojson.zip
-  resource: nam_admin_boundaries.xlsx [XLSX] https://data.humdata.org/dataset/50fda5c8-bc93-48e7-b542-f123b2038350/resource/44b72790-f1bb-4507-b16b-be54661f4981/download/nam_admin_boundaries.xlsx
-  read nam_admin_boundaries.shp.zip: 2,959,811 bytes
-  layers: ['nam_admin0.shp', 'nam_admin1.shp', 'nam_admin2.shp', 'nam_adminlines.shp', 'nam_adminpoints.shp']
-  nam_admin2.shp: 107 features, fields ['adm2_name', 'adm2_name1', 'adm2_name2', 'adm2_name3', 'adm2_pcode', 'adm1_name', 'adm1_name1', 'adm1_name2', 'adm1_name3', 'adm1_pcode', 'adm0_name', 'adm0_name1', 'adm0_name2', 'adm0_name3', 'adm0_pcode', 'valid_on', 'valid_to', 'area_sqkm', 'version', 'lang', 'lang1', 'lang2', 'lang3', 'adm2_ref_n', 'center_lat', 'center_lon']
-  wrote data/processed/nam_adm2_reference.json (1897 kB)
-  107 constituencies in 14 regions written
+PRT: the country's own divisions resolved 1 more
+PRT: 16 units without a population, 16 resolved
+  LISBOA -> Lisbon District (Q207199, matched by name)
+  AVEIRO -> Aveiro District: 713,578, undated (the infobox names no year for the figure)
+  BRAGA -> Braga District: 831,368, undated (no year in the value)
+  COIMBRA -> Coimbra District: 441,245, undated (no year in the value)
+  FARO -> Faro District: 458,734, undated (no year in the value)
+  GUARDA -> Guarda District: 173,716, undated (no year in the value)
+  LEIRIA -> Leiria District: 470,930, undated (no year in the value)
+  LISBOA -> Lisbon District: 2,135,992, undated (no year in the value)
+  PORTALEGRE -> Portalegre District: 104,989, undated (no year in the value)
+  SANTARÉM -> Santarém District: 475,344, undated (no year in the value)
+  SETÚBAL -> Setúbal District: 887,928, undated (no year in the value)
+  VISEU -> Viseu District: 394,927, undated (no year in the value)
+AGO: 1 units without a population, 1 resolved
+  Moxico -> Moxico Province: no population parameter in the infobox (it has population_footnotes, population_total, population_as_of, population_density_km2, population_density_sq_mi, population_est)
+CUB: 1 units without a population, 1 resolved
+  CUB: its first level now sums to 11,181,186, 111% of the country's 10,059,519 -- check for a unit counted twice
+  wrote data/processed/wiki_population_admin1.json (574 kB)
+wrote 576 records to wiki_population_admin1.json
