@@ -743,10 +743,14 @@ UNIT_FIELDS = ("capital", "largest_settlement", "population", "median_age",
 # build so the claim cannot go stale, and which reports any country that
 # develops the same shape without a declaration here.
 #
-# This is recorded rather than repaired. Inventing polygons for "resto del
-# departamento" would put a unit on the map that Uruguay does not have, and a
-# unit that does not exist cannot be given data that does not exist for it.
-# A stated absence is the smaller lie: none.
+# It was first recorded rather than repaired, on the ground that a unit
+# Uruguay does not have should not be drawn. The owner's objection of 24
+# September 2026 was that most of the country then read as blank, and the
+# objection holds: the ground is real, the department governs it directly,
+# and a department's census count less its municipios' is the people living
+# on it. So it is drawn now, one unit per department named for what it is
+# (see REMAINDERS and scripts/make_remainders.py), and Uruguay's declaration
+# here is gone. Tonga's stays: its islets are not a unit anyone counts.
 PARTIAL_LEVELS: dict[tuple[str, str], dict[str, Any]] = {
     # Found by the detector below, then measured the way Uruguay was. The
     # 142 km2 of first-level ground that is in no district lies entirely
@@ -768,23 +772,22 @@ PARTIAL_LEVELS: dict[tuple[str, str], dict[str, Any]] = {
                 "nothing there to draw. The five island groups are the level "
                 "that does cover it.",
     },
-    ("URY", "admin2"): {
-        "units": 124,
-        "coverage_pct": 36.8,
-        "note": "Uruguay's second-order units are municipios, and they do not "
-                "cover the country. A municipio is constituted around a "
-                "population centre rather than carved out of the map (Ley "
-                "18.567 of 2009), so the ground of a department that lies in "
-                "no municipio is administered by the departmental government "
-                "directly and is not part of any second-order unit. "
-                "geoBoundaries CGAZ draws 124 municipios covering 36.8% of "
-                "Uruguay; the remaining 112,404 km2 -- 63.2% of the country, "
-                "including almost all of Flores, Florida, Durazno and "
-                "Tacuarembo -- is inside no second-order unit and is blank at "
-                "this level because there is nothing there to draw. Uruguay's "
-                "19 departments are the level that does cover it.",
-    },
 }
+
+# The ground a second level leaves out, drawn as one unit per first-order
+# unit (scripts/make_remainders.py writes the polygons): the label it is named
+# with, and what it says it is.
+REMAINDERS: dict[str, tuple[str, str]] = {
+    "URY": ("outside any municipio",
+            "Uruguay's municipios are constituted around population centres "
+            "(Ley 18.567 of 2009), and the ground of a department that lies in "
+            "none of them -- most of the department's capital among it -- is "
+            "governed by the department directly. This is that ground: not a "
+            "municipio, and drawn so that the department's whole territory is "
+            "on the map."),
+}
+REMAINDERS_FILE = PROCESSED / "admin2_remainders.geojson"
+
 
 # How far a declared coverage figure may drift from the measured one before the
 # build stops. The declaration is a sentence a reader is asked to believe, and
@@ -1139,6 +1142,35 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
                 r["_geom"] = None
             log(f"  {iso3}: {len(rows)} polygons named from {filename}: "
                 + ", ".join(f"{n} {k}" for k, n in sorted(counts.items())))
+    return out
+
+
+def read_remainders() -> list[dict[str, Any]]:
+    """The second-order units drawn for the ground a country's second level leaves out.
+
+    Each carries its first-order parent already, so the geometry pass that
+    works out every other unit's parent is not asked about it.
+    """
+    from shapely.geometry import shape
+
+    if not REMAINDERS:
+        return []
+    collection = read_json(REMAINDERS_FILE, None)
+    if not collection:
+        raise SystemExit(f"build_entities: {REMAINDERS_FILE.name} is missing; "
+                         f"run: python3 scripts/make_remainders.py")
+    out = []
+    for feat in collection.get("features", []):
+        props = feat["properties"]
+        geom = shape(feat["geometry"])
+        point = geom.representative_point()
+        out.append({
+            "shape_id": props["shapeID"], "name": props["shapeName"],
+            "group": props["shapeGroup"], "parent_shape": props["parentID"],
+            "point": [round(point.x, 5), round(point.y, 5)],
+            "bbox": [round(b, 4) for b in geom.bounds], "_geom": None,
+            "area": geom.area, "remainder": True,
+        })
     return out
 
 
@@ -2849,6 +2881,63 @@ def fill_parent_populations(admin1_by_country: dict[str, list[dict[str, Any]]],
                          + (" " + pop["note"] if pop.get("note") else ""))}
             filled.append(f"{iso3} {parent['name']}")
     return filled
+
+
+def fill_remainders(admin1_by_country: dict[str, list[dict[str, Any]]],
+                    admin2_by_country: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """The ground outside every second-order unit: its parent's count less theirs.
+
+    Only where the arithmetic says something true. The parent's figure and
+    every one of its divisions' must be published and of one year -- a count
+    less a count -- and what is left must be more than nothing. Otherwise the
+    unit keeps a gap that says which of those failed: a difference taken
+    against a missing division would give the remainder that division's people.
+    """
+    done: list[str] = []
+    for iso3, rows in admin2_by_country.items():
+        parents = {e["id"]: e for e in admin1_by_country.get(iso3, [])}
+        kids: dict[Any, list[dict[str, Any]]] = defaultdict(list)
+        for entity in rows:
+            if not entity.get("water"):
+                kids[entity.get("parent")].append(entity)
+        for rest in (e for e in rows if e.get("remainder")):
+            parent = parents.get(rest.get("parent"))
+            if parent is None:
+                continue
+            siblings = [k for k in kids[rest.get("parent")] if k is not rest]
+            whole_pop = parent.get("population")
+            total = published(whole_pop)
+            values = [published(k.get("population")) for k in siblings]
+            missing = [k["name"] for k, v in zip(siblings, values) if v is None]
+            years = {vintage(whole_pop), *(vintage(k.get("population")) for k in siblings)}
+            why = None
+            if total is None:
+                why = f"{parent['name']} has no published population to take its divisions from."
+            elif missing:
+                why = (f"{len(missing)} of the {len(siblings)} divisions of "
+                       f"{parent['name']} have no count ({', '.join(missing[:6])}"
+                       + (" and others" if len(missing) > 6 else "")
+                       + "), so what is left of it cannot be worked out.")
+            elif len(years) != 1 or None in years:
+                why = (f"{parent['name']}'s count and its divisions' are not all of "
+                       f"one year, so one cannot be taken from the other.")
+            elif total - sum(values) <= 0:
+                why = (f"{parent['name']}'s divisions add up to its own count or more, "
+                       f"so no figure is left for the ground outside them.")
+            if why:
+                rest["population"] = gap(NOT_AVAILABLE, why)
+                continue
+            year = years.pop()
+            rest["population"] = {
+                "value": int(round(total - sum(values))), "year": year,
+                "source": (f"{parent['name']}'s {year} count less its "
+                           f"{len(siblings)} divisions' {year} counts"),
+                "note": (f"{parent['name']} counted {total:,.0f} people in {year} and "
+                         f"its {len(siblings)} divisions {sum(values):,.0f}; this is "
+                         f"the difference, the people living outside all of them. "
+                         f"Figures from {whole_pop.get('source')}.")}
+            done.append(f"{iso3} {rest['name']}")
+    return done
 
 
 def fill_same_polygons(admin1_by_country: dict[str, list[dict[str, Any]]],
@@ -4728,6 +4817,7 @@ def main() -> int:
     shapes = {level: read_shapes(level) for level in args.levels}
     if "ADM1" in shapes and "ADM2" in shapes:
         link_adm2_parents(shapes["ADM1"], shapes["ADM2"])
+        shapes["ADM2"].extend(read_remainders())
     # Before anything is joined: this is a claim about the boundary files alone,
     # and it is the claim that explains a level looking empty for a reason no
     # amount of data would fix.
@@ -4850,6 +4940,9 @@ def main() -> int:
     for shape in shapes.get("ADM2", []):
         iso3 = shape["group"]
         entity = blank(shape, "admin2", shape.get("parent_shape") or iso3)
+        if shape.get("remainder"):
+            entity["remainder"] = True
+            entity["note"] = REMAINDERS[iso3][1]
         mark_disputed_or_hint(entity, iso3)
         mark_water(entity, iso3)
         if shape.get("outline"):
@@ -4900,6 +4993,10 @@ def main() -> int:
         # is dropped from the index rather than guessed at.
         a2: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for entity in admin2_by_country.get(iso3, []):
+            # Ground no source names: "Salto, outside any municipio" must not
+            # take the city of Salto's row by starting with its name.
+            if entity.get("remainder"):
+                continue
             a2[norm(entity["name"])].append(entity)
         aka += add_known_as(a2, admin2_by_country.get(iso3, []))
         # Both levels, because a binding names a polygon and does not care
@@ -5216,6 +5313,10 @@ def main() -> int:
         log(f"  {len(summed_up)} first-level populations filled from all their "
             f"divisions: " + ", ".join(summed_up[:12])
             + (" ..." if len(summed_up) > 12 else ""))
+    remaining = fill_remainders(admin1_by_country, admin2_by_country)
+    if remaining:
+        log(f"  {len(remaining)} remainders given their parent's count less its "
+            f"divisions': " + ", ".join(remaining))
     twinned = fill_same_polygons(admin1_by_country, admin2_by_country)
     if twinned:
         log(f"  {twinned} second-level fields filled from the same polygon "
