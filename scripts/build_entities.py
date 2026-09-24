@@ -1636,7 +1636,13 @@ def name_forms(text: str | None) -> tuple[tuple[str, ...], ...]:
 # "Nouvelle-Aquitaine" is not Aquitaine but the region Aquitaine was merged
 # into in 2016, and Eurostat's NUTS-2 row for old Aquitaine -- 3,635,159
 # people -- was joined to it by containment and stood for its 6.2 million.
-# "Peninsula de Setubal" is most of Setubal District and not all of it.
+# "Peninsula de Setubal" is most of Setubal District and not all of it, and
+# "Area Metropolitana de Lisboa" reaches across the Tagus into it.
+#
+# Only before the shorter name. After it, the same words are a locator: the
+# first cut read them on both sides and took the census figures off 446 US
+# counties, because "Abbeville County, South Carolina" ends in "South", and
+# off Tierra del Fuego, whose full name ends "Islas del Atlantico Sur".
 QUALIFIERS = frozenset({
     "new", "nouvelle", "nouveau", "nueva", "nuevo", "nova", "novo",
     "north", "northern", "nord", "norte", "south", "southern", "sud", "sur", "sul",
@@ -1644,6 +1650,7 @@ QUALIFIERS = frozenset({
     "central", "middle",
     "upper", "lower", "haute", "haut", "basse", "bas", "alto", "baixo", "bajo",
     "greater", "grande", "little", "peninsula",
+    "metropolitan", "metropolitana", "metropolitaine",
     "utara", "selatan", "barat", "timur", "tengah",
 })
 
@@ -1668,7 +1675,7 @@ def run_of(short: tuple[str, ...], long: tuple[str, ...], *,
         tail, target = short[-1], window[-1]
         if not all(a == b for a, b in zip(short[:-1], window[:-1])):
             continue
-        if QUALIFIERS.intersection(long[:start] + long[start + len(short):]):
+        if QUALIFIERS.intersection(long[:start]):
             continue
         if len(tail) < PREFIX_MIN and not (at_start and start == 0):
             continue

@@ -1033,6 +1033,9 @@ ALSO_KNOWN_AS: dict[tuple[str, str], tuple[str, ...]] = {
     ("DOM", "La Estrelleta"): ("Elías Piña Province", "Elías Piña"),
     # INE's catalogue writes the municipio with a y, the boundary file with an i.
     ("GTM", "San Raimundo"): ("San Raymundo",),
+    # geoBoundaries misspells two of Setubal District's municipalities.
+    ("PRT", "Setubul"): ("Setúbal",),
+    ("PRT", "Barriero"): ("Barreiro",),
     # "Al Asimah" is Arabic for "the Capital", which is what the source calls it.
     # Renamed Turkistan in 2018; the 2021 census row carries the new name and
     # the boundary file the old. 3.4 million people, the country's most

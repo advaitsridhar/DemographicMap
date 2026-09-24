@@ -1297,6 +1297,17 @@ class LooseNameMatching(unittest.TestCase):
         # "Tala" is a prefix of "Talampaya", 835 km away.
         self.assertFalse(self.related("Talampaya National Park", "Tala"))
 
+    def test_a_qualifier_before_the_name_makes_another_place(self):
+        self.assertFalse(self.related("Aquitaine", "Nouvelle-Aquitaine"))
+        self.assertFalse(self.related("Península de Setúbal", "SETÚBAL"))
+        self.assertFalse(self.related("Área Metropolitana de Lisboa", "LISBOA"))
+        self.assertFalse(self.related("Cotabato", "South Cotabato"))
+
+    def test_the_same_words_after_the_name_are_a_locator(self):
+        self.assertTrue(self.related("Abbeville County, South Carolina", "Abbeville"))
+        self.assertTrue(self.related("Tierra del Fuego, Antártida e Islas del "
+                                     "Atlántico Sur", "Tierra del Fuego"))
+
     def test_a_hyphen_is_read_both_ways(self):
         # Joined: the other side spells it as one word.
         self.assertTrue(self.related("Región del Bío-Bío", "Biobío Region"))
