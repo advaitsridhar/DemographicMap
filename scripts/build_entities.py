@@ -175,6 +175,10 @@ ADAPTER_FILES = [
     # article's table, or a unit that is its country less another unit of
     # the same census (wiki_table_population). Fill-only like the file above.
     "wiki_table_population.json",
+    # Ecuador's cantons, the 2022 census as Spanish Wikipedia's list of them
+    # transcribes it, where INEC's own host refuses an automated reader
+    # (ecuador_cantons). An encyclopaedia's transcription: fill-only.
+    "ecuador_cantons.json",
     # The source a Wikipedia article cites, read where the article's own
     # figure garbles or contradicts it (cited_sources): Somalia's eighteen
     # regions from citypopulation.de's 2019 column, which six region articles
@@ -1605,7 +1609,8 @@ DESCRIBED_FIELDS = ("religion", "language", "ethnicity", "ancestry",
 # else has written.
 FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "wikidata_admin2_classes.json",
-                       "wiki_population_admin1.json", "wiki_table_population.json"})
+                       "wiki_population_admin1.json", "wiki_table_population.json",
+                       "ecuador_cantons.json"})
 FILL_ONLY_FIELDS = frozenset({"population"})
 
 
