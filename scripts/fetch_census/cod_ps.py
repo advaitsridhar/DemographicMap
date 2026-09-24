@@ -486,6 +486,73 @@ def read_units(package: dict[str, Any], resource: dict[str, Any],
     return seen, year
 
 
+# Countries whose district table shares names with the map's second level
+# without sharing its units. Kenya's COD-PS districts are its sub-counties and
+# the map's are its constituencies: in most counties the two coincide, and in
+# some they do not -- Laikipia's three constituencies took sub-county figures
+# summing to 52% of the county, Wajir's 72%, Kwale's 77%. Nothing in a single
+# row says which kind it is, so a county's rows are kept only where they
+# partition it: every one of its shapes takes exactly one row, and the rows
+# add up to the county's own total in the same dataset's first-level table.
+PARTITION_CHECK = {"KEN"}
+PARTITION_TOLERANCE = 0.02
+
+
+def first_level_totals(package: dict[str, Any]) -> dict[str, int]:
+    """The dataset's own first-level totals, by name key."""
+    for resource in package.get("resources") or ():
+        name = str(resource.get("name") or "").lower()
+        if re.search(r"adm(?:pop)?_?1(?!\d)", name) and name.endswith(".csv"):
+            table = read_table(resource)
+            if table is None:
+                return {}
+            columns, rows, _ = table
+            unit, total = name_column(columns, "1"), total_column(columns)
+            if not unit or not total:
+                return {}
+            out: dict[str, int] = {}
+            for row in rows:
+                try:
+                    out[level_key(row.get(unit) or "")] = int(float(
+                        (row.get(total) or "").replace(",", "")))
+                except ValueError:
+                    continue
+            return out
+    return {}
+
+
+def partitioned(code: str, rows: list[dict[str, Any]],
+                totals: dict[str, int]) -> list[dict[str, Any]]:
+    """Only the rows of first-level units they are shown to partition."""
+    try:
+        shapes = json.loads((SITE / "admin2" / f"{code}.json").read_text())
+        parents = {s["id"]: s["name"] for s in
+                   json.loads((SITE / "admin1" / f"{code}.json").read_text())}
+    except (OSError, ValueError):
+        return []
+    by_key: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        by_key.setdefault(level_key(row["name"]), []).append(row)
+    under: dict[str, list[dict[str, Any]]] = {}
+    for shape in shapes:
+        under.setdefault(shape.get("parent"), []).append(shape)
+    kept: list[dict[str, Any]] = []
+    passed = failed = 0
+    for parent, members in under.items():
+        taken = [by_key.get(level_key(m["name"]), []) for m in members]
+        county = totals.get(level_key(parents.get(parent, "")))
+        if county and all(len(t) == 1 for t in taken):
+            people = sum(t[0]["population"]["value"] for t in taken)
+            if abs(people - county) <= PARTITION_TOLERANCE * county:
+                kept.extend(t[0] for t in taken)
+                passed += 1
+                continue
+        failed += 1
+    log(f"    partition check: {passed} first-level unit(s) whose rows add up "
+        f"to its own total, kept; {failed} left out")
+    return kept
+
+
 def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
     """One country's district populations, or none with the reason logged.
 
@@ -541,6 +608,8 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
                 population={"value": unit_row["people"], "year": year,
                             "source": source["name"]},
                 sources=[source]))
+        if code in PARTITION_CHECK and level == "admin2":
+            out = partitioned(code, out, first_level_totals(package))
         log(f"    {len(out)} {level} unit(s), reference year {year}, "
             f"{sum(r['population']['value'] for r in out):,} people")
         return out

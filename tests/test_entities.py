@@ -131,6 +131,38 @@ class OtherLakesAreWater(unittest.TestCase):
         self.assertNotIn("Hutan", be.WATER_SHAPES["IDN"], "a forest is land")
 
 
+class TownFiguresOnDistricts(unittest.TestCase):
+    """A Wikidata item joined by name can be the town, not the district."""
+
+    def run_guard(self, parent_pop, children):
+        a1 = {"X": [{"id": "P", "name": "Parent", "population": {"value": parent_pop}}]}
+        a2 = {"X": [{"id": f"C{i}", "name": f"C{i}", "parent": "P",
+                     "population": {"value": v, "source": src}}
+                    for i, (v, src) in enumerate(children)]}
+        refused = be.refuse_town_figures(a1, a2)
+        return refused, a2["X"]
+
+    def test_a_sole_division_with_a_towns_figure_is_left_out(self):
+        refused, rows = self.run_guard(86949, [(2374, "Wikidata (CC0)")])
+        self.assertEqual(refused, 1)
+        self.assertEqual(rows[0]["population"]["status"], common.NOT_AVAILABLE)
+        self.assertIn("probably the town", rows[0]["population"]["note"])
+
+    def test_a_division_bigger_than_its_parent_is_left_out(self):
+        refused, _ = self.run_guard(165839, [(416000, "Wikidata (CC0)"), (1, "Wikidata (CC0)")])
+        self.assertEqual(refused, 1)
+
+    def test_years_apart_is_not_towns_apart(self):
+        # Valletta at both levels, a census apart.
+        refused, rows = self.run_guard(5226, [(6444, "Wikidata (CC0)")])
+        self.assertEqual(refused, 0)
+        self.assertEqual(rows[0]["population"]["value"], 6444)
+
+    def test_only_wikidata_figures_are_judged(self):
+        refused, _ = self.run_guard(2850, [(22414, "OCHA, Common Operational Dataset")])
+        self.assertEqual(refused, 0)
+
+
 class LakesAreWater(unittest.TestCase):
     """Guatemala's two lakes are drawn as second-order units. Left as units
     they read as two municipios whose figures were not found; declared, they

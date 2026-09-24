@@ -217,3 +217,25 @@ class LevelNeedsEvidence(unittest.TestCase):
             self.assertIsNone(cod_ps.which_level("KGZ", list("abcdefgh"))[0])
             # A table of three that all match is a small country, not a handful.
             self.assertEqual(cod_ps.which_level("KGZ", ["a", "b", "c"])[0], "admin2")
+
+
+class Partition(unittest.TestCase):
+    def rows(self, **people):
+        return [{"name": n, "population": {"value": v}} for n, v in people.items()]
+
+    def test_only_counties_their_rows_add_up_to_are_kept(self):
+        from scripts.fetch_census import cod_ps
+        shapes = [{"id": "a", "name": "Kisumu East", "parent": "K"},
+                  {"id": "b", "name": "Kisumu West", "parent": "K"},
+                  {"id": "c", "name": "Laikipia East", "parent": "L"},
+                  {"id": "d", "name": "Laikipia West", "parent": "L"}]
+        parents = [{"id": "K", "name": "Kisumu"}, {"id": "L", "name": "Laikipia"}]
+        rows = self.rows(**{"Kisumu East": 60, "Kisumu West": 40,
+                            "Laikipia East": 30, "Laikipia West": 20})
+        totals = {"kisumu": 100, "laikipia": 100}
+        files = {"admin2": shapes, "admin1": parents}
+        with mock.patch.object(cod_ps, "SITE") as site:
+            site.__truediv__.side_effect = lambda level: mock.Mock(
+                __truediv__=lambda _, name: mock.Mock(read_text=lambda: __import__("json").dumps(files[level])))
+            kept = cod_ps.partitioned("KEN", rows, totals)
+        self.assertEqual(sorted(r["name"] for r in kept), ["Kisumu East", "Kisumu West"])

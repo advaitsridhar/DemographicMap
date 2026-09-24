@@ -2927,6 +2927,58 @@ def say_why_empty(entity: dict[str, Any], country: str,
     return case
 
 
+# A Wikidata item joined to a district by name is sometimes the town of that
+# name, not the district. Before its population was fetched the mistake was
+# invisible; afterwards Trinidad's Siparia region -- 86,949 people, drawn as
+# one second-level shape -- read 2,374, the town's, and six Montenegrin
+# municipalities and Algeria's Adrar took their towns' figures the same way.
+# Two checks against the unit above, which is published independently:
+#   * a division may not hold more than half again its parent's people;
+#   * a parent's only division is the parent's ground, so its figure must
+#     be within 0.6 and 1.6 of the parent's (years apart, not towns apart).
+# Measured on 24 September 2026 over every Wikidata figure at this level:
+# 18 fail, every one a town, a city proper or a wrong item.
+TOWN_RATIO_MAX = 1.5
+SOLE_CHILD_BAND = (0.6, 1.6)
+
+
+def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
+                        admin2: dict[str, list[dict[str, Any]]]) -> int:
+    """Take a Wikidata population off a district it cannot belong to."""
+    refused = 0
+    for iso3, rows in admin2.items():
+        parents = {e["id"]: e for e in admin1.get(iso3, [])}
+        siblings: dict[Any, int] = defaultdict(int)
+        for entity in rows:
+            siblings[entity.get("parent")] += 1
+        for entity in rows:
+            pop = entity.get("population")
+            if not (isinstance(pop, dict) and pop.get("value")
+                    and str(pop.get("source") or "").startswith("Wikidata")):
+                continue
+            parent = parents.get(entity.get("parent"))
+            above = published(parent.get("population")) if parent else None
+            if not above:
+                continue
+            ratio = pop["value"] / above
+            sole = siblings[entity.get("parent")] == 1
+            if ratio > TOWN_RATIO_MAX:
+                why = (f"more than {parent['name']}'s own {above:,.0f}, "
+                       f"the unit it lies in")
+            elif sole and not SOLE_CHILD_BAND[0] <= ratio <= SOLE_CHILD_BAND[1]:
+                why = (f"{ratio:.0%} of {parent['name']}'s {above:,.0f}, though "
+                       f"this is its only division and covers the same ground")
+            else:
+                continue
+            entity["population"] = gap(NOT_AVAILABLE, (
+                f"The Wikidata item joined here by name gives {pop['value']:,}"
+                + (f" ({pop['year']})" if pop.get("year") else "")
+                + f", which is {why}. It is probably the town of this name "
+                  f"rather than this unit, so its figure is left out."))
+            refused += 1
+    return refused
+
+
 def check_water_shapes(admin1: dict[str, list[dict[str, Any]]],
                        admin2: dict[str, list[dict[str, Any]]]) -> None:
     """Every declared lake is drawn, nothing has landed on it, and it is water.
@@ -4337,6 +4389,14 @@ def main() -> int:
                    if aka else ""]
             extra = " (" + ", ".join(w for w in why if w) + ")" if any(why) else ""
             log(f"  {iso3}: adapter rows matched {hit}, unmatched {miss}{extra}")
+
+    # -- a town's figure on a district --------------------------------------
+    # After every adapter, so the parent's population is the one it will
+    # keep; before anything sums or weighs by these figures.
+    towns = refuse_town_figures(admin1_by_country, admin2_by_country)
+    if towns:
+        log(f"  {towns} Wikidata district figures left out as a town's, not "
+            f"the district's")
 
     # -- the shape-gap table is a promise, so check it -----------------------
     # Here rather than at declaration time: it is a claim about what the join
