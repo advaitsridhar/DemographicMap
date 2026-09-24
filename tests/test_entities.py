@@ -122,10 +122,23 @@ class AdapterHints(unittest.TestCase):
         self.assertIn("MNG", hint)
 
 
+class OtherLakesAreWater(unittest.TestCase):
+    def test_honduras_and_mozambique_are_declared(self):
+        self.assertIn("Lago de Yojoa", be.WATER_SHAPES["HND"])
+        self.assertIn("Lago Niassa", be.WATER_SHAPES["MOZ"])
+
+
 class LakesAreWater(unittest.TestCase):
     """Guatemala's two lakes are drawn as second-order units. Left as units
     they read as two municipios whose figures were not found; declared, they
     are water, and every field says so."""
+
+    def setUp(self):
+        # Guatemala's two alone, so the check's tables below are complete.
+        only = mock.patch.dict(be.WATER_SHAPES, {"GTM": be.WATER_SHAPES["GTM"]},
+                               clear=True)
+        only.start()
+        self.addCleanup(only.stop)
 
     def lake(self, name="Lago De Atitlan", group="GTM"):
         shape = {"shape_id": "X", "name": name, "group": group,
