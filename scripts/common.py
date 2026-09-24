@@ -1033,6 +1033,10 @@ ALSO_KNOWN_AS: dict[tuple[str, str], tuple[str, ...]] = {
     ("DOM", "La Estrelleta"): ("Elías Piña Province", "Elías Piña"),
     # INE's catalogue writes the municipio with a y, the boundary file with an i.
     ("GTM", "San Raimundo"): ("San Raymundo",),
+    # INE's catalogue names the municipio for its seat, Playa Grande; "Grande"
+    # just before the name reads as a qualifier ("Grande Lisboa" is not
+    # Lisbon District), so the census row needs the declared name.
+    ("GTM", "Ixcán"): ("Playa Grande Ixcán",),
     # geoBoundaries misspells two of Setubal District's municipalities.
     ("PRT", "Setubul"): ("Setúbal",),
     ("PRT", "Barriero"): ("Barreiro",),

@@ -251,6 +251,70 @@ class HistoricFigures(unittest.TestCase):
         self.assertEqual(a2["IRQ"][1]["population"]["value"], 9000)
 
 
+class ProjectionsDoNotDisplaceCounts(unittest.TestCase):
+    def entity(self):
+        return {"population": {"value": 107488, "year": 2006, "source": "Wikidata (CC0)"},
+                "sources": []}
+
+    def test_nigerias_projection_does_not_replace_its_census(self):
+        entity = self.entity()
+        be.merge_adapter(entity, {"_source": "cod_ps_admin2.json", "country": "NGA",
+                                  "population": {"value": 115305, "year": 2020}})
+        self.assertEqual(entity["population"]["value"], 107488)
+
+    def test_it_still_fills_a_gap(self):
+        entity = {"population": {"status": "not_available"}, "sources": []}
+        be.merge_adapter(entity, {"_source": "cod_ps_admin2.json", "country": "NGA",
+                                  "population": {"value": 115305, "year": 2020}})
+        self.assertEqual(entity["population"]["value"], 115305)
+
+    def test_elsewhere_the_file_replaces_as_before(self):
+        entity = self.entity()
+        be.merge_adapter(entity, {"_source": "cod_ps_admin2.json", "country": "GHA",
+                                  "population": {"value": 115305, "year": 2020}})
+        self.assertEqual(entity["population"]["value"], 115305)
+
+
+class HeldFiguresFallBack(unittest.TestCase):
+    def test_a_refused_capital_figure_gives_way_to_the_districts_own(self):
+        parent = {"id": "P", "name": "Portalegre", "capital": "Portalegre",
+                  "population": {"status": "not_available"}, "sources": []}
+        be.merge_adapter(parent, {"_source": "wikidata_admin1.json",
+                                  "population": {"value": 22359, "year": 2018,
+                                                 "source": "Wikidata (CC0)"},
+                                  "sources": [{"field": "population", "name": "Wikidata"}]})
+        be.merge_adapter(parent, {"_source": "wiki_population_admin1.json",
+                                  "population": {"value": 104923, "year": 2021,
+                                                 "source": "English Wikipedia"},
+                                  "sources": [{"field": "population", "name": "Wikipedia"}]})
+        self.assertEqual(parent["population"]["value"], 22359)
+        kids = [{"id": f"C{i}", "name": n, "parent": "P",
+                 "population": {"value": v, "source": "Wikidata (CC0)"}}
+                for i, (n, v) in enumerate([("Portalegre", 24930), ("Elvas", 23078),
+                                            ("Ponte de Sor", 16722), ("Nisa", 7450)])]
+        self.assertEqual(be.refuse_capital_figures({"X": [parent]}, {"X": kids}), 1)
+        self.assertEqual(parent["population"]["value"], 104923)
+        self.assertIn("shown instead", parent["population"]["note"])
+        self.assertIn({"field": "population", "name": "Wikipedia"}, parent["sources"])
+
+    def test_with_nothing_held_the_gap_stays(self):
+        entity = {"population": {"status": "not_available"}}
+        self.assertFalse(be.fall_back(entity, entity["population"]))
+
+
+class SharedAliases(unittest.TestCase):
+    def test_an_alias_that_is_another_rows_name_is_dropped(self):
+        rows = {"ARG": [
+            {"name": "Lago Buenos Aires Department", "_source": "wd.json"},
+            {"name": "Perito Moreno", "_source": "wd.json",
+             "aliases": ["Lago Buenos Aires", "Ciudad de Perito Moreno"]},
+            {"name": "Elsewhere", "_source": "other.json", "aliases": ["Lago Buenos Aires"]}]}
+        self.assertEqual(be.drop_shared_aliases(rows), 1)
+        self.assertEqual(rows["ARG"][1]["aliases"], ["Ciudad de Perito Moreno"])
+        # Another file's name is not this file's rival.
+        self.assertEqual(rows["ARG"][2]["aliases"], ["Lago Buenos Aires"])
+
+
 class OutlinesNameShuffledPolygons(unittest.TestCase):
     """Namibia's polygons are named by the OCHA outline each one is."""
 
@@ -1405,6 +1469,10 @@ class LooseNameMatching(unittest.TestCase):
         self.assertFalse(self.related("Península de Setúbal", "SETÚBAL"))
         self.assertFalse(self.related("Área Metropolitana de Lisboa", "LISBOA"))
         self.assertFalse(self.related("Cotabato", "South Cotabato"))
+
+    def test_only_the_word_just_before_the_name_counts(self):
+        # "West Sepik (Sandaun) Province" is Sandaun Province by a second name.
+        self.assertTrue(self.related("Sandaun Province", "West Sepik (Sandaun) Province"))
 
     def test_the_same_words_after_the_name_are_a_locator(self):
         self.assertTrue(self.related("Abbeville County, South Carolina", "Abbeville"))

@@ -26,6 +26,7 @@ match records *how* it matched so a bad join is auditable rather than invisible.
 from __future__ import annotations
 
 import argparse
+import functools
 import hashlib
 import os
 import re
@@ -1606,6 +1607,16 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
                        "wikidata_admin2_classes.json",
                        "wiki_population_admin1.json", "wiki_table_population.json"})
 FILL_ONLY_FIELDS = frozenset({"population"})
+# A file that only fills in some countries: where its figure is a projection
+# and another source holds the count it was projected from. Nigeria has not
+# counted since 2006; OCHA's 2020 figures for its 774 local government areas
+# are the National Population Commission's projections from that census, and
+# they replaced the census counts Wikidata carries on 716 of them. A
+# projection does not displace the count it was made from; it still fills the
+# areas nothing else reaches.
+FILL_ONLY_IN: dict[str, frozenset[str]] = {
+    "cod_ps_admin2.json": frozenset({"NGA"}),
+}
 
 
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
@@ -1631,8 +1642,18 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     from a wrong one. A row that replaces a figure owns what describes it, and
     what the row does not say is not carried over from what it displaced.
     """
+    fill_only = (row.get("_source") in FILL_ONLY
+                 or row.get("country") in FILL_ONLY_IN.get(row.get("_source"), ()))
     held = {key for key in FILL_ONLY_FIELDS
-            if row.get("_source") in FILL_ONLY and not is_gap(entity.get(key))}
+            if fill_only and not is_gap(entity.get(key))}
+    # What was held back is kept aside, not thrown away: a check that later
+    # refuses the figure in front of it can fall back to it (see fall_back).
+    for key in held:
+        if not is_gap(row.get(key)):
+            entity.setdefault("_held", {}).setdefault(key, []).append({
+                "value": row[key],
+                "sources": [src for src in row.get("sources") or []
+                            if key in str(src.get("field") or "").split("/")]})
     replaced = {key for key, value in row.items()
                 if key in VALUE_FIELDS and not is_gap(value) and key not in held}
     if replaced:
@@ -1743,7 +1764,7 @@ def name_forms(text: str | None) -> tuple[tuple[str, ...], ...]:
 # "Peninsula de Setubal" is most of Setubal District and not all of it, and
 # "Area Metropolitana de Lisboa" reaches across the Tagus into it.
 #
-# Only before the shorter name. After it, the same words are a locator: the
+# Only just before the shorter name. After it, the same words are a locator: the
 # first cut read them on both sides and took the census figures off 446 US
 # counties, because "Abbeville County, South Carolina" ends in "South", and
 # off Tierra del Fuego, whose full name ends "Islas del Atlantico Sur".
@@ -1759,6 +1780,23 @@ QUALIFIERS = frozenset({
     "metropolitan", "metropolitana", "metropolitaine",
     "utara", "selatan", "barat", "timur", "tengah",
 })
+
+
+# Words that join a qualifier to the name it qualifies: "Peninsula de Setubal",
+# "Area Metropolitana de Lisboa".
+CONNECTORS = frozenset({"de", "del", "della", "do", "da", "dos", "das", "di",
+                        "du", "des", "la", "le", "el", "al", "y", "e", "et"})
+
+
+def qualified(before: tuple[str, ...]) -> bool:
+    """Whether the word just before a name, past any connector, qualifies it.
+
+    Only the nearest word: "West Sepik (Sandaun) Province" is Sandaun Province
+    under a second name, and reading every word before "Sandaun" found "West"
+    and took Vanimo off the map as Sandaun's capital.
+    """
+    words = [w for w in before if w not in CONNECTORS]
+    return bool(words) and words[-1] in QUALIFIERS
 
 
 def run_of(short: tuple[str, ...], long: tuple[str, ...], *,
@@ -1781,7 +1819,7 @@ def run_of(short: tuple[str, ...], long: tuple[str, ...], *,
         tail, target = short[-1], window[-1]
         if not all(a == b for a, b in zip(short[:-1], window[:-1])):
             continue
-        if QUALIFIERS.intersection(long[:start]):
+        if qualified(long[:start]):
             continue
         if len(tail) < PREFIX_MIN and not (at_start and start == 0):
             continue
@@ -2880,6 +2918,23 @@ def resolve_collisions(matched: list[tuple[dict[str, Any], dict[str, Any], str]]
     for (_, _level, _eid), idxs in claims.items():
         if len(idxs) < 2:
             continue
+        # A settlement is not the unit, whatever it is called. Wikidata's
+        # local-language names made the town of Perito Moreno "Lago Buenos
+        # Aires" and Villa de Pomán "Pomán", and each tied with its department
+        # for the department's shape, so neither was kept and three Argentine
+        # departments went blank. Where Wikidata says a rival is only a village,
+        # town or city, it yields to the rest -- unless the shape is itself
+        # named as a city.
+        shape_name = str(matched[idxs[0]][1].get("name") or "")
+        towns = [i for i in idxs if only_a_settlement(matched[i][0])]
+        if towns and len(towns) < len(idxs) and not CITY_SHAPE.search(shape_name):
+            dropped.update(towns)
+            notes.append(f"{shape_name!r}: refused "
+                         + ", ".join(str(matched[i][0].get("name"))[:24] for i in towns[:4])
+                         + " (only a settlement)")
+            idxs = [i for i in idxs if i not in towns]
+            if len(idxs) < 2:
+                continue
         ranked = sorted(idxs, key=lambda i: -evidence(matched[i][2]))
         best, runner = evidence(matched[ranked[0]][2]), evidence(matched[ranked[1]][2])
         # Two outright matches are one place listed twice only if they agree.
@@ -3092,6 +3147,29 @@ PARENT_BAND = (0.75, 1.33)
 NO_ROOM = 1.25
 
 
+def fall_back(entity: dict[str, Any], refused: dict[str, Any],
+              field: str = "population") -> bool:
+    """Put back a figure a fill-only file offered and Wikidata's figure held off.
+
+    Wikidata and Wikipedia both fill only gaps, and Wikidata comes first, so
+    Portugal's districts took their capitals' figures from Wikidata and the
+    district figures their own Wikipedia articles print were held back. When
+    a check refuses the figure in front, the first held one not from
+    Wikidata takes its place, saying what it replaced.
+    """
+    for held in (entity.get("_held") or {}).get(field, []):
+        value = held["value"]
+        if not published(value) or str(value.get("source") or "").startswith("Wikidata"):
+            continue
+        entity[field] = {**value, "note": (
+            (value.get("note") + " " if value.get("note") else "")
+            + refused.get("note", "").replace("so it is left out", "so it is left out "
+                                                "and this figure is shown instead"))}
+        entity.setdefault("sources", []).extend(held["sources"])
+        return True
+    return False
+
+
 def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
                         admin2: dict[str, list[dict[str, Any]]]) -> int:
     """Take a Wikidata population off a district it cannot belong to."""
@@ -3137,6 +3215,7 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
                 + (f" ({pop['year']})" if pop.get("year") else "")
                 + f", which is {why}. It is probably {what} "
                   f"rather than this unit, so its figure is left out."))
+            fall_back(entity, entity["population"])
             refused += 1
     return refused
 
@@ -3211,6 +3290,18 @@ ITEM_CLASSES = PROCESSED / "wikidata_admin2_item_classes.json"
 CITY_SHAPE = re.compile(r"\b(city|kota|ciudad|ville|shahar)\b", re.I)
 
 
+@functools.lru_cache(maxsize=1)
+def known_classes() -> dict[str, list[list[str]]]:
+    """The classes --item-classes recorded, read once."""
+    return read_json(ITEM_CLASSES, {}) or {}
+
+
+def only_a_settlement(row: dict[str, Any]) -> bool:
+    """Whether Wikidata calls this row's item a settlement and nothing else."""
+    kinds = known_classes().get(row.get("wikidata") or "")
+    return bool(kinds) and all(k in SETTLEMENT_CLASSES for k, _ in kinds)
+
+
 def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
                               admin2: dict[str, list[dict[str, Any]]],
                               classes: dict[str, list[list[str]]]) -> int:
@@ -3248,6 +3339,7 @@ def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
                 + (f" ({pop['year']})" if pop.get("year") else "")
                 + " are the settlement's people rather than this unit's, so the "
                   "figure is left out."))
+            fall_back(entity, entity["population"])
             refused += 1
     return refused
 
@@ -3298,6 +3390,7 @@ def refuse_historic_figures(admin2: dict[str, list[dict[str, Any]]]) -> int:
                 f"The Wikidata item joined here by name gives {pop['value']:,} "
                 f"for the year {year}: a historical place of this name, not the "
                 f"unit on the map, so its figure is left out."))
+            fall_back(entity, entity["population"])
             refused += 1
     return refused
 
@@ -3371,6 +3464,7 @@ def refuse_capital_figures(admin1: dict[str, list[dict[str, Any]]],
                 + (f" ({pop['year']})" if pop.get("year") else "")
                 + f", {why}. It is probably the figure of the town or of a "
                   f"smaller unit rather than of this one, so it is left out."))
+            fall_back(parent, parent["population"])
             refused += 1
     return refused
 
@@ -3546,8 +3640,38 @@ def shares_of(rows: Any) -> list[tuple[str, float]]:
             and isinstance(e.get("pct"), (int, float))]
 
 
+def drop_shared_aliases(adapters: dict[str, list[dict[str, Any]]]) -> int:
+    """Take off a row's alias when it is another row's own name.
+
+    Wikidata's local-language labels gave the town of Perito Moreno the alias
+    "Lago Buenos Aires" and Villa de Pomán "Pomán": the names of the
+    departments they lie in, which other rows in the same file carry as their
+    own. Each town then tied with its department for the department's shape,
+    and three Argentine departments that had their figures lost them. A name
+    that is another item's is no evidence of which item a shape is.
+    """
+    dropped = 0
+    for rows in adapters.values():
+        by_file: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for row in rows:
+            by_file[row.get("_source")].append(row)
+        for group in by_file.values():
+            own = {norm(r.get("name")) for r in group}
+            for row in group:
+                aliases = row.get("aliases") or []
+                if not aliases:
+                    continue
+                mine = norm(row.get("name"))
+                kept = [a for a in aliases if norm(a) == mine or norm(a) not in own]
+                if len(kept) != len(aliases):
+                    dropped += len(aliases) - len(kept)
+                    row["aliases"] = kept
+    return dropped
+
+
 def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
-              filename: str) -> dict[str, Any]:
+              filename: str,
+              weights: dict[str, tuple[float, str]] | None = None) -> dict[str, Any]:
     """One row for a shape, from the rows a source publishes for its parts.
 
     Counts are summed where every part carries them; otherwise the shares are
@@ -3607,6 +3731,20 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
                 continue
             rows = whole_hundred([(g, c / whole) for g, c in totals.items()])
             basis = "their populations"
+        elif weights and all(norm(p.get("name")) in weights for p in parts):
+            # Shares with nothing in their own file to weigh them by. CLEAR
+            # Global publishes Namibia's languages as shares only; OCHA counts
+            # the same constituencies' people, so its populations weigh them.
+            given = [weights[norm(p.get("name"))] for p in parts]
+            for v, (w, _) in zip(lists, given):
+                for g, pct in shares_of(v):
+                    totals[g] += pct * w
+            whole = sum(w for w, _ in given)
+            if whole <= 0:
+                continue
+            rows = whole_hundred([(g, c / whole) for g, c in totals.items()])
+            basis = "the populations " + " and ".join(sorted({src for _, src in given})) \
+                + " gives them"
         else:
             log(f"  union {iso3} {name}: {field} not pooled from {filename} -- "
                 f"the parts carry neither counts nor populations to weigh by")
@@ -3627,6 +3765,19 @@ def outline_unions(adm2: list[dict[str, Any]]
     """The unions relabel_from_outlines measured, in SHAPE_IS_UNION_OF's form."""
     return {(r["group"], r["name"]): tuple(r["outline"]["parts"])
             for r in adm2 if (r.get("outline") or {}).get("kind") == "union"}
+
+
+def part_populations(rows: list[dict[str, Any]], parts: Sequence[str]
+                     ) -> dict[str, tuple[float, str]]:
+    """Each part's population from any file that has one, the first found."""
+    wanted = {norm(p) for p in parts}
+    out: dict[str, tuple[float, str]] = {}
+    for row in rows:
+        key = norm(row.get("name"))
+        value = published(row.get("population"))
+        if key in wanted and key not in out and value:
+            out[key] = (value, str(row["population"].get("source") or row.get("_source")))
+    return out
 
 
 def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]],
@@ -3656,7 +3807,8 @@ def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]],
                 log(f"  union {iso3} {shape_name}: {filename} lacks "
                     f"{', '.join(missing)}, not pooled")
                 continue
-            pooled = pool_rows(shape_name, [found[p] for p in part_names], iso3, filename)
+            pooled = pool_rows(shape_name, [found[p] for p in part_names], iso3, filename,
+                               weights=part_populations(rows, part_names))
             for p in part_names:
                 rows.remove(found[p])
             rows.append(pooled)
@@ -4399,6 +4551,9 @@ def main() -> int:
     countries = primary_country_profiles(country_profiles)
     cities = read_json(PROCESSED / "cities.json", {"by_country": {}, "by_admin1": {}})
     adapters = load_adapters()
+    shared = drop_shared_aliases(adapters)
+    if shared:
+        log(f"  {shared} aliases dropped as another row's own name")
     for line in pool_declared_unions(
             adapters, {**SHAPE_IS_UNION_OF, **outline_unions(shapes.get("ADM2", []))}):
         log(f"  union pooled: {line}")
@@ -4822,6 +4977,16 @@ def main() -> int:
     if towns:
         log(f"  {towns} Wikidata district figures left out as a town's, not "
             f"the district's")
+    fell_back = 0
+    for table in (admin1_by_country, admin2_by_country):
+        for rows in table.values():
+            for entity in rows:
+                held = entity.pop("_held", None)
+                if held and isinstance(entity.get("population"), dict) \
+                        and "shown instead" in str(entity["population"].get("note") or ""):
+                    fell_back += 1
+    if fell_back:
+        log(f"  {fell_back} refused figures replaced by the next source's")
 
     # -- the shape-gap table is a promise, so check it -----------------------
     # Here rather than at declaration time: it is a claim about what the join
