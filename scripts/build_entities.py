@@ -3112,10 +3112,14 @@ def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
             if (above and siblings[entity.get("parent")] == 1
                     and SOLE_CHILD_BAND[0] <= pop["value"] / above <= SOLE_CHILD_BAND[1]):
                 continue
-            what = " and ".join(sorted({SETTLEMENT_CLASSES[k] for k, _ in kinds}))
+            labels = sorted({SETTLEMENT_CLASSES[k] for k, _ in kinds})
+            what = (labels[0] if len(labels) == 1
+                    else ", ".join(labels[:-1]) + " and " + labels[-1])
+            article = "an" if what[0] in "aeiou" else "a"
             entity["population"] = gap(NOT_AVAILABLE, (
                 f"The Wikidata item joined here by name, {entity['wikidata']}, is "
-                f"a {what} and nothing else, not a unit of government; its "
+                f"{article} {what}, and Wikidata calls it nothing else -- no "
+                f"municipality or district; its "
                 f"{pop['value']:,}"
                 + (f" ({pop['year']})" if pop.get("year") else "")
                 + " are the settlement's people rather than this unit's, so the "
