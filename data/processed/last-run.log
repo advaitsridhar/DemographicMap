@@ -1,20 +1,4 @@
-PRT: the country's own divisions resolved 1 more
-PRT: 16 units without a population, 16 resolved
-  LISBOA -> Lisbon District (Q207199, matched by name)
-  AVEIRO -> Aveiro District: 713,578, undated (the infobox names no year for the figure)
-  BRAGA -> Braga District: 831,368, undated (no year in the value)
-  COIMBRA -> Coimbra District: 441,245, undated (no year in the value)
-  FARO -> Faro District: 458,734, undated (no year in the value)
-  GUARDA -> Guarda District: 173,716, undated (no year in the value)
-  LEIRIA -> Leiria District: 470,930, undated (no year in the value)
-  LISBOA -> Lisbon District: 2,135,992, undated (no year in the value)
-  PORTALEGRE -> Portalegre District: 104,989, undated (no year in the value)
-  SANTARÉM -> Santarém District: 475,344, undated (no year in the value)
-  SETÚBAL -> Setúbal District: 887,928, undated (no year in the value)
-  VISEU -> Viseu District: 394,927, undated (no year in the value)
-AGO: 1 units without a population, 1 resolved
-  Moxico -> Moxico Province: no population parameter in the infobox (it has population_footnotes, population_total, population_as_of, population_density_km2, population_density_sq_mi, population_est)
-CUB: 1 units without a population, 1 resolved
-  CUB: its first level now sums to 11,181,186, 111% of the country's 10,059,519 -- check for a unit counted twice
-  wrote data/processed/wiki_population_admin1.json (574 kB)
-wrote 576 records to wiki_population_admin1.json
+  4 rows without a population
+    4 of 4 items asked; 4 populations so far
+  wrote data/processed/wikidata_admin2.json (56888 kB)
+  filled 4 populations and 4 coordinates; 0 items in failed batches keep their gaps
