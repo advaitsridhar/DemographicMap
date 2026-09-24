@@ -1111,7 +1111,15 @@
       await window.DataStore.loadLevel(options.country, options.level === 2 ? 2 : 1);
       record = window.DataStore.get(id, options.level);
     }
-    if (!record) { status("No data record for that unit"); return; }
+    if (!record) {
+      // Not loaded is not the same as not there: a shard that failed to
+      // arrive is asked for again on the next click.
+      const failed = options.country
+        && !window.DataStore.isLoaded(options.country, options.level === 2 ? 2 : 1);
+      status(failed ? "Couldn't load that country's data -- click again to retry"
+                    : "No data record for that unit");
+      return;
+    }
 
     state.selected = record;
     const levelIndex = ["admin0", "admin1", "admin2"].indexOf(record.level);
