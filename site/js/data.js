@@ -124,7 +124,12 @@ window.DataStore = (function () {
     } catch (err) {
       // A 404 here means the country genuinely has no units at that level in
       // geoBoundaries -- remember it so we do not retry on every map move.
-      loaded[key].add(iso3);
+      // Nothing else is remembered. A dropped connection or a timeout used to
+      // be recorded the same way, and then every click in that country said
+      // "No data record for that unit" until the page was reloaded: one
+      // failed request for Guatemala's municipios left all 342 unreachable.
+      // Left unrecorded, the next click or map move asks again.
+      if (/HTTP 404\b/.test(String(err))) loaded[key].add(iso3);
       emit({ type: key, country: iso3, count: 0, error: String(err) });
       return [];
       } finally {

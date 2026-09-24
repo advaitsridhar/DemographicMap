@@ -26,6 +26,31 @@ async function concurrentLoadsAreIndexedOnce() {
   assert.strictEqual(context.window.DataStore.children("USA").length, records.length);
 }
 
+async function aFailedShardIsAskedForAgain() {
+  // One dropped request for Guatemala's municipios used to leave all of them
+  // unreachable until a reload: the failure was remembered as "no units".
+  const records = data("admin2/GTM.json");
+  let calls = 0;
+  const context = vm.createContext({
+    window: {}, console,
+    fetch: async (url) => {
+      if (url.includes("build.json")) return { ok: true, json: async () => ({ version: "test" }) };
+      calls += 1;
+      if (url.includes("GTM") && calls === 1) throw new Error("connection reset");
+      if (url.includes("ATA")) return { ok: false, status: 404 };
+      return { ok: true, json: async () => records };
+    },
+  });
+  vm.runInContext(source("data.js"), context);
+  const store = context.window.DataStore;
+  assert.strictEqual((await store.loadLevel("GTM", 2)).length, 0);
+  assert.strictEqual(store.isLoaded("GTM", 2), false, "a dropped request is not remembered");
+  assert.strictEqual((await store.loadLevel("GTM", 2)).length, records.length);
+  assert.ok(store.get(records[0].id, 2), "the retry reaches the records");
+  await store.loadLevel("ATA", 2);
+  assert.strictEqual(store.isLoaded("ATA", 2), true, "a 404 still means no units");
+}
+
 async function deepSearchWaitsForTheSecondShard() {
   let release;
   const delayed = new Promise((resolve) => { release = resolve; });
@@ -720,6 +745,7 @@ async function anIdDrawnAtTwoLevelsKeepsBothRecords() {
 
 (async () => {
   await concurrentLoadsAreIndexedOnce();
+  await aFailedShardIsAskedForAgain();
   await anIdDrawnAtTwoLevelsKeepsBothRecords();
   await deepSearchWaitsForTheSecondShard();
   uncertainSharesKeepTheirQualifier();
