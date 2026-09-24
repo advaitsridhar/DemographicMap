@@ -20,5 +20,15 @@ class SecondLevelOnly(unittest.TestCase):
             self.assertEqual(eurostat.second_level_only([{"country": "PRT", "name": "Alto Minho"}]), [])
 
 
+class WholeCountry(unittest.TestCase):
+    def test_a_countrys_only_region_is_not_a_division(self):
+        for geo in ("LU00", "LU000", "MT00", "CY000"):
+            self.assertTrue(eurostat.whole_country(geo), geo)
+
+    def test_a_region_is(self):
+        for geo in ("FR10", "PT11", "ES300", "NL00A", "LU"):
+            self.assertFalse(eurostat.whole_country(geo), geo)
+
+
 if __name__ == "__main__":
     unittest.main()

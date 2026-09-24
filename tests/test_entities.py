@@ -163,6 +163,56 @@ class TownFiguresOnDistricts(unittest.TestCase):
         self.assertEqual(refused, 0)
 
 
+class CapitalFiguresOnParents(unittest.TestCase):
+    """A first-level Wikidata item can carry its capital's figure."""
+
+    def run_guard(self, parent_pop, children, source="Wikidata (CC0)", capital="Seat"):
+        a1 = {"X": [{"id": "P", "name": "Portalegre", "capital": capital,
+                     "population": {"value": parent_pop, "year": 2018, "source": source}}]}
+        a2 = {"X": [{"id": f"C{i}", "name": name, "parent": "P",
+                     "population": {"value": v, "source": "Wikidata (CC0)"}}
+                    for i, (name, v) in enumerate(children)]}
+        refused = be.refuse_capital_figures(a1, a2)
+        return refused, a1["X"][0]["population"]
+
+    PORTALEGRE = [("Portalegre", 24930), ("Elvas", 23078), ("Ponte de Sor", 16722),
+                  ("Campo Maior", 8456), ("Nisa", 7450), ("Avis", 4571),
+                  ("Sousel", 5074), ("Fronteira", 3410), ("Crato", 3708),
+                  ("Castelo de Vide", 3407), ("Arronches", 3165)]
+
+    def test_a_districts_figure_that_is_its_capitals_is_left_out(self):
+        refused, pop = self.run_guard(22359, self.PORTALEGRE)
+        self.assertEqual(refused, 1)
+        self.assertEqual(pop["status"], common.NOT_AVAILABLE)
+        self.assertIn("24,930 of Portalegre", pop["note"])
+        self.assertIn("22,359 (2018)", pop["note"])
+
+    def test_the_capital_can_be_named_differently(self):
+        kids = [("Luena", 515629), ("Luau", 129054), ("Bundas", 100262),
+                ("Alto Zambeze", 159995), ("Leua", 46826), ("Camanongue", 49295),
+                ("Cameia", 42522), ("Luacano", 29944), ("Luchazes", 20841)]
+        refused, _ = self.run_guard(574253, kids, capital="Luena")
+        self.assertEqual(refused, 1)
+
+    def test_a_district_that_holds_its_divisions_is_kept(self):
+        refused, pop = self.run_guard(118506, self.PORTALEGRE)
+        self.assertEqual(refused, 0)
+        self.assertEqual(pop["value"], 118506)
+
+    def test_a_capital_that_is_most_of_its_district_is_kept(self):
+        # The capital near the parent's figure, but the rest too few to be more.
+        refused, _ = self.run_guard(30000, [("Portalegre", 26000), ("Nisa", 3000)])
+        self.assertEqual(refused, 0)
+
+    def test_only_wikidata_figures_are_judged(self):
+        refused, _ = self.run_guard(22359, self.PORTALEGRE, source="INE census")
+        self.assertEqual(refused, 0)
+
+    def test_a_district_with_no_namesake_division_is_left_alone(self):
+        refused, _ = self.run_guard(22359, self.PORTALEGRE[1:])
+        self.assertEqual(refused, 0)
+
+
 class LakesAreWater(unittest.TestCase):
     """Guatemala's two lakes are drawn as second-order units. Left as units
     they read as two municipios whose figures were not found; declared, they

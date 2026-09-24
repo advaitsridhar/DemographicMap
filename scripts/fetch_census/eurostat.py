@@ -100,6 +100,17 @@ def unpack(payload: dict[str, Any]) -> dict[tuple[str, ...], float]:
     return out
 
 
+def whole_country(geo: str) -> bool:
+    """A NUTS code that is its whole country: LU00, LU000, MT00 and the like.
+
+    Eurostat gives a country too small to divide one region at each level,
+    coded with zeros. It is not a division of the country, so it has no unit
+    on this map; written as one, it went looking for a namesake and Canton
+    Luxembourg took all 681,973 of the Grand Duchy's people.
+    """
+    return len(geo) > 2 and set(geo[2:]) == {"0"}
+
+
 def second_level_only(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """NUTS-3 rows only for the countries whose NUTS-3 is this map's second level.
 
@@ -148,7 +159,7 @@ def main() -> int:
     latest: dict[str, tuple[str, float]] = {}
     for key, value in pop.items():
         geo, year = key[geo_pos], key[time_pos]
-        if len(geo) != want_len:
+        if len(geo) != want_len or whole_country(geo):
             continue
         if geo not in latest or year > latest[geo][0]:
             latest[geo] = (year, value)

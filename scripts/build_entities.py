@@ -2984,6 +2984,63 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
     return refused
 
 
+# The same mistake one level up, where it also blinds the check above. Wikidata's
+# items for Portugal's districts carry their capitals' 2018 figures -- Portalegre
+# District 22,359, the municipality of Portalegre's -- so every district read as
+# a town, and against Aveiro's 77,916 the check above refused Santa Maria da
+# Feira's 136,674 as a town's. A parent's figure is taken for its capital's when
+# both hold:
+#   * it is within a quarter of the figure of its division named for it or for
+#     its capital (years apart, not units apart);
+#   * its other divisions alone hold more people than it does.
+# Only a Wikidata figure is judged: a census or an official table is not
+# overruled by a sum that is mostly Wikidata's. Measured on 24 September 2026
+# over every parent with a namesake division: 14 fail -- twelve Portuguese
+# districts, Cuba's Sancti Spiritus (150,000, the city's) and Angola's Moxico
+# (574,253, the province cut down in 2024, on the old province's ground).
+# Run first, so the check above measures against a parent's own figure.
+CAPITAL_BAND = (0.75, 1.33)
+
+
+def refuse_capital_figures(admin1: dict[str, list[dict[str, Any]]],
+                           admin2: dict[str, list[dict[str, Any]]]) -> int:
+    """Take a Wikidata population off a parent when it is its capital's."""
+    refused = 0
+    for iso3, parents in admin1.items():
+        kids: dict[Any, list[dict[str, Any]]] = defaultdict(list)
+        for entity in admin2.get(iso3, []):
+            kids[entity.get("parent")].append(entity)
+        for parent in parents:
+            pop = parent.get("population")
+            if not (isinstance(pop, dict) and pop.get("value")
+                    and str(pop.get("source") or "").startswith("Wikidata")):
+                continue
+            children = kids.get(parent["id"], [])
+            names = {norm(parent.get("name"))}
+            if isinstance(parent.get("capital"), str):
+                names.add(norm(parent["capital"]))
+            names.discard("")
+            town = next((c for c in children if norm(c.get("name")) in names
+                         and published(c.get("population"))), None)
+            if town is None:
+                continue
+            held = published(town["population"])
+            rest = sum(published(c.get("population")) or 0
+                       for c in children if c is not town)
+            if not (CAPITAL_BAND[0] <= pop["value"] / held <= CAPITAL_BAND[1]
+                    and rest > pop["value"]):
+                continue
+            parent["population"] = gap(NOT_AVAILABLE, (
+                f"The Wikidata item joined here gives {pop['value']:,}"
+                + (f" ({pop['year']})" if pop.get("year") else "")
+                + f", close to the {held:,.0f} of {town['name']}, one of its "
+                  f"divisions, while its other divisions hold {rest:,.0f} "
+                  f"between them. It is probably the figure of the town or of a "
+                  f"smaller unit rather than of this one, so it is left out."))
+            refused += 1
+    return refused
+
+
 def check_water_shapes(admin1: dict[str, list[dict[str, Any]]],
                        admin2: dict[str, list[dict[str, Any]]]) -> None:
     """Every declared lake is drawn, nothing has landed on it, and it is water.
@@ -4398,6 +4455,10 @@ def main() -> int:
     # -- a town's figure on a district --------------------------------------
     # After every adapter, so the parent's population is the one it will
     # keep; before anything sums or weighs by these figures.
+    capitals = refuse_capital_figures(admin1_by_country, admin2_by_country)
+    if capitals:
+        log(f"  {capitals} Wikidata first-level figures left out as a capital's, "
+            f"not the unit's")
     towns = refuse_town_figures(admin1_by_country, admin2_by_country)
     if towns:
         log(f"  {towns} Wikidata district figures left out as a town's, not "

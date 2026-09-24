@@ -358,6 +358,35 @@ class Hydrate(unittest.TestCase):
             self.assertTrue(path.exists())
 
 
+class ItemClasses(unittest.TestCase):
+    def test_asks_only_items_with_a_figure_and_resumes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            processed = Path(tmp)
+            (processed / "wikidata_admin2.json").write_text(json.dumps([
+                {"wikidata": "Q1", "population": {"value": 7739}},
+                {"wikidata": "Q2", "population": {"status": "not_available"}},
+            ]))
+            (processed / "wikidata_admin2_classes.json").write_text(json.dumps([
+                {"wikidata": "Q3", "population": {"value": 5}}]))
+            out = processed / "classes.json"
+            answer = [{"item": uri("Q1"), "class": uri("Q3957"), "classLabel": lit("town")}]
+            with mock.patch.object(m, "PROCESSED", processed), \
+                 mock.patch.object(m, "sparql", return_value=answer) as asked, \
+                 mock.patch.object(m.time, "sleep"):
+                m.item_classes(out, "admin2", 0)
+            query = asked.call_args[0][0]
+            self.assertIn("wd:Q1", query)
+            self.assertIn("wd:Q3", query)
+            self.assertNotIn("wd:Q2", query, "an item with no figure is not asked")
+            self.assertEqual(json.loads(out.read_text()),
+                             {"Q1": [["Q3957", "town"]], "Q3": []})
+            with mock.patch.object(m, "PROCESSED", processed), \
+                 mock.patch.object(m, "sparql") as again, \
+                 mock.patch.object(m.time, "sleep"):
+                m.item_classes(out, "admin2", 0)
+            again.assert_not_called()
+
+
 class Enrich(unittest.TestCase):
     def test_local_names_become_aliases_for_unjoined_rows_only(self):
         with tempfile.TemporaryDirectory() as tmp:

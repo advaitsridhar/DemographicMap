@@ -768,6 +768,65 @@ def hydrate(path: Path, countries: list[str] | None, sleep: float,
     return 0
 
 
+ITEM_CLASSES_QUERY = """
+SELECT ?item ?class ?classLabel WHERE {
+  VALUES ?item { %(ids)s }
+  ?item wdt:P31 ?class .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+"""
+ITEM_CLASSES_BATCH = 200
+
+
+def item_classes(path: Path, level: str, sleep: float,
+                 budget_minutes: float = 38.0) -> int:
+    """What each item that gives this level a population is an instance of.
+
+    A name join can reach the town of a district's name rather than the
+    district, and the figure it brings looks like any other. The build reads
+    this file to tell the two apart: an item that is only ever a village, a
+    town or a city is not a second-level unit, whatever it is called.
+    Resumes from the file, so a run cut short by the budget goes on.
+    """
+    items: set[str] = set()
+    for name in (f"wikidata_{level}.json", f"wikidata_{level}_classes.json"):
+        for rec in read_json(PROCESSED / name, []) or []:
+            pop = rec.get("population")
+            if rec.get("wikidata") and isinstance(pop, dict) and pop.get("value"):
+                items.add(rec["wikidata"])
+    known: dict[str, list[list[str]]] = read_json(path, {}) or {}
+    ordered = sorted(items - set(known))
+    log(f"  {len(items):,} items give a {level} population; "
+        f"{len(ordered):,} not yet asked")
+    deadline = time.time() + budget_minutes * 60
+    failed = 0
+    for start in range(0, len(ordered), ITEM_CLASSES_BATCH):
+        if time.time() > deadline:
+            log(f"  stopped at the {budget_minutes:.0f}-minute budget with "
+                f"{len(ordered) - start:,} items unasked; run again to go on")
+            break
+        batch = ordered[start:start + ITEM_CLASSES_BATCH]
+        try:
+            rows = sparql(ITEM_CLASSES_QUERY % {"ids": " ".join(f"wd:{q}" for q in batch)},
+                          cache=False, retries=2)
+        except Exception as exc:
+            failed += len(batch)
+            log(f"    batch {start // ITEM_CLASSES_BATCH + 1} failed: {str(exc)[:80]}")
+            time.sleep(sleep * 4)
+            continue
+        found: dict[str, list[list[str]]] = {q: [] for q in batch}
+        for row in rows:
+            found.setdefault(value(row, "item"), []).append(
+                [value(row, "class"), value(row, "classLabel")])
+        known.update({q: sorted(c) for q, c in found.items()})
+        if (start // ITEM_CLASSES_BATCH) % 20 == 19:
+            write_json(path, dict(sorted(known.items())))
+        time.sleep(sleep)
+    write_json(path, dict(sorted(known.items())))
+    log(f"  {len(known):,} items' classes on file; {failed:,} in failed batches")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -796,7 +855,13 @@ def main() -> int:
     ap.add_argument("--hydrate", action="store_true",
                     help="fill population and coordinates for rows already in "
                          "the file that lack them, looked up by id")
+    ap.add_argument("--item-classes", action="store_true",
+                    help="record what every item giving the level a population "
+                         "is an instance of, for the build's town check")
     args = ap.parse_args()
+    if args.item_classes:
+        return item_classes(args.out or PROCESSED / f"wikidata_{args.level}_item_classes.json",
+                            args.level, args.sleep, args.budget)
     if args.probe_classes:
         return probe_classes(args.probe_classes, args.level)
     if args.class_sweep:
