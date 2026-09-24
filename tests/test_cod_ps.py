@@ -136,3 +136,37 @@ class WhichLevelTheFileNames(unittest.TestCase):
     def test_accents_and_case_do_not_decide_it(self):
         level, _ = m.which_level("XXX", ["ÓNE", "TWÖ", "Thrée"])
         self.assertEqual(level, "admin2")
+
+
+class DistrictTablesByName(unittest.TestCase):
+    def test_admpop2_is_a_district_table(self):
+        from scripts.fetch_census import cod_ps
+        res = cod_ps.adm2_resource({"resources": [
+            {"name": "CMR_admpop_adm1_2025.csv"}, {"name": "CMR_admpop2_2025.csv"}]})
+        self.assertEqual(res["name"], "CMR_admpop2_2025.csv")
+
+    def test_a_workbook_when_there_is_no_district_csv(self):
+        from scripts.fetch_census import cod_ps
+        res = cod_ps.adm2_resource({"resources": [
+            {"name": "KEN_AdminBoundaries_TabularData.xlsx"},
+            {"name": "ken_admpop_2019.xlsx"}, {"name": "ken_admpop_adm1_2019.csv"}]})
+        self.assertEqual(res["name"], "ken_admpop_2019.xlsx")
+
+    def test_the_district_sheet_is_read(self):
+        import io
+        import openpyxl
+        from scripts.fetch_census import cod_ps
+        book = openpyxl.Workbook()
+        book.active.title = "ken_admpop_adm1_2019"
+        book.active.append(["ADM1_EN", "T_TL"])
+        sheet = book.create_sheet("ken_admpop_adm2_2019")
+        sheet.append(["ADM2_EN", "ADM2_PCODE", "ADM1_EN", "T_TL"])
+        sheet.append(["Ainabkoi", "KE027144", "Uasin Gishu", 138_192])
+        sheet.append([None, None, None, None])
+        buf = io.BytesIO()
+        book.save(buf)
+        columns, rows, title = cod_ps.workbook_rows(buf.getvalue())
+        self.assertEqual(title, "ken_admpop_adm2_2019")
+        self.assertEqual(columns, ["ADM2_EN", "ADM2_PCODE", "ADM1_EN", "T_TL"])
+        self.assertEqual(rows, [{"ADM2_EN": "Ainabkoi", "ADM2_PCODE": "KE027144",
+                                 "ADM1_EN": "Uasin Gishu", "T_TL": "138192"}])

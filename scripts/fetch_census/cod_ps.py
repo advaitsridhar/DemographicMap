@@ -217,12 +217,50 @@ def reference_year(columns: list[str], rows: list[dict[str, str]],
     return int(found.group(1)) if found else None
 
 
+# A district table, by the file's own name: "adm2", or "admpop2" as Cameroon's
+# is called ("CMR_admpop2_2025.csv"), which the first version of this missed.
+ADM2_NAME = re.compile(r"adm(?:pop)?_?2(?!\d)")
+
+
 def adm2_resource(package: dict[str, Any]) -> dict[str, Any] | None:
-    for resource in package.get("resources") or ():
+    """The district table: a CSV where there is one, else the workbook.
+
+    Sixty-odd datasets publish their districts only inside the workbook
+    beside the national and first-level CSVs -- Kenya's, Zambia's, Iraq's,
+    Jamaica's -- so a reader of CSVs alone found nothing there.
+    """
+    resources = list(package.get("resources") or ())
+    for resource in resources:
         name = str(resource.get("name") or "").lower()
-        if "adm2" in name and name.endswith(".csv"):
+        if ADM2_NAME.search(name) and name.endswith(".csv"):
+            return resource
+    for resource in resources:
+        name = str(resource.get("name") or "").lower()
+        if name.endswith((".xlsx", ".xlsm")) and "admpop" in name:
             return resource
     return None
+
+
+def workbook_rows(body: bytes) -> tuple[list[str], list[dict[str, str]], str]:
+    """The district sheet of a COD-PS workbook, as a CSV reader would give it.
+
+    The sheet is found by its name ("..._adm2" or "admpop2"), and nothing else
+    is guessed: a workbook with no such sheet is refused by the caller.
+    """
+    import openpyxl
+    book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
+    sheet = next((ws for ws in book.worksheets
+                  if ADM2_NAME.search(ws.title.lower().replace(" ", ""))), None)
+    if sheet is None:
+        return [], [], ""
+    rows = sheet.iter_rows(values_only=True)
+    header = [str(c).strip() if c is not None else "" for c in next(rows, [])]
+    out = []
+    for row in rows:
+        if not any(v not in (None, "") for v in row):
+            continue
+        out.append({h: ("" if v is None else str(v)) for h, v in zip(header, row) if h})
+    return [h for h in header if h], out, sheet.title
 
 
 # Where this map's own shapes are, so a file can be asked which level it is
@@ -298,18 +336,33 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
         return []
     resource = adm2_resource(package)
     if resource is None:
-        log("    refused: no adm2 CSV on this dataset")
+        log("    refused: no adm2 CSV or workbook on this dataset")
         return []
     try:
         with urllib.request.urlopen(urllib.request.Request(
                 str(resource.get("url")), headers=HEADERS), timeout=TIMEOUT) as fh:
-            body = fh.read().decode("utf-8-sig", "replace")
+            raw_body = fh.read()
     except Exception as err:                         # noqa: BLE001 -- reported
         log(f"    refused: {resource.get('name')}: {type(err).__name__}: {err}")
         return []
-    reader = csv.DictReader(io.StringIO(body))
-    rows = list(reader)
-    columns = [c.strip() for c in (reader.fieldnames or [])]
+    resource_name = str(resource.get("name") or "")
+    if resource_name.lower().endswith(".csv"):
+        reader = csv.DictReader(io.StringIO(raw_body.decode("utf-8-sig", "replace")))
+        rows = list(reader)
+        columns = [c.strip() for c in (reader.fieldnames or [])]
+    else:
+        try:
+            columns, rows, sheet = workbook_rows(raw_body)
+        except Exception as err:                     # noqa: BLE001 -- reported
+            log(f"    refused: {resource_name}: unreadable workbook: "
+                f"{type(err).__name__}: {err}")
+            return []
+        if not rows:
+            log(f"    refused: {resource_name} has no district sheet")
+            return []
+        log(f"    read sheet {sheet!r} of {resource_name}")
+        # The year may be in the sheet's name rather than the file's.
+        resource_name = f"{resource_name} {sheet}_"
     unit = name_column(columns, "2")
     parent = name_column(columns, "1")
     total = total_column(columns)
@@ -317,7 +370,7 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
         log(f"    refused: no second-level name column or no total; "
             f"its columns are: {', '.join(columns[:12])}")
         return []
-    year = reference_year(columns, rows, str(resource.get("name") or ""))
+    year = reference_year(columns, rows, resource_name)
     if year is None:
         log("    refused: the file states no reference year, in a column or "
             "its own name")
