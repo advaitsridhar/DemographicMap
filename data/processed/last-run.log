@@ -1,3 +1,10 @@
   https://api.siat.stat.uz/sdmx/246/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_246.json (103.9 KB, updated 2026-04-22T15:18:14.751731+05:00)
-  103,874 bytes; top level list of 1
-  wrote data/raw/uzbekistan/siat_246.json
+  Bozatau district: carved from ['Kegeyli district', 'Chimbay district'] in 2020; those shapes left blank
+  Takhiatash district: carved from Khojeyli district in 2018
+  Kukdala district: carved from Chirakchi district in 2023
+  Gazgan city: carved from ['Karmana district', 'Nurota district'] in 2020; those shapes left blank
+  Bandykhan district: carved from ['Kumkurgan district', 'Kizirik district', 'Termiz district'] in 2020; those shapes left blank
+  Tuprakkala district: carved from Khazarasp district in 2021
+  Yangikhayot district: carved from Sergeli district in 2021
+  14 regions, 198 districts (189 with a figure, 9 left blank with the reason)
+  wrote data/processed/uzbekistan_siat.json (237 kB)
