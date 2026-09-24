@@ -1,5 +1,4 @@
   1,498,977 bytes
   https://web.archive.org/web/20240713113331id_/https://www.censoecuador.gob.ec/wp-content/uploads/2024/04/01_2022_CPV_Estructura_poblacional.xlsx: 1,498,977 bytes
-  wrote data/raw/ecuador/census2022_sheet5_1.tsv (236 rows)
-  6 provinces, 215 cantons; provinces sum to 786,641, national row 16,938,986
-the sheet does not add up (provinces off: {'Cañar': (52150, 175428), 'Esmeraldas': (211848, 342052), 'Loja': (250028, 235393), 'Pastaza': (82754, 29161), 'Sucumbíos': (3174, 195840), 'Santa Elena': (186687, 199048)}); nothing written
+  24 provinces, 221 cantons; they sum to 16,938,986, national row 16,938,986
+  wrote data/processed/ecuador_census.json (305 kB)
