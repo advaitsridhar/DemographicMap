@@ -356,3 +356,36 @@ class Hydrate(unittest.TestCase):
                 m.hydrate(path, None, 0, budget_minutes=-1)
             asked.assert_not_called()
             self.assertTrue(path.exists())
+
+
+class Enrich(unittest.TestCase):
+    def test_local_names_become_aliases_for_unjoined_rows_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "wd.json"
+            path.write_text(json.dumps([
+                {"id": "LVA-WD-Q1", "wikidata": "Q1", "country": "LVA",
+                 "name": "Abava Parish", "population": {"status": "not_available"}},
+                {"id": "LVA-WD-Q2", "wikidata": "Q2", "country": "LVA",
+                 "name": "Joined", "population": {"status": "not_available"}},
+                {"id": "XYZ-WD-Q3", "wikidata": "Q3", "country": "XYZ",
+                 "name": "No languages", "population": {"status": "not_available"}},
+            ]))
+            labels = [{"unit": uri("Q1"), "label": lit("Abavas pagasts")},
+                      {"unit": uri("Q1"), "label": lit("Abava Parish")}]
+            calls = []
+
+            def answer(query, **_):
+                calls.append(query)
+                return labels if "rdfs:label" in query else [stmt("Q1", 950, 2021)]
+
+            with mock.patch.object(m, "sparql", side_effect=answer), \
+                 mock.patch.object(m, "joined_items", return_value={"Q2"}), \
+                 mock.patch.object(m.time, "sleep"):
+                m.enrich(path, None, 0)
+            self.assertIn('"lv"', calls[0])
+            self.assertNotIn("wd:Q2", calls[0], "a joined row needs no second name")
+            out = {r["wikidata"]: r for r in json.loads(path.read_text())}
+            self.assertEqual(out["Q1"]["aliases"], ["Abavas pagasts"])
+            self.assertEqual(out["Q1"]["population"]["value"], 950)
+            self.assertNotIn("aliases", out["Q2"])
+            self.assertNotIn("aliases", out["Q3"])
