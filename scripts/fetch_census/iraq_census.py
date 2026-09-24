@@ -26,8 +26,33 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_pdf import PAGE_BREAK, fetch_blob, laid_out  # noqa: E402
 
 URL = "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+# OCHA's gazetteer of the boundaries the map draws (cod-ab-irq, CC BY-IGO):
+# which sub-district lies in which of the 101 districts.
+GAZETTEER = ("https://data.humdata.org/dataset/488bb3cd-3ce9-49d3-862a-3ce7975c63e1/"
+             "resource/bde103b3-dc51-4e7b-9fd2-e38fa5600dc6/download/irq_admin_boundaries.xlsx")
 ROOT = Path(__file__).resolve().parent.parent.parent
 DUMP = ROOT / "data" / "raw" / "iraq" / "aas2024_table11.txt"
+GAZ_DUMP = ROOT / "data" / "raw" / "iraq" / "ocha_admin3.txt"
+
+
+def gazetteer_rows(blob: bytes) -> list[list[str]]:
+    """Every sheet's rows that name a sub-district, as tab-separated text."""
+    import io
+
+    import openpyxl
+    book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+    out: list[list[str]] = []
+    for sheet in book.worksheets:
+        rows = list(sheet.iter_rows(values_only=True))
+        if not rows:
+            continue
+        header = [str(c or "") for c in rows[0]]
+        log(f"  sheet {sheet.title!r}: {len(rows) - 1} rows, {header[:14]}")
+        if not any(h.upper().startswith("ADM3") for h in header):
+            continue
+        out.append(header)
+        out.extend([["" if c is None else str(c) for c in row] for row in rows[1:]])
+    return out
 
 
 def table_pages(text: str) -> list[str]:
@@ -47,6 +72,9 @@ def main() -> int:
         DUMP.parent.mkdir(parents=True, exist_ok=True)
         DUMP.write_text(PAGE_BREAK.join(pages), encoding="utf-8")
         log(f"  wrote {DUMP.relative_to(ROOT)}")
+        rows = gazetteer_rows(fetch_blob(GAZETTEER))
+        GAZ_DUMP.write_text("\n".join("\t".join(r) for r in rows), encoding="utf-8")
+        log(f"  wrote {GAZ_DUMP.relative_to(ROOT)} ({len(rows)} rows)")
         return 0
     raise SystemExit("the parser is not written yet; run with --dump")
 
