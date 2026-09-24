@@ -2971,7 +2971,7 @@ def say_why_empty(entity: dict[str, Any], country: str,
 #     be within 0.6 and 1.6 of the parent's (years apart, not towns apart).
 # Measured on 24 September 2026 over every Wikidata figure at this level,
 # after the settlement check below has taken what it can tell from Wikidata's
-# own classes: 29 fail with the namesake rule that follows, every one a town,
+# own classes: 28 fail with the namesake rule that follows, every one a town,
 # a city proper, a parent's figure or a wrong item.
 TOWN_RATIO_MAX = 1.5
 SOLE_CHILD_BAND = (0.6, 1.6)
