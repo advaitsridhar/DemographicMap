@@ -30,6 +30,10 @@ data/raw/*
 # sub-district, as the text its PDF lays out: what iraq_census parses.
 !data/raw/iraq/
 !data/raw/iraq/*.txt
+# Uzbekistan's permanent population by region and district, SIAT indicator
+# 2.01.02.0001 (CC BY 4.0), as the JSON the agency serves: 104 KB.
+!data/raw/uzbekistan/
+!data/raw/uzbekistan/*.json
 # Kazakhstan's start-of-year ethnicity workbook: the Bureau's site is an
 # application with no file link to fetch it from, and it is 380 KB.
 !data/raw/kazakhstan/
