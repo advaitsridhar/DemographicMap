@@ -19,6 +19,7 @@ relabelling is measured against.
 from __future__ import annotations
 
 import argparse
+import re
 import tempfile
 import urllib.request
 import zipfile
@@ -50,8 +51,9 @@ def adm2_member(archive: Path) -> str | None:
     """The second-level layer inside the archive, by its file name."""
     with zipfile.ZipFile(archive) as zf:
         shps = [n for n in zf.namelist() if n.lower().endswith(".shp")]
+    log(f"  layers: {shps}")
     for name in shps:
-        if "adm2" in name.lower():
+        if re.search(r"adm(in)?_?2(?!\d)", Path(name).name.lower()):
             return name
     return None
 
