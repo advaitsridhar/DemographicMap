@@ -1,207 +1,462 @@
-  GET https://censo2018.ine.gob.gt/archivos/bdd/db_csv_.zip: 322,771,575 bytes, sha256 82C57488046453ED7CF8125C436C67FEE938272FA116DA421B4D358D5DB934D5
-  the portal prints C0F23CED957F7BC126A5A689B728BE143D8B57B74F96CDF31869B28B01B820F9 beside the link: not this file
-  db_csv_/: 0 bytes
-  db_csv_/Diccionario de datos/: 0 bytes
-  db_csv_/Diccionario de datos/Diccionario_Base_EMIGRACION.xlsx: 23,521 bytes
-  db_csv_/Diccionario de datos/Diccionario_Base_HOGAR.xlsx: 28,222 bytes
-  db_csv_/Diccionario de datos/Diccionario_Base_PERSONA.xlsx: 83,868 bytes
-  db_csv_/Diccionario de datos/Diccionario_Base_VIVIENDA.xlsx: 24,414 bytes
-  db_csv_/HOGAR_BDP.csv: 417,491,714 bytes
-  db_csv_/MIGRACION_BDP.csv: 8,950,185 bytes
-  db_csv_/PERSONA - BDP.csv: 3,181,672,941 bytes
-  db_csv_/VIVIENDA_BDP.csv: 289,596,708 bytes
-  db_csv_/z_Verificacion Integridad de Bases SHA256.txt: 550 bytes
-  CRC check: every member intact
--- db_csv_/HOGAR_BDP.csv: 42 columns
-   ﻿DEPARTAMENTO | MUNICIPIO | COD_MUNICIPIO | LUGAR_POBLADO | NOMBRE_LUGAR_POBLADO | NUM_VIVIENDA | NUM_HOGAR | ZONA | AREA | PCH1 | PCH2 | PCH3 | PCH4 | PCH5 | PCH6 | PCH7 | PCH8 | PCH9_A | PCH9_B | PCH9_C | PCH9_D | PCH9_E | PCH9_F | PCH9_G | PCH9_H | PCH9_I | PCH9_J | PCH9_K | PCH9_L | PCH9_M | PCH10 | PCH11 | PCH12 | PCH13 | PCH14 | PCH15 | PEI1 | PEI2 | PEI2_E | TOTAL_PERS | Long | Lat
-   3,275,931 rows
-   ﻿DEPARTAMENTO: 1 values in the first 200,000 rows; [('1', 200000)]
-   MUNICIPIO: 1 values in the first 200,000 rows; [('101', 200000)]
-   COD_MUNICIPIO: 1 values in the first 200,000 rows; [('1', 200000)]
-   LUGAR_POBLADO: 18 values in the first 200,000 rows; [('101018', 45264), ('101007', 35462), ('101006', 18412), ('101005', 14087), ('101001', 12905), ('101003', 10588), ('101016', 10498), ('101011', 10381), ('101012', 7984), ('101013', 6828), ('101002', 6747), ('101017', 5578)]
-   NOMBRE_LUGAR_POBLADO: 18 values in the first 200,000 rows; [('Zona Municipal 18', 45264), ('Zona Municipal 7', 35462), ('Zona Municipal 6', 18412), ('Zona Municipal 5', 14087), ('Zona Municipal 1', 12905), ('Zona Municipal 3', 10588), ('Zona Municipal 16', 10498), ('Zona Municipal 11', 10381), ('Zona Municipal 12', 7984), ('Zona Municipal 13', 6828), ('Zona Municipal 2', 6747), ('Zona Municipal 17', 5578)]
-   NUM_VIVIENDA: 60 values in the first 200,000 rows; [('1', 1), ('2', 1), ('3', 1), ('4', 1), ('5', 1), ('6', 1), ('7', 1), ('8', 1), ('9', 1), ('10', 1), ('11', 1), ('12', 1)]
-   NUM_HOGAR: 8 values in the first 200,000 rows; [('1', 194013), ('2', 4331), ('3', 1226), ('4', 319), ('5', 74), ('6', 24), ('7', 9), ('8', 4)]
-   ZONA: 18 values in the first 200,000 rows; [('18', 45264), ('7', 35462), ('6', 18412), ('5', 14087), ('1', 12905), ('3', 10588), ('16', 10498), ('11', 10381), ('12', 7984), ('13', 6828), ('2', 6747), ('17', 5578)]
-   AREA: 1 values in the first 200,000 rows; [('1', 200000)]
-   PCH1: 6 values in the first 200,000 rows; [('1', 116786), ('3', 64294), ('2', 10666), ('4', 6121), ('6', 1400), ('5', 733)]
-   PCH2: 5 values in the first 200,000 rows; [(' ', 72548), ('2', 50335), ('1', 49304), ('3', 24511), ('9', 3302)]
-   PCH3: 4 values in the first 200,000 rows; [('3', 98540), ('2', 51698), ('1', 46298), ('9', 3464)]
-   PCH4: 9 values in the first 200,000 rows; [('1', 186311), ('4', 4443), ('2', 3620), ('9', 3343), ('10', 1009), ('3', 976), ('8', 158), ('5', 83), ('6', 57)]
-   PCH5: 5 values in the first 200,000 rows; [('1', 192050), ('3', 3427), ('2', 3309), ('4', 882), ('5', 332)]
-   PCH6: 3 values in the first 200,000 rows; [('1', 181454), ('2', 18214), (' ', 332)]
-   PCH7: 2 values in the first 200,000 rows; [('1', 195999), ('2', 4001)]
-   PCH8: 5 values in the first 200,000 rows; [('1', 198985), ('4', 595), ('5', 208), ('2', 174), ('3', 38)]
-   PCH9_A: 2 values in the first 200,000 rows; [('1', 166144), ('2', 33856)]
-   PCH9_B: 2 values in the first 200,000 rows; [('1', 198017), ('2', 1983)]
-   PCH9_C: 2 values in the first 200,000 rows; [('1', 193866), ('2', 6134)]
-   PCH9_D: 2 values in the first 200,000 rows; [('1', 169031), ('2', 30969)]
-   PCH9_E: 2 values in the first 200,000 rows; [('1', 168194), ('2', 31806)]
-   PCH9_F: 2 values in the first 200,000 rows; [('2', 110523), ('1', 89477)]
-   PCH9_G: 2 values in the first 200,000 rows; [('1', 114165), ('2', 85835)]
-   PCH9_H: 2 values in the first 200,000 rows; [('1', 108262), ('2', 91738)]
-   PCH9_I: 2 values in the first 200,000 rows; [('1', 107245), ('2', 92755)]
-   PCH9_J: 1 values in the first 200,000 rows; [('2', 200000)]
-   PCH9_K: 2 values in the first 200,000 rows; [('2', 116591), ('1', 83409)]
-   PCH9_L: 2 values in the first 200,000 rows; [('2', 158021), ('1', 41979)]
-   PCH9_M: 2 values in the first 200,000 rows; [('2', 100905), ('1', 99095)]
-   PCH10: 8 values in the first 200,000 rows; [('2', 165190), ('1', 22167), ('5', 4684), ('6', 4109), ('3', 2438), ('8', 930), ('7', 248), ('4', 234)]
-   PCH11: 19 values in the first 200,000 rows; [('3', 44837), ('2', 40713), ('4', 35663), ('1', 30933), ('5', 21619), ('6', 12858), ('7', 6135), ('8', 3777), ('9', 1492), ('10', 1047), ('11', 330), ('12', 329)]
-   PCH12: 15 values in the first 200,000 rows; [('1', 61536), ('2', 59449), ('3', 49504), ('4', 20440), ('5', 6080), ('6', 1959), ('7', 583), ('8', 285), ('9', 97), ('10', 38), ('11', 12), ('12', 8)]
-   PCH13: 2 values in the first 200,000 rows; [('1', 148938), ('2', 51062)]
-   PCH14: 7 values in the first 200,000 rows; [('1', 177124), ('3', 16109), ('2', 4362), ('7', 2048), ('4', 220), ('6', 71), ('5', 66)]
-   PCH15: 2 values in the first 200,000 rows; [('2', 187663), ('1', 12337)]
-   PEI1: 2 values in the first 200,000 rows; [('2', 194062), ('1', 5938)]
-   PEI2: 14 values in the first 200,000 rows; [(' ', 194062), ('1', 4189), ('2', 1124), ('3', 287), ('4', 179), ('5', 93), ('6', 30), ('7', 17), ('8', 8), ('9', 4), ('10', 3), ('12', 2)]
-   PEI2_E: 7 values in the first 200,000 rows; [(' ', 194062), ('1', 3930), ('0', 830), ('2', 809), ('3', 209), ('4', 111), ('5', 49)]
-   TOTAL_PERS: 24 values in the first 200,000 rows; [('4', 45257), ('3', 41622), ('2', 34038), ('5', 29877), ('1', 20562), ('6', 14562), ('7', 7063), ('8', 3842), ('9', 1379), ('10', 840), ('11', 404), ('12', 237)]
-   Long: 18 values in the first 200,000 rows; [('-90.4616', 45264), ('-90.5569', 35462), ('-90.49547', 18412), ('-90.5102', 14087), ('-90.512', 12905), ('-90.52742', 10588), ('-90.47476', 10498), ('-90.55011', 10381), ('-90.54081', 7984), ('-90.52696', 6828), ('-90.5163', 6747), ('-90.46961', 5578)]
-   Lat: 18 values in the first 200,000 rows; [('14.669536', 45264), ('14.628676', 35462), ('14.65425', 18412), ('14.618292', 14087), ('14.637021', 12905), ('14.62872', 10588), ('14.621792', 10498), ('14.603524', 10381), ('14.595531', 7984), ('14.587143', 6828), ('14.650479', 6747), ('14.649322', 5578)]
--- db_csv_/MIGRACION_BDP.csv: 11 columns
-   DEPARTAMENTO | MUNICIPIO | COD_MUNICIPIO | ZONA | AREA | NUM_VIVIENDA | NUM_HOGAR | ID_EMIGRACION | PEI3 | PEI4 | PEI5
-   242,203 rows
-   DEPARTAMENTO: 17 values in the first 200,000 rows; [('13', 46513), ('12', 25226), ('1', 24079), ('14', 23381), ('9', 21148), ('7', 9770), ('4', 8574), ('15', 7471), ('6', 6643), ('8', 6422), ('10', 5537), ('5', 4608)]
-   MUNICIPIO: 60 values in the first 200,000 rows; [('101', 7984), ('108', 3928), ('115', 3182), ('403', 2837), ('110', 1408), ('406', 1258), ('117', 944), ('105', 941), ('111', 923), ('402', 901), ('106', 889), ('116', 693)]
-   COD_MUNICIPIO: 33 values in the first 200,000 rows; [('1', 23878), ('4', 15261), ('6', 14395), ('5', 11794), ('8', 10925), ('15', 10398), ('12', 9984), ('2', 9151), ('9', 9081), ('3', 8711), ('13', 8640), ('7', 8584)]
-   ZONA: 38 values in the first 200,000 rows; [('1', 16262), ('4', 15049), ('6', 14048), ('5', 11295), ('12', 10029), ('7', 9173), ('2', 8894), ('9', 8850), ('13', 8469), ('3', 8450), ('15', 7473), ('8', 7051)]
-   AREA: 2 values in the first 200,000 rows; [('2', 120350), ('1', 79650)]
-   NUM_VIVIENDA: 60 values in the first 200,000 rows; [('1784', 5), ('1150', 4), ('1769', 4), ('1260', 3), ('1475', 3), ('1661', 3), ('67', 2), ('625', 2), ('996', 2), ('1110', 2), ('1199', 2), ('1327', 2)]
-   NUM_HOGAR: 1 values in the first 200,000 rows; [('1', 200000)]
-   ID_EMIGRACION: 5 values in the first 200,000 rows; [('1', 138075), ('2', 41382), ('3', 13861), ('4', 5059), ('5', 1623)]
-   PEI3: 2 values in the first 200,000 rows; [('1', 156178), ('2', 43822)]
-   PEI4: 60 values in the first 200,000 rows; [('30', 18), ('25', 15), ('40', 14), ('18', 14), ('35', 14), ('42', 13), ('38', 13), ('27', 12), ('26', 12), ('21', 11), ('20', 11), ('29', 10)]
-   PEI5: 18 values in the first 200,000 rows; [('2016', 22922), ('2017', 20923), ('2018', 19888), ('2015', 18621), ('2014', 15504), ('2013', 13020), ('2008', 11125), ('9999', 10215), ('2012', 9519), ('2010', 8500), ('2005', 7803), ('2006', 7385)]
--- db_csv_/PERSONA - BDP.csv: 85 columns
-   ﻿DEPARTAMENTO | MUNICIPIO | COD_MUNICIPIO | LUGAR_POBLADO | NOMBRE_LUGAR_POBLADO | AREA | NUM_VIVIENDA | NUM_HOGAR | PCP1 | PCP5 | PCP6 | PCP7 | PCP9 | PCP10 | PCP10_B | LUGNACGEO | PCP10_C | PCP10_D | PCP11 | PCP11_B | RESCINGEO | PCP11_C | PCP12 | PCP13 | PCP14 | PCP15 | PCP16_A | PCP16_B | PCP16_C | PCP16_D | PCP16_E | PCP16_F | PCP17_A | PCP17_B | PCP18 | PCP19 | PCP20 | PCP20_B | ESTUDIAGEO | PCP20_C | PCP21 | PCP22 | PCP23_A | PCP23_B | PCP23_C | PCP24 | PCP25_A | PCP25_B | PCP25_C | PCP26_A | PCP26_B | PCP26_C | PCP27 | PCP28 | PCP29 | PCP30_2D | PCP30_1D | PCP31_D | PCP32_2D | PCP32_1D | PCP33 | PCP33_B | TRABAJAGEO | PCP33_C | PCP34 | PCP35_A | PCP35_B | PCP35_C | PCP36_A | PCP36_B | PCP36_C | PCP37 | PCP38_A | PCP38_B | PCP38_C | PCP39 | VIVEHABGEO | NIVGRADO | ANEDUCA | PEA | POCUPA | PDESOC | MIGRA_VIDA | MIGRA_REC | PEI
-   14,901,286 rows
-   ﻿DEPARTAMENTO: 1 values in the first 200,000 rows; [('1', 200000)]
-   MUNICIPIO: 1 values in the first 200,000 rows; [('101', 200000)]
-   COD_MUNICIPIO: 1 values in the first 200,000 rows; [('1', 200000)]
-   LUGAR_POBLADO: 6 values in the first 200,000 rows; [('101005', 52970), ('101001', 46215), ('101003', 41148), ('101006', 33107), ('101002', 24185), ('101004', 2375)]
-   NOMBRE_LUGAR_POBLADO: 6 values in the first 200,000 rows; [('Zona Municipal 5', 52970), ('Zona Municipal 1', 46215), ('Zona Municipal 3', 41148), ('Zona Municipal 6', 33107), ('Zona Municipal 2', 24185), ('Zona Municipal 4', 2375)]
-   AREA: 1 values in the first 200,000 rows; [('1', 200000)]
-   NUM_VIVIENDA: 60 values in the first 200,000 rows; [('2', 12), ('12', 12), ('17', 6), ('6', 5), ('8', 5), ('11', 5), ('14', 5), ('3', 4), ('16', 4), ('23', 4), ('7', 3), ('13', 3)]
-   NUM_HOGAR: 8 values in the first 200,000 rows; [('1', 195497), ('2', 3281), ('3', 920), ('4', 226), ('5', 52), ('6', 15), ('8', 5), ('7', 4)]
-   PCP1: 60 values in the first 200,000 rows; [('1', 12925), ('2', 10929), ('3', 8549), ('4', 5862), ('5', 3357), ('6', 1760), ('7', 951), ('8', 508), ('9', 244), ('10', 145), ('11', 81), ('12', 54)]
-   PCP5: 15 values in the first 200,000 rows; [('3', 75871), ('1', 53860), ('2', 29826), ('6', 13054), ('11', 7182), ('7', 5013), ('8', 3090), ('5', 3046), ('14', 2859), ('15', 1421), ('4', 1388), ('10', 1138)]
-   PCP6: 2 values in the first 200,000 rows; [('2', 105319), ('1', 94681)]
-   PCP7: 60 values in the first 200,000 rows; [('25', 6), ('30', 6), ('39', 5), ('14', 5), ('38', 5), ('29', 5), ('10', 4), ('34', 4), ('36', 4), ('4', 3), ('45', 3), ('21', 3)]
-   PCP9: 3 values in the first 200,000 rows; [('1', 195164), ('9', 3168), ('2', 1668)]
-   PCP10: 3 values in the first 200,000 rows; [('1', 154155), ('2', 42291), ('9', 3554)]
-   PCP10_B: 23 values in the first 200,000 rows; [('1', 156744), (' ', 6247), ('14', 4209), ('12', 4010), ('22', 2662), ('16', 2559), ('9', 2455), ('8', 2421), ('6', 1983), ('5', 1832), ('10', 1599), ('4', 1548)]
-   LUGNACGEO: 60 values in the first 200,000 rows; [('101', 348), (' ', 33), ('2101', 8), ('1401', 6), ('1601', 5), ('501', 5), ('901', 4), ('1101', 4), ('920', 4), ('1409', 4), ('110', 4), ('1501', 4)]
-   PCP10_C: 47 values in the first 200,000 rows; [(' ', 197307), ('44', 701), ('46', 599), ('45', 326), ('41', 230), ('42', 170), ('49', 74), ('47', 68), ('71', 62), ('51', 60), ('39', 49), ('59', 34)]
-   PCP10_D: 60 values in the first 200,000 rows; [(' ', 23926), ('9999', 131), ('2000', 19), ('1998', 18), ('2017', 15), ('2006', 14), ('2012', 11), ('2003', 11), ('1996', 10), ('2018', 10), ('2005', 9), ('2002', 9)]
-   PCP11: 4 values in the first 200,000 rows; [('2', 179330), ('1', 14258), ('3', 4501), ('9', 1911)]
-   PCP11_B: 23 values in the first 200,000 rows; [('1', 179799), (' ', 16754), ('16', 495), ('12', 374), ('14', 333), ('8', 221), ('9', 188), ('22', 175), ('18', 157), ('10', 148), ('4', 138), ('6', 133)]
-   RESCINGEO: 60 values in the first 200,000 rows; [('101', 1780), (' ', 214), ('203', 6), ('1908', 5), ('901', 5), ('1708', 4), ('1601', 3), ('2107', 3), ('1420', 3), ('2214', 2), ('1301', 2), ('1501', 2)]
-   PCP11_C: 37 values in the first 200,000 rows; [(' ', 199415), ('41', 118), ('44', 114), ('45', 73), ('46', 54), ('42', 43), ('51', 34), ('49', 20), ('71', 16), ('58', 12), ('59', 10), ('52', 10)]
-   PCP12: 6 values in the first 200,000 rows; [('5', 177685), ('1', 19775), ('6', 1562), ('4', 418), ('2', 376), ('3', 184)]
-   PCP13: 23 values in the first 200,000 rows; [(' ', 180225), ('10', 7579), ('11', 5541), ('17', 2193), ('12', 1682), ('1', 497), ('18', 383), ('15', 341), ('5', 305), ('8', 273), ('16', 247), ('21', 226)]
-   PCP14: 4 values in the first 200,000 rows; [(' ', 179247), ('2', 8699), ('9', 8005), ('1', 4049)]
-   PCP15: 30 values in the first 200,000 rows; [('25', 178442), (' ', 11228), ('10', 3420), ('11', 2231), ('17', 1335), ('12', 818), ('1', 485), ('26', 277), ('28', 231), ('15', 222), ('21', 220), ('18', 161)]
-   PCP16_A: 6 values in the first 200,000 rows; [('1', 161087), ('2', 21481), (' ', 11228), ('3', 3589), ('9', 2307), ('4', 308)]
-   PCP16_B: 6 values in the first 200,000 rows; [('1', 180402), (' ', 11228), ('2', 4496), ('9', 2431), ('3', 1204), ('4', 239)]
-   PCP16_C: 6 values in the first 200,000 rows; [('1', 177040), (' ', 11228), ('2', 6122), ('9', 2485), ('3', 2362), ('4', 763)]
-   PCP16_D: 6 values in the first 200,000 rows; [('1', 181143), (' ', 11228), ('2', 3788), ('9', 2596), ('3', 919), ('4', 326)]
-   PCP16_E: 6 values in the first 200,000 rows; [('1', 183639), (' ', 11228), ('9', 2647), ('2', 1320), ('3', 620), ('4', 546)]
-   PCP16_F: 6 values in the first 200,000 rows; [('1', 182854), (' ', 11228), ('9', 3096), ('2', 1492), ('3', 783), ('4', 547)]
-   PCP17_A: 8 values in the first 200,000 rows; [('4', 83152), ('3', 49932), ('5', 32669), (' ', 11228), ('1', 10658), ('2', 8432), ('6', 3399), ('7', 530)]
-   PCP17_B: 8 values in the first 200,000 rows; [('6', 51363), ('5', 40966), (' ', 30318), ('3', 29645), ('2', 20559), ('1', 13998), ('4', 12991), ('7', 160)]
-   PCP18: 3 values in the first 200,000 rows; [('2', 125893), ('1', 62879), (' ', 11228)]
-   PCP19: 5 values in the first 200,000 rows; [(' ', 137121), ('2', 34285), ('1', 28199), ('3', 343), ('4', 52)]
-   PCP20: 4 values in the first 200,000 rows; [(' ', 137121), ('1', 59282), ('9', 3304), ('2', 293)]
-   PCP20_B: 17 values in the first 200,000 rows; [(' ', 140478), ('1', 59425), ('3', 38), ('9', 10), ('5', 8), ('6', 6), ('4', 6), ('16', 5), ('8', 4), ('22', 4), ('21', 3), ('2', 3)]
-   ESTUDIAGEO: 52 values in the first 200,000 rows; [(' ', 140478), ('101', 59282), ('108', 37), ('301', 32), ('113', 20), ('115', 20), ('106', 17), ('199', 12), ('103', 12), ('901', 9), ('105', 6), ('110', 6)]
-   PCP20_C: 22 values in the first 200,000 rows; [(' ', 199947), ('41', 13), ('42', 6), ('71', 6), ('49', 3), ('46', 3), ('65', 3), ('44', 3), ('66', 2), ('58', 2), ('45', 1), ('83', 1)]
-   PCP21: 18 values in the first 200,000 rows; [(' ', 168832), ('2', 11126), ('99', 8520), ('1', 3174), ('6', 1754), ('17', 1216), ('16', 1045), ('5', 1033), ('11', 982), ('7', 929), ('10', 543), ('8', 318)]
-   PCP22: 3 values in the first 200,000 rows; [('1', 173833), (' ', 20077), ('2', 6090)]
-   PCP23_A: 28 values in the first 200,000 rows; [('25', 170557), (' ', 26167), ('26', 863), ('10', 482), ('17', 363), ('11', 342), ('1', 243), ('12', 186), ('28', 181), ('2', 154), ('21', 91), ('15', 85)]
-   PCP23_B: 27 values in the first 200,000 rows; [(' ', 182484), ('26', 13129), ('25', 1799), ('10', 477), ('28', 454), ('11', 428), ('2', 339), ('17', 305), ('12', 156), ('1', 130), ('16', 38), ('8', 36)]
-   PCP23_C: 19 values in the first 200,000 rows; [(' ', 198625), ('28', 841), ('26', 192), ('1', 111), ('25', 79), ('11', 56), ('17', 25), ('10', 21), ('2', 12), ('27', 8), ('12', 7), ('15', 6)]
-   PCP24: 3 values in the first 200,000 rows; [('2', 143813), ('1', 36110), (' ', 20077)]
-   PCP25_A: 28 values in the first 200,000 rows; [(' ', 163890), ('26', 25887), ('25', 6184), ('28', 922), ('10', 800), ('11', 795), ('17', 371), ('1', 294), ('12', 205), ('2', 168), ('8', 77), ('18', 74)]
-   PCP25_B: 27 values in the first 200,000 rows; [(' ', 197481), ('28', 1563), ('26', 420), ('25', 126), ('11', 120), ('1', 82), ('10', 38), ('17', 36), ('2', 33), ('27', 19), ('15', 15), ('12', 13)]
-   PCP25_C: 17 values in the first 200,000 rows; [(' ', 199924), ('1', 15), ('11', 12), ('10', 8), ('26', 7), ('17', 7), ('2', 6), ('28', 5), ('27', 3), ('25', 3), ('21', 2), ('12', 2)]
-   PCP26_A: 4 values in the first 200,000 rows; [('1', 152475), ('2', 24798), (' ', 20077), ('9', 2650)]
-   PCP26_B: 4 values in the first 200,000 rows; [('1', 102064), ('2', 75200), (' ', 20077), ('9', 2659)]
-   PCP26_C: 4 values in the first 200,000 rows; [('1', 117299), ('2', 59712), (' ', 20077), ('9', 2912)]
-   PCP27: 3 values in the first 200,000 rows; [('1', 94498), ('2', 85425), (' ', 20077)]
-   PCP28: 8 values in the first 200,000 rows; [(' ', 114575), ('7', 84367), ('1', 362), ('6', 255), ('3', 176), ('2', 138), ('5', 66), ('4', 61)]
-   PCP29: 10 values in the first 200,000 rows; [(' ', 115633), ('3', 37168), ('5', 25282), ('4', 8371), ('8', 6166), ('9', 3128), ('1', 2454), ('2', 869), ('6', 805), ('7', 124)]
-   PCP30_2D: 45 values in the first 200,000 rows; [(' ', 101990), ('52', 14614), ('51', 5029), ('33', 4772), ('91', 4605), ('83', 4336), ('42', 4305), ('23', 4271), ('43', 4252), ('999', 3907), ('41', 3798), ('24', 3638)]
-   PCP30_1D: 12 values in the first 200,000 rows; [(' ', 101990), ('5', 22414), ('2', 16396), ('4', 13339), ('9', 11098), ('7', 11030), ('3', 10337), ('8', 5742), ('99', 3907), ('1', 3463), ('6', 150), ('0', 134)]
-   PCP31_D: 9 values in the first 200,000 rows; [(' ', 101990), ('5', 49241), ('3', 12418), ('2', 10700), ('9', 10028), ('4', 10028), ('1', 3182), ('6', 2158), ('7', 255)]
-   PCP32_2D: 60 values in the first 200,000 rows; [(' ', 583), ('47', 121), ('84', 88), ('85', 63), ('999', 60), ('86', 54), ('69', 50), ('94', 50), ('56', 38), ('82', 36), ('97', 26), ('74', 20)]
-   PCP32_1D: 23 values in the first 200,000 rows; [(' ', 101990), ('7', 22476), ('3', 9882), ('14', 7209), ('13', 6590), ('8', 5901), ('9', 5774), ('16', 5745), ('15', 5665), ('17', 4257), ('20', 3997), ('19', 3909)]
-   PCP33: 4 values in the first 200,000 rows; [(' ', 101990), ('1', 90176), ('9', 6669), ('2', 1165)]
-   PCP33_B: 23 values in the first 200,000 rows; [(' ', 108749), ('1', 90613), ('5', 143), ('3', 101), ('2', 42), ('4', 40), ('9', 33), ('18', 33), ('6', 30), ('16', 26), ('17', 25), ('22', 20)]
-   TRABAJAGEO: 60 values in the first 200,000 rows; [(' ', 11749), ('101', 10300), ('108', 16), ('115', 7), ('501', 6), ('103', 4), ('301', 4), ('113', 3), ('901', 3), ('599', 3), ('801', 2), ('1801', 2)]
-   PCP33_C: 23 values in the first 200,000 rows; [(' ', 199910), ('41', 31), ('44', 14), ('42', 7), ('46', 5), ('45', 4), ('49', 3), ('53', 3), ('48', 3), ('40', 2), ('72', 2), ('51', 2)]
-   PCP34: 8 values in the first 200,000 rows; [('1', 78717), ('3', 49473), (' ', 28806), ('2', 24565), ('7', 9275), ('5', 3720), ('4', 3172), ('6', 2272)]
-   PCP35_A: 23 values in the first 200,000 rows; [(' ', 108840), ('0', 28345), ('2', 16195), ('3', 12936), ('1', 12702), ('99', 7600), ('4', 6534), ('5', 3079), ('6', 1678), ('7', 836), ('8', 539), ('9', 273)]
-   PCP35_B: 16 values in the first 200,000 rows; [(' ', 108840), ('0', 41082), ('1', 22041), ('2', 12645), ('99', 7600), ('3', 4920), ('4', 1731), ('5', 674), ('6', 274), ('7', 122), ('8', 41), ('9', 16)]
-   PCP35_C: 19 values in the first 200,000 rows; [(' ', 108840), ('0', 40173), ('1', 22154), ('2', 13168), ('99', 7600), ('3', 5193), ('4', 1765), ('5', 613), ('6', 263), ('7', 118), ('8', 52), ('9', 30)]
-   PCP36_A: 19 values in the first 200,000 rows; [(' ', 144785), ('2', 16925), ('1', 13291), ('3', 12985), ('4', 6226), ('5', 2746), ('6', 1347), ('7', 672), ('8', 350), ('0', 331), ('9', 165), ('10', 106)]
-   PCP36_B: 12 values in the first 200,000 rows; [(' ', 144785), ('1', 22310), ('0', 13341), ('2', 12536), ('3', 4630), ('4', 1545), ('5', 552), ('6', 193), ('7', 81), ('8', 19), ('9', 7), ('10', 1)]
-   PCP36_C: 14 values in the first 200,000 rows; [(' ', 144785), ('1', 22900), ('2', 12852), ('0', 12816), ('3', 4642), ('4', 1386), ('5', 389), ('6', 148), ('7', 55), ('8', 13), ('9', 7), ('11', 3)]
-   PCP37: 42 values in the first 200,000 rows; [(' ', 144785), ('20', 5436), ('18', 4615), ('19', 4566), ('99', 4289), ('21', 3965), ('22', 3947), ('17', 3620), ('23', 3068), ('25', 2826), ('24', 2806), ('16', 2420)]
-   PCP38_A: 33 values in the first 200,000 rows; [(' ', 144785), ('30', 3045), ('99', 2814), ('10', 1872), ('1', 1846), ('15', 1833), ('5', 1764), ('20', 1753), ('3', 1751), ('16', 1747), ('12', 1724), ('17', 1721)]
-   PCP38_B: 14 values in the first 200,000 rows; [(' ', 144785), ('6', 5729), ('7', 4586), ('8', 4487), ('9', 4447), ('10', 4304), ('5', 4248), ('12', 4242), ('3', 4183), ('1', 4130), ('4', 4099), ('11', 4024)]
-   PCP38_C: 60 values in the first 200,000 rows; [(' ', 1189), ('9999', 21), ('2017', 17), ('2015', 16), ('2016', 13), ('2010', 12), ('2008', 10), ('2006', 10), ('2018', 10), ('1995', 9), ('2014', 9), ('1979', 8)]
-   PCP39: 3 values in the first 200,000 rows; [(' ', 144785), ('1', 54291), ('2', 924)]
-   VIVEHABGEO: 1 values in the first 200,000 rows; [('101', 200000)]
-   NIVGRADO: 24 values in the first 200,000 rows; [('36', 23340), ('46', 23111), ('45', 22645), ('55', 18736), ('43', 17821), (' ', 11228), ('10', 10658), ('42', 8496), ('20', 8432), ('33', 7090), ('41', 6219), ('32', 5555)]
-   ANEDUCA: 23 values in the first 200,000 rows; [('6', 23340), ('12', 23111), ('11', 22645), ('0', 19090), ('17', 18736), ('9', 17821), (' ', 11228), ('8', 8496), ('3', 7090), ('7', 6219), ('2', 5555), ('10', 4860)]
-   PEA: 2 values in the first 200,000 rows; [(' ', 101121), ('1', 98879)]
-   POCUPA: 2 values in the first 200,000 rows; [(' ', 104444), ('1', 95556)]
-   PDESOC: 3 values in the first 200,000 rows; [(' ', 196677), ('2', 2454), ('1', 869)]
-   MIGRA_VIDA: 3 values in the first 200,000 rows; [('1', 154155), ('2', 42291), (' ', 3554)]
-   MIGRA_REC: 3 values in the first 200,000 rows; [('1', 193588), ('2', 4501), (' ', 1911)]
-   PEI: 2 values in the first 200,000 rows; [(' ', 122084), ('1', 77916)]
--- db_csv_/VIVIENDA_BDP.csv: 15 columns
-   ﻿DEPARTAMENTO | MUNICIPIO | COD_MUNICIPIO | LUGAR_POBLADO | NOMBRE_LUGAR_POBLADO | NUM_VIVIENDA | ZONA | AREA | PCV1 | PCV2 | PCV3 | PCV4 | PCV5 | Long | Lat
-   3,943,431 rows
-   ﻿DEPARTAMENTO: 1 values in the first 200,000 rows; [('1', 200000)]
-   MUNICIPIO: 1 values in the first 200,000 rows; [('101', 200000)]
-   COD_MUNICIPIO: 1 values in the first 200,000 rows; [('1', 200000)]
-   LUGAR_POBLADO: 20 values in the first 200,000 rows; [('101018', 47000), ('101007', 30133), ('101006', 17859), ('101005', 13622), ('101001', 11925), ('101016', 10147), ('101011', 10030), ('101003', 9905), ('101012', 7152), ('101002', 6604), ('101013', 6249), ('101017', 5408)]
-   NOMBRE_LUGAR_POBLADO: 20 values in the first 200,000 rows; [('Zona Municipal 18', 47000), ('Zona Municipal 7', 30133), ('Zona Municipal 6', 17859), ('Zona Municipal 5', 13622), ('Zona Municipal 1', 11925), ('Zona Municipal 16', 10147), ('Zona Municipal 11', 10030), ('Zona Municipal 3', 9905), ('Zona Municipal 12', 7152), ('Zona Municipal 2', 6604), ('Zona Municipal 13', 6249), ('Zona Municipal 17', 5408)]
-   NUM_VIVIENDA: 60 values in the first 200,000 rows; [('1', 1), ('2', 1), ('3', 1), ('4', 1), ('5', 1), ('6', 1), ('7', 1), ('8', 1), ('9', 1), ('10', 1), ('11', 1), ('12', 1)]
-   ZONA: 20 values in the first 200,000 rows; [('18', 47000), ('7', 30133), ('6', 17859), ('5', 13622), ('1', 11925), ('16', 10147), ('11', 10030), ('3', 9905), ('12', 7152), ('2', 6604), ('13', 6249), ('17', 5408)]
-   AREA: 1 values in the first 200,000 rows; [('1', 200000)]
-   PCV1: 6 values in the first 200,000 rows; [('1', 164814), ('2', 25694), ('3', 9231), ('5', 251), ('6', 5), ('4', 5)]
-   PCV2: 10 values in the first 200,000 rows; [('2', 135859), ('3', 24344), ('1', 21338), ('6', 8636), ('4', 7151), ('5', 2366), ('10', 204), ('8', 60), ('7', 38), ('9', 4)]
-   PCV3: 7 values in the first 200,000 rows; [('1', 126307), ('2', 69679), ('3', 2381), ('4', 1047), ('7', 573), ('6', 8), ('5', 5)]
-   PCV4: 1 values in the first 200,000 rows; [('1', 200000)]
-   PCV5: 8 values in the first 200,000 rows; [('1', 89612), ('2', 57007), ('4', 42857), ('7', 4496), ('5', 2246), ('8', 1823), ('3', 1066), ('6', 893)]
-   Long: 20 values in the first 200,000 rows; [('-90.4616', 47000), ('-90.5569', 30133), ('-90.49547', 17859), ('-90.5102', 13622), ('-90.512', 11925), ('-90.47476', 10147), ('-90.55011', 10030), ('-90.52742', 9905), ('-90.54081', 7152), ('-90.5163', 6604), ('-90.52696', 6249), ('-90.46961', 5408)]
-   Lat: 20 values in the first 200,000 rows; [('14.669536', 47000), ('14.628676', 30133), ('14.65425', 17859), ('14.618292', 13622), ('14.637021', 11925), ('14.621792', 10147), ('14.603524', 10030), ('14.62872', 9905), ('14.595531', 7152), ('14.650479', 6604), ('14.587143', 6249), ('14.649322', 5408)]
--- db_csv_/z_Verificacion Integridad de Bases SHA256.txt
-Name: VIVIENDA_BDP.csv
-Size: 289596708 bytes (122 MiB)
-SHA256: 9C9BD9B17043A1C79BDF487FC6C53ECAC6EEC63C42BDF1D14B161A49A7B92422
-
-
-Name: HOGAR_BDP.csv
-Size: 417491714 bytes (270 MiB)
-SHA256: EF418687BF3997F43F5F876AF0A8A0C95409B5360ABAA9A1C0DAE83563F6B5C2
-
-
-
-Name: MIGRACION_BDP.csv
-Size: 8950185 bytes (8740 KiB)
-SHA256: B864F7C65C38735AA75BB30C37366FCB7889A1A86CBAD1378572911E48F2C88A
-
-
-
-Name: PERSONA_BDP.csv
-Size: 3510737511 bytes (2768 MiB)
-SHA256: DA9C7B33F96CB695AC51DF914F1C3988B38F1053E0DE1AD91515CEB4BFAE483E
-
-
-
-
-
-
-
+probe_page: en.wikipedia.org Departments_of_Guatemala
+  460 lines:
+        0  Political subdivision of Guatemala
+        1  Zacapa
+        2  Chiquimula
+        3  Sac.
+        4  San
+        5  Marcos
+        6  Retalhuléu
+        7  Huehuetenango
+        8  Quiché
+        9  Alta Verapaz
+       10  Izabal
+       11  Lake
+       12  Izabal
+       13  Suchite-
+       14  péquez
+       15  Baja Verapaz
+       16  Chimal-
+       17  tenango
+       18  El
+       19  Progreso
+       20  Petén
+       21  Lake
+       22  Petén
+       23  Jalapa
+       24  Escuintla
+       25  Pacific Ocean
+       26  Jutiapa
+       27  Honduras
+       28  El Salvador
+       29  Caribbean Sea
+       30  Amatique
+       31  Bay
+       32  Quetzal-
+       33  tenango
+       34  Belize
+       35  Totoni-
+       36  capán
+       37  Sololá
+       38  Santa
+       39  Rosa
+       40  Guatemala
+       41  Mexico
+       42  Guatemalan departments (clickable map)
+       43  The Republic of Guatemala is divided into 22 departments ( Spanish : departamentos ) [ 1 ]
+       44  which in turn are divided into 340 municipalities . [ 2 ] [ 3 ] The departments are governed by a departmental governor, appointed by the President .
+       45  In addition, Guatemala has claimed that all or part of the nation of Belize is a department of Guatemala, and this claim is sometimes reflected in maps of the region. Guatemala formally recognized Belize in 1991, but the border disputes between the two nations have not been resolved. [ 4 ] [ 5 ]
+       46  Evolution of Guatemala's territorial organization
+       47  [ edit ]
+       48  This section does not cite any sources . Please help improve this section by adding citations to reliable sources . Unsourced material may be challenged and removed . ( January 2023 ) ( Learn how and when to remove this message )
+       49  19th century - The department surrounding British Honduras is called Verapaz by the British
+       50  1825 - The first seven departments officially established. Verapaz, Chiquimula, Guatemala/Escuintla, Sacatepéquez/Chimaltenango, Soconusco, Totonicapán/Huehuetenango, and Suchitepéquez/Sololá.
+       51  1838-02-02 - Suchitepéquez/Sololá, Totonicapán/Huehuetenango break away as the Republic of Los Altos
+       52  1939 - Los Altos reincorporated
+       53  1845-09-16 - Quetzaltenango department established by decree. [ 6 ]
+       54  1866-05-08 - Huehuetenango, Petén and San Marcos departments established. [ 7 ] [ 8 ] [ 9 ]
+       55  1871-11-10 - Chiquimula department reduced by establishment of the Zacapa department and a part of the Izabal department. [ 10 ]
+       56  1872-08-12 - Quiché department created from
+       57  1908-04-13 - Part of El Progreso department created from western Zacapa. [ 11 ]
+       58  1919-12 - El Progreso department renamed to Estrada Cabrera. [ 12 ]
+       59  1920-06-09 - Estrada Cabrera department dissolved. [ 12 ]
+       60  1934 - El Progreso department reestablished. [ 12 ]
+       61  List of departments
+       62  [ edit ]
+       63  Departments of Guatemala [ 13 ]
+       64  Flag
+       65  Coat
+       66  Department
+       67  Capital
+       68  Largest
+       69  city
+       70  Pop.
+       71  (2018)
+       72  Area
+       73  (km 2 )
+       74  Munici-
+       75  palities
+       76  ISO [ 14 ]
+       77  Map
+       78  Alta Verapaz
+       79  Cobán
+       80  San Pedro Carchá
+       81  1,215,038
+       82  8,686
+       83  17
+       84  GT-16
+       85  Baja Verapaz
+       86  Salamá
+       87  299,476
+       88  3,124
+       89  8
+       90  GT-15
+       91  Chimaltenango
+       92  Chimaltenango
+       93  615,776
+       94  1,979
+       95  16
+       96  GT-04
+       97  Chiquimula
+       98  Chiquimula
+       99  415,063
+      100  2,376
+      101  11
+      102  GT-20
+      103  El Progreso
+      104  Guastatoya
+      105  San Agustín Acasaguastlán
+      106  176,632
+      107  1,922
+      108  8
+      109  GT-02
+      110  Escuintla
+      111  Escuintla
+      112  733,181
+      113  4,384
+      114  13
+      115  GT-05
+      116  Guatemala
+      117  Guatemala City
+      118  3,015,081
+      119  2,126
+      120  17
+      121  GT-01
+      122  Huehuetenango
+      123  Huehuetenango
+      124  1,170,669
+      125  7,403
+      126  31
+      127  GT-13
+      128  Izabal
+      129  Puerto Barrios
+      130  408,688
+      131  9,038
+      132  5
+      133  GT-18
+      134  Jalapa
+      135  Jalapa
+      136  342,923
+      137  2,063
+      138  7
+      139  GT-21
+      140  Jutiapa
+      141  Jutiapa
+      142  488,395
+      143  3,219
+      144  17
+      145  GT-22
+      146  Petén
+      147  Flores
+      148  Sayaxché
+      149  545,600
+      150  35,854
+      151  12
+      152  GT-17
+      153  Quetzaltenango
+      154  Quetzaltenango
+      155  799,101
+      156  1,951
+      157  24
+      158  GT-09
+      159  Quiché
+      160  Santa Cruz del Quiché
+      161  Chichicastenango
+      162  949,261
+      163  8,378
+      164  21
+      165  GT-14
+      166  Retalhuleu
+      167  Retalhuleu
+      168  326,828
+      169  1,856
+      170  9
+      171  GT-11
+      172  Sacatepéquez
+      173  Antigua
+      174  330,469
+      175  465
+      176  16
+      177  GT-03
+      178  San Marcos
+      179  San Marcos
+      180  Malacatán
+      181  1,032,277
+      182  2,397
+      183  29
+      184  GT-12
+      185  Santa Rosa
+      186  Cuilapa
+      187  Barberena
+      188  396,607
+      189  2,295
+      190  14
+      191  GT-06
+      192  Sololá
+      193  Sololá
+      194  421,583
+      195  1,061
+      196  19
+      197  GT-07
+      198  Suchitepéquez
+      199  Mazatenango
+      200  554,695
+      201  2,510
+      202  20
+      203  GT-10
+      204  Totonicapán
+      205  Totonicapán
+      206  Momostenango
+      207  418,569
+      208  1,061
+      209  8
+      210  GT-08
+      211  Zacapa
+      212  Zacapa
+      213  245,374
+      214  2,690
+      215  10
+      216  GT-19
+      217  –
+      218  –
+      219  14,901,286
+      220  106,838
+      221  332
+      222  GT
+      223  –
+      224  National capital
+      225  See also
+      226  [ edit ]
+      227  List of cities in Guatemala
+      228  List of regions of Guatemala by HDI
+      229  References
+      230  [ edit ]
+      231  ^ "Republica de Guatemala Departamentos de Guatemala" . Servicio de Información Municipal de Inforpress. Archived from the original on 2009-04-16.
+      232  ^ "Country Report: Guatemala" . Pan American Health Organization . Retrieved November 24, 2017 .
+      233  ^ Coloma, Andrea (November 15, 2015). "Petatán ya es el municipio número 340 de Guatemala" (in Spanish). Guatemala.com . Retrieved November 24, 2017 .
+      234  ^ Jorge I. Domínguez; David Mares; Manuel Orozco; David Scott Palmer; Francisco Rojas Aravena; Andrés Serbin (August 2003). "Boundary Disputes in Latin America (summary)" . Peaceworks No. 50. United States Institute of Peace. Archived from the original on November 11, 2010 . Retrieved June 3, 2013 .
+      235  ^ Jorge I. Domínguez; David Mares; Manuel Orozco; David Scott Palmer; Francisco Rojas Aravena; Andrés Serbin (August 2003). "Boundary Disputes in Latin America (full text)" (PDF) . Peaceworks No. 50. United States Institute of Peace. Archived from the original (PDF) on July 16, 2009 . Retrieved June 3, 2013 .
+      236  ^ "Quetzaltenango Department" , Wikipedia , 2025-03-21 , retrieved 2025-06-05
+      237  ^ "Huehuetenango Department" , Wikipedia , 2025-04-16 , retrieved 2025-06-05
+      238  ^ "Petén Department" , Wikipedia , 2025-04-30 , retrieved 2025-06-05
+      239  ^ "San Marcos Department" , Wikipedia , 2025-04-22 , retrieved 2025-06-05
+      240  ^ "Chiquimula Department" , Wikipedia , 2025-02-21 , retrieved 2025-06-05
+      241  ^ "Zacapa Department" , Wikipedia , 2024-10-28 , retrieved 2025-06-05
+      242  ^ a b c "El Progreso Department" , Wikipedia , 2025-05-25 , retrieved 2025-06-05
+      243  ^ "Resultados Censo 2018" (PDF) (in Spanish). p. 85.
+      244  ^ ISO 3166-2:GT ( ISO 3166-2 codes for the departments of Guatemala)
+      245  External links
+      246  [ edit ]
+      247  Wikimedia Commons has media related to Departments of Guatemala .
+      248  Interactive map of Guatemalan departments and municipalities
+      249  statoid site
+      250  v
+      251  t
+      252  e
+      253  Departments of Guatemala
+      254  Alta Verapaz
+      255  Baja Verapaz
+      256  Chimaltenango
+      257  Chiquimula
+      258  El Progreso
+      259  Escuintla
+      260  Guatemala
+      261  Huehuetenango
+      262  Izabal
+      263  Jalapa
+      264  Jutiapa
+      265  Petén
+      266  Quetzaltenango
+      267  Quiché
+      268  Retalhuleu
+      269  Sacatepéquez
+      270  San Marcos
+      271  Santa Rosa
+      272  Sololá
+      273  Suchitepéquez
+      274  Totonicapán
+      275  Zacapa
+      276  Flag of Guatemala
+      277  v
+      278  t
+      279  e
+      280  Guatemala articles
+      281  History
+      282  Spanish conquest
+      283  Captaincy General
+      284  Mexican rule
+      285  Federal Republic of Central America
+      286  1902 eruption of Santa María
+      287  Ten Years of Spring (1944–1954)
+      288  1954 coup d'état
+      289  Guatemalan genocide
+      290  Civil War (1960–1996)
+      291  1976 earthquake
+      292  Geography
+      293  Biodiversity
+      294  Biosphere reserves
+      295  Cities
+      296  Earthquakes
+      297  Ecoregions
+      298  Fauna
+      299  Flora
+      300  Islands
+      301  Lakes
+      302  National parks
+      303  Ramsar sites
+      304  Rivers
+      305  Volcanism
+      306  Water resources
+      307  World Heritage Sites
+      308  Politics
+      309  Administrative divisions
+      310  Congress
+      311  Constitution
+      312  Elections
+      313  Foreign relations
+      314  Law enforcement
+      315  Military
+      316  Political parties
+      317  Presidents
+      318  Economy
+      319  Central bank
+      320  Coffee
+      321  Currency
+      322  Telecommunications
+      323  Tourism
+      324  Transport
+      325  Society
+      326  Crime
+      327  Drug trade
+      328  Education
+      329  Health
+      330  Languages
+      331  LGBT rights
+      332  People
+      333  Demographics
+      334  Immigration
+      335  Poverty
+      336  Prostitution
+      337  Religion
+      338  Sex trafficking
+      339  Violence against women
+      340  Water supply and sanitation
+      341  Youth
+      342  Culture
+      343  Anthem
+      344  Art
+      345  Cuisine
+      346  Flag
+      347  Literature
+      348  Media
+      349  Television
+      350  Newspapers
+      351  Internet
+      352  Music
+      353  National emblem
+      354  Public holidays
+      355  Outline
+      356  Bibliography
+      357  Category
+      358  Portal
+      359  v
+      360  t
+      361  e
+      362  First-level administrative divisions of North American countries
+      363  North America
+      364  Canada
+      365  Mexico
+      366  United States
+      367  Central America
+      368  Belize
+      369  Costa Rica
+      370  El Salvador
+      371  Guatemala
+      372  Honduras
+      373  Nicaragua
+      374  Panama
+      375  Caribbean
+      376  Antigua and Barbuda
+      377  Bahamas
+      378  Barbados
+      379  Cuba
+      380  Dominica
+      381  Dominican Republic
+      382  Grenada
+      383  Haiti
+      384  Jamaica
+      385  St. Kitts and Nevis
+      386  St. Lucia
+      387  St. Vincent and the Grenadines
+      388  Trinidad and Tobago
+      389  Table of administrative subdivisions by country
+      390  v
+      391  t
+      392  e
+      393  Administrative divisions of the Americas
+      394  Sovereign
+      395  states
+      396  Antigua and Barbuda
+      397  Argentina
+      398  Bahamas
+      399  Barbados
+      400  Belize
+      401  Bolivia
+      402  Brazil
+      403  Canada
+      404  Chile
+      405  Colombia
+      406  Costa Rica
+      407  Cuba
+      408  Dominica
+      409  Dominican Republic
+      410  Ecuador
+      411  El Salvador
+      412  Grenada
+      413  Guatemala
+      414  Guyana
+      415  Haiti
+      416  Honduras
+      417  Jamaica
+      418  Mexico
+      419  Nicaragua
+      420  Panama
+      421  Paraguay
+      422  Peru
+      423  Saint Kitts and Nevis
+      424  Saint Lucia
+      425  Saint Vincent and the Grenadines
+      426  Suriname
+      427  Trinidad and Tobago
+      428  United States
+      429  Uruguay
+      430  Venezuela
+      431  Dependencies
+      432  and territories
+      433  Anguilla
+      434  Aruba
+      435  Bermuda
+      436  Bonaire
+      437  British Virgin Islands
+      438  Cayman Islands
+      439  Curaçao
+      440  Falkland Islands
+      441  French Guiana
+      442  Greenland
+      443  Guadeloupe
+      444  Martinique
+      445  Montserrat
+      446  Puerto Rico
+      447  Saba
+      448  Saint Barthélemy
+      449  Saint Martin
+      450  Saint Pierre and Miquelon
+      451  Sint Eustatius
+      452  Sint Maarten
+      453  South Georgia and the South Sandwich Islands
+      454  Turks and Caicos Islands
+      455  U.S. Virgin Islands
+      456  North America
+      457  Central America
+      458  Caribbean
+      459  South America
