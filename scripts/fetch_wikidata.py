@@ -236,14 +236,21 @@ def parse_point(wkt: str | None) -> list[float] | None:
         return None
 
 
+# Where two items share an ISO3 and the query's answer is the wrong one: the
+# Kingdom of the Netherlands and the Kingdom of Denmark both carry P298, and
+# their subdivisions are tagged with the constituent country. Asked under the
+# kingdom, the Netherlands' 344 municipalities met 38 rows.
+COUNTRY_QID_OVERRIDE = {"NLD": "Q55", "DNK": "Q35"}
+
+
 def country_qids() -> dict[str, str]:
     cached = read_json(RAW / "codes" / "wikidata_countries.json", None)
     if cached:
-        return cached
+        return {**cached, **COUNTRY_QID_OVERRIDE}
     rows = sparql(COUNTRY_QID_QUERY)
     out = {value(r, "iso3"): value(r, "country") for r in rows if value(r, "iso3")}
     write_json(RAW / "codes" / "wikidata_countries.json", out)
-    return out
+    return {**out, **COUNTRY_QID_OVERRIDE}
 
 
 def collapse(rows: list[dict[str, Any]], *, level: str, iso3: str) -> list[dict[str, Any]]:

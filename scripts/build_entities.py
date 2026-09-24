@@ -155,6 +155,10 @@ ADAPTER_FILES = [
     # for the Netherlands and this must not overwrite that.
     "netherlands_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
+    # Wikidata items of one class in one country, for the countries the
+    # structural walk under-reached (fetch_wikidata --class-sweep). Fill-only
+    # like the file above it.
+    "wikidata_admin2_classes.json",
     # The head count a first-level unit's own Wikipedia article prints,
     # where nothing on this map has one. Directly under the Wikidata sweep
     # because it answers the same question from the same kind of source and
@@ -1495,6 +1499,7 @@ DESCRIBED_FIELDS = ("religion", "language", "ethnicity", "ancestry",
 # order the files are read in. These only ever fill a population nobody
 # else has written.
 FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
+                       "wikidata_admin2_classes.json",
                        "wiki_population_admin1.json", "wiki_table_population.json"})
 FILL_ONLY_FIELDS = frozenset({"population"})
 
