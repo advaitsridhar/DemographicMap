@@ -20,6 +20,25 @@ class SecondLevelOnly(unittest.TestCase):
             self.assertEqual(eurostat.second_level_only([{"country": "PRT", "name": "Alto Minho"}]), [])
 
 
+class JoinedUnits(unittest.TestCase):
+    def test_a_region_holding_a_drawn_unit_and_more_is_left_out(self):
+        from scripts.fetch_census import cod_ps
+        names = {cod_ps.level_key(n) for n in (
+            "Aberdeen City", "Aberdeenshire", "Perth and Kinross", "Stirling",
+            "Dumfries and Galloway", "Brighton and Hove", "Edinburgh")}
+        rows = [{"country": "GBR", "name": n} for n in (
+            "Aberdeen City and Aberdeenshire (NUTS 2021)",
+            "Perth & Kinross and Stirling (NUTS 2021)",
+            "Dumfries & Galloway (NUTS 2021)", "Brighton and Hove (NUTS 2021)",
+            "Edinburgh, City of (NUTS 2021)", "Lancaster & Wyre (NUTS 2021)")]
+        with mock.patch("scripts.fetch_census.cod_ps.shape_names", return_value=names):
+            kept = [r["name"] for r in eurostat.joined_units(rows)]
+        self.assertEqual(kept, ["Dumfries & Galloway (NUTS 2021)",
+                                "Brighton and Hove (NUTS 2021)",
+                                "Edinburgh, City of (NUTS 2021)",
+                                "Lancaster & Wyre (NUTS 2021)"])
+
+
 class WholeCountry(unittest.TestCase):
     def test_a_countrys_only_region_is_not_a_division(self):
         for geo in ("LU00", "LU000", "MT00", "CY000"):

@@ -2138,6 +2138,8 @@ COUNTRY_MIN_COVERAGE = 0.98
 # exception, and a blank where the year goes reads as an omission. A country
 # genuinely split between two censuses stays undated, and the note lists them.
 YEAR_MAJORITY = 0.98
+# The share of a sum's people counted in its year for it to stand for that year.
+ONE_MOMENT = 0.9
 
 
 def published(value: Any) -> float | None:
@@ -2735,13 +2737,21 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # shares. Morocco lost Laayoune-Sakia El Hamra from its population the
     # same way.
     waived = bool(disagrees) and not whole_country
-    # And only a sum of one year replaces a figure that exists. Germany's
-    # states carry Eurostat's 2025 figures where a state is its own NUTS region
-    # and the 2022 census elsewhere; the commonest year was 2025, so their
-    # mixed total of 82.9 million replaced the country's 2025 estimate of 84.0
-    # million as though it were one count. A mixed sum still fills a unit that
-    # has nothing.
-    one_year = all(vintage(c.get("population")) == child_year for c in children)
+    # And only a sum of about one year replaces a figure that exists: years at
+    # most one apart, or nine in ten of the people counted in the same one.
+    # Germany's states carry Eurostat's 2025 figures where a state is its own
+    # NUTS region and the 2022 census elsewhere -- 78% of Germans on 2022 --
+    # and their total of 82.9 million replaced the country's 2025 estimate of
+    # 84.0 million as though it were one count. The Netherlands (96% on 2025)
+    # and Peru (2025 and 2026) are sums of one moment; Germany's is not. A
+    # mixed sum still fills a unit that has nothing.
+    stamped = [(vintage(c.get("population")), published(c.get("population")) or 0.0)
+               for c in children]
+    years_seen = [y for y, _ in stamped if y is not None]
+    on_child_year = sum(v for y, v in stamped if y == child_year)
+    one_year = bool(years_seen) and (
+        max(years_seen) - min(years_seen) <= 1
+        or on_child_year >= ONE_MOMENT * sum(v for _, v in stamped))
     if child_year and not waived and not left_out and (
             own is None or (one_year and round(total_pop) != round(own)
                             and (own_year is None or own_year <= child_year))):
@@ -2769,6 +2779,51 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                 seen.add(mark)
                 parent.setdefault("sources", []).append(dict(src))
     return None
+
+
+def fill_parent_populations(admin1_by_country: dict[str, list[dict[str, Any]]],
+                            admin2_by_country: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """A first-level unit with no population, filled from all of its divisions.
+
+    Angola's Moxico is the case: its Wikidata figure was the province cut down
+    in 2024, on the old province's ground, and was left out; OCHA counts every
+    one of the nine municipalities the old province is drawn with. Only a
+    unit with nothing is filled, only when every division it holds carries a
+    population, and the record says it is a sum. Run after the compositions
+    are summed, so a sum is never the control it is checked against.
+    """
+    filled: list[str] = []
+    for iso3, parents in admin1_by_country.items():
+        if (iso3, "admin2") in PARTIAL_LEVELS:
+            continue
+        kids: dict[Any, list[dict[str, Any]]] = defaultdict(list)
+        for entity in admin2_by_country.get(iso3, []):
+            if not entity.get("water"):
+                kids[entity.get("parent")].append(entity)
+        for parent in parents:
+            pop = parent.get("population")
+            if not (isinstance(pop, dict) and pop.get("status") == NOT_AVAILABLE):
+                continue
+            children = kids.get(parent["id"], [])
+            values = [published(c.get("population")) for c in children]
+            if not children or any(v is None for v in values):
+                continue
+            years = {vintage(c.get("population")) for c in children}
+            year = years.pop() if len(years) == 1 and None not in years else None
+            names = ", ".join(sorted({str(c["population"].get("source") or "")[:60]
+                                      for c in children}))
+            parent["population"] = {
+                "value": int(round(sum(values))),
+                **({"year": year} if year else {}),
+                "source": f"summed from {len(children)} second-level divisions",
+                "note": (f"No figure is published for this unit that describes its "
+                         f"ground; this is the sum of all {len(children)} divisions "
+                         f"drawn inside it ({names})."
+                         + ("" if year else " They are not all counted in one year, "
+                            "so the sum carries no year.")
+                         + (" " + pop["note"] if pop.get("note") else ""))}
+            filled.append(f"{iso3} {parent['name']}")
+    return filled
 
 
 def roll_up_countries(admin0: list[dict[str, Any]],
@@ -2994,9 +3049,13 @@ def resolve_collisions(matched: list[tuple[dict[str, Any], dict[str, Any], str]]
         # Department) are untouched: that is the tie the ranking below exists
         # for.
         shape_name = str(matched[idxs[0]][1].get("name") or "")
-        own = [i for i in idxs if norm(matched[i][0].get("name")) == norm(shape_name)]
-        borrowed = [i for i in idxs if i not in own
-                    and str(matched[i][2]).startswith("alias")]
+        own = [i for i in idxs if norm(matched[i][0].get("name")) == norm(shape_name)
+               or related(name_forms(matched[i][0].get("name")), name_forms(shape_name),
+                          at_start=True)]
+        borrowed = [i for i in idxs if i not in own and any(
+            norm(a) == norm(shape_name)
+            or related(name_forms(a), name_forms(shape_name))
+            for a in matched[i][0].get("aliases") or [])]
         if own and borrowed:
             dropped.update(borrowed)
             notes.append(f"{shape_name!r}: refused "
@@ -5022,6 +5081,12 @@ def main() -> int:
     # ask the question has no children to sum, and must not be given a figure by
     # a later pass that only looks at arithmetic.
     roll_up_parents(admin1_by_country, admin2_by_country)
+    # After the compositions are summed, so a sum is never their control.
+    summed_up = fill_parent_populations(admin1_by_country, admin2_by_country)
+    if summed_up:
+        log(f"  {len(summed_up)} first-level populations filled from all their "
+            f"divisions: " + ", ".join(summed_up[:12])
+            + (" ..." if len(summed_up) > 12 else ""))
     # After the level below, so a first-level unit that was itself summed can
     # carry into its country -- and so the country's note counts the divisions
     # as they finally stand rather than as they arrived.

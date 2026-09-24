@@ -329,13 +329,55 @@ class HeldFiguresFallBack(unittest.TestCase):
         self.assertFalse(be.fall_back(entity, entity["population"]))
 
 
+class ParentsFilledFromAllTheirDivisions(unittest.TestCase):
+    def tables(self, kid_pops, parent_pop=None):
+        parent = {"id": "P", "name": "Moxico",
+                  "population": parent_pop or {"status": "not_available"}}
+        kids = [{"id": f"C{i}", "name": f"C{i}", "parent": "P",
+                 "population": ({"value": v, "year": 2024, "source": "OCHA"}
+                                if v else {"status": "not_available"})}
+                for i, v in enumerate(kid_pops)]
+        return {"AGO": [parent]}, {"AGO": kids}
+
+    def test_a_blank_unit_whose_divisions_all_count_is_their_sum(self):
+        a1, a2 = self.tables([515629, 129054, 100262])
+        self.assertEqual(be.fill_parent_populations(a1, a2), ["AGO Moxico"])
+        pop = a1["AGO"][0]["population"]
+        self.assertEqual((pop["value"], pop["year"]), (744945, 2024))
+        self.assertIn("sum of all 3 divisions", pop["note"])
+
+    def test_one_division_without_a_figure_leaves_the_gap(self):
+        a1, a2 = self.tables([515629, None])
+        self.assertEqual(be.fill_parent_populations(a1, a2), [])
+
+    def test_a_unit_with_a_figure_is_not_touched(self):
+        a1, a2 = self.tables([1, 2], parent_pop={"value": 9, "year": 2020})
+        self.assertEqual(be.fill_parent_populations(a1, a2), [])
+        self.assertEqual(a1["AGO"][0]["population"]["value"], 9)
+
+
 class BorrowedNamesYield(unittest.TestCase):
     def test_a_town_reaching_a_department_by_its_name_yields(self):
         shape = {"id": "S", "name": "Lago Buenos Aires", "level": "admin2"}
         town = {"name": "Perito Moreno", "_source": "wd.json", "aliases": ["Lago Buenos Aires"]}
+        # Villarino's: the alias only contains the name, and the department's
+        # own name starts with it.
         dept = {"name": "Lago Buenos Aires Department", "_source": "wd.json"}
         dropped, _ = be.resolve_collisions([(town, shape, "alias+state"),
                                             (dept, shape, "prefix+state")])
+        self.assertEqual(dropped, {0})
+        shape = {"id": "V", "name": "Villarino", "level": "admin2"}
+        town = {"name": "Pedro Luro", "_source": "wd.json", "aliases": ["Pedro Luro (Villarino)"]}
+        dept = {"name": "Villarino Partido", "_source": "wd.json"}
+        dropped, _ = be.resolve_collisions([(town, shape, "contains+state"),
+                                            (dept, shape, "prefix+state")])
+        self.assertEqual(dropped, {0})
+        # Pomán's: the town's own name ends with the department's.
+        shape = {"id": "P", "name": "Poman", "level": "admin2"}
+        town = {"name": "Villa de Pomán", "_source": "wd.json", "aliases": ["Pomán"]}
+        dept = {"name": "Pomán Department", "_source": "wd.json"}
+        dropped, _ = be.resolve_collisions([(town, shape, "alias+state"),
+                                            (dept, shape, "name+state")])
         self.assertEqual(dropped, {0})
 
     def test_two_rivals_named_like_the_shape_are_left_to_the_ranking(self):

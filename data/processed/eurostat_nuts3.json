@@ -9391,54 +9391,6 @@
     }
   },
   {
-    "id": "EU-UKE13",
-    "level": "admin2",
-    "name": "North and North East Lincolnshire (NUTS 2021)",
-    "parent": "GBR",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 331871,
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "median_age": {
-      "value": 43.3,
-      "unit": "years",
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population/median age",
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
-        "license": "Eurostat re-use policy (attribution)"
-      }
-    ],
-    "country": "GBR",
-    "codes": {
-      "nuts": "UKE13",
-      "nuts_level": 3
-    }
-  },
-  {
     "id": "EU-UKE21",
     "level": "admin2",
     "name": "York (NUTS 2021)",
@@ -10059,54 +10011,6 @@
     "country": "GBR",
     "codes": {
       "nuts": "UKF21",
-      "nuts_level": 3
-    }
-  },
-  {
-    "id": "EU-UKF22",
-    "level": "admin2",
-    "name": "Leicestershire CC and Rutland (NUTS 2021)",
-    "parent": "GBR",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 736439,
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "median_age": {
-      "value": 43.5,
-      "unit": "years",
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population/median age",
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
-        "license": "Eurostat re-use policy (attribution)"
-      }
-    ],
-    "country": "GBR",
-    "codes": {
-      "nuts": "UKF22",
       "nuts_level": 3
     }
   },
@@ -11883,54 +11787,6 @@
     "country": "GBR",
     "codes": {
       "nuts": "UKI45",
-      "nuts_level": 3
-    }
-  },
-  {
-    "id": "EU-UKI52",
-    "level": "admin2",
-    "name": "Barking & Dagenham and Havering (NUTS 2021)",
-    "parent": "GBR",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 476061,
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "median_age": {
-      "value": 35.8,
-      "unit": "years",
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population/median age",
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
-        "license": "Eurostat re-use policy (attribution)"
-      }
-    ],
-    "country": "GBR",
-    "codes": {
-      "nuts": "UKI52",
       "nuts_level": 3
     }
   },
@@ -14095,102 +13951,6 @@
     }
   },
   {
-    "id": "EU-UKM62",
-    "level": "admin2",
-    "name": "Inverness & Nairn and Moray, Badenoch & Strathspey (NUTS 2021)",
-    "parent": "GBR",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 204193,
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "median_age": {
-      "value": 45.1,
-      "unit": "years",
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population/median age",
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
-        "license": "Eurostat re-use policy (attribution)"
-      }
-    ],
-    "country": "GBR",
-    "codes": {
-      "nuts": "UKM62",
-      "nuts_level": 3
-    }
-  },
-  {
-    "id": "EU-UKM63",
-    "level": "admin2",
-    "name": "Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute (NUTS 2021)",
-    "parent": "GBR",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 100012,
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "median_age": {
-      "value": 49.2,
-      "unit": "years",
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population/median age",
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
-        "license": "Eurostat re-use policy (attribution)"
-      }
-    ],
-    "country": "GBR",
-    "codes": {
-      "nuts": "UKM63",
-      "nuts_level": 3
-    }
-  },
-  {
     "id": "EU-UKM64",
     "level": "admin2",
     "name": "Eilean Siar (Western Isles) (NUTS 2021)",
@@ -14431,54 +14191,6 @@
     }
   },
   {
-    "id": "EU-UKM77",
-    "level": "admin2",
-    "name": "Perth & Kinross and Stirling (NUTS 2021)",
-    "parent": "GBR",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 246780,
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "median_age": {
-      "value": 45.1,
-      "unit": "years",
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population/median age",
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
-        "license": "Eurostat re-use policy (attribution)"
-      }
-    ],
-    "country": "GBR",
-    "codes": {
-      "nuts": "UKM77",
-      "nuts_level": 3
-    }
-  },
-  {
     "id": "EU-UKM78",
     "level": "admin2",
     "name": "West Lothian (NUTS 2021)",
@@ -14715,54 +14427,6 @@
     "country": "GBR",
     "codes": {
       "nuts": "UKM92",
-      "nuts_level": 3
-    }
-  },
-  {
-    "id": "EU-UKM93",
-    "level": "admin2",
-    "name": "East Ayrshire and North Ayrshire mainland (NUTS 2021)",
-    "parent": "GBR",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 251307,
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "median_age": {
-      "value": 45.3,
-      "unit": "years",
-      "year": 2019,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population/median age",
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
-        "license": "Eurostat re-use policy (attribution)"
-      }
-    ],
-    "country": "GBR",
-    "codes": {
-      "nuts": "UKM93",
       "nuts_level": 3
     }
   },
