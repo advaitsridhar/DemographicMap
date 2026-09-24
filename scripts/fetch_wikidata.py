@@ -631,6 +631,42 @@ def class_sweep(path: Path, specs: list[str], level: str = "admin2") -> int:
     return 0
 
 
+CLASSES_OF_QUERY = """
+SELECT ?class ?classLabel (COUNT(DISTINCT ?item) AS ?n) WHERE {
+  VALUES ?name { %(names)s }
+  ?item rdfs:label ?name ; wdt:P17 wd:%(country)s ; wdt:P31 ?class .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+} GROUP BY ?class ?classLabel ORDER BY DESC(?n) LIMIT 15
+"""
+
+
+def probe_classes(codes: list[str], level: str = "admin2") -> int:
+    """Which classes the items named like a country's blank units belong to.
+
+    Takes up to 60 names of the units the built site shows no population for
+    and asks which classes the country's items of exactly those English names
+    are instances of. Writes nothing; it is how a --class-sweep is chosen.
+    """
+    qids = country_qids()
+    site = PROCESSED.parent.parent / "site" / "data" / level
+    for iso3 in codes:
+        names = []
+        for entity in read_json(site / f"{iso3.upper()}.json", []) or []:
+            pop = entity.get("population")
+            if not (isinstance(pop, dict) and pop.get("value")) and not entity.get("water"):
+                name = (entity.get("name") or "").replace('"', "")
+                if name and not name[0].isdigit():
+                    names.append(name)
+        names = names[:60]
+        rows = sparql(CLASSES_OF_QUERY % {
+            "names": " ".join(f'"{n}"@en' for n in names),
+            "country": qids.get(iso3.upper(), "Q0")}, cache=False, retries=2)
+        log(f"  {iso3}: {len(names)} blank names asked")
+        for row in rows:
+            log(f"    {value(row, 'class')}  {value(row, 'n'):>4}  {value(row, 'classLabel')}")
+    return 0
+
+
 def blank_items(level: str) -> set[str]:
     """The Wikidata items joined to a unit the built site shows no population for."""
     out: set[str] = set()
@@ -743,6 +779,8 @@ def main() -> int:
                          "file covers")
     ap.add_argument("--budget", type=float, default=38.0,
                     help="--hydrate stops and saves after this many minutes")
+    ap.add_argument("--probe-classes", nargs="*", default=None,
+                    help="ISO3s; which classes items named like their blank units are")
     ap.add_argument("--class-sweep", nargs="*", default=None,
                     help="ISO3:QCLASS pairs; every item of the class in the country")
     ap.add_argument("--enrich", action="store_true",
@@ -752,6 +790,8 @@ def main() -> int:
                     help="fill population and coordinates for rows already in "
                          "the file that lack them, looked up by id")
     args = ap.parse_args()
+    if args.probe_classes:
+        return probe_classes(args.probe_classes, args.level)
     if args.class_sweep:
         return class_sweep(args.out or PROCESSED / f"wikidata_{args.level}.json",
                            args.class_sweep, args.level)
