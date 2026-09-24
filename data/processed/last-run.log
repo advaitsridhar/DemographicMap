@@ -1,27 +1,592 @@
-eurostat: demo_r_pjangrp3 (nuts3)
-  ! non-JSON response from https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN&sex=T&age=TOTAL&unit=NR
-    body starts: '<!DOCTYPE html> <html lang="en" class="no-js"> <head> <meta charset="utf-8" /> <title>Server temporarily unavailable</title> <meta content="width=device-width,initial-scale=1" name="viewport" /> <meta content="IE=edge" http-equiv="X-UA-Compatible" /> <script> var cl = doc'
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/eurostat.py", line 218, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/eurostat.py", line 141, in main
-    pop_payload = jsonstat("demo_r_pjangrp3", sex="T", age="TOTAL", unit="NR")
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/fetch_census/eurostat.py", line 80, in jsonstat
-    return http_json(url, timeout=300)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/DemographicMap/DemographicMap/scripts/common.py", line 834, in http_json
-    return json.loads(cleaned)
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/json/__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/json/decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.11.16/x64/lib/python3.11/json/decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+cod_ps: 148 cod-ps dataset(s) on HDX
+  cod-ps-abw (ABW)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: abw_admpop_2022.xlsx has no district sheet
+  cod-ps-afg (AFG)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    0 row(s) unnamed, 1 with no usable total
+    level: 255 of 390 names match this map's admin2 (against 6 at admin1) (afg_admpop_adm2_2026.csv)
+    401 admin2 unit(s), reference year 2026, 48,595,434 people
+  cod-ps-ago (AGO)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 156 of 161 names match this map's admin2 (against 7 at admin1) (ago_admpop_adm2_2024.csv)
+    161 admin2 unit(s), reference year 2024, 37,205,374 people
+  cod-ps-aia (AIA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: aia_admpop_2022.xlsx has no district sheet
+  cod-ps-alb (ALB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: alb_admpop_2021.xlsx has no district sheet
+  cod-ps-arg (ARG)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: arc_admpop_2021.xlsx has no district sheet
+  cod-ps-arm (ARM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: arm_admpop_2021.xlsx has no district sheet
+  cod-ps-atg (ATG)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: atg_admpop_2023.xlsx has no district sheet
+    refused: atg_admpop_2022.xlsx has no district sheet
+  cod-ps-aze (AZE)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    2 row(s) unnamed, 1 with no usable total
+    level: 47 of 85 names match this map's admin2 (against 0 at admin1) (aze_admpop_adm2_2018.csv)
+    85 admin2 unit(s), reference year 2018, 9,898,100 people
+  cod-ps-bdi (BDI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 108 of 117 names match this map's admin2 (against 13 at admin1) (bdi_admpop_2022_adm2_v3.csv)
+    119 admin2 unit(s), reference year 2022, 13,462,695 people
+  cod-ps-ben (BEN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 77 of 77 names match this map's admin2 (against 0 at admin1) (ben_admpop_adm2_2024.csv)
+    77 admin2 unit(s), reference year 2024, 14,697,052 people
+  cod-ps-bfa (BFA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 43 of 45 names match this map's admin2 (against 0 at admin1) (bfa_admpop_adm2_2023_5yr.csv)
+    45 admin2 unit(s), reference year 2023, 22,868,915 people
+  cod-ps-bgd (BGD)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 64 of 64 names match this map's admin2 (against 7 at admin1) (bgd_admpop_adm2_2022.csv)
+    64 admin2 unit(s), reference year 2022, 165,650,475 people
+  cod-ps-bhs (BHS)
+    licence: Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+    refused: this licence is not one this map may read
+  cod-ps-blm (BLM)
+    licence: Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+    refused: this licence is not one this map may read
+  cod-ps-blz (BLZ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2010 from HDX's reference period for the dataset, the file stating none
+    refused blz_adm2_pop_v2.csv: its names match 2 of this map's districts and 0 of its first-level units, out of 201; too few of either to say which level this file describes
+    read sheet 'blz_adm2_pop_v2' of blz_admpop_v2.xlsx
+    reference year 2010 from HDX's reference period for the dataset, the file stating none
+    refused blz_admpop_v2.xlsx: its names match 2 of this map's districts and 0 of its first-level units, out of 201; too few of either to say which level this file describes
+  cod-ps-bmu (BMU)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: bmu_admpop_2024.xlsx has no district sheet
+    refused: bmu_admpop_2022.xlsx has no district sheet
+  cod-ps-bol (BOL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: bol_admpop_2022.xlsx has no district sheet
+  cod-ps-bra (BRA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 5282 of 5287 names match this map's admin2 (against 8 at admin1) (bra_admpop_adm2_2022.csv)
+    5570 admin2 unit(s), reference year 2022, 203,080,756 people
+  cod-ps-brb (BRB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: brb_admpop_2022.xlsx has no district sheet
+    refused: brb_adm_gz.xlsx has no district sheet
+  cod-ps-btn (BTN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: btn_admpop_2024.xlsx has no district sheet
+    read sheet 'BTN_ADM2_POP_2023' of btn_admpop_2023.xlsx
+    refused: no level-2 name column or no total; its columns are: year, ISO3, ADM0_NAME, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, F_TL, M_TL, T_TL, F_00_04, F_05_09, F_10_14
+  cod-ps-bwa (BWA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused bwa_admpop_adm2_2023.csv: its names match 11 of this map's districts and 6 of its first-level units, out of 28; too few of either to say which level this file describes
+    read sheet 'bwa_admpop_adm2_2023' of bwa_admpop_2023.xlsx
+    refused bwa_admpop_2023.xlsx: its names match 11 of this map's districts and 6 of its first-level units, out of 28; too few of either to say which level this file describes
+    refused bwa_admpop_adm3_2023.csv: its names match 9 of this map's districts and 2 of its first-level units, out of 510; too few of either to say which level this file describes
+  cod-ps-caf (CAF)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    1 unit(s) appear twice with different totals and are refused
+    level: 53 of 71 names match this map's admin2 (against 0 at admin1) (caf_admpop_adm2_2015_v2.csv)
+    71 admin2 unit(s), reference year 2015, 4,113,940 people
+  cod-ps-chl (CHL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 54 of 56 names match this map's admin2 (against 3 at admin1) (chl_admpop_adm2_2022.csv)
+    56 admin2 unit(s), reference year 2022, 19,828,563 people
+  cod-ps-civ (CIV)
+    licence: Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+    refused: this licence is not one this map may read
+  cod-ps-cmr (CMR)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    refused CMR_admpop2_2025.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 1; too few of either to say which level this file describes
+    refused: CMR_admpop_2025.xlsx has no district sheet
+    refused: CMR_admpop_2025.xlsx has no district sheet
+    refused: cmr_admpop_2024.xlsx has no district sheet
+    refused: cmr_admpop_2023.xlsx has no district sheet
+  cod-ps-cod (COD)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    0 row(s) unnamed, 25 with no usable total
+    level: 164 of 164 names match this map's admin2 (against 1 at admin1) (cod_admpop_adm2_2020.csv)
+    164 admin2 unit(s), reference year 2020, 103,199,358 people
+  cod-ps-col (COL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    0 row(s) unnamed, 1 with no usable total
+    level: 1009 of 1032 names match this map's admin2 (against 8 at admin1) (col_admpop_2025_adm2.csv)
+    1121 admin2 unit(s), reference year 2025, 53,216,592 people
+  cod-ps-com (COM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: com_admpop_2017.xlsx has no district sheet
+  cod-ps-cpv (CPV)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: cpv_admpop_2022B.xlsx has no district sheet
+  cod-ps-cri (CRI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 76 of 81 names match this map's admin2 (against 6 at admin1) (cri_admpop_adm2_unfpa2021.csv)
+    81 admin2 unit(s), reference year 2021, 5,163,021 people
+  cod-ps-cub (CUB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: cub_admpop_2024.xlsx has no district sheet
+  cod-ps-cuw (CUW)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: cuw_admpop_2022.xlsx has no district sheet
+  cod-ps-cym (CYM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: cym_admpop_2021.xlsx has no district sheet
+  cod-ps-dji (DJI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: dji_admpop_2009.xlsx has no district sheet
+  cod-ps-dma (DMA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: dma_admpop_2022.xlsx has no district sheet
+  cod-ps-dom (DOM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 28 of 32 names match this map's admin1 (against 8 at admin2) (dom_admpop_adm2_2023.csv)
+    32 admin1 unit(s), reference year 2023, 10,711,155 people
+  cod-ps-ecu (ECU)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: ecu_admpop_2020.xlsx has no district sheet
+  cod-ps-egy (EGY)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: egypt_population_estimate_compas_2012_v1.1_0_fis_v2.xlsx has no district sheet
+  cod-ps-eri (ERI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 58 of 58 names match this map's admin2 (against 0 at admin1) (eri_adm2_pop_2001_v2.csv)
+    58 admin2 unit(s), reference year 2001, 2,908,795 people
+  cod-ps-eth (ETH)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 38 of 91 names match this map's admin2 (against 1 at admin1) (eth_admpop_adm2_2022_v2.csv)
+    92 admin2 unit(s), reference year 2022, 102,536,651 people
+  cod-ps-fji (FJI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 15 of 15 names match this map's admin2 (against 0 at admin1) (fji_pplp_adm2_province_2017_v2.csv)
+    15 admin2 unit(s), reference year 2017, 884,887 people
+  cod-ps-fsm (FSM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: the file states no reference year, in a column or its own name, and HDX's reference period for it is not one year
+    refused: fsm_pplp.xlsx has no district sheet
+    refused: Source_FSM_Projected_Population-Estimate-Details.xlsx has no district sheet
+  cod-ps-gab (GAB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: gab_admpop_2022.xlsx has no district sheet
+    refused: gabpcoderowca20150210.xlsx has no district sheet
+  cod-ps-geo (GEO)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 56 of 80 names match this map's admin2 (against 0 at admin1) (geo_admpop_adm2_geostat_2014.csv)
+    80 admin2 unit(s), reference year 2014, 3,713,804 people
+  cod-ps-gha (GHA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 142 of 216 names match this map's admin2 (against 0 at admin1) (gha_admpop_adm2_2021.csv)
+    216 admin2 unit(s), reference year 2021, 29,340,248 people
+  cod-ps-gin (GIN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 34 of 34 names match this map's admin2 (against 8 at admin1) (gin_admpop_adm2_2024.csv)
+    34 admin2 unit(s), reference year 2024, 13,989,788 people
+  cod-ps-global (AFG)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    refused: no adm2 CSV or workbook on this dataset
+  cod-ps-glp (GLP)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2016 from HDX's reference period for the dataset, the file stating none
+    refused glp_admpop_adm2_v2.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 32; too few of either to say which level this file describes
+    refused: glp_adm_2019.xlsx has no district sheet
+    refused: glp_admpop_2016.xlsx has no district sheet
+  cod-ps-gmb (GMB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: gmb_popadm_2021.xlsx has no district sheet
+  cod-ps-grd (GRD)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: grd_admpop_2011.xlsx has no district sheet
+  cod-ps-gtm (GTM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 334 of 334 names match this map's admin2 (against 14 at admin1) (gtm_admpop_adm2_2024.csv)
+    340 admin2 unit(s), reference year 2024, 17,843,132 people
+  cod-ps-guf (GUF)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused guf_admpop_adm2_insee_2016_v3.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 22; too few of either to say which level this file describes
+    refused: guf_admpop_insee_2016_v2.xlsx has no district sheet
+  cod-ps-guy (GUY)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    read sheet 'guy_admpop_adm2_2021' of guy_admpop_2021.xlsx
+    0 row(s) unnamed, 1 with no usable total
+    refused guy_admpop_2021.xlsx: its names match 0 of this map's districts and 0 of its first-level units, out of 124; too few of either to say which level this file describes
+  cod-ps-hnd (HND)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 268 of 269 names match this map's admin2 (against 8 at admin1) (hnd_admpop_adm2_2024.csv)
+    298 admin2 unit(s), reference year 2024, 9,892,674 people
+  cod-ps-hti (HTI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused hti_admpop_adm2_2024.csv: its names match 32 of this map's districts and 0 of its first-level units, out of 140; too few of either to say which level this file describes
+    refused: hti_admpop_2024.xlsx has no district sheet
+    refused: hti_admpop_2024_with_uncertainty_range.xlsx has no district sheet
+  cod-ps-hun (HUN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: hun_admpop_2022_v01.xlsx has no district sheet
+  cod-ps-idn (IDN)
+    licence: Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+    refused: this licence is not one this map may read
+  cod-ps-irn (IRN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 336 of 429 names match this map's admin2 (against 14 at admin1) (irn_admpop_adm2_2016_v2.csv)
+    429 admin2 unit(s), reference year 2016, 79,926,270 people
+  cod-ps-irq (IRQ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: IRQ_admpop_2021.xlsx has no district sheet
+  cod-ps-jam (JAM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: jam_adm_pop.xlsx has no district sheet
+    refused: jam_adm.xlsx has no district sheet
+  cod-ps-kaz (KAZ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: kaz_admpop_adm1_2023.xlsx has no district sheet
+    refused: kaz_admpop_2021.xlsx has no district sheet
+  cod-ps-ken (KEN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    read sheet 'ken_admpop_ADM2_2019' of ken_admpop_2019.xlsx
+    2 unit(s) appear twice with different totals and are refused
+    level: 183 of 338 names match this map's admin2 (against 12 at admin1) (ken_admpop_2019.xlsx)
+    338 admin2 unit(s), reference year 2019, 47,561,482 people
+  cod-ps-kgz (KGZ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    11 unit(s) appear twice with different totals and are refused
+    0 row(s) unnamed, 1 with no usable total
+    refused kyrgyzstan_population_statistics_2018_adm2_v2.csv: its names match 2 of this map's districts and 2 of its first-level units, out of 4; too few of either to say which level this file describes
+    refused: kyrgyzstan_population_statistics_2018.xlsx has no district sheet
+  cod-ps-khm (KHM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: khm_admpop_2024.xlsx has no district sheet
+    refused: khm_admpop_2023.xlsx has no district sheet
+  cod-ps-kir (KIR)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    122 row(s) unnamed, 14 with no usable total
+    level: 16 of 22 names match this map's admin2 (against 0 at admin1) (kir_admpop_adm2_2020.csv)
+    22 admin2 unit(s), reference year 2020, 119,940 people
+  cod-ps-kna (KNA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: kna_admpop_2022.xlsx has no district sheet
+  cod-ps-lao (LAO)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 144 of 144 names match this map's admin2 (against 2 at admin1) (lao_admpop_adm2_2024.csv)
+    148 admin2 unit(s), reference year 2024, 7,631,798 people
+  cod-ps-lbr (LBR)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 135 of 135 names match this map's admin2 (against 0 at admin1) (lbr_admpop_adm2_2020_v2.csv)
+    136 admin2 unit(s), reference year 2020, 4,593,022 people
+  cod-ps-lca (LCA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: lca_admpop_2010.xlsx has no district sheet
+  cod-ps-lka (LKA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 25 of 25 names match this map's admin2 (against 0 at admin1) (lka_admpop_adm2_2023.csv)
+    25 admin2 unit(s), reference year 2023, 22,037,001 people
+  cod-ps-lso (LSO)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: lso_admpop_2022.xlsx has no district sheet
+  cod-ps-maf (MAF)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: maf_adm_gz_2016_INSEE.xlsx has no district sheet
+    refused: maf_admpop_2016_INSEE.xlsx has no district sheet
+  cod-ps-mar (MAR)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    level: 20 of 31 names match this map's admin2 (against 0 at admin1) (mar_admpop_adm2eq_2014.csv)
+    31 admin2 unit(s), reference year 2014, 17,240,318 people
+  cod-ps-mda (MDA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: mda_admpop_2022.xlsx has no district sheet
+    refused: mdv_admpop_2022.xlsx: HTTPError: HTTP Error 404: Not Found
+  cod-ps-mdg (MDG)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 119 of 119 names match this map's admin2 (against 0 at admin1) (mdg_admpop_adm2_2018.csv)
+    119 admin2 unit(s), reference year 2018, 26,696,214 people
+  cod-ps-mdv (MDV)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: mdv_admpop_2022.xlsx has no district sheet
+  cod-ps-mex (MEX)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 2301 of 2328 names match this map's admin2 (against 16 at admin1) (mex_admpop_adm2_2024.csv)
+    2475 admin2 unit(s), reference year 2024, 132,274,416 people
+  cod-ps-mhl (MHL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: mhl_admpop_2021.xlsx has no district sheet
+    refused: MHL_pplp.xlsx has no district sheet
+  cod-ps-mli (MLI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2018 from HDX's reference period for the dataset, the file stating none
+    level: 49 of 50 names match this map's admin2 (against 8 at admin1) (mli_pop_adm2_v2.csv)
+    50 admin2 unit(s), reference year 2018, 17,907,114 people
+  cod-ps-mmr (MMR)
+    licence: unstated -- license_id=None, isopen=False
+    refused: this licence is not one this map may read
+  cod-ps-mmr-archived (MMR)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    level: 70 of 77 names match this map's admin2 (against 5 at admin1) (mmr_admpop_adm2_2023.csv)
+    80 admin2 unit(s), reference year 2023, 56,242,837 people
+  cod-ps-mng (MNG)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 277 of 277 names match this map's admin2 (against 3 at admin1) (mng_admpop_adm2_2017_v2.csv)
+    339 admin2 unit(s), reference year 2017, 3,131,750 people
+  cod-ps-moz (MOZ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    0 row(s) unnamed, 4 with no usable total
+    level: 154 of 155 names match this map's admin2 (against 1 at admin1) (moz_admpop_adm2_2025.csv)
+    155 admin2 unit(s), reference year 2025, 35,163,992 people
+  cod-ps-mrt (MRT)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: mrt_admpop_2022.xlsx has no district sheet
+  cod-ps-msr (MSR)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    refused: msr_admpop_2011.xlsx has no district sheet
+    refused: msr_adm_gz.xlsx has no district sheet
+  cod-ps-mtq (MTQ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2016 from HDX's reference period for the dataset, the file stating none
+    refused mtq_adm2_pop_v3.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 34; too few of either to say which level this file describes
+    refused: mtq_adm_gz_2016_ignf.xlsx has no district sheet
+    refused: mtq_admpop_insee_2016.xlsx has no district sheet
+  cod-ps-mus (MUS)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: mus_admpop_2018_2011_.xlsx has no district sheet
+  cod-ps-mwi (MWI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 26 of 32 names match this map's admin2 (against 0 at admin1) (mwi_admpop_adm2_2023.csv)
+    32 admin2 unit(s), reference year 2023, 19,809,511 people
+  cod-ps-mys (MYS)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: mys_admpop_2020.xlsx has no district sheet
+  cod-ps-nam (NAM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 80 of 107 names match this map's admin2 (against 1 at admin1) (nam_admpop_adm2_2023.csv)
+    107 admin2 unit(s), reference year 2023, 2,777,232 people
+  cod-ps-ner (NER)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 63 of 67 names match this map's admin2 (against 1 at admin1) (ner_admpop_adm2_2024.csv)
+    67 admin2 unit(s), reference year 2024, 26,367,847 people
+  cod-ps-nga (NGA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: nga_admpop_2022.xlsx has no district sheet
+    read sheet 'nga_admpop_adm2_2020' of nga_admpop_2020.xlsx
+    level: 736 of 768 names match this map's admin2 (against 7 at admin1) (nga_admpop_2020.xlsx)
+    773 admin2 unit(s), reference year 2020, 204,909,220 people
+  cod-ps-nic (NIC)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 142 of 153 names match this map's admin2 (against 10 at admin1) (nic_admpop_adm2_2020.csv)
+    153 admin2 unit(s), reference year 2020, 6,595,672 people
+  cod-ps-niu (NIU)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    refused: niu_admpop_2022.xlsx has no district sheet
+  cod-ps-npl (NPL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 69 of 77 names match this map's admin2 (against 0 at admin1) (npl_admpop_adm2_2023.csv)
+    77 admin2 unit(s), reference year 2023, 30,899,443 people
+  cod-ps-pak (PAK)
+    licence: Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+    refused: this licence is not one this map may read
+  cod-ps-pan (PAN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: pan_admpop_2023.xlsx has no district sheet
+  cod-ps-per (PER)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: per_admpop_2024.xlsx has no district sheet
+    refused: per_admpop_2023.xlsx has no district sheet
+    refused: per_admpop_2022.xlsx has no district sheet
+  cod-ps-phl (PHL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 82 of 84 names match this map's admin2 (against 0 at admin1) (phl_admpop_adm2_2022_v2.csv)
+    84 admin2 unit(s), reference year 2022, 111,572,254 people
+  cod-ps-plw (PLW)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: PLW_ADM0_POP_2023.xlsx has no district sheet
+  cod-ps-png (PNG)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 87 of 87 names match this map's admin2 (against 3 at admin1) (png_admpop_adm2_2011_v2.csv)
+    87 admin2 unit(s), reference year 2011, 7,275,324 people
+  cod-ps-pol (POL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused pol_admpop_adm2_2024.csv: its names match 51 of this map's districts and 0 of its first-level units, out of 370; too few of either to say which level this file describes
+    refused: pol_admpop_2024.xlsx has no district sheet
+    read sheet 'pol_admpop_adm2_2020' of pol_admpop_2020.xlsx
+    10 unit(s) appear twice with different totals and are refused
+    refused pol_admpop_2020.xlsx: its names match 51 of this map's districts and 0 of its first-level units, out of 360; too few of either to say which level this file describes
+  cod-ps-prk (PRK)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2008 from HDX's reference period for the dataset, the file stating none
+    0 row(s) unnamed, 2 with no usable total
+    level: 176 of 176 names match this map's admin2 (against 1 at admin1) (prk_pop_adm2_v2.csv)
+    177 admin2 unit(s), reference year 2008, 23,275,627 people
+  cod-ps-pry (PRY)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 217 of 249 names match this map's admin2 (against 6 at admin1) (pry_admpop_adm2_2023.csv)
+    250 admin2 unit(s), reference year 2023, 7,552,654 people
+  cod-ps-pse (PSE)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: pse_admpop_2023.xlsx has no district sheet
+  cod-ps-qat (QAT)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: qat_admpop_2020.xlsx has no district sheet
+  cod-ps-rou (ROU)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 42 of 42 names match this map's admin1 (against 18 at admin2) (rou_admpop_adm2_2022_v01.csv)
+    42 admin1 unit(s), reference year 2022, 18,983,507 people
+  cod-ps-rwa (RWA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 30 of 30 names match this map's admin2 (against 0 at admin1) (rwa_admpop_adm2_2023.csv)
+    30 admin2 unit(s), reference year 2023, 13,400,541 people
+  cod-ps-sau (SAU)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: sau_admpop_2022.xlsx has no district sheet
+  cod-ps-sdn (SDN)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    level: 187 of 187 names match this map's admin2 (against 2 at admin1) (sdn_admpop_adm2_2025.csv)
+    188 admin2 unit(s), reference year 2025, 47,514,529 people
+  cod-ps-sen (SEN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: sen_admpop_2023.xlsx has no district sheet
+    refused: sen_admpop_2021.xlsx has no district sheet
+  cod-ps-slb (SLB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 49 of 50 names match this map's admin2 (against 0 at admin1) (slb_admpop_adm2_2023.csv)
+    50 admin2 unit(s), reference year 2023, 768,701 people
+  cod-ps-sle (SLE)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2020 from HDX's reference period for the dataset, the file stating none
+    level: 14 of 14 names match this map's admin2 (against 0 at admin1) (sle_adm2_population_v2.csv)
+    14 admin2 unit(s), reference year 2020, 7,570,551 people
+  cod-ps-slv (SLV)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    0 row(s) unnamed, 4 with no usable total
+    refused slv_admpop_adm2_2024.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 44; too few of either to say which level this file describes
+    read sheet 'slv_admpop_adm2_2024' of slv_admpop_2024.xlsx
+    level: 242 of 254 names match this map's admin2 (against 10 at admin1) (slv_admpop_2024.xlsx)
+    262 admin2 unit(s), reference year 2024, 6,350,969 people
+  cod-ps-som (SOM)
+    licence: Other -- license_id='hdx-other', isopen=False, license_other='Restricted for use only in HRP and Humanitarian Operations.'
+    refused: this licence is not one this map may read
+  cod-ps-ssd (SSD)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 77 of 78 names match this map's admin2 (against 0 at admin1) (ssd_admpop_adm2_2022_v2.csv)
+    78 admin2 unit(s), reference year 2022, 12,394,970 people
+  cod-ps-stp (STP)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 5 of 7 names match this map's admin2 (against 0 at admin1) (stp_admpop_adm2_2022.csv)
+    7 admin2 unit(s), reference year 2022, 219,577 people
+  cod-ps-sur (SUR)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2012 from HDX's reference period for the dataset, the file stating none
+    level: 44 of 60 names match this map's admin2 (against 0 at admin1) (sur_admpop_adm2_v2.csv)
+    62 admin2 unit(s), reference year 2012, 541,638 people
+  cod-ps-svk (SVK)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 39 of 79 names match this map's admin2 (against 6 at admin1) (svk_admpop_adm2_2023.csv)
+    79 admin2 unit(s), reference year 2023, 5,424,687 people
+  cod-ps-swz (SWZ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: swz_admpop_2022.xlsx has no district sheet
+  cod-ps-sxm (SXM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: sxm_pop_2018.xlsx has no district sheet
+  cod-ps-syc (SYC)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2019 from HDX's reference period for the dataset, the file stating none
+    level: 8 of 8 names match this map's admin2 (against 0 at admin1) (syc_admpop_adm2_nbs2019_v2.csv)
+    8 admin2 unit(s), reference year 2019, 90,945 people
+  cod-ps-tca (TCA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: tci_admpop_2022.xlsx has no district sheet
+  cod-ps-tcd (TCD)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: Tchad_PopulationDuTchad_20240102.xlsx has no district sheet
+    refused: tcd_admpop_2023.xlsx has no district sheet
+    refused: tcd_admpop_2022.xlsx has no district sheet
+    read sheet 'tcd_admpop_adm2_2021' of tcd_admpop_2021.xlsx
+    level: 70 of 70 names match this map's admin2 (against 4 at admin1) (tcd_admpop_2021.xlsx)
+    70 admin2 unit(s), reference year 2021, 16,818,393 people
+  cod-ps-tgo (TGO)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    read sheet 'tgo_admpop_adm2_2021' of TGO_ADM2_POP_2021.xlsx
+    level: 37 of 37 names match this map's admin2 (against 0 at admin1) (TGO_ADM2_POP_2021.xlsx)
+    37 admin2 unit(s), reference year 2021, 8,020,081 people
+  cod-ps-tha (THA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 917 of 917 names match this map's admin2 (against 1 at admin1) (tha_admpop_adm2_2023.csv)
+    928 admin2 unit(s), reference year 2023, 69,394,762 people
+  cod-ps-tjk (TJK)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: tjk_admpop_2019.xlsx has no district sheet
+  cod-ps-tkl (TKL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: TKL_ADM0_POP_2023.xlsx has no district sheet
+  cod-ps-tls (TLS)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: tls_admpop_2022.xlsx has no district sheet
+  cod-ps-ton (TON)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 20 of 22 names match this map's admin2 (against 0 at admin1) (ton_admpop_adm2_2021.csv)
+    23 admin2 unit(s), reference year 2021, 100,209 people
+  cod-ps-tto (TTO)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: tto_admpop_2011.xlsx has no district sheet
+  cod-ps-tun (TUN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 22 of 24 names match this map's admin1 (against 0 at admin2) (tun_admpop_adm2_2020.csv)
+    24 admin1 unit(s), reference year 2020, 11,852,020 people
+  cod-ps-tur (TUR)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 723 of 947 names match this map's admin2 (against 41 at admin1) (tur_admpop_adm2_2022.csv)
+    973 admin2 unit(s), reference year 2022, 85,279,553 people
+  cod-ps-tza (TZA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 140 of 169 names match this map's admin2 (against 12 at admin1) (tza_admpop_adm2_2020_v2.csv)
+    169 admin2 unit(s), reference year 2020, 58,552,845 people
+  cod-ps-uga (UGA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 56 of 135 names match this map's admin2 (against 0 at admin1) (uga_admpop_adm2_2023.csv)
+    135 admin2 unit(s), reference year 2022, 46,210,758 people
+  cod-ps-ukr (UKR)
+    licence: unstated -- license_id=None, isopen=False
+    refused: this licence is not one this map may read
+  cod-ps-ury (URY)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: ury_admpop_2023.xlsx has no district sheet
+    refused: ury_admpop_2022.xlsx has no district sheet
+    refused: ury_admgaz_2020.xlsx has no district sheet
+  cod-ps-uzb (UZB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: uzbekistan_population_statistics_2018.xlsx has no district sheet
+  cod-ps-vct (VCT)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: vct_admpop_2022.xlsx has no district sheet
+  cod-ps-ven (VEN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 263 of 273 names match this map's admin2 (against 8 at admin1) (ven_admpop_adm2_2011_v3.csv)
+    335 admin2 unit(s), reference year 2011, 27,225,775 people
+  cod-ps-vgb (VGB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: vgb_admpop_2022.xlsx has no district sheet
+  cod-ps-vir (VIR)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2010 from HDX's reference period for the dataset, the file stating none
+    refused vir_admpop_adm2_v2.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 18; too few of either to say which level this file describes
+  cod-ps-vnm (VNM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: vnm_admpop_2024.xlsx has no district sheet
+    refused: vnm_admpop_2023.xlsx has no district sheet
+  cod-ps-vut (VUT)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 58 of 66 names match this map's admin2 (against 0 at admin1) (vut_admpop_adm2_2020.csv)
+    66 admin2 unit(s), reference year 2020, 300,043 people
+  cod-ps-zaf (ZAF)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    181 row(s) unnamed, 0 with no usable total
+    level: 43 of 52 names match this map's admin2 (against 0 at admin1) (zaf_admpop_adm2_2020.csv)
+    52 admin2 unit(s), reference year 2020, 56,463,617 people
+  cod-ps-zmb (ZMB)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    refused: zmb_admpop_2020.xlsx has no district sheet
+  cod-ps-zwe (ZWE)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 91 of 91 names match this map's admin2 (against 3 at admin1) (zwe_admpop_adm2_2023.csv)
+    91 admin2 unit(s), reference year 2023, 17,408,564 people
+  19057 districts in 68 countries: AFG:401, AGO:161, AZE:85, BDI:119, BEN:77, BFA:45, BGD:64, BRA:5570, CAF:71, CHL:56, COD:164, COL:1121, CRI:81, DOM:32, ERI:58, ETH:92, FJI:15, GEO:80, GHA:216, GIN:34, GTM:340, HND:298, IRN:429, KEN:338, KIR:22, LAO:148, LBR:136, LKA:25, MAR:31, MDG:119, MEX:2475, MLI:50, MMR:80, MNG:339, MOZ:155, MWI:32, NAM:107, NER:67, NGA:773, NIC:153, NPL:77, PHL:84, PNG:87, PRK:177, PRY:250, ROU:42, RWA:30, SDN:188, SLB:50, SLE:14, SLV:262, SSD:78, STP:7, SUR:62, SVK:79, SYC:8, TCD:70, TGO:37, THA:928, TON:23, TUN:24, TUR:973, TZA:169, UGA:135, VEN:335, VUT:66, ZAF:52, ZWE:91
+  wrote data/processed/cod_ps_admin2.json (22087 kB)
