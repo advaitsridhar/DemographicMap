@@ -1027,12 +1027,20 @@ ALSO_KNOWN_AS: dict[tuple[str, str], tuple[str, ...]] = {
     ("CHL", "Región de Magallanes y Antártica Chilena"):
         ("Magellan and the Chilean Antarctic Region",),
     ("CUB", "Isle of Youth"): ("Isla de la Juventud",),
+    # Italy's regions, which the map draws at its second level: Eurostat writes
+    # the Aosta Valley in both its languages, Wikidata in English.
+    ("ITA", "Valle d'Aosta"): ("Valle d’Aosta/Vallée d’Aoste", "Aosta Valley"),
+    ("ITA", "Trentino-Alto Adige"): ("Trentino-South Tyrol",),
     ("DOM", "Bahoruco"): ("Baoruco Province", "Baoruco"),
     ("DOM", "El Seybo"): ("El Seibo Province", "El Seibo"),
     # Renamed for the general in 1942; the older name is still the shape's.
     ("DOM", "La Estrelleta"): ("Elías Piña Province", "Elías Piña"),
     # INE's catalogue writes the municipio with a y, the boundary file with an i.
     ("GTM", "San Raimundo"): ("San Raymundo",),
+    # INE's catalogue names the municipio for its seat, Playa Grande; "Grande"
+    # just before the name reads as a qualifier ("Grande Lisboa" is not
+    # Lisbon District), so the census row needs the declared name.
+    ("GTM", "Ixcán"): ("Playa Grande Ixcán",),
     # geoBoundaries misspells two of Setubal District's municipalities.
     ("PRT", "Setubul"): ("Setúbal",),
     ("PRT", "Barriero"): ("Barreiro",),

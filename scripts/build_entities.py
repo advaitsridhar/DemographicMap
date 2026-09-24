@@ -26,6 +26,7 @@ match records *how* it matched so a bad join is auditable rather than invisible.
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import os
 import re
@@ -35,7 +36,7 @@ from collections import defaultdict
 from functools import lru_cache
 from pathlib import Path
 from collections.abc import Sequence
-from typing import Any
+from typing import Any, Callable
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -990,6 +991,94 @@ def norm(text: str | None) -> str:
 # Geometry side
 # ---------------------------------------------------------------------------
 
+# Second-level polygons whose labels are measured against another outline.
+#
+# geoBoundaries CGAZ draws Namibia's constituencies in the right places and
+# labels them wrongly: the polygon at Windhoek is "Eenhana", a town on the
+# Angolan border; "Katutura Central" lies in Hardap, 90 km south of the city;
+# seven polygons are "Luderitz". Every name join put one constituency's
+# figures on another's ground, with nothing to show it -- each region's
+# divisions simply summed to the wrong total. No alias can fix a shuffle, so
+# each polygon is named instead by the OCHA outline it is
+# (scripts/fetch_census/namibia_shapes.py), measured on every build:
+#   * the polygon and one outline cover SAME_UNIT or more of each other: it is
+#     that constituency, and takes its name;
+#   * two or more outlines lie WHOLE_PART or more inside it, and together make
+#     up WHOLE_PART of it: it is their union, named for them all, and a
+#     source's rows for the parts are pooled onto it;
+#   * anything else is a mixture -- a constituency and part of another -- and
+#     is named for what it holds and given no figures, since none describes it.
+# Measured on 24 September 2026, 96 of the 103 polygons are one constituency
+# (91 at 80% or more each way), four are unions of two, and three are
+# mixtures.
+OUTLINE_REFERENCE: dict[str, str] = {"NAM": "nam_adm2_reference.json"}
+SAME_UNIT = 0.7
+WHOLE_PART = 0.9
+# A sliver this small of a polygon is a drawing difference, not a part of it.
+OUTLINE_SLIVER = 0.05
+
+
+def relabel_from_outlines(rows: list[dict[str, Any]], iso3: str,
+                          units: list[dict[str, Any]]) -> dict[str, int]:
+    """Name each of a country's polygons by the reference outline it is.
+
+    ``rows`` are read_shapes rows still carrying ``_geom``; ``units`` are the
+    reference outlines as the fetcher wrote them. Each row's name is replaced,
+    and ``outline`` records what the polygon was measured to be.
+    """
+    from shapely.geometry import shape as to_shape
+
+    outlines = [(u, whole(to_shape(u["geometry"]))) for u in units]
+    counts: dict[str, int] = defaultdict(int)
+    claimed: dict[str, str] = {}
+    for row in rows:
+        geom = whole(row["_geom"])
+        label = row["name"]
+        hits = []
+        for unit, outline in outlines:
+            if not geom.intersects(outline):
+                continue
+            shared = geom.intersection(outline).area
+            if shared > 0:
+                hits.append((shared / geom.area, shared / outline.area, unit))
+        hits.sort(key=lambda h: -h[0])
+        whole_units = [h for h in hits if h[1] >= WHOLE_PART]
+        if len(whole_units) >= 2 and sum(h[0] for h in whole_units) >= WHOLE_PART:
+            kind, parts = "union", [h[2]["name"] for h in whole_units]
+            name = ", ".join(parts[:-1]) + " and " + parts[-1]
+        elif hits and hits[0][0] >= SAME_UNIT and hits[0][1] >= SAME_UNIT \
+                and hits[0][2]["pcode"] not in claimed:
+            kind, parts = "same", [hits[0][2]["name"]]
+            name = parts[0]
+            claimed[hits[0][2]["pcode"]] = row["shape_id"]
+        else:
+            kind = "mixed"
+            held = [h for h in hits if h[0] >= OUTLINE_SLIVER]
+            parts = [h[2]["name"] for h in held]
+            words = [(h[2]["name"] if h[1] >= WHOLE_PART else f"part of {h[2]['name']}")
+                     for h in held]
+            name = (", ".join(words[:-1]) + " and " + words[-1]) if len(words) > 1 \
+                else (words[0] if words else label)
+            name = name[:1].upper() + name[1:]
+        row["name"] = name
+        row["outline"] = {"kind": kind, "parts": parts, "label": label,
+                          "shares": [[h[2]["name"], round(h[0], 3), round(h[1], 3)]
+                                     for h in hits[:4]]}
+        counts[kind] += 1
+    return dict(counts)
+
+
+def outline_note(outline: dict[str, Any], source: str) -> str:
+    """What a relabelled polygon is, as the measurement found it."""
+    shares = "; ".join(f"{n}: {a:.0%} of this polygon, {b:.0%} of {n}"
+                       for n, a, b in outline["shares"])
+    return (f"geoBoundaries labels this polygon \"{outline['label']}\", which is "
+            f"not where it lies; it is named here from {source}. Measured "
+            f"against those outlines -- {shares} -- it is not any one "
+            f"constituency, so no published figure describes it and none is "
+            f"shown.")
+
+
 def read_shapes(level: str) -> list[dict[str, Any]]:
     """Feature properties + centroid for one CGAZ level (geometry stays on disk)."""
     import fiona
@@ -1025,10 +1114,26 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
                 "group": props.get("shapeGroup"),
                 "point": [round(point.x, 5), round(point.y, 5)],
                 "bbox": [round(b, 4) for b in bounds],
-                "_geom": geom if level != "ADM2" else None,
+                "_geom": (geom if level != "ADM2"
+                          or props.get("shapeGroup") in OUTLINE_REFERENCE else None),
                 "area": geom.area,
             })
     log(f"  {level}: {len(out)} shapes")
+    if level == "ADM2":
+        for iso3, filename in OUTLINE_REFERENCE.items():
+            reference = read_json(PROCESSED / filename, None)
+            if not reference or not reference.get("units"):
+                raise SystemExit(
+                    f"build_entities: {iso3}'s second-level labels are declared "
+                    f"wrong and are named from {filename}, which is missing. "
+                    f"Run: python -m scripts.fetch_census.namibia_shapes")
+            rows = [r for r in out if r["group"] == iso3]
+            counts = relabel_from_outlines(rows, iso3, reference["units"])
+            for r in rows:
+                r["outline"]["source"] = reference.get("source")
+                r["_geom"] = None
+            log(f"  {iso3}: {len(rows)} polygons named from {filename}: "
+                + ", ".join(f"{n} {k}" for k, n in sorted(counts.items())))
     return out
 
 
@@ -1504,6 +1609,16 @@ FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
 FILL_ONLY_FIELDS = frozenset({"population"})
 
 
+def year_of(container: dict[str, Any], key: str) -> int | None:
+    """The year a field's value is for: inside a figure, beside a composition."""
+    value = container.get(key)
+    if isinstance(value, dict) and isinstance(value.get("year"), int):
+        return value["year"]
+    if isinstance(value, list) and isinstance(container.get(f"{key}_year"), int):
+        return container[f"{key}_year"]
+    return None
+
+
 def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     """Adapter values override seeds; gap markers never overwrite real values.
 
@@ -1527,10 +1642,51 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     from a wrong one. A row that replaces a figure owns what describes it, and
     what the row does not say is not carried over from what it displaced.
     """
+    # The newer of two dated figures stands, whichever file it came from and
+    # whichever came first. File order is a ranking of sources, and it was
+    # being applied to dates: a 2011 census file below a 2021 estimate in the
+    # list replaced the estimate. An older figure is used only where nothing
+    # newer is published; it is held aside rather than dropped, so a check
+    # that later refuses the newer one can still fall back to it.
+    #
+    # Between two kinds of source it does not decide: an encyclopaedia's figure
+    # never replaces a count, however recent (the owner's rule of 22 September
+    # 2026). Viet Nam is why. It merged its provinces in 2025, and Wikidata's
+    # 2024 figure for An Giang -- 3,679,300 -- is the merged province's, on the
+    # old province's shape, against the 2019 census's 1,908,352. A newer figure
+    # can be a different unit's.
+    encyclopaedic = row.get("_source") in FILL_ONLY
+    origin = entity.get("_from") or {}
+    dated = {key: (year_of(row, key), year_of(entity, key)) for key in VALUE_FIELDS
+             if not is_gap(row.get(key)) and not is_gap(entity.get(key))
+             and (origin.get(key) in FILL_ONLY) == encyclopaedic}
+    newer = {key for key, (theirs, ours) in dated.items()
+             if theirs is not None and ours is not None and theirs > ours}
+    older = {key for key, (theirs, ours) in dated.items()
+             if theirs is not None and ours is not None and theirs < ours}
     held = {key for key in FILL_ONLY_FIELDS
-            if row.get("_source") in FILL_ONLY and not is_gap(entity.get(key))}
+            if encyclopaedic and not is_gap(entity.get(key)) and key not in newer} | older
+    # What was held back is kept aside, not thrown away: a check that later
+    # refuses the figure in front of it can fall back to it (see fall_back).
+    for key in held:
+        if not is_gap(row.get(key)):
+            entity.setdefault("_held", {}).setdefault(key, []).append({
+                "value": row[key], "wikidata": row.get("wikidata"),
+                "file": row.get("_source"), "match": row.get("_match"),
+                "sources": [src for src in row.get("sources") or []
+                            if key in str(src.get("field") or "").split("/")]})
     replaced = {key for key, value in row.items()
                 if key in VALUE_FIELDS and not is_gap(value) and key not in held}
+    # And what a newer figure displaces is kept aside the same way. The town
+    # of Bovec's 2024 figure displaces the municipality's 2020 one; when the
+    # settlement check refuses the town's, the municipality's is still there.
+    for key in replaced & FILL_ONLY_FIELDS:
+        if not is_gap(entity.get(key)):
+            entity.setdefault("_held", {}).setdefault(key, []).append({
+                "value": entity[key], "wikidata": entity.get("wikidata"),
+                "file": origin.get(key), "match": (entity.get("_how") or {}).get(key),
+                "sources": [src for src in entity.get("sources") or []
+                            if key in str(src.get("field") or "").split("/")]})
     if replaced:
         entity["sources"] = [
             src for src in entity.get("sources", [])
@@ -1539,7 +1695,7 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                             for part in str(src.get("field") or "").split("/")))]
     for key, value in row.items():
         if key in {"id", "level", "name", "parent", "parent_name", "parent_aliases",
-                   "match_by", "_source"}:
+                   "match_by", "_source", "_match"}:
             continue
         if key == "sources":
             # A citation for a figure that was held back describes nothing
@@ -1548,7 +1704,14 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                     if not (held and set(str(src.get("field") or "").split("/")) <= held)]
             entity.setdefault("sources", []).extend(kept)
             continue
-        if key in held:
+        if key in held or any(key == f"{f}{suffix}" for f in held for suffix in SATELLITES):
+            continue
+        # The item a unit is linked to is the one its figure came from. Bled's
+        # municipality gives the shape 8,217 people and the town of Bled's row,
+        # joined after it, is held back; had the town's item replaced the
+        # link, the settlement check below would read the town's classes and
+        # refuse the municipality's figure as a town's.
+        if key == "wikidata" and "population" in held and entity.get("wikidata"):
             continue
         if is_gap(value) and not is_gap(entity.get(key)):
             continue
@@ -1561,13 +1724,16 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                          and value.get("status") == NOT_COLLECTED)):
             continue
         entity[key] = value
+        if key in VALUE_FIELDS and not is_gap(value):
+            entity.setdefault("_from", {})[key] = row.get("_source")
+            entity.setdefault("_how", {})[key] = row.get("_match")
     # After the copy, not before it: a satellite the row does supply has just
     # overwritten the old one in place, and popping first would have moved it
     # to the end of the record. build.json is a digest of the written files, so
     # a key order that churns invalidates every reader's cache for no change in
     # the figures.
     for field in DESCRIBED_FIELDS:
-        if is_gap(row.get(field)) or field not in row:
+        if is_gap(row.get(field)) or field not in row or field in held:
             continue
         for suffix in SATELLITES:
             if f"{field}{suffix}" not in row:
@@ -1639,7 +1805,7 @@ def name_forms(text: str | None) -> tuple[tuple[str, ...], ...]:
 # "Peninsula de Setubal" is most of Setubal District and not all of it, and
 # "Area Metropolitana de Lisboa" reaches across the Tagus into it.
 #
-# Only before the shorter name. After it, the same words are a locator: the
+# Only just before the shorter name. After it, the same words are a locator: the
 # first cut read them on both sides and took the census figures off 446 US
 # counties, because "Abbeville County, South Carolina" ends in "South", and
 # off Tierra del Fuego, whose full name ends "Islas del Atlantico Sur".
@@ -1655,6 +1821,23 @@ QUALIFIERS = frozenset({
     "metropolitan", "metropolitana", "metropolitaine",
     "utara", "selatan", "barat", "timur", "tengah",
 })
+
+
+# Words that join a qualifier to the name it qualifies: "Peninsula de Setubal",
+# "Area Metropolitana de Lisboa".
+CONNECTORS = frozenset({"de", "del", "della", "do", "da", "dos", "das", "di",
+                        "du", "des", "la", "le", "el", "al", "y", "e", "et"})
+
+
+def qualified(before: tuple[str, ...]) -> bool:
+    """Whether the word just before a name, past any connector, qualifies it.
+
+    Only the nearest word: "West Sepik (Sandaun) Province" is Sandaun Province
+    under a second name, and reading every word before "Sandaun" found "West"
+    and took Vanimo off the map as Sandaun's capital.
+    """
+    words = [w for w in before if w not in CONNECTORS]
+    return bool(words) and words[-1] in QUALIFIERS
 
 
 def run_of(short: tuple[str, ...], long: tuple[str, ...], *,
@@ -1677,7 +1860,7 @@ def run_of(short: tuple[str, ...], long: tuple[str, ...], *,
         tail, target = short[-1], window[-1]
         if not all(a == b for a, b in zip(short[:-1], window[:-1])):
             continue
-        if QUALIFIERS.intersection(long[:start]):
+        if qualified(long[:start]):
             continue
         if len(tail) < PREFIX_MIN and not (at_start and start == 0):
             continue
@@ -1917,6 +2100,8 @@ def match_admin2(row: dict[str, Any], by_name: dict[str, list[dict[str, Any]]],
 # ---------------------------------------------------------------------------
 
 ROLLUP_FIELDS = ("religion", "language", "ethnicity")
+# One group at this share or more is the whole composition, not its largest part.
+SOLE_GROUP_WHOLE = 99.0
 
 # How far the children's population may sit from the parent's own before the
 # sum is refused. Rounding and small-cell suppression move it a little -- New
@@ -1973,6 +2158,8 @@ COUNTRY_MIN_COVERAGE = 0.98
 # exception, and a blank where the year goes reads as an omission. A country
 # genuinely split between two censuses stays undated, and the note lists them.
 YEAR_MAJORITY = 0.98
+# The share of a sum's people counted in its year for it to stand for that year.
+ONE_MOMENT = 0.9
 
 
 def published(value: Any) -> float | None:
@@ -2187,6 +2374,23 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     if apart:
         children = [c for c in children if c not in apart]
 
+    # A division that names only its largest group has not published a
+    # composition, and largest groups do not add up to one. Papua New Guinea's
+    # provinces each carry the "Main religion" row of the 2011 census --
+    # Bougainville Roman Catholic 68.4%, Central Province United Church 40.0%
+    # -- and their sum made the country 15.4% Catholic and left out every
+    # denomination that is nowhere the largest, over the census's own national
+    # figure of 26%. One such division among many costs the sum little
+    # (Appenzell Innerrhoden among Switzerland's 26 cantons); when they are
+    # half of it, the sum is of winners, not of people.
+    listed = [c for c in children if isinstance(c.get(field), list)]
+    lone = [c for c in listed if len(c[field]) == 1
+            and (c[field][0].get("pct") or 0) < SOLE_GROUP_WHOLE]
+    if lone and 2 * len(lone) >= len(listed):
+        return (f"{field}: {len(lone)} of {len(listed)} children publish only "
+                f"their largest group, and largest groups do not add up to a "
+                f"composition")
+
     missing = [c for c in children if not isinstance(c.get(field), list)]
     left_out = ""
     if missing:
@@ -2274,6 +2478,19 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
 
     disagrees = ""
     own = published(parent.get("population"))
+    stated = own
+    if (unpriced or not total_pop) and own is not None and over_published \
+            and shares_of(current):
+        # A sum that would replace a published composition is checked against
+        # the unit's own population, and with a division unpriced there is no
+        # total to check. Skipping the check here let one missing figure
+        # decide the matter: Angola's national composition was replaced the
+        # day Moxico's population was taken off as its capital's, although
+        # with Moxico priced the same sum is refused, 11% short of the
+        # country's published population.
+        return (f"{field}: {unpriced} of {len(children)} children have no "
+                f"population, so the sum cannot be checked against the "
+                f"published {own:,.0f}")
     if unpriced or not total_pop:
         # No usable control, and none needed: every shape at this level in the
         # country carries the field, so the children partition it.
@@ -2434,11 +2651,16 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
            if own is not None else
            (f" {'they publish' if many else 'it publishes'} no population of "
             f"{'their' if many else 'its'} own, and"
-            if unpriced else
+            if unpriced == len(children) else
+            f" {unpriced} of them publish no population, so their total is not "
+            f"known, and" if unpriced else
             f" {'Their' if many else 'Its'} population"
             f"{'s total' if many else ' is'} {total_pop:,.0f}, and")
-           + " no source publishes a population for the unit to check that "
-             "against; it was summed because every division at this level in "
+           + (" no source publishes a population for the unit to check that "
+              "against" if stated is None else
+              f" the unit's own published {stated:,.0f} cannot be checked "
+              f"against it")
+           + "; it was summed because every division at this level in "
              "the country has these figures, so these are all of its children.")
         + (f" Weighted by population: {len(sampled)} of them count a survey's "
            "respondents and the rest count people, so every division's shares "
@@ -2535,8 +2757,23 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # shares. Morocco lost Laayoune-Sakia El Hamra from its population the
     # same way.
     waived = bool(disagrees) and not whole_country
+    # And only a sum of about one year replaces a figure that exists: years at
+    # most one apart, or nine in ten of the people counted in the same one.
+    # Germany's states carry Eurostat's 2025 figures where a state is its own
+    # NUTS region and the 2022 census elsewhere -- 78% of Germans on 2022 --
+    # and their total of 82.9 million replaced the country's 2025 estimate of
+    # 84.0 million as though it were one count. The Netherlands (96% on 2025)
+    # and Peru (2025 and 2026) are sums of one moment; Germany's is not. A
+    # mixed sum still fills a unit that has nothing.
+    stamped = [(vintage(c.get("population")), published(c.get("population")) or 0.0)
+               for c in children]
+    years_seen = [y for y, _ in stamped if y is not None]
+    on_child_year = sum(v for y, v in stamped if y == child_year)
+    one_year = bool(years_seen) and (
+        max(years_seen) - min(years_seen) <= 1
+        or on_child_year >= ONE_MOMENT * sum(v for _, v in stamped))
     if child_year and not waived and not left_out and (
-            own is None or (round(total_pop) != round(own)
+            own is None or (one_year and round(total_pop) != round(own)
                             and (own_year is None or own_year <= child_year))):
         if own is not None:
             parent["population_note"] = (
@@ -2562,6 +2799,92 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
                 seen.add(mark)
                 parent.setdefault("sources", []).append(dict(src))
     return None
+
+
+def fill_parent_populations(admin1_by_country: dict[str, list[dict[str, Any]]],
+                            admin2_by_country: dict[str, list[dict[str, Any]]]) -> list[str]:
+    """A first-level unit with no population, filled from all of its divisions.
+
+    Angola's Moxico is the case: its Wikidata figure was the province cut down
+    in 2024, on the old province's ground, and was left out; OCHA counts every
+    one of the nine municipalities the old province is drawn with. Only a
+    unit with nothing is filled, only when every division it holds carries a
+    population, and the record says it is a sum. Run after the compositions
+    are summed, so a sum is never the control it is checked against.
+    """
+    filled: list[str] = []
+    for iso3, parents in admin1_by_country.items():
+        if (iso3, "admin2") in PARTIAL_LEVELS:
+            continue
+        kids: dict[Any, list[dict[str, Any]]] = defaultdict(list)
+        for entity in admin2_by_country.get(iso3, []):
+            if not entity.get("water"):
+                kids[entity.get("parent")].append(entity)
+        for parent in parents:
+            pop = parent.get("population")
+            if not (isinstance(pop, dict) and pop.get("status") == NOT_AVAILABLE):
+                continue
+            children = kids.get(parent["id"], [])
+            values = [published(c.get("population")) for c in children]
+            if not children or any(v is None for v in values):
+                continue
+            years = {vintage(c.get("population")) for c in children}
+            year = years.pop() if len(years) == 1 and None not in years else None
+            names = ", ".join(sorted({str(c["population"].get("source") or "")[:60]
+                                      for c in children}))
+            parent["population"] = {
+                "value": int(round(sum(values))),
+                **({"year": year} if year else {}),
+                "source": f"summed from {len(children)} second-level divisions",
+                "note": (f"No figure is published for this unit that describes its "
+                         f"ground; this is the sum of all {len(children)} divisions "
+                         f"drawn inside it ({names})."
+                         + ("" if year else " They are not all counted in one year, "
+                            "so the sum carries no year.")
+                         + (" " + pop["note"] if pop.get("note") else ""))}
+            filled.append(f"{iso3} {parent['name']}")
+    return filled
+
+
+def fill_same_polygons(admin1_by_country: dict[str, list[dict[str, Any]]],
+                       admin2_by_country: dict[str, list[dict[str, Any]]]) -> int:
+    """A polygon drawn at both levels shows one unit's figures at both.
+
+    The boundary file draws some units at both levels under one id (see
+    bound()), and a source is joined to whichever copy it names. Montenegro's
+    municipalities carried their census counts on the first-level copy and,
+    on the second, a town's figure the settlement check had rightly refused;
+    Moldova's 37 districts, the Marshall Islands' atolls and Trinidad's
+    corporations were blank a level down while filled a level up. It is the
+    same polygon and the same unit, so the second-level copy takes what the
+    first holds wherever it holds nothing itself. Run after the sums, so what
+    is copied is what the first level finally shows.
+    """
+    filled = 0
+    for iso3, rows in admin2_by_country.items():
+        twins = {e["id"]: e for e in admin1_by_country.get(iso3, []) if e.get("id")}
+        for entity in rows:
+            twin = twins.get(entity.get("id"))
+            if twin is None or entity.get("water"):
+                continue
+            for field in sorted(VALUE_FIELDS):
+                if not is_gap(entity.get(field)) or is_gap(twin.get(field)) \
+                        or field not in twin:
+                    continue
+                entity[field] = copy.deepcopy(twin[field])
+                for suffix in SATELLITES:
+                    if f"{field}{suffix}" in twin:
+                        entity[f"{field}{suffix}"] = copy.deepcopy(twin[f"{field}{suffix}"])
+                    else:
+                        entity.pop(f"{field}{suffix}", None)
+                sources = entity.setdefault("sources", [])
+                sources[:] = [src for src in sources
+                              if not set(str(src.get("field") or "").split("/")) <= {field}]
+                sources.extend(src for src in twin.get("sources") or []
+                               if field in str(src.get("field") or "").split("/")
+                               and src not in sources)
+                filled += 1
+    return filled
 
 
 def roll_up_countries(admin0: list[dict[str, Any]],
@@ -2776,6 +3099,38 @@ def resolve_collisions(matched: list[tuple[dict[str, Any], dict[str, Any], str]]
     for (_, _level, _eid), idxs in claims.items():
         if len(idxs) < 2:
             continue
+        # A name borrowed is not a claim. Wikidata's local-language labels gave
+        # the town of Perito Moreno the alias "Lago Buenos Aires" and Villa de
+        # Pomán the alias "Pomán" -- the names of the departments they lie in
+        # -- and each tied with its department for the department's shape, so
+        # neither was kept and three Argentine departments went blank. Where
+        # one rival reached the shape only through an alias and another
+        # carries the shape's name as its own, the alias yields. Two rivals
+        # both named like the shape (the town of Andalgalá and Andalgalá
+        # Department) are untouched: that is the tie the ranking below exists
+        # for.
+        shape_name = str(matched[idxs[0]][1].get("name") or "")
+        # Own means the shape's whole name, at the start of the row's:
+        # "Pomán Department" is Pomán's, and "Maneh County" -- one of the two
+        # counties Maneh and Samalqan was split into -- is not the undivided
+        # county's, which the row whose alias is "Maneh and Samalqan County"
+        # describes.
+        own = [i for i in idxs if norm(matched[i][0].get("name")) == norm(shape_name)
+               or any(run_of(whole, theirs, at_start=True)
+                      for whole in name_forms(shape_name)
+                      for theirs in name_forms(matched[i][0].get("name")))]
+        borrowed = [i for i in idxs if i not in own and any(
+            norm(a) == norm(shape_name)
+            or related(name_forms(a), name_forms(shape_name))
+            for a in matched[i][0].get("aliases") or [])]
+        if own and borrowed:
+            dropped.update(borrowed)
+            notes.append(f"{shape_name!r}: refused "
+                         + ", ".join(str(matched[i][0].get("name"))[:24] for i in borrowed[:4])
+                         + " (reached it only by a name another row carries)")
+            idxs = [i for i in idxs if i not in borrowed]
+            if len(idxs) < 2:
+                continue
         ranked = sorted(idxs, key=lambda i: -evidence(matched[i][2]))
         best, runner = evidence(matched[ranked[0]][2]), evidence(matched[ranked[1]][2])
         # Two outright matches are one place listed twice only if they agree.
@@ -2988,6 +3343,44 @@ PARENT_BAND = (0.75, 1.33)
 NO_ROOM = 1.25
 
 
+def fall_back(entity: dict[str, Any], refused: dict[str, Any],
+              field: str = "population",
+              usable: Callable[[dict[str, Any]], bool] | None = None) -> bool:
+    """Put back a figure a fill-only file offered and Wikidata's figure held off.
+
+    Wikidata and Wikipedia both fill only gaps, and Wikidata comes first, so
+    Portugal's districts took their capitals' figures from Wikidata and the
+    district figures their own Wikipedia articles print were held back. When
+    a check refuses the figure in front, the first held one not from
+    Wikidata takes its place, saying what it replaced.
+    """
+    for held in (entity.get("_held") or {}).get(field, []):
+        value = held["value"]
+        if not published(value):
+            continue
+        # A figure whose row reached the shape by a fragment of its name was
+        # never evidence about this shape: "Severny District, Novosibirsk
+        # Oblast" reaches Novosibirsk by containing it, and its 7,319 people
+        # stood in for the city's 1.6 million.
+        if str(held.get("match") or "").split("+")[0] in ("prefix", "contains"):
+            continue
+        if usable is not None:
+            if not usable(held):
+                continue
+        elif str(value.get("source") or "").startswith("Wikidata"):
+            continue
+        # Every refusal ends "... is left out." and the one shown must say it
+        # is not the one refused: a note reading "left out" over a figure
+        # reads as that figure being the refused one.
+        entity[field] = {**value, "note": (
+            (value.get("note") + " " if value.get("note") else "")
+            + re.sub(r"\bleft out(?=\.?$)", "left out and this figure is shown instead",
+                     refused.get("note", "")))}
+        entity.setdefault("sources", []).extend(held["sources"])
+        return True
+    return False
+
+
 def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
                         admin2: dict[str, list[dict[str, Any]]]) -> int:
     """Take a Wikidata population off a district it cannot belong to."""
@@ -3033,6 +3426,7 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
                 + (f" ({pop['year']})" if pop.get("year") else "")
                 + f", which is {why}. It is probably {what} "
                   f"rather than this unit, so its figure is left out."))
+            fall_back(entity, entity["population"])
             refused += 1
     return refused
 
@@ -3104,6 +3498,10 @@ SETTLEMENT_CLASSES: dict[str, str] = {
     "Q1392581": "cycling city", "Q137547946": "Forest City",
 }
 ITEM_CLASSES = PROCESSED / "wikidata_admin2_item_classes.json"
+# Cities that are the unit drawn, where the shape's name does not say so. CGAZ
+# draws Novosibirsk's urban okrug, 26 by 44 km, the city's extent, as plain
+# "Novosibirsk", and Wikidata calls the city nothing but a city.
+SETTLEMENT_IS_THE_UNIT = frozenset({"Q883"})
 CITY_SHAPE = re.compile(r"\b(city|kota|ciudad|ville|shahar)\b", re.I)
 
 
@@ -3125,7 +3523,8 @@ def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
             kinds = classes.get(entity.get("wikidata") or "")
             if not kinds or not all(k in SETTLEMENT_CLASSES for k, _ in kinds):
                 continue
-            if CITY_SHAPE.search(entity.get("name") or ""):
+            if CITY_SHAPE.search(entity.get("name") or "") \
+                    or entity.get("wikidata") in SETTLEMENT_IS_THE_UNIT:
                 continue
             parent = parents.get(entity.get("parent"))
             above = published(parent.get("population")) if parent else None
@@ -3144,8 +3543,54 @@ def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
                 + (f" ({pop['year']})" if pop.get("year") else "")
                 + " are the settlement's people rather than this unit's, so the "
                   "figure is left out."))
+            fall_back(entity, entity["population"],
+                      usable=lambda held, item=entity.get("wikidata"):
+                      a_unit(held, item, classes))
             refused += 1
     return refused
+
+
+def a_unit(held: dict[str, Any], refused: str | None,
+           classes: dict[str, list[list[str]]]) -> bool:
+    """Whether a held figure is a unit's rather than another settlement's.
+
+    An item a country lists as its first-level division is a unit by
+    construction: that is what the first-level sweep asks Wikidata for. It
+    reaches a district only where the map draws the first level second --
+    Slovenia's municipality of Bovec behind the town of Bovec.
+    """
+    if held.get("wikidata") == refused:
+        return False
+    if held.get("file") == "wikidata_admin1.json":
+        return True
+    kinds = classes.get(held.get("wikidata") or "")
+    if kinds:
+        return not all(k in SETTLEMENT_CLASSES for k, _ in kinds)
+    return not str(held["value"].get("source") or "").startswith("Wikidata")
+
+
+def settle_outline_mixtures(admin2: dict[str, list[dict[str, Any]]]) -> int:
+    """No figures on a polygon measured to be part of one unit and part of another.
+
+    Named for what it holds, it can still take a row by name -- "Endola and
+    part of Omulonga" starts with Endola -- and that row describes other
+    ground. The polygon keeps the gap and says why, the way a lake does.
+    """
+    settled = 0
+    for rows in admin2.values():
+        for entity in rows:
+            # The measurement has done its work once the joins are made; the
+            # record keeps only what it says to a reader.
+            outline = entity.pop("outline", None) or {}
+            if outline.get("kind") != "mixed":
+                continue
+            note = outline_note(outline, outline.get("source") or "OCHA's outlines")
+            entity["note"] = note
+            entity.pop("adapter_hint", None)
+            for field in UNIT_FIELDS:
+                entity[field] = gap(NOT_AVAILABLE, note)
+            settled += 1
+    return settled
 
 
 # A figure from before any census could have counted the unit on the map is
@@ -3170,6 +3615,7 @@ def refuse_historic_figures(admin2: dict[str, list[dict[str, Any]]]) -> int:
                 f"The Wikidata item joined here by name gives {pop['value']:,} "
                 f"for the year {year}: a historical place of this name, not the "
                 f"unit on the map, so its figure is left out."))
+            fall_back(entity, entity["population"])
             refused += 1
     return refused
 
@@ -3243,6 +3689,7 @@ def refuse_capital_figures(admin1: dict[str, list[dict[str, Any]]],
                 + (f" ({pop['year']})" if pop.get("year") else "")
                 + f", {why}. It is probably the figure of the town or of a "
                   f"smaller unit rather than of this one, so it is left out."))
+            fall_back(parent, parent["population"])
             refused += 1
     return refused
 
@@ -3364,6 +3811,9 @@ def check_shape_gaps(admin1: dict[str, list[dict[str, Any]]],
 # where the administration also holds Central Macedonia's 1.8 million.
 SHAPE_IS_UNION_OF: dict[tuple[str, str], tuple[str | tuple[str, ...], ...]] = {
     ("NAM", "Kavango"): ("Kavango East", "Kavango West"),
+    # Eurostat counts Trentino-Alto Adige as its two autonomous provinces.
+    ("ITA", "Trentino-Alto Adige"): ("Provincia Autonoma di Bolzano/Bozen",
+                                     "Provincia Autonoma di Trento"),
     ("GRD", "Southern Grenadine Islands"): ("Carriacou Island", "Petite Martinique"),
     ("GRC", "Macedonia-Thrace"): (("Central Macedonia", "Kentriki Makedonia"),
                                   ("Eastern Macedonia and Thrace",
@@ -3494,10 +3944,20 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
     return pooled
 
 
-def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
+def outline_unions(adm2: list[dict[str, Any]]
+                   ) -> dict[tuple[str, str], tuple[str, ...]]:
+    """The unions relabel_from_outlines measured, in SHAPE_IS_UNION_OF's form."""
+    return {(r["group"], r["name"]): tuple(r["outline"]["parts"])
+            for r in adm2 if (r.get("outline") or {}).get("kind") == "union"}
+
+
+def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]],
+                         unions: dict[tuple[str, str], tuple[Any, ...]] | None = None
+                         ) -> list[str]:
     """Replace each declared union's parts with one row named for the shape."""
     done: list[str] = []
-    for (iso3, shape_name), parts in SHAPE_IS_UNION_OF.items():
+    for (iso3, shape_name), parts in (SHAPE_IS_UNION_OF if unions is None
+                                      else unions).items():
         rows = adapters.get(iso3, [])
         # Each part is known by its first spelling.
         part_names = tuple(spellings(p)[0] for p in parts)
@@ -3572,14 +4032,14 @@ def split_declared_rows(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
                     log(f"  split {iso3} {row_name} -> {target}: {src['_source']} "
                         f"publishes {target} itself, not copied")
                     continue
-                copy = estimate_from(src, target, iso3)
-                if copy is None:
+                made = estimate_from(src, target, iso3)
+                if made is None:
                     log(f"  split {iso3} {row_name} -> {target}: {src['_source']} "
                         f"carries nothing to copy")
                     continue
-                rows.append(copy)
+                rows.append(made)
                 done.append(f"{iso3} {target} from {row_name} ({src['_source']}): "
-                            + ", ".join(f for f in ROLLUP_FIELDS if f in copy))
+                            + ", ".join(f for f in ROLLUP_FIELDS if f in made))
     return done
 
 
@@ -3934,6 +4394,23 @@ NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
                          "the shape called Danau draws"),
 }
 
+# Countries whose boundary file draws their first level one level down: under
+# two cohesion regions, Slovenia's second level is its 212 municipalities;
+# under five macro-regions, Italy's is its 20 regions; Kosovo's, North
+# Macedonia's, Azerbaijan's and Lithuania's are their municipalities and
+# districts. Wikidata's first level for each is those same units, and with
+# nowhere to land they were lost while the towns named like them were joined
+# instead -- 142 of Slovenia's municipalities and 12 of Italy's regions had no
+# population. A first-level row that finds no first-level shape here is
+# joined one level down, by its own name or alias only: a prefix or
+# containment match one level off is two guesses stacked.
+#
+# Declared, not inferred. Measured on 24 September 2026 across every country,
+# the same join elsewhere puts Costa Rica's province of San José on the canton
+# of San José, Stockholm County on Stockholm Municipality and Mali's regions of
+# 2016 on the cercles they are named after: a unit on its capital's ground.
+FIRST_LEVEL_DRAWN_SECOND = frozenset({"SVN", "ITA", "XKX", "MKD", "AZE", "LTU"})
+
 PLACED: dict[tuple[str, str], str] = {
     ("BLR", "Q2280"): "Minsk City",
     ("BLR", "Q192959"): "Minsk",
@@ -4261,7 +4738,8 @@ def main() -> int:
     countries = primary_country_profiles(country_profiles)
     cities = read_json(PROCESSED / "cities.json", {"by_country": {}, "by_admin1": {}})
     adapters = load_adapters()
-    for line in pool_declared_unions(adapters):
+    for line in pool_declared_unions(
+            adapters, {**SHAPE_IS_UNION_OF, **outline_unions(shapes.get("ADM2", []))}):
         log(f"  union pooled: {line}")
     for line in split_declared_rows(adapters):
         log(f"  split written as estimates: {line}")
@@ -4369,6 +4847,8 @@ def main() -> int:
         entity = blank(shape, "admin2", shape.get("parent_shape") or iso3)
         mark_disputed_or_hint(entity, iso3)
         mark_water(entity, iso3)
+        if shape.get("outline"):
+            entity["outline"] = shape["outline"]
         admin2_by_country[iso3].append(entity)
 
     # -- adapters override both levels --------------------------------------
@@ -4558,6 +5038,11 @@ def main() -> int:
                         and isinstance(code, str) and code):
                     deferred.append((row, key))
                     continue
+                if entity is None and iso3 in FIRST_LEVEL_DRAWN_SECOND:
+                    below, kind = match_admin2({**key, "parent_name": None},
+                                               a2, a1, a1_exact)
+                    if below is not None and kind in ("name", "alias"):
+                        entity, how = below, f"{kind}+one level down"
             else:
                 entity, how = match_admin2(key, a2, a1, a1_exact)
             if entity is None:
@@ -4580,6 +5065,7 @@ def main() -> int:
                     f"{entity.get('name')!r} ({verdict})")
             if i in dropped:
                 continue
+            row["_match"] = how
             merge_adapter(entity, row)
             entity["match"] = f"adapter:{how}"
             hit += 1
@@ -4661,6 +5147,10 @@ def main() -> int:
     # -- a town's figure on a district --------------------------------------
     # After every adapter, so the parent's population is the one it will
     # keep; before anything sums or weighs by these figures.
+    mixtures = settle_outline_mixtures(admin2_by_country)
+    if mixtures:
+        log(f"  {mixtures} polygons measured as mixtures of constituencies left "
+            f"without figures")
     settlements = refuse_settlement_figures(admin1_by_country, admin2_by_country,
                                             read_json(ITEM_CLASSES, {}) or {})
     if settlements:
@@ -4677,6 +5167,18 @@ def main() -> int:
     if towns:
         log(f"  {towns} Wikidata district figures left out as a town's, not "
             f"the district's")
+    fell_back = 0
+    for table in (admin1_by_country, admin2_by_country):
+        for rows in table.values():
+            for entity in rows:
+                entity.pop("_from", None)
+                entity.pop("_how", None)
+                held = entity.pop("_held", None)
+                if held and isinstance(entity.get("population"), dict) \
+                        and "shown instead" in str(entity["population"].get("note") or ""):
+                    fell_back += 1
+    if fell_back:
+        log(f"  {fell_back} refused figures replaced by the next source's")
 
     # -- the shape-gap table is a promise, so check it -----------------------
     # Here rather than at declaration time: it is a claim about what the join
@@ -4703,6 +5205,16 @@ def main() -> int:
     # ask the question has no children to sum, and must not be given a figure by
     # a later pass that only looks at arithmetic.
     roll_up_parents(admin1_by_country, admin2_by_country)
+    # After the compositions are summed, so a sum is never their control.
+    summed_up = fill_parent_populations(admin1_by_country, admin2_by_country)
+    if summed_up:
+        log(f"  {len(summed_up)} first-level populations filled from all their "
+            f"divisions: " + ", ".join(summed_up[:12])
+            + (" ..." if len(summed_up) > 12 else ""))
+    twinned = fill_same_polygons(admin1_by_country, admin2_by_country)
+    if twinned:
+        log(f"  {twinned} second-level fields filled from the same polygon "
+            f"drawn a level up")
     # After the level below, so a first-level unit that was itself summed can
     # carry into its country -- and so the country's note counts the divisions
     # as they finally stand rather than as they arrived.

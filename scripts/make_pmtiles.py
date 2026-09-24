@@ -116,6 +116,51 @@ def to_tile_space(geometry: Any, z: int, x: int, y: int) -> Any:
     return transform(project, geometry)
 
 
+def coalesce_small(features: list[dict[str, Any]], min_area_deg: float
+                   ) -> list[dict[str, Any]]:
+    """Fold each feature too small for this zoom into its nearest large neighbour.
+
+    Dropping them left holes. A zoomed-out map pinned to second-level
+    divisions lost all but 15 of Romania's 3,235 communes at zoom 2 and
+    four in five at zoom 3, and the ground they cover showed as background --
+    blank patches wherever units are small and many, which is exactly where
+    the level is most detailed. Folded into the nearest unit of the same
+    country that is large enough to draw, the ground stays covered and takes
+    that unit's colour until the zoom at which it is drawn on its own -- what
+    tippecanoe's --coalesce-densest-as-needed does on the other build path.
+    A country with nothing large enough keeps its largest few as hosts.
+    """
+    from shapely import STRtree
+    from shapely.ops import unary_union
+
+    by_group: dict[Any, list[int]] = defaultdict(list)
+    for i, feature in enumerate(features):
+        by_group[feature["properties"].get("shapeGroup")].append(i)
+    out: list[dict[str, Any]] = []
+    for idxs in by_group.values():
+        big = [i for i in idxs if features[i]["geometry"].area >= min_area_deg]
+        if not big:
+            ranked = sorted(idxs, key=lambda i: -features[i]["geometry"].area)
+            big = ranked[:max(1, len(idxs) // 50)]
+        hosts = set(big)
+        small = [i for i in idxs if i not in hosts]
+        folded: dict[int, list[Any]] = defaultdict(list)
+        if small:
+            tree = STRtree([features[i]["geometry"] for i in big])
+            for i in small:
+                nearest = tree.query_nearest(features[i]["geometry"])
+                folded[big[int(nearest[0])]].append(features[i]["geometry"])
+        for i in big:
+            geometry = features[i]["geometry"]
+            if folded.get(i):
+                try:
+                    geometry = unary_union([geometry, *folded[i]])
+                except Exception:
+                    geometry = unary_union([g.buffer(0) for g in (geometry, *folded[i])])
+            out.append({"geometry": geometry, "properties": features[i]["properties"]})
+    return out
+
+
 def _tiles_for_zoom(features: list[dict[str, Any]], layer_name: str, zoom: int,
                     maxzoom: int, min_area_px: float) -> dict[tuple[int, int, int], bytes]:
     """Encode every non-empty tile at one zoom level."""
@@ -124,15 +169,14 @@ def _tiles_for_zoom(features: list[dict[str, Any]], layer_name: str, zoom: int,
 
     started = time.time()
     n = 2 ** zoom
-    # Dropping sub-pixel features keeps low zooms small without changing what
-    # the viewer can actually see.
+    # Folding sub-pixel features into a neighbour keeps low zooms small without
+    # leaving holes where they were.
     min_area_deg = (360.0 / n / EXTENT) ** 2 * min_area_px * (EXTENT / 256.0) ** 2
 
     buckets: dict[tuple[int, int], list[dict[str, Any]]] = defaultdict(list)
-    for feature in features:
+    drawn = coalesce_small(features, min_area_deg) if zoom < maxzoom else features
+    for feature in drawn:
         geometry = simplify_for_zoom(feature["geometry"], zoom)
-        if zoom < maxzoom and geometry.area < min_area_deg:
-            continue
         west, south, east, north = geometry.bounds
         x0, y0 = lonlat_to_tile(west, north, zoom)
         x1, y1 = lonlat_to_tile(east, south, zoom)

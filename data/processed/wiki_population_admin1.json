@@ -3279,6 +3279,51 @@
     "match_by": "shape_id"
   },
   {
+    "id": "CUB-WP-sancti-spiritus",
+    "level": "admin1",
+    "name": "Sancti Spiritus",
+    "parent": "CUB",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 459173,
+      "unit": "people",
+      "year": 2022,
+      "source": "English Wikipedia, Sancti Spíritus Province (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sancti_Sp%C3%ADritus_Province",
+        "year": 2022,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "CUB",
+    "shape_id": "62585838B35888323934872",
+    "match_by": "shape_id"
+  },
+  {
     "id": "DJI-WP-ali-sabieh",
     "level": "admin1",
     "name": "Ali Sabieh",
@@ -16898,6 +16943,50 @@
     "match_by": "shape_id"
   },
   {
+    "id": "PRT-WP-aveiro",
+    "level": "admin1",
+    "name": "AVEIRO",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 713578,
+      "unit": "people",
+      "source": "English Wikipedia, Aveiro District (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Aveiro_District",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B60132865756536",
+    "match_by": "shape_id"
+  },
+  {
     "id": "PRT-WP-beja",
     "level": "admin1",
     "name": "BEJA",
@@ -16943,6 +17032,316 @@
     "match_by": "shape_id"
   },
   {
+    "id": "PRT-WP-braga",
+    "level": "admin1",
+    "name": "BRAGA",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 831368,
+      "unit": "people",
+      "source": "English Wikipedia, Braga District (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Braga_District",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B56624562889325",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PRT-WP-bragança",
+    "level": "admin1",
+    "name": "BRAGANÇA",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 136252,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Bragança District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bragan%C3%A7a_District",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B95387288640341",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PRT-WP-castelo-branco",
+    "level": "admin1",
+    "name": "CASTELO BRANCO",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 225916,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Castelo Branco District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Castelo_Branco_District",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B65070061461907",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PRT-WP-coimbra",
+    "level": "admin1",
+    "name": "COIMBRA",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 441245,
+      "unit": "people",
+      "source": "English Wikipedia, Coimbra District (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Coimbra_District",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B78831183552196",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PRT-WP-faro",
+    "level": "admin1",
+    "name": "FARO",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 458734,
+      "unit": "people",
+      "source": "English Wikipedia, Faro District (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Faro_District",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B93513210668499",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PRT-WP-guarda",
+    "level": "admin1",
+    "name": "GUARDA",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 173716,
+      "unit": "people",
+      "source": "English Wikipedia, Guarda District (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Guarda_District",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B16214435525429",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PRT-WP-leiria",
+    "level": "admin1",
+    "name": "LEIRIA",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 470930,
+      "unit": "people",
+      "source": "English Wikipedia, Leiria District (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Leiria_District",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B48064919479677",
+    "match_by": "shape_id"
+  },
+  {
     "id": "PRT-WP-lisboa",
     "level": "admin1",
     "name": "LISBOA",
@@ -16984,6 +17383,272 @@
     ],
     "country": "PRT",
     "shape_id": "24955722B70468072404853",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PRT-WP-portalegre",
+    "level": "admin1",
+    "name": "PORTALEGRE",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 104989,
+      "unit": "people",
+      "source": "English Wikipedia, Portalegre District (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Portalegre_District",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B4222884881176",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PRT-WP-santarém",
+    "level": "admin1",
+    "name": "SANTARÉM",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 475344,
+      "unit": "people",
+      "source": "English Wikipedia, Santarém District (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Santar%C3%A9m_District",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B7740823350033",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PRT-WP-setúbal",
+    "level": "admin1",
+    "name": "SETÚBAL",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 887928,
+      "unit": "people",
+      "source": "English Wikipedia, Setúbal District (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Set%C3%BAbal_District",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B80201627987226",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PRT-WP-viana-do-castelo",
+    "level": "admin1",
+    "name": "VIANA DO CASTELO",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 252011,
+      "unit": "people",
+      "year": 2006,
+      "source": "English Wikipedia, Viana do Castelo District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Viana_do_Castelo_District",
+        "year": 2006,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B13525102878781",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PRT-WP-vila-real",
+    "level": "admin1",
+    "name": "VILA REAL",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 206661,
+      "unit": "people",
+      "year": 2011,
+      "source": "English Wikipedia, Vila Real District (infobox)"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Vila_Real_District",
+        "year": 2011,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B72875804367268",
+    "match_by": "shape_id"
+  },
+  {
+    "id": "PRT-WP-viseu",
+    "level": "admin1",
+    "name": "VISEU",
+    "parent": "PRT",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 394927,
+      "unit": "people",
+      "source": "English Wikipedia, Viseu District (infobox); the article gives no year for the figure"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population",
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Viseu_District",
+        "year": null,
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "country": "PRT",
+    "shape_id": "24955722B86486174875848",
     "match_by": "shape_id"
   },
   {

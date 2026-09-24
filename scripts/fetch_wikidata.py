@@ -855,6 +855,9 @@ def main() -> int:
     ap.add_argument("--hydrate", action="store_true",
                     help="fill population and coordinates for rows already in "
                          "the file that lack them, looked up by id")
+    ap.add_argument("--qids", nargs="*", default=None,
+                    help="with --hydrate: ask for these items rather than the "
+                         "ones the built site shows blank")
     ap.add_argument("--item-classes", action="store_true",
                     help="record what every item giving the level a population "
                          "is an instance of, for the build's town check")
@@ -872,7 +875,8 @@ def main() -> int:
                       args.countries, args.sleep, args.budget, args.level)
     if args.hydrate:
         return hydrate(args.out or PROCESSED / f"wikidata_{args.level}.json",
-                       args.countries, args.sleep, args.budget, args.level)
+                       args.countries, args.sleep, args.budget, args.level,
+                       qids=set(args.qids) if args.qids else None)
 
     # Before any network work: a light run that would overwrite a country
     # already answered in full is refused here rather than after forty
