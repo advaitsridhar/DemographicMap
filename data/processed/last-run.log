@@ -1,443 +1,592 @@
-  BOL bol_admpop_2022.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Bolivia
-      sheet 'bol_admpop_adm0_2022'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2022 | BOL | Bolivia (Plurinational State of) | BO | 5982830 | 6023201 | 12006031 | 578698 | 575546 | 573376 | 561678 | 536721 | 498015 | 449368 | 401178 | 352896 | 304799 | 258768 | 217533 | 182505 | 152349 | 124971 | 94391 | 120038 | 605485 | 600828 | 598215 | 584763 | 555170 | 510401 | 456309 | 4
-      sheet 'bol_admpop_adm1_2022'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_ES | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 
-        2022 | BOL | Bolivia (Plurinational State of) | BO | Beni | BO08 | 250914 | 265424 | 516338 | 31575 | 29836 | 28940 | 27198 | 23400 | 19739 | 17600 | 15125 | 12489 | 10497 | 8823 | 7045 | 5685 | 4385 | 3435 | 2380 | 2762 | 32988 | 31112 | 30262 | 28878 | 25480 | 21293 | 18294 | 15577 | 12847 | 11043
-      sheet 'Explanatory Technical Notes'
-        Explanatory Technical Note - Bolivia COD-PS, Update Year 2022 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Growth rates since last census'
-        ADM_1 | F_census | M_census | F_TL | M_TL | pgr_f | pgr_m | pgr_t |  | country | Year | PGR_WPP |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Beni | 208173 | 222639 | 250914 | 265424 | 1.87 | 1.76 | 1.81 |  | Bolivia (Plurinational State of) | 2000-2005 | 1.846 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Figure 1'
-        Age | WPP_ADM0_F | WPP_ADM0_M | NSO_ADM0_F | NSO_ADM0_M | F_NSO_minus_WPP | M_NSO_minus_WPP | F_NSO_minus_WPP_pct | M_NSO_minus_WPP_pct |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        0-4 | 580480 | -606830 | 578698 | -605485 | -1782 | -1345 | -0.306987320837927 | -0.221643623420068 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Figure 2'
-        
-        
-  CUB cub_admpop_2024.xlsx
-      sheet 'Metadata'
-        Item
-        Country
-      sheet 'Methodological Documentation'
-        Item
-        Methodology Used
-      sheet 'cub_admpop_adm0_2024'
-        Year
-        2024
-      sheet 'cub_admpop_adm1_2024'
-        Year
-        2024
-  CUB cub_adm_gazetteer.xlsx
-      sheet 'cub_adm0_table'
-        ADM0_ES | ADM0_PCODE
-        Cuba | CU
-      sheet 'cub_adm1_table'
-        NAME_0 | ADM0_PCODE | ADM1_PCODE | ADM1_ES | ADM2_REF
-        Cuba | CU | CU01 | Artemisa | Artemisa
-      sheet 'cub_adm2_table'
-        ADM0_PCODE | ADM0_ES | ADM1_PCODE | ADM1_ES | ADM1_REF | ADM2_PCODE | ADM2_ES | ADM2_REF
-        CU | Cuba | CU01 | Artemisa | Artemisa | CU0101 | Alquízar | Alquizar
-  ECU ecu_admpop_2020.xlsx
-      sheet 'Metadata'
-         |  |  | 
-         | Data |  | 
-      sheet 'ecu_admpop_adm0_2020'
-        ADM0_EN | ADM0_PCODE | Year | F_TL | M_TL | T_TL | F_00_00 | F_01_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_00 | M_01_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 
-        Ecuador | EC | 2020 | 8844706 | 8665937 | 17510643 | 161825 | 648654 | 819824 | 821990 | 792554 | 747429 | 696924 | 650318 | 610269 | 560752 | 497756 | 436131 | 377087 | 312829 | 247250 | 187189 | 132595 | 143330 | 169314 | 678322 | 856711 | 860321 | 826644 | 768332 | 700288 | 636841 | 579027 | 5162
-      sheet 'ecu_admpop_adm1_2020'
-        ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | Year | F_TL | M_TL | T_TL | F_00_00 | F_01_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_00 | M_01_04 | M_05_09 | M_10_14 | M_15_
-        Ecuador | EC | AZUAY | EC01 | 2020 | 459159 | 422235 | 881394 | 7900 | 31725 | 40208 | 38929 | 39010 | 39482 | 38884 | 36273 | 32571 | 28512 | 24824 | 21962 | 19339 | 16429 | 13479 | 10873 | 8351 | 10408 | 7900 | 31721 | 40312 | 40326 | 40061 | 40552 | 39627 | 35590 | 29775 | 23939 | 19465 | 16552 |
-  EGY egypt_population_estimate_compas_2012_v1.1_0_fis_v2.xlsx
-      sheet 'Adm1'
-        ADM0_PCODE | ADM0_EN | ADM0_AR | ADM1_PCODE | ADM1_EN | ADM1_AR | Governorate_Code | M_TL | F_TL | T_TL
-        EG | Egypt | مِصر | EG01 | Cairo | القاهرة | 1 | 4453589 | 4308914 | 8762503
-  HUN hun_admpop_2022_v01.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Hungary
-      sheet 'hun_admpop_adm02022_v01'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80_84 | F_85_89 | F_90_94 | F_95_99 | F_100Plus | M_00_04 | M_05_09 | M_10_14 | 
-        2022 | HUN | Hungary | HU | 5062651 | 4681030 | 9743681 | 223936 | 227805 | 233902 | 240998 | 250717 | 293909 | 302604 | 303488 | 375813 | 403162 | 350563 | 294461 | 317124 | 378219 | 311499 | 235585 | 170155 | 96841 | 38992 | 10533 | 2345 | 237184 | 241510 | 246353 | 255575 | 269340 | 314865 | 3261
-      sheet 'hun_admpop_adm1_2022_v01'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_HU | ADM1_PCODE | EU_NUTS3 | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80_84 | F_85_89 | F_90_94 | F_95_99 | F_100Plu
-        2022 | HUN | Hungary | HU | Budapest | HU005 | HU110 | 931631 | 832782 | 1764413 | 38091 | 38137 | 38347 | 36382 | 44530 | 59955 | 67882 | 66606 | 75578 | 74945 | 62013 | 48021 | 48256 | 66316 | 56884 | 48059 | 31499 | 18388 | 8574 | 2546 | 622 | 40816 | 40599 | 40673 | 38617 | 46454 | 59233 | 67720
-      sheet 'Comparison_Eurostat ADM0 vs WPP'
-        Age | WPP_ADM0_F | WPP_ADM0_M | Eurostat_ADM0_F | Eurostat_ADM0_M | F_Eurostat_minus_WPP | M_Eurostat_minus_WPP | F_Eurostat_minus_WPP_pct | M_Eurostat_minus_WPP_pct |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        0-4 | 227671 | -240968 | 223936 | -237184 | -3735 | -3784 | -1.64052514373811 | -1.57033299027257 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Comparison_Eurostat ADM1 vs WPP'
-        
-        
-  IRQ IRQ_admpop_2021.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Iraq
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | Cohort component method was applied to the baseline population, the 1997 census.
-      sheet 'IRQ_admpop_adm0_2021'
-        year | ISO3 | ADM0_NAME | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 |
-        2021 | IRQ | Iraq | IQ | 20380179 | 20810479 | 41190658 | 2941036 | 2725741 | 2415762 | 2145237 | 1830376 | 1512480 | 1401709 | 1224044 | 1109441 | 833121 | 594087 | 567550 | 408222 | 256125 | 161417 | 101806 | 152025 | 3102589 | 2895522 | 2587746 | 2270496 | 1983301 | 1555562 | 1362110 | 1161001 | 
-      sheet 'IRQ_admpop_adm1_2021'
-        year | ISO3 | ADM0_NAME | ADM0_PCODE | ADM1_NAME | ADM1_AR | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15
-        2021 | IRQ | Iraq | IQ | Al-Anbar | الانبار | IQG01 | 930779 | 983386 | 1914165 | 149063 | 121979 | 115474 | 108931 | 87320 | 67968 | 61730 | 51818 | 47448 | 35188 | 24264 | 22088 | 16113 | 8135 | 5571 | 3016 | 4673 | 156549 | 138673 | 126821 | 117338 | 100504 | 73369 | 60749 | 51141 | 46284 | 34054
-  JAM jam_adm_pop.xlsx
-      sheet 'jam_adm0_pop'
-        ADM0_EN | ADM0_PCODE | T | F | M | T_00_04 | T_05_09 | T_10_14 | T_15_19 | T_20_24 | T_25_29 | T_30_34 | T_35_39 | T_40_44 | T_45_49 | T_50_54 | T_55_59 | T_60_64 | T_65PLUS | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60
-        Jamaica | JM | 2697983 | 1363450 | 1334533 | 209871 | 226380 | 266589 | 274660 | 250713 | 226119 | 185496 | 183756 | 173924 | 155389 | 137895 | 100798 | 88057 | 218338 | 103763 | 111586 | 130405 | 134882 | 125470 | 116200 | 97685 | 97109 | 88268 | 76188 | 70598 | 50081 | 43650 | 117565 | 106107 | 11
-      sheet 'jam_adm1_pop'
-        ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | T | F | M | T_00_04 | T_05_09 | T_10_14 | T_15_19 | T_20_24 | T_25_29 | T_30_34 | T_35_39 | T_40_44 | T_45_49 | T_50_54 | T_55_59 | T_60_64 | T_65PLUS | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F
-        Jamaica | JM | Clarendon | JM01 | 245103 | 121312 | 123791 | 20519 | 22770 | 26874 | 26821 | 21719 | 18511 | 15921 | 15146 | 14750 | 12908 | 11845 | 8944 | 7611 | 20764 | 10130 | 11290 | 13092 | 13119 | 10476 | 9435 | 8172 | 7585 | 7833 | 6217 | 5827 | 4230 | 3460 | 10446 | 10389 | 11480 | 13782 | 1
-  JAM jam_adm.xlsx
-      sheet 'jam_adm0'
-        ADM0_EN | ADM0_PCODE
-        Jamaica | JM
-      sheet 'jam_adm1'
-        ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE
-        Jamaica | JM | Clarendon | JM01
-  KHM khm_admpop_2024.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Cambodia
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | The cohort component method was applied to the 2019 census to project the national population. In the absence of reliable internal migration data, the National Statistical Office used the ratio method to build subnational projections at the ADM-1 level from the national projection
-      sheet 'khm_admpop_adm0_2024'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2024 | KHM | Cambodia | KH | 8852561 | 8483749 | 17336307 | 778987 | 754729 | 740841 | 828511 | 718990 | 661624 | 749610 | 684085 | 676840 | 394933 | 415968 | 387937 | 345090 | 272308 | 202331 | 127320 | 112457 | 815979 | 790739 | 775309 | 866580 | 728890 | 626866 | 715965 | 655180 | 660646 | 374024
-      sheet 'khm_admpop_adm1_2024'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 
-        2024 | KHM | Cambodia | KH | Banteay Meanchey | KH01 | 481270 | 479485 | 960752 | 41049 | 43074 | 41089 | 46256 | 39107 | 36301 | 42390 | 35955 | 36513 | 20629 | 22685 | 22547 | 18938 | 14297 | 9682 | 6017 | 4741 | 43991 | 45524 | 43169 | 48364 | 41872 | 35938 | 42428 | 36064 | 37015 | 20165 | 21535
-  KHM khm_admgz_2018.xlsx
-      sheet 'ADM0'
-        ADM0_EN | ADM0_PCODE | ADM0_REF | ADM0ALT1_EN | ADM0ALT2_EN | AREA_SQKM
-        Cambodia | KH |  |  |  | 179127.25
-      sheet 'ADM1'
-        ADM1_EN | ADM1_PCODE | ADM1_REF | ADM1ALT1_EN | ADM1ALT2_EN | ADM0_EN | ADM0_PCODE | AREA_SQKM
-        Banteay Meanchey | KH01 |  |  |  | Cambodia | KH | 6145.9365234375
-      sheet 'ADM2'
-        ADM2_EN | ADM2_PCODE | ADM2_REF | ADM2ALT1_EN | ADM2ALT2_EN | ADM1_EN | ADM1_PCODE | ADM0_EN | ADM0_PCODE | AREA_SQKM
-        Aek Phnum | KH0205 |  |  |  | Battambang | KH02 | Cambodia | KH | 1067.866333007812
-      sheet 'ADM3'
-        ADM3_EN | ADM3_PCODE | ADM3_REF | ADM3ALT1_EN | ADM3ALT2_EN | ADM2_EN | ADM2_PCODE | ADM1_EN | ADM1_PCODE | ADM0_EN | ADM0_PCODE | AREA_SQKM
-        A Buon Leu | KH110202 |  |  |  | Kaoh Nheaek | KH1102 | Mondul Kiri | KH11 | Cambodia | KH | 653.4503173828125
-  KHM khm_admpop_2023.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Cambodia
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | The cohort component method was applied to the 2019 census. In the absence of reliable internal migration data, the NSO used the ratio method to build subnational projections at the ADM-1 level from the national projection.
-      sheet 'khm_admpop_adm0_2023'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2023 | KHM | Cambodia | KH | 8736016 | 8355434 | 17091476 | 746561 | 785052 | 754320 | 820621 | 697768 | 674297 | 746940 | 685268 | 632716 | 377067 | 418601 | 382131 | 334456 | 261041 | 191301 | 118920 | 108956 | 781650 | 822782 | 790028 | 856062 | 698620 | 636588 | 714504 | 659062 | 617161 | 355198
-      sheet 'khm_admpop_adm1_2023'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 
-        2023 | KHM | Cambodia | KH | Banteay Meanchey | KH01 | 474954 | 472234 | 947186 | 39307 | 44767 | 41800 | 45777 | 37936 | 36970 | 42203 | 35982 | 34102 | 19679 | 22811 | 22191 | 18372 | 13708 | 9144 | 5616 | 4589 | 42133 | 47361 | 43980 | 47768 | 40124 | 36487 | 42331 | 36268 | 34568 | 19143 | 21384
-  LCA lca_adm_gazetteer.xlsx
-      sheet 'lca_gaz_adm0'
-        ADM0_EN | ADM0_PCODE
-        Saint Lucia | LC
-      sheet 'lca_gaz_adm1'
-        ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE
-        Saint Lucia | LC | Anse La Raye | LC04
-      sheet 'lca_gaz_adm2'
-        ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | ADM2_EN | ADM2_PCODE | SETTLECODE
-        Saint Lucia | LC | Anse La Raye | LC04 | Au Tabor | LC04040020000 | 40020000
-  LCA lca_admpop_2010.xlsx
-      sheet 'lca_pop_adm0'
-        ADM0_EN | ADM0_PCODE | T_00_04 | T_05_09 | T_10_14 | T_15_19 | T_20_24 | T_25_29 | T_30_34 | T_35_39 | T_40_44 | T_45_49 | T_50_54 | T_55_59 | T_60_64 | T_64_69 | T_70_74 | T_75_79 | T_80plus | T_ALL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 
-        Saint Lucia | LC | 12613 | 14479 | 15403 | 14359 | 13262 | 12544 | 12337 | 12359 | 11468 | 9854 | 7513 | 5954 | 4832 | 3961 | 2841 | 3299 | 8512 | 165590 | 6168 | 7206 | 7438 | 7186 | 6733 | 6270 | 6205 | 6364 | 5689 | 4923 | 3756 | 3035 | 2539 | 2018 | 1548 | 1943 | 51528 | 36183 | 6445 | 7273 | 79
-      sheet 'lca_pop_adm1'
-        ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | T_00_04 | T_05_09 | T_10_14 | T_15_19 | T_20_24 | T_25_29 | T_30_34 | T_35_39 | T_40_44 | T_45_49 | T_50_54 | T_55_59 | T_60_64 | T_64_69 | T_70_74 | T_75_79 | T_80plus | T_ALL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_
-        Saint Lucia | LC | Anse La Raye | LC04 | 562 | 674 | 609 | 565 | 503 | 436 | 459 | 470 | 382 | 294 | 194 | 180 | 149 | 130 | 100 | 154 | 493 | 6354 | 289 | 317 | 280 | 280 | 242 | 207 | 236 | 223 | 175 | 147 | 87 | 84 | 79 | 66 | 47 | 88 | 3086 | 239 | 273 | 357 | 329 | 285 | 261 | 229 | 223 | 247 |
-  PAN pan_admgz.xlsx
-      sheet 'Admin3'
-        admin3Name_es | admin3Pcode | admin3RefName | admin3AltName1_es | admin3AltName2_es | admin2Name_es | admin2Pcode | admin1Name_es | admin1Pcode | admin0Name_es | admin0Pcode | Shape_Length | Shape_Area |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Bastimentos | PA010101 | <Null> | <Null> | <Null> | Bocas del Toro | PA0101 | Bocas del Toro | PA01 | Panamá | PA | 1.708818 | 0.005259 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Admin2'
-        admin2Name_es | admin2Pcode | admin2RefName | admin2AltName1_es | admin2AltName2_es | admin1Name_es | admin1Pcode | admin0Name_es | admin0Pcode | Shape_Length | Shape_Area |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Bocas del Toro | PA0101 | <Null> | <Null> | <Null> | Bocas del Toro | PA01 | Panamá | PA | 6.9017 | 0.036761 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Admin1'
-        admin1Name_es | admin1Pcode | admin1RefName | admin1AltName1_es | admin1AltName2_es | admin0Name_es | admin0Pcode | Shape_Length | Shape_Area |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Bocas del Toro | PA01 | <Null> | <Null> | <Null> | Panamá | PA | 11.866894 | 0.384655 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Admin0'
-        Shape_Length | Shape_Area | admin0Name_es | admin0Pcode | admin0RefName | admin0AltName1_es | admin0AltName2_es |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        75.846596 | 6.167954 | Panamá | PA | Panama | <Null> | <Null> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-  PAN pan_admpop_2023.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Panama
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | This COD-PS is based on the 2023 population census of Panama.
-      sheet 'pan_admpop_adm0_2023'
-        year | ISO3 | ADM0_NAME | ADM0_PCODE | ADM1_NAME | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80_84 | F_85_89 | F_90_94 | F_95_99 | F_100Plus | M_0
-        2023 | PAN | Panama | PA | Veraguas | PA13 | 2049918 | 2014527 | 4064445 | 158691 | 175612 | 172041 | 160343 | 160729 | 157190 | 150936 | 142704 | 133726 | 122557 | 117509 | 101675 | 84770 | 66836 | 52712 | 39143 | 25935 | 15889 | 7584 | 2673 | 663 | 163758 | 182268 | 180606 | 167952 | 163615 | 1537
-      sheet 'pan_admpop_adm1_2023'
-        year | ISO3 | ADM0_NAME | ADM0_PCODE | ADM1_NAME | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80_84 | F_85_89 | F_90_94 | F_95_99 | F_100Plus | M_0
-        2023 | PAN | Panama | PA | Bocas del Toro | PA01 | 79290 | 79938 | 159228 | 10260 | 10251 | 9319 | 8276 | 7050 | 6129 | 5402 | 4856 | 3906 | 3395 | 2983 | 2320 | 1787 | 1297 | 937 | 552 | 317 | 158 | 72 | 17 | 6 | 10806 | 10597 | 9905 | 8425 | 6738 | 5366 | 4502 | 4399 | 3869 | 3375 | 3011 | 2408 | 
-  QAT qat_admpop_2020.xlsx
-      sheet 'Metadata'
-        Item | Metadata |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Country | Qatar |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'qat_admpop_adm0_2020'
-        year | ISO3 | ADM0_EN | ADM0_AR | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2020 | QAT | Qatar | قطر | QAT | 811600 | 2034518 | 2846118 | 79380 | 77665 | 62919 | 46399 | 46506 | 91359 | 117140 | 98223 | 72413 | 45936 | 29712 | 18655 | 11762 | 6281 | 3389 | 3861 | 82805 | 80716 | 65829 | 50657 | 157399 | 308692 | 372192 | 330722 | 232389 | 152937 | 96671 | 53734 | 28580 | 11
-      sheet 'qat_admpop_adm1_2020'
-        year | ISO3 | ADM0_EN | ADM0_AR | ADM0_PCODE | ADM1_PCODE | ADM1_EN | ADM1_AR | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 
-        2020 | QAT | Qatar | قطر | QAT | QAT002 | Al Khor and Al Thakhira Municipality | بلدية الخور و الذخيرة | 27510 | 112943 | 140453 | 2753 | 2935 | 2630 | 1861 | 1559 | 2606 | 3358 | 3195 | 2649 | 1755 | 1049 | 536 | 300 | 140 | 84 | 100 | 2990 | 3244 | 2746 | 2200 | 8829 | 16612 | 20435 | 20731 | 1395
-      sheet 'Explanatory Technical Note'
-        Explanatory Technical Note - Qatar COD-PS, 2022 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Growth rates since last census'
-        ADM_1 | F_census | M_census | F_TL | M_TL | pgr_f | pgr_m | pgr_t |  | country | Year | PGR_WPP |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Al Khor and Al Thakhira | 21031 | 181000 | 27510 | 112943 | 5.37 | -9.43 | -2.03 |  | Qatar | 2015 | 8.277 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Figure 1'
-        Age | WPP_ADM0_F | WPP_ADM0_M | NSO_ADM0_F | NSO_ADM0_M | F_NSO_minus_WPP | M_NSO_minus_WPP | F_NSO_minus_WPP_pct | M_NSO_minus_WPP_pct |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        0-4 | 74235 | -77409 | 79380 | -82805 | 5145 | 5396 | 6.93069306930693 | 6.97076567324213 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Figure 2'
-        
-        
-  SAU sau_admpop_2022.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Saudi Arabia
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | This COD-PS is based in the 2022 population census of Saudi Arabia.
-      sheet 'sau_admpop_adm0_2022'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80_84 | F_85_89 | F_90_94 | F_95_99 | F_100Plus | M_00_04
-        2022 | SAU | Saudi Arabia | SA | Tabuk | SA07 | 12496629 | 19678595 | 32175224 | 1263917 | 1354766 | 1249029 | 1079884 | 1050547 | 1242388 | 1250860 | 1113283 | 839031 | 592256 | 463843 | 351281 | 253046 | 156115 | 94864 | 64100 | 40686 | 20470 | 9200 | 3893 | 3170 | 1314242 | 1407551 | 1297385 | 11
-      sheet 'sau_admpop_adm1_2022'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80_84 | F_85_89 | F_90_94 | F_95_99 | F_100Plus | M_00_04
-        2022 | SAU | Saudi Arabia | SA | `Asir | SA14 | 823254 | 1201031 | 2024285 | 86076 | 93547 | 89842 | 80089 | 70589 | 72715 | 72725 | 67430 | 52938 | 37683 | 29511 | 22073 | 15812 | 10451 | 7801 | 5808 | 3861 | 2218 | 1110 | 499 | 476 | 89700 | 97241 | 92719 | 83336 | 97290 | 143912 | 147078 | 130793
-  SAU sau_admgz.xlsx
-      sheet 'Admin1'
-        OBJECTID * | Shape * | admin1Name_en | admin1Pcode | admin1RefName | admin1AltName1_en | admin1AltName2_en | admin0Name_en | admin0Pcode |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        1 | Polygon | `Asir | SA14 | Asir | <Null> | <Null> | Saudi Arabia | SA |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Admin0'
-        OBJECTID * | Shape * | admin0Name_en | admin0Pcode | admin0RefName | admin0AltName1_en | admin0AltName2_en |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        1 | Polygon | Saudi Arabia | SA | <Null> | <Null> | <Null> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-  SEN sen_admpop_2023.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Senegal
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | This Common Operational Dataset on Population Statistics (COD-PS) is estimated using cohort-component projections developed by the ANSD based on the 2013 census. Input rates were estimated partly based on estimating historical trends using the past censuses from 1976, 1988, and 20
-      sheet 'sen_admpop_adm0_2022'
-        year | ISO3 | ADM0_FR | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2022 | SEN | Senegal | SN | 8913569 | 8825226 | 17738795 | 1420355 | 1211905 | 999446 | 890550 | 782815 | 695032 | 616443 | 520126 | 419322 | 344296 | 273058 | 222752 | 179789 | 133486 | 88180 | 56632 | 59383 | 1444052 | 1241626 | 1051474 | 933882 | 808886 | 687428 | 567166 | 474534 | 389732 | 31429
-      sheet 'sen_admpop_adm1_2022'
-        year | ISO3 | ADM0_FR | ADM0_PCODE | ADM1_FR | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 
-        2022 | SEN | Senegal | SN | Dakar | SN01 | 2007358 | 2034867 | 4042225 | 269252 | 244428 | 184754 | 173050 | 165604 | 167517 | 174913 | 150586 | 118260 | 96049 | 73012 | 59573 | 49311 | 35706 | 22047 | 13290 | 10005 | 285744 | 259176 | 194663 | 170533 | 151432 | 154599 | 170713 | 153325 | 128304 | 1
-  SEN sen_admpop_2021.xlsx
-      sheet 'Metadata'
-        Item | Metadata | 
-        Country | Senegal | 
-      sheet 'sen_admpop_adm1_2021'
-        year | ISO3 | ADM0_NAME | ADM0_PCODE | ADM1_NAME | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20
-        2021 | SEN | Senegal | SN | Dakar | SN01 | 1990795 | 1947567 | 3938362 | 272318 | 232863 | 185615 | 172536 | 166523 | 173445 | 175245 | 146558 | 116061 | 93030 | 71244 | 59060 | 48357 | 34101 | 21238 | 12834 | 9767 | 277868 | 239240 | 186439 | 162427 | 147220 | 156939 | 166559 | 146067 | 121946 | 95
-      sheet 'sen_admpop_adm0_2021'
-        year | ISO3 | ADM0_NAME | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 |
-        2021 | SEN | Senegal | SN | 8649066 | 8566387 | 17215453 | 1384596 | 1157790 | 978597 | 866276 | 763114 | 681089 | 600943 | 500740 | 405625 | 330994 | 263752 | 216475 | 173990 | 127164 | 84777 | 54840 | 58304 | 1410517 | 1196046 | 1032147 | 911306 | 787844 | 663913 | 548304 | 457209 | 375811 | 29894
-      sheet 'Explanatory Technical Note'
-        Explanatory Technical Note - Senegal COD-PS, 2022 Update |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Growth rates since last census'
-        ADM_1 | F_census | M_census | F_TL | M_TL | pgr_f | pgr_m | pgr_t |  | country | Year | PGR_WPP
-        Dakar | 1558176 | 1579020 | 1990795 | 1947567 | 3.06 | 2.62 | 2.84 |  | Senegal | 2013 | 2.7
-      sheet 'Figure 1'
-        Age | WPP_ADM0_F | WPP_ADM0_M | NSO_ADM0_F | NSO_ADM0_M | F_NSO_minus_WPP | M_NSO_minus_WPP | F_NSO_minus_WPP_pct | M_NSO_minus_WPP_pct
-        0-4 | 1269380.5 | -1301384 | 1384596 | -1410517 | 115215.5 | 109133 | 9.07651409486754 | 8.3859183761288
-      sheet 'Figure 2'
-  SEN sen_admgz_anat_20240520.xlsx
-      sheet 'ADM3'
-        ADM3_FR | ADM3_PCODE | ADM3_REF | ADM2_FR | ADM2_PCODE | ADM1_FR | ADM1_PCODE | ADM0_FR | ADM0_PCODE | date | validOn | validTo | AREA_SQKM |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Almadies | SN010101 |   | Dakar | SN0101 | Dakar | SN01 | Senegal | SN | 2024-04-04 00:00:00 | 2024-05-20 00:00:00 |  | 29.700449 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'ADM2'
-        ADM2_FR | ADM2_PCODE | ADM2_REF | ADM1_FR | ADM1_PCODE | ADM0_FR | ADM0_PCODE | date | validOn | validTo | AREA_SQKM |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Dakar | SN0101 |   | Dakar | SN01 | Senegal | SN | 2024-04-04 00:00:00 | 2024-05-20 00:00:00 |  | 78.483228 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'ADM1'
-        ADM1_FR | ADM1_PCODE | ADM1_REF | ADM0_FR | ADM0_PCODE | date | validOn | validTo | AREA_SQKM |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Dakar | SN01 |   | Senegal | SN | 2024-04-04 00:00:00 | 2024-05-20 00:00:00 |  | 541.651348 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'ADM0'
-        ADM0_FR | ADM0_PCODE | date | validOn | validTo | AREA_SQKM |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Senegal | SN | 2024-04-04 00:00:00 | 2024-05-20 00:00:00 |  | 196794.748907 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-  TCD tcd_admpop_2023.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Chad
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | This Common Operational Dataset on Population Statistics (COD-PS) is estimated  using two separate sets of projections from the INSEED, an ADM-2 2021 projection, disaggregated by sex and age, and a 2021-2023 set of projections, not disaggregated by sex and age. This COD-PS uses th
-      sheet 'tcd_admpop_adm0_2023'
-        year | ISO3 | ADM0_NAME | ADM0_FR | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 |
-        2023 | TCD | Chad | Tchad | TD | 9075045 | 8958704 | 18033749 | 1719109 | 1413000 | 1269557 | 1058822 | 754939 | 585512 | 520211 | 441612 | 350383 | 279495 | 212860 | 159036 | 111994 | 78283 | 55059 | 34594 | 30579 | 1801766 | 1465090 | 1296164 | 1090013 | 780041 | 573624 | 408085 | 314569 | 276083 
-      sheet 'tcd_admpop_adm1_2023'
-        year | ISO3 | ADM0_NAME | ADM0_FR | ADM0_PCODE | ADM1_NAME | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15
-        2023 | TCD | Chad | Tchad | TD | Barh-El-Gazel | TD19 | 197133 | 215675 | 412808 | 39107 | 31748 | 21839 | 21090 | 18023 | 14474 | 11007 | 8881 | 7964 | 6829 | 5491 | 4160 | 2669 | 1694 | 1089 | 625 | 443 | 40856 | 33115 | 26381 | 26317 | 22457 | 17192 | 10455 | 7059 | 5798 | 5153 | 5458 | 4921 | 36
-  TCD tcd_admgz.xlsx
-      sheet 'Admin3'
-        admin3Name_fr | admin3Pcode | admin3RefName | admin3Name_MAJ | admin3AltName1_fr | admin3AltName2_fr | admin3ChefLieu | admin2Name_fr | admin2Pcode | admin1Name_fr | admin1Pcode | admin0Name_fr | admin0Pcode
-        Ngouri | TD070201 | Ngouri | NGOURI | <Null> | <Null> | Ngouri | Wayi | TD0702 | Lac | TD07 | Tchad | TD
-      sheet 'Admin2'
-        admin2Name_fr | admin2Pcode | admin2RefName | admin2Name_MAJ | admin2AltName1_fr | admin2AltName2_fr | admin1Name_fr | admin1Pcode | admin0Name_fr | admin0Pcode
-        Batha Ouest | TD0101 | Batha Ouest | BATHA OUEST | <Null> | <Null> | Batha | TD01 | Tchad | TD
-      sheet 'Admin1'
-        admin1Name_fr | admin1Pcode | admin1RefName | admin1Name_MAJ | admin1AltName1_fr | admin1AltName2_fr | admin0Name_fr | admin0Pcode
-        Batha | TD01 | Batha | BATHA | <Null> | <Null> | Tchad | TD
-      sheet 'Admin0'
-        admin0Name_fr | admin0Pcode | admin0RefName | admin0AltName1_fr | admin0AltName2_fr
-        Tchad | TD | Tchad | <Null> | <Null>
-  TCD Tchad_PopulationDuTchad_20240102.xlsx
-      sheet 'Feuil1'
-        ADM1_NAME | ADM1_Pcode | ADM2_NAME | ADM2_Pcode | Population_Projection_2024
-        Batha | TD01 | Batha Ouest | TD0101 | 319035.77441063547
-  TCD tcd_admpop_2022.xlsx
-      sheet 'Pop_2022_2023'
-        Région | Pop 2021 | Structure 2021 | Pop 2022 | Structure 2022 | Pop 2023
-        Batha | 709820.813009197 | 0.04220503189628148 | 722960.252359275 | 0.04220503189628148 | 761114.3186790558
-      sheet 'ProjPop20_21_22_23admin2'
-        admin2Pcode | admin2Name_fr | admin2RefName | admin1Pcode | admin1Name_fr | Proj2016_Hommes | Proj2016_Femmes | Proj2016_Total | Proj2017_Hommes | Proj2017_Femmes | Proj2017_Total | Proj2018_Hommes | Proj2018_Femmes | Proj2018_Total | Proj2019_Hommes | Proj2019_Femmes | Proj2019_Total | Proj2020_Hom
-        TD0101 | Batha Ouest | Batha Ouest | TD01 | Batha | 125463 | 128277 | 253741 | 125406 | 128217 | 253624 | 129423 | 132325 | 261749 | 133623 | 136619 | 270242 | 138064 | 141159 | 279223 | 154132.28974037038 | 145248.64082507446 | 287312.6136987352 | 144693.70832406438 | 147937.32742290967 | 292631.03
-      sheet 'Calcul_projPop21_22_23admin2'
-         |  |  |  |  |  |  |  |  |  | Structure 2020 |  |  | Population 2021 |  |  | Structure 2021 |  |  | Population 2022 |  |  | Structure 2022 |  |  | Population 2023 |  | 
-        admin2Pcode | admin2Name_fr | admin2RefName | admin1Pcode | admin1Name_fr | Proj2016_Hommes | Proj2016_Femmes | Proj2020_Hommes | Proj2020_Femmes | Proj_2020_Total | Proj2020_Hommes2 | Proj2020_Femmes3 | Proj_2020_Total4 | Proj2021_Hommes22 | Proj2021_Femmes32 | Proj_2021_Total43 | Proj2021_Hommes22
-      sheet 'ProjPop21_22_23_admin2'
-         |  |  |  |  |  |  | Population 2021 |  |  | Population 2022 |  |  | Population 2023 |  | 
-        admin2Pcode | admin2Name_fr | admin2RefName | admin1Pcode | admin1Name_fr | Proj2016_Hommes | Proj2016_Femmes | Proj2021_Hommes22 | Proj2021_Femmes32 | Proj_2021_Total43 | Proj2022_Hommes | Proj2022_Femmes | Proj_2022_Total | Proj2022_Hommes | Proj2022_Femmes | Proj_2022_Total
-      sheet 'ProjPop20_21_22_23_admin1'
-        admin1Pcode | admin1Name_fr | admin1RefName | Proj2016 | Proj2017 | Proj2018 | Proj2019 | Proj2020 | Proj 2021 | Proj 2022 | Proj 2023 |  |  |  |  |  |  |  | 
-        TD19 | Barh-El-Gazel | Barh-El-Gazel | 330173 | 337694 | 349221 | 361143 | 373443 | 384262.3437091385 | 722960.252359275 | 412030.144180076 | Barh El Gazal |  |  |  |  |  |  | 
-      sheet 'ProjPop2020_admin1_GroupesAge'
-         |  |  |  | G    R    O    U    P    E    S          D    '    A    G    E    S   |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        admin1Pcode | admin1Name_fr | admin1RefName | Sexe |  0-4 |  5-9 |  10-14  |  15-19  |  20-24  |  25-29  |  30-34  |  35-39  |  40-44  |  45-49  |  50-54  |  55-59  |  60-64  |  65-69  |  70-74  |  75-79  |  80+  | Total |  0-42 |  5-93 |  10-14 4 |  15-19 5 |  20-24 6 |  25-29 7 |  30-34 8 |  35-39
-      sheet 'Admin1_Ndjam'
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        2020 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'ProjPop2021_admin1_GroupesAge'
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'ProjPop2023_admin1_Grpe age'
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        admin1Pcode | admin1Name_fr | admin1RefName | Sexe |  0-4 |  5-9 |  10-14  |  15-19  |  20-24  |  25-29  |  30-34  |  35-39  |  40-44  |  45-49  |  50-54  |  55-59  |  60-64  |  65-69  |  70-74  |  75-79  |  80+  | Total
-      sheet 'Pop_2023_âge'
-        Âge | Pop 2023 |  |  | 
-         | Total | Masculin | Féminin | Control
-  TCD tcd_admpop_2021.xlsx
-      sheet 'tcd_admpop_adm0_2021'
-        ADM0_FR | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80PLUS | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M_35_39 | M_40_
-        Tchad | TD | 8462907 | 8355484 | 16818393 | 1603181 | 1317538 | 1183631 | 988074 | 704492 | 546115 | 484983 | 411632 | 326717 | 260650 | 198433 | 148221 | 104372 | 72945 | 51294 | 32217 | 28422 | 1680133 | 1366309 | 1209299 | 1017467 | 727846 | 534936 | 380318 | 293079 | 257395 | 222802 | 191548 | 1
-      sheet 'tcd_admpop_adm1_2021'
-        ADM0_FR | ADM0_PCODE | ADM1_FR | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80PLUS | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_
-        Tchad | TD | Barh-El-Gazel | TD19 | 183501 | 200762 | 384263 | 36403 | 29553 | 20329 | 19632 | 16777 | 13473 | 10246 | 8267 | 7413 | 6357 | 5111 | 3872 | 2484 | 1577 | 1014 | 582 | 412 | 38031 | 30825 | 24557 | 24497 | 20904 | 16003 | 9732 | 6571 | 5397 | 4797 | 5081 | 4581 | 3397 | 2517 | 1824 | 11
-      sheet 'tcd_admpop_2019'
-        admin2Name_fr | admin2Pcode | admin2RefName | admin2Name_MAJ | admin2AltName1_fr | admin2AltName2_fr | admin1Name_fr | admin1Pcode | admin0Name_fr | admin0Pcode | F | M | T | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_
-        Batha Ouest | TD0101 | Batha Ouest | BATHA OUEST | <Null> | <Null> | Batha | TD01 | Tchad | TD | 142260 | 136963 | 279223 | 25336 | 20812 | 24097 | 18154 | 11036 | 8121 | 7611 | 6642 | 5334 | 4298 | 3298 | 2476 | 1715 | 1210 | 904 | 602 | 614 | 26469 | 21708 | 24675 | 18412 | 10893 | 7281 | 4854 | 3
-      sheet 'Sheet1'
-         |  | 
-         |  | 
-      sheet 'tcd_admpop_adm2_2021'
-        ADM0_FR | ADM0_PCODE | ADM1_FR | ADM1_PCODE | ADM2_FR | ADM2_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80PLUS | M_00_04 | M_05_09 | M_10_14 | M_15_19 |
-        Tchad | TD | Barh-El-Gazel | TD19 | Barh-El-Gazel Sud | TD1901 | 100926 | 110419 | 211345 | 20022 | 16254 | 11181 | 10797 | 9228 | 7410 | 5635 | 4547 | 4077 | 3496 | 2811 | 2130 | 1366 | 867 | 558 | 320 | 227 | 20917 | 16954 | 13506 | 13473 | 11497 | 8802 | 5352 | 3614 | 2969 | 2639 | 2795 | 2520 | 
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Chad (Tchad)
-      sheet 'Explanatory Technical Notes'
-        Explanatory Technical Note - Chad COD-PS, 2021 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Growth rates since last census'
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         | ADM 0 growth rate, Male, 2009-2021 | ADM 0 growth rate, Female, 2009-2021 |  | Growth rate (ADM 1), Male, 2009-2021 | Growth rate (ADM 1) Female, 2009-2021 | Growth rate, (ADM 1) Total, 2009-2021 | ADM 1
-(2009 census) | Male
-(2009 census) | Female
-(2009 census) | ADM 1
-(2021 projection) | Male
-(2
-      sheet 'Figure 1'
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Figures 2(a-w)'
-        National total | 16818378 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Sheet2'
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-  UZB uzbekistan_population_statistics_2018.xlsx
-      sheet 'L0'
-        ADM0_EN | ADM0_RU | ADM0_UZ | ADM0ALTEN | ADM0_PCODE | Total_pop | Urban_pop | Rural_pop | Total_male_population | Total_female_population | Number_of_male_from_0to2 | Number_of_male_from_3to5 | Number_of_male_from_6to7 | Number_of_male_from_8to15 | Number_of_male_from_16to17 | Number_of_male_from_1
-        #country+name+i_en | #country+name+i_ru | #country+name+i_uz | #country+name+i_en | #country+code+v_iso2 | #population+all | #population+urban | #population+rural | #population+m+all | #population+f+all | #population+m+infants+age_0_2 | #population+m+infants+age_3_5 | #population+m+children+age_6_7 
-      sheet 'L1'
-        ADM0_EN | ADM0_RU | ADM0_UZ | ADM0ALTEN | ADM0_PCODE | ADM1_RU | ADM1_UZ | ADM1_EN | ADM1TYPEEN | ADM1_PCODE | ADM1TYPERU | ADM1TYPEUZ | Total_pop | Urban_pop | Rural_pop | Male_pop | Female_pop
-         |  |  |  | #country+code+v_iso2 | #admin1+name+i_ru | #admin1+name+i_uz | #admin1+name+i_en | #loc+type+i_en | #admin1+code+v_pcode | #loc+type+i_ru | #loc+type+i_uz |  |  |  |  | 
-      sheet 'L2'
-        country | admin0Pcode | admin1Pcode | admin1Name_ru | admin1Name_uz | admin1Name_en | admin2Pcode | admin2Name_ru | admin2Name_uz | admin2Name_en | admin2Type_ru | admin2Type_uz | admin2Type_en |  | 
-        #country+code+v_iso2 | #country+code+v_pcode | #admin1+code+v_pcode | #admin1+name+i_ru | #admin1+name+i_uz | #admin1+name+i_en | #admin2+code+v_pcode | #admin2+name+i_ru | #admin2+name+i_uz | #admin2+name+i_en | #loc+type+i_ru | #loc+type+i_uz | #loc+type+i_en |  | 
-      sheet 'Metadata'
-        Metadata | 
-        Source  | National Statistical Committee of the Republic of Uzbekistan
-  VNM vnm_admgz.xlsx
-      sheet 'ADM0'
-        ADM0_EN | ADM0_VI | ADM0_PCODE | ADM0_REF | ADM0ALT1_EN | ADM0ALT2_EN | ADM0ALT1_VI | ADM0ALT2_VI | AREA_SQKM
-        Viet Nam | Việt Nam | VN |  |  |  |  |  | 334558.96875
-      sheet 'ADM1'
-        ADM1_EN | ADM1_VI | ADM1_PCODE | ADM1_REF | ADM1ALT1_EN | ADM1ALT2_EN | ADM1ALT1_VI | ADM1ALT2_VI | ADM0_EN | ADM0_VI | ADM0_PCODE | AREA_SQKM
-        An Giang | An Giang | VN805 |  |  |  |  |  | Viet Nam | Việt Nam | VN | 3535.969970703125
-      sheet 'ADM2'
-        ADM2_EN | ADM2_VI | ADM2_PCODE | ADM2_REF | ADM2ALT1_EN | ADM2ALT2_EN | ADM2ALT1_VI | ADM2ALT2_VI | ADM1_EN | ADM1_VI | ADM1_PCODE | ADM0_EN | ADM0_VI | ADM0_PCODE | AREA_SQKM
-        A Luoi | Huyện A Lưới | VN41115 |  |  |  |  |  | Thua Thien Hue | Thừa Thiên Huế | VN411 | Viet Nam | Việt Nam | VN | 1227.996948242188
-  VNM vnm_admpop_2024.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Viet Nam
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | Cohort component method was applied to the 2019 census results to construct the projections on which this COD-PS is based. 
-      sheet 'vnm_admpop_adm0_2024'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2024 | VNM | Viet Nam | VN | 50434533 | 50334364 | 100768914 | 3518411 | 3711367 | 3972062 | 3477952 | 3148758 | 3251812 | 4136017 | 4102442 | 3779587 | 3290727 | 3085535 | 2829066 | 2617640 | 2063015 | 1380289 | 813141 | 1256714 | 3889961 | 4069403 | 4341350 | 3722405 | 3336556 | 3399849 | 4277272 
-      sheet 'vnm_admpop_adm1_2024'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_VI | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 
-        2024 | VNM | Viet Nam | VN | An Giang | An Giang | VN805 | 928139 | 910447 | 1838587 | 47372 | 58020 | 78488 | 78147 | 49910 | 36980 | 54624 | 69221 | 74493 | 70586 | 71588 | 67715 | 54170 | 43010 | 33395 | 18435 | 21987 | 50480 | 61743 | 83713 | 82528 | 54053 | 40394 | 57273 | 72538 | 77708 | 71786
-  VNM vnm_admpop_2023.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Viet Nam
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | Cohort component method was applied to the 2019 census results to construct the projections on which this COD-PS is based. 
-      sheet 'vnm_admpop_adm0_2023'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2023 | VNM | Viet Nam | VN | 50048805 | 49889136 | 99937948 | 3486067 | 3858932 | 3904364 | 3432694 | 3037176 | 3452931 | 4192013 | 4108918 | 3647138 | 3219400 | 3090345 | 2809468 | 2552273 | 1934384 | 1303601 | 746386 | 1272716 | 3851576 | 4235066 | 4258069 | 3659502 | 3219612 | 3595917 | 4338840 |
-      sheet 'vnm_admpop_adm1_2023'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 
-        2023 | VNM | Viet Nam | VN | An Giang | VN805 | 934736 | 918014 | 1852750 | 48672 | 62257 | 81514 | 75334 | 44242 | 42217 | 60368 | 71620 | 75735 | 69274 | 73329 | 66030 | 51945 | 41948 | 31715 | 16727 | 21810 | 51820 | 66523 | 87056 | 79420 | 48669 | 45477 | 63339 | 75235 | 78500 | 70847 | 71477 | 
-  ZMB zmb_admpop_2020.xlsx
-      sheet 'AB-ADM1'
-        OBJECTID * | Shape * | admin1Name_en | admin1Pcode | PS-match | admin1RefName | admin1AltName1_en | admin1AltName2_en | admin0Name_en | admin0Pcode |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        1 | Polygon | Central | ZM10 | 6 | <Null> | <Null> | <Null> | Zambia | ZM |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'AB-ADM2'
-        OBJECTID * | Shape * | admin2Name_en | admin2Pcode | COD-PS match | admin2RefName | admin2AltName1_en | admin2AltName2_en | admin1Name_en | admin1Pcode | admin0Name_en | admin0Pcode
-        1 | Polygon | Chibombo | ZM1001 | #REF! | <Null> | <Null> | <Null> | Central | ZM10 | Zambia | ZM
-      sheet 'zmb_admpop_adm0_2020'
-        ADM0_EN | ADM0_CODE | Year | Both_TOTL | Both_0004 | Both_0509 | Both_1014 | Both_1519 | Both_2024 | Both_2529 | Both_3034 | Both_3539 | Both_4044 | Both_4549 | Both_5054 | Both_5559 | Both_6064 | Both_6569 | Both_7074 | Both_7579 | Both_80PL | Male_TOTL | Male_0004 | Male_0509 | Male_1014 | Male_15
-        Zambia | ZM | 2020 | 17426623 | 3092857 | 2628833 | 2248413 | 1890158 | 1601246 | 1334942 | 1094554 | 910445 | 758878 | 551439 | 396163 | 295869 | 227928 | 151843 | 114520 | 71521 | 57014 | 8706249 | 1558569 | 1319564 | 1127001 | 945738 | 799105 | 666686 | 547864 | 457653 | 384148 | 282257 | 201089 
-      sheet 'zmb_admpop_adm1_2020'
-        ADM0_EN | ADM0_CODE | ADM1_EN | ADM1_CODE | Year | Both_TOTL | Both_0004 | Both_0509 | Both_1014 | Both_1519 | Both_2024 | Both_2529 | Both_3034 | Both_3539 | Both_4044 | Both_4549 | Both_5054 | Both_5559 | Both_6064 | Both_6569 | Both_7074 | Both_7579 | Both_80PL | Male_TOTL | Male_0004 | Male_0509
-        Zambia | ZM | EASTERN | ZM30 | 2020 | 2119981 | 391374 | 338535 | 281180 | 222399 | 182592 | 148372 | 119913 | 103763 | 87438 | 66519 | 47552 | 36973 | 31889 | 22182 | 18021 | 11365 | 9914 | 1056542 | 196678 | 170815 | 143846 | 114448 | 92536 | 73997 | 59737 | 50846 | 42668 | 33579 | 23543 | 16816 |
-      sheet 'zmb_admpop_adm2_2020'
-        ADM0_EN | ADM0_CODE | ADM1_EN | ADM1_CODE | ADM2_EN | Year | Both_TOTL | Both_0004 | Both_0509 | Both_1014 | Both_1519 | Both_2024 | Both_2529 | Both_3034 | Both_3539 | Both_4044 | Both_4549 | Both_5054 | Both_5559 | Both_6064 | Both_6569 | Both_7074 | Both_7579 | Both_80PL | Male_TOTL | Male_0004 |
-        Zambia | ZM | EASTERN | ZM30 | CHADIZA | 2020 | 133843 | 25567 | 22098 | 17703 | 14110 | 11417 | 8813 | 7453 | 6289 | 5439 | 4301 | 2852 | 2350 | 1869 | 1299 | 1131 | 684 | 468 | 67377 | 12871 | 11180 | 8962 | 7445 | 6084 | 4506 | 3699 | 2998 | 2627 | 2195 | 1439 | 1108 | 774 | 579 | 449 | 279 | 182
-      sheet 'zmb_admpop_adm3_2020'
-        ADM0_EN | ADM0_CODE | ADM1_EN | ADM1_CODE | ADM2_EN | ADM3_EN | Year | Both_TOTL | Both_0004 | Both_0509 | Both_1014 | Both_1519 | Both_2024 | Both_2529 | Both_3034 | Both_3539 | Both_4044 | Both_4549 | Both_5054 | Both_5559 | Both_6064 | Both_6569 | Both_7074 | Both_7579 | Both_80PL | Male_TOTL | M
-        Zambia | ZM | EASTERN | ZM30 | CHADIZA | CHADIZA | 2020 | 74167 | 13994 | 12037 | 9777 | 8233 | 6352 | 4781 | 4094 | 3506 | 3026 | 2465 | 1558 | 1318 | 1032 | 722 | 630 | 381 | 261 | 37141 | 7085 | 6114 | 4953 | 4327 | 3364 | 2360 | 2005 | 1612 | 1433 | 1252 | 774 | 609 | 431 | 319 | 248 | 155 | 100
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Zambia
+cod_ps: 148 cod-ps dataset(s) on HDX
+  cod-ps-abw (ABW)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: abw_admpop_2022.xlsx has no district sheet
+  cod-ps-afg (AFG)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    0 row(s) unnamed, 1 with no usable total
+    level: 255 of 390 names match this map's admin2 (against 6 at admin1) (afg_admpop_adm2_2026.csv)
+    401 admin2 unit(s), reference year 2026, 48,595,434 people
+  cod-ps-ago (AGO)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 156 of 161 names match this map's admin2 (against 7 at admin1) (ago_admpop_adm2_2024.csv)
+    161 admin2 unit(s), reference year 2024, 37,205,374 people
+  cod-ps-aia (AIA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: aia_admpop_2022.xlsx has no district sheet
+  cod-ps-alb (ALB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: alb_admpop_2021.xlsx has no district sheet
+  cod-ps-arg (ARG)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: arc_admpop_2021.xlsx has no district sheet
+  cod-ps-arm (ARM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: arm_admpop_2021.xlsx has no district sheet
+  cod-ps-atg (ATG)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: atg_admpop_2023.xlsx has no district sheet
+    refused: atg_admpop_2022.xlsx has no district sheet
+  cod-ps-aze (AZE)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    2 row(s) unnamed, 1 with no usable total
+    level: 47 of 85 names match this map's admin2 (against 0 at admin1) (aze_admpop_adm2_2018.csv)
+    85 admin2 unit(s), reference year 2018, 9,898,100 people
+  cod-ps-bdi (BDI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 108 of 117 names match this map's admin2 (against 13 at admin1) (bdi_admpop_2022_adm2_v3.csv)
+    119 admin2 unit(s), reference year 2022, 13,462,695 people
+  cod-ps-ben (BEN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 77 of 77 names match this map's admin2 (against 0 at admin1) (ben_admpop_adm2_2024.csv)
+    77 admin2 unit(s), reference year 2024, 14,697,052 people
+  cod-ps-bfa (BFA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 43 of 45 names match this map's admin2 (against 0 at admin1) (bfa_admpop_adm2_2023_5yr.csv)
+    45 admin2 unit(s), reference year 2023, 22,868,915 people
+  cod-ps-bgd (BGD)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 64 of 64 names match this map's admin2 (against 7 at admin1) (bgd_admpop_adm2_2022.csv)
+    64 admin2 unit(s), reference year 2022, 165,650,475 people
+  cod-ps-bhs (BHS)
+    licence: Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+    refused: this licence is not one this map may read
+  cod-ps-blm (BLM)
+    licence: Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+    refused: this licence is not one this map may read
+  cod-ps-blz (BLZ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2010 from HDX's reference period for the dataset, the file stating none
+    refused blz_adm2_pop_v2.csv: its names match 2 of this map's districts and 0 of its first-level units, out of 201; too few of either to say which level this file describes
+    read sheet 'blz_adm2_pop_v2' of blz_admpop_v2.xlsx
+    reference year 2010 from HDX's reference period for the dataset, the file stating none
+    refused blz_admpop_v2.xlsx: its names match 2 of this map's districts and 0 of its first-level units, out of 201; too few of either to say which level this file describes
+  cod-ps-bmu (BMU)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: bmu_admpop_2024.xlsx has no district sheet
+    refused: bmu_admpop_2022.xlsx has no district sheet
+  cod-ps-bol (BOL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: bol_admpop_2022.xlsx has no district sheet
+  cod-ps-bra (BRA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 5282 of 5287 names match this map's admin2 (against 8 at admin1) (bra_admpop_adm2_2022.csv)
+    5570 admin2 unit(s), reference year 2022, 203,080,756 people
+  cod-ps-brb (BRB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: brb_admpop_2022.xlsx has no district sheet
+    refused: brb_adm_gz.xlsx has no district sheet
+  cod-ps-btn (BTN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: btn_admpop_2024.xlsx has no district sheet
+    read sheet 'BTN_ADM2_POP_2023' of btn_admpop_2023.xlsx
+    refused: no level-2 name column or no total; its columns are: year, ISO3, ADM0_NAME, ADM0_PCODE, ADM1_NAME, ADM1_PCODE, F_TL, M_TL, T_TL, F_00_04, F_05_09, F_10_14
+  cod-ps-bwa (BWA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused bwa_admpop_adm2_2023.csv: its names match 11 of this map's districts and 6 of its first-level units, out of 28; too few of either to say which level this file describes
+    read sheet 'bwa_admpop_adm2_2023' of bwa_admpop_2023.xlsx
+    refused bwa_admpop_2023.xlsx: its names match 11 of this map's districts and 6 of its first-level units, out of 28; too few of either to say which level this file describes
+    refused bwa_admpop_adm3_2023.csv: its names match 9 of this map's districts and 2 of its first-level units, out of 510; too few of either to say which level this file describes
+  cod-ps-caf (CAF)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    1 unit(s) appear twice with different totals and are refused
+    level: 53 of 71 names match this map's admin2 (against 0 at admin1) (caf_admpop_adm2_2015_v2.csv)
+    71 admin2 unit(s), reference year 2015, 4,113,940 people
+  cod-ps-chl (CHL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 54 of 56 names match this map's admin2 (against 3 at admin1) (chl_admpop_adm2_2022.csv)
+    56 admin2 unit(s), reference year 2022, 19,828,563 people
+  cod-ps-civ (CIV)
+    licence: Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+    refused: this licence is not one this map may read
+  cod-ps-cmr (CMR)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    refused CMR_admpop2_2025.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 1; too few of either to say which level this file describes
+    refused: CMR_admpop_2025.xlsx has no district sheet
+    refused: CMR_admpop_2025.xlsx has no district sheet
+    refused: cmr_admpop_2024.xlsx has no district sheet
+    refused: cmr_admpop_2023.xlsx has no district sheet
+  cod-ps-cod (COD)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    0 row(s) unnamed, 25 with no usable total
+    level: 164 of 164 names match this map's admin2 (against 1 at admin1) (cod_admpop_adm2_2020.csv)
+    164 admin2 unit(s), reference year 2020, 103,199,358 people
+  cod-ps-col (COL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    0 row(s) unnamed, 1 with no usable total
+    level: 1009 of 1032 names match this map's admin2 (against 8 at admin1) (col_admpop_2025_adm2.csv)
+    1121 admin2 unit(s), reference year 2025, 53,216,592 people
+  cod-ps-com (COM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: com_admpop_2017.xlsx has no district sheet
+  cod-ps-cpv (CPV)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: cpv_admpop_2022B.xlsx has no district sheet
+  cod-ps-cri (CRI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 76 of 81 names match this map's admin2 (against 6 at admin1) (cri_admpop_adm2_unfpa2021.csv)
+    81 admin2 unit(s), reference year 2021, 5,163,021 people
+  cod-ps-cub (CUB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: cub_admpop_2024.xlsx has no district sheet
+  cod-ps-cuw (CUW)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: cuw_admpop_2022.xlsx has no district sheet
+  cod-ps-cym (CYM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: cym_admpop_2021.xlsx has no district sheet
+  cod-ps-dji (DJI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: dji_admpop_2009.xlsx has no district sheet
+  cod-ps-dma (DMA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: dma_admpop_2022.xlsx has no district sheet
+  cod-ps-dom (DOM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 28 of 32 names match this map's admin1 (against 8 at admin2) (dom_admpop_adm2_2023.csv)
+    32 admin1 unit(s), reference year 2023, 10,711,155 people
+  cod-ps-ecu (ECU)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: ecu_admpop_2020.xlsx has no district sheet
+  cod-ps-egy (EGY)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: egypt_population_estimate_compas_2012_v1.1_0_fis_v2.xlsx has no district sheet
+  cod-ps-eri (ERI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 58 of 58 names match this map's admin2 (against 0 at admin1) (eri_adm2_pop_2001_v2.csv)
+    58 admin2 unit(s), reference year 2001, 2,908,795 people
+  cod-ps-eth (ETH)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 38 of 91 names match this map's admin2 (against 1 at admin1) (eth_admpop_adm2_2022_v2.csv)
+    92 admin2 unit(s), reference year 2022, 102,536,651 people
+  cod-ps-fji (FJI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 15 of 15 names match this map's admin2 (against 0 at admin1) (fji_pplp_adm2_province_2017_v2.csv)
+    15 admin2 unit(s), reference year 2017, 884,887 people
+  cod-ps-fsm (FSM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: the file states no reference year, in a column or its own name, and HDX's reference period for it is not one year
+    refused: fsm_pplp.xlsx has no district sheet
+    refused: Source_FSM_Projected_Population-Estimate-Details.xlsx has no district sheet
+  cod-ps-gab (GAB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: gab_admpop_2022.xlsx has no district sheet
+    refused: gabpcoderowca20150210.xlsx has no district sheet
+  cod-ps-geo (GEO)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 56 of 80 names match this map's admin2 (against 0 at admin1) (geo_admpop_adm2_geostat_2014.csv)
+    80 admin2 unit(s), reference year 2014, 3,713,804 people
+  cod-ps-gha (GHA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 142 of 216 names match this map's admin2 (against 0 at admin1) (gha_admpop_adm2_2021.csv)
+    216 admin2 unit(s), reference year 2021, 29,340,248 people
+  cod-ps-gin (GIN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 34 of 34 names match this map's admin2 (against 8 at admin1) (gin_admpop_adm2_2024.csv)
+    34 admin2 unit(s), reference year 2024, 13,989,788 people
+  cod-ps-global (AFG)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    refused: no adm2 CSV or workbook on this dataset
+  cod-ps-glp (GLP)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2016 from HDX's reference period for the dataset, the file stating none
+    refused glp_admpop_adm2_v2.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 32; too few of either to say which level this file describes
+    refused: glp_adm_2019.xlsx has no district sheet
+    refused: glp_admpop_2016.xlsx has no district sheet
+  cod-ps-gmb (GMB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: gmb_popadm_2021.xlsx has no district sheet
+  cod-ps-grd (GRD)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: grd_admpop_2011.xlsx has no district sheet
+  cod-ps-gtm (GTM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 334 of 334 names match this map's admin2 (against 14 at admin1) (gtm_admpop_adm2_2024.csv)
+    340 admin2 unit(s), reference year 2024, 17,843,132 people
+  cod-ps-guf (GUF)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused guf_admpop_adm2_insee_2016_v3.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 22; too few of either to say which level this file describes
+    refused: guf_admpop_insee_2016_v2.xlsx has no district sheet
+  cod-ps-guy (GUY)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    read sheet 'guy_admpop_adm2_2021' of guy_admpop_2021.xlsx
+    0 row(s) unnamed, 1 with no usable total
+    refused guy_admpop_2021.xlsx: its names match 0 of this map's districts and 0 of its first-level units, out of 124; too few of either to say which level this file describes
+  cod-ps-hnd (HND)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 268 of 269 names match this map's admin2 (against 8 at admin1) (hnd_admpop_adm2_2024.csv)
+    298 admin2 unit(s), reference year 2024, 9,892,674 people
+  cod-ps-hti (HTI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused hti_admpop_adm2_2024.csv: its names match 32 of this map's districts and 0 of its first-level units, out of 140; too few of either to say which level this file describes
+    refused: hti_admpop_2024.xlsx has no district sheet
+    refused: hti_admpop_2024_with_uncertainty_range.xlsx has no district sheet
+  cod-ps-hun (HUN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: hun_admpop_2022_v01.xlsx has no district sheet
+  cod-ps-idn (IDN)
+    licence: Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+    refused: this licence is not one this map may read
+  cod-ps-irn (IRN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 336 of 429 names match this map's admin2 (against 14 at admin1) (irn_admpop_adm2_2016_v2.csv)
+    429 admin2 unit(s), reference year 2016, 79,926,270 people
+  cod-ps-irq (IRQ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: IRQ_admpop_2021.xlsx has no district sheet
+  cod-ps-jam (JAM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: jam_adm_pop.xlsx has no district sheet
+    refused: jam_adm.xlsx has no district sheet
+  cod-ps-kaz (KAZ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: kaz_admpop_adm1_2023.xlsx has no district sheet
+    refused: kaz_admpop_2021.xlsx has no district sheet
+  cod-ps-ken (KEN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    read sheet 'ken_admpop_ADM2_2019' of ken_admpop_2019.xlsx
+    2 unit(s) appear twice with different totals and are refused
+    level: 183 of 338 names match this map's admin2 (against 12 at admin1) (ken_admpop_2019.xlsx)
+    338 admin2 unit(s), reference year 2019, 47,561,482 people
+  cod-ps-kgz (KGZ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    11 unit(s) appear twice with different totals and are refused
+    0 row(s) unnamed, 1 with no usable total
+    level: 2 of 4 names match this map's admin1 (against 2 at admin2) (kyrgyzstan_population_statistics_2018_adm2_v2.csv)
+    4 admin1 unit(s), reference year 2018, 329,300 people
+  cod-ps-khm (KHM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: khm_admpop_2024.xlsx has no district sheet
+    refused: khm_admpop_2023.xlsx has no district sheet
+  cod-ps-kir (KIR)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    122 row(s) unnamed, 14 with no usable total
+    level: 16 of 22 names match this map's admin2 (against 0 at admin1) (kir_admpop_adm2_2020.csv)
+    22 admin2 unit(s), reference year 2020, 119,940 people
+  cod-ps-kna (KNA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: kna_admpop_2022.xlsx has no district sheet
+  cod-ps-lao (LAO)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 144 of 144 names match this map's admin2 (against 2 at admin1) (lao_admpop_adm2_2024.csv)
+    148 admin2 unit(s), reference year 2024, 7,631,798 people
+  cod-ps-lbr (LBR)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 135 of 135 names match this map's admin2 (against 0 at admin1) (lbr_admpop_adm2_2020_v2.csv)
+    136 admin2 unit(s), reference year 2020, 4,593,022 people
+  cod-ps-lca (LCA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: lca_admpop_2010.xlsx has no district sheet
+  cod-ps-lka (LKA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 25 of 25 names match this map's admin2 (against 0 at admin1) (lka_admpop_adm2_2023.csv)
+    25 admin2 unit(s), reference year 2023, 22,037,001 people
+  cod-ps-lso (LSO)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: lso_admpop_2022.xlsx has no district sheet
+  cod-ps-maf (MAF)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: maf_adm_gz_2016_INSEE.xlsx has no district sheet
+    refused: maf_admpop_2016_INSEE.xlsx has no district sheet
+  cod-ps-mar (MAR)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    level: 20 of 31 names match this map's admin2 (against 0 at admin1) (mar_admpop_adm2eq_2014.csv)
+    31 admin2 unit(s), reference year 2014, 17,240,318 people
+  cod-ps-mda (MDA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: mda_admpop_2022.xlsx has no district sheet
+    refused: mdv_admpop_2022.xlsx: HTTPError: HTTP Error 404: Not Found
+  cod-ps-mdg (MDG)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 119 of 119 names match this map's admin2 (against 0 at admin1) (mdg_admpop_adm2_2018.csv)
+    119 admin2 unit(s), reference year 2018, 26,696,214 people
+  cod-ps-mdv (MDV)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: mdv_admpop_2022.xlsx has no district sheet
+  cod-ps-mex (MEX)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 2301 of 2328 names match this map's admin2 (against 16 at admin1) (mex_admpop_adm2_2024.csv)
+    2475 admin2 unit(s), reference year 2024, 132,274,416 people
+  cod-ps-mhl (MHL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: mhl_admpop_2021.xlsx has no district sheet
+    refused: MHL_pplp.xlsx has no district sheet
+  cod-ps-mli (MLI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2018 from HDX's reference period for the dataset, the file stating none
+    level: 49 of 50 names match this map's admin2 (against 8 at admin1) (mli_pop_adm2_v2.csv)
+    50 admin2 unit(s), reference year 2018, 17,907,114 people
+  cod-ps-mmr (MMR)
+    licence: unstated -- license_id=None, isopen=False
+    refused: this licence is not one this map may read
+  cod-ps-mmr-archived (MMR)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    level: 70 of 77 names match this map's admin2 (against 5 at admin1) (mmr_admpop_adm2_2023.csv)
+    80 admin2 unit(s), reference year 2023, 56,242,837 people
+  cod-ps-mng (MNG)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 277 of 277 names match this map's admin2 (against 3 at admin1) (mng_admpop_adm2_2017_v2.csv)
+    339 admin2 unit(s), reference year 2017, 3,131,750 people
+  cod-ps-moz (MOZ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    0 row(s) unnamed, 4 with no usable total
+    level: 154 of 155 names match this map's admin2 (against 1 at admin1) (moz_admpop_adm2_2025.csv)
+    155 admin2 unit(s), reference year 2025, 35,163,992 people
+  cod-ps-mrt (MRT)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: mrt_admpop_2022.xlsx has no district sheet
+  cod-ps-msr (MSR)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    refused: msr_admpop_2011.xlsx has no district sheet
+    refused: msr_adm_gz.xlsx has no district sheet
+  cod-ps-mtq (MTQ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2016 from HDX's reference period for the dataset, the file stating none
+    refused mtq_adm2_pop_v3.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 34; too few of either to say which level this file describes
+    refused: mtq_adm_gz_2016_ignf.xlsx has no district sheet
+    refused: mtq_admpop_insee_2016.xlsx has no district sheet
+  cod-ps-mus (MUS)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: mus_admpop_2018_2011_.xlsx has no district sheet
+  cod-ps-mwi (MWI)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 26 of 32 names match this map's admin2 (against 0 at admin1) (mwi_admpop_adm2_2023.csv)
+    32 admin2 unit(s), reference year 2023, 19,809,511 people
+  cod-ps-mys (MYS)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: mys_admpop_2020.xlsx has no district sheet
+  cod-ps-nam (NAM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 80 of 107 names match this map's admin2 (against 1 at admin1) (nam_admpop_adm2_2023.csv)
+    107 admin2 unit(s), reference year 2023, 2,777,232 people
+  cod-ps-ner (NER)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 63 of 67 names match this map's admin2 (against 1 at admin1) (ner_admpop_adm2_2024.csv)
+    67 admin2 unit(s), reference year 2024, 26,367,847 people
+  cod-ps-nga (NGA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: nga_admpop_2022.xlsx has no district sheet
+    read sheet 'nga_admpop_adm2_2020' of nga_admpop_2020.xlsx
+    level: 736 of 768 names match this map's admin2 (against 7 at admin1) (nga_admpop_2020.xlsx)
+    773 admin2 unit(s), reference year 2020, 204,909,220 people
+  cod-ps-nic (NIC)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 142 of 153 names match this map's admin2 (against 10 at admin1) (nic_admpop_adm2_2020.csv)
+    153 admin2 unit(s), reference year 2020, 6,595,672 people
+  cod-ps-niu (NIU)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    refused: niu_admpop_2022.xlsx has no district sheet
+  cod-ps-npl (NPL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 69 of 77 names match this map's admin2 (against 0 at admin1) (npl_admpop_adm2_2023.csv)
+    77 admin2 unit(s), reference year 2023, 30,899,443 people
+  cod-ps-pak (PAK)
+    licence: Other -- license_id='hdx-other', isopen=False, license_other='humanitarian use only'
+    refused: this licence is not one this map may read
+  cod-ps-pan (PAN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: pan_admpop_2023.xlsx has no district sheet
+  cod-ps-per (PER)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: per_admpop_2024.xlsx has no district sheet
+    refused: per_admpop_2023.xlsx has no district sheet
+    refused: per_admpop_2022.xlsx has no district sheet
+  cod-ps-phl (PHL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 82 of 84 names match this map's admin2 (against 0 at admin1) (phl_admpop_adm2_2022_v2.csv)
+    84 admin2 unit(s), reference year 2022, 111,572,254 people
+  cod-ps-plw (PLW)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: PLW_ADM0_POP_2023.xlsx has no district sheet
+  cod-ps-png (PNG)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 87 of 87 names match this map's admin2 (against 3 at admin1) (png_admpop_adm2_2011_v2.csv)
+    87 admin2 unit(s), reference year 2011, 7,275,324 people
+  cod-ps-pol (POL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused pol_admpop_adm2_2024.csv: its names match 51 of this map's districts and 0 of its first-level units, out of 370; too few of either to say which level this file describes
+    refused: pol_admpop_2024.xlsx has no district sheet
+    read sheet 'pol_admpop_adm2_2020' of pol_admpop_2020.xlsx
+    10 unit(s) appear twice with different totals and are refused
+    refused pol_admpop_2020.xlsx: its names match 51 of this map's districts and 0 of its first-level units, out of 360; too few of either to say which level this file describes
+  cod-ps-prk (PRK)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2008 from HDX's reference period for the dataset, the file stating none
+    0 row(s) unnamed, 2 with no usable total
+    level: 176 of 176 names match this map's admin2 (against 1 at admin1) (prk_pop_adm2_v2.csv)
+    177 admin2 unit(s), reference year 2008, 23,275,627 people
+  cod-ps-pry (PRY)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 217 of 249 names match this map's admin2 (against 6 at admin1) (pry_admpop_adm2_2023.csv)
+    250 admin2 unit(s), reference year 2023, 7,552,654 people
+  cod-ps-pse (PSE)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: pse_admpop_2023.xlsx has no district sheet
+  cod-ps-qat (QAT)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: qat_admpop_2020.xlsx has no district sheet
+  cod-ps-rou (ROU)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 42 of 42 names match this map's admin1 (against 18 at admin2) (rou_admpop_adm2_2022_v01.csv)
+    42 admin1 unit(s), reference year 2022, 18,983,507 people
+  cod-ps-rwa (RWA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 30 of 30 names match this map's admin2 (against 0 at admin1) (rwa_admpop_adm2_2023.csv)
+    30 admin2 unit(s), reference year 2023, 13,400,541 people
+  cod-ps-sau (SAU)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: sau_admpop_2022.xlsx has no district sheet
+  cod-ps-sdn (SDN)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    level: 187 of 187 names match this map's admin2 (against 2 at admin1) (sdn_admpop_adm2_2025.csv)
+    188 admin2 unit(s), reference year 2025, 47,514,529 people
+  cod-ps-sen (SEN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: sen_admpop_2023.xlsx has no district sheet
+    refused: sen_admpop_2021.xlsx has no district sheet
+  cod-ps-slb (SLB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 49 of 50 names match this map's admin2 (against 0 at admin1) (slb_admpop_adm2_2023.csv)
+    50 admin2 unit(s), reference year 2023, 768,701 people
+  cod-ps-sle (SLE)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2020 from HDX's reference period for the dataset, the file stating none
+    level: 14 of 14 names match this map's admin2 (against 0 at admin1) (sle_adm2_population_v2.csv)
+    14 admin2 unit(s), reference year 2020, 7,570,551 people
+  cod-ps-slv (SLV)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    0 row(s) unnamed, 4 with no usable total
+    refused slv_admpop_adm2_2024.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 44; too few of either to say which level this file describes
+    read sheet 'slv_admpop_adm2_2024' of slv_admpop_2024.xlsx
+    level: 242 of 254 names match this map's admin2 (against 10 at admin1) (slv_admpop_2024.xlsx)
+    262 admin2 unit(s), reference year 2024, 6,350,969 people
+  cod-ps-som (SOM)
+    licence: Other -- license_id='hdx-other', isopen=False, license_other='Restricted for use only in HRP and Humanitarian Operations.'
+    refused: this licence is not one this map may read
+  cod-ps-ssd (SSD)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 77 of 78 names match this map's admin2 (against 0 at admin1) (ssd_admpop_adm2_2022_v2.csv)
+    78 admin2 unit(s), reference year 2022, 12,394,970 people
+  cod-ps-stp (STP)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 5 of 7 names match this map's admin2 (against 0 at admin1) (stp_admpop_adm2_2022.csv)
+    7 admin2 unit(s), reference year 2022, 219,577 people
+  cod-ps-sur (SUR)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2012 from HDX's reference period for the dataset, the file stating none
+    level: 44 of 60 names match this map's admin2 (against 0 at admin1) (sur_admpop_adm2_v2.csv)
+    62 admin2 unit(s), reference year 2012, 541,638 people
+  cod-ps-svk (SVK)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 39 of 79 names match this map's admin2 (against 6 at admin1) (svk_admpop_adm2_2023.csv)
+    79 admin2 unit(s), reference year 2023, 5,424,687 people
+  cod-ps-swz (SWZ)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: swz_admpop_2022.xlsx has no district sheet
+  cod-ps-sxm (SXM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: sxm_pop_2018.xlsx has no district sheet
+  cod-ps-syc (SYC)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2019 from HDX's reference period for the dataset, the file stating none
+    level: 8 of 8 names match this map's admin2 (against 0 at admin1) (syc_admpop_adm2_nbs2019_v2.csv)
+    8 admin2 unit(s), reference year 2019, 90,945 people
+  cod-ps-tca (TCA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: tci_admpop_2022.xlsx has no district sheet
+  cod-ps-tcd (TCD)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: Tchad_PopulationDuTchad_20240102.xlsx has no district sheet
+    refused: tcd_admpop_2023.xlsx has no district sheet
+    refused: tcd_admpop_2022.xlsx has no district sheet
+    read sheet 'tcd_admpop_adm2_2021' of tcd_admpop_2021.xlsx
+    level: 70 of 70 names match this map's admin2 (against 4 at admin1) (tcd_admpop_2021.xlsx)
+    70 admin2 unit(s), reference year 2021, 16,818,393 people
+  cod-ps-tgo (TGO)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    read sheet 'tgo_admpop_adm2_2021' of TGO_ADM2_POP_2021.xlsx
+    level: 37 of 37 names match this map's admin2 (against 0 at admin1) (TGO_ADM2_POP_2021.xlsx)
+    37 admin2 unit(s), reference year 2021, 8,020,081 people
+  cod-ps-tha (THA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 917 of 917 names match this map's admin2 (against 1 at admin1) (tha_admpop_adm2_2023.csv)
+    928 admin2 unit(s), reference year 2023, 69,394,762 people
+  cod-ps-tjk (TJK)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: tjk_admpop_2019.xlsx has no district sheet
+  cod-ps-tkl (TKL)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: TKL_ADM0_POP_2023.xlsx has no district sheet
+  cod-ps-tls (TLS)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: tls_admpop_2022.xlsx has no district sheet
+  cod-ps-ton (TON)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 20 of 22 names match this map's admin2 (against 0 at admin1) (ton_admpop_adm2_2021.csv)
+    23 admin2 unit(s), reference year 2021, 100,209 people
+  cod-ps-tto (TTO)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: tto_admpop_2011.xlsx has no district sheet
+  cod-ps-tun (TUN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 22 of 24 names match this map's admin1 (against 0 at admin2) (tun_admpop_adm2_2020.csv)
+    24 admin1 unit(s), reference year 2020, 11,852,020 people
+  cod-ps-tur (TUR)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 723 of 947 names match this map's admin2 (against 41 at admin1) (tur_admpop_adm2_2022.csv)
+    973 admin2 unit(s), reference year 2022, 85,279,553 people
+  cod-ps-tza (TZA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 140 of 169 names match this map's admin2 (against 12 at admin1) (tza_admpop_adm2_2020_v2.csv)
+    169 admin2 unit(s), reference year 2020, 58,552,845 people
+  cod-ps-uga (UGA)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 56 of 135 names match this map's admin2 (against 0 at admin1) (uga_admpop_adm2_2023.csv)
+    135 admin2 unit(s), reference year 2022, 46,210,758 people
+  cod-ps-ukr (UKR)
+    licence: unstated -- license_id=None, isopen=False
+    refused: this licence is not one this map may read
+  cod-ps-ury (URY)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: ury_admpop_2023.xlsx has no district sheet
+    refused: ury_admpop_2022.xlsx has no district sheet
+    refused: ury_admgaz_2020.xlsx has no district sheet
+  cod-ps-uzb (UZB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: uzbekistan_population_statistics_2018.xlsx has no district sheet
+  cod-ps-vct (VCT)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: vct_admpop_2022.xlsx has no district sheet
+  cod-ps-ven (VEN)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 263 of 273 names match this map's admin2 (against 8 at admin1) (ven_admpop_adm2_2011_v3.csv)
+    335 admin2 unit(s), reference year 2011, 27,225,775 people
+  cod-ps-vgb (VGB)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: vgb_admpop_2022.xlsx has no district sheet
+  cod-ps-vir (VIR)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    reference year 2010 from HDX's reference period for the dataset, the file stating none
+    refused vir_admpop_adm2_v2.csv: its names match 0 of this map's districts and 0 of its first-level units, out of 18; too few of either to say which level this file describes
+  cod-ps-vnm (VNM)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    refused: vnm_admpop_2024.xlsx has no district sheet
+    refused: vnm_admpop_2023.xlsx has no district sheet
+  cod-ps-vut (VUT)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 58 of 66 names match this map's admin2 (against 0 at admin1) (vut_admpop_adm2_2020.csv)
+    66 admin2 unit(s), reference year 2020, 300,043 people
+  cod-ps-zaf (ZAF)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    181 row(s) unnamed, 0 with no usable total
+    level: 43 of 52 names match this map's admin2 (against 0 at admin1) (zaf_admpop_adm2_2020.csv)
+    52 admin2 unit(s), reference year 2020, 56,463,617 people
+  cod-ps-zmb (ZMB)
+    licence: Creative Commons Attribution International (CC BY) -- license_id='cc-by', isopen=True
+    refused: zmb_admpop_2020.xlsx has no district sheet
+  cod-ps-zwe (ZWE)
+    licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO) -- license_id='cc-by-igo', isopen=False
+    level: 91 of 91 names match this map's admin2 (against 3 at admin1) (zwe_admpop_adm2_2023.csv)
+    91 admin2 unit(s), reference year 2023, 17,408,564 people
+  19061 districts in 69 countries: AFG:401, AGO:161, AZE:85, BDI:119, BEN:77, BFA:45, BGD:64, BRA:5570, CAF:71, CHL:56, COD:164, COL:1121, CRI:81, DOM:32, ERI:58, ETH:92, FJI:15, GEO:80, GHA:216, GIN:34, GTM:340, HND:298, IRN:429, KEN:338, KGZ:4, KIR:22, LAO:148, LBR:136, LKA:25, MAR:31, MDG:119, MEX:2475, MLI:50, MMR:80, MNG:339, MOZ:155, MWI:32, NAM:107, NER:67, NGA:773, NIC:153, NPL:77, PHL:84, PNG:87, PRK:177, PRY:250, ROU:42, RWA:30, SDN:188, SLB:50, SLE:14, SLV:262, SSD:78, STP:7, SUR:62, SVK:79, SYC:8, TCD:70, TGO:37, THA:928, TON:23, TUN:24, TUR:973, TZA:169, UGA:135, VEN:335, VUT:66, ZAF:52, ZWE:91
+  wrote data/processed/cod_ps_admin2.json (22092 kB)
