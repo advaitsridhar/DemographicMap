@@ -193,6 +193,40 @@ class TownFiguresOnDistricts(unittest.TestCase):
         self.assertEqual(refused, 0)
 
 
+class SettlementFiguresOnDistricts(unittest.TestCase):
+    """An item that is only a village or a town is not a district."""
+
+    def setUp(self):
+        kinds = mock.patch.dict(be.SETTLEMENT_CLASSES,
+                                {"Q3957": "town", "Q532": "village"}, clear=True)
+        kinds.start()
+        self.addCleanup(kinds.stop)
+
+    def run_guard(self, classes, source="Wikidata (CC0)"):
+        a2 = {"GNQ": [{"id": "U", "name": "LUBA", "wikidata": "Q985548",
+                       "population": {"value": 7739, "year": 2012, "source": source}}]}
+        refused = be.refuse_settlement_figures(a2, {"Q985548": classes})
+        return refused, a2["GNQ"][0]["population"]
+
+    def test_a_town_and_nothing_else_is_left_out(self):
+        refused, pop = self.run_guard([["Q3957", "town"]])
+        self.assertEqual(refused, 1)
+        self.assertEqual(pop["status"], common.NOT_AVAILABLE)
+        self.assertIn("Q985548, is a town and nothing else", pop["note"])
+        self.assertIn("7,739 (2012)", pop["note"])
+
+    def test_a_town_that_is_also_a_municipality_is_kept(self):
+        refused, pop = self.run_guard([["Q3957", "town"], ["Q2039348", "municipality of the Netherlands"]])
+        self.assertEqual(refused, 0)
+        self.assertEqual(pop["value"], 7739)
+
+    def test_an_item_whose_classes_are_unknown_is_kept(self):
+        self.assertEqual(self.run_guard([])[0], 0)
+
+    def test_only_wikidata_figures_are_judged(self):
+        self.assertEqual(self.run_guard([["Q532", "village"]], source="OCHA")[0], 0)
+
+
 class CapitalFiguresOnParents(unittest.TestCase):
     """A first-level Wikidata item can carry its capital's figure."""
 

@@ -3026,6 +3026,45 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
     return refused
 
 
+# What the item joined to a district is, when Wikidata says. The name join
+# cannot tell the town of Luba from Luba District, and before populations were
+# fetched by id the mistake cost nothing; afterwards Bioko Sur's two districts
+# read 7,739 and 1,071, the towns', and Armenia's raion of Kotayk read the
+# 1,558 people of the village of Kotayk. scripts/fetch_wikidata.py
+# --item-classes records every such item's classes, and an item whose every
+# class is a kind of settlement -- no municipality, commune or district among
+# them -- is a place people live in, not a unit they are counted by, and its
+# figure is left out. An item that is both, as most cities of Japan and the
+# Netherlands are, keeps its figure: it is the unit.
+SETTLEMENT_CLASSES: dict[str, str] = {}
+ITEM_CLASSES = PROCESSED / "wikidata_admin2_item_classes.json"
+
+
+def refuse_settlement_figures(admin2: dict[str, list[dict[str, Any]]],
+                              classes: dict[str, list[list[str]]]) -> int:
+    """Take a Wikidata population off a unit whose item is only a settlement."""
+    refused = 0
+    for rows in admin2.values():
+        for entity in rows:
+            pop = entity.get("population")
+            if not (isinstance(pop, dict) and pop.get("value")
+                    and str(pop.get("source") or "").startswith("Wikidata")):
+                continue
+            kinds = classes.get(entity.get("wikidata") or "")
+            if not kinds or not all(k in SETTLEMENT_CLASSES for k, _ in kinds):
+                continue
+            what = " and ".join(sorted({SETTLEMENT_CLASSES[k] for k, _ in kinds}))
+            entity["population"] = gap(NOT_AVAILABLE, (
+                f"The Wikidata item joined here by name, {entity['wikidata']}, is "
+                f"a {what} and nothing else, not a unit of government; its "
+                f"{pop['value']:,}"
+                + (f" ({pop['year']})" if pop.get("year") else "")
+                + " are the settlement's people rather than this unit's, so the "
+                  "figure is left out."))
+            refused += 1
+    return refused
+
+
 # The same mistake one level up, where it also blinds the check above. Wikidata's
 # items for Portugal's districts carry their capitals' 2018 figures -- Portalegre
 # District 22,359, the municipality of Portalegre's -- so every district read as
@@ -4497,6 +4536,11 @@ def main() -> int:
     # -- a town's figure on a district --------------------------------------
     # After every adapter, so the parent's population is the one it will
     # keep; before anything sums or weighs by these figures.
+    settlements = refuse_settlement_figures(admin2_by_country,
+                                            read_json(ITEM_CLASSES, {}) or {})
+    if settlements:
+        log(f"  {settlements} Wikidata district figures left out as a "
+            f"settlement's, not the district's")
     capitals = refuse_capital_figures(admin1_by_country, admin2_by_country)
     if capitals:
         log(f"  {capitals} Wikidata first-level figures left out as a capital's, "
