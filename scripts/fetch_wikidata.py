@@ -552,6 +552,85 @@ def enrich(path: Path, countries: list[str] | None, sleep: float,
                    qids={rec["wikidata"] for recs in todo.values() for rec in recs})
 
 
+# Every item of one class in one country, with what hydrate fetches. For a
+# country the structural walk under-reached: the Netherlands' 344 drawn
+# municipalities met 38 rows, because its provinces' P150 lists are partial
+# and the P131 walk timed out. A class is a flat lookup and cheap.
+CLASS_QUERY = """
+SELECT ?unit ?unitLabel ?parent ?parentLabel ?pop ?popTime ?rank ?coord WHERE {
+  ?unit wdt:P31 wd:%(cls)s ; wdt:P17 wd:%(country)s .
+  OPTIONAL { ?unit wdt:P131 ?parent . }
+  OPTIONAL { ?unit p:P1082 ?popSt .
+             ?popSt ps:P1082 ?pop ; wikibase:rank ?rank .
+             FILTER NOT EXISTS { ?popSt pq:P518 ?part . }
+             OPTIONAL { ?popSt pq:P585 ?popTime . } }
+  OPTIONAL { ?unit wdt:P625 ?coord . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+"""
+
+
+def class_sweep(path: Path, specs: list[str], level: str = "admin2") -> int:
+    """Add the items of a class the file lacks, and populations it lacks.
+
+    ``specs`` are ISO3:QCLASS. A row already in the file keeps everything it
+    has; a population is only ever added where the row has none.
+    """
+    records = read_json(path, []) or []
+    by_qid = {r.get("wikidata"): r for r in records if r.get("wikidata")}
+    qids = country_qids()
+    added = filled = 0
+    for spec in specs:
+        iso3, cls = spec.split(":", 1)
+        country = qids.get(iso3.upper())
+        if not country:
+            log(f"  {iso3}: no Wikidata country item")
+            continue
+        rows = sparql(CLASS_QUERY % {"cls": cls, "country": country},
+                      cache=False, retries=2)
+        grouped: dict[str, list[dict[str, Any]]] = {}
+        for row in rows:
+            grouped.setdefault(value(row, "unit"), []).append(row)
+        found = 0
+        for qid, group in grouped.items():
+            name = value(group[0], "unitLabel")
+            if not qid or not name or name == qid:
+                continue
+            found += 1
+            best = best_statement(group)
+            point = next((parse_point(value(r, "coord")) for r in group
+                          if value(r, "coord")), None)
+            rec = by_qid.get(qid)
+            if rec is None:
+                parent = next((r for r in group if value(r, "parent")), {})
+                rec = {
+                    "id": f"{iso3.upper()}-WD-{qid}", "wikidata": qid, "level": level,
+                    "name": name, "parent": value(parent, "parent") or iso3.upper(),
+                    "parent_name": value(parent, "parentLabel"),
+                    "country": iso3.upper(), "capital": gap(NOT_AVAILABLE),
+                    "coordinates": point or gap(NOT_AVAILABLE),
+                    "inception": gap(NOT_AVAILABLE), "iso_3166_2": gap(NOT_AVAILABLE),
+                    "population": (measure(best[0], year=best[1], source="Wikidata (CC0)")
+                                   if best else gap(NOT_AVAILABLE, ASKED_BY_ID)),
+                    "sources": [{"field": "population/capital/coordinates",
+                                 "name": "Wikidata",
+                                 "url": f"https://www.wikidata.org/wiki/{qid}",
+                                 "license": "CC0"}],
+                }
+                records.append(rec)
+                by_qid[qid] = rec
+                added += 1
+                filled += bool(best)
+            elif best and not (isinstance(rec.get("population"), dict)
+                               and rec["population"].get("value")):
+                rec["population"] = measure(best[0], year=best[1], source="Wikidata (CC0)")
+                filled += 1
+        log(f"  {iso3} {cls}: {found} items of the class")
+    write_json(path, records)
+    log(f"  {added} rows added, {filled} populations filled")
+    return 0
+
+
 def blank_items(level: str) -> set[str]:
     """The Wikidata items joined to a unit the built site shows no population for."""
     out: set[str] = set()
@@ -664,6 +743,8 @@ def main() -> int:
                          "file covers")
     ap.add_argument("--budget", type=float, default=38.0,
                     help="--hydrate stops and saves after this many minutes")
+    ap.add_argument("--class-sweep", nargs="*", default=None,
+                    help="ISO3:QCLASS pairs; every item of the class in the country")
     ap.add_argument("--enrich", action="store_true",
                     help="local-language names and populations for rows no "
                          "unit has joined, in the countries LOCAL_LANGUAGES names")
@@ -671,6 +752,9 @@ def main() -> int:
                     help="fill population and coordinates for rows already in "
                          "the file that lack them, looked up by id")
     args = ap.parse_args()
+    if args.class_sweep:
+        return class_sweep(args.out or PROCESSED / f"wikidata_{args.level}.json",
+                           args.class_sweep, args.level)
     if args.enrich:
         return enrich(args.out or PROCESSED / f"wikidata_{args.level}.json",
                       args.countries, args.sleep, args.budget, args.level)

@@ -389,3 +389,28 @@ class Enrich(unittest.TestCase):
             self.assertEqual(out["Q1"]["population"]["value"], 950)
             self.assertNotIn("aliases", out["Q2"])
             self.assertNotIn("aliases", out["Q3"])
+
+
+class ClassSweep(unittest.TestCase):
+    def test_adds_missing_items_and_never_replaces_a_population(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "wd.json"
+            path.write_text(json.dumps([
+                {"id": "NLD-WD-Q1", "wikidata": "Q1", "country": "NLD", "name": "Aalten",
+                 "population": {"value": 27000, "year": 2020}},
+            ]))
+            answer = [
+                dict(stmt("Q1", 99999, 2024), unitLabel=lit("Aalten")),
+                dict(stmt("Q2", 25000, 2024, coord="Point(6.1 52.9)"),
+                     unitLabel=lit("Aa en Hunze"), parent=uri("Q772"),
+                     parentLabel=lit("Drenthe")),
+            ]
+            with mock.patch.object(m, "sparql", return_value=answer), \
+                 mock.patch.object(m, "country_qids", return_value={"NLD": "Q55"}):
+                m.class_sweep(path, ["NLD:Q2039348"])
+            out = {r["wikidata"]: r for r in json.loads(path.read_text())}
+            self.assertEqual(out["Q1"]["population"]["value"], 27000)
+            self.assertEqual(out["Q2"]["name"], "Aa en Hunze")
+            self.assertEqual(out["Q2"]["parent_name"], "Drenthe")
+            self.assertEqual(out["Q2"]["population"]["value"], 25000)
+            self.assertEqual(out["Q2"]["coordinates"], [6.1, 52.9])
