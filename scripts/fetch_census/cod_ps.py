@@ -348,7 +348,7 @@ def which_level(code: str, names: list[str]) -> tuple[str | None, str]:
     # two of which matched each level, and was written as four first-level
     # units carrying 329,300 people between them.
     if scores[best] == scores[other] \
-            or scores[best] < min(MIN_LEVEL_NAMES, len(want)):
+            or scores[best] < max(MIN_TABLE_NAMES, min(MIN_LEVEL_NAMES, len(want))):
         return None, (f"its names match {scores['admin2']} of this map's "
                       f"districts and {scores['admin1']} of its first-level "
                       f"units, out of {len(want)}; too few of either to say "
@@ -369,6 +369,10 @@ MIN_LEVEL_MATCH = 0.40
 # And never on fewer names than this (or than the table has), however well
 # they match.
 MIN_LEVEL_NAMES = 5
+# A table of one or two names says nothing about levels. Eurostat's NUTS-3
+# for Luxembourg is one region, the whole country, and it matched the commune
+# called Luxembourg -- the city, a fifth of the people.
+MIN_TABLE_NAMES = 3
 
 
 def adm3_resource(package: dict[str, Any]) -> dict[str, Any] | None:

@@ -191,7 +191,8 @@ class OneLevelDown(unittest.TestCase):
         with mock.patch.object(cod_ps, "read_table", side_effect=lambda r: tables[r["url"]]), \
              mock.patch.object(cod_ps, "shape_names",
                                side_effect=lambda code, level: {"acajutla"} if level == "admin2" else set()), \
-             mock.patch.object(cod_ps, "MIN_LEVEL_NAMES", 1):
+             mock.patch.object(cod_ps, "MIN_LEVEL_NAMES", 1), \
+             mock.patch.object(cod_ps, "MIN_TABLE_NAMES", 1):
             out = cod_ps.country_records(package)
         self.assertEqual([(r["name"], r["level"]) for r in out], [("Acajutla", "admin2")])
         self.assertEqual(out[0]["population"], {"value": 52000, "year": 2024,
@@ -217,6 +218,8 @@ class LevelNeedsEvidence(unittest.TestCase):
             self.assertIsNone(cod_ps.which_level("KGZ", list("abcdefgh"))[0])
             # A table of three that all match is a small country, not a handful.
             self.assertEqual(cod_ps.which_level("KGZ", ["a", "b", "c"])[0], "admin2")
+            # One name is not a level: Luxembourg's single NUTS-3 region.
+            self.assertIsNone(cod_ps.which_level("LUX", ["a"])[0])
 
 
 class Partition(unittest.TestCase):
