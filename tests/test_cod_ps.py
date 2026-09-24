@@ -190,7 +190,8 @@ class OneLevelDown(unittest.TestCase):
         }
         with mock.patch.object(cod_ps, "read_table", side_effect=lambda r: tables[r["url"]]), \
              mock.patch.object(cod_ps, "shape_names",
-                               side_effect=lambda code, level: {"acajutla"} if level == "admin2" else set()):
+                               side_effect=lambda code, level: {"acajutla"} if level == "admin2" else set()), \
+             mock.patch.object(cod_ps, "MIN_LEVEL_NAMES", 1):
             out = cod_ps.country_records(package)
         self.assertEqual([(r["name"], r["level"]) for r in out], [("Acajutla", "admin2")])
         self.assertEqual(out[0]["population"], {"value": 52000, "year": 2024,
@@ -202,3 +203,17 @@ class OneLevelDown(unittest.TestCase):
             {"dataset_date": "[2018-01-01T00:00:00 TO 2018-12-31T23:59:59]"}), 2018)
         self.assertIsNone(cod_ps.dataset_year(
             {"dataset_date": "[2015-01-01T00:00:00 TO 2020-12-31T23:59:59]"}))
+
+
+class LevelNeedsEvidence(unittest.TestCase):
+    def test_a_tie_or_a_handful_is_refused(self):
+        from scripts.fetch_census import cod_ps
+        names = {"admin1": {"a", "b"}, "admin2": {"c", "d"}}
+        with mock.patch.object(cod_ps, "shape_names", side_effect=lambda c, l: names[l]):
+            self.assertIsNone(cod_ps.which_level("KGZ", ["a", "b", "c", "d"])[0])
+        # Half of eight is above the 40% bar and still only four names.
+        names = {"admin1": set(), "admin2": {"a", "b", "c", "d"}}
+        with mock.patch.object(cod_ps, "shape_names", side_effect=lambda c, l: names[l]):
+            self.assertIsNone(cod_ps.which_level("KGZ", list("abcdefgh"))[0])
+            # A table of three that all match is a small country, not a handful.
+            self.assertEqual(cod_ps.which_level("KGZ", ["a", "b", "c"])[0], "admin2")

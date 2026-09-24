@@ -343,6 +343,16 @@ def which_level(code: str, names: list[str]) -> tuple[str | None, str]:
               for level in ("admin1", "admin2")}
     best = max(scores, key=lambda k: scores[k])
     other = "admin1" if best == "admin2" else "admin2"
+    # A tie says nothing about which level it is, and a handful of names says
+    # too little: Kyrgyzstan's table lost all but four rows to repeated codes,
+    # two of which matched each level, and was written as four first-level
+    # units carrying 329,300 people between them.
+    if scores[best] == scores[other] \
+            or scores[best] < min(MIN_LEVEL_NAMES, len(want)):
+        return None, (f"its names match {scores['admin2']} of this map's "
+                      f"districts and {scores['admin1']} of its first-level "
+                      f"units, out of {len(want)}; too few of either to say "
+                      f"which level this file describes")
     if scores[best] < MIN_LEVEL_MATCH * len(want):
         return None, (f"its names match {scores['admin2']} of this map's "
                       f"districts and {scores['admin1']} of its first-level "
@@ -356,6 +366,9 @@ def which_level(code: str, names: list[str]) -> tuple[str | None, str]:
 # that level. Not a majority: boundary files and COD-PS disagree about
 # spellings often enough that a real match sits well below 100%.
 MIN_LEVEL_MATCH = 0.40
+# And never on fewer names than this (or than the table has), however well
+# they match.
+MIN_LEVEL_NAMES = 5
 
 
 def adm3_resource(package: dict[str, Any]) -> dict[str, Any] | None:

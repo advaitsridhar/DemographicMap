@@ -34,11 +34,22 @@ EUROSTAT_ALPHA2 = {"EL": "GRC", "UK": "GBR"}
 
 
 def alpha2_to_iso3() -> dict[str, str]:
-    """alpha-2 -> alpha-3 from the Natural Earth country index."""
+    """alpha-2 -> alpha-3 from the Natural Earth country index, or the site's own.
+
+    The index lives under data/raw, which is not in git, so on an Actions
+    runner it is absent and only the two codes above resolved: a NUTS-3 run
+    there skipped every region of every country but Greece and the UK. The
+    built site carries each country's ISO2 in its codes, so that is read too.
+    """
     out = dict(EUROSTAT_ALPHA2)
     for row in read_json(RAW / "codes" / "country_index.json", []):
         if row.get("iso2"):
             out.setdefault(row["iso2"], row["iso3"])
+    site = PROCESSED.parent.parent / "site" / "data" / "admin0.json"
+    for row in read_json(site, []) or []:
+        codes = row.get("codes") or {}
+        if codes.get("iso2") and codes.get("iso3"):
+            out.setdefault(codes["iso2"], codes["iso3"])
     return out
 
 API = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
