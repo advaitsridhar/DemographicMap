@@ -16,6 +16,7 @@ population of every department, which catch a wrong or altered file.
 
 Usage:
     python -m scripts.fetch_census.guatemala_census --probe
+    python -m scripts.fetch_census.guatemala_census --check
     python -m scripts.fetch_census.guatemala_census
 """
 
@@ -24,6 +25,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import io
+import re
 import sys
 import tempfile
 import urllib.request
@@ -99,6 +101,51 @@ def probe(archive: zipfile.ZipFile) -> None:
                 log(f"   {h}: {len(counts[h])} values in the first 200,000 rows; {top}")
 
 
+def verify(archive: zipfile.ZipFile) -> None:
+    """Each CSV against the SHA-256 list INE ships inside the archive."""
+    listing = next(i for i in archive.infolist() if i.filename.endswith("SHA256.txt"))
+    text = archive.read(listing).decode("utf-8", "replace")
+    listed = dict(re.findall(r"Name:\s*(\S+)\s+Size:[^\n]*\n\s*SHA256:\s*([0-9A-F]{64})", text))
+    for info in archive.infolist():
+        if not info.filename.lower().endswith(".csv"):
+            continue
+        digest = hashlib.sha256()
+        with archive.open(info) as raw:
+            while chunk := raw.read(1 << 20):
+                digest.update(chunk)
+        got = digest.hexdigest().upper()
+        base = info.filename.rsplit("/", 1)[-1]
+        want = listed.get(base) or listed.get(base.replace(" - ", "_"))
+        log(f"  {base}: {info.file_size:,} bytes, sha256 {got}; INE lists "
+            f"{want or 'no hash'}{' -- matches' if want == got else ''}")
+
+
+def dictionary(archive: zipfile.ZipFile, name: str) -> None:
+    """Every row of one of INE's data dictionaries, as text."""
+    import openpyxl
+    info = next(i for i in archive.infolist() if i.filename.endswith(name))
+    book = openpyxl.load_workbook(io.BytesIO(archive.read(info)), read_only=True)
+    for sheet in book.worksheets:
+        log(f"-- {name} / {sheet.title}")
+        for row in sheet.iter_rows(values_only=True):
+            cells = [str(c).strip() for c in row if c not in (None, "")]
+            if cells:
+                log("   " + " | ".join(cells))
+
+
+def totals(archive: zipfile.ZipFile) -> None:
+    """People by department: person rows, and the households' own head counts."""
+    for suffix, column in (("PERSONA - BDP.csv", None), ("HOGAR_BDP.csv", "TOTAL_PERS")):
+        info = next(i for i in archive.infolist() if i.filename.endswith(suffix))
+        by_dept: Counter = Counter()
+        with archive.open(info) as raw:
+            reader = csv.DictReader(io.TextIOWrapper(raw, encoding="utf-8-sig", newline=""))
+            for row in reader:
+                by_dept[int(row["DEPARTAMENTO"])] += int(row[column]) if column else 1
+        log(f"  {suffix}: {sum(by_dept.values()):,} people; by department "
+            + ", ".join(f"{d}={n:,}" for d, n in sorted(by_dept.items())))
+
+
 def main() -> None:
     with tempfile.TemporaryDirectory() as tmp:
         dest = Path(tmp) / "db_csv_.zip"
@@ -107,7 +154,12 @@ def main() -> None:
             if "--probe" in sys.argv:
                 probe(archive)
                 return
-            raise SystemExit("only --probe is written yet")
+            if "--check" in sys.argv:
+                verify(archive)
+                dictionary(archive, "Diccionario_Base_PERSONA.xlsx")
+                totals(archive)
+                return
+            raise SystemExit("only --probe and --check are written yet")
 
 
 if __name__ == "__main__":
