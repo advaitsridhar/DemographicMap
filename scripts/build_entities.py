@@ -1643,13 +1643,15 @@ def name_forms(text: str | None) -> tuple[tuple[str, ...], ...]:
 # first cut read them on both sides and took the census figures off 446 US
 # counties, because "Abbeville County, South Carolina" ends in "South", and
 # off Tierra del Fuego, whose full name ends "Islas del Atlantico Sur".
+# "Greater" is not one: OCHA still writes South Africa's Sekhukhune district
+# under its old name, Greater Sekhukhune, and it is the same place.
 QUALIFIERS = frozenset({
     "new", "nouvelle", "nouveau", "nueva", "nuevo", "nova", "novo",
     "north", "northern", "nord", "norte", "south", "southern", "sud", "sur", "sul",
     "east", "eastern", "est", "este", "leste", "west", "western", "ouest", "oeste",
     "central", "middle",
     "upper", "lower", "haute", "haut", "basse", "bas", "alto", "baixo", "bajo",
-    "greater", "grande", "little", "peninsula",
+    "grande", "little", "peninsula",
     "metropolitan", "metropolitana", "metropolitaine",
     "utara", "selatan", "barat", "timur", "tengah",
 })
