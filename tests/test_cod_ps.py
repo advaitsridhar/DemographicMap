@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import sys
 import unittest
+from unittest import mock
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
@@ -170,3 +171,34 @@ class DistrictTablesByName(unittest.TestCase):
         self.assertEqual(columns, ["ADM2_EN", "ADM2_PCODE", "ADM1_EN", "T_TL"])
         self.assertEqual(rows, [{"ADM2_EN": "Ainabkoi", "ADM2_PCODE": "KE027144",
                                  "ADM1_EN": "Uasin Gishu", "T_TL": "138192"}])
+
+
+class OneLevelDown(unittest.TestCase):
+    def test_the_next_table_is_asked_when_the_district_table_is_not_the_maps(self):
+        from scripts.fetch_census import cod_ps
+        package = {"name": "cod-ps-slv", "groups": [{"name": "slv"}],
+                   "license_id": "cc-by-igo", "license_title": "CC BY-IGO",
+                   "resources": [{"name": "slv_admpop_adm2_2024.csv", "url": "a"},
+                                 {"name": "slv_admpop_adm3_2024.csv", "url": "b"}]}
+        tables = {
+            "a": (["ADM2_ES", "ADM1_ES", "T_TL"],
+                  [{"ADM2_ES": "La Libertad Sur", "ADM1_ES": "La Libertad", "T_TL": "5"}],
+                  "slv_admpop_adm2_2024.csv"),
+            "b": (["ADM3_ES", "ADM1_ES", "T_TL"],
+                  [{"ADM3_ES": "Acajutla", "ADM1_ES": "Sonsonate", "T_TL": "52000"}],
+                  "slv_admpop_adm3_2024.csv"),
+        }
+        with mock.patch.object(cod_ps, "read_table", side_effect=lambda r: tables[r["url"]]), \
+             mock.patch.object(cod_ps, "shape_names",
+                               side_effect=lambda code, level: {"acajutla"} if level == "admin2" else set()):
+            out = cod_ps.country_records(package)
+        self.assertEqual([(r["name"], r["level"]) for r in out], [("Acajutla", "admin2")])
+        self.assertEqual(out[0]["population"], {"value": 52000, "year": 2024,
+                                                "source": out[0]["population"]["source"]})
+
+    def test_a_single_year_reference_period_supplies_a_missing_year(self):
+        from scripts.fetch_census import cod_ps
+        self.assertEqual(cod_ps.dataset_year(
+            {"dataset_date": "[2018-01-01T00:00:00 TO 2018-12-31T23:59:59]"}), 2018)
+        self.assertIsNone(cod_ps.dataset_year(
+            {"dataset_date": "[2015-01-01T00:00:00 TO 2020-12-31T23:59:59]"}))

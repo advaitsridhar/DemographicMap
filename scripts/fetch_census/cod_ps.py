@@ -144,7 +144,7 @@ def probe() -> None:
 # name, then whatever language is left. A file that offers ADM2_NAME beside
 # ADM2_NAME_SI and ADM2_NAME_TA is Sri Lanka's, and the unqualified one is the
 # English it already is.
-LEVEL_WORD = re.compile(r"^(?:adm|admin)(?P<level>[12])")
+LEVEL_WORD = re.compile(r"^(?:adm|admin)(?P<level>[123])")
 # Never a name: a code, a classification, or one of the alternates a file
 # carries beside the name it actually uses.
 NOT_A_NAME = ("pcode", "code", "type", "refname", "altname")
@@ -234,11 +234,23 @@ def adm2_resource(package: dict[str, Any]) -> dict[str, Any] | None:
         name = str(resource.get("name") or "").lower()
         if ADM2_NAME.search(name) and name.endswith(".csv"):
             return resource
-    for resource in resources:
-        name = str(resource.get("name") or "").lower()
-        if name.endswith((".xlsx", ".xlsm")) and "admpop" in name:
-            return resource
-    return None
+    books = workbooks(package)
+    return books[0] if books else None
+
+
+def workbooks(package: dict[str, Any]) -> list[dict[str, Any]]:
+    """The population workbooks, newest-named first; never a gazetteer.
+
+    Most of them turned out to hold only national and first-level sheets --
+    Bolivia's, Cuba's, Iraq's, Jamaica's, Vietnam's -- so each is asked in
+    turn, and Chad's district sheet is in its 2021 workbook, not its 2023 one.
+    """
+    books = [r for r in package.get("resources") or ()
+             if str(r.get("name") or "").lower().endswith((".xlsx", ".xlsm"))
+             and not re.search(r"gazetteer|admgz|boundar|admin_?boundaries",
+                               str(r.get("name") or "").lower())]
+    return sorted(books, key=lambda r: [-int(y) for y in re.findall(
+        r"(\d{4})", str(r.get("name") or ""))] or [0])
 
 
 def workbook_rows(body: bytes) -> tuple[list[str], list[dict[str, str]], str]:
@@ -249,18 +261,24 @@ def workbook_rows(body: bytes) -> tuple[list[str], list[dict[str, str]], str]:
     """
     import openpyxl
     book = openpyxl.load_workbook(io.BytesIO(body), read_only=True, data_only=True)
-    sheet = next((ws for ws in book.worksheets
-                  if ADM2_NAME.search(ws.title.lower().replace(" ", ""))), None)
-    if sheet is None:
-        return [], [], ""
-    rows = sheet.iter_rows(values_only=True)
-    header = [str(c).strip() if c is not None else "" for c in next(rows, [])]
-    out = []
-    for row in rows:
-        if not any(v not in (None, "") for v in row):
+    for sheet in book.worksheets:
+        title = sheet.title.lower().replace(" ", "")
+        # "adm2" or "admpop2" in the name, or Uzbekistan's bare "L2"; and a
+        # total among its columns, since Zambia's workbook has a boundary
+        # sheet called AB-ADM2 that carries names and no population.
+        if not (ADM2_NAME.search(title) or title == "l2"):
             continue
-        out.append({h: ("" if v is None else str(v)) for h, v in zip(header, row) if h})
-    return [h for h in header if h], out, sheet.title
+        rows = sheet.iter_rows(values_only=True)
+        header = [str(c).strip() if c is not None else "" for c in next(rows, [])]
+        if total_column([h for h in header if h]) is None:
+            continue
+        out = []
+        for row in rows:
+            if not any(v not in (None, "") for v in row):
+                continue
+            out.append({h: ("" if v is None else str(v)) for h, v in zip(header, row) if h})
+        return [h for h in header if h], out, sheet.title
+    return [], [], ""
 
 
 # Where this map's own shapes are, so a file can be asked which level it is
@@ -275,10 +293,28 @@ def fold(name: str) -> str:
     return "".join(c for c in letters.lower() if c.isalnum())
 
 
+# Words that say what kind of unit a name is, in the boundary file's way of
+# writing it or the table's: "District of Bardejov" against "Bardejov",
+# "Provincia de Antofagasta" against "Antofagasta", "Acoyapa (Municipio)".
+# Used only to decide which of this map's levels a table describes -- the
+# join itself is the build's, with its own rules -- so a looser comparison
+# here moves no figure onto any shape.
+KIND_WORDS = re.compile(
+    r"\((?:[^)]*)\)|\b(?:district|province|provincia|departamento|department|"
+    r"municipality|municipio|municipalite|arrondissement|commune|county|rayon|"
+    r"raion|region|of|de|del|la|le)\b")
+
+
+def level_key(name: str) -> str:
+    stripped = unicodedata.normalize("NFKD", name.lower())
+    letters = "".join(c for c in stripped if not unicodedata.combining(c))
+    return fold(KIND_WORDS.sub(" ", letters))
+
+
 def shape_names(code: str, level: str) -> set[str]:
     path = SITE / level / f"{code}.json"
     try:
-        return {fold(s["name"]) for s in json.loads(path.read_text())}
+        return {level_key(s["name"]) for s in json.loads(path.read_text())}
     except (OSError, ValueError, KeyError):
         return set()
 
@@ -299,7 +335,8 @@ def which_level(code: str, names: list[str]) -> tuple[str | None, str]:
     match more is the level they describe. A file matching neither is refused,
     because then there is nothing to say where its rows belong.
     """
-    want = {fold(n) for n in names if n}
+    want = {level_key(n) for n in names if n}
+    want.discard("")
     if not want:
         return None, "no row carries a name"
     scores = {level: len(want & shape_names(code, level))
@@ -321,74 +358,90 @@ def which_level(code: str, names: list[str]) -> tuple[str | None, str]:
 MIN_LEVEL_MATCH = 0.40
 
 
-def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
-    """One country's district populations, or none with the reason logged."""
-    code = iso3(package)
-    stub = str(package.get("name") or "")
-    terms = licence(package)
-    log(f"  {stub} ({code or '?'})")
-    log(f"    licence: {terms}")
-    if not code:
-        log("    refused: the catalogue gives no ISO3")
-        return []
-    if not is_usable(package):
-        log("    refused: this licence is not one this map may read")
-        return []
-    resource = adm2_resource(package)
-    if resource is None:
-        log("    refused: no adm2 CSV or workbook on this dataset")
-        return []
+def adm3_resource(package: dict[str, Any]) -> dict[str, Any] | None:
+    for resource in package.get("resources") or ():
+        name = str(resource.get("name") or "").lower()
+        if re.search(r"adm(?:pop)?_?3(?!\d)", name) and name.endswith(".csv"):
+            return resource
+    return None
+
+
+def dataset_year(package: dict[str, Any]) -> int | None:
+    """The one year HDX's own reference period for the dataset names, if one.
+
+    CKAN writes it as "[2018-01-01T00:00:00 TO 2018-12-31T23:59:59]". A span
+    of more than one year says nothing about which year a row describes, so
+    only a single year is taken.
+    """
+    years = set(re.findall(r"(\d{4})-\d{2}-\d{2}", str(package.get("dataset_date") or "")))
+    return int(years.pop()) if len(years) == 1 else None
+
+
+def read_table(resource: dict[str, Any]) -> tuple[list[str], list[dict[str, str]], str] | None:
+    """A table's columns, rows and the name its year may be read from."""
     try:
         with urllib.request.urlopen(urllib.request.Request(
                 str(resource.get("url")), headers=HEADERS), timeout=TIMEOUT) as fh:
             raw_body = fh.read()
     except Exception as err:                         # noqa: BLE001 -- reported
         log(f"    refused: {resource.get('name')}: {type(err).__name__}: {err}")
-        return []
+        return None
     resource_name = str(resource.get("name") or "")
     if resource_name.lower().endswith(".csv"):
         reader = csv.DictReader(io.StringIO(raw_body.decode("utf-8-sig", "replace")))
-        rows = list(reader)
-        columns = [c.strip() for c in (reader.fieldnames or [])]
-    else:
-        try:
-            columns, rows, sheet = workbook_rows(raw_body)
-        except Exception as err:                     # noqa: BLE001 -- reported
-            log(f"    refused: {resource_name}: unreadable workbook: "
-                f"{type(err).__name__}: {err}")
-            return []
-        if not rows:
-            log(f"    refused: {resource_name} has no district sheet")
-            return []
-        log(f"    read sheet {sheet!r} of {resource_name}")
-        # The year may be in the sheet's name rather than the file's.
-        resource_name = f"{resource_name} {sheet}_"
-    unit = name_column(columns, "2")
+        return ([c.strip() for c in (reader.fieldnames or [])], list(reader),
+                resource_name)
+    try:
+        columns, rows, sheet = workbook_rows(raw_body)
+    except Exception as err:                         # noqa: BLE001 -- reported
+        log(f"    refused: {resource_name}: unreadable workbook: "
+            f"{type(err).__name__}: {err}")
+        return None
+    if not rows:
+        log(f"    refused: {resource_name} has no district sheet")
+        return None
+    log(f"    read sheet {sheet!r} of {resource_name}")
+    # The year may be in the sheet's name rather than the file's.
+    return columns, rows, f"{resource_name} {sheet}_"
+
+
+def read_units(package: dict[str, Any], resource: dict[str, Any],
+               cod_level: str) -> tuple[dict[str, dict[str, Any]], int] | None:
+    """The table's units at ``cod_level`` and its reference year, or None."""
+    table = read_table(resource)
+    if table is None:
+        return None
+    columns, rows, resource_name = table
+    unit = name_column(columns, cod_level)
     parent = name_column(columns, "1")
     total = total_column(columns)
     if not unit or not total:
-        log(f"    refused: no second-level name column or no total; "
+        log(f"    refused: no level-{cod_level} name column or no total; "
             f"its columns are: {', '.join(columns[:12])}")
-        return []
+        return None
     year = reference_year(columns, rows, resource_name)
     if year is None:
-        log("    refused: the file states no reference year, in a column or "
-            "its own name")
-        return []
+        year = dataset_year(package)
+        if year is None:
+            log("    refused: the file states no reference year, in a column or "
+                "its own name, and HDX's reference period for it is not one year")
+            return None
+        log(f"    reference year {year} from HDX's reference period for the "
+            f"dataset, the file stating none")
 
     # One row per district, and a district that appears twice is refused
     # rather than summed or overwritten. Turkey's file carries a "type"
     # column, so a second row for one P-code would be a different universe
     # (residents against some other count) and adding them would invent a
     # population nobody published.
+    pcodes = (f"adm{cod_level}pcode", f"admin{cod_level}pcode", "districtcode")
     seen: dict[str, dict[str, Any]] = {}
     clashed: set[str] = set()
     unnamed = bad = 0
     for row in rows:
         name = (row.get(unit) or "").strip()
         code2 = next((str(row[c]).strip() for c in row
-                      if squash(c) in ("adm2pcode", "admin2pcode", "districtcode")
-                      and row.get(c)), name).strip()
+                      if squash(c) in pcodes and row.get(c)), name).strip()
         raw = (row.get(total) or "").strip().replace(",", "")
         if not name or not code2:
             unnamed += 1
@@ -410,41 +463,75 @@ def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
     for code2 in clashed:
         seen.pop(code2, None)
     if clashed:
-        log(f"    {len(clashed)} district(s) appear twice with different "
+        log(f"    {len(clashed)} unit(s) appear twice with different "
             f"totals and are refused")
     if unnamed or bad:
         log(f"    {unnamed} row(s) unnamed, {bad} with no usable total")
     if not seen:
-        log("    refused: no district survived")
-        return []
+        log("    refused: no unit survived")
+        return None
+    return seen, year
 
-    level, why = which_level(code, [u["name"] for u in seen.values()])
-    if level is None:
-        log(f"    refused: {why}")
-        return []
-    log(f"    level: {why}")
 
-    source = {"field": "population",
-              "name": f"OCHA, Common Operational Dataset -- population "
-                      f"statistics ({stub}), reference year {year}",
-              "url": DATASET_PAGE.format(stub=stub),
-              "year": year,
-              "license": terms}
-    out = []
-    for code2, unit_row in sorted(seen.items()):
-        out.append(record(
-            f"{code}-CODPS-{code2}", unit_row["name"], level=level,
-            parent=code, country=code,
-            # The parent hint is only meaningful for a district: at the first
-            # level the parent is the country and naming a region there would
-            # send the matcher looking for a shape above the one it wants.
-            parent_name=(unit_row["parent"] or None) if level == "admin2" else None,
-            population={"value": unit_row["people"], "year": year,
-                        "source": source["name"]},
-            sources=[source]))
-    log(f"    {len(out)} {level} unit(s), reference year {year}, "
-        f"{sum(r['population']['value'] for r in out):,} people")
-    return out
+def country_records(package: dict[str, Any]) -> list[dict[str, Any]]:
+    """One country's district populations, or none with the reason logged.
+
+    The district table first. Where its units are not this map's -- El
+    Salvador's second level became 44 municipalities in 2024, and its 262 old
+    ones, the map's, are the table one level down -- the next table is asked
+    the same question.
+    """
+    code = iso3(package)
+    stub = str(package.get("name") or "")
+    terms = licence(package)
+    log(f"  {stub} ({code or '?'})")
+    log(f"    licence: {terms}")
+    if not code:
+        log("    refused: the catalogue gives no ISO3")
+        return []
+    if not is_usable(package):
+        log("    refused: this licence is not one this map may read")
+        return []
+    first = adm2_resource(package)
+    candidates = [(first, "2")] + [(book, "2") for book in workbooks(package)
+                                   if book is not first] + [(adm3_resource(package), "3")]
+    if candidates[0][0] is None and candidates[1][0] is None:
+        log("    refused: no adm2 CSV or workbook on this dataset")
+        return []
+    for resource, cod_level in candidates:
+        if resource is None:
+            continue
+        got = read_units(package, resource, cod_level)
+        if got is None:
+            continue
+        seen, year = got
+        level, why = which_level(code, [u["name"] for u in seen.values()])
+        if level is None:
+            log(f"    refused {resource.get('name')}: {why}")
+            continue
+        log(f"    level: {why} ({resource.get('name')})")
+        source = {"field": "population",
+                  "name": f"OCHA, Common Operational Dataset -- population "
+                          f"statistics ({stub}), reference year {year}",
+                  "url": DATASET_PAGE.format(stub=stub),
+                  "year": year,
+                  "license": terms}
+        out = []
+        for code2, unit_row in sorted(seen.items()):
+            out.append(record(
+                f"{code}-CODPS-{code2}", unit_row["name"], level=level,
+                parent=code, country=code,
+                # The parent hint is only meaningful for a district: at the
+                # first level the parent is the country and naming a region
+                # there would send the matcher looking for a shape above it.
+                parent_name=(unit_row["parent"] or None) if level == "admin2" else None,
+                population={"value": unit_row["people"], "year": year,
+                            "source": source["name"]},
+                sources=[source]))
+        log(f"    {len(out)} {level} unit(s), reference year {year}, "
+            f"{sum(r['population']['value'] for r in out):,} people")
+        return out
+    return []
 
 
 def headers(isos: list[str]) -> None:
