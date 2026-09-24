@@ -131,6 +131,184 @@ class OtherLakesAreWater(unittest.TestCase):
         self.assertNotIn("Hutan", be.WATER_SHAPES["IDN"], "a forest is land")
 
 
+class TownFiguresOnDistricts(unittest.TestCase):
+    """A Wikidata item joined by name can be the town, not the district."""
+
+    def run_guard(self, parent_pop, children):
+        a1 = {"X": [{"id": "P", "name": "Parent", "population": {"value": parent_pop}}]}
+        a2 = {"X": [{"id": f"C{i}", "name": f"C{i}", "parent": "P",
+                     "population": {"value": v, "source": src}}
+                    for i, (v, src) in enumerate(children)]}
+        refused = be.refuse_town_figures(a1, a2)
+        return refused, a2["X"]
+
+    def test_a_sole_division_with_a_towns_figure_is_left_out(self):
+        refused, rows = self.run_guard(86949, [(2374, "Wikidata (CC0)")])
+        self.assertEqual(refused, 1)
+        self.assertEqual(rows[0]["population"]["status"], common.NOT_AVAILABLE)
+        self.assertIn("probably the town", rows[0]["population"]["note"])
+
+    def test_a_division_bigger_than_its_parent_is_left_out(self):
+        refused, _ = self.run_guard(165839, [(416000, "Wikidata (CC0)"), (1, "Wikidata (CC0)")])
+        self.assertEqual(refused, 1)
+
+    def test_years_apart_is_not_towns_apart(self):
+        # Valletta at both levels, a census apart.
+        refused, rows = self.run_guard(5226, [(6444, "Wikidata (CC0)")])
+        self.assertEqual(refused, 0)
+        self.assertEqual(rows[0]["population"]["value"], 6444)
+
+    def test_only_wikidata_figures_are_judged(self):
+        refused, _ = self.run_guard(2850, [(22414, "OCHA, Common Operational Dataset")])
+        self.assertEqual(refused, 0)
+
+    def namesakes(self, figure, others):
+        a1 = {"X": [{"id": "P", "name": "Utrecht", "population": {"value": 1409144}}]}
+        a2 = {"X": [{"id": "C0", "name": "Utrecht", "parent": "P",
+                     "population": {"value": figure, "year": 2013,
+                                    "source": "Wikidata (CC0)"}}]
+              + [{"id": f"C{i}", "name": f"Other {i}", "parent": "P",
+                  "population": {"value": v, "source": "Wikidata (CC0)"}}
+                 for i, v in enumerate(others, 1)]}
+        return be.refuse_town_figures(a1, a2), a2["X"][0]["population"]
+
+    def test_a_namesake_with_its_parents_figure_is_left_out(self):
+        refused, pop = self.namesakes(1253672, [157462, 65108, 845213])
+        self.assertEqual(refused, 1)
+        self.assertIn("Utrecht as a whole", pop["note"])
+        self.assertIn("1,067,783 besides", pop["note"])
+
+    def test_a_namesake_that_fits_beside_the_others_is_kept(self):
+        refused, pop = self.namesakes(361924, [157462, 65108, 845213])
+        self.assertEqual(refused, 0)
+        self.assertEqual(pop["value"], 361924)
+
+    def test_a_capital_that_is_most_of_its_parent_is_kept(self):
+        # Three quarters of the parent, and the others the last quarter.
+        refused, _ = self.namesakes(1060000, [349144])
+        self.assertEqual(refused, 0)
+
+    def test_others_holding_more_than_the_parent_blame_the_parent(self):
+        refused, _ = self.namesakes(1253672, [1500000, 200000])
+        self.assertEqual(refused, 0)
+
+
+class SettlementFiguresOnDistricts(unittest.TestCase):
+    """An item that is only a village or a town is not a district."""
+
+    def setUp(self):
+        kinds = mock.patch.dict(be.SETTLEMENT_CLASSES,
+                                {"Q3957": "town", "Q532": "village"}, clear=True)
+        kinds.start()
+        self.addCleanup(kinds.stop)
+
+    def run_guard(self, classes, source="Wikidata (CC0)", name="LUBA", parent=34674,
+                  siblings=1):
+        a1 = {"GNQ": [{"id": "P", "name": "Bioko Sur", "population": {"value": parent}}]}
+        a2 = {"GNQ": [{"id": "U", "name": name, "parent": "P", "wikidata": "Q985548",
+                       "population": {"value": 7739, "year": 2012, "source": source}}]
+              + [{"id": f"S{i}", "name": f"S{i}", "parent": "P"} for i in range(siblings)]}
+        refused = be.refuse_settlement_figures(a1, a2, {"Q985548": classes})
+        return refused, a2["GNQ"][0]["population"]
+
+    def test_a_town_and_nothing_else_is_left_out(self):
+        refused, pop = self.run_guard([["Q3957", "town"]])
+        self.assertEqual(refused, 1)
+        self.assertEqual(pop["status"], common.NOT_AVAILABLE)
+        self.assertIn("Q985548, is a town, and Wikidata calls it nothing else", pop["note"])
+        self.assertIn("7,739 (2012)", pop["note"])
+
+    def test_a_town_that_is_also_a_municipality_is_kept(self):
+        refused, pop = self.run_guard([["Q3957", "town"], ["Q2039348", "municipality of the Netherlands"]])
+        self.assertEqual(refused, 0)
+        self.assertEqual(pop["value"], 7739)
+
+    def test_an_item_whose_classes_are_unknown_is_kept(self):
+        self.assertEqual(self.run_guard([])[0], 0)
+
+    def test_only_wikidata_figures_are_judged(self):
+        self.assertEqual(self.run_guard([["Q532", "village"]], source="OCHA")[0], 0)
+
+    def test_a_shape_named_as_a_city_keeps_its_citys_figure(self):
+        # Uzbekistan draws "Andijan" and "Andijan city" side by side.
+        self.assertEqual(self.run_guard([["Q3957", "town"]], name="Luba city")[0], 0)
+        self.assertEqual(self.run_guard([["Q3957", "town"]], name="Luba")[0], 1)
+
+    def test_a_sole_division_that_agrees_with_its_parent_is_kept(self):
+        # Malta's councils: the town is the council's ground.
+        self.assertEqual(self.run_guard([["Q3957", "town"]], parent=7800, siblings=0)[0], 0)
+        self.assertEqual(self.run_guard([["Q3957", "town"]], parent=34674, siblings=0)[0], 1)
+
+
+class HistoricFigures(unittest.TestCase):
+    def test_a_figure_from_622_is_left_out(self):
+        a2 = {"IRQ": [{"id": "U", "name": "Al-Mada'in", "population":
+                       {"value": 500000, "year": 622, "source": "Wikidata (CC0)"}},
+                      {"id": "V", "name": "Kept", "population":
+                       {"value": 9000, "year": 1997, "source": "Wikidata (CC0)"}}]}
+        self.assertEqual(be.refuse_historic_figures(a2), 1)
+        self.assertIn("for the year 622", a2["IRQ"][0]["population"]["note"])
+        self.assertEqual(a2["IRQ"][1]["population"]["value"], 9000)
+
+
+class CapitalFiguresOnParents(unittest.TestCase):
+    """A first-level Wikidata item can carry its capital's figure."""
+
+    def run_guard(self, parent_pop, children, source="Wikidata (CC0)", capital="Seat"):
+        a1 = {"X": [{"id": "P", "name": "Portalegre", "capital": capital,
+                     "population": {"value": parent_pop, "year": 2018, "source": source}}]}
+        a2 = {"X": [{"id": f"C{i}", "name": name, "parent": "P",
+                     "population": {"value": v, "source": "Wikidata (CC0)"}}
+                    for i, (name, v) in enumerate(children)]}
+        refused = be.refuse_capital_figures(a1, a2)
+        return refused, a1["X"][0]["population"]
+
+    PORTALEGRE = [("Portalegre", 24930), ("Elvas", 23078), ("Ponte de Sor", 16722),
+                  ("Campo Maior", 8456), ("Nisa", 7450), ("Avis", 4571),
+                  ("Sousel", 5074), ("Fronteira", 3410), ("Crato", 3708),
+                  ("Castelo de Vide", 3407), ("Arronches", 3165)]
+
+    def test_a_districts_figure_that_is_its_capitals_is_left_out(self):
+        refused, pop = self.run_guard(22359, self.PORTALEGRE)
+        self.assertEqual(refused, 1)
+        self.assertEqual(pop["status"], common.NOT_AVAILABLE)
+        self.assertIn("24,930 of Portalegre", pop["note"])
+        self.assertIn("22,359 (2018)", pop["note"])
+
+    def test_the_capital_can_be_named_differently(self):
+        kids = [("Luena", 515629), ("Luau", 129054), ("Bundas", 100262),
+                ("Alto Zambeze", 159995), ("Leua", 46826), ("Camanongue", 49295),
+                ("Cameia", 42522), ("Luacano", 29944), ("Luchazes", 20841)]
+        refused, _ = self.run_guard(574253, kids, capital="Luena")
+        self.assertEqual(refused, 1)
+
+    def test_a_district_that_holds_its_divisions_is_kept(self):
+        refused, pop = self.run_guard(118506, self.PORTALEGRE)
+        self.assertEqual(refused, 0)
+        self.assertEqual(pop["value"], 118506)
+
+    def test_a_capital_that_is_most_of_its_district_is_kept(self):
+        # The capital near the parent's figure, but the rest too few to be more.
+        refused, _ = self.run_guard(30000, [("Portalegre", 26000), ("Nisa", 3000)])
+        self.assertEqual(refused, 0)
+
+    def test_only_wikidata_figures_are_judged(self):
+        refused, _ = self.run_guard(22359, self.PORTALEGRE, source="INE census")
+        self.assertEqual(refused, 0)
+
+    def test_a_district_with_no_namesake_division_is_left_alone(self):
+        refused, _ = self.run_guard(22359, self.PORTALEGRE[1:5])
+        self.assertEqual(refused, 0)
+
+    def test_without_a_namesake_the_divisions_must_hold_three_times_as_many(self):
+        # Setubal: its own municipality is spelt "Setubul" and has no figure.
+        refused, pop = self.run_guard(22359, self.PORTALEGRE[1:])
+        self.assertEqual(refused, 1)
+        self.assertIn("10 of its divisions hold 79,041", pop["note"])
+        refused, _ = self.run_guard(30000, self.PORTALEGRE[1:])
+        self.assertEqual(refused, 0)
+
+
 class LakesAreWater(unittest.TestCase):
     """Guatemala's two lakes are drawn as second-order units. Left as units
     they read as two municipios whose figures were not found; declared, they
@@ -1150,6 +1328,17 @@ class LooseNameMatching(unittest.TestCase):
     def test_but_not_a_different_word_that_starts_the_same(self):
         # "Tala" is a prefix of "Talampaya", 835 km away.
         self.assertFalse(self.related("Talampaya National Park", "Tala"))
+
+    def test_a_qualifier_before_the_name_makes_another_place(self):
+        self.assertFalse(self.related("Aquitaine", "Nouvelle-Aquitaine"))
+        self.assertFalse(self.related("Península de Setúbal", "SETÚBAL"))
+        self.assertFalse(self.related("Área Metropolitana de Lisboa", "LISBOA"))
+        self.assertFalse(self.related("Cotabato", "South Cotabato"))
+
+    def test_the_same_words_after_the_name_are_a_locator(self):
+        self.assertTrue(self.related("Abbeville County, South Carolina", "Abbeville"))
+        self.assertTrue(self.related("Tierra del Fuego, Antártida e Islas del "
+                                     "Atlántico Sur", "Tierra del Fuego"))
 
     def test_a_hyphen_is_read_both_ways(self):
         # Joined: the other side spells it as one word.

@@ -272,3 +272,174 @@ class TheFallbackPaysForItself(unittest.TestCase):
         self.assertEqual(asked, [0],
                          "re-asking a deterministic truncation costs 90 "
                          "seconds and returns the same bytes")
+
+
+def uri(qid):
+    return {"type": "uri", "value": f"http://www.wikidata.org/entity/{qid}"}
+
+
+def lit(v):
+    return {"type": "literal", "value": str(v)}
+
+
+def stmt(qid, pop, year=None, rank="NormalRank", coord=None):
+    row = {"unit": uri(qid), "pop": lit(pop),
+           "rank": uri(f"http://wikiba.se/ontology#{rank}")}
+    row["rank"] = {"type": "uri", "value": f"http://wikiba.se/ontology#{rank}"}
+    if year:
+        row["popTime"] = lit(f"{year}-01-01T00:00:00Z")
+    if coord:
+        row["coord"] = lit(coord)
+    return row
+
+
+class BestStatement(unittest.TestCase):
+    def test_preferred_beats_a_later_normal(self):
+        rows = [stmt("Q1", 100, 2021, "PreferredRank"), stmt("Q1", 90, 2023)]
+        self.assertEqual(m.best_statement(rows), (100, 2021))
+
+    def test_latest_year_among_equals(self):
+        rows = [stmt("Q1", 100, 2011), stmt("Q1", 120, 2021), stmt("Q1", 80)]
+        self.assertEqual(m.best_statement(rows), (120, 2021))
+
+    def test_deprecated_and_empty_are_ignored(self):
+        rows = [stmt("Q1", 500, 2024, "DeprecatedRank"), stmt("Q1", 0, 2020)]
+        self.assertIsNone(m.best_statement(rows))
+
+
+class Hydrate(unittest.TestCase):
+    def test_fills_only_what_is_missing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "wd.json"
+            rows = [
+                {"id": "ROU-WD-Q1", "wikidata": "Q1", "country": "ROU", "name": "Abram",
+                 "population": {"status": "not_available"},
+                 "coordinates": {"status": "not_available"}},
+                {"id": "ROU-WD-Q2", "wikidata": "Q2", "country": "ROU", "name": "Kept",
+                 "population": {"value": 7, "year": 2011}, "coordinates": [1.0, 2.0]},
+                {"id": "ROU-WD-Q3", "wikidata": "Q3", "country": "ROU", "name": "Bare",
+                 "population": {"status": "not_available"},
+                 "coordinates": {"status": "not_available"}},
+            ]
+            path.write_text(json.dumps(rows))
+            answer = [stmt("Q1", 3100, 2021, coord="Point(22.4 47.2)"),
+                      {"unit": uri("Q3")}]
+            with mock.patch.object(m, "sparql", return_value=answer) as asked, \
+                 mock.patch.object(m, "blank_items", return_value={"Q1", "Q2", "Q3"}), \
+                 mock.patch.object(m.time, "sleep"):
+                m.hydrate(path, None, 0)
+            query = asked.call_args[0][0]
+            self.assertIn("wd:Q1", query)
+            self.assertNotIn("wd:Q2", query, "a row with a population is not asked for")
+            out = {r["name"]: r for r in json.loads(path.read_text())}
+            self.assertEqual(out["Abram"]["population"]["value"], 3100)
+            self.assertEqual(out["Abram"]["population"]["year"], 2021)
+            self.assertEqual(out["Abram"]["coordinates"], [22.4, 47.2])
+            self.assertEqual(out["Kept"]["population"]["value"], 7)
+            self.assertEqual(out["Bare"]["population"]["status"], "not_available")
+            self.assertEqual(out["Bare"]["population"]["note"], m.ASKED_BY_ID)
+            # A second run does not ask again for what has been asked.
+            with mock.patch.object(m, "sparql", return_value=[]) as again, \
+                 mock.patch.object(m, "blank_items", return_value={"Q1", "Q2", "Q3"}), \
+                 mock.patch.object(m.time, "sleep"):
+                m.hydrate(path, None, 0)
+            again.assert_not_called()
+
+    def test_stops_at_its_budget_and_saves(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "wd.json"
+            path.write_text(json.dumps([
+                {"id": "X-WD-Q9", "wikidata": "Q9", "country": "X", "name": "N",
+                 "population": {"status": "not_available"}}]))
+            with mock.patch.object(m, "sparql") as asked, \
+                 mock.patch.object(m, "blank_items", return_value={"Q9"}):
+                m.hydrate(path, None, 0, budget_minutes=-1)
+            asked.assert_not_called()
+            self.assertTrue(path.exists())
+
+
+class ItemClasses(unittest.TestCase):
+    def test_asks_only_items_with_a_figure_and_resumes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            processed = Path(tmp)
+            (processed / "wikidata_admin2.json").write_text(json.dumps([
+                {"wikidata": "Q1", "population": {"value": 7739}},
+                {"wikidata": "Q2", "population": {"status": "not_available"}},
+            ]))
+            (processed / "wikidata_admin2_classes.json").write_text(json.dumps([
+                {"wikidata": "Q3", "population": {"value": 5}}]))
+            out = processed / "classes.json"
+            answer = [{"item": uri("Q1"), "class": uri("Q3957"), "classLabel": lit("town")}]
+            with mock.patch.object(m, "PROCESSED", processed), \
+                 mock.patch.object(m, "sparql", return_value=answer) as asked, \
+                 mock.patch.object(m.time, "sleep"):
+                m.item_classes(out, "admin2", 0)
+            query = asked.call_args[0][0]
+            self.assertIn("wd:Q1", query)
+            self.assertIn("wd:Q3", query)
+            self.assertNotIn("wd:Q2", query, "an item with no figure is not asked")
+            self.assertEqual(json.loads(out.read_text()),
+                             {"Q1": [["Q3957", "town"]], "Q3": []})
+            with mock.patch.object(m, "PROCESSED", processed), \
+                 mock.patch.object(m, "sparql") as again, \
+                 mock.patch.object(m.time, "sleep"):
+                m.item_classes(out, "admin2", 0)
+            again.assert_not_called()
+
+
+class Enrich(unittest.TestCase):
+    def test_local_names_become_aliases_for_unjoined_rows_only(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "wd.json"
+            path.write_text(json.dumps([
+                {"id": "LVA-WD-Q1", "wikidata": "Q1", "country": "LVA",
+                 "name": "Abava Parish", "population": {"status": "not_available"}},
+                {"id": "LVA-WD-Q2", "wikidata": "Q2", "country": "LVA",
+                 "name": "Joined", "population": {"status": "not_available"}},
+                {"id": "XYZ-WD-Q3", "wikidata": "Q3", "country": "XYZ",
+                 "name": "No languages", "population": {"status": "not_available"}},
+            ]))
+            labels = [{"unit": uri("Q1"), "label": lit("Abavas pagasts")},
+                      {"unit": uri("Q1"), "label": lit("Abava Parish")}]
+            calls = []
+
+            def answer(query, **_):
+                calls.append(query)
+                return labels if "rdfs:label" in query else [stmt("Q1", 950, 2021)]
+
+            with mock.patch.object(m, "sparql", side_effect=answer), \
+                 mock.patch.object(m, "joined_items", return_value={"Q2"}), \
+                 mock.patch.object(m.time, "sleep"):
+                m.enrich(path, None, 0)
+            self.assertIn('"lv"', calls[0])
+            self.assertNotIn("wd:Q2", calls[0], "a joined row needs no second name")
+            out = {r["wikidata"]: r for r in json.loads(path.read_text())}
+            self.assertEqual(out["Q1"]["aliases"], ["Abavas pagasts"])
+            self.assertEqual(out["Q1"]["population"]["value"], 950)
+            self.assertNotIn("aliases", out["Q2"])
+            self.assertNotIn("aliases", out["Q3"])
+
+
+class ClassSweep(unittest.TestCase):
+    def test_adds_missing_items_and_never_replaces_a_population(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "wd.json"
+            path.write_text(json.dumps([
+                {"id": "NLD-WD-Q1", "wikidata": "Q1", "country": "NLD", "name": "Aalten",
+                 "population": {"value": 27000, "year": 2020}},
+            ]))
+            answer = [
+                dict(stmt("Q1", 99999, 2024), unitLabel=lit("Aalten")),
+                dict(stmt("Q2", 25000, 2024, coord="Point(6.1 52.9)"),
+                     unitLabel=lit("Aa en Hunze"), parent=uri("Q772"),
+                     parentLabel=lit("Drenthe")),
+            ]
+            with mock.patch.object(m, "sparql", return_value=answer), \
+                 mock.patch.object(m, "country_qids", return_value={"NLD": "Q55"}):
+                m.class_sweep(path, ["NLD:Q2039348"])
+            out = {r["wikidata"]: r for r in json.loads(path.read_text())}
+            self.assertEqual(out["Q1"]["population"]["value"], 27000)
+            self.assertEqual(out["Q2"]["name"], "Aa en Hunze")
+            self.assertEqual(out["Q2"]["parent_name"], "Drenthe")
+            self.assertEqual(out["Q2"]["population"]["value"], 25000)
+            self.assertEqual(out["Q2"]["coordinates"], [6.1, 52.9])

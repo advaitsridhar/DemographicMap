@@ -155,6 +155,10 @@ ADAPTER_FILES = [
     # for the Netherlands and this must not overwrite that.
     "netherlands_province.json",
     "wikidata_admin1.json", "wikidata_admin2.json",
+    # Wikidata items of one class in one country, for the countries the
+    # structural walk under-reached (fetch_wikidata --class-sweep). Fill-only
+    # like the file above it.
+    "wikidata_admin2_classes.json",
     # The head count a first-level unit's own Wikipedia article prints,
     # where nothing on this map has one. Directly under the Wikidata sweep
     # because it answers the same question from the same kind of source and
@@ -1495,6 +1499,7 @@ DESCRIBED_FIELDS = ("religion", "language", "ethnicity", "ancestry",
 # order the files are read in. These only ever fill a population nobody
 # else has written.
 FILL_ONLY = frozenset({"wikidata_admin1.json", "wikidata_admin2.json",
+                       "wikidata_admin2_classes.json",
                        "wiki_population_admin1.json", "wiki_table_population.json"})
 FILL_ONLY_FIELDS = frozenset({"population"})
 
@@ -1626,6 +1631,32 @@ def name_forms(text: str | None) -> tuple[tuple[str, ...], ...]:
     return (split,) if split == join else (split, join)
 
 
+# Words that make a longer name a different place from the shorter one inside
+# it, not a longer way of writing the same one. "Provincia de Cocle" is Cocle;
+# "Nouvelle-Aquitaine" is not Aquitaine but the region Aquitaine was merged
+# into in 2016, and Eurostat's NUTS-2 row for old Aquitaine -- 3,635,159
+# people -- was joined to it by containment and stood for its 6.2 million.
+# "Peninsula de Setubal" is most of Setubal District and not all of it, and
+# "Area Metropolitana de Lisboa" reaches across the Tagus into it.
+#
+# Only before the shorter name. After it, the same words are a locator: the
+# first cut read them on both sides and took the census figures off 446 US
+# counties, because "Abbeville County, South Carolina" ends in "South", and
+# off Tierra del Fuego, whose full name ends "Islas del Atlantico Sur".
+# "Greater" is not one: OCHA still writes South Africa's Sekhukhune district
+# under its old name, Greater Sekhukhune, and it is the same place.
+QUALIFIERS = frozenset({
+    "new", "nouvelle", "nouveau", "nueva", "nuevo", "nova", "novo",
+    "north", "northern", "nord", "norte", "south", "southern", "sud", "sur", "sul",
+    "east", "eastern", "est", "este", "leste", "west", "western", "ouest", "oeste",
+    "central", "middle",
+    "upper", "lower", "haute", "haut", "basse", "bas", "alto", "baixo", "bajo",
+    "grande", "little", "peninsula",
+    "metropolitan", "metropolitana", "metropolitaine",
+    "utara", "selatan", "barat", "timur", "tengah",
+})
+
+
 def run_of(short: tuple[str, ...], long: tuple[str, ...], *,
            at_start: bool = False) -> bool:
     """Whether `short` appears in `long` as a run of whole words.
@@ -1645,6 +1676,8 @@ def run_of(short: tuple[str, ...], long: tuple[str, ...], *,
         window = long[start:start + len(short)]
         tail, target = short[-1], window[-1]
         if not all(a == b for a, b in zip(short[:-1], window[:-1])):
+            continue
+        if QUALIFIERS.intersection(long[:start]):
             continue
         if len(tail) < PREFIX_MIN and not (at_start and start == 0):
             continue
@@ -2925,6 +2958,293 @@ def say_why_empty(entity: dict[str, Any], country: str,
             note, case = NO_SOURCE_READ.format(country=country), "no source read"
         entity[field] = gap(value["status"], note)
     return case
+
+
+# A Wikidata item joined to a district by name is sometimes the town of that
+# name, not the district. Before its population was fetched the mistake was
+# invisible; afterwards Trinidad's Siparia region -- 86,949 people, drawn as
+# one second-level shape -- read 2,374, the town's, and six Montenegrin
+# municipalities and Algeria's Adrar took their towns' figures the same way.
+# Two checks against the unit above, which is published independently:
+#   * a division may not hold more than half again its parent's people;
+#   * a parent's only division is the parent's ground, so its figure must
+#     be within 0.6 and 1.6 of the parent's (years apart, not towns apart).
+# Measured on 24 September 2026 over every Wikidata figure at this level,
+# after the settlement check below has taken what it can tell from Wikidata's
+# own classes: 28 fail with the namesake rule that follows, every one a town,
+# a city proper, a parent's figure or a wrong item.
+TOWN_RATIO_MAX = 1.5
+SOLE_CHILD_BAND = (0.6, 1.6)
+# And the other way round: a division named like its parent that carries the
+# parent's figure. Utrecht's municipality item prefers 1,253,672 (2013), the
+# province's; so do Groningen's and Midden-Drenthe's, and four Dominican
+# municipalities named for their provinces -- San Felipe de Puerto Plata read
+# 338,339 against a province of 335,424. Such a figure is within a quarter
+# (or a third above) of the parent's, and with the other divisions beside it
+# the parent is overfilled by more than a quarter. Those others must hold less
+# than the parent does; when they hold more, the parent is the one that is
+# wrong, and refuse_capital_figures below has already taken it off.
+PARENT_BAND = (0.75, 1.33)
+NO_ROOM = 1.25
+
+
+def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
+                        admin2: dict[str, list[dict[str, Any]]]) -> int:
+    """Take a Wikidata population off a district it cannot belong to."""
+    refused = 0
+    for iso3, rows in admin2.items():
+        parents = {e["id"]: e for e in admin1.get(iso3, [])}
+        siblings: dict[Any, int] = defaultdict(int)
+        held: dict[Any, float] = defaultdict(float)
+        for entity in rows:
+            siblings[entity.get("parent")] += 1
+            held[entity.get("parent")] += published(entity.get("population")) or 0
+        for entity in rows:
+            pop = entity.get("population")
+            if not (isinstance(pop, dict) and pop.get("value")
+                    and str(pop.get("source") or "").startswith("Wikidata")):
+                continue
+            parent = parents.get(entity.get("parent"))
+            above = published(parent.get("population")) if parent else None
+            if not above:
+                continue
+            ratio = pop["value"] / above
+            sole = siblings[entity.get("parent")] == 1
+            rest = held[entity.get("parent")] - pop["value"]
+            what = "the town of this name"
+            if ratio > TOWN_RATIO_MAX:
+                why = (f"more than {parent['name']}'s own {above:,.0f}, "
+                       f"the unit it lies in")
+            elif sole and not SOLE_CHILD_BAND[0] <= ratio <= SOLE_CHILD_BAND[1]:
+                why = (f"{ratio:.0%} of {parent['name']}'s {above:,.0f}, though "
+                       f"this is its only division and covers the same ground")
+            elif (not sole and rest < above
+                  and PARENT_BAND[0] <= ratio <= PARENT_BAND[1]
+                  and pop["value"] + rest > NO_ROOM * above
+                  and related(name_forms(entity.get("name")),
+                              name_forms(parent.get("name")))):
+                why = (f"close to {parent['name']}'s own {above:,.0f}, though its "
+                       f"other divisions hold {rest:,.0f} besides")
+                what = f"{parent['name']} as a whole"
+            else:
+                continue
+            entity["population"] = gap(NOT_AVAILABLE, (
+                f"The Wikidata item joined here by name gives {pop['value']:,}"
+                + (f" ({pop['year']})" if pop.get("year") else "")
+                + f", which is {why}. It is probably {what} "
+                  f"rather than this unit, so its figure is left out."))
+            refused += 1
+    return refused
+
+
+# What the item joined to a district is, when Wikidata says. The name join
+# cannot tell the town of Luba from Luba District, and before populations were
+# fetched by id the mistake cost nothing; afterwards Bioko Sur's two districts
+# read 7,739 and 1,071, the towns', and Armenia's raion of Tavush read the
+# 1,454 people of the village of Tavush. scripts/fetch_wikidata.py
+# --item-classes records every such item's classes, and an item whose every
+# class is a kind of settlement -- no municipality, commune or district among
+# them -- is a place people live in, not a unit they are counted by, and its
+# figure is left out. An item that is both, as the cities of Japan and the
+# municipalities of the Netherlands are, keeps its figure: it is the unit.
+#
+# Listed by hand from the classes the 19,451 items giving this level a figure
+# carry, measured on 24 September 2026: settlements only. "Town in Romania",
+# "city of Japan", "city in Finland", "prefecture-level city of China", "city
+# of Indonesia" and the like are units of government and are not here; nor are
+# the three bare "city" classes Estonia's town municipalities carry, nor "city
+# in Cyprus" or "settlement of Andorra", whose towns are their units' ground.
+#
+# 188 figures were only settlements: Bled's 4,969 on a municipality of 8,000,
+# Alytus city's 51,856 on Alytus District Municipality, Amman's four million
+# on one of its districts. Two kinds keep theirs, because there the settlement
+# is the unit:
+#   * a shape named as a city -- Uzbekistan draws "Andijan" and "Andijan city"
+#     side by side, and the city's item belongs on the second, which says so;
+#   * a parent's only division within SOLE_CHILD_BAND of the parent -- Malta's
+#     local councils, whose towns' figures are the councils' to a few percent.
+SETTLEMENT_CLASSES: dict[str, str] = {
+    "Q486972": "human settlement", "Q532": "village", "Q3957": "town",
+    "Q515": "city", "Q1549591": "big city", "Q7930989": "city or town",
+    "Q5084": "hamlet", "Q123705": "neighborhood", "Q188509": "suburb",
+    "Q1637706": "city with millions", "Q200250": "metropolis",
+    "Q174844": "megacity", "Q208511": "global city", "Q5119": "capital city",
+    "Q108178728": "national capital", "Q11271835": "state capital",
+    "Q27554677": "former capital", "Q129268952": "former national capital",
+    "Q129319205": "de facto national capital", "Q3147563": "capital of regency",
+    "Q51929311": "largest city", "Q902814": "border city", "Q2264924": "port city",
+    "Q11422368": "city for international conferences and tourism",
+    "Q707813": "Hanseatic city", "Q1187811": "college town",
+    "Q691960": "satellite city", "Q1200957": "tourist destination",
+    "Q11499984": "educational town", "Q9391358": "city with public health center",
+    "Q692581": "holy city of Abrahamic religion", "Q11394721": "inland city",
+    "Q828359": "commuter town", "Q677678": "fortified town",
+    "Q317548": "resort town", "Q67123843": "town divided by border",
+    "Q15661340": "ancient city", "Q620509": "military town",
+    "Q40364446": "historic city", "Q4946461": "spa town",
+    "Q1782540": "railway town", "Q28328984": "village in Armenia",
+    "Q20724701": "city or town in Armenia", "Q21672098": "village of Ukraine",
+    "Q12131624": "city in Ukraine", "Q12131640": "city of district significance",
+    "Q2989457": "urban-type settlement",
+    "Q4100864": "urban-type settlement in Ukraine",
+    "Q15078955": "urban-type settlement in Russia",
+    "Q20019082": "work settlement of Russia", "Q106389302": "city/town in Russia",
+    "Q41501164": "village of Crimea", "Q28371991": "village of Yemen",
+    "Q16127605": "populated place in Syria", "Q20202352": "locality of Mexico",
+    "Q3257686": "locality", "Q16362394": "large village in Latvia",
+    "Q89487741": "city in Bulgaria", "Q5770918": "city of Argentina",
+    "Q63209072": "city of Colombia",
+    "Q1852859": "cadastral populated place in the Netherlands",
+    "Q14770218": "cantonal capital of Switzerland", "Q134626": "district capital",
+    "Q137640468": "provincial capital", "Q1422929": "primate city",
+    "Q8501237": "large city", "Q129676344": "large city", "Q18466176": "small city",
+    "Q505681": "linear settlement", "Q378636": "village with a church",
+    "Q22674925": "former settlement", "Q627236": "company town",
+    "Q6882870": "designated spa town", "Q2202509": "Roman city",
+    "Q1392581": "cycling city", "Q137547946": "Forest City",
+}
+ITEM_CLASSES = PROCESSED / "wikidata_admin2_item_classes.json"
+CITY_SHAPE = re.compile(r"\b(city|kota|ciudad|ville|shahar)\b", re.I)
+
+
+def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
+                              admin2: dict[str, list[dict[str, Any]]],
+                              classes: dict[str, list[list[str]]]) -> int:
+    """Take a Wikidata population off a unit whose item is only a settlement."""
+    refused = 0
+    for iso3, rows in admin2.items():
+        parents = {e["id"]: e for e in admin1.get(iso3, [])}
+        siblings: dict[Any, int] = defaultdict(int)
+        for entity in rows:
+            siblings[entity.get("parent")] += 1
+        for entity in rows:
+            pop = entity.get("population")
+            if not (isinstance(pop, dict) and pop.get("value")
+                    and str(pop.get("source") or "").startswith("Wikidata")):
+                continue
+            kinds = classes.get(entity.get("wikidata") or "")
+            if not kinds or not all(k in SETTLEMENT_CLASSES for k, _ in kinds):
+                continue
+            if CITY_SHAPE.search(entity.get("name") or ""):
+                continue
+            parent = parents.get(entity.get("parent"))
+            above = published(parent.get("population")) if parent else None
+            if (above and siblings[entity.get("parent")] == 1
+                    and SOLE_CHILD_BAND[0] <= pop["value"] / above <= SOLE_CHILD_BAND[1]):
+                continue
+            labels = sorted({SETTLEMENT_CLASSES[k] for k, _ in kinds})
+            what = (labels[0] if len(labels) == 1
+                    else ", ".join(labels[:-1]) + " and " + labels[-1])
+            article = "an" if what[0] in "aeiou" else "a"
+            entity["population"] = gap(NOT_AVAILABLE, (
+                f"The Wikidata item joined here by name, {entity['wikidata']}, is "
+                f"{article} {what}, and Wikidata calls it nothing else -- no "
+                f"municipality or district; its "
+                f"{pop['value']:,}"
+                + (f" ({pop['year']})" if pop.get("year") else "")
+                + " are the settlement's people rather than this unit's, so the "
+                  "figure is left out."))
+            refused += 1
+    return refused
+
+
+# A figure from before any census could have counted the unit on the map is
+# history, not population. Iraq's district of Al-Mada'in was joined by name to
+# the item for the ancient city, and read 500,000 people in the year 622.
+# Measured on 24 September 2026, it is the only Wikidata figure at either
+# level dated before 1900.
+OLDEST_FIGURE = 1900
+
+
+def refuse_historic_figures(admin2: dict[str, list[dict[str, Any]]]) -> int:
+    """Take off a Wikidata population dated before any modern count."""
+    refused = 0
+    for rows in admin2.values():
+        for entity in rows:
+            pop = entity.get("population")
+            year = vintage(pop)
+            if not (year and year < OLDEST_FIGURE and pop.get("value")
+                    and str(pop.get("source") or "").startswith("Wikidata")):
+                continue
+            entity["population"] = gap(NOT_AVAILABLE, (
+                f"The Wikidata item joined here by name gives {pop['value']:,} "
+                f"for the year {year}: a historical place of this name, not the "
+                f"unit on the map, so its figure is left out."))
+            refused += 1
+    return refused
+
+
+# The same mistake one level up, where it also blinds the check above. Wikidata's
+# items for Portugal's districts carry their capitals' 2018 figures -- Portalegre
+# District 22,359, the municipality of Portalegre's -- so every district read as
+# a town, and against Aveiro's 77,916 the check above refused Santa Maria da
+# Feira's 136,674 as a town's. A parent's figure is taken for its capital's when
+# both hold:
+#   * it is within a quarter of the figure of its division named for it or for
+#     its capital (years apart, not units apart);
+#   * its other divisions alone hold more people than it does.
+# Only a Wikidata figure is judged: a census or an official table is not
+# overruled by a sum that is mostly Wikidata's. Measured on 24 September 2026
+# over every parent with a namesake division: 14 fail -- twelve Portuguese
+# districts, Cuba's Sancti Spiritus (150,000, the city's) and Angola's Moxico
+# (574,253, the province cut down in 2024, on the old province's ground).
+# Run first, so the check above measures against a parent's own figure.
+CAPITAL_BAND = (0.75, 1.33)
+# When the capital's own division has no figure to compare -- Setubal's is
+# spelt "Setubul" and joins an item with none, Faro's item has none -- the
+# divisions' sum must do it alone, and so must clear a wider margin. Over every
+# first-level Wikidata figure with five divisions or more, only Faro (6.4) and
+# Setubal (4.5) exceed three times; below that sit parents that are right and
+# divisions that are not (Namibia's Hardap, 2.8, whose constituencies are
+# attached to the wrong regions) and Thai provinces counted two ways.
+CAPITAL_FALLBACK_RATIO = 3.0
+CAPITAL_FALLBACK_DIVISIONS = 5
+
+
+def refuse_capital_figures(admin1: dict[str, list[dict[str, Any]]],
+                           admin2: dict[str, list[dict[str, Any]]]) -> int:
+    """Take a Wikidata population off a parent when it is its capital's."""
+    refused = 0
+    for iso3, parents in admin1.items():
+        kids: dict[Any, list[dict[str, Any]]] = defaultdict(list)
+        for entity in admin2.get(iso3, []):
+            kids[entity.get("parent")].append(entity)
+        for parent in parents:
+            pop = parent.get("population")
+            if not (isinstance(pop, dict) and pop.get("value")
+                    and str(pop.get("source") or "").startswith("Wikidata")):
+                continue
+            children = kids.get(parent["id"], [])
+            names = {norm(parent.get("name"))}
+            if isinstance(parent.get("capital"), str):
+                names.add(norm(parent["capital"]))
+            names.discard("")
+            town = next((c for c in children if norm(c.get("name")) in names
+                         and published(c.get("population"))), None)
+            figures = [published(c.get("population")) for c in children
+                       if published(c.get("population"))]
+            if town is not None:
+                held = published(town["population"])
+                rest = sum(figures) - held
+                if not (CAPITAL_BAND[0] <= pop["value"] / held <= CAPITAL_BAND[1]
+                        and rest > pop["value"]):
+                    continue
+                why = (f"close to the {held:,.0f} of {town['name']}, one of its "
+                       f"divisions, while its other divisions hold {rest:,.0f} "
+                       f"between them")
+            elif (len(figures) >= CAPITAL_FALLBACK_DIVISIONS
+                  and sum(figures) > CAPITAL_FALLBACK_RATIO * pop["value"]):
+                why = (f"while {len(figures)} of its divisions hold "
+                       f"{sum(figures):,.0f} between them")
+            else:
+                continue
+            parent["population"] = gap(NOT_AVAILABLE, (
+                f"The Wikidata item joined here gives {pop['value']:,}"
+                + (f" ({pop['year']})" if pop.get("year") else "")
+                + f", {why}. It is probably the figure of the town or of a "
+                  f"smaller unit rather than of this one, so it is left out."))
+            refused += 1
+    return refused
 
 
 def check_water_shapes(admin1: dict[str, list[dict[str, Any]]],
@@ -4337,6 +4657,26 @@ def main() -> int:
                    if aka else ""]
             extra = " (" + ", ".join(w for w in why if w) + ")" if any(why) else ""
             log(f"  {iso3}: adapter rows matched {hit}, unmatched {miss}{extra}")
+
+    # -- a town's figure on a district --------------------------------------
+    # After every adapter, so the parent's population is the one it will
+    # keep; before anything sums or weighs by these figures.
+    settlements = refuse_settlement_figures(admin1_by_country, admin2_by_country,
+                                            read_json(ITEM_CLASSES, {}) or {})
+    if settlements:
+        log(f"  {settlements} Wikidata district figures left out as a "
+            f"settlement's, not the district's")
+    historic = refuse_historic_figures(admin2_by_country)
+    if historic:
+        log(f"  {historic} Wikidata district figures left out as history")
+    capitals = refuse_capital_figures(admin1_by_country, admin2_by_country)
+    if capitals:
+        log(f"  {capitals} Wikidata first-level figures left out as a capital's, "
+            f"not the unit's")
+    towns = refuse_town_figures(admin1_by_country, admin2_by_country)
+    if towns:
+        log(f"  {towns} Wikidata district figures left out as a town's, not "
+            f"the district's")
 
     # -- the shape-gap table is a promise, so check it -----------------------
     # Here rather than at declaration time: it is a claim about what the join

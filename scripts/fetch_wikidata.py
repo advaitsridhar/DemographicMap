@@ -23,6 +23,7 @@ Design notes:
 Usage:
     python scripts/fetch_wikidata.py --level admin1
     python scripts/fetch_wikidata.py --level admin2 --countries IND BRA
+    python scripts/fetch_wikidata.py --level admin2 --hydrate [--countries ROU]
 """
 
 from __future__ import annotations
@@ -141,6 +142,31 @@ SELECT ?unit ?unitLabel ?parent ?parentLabel WHERE {
 """
 
 
+# Population and coordinates for units already identified, looked up by id.
+#
+# The --light and descent sweeps of 21-22 September 2026 found 75,232
+# second-level items and fetched none of their populations, because the query
+# that walks the class tree could not carry the OPTIONAL blocks inside WDQS's
+# 60-second limit. 68,764 rows came back "No P1082 statement", among them
+# every one of Romania's 3,186 communes -- which do have one. Asking for known
+# items by id is a different and cheap query: no walk, just a lookup.
+#
+# A statement that applies to part of the unit (P518, e.g. its urban area) is
+# not the unit's population and is left out; a deprecated one is wrong by the
+# item's own account. Among the rest the preferred rank wins where there is
+# one, and then the latest year.
+HYDRATE_QUERY = """
+SELECT ?unit ?pop ?popTime ?rank ?coord WHERE {
+  VALUES ?unit { %(ids)s }
+  OPTIONAL { ?unit p:P1082 ?popSt .
+             ?popSt ps:P1082 ?pop ; wikibase:rank ?rank .
+             FILTER NOT EXISTS { ?popSt pq:P518 ?part . }
+             OPTIONAL { ?popSt pq:P585 ?popTime . } }
+  OPTIONAL { ?unit wdt:P625 ?coord . }
+}
+"""
+HYDRATE_BATCH = 100
+
 COUNTRY_QID_QUERY = """
 SELECT ?country ?iso3 WHERE {
   ?country wdt:P31 wd:Q6256 ; wdt:P298 ?iso3 .
@@ -210,14 +236,21 @@ def parse_point(wkt: str | None) -> list[float] | None:
         return None
 
 
+# Where two items share an ISO3 and the query's answer is the wrong one: the
+# Kingdom of the Netherlands and the Kingdom of Denmark both carry P298, and
+# their subdivisions are tagged with the constituent country. Asked under the
+# kingdom, the Netherlands' 344 municipalities met 38 rows.
+COUNTRY_QID_OVERRIDE = {"NLD": "Q55", "DNK": "Q35"}
+
+
 def country_qids() -> dict[str, str]:
     cached = read_json(RAW / "codes" / "wikidata_countries.json", None)
     if cached:
-        return cached
+        return {**cached, **COUNTRY_QID_OVERRIDE}
     rows = sparql(COUNTRY_QID_QUERY)
     out = {value(r, "iso3"): value(r, "country") for r in rows if value(r, "iso3")}
     write_json(RAW / "codes" / "wikidata_countries.json", out)
-    return out
+    return {**out, **COUNTRY_QID_OVERRIDE}
 
 
 def collapse(rows: list[dict[str, Any]], *, level: str, iso3: str) -> list[dict[str, Any]]:
@@ -402,6 +435,398 @@ def probe(codes: list[str], qids: dict[str, str], sleep: float) -> None:
         log(f"  {iso3}:  {told[0]:>22}  {told[1]:>22}")
 
 
+def best_statement(rows: list[dict[str, Any]]) -> tuple[int, int | None] | None:
+    """The population a unit's statements settle on: (count, year), or None."""
+    found: list[tuple[bool, int, int, int | None]] = []
+    for row in rows:
+        rank = (value(row, "rank") or "").rsplit("#", 1)[-1]
+        if rank == "DeprecatedRank" or value(row, "pop") is None:
+            continue
+        try:
+            pop = int(float(value(row, "pop")))
+        except ValueError:
+            continue
+        if pop <= 0:
+            continue
+        year = (value(row, "popTime") or "")[:4]
+        year_i = int(year) if year.isdigit() else None
+        found.append((rank == "PreferredRank", year_i or 0, pop, year_i))
+    if not found:
+        return None
+    # Preferred first, then the latest year; a tie on both keeps the larger
+    # count only so the answer does not depend on the order WDQS streams in.
+    best = max(found)
+    return best[2], best[3]
+
+
+ASKED_BY_ID = "No P1082 statement on Wikidata (asked by id)."
+
+
+# Names in the languages a boundary file may write a unit in. geoBoundaries
+# spells Latvia's parishes "Abavas pag.", Estonia's rural municipalities "Abja
+# vald" and Tunisia's delegations in Arabic, where Wikidata's English label is
+# "Abava Parish", "Abja Rural Municipality" or a romanisation. The build will
+# not strip a local generic word to make them meet -- "Ventspils" and
+# "Ventspils novads" are two places -- so the item's own local label is asked
+# for instead and carried as an alias. English alternative labels come too:
+# they hold the other romanisations ("Ad Dahi" beside "Ad Dohi").
+LOCAL_LANGUAGES: dict[str, tuple[str, ...]] = {
+    "AFG": ("ps", "fa"), "ARG": ("es",), "AZE": ("az",), "BLR": ("be", "ru"),
+    "CHE": ("de", "fr", "it"), "CHL": ("es",), "CYP": ("el", "tr"),
+    "EGY": ("ar",), "EST": ("et",), "FIN": ("fi", "sv"), "HTI": ("fr", "ht"),
+    "IRN": ("fa",), "IRQ": ("ar", "ku"), "JOR": ("ar",), "KEN": ("sw",),
+    "KHM": ("km",), "LSO": ("st",), "LTU": ("lt",), "LVA": ("lv",),
+    "MKD": ("mk",), "NOR": ("nb", "nn", "no"), "ROU": ("ro",), "RUS": ("ru",),
+    "SLV": ("es",), "SOM": ("so",), "SVK": ("sk",), "SVN": ("sl",),
+    "SYR": ("ar",), "TUN": ("ar", "fr"), "UKR": ("uk", "ru"), "UZB": ("uz",),
+    "VNM": ("vi",), "YEM": ("ar",),
+}
+
+LABELS_QUERY = """
+SELECT ?unit ?label WHERE {
+  VALUES ?unit { %(ids)s }
+  { ?unit rdfs:label ?label . } UNION { ?unit skos:altLabel ?label . }
+  FILTER(LANG(?label) IN (%(langs)s))
+}
+"""
+
+
+def joined_items(level: str) -> set[str]:
+    """Every Wikidata item the built site has joined to a unit."""
+    out: set[str] = set()
+    for shard in sorted((PROCESSED.parent.parent / "site" / "data" / level).glob("*.json")):
+        for entity in read_json(shard, []) or []:
+            if entity.get("wikidata"):
+                out.add(entity["wikidata"])
+    return out
+
+
+def enrich(path: Path, countries: list[str] | None, sleep: float,
+           budget_minutes: float = 38.0, level: str = "admin2") -> int:
+    """Local-language names, and populations, for rows that joined no unit.
+
+    Only rows in a country LOCAL_LANGUAGES names, and only rows no unit has
+    taken: a row already joined needs no second name. The names go to
+    ``aliases``; a population found goes where hydrate would put it, since a
+    row that starts to match should arrive with its figure.
+    """
+    records = read_json(path, []) or []
+    wanted = {c.upper() for c in countries} if countries else set(LOCAL_LANGUAGES)
+    joined = joined_items(level)
+    todo: dict[str, list[dict[str, Any]]] = {}
+    for rec in records:
+        iso3 = (rec.get("country") or "").upper()
+        if iso3 in wanted and iso3 in LOCAL_LANGUAGES and rec.get("wikidata") \
+                and rec["wikidata"] not in joined:
+            todo.setdefault(iso3, []).append(rec)
+    log(f"  {sum(len(v) for v in todo.values()):,} unjoined rows in "
+        f"{len(todo)} countries")
+    deadline = time.time() + budget_minutes * 60
+    named = 0
+    for iso3, recs in sorted(todo.items()):
+        if time.time() > deadline:
+            log(f"  stopped at the budget before {iso3}; run again to go on")
+            break
+        langs = ", ".join(f'"{lang}"' for lang in ("en",) + LOCAL_LANGUAGES[iso3])
+        by_qid: dict[str, list[dict[str, Any]]] = {}
+        for rec in recs:
+            by_qid.setdefault(rec["wikidata"], []).append(rec)
+        qids = sorted(by_qid)
+        for start in range(0, len(qids), HYDRATE_BATCH):
+            batch = qids[start:start + HYDRATE_BATCH]
+            try:
+                rows = sparql(LABELS_QUERY % {
+                    "ids": " ".join(f"wd:{q}" for q in batch), "langs": langs},
+                    cache=False, retries=2)
+            except Exception as exc:
+                log(f"    {iso3} labels batch failed: {str(exc)[:80]}")
+                time.sleep(sleep * 4)
+                continue
+            for row in rows:
+                label = " ".join((value(row, "label") or "").split())
+                for rec in by_qid.get(value(row, "unit"), []):
+                    known = rec.setdefault("aliases", [])
+                    if label and label != rec.get("name") and label not in known:
+                        known.append(label)
+                        named += 1
+            time.sleep(sleep)
+        log(f"  {iso3}: names for {len(qids):,} items")
+    write_json(path, records)
+    log(f"  {named:,} local and alternative names added")
+    # Their populations, by the same lookup hydrate uses.
+    return hydrate(path, list(todo), sleep,
+                   max(1.0, (deadline - time.time()) / 60), level,
+                   qids={rec["wikidata"] for recs in todo.values() for rec in recs})
+
+
+# Every item of one class in one country, with what hydrate fetches. For a
+# country the structural walk under-reached: the Netherlands' 344 drawn
+# municipalities met 38 rows, because its provinces' P150 lists are partial
+# and the P131 walk timed out. A class is a flat lookup and cheap.
+CLASS_QUERY = """
+SELECT ?unit ?unitLabel ?parent ?parentLabel ?pop ?popTime ?rank ?coord WHERE {
+  ?unit wdt:P31 wd:%(cls)s ; wdt:P17 wd:%(country)s .
+  OPTIONAL { ?unit wdt:P131 ?parent . }
+  OPTIONAL { ?unit p:P1082 ?popSt .
+             ?popSt ps:P1082 ?pop ; wikibase:rank ?rank .
+             FILTER NOT EXISTS { ?popSt pq:P518 ?part . }
+             OPTIONAL { ?popSt pq:P585 ?popTime . } }
+  OPTIONAL { ?unit wdt:P625 ?coord . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+"""
+
+
+def class_sweep(path: Path, specs: list[str], level: str = "admin2") -> int:
+    """Add the items of a class the file lacks, and populations it lacks.
+
+    ``specs`` are ISO3:QCLASS. A row already in the file keeps everything it
+    has; a population is only ever added where the row has none.
+    """
+    records = read_json(path, []) or []
+    by_qid = {r.get("wikidata"): r for r in records if r.get("wikidata")}
+    qids = country_qids()
+    added = filled = 0
+    for spec in specs:
+        iso3, cls = spec.split(":", 1)
+        country = qids.get(iso3.upper())
+        if not country:
+            log(f"  {iso3}: no Wikidata country item")
+            continue
+        rows = sparql(CLASS_QUERY % {"cls": cls, "country": country},
+                      cache=False, retries=2)
+        grouped: dict[str, list[dict[str, Any]]] = {}
+        for row in rows:
+            grouped.setdefault(value(row, "unit"), []).append(row)
+        found = 0
+        for qid, group in grouped.items():
+            name = value(group[0], "unitLabel")
+            if not qid or not name or name == qid:
+                continue
+            found += 1
+            best = best_statement(group)
+            point = next((parse_point(value(r, "coord")) for r in group
+                          if value(r, "coord")), None)
+            rec = by_qid.get(qid)
+            if rec is None:
+                parent = next((r for r in group if value(r, "parent")), {})
+                rec = {
+                    "id": f"{iso3.upper()}-WD-{qid}", "wikidata": qid, "level": level,
+                    "name": name, "parent": value(parent, "parent") or iso3.upper(),
+                    "parent_name": value(parent, "parentLabel"),
+                    "country": iso3.upper(), "capital": gap(NOT_AVAILABLE),
+                    "coordinates": point or gap(NOT_AVAILABLE),
+                    "inception": gap(NOT_AVAILABLE), "iso_3166_2": gap(NOT_AVAILABLE),
+                    "population": (measure(best[0], year=best[1], source="Wikidata (CC0)")
+                                   if best else gap(NOT_AVAILABLE, ASKED_BY_ID)),
+                    "sources": [{"field": "population/capital/coordinates",
+                                 "name": "Wikidata",
+                                 "url": f"https://www.wikidata.org/wiki/{qid}",
+                                 "license": "CC0"}],
+                }
+                records.append(rec)
+                by_qid[qid] = rec
+                added += 1
+                filled += bool(best)
+            elif best and not (isinstance(rec.get("population"), dict)
+                               and rec["population"].get("value")):
+                rec["population"] = measure(best[0], year=best[1], source="Wikidata (CC0)")
+                filled += 1
+        log(f"  {iso3} {cls}: {found} items of the class")
+    write_json(path, records)
+    log(f"  {added} rows added, {filled} populations filled")
+    return 0
+
+
+CLASSES_OF_QUERY = """
+SELECT ?class ?classLabel (COUNT(DISTINCT ?item) AS ?n) WHERE {
+  VALUES ?name { %(names)s }
+  ?item rdfs:label ?name ; wdt:P17 wd:%(country)s ; wdt:P31 ?class .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+} GROUP BY ?class ?classLabel ORDER BY DESC(?n) LIMIT 15
+"""
+
+
+def probe_classes(codes: list[str], level: str = "admin2") -> int:
+    """Which classes the items named like a country's blank units belong to.
+
+    Takes up to 60 names of the units the built site shows no population for
+    and asks which classes the country's items of exactly those English names
+    are instances of. Writes nothing; it is how a --class-sweep is chosen.
+    """
+    qids = country_qids()
+    site = PROCESSED.parent.parent / "site" / "data" / level
+    for iso3 in codes:
+        names = []
+        for entity in read_json(site / f"{iso3.upper()}.json", []) or []:
+            pop = entity.get("population")
+            if not (isinstance(pop, dict) and pop.get("value")) and not entity.get("water"):
+                name = (entity.get("name") or "").replace('"', "")
+                if name and not name[0].isdigit():
+                    names.append(name)
+        names = names[:60]
+        rows = sparql(CLASSES_OF_QUERY % {
+            "names": " ".join(f'"{n}"@en' for n in names),
+            "country": qids.get(iso3.upper(), "Q0")}, cache=False, retries=2)
+        log(f"  {iso3}: {len(names)} blank names asked")
+        for row in rows:
+            log(f"    {value(row, 'class')}  {value(row, 'n'):>4}  {value(row, 'classLabel')}")
+    return 0
+
+
+def blank_items(level: str) -> set[str]:
+    """The Wikidata items joined to a unit the built site shows no population for."""
+    out: set[str] = set()
+    for shard in sorted((PROCESSED.parent.parent / "site" / "data" / level).glob("*.json")):
+        for entity in read_json(shard, []) or []:
+            pop = entity.get("population")
+            if entity.get("wikidata") and not entity.get("water") \
+                    and not isinstance(pop, (int, float)) \
+                    and not (isinstance(pop, dict) and pop.get("value")):
+                out.add(entity["wikidata"])
+    return out
+
+
+def hydrate(path: Path, countries: list[str] | None, sleep: float,
+            budget_minutes: float = 38.0, level: str = "admin2",
+            qids: set[str] | None = None) -> int:
+    """Fill population and coordinates for rows that have neither, by id.
+
+    Only ever fills: a row that already carries a population keeps it, and
+    one Wikidata still has nothing for keeps its gap. Nothing else about a
+    row changes, so the join the build made on names is the same join.
+    """
+    records = read_json(path, []) or []
+    wanted = {c.upper() for c in countries} if countries else None
+    # Only the items a blank unit on the map is waiting for. Of 68,764 rows
+    # without a population, about 12,450 are joined to a unit that has none;
+    # the rest sit on units another source already fills, or join nothing.
+    # A run on 24 September 2026 asking for all of them reached 6,150 in the
+    # job's 45 minutes, against a WDQS answering 502 and timing out.
+    waiting = qids if qids is not None else blank_items(level)
+    todo = [r for r in records
+            if r.get("wikidata") in waiting
+            and (wanted is None or (r.get("country") or "").upper() in wanted)
+            and not (isinstance(r.get("population"), dict)
+                     and (r["population"].get("value")
+                          or r["population"].get("note") == ASKED_BY_ID))]
+    log(f"  {len(todo):,} rows without a population"
+        + (f" in {', '.join(sorted(wanted))}" if wanted else ""))
+    by_qid: dict[str, list[dict[str, Any]]] = {}
+    for rec in todo:
+        by_qid.setdefault(rec["wikidata"], []).append(rec)
+    ordered = sorted(by_qid)
+    filled = placed = failed = 0
+    # The job is cancelled at 45 minutes and a cancelled job commits nothing
+    # it had not saved, so the run stops itself short of that and says where.
+    deadline = time.time() + budget_minutes * 60
+    for start in range(0, len(ordered), HYDRATE_BATCH):
+        if time.time() > deadline:
+            log(f"  stopped at the {budget_minutes:.0f}-minute budget with "
+                f"{len(ordered) - start:,} items unasked; run again to go on")
+            break
+        batch = ordered[start:start + HYDRATE_BATCH]
+        try:
+            rows = sparql(HYDRATE_QUERY % {"ids": " ".join(f"wd:{q}" for q in batch)},
+                          cache=False, retries=2)
+        except Exception as exc:
+            failed += len(batch)
+            log(f"    batch {start // HYDRATE_BATCH + 1} failed: {str(exc)[:80]}")
+            time.sleep(sleep * 4)
+            continue
+        grouped: dict[str, list[dict[str, Any]]] = {}
+        coords: dict[str, list[float]] = {}
+        for row in rows:
+            qid = value(row, "unit")
+            grouped.setdefault(qid, []).append(row)
+            point = parse_point(value(row, "coord"))
+            if point and qid not in coords:
+                coords[qid] = point
+        for qid in batch:
+            best = best_statement(grouped.get(qid, []))
+            for rec in by_qid[qid]:
+                if best:
+                    rec["population"] = measure(best[0], year=best[1],
+                                                source="Wikidata (CC0)")
+                    filled += 1
+                else:
+                    rec["population"] = gap(NOT_AVAILABLE, ASKED_BY_ID)
+                if qid in coords and not isinstance(rec.get("coordinates"), list):
+                    rec["coordinates"] = coords[qid]
+                    placed += 1
+        if (start // HYDRATE_BATCH) % 20 == 0:
+            log(f"    {min(start + HYDRATE_BATCH, len(ordered)):,} of {len(ordered):,} "
+                f"items asked; {filled:,} populations so far")
+        # Saved as it goes: the job has a 45-minute limit, and a run cut off
+        # at minute 44 used to keep nothing of what it had found.
+        if (start // HYDRATE_BATCH) % 40 == 39:
+            write_json(path, records)
+        time.sleep(sleep)
+    write_json(path, records)
+    log(f"  filled {filled:,} populations and {placed:,} coordinates; "
+        f"{failed:,} items in failed batches keep their gaps")
+    return 0
+
+
+ITEM_CLASSES_QUERY = """
+SELECT ?item ?class ?classLabel WHERE {
+  VALUES ?item { %(ids)s }
+  ?item wdt:P31 ?class .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+"""
+ITEM_CLASSES_BATCH = 200
+
+
+def item_classes(path: Path, level: str, sleep: float,
+                 budget_minutes: float = 38.0) -> int:
+    """What each item that gives this level a population is an instance of.
+
+    A name join can reach the town of a district's name rather than the
+    district, and the figure it brings looks like any other. The build reads
+    this file to tell the two apart: an item that is only ever a village, a
+    town or a city is not a second-level unit, whatever it is called.
+    Resumes from the file, so a run cut short by the budget goes on.
+    """
+    items: set[str] = set()
+    for name in (f"wikidata_{level}.json", f"wikidata_{level}_classes.json"):
+        for rec in read_json(PROCESSED / name, []) or []:
+            pop = rec.get("population")
+            if rec.get("wikidata") and isinstance(pop, dict) and pop.get("value"):
+                items.add(rec["wikidata"])
+    known: dict[str, list[list[str]]] = read_json(path, {}) or {}
+    ordered = sorted(items - set(known))
+    log(f"  {len(items):,} items give a {level} population; "
+        f"{len(ordered):,} not yet asked")
+    deadline = time.time() + budget_minutes * 60
+    failed = 0
+    for start in range(0, len(ordered), ITEM_CLASSES_BATCH):
+        if time.time() > deadline:
+            log(f"  stopped at the {budget_minutes:.0f}-minute budget with "
+                f"{len(ordered) - start:,} items unasked; run again to go on")
+            break
+        batch = ordered[start:start + ITEM_CLASSES_BATCH]
+        try:
+            rows = sparql(ITEM_CLASSES_QUERY % {"ids": " ".join(f"wd:{q}" for q in batch)},
+                          cache=False, retries=2)
+        except Exception as exc:
+            failed += len(batch)
+            log(f"    batch {start // ITEM_CLASSES_BATCH + 1} failed: {str(exc)[:80]}")
+            time.sleep(sleep * 4)
+            continue
+        found: dict[str, list[list[str]]] = {q: [] for q in batch}
+        for row in rows:
+            found.setdefault(value(row, "item"), []).append(
+                [value(row, "class"), value(row, "classLabel")])
+        known.update({q: sorted(c) for q, c in found.items()})
+        if (start // ITEM_CLASSES_BATCH) % 20 == 19:
+            write_json(path, dict(sorted(known.items())))
+        time.sleep(sleep)
+    write_json(path, dict(sorted(known.items())))
+    log(f"  {len(known):,} items' classes on file; {failed:,} in failed batches")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -418,7 +843,36 @@ def main() -> int:
     ap.add_argument("--allow-shrink", action="store_true",
                     help="write even though it drops countries the existing "
                          "file covers")
+    ap.add_argument("--budget", type=float, default=38.0,
+                    help="--hydrate stops and saves after this many minutes")
+    ap.add_argument("--probe-classes", nargs="*", default=None,
+                    help="ISO3s; which classes items named like their blank units are")
+    ap.add_argument("--class-sweep", nargs="*", default=None,
+                    help="ISO3:QCLASS pairs; every item of the class in the country")
+    ap.add_argument("--enrich", action="store_true",
+                    help="local-language names and populations for rows no "
+                         "unit has joined, in the countries LOCAL_LANGUAGES names")
+    ap.add_argument("--hydrate", action="store_true",
+                    help="fill population and coordinates for rows already in "
+                         "the file that lack them, looked up by id")
+    ap.add_argument("--item-classes", action="store_true",
+                    help="record what every item giving the level a population "
+                         "is an instance of, for the build's town check")
     args = ap.parse_args()
+    if args.item_classes:
+        return item_classes(args.out or PROCESSED / f"wikidata_{args.level}_item_classes.json",
+                            args.level, args.sleep, args.budget)
+    if args.probe_classes:
+        return probe_classes(args.probe_classes, args.level)
+    if args.class_sweep:
+        return class_sweep(args.out or PROCESSED / f"wikidata_{args.level}.json",
+                           args.class_sweep, args.level)
+    if args.enrich:
+        return enrich(args.out or PROCESSED / f"wikidata_{args.level}.json",
+                      args.countries, args.sleep, args.budget, args.level)
+    if args.hydrate:
+        return hydrate(args.out or PROCESSED / f"wikidata_{args.level}.json",
+                       args.countries, args.sleep, args.budget, args.level)
 
     # Before any network work: a light run that would overwrite a country
     # already answered in full is refused here rather than after forty

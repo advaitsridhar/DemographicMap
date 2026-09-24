@@ -34,11 +34,22 @@ EUROSTAT_ALPHA2 = {"EL": "GRC", "UK": "GBR"}
 
 
 def alpha2_to_iso3() -> dict[str, str]:
-    """alpha-2 -> alpha-3 from the Natural Earth country index."""
+    """alpha-2 -> alpha-3 from the Natural Earth country index, or the site's own.
+
+    The index lives under data/raw, which is not in git, so on an Actions
+    runner it is absent and only the two codes above resolved: a NUTS-3 run
+    there skipped every region of every country but Greece and the UK. The
+    built site carries each country's ISO2 in its codes, so that is read too.
+    """
     out = dict(EUROSTAT_ALPHA2)
     for row in read_json(RAW / "codes" / "country_index.json", []):
         if row.get("iso2"):
             out.setdefault(row["iso2"], row["iso3"])
+    site = PROCESSED.parent.parent / "site" / "data" / "admin0.json"
+    for row in read_json(site, []) or []:
+        codes = row.get("codes") or {}
+        if codes.get("iso2") and codes.get("iso3"):
+            out.setdefault(codes["iso2"], codes["iso3"])
     return out
 
 API = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
@@ -89,6 +100,46 @@ def unpack(payload: dict[str, Any]) -> dict[tuple[str, ...], float]:
     return out
 
 
+def whole_country(geo: str) -> bool:
+    """A NUTS code that is its whole country: LU00, LU000, MT00 and the like.
+
+    Eurostat gives a country too small to divide one region at each level,
+    coded with zeros. It is not a division of the country, so it has no unit
+    on this map; written as one, it went looking for a namesake and Canton
+    Luxembourg took all 681,973 of the Grand Duchy's people.
+    """
+    return len(geo) > 2 and set(geo[2:]) == {"0"}
+
+
+def second_level_only(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """NUTS-3 rows only for the countries whose NUTS-3 is this map's second level.
+
+    NUTS-3 is France's departements and Spain's provinces, which are this
+    map's districts; it is also Sweden's counties and Romania's judete, which
+    are its first level. Written as districts, a county would look for a
+    district of its name, and Stockholms lan could land on Stockholm
+    municipality with the whole county's people. So each country's names are
+    measured against both of the map's levels, as the COD-PS reader does,
+    and kept only where they are the second level's. A first-level fit is
+    left alone rather than written there: NUTS-2 already speaks for that
+    level, and the national offices after it.
+    """
+    from .cod_ps import which_level
+    by_country: dict[str, list[dict[str, Any]]] = {}
+    for rec in records:
+        by_country.setdefault(rec["country"], []).append(rec)
+    kept: list[dict[str, Any]] = []
+    for iso3, rows in sorted(by_country.items()):
+        level, why = which_level(iso3, [r["name"] for r in rows])
+        if level == "admin2":
+            kept.extend(rows)
+            log(f"  {iso3}: {len(rows)} NUTS-3 regions kept -- {why}")
+        else:
+            log(f"  {iso3}: {len(rows)} NUTS-3 regions left out -- "
+                + (why if level is None else f"they are this map's {level}: {why}"))
+    return kept
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -108,7 +159,7 @@ def main() -> int:
     latest: dict[str, tuple[str, float]] = {}
     for key, value in pop.items():
         geo, year = key[geo_pos], key[time_pos]
-        if len(geo) != want_len:
+        if len(geo) != want_len or whole_country(geo):
             continue
         if geo not in latest or year > latest[geo][0]:
             latest[geo] = (year, value)
@@ -167,6 +218,8 @@ def main() -> int:
                       "url": API.format(dataset="demo_r_pjangrp3"),
                       "license": "Eurostat re-use policy (attribution)"}],
         ))
+    if args.level == "nuts3":
+        records = second_level_only(records)
     write_json(args.out or PROCESSED / f"eurostat_{args.level}.json", records)
     log(f"  {len(records)} {args.level} records")
     return 0

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import sys
 import unittest
+from unittest import mock
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
@@ -136,3 +137,108 @@ class WhichLevelTheFileNames(unittest.TestCase):
     def test_accents_and_case_do_not_decide_it(self):
         level, _ = m.which_level("XXX", ["ÓNE", "TWÖ", "Thrée"])
         self.assertEqual(level, "admin2")
+
+
+class DistrictTablesByName(unittest.TestCase):
+    def test_admpop2_is_a_district_table(self):
+        from scripts.fetch_census import cod_ps
+        res = cod_ps.adm2_resource({"resources": [
+            {"name": "CMR_admpop_adm1_2025.csv"}, {"name": "CMR_admpop2_2025.csv"}]})
+        self.assertEqual(res["name"], "CMR_admpop2_2025.csv")
+
+    def test_a_workbook_when_there_is_no_district_csv(self):
+        from scripts.fetch_census import cod_ps
+        res = cod_ps.adm2_resource({"resources": [
+            {"name": "KEN_AdminBoundaries_TabularData.xlsx"},
+            {"name": "ken_admpop_2019.xlsx"}, {"name": "ken_admpop_adm1_2019.csv"}]})
+        self.assertEqual(res["name"], "ken_admpop_2019.xlsx")
+
+    def test_the_district_sheet_is_read(self):
+        import io
+        import openpyxl
+        from scripts.fetch_census import cod_ps
+        book = openpyxl.Workbook()
+        book.active.title = "ken_admpop_adm1_2019"
+        book.active.append(["ADM1_EN", "T_TL"])
+        sheet = book.create_sheet("ken_admpop_adm2_2019")
+        sheet.append(["ADM2_EN", "ADM2_PCODE", "ADM1_EN", "T_TL"])
+        sheet.append(["Ainabkoi", "KE027144", "Uasin Gishu", 138_192])
+        sheet.append([None, None, None, None])
+        buf = io.BytesIO()
+        book.save(buf)
+        columns, rows, title = cod_ps.workbook_rows(buf.getvalue())
+        self.assertEqual(title, "ken_admpop_adm2_2019")
+        self.assertEqual(columns, ["ADM2_EN", "ADM2_PCODE", "ADM1_EN", "T_TL"])
+        self.assertEqual(rows, [{"ADM2_EN": "Ainabkoi", "ADM2_PCODE": "KE027144",
+                                 "ADM1_EN": "Uasin Gishu", "T_TL": "138192"}])
+
+
+class OneLevelDown(unittest.TestCase):
+    def test_the_next_table_is_asked_when_the_district_table_is_not_the_maps(self):
+        from scripts.fetch_census import cod_ps
+        package = {"name": "cod-ps-slv", "groups": [{"name": "slv"}],
+                   "license_id": "cc-by-igo", "license_title": "CC BY-IGO",
+                   "resources": [{"name": "slv_admpop_adm2_2024.csv", "url": "a"},
+                                 {"name": "slv_admpop_adm3_2024.csv", "url": "b"}]}
+        tables = {
+            "a": (["ADM2_ES", "ADM1_ES", "T_TL"],
+                  [{"ADM2_ES": "La Libertad Sur", "ADM1_ES": "La Libertad", "T_TL": "5"}],
+                  "slv_admpop_adm2_2024.csv"),
+            "b": (["ADM3_ES", "ADM1_ES", "T_TL"],
+                  [{"ADM3_ES": "Acajutla", "ADM1_ES": "Sonsonate", "T_TL": "52000"}],
+                  "slv_admpop_adm3_2024.csv"),
+        }
+        with mock.patch.object(cod_ps, "read_table", side_effect=lambda r: tables[r["url"]]), \
+             mock.patch.object(cod_ps, "shape_names",
+                               side_effect=lambda code, level: {"acajutla"} if level == "admin2" else set()), \
+             mock.patch.object(cod_ps, "MIN_LEVEL_NAMES", 1), \
+             mock.patch.object(cod_ps, "MIN_TABLE_NAMES", 1):
+            out = cod_ps.country_records(package)
+        self.assertEqual([(r["name"], r["level"]) for r in out], [("Acajutla", "admin2")])
+        self.assertEqual(out[0]["population"], {"value": 52000, "year": 2024,
+                                                "source": out[0]["population"]["source"]})
+
+    def test_a_single_year_reference_period_supplies_a_missing_year(self):
+        from scripts.fetch_census import cod_ps
+        self.assertEqual(cod_ps.dataset_year(
+            {"dataset_date": "[2018-01-01T00:00:00 TO 2018-12-31T23:59:59]"}), 2018)
+        self.assertIsNone(cod_ps.dataset_year(
+            {"dataset_date": "[2015-01-01T00:00:00 TO 2020-12-31T23:59:59]"}))
+
+
+class LevelNeedsEvidence(unittest.TestCase):
+    def test_a_tie_or_a_handful_is_refused(self):
+        from scripts.fetch_census import cod_ps
+        names = {"admin1": {"a", "b"}, "admin2": {"c", "d"}}
+        with mock.patch.object(cod_ps, "shape_names", side_effect=lambda c, l: names[l]):
+            self.assertIsNone(cod_ps.which_level("KGZ", ["a", "b", "c", "d"])[0])
+        # Half of eight is above the 40% bar and still only four names.
+        names = {"admin1": set(), "admin2": {"a", "b", "c", "d"}}
+        with mock.patch.object(cod_ps, "shape_names", side_effect=lambda c, l: names[l]):
+            self.assertIsNone(cod_ps.which_level("KGZ", list("abcdefgh"))[0])
+            # A table of three that all match is a small country, not a handful.
+            self.assertEqual(cod_ps.which_level("KGZ", ["a", "b", "c"])[0], "admin2")
+            # One name is not a level: Luxembourg's single NUTS-3 region.
+            self.assertIsNone(cod_ps.which_level("LUX", ["a"])[0])
+
+
+class Partition(unittest.TestCase):
+    def rows(self, **people):
+        return [{"name": n, "population": {"value": v}} for n, v in people.items()]
+
+    def test_only_counties_their_rows_add_up_to_are_kept(self):
+        from scripts.fetch_census import cod_ps
+        shapes = [{"id": "a", "name": "Kisumu East", "parent": "K"},
+                  {"id": "b", "name": "Kisumu West", "parent": "K"},
+                  {"id": "c", "name": "Laikipia East", "parent": "L"},
+                  {"id": "d", "name": "Laikipia West", "parent": "L"}]
+        parents = [{"id": "K", "name": "Kisumu"}, {"id": "L", "name": "Laikipia"}]
+        rows = self.rows(**{"Kisumu East": 60, "Kisumu West": 40,
+                            "Laikipia East": 30, "Laikipia West": 20})
+        totals = {"kisumu": 100, "laikipia": 100}
+        files = {"admin2": shapes, "admin1": parents}
+        with mock.patch.object(cod_ps, "SITE") as site:
+            site.__truediv__.side_effect = lambda level: mock.Mock(
+                __truediv__=lambda _, name: mock.Mock(read_text=lambda: __import__("json").dumps(files[level])))
+            kept = cod_ps.partitioned("KEN", rows, totals)
+        self.assertEqual(sorted(r["name"] for r in kept), ["Kisumu East", "Kisumu West"])
