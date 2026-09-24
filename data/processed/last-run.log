@@ -21,7 +21,7 @@ eurostat: demo_r_pjangrp3 (nuts3)
   ITA: 115 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 111; too few of either to say which level this file describes
   LIE: 1 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 1; too few of either to say which level this file describes
   LTU: 10 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 10; too few of either to say which level this file describes
-  LUX: 1 NUTS-3 regions kept -- 1 of 1 names match this map's admin2 (against 0 at admin1)
+  LUX: 1 NUTS-3 regions left out -- its names match 1 of this map's districts and 0 of its first-level units, out of 1; too few of either to say which level this file describes
   LVA: 9 NUTS-3 regions left out -- its names match 1 of this map's districts and 1 of its first-level units, out of 6; too few of either to say which level this file describes
   MKD: 9 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 9; too few of either to say which level this file describes
   MLT: 2 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 2; too few of either to say which level this file describes
@@ -36,5 +36,5 @@ eurostat: demo_r_pjangrp3 (nuts3)
   SVN: 12 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 12; too few of either to say which level this file describes
   SWE: 21 NUTS-3 regions left out -- they are this map's admin1: 21 of 21 names match this map's admin1 (against 0 at admin2)
   TUR: 81 NUTS-3 regions left out -- they are this map's admin1: 81 of 81 names match this map's admin1 (against 11 at admin2)
-  wrote data/processed/eurostat_nuts3.json (412 kB)
-  341 nuts3 records
+  wrote data/processed/eurostat_nuts3.json (411 kB)
+  340 nuts3 records
