@@ -3038,22 +3038,65 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
 # What the item joined to a district is, when Wikidata says. The name join
 # cannot tell the town of Luba from Luba District, and before populations were
 # fetched by id the mistake cost nothing; afterwards Bioko Sur's two districts
-# read 7,739 and 1,071, the towns', and Armenia's raion of Kotayk read the
-# 1,558 people of the village of Kotayk. scripts/fetch_wikidata.py
+# read 7,739 and 1,071, the towns', and Armenia's raion of Tavush read the
+# 1,454 people of the village of Tavush. scripts/fetch_wikidata.py
 # --item-classes records every such item's classes, and an item whose every
 # class is a kind of settlement -- no municipality, commune or district among
 # them -- is a place people live in, not a unit they are counted by, and its
-# figure is left out. An item that is both, as most cities of Japan and the
-# Netherlands are, keeps its figure: it is the unit.
-SETTLEMENT_CLASSES: dict[str, str] = {}
+# figure is left out. An item that is both, as the cities of Japan and the
+# municipalities of the Netherlands are, keeps its figure: it is the unit.
+#
+# Listed by hand from the classes the items giving this level a figure carry,
+# measured on 24 September 2026: generic settlements only. "Town in Romania",
+# "city of Japan", "prefecture-level city of China", "city of Indonesia" and
+# the like are units of government and are not here. 154 figures were only
+# settlements: Bled's 4,969 on a municipality of 8,000, Alytus city's 51,856
+# on Alytus District Municipality, Amman's four million on one of its
+# districts. Two kinds keep theirs, because there the settlement is the unit:
+#   * a shape named as a city -- Uzbekistan draws "Andijan" and "Andijan city"
+#     side by side, and the city's item belongs on the second, which says so;
+#   * a parent's only division within SOLE_CHILD_BAND of the parent -- Malta's
+#     local councils, whose towns' figures are the councils' to a few percent.
+SETTLEMENT_CLASSES: dict[str, str] = {
+    "Q486972": "human settlement", "Q532": "village", "Q3957": "town",
+    "Q515": "city", "Q1549591": "big city", "Q7930989": "city or town",
+    "Q5084": "hamlet", "Q123705": "neighborhood", "Q188509": "suburb",
+    "Q1637706": "city with millions", "Q200250": "metropolis",
+    "Q174844": "megacity", "Q208511": "global city", "Q5119": "capital city",
+    "Q108178728": "national capital", "Q11271835": "state capital",
+    "Q27554677": "former capital", "Q129268952": "former national capital",
+    "Q129319205": "de facto national capital", "Q3147563": "capital of regency",
+    "Q51929311": "largest city", "Q902814": "border city", "Q2264924": "port city",
+    "Q11422368": "city for international conferences and tourism",
+    "Q707813": "Hanseatic city", "Q1187811": "college town",
+    "Q691960": "satellite city", "Q1200957": "tourist destination",
+    "Q11499984": "educational town", "Q9391358": "city with public health center",
+    "Q692581": "holy city of Abrahamic religion", "Q11394721": "inland city",
+    "Q828359": "commuter town", "Q677678": "fortified town",
+    "Q317548": "resort town", "Q67123843": "town divided by border",
+    "Q15661340": "ancient city", "Q620509": "military town",
+    "Q40364446": "historic city", "Q4946461": "spa town",
+    "Q1782540": "railway town", "Q28328984": "village in Armenia",
+    "Q20724701": "city or town in Armenia", "Q21672098": "village of Ukraine",
+    "Q12131624": "city in Ukraine", "Q12131640": "city of district significance",
+    "Q2989457": "urban-type settlement",
+    "Q4100864": "urban-type settlement in Ukraine",
+    "Q15078955": "urban-type settlement in Russia",
+}
 ITEM_CLASSES = PROCESSED / "wikidata_admin2_item_classes.json"
+CITY_SHAPE = re.compile(r"\b(city|kota|ciudad|ville|shahar)\b", re.I)
 
 
-def refuse_settlement_figures(admin2: dict[str, list[dict[str, Any]]],
+def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
+                              admin2: dict[str, list[dict[str, Any]]],
                               classes: dict[str, list[list[str]]]) -> int:
     """Take a Wikidata population off a unit whose item is only a settlement."""
     refused = 0
-    for rows in admin2.values():
+    for iso3, rows in admin2.items():
+        parents = {e["id"]: e for e in admin1.get(iso3, [])}
+        siblings: dict[Any, int] = defaultdict(int)
+        for entity in rows:
+            siblings[entity.get("parent")] += 1
         for entity in rows:
             pop = entity.get("population")
             if not (isinstance(pop, dict) and pop.get("value")
@@ -3061,6 +3104,13 @@ def refuse_settlement_figures(admin2: dict[str, list[dict[str, Any]]],
                 continue
             kinds = classes.get(entity.get("wikidata") or "")
             if not kinds or not all(k in SETTLEMENT_CLASSES for k, _ in kinds):
+                continue
+            if CITY_SHAPE.search(entity.get("name") or ""):
+                continue
+            parent = parents.get(entity.get("parent"))
+            above = published(parent.get("population")) if parent else None
+            if (above and siblings[entity.get("parent")] == 1
+                    and SOLE_CHILD_BAND[0] <= pop["value"] / above <= SOLE_CHILD_BAND[1]):
                 continue
             what = " and ".join(sorted({SETTLEMENT_CLASSES[k] for k, _ in kinds}))
             entity["population"] = gap(NOT_AVAILABLE, (
@@ -4545,7 +4595,7 @@ def main() -> int:
     # -- a town's figure on a district --------------------------------------
     # After every adapter, so the parent's population is the one it will
     # keep; before anything sums or weighs by these figures.
-    settlements = refuse_settlement_figures(admin2_by_country,
+    settlements = refuse_settlement_figures(admin1_by_country, admin2_by_country,
                                             read_json(ITEM_CLASSES, {}) or {})
     if settlements:
         log(f"  {settlements} Wikidata district figures left out as a "

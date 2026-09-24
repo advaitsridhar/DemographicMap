@@ -202,10 +202,13 @@ class SettlementFiguresOnDistricts(unittest.TestCase):
         kinds.start()
         self.addCleanup(kinds.stop)
 
-    def run_guard(self, classes, source="Wikidata (CC0)"):
-        a2 = {"GNQ": [{"id": "U", "name": "LUBA", "wikidata": "Q985548",
-                       "population": {"value": 7739, "year": 2012, "source": source}}]}
-        refused = be.refuse_settlement_figures(a2, {"Q985548": classes})
+    def run_guard(self, classes, source="Wikidata (CC0)", name="LUBA", parent=34674,
+                  siblings=1):
+        a1 = {"GNQ": [{"id": "P", "name": "Bioko Sur", "population": {"value": parent}}]}
+        a2 = {"GNQ": [{"id": "U", "name": name, "parent": "P", "wikidata": "Q985548",
+                       "population": {"value": 7739, "year": 2012, "source": source}}]
+              + [{"id": f"S{i}", "name": f"S{i}", "parent": "P"} for i in range(siblings)]}
+        refused = be.refuse_settlement_figures(a1, a2, {"Q985548": classes})
         return refused, a2["GNQ"][0]["population"]
 
     def test_a_town_and_nothing_else_is_left_out(self):
@@ -225,6 +228,16 @@ class SettlementFiguresOnDistricts(unittest.TestCase):
 
     def test_only_wikidata_figures_are_judged(self):
         self.assertEqual(self.run_guard([["Q532", "village"]], source="OCHA")[0], 0)
+
+    def test_a_shape_named_as_a_city_keeps_its_citys_figure(self):
+        # Uzbekistan draws "Andijan" and "Andijan city" side by side.
+        self.assertEqual(self.run_guard([["Q3957", "town"]], name="Luba city")[0], 0)
+        self.assertEqual(self.run_guard([["Q3957", "town"]], name="Luba")[0], 1)
+
+    def test_a_sole_division_that_agrees_with_its_parent_is_kept(self):
+        # Malta's councils: the town is the council's ground.
+        self.assertEqual(self.run_guard([["Q3957", "town"]], parent=7800, siblings=0)[0], 0)
+        self.assertEqual(self.run_guard([["Q3957", "town"]], parent=34674, siblings=0)[0], 1)
 
 
 class CapitalFiguresOnParents(unittest.TestCase):
