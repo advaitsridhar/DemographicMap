@@ -251,6 +251,77 @@ class HistoricFigures(unittest.TestCase):
         self.assertEqual(a2["IRQ"][1]["population"]["value"], 9000)
 
 
+class OutlinesNameShuffledPolygons(unittest.TestCase):
+    """Namibia's polygons are named by the OCHA outline each one is."""
+
+    @staticmethod
+    def unit(pcode, name, x0, y0, x1, y1):
+        from shapely.geometry import box, mapping
+        return {"pcode": pcode, "name": name, "geometry": mapping(box(x0, y0, x1, y1))}
+
+    @staticmethod
+    def polygon(label, x0, y0, x1, y1):
+        from shapely.geometry import box
+        return {"shape_id": label, "name": label, "group": "NAM",
+                "_geom": box(x0, y0, x1, y1)}
+
+    def relabel(self, rows, units):
+        return be.relabel_from_outlines(rows, "NAM", units), rows
+
+    def test_a_polygon_that_is_one_outline_takes_its_name(self):
+        counts, rows = self.relabel([self.polygon("Eenhana", 0, 0, 1, 1)],
+                                    [self.unit("NA01", "Windhoek East", 0, 0, 1, 1.1)])
+        self.assertEqual(counts, {"same": 1})
+        self.assertEqual(rows[0]["name"], "Windhoek East")
+        self.assertEqual(rows[0]["outline"]["label"], "Eenhana")
+
+    def test_two_whole_outlines_make_a_union(self):
+        counts, rows = self.relabel(
+            [self.polygon("Kamanjab", 0, 0, 2, 1)],
+            [self.unit("NA01", "Moses Garoeb", 0, 0, 1.2, 1),
+             self.unit("NA02", "Tobias Hainyeko", 1.2, 0, 2, 1)])
+        self.assertEqual(counts, {"union": 1})
+        self.assertEqual(rows[0]["name"], "Moses Garoeb and Tobias Hainyeko")
+        self.assertEqual(be.outline_unions(rows),
+                         {("NAM", "Moses Garoeb and Tobias Hainyeko"):
+                          ("Moses Garoeb", "Tobias Hainyeko")})
+
+    def test_a_union_is_found_before_its_larger_part(self):
+        # Anamulenge is 71% Okahao, and it also holds all of Otamanzi.
+        counts, rows = self.relabel(
+            [self.polygon("Anamulenge", 0, 0, 1, 1)],
+            [self.unit("NA01", "Okahao", 0, 0, 0.71, 1),
+             self.unit("NA02", "Otamanzi", 0.71, 0, 1, 1)])
+        self.assertEqual(rows[0]["outline"]["kind"], "union")
+
+    def test_a_constituency_and_part_of_another_is_a_mixture(self):
+        counts, rows = self.relabel(
+            [self.polygon("Kalahari", 0, 0, 1, 1)],
+            [self.unit("NA01", "Endola", 0, 0, 0.67, 1),
+             self.unit("NA02", "Omulonga", 0.67, 0, 2, 1)])
+        self.assertEqual(counts, {"mixed": 1})
+        self.assertEqual(rows[0]["name"], "Endola and part of Omulonga")
+
+    def test_an_outline_is_one_polygon_only(self):
+        counts, rows = self.relabel(
+            [self.polygon("Luderitz", 0, 0, 1, 1), self.polygon("Luderitz", 0, 0, 1, 1)],
+            [self.unit("NA01", "Kapako", 0, 0, 1, 1)])
+        self.assertEqual(counts, {"same": 1, "mixed": 1})
+
+    def test_a_mixture_keeps_no_figure_and_says_why(self):
+        entity = be.blank({"shape_id": "X", "name": "Endola and part of Omulonga",
+                           "group": "NAM", "point": [0, 0], "bbox": None}, "admin2", "P")
+        entity["population"] = {"value": 30000, "source": "OCHA"}
+        entity["outline"] = {"kind": "mixed", "label": "Kalahari",
+                             "parts": ["Endola", "Omulonga"], "source": "OCHA",
+                             "shares": [["Endola", 0.67, 1.0], ["Omulonga", 0.33, 0.27]]}
+        self.assertEqual(be.settle_outline_mixtures({"NAM": [entity]}), 1)
+        self.assertEqual(entity["population"]["status"], common.NOT_AVAILABLE)
+        self.assertIn('labels this polygon "Kalahari"', entity["population"]["note"])
+        self.assertIn("Endola: 67% of this polygon, 100% of Endola", entity["note"])
+        self.assertNotIn("outline", entity)
+
+
 class CapitalFiguresOnParents(unittest.TestCase):
     """A first-level Wikidata item can carry its capital's figure."""
 

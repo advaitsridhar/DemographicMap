@@ -990,6 +990,94 @@ def norm(text: str | None) -> str:
 # Geometry side
 # ---------------------------------------------------------------------------
 
+# Second-level polygons whose labels are measured against another outline.
+#
+# geoBoundaries CGAZ draws Namibia's constituencies in the right places and
+# labels them wrongly: the polygon at Windhoek is "Eenhana", a town on the
+# Angolan border; "Katutura Central" lies in Hardap, 90 km south of the city;
+# seven polygons are "Luderitz". Every name join put one constituency's
+# figures on another's ground, with nothing to show it -- each region's
+# divisions simply summed to the wrong total. No alias can fix a shuffle, so
+# each polygon is named instead by the OCHA outline it is
+# (scripts/fetch_census/namibia_shapes.py), measured on every build:
+#   * the polygon and one outline cover SAME_UNIT or more of each other: it is
+#     that constituency, and takes its name;
+#   * two or more outlines lie WHOLE_PART or more inside it, and together make
+#     up WHOLE_PART of it: it is their union, named for them all, and a
+#     source's rows for the parts are pooled onto it;
+#   * anything else is a mixture -- a constituency and part of another -- and
+#     is named for what it holds and given no figures, since none describes it.
+# Measured on 24 September 2026, 96 of the 103 polygons are one constituency
+# (91 at 80% or more each way), four are unions of two, and three are
+# mixtures.
+OUTLINE_REFERENCE: dict[str, str] = {"NAM": "nam_adm2_reference.json"}
+SAME_UNIT = 0.7
+WHOLE_PART = 0.9
+# A sliver this small of a polygon is a drawing difference, not a part of it.
+OUTLINE_SLIVER = 0.05
+
+
+def relabel_from_outlines(rows: list[dict[str, Any]], iso3: str,
+                          units: list[dict[str, Any]]) -> dict[str, int]:
+    """Name each of a country's polygons by the reference outline it is.
+
+    ``rows`` are read_shapes rows still carrying ``_geom``; ``units`` are the
+    reference outlines as the fetcher wrote them. Each row's name is replaced,
+    and ``outline`` records what the polygon was measured to be.
+    """
+    from shapely.geometry import shape as to_shape
+
+    outlines = [(u, whole(to_shape(u["geometry"]))) for u in units]
+    counts: dict[str, int] = defaultdict(int)
+    claimed: dict[str, str] = {}
+    for row in rows:
+        geom = whole(row["_geom"])
+        label = row["name"]
+        hits = []
+        for unit, outline in outlines:
+            if not geom.intersects(outline):
+                continue
+            shared = geom.intersection(outline).area
+            if shared > 0:
+                hits.append((shared / geom.area, shared / outline.area, unit))
+        hits.sort(key=lambda h: -h[0])
+        whole_units = [h for h in hits if h[1] >= WHOLE_PART]
+        if len(whole_units) >= 2 and sum(h[0] for h in whole_units) >= WHOLE_PART:
+            kind, parts = "union", [h[2]["name"] for h in whole_units]
+            name = ", ".join(parts[:-1]) + " and " + parts[-1]
+        elif hits and hits[0][0] >= SAME_UNIT and hits[0][1] >= SAME_UNIT \
+                and hits[0][2]["pcode"] not in claimed:
+            kind, parts = "same", [hits[0][2]["name"]]
+            name = parts[0]
+            claimed[hits[0][2]["pcode"]] = row["shape_id"]
+        else:
+            kind = "mixed"
+            held = [h for h in hits if h[0] >= OUTLINE_SLIVER]
+            parts = [h[2]["name"] for h in held]
+            words = [(h[2]["name"] if h[1] >= WHOLE_PART else f"part of {h[2]['name']}")
+                     for h in held]
+            name = (", ".join(words[:-1]) + " and " + words[-1]) if len(words) > 1 \
+                else (words[0] if words else label)
+            name = name[:1].upper() + name[1:]
+        row["name"] = name
+        row["outline"] = {"kind": kind, "parts": parts, "label": label,
+                          "shares": [[h[2]["name"], round(h[0], 3), round(h[1], 3)]
+                                     for h in hits[:4]]}
+        counts[kind] += 1
+    return dict(counts)
+
+
+def outline_note(outline: dict[str, Any], source: str) -> str:
+    """What a relabelled polygon is, as the measurement found it."""
+    shares = "; ".join(f"{n}: {a:.0%} of this polygon, {b:.0%} of {n}"
+                       for n, a, b in outline["shares"])
+    return (f"geoBoundaries labels this polygon \"{outline['label']}\", which is "
+            f"not where it lies; it is named here from {source}. Measured "
+            f"against those outlines -- {shares} -- it is not any one "
+            f"constituency, so no published figure describes it and none is "
+            f"shown.")
+
+
 def read_shapes(level: str) -> list[dict[str, Any]]:
     """Feature properties + centroid for one CGAZ level (geometry stays on disk)."""
     import fiona
@@ -1025,10 +1113,26 @@ def read_shapes(level: str) -> list[dict[str, Any]]:
                 "group": props.get("shapeGroup"),
                 "point": [round(point.x, 5), round(point.y, 5)],
                 "bbox": [round(b, 4) for b in bounds],
-                "_geom": geom if level != "ADM2" else None,
+                "_geom": (geom if level != "ADM2"
+                          or props.get("shapeGroup") in OUTLINE_REFERENCE else None),
                 "area": geom.area,
             })
     log(f"  {level}: {len(out)} shapes")
+    if level == "ADM2":
+        for iso3, filename in OUTLINE_REFERENCE.items():
+            reference = read_json(PROCESSED / filename, None)
+            if not reference or not reference.get("units"):
+                raise SystemExit(
+                    f"build_entities: {iso3}'s second-level labels are declared "
+                    f"wrong and are named from {filename}, which is missing. "
+                    f"Run: python -m scripts.fetch_census.namibia_shapes")
+            rows = [r for r in out if r["group"] == iso3]
+            counts = relabel_from_outlines(rows, iso3, reference["units"])
+            for r in rows:
+                r["outline"]["source"] = reference.get("source")
+                r["_geom"] = None
+            log(f"  {iso3}: {len(rows)} polygons named from {filename}: "
+                + ", ".join(f"{n} {k}" for k, n in sorted(counts.items())))
     return out
 
 
@@ -3148,6 +3252,30 @@ def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
     return refused
 
 
+def settle_outline_mixtures(admin2: dict[str, list[dict[str, Any]]]) -> int:
+    """No figures on a polygon measured to be part of one unit and part of another.
+
+    Named for what it holds, it can still take a row by name -- "Endola and
+    part of Omulonga" starts with Endola -- and that row describes other
+    ground. The polygon keeps the gap and says why, the way a lake does.
+    """
+    settled = 0
+    for rows in admin2.values():
+        for entity in rows:
+            # The measurement has done its work once the joins are made; the
+            # record keeps only what it says to a reader.
+            outline = entity.pop("outline", None) or {}
+            if outline.get("kind") != "mixed":
+                continue
+            note = outline_note(outline, outline.get("source") or "OCHA's outlines")
+            entity["note"] = note
+            entity.pop("adapter_hint", None)
+            for field in UNIT_FIELDS:
+                entity[field] = gap(NOT_AVAILABLE, note)
+            settled += 1
+    return settled
+
+
 # A figure from before any census could have counted the unit on the map is
 # history, not population. Iraq's district of Al-Mada'in was joined by name to
 # the item for the ancient city, and read 500,000 people in the year 622.
@@ -3494,10 +3622,20 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
     return pooled
 
 
-def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]]) -> list[str]:
+def outline_unions(adm2: list[dict[str, Any]]
+                   ) -> dict[tuple[str, str], tuple[str, ...]]:
+    """The unions relabel_from_outlines measured, in SHAPE_IS_UNION_OF's form."""
+    return {(r["group"], r["name"]): tuple(r["outline"]["parts"])
+            for r in adm2 if (r.get("outline") or {}).get("kind") == "union"}
+
+
+def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]],
+                         unions: dict[tuple[str, str], tuple[Any, ...]] | None = None
+                         ) -> list[str]:
     """Replace each declared union's parts with one row named for the shape."""
     done: list[str] = []
-    for (iso3, shape_name), parts in SHAPE_IS_UNION_OF.items():
+    for (iso3, shape_name), parts in (SHAPE_IS_UNION_OF if unions is None
+                                      else unions).items():
         rows = adapters.get(iso3, [])
         # Each part is known by its first spelling.
         part_names = tuple(spellings(p)[0] for p in parts)
@@ -4261,7 +4399,8 @@ def main() -> int:
     countries = primary_country_profiles(country_profiles)
     cities = read_json(PROCESSED / "cities.json", {"by_country": {}, "by_admin1": {}})
     adapters = load_adapters()
-    for line in pool_declared_unions(adapters):
+    for line in pool_declared_unions(
+            adapters, {**SHAPE_IS_UNION_OF, **outline_unions(shapes.get("ADM2", []))}):
         log(f"  union pooled: {line}")
     for line in split_declared_rows(adapters):
         log(f"  split written as estimates: {line}")
@@ -4369,6 +4508,8 @@ def main() -> int:
         entity = blank(shape, "admin2", shape.get("parent_shape") or iso3)
         mark_disputed_or_hint(entity, iso3)
         mark_water(entity, iso3)
+        if shape.get("outline"):
+            entity["outline"] = shape["outline"]
         admin2_by_country[iso3].append(entity)
 
     # -- adapters override both levels --------------------------------------
@@ -4661,6 +4802,10 @@ def main() -> int:
     # -- a town's figure on a district --------------------------------------
     # After every adapter, so the parent's population is the one it will
     # keep; before anything sums or weighs by these figures.
+    mixtures = settle_outline_mixtures(admin2_by_country)
+    if mixtures:
+        log(f"  {mixtures} polygons measured as mixtures of constituencies left "
+            f"without figures")
     settlements = refuse_settlement_figures(admin1_by_country, admin2_by_country,
                                             read_json(ITEM_CLASSES, {}) or {})
     if settlements:
