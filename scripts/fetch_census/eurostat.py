@@ -89,6 +89,35 @@ def unpack(payload: dict[str, Any]) -> dict[tuple[str, ...], float]:
     return out
 
 
+def second_level_only(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """NUTS-3 rows only for the countries whose NUTS-3 is this map's second level.
+
+    NUTS-3 is France's departements and Spain's provinces, which are this
+    map's districts; it is also Sweden's counties and Romania's judete, which
+    are its first level. Written as districts, a county would look for a
+    district of its name, and Stockholms lan could land on Stockholm
+    municipality with the whole county's people. So each country's names are
+    measured against both of the map's levels, as the COD-PS reader does,
+    and kept only where they are the second level's. A first-level fit is
+    left alone rather than written there: NUTS-2 already speaks for that
+    level, and the national offices after it.
+    """
+    from .cod_ps import which_level
+    by_country: dict[str, list[dict[str, Any]]] = {}
+    for rec in records:
+        by_country.setdefault(rec["country"], []).append(rec)
+    kept: list[dict[str, Any]] = []
+    for iso3, rows in sorted(by_country.items()):
+        level, why = which_level(iso3, [r["name"] for r in rows])
+        if level == "admin2":
+            kept.extend(rows)
+            log(f"  {iso3}: {len(rows)} NUTS-3 regions kept -- {why}")
+        else:
+            log(f"  {iso3}: {len(rows)} NUTS-3 regions left out -- "
+                + (why if level is None else f"they are this map's {level}: {why}"))
+    return kept
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -167,6 +196,8 @@ def main() -> int:
                       "url": API.format(dataset="demo_r_pjangrp3"),
                       "license": "Eurostat re-use policy (attribution)"}],
         ))
+    if args.level == "nuts3":
+        records = second_level_only(records)
     write_json(args.out or PROCESSED / f"eurostat_{args.level}.json", records)
     log(f"  {len(records)} {args.level} records")
     return 0
