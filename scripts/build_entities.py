@@ -42,7 +42,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import canonical_groups
 import group_tree
 from common import (  # noqa: E402
-    DERIVED, MODELLED, NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, RAW, ROOT,
+    DERIVED, MODELLED, NOT_APPLICABLE, NOT_AVAILABLE, NOT_COLLECTED, PROCESSED,
+    RAW, ROOT,
     apply_collection_policy, collection_gap, estimate, gap, is_estimate, is_gap,
     known_as, log, measure, read_json, repair, respell, write_json,
 )
@@ -332,6 +333,12 @@ ADAPTER_FILES = [
     "bosnia_entity.json", "bosnia_canton.json",
     "myanmar_state.json", "ukraine_oblast.json", "car_prefecture.json",
     "peru_department.json",
+    # Guatemala's 2018 census, read from INE's person database: pueblo and
+    # the language each person learned to speak in, for all 22 departments
+    # and 340 municipios. Below CLEAR Global, whose 2002 sample it replaces
+    # field by field; it writes no population, so the newer 2024 figures on
+    # the municipios stand.
+    "guatemala_census.json",
     "mali_region.json",
     # After both Afrobarometer and the 2009 census file: Mali's nine regions
     # now carry RGPH5 2022 for all three fields.
@@ -588,6 +595,45 @@ ADAPTER_GAPS: dict[str, str] = {
 # a gap is worth having; a gap that says why, wrongly, is worse than a silent
 # one, because it stops anyone looking again.
 SHAPE_GAPS: dict[str, dict[str, str]] = {}
+
+
+# ---------------------------------------------------------------------------
+# Shapes that are water.
+#
+# geoBoundaries draws Guatemala's second level as 342 polygons, and Guatemala
+# has 340 municipios. The other two are Lake Atitlan and Lake Amatitlan, each
+# drawn as a unit of its own between the municipios on its shore: measured
+# on the CGAZ polygons they are 127 and 14 km2, lying where the lakes lie.
+# Nobody lives on either, so no census row can ever reach them, and left as
+# ordinary units they read as two municipios whose data this map has failed
+# to find -- a gap that says the wrong thing about why it is a gap.
+#
+# So each is declared here, keyed by the boundary file's spelling, and
+# becomes water: every field not applicable, with the reason, and drawn in
+# the water colour whatever the metric. A declaration is checked like the
+# shape gaps above -- the shape must be drawn, and nothing may land on it.
+WATER_SHAPES: dict[str, dict[str, str]] = {
+    "GTM": {
+        "Lago De Atitlan": (
+            "This shape is Lake Atitlan, not a municipio. geoBoundaries "
+            "draws the lake as a second-order unit of its own (127 km2), "
+            "between the municipios on its shore, which is why Guatemala "
+            "shows 342 units against its 340 municipios. Nobody lives on "
+            "it: the people around the lake are counted in those "
+            "municipios, and nothing here is missing."),
+        "Lago De Amatitlan": (
+            "This shape is Lake Amatitlan, not a municipio. geoBoundaries "
+            "draws the lake as a second-order unit of its own (14 km2), "
+            "between the municipios on its shore, which is why Guatemala "
+            "shows 342 units against its 340 municipios. Nobody lives on "
+            "it: the people around the lake are counted in those "
+            "municipios, and nothing here is missing."),
+    },
+}
+
+# Every field a unit can carry a figure in, which is every field water has none in.
+UNIT_FIELDS = ("capital", "largest_settlement", "population", "median_age",
+               "sex_ratio", "religion", "language", "ethnicity")
 
 
 # ---------------------------------------------------------------------------
@@ -1781,6 +1827,20 @@ ROLLUP_FIELDS = ("religion", "language", "ethnicity")
 # beyond this is the two figures describing different things.
 ROLLUP_TOLERANCE = 0.02
 
+# Below this share of a division's population, a composition's counts are a
+# sample's respondents rather than its people. An Afrobarometer region is a
+# hundred or so interviews; a census row is the whole population, or the part
+# of it a question covers. Measured across every unit with both on 24
+# September 2026: 975 rows sit below 5%, all of them survey regions, the
+# highest being Cape Verde's Santa Catarina do Fogo (78 interviews for 4,725
+# people, 1.7%); the lowest row above it is a Mexican municipio's indigenous
+# speakers, 8.5% of its people and a census count.
+SAMPLE_SHARE = 0.05
+
+# The tree's spelling variants, which a sum across divisions folds together.
+VARIANTS = {"language": group_tree.LANGUAGE_VARIANTS,
+            "ethnicity": group_tree.ETHNIC_VARIANTS}
+
 # How much the population gate widens per year between the two figures' dates,
 # and the most it will ever widen by. A census and an estimate of the same
 # territory taken years apart are the same people counted at different times,
@@ -2094,6 +2154,27 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     if not total_pop and not complete:
         return f"{field}: the children have no population between them"
 
+    # A survey's counts are its respondents, not the division's people. Added
+    # to one another they weigh each division by its interviews, which a
+    # national sample drawn in proportion to population roughly makes right.
+    # Added to counts of people they are simply wrong: a division priced at
+    # its population, or counted by a census, weighs as millions against the
+    # others' hundreds. That is how Tanzania's languages came out as Swahili
+    # 54.8% and Sukuma 45.1% -- Katavi, priced at its population, against
+    # 2,268 interviews everywhere else. So where one sum would mix the two,
+    # each division's shares are taken of its own population instead, which
+    # is how regional shares combine into a whole; and where a division has
+    # no population to take them of, the mixture is refused.
+    bases = [implied_total(c[field]) for c in children]
+    sampled = [c.get("name", c.get("id", "?"))
+               for c, pop, base in zip(children, kid_pop, bases)
+               if pop and base is not None and base < SAMPLE_SHARE * pop]
+    weighted = 0 < len(sampled) < len(children)
+    if weighted and unpriced:
+        return (f"{field}: {len(sampled)} children count a survey's respondents "
+                f"and the rest count people, and {unpriced} have no population "
+                f"to weigh them by")
+
     disagrees = ""
     own = published(parent.get("population"))
     if unpriced or not total_pop:
@@ -2109,20 +2190,35 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         if abs(total_pop - own) > limit * own:
             drift = "" if limit == ROLLUP_TOLERANCE else \
                 f", outside even the {limit:.0%} allowed for their dates"
-            if not whole_country:
-                return (f"{field}: children sum to {total_pop:,.0f} against a "
-                        f"published {own:,.0f}{drift}")
             # Complete children and a parent figure that disagrees with them
             # means the parent's figure is the doubtful one, not the set: Dhaka
             # division carries a 2011 population of 49,729,000 and lost
             # Mymensingh out of it in 2015, so its 44,215,759 people in 2022 are
             # not a shortfall. The sum is taken and the disagreement is written
             # into the note rather than hidden by it.
+            #
+            # A country with no shares of its own is the other case. The gate
+            # is there so a sum does not overrule a published figure on the
+            # strength of children that may not be all of it -- and where the
+            # children are the country's divisions and the country publishes
+            # only a list of names, there is nothing to overrule, and the gap
+            # is a census against a later estimate. Tanzania's regions carry
+            # 2012 and 2022 counts that total 60.4 million against the
+            # Factbook's 69.1 million for 2025; refusing them left Tanzania
+            # with no language shares at all.
+            if not whole_country and (not complete or shares_of(current)):
+                return (f"{field}: children sum to {total_pop:,.0f} against a "
+                        f"published {own:,.0f}{drift}")
             disagrees = (f" The unit's own published population of {own:,.0f} "
-                         f"disagrees with that by {100 * (total_pop - own) / own:+.0f}%; "
-                         "the sum was taken anyway because every division at "
-                         "this level in the country carries these figures, so "
-                         "these are certainly all of its children.")
+                         f"disagrees with that by "
+                         f"{100 * (total_pop - own) / own:+.0f}%; "
+                         + ("the sum was taken anyway because every division "
+                            "at this level in the country carries these "
+                            "figures, so these are certainly all of its "
+                            "children." if whole_country else
+                            "the sum was taken anyway because these are the "
+                            "country's own divisions and it publishes no "
+                            "shares of its own for the sum to overrule."))
 
     # Computed before the note, because a sum that carries no date owes the
     # reader the reason. Pakistan is the case: four provinces and Islamabad
@@ -2152,7 +2248,7 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         share = implied_total(child[field])
         rows = child[field]
         priced = all(isinstance(r.get("count"), (int, float)) for r in rows)
-        if not priced:
+        if not priced or weighted:
             # A composition of percentages and a published population is
             # enough: the count each share stands for is the share of that
             # population, which is the same arithmetic the source would have
@@ -2179,6 +2275,14 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
             if not isinstance(count, (int, float)):
                 return f"{field}: a child publishes shares with no counts"
             counts[row.get("group", "")] = counts.get(row.get("group", ""), 0) + count
+    # One group spelled two ways by two divisions is still one group: Kenya's
+    # counties write both "MijiKenda" and "Mijikenda", and their sum printed
+    # the two as separate rows. Folded only where both spellings are in this
+    # sum, so a sum that uses one spelling keeps the source's.
+    variants = VARIANTS.get(field, {})
+    for name in [n for n in counts if variants.get(n, n) != n
+                 and variants[n] in counts]:
+        counts[variants[name]] += counts.pop(name)
     if denominator <= 0:
         return f"{field}: the children's percentages imply no denominator"
 
@@ -2200,11 +2304,18 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # leaving no trace would turn the control into a casualty of the sum it was
     # there to check.
     displaced = ""
-    if isinstance(current, list):
+    if shares_of(current):
         top = ", ".join(f"{g.get('group')} {g.get('pct')}%" for g in current[:3])
         displaced = (f" Replaces a separately published figure for the unit "
                      f"({top}), which is kept here as the only independent "
                      f"check on this sum.")
+    elif isinstance(current, list) and current:
+        # A list of names is not a figure, and printing it as one read
+        # "Kiswahili or Swahili None%".
+        named = ", ".join(str(g.get("group")) for g in current[:3])
+        displaced = (f" Replaces a list that names groups without shares "
+                     f"({named}{', ...' if len(current) > 3 else ''}), which "
+                     f"gives this sum nothing to be checked against.")
     parent[f"{field}_note"] = (
         f"Summed from {'all ' if not left_out else ''}{len(children)} {level} "
         # The semicolon introduces the clause that follows it, so a sum that
@@ -2232,7 +2343,10 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
            + " no source publishes a population for the unit to check that "
              "against; it was summed because every division at this level in "
              "the country has these figures, so these are all of its children.")
-        + (f" {len(derived)} of them publish shares and no counts"
+        + (f" Weighted by population: {len(sampled)} of them count a survey's "
+           "respondents and the rest count people, so every division's shares "
+           "are taken of its own published population." if weighted else
+           f" {len(derived)} of them publish shares and no counts"
            f"{' (' + ', '.join(sorted(derived)[:3]) + ')' if len(derived) <= 3 else ''}"
            ", so their counts are those shares taken of their own published "
            "populations." if derived else "")
@@ -2252,7 +2366,16 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
            f" so this figure carries no single date."
            if len(years) > 1 else
            " The divisions do not date their figures, so neither does this."
-           if not years else ""))
+           if not years else "")
+        # Korea's provinces count nationality on the ethnicity field, and
+        # the country's sum of them does too: without the basis it read as
+        # a count of ethnicity.
+        + (f" Every division counts {usual} rather than {field}, so this "
+           "does too." if usual else ""))
+    if usual:
+        parent[f"{field}_basis"] = usual
+    else:
+        parent.pop(f"{field}_basis", None)
     # The year belongs to the figure, not to the record, so it is rewritten
     # with it. Thailand is what made this matter: its 76 provinces carry the
     # 2000 census and stamp no year at all, so the sum inherited the 2021 the
@@ -2305,9 +2428,19 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
         # publish a count of part of a place as the whole of it.
         return None
     own = published(parent.get("population"))
-    if child_year and (own is None or (round(total_pop) != round(own)
-                                       and (own_year is None
-                                            or own_year <= child_year))):
+    # Not where the sum stood only because the population check was waived,
+    # nor where a division was left out. In the first the two populations
+    # were just found to disagree, and in the second the total is of part of
+    # the country; either way it is not the country's population. Taken
+    # anyway, it became the control for the next field: Guinea's languages,
+    # summed past an 18% gap, set its population to their 11.8 million, and
+    # its ethnicity then "agreed" with that and overwrote the Factbook's
+    # shares. Morocco lost Laayoune-Sakia El Hamra from its population the
+    # same way.
+    waived = bool(disagrees) and not whole_country
+    if child_year and not waived and not left_out and (
+            own is None or (round(total_pop) != round(own)
+                            and (own_year is None or own_year <= child_year))):
         if own is not None:
             parent["population_note"] = (
                 f"Summed from all {len(children)} {level} divisions. Replaces "
@@ -2613,6 +2746,25 @@ def mark_disputed_or_hint(entity: dict[str, Any], group: str) -> None:
         entity["adapter_hint"] = adapter_hint(group)
 
 
+def mark_water(entity: dict[str, Any], group: str) -> None:
+    """Make a declared lake water: every field not applicable, and why.
+
+    Instead of an adapter hint, which would send a reader to fetch figures
+    for a lake. Each field carries the reason as its note, so the passes that
+    explain bare fields find nothing to explain, and the collection policy,
+    which only ever replaces "not available", leaves it alone.
+    """
+    note = WATER_SHAPES.get(group, {}).get(entity.get("name"))
+    if note is None:
+        return
+    entity["water"] = True
+    entity["note"] = note
+    entity.pop("adapter_hint", None)
+    entity.pop("gap_reason", None)
+    for field in UNIT_FIELDS:
+        entity[field] = gap(NOT_APPLICABLE, note)
+
+
 COMPOSITION_FIELDS = ("religion", "language", "ethnicity")
 
 # The three ways a composition field can still be bare at the end of the
@@ -2709,6 +2861,38 @@ def say_why_empty(entity: dict[str, Any], country: str,
             note, case = NO_SOURCE_READ.format(country=country), "no source read"
         entity[field] = gap(value["status"], note)
     return case
+
+
+def check_water_shapes(admin1: dict[str, list[dict[str, Any]]],
+                       admin2: dict[str, list[dict[str, Any]]]) -> None:
+    """Every declared lake is drawn, and nothing has landed on it.
+
+    A declaration that names no shape is stale, and a lake that ends up with
+    a population or a composition means a row was joined to water -- a
+    mis-match, which is worse than the gap it replaced. Either stops the build.
+    """
+    problems: list[str] = []
+    for iso3, declared in WATER_SHAPES.items():
+        found = {name: [] for name in declared}
+        for table in (admin1, admin2):
+            for entity in table.get(iso3, []):
+                if entity.get("name") in found:
+                    found[entity["name"]].append(entity)
+        for name, shapes in found.items():
+            if len(shapes) != 1:
+                problems.append(
+                    f"{iso3} / {name}: declared as water, and {len(shapes)} "
+                    f"shapes carry that name -- it should be exactly one")
+                continue
+            landed = [f for f in UNIT_FIELDS
+                      if field_state(shapes[0].get(f)) != NOT_APPLICABLE]
+            if landed:
+                problems.append(
+                    f"{iso3} / {name}: declared as water, but {', '.join(landed)} "
+                    f"ended up with something other than not-applicable -- a "
+                    f"row was joined to a lake")
+    if problems:
+        raise SystemExit("water shapes:\n  " + "\n  ".join(problems))
 
 
 def check_shape_gaps(admin1: dict[str, list[dict[str, Any]]],
@@ -3761,6 +3945,7 @@ def main() -> int:
             entity["largest_settlement"] = city["name"]
             entity["largest_settlement_population"] = measure(city["population"], source=city["source"])
         mark_disputed_or_hint(entity, iso3)
+        mark_water(entity, iso3)
         admin1_by_country[iso3].append(entity)
         adm1_index[iso3][norm(shape["name"])] = entity["id"]
 
@@ -3785,6 +3970,7 @@ def main() -> int:
         iso3 = shape["group"]
         entity = blank(shape, "admin2", shape.get("parent_shape") or iso3)
         mark_disputed_or_hint(entity, iso3)
+        mark_water(entity, iso3)
         admin2_by_country[iso3].append(entity)
 
     # -- adapters override both levels --------------------------------------
@@ -4153,6 +4339,10 @@ def main() -> int:
         log("  every bare composition field now says why: "
             + ", ".join(f"{n} units where {k}" for k, n in
                         sorted(why.items(), key=lambda kv: -kv[1])))
+
+    # Last check before writing: every pass that could have filled a field
+    # has run, so a lake that is still water here stays water on the map.
+    check_water_shapes(admin1_by_country, admin2_by_country)
 
     # -- write ---------------------------------------------------------------
     out = args.out

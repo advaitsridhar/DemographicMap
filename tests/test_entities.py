@@ -122,6 +122,62 @@ class AdapterHints(unittest.TestCase):
         self.assertIn("MNG", hint)
 
 
+class LakesAreWater(unittest.TestCase):
+    """Guatemala's two lakes are drawn as second-order units. Left as units
+    they read as two municipios whose figures were not found; declared, they
+    are water, and every field says so."""
+
+    def lake(self, name="Lago De Atitlan", group="GTM"):
+        shape = {"shape_id": "X", "name": name, "group": group,
+                 "point": [0, 0], "bbox": None}
+        entity = be.blank(shape, "admin2", "P")
+        entity["adapter_hint"] = "python scripts/fetch_wikidata.py"
+        be.mark_water(entity, group)
+        return entity
+
+    def test_a_declared_lake_is_water_in_every_field(self):
+        e = self.lake()
+        self.assertTrue(e["water"])
+        self.assertNotIn("adapter_hint", e)
+        self.assertIn("Lake Atitlan", e["note"])
+        for field in be.UNIT_FIELDS:
+            self.assertEqual(e[field]["status"], common.NOT_APPLICABLE)
+            self.assertEqual(e[field]["note"], e["note"])
+
+    def test_an_undeclared_shape_is_left_alone(self):
+        e = self.lake(name="Solola")
+        self.assertNotIn("water", e)
+        self.assertEqual(e["population"]["status"], common.NOT_AVAILABLE)
+
+    def test_the_same_name_elsewhere_is_left_alone(self):
+        self.assertNotIn("water", self.lake(group="HND"))
+
+    def test_nothing_else_explains_or_overrides_it(self):
+        # The bare-field pass finds nothing bare, and the collection policy,
+        # which replaces only "not available", finds nothing to replace.
+        e = self.lake()
+        self.assertIsNone(be.say_why_empty(e, "Guatemala"))
+        with mock.patch.dict(common.NOT_COLLECTED_POLICY,
+                             {"GTM": {"religion": "not asked"}}):
+            self.assertEqual(common.apply_collection_policy(e, "GTM"), [])
+
+    def test_the_check_passes_a_lake_left_as_water(self):
+        e = self.lake()
+        be.check_water_shapes({}, {"GTM": [e, self.lake(name="Lago De Amatitlan")]})
+
+    def test_a_row_joined_to_a_lake_stops_the_build(self):
+        e = self.lake()
+        e["population"] = 5000
+        with self.assertRaises(SystemExit) as ctx:
+            be.check_water_shapes({}, {"GTM": [e, self.lake(name="Lago De Amatitlan")]})
+        self.assertIn("population", str(ctx.exception))
+
+    def test_a_declared_lake_that_is_not_drawn_stops_the_build(self):
+        with self.assertRaises(SystemExit) as ctx:
+            be.check_water_shapes({}, {"GTM": [self.lake()]})
+        self.assertIn("Lago De Amatitlan", str(ctx.exception))
+
+
 class CuratedSeed(unittest.TestCase):
     """The curated file is data, so guard its shape the way an adapter is guarded."""
 
@@ -7652,6 +7708,181 @@ class RollingUpWithoutAPopulationToCheckAgainst(unittest.TestCase):
         self.assertEqual(got["Islam"], 40.0)
         self.assertEqual(got["Christian"], 60.0)
         self.assertIn("shares and no counts", parent["religion_note"])
+
+    def test_survey_counts_are_weighted_by_population_not_added_as_people(self):
+        """Tanzania's languages: interviews in most regions, shares in two.
+
+        Added as counts, the region priced at its population (B, a million
+        people) drowned the regions counted in interviews (A, 100 of them).
+        Weighted by population, each region counts for its people.
+        """
+        import build_entities as be
+        parent = {"name": "Country", "population": {"value": 5_000_000, "year": 2025}}
+        children = [
+            {"name": "A", "population": {"value": 3_000_000, "year": 2022},
+             "language": [{"group": "Swahili", "pct": 90.0, "count": 90},
+                          {"group": "Sukuma", "pct": 10.0, "count": 10}]},
+            {"name": "B", "population": {"value": 1_000_000, "year": 2022},
+             "language": [{"group": "Swahili", "pct": 50.0},
+                          {"group": "Sukuma", "pct": 50.0}]},
+        ]
+        why = be.roll_up_field(parent, children, "language", level="first-level",
+                               over_published=True, complete=True)
+        self.assertIsNone(why)
+        got = {g["group"]: g["pct"] for g in parent["language"]}
+        # (0.9 * 3M + 0.5 * 1M) / 4M.
+        self.assertEqual(got, {"Swahili": 80.0, "Sukuma": 20.0})
+        self.assertIn("Weighted by population", parent["language_note"])
+        self.assertIn("respondents", parent["language_note"])
+        # 4 million against 5 million, and nothing published to overrule.
+        self.assertIn("no shares of its own", parent["language_note"])
+
+    def test_survey_counts_alone_are_added_as_they_were(self):
+        # Respondents added to respondents weigh each division by its
+        # interviews, which a proportional sample roughly makes right; only a
+        # mixture is reweighed, so a country summed wholly from one survey
+        # does not move.
+        import build_entities as be
+        parent = {"name": "Country", "population": {"value": 4_000_000, "year": 2022}}
+        children = [
+            {"name": "A", "population": {"value": 3_000_000, "year": 2022},
+             "language": [{"group": "Swahili", "pct": 90.0, "count": 90},
+                          {"group": "Sukuma", "pct": 10.0, "count": 10}]},
+            {"name": "B", "population": {"value": 1_000_000, "year": 2022},
+             "language": [{"group": "Swahili", "pct": 50.0, "count": 50},
+                          {"group": "Sukuma", "pct": 50.0, "count": 50}]},
+        ]
+        self.assertIsNone(be.roll_up_field(parent, children, "language",
+                                           level="first-level",
+                                           over_published=True, complete=True))
+        got = {g["group"]: g["pct"] for g in parent["language"]}
+        self.assertEqual(got, {"Swahili": 70.0, "Sukuma": 30.0})
+        self.assertNotIn("Weighted by population", parent["language_note"])
+
+    def test_a_mixture_with_no_population_to_weigh_by_is_refused(self):
+        import build_entities as be
+        parent = {"name": "Country"}
+        children = [
+            {"name": "A", "population": {"value": 3_000_000, "year": 2022},
+             "language": [{"group": "Swahili", "pct": 90.0, "count": 90},
+                          {"group": "Sukuma", "pct": 10.0, "count": 10}]},
+            {"name": "B", "population": {"value": 1_000_000, "year": 2022},
+             "language": [{"group": "Swahili", "pct": 50.0, "count": 500_000},
+                          {"group": "Sukuma", "pct": 50.0, "count": 500_000}]},
+            {"name": "C",
+             "language": [{"group": "Swahili", "pct": 50.0, "count": 5},
+                          {"group": "Sukuma", "pct": 50.0, "count": 5}]},
+        ]
+        why = be.roll_up_field(parent, children, "language", level="first-level",
+                               over_published=True, complete=True)
+        self.assertIn("no population to weigh them by", why)
+        self.assertNotIn("language", parent)
+
+    def test_headcounts_that_disagree_with_published_shares_are_still_refused(self):
+        import build_entities as be
+        parent = {"name": "Country", "population": {"value": 5_000_000, "year": 2025},
+                  "language": [{"group": "Swahili", "pct": 60.0},
+                               {"group": "Sukuma", "pct": 40.0}]}
+        children = [
+            {"name": "A", "population": {"value": 3_000_000, "year": 2022},
+             "language": [{"group": "Swahili", "pct": 90.0, "count": 2_700_000},
+                          {"group": "Sukuma", "pct": 10.0, "count": 300_000}]},
+            {"name": "B", "population": {"value": 1_000_000, "year": 2022},
+             "language": [{"group": "Swahili", "pct": 50.0, "count": 500_000},
+                          {"group": "Sukuma", "pct": 50.0, "count": 500_000}]},
+        ]
+        why = be.roll_up_field(parent, children, "language", level="first-level",
+                               over_published=True, complete=True)
+        self.assertIn("children sum to", why)
+        self.assertEqual(parent["language"][0]["pct"], 60.0)
+
+    def test_a_waived_sum_leaves_the_population_to_check_the_next_field(self):
+        # Guinea: its languages were summed past an 18% population gap, and
+        # the sum's population then became the control that let its ethnicity
+        # overwrite the Factbook's shares.
+        import build_entities as be
+        parent = {"name": "Country", "population": {"value": 5_000_000, "year": 2025},
+                  "language": [{"group": "Pular", "pct": None}],
+                  "ethnicity": [{"group": "Fulani", "pct": 60.0},
+                                {"group": "Susu", "pct": 40.0}]}
+        children = [
+            {"name": n, "population": {"value": v, "year": 2025},
+             "language": [{"group": "Pular", "pct": 70.0, "count": 70},
+                          {"group": "Susu", "pct": 30.0, "count": 30}],
+             "ethnicity": [{"group": "Fulani", "pct": 70.0, "count": 70},
+                           {"group": "Susu", "pct": 30.0, "count": 30}]}
+            for n, v in (("A", 3_000_000), ("B", 1_000_000))]
+        for field in ("language", "ethnicity"):
+            be.roll_up_field(parent, children, field, level="first-level",
+                             over_published=True, complete=True)
+        self.assertEqual(parent["population"]["value"], 5_000_000)
+        self.assertEqual(parent["language"][0]["pct"], 70.0)
+        self.assertEqual(parent["ethnicity"][0]["pct"], 60.0)
+
+    def test_a_sum_of_nationality_counts_says_it_counts_nationality(self):
+        # Korea: the provinces write nationality on the ethnicity field.
+        import build_entities as be
+        parent = {"name": "Country", "population": {"value": 4_000_000, "year": 2023}}
+        children = [
+            {"name": n, "population": {"value": v, "year": 2023},
+             "ethnicity_basis": "nationality",
+             "ethnicity": [{"group": "Korean", "pct": 90.0, "count": v * 0.9},
+                           {"group": "Chinese", "pct": 10.0, "count": v * 0.1}]}
+            for n, v in (("A", 3_000_000), ("B", 1_000_000))]
+        self.assertIsNone(be.roll_up_field(parent, children, "ethnicity",
+                                           level="first-level",
+                                           over_published=True, complete=True))
+        self.assertEqual(parent["ethnicity_basis"], "nationality")
+        self.assertIn("counts nationality rather than ethnicity",
+                      parent["ethnicity_note"])
+
+    def test_one_group_spelled_two_ways_is_summed_as_one(self):
+        # Kenya's counties write both "MijiKenda" and "Mijikenda"; a sum that
+        # sees only one spelling keeps the source's.
+        import build_entities as be
+        parent = {"name": "Country", "population": {"value": 4_000_000, "year": 2022}}
+        children = [
+            {"name": "A", "population": {"value": 3_000_000, "year": 2022},
+             "language": [{"group": "Swahili", "pct": 80.0, "count": 80},
+                          {"group": "MijiKenda", "pct": 20.0, "count": 20}]},
+            {"name": "B", "population": {"value": 1_000_000, "year": 2022},
+             "language": [{"group": "Swahili", "pct": 90.0, "count": 90},
+                          {"group": "Mijikenda", "pct": 10.0, "count": 10}]},
+        ]
+        be.roll_up_field(parent, children, "language", level="first-level",
+                         over_published=True, complete=True)
+        self.assertEqual({g["group"]: g["pct"] for g in parent["language"]},
+                         {"Swahili": 85.0, "Mijikenda": 15.0})
+        parent = {"name": "Country", "population": {"value": 4_000_000, "year": 2022}}
+        be.roll_up_field(parent, children[:1], "language", level="first-level",
+                         over_published=True, complete=True)
+        self.assertIn("MijiKenda", {g["group"] for g in parent["language"]})
+
+    def test_headcounts_that_disagree_with_a_list_of_names_are_summed(self):
+        # The Factbook names Tanzania's languages without shares. There is
+        # nothing to overrule, so the divisions' census stands, and the note
+        # says what it replaced without printing "None%".
+        import build_entities as be
+        parent = {"name": "Country", "population": {"value": 5_000_000, "year": 2025},
+                  "language": [{"group": "Kiswahili or Swahili", "pct": None},
+                               {"group": "English", "pct": None}]}
+        children = [
+            {"name": "A", "population": {"value": 3_000_000, "year": 2022},
+             "language": [{"group": "Swahili", "pct": 90.0, "count": 2_700_000},
+                          {"group": "Sukuma", "pct": 10.0, "count": 300_000}]},
+            {"name": "B", "population": {"value": 1_000_000, "year": 2022},
+             "language": [{"group": "Swahili", "pct": 50.0, "count": 500_000},
+                          {"group": "Sukuma", "pct": 50.0, "count": 500_000}]},
+        ]
+        self.assertIsNone(be.roll_up_field(parent, children, "language",
+                                           level="first-level",
+                                           over_published=True, complete=True))
+        got = {g["group"]: g["pct"] for g in parent["language"]}
+        self.assertEqual(got, {"Swahili": 80.0, "Sukuma": 20.0})
+        note = parent["language_note"]
+        self.assertIn("disagrees with that by -20%", note)
+        self.assertIn("names groups without shares (Kiswahili or Swahili, English)", note)
+        self.assertNotIn("None%", note)
 
     def test_shares_without_counts_or_a_population_are_still_refused(self):
         import build_entities as be

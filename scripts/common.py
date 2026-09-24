@@ -164,6 +164,15 @@ NOT_COLLECTED_POLICY: dict[str, dict[str, str | dict[str, str]]] = {
     "DEU": {
         "ethnicity": "Germany does not collect ethnicity. The census records citizenship and migration background; religion comes from church-tax registration, not fine-grained self-ID.",
     },
+    # Guatemala's 2018 census asks pueblo and the language a person learned to
+    # speak in, and nothing about religion. Measured on INE's own data
+    # dictionary for the census's person database, which lists every variable
+    # the file holds; the word is on none of them. The Factbook's national
+    # religion figure (2023) therefore comes from somewhere other than the
+    # census, and it stays on the country.
+    "GTM": {
+        "religion": "Guatemala's census does not ask religion. INE's data dictionary for the 2018 census's person database lists every question it holds -- age, sex, birthplace, residence in 2013, pueblo, the language a person learned to speak in, other languages, disability, schooling, literacy, phone and internet use, work, marital status and children -- and religion is not among them.",
+    },
     # Pakistan is here because the country row was contradicting its own
     # districts. All 145 Pakistani units say the census asks no ethnicity
     # question -- read out of the Bureau's own National Census Report 2023 and
@@ -1022,6 +1031,8 @@ ALSO_KNOWN_AS: dict[tuple[str, str], tuple[str, ...]] = {
     ("DOM", "El Seybo"): ("El Seibo Province", "El Seibo"),
     # Renamed for the general in 1942; the older name is still the shape's.
     ("DOM", "La Estrelleta"): ("Elías Piña Province", "Elías Piña"),
+    # INE's catalogue writes the municipio with a y, the boundary file with an i.
+    ("GTM", "San Raimundo"): ("San Raymundo",),
     # "Al Asimah" is Arabic for "the Capital", which is what the source calls it.
     # Renamed Turkistan in 2018; the 2021 census row carries the new name and
     # the boundary file the old. 3.4 million people, the country's most

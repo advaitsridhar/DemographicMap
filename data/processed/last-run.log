@@ -1,5 +1,7 @@
-127: 1 units without a population, 1 resolved
-  Senkakus -> Senkaku Islands (Q29460, matched by declaration)
-  Senkakus -> Senkaku Islands: 0, undated (the article describes the place as uninhabited)
-  wrote data/processed/wiki_population_admin1.json (559 kB)
-wrote 561 records to wiki_population_admin1.json
+  GET https://censo2018.ine.gob.gt/archivos/bdd/db_csv_.zip: 322,771,575 bytes, sha256 82C57488046453ED7CF8125C436C67FEE938272FA116DA421B4D358D5DB934D5
+  the portal prints C0F23CED957F7BC126A5A689B728BE143D8B57B74F96CDF31869B28B01B820F9 beside the link: not this file
+  dictionary: 340 municipios, 6 pueblos, 29 languages
+  PCP15 blank for 1,334,389 people, 1,334,389 of them under four; 0 under four answered it
+  14,901,286 people in 340 municipios and 22 departments
+  wrote data/processed/guatemala_census.json (1343 kB)
+  wrote guatemala_census.json: 362 records

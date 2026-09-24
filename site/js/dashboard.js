@@ -451,7 +451,9 @@ window.Dashboard = (function () {
         <span>${esc(record.note)}</span></div>`);
     }
 
-    if (record.disputed) {
+    // Water has nothing to show but the note that says so: eight cards
+    // reading "not applicable" would bury the one sentence that explains it.
+    if (record.disputed || record.water) {
       container.innerHTML = html.join("") + sourceList(record);
       container.scrollTop = 0;
       return;
