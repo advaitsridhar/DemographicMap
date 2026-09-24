@@ -1,3 +1,134 @@
-page: https://data.humdata.org/api/3/action/package_show?id=censo-de-poblacion-guatemala
-  4,610 bytes
-{"help": "https://data.humdata.org/api/3/action/help_show?name=package_show", "success": true, "result": {"archived": true, "batch": "780b42b5-34b0-41d6-b5e5-f5b07d041a6b", "creator_user_id": "cb6a72c3-1bc1-4898-8159-a5a5394ffec5", "data_update_frequency": "-1", "dataset_date": "[2002-12-31T00:00:00 TO 2002-12-31T23:59:59]", "dataset_preview": "first_resource", "dataset_source": "Instituto Nacional de Estad\u00edstica ", "has_geodata": false, "has_showcases": false, "id": "9f1f1a9d-f782-473f-beb2-34b7856ad242", "is_requestdata_type": false, "isopen": false, "last_modified": "2015-11-24T23:59:52.299964", "license_id": "cc-by-igo", "license_title": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)", "license_url": "http://creativecommons.org/licenses/by/3.0/igo/legalcode", "maintainer": "cb6a72c3-1bc1-4898-8159-a5a5394ffec5", "metadata_created": "2015-07-23T20:27:49.734680", "metadata_modified": "2025-07-22T20:38:57.119752", "methodology": "Census", "name": "censo-de-poblacion-guatemala", "notes": "Proyecci\u00f3n de poblaci\u00f3n 2000 al 2050, por sexo.", "num_resources": 1, "num_tags": 3, "organization": {"id": "2f5a7ec0-b7d2-4436-a334-4d09488f1a17", "name": "ocha-rolac", "title": "OCHA Latin America and the Caribbean (ROLAC)", "type": "organization", "description": "OCHA Regional Office for Latin America and the Caribbean (ROLAC). El Salvador, Guatemala y Honduras, pa\u00edses que conforman el Norte de Centroam\u00e9rica (NCA), re\u00fanen una serie de necesidades humanitarias impulsadas por condiciones compartidas de pobreza elevada, choques clim\u00e1ticos recurrentes, violencia cr\u00f3nica, acceso limitado a servicios de salud y flujos migratorios desde y dentro de sus pa\u00edses, entre otros factores.", "image_url": "", "created": "2015-06-04T15:21:29.568082", "is_organization": true, "approval_status": "approved", "state": "active"}, "owner_org": "2f5a7ec0-b7d2-4436-a334-4d09488f1a17", "package_creator": "redhumguatemala", "pageviews_last_14_days": 1, "private": false, "qa_completed": false, "solr_additions": "{\"countries\": [\"Guatemala\"]}", "state": "active", "subnational": "0", "title": "Censo de poblaci\u00f3n Guatemala", "total_res_downloads": 151, "type": "dataset", "url": null, "version": null, "groups": [{"description": "", "display_name": "Guatemala", "id": "gtm", "image_display_url": "", "name": "gtm", "title": "Guatemala"}], "resources": [{"alt_url": "https://data.humdata.org/dataset/9f1f1a9d-f782-473f-beb2-34b7856ad242/resource/b6bd72d1-8e42-4fd7-86d9-15dcceb0909b/download/", "cache_last_updated": null, "cache_url": null, "created": "2015-07-23T20:32:08.693190", "datastore_active": false, "description": "", "download_url": "https://data.humdata.org/dataset/9f1f1a9d-f782-473f-beb2-34b7856ad242/resource/b6bd72d1-8e42-4fd7-86d9-15dcceb0909b/download/proyecciones-poblacin-2000-2050-ine.xls", "format": "XLS", "hash": "", "hdx_rel_url": "/dataset/9f1f1a9d-f782-473f-beb2-34b7856ad242/resource/b6bd72d1-8e42-4fd7-86d9-15dcceb0909b/download/proyecciones-poblacin-2000-2050-ine.xls", "id": "b6bd72d1-8e42-4fd7-86d9-15dcceb0909b", "last_modified": "2015-11-24T23:59:52.299964", "metadata_modified": "2023-03-02T22:44:07.223619", "microdata": false, "mimetype": null, "mimetype_inner": null, "name": "PROYECCIONES Poblaci\u00f3n 2000-2050 INE.xls", "package_id": "9f1f1a9d-f782-473f-beb2-34b7856ad242", "perma_link": "http://data.hdx.rwlabs.org/dataset/censo-de-poblacion-guatemala/resource_download/b6bd72d1-8e42-4fd7-86d9-15dcceb0909b", "position": 0, "resource_type": "file.upload", "resource_uploader": "redhumguatemala", "size": 35276, "state": "active", "url": "https://data.humdata.org/dataset/9f1f1a9d-f782-473f-beb2-34b7856ad242/resource/b6bd72d1-8e42-4fd7-86d9-15dcceb0909b/download/proyecciones-poblacin-2000-2050-ine.xls", "url_type": "upload"}], "tags": [{"display_name": "baseline population", "id": "db8205e9-b61c-4df7-a987-1a2658ed8666", "name": "baseline population", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}, {"display_name": "census", "id": "233b3649-7ea7-479e-a4a3-568eabe12f08", "name": "census", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}, {"display_name": "gender and age disaggregated data-gadd", "id": "89602a11-d872-46fc-a343-34213756030b", "name": "gender and age disaggregated data-gadd", "state": "active", "vocabulary_id": "b891512e-9516-4bf5-962a-7a289772a2a1"}], "relationships_as_subject": [], "relationships_as_object": [], "due_date": null, "is_fresh": false, "update_status": "unknown", "x_resource_grouping": []}}
+page: https://censo2018.ine.gob.gt/
+  5,395 bytes
+<!doctype html>
+<html lang="en">
+
+<head>
+<base href="/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGYYYGF8FF"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-KGYYYGF8FF');
+</script>
+<script type="text/javascript">
+    var APP_HOME_URL = "https:\/\/censo2018.ine.gob.gt"
+  </script>
+<title>Portal de Resultados del Censo 2018</title>
+
+<link rel="stylesheet" href="https://censo2018.ine.gob.gt/css/bootstrap411.min.css">
+<link rel="stylesheet" href="https://censo2018.ine.gob.gt/css/fontawesome582all.css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap4.min.js"></script>
+<script src="js/angular165.min.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script src="js/angular-sanitize.js"></script>
+<script src="js/angular-ui-utils.min.js"></script>
+<script src="js/jquery-datatables.min.js"></script>
+<script src="js/datatables-bootstrap.min.js"></script>
+<script src="js/ui-bootstrap.min.js"></script>
+
+<script src="js/d3v3.min.js"></script>
+<script src="js/topojsonv1.min.js"></script>
+<!--
+<script src="js/html2canvas.min.js"></script>
+<script src="js/jspdf.debug.js"></script>
+<script src="js/saveHtmlToPdf.min.js"></script>
+-->
+<link rel="stylesheet" href="https://censo2018.ine.gob.gt/css/morris.css">
+<script src="js/morris.js"></script>
+<script src="js/regression.js"></script>
+<script src="js/raphael-min.js"></script>
+<script src="js/bootstrap-tpls.js"></script>
+
+<script src="js/intro.min.js"></script>
+<script src="js/angular-intro.min.js"></script>
+<link rel="stylesheet" href="https://censo2018.ine.gob.gt/css/introjs.css">
+<link rel="stylesheet" href="https://censo2018.ine.gob.gt/css/introjs-nazanin.css">
+
+<!-- Estilos de Api de Documentos -->
+
+<link rel="stylesheet" href="https://censo2018.ine.gob.gt/css/app.css">
+
+<script src="js/app/app.module.js"></script>
+<script src="js/app/app.config.js"></script>
+
+<!-- Componentes -->
+<script src="js/app/components/welcome/welcome.component.js"></script>
+
+<script src="js/app/components/carousel/carouselv2.component.js"></script>
+<script src="js/app/components/menu/menu.component.js"></script>
+<script src="js/app/components/home/home.component.js"></script>
+<script src="js/app/components/secciones/seccionesv3.component.js"></script>
+<script src="js/app/components/new_footer/new_footer.component.js"></script>
+<script src="js/app/components/mapa/mapa.component.js"></script>
+<script src="js/app/components/mapa2/mapa2.component.js"></script>
+<script src="js/app/components/mapas/mapas.component.js"></script>
+<script src="js/app/components/explorador/explorador.component.js"></script>
+<script src="js/app/components/graficas/graficas.component.js"></script>
+<script src="js/app/components/doctos/doctos.component.js"></script>
+<script src="js/app/components/documentacion/documentacion.component.js"></script>
+<script src="js/app/components/multimedia/multimedia.component.js"></script>
+<script src="js/app/components/cuantossomos/cuantossomos.component.js"></script>
+<script src="js/app/components/comovivimos/comovivimos.component.js"></script>
+<script src="js/app/components/dondeestamos/dondeestamos.component.js"></script>
+<script src="js/app/components/calor/calor.component.js"></script>
+<script src="js/app/components/descarga/descarga.component.js"></script>
+<script src="js/app/components/proyecciones/proyecciones.component.js"></script>
+
+<!-- Servicios -->
+<script src="js/app/services/mapas.service.js"></script>
+
+<!-- Modelo Pais -->
+<script src="js/app/models/paisgt.model.js"></script>
+<script src="js/app/models/paisgt2.model.js"></script>
+
+<!-- Modelos Departamentos -->
+<script src="js/app/models/guatemala.model.js"></script>
+<script src="js/app/models/elprogreso.model.js"></script>
+<script src="js/app/models/sacatepequez.model.js"></script>
+<script src="js/app/models/chimaltenango.model.js"></script>
+<script src="js/app/models/escuintla.model.js"></script>
+<script src="js/app/models/santarosa.model.js"></script>
+<script src="js/app/models/solola.model.js"></script>
+<script src="js/app/models/totonicapan.model.js"></script>
+<script src="js/app/models/quetzaltenango.model.js"></script>
+<script src="js/app/models/suchitepequez.model.js"></script>
+<script src="js/app/models/retalhuleu.model.js"></script>
+<script src="js/app/models/sanmarcos.model.js"></script>
+<script src="js/app/models/huehuetenango.model.js"></script>
+<script src="js/app/models/quiche.model.js"></script>
+<script src="js/app/models/bajaverapaz.model.js"></script>
+<script src="js/app/models/altaverapaz.model.js"></script>
+<script src="js/app/models/peten.model.js"></script>
+<script src="js/app/models/izabal.model.js"></script>
+<script src="js/app/models/zacapa.model.js"></script>
+<script src="js/app/models/chiquimula.model.js"></script>
+<script src="js/app/models/jalapa.model.js"></script>
+<script src="js/app/models/jutiapa.model.js"></script>
+
+</head>
+<body ng-app="censo">
+
+<div class="container home" class="text-center">
+<menu></menu>
+<br>
+<div ui-view=''>
+</div>
+<new-footer></new-footer>
+</div>
+
+</body>
+</html>
+
+page: http://www.censopoblacion.gt/
+  unreachable: URLError: <urlopen error timed out>
