@@ -214,6 +214,10 @@ ADAPTER_FILES = [
     # governorate, and the districts of the governorates whose census districts
     # can be placed wholly inside the boundary file's older ones.
     "iraq_census.json",
+    # Ecuador's 2022 census by province and canton, from INEC's workbook as
+    # the Internet Archive captured it (ecuador_census): INEC's host refuses
+    # the runner.
+    "ecuador_census.json",
     # Indonesia, by the owner's decision of 19 September 2026: the 2010
     # census's ethnicity by province as its provinces' Wikipedia articles
     # transcribe it, and religion by province and regency from the registry
