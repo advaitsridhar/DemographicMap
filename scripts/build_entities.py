@@ -608,6 +608,12 @@ SHAPE_GAPS: dict[str, dict[str, str]] = {}
 # ordinary units they read as two municipios whose data this map has failed
 # to find -- a gap that says the wrong thing about why it is a gap.
 #
+# Honduras and Mozambique have one each, found by the same measurement:
+# Lake Yojoa, 81 km2 and ringed by Taulabe, Santa Cruz de Yojoa, San Pedro
+# Zacapa and Las Vegas; and Mozambique's part of Lake Niassa, 6,628 km2,
+# bounded on land only by Lago and Chimbonila districts. None of the four
+# overlaps a neighbour.
+#
 # So each is declared here, keyed by the boundary file's spelling, and
 # becomes water: every field not applicable, with the reason, and drawn in
 # the water colour whatever the metric. A declaration is checked like the
@@ -628,6 +634,22 @@ WATER_SHAPES: dict[str, dict[str, str]] = {
             "shows 342 units against its 340 municipios. Nobody lives on "
             "it: the people around the lake are counted in those "
             "municipios, and nothing here is missing."),
+    },
+    "HND": {
+        "Lago de Yojoa": (
+            "This shape is Lake Yojoa, not a municipio. geoBoundaries draws "
+            "the lake as a second-order unit of its own (81 km2), between "
+            "Taulabe, Santa Cruz de Yojoa, San Pedro Zacapa and Las Vegas on "
+            "its shore. Nobody lives on it: the people around the lake are "
+            "counted in those municipios, and nothing here is missing."),
+    },
+    "MOZ": {
+        "Lago Niassa": (
+            "This shape is Mozambique's part of Lake Niassa (Lake Malawi), "
+            "not a district. geoBoundaries draws it as a second-order unit "
+            "of its own (6,628 km2), beside Lago and Chimbonila districts on "
+            "its shore. Nobody lives on it: the people along the shore are "
+            "counted in those districts, and nothing here is missing."),
     },
 }
 
