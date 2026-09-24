@@ -452,7 +452,11 @@ def best_statement(rows: list[dict[str, Any]]) -> tuple[int, int | None] | None:
     return best[2], best[3]
 
 
-def hydrate(path: Path, countries: list[str] | None, sleep: float) -> int:
+ASKED_BY_ID = "No P1082 statement on Wikidata (asked by id)."
+
+
+def hydrate(path: Path, countries: list[str] | None, sleep: float,
+            budget_minutes: float = 38.0) -> int:
     """Fill population and coordinates for rows that have neither, by id.
 
     Only ever fills: a row that already carries a population keeps it, and
@@ -465,7 +469,8 @@ def hydrate(path: Path, countries: list[str] | None, sleep: float) -> int:
             if r.get("wikidata")
             and (wanted is None or (r.get("country") or "").upper() in wanted)
             and not (isinstance(r.get("population"), dict)
-                     and r["population"].get("value"))]
+                     and (r["population"].get("value")
+                          or r["population"].get("note") == ASKED_BY_ID))]
     log(f"  {len(todo):,} rows without a population"
         + (f" in {', '.join(sorted(wanted))}" if wanted else ""))
     by_qid: dict[str, list[dict[str, Any]]] = {}
@@ -473,7 +478,14 @@ def hydrate(path: Path, countries: list[str] | None, sleep: float) -> int:
         by_qid.setdefault(rec["wikidata"], []).append(rec)
     qids = sorted(by_qid)
     filled = placed = failed = 0
+    # The job is cancelled at 45 minutes and a cancelled job commits nothing
+    # it had not saved, so the run stops itself short of that and says where.
+    deadline = time.time() + budget_minutes * 60
     for start in range(0, len(qids), HYDRATE_BATCH):
+        if time.time() > deadline:
+            log(f"  stopped at the {budget_minutes:.0f}-minute budget with "
+                f"{len(qids) - start:,} items unasked; run again to go on")
+            break
         batch = qids[start:start + HYDRATE_BATCH]
         try:
             rows = sparql(HYDRATE_QUERY % {"ids": " ".join(f"wd:{q}" for q in batch)},
@@ -498,12 +510,18 @@ def hydrate(path: Path, countries: list[str] | None, sleep: float) -> int:
                     rec["population"] = measure(best[0], year=best[1],
                                                 source="Wikidata (CC0)")
                     filled += 1
+                else:
+                    rec["population"] = gap(NOT_AVAILABLE, ASKED_BY_ID)
                 if qid in coords and not isinstance(rec.get("coordinates"), list):
                     rec["coordinates"] = coords[qid]
                     placed += 1
         if (start // HYDRATE_BATCH) % 20 == 0:
             log(f"    {min(start + HYDRATE_BATCH, len(qids)):,} of {len(qids):,} "
                 f"items asked; {filled:,} populations so far")
+        # Saved as it goes: the job has a 45-minute limit, and a run cut off
+        # at minute 44 used to keep nothing of what it had found.
+        if (start // HYDRATE_BATCH) % 40 == 39:
+            write_json(path, records)
         time.sleep(sleep)
     write_json(path, records)
     log(f"  filled {filled:,} populations and {placed:,} coordinates; "
@@ -527,13 +545,15 @@ def main() -> int:
     ap.add_argument("--allow-shrink", action="store_true",
                     help="write even though it drops countries the existing "
                          "file covers")
+    ap.add_argument("--budget", type=float, default=38.0,
+                    help="--hydrate stops and saves after this many minutes")
     ap.add_argument("--hydrate", action="store_true",
                     help="fill population and coordinates for rows already in "
                          "the file that lack them, looked up by id")
     args = ap.parse_args()
     if args.hydrate:
         return hydrate(args.out or PROCESSED / f"wikidata_{args.level}.json",
-                       args.countries, args.sleep)
+                       args.countries, args.sleep, args.budget)
 
     # Before any network work: a light run that would overwrite a country
     # already answered in full is refused here rather than after forty

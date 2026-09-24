@@ -336,3 +336,20 @@ class Hydrate(unittest.TestCase):
             self.assertEqual(out["Abram"]["coordinates"], [22.4, 47.2])
             self.assertEqual(out["Kept"]["population"]["value"], 7)
             self.assertEqual(out["Bare"]["population"]["status"], "not_available")
+            self.assertEqual(out["Bare"]["population"]["note"], m.ASKED_BY_ID)
+            # A second run does not ask again for what has been asked.
+            with mock.patch.object(m, "sparql", return_value=[]) as again, \
+                 mock.patch.object(m.time, "sleep"):
+                m.hydrate(path, None, 0)
+            again.assert_not_called()
+
+    def test_stops_at_its_budget_and_saves(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "wd.json"
+            path.write_text(json.dumps([
+                {"id": "X-WD-Q9", "wikidata": "Q9", "country": "X", "name": "N",
+                 "population": {"status": "not_available"}}]))
+            with mock.patch.object(m, "sparql") as asked:
+                m.hydrate(path, None, 0, budget_minutes=-1)
+            asked.assert_not_called()
+            self.assertTrue(path.exists())
