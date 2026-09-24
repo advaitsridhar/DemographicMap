@@ -667,6 +667,8 @@ LANGUAGE_BANDS: dict[str, tuple[str, ...]] = {
         # other's parent. The loop was invisible until the top of the tree
         # started refusing a parent outright.
         "Other language", "Other", "Not stated",
+        # Guatemala's 2018 census: "No habla", a person who learned no language.
+        "Does not speak",
         # Bands that span families rather than naming one. "Other African
         # languages" covers Niger-Congo, Nilo-Saharan and Afro-Asiatic at
         # once, which is no more a family than "African, n.o.s." above it.
@@ -946,6 +948,8 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
         "Mazahua", "Mazatec", "Huastec", "Chol", "Tzeltal", "Tzotzil",
         "Garifuna", "Miskito", "Kuna", "Ngäbe", "Taino", "Kalinago",
         "Mam", "Kʼicheʼ", "Qʼeqchiʼ", "Kaqchikel",
+        # Guatemala's census spelling of the people the Factbook writes Xinca.
+        "Xinka",
     ),
     "Indigenous peoples of South America": (
         "Vedda", "Quechua", "Aymara", "Guarani", "Mapuche", "Wayuu", "Nasa", "Embera",
@@ -1001,6 +1005,9 @@ ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
     ),
     "Mixed or multiple (census category)": (
         "Pardo", "Mestizo", "Coloured", "Mixed", "Mixed or multiple",
+        # Guatemala's census category, which the Factbook reports as Mestizo:
+        # its 56.0% for 2018 is the census's Ladina(o).
+        "Ladino",
         "Two or more races (non-Hispanic)", "Two or more races",
         "mixed", "Mixed race", "Multiracial", "Mulatto",
         "Mixed or Multiple ethnic groups", "Multiple visible minorities",
@@ -1394,7 +1401,12 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         # CLEAR Global, Peru, Bolivia and Guatemala: Quechuan, and nine Mayan languages Guatemala's districts are led by.
         "Quechuan", "K'iche'", "Q'eqchi'", "Ixil", "Kaqchikel",
         "Q'anjob'al", "Chuj", "Achi", "Popti'", "Poqomchi'","Ashaninka", "Awajun",
-                                             "Aguaruna"),
+                                             "Aguaruna",
+        # Guatemala's 2018 census: the other twelve Mayan languages it counts
+        # as a first language, and Xinka, which is not Mayan.
+        "Akateko", "Awakateko", "Ch'orti'", "Chalchiteko", "Itza'", "Mopan",
+        "Poqomam", "Sakapulteko", "Sipakapense", "Tektiteko", "Tz'utujil",
+        "Uspanteko", "Xinka"),
     # Russia's federal subjects. The Andic and Tsezic languages of Dagestan,
     # which the Russian census lists one by one beside Avar: every one of
     # them is Nakh-Dagestanian, and several have fewer than a thousand

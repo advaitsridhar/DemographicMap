@@ -1062,12 +1062,21 @@
     const level = window.WorldMap.getLevel();
     const levelId = window.WorldMap.levelId(level);
     const records = currentRecords();
-    const result = window.Metrics.paint(records, state.metric,
+    // A lake the boundary file draws as a unit is water whatever the metric.
+    // It is painted as water and kept out of the metric, so the legend does
+    // not count it among the units with no value: it is not missing one.
+    const result = window.Metrics.paint(records.filter((record) => !record.water),
+                                        state.metric,
                                         { field: state.field, group: state.group,
                                           depth: state.depth, spread: state.spread,
                                           estimates: state.estimates,
                                           inView: (record) =>
                                             window.WorldMap.inView(record.point) });
+    const water = getComputedStyle(document.documentElement)
+      .getPropertyValue("--water").trim();
+    for (const record of records) {
+      if (record.water && water) result.colors.set(record.id, water);
+    }
     window.WorldMap.applyColors(levelId, result.colors);
     renderLegend(result.legend);
     updateLevelNote(level, records.length);
