@@ -325,6 +325,7 @@ class Hydrate(unittest.TestCase):
             answer = [stmt("Q1", 3100, 2021, coord="Point(22.4 47.2)"),
                       {"unit": uri("Q3")}]
             with mock.patch.object(m, "sparql", return_value=answer) as asked, \
+                 mock.patch.object(m, "blank_items", return_value={"Q1", "Q2", "Q3"}), \
                  mock.patch.object(m.time, "sleep"):
                 m.hydrate(path, None, 0)
             query = asked.call_args[0][0]
@@ -339,6 +340,7 @@ class Hydrate(unittest.TestCase):
             self.assertEqual(out["Bare"]["population"]["note"], m.ASKED_BY_ID)
             # A second run does not ask again for what has been asked.
             with mock.patch.object(m, "sparql", return_value=[]) as again, \
+                 mock.patch.object(m, "blank_items", return_value={"Q1", "Q2", "Q3"}), \
                  mock.patch.object(m.time, "sleep"):
                 m.hydrate(path, None, 0)
             again.assert_not_called()
@@ -349,7 +351,8 @@ class Hydrate(unittest.TestCase):
             path.write_text(json.dumps([
                 {"id": "X-WD-Q9", "wikidata": "Q9", "country": "X", "name": "N",
                  "population": {"status": "not_available"}}]))
-            with mock.patch.object(m, "sparql") as asked:
+            with mock.patch.object(m, "sparql") as asked, \
+                 mock.patch.object(m, "blank_items", return_value={"Q9"}):
                 m.hydrate(path, None, 0, budget_minutes=-1)
             asked.assert_not_called()
             self.assertTrue(path.exists())

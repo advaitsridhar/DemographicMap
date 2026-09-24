@@ -165,7 +165,7 @@ SELECT ?unit ?pop ?popTime ?rank ?coord WHERE {
   OPTIONAL { ?unit wdt:P625 ?coord . }
 }
 """
-HYDRATE_BATCH = 150
+HYDRATE_BATCH = 100
 
 COUNTRY_QID_QUERY = """
 SELECT ?country ?iso3 WHERE {
@@ -455,8 +455,21 @@ def best_statement(rows: list[dict[str, Any]]) -> tuple[int, int | None] | None:
 ASKED_BY_ID = "No P1082 statement on Wikidata (asked by id)."
 
 
+def blank_items(level: str) -> set[str]:
+    """The Wikidata items joined to a unit the built site shows no population for."""
+    out: set[str] = set()
+    for shard in sorted((PROCESSED.parent.parent / "site" / "data" / level).glob("*.json")):
+        for entity in read_json(shard, []) or []:
+            pop = entity.get("population")
+            if entity.get("wikidata") and not entity.get("water") \
+                    and not isinstance(pop, (int, float)) \
+                    and not (isinstance(pop, dict) and pop.get("value")):
+                out.add(entity["wikidata"])
+    return out
+
+
 def hydrate(path: Path, countries: list[str] | None, sleep: float,
-            budget_minutes: float = 38.0) -> int:
+            budget_minutes: float = 38.0, level: str = "admin2") -> int:
     """Fill population and coordinates for rows that have neither, by id.
 
     Only ever fills: a row that already carries a population keeps it, and
@@ -465,8 +478,14 @@ def hydrate(path: Path, countries: list[str] | None, sleep: float,
     """
     records = read_json(path, []) or []
     wanted = {c.upper() for c in countries} if countries else None
+    # Only the items a blank unit on the map is waiting for. Of 68,764 rows
+    # without a population, about 12,450 are joined to a unit that has none;
+    # the rest sit on units another source already fills, or join nothing.
+    # A run on 24 September 2026 asking for all of them reached 6,150 in the
+    # job's 45 minutes, against a WDQS answering 502 and timing out.
+    waiting = blank_items(level)
     todo = [r for r in records
-            if r.get("wikidata")
+            if r.get("wikidata") in waiting
             and (wanted is None or (r.get("country") or "").upper() in wanted)
             and not (isinstance(r.get("population"), dict)
                      and (r["population"].get("value")
@@ -553,7 +572,7 @@ def main() -> int:
     args = ap.parse_args()
     if args.hydrate:
         return hydrate(args.out or PROCESSED / f"wikidata_{args.level}.json",
-                       args.countries, args.sleep, args.budget)
+                       args.countries, args.sleep, args.budget, args.level)
 
     # Before any network work: a light run that would overwrite a country
     # already answered in full is refused here rather than after forty
