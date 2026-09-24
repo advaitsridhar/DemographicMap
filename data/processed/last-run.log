@@ -1,443 +1,1395 @@
-  BOL bol_admpop_2022.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Bolivia
-      sheet 'bol_admpop_adm0_2022'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2022 | BOL | Bolivia (Plurinational State of) | BO | 5982830 | 6023201 | 12006031 | 578698 | 575546 | 573376 | 561678 | 536721 | 498015 | 449368 | 401178 | 352896 | 304799 | 258768 | 217533 | 182505 | 152349 | 124971 | 94391 | 120038 | 605485 | 600828 | 598215 | 584763 | 555170 | 510401 | 456309 | 4
-      sheet 'bol_admpop_adm1_2022'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_ES | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 
-        2022 | BOL | Bolivia (Plurinational State of) | BO | Beni | BO08 | 250914 | 265424 | 516338 | 31575 | 29836 | 28940 | 27198 | 23400 | 19739 | 17600 | 15125 | 12489 | 10497 | 8823 | 7045 | 5685 | 4385 | 3435 | 2380 | 2762 | 32988 | 31112 | 30262 | 28878 | 25480 | 21293 | 18294 | 15577 | 12847 | 11043
-      sheet 'Explanatory Technical Notes'
-        Explanatory Technical Note - Bolivia COD-PS, Update Year 2022 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Growth rates since last census'
-        ADM_1 | F_census | M_census | F_TL | M_TL | pgr_f | pgr_m | pgr_t |  | country | Year | PGR_WPP |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Beni | 208173 | 222639 | 250914 | 265424 | 1.87 | 1.76 | 1.81 |  | Bolivia (Plurinational State of) | 2000-2005 | 1.846 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Figure 1'
-        Age | WPP_ADM0_F | WPP_ADM0_M | NSO_ADM0_F | NSO_ADM0_M | F_NSO_minus_WPP | M_NSO_minus_WPP | F_NSO_minus_WPP_pct | M_NSO_minus_WPP_pct |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        0-4 | 580480 | -606830 | 578698 | -605485 | -1782 | -1345 | -0.306987320837927 | -0.221643623420068 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Figure 2'
-        
-        
-  CUB cub_admpop_2024.xlsx
-      sheet 'Metadata'
-        Item
-        Country
-      sheet 'Methodological Documentation'
-        Item
-        Methodology Used
-      sheet 'cub_admpop_adm0_2024'
-        Year
-        2024
-      sheet 'cub_admpop_adm1_2024'
-        Year
-        2024
-  CUB cub_adm_gazetteer.xlsx
-      sheet 'cub_adm0_table'
-        ADM0_ES | ADM0_PCODE
-        Cuba | CU
-      sheet 'cub_adm1_table'
-        NAME_0 | ADM0_PCODE | ADM1_PCODE | ADM1_ES | ADM2_REF
-        Cuba | CU | CU01 | Artemisa | Artemisa
-      sheet 'cub_adm2_table'
-        ADM0_PCODE | ADM0_ES | ADM1_PCODE | ADM1_ES | ADM1_REF | ADM2_PCODE | ADM2_ES | ADM2_REF
-        CU | Cuba | CU01 | Artemisa | Artemisa | CU0101 | Alquízar | Alquizar
-  ECU ecu_admpop_2020.xlsx
-      sheet 'Metadata'
-         |  |  | 
-         | Data |  | 
-      sheet 'ecu_admpop_adm0_2020'
-        ADM0_EN | ADM0_PCODE | Year | F_TL | M_TL | T_TL | F_00_00 | F_01_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_00 | M_01_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 
-        Ecuador | EC | 2020 | 8844706 | 8665937 | 17510643 | 161825 | 648654 | 819824 | 821990 | 792554 | 747429 | 696924 | 650318 | 610269 | 560752 | 497756 | 436131 | 377087 | 312829 | 247250 | 187189 | 132595 | 143330 | 169314 | 678322 | 856711 | 860321 | 826644 | 768332 | 700288 | 636841 | 579027 | 5162
-      sheet 'ecu_admpop_adm1_2020'
-        ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | Year | F_TL | M_TL | T_TL | F_00_00 | F_01_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_00 | M_01_04 | M_05_09 | M_10_14 | M_15_
-        Ecuador | EC | AZUAY | EC01 | 2020 | 459159 | 422235 | 881394 | 7900 | 31725 | 40208 | 38929 | 39010 | 39482 | 38884 | 36273 | 32571 | 28512 | 24824 | 21962 | 19339 | 16429 | 13479 | 10873 | 8351 | 10408 | 7900 | 31721 | 40312 | 40326 | 40061 | 40552 | 39627 | 35590 | 29775 | 23939 | 19465 | 16552 |
-  EGY egypt_population_estimate_compas_2012_v1.1_0_fis_v2.xlsx
-      sheet 'Adm1'
-        ADM0_PCODE | ADM0_EN | ADM0_AR | ADM1_PCODE | ADM1_EN | ADM1_AR | Governorate_Code | M_TL | F_TL | T_TL
-        EG | Egypt | مِصر | EG01 | Cairo | القاهرة | 1 | 4453589 | 4308914 | 8762503
-  HUN hun_admpop_2022_v01.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Hungary
-      sheet 'hun_admpop_adm02022_v01'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80_84 | F_85_89 | F_90_94 | F_95_99 | F_100Plus | M_00_04 | M_05_09 | M_10_14 | 
-        2022 | HUN | Hungary | HU | 5062651 | 4681030 | 9743681 | 223936 | 227805 | 233902 | 240998 | 250717 | 293909 | 302604 | 303488 | 375813 | 403162 | 350563 | 294461 | 317124 | 378219 | 311499 | 235585 | 170155 | 96841 | 38992 | 10533 | 2345 | 237184 | 241510 | 246353 | 255575 | 269340 | 314865 | 3261
-      sheet 'hun_admpop_adm1_2022_v01'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_HU | ADM1_PCODE | EU_NUTS3 | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80_84 | F_85_89 | F_90_94 | F_95_99 | F_100Plu
-        2022 | HUN | Hungary | HU | Budapest | HU005 | HU110 | 931631 | 832782 | 1764413 | 38091 | 38137 | 38347 | 36382 | 44530 | 59955 | 67882 | 66606 | 75578 | 74945 | 62013 | 48021 | 48256 | 66316 | 56884 | 48059 | 31499 | 18388 | 8574 | 2546 | 622 | 40816 | 40599 | 40673 | 38617 | 46454 | 59233 | 67720
-      sheet 'Comparison_Eurostat ADM0 vs WPP'
-        Age | WPP_ADM0_F | WPP_ADM0_M | Eurostat_ADM0_F | Eurostat_ADM0_M | F_Eurostat_minus_WPP | M_Eurostat_minus_WPP | F_Eurostat_minus_WPP_pct | M_Eurostat_minus_WPP_pct |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        0-4 | 227671 | -240968 | 223936 | -237184 | -3735 | -3784 | -1.64052514373811 | -1.57033299027257 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Comparison_Eurostat ADM1 vs WPP'
-        
-        
-  IRQ IRQ_admpop_2021.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Iraq
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | Cohort component method was applied to the baseline population, the 1997 census.
-      sheet 'IRQ_admpop_adm0_2021'
-        year | ISO3 | ADM0_NAME | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 |
-        2021 | IRQ | Iraq | IQ | 20380179 | 20810479 | 41190658 | 2941036 | 2725741 | 2415762 | 2145237 | 1830376 | 1512480 | 1401709 | 1224044 | 1109441 | 833121 | 594087 | 567550 | 408222 | 256125 | 161417 | 101806 | 152025 | 3102589 | 2895522 | 2587746 | 2270496 | 1983301 | 1555562 | 1362110 | 1161001 | 
-      sheet 'IRQ_admpop_adm1_2021'
-        year | ISO3 | ADM0_NAME | ADM0_PCODE | ADM1_NAME | ADM1_AR | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15
-        2021 | IRQ | Iraq | IQ | Al-Anbar | الانبار | IQG01 | 930779 | 983386 | 1914165 | 149063 | 121979 | 115474 | 108931 | 87320 | 67968 | 61730 | 51818 | 47448 | 35188 | 24264 | 22088 | 16113 | 8135 | 5571 | 3016 | 4673 | 156549 | 138673 | 126821 | 117338 | 100504 | 73369 | 60749 | 51141 | 46284 | 34054
-  JAM jam_adm_pop.xlsx
-      sheet 'jam_adm0_pop'
-        ADM0_EN | ADM0_PCODE | T | F | M | T_00_04 | T_05_09 | T_10_14 | T_15_19 | T_20_24 | T_25_29 | T_30_34 | T_35_39 | T_40_44 | T_45_49 | T_50_54 | T_55_59 | T_60_64 | T_65PLUS | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60
-        Jamaica | JM | 2697983 | 1363450 | 1334533 | 209871 | 226380 | 266589 | 274660 | 250713 | 226119 | 185496 | 183756 | 173924 | 155389 | 137895 | 100798 | 88057 | 218338 | 103763 | 111586 | 130405 | 134882 | 125470 | 116200 | 97685 | 97109 | 88268 | 76188 | 70598 | 50081 | 43650 | 117565 | 106107 | 11
-      sheet 'jam_adm1_pop'
-        ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | T | F | M | T_00_04 | T_05_09 | T_10_14 | T_15_19 | T_20_24 | T_25_29 | T_30_34 | T_35_39 | T_40_44 | T_45_49 | T_50_54 | T_55_59 | T_60_64 | T_65PLUS | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F
-        Jamaica | JM | Clarendon | JM01 | 245103 | 121312 | 123791 | 20519 | 22770 | 26874 | 26821 | 21719 | 18511 | 15921 | 15146 | 14750 | 12908 | 11845 | 8944 | 7611 | 20764 | 10130 | 11290 | 13092 | 13119 | 10476 | 9435 | 8172 | 7585 | 7833 | 6217 | 5827 | 4230 | 3460 | 10446 | 10389 | 11480 | 13782 | 1
-  JAM jam_adm.xlsx
-      sheet 'jam_adm0'
-        ADM0_EN | ADM0_PCODE
-        Jamaica | JM
-      sheet 'jam_adm1'
-        ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE
-        Jamaica | JM | Clarendon | JM01
-  KHM khm_admpop_2024.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Cambodia
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | The cohort component method was applied to the 2019 census to project the national population. In the absence of reliable internal migration data, the National Statistical Office used the ratio method to build subnational projections at the ADM-1 level from the national projection
-      sheet 'khm_admpop_adm0_2024'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2024 | KHM | Cambodia | KH | 8852561 | 8483749 | 17336307 | 778987 | 754729 | 740841 | 828511 | 718990 | 661624 | 749610 | 684085 | 676840 | 394933 | 415968 | 387937 | 345090 | 272308 | 202331 | 127320 | 112457 | 815979 | 790739 | 775309 | 866580 | 728890 | 626866 | 715965 | 655180 | 660646 | 374024
-      sheet 'khm_admpop_adm1_2024'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 
-        2024 | KHM | Cambodia | KH | Banteay Meanchey | KH01 | 481270 | 479485 | 960752 | 41049 | 43074 | 41089 | 46256 | 39107 | 36301 | 42390 | 35955 | 36513 | 20629 | 22685 | 22547 | 18938 | 14297 | 9682 | 6017 | 4741 | 43991 | 45524 | 43169 | 48364 | 41872 | 35938 | 42428 | 36064 | 37015 | 20165 | 21535
-  KHM khm_admgz_2018.xlsx
-      sheet 'ADM0'
-        ADM0_EN | ADM0_PCODE | ADM0_REF | ADM0ALT1_EN | ADM0ALT2_EN | AREA_SQKM
-        Cambodia | KH |  |  |  | 179127.25
-      sheet 'ADM1'
-        ADM1_EN | ADM1_PCODE | ADM1_REF | ADM1ALT1_EN | ADM1ALT2_EN | ADM0_EN | ADM0_PCODE | AREA_SQKM
-        Banteay Meanchey | KH01 |  |  |  | Cambodia | KH | 6145.9365234375
-      sheet 'ADM2'
-        ADM2_EN | ADM2_PCODE | ADM2_REF | ADM2ALT1_EN | ADM2ALT2_EN | ADM1_EN | ADM1_PCODE | ADM0_EN | ADM0_PCODE | AREA_SQKM
-        Aek Phnum | KH0205 |  |  |  | Battambang | KH02 | Cambodia | KH | 1067.866333007812
-      sheet 'ADM3'
-        ADM3_EN | ADM3_PCODE | ADM3_REF | ADM3ALT1_EN | ADM3ALT2_EN | ADM2_EN | ADM2_PCODE | ADM1_EN | ADM1_PCODE | ADM0_EN | ADM0_PCODE | AREA_SQKM
-        A Buon Leu | KH110202 |  |  |  | Kaoh Nheaek | KH1102 | Mondul Kiri | KH11 | Cambodia | KH | 653.4503173828125
-  KHM khm_admpop_2023.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Cambodia
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | The cohort component method was applied to the 2019 census. In the absence of reliable internal migration data, the NSO used the ratio method to build subnational projections at the ADM-1 level from the national projection.
-      sheet 'khm_admpop_adm0_2023'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2023 | KHM | Cambodia | KH | 8736016 | 8355434 | 17091476 | 746561 | 785052 | 754320 | 820621 | 697768 | 674297 | 746940 | 685268 | 632716 | 377067 | 418601 | 382131 | 334456 | 261041 | 191301 | 118920 | 108956 | 781650 | 822782 | 790028 | 856062 | 698620 | 636588 | 714504 | 659062 | 617161 | 355198
-      sheet 'khm_admpop_adm1_2023'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 
-        2023 | KHM | Cambodia | KH | Banteay Meanchey | KH01 | 474954 | 472234 | 947186 | 39307 | 44767 | 41800 | 45777 | 37936 | 36970 | 42203 | 35982 | 34102 | 19679 | 22811 | 22191 | 18372 | 13708 | 9144 | 5616 | 4589 | 42133 | 47361 | 43980 | 47768 | 40124 | 36487 | 42331 | 36268 | 34568 | 19143 | 21384
-  LCA lca_adm_gazetteer.xlsx
-      sheet 'lca_gaz_adm0'
-        ADM0_EN | ADM0_PCODE
-        Saint Lucia | LC
-      sheet 'lca_gaz_adm1'
-        ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE
-        Saint Lucia | LC | Anse La Raye | LC04
-      sheet 'lca_gaz_adm2'
-        ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | ADM2_EN | ADM2_PCODE | SETTLECODE
-        Saint Lucia | LC | Anse La Raye | LC04 | Au Tabor | LC04040020000 | 40020000
-  LCA lca_admpop_2010.xlsx
-      sheet 'lca_pop_adm0'
-        ADM0_EN | ADM0_PCODE | T_00_04 | T_05_09 | T_10_14 | T_15_19 | T_20_24 | T_25_29 | T_30_34 | T_35_39 | T_40_44 | T_45_49 | T_50_54 | T_55_59 | T_60_64 | T_64_69 | T_70_74 | T_75_79 | T_80plus | T_ALL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 
-        Saint Lucia | LC | 12613 | 14479 | 15403 | 14359 | 13262 | 12544 | 12337 | 12359 | 11468 | 9854 | 7513 | 5954 | 4832 | 3961 | 2841 | 3299 | 8512 | 165590 | 6168 | 7206 | 7438 | 7186 | 6733 | 6270 | 6205 | 6364 | 5689 | 4923 | 3756 | 3035 | 2539 | 2018 | 1548 | 1943 | 51528 | 36183 | 6445 | 7273 | 79
-      sheet 'lca_pop_adm1'
-        ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | T_00_04 | T_05_09 | T_10_14 | T_15_19 | T_20_24 | T_25_29 | T_30_34 | T_35_39 | T_40_44 | T_45_49 | T_50_54 | T_55_59 | T_60_64 | T_64_69 | T_70_74 | T_75_79 | T_80plus | T_ALL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_
-        Saint Lucia | LC | Anse La Raye | LC04 | 562 | 674 | 609 | 565 | 503 | 436 | 459 | 470 | 382 | 294 | 194 | 180 | 149 | 130 | 100 | 154 | 493 | 6354 | 289 | 317 | 280 | 280 | 242 | 207 | 236 | 223 | 175 | 147 | 87 | 84 | 79 | 66 | 47 | 88 | 3086 | 239 | 273 | 357 | 329 | 285 | 261 | 229 | 223 | 247 |
-  PAN pan_admgz.xlsx
-      sheet 'Admin3'
-        admin3Name_es | admin3Pcode | admin3RefName | admin3AltName1_es | admin3AltName2_es | admin2Name_es | admin2Pcode | admin1Name_es | admin1Pcode | admin0Name_es | admin0Pcode | Shape_Length | Shape_Area |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Bastimentos | PA010101 | <Null> | <Null> | <Null> | Bocas del Toro | PA0101 | Bocas del Toro | PA01 | Panamá | PA | 1.708818 | 0.005259 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Admin2'
-        admin2Name_es | admin2Pcode | admin2RefName | admin2AltName1_es | admin2AltName2_es | admin1Name_es | admin1Pcode | admin0Name_es | admin0Pcode | Shape_Length | Shape_Area |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Bocas del Toro | PA0101 | <Null> | <Null> | <Null> | Bocas del Toro | PA01 | Panamá | PA | 6.9017 | 0.036761 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Admin1'
-        admin1Name_es | admin1Pcode | admin1RefName | admin1AltName1_es | admin1AltName2_es | admin0Name_es | admin0Pcode | Shape_Length | Shape_Area |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Bocas del Toro | PA01 | <Null> | <Null> | <Null> | Panamá | PA | 11.866894 | 0.384655 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Admin0'
-        Shape_Length | Shape_Area | admin0Name_es | admin0Pcode | admin0RefName | admin0AltName1_es | admin0AltName2_es |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        75.846596 | 6.167954 | Panamá | PA | Panama | <Null> | <Null> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-  PAN pan_admpop_2023.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Panama
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | This COD-PS is based on the 2023 population census of Panama.
-      sheet 'pan_admpop_adm0_2023'
-        year | ISO3 | ADM0_NAME | ADM0_PCODE | ADM1_NAME | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80_84 | F_85_89 | F_90_94 | F_95_99 | F_100Plus | M_0
-        2023 | PAN | Panama | PA | Veraguas | PA13 | 2049918 | 2014527 | 4064445 | 158691 | 175612 | 172041 | 160343 | 160729 | 157190 | 150936 | 142704 | 133726 | 122557 | 117509 | 101675 | 84770 | 66836 | 52712 | 39143 | 25935 | 15889 | 7584 | 2673 | 663 | 163758 | 182268 | 180606 | 167952 | 163615 | 1537
-      sheet 'pan_admpop_adm1_2023'
-        year | ISO3 | ADM0_NAME | ADM0_PCODE | ADM1_NAME | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80_84 | F_85_89 | F_90_94 | F_95_99 | F_100Plus | M_0
-        2023 | PAN | Panama | PA | Bocas del Toro | PA01 | 79290 | 79938 | 159228 | 10260 | 10251 | 9319 | 8276 | 7050 | 6129 | 5402 | 4856 | 3906 | 3395 | 2983 | 2320 | 1787 | 1297 | 937 | 552 | 317 | 158 | 72 | 17 | 6 | 10806 | 10597 | 9905 | 8425 | 6738 | 5366 | 4502 | 4399 | 3869 | 3375 | 3011 | 2408 | 
-  QAT qat_admpop_2020.xlsx
-      sheet 'Metadata'
-        Item | Metadata |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Country | Qatar |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'qat_admpop_adm0_2020'
-        year | ISO3 | ADM0_EN | ADM0_AR | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2020 | QAT | Qatar | قطر | QAT | 811600 | 2034518 | 2846118 | 79380 | 77665 | 62919 | 46399 | 46506 | 91359 | 117140 | 98223 | 72413 | 45936 | 29712 | 18655 | 11762 | 6281 | 3389 | 3861 | 82805 | 80716 | 65829 | 50657 | 157399 | 308692 | 372192 | 330722 | 232389 | 152937 | 96671 | 53734 | 28580 | 11
-      sheet 'qat_admpop_adm1_2020'
-        year | ISO3 | ADM0_EN | ADM0_AR | ADM0_PCODE | ADM1_PCODE | ADM1_EN | ADM1_AR | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 
-        2020 | QAT | Qatar | قطر | QAT | QAT002 | Al Khor and Al Thakhira Municipality | بلدية الخور و الذخيرة | 27510 | 112943 | 140453 | 2753 | 2935 | 2630 | 1861 | 1559 | 2606 | 3358 | 3195 | 2649 | 1755 | 1049 | 536 | 300 | 140 | 84 | 100 | 2990 | 3244 | 2746 | 2200 | 8829 | 16612 | 20435 | 20731 | 1395
-      sheet 'Explanatory Technical Note'
-        Explanatory Technical Note - Qatar COD-PS, 2022 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Growth rates since last census'
-        ADM_1 | F_census | M_census | F_TL | M_TL | pgr_f | pgr_m | pgr_t |  | country | Year | PGR_WPP |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Al Khor and Al Thakhira | 21031 | 181000 | 27510 | 112943 | 5.37 | -9.43 | -2.03 |  | Qatar | 2015 | 8.277 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Figure 1'
-        Age | WPP_ADM0_F | WPP_ADM0_M | NSO_ADM0_F | NSO_ADM0_M | F_NSO_minus_WPP | M_NSO_minus_WPP | F_NSO_minus_WPP_pct | M_NSO_minus_WPP_pct |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        0-4 | 74235 | -77409 | 79380 | -82805 | 5145 | 5396 | 6.93069306930693 | 6.97076567324213 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Figure 2'
-        
-        
-  SAU sau_admpop_2022.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Saudi Arabia
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | This COD-PS is based in the 2022 population census of Saudi Arabia.
-      sheet 'sau_admpop_adm0_2022'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80_84 | F_85_89 | F_90_94 | F_95_99 | F_100Plus | M_00_04
-        2022 | SAU | Saudi Arabia | SA | Tabuk | SA07 | 12496629 | 19678595 | 32175224 | 1263917 | 1354766 | 1249029 | 1079884 | 1050547 | 1242388 | 1250860 | 1113283 | 839031 | 592256 | 463843 | 351281 | 253046 | 156115 | 94864 | 64100 | 40686 | 20470 | 9200 | 3893 | 3170 | 1314242 | 1407551 | 1297385 | 11
-      sheet 'sau_admpop_adm1_2022'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80_84 | F_85_89 | F_90_94 | F_95_99 | F_100Plus | M_00_04
-        2022 | SAU | Saudi Arabia | SA | `Asir | SA14 | 823254 | 1201031 | 2024285 | 86076 | 93547 | 89842 | 80089 | 70589 | 72715 | 72725 | 67430 | 52938 | 37683 | 29511 | 22073 | 15812 | 10451 | 7801 | 5808 | 3861 | 2218 | 1110 | 499 | 476 | 89700 | 97241 | 92719 | 83336 | 97290 | 143912 | 147078 | 130793
-  SAU sau_admgz.xlsx
-      sheet 'Admin1'
-        OBJECTID * | Shape * | admin1Name_en | admin1Pcode | admin1RefName | admin1AltName1_en | admin1AltName2_en | admin0Name_en | admin0Pcode |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        1 | Polygon | `Asir | SA14 | Asir | <Null> | <Null> | Saudi Arabia | SA |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Admin0'
-        OBJECTID * | Shape * | admin0Name_en | admin0Pcode | admin0RefName | admin0AltName1_en | admin0AltName2_en |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        1 | Polygon | Saudi Arabia | SA | <Null> | <Null> | <Null> |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-  SEN sen_admpop_2023.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Senegal
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | This Common Operational Dataset on Population Statistics (COD-PS) is estimated using cohort-component projections developed by the ANSD based on the 2013 census. Input rates were estimated partly based on estimating historical trends using the past censuses from 1976, 1988, and 20
-      sheet 'sen_admpop_adm0_2022'
-        year | ISO3 | ADM0_FR | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2022 | SEN | Senegal | SN | 8913569 | 8825226 | 17738795 | 1420355 | 1211905 | 999446 | 890550 | 782815 | 695032 | 616443 | 520126 | 419322 | 344296 | 273058 | 222752 | 179789 | 133486 | 88180 | 56632 | 59383 | 1444052 | 1241626 | 1051474 | 933882 | 808886 | 687428 | 567166 | 474534 | 389732 | 31429
-      sheet 'sen_admpop_adm1_2022'
-        year | ISO3 | ADM0_FR | ADM0_PCODE | ADM1_FR | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 
-        2022 | SEN | Senegal | SN | Dakar | SN01 | 2007358 | 2034867 | 4042225 | 269252 | 244428 | 184754 | 173050 | 165604 | 167517 | 174913 | 150586 | 118260 | 96049 | 73012 | 59573 | 49311 | 35706 | 22047 | 13290 | 10005 | 285744 | 259176 | 194663 | 170533 | 151432 | 154599 | 170713 | 153325 | 128304 | 1
-  SEN sen_admpop_2021.xlsx
-      sheet 'Metadata'
-        Item | Metadata | 
-        Country | Senegal | 
-      sheet 'sen_admpop_adm1_2021'
-        year | ISO3 | ADM0_NAME | ADM0_PCODE | ADM1_NAME | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20
-        2021 | SEN | Senegal | SN | Dakar | SN01 | 1990795 | 1947567 | 3938362 | 272318 | 232863 | 185615 | 172536 | 166523 | 173445 | 175245 | 146558 | 116061 | 93030 | 71244 | 59060 | 48357 | 34101 | 21238 | 12834 | 9767 | 277868 | 239240 | 186439 | 162427 | 147220 | 156939 | 166559 | 146067 | 121946 | 95
-      sheet 'sen_admpop_adm0_2021'
-        year | ISO3 | ADM0_NAME | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 |
-        2021 | SEN | Senegal | SN | 8649066 | 8566387 | 17215453 | 1384596 | 1157790 | 978597 | 866276 | 763114 | 681089 | 600943 | 500740 | 405625 | 330994 | 263752 | 216475 | 173990 | 127164 | 84777 | 54840 | 58304 | 1410517 | 1196046 | 1032147 | 911306 | 787844 | 663913 | 548304 | 457209 | 375811 | 29894
-      sheet 'Explanatory Technical Note'
-        Explanatory Technical Note - Senegal COD-PS, 2022 Update |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Growth rates since last census'
-        ADM_1 | F_census | M_census | F_TL | M_TL | pgr_f | pgr_m | pgr_t |  | country | Year | PGR_WPP
-        Dakar | 1558176 | 1579020 | 1990795 | 1947567 | 3.06 | 2.62 | 2.84 |  | Senegal | 2013 | 2.7
-      sheet 'Figure 1'
-        Age | WPP_ADM0_F | WPP_ADM0_M | NSO_ADM0_F | NSO_ADM0_M | F_NSO_minus_WPP | M_NSO_minus_WPP | F_NSO_minus_WPP_pct | M_NSO_minus_WPP_pct
-        0-4 | 1269380.5 | -1301384 | 1384596 | -1410517 | 115215.5 | 109133 | 9.07651409486754 | 8.3859183761288
-      sheet 'Figure 2'
-  SEN sen_admgz_anat_20240520.xlsx
-      sheet 'ADM3'
-        ADM3_FR | ADM3_PCODE | ADM3_REF | ADM2_FR | ADM2_PCODE | ADM1_FR | ADM1_PCODE | ADM0_FR | ADM0_PCODE | date | validOn | validTo | AREA_SQKM |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Almadies | SN010101 |   | Dakar | SN0101 | Dakar | SN01 | Senegal | SN | 2024-04-04 00:00:00 | 2024-05-20 00:00:00 |  | 29.700449 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'ADM2'
-        ADM2_FR | ADM2_PCODE | ADM2_REF | ADM1_FR | ADM1_PCODE | ADM0_FR | ADM0_PCODE | date | validOn | validTo | AREA_SQKM |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Dakar | SN0101 |   | Dakar | SN01 | Senegal | SN | 2024-04-04 00:00:00 | 2024-05-20 00:00:00 |  | 78.483228 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'ADM1'
-        ADM1_FR | ADM1_PCODE | ADM1_REF | ADM0_FR | ADM0_PCODE | date | validOn | validTo | AREA_SQKM |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Dakar | SN01 |   | Senegal | SN | 2024-04-04 00:00:00 | 2024-05-20 00:00:00 |  | 541.651348 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'ADM0'
-        ADM0_FR | ADM0_PCODE | date | validOn | validTo | AREA_SQKM |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        Senegal | SN | 2024-04-04 00:00:00 | 2024-05-20 00:00:00 |  | 196794.748907 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-  TCD tcd_admpop_2023.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Chad
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | This Common Operational Dataset on Population Statistics (COD-PS) is estimated  using two separate sets of projections from the INSEED, an ADM-2 2021 projection, disaggregated by sex and age, and a 2021-2023 set of projections, not disaggregated by sex and age. This COD-PS uses th
-      sheet 'tcd_admpop_adm0_2023'
-        year | ISO3 | ADM0_NAME | ADM0_FR | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 |
-        2023 | TCD | Chad | Tchad | TD | 9075045 | 8958704 | 18033749 | 1719109 | 1413000 | 1269557 | 1058822 | 754939 | 585512 | 520211 | 441612 | 350383 | 279495 | 212860 | 159036 | 111994 | 78283 | 55059 | 34594 | 30579 | 1801766 | 1465090 | 1296164 | 1090013 | 780041 | 573624 | 408085 | 314569 | 276083 
-      sheet 'tcd_admpop_adm1_2023'
-        year | ISO3 | ADM0_NAME | ADM0_FR | ADM0_PCODE | ADM1_NAME | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15
-        2023 | TCD | Chad | Tchad | TD | Barh-El-Gazel | TD19 | 197133 | 215675 | 412808 | 39107 | 31748 | 21839 | 21090 | 18023 | 14474 | 11007 | 8881 | 7964 | 6829 | 5491 | 4160 | 2669 | 1694 | 1089 | 625 | 443 | 40856 | 33115 | 26381 | 26317 | 22457 | 17192 | 10455 | 7059 | 5798 | 5153 | 5458 | 4921 | 36
-  TCD tcd_admgz.xlsx
-      sheet 'Admin3'
-        admin3Name_fr | admin3Pcode | admin3RefName | admin3Name_MAJ | admin3AltName1_fr | admin3AltName2_fr | admin3ChefLieu | admin2Name_fr | admin2Pcode | admin1Name_fr | admin1Pcode | admin0Name_fr | admin0Pcode
-        Ngouri | TD070201 | Ngouri | NGOURI | <Null> | <Null> | Ngouri | Wayi | TD0702 | Lac | TD07 | Tchad | TD
-      sheet 'Admin2'
-        admin2Name_fr | admin2Pcode | admin2RefName | admin2Name_MAJ | admin2AltName1_fr | admin2AltName2_fr | admin1Name_fr | admin1Pcode | admin0Name_fr | admin0Pcode
-        Batha Ouest | TD0101 | Batha Ouest | BATHA OUEST | <Null> | <Null> | Batha | TD01 | Tchad | TD
-      sheet 'Admin1'
-        admin1Name_fr | admin1Pcode | admin1RefName | admin1Name_MAJ | admin1AltName1_fr | admin1AltName2_fr | admin0Name_fr | admin0Pcode
-        Batha | TD01 | Batha | BATHA | <Null> | <Null> | Tchad | TD
-      sheet 'Admin0'
-        admin0Name_fr | admin0Pcode | admin0RefName | admin0AltName1_fr | admin0AltName2_fr
-        Tchad | TD | Tchad | <Null> | <Null>
-  TCD Tchad_PopulationDuTchad_20240102.xlsx
-      sheet 'Feuil1'
-        ADM1_NAME | ADM1_Pcode | ADM2_NAME | ADM2_Pcode | Population_Projection_2024
-        Batha | TD01 | Batha Ouest | TD0101 | 319035.77441063547
-  TCD tcd_admpop_2022.xlsx
-      sheet 'Pop_2022_2023'
-        Région | Pop 2021 | Structure 2021 | Pop 2022 | Structure 2022 | Pop 2023
-        Batha | 709820.813009197 | 0.04220503189628148 | 722960.252359275 | 0.04220503189628148 | 761114.3186790558
-      sheet 'ProjPop20_21_22_23admin2'
-        admin2Pcode | admin2Name_fr | admin2RefName | admin1Pcode | admin1Name_fr | Proj2016_Hommes | Proj2016_Femmes | Proj2016_Total | Proj2017_Hommes | Proj2017_Femmes | Proj2017_Total | Proj2018_Hommes | Proj2018_Femmes | Proj2018_Total | Proj2019_Hommes | Proj2019_Femmes | Proj2019_Total | Proj2020_Hom
-        TD0101 | Batha Ouest | Batha Ouest | TD01 | Batha | 125463 | 128277 | 253741 | 125406 | 128217 | 253624 | 129423 | 132325 | 261749 | 133623 | 136619 | 270242 | 138064 | 141159 | 279223 | 154132.28974037038 | 145248.64082507446 | 287312.6136987352 | 144693.70832406438 | 147937.32742290967 | 292631.03
-      sheet 'Calcul_projPop21_22_23admin2'
-         |  |  |  |  |  |  |  |  |  | Structure 2020 |  |  | Population 2021 |  |  | Structure 2021 |  |  | Population 2022 |  |  | Structure 2022 |  |  | Population 2023 |  | 
-        admin2Pcode | admin2Name_fr | admin2RefName | admin1Pcode | admin1Name_fr | Proj2016_Hommes | Proj2016_Femmes | Proj2020_Hommes | Proj2020_Femmes | Proj_2020_Total | Proj2020_Hommes2 | Proj2020_Femmes3 | Proj_2020_Total4 | Proj2021_Hommes22 | Proj2021_Femmes32 | Proj_2021_Total43 | Proj2021_Hommes22
-      sheet 'ProjPop21_22_23_admin2'
-         |  |  |  |  |  |  | Population 2021 |  |  | Population 2022 |  |  | Population 2023 |  | 
-        admin2Pcode | admin2Name_fr | admin2RefName | admin1Pcode | admin1Name_fr | Proj2016_Hommes | Proj2016_Femmes | Proj2021_Hommes22 | Proj2021_Femmes32 | Proj_2021_Total43 | Proj2022_Hommes | Proj2022_Femmes | Proj_2022_Total | Proj2022_Hommes | Proj2022_Femmes | Proj_2022_Total
-      sheet 'ProjPop20_21_22_23_admin1'
-        admin1Pcode | admin1Name_fr | admin1RefName | Proj2016 | Proj2017 | Proj2018 | Proj2019 | Proj2020 | Proj 2021 | Proj 2022 | Proj 2023 |  |  |  |  |  |  |  | 
-        TD19 | Barh-El-Gazel | Barh-El-Gazel | 330173 | 337694 | 349221 | 361143 | 373443 | 384262.3437091385 | 722960.252359275 | 412030.144180076 | Barh El Gazal |  |  |  |  |  |  | 
-      sheet 'ProjPop2020_admin1_GroupesAge'
-         |  |  |  | G    R    O    U    P    E    S          D    '    A    G    E    S   |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        admin1Pcode | admin1Name_fr | admin1RefName | Sexe |  0-4 |  5-9 |  10-14  |  15-19  |  20-24  |  25-29  |  30-34  |  35-39  |  40-44  |  45-49  |  50-54  |  55-59  |  60-64  |  65-69  |  70-74  |  75-79  |  80+  | Total |  0-42 |  5-93 |  10-14 4 |  15-19 5 |  20-24 6 |  25-29 7 |  30-34 8 |  35-39
-      sheet 'Admin1_Ndjam'
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        2020 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'ProjPop2021_admin1_GroupesAge'
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'ProjPop2023_admin1_Grpe age'
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        admin1Pcode | admin1Name_fr | admin1RefName | Sexe |  0-4 |  5-9 |  10-14  |  15-19  |  20-24  |  25-29  |  30-34  |  35-39  |  40-44  |  45-49  |  50-54  |  55-59  |  60-64  |  65-69  |  70-74  |  75-79  |  80+  | Total
-      sheet 'Pop_2023_âge'
-        Âge | Pop 2023 |  |  | 
-         | Total | Masculin | Féminin | Control
-  TCD tcd_admpop_2021.xlsx
-      sheet 'tcd_admpop_adm0_2021'
-        ADM0_FR | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80PLUS | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M_35_39 | M_40_
-        Tchad | TD | 8462907 | 8355484 | 16818393 | 1603181 | 1317538 | 1183631 | 988074 | 704492 | 546115 | 484983 | 411632 | 326717 | 260650 | 198433 | 148221 | 104372 | 72945 | 51294 | 32217 | 28422 | 1680133 | 1366309 | 1209299 | 1017467 | 727846 | 534936 | 380318 | 293079 | 257395 | 222802 | 191548 | 1
-      sheet 'tcd_admpop_adm1_2021'
-        ADM0_FR | ADM0_PCODE | ADM1_FR | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80PLUS | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_
-        Tchad | TD | Barh-El-Gazel | TD19 | 183501 | 200762 | 384263 | 36403 | 29553 | 20329 | 19632 | 16777 | 13473 | 10246 | 8267 | 7413 | 6357 | 5111 | 3872 | 2484 | 1577 | 1014 | 582 | 412 | 38031 | 30825 | 24557 | 24497 | 20904 | 16003 | 9732 | 6571 | 5397 | 4797 | 5081 | 4581 | 3397 | 2517 | 1824 | 11
-      sheet 'tcd_admpop_2019'
-        admin2Name_fr | admin2Pcode | admin2RefName | admin2Name_MAJ | admin2AltName1_fr | admin2AltName2_fr | admin1Name_fr | admin1Pcode | admin0Name_fr | admin0Pcode | F | M | T | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_
-        Batha Ouest | TD0101 | Batha Ouest | BATHA OUEST | <Null> | <Null> | Batha | TD01 | Tchad | TD | 142260 | 136963 | 279223 | 25336 | 20812 | 24097 | 18154 | 11036 | 8121 | 7611 | 6642 | 5334 | 4298 | 3298 | 2476 | 1715 | 1210 | 904 | 602 | 614 | 26469 | 21708 | 24675 | 18412 | 10893 | 7281 | 4854 | 3
-      sheet 'Sheet1'
-         |  | 
-         |  | 
-      sheet 'tcd_admpop_adm2_2021'
-        ADM0_FR | ADM0_PCODE | ADM1_FR | ADM1_PCODE | ADM2_FR | ADM2_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80PLUS | M_00_04 | M_05_09 | M_10_14 | M_15_19 |
-        Tchad | TD | Barh-El-Gazel | TD19 | Barh-El-Gazel Sud | TD1901 | 100926 | 110419 | 211345 | 20022 | 16254 | 11181 | 10797 | 9228 | 7410 | 5635 | 4547 | 4077 | 3496 | 2811 | 2130 | 1366 | 867 | 558 | 320 | 227 | 20917 | 16954 | 13506 | 13473 | 11497 | 8802 | 5352 | 3614 | 2969 | 2639 | 2795 | 2520 | 
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Chad (Tchad)
-      sheet 'Explanatory Technical Notes'
-        Explanatory Technical Note - Chad COD-PS, 2021 |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Growth rates since last census'
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         | ADM 0 growth rate, Male, 2009-2021 | ADM 0 growth rate, Female, 2009-2021 |  | Growth rate (ADM 1), Male, 2009-2021 | Growth rate (ADM 1) Female, 2009-2021 | Growth rate, (ADM 1) Total, 2009-2021 | ADM 1
-(2009 census) | Male
-(2009 census) | Female
-(2009 census) | ADM 1
-(2021 projection) | Male
-(2
-      sheet 'Figure 1'
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Figures 2(a-w)'
-        National total | 16818378 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'Sheet2'
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-         |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-  UZB uzbekistan_population_statistics_2018.xlsx
-      sheet 'L0'
-        ADM0_EN | ADM0_RU | ADM0_UZ | ADM0ALTEN | ADM0_PCODE | Total_pop | Urban_pop | Rural_pop | Total_male_population | Total_female_population | Number_of_male_from_0to2 | Number_of_male_from_3to5 | Number_of_male_from_6to7 | Number_of_male_from_8to15 | Number_of_male_from_16to17 | Number_of_male_from_1
-        #country+name+i_en | #country+name+i_ru | #country+name+i_uz | #country+name+i_en | #country+code+v_iso2 | #population+all | #population+urban | #population+rural | #population+m+all | #population+f+all | #population+m+infants+age_0_2 | #population+m+infants+age_3_5 | #population+m+children+age_6_7 
-      sheet 'L1'
-        ADM0_EN | ADM0_RU | ADM0_UZ | ADM0ALTEN | ADM0_PCODE | ADM1_RU | ADM1_UZ | ADM1_EN | ADM1TYPEEN | ADM1_PCODE | ADM1TYPERU | ADM1TYPEUZ | Total_pop | Urban_pop | Rural_pop | Male_pop | Female_pop
-         |  |  |  | #country+code+v_iso2 | #admin1+name+i_ru | #admin1+name+i_uz | #admin1+name+i_en | #loc+type+i_en | #admin1+code+v_pcode | #loc+type+i_ru | #loc+type+i_uz |  |  |  |  | 
-      sheet 'L2'
-        country | admin0Pcode | admin1Pcode | admin1Name_ru | admin1Name_uz | admin1Name_en | admin2Pcode | admin2Name_ru | admin2Name_uz | admin2Name_en | admin2Type_ru | admin2Type_uz | admin2Type_en |  | 
-        #country+code+v_iso2 | #country+code+v_pcode | #admin1+code+v_pcode | #admin1+name+i_ru | #admin1+name+i_uz | #admin1+name+i_en | #admin2+code+v_pcode | #admin2+name+i_ru | #admin2+name+i_uz | #admin2+name+i_en | #loc+type+i_ru | #loc+type+i_uz | #loc+type+i_en |  | 
-      sheet 'Metadata'
-        Metadata | 
-        Source  | National Statistical Committee of the Republic of Uzbekistan
-  VNM vnm_admgz.xlsx
-      sheet 'ADM0'
-        ADM0_EN | ADM0_VI | ADM0_PCODE | ADM0_REF | ADM0ALT1_EN | ADM0ALT2_EN | ADM0ALT1_VI | ADM0ALT2_VI | AREA_SQKM
-        Viet Nam | Việt Nam | VN |  |  |  |  |  | 334558.96875
-      sheet 'ADM1'
-        ADM1_EN | ADM1_VI | ADM1_PCODE | ADM1_REF | ADM1ALT1_EN | ADM1ALT2_EN | ADM1ALT1_VI | ADM1ALT2_VI | ADM0_EN | ADM0_VI | ADM0_PCODE | AREA_SQKM
-        An Giang | An Giang | VN805 |  |  |  |  |  | Viet Nam | Việt Nam | VN | 3535.969970703125
-      sheet 'ADM2'
-        ADM2_EN | ADM2_VI | ADM2_PCODE | ADM2_REF | ADM2ALT1_EN | ADM2ALT2_EN | ADM2ALT1_VI | ADM2ALT2_VI | ADM1_EN | ADM1_VI | ADM1_PCODE | ADM0_EN | ADM0_VI | ADM0_PCODE | AREA_SQKM
-        A Luoi | Huyện A Lưới | VN41115 |  |  |  |  |  | Thua Thien Hue | Thừa Thiên Huế | VN411 | Viet Nam | Việt Nam | VN | 1227.996948242188
-  VNM vnm_admpop_2024.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Viet Nam
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | Cohort component method was applied to the 2019 census results to construct the projections on which this COD-PS is based. 
-      sheet 'vnm_admpop_adm0_2024'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2024 | VNM | Viet Nam | VN | 50434533 | 50334364 | 100768914 | 3518411 | 3711367 | 3972062 | 3477952 | 3148758 | 3251812 | 4136017 | 4102442 | 3779587 | 3290727 | 3085535 | 2829066 | 2617640 | 2063015 | 1380289 | 813141 | 1256714 | 3889961 | 4069403 | 4341350 | 3722405 | 3336556 | 3399849 | 4277272 
-      sheet 'vnm_admpop_adm1_2024'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_VI | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 
-        2024 | VNM | Viet Nam | VN | An Giang | An Giang | VN805 | 928139 | 910447 | 1838587 | 47372 | 58020 | 78488 | 78147 | 49910 | 36980 | 54624 | 69221 | 74493 | 70586 | 71588 | 67715 | 54170 | 43010 | 33395 | 18435 | 21987 | 50480 | 61743 | 83713 | 82528 | 54053 | 40394 | 57273 | 72538 | 77708 | 71786
-  VNM vnm_admpop_2023.xlsx
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Viet Nam
-      sheet 'Methodological Documentation'
-        Item | Methodological_Documentation
-        Methodology Used | Cohort component method was applied to the 2019 census results to construct the projections on which this COD-PS is based. 
-      sheet 'vnm_admpop_adm0_2023'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 | M_25_29 | M_30_34 | M
-        2023 | VNM | Viet Nam | VN | 50048805 | 49889136 | 99937948 | 3486067 | 3858932 | 3904364 | 3432694 | 3037176 | 3452931 | 4192013 | 4108918 | 3647138 | 3219400 | 3090345 | 2809468 | 2552273 | 1934384 | 1303601 | 746386 | 1272716 | 3851576 | 4235066 | 4258069 | 3659502 | 3219612 | 3595917 | 4338840 |
-      sheet 'vnm_admpop_adm1_2023'
-        year | ISO3 | ADM0_EN | ADM0_PCODE | ADM1_EN | ADM1_PCODE | F_TL | M_TL | T_TL | F_00_04 | F_05_09 | F_10_14 | F_15_19 | F_20_24 | F_25_29 | F_30_34 | F_35_39 | F_40_44 | F_45_49 | F_50_54 | F_55_59 | F_60_64 | F_65_69 | F_70_74 | F_75_79 | F_80Plus | M_00_04 | M_05_09 | M_10_14 | M_15_19 | M_20_24 
-        2023 | VNM | Viet Nam | VN | An Giang | VN805 | 934736 | 918014 | 1852750 | 48672 | 62257 | 81514 | 75334 | 44242 | 42217 | 60368 | 71620 | 75735 | 69274 | 73329 | 66030 | 51945 | 41948 | 31715 | 16727 | 21810 | 51820 | 66523 | 87056 | 79420 | 48669 | 45477 | 63339 | 75235 | 78500 | 70847 | 71477 | 
-  ZMB zmb_admpop_2020.xlsx
-      sheet 'AB-ADM1'
-        OBJECTID * | Shape * | admin1Name_en | admin1Pcode | PS-match | admin1RefName | admin1AltName1_en | admin1AltName2_en | admin0Name_en | admin0Pcode |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-        1 | Polygon | Central | ZM10 | 6 | <Null> | <Null> | <Null> | Zambia | ZM |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-      sheet 'AB-ADM2'
-        OBJECTID * | Shape * | admin2Name_en | admin2Pcode | COD-PS match | admin2RefName | admin2AltName1_en | admin2AltName2_en | admin1Name_en | admin1Pcode | admin0Name_en | admin0Pcode
-        1 | Polygon | Chibombo | ZM1001 | #REF! | <Null> | <Null> | <Null> | Central | ZM10 | Zambia | ZM
-      sheet 'zmb_admpop_adm0_2020'
-        ADM0_EN | ADM0_CODE | Year | Both_TOTL | Both_0004 | Both_0509 | Both_1014 | Both_1519 | Both_2024 | Both_2529 | Both_3034 | Both_3539 | Both_4044 | Both_4549 | Both_5054 | Both_5559 | Both_6064 | Both_6569 | Both_7074 | Both_7579 | Both_80PL | Male_TOTL | Male_0004 | Male_0509 | Male_1014 | Male_15
-        Zambia | ZM | 2020 | 17426623 | 3092857 | 2628833 | 2248413 | 1890158 | 1601246 | 1334942 | 1094554 | 910445 | 758878 | 551439 | 396163 | 295869 | 227928 | 151843 | 114520 | 71521 | 57014 | 8706249 | 1558569 | 1319564 | 1127001 | 945738 | 799105 | 666686 | 547864 | 457653 | 384148 | 282257 | 201089 
-      sheet 'zmb_admpop_adm1_2020'
-        ADM0_EN | ADM0_CODE | ADM1_EN | ADM1_CODE | Year | Both_TOTL | Both_0004 | Both_0509 | Both_1014 | Both_1519 | Both_2024 | Both_2529 | Both_3034 | Both_3539 | Both_4044 | Both_4549 | Both_5054 | Both_5559 | Both_6064 | Both_6569 | Both_7074 | Both_7579 | Both_80PL | Male_TOTL | Male_0004 | Male_0509
-        Zambia | ZM | EASTERN | ZM30 | 2020 | 2119981 | 391374 | 338535 | 281180 | 222399 | 182592 | 148372 | 119913 | 103763 | 87438 | 66519 | 47552 | 36973 | 31889 | 22182 | 18021 | 11365 | 9914 | 1056542 | 196678 | 170815 | 143846 | 114448 | 92536 | 73997 | 59737 | 50846 | 42668 | 33579 | 23543 | 16816 |
-      sheet 'zmb_admpop_adm2_2020'
-        ADM0_EN | ADM0_CODE | ADM1_EN | ADM1_CODE | ADM2_EN | Year | Both_TOTL | Both_0004 | Both_0509 | Both_1014 | Both_1519 | Both_2024 | Both_2529 | Both_3034 | Both_3539 | Both_4044 | Both_4549 | Both_5054 | Both_5559 | Both_6064 | Both_6569 | Both_7074 | Both_7579 | Both_80PL | Male_TOTL | Male_0004 |
-        Zambia | ZM | EASTERN | ZM30 | CHADIZA | 2020 | 133843 | 25567 | 22098 | 17703 | 14110 | 11417 | 8813 | 7453 | 6289 | 5439 | 4301 | 2852 | 2350 | 1869 | 1299 | 1131 | 684 | 468 | 67377 | 12871 | 11180 | 8962 | 7445 | 6084 | 4506 | 3699 | 2998 | 2627 | 2195 | 1439 | 1108 | 774 | 579 | 449 | 279 | 182
-      sheet 'zmb_admpop_adm3_2020'
-        ADM0_EN | ADM0_CODE | ADM1_EN | ADM1_CODE | ADM2_EN | ADM3_EN | Year | Both_TOTL | Both_0004 | Both_0509 | Both_1014 | Both_1519 | Both_2024 | Both_2529 | Both_3034 | Both_3539 | Both_4044 | Both_4549 | Both_5054 | Both_5559 | Both_6064 | Both_6569 | Both_7074 | Both_7579 | Both_80PL | Male_TOTL | M
-        Zambia | ZM | EASTERN | ZM30 | CHADIZA | CHADIZA | 2020 | 74167 | 13994 | 12037 | 9777 | 8233 | 6352 | 4781 | 4094 | 3506 | 3026 | 2465 | 1558 | 1318 | 1032 | 722 | 630 | 381 | 261 | 37141 | 7085 | 6114 | 4953 | 4327 | 3364 | 2360 | 2005 | 1612 | 1433 | 1252 | 774 | 609 | 431 | 319 | 248 | 155 | 100
-      sheet 'Metadata'
-        Item | Metadata
-        Country | Zambia
+eurostat: demo_r_pjangrp3 (nuts3)
+  AL011: no ISO3 for Eurostat country code 'AL'; skipped
+  AL012: no ISO3 for Eurostat country code 'AL'; skipped
+  AL013: no ISO3 for Eurostat country code 'AL'; skipped
+  AL014: no ISO3 for Eurostat country code 'AL'; skipped
+  AL015: no ISO3 for Eurostat country code 'AL'; skipped
+  AL021: no ISO3 for Eurostat country code 'AL'; skipped
+  AL022: no ISO3 for Eurostat country code 'AL'; skipped
+  AL031: no ISO3 for Eurostat country code 'AL'; skipped
+  AL032: no ISO3 for Eurostat country code 'AL'; skipped
+  AL033: no ISO3 for Eurostat country code 'AL'; skipped
+  AL034: no ISO3 for Eurostat country code 'AL'; skipped
+  AL035: no ISO3 for Eurostat country code 'AL'; skipped
+  ALXXX: no ISO3 for Eurostat country code 'AL'; skipped
+  AT111: no ISO3 for Eurostat country code 'AT'; skipped
+  AT112: no ISO3 for Eurostat country code 'AT'; skipped
+  AT113: no ISO3 for Eurostat country code 'AT'; skipped
+  AT121: no ISO3 for Eurostat country code 'AT'; skipped
+  AT122: no ISO3 for Eurostat country code 'AT'; skipped
+  AT123: no ISO3 for Eurostat country code 'AT'; skipped
+  AT124: no ISO3 for Eurostat country code 'AT'; skipped
+  AT125: no ISO3 for Eurostat country code 'AT'; skipped
+  AT126: no ISO3 for Eurostat country code 'AT'; skipped
+  AT127: no ISO3 for Eurostat country code 'AT'; skipped
+  AT130: no ISO3 for Eurostat country code 'AT'; skipped
+  AT211: no ISO3 for Eurostat country code 'AT'; skipped
+  AT212: no ISO3 for Eurostat country code 'AT'; skipped
+  AT213: no ISO3 for Eurostat country code 'AT'; skipped
+  AT221: no ISO3 for Eurostat country code 'AT'; skipped
+  AT222: no ISO3 for Eurostat country code 'AT'; skipped
+  AT223: no ISO3 for Eurostat country code 'AT'; skipped
+  AT224: no ISO3 for Eurostat country code 'AT'; skipped
+  AT225: no ISO3 for Eurostat country code 'AT'; skipped
+  AT226: no ISO3 for Eurostat country code 'AT'; skipped
+  AT311: no ISO3 for Eurostat country code 'AT'; skipped
+  AT312: no ISO3 for Eurostat country code 'AT'; skipped
+  AT313: no ISO3 for Eurostat country code 'AT'; skipped
+  AT314: no ISO3 for Eurostat country code 'AT'; skipped
+  AT315: no ISO3 for Eurostat country code 'AT'; skipped
+  AT321: no ISO3 for Eurostat country code 'AT'; skipped
+  AT322: no ISO3 for Eurostat country code 'AT'; skipped
+  AT323: no ISO3 for Eurostat country code 'AT'; skipped
+  AT331: no ISO3 for Eurostat country code 'AT'; skipped
+  AT332: no ISO3 for Eurostat country code 'AT'; skipped
+  AT333: no ISO3 for Eurostat country code 'AT'; skipped
+  AT334: no ISO3 for Eurostat country code 'AT'; skipped
+  AT335: no ISO3 for Eurostat country code 'AT'; skipped
+  AT341: no ISO3 for Eurostat country code 'AT'; skipped
+  AT342: no ISO3 for Eurostat country code 'AT'; skipped
+  BE100: no ISO3 for Eurostat country code 'BE'; skipped
+  BE211: no ISO3 for Eurostat country code 'BE'; skipped
+  BE212: no ISO3 for Eurostat country code 'BE'; skipped
+  BE213: no ISO3 for Eurostat country code 'BE'; skipped
+  BE221: no ISO3 for Eurostat country code 'BE'; skipped
+  BE222: no ISO3 for Eurostat country code 'BE'; skipped
+  BE223: no ISO3 for Eurostat country code 'BE'; skipped
+  BE224: no ISO3 for Eurostat country code 'BE'; skipped
+  BE225: no ISO3 for Eurostat country code 'BE'; skipped
+  BE231: no ISO3 for Eurostat country code 'BE'; skipped
+  BE232: no ISO3 for Eurostat country code 'BE'; skipped
+  BE233: no ISO3 for Eurostat country code 'BE'; skipped
+  BE234: no ISO3 for Eurostat country code 'BE'; skipped
+  BE235: no ISO3 for Eurostat country code 'BE'; skipped
+  BE236: no ISO3 for Eurostat country code 'BE'; skipped
+  BE241: no ISO3 for Eurostat country code 'BE'; skipped
+  BE242: no ISO3 for Eurostat country code 'BE'; skipped
+  BE251: no ISO3 for Eurostat country code 'BE'; skipped
+  BE252: no ISO3 for Eurostat country code 'BE'; skipped
+  BE253: no ISO3 for Eurostat country code 'BE'; skipped
+  BE254: no ISO3 for Eurostat country code 'BE'; skipped
+  BE255: no ISO3 for Eurostat country code 'BE'; skipped
+  BE256: no ISO3 for Eurostat country code 'BE'; skipped
+  BE257: no ISO3 for Eurostat country code 'BE'; skipped
+  BE258: no ISO3 for Eurostat country code 'BE'; skipped
+  BE310: no ISO3 for Eurostat country code 'BE'; skipped
+  BE321: no ISO3 for Eurostat country code 'BE'; skipped
+  BE322: no ISO3 for Eurostat country code 'BE'; skipped
+  BE323: no ISO3 for Eurostat country code 'BE'; skipped
+  BE324: no ISO3 for Eurostat country code 'BE'; skipped
+  BE325: no ISO3 for Eurostat country code 'BE'; skipped
+  BE326: no ISO3 for Eurostat country code 'BE'; skipped
+  BE327: no ISO3 for Eurostat country code 'BE'; skipped
+  BE328: no ISO3 for Eurostat country code 'BE'; skipped
+  BE329: no ISO3 for Eurostat country code 'BE'; skipped
+  BE32A: no ISO3 for Eurostat country code 'BE'; skipped
+  BE32B: no ISO3 for Eurostat country code 'BE'; skipped
+  BE32C: no ISO3 for Eurostat country code 'BE'; skipped
+  BE32D: no ISO3 for Eurostat country code 'BE'; skipped
+  BE331: no ISO3 for Eurostat country code 'BE'; skipped
+  BE332: no ISO3 for Eurostat country code 'BE'; skipped
+  BE334: no ISO3 for Eurostat country code 'BE'; skipped
+  BE335: no ISO3 for Eurostat country code 'BE'; skipped
+  BE336: no ISO3 for Eurostat country code 'BE'; skipped
+  BE341: no ISO3 for Eurostat country code 'BE'; skipped
+  BE342: no ISO3 for Eurostat country code 'BE'; skipped
+  BE343: no ISO3 for Eurostat country code 'BE'; skipped
+  BE344: no ISO3 for Eurostat country code 'BE'; skipped
+  BE345: no ISO3 for Eurostat country code 'BE'; skipped
+  BE351: no ISO3 for Eurostat country code 'BE'; skipped
+  BE352: no ISO3 for Eurostat country code 'BE'; skipped
+  BE353: no ISO3 for Eurostat country code 'BE'; skipped
+  BG311: no ISO3 for Eurostat country code 'BG'; skipped
+  BG312: no ISO3 for Eurostat country code 'BG'; skipped
+  BG313: no ISO3 for Eurostat country code 'BG'; skipped
+  BG314: no ISO3 for Eurostat country code 'BG'; skipped
+  BG315: no ISO3 for Eurostat country code 'BG'; skipped
+  BG321: no ISO3 for Eurostat country code 'BG'; skipped
+  BG322: no ISO3 for Eurostat country code 'BG'; skipped
+  BG323: no ISO3 for Eurostat country code 'BG'; skipped
+  BG324: no ISO3 for Eurostat country code 'BG'; skipped
+  BG325: no ISO3 for Eurostat country code 'BG'; skipped
+  BG331: no ISO3 for Eurostat country code 'BG'; skipped
+  BG332: no ISO3 for Eurostat country code 'BG'; skipped
+  BG333: no ISO3 for Eurostat country code 'BG'; skipped
+  BG334: no ISO3 for Eurostat country code 'BG'; skipped
+  BG341: no ISO3 for Eurostat country code 'BG'; skipped
+  BG342: no ISO3 for Eurostat country code 'BG'; skipped
+  BG343: no ISO3 for Eurostat country code 'BG'; skipped
+  BG344: no ISO3 for Eurostat country code 'BG'; skipped
+  BG411: no ISO3 for Eurostat country code 'BG'; skipped
+  BG412: no ISO3 for Eurostat country code 'BG'; skipped
+  BG413: no ISO3 for Eurostat country code 'BG'; skipped
+  BG414: no ISO3 for Eurostat country code 'BG'; skipped
+  BG415: no ISO3 for Eurostat country code 'BG'; skipped
+  BG421: no ISO3 for Eurostat country code 'BG'; skipped
+  BG422: no ISO3 for Eurostat country code 'BG'; skipped
+  BG423: no ISO3 for Eurostat country code 'BG'; skipped
+  BG424: no ISO3 for Eurostat country code 'BG'; skipped
+  BG425: no ISO3 for Eurostat country code 'BG'; skipped
+  CH011: no ISO3 for Eurostat country code 'CH'; skipped
+  CH012: no ISO3 for Eurostat country code 'CH'; skipped
+  CH013: no ISO3 for Eurostat country code 'CH'; skipped
+  CH021: no ISO3 for Eurostat country code 'CH'; skipped
+  CH022: no ISO3 for Eurostat country code 'CH'; skipped
+  CH023: no ISO3 for Eurostat country code 'CH'; skipped
+  CH024: no ISO3 for Eurostat country code 'CH'; skipped
+  CH025: no ISO3 for Eurostat country code 'CH'; skipped
+  CH031: no ISO3 for Eurostat country code 'CH'; skipped
+  CH032: no ISO3 for Eurostat country code 'CH'; skipped
+  CH033: no ISO3 for Eurostat country code 'CH'; skipped
+  CH040: no ISO3 for Eurostat country code 'CH'; skipped
+  CH051: no ISO3 for Eurostat country code 'CH'; skipped
+  CH052: no ISO3 for Eurostat country code 'CH'; skipped
+  CH053: no ISO3 for Eurostat country code 'CH'; skipped
+  CH054: no ISO3 for Eurostat country code 'CH'; skipped
+  CH055: no ISO3 for Eurostat country code 'CH'; skipped
+  CH056: no ISO3 for Eurostat country code 'CH'; skipped
+  CH057: no ISO3 for Eurostat country code 'CH'; skipped
+  CH061: no ISO3 for Eurostat country code 'CH'; skipped
+  CH062: no ISO3 for Eurostat country code 'CH'; skipped
+  CH063: no ISO3 for Eurostat country code 'CH'; skipped
+  CH064: no ISO3 for Eurostat country code 'CH'; skipped
+  CH065: no ISO3 for Eurostat country code 'CH'; skipped
+  CH066: no ISO3 for Eurostat country code 'CH'; skipped
+  CH070: no ISO3 for Eurostat country code 'CH'; skipped
+  CY000: no ISO3 for Eurostat country code 'CY'; skipped
+  CZ010: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ020: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ031: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ032: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ041: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ042: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ051: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ052: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ053: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ063: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ064: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ071: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ072: no ISO3 for Eurostat country code 'CZ'; skipped
+  CZ080: no ISO3 for Eurostat country code 'CZ'; skipped
+  DE111: no ISO3 for Eurostat country code 'DE'; skipped
+  DE112: no ISO3 for Eurostat country code 'DE'; skipped
+  DE113: no ISO3 for Eurostat country code 'DE'; skipped
+  DE114: no ISO3 for Eurostat country code 'DE'; skipped
+  DE115: no ISO3 for Eurostat country code 'DE'; skipped
+  DE116: no ISO3 for Eurostat country code 'DE'; skipped
+  DE117: no ISO3 for Eurostat country code 'DE'; skipped
+  DE118: no ISO3 for Eurostat country code 'DE'; skipped
+  DE119: no ISO3 for Eurostat country code 'DE'; skipped
+  DE11A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE11B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE11C: no ISO3 for Eurostat country code 'DE'; skipped
+  DE11D: no ISO3 for Eurostat country code 'DE'; skipped
+  DE121: no ISO3 for Eurostat country code 'DE'; skipped
+  DE122: no ISO3 for Eurostat country code 'DE'; skipped
+  DE123: no ISO3 for Eurostat country code 'DE'; skipped
+  DE124: no ISO3 for Eurostat country code 'DE'; skipped
+  DE125: no ISO3 for Eurostat country code 'DE'; skipped
+  DE126: no ISO3 for Eurostat country code 'DE'; skipped
+  DE127: no ISO3 for Eurostat country code 'DE'; skipped
+  DE128: no ISO3 for Eurostat country code 'DE'; skipped
+  DE129: no ISO3 for Eurostat country code 'DE'; skipped
+  DE12A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE12B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE12C: no ISO3 for Eurostat country code 'DE'; skipped
+  DE131: no ISO3 for Eurostat country code 'DE'; skipped
+  DE132: no ISO3 for Eurostat country code 'DE'; skipped
+  DE133: no ISO3 for Eurostat country code 'DE'; skipped
+  DE134: no ISO3 for Eurostat country code 'DE'; skipped
+  DE135: no ISO3 for Eurostat country code 'DE'; skipped
+  DE136: no ISO3 for Eurostat country code 'DE'; skipped
+  DE137: no ISO3 for Eurostat country code 'DE'; skipped
+  DE138: no ISO3 for Eurostat country code 'DE'; skipped
+  DE139: no ISO3 for Eurostat country code 'DE'; skipped
+  DE13A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE141: no ISO3 for Eurostat country code 'DE'; skipped
+  DE142: no ISO3 for Eurostat country code 'DE'; skipped
+  DE143: no ISO3 for Eurostat country code 'DE'; skipped
+  DE144: no ISO3 for Eurostat country code 'DE'; skipped
+  DE145: no ISO3 for Eurostat country code 'DE'; skipped
+  DE146: no ISO3 for Eurostat country code 'DE'; skipped
+  DE147: no ISO3 for Eurostat country code 'DE'; skipped
+  DE148: no ISO3 for Eurostat country code 'DE'; skipped
+  DE149: no ISO3 for Eurostat country code 'DE'; skipped
+  DE211: no ISO3 for Eurostat country code 'DE'; skipped
+  DE212: no ISO3 for Eurostat country code 'DE'; skipped
+  DE213: no ISO3 for Eurostat country code 'DE'; skipped
+  DE214: no ISO3 for Eurostat country code 'DE'; skipped
+  DE215: no ISO3 for Eurostat country code 'DE'; skipped
+  DE216: no ISO3 for Eurostat country code 'DE'; skipped
+  DE217: no ISO3 for Eurostat country code 'DE'; skipped
+  DE218: no ISO3 for Eurostat country code 'DE'; skipped
+  DE219: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21C: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21D: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21E: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21F: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21G: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21H: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21I: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21J: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21K: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21L: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21M: no ISO3 for Eurostat country code 'DE'; skipped
+  DE21N: no ISO3 for Eurostat country code 'DE'; skipped
+  DE221: no ISO3 for Eurostat country code 'DE'; skipped
+  DE222: no ISO3 for Eurostat country code 'DE'; skipped
+  DE223: no ISO3 for Eurostat country code 'DE'; skipped
+  DE224: no ISO3 for Eurostat country code 'DE'; skipped
+  DE225: no ISO3 for Eurostat country code 'DE'; skipped
+  DE226: no ISO3 for Eurostat country code 'DE'; skipped
+  DE227: no ISO3 for Eurostat country code 'DE'; skipped
+  DE228: no ISO3 for Eurostat country code 'DE'; skipped
+  DE229: no ISO3 for Eurostat country code 'DE'; skipped
+  DE22A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE22B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE22C: no ISO3 for Eurostat country code 'DE'; skipped
+  DE231: no ISO3 for Eurostat country code 'DE'; skipped
+  DE232: no ISO3 for Eurostat country code 'DE'; skipped
+  DE233: no ISO3 for Eurostat country code 'DE'; skipped
+  DE234: no ISO3 for Eurostat country code 'DE'; skipped
+  DE235: no ISO3 for Eurostat country code 'DE'; skipped
+  DE236: no ISO3 for Eurostat country code 'DE'; skipped
+  DE237: no ISO3 for Eurostat country code 'DE'; skipped
+  DE238: no ISO3 for Eurostat country code 'DE'; skipped
+  DE239: no ISO3 for Eurostat country code 'DE'; skipped
+  DE23A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE241: no ISO3 for Eurostat country code 'DE'; skipped
+  DE242: no ISO3 for Eurostat country code 'DE'; skipped
+  DE243: no ISO3 for Eurostat country code 'DE'; skipped
+  DE244: no ISO3 for Eurostat country code 'DE'; skipped
+  DE245: no ISO3 for Eurostat country code 'DE'; skipped
+  DE246: no ISO3 for Eurostat country code 'DE'; skipped
+  DE247: no ISO3 for Eurostat country code 'DE'; skipped
+  DE248: no ISO3 for Eurostat country code 'DE'; skipped
+  DE249: no ISO3 for Eurostat country code 'DE'; skipped
+  DE24A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE24B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE24C: no ISO3 for Eurostat country code 'DE'; skipped
+  DE24D: no ISO3 for Eurostat country code 'DE'; skipped
+  DE251: no ISO3 for Eurostat country code 'DE'; skipped
+  DE252: no ISO3 for Eurostat country code 'DE'; skipped
+  DE253: no ISO3 for Eurostat country code 'DE'; skipped
+  DE254: no ISO3 for Eurostat country code 'DE'; skipped
+  DE255: no ISO3 for Eurostat country code 'DE'; skipped
+  DE256: no ISO3 for Eurostat country code 'DE'; skipped
+  DE257: no ISO3 for Eurostat country code 'DE'; skipped
+  DE258: no ISO3 for Eurostat country code 'DE'; skipped
+  DE259: no ISO3 for Eurostat country code 'DE'; skipped
+  DE25A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE25B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE25C: no ISO3 for Eurostat country code 'DE'; skipped
+  DE261: no ISO3 for Eurostat country code 'DE'; skipped
+  DE262: no ISO3 for Eurostat country code 'DE'; skipped
+  DE263: no ISO3 for Eurostat country code 'DE'; skipped
+  DE264: no ISO3 for Eurostat country code 'DE'; skipped
+  DE265: no ISO3 for Eurostat country code 'DE'; skipped
+  DE266: no ISO3 for Eurostat country code 'DE'; skipped
+  DE267: no ISO3 for Eurostat country code 'DE'; skipped
+  DE268: no ISO3 for Eurostat country code 'DE'; skipped
+  DE269: no ISO3 for Eurostat country code 'DE'; skipped
+  DE26A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE26B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE26C: no ISO3 for Eurostat country code 'DE'; skipped
+  DE271: no ISO3 for Eurostat country code 'DE'; skipped
+  DE272: no ISO3 for Eurostat country code 'DE'; skipped
+  DE273: no ISO3 for Eurostat country code 'DE'; skipped
+  DE274: no ISO3 for Eurostat country code 'DE'; skipped
+  DE275: no ISO3 for Eurostat country code 'DE'; skipped
+  DE276: no ISO3 for Eurostat country code 'DE'; skipped
+  DE277: no ISO3 for Eurostat country code 'DE'; skipped
+  DE278: no ISO3 for Eurostat country code 'DE'; skipped
+  DE279: no ISO3 for Eurostat country code 'DE'; skipped
+  DE27A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE27B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE27C: no ISO3 for Eurostat country code 'DE'; skipped
+  DE27D: no ISO3 for Eurostat country code 'DE'; skipped
+  DE27E: no ISO3 for Eurostat country code 'DE'; skipped
+  DE300: no ISO3 for Eurostat country code 'DE'; skipped
+  DE401: no ISO3 for Eurostat country code 'DE'; skipped
+  DE402: no ISO3 for Eurostat country code 'DE'; skipped
+  DE403: no ISO3 for Eurostat country code 'DE'; skipped
+  DE404: no ISO3 for Eurostat country code 'DE'; skipped
+  DE405: no ISO3 for Eurostat country code 'DE'; skipped
+  DE406: no ISO3 for Eurostat country code 'DE'; skipped
+  DE407: no ISO3 for Eurostat country code 'DE'; skipped
+  DE408: no ISO3 for Eurostat country code 'DE'; skipped
+  DE409: no ISO3 for Eurostat country code 'DE'; skipped
+  DE40A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE40B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE40C: no ISO3 for Eurostat country code 'DE'; skipped
+  DE40D: no ISO3 for Eurostat country code 'DE'; skipped
+  DE40E: no ISO3 for Eurostat country code 'DE'; skipped
+  DE40F: no ISO3 for Eurostat country code 'DE'; skipped
+  DE40G: no ISO3 for Eurostat country code 'DE'; skipped
+  DE40H: no ISO3 for Eurostat country code 'DE'; skipped
+  DE40I: no ISO3 for Eurostat country code 'DE'; skipped
+  DE501: no ISO3 for Eurostat country code 'DE'; skipped
+  DE502: no ISO3 for Eurostat country code 'DE'; skipped
+  DE600: no ISO3 for Eurostat country code 'DE'; skipped
+  DE711: no ISO3 for Eurostat country code 'DE'; skipped
+  DE712: no ISO3 for Eurostat country code 'DE'; skipped
+  DE713: no ISO3 for Eurostat country code 'DE'; skipped
+  DE714: no ISO3 for Eurostat country code 'DE'; skipped
+  DE715: no ISO3 for Eurostat country code 'DE'; skipped
+  DE716: no ISO3 for Eurostat country code 'DE'; skipped
+  DE717: no ISO3 for Eurostat country code 'DE'; skipped
+  DE718: no ISO3 for Eurostat country code 'DE'; skipped
+  DE719: no ISO3 for Eurostat country code 'DE'; skipped
+  DE71A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE71B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE71C: no ISO3 for Eurostat country code 'DE'; skipped
+  DE71D: no ISO3 for Eurostat country code 'DE'; skipped
+  DE71E: no ISO3 for Eurostat country code 'DE'; skipped
+  DE721: no ISO3 for Eurostat country code 'DE'; skipped
+  DE722: no ISO3 for Eurostat country code 'DE'; skipped
+  DE723: no ISO3 for Eurostat country code 'DE'; skipped
+  DE724: no ISO3 for Eurostat country code 'DE'; skipped
+  DE725: no ISO3 for Eurostat country code 'DE'; skipped
+  DE731: no ISO3 for Eurostat country code 'DE'; skipped
+  DE732: no ISO3 for Eurostat country code 'DE'; skipped
+  DE733: no ISO3 for Eurostat country code 'DE'; skipped
+  DE734: no ISO3 for Eurostat country code 'DE'; skipped
+  DE735: no ISO3 for Eurostat country code 'DE'; skipped
+  DE736: no ISO3 for Eurostat country code 'DE'; skipped
+  DE737: no ISO3 for Eurostat country code 'DE'; skipped
+  DE803: no ISO3 for Eurostat country code 'DE'; skipped
+  DE804: no ISO3 for Eurostat country code 'DE'; skipped
+  DE80J: no ISO3 for Eurostat country code 'DE'; skipped
+  DE80K: no ISO3 for Eurostat country code 'DE'; skipped
+  DE80L: no ISO3 for Eurostat country code 'DE'; skipped
+  DE80M: no ISO3 for Eurostat country code 'DE'; skipped
+  DE80N: no ISO3 for Eurostat country code 'DE'; skipped
+  DE80O: no ISO3 for Eurostat country code 'DE'; skipped
+  DE911: no ISO3 for Eurostat country code 'DE'; skipped
+  DE912: no ISO3 for Eurostat country code 'DE'; skipped
+  DE913: no ISO3 for Eurostat country code 'DE'; skipped
+  DE914: no ISO3 for Eurostat country code 'DE'; skipped
+  DE916: no ISO3 for Eurostat country code 'DE'; skipped
+  DE917: no ISO3 for Eurostat country code 'DE'; skipped
+  DE918: no ISO3 for Eurostat country code 'DE'; skipped
+  DE91A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE91B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE91C: no ISO3 for Eurostat country code 'DE'; skipped
+  DE922: no ISO3 for Eurostat country code 'DE'; skipped
+  DE923: no ISO3 for Eurostat country code 'DE'; skipped
+  DE925: no ISO3 for Eurostat country code 'DE'; skipped
+  DE926: no ISO3 for Eurostat country code 'DE'; skipped
+  DE927: no ISO3 for Eurostat country code 'DE'; skipped
+  DE928: no ISO3 for Eurostat country code 'DE'; skipped
+  DE929: no ISO3 for Eurostat country code 'DE'; skipped
+  DE931: no ISO3 for Eurostat country code 'DE'; skipped
+  DE932: no ISO3 for Eurostat country code 'DE'; skipped
+  DE933: no ISO3 for Eurostat country code 'DE'; skipped
+  DE934: no ISO3 for Eurostat country code 'DE'; skipped
+  DE935: no ISO3 for Eurostat country code 'DE'; skipped
+  DE936: no ISO3 for Eurostat country code 'DE'; skipped
+  DE937: no ISO3 for Eurostat country code 'DE'; skipped
+  DE938: no ISO3 for Eurostat country code 'DE'; skipped
+  DE939: no ISO3 for Eurostat country code 'DE'; skipped
+  DE93A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE93B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE941: no ISO3 for Eurostat country code 'DE'; skipped
+  DE942: no ISO3 for Eurostat country code 'DE'; skipped
+  DE943: no ISO3 for Eurostat country code 'DE'; skipped
+  DE944: no ISO3 for Eurostat country code 'DE'; skipped
+  DE945: no ISO3 for Eurostat country code 'DE'; skipped
+  DE946: no ISO3 for Eurostat country code 'DE'; skipped
+  DE947: no ISO3 for Eurostat country code 'DE'; skipped
+  DE948: no ISO3 for Eurostat country code 'DE'; skipped
+  DE949: no ISO3 for Eurostat country code 'DE'; skipped
+  DE94A: no ISO3 for Eurostat country code 'DE'; skipped
+  DE94B: no ISO3 for Eurostat country code 'DE'; skipped
+  DE94C: no ISO3 for Eurostat country code 'DE'; skipped
+  DE94D: no ISO3 for Eurostat country code 'DE'; skipped
+  DE94E: no ISO3 for Eurostat country code 'DE'; skipped
+  DE94F: no ISO3 for Eurostat country code 'DE'; skipped
+  DE94G: no ISO3 for Eurostat country code 'DE'; skipped
+  DE94H: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA11: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA12: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA13: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA14: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA15: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA16: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA17: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA18: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA19: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA1A: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA1B: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA1C: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA1D: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA1E: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA1F: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA22: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA23: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA24: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA26: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA27: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA28: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA29: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA2A: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA2B: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA2C: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA2D: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA31: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA32: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA33: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA34: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA35: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA36: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA37: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA38: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA41: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA42: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA43: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA44: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA45: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA46: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA47: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA51: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA52: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA53: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA54: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA55: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA56: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA57: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA58: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA59: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA5A: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA5B: no ISO3 for Eurostat country code 'DE'; skipped
+  DEA5C: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB11: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB12: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB13: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB14: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB15: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB17: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB18: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB1A: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB1B: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB1C: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB1D: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB21: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB22: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB23: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB24: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB25: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB31: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB32: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB33: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB34: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB35: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB36: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB37: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB38: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB39: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB3A: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB3B: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB3C: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB3D: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB3E: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB3F: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB3G: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB3H: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB3I: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB3J: no ISO3 for Eurostat country code 'DE'; skipped
+  DEB3K: no ISO3 for Eurostat country code 'DE'; skipped
+  DEC01: no ISO3 for Eurostat country code 'DE'; skipped
+  DEC02: no ISO3 for Eurostat country code 'DE'; skipped
+  DEC03: no ISO3 for Eurostat country code 'DE'; skipped
+  DEC04: no ISO3 for Eurostat country code 'DE'; skipped
+  DEC05: no ISO3 for Eurostat country code 'DE'; skipped
+  DEC06: no ISO3 for Eurostat country code 'DE'; skipped
+  DED21: no ISO3 for Eurostat country code 'DE'; skipped
+  DED2C: no ISO3 for Eurostat country code 'DE'; skipped
+  DED2D: no ISO3 for Eurostat country code 'DE'; skipped
+  DED2E: no ISO3 for Eurostat country code 'DE'; skipped
+  DED2F: no ISO3 for Eurostat country code 'DE'; skipped
+  DED41: no ISO3 for Eurostat country code 'DE'; skipped
+  DED42: no ISO3 for Eurostat country code 'DE'; skipped
+  DED43: no ISO3 for Eurostat country code 'DE'; skipped
+  DED44: no ISO3 for Eurostat country code 'DE'; skipped
+  DED45: no ISO3 for Eurostat country code 'DE'; skipped
+  DED51: no ISO3 for Eurostat country code 'DE'; skipped
+  DED52: no ISO3 for Eurostat country code 'DE'; skipped
+  DED53: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE01: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE02: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE03: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE04: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE05: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE06: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE07: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE08: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE09: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE0A: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE0B: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE0C: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE0D: no ISO3 for Eurostat country code 'DE'; skipped
+  DEE0E: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF01: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF02: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF03: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF04: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF05: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF06: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF07: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF08: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF09: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF0A: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF0B: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF0C: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF0D: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF0E: no ISO3 for Eurostat country code 'DE'; skipped
+  DEF0F: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG01: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG02: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG03: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG04: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG05: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG06: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG07: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG09: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0A: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0B: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0C: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0D: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0E: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0F: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0G: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0H: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0I: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0J: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0K: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0L: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0M: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0N: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0P: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0Q: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0R: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0S: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0T: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0U: no ISO3 for Eurostat country code 'DE'; skipped
+  DEG0V: no ISO3 for Eurostat country code 'DE'; skipped
+  DK011: no ISO3 for Eurostat country code 'DK'; skipped
+  DK012: no ISO3 for Eurostat country code 'DK'; skipped
+  DK013: no ISO3 for Eurostat country code 'DK'; skipped
+  DK014: no ISO3 for Eurostat country code 'DK'; skipped
+  DK021: no ISO3 for Eurostat country code 'DK'; skipped
+  DK022: no ISO3 for Eurostat country code 'DK'; skipped
+  DK031: no ISO3 for Eurostat country code 'DK'; skipped
+  DK032: no ISO3 for Eurostat country code 'DK'; skipped
+  DK041: no ISO3 for Eurostat country code 'DK'; skipped
+  DK042: no ISO3 for Eurostat country code 'DK'; skipped
+  DK050: no ISO3 for Eurostat country code 'DK'; skipped
+  EE001: no ISO3 for Eurostat country code 'EE'; skipped
+  EE004: no ISO3 for Eurostat country code 'EE'; skipped
+  EE006: no ISO3 for Eurostat country code 'EE'; skipped
+  EE007: no ISO3 for Eurostat country code 'EE'; skipped
+  EE008: no ISO3 for Eurostat country code 'EE'; skipped
+  EE009: no ISO3 for Eurostat country code 'EE'; skipped
+  EE00A: no ISO3 for Eurostat country code 'EE'; skipped
+  ES111: no ISO3 for Eurostat country code 'ES'; skipped
+  ES112: no ISO3 for Eurostat country code 'ES'; skipped
+  ES113: no ISO3 for Eurostat country code 'ES'; skipped
+  ES114: no ISO3 for Eurostat country code 'ES'; skipped
+  ES120: no ISO3 for Eurostat country code 'ES'; skipped
+  ES130: no ISO3 for Eurostat country code 'ES'; skipped
+  ES211: no ISO3 for Eurostat country code 'ES'; skipped
+  ES212: no ISO3 for Eurostat country code 'ES'; skipped
+  ES213: no ISO3 for Eurostat country code 'ES'; skipped
+  ES220: no ISO3 for Eurostat country code 'ES'; skipped
+  ES230: no ISO3 for Eurostat country code 'ES'; skipped
+  ES241: no ISO3 for Eurostat country code 'ES'; skipped
+  ES242: no ISO3 for Eurostat country code 'ES'; skipped
+  ES243: no ISO3 for Eurostat country code 'ES'; skipped
+  ES300: no ISO3 for Eurostat country code 'ES'; skipped
+  ES411: no ISO3 for Eurostat country code 'ES'; skipped
+  ES412: no ISO3 for Eurostat country code 'ES'; skipped
+  ES413: no ISO3 for Eurostat country code 'ES'; skipped
+  ES414: no ISO3 for Eurostat country code 'ES'; skipped
+  ES415: no ISO3 for Eurostat country code 'ES'; skipped
+  ES416: no ISO3 for Eurostat country code 'ES'; skipped
+  ES417: no ISO3 for Eurostat country code 'ES'; skipped
+  ES418: no ISO3 for Eurostat country code 'ES'; skipped
+  ES419: no ISO3 for Eurostat country code 'ES'; skipped
+  ES421: no ISO3 for Eurostat country code 'ES'; skipped
+  ES422: no ISO3 for Eurostat country code 'ES'; skipped
+  ES423: no ISO3 for Eurostat country code 'ES'; skipped
+  ES424: no ISO3 for Eurostat country code 'ES'; skipped
+  ES425: no ISO3 for Eurostat country code 'ES'; skipped
+  ES431: no ISO3 for Eurostat country code 'ES'; skipped
+  ES432: no ISO3 for Eurostat country code 'ES'; skipped
+  ES511: no ISO3 for Eurostat country code 'ES'; skipped
+  ES512: no ISO3 for Eurostat country code 'ES'; skipped
+  ES513: no ISO3 for Eurostat country code 'ES'; skipped
+  ES514: no ISO3 for Eurostat country code 'ES'; skipped
+  ES521: no ISO3 for Eurostat country code 'ES'; skipped
+  ES522: no ISO3 for Eurostat country code 'ES'; skipped
+  ES523: no ISO3 for Eurostat country code 'ES'; skipped
+  ES531: no ISO3 for Eurostat country code 'ES'; skipped
+  ES532: no ISO3 for Eurostat country code 'ES'; skipped
+  ES533: no ISO3 for Eurostat country code 'ES'; skipped
+  ES611: no ISO3 for Eurostat country code 'ES'; skipped
+  ES612: no ISO3 for Eurostat country code 'ES'; skipped
+  ES613: no ISO3 for Eurostat country code 'ES'; skipped
+  ES614: no ISO3 for Eurostat country code 'ES'; skipped
+  ES615: no ISO3 for Eurostat country code 'ES'; skipped
+  ES616: no ISO3 for Eurostat country code 'ES'; skipped
+  ES617: no ISO3 for Eurostat country code 'ES'; skipped
+  ES618: no ISO3 for Eurostat country code 'ES'; skipped
+  ES620: no ISO3 for Eurostat country code 'ES'; skipped
+  ES630: no ISO3 for Eurostat country code 'ES'; skipped
+  ES640: no ISO3 for Eurostat country code 'ES'; skipped
+  ES703: no ISO3 for Eurostat country code 'ES'; skipped
+  ES704: no ISO3 for Eurostat country code 'ES'; skipped
+  ES705: no ISO3 for Eurostat country code 'ES'; skipped
+  ES706: no ISO3 for Eurostat country code 'ES'; skipped
+  ES707: no ISO3 for Eurostat country code 'ES'; skipped
+  ES708: no ISO3 for Eurostat country code 'ES'; skipped
+  ES709: no ISO3 for Eurostat country code 'ES'; skipped
+  FI193: no ISO3 for Eurostat country code 'FI'; skipped
+  FI194: no ISO3 for Eurostat country code 'FI'; skipped
+  FI195: no ISO3 for Eurostat country code 'FI'; skipped
+  FI196: no ISO3 for Eurostat country code 'FI'; skipped
+  FI197: no ISO3 for Eurostat country code 'FI'; skipped
+  FI198: no ISO3 for Eurostat country code 'FI'; skipped
+  FI199: no ISO3 for Eurostat country code 'FI'; skipped
+  FI19A: no ISO3 for Eurostat country code 'FI'; skipped
+  FI19B: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1B1: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1C1: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1C2: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1C3: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1C4: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1C5: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1C6: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1C7: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1D1: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1D2: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1D3: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1D5: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1D7: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1D8: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1D9: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1DA: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1DB: no ISO3 for Eurostat country code 'FI'; skipped
+  FI1DC: no ISO3 for Eurostat country code 'FI'; skipped
+  FI200: no ISO3 for Eurostat country code 'FI'; skipped
+  FR101: no ISO3 for Eurostat country code 'FR'; skipped
+  FR102: no ISO3 for Eurostat country code 'FR'; skipped
+  FR103: no ISO3 for Eurostat country code 'FR'; skipped
+  FR104: no ISO3 for Eurostat country code 'FR'; skipped
+  FR105: no ISO3 for Eurostat country code 'FR'; skipped
+  FR106: no ISO3 for Eurostat country code 'FR'; skipped
+  FR107: no ISO3 for Eurostat country code 'FR'; skipped
+  FR108: no ISO3 for Eurostat country code 'FR'; skipped
+  FRB01: no ISO3 for Eurostat country code 'FR'; skipped
+  FRB02: no ISO3 for Eurostat country code 'FR'; skipped
+  FRB03: no ISO3 for Eurostat country code 'FR'; skipped
+  FRB04: no ISO3 for Eurostat country code 'FR'; skipped
+  FRB05: no ISO3 for Eurostat country code 'FR'; skipped
+  FRB06: no ISO3 for Eurostat country code 'FR'; skipped
+  FRC11: no ISO3 for Eurostat country code 'FR'; skipped
+  FRC12: no ISO3 for Eurostat country code 'FR'; skipped
+  FRC13: no ISO3 for Eurostat country code 'FR'; skipped
+  FRC14: no ISO3 for Eurostat country code 'FR'; skipped
+  FRC21: no ISO3 for Eurostat country code 'FR'; skipped
+  FRC22: no ISO3 for Eurostat country code 'FR'; skipped
+  FRC23: no ISO3 for Eurostat country code 'FR'; skipped
+  FRC24: no ISO3 for Eurostat country code 'FR'; skipped
+  FRD11: no ISO3 for Eurostat country code 'FR'; skipped
+  FRD12: no ISO3 for Eurostat country code 'FR'; skipped
+  FRD13: no ISO3 for Eurostat country code 'FR'; skipped
+  FRD21: no ISO3 for Eurostat country code 'FR'; skipped
+  FRD22: no ISO3 for Eurostat country code 'FR'; skipped
+  FRE11: no ISO3 for Eurostat country code 'FR'; skipped
+  FRE12: no ISO3 for Eurostat country code 'FR'; skipped
+  FRE21: no ISO3 for Eurostat country code 'FR'; skipped
+  FRE22: no ISO3 for Eurostat country code 'FR'; skipped
+  FRE23: no ISO3 for Eurostat country code 'FR'; skipped
+  FRF11: no ISO3 for Eurostat country code 'FR'; skipped
+  FRF12: no ISO3 for Eurostat country code 'FR'; skipped
+  FRF21: no ISO3 for Eurostat country code 'FR'; skipped
+  FRF22: no ISO3 for Eurostat country code 'FR'; skipped
+  FRF23: no ISO3 for Eurostat country code 'FR'; skipped
+  FRF24: no ISO3 for Eurostat country code 'FR'; skipped
+  FRF31: no ISO3 for Eurostat country code 'FR'; skipped
+  FRF32: no ISO3 for Eurostat country code 'FR'; skipped
+  FRF33: no ISO3 for Eurostat country code 'FR'; skipped
+  FRF34: no ISO3 for Eurostat country code 'FR'; skipped
+  FRG01: no ISO3 for Eurostat country code 'FR'; skipped
+  FRG02: no ISO3 for Eurostat country code 'FR'; skipped
+  FRG03: no ISO3 for Eurostat country code 'FR'; skipped
+  FRG04: no ISO3 for Eurostat country code 'FR'; skipped
+  FRG05: no ISO3 for Eurostat country code 'FR'; skipped
+  FRH01: no ISO3 for Eurostat country code 'FR'; skipped
+  FRH02: no ISO3 for Eurostat country code 'FR'; skipped
+  FRH03: no ISO3 for Eurostat country code 'FR'; skipped
+  FRH04: no ISO3 for Eurostat country code 'FR'; skipped
+  FRI11: no ISO3 for Eurostat country code 'FR'; skipped
+  FRI12: no ISO3 for Eurostat country code 'FR'; skipped
+  FRI13: no ISO3 for Eurostat country code 'FR'; skipped
+  FRI14: no ISO3 for Eurostat country code 'FR'; skipped
+  FRI15: no ISO3 for Eurostat country code 'FR'; skipped
+  FRI21: no ISO3 for Eurostat country code 'FR'; skipped
+  FRI22: no ISO3 for Eurostat country code 'FR'; skipped
+  FRI23: no ISO3 for Eurostat country code 'FR'; skipped
+  FRI31: no ISO3 for Eurostat country code 'FR'; skipped
+  FRI32: no ISO3 for Eurostat country code 'FR'; skipped
+  FRI33: no ISO3 for Eurostat country code 'FR'; skipped
+  FRI34: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ11: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ12: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ13: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ14: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ15: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ21: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ22: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ23: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ24: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ25: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ26: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ27: no ISO3 for Eurostat country code 'FR'; skipped
+  FRJ28: no ISO3 for Eurostat country code 'FR'; skipped
+  FRK11: no ISO3 for Eurostat country code 'FR'; skipped
+  FRK12: no ISO3 for Eurostat country code 'FR'; skipped
+  FRK13: no ISO3 for Eurostat country code 'FR'; skipped
+  FRK14: no ISO3 for Eurostat country code 'FR'; skipped
+  FRK21: no ISO3 for Eurostat country code 'FR'; skipped
+  FRK22: no ISO3 for Eurostat country code 'FR'; skipped
+  FRK23: no ISO3 for Eurostat country code 'FR'; skipped
+  FRK24: no ISO3 for Eurostat country code 'FR'; skipped
+  FRK25: no ISO3 for Eurostat country code 'FR'; skipped
+  FRK26: no ISO3 for Eurostat country code 'FR'; skipped
+  FRK27: no ISO3 for Eurostat country code 'FR'; skipped
+  FRK28: no ISO3 for Eurostat country code 'FR'; skipped
+  FRL01: no ISO3 for Eurostat country code 'FR'; skipped
+  FRL02: no ISO3 for Eurostat country code 'FR'; skipped
+  FRL03: no ISO3 for Eurostat country code 'FR'; skipped
+  FRL04: no ISO3 for Eurostat country code 'FR'; skipped
+  FRL05: no ISO3 for Eurostat country code 'FR'; skipped
+  FRL06: no ISO3 for Eurostat country code 'FR'; skipped
+  FRM01: no ISO3 for Eurostat country code 'FR'; skipped
+  FRM02: no ISO3 for Eurostat country code 'FR'; skipped
+  FRXXX: no ISO3 for Eurostat country code 'FR'; skipped
+  FRY10: no ISO3 for Eurostat country code 'FR'; skipped
+  FRY20: no ISO3 for Eurostat country code 'FR'; skipped
+  FRY30: no ISO3 for Eurostat country code 'FR'; skipped
+  FRY40: no ISO3 for Eurostat country code 'FR'; skipped
+  FRY50: no ISO3 for Eurostat country code 'FR'; skipped
+  HR021: no ISO3 for Eurostat country code 'HR'; skipped
+  HR022: no ISO3 for Eurostat country code 'HR'; skipped
+  HR023: no ISO3 for Eurostat country code 'HR'; skipped
+  HR024: no ISO3 for Eurostat country code 'HR'; skipped
+  HR025: no ISO3 for Eurostat country code 'HR'; skipped
+  HR026: no ISO3 for Eurostat country code 'HR'; skipped
+  HR027: no ISO3 for Eurostat country code 'HR'; skipped
+  HR028: no ISO3 for Eurostat country code 'HR'; skipped
+  HR031: no ISO3 for Eurostat country code 'HR'; skipped
+  HR032: no ISO3 for Eurostat country code 'HR'; skipped
+  HR033: no ISO3 for Eurostat country code 'HR'; skipped
+  HR034: no ISO3 for Eurostat country code 'HR'; skipped
+  HR035: no ISO3 for Eurostat country code 'HR'; skipped
+  HR036: no ISO3 for Eurostat country code 'HR'; skipped
+  HR037: no ISO3 for Eurostat country code 'HR'; skipped
+  HR041: no ISO3 for Eurostat country code 'HR'; skipped
+  HR042: no ISO3 for Eurostat country code 'HR'; skipped
+  HR043: no ISO3 for Eurostat country code 'HR'; skipped
+  HR044: no ISO3 for Eurostat country code 'HR'; skipped
+  HR045: no ISO3 for Eurostat country code 'HR'; skipped
+  HR046: no ISO3 for Eurostat country code 'HR'; skipped
+  HR047: no ISO3 for Eurostat country code 'HR'; skipped
+  HR048: no ISO3 for Eurostat country code 'HR'; skipped
+  HR049: no ISO3 for Eurostat country code 'HR'; skipped
+  HR04A: no ISO3 for Eurostat country code 'HR'; skipped
+  HR04B: no ISO3 for Eurostat country code 'HR'; skipped
+  HR04C: no ISO3 for Eurostat country code 'HR'; skipped
+  HR04D: no ISO3 for Eurostat country code 'HR'; skipped
+  HR04E: no ISO3 for Eurostat country code 'HR'; skipped
+  HR050: no ISO3 for Eurostat country code 'HR'; skipped
+  HR061: no ISO3 for Eurostat country code 'HR'; skipped
+  HR062: no ISO3 for Eurostat country code 'HR'; skipped
+  HR063: no ISO3 for Eurostat country code 'HR'; skipped
+  HR064: no ISO3 for Eurostat country code 'HR'; skipped
+  HR065: no ISO3 for Eurostat country code 'HR'; skipped
+  HU110: no ISO3 for Eurostat country code 'HU'; skipped
+  HU120: no ISO3 for Eurostat country code 'HU'; skipped
+  HU211: no ISO3 for Eurostat country code 'HU'; skipped
+  HU212: no ISO3 for Eurostat country code 'HU'; skipped
+  HU213: no ISO3 for Eurostat country code 'HU'; skipped
+  HU221: no ISO3 for Eurostat country code 'HU'; skipped
+  HU222: no ISO3 for Eurostat country code 'HU'; skipped
+  HU223: no ISO3 for Eurostat country code 'HU'; skipped
+  HU231: no ISO3 for Eurostat country code 'HU'; skipped
+  HU232: no ISO3 for Eurostat country code 'HU'; skipped
+  HU233: no ISO3 for Eurostat country code 'HU'; skipped
+  HU311: no ISO3 for Eurostat country code 'HU'; skipped
+  HU312: no ISO3 for Eurostat country code 'HU'; skipped
+  HU313: no ISO3 for Eurostat country code 'HU'; skipped
+  HU321: no ISO3 for Eurostat country code 'HU'; skipped
+  HU322: no ISO3 for Eurostat country code 'HU'; skipped
+  HU323: no ISO3 for Eurostat country code 'HU'; skipped
+  HU331: no ISO3 for Eurostat country code 'HU'; skipped
+  HU332: no ISO3 for Eurostat country code 'HU'; skipped
+  HU333: no ISO3 for Eurostat country code 'HU'; skipped
+  HUXXX: no ISO3 for Eurostat country code 'HU'; skipped
+  IE041: no ISO3 for Eurostat country code 'IE'; skipped
+  IE042: no ISO3 for Eurostat country code 'IE'; skipped
+  IE051: no ISO3 for Eurostat country code 'IE'; skipped
+  IE052: no ISO3 for Eurostat country code 'IE'; skipped
+  IE053: no ISO3 for Eurostat country code 'IE'; skipped
+  IE061: no ISO3 for Eurostat country code 'IE'; skipped
+  IE062: no ISO3 for Eurostat country code 'IE'; skipped
+  IE063: no ISO3 for Eurostat country code 'IE'; skipped
+  IS001: no ISO3 for Eurostat country code 'IS'; skipped
+  IS002: no ISO3 for Eurostat country code 'IS'; skipped
+  ITC11: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC12: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC13: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC14: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC15: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC16: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC17: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC18: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC20: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC31: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC32: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC33: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC34: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC41: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC42: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC43: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC44: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC46: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC47: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC48: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC49: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC4A: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC4B: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC4C: no ISO3 for Eurostat country code 'IT'; skipped
+  ITC4D: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF11: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF12: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF13: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF14: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF21: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF22: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF31: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF32: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF33: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF34: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF35: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF43: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF44: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF45: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF46: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF47: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF48: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF51: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF52: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF61: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF62: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF63: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF64: no ISO3 for Eurostat country code 'IT'; skipped
+  ITF65: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG11: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG12: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG13: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG14: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG15: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG16: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG17: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG18: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG19: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG25: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG26: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG27: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG28: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG29: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG2A: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG2B: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG2C: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG2D: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG2E: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG2F: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG2G: no ISO3 for Eurostat country code 'IT'; skipped
+  ITG2H: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH10: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH20: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH31: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH32: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH33: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH34: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH35: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH36: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH37: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH41: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH42: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH43: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH44: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH51: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH52: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH53: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH54: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH55: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH56: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH57: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH58: no ISO3 for Eurostat country code 'IT'; skipped
+  ITH59: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI11: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI12: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI13: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI14: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI15: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI16: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI17: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI18: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI19: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI1A: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI21: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI22: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI31: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI32: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI33: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI34: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI35: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI41: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI42: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI43: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI44: no ISO3 for Eurostat country code 'IT'; skipped
+  ITI45: no ISO3 for Eurostat country code 'IT'; skipped
+  LI000: no ISO3 for Eurostat country code 'LI'; skipped
+  LT011: no ISO3 for Eurostat country code 'LT'; skipped
+  LT021: no ISO3 for Eurostat country code 'LT'; skipped
+  LT022: no ISO3 for Eurostat country code 'LT'; skipped
+  LT023: no ISO3 for Eurostat country code 'LT'; skipped
+  LT024: no ISO3 for Eurostat country code 'LT'; skipped
+  LT025: no ISO3 for Eurostat country code 'LT'; skipped
+  LT026: no ISO3 for Eurostat country code 'LT'; skipped
+  LT027: no ISO3 for Eurostat country code 'LT'; skipped
+  LT028: no ISO3 for Eurostat country code 'LT'; skipped
+  LT029: no ISO3 for Eurostat country code 'LT'; skipped
+  LU000: no ISO3 for Eurostat country code 'LU'; skipped
+  LV003: no ISO3 for Eurostat country code 'LV'; skipped
+  LV005: no ISO3 for Eurostat country code 'LV'; skipped
+  LV006: no ISO3 for Eurostat country code 'LV'; skipped
+  LV007: no ISO3 for Eurostat country code 'LV'; skipped
+  LV008: no ISO3 for Eurostat country code 'LV'; skipped
+  LV009: no ISO3 for Eurostat country code 'LV'; skipped
+  LV00A: no ISO3 for Eurostat country code 'LV'; skipped
+  LV00B: no ISO3 for Eurostat country code 'LV'; skipped
+  LV00C: no ISO3 for Eurostat country code 'LV'; skipped
+  ME000: no ISO3 for Eurostat country code 'ME'; skipped
+  MK001: no ISO3 for Eurostat country code 'MK'; skipped
+  MK002: no ISO3 for Eurostat country code 'MK'; skipped
+  MK003: no ISO3 for Eurostat country code 'MK'; skipped
+  MK004: no ISO3 for Eurostat country code 'MK'; skipped
+  MK005: no ISO3 for Eurostat country code 'MK'; skipped
+  MK006: no ISO3 for Eurostat country code 'MK'; skipped
+  MK007: no ISO3 for Eurostat country code 'MK'; skipped
+  MK008: no ISO3 for Eurostat country code 'MK'; skipped
+  MKXXX: no ISO3 for Eurostat country code 'MK'; skipped
+  MT001: no ISO3 for Eurostat country code 'MT'; skipped
+  MT002: no ISO3 for Eurostat country code 'MT'; skipped
+  NL111: no ISO3 for Eurostat country code 'NL'; skipped
+  NL112: no ISO3 for Eurostat country code 'NL'; skipped
+  NL113: no ISO3 for Eurostat country code 'NL'; skipped
+  NL114: no ISO3 for Eurostat country code 'NL'; skipped
+  NL115: no ISO3 for Eurostat country code 'NL'; skipped
+  NL124: no ISO3 for Eurostat country code 'NL'; skipped
+  NL125: no ISO3 for Eurostat country code 'NL'; skipped
+  NL126: no ISO3 for Eurostat country code 'NL'; skipped
+  NL127: no ISO3 for Eurostat country code 'NL'; skipped
+  NL128: no ISO3 for Eurostat country code 'NL'; skipped
+  NL131: no ISO3 for Eurostat country code 'NL'; skipped
+  NL132: no ISO3 for Eurostat country code 'NL'; skipped
+  NL133: no ISO3 for Eurostat country code 'NL'; skipped
+  NL211: no ISO3 for Eurostat country code 'NL'; skipped
+  NL212: no ISO3 for Eurostat country code 'NL'; skipped
+  NL213: no ISO3 for Eurostat country code 'NL'; skipped
+  NL221: no ISO3 for Eurostat country code 'NL'; skipped
+  NL224: no ISO3 for Eurostat country code 'NL'; skipped
+  NL225: no ISO3 for Eurostat country code 'NL'; skipped
+  NL226: no ISO3 for Eurostat country code 'NL'; skipped
+  NL230: no ISO3 for Eurostat country code 'NL'; skipped
+  NL310: no ISO3 for Eurostat country code 'NL'; skipped
+  NL321: no ISO3 for Eurostat country code 'NL'; skipped
+  NL323: no ISO3 for Eurostat country code 'NL'; skipped
+  NL324: no ISO3 for Eurostat country code 'NL'; skipped
+  NL325: no ISO3 for Eurostat country code 'NL'; skipped
+  NL327: no ISO3 for Eurostat country code 'NL'; skipped
+  NL328: no ISO3 for Eurostat country code 'NL'; skipped
+  NL329: no ISO3 for Eurostat country code 'NL'; skipped
+  NL32A: no ISO3 for Eurostat country code 'NL'; skipped
+  NL32B: no ISO3 for Eurostat country code 'NL'; skipped
+  NL332: no ISO3 for Eurostat country code 'NL'; skipped
+  NL333: no ISO3 for Eurostat country code 'NL'; skipped
+  NL337: no ISO3 for Eurostat country code 'NL'; skipped
+  NL33A: no ISO3 for Eurostat country code 'NL'; skipped
+  NL33B: no ISO3 for Eurostat country code 'NL'; skipped
+  NL33C: no ISO3 for Eurostat country code 'NL'; skipped
+  NL341: no ISO3 for Eurostat country code 'NL'; skipped
+  NL342: no ISO3 for Eurostat country code 'NL'; skipped
+  NL350: no ISO3 for Eurostat country code 'NL'; skipped
+  NL361: no ISO3 for Eurostat country code 'NL'; skipped
+  NL362: no ISO3 for Eurostat country code 'NL'; skipped
+  NL363: no ISO3 for Eurostat country code 'NL'; skipped
+  NL364: no ISO3 for Eurostat country code 'NL'; skipped
+  NL365: no ISO3 for Eurostat country code 'NL'; skipped
+  NL366: no ISO3 for Eurostat country code 'NL'; skipped
+  NL411: no ISO3 for Eurostat country code 'NL'; skipped
+  NL412: no ISO3 for Eurostat country code 'NL'; skipped
+  NL413: no ISO3 for Eurostat country code 'NL'; skipped
+  NL414: no ISO3 for Eurostat country code 'NL'; skipped
+  NL415: no ISO3 for Eurostat country code 'NL'; skipped
+  NL416: no ISO3 for Eurostat country code 'NL'; skipped
+  NL421: no ISO3 for Eurostat country code 'NL'; skipped
+  NL422: no ISO3 for Eurostat country code 'NL'; skipped
+  NL423: no ISO3 for Eurostat country code 'NL'; skipped
+  NO011: no ISO3 for Eurostat country code 'NO'; skipped
+  NO012: no ISO3 for Eurostat country code 'NO'; skipped
+  NO020: no ISO3 for Eurostat country code 'NO'; skipped
+  NO021: no ISO3 for Eurostat country code 'NO'; skipped
+  NO022: no ISO3 for Eurostat country code 'NO'; skipped
+  NO031: no ISO3 for Eurostat country code 'NO'; skipped
+  NO032: no ISO3 for Eurostat country code 'NO'; skipped
+  NO033: no ISO3 for Eurostat country code 'NO'; skipped
+  NO034: no ISO3 for Eurostat country code 'NO'; skipped
+  NO041: no ISO3 for Eurostat country code 'NO'; skipped
+  NO042: no ISO3 for Eurostat country code 'NO'; skipped
+  NO043: no ISO3 for Eurostat country code 'NO'; skipped
+  NO051: no ISO3 for Eurostat country code 'NO'; skipped
+  NO052: no ISO3 for Eurostat country code 'NO'; skipped
+  NO053: no ISO3 for Eurostat country code 'NO'; skipped
+  NO060: no ISO3 for Eurostat country code 'NO'; skipped
+  NO061: no ISO3 for Eurostat country code 'NO'; skipped
+  NO062: no ISO3 for Eurostat country code 'NO'; skipped
+  NO071: no ISO3 for Eurostat country code 'NO'; skipped
+  NO072: no ISO3 for Eurostat country code 'NO'; skipped
+  NO073: no ISO3 for Eurostat country code 'NO'; skipped
+  NO074: no ISO3 for Eurostat country code 'NO'; skipped
+  NO081: no ISO3 for Eurostat country code 'NO'; skipped
+  NO082: no ISO3 for Eurostat country code 'NO'; skipped
+  NO083: no ISO3 for Eurostat country code 'NO'; skipped
+  NO084: no ISO3 for Eurostat country code 'NO'; skipped
+  NO085: no ISO3 for Eurostat country code 'NO'; skipped
+  NO091: no ISO3 for Eurostat country code 'NO'; skipped
+  NO092: no ISO3 for Eurostat country code 'NO'; skipped
+  NO093: no ISO3 for Eurostat country code 'NO'; skipped
+  NO094: no ISO3 for Eurostat country code 'NO'; skipped
+  NO0A1: no ISO3 for Eurostat country code 'NO'; skipped
+  NO0A2: no ISO3 for Eurostat country code 'NO'; skipped
+  NO0A3: no ISO3 for Eurostat country code 'NO'; skipped
+  NO0B1: no ISO3 for Eurostat country code 'NO'; skipped
+  NO0B2: no ISO3 for Eurostat country code 'NO'; skipped
+  PL213: no ISO3 for Eurostat country code 'PL'; skipped
+  PL214: no ISO3 for Eurostat country code 'PL'; skipped
+  PL217: no ISO3 for Eurostat country code 'PL'; skipped
+  PL218: no ISO3 for Eurostat country code 'PL'; skipped
+  PL219: no ISO3 for Eurostat country code 'PL'; skipped
+  PL21A: no ISO3 for Eurostat country code 'PL'; skipped
+  PL224: no ISO3 for Eurostat country code 'PL'; skipped
+  PL225: no ISO3 for Eurostat country code 'PL'; skipped
+  PL227: no ISO3 for Eurostat country code 'PL'; skipped
+  PL228: no ISO3 for Eurostat country code 'PL'; skipped
+  PL229: no ISO3 for Eurostat country code 'PL'; skipped
+  PL22A: no ISO3 for Eurostat country code 'PL'; skipped
+  PL22B: no ISO3 for Eurostat country code 'PL'; skipped
+  PL22C: no ISO3 for Eurostat country code 'PL'; skipped
+  PL411: no ISO3 for Eurostat country code 'PL'; skipped
+  PL414: no ISO3 for Eurostat country code 'PL'; skipped
+  PL415: no ISO3 for Eurostat country code 'PL'; skipped
+  PL416: no ISO3 for Eurostat country code 'PL'; skipped
+  PL417: no ISO3 for Eurostat country code 'PL'; skipped
+  PL418: no ISO3 for Eurostat country code 'PL'; skipped
+  PL424: no ISO3 for Eurostat country code 'PL'; skipped
+  PL426: no ISO3 for Eurostat country code 'PL'; skipped
+  PL427: no ISO3 for Eurostat country code 'PL'; skipped
+  PL428: no ISO3 for Eurostat country code 'PL'; skipped
+  PL431: no ISO3 for Eurostat country code 'PL'; skipped
+  PL432: no ISO3 for Eurostat country code 'PL'; skipped
+  PL514: no ISO3 for Eurostat country code 'PL'; skipped
+  PL515: no ISO3 for Eurostat country code 'PL'; skipped
+  PL516: no ISO3 for Eurostat country code 'PL'; skipped
+  PL517: no ISO3 for Eurostat country code 'PL'; skipped
+  PL518: no ISO3 for Eurostat country code 'PL'; skipped
+  PL523: no ISO3 for Eurostat country code 'PL'; skipped
+  PL524: no ISO3 for Eurostat country code 'PL'; skipped
+  PL613: no ISO3 for Eurostat country code 'PL'; skipped
+  PL616: no ISO3 for Eurostat country code 'PL'; skipped
+  PL617: no ISO3 for Eurostat country code 'PL'; skipped
+  PL618: no ISO3 for Eurostat country code 'PL'; skipped
+  PL619: no ISO3 for Eurostat country code 'PL'; skipped
+  PL621: no ISO3 for Eurostat country code 'PL'; skipped
+  PL622: no ISO3 for Eurostat country code 'PL'; skipped
+  PL623: no ISO3 for Eurostat country code 'PL'; skipped
+  PL633: no ISO3 for Eurostat country code 'PL'; skipped
+  PL634: no ISO3 for Eurostat country code 'PL'; skipped
+  PL636: no ISO3 for Eurostat country code 'PL'; skipped
+  PL637: no ISO3 for Eurostat country code 'PL'; skipped
+  PL638: no ISO3 for Eurostat country code 'PL'; skipped
+  PL711: no ISO3 for Eurostat country code 'PL'; skipped
+  PL712: no ISO3 for Eurostat country code 'PL'; skipped
+  PL713: no ISO3 for Eurostat country code 'PL'; skipped
+  PL714: no ISO3 for Eurostat country code 'PL'; skipped
+  PL715: no ISO3 for Eurostat country code 'PL'; skipped
+  PL721: no ISO3 for Eurostat country code 'PL'; skipped
+  PL722: no ISO3 for Eurostat country code 'PL'; skipped
+  PL811: no ISO3 for Eurostat country code 'PL'; skipped
+  PL812: no ISO3 for Eurostat country code 'PL'; skipped
+  PL814: no ISO3 for Eurostat country code 'PL'; skipped
+  PL815: no ISO3 for Eurostat country code 'PL'; skipped
+  PL821: no ISO3 for Eurostat country code 'PL'; skipped
+  PL822: no ISO3 for Eurostat country code 'PL'; skipped
+  PL823: no ISO3 for Eurostat country code 'PL'; skipped
+  PL824: no ISO3 for Eurostat country code 'PL'; skipped
+  PL841: no ISO3 for Eurostat country code 'PL'; skipped
+  PL842: no ISO3 for Eurostat country code 'PL'; skipped
+  PL843: no ISO3 for Eurostat country code 'PL'; skipped
+  PL911: no ISO3 for Eurostat country code 'PL'; skipped
+  PL912: no ISO3 for Eurostat country code 'PL'; skipped
+  PL913: no ISO3 for Eurostat country code 'PL'; skipped
+  PL921: no ISO3 for Eurostat country code 'PL'; skipped
+  PL922: no ISO3 for Eurostat country code 'PL'; skipped
+  PL923: no ISO3 for Eurostat country code 'PL'; skipped
+  PL924: no ISO3 for Eurostat country code 'PL'; skipped
+  PL925: no ISO3 for Eurostat country code 'PL'; skipped
+  PL926: no ISO3 for Eurostat country code 'PL'; skipped
+  PT111: no ISO3 for Eurostat country code 'PT'; skipped
+  PT112: no ISO3 for Eurostat country code 'PT'; skipped
+  PT119: no ISO3 for Eurostat country code 'PT'; skipped
+  PT11A: no ISO3 for Eurostat country code 'PT'; skipped
+  PT11B: no ISO3 for Eurostat country code 'PT'; skipped
+  PT11C: no ISO3 for Eurostat country code 'PT'; skipped
+  PT11D: no ISO3 for Eurostat country code 'PT'; skipped
+  PT11E: no ISO3 for Eurostat country code 'PT'; skipped
+  PT150: no ISO3 for Eurostat country code 'PT'; skipped
+  PT16B: no ISO3 for Eurostat country code 'PT'; skipped
+  PT16D: no ISO3 for Eurostat country code 'PT'; skipped
+  PT16E: no ISO3 for Eurostat country code 'PT'; skipped
+  PT16F: no ISO3 for Eurostat country code 'PT'; skipped
+  PT16G: no ISO3 for Eurostat country code 'PT'; skipped
+  PT16H: no ISO3 for Eurostat country code 'PT'; skipped
+  PT16I: no ISO3 for Eurostat country code 'PT'; skipped
+  PT16J: no ISO3 for Eurostat country code 'PT'; skipped
+  PT170: no ISO3 for Eurostat country code 'PT'; skipped
+  PT181: no ISO3 for Eurostat country code 'PT'; skipped
+  PT184: no ISO3 for Eurostat country code 'PT'; skipped
+  PT185: no ISO3 for Eurostat country code 'PT'; skipped
+  PT186: no ISO3 for Eurostat country code 'PT'; skipped
+  PT187: no ISO3 for Eurostat country code 'PT'; skipped
+  PT191: no ISO3 for Eurostat country code 'PT'; skipped
+  PT192: no ISO3 for Eurostat country code 'PT'; skipped
+  PT193: no ISO3 for Eurostat country code 'PT'; skipped
+  PT194: no ISO3 for Eurostat country code 'PT'; skipped
+  PT195: no ISO3 for Eurostat country code 'PT'; skipped
+  PT196: no ISO3 for Eurostat country code 'PT'; skipped
+  PT1A0: no ISO3 for Eurostat country code 'PT'; skipped
+  PT1B0: no ISO3 for Eurostat country code 'PT'; skipped
+  PT1C1: no ISO3 for Eurostat country code 'PT'; skipped
+  PT1C2: no ISO3 for Eurostat country code 'PT'; skipped
+  PT1C3: no ISO3 for Eurostat country code 'PT'; skipped
+  PT1C4: no ISO3 for Eurostat country code 'PT'; skipped
+  PT1D1: no ISO3 for Eurostat country code 'PT'; skipped
+  PT1D2: no ISO3 for Eurostat country code 'PT'; skipped
+  PT1D3: no ISO3 for Eurostat country code 'PT'; skipped
+  PT200: no ISO3 for Eurostat country code 'PT'; skipped
+  PT300: no ISO3 for Eurostat country code 'PT'; skipped
+  RO111: no ISO3 for Eurostat country code 'RO'; skipped
+  RO112: no ISO3 for Eurostat country code 'RO'; skipped
+  RO113: no ISO3 for Eurostat country code 'RO'; skipped
+  RO114: no ISO3 for Eurostat country code 'RO'; skipped
+  RO115: no ISO3 for Eurostat country code 'RO'; skipped
+  RO116: no ISO3 for Eurostat country code 'RO'; skipped
+  RO121: no ISO3 for Eurostat country code 'RO'; skipped
+  RO122: no ISO3 for Eurostat country code 'RO'; skipped
+  RO123: no ISO3 for Eurostat country code 'RO'; skipped
+  RO124: no ISO3 for Eurostat country code 'RO'; skipped
+  RO125: no ISO3 for Eurostat country code 'RO'; skipped
+  RO126: no ISO3 for Eurostat country code 'RO'; skipped
+  RO211: no ISO3 for Eurostat country code 'RO'; skipped
+  RO212: no ISO3 for Eurostat country code 'RO'; skipped
+  RO213: no ISO3 for Eurostat country code 'RO'; skipped
+  RO214: no ISO3 for Eurostat country code 'RO'; skipped
+  RO215: no ISO3 for Eurostat country code 'RO'; skipped
+  RO216: no ISO3 for Eurostat country code 'RO'; skipped
+  RO221: no ISO3 for Eurostat country code 'RO'; skipped
+  RO222: no ISO3 for Eurostat country code 'RO'; skipped
+  RO223: no ISO3 for Eurostat country code 'RO'; skipped
+  RO224: no ISO3 for Eurostat country code 'RO'; skipped
+  RO225: no ISO3 for Eurostat country code 'RO'; skipped
+  RO226: no ISO3 for Eurostat country code 'RO'; skipped
+  RO311: no ISO3 for Eurostat country code 'RO'; skipped
+  RO312: no ISO3 for Eurostat country code 'RO'; skipped
+  RO313: no ISO3 for Eurostat country code 'RO'; skipped
+  RO314: no ISO3 for Eurostat country code 'RO'; skipped
+  RO315: no ISO3 for Eurostat country code 'RO'; skipped
+  RO316: no ISO3 for Eurostat country code 'RO'; skipped
+  RO317: no ISO3 for Eurostat country code 'RO'; skipped
+  RO321: no ISO3 for Eurostat country code 'RO'; skipped
+  RO322: no ISO3 for Eurostat country code 'RO'; skipped
+  RO411: no ISO3 for Eurostat country code 'RO'; skipped
+  RO412: no ISO3 for Eurostat country code 'RO'; skipped
+  RO413: no ISO3 for Eurostat country code 'RO'; skipped
+  RO414: no ISO3 for Eurostat country code 'RO'; skipped
+  RO415: no ISO3 for Eurostat country code 'RO'; skipped
+  RO421: no ISO3 for Eurostat country code 'RO'; skipped
+  RO422: no ISO3 for Eurostat country code 'RO'; skipped
+  RO423: no ISO3 for Eurostat country code 'RO'; skipped
+  RO424: no ISO3 for Eurostat country code 'RO'; skipped
+  RS110: no ISO3 for Eurostat country code 'RS'; skipped
+  RS121: no ISO3 for Eurostat country code 'RS'; skipped
+  RS122: no ISO3 for Eurostat country code 'RS'; skipped
+  RS123: no ISO3 for Eurostat country code 'RS'; skipped
+  RS124: no ISO3 for Eurostat country code 'RS'; skipped
+  RS125: no ISO3 for Eurostat country code 'RS'; skipped
+  RS126: no ISO3 for Eurostat country code 'RS'; skipped
+  RS127: no ISO3 for Eurostat country code 'RS'; skipped
+  RS211: no ISO3 for Eurostat country code 'RS'; skipped
+  RS212: no ISO3 for Eurostat country code 'RS'; skipped
+  RS213: no ISO3 for Eurostat country code 'RS'; skipped
+  RS214: no ISO3 for Eurostat country code 'RS'; skipped
+  RS215: no ISO3 for Eurostat country code 'RS'; skipped
+  RS216: no ISO3 for Eurostat country code 'RS'; skipped
+  RS217: no ISO3 for Eurostat country code 'RS'; skipped
+  RS218: no ISO3 for Eurostat country code 'RS'; skipped
+  RS221: no ISO3 for Eurostat country code 'RS'; skipped
+  RS222: no ISO3 for Eurostat country code 'RS'; skipped
+  RS223: no ISO3 for Eurostat country code 'RS'; skipped
+  RS224: no ISO3 for Eurostat country code 'RS'; skipped
+  RS225: no ISO3 for Eurostat country code 'RS'; skipped
+  RS226: no ISO3 for Eurostat country code 'RS'; skipped
+  RS227: no ISO3 for Eurostat country code 'RS'; skipped
+  RS228: no ISO3 for Eurostat country code 'RS'; skipped
+  RS229: no ISO3 for Eurostat country code 'RS'; skipped
+  SE110: no ISO3 for Eurostat country code 'SE'; skipped
+  SE121: no ISO3 for Eurostat country code 'SE'; skipped
+  SE122: no ISO3 for Eurostat country code 'SE'; skipped
+  SE123: no ISO3 for Eurostat country code 'SE'; skipped
+  SE124: no ISO3 for Eurostat country code 'SE'; skipped
+  SE125: no ISO3 for Eurostat country code 'SE'; skipped
+  SE211: no ISO3 for Eurostat country code 'SE'; skipped
+  SE212: no ISO3 for Eurostat country code 'SE'; skipped
+  SE213: no ISO3 for Eurostat country code 'SE'; skipped
+  SE214: no ISO3 for Eurostat country code 'SE'; skipped
+  SE221: no ISO3 for Eurostat country code 'SE'; skipped
+  SE224: no ISO3 for Eurostat country code 'SE'; skipped
+  SE231: no ISO3 for Eurostat country code 'SE'; skipped
+  SE232: no ISO3 for Eurostat country code 'SE'; skipped
+  SE311: no ISO3 for Eurostat country code 'SE'; skipped
+  SE312: no ISO3 for Eurostat country code 'SE'; skipped
+  SE313: no ISO3 for Eurostat country code 'SE'; skipped
+  SE321: no ISO3 for Eurostat country code 'SE'; skipped
+  SE322: no ISO3 for Eurostat country code 'SE'; skipped
+  SE331: no ISO3 for Eurostat country code 'SE'; skipped
+  SE332: no ISO3 for Eurostat country code 'SE'; skipped
+  SI031: no ISO3 for Eurostat country code 'SI'; skipped
+  SI032: no ISO3 for Eurostat country code 'SI'; skipped
+  SI033: no ISO3 for Eurostat country code 'SI'; skipped
+  SI034: no ISO3 for Eurostat country code 'SI'; skipped
+  SI035: no ISO3 for Eurostat country code 'SI'; skipped
+  SI036: no ISO3 for Eurostat country code 'SI'; skipped
+  SI037: no ISO3 for Eurostat country code 'SI'; skipped
+  SI038: no ISO3 for Eurostat country code 'SI'; skipped
+  SI041: no ISO3 for Eurostat country code 'SI'; skipped
+  SI042: no ISO3 for Eurostat country code 'SI'; skipped
+  SI043: no ISO3 for Eurostat country code 'SI'; skipped
+  SI044: no ISO3 for Eurostat country code 'SI'; skipped
+  SK010: no ISO3 for Eurostat country code 'SK'; skipped
+  SK021: no ISO3 for Eurostat country code 'SK'; skipped
+  SK022: no ISO3 for Eurostat country code 'SK'; skipped
+  SK023: no ISO3 for Eurostat country code 'SK'; skipped
+  SK031: no ISO3 for Eurostat country code 'SK'; skipped
+  SK032: no ISO3 for Eurostat country code 'SK'; skipped
+  SK041: no ISO3 for Eurostat country code 'SK'; skipped
+  SK042: no ISO3 for Eurostat country code 'SK'; skipped
+  TR100: no ISO3 for Eurostat country code 'TR'; skipped
+  TR211: no ISO3 for Eurostat country code 'TR'; skipped
+  TR212: no ISO3 for Eurostat country code 'TR'; skipped
+  TR213: no ISO3 for Eurostat country code 'TR'; skipped
+  TR221: no ISO3 for Eurostat country code 'TR'; skipped
+  TR222: no ISO3 for Eurostat country code 'TR'; skipped
+  TR310: no ISO3 for Eurostat country code 'TR'; skipped
+  TR321: no ISO3 for Eurostat country code 'TR'; skipped
+  TR322: no ISO3 for Eurostat country code 'TR'; skipped
+  TR323: no ISO3 for Eurostat country code 'TR'; skipped
+  TR331: no ISO3 for Eurostat country code 'TR'; skipped
+  TR332: no ISO3 for Eurostat country code 'TR'; skipped
+  TR333: no ISO3 for Eurostat country code 'TR'; skipped
+  TR334: no ISO3 for Eurostat country code 'TR'; skipped
+  TR411: no ISO3 for Eurostat country code 'TR'; skipped
+  TR412: no ISO3 for Eurostat country code 'TR'; skipped
+  TR413: no ISO3 for Eurostat country code 'TR'; skipped
+  TR421: no ISO3 for Eurostat country code 'TR'; skipped
+  TR422: no ISO3 for Eurostat country code 'TR'; skipped
+  TR423: no ISO3 for Eurostat country code 'TR'; skipped
+  TR424: no ISO3 for Eurostat country code 'TR'; skipped
+  TR425: no ISO3 for Eurostat country code 'TR'; skipped
+  TR510: no ISO3 for Eurostat country code 'TR'; skipped
+  TR521: no ISO3 for Eurostat country code 'TR'; skipped
+  TR522: no ISO3 for Eurostat country code 'TR'; skipped
+  TR611: no ISO3 for Eurostat country code 'TR'; skipped
+  TR612: no ISO3 for Eurostat country code 'TR'; skipped
+  TR613: no ISO3 for Eurostat country code 'TR'; skipped
+  TR621: no ISO3 for Eurostat country code 'TR'; skipped
+  TR622: no ISO3 for Eurostat country code 'TR'; skipped
+  TR631: no ISO3 for Eurostat country code 'TR'; skipped
+  TR632: no ISO3 for Eurostat country code 'TR'; skipped
+  TR633: no ISO3 for Eurostat country code 'TR'; skipped
+  TR711: no ISO3 for Eurostat country code 'TR'; skipped
+  TR712: no ISO3 for Eurostat country code 'TR'; skipped
+  TR713: no ISO3 for Eurostat country code 'TR'; skipped
+  TR714: no ISO3 for Eurostat country code 'TR'; skipped
+  TR715: no ISO3 for Eurostat country code 'TR'; skipped
+  TR721: no ISO3 for Eurostat country code 'TR'; skipped
+  TR722: no ISO3 for Eurostat country code 'TR'; skipped
+  TR723: no ISO3 for Eurostat country code 'TR'; skipped
+  TR811: no ISO3 for Eurostat country code 'TR'; skipped
+  TR812: no ISO3 for Eurostat country code 'TR'; skipped
+  TR813: no ISO3 for Eurostat country code 'TR'; skipped
+  TR821: no ISO3 for Eurostat country code 'TR'; skipped
+  TR822: no ISO3 for Eurostat country code 'TR'; skipped
+  TR823: no ISO3 for Eurostat country code 'TR'; skipped
+  TR831: no ISO3 for Eurostat country code 'TR'; skipped
+  TR832: no ISO3 for Eurostat country code 'TR'; skipped
+  TR833: no ISO3 for Eurostat country code 'TR'; skipped
+  TR834: no ISO3 for Eurostat country code 'TR'; skipped
+  TR901: no ISO3 for Eurostat country code 'TR'; skipped
+  TR902: no ISO3 for Eurostat country code 'TR'; skipped
+  TR903: no ISO3 for Eurostat country code 'TR'; skipped
+  TR904: no ISO3 for Eurostat country code 'TR'; skipped
+  TR905: no ISO3 for Eurostat country code 'TR'; skipped
+  TR906: no ISO3 for Eurostat country code 'TR'; skipped
+  TRA11: no ISO3 for Eurostat country code 'TR'; skipped
+  TRA12: no ISO3 for Eurostat country code 'TR'; skipped
+  TRA13: no ISO3 for Eurostat country code 'TR'; skipped
+  TRA21: no ISO3 for Eurostat country code 'TR'; skipped
+  TRA22: no ISO3 for Eurostat country code 'TR'; skipped
+  TRA23: no ISO3 for Eurostat country code 'TR'; skipped
+  TRA24: no ISO3 for Eurostat country code 'TR'; skipped
+  TRB11: no ISO3 for Eurostat country code 'TR'; skipped
+  TRB12: no ISO3 for Eurostat country code 'TR'; skipped
+  TRB13: no ISO3 for Eurostat country code 'TR'; skipped
+  TRB14: no ISO3 for Eurostat country code 'TR'; skipped
+  TRB21: no ISO3 for Eurostat country code 'TR'; skipped
+  TRB22: no ISO3 for Eurostat country code 'TR'; skipped
+  TRB23: no ISO3 for Eurostat country code 'TR'; skipped
+  TRB24: no ISO3 for Eurostat country code 'TR'; skipped
+  TRC11: no ISO3 for Eurostat country code 'TR'; skipped
+  TRC12: no ISO3 for Eurostat country code 'TR'; skipped
+  TRC13: no ISO3 for Eurostat country code 'TR'; skipped
+  TRC21: no ISO3 for Eurostat country code 'TR'; skipped
+  TRC22: no ISO3 for Eurostat country code 'TR'; skipped
+  TRC31: no ISO3 for Eurostat country code 'TR'; skipped
+  TRC32: no ISO3 for Eurostat country code 'TR'; skipped
+  TRC33: no ISO3 for Eurostat country code 'TR'; skipped
+  TRC34: no ISO3 for Eurostat country code 'TR'; skipped
+  GBR: 179 NUTS-3 regions kept -- 91 of 178 names match this map's admin2 (against 0 at admin1)
+  GRC: 52 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 52; too few of either to say which level this file describes
+  wrote data/processed/eurostat_nuts3.json (204 kB)
+  179 nuts3 records
