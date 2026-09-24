@@ -1631,6 +1631,23 @@ def name_forms(text: str | None) -> tuple[tuple[str, ...], ...]:
     return (split,) if split == join else (split, join)
 
 
+# Words that make a longer name a different place from the shorter one inside
+# it, not a longer way of writing the same one. "Provincia de Cocle" is Cocle;
+# "Nouvelle-Aquitaine" is not Aquitaine but the region Aquitaine was merged
+# into in 2016, and Eurostat's NUTS-2 row for old Aquitaine -- 3,635,159
+# people -- was joined to it by containment and stood for its 6.2 million.
+# "Peninsula de Setubal" is most of Setubal District and not all of it.
+QUALIFIERS = frozenset({
+    "new", "nouvelle", "nouveau", "nueva", "nuevo", "nova", "novo",
+    "north", "northern", "nord", "norte", "south", "southern", "sud", "sur", "sul",
+    "east", "eastern", "est", "este", "leste", "west", "western", "ouest", "oeste",
+    "central", "middle",
+    "upper", "lower", "haute", "haut", "basse", "bas", "alto", "baixo", "bajo",
+    "greater", "grande", "little", "peninsula",
+    "utara", "selatan", "barat", "timur", "tengah",
+})
+
+
 def run_of(short: tuple[str, ...], long: tuple[str, ...], *,
            at_start: bool = False) -> bool:
     """Whether `short` appears in `long` as a run of whole words.
@@ -1650,6 +1667,8 @@ def run_of(short: tuple[str, ...], long: tuple[str, ...], *,
         window = long[start:start + len(short)]
         tail, target = short[-1], window[-1]
         if not all(a == b for a, b in zip(short[:-1], window[:-1])):
+            continue
+        if QUALIFIERS.intersection(long[:start] + long[start + len(short):]):
             continue
         if len(tail) < PREFIX_MIN and not (at_start and start == 0):
             continue
@@ -2945,6 +2964,17 @@ def say_why_empty(entity: dict[str, Any], country: str,
 # 18 fail, every one a town, a city proper or a wrong item.
 TOWN_RATIO_MAX = 1.5
 SOLE_CHILD_BAND = (0.6, 1.6)
+# And the other way round: a division named like its parent that carries the
+# parent's figure. Utrecht's municipality item prefers 1,253,672 (2013), the
+# province's; so do Groningen's and Midden-Drenthe's, and four Dominican
+# municipalities named for their provinces -- San Felipe de Puerto Plata read
+# 338,339 against a province of 335,424. Such a figure is within a quarter
+# (or a third above) of the parent's, and with the other divisions beside it
+# the parent is overfilled by more than a quarter. Those others must hold less
+# than the parent does; when they hold more, the parent is the one that is
+# wrong, and refuse_capital_figures below has already taken it off.
+PARENT_BAND = (0.75, 1.33)
+NO_ROOM = 1.25
 
 
 def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
@@ -2954,8 +2984,10 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
     for iso3, rows in admin2.items():
         parents = {e["id"]: e for e in admin1.get(iso3, [])}
         siblings: dict[Any, int] = defaultdict(int)
+        held: dict[Any, float] = defaultdict(float)
         for entity in rows:
             siblings[entity.get("parent")] += 1
+            held[entity.get("parent")] += published(entity.get("population")) or 0
         for entity in rows:
             pop = entity.get("population")
             if not (isinstance(pop, dict) and pop.get("value")
@@ -2967,18 +2999,28 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
                 continue
             ratio = pop["value"] / above
             sole = siblings[entity.get("parent")] == 1
+            rest = held[entity.get("parent")] - pop["value"]
+            what = "the town of this name"
             if ratio > TOWN_RATIO_MAX:
                 why = (f"more than {parent['name']}'s own {above:,.0f}, "
                        f"the unit it lies in")
             elif sole and not SOLE_CHILD_BAND[0] <= ratio <= SOLE_CHILD_BAND[1]:
                 why = (f"{ratio:.0%} of {parent['name']}'s {above:,.0f}, though "
                        f"this is its only division and covers the same ground")
+            elif (not sole and rest < above
+                  and PARENT_BAND[0] <= ratio <= PARENT_BAND[1]
+                  and pop["value"] + rest > NO_ROOM * above
+                  and related(name_forms(entity.get("name")),
+                              name_forms(parent.get("name")))):
+                why = (f"close to {parent['name']}'s own {above:,.0f}, though its "
+                       f"other divisions hold {rest:,.0f} besides")
+                what = f"{parent['name']} as a whole"
             else:
                 continue
             entity["population"] = gap(NOT_AVAILABLE, (
                 f"The Wikidata item joined here by name gives {pop['value']:,}"
                 + (f" ({pop['year']})" if pop.get("year") else "")
-                + f", which is {why}. It is probably the town of this name "
+                + f", which is {why}. It is probably {what} "
                   f"rather than this unit, so its figure is left out."))
             refused += 1
     return refused

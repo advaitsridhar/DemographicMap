@@ -162,6 +162,36 @@ class TownFiguresOnDistricts(unittest.TestCase):
         refused, _ = self.run_guard(2850, [(22414, "OCHA, Common Operational Dataset")])
         self.assertEqual(refused, 0)
 
+    def namesakes(self, figure, others):
+        a1 = {"X": [{"id": "P", "name": "Utrecht", "population": {"value": 1409144}}]}
+        a2 = {"X": [{"id": "C0", "name": "Utrecht", "parent": "P",
+                     "population": {"value": figure, "year": 2013,
+                                    "source": "Wikidata (CC0)"}}]
+              + [{"id": f"C{i}", "name": f"Other {i}", "parent": "P",
+                  "population": {"value": v, "source": "Wikidata (CC0)"}}
+                 for i, v in enumerate(others, 1)]}
+        return be.refuse_town_figures(a1, a2), a2["X"][0]["population"]
+
+    def test_a_namesake_with_its_parents_figure_is_left_out(self):
+        refused, pop = self.namesakes(1253672, [157462, 65108, 845213])
+        self.assertEqual(refused, 1)
+        self.assertIn("Utrecht as a whole", pop["note"])
+        self.assertIn("1,067,783 besides", pop["note"])
+
+    def test_a_namesake_that_fits_beside_the_others_is_kept(self):
+        refused, pop = self.namesakes(361924, [157462, 65108, 845213])
+        self.assertEqual(refused, 0)
+        self.assertEqual(pop["value"], 361924)
+
+    def test_a_capital_that_is_most_of_its_parent_is_kept(self):
+        # Three quarters of the parent, and the others the last quarter.
+        refused, _ = self.namesakes(1060000, [349144])
+        self.assertEqual(refused, 0)
+
+    def test_others_holding_more_than_the_parent_blame_the_parent(self):
+        refused, _ = self.namesakes(1253672, [1500000, 200000])
+        self.assertEqual(refused, 0)
+
 
 class CapitalFiguresOnParents(unittest.TestCase):
     """A first-level Wikidata item can carry its capital's figure."""
