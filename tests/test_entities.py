@@ -329,17 +329,21 @@ class HeldFiguresFallBack(unittest.TestCase):
         self.assertFalse(be.fall_back(entity, entity["population"]))
 
 
-class SharedAliases(unittest.TestCase):
-    def test_an_alias_that_is_another_rows_name_is_dropped(self):
-        rows = {"ARG": [
-            {"name": "Lago Buenos Aires Department", "_source": "wd.json"},
-            {"name": "Perito Moreno", "_source": "wd.json",
-             "aliases": ["Lago Buenos Aires", "Ciudad de Perito Moreno"]},
-            {"name": "Elsewhere", "_source": "other.json", "aliases": ["Lago Buenos Aires"]}]}
-        self.assertEqual(be.drop_shared_aliases(rows), 1)
-        self.assertEqual(rows["ARG"][1]["aliases"], ["Ciudad de Perito Moreno"])
-        # Another file's name is not this file's rival.
-        self.assertEqual(rows["ARG"][2]["aliases"], ["Lago Buenos Aires"])
+class BorrowedNamesYield(unittest.TestCase):
+    def test_a_town_reaching_a_department_by_its_name_yields(self):
+        shape = {"id": "S", "name": "Lago Buenos Aires", "level": "admin2"}
+        town = {"name": "Perito Moreno", "_source": "wd.json", "aliases": ["Lago Buenos Aires"]}
+        dept = {"name": "Lago Buenos Aires Department", "_source": "wd.json"}
+        dropped, _ = be.resolve_collisions([(town, shape, "alias+state"),
+                                            (dept, shape, "prefix+state")])
+        self.assertEqual(dropped, {0})
+
+    def test_two_rivals_named_like_the_shape_are_left_to_the_ranking(self):
+        shape = {"id": "S", "name": "Andalgala", "level": "admin2"}
+        town = {"name": "Andalgala", "_source": "wd.json", "population": {"value": 1}}
+        dept = {"name": "Andalgala Department", "_source": "wd.json", "population": {"value": 2}}
+        dropped, _ = be.resolve_collisions([(town, shape, "name"), (dept, shape, "name")])
+        self.assertEqual(dropped, {0, 1})
 
 
 class OutlinesNameShuffledPolygons(unittest.TestCase):

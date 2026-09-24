@@ -26,7 +26,6 @@ match records *how* it matched so a bad join is auditable rather than invisible.
 from __future__ import annotations
 
 import argparse
-import functools
 import hashlib
 import os
 import re
@@ -36,7 +35,7 @@ from collections import defaultdict
 from functools import lru_cache
 from pathlib import Path
 from collections.abc import Sequence
-from typing import Any
+from typing import Any, Callable
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -1671,7 +1670,7 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
     for key in held:
         if not is_gap(row.get(key)):
             entity.setdefault("_held", {}).setdefault(key, []).append({
-                "value": row[key],
+                "value": row[key], "wikidata": row.get("wikidata"),
                 "sources": [src for src in row.get("sources") or []
                             if key in str(src.get("field") or "").split("/")]})
     replaced = {key for key, value in row.items()
@@ -2736,8 +2735,15 @@ def roll_up_field(parent: dict[str, Any], children: list[dict[str, Any]],
     # shares. Morocco lost Laayoune-Sakia El Hamra from its population the
     # same way.
     waived = bool(disagrees) and not whole_country
+    # And only a sum of one year replaces a figure that exists. Germany's
+    # states carry Eurostat's 2025 figures where a state is its own NUTS region
+    # and the 2022 census elsewhere; the commonest year was 2025, so their
+    # mixed total of 82.9 million replaced the country's 2025 estimate of 84.0
+    # million as though it were one count. A mixed sum still fills a unit that
+    # has nothing.
+    one_year = all(vintage(c.get("population")) == child_year for c in children)
     if child_year and not waived and not left_out and (
-            own is None or (round(total_pop) != round(own)
+            own is None or (one_year and round(total_pop) != round(own)
                             and (own_year is None or own_year <= child_year))):
         if own is not None:
             parent["population_note"] = (
@@ -2977,21 +2983,26 @@ def resolve_collisions(matched: list[tuple[dict[str, Any], dict[str, Any], str]]
     for (_, _level, _eid), idxs in claims.items():
         if len(idxs) < 2:
             continue
-        # A settlement is not the unit, whatever it is called. Wikidata's
-        # local-language names made the town of Perito Moreno "Lago Buenos
-        # Aires" and Villa de Pomán "Pomán", and each tied with its department
-        # for the department's shape, so neither was kept and three Argentine
-        # departments went blank. Where Wikidata says a rival is only a village,
-        # town or city, it yields to the rest -- unless the shape is itself
-        # named as a city.
+        # A name borrowed is not a claim. Wikidata's local-language labels gave
+        # the town of Perito Moreno the alias "Lago Buenos Aires" and Villa de
+        # Pomán the alias "Pomán" -- the names of the departments they lie in
+        # -- and each tied with its department for the department's shape, so
+        # neither was kept and three Argentine departments went blank. Where
+        # one rival reached the shape only through an alias and another
+        # carries the shape's name as its own, the alias yields. Two rivals
+        # both named like the shape (the town of Andalgalá and Andalgalá
+        # Department) are untouched: that is the tie the ranking below exists
+        # for.
         shape_name = str(matched[idxs[0]][1].get("name") or "")
-        towns = [i for i in idxs if only_a_settlement(matched[i][0])]
-        if towns and len(towns) < len(idxs) and not CITY_SHAPE.search(shape_name):
-            dropped.update(towns)
+        own = [i for i in idxs if norm(matched[i][0].get("name")) == norm(shape_name)]
+        borrowed = [i for i in idxs if i not in own
+                    and str(matched[i][2]).startswith("alias")]
+        if own and borrowed:
+            dropped.update(borrowed)
             notes.append(f"{shape_name!r}: refused "
-                         + ", ".join(str(matched[i][0].get("name"))[:24] for i in towns[:4])
-                         + " (only a settlement)")
-            idxs = [i for i in idxs if i not in towns]
+                         + ", ".join(str(matched[i][0].get("name"))[:24] for i in borrowed[:4])
+                         + " (reached it only by a name another row carries)")
+            idxs = [i for i in idxs if i not in borrowed]
             if len(idxs) < 2:
                 continue
         ranked = sorted(idxs, key=lambda i: -evidence(matched[i][2]))
@@ -3207,7 +3218,8 @@ NO_ROOM = 1.25
 
 
 def fall_back(entity: dict[str, Any], refused: dict[str, Any],
-              field: str = "population") -> bool:
+              field: str = "population",
+              usable: Callable[[dict[str, Any]], bool] | None = None) -> bool:
     """Put back a figure a fill-only file offered and Wikidata's figure held off.
 
     Wikidata and Wikipedia both fill only gaps, and Wikidata comes first, so
@@ -3218,7 +3230,12 @@ def fall_back(entity: dict[str, Any], refused: dict[str, Any],
     """
     for held in (entity.get("_held") or {}).get(field, []):
         value = held["value"]
-        if not published(value) or str(value.get("source") or "").startswith("Wikidata"):
+        if not published(value):
+            continue
+        if usable is not None:
+            if not usable(held):
+                continue
+        elif str(value.get("source") or "").startswith("Wikidata"):
             continue
         entity[field] = {**value, "note": (
             (value.get("note") + " " if value.get("note") else "")
@@ -3349,18 +3366,6 @@ ITEM_CLASSES = PROCESSED / "wikidata_admin2_item_classes.json"
 CITY_SHAPE = re.compile(r"\b(city|kota|ciudad|ville|shahar)\b", re.I)
 
 
-@functools.lru_cache(maxsize=1)
-def known_classes() -> dict[str, list[list[str]]]:
-    """The classes --item-classes recorded, read once."""
-    return read_json(ITEM_CLASSES, {}) or {}
-
-
-def only_a_settlement(row: dict[str, Any]) -> bool:
-    """Whether Wikidata calls this row's item a settlement and nothing else."""
-    kinds = known_classes().get(row.get("wikidata") or "")
-    return bool(kinds) and all(k in SETTLEMENT_CLASSES for k, _ in kinds)
-
-
 def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
                               admin2: dict[str, list[dict[str, Any]]],
                               classes: dict[str, list[list[str]]]) -> int:
@@ -3398,7 +3403,12 @@ def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
                 + (f" ({pop['year']})" if pop.get("year") else "")
                 + " are the settlement's people rather than this unit's, so the "
                   "figure is left out."))
-            fall_back(entity, entity["population"])
+            fall_back(entity, entity["population"], usable=lambda held: (
+                held.get("wikidata") != entity.get("wikidata")
+                and not all(k in SETTLEMENT_CLASSES
+                            for k, _ in classes.get(held.get("wikidata") or "", [])
+                            ) if classes.get(held.get("wikidata") or "") else
+                not str(held["value"].get("source") or "").startswith("Wikidata")))
             refused += 1
     return refused
 
@@ -3699,38 +3709,8 @@ def shares_of(rows: Any) -> list[tuple[str, float]]:
             and isinstance(e.get("pct"), (int, float))]
 
 
-def drop_shared_aliases(adapters: dict[str, list[dict[str, Any]]]) -> int:
-    """Take off a row's alias when it is another row's own name.
-
-    Wikidata's local-language labels gave the town of Perito Moreno the alias
-    "Lago Buenos Aires" and Villa de Pomán "Pomán": the names of the
-    departments they lie in, which other rows in the same file carry as their
-    own. Each town then tied with its department for the department's shape,
-    and three Argentine departments that had their figures lost them. A name
-    that is another item's is no evidence of which item a shape is.
-    """
-    dropped = 0
-    for rows in adapters.values():
-        by_file: dict[str, list[dict[str, Any]]] = defaultdict(list)
-        for row in rows:
-            by_file[row.get("_source")].append(row)
-        for group in by_file.values():
-            own = {norm(r.get("name")) for r in group}
-            for row in group:
-                aliases = row.get("aliases") or []
-                if not aliases:
-                    continue
-                mine = norm(row.get("name"))
-                kept = [a for a in aliases if norm(a) == mine or norm(a) not in own]
-                if len(kept) != len(aliases):
-                    dropped += len(aliases) - len(kept)
-                    row["aliases"] = kept
-    return dropped
-
-
 def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
-              filename: str,
-              weights: dict[str, tuple[float, str]] | None = None) -> dict[str, Any]:
+              filename: str) -> dict[str, Any]:
     """One row for a shape, from the rows a source publishes for its parts.
 
     Counts are summed where every part carries them; otherwise the shares are
@@ -3790,20 +3770,6 @@ def pool_rows(name: str, parts: Sequence[dict[str, Any]], iso3: str,
                 continue
             rows = whole_hundred([(g, c / whole) for g, c in totals.items()])
             basis = "their populations"
-        elif weights and all(norm(p.get("name")) in weights for p in parts):
-            # Shares with nothing in their own file to weigh them by. CLEAR
-            # Global publishes Namibia's languages as shares only; OCHA counts
-            # the same constituencies' people, so its populations weigh them.
-            given = [weights[norm(p.get("name"))] for p in parts]
-            for v, (w, _) in zip(lists, given):
-                for g, pct in shares_of(v):
-                    totals[g] += pct * w
-            whole = sum(w for w, _ in given)
-            if whole <= 0:
-                continue
-            rows = whole_hundred([(g, c / whole) for g, c in totals.items()])
-            basis = "the populations " + " and ".join(sorted({src for _, src in given})) \
-                + " gives them"
         else:
             log(f"  union {iso3} {name}: {field} not pooled from {filename} -- "
                 f"the parts carry neither counts nor populations to weigh by")
@@ -3824,19 +3790,6 @@ def outline_unions(adm2: list[dict[str, Any]]
     """The unions relabel_from_outlines measured, in SHAPE_IS_UNION_OF's form."""
     return {(r["group"], r["name"]): tuple(r["outline"]["parts"])
             for r in adm2 if (r.get("outline") or {}).get("kind") == "union"}
-
-
-def part_populations(rows: list[dict[str, Any]], parts: Sequence[str]
-                     ) -> dict[str, tuple[float, str]]:
-    """Each part's population from any file that has one, the first found."""
-    wanted = {norm(p) for p in parts}
-    out: dict[str, tuple[float, str]] = {}
-    for row in rows:
-        key = norm(row.get("name"))
-        value = published(row.get("population"))
-        if key in wanted and key not in out and value:
-            out[key] = (value, str(row["population"].get("source") or row.get("_source")))
-    return out
 
 
 def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]],
@@ -3866,8 +3819,7 @@ def pool_declared_unions(adapters: dict[str, list[dict[str, Any]]],
                 log(f"  union {iso3} {shape_name}: {filename} lacks "
                     f"{', '.join(missing)}, not pooled")
                 continue
-            pooled = pool_rows(shape_name, [found[p] for p in part_names], iso3, filename,
-                               weights=part_populations(rows, part_names))
+            pooled = pool_rows(shape_name, [found[p] for p in part_names], iso3, filename)
             for p in part_names:
                 rows.remove(found[p])
             rows.append(pooled)
@@ -4610,9 +4562,6 @@ def main() -> int:
     countries = primary_country_profiles(country_profiles)
     cities = read_json(PROCESSED / "cities.json", {"by_country": {}, "by_admin1": {}})
     adapters = load_adapters()
-    shared = drop_shared_aliases(adapters)
-    if shared:
-        log(f"  {shared} aliases dropped as another row's own name")
     for line in pool_declared_unions(
             adapters, {**SHAPE_IS_UNION_OF, **outline_unions(shapes.get("ADM2", []))}):
         log(f"  union pooled: {line}")

@@ -22,6 +22,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import re
 from typing import Any
 
 from ._shared import (
@@ -140,6 +141,39 @@ def second_level_only(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return kept
 
 
+# A region's name split into the units it may be made of: at commas and
+# ampersands first, then at "and", then at both -- "Kensington and Chelsea &
+# Hammersmith and Fulham" is two boroughs only when split at the ampersand.
+SPLITS = (r",\s*|\s*&\s*", r",\s*|\s+and\s+", r",\s*|\s*&\s*|\s+and\s+")
+
+
+def joined_units(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Leave out a NUTS-3 region that is several of the map's units together.
+
+    Eurostat's UK regions are often two or three council areas at once --
+    "Aberdeen City and Aberdeenshire", "Barnsley, Doncaster and Rotherham" --
+    and such a name reaches the first council it starts with. Written there,
+    Aberdeen City carried 495,365 people, its own and Aberdeenshire's. A region
+    whose name falls apart into two or more of the country's drawn units is
+    those units together and describes none of them.
+    """
+    from .cod_ps import level_key, shape_names
+    kept: list[dict[str, Any]] = []
+    names_by_country: dict[str, set[str]] = {}
+    for rec in records:
+        names = names_by_country.setdefault(rec["country"],
+                                            shape_names(rec["country"], "admin2"))
+        label = re.sub(r"\s*\(NUTS \d{4}\)\s*$", "", rec["name"]).replace("\xa0", " ")
+        parts = max((sum(level_key(p) in names for p in re.split(pat, label) if p.strip())
+                     for pat in SPLITS), default=0)
+        if parts >= 2:
+            log(f"  {rec['country']}: {rec['name']} left out -- it is {parts} of "
+                f"this map's units together")
+            continue
+        kept.append(rec)
+    return kept
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -219,7 +253,7 @@ def main() -> int:
                       "license": "Eurostat re-use policy (attribution)"}],
         ))
     if args.level == "nuts3":
-        records = second_level_only(records)
+        records = joined_units(second_level_only(records))
     write_json(args.out or PROCESSED / f"eurostat_{args.level}.json", records)
     log(f"  {len(records)} {args.level} records")
     return 0
