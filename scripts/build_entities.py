@@ -3190,6 +3190,15 @@ def refuse_historic_figures(admin2: dict[str, list[dict[str, Any]]]) -> int:
 # (574,253, the province cut down in 2024, on the old province's ground).
 # Run first, so the check above measures against a parent's own figure.
 CAPITAL_BAND = (0.75, 1.33)
+# When the capital's own division has no figure to compare -- Setubal's is
+# spelt "Setubul" and joins an item with none, Faro's item has none -- the
+# divisions' sum must do it alone, and so must clear a wider margin. Over every
+# first-level Wikidata figure with five divisions or more, only Faro (6.4) and
+# Setubal (4.5) exceed three times; below that sit parents that are right and
+# divisions that are not (Namibia's Hardap, 2.8, whose constituencies are
+# attached to the wrong regions) and Thai provinces counted two ways.
+CAPITAL_FALLBACK_RATIO = 3.0
+CAPITAL_FALLBACK_DIVISIONS = 5
 
 
 def refuse_capital_figures(admin1: dict[str, list[dict[str, Any]]],
@@ -3212,20 +3221,27 @@ def refuse_capital_figures(admin1: dict[str, list[dict[str, Any]]],
             names.discard("")
             town = next((c for c in children if norm(c.get("name")) in names
                          and published(c.get("population"))), None)
-            if town is None:
-                continue
-            held = published(town["population"])
-            rest = sum(published(c.get("population")) or 0
-                       for c in children if c is not town)
-            if not (CAPITAL_BAND[0] <= pop["value"] / held <= CAPITAL_BAND[1]
-                    and rest > pop["value"]):
+            figures = [published(c.get("population")) for c in children
+                       if published(c.get("population"))]
+            if town is not None:
+                held = published(town["population"])
+                rest = sum(figures) - held
+                if not (CAPITAL_BAND[0] <= pop["value"] / held <= CAPITAL_BAND[1]
+                        and rest > pop["value"]):
+                    continue
+                why = (f"close to the {held:,.0f} of {town['name']}, one of its "
+                       f"divisions, while its other divisions hold {rest:,.0f} "
+                       f"between them")
+            elif (len(figures) >= CAPITAL_FALLBACK_DIVISIONS
+                  and sum(figures) > CAPITAL_FALLBACK_RATIO * pop["value"]):
+                why = (f"while {len(figures)} of its divisions hold "
+                       f"{sum(figures):,.0f} between them")
+            else:
                 continue
             parent["population"] = gap(NOT_AVAILABLE, (
                 f"The Wikidata item joined here gives {pop['value']:,}"
                 + (f" ({pop['year']})" if pop.get("year") else "")
-                + f", close to the {held:,.0f} of {town['name']}, one of its "
-                  f"divisions, while its other divisions hold {rest:,.0f} "
-                  f"between them. It is probably the figure of the town or of a "
+                + f", {why}. It is probably the figure of the town or of a "
                   f"smaller unit rather than of this one, so it is left out."))
             refused += 1
     return refused

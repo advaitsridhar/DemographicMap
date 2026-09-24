@@ -297,7 +297,15 @@ class CapitalFiguresOnParents(unittest.TestCase):
         self.assertEqual(refused, 0)
 
     def test_a_district_with_no_namesake_division_is_left_alone(self):
-        refused, _ = self.run_guard(22359, self.PORTALEGRE[1:])
+        refused, _ = self.run_guard(22359, self.PORTALEGRE[1:5])
+        self.assertEqual(refused, 0)
+
+    def test_without_a_namesake_the_divisions_must_hold_three_times_as_many(self):
+        # Setubal: its own municipality is spelt "Setubul" and has no figure.
+        refused, pop = self.run_guard(22359, self.PORTALEGRE[1:])
+        self.assertEqual(refused, 1)
+        self.assertIn("10 of its divisions hold 79,041", pop["note"])
+        refused, _ = self.run_guard(30000, self.PORTALEGRE[1:])
         self.assertEqual(refused, 0)
 
 
