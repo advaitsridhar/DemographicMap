@@ -1,134 +1,345 @@
-page: https://censo2018.ine.gob.gt/
-  5,395 bytes
-<!doctype html>
-<html lang="en">
+page: https://censo2018.ine.gob.gt/js/app/components/doctos/doctos.component.js
+  1,003 bytes
+(function() {
+    'use strict';
+    
+    angular
+    .module('censo')
+    .controller('DoctosController', doctosController)
+    .component('doctos', {
+        templateUrl: '/js/app/components/doctos/doctos.html',
+        controller: 'DoctosController',
+        controllerAs: 'vmDoctos',
+        bindings: {
+            docs : '=',
+            search: "="
+        }
+    });
+    
+    
+    doctosController.$inject = [
+        '$scope',
+        '$rootScope'
+    ];
+    
+    function doctosController($scope, $rootScope) {
+        
+        var vm = this;
+        
+        vm.$onInit = onInit;
+        
+        function onInit(){
+            
+            vm.cargaDocumentos = cargaDocumentos;
+        } 
+        
+        function cargaDocumentos(){
+            $scope.data=[vm.docs]
+            
+            $scope.dataTableOpt = {
+                "aLengthMenu": [[10, 50, 100,-1], [10, 50, 100,'All']],
+            };   
+        }    
+        
+        
+    }
+})();
+page: https://censo2018.ine.gob.gt/js/app/components/explorador/explorador.component.js
+  5,276 bytes
+(function() {
+    'use strict';
+    
+    angular
+    .module('censo')
+    .controller('ExploradorController', exploradorController)
+    .component('explorador', {
+        templateUrl: '/js/app/components/explorador/explorador.html',
+        controller: 'ExploradorController',
+        controllerAs: 'vmExplorador',
+        bindings: {        
+        }
+    });
+    
+    exploradorController.$inject = [
+        '$scope',
+        '$http',
+        'ngIntroService'
+    ];
+    
+    function exploradorController($scope, $http, ngIntroService) {
+        
+        var vm = this;
+        
+        vm.$onInit = $onInit();
+        
+        function $onInit(){ 
+            
+            vm.cargaInicial = cargaInicial;
+            vm.findDocs = findDocs;
+                       
+            cargaInicial();
+        }
 
-<head>
-<base href="/">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGYYYGF8FF"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+        $scope.IntroOptions = {
+            steps:[
+                {
+                    element: document.querySelector('#step101'),
+                    intro: "<strong>Área temática</strong><br>Permite filtrar los documentos por persona, hogar y vivienda.<br>Al seleccionar <strong>Todos</strong> se muestra la totalidad de documentos, con opción a descargarse en formato Microsoft Excel.",
+                    position: 'right'
+                },
+                {
+                    element: '#step102',
+                    intro: '<strong>Búsqueda</strong><br>Muestra únicamente los documentos que contienen alguna de las frases y/o palabras claves ingresadas en el cuadro de búsqueda. <br>Las palabras claves van separadas por coma (,) cuando dese utilizar más de una.',
+                    position: 'left'
+                }
+                
+            ],
+            showStepNumbers: false,
+            showBullets: false,
+            exitOnOverlayClick: true,
+            exitOnEsc:true,
+            prevLabel: '<span style="color:white">Anterior</span>',
+            nextLabel: 'Siguiente',
+            skipLabel: 'Cerrar',
+            doneLabel: 'Cerrar'
+        };
+        
+        $scope.CompletedEvent = function(){
+            console.log('[directive] completed Event')
+        }
+        $scope.ExitEvent= function(){
+            console.log('[directive] exit Event')
+        }
+        $scope.ChangeEvent = function(){
+            console.log('[directive] change Event')
+        }
+        $scope.BeforeChangeEvent= function(){
+            console.log('[directive] beforeChange Event')
+        }
+        $scope.AfterChangeEvent= function(){
+            console.log('[directive] after change Event')
+        }
+        $scope.clearAndStartNewIntro = function(){
+            
+            ngIntroService.clear();
+            ngIntroService.setOptions($scope.IntroOptions);
+            
+            ngIntroService.onComplete(function(){
+                console.log('update some cookie or localstorage.')
+            })
+            
+            ngIntroService.onExit(function(){
+                console.log("[service] exit");
+            })
+            
+            ngIntroService.onBeforeChange(function(){
+                console.log("[service] before change");
+            })
+            
+            ngIntroService.onChange(()=>{
+                console.log("[service] on change");
+            })
+            
+            ngIntroService.onAfterChange(()=>{
+                console.log("[service] after Change");
+            })
+            
+            ngIntroService.start();
+        }
 
-gtag('config', 'G-KGYYYGF8FF');
-</script>
-<script type="text/javascript">
-    var APP_HOME_URL = "https:\/\/censo2018.ine.gob.gt"
-  </script>
-<title>Portal de Resultados del Censo 2018</title>
+        
+        function cargaInicial(){
+            $http.get('/filtros/new_filtros')
+            .then(function (response){
+                vm.filtro = response.data;
+                vm.temag = vm.filtro.temas[0];
+                findDocs();
+                console.log("status:" + response.status);
+            }).catch(function(response) {
+                console.error('Error occurred:', response.status, response.data);
+            }).finally(function() {
+                console.log("Task Finished.");
+            });
+        }
+        
+        function findDocs(){
+            $http.get('/filtros/doctos/' + vm.temag.id)
+            .then(function (response){
+                vm.doctos = response.data;
+                console.log("status:" + response.status);
+            }).catch(function(response) {
+                console.error('Error occurred:', response.status, response.data);
+            }).finally(function() {
+                console.log("Task Finished.");
+            });
+        }
+        
+        
+        $('#censito').click(function(){
+            $("#ayuda").show();
+        });
+        
+        $('#cerrarAyuda').click(function(){
+            $("#ayuda").hide();
+        });
+        
+        $('#navegacionSitio').click(function(){
+            $("#ayuda").hide();  
+        });
+        
+        var divAyuda = document.getElementById('ayuda');
+        var eCensito = document.getElementById('eCensito');
+        document.addEventListener("click", function(e){
+            var clic = e.target;
+            if(clic != divAyuda && clic!=eCensito){
+                divAyuda.style.display = "none";
+            }
+        });
+        
+        $('#eCensito').popover();
+        
+    }
+})();
+page: https://censo2018.ine.gob.gt/js/app/app.config.js
+  2,639 bytes
+angular.module('censo')
 
-<link rel="stylesheet" href="https://censo2018.ine.gob.gt/css/bootstrap411.min.css">
-<link rel="stylesheet" href="https://censo2018.ine.gob.gt/css/fontawesome582all.css">
+.config(function($stateProvider, $locationProvider) {
+    
+    var states = [];
+    
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('');
+    
+    states.push({
+        url: '/home',
+        name: 'home',
+        component: 'home',
+        resolve: {
+        }
+    });
+    
+    states.push({
+        url: '/',
+        name: 'secciones',
+        component: 'secciones',
+        resolve: {
+        }
+    });
+    
+    states.push({
+        url: '/redatam',
+        name: 'redatam',
+        component: 'redatam',
+        resolve: {
+        }
+    });
+    
+    
+    states.push({
+        url: '/mapas',
+        name: 'mapas',
+        component: 'mapas', 
+        resolve: {
+        }
+    });
+    
+    
+    states.push({
+        url: '/explorador',
+        name: 'explorador',
+        component: 'explorador', 
+        resolve: {
+        }
+    });
+    
+    states.push({
+        url: '/graficas',
+        name: 'graficas',
+        component: 'graficas', 
+        resolve: {
+        }
+    });
+    
+    states.push({
+        url: '/documentacion',
+        name: 'documentacion',
+        component: 'documentacion', 
+        resolve: {
+        }
+    });
+    
+    
+    states.push({
+        url: '/multimedia',
+        name: 'multimedia',
+        component: 'multimedia', 
+        resolve: {
+        }
+    });
+    
+    
+    states.push({
+        url: '/basedatos',
+        name: 'basedatos',
+        component: 'basedatos', 
+        resolve: {
+        }
+    });
+    
+    states.push({
+        url: '/cuantossomos',
+        name: 'cuantossomos',
+        component: 'cuantossomos', 
+        resolve: {
+        }
+    });
+    
+    states.push({
+        url: '/comovivimos',
+        name: 'comovivimos',
+        component: 'comovivimos', 
+        resolve: {
+        }
+    });
+    
+    states.push({
+        url: '/dondeestamos',
+        name: 'dondeestamos',
+        component: 'dondeestamos', 
+        resolve: {
+        }
+    });
 
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap4.min.js"></script>
-<script src="js/angular165.min.js"></script>
-<script src="js/angular-ui-router.min.js"></script>
-<script src="js/angular-animate.min.js"></script>
-<script src="js/angular-sanitize.js"></script>
-<script src="js/angular-ui-utils.min.js"></script>
-<script src="js/jquery-datatables.min.js"></script>
-<script src="js/datatables-bootstrap.min.js"></script>
-<script src="js/ui-bootstrap.min.js"></script>
+    states.push({
+        url: '/calor',
+        name: 'calor',
+        component: 'calor', 
+        resolve: {
+        }
+    });
 
-<script src="js/d3v3.min.js"></script>
-<script src="js/topojsonv1.min.js"></script>
-<!--
-<script src="js/html2canvas.min.js"></script>
-<script src="js/jspdf.debug.js"></script>
-<script src="js/saveHtmlToPdf.min.js"></script>
--->
-<link rel="stylesheet" href="https://censo2018.ine.gob.gt/css/morris.css">
-<script src="js/morris.js"></script>
-<script src="js/regression.js"></script>
-<script src="js/raphael-min.js"></script>
-<script src="js/bootstrap-tpls.js"></script>
+    states.push({
+        url: '/descarga',
+        name: 'descarga',
+        component: 'descarga', 
+        resolve: {
+        }
+    });
 
-<script src="js/intro.min.js"></script>
-<script src="js/angular-intro.min.js"></script>
-<link rel="stylesheet" href="https://censo2018.ine.gob.gt/css/introjs.css">
-<link rel="stylesheet" href="https://censo2018.ine.gob.gt/css/introjs-nazanin.css">
+    states.push({
+        url: '/proyecciones',
+        name: 'proyecciones',
+        component: 'proyecciones', 
+        resolve: {
+        }
+    });    
+    
+    for (var i = 0; i < states.length; i++) {
+        $stateProvider.state(states[i]);
+    }
+    
+});
 
-<!-- Estilos de Api de Documentos -->
 
-<link rel="stylesheet" href="https://censo2018.ine.gob.gt/css/app.css">
-
-<script src="js/app/app.module.js"></script>
-<script src="js/app/app.config.js"></script>
-
-<!-- Componentes -->
-<script src="js/app/components/welcome/welcome.component.js"></script>
-
-<script src="js/app/components/carousel/carouselv2.component.js"></script>
-<script src="js/app/components/menu/menu.component.js"></script>
-<script src="js/app/components/home/home.component.js"></script>
-<script src="js/app/components/secciones/seccionesv3.component.js"></script>
-<script src="js/app/components/new_footer/new_footer.component.js"></script>
-<script src="js/app/components/mapa/mapa.component.js"></script>
-<script src="js/app/components/mapa2/mapa2.component.js"></script>
-<script src="js/app/components/mapas/mapas.component.js"></script>
-<script src="js/app/components/explorador/explorador.component.js"></script>
-<script src="js/app/components/graficas/graficas.component.js"></script>
-<script src="js/app/components/doctos/doctos.component.js"></script>
-<script src="js/app/components/documentacion/documentacion.component.js"></script>
-<script src="js/app/components/multimedia/multimedia.component.js"></script>
-<script src="js/app/components/cuantossomos/cuantossomos.component.js"></script>
-<script src="js/app/components/comovivimos/comovivimos.component.js"></script>
-<script src="js/app/components/dondeestamos/dondeestamos.component.js"></script>
-<script src="js/app/components/calor/calor.component.js"></script>
-<script src="js/app/components/descarga/descarga.component.js"></script>
-<script src="js/app/components/proyecciones/proyecciones.component.js"></script>
-
-<!-- Servicios -->
-<script src="js/app/services/mapas.service.js"></script>
-
-<!-- Modelo Pais -->
-<script src="js/app/models/paisgt.model.js"></script>
-<script src="js/app/models/paisgt2.model.js"></script>
-
-<!-- Modelos Departamentos -->
-<script src="js/app/models/guatemala.model.js"></script>
-<script src="js/app/models/elprogreso.model.js"></script>
-<script src="js/app/models/sacatepequez.model.js"></script>
-<script src="js/app/models/chimaltenango.model.js"></script>
-<script src="js/app/models/escuintla.model.js"></script>
-<script src="js/app/models/santarosa.model.js"></script>
-<script src="js/app/models/solola.model.js"></script>
-<script src="js/app/models/totonicapan.model.js"></script>
-<script src="js/app/models/quetzaltenango.model.js"></script>
-<script src="js/app/models/suchitepequez.model.js"></script>
-<script src="js/app/models/retalhuleu.model.js"></script>
-<script src="js/app/models/sanmarcos.model.js"></script>
-<script src="js/app/models/huehuetenango.model.js"></script>
-<script src="js/app/models/quiche.model.js"></script>
-<script src="js/app/models/bajaverapaz.model.js"></script>
-<script src="js/app/models/altaverapaz.model.js"></script>
-<script src="js/app/models/peten.model.js"></script>
-<script src="js/app/models/izabal.model.js"></script>
-<script src="js/app/models/zacapa.model.js"></script>
-<script src="js/app/models/chiquimula.model.js"></script>
-<script src="js/app/models/jalapa.model.js"></script>
-<script src="js/app/models/jutiapa.model.js"></script>
-
-</head>
-<body ng-app="censo">
-
-<div class="container home" class="text-center">
-<menu></menu>
-<br>
-<div ui-view=''>
-</div>
-<new-footer></new-footer>
-</div>
-
-</body>
-</html>
-
-page: http://www.censopoblacion.gt/
-  unreachable: URLError: <urlopen error timed out>
