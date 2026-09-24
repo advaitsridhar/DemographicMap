@@ -1,10 +1,13 @@
-  https://api.siat.stat.uz/sdmx/246/table/download/?download_format=json -> https://api.siat.stat.uz/media/uploads/sdmx/sdmx_data_246.json (103.9 KB, updated 2026-04-22T15:18:14.751731+05:00)
-  Bozatau district: carved from ['Kegeyli district', 'Chimbay district'] in 2020; those shapes left blank
-  Takhiatash district: carved from Khojeyli district in 2018
-  Kukdala district: carved from Chirakchi district in 2023
-  Gazgan city: carved from ['Karmana district', 'Nurota district'] in 2020; those shapes left blank
-  Bandykhan district: carved from ['Kumkurgan district', 'Kizirik district', 'Termiz district'] in 2020; those shapes left blank
-  Tuprakkala district: carved from Khazarasp district in 2021
-  Yangikhayot district: carved from Sergeli district in 2021
-  14 regions, 198 districts (189 with a figure, 9 left blank with the reason)
-  wrote data/processed/uzbekistan_siat.json (237 kB)
+  1,642,963 bytes
+  https://cosit.gov.iq/documents/AAS2024/02.pdf: 1,642,963 bytes
+  39 pages
+  13 pages of Table 11/2
+  wrote data/raw/iraq/aas2024_table11.txt
+  98,126 bytes
+  sheet 'irq_admin0': 1 rows, ['iso2', 'iso3', 'adm0_name', 'adm0_name1', 'adm0_name2', 'adm0_name3', 'adm0_pcode', 'valid_on', 'valid_to', 'version', 'area_sqkm', 'lang', 'lang1', 'lang2']
+  sheet 'irq_admin1': 18 rows, ['adm1_name', 'adm1_name1', 'adm1_name2', 'adm1_name3', 'adm1_pcode', 'adm0_name', 'adm0_name1', 'adm0_name2', 'adm0_name3', 'adm0_pcode', 'valid_on', 'valid_to', 'area_sqkm', 'version']
+  sheet 'irq_admin2': 101 rows, ['adm2_name', 'adm2_name1', 'adm2_name2', 'adm2_name3', 'adm2_pcode', 'adm1_name', 'adm1_name1', 'adm1_name2', 'adm1_name3', 'adm1_pcode', 'adm0_name', 'adm0_name1', 'adm0_name2', 'adm0_name3']
+  sheet 'irq_admin3': 294 rows, ['adm3_name', 'adm3_name1', 'adm3_name2', 'adm3_name3', 'adm3_pcode', 'adm2_name', 'adm2_name1', 'adm2_name2', 'adm2_name3', 'adm2_pcode', 'adm1_name', 'adm1_name1', 'adm1_name2', 'adm1_name3']
+  sheet 'irq_adminlines': 864 rows, ['adm_level', 'name', 'valid_on', 'valid_to', 'version', 'right_pcod', 'left_pcod']
+  sheet 'irq_adminpoints': 414 rows, ['admin_level', 'name', 'name1', 'name2', 'name3', 'x_coord', 'y_coord', 'adm4_name', 'adm4_name1', 'adm4_name2', 'adm4_name3', 'adm4_pcode', 'adm3_name', 'adm3_name1']
+  wrote data/raw/iraq/ocha_admin3.txt (710 rows)
