@@ -463,6 +463,26 @@ def headers(isos: list[str]) -> None:
             continue
         for resource in package.get("resources") or ():
             name = str(resource.get("name") or "")
+            if name.lower().endswith((".xlsx", ".xlsm")) and "boundaries" not in name.lower():
+                # Every sheet's name and first two rows: which one holds the
+                # districts, and under what columns, is read and not guessed.
+                log(f"  {code} {name}")
+                try:
+                    import openpyxl
+                    with urllib.request.urlopen(urllib.request.Request(
+                            str(resource.get("url")), headers=HEADERS),
+                            timeout=TIMEOUT) as fh:
+                        book = openpyxl.load_workbook(io.BytesIO(fh.read()),
+                                                      read_only=True, data_only=True)
+                    for ws in book.worksheets:
+                        rows = ws.iter_rows(values_only=True, max_row=2)
+                        log(f"      sheet {ws.title!r}")
+                        for row in rows:
+                            log("        " + " | ".join(
+                                "" if v is None else str(v) for v in row)[:300])
+                except Exception as err:             # noqa: BLE001 -- reported
+                    log(f"      unreadable: {type(err).__name__}: {err}")
+                continue
             if "adm2" not in name.lower() or not name.lower().endswith(".csv"):
                 continue
             log(f"  {code} {name}")
