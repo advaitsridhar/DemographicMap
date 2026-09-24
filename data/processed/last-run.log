@@ -1,3 +1,159 @@
-page: https://censo2018.ine.gob.gt/filtros/new_filtros
-  1,240 bytes
-{"deptos":[{"id":98,"departamento":"Rep\u00fablica de Guatemala"},{"id":1,"departamento":"Guatemala"},{"id":2,"departamento":"El Progreso"},{"id":3,"departamento":"Sacatep\u00e9quez"},{"id":4,"departamento":"Chimaltenango"},{"id":5,"departamento":"Escuintla"},{"id":6,"departamento":"Santa Rosa"},{"id":7,"departamento":"Solol\u00e1"},{"id":8,"departamento":"Totonicap\u00e1n"},{"id":9,"departamento":"Quetzaltenango"},{"id":10,"departamento":"Suchitep\u00e9quez"},{"id":11,"departamento":"Retalhuleu"},{"id":12,"departamento":"San Marcos"},{"id":13,"departamento":"Huehuetenango"},{"id":14,"departamento":"Quich\u00e9"},{"id":15,"departamento":"Baja Verapaz"},{"id":16,"departamento":"Alta Verapaz"},{"id":17,"departamento":"Pet\u00e9n"},{"id":18,"departamento":"Izabal"},{"id":19,"departamento":"Zacapa"},{"id":20,"departamento":"Chiquimula"},{"id":21,"departamento":"Jalapa"},{"id":22,"departamento":"Jutiapa"},{"id":99,"departamento":"Todos los Municipios"}],"temas":[{"id":1,"tema_censal":"Todos"},{"id":2,"tema_censal":"Persona"},{"id":3,"tema_censal":"Hogar"},{"id":4,"tema_censal":"Vivienda"}],"categorias":[{"id":1,"categoria_docto":"Boletines"},{"id":2,"categoria_docto":"Leyes y Decretos"},{"id":3,"categoria_docto":"Manuales"}]}
+page: https://censo2018.ine.gob.gt/js/app/components/descarga/descarga.component.js
+  686 bytes
+(function() {
+    'use strict';
+    
+    angular
+    .module('censo')
+    .controller('DescargaController', descargaController)
+    .component('descarga', {
+        templateUrl: '/js/app/components/descarga/descarga.html',
+        controller: 'DescargaController',
+        controllerAs: 'vmDescarga',
+        bindings: {        
+        }
+    });
+    
+    
+    descargaController.$inject = [
+        '$scope',
+        '$rootScope',
+        '$http'
+    ];
+    
+    function descargaController($scope, $rootScope, $http) {
+
+        var vm = this;
+
+        vm.$onInit = $onInit();
+        
+        function $onInit(){
+
+            
+        }
+
+    }
+
+})();
+page: https://censo2018.ine.gob.gt/js/app/components/cuantossomos/cuantossomos.component.js
+  3,757 bytes
+(function() {
+    'use strict';
+    
+    angular
+    .module('censo')
+    .controller('CuantosSomosController', cuantossomosController)
+    .component('cuantossomos', {
+        templateUrl: '/js/app/components/cuantossomos/cuantossomos.html',
+        controller: 'CuantosSomosController',
+        controllerAs: 'vmCuantosSomos',
+        bindings: {        
+        }
+    });
+    
+    
+    cuantossomosController.$inject = [
+        '$scope',
+        'ngIntroService',
+        '$http'
+    ];
+
+    function cuantossomosController($scope, ngIntroService) {
+                   
+        var vm = this;
+
+        vm.$onInit = $onInit();
+
+        function $onInit(){
+
+        }
+
+
+        $('#censito').click(function(){
+            $("#ayuda").show();
+        });
+        
+        $('#cerrarAyuda').click(function(){
+            $("#ayuda").hide();
+        });
+        
+        $('#navegacionSitio').click(function(){
+            $("#ayuda").hide();  
+        });
+        
+        var divAyuda = document.getElementById('ayuda');
+        var eCensito = document.getElementById('eCensito');
+        document.addEventListener("click", function(e){
+            var clic = e.target;
+            if(clic != divAyuda && clic!=eCensito){
+                divAyuda.style.display = "none";
+            }
+        });
+        
+        $('#eCensito').popover();
+
+
+        $scope.IntroOptions = {
+            steps:[
+                {
+                    element: document.querySelector('#step701'),
+                    intro: 'Las infografías son imágenes donde se resume cierta información, en ésta página podrá observar varias infografías referente a la temática de <strong>¿Cuántos somos?</strong>, al dar un clic en cualquiera de las infografías, podrá descargar un documento en formato pdf, con las infografías de las tres temáticas.',
+                    position: 'right'
+                }
+            ],
+            showStepNumbers: false,
+            showBullets: false,
+            exitOnOverlayClick: true,
+            exitOnEsc:true,
+            nextLabel: 'Siguiente',
+            prevLabel: '<span style="color:white">Anterior</span>',
+            skipLabel: 'Cerrar',
+            doneLabel: 'Cerrar'
+        };
+        
+        $scope.CompletedEvent = function(){
+            console.log('[directive] completed Event')
+        }
+        $scope.ExitEvent= function(){
+            console.log('[directive] exit Event')
+        }
+        $scope.ChangeEvent = function(){
+            console.log('[directive] change Event')
+        }
+        $scope.BeforeChangeEvent= function(){
+            console.log('[directive] beforeChange Event')
+        }
+        $scope.AfterChangeEvent= function(){
+            console.log('[directive] after change Event')
+        }
+        $scope.clearAndStartNewIntro = function(){
+           
+            ngIntroService.clear();
+            ngIntroService.setOptions($scope.IntroOptions);
+            
+            ngIntroService.onComplete(function(){
+                console.log('update some cookie or localstorage.')
+            })
+            
+            ngIntroService.onExit(function(){
+                console.log("[service] exit");
+            })
+            
+            ngIntroService.onBeforeChange(function(){
+                console.log("[service] before change");
+            })
+            
+            ngIntroService.onChange(()=>{
+                console.log("[service] on change");
+            })
+            
+            ngIntroService.onAfterChange(()=>{
+                console.log("[service] after Change");
+            })
+            
+            ngIntroService.start();
+        }
+
+
+    }
+})();
