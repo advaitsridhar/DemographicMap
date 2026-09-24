@@ -240,6 +240,17 @@ class SettlementFiguresOnDistricts(unittest.TestCase):
         self.assertEqual(self.run_guard([["Q3957", "town"]], parent=34674, siblings=0)[0], 1)
 
 
+class HistoricFigures(unittest.TestCase):
+    def test_a_figure_from_622_is_left_out(self):
+        a2 = {"IRQ": [{"id": "U", "name": "Al-Mada'in", "population":
+                       {"value": 500000, "year": 622, "source": "Wikidata (CC0)"}},
+                      {"id": "V", "name": "Kept", "population":
+                       {"value": 9000, "year": 1997, "source": "Wikidata (CC0)"}}]}
+        self.assertEqual(be.refuse_historic_figures(a2), 1)
+        self.assertIn("for the year 622", a2["IRQ"][0]["population"]["note"])
+        self.assertEqual(a2["IRQ"][1]["population"]["value"], 9000)
+
+
 class CapitalFiguresOnParents(unittest.TestCase):
     """A first-level Wikidata item can carry its capital's figure."""
 

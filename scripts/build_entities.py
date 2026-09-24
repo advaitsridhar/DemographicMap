@@ -2969,8 +2969,10 @@ def say_why_empty(entity: dict[str, Any], country: str,
 #   * a division may not hold more than half again its parent's people;
 #   * a parent's only division is the parent's ground, so its figure must
 #     be within 0.6 and 1.6 of the parent's (years apart, not towns apart).
-# Measured on 24 September 2026 over every Wikidata figure at this level:
-# 18 fail, every one a town, a city proper or a wrong item.
+# Measured on 24 September 2026 over every Wikidata figure at this level,
+# after the settlement check below has taken what it can tell from Wikidata's
+# own classes: 29 fail with the namesake rule that follows, every one a town,
+# a city proper, a parent's figure or a wrong item.
 TOWN_RATIO_MAX = 1.5
 SOLE_CHILD_BAND = (0.6, 1.6)
 # And the other way round: a division named like its parent that carries the
@@ -3051,10 +3053,12 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
 # "city of Japan", "city in Finland", "prefecture-level city of China", "city
 # of Indonesia" and the like are units of government and are not here; nor are
 # the three bare "city" classes Estonia's town municipalities carry, nor "city
-# in Cyprus" or "settlement of Andorra", whose towns are their units' ground. 154 figures were only
-# settlements: Bled's 4,969 on a municipality of 8,000, Alytus city's 51,856
-# on Alytus District Municipality, Amman's four million on one of its
-# districts. Two kinds keep theirs, because there the settlement is the unit:
+# in Cyprus" or "settlement of Andorra", whose towns are their units' ground.
+#
+# 188 figures were only settlements: Bled's 4,969 on a municipality of 8,000,
+# Alytus city's 51,856 on Alytus District Municipality, Amman's four million
+# on one of its districts. Two kinds keep theirs, because there the settlement
+# is the unit:
 #   * a shape named as a city -- Uzbekistan draws "Andijan" and "Andijan city"
 #     side by side, and the city's item belongs on the second, which says so;
 #   * a parent's only division within SOLE_CHILD_BAND of the parent -- Malta's
@@ -3140,6 +3144,32 @@ def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
                 + (f" ({pop['year']})" if pop.get("year") else "")
                 + " are the settlement's people rather than this unit's, so the "
                   "figure is left out."))
+            refused += 1
+    return refused
+
+
+# A figure from before any census could have counted the unit on the map is
+# history, not population. Iraq's district of Al-Mada'in was joined by name to
+# the item for the ancient city, and read 500,000 people in the year 622.
+# Measured on 24 September 2026, it is the only Wikidata figure at either
+# level dated before 1900.
+OLDEST_FIGURE = 1900
+
+
+def refuse_historic_figures(admin2: dict[str, list[dict[str, Any]]]) -> int:
+    """Take off a Wikidata population dated before any modern count."""
+    refused = 0
+    for rows in admin2.values():
+        for entity in rows:
+            pop = entity.get("population")
+            year = vintage(pop)
+            if not (year and year < OLDEST_FIGURE and pop.get("value")
+                    and str(pop.get("source") or "").startswith("Wikidata")):
+                continue
+            entity["population"] = gap(NOT_AVAILABLE, (
+                f"The Wikidata item joined here by name gives {pop['value']:,} "
+                f"for the year {year}: a historical place of this name, not the "
+                f"unit on the map, so its figure is left out."))
             refused += 1
     return refused
 
@@ -4620,6 +4650,9 @@ def main() -> int:
     if settlements:
         log(f"  {settlements} Wikidata district figures left out as a "
             f"settlement's, not the district's")
+    historic = refuse_historic_figures(admin2_by_country)
+    if historic:
+        log(f"  {historic} Wikidata district figures left out as history")
     capitals = refuse_capital_figures(admin1_by_country, admin2_by_country)
     if capitals:
         log(f"  {capitals} Wikidata first-level figures left out as a capital's, "
