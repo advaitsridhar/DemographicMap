@@ -16637,53 +16637,5 @@
       "nuts": "UKN16",
       "nuts_level": 3
     }
-  },
-  {
-    "id": "EU-LU000",
-    "level": "admin2",
-    "name": "Luxembourg",
-    "parent": "LUX",
-    "capital": {
-      "status": "not_available"
-    },
-    "largest_settlement": {
-      "status": "not_available"
-    },
-    "population": {
-      "value": 681973,
-      "year": 2025,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "median_age": {
-      "value": 39.8,
-      "unit": "years",
-      "year": 2025,
-      "source": "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
-    },
-    "sex_ratio": {
-      "status": "not_available"
-    },
-    "religion": {
-      "status": "not_available"
-    },
-    "language": {
-      "status": "not_available"
-    },
-    "ethnicity": {
-      "status": "not_available"
-    },
-    "sources": [
-      {
-        "field": "population/median age",
-        "name": "Eurostat",
-        "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_r_pjangrp3?format=JSON&lang=EN",
-        "license": "Eurostat re-use policy (attribution)"
-      }
-    ],
-    "country": "LUX",
-    "codes": {
-      "nuts": "LU000",
-      "nuts_level": 3
-    }
   }
 ]

@@ -1,40 +1,4 @@
-eurostat: demo_r_pjangrp3 (nuts3)
-  ALB: 13 NUTS-3 regions left out -- they are this map's admin1: 12 of 13 names match this map's admin1 (against 11 at admin2)
-  AUT: 35 NUTS-3 regions left out -- its names match 4 of this map's districts and 1 of its first-level units, out of 35; too few of either to say which level this file describes
-  BEL: 52 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 46; too few of either to say which level this file describes
-  BGR: 28 NUTS-3 regions left out -- they are this map's admin1: 27 of 27 names match this map's admin1 (against 26 at admin2)
-  CHE: 26 NUTS-3 regions left out -- they are this map's admin1: 22 of 26 names match this map's admin1 (against 14 at admin2)
-  CYP: 1 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 1; too few of either to say which level this file describes
-  CZE: 14 NUTS-3 regions left out -- they are this map's admin1: 14 of 14 names match this map's admin1 (against 0 at admin2)
-  DEU: 407 NUTS-3 regions left out -- its names match 4 of this map's districts and 2 of its first-level units, out of 401; too few of either to say which level this file describes
-  DNK: 11 NUTS-3 regions left out -- its names match 1 of this map's districts and 1 of its first-level units, out of 11; too few of either to say which level this file describes
-  ESP: 59 NUTS-3 regions kept -- 44 of 59 names match this map's admin2 (against 3 at admin1)
-  EST: 7 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 5; too few of either to say which level this file describes
-  FIN: 28 NUTS-3 regions left out -- its names match 0 of this map's districts and 6 of its first-level units, out of 19; too few of either to say which level this file describes
-  FRA: 102 NUTS-3 regions kept -- 96 of 102 names match this map's admin2 (against 0 at admin1)
-  GBR: 179 NUTS-3 regions kept -- 91 of 178 names match this map's admin2 (against 0 at admin1)
-  GRC: 52 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 52; too few of either to say which level this file describes
-  HRV: 35 NUTS-3 regions left out -- its names match 1 of this map's districts and 0 of its first-level units, out of 22; too few of either to say which level this file describes
-  HUN: 21 NUTS-3 regions left out -- they are this map's admin1: 19 of 21 names match this map's admin1 (against 4 at admin2)
-  IRL: 8 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 8; too few of either to say which level this file describes
-  ISL: 2 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 2; too few of either to say which level this file describes
-  ITA: 115 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 111; too few of either to say which level this file describes
-  LIE: 1 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 1; too few of either to say which level this file describes
-  LTU: 10 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 10; too few of either to say which level this file describes
-  LUX: 1 NUTS-3 regions kept -- 1 of 1 names match this map's admin2 (against 0 at admin1)
-  LVA: 9 NUTS-3 regions left out -- its names match 1 of this map's districts and 1 of its first-level units, out of 6; too few of either to say which level this file describes
-  MKD: 9 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 9; too few of either to say which level this file describes
-  MLT: 2 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 2; too few of either to say which level this file describes
-  MNE: 1 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 1; too few of either to say which level this file describes
-  NLD: 55 NUTS-3 regions left out -- its names match 1 of this map's districts and 2 of its first-level units, out of 40; too few of either to say which level this file describes
-  NOR: 36 NUTS-3 regions left out -- its names match 0 of this map's districts and 8 of its first-level units, out of 28; too few of either to say which level this file describes
-  POL: 73 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 73; too few of either to say which level this file describes
-  PRT: 40 NUTS-3 regions left out -- its names match 0 of this map's districts and 2 of its first-level units, out of 27; too few of either to say which level this file describes
-  ROU: 42 NUTS-3 regions left out -- they are this map's admin1: 42 of 42 names match this map's admin1 (against 18 at admin2)
-  SRB: 25 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 25; too few of either to say which level this file describes
-  SVK: 8 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 8; too few of either to say which level this file describes
-  SVN: 12 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 12; too few of either to say which level this file describes
-  SWE: 21 NUTS-3 regions left out -- they are this map's admin1: 21 of 21 names match this map's admin1 (against 0 at admin2)
-  TUR: 81 NUTS-3 regions left out -- they are this map's admin1: 81 of 81 names match this map's admin1 (against 11 at admin2)
-  wrote data/processed/eurostat_nuts3.json (412 kB)
-  341 nuts3 records
+  wrote data/raw/codes/wikidata_countries.json (3 kB)
+  NLD Q2039348: 1 items of the class
+  wrote data/processed/wikidata_admin2.json (55801 kB)
+  1 rows added, 1 populations filled
