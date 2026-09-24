@@ -3046,10 +3046,12 @@ def refuse_town_figures(admin1: dict[str, list[dict[str, Any]]],
 # figure is left out. An item that is both, as the cities of Japan and the
 # municipalities of the Netherlands are, keeps its figure: it is the unit.
 #
-# Listed by hand from the classes the items giving this level a figure carry,
-# measured on 24 September 2026: generic settlements only. "Town in Romania",
-# "city of Japan", "prefecture-level city of China", "city of Indonesia" and
-# the like are units of government and are not here. 154 figures were only
+# Listed by hand from the classes the 19,451 items giving this level a figure
+# carry, measured on 24 September 2026: settlements only. "Town in Romania",
+# "city of Japan", "city in Finland", "prefecture-level city of China", "city
+# of Indonesia" and the like are units of government and are not here; nor are
+# the three bare "city" classes Estonia's town municipalities carry, nor "city
+# in Cyprus" or "settlement of Andorra", whose towns are their units' ground. 154 figures were only
 # settlements: Bled's 4,969 on a municipality of 8,000, Alytus city's 51,856
 # on Alytus District Municipality, Amman's four million on one of its
 # districts. Two kinds keep theirs, because there the settlement is the unit:
@@ -3082,6 +3084,20 @@ SETTLEMENT_CLASSES: dict[str, str] = {
     "Q2989457": "urban-type settlement",
     "Q4100864": "urban-type settlement in Ukraine",
     "Q15078955": "urban-type settlement in Russia",
+    "Q20019082": "work settlement of Russia", "Q106389302": "city/town in Russia",
+    "Q41501164": "village of Crimea", "Q28371991": "village of Yemen",
+    "Q16127605": "populated place in Syria", "Q20202352": "locality of Mexico",
+    "Q3257686": "locality", "Q16362394": "large village in Latvia",
+    "Q89487741": "city in Bulgaria", "Q5770918": "city of Argentina",
+    "Q63209072": "city of Colombia",
+    "Q1852859": "cadastral populated place in the Netherlands",
+    "Q14770218": "cantonal capital of Switzerland", "Q134626": "district capital",
+    "Q137640468": "provincial capital", "Q1422929": "primate city",
+    "Q8501237": "large city", "Q129676344": "large city", "Q18466176": "small city",
+    "Q505681": "linear settlement", "Q378636": "village with a church",
+    "Q22674925": "former settlement", "Q627236": "company town",
+    "Q6882870": "designated spa town", "Q2202509": "Roman city",
+    "Q1392581": "cycling city", "Q137547946": "Forest City",
 }
 ITEM_CLASSES = PROCESSED / "wikidata_admin2_item_classes.json"
 CITY_SHAPE = re.compile(r"\b(city|kota|ciudad|ville|shahar)\b", re.I)
