@@ -614,6 +614,17 @@ SHAPE_GAPS: dict[str, dict[str, str]] = {}
 # bounded on land only by Lago and Chimbonila districts. None of the four
 # overlaps a neighbour.
 #
+# Indonesia has four, the ones UN OCHA lists among the uninhabited features
+# of the same boundary set that are water (its fifth, Hutan, is a forest and
+# stays land). "Danau Toba" is Lake Toba, 1,107 km2, ringed by seven
+# regencies with Samosir, the island in the lake, one of them. "Danau" --
+# lake -- is one shape in four pieces, each lying where a lake lies: Ranau
+# (124 km2), Singkarak (108), Tondano (47) and Moat (6.5). Waduk Cirata
+# (56.5 km2) and Wadung Kedungombo (28.5 km2) are reservoirs. indonesia.py
+# already writes each as "not collected" with OCHA's caveat; the water
+# declaration settles them after every adapter has run, see
+# check_water_shapes.
+#
 # So each is declared here, keyed by the boundary file's spelling, and
 # becomes water: every field not applicable, with the reason, and drawn in
 # the water colour whatever the metric. A declaration is checked like the
@@ -642,6 +653,37 @@ WATER_SHAPES: dict[str, dict[str, str]] = {
             "Taulabe, Santa Cruz de Yojoa, San Pedro Zacapa and Las Vegas on "
             "its shore. Nobody lives on it: the people around the lake are "
             "counted in those municipios, and nothing here is missing."),
+    },
+    "IDN": {
+        "Danau Toba": (
+            "This shape is Lake Toba, not a regency. geoBoundaries draws the "
+            "lake as a second-order unit of its own (1,107 km2), between the "
+            "regencies on its shore and around Samosir, the island in it, "
+            "which is a regency of its own. UN OCHA lists it among the "
+            "uninhabited features of the same boundaries. Nobody lives on "
+            "the water: the "
+            "people around it are counted in those regencies, and nothing "
+            "here is missing."),
+        "Danau": (
+            "This shape is four lakes, not a regency: geoBoundaries draws "
+            "them as one second-order unit named \"Danau\", lake. Its "
+            "pieces lie where Lake Ranau (124 km2) and Lake Singkarak (108 "
+            "km2) on Sumatra and Lake Tondano (47 km2) and Lake Moat (6.5 "
+            "km2) on Sulawesi lie. Nobody lives on them: the people around "
+            "each are counted in the regencies on its shore, and nothing "
+            "here is missing."),
+        "Waduk Cirata": (
+            "This shape is the Cirata reservoir, not a regency. geoBoundaries "
+            "draws it as a second-order unit of its own (56.5 km2), between "
+            "Bandung Barat, Cianjur and Purwakarta. Nobody lives on it: the "
+            "people around it are counted in those regencies, and nothing "
+            "here is missing."),
+        "Wadung Kedungombo": (
+            "This shape is the Kedungombo reservoir, not a regency. "
+            "geoBoundaries draws it as a second-order unit of its own (28.5 "
+            "km2), between Boyolali, Grobogan and Sragen. Nobody lives on "
+            "it: the people around it are counted in those regencies, and "
+            "nothing here is missing."),
     },
     "MOZ": {
         "Lago Niassa": (
@@ -2887,11 +2929,17 @@ def say_why_empty(entity: dict[str, Any], country: str,
 
 def check_water_shapes(admin1: dict[str, list[dict[str, Any]]],
                        admin2: dict[str, list[dict[str, Any]]]) -> None:
-    """Every declared lake is drawn, and nothing has landed on it.
+    """Every declared lake is drawn, nothing has landed on it, and it is water.
 
     A declaration that names no shape is stale, and a lake that ends up with
     a population or a composition means a row was joined to water -- a
     mis-match, which is worse than the gap it replaced. Either stops the build.
+
+    A gap that landed is a different thing: an adapter agreeing that nothing
+    is here. Indonesia's writes "not collected" on its lakes and reservoirs,
+    with UN OCHA's list of uninhabited features as the reason, and the
+    declaration settles those back to water. Its citation stays on the
+    record, since it says the same thing.
     """
     problems: list[str] = []
     for iso3, declared in WATER_SHAPES.items():
@@ -2907,12 +2955,14 @@ def check_water_shapes(admin1: dict[str, list[dict[str, Any]]],
                     f"shapes carry that name -- it should be exactly one")
                 continue
             landed = [f for f in UNIT_FIELDS
-                      if field_state(shapes[0].get(f)) != NOT_APPLICABLE]
+                      if field_state(shapes[0].get(f))
+                      not in (NOT_APPLICABLE, NOT_AVAILABLE, NOT_COLLECTED)]
             if landed:
                 problems.append(
                     f"{iso3} / {name}: declared as water, but {', '.join(landed)} "
-                    f"ended up with something other than not-applicable -- a "
-                    f"row was joined to a lake")
+                    f"ended up with a figure -- a row was joined to a lake")
+                continue
+            mark_water(shapes[0], iso3)
     if problems:
         raise SystemExit("water shapes:\n  " + "\n  ".join(problems))
 
@@ -3556,6 +3606,12 @@ NOT_THIS_SHAPE: dict[tuple[str, str], str] = {
     ("PER", "Q211795"): ("the Department of Lima with Metropolitan Lima inside it: "
                          "11,595,510 people, most of them in the metropolitan "
                          "province the map draws separately"),
+    # "Danau Sentarum National Park" reached the shape called "Danau" on its
+    # first word. The park is in West Kalimantan; the shape is four lakes on
+    # Sumatra and Sulawesi, and took the park's point on Borneo.
+    ("IDN", "Q239494"): ("Danau Sentarum National Park in West Kalimantan, a park "
+                         "and not any of the four lakes on Sumatra and Sulawesi "
+                         "the shape called Danau draws"),
 }
 
 PLACED: dict[tuple[str, str], str] = {
