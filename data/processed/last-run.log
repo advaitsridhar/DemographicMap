@@ -1,42 +1,6 @@
-eurostat: demo_r_pjangrp3 (nuts3)
-  501 regions placed by outline; 902 are no one unit by outline; 210 left to their names
-  GBR: 179 NUTS-3 regions kept at admin2 -- 91 of 178 names match this map's admin2 (against 0 at admin1)
-  IRL: 8 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 8; too few of either to say which level this file describes
-  LVA: 9 NUTS-3 regions left out -- its names match 1 of this map's districts and 1 of its first-level units, out of 6; too few of either to say which level this file describes
-  MLT: 2 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 2; too few of either to say which level this file describes
-  SVN: 12 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 12; too few of either to say which level this file describes
-  GBR: Hartlepool and Stockton-on-Tees (NUTS 2021) left out -- it holds Hartlepool, Stockton-on-Tees and more
-  GBR: North and North East Lincolnshire (NUTS 2021) left out -- it holds North East Lincolnshire and more
-  GBR: Barnsley, Doncaster and Rotherham (NUTS 2021) left out -- it holds Barnsley, Doncaster, Rotherham and more
-  GBR: Calderdale and Kirklees (NUTS 2021) left out -- it holds Calderdale, Kirklees and more
-  GBR: Leicestershire CC and Rutland (NUTS 2021) left out -- it holds Rutland and more
-  GBR: Camden & City of London (NUTS 2021) left out -- it holds Camden, City of London and more
-  GBR: Kensington and Chelsea & Hammersmith and Fulham (NUTS 2021) left out -- it holds Hammersmith and Fulham, Kensington and Chelsea and more
-  GBR: Hackney & Newham (NUTS 2021) left out -- it holds Hackney, Newham and more
-  GBR: Haringey & Islington (NUTS 2021) left out -- it holds Haringey, Islington and more
-  GBR: Lewisham & Southwark (NUTS 2021) left out -- it holds Lewisham, Southwark and more
-  GBR: Bexley & Greenwich (NUTS 2021) left out -- it holds Bexley, Greenwich and more
-  GBR: Barking & Dagenham and Havering (NUTS 2021) left out -- it holds Barking & Dagenham, Havering and more
-  GBR: Redbridge & Waltham Forest (NUTS 2021) left out -- it holds Redbridge, Waltham Forest and more
-  GBR: Merton, Kingston upon Thames & Sutton (NUTS 2021) left out -- it holds Kingston upon Thames, Merton, Sutton and more
-  GBR: Harrow & Hillingdon (NUTS 2021) left out -- it holds Harrow, Hillingdon and more
-  GBR: Hounslow & Richmond upon Thames (NUTS 2021) left out -- it holds Hounslow, Richmond upon Thames and more
-  GBR: Bath and North East Somerset, North Somerset and South Gloucestershire (NUTS 2021) left out -- it holds Bath and North East Somerset, North Somerset, South Gloucestershire and more
-  GBR: Cornwall and Isles of Scilly (NUTS 2021) left out -- it holds Cornwall, Isles of Scilly and more
-  GBR: Conwy and Denbighshire (NUTS 2021) left out -- it holds Conwy, Denbighshire and more
-  GBR: Bridgend and Neath Port Talbot (NUTS 2021) left out -- it holds Bridgend, Neath Port Talbot and more
-  GBR: Monmouthshire and Newport (NUTS 2021) left out -- it holds Monmouthshire, Newport and more
-  GBR: Cardiff and Vale of Glamorgan (NUTS 2021) left out -- it holds Cardiff, Vale of Glamorgan and more
-  GBR: Flintshire and Wrexham (NUTS 2021) left out -- it holds Flintshire, Wrexham and more
-  GBR: Aberdeen City and Aberdeenshire (NUTS 2021) left out -- it holds Aberdeen City, Aberdeenshire and more
-  GBR: Inverness & Nairn and Moray, Badenoch & Strathspey (NUTS 2021) left out -- it holds Moray and more
-  GBR: Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute (NUTS 2021) left out -- it holds Argyll & Bute and more
-  GBR: Angus and Dundee City (NUTS 2021) left out -- it holds Angus, Dundee City and more
-  GBR: Clackmannanshire and Fife (NUTS 2021) left out -- it holds Clackmannanshire, Fife and more
-  GBR: East Lothian and Midlothian (NUTS 2021) left out -- it holds East Lothian, Midlothian and more
-  GBR: Perth & Kinross and Stirling (NUTS 2021) left out -- it holds Perth & Kinross, Stirling and more
-  GBR: East Dunbartonshire, West Dunbartonshire and Helensburgh & Lomond (NUTS 2021) left out -- it holds East Dunbartonshire, West Dunbartonshire and more
-  GBR: Inverclyde, East Renfrewshire and Renfrewshire (NUTS 2021) left out -- it holds East Renfrewshire, Inverclyde, Renfrewshire and more
-  GBR: East Ayrshire and North Ayrshire mainland (NUTS 2021) left out -- it holds East Ayrshire and more
-  wrote data/processed/eurostat_nuts3.json (928 kB)
-  647 nuts3 records
+eurostat: demo_r_pjangrp3 (nuts2)
+  EFTA: no ISO3 for Eurostat country code 'EF'; skipped
+  EU28: no ISO3 for Eurostat country code 'EU'; skipped
+  127 regions placed by outline; 131 are no one unit by outline; 46 left to their names
+  wrote data/processed/eurostat_nuts2.json (237 kB)
+  173 nuts2 records
