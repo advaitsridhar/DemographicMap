@@ -108506,5 +108506,1445 @@
     "codes": {
       "inegi": "32056"
     }
+  },
+  {
+    "id": "MEX-01000",
+    "level": "admin1",
+    "name": "Aguascalientes",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 27.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "01000"
+    }
+  },
+  {
+    "id": "MEX-02000",
+    "level": "admin1",
+    "name": "Baja California",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "02000"
+    }
+  },
+  {
+    "id": "MEX-03000",
+    "level": "admin1",
+    "name": "Baja California Sur",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "03000"
+    }
+  },
+  {
+    "id": "MEX-04000",
+    "level": "admin1",
+    "name": "Campeche",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "04000"
+    }
+  },
+  {
+    "id": "MEX-05000",
+    "level": "admin1",
+    "name": "Coahuila de Zaragoza",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "05000"
+    }
+  },
+  {
+    "id": "MEX-06000",
+    "level": "admin1",
+    "name": "Colima",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "06000"
+    }
+  },
+  {
+    "id": "MEX-07000",
+    "level": "admin1",
+    "name": "Chiapas",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 24.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "07000"
+    }
+  },
+  {
+    "id": "MEX-08000",
+    "level": "admin1",
+    "name": "Chihuahua",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "08000"
+    }
+  },
+  {
+    "id": "MEX-09000",
+    "level": "admin1",
+    "name": "Ciudad de México",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 35.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "09000"
+    }
+  },
+  {
+    "id": "MEX-10000",
+    "level": "admin1",
+    "name": "Durango",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 27.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "10000"
+    }
+  },
+  {
+    "id": "MEX-11000",
+    "level": "admin1",
+    "name": "Guanajuato",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "11000"
+    }
+  },
+  {
+    "id": "MEX-12000",
+    "level": "admin1",
+    "name": "Guerrero",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 27.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "12000"
+    }
+  },
+  {
+    "id": "MEX-13000",
+    "level": "admin1",
+    "name": "Hidalgo",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "13000"
+    }
+  },
+  {
+    "id": "MEX-14000",
+    "level": "admin1",
+    "name": "Jalisco",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "14000"
+    }
+  },
+  {
+    "id": "MEX-15000",
+    "level": "admin1",
+    "name": "México",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "15000"
+    }
+  },
+  {
+    "id": "MEX-16000",
+    "level": "admin1",
+    "name": "Michoacán de Ocampo",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "16000"
+    }
+  },
+  {
+    "id": "MEX-17000",
+    "level": "admin1",
+    "name": "Morelos",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "17000"
+    }
+  },
+  {
+    "id": "MEX-18000",
+    "level": "admin1",
+    "name": "Nayarit",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "18000"
+    }
+  },
+  {
+    "id": "MEX-19000",
+    "level": "admin1",
+    "name": "Nuevo León",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "19000"
+    }
+  },
+  {
+    "id": "MEX-20000",
+    "level": "admin1",
+    "name": "Oaxaca",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "20000"
+    }
+  },
+  {
+    "id": "MEX-21000",
+    "level": "admin1",
+    "name": "Puebla",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "21000"
+    }
+  },
+  {
+    "id": "MEX-22000",
+    "level": "admin1",
+    "name": "Querétaro",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "22000"
+    }
+  },
+  {
+    "id": "MEX-23000",
+    "level": "admin1",
+    "name": "Quintana Roo",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "23000"
+    }
+  },
+  {
+    "id": "MEX-24000",
+    "level": "admin1",
+    "name": "San Luis Potosí",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "24000"
+    }
+  },
+  {
+    "id": "MEX-25000",
+    "level": "admin1",
+    "name": "Sinaloa",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "25000"
+    }
+  },
+  {
+    "id": "MEX-26000",
+    "level": "admin1",
+    "name": "Sonora",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "26000"
+    }
+  },
+  {
+    "id": "MEX-27000",
+    "level": "admin1",
+    "name": "Tabasco",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 29.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "27000"
+    }
+  },
+  {
+    "id": "MEX-28000",
+    "level": "admin1",
+    "name": "Tamaulipas",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "28000"
+    }
+  },
+  {
+    "id": "MEX-29000",
+    "level": "admin1",
+    "name": "Tlaxcala",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "29000"
+    }
+  },
+  {
+    "id": "MEX-30000",
+    "level": "admin1",
+    "name": "Veracruz de Ignacio de la Llave",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 31.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "30000"
+    }
+  },
+  {
+    "id": "MEX-31000",
+    "level": "admin1",
+    "name": "Yucatán",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 30.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "31000"
+    }
+  },
+  {
+    "id": "MEX-32000",
+    "level": "admin1",
+    "name": "Zacatecas",
+    "parent": "MEX",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "status": "not_available"
+    },
+    "median_age": {
+      "value": 28.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "median age",
+        "name": "INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionario básico (Población 4: edad mediana por municipio)",
+        "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_01_poblacion.xlsx",
+        "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
+      }
+    ],
+    "country": "MEX",
+    "codes": {
+      "inegi": "32000"
+    }
   }
 ]
