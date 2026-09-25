@@ -22,6 +22,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import re
 from typing import Any
 
@@ -109,16 +110,33 @@ def bind_by_outline(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
     # city region drawn too coarsely to reach 0.8 (Zeeland, the Azores,
     # Brussels) -- goes on to its name and the name matcher's own guards.
     # Only a region the outlines refuse (Pest with Budapest inside it) stops.
+    outlined = {nuts_id[:2] for nuts_id in crosswalk}
     placed, rest = [], []
     dropped = 0
     for rec in records:
         entry = crosswalk.get(rec["codes"]["nuts"])
         if not entry:
+            # A code Eurostat marks as an older NUTS version ("Zuid-Holland
+            # (NUTS 2021)") where the country has current outlines is the
+            # same ground as a current region, and read by name it met that
+            # region on its polygon and both were lost. The UK has only old
+            # codes, and keeps them.
+            if rec["codes"]["nuts"][:2] in outlined and re.search(r"\(NUTS \d{4}\)", rec["name"]):
+                dropped += 1
+                continue
             rest.append(rec)
         elif entry.get("superseded_by") or entry.get("refused"):
             dropped += 1
             continue
         else:
+            for twin in entry.get("also") or []:
+                copy = json.loads(json.dumps(rec))
+                copy["id"] = f"{rec['id']}-{twin['level']}"
+                copy.update(level=twin["level"], match_by="shape_id", shape_id=twin["shape_id"])
+                if twin.get("name") and twin["name"] != copy["name"]:
+                    copy["aliases"] = [*(copy.get("aliases") or []), copy["name"]]
+                    copy["name"] = twin["name"]
+                placed.append(copy)
             rec["level"] = entry["level"]
             rec["match_by"] = "shape_id"
             rec["shape_id"] = entry["shape_id"]
@@ -359,9 +377,15 @@ def main() -> int:
                       "url": API.format(dataset="demo_r_pjangrp3"),
                       "license": "Eurostat re-use policy (attribution)"}],
         ))
+    # The level is decided on all of a country's names, before any are
+    # placed by outline: left to decide on the few the outlines do not
+    # place, Spain's too-few names settled nothing and Ceuta was lost. The
+    # decision only sets the level of the rows left to their names.
+    decided = ({r["id"]: r["level"] for r in by_level(json.loads(json.dumps(records)))}
+               if args.level == "nuts3" else None)
     placed, records = bind_by_outline(records)
-    if args.level == "nuts3":
-        records = by_level(records)
+    if decided is not None:
+        records = [{**r, "level": decided[r["id"]]} for r in records if r["id"] in decided]
     records = placed + joined_units(records)
     write_json(args.out or PROCESSED / f"eurostat_{args.level}.json", records)
     log(f"  {len(records)} {args.level} records")

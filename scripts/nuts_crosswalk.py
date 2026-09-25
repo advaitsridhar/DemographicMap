@@ -37,6 +37,8 @@ OUT = PROCESSED / "nuts_crosswalk.json"
 SAME = 0.8
 # Share of a polygon's area that makes it "inside" another.
 HELD = 0.5
+# Two of the map's polygons at different levels this alike are one place.
+TWIN = 0.9
 ALPHA2 = {"EL": "GRC", "UK": "GBR"}
 
 
@@ -143,6 +145,23 @@ def main() -> int:
         out[keep] = best[keep]
         for other in ids[1:]:
             out[other] = {"superseded_by": keep}
+    # The map draws some polygons at both levels -- Madrid, Navarra, Prague,
+    # Brandenburg -- and a region reaches only one of them; its twin at the
+    # other level gets the same figures.
+    for entry in out.values():
+        if "shape_id" not in entry:
+            continue
+        unit = next(s for s in shapes if s["id"] == entry["shape_id"] and s["level"] == entry["level"])
+        twins = []
+        for i in tree.query(unit["geom"], predicate="intersects"):
+            s = shapes[i]
+            if s["level"] == unit["level"] or s["group"] != unit["group"]:
+                continue
+            inter = unit["geom"].intersection(s["geom"]).area
+            if inter and inter / unit["geom"].union(s["geom"]).area >= TWIN:
+                twins.append({"level": s["level"], "shape_id": s["id"], "name": s["name"]})
+        if len(twins) == 1:
+            entry["also"] = twins
     placed = defaultdict(int)
     for entry in out.values():
         if "level" in entry:

@@ -351,7 +351,14 @@
     "level": "admin1",
     "shape_id": "27960609B76540875123137",
     "name": "City of Zagreb",
-    "iou": 0.893
+    "iou": 0.893,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "41942358B62049760899595",
+        "name": "Grad Zagreb"
+      }
+    ]
   },
   "HR05": {
     "superseded_by": "HR050"
@@ -361,7 +368,14 @@
     "level": "admin2",
     "shape_id": "33768554B61504617151000",
     "name": "Belgrade",
-    "iou": 0.935
+    "iou": 0.935,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "41074048B91434818545320",
+        "name": "Belgrade"
+      }
+    ]
   },
   "RS11": {
     "superseded_by": "RS110"
@@ -531,7 +545,14 @@
     "level": "admin1",
     "shape_id": "25490228B24314700704920",
     "name": "Principado de Asturias",
-    "iou": 0.964
+    "iou": 0.964,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "93216281B3621351927787",
+        "name": "Asturias"
+      }
+    ]
   },
   "ES12": {
     "superseded_by": "ES120"
@@ -541,7 +562,14 @@
     "level": "admin2",
     "shape_id": "93216281B67737622455841",
     "name": "Cantabria",
-    "iou": 0.93
+    "iou": 0.93,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "25490228B37069901476290",
+        "name": "Cantabria"
+      }
+    ]
   },
   "ES13": {
     "superseded_by": "ES130"
@@ -558,7 +586,14 @@
     "level": "admin1",
     "shape_id": "25490228B33348776534112",
     "name": "Comunidad Foral de Navarra",
-    "iou": 0.949
+    "iou": 0.949,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "93216281B65631550750635",
+        "name": "Navarra"
+      }
+    ]
   },
   "ES22": {
     "superseded_by": "ES220"
@@ -568,7 +603,14 @@
     "level": "admin1",
     "shape_id": "25490228B81978515469630",
     "name": "La Rioja",
-    "iou": 0.928
+    "iou": 0.928,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "93216281B63633419505726",
+        "name": "Rioja, La"
+      }
+    ]
   },
   "ES23": {
     "superseded_by": "ES230"
@@ -585,7 +627,14 @@
     "level": "admin1",
     "shape_id": "25490228B43154843394848",
     "name": "Comunidad de Madrid",
-    "iou": 0.96
+    "iou": 0.96,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "93216281B77569616952792",
+        "name": "Madrid"
+      }
+    ]
   },
   "ES30": {
     "superseded_by": "ES300"
@@ -630,7 +679,14 @@
     "level": "admin2",
     "shape_id": "93216281B25565777220884",
     "name": "Balears, Illes",
-    "iou": 0.892
+    "iou": 0.892,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "25490228B26609846683583",
+        "name": "Illes Balears"
+      }
+    ]
   },
   "ES61": {
     "nuts_level": 2,
@@ -644,7 +700,14 @@
     "level": "admin2",
     "shape_id": "93216281B8477859939200",
     "name": "Murcia",
-    "iou": 0.965
+    "iou": 0.965,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "25490228B27950689864224",
+        "name": "Región de Murcia"
+      }
+    ]
   },
   "ES62": {
     "superseded_by": "ES620"
@@ -689,7 +752,14 @@
     "level": "admin2",
     "shape_id": "14549572B24691553772644",
     "name": "Wien(Stadt)",
-    "iou": 0.864
+    "iou": 0.864,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "97560089B24691553772644",
+        "name": "Wien"
+      }
+    ]
   },
   "AT13": {
     "superseded_by": "AT130"
@@ -758,14 +828,28 @@
     "level": "admin2",
     "shape_id": "40542155B67901979992547",
     "name": "Republika Srpska",
-    "iou": 0.942
+    "iou": 0.942,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "54001226B66267900922909",
+        "name": "Republika Srpska"
+      }
+    ]
   },
   "BA03": {
     "nuts_level": 2,
     "level": "admin2",
     "shape_id": "40542155B79782904339110",
     "name": "Brcko District",
-    "iou": 0.862
+    "iou": 0.862,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "54001226B82378099338701",
+        "name": "Brčko District"
+      }
+    ]
   },
   "BE100": {
     "nuts_level": 3,
@@ -896,7 +980,14 @@
     "level": "admin2",
     "shape_id": "57006924B6298598328883",
     "name": "Prague",
-    "iou": 0.896
+    "iou": 0.896,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "73172107B16313596965023",
+        "name": "Hlavní město Praha"
+      }
+    ]
   },
   "CZ01": {
     "superseded_by": "CZ010"
@@ -1010,7 +1101,14 @@
     "level": "admin1",
     "shape_id": "10402087B20892132820961",
     "name": "Berlin",
-    "iou": 0.874
+    "iou": 0.874,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "9070358B20892132820961",
+        "name": "Berlin"
+      }
+    ]
   },
   "DE30": {
     "superseded_by": "DE300"
@@ -1020,21 +1118,42 @@
     "level": "admin2",
     "shape_id": "9070358B40185768535592",
     "name": "Brandenburg",
-    "iou": 0.975
+    "iou": 0.975,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "10402087B40185768535592",
+        "name": "Brandenburg"
+      }
+    ]
   },
   "DE50": {
     "nuts_level": 2,
     "level": "admin1",
     "shape_id": "10402087B44391416804171",
     "name": "Bremen",
-    "iou": 0.805
+    "iou": 0.805,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "9070358B44391416804171",
+        "name": "Bremen"
+      }
+    ]
   },
   "DE600": {
     "nuts_level": 3,
     "level": "admin1",
     "shape_id": "10402087B45896528657515",
     "name": "Hamburg",
-    "iou": 0.846
+    "iou": 0.846,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "9070358B45896528657515",
+        "name": "Hamburg"
+      }
+    ]
   },
   "DE60": {
     "superseded_by": "DE600"
@@ -1065,7 +1184,14 @@
     "level": "admin2",
     "shape_id": "9070358B60782008682549",
     "name": "Mecklenburg-Vorpommern",
-    "iou": 0.942
+    "iou": 0.942,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "10402087B60782008682549",
+        "name": "Mecklenburg-Vorpommern"
+      }
+    ]
   },
   "DE91": {
     "nuts_level": 2,
@@ -1156,7 +1282,14 @@
     "level": "admin2",
     "shape_id": "9070358B83775792336645",
     "name": "Saarland",
-    "iou": 0.948
+    "iou": 0.948,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "10402087B83775792336645",
+        "name": "Saarland"
+      }
+    ]
   },
   "DED2": {
     "nuts_level": 2,
@@ -1184,21 +1317,42 @@
     "level": "admin2",
     "shape_id": "9070358B23625801106445",
     "name": "Sachsen-Anhalt",
-    "iou": 0.974
+    "iou": 0.974,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "10402087B23625801106445",
+        "name": "Sachsen-Anhalt"
+      }
+    ]
   },
   "DEF0": {
     "nuts_level": 2,
     "level": "admin2",
     "shape_id": "9070358B46069870964378",
     "name": "Schleswig-Holstein",
-    "iou": 0.946
+    "iou": 0.946,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "10402087B46069870964378",
+        "name": "Schleswig-Holstein"
+      }
+    ]
   },
   "DEG0": {
     "nuts_level": 2,
     "level": "admin2",
     "shape_id": "9070358B67217417145666",
     "name": "Thüringen",
-    "iou": 0.963
+    "iou": 0.963,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "10402087B67217417145666",
+        "name": "Thüringen"
+      }
+    ]
   },
   "DK01": {
     "nuts_level": 2,
@@ -1233,7 +1387,14 @@
     "level": "admin1",
     "shape_id": "93993887B88980272284763",
     "name": "Attica",
-    "iou": 0.857
+    "iou": 0.857,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "26713481B5850386890635",
+        "name": "Attikis"
+      }
+    ]
   },
   "EL41": {
     "nuts_level": 2,
@@ -1247,7 +1408,14 @@
     "level": "admin2",
     "shape_id": "26713481B79456911033966",
     "name": "Kritis",
-    "iou": 0.914
+    "iou": 0.914,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "93993887B64949910323779",
+        "name": "Crete"
+      }
+    ]
   },
   "AT222": {
     "nuts_level": 3,
@@ -1408,7 +1576,14 @@
     "level": "admin1",
     "shape_id": "22928101B40975042441370",
     "name": "Sofia City",
-    "iou": 0.893
+    "iou": 0.893,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "11073933B40975042441370",
+        "name": "Stolichna"
+      }
+    ]
   },
   "BG412": {
     "nuts_level": 3,
@@ -1527,7 +1702,14 @@
     "level": "admin1",
     "shape_id": "70761945B11753136967749",
     "name": "Glarus",
-    "iou": 0.892
+    "iou": 0.892,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "98125504B85690799805162",
+        "name": "Glarus"
+      }
+    ]
   },
   "CH055": {
     "nuts_level": 3,
@@ -1562,7 +1744,14 @@
     "level": "admin1",
     "shape_id": "70761945B76174754463268",
     "name": "Uri",
-    "iou": 0.91
+    "iou": 0.91,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "98125504B39551940242919",
+        "name": "Uri"
+      }
+    ]
   },
   "CH063": {
     "nuts_level": 3,
@@ -1576,14 +1765,28 @@
     "level": "admin2",
     "shape_id": "98125504B17504345361325",
     "name": "Obwalden",
-    "iou": 0.86
+    "iou": 0.86,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "70761945B39944874342149",
+        "name": "Obwalden"
+      }
+    ]
   },
   "CH066": {
     "nuts_level": 3,
     "level": "admin2",
     "shape_id": "98125504B97349886463799",
     "name": "Zug",
-    "iou": 0.844
+    "iou": 0.844,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "70761945B70106229378933",
+        "name": "Zug"
+      }
+    ]
   },
   "CZ031": {
     "nuts_level": 3,
@@ -1730,7 +1933,14 @@
     "level": "admin1",
     "shape_id": "70761945B83881285484717",
     "name": "Genève",
-    "iou": 0.816
+    "iou": 0.816,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "98125504B37328358973812",
+        "name": "Genève"
+      }
+    ]
   },
   "CH021": {
     "nuts_level": 3,
@@ -1842,7 +2052,14 @@
     "level": "admin1",
     "shape_id": "49019192B62240171763951",
     "name": "Päijät-Häme",
-    "iou": 0.963
+    "iou": 0.963,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "99834313B35398573425491",
+        "name": "Lahden seutukunta"
+      }
+    ]
   },
   "FI1C7": {
     "nuts_level": 3,
@@ -3249,7 +3466,14 @@
     "level": "admin1",
     "shape_id": "71437522B68338217323905",
     "name": "Oslo",
-    "iou": 0.848
+    "iou": 0.848,
+    "also": [
+      {
+        "level": "admin2",
+        "shape_id": "86288312B18463313731869",
+        "name": "Oslo nor"
+      }
+    ]
   },
   "NO092": {
     "nuts_level": 3,
@@ -4019,7 +4243,14 @@
     "level": "admin2",
     "shape_id": "70781695B80690990768870",
     "name": "Gotland",
-    "iou": 0.865
+    "iou": 0.865,
+    "also": [
+      {
+        "level": "admin1",
+        "shape_id": "68755315B38650871956455",
+        "name": "Gotlands län"
+      }
+    ]
   },
   "SE221": {
     "nuts_level": 3,
