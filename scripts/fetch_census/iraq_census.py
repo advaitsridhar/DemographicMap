@@ -79,8 +79,30 @@ GOVERNORATE = {
     "31": "Al-Qadissiya", "32": "Al-Muthanna", "33": "Thi Qar", "34": "Maysan",
     "35": "Al-Basrah",
 }
-# How alike two romanisations must be, inside one governorate, to be one name.
+# How alike two romanisations must be, inside one governorate, to be one name;
+# below SHORT letters they must be the same: "Suran" and "Shwan" are 0.89 alike.
 ALIKE = 0.85
+SHORT = 6
+# Sub-districts the census and OCHA spell differently, beyond what the keys
+# fold: the Kurdish and the Arabic name of one place. (map governorate, the
+# census's name's key) -> OCHA's sub-district.
+DECLARED: dict[tuple[str, str], str] = {}
+# The map's governorates whose ground a census governorate also counts, where a
+# sub-district is looked for, by exact name only, when its own has none of
+# that name. The Kurdistan Region administers parts of Ninewa, Kirkuk, Salah
+# al-Din and Diyala, and the census counts them under Duhok, Erbil and
+# Sulaymaniyah: Aqra and Shekhan under Duhok, the Kurdish-held parts of Kifri
+# and Khanaqin under Sulaymaniyah; and Makhmour, which the map files under
+# Erbil, under Ninewa.
+NEIGHBOURS = {
+    "11": ["Ninewa"],
+    "12": ["Duhok", "Erbil"],
+    "13": ["Diyala", "Kirkuk", "Erbil", "Salah Al-Din"],
+    "14": ["Erbil", "Al-Sulaymaniyah", "Salah Al-Din"],
+    "15": ["Ninewa", "Kirkuk", "Duhok"],
+    "21": ["Al-Sulaymaniyah", "Salah Al-Din"],
+    "27": ["Kirkuk", "Diyala"],
+}
 # Census districts that are a map district under another name. Sadr City was
 # al-Thawra until 2003 and the census counts it as two districts.
 RENAMED = {"2303": "Al-Thawra", "2304": "Al-Thawra"}
@@ -92,8 +114,11 @@ TOTAL = re.compile(r"\btota?l?\b|Total", re.I)
 EN_BEFORE = re.compile(r"([A-Za-z][A-Za-z .'()\-]*?)\s*(?:Tota?l?)?\s*-?\s*(\d{4})(?!\d)", re.I)
 EN_AFTER = re.compile(r"(?<![\d,])(\d{4})\s*-?\s*([A-Za-z][A-Za-z .'()\-]*[A-Za-z)])")
 AR_AFTER4 = re.compile(r"(?<![\d,])(\d{4})\s*-\s*([؀-ۿ][^A-Za-z\d]*)")
-NAHIYA = re.compile(r"([A-Za-z][A-Za-z .'()\-]*?)?\s*-\s*(\d{5})(?!\d)\s*-?\s*"
-                    r"([؀-ۿ][^A-Za-z\d]*)?")
+# A sub-district row: its English name, its five-digit code and its Arabic
+# name, any of them glued to the next ("Hanebaje Taza13031", "13012-...").
+NAHIYA = re.compile(r"(?:([A-Za-z][A-Za-z .'()\-]*?)\s*-?\s*)?(?<![\d,])(\d{5})(?!\d)"
+                    r"\s*-?\s*([)(]*[؀-ۿ][^A-Za-z\d]*)?")
+CENTRE = re.compile(r"^\s*D\.?\s?C\b", re.I)
 
 
 def arabic(visual: str) -> str:
@@ -103,8 +128,11 @@ def arabic(visual: str) -> str:
 
 def ar_key(text: str) -> str:
     text = re.sub(r"[ً-ْـ]", "", text or "")
+    # Kurdish letters to the Arabic ones OCHA's gazetteer writes.
     for a, b in (("أ", "ا"), ("إ", "ا"), ("آ", "ا"), ("ة", "ه"), ("ى", "ي"),
-                 ("ی", "ي"), ("ک", "ك"), ("ۆ", "و"), ("ێ", "ي"), ("ە", "ه")):
+                 ("ی", "ي"), ("ک", "ك"), ("ۆ", "و"), ("ێ", "ي"), ("ە", "ه"),
+                 ("ڕ", "ر"), ("ڵ", "ل"), ("ڤ", "ف"), ("گ", "ك"), ("چ", "ج"),
+                 ("پ", "ب"), ("ژ", "ز")):
         text = text.replace(a, b)
     text = re.sub(r"(ق\.?\s?م|م\.?\s?ق|مركز|قضاء|ناحية)", " ", text)
     text = re.sub(r"(^|\s)ال", " ", text)
@@ -114,11 +142,19 @@ def ar_key(text: str) -> str:
     return re.sub(r"[^؀-ۿ]", "", text)
 
 
+def ar_loose(text: str) -> str:
+    """ar_key without the medial ه that Kurdish spelling writes for a vowel
+    Arabic spelling leaves out: Kurdish مهيدان is Arabic ميدان."""
+    key = ar_key(text)
+    return key[:1] + key[1:-1].replace("ه", "") + key[-1:] if len(key) > 2 else key
+
+
 def en_key(text: str) -> str:
     text = (text or "").lower()
     text = re.sub(r"\b(d\.?\s?c\.?(\s*of)?|markaz|center|centre|district|distric|"
                   r"qadha|nahiya|total|tota)\b", " ", text)
-    text = re.sub(r"\(.*?\)", " ", text)
+    # A second name in brackets, closed or not: "Al-Kifl (Al-Nakhila".
+    text = re.sub(r"\(.*?(\)|$)", " ", text)
     text = re.sub(r"\ba[li][- ]", " ", text)
     text = re.sub(r"[^a-z]", "", text)
     for a, b in (("kh", "h"), ("dh", "d"), ("th", "t"), ("sh", "s"), ("gh", "g"),
@@ -141,9 +177,14 @@ def parse(text: str) -> dict[str, Any]:
     names: dict[str, Counter] = defaultdict(Counter)
     ar_names: dict[str, str] = {}
     nahiyas: dict[str, tuple[str, str, int]] = {}
+    centres: set[str] = set()
     candidates: dict[str, list[int]] = defaultdict(list)
+    # Rows with a figure and no code of their own, and where each district's
+    # total row falls, to find the rows whose code the layout lost.
+    loose: list[tuple[int, int, str]] = []
+    ends: list[tuple[int, str | None]] = []
     grand = None
-    for line in text.split("\n"):
+    for i, line in enumerate(text.split("\n")):
         tail = label(line)
         for m in EN_BEFORE.finditer(tail):
             name = clean(m.group(1))
@@ -159,10 +200,24 @@ def parse(text: str) -> dict[str, Any]:
         if not first:
             continue
         value = int(first.group(1).replace(",", ""))
-        nahiya = NAHIYA.search(tail)
+        rows = list(NAHIYA.finditer(tail))
+        nahiya = rows[0] if len(rows) == 1 else None
         if nahiya and not TOTAL.search(tail.split(nahiya.group(2))[-1][:12]):
-            nahiyas.setdefault(nahiya.group(2), (clean(nahiya.group(1) or ""),
-                                                 arabic(nahiya.group(3) or ""), value))
+            code = nahiya.group(2)
+            if code not in nahiyas:
+                en = nahiya.group(1) or ""
+                if not en:
+                    after = re.match(r"\s*-?\s*([A-Za-z][A-Za-z .'()\-]*)",
+                                     tail[nahiya.end(2):])
+                    en = after.group(1) if after else ""
+                ar = nahiya.group(3) or ""
+                if not ar and en:
+                    rest = re.search(r"[)(]*[؀-ۿ][^A-Za-z\d]*", tail[nahiya.end(2):])
+                    ar = rest.group(0) if rest else ""
+                nahiyas[code] = (clean(en), arabic(ar), value)
+                if (CENTRE.search(nahiya.group(1) or "")
+                        or re.search(r"م\s?\.\s?ق|ق\s?\.\s?م", nahiya.group(3) or "")):
+                    centres.add(code)
         if not TOTAL.search(tail):
             # A district total printed without the word -- Panjwin's -- is
             # kept as a candidate, and taken below only if it is exactly the
@@ -170,25 +225,48 @@ def parse(text: str) -> dict[str, Any]:
             if not nahiya:
                 for code in CODE4.findall(tail):
                     candidates[code].append(value)
+                loose.append((i, value, tail))
             continue
         if "Grand Total" in tail:
             grand = value
+            ends.append((i, None))
         elif "Governorate" in tail:
             code = CODE2.search(tail.split("Governorate", 1)[1])
             if code:
                 governorates[code.group(1)] = value
             else:
                 unlabelled.append(value)
+            ends.append((i, None))
         else:
             codes = CODE4.findall(tail)
             if codes:
                 districts.setdefault(codes[-1], value)
+                ends.append((i, codes[-1]))
     by_district: Counter = Counter()
     for code, (_en, _ar, value) in nahiyas.items():
         by_district[code[:4]] += value
     for code, values in candidates.items():
         if code not in districts and by_district.get(code) in values:
             districts[code] = by_district[code]
+    # A sub-district row whose code the layout lost (Semel's centre, printed
+    # beside another table's caption; Al-Umarra's, printed as 4011) is the
+    # one row among its district's with no code of its own whose figure is
+    # exactly what the district's total leaves over, and is kept only when
+    # there is one such row.
+    start = -1
+    for end, code in ends:
+        if code and code in districts:
+            rest = districts[code] - by_district[code]
+            found = [(i, v, t) for i, v, t in loose if start < i < end and v == rest]
+            if rest > 0 and len(found) == 1 and code + "0" not in nahiyas:
+                own = names[code].most_common(1)[0][0] if names.get(code) else code
+                if "D.C" in found[0][2]:
+                    nahiyas[code + "0"] = (f"D.C of {own}", "", rest)
+                    centres.add(code + "0")
+                else:
+                    nahiyas[code + "0"] = (f"{own} (a row printed without its code)", "", rest)
+                by_district[code] += rest
+        start = end
     # A governorate total printed without its code is the one its districts
     # add up to.
     sums: Counter = Counter()
@@ -199,7 +277,9 @@ def parse(text: str) -> dict[str, Any]:
         if len(owners) == 1:
             governorates[owners[0]] = value
     return {"districts": districts, "governorates": governorates, "names": names,
-            "ar_names": ar_names, "nahiyas": nahiyas, "grand": grand, "sums": sums}
+            "ar_names": ar_names, "nahiyas": nahiyas, "centres": centres,
+            "grand": grand, "sums": sums,
+            "whole": {c for c, v in districts.items() if by_district[c] == v}}
 
 
 def clean(name: str) -> str:
@@ -214,112 +294,272 @@ def read_gazetteer(text: str) -> list[dict[str, str]]:
     return [r for r in rows if (r.get("adm3_pcode") or "").startswith("IQG")]
 
 
+def variants(name: str) -> list[str]:
+    """A name and the second name it carries in brackets, closed or not:
+    "Akd (Al-Daggara" is Akd and Al-Daggara."""
+    name = name or ""
+    m = re.search(r"\(([^)]*)\)?", name)
+    if not m:
+        return [name] if name.strip() else []
+    outside = (name[:m.start()] + " " + name[m.end():]).strip()
+    return [v for v in (outside, m.group(1).strip()) if v]
+
+
 def alike(a: str, b: str) -> bool:
-    return bool(a and b) and (a == b or SequenceMatcher(None, a, b).ratio() >= ALIKE)
+    return bool(a and b) and (a == b or (min(len(a), len(b)) >= SHORT
+                                         and SequenceMatcher(None, a, b).ratio() >= ALIKE))
 
 
-def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]]
-              ) -> tuple[dict[str, dict[str, Any]], list[str]]:
-    """Each map district's census count, for the governorates that pass every check."""
+def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]]) -> dict[str, Any]:
+    """Each map district's and map governorate's census count, where it can be known.
+
+    Every sub-district the census counts is put on one of the map's districts:
+    by its own name among OCHA's sub-districts (in its governorate, or exactly
+    in a governorate whose ground its governorate also counts), or else with
+    its district -- its district's centre where the district's own name puts
+    it, any other where its district's named sub-districts all lie. A census
+    district whose sub-districts all land in one map district gives it its
+    printed total; one split between map districts gives each its
+    sub-districts' figures, and only if those add up to its total.
+    """
     districts, names, ar_names = table["districts"], table["names"], table["ar_names"]
+    nahiyas, centres = table["nahiyas"], table["centres"]
     by_gov: dict[str, dict[str, dict[str, str]]] = defaultdict(dict)
     subs: dict[str, list[dict[str, str]]] = defaultdict(list)
     for row in gazetteer:
         by_gov[row["adm1_name"]].setdefault(row["adm2_name"], row)
         subs[row["adm1_name"]].append(row)
 
-    def matches(code: str, candidates: dict[str, dict[str, str]]) -> list[str]:
-        keys = {en_key(n) for n in names.get(code, {})}
-        ak = ar_key(ar_names.get(code, ""))
-        return [d for d, row in candidates.items()
-                if any(alike(k, en_key(d)) for k in keys)
-                or (ak and ak == ar_key(row.get("adm2_name1")))]
+    def own(code: str) -> str:
+        return names[code].most_common(1)[0][0] if names.get(code) else code
 
-    # A census district that shares its name with a map district of another
-    # governorate: that map district is counted in two places.
-    split: set[tuple[str, str]] = set()
+    def reach(g2: str) -> tuple[list[str], list[str]]:
+        return [GOVERNORATE[g2]], NEIGHBOURS.get(g2, [])
+
+    def sub_named(en: str, ar: str, govs: list[str], fuzzy: bool) -> set[tuple[str, str]]:
+        eks = {en_key(v) for v in variants(en)} - {""}
+        aks = {ar_key(v) for v in variants(ar)} - {""}
+        for gov in govs:
+            hit = {(gov, r["adm2_name"]) for r in subs[gov]
+                   if en_key(r["adm3_name"]) in eks or ar_key(r.get("adm3_name1")) in aks
+                   or DECLARED.get((gov, en_key(en))) == r["adm3_name"]}
+            if not hit and fuzzy:
+                loose = {ar_loose(v) for v in variants(ar)} - {""}
+                hit = {(gov, r["adm2_name"]) for r in subs[gov]
+                       if any(alike(k, en_key(r["adm3_name"])) for k in eks)
+                       or (len(ar_loose(r.get("adm3_name1"))) >= 3
+                           and ar_loose(r.get("adm3_name1")) in loose)}
+            if hit:
+                return hit
+        return set()
+
+    def district_named(code: str, govs: list[str], fuzzy: bool) -> set[tuple[str, str]]:
+        keys = {en_key(n) for n in names.get(code, {})} - {""}
+        ak = ar_key(ar_names.get(code, ""))
+        for gov in govs:
+            if RENAMED.get(code) in by_gov[gov]:
+                return {(gov, RENAMED[code])}
+            hit = {(gov, d) for d, row in by_gov[gov].items()
+                   if en_key(d) in keys or (ak and ak == ar_key(row.get("adm2_name1")))}
+            if not hit and fuzzy:
+                hit = {(gov, d) for d in by_gov[gov] if any(alike(k, en_key(d)) for k in keys)}
+            if hit:
+                return hit
+        return set()
+
+    def seat_of(code: str) -> set[tuple[str, str]]:
+        """Where a census district's own name puts it: a map district of
+        that name, or the sub-district it was made from."""
+        home, far = reach(code[:2])
+        variants = list(names.get(code, {})) or [""]
+        for govs, fuzzy in ((home, True), (far, False)):
+            found = district_named(code, govs, fuzzy)
+            if not found:
+                found = set().union(*(sub_named(n, ar_names.get(code, ""), govs, fuzzy)
+                                      for n in variants))
+            if found:
+                return found
+        # Or where its sub-districts are: Duhok's Akri is Ninewa's Aqra by
+        # its Dinarta, Bejel and Kurdsin, when none of them is found at home
+        # and at least two are found, all in one district, across the line.
+        own_subs = [nahiyas[n] for n in nahiyas if n[:4] == code]
+        if not any(sub_named(en, ar, home, True) for en, ar, _v in own_subs):
+            across = [sub_named(en, ar, far, False) for en, ar, _v in own_subs]
+            across = [hit for hit in across if hit]
+            union = set().union(*across) if across else set()
+            if len(across) >= 2 and len(union) == 1:
+                return union
+        return set()
+
+    seat = {code: seat_of(code) for code in districts}
+    place: dict[str, tuple[str, str]] = {}
+    by_name: set[str] = set()
+    for n, (en, ar, _v) in nahiyas.items():
+        # A sub-district is looked for in another governorate only with its
+        # whole district: the census's Faeda, under Ninewa's Telkef, has
+        # 186,456 people, and OCHA's Fayde in Duhok 34 square kilometres.
+        home, _far = reach(n[:2])
+        crossed = sorted({g for g, _d in seat[n[:4]]} - set(home))
+        found = sub_named(en, ar, home, True) or sub_named(en, ar, crossed, True)
+        if len(found) == 1:
+            place[n] = next(iter(found))
+            by_name.add(n)
+    members: dict[str, list[str]] = defaultdict(list)
+    for n in sorted(nahiyas):
+        members[n[:4]].append(n)
     for code in districts:
-        home = GOVERNORATE.get(code[:2])
-        for gov, candidates in by_gov.items():
-            if gov != home:
-                split.update((gov, d) for d in matches(code, candidates))
+        named = {place[n] for n in members[code] if n in place}
+        own_seat = seat[code]
+        for n in members[code]:
+            if n in place:
+                continue
+            if n in centres and len(own_seat) == 1:
+                place[n] = next(iter(own_seat))
+            elif len(named) == 1:
+                place[n] = next(iter(named))
+            elif not named and len(own_seat) == 1:
+                place[n] = next(iter(own_seat))
+
+    value: Counter = Counter()
+    parts: dict[tuple[str, str], list[tuple[str, int]]] = defaultdict(list)
+    soft: set[tuple[str, str]] = set()
+    tainted: dict[tuple[str, str], list[str]] = defaultdict(list)
+    gov_value: Counter = Counter()
+    gov_unknown: dict[str, list[str]] = defaultdict(list)
+    moved: list[tuple[str, str, str, int]] = []   # census gov, map gov, what, people
+    notes: list[str] = []
+    for code, total in sorted(districts.items()):
+        census_gov = GOVERNORATE[code[:2]]
+        ns = members[code]
+        homes = {place[n] for n in ns if n in place}
+        lost = [n for n in ns if n not in place]
+        if lost:
+            cands = homes | seat[code]
+            if not cands:
+                cands = {(census_gov, d) for d in by_gov[census_gov]}
+            what = ", ".join(nahiyas[n][0] or n for n in lost)
+            for key in cands:
+                tainted[key].append(f"{what} ({own(code)} district)")
+            notes.append(f"{census_gov} {own(code)}: not placed: {what}; "
+                         f"could be in {', '.join(sorted(d for _, d in cands))}")
+            govs = {g for g, _ in cands}
+            if len(govs) == 1:
+                gov = next(iter(govs))
+                gov_value[gov] += total
+                if gov != census_gov:
+                    moved.append((census_gov, gov, f"{own(code)} district", total))
+            else:
+                for gov in govs:
+                    gov_unknown[gov].append(own(code))
+            continue
+        if len(homes) == 1:
+            key = next(iter(homes))
+            value[key] += total
+            parts[key].append((own(code), total))
+            if any(n not in by_name for n in ns):
+                soft.add(key)
+            gov_value[key[0]] += total
+            if key[0] != census_gov:
+                moved.append((census_gov, key[0], f"{own(code)} district", total))
+            continue
+        if code not in table["whole"]:
+            for key in homes:
+                tainted[key].append(f"{own(code)} district, whose sub-districts are split "
+                                    f"between map districts and do not add up to its total")
+            for gov in {g for g, _ in homes}:
+                gov_unknown[gov].append(own(code))
+            continue
+        for n in ns:
+            key, (en, _ar, v) = place[n], nahiyas[n]
+            value[key] += v
+            parts[key].append((f"{en or n} ({own(code)})", v))
+            if n not in by_name:
+                soft.add(key)
+            gov_value[key[0]] += v
+            if key[0] != census_gov:
+                moved.append((census_gov, key[0], f"{en or n} sub-district", v))
+
+    # Ground the boundary file draws that the census names nowhere: a map
+    # district whose every census sub-district was found by name, but one of
+    # whose own sub-districts has no namesake in the census, may have lost
+    # that sub-district's people to another district.
+    found = set()
+    for n, (en, ar, _v) in nahiyas.items():
+        ek, ak = en_key(en), ar_key(ar)
+        for gov in reach(n[:2])[0] + reach(n[:2])[1]:
+            for r in subs[gov]:
+                if (ek and alike(ek, en_key(r["adm3_name"]))) or (ak and ak == ar_key(r.get("adm3_name1"))):
+                    found.add(r["adm3_pcode"])
+    unnamed: dict[tuple[str, str], list[str]] = defaultdict(list)
+    for gov, rows in subs.items():
+        for r in rows:
+            if r["adm3_pcode"] not in found:
+                unnamed[(gov, r["adm2_name"])].append(r["adm3_name"])
+    for key, missing in unnamed.items():
+        if key in value and key not in soft:
+            tainted[key].append(f"the boundary file's {', '.join(missing)}, which the "
+                                f"census names nowhere")
+
+    # A map district no census sub-district lands on: its people were put
+    # somewhere else, so nothing in its governorate can be trusted.
+    for gov, candidates in by_gov.items():
+        empty = [d for d in candidates if (gov, d) not in value and (gov, d) not in tainted]
+        if empty:
+            notes.append(f"{gov}: no census sub-district lands on {', '.join(empty)}")
+            for d in candidates:
+                tainted[(gov, d)].append(f"nothing placed on {', '.join(empty)}")
 
     out: dict[str, dict[str, Any]] = {}
-    notes: list[str] = []
-    for g2, gov in GOVERNORATE.items():
-        candidates = by_gov.get(gov, {})
-        placed: dict[str, str] = {}
-        unplaced: list[str] = []
-        for code in sorted(c for c in districts if c[:2] == g2):
-            found = ([RENAMED[code]] if code in RENAMED and RENAMED[code] in candidates
-                     else matches(code, candidates))
-            if len(found) != 1:
-                # A district made since out of a sub-district keeps its name:
-                # placed where the gazetteer has that sub-district.
-                keys = {en_key(n) for n in names.get(code, {})}
-                ak = ar_key(ar_names.get(code, ""))
-                found = sorted({r["adm2_name"] for r in subs[gov]
-                                if any(alike(k, en_key(r["adm3_name"])) for k in keys)
-                                or (ak and ak == ar_key(r.get("adm3_name1")))})
-            if len(found) != 1:
-                # Or by the sub-districts of it the gazetteer knows, when they
-                # all lie in one map district.
-                found = sorted({r["adm2_name"]
-                                for n, (en, ar, _v) in table["nahiyas"].items()
-                                if n[:4] == code
-                                for r in subs[gov]
-                                if alike(en_key(en), en_key(r["adm3_name"]))
-                                or (ar_key(ar) and ar_key(ar) == ar_key(r.get("adm3_name1")))})
-            if len(found) == 1:
-                placed[code] = found[0]
+    for gov, candidates in by_gov.items():
+        for district, row in candidates.items():
+            key = (gov, district)
+            entry = {"governorate": gov, "district": district,
+                     "arabic": row.get("adm2_name1"), "value": None}
+            if key in tainted:
+                reasons = sorted(set(tainted[key]))
+                entry["why"] = (
+                    "The 2024 census counts this ground on districts and sub-districts "
+                    "redrawn since the boundary file's, and "
+                    + ("; ".join(reasons[:3]) + ("..." if len(reasons) > 3 else ""))
+                    + (" could not be put on these shapes" if not reasons[0].startswith("nothing")
+                       and "names nowhere" not in reasons[0] and "split" not in reasons[0]
+                       else "")
+                    + ", so its figure is not known on them. The governorate's own count "
+                      "is on the governorate.")
             else:
-                unplaced.append(names[code].most_common(1)[0][0] if names.get(code) else code)
-        empty = [d for d in candidates if d not in placed.values()]
-        wrong = []
-        for code, (en, ar, _value) in table["nahiyas"].items():
-            if code[:2] != g2 or code[:4] not in placed:
-                continue
-            homes = {r["adm2_name"] for r in subs[gov]
-                     if alike(en_key(en), en_key(r["adm3_name"]))
-                     or (ar_key(ar) and ar_key(ar) == ar_key(r.get("adm3_name1")))}
-            if len(homes) == 1 and placed[code[:4]] not in homes:
-                wrong.append(f"{en} in {homes.pop()}, not {placed[code[:4]]}")
-        if unplaced or empty or wrong:
-            why = "; ".join(filter(None, [
-                unplaced and f"census districts not placed: {', '.join(unplaced)}",
-                empty and f"map districts given none: {', '.join(empty)}",
-                wrong and f"sub-districts elsewhere: {', '.join(wrong[:3])}"]))
-            notes.append(f"{gov}: not written -- {why}")
-            for district, row in candidates.items():
-                out[f"{gov}/{district}"] = {
-                    "governorate": gov, "district": district,
-                    "arabic": row.get("adm2_name1"), "value": None,
-                    "why": (f"The 2024 census counts {gov}'s districts on boundaries "
-                            f"redrawn since the boundary file's"
-                            + (f" ({', '.join(unplaced[:4])} among the districts made "
-                               f"since)" if unplaced else "")
-                            + (f", and has moved {', '.join(w.split(' in ')[0] for w in wrong[:2])} "
-                               f"from one district to another" if wrong else "")
-                            + ", so its figures cannot be put on these shapes. The "
-                              "governorate's own count is on the governorate.")}
+                entry["value"] = value[key]
+                entry["parts"] = parts[key]
+            out[f"{gov}/{district}"] = entry
+        written = sum(1 for d in candidates if (gov, d) not in tainted)
+        notes.append(f"{gov}: {written} of {len(candidates)} districts")
+
+    govs: dict[str, dict[str, Any]] = {}
+    census = {GOVERNORATE[g]: v for g, v in table["governorates"].items()}
+    for gov in GOVERNORATE.values():
+        if gov_unknown.get(gov):
+            govs[gov] = {"value": None, "why": (
+                f"The 2024 census counts {', '.join(sorted(set(gov_unknown[gov])))} on "
+                f"ground split between this governorate and another as the map draws "
+                f"them, so the governorate's count on these boundaries is not known.")}
             continue
-        members: dict[str, list[str]] = defaultdict(list)
-        for code, district in placed.items():
-            members[district].append(code)
-        for district, codes in members.items():
-            if (gov, district) in split:
-                notes.append(f"{gov} {district}: counted partly in another governorate; "
-                             f"left out")
-                continue
-            out[f"{gov}/{district}"] = {
-                "governorate": gov, "district": district,
-                "arabic": by_gov[gov][district].get("adm2_name1"),
-                "value": sum(districts[c] for c in codes),
-                "parts": [(names[c].most_common(1)[0][0] if names.get(c) else c,
-                           districts[c]) for c in sorted(codes)],
-            }
-        notes.append(f"{gov}: {len(members)} districts from {len(placed)} census districts")
-    return out, notes
+        entry = {"value": gov_value[gov]}
+        into = [m for m in moved if m[1] == gov]
+        away = [m for m in moved if m[0] == gov]
+        if into or away:
+            bits = []
+            if away:
+                bits.append("counts " + ", ".join(f"{w} ({v:,})" for _c, _m, w, v in away)
+                            + f" under {gov}, which the map draws in "
+                            + ", ".join(sorted({m for _c, m, _w, _v in away})))
+            if into:
+                bits.append("counts " + ", ".join(f"{w} ({v:,})" for _c, _m, w, v in into)
+                            + " under " + ", ".join(sorted({c for c, _m, _w, _v in into}))
+                            + f", which the map draws in {gov}")
+            entry["note"] = (f"The census's own total for {gov} is {census[gov]:,}. It "
+                             + "; it ".join(bits)
+                             + ". The figure is the census's count of the ground drawn here.")
+        govs[gov] = entry
+    return {"districts": out, "governorates": govs, "notes": notes}
 
 
 def gazetteer_rows(blob: bytes) -> list[list[str]]:
@@ -357,16 +597,23 @@ def build(text: str, gazetteer_text: str) -> list[dict[str, Any]]:
     if len(govs) != len(GOVERNORATE) or sum(govs.values()) != NATIONAL or bad:
         raise SystemExit(f"the table does not add up (governorates {sorted(govs)}, "
                          f"mismatched {bad}); nothing written")
-    mapped, notes = crosswalk(table, read_gazetteer(gazetteer_text))
-    for line in notes:
+    result = crosswalk(table, read_gazetteer(gazetteer_text))
+    mapped = result["districts"]
+    for line in result["notes"]:
         log(f"  {line}")
     cite = [{"field": "population", "name": SOURCE, "url": URL}]
     rows = []
-    for code, value in sorted(govs.items()):
-        gov = GOVERNORATE[code]
-        rows.append(record(f"IRQ-CEN-{code}", gov, level="admin1", parent="IRQ",
-                           country="IRQ", population=measure(value, year=YEAR, source=SOURCE),
-                           sources=cite))
+    codes = {gov: code for code, gov in GOVERNORATE.items()}
+    for gov, entry in result["governorates"].items():
+        if entry["value"] is None:
+            population = gap(NOT_AVAILABLE, entry["why"])
+        else:
+            population = measure(entry["value"], year=YEAR, source=SOURCE)
+            if entry.get("note"):
+                population["note"] = entry["note"]
+        rows.append(record(f"IRQ-CEN-{codes[gov]}", gov, level="admin1", parent="IRQ",
+                           country="IRQ", population=population,
+                           sources=cite if entry["value"] is not None else None))
     for entry in mapped.values():
         if entry["value"] is None:
             rows.append(record(
@@ -380,7 +627,7 @@ def build(text: str, gazetteer_text: str) -> list[dict[str, Any]]:
         if len(entry["parts"]) > 1:
             population["note"] = (
                 "The census counts this ground as " + str(len(entry["parts"]))
-                + " districts, made since the boundary file was drawn: "
+                + " units, on boundaries redrawn since the boundary file's: "
                 + ", ".join(f"{n} ({v:,})" for n, v in entry["parts"])
                 + ". The figure is their sum.")
         rows.append(record(
@@ -391,7 +638,7 @@ def build(text: str, gazetteer_text: str) -> list[dict[str, Any]]:
             population=population, sources=cite))
     written = sum(1 for r in rows if r["level"] == "admin2" and "value" in r["population"])
     log(f"  {written} map districts with a figure, "
-        f"{len(rows) - len(govs) - written} with the reason they have none")
+        f"{len(mapped) - written} with the reason they have none")
     return rows
 
 
