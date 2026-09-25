@@ -23,7 +23,7 @@ def boxed(*words):
 
 class Aimags(unittest.TestCase):
     def test_the_twenty_two_are_the_boundary_file_s_own_names(self):
-        first = json.loads((ROOT / "site" / "data" / "admin1" / "MNG.json").read_text())
+        first = json.loads((ROOT / "site" / "data" / "admin1" / "MNG.units.json").read_text())
         self.assertEqual(sorted(M.AIMAGS), sorted(row["name"] for row in first))
 
     def test_every_aimag_has_an_english_name_and_a_book(self):

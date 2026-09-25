@@ -46,6 +46,7 @@ from ._shared import (NOT_AVAILABLE, PROCESSED, gap, http_json, log,
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import slugify  # noqa: E402
 from probe_wikitable import infobox_lines, plain, tables  # noqa: E402
+from common import shard_name  # noqa: E402
 
 PAUSE = 0.3
 BACKOFF = (60, 120, 240)
@@ -1759,7 +1760,7 @@ POPULATION_BAND = (0.55, 1.8)
 
 
 def shapes(iso3: str, level: str) -> list[dict[str, Any]]:
-    return read_json(SITE / level / f"{iso3}.json", []) or []
+    return read_json(SITE / level / shard_name(iso3), []) or []
 
 
 def trimmed(name: str, pattern: str) -> str:

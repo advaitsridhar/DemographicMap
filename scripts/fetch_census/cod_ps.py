@@ -41,6 +41,7 @@ import urllib.request
 from typing import Any
 
 from ._shared import PROCESSED, log, record, write_json
+from common import shard_name  # noqa: E402
 
 API = "https://data.humdata.org/api/3/action"
 TIMEOUT = 120
@@ -312,7 +313,7 @@ def level_key(name: str) -> str:
 
 
 def shape_names(code: str, level: str) -> set[str]:
-    path = SITE / level / f"{code}.json"
+    path = SITE / level / shard_name(code)
     try:
         return {level_key(s["name"]) for s in json.loads(path.read_text())}
     except (OSError, ValueError, KeyError):
@@ -529,9 +530,9 @@ def partitioned(code: str, rows: list[dict[str, Any]],
                 totals: dict[str, int]) -> list[dict[str, Any]]:
     """Only the rows of first-level units they are shown to partition."""
     try:
-        shapes = json.loads((SITE / "admin2" / f"{code}.json").read_text())
+        shapes = json.loads((SITE / "admin2" / shard_name(code)).read_text())
         parents = {s["id"]: s["name"] for s in
-                   json.loads((SITE / "admin1" / f"{code}.json").read_text())}
+                   json.loads((SITE / "admin1" / shard_name(code)).read_text())}
     except (OSError, ValueError):
         return []
     by_key: dict[str, list[dict[str, Any]]] = {}

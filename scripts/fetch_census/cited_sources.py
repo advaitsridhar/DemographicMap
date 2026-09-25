@@ -42,6 +42,7 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import PROCESSED, http_get, log, measure, read_json, record, write_json
+from common import shard_path  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -413,7 +414,7 @@ def gambia(drawn: dict[str, str]) -> list[dict[str, Any]]:
 
 def drawn(iso3: str) -> dict[str, str]:
     return {u["name"]: u["id"]
-            for u in read_json(ROOT / "site" / "data" / "admin1" / f"{iso3}.json", [])}
+            for u in read_json(shard_path("admin1", iso3), [])}
 
 
 def dump() -> None:

@@ -48,6 +48,7 @@ from ._shared import PROCESSED, log, read_json, record, write_json
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import NOT_AVAILABLE, gap, measure, slugify  # noqa: E402
+from common import shard_name  # noqa: E402
 
 INDICATOR = 246
 CODE = "2.01.02.0001"
@@ -141,9 +142,9 @@ def first_year(unit: dict[str, Any], span: list[str]) -> str | None:
 
 def shapes() -> dict[str, list[dict[str, Any]]]:
     """The map's second-level shapes in Uzbekistan, by the name of their region."""
-    parents = {e["id"]: e["name"] for e in read_json(SITE / "admin1" / "UZB.json", [])}
+    parents = {e["id"]: e["name"] for e in read_json(SITE / "admin1" / shard_name("UZB"), [])}
     out: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    for entity in read_json(SITE / "admin2" / "UZB.json", []):
+    for entity in read_json(SITE / "admin2" / shard_name("UZB"), []):
         out[parents.get(entity.get("parent"), "")].append(entity)
     return out
 

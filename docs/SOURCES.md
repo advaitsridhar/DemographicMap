@@ -27,7 +27,7 @@
 
 Reported as "nothing is visible at admin2 for Uruguay". It is not a build
 failure and not a join failure. Everything in the pipeline checks out:
-`site/data/admin2/URY.json` holds 124 records, all 124 ids match a CGAZ ADM2
+`site/data/admin2/URY.units.json` holds 124 records, all 124 ids match a CGAZ ADM2
 `shapeID`, all 124 parents resolve to a real Uruguayan department, and URY
 features decode out of `site/tiles/admin2.pmtiles` at z6, z7 and z8.
 
@@ -7750,7 +7750,7 @@ a mis-match gets made.
 So the names are now **declared**, in `BOUNDARY_ALIASES` in
 `scripts/fetch_census/clear_global.py`: 68 entries over 14 countries, each
 one a spelling or a translation of the same place, and each right-hand side a
-name that exists in this repository's own `site/data/admin1/<ISO>.json`. That
+name that exists in this repository's own `site/data/admin1/<ISO>.units.json`. That
 last point is what makes a declaration better than a guess — it can be
 checked, and `tests/test_clear_global.py` checks it, along with the rule that
 no two rows of one country may be declared onto one shape.

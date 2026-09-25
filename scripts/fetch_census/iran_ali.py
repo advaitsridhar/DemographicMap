@@ -144,6 +144,7 @@ from ._shared import PROCESSED, RAW, log, record, write_json
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import DERIVED, MODELLED, estimate, read_json, slugify  # noqa: E402
+from common import shard_name  # noqa: E402
 
 ISO3 = "IRN"
 OUT = "iran_ali_language.json"
@@ -599,7 +600,7 @@ def collect(rows: list[dict[str, str]]) -> tuple[Unit, dict[str, Unit], list[str
 
 def shapes(level: str) -> list[dict[str, Any]]:
     root = Path(__file__).resolve().parent.parent.parent / "site" / "data"
-    return read_json(root / level / f"{ISO3}.json", []) or []
+    return read_json(root / level / shard_name(ISO3), []) or []
 
 
 def province_shape(roman: str, by_name: dict[str, dict[str, Any]]

@@ -68,6 +68,16 @@ window.DataStore = (function () {
     return version;
   }
 
+  // "GTM.units.json", never "GTM.json": a content blocker matches the whole
+  // URL, case-blind, and ".json" begins with ".js" -- EasyPrivacy's "/gtm.js",
+  // aimed at Google Tag Manager and on by default in uBlock Origin, refused
+  // Guatemala's file every time. One fixed word before ".json" means no
+  // country code is ever read as a script's name (scripts/common.py writes
+  // the same names; scripts/probe_blocklists.py checks them).
+  function shardPath(key, iso3) {
+    return `${key}/${iso3}.units.json`;
+  }
+
   function url(path) {
     return BASE + path + (version ? (path.includes("?") ? "&" : "?") + "v=" + version : "");
   }
@@ -121,7 +131,7 @@ window.DataStore = (function () {
     if (Date.now() - (failedAt.get(loadKey) || -Infinity) < RETRY_PAUSE) return [];
     const task = (async () => {
       try {
-      const records = await getJSON(`${key}/${iso3}.json`);
+      const records = await getJSON(shardPath(key, iso3));
       index(records);
       loaded[key].add(iso3);
       emit({ type: key, country: iso3, count: records.length });
@@ -222,7 +232,7 @@ window.DataStore = (function () {
   return { loadPartialLevels,
            loadCountries, loadLevel, ensureLoaded, loadCoverage, loadGroups,
            get, atLevel, country, children, countries, isLoaded, all, on, url,
-           loadVersion };
+           loadVersion, shardPath };
 })();
 
 /* ------------------------------------------------------------------ format */

@@ -207,9 +207,9 @@ class ReadingTheRegister(unittest.TestCase):
 
 class TheDistrictTable(unittest.TestCase):
     def test_every_shape_is_named_once_and_nothing_else_is(self):
-        shapes = json.loads((ROOT / "site" / "data" / "admin2" / "KOR.json").read_text())
+        shapes = json.loads((ROOT / "site" / "data" / "admin2" / "KOR.units.json").read_text())
         parents = {r["id"]: r["name"] for r in
-                   json.loads((ROOT / "site" / "data" / "admin1" / "KOR.json").read_text())}
+                   json.loads((ROOT / "site" / "data" / "admin1" / "KOR.units.json").read_text())}
         parents["KOR"] = ""
         drawn = {(parents[r["parent"]], r["name"]) for r in shapes}
         mapped = set()
@@ -221,7 +221,7 @@ class TheDistrictTable(unittest.TestCase):
 
     def test_the_seventeen_provinces_are_the_shape_names(self):
         provinces = {r["name"] for r in
-                     json.loads((ROOT / "site" / "data" / "admin1" / "KOR.json").read_text())}
+                     json.loads((ROOT / "site" / "data" / "admin1" / "KOR.units.json").read_text())}
         self.assertEqual(set(m.SIDO.values()), provinces)
 
     def test_every_nationality_label_is_placed_in_the_tree(self):

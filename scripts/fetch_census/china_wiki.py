@@ -113,7 +113,7 @@ EDITION_NAMES = {"en": "English", "zh": "Chinese"}
 # The 31 first-level divisions the boundary file draws (Hong Kong and Macau
 # are SARs with censuses of their own and are not read here), each with the
 # English and Chinese Wikipedia articles that carry its census table. The
-# shape name is exactly as ``site/data/admin1/CHN.json`` prints it;
+# shape name is exactly as ``site/data/admin1/CHN.units.json`` prints it;
 # "Guangdong" is bare because CGAZ drew the province under its capital's
 # name and common.py renames it to the bare province.
 DIVISIONS: list[tuple[str, str, str]] = [

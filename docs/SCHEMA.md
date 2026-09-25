@@ -105,7 +105,7 @@ Religion, language, ethnicity and ancestry are arrays of shares, largest first:
 | File | Contents |
 |---|---|
 | `admin0.json` | Every country, loaded with the page. |
-| `admin1/{ISO3}.json`, `admin2/{ISO3}.json` | Per-country shards, lazy-loaded. |
+| `admin1/{ISO3}.units.json`, `admin2/{ISO3}.units.json` | Per-country shards, lazy-loaded. Not `{ISO3}.json`: a content blocker reads `/GTM.json` as Google Tag Manager's `/gtm.js` (see `SHARD_SUFFIX` in `scripts/common.py`). |
 | `search-index-0.json` | Countries + first-level divisions. Rows are positional arrays `[id, name, level, country, bbox, parentName]` — about 40% smaller than the equivalent objects across 52k entities. |
 | `search-index-2.json` | The same for second-level divisions; fetched in the background. |
 | `coverage.json` | Per country, per level, per field: how many units are `present` / `not_available` / `not_collected`. |

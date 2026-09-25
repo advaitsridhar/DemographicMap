@@ -37,6 +37,7 @@ from .wiki_population import read as infobox
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import slugify  # noqa: E402
 from probe_wikitable import tables  # noqa: E402
+from common import shard_path  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 OUT = "wiki_table_population.json"
@@ -326,7 +327,7 @@ def figure_row(iso3: str, name: str, figure: Figure, shape_id: str,
 def main() -> None:
     rows: list[dict[str, Any]] = []
     for (iso3, name), figure in FIGURES.items():
-        drawn = [u for u in read_json(ROOT / "site" / "data" / "admin1" / f"{iso3}.json", [])
+        drawn = [u for u in read_json(shard_path("admin1", iso3), [])
                  if u.get("name") == name]
         if len(drawn) != 1:
             log(f"  {iso3} {name}: drawn {len(drawn)} times; not written")

@@ -90,6 +90,7 @@ from ._shared import (NOT_AVAILABLE, NOT_COLLECTED, PROCESSED, gap, http_json,
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import DERIVED, MODELLED, estimate, slugify  # noqa: E402
 from probe_wikitable import plain, tables  # noqa: E402
+from common import shard_name  # noqa: E402
 
 API = "https://id.wikipedia.org/w/api.php"
 EN_API = "https://en.wikipedia.org/w/api.php"
@@ -1066,8 +1067,8 @@ def shapes(level: str) -> list[dict[str, Any]]:
     from common import read_json
     root = Path(__file__).resolve().parent.parent.parent / "site" / "data"
     if level == "admin1":
-        return read_json(root / "admin1" / f"{ISO3}.json", []) or []
-    return read_json(root / "admin2" / f"{ISO3}.json", []) or []
+        return read_json(root / "admin1" / shard_name(ISO3), []) or []
+    return read_json(root / "admin2" / shard_name(ISO3), []) or []
 
 
 def province_records(fetch_page=fetch) -> tuple[list[dict[str, Any]], dict[str, int]]:
