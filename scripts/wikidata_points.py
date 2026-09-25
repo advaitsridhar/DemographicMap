@@ -121,6 +121,44 @@ def fetch(iso3: str, prop: str, length: int) -> None:
     log(f"{iso3} {prop}: {len(items)} items -> {out}")
 
 
+POPULATION_QUERY = """
+SELECT ?item ?pop ?popTime WHERE {
+  VALUES ?item { %(items)s }
+  ?item p:P1082 ?st . ?st ps:P1082 ?pop ; wikibase:rank ?rank .
+  FILTER(?rank != wikibase:DeprecatedRank)
+  FILTER NOT EXISTS { ?st pq:P518 ?part . }
+  OPTIONAL { ?st pq:P585 ?popTime . }
+}
+"""
+
+
+def fetch_populations(iso3: str, prop: str) -> None:
+    """Every population statement of the items code_shapes bound, by id.
+
+    Asking for all of a country's coded items with their populations at once
+    overflowed the answer for China; asked for only the bound items, a few
+    hundred at a time, it does not. The latest dated statement is kept.
+    """
+    from fetch_wikidata import sparql, value
+    path = DEST / f"{iso3}_{prop}.json"
+    items = json.loads(path.read_text(encoding="utf-8"))
+    bound = {e["qid"] for e in ((read_json(OUT, {}) or {}).get(iso3) or {}).values()}
+    by_qid = {i["qid"]: i for i in items if i["qid"] in bound}
+    qids = sorted(by_qid)
+    for n in range(0, len(qids), 200):
+        rows = sparql(POPULATION_QUERY % {"items": " ".join(f"wd:{q}" for q in qids[n:n + 200])},
+                      cache=False, retries=2)
+        for row in rows:
+            item = by_qid.get(value(row, "item"))
+            pop, when = value(row, "pop"), value(row, "popTime") or ""
+            if item is not None and pop and (item.get("pop_year") or "") <= when:
+                item["population"] = int(float(pop))
+                item["pop_year"] = when
+    path.write_text(json.dumps(items, ensure_ascii=False), encoding="utf-8")
+    log(f"{iso3}: populations for {sum(1 for q in qids if by_qid[q].get('population'))} "
+        f"of {len(qids)} bound items")
+
+
 def shapes_of(iso3: str) -> list[dict]:
     import fiona
     from shapely.geometry import shape
@@ -183,11 +221,16 @@ def main() -> int:
     ap.add_argument("--fetch", nargs=3, metavar=("ISO3", "PROPERTY", "LENGTH"),
                     help="only codes of LENGTH characters: China's 45,888 coded items "
                          "overflow one answer, its 2,800 counties do not")
+    ap.add_argument("--fetch-populations", nargs=2, metavar=("ISO3", "PROPERTY"),
+                    help="populations of the items code_shapes.json binds, by id (runner)")
     ap.add_argument("specs", nargs="*",
                     help="ISO3:PROPERTY:LENGTH:KEEP -- codes of exactly LENGTH digits, "
                          "keyed by their first KEEP (Japan's check digit is dropped)")
     ap.add_argument("--populations", action="store_true")
     args = ap.parse_args()
+    if args.fetch_populations:
+        fetch_populations(args.fetch_populations[0].upper(), args.fetch_populations[1])
+        return 0
     if args.fetch:
         fetch(args.fetch[0].upper(), args.fetch[1], int(args.fetch[2]))
         return 0
