@@ -1007,22 +1007,28 @@ ETHNIC_CENSUS: dict[str, tuple[str, ...]] = {
         "Native Hawaiian and Other Pacific Islander (non-Hispanic)",
     ),
     "Mixed or multiple (census category)": (
-        "Pardo", "Mestizo", "Coloured", "Mixed", "Mixed or multiple",
-        # Guatemala's census category, which the Factbook reports as Mestizo:
-        # its 56.0% for 2018 is the census's Ladina(o).
-        "Ladino",
+        "Coloured", "Mixed", "Mixed or multiple",
         "Two or more races (non-Hispanic)", "Two or more races",
-        "mixed", "Mixed race", "Multiracial", "Mulatto",
+        "mixed", "Mixed race", "Multiracial",
         "Mixed or Multiple ethnic groups", "Multiple visible minorities",
         "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
         "Mixed or Multiple ethnic groups: White and Asian",
         "Mixed or Multiple ethnic groups: White and Black African",
         "Mixed or Multiple ethnic groups: White and Black Caribbean",
-        "Burgher", "Eurasian", "Mulatto", "Zambo", "Castizo",
+        "Burgher", "Eurasian",
     ),
     "Hispanic or Latino (census category)": (
         "Hispanic or Latino", "Hispanic or Latino (any race)",
         "Latin American", "Hispanic",
+        # Latin America's own mixed categories are the Latino majorities of
+        # their countries, and are filed with them rather than with the
+        # generic mixed category of the UK's or Canada's tick-boxes (the
+        # owner's rule of 25 September 2026): Brazil's pardo, Guatemala's
+        # ladino -- which the Factbook reports as Mestizo, its 56.0% for 2018
+        # being the census's Ladina(o) -- and the mestizo and mulato of the
+        # Spanish-speaking censuses. Mozambique's and Angola's mestiço is
+        # another people and stays mixed, under its own spelling (Mestico).
+        "Pardo", "Mestizo", "Ladino", "Mulatto", "Zambo", "Castizo",
     ),
     "Middle Eastern or North African (census category)": (
         "Middle Eastern or North African", "Other ethnic group: Arab",
@@ -2014,6 +2020,15 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # Hispanic or Latino population, instead of as a non-answer.
         "Mestizo or white (no ethnic group declared)",
         "Mestizo or white (neither indigenous nor Afro-Mexican)",
+        # The same majority where a census or the Factbook names it as one
+        # category: Costa Rica's white or mestizo, Argentina's European and
+        # mestizo, Chile's white and non-indigenous remainder, and the
+        # Dominican Republic's mestizo or indio (a colour term there, not
+        # indigenous descent).
+        "White or Mestizo", "European and Mestizo", "White and non-Indigenous",
+        "Mestizo or Indio",
+        # Ecuador's coastal mestizo people, and Bolivia's cholo.
+        "Montubio", "Cholo/Chola",
     ),
     # Canada's Indigenous identity answers that are not one people: more
     # than one Indigenous identity, or one StatCan does not itemise.
