@@ -217,6 +217,8 @@ def split_not_visible(geo: dict[str, Any]) -> None:
         return
     peoples: dict[str, float] = {}
     for label, n in indigenous.items():
+        # StatCan writes some labels with a no-break space: "Inuk\xa0(Inuit)".
+        label = " ".join(label.split())
         if label.startswith("Non-Indigenous"):
             continue
         name = INDIGENOUS.get(label)
