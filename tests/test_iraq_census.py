@@ -9,6 +9,8 @@ from scripts.fetch_census import iraq_census as ic  # noqa: E402
 
 DUMP = ROOT / "data" / "raw" / "iraq" / "aas2024_table11.txt"
 GAZ = ROOT / "data" / "raw" / "iraq" / "ocha_admin3.txt"
+PLACES = ROOT / "data" / "raw" / "iraq" / "ocha_places.txt"
+GRID = ROOT / "data" / "raw" / "iraq" / "kontur_adm2.txt"
 
 
 @unittest.skipUnless(DUMP.exists() and GAZ.exists(), "Iraq dumps not present")
@@ -27,6 +29,13 @@ class TheCensusTable(unittest.TestCase):
         for code, value in self.table["governorates"].items():
             self.assertEqual(self.table["sums"][code], value, code)
 
+    def test_every_sub_district_is_read(self):
+        # Rows whose code the layout lost are recovered from what their
+        # district's total leaves over; only Wasit's Kut and Maysan's Ali
+        # al-Gharbi, whose rows trade 867 people, do not add up.
+        self.assertEqual(sorted(set(self.table["districts"]) - self.table["whole"]),
+                         ["2601", "3402"])
+
     def test_a_total_printed_without_the_word_is_taken_only_when_it_is_the_sum(self):
         # Panjwin's total line carries no "Total".
         self.assertEqual(self.table["districts"]["1306"], 52_251)
@@ -38,7 +47,14 @@ class TheCrosswalk(unittest.TestCase):
     def setUpClass(cls):
         table = ic.parse(DUMP.read_text(encoding="utf-8"))
         cls.table = table
-        cls.mapped, cls.notes = ic.crosswalk(table, ic.read_gazetteer(GAZ.read_text(encoding="utf-8")))
+        places = ic.read_places(PLACES.read_text(encoding="utf-8")) if PLACES.exists() else []
+        cls.result = ic.crosswalk(table, ic.read_gazetteer(GAZ.read_text(encoding="utf-8")),
+                                  places)
+        cls.placed = {n: key for n, _name, _d, _v, key, _how in cls.result["placed"]}
+        grid = ic.read_grid(GRID.read_text(encoding="utf-8")) if GRID.exists() else {}
+        cls.grid_log = ic.grid_check(cls.result, grid)
+        cls.mapped = cls.result["districts"]
+        cls.govs = cls.result["governorates"]
 
     def test_a_written_governorate_s_districts_add_up_to_it(self):
         districts = [e for e in self.mapped.values()
@@ -47,15 +63,105 @@ class TheCrosswalk(unittest.TestCase):
         self.assertEqual(sum(e["value"] for e in districts),
                          self.table["governorates"]["32"])
 
-    def test_a_district_moved_between_districts_blanks_its_governorate(self):
-        kirkuk = self.mapped["Kirkuk/Kirkuk"]
-        self.assertIsNone(kirkuk["value"])
-        self.assertIn("moved", kirkuk["why"])
+    def test_a_sub_district_moved_between_districts_follows_its_ground(self):
+        # The census files Altun Kupri under Kirkuk district; the boundary
+        # file draws it in Dibis. Its people go to Dibis.
+        dibis = self.mapped["Kirkuk/Dibis"]
+        self.assertIsNotNone(dibis["value"])
+        self.assertTrue(any("Alton" in name for name, _v in dibis["parts"]))
+
+    def test_a_namesake_across_a_governorate_line_is_not_taken_alone(self):
+        # Ninewa's Faeda (186,456) is not OCHA's 34 km2 Fayde in Duhok.
+        tilkaef = self.mapped["Ninewa/Tilkaef"]
+        self.assertEqual(tilkaef["value"], self.table["districts"]["1204"])
+        self.assertNotIn("Faeda", str(self.govs["Duhok"].get("note")))
+
+    def test_ground_counted_under_another_governorate_moves_with_it(self):
+        # Duhok counts Aqra, Shekhan and Bardarash; the map draws them in
+        # Ninewa, and Makhmour, counted under Ninewa, in Erbil.
+        census = {ic.GOVERNORATE[g]: v for g, v in self.table["governorates"].items()}
+        for gov in ("Duhok", "Ninewa", "Erbil"):
+            self.assertNotEqual(self.govs[gov]["value"], census[gov], gov)
+        self.assertEqual(sum(e["value"] for e in self.govs.values()), ic.NATIONAL)
+
+    def test_a_centre_is_not_carried_by_its_one_sibling(self):
+        # Saed Sadiq's Serjook is OCHA's Saruchik in Sharbazher; Sayid Sadiq
+        # town is in Halabja. The district is split between the two, each
+        # taking its own sub-district's figure.
+        self.assertEqual(self.placed["13041"], ("Al-Sulaymaniyah", "Halabcha"))
+        self.assertEqual(self.placed["13042"], ("Al-Sulaymaniyah", "Sharbazher"))
+
+    @unittest.skipUnless(PLACES.exists(), "OCHA's places not present")
+    def test_a_village_does_not_place_a_district_named_like_it(self):
+        # OCHA's only Haji Awa is a village by Sulaymaniyah city; Hajiawa
+        # district goes where its article puts it, not there.
+        self.assertNotEqual(self.placed.get("13181"),
+                            ("Al-Sulaymaniyah", "Al-Sulaymaniyah"))
+
+    @unittest.skipUnless(PLACES.exists(), "OCHA's places not present")
+    def test_a_built_up_town_places_the_district_named_for_it(self):
+        self.assertEqual(self.placed["25051"], ("Kerbala", "Kerbela"))
+        kerbala = [e["value"] for e in self.mapped.values() if e["governorate"] == "Kerbala"]
+        self.assertEqual(sum(kerbala), self.table["governorates"]["25"])
+
+    @unittest.skipUnless(GRID.exists(), "Kontur's grid not present")
+    def test_a_shape_that_is_not_the_census_s_ground_is_refused(self):
+        # The boundary file draws Amarah city inside the shape it names
+        # Al-Kahla; the census's Al-Umarra is 7.9 times the grid in the
+        # shape named Al-Amara.
+        amara = self.mapped["Maysan/Al-Amara"]
+        self.assertIsNone(amara["value"])
+        self.assertIn("grid", amara["why"])
+        self.assertIsNotNone(self.mapped["Maysan/Ali Al-Gharbi"]["value"])
+
+    @unittest.skipUnless(GRID.exists(), "Kontur's grid not present")
+    def test_the_grid_is_not_used_where_it_is_wrong_for_the_governorate(self):
+        self.assertTrue(any(line.startswith("Duhok:") for line in self.grid_log))
+        self.assertIsNotNone(self.mapped["Duhok/Duhok"]["value"])
+
+    def test_a_new_district_is_placed_where_its_article_puts_it(self):
+        # Al-Obour is Al-Rummaneh district, raised from OCHA's Al-Rummaneh
+        # sub-district of Al-Kaim; Kutha's centre was Al-Mashroo, OCHA's,
+        # in Al-Mahaweel; Hajiawa was a sub-district of Ranya.
+        self.assertEqual(self.placed["22121"], ("Al-Anbar", "Al-Kaim"))
+        self.assertEqual(self.placed["24061"], ("Babil", "Al-Mahaweel"))
+        self.assertEqual(self.placed["13181"], ("Al-Sulaymaniyah", "Rania"))
+        anbar = [e["value"] for e in self.mapped.values() if e["governorate"] == "Al-Anbar"]
+        self.assertNotIn(None, anbar)
+        self.assertEqual(sum(anbar), self.table["governorates"]["22"])
+
+    def test_every_seat_names_a_district_of_the_map_s(self):
+        districts = {row["adm2_name"] for row in ic.read_gazetteer(GAZ.read_text(encoding="utf-8"))}
+        for code, (district, why) in ic.SEATS.items():
+            self.assertIn(district, districts, code)
+            self.assertTrue(why.startswith("ar.wikipedia"), code)
+
+    def test_a_district_that_cannot_be_placed_leaves_a_reason(self):
+        for entry in self.mapped.values():
+            if entry["value"] is None:
+                self.assertTrue(entry["why"])
 
 
 class Names(unittest.TestCase):
+    def test_every_governorate_answers_to_the_map_s_spelling(self):
+        # The map's first level: Dohuk, Ninawa, Al-Sulaimaniyah, An-Najaf,
+        # Dhi Qar, Karbala, Wasit, Al-Qadisiyah.
+        spelt = {a for names in ic.MAP_NAMES.values() for a in names}
+        for name in ("Dohuk", "Ninawa", "Al-Sulaimaniyah", "An-Najaf", "Dhi Qar",
+                     "Karbala", "Wasit", "Al-Qadisiyah"):
+            self.assertIn(name, spelt)
+
     def test_reversed_arabic_is_read_back_in_order(self):
         self.assertEqual(ic.arabic("كوهد"), "دهوك")
+
+    def test_a_second_name_in_brackets_is_a_name_too(self):
+        self.assertEqual(ic.variants("Akd (Al-Daggara"), ["Akd", "Al-Daggara"])
+
+    def test_kurdish_vowels_fold_to_the_arabic_spelling(self):
+        self.assertEqual(ic.ar_loose("مهيدان"), ic.ar_loose("ميدان"))
+
+    def test_short_romanisations_must_be_the_same(self):
+        self.assertFalse(ic.alike(ic.en_key("Sowran"), ic.en_key("Shwan")))
 
     def test_the_lam_alef_ligature_is_folded(self):
         self.assertEqual(ic.ar_key("كربالء"), ic.ar_key("كربلاء"))
