@@ -55,6 +55,37 @@ window.WorldMap = (function () {
     };
   }
 
+  // The pmtiles reader caches every read as a promise -- the archive's header
+  // and each leaf directory alike -- and a promise that failed stays cached:
+  // only an EtagMismatch clears the header, and nothing clears a directory. So
+  // one dropped connection, or one answer the reader refuses (a whole file
+  // for the range it asked for, as a CDN can send on a miss), left the whole
+  // level -- or, for a directory, one patch of the world at that level --
+  // blank until the page was reloaded, while the map around it drew. Replayed
+  // in Firefox, a first visit whose three header reads came back whole drew
+  // nothing at any zoom for the rest of the visit. Here a read is forgotten
+  // the moment it fails, so the next tile asked for reads it again.
+  function forgetFailures(entries, promiseOf) {
+    if (!entries || typeof entries.set !== "function") return;
+    const set = entries.set.bind(entries);
+    entries.set = (key, value) => {
+      const pending = promiseOf(value);
+      if (pending && typeof pending.then === "function") {
+        pending.then(null, () => { if (entries.get(key) === value) entries.delete(key); });
+      }
+      return set(key, value);
+    };
+  }
+
+  function forgetfulCache() {
+    const cache = new window.pmtiles.SharedPromiseCache();
+    forgetFailures(cache.cache, (entry) => entry && entry.data);
+    // A failed re-read of a changed header is kept the same way, and every
+    // later mismatch would wait on it instead of reading again.
+    forgetFailures(cache.invalidations, (pending) => pending);
+    return cache;
+  }
+
   let map = null;
   let popup = null;
   let selectedId = null;
@@ -416,8 +447,9 @@ window.WorldMap = (function () {
     handlers = options || {};
     const protocol = new window.pmtiles.Protocol();
     if (window.pmtiles.PMTiles && window.pmtiles.FetchSource) {
+      const cache = window.pmtiles.SharedPromiseCache ? forgetfulCache : () => undefined;
       for (const level of LEVELS) {
-        protocol.add(new window.pmtiles.PMTiles(stableSource(level.url)));
+        protocol.add(new window.pmtiles.PMTiles(stableSource(level.url), cache()));
       }
     }
     window.maplibregl.addProtocol("pmtiles", protocol.tile);
@@ -546,5 +578,5 @@ window.WorldMap = (function () {
 
   return { init, applyColors, repaintAll, select, fitBBox, visibleCountries, inView,
            getMap, getLevel, levelId, restyle, setPinnedLevel, getPinnedLevel,
-           setPartialLevels, stableSource, LEVELS };
+           setPartialLevels, stableSource, forgetfulCache, LEVELS };
 })();
