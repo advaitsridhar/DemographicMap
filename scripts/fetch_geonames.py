@@ -436,6 +436,13 @@ def assign() -> None:
             if not unit_pop or best["population"] <= unit_pop:
                 entry["population"] = best["population"]
             out[shape_id] = entry
+        # A unit no credited place stands in says so too.
+        units, _ = site_units("admin1" if level == "ADM1" else "admin2")
+        for shape_id in units:
+            if shape_id not in inside:
+                out.setdefault(shape_id, {"none": "GeoNames lists no populated place that can "
+                                                  "be shown to stand in this unit"})
+                why_not["empty"] += 1
         log(f"{level}: {found} shapes with a settlement; none named for {dict(why_not)}; "
             f"admin2 codes line up in {len(aligned)} countries")
         placed = seats(level, inside)
