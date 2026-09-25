@@ -1,7 +1,7 @@
 eurostat: demo_r_pjangrp3 (nuts2)
   EFTA: no ISO3 for Eurostat country code 'EF'; skipped
   EU28: no ISO3 for Eurostat country code 'EU'; skipped
-  137 regions placed by outline; 43 refused or superseded by it; 171 left to their names
+  137 regions placed by outline; 12 refused or superseded by it; 202 left to their names
   TUR: Tekirdağ, Edirne, Kırklareli left out -- it holds Edirne, Kırklareli, Tekirdağ and more
   TUR: Balıkesir, Çanakkale left out -- it holds Balıkesir, Çanakkale and more
   TUR: Aydın, Denizli, Muğla left out -- it holds Aydın, Denizli, Muğla and more
@@ -24,5 +24,5 @@ eurostat: demo_r_pjangrp3 (nuts2)
   TUR: Gaziantep, Adıyaman, Kilis left out -- it holds Adıyaman, Gaziantep, Kilis and more
   TUR: Şanlıurfa, Diyarbakır left out -- it holds Diyarbakır, Şanlıurfa and more
   TUR: Mardin, Batman, Şırnak, Siirt left out -- it holds Batman, Mardin, Siirt, Şırnak and more
-  wrote data/processed/eurostat_nuts2.json (400 kB)
-  286 nuts2 records
+  wrote data/processed/eurostat_nuts2.json (442 kB)
+  317 nuts2 records
