@@ -24,9 +24,19 @@ also writes the items' Wikidata populations as records bound to their
 polygons (data/processed/wikidata_points_<level>.json), for the units no
 office table reaches.
 
+A coordinate and a name agreeing is not enough when the unit was redrawn
+under the same name. Ukraine's raion items are mostly the 136 raions of
+2020, which absorbed the cities and several old raions each -- Kremenets
+Raion's 143,191 is three of the map's pre-2020 raions -- and Kenya's
+constituency items carry 2009 counts for constituencies redrawn in 2012.
+Both were placed and left out; their polygons keep a gap rather than a
+bigger unit's figure.
+
 Usage:
     python -m scripts.wikidata_points --fetch JPN P429 6
-    python -m scripts.wikidata_points JPN:P429:6:5 CHN:P442:6:6 --populations
+    python -m scripts.wikidata_points --fetch-class VNM Q2616791
+    python -m scripts.wikidata_points --fetch-populations VNM class
+    python -m scripts.wikidata_points JPN:P429:6:5 CHN:P442:6:6 VNM:class:0:0 --populations
 """
 from __future__ import annotations
 
@@ -92,6 +102,41 @@ def agrees(label: str, shape_name: str) -> bool:
     return bool(a and b) and (a == b or (len(a) >= 4 and len(b) >= 4 and (a.startswith(b) or b.startswith(a))))
 
 
+CLASS_QUERY = """
+SELECT ?item ?itemLabel ?coord WHERE {
+  VALUES ?class { %(classes)s }
+  ?item wdt:P31 ?class ; wdt:P17 wd:%(country)s ; wdt:P625 ?coord .
+  FILTER NOT EXISTS { ?item wdt:P576 ?gone . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+}
+"""
+
+
+def fetch_class(iso3: str, classes: list[str]) -> None:
+    """Every current item of these classes in the country, with a coordinate.
+
+    For a country whose units carry no office code on Wikidata, the item
+    itself is the key: its coordinate and name still have to agree with one
+    polygon before anything is bound. Populations follow by id
+    (``--fetch-populations ISO3 class``), for the items that are placed.
+    """
+    from fetch_wikidata import country_qids, sparql, value
+    rows = sparql(CLASS_QUERY % {"classes": " ".join(f"wd:{c}" for c in classes),
+                                 "country": country_qids()[iso3]}, cache=False, retries=2)
+    items: dict[str, dict] = {}
+    for row in rows:
+        qid = value(row, "item")
+        m = re.match(r"Point\(([-\d.]+) ([-\d.]+)\)", value(row, "coord") or "")
+        if qid and m and qid not in items:
+            items[qid] = {"qid": qid, "label": value(row, "itemLabel"), "code": qid,
+                          "lon": float(m.group(1)), "lat": float(m.group(2))}
+    DEST.mkdir(parents=True, exist_ok=True)
+    out = DEST / f"{iso3}_class.json"
+    out.write_text(json.dumps(sorted(items.values(), key=lambda r: r["qid"]),
+                              ensure_ascii=False), encoding="utf-8")
+    log(f"{iso3} {classes}: {len(items)} items -> {out}")
+
+
 def fetch(iso3: str, prop: str, length: int) -> None:
     from fetch_wikidata import country_qids, sparql, value
     country = country_qids()[iso3]
@@ -142,7 +187,8 @@ def fetch_populations(iso3: str, prop: str) -> None:
     from fetch_wikidata import sparql, value
     path = DEST / f"{iso3}_{prop}.json"
     items = json.loads(path.read_text(encoding="utf-8"))
-    bound = {e["qid"] for e in ((read_json(OUT, {}) or {}).get(iso3) or {}).values()}
+    key = iso3 if prop != "class" else f"{iso3}:class"
+    bound = {e["qid"] for e in ((read_json(OUT, {}) or {}).get(key) or {}).values()}
     by_qid = {i["qid"]: i for i in items if i["qid"] in bound}
     qids = sorted(by_qid)
     for n in range(0, len(qids), 200):
@@ -182,15 +228,20 @@ def place(iso3: str, prop: str, length: int, keep: int) -> tuple[dict[str, dict]
     shapes = shapes_of(iso3)
     tree = STRtree([s["geom"] for s in shapes])
     by_shape: dict[str, list[dict]] = defaultdict(list)
+    coded: list[dict] = []
     for item in items:
         # Exactly the level's length, before anything is cut: a Chinese
         # town's 9- or 12-digit code begins with its county's six, and cut to
         # six it would pass for the county.
-        full = re.sub(r"\D", "", item.get("code") or "")
-        if len(full) != length:
-            continue
-        code = full[:keep]
+        if prop == "class":
+            code = item["qid"]
+        else:
+            full = re.sub(r"\D", "", item.get("code") or "")
+            if len(full) != length:
+                continue
+            code = full[:keep]
         item["code"] = code
+        coded.append(item)
         for i in tree.query(Point(item["lon"], item["lat"]), predicate="within"):
             s = shapes[i]
             names = [item.get("label") or "", *(item.get("alt") or [])]
@@ -208,6 +259,21 @@ def place(iso3: str, prop: str, length: int, keep: int) -> tuple[dict[str, dict]
                                      "name": h["shape"]["name"], "label": h["label"],
                                      "population": h.get("population"),
                                      "pop_year": h.get("pop_year")})
+    # A polygon the boundary file leaves unnamed (24 of Japan's) has no name
+    # for an item to agree with, so the second test is replaced by a stricter
+    # first: exactly one coded item of any level stands inside it, and that
+    # item is bound nowhere else. It is then named by the item.
+    taken = {e["qid"] for e in bound.values()}
+    for s in shapes:
+        if s["name"]:
+            continue
+        inside = [it for it in coded if s["geom"].contains(Point(it["lon"], it["lat"]))]
+        if len(inside) != 1 or inside[0]["qid"] in taken or inside[0]["code"] in bound:
+            continue
+        h = inside[0]
+        bound[h["code"]] = {"shape_id": s["id"], "level": s["level"], "qid": h["qid"],
+                            "name": h["label"], "label": h["label"],
+                            "population": h.get("population"), "pop_year": h.get("pop_year")}
     levels = defaultdict(int)
     for entry in bound.values():
         levels[entry["level"]] += 1
@@ -221,6 +287,8 @@ def main() -> int:
     ap.add_argument("--fetch", nargs=3, metavar=("ISO3", "PROPERTY", "LENGTH"),
                     help="only codes of LENGTH characters: China's 45,888 coded items "
                          "overflow one answer, its 2,800 counties do not")
+    ap.add_argument("--fetch-class", nargs=2, metavar=("ISO3", "QCLASSES"),
+                    help="items of these comma-separated classes, keyed by item (runner)")
     ap.add_argument("--fetch-populations", nargs=2, metavar=("ISO3", "PROPERTY"),
                     help="populations of the items code_shapes.json binds, by id (runner)")
     ap.add_argument("specs", nargs="*",
@@ -228,6 +296,9 @@ def main() -> int:
                          "keyed by their first KEEP (Japan's check digit is dropped)")
     ap.add_argument("--populations", action="store_true")
     args = ap.parse_args()
+    if args.fetch_class:
+        fetch_class(args.fetch_class[0].upper(), args.fetch_class[1].split(","))
+        return 0
     if args.fetch_populations:
         fetch_populations(args.fetch_populations[0].upper(), args.fetch_populations[1])
         return 0
@@ -239,8 +310,11 @@ def main() -> int:
     for spec in args.specs:
         iso3, prop, length, keep = spec.split(":")
         bound, _ = place(iso3.upper(), prop, int(length), int(keep))
-        table[iso3.upper()] = {code: {k: v for k, v in e.items() if k not in ("population", "pop_year")}
-                               for code, e in sorted(bound.items())}
+        # An office's codes under the country; items bound by class under
+        # their own key, so the two never overwrite each other.
+        key = iso3.upper() if prop != "class" else f"{iso3.upper()}:class"
+        table[key] = {code: {k: v for k, v in e.items() if k not in ("population", "pop_year")}
+                      for code, e in sorted(bound.items())}
         if args.populations:
             for code, e in bound.items():
                 # Second level only: the first is covered by better sources,

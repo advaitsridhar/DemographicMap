@@ -283,11 +283,15 @@ ADAPTER_FILES = [
     # After Eurostat, which carries no ethnicity or religion for Romania and
     # says so in a generic sentence; this is the census itself.
     "romania_county.json",
+    # Every commune's, town's and city's 2021 ethnicity and religion, as
+    # Romanian Wikipedia charts the INS tables, bound by Wikidata item.
+    "romania_uat.json",
     "india_state.json", "india_district.json",
     # After the C-01 files: mother tongue is the one field these add, and a
     # later file never overwrites an earlier real value with a gap marker.
     "india_language_state.json", "india_language_district.json",
-    "mexico_state.json", "mexico_municipality.json",
+    "mexico_state.json", "mexico_municipality.json", "mexico_municipality_age.json",
+    "colombia_municipality.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
     "switzerland_canton.json",
@@ -3634,6 +3638,54 @@ GEONAMES_SOURCE = {"field": "largest settlement", "name": "GeoNames",
                    "url": "https://www.geonames.org/", "license": "CC BY 4.0"}
 
 
+GEONAMES_SEATS = PROCESSED / "geonames_seats.json"
+
+
+def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
+                                admin2: dict[str, list[dict[str, Any]]]) -> int:
+    """Each unit's seat from GeoNames, where no source named its capital.
+
+    scripts/fetch_geonames.py keeps a seat only in countries whose GeoNames
+    units are the map's -- most polygons hold exactly one seat of the level
+    and next to none hold two -- and whose seats agree with the capitals
+    other sources give. A capital that is a bare Wikidata id ("Q139491508",
+    an item with no English label) is a blank shown as a code, and is
+    replaced too.
+    """
+    seats = read_json(GEONAMES_SEATS, {}) or {}
+    filled = 0
+    for table in (admin1, admin2):
+        for rows in table.values():
+            for entity in rows:
+                seat = seats.get(entity["id"])
+                held = entity.get("capital")
+                if not seat or entity.get("water"):
+                    continue
+                # A capital the unit's own seat contradicts, and that names a
+                # town elsewhere in the country (Central Kalimantan's
+                # "Banjarmasin"): a former capital read as the current one.
+                if seat.get("refutes") and held == seat["refutes"]:
+                    entity["capital"] = seat["seat"]
+                    # Kept so the next placement still sees what the sources
+                    # say; judged against the corrected capital, it would find
+                    # nothing to refute and the next build would restore it.
+                    entity["capital_refuted"] = held
+                    entity["capital_note"] = (
+                        f"{held}, which another source gives, stands elsewhere in "
+                        f"the country; {seat['seat']} is this unit's own seat.")
+                    entity.setdefault("sources", []).append({**GEONAMES_SOURCE, "field": "capital"})
+                    filled += 1
+                    continue
+                bare_id = isinstance(held, str) and re.fullmatch(r"Q\d+", held)
+                if "name" not in seat or not (is_gap(held) or bare_id):
+                    continue
+                entity["capital"] = seat["name"]
+                entity.setdefault("sources", []).append(
+                    {**GEONAMES_SOURCE, "field": "capital"})
+                filled += 1
+    return filled
+
+
 def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                                    admin2: dict[str, list[dict[str, Any]]]) -> int:
     """The largest GeoNames place inside each unit, where no source named one.
@@ -3652,6 +3704,13 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                 town = towns.get(entity["id"])
                 # A lake is water whatever town stands on its islands or shore.
                 if not town or entity.get("water") or not is_gap(entity.get("largest_settlement")):
+                    continue
+                if "none" in town:
+                    held = entity.get("largest_settlement") or {}
+                    if not held.get("note"):
+                        entity["largest_settlement"] = gap(
+                            held.get("status") or NOT_AVAILABLE,
+                            f"No GeoNames place is named: {town['none']}.")
                     continue
                 entity["largest_settlement"] = town["name"]
                 if town.get("population"):
@@ -5161,7 +5220,9 @@ def main() -> int:
                 wanted_name = row.get("name")
                 if wanted_name and label and label != wanted_name:
                     entity["name"] = wanted_name
-                    row["aliases"] = [*(row.get("aliases") or []), label]
+                    # An unnamed polygon's label is its id, not a spelling.
+                    if label != entity["id"]:
+                        row["aliases"] = [*(row.get("aliases") or []), label]
                 matched.append((row, entity, "shape_id"))
                 continue
             if row.get("level") == "admin1":
@@ -5335,6 +5396,9 @@ def main() -> int:
     placed_towns = fill_settlements_from_geonames(admin1_by_country, admin2_by_country)
     if placed_towns:
         log(f"  {placed_towns} largest settlements placed from GeoNames")
+    placed_seats = fill_capitals_from_geonames(admin1_by_country, admin2_by_country)
+    if placed_seats:
+        log(f"  {placed_seats} capitals placed from GeoNames seats")
     fell_back = 0
     for table in (admin1_by_country, admin2_by_country):
         for rows in table.values():

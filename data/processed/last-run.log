@@ -1,70 +1,38 @@
-eurostat: demo_r_pjangrp3 (nuts3)
-  ALB: 13 NUTS-3 regions kept at admin1 -- 12 of 13 names match this map's admin1 (against 11 at admin2)
-  AUT: 35 NUTS-3 regions left out -- its names match 4 of this map's districts and 1 of its first-level units, out of 35; too few of either to say which level this file describes
-  BEL: 52 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 46; too few of either to say which level this file describes
-  BGR: 28 NUTS-3 regions kept at admin1 -- 27 of 27 names match this map's admin1 (against 26 at admin2)
-  CHE: 26 NUTS-3 regions kept at admin1 -- 22 of 26 names match this map's admin1 (against 14 at admin2)
-  CZE: 14 NUTS-3 regions kept at admin1 -- 14 of 14 names match this map's admin1 (against 0 at admin2)
-  DEU: 407 NUTS-3 regions left out -- its names match 4 of this map's districts and 2 of its first-level units, out of 401; too few of either to say which level this file describes
-  DNK: 11 NUTS-3 regions left out -- its names match 1 of this map's districts and 1 of its first-level units, out of 11; too few of either to say which level this file describes
-  ESP: 59 NUTS-3 regions kept at admin2 -- 44 of 59 names match this map's admin2 (against 3 at admin1)
-  EST: 7 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 5; too few of either to say which level this file describes
-  FIN: 28 NUTS-3 regions left out -- its names match 0 of this map's districts and 6 of its first-level units, out of 19; too few of either to say which level this file describes
-  FRA: 102 NUTS-3 regions kept at admin2 -- 96 of 102 names match this map's admin2 (against 0 at admin1)
-  GBR: 179 NUTS-3 regions kept at admin2 -- 91 of 178 names match this map's admin2 (against 0 at admin1)
-  GRC: 52 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 52; too few of either to say which level this file describes
-  HRV: 35 NUTS-3 regions left out -- its names match 1 of this map's districts and 0 of its first-level units, out of 22; too few of either to say which level this file describes
-  HUN: 21 NUTS-3 regions kept at admin1 -- 19 of 21 names match this map's admin1 (against 4 at admin2)
-  IRL: 8 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 8; too few of either to say which level this file describes
-  ISL: 2 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 2; too few of either to say which level this file describes
-  ITA: 115 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 111; too few of either to say which level this file describes
-  LTU: 10 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 10; too few of either to say which level this file describes
-  LVA: 9 NUTS-3 regions left out -- its names match 1 of this map's districts and 1 of its first-level units, out of 6; too few of either to say which level this file describes
-  MKD: 9 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 9; too few of either to say which level this file describes
-  MLT: 2 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 2; too few of either to say which level this file describes
-  NLD: 55 NUTS-3 regions left out -- its names match 1 of this map's districts and 2 of its first-level units, out of 40; too few of either to say which level this file describes
-  NOR: 36 NUTS-3 regions left out -- its names match 0 of this map's districts and 8 of its first-level units, out of 28; too few of either to say which level this file describes
-  POL: 73 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 73; too few of either to say which level this file describes
-  PRT: 40 NUTS-3 regions left out -- its names match 0 of this map's districts and 2 of its first-level units, out of 27; too few of either to say which level this file describes
-  ROU: 42 NUTS-3 regions kept at admin1 -- 42 of 42 names match this map's admin1 (against 18 at admin2)
-  SRB: 25 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 25; too few of either to say which level this file describes
-  SVK: 8 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 8; too few of either to say which level this file describes
-  SVN: 12 NUTS-3 regions left out -- its names match 0 of this map's districts and 0 of its first-level units, out of 12; too few of either to say which level this file describes
-  SWE: 21 NUTS-3 regions kept at admin1 -- 21 of 21 names match this map's admin1 (against 0 at admin2)
-  TUR: 81 NUTS-3 regions kept at admin1 -- 81 of 81 names match this map's admin1 (against 11 at admin2)
-  522 regions placed by outline; 81 refused or superseded by it; 1035 left to their names
-  GBR: Hartlepool and Stockton-on-Tees (NUTS 2021) left out -- it holds Hartlepool, Stockton-on-Tees and more
-  GBR: North and North East Lincolnshire (NUTS 2021) left out -- it holds North East Lincolnshire and more
-  GBR: Barnsley, Doncaster and Rotherham (NUTS 2021) left out -- it holds Barnsley, Doncaster, Rotherham and more
-  GBR: Calderdale and Kirklees (NUTS 2021) left out -- it holds Calderdale, Kirklees and more
-  GBR: Leicestershire CC and Rutland (NUTS 2021) left out -- it holds Rutland and more
-  GBR: Camden & City of London (NUTS 2021) left out -- it holds Camden, City of London and more
-  GBR: Kensington and Chelsea & Hammersmith and Fulham (NUTS 2021) left out -- it holds Hammersmith and Fulham, Kensington and Chelsea and more
-  GBR: Hackney & Newham (NUTS 2021) left out -- it holds Hackney, Newham and more
-  GBR: Haringey & Islington (NUTS 2021) left out -- it holds Haringey, Islington and more
-  GBR: Lewisham & Southwark (NUTS 2021) left out -- it holds Lewisham, Southwark and more
-  GBR: Bexley & Greenwich (NUTS 2021) left out -- it holds Bexley, Greenwich and more
-  GBR: Barking & Dagenham and Havering (NUTS 2021) left out -- it holds Barking & Dagenham, Havering and more
-  GBR: Redbridge & Waltham Forest (NUTS 2021) left out -- it holds Redbridge, Waltham Forest and more
-  GBR: Merton, Kingston upon Thames & Sutton (NUTS 2021) left out -- it holds Kingston upon Thames, Merton, Sutton and more
-  GBR: Harrow & Hillingdon (NUTS 2021) left out -- it holds Harrow, Hillingdon and more
-  GBR: Hounslow & Richmond upon Thames (NUTS 2021) left out -- it holds Hounslow, Richmond upon Thames and more
-  GBR: Bath and North East Somerset, North Somerset and South Gloucestershire (NUTS 2021) left out -- it holds Bath and North East Somerset, North Somerset, South Gloucestershire and more
-  GBR: Cornwall and Isles of Scilly (NUTS 2021) left out -- it holds Cornwall, Isles of Scilly and more
-  GBR: Conwy and Denbighshire (NUTS 2021) left out -- it holds Conwy, Denbighshire and more
-  GBR: Bridgend and Neath Port Talbot (NUTS 2021) left out -- it holds Bridgend, Neath Port Talbot and more
-  GBR: Monmouthshire and Newport (NUTS 2021) left out -- it holds Monmouthshire, Newport and more
-  GBR: Cardiff and Vale of Glamorgan (NUTS 2021) left out -- it holds Cardiff, Vale of Glamorgan and more
-  GBR: Flintshire and Wrexham (NUTS 2021) left out -- it holds Flintshire, Wrexham and more
-  GBR: Aberdeen City and Aberdeenshire (NUTS 2021) left out -- it holds Aberdeen City, Aberdeenshire and more
-  GBR: Inverness & Nairn and Moray, Badenoch & Strathspey (NUTS 2021) left out -- it holds Moray and more
-  GBR: Lochaber, Skye & Lochalsh, Arran & Cumbrae and Argyll & Bute (NUTS 2021) left out -- it holds Argyll & Bute and more
-  GBR: Angus and Dundee City (NUTS 2021) left out -- it holds Angus, Dundee City and more
-  GBR: Clackmannanshire and Fife (NUTS 2021) left out -- it holds Clackmannanshire, Fife and more
-  GBR: East Lothian and Midlothian (NUTS 2021) left out -- it holds East Lothian, Midlothian and more
-  GBR: Perth & Kinross and Stirling (NUTS 2021) left out -- it holds Perth & Kinross, Stirling and more
-  GBR: East Dunbartonshire, West Dunbartonshire and Helensburgh & Lomond (NUTS 2021) left out -- it holds East Dunbartonshire, West Dunbartonshire and more
-  GBR: Inverclyde, East Renfrewshire and Renfrewshire (NUTS 2021) left out -- it holds East Renfrewshire, Inverclyde, Renfrewshire and more
-  GBR: East Ayrshire and North Ayrshire mainland (NUTS 2021) left out -- it holds East Ayrshire and more
-  wrote data/processed/eurostat_nuts3.json (1009 kB)
-  699 nuts3 records
+  01 Aguascalientes: 11 municipios, median 27 (24-28)
+  02 Baja California: 6 municipios, median 30 (24-31)
+  03 Baja California Sur: 5 municipios, median 29 (27-32)
+  04 Campeche: 12 municipios, median 29 (22-31)
+  05 Coahuila de Zaragoza: 38 municipios, median 29 (24-40)
+  06 Colima: 10 municipios, median 30 (28-33)
+  07 Chiapas: 124 municipios, median 24 (15-33)
+  08 Chihuahua: 67 municipios, median 29 (21-46)
+  09 Ciudad de México: 16 municipios, median 35 (30-39)
+  10 Durango: 39 municipios, median 27 (17-40)
+  11 Guanajuato: 46 municipios, median 28 (24-35)
+  12 Guerrero: 81 municipios, median 27 (16-35)
+  13 Hidalgo: 84 municipios, median 30 (23-39)
+  14 Jalisco: 125 municipios, median 29 (18-37)
+  15 México: 125 municipios, median 30 (22-35)
+  https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_mich_01_poblacion.xlsx: not a workbook
+  16 Michoacán de Ocampo: 113 municipios, median 28 (22-39)
+  17 Morelos: 36 municipios, median 30 (25-34)
+  18 Nayarit: 20 municipios, median 29 (17-35)
+  19 Nuevo León: 51 municipios, median 30 (25-43)
+  https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_oax_01_poblacion.xlsx: not a workbook
+  20: no workbook; 570 municipios keep a gap
+  21 Puebla: 217 municipios, median 28 (21-45)
+  22 Querétaro: 18 municipios, median 29 (24-32)
+  23 Quintana Roo: 11 municipios, median 28 (25-30)
+  24 San Luis Potosí: 58 municipios, median 29 (23-38)
+  25 Sinaloa: 18 municipios, median 30 (25-35)
+  26 Sonora: 72 municipios, median 30 (23-44)
+  27 Tabasco: 17 municipios, median 29 (26-31)
+  https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_tamps_01_poblacion.xlsx: not a workbook
+  28 Tamaulipas: 43 municipios, median 30 (28-40)
+  https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_tlax_01_poblacion.xlsx: not a workbook
+  29 Tlaxcala: 60 municipios, median 28 (25-32)
+  30 Veracruz de Ignacio de la Llave: 212 municipios, median 31 (19-40)
+  31 Yucatán: 106 municipios, median 30 (20-35)
+  32 Zacatecas: 58 municipios, median 28 (24-39)
+  2469 municipios (0 not in ITER); 59,498,547 men, 62,383,329 women
+  wrote data/processed/mexico_municipality_age.json (2924 kB)
