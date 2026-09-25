@@ -1406,7 +1406,11 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         # as a first language, and Xinka, which is not Mayan.
         "Akateko", "Awakateko", "Ch'orti'", "Chalchiteko", "Itza'", "Mopan",
         "Poqomam", "Sakapulteko", "Sipakapense", "Tektiteko", "Tz'utujil",
-        "Uspanteko", "Xinka"),
+        "Uspanteko", "Xinka",
+        # Mexico's census counts whether a person speaks an indigenous
+        # language, not which, and Panama's figure is the same kind; in both
+        # countries every one of them is a language of this continent.
+        "Indigenous languages"),
     # Russia's federal subjects. The Andic and Tsezic languages of Dagestan,
     # which the Russian census lists one by one beside Avar: every one of
     # them is Nakh-Dagestanian, and several have fewer than a thousand
@@ -2001,7 +2005,20 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     "Munda peoples": ("Saontal", "Mahali", "Kora", "Turi", "Kol", "Shobor"),
     "Polynesian peoples": ("Futunian",),
     "Aboriginal and Torres Strait Islander peoples": ("Australian Aboriginal",),
-    "Hispanic or Latino (census category)": ("Latino",),
+    "Hispanic or Latino (census category)": (
+        "Latino",
+        # The majority a Latin American census leaves unnamed: Colombia's
+        # "No ethnic group" and Mexico's population that identifies as
+        # neither indigenous nor Afro-Mexican. Neither census asks about
+        # mestizo or white ancestry, but both groups are overwhelmingly that,
+        # and filed here they colour as the majority they are, beside the US
+        # Hispanic or Latino population, instead of as a non-answer.
+        "Mestizo or white (no ethnic group declared)",
+        "Mestizo or white (neither indigenous nor Afro-Mexican)",
+    ),
+    # Canada's Indigenous identity answers that are not one people: more
+    # than one Indigenous identity, or one StatCan does not itemise.
+    "Indigenous (census category)": ("Indigenous, multiple or other responses",),
     "Khoisan peoples": ("Sarwa", "Damara", "Sandawe"),
     "Indigenous peoples of Mesoamerica and the Caribbean": ("Xinca",),
     "Afro-descendant peoples of the Americas": ("Afroecuadorian",

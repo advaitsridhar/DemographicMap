@@ -270,16 +270,29 @@ def compose(row: dict[str, str], religion: dict[str, str]) -> dict[str, Any]:
     speakers = number(row.get("P3YM_HLI"))
     base = number(row.get("P_3YMAS")) or total
     if speakers is not None and base:
+        # Spanish for everyone aged 3 or over who speaks no indigenous
+        # language: the census asks about Spanish only of indigenous-language
+        # speakers, and all but a few of the rest -- foreign residents
+        # mostly -- speak it.
         out["language"] = shares(
-            {"Speaks an indigenous language": speakers,
-             "Does not speak an indigenous language": max(base - speakers, 0.0)},
+            {"Indigenous languages": speakers,
+             "Spanish": max(base - speakers, 0.0)},
             total=base)
         out["language_year"] = YEAR
+        also = number(row.get("P3HLI_HE"))
+        only = number(row.get("P3HLINHE"))
+        bilingual = ""
+        if speakers and also is not None and only is not None:
+            bilingual = (f" Here {round(100 * also / speakers)}% of indigenous-language "
+                         f"speakers also speak Spanish and {round(100 * only / speakers)}% "
+                         f"do not.")
         out["language_note"] = (
-            "The census records whether a person aged 3 or over speaks an "
-            "indigenous language, not which one, so this is a yes/no split "
-            "rather than a composition of languages. Which language is asked, "
-            "and published in other INEGI tables, but not in this one.")
+            "People aged 3 or over who speak an indigenous language, and everyone "
+            "else, shown as Spanish: the census asks whether a person speaks an "
+            "indigenous language, and asks about Spanish only of those who do; "
+            "nearly all of the rest speak it. Most indigenous-language speakers "
+            "speak Spanish as well." + bilingual + " Which indigenous language is "
+            "published in other INEGI tables, not in this one.")
 
     afro = number(row.get("POB_AFRO"))
     if afro is not None and total:
@@ -363,6 +376,9 @@ def build(levels: set[str]) -> dict[str, list[dict[str, Any]]]:
         raise SystemExit("no national row (ENTIDAD 00, MUN 000, LOC 0000) to "
                          "check the published figures against")
     log(f"  rows by level: {seen}")
+    for kind, recs in out.items():
+        told = sum(1 for r in recs if "also speak Spanish" in (r.get("language_note") or ""))
+        log(f"  {kind}: {told} of {len(recs)} with the bilingual share (P3HLI_HE, P3HLINHE)")
     return out
 
 

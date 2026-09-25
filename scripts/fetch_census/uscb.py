@@ -217,6 +217,10 @@ class Country:
     # Sevastopol publish theirs directly and keep them.
     sum_into: int | None = None
     aliases: dict[str, tuple[str, ...]] = dc_field(default_factory=dict)
+    # A category published under the census's own name but shown under the
+    # name of who it is, where the census's name says only what the answer
+    # was not. The note on the record keeps the census's wording.
+    relabel: dict[str, str] = dc_field(default_factory=dict)
     # Census areas geoBoundaries draws no boundary of their own for, as
     # (parent, area) pairs -- a name alone is not an address, and the
     # Philippines has a Quezon that is a province and a Quezon that is a city
@@ -799,6 +803,7 @@ COLOMBIA = Country(
     #
     # geoBoundaries truncates Barranquilla's official long name with a literal
     # asterisk, and spells Tiquisio without its second i.
+    relabel={"No ethnic group": "Mestizo or white (no ethnic group declared)"},
     aliases={
         "San Andrés Y Providencia": (
             "Archipiélago de San Andrés, Providencia y Santa Catalina",),
@@ -812,13 +817,13 @@ COLOMBIA = Country(
           "counted population of about 48 million. Colombia's census asks "
           "which of five recognised groups a person recognises themselves in "
           "-- indigenous, Rrom/gypsy, raizal, palenquero, black or "
-          "Afro-Colombian -- so \"No ethnic group\" at 87.6% is an answer "
-          "people gave, not a residual this build invented. That 87.6% is "
-          "predominantly mestizo and white Colombians, who are the majority "
-          "of the country and are not among the five groups the question "
-          "offers; the census does not count them separately, so this map "
-          "does not either. The category is left under the name the census "
-          "gave it rather than renamed to one it never asked about.\n\n"
+          "Afro-Colombian -- and 87.6% answered \"Ningún grupo étnico\", no "
+          "ethnic group. They are the mestizo and white majority of the "
+          "country, whom the question does not offer as a group of their own, "
+          "so the map shows them as \"Mestizo or white (no ethnic group "
+          "declared)\" and colours them with the Hispanic or Latino "
+          "populations of the Americas; the census does not split mestizo "
+          "from white, and neither does this.\n\n"
           "The same workbook carries a second sheet naming 124 individual "
           "indigenous peoples, and it is not read. Its universe is the "
           "1,905,617 people who said they were indigenous, not the country, "
@@ -1714,8 +1719,9 @@ def main() -> int:
                 row = fields[topic.field].get(key)
                 if not row:
                     continue
-                published = shares(
-                    row["counts"], total=row["published"] or row["summed"])
+                counts = {country.relabel.get(label, label): n
+                          for label, n in row["counts"].items()}
+                published = shares(counts, total=row["published"] or row["summed"])
                 if not country.counts_are_people:
                     published = [{"group": g["group"], "pct": g["pct"]}
                                  for g in published]
