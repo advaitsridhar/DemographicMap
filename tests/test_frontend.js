@@ -90,6 +90,86 @@ async function aRedeployIsNotAChangedArchive() {
                        "a rebuilt archive still reads as changed");
 }
 
+// map.js over the real vendored pmtiles reader.
+function withRealPmtiles() {
+  const context = vm.createContext({
+    window: { maplibregl: { Map: class {}, addProtocol() {} } },
+    document: { documentElement: {}, getElementById: () => ({}) },
+    console,
+    getComputedStyle: () => ({ getPropertyValue: () => "" }),
+    AbortController, DecompressionStream, Response, Blob, TextDecoder,
+  });
+  vm.runInContext(fs.readFileSync(path.join(ROOT, "site", "vendor", "pmtiles.js"), "utf8"), context);
+  context.window.pmtiles = context.pmtiles;
+  vm.runInContext(source("map.js"), context);
+  return context;
+}
+
+const archiveSource = (archive) => ({
+  getKey: () => "probe",
+  getBytes: async (offset, length) => ({
+    data: archive.buffer.slice(archive.byteOffset + offset, archive.byteOffset + offset + length),
+    etag: "size-1",
+  }),
+});
+
+async function theSourcesNameEachArchivesZooms() {
+  // The map names each level's tiles itself, so a zoom it names that the
+  // archive does not have is a blank level there.
+  const context = withRealPmtiles();
+  for (const level of context.window.WorldMap.LEVELS) {
+    const archive = fs.readFileSync(path.join(ROOT, "site", level.url));
+    const header = await new context.pmtiles.PMTiles(archiveSource(archive)).getHeader();
+    assert.deepStrictEqual([level.minzoom, level.maxzoom], [header.minZoom, header.maxZoom],
+                           `${level.id} names the zooms its archive has`);
+  }
+}
+
+async function aFailedTileReadIsReadAgain() {
+  // The real reader over the real second-level archive. Its cache keeps a
+  // failed read -- the header, or the leaf directory under Guatemala -- as
+  // the answer for the rest of the visit unless told to forget it.
+  const archive = fs.readFileSync(path.join(ROOT, "site", "tiles", "admin2.pmtiles"));
+  const context = withRealPmtiles();
+  const pm = context.pmtiles;
+  const bytes = (offset, length) =>
+    archive.buffer.slice(archive.byteOffset + offset, archive.byteOffset + offset + length);
+  const header = await new pm.PMTiles(archiveSource(archive)).getHeader();
+  // Guatemala at the second level's zoom: -90.3, 15.2 at z8.
+  const [z, x, y] = [8, 63, 117];
+
+  function flaky(fails) {
+    const source = { reads: 0 };
+    source.getKey = () => "tiles/admin2.pmtiles";
+    source.getBytes = async (offset, length) => {
+      source.reads += 1;
+      if (fails(offset)) throw new Error("connection reset");
+      return { data: bytes(offset, length), etag: "size-1" };
+    };
+    return source;
+  }
+  const once = (test) => { let failed = false; return (o) => !failed && test(o) && (failed = true); };
+  const firstHeader = () => once((o) => o === 0);
+  const leafUnderGuatemala = () => once((o) => o >= header.leafDirectoryOffset
+    && o < header.leafDirectoryOffset + header.leafDirectoryLength);
+
+  for (const [what, fails] of [["header", firstHeader], ["leaf directory", leafUnderGuatemala]]) {
+    const kept = flaky(fails());
+    const stuck = new pm.PMTiles(kept);
+    await assert.rejects(stuck.getZxy(z, x, y), /connection reset/);
+    const reads = kept.reads;
+    await assert.rejects(stuck.getZxy(z, x, y), /connection reset/,
+                         `as shipped, a failed ${what} is the answer from then on`);
+    assert.strictEqual(kept.reads, reads, `and the ${what} is never read again`);
+
+    const source = flaky(fails());
+    const tiles = new pm.PMTiles(source, context.window.WorldMap.forgetfulCache());
+    await assert.rejects(tiles.getZxy(z, x, y), /connection reset/);
+    const tile = await tiles.getZxy(z, x, y);
+    assert.ok(tile && tile.data.byteLength > 0, `a failed ${what} is read again`);
+  }
+}
+
 async function deepSearchWaitsForTheSecondShard() {
   let release;
   const delayed = new Promise((resolve) => { release = resolve; });
@@ -786,6 +866,8 @@ async function anIdDrawnAtTwoLevelsKeepsBothRecords() {
   await concurrentLoadsAreIndexedOnce();
   await aFailedShardIsAskedForAgain();
   await aRedeployIsNotAChangedArchive();
+  await aFailedTileReadIsReadAgain();
+  await theSourcesNameEachArchivesZooms();
   await anIdDrawnAtTwoLevelsKeepsBothRecords();
   await deepSearchWaitsForTheSecondShard();
   uncertainSharesKeepTheirQualifier();
