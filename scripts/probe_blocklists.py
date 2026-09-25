@@ -12,10 +12,10 @@ because the data is fine; only the blocklists can.
 This fetches the lists uBlock Origin and AdBlock Plus enable by default, turns
 their network filters into patterns (``||`` domain anchor, ``|`` start or end
 anchor, ``*`` wildcard, ``^`` separator), and tests every file under site/ as
-the live page requests it. A filter whose options confine it to other
-resource types is still reported, with its options, because the map fetches
-its data by XHR and the options decide the verdict. Exceptions (``@@``) that
-match are reported beside it.
+the live page requests it. Only filters in force for these requests are
+kept: not one confined to other sites (``domain=``), to third-party requests,
+or to resource types other than the xhr the map's fetch() is filed as.
+Exceptions (``@@``) that match are reported beside it.
 
 Read-only; the output is the log.
 
@@ -68,6 +68,35 @@ def literal(body: str) -> str:
     return max(runs, key=len).lower() if runs else ""
 
 
+HOST = "advaitsridhar.github.io"
+TYPES = {"script", "image", "stylesheet", "css", "object", "subdocument", "frame", "font",
+         "media", "websocket", "ping", "other", "xmlhttprequest", "xhr", "document", "doc",
+         "popup", "inline-script", "inline-font"}
+# The map reads its data and tiles with fetch(), which a blocker files as xhr.
+OURS = {"xmlhttprequest", "xhr", "other"}
+
+
+def applies(options: str) -> bool:
+    """Whether a filter's options leave it in force for this site's own fetches."""
+    opts = [o.strip() for o in options.split(",") if o.strip()]
+    if "badfilter" in opts:
+        return False
+    for opt in opts:
+        key, _, value = opt.partition("=")
+        if key in ("domain", "from"):
+            sites = [d for d in value.split("|") if not d.startswith("~")]
+            if sites and not any(HOST.endswith(d) or d in ("github.io",) for d in sites):
+                return False
+        if key in ("3p", "third-party"):
+            return False            # the site's files are all first party
+    kinds = [o for o in opts if o.lstrip("~") in TYPES]
+    wanted = [k for k in kinds if not k.startswith("~")]
+    unwanted = [k[1:] for k in kinds if k.startswith("~")]
+    if wanted:
+        return any(k in OURS for k in wanted)
+    return not any(k in OURS for k in unwanted)
+
+
 def site_urls() -> list[str]:
     out = []
     for path in sorted((ROOT / "site").rglob("*")):
@@ -97,6 +126,8 @@ def main() -> int:
             body, _, options = (rule[2:] if exception else rule).partition("$")
             lit = literal(body)
             if len(lit) >= 3 and lit not in haystack:
+                continue
+            if not applies(options):
                 continue
             rx = pattern(body)
             if rx is None:
