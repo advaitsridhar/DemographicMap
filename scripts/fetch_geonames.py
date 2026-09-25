@@ -60,6 +60,11 @@ SOURCE = "GeoNames (CC BY 4.0)"
 # Feature codes of places that are settlements in their own right.
 SETTLEMENT = {"PPL", "PPLA", "PPLA2", "PPLA3", "PPLA4", "PPLA5", "PPLC",
               "PPLG", "PPLL", "PPLS", "PPLF", "PPLR"}
+# Seats of government, down to the second order.
+SEATS = {"PPLC", "PPLA", "PPLA2"}
+# A place this many times its unit's own count is a city the unit is only part
+# of, or a place across a boundary: no settlement is named rather than it.
+SPANS = 1.5
 COLUMNS = ("geonameid", "name", "lat", "lon", "code", "iso3", "admin1",
            "admin2", "population")
 # A country's second-order codes are taken to line up with the map's shapes
@@ -86,7 +91,9 @@ def fetch() -> None:
             if len(f) < 15 or f[6] != "P" or f[7] not in SETTLEMENT:
                 continue
             population = int(f[14] or 0)
-            if population <= 0 or f[8] not in iso:
+            # A seat with no population is kept: it says the unit's own
+            # town is there, of a size GeoNames does not know.
+            if f[8] not in iso or (population <= 0 and f[7] not in SEATS):
                 continue
             out.writerow((f[0], f[1], f[4], f[5], f[7], iso[f[8]], f[10], f[11], population))
             kept += 1
@@ -151,46 +158,81 @@ def aligned_countries(inside: dict[str, list[dict]]) -> set[str]:
     return {iso3 for iso3 in total if agree[iso3] / total[iso3] >= ALIGNED}
 
 
-def largest(rows: list[dict], check_admin2: bool) -> tuple[dict | None, int]:
-    """The most populous place that belongs; and how many larger were refused."""
+def largest(rows: list[dict], check_admin2: bool, seats: set[str],
+            unit_population: int | None = None) -> tuple[dict | None, str | None]:
+    """The most populous place that belongs, or None and why not.
+
+    ``seats`` are the feature codes of this level's seats. When one of them in
+    the unit has no population, the unit's own town is of unknown size, and a
+    smaller place named as the largest would be wrong; so unless the winner
+    is itself a seat, nothing is named.
+    """
     code1, _ = plurality(rows, "admin1")
     code2, _ = plurality(rows, "admin2") if check_admin2 else (None, 0)
-    refused = 0
-    for row in sorted(rows, key=lambda r: -r["population"]):
-        if code1 and row["admin1"] and row["admin1"] != code1:
-            refused += 1
-            continue
-        if code2 and row["admin2"] and row["admin2"] != code2:
-            refused += 1
-            continue
-        return row, refused
-    return None, refused
+    belongs = [r for r in rows
+               if not (code1 and r["admin1"] and r["admin1"] != code1)
+               and not (code2 and r["admin2"] and r["admin2"] != code2)]
+    counted = sorted((r for r in belongs if r["population"] > 0), key=lambda r: -r["population"])
+    if not counted:
+        return None, "no place with a population"
+    best = counted[0]
+    unsized = [r for r in belongs if r["population"] <= 0 and r["code"] in seats]
+    if unsized and best["code"] not in seats:
+        return None, f"its seat {unsized[0]['name']} has no population in GeoNames"
+    if unit_population and best["population"] > SPANS * unit_population:
+        return None, (f"{best['name']} ({best['population']:,}) is more than the unit "
+                      f"({unit_population:,}): a city it is part of, or across a boundary")
+    return best, None
+
+
+def unit_populations() -> dict[str, int]:
+    """shapeID -> the population the map already gives the unit."""
+    import glob
+    import json
+    site = PROCESSED.parent.parent / "site" / "data"
+    out: dict[str, int] = {}
+    for path in glob.glob(str(site / "admin[12]" / "*.json")):
+        for rec in json.load(open(path, encoding="utf-8")):
+            value = (rec.get("population") or {}).get("value") if isinstance(rec.get("population"), dict) else None
+            if value:
+                out[rec.get("shape_id") or rec["id"]] = value
+    return out
 
 
 def assign() -> None:
     places = read_places()
     log(f"{len(places)} places")
+    populations = unit_populations()
     out: dict[str, dict] = {}
-    for level in ("ADM1", "ADM2"):
+    for level, seats in (("ADM1", {"PPLC", "PPLA"}), ("ADM2", SEATS)):
         inside = contain(level, places)
         aligned = aligned_countries(inside) if level == "ADM2" else set()
-        found = refused_any = 0
+        found = 0
+        why_not: Counter = Counter()
         for shape_id, rows in inside.items():
-            best, refused = largest(rows, level == "ADM2" and rows[0]["iso3"] in aligned)
-            refused_any += bool(refused)
+            unit_pop = populations.get(shape_id)
+            best, why = largest(rows, level == "ADM2" and rows[0]["iso3"] in aligned,
+                                seats, unit_pop)
             if not best:
+                why_not[why.split(" ")[0] if why.startswith("no ") else
+                        ("unsized seat" if "no population in GeoNames" in why else "spans")] += 1
                 continue
             found += 1
-            out[shape_id] = {
+            entry = {
                 "name": best["name"],
-                "population": best["population"],
                 "coordinates": [round(best["lon"], 5), round(best["lat"], 5)],
                 "feature_code": best["code"],
                 "geonameid": best["geonameid"],
                 "source": SOURCE,
             }
-        log(f"{level}: {found} shapes with a settlement; {refused_any} passed over a larger "
-            f"place filed elsewhere; admin2 codes line up in {len(aligned)} countries")
+            # GeoNames' figure is often an older census than the unit's own;
+            # a town larger than the unit it is in reads as an error, so the
+            # name stands without it.
+            if not unit_pop or best["population"] <= unit_pop:
+                entry["population"] = best["population"]
+            out[shape_id] = entry
+        log(f"{level}: {found} shapes with a settlement; none named for {dict(why_not)}; "
+            f"admin2 codes line up in {len(aligned)} countries")
     write_json(OUT, out, compact=True)
     log(f"-> {OUT}")
 
