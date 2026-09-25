@@ -3623,6 +3623,38 @@ SETTLEMENT_IS_THE_UNIT = frozenset({"Q883"})
 CITY_SHAPE = re.compile(r"\b(city|kota|ciudad|ville|shahar)\b", re.I)
 
 
+GEONAMES_SETTLEMENTS = PROCESSED / "geonames_settlements.json"
+GEONAMES_SOURCE = {"field": "largest settlement", "name": "GeoNames",
+                   "url": "https://www.geonames.org/", "license": "CC BY 4.0"}
+
+
+def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
+                                   admin2: dict[str, list[dict[str, Any]]]) -> int:
+    """The largest GeoNames place inside each unit, where no source named one.
+
+    scripts/fetch_geonames.py places GeoNames' populated places in the map's
+    own polygons and keeps the most populous that belongs; this only reads
+    the result. It never replaces a settlement a national source or Natural
+    Earth named, and a town GeoNames counts larger than the unit it is in
+    carries its name without that figure.
+    """
+    towns = read_json(GEONAMES_SETTLEMENTS, {}) or {}
+    filled = 0
+    for table in (admin1, admin2):
+        for rows in table.values():
+            for entity in rows:
+                town = towns.get(entity["id"])
+                if not town or not is_gap(entity.get("largest_settlement")):
+                    continue
+                entity["largest_settlement"] = town["name"]
+                if town.get("population"):
+                    entity["largest_settlement_population"] = measure(
+                        town["population"], source="GeoNames (CC BY 4.0)")
+                entity.setdefault("sources", []).append(dict(GEONAMES_SOURCE))
+                filled += 1
+    return filled
+
+
 def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
                               admin2: dict[str, list[dict[str, Any]]],
                               classes: dict[str, list[list[str]]]) -> int:
@@ -5293,6 +5325,9 @@ def main() -> int:
     if towns:
         log(f"  {towns} Wikidata district figures left out as a town's, not "
             f"the district's")
+    placed_towns = fill_settlements_from_geonames(admin1_by_country, admin2_by_country)
+    if placed_towns:
+        log(f"  {placed_towns} largest settlements placed from GeoNames")
     fell_back = 0
     for table in (admin1_by_country, admin2_by_country):
         for rows in table.values():
