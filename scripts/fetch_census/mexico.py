@@ -66,6 +66,8 @@ NATIONAL = {
     "POBTOT": 126_014_024,
     "P3YM_HLI": 7_364_645,
     "POB_AFRO": 2_576_213,
+    "POBMAS": 61_473_390,
+    "POBFEM": 64_540_634,
 }
 TOLERANCE = 0.0001
 
@@ -334,6 +336,7 @@ def build(levels: set[str]) -> dict[str, list[dict[str, Any]]]:
         code = f'{(row.get("ENTIDAD") or "").strip()}{(row.get("MUN") or "").strip()}'
         total = number(row.get("POBTOT"))
         fields = compose(row, religion)
+        men, women = number(row.get("POBMAS")), number(row.get("POBFEM"))
 
         out[kind].append(record(
             f"MEX-{code}",
@@ -349,7 +352,10 @@ def build(levels: set[str]) -> dict[str, list[dict[str, Any]]]:
             codes={"inegi": code},
             population=(measure(int(total), year=YEAR, source=SOURCE)
                         if total else gap(NOT_AVAILABLE)),
-            sources=[{"field": "religion/language/ethnicity", "name": SOURCE,
+            sex_ratio=(measure(round(1000 * men / women), unit="males_per_1000_females",
+                               year=YEAR, source=SOURCE)
+                       if men and women else gap(NOT_AVAILABLE)),
+            sources=[{"field": "population/sex ratio/religion/language/ethnicity", "name": SOURCE,
                       "url": URL, "license": LICENSE}],
             **fields,
         ))
