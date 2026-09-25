@@ -71,7 +71,17 @@ PLACES = ("https://data.humdata.org/dataset/93170987-276d-4526-9e3d-c982759d8eba
           "iraq-populated-places-2021-p-coded.xlsx")
 PLACE_COLUMNS = ("PLACE_EN", "PLACE_AR", "PLACE_ALT", "ADM1_EN", "ADM2_EN", "ADM3_EN",
                  "WORLD_POP_")
+# An independent check, never a figure: Kontur's population on 400 m H3
+# hexagons (CC BY, November 2023), summed inside each of OCHA's districts
+# (COD-AB, the map's). A district whose census figure sits far from its
+# modelled share of the country has been put on the wrong ground.
+KONTUR = ("https://geodata-eu-central-1-kontur-public.s3.amazonaws.com/"
+          "kontur_datasets/kontur_population_IQ_20231101.gpkg.gz")
+BOUNDS = ("https://data.humdata.org/dataset/488bb3cd-3ce9-49d3-862a-3ce7975c63e1/"
+          "resource/a9ed4d00-1182-4fdc-a0e4-82bbd20786db/download/"
+          "irq_admin_boundaries.geojson.zip")
 ROOT = Path(__file__).resolve().parent.parent.parent
+GRID_DUMP = ROOT / "data" / "raw" / "iraq" / "kontur_adm2.txt"
 DUMP = ROOT / "data" / "raw" / "iraq" / "aas2024_table11.txt"
 GAZ_DUMP = ROOT / "data" / "raw" / "iraq" / "ocha_admin3.txt"
 PLACES_DUMP = ROOT / "data" / "raw" / "iraq" / "ocha_places.txt"
@@ -93,6 +103,10 @@ GOVERNORATE = {
 # below SHORT letters they must be the same: "Suran" and "Shwan" are 0.89 alike.
 ALIKE = 0.85
 SHORT = 6
+# OCHA's places carry WorldPop's density at the point; a district's centre is
+# placed by a town only at one of the densest few percent (Al-Hur 34, Soran
+# 21, Al-Mishkhab 15; the village called Haji Awa 3).
+BUILT_UP = 10
 # Sub-districts the census and OCHA spell differently, beyond what the keys
 # fold: the Kurdish and the Arabic name of one place. (map governorate, the
 # census's name's key) -> OCHA's sub-district.
@@ -361,25 +375,38 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
 
     # OCHA's populated places, by the keys of each of their names.
     towns: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
+    built: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
     for row in places or []:
         gov, district = row.get("ADM1_EN", ""), row.get("ADM2_EN", "")
         if gov not in by_gov or district not in by_gov[gov]:
             continue
+        try:
+            dense = float(row.get("WORLD_POP_") or 0) >= BUILT_UP
+        except ValueError:
+            dense = False
+        keys = set()
         for name in (row.get("PLACE_EN"), row.get("PLACE_ALT")):
             for v in variants(name or ""):
                 if re.search(r"[A-Za-z]", v) and len(en_key(v)) >= 3:
-                    towns[gov]["en:" + en_key(v)].add(district)
+                    keys.add("en:" + en_key(v))
         for name in (row.get("PLACE_AR"), row.get("PLACE_ALT")):
             for v in variants(name or ""):
                 if len(ar_key(v)) >= 3:
-                    towns[gov]["ar:" + ar_key(v)].add(district)
+                    keys.add("ar:" + ar_key(v))
+        for k in keys:
+            towns[gov][k].add(district)
+            if dense:
+                built[gov][k].add(district)
 
-    def town_named(en: str, ar: str, govs: list[str]) -> set[tuple[str, str]]:
-        """The districts OCHA's places of this name lie in, exactly spelt."""
+    def town_named(en: str, ar: str, govs: list[str],
+                   dense: bool = False) -> set[tuple[str, str]]:
+        """The districts OCHA's places of this name lie in, exactly spelt;
+        with ``dense``, only places in built-up ground."""
         keys = {"en:" + en_key(v) for v in variants(en) if len(en_key(v)) >= 3}
         keys |= {"ar:" + ar_key(v) for v in variants(ar) if len(ar_key(v)) >= 3}
+        index = built if dense else towns
         for gov in govs:
-            hit = {(gov, d) for k in keys for d in towns[gov].get(k, ())}
+            hit = {(gov, d) for k in keys for d in index[gov].get(k, ())}
             if hit:
                 return hit
         return set()
@@ -445,8 +472,12 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
             union = set().union(*across) if across else set()
             if len(across) >= 2 and len(union) == 1:
                 return union
-        # Or where the town it is named for lies, among OCHA's places.
-        return set().union(*(town_named(n, ar_names.get(code, ""), home) for n in variants))
+        # Or where the town it is named for lies, among OCHA's places -- a
+        # place in built-up ground, for a village of the same name is
+        # common: OCHA's only Haji Awa is a village by Sulaymaniyah, not the
+        # town of Hajiawa that the census's district is named for.
+        return set().union(*(town_named(n, ar_names.get(code, ""), home, dense=True)
+                             for n in variants))
 
     seat = {code: seat_of(code) for code in districts}
     place: dict[str, tuple[str, str]] = {}
@@ -702,6 +733,74 @@ def read_places(text: str) -> list[dict[str, str]]:
     return [dict(zip(header, line.split("\t"))) for line in lines[1:]]
 
 
+def grid_totals() -> list[list[str]]:
+    """Kontur's population inside each of OCHA's districts."""
+    import gzip
+    import io
+    import json
+    import math
+    import tempfile
+    import zipfile
+
+    import fiona
+    from shapely.geometry import Point, shape
+    from shapely.strtree import STRtree
+
+    book = zipfile.ZipFile(io.BytesIO(fetch_blob(BOUNDS)))
+    name = next(n for n in book.namelist()
+                if re.search(r"adm(in)?2", n, re.I) and n.lower().endswith("json"))
+    features = json.loads(book.read(name))["features"]
+    polygons = [shape(f["geometry"]) for f in features]
+    tree = STRtree(polygons)
+    totals = [0.0] * len(polygons)
+    outside = 0.0
+    with tempfile.NamedTemporaryFile(suffix=".gpkg") as tmp:
+        tmp.write(gzip.decompress(fetch_blob(KONTUR)))
+        tmp.flush()
+        with fiona.open(tmp.name) as src:
+            mercator = "3857" in str(src.crs)
+            for feature in src:
+                c = shape(feature["geometry"]).centroid
+                x, y = c.x, c.y
+                if mercator:
+                    x = math.degrees(x / 6378137.0)
+                    y = math.degrees(2 * math.atan(math.exp(y / 6378137.0)) - math.pi / 2)
+                people = float(feature["properties"].get("population") or 0)
+                hits = tree.query(Point(x, y), predicate="intersects")
+                if len(hits):
+                    totals[int(hits[0])] += people
+                else:
+                    outside += people
+    log(f"  Kontur: {sum(totals):,.0f} people in {len(polygons)} districts, "
+        f"{outside:,.0f} outside them")
+    rows = [["adm1_name", "adm2_name", "population"]]
+    for feature, total in zip(features, totals):
+        props = feature["properties"]
+        rows.append([props.get("adm1_name", ""), props.get("adm2_name", ""), f"{total:.0f}"])
+    return rows
+
+
+def read_grid(text: str) -> dict[tuple[str, str], float]:
+    lines = [line.split("\t") for line in (text or "").split("\n") if line]
+    return {(a, b): float(v) for a, b, v in lines[1:]} if lines else {}
+
+
+def grid_check(result: dict[str, Any], grid: dict[tuple[str, str], float]) -> list[str]:
+    """The written districts whose share of the country is far from the grid's."""
+    if not grid:
+        return []
+    written = {(e["governorate"], e["district"]): e["value"]
+               for e in result["districts"].values() if e["value"] is not None}
+    national = sum(e["value"] for e in result["governorates"].values() if e["value"])
+    scale = national / sum(grid.values())
+    lines = []
+    for key, value in sorted(written.items()):
+        modelled = grid.get(key, 0) * scale
+        ratio = value / modelled if modelled else float("inf")
+        lines.append(f"{ratio:5.2f}  {key[0]}/{key[1]}: census {value:,}, grid {modelled:,.0f}")
+    return lines
+
+
 def table_pages(text: str) -> list[str]:
     """The pages of Table 11/2: those whose header names a nahiya."""
     return [page for page in text.split(PAGE_BREAK) if "Nahiya" in page]
@@ -766,7 +865,15 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--dump", action="store_true", help="save the table and gazetteer")
     ap.add_argument("--offline", action="store_true", help="read the saved copies")
+    ap.add_argument("--grid", action="store_true",
+                    help="save Kontur's population inside each of OCHA's districts")
     args = ap.parse_args()
+    if args.grid:
+        GRID_DUMP.parent.mkdir(parents=True, exist_ok=True)
+        GRID_DUMP.write_text("\n".join("\t".join(r) for r in grid_totals()) + "\n",
+                             encoding="utf-8")
+        log(f"  wrote {GRID_DUMP.relative_to(ROOT)}")
+        return 0
     if args.offline:
         text = DUMP.read_text(encoding="utf-8")
         gazetteer = GAZ_DUMP.read_text(encoding="utf-8")
