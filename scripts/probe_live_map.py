@@ -30,12 +30,19 @@ SITE = "https://advaitsridhar.github.io/DemographicMap/"
 PROBE = r"""
 const pw = require(process.env.PW_MODULE);
 (async () => {
-  const [engine, site, iso3, lon, lat] = process.argv.slice(2);
-  const browser = await pw[engine].launch();
+  const [engine, site, iso3, lon, lat, headed] = process.argv.slice(2);
+  // Headless Firefox on a runner has no GL driver it will use; software
+  // WebGL is forced on, and a headed run under xvfb is the fallback.
+  const launch = { headless: headed !== "headed" };
+  if (engine === "firefox") launch.firefoxUserPrefs = {
+    "webgl.force-enabled": true, "webgl.disabled": false, "webgl.enable-webgl2": true,
+    "webgl.out-of-process": false, "gfx.webrender.software": true,
+  };
+  const browser = await pw[engine].launch(launch);
   const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
   const log = [];
   page.on("pageerror", (e) => log.push("pageerror: " + e.message));
-  page.on("console", (m) => { if (["error", "warning"].includes(m.type())) log.push(m.type() + ": " + m.text().slice(0, 300)); });
+  page.on("console", (m) => { if (["error", "warning"].includes(m.type()) && !/GPU stall|GL Driver/.test(m.text())) log.push(m.type() + ": " + m.text().slice(0, 400)); });
   page.on("requestfailed", (r) => log.push("failed: " + r.url() + " " + ((r.failure() || {}).errorText || "")));
   page.on("response", (r) => { if (r.status() >= 400) log.push("http " + r.status() + ": " + r.url()); });
   const out = { engine };
@@ -60,6 +67,17 @@ const pw = require(process.env.PW_MODULE);
         }
         const summary = {};
         for (const [k, v] of Object.entries(byLayer)) summary[k] = { shapes: v.shapes.size, coloured: v.coloured.size };
+        // Every country in view, to tell one country's failure from all.
+        const all = {};
+        for (const x of m.queryRenderedFeatures({ layers })) {
+          const g = x.properties.shapeGroup;
+          all[g] = all[g] || [new Set(), new Set()];
+          all[g][0].add(x.properties.shapeID);
+          if (x.state && x.state.color) all[g][1].add(x.properties.shapeID);
+        }
+        summary.inView = Object.fromEntries(Object.entries(all).map(([g, [a, b]]) => [g, `${b.size}/${a.size}`]));
+        summary.loadedLine = [...document.querySelectorAll("*")].map((e) => e.childElementCount ? "" : (e.textContent || "").trim())
+          .find((t) => /divisions loaded/.test(t)) || null;
         const status = [...document.querySelectorAll("#sidebar *")].map((e) => e.childElementCount ? "" : e.textContent.trim())
           .filter((t) => /divisions loaded|loading|Loading/.test(t)).slice(0, 3);
         return { zoom: m.getZoom(), drawn: summary, status };
@@ -89,6 +107,8 @@ def main() -> int:
     ap.add_argument("--center", default="-90.3,15.2", help="lon,lat")
     ap.add_argument("--site", default=SITE)
     ap.add_argument("--engines", default="chromium,firefox,webkit")
+    ap.add_argument("--headed", action="store_true",
+                    help="run the browsers headed under xvfb, for real GL")
     args = ap.parse_args()
     lon, lat = args.center.split(",")
     work = Path(tempfile.mkdtemp(prefix="livemap-"))
@@ -103,8 +123,11 @@ def main() -> int:
     env = {**os.environ, "PW_MODULE": str(work / "node_modules" / "playwright")}
     for engine in engines:
         print(f"=== {engine} ===", flush=True)
-        result = subprocess.run(["node", "probe.js", engine, args.site, args.iso3, lon, lat],
-                                cwd=work, env=env, capture_output=True, text=True, timeout=600)
+        cmd = ["node", "probe.js", engine, args.site, args.iso3, lon, lat,
+               "headed" if args.headed else "headless"]
+        if args.headed:
+            cmd = ["xvfb-run", "-a", "-s", "-screen 0 1400x900x24"] + cmd
+        result = subprocess.run(cmd, cwd=work, env=env, capture_output=True, text=True, timeout=600)
         print(result.stdout.strip() or "(no output)")
         if result.returncode:
             print(result.stderr.strip()[-2000:])
