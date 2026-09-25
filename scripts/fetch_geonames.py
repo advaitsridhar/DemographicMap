@@ -54,6 +54,7 @@ COUNTRY_INFO = "https://download.geonames.org/export/dump/countryInfo.txt"
 DEST = RAW / "geonames"
 PLACES = DEST / "places.tsv.gz"
 OUT = PROCESSED / "geonames_settlements.json"
+SEATS_OUT = PROCESSED / "geonames_seats.json"
 BOUNDARIES = RAW / "boundaries"
 SOURCE = "GeoNames (CC BY 4.0)"
 
@@ -265,19 +266,154 @@ def unit_populations() -> dict[str, int]:
     return out
 
 
+# Each level's own seats, and where GeoNames' units are taken to be the map's:
+# most polygons hold exactly one, next to none hold two, and where the map
+# already names capitals the seats agree with them.
+OWN_SEAT = {"ADM1": {"PPLA"}, "ADM2": {"PPLA2"}}
+ONE_SEAT, TWO_SEATS, AGREES, COMPARED = 0.6, 0.05, 0.85, 10
+# Brazil's municipalities take their seat's name by law -- "A sede do
+# municipio tem a categoria de cidade e lhe da o nome" (Decreto-Lei 311 de
+# 1938, art. 3) -- and GeoNames does not flag the seats; so there the place
+# of the municipality's own name, inside it, is its seat.
+NAMESAKE_SEAT = {"BRA"}
+
+
+def site_units(level: str) -> tuple[dict[str, dict], dict[str, int]]:
+    """shapeID -> the unit as built; and units per country, at one level."""
+    import glob
+    import json
+    site = PROCESSED.parent.parent / "site" / "data" / level
+    units, count = {}, Counter()
+    for path in glob.glob(str(site / "*.json")):
+        for rec in json.load(open(path, encoding="utf-8")):
+            if rec.get("level") == level:
+                units[rec["id"]] = rec
+                count[rec["country"]] += 1
+    return units, count
+
+
+def alike(a: str, b: str) -> bool:
+    from difflib import SequenceMatcher
+    a, b = folded(a), folded(b)
+    return bool(a and b) and (a == b or a in b or b in a
+                              or SequenceMatcher(None, a, b).ratio() >= 0.8)
+
+
+def seat_of(level: str, iso3: str, unit_name: str, rows: list[dict]) -> dict | None:
+    own = [r for r in rows if r["code"] in OWN_SEAT[level]]
+    if len(own) == 1:
+        return own[0]
+    if own:
+        return None
+    if iso3 in NAMESAKE_SEAT:
+        same = [r for r in rows if folded(r["name"]) == folded(unit_name)]
+        return same[0] if len(same) == 1 else None
+    # A unit holding its country's or province's seat and no seat of its own
+    # level: that town is its seat too, if the unit bears its name (Sacramento
+    # County, not the Ibadan North East that holds Ibadan).
+    upper = [r for r in rows if r["code"] in ({"PPLC"} if level == "ADM1" else {"PPLA", "PPLC"})]
+    if len(upper) == 1 and alike(upper[0]["name"], unit_name):
+        return upper[0]
+    return None
+
+
+# Capitals the test flags that were each looked at and kept: Republika
+# Srpska's de jure capital is Sarajevo; Lao Cai merged with Yen Bai in 2025 and
+# is governed from there, which GeoNames predates; Villa Santa Rosa is Santa
+# Rosa de Rio Primero; Chum Saeng is the tambon Wang Chan district is seated in;
+# and which of several Guerreros GeoNames holds is not certain.
+KEPT_CAPITALS = {("BIH", "Sarajevo"), ("VNM", "Yên Bái"), ("ARG", "Villa Santa Rosa"),
+                 ("THA", "Chum Saeng"), ("MEX", "Vicente Guerrero")}
+
+
+def refuted(level: str, inside: dict[str, list[dict]],
+            places: list[dict]) -> dict[str, dict]:
+    """shapeID -> a capital a source names that the unit's own seat contradicts.
+
+    Wikidata's capital statements include former capitals at normal rank,
+    and a unit with two took whichever row came first: Central Kalimantan
+    was given Banjarmasin, South Kalimantan's, and North Sulawesi Gorontalo,
+    a province of its own since 2000. A capital outside its unit is not
+    wrong by itself -- Kyiv governs Kyiv Oblast from outside it, Chandigarh
+    two states -- and a capital spelt another way (Oryol, Orel) is not a
+    different place. So a capital is refuted only where the unit holds
+    exactly one seat of its own level, under another name; nothing of the
+    capital's name stands inside the unit; and a place of that name does
+    stand elsewhere in the country -- a real town, somewhere else. The seat
+    is what replaces it.
+    """
+    import re
+    units, _ = site_units("admin1" if level == "ADM1" else "admin2")
+    named: dict[str, set[str]] = defaultdict(set)
+    for place in places:
+        named[place["iso3"]].add(folded(place["name"]))
+    out = {}
+    for shape_id, rows in inside.items():
+        unit = units.get(shape_id)
+        held = unit.get("capital") if unit else None
+        if not isinstance(held, str) or re.fullmatch(r"Q\d+", held):
+            continue
+        if any(alike(held, r["name"]) for r in rows):
+            continue
+        if folded(held) not in named[unit["country"]] or (unit["country"], held) in KEPT_CAPITALS:
+            continue
+        own = [r for r in rows if r["code"] in OWN_SEAT[level]]
+        if len(own) == 1 and not alike(own[0]["name"], held):
+            out[shape_id] = {"refutes": held, "seat": own[0]["name"]}
+    return out
+
+
+def seats(level: str, inside: dict[str, list[dict]]) -> dict[str, dict]:
+    """shapeID -> its seat, for the countries whose seats pass the tests."""
+    import re
+    units, count = site_units("admin1" if level == "ADM1" else "admin2")
+    one, two, agree, compared = Counter(), Counter(), Counter(), Counter()
+    found: dict[str, tuple[str, dict]] = {}
+    for shape_id, rows in inside.items():
+        unit = units.get(shape_id)
+        if not unit:
+            continue
+        iso3 = unit["country"]
+        own = [r for r in rows if r["code"] in OWN_SEAT[level]]
+        one[iso3] += len(own) == 1
+        two[iso3] += len(own) >= 2
+        seat = seat_of(level, iso3, unit["name"], rows)
+        if not seat:
+            continue
+        held = unit.get("capital")
+        if isinstance(held, str) and not re.fullmatch(r"Q\d+", held):
+            compared[iso3] += 1
+            agree[iso3] += alike(held, seat["name"])
+        found[shape_id] = (iso3, seat)
+    eligible = set()
+    for iso3 in count:
+        n = count[iso3]
+        if iso3 in NAMESAKE_SEAT or (one[iso3] / n >= ONE_SEAT and two[iso3] / n <= TWO_SEATS):
+            if compared[iso3] < COMPARED or agree[iso3] / compared[iso3] >= AGREES:
+                eligible.add(iso3)
+    refused = sorted(i for i in count if i not in eligible and (one[i] or two[i]))
+    log(f"  {level} seats: {len(eligible)} countries pass; refused {len(refused)}: "
+        + ", ".join(f"{i} ({one[i]}/{count[i]} one, {two[i]} two, "
+                    f"{agree[i]}/{compared[i]} agree)" for i in refused[:25]))
+    return {sid: {"name": seat["name"], "coordinates": [round(seat["lon"], 5), round(seat["lat"], 5)],
+                  "feature_code": seat["code"], "geonameid": seat["geonameid"], "source": SOURCE}
+            for sid, (iso3, seat) in found.items() if iso3 in eligible}
+
+
 def assign() -> None:
     places = read_places()
     log(f"{len(places)} places")
     populations = unit_populations()
     out: dict[str, dict] = {}
-    for level, seats in (("ADM1", {"PPLC", "PPLA"}), ("ADM2", SEATS)):
+    seat_out: dict[str, dict] = {}
+    for level, seat_codes in (("ADM1", {"PPLC", "PPLA"}), ("ADM2", SEATS)):
         aligned = aligned_countries(contain(level, places)) if level == "ADM2" else set()
         inside = contain(level, places, aligned)
         found = 0
         why_not: Counter = Counter()
         for shape_id, rows in inside.items():
             unit_pop = populations.get(shape_id)
-            best, why = largest(rows, seats, unit_pop)
+            best, why = largest(rows, seat_codes, unit_pop)
             if not best:
                 why_not[why.split(" ")[0] if why.startswith("no ") else
                         ("unsized seat" if "no population in GeoNames" in why else "spans")] += 1
@@ -298,7 +434,15 @@ def assign() -> None:
             out[shape_id] = entry
         log(f"{level}: {found} shapes with a settlement; none named for {dict(why_not)}; "
             f"admin2 codes line up in {len(aligned)} countries")
+        placed = seats(level, inside)
+        seat_out.update(placed)
+        wrong = refuted(level, inside, places)
+        for shape_id, verdict in wrong.items():
+            seat_out.setdefault(shape_id, {}).update(verdict)
+        log(f"{level}: {len(placed)} seats; {len(wrong)} capitals named that the unit's "
+            f"own seat contradicts")
     write_json(OUT, out, compact=True)
+    write_json(SEATS_OUT, seat_out, compact=True)
     log(f"-> {OUT}")
 
 

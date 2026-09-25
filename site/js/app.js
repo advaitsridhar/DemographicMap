@@ -1327,7 +1327,7 @@
       ["Natural Earth", "https://www.naturalearthdata.com/",
        "Public domain (CC0) - code concordance and largest-settlement points."],
       ["GeoNames", "https://www.geonames.org/",
-       "CC BY 4.0 - the largest settlement in units no national source or Natural Earth names, placed in the map's own outlines."],
+       "CC BY 4.0 - the largest settlement, and the seat where no other source names a capital, placed in the map's own outlines."],
       ["Wikidata", "https://www.wikidata.org/",
        "CC0 - subnational population, capital and coordinates wherever that adapter has been run."],
       ["National statistical offices", "https://github.com/advaitsridhar/DemographicMap#data-sources",
