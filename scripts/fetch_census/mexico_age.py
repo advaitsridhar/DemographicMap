@@ -41,20 +41,20 @@ SOURCE = ("INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionari
 SHEET = "04"
 
 # INEGI's file abbreviation for each state, by its two-digit code. Its
-# naming is not one scheme -- "ags", "bc" and "cdmx" answer, "camp" does not
-# -- so a state lists the spellings INEGI uses in its other files, tried in
-# turn; a wrong one answers with an HTML page, and the right one must still
+# naming is not one scheme -- "cam", "coa", "chs" and "cdmx" answer, "camp"
+# and "chis" do not -- so a state lists the spellings INEGI uses in its other
+# files, tried in turn; a wrong one answers with an HTML page, and the right one must still
 # be that state's workbook, row by row.
 STATES = {
-    "01": ("ags",), "02": ("bc",), "03": ("bcs",), "04": ("cam", "camp"),
-    "05": ("coa", "coah"), "06": ("col",), "07": ("chis", "chs"), "08": ("chih", "chi"),
+    "01": ("ags",), "02": ("bc",), "03": ("bcs",), "04": ("cam",),
+    "05": ("coa",), "06": ("col",), "07": ("chs",), "08": ("chh", "chih", "chi"),
     "09": ("cdmx",), "10": ("dgo", "dur"), "11": ("gto", "gua"), "12": ("gro", "gue"),
-    "13": ("hgo", "hid"), "14": ("jal",), "15": ("mex", "em", "edomex"),
+    "13": ("hgo", "hid"), "14": ("jal",), "15": ("mex", "em", "edomex", "emex"),
     "16": ("mich", "mic"), "17": ("mor",), "18": ("nay",), "19": ("nl", "nle"),
-    "20": ("oax",), "21": ("pue",), "22": ("qro", "que"), "23": ("qroo", "q_roo"),
+    "20": ("oax",), "21": ("pue",), "22": ("qro", "que", "qto"), "23": ("qroo",),
     "24": ("slp",), "25": ("sin",), "26": ("son",), "27": ("tab",),
-    "28": ("tamps", "tam"), "29": ("tlax", "tla"), "30": ("ver",), "31": ("yuc",),
-    "32": ("zac",),
+    "28": ("tamps", "tam", "tams"), "29": ("tlax", "tla"), "30": ("ver", "vz"),
+    "31": ("yuc",), "32": ("zac",),
 }
 CODED = re.compile(r"^(\d{2,3})\s+(.+)$")
 
