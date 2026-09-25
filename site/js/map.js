@@ -20,6 +20,41 @@ window.WorldMap = (function () {
     { id: "admin2", url: "tiles/admin2.pmtiles", minzoom: 2, maxzoom: 9, showFrom: 6.6, showTo: 22 },
   ];
 
+  // GitHub Pages stamps every file's ETag with its deploy time -- the admin0
+  // archive, unchanged since 10 September, answered on 25 September with
+  // etag "6ab63abc-1e2d41": 09:11:24 that morning in hex, then its size. The
+  // pmtiles reader takes a new ETag for a changed archive, re-reads the
+  // header, and after one retry that still disagrees gives up on the tile;
+  // for the ten minutes after each deploy the CDN hands out old and new
+  // stamps side by side, and Guatemala's municipios, like any others, stayed
+  // blank until a reload. The archive is the same file whatever the hour it
+  // was copied, so the reader is shown only the size part of the stamp: a
+  // redeploy changes nothing it can see, and a rebuilt archive -- which is
+  // never the same size -- still reads as changed.
+  function stableTag(etag) {
+    const match = /^"?[0-9a-f]+-([0-9a-f]+)"?$/i.exec(etag || "");
+    return match ? `size-${match[1]}` : etag;
+  }
+
+  function stableSource(url) {
+    const pm = window.pmtiles;
+    const inner = new pm.FetchSource(url);
+    return {
+      getKey: () => inner.getKey(),
+      async getBytes(offset, length, signal, etag) {
+        const got = await inner.getBytes(offset, length, signal);
+        const tag = stableTag(got.etag);
+        if (etag && tag && tag !== etag) {
+          // As the reader's own source does: ask past the browser's cache
+          // from here on, and let the reader re-read the header.
+          inner.mustReload = true;
+          throw new pm.EtagMismatch(`${url} changed: ${etag} -> ${tag}`);
+        }
+        return { ...got, etag: tag };
+      },
+    };
+  }
+
   let map = null;
   let popup = null;
   let selectedId = null;
@@ -380,6 +415,11 @@ window.WorldMap = (function () {
   function init(options) {
     handlers = options || {};
     const protocol = new window.pmtiles.Protocol();
+    if (window.pmtiles.PMTiles && window.pmtiles.FetchSource) {
+      for (const level of LEVELS) {
+        protocol.add(new window.pmtiles.PMTiles(stableSource(level.url)));
+      }
+    }
     window.maplibregl.addProtocol("pmtiles", protocol.tile);
 
     map = new window.maplibregl.Map({
@@ -506,5 +546,5 @@ window.WorldMap = (function () {
 
   return { init, applyColors, repaintAll, select, fitBBox, visibleCountries, inView,
            getMap, getLevel, levelId, restyle, setPinnedLevel, getPinnedLevel,
-           setPartialLevels, LEVELS };
+           setPartialLevels, stableSource, LEVELS };
 })();

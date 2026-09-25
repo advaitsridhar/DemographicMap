@@ -36,6 +36,10 @@ window.DataStore = (function () {
   const loaded = { admin0: false, admin1: new Set(), admin2: new Set() };
   const inflight = new Map();
   const levelInflight = new Map();
+  // When a country's shard last failed, so that a map move does not ask for
+  // it again on every frame while the host is still answering badly.
+  const failedAt = new Map();
+  const RETRY_PAUSE = 3000;
   const listeners = new Set();
   let coverage = null;
   let groups = null;
@@ -114,6 +118,7 @@ window.DataStore = (function () {
     if (loaded[key].has(iso3)) return childrenOfCountry(iso3, level);
     const loadKey = `${key}/${iso3}`;
     if (levelInflight.has(loadKey)) return levelInflight.get(loadKey);
+    if (Date.now() - (failedAt.get(loadKey) || -Infinity) < RETRY_PAUSE) return [];
     const task = (async () => {
       try {
       const records = await getJSON(`${key}/${iso3}.json`);
@@ -122,14 +127,15 @@ window.DataStore = (function () {
       emit({ type: key, country: iso3, count: records.length });
       return records;
     } catch (err) {
-      // A 404 here means the country genuinely has no units at that level in
-      // geoBoundaries -- remember it so we do not retry on every map move.
-      // Nothing else is remembered. A dropped connection or a timeout used to
-      // be recorded the same way, and then every click in that country said
-      // "No data record for that unit" until the page was reloaded: one
-      // failed request for Guatemala's municipios left all 342 unreachable.
-      // Left unrecorded, the next click or map move asks again.
-      if (/HTTP 404\b/.test(String(err))) loaded[key].add(iso3);
+      // Nothing is remembered as "no units". A dropped connection or a
+      // timeout used to be, and then every click in that country said "No
+      // data record for that unit" until the page was reloaded: one failed
+      // request for Guatemala's municipios left all 342 unreachable. A 404
+      // was still remembered, as a country with nothing at that level --
+      // but the build writes both files for every one of its 218 countries,
+      // so a 404 is only ever a request that met a deploy half-way. The
+      // next click or map move asks again, once a short pause has passed.
+      failedAt.set(loadKey, Date.now());
       emit({ type: key, country: iso3, count: 0, error: String(err) });
       return [];
       } finally {
