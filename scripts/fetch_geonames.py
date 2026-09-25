@@ -69,11 +69,11 @@ ALIGNED = 0.8
 
 def fetch() -> None:
     iso = {}
-    for line in http_get(COUNTRY_INFO).decode("utf-8").splitlines():
+    for line in http_get(COUNTRY_INFO).splitlines():
         if line and not line.startswith("#"):
             parts = line.split("\t")
             iso[parts[0]] = parts[1]
-    raw = http_get(URL, cache=False, timeout=600)
+    raw = http_get(URL, cache=False, timeout=600, binary=True)
     with zipfile.ZipFile(io.BytesIO(raw)) as zf:
         text = zf.read("cities500.txt").decode("utf-8")
     DEST.mkdir(parents=True, exist_ok=True)
