@@ -133,6 +133,11 @@ data/raw/*
 # 5 MB, re-derivable with scripts/fetch_geonames.py --fetch.
 !data/raw/geonames/
 !data/raw/geonames/*.tsv.gz
+# GISCO's NUTS-2 and NUTS-3 outlines (EuroGeographics, attribution), from
+# which scripts/nuts_crosswalk.py places Eurostat's regions on the map by
+# ground rather than by name. The GISCO host refuses this sandbox.
+!data/raw/eurostat/
+!data/raw/eurostat/*.geojson
 data/processed/http_cache/
 
 # Intermediate tiling artefacts

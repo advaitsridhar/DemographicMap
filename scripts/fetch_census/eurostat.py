@@ -71,7 +71,53 @@ COLLECTION_POLICY: dict[str, dict[str, str]] = {
     "AT": {"ethnicity": "Austria records citizenship and country of birth, not ethnicity."},
     "PL": {"religion": "Poland's 2021 census asked religion on a voluntary basis; sub-national release is limited."},
 }
+# Eurostat's own region boundaries (GISCO), which place a region on the map by
+# its outline where its name and the map's differ -- "Bratislavsky kraj" and
+# "Region of Bratislava" -- see scripts/nuts_crosswalk.py.
+GISCO = ("https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/"
+         "NUTS_RG_10M_2024_4326_LEVL_{level}.geojson")
+GEOMETRY = RAW / "eurostat"
+CROSSWALK = PROCESSED / "nuts_crosswalk.json"
+
 COLLECTS_BOTH = {"RO", "BG", "SK", "IE", "HU", "HR", "SI", "LT", "LV", "EE", "CZ", "MK", "RS", "ME", "AL"}
+
+
+def fetch_geometry() -> None:
+    """GISCO's NUTS-2 and NUTS-3 outlines, into data/raw/eurostat (runner)."""
+    from ._shared import http_get
+    GEOMETRY.mkdir(parents=True, exist_ok=True)
+    for level in (2, 3):
+        url = GISCO.format(level=level)
+        text = http_get(url, cache=False, timeout=600)
+        dest = GEOMETRY / url.rsplit("/", 1)[1]
+        dest.write_text(text if isinstance(text, str) else text.decode("utf-8"), encoding="utf-8")
+        log(f"  {dest.name}: {dest.stat().st_size // 1024} kB")
+
+
+def bind_by_outline(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Split records into those the outline crosswalk places, and the rest.
+
+    A placed record is bound to its polygon by id, at the level the crosswalk
+    found it on; the build then gives it the polygon's own label. A region
+    whose polygon is already spoken for by a finer region of the same outline
+    (Istanbul is TR10 and TR100) is dropped rather than bound twice.
+    """
+    crosswalk = read_json(CROSSWALK, {}) or {}
+    placed, rest = [], []
+    for rec in records:
+        entry = crosswalk.get(rec["codes"]["nuts"])
+        if not entry:
+            rest.append(rec)
+        elif entry.get("superseded_by"):
+            continue
+        else:
+            rec["level"] = entry["level"]
+            rec["match_by"] = "shape_id"
+            rec["shape_id"] = entry["shape_id"]
+            placed.append(rec)
+    if crosswalk:
+        log(f"  {len(placed)} regions placed by outline; {len(rest)} left to their names")
+    return placed, rest
 
 
 def jsonstat(dataset: str, **filters: str) -> dict[str, Any]:
@@ -197,7 +243,12 @@ def main() -> int:
     ap.add_argument("--level", default="nuts2", choices=["nuts2", "nuts3"])
     ap.add_argument("--year", default=None, help="reference year; default is the latest available")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--fetch-geometry", action="store_true",
+                    help="download GISCO's NUTS outlines for scripts/nuts_crosswalk.py and stop")
     args = ap.parse_args()
+    if args.fetch_geometry:
+        fetch_geometry()
+        return 0
 
     log(f"eurostat: demo_r_pjangrp3 ({args.level})")
     pop_payload = jsonstat("demo_r_pjangrp3", sex="T", age="TOTAL", unit="NR")
@@ -293,9 +344,10 @@ def main() -> int:
                       "url": API.format(dataset="demo_r_pjangrp3"),
                       "license": "Eurostat re-use policy (attribution)"}],
         ))
+    placed, records = bind_by_outline(records)
     if args.level == "nuts3":
         records = by_level(records)
-    records = joined_units(records)
+    records = placed + joined_units(records)
     write_json(args.out or PROCESSED / f"eurostat_{args.level}.json", records)
     log(f"  {len(records)} {args.level} records")
     return 0
