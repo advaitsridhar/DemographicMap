@@ -103,7 +103,7 @@ def median_line(dataset: str) -> str:
     """P9's median for both sexes together, found by its label."""
     table = paths(dataset, "P9")
     both = [c for c, p in table.items() if len(p) == 2 and p[0].startswith("Median age")
-            and p[1] == "Total"]
+            and p[1] in ("Total", "Both sexes")]
     if len(both) != 1:
         raise SystemExit(f"us_island_areas: {dataset} P9 labels: {sorted(table.items())}")
     return both[0]

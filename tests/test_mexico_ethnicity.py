@@ -13,8 +13,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
 from scripts.fetch_census import mexico_ethnicity as m  # noqa: E402
 
-YES_IN_PART = (frozenset({"1", "2"}), frozenset({"9"}), False)
-YES_ONLY = (frozenset({"1"}), frozenset({"9"}), False)
+YES_IN_PART = (frozenset({"1", "2"}), frozenset({"1", "2"}), False)
+YES_ONLY = (frozenset({"1"}), frozenset({"1"}), False)
 
 # One municipio on the Costa Chica, weighted: (age band, indigenous, Afro).
 COAST = Counter({
@@ -22,7 +22,8 @@ COAST = Counter({
     ("3+", "2", "3"): 100,      # indigenous in part, not Afro
     ("3+", "3", "1"): 200,      # Afro-Mexican only
     ("3+", "3", "3"): 350,      # neither
-    ("3+", "9", "3"): 50,       # indigenous not stated
+    ("3+", "9", "3"): 30,       # indigenous not stated
+    ("3+", "3", "4"): 20,       # does not know whether Afro-Mexican
     ("0-2", "", "1"): 70,       # too young for the indigenous question
     ("unstated", "3", "3"): 5,
 })
@@ -40,12 +41,12 @@ def person_file(rows):
 class Reading(unittest.TestCase):
     def test_the_reading_that_reproduces_the_table_is_the_one_that_agrees(self):
         # 400 of 1,000 aged 3+ say yes or yes-in-part: 40%.
-        table = {"base": 1000, "yes": 40.0, "no": 55.0, "unstated": 5.0}
+        table = {"base": 1000, "yes": 40.0, "no": 57.0, "unstated": 3.0}
         self.assertTrue(m.agrees(COAST, table, YES_IN_PART))
         self.assertFalse(m.agrees(COAST, table, YES_ONLY))
 
     def test_a_base_off_by_the_unstated_ages_does_not_agree(self):
-        table = {"base": 1000, "yes": 40.0, "no": 55.0, "unstated": 5.0}
+        table = {"base": 1000, "yes": 40.0, "no": 57.0, "unstated": 3.0}
         with_unstated_age = (YES_IN_PART[0], YES_IN_PART[1], True)
         self.assertFalse(m.agrees(COAST, table, with_unstated_age))
 

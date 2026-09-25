@@ -24,13 +24,14 @@ Nothing is written unless every figure reproduces INEGI's own tables:
 * every municipio's and every state's population aged 3 or over, and its
   shares who do, do not and did not say they consider themselves indigenous,
   equal INEGI's published estimates (``cpv2020_a_<state>_05_etnicidad.xlsx``,
-  sheet 02) to within 0.01 of a point. Which answer codes INEGI counts as
-  "yes" and as "not stated", and whether people of unstated age are in the
-  base, is read off that match rather than assumed: exactly one reading must
-  reproduce all 32 states;
-* the same codes applied to the Afro-Mexican question, over all ages, give a
-  national estimate within 3% of the full count's 2,576,213 (ITER's POB_AFRO),
-  which the sample is an estimate of.
+  sheet 02) to within 0.01 of a point. "No" is code 3; which codes INEGI
+  counts as "yes", and whether people of unstated age are in the base, is read
+  off that match rather than assumed, and every reading that reproduces all 32
+  states must agree on the codes people actually gave. Whatever is neither yes
+  nor no is not stated;
+* the Afro-Mexican question's "yes", over all ages, gives a national estimate
+  within 3% of the full count's 2,576,213 (ITER's POB_AFRO), which the sample
+  is an estimate of; of the readings that do, the nearest is taken.
 
 Records carry the ids, names and parents of ``mexico.py``'s, so they join the
 same polygons.
@@ -69,12 +70,12 @@ AFRO_TOLERANCE = 0.03               # of the full count
 
 # The questionnaire's answers are yes, yes in part, no and does not know, and
 # the file adds a code for no answer at all. Which of them INEGI's published
-# "se considera indígena" and "no especificado" count is taken from the match
-# with its table, over these readings, not from a reading of the codebook.
+# "se considera indígena" counts is taken from the match with its table, over
+# these readings, not from a reading of the codebook. A reading is
+# (indigenous yes, Afro-Mexican yes, whether unstated ages are in the base).
+NO = "3"
 YES = (frozenset({"1"}), frozenset({"1", "2"}))
-UNSTATED = (frozenset({"9"}), frozenset({"4", "9"}), frozenset({"8", "9"}),
-            frozenset({"4", "8", "9"}))
-AGE_BASE = (False, True)            # whether people of unstated age are in the base
+AGE_BASE = (False, True)
 
 LABELS = {
     "indigenous": "Indigenous (self-identified)",
@@ -168,18 +169,18 @@ def published(code: str, url: str, blob: bytes) -> dict[str, dict[str, Any]]:
 
 def indigenous_shares(counts: Counter, reading: tuple) -> tuple[float, float, float, float]:
     """(base, % yes, % no, % not stated) of the indigenous question under a reading."""
-    yes, unstated, with_unstated_age = reading
+    yes, _, with_unstated_age = reading
     bands = {"3+", "unstated"} if with_unstated_age else {"3+"}
-    base = y = u = 0
+    base = y = n = 0
     for (band, indig, _), people in counts.items():
         if band not in bands:
             continue
         base += people
         y += people if indig in yes else 0
-        u += people if indig in unstated else 0
+        n += people if indig == NO else 0
     if not base:
         return 0, 0.0, 0.0, 0.0
-    return base, 100 * y / base, 100 * (base - y - u) / base, 100 * u / base
+    return base, 100 * y / base, 100 * n / base, 100 * (base - y - n) / base
 
 
 def agrees(counts: Counter, table: dict[str, Any], reading: tuple) -> bool:
@@ -192,22 +193,22 @@ def agrees(counts: Counter, table: dict[str, Any], reading: tuple) -> bool:
 
 def composition(counts: Counter, reading: tuple) -> tuple[float, dict[str, float]]:
     """The five-way split of everyone in the base."""
-    yes, unstated, with_unstated_age = reading
+    indig_yes, afro_yes, with_unstated_age = reading
     bands = {"3+", "unstated"} if with_unstated_age else {"3+"}
     split: Counter = Counter()
     for (band, indig, afro), people in counts.items():
         if band not in bands:
             continue
-        if indig in yes and afro in yes:
+        if indig in indig_yes and afro in afro_yes:
             split["both"] += people
-        elif indig in yes:
+        elif indig in indig_yes:
             split["indigenous"] += people
-        elif afro in yes:
+        elif afro in afro_yes:
             split["afro"] += people
-        elif indig in unstated or afro in unstated:
-            split["unstated"] += people
-        else:
+        elif indig == NO and afro == NO:
             split["neither"] += people
+        else:
+            split["unstated"] += people
     return sum(split.values()), {LABELS[k]: v for k, v in split.items() if v}
 
 
@@ -240,8 +241,10 @@ def main() -> int:
 
     # The one reading of the codes under which the sample reproduces every
     # published estimate, municipio by municipio and state by state.
-    readings = list(product(YES, UNSTATED, AGE_BASE))
+    readings = [(yes, frozenset(), age) for yes, age in product(YES, AGE_BASE)]
     fits = set(readings)
+    answers: dict[str, Counter] = {"indigenous": Counter(), "Afro-Mexican": Counter(),
+                                   "age": Counter()}
     for code, state in states.items():
         table, counts = state["table"], state["counts"]
         if set(table) - {"Total"} != set(counts):
@@ -250,6 +253,10 @@ def main() -> int:
                              f"{len(counts)}; differing: "
                              f"{sorted((set(table) - {'Total'}) ^ set(counts))[:10]}")
         whole = sum(counts.values(), Counter())
+        for (band, indig, afro), people in whole.items():
+            answers["indigenous"][indig] += people if band != "0-2" else 0
+            answers["Afro-Mexican"][afro] += people
+            answers["age"][band] += people
         here = {r for r in readings
                 if agrees(whole, table["Total"], r)
                 and all(agrees(counts[m], table[m], r) for m in counts)}
@@ -266,22 +273,32 @@ def main() -> int:
                 f"municipio {first} {table[first]}; sample under each reading: "
                 f"{[(r, indigenous_shares(counts[first], r)) for r in readings]}")
         fits &= here
-    if len(fits) != 1:
-        raise SystemExit(f"mexico_ethnicity: {len(fits)} readings reproduce every table: {fits}")
-    reading = fits.pop()
-    yes, unstated, with_unstated_age = reading
-    log(f"  reading: yes={sorted(yes)}, not stated={sorted(unstated)}, "
-        f"unstated age {'in' if with_unstated_age else 'out of'} the base")
+    for question, seen in answers.items():
+        log(f"  {question} answers, weighted: " + ", ".join(
+            f"{k or 'blank'} {v:,}" for k, v in sorted(seen.items())))
+    # Readings that differ only in codes nobody gave are one reading.
+    given = {k for k, v in answers["indigenous"].items() if v}
+    effective = {(frozenset(yes & given), age) for yes, _, age in fits}
+    if len(effective) != 1:
+        raise SystemExit(f"mexico_ethnicity: {len(effective)} different readings reproduce "
+                         f"every table: {effective}")
+    indig_yes, with_unstated_age = effective.pop()
 
-    # The Afro-Mexican answers under the same reading, over all ages, against
-    # the full count the sample estimates.
-    afro = sum(people for s in states.values() for c in s["counts"].values()
-               for (_, _, a), people in c.items() if a in yes)
+    # The Afro-Mexican "yes", over all ages, against the full count the
+    # sample estimates.
     counted = NATIONAL["POB_AFRO"]
-    if abs(afro - counted) > AFRO_TOLERANCE * counted:
-        raise SystemExit(f"mexico_ethnicity: the sample estimates {afro:,} Afro-Mexicans, "
-                         f"the full count is {counted:,}")
-    log(f"  Afro-Mexican: sample {afro:,}, full count {counted:,}")
+    afro_given = answers["Afro-Mexican"]
+    estimates = {frozenset(y & set(afro_given)): sum(afro_given[c] for c in y) for y in YES}
+    close = {y: e for y, e in estimates.items() if abs(e - counted) <= AFRO_TOLERANCE * counted}
+    if not close:
+        raise SystemExit(f"mexico_ethnicity: no reading of the Afro-Mexican answers comes within "
+                         f"{AFRO_TOLERANCE:.0%} of the full count's {counted:,}: "
+                         f"{ {tuple(sorted(y)): e for y, e in estimates.items()} }")
+    afro_yes = min(close, key=lambda y: abs(close[y] - counted))
+    reading = (indig_yes, afro_yes, with_unstated_age)
+    log(f"  reading: indigenous yes={sorted(indig_yes)}, Afro-Mexican yes={sorted(afro_yes)} "
+        f"(sample {close[afro_yes]:,}, full count {counted:,}), no={NO}, unstated age "
+        f"{'in' if with_unstated_age else 'out of'} the base")
 
     iter_states = {r["id"]: r for r in read_json(PROCESSED / "mexico_state.json", [])}
     iter_municipios = {r["id"]: r for r in read_json(PROCESSED / "mexico_municipality.json", [])}
