@@ -1,39 +1,9 @@
-  01: 11 municipios in the sample, 1,421,198 people weighted
-  02: 6 municipios in the sample, 3,739,797 people weighted
-  03: 5 municipios in the sample, 793,424 people weighted
-  04: 12 municipios in the sample, 926,858 people weighted
-  05: 38 municipios in the sample, 3,137,032 people weighted
-  06: 10 municipios in the sample, 728,300 people weighted
-  07: 124 municipios in the sample, 5,524,506 people weighted
-  08: 67 municipios in the sample, 3,725,058 people weighted
-  09: 16 municipios in the sample, 9,159,393 people weighted
-  10: 39 municipios in the sample, 1,821,279 people weighted
-  11: 46 municipios in the sample, 6,144,449 people weighted
-  12: 81 municipios in the sample, 3,525,695 people weighted
-  13: 84 municipios in the sample, 3,075,237 people weighted
-  14: 125 municipios in the sample, 8,303,835 people weighted
-  15: 125 municipios in the sample, 16,943,627 people weighted
-  16: 113 municipios in the sample, 4,728,162 people weighted
-  17: 36 municipios in the sample, 1,961,694 people weighted
-  18: 20 municipios in the sample, 1,226,179 people weighted
-  19: 51 municipios in the sample, 5,768,781 people weighted
-  20: 570 municipios in the sample, 4,113,433 people weighted
-  21: 217 municipios in the sample, 6,567,595 people weighted
-  22: 18 municipios in the sample, 2,362,209 people weighted
-  23: 11 municipios in the sample, 1,852,929 people weighted
-  24: 58 municipios in the sample, 2,815,438 people weighted
-  25: 18 municipios in the sample, 2,986,880 people weighted
-  26: 72 municipios in the sample, 2,924,652 people weighted
-  27: 17 municipios in the sample, 2,397,125 people weighted
-  28: 43 municipios in the sample, 3,518,497 people weighted
-  29: 60 municipios in the sample, 1,340,912 people weighted
-  30: 212 municipios in the sample, 8,046,861 people weighted
-  31: 106 municipios in the sample, 2,317,135 people weighted
-  32: 58 municipios in the sample, 1,617,384 people weighted
-  indigenous answers, weighted: blank 0, 1 23,229,560, 3 96,017,755, 9 451,116
-  Afro-Mexican answers, weighted: 1 2,482,098, 3 122,826,044, 9 207,412
-  age answers, weighted: 0-2 5,817,123, 3+ 119,692,898, unstated 5,533
-  reading: indigenous yes=['1'], Afro-Mexican yes=['1'] (sample 2,482,098, full count 2,576,213), no=3, unstated age out of the base
-  national, aged 3+: Mestizo or white (neither indigenous nor Afro-Mexican) 79.1%, Indigenous (self-identified) 18.5%, Afro-Mexican or Afro-descendant 1.1%, Indigenous and Afro-Mexican 0.9%, Not stated 0.4%
-  2469 municipios (0 of ITER's without an estimate), 32 states
-  wrote data/processed/mexico_ethnicity.json (7005 kB)
+us_acs: ACS 2022 5-year, level=county
+  Connecticut: 9 planning regions set aside, 8 counties from ACS 2021
+  Valdez-Cordova Census Area, Alaska: joined from 02063, 02066
+  3169 of 3220 counties pinned to their polygon by FIPS code
+  wrote data/processed/us_county.json (16257 kB)
+  3220 county records
+  county: 161,009,516 vs whole-country row 161,009,516 (0.0000% apart, 3141 areas)
+  175 bodies defaulted to Protestant; largest: Non-denominational Christian Churches 21,095,641, Southern Baptist Convention 17,649,040, United Methodist Church 8,018,629, Evangelical Lutheran Church in America 3,139,413, Assemblies of God 3,094,547
+  religion attached to 3138 of 3220 records
