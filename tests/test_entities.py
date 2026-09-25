@@ -85,6 +85,18 @@ class AdapterMerge(unittest.TestCase):
         be.merge_adapter(entity, {"population": common.measure(100)})
         self.assertEqual(entity["population"]["value"], 100)
 
+    def test_a_bare_gap_keeps_the_reason_already_given(self):
+        entity = {"median_age": common.gap(common.NOT_AVAILABLE, "the workbook is missing")}
+        be.merge_adapter(entity, {"median_age": common.gap(common.NOT_AVAILABLE)})
+        self.assertEqual(entity["median_age"]["note"], "the workbook is missing")
+
+    def test_a_gap_with_its_own_reason_or_a_policy_replaces_it(self):
+        for later in (common.gap(common.NOT_AVAILABLE, "newer reason"),
+                      common.gap(common.NOT_COLLECTED)):
+            entity = {"median_age": common.gap(common.NOT_AVAILABLE, "old reason")}
+            be.merge_adapter(entity, {"median_age": later})
+            self.assertEqual(entity["median_age"], later)
+
     def test_identity_fields_are_not_overwritten(self):
         entity = {"id": "shape-1", "name": "Kerala", "level": "admin1", "parent": "IND"}
         be.merge_adapter(entity, {"id": "other", "name": "KERALA", "parent": "XXX"})

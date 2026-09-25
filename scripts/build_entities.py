@@ -1802,6 +1802,15 @@ def merge_adapter(entity: dict[str, Any], row: dict[str, Any]) -> None:
                 and not (isinstance(value, dict)
                          and value.get("status") == NOT_COLLECTED)):
             continue
+        # Nor does a bare marker displace a gap that says why it is one. Every
+        # file marks the questions it doesn't answer; Mexico's ethnicity file,
+        # read after the median-age file, erased the note saying why Oaxaca's
+        # 570 municipios have no median age.
+        if (is_gap(value) and is_gap(entity.get(key))
+                and isinstance(entity.get(key), dict) and entity[key].get("note")
+                and not (isinstance(value, dict)
+                         and (value.get("note") or value.get("status") == NOT_COLLECTED))):
+            continue
         entity[key] = value
         if key in VALUE_FIELDS and not is_gap(value):
             entity.setdefault("_from", {})[key] = row.get("_source")
