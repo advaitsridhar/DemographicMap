@@ -1,1 +1,6 @@
-us_island_areas: dhcgu P9 labels: [('P9_001N', ['Median age --', 'Both sexes']), ('P9_002N', ['Median age --', 'Male']), ('P9_003N', ['Median age --', 'Female'])]
+  Guam: 153,836 people in 1 districts; median age 33.7; largest groups Chamorro, Filipino, Two or more races, White
+  United States Virgin Islands: 87,146 people in 3 districts; median age 45.9; largest groups Other Black or African American, African American, White, Two or more races
+  American Samoa: 49,710 people in 5 districts; median age 27.7; largest groups Samoan, Two or more races, Filipino, Other Native Hawaiian and Other Pacific Islander
+  Commonwealth of the Northern Mariana Islands: 47,329 people in 4 districts; median age 34.4; largest groups Filipino, Chamorro, Two or more races, Other Native Hawaiian and Other Pacific Islander
+  17 records, 7 districts pinned to their polygon by FIPS code
+  wrote data/processed/us_island_areas.json (57 kB)

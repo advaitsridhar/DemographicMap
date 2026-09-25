@@ -1,0 +1,2284 @@
+[
+  {
+    "id": "USA-66",
+    "level": "admin1",
+    "name": "Guam",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 153836,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 33.7,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 1036,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Chamorro",
+        "pct": 32.8,
+        "count": 50420
+      },
+      {
+        "group": "Filipino",
+        "pct": 29.1,
+        "count": 44793
+      },
+      {
+        "group": "Two or more races",
+        "pct": 10.0,
+        "count": 15441
+      },
+      {
+        "group": "White",
+        "pct": 6.8,
+        "count": 10491
+      },
+      {
+        "group": "Chuukese",
+        "pct": 6.7,
+        "count": 10274
+      },
+      {
+        "group": "Korean",
+        "pct": 2.2,
+        "count": 3438
+      },
+      {
+        "group": "Other Native Hawaiian and Other Pacific Islander",
+        "pct": 2.2,
+        "count": 3420
+      },
+      {
+        "group": "Japanese",
+        "pct": 1.4,
+        "count": 2108
+      },
+      {
+        "group": "Palauan",
+        "pct": 1.4,
+        "count": 2149
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 1.4,
+        "count": 2096
+      },
+      {
+        "group": "Chinese (except Taiwanese)",
+        "pct": 1.3,
+        "count": 1999
+      },
+      {
+        "group": "Other Asian",
+        "pct": 1.0,
+        "count": 1600
+      },
+      {
+        "group": "Yapese",
+        "pct": 1.0,
+        "count": 1533
+      },
+      {
+        "group": "Black or African American",
+        "pct": 0.9,
+        "count": 1340
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 0.6,
+        "count": 955
+      },
+      {
+        "group": "Kosraean",
+        "pct": 0.3,
+        "count": 456
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.2,
+        "count": 283
+      },
+      {
+        "group": "American Indian and Alaska Native",
+        "pct": 0.1,
+        "count": 214
+      },
+      {
+        "group": "Carolinian",
+        "pct": 0.1,
+        "count": 92
+      },
+      {
+        "group": "Marshallese",
+        "pct": 0.1,
+        "count": 180
+      },
+      {
+        "group": "Native Hawaiian",
+        "pct": 0.1,
+        "count": 126
+      },
+      {
+        "group": "Taiwanese",
+        "pct": 0.1,
+        "count": 227
+      },
+      {
+        "group": "Thai",
+        "pct": 0.1,
+        "count": 138
+      },
+      {
+        "group": "Guamanian",
+        "pct": 0.0,
+        "count": 63
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcgu",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "66",
+      "fips_state": "66"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as Guam's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications."
+  },
+  {
+    "id": "USA-66010",
+    "level": "admin2",
+    "name": "Guam",
+    "parent": "USA-66",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 153836,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 33.7,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 1036,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Chamorro",
+        "pct": 32.8,
+        "count": 50420
+      },
+      {
+        "group": "Filipino",
+        "pct": 29.1,
+        "count": 44793
+      },
+      {
+        "group": "Two or more races",
+        "pct": 10.0,
+        "count": 15441
+      },
+      {
+        "group": "White",
+        "pct": 6.8,
+        "count": 10491
+      },
+      {
+        "group": "Chuukese",
+        "pct": 6.7,
+        "count": 10274
+      },
+      {
+        "group": "Korean",
+        "pct": 2.2,
+        "count": 3438
+      },
+      {
+        "group": "Other Native Hawaiian and Other Pacific Islander",
+        "pct": 2.2,
+        "count": 3420
+      },
+      {
+        "group": "Japanese",
+        "pct": 1.4,
+        "count": 2108
+      },
+      {
+        "group": "Palauan",
+        "pct": 1.4,
+        "count": 2149
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 1.4,
+        "count": 2096
+      },
+      {
+        "group": "Chinese (except Taiwanese)",
+        "pct": 1.3,
+        "count": 1999
+      },
+      {
+        "group": "Other Asian",
+        "pct": 1.0,
+        "count": 1600
+      },
+      {
+        "group": "Yapese",
+        "pct": 1.0,
+        "count": 1533
+      },
+      {
+        "group": "Black or African American",
+        "pct": 0.9,
+        "count": 1340
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 0.6,
+        "count": 955
+      },
+      {
+        "group": "Kosraean",
+        "pct": 0.3,
+        "count": 456
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.2,
+        "count": 283
+      },
+      {
+        "group": "American Indian and Alaska Native",
+        "pct": 0.1,
+        "count": 214
+      },
+      {
+        "group": "Carolinian",
+        "pct": 0.1,
+        "count": 92
+      },
+      {
+        "group": "Marshallese",
+        "pct": 0.1,
+        "count": 180
+      },
+      {
+        "group": "Native Hawaiian",
+        "pct": 0.1,
+        "count": 126
+      },
+      {
+        "group": "Taiwanese",
+        "pct": 0.1,
+        "count": 227
+      },
+      {
+        "group": "Thai",
+        "pct": 0.1,
+        "count": 138
+      },
+      {
+        "group": "Guamanian",
+        "pct": 0.0,
+        "count": 63
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcgu",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "Guam",
+    "codes": {
+      "geoid": "66010",
+      "fips_state": "66",
+      "fips_county": "010"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as Guam's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications.",
+    "match_by": "shape_id",
+    "shape_id": "52423323B58805530467838"
+  },
+  {
+    "id": "USA-78",
+    "level": "admin1",
+    "name": "United States Virgin Islands",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 87146,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 45.9,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 945,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Other Black or African American",
+        "pct": 37.9,
+        "count": 33006
+      },
+      {
+        "group": "African American",
+        "pct": 21.6,
+        "count": 18867
+      },
+      {
+        "group": "White",
+        "pct": 13.3,
+        "count": 11584
+      },
+      {
+        "group": "Two or more races",
+        "pct": 7.5,
+        "count": 6569
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 6.3,
+        "count": 5478
+      },
+      {
+        "group": "U.S. Virgin Islander",
+        "pct": 2.9,
+        "count": 2565
+      },
+      {
+        "group": "Other Caribbean",
+        "pct": 2.8,
+        "count": 2421
+      },
+      {
+        "group": "Haitian",
+        "pct": 2.4,
+        "count": 2062
+      },
+      {
+        "group": "Asian",
+        "pct": 1.0,
+        "count": 910
+      },
+      {
+        "group": "Kittian and Nevisian",
+        "pct": 0.9,
+        "count": 751
+      },
+      {
+        "group": "West Indian",
+        "pct": 0.8,
+        "count": 689
+      },
+      {
+        "group": "Antiguan and Barbudan",
+        "pct": 0.5,
+        "count": 474
+      },
+      {
+        "group": "St. Lucian",
+        "pct": 0.5,
+        "count": 422
+      },
+      {
+        "group": "American Indian and Alaska Native",
+        "pct": 0.4,
+        "count": 371
+      },
+      {
+        "group": "Dominica Islander",
+        "pct": 0.3,
+        "count": 233
+      },
+      {
+        "group": "Anguillan",
+        "pct": 0.2,
+        "count": 143
+      },
+      {
+        "group": "British Virgin Islander",
+        "pct": 0.2,
+        "count": 165
+      },
+      {
+        "group": "Jamaican",
+        "pct": 0.2,
+        "count": 174
+      },
+      {
+        "group": "Trinidadian and Tobagonian",
+        "pct": 0.2,
+        "count": 211
+      },
+      {
+        "group": "Native Hawaiian and Other Pacific Islander",
+        "pct": 0.1,
+        "count": 51
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcvi",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "78",
+      "fips_state": "78"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as United States Virgin Islands's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications."
+  },
+  {
+    "id": "USA-78010",
+    "level": "admin2",
+    "name": "St. Croix",
+    "parent": "USA-78",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 41004,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 45.2,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 967,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Other Black or African American",
+        "pct": 47.2,
+        "count": 19373
+      },
+      {
+        "group": "African American",
+        "pct": 17.9,
+        "count": 7349
+      },
+      {
+        "group": "White",
+        "pct": 12.0,
+        "count": 4915
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 9.8,
+        "count": 4002
+      },
+      {
+        "group": "Two or more races",
+        "pct": 5.9,
+        "count": 2419
+      },
+      {
+        "group": "U.S. Virgin Islander",
+        "pct": 2.5,
+        "count": 1013
+      },
+      {
+        "group": "Other Caribbean",
+        "pct": 0.9,
+        "count": 386
+      },
+      {
+        "group": "Asian",
+        "pct": 0.8,
+        "count": 315
+      },
+      {
+        "group": "St. Lucian",
+        "pct": 0.6,
+        "count": 235
+      },
+      {
+        "group": "American Indian and Alaska Native",
+        "pct": 0.5,
+        "count": 202
+      },
+      {
+        "group": "Antiguan and Barbudan",
+        "pct": 0.5,
+        "count": 206
+      },
+      {
+        "group": "West Indian",
+        "pct": 0.4,
+        "count": 147
+      },
+      {
+        "group": "Kittian and Nevisian",
+        "pct": 0.3,
+        "count": 142
+      },
+      {
+        "group": "Trinidadian and Tobagonian",
+        "pct": 0.3,
+        "count": 126
+      },
+      {
+        "group": "Dominica Islander",
+        "pct": 0.1,
+        "count": 47
+      },
+      {
+        "group": "Haitian",
+        "pct": 0.1,
+        "count": 31
+      },
+      {
+        "group": "Jamaican",
+        "pct": 0.1,
+        "count": 39
+      },
+      {
+        "group": "Native Hawaiian and Other Pacific Islander",
+        "pct": 0.1,
+        "count": 44
+      },
+      {
+        "group": "Anguillan",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "British Virgin Islander",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcvi",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "United States Virgin Islands",
+    "codes": {
+      "geoid": "78010",
+      "fips_state": "78",
+      "fips_county": "010"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as United States Virgin Islands's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications."
+  },
+  {
+    "id": "USA-78020",
+    "level": "admin2",
+    "name": "St. John",
+    "parent": "USA-78",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 3881,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 47.8,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 1027,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "White",
+        "pct": 35.2,
+        "count": 1365
+      },
+      {
+        "group": "Other Black or African American",
+        "pct": 32.2,
+        "count": 1248
+      },
+      {
+        "group": "African American",
+        "pct": 12.7,
+        "count": 492
+      },
+      {
+        "group": "Two or more races",
+        "pct": 8.3,
+        "count": 323
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 5.0,
+        "count": 195
+      },
+      {
+        "group": "Other Caribbean",
+        "pct": 2.3,
+        "count": 88
+      },
+      {
+        "group": "Haitian",
+        "pct": 1.6,
+        "count": 63
+      },
+      {
+        "group": "American Indian and Alaska Native",
+        "pct": 0.6,
+        "count": 25
+      },
+      {
+        "group": "West Indian",
+        "pct": 0.6,
+        "count": 24
+      },
+      {
+        "group": "Asian",
+        "pct": 0.5,
+        "count": 20
+      },
+      {
+        "group": "St. Lucian",
+        "pct": 0.5,
+        "count": 18
+      },
+      {
+        "group": "British Virgin Islander",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Dominica Islander",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Jamaican",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Kittian and Nevisian",
+        "pct": 0.1,
+        "count": 5
+      },
+      {
+        "group": "Trinidadian and Tobagonian",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "U.S. Virgin Islander",
+        "pct": 0.1,
+        "count": 4
+      },
+      {
+        "group": "Native Hawaiian and Other Pacific Islander",
+        "pct": 0.0,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcvi",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "United States Virgin Islands",
+    "codes": {
+      "geoid": "78020",
+      "fips_state": "78",
+      "fips_county": "020"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as United States Virgin Islands's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications."
+  },
+  {
+    "id": "USA-78030",
+    "level": "admin2",
+    "name": "St. Thomas",
+    "parent": "USA-78",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 42261,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 46.3,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 917,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Other Black or African American",
+        "pct": 29.3,
+        "count": 12385
+      },
+      {
+        "group": "African American",
+        "pct": 26.1,
+        "count": 11026
+      },
+      {
+        "group": "White",
+        "pct": 12.6,
+        "count": 5304
+      },
+      {
+        "group": "Two or more races",
+        "pct": 9.1,
+        "count": 3827
+      },
+      {
+        "group": "Haitian",
+        "pct": 4.7,
+        "count": 1968
+      },
+      {
+        "group": "Other Caribbean",
+        "pct": 4.6,
+        "count": 1947
+      },
+      {
+        "group": "U.S. Virgin Islander",
+        "pct": 3.7,
+        "count": 1548
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 3.0,
+        "count": 1281
+      },
+      {
+        "group": "Asian",
+        "pct": 1.4,
+        "count": 575
+      },
+      {
+        "group": "Kittian and Nevisian",
+        "pct": 1.4,
+        "count": 604
+      },
+      {
+        "group": "West Indian",
+        "pct": 1.2,
+        "count": 518
+      },
+      {
+        "group": "Antiguan and Barbudan",
+        "pct": 0.6,
+        "count": 268
+      },
+      {
+        "group": "British Virgin Islander",
+        "pct": 0.4,
+        "count": 160
+      },
+      {
+        "group": "Dominica Islander",
+        "pct": 0.4,
+        "count": 184
+      },
+      {
+        "group": "St. Lucian",
+        "pct": 0.4,
+        "count": 169
+      },
+      {
+        "group": "American Indian and Alaska Native",
+        "pct": 0.3,
+        "count": 144
+      },
+      {
+        "group": "Anguillan",
+        "pct": 0.3,
+        "count": 133
+      },
+      {
+        "group": "Jamaican",
+        "pct": 0.3,
+        "count": 131
+      },
+      {
+        "group": "Trinidadian and Tobagonian",
+        "pct": 0.2,
+        "count": 83
+      },
+      {
+        "group": "Native Hawaiian and Other Pacific Islander",
+        "pct": 0.0,
+        "count": 6
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcvi",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "United States Virgin Islands",
+    "codes": {
+      "geoid": "78030",
+      "fips_state": "78",
+      "fips_county": "030"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as United States Virgin Islands's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications."
+  },
+  {
+    "id": "USA-60",
+    "level": "admin1",
+    "name": "American Samoa",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 49710,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 27.7,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 1033,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 83.2,
+        "count": 41382
+      },
+      {
+        "group": "Two or more races",
+        "pct": 4.4,
+        "count": 2192
+      },
+      {
+        "group": "Filipino",
+        "pct": 3.4,
+        "count": 1699
+      },
+      {
+        "group": "Other Native Hawaiian and Other Pacific Islander",
+        "pct": 2.5,
+        "count": 1219
+      },
+      {
+        "group": "Tongan",
+        "pct": 2.2,
+        "count": 1093
+      },
+      {
+        "group": "Chinese (except Taiwanese)",
+        "pct": 1.4,
+        "count": 680
+      },
+      {
+        "group": "White",
+        "pct": 0.8,
+        "count": 374
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.7,
+        "count": 333
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.4,
+        "count": 182
+      },
+      {
+        "group": "Korean",
+        "pct": 0.3,
+        "count": 136
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.3,
+        "count": 127
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 0.3,
+        "count": 139
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.1,
+        "count": 52
+      },
+      {
+        "group": "American Indian and Alaska Native",
+        "pct": 0.0,
+        "count": 13
+      },
+      {
+        "group": "Asian Indian",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Black or African American",
+        "pct": 0.0,
+        "count": 24
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 9
+      },
+      {
+        "group": "Niuean",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Taiwanese",
+        "pct": 0.0,
+        "count": 21
+      },
+      {
+        "group": "Tokelauan",
+        "pct": 0.0,
+        "count": 7
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcas",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "60",
+      "fips_state": "60"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as American Samoa's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications."
+  },
+  {
+    "id": "USA-60040",
+    "level": "admin2",
+    "name": "Swains",
+    "parent": "USA-60",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 0,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcas",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "American Samoa",
+    "codes": {
+      "geoid": "60040",
+      "fips_state": "60",
+      "fips_county": "040"
+    }
+  },
+  {
+    "id": "USA-60010",
+    "level": "admin2",
+    "name": "Eastern",
+    "parent": "USA-60",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 17059,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 29.1,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 1056,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 84.6,
+        "count": 14427
+      },
+      {
+        "group": "Two or more races",
+        "pct": 4.1,
+        "count": 704
+      },
+      {
+        "group": "Filipino",
+        "pct": 3.6,
+        "count": 621
+      },
+      {
+        "group": "Other Native Hawaiian and Other Pacific Islander",
+        "pct": 2.1,
+        "count": 351
+      },
+      {
+        "group": "Chinese (except Taiwanese)",
+        "pct": 1.7,
+        "count": 286
+      },
+      {
+        "group": "White",
+        "pct": 0.9,
+        "count": 157
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 0.7,
+        "count": 119
+      },
+      {
+        "group": "Tongan",
+        "pct": 0.6,
+        "count": 110
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.5,
+        "count": 91
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.4,
+        "count": 66
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.3,
+        "count": 50
+      },
+      {
+        "group": "Korean",
+        "pct": 0.2,
+        "count": 31
+      },
+      {
+        "group": "Black or African American",
+        "pct": 0.1,
+        "count": 10
+      },
+      {
+        "group": "Taiwanese",
+        "pct": 0.1,
+        "count": 11
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.1,
+        "count": 11
+      },
+      {
+        "group": "American Indian and Alaska Native",
+        "pct": 0.0,
+        "count": 2
+      },
+      {
+        "group": "Asian Indian",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 4
+      },
+      {
+        "group": "Niuean",
+        "pct": 0.0,
+        "count": 3
+      },
+      {
+        "group": "Tokelauan",
+        "pct": 0.0,
+        "count": 4
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcas",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "American Samoa",
+    "codes": {
+      "geoid": "60010",
+      "fips_state": "60",
+      "fips_county": "010"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as American Samoa's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications.",
+    "match_by": "shape_id",
+    "shape_id": "52423323B36058634620210"
+  },
+  {
+    "id": "USA-60020",
+    "level": "admin2",
+    "name": "Manu'a",
+    "parent": "USA-60",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 832,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 26.1,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 1096,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 94.7,
+        "count": 788
+      },
+      {
+        "group": "Two or more races",
+        "pct": 3.6,
+        "count": 30
+      },
+      {
+        "group": "Other Native Hawaiian and Other Pacific Islander",
+        "pct": 0.7,
+        "count": 6
+      },
+      {
+        "group": "Tongan",
+        "pct": 0.5,
+        "count": 4
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.2,
+        "count": 2
+      },
+      {
+        "group": "White",
+        "pct": 0.2,
+        "count": 2
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcas",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "American Samoa",
+    "codes": {
+      "geoid": "60020",
+      "fips_state": "60",
+      "fips_county": "020"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as American Samoa's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications."
+  },
+  {
+    "id": "USA-60030",
+    "level": "admin2",
+    "name": "Rose",
+    "parent": "USA-60",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 0,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "status": "not_available"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": {
+      "status": "not_available"
+    },
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcas",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "American Samoa",
+    "codes": {
+      "geoid": "60030",
+      "fips_state": "60",
+      "fips_county": "030"
+    }
+  },
+  {
+    "id": "USA-60050",
+    "level": "admin2",
+    "name": "Western",
+    "parent": "USA-60",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 31819,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 27.0,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 1019,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Samoan",
+        "pct": 82.2,
+        "count": 26167
+      },
+      {
+        "group": "Two or more races",
+        "pct": 4.6,
+        "count": 1458
+      },
+      {
+        "group": "Filipino",
+        "pct": 3.4,
+        "count": 1078
+      },
+      {
+        "group": "Tongan",
+        "pct": 3.1,
+        "count": 979
+      },
+      {
+        "group": "Other Native Hawaiian and Other Pacific Islander",
+        "pct": 2.7,
+        "count": 862
+      },
+      {
+        "group": "Chinese (except Taiwanese)",
+        "pct": 1.2,
+        "count": 394
+      },
+      {
+        "group": "Fijian",
+        "pct": 0.9,
+        "count": 281
+      },
+      {
+        "group": "White",
+        "pct": 0.7,
+        "count": 215
+      },
+      {
+        "group": "Vietnamese",
+        "pct": 0.4,
+        "count": 116
+      },
+      {
+        "group": "Korean",
+        "pct": 0.3,
+        "count": 105
+      },
+      {
+        "group": "Asian Indian",
+        "pct": 0.1,
+        "count": 23
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.1,
+        "count": 36
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 0.1,
+        "count": 20
+      },
+      {
+        "group": "Tuvaluan",
+        "pct": 0.1,
+        "count": 41
+      },
+      {
+        "group": "American Indian and Alaska Native",
+        "pct": 0.0,
+        "count": 11
+      },
+      {
+        "group": "Black or African American",
+        "pct": 0.0,
+        "count": 14
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.0,
+        "count": 5
+      },
+      {
+        "group": "Niuean",
+        "pct": 0.0,
+        "count": 1
+      },
+      {
+        "group": "Taiwanese",
+        "pct": 0.0,
+        "count": 10
+      },
+      {
+        "group": "Tokelauan",
+        "pct": 0.0,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcas",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "American Samoa",
+    "codes": {
+      "geoid": "60050",
+      "fips_state": "60",
+      "fips_county": "050"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as American Samoa's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications.",
+    "match_by": "shape_id",
+    "shape_id": "52423323B2854744470595"
+  },
+  {
+    "id": "USA-69",
+    "level": "admin1",
+    "name": "Commonwealth of the Northern Mariana Islands",
+    "parent": "USA",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 47329,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 34.4,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 1109,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Filipino",
+        "pct": 32.7,
+        "count": 15456
+      },
+      {
+        "group": "Chamorro",
+        "pct": 25.4,
+        "count": 12001
+      },
+      {
+        "group": "Two or more races",
+        "pct": 7.3,
+        "count": 3453
+      },
+      {
+        "group": "Other Native Hawaiian and Other Pacific Islander",
+        "pct": 7.1,
+        "count": 3362
+      },
+      {
+        "group": "Chinese (except Taiwanese)",
+        "pct": 6.9,
+        "count": 3270
+      },
+      {
+        "group": "Carolinian",
+        "pct": 4.8,
+        "count": 2271
+      },
+      {
+        "group": "Chuukese",
+        "pct": 3.0,
+        "count": 1403
+      },
+      {
+        "group": "Korean",
+        "pct": 2.7,
+        "count": 1269
+      },
+      {
+        "group": "White",
+        "pct": 2.1,
+        "count": 1015
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 1.8,
+        "count": 845
+      },
+      {
+        "group": "Palauan",
+        "pct": 1.7,
+        "count": 823
+      },
+      {
+        "group": "Other Asian",
+        "pct": 1.2,
+        "count": 586
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.9,
+        "count": 434
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 0.9,
+        "count": 428
+      },
+      {
+        "group": "Yapese",
+        "pct": 0.6,
+        "count": 276
+      },
+      {
+        "group": "Thai",
+        "pct": 0.3,
+        "count": 163
+      },
+      {
+        "group": "Black or African American",
+        "pct": 0.1,
+        "count": 65
+      },
+      {
+        "group": "Kosraean",
+        "pct": 0.1,
+        "count": 45
+      },
+      {
+        "group": "Marshallese",
+        "pct": 0.1,
+        "count": 56
+      },
+      {
+        "group": "Nepalese",
+        "pct": 0.1,
+        "count": 31
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 0.1,
+        "count": 65
+      },
+      {
+        "group": "American Indian and Alaska Native",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcmp",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "codes": {
+      "geoid": "69",
+      "fips_state": "69"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as Commonwealth of the Northern Mariana Islands's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications."
+  },
+  {
+    "id": "USA-69085",
+    "level": "admin2",
+    "name": "Northern Islands",
+    "parent": "USA-69",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 7,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 34.5,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "status": "not_available"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Carolinian",
+        "pct": 42.9,
+        "count": 3
+      },
+      {
+        "group": "Chamorro",
+        "pct": 42.9,
+        "count": 3
+      },
+      {
+        "group": "Other Native Hawaiian and Other Pacific Islander",
+        "pct": 14.3,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcmp",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "Commonwealth of the Northern Mariana Islands",
+    "codes": {
+      "geoid": "69085",
+      "fips_state": "69",
+      "fips_county": "085"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as Commonwealth of the Northern Mariana Islands's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications.",
+    "match_by": "shape_id",
+    "shape_id": "52423323B84565222808084"
+  },
+  {
+    "id": "USA-69100",
+    "level": "admin2",
+    "name": "Rota",
+    "parent": "USA-69",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 1893,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 35.4,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 1141,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Chamorro",
+        "pct": 59.6,
+        "count": 1129
+      },
+      {
+        "group": "Filipino",
+        "pct": 22.3,
+        "count": 422
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 6.1,
+        "count": 115
+      },
+      {
+        "group": "Two or more races",
+        "pct": 4.9,
+        "count": 92
+      },
+      {
+        "group": "Other Native Hawaiian and Other Pacific Islander",
+        "pct": 1.8,
+        "count": 34
+      },
+      {
+        "group": "White",
+        "pct": 1.5,
+        "count": 28
+      },
+      {
+        "group": "Palauan",
+        "pct": 1.3,
+        "count": 25
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 0.8,
+        "count": 15
+      },
+      {
+        "group": "Chuukese",
+        "pct": 0.4,
+        "count": 7
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.4,
+        "count": 7
+      },
+      {
+        "group": "Korean",
+        "pct": 0.3,
+        "count": 5
+      },
+      {
+        "group": "Other Asian",
+        "pct": 0.3,
+        "count": 6
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 0.2,
+        "count": 3
+      },
+      {
+        "group": "Black or African American",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Carolinian",
+        "pct": 0.1,
+        "count": 1
+      },
+      {
+        "group": "Chinese (except Taiwanese)",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Marshallese",
+        "pct": 0.1,
+        "count": 1
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcmp",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "Commonwealth of the Northern Mariana Islands",
+    "codes": {
+      "geoid": "69100",
+      "fips_state": "69",
+      "fips_county": "100"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as Commonwealth of the Northern Mariana Islands's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications.",
+    "match_by": "shape_id",
+    "shape_id": "52423323B33049838557264"
+  },
+  {
+    "id": "USA-69110",
+    "level": "admin2",
+    "name": "Saipan",
+    "parent": "USA-69",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 43385,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 34.3,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 1107,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Filipino",
+        "pct": 33.3,
+        "count": 14440
+      },
+      {
+        "group": "Chamorro",
+        "pct": 22.9,
+        "count": 9932
+      },
+      {
+        "group": "Other Native Hawaiian and Other Pacific Islander",
+        "pct": 7.5,
+        "count": 3261
+      },
+      {
+        "group": "Chinese (except Taiwanese)",
+        "pct": 7.4,
+        "count": 3207
+      },
+      {
+        "group": "Two or more races",
+        "pct": 7.3,
+        "count": 3148
+      },
+      {
+        "group": "Carolinian",
+        "pct": 5.2,
+        "count": 2263
+      },
+      {
+        "group": "Chuukese",
+        "pct": 3.2,
+        "count": 1385
+      },
+      {
+        "group": "Korean",
+        "pct": 2.9,
+        "count": 1250
+      },
+      {
+        "group": "White",
+        "pct": 2.2,
+        "count": 964
+      },
+      {
+        "group": "Palauan",
+        "pct": 1.8,
+        "count": 791
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 1.5,
+        "count": 668
+      },
+      {
+        "group": "Other Asian",
+        "pct": 1.3,
+        "count": 555
+      },
+      {
+        "group": "Japanese",
+        "pct": 1.0,
+        "count": 418
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 0.9,
+        "count": 410
+      },
+      {
+        "group": "Yapese",
+        "pct": 0.6,
+        "count": 271
+      },
+      {
+        "group": "Thai",
+        "pct": 0.4,
+        "count": 160
+      },
+      {
+        "group": "Black or African American",
+        "pct": 0.1,
+        "count": 62
+      },
+      {
+        "group": "Kosraean",
+        "pct": 0.1,
+        "count": 45
+      },
+      {
+        "group": "Marshallese",
+        "pct": 0.1,
+        "count": 55
+      },
+      {
+        "group": "Nepalese",
+        "pct": 0.1,
+        "count": 29
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 0.1,
+        "count": 59
+      },
+      {
+        "group": "American Indian and Alaska Native",
+        "pct": 0.0,
+        "count": 12
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcmp",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "Commonwealth of the Northern Mariana Islands",
+    "codes": {
+      "geoid": "69110",
+      "fips_state": "69",
+      "fips_county": "110"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as Commonwealth of the Northern Mariana Islands's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications.",
+    "match_by": "shape_id",
+    "shape_id": "52423323B64374819566346"
+  },
+  {
+    "id": "USA-69120",
+    "level": "admin2",
+    "name": "Tinian",
+    "parent": "USA-69",
+    "capital": {
+      "status": "not_available"
+    },
+    "largest_settlement": {
+      "status": "not_available"
+    },
+    "population": {
+      "value": 2044,
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "median_age": {
+      "value": 36.5,
+      "unit": "years",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "sex_ratio": {
+      "value": 1123,
+      "unit": "males_per_1000_females",
+      "year": 2020,
+      "source": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas"
+    },
+    "religion": {
+      "status": "not_available"
+    },
+    "language": {
+      "status": "not_available"
+    },
+    "ethnicity": [
+      {
+        "group": "Chamorro",
+        "pct": 45.8,
+        "count": 937
+      },
+      {
+        "group": "Filipino",
+        "pct": 29.1,
+        "count": 594
+      },
+      {
+        "group": "Two or more races",
+        "pct": 10.4,
+        "count": 213
+      },
+      {
+        "group": "Other Native Hawaiian and Other Pacific Islander",
+        "pct": 3.2,
+        "count": 66
+      },
+      {
+        "group": "Bangladeshi",
+        "pct": 3.0,
+        "count": 62
+      },
+      {
+        "group": "Chinese (except Taiwanese)",
+        "pct": 3.0,
+        "count": 61
+      },
+      {
+        "group": "Other Asian",
+        "pct": 1.2,
+        "count": 25
+      },
+      {
+        "group": "White",
+        "pct": 1.1,
+        "count": 23
+      },
+      {
+        "group": "Korean",
+        "pct": 0.7,
+        "count": 14
+      },
+      {
+        "group": "Chuukese",
+        "pct": 0.5,
+        "count": 11
+      },
+      {
+        "group": "Japanese",
+        "pct": 0.4,
+        "count": 9
+      },
+      {
+        "group": "Palauan",
+        "pct": 0.3,
+        "count": 7
+      },
+      {
+        "group": "Carolinian",
+        "pct": 0.2,
+        "count": 4
+      },
+      {
+        "group": "Yapese",
+        "pct": 0.2,
+        "count": 5
+      },
+      {
+        "group": "Black or African American",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Nepalese",
+        "pct": 0.1,
+        "count": 2
+      },
+      {
+        "group": "Pohnpeian",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Some Other Race",
+        "pct": 0.1,
+        "count": 3
+      },
+      {
+        "group": "Thai",
+        "pct": 0.1,
+        "count": 3
+      }
+    ],
+    "sources": [
+      {
+        "field": "population/median age/sex ratio/ethnicity",
+        "name": "U.S. Census Bureau, 2020 Census, Demographic and Housing Characteristics for the Island Areas",
+        "url": "https://api.census.gov/data/2020/dec/dhcmp",
+        "license": "Public domain (U.S. Census Bureau)"
+      }
+    ],
+    "country": "USA",
+    "parent_name": "Commonwealth of the Northern Mariana Islands",
+    "codes": {
+      "geoid": "69120",
+      "fips_state": "69",
+      "fips_county": "120"
+    },
+    "ethnicity_year": 2020,
+    "ethnicity_note": "The 2020 census's race question as Commonwealth of the Northern Mariana Islands's form asks it; the American Community Survey, which gives the rest of the United States its figures, is not conducted here. Each person of one race is shown under the most detailed group the table names, and people of two or more races as one group. Not comparable with other countries' ethnicity classifications.",
+    "match_by": "shape_id",
+    "shape_id": "52423323B49434157073126"
+  }
+]
