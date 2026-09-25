@@ -449,6 +449,45 @@ class APolygonDrawnAtBothLevelsShowsOneUnit(unittest.TestCase):
         self.assertEqual(a2["MNE"][0]["population"]["value"], 1)
 
 
+class TheGroundOutsideEveryDivision(unittest.TestCase):
+    """Uruguay's departments, less their municipios."""
+
+    def tables(self, kids, parent=62010, parent_year=2023):
+        dept = {"id": "D", "name": "Durazno",
+                "population": {"value": parent, "year": parent_year,
+                               "source": "Wikidata (CC0)"}}
+        rows = [{"id": f"M{i}", "name": f"M{i}", "parent": "D",
+                 "population": ({"value": v, "year": 2023} if v else
+                                {"status": "not_available"})}
+                for i, v in enumerate(kids)]
+        rest = {"id": "URY-REST-D", "name": "Durazno, outside any municipio",
+                "parent": "D", "remainder": True,
+                "population": {"status": "not_available"}}
+        return {"URY": [dept]}, {"URY": [*rows, rest]}, rest
+
+    def test_the_remainder_is_the_difference(self):
+        a1, a2, rest = self.tables([8000, 2401])
+        self.assertEqual(be.fill_remainders(a1, a2), ["URY Durazno, outside any municipio"])
+        self.assertEqual((rest["population"]["value"], rest["population"]["year"]),
+                         (51609, 2023))
+
+    def test_a_division_without_a_count_leaves_a_gap_that_says_so(self):
+        a1, a2, rest = self.tables([8000, None])
+        self.assertEqual(be.fill_remainders(a1, a2), [])
+        self.assertNotIn("value", rest["population"])
+        self.assertIn("M1", rest["population"]["note"])
+
+    def test_counts_of_different_years_are_not_subtracted(self):
+        a1, a2, rest = self.tables([8000, 2401], parent_year=2011)
+        be.fill_remainders(a1, a2)
+        self.assertIn("one year", rest["population"]["note"])
+
+    def test_a_department_with_no_divisions_is_all_remainder(self):
+        a1, a2, rest = self.tables([])
+        be.fill_remainders(a1, a2)
+        self.assertEqual(rest["population"]["value"], 62010)
+
+
 class BorrowedNamesYield(unittest.TestCase):
     def test_a_town_reaching_a_department_by_its_name_yields(self):
         shape = {"id": "S", "name": "Lago Buenos Aires", "level": "admin2"}

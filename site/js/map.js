@@ -119,6 +119,21 @@ window.WorldMap = (function () {
 
   const FADE = 0.35;
 
+  /* Second-level borders give way to their colours when zoomed out.
+   *
+   * Pinned at world view, a border drawn at full strength around every unit
+   * is more ink than the units' own colours wherever the units are small.
+   * Romania's 3,181 communes average 75 km2, the finest mesh in Europe, and at
+   * zoom 4-5 their borders greyed the whole country into a texture that read
+   * as a different kind of data from Hungary's or Bulgaria's beside it. The
+   * borders fade in over the zooms where units become large enough to be seen
+   * one by one, and are at full strength from where the level normally shows.
+   */
+  function lineOpacity(level) {
+    if (level.id !== "admin2") return 0.9;
+    return ["interpolate", ["linear"], ["zoom"], 2, 0.15, 5, 0.35, level.showFrom, 0.9];
+  }
+
   function layerMinZoom(level) { return Math.max(0, level.showFrom - FADE); }
   function layerMaxZoom(level) { return Math.min(24, level.showTo + FADE); }
 
@@ -195,18 +210,17 @@ window.WorldMap = (function () {
      *
      * Every fill below paints a *unit*. Where a country's second level does
      * not tile it there is no unit to paint, so the ground falls through to
-     * the background -- which is the water colour. Uruguay's second-order
-     * units are municipios, constituted around population centres rather than
-     * carved out of the map, and they cover 36.8% of the country; at
-     * second-order zoom the other 112,404 km2 was rendering as sea. A missing
-     * figure is a gap, but ground drawn as ocean is a false statement about
-     * the world, and the worse of the two.
+     * the background -- which is the water colour. Uruguay was the case this
+     * was written for: its municipios cover 36.8% of the country and the rest
+     * rendered as sea. Uruguay's remainder is now drawn as units of its own
+     * (scripts/make_remainders.py); Tonga's islets, which no one counts, are
+     * what is left here. Ground drawn as ocean is a false statement about the
+     * world, and the worse of the two.
      *
      * So the neutral land colour goes underneath those countries, and the
      * ground reads as land with nothing known about it -- which is what it is.
-     * It deliberately carries no data colour: an unmapped stretch of Durazno
-     * must not borrow its department's figure, which would invent a
-     * measurement for a unit that does not exist.
+     * It deliberately carries no data colour: ground in no unit must not
+     * borrow the level above's figure.
      *
      * Filtered to the countries the build declares, so nothing else changes.
      * The first-order geometry is the source because that is the level which
@@ -258,7 +272,7 @@ window.WorldMap = (function () {
         paint: {
           "line-color": boundary,
           "line-width": ["interpolate", ["linear"], ["zoom"], 0, 0.3, 6, 0.6, 12, 1],
-          "line-opacity": 0.9,
+          "line-opacity": lineOpacity(level),
         },
       });
       layers.push({

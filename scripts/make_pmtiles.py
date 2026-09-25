@@ -327,11 +327,17 @@ def main() -> int:
                     default='<a href="https://www.geoboundaries.org/">geoBoundaries</a> CC BY 4.0')
     ap.add_argument("--jobs", type=int, default=1,
                     help="tile this many zoom levels in parallel (forked workers)")
+    ap.add_argument("--extra", type=Path, action="append", default=[],
+                    help="GeoJSON whose features join the layer (drawn remainders)")
     ap.add_argument("-o", "--out", type=Path, required=True)
     args = ap.parse_args()
 
     log(f"make_pmtiles: {args.source.name} -> {args.out.name} (z{args.minzoom}-{args.maxzoom})")
     features = read_features(args.source, args.source_layer, args.properties)
+    for extra in args.extra:
+        added = read_features(extra, None, args.properties)
+        log(f"  + {len(added)} features from {extra.name}")
+        features.extend(added)
     log(f"  {len(features)} features")
     tiles = build_tiles(features, args.layer, args.minzoom, args.maxzoom,
                         args.min_area_px, jobs=args.jobs)

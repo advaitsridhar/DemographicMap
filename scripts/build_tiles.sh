@@ -54,16 +54,25 @@ build_with_tippecanoe() {
     --simplification=4 --detect-shared-borders \
     --attribution="$ATTRIBUTION" \
     --force --output="${dest%.pmtiles}.mbtiles" \
-    "$geojson"
+    "$geojson" $(extra_inputs "$level")
   pmtiles convert "${dest%.pmtiles}.mbtiles" "$dest"
   rm -f "${dest%.pmtiles}.mbtiles"
 }
 
+# Ground a second level leaves out, drawn as units of its own
+# (scripts/make_remainders.py); it joins the admin2 layer on either path.
+REMAINDERS="$ROOT/data/processed/admin2_remainders.geojson"
+extra_inputs() {
+  if [ "$1" = admin2 ] && [ -f "$REMAINDERS" ]; then echo "$REMAINDERS"; fi
+}
+
 build_with_python() {
-  local level="$1" src="$2" minz="$3" maxz="$4" dest="$5"
+  local level="$1" src="$2" minz="$3" maxz="$4" dest="$5" extra
+  local args=()
+  for extra in $(extra_inputs "$level"); do args+=(--extra "$extra"); done
   python3 "$ROOT/scripts/make_pmtiles.py" "$src" \
     --layer "$level" --minzoom "$minz" --maxzoom "$maxz" \
-    --jobs "$JOBS" --attribution "$ATTRIBUTION" -o "$dest"
+    --jobs "$JOBS" --attribution "$ATTRIBUTION" ${args[@]+"${args[@]}"} -o "$dest"
 }
 
 levels=("$@")
