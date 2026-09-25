@@ -111,8 +111,22 @@ def site_urls() -> list[str]:
     return out
 
 
+def candidate_urls(template: str) -> list[str]:
+    """Every country's shard at both levels under another naming scheme."""
+    codes = sorted({f.name.split(".")[0] for f in (ROOT / "site" / "data" / "admin1").glob("*.json")})
+    return [SITE + "data/" + template.format(level=level, iso=iso) + "?v=0123456789ab"
+            for level in ("admin1", "admin2") for iso in codes]
+
+
 def main() -> int:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--template", action="append", default=[],
+                    help="test shard names under this scheme too, e.g. '{level}/{iso}.units.json'")
+    args = ap.parse_args()
     urls = site_urls()
+    for template in args.template:
+        urls += candidate_urls(template)
     haystack = "\n".join(urls).lower()
     print(f"{len(urls)} site files")
     found = 0
