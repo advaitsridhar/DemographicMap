@@ -283,6 +283,9 @@ ADAPTER_FILES = [
     # After Eurostat, which carries no ethnicity or religion for Romania and
     # says so in a generic sentence; this is the census itself.
     "romania_county.json",
+    # Every commune's, town's and city's 2021 ethnicity and religion, as
+    # Romanian Wikipedia charts the INS tables, bound by Wikidata item.
+    "romania_uat.json",
     "india_state.json", "india_district.json",
     # After the C-01 files: mother tongue is the one field these add, and a
     # later file never overwrites an earlier real value with a gap marker.
