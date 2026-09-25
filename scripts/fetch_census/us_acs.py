@@ -799,6 +799,11 @@ def bind_by_fips(records: list[dict[str, Any]]) -> int:
         if entry and entry.get("level") == "admin2":
             r.update(match_by="shape_id", shape_id=entry["shape_id"], name=entry["name"])
             bound += 1
+        elif r.get("parent_name") and r["name"].endswith(f", {r['parent_name']}"):
+            # The state is already the parent. Left in the name, it made
+            # "Manassas Park city, Virginia" a longer form of both Manassas and
+            # Manassas Park, and it matched neither.
+            r["name"] = r["name"][: -len(r["parent_name"]) - 2]
     return bound
 
 
