@@ -62,9 +62,18 @@ URL = "https://cosit.gov.iq/documents/AAS2024/02.pdf"
 # which sub-district lies in which of the 101 districts.
 GAZETTEER = ("https://data.humdata.org/dataset/488bb3cd-3ce9-49d3-862a-3ce7975c63e1/"
              "resource/bde103b3-dc51-4e7b-9fd2-e38fa5600dc6/download/irq_admin_boundaries.xlsx")
+# OCHA's populated places (CC BY-IGO), each P-coded to the sub-district and
+# district of the boundaries the map draws: where a town the census names a
+# district or sub-district after lies, when OCHA's gazetteer has no
+# sub-district of that name.
+PLACES = ("https://data.humdata.org/dataset/93170987-276d-4526-9e3d-c982759d8eba/"
+          "resource/cf461e2e-4ae2-439d-a6c6-ec0c5e2f5bad/download/"
+          "iraq-populated-places-2021-p-coded.xlsx")
+PLACE_COLUMNS = ("PLACE_EN", "PLACE_AR", "PLACE_ALT", "ADM1_EN", "ADM2_EN", "ADM3_EN")
 ROOT = Path(__file__).resolve().parent.parent.parent
 DUMP = ROOT / "data" / "raw" / "iraq" / "aas2024_table11.txt"
 GAZ_DUMP = ROOT / "data" / "raw" / "iraq" / "ocha_admin3.txt"
+PLACES_DUMP = ROOT / "data" / "raw" / "iraq" / "ocha_places.txt"
 OUT = PROCESSED / "iraq_census.json"
 YEAR = 2024
 NATIONAL = 46_118_793
@@ -310,7 +319,8 @@ def alike(a: str, b: str) -> bool:
                                          and SequenceMatcher(None, a, b).ratio() >= ALIKE))
 
 
-def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]]) -> dict[str, Any]:
+def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
+              places: list[dict[str, str]] | None = None) -> dict[str, Any]:
     """Each map district's and map governorate's census count, where it can be known.
 
     Every sub-district the census counts is put on one of the map's districts:
@@ -582,12 +592,41 @@ def gazetteer_rows(blob: bytes) -> list[list[str]]:
     return out
 
 
+def place_rows(blob: bytes) -> list[list[str]]:
+    """The master sheet's places, only the columns placing needs."""
+    import io
+
+    import openpyxl
+    book = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
+    sheet = next((ws for ws in book.worksheets if "master" in ws.title.lower()),
+                 book.worksheets[-1])
+    rows = sheet.iter_rows(values_only=True)
+    header = [str(c or "").strip() for c in next(rows)]
+    at = [header.index(c) for c in PLACE_COLUMNS]
+    out = [list(PLACE_COLUMNS)]
+    for row in rows:
+        cells = ["" if row[i] is None else " ".join(str(row[i]).split()) for i in at]
+        # The second header row carries HXL tags, not a place.
+        if cells[0] and not cells[0].startswith("#"):
+            out.append(cells)
+    log(f"  {PLACES}: {len(out) - 1:,} places")
+    return out
+
+
+def read_places(text: str) -> list[dict[str, str]]:
+    lines = [line for line in (text or "").split("\n") if line]
+    if not lines:
+        return []
+    header = lines[0].split("\t")
+    return [dict(zip(header, line.split("\t"))) for line in lines[1:]]
+
+
 def table_pages(text: str) -> list[str]:
     """The pages of Table 11/2: those whose header names a nahiya."""
     return [page for page in text.split(PAGE_BREAK) if "Nahiya" in page]
 
 
-def build(text: str, gazetteer_text: str) -> list[dict[str, Any]]:
+def build(text: str, gazetteer_text: str, places_text: str = "") -> list[dict[str, Any]]:
     table = parse(text)
     govs = table["governorates"]
     bad = {g: (v, table["sums"][g]) for g, v in govs.items() if table["sums"][g] != v}
@@ -597,7 +636,7 @@ def build(text: str, gazetteer_text: str) -> list[dict[str, Any]]:
     if len(govs) != len(GOVERNORATE) or sum(govs.values()) != NATIONAL or bad:
         raise SystemExit(f"the table does not add up (governorates {sorted(govs)}, "
                          f"mismatched {bad}); nothing written")
-    result = crosswalk(table, read_gazetteer(gazetteer_text))
+    result = crosswalk(table, read_gazetteer(gazetteer_text), read_places(places_text))
     mapped = result["districts"]
     for line in result["notes"]:
         log(f"  {line}")
@@ -650,18 +689,22 @@ def main() -> int:
     if args.offline:
         text = DUMP.read_text(encoding="utf-8")
         gazetteer = GAZ_DUMP.read_text(encoding="utf-8")
+        places = PLACES_DUMP.read_text(encoding="utf-8") if PLACES_DUMP.exists() else ""
     else:
         blob = fetch_blob(URL)
         log(f"  {URL}: {len(blob):,} bytes")
         text = PAGE_BREAK.join(table_pages(laid_out(blob)))
         gazetteer = "\n".join("\t".join(r) for r in gazetteer_rows(fetch_blob(GAZETTEER)))
+        places = "\n".join("\t".join(r) for r in place_rows(fetch_blob(PLACES)))
         if args.dump:
             DUMP.parent.mkdir(parents=True, exist_ok=True)
             DUMP.write_text(text, encoding="utf-8")
             GAZ_DUMP.write_text(gazetteer, encoding="utf-8")
-            log(f"  wrote {DUMP.relative_to(ROOT)} and {GAZ_DUMP.relative_to(ROOT)}")
+            PLACES_DUMP.write_text(places + "\n", encoding="utf-8")
+            log(f"  wrote {DUMP.relative_to(ROOT)}, {GAZ_DUMP.relative_to(ROOT)} "
+                f"and {PLACES_DUMP.relative_to(ROOT)}")
             return 0
-    write_json(OUT, build(text, gazetteer))
+    write_json(OUT, build(text, gazetteer, places))
     return 0
 
 
