@@ -125,8 +125,15 @@ def bind_by_outline(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
                 dropped += 1
                 continue
             rest.append(rec)
-        elif entry.get("superseded_by") or entry.get("refused"):
+        elif entry.get("refused"):
             dropped += 1
+            continue
+        elif entry.get("superseded_by"):
+            # Its outline is spoken for by the finer region; at its own
+            # level it may still be a unit the map draws differently
+            # (Brussels-Capital, whose two polygons overlap by 0.41), so it
+            # goes on to its name.
+            rest.append(rec)
             continue
         else:
             for twin in entry.get("also") or []:
