@@ -117,6 +117,16 @@ GOVERNORATE = {
     "31": "Al-Qadissiya", "32": "Al-Muthanna", "33": "Thi Qar", "34": "Maysan",
     "35": "Al-Basrah",
 }
+# The map's first level spells seven governorates otherwise than OCHA's
+# second-level file does; without these they took no census figure at all,
+# and kept Wikidata's of 2011-2015 or the census's own totals as Wikipedia
+# copies them, which count ground the map draws in another governorate.
+MAP_NAMES = {
+    "Duhok": ["Dohuk", "Dahuk"], "Ninewa": ["Ninawa", "Nineveh"],
+    "Al-Sulaymaniyah": ["Al-Sulaimaniyah", "Sulaymaniyah"], "Al-Najaf": ["An-Najaf", "Najaf"],
+    "Thi Qar": ["Dhi Qar"], "Kerbala": ["Karbala"], "Wassit": ["Wasit"],
+    "Al-Qadissiya": ["Al-Qadisiyah", "Qadisiyah"], "Salah Al-Din": ["Salah al-Din"],
+}
 # How alike two romanisations must be, inside one governorate, to be one name;
 # below SHORT letters they must be the same: "Suran" and "Shwan" are 0.89 alike.
 ALIKE = 0.85
@@ -893,6 +903,7 @@ def build(text: str, gazetteer_text: str, places_text: str = "") -> list[dict[st
                 population["note"] = entry["note"]
         rows.append(record(f"IRQ-CEN-{codes[gov]}", gov, level="admin1", parent="IRQ",
                            country="IRQ", population=population,
+                           aliases=MAP_NAMES.get(gov),
                            sources=cite if entry["value"] is not None else None))
     for entry in mapped.values():
         if entry["value"] is None:

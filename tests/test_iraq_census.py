@@ -123,6 +123,14 @@ class TheCrosswalk(unittest.TestCase):
 
 
 class Names(unittest.TestCase):
+    def test_every_governorate_answers_to_the_map_s_spelling(self):
+        # The map's first level: Dohuk, Ninawa, Al-Sulaimaniyah, An-Najaf,
+        # Dhi Qar, Karbala, Wasit, Al-Qadisiyah.
+        spelt = {a for names in ic.MAP_NAMES.values() for a in names}
+        for name in ("Dohuk", "Ninawa", "Al-Sulaimaniyah", "An-Najaf", "Dhi Qar",
+                     "Karbala", "Wasit", "Al-Qadisiyah"):
+            self.assertIn(name, spelt)
+
     def test_reversed_arabic_is_read_back_in_order(self):
         self.assertEqual(ic.arabic("كوهد"), "دهوك")
 
