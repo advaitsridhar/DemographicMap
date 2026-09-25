@@ -1,1 +1,28 @@
-CHN: populations for 1003 of 1552 bound items
+eurostat: demo_r_pjangrp3 (nuts2)
+  EFTA: no ISO3 for Eurostat country code 'EF'; skipped
+  EU28: no ISO3 for Eurostat country code 'EU'; skipped
+  127 regions placed by outline; 37 refused or superseded by it; 177 left to their names
+  TUR: Tekirdağ, Edirne, Kırklareli left out -- it holds Edirne, Kırklareli, Tekirdağ and more
+  TUR: Balıkesir, Çanakkale left out -- it holds Balıkesir, Çanakkale and more
+  TUR: Aydın, Denizli, Muğla left out -- it holds Aydın, Denizli, Muğla and more
+  TUR: Manisa, Afyonkarahisar, Kütahya, Uşak left out -- it holds Afyonkarahisar, Kütahya, Manisa, Uşak and more
+  TUR: Bursa, Eskişehir, Bilecik left out -- it holds Bilecik, Bursa, Eskişehir and more
+  TUR: Kocaeli, Sakarya, Düzce, Bolu, Yalova left out -- it holds Bolu, Düzce, Kocaeli, Sakarya, Yalova and more
+  TUR: Antalya, Isparta, Burdur left out -- it holds Antalya, Burdur, Isparta and more
+  TUR: Adana, Mersin left out -- it holds Adana, Mersin and more
+  TUR: Hatay, Kahramanmaraş, Osmaniye left out -- it holds Hatay, Kahramanmaraş, Osmaniye and more
+  TUR: Kırıkkale, Aksaray, Niğde, Nevşehir, Kırşehir left out -- it holds Aksaray, Kırıkkale, Kırşehir, Nevşehir, Niğde and more
+  TUR: Kayseri, Sivas, Yozgat left out -- it holds Kayseri, Sivas, Yozgat and more
+  TUR: Zonguldak, Karabük, Bartın left out -- it holds Bartın, Karabük, Zonguldak and more
+  TUR: Kastamonu, Çankırı, Sinop left out -- it holds Kastamonu, Sinop, Çankırı and more
+  TUR: Samsun, Tokat, Çorum, Amasya left out -- it holds Amasya, Samsun, Tokat, Çorum and more
+  TUR: Trabzon, Ordu, Giresun, Rize, Artvin, Gümüşhane left out -- it holds Artvin, Giresun, Gümüşhane, Ordu, Rize, Trabzon and more
+  TUR: Erzurum, Erzincan, Bayburt left out -- it holds Bayburt, Erzincan, Erzurum and more
+  TUR: Ağrı, Kars, Iğdır, Ardahan left out -- it holds Ardahan, Ağrı, Iğdır, Kars and more
+  TUR: Malatya, Elazığ, Bingöl, Tunceli left out -- it holds Bingöl, Elazığ, Malatya, Tunceli and more
+  TUR: Van, Muş, Bitlis, Hakkari left out -- it holds Bitlis, Hakkari, Muş, Van and more
+  TUR: Gaziantep, Adıyaman, Kilis left out -- it holds Adıyaman, Gaziantep, Kilis and more
+  TUR: Şanlıurfa, Diyarbakır left out -- it holds Diyarbakır, Şanlıurfa and more
+  TUR: Mardin, Batman, Şırnak, Siirt left out -- it holds Batman, Mardin, Siirt, Şırnak and more
+  wrote data/processed/eurostat_nuts2.json (394 kB)
+  282 nuts2 records
