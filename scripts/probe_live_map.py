@@ -13,7 +13,8 @@ warning on the way.
 Read-only; the output is the log.
 
 Usage:
-    python -m scripts.probe_live_map --iso3 GTM --center -90.3,15.2
+    python -m scripts.probe_live_map --iso3 GTM --center=-90.3,15.2
+    python -m scripts.probe_live_map --engines firefox --pin 2 --wait 120
 """
 from __future__ import annotations
 
@@ -30,7 +31,7 @@ SITE = "https://advaitsridhar.github.io/DemographicMap/"
 PROBE = r"""
 const pw = require(process.env.PW_MODULE);
 (async () => {
-  const [engine, site, iso3, lon, lat, headed] = process.argv.slice(2);
+  const [engine, site, iso3, lon, lat, headed, pin, wait] = process.argv.slice(2);
   // Headless Firefox on a runner has no GL driver it will use; software
   // WebGL is forced on, and a headed run under xvfb is the fallback.
   const launch = { headless: headed !== "headed" };
@@ -51,6 +52,27 @@ const pw = require(process.env.PW_MODULE);
     out.userAgent = await page.evaluate(() => navigator.userAgent);
     out.webgl = await page.evaluate(() => { const c = document.createElement("canvas"); return !!(c.getContext("webgl2") || c.getContext("webgl")); });
     await page.waitForFunction(() => window.WorldMap && window.WorldMap.getMap() && window.WorldMap.getMap().loaded(), null, { timeout: 90000 });
+    if (pin !== "none") {
+      // The reader's own setup: a level pinned from the sidebar, which asks
+      // for every country's shard in view, and the loader's own errors.
+      await page.evaluate(() => {
+        window.__loadErrors = [];
+        window.DataStore.on((e) => { if (e.error) window.__loadErrors.push(`${e.type}/${e.country}: ${e.error}`); });
+      });
+      await page.click(`#detail-options [data-value="${pin}"]`);
+      await page.evaluate(([x, y]) => window.WorldMap.getMap().jumpTo({ center: [x, y], zoom: 4.3 }), [+lon, +lat]);
+      const started = Date.now();
+      await page.waitForTimeout(+wait * 1000);
+      out.pinned = await page.evaluate((iso3) => ({
+        loaded: window.DataStore.isLoaded(iso3, 2),
+        errors: window.__loadErrors.slice(0, 20),
+        level2: window.DataStore.atLevel ? window.DataStore.atLevel(2).length : null,
+        status: [...document.querySelectorAll("*")].map((e) => e.childElementCount ? "" : (e.textContent || "").trim())
+          .filter((t) => /loaded|Couldn't|retry/.test(t)).slice(0, 4),
+      }), iso3);
+      out.pinned.seconds = Math.round((Date.now() - started) / 1000);
+      await page.screenshot({ path: `live_${engine}_pinned.png` });
+    }
     for (const zoom of [5.5, 8.5]) {
       await page.evaluate(([x, y, z]) => window.WorldMap.getMap().jumpTo({ center: [x, y], zoom: z }), [+lon, +lat, zoom]);
       await page.waitForTimeout(12000);
@@ -109,6 +131,8 @@ def main() -> int:
     ap.add_argument("--engines", default="chromium,firefox,webkit")
     ap.add_argument("--headed", action="store_true",
                     help="run the browsers headed under xvfb, for real GL")
+    ap.add_argument("--pin", default="none", help="a detail level to pin first (1 or 2)")
+    ap.add_argument("--wait", type=int, default=90, help="seconds to let a pinned level load")
     args = ap.parse_args()
     lon, lat = args.center.split(",")
     work = Path(tempfile.mkdtemp(prefix="livemap-"))
@@ -124,10 +148,10 @@ def main() -> int:
     for engine in engines:
         print(f"=== {engine} ===", flush=True)
         cmd = ["node", "probe.js", engine, args.site, args.iso3, lon, lat,
-               "headed" if args.headed else "headless"]
+               "headed" if args.headed else "headless", args.pin, str(args.wait)]
         if args.headed:
             cmd = ["xvfb-run", "-a", "-s", "-screen 0 1400x900x24"] + cmd
-        result = subprocess.run(cmd, cwd=work, env=env, capture_output=True, text=True, timeout=600)
+        result = subprocess.run(cmd, cwd=work, env=env, capture_output=True, text=True, timeout=900)
         print(result.stdout.strip() or "(no output)")
         if result.returncode:
             print(result.stderr.strip()[-2000:])
