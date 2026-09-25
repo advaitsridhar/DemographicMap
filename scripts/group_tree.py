@@ -934,7 +934,10 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
     ),
     "Melanesian peoples": ("Fijian", "Ni-Vanuatu", "Papuan", "Solomon Islander",
                            "Kanak", "New Caledonian"),
-    "Micronesian peoples": ("Chamorro", "Palauan", "Marshallese", "Chuukese",
+    # Carolinian is a people of the Caroline Islands and the Northern
+    # Marianas (Refaluwasch), in Palau's census and the Marianas' alike.
+    "Micronesian peoples": ("Chamorro", "Guamanian", "Carolinian",
+                            "Palauan", "Marshallese", "Chuukese",
                             "Pohnpeian", "Yapese", "Kosraean", "Nauruan",
                             "i-Kiribati", "Gilbertese"),
     # -- the Americas
@@ -1930,7 +1933,7 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # And the same answer written as an adjective.
         "Andorran", "Chilean", "Colombian", "Dominican", "Honduran",
         "Jamaican", "Kosovan", "Nicaraguan", "Saban", "Surinamese",
-        "Venezuelan", "Haitian", "Pitcairn Islander", "Carolinian",
+        "Venezuelan", "Haitian", "Pitcairn Islander",
         "Yap outer islanders",
     ),
     # Mauritius counts four "communities" defined by religion and origin
@@ -1999,7 +2002,7 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # schedule lists beside the Santal the tree already carries. Saontal is
     # the Bureau's spelling of that same people.
     "Munda peoples": ("Saontal", "Mahali", "Kora", "Turi", "Kol", "Shobor"),
-    "Polynesian peoples": ("Futunian",),
+    "Polynesian peoples": ("Futunian", "Native Hawaiian"),
     "Aboriginal and Torres Strait Islander peoples": ("Australian Aboriginal",),
     "Hispanic or Latino (census category)": (
         "Latino",
@@ -2017,9 +2020,15 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     "Indigenous (census category)": ("Indigenous, multiple or other responses",),
     "Khoisan peoples": ("Sarwa", "Damara", "Sandawe"),
     "Indigenous peoples of Mesoamerica and the Caribbean": ("Xinca",),
-    "Afro-descendant peoples of the Americas": ("Afroecuadorian",
-                                                "Afro-Ecuadorian",
-                                                "Afro-Mexican or Afro-descendant"),
+    "Afro-descendant peoples of the Americas": (
+        "Afroecuadorian", "Afro-Ecuadorian", "Afro-Mexican or Afro-descendant",
+        # The U.S. Virgin Islands' census names these under Black or African
+        # American: Caribbean. By name alone "West Indian" read as Indian and
+        # "British Virgin Islander" as British.
+        "U.S. Virgin Islander", "West Indian", "Other Caribbean", "Anguillan",
+        "Antiguan and Barbudan", "British Virgin Islander", "Kittian and Nevisian",
+        "St. Lucian", "Trinidadian and Tobagonian", "Dominica Islander",
+    ),
     # Answers that say the person is of more than one ancestry. They are
     # not a refusal to answer and they are not a people, which is what the
     # mixed category is for.
@@ -2038,12 +2047,15 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # from, which is why the compound rule refuses these and the census's
     # own grouping has to be stated.
     "Black or African (census category)": (
+        # The Island Areas' census lines under Black or African American.
+        "African American", "Other Black or African American",
         "African-American or African descent",
         "African descent or African-American",
         "African, African Scottish or African British",
         "Black, Black Scottish or Black British",
     ),
     "Asian (census category)": (
+        "Asian Indian",
         "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "Chinese, Chinese Scottish or Chinese British",
         "Indian, Indian Scottish or Indian British",
@@ -2062,6 +2074,7 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "other Nordic peoples", "other Crown Dependencies",
     ),
     "Pacific Islander (census category)": (
+        "Other Native Hawaiian and Other Pacific Islander",
         "Native Hawaiian and other Pacific Islander",
         "Native Hawaiian or other Pacific Islander",
     ),
