@@ -198,7 +198,8 @@ def tables(package: dict[str, Any]) -> list[dict[str, Any]]:
         for sheet in book.worksheets:
             if "method" in sheet.title.lower():
                 for row in sheet.iter_rows(values_only=True, max_row=20):
-                    if row and str(row[0] or "").strip().lower().startswith("methodology used"):
+                    if (row and len(row) > 1
+                            and str(row[0] or "").strip().lower().startswith("methodology used")):
                         method = str(row[1] or "").strip()
         for sheet in book.worksheets:
             found = TABLE_LEVEL.search(sheet.title.lower().replace(" ", ""))
