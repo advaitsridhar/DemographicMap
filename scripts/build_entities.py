@@ -4960,6 +4960,13 @@ def main() -> int:
     # record whose id *is* the code -- otherwise a dependency overwrites its
     # parent and the country panel shows the wrong place.
     country_profiles = read_json(PROCESSED / "admin0.json", [])
+    # The Factbook's words for a census's own categories (Brazil's "mixed" is
+    # its pardo), applied as the adapter applies them, so a file fetched
+    # before the rule was written reads the same as one fetched after.
+    from fetch_factbook import census_names
+    for profile in country_profiles:
+        profile["ethnicity"] = census_names((profile.get("codes") or {}).get("iso3"),
+                                            profile.get("ethnicity"))
     countries = primary_country_profiles(country_profiles)
     cities = read_json(PROCESSED / "cities.json", {"by_country": {}, "by_admin1": {}})
     adapters = load_adapters()
