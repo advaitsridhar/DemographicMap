@@ -137,8 +137,12 @@ def figures(row: dict[str, str], total: str, race: dict[str, str],
                       if men is not None and women else gap(NOT_AVAILABLE)),
     }
     if people:
+        # A basis of its own, so the country's sum -- the ACS's race and
+        # Hispanic-origin categories -- leaves these out and names them rather
+        # than listing Chamorro at 0.0% beside "White (non-Hispanic)".
         out.update(ethnicity=shares({k: v for k, v in counts.items() if v}, total=people),
-                   ethnicity_year=YEAR, ethnicity_note=NOTE.format(area=area))
+                   ethnicity_year=YEAR, ethnicity_note=NOTE.format(area=area),
+                   ethnicity_basis="race, as the Island Areas' census asks it")
     return out
 
 
