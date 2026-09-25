@@ -1,4 +1,4 @@
-"""Guatemala's 2018 census: pueblo and mother tongue by department and municipio.
+"""Guatemala's 2018 census: pueblo, mother tongue, median age and sex ratio by department and municipio.
 
 INE publishes the whole 2018 enumeration as one database -- a row for each of
 the 14,901,286 people counted -- on its census portal. Nothing else carries
@@ -15,6 +15,10 @@ The two questions, in the words of INE's own data dictionary:
 * PCP15, "Cual es el idioma en el que aprendio a hablar?" -- the language a
   person learned to speak in: 22 Mayan languages, Xinka, Garifuna, Spanish,
   English, sign language, another language, or none. Written as language.
+* PCP6 and PCP7, sex and age in completed years. Written as the sex ratio
+  (men per 1,000 women) and the median age, computed from the single-year
+  counts -- INE's database gives the ages, not the median, and the note says
+  it was computed. Which code is a man is read from the dictionary's labels.
 
 Labels are read from the dictionary in the archive, not typed here: a code
 whose label is not one this file knows stops the run.
@@ -52,7 +56,7 @@ from collections.abc import Iterable
 from pathlib import Path
 from typing import Any
 
-from ._shared import PROCESSED, log, record, shares, write_json
+from ._shared import PROCESSED, log, measure, record, shares, write_json
 
 URL = "https://censo2018.ine.gob.gt/archivos/bdd/db_csv_.zip"
 PAGE = "https://censo2018.ine.gob.gt/"
@@ -265,15 +269,22 @@ def count(rows: Iterable[list[str]], header: list[str]) -> dict[int, dict[str, A
     """People by municipio: in all, by pueblo, by first language, and who went unasked."""
     at = {name.lstrip("\ufeff"): i for i, name in enumerate(header)}
     muni, age, pueblo, idioma = at["MUNICIPIO"], at["PCP7"], at["PCP12"], at["PCP15"]
+    sex = at["PCP6"]
     out: dict[int, dict[str, Any]] = {}
     for row in rows:
         code = int(row[muni])
         unit = out.get(code)
         if unit is None:
             unit = out[code] = {"people": 0, "pueblo": Counter(), "idioma": Counter(),
-                                "unasked": 0, "unasked_under_4": 0, "answered_under_4": 0}
+                                "unasked": 0, "unasked_under_4": 0, "answered_under_4": 0,
+                                "ages": Counter(), "sex": Counter()}
         unit["people"] += 1
-        young = row[age].strip().isdigit() and int(row[age]) < 4
+        years = row[age].strip()
+        if years.isdigit():
+            unit["ages"][int(years)] += 1
+        if row[sex].strip():
+            unit["sex"][int(row[sex])] += 1
+        young = years.isdigit() and int(years) < 4
         if row[pueblo].strip():
             unit["pueblo"][int(row[pueblo])] += 1
         if row[idioma].strip():
@@ -285,8 +296,34 @@ def count(rows: Iterable[list[str]], header: list[str]) -> dict[int, dict[str, A
     return out
 
 
+def median_age(ages: Counter) -> float | None:
+    """The age half the people are younger than, interpolated within its year."""
+    total = sum(ages.values())
+    if total <= 0:
+        return None
+    half, cum = total / 2, 0.0
+    for age in sorted(ages):
+        n = ages[age]
+        if cum + n >= half and n > 0:
+            return round(age + (half - cum) / n, 1)
+        cum += n
+    return None
+
+
+def sex_codes(labels: dict[str, dict[int, str]]) -> tuple[int, int]:
+    """(man, woman) as INE's dictionary labels PCP6."""
+    codes = {spoken(v).lower(): k for k, v in labels.get("PCP6", {}).items()}
+    man = next((k for v, k in codes.items() if v.startswith("hombre")), None)
+    woman = next((k for v, k in codes.items() if v.startswith("mujer")), None)
+    if man is None or woman is None:
+        raise SystemExit(f"PCP6: INE's dictionary labels it {labels.get('PCP6')}, not "
+                         "Hombre and Mujer")
+    return man, woman
+
+
 def build(counts: dict[int, dict[str, Any]], municipios: dict[int, tuple[str, int, str]],
-          pueblos: dict[int, str], idiomas: dict[int, str]) -> list[dict[str, Any]]:
+          pueblos: dict[int, str], idiomas: dict[int, str],
+          sexes: tuple[int, int]) -> list[dict[str, Any]]:
     """Records for the 22 departments and every municipio, after the totals are checked."""
     by_dept: Counter = Counter()
     for code, unit in counts.items():
@@ -312,6 +349,12 @@ def build(counts: dict[int, dict[str, Any]], municipios: dict[int, tuple[str, in
     log(f"  PCP15 blank for {unasked:,} people, {under:,} of them under four; "
         f"{young_answers:,} under four answered it")
     four_plus = unasked == under and young_answers == 0
+    aged = sum(sum(u["ages"].values()) for u in counts.values())
+    sexed = sum(sum(u["sex"].values()) for u in counts.values())
+    people = sum(u["people"] for u in counts.values())
+    if aged != people or sexed != people:
+        raise SystemExit(f"of {people:,} people, {aged:,} have an age and {sexed:,} a sex")
+    man, woman = sexes
 
     def rows_for(unit: dict[str, Any]) -> dict[str, Any]:
         eth = Counter({pueblos[c]: n for c, n in unit["pueblo"].items()})
@@ -320,7 +363,15 @@ def build(counts: dict[int, dict[str, Any]], municipios: dict[int, tuple[str, in
             lang[idiomas[c]] += n
         asked = sum(lang.values())
         people = unit["people"]
+        median = median_age(unit["ages"])
+        men, women = unit["sex"][man], unit["sex"][woman]
         return {
+            "median_age": measure(median, unit="years", year=YEAR, source=SOURCE),
+            "median_age_note": ("Computed from the single-year ages of everyone INE's 2018 "
+                                "person database enumerates here; INE publishes the ages, "
+                                "not the median."),
+            "sex_ratio": (measure(round(1000 * men / women), unit="males_per_1000_females",
+                                  year=YEAR, source=SOURCE) if women else None),
             "ethnicity": shares(eth),
             "ethnicity_year": YEAR,
             "ethnicity_note": (
@@ -342,7 +393,8 @@ def build(counts: dict[int, dict[str, Any]], municipios: dict[int, tuple[str, in
                    f"of the {asked:,} of {people:,} people enumerated here who "
                    "answered it")
                 + ". Counted from INE's 2018 person database."),
-            "sources": [{"field": "ethnicity/language", "name": SOURCE, "url": PAGE}],
+            "sources": [{"field": "ethnicity/language/median age/sex ratio", "name": SOURCE,
+                         "url": PAGE}],
         }
 
     out: list[dict[str, Any]] = []
@@ -358,6 +410,8 @@ def build(counts: dict[int, dict[str, Any]], municipios: dict[int, tuple[str, in
         whole["people"] += unit["people"]
         whole["pueblo"].update(unit["pueblo"])
         whole["idioma"].update(unit["idioma"])
+        whole.setdefault("ages", Counter()).update(unit["ages"])
+        whole.setdefault("sex", Counter()).update(unit["sex"])
     for dept, whole in sorted(departments.items()):
         out.append(record(f"GTM-INE-D{dept}", whole["name"], level="admin1",
                           parent="GTM", country="GTM", **rows_for(whole)))
@@ -387,6 +441,7 @@ def main() -> None:
             labels, municipios = read_dictionary(book)
             pueblos = translate(labels["PCP12"], PUEBLO, "PCP12")
             idiomas = translate(labels["PCP15"], IDIOMA, "PCP15")
+            sexes = sex_codes(labels)
             log(f"  dictionary: {len(municipios)} municipios, {len(pueblos)} pueblos, "
                 f"{len(idiomas)} languages")
             info = next(i for i in archive.infolist() if i.filename.endswith("PERSONA - BDP.csv"))
@@ -394,7 +449,7 @@ def main() -> None:
                 reader = csv.reader(io.TextIOWrapper(raw, encoding="utf-8", newline=""))
                 header = next(reader)
                 counts = count(reader, header)
-    rows = build(counts, municipios, pueblos, idiomas)
+    rows = build(counts, municipios, pueblos, idiomas, sexes)
     people = sum(u["people"] for u in counts.values())
     log(f"  {people:,} people in {len(counts)} municipios and {len(DEPARTMENTS)} departments")
     write_json(OUT, rows)

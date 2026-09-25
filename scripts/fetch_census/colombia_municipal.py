@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Colombia: median age and sex ratio for every municipality (DANE, 2018).
+"""Colombia: median age and sex ratio for every municipality and department (DANE, 2018).
 
 DANE's municipal population series built on the 2018 census (CNPV 2018),
 ``PPED-AreaSexoEdadMun-2018-2042_VP.xlsx``, gives every municipality's
@@ -12,6 +12,10 @@ municipality ("Total" area):
   half the population is younger, interpolated within that year of age.
   DANE's workbook publishes the counts, not the median, so the record says
   the median is computed from them.
+
+A department's figures are its municipalities' counts summed age by age, and
+its median is computed from those sums -- never averaged from the
+municipalities' medians, which would weight a town of 2,000 like Cali.
 
 The file is read against itself before anything is written: every
 municipality's men and women must add to its total, and the national sums
@@ -80,6 +84,7 @@ def main() -> int:
                          f"{len(ages['Mujeres'])} female age columns, not 101 each")
     records: list[dict[str, Any]] = []
     men_sum = women_sum = 0
+    departments: dict[str, dict[str, Any]] = {}
     for row in rows:
         if not row or row[col["AÑO"]] != YEAR or str(row[col["ÁREA GEOGRÁFICA"]]).strip() != "Total":
             continue
@@ -91,6 +96,11 @@ def main() -> int:
                              f"not its {men + women} men and women")
         men_sum += men
         women_sum += women
+        dept = departments.setdefault(code[:2], {
+            "name": str(row[col["DPNOM"]]).strip(), "men": 0, "women": 0, "ages": [0] * 101})
+        dept["men"] += men
+        dept["women"] += women
+        dept["ages"] = [a + b for a, b in zip(dept["ages"], by_age)]
         median = median_age(by_age)
         records.append(record(
             f"COL-{code}", str(row[col["DPMP"]]).strip(), level="admin2",
@@ -104,10 +114,28 @@ def main() -> int:
             sources=[{"field": "median age/sex ratio", "name": SOURCE, "url": URL,
                       "license": "DANE open data (attribution)"}],
         ))
+    municipalities = len(records)
+    for code, dept in sorted(departments.items()):
+        median = median_age(dept["ages"])
+        records.append(record(
+            f"COL-{code}", dept["name"], level="admin1", parent="COL", country="COL",
+            codes={"divipola": code},
+            median_age=(measure(median, unit="years", year=YEAR, source=SOURCE)
+                        if median is not None else None),
+            median_age_note=("Computed from DANE's single-year counts by age, summed over "
+                             "the department's municipalities."),
+            sex_ratio=(measure(round(1000 * dept["men"] / dept["women"]),
+                               unit="males_per_1000_females", year=YEAR, source=SOURCE)
+                       if dept["women"] else None),
+            sources=[{"field": "median age/sex ratio", "name": SOURCE, "url": URL,
+                      "license": "DANE open data (attribution)"}],
+        ))
     records = [{k: v for k, v in r.items() if v is not None} for r in records]
-    log(f"  {len(records)} municipalities in {YEAR}; {men_sum:,} men and {women_sum:,} women")
-    if not 1000 <= len(records) <= 1200:
-        raise SystemExit(f"colombia_municipal: {len(records)} municipalities is not Colombia's")
+    log(f"  {municipalities} municipalities and {len(departments)} departments in {YEAR}; "
+        f"{men_sum:,} men and {women_sum:,} women")
+    if not 1000 <= municipalities <= 1200 or len(departments) != 33:
+        raise SystemExit(f"colombia_municipal: {municipalities} municipalities in "
+                         f"{len(departments)} departments is not Colombia")
     write_json(PROCESSED / "colombia_municipality.json", records)
     return 0
 

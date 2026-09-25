@@ -20,6 +20,7 @@ def workbook():
         (),
         ("Etiqueta de los valores",),
         ("Nombre", "Valor", "Etiqueta"),
+        ("PCP6", 1, "Hombre"), (None, 2, "Mujer"),
         ("PCP12", 1, "Maya"), (None, 5, "Ladina  (o)"),
         ("PCP15", 10, "K'iche'"), (None, 25, "Español"), (None, 98, "No habla"),
     ):
@@ -32,16 +33,17 @@ def workbook():
     return book
 
 
-HEADER = ["﻿DEPARTAMENTO", "MUNICIPIO", "PCP7", "PCP12", "PCP15"]
+HEADER = ["﻿DEPARTAMENTO", "MUNICIPIO", "PCP6", "PCP7", "PCP12", "PCP15"]
 
 
-def person(muni, age, pueblo, idioma):
-    return [str(muni // 100), str(muni), str(age), str(pueblo), str(idioma)]
+def person(muni, age, pueblo, idioma, sex=1):
+    return [str(muni // 100), str(muni), str(sex), str(age), str(pueblo), str(idioma)]
 
 
-PEOPLE = ([person(101, 30, 5, 25)] * 6 + [person(101, 2, 5, " ")]
-          + [person(701, 40, 1, 10)] * 3 + [person(701, 20, 5, 25),
-                                           person(701, 1, 1, " ")])
+PEOPLE = ([person(101, 30, 5, 25, 1)] * 3 + [person(101, 30, 5, 25, 2)] * 3
+          + [person(101, 2, 5, " ", 2)]
+          + [person(701, 40, 1, 10)] * 3 + [person(701, 20, 5, 25, 2),
+                                           person(701, 1, 1, " ", 2)])
 
 
 class Dictionary(unittest.TestCase):
@@ -68,13 +70,15 @@ class Dictionary(unittest.TestCase):
 class Counting(unittest.TestCase):
     def setUp(self):
         labels, self.municipios = gt.read_dictionary(workbook())
+        self.sexes = gt.sex_codes(labels)
         self.pueblos = gt.translate(labels["PCP12"], gt.PUEBLO, "PCP12")
         self.idiomas = gt.translate(labels["PCP15"], gt.IDIOMA, "PCP15")
         self.counts = gt.count(iter(PEOPLE), HEADER)
 
     def build(self, departments=None):
         with mock.patch.object(gt, "DEPARTMENTS", departments or {1: 7, 7: 5}):
-            return gt.build(self.counts, self.municipios, self.pueblos, self.idiomas)
+            return gt.build(self.counts, self.municipios, self.pueblos, self.idiomas,
+                            self.sexes)
 
     def unit(self, rows, level, name):
         found = [r for r in rows if r["level"] == level and r["name"] == name]
@@ -104,6 +108,21 @@ class Counting(unittest.TestCase):
         self.assertEqual(guate["language"], [{"group": "Spanish", "pct": 100.0, "count": 6}])
         self.assertIn("aged four and over", guate["language_note"])
         self.assertIn("all 7 people", guate["ethnicity_note"])
+
+    def test_median_age_and_sex_ratio_are_counted(self):
+        rows = self.build()
+        guate = self.unit(rows, "admin2", "Guatemala")
+        # Ages 2 and six of 30: half of seven people is 3.5, the 2.5th of the
+        # six 30-year-olds.
+        self.assertEqual(guate["median_age"]["value"], 30.4)
+        self.assertEqual(guate["sex_ratio"]["value"], 750)
+        solola = self.unit(rows, "admin1", "Sololá")
+        self.assertEqual(solola["median_age"]["value"], 40.2)
+        self.assertEqual(solola["sex_ratio"]["value"], 1500)
+
+    def test_a_dictionary_without_hombre_and_mujer_stops_the_run(self):
+        with self.assertRaises(SystemExit):
+            gt.sex_codes({"PCP6": {1: "Masculino", 2: "Femenino"}})
 
     def test_population_is_left_to_newer_figures(self):
         rows = self.build()
