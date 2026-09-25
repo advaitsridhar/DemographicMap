@@ -135,6 +135,22 @@ SHORT = 6
 # placed by a town only at one of the densest few percent (Al-Hur 34, Soran
 # 21, Al-Mishkhab 15; the village called Haji Awa 3).
 BUILT_UP = 10
+# Districts made since the boundary file was drawn whose own name places them
+# nowhere on it, and where their Arabic Wikipedia article puts their centre:
+# census district -> the map district, and what the article says. Only a
+# single district of the boundary file's, stated, is taken; the grid check
+# still applies to whatever lands there.
+SEATS = {
+    "1318": ("Rania", "ar.wikipedia, حاجیاوة: Hajiawa was a sub-district of Ranya "
+                      "district until it was made a district"),
+    "1304": ("Halabcha", "ar.wikipedia, شوكي، سيد صادق: Sayid Sadiq district lies in "
+                         "Halabja, as the Kurdistan Region divides it; its Serjook "
+                         "sub-district is OCHA's Saruchik, in Sharbazher"),
+    "2406": ("Al-Mahaweel", "ar.wikipedia, جبلة (العراق): Jabala, Kutha's centre, was "
+                            "Al-Mashroo sub-district -- OCHA's, in Al-Mahaweel"),
+    "2212": ("Al-Kaim", "ar.wikipedia, قضاء الرمانة: Al-Obour is Al-Rummaneh district, "
+                        "raised in 2019 from Al-Rummaneh sub-district -- OCHA's, in Al-Kaim"),
+}
 # Sub-districts the census and OCHA spell differently, beyond what the keys
 # fold: the Kurdish and the Arabic name of one place. (map governorate, the
 # census's name's key) -> OCHA's sub-district.
@@ -482,6 +498,8 @@ def crosswalk(table: dict[str, Any], gazetteer: list[dict[str, str]],
         """Where a census district's own name puts it: a map district of
         that name, or the sub-district it was made from."""
         home, far = reach(code[:2])
+        if code in SEATS and SEATS[code][0] in by_gov[home[0]]:
+            return {(home[0], SEATS[code][0])}
         variants = list(names.get(code, {})) or [""]
         for govs, fuzzy in ((home, True), (far, False)):
             found = district_named(code, govs, fuzzy)

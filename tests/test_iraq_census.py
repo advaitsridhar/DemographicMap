@@ -86,14 +86,17 @@ class TheCrosswalk(unittest.TestCase):
 
     def test_a_centre_is_not_carried_by_its_one_sibling(self):
         # Saed Sadiq's Serjook is OCHA's Saruchik in Sharbazher; Sayid Sadiq
-        # town is in Halabja. The district is split between the two.
-        self.assertNotIn("13041", self.placed)
-        self.assertIsNone(self.mapped["Al-Sulaymaniyah/Sharbazher"]["value"])
+        # town is in Halabja. The district is split between the two, each
+        # taking its own sub-district's figure.
+        self.assertEqual(self.placed["13041"], ("Al-Sulaymaniyah", "Halabcha"))
+        self.assertEqual(self.placed["13042"], ("Al-Sulaymaniyah", "Sharbazher"))
 
     @unittest.skipUnless(PLACES.exists(), "OCHA's places not present")
     def test_a_village_does_not_place_a_district_named_like_it(self):
-        # OCHA's only Haji Awa is a village by Sulaymaniyah city.
-        self.assertNotIn("13181", self.placed)
+        # OCHA's only Haji Awa is a village by Sulaymaniyah city; Hajiawa
+        # district goes where its article puts it, not there.
+        self.assertNotEqual(self.placed.get("13181"),
+                            ("Al-Sulaymaniyah", "Al-Sulaymaniyah"))
 
     @unittest.skipUnless(PLACES.exists(), "OCHA's places not present")
     def test_a_built_up_town_places_the_district_named_for_it(self):
@@ -115,6 +118,23 @@ class TheCrosswalk(unittest.TestCase):
     def test_the_grid_is_not_used_where_it_is_wrong_for_the_governorate(self):
         self.assertTrue(any(line.startswith("Duhok:") for line in self.grid_log))
         self.assertIsNotNone(self.mapped["Duhok/Duhok"]["value"])
+
+    def test_a_new_district_is_placed_where_its_article_puts_it(self):
+        # Al-Obour is Al-Rummaneh district, raised from OCHA's Al-Rummaneh
+        # sub-district of Al-Kaim; Kutha's centre was Al-Mashroo, OCHA's,
+        # in Al-Mahaweel; Hajiawa was a sub-district of Ranya.
+        self.assertEqual(self.placed["22121"], ("Al-Anbar", "Al-Kaim"))
+        self.assertEqual(self.placed["24061"], ("Babil", "Al-Mahaweel"))
+        self.assertEqual(self.placed["13181"], ("Al-Sulaymaniyah", "Rania"))
+        anbar = [e["value"] for e in self.mapped.values() if e["governorate"] == "Al-Anbar"]
+        self.assertNotIn(None, anbar)
+        self.assertEqual(sum(anbar), self.table["governorates"]["22"])
+
+    def test_every_seat_names_a_district_of_the_map_s(self):
+        districts = {row["adm2_name"] for row in ic.read_gazetteer(GAZ.read_text(encoding="utf-8"))}
+        for code, (district, why) in ic.SEATS.items():
+            self.assertIn(district, districts, code)
+            self.assertTrue(why.startswith("ar.wikipedia"), code)
 
     def test_a_district_that_cannot_be_placed_leaves_a_reason(self):
         for entry in self.mapped.values():

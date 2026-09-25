@@ -768,8 +768,10 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Kothi district on these shapes, and it could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 1040903,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+      "note": "The census counts this ground as 2 units, on boundaries redrawn since the boundary file's: Al-Hilla (848,512), Al-Kifl (Al-Nakhila (192,391). The figure is their sum."
     },
     "median_age": {
       "status": "not_available"
@@ -786,7 +788,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Babil",
     "aliases": [
@@ -805,8 +813,10 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Kothi district on these shapes, and it could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 422846,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+      "note": "The census counts this ground as 2 units, on boundaries redrawn since the boundary file's: Al-Mahaweel (268,266), Kothi (154,580). The figure is their sum."
     },
     "median_age": {
       "status": "not_available"
@@ -823,7 +833,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Babil",
     "aliases": [
@@ -842,8 +858,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Kothi district on these shapes, and it could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 411654,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
       "status": "not_available"
@@ -860,7 +877,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Babil",
     "aliases": [
@@ -879,8 +902,10 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Kothi district on these shapes, and it could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 606921,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+      "note": "The census counts this ground as 2 units, on boundaries redrawn since the boundary file's: Al-Hashimiy (359,137), Al- Qasim (247,784). The figure is their sum."
     },
     "median_age": {
       "status": "not_available"
@@ -897,7 +922,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Babil",
     "aliases": [
@@ -1487,7 +1518,7 @@
     },
     "population": {
       "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Hajyawa district, Saed Sadiq district on these shapes, and any of them could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "note": "The 2024 census's count for the ground placed here, 109,502, is 0.3 times what Kontur's population grid puts inside this shape, scaled to Al-Sulaymaniyah's census total, so the census's units and the boundary file's Chamchamal are not the same ground. The governorate's own count is on the governorate."
     },
     "median_age": {
       "status": "not_available"
@@ -1523,8 +1554,10 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Hajyawa district, Saed Sadiq district on these shapes, and any of them could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 1116824,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+      "note": "The census counts this ground as 3 units, on boundaries redrawn since the boundary file's: Sulaimaniya (1,056,067), Qaradag (7,590), Bazyan (53,167). The figure is their sum."
     },
     "median_age": {
       "status": "not_available"
@@ -1541,7 +1574,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
@@ -1560,8 +1599,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Hajyawa district, Saed Sadiq district on these shapes, and any of them could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 213452,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
       "status": "not_available"
@@ -1578,7 +1618,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
@@ -1597,8 +1643,10 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Hajyawa district, Saed Sadiq district on these shapes, and any of them could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 278331,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+      "note": "The census counts this ground as 3 units, on boundaries redrawn since the boundary file's: Sharazoor (73,776), Saed Sadiq (Saed Sadiq) (90,629), Halabcha (113,926). The figure is their sum."
     },
     "median_age": {
       "status": "not_available"
@@ -1615,7 +1663,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
@@ -1634,8 +1688,10 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Hajyawa district, Saed Sadiq district on these shapes, and any of them could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 264488,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+      "note": "The census counts this ground as 2 units, on boundaries redrawn since the boundary file's: Rania (197,700), Hajyawa (66,788). The figure is their sum."
     },
     "median_age": {
       "status": "not_available"
@@ -1652,7 +1708,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
@@ -1671,8 +1733,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Hajyawa district, Saed Sadiq district on these shapes, and any of them could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 75167,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
       "status": "not_available"
@@ -1689,7 +1752,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
@@ -1708,8 +1777,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Hajyawa district, Saed Sadiq district on these shapes, and any of them could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 140688,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
       "status": "not_available"
@@ -1726,7 +1796,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
@@ -1745,8 +1821,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Hajyawa district, Saed Sadiq district on these shapes, and any of them could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 52251,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
       "status": "not_available"
@@ -1763,7 +1840,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
@@ -1782,8 +1865,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Hajyawa district, Saed Sadiq district on these shapes, and any of them could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 56146,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
       "status": "not_available"
@@ -1800,7 +1884,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
@@ -1819,8 +1909,10 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places Hajyawa district, Saed Sadiq district on these shapes, and any of them could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 26107,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+      "note": "The census counts this ground as 3 units, on boundaries redrawn since the boundary file's: Serjook (Saed Sadiq) (2,618), Sharpazer (19,646), Maut (3,843). The figure is their sum."
     },
     "median_age": {
       "status": "not_available"
@@ -1837,7 +1929,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Sulaymaniyah",
     "aliases": [
@@ -2734,8 +2832,10 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places AL-Obour district on these shapes, and it could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 710773,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+      "note": "The census counts this ground as 3 units, on boundaries redrawn since the boundary file's: Falluja (485,474), Al-Amirya (78,174), AL-Garma (147,125). The figure is their sum."
     },
     "median_age": {
       "status": "not_available"
@@ -2752,7 +2852,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Anbar",
     "aliases": [
@@ -2771,8 +2877,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places AL-Obour district on these shapes, and it could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 188370,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
       "status": "not_available"
@@ -2789,7 +2896,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Anbar",
     "aliases": [
@@ -2808,8 +2921,10 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places AL-Obour district on these shapes, and it could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 716314,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+      "note": "The census counts this ground as 2 units, on boundaries redrawn since the boundary file's: AI-Ramadi (573,672), AL-Habbaniya (142,642). The figure is their sum."
     },
     "median_age": {
       "status": "not_available"
@@ -2826,7 +2941,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Anbar",
     "aliases": [
@@ -2845,8 +2966,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places AL-Obour district on these shapes, and it could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 114697,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
       "status": "not_available"
@@ -2863,7 +2985,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Anbar",
     "aliases": [
@@ -2882,8 +3010,10 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places AL-Obour district on these shapes, and it could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 185229,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+      "note": "The census counts this ground as 2 units, on boundaries redrawn since the boundary file's: AL-Kaim (140,923), AL-Obour (44,306). The figure is their sum."
     },
     "median_age": {
       "status": "not_available"
@@ -2900,7 +3030,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Anbar",
     "aliases": [
@@ -2919,8 +3055,9 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places AL-Obour district on these shapes, and it could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 41285,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)"
     },
     "median_age": {
       "status": "not_available"
@@ -2937,7 +3074,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Anbar",
     "aliases": [
@@ -2956,8 +3099,10 @@
       "status": "not_available"
     },
     "population": {
-      "status": "not_available",
-      "note": "The 2024 census counts this governorate on districts redrawn since the boundary file's, and nothing places AL-Obour district on these shapes, and it could be on this one, so this district's figure is not known on its shape. The governorate's own count is on the governorate."
+      "value": 47750,
+      "year": 2024,
+      "source": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+      "note": "The census counts this ground as 2 units, on boundaries redrawn since the boundary file's: Ana (30,921), Rawa (16,829). The figure is their sum."
     },
     "median_age": {
       "status": "not_available"
@@ -2974,7 +3119,13 @@
     "ethnicity": {
       "status": "not_available"
     },
-    "sources": [],
+    "sources": [
+      {
+        "field": "population",
+        "name": "COSIT, Annual Abstract of Statistics 2024, Table 11/2 (General Population and Housing Census 2024)",
+        "url": "https://cosit.gov.iq/documents/AAS2024/02.pdf"
+      }
+    ],
     "country": "IRQ",
     "parent_name": "Al-Anbar",
     "aliases": [
