@@ -63,21 +63,12 @@
         "count": 2539
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.4,
-        "count": 1403182
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.6,
-        "count": 22425
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -89,9 +80,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-02000",
@@ -157,21 +146,12 @@
         "count": 49130
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.3,
-        "count": 3704658
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.7,
-        "count": 64362
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -183,9 +163,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 95% of indigenous-language speakers also speak Spanish and 3% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 95% of indigenous-language speakers also speak Spanish and 3% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-03000",
@@ -251,21 +229,12 @@
         "count": 13581
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 96.7,
-        "count": 772117
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 3.3,
-        "count": 26330
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -277,9 +246,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 98% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 98% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-04000",
@@ -345,21 +312,12 @@
         "count": 91801
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 97.9,
-        "count": 909044
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 2.1,
-        "count": 19319
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -371,9 +329,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 3% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 3% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-05000",
@@ -439,21 +395,12 @@
         "count": 5527
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.5,
-        "count": 3100795
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.5,
-        "count": 45976
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -465,9 +412,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 98% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 98% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-06000",
@@ -533,21 +478,12 @@
         "count": 5210
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.1,
-        "count": 717817
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.9,
-        "count": 13574
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -559,9 +495,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 95% of indigenous-language speakers also speak Spanish and 4% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 95% of indigenous-language speakers also speak Spanish and 4% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-07000",
@@ -627,21 +561,12 @@
         "count": 1459648
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 99.0,
-        "count": 5487296
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.0,
-        "count": 56532
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -653,9 +578,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 71% of indigenous-language speakers also speak Spanish and 27% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 71% of indigenous-language speakers also speak Spanish and 27% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-08000",
@@ -721,21 +644,12 @@
         "count": 110498
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.4,
-        "count": 3680951
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.6,
-        "count": 60918
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -747,9 +661,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 88% of indigenous-language speakers also speak Spanish and 11% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 88% of indigenous-language speakers also speak Spanish and 11% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-09000",
@@ -815,21 +727,12 @@
         "count": 125153
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.0,
-        "count": 9023030
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 2.0,
-        "count": 186914
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -845,9 +748,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 98% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 98% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-10000",
@@ -913,21 +814,12 @@
         "count": 47242
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 99.1,
-        "count": 1815339
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 0.9,
-        "count": 17311
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -939,9 +831,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 80% of indigenous-language speakers also speak Spanish and 18% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 80% of indigenous-language speakers also speak Spanish and 18% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-11000",
@@ -1007,21 +897,12 @@
         "count": 14048
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.2,
-        "count": 6058128
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.8,
-        "count": 108806
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -1033,9 +914,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 92% of indigenous-language speakers also speak Spanish and 2% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 92% of indigenous-language speakers also speak Spanish and 2% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-12000",
@@ -1101,21 +980,12 @@
         "count": 515487
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 91.4,
-        "count": 3236762
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 8.6,
-        "count": 303923
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -1127,9 +997,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 77% of indigenous-language speakers also speak Spanish and 22% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 77% of indigenous-language speakers also speak Spanish and 22% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-13000",
@@ -1195,21 +1063,12 @@
         "count": 362629
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.4,
-        "count": 3034148
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.6,
-        "count": 48693
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -1221,9 +1080,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 91% of indigenous-language speakers also speak Spanish and 8% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 91% of indigenous-language speakers also speak Spanish and 8% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-14000",
@@ -1289,21 +1146,12 @@
         "count": 66963
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.3,
-        "count": 8208475
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.7,
-        "count": 139676
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -1315,9 +1163,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 89% of indigenous-language speakers also speak Spanish and 10% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 89% of indigenous-language speakers also speak Spanish and 10% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-15000",
@@ -1383,21 +1229,12 @@
         "count": 417603
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.3,
-        "count": 16696154
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.7,
-        "count": 296264
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -1409,9 +1246,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-16000",
@@ -1477,21 +1312,12 @@
         "count": 154943
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.5,
-        "count": 4675422
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.5,
-        "count": 73424
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -1503,9 +1329,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 93% of indigenous-language speakers also speak Spanish and 6% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 93% of indigenous-language speakers also speak Spanish and 6% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-17000",
@@ -1571,21 +1395,12 @@
         "count": 38110
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.1,
-        "count": 1933189
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.9,
-        "count": 38331
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -1597,9 +1412,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 2% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 2% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-18000",
@@ -1665,21 +1478,12 @@
         "count": 69069
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 99.2,
-        "count": 1225040
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 0.8,
-        "count": 10416
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -1691,9 +1495,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 83% of indigenous-language speakers also speak Spanish and 17% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 83% of indigenous-language speakers also speak Spanish and 17% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-19000",
@@ -1759,21 +1561,12 @@
         "count": 77945
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.3,
-        "count": 5686839
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.7,
-        "count": 97603
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -1785,9 +1578,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 98% of indigenous-language speakers also speak Spanish and 0% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 98% of indigenous-language speakers also speak Spanish and 0% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-20000",
@@ -1853,21 +1644,12 @@
         "count": 1221555
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 95.3,
-        "count": 3937674
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 4.7,
-        "count": 194474
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -1879,9 +1661,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 89% of indigenous-language speakers also speak Spanish and 11% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 89% of indigenous-language speakers also speak Spanish and 11% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-21000",
@@ -1947,21 +1727,12 @@
         "count": 615622
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.3,
-        "count": 6469333
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.7,
-        "count": 113945
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -1973,9 +1744,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 93% of indigenous-language speakers also speak Spanish and 7% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 93% of indigenous-language speakers also speak Spanish and 7% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-22000",
@@ -2041,21 +1810,12 @@
         "count": 31383
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.2,
-        "count": 2325031
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.8,
-        "count": 43436
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -2067,9 +1827,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 2% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 2% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-23000",
@@ -2135,21 +1893,12 @@
         "count": 204949
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 97.2,
-        "count": 1805720
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 2.8,
-        "count": 52265
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -2161,9 +1910,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 95% of indigenous-language speakers also speak Spanish and 4% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 95% of indigenous-language speakers also speak Spanish and 4% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-24000",
@@ -2229,21 +1976,12 @@
         "count": 231213
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.0,
-        "count": 2766918
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 2.0,
-        "count": 55337
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -2255,9 +1993,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 95% of indigenous-language speakers also speak Spanish and 4% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 95% of indigenous-language speakers also speak Spanish and 4% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-25000",
@@ -2323,21 +2059,12 @@
         "count": 35539
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.6,
-        "count": 2984747
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.4,
-        "count": 42196
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -2349,9 +2076,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 3% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 3% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-26000",
@@ -2417,21 +2142,12 @@
         "count": 62808
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.5,
-        "count": 2901330
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.5,
-        "count": 43510
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -2443,9 +2159,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 2% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 97% of indigenous-language speakers also speak Spanish and 2% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-27000",
@@ -2511,21 +2225,12 @@
         "count": 91025
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.4,
-        "count": 2365045
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.6,
-        "count": 37553
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -2537,9 +2242,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 98% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 98% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-28000",
@@ -2605,21 +2308,12 @@
         "count": 22651
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.8,
-        "count": 3484114
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.2,
-        "count": 43621
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -2631,9 +2325,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 99% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 99% of indigenous-language speakers also speak Spanish and 1% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-29000",
@@ -2699,21 +2391,12 @@
         "count": 27174
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 98.7,
-        "count": 1324883
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.3,
-        "count": 18094
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -2725,9 +2408,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 98% of indigenous-language speakers also speak Spanish and 2% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 98% of indigenous-language speakers also speak Spanish and 2% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-30000",
@@ -2793,21 +2474,12 @@
         "count": 663503
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 97.3,
-        "count": 7847144
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 2.7,
-        "count": 215435
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -2819,9 +2491,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 92% of indigenous-language speakers also speak Spanish and 7% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 92% of indigenous-language speakers also speak Spanish and 7% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-31000",
@@ -2887,21 +2557,12 @@
         "count": 525092
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 97.0,
-        "count": 2251299
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 3.0,
-        "count": 69599
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -2913,9 +2574,7 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 95% of indigenous-language speakers also speak Spanish and 5% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 95% of indigenous-language speakers also speak Spanish and 5% do not. Which indigenous language is published in other INEGI tables, not in this one."
   },
   {
     "id": "MEX-32000",
@@ -2981,21 +2640,12 @@
         "count": 5005
       }
     ],
-    "ethnicity": [
-      {
-        "group": "Not Afro-descendant",
-        "pct": 99.0,
-        "count": 1606187
-      },
-      {
-        "group": "Afro-Mexican or Afro-descendant",
-        "pct": 1.0,
-        "count": 15951
-      }
-    ],
+    "ethnicity": {
+      "status": "not_available"
+    },
     "sources": [
       {
-        "field": "population/sex ratio/religion/language/ethnicity",
+        "field": "population/sex ratio/religion/language",
         "name": "INEGI, Censo de Población y Vivienda 2020 (ITER)",
         "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip",
         "license": "Términos de Libre Uso de la Información del INEGI (attribution required)"
@@ -3007,8 +2657,6 @@
     },
     "religion_year": 2020,
     "language_year": 2020,
-    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 95% of indigenous-language speakers also speak Spanish and 4% do not. Which indigenous language is published in other INEGI tables, not in this one.",
-    "ethnicity_year": 2020,
-    "ethnicity_note": "Self-identification as Afro-Mexican or Afro-descendant, asked of everyone in the 2020 census. It is a single yes/no question, not a classification of the whole population, so the complement means 'did not identify as Afro-descendant' and not membership of any other group. Not comparable with other countries' ethnicity categories."
+    "language_note": "People aged 3 or over who speak an indigenous language, and everyone else, shown as Spanish: the census asks whether a person speaks an indigenous language, and asks about Spanish only of those who do; nearly all of the rest speak it. Most indigenous-language speakers speak Spanish as well. Here 95% of indigenous-language speakers also speak Spanish and 4% do not. Which indigenous language is published in other INEGI tables, not in this one."
   }
 ]
