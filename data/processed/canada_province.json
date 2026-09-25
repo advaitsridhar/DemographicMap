@@ -1487,9 +1487,24 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 96.6,
-        "count": 485240
+        "group": "White",
+        "pct": 87.4,
+        "count": 438690
+      },
+      {
+        "group": "First Nations",
+        "pct": 5.7,
+        "count": 28435
+      },
+      {
+        "group": "Inuit",
+        "pct": 1.5,
+        "count": 7330
+      },
+      {
+        "group": "Métis",
+        "pct": 1.5,
+        "count": 7335
       },
       {
         "group": "South Asian",
@@ -1500,6 +1515,11 @@
         "group": "Black",
         "pct": 0.7,
         "count": 3590
+      },
+      {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 0.7,
+        "count": 3450
       },
       {
         "group": "Filipino",
@@ -1568,7 +1588,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   },
@@ -3060,9 +3080,9 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 90.5,
-        "count": 136175
+        "group": "White",
+        "pct": 88.2,
+        "count": 132790
       },
       {
         "group": "South Asian",
@@ -3073,6 +3093,11 @@
         "group": "Chinese",
         "pct": 2.2,
         "count": 3335
+      },
+      {
+        "group": "First Nations",
+        "pct": 1.4,
+        "count": 2165
       },
       {
         "group": "Black",
@@ -3095,6 +3120,11 @@
         "count": 1040
       },
       {
+        "group": "Métis",
+        "pct": 0.6,
+        "count": 845
+      },
+      {
         "group": "Latin American",
         "pct": 0.4,
         "count": 585
@@ -3103,6 +3133,16 @@
         "group": "West Asian",
         "pct": 0.2,
         "count": 295
+      },
+      {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 0.1,
+        "count": 195
+      },
+      {
+        "group": "Inuit",
+        "pct": 0.1,
+        "count": 180
       },
       {
         "group": "Japanese",
@@ -3141,7 +3181,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   },
@@ -4633,9 +4673,9 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 90.2,
-        "count": 862425
+        "group": "White",
+        "pct": 84.7,
+        "count": 810000
       },
       {
         "group": "Black",
@@ -4643,9 +4683,19 @@
         "count": 28220
       },
       {
+        "group": "First Nations",
+        "pct": 2.9,
+        "count": 28050
+      },
+      {
         "group": "South Asian",
         "pct": 2.3,
         "count": 21655
+      },
+      {
+        "group": "Métis",
+        "pct": 2.2,
+        "count": 21090
       },
       {
         "group": "Chinese",
@@ -4683,9 +4733,19 @@
         "count": 2400
       },
       {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 0.2,
+        "count": 2185
+      },
+      {
         "group": "West Asian",
         "pct": 0.2,
         "count": 1875
+      },
+      {
+        "group": "Inuit",
+        "pct": 0.1,
+        "count": 1100
       },
       {
         "group": "Japanese",
@@ -4714,7 +4774,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   },
@@ -6206,14 +6266,24 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 94.2,
-        "count": 714990
+        "group": "White",
+        "pct": 89.8,
+        "count": 681695
+      },
+      {
+        "group": "First Nations",
+        "pct": 2.8,
+        "count": 20960
       },
       {
         "group": "Black",
         "pct": 1.6,
         "count": 12155
+      },
+      {
+        "group": "Métis",
+        "pct": 1.3,
+        "count": 10170
       },
       {
         "group": "South Asian",
@@ -6241,6 +6311,11 @@
         "count": 2450
       },
       {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 0.2,
+        "count": 1480
+      },
+      {
         "group": "Korean",
         "pct": 0.2,
         "count": 1655
@@ -6254,6 +6329,11 @@
         "group": "Southeast Asian",
         "pct": 0.2,
         "count": 1890
+      },
+      {
+        "group": "Inuit",
+        "pct": 0.1,
+        "count": 685
       },
       {
         "group": "Visible minority, n.i.e.",
@@ -6287,7 +6367,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   },
@@ -7779,9 +7859,9 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 83.9,
-        "count": 6967745
+        "group": "White",
+        "pct": 81.4,
+        "count": 6762735
       },
       {
         "group": "Black",
@@ -7809,9 +7889,19 @@
         "count": 115240
       },
       {
+        "group": "First Nations",
+        "pct": 1.4,
+        "count": 116550
+      },
+      {
         "group": "Southeast Asian",
         "pct": 0.8,
         "count": 70455
+      },
+      {
+        "group": "Métis",
+        "pct": 0.7,
+        "count": 61010
       },
       {
         "group": "Filipino",
@@ -7827,6 +7917,16 @@
         "group": "Multiple visible minorities",
         "pct": 0.4,
         "count": 34960
+      },
+      {
+        "group": "Inuit",
+        "pct": 0.2,
+        "count": 15800
+      },
+      {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 0.1,
+        "count": 11650
       },
       {
         "group": "Japanese",
@@ -7860,7 +7960,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   },
@@ -9352,9 +9452,9 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 65.7,
-        "count": 9214395
+        "group": "White",
+        "pct": 62.8,
+        "count": 8807810
       },
       {
         "group": "South Asian",
@@ -9382,6 +9482,11 @@
         "count": 284215
       },
       {
+        "group": "First Nations",
+        "pct": 1.8,
+        "count": 251030
+      },
+      {
         "group": "Latin American",
         "pct": 1.8,
         "count": 249190
@@ -9402,6 +9507,11 @@
         "count": 167845
       },
       {
+        "group": "Métis",
+        "pct": 1.0,
+        "count": 134615
+      },
+      {
         "group": "Visible minority, n.i.e.",
         "pct": 0.9,
         "count": 124120
@@ -9415,6 +9525,16 @@
         "group": "Japanese",
         "pct": 0.2,
         "count": 31420
+      },
+      {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 0.1,
+        "count": 16630
+      },
+      {
+        "group": "Inuit",
+        "pct": 0.0,
+        "count": 4310
       }
     ],
     "sources": [
@@ -9433,7 +9553,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   },
@@ -10925,9 +11045,19 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 77.8,
-        "count": 1016450
+        "group": "White",
+        "pct": 59.6,
+        "count": 779270
+      },
+      {
+        "group": "First Nations",
+        "pct": 10.3,
+        "count": 134890
+      },
+      {
+        "group": "Métis",
+        "pct": 7.4,
+        "count": 96725
       },
       {
         "group": "Filipino",
@@ -10970,6 +11100,11 @@
         "count": 8455
       },
       {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 0.4,
+        "count": 4840
+      },
+      {
         "group": "Korean",
         "pct": 0.3,
         "count": 4325
@@ -10983,6 +11118,11 @@
         "group": "Visible minority, n.i.e.",
         "pct": 0.2,
         "count": 3220
+      },
+      {
+        "group": "Inuit",
+        "pct": 0.1,
+        "count": 725
       },
       {
         "group": "Japanese",
@@ -11006,7 +11146,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   },
@@ -12498,9 +12638,19 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 85.6,
-        "count": 943840
+        "group": "White",
+        "pct": 68.5,
+        "count": 755950
+      },
+      {
+        "group": "First Nations",
+        "pct": 11.0,
+        "count": 121175
+      },
+      {
+        "group": "Métis",
+        "pct": 5.7,
+        "count": 62800
       },
       {
         "group": "South Asian",
@@ -12538,6 +12688,11 @@
         "count": 5680
       },
       {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 0.3,
+        "count": 3455
+      },
+      {
         "group": "Multiple visible minorities",
         "pct": 0.3,
         "count": 3725
@@ -12561,6 +12716,11 @@
         "group": "Visible minority, n.i.e.",
         "pct": 0.1,
         "count": 1275
+      },
+      {
+        "group": "Inuit",
+        "pct": 0.0,
+        "count": 460
       }
     ],
     "sources": [
@@ -12579,7 +12739,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   },
@@ -14071,9 +14231,9 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 72.2,
-        "count": 3016295
+        "group": "White",
+        "pct": 65.4,
+        "count": 2731835
       },
       {
         "group": "South Asian",
@@ -14094,6 +14254,16 @@
         "group": "Chinese",
         "pct": 3.9,
         "count": 164235
+      },
+      {
+        "group": "First Nations",
+        "pct": 3.5,
+        "count": 145640
+      },
+      {
+        "group": "Métis",
+        "pct": 3.1,
+        "count": 127470
       },
       {
         "group": "Arab",
@@ -14134,6 +14304,16 @@
         "group": "Visible minority, n.i.e.",
         "pct": 0.3,
         "count": 12100
+      },
+      {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 0.2,
+        "count": 8405
+      },
+      {
+        "group": "Inuit",
+        "pct": 0.1,
+        "count": 2945
       }
     ],
     "sources": [
@@ -14152,7 +14332,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   },
@@ -15644,9 +15824,9 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 65.6,
-        "count": 3226450
+        "group": "White",
+        "pct": 59.7,
+        "count": 2936245
       },
       {
         "group": "Chinese",
@@ -15659,9 +15839,19 @@
         "count": 473965
       },
       {
+        "group": "First Nations",
+        "pct": 3.7,
+        "count": 180085
+      },
+      {
         "group": "Filipino",
         "pct": 3.5,
         "count": 174280
+      },
+      {
+        "group": "Métis",
+        "pct": 2.0,
+        "count": 97860
       },
       {
         "group": "Korean",
@@ -15707,6 +15897,16 @@
         "group": "Visible minority, n.i.e.",
         "pct": 0.4,
         "count": 18080
+      },
+      {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 0.2,
+        "count": 10540
+      },
+      {
+        "group": "Inuit",
+        "pct": 0.0,
+        "count": 1720
       }
     ],
     "sources": [
@@ -15725,7 +15925,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   },
@@ -17217,14 +17417,24 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 87.2,
-        "count": 34520
+        "group": "White",
+        "pct": 65.0,
+        "count": 25715
+      },
+      {
+        "group": "First Nations",
+        "pct": 17.5,
+        "count": 6935
       },
       {
         "group": "Filipino",
         "pct": 4.9,
         "count": 1945
+      },
+      {
+        "group": "Métis",
+        "pct": 3.2,
+        "count": 1285
       },
       {
         "group": "South Asian",
@@ -17240,6 +17450,16 @@
         "group": "Black",
         "pct": 1.4,
         "count": 560
+      },
+      {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 0.8,
+        "count": 325
+      },
+      {
+        "group": "Inuit",
+        "pct": 0.7,
+        "count": 260
       },
       {
         "group": "Latin American",
@@ -17298,7 +17518,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   },
@@ -18790,9 +19010,24 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 87.8,
-        "count": 35465
+        "group": "White",
+        "pct": 38.2,
+        "count": 15435
+      },
+      {
+        "group": "First Nations",
+        "pct": 30.5,
+        "count": 12315
+      },
+      {
+        "group": "Inuit",
+        "pct": 10.3,
+        "count": 4150
+      },
+      {
+        "group": "Métis",
+        "pct": 7.2,
+        "count": 2890
       },
       {
         "group": "Filipino",
@@ -18808,6 +19043,11 @@
         "group": "South Asian",
         "pct": 1.9,
         "count": 770
+      },
+      {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 1.7,
+        "count": 675
       },
       {
         "group": "Chinese",
@@ -18871,7 +19111,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   },
@@ -20363,9 +20603,14 @@
     ],
     "ethnicity": [
       {
-        "group": "Not a visible minority",
-        "pct": 96.4,
-        "count": 35280
+        "group": "Inuit",
+        "pct": 84.3,
+        "count": 30865
+      },
+      {
+        "group": "White",
+        "pct": 10.6,
+        "count": 3885
       },
       {
         "group": "Black",
@@ -20378,9 +20623,24 @@
         "count": 315
       },
       {
+        "group": "Indigenous, multiple or other responses",
+        "pct": 0.6,
+        "count": 230
+      },
+      {
+        "group": "First Nations",
+        "pct": 0.5,
+        "count": 180
+      },
+      {
         "group": "South Asian",
         "pct": 0.5,
         "count": 175
+      },
+      {
+        "group": "Métis",
+        "pct": 0.3,
+        "count": 120
       },
       {
         "group": "Chinese",
@@ -20444,7 +20704,7 @@
     "religion_year": 2021,
     "religion_note": "Statistics Canada 2021 religion question (asked once a decade), 25% sample data for the population in private households; shown at the denominations StatCan publishes, with 'No religion and secular perspectives' as its own category.",
     "ethnicity_year": 2021,
-    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with 'Not a visible minority' kept as its own category.",
+    "ethnicity_note": "Statistics Canada publishes 'visible minority', a category of the Employment Equity Act, beside a separate multi-response ethnic or cultural origin question; neither is an ethnicity question as other countries ask one. This is the visible-minority classification, with its 'Not a visible minority' split in two: the Act excludes Indigenous peoples from visible minorities, so the census's own Indigenous identity counts (same 25% sample, same universe) are shown as First Nations, Metis and Inuit, and the rest of 'Not a visible minority' as White. That rest also holds the few who reported White beside Latin American, Arab or West Asian, whom StatCan does not count as visible minorities.",
     "language_year": 2021,
     "language_note": "Mother tongue, 2021 Census, total population excluding institutional residents (100% data), at the individual languages StatCan publishes; people who reported more than one are in the multiple-response categories rather than counted twice."
   }

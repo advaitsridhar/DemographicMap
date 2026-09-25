@@ -934,7 +934,10 @@ ETHNIC_PEOPLES: dict[str, tuple[str, ...]] = {
     ),
     "Melanesian peoples": ("Fijian", "Ni-Vanuatu", "Papuan", "Solomon Islander",
                            "Kanak", "New Caledonian"),
-    "Micronesian peoples": ("Chamorro", "Palauan", "Marshallese", "Chuukese",
+    # Carolinian is a people of the Caroline Islands and the Northern
+    # Marianas (Refaluwasch), in Palau's census and the Marianas' alike.
+    "Micronesian peoples": ("Chamorro", "Guamanian", "Carolinian",
+                            "Palauan", "Marshallese", "Chuukese",
                             "Pohnpeian", "Yapese", "Kosraean", "Nauruan",
                             "i-Kiribati", "Gilbertese"),
     # -- the Americas
@@ -1153,10 +1156,6 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     "Other foreign ethnicity", "Other ethnic group: Any other ethnic group",
     "Visible minority, n.i.e.", "Not a visible minority", "Foreigner",
     "Non-Malaysian citizen", "Other (Malaysian citizen)",
-    # Mexico's second question, and its negative answer: "not Afro-descendant"
-    # is the absence of one identification rather than the presence of
-    # another, and colouring 2,484 municipalities for it would say nothing.
-    "Not Afro-descendant",
     "Other Africa", "Other West Africa", "Other Asian", "Other European",
     # Laos: what its ten ethno-linguistic categories leave, which is the
     # census's own other-and-not-stated together with the foreign population.
@@ -1406,7 +1405,11 @@ LANGUAGE_EXTRA: dict[str, tuple[str, ...]] = {
         # as a first language, and Xinka, which is not Mayan.
         "Akateko", "Awakateko", "Ch'orti'", "Chalchiteko", "Itza'", "Mopan",
         "Poqomam", "Sakapulteko", "Sipakapense", "Tektiteko", "Tz'utujil",
-        "Uspanteko", "Xinka"),
+        "Uspanteko", "Xinka",
+        # Mexico's census counts whether a person speaks an indigenous
+        # language, not which, and Panama's figure is the same kind; in both
+        # countries every one of them is a language of this continent.
+        "Indigenous languages"),
     # Russia's federal subjects. The Andic and Tsezic languages of Dagestan,
     # which the Russian census lists one by one beside Avar: every one of
     # them is Nakh-Dagestanian, and several have fewer than a thousand
@@ -1930,7 +1933,7 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         # And the same answer written as an adjective.
         "Andorran", "Chilean", "Colombian", "Dominican", "Honduran",
         "Jamaican", "Kosovan", "Nicaraguan", "Saban", "Surinamese",
-        "Venezuelan", "Haitian", "Pitcairn Islander", "Carolinian",
+        "Venezuelan", "Haitian", "Pitcairn Islander",
         "Yap outer islanders",
     ),
     # Mauritius counts four "communities" defined by religion and origin
@@ -1999,19 +2002,41 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # schedule lists beside the Santal the tree already carries. Saontal is
     # the Bureau's spelling of that same people.
     "Munda peoples": ("Saontal", "Mahali", "Kora", "Turi", "Kol", "Shobor"),
-    "Polynesian peoples": ("Futunian",),
+    "Polynesian peoples": ("Futunian", "Native Hawaiian"),
     "Aboriginal and Torres Strait Islander peoples": ("Australian Aboriginal",),
-    "Hispanic or Latino (census category)": ("Latino",),
+    "Hispanic or Latino (census category)": (
+        "Latino",
+        # The majority a Latin American census leaves unnamed: Colombia's
+        # "No ethnic group" and Mexico's population that identifies as
+        # neither indigenous nor Afro-Mexican. Neither census asks about
+        # mestizo or white ancestry, but both groups are overwhelmingly that,
+        # and filed here they colour as the majority they are, beside the US
+        # Hispanic or Latino population, instead of as a non-answer.
+        "Mestizo or white (no ethnic group declared)",
+        "Mestizo or white (neither indigenous nor Afro-Mexican)",
+    ),
+    # Canada's Indigenous identity answers that are not one people: more
+    # than one Indigenous identity, or one StatCan does not itemise.
+    "Indigenous (census category)": ("Indigenous, multiple or other responses",),
     "Khoisan peoples": ("Sarwa", "Damara", "Sandawe"),
     "Indigenous peoples of Mesoamerica and the Caribbean": ("Xinca",),
-    "Afro-descendant peoples of the Americas": ("Afroecuadorian",
-                                                "Afro-Ecuadorian"),
+    "Afro-descendant peoples of the Americas": (
+        "Afroecuadorian", "Afro-Ecuadorian", "Afro-Mexican or Afro-descendant",
+        # The U.S. Virgin Islands' census names these under Black or African
+        # American: Caribbean. By name alone "West Indian" read as Indian and
+        # "British Virgin Islander" as British.
+        "U.S. Virgin Islander", "West Indian", "Other Caribbean", "Anguillan",
+        "Antiguan and Barbudan", "British Virgin Islander", "Kittian and Nevisian",
+        "St. Lucian", "Trinidadian and Tobagonian", "Dominica Islander",
+    ),
     # Answers that say the person is of more than one ancestry. They are
     # not a refusal to answer and they are not a people, which is what the
     # mixed category is for.
     "Mixed or multiple (census category)": (
         "Black and White", "mixed - other", "two or more ethnicities or races",
         "mixed European and African ancestry", "Mestico", "Baster",
+        # Mexico's people who answered yes to both of its questions.
+        "Indigenous and Afro-Mexican",
     ),
     "Middle Eastern or North African (census category)": (
         "Arab, Arab Scottish or Arab British",
@@ -2022,12 +2047,15 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     # from, which is why the compound rule refuses these and the census's
     # own grouping has to be stated.
     "Black or African (census category)": (
+        # The Island Areas' census lines under Black or African American.
+        "African American", "Other Black or African American",
         "African-American or African descent",
         "African descent or African-American",
         "African, African Scottish or African British",
         "Black, Black Scottish or Black British",
     ),
     "Asian (census category)": (
+        "Asian Indian",
         "Bangladeshi, Bangladeshi Scottish or Bangladeshi British",
         "Chinese, Chinese Scottish or Chinese British",
         "Indian, Indian Scottish or Indian British",
@@ -2046,6 +2074,7 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
         "other Nordic peoples", "other Crown Dependencies",
     ),
     "Pacific Islander (census category)": (
+        "Other Native Hawaiian and Other Pacific Islander",
         "Native Hawaiian and other Pacific Islander",
         "Native Hawaiian or other Pacific Islander",
     ),

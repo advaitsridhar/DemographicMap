@@ -249,11 +249,23 @@ def place(iso3: str, prop: str, length: int, keep: int) -> tuple[dict[str, dict]
                 by_shape[s["id"]].append({**item, "level": s["level"], "shape": s})
     bound: dict[str, dict] = {}
     refused = 0
-    for shape_id, hits in by_shape.items():
+    # The finer level first: Idaho County's item stands in both the county
+    # and the state called Idaho, and a county's code is the county's.
+    for shape_id, hits in sorted(by_shape.items(), key=lambda kv: kv[1][0]["level"] != "admin2"):
         codes = {h["code"] for h in hits}
         if len(codes) > 1:
-            refused += 1
-            continue
+            # Two agreeing codes, of which exactly one names the polygon
+            # outright: Baltimore city's polygon also holds the item for the
+            # Baltimore metropolitan area, whose statistical-area code has
+            # the length of a county's, and whose name only begins with it.
+            shape_core = core(hits[0]["shape"]["name"])
+            exact = {h["code"] for h in hits
+                     if any(core(n) == shape_core
+                            for n in [h.get("label") or "", *(h.get("alt") or [])])}
+            if len(exact) != 1:
+                refused += 1
+                continue
+            hits = [h for h in hits if h["code"] in exact]
         h = hits[0]
         bound.setdefault(h["code"], {"shape_id": shape_id, "level": h["level"], "qid": h["qid"],
                                      "name": h["shape"]["name"], "label": h["label"],

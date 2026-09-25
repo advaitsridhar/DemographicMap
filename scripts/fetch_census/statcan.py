@@ -21,7 +21,8 @@ StatCan's random rounding to a multiple of 5). Religion's leaves are the
 denominations under Christian and the other religions beside it; mother
 tongue's are the individual languages and the multiple-response
 combinations; visible minority's are the twelve groups under "Total visible
-minority population" and "Not a visible minority" beside it.
+minority population" and "Not a visible minority" beside it, which is split
+into the Indigenous peoples and White (see ``split_not_visible``).
 
 **What the fields are.** Religion is asked once a decade and 2021 asked it.
 Canada has no ethnicity question: "visible minority" is a category of the
@@ -62,6 +63,7 @@ BLOCKS = {
     "religion": "Total - Religion for the population in private households",
     "ethnicity": "Total - Visible minority for the population in private households",
     "language": "Total - Mother tongue for the total population excluding institutional residents",
+    "indigenous": "Total - Indigenous identity for the population in private households",
 }
 NOTES = {
     "religion": ("Statistics Canada 2021 religion question (asked once a decade), 25% "
@@ -72,7 +74,13 @@ NOTES = {
                   "Employment Equity Act, beside a separate multi-response ethnic or "
                   "cultural origin question; neither is an ethnicity question as other "
                   "countries ask one. This is the visible-minority classification, with "
-                  "'Not a visible minority' kept as its own category."),
+                  "its 'Not a visible minority' split in two: the Act excludes Indigenous "
+                  "peoples from visible minorities, so the census's own Indigenous "
+                  "identity counts (same 25% sample, same universe) are shown as First "
+                  "Nations, Metis and Inuit, and the rest of 'Not a visible minority' as "
+                  "White. That rest also holds the few who reported White beside Latin "
+                  "American, Arab or West Asian, whom StatCan does not count as visible "
+                  "minorities."),
     "language": ("Mother tongue, 2021 Census, total population excluding institutional "
                  "residents (100% data), at the individual languages StatCan publishes; "
                  "people who reported more than one are in the multiple-response "
@@ -181,11 +189,61 @@ def read_profile() -> dict[str, dict[str, Any]]:
     return geos
 
 
+# The Indigenous identity block's leaves, in the names the group tree files
+# them under.
+INDIGENOUS = {
+    "First Nations (North American Indian)": "First Nations",
+    "Métis": "Métis",
+    "Inuk (Inuit)": "Inuit",
+    "Multiple Indigenous responses": "Indigenous, multiple or other responses",
+    "Indigenous responses not included elsewhere": "Indigenous, multiple or other responses",
+}
+NOT_VISIBLE = "Not a visible minority"
+
+
+def split_not_visible(geo: dict[str, Any]) -> None:
+    """"Not a visible minority" as the Indigenous peoples in it and the White rest.
+
+    The Employment Equity Act defines visible minorities as "persons, other
+    than Aboriginal peoples, who are non-Caucasian in race or non-white in
+    colour", so every Indigenous person is coded "Not a visible minority".
+    Shown whole, that category makes Nunavut 97% one group; relabelled
+    "European", it would make Nunavut European. The Indigenous identity block
+    counts the same universe from the same sample, so it is taken out by
+    people and what remains is the White population.
+    """
+    groups, indigenous = geo.get("ethnicity") or {}, geo.get("indigenous") or {}
+    if NOT_VISIBLE not in groups or not indigenous:
+        return
+    peoples: dict[str, float] = {}
+    for label, n in indigenous.items():
+        # StatCan writes some labels with a no-break space: "Inuk\xa0(Inuit)".
+        label = " ".join(label.split())
+        if label.startswith("Non-Indigenous"):
+            continue
+        name = INDIGENOUS.get(label)
+        if name is None:
+            raise SystemExit(f"statcan: Indigenous identity leaf {label!r} has no name here")
+        peoples[name] = peoples.get(name, 0.0) + n
+    rest = groups.pop(NOT_VISIBLE) - sum(peoples.values())
+    # Random rounding to 5 on each cell can leave a region with almost no one
+    # outside its Indigenous population a few people below zero.
+    if rest < -50:
+        raise SystemExit(f"statcan: {geo['name']}: {sum(peoples.values()):,.0f} Indigenous "
+                         f"people exceed 'Not a visible minority'")
+    groups.update(peoples)
+    groups["White"] = max(rest, 0.0)
+
+
 def build() -> list[dict[str, Any]]:
     log("statcan: 2021 Census Profile, provinces and economic regions")
     geos = read_profile()
     records = []
+    missing = [g["name"] for g in geos.values() if not g.get("indigenous")]
+    if missing:
+        raise SystemExit(f"statcan: no Indigenous identity block for {missing[:5]}")
     for dguid, geo in geos.items():
+        split_not_visible(geo)
         fields: dict[str, Any] = {}
         for key in ("religion", "ethnicity", "language"):
             groups = geo.get(key) or {}

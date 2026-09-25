@@ -305,8 +305,9 @@ def with_detail(counts: dict[str, float], detail: dict[str, float] | None,
     return out
 
 
-def fetch(level: str, year: int, key: str | None) -> list[dict[str, Any]]:
-    geo = "county:*" if level == "county" else "state:*"
+def fetch(level: str, year: int, key: str | None,
+          geo: str | None = None) -> list[dict[str, Any]]:
+    geo = geo or ("county:*" if level == "county" else "state:*")
     src = f"U.S. Census Bureau, ACS {year} 5-year estimates"
 
     race = query(year, [RACE_TOTAL, *RACE_LINES], geo, key)
@@ -719,6 +720,118 @@ def attach_religion(records: list[dict[str, Any]], path: Path, level: str) -> No
     print(f"  religion attached to {matched} of {len(records)} records")
 
 
+# Connecticut abolished county government in 1960, and from the 2022 ACS the
+# Census Bureau publishes it by its nine planning regions instead of its eight
+# counties. The map draws the counties, so the planning regions reach no
+# shape; the 2021 5-year estimates (2017-2021) are the last published for
+# the counties, and are what the counties are given.
+CT_PLANNING_REGIONS = "091"          # geoids 09110-09190
+CT_COUNTY_YEAR = 2021
+CT_NOTE = (" Connecticut's counties as the ACS last published them, in the 2017-2021 "
+           "5-year estimates: from 2022 the Census Bureau reports Connecticut by "
+           "planning region, which this map does not draw.")
+
+# Valdez-Cordova Census Area was split in 2019 into Chugach and Copper River,
+# which together are exactly its ground. The map draws the old area, so it is
+# given the two new ones added up -- every count adds, a median does not.
+JOINED = {"02261": ("Valdez-Cordova Census Area, Alaska", ("02063", "02066"))}
+
+
+def joined_area(gid: str, name: str, parts: list[dict[str, Any]]) -> dict[str, Any]:
+    """One record for an area the ACS now publishes as several."""
+    pops = [(r.get("population") or {}).get("value") or 0 for r in parts]
+    population = sum(pops)
+    fields: dict[str, Any] = {}
+    for field in ("ethnicity", "language"):
+        counts: dict[str, float] = {}
+        for r in parts:
+            for row in r.get(field) or []:
+                counts[row["group"]] = counts.get(row["group"], 0) + row.get("count", 0)
+        fields[field] = shares(counts) or gap(NOT_AVAILABLE)
+        fields[f"{field}_year"] = parts[0].get(f"{field}_year")
+        fields[f"{field}_note"] = parts[0].get(f"{field}_note")
+    men = women = 0.0
+    for r, pop in zip(parts, pops):
+        ratio = (r.get("sex_ratio") or {}).get("value")
+        if not ratio:
+            men = women = 0.0
+            break
+        men += pop * ratio / (1000 + ratio)
+        women += pop * 1000 / (1000 + ratio)
+    medians = ", ".join(f"{r['name'].split(',')[0]} {r['median_age']['value']:g}"
+                        for r in parts if (r.get("median_age") or {}).get("value"))
+    first = parts[0]
+    src = first["population"]["source"]
+    year = first["population"]["year"]
+    return record(
+        f"USA-{gid}", name, level="admin2", parent=first["parent"],
+        parent_name=first.get("parent_name"),
+        codes={"geoid": gid, "fips_state": gid[:2], "fips_county": gid[2:],
+               "joined_from": [r["codes"]["geoid"] for r in parts]},
+        population=measure(int(population), year=year, source=src,
+                           note=f"The sum of {' and '.join(r['name'].split(',')[0] for r in parts)}, "
+                                "the areas it was split into in 2019."),
+        median_age=gap(NOT_AVAILABLE, f"The ACS publishes the areas this was split into in "
+                                      f"2019 ({medians}), and medians do not add up."),
+        sex_ratio=(measure(round(1000 * men / women), unit="males_per_1000_females",
+                           year=year, source=src) if men and women else gap(NOT_AVAILABLE)),
+        religion=first.get("religion"),
+        sources=first.get("sources"),
+        **fields,
+    )
+
+
+def bind_by_fips(records: list[dict[str, Any]]) -> int:
+    """Pin each county to the polygon its FIPS code names, where that is known.
+
+    By name alone, a county and the independent city that shares its name --
+    Baltimore, Fairfax, Franklin, Richmond, Roanoke, St. Louis -- are two rows
+    that each fit two polygons, and both were refused. scripts/wikidata_points.py
+    binds a code to a polygon only where the Wikidata item's coordinate and its
+    name both say which one it is (data/processed/code_shapes.json). The row
+    takes the polygon's own name, so a bound county reads as it always has.
+    """
+    from ._shared import read_json
+    shapes = (read_json(PROCESSED / "code_shapes.json", {}) or {}).get("USA", {})
+    bound = 0
+    for r in records:
+        entry = shapes.get(r["codes"]["geoid"])
+        if entry and entry.get("level") == "admin2":
+            r.update(match_by="shape_id", shape_id=entry["shape_id"], name=entry["name"])
+            bound += 1
+        elif r.get("parent_name") and r["name"].endswith(f", {r['parent_name']}"):
+            # The state is already the parent. Left in the name, it made
+            # "Manassas Park city, Virginia" a longer form of both Manassas and
+            # Manassas Park, and it matched neither.
+            r["name"] = r["name"][: -len(r["parent_name"]) - 2]
+    return bound
+
+
+def mapped_counties(records: list[dict[str, Any]], year: int,
+                    key: str | None) -> list[dict[str, Any]]:
+    """The county records as the map draws the counties."""
+    out = [r for r in records if not r["codes"]["geoid"].startswith(CT_PLANNING_REGIONS)]
+    if len(out) < len(records):
+        ct = [r for r in fetch("county", CT_COUNTY_YEAR, key, geo="county:*&in=state:09")
+              if not r["codes"]["geoid"].startswith(CT_PLANNING_REGIONS)]
+        for r in ct:
+            for field in ("ethnicity", "language"):
+                r[f"{field}_note"] = (r.get(f"{field}_note") or "") + CT_NOTE
+        log(f"  Connecticut: {len(records) - len(out)} planning regions set aside, "
+            f"{len(ct)} counties from ACS {CT_COUNTY_YEAR}")
+        out += ct
+    by_gid = {r["codes"]["geoid"]: r for r in out}
+    for gid, (name, parts) in JOINED.items():
+        found = [by_gid[p] for p in parts if p in by_gid]
+        if gid in by_gid or len(found) != len(parts):
+            continue
+        out = [r for r in out if r["codes"]["geoid"] not in parts]
+        out.append(joined_area(gid, name, found))
+        log(f"  {name}: joined from {', '.join(parts)}")
+    log(f"  {bind_by_fips(out)} of {len(out)} counties pinned to their polygon by FIPS code")
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -734,6 +847,8 @@ def main() -> int:
     log(f"us_acs: ACS {args.year} 5-year, level={args.level}"
         + ("" if key else " (no CENSUS_API_KEY set; the API now rejects keyless requests)"))
     records = fetch(args.level, args.year, key)
+    if args.level == "county":
+        records = mapped_counties(records, args.year, key)
     if args.religion_file and args.religion_file.exists():
         attach_religion(records, args.religion_file, args.level)
     else:

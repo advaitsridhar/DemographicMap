@@ -2,11 +2,14 @@
 """Mexico -- INEGI Censo de Población y Vivienda 2020, by municipio.
 
 The ITER release ("Principales resultados por localidad") is one CSV covering
-every locality, municipio, state and the nation, and it carries three of the
-things this map wants: religion, whether a person speaks an indigenous
-language, and Afro-descendant self-identification. All of it comes from the
-*cuestionario básico*, asked of everyone, so these are counts rather than
-sample estimates -- which is why Mexico can be shown at municipio level at all.
+every locality, municipio, state and the nation, and it carries two of the
+things this map wants: religion and whether a person speaks an indigenous
+language. Both come from the *cuestionario básico*, asked of everyone, so
+these are counts rather than sample estimates -- which is why Mexico can be
+shown at municipio level at all. Ethnicity is not read from it: its one ethnic
+column is a yes/no Afro-descendant question, and indigenous
+self-identification is asked only in the extended questionnaire, which
+``mexico_ethnicity.py`` reads.
 
 That makes it the largest single addition available to this project: some 2,470
 municipios, more subnational units carrying religion than everything on the map
@@ -25,7 +28,7 @@ is MUN 000, a municipio is LOC 0000, and everything else is an individual
 locality -- 190,000 of them. Reading without filtering sums the country several
 times over.
 
-**Two of the three fields are yes/no, not compositions.** The census records
+**Language is yes/no, not a composition.** The census records
 *whether* someone speaks an indigenous language here, not which one; the
 language itself lives in other tables. So the shares are two-category and the
 note says so, because "Mexico: indigenous language 6.1%" beside India's mother
@@ -270,31 +273,34 @@ def compose(row: dict[str, str], religion: dict[str, str]) -> dict[str, Any]:
     speakers = number(row.get("P3YM_HLI"))
     base = number(row.get("P_3YMAS")) or total
     if speakers is not None and base:
+        # Spanish for everyone aged 3 or over who speaks no indigenous
+        # language: the census asks about Spanish only of indigenous-language
+        # speakers, and all but a few of the rest -- foreign residents
+        # mostly -- speak it.
         out["language"] = shares(
-            {"Speaks an indigenous language": speakers,
-             "Does not speak an indigenous language": max(base - speakers, 0.0)},
+            {"Indigenous languages": speakers,
+             "Spanish": max(base - speakers, 0.0)},
             total=base)
         out["language_year"] = YEAR
+        also = number(row.get("P3HLI_HE"))
+        only = number(row.get("P3HLINHE"))
+        bilingual = ""
+        if speakers and also is not None and only is not None:
+            bilingual = (f" Here {round(100 * also / speakers)}% of indigenous-language "
+                         f"speakers also speak Spanish and {round(100 * only / speakers)}% "
+                         f"do not.")
         out["language_note"] = (
-            "The census records whether a person aged 3 or over speaks an "
-            "indigenous language, not which one, so this is a yes/no split "
-            "rather than a composition of languages. Which language is asked, "
-            "and published in other INEGI tables, but not in this one.")
+            "People aged 3 or over who speak an indigenous language, and everyone "
+            "else, shown as Spanish: the census asks whether a person speaks an "
+            "indigenous language, and asks about Spanish only of those who do; "
+            "nearly all of the rest speak it. Most indigenous-language speakers "
+            "speak Spanish as well." + bilingual + " Which indigenous language is "
+            "published in other INEGI tables, not in this one.")
 
-    afro = number(row.get("POB_AFRO"))
-    if afro is not None and total:
-        out["ethnicity"] = shares(
-            {"Afro-Mexican or Afro-descendant": afro,
-             "Not Afro-descendant": max(total - afro, 0.0)},
-            total=total)
-        out["ethnicity_year"] = YEAR
-        out["ethnicity_note"] = (
-            "Self-identification as Afro-Mexican or Afro-descendant, asked of "
-            "everyone in the 2020 census. It is a single yes/no question, not a "
-            "classification of the whole population, so the complement means "
-            "'did not identify as Afro-descendant' and not membership of any "
-            "other group. Not comparable with other countries' ethnicity "
-            "categories.")
+    # No ethnicity here. ITER's one ethnic column, POB_AFRO, answers a single
+    # yes/no question, and "not Afro-descendant" names nobody. Whether a person
+    # considers themselves indigenous is asked only in the extended
+    # questionnaire; mexico_ethnicity.py crosses the two answers there.
     return out
 
 
@@ -355,7 +361,7 @@ def build(levels: set[str]) -> dict[str, list[dict[str, Any]]]:
             sex_ratio=(measure(round(1000 * men / women), unit="males_per_1000_females",
                                year=YEAR, source=SOURCE)
                        if men and women else gap(NOT_AVAILABLE)),
-            sources=[{"field": "population/sex ratio/religion/language/ethnicity", "name": SOURCE,
+            sources=[{"field": "population/sex ratio/religion/language", "name": SOURCE,
                       "url": URL, "license": LICENSE}],
             **fields,
         ))
@@ -363,6 +369,9 @@ def build(levels: set[str]) -> dict[str, list[dict[str, Any]]]:
         raise SystemExit("no national row (ENTIDAD 00, MUN 000, LOC 0000) to "
                          "check the published figures against")
     log(f"  rows by level: {seen}")
+    for kind, recs in out.items():
+        told = sum(1 for r in recs if "also speak Spanish" in (r.get("language_note") or ""))
+        log(f"  {kind}: {told} of {len(recs)} with the bilingual share (P3HLI_HE, P3HLINHE)")
     return out
 
 

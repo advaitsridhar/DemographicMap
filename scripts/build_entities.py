@@ -291,6 +291,9 @@ ADAPTER_FILES = [
     # later file never overwrites an earlier real value with a gap marker.
     "india_language_state.json", "india_language_district.json",
     "mexico_state.json", "mexico_municipality.json", "mexico_municipality_age.json",
+    # Indigenous and Afro-Mexican self-identification, crossed in the extended
+    # questionnaire's sample; ITER's files above carry no ethnicity.
+    "mexico_ethnicity.json",
     "colombia_municipality.json",
     "nepal_province.json", "nepal_district.json",
     "nz_region.json", "nz_territorial.json",
@@ -387,6 +390,9 @@ ADAPTER_FILES = [
     # the Republic and every UK file stops at the border.
     "ireland_lea.json",
     "us_state.json", "us_county.json",
+    # Guam, the Virgin Islands, American Samoa and the Northern Marianas, which
+    # the ACS does not survey: their 2020 census, territory and district.
+    "us_island_areas.json",
     # After us_county, and replacing its religion rather than filling a gap.
     # The 2020 U.S. Religion Census that us_acs carries counts adherents as
     # religious bodies report them, which reaches about half the population
@@ -509,8 +515,10 @@ ADAPTER_HINTS: dict[str, str] = {
            "python -m scripts.fetch_census.ibge_sidra --level municipality",
     "AUS": "ABS 2021 Census (religion, ancestry): "
            "python -m scripts.fetch_census.abs --level lga",
-    "MEX": "INEGI Censo 2020 ITER (religion, indigenous language, Afro-descendant): "
-           "python -m scripts.fetch_census.mexico --level both",
+    "MEX": "INEGI Censo 2020 ITER (religion, indigenous language): "
+           "python -m scripts.fetch_census.mexico --level both; extended "
+           "questionnaire (indigenous and Afro-Mexican self-identification): "
+           "python -m scripts.fetch_census.mexico_ethnicity",
     "NZL": "Stats NZ 2023 Census via Aotearoa Data Explorer (ethnicity, "
            "languages spoken, religious affiliation; needs an API key): "
            "python -m scripts.fetch_census.new_zealand",
