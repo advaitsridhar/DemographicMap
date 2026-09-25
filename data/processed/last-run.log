@@ -1,12 +1,2 @@
-  religion columns: {'Catholic': 'PCATOLICA', 'Protestant and evangelical': 'PRO_CRIEVA', 'Other religions': 'POTRAS_REL', 'No religion': 'PSIN_RELIG'}
-  reading iter_00_cpv2020/conjunto_de_datos/conjunto_de_datos_iter_00CSV20.csv
-  POBTOT: 126,014,024 vs published 126,014,024 (0.0000%)
-  P3YM_HLI: 7,364,645 vs published 7,364,645 (0.0000%)
-  POB_AFRO: 2,576,213 vs published 2,576,213 (0.0000%)
-  POBMAS: 61,473,390 vs published 61,473,390 (0.0000%)
-  POBFEM: 64,540,634 vs published 64,540,634 (0.0000%)
-  rows by level: {'nation': 1, 'national subtotal': 2, 'state': 32, 'state subtotal': 64, 'municipality': 2469, 'locality': 193094}
-  wrote data/processed/mexico_state.json (88 kB)
-  32 state records
-  wrote data/processed/mexico_municipality.json (6837 kB)
-  2469 municipality records
+  wrote data/raw/codes/wikidata_countries.json (3 kB)
+JPN P429: 1964 items -> /home/runner/work/DemographicMap/DemographicMap/data/raw/wikidata_points/JPN_P429.json
