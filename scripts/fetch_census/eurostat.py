@@ -100,15 +100,25 @@ def bind_by_outline(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
     A placed record is bound to its polygon by id, at the level the crosswalk
     found it on; the build then gives it the polygon's own label. A region
     whose polygon is already spoken for by a finer region of the same outline
-    (Istanbul is TR10 and TR100) is dropped rather than bound twice.
+    (Istanbul is TR10 and TR100) is dropped rather than bound twice, and so is
+    one whose outline shows it is a unit and more (Eurostat's Pest is the
+    map's Pest without Budapest) -- by name it would land anyway.
     """
     crosswalk = read_json(CROSSWALK, {}) or {}
+    # Where GISCO draws a country, its outline is the test: a region that is
+    # not one of the map's units by outline is not one by name either. The
+    # UK left NUTS 2024, so its regions still go by name.
+    outlined = {nuts_id[:2] for nuts_id in crosswalk}
     placed, rest = [], []
+    dropped = 0
     for rec in records:
         entry = crosswalk.get(rec["codes"]["nuts"])
         if not entry:
-            rest.append(rec)
-        elif entry.get("superseded_by"):
+            if rec["codes"]["nuts"][:2] in outlined:
+                dropped += 1
+            else:
+                rest.append(rec)
+        elif entry.get("superseded_by") or entry.get("refused"):
             continue
         else:
             rec["level"] = entry["level"]
@@ -116,7 +126,8 @@ def bind_by_outline(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
             rec["shape_id"] = entry["shape_id"]
             placed.append(rec)
     if crosswalk:
-        log(f"  {len(placed)} regions placed by outline; {len(rest)} left to their names")
+        log(f"  {len(placed)} regions placed by outline; {dropped} are no one unit by "
+            f"outline; {len(rest)} left to their names")
     return placed, rest
 
 

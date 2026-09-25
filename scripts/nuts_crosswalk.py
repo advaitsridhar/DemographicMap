@@ -35,6 +35,8 @@ GEOMETRY = RAW / "eurostat"
 BOUNDARIES = RAW / "boundaries"
 OUT = PROCESSED / "nuts_crosswalk.json"
 SAME = 0.8
+# Share of a polygon's area that makes it "inside" another.
+HELD = 0.5
 ALPHA2 = {"EL": "GRC", "UK": "GBR"}
 
 
@@ -81,6 +83,7 @@ def main() -> int:
     log(f"{len(regions)} regions against {len(shapes)} polygons in {len(countries)} countries")
 
     best: dict[str, dict] = {}
+    refused: dict[str, dict] = {}
     for lvl, region in regions:
         country = iso3.get(region["cntr"])
         geom = region["geom"]
@@ -96,15 +99,37 @@ def main() -> int:
             if top is None or iou > top[0]:
                 top = (iou, s)
         if top and top[0] >= SAME:
-            best[region["id"]] = {"nuts_level": lvl, "level": top[1]["level"],
-                                  "shape_id": top[1]["id"], "iou": round(top[0], 3)}
+            unit = top[1]
+            # Area hides a small, dense place: "Oslo og Viken" covers the
+            # map's Viken at 0.94 and holds Oslo besides. So no other unit of
+            # the level may lie mostly inside the region, and no other
+            # region of the level mostly inside the unit.
+            extra = [s["id"] for i in tree.query(geom, predicate="intersects")
+                     for s in [shapes[i]]
+                     if s is not unit and s["group"] == country and s["level"] == unit["level"]
+                     and geom.intersection(s["geom"]).area > HELD * s["geom"].area]
+            also = [r["id"] for l2, r in regions
+                    if l2 == lvl and r is not region and r["cntr"] == region["cntr"]
+                    and r["geom"].intersects(unit["geom"])
+                    and r["geom"].intersection(unit["geom"]).area > HELD * r["geom"].area]
+            if extra or also:
+                why = (f"covers {unit['id']} at {top[0]:.2f} but also holds "
+                       f"{extra or also}")
+                log(f"  {region['id']}: {why}; refused")
+                refused[region["id"]] = {"refused": why}
+                continue
+            best[region["id"]] = {"nuts_level": lvl, "level": unit["level"],
+                                  "shape_id": unit["id"], "iou": round(top[0], 3)}
 
     # One region per polygon: the finer where NUTS-2 and NUTS-3 are the same
     # outline; and never two regions of one level on one polygon.
     by_shape: dict[str, list[str]] = defaultdict(list)
     for nuts_id, entry in best.items():
         by_shape[entry["shape_id"]].append(nuts_id)
-    out: dict[str, dict] = {}
+    # A region whose outline shows it is a unit and more is refused, not left
+    # to its name: Eurostat's Pest is the map's Pest without Budapest, and by
+    # name it had been written onto a Pest that includes the capital.
+    out: dict[str, dict] = dict(refused)
     for shape_id, ids in by_shape.items():
         ids.sort(key=lambda n: (-best[n]["nuts_level"], -best[n]["iou"]))
         keep = ids[0]
@@ -118,7 +143,8 @@ def main() -> int:
     for entry in out.values():
         if "level" in entry:
             placed[(entry["nuts_level"], entry["level"])] += 1
-    log(f"placed: {dict(placed)}; superseded {sum('superseded_by' in e for e in out.values())}")
+    log(f"placed: {dict(placed)}; superseded {sum('superseded_by' in e for e in out.values())}; "
+        f"refused {len(refused)}")
     write_json(OUT, out)
     return 0
 

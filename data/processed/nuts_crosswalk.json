@@ -1,0 +1,3911 @@
+{
+  "TR52": {
+    "refused": "covers 25984515B78139731385057 at 0.81 but also holds ['25984515B55022069390108']"
+  },
+  "NO08": {
+    "refused": "covers 71437522B91482774809601 at 0.94 but also holds ['71437522B68338217323905']"
+  },
+  "PL92": {
+    "refused": "covers 17162690B84565288021286 at 0.81 but also holds ['PL91']"
+  },
+  "HU12": {
+    "refused": "covers 22733592B46801225244053 at 0.84 but also holds ['HU11']"
+  },
+  "RO32": {
+    "refused": "covers 36066543B58098055223766 at 0.81 but also holds ['36066543B11747992440272']"
+  },
+  "SE23": {
+    "refused": "covers 68755315B39536810599908 at 0.81 but also holds ['68755315B55596512557513']"
+  },
+  "AT221": {
+    "refused": "covers 14549572B3684891259076 at 0.83 but also holds ['14549572B62018826292176']"
+  },
+  "AT332": {
+    "refused": "covers 14549572B66922118471265 at 0.90 but also holds ['14549572B66440199286019']"
+  },
+  "HU120": {
+    "refused": "covers 22733592B46801225244053 at 0.84 but also holds ['HU110']"
+  },
+  "NO094": {
+    "refused": "covers 71437522B75605567014825 at 0.86 but also holds ['NO093']"
+  },
+  "ITH3": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B96721879872173",
+    "iou": 0.959
+  },
+  "ITH4": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B53770696546298",
+    "iou": 0.948
+  },
+  "ITH5": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B93883326437068",
+    "iou": 0.973
+  },
+  "ITI1": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B95153686365028",
+    "iou": 0.965
+  },
+  "ITI2": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B26790412086965",
+    "iou": 0.959
+  },
+  "ITI3": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B49951072422318",
+    "iou": 0.968
+  },
+  "ITI4": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B86473916475875",
+    "iou": 0.963
+  },
+  "LT011": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "39236102B79521903246642",
+    "iou": 0.951
+  },
+  "LT01": {
+    "superseded_by": "LT011"
+  },
+  "SK010": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25762395B46801803338249",
+    "iou": 0.933
+  },
+  "SK01": {
+    "superseded_by": "SK010"
+  },
+  "TR100": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B18786507826220",
+    "iou": 0.91
+  },
+  "TR10": {
+    "superseded_by": "TR100"
+  },
+  "NL11": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "6811986B22599492826393",
+    "iou": 0.95
+  },
+  "NL12": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "6811986B16797155540126",
+    "iou": 0.816
+  },
+  "NL13": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "6811986B35805836723247",
+    "iou": 0.962
+  },
+  "NL21": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "6811986B65865334514334",
+    "iou": 0.942
+  },
+  "NL22": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "6811986B62088949697264",
+    "iou": 0.951
+  },
+  "NL32": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "6811986B7118592816602",
+    "iou": 0.814
+  },
+  "NL350": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "6811986B73841275384957",
+    "iou": 0.925
+  },
+  "NL35": {
+    "superseded_by": "NL350"
+  },
+  "NL36": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "6811986B20589914738510",
+    "iou": 0.907
+  },
+  "NL41": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "6811986B61109061302483",
+    "iou": 0.941
+  },
+  "NL42": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "6811986B81587772601460",
+    "iou": 0.895
+  },
+  "NO020": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "71437522B26647745844979",
+    "iou": 0.987
+  },
+  "NO02": {
+    "superseded_by": "NO020"
+  },
+  "TR310": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B59477790330217",
+    "iou": 0.893
+  },
+  "TR31": {
+    "superseded_by": "TR310"
+  },
+  "NO060": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "71437522B86105181076448",
+    "iou": 0.926
+  },
+  "NO06": {
+    "superseded_by": "NO060"
+  },
+  "TR510": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B47806653651907",
+    "iou": 0.964
+  },
+  "TR51": {
+    "superseded_by": "TR510"
+  },
+  "PL21": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B67655395900928",
+    "iou": 0.972
+  },
+  "PL22": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B16879770934003",
+    "iou": 0.964
+  },
+  "PL41": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B71775569625336",
+    "iou": 0.978
+  },
+  "PL42": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B34878575347312",
+    "iou": 0.974
+  },
+  "PL43": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B87710404837799",
+    "iou": 0.972
+  },
+  "PL51": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B9130125042960",
+    "iou": 0.975
+  },
+  "PL52": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B67719337891950",
+    "iou": 0.964
+  },
+  "PL61": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B37876665907262",
+    "iou": 0.976
+  },
+  "PL62": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B18723007704312",
+    "iou": 0.98
+  },
+  "PL63": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B77437931625010",
+    "iou": 0.973
+  },
+  "PL71": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B86810837764805",
+    "iou": 0.976
+  },
+  "PL72": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B20834640531728",
+    "iou": 0.968
+  },
+  "PL81": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B69262761487853",
+    "iou": 0.979
+  },
+  "PL82": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B44985096553766",
+    "iou": 0.976
+  },
+  "PL84": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "17162690B23777949290372",
+    "iou": 0.978
+  },
+  "PT150": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "24955722B93513210668499",
+    "iou": 0.94
+  },
+  "PT15": {
+    "superseded_by": "PT150"
+  },
+  "PT300": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "24955722B94024055587671",
+    "iou": 0.857
+  },
+  "PT30": {
+    "superseded_by": "PT300"
+  },
+  "HR050": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B76540875123137",
+    "iou": 0.893
+  },
+  "HR05": {
+    "superseded_by": "HR050"
+  },
+  "RS110": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "33768554B61504617151000",
+    "iou": 0.935
+  },
+  "RS11": {
+    "superseded_by": "RS110"
+  },
+  "SE110": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B30510620730039",
+    "iou": 0.818
+  },
+  "SE11": {
+    "superseded_by": "SE110"
+  },
+  "ITC1": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B83257595874769",
+    "iou": 0.975
+  },
+  "ITC20": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "23120603B46910528128522",
+    "iou": 0.951
+  },
+  "ITC2": {
+    "superseded_by": "ITC20"
+  },
+  "ITC3": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B90496191820000",
+    "iou": 0.929
+  },
+  "ITC4": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B71310509030930",
+    "iou": 0.971
+  },
+  "ITF1": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B60396852211",
+    "iou": 0.967
+  },
+  "ITF2": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B60242334488993",
+    "iou": 0.944
+  },
+  "ITF3": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B14973764900567",
+    "iou": 0.964
+  },
+  "ITF4": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B69806914684511",
+    "iou": 0.962
+  },
+  "ITF5": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B59117294159851",
+    "iou": 0.971
+  },
+  "ITF6": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B55310757134450",
+    "iou": 0.968
+  },
+  "ITG1": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B91569774900330",
+    "iou": 0.969
+  },
+  "ITG2": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "23120603B31191283857260",
+    "iou": 0.96
+  },
+  "EL51": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "26713481B84884565940454",
+    "iou": 0.956
+  },
+  "EL52": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "26713481B13719921321351",
+    "iou": 0.952
+  },
+  "EL53": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "26713481B79624114853188",
+    "iou": 0.967
+  },
+  "EL54": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "26713481B784345685192",
+    "iou": 0.955
+  },
+  "EL61": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "26713481B23289270995723",
+    "iou": 0.952
+  },
+  "EL63": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "26713481B45081925310995",
+    "iou": 0.945
+  },
+  "EL64": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "26713481B15414951167649",
+    "iou": 0.935
+  },
+  "EL65": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "26713481B43531359458460",
+    "iou": 0.943
+  },
+  "ES11": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "25490228B94236519555378",
+    "iou": 0.962
+  },
+  "ES120": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25490228B24314700704920",
+    "iou": 0.964
+  },
+  "ES12": {
+    "superseded_by": "ES120"
+  },
+  "ES130": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B67737622455841",
+    "iou": 0.93
+  },
+  "ES13": {
+    "superseded_by": "ES130"
+  },
+  "ES21": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "25490228B56567998760255",
+    "iou": 0.928
+  },
+  "ES220": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25490228B33348776534112",
+    "iou": 0.949
+  },
+  "ES22": {
+    "superseded_by": "ES220"
+  },
+  "ES230": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25490228B81978515469630",
+    "iou": 0.928
+  },
+  "ES23": {
+    "superseded_by": "ES230"
+  },
+  "ES24": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "25490228B61325010384209",
+    "iou": 0.982
+  },
+  "ES300": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25490228B43154843394848",
+    "iou": 0.96
+  },
+  "ES30": {
+    "superseded_by": "ES300"
+  },
+  "ES41": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "25490228B8471183517505",
+    "iou": 0.982
+  },
+  "ES42": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "25490228B94630301010512",
+    "iou": 0.985
+  },
+  "ES43": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "25490228B86140490400531",
+    "iou": 0.983
+  },
+  "ES51": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "25490228B80227492032103",
+    "iou": 0.976
+  },
+  "ES52": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "25490228B14384488423733",
+    "iou": 0.968
+  },
+  "ES53": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "93216281B25565777220884",
+    "iou": 0.892
+  },
+  "ES61": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "25490228B88831207743232",
+    "iou": 0.988
+  },
+  "ES620": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B8477859939200",
+    "iou": 0.965
+  },
+  "ES62": {
+    "superseded_by": "ES620"
+  },
+  "ES70": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "25490228B84620027724461",
+    "iou": 0.883
+  },
+  "FRG0": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "19338628B99642989531496",
+    "iou": 0.977
+  },
+  "FRH0": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "19338628B64983593182368",
+    "iou": 0.946
+  },
+  "AT11": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "97560089B12055607938436",
+    "iou": 0.911
+  },
+  "AT12": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "97560089B30234814950985",
+    "iou": 0.973
+  },
+  "AT130": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "14549572B24691553772644",
+    "iou": 0.864
+  },
+  "AT13": {
+    "superseded_by": "AT130"
+  },
+  "AT21": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "97560089B55365172259742",
+    "iou": 0.958
+  },
+  "AT22": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "97560089B87855108402029",
+    "iou": 0.974
+  },
+  "AT31": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "97560089B86772589826985",
+    "iou": 0.965
+  },
+  "AT32": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "97560089B65158936715310",
+    "iou": 0.941
+  },
+  "AT33": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "97560089B46292059412713",
+    "iou": 0.96
+  },
+  "AT34": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "97560089B20931628540879",
+    "iou": 0.936
+  },
+  "FI1B1": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B30960840619879",
+    "iou": 0.88
+  },
+  "FI1B": {
+    "superseded_by": "FI1B1"
+  },
+  "BA01": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "54001226B17629474923252",
+    "iou": 0.948
+  },
+  "BA02": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "40542155B67901979992547",
+    "iou": 0.942
+  },
+  "BA03": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "40542155B79782904339110",
+    "iou": 0.862
+  },
+  "BE100": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "21686613B18913386279163",
+    "iou": 0.832
+  },
+  "BE10": {
+    "superseded_by": "BE100"
+  },
+  "BE21": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "21686613B2396966306431",
+    "iou": 0.942
+  },
+  "BE22": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "21686613B67770072661487",
+    "iou": 0.933
+  },
+  "BE23": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "21686613B82996872575786",
+    "iou": 0.943
+  },
+  "BE24": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "21686613B83431002442680",
+    "iou": 0.903
+  },
+  "BE25": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "21686613B39448605328026",
+    "iou": 0.957
+  },
+  "BE310": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "21686613B69139919320544",
+    "iou": 0.89
+  },
+  "BE31": {
+    "superseded_by": "BE310"
+  },
+  "BE32": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "21686613B73119179556728",
+    "iou": 0.927
+  },
+  "BE33": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "21686613B30775418393346",
+    "iou": 0.949
+  },
+  "FR10": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "19338628B22645672383103",
+    "iou": 0.97
+  },
+  "BE34": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "21686613B13309387984844",
+    "iou": 0.951
+  },
+  "BE35": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "21686613B39201499637991",
+    "iou": 0.937
+  },
+  "FRL0": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "19338628B95725112529620",
+    "iou": 0.963
+  },
+  "FRM0": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "19338628B22604203385446",
+    "iou": 0.946
+  },
+  "CH040": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B4468941998498",
+    "iou": 0.923
+  },
+  "CH04": {
+    "superseded_by": "CH040"
+  },
+  "CH070": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B95773795125249",
+    "iou": 0.943
+  },
+  "CH07": {
+    "superseded_by": "CH070"
+  },
+  "CZ010": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "57006924B6298598328883",
+    "iou": 0.896
+  },
+  "CZ01": {
+    "superseded_by": "CZ010"
+  },
+  "CZ020": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B58641114734330",
+    "iou": 0.964
+  },
+  "CZ02": {
+    "superseded_by": "CZ020"
+  },
+  "CZ080": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B23519183895960",
+    "iou": 0.951
+  },
+  "CZ08": {
+    "superseded_by": "CZ080"
+  },
+  "DE11": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B86745718691241",
+    "iou": 0.961
+  },
+  "DE12": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B19876986675637",
+    "iou": 0.95
+  },
+  "DE13": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B61051204169762",
+    "iou": 0.962
+  },
+  "DE14": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B15022388296844",
+    "iou": 0.963
+  },
+  "FRB0": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "19338628B5758982491638",
+    "iou": 0.983
+  },
+  "DE21": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B1315543690610",
+    "iou": 0.971
+  },
+  "DE22": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B22007842747726",
+    "iou": 0.97
+  },
+  "DE23": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B44987229854715",
+    "iou": 0.968
+  },
+  "DE24": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B72727683862663",
+    "iou": 0.955
+  },
+  "DE25": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B15061347548929",
+    "iou": 0.961
+  },
+  "DE26": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B89448690772082",
+    "iou": 0.959
+  },
+  "DE27": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B65596861168427",
+    "iou": 0.954
+  },
+  "DE300": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10402087B20892132820961",
+    "iou": 0.874
+  },
+  "DE30": {
+    "superseded_by": "DE300"
+  },
+  "DE40": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B40185768535592",
+    "iou": 0.975
+  },
+  "DE50": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "10402087B44391416804171",
+    "iou": 0.805
+  },
+  "DE600": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10402087B45896528657515",
+    "iou": 0.846
+  },
+  "DE60": {
+    "superseded_by": "DE600"
+  },
+  "DE71": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B42560167255242",
+    "iou": 0.952
+  },
+  "DE72": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B56635429978008",
+    "iou": 0.954
+  },
+  "DE73": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B5760978041875",
+    "iou": 0.951
+  },
+  "DE80": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B60782008682549",
+    "iou": 0.942
+  },
+  "DE91": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B23702346475723",
+    "iou": 0.958
+  },
+  "DE92": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B94432643063062",
+    "iou": 0.962
+  },
+  "DE93": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B4064771181754",
+    "iou": 0.976
+  },
+  "DE94": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B2639969244614",
+    "iou": 0.962
+  },
+  "DEA1": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B16138204042833",
+    "iou": 0.961
+  },
+  "DEA2": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B57109950257038",
+    "iou": 0.958
+  },
+  "DEA3": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B93499833428165",
+    "iou": 0.958
+  },
+  "DEA4": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B64982818747725",
+    "iou": 0.961
+  },
+  "DEA5": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B40774776719210",
+    "iou": 0.964
+  },
+  "DEB1": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B14573642950642",
+    "iou": 0.957
+  },
+  "DEB2": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B88105018400154",
+    "iou": 0.958
+  },
+  "DEB3": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B81909410124776",
+    "iou": 0.964
+  },
+  "DEC0": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B83775792336645",
+    "iou": 0.948
+  },
+  "DED2": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B71091673137763",
+    "iou": 0.965
+  },
+  "DED4": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B71894413182695",
+    "iou": 0.957
+  },
+  "DED5": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B77675294704498",
+    "iou": 0.955
+  },
+  "DEE0": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B23625801106445",
+    "iou": 0.974
+  },
+  "DEF0": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B46069870964378",
+    "iou": 0.946
+  },
+  "DEG0": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "9070358B67217417145666",
+    "iou": 0.963
+  },
+  "DK01": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "84455774B63592985071065",
+    "iou": 0.897
+  },
+  "DK02": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "84455774B92412385890269",
+    "iou": 0.829
+  },
+  "DK03": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "84455774B68755790009873",
+    "iou": 0.867
+  },
+  "DK04": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "84455774B58555105451238",
+    "iou": 0.868
+  },
+  "EL30": {
+    "nuts_level": 2,
+    "level": "admin1",
+    "shape_id": "93993887B88980272284763",
+    "iou": 0.857
+  },
+  "EL41": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "26713481B43979888680650",
+    "iou": 0.824
+  },
+  "EL43": {
+    "nuts_level": 2,
+    "level": "admin2",
+    "shape_id": "26713481B79456911033966",
+    "iou": 0.914
+  },
+  "AT222": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "14549572B47205834081822",
+    "iou": 0.936
+  },
+  "AT321": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "14549572B5163353655398",
+    "iou": 0.92
+  },
+  "AT331": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "14549572B67671541166056",
+    "iou": 0.905
+  },
+  "AT333": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "14549572B80741192481461",
+    "iou": 0.935
+  },
+  "BG311": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B21472932183906",
+    "iou": 0.934
+  },
+  "BG312": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B62968334423713",
+    "iou": 0.94
+  },
+  "BG313": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B85643102977503",
+    "iou": 0.941
+  },
+  "BG314": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B31715207622661",
+    "iou": 0.931
+  },
+  "BG315": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B46852240648203",
+    "iou": 0.918
+  },
+  "BG321": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B33485564928872",
+    "iou": 0.915
+  },
+  "BG322": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B98033392474290",
+    "iou": 0.891
+  },
+  "BG323": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B77314555344177",
+    "iou": 0.841
+  },
+  "BG324": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B37005697936135",
+    "iou": 0.841
+  },
+  "BG325": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B76058973774161",
+    "iou": 0.94
+  },
+  "BG331": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B59958785683132",
+    "iou": 0.937
+  },
+  "BG332": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B87459279051229",
+    "iou": 0.957
+  },
+  "BG333": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B51752222739071",
+    "iou": 0.911
+  },
+  "BG334": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B13229128735183",
+    "iou": 0.911
+  },
+  "BG341": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B44315306220510",
+    "iou": 0.945
+  },
+  "BG342": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B44229797432023",
+    "iou": 0.91
+  },
+  "BG343": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B84935851538926",
+    "iou": 0.928
+  },
+  "BG344": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B69206981842261",
+    "iou": 0.912
+  },
+  "BG411": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B40975042441370",
+    "iou": 0.893
+  },
+  "BG412": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B17014479854950",
+    "iou": 0.938
+  },
+  "BG413": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B16069235588997",
+    "iou": 0.964
+  },
+  "AL011": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10019604B38416360860341",
+    "iou": 0.902
+  },
+  "AL012": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10019604B56812167051250",
+    "iou": 0.814
+  },
+  "AL013": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10019604B40645538692706",
+    "iou": 0.891
+  },
+  "AL015": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10019604B9428140626415",
+    "iou": 0.906
+  },
+  "AL021": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10019604B8832247678249",
+    "iou": 0.934
+  },
+  "AL022": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10019604B30424798991477",
+    "iou": 0.877
+  },
+  "AL031": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10019604B1094996199402",
+    "iou": 0.891
+  },
+  "AL032": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10019604B18588012879070",
+    "iou": 0.89
+  },
+  "AL033": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10019604B29738820438867",
+    "iou": 0.905
+  },
+  "AL034": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10019604B11091570243697",
+    "iou": 0.92
+  },
+  "AL035": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "10019604B59649873769490",
+    "iou": 0.901
+  },
+  "AT111": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "14549572B63430755874658",
+    "iou": 0.923
+  },
+  "CH032": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B84766611276082",
+    "iou": 0.832
+  },
+  "CH033": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B11338788345342",
+    "iou": 0.901
+  },
+  "CH051": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B11753136967749",
+    "iou": 0.892
+  },
+  "CH055": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B27205007293794",
+    "iou": 0.911
+  },
+  "CH056": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B85432491504073",
+    "iou": 0.955
+  },
+  "CH057": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B73326014959541",
+    "iou": 0.884
+  },
+  "CH061": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B29073934101403",
+    "iou": 0.9
+  },
+  "CH062": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B76174754463268",
+    "iou": 0.91
+  },
+  "CH063": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B29858350399599",
+    "iou": 0.888
+  },
+  "CH064": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "98125504B17504345361325",
+    "iou": 0.86
+  },
+  "CH066": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "98125504B97349886463799",
+    "iou": 0.844
+  },
+  "CZ031": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B46425968394697",
+    "iou": 0.967
+  },
+  "CZ032": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B93878397098511",
+    "iou": 0.968
+  },
+  "CZ041": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B80386947470046",
+    "iou": 0.946
+  },
+  "CZ042": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B34062378650272",
+    "iou": 0.95
+  },
+  "CZ051": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B98776772787889",
+    "iou": 0.943
+  },
+  "CZ052": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B56271871797203",
+    "iou": 0.942
+  },
+  "CZ053": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B96941531518499",
+    "iou": 0.953
+  },
+  "CZ063": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B33107872828953",
+    "iou": 0.963
+  },
+  "CZ064": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B81289681513643",
+    "iou": 0.952
+  },
+  "CZ071": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B12746720248776",
+    "iou": 0.943
+  },
+  "CZ072": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "73172107B87463303438563",
+    "iou": 0.951
+  },
+  "BG414": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B96010659565513",
+    "iou": 0.941
+  },
+  "BG415": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B44341321223640",
+    "iou": 0.933
+  },
+  "BG421": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B63653503228719",
+    "iou": 0.921
+  },
+  "BG422": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B79406413645892",
+    "iou": 0.937
+  },
+  "BG423": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B54448324978016",
+    "iou": 0.922
+  },
+  "BG424": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B66285988905372",
+    "iou": 0.924
+  },
+  "BG425": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22928101B68200013052436",
+    "iou": 0.94
+  },
+  "CH011": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B85268669280160",
+    "iou": 0.913
+  },
+  "CH012": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B38573473865054",
+    "iou": 0.951
+  },
+  "CH013": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B83881285484717",
+    "iou": 0.816
+  },
+  "CH021": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B78940680080703",
+    "iou": 0.935
+  },
+  "CH022": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B87604960987122",
+    "iou": 0.892
+  },
+  "CH024": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B64873726514121",
+    "iou": 0.903
+  },
+  "CH025": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "70761945B19914004537681",
+    "iou": 0.865
+  },
+  "ES111": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B51396366921995",
+    "iou": 0.93
+  },
+  "ES112": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B81853390501709",
+    "iou": 0.962
+  },
+  "ES113": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B32314821802104",
+    "iou": 0.947
+  },
+  "ES114": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B43695015348250",
+    "iou": 0.916
+  },
+  "ES211": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B53177073729370",
+    "iou": 0.844
+  },
+  "ES212": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B76527566643208",
+    "iou": 0.896
+  },
+  "DK014": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "71786716B33031054619724",
+    "iou": 0.894
+  },
+  "EE001": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "21999144B19319879871883",
+    "iou": 0.907
+  },
+  "FI1C1": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B17994066114322",
+    "iou": 0.832
+  },
+  "FI1C2": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B65986062820565",
+    "iou": 0.957
+  },
+  "FI1C5": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B76795664887161",
+    "iou": 0.964
+  },
+  "FI1C6": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B62240171763951",
+    "iou": 0.963
+  },
+  "FI1C7": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B6444665230203",
+    "iou": 0.924
+  },
+  "FI1D5": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B58135301868459",
+    "iou": 0.954
+  },
+  "FI1D7": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B9539567772054",
+    "iou": 0.989
+  },
+  "FI1D8": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B44835655910893",
+    "iou": 0.914
+  },
+  "FI1D9": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B87432053307570",
+    "iou": 0.933
+  },
+  "FI1DA": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B95561484044627",
+    "iou": 0.874
+  },
+  "FI1DB": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B62635796201807",
+    "iou": 0.944
+  },
+  "FI1DC": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B73736336897537",
+    "iou": 0.927
+  },
+  "ES213": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B43945081388394",
+    "iou": 0.919
+  },
+  "ES241": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B88766590901676",
+    "iou": 0.965
+  },
+  "ES242": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B52305087283901",
+    "iou": 0.967
+  },
+  "ES243": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B58713858274405",
+    "iou": 0.954
+  },
+  "ES411": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B93286542911772",
+    "iou": 0.959
+  },
+  "ES412": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B87022961233437",
+    "iou": 0.942
+  },
+  "ES413": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B52060503612479",
+    "iou": 0.968
+  },
+  "ES414": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B23466456183864",
+    "iou": 0.94
+  },
+  "ES415": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B37232824113658",
+    "iou": 0.961
+  },
+  "ES416": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B42344641928582",
+    "iou": 0.964
+  },
+  "ES417": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B61104224606423",
+    "iou": 0.955
+  },
+  "ES418": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B16607484586717",
+    "iou": 0.952
+  },
+  "ES419": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B64882863235857",
+    "iou": 0.95
+  },
+  "ES421": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B92677822901232",
+    "iou": 0.972
+  },
+  "ES422": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B65036692111554",
+    "iou": 0.971
+  },
+  "ES423": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B51090048381722",
+    "iou": 0.977
+  },
+  "ES424": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B1735947308012",
+    "iou": 0.967
+  },
+  "ES425": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B48824658388314",
+    "iou": 0.966
+  },
+  "ES431": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B51523306154914",
+    "iou": 0.967
+  },
+  "ES432": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B7928865067192",
+    "iou": 0.957
+  },
+  "ES511": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B38817874256440",
+    "iou": 0.937
+  },
+  "ES512": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B12743856325627",
+    "iou": 0.912
+  },
+  "ES513": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B77878961012946",
+    "iou": 0.963
+  },
+  "ES514": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B93269883088590",
+    "iou": 0.95
+  },
+  "ES521": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B51510323833102",
+    "iou": 0.94
+  },
+  "ES522": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B3412943625053",
+    "iou": 0.957
+  },
+  "ES523": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B60002663510944",
+    "iou": 0.957
+  },
+  "ES611": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B39621848146831",
+    "iou": 0.96
+  },
+  "ES612": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B35096300622019",
+    "iou": 0.943
+  },
+  "ES613": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B12389879423062",
+    "iou": 0.971
+  },
+  "ES614": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B95730866813440",
+    "iou": 0.966
+  },
+  "ES615": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B63381236244230",
+    "iou": 0.962
+  },
+  "ES616": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B69719065969001",
+    "iou": 0.971
+  },
+  "ES617": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B36696750331962",
+    "iou": 0.946
+  },
+  "ES618": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "93216281B72129419312860",
+    "iou": 0.966
+  },
+  "FI196": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B88711432523249",
+    "iou": 0.942
+  },
+  "FI198": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B78555514573464",
+    "iou": 0.931
+  },
+  "FI199": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B43233145825563",
+    "iou": 0.952
+  },
+  "FI19A": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B22299411224621",
+    "iou": 0.811
+  },
+  "FI19B": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "49019192B21119876657643",
+    "iou": 0.916
+  },
+  "FRC11": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B37681458471024",
+    "iou": 0.964
+  },
+  "FRC12": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B85399142595811",
+    "iou": 0.963
+  },
+  "FRC13": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B17013349851570",
+    "iou": 0.957
+  },
+  "FRC14": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B9446677840281",
+    "iou": 0.96
+  },
+  "FRC21": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B35503960464671",
+    "iou": 0.951
+  },
+  "FRC22": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B73543866728585",
+    "iou": 0.947
+  },
+  "FRC23": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B41622072756868",
+    "iou": 0.955
+  },
+  "FRC24": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B23158534197665",
+    "iou": 0.879
+  },
+  "FRD11": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B48646093113646",
+    "iou": 0.948
+  },
+  "FRD12": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B25199754609160",
+    "iou": 0.946
+  },
+  "FRD13": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B96504219230077",
+    "iou": 0.954
+  },
+  "FRD21": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B58139106097457",
+    "iou": 0.95
+  },
+  "FRD22": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B55885149928258",
+    "iou": 0.958
+  },
+  "FRE11": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B41843467801289",
+    "iou": 0.934
+  },
+  "FRK23": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B81319189614535",
+    "iou": 0.944
+  },
+  "FRK24": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B91645868350210",
+    "iou": 0.961
+  },
+  "FRK25": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B11036857103617",
+    "iou": 0.942
+  },
+  "FRK26": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B37867629412878",
+    "iou": 0.936
+  },
+  "FRK27": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B62265126010794",
+    "iou": 0.958
+  },
+  "FRK28": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B73077327330789",
+    "iou": 0.952
+  },
+  "FRL01": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B35951695576760",
+    "iou": 0.952
+  },
+  "FRL02": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B36939425112061",
+    "iou": 0.945
+  },
+  "FRL03": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B5209283925001",
+    "iou": 0.941
+  },
+  "FRL04": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B17788527993089",
+    "iou": 0.904
+  },
+  "FRL05": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B96369043825533",
+    "iou": 0.938
+  },
+  "FRL06": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B40811589398759",
+    "iou": 0.933
+  },
+  "FRM01": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B58069914139647",
+    "iou": 0.91
+  },
+  "FRM02": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B63382640804813",
+    "iou": 0.945
+  },
+  "HR021": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B61435151319217",
+    "iou": 0.934
+  },
+  "HR022": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B44621704912163",
+    "iou": 0.917
+  },
+  "HR023": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B23297644769428",
+    "iou": 0.903
+  },
+  "HR024": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B28391940023517",
+    "iou": 0.893
+  },
+  "HR025": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B96515887411853",
+    "iou": 0.915
+  },
+  "HR026": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B91393345169260",
+    "iou": 0.912
+  },
+  "HR027": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B19965518381645",
+    "iou": 0.841
+  },
+  "HR028": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B22901197758589",
+    "iou": 0.95
+  },
+  "HR031": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B11106490836175",
+    "iou": 0.817
+  },
+  "HR032": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B98529903349666",
+    "iou": 0.94
+  },
+  "FRE12": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B36983248378212",
+    "iou": 0.943
+  },
+  "FRE21": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B62247732126362",
+    "iou": 0.957
+  },
+  "FRE22": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B63675080210399",
+    "iou": 0.949
+  },
+  "FRE23": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B47374384537090",
+    "iou": 0.944
+  },
+  "FRF11": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B31239437168490",
+    "iou": 0.95
+  },
+  "FRF12": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B51480055383033",
+    "iou": 0.955
+  },
+  "FRF21": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B82146643431704",
+    "iou": 0.957
+  },
+  "FRF22": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B59009150054618",
+    "iou": 0.962
+  },
+  "FRF23": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B88365210161394",
+    "iou": 0.964
+  },
+  "FRF24": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B63123006968328",
+    "iou": 0.953
+  },
+  "FRF31": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B55179033691193",
+    "iou": 0.929
+  },
+  "FRF32": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B31733296921467",
+    "iou": 0.952
+  },
+  "FRF33": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B44143395752523",
+    "iou": 0.949
+  },
+  "FRF34": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B15812281755892",
+    "iou": 0.95
+  },
+  "FRG01": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B39405184226314",
+    "iou": 0.947
+  },
+  "FRG02": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B93652606552669",
+    "iou": 0.961
+  },
+  "FRG03": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B79150552688542",
+    "iou": 0.96
+  },
+  "FRG04": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B36367114502918",
+    "iou": 0.966
+  },
+  "FRG05": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B84862613094844",
+    "iou": 0.954
+  },
+  "FRH01": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B88952061285466",
+    "iou": 0.943
+  },
+  "FRH02": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B28282788434260",
+    "iou": 0.876
+  },
+  "FRH03": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B68700463469318",
+    "iou": 0.961
+  },
+  "FRH04": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B27439380359881",
+    "iou": 0.918
+  },
+  "FRI11": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B3241556097254",
+    "iou": 0.966
+  },
+  "FRI12": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B86553747081520",
+    "iou": 0.927
+  },
+  "FRI13": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B39932690726806",
+    "iou": 0.962
+  },
+  "FRI14": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B43955208715015",
+    "iou": 0.951
+  },
+  "FRI15": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B97877070376653",
+    "iou": 0.945
+  },
+  "FRI21": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B65585012195292",
+    "iou": 0.956
+  },
+  "FRI22": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B65722517525705",
+    "iou": 0.95
+  },
+  "FRI23": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B22545752371567",
+    "iou": 0.94
+  },
+  "FRI31": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B23450851942643",
+    "iou": 0.958
+  },
+  "FRI32": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B72910508035207",
+    "iou": 0.943
+  },
+  "FRI33": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B3130633303914",
+    "iou": 0.949
+  },
+  "FRI34": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B96315142170190",
+    "iou": 0.958
+  },
+  "FRJ11": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B69755025252743",
+    "iou": 0.937
+  },
+  "FRJ12": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B65685353516975",
+    "iou": 0.944
+  },
+  "FRJ13": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B6585722780804",
+    "iou": 0.95
+  },
+  "FRJ14": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B39231555768445",
+    "iou": 0.961
+  },
+  "FRJ15": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B63064653570654",
+    "iou": 0.926
+  },
+  "FRJ21": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B39237806830896",
+    "iou": 0.925
+  },
+  "FRJ22": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B75659216331829",
+    "iou": 0.963
+  },
+  "FRJ23": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B14857210007928",
+    "iou": 0.914
+  },
+  "FRJ24": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B47069974768565",
+    "iou": 0.958
+  },
+  "FRJ25": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B44586442299991",
+    "iou": 0.956
+  },
+  "FRJ26": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B21169725107025",
+    "iou": 0.932
+  },
+  "FRJ27": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B69257597057849",
+    "iou": 0.956
+  },
+  "FRJ28": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B74037442766285",
+    "iou": 0.919
+  },
+  "FRK11": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B93800494358231",
+    "iou": 0.961
+  },
+  "FRK12": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B17636645797139",
+    "iou": 0.947
+  },
+  "FRK13": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B92097492937040",
+    "iou": 0.949
+  },
+  "FRK14": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B44853968900127",
+    "iou": 0.966
+  },
+  "FRK21": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B68738187753831",
+    "iou": 0.959
+  },
+  "FRK22": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B5188880309581",
+    "iou": 0.962
+  },
+  "FR102": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B64437327790506",
+    "iou": 0.958
+  },
+  "FR103": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B89686889104194",
+    "iou": 0.93
+  },
+  "FR104": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B9117646007403",
+    "iou": 0.929
+  },
+  "FR107": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B83164575229799",
+    "iou": 0.823
+  },
+  "FR108": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B99414288339208",
+    "iou": 0.898
+  },
+  "FRB01": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B99899011218746",
+    "iou": 0.951
+  },
+  "FRB02": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B66992959571509",
+    "iou": 0.957
+  },
+  "FRB03": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B54615812601715",
+    "iou": 0.961
+  },
+  "FRB04": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B19195541270637",
+    "iou": 0.964
+  },
+  "FRB05": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B49073830062787",
+    "iou": 0.944
+  },
+  "FRB06": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "29444166B76955339583295",
+    "iou": 0.956
+  },
+  "HR033": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B22947218853156",
+    "iou": 0.808
+  },
+  "HR034": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B2739070191620",
+    "iou": 0.889
+  },
+  "HR035": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B66558805034122",
+    "iou": 0.856
+  },
+  "HR036": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B78128465472925",
+    "iou": 0.928
+  },
+  "HR061": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B88841376316079",
+    "iou": 0.89
+  },
+  "HR062": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B77748153160451",
+    "iou": 0.905
+  },
+  "HR063": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B42477591474793",
+    "iou": 0.892
+  },
+  "HR064": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B56351017883583",
+    "iou": 0.935
+  },
+  "HR065": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "27960609B38772394949462",
+    "iou": 0.914
+  },
+  "HU211": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B12094485051524",
+    "iou": 0.904
+  },
+  "HU212": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B67277482146773",
+    "iou": 0.894
+  },
+  "HU213": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B83106366455538",
+    "iou": 0.872
+  },
+  "HU221": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B30896182433416",
+    "iou": 0.917
+  },
+  "HU222": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B45424907481292",
+    "iou": 0.878
+  },
+  "HU223": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B73257172814754",
+    "iou": 0.86
+  },
+  "HU231": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B86637050333024",
+    "iou": 0.902
+  },
+  "HU232": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B29270060230612",
+    "iou": 0.833
+  },
+  "HU233": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B60351968143004",
+    "iou": 0.805
+  },
+  "HU311": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B38895068362950",
+    "iou": 0.913
+  },
+  "HU312": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B80362656403521",
+    "iou": 0.863
+  },
+  "HU313": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B56459880018469",
+    "iou": 0.907
+  },
+  "HU321": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B65065142275382",
+    "iou": 0.838
+  },
+  "HU322": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B98149210561707",
+    "iou": 0.85
+  },
+  "HU323": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B55295508761572",
+    "iou": 0.903
+  },
+  "HU331": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B34864686161966",
+    "iou": 0.931
+  },
+  "HU332": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B23182986205710",
+    "iou": 0.908
+  },
+  "HU333": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "22733592B44371380589399",
+    "iou": 0.913
+  },
+  "IS001": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "53860390B39552912285510",
+    "iou": 0.81
+  },
+  "NO071": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "71437522B77650769364207",
+    "iou": 0.849
+  },
+  "LT021": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "39236102B93217040597196",
+    "iou": 0.958
+  },
+  "LT022": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "39236102B54951608919811",
+    "iou": 0.957
+  },
+  "LT023": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "39236102B21585051382269",
+    "iou": 0.949
+  },
+  "LT024": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "39236102B36357844716419",
+    "iou": 0.95
+  },
+  "LT025": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "39236102B83915359981162",
+    "iou": 0.965
+  },
+  "LT026": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "39236102B46747206322764",
+    "iou": 0.972
+  },
+  "LT027": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "39236102B1026114868474",
+    "iou": 0.958
+  },
+  "LT028": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "39236102B31218690811927",
+    "iou": 0.951
+  },
+  "LT029": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "39236102B43626903589456",
+    "iou": 0.949
+  },
+  "MK001": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "19869673B59759079390778",
+    "iou": 0.953
+  },
+  "MK002": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "19869673B25367051519859",
+    "iou": 0.947
+  },
+  "MK003": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "19869673B24262378327284",
+    "iou": 0.951
+  },
+  "MK004": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "19869673B18425588006505",
+    "iou": 0.946
+  },
+  "MK005": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "19869673B93268339583324",
+    "iou": 0.965
+  },
+  "MK006": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "19869673B18118429348634",
+    "iou": 0.938
+  },
+  "MK007": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "19869673B2276524487216",
+    "iou": 0.943
+  },
+  "MK008": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "19869673B29343041094723",
+    "iou": 0.946
+  },
+  "NL112": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "6326949B5414348034711",
+    "iou": 0.809
+  },
+  "PL514": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "97123803B74320746505712",
+    "iou": 0.848
+  },
+  "PL711": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "97123803B7645272119816",
+    "iou": 0.865
+  },
+  "NO081": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "71437522B68338217323905",
+    "iou": 0.848
+  },
+  "NO092": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "71437522B35395315697437",
+    "iou": 0.953
+  },
+  "NO0A1": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "71437522B34429177417176",
+    "iou": 0.849
+  },
+  "NO0A2": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "71437522B18029124622078",
+    "iou": 0.864
+  },
+  "NO0A3": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "71437522B77332488034218",
+    "iou": 0.811
+  },
+  "PL213": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "97123803B21594781679660",
+    "iou": 0.851
+  },
+  "PL415": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "97123803B90951511996431",
+    "iou": 0.826
+  },
+  "PT111": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "24955722B13525102878781",
+    "iou": 0.938
+  },
+  "PT11E": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "24955722B95387288640341",
+    "iou": 0.812
+  },
+  "RS126": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B68944780204869",
+    "iou": 0.924
+  },
+  "RS127": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B7823241267107",
+    "iou": 0.928
+  },
+  "RS211": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B96203602850640",
+    "iou": 0.943
+  },
+  "RS212": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B35785930294755",
+    "iou": 0.93
+  },
+  "RS213": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B6540860887110",
+    "iou": 0.924
+  },
+  "RS214": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B87154505224045",
+    "iou": 0.934
+  },
+  "RS215": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B32695847055571",
+    "iou": 0.92
+  },
+  "RS216": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B66445282038706",
+    "iou": 0.922
+  },
+  "RS217": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B45384402492685",
+    "iou": 0.932
+  },
+  "RS218": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B72675147350084",
+    "iou": 0.931
+  },
+  "RS221": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B65770096848171",
+    "iou": 0.932
+  },
+  "RS222": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B81221095206835",
+    "iou": 0.955
+  },
+  "RS223": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B40253307374301",
+    "iou": 0.939
+  },
+  "RS224": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B152991575474",
+    "iou": 0.951
+  },
+  "RS225": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B35657283611645",
+    "iou": 0.918
+  },
+  "RS226": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B47082150623141",
+    "iou": 0.948
+  },
+  "RS227": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B12372480273054",
+    "iou": 0.907
+  },
+  "RS228": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B26185342001900",
+    "iou": 0.954
+  },
+  "RS229": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B62787435476864",
+    "iou": 0.935
+  },
+  "SE121": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B47712843770727",
+    "iou": 0.936
+  },
+  "SE122": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B98869091115359",
+    "iou": 0.952
+  },
+  "SE123": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B80953081303888",
+    "iou": 0.938
+  },
+  "SE124": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B32575645025153",
+    "iou": 0.968
+  },
+  "SE125": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B7109819079053",
+    "iou": 0.95
+  },
+  "SE211": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B59709318110176",
+    "iou": 0.959
+  },
+  "SE212": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B33676065986160",
+    "iou": 0.955
+  },
+  "PT192": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "24955722B78831183552196",
+    "iou": 0.862
+  },
+  "PT1C2": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "24955722B69535494870966",
+    "iou": 0.808
+  },
+  "PT1C3": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "24955722B4222884881176",
+    "iou": 0.957
+  },
+  "PT1C4": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "24955722B96057717933498",
+    "iou": 0.956
+  },
+  "RO111": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B26260700062336",
+    "iou": 0.942
+  },
+  "RO112": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B74561209637266",
+    "iou": 0.963
+  },
+  "RO113": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B42198475713558",
+    "iou": 0.953
+  },
+  "RO114": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B51562338382257",
+    "iou": 0.956
+  },
+  "RO115": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B37248446823778",
+    "iou": 0.93
+  },
+  "RO116": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B8882897274660",
+    "iou": 0.954
+  },
+  "RO121": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B89779678405362",
+    "iou": 0.95
+  },
+  "RO122": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B7969361625805",
+    "iou": 0.956
+  },
+  "RO123": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B24619858626166",
+    "iou": 0.948
+  },
+  "RO124": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B14518908529982",
+    "iou": 0.958
+  },
+  "RO125": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B31003852704017",
+    "iou": 0.955
+  },
+  "RO126": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B78296944586190",
+    "iou": 0.956
+  },
+  "RO211": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B58663638147212",
+    "iou": 0.958
+  },
+  "RO212": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B44844051198398",
+    "iou": 0.963
+  },
+  "RO213": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B68152190067022",
+    "iou": 0.943
+  },
+  "RO214": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B92634150337313",
+    "iou": 0.953
+  },
+  "RO215": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B72359943930714",
+    "iou": 0.967
+  },
+  "RO216": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B98418194735101",
+    "iou": 0.948
+  },
+  "RO221": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B36343129004237",
+    "iou": 0.953
+  },
+  "RO222": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B78402216072727",
+    "iou": 0.951
+  },
+  "RO223": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B20641671386087",
+    "iou": 0.936
+  },
+  "RO224": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B93424276500239",
+    "iou": 0.954
+  },
+  "RO225": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B86483735073728",
+    "iou": 0.907
+  },
+  "RO226": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B45061076601041",
+    "iou": 0.956
+  },
+  "RO311": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B53231297119391",
+    "iou": 0.965
+  },
+  "RO312": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B5722188715477",
+    "iou": 0.946
+  },
+  "RO313": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B36508208096212",
+    "iou": 0.945
+  },
+  "RO314": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B2949768471564",
+    "iou": 0.936
+  },
+  "RO315": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B9514402375092",
+    "iou": 0.937
+  },
+  "RO316": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B96905451171357",
+    "iou": 0.953
+  },
+  "RO317": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B97406375074903",
+    "iou": 0.946
+  },
+  "RO321": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B11747992440272",
+    "iou": 0.802
+  },
+  "RO322": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B58098055223766",
+    "iou": 0.892
+  },
+  "RO411": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B77825502227768",
+    "iou": 0.961
+  },
+  "RO412": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B9731027217688",
+    "iou": 0.964
+  },
+  "RO413": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B11233778748537",
+    "iou": 0.94
+  },
+  "RO414": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B87560711020488",
+    "iou": 0.948
+  },
+  "RO415": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B39156092034573",
+    "iou": 0.96
+  },
+  "RO421": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B54316219236217",
+    "iou": 0.958
+  },
+  "RO422": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B64946384360033",
+    "iou": 0.964
+  },
+  "RO423": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B15225072959052",
+    "iou": 0.965
+  },
+  "RO424": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "36066543B49718248736475",
+    "iou": 0.951
+  },
+  "RS121": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B16574264174015",
+    "iou": 0.906
+  },
+  "RS122": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B611919772148",
+    "iou": 0.954
+  },
+  "RS123": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B42085876522793",
+    "iou": 0.934
+  },
+  "RS124": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B51566569224291",
+    "iou": 0.925
+  },
+  "RS125": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "41074048B35998987381060",
+    "iou": 0.94
+  },
+  "PL911": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "97123803B58839780764160",
+    "iou": 0.902
+  },
+  "TR411": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B5155931768473",
+    "iou": 0.964
+  },
+  "TR412": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B12971548112787",
+    "iou": 0.967
+  },
+  "TR413": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B39892287187022",
+    "iou": 0.947
+  },
+  "TR421": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B86381770870747",
+    "iou": 0.913
+  },
+  "TR422": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B30494634933389",
+    "iou": 0.947
+  },
+  "TR423": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B87415935832289",
+    "iou": 0.934
+  },
+  "TR424": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B96039700866385",
+    "iou": 0.949
+  },
+  "TR425": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B60423683749854",
+    "iou": 0.859
+  },
+  "TR521": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B78139731385057",
+    "iou": 0.971
+  },
+  "TR522": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B55022069390108",
+    "iou": 0.899
+  },
+  "TR611": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B97476213604692",
+    "iou": 0.935
+  },
+  "TR612": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B9026957888422",
+    "iou": 0.958
+  },
+  "TR613": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B90474549897215",
+    "iou": 0.929
+  },
+  "TR621": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B95172477822815",
+    "iou": 0.964
+  },
+  "TR622": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B33535290178113",
+    "iou": 0.94
+  },
+  "TR631": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B95117543422129",
+    "iou": 0.936
+  },
+  "TR632": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B58862484177861",
+    "iou": 0.972
+  },
+  "TR633": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B63638727958144",
+    "iou": 0.949
+  },
+  "TR711": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B11362042972294",
+    "iou": 0.944
+  },
+  "TR712": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B40051660631000",
+    "iou": 0.965
+  },
+  "TR713": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B59741408878569",
+    "iou": 0.969
+  },
+  "TR714": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B18723924091225",
+    "iou": 0.958
+  },
+  "SE213": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B90115132982568",
+    "iou": 0.927
+  },
+  "SE214": {
+    "nuts_level": 3,
+    "level": "admin2",
+    "shape_id": "70781695B80690990768870",
+    "iou": 0.865
+  },
+  "SE221": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B81473328083601",
+    "iou": 0.885
+  },
+  "SE224": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B47966181547850",
+    "iou": 0.962
+  },
+  "SE231": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B55596512557513",
+    "iou": 0.93
+  },
+  "SE232": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B39536810599908",
+    "iou": 0.961
+  },
+  "SE311": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B56925388039616",
+    "iou": 0.975
+  },
+  "SE312": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B20841454082156",
+    "iou": 0.977
+  },
+  "SE313": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B40560830761561",
+    "iou": 0.959
+  },
+  "SE321": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B42087740049136",
+    "iou": 0.917
+  },
+  "SE322": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B77555777280839",
+    "iou": 0.963
+  },
+  "SE331": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B22015401421101",
+    "iou": 0.958
+  },
+  "SE332": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "68755315B90281797632670",
+    "iou": 0.978
+  },
+  "SK021": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25762395B43018944697777",
+    "iou": 0.936
+  },
+  "SK022": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25762395B87770954339991",
+    "iou": 0.941
+  },
+  "SK023": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25762395B46915118171536",
+    "iou": 0.951
+  },
+  "SK031": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25762395B19733540227871",
+    "iou": 0.956
+  },
+  "SK032": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25762395B36213439185612",
+    "iou": 0.968
+  },
+  "SK041": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25762395B99480342603175",
+    "iou": 0.96
+  },
+  "SK042": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25762395B28279050649796",
+    "iou": 0.945
+  },
+  "TR211": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B4318484465943",
+    "iou": 0.945
+  },
+  "TR212": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B68163725002210",
+    "iou": 0.932
+  },
+  "TR213": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B10334298996421",
+    "iou": 0.947
+  },
+  "TR221": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B55384476443375",
+    "iou": 0.948
+  },
+  "TR222": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B45885295326030",
+    "iou": 0.938
+  },
+  "TR321": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B63739470532168",
+    "iou": 0.942
+  },
+  "TR322": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B90258821264291",
+    "iou": 0.96
+  },
+  "TR323": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B57226385500606",
+    "iou": 0.874
+  },
+  "TR331": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B19932594956901",
+    "iou": 0.971
+  },
+  "TR332": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B26209284550223",
+    "iou": 0.955
+  },
+  "TR333": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B47044460443496",
+    "iou": 0.972
+  },
+  "TR334": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B95251525471141",
+    "iou": 0.964
+  },
+  "TR833": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B57743432888015",
+    "iou": 0.969
+  },
+  "TR834": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B32583172380009",
+    "iou": 0.951
+  },
+  "TR901": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B1589724669162",
+    "iou": 0.943
+  },
+  "TR902": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B15602000155844",
+    "iou": 0.934
+  },
+  "TR903": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B57211123653900",
+    "iou": 0.951
+  },
+  "TR904": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B47778459062669",
+    "iou": 0.947
+  },
+  "TR905": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B1602304411378",
+    "iou": 0.958
+  },
+  "TR906": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B36227448932647",
+    "iou": 0.945
+  },
+  "TRA11": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B50530672954016",
+    "iou": 0.971
+  },
+  "TRA12": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B21238382887484",
+    "iou": 0.945
+  },
+  "TRA13": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B37590323286202",
+    "iou": 0.925
+  },
+  "TRA21": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B39003465173278",
+    "iou": 0.967
+  },
+  "TRA22": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B40631498613339",
+    "iou": 0.969
+  },
+  "TRA23": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B20089439873245",
+    "iou": 0.931
+  },
+  "TRA24": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B60965754972902",
+    "iou": 0.957
+  },
+  "TRB11": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B80837210717778",
+    "iou": 0.956
+  },
+  "TRB12": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B73855241915553",
+    "iou": 0.948
+  },
+  "TRB13": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B43512589741592",
+    "iou": 0.953
+  },
+  "TRB14": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B47484816256121",
+    "iou": 0.953
+  },
+  "TRB21": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B28392380114016",
+    "iou": 0.98
+  },
+  "TRB22": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B88478081264350",
+    "iou": 0.964
+  },
+  "TRB23": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B19802935753104",
+    "iou": 0.96
+  },
+  "TRB24": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B57889067347253",
+    "iou": 0.951
+  },
+  "TRC11": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B63001774148772",
+    "iou": 0.949
+  },
+  "TRC12": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B90872828599679",
+    "iou": 0.944
+  },
+  "TRC13": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B30869354278170",
+    "iou": 0.874
+  },
+  "TRC21": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B35512619552530",
+    "iou": 0.978
+  },
+  "TRC22": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B99670107521163",
+    "iou": 0.954
+  },
+  "TRC31": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B30119007363221",
+    "iou": 0.928
+  },
+  "TRC32": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B679661827679",
+    "iou": 0.931
+  },
+  "TRC33": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B41137800759750",
+    "iou": 0.94
+  },
+  "TRC34": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B34503670046284",
+    "iou": 0.945
+  },
+  "TR715": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B83185192232063",
+    "iou": 0.961
+  },
+  "TR721": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B43172796860329",
+    "iou": 0.966
+  },
+  "TR722": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B33997294820892",
+    "iou": 0.963
+  },
+  "TR723": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B19658467647683",
+    "iou": 0.963
+  },
+  "TR811": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B41902751620989",
+    "iou": 0.956
+  },
+  "TR812": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B55399473509250",
+    "iou": 0.926
+  },
+  "TR813": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B74564265494308",
+    "iou": 0.919
+  },
+  "TR821": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B36972543372669",
+    "iou": 0.968
+  },
+  "TR822": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B3524648625362",
+    "iou": 0.954
+  },
+  "TR823": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B86660708585065",
+    "iou": 0.942
+  },
+  "TR831": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B31080883995775",
+    "iou": 0.95
+  },
+  "TR832": {
+    "nuts_level": 3,
+    "level": "admin1",
+    "shape_id": "25984515B20532508270601",
+    "iou": 0.936
+  }
+}
