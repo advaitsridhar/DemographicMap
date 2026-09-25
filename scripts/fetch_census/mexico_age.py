@@ -31,7 +31,7 @@ import io
 import re
 from typing import Any
 
-from ._shared import PROCESSED, RAW, http_get, log, measure, record, write_json
+from ._shared import PROCESSED, http_get, log, measure, record, write_json
 from .mexico import LICENSE, NATIONAL, STATE_ALIASES
 
 YEAR = 2020
@@ -40,14 +40,21 @@ SOURCE = ("INEGI, Censo de Población y Vivienda 2020, tabulados del cuestionari
           "básico (Población 4: edad mediana por municipio)")
 SHEET = "04"
 
-# INEGI's file abbreviation for each state, by its two-digit code.
+# INEGI's file abbreviation for each state, by its two-digit code. Its
+# naming is not one scheme -- "ags", "bc" and "cdmx" answer, "camp" does not
+# -- so a state lists the spellings INEGI uses in its other files, tried in
+# turn; a wrong one answers with an HTML page, and the right one must still
+# be that state's workbook, row by row.
 STATES = {
-    "01": "ags", "02": "bc", "03": "bcs", "04": "camp", "05": "coah", "06": "col",
-    "07": "chis", "08": "chih", "09": "cdmx", "10": "dgo", "11": "gto", "12": "gro",
-    "13": "hgo", "14": "jal", "15": "mex", "16": "mich", "17": "mor", "18": "nay",
-    "19": "nl", "20": "oax", "21": "pue", "22": "qro", "23": "qroo", "24": "slp",
-    "25": "sin", "26": "son", "27": "tab", "28": "tamps", "29": "tlax", "30": "ver",
-    "31": "yuc", "32": "zac",
+    "01": ("ags",), "02": ("bc",), "03": ("bcs",), "04": ("cam", "camp"),
+    "05": ("coa", "coah"), "06": ("col",), "07": ("chis", "chs"), "08": ("chih", "chi"),
+    "09": ("cdmx",), "10": ("dgo", "dur"), "11": ("gto", "gua"), "12": ("gro", "gue"),
+    "13": ("hgo", "hid"), "14": ("jal",), "15": ("mex", "em", "edomex"),
+    "16": ("mich", "mic"), "17": ("mor",), "18": ("nay",), "19": ("nl", "nle"),
+    "20": ("oax",), "21": ("pue",), "22": ("qro", "que"), "23": ("qroo", "q_roo"),
+    "24": ("slp",), "25": ("sin",), "26": ("son",), "27": ("tab",),
+    "28": ("tamps", "tam"), "29": ("tlax", "tla"), "30": ("ver",), "31": ("yuc",),
+    "32": ("zac",),
 }
 CODED = re.compile(r"^(\d{2,3})\s+(.+)$")
 
@@ -61,13 +68,25 @@ def number(cell: Any) -> float | None:
         return None
 
 
-def read_state(code: str, abbr: str) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+def workbook(abbrs: tuple[str, ...]) -> tuple[str, bytes]:
+    for abbr in abbrs:
+        url = f"{BASE}cpv2020_b_{abbr}_01_poblacion.xlsx"
+        try:
+            blob = http_get(url, binary=True, cache=False, timeout=180)
+        except RuntimeError as exc:
+            log(f"  {url}: {exc}")
+            continue
+        # INEGI answers a wrong path with HTTP 200 and an HTML page.
+        if blob.startswith(b"PK"):
+            return url, blob
+        log(f"  {url}: not a workbook")
+    raise SystemExit(f"mexico_age: no workbook under {abbrs}")
+
+
+def read_state(code: str, abbrs: tuple[str, ...]) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     """(the state's own row, its municipios' rows) from sheet 04."""
     import openpyxl
-    url = f"{BASE}cpv2020_b_{abbr}_01_poblacion.xlsx"
-    blob = http_get(url, binary=True, cache_dir=RAW / "mexico_age", timeout=180)
-    if not blob.startswith(b"PK"):
-        raise SystemExit(f"mexico_age: {url} is not a workbook: {blob[:120]!r}")
+    url, blob = workbook(abbrs)
     wb = openpyxl.load_workbook(io.BytesIO(blob), read_only=True, data_only=True)
     state, municipios = None, []
     for row in wb[SHEET].iter_rows(values_only=True):
@@ -99,8 +118,8 @@ def read_state(code: str, abbr: str) -> tuple[dict[str, Any], list[dict[str, Any
 def main() -> int:
     records: list[dict[str, Any]] = []
     men = women = 0.0
-    for code, abbr in STATES.items():
-        state, municipios = read_state(code, abbr)
+    for code, abbrs in STATES.items():
+        state, municipios = read_state(code, abbrs)
         for part in ("men", "women"):
             summed = sum(m[part] or 0 for m in municipios)
             if abs(summed - (state[part] or 0)) > 0.5:
