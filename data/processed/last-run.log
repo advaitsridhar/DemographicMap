@@ -4,7 +4,6 @@
   04: 12 municipios in the sample, 926,858 people weighted
   05: 38 municipios in the sample, 3,137,032 people weighted
   06: 10 municipios in the sample, 728,300 people weighted
-  retry 1/4 after 2s :: https://www.inegi.org.mx/contenidos/programas/ccpv/2020/microdatos/Censo2020_CA_chs_csv.zip :: IncompleteRead(34686832 bytes read, 63237 more expected)
   07: 124 municipios in the sample, 5,524,506 people weighted
   08: 67 municipios in the sample, 3,725,058 people weighted
   09: 16 municipios in the sample, 9,159,393 people weighted
@@ -34,4 +33,7 @@
   indigenous answers, weighted: blank 0, 1 23,229,560, 3 96,017,755, 9 451,116
   Afro-Mexican answers, weighted: 1 2,482,098, 3 122,826,044, 9 207,412
   age answers, weighted: 0-2 5,817,123, 3+ 119,692,898, unstated 5,533
-mexico_ethnicity: no reading of the Afro-Mexican answers comes within 3% of the full count's 2,576,213: {('1',): 2482098}
+  reading: indigenous yes=['1'], Afro-Mexican yes=['1'] (sample 2,482,098, full count 2,576,213), no=3, unstated age out of the base
+  national, aged 3+: Mestizo or white (neither indigenous nor Afro-Mexican) 79.1%, Indigenous (self-identified) 18.5%, Afro-Mexican or Afro-descendant 1.1%, Indigenous and Afro-Mexican 0.9%, Not stated 0.4%
+  2469 municipios (0 of ITER's without an estimate), 32 states
+  wrote data/processed/mexico_ethnicity.json (7005 kB)
