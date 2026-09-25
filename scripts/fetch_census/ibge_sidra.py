@@ -9,6 +9,10 @@ with ``n3`` = state (UF) and ``n6`` = municipality.  Tables used:
 
 * **9514** resident population by sex and age (2022 Census)
 * **9605** population by colour or race (cor ou raça)
+* **9515** ageing index, median age and sex ratio (2022 Census): v/10613
+  median age in years, v/8845 men per 100 women. The variable's name comes
+  back with each row and is checked, so a renumbered variable stops the run
+  instead of reaching the map as an age.
 * **9537** persons aged 10 and over by religion (2022 Census, released
   June 2025). Religion was asked of persons aged 10 and over, so this is a
   count of that universe, not of all residents; the note on every record
@@ -57,6 +61,12 @@ TABLES = {
 # URL leaves out, so naming c133 alone asks for both sexes and all ages.
 # Variable 140 is the count of persons aged 10 and over. Kept as a list so a
 # second spelling can be tried without restructuring the loop below.
+AGE_SEX = {
+    "median_age": ({"table": "9515", "variable": "10613", "classification": None,
+                    "period": str(YEAR)}, "idade mediana"),
+    "sex_ratio": ({"table": "9515", "variable": "8845", "classification": None,
+                   "period": str(YEAR)}, "razão de sexo"),
+}
 RELIGION_VARIANTS = [
     {"table": "9537", "variable": "140", "classification": "133", "period": str(YEAR)},
 ]
@@ -200,6 +210,17 @@ def main() -> int:
     if not religion:
         log("  religion unavailable from every variant; marking not_available")
 
+    age_sex: dict[str, dict[str, float]] = {}
+    for field, (table, expect) in AGE_SEX.items():
+        rows = sidra(table, level_code)
+        names = {r.get("D2N", "").lower() for r in rows}
+        if not any(expect in n for n in names):
+            raise SystemExit(f"table {table['table']} v/{table['variable']} is {names}, "
+                             f"not {expect!r}; refusing to read it as {field}")
+        age_sex[field] = {code: v["__total__"] for code, v in collect(rows, "D1C", None).items()
+                          if "__total__" in v}
+        log(f"  {field}: {len(age_sex[field])} localities")
+
     src = f"IBGE, Censo Demográfico {YEAR} (SIDRA)"
     records: list[dict[str, Any]] = []
     for code, place in places.items():
@@ -228,6 +249,12 @@ def main() -> int:
             parent_name=parent_name,
             codes={"ibge": code},
             population=measure(int(total), year=YEAR, source=src) if total else gap(NOT_AVAILABLE),
+            median_age=(measure(age_sex["median_age"][code], unit="years", year=YEAR, source=src)
+                        if code in age_sex["median_age"] else gap(NOT_AVAILABLE)),
+            # IBGE's ratio is men per 100 women; the map's unit is per 1,000.
+            sex_ratio=(measure(round(age_sex["sex_ratio"][code] * 10), unit="males_per_1000_females",
+                               year=YEAR, source=src)
+                       if code in age_sex["sex_ratio"] else gap(NOT_AVAILABLE)),
             ethnicity=race_rows or gap(NOT_AVAILABLE),
             ethnicity_year=dated(race_rows, YEAR),
             ethnicity_note=("IBGE 'cor ou raça' is self-declared skin colour (branca, preta, "
@@ -239,7 +266,7 @@ def main() -> int:
                 NOT_AVAILABLE, f"IBGE {YEAR} religion table not returned for this locality."),
             religion_year=dated(faith_rows, YEAR),
             religion_note=RELIGION_UNIVERSE if gvals else None,
-            sources=[{"field": "population/colour-race/religion", "name": src,
+            sources=[{"field": "population/median age/sex ratio/colour-race/religion", "name": src,
                       "url": f"{SIDRA}/t/{TABLES['colour_race']['table']}",
                       "license": "IBGE open data"}],
         ))

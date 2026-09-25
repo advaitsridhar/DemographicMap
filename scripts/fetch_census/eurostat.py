@@ -22,6 +22,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import re
 from typing import Any
 
@@ -71,7 +72,92 @@ COLLECTION_POLICY: dict[str, dict[str, str]] = {
     "AT": {"ethnicity": "Austria records citizenship and country of birth, not ethnicity."},
     "PL": {"religion": "Poland's 2021 census asked religion on a voluntary basis; sub-national release is limited."},
 }
+# Eurostat's own region boundaries (GISCO), which place a region on the map by
+# its outline where its name and the map's differ -- "Bratislavsky kraj" and
+# "Region of Bratislava" -- see scripts/nuts_crosswalk.py.
+GISCO = ("https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/"
+         "NUTS_RG_10M_2024_4326_LEVL_{level}.geojson")
+GEOMETRY = RAW / "eurostat"
+CROSSWALK = PROCESSED / "nuts_crosswalk.json"
+
 COLLECTS_BOTH = {"RO", "BG", "SK", "IE", "HU", "HR", "SI", "LT", "LV", "EE", "CZ", "MK", "RS", "ME", "AL"}
+
+
+def fetch_geometry() -> None:
+    """GISCO's NUTS-2 and NUTS-3 outlines, into data/raw/eurostat (runner)."""
+    from ._shared import http_get
+    GEOMETRY.mkdir(parents=True, exist_ok=True)
+    for level in (2, 3):
+        url = GISCO.format(level=level)
+        text = http_get(url, cache=False, timeout=600)
+        dest = GEOMETRY / url.rsplit("/", 1)[1]
+        dest.write_text(text if isinstance(text, str) else text.decode("utf-8"), encoding="utf-8")
+        log(f"  {dest.name}: {dest.stat().st_size // 1024} kB")
+
+
+def bind_by_outline(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Split records into those the outline crosswalk places, and the rest.
+
+    A placed record is bound to its polygon by id, at the level the crosswalk
+    found it on; the build then gives it the polygon's own label. A region
+    whose polygon is already spoken for by a finer region of the same outline
+    (Istanbul is TR10 and TR100) is dropped rather than bound twice, and so is
+    one whose outline shows it is a unit and more (Eurostat's Pest is the
+    map's Pest without Budapest) -- by name it would land anyway.
+    """
+    crosswalk = read_json(CROSSWALK, {}) or {}
+    # A region the outlines say nothing about -- an island coast or a small
+    # city region drawn too coarsely to reach 0.8 (Zeeland, the Azores,
+    # Brussels) -- goes on to its name and the name matcher's own guards.
+    # Only a region the outlines refuse (Pest with Budapest inside it) stops.
+    outlined = {nuts_id[:2] for nuts_id in crosswalk}
+    placed, rest = [], []
+    dropped = 0
+    for rec in records:
+        entry = crosswalk.get(rec["codes"]["nuts"])
+        if not entry:
+            # A code Eurostat marks as an older NUTS version ("Zuid-Holland
+            # (NUTS 2021)") where the country has current outlines is the
+            # same ground as a current region, and read by name it met that
+            # region on its polygon and both were lost. The UK has only old
+            # codes, and keeps them.
+            if rec["codes"]["nuts"][:2] in outlined and re.search(r"\(NUTS \d{4}\)", rec["name"]):
+                dropped += 1
+                continue
+            rest.append(rec)
+        elif entry.get("refused"):
+            dropped += 1
+            continue
+        elif entry.get("superseded_by"):
+            # Its outline is spoken for by the finer region; at its own
+            # level it may still be a unit the map draws differently
+            # (Brussels-Capital, whose two polygons overlap by 0.41), so it
+            # goes on to its name.
+            rest.append(rec)
+            continue
+        else:
+            for twin in entry.get("also") or []:
+                copy = json.loads(json.dumps(rec))
+                copy["id"] = f"{rec['id']}-{twin['level']}"
+                copy.update(level=twin["level"], match_by="shape_id", shape_id=twin["shape_id"])
+                if twin.get("name") and twin["name"] != copy["name"]:
+                    copy["aliases"] = [*(copy.get("aliases") or []), copy["name"]]
+                    copy["name"] = twin["name"]
+                placed.append(copy)
+            rec["level"] = entry["level"]
+            rec["match_by"] = "shape_id"
+            rec["shape_id"] = entry["shape_id"]
+            # The polygon's own label, so another source bound to the same
+            # ground under the map's spelling (Fryslan) is the same claim,
+            # not a rival one; Eurostat's is kept as an alias.
+            if entry.get("name") and entry["name"] != rec["name"]:
+                rec["aliases"] = [*(rec.get("aliases") or []), rec["name"]]
+                rec["name"] = entry["name"]
+            placed.append(rec)
+    if crosswalk:
+        log(f"  {len(placed)} regions placed by outline; {dropped} refused or superseded "
+            f"by it; {len(rest)} left to their names")
+    return placed, rest
 
 
 def jsonstat(dataset: str, **filters: str) -> dict[str, Any]:
@@ -112,18 +198,18 @@ def whole_country(geo: str) -> bool:
     return len(geo) > 2 and set(geo[2:]) == {"0"}
 
 
-def second_level_only(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """NUTS-3 rows only for the countries whose NUTS-3 is this map's second level.
+def by_level(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """NUTS-3 rows at whichever of the map's levels each country's names are.
 
     NUTS-3 is France's departements and Spain's provinces, which are this
-    map's districts; it is also Sweden's counties and Romania's judete, which
-    are its first level. Written as districts, a county would look for a
-    district of its name, and Stockholms lan could land on Stockholm
-    municipality with the whole county's people. So each country's names are
-    measured against both of the map's levels, as the COD-PS reader does,
-    and kept only where they are the second level's. A first-level fit is
-    left alone rather than written there: NUTS-2 already speaks for that
-    level, and the national offices after it.
+    map's districts; it is also Sweden's counties, Romania's judete and
+    Turkey's provinces, which are its first level. So each country's names are
+    measured against both of the map's levels, as the COD-PS reader does, and
+    each row is written at the level its country's names match. Written as
+    districts, a county would look for a district of its name, and Stockholms
+    lan could land on Stockholm municipality with the whole county's people;
+    left out, as it was, Turkey's 81 provinces had no figure of their own and
+    the NUTS-2 regions of two to six provinces stood in for them.
     """
     from .cod_ps import which_level
     by_country: dict[str, list[dict[str, Any]]] = {}
@@ -132,12 +218,13 @@ def second_level_only(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     kept: list[dict[str, Any]] = []
     for iso3, rows in sorted(by_country.items()):
         level, why = which_level(iso3, [r["name"] for r in rows])
-        if level == "admin2":
-            kept.extend(rows)
-            log(f"  {iso3}: {len(rows)} NUTS-3 regions kept -- {why}")
-        else:
-            log(f"  {iso3}: {len(rows)} NUTS-3 regions left out -- "
-                + (why if level is None else f"they are this map's {level}: {why}"))
+        if level is None:
+            log(f"  {iso3}: {len(rows)} NUTS-3 regions left out -- {why}")
+            continue
+        for row in rows:
+            row["level"] = level
+        kept.extend(rows)
+        log(f"  {iso3}: {len(rows)} NUTS-3 regions kept at {level} -- {why}")
     return kept
 
 
@@ -149,7 +236,7 @@ SPLITS = (r",\s*|\s*&\s*", r",\s*|\s+and\s+", r",\s*|\s*&\s*|\s+and\s+",
 
 
 def joined_units(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Leave out a NUTS-3 region that is one of the map's units and more.
+    """Leave out a NUTS region that is one of the map's units and more.
 
     Eurostat's UK regions are often two or three council areas at once --
     "Aberdeen City and Aberdeenshire", "Perth & Kinross and Stirling" -- and
@@ -158,11 +245,13 @@ def joined_units(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     Perth and Kinross took Stirling's. A region whose whole name is a drawn
     unit is that unit ("Dumfries & Galloway", "Brighton and Hove"); one that
     only contains a drawn unit's name is that unit and more, and describes
-    none of them.
+    none of them. The same holds a level up: Turkey's NUTS-2 region TRC2 is
+    "Sanliurfa, Diyarbakir", and read as the province it starts with it gave
+    Sanliurfa 4,071,429 people and the pair's median age.
     """
     from .cod_ps import level_key, shape_names
     kept: list[dict[str, Any]] = []
-    names_by_country: dict[str, set[str]] = {}
+    names_by_level: dict[tuple[str, str], set[str]] = {}
 
     def unit(names: set[str], text: str) -> bool:
         text = re.sub(r"\s*&\s*", " and ", text.strip())
@@ -170,8 +259,10 @@ def joined_units(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         return bool(text) and level_key(text) in names
 
     for rec in records:
-        names = names_by_country.setdefault(rec["country"],
-                                            shape_names(rec["country"], "admin2"))
+        key = (rec["country"], rec["level"])
+        if key not in names_by_level:
+            names_by_level[key] = shape_names(*key)
+        names = names_by_level[key]
         label = re.sub(r"\s*\(NUTS \d{4}\)\s*$", "", rec["name"]).replace("\xa0", " ")
         if unit(names, label):
             kept.append(rec)
@@ -192,7 +283,12 @@ def main() -> int:
     ap.add_argument("--level", default="nuts2", choices=["nuts2", "nuts3"])
     ap.add_argument("--year", default=None, help="reference year; default is the latest available")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--fetch-geometry", action="store_true",
+                    help="download GISCO's NUTS outlines for scripts/nuts_crosswalk.py and stop")
     args = ap.parse_args()
+    if args.fetch_geometry:
+        fetch_geometry()
+        return 0
 
     log(f"eurostat: demo_r_pjangrp3 ({args.level})")
     pop_payload = jsonstat("demo_r_pjangrp3", sex="T", age="TOTAL", unit="NR")
@@ -210,6 +306,30 @@ def main() -> int:
         if geo not in latest or year > latest[geo][0]:
             latest[geo] = (year, value)
 
+    src = "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    by_sex: dict[str, dict[str, tuple[str, float]]] = {}
+    for sex in ("M", "F"):
+        try:
+            payload = jsonstat("demo_r_pjangrp3", sex=sex, age="TOTAL", unit="NR")
+        except Exception as exc:
+            log(f"  population by sex unavailable ({exc})")
+            by_sex = {}
+            break
+        s_dims = payload["id"]
+        s_geo, s_time = s_dims.index("geo"), s_dims.index("time")
+        for key, value in unpack(payload).items():
+            geo, year = key[s_geo], key[s_time]
+            held = by_sex.setdefault(sex, {})
+            if geo not in held or year > held[geo][0]:
+                held[geo] = (year, value)
+
+    def sex_ratio(geo: str) -> Any:
+        m, f = by_sex.get("M", {}).get(geo), by_sex.get("F", {}).get(geo)
+        if not m or not f or m[0] != f[0] or not f[1]:
+            return gap(NOT_AVAILABLE)
+        return measure(round(1000 * m[1] / f[1]), unit="males_per_1000_females",
+                       year=int(m[0][:4]), source=src)
+
     try:
         med_payload = jsonstat("demo_r_pjanind3", indic_de="MEDAGEPOP")
         med_raw = unpack(med_payload)
@@ -225,7 +345,6 @@ def main() -> int:
         median = {}
 
     iso3_of = alpha2_to_iso3()
-    src = "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
     records: list[dict[str, Any]] = []
     for geo, (year, value) in sorted(latest.items()):
         country = geo[:2]
@@ -258,14 +377,23 @@ def main() -> int:
             population=measure(int(value), year=int(year[:4]), source=src),
             median_age=(measure(med[1], unit="years", year=int(med[0][:4]), source=src)
                         if med else gap(NOT_AVAILABLE)),
+            sex_ratio=sex_ratio(geo),
             religion=field("religion"),
             ethnicity=field("ethnicity"),
-            sources=[{"field": "population/median age", "name": "Eurostat",
+            sources=[{"field": "population/median age/sex ratio", "name": "Eurostat",
                       "url": API.format(dataset="demo_r_pjangrp3"),
                       "license": "Eurostat re-use policy (attribution)"}],
         ))
-    if args.level == "nuts3":
-        records = joined_units(second_level_only(records))
+    # The level is decided on all of a country's names, before any are
+    # placed by outline: left to decide on the few the outlines do not
+    # place, Spain's too-few names settled nothing and Ceuta was lost. The
+    # decision only sets the level of the rows left to their names.
+    decided = ({r["id"]: r["level"] for r in by_level(json.loads(json.dumps(records)))}
+               if args.level == "nuts3" else None)
+    placed, records = bind_by_outline(records)
+    if decided is not None:
+        records = [{**r, "level": decided[r["id"]]} for r in records if r["id"] in decided]
+    records = placed + joined_units(records)
     write_json(args.out or PROCESSED / f"eurostat_{args.level}.json", records)
     log(f"  {len(records)} {args.level} records")
     return 0

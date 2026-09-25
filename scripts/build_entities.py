@@ -160,6 +160,10 @@ ADAPTER_FILES = [
     # structural walk under-reached (fetch_wikidata --class-sweep). Fill-only
     # like the file above it.
     "wikidata_admin2_classes.json",
+    # Wikidata populations for units whose office code, coordinate and name
+    # all place them on one polygon (scripts/wikidata_points.py): bound by
+    # id, so a romanisation the name matcher cannot bridge still arrives.
+    "wikidata_points_admin1.json", "wikidata_points_admin2.json",
     # The head count a first-level unit's own Wikipedia article prints,
     # where nothing on this map has one. Directly under the Wikidata sweep
     # because it answers the same question from the same kind of source and
@@ -274,6 +278,8 @@ ADAPTER_FILES = [
     # three, which this file's own reading of the report is what established.
     "northkorea_county.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
+    # The 2020 census's median age for every municipality, bound by JIS code.
+    "japan_municipal.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
     # says so in a generic sentence; this is the census itself.
     "romania_county.json",
@@ -3623,6 +3629,39 @@ SETTLEMENT_IS_THE_UNIT = frozenset({"Q883"})
 CITY_SHAPE = re.compile(r"\b(city|kota|ciudad|ville|shahar)\b", re.I)
 
 
+GEONAMES_SETTLEMENTS = PROCESSED / "geonames_settlements.json"
+GEONAMES_SOURCE = {"field": "largest settlement", "name": "GeoNames",
+                   "url": "https://www.geonames.org/", "license": "CC BY 4.0"}
+
+
+def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
+                                   admin2: dict[str, list[dict[str, Any]]]) -> int:
+    """The largest GeoNames place inside each unit, where no source named one.
+
+    scripts/fetch_geonames.py places GeoNames' populated places in the map's
+    own polygons and keeps the most populous that belongs; this only reads
+    the result. It never replaces a settlement a national source or Natural
+    Earth named, and a town GeoNames counts larger than the unit it is in
+    carries its name without that figure.
+    """
+    towns = read_json(GEONAMES_SETTLEMENTS, {}) or {}
+    filled = 0
+    for table in (admin1, admin2):
+        for rows in table.values():
+            for entity in rows:
+                town = towns.get(entity["id"])
+                # A lake is water whatever town stands on its islands or shore.
+                if not town or entity.get("water") or not is_gap(entity.get("largest_settlement")):
+                    continue
+                entity["largest_settlement"] = town["name"]
+                if town.get("population"):
+                    entity["largest_settlement_population"] = measure(
+                        town["population"], source="GeoNames (CC BY 4.0)")
+                entity.setdefault("sources", []).append(dict(GEONAMES_SOURCE))
+                filled += 1
+    return filled
+
+
 def refuse_settlement_figures(admin1: dict[str, list[dict[str, Any]]],
                               admin2: dict[str, list[dict[str, Any]]],
                               classes: dict[str, list[list[str]]]) -> int:
@@ -5293,6 +5332,9 @@ def main() -> int:
     if towns:
         log(f"  {towns} Wikidata district figures left out as a town's, not "
             f"the district's")
+    placed_towns = fill_settlements_from_geonames(admin1_by_country, admin2_by_country)
+    if placed_towns:
+        log(f"  {placed_towns} largest settlements placed from GeoNames")
     fell_back = 0
     for table in (admin1_by_country, admin2_by_country):
         for rows in table.values():

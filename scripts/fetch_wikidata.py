@@ -647,6 +647,45 @@ SELECT ?class ?classLabel (COUNT(DISTINCT ?item) AS ?n) WHERE {
 """
 
 
+CHILD_CLASSES_QUERY = """
+SELECT ?class ?classLabel (COUNT(DISTINCT ?item) AS ?n) WHERE {
+  VALUES ?parent { %(parents)s }
+  ?item wdt:P131 ?parent ; wdt:P31 ?class .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
+} GROUP BY ?class ?classLabel ORDER BY DESC(?n) LIMIT 20
+"""
+
+
+def child_classes(codes: list[str]) -> int:
+    """The classes of the items inside a country's first-order Wikidata units.
+
+    Where the map's second level is a finer layer than the items the sweep
+    found -- China's 2,370 counties against its 474 prefectures -- the
+    classes to sweep are the classes of those items' children, and this
+    asks for them rather than guessing ids. Writes nothing.
+    """
+    for level in ("admin1", "admin2"):
+        records = read_json(PROCESSED / f"wikidata_{level}.json", []) or []
+        records = records["records"] if isinstance(records, dict) else records
+        for iso3 in codes:
+            qids = sorted({r["wikidata"] for r in records
+                           if r.get("country") == iso3.upper() and r.get("wikidata")})
+            if not qids:
+                continue
+            rows = []
+            for i in range(0, len(qids), 150):
+                rows += sparql(CHILD_CLASSES_QUERY % {
+                    "parents": " ".join(f"wd:{q}" for q in qids[i:i + 150])}, cache=False)
+            counts: dict[tuple[str, str], int] = {}
+            for row in rows:
+                key = (value(row, "class") or "", value(row, "classLabel") or "")
+                counts[key] = counts.get(key, 0) + int(value(row, "n") or 0)
+            log(f"== {iso3} children of {len(qids)} {level} items")
+            for (cls, label), n in sorted(counts.items(), key=lambda kv: -kv[1])[:20]:
+                log(f"  {cls:12} {n:6}  {label}")
+    return 0
+
+
 def probe_classes(codes: list[str], level: str = "admin2") -> int:
     """Which classes the items named like a country's blank units belong to.
 
@@ -845,6 +884,9 @@ def main() -> int:
                          "file covers")
     ap.add_argument("--budget", type=float, default=38.0,
                     help="--hydrate stops and saves after this many minutes")
+    ap.add_argument("--child-classes", nargs="*", default=None,
+                    help="ISO3 codes: list the classes of the items inside each country's "
+                         "known first- and second-order items; writes nothing")
     ap.add_argument("--probe-classes", nargs="*", default=None,
                     help="ISO3s; which classes items named like their blank units are")
     ap.add_argument("--class-sweep", nargs="*", default=None,
@@ -865,6 +907,8 @@ def main() -> int:
     if args.item_classes:
         return item_classes(args.out or PROCESSED / f"wikidata_{args.level}_item_classes.json",
                             args.level, args.sleep, args.budget)
+    if args.child_classes:
+        return child_classes(args.child_classes)
     if args.probe_classes:
         return probe_classes(args.probe_classes, args.level)
     if args.class_sweep:
