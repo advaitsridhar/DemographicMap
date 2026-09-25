@@ -45,11 +45,26 @@ def as_uri(url: str) -> str:
     return urllib.parse.quote(url, safe="%/:=&?~#+!$,;'@()*[]")
 
 
+AIA = False
+
+
+def opener(url: str):
+    """urlopen, or for a server that omits its intermediate certificate
+    (censo.gob.ar does) an opener that fetches it from the certificate's own
+    AIA extension and still verifies the chain and hostname; see probe_tls."""
+    if not AIA:
+        return urllib.request.urlopen
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from probe_tls import verified_opener            # noqa: PLC0415
+    return verified_opener(urllib.parse.urlsplit(as_uri(url)).hostname or "").open
+
+
 def fetch(url: str, accept: str = "", timeout: int = TIMEOUT) -> str:
     extra = {"Accept": accept} if accept else {}
     req = urllib.request.Request(
         as_uri(url), headers={**HEADERS, **extra, "Accept-Encoding": "gzip"})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
+    with opener(url)(req, timeout=timeout) as resp:
         raw = resp.read()
         if resp.headers.get("Content-Encoding") == "gzip":
             raw = gzip.decompress(raw)
@@ -69,7 +84,7 @@ def head(url: str, accept: str = "", timeout: int = TIMEOUT) -> None:
         if method == "GET":
             req.add_header("Range", "bytes=0-0")
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
+            with opener(url)(req, timeout=timeout) as resp:
                 size = resp.headers.get("Content-Range") or resp.headers.get("Content-Length")
                 print(f"    {resp.status} {resp.headers.get('Content-Type','?')} "
                       f"size={size}")
@@ -109,7 +124,12 @@ def main() -> int:
     ap.add_argument("--raw", type=int, default=0,
                     help="print the first N bytes of the body instead of "
                          "parsing links; for JSON endpoints and catalogue APIs")
+    ap.add_argument("--aia", action="store_true",
+                    help="complete a server's missing intermediate certificate "
+                         "from its AIA extension (still fully verified)")
     args = ap.parse_args()
+    global AIA
+    AIA = args.aia
 
     if args.head:
         # --head splits on commas; page mode does not. The difference is not
