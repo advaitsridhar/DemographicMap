@@ -20,6 +20,7 @@ Usage:
     python -m scripts.probe_page https://example.org/article --terms Shia,Sunni
     python -m scripts.probe_page https://en.wikipedia.org/wiki/Gilgit-Baltistan \
         --section Demographics --terms language,religion
+    python -m scripts.probe_page --search ar "قضاء العبور"
 """
 
 from __future__ import annotations
@@ -82,6 +83,26 @@ def wiki_section(title: str, section: str | None) -> list[str]:
     return readable(page["parse"]["text"])
 
 
+def wiki_search(lang: str, query: str, hits: int, chars: int) -> None:
+    """The opening text of the articles an edition's own search ranks first.
+
+    For a question whose article title is not known -- which district a new
+    Iraqi district was cut from is in the first lines of its Arabic
+    article, under a title spelt one of several ways."""
+    api = f"https://{lang}.wikipedia.org/w/api.php"
+    found = json.loads(http_get(
+        f"{api}?action=query&list=search&format=json&srlimit={hits}"
+        f"&srsearch={urllib.parse.quote(query)}"))
+    titles = [h["title"] for h in found.get("query", {}).get("search", [])]
+    log(f"search {lang}: {query} -> {' | '.join(titles) or 'nothing'}")
+    for title in titles:
+        page = json.loads(http_get(
+            f"{api}?action=query&prop=extracts&explaintext=1&exintro=0&format=json"
+            f"&formatversion=2&titles={urllib.parse.quote(title)}"))
+        text = " ".join((page["query"]["pages"][0].get("extract") or "").split())
+        log(f"  [{title}] {text[:chars]}")
+
+
 def report(lines: list[str], terms: list[str], context: int) -> None:
     hits = [i for i, line in enumerate(lines)
             if any(t.casefold() in line.casefold() for t in terms)]
@@ -131,7 +152,19 @@ def main() -> int:
     ap.add_argument("--context", type=int, default=2)
     ap.add_argument("--charset", default=None, help="decode the page as this instead")
     ap.add_argument("--all", action="store_true", help="print every line, not only matches")
+    ap.add_argument("--search", metavar="LANG",
+                    help="treat each argument as a search in this Wikipedia edition, "
+                         "and print the top articles' opening text")
+    ap.add_argument("--hits", type=int, default=2)
+    ap.add_argument("--chars", type=int, default=700)
     args = ap.parse_args()
+    if args.search:
+        for query in args.url:
+            try:
+                wiki_search(args.search, query, args.hits, args.chars)
+            except Exception as exc:  # one failed search is not the others'
+                log(f"search {args.search}: {query} failed: {exc}")
+        return 0
 
     terms = [t.strip() for t in args.terms.split(",") if t.strip()]
     for url in args.url:
