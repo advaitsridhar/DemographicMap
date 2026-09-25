@@ -80,7 +80,7 @@ def workbook(abbrs: tuple[str, ...]) -> tuple[str, bytes]:
         if blob.startswith(b"PK"):
             return url, blob
         log(f"  {url}: not a workbook")
-    raise SystemExit(f"mexico_age: no workbook under {abbrs}")
+    raise LookupError(abbrs)
 
 
 def read_state(code: str, abbrs: tuple[str, ...]) -> tuple[dict[str, Any], list[dict[str, Any]]]:
@@ -118,8 +118,13 @@ def read_state(code: str, abbrs: tuple[str, ...]) -> tuple[dict[str, Any], list[
 def main() -> int:
     records: list[dict[str, Any]] = []
     men = women = 0.0
+    missing = []
     for code, abbrs in STATES.items():
-        state, municipios = read_state(code, abbrs)
+        try:
+            state, municipios = read_state(code, abbrs)
+        except LookupError:
+            missing.append(f"{code} {abbrs}")
+            continue
         for part in ("men", "women"):
             summed = sum(m[part] or 0 for m in municipios)
             if abs(summed - (state[part] or 0)) > 0.5:
@@ -145,6 +150,8 @@ def main() -> int:
                 sources=[{"field": "median age", "name": SOURCE, "url": m["url"],
                           "license": LICENSE}],
             ))
+    if missing:
+        raise SystemExit(f"mexico_age: no workbook for {', '.join(missing)}")
     if round(men) != NATIONAL["POBMAS"] or round(women) != NATIONAL["POBFEM"]:
         raise SystemExit(f"mexico_age: the states hold {men:,.0f} men and {women:,.0f} women, "
                          f"not the census's {NATIONAL['POBMAS']:,} and {NATIONAL['POBFEM']:,}")
