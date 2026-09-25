@@ -781,6 +781,27 @@ def joined_area(gid: str, name: str, parts: list[dict[str, Any]]) -> dict[str, A
     )
 
 
+def bind_by_fips(records: list[dict[str, Any]]) -> int:
+    """Pin each county to the polygon its FIPS code names, where that is known.
+
+    By name alone, a county and the independent city that shares its name --
+    Baltimore, Fairfax, Franklin, Richmond, Roanoke, St. Louis -- are two rows
+    that each fit two polygons, and both were refused. scripts/wikidata_points.py
+    binds a code to a polygon only where the Wikidata item's coordinate and its
+    name both say which one it is (data/processed/code_shapes.json). The row
+    takes the polygon's own name, so a bound county reads as it always has.
+    """
+    from ._shared import read_json
+    shapes = (read_json(PROCESSED / "code_shapes.json", {}) or {}).get("USA", {})
+    bound = 0
+    for r in records:
+        entry = shapes.get(r["codes"]["geoid"])
+        if entry and entry.get("level") == "admin2":
+            r.update(match_by="shape_id", shape_id=entry["shape_id"], name=entry["name"])
+            bound += 1
+    return bound
+
+
 def mapped_counties(records: list[dict[str, Any]], year: int,
                     key: str | None) -> list[dict[str, Any]]:
     """The county records as the map draws the counties."""
@@ -802,6 +823,7 @@ def mapped_counties(records: list[dict[str, Any]], year: int,
         out = [r for r in out if r["codes"]["geoid"] not in parts]
         out.append(joined_area(gid, name, found))
         log(f"  {name}: joined from {', '.join(parts)}")
+    log(f"  {bind_by_fips(out)} of {len(out)} counties pinned to their polygon by FIPS code")
     return out
 
 
