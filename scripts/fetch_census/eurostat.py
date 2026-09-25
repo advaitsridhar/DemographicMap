@@ -112,18 +112,18 @@ def whole_country(geo: str) -> bool:
     return len(geo) > 2 and set(geo[2:]) == {"0"}
 
 
-def second_level_only(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """NUTS-3 rows only for the countries whose NUTS-3 is this map's second level.
+def by_level(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """NUTS-3 rows at whichever of the map's levels each country's names are.
 
     NUTS-3 is France's departements and Spain's provinces, which are this
-    map's districts; it is also Sweden's counties and Romania's judete, which
-    are its first level. Written as districts, a county would look for a
-    district of its name, and Stockholms lan could land on Stockholm
-    municipality with the whole county's people. So each country's names are
-    measured against both of the map's levels, as the COD-PS reader does,
-    and kept only where they are the second level's. A first-level fit is
-    left alone rather than written there: NUTS-2 already speaks for that
-    level, and the national offices after it.
+    map's districts; it is also Sweden's counties, Romania's judete and
+    Turkey's provinces, which are its first level. So each country's names are
+    measured against both of the map's levels, as the COD-PS reader does, and
+    each row is written at the level its country's names match. Written as
+    districts, a county would look for a district of its name, and Stockholms
+    lan could land on Stockholm municipality with the whole county's people;
+    left out, as it was, Turkey's 81 provinces had no figure of their own and
+    the NUTS-2 regions of two to six provinces stood in for them.
     """
     from .cod_ps import which_level
     by_country: dict[str, list[dict[str, Any]]] = {}
@@ -132,12 +132,13 @@ def second_level_only(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     kept: list[dict[str, Any]] = []
     for iso3, rows in sorted(by_country.items()):
         level, why = which_level(iso3, [r["name"] for r in rows])
-        if level == "admin2":
-            kept.extend(rows)
-            log(f"  {iso3}: {len(rows)} NUTS-3 regions kept -- {why}")
-        else:
-            log(f"  {iso3}: {len(rows)} NUTS-3 regions left out -- "
-                + (why if level is None else f"they are this map's {level}: {why}"))
+        if level is None:
+            log(f"  {iso3}: {len(rows)} NUTS-3 regions left out -- {why}")
+            continue
+        for row in rows:
+            row["level"] = level
+        kept.extend(rows)
+        log(f"  {iso3}: {len(rows)} NUTS-3 regions kept at {level} -- {why}")
     return kept
 
 
@@ -149,7 +150,7 @@ SPLITS = (r",\s*|\s*&\s*", r",\s*|\s+and\s+", r",\s*|\s*&\s*|\s+and\s+",
 
 
 def joined_units(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Leave out a NUTS-3 region that is one of the map's units and more.
+    """Leave out a NUTS region that is one of the map's units and more.
 
     Eurostat's UK regions are often two or three council areas at once --
     "Aberdeen City and Aberdeenshire", "Perth & Kinross and Stirling" -- and
@@ -158,11 +159,13 @@ def joined_units(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     Perth and Kinross took Stirling's. A region whose whole name is a drawn
     unit is that unit ("Dumfries & Galloway", "Brighton and Hove"); one that
     only contains a drawn unit's name is that unit and more, and describes
-    none of them.
+    none of them. The same holds a level up: Turkey's NUTS-2 region TRC2 is
+    "Sanliurfa, Diyarbakir", and read as the province it starts with it gave
+    Sanliurfa 4,071,429 people and the pair's median age.
     """
     from .cod_ps import level_key, shape_names
     kept: list[dict[str, Any]] = []
-    names_by_country: dict[str, set[str]] = {}
+    names_by_level: dict[tuple[str, str], set[str]] = {}
 
     def unit(names: set[str], text: str) -> bool:
         text = re.sub(r"\s*&\s*", " and ", text.strip())
@@ -170,8 +173,10 @@ def joined_units(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         return bool(text) and level_key(text) in names
 
     for rec in records:
-        names = names_by_country.setdefault(rec["country"],
-                                            shape_names(rec["country"], "admin2"))
+        key = (rec["country"], rec["level"])
+        if key not in names_by_level:
+            names_by_level[key] = shape_names(*key)
+        names = names_by_level[key]
         label = re.sub(r"\s*\(NUTS \d{4}\)\s*$", "", rec["name"]).replace("\xa0", " ")
         if unit(names, label):
             kept.append(rec)
@@ -210,6 +215,30 @@ def main() -> int:
         if geo not in latest or year > latest[geo][0]:
             latest[geo] = (year, value)
 
+    src = "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
+    by_sex: dict[str, dict[str, tuple[str, float]]] = {}
+    for sex in ("M", "F"):
+        try:
+            payload = jsonstat("demo_r_pjangrp3", sex=sex, age="TOTAL", unit="NR")
+        except Exception as exc:
+            log(f"  population by sex unavailable ({exc})")
+            by_sex = {}
+            break
+        s_dims = payload["id"]
+        s_geo, s_time = s_dims.index("geo"), s_dims.index("time")
+        for key, value in unpack(payload).items():
+            geo, year = key[s_geo], key[s_time]
+            held = by_sex.setdefault(sex, {})
+            if geo not in held or year > held[geo][0]:
+                held[geo] = (year, value)
+
+    def sex_ratio(geo: str) -> Any:
+        m, f = by_sex.get("M", {}).get(geo), by_sex.get("F", {}).get(geo)
+        if not m or not f or m[0] != f[0] or not f[1]:
+            return gap(NOT_AVAILABLE)
+        return measure(round(1000 * m[1] / f[1]), unit="males_per_1000_females",
+                       year=int(m[0][:4]), source=src)
+
     try:
         med_payload = jsonstat("demo_r_pjanind3", indic_de="MEDAGEPOP")
         med_raw = unpack(med_payload)
@@ -225,7 +254,6 @@ def main() -> int:
         median = {}
 
     iso3_of = alpha2_to_iso3()
-    src = "Eurostat (demo_r_pjangrp3 / demo_r_pjanind3)"
     records: list[dict[str, Any]] = []
     for geo, (year, value) in sorted(latest.items()):
         country = geo[:2]
@@ -258,14 +286,16 @@ def main() -> int:
             population=measure(int(value), year=int(year[:4]), source=src),
             median_age=(measure(med[1], unit="years", year=int(med[0][:4]), source=src)
                         if med else gap(NOT_AVAILABLE)),
+            sex_ratio=sex_ratio(geo),
             religion=field("religion"),
             ethnicity=field("ethnicity"),
-            sources=[{"field": "population/median age", "name": "Eurostat",
+            sources=[{"field": "population/median age/sex ratio", "name": "Eurostat",
                       "url": API.format(dataset="demo_r_pjangrp3"),
                       "license": "Eurostat re-use policy (attribution)"}],
         ))
     if args.level == "nuts3":
-        records = joined_units(second_level_only(records))
+        records = by_level(records)
+    records = joined_units(records)
     write_json(args.out or PROCESSED / f"eurostat_{args.level}.json", records)
     log(f"  {len(records)} {args.level} records")
     return 0
