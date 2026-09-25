@@ -127,6 +127,12 @@ data/raw/*
 # without network still runs. See scripts/fetch_census/mongolia.py --fetch.
 !data/raw/mongolia/
 !data/raw/mongolia/*.txt
+# GeoNames' populated places of 500 people or more (CC BY 4.0), the columns
+# fetch_geonames reads: download.geonames.org refuses this sandbox but not a
+# runner, and the build places them in the map's own shapes offline. About
+# 5 MB, re-derivable with scripts/fetch_geonames.py --fetch.
+!data/raw/geonames/
+!data/raw/geonames/*.tsv.gz
 data/processed/http_cache/
 
 # Intermediate tiling artefacts
