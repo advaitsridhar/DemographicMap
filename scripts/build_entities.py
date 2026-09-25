@@ -160,6 +160,10 @@ ADAPTER_FILES = [
     # structural walk under-reached (fetch_wikidata --class-sweep). Fill-only
     # like the file above it.
     "wikidata_admin2_classes.json",
+    # Wikidata populations for units whose office code, coordinate and name
+    # all place them on one polygon (scripts/wikidata_points.py): bound by
+    # id, so a romanisation the name matcher cannot bridge still arrives.
+    "wikidata_points_admin1.json", "wikidata_points_admin2.json",
     # The head count a first-level unit's own Wikipedia article prints,
     # where nothing on this map has one. Directly under the Wikidata sweep
     # because it answers the same question from the same kind of source and
@@ -274,6 +278,8 @@ ADAPTER_FILES = [
     # three, which this file's own reading of the report is what established.
     "northkorea_county.json",
     "eurostat_nuts2.json", "eurostat_nuts3.json",
+    # The 2020 census's median age for every municipality, bound by JIS code.
+    "japan_municipal.json",
     # After Eurostat, which carries no ethnicity or religion for Romania and
     # says so in a generic sentence; this is the census itself.
     "romania_county.json",
