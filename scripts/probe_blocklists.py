@@ -72,6 +72,9 @@ HOST = "advaitsridhar.github.io"
 TYPES = {"script", "image", "stylesheet", "css", "object", "subdocument", "frame", "font",
          "media", "websocket", "ping", "other", "xmlhttprequest", "xhr", "document", "doc",
          "popup", "inline-script", "inline-font"}
+MODIFIERS = {"removeparam", "queryprune", "uritransform", "urlskip", "redirect-rule", "csp",
+             "header", "permissions", "replace", "to", "ipaddress", "strict3p", "strict1p",
+             "cname", "denyallow", "responseheader", "method"}
 # The map reads its data and tiles with fetch(), which a blocker files as xhr.
 OURS = {"xmlhttprequest", "xhr", "other"}
 
@@ -80,6 +83,9 @@ def applies(options: str) -> bool:
     """Whether a filter's options leave it in force for this site's own fetches."""
     opts = [o.strip() for o in options.split(",") if o.strip()]
     if "badfilter" in opts:
+        return False
+    # Filters that rewrite or redirect rather than refuse a request.
+    if any(o.split("=")[0].lstrip("~") in MODIFIERS for o in opts):
         return False
     for opt in opts:
         key, _, value = opt.partition("=")
@@ -129,6 +135,8 @@ def main() -> int:
                 continue
             if not applies(options):
                 continue
+            if body.strip("*|") == "":
+                continue            # every URL: a modifier's carrier, not a block
             rx = pattern(body)
             if rx is None:
                 continue
