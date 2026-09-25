@@ -65,6 +65,7 @@ from ._shared import PROCESSED, http_json, log, measure, read_json, record, writ
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import slugify  # noqa: E402
 from probe_wikitable import infobox_lines  # noqa: E402
+from common import shard_iso3  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 SITE = ROOT / "site" / "data"
@@ -833,7 +834,7 @@ def country_shapes() -> dict[str, list[dict[str, Any]]]:
     for path in sorted((SITE / "admin1").glob("*.json")):
         rows = [u for u in read_json(path, []) if isinstance(u, dict)]
         if rows:
-            out[path.stem] = rows
+            out[shard_iso3(path)] = rows
     return out
 
 

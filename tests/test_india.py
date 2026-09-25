@@ -140,7 +140,7 @@ class NoGapIsSilent(unittest.TestCase):
         survives the merge is one a reader will ever see.
         """
         here = pathlib.Path(__file__).resolve().parent.parent
-        path = here / "site" / "data" / "admin2" / "IND.json"
+        path = here / "site" / "data" / "admin2" / "IND.units.json"
         if not path.exists():
             raise unittest.SkipTest("site/data has not been built")
         blob = json.loads(path.read_text())
@@ -1165,7 +1165,7 @@ class OtherReligionsSaysWhatItIs(unittest.TestCase):
 
     def records(self, level="admin2"):
         here = pathlib.Path(__file__).resolve().parent.parent
-        path = here / "site" / "data" / level / "IND.json"
+        path = here / "site" / "data" / level / "IND.units.json"
         if not path.exists():
             raise unittest.SkipTest("site/data has not been built")
         blob = json.loads(path.read_text())

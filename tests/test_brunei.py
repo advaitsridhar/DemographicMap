@@ -181,9 +181,9 @@ class TheRecords(unittest.TestCase):
         # under its own name or a name it declares, and every shape must be
         # reached: the two sets are compared whole, so a mukim renamed on
         # either side shows up here rather than as an empty polygon.
-        shapes = Path(__file__).resolve().parent.parent / "site/data/admin2/BRN.json"
+        shapes = Path(__file__).resolve().parent.parent / "site/data/admin2/BRN.units.json"
         if not shapes.exists():                       # a checkout without site/
-            self.skipTest("site/data/admin2/BRN.json is not in this checkout")
+            self.skipTest("site/data/admin2/BRN.units.json is not in this checkout")
         import json
         drawn = {row["name"] for row in json.loads(shapes.read_text())}
         reached = set()

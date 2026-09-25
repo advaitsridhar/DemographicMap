@@ -10,7 +10,7 @@ const source = (name) => fs.readFileSync(path.join(ROOT, "site", "js", name), "u
 const data = (name) => JSON.parse(fs.readFileSync(path.join(ROOT, "site", "data", name), "utf8"));
 
 async function concurrentLoadsAreIndexedOnce() {
-  const records = data("admin1/USA.json");
+  const records = data("admin1/USA.units.json");
   const context = vm.createContext({
     window: {}, console,
     fetch: async (url) => ({
@@ -31,7 +31,7 @@ async function aFailedShardIsAskedForAgain() {
   // unreachable until a reload: the failure was remembered as "no units".
   // A 404 was still remembered so -- but every country has both files, and a
   // 404 is a request that met a deploy half-way.
-  const records = data("admin2/GTM.json");
+  const records = data("admin2/GTM.units.json");
   let calls = 0;
   let clock = 1000;
   const context = vm.createContext({
@@ -831,12 +831,36 @@ function anEstimateIsColouredLikeAReading() {
   assert.ok(!images.has("estimate-hatch"), "and no hatch comes back with it");
 }
 
+// A content blocker matches its filters against the whole URL, case-blind, and
+// ".json" begins with ".js": EasyPrivacy's "/gtm.js", on by default in uBlock
+// Origin, refused Guatemala's "admin2/GTM.json" every time. Every shard the
+// build wrote is the name the browser asks for, and none begins with its
+// country's code followed by ".js".
+function noShardReadsAsAScript() {
+  const context = vm.createContext({ window: {}, console, fetch: async () => ({ ok: false }) });
+  vm.runInContext(source("data.js"), context);
+  const store = context.window.DataStore;
+  let files = 0;
+  for (const level of ["admin1", "admin2"]) {
+    for (const name of fs.readdirSync(path.join(ROOT, "site", "data", level))) {
+      const iso3 = name.split(".")[0];
+      assert.strictEqual(store.shardPath(level, iso3), `${level}/${name}`,
+        `${level}/${name} is not the file the browser asks for`);
+      assert.ok(!name.toLowerCase().startsWith(`${iso3.toLowerCase()}.js`),
+        `${level}/${name} reads as a script named ${iso3}.js to a content blocker`);
+      files += 1;
+    }
+  }
+  assert.ok(files > 400, `only ${files} shards on disk`);
+  assert.strictEqual(store.shardPath("admin2", "GTM"), "admin2/GTM.units.json");
+}
+
 // Moldova draws its 37 districts at both levels under the same ids, and
 // selecting a district loads the level below. Keyed by id alone, those records
 // replaced the first level's, and every district on the map went blank.
 async function anIdDrawnAtTwoLevelsKeepsBothRecords() {
-  const shards = { "admin1/MDA.json": data("admin1/MDA.json"),
-                   "admin2/MDA.json": data("admin2/MDA.json") };
+  const shards = { "admin1/MDA.units.json": data("admin1/MDA.units.json"),
+                   "admin2/MDA.units.json": data("admin2/MDA.units.json") };
   const context = vm.createContext({
     window: {}, console,
     fetch: async (url) => ({
@@ -851,9 +875,9 @@ async function anIdDrawnAtTwoLevelsKeepsBothRecords() {
   await store.loadLevel("MDA", 2);
   const first = Array.from(store.atLevel(1)).filter((r) => r.country === "MDA");
   const second = Array.from(store.atLevel(2)).filter((r) => r.country === "MDA");
-  assert.strictEqual(first.length, shards["admin1/MDA.json"].length,
+  assert.strictEqual(first.length, shards["admin1/MDA.units.json"].length,
                      "every district is still a first-level record after the level below loads");
-  assert.strictEqual(second.length, shards["admin2/MDA.json"].length);
+  assert.strictEqual(second.length, shards["admin2/MDA.units.json"].length);
   const shared = first.find((r) => second.some((s) => s.id === r.id));
   assert.ok(shared, "Moldova still shares ids across the levels, or this test proves nothing");
   assert.strictEqual(store.get(shared.id).level, "admin1", "an unqualified lookup is the shallower");
@@ -869,6 +893,7 @@ async function anIdDrawnAtTwoLevelsKeepsBothRecords() {
   await aFailedTileReadIsReadAgain();
   await theSourcesNameEachArchivesZooms();
   await anIdDrawnAtTwoLevelsKeepsBothRecords();
+  noShardReadsAsAScript();
   await deepSearchWaitsForTheSecondShard();
   uncertainSharesKeepTheirQualifier();
   mapStateSurvivesThemeChangesAndUsesRepresentativePoints();

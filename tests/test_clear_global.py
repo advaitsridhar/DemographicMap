@@ -255,7 +255,7 @@ class TheBoundaryAliases(unittest.TestCase):
 
     def shapes(self, iso):
         import json
-        path = self.admin1 / f"{iso}.json"
+        path = self.admin1 / f"{iso}.units.json"
         if not path.exists():
             self.skipTest(f"no built admin1 file for {iso}")
         return {s["name"] for s in json.loads(path.read_text())}
@@ -277,7 +277,7 @@ class TheBoundaryAliases(unittest.TestCase):
                     self.assertIn(
                         flat(shape_name), names,
                         f"{iso}: {source_name!r} is aliased to {shape_name!r}, "
-                        f"which is not a shape in site/data/admin1/{iso}.json")
+                        f"which is not a shape in site/data/admin1/{iso}.units.json")
 
     def test_no_two_units_of_one_country_are_aliased_to_one_shape(self):
         # Two rows on one shape is the collision the build refuses, and a

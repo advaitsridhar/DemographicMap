@@ -40,9 +40,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from common import NOT_AVAILABLE, PROCESSED, gap, http_json, log, read_json, write_json  # noqa: E402
 from fetch_census._shared import record  # noqa: E402
 from fetch_census.europe_wiki import plain, template_params  # noqa: E402
+from common import shard_path  # noqa: E402
 
 YEAR = 2021
-SITE = PROCESSED.parent.parent / "site" / "data" / "admin2" / "ROU.json"
+SITE = shard_path("admin2", "ROU")
 WIKIDATA = "https://www.wikidata.org/w/api.php"
 ROWIKI = "https://ro.wikipedia.org/w/api.php"
 SOURCE = ("Institutul National de Statistica, Recensamantul Populatiei si Locuintelor "

@@ -82,6 +82,7 @@ from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, RAW, gap, log, record, write_json
 from common import http_get  # noqa: E402
+from common import shard_name  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -112,7 +113,7 @@ CDX = ("http://web.archive.org/cdx/search/cdx?url=1212.mn&matchType=domain"
        "|url=Census2020_Main_report_Eng[.]pdf).*")
 REPLAY = "https://web.archive.org/web/{timestamp}id_/{original}"
 
-# The 22 first-level units as site/data/admin1/MNG.json names them, the
+# The 22 first-level units as site/data/admin1/MNG.units.json names them, the
 # office's own English spelling in the national report, and the file or files
 # that aimag's book was served under. Nineteen share the XAOCT stem; Dundgovi,
 # Khentii and Khovd published theirs under a plain name, matched on
@@ -1200,8 +1201,8 @@ def shapes() -> dict[str, dict[str, str]]:
     """{aimag: {folded soum name: the boundary file's spelling}}."""
     from common import read_json                     # noqa: PLC0415
     site = Path(__file__).resolve().parent.parent.parent / "site" / "data"
-    first = read_json(site / "admin1" / "MNG.json", []) or []
-    second = read_json(site / "admin2" / "MNG.json", []) or []
+    first = read_json(site / "admin1" / shard_name("MNG"), []) or []
+    second = read_json(site / "admin2" / shard_name("MNG"), []) or []
     by_id = {row["id"]: row["name"] for row in first}
     out: dict[str, dict[str, str]] = {name: {} for name in by_id.values()}
     clashes: list[str] = []

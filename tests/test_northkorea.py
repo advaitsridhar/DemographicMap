@@ -349,10 +349,10 @@ class TheRecords(unittest.TestCase):
         # Scoped by province, the way the join is: two provinces both draw an
         # Unsan, so the second level's names are unique only under a parent.
         root = Path(__file__).resolve().parent.parent / "site/data"
-        if not (root / "admin2" / "PRK.json").exists():
-            self.skipTest("site/data/admin2/PRK.json is not in this checkout")
-        first = json.loads((root / "admin1" / "PRK.json").read_text())
-        second = json.loads((root / "admin2" / "PRK.json").read_text())
+        if not (root / "admin2" / "PRK.units.json").exists():
+            self.skipTest("site/data/admin2/PRK.units.json is not in this checkout")
+        first = json.loads((root / "admin1" / "PRK.units.json").read_text())
+        second = json.loads((root / "admin2" / "PRK.units.json").read_text())
         province = {row["id"]: row["name"] for row in first}
         drawn = {("admin1", None, row["name"]) for row in first}
         drawn |= {("admin2", province[row["parent"]], row["name"])

@@ -283,9 +283,9 @@ class TheAliasesNameShapesThatExist(unittest.TestCase):
         import json
         root = Path(__file__).resolve().parent.parent
         cls.a1 = {s["id"]: s["name"]
-                  for s in json.loads((root / "site/data/admin1/AFG.json")
+                  for s in json.loads((root / "site/data/admin1/AFG.units.json")
                                       .read_text())}
-        cls.shapes = json.loads((root / "site/data/admin2/AFG.json").read_text())
+        cls.shapes = json.loads((root / "site/data/admin2/AFG.units.json").read_text())
         cls.provinces = set(cls.a1.values())
         cls.by_province = {}
         for s in cls.shapes:

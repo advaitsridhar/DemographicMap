@@ -6443,7 +6443,7 @@ class MatchingOnACodeRatherThanARomanisation(unittest.TestCase):
         success.
         """
         shapes = json.loads(
-            (ROOT / "site" / "data" / "admin1" / "RUS.json").read_text())
+            (ROOT / "site" / "data" / "admin1" / "RUS.units.json").read_text())
         for field in ("ethnicity", "language"):
             joined = [s for s in shapes if isinstance(s.get(field), list)]
             self.assertEqual(
@@ -7278,7 +7278,7 @@ class ACountyAbolishedBetweenCensusAndBoundaryFile(unittest.TestCase):
         self.assertEqual(out["W06000016"]["name"], "Rhondda Cynon Taf")
 
     def test_both_corrected_names_are_names_geoboundaries_actually_draws(self):
-        path = ROOT / "site" / "data" / "admin2" / "GBR.json"
+        path = ROOT / "site" / "data" / "admin2" / "GBR.units.json"
         shapes = {r["name"] for r in json.loads(path.read_text(encoding="utf-8"))}
         self.assertIn("Rhondda Cynon Taf", shapes)
         self.assertIn("Northamptonshire", shapes)
@@ -7472,7 +7472,7 @@ class ScotlandsCensusNestsAndAsksThreeQuestions(unittest.TestCase):
 
     def test_the_two_renamed_councils_match_shapes_that_exist(self):
         shapes = {r["name"] for r in
-                  json.loads((ROOT / "site" / "data" / "admin2" / "GBR.json")
+                  json.loads((ROOT / "site" / "data" / "admin2" / "GBR.units.json")
                              .read_text(encoding="utf-8"))}
         for name in ("City of Edinburgh", "Na h-Eileanan Siar"):
             self.assertIn(name, shapes)
@@ -7569,7 +7569,7 @@ class NorthernIrelandAsksTwoReligionQuestions(unittest.TestCase):
     def test_every_district_name_reaches_a_shape(self):
         """Unlike Scotland's councils, none of the eleven needs an alias."""
         shapes = {r["name"] for r in
-                  json.loads((ROOT / "site" / "data" / "admin2" / "GBR.json")
+                  json.loads((ROOT / "site" / "data" / "admin2" / "GBR.units.json")
                              .read_text(encoding="utf-8"))}
         for row in self.rows():
             self.assertIn(row["name"], shapes)
@@ -7664,7 +7664,7 @@ class IrelandsSeatCountIsNotItsName(unittest.TestCase):
         the *only* one, because a second undetected pair would silently give
         one area another's figures.
         """
-        shapes = json.loads((ROOT / "site" / "data" / "admin2" / "IRL.json")
+        shapes = json.loads((ROOT / "site" / "data" / "admin2" / "IRL.units.json")
                             .read_text(encoding="utf-8"))
         keys: dict[str, list[str]] = {}
         for shape in shapes:

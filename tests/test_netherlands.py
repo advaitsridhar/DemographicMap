@@ -85,7 +85,7 @@ class TheTwelve(unittest.TestCase):
     def test_every_province_is_named_as_the_boundary_file_names_it(self):
         import json
         path = (Path(__file__).resolve().parent.parent
-                / "site" / "data" / "admin1" / "NLD.json")
+                / "site" / "data" / "admin1" / "NLD.units.json")
         if not path.exists():
             self.skipTest("no built NLD file")
         shapes = {s["name"] for s in json.loads(path.read_text())}

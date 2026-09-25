@@ -25,6 +25,30 @@ RAW = DATA / "raw"
 PROCESSED = DATA / "processed"
 CURATED = DATA / "curated"
 TILES = DATA / "tiles"
+SITE_DATA = ROOT / "site" / "data"
+
+# A country's units at one level are published as "GTM.units.json", never as
+# "GTM.json". A content blocker matches its filters against the whole URL,
+# case-blind, and ".json" begins with ".js": EasyPrivacy's "/gtm.js", aimed
+# at Google Tag Manager and on by default in uBlock Origin, found itself in
+# "/data/admin2/GTM.json", so Guatemala never loaded for anyone running it.
+# With one fixed word before ".json", no country code is ever read as a
+# script's name. scripts/probe_blocklists.py checks the lists against it.
+SHARD_SUFFIX = ".units.json"
+
+
+def shard_name(iso3: str) -> str:
+    return f"{iso3}{SHARD_SUFFIX}"
+
+
+def shard_path(level: str, iso3: str, root: Path | None = None) -> Path:
+    """site/data/<level>/<ISO3>.units.json, or the same under another root."""
+    return (root if root is not None else SITE_DATA) / level / shard_name(iso3)
+
+
+def shard_iso3(path: Path | str) -> str:
+    """The country a shard file is for, from its name."""
+    return Path(path).name.split(".")[0]
 
 USER_AGENT = (
     "DemographicMap/1.0 (+https://github.com/advaitsridhar/DemographicMap) "

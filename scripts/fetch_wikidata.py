@@ -40,7 +40,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import (  # noqa: E402
     NOT_AVAILABLE, PROCESSED, RAW, forget, gap, http_get, log, measure, read_json,
-    write_json,
+    shard_name, write_json,
 )
 
 ENDPOINT = "https://query.wikidata.org/sparql"
@@ -697,7 +697,7 @@ def probe_classes(codes: list[str], level: str = "admin2") -> int:
     site = PROCESSED.parent.parent / "site" / "data" / level
     for iso3 in codes:
         names = []
-        for entity in read_json(site / f"{iso3.upper()}.json", []) or []:
+        for entity in read_json(site / shard_name(iso3.upper()), []) or []:
             pop = entity.get("population")
             if not (isinstance(pop, dict) and pop.get("value")) and not entity.get("water"):
                 name = (entity.get("name") or "").replace('"', "")

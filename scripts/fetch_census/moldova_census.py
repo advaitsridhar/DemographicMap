@@ -54,6 +54,7 @@ from pathlib import Path
 from typing import Any
 
 from ._shared import NOT_AVAILABLE, PROCESSED, dated, gap, http_get, log, read_json, record, shares, write_json
+from common import shard_path  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 OUT = "moldova_census.json"
@@ -230,7 +231,7 @@ def shapes() -> dict[str, dict[str, str]]:
     out: dict[str, dict[str, str]] = {}
     for level in ("admin1", "admin2"):
         out[level] = {key(u["name"]): u["id"]
-                      for u in read_json(ROOT / "site" / "data" / level / "MDA.json", [])}
+                      for u in read_json(shard_path(level, "MDA"), [])}
     return out
 
 

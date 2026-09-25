@@ -13,8 +13,8 @@ Inputs
 Outputs
 -------
 * ``site/data/admin0.json``           every country, loaded up front (small)
-* ``site/data/admin1/{ISO3}.json``    lazy-loaded on country selection
-* ``site/data/admin2/{ISO3}.json``    lazy-loaded on admin-1 selection
+* ``site/data/admin1/{ISO3}.units.json`` lazy-loaded on country selection
+* ``site/data/admin2/{ISO3}.units.json`` lazy-loaded on admin-1 selection
 * ``site/data/search-index.json``     flat id/name/level/parent rows for MiniSearch
 * ``site/data/coverage.json``         per-country, per-field availability matrix
 
@@ -46,7 +46,7 @@ from common import (  # noqa: E402
     DERIVED, MODELLED, NOT_APPLICABLE, NOT_AVAILABLE, NOT_COLLECTED, PROCESSED,
     RAW, ROOT,
     apply_collection_policy, collection_gap, estimate, gap, is_estimate, is_gap,
-    known_as, log, measure, read_json, repair, respell, write_json,
+    known_as, log, measure, read_json, repair, respell, shard_path, write_json,
 )
 
 SITE_DATA = ROOT / "site" / "data"
@@ -5513,12 +5513,20 @@ def main() -> int:
     # -- write ---------------------------------------------------------------
     out = args.out
     write_json(out / "admin0.json", admin0, compact=True)
-    for iso3, rows in sorted(admin1_by_country.items()):
-        rows.sort(key=lambda e: e["name"])
-        write_json(out / "admin1" / f"{iso3}.json", rows, compact=True)
-    for iso3, rows in sorted(admin2_by_country.items()):
-        rows.sort(key=lambda e: e["name"])
-        write_json(out / "admin2" / f"{iso3}.json", rows, compact=True)
+    written: set[Path] = set()
+    for level, by_country in (("admin1", admin1_by_country), ("admin2", admin2_by_country)):
+        for iso3, rows in sorted(by_country.items()):
+            rows.sort(key=lambda e: e["name"])
+            path = shard_path(level, iso3, out)
+            write_json(path, rows, compact=True)
+            written.add(path)
+    # A shard this run did not write is stale -- a country no longer drawn at
+    # that level, or a file under an old name ("GTM.json", which a content
+    # blocker refused; see common.SHARD_SUFFIX) -- and would still be served.
+    for level in ("admin1", "admin2"):
+        for path in sorted((out / level).glob("*.json")):
+            if path not in written:
+                path.unlink()
 
     # Search index, sharded so the first paint does not wait on 49k admin-2 rows:
     # shard 0 (countries + admin-1) loads with the page, shard 2 (admin-2) is

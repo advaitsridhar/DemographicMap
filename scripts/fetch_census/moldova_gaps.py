@@ -46,6 +46,7 @@ from .europe_wiki import fetch, sections
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from probe_wikitable import tables  # noqa: E402
+from common import shard_path  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 OUT = "moldova_ethnicity_gaps.json"
@@ -190,7 +191,7 @@ def shapes() -> dict[tuple[str, str], str]:
     """(level, name) -> shape id, for Moldova's polygons at both levels."""
     out = {}
     for level in ("admin1", "admin2"):
-        for u in read_json(ROOT / "site" / "data" / level / "MDA.json", []):
+        for u in read_json(shard_path(level, "MDA"), []):
             out[(level, u["name"])] = u["id"]
     return out
 

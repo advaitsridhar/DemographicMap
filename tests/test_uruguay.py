@@ -180,11 +180,11 @@ class BuiltSiteData(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         import json
-        path = ROOT / "site" / "data" / "admin2" / "URY.json"
+        path = ROOT / "site" / "data" / "admin2" / "URY.units.json"
         if not path.exists():
-            raise unittest.SkipTest("site/data/admin2/URY.json is not built")
+            raise unittest.SkipTest("site/data/admin2/URY.units.json is not built")
         cls.records = json.loads(path.read_text())
-        cls.admin1 = json.loads((ROOT / "site" / "data" / "admin1" / "URY.json").read_text())
+        cls.admin1 = json.loads((ROOT / "site" / "data" / "admin1" / "URY.units.json").read_text())
 
     def test_every_municipio_the_boundary_file_draws_is_present(self):
         self.assertEqual(124, len([r for r in self.records if not r.get("remainder")]))
