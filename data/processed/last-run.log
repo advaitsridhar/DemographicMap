@@ -1,6 +1,11 @@
-  e-Stat 0004019308: 1965 values
-  national median 48.5, prefectures 44.1-56.4
-  e-Stat 0004019309: 3930 values
-  1964 areas with men and women; Japan 61,349,581 men, 64,796,518 women
-  1964 areas in the table; 1571 bound to the map's polygons by code (1572 codes bound)
-  wrote data/processed/japan_municipal.json (2468 kB)
+  01 Aguascalientes: 11 municipios, median 27 (24-28)
+  02 Baja California: 6 municipios, median 30 (24-31)
+  03 Baja California Sur: 5 municipios, median 29 (27-32)
+  04 Campeche: 12 municipios, median 29 (22-31)
+  05 Coahuila de Zaragoza: 38 municipios, median 29 (24-40)
+  06 Colima: 10 municipios, median 30 (28-33)
+  https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_chis_01_poblacion.xlsx: not a workbook
+  07 Chiapas: 124 municipios, median 24 (15-33)
+  https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_chih_01_poblacion.xlsx: not a workbook
+  https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_chi_01_poblacion.xlsx: not a workbook
+mexico_age: no workbook under ('chih', 'chi')
