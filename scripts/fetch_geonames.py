@@ -15,7 +15,7 @@ and keeps the columns this uses, as ``data/raw/geonames/places.tsv.gz``.
 
 Without it, the places are put in the CGAZ polygons of both levels and the
 result written to ``data/processed/geonames_settlements.json``, keyed by
-shapeID.
+shapeID: the place, or ``{"none": why}`` for a shape where none is named.
 
 A place is only credited to a shape it can be shown to belong to. A CGAZ
 polygon is simplified, so a town a few hundred metres from a boundary can land
@@ -350,7 +350,8 @@ def refuted(level: str, inside: dict[str, list[dict]],
     out = {}
     for shape_id, rows in inside.items():
         unit = units.get(shape_id)
-        held = unit.get("capital") if unit else None
+        # What the sources give, before an earlier build corrected it.
+        held = (unit.get("capital_refuted") or unit.get("capital")) if unit else None
         if not isinstance(held, str) or re.fullmatch(r"Q\d+", held):
             continue
         if any(alike(held, r["name"]) for r in rows):
@@ -417,6 +418,9 @@ def assign() -> None:
             if not best:
                 why_not[why.split(" ")[0] if why.startswith("no ") else
                         ("unsized seat" if "no population in GeoNames" in why else "spans")] += 1
+                # The build says why the unit has no settlement, rather than
+                # leaving a bare gap.
+                out[shape_id] = {"none": why}
                 continue
             found += 1
             entry = {

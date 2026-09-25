@@ -3666,6 +3666,10 @@ def fill_capitals_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                 # "Banjarmasin"): a former capital read as the current one.
                 if seat.get("refutes") and held == seat["refutes"]:
                     entity["capital"] = seat["seat"]
+                    # Kept so the next placement still sees what the sources
+                    # say; judged against the corrected capital, it would find
+                    # nothing to refute and the next build would restore it.
+                    entity["capital_refuted"] = held
                     entity["capital_note"] = (
                         f"{held}, which another source gives, stands elsewhere in "
                         f"the country; {seat['seat']} is this unit's own seat.")
@@ -3700,6 +3704,13 @@ def fill_settlements_from_geonames(admin1: dict[str, list[dict[str, Any]]],
                 town = towns.get(entity["id"])
                 # A lake is water whatever town stands on its islands or shore.
                 if not town or entity.get("water") or not is_gap(entity.get("largest_settlement")):
+                    continue
+                if "none" in town:
+                    held = entity.get("largest_settlement") or {}
+                    if not held.get("note"):
+                        entity["largest_settlement"] = gap(
+                            held.get("status") or NOT_AVAILABLE,
+                            f"No GeoNames place is named: {town['none']}.")
                     continue
                 entity["largest_settlement"] = town["name"]
                 if town.get("population"):
