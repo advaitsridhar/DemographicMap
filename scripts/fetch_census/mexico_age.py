@@ -15,7 +15,8 @@ anything is written:
 * each is the state its name says -- every row's "Entidad federativa" code is
   the one expected for that file;
 * each state's municipios add up, men and women, to the state's own row;
-* the 32 states add up to INEGI's national men and women (``mexico.NATIONAL``);
+* each state's total is ITER's for that state (``mexico_state.json``), and the
+  32 states add up to INEGI's national men and women (``mexico.NATIONAL``);
 * every state's median lies within the range of its municipios', as a median
   of the whole must.
 
@@ -29,9 +30,12 @@ from __future__ import annotations
 
 import io
 import re
+from collections import defaultdict
 from typing import Any
 
-from ._shared import PROCESSED, http_get, log, measure, record, write_json
+from ._shared import (
+    NOT_AVAILABLE, PROCESSED, gap, http_get, log, measure, read_json, record, write_json,
+)
 from .mexico import LICENSE, NATIONAL, STATE_ALIASES
 
 YEAR = 2020
@@ -56,6 +60,13 @@ STATES = {
     "28": ("tamps", "tam", "tams"), "29": ("tlax", "tla"), "30": ("ver", "vz"),
     "31": ("yuc",), "32": ("zac",),
 }
+# Oaxaca's workbook answers at none of its spellings -- "oax", "oaxaca", as
+# .xls, .zip or a first part -- with the HTML page INEGI serves for a
+# missing file (September 2026). Its 570 municipios keep a gap that says so; any
+# other state without a workbook stops the run.
+UNPUBLISHED = {"20": ("INEGI's Oaxaca workbook (cpv2020_b_oax_01_poblacion.xlsx) is not "
+                      "at the address the other 31 states' are published at, so its "
+                      "municipios' median ages are not read")}
 CODED = re.compile(r"^(\d{2,3})\s+(.+)$")
 
 
@@ -118,13 +129,32 @@ def read_state(code: str, abbrs: tuple[str, ...]) -> tuple[dict[str, Any], list[
 def main() -> int:
     records: list[dict[str, Any]] = []
     men = women = 0.0
-    missing = []
+    missing, seen = [], set()
+    # ITER's state totals, which each workbook's own state row must repeat.
+    iter_totals = {r["id"][4:6]: (r.get("population") or {}).get("value")
+                   for r in read_json(PROCESSED / "mexico_state.json", [])}
+    municipios_of, iter_by_id = defaultdict(list), {}
+    for r in read_json(PROCESSED / "mexico_municipality.json", []):
+        municipios_of[r["parent"][4:6]].append(r)
+        iter_by_id[r["id"]] = r
     for code, abbrs in STATES.items():
         try:
             state, municipios = read_state(code, abbrs)
         except LookupError:
-            missing.append(f"{code} {abbrs}")
+            if code in UNPUBLISHED:
+                for m in municipios_of[code]:
+                    records.append(record(
+                        m["id"], m["name"], level="admin2", parent=m["parent"], country="MEX",
+                        parent_name=m.get("parent_name"), parent_aliases=m.get("parent_aliases"),
+                        codes=m.get("codes"),
+                        median_age=gap(NOT_AVAILABLE, UNPUBLISHED[code] + ".")))
+                log(f"  {code}: no workbook; {len(municipios_of[code])} municipios keep a gap")
+            else:
+                missing.append(f"{code} {abbrs}")
             continue
+        if iter_totals.get(code) != state["total"]:
+            raise SystemExit(f"mexico_age: {state['state']} counts {state['total']:,.0f} people, "
+                             f"ITER {iter_totals.get(code)}")
         for part in ("men", "women"):
             summed = sum(m[part] or 0 for m in municipios)
             if abs(summed - (state[part] or 0)) > 0.5:
@@ -134,6 +164,7 @@ def main() -> int:
         if state["median"] is None or not min(medians) <= state["median"] <= max(medians):
             raise SystemExit(f"mexico_age: {state['state']}: state median {state['median']} "
                              f"outside its municipios' {min(medians)}-{max(medians)}")
+        seen.add(code)
         men += state["men"] or 0
         women += state["women"] or 0
         log(f"  {code} {state['state']}: {len(municipios)} municipios, median {state['median']:g} "
@@ -141,9 +172,12 @@ def main() -> int:
         for m in municipios:
             if m["median"] is None:
                 continue
+            # ITER's spelling where it has the code, so this row finds the
+            # polygon mexico.py's row for the same municipio found.
+            known = iter_by_id.get(f"MEX-{m['code']}") or {}
             records.append(record(
-                f"MEX-{m['code']}", m["name"], level="admin2", parent=f"MEX-{code}",
-                country="MEX", parent_name=m["state"],
+                f"MEX-{m['code']}", known.get("name") or m["name"], level="admin2",
+                parent=f"MEX-{code}", country="MEX", parent_name=known.get("parent_name") or m["state"],
                 parent_aliases=STATE_ALIASES.get(m["state"]),
                 codes={"inegi": m["code"]},
                 median_age=measure(m["median"], unit="years", year=YEAR, source=SOURCE),
@@ -152,10 +186,12 @@ def main() -> int:
             ))
     if missing:
         raise SystemExit(f"mexico_age: no workbook for {', '.join(missing)}")
-    if round(men) != NATIONAL["POBMAS"] or round(women) != NATIONAL["POBFEM"]:
+    read_all = not any(code in UNPUBLISHED and code not in seen for code in STATES)
+    if read_all and (round(men) != NATIONAL["POBMAS"] or round(women) != NATIONAL["POBFEM"]):
         raise SystemExit(f"mexico_age: the states hold {men:,.0f} men and {women:,.0f} women, "
                          f"not the census's {NATIONAL['POBMAS']:,} and {NATIONAL['POBFEM']:,}")
-    log(f"  {len(records)} municipios with a median age; {men:,.0f} men, {women:,.0f} women")
+    unknown = sum(1 for r in records if r["id"] not in iter_by_id)
+    log(f"  {len(records)} municipios ({unknown} not in ITER); {men:,.0f} men, {women:,.0f} women")
     write_json(PROCESSED / "mexico_municipality_age.json", records)
     return 0
 
