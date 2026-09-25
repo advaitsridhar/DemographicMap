@@ -138,6 +138,11 @@ data/raw/*
 # ground rather than by name. The GISCO host refuses this sandbox.
 !data/raw/eurostat/
 !data/raw/eurostat/*.geojson
+# Wikidata's items for a country's official codes, with a coordinate each
+# (CC0): what scripts/wikidata_points.py places in the map's polygons to
+# bind an office's codes to them. query.wikidata.org refuses this sandbox.
+!data/raw/wikidata_points/
+!data/raw/wikidata_points/*.json
 data/processed/http_cache/
 
 # Intermediate tiling artefacts
