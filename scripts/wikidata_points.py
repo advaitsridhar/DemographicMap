@@ -26,7 +26,7 @@ office table reaches.
 
 Usage:
     python -m scripts.wikidata_points --fetch JPN P429
-    python -m scripts.wikidata_points JPN:P429:5 CHN:P442:6
+    python -m scripts.wikidata_points JPN:P429:6:5 CHN:P442:6:6 --populations
 """
 from __future__ import annotations
 
@@ -51,7 +51,9 @@ SELECT ?item ?itemLabel ?code ?coord ?pop ?popTime ?pinyin WHERE {
   ?item wdt:%(prop)s ?code ; wdt:P17 wd:%(country)s ; wdt:P625 ?coord .
   FILTER NOT EXISTS { ?item wdt:P576 ?gone . }
   OPTIONAL { ?item wdt:P1721 ?pinyin . }
-  OPTIONAL { ?item p:P1082 ?st . ?st ps:P1082 ?pop ; wikibase:rank wikibase:PreferredRank .
+  OPTIONAL { ?item p:P1082 ?st . ?st ps:P1082 ?pop ; wikibase:rank ?rank .
+             FILTER(?rank != wikibase:DeprecatedRank)
+             FILTER NOT EXISTS { ?st pq:P518 ?part . }
              OPTIONAL { ?st pq:P585 ?popTime . } }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
 }
@@ -131,7 +133,7 @@ def shapes_of(iso3: str) -> list[dict]:
     return out
 
 
-def place(iso3: str, prop: str, digits: int) -> tuple[dict[str, dict], list[dict]]:
+def place(iso3: str, prop: str, length: int, keep: int) -> tuple[dict[str, dict], list[dict]]:
     """code -> polygon, for the items whose place and name agree."""
     from shapely import STRtree
     from shapely.geometry import Point
@@ -140,9 +142,13 @@ def place(iso3: str, prop: str, digits: int) -> tuple[dict[str, dict], list[dict
     tree = STRtree([s["geom"] for s in shapes])
     by_shape: dict[str, list[dict]] = defaultdict(list)
     for item in items:
-        code = re.sub(r"\D", "", item.get("code") or "")[:digits]
-        if len(code) != digits:
+        # Exactly the level's length, before anything is cut: a Chinese
+        # town's 9- or 12-digit code begins with its county's six, and cut to
+        # six it would pass for the county.
+        full = re.sub(r"\D", "", item.get("code") or "")
+        if len(full) != length:
             continue
+        code = full[:keep]
         item["code"] = code
         for i in tree.query(Point(item["lon"], item["lat"]), predicate="within"):
             s = shapes[i]
@@ -172,7 +178,9 @@ def place(iso3: str, prop: str, digits: int) -> tuple[dict[str, dict], list[dict
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--fetch", nargs=2, metavar=("ISO3", "PROPERTY"))
-    ap.add_argument("specs", nargs="*", help="ISO3:PROPERTY:DIGITS")
+    ap.add_argument("specs", nargs="*",
+                    help="ISO3:PROPERTY:LENGTH:KEEP -- codes of exactly LENGTH digits, "
+                         "keyed by their first KEEP (Japan's check digit is dropped)")
     ap.add_argument("--populations", action="store_true")
     args = ap.parse_args()
     if args.fetch:
@@ -181,8 +189,8 @@ def main() -> int:
     table = read_json(OUT, {}) or {}
     records: dict[str, list] = defaultdict(list)
     for spec in args.specs:
-        iso3, prop, digits = spec.split(":")
-        bound, _ = place(iso3.upper(), prop, int(digits))
+        iso3, prop, length, keep = spec.split(":")
+        bound, _ = place(iso3.upper(), prop, int(length), int(keep))
         table[iso3.upper()] = {code: {k: v for k, v in e.items() if k not in ("population", "pop_year")}
                                for code, e in sorted(bound.items())}
         if args.populations:
