@@ -390,6 +390,9 @@ ADAPTER_FILES = [
     # the Republic and every UK file stops at the border.
     "ireland_lea.json",
     "us_state.json", "us_county.json",
+    # Guam, the Virgin Islands, American Samoa and the Northern Marianas, which
+    # the ACS does not survey: their 2020 census, territory and district.
+    "us_island_areas.json",
     # After us_county, and replacing its religion rather than filling a gap.
     # The 2020 U.S. Religion Census that us_acs carries counts adherents as
     # religious bodies report them, which reaches about half the population
