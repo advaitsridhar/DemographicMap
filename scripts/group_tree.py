@@ -1153,10 +1153,6 @@ ETHNIC_RESIDUALS: tuple[str, ...] = (
     "Other foreign ethnicity", "Other ethnic group: Any other ethnic group",
     "Visible minority, n.i.e.", "Not a visible minority", "Foreigner",
     "Non-Malaysian citizen", "Other (Malaysian citizen)",
-    # Mexico's second question, and its negative answer: "not Afro-descendant"
-    # is the absence of one identification rather than the presence of
-    # another, and colouring 2,484 municipalities for it would say nothing.
-    "Not Afro-descendant",
     "Other Africa", "Other West Africa", "Other Asian", "Other European",
     # Laos: what its ten ethno-linguistic categories leave, which is the
     # census's own other-and-not-stated together with the foreign population.
@@ -2022,13 +2018,16 @@ ETHNIC_EXTRA: dict[str, tuple[str, ...]] = {
     "Khoisan peoples": ("Sarwa", "Damara", "Sandawe"),
     "Indigenous peoples of Mesoamerica and the Caribbean": ("Xinca",),
     "Afro-descendant peoples of the Americas": ("Afroecuadorian",
-                                                "Afro-Ecuadorian"),
+                                                "Afro-Ecuadorian",
+                                                "Afro-Mexican or Afro-descendant"),
     # Answers that say the person is of more than one ancestry. They are
     # not a refusal to answer and they are not a people, which is what the
     # mixed category is for.
     "Mixed or multiple (census category)": (
         "Black and White", "mixed - other", "two or more ethnicities or races",
         "mixed European and African ancestry", "Mestico", "Baster",
+        # Mexico's people who answered yes to both of its questions.
+        "Indigenous and Afro-Mexican",
     ),
     "Middle Eastern or North African (census category)": (
         "Arab, Arab Scottish or Arab British",

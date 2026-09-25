@@ -256,7 +256,7 @@ field is wrapped in `OPTIONAL` so an entity missing a population is still return
 | Timor-Leste | INETL, Census 2015 Volume 2 priority tables 12 (mother tongue by municipality) and 11 (religion by municipality); Census 2022 Main Report basic table 4.01 (population by municipality, administrative post and suco) | municipality, administrative post | Mother tongue and religion for all 13 municipalities, stamped 2015 because the 2022 round asked both questions (E57 and E58 of its questionnaire) and has published neither below the country. The 2015 tables are a partition — 38 tongues, one per person, adding to each municipality's own total to the person — and their national column is exactly the fifteen-entry language list the map's country row already carried. Both tables count 1,179,654 people, 3,989 below the volume's own total population and 1,314 above its private-household population, unexplained by any footnote. Population is 2022, with Atauro (a municipality of its own since 2022, an administrative post of Dili before) summed back into Dili, which is the division the boundary file draws. The 67 administrative posts carry population and a stated gap for each composition; no table in either round goes below the municipality and INETL's REDATAM dashboard, served from a bare address, timed out. Ethnicity is `not_collected` (policy entry `TLS`): the 2022 questionnaire runs E1 to E77 without asking it. `scripts/fetch_census/timor.py`. |
 | Lao PDR | Lao Statistics Bureau, 4th Population and Housing Census 2015, village indicator table (`lao-population-census-2015.xlsx`, 8,499 villages x 75 columns) released through Open Development Laos; category definitions from Table 1 of the *Socio-Economic Atlas of the Lao PDR 2015* (LSB with CDE Bern); national controls from the census's own English results volume on UNFPA Laos | province, district | Ethnicity and religion for all 18 provinces and all 148 districts, where the results volume publishes both for the country only — its Tables 3.4, 3.5, P2.7 and P2.9 are national and none of its thirty province tables crosses either field. Each village's published percentage is turned back into people by its own published population and summed; shares are recomputed against the unit and re-rounded to add to 100. Ethnicity is the census's ten **ethno-linguistic categories**, not its 49 groups, and the Atlas's "Lao" is not the census's Lao: it puts the Lao of Huaphanh, Xiengkhuang, Borikhamxay, Vientiane province and Hinboun in "Tai-Thay", so the villages give Lao 43.7% and Tai-Thay 18.3% where Table 3.4 prints Lao 53.2% — together the volume's Lao-Tai family, 62.4%, which is where the check is made. Religion has five categories and a residual of 33.3%: the census counts a religion only where it has written doctrines, so the animist beliefs of most non-Lao-Tai people sit in "No religion or not stated" beside the 1.8% who stated nothing, and both residuals are marked so neither can lead a unit. The 8,499 villages weigh 6,481,625 people, 0.16% under the published 6,492,228; sex ratio 995.7 females per 1,000 males against 994.7. The two Vientianes are settled by an explicit table and carry no aliases; seven district names romanise differently in the two files and are declared. Language is `not_collected` (policy entry `LAO`): 282 pages with no language table and no occurrence of "mother tongue". `scripts/fetch_census/laos.py`. |
 | North Korea | Central Bureau of Statistics, DPR Korea, *2008 Population Census — National Report* (Pyongyang, 2009), Table 2 (population by sex and urban/rural, by city/district/county and province), read from the UN Statistics Division's copy | province, county | **Population and sex ratio only, and a documented declaration for the other three.** All 11 first-level units and all 179 counties carried nothing at all before this; Table 2 counts every one of them. The report's geography is October 2008 and the boundary file's is after the 2010 changes, so four differences are settled by summing the report's own rows over the units the file draws, never by splitting one: Nampo is the six South Phyongan rows the file puts inside it (983,660) and South Pyongan its printed total less them; Kangnam, Junghwa and Sangwon move from Pyongyang to North Hwanghae; Chongjin City is the seven districts the report itself marks as its parts and Hamhung City the six it marks plus Hungnam; the Pyongyang shape is the city's remaining eighteen districts, Unjong and Kangdong being drawn separately. Each of the ten first-level areas equals its own county rows, the eleven shapes equal 23,349,859, and that is Table 2's own DPR Korea row — 702,372 below Table 1's 24,052,231, the difference being 662,349 men and 40,023 women living in military camps, whom no table of the report places in a province, so every sex ratio here runs above the census's own. Eight county names and both Phyongans are written differently in the two files and are declared, among them a Cholwon in North Phyongan where the county is Cholsan and a second Ryongchon in South Hwanghae where it is Ryongyon — the report's own slips, settled by the two lists closing with every other name in the province matching outright, and corrected nowhere. Religion, ethnicity and language are `not_collected` (policy entry `PRK`): the questionnaire's 53 questions ask none of them, and its one question about who a person is asks nationality. The adapter does not copy that declaration into its 190 rows — it marks the three `not_available` with a line saying the census asks none of them, which is the one form `apply_collection_policy` replaces, so sharpening the policy sharpens every unit at once. `scripts/fetch_census/northkorea.py`. |
-| Mexico | INEGI Censo de Población y Vivienda 2020, ITER | state, municipality | Religion, indigenous-language speaking and Afro-descendant identification for 2,453 of 2,457 municipios. All from the *cuestionario básico*, so these are counts, not sample estimates. |
+| Mexico | INEGI Censo de Población y Vivienda 2020, ITER; extended-questionnaire sample | state, municipality | Religion and indigenous-language speaking for 2,453 of 2,457 municipios, from the *cuestionario básico*, so counts, not sample estimates. Ethnicity (indigenous and Afro-Mexican self-identification, crossed) from the extended questionnaire's microdata, weighted by INEGI's expansion factors and checked against its published municipio table. |
 | New Zealand | Stats NZ 2023 Census via Aotearoa Data Explorer (SDMX) | region, territorial authority | Ethnicity, languages spoken and religious affiliation for all 88 territorial authorities and Auckland local boards. All three are multi-response, so shares are of people who named a group, not slices of a whole. Needs an API key. |
 | Nepal | NPHC 2021, National Report on caste/ethnicity, Language and Religion | province, district | All three fields from one census: 142 castes/ethnicities, 124 mother tongues, 10 religions. All 7 provinces and 66 of 77 districts. The census measured all 77; the boundary file is what fails, drawing 75 shapes whose names do not all sit on the right ground, and the 9 shapes that therefore carry nothing each say so and name the province total that holds their people. |
 | India | Census 2011 tables C-01, C-01 Appendix, C-16 | state, district | No public API — per-state workbooks from the censusindia.gov.in NADA catalogue. 2011 is the latest round; the next census was postponed. The Appendix names the religions inside "Other religions and persuasions" (Donyi-Polo, Sarna, Sanamahi …) for states only. 734 of 735 district shapes carry figures. 637 are the census's own rows; 97 are shapes the census never enumerated and which carry their predecessor's shares as a stated estimate, with no head count, so nobody is counted twice. 75 more are districts that have since lost territory, and keep their 2011 figure under a caveat saying how much ground they have left. The one shape without figures is not a district at all. Telangana and Ladakh have state figures summed from the ten and two districts the census did enumerate, and Andhra Pradesh and Jammu and Kashmir carry the residual rather than the undivided state. |
@@ -470,12 +470,12 @@ territory, so they are declared as aliases and the join succeeds.
 
 INEGI publishes the 2020 census as ITER — *Principales resultados por
 localidad* — a single CSV covering every locality, municipio, state and the
-nation in one table, distinguished only by the code columns. It carries three
-of the fields this map wants, and all three come from the *cuestionario
-básico*, the short form asked of everyone. They are therefore counts rather
-than sample estimates, which is the only reason Mexico can be shown at
-municipio level at all: an extended-questionnaire field would have a sampling
-error at that geography large enough to make the colours meaningless.
+nation in one table, distinguished only by the code columns. It carries two
+of the fields this map wants, and both come from the *cuestionario básico*,
+the short form asked of everyone, so they are counts rather than sample
+estimates. Ethnicity comes from the extended questionnaire instead (below):
+its sample was drawn so that every municipio has an estimate, and each one
+carries INEGI's own coefficient of variation.
 
 **The nation is all three codes zero, not just the first.** ENTIDAD `00` looks
 like the country, and it is — but it also carries national sub-totals, one row
@@ -494,22 +494,40 @@ rest. Matching is accent-blind and tries UTF-8 before latin-1, because the
 archive mixes encodings — read as latin-1 throughout, a UTF-8 member comes back
 as `religiÃ³n` and every match fails silently, which is exactly what happened.
 
-**Three fields, three denominators.**
+**Three fields, two denominators.**
 
 | Field | Question | Base |
 |---|---|---|
 | Religion | Católica / Protestante o cristiana evangélica / Otras religiones / Sin religión | everyone |
 | Language | Speaks an indigenous language, yes or no | population aged 3 and over |
-| Ethnicity | Identifies as Afro-Mexican or Afro-descendant, yes or no | everyone |
+| Ethnicity | Considers themselves indigenous; considers themselves Afro-Mexican, Black or Afro-descendant (extended questionnaire) | population aged 3 and over |
 
 Religion's four groups are asked of everyone, so the remainder is people who
 did not state one; it is named rather than dropped, and the bar reaches 100%
 without implying the remainder is irreligious. Language is not a composition of
 languages: the census records *whether* a person speaks an indigenous language
 in this table, not which one, so the map shows a yes/no split and says so.
-Ethnicity is a single self-identification question, so "Not Afro-descendant"
-means "did not identify as Afro-descendant" and not membership of anything
-else — it is not comparable with other countries' ethnicity categories.
+Ethnicity is not in ITER: its one ethnic column asks only whether a person is
+Afro-descendant, and a bar of "Afro-Mexican" against "not Afro-descendant"
+names nobody.
+
+**Ethnicity from the extended questionnaire's sample.** Whether a person
+considers themselves indigenous is asked only in the *cuestionario ampliado*,
+a sample of about four million homes. Language is no stand-in for it: 7.4
+million people aged 3 or over speak an indigenous language and 23.2 million
+consider themselves indigenous. The two identifications overlap — on the Costa
+Chica many people answer yes to both — so INEGI's two published shares cannot
+be stacked into one bar. `mexico_ethnicity.py` reads the sample's microdata
+(`Censo2020_CA_<state>_csv.zip`), weights each person aged 3 or over by
+INEGI's expansion factor, and splits them five ways: indigenous only,
+indigenous and Afro-Mexican, Afro-Mexican only, neither (shown as "Mestizo or
+white", since no question asks about that ancestry and that is who the rest
+are), and not stated. Only those sums leave the runner. Before anything is
+written, every municipio's and state's base and indigenous shares must equal
+INEGI's published table (`cpv2020_a_<state>_05_etnicidad.xlsx`, sheet 02) to
+0.01 of a point, and the answer codes counted as "yes" are the one reading
+that reproduces all 32 states; the Afro-Mexican estimate must come within 3%
+of the full count's 2,576,213.
 
 **Validated against three published national figures**, not against itself:
 126,014,024 people, 7,364,645 speakers of an indigenous language aged 3 and
