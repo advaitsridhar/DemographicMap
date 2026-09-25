@@ -1,14 +1,37 @@
-  religion columns: {'Catholic': 'PCATOLICA', 'Protestant and evangelical': 'PRO_CRIEVA', 'Other religions': 'POTRAS_REL', 'No religion': 'PSIN_RELIG'}
-  reading iter_00_cpv2020/conjunto_de_datos/conjunto_de_datos_iter_00CSV20.csv
-  POBTOT: 126,014,024 vs published 126,014,024 (0.0000%)
-  P3YM_HLI: 7,364,645 vs published 7,364,645 (0.0000%)
-  POB_AFRO: 2,576,213 vs published 2,576,213 (0.0000%)
-  POBMAS: 61,473,390 vs published 61,473,390 (0.0000%)
-  POBFEM: 64,540,634 vs published 64,540,634 (0.0000%)
-  rows by level: {'nation': 1, 'national subtotal': 2, 'state': 32, 'state subtotal': 64, 'municipality': 2469, 'locality': 193094}
-  state: 32 of 32 with the bilingual share (P3HLI_HE, P3HLINHE)
-  municipality: 2433 of 2469 with the bilingual share (P3HLI_HE, P3HLINHE)
-  wrote data/processed/mexico_state.json (75 kB)
-  32 state records
-  wrote data/processed/mexico_municipality.json (5820 kB)
-  2469 municipality records
+  01: 11 municipios in the sample, 1,421,198 people weighted
+  02: 6 municipios in the sample, 3,739,797 people weighted
+  03: 5 municipios in the sample, 793,424 people weighted
+  04: 12 municipios in the sample, 926,858 people weighted
+  05: 38 municipios in the sample, 3,137,032 people weighted
+  06: 10 municipios in the sample, 728,300 people weighted
+  retry 1/4 after 2s :: https://www.inegi.org.mx/contenidos/programas/ccpv/2020/microdatos/Censo2020_CA_chs_csv.zip :: IncompleteRead(34686832 bytes read, 63237 more expected)
+  07: 124 municipios in the sample, 5,524,506 people weighted
+  08: 67 municipios in the sample, 3,725,058 people weighted
+  09: 16 municipios in the sample, 9,159,393 people weighted
+  10: 39 municipios in the sample, 1,821,279 people weighted
+  11: 46 municipios in the sample, 6,144,449 people weighted
+  12: 81 municipios in the sample, 3,525,695 people weighted
+  13: 84 municipios in the sample, 3,075,237 people weighted
+  14: 125 municipios in the sample, 8,303,835 people weighted
+  15: 125 municipios in the sample, 16,943,627 people weighted
+  16: 113 municipios in the sample, 4,728,162 people weighted
+  17: 36 municipios in the sample, 1,961,694 people weighted
+  18: 20 municipios in the sample, 1,226,179 people weighted
+  19: 51 municipios in the sample, 5,768,781 people weighted
+  20: 570 municipios in the sample, 4,113,433 people weighted
+  21: 217 municipios in the sample, 6,567,595 people weighted
+  22: 18 municipios in the sample, 2,362,209 people weighted
+  23: 11 municipios in the sample, 1,852,929 people weighted
+  24: 58 municipios in the sample, 2,815,438 people weighted
+  25: 18 municipios in the sample, 2,986,880 people weighted
+  26: 72 municipios in the sample, 2,924,652 people weighted
+  27: 17 municipios in the sample, 2,397,125 people weighted
+  28: 43 municipios in the sample, 3,518,497 people weighted
+  29: 60 municipios in the sample, 1,340,912 people weighted
+  30: 212 municipios in the sample, 8,046,861 people weighted
+  31: 106 municipios in the sample, 2,317,135 people weighted
+  32: 58 municipios in the sample, 1,617,384 people weighted
+  indigenous answers, weighted: blank 0, 1 23,229,560, 3 96,017,755, 9 451,116
+  Afro-Mexican answers, weighted: 1 2,482,098, 3 122,826,044, 9 207,412
+  age answers, weighted: 0-2 5,817,123, 3+ 119,692,898, unstated 5,533
+mexico_ethnicity: no reading of the Afro-Mexican answers comes within 3% of the full count's 2,576,213: {('1',): 2482098}
