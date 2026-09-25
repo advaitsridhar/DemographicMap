@@ -8,9 +8,10 @@ ten-minute max-age, and If-Range and If-None-Match answered as HTTP says --
 and opens it in a Firefox whose profile persists between visits, looking at
 Guatemala each time. Two histories are replayed, each from a clean profile:
 a redeploy between visits (a new deploy stamp, the same bytes), and a first
-visit on which the CDN answers some range requests with the whole archive, as
-one can on a cache miss -- a whole file Firefox may keep and answer later
-ranges from.
+visit on which the CDN answers each archive's first range request with the
+whole archive, as one can on a cache miss -- a whole file Firefox might keep
+and answer later ranges from, and a first read the map must recover from
+within the visit.
 
 Read-only; the output is the log. Needs xvfb for Firefox's WebGL.
 
@@ -184,7 +185,7 @@ def main() -> int:
         for label in labels:
             if label == "after a redeploy":
                 subprocess.run(["curl", "-s", f"http://127.0.0.1:{port}/__redeploy"], check=False)
-            WHOLE["left"] = 6 if label.endswith("whole files") else 0
+            WHOLE["left"] = 3 if label.endswith("whole files") else 0
             SEEN.clear()
             res = subprocess.run(["xvfb-run", "-a", "-s", "-screen 0 1400x900x24",
                                   "node", "visit.js", str(port), str(profile), label],

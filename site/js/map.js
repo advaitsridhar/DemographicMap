@@ -14,10 +14,12 @@ window.WorldMap = (function () {
   const LEVELS = [
     { id: "admin0", url: "tiles/admin0.pmtiles", minzoom: 0, maxzoom: 5, showFrom: 0,   showTo: 4.4 },
     { id: "admin1", url: "tiles/admin1.pmtiles", minzoom: 0, maxzoom: 7, showFrom: 3.6, showTo: 7.4 },
-    // minzoom is where the archive has tiles, not where the level is shown.
-    // Second-level divisions are tiled from z2 so they can be pinned at world
-    // view; the zoom hand-off below still hands them over at 6.6.
-    { id: "admin2", url: "tiles/admin2.pmtiles", minzoom: 2, maxzoom: 9, showFrom: 6.6, showTo: 22 },
+    // minzoom and maxzoom are where the archive has tiles (scripts/build_tiles.sh),
+    // not where the level is shown; the sources below name them, and a test
+    // holds them to each archive's header. Second-level divisions are tiled
+    // from z2 so they can be pinned at world view; the zoom hand-off below
+    // still hands them over at 6.6.
+    { id: "admin2", url: "tiles/admin2.pmtiles", minzoom: 2, maxzoom: 8, showFrom: 6.6, showTo: 22 },
   ];
 
   // GitHub Pages stamps every file's ETag with its deploy time -- the admin0
@@ -306,7 +308,16 @@ window.WorldMap = (function () {
     for (const level of LEVELS) {
       sources[level.id] = {
         type: "vector",
-        url: `pmtiles://${level.url}`,
+        // The tiles are named here, not read from the archive through a
+        // `url`. MapLibre reads a source's description once, from the
+        // archive's header, and when that read failed -- the first request
+        // each archive gets -- it never asked that source for a tile again:
+        // the level stayed blank for the rest of the visit. Named here, each
+        // tile is its own request, and a header that failed is read again
+        // by the next one.
+        tiles: [`pmtiles://${level.url}/{z}/{x}/{y}`],
+        minzoom: level.minzoom,
+        maxzoom: level.maxzoom,
         // Promote the shapeID property to the feature id so feature-state
         // (metric colour, hover, selection) survives tile eviction and reload.
         promoteId: level.id === "admin0" ? "shapeGroup" : "shapeID",

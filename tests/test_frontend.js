@@ -90,11 +90,8 @@ async function aRedeployIsNotAChangedArchive() {
                        "a rebuilt archive still reads as changed");
 }
 
-async function aFailedTileReadIsReadAgain() {
-  // The real reader over the real second-level archive. Its cache keeps a
-  // failed read -- the header, or the leaf directory under Guatemala -- as
-  // the answer for the rest of the visit unless told to forget it.
-  const archive = fs.readFileSync(path.join(ROOT, "site", "tiles", "admin2.pmtiles"));
+// map.js over the real vendored pmtiles reader.
+function withRealPmtiles() {
   const context = vm.createContext({
     window: { maplibregl: { Map: class {}, addProtocol() {} } },
     document: { documentElement: {}, getElementById: () => ({}) },
@@ -105,12 +102,39 @@ async function aFailedTileReadIsReadAgain() {
   vm.runInContext(fs.readFileSync(path.join(ROOT, "site", "vendor", "pmtiles.js"), "utf8"), context);
   context.window.pmtiles = context.pmtiles;
   vm.runInContext(source("map.js"), context);
+  return context;
+}
+
+const archiveSource = (archive) => ({
+  getKey: () => "probe",
+  getBytes: async (offset, length) => ({
+    data: archive.buffer.slice(archive.byteOffset + offset, archive.byteOffset + offset + length),
+    etag: "size-1",
+  }),
+});
+
+async function theSourcesNameEachArchivesZooms() {
+  // The map names each level's tiles itself, so a zoom it names that the
+  // archive does not have is a blank level there.
+  const context = withRealPmtiles();
+  for (const level of context.window.WorldMap.LEVELS) {
+    const archive = fs.readFileSync(path.join(ROOT, "site", level.url));
+    const header = await new context.pmtiles.PMTiles(archiveSource(archive)).getHeader();
+    assert.deepStrictEqual([level.minzoom, level.maxzoom], [header.minZoom, header.maxZoom],
+                           `${level.id} names the zooms its archive has`);
+  }
+}
+
+async function aFailedTileReadIsReadAgain() {
+  // The real reader over the real second-level archive. Its cache keeps a
+  // failed read -- the header, or the leaf directory under Guatemala -- as
+  // the answer for the rest of the visit unless told to forget it.
+  const archive = fs.readFileSync(path.join(ROOT, "site", "tiles", "admin2.pmtiles"));
+  const context = withRealPmtiles();
   const pm = context.pmtiles;
   const bytes = (offset, length) =>
     archive.buffer.slice(archive.byteOffset + offset, archive.byteOffset + offset + length);
-  const header = await new pm.PMTiles({
-    getKey: () => "probe", getBytes: async (o, n) => ({ data: bytes(o, n), etag: "size-1" }),
-  }).getHeader();
+  const header = await new pm.PMTiles(archiveSource(archive)).getHeader();
   // Guatemala at the second level's zoom: -90.3, 15.2 at z8.
   const [z, x, y] = [8, 63, 117];
 
@@ -843,6 +867,7 @@ async function anIdDrawnAtTwoLevelsKeepsBothRecords() {
   await aFailedShardIsAskedForAgain();
   await aRedeployIsNotAChangedArchive();
   await aFailedTileReadIsReadAgain();
+  await theSourcesNameEachArchivesZooms();
   await anIdDrawnAtTwoLevelsKeepsBothRecords();
   await deepSearchWaitsForTheSecondShard();
   uncertainSharesKeepTheirQualifier();
