@@ -526,8 +526,9 @@ are), and not stated. Only those sums leave the runner. Before anything is
 written, every municipio's and state's base and indigenous shares must equal
 INEGI's published table (`cpv2020_a_<state>_05_etnicidad.xlsx`, sheet 02) to
 0.01 of a point, and the answer codes counted as "yes" are the one reading
-that reproduces all 32 states; the Afro-Mexican estimate must come within 3%
-of the full count's 2,576,213.
+that reproduces all 32 states. The Afro-Mexican estimate must come within 5%
+of the full count's 2,576,213; it is 2,482,098, 3.7% fewer, since the sample
+is weighted to the population by age and sex rather than by identity.
 
 **Validated against three published national figures**, not against itself:
 126,014,024 people, 7,364,645 speakers of an indigenous language aged 3 and

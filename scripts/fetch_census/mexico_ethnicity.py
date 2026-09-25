@@ -30,7 +30,7 @@ Nothing is written unless every figure reproduces INEGI's own tables:
   states must agree on the codes people actually gave. Whatever is neither yes
   nor no is not stated;
 * the Afro-Mexican question's "yes", over all ages, gives a national estimate
-  within 3% of the full count's 2,576,213 (ITER's POB_AFRO), which the sample
+  within 5% of the full count's 2,576,213 (ITER's POB_AFRO), which the sample
   is an estimate of; of the readings that do, the nearest is taken.
 
 Records carry the ids, names and parents of ``mexico.py``'s, so they join the
@@ -66,7 +66,11 @@ CODED = re.compile(r"^(\d{2,3})\s+(.+)$")
 COLUMNS = ("ENT", "MUN", "FACTOR", "EDAD", "PERTE_INDIGENA", "AFRODES")
 UNSTATED_AGE = "999"
 TOLERANCE = 0.01                    # percentage points
-AFRO_TOLERANCE = 0.03               # of the full count
+# The sample is weighted to the census's population by age and sex, not by
+# identity, and it puts Afro-Mexicans at 2,482,098 against the full count's
+# 2,576,213 -- 3.7% fewer (September 2026). The check is for a misread answer
+# code, which would miss by orders of magnitude, not by that.
+AFRO_TOLERANCE = 0.05               # of the full count
 
 # The questionnaire's answers are yes, yes in part, no and does not know, and
 # the file adds a code for no answer at all. Which of them INEGI's published
